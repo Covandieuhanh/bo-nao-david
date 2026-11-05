@@ -18,3 +18,4 @@
 - [Hồ sơ David + bộ lọc nội dung](david-profile-and-content-filter.md) — ~/.claude/David.md, khối 00, kenh.json, sổ danh mục; đăng bài chờ "bắt đầu làm" (2026-11-05)
 - [Kết quả hơn tốc độ](result-over-speed.md) — làm đúng quy trình, bước cần kết quả render thì chờ; chỗ chưa rõ thì trao đổi (2026-11-05)
 - [Video dài không cắt](video-long-no-cut.md) — video dài để nguyên, kể cả lặng và ờ ừm; cắt ghép chỉ khi trích video ngắn (2026-11-05)
+- [Bộ não David.Claude](david-claude-brain-repo.md) — repo riêng tư dùng chung cho mọi AI; "cập nhật não" = scripts/sync.sh --push (2026-11-05)
