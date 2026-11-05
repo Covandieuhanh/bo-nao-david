@@ -8,7 +8,7 @@ Trạng thái: lọc · dựng · chờ đăng · đã đăng · kho · bỏ. D�
 | 2026-11-05 | Podcast "Mục tiêu và sứ mệnh" (DJI_11, 8:19) | ✂️ Dùng một phần | 6 (đoạn 4:44–5:40: 7) | nhân hiệu → công việc | 1 highlight 4:44–5:40 Reels + TikTok · bản đầy đủ chỉ Facebook cá nhân | Gợi mở | lọc (chấm thử) |
 | 2026-11-05 | Vlog Miếu Bà Cam (10 clip + flycam) | 👤 Chỉ Facebook cá nhân | — (chạm lằn ranh) | nhân hiệu | Facebook cá nhân | — | lọc (chấm thử) |
 | 2026-11-05 | Vlog VF3 kỷ niệm (3 clip) | 👤 Chỉ Facebook cá nhân | 3 | nhân hiệu | Facebook cá nhân | — | lọc (chấm thử) |
-| 2026-11-05 | Podcast "Trainer cho người làm trainer" (DJI_16, 8:57, giữ nguyên không cắt) | ✅ Phù hợp · ⚠️ đã cảnh báo lằn ranh, David giữ | 7 | gốc → công việc | YouTube ngang T3 10/11 20:00 | Gợi mở | dựng (chờ duyệt ảnh bố cục) |
+| 2026-11-05 | Podcast "Trainer cho người làm trainer" (DJI_16, 8:57, giữ nguyên không cắt) | ✅ Phù hợp · ⚠️ đã cảnh báo lằn ranh, David giữ | 7 | gốc → công việc | YouTube ngang T3 10/11 20:00 | Gợi mở | dựng xong (chờ David duyệt cổng 2) |
 
 ## Phiếu lọc (chấm thử 05/11/2026)
 

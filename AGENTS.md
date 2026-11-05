@@ -7,10 +7,11 @@ Bạn đang làm việc với **David Trần** (Trần Đức Cường), nhà đ
 | # | File | Để biết |
 |---|---|---|
 | 1 | [nao/David.md](nao/David.md) | David là ai, định hướng nghề, lằn ranh, cách muốn được làm việc |
-| 2 | [TRANG-THAI-HIEN-TAI.md](TRANG-THAI-HIEN-TAI.md) | Đang làm dở gì, việc tiếp theo, việc chờ David quyết |
-| 3 | [nao/bo-nho/MEMORY.md](nao/bo-nho/MEMORY.md) | Mục lục các bài học và quyết định. Mở từng file khi việc đụng tới |
-| 4 | [skills/hoi-chuyen-gia/SKILL.md](skills/hoi-chuyen-gia/SKILL.md) | Luật hỏi trước khi tạo hoặc sửa bất cứ thứ gì |
-| 5 | Skill đúng với việc (bảng dưới) | Quy trình từng bước |
+| 2 | [nao/ho-so-thau-hieu.md](nao/ho-so-thau-hieu.md) | Tính cách, điểm mạnh, điểm cần cải thiện, nguyên tắc, động cơ. Ghi 17/10/2026: phần định hướng nghề đã cũ, khi lệch thì theo `nao/David.md` |
+| 3 | [TRANG-THAI-HIEN-TAI.md](TRANG-THAI-HIEN-TAI.md) | Đang làm dở gì, việc tiếp theo, việc chờ David quyết |
+| 4 | [nao/bo-nho/MEMORY.md](nao/bo-nho/MEMORY.md) | Mục lục các bài học và quyết định. Mở từng file khi việc đụng tới |
+| 5 | [skills/hoi-chuyen-gia/SKILL.md](skills/hoi-chuyen-gia/SKILL.md) | Luật hỏi trước khi tạo hoặc sửa bất cứ thứ gì |
+| 6 | Skill đúng với việc (bảng dưới) | Quy trình từng bước |
 
 ## Năm luật không được phá
 
