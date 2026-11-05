@@ -1,0 +1,8 @@
+{
+  "_": "Video 1 người nói trước camera — hình mẫu chính: dài = Wynn Trần, Nguyễn Hữu Trí; ngắn = Huỳnh Duy Khương, BS Tùng. Xem lam-video.md.",
+  "cat_lang": {"nguong_dai_s": 180,
+    "ngan": {"min_s": 0.45, "giu_s": 0.12, "cat_tieng_dem": true},
+    "dai": {"min_s": 1.2, "giu_s": 0.25, "cat_tieng_dem": false}},
+  "mat_do_canh_s": {"ngan": [5, 8], "dai": [15, 20]},
+  "the_tit_mo_s": [0, 2.5]
+}

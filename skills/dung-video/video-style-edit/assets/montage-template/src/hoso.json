@@ -1,0 +1,59 @@
+{
+ "_": "Vlog ghép nhiều clip — hình mẫu chính: Khoai Lang Thang + Jessie Luong. Xem ghep-vlog.md.",
+ "hai_trang_thai": true,
+ "toan_man_max_s": 4.0,
+ "mat_hien_min": 0.6,
+ "phu_de": {
+  "ngan_max_s": 90,
+  "ngan_co": 84,
+  "ngan_max_chu": 3,
+  "ngan_max_ky_tu": 16,
+  "dai_co": 42
+ },
+ "canh_minh_hoa": {
+  "do_dai_s": [
+   3,
+   5
+  ],
+  "nhan_max_chu": 3,
+  "giu_sau_s": 1.2,
+  "giu_moi_chu_s": 0.3,
+  "hien_vao_s": 0.5,
+  "mo_ra_s": 0.3,
+  "dai_max_s": 6
+ },
+ "youtube": {
+  "video_dai_s": 180,
+  "man_ket_s": 20,
+  "teaser_khi_dai_hon_s": 600,
+  "teaser_s": [
+   15,
+   25
+  ]
+ },
+ "thumbnail": {
+  "max_chu": 8,
+  "max_tang": 3
+ },
+ "mo_dau": {
+  "canh_cam_phach": 2,
+  "max_canh_mat_can": 2
+ },
+ "nhip_cat_s": {
+  "soi": [
+   2.2,
+   2.7
+  ],
+  "lang": [
+   4,
+   6
+  ]
+ },
+ "mat_do_canh_s": [
+  20,
+  30
+ ],
+ "the_vong": "chi_thu_thach",
+ "tach_phan_khi_dai_hon_s": 1500,
+ "nhac_duoi_giong_LU": 20
+}

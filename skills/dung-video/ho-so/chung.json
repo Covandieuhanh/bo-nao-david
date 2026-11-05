@@ -1,0 +1,81 @@
+{
+ "_": "THAM SỐ CHUNG cả 4 loại video — học từ 80 video Việt + kênh quốc tế (xem ../nguyen-tac.md). Mỗi file loại (lam-video, ghep-vlog, podcast, highlight) GHI ĐÈ khoá trùng tên. Script đọc qua khoi/hoso.py; khung dựng đọc motion/src/hoso.json (chép lúc tạo dự án). Đổi giá trị → ghi lý do + hình mẫu vào file .md cùng tên.",
+ "hai_trang_thai": true,
+ "toan_man_max_s": 4.0,
+ "mat_hien_min": 0.6,
+ "phu_de": {
+  "ngan_max_s": 90,
+  "ngan_co": 84,
+  "ngan_max_chu": 3,
+  "ngan_max_ky_tu": 16,
+  "dai_co": 42
+ },
+ "canh_minh_hoa": {
+  "do_dai_s": [
+   3,
+   5
+  ],
+  "nhan_max_chu": 3,
+  "giu_sau_s": 1.2,
+  "giu_moi_chu_s": 0.3,
+  "hien_vao_s": 0.5,
+  "mo_ra_s": 0.3,
+  "dai_max_s": 6
+ },
+ "youtube": {
+  "video_dai_s": 180,
+  "man_ket_s": 20,
+  "teaser_khi_dai_hon_s": 600,
+  "teaser_s": [
+   15,
+   25
+  ]
+ },
+ "thumbnail": {
+  "max_chu": 8,
+  "max_tang": 3
+ },
+ "nhac": {
+  "_": "Nhạc nền theo TUYẾN NỘI DUNG (David chốt 2026-11-05) — project.tuyen / plan.json tuyen BẮT BUỘC, không ghi thì render_preview dừng",
+  "tuyen": {
+   "vui": {
+    "bai": [
+     "soi-1",
+     "soi-2"
+    ],
+    "khi": "vui, du lịch, khám phá, đi chơi, nhận quà / thành quả, năng lượng cao"
+   },
+   "tam_su": {
+    "bai": [
+     "lang-1"
+    ],
+    "khi": "tâm sự, chia sẻ quan điểm, mục tiêu, sứ mệnh, tầm nhìn, truyền cảm hứng, biết ơn"
+   },
+   "mat_mat": {
+    "bai": [
+     "lang-2"
+    ],
+    "khi": "mất mát, chia ly, kỷ niệm buồn, hoài niệm"
+   },
+   "y_nghia": {
+    "bai": [
+     "intro-lang"
+    ],
+    "khi": "hành hương, tâm linh, từ thiện, hành trình ý nghĩa (lực tăng dần)"
+   },
+   "kien_thuc": {
+    "bai": [],
+    "tam": "lang-1",
+    "khi": "kiến thức, hướng dẫn, giải thích, mẹo (trung tính, tập trung) — CHỜ David tải bài ambient/lo-fi"
+   }
+  },
+  "khoang_trong_duoi_giong_LU": 20,
+  "nen_nguong_duoi_giong_dB": 14,
+  "nen_ty_le": 20,
+  "nen_nha_ms": 1500,
+  "khi_noi_duoi_giong_LU_dat": [
+   30,
+   33
+  ]
+ }
+}

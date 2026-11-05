@@ -1,0 +1,20 @@
+# Memory Index
+
+- [3-tier architecture](notion-3tier-architecture.md) — App notion split into notion-db / notion-backend / notion-frontend, one repo each
+- [Local dev environment](notion-local-dev-environment.md) — nvm + embedded-postgres + npm allow-scripts; how to run the tiers
+- [Feature status](notion-feature-status.md) — ĐÃ pivot sang V2 3 trục (model cũ xoá sạch 2026-08-12); nguồn sự thật là notion-v2-spec-plan
+- [V2 spec + plan](notion-v2-spec-plan.md) — App V2 "3 trục Người/Thị trường/Tiền" + links backbone; 4 pha + dọn kho đã xong
+- [Video style edit](video-style-edit-workflow.md) — bộ skill ở ~/.claude/skills/dung-video; highlight 3–5 clip, 2 trạng thái, 4 bài nhạc cố định; vlog chuẩn Khoai Lang Thang + Jessie Luong
+- [Lean north star](notion-lean-north-star.md) — luôn giữ nền tảng tinh gọn/đơn giản nhất cho quản trị; gộp vào mô hình sẵn có, không đẻ thêm màn hình/nút
+- [Không ghi chú kỹ thuật trên video](video-no-technical-labels.md) — bỏ nhãn ×1,6/×0,5/slow-mo; chữ chỉ cho nội dung
+- [Chuyển video qua Drive](drive-video-transfer.md) — điện thoại ↔ Mac qua Google Drive Video-goc / Video-xong
+- [Người xem là trung tâm](video-viewer-centric-copy-big-channels.md) — chuẩn kênh lớn đã chứng minh thì sao chép luôn (2026-11-04)
+- [Kiến trúc skill video](video-skill-architecture.md) — hồ sơ tham số + 18 khối + thư viện hình + mẫu chuẩn; sửa đúng một chỗ (2026-11-04)
+- [Chỉ hình của chính video](video-own-footage-only.md) — thumbnail/ảnh bìa chỉ lấy từ chính video đó, không mượn từ video khác (2026-11-05)
+- [Nhạc theo tuyến nội dung](video-music-by-content-line.md) — project.tuyen bắt buộc; nhạc rất nhỏ khi nói (2026-11-05)
+- [Nội dung của David, thẩm mỹ của skill](david-content-skill-aesthetic.md) — không khuôn lời; học nhịp/trình bày, giữ thẩm mỹ (2026-11-05)
+- [Không tự render lại](video-no-rerender-unless-asked.md) — góp ý nhỏ chỉ sửa skill/kịch bản; render khi David yêu cầu (2026-11-05)
+- [Tự hỏi khi mơ hồ](ask-when-ambiguous.md) — 6 tín hiệu tự dừng hỏi, kể cả giữa chừng; không tự đoán rồi làm (2026-11-05)
+- [Hồ sơ David + bộ lọc nội dung](david-profile-and-content-filter.md) — ~/.claude/David.md, khối 00, kenh.json, sổ danh mục; đăng bài chờ "bắt đầu làm" (2026-11-05)
+- [Kết quả hơn tốc độ](result-over-speed.md) — làm đúng quy trình, bước cần kết quả render thì chờ; chỗ chưa rõ thì trao đổi (2026-11-05)
+- [Video dài không cắt](video-long-no-cut.md) — video dài để nguyên, kể cả lặng và ờ ừm; cắt ghép chỉ khi trích video ngắn (2026-11-05)

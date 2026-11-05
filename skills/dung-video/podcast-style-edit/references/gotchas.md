@@ -1,0 +1,35 @@
+# Lỗi đã gặp (riêng podcast) — đọc cùng `$BASE/references/gotchas.md`
+
+## Lời nói
+- **Mốc từ của Whisper trôi qua khoảng lặng ở chỗ đổi người** (thử nghiệm: "Cảm ơn anh" của người dẫn bị đặt sớm ~1,6 s, rơi vào
+  lượt khách) → speakers.py dời ranh giới đổi người vào khoảng lặng thật dài nhất trong ±2,5 s; phụ đề quanh chỗ đổi người phải
+  dời tay theo `speakers.js`.
+- Whisper nghe nhầm như skill gốc ("con nhà" → "căn nhà", "cái đá" → "cái đã", "Cô đang" → "Còn đang") — đối chiếu 2 lần chạy.
+
+## Người nói
+- speakers.py là ước đoán theo giọng (cao độ + phổ mel + kênh trái/phải), k-means 2 nhóm. Giọng nam/nữ tách tốt (thử nghiệm:
+  thử với giọng nam thật + giọng nữ đọc máy: đúng 8/8 đoạn, độ chắc 0,6–0,9 — chưa thử 2 người thật). Hai giọng cùng giới, cùng âm sắc dễ lẫn → luôn đọc `check/speakers.md` theo nội dung.
+- Thu stereo mỗi người một kênh → kênh trái/phải được dùng làm dấu hiệu mạnh (tự bật khi lệch kênh > 1,5 log-năng lượng).
+- Cần numpy → `py_setup.sh` cài vào `~/.cache/video-style-edit/podcast-venv` (python hệ thống không có numpy).
+
+## Render
+- Sân khấu `nen` render ~1,5× thời lượng (60 s → 93 s). Đổi TOPICS/STAGE/speakers → phải
+  render lại `nen` (đắt) → chốt kỹ ở bước chụp thử.
+- Khung ngang ban đầu làm kiểu pillar (sân khấu dọc giữa + chữ hai bên) → người dùng không muốn: **ngang là thiết kế toàn khung**.
+  Giờ project.js 1920×1080, `theme.js` giữ SAFE dọc (dải lớp phủ 830×435) khi `podcast`, `podframe.js` cho hình học khung thật.
+- Dải lớp phủ căn giữa khung ngang chạm vòng micro bên phải; căn giữa khung dọc lệch sang cột nút (vùng an toàn dọc không cân:
+  lề phải 180) → canh trái theo vùng an toàn ở cả hai khung.
+- Cảnh toàn màn hình bản dọc vẽ theo toạ độ 1080×1920 → ở khung ngang bị vỡ. Mỗi loại cần bản ngang riêng (FullScreenLand.jsx).
+- Ngang: tên người nói đặt dưới ý đang bàn (y 600) bị thẻ/chữ to đè → đặt dưới vòng micro bên phải (lớp phủ canh trái không tới).
+- `render.mjs` không tham số render cả `nen`; `render.mjs <id>` chỉ render cảnh đó.
+- Chụp thử cảnh có `start` sau mốc chụp → preview lấy khung 0 (trống) — mốc chụp phải nằm trong cảnh.
+
+## Chữ tiếng Việt
+- Barlow Condensed in hoa với `lineHeight: 1` + khung `overflow: hidden` chừa cố định (34/30 px): ở cỡ 140–150 px dấu chồng của dòng
+  dưới chạm dòng trên ("NGẪU", "NHIỀU", "CỦA"), dấu nặng bị cắt ("BỊ" thành "BI"), dấu nặng của dòng nhấn lòi ra khỏi ô màu
+  ("LỰC"). Sửa: `VN` trong podframe.js — giãn dòng + chừa chỗ theo tỉ lệ cỡ chữ. Luôn soi ảnh chụp phóng to các chữ Ầ Ễ Ỗ Ị Ự.
+- Ô màu của hook cao thêm khi chừa dấu → chạm sóng âm ở cỡ 150 → giới hạn cỡ chữ to podcast ≤ 118–120.
+
+## Nội dung
+- Người dùng chốt: **chỉ nội dung gốc**. Lần thử đầu ghép giọng đọc máy làm "người dẫn" và đặt nhãn "Người dẫn / Khách mời" →
+  bị bỏ. Không thêm lời, không tự đặt tên/vai người nói; thử nghiệm cũng chỉ dùng đoạn trích nguyên từ bản ghi thật.

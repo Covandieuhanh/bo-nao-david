@@ -1,0 +1,22 @@
+.DS_Store
+__pycache__/
+*.pyc
+node_modules/
+.venv/
+
+# Không bao giờ đưa lên
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.jsonl
+*.sqlite
+.claude.json*
+mk.csv
+cookies*
+
+# Video gốc và thành phẩm để ở Drive
+*.mp4
+*.mov
+*.MOV

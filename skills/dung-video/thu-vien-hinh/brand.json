@@ -1,0 +1,10 @@
+{
+  "_": "BỘ NHẬN DIỆN DAVID — MỘT NGUỒN cho cả 4 loại video (làm video · ghép vlog · podcast · highlight; người dùng chốt 2026-11-04). new_montage.sh chép file này sang dự án ghép; scripts Python cũng đọc ở đây. Sửa nhận diện CHỈ ở đây.",
+  "name": "DAVID",
+  "sting": "sting.wav",
+  "stingVol": 0.5,
+  "voiceLUFS": -20,
+  "musicGapLU": 22,
+  "musicGapVlogLU": 20,
+  "endcardLen": 1.6
+}

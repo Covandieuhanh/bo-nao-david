@@ -1,0 +1,49 @@
+# Khối 19-dang-bai: Đăng / hẹn giờ lên YouTube, trang Facebook, TikTok qua trình duyệt
+
+**Dùng trong:** skill `dang-da-kenh` bước 6 · **Đầu vào:** bản cuối + bài đăng đã qua CỔNG DUYỆT 2 · `ho-so/kenh.json` · `ho-so/giong-van-david.md`
+**Đầu ra:** bài đã hẹn giờ (hoặc đăng) + ảnh chụp xác nhận · dòng "chờ đăng / đã đăng" trong sổ danh mục
+**Trạng thái:** các bước dưới lấy từ giao diện thật ngày 05/11/2026 (đọc trang, CHƯA bấm đăng lần nào). Lần đăng thật đầu tiên ở mỗi
+nền tảng: đi chậm, chụp từng bước, sửa README này theo giao diện thật.
+
+## Luật an toàn (không ngoại lệ)
+- **Chỉ đăng bài David đã duyệt ở cổng 2**, đúng nội dung đã duyệt (video, chữ, kênh, giờ). Đổi bất cứ gì sau duyệt → hỏi lại.
+- **Không bao giờ nhập mật khẩu**, không đổi cài đặt tài khoản (tên, ảnh, bio, quyền) khi David chưa duyệt riêng việc đó.
+- **Ưu tiên hẹn giờ** (thứ Ba / thứ Sáu 20:00 giờ VN) bằng chức năng có sẵn → David huỷ được trước giờ lên; máy không cần bật lúc bài lên.
+- **Facebook cá nhân:** Claude soạn câu, **David tự bấm chia sẻ** (tự động hoá tài khoản cá nhân dễ bị khoá).
+- Trước cú bấm cuối ("Lên lịch" / "Đăng" / "Chia sẻ"): chụp màn hình phần xem trước, đối chiếu với bản đã duyệt; sau đó chụp xác nhận.
+- Gặp mã xác minh, CAPTCHA, đăng nhập lại, cảnh báo bảo mật → **dừng, gọi David** (không tự vượt).
+
+## Trình duyệt
+- **Đọc / soạn / kiểm** (không cần tải file): trình duyệt riêng trong app (`mcp__Claude_Browser__*`) — David đã đăng nhập 3 nền tảng.
+- **Tải video lên** cần lệnh chọn file → **Playwright CLI + Chrome hồ sơ riêng** (trình duyệt trong app không chọn file được; YouTube chặn
+  cách đưa file qua máy chủ cục bộ; Claude in Chrome giới hạn 10 MB/lần):
+  ```bash
+  playwright-cli -s=mxh open <url> --browser=chrome --headed --persistent --profile="$HOME/.cache/david-mxh-chrome"
+  playwright-cli -s=mxh snapshot            # lấy ref của ô chọn file / nút
+  playwright-cli -s=mxh upload "<đường dẫn video-final.mp4>"
+  ```
+  David đã đăng nhập cả 3 nền tảng trong hồ sơ này (05/11/2026; hồ sơ lưu ở `~/.cache/david-mxh-chrome`). Hết phiên → nhờ David đăng nhập lại, không tự nhập.
+
+## YouTube (Studio) — bản dài + Shorts
+1. `https://studio.youtube.com/channel/<id>/videos/upload?d=ud` → ô chọn file → `upload` video.
+2. **Chi tiết:** Tiêu đề (≤ 100 ký tự, theo phat-hanh.md) · Mô tả (tóm ý + "Vấn đề"/"Kết quả" + chương + link nhắn tin trang nếu bài Mời) ·
+   Hình thu nhỏ (thumb-1.jpg; chỉ video ngang) · "Không, nội dung này không dành cho trẻ em" · Thẻ / ngôn ngữ: Tiếng Việt.
+3. **Thành phần video:** màn hình kết thúc (nếu có `ytEnd`: 2 video + nút đăng ký) · thẻ.
+4. **Chế độ hiển thị → Lên lịch** → ngày + giờ (múi giờ Việt Nam, 20:00) → **Lên lịch** (cú bấm cuối).
+5. Sau khi hẹn: ghim bình luận "Vấn đề / Kết quả" (Studio → Bình luận) khi video đã lên — hoặc nhắc David.
+Shorts: video dọc ≤ 3 phút cùng luồng trên; tiêu đề ngắn + #Shorts không bắt buộc.
+
+## Trang Facebook (Meta Business Suite) — Reels + bài viết
+- **Reels:** `https://business.facebook.com/latest/reels_composer/?asset_id=<page_id>` → "Thêm video" → `upload` → **Mô tả** (caption
+  theo giọng David + hashtag 2–3) → **Tiếp** (Chỉnh sửa: ảnh bìa = mốc khung bìa đề xuất) → **Tiếp** (Chia sẻ) → "Lên lịch" → ngày giờ → **Lên lịch**.
+- **Bài viết chữ / ảnh:** Business Suite → Nội dung → Tạo bài viết → trang "<tên trang>" → nội dung → "Lên lịch".
+- Bài **Mời**: kiểm tra trang có nút "Gửi tin nhắn" (Messenger) — link `kenh.fanpage.link_nhan_tin`.
+
+## TikTok (TikTok Studio) — clip dọc
+1. `https://www.tiktok.com/tiktokstudio/upload?from=upload` → "Chọn video" → `upload` (tối đa 30 GB / 60 phút).
+2. **Mô tả** (caption + hashtag) · **Ảnh bìa** (chọn khung theo mốc đề xuất) · Ai có thể xem: Mọi người · cho phép bình luận.
+3. **Thời điểm đăng → Lên lịch** (TikTok cho hẹn ≥ 15 phút, ≤ 10 ngày) → ngày giờ → **Lên lịch** (cú bấm cuối).
+4. Lưu ý: TikTok chặn tự động khá gắt — nếu hiện kiểm tra bot / hạn chế → dừng, nhờ David bấm.
+
+## Facebook cá nhân
+Không đăng tự động. Sau khi bài trang lên: gửi David câu chia sẻ (1–2 câu, giọng đời thường) + link bài trang để David bấm "Chia sẻ".

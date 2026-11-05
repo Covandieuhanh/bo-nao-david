@@ -1,0 +1,80 @@
+{
+ "_": "Hồ sơ KÊNH của David (David chốt 05/11/2026 — nguồn: ~/.claude/David.md mục 5 + trao đổi với Claude Code). Khối 00 (lọc), 08 (màn chốt), 15 (phát hành), 16 (số liệu) đọc file này.",
+ "kenh": {
+  "youtube": {
+   "vai_tro": "chính — bản gốc hoặc bản biên tập (dài theo nội dung) + Shorts",
+   "link": "https://www.youtube.com/channel/UCfcu5vNUxUkIp4s73FSCYng",
+   "ten": "David Trần - Trainer định hướng",
+   "tai_khoan": "trainer.davidtran@gmail.com"
+  },
+  "fanpage": {
+   "vai_tro": "Reels + bài viết theo giọng David + mời nhắn 'gỡ' (Messenger trang)",
+   "link": "https://www.facebook.com/davidsuckhoe",
+   "link_nhan_tin": "https://m.me/davidsuckhoe",
+   "ten": "David Sức khoẻ",
+   "page_id": "1195401870327831",
+   "ghi_chu": "05/11/2026: bio mới, hạng mục Blog cá nhân + Giáo dục, link = kênh YouTube. Tên chưa đổi được (David tự đổi sau, có thể qua app điện thoại). Ảnh bìa còn chữ kinh doanh cũ — chờ David quyết.",
+   "ten_muc_tieu": "David Trần - Trainer định hướng"
+  },
+  "tiktok": {
+   "vai_tro": "clip dọc ngắn (highlight)",
+   "link": "https://www.tiktok.com/@davidsuckhoe",
+   "ten": "David Trần Trainer định hướng",
+   "ghi_chu": "05/11/2026: tên + bio mới (khoá đổi tên tới 12/11/2026). Link ahasale chỉ sửa được trên app — David tự gỡ. Video cũ chạm lằn ranh (luân xa, diện chẩn, spa) — chờ David quyết ẩn hay giữ."
+  },
+  "facebook_ca_nhan": {
+   "vai_tro": "đời thường, hành trình, chia sẻ lại bài trang — David tự bấm chia sẻ",
+   "link": "https://www.facebook.com/davidsuckhoe108",
+   "ten": "David Trần (Trainer)",
+   "ghi_chu": "05/11/2026: link ahasale thay bằng kênh YouTube."
+  }
+ },
+ "lich": {
+  "ngay": [
+   "Tue",
+   "Fri"
+  ],
+  "gio_vn": "20:00",
+  "mui_gio": "Asia/Ho_Chi_Minh",
+  "ghi_chu": "David ở Đức — 20:00 VN = 14:00 Đức (mùa đông) / 15:00 (mùa hè)"
+ },
+ "dan_dat": {
+  "ty_le": {
+   "khong": 4,
+   "goi_mo": 4,
+   "moi": 2
+  },
+  "moi_o_vi_tri": [
+   5,
+   10
+  ],
+  "cau_moi": "nhắn mình một chữ 'gỡ'",
+  "khong_noi_gia": true
+ },
+ "binh_luan": {
+  "tu_khoa": [
+   "Vấn đề",
+   "Kết quả"
+  ],
+  "y_nghia": {
+   "Vấn đề": "vì sao chưa làm được",
+   "Kết quả": "làm được thì kết quả là gì"
+  }
+ },
+ "do_luong": {
+  "chinh": "số người nhắn 'gỡ'",
+  "khong_dung": "lượt xem làm thước đo chính"
+ },
+ "kho": {
+  "quay_san_toi_thieu": 4,
+  "nhanh_muc_tieu_ty_le": {
+   "goc_va_cong_viec_toi_thieu": 0.7
+  }
+ },
+ "khong_ghi_tren_video": [
+  "số tập",
+  "ngày ghi âm",
+  "thông tin phát hành"
+ ],
+ "trinh_duyet": "Trình duyệt riêng trong app Claude (mcp Claude_Browser) — David đã đăng nhập 3 nền tảng ở đây (05/11/2026)"
+}

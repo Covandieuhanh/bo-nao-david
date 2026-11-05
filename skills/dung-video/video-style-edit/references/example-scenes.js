@@ -1,0 +1,67 @@
+// VÍ DỤ THẬT (video DJI 2026-11-01, 3:34, dọc): kịch bản 17 cảnh đã được người dùng duyệt.
+// Dùng để tham khảo mật độ cảnh, cách chọn loại cảnh và cách gắn mốc thời gian vào lời nói.
+
+const JOBS = [
+  'Bán giày sneaker', 'Bồi bàn', 'Thợ hồ', 'Thợ hàn', 'Thợ mộc', 'Thợ cắt cỏ',
+  'Sân golf', 'Marketing', 'Hướng dẫn viên', 'MC', 'Biên tập viên', 'Kinh doanh',
+];
+
+export const SCENES = [
+  {id: 's01-gioi-thieu', type: 'lower', start: 0.3, end: 5.6,
+    props: {name: 'DAVID', role: 'Tâm sự về nghề'}},
+  {id: 's02-chuyen-ve-nghe', type: 'kinetic', start: 14.18, end: 17.64,
+    props: {lines: ['KỂ CHUYỆN', 'VỀ NGHỀ.']}},
+  {id: 's03-di-lam-tu-2011', type: 'card', start: 17.64, end: 27.1,
+    props: {variant: 'year', eyebrow: 'ĐI LÀM TỪ', from: 2011, to: 2026, toAt: 18.0, fromAt: 21.1,
+      footer: 'Từ năm lớp 11', footerAt: 23.96}},
+  {id: 's04-ban-giay', type: 'card', start: 27.3, end: 32.6,
+    props: {variant: 'job', eyebrow: 'NGHỀ 01', title: 'Bán giày sneaker', photo: '01.jpg',
+      footer: 'Cộng tác viên giày sneaker', footerAt: 29.5}},
+  {id: 's05-thoi-sinh-vien', type: 'montage', start: 35.9, end: 48.6,
+    props: {eyebrow: 'THỜI SINH VIÊN', items: [
+      {n: 2, label: 'Bồi bàn', photo: '02.jpg', at: 35.9},
+      {n: 3, label: 'Thợ hồ', photo: '03.jpg', at: 37.5},
+      {n: 4, label: 'Thợ hàn', photo: '04a.jpg', at: 40.2},
+      {n: 5, label: 'Thợ mộc', photo: '04b.jpg', at: 41.5},
+      {n: 6, label: 'Thợ cắt cỏ', photo: '04c.jpg', at: 42.8},
+      {n: 7, label: 'Sân golf', photo: '05.jpg', at: 44.1},
+    ]}},
+  {id: 's06-marketing', type: 'card', start: 51.6, end: 57.6,
+    props: {variant: 'marketing', eyebrow: 'NGHỀ 08 · HỌC CÔNG NGHỆ', title: 'Marketing',
+      footer: 'Chạy ad, chạy quảng cáo', footerAt: 55.1}},
+  {id: 's07-truyen-thong', type: 'montage', start: 61.5, end: 72.3,
+    props: {eyebrow: 'ĐƯỢC ĐI HỌC ĐẠI HỌC', items: [
+      {n: 9, label: 'Hướng dẫn viên', photo: '07a.jpg', at: 61.7},
+      {n: 10, label: 'MC', photo: '07b.jpg', at: 63.3},
+      {n: 11, label: 'Biên tập viên Đài VTC', photo: '08.jpg', at: 64.9},
+      {n: 12, label: 'Kinh doanh', photo: '09.jpg', at: 68.5},
+    ]}},
+  {id: 's08-12-nghe', type: 'recap', start: 72.3, end: 80.0,
+    props: {jobs: JOBS, subtitle: 'Ai cũng sẽ có rất nhiều nghề trong cuộc đời', subtitleAt: 75.3}},
+  {id: 's09-khong-ngau-nhien', type: 'kinetic', start: 82.9, end: 88.2,
+    props: {lines: ['KHÔNG PHẢI', 'NGẪU NHIÊN.']}},
+  {id: 's10-4-nam-tinh-lang', type: 'card', start: 101.0, end: 107.8,
+    props: {variant: 'years4', eyebrow: 'MÌNH ĐÃ DÀNH', value: 4, unit: 'NĂM',
+      footer: 'Học cách ngồi tĩnh lặng', footerAt: 103.2}},
+  {id: 's11-moi-ngay', type: 'card', start: 107.8, end: 117.0,
+    props: {variant: 'daily', eyebrow: 'MỖI NGÀY', title: 'Thời gian cho bản thân',
+      pill: 'KHÔNG AI LÀM PHIỀN', pillAt: 111.3}},
+  {id: 's12-rat-ro', type: 'kinetic', start: 122.6, end: 126.8,
+    props: {lines: ['MỌI THỨ', 'RẤT RÕ.']}},
+  {id: 's13-diem-chung', type: 'converge', start: 127.9, end: 140.2,
+    props: {jobs: JOBS, mergeAt: 131.0, outputs: [
+      {label: 'NĂNG LỰC', at: 134.4}, {label: 'KỸ NĂNG', at: 135.6}, {label: 'NGHỀ CỐT LÕI CẢ ĐỜI', at: 136.9},
+    ]}},
+  {id: 's14-phuong-phap', type: 'card', start: 152.6, end: 162.0,
+    props: {variant: 'steps', eyebrow: 'PHƯƠNG PHÁP', steps: [
+      {text: 'Ngồi xuống', at: 152.8},
+      {text: 'Liệt kê những gì đã làm', at: 154.6},
+      {text: 'Tìm ra điểm chung', at: 157.8},
+    ]}},
+  {id: 's15-tim-som', type: 'card', start: 176.5, end: 181.3,
+    props: {variant: 'early', eyebrow: 'TÌM RA CÀNG SỚM', title: 'Càng nhiều thời gian rèn luyện', secondAt: 178.0}},
+  {id: 's16-master-vs-ai', type: 'master', start: 181.5, end: 197.4,
+    props: {masterAt: 181.6, shallowAt: 187.0, aiAt: 193.8, replaceAt: 195.5}},
+  {id: 's17-ket', type: 'kinetic', start: 207.2, end: 212.6,
+    props: {lines: ['TÌM RA NĂNG LỰC', 'CỦA BẢN THÂN.']}},
+];
