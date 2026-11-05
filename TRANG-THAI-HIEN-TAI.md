@@ -11,7 +11,7 @@ Chặng 1 của nghề: 1–3 ca thật online, miễn phí đổi lời chứng
 | Việc | Tình trạng | Bước tiếp |
 |---|---|---|
 | Podcast "Trainer cho người làm trainer" (DJI_16, 8:57, giữ nguyên không cắt) | David đã duyệt bố cục và cho render tối 05/11. Dự án ở `~/Movies/podcast-dji-20261105`. Lúc ghi chưa thấy `video-final.mp4` | Kiểm tra bản cuối, gửi David duyệt kèm thumbnail, tiêu đề, mô tả (cổng 2). Dự kiến YouTube ngang thứ Ba 10/11 20:00 |
-| Rà soát video cũ TikTok và fanpage | Có danh sách đề xuất ẩn trong [dang-lam/ra-soat-video-cu.md](dang-lam/ra-soat-video-cu.md). Ẩn là để riêng tư, không xoá | Chờ David quyết |
+| Rà soát video cũ TikTok và fanpage | Có danh sách đề xuất ẩn trong [dang-lam/ra-soat-video-cu.md](dang-lam/ra-soat-video-cu.md), và danh sách bổ sung ngày 06/11 trong [dang-lam/nghien-cuu-trang-ca-nhan.md](dang-lam/nghien-cuu-trang-ca-nhan.md). Ẩn là để riêng tư, không xoá | Chờ David quyết |
 | Làm lại kho 100 video | Kho cũ còn phần kinh doanh đã bỏ | Làm lại theo ba tầng: bản thân → công việc → mối quan hệ |
 
 ## Chờ David quyết hoặc tự làm

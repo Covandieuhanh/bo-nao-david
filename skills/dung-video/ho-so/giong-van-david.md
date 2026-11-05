@@ -1,7 +1,7 @@
 # Giọng văn David — viết caption, bài viết, mô tả, bình luận ghim
 
-Nguồn (05/11/2026): lời nói thật của David trong podcast "Mục tiêu và sứ mệnh" (8:19), vlog Miếu Bà Cam, vlog VF3. Facebook cá nhân và
-fanpage chưa có bài viết chữ đủ để học (chủ yếu chia sẻ video spa của hướng cũ) → học từ cách David NÓI. Cập nhật khi David có bài viết mới.
+Nguồn chính (05/11/2026): lời nói thật của David trong podcast "Mục tiêu và sứ mệnh" (8:19), vlog Miếu Bà Cam, vlog VF3 → học từ cách David NÓI.
+Bổ sung (06/11/2026): bài viết chữ trên Facebook cá nhân, 11/08–26/10/2026. Fanpage chưa có bài chữ đủ để học. Cập nhật khi David có bài viết mới.
 
 ## David nói thế nào (quan sát)
 - **Xưng hô:** "mình" (chủ yếu), đôi khi tự gọi "David"; gọi người nghe "các bạn", "mọi người". Khi kể lời người khác thì "tôi".
@@ -16,6 +16,12 @@ fanpage chưa có bài viết chữ đủ để học (chủ yếu chia sẻ vid
 - Dạng: giới thiệu dịch vụ / thiết bị / đối tác spa, voucher "trải nghiệm 0 đồng", mẹo sức khoẻ ("diện chẩn tụt huyết áp…").
 - **Giữ:** sự thân mật, câu ngắn, kể trải nghiệm thật ("Lưu lại làm kỉ niệm rồi sẽ ghé lại…").
 - **Bỏ cho thương hiệu trainer:** giọng giới thiệu dịch vụ / bán hàng, voucher, công dụng sức khoẻ, hashtag cũ, "nha / nè" ở mọi câu.
+
+## Bài viết chữ trên Facebook cá nhân (đọc 06/11/2026 — phần lớn còn hướng cũ)
+- Trang trọng hơn lúc nói: tự gọi "David"; câu dài, một đoạn liền; từ hay gặp "nhân duyên", "phụng sự", "thấu hiểu", "biết ơn", "xứng đáng", "chiêm nghiệm".
+- **Giữ:** câu có hình ảnh của nghề, như "văn vẫn phải ôn, võ vẫn phải luyện"; tự nhìn lại bản thân, như "nhận biết và thấu hiểu chính mình ở hiện tại"; lòng biết ơn khi nó gắn với một việc cụ thể.
+- **Bỏ cho thương hiệu trainer:** "hệ sinh thái", "đối tác", "giải pháp", "doanh chủ"; lời chào mừng trang trọng kiểu sự kiện; "nhân duyên", "phụng sự" dùng dày vì dễ nghe xa người đọc mới.
+- Khi bài viết và lời nói lệch nhau, theo cách David nói.
 
 ## Nâng cấp giọng cho thương hiệu trainer (David duyệt hướng 05/11/2026)
 - **Bình tĩnh, rõ, có khung**: mỗi bài đi Vấn đề → Giải pháp → Thực thi (rút từ lời David), không lan man.
