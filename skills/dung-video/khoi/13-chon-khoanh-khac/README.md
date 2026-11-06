@@ -1,4 +1,4 @@
-# Khối 13-chon-khoanh-khac: Chọn khoảnh khắc highlight: bản đồ cả video, 3–5 clip, chọn câu, bố trí lời kêu gọi, cắt + kiểm lời
+# Khối 13-chon-khoanh-khac: Chọn khoảnh khắc highlight: bản đồ cả video, tự chọn ý theo 4 câu, chọn câu, bố trí lời kêu gọi, cắt + kiểm lời
 
 **Dùng trong:** highlight
 **Đầu vào:** video dài / dự án gốc
@@ -48,9 +48,10 @@ Gán vai cho từng câu:
 - **KEUGOI** — mời bình luận/làm theo, câu hỏi kết, "Vấn đề:" / "Kết quả:". · **KETQUA** — điều thay đổi khi làm được.
 - **CHUYEN** — kể chuyện cá nhân. · **THUA** — chào hỏi, lặp ý, "như mình nói ở trên", chuyển đoạn, ậm ừ.
 
-### 3. Chọn 3–5 khoảnh khắc, rồi chọn câu cho từng clip
+### 3. Tự chọn ý theo 4 câu, rồi chọn câu cho từng clip
+**Không hỏi David chọn đoạn.** Bốn câu `boi_canh`, `y_tron`, `mang_ve`, `chua_lai` ở đầu `cat-highlight-video/SKILL.md` là thước chọn; số clip và độ dài theo ý, không có số cố định.
 Từ bản đồ bước 2, liệt kê các **khoảnh khắc ứng viên** (một chuyện kể, một nghịch lý, một con số gây sốc, một lời khuyên làm được
-ngay…) kèm mốc; chấm theo câu mở (mục 6 dưới) + có lời kêu gọi đi kèm không. Giữ 3–5 khoảnh khắc mạnh nhất, khác nhau rõ
+ngay…) kèm mốc; chấm theo 4 câu trước, rồi theo câu mở (mục 6 dưới). Giữ các ý đạt đủ 4 câu, khác nhau rõ
 (luật 2), đặt tên clip A (mạnh nhất), B, C… Với **mỗi clip**, chọn câu phục vụ lời hứa cốt lõi hoặc ý lớn của khoảnh khắc đó:
 1. Một câu CHAM mạnh nhất (lấy từ đâu cũng được).
 2. 1–2 câu DAUHIEU / GOCRE nối tự nhiên với câu chạm — là ý chính của cả video, không phải chi tiết phụ.
@@ -63,7 +64,7 @@ ngay…) kèm mốc; chấm theo câu mở (mục 6 dưới) + có lời kêu g�
    "còn 5 phút để sống") = **kết quả trước, quá khứ sau** ("3 năm sau khi bị chê… gọi vốn 5 triệu USD") = **câu đố cho người
    xem** ("bạn đoán được…?") > câu khiêu khích / con số danh sách ("3 bài học…") > câu hỏi day dứt ("tại sao… không phải thuốc
    thang") > nỗi đau cụ thể > lời than chung. Câu mở có thể là một vế ngắn 2–4 s đặt trước câu chạm.
-7. **Chừa ý cho bản đầy đủ** (luật 10): ghi trong ke-hoach-cat.md ý nào được để dành (vd. ví dụ cái cây, nghĩa của "Haruku").
+7. **Chừa cho bản đầy đủ** (luật 10): ghi trong ke-hoach-cat.md chuyện hoặc ý mở rộng nào được để dành; không chừa phần kết của ý trong clip.
 
 8. **Thẻ tít mở đầu** (luật 7): viết 1 tít ≤ 8 chữ cho từng clip, ghi kèm câu gốc làm căn cứ.
 
@@ -102,7 +103,7 @@ Viết `$P/phuong-an.json` — mỗi clip một mục trong `options` (A, B, C�
 `text` = nguyên văn câu (từ captions-goc.js nếu có):
 ```json
 {"options": [
-  {"id": "A", "layout": "Giao việc sớm, chốt cuối", "pieces": [
+  {"id": "A", "layout": "Giao việc sớm, chốt cuối", "chon_y": {"boi_canh": "…", "y_tron": "…", "mang_ve": "…", "chua_lai": "…"}, "pieces": [
     {"start": 4.60, "end": 8.30, "role": "CHAM", "text": "…nguyên văn…"},
     {"start": 263.35, "end": 269.28, "role": "HANHDONG", "text": "…"},
     {"start": 379.12, "end": 384.72, "role": "KEUGOI", "text": "…", "zoom": true}]},
@@ -120,12 +121,12 @@ nối ("Nhưng…") nếu câu vẫn đúng nghĩa, rồi để bước kiểm l
 ```bash
 python3 -I $SKILL/scripts/cut_highlight.py "$P"          # cắt bản kiểm lời cat/A.mp4, cat/B.mp4… (chạy nền)
 ```
-→ `cat/<id>.mp4` (khung như nguồn) + `cat/<id>.md` (bảng cắt, tổng thời lượng, ⚠ ngoài 30–60 s, **kiểm lời**) + `cat/<id>-map.json`
-+ `cat/<id>-kiem.txt`. Script tự: lùi 0,15 s / thêm 0,25 s · gộp câu liền nhau (≤ 0,6 s) · cắt lặng > 0,6 s giữa câu · **chèn** 1 s lặng
+→ `cat/<id>.mp4` (khung như nguồn) + `cat/<id>.md` (4 câu, lời đọc nối, mốc đoạn ghép, bảng cắt, tổng thời lượng, **kiểm lời**) + `cat/<id>-map.json`
++ `cat/<id>-kiem.txt`. Thiếu `chon_y` thì script dừng. Script tự: lùi 0,15 s / thêm 0,25 s · gộp câu liền nhau (≤ 0,6 s) · cắt lặng > 0,6 s giữa câu · **chèn** 1 s lặng
 (giữ khung cuối) sau KEUGOI kết bằng "?" và sau KEUGOI cuối clip — không lấy tiếng nguồn phía sau vì câu kế có thể nói liền ·
 `zoom: true` dồn 1,0 → 1,12× · **cắt cứng** ở mỗi mối nhảy + **rút khoảng lặng ≥ 0,45 s trong câu** (`pauses.py`, trừ câu
 `zoom`) · fade âm ở mối · tiếng fltp 48 kHz stereo · **chép lời lại bản cắt** và so với `text`.
 **Kiểm lời phải khớp**: chữ thừa ở mối = lọt đuôi câu bên cạnh → thu mốc; chữ thiếu = bị cụt → nới mốc; lệch kiểu "nhé/nhá" là
 Whisper nghe khác (bỏ qua). Cắt lại tới khi sạch.
-Ghi tiếp vào `ke-hoach-cat.md`: kiểu bố trí + lý do, độ dài + lý do, tông từng câu, ý chừa cho bản đầy đủ, bảng cắt.
+Ghi tiếp vào `ke-hoach-cat.md`: kiểu bố trí + lý do, tông từng câu, ý chừa cho bản đầy đủ, bảng cắt.
 

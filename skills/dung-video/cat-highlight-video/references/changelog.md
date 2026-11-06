@@ -100,3 +100,4 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
 - 2026-11-06: David duyệt cả 3 clip "Đi trainer" làm mẫu cho các video sau; đã thêm vào `mau-chuan/mau.json`.
 - Khuôn podcast đồ hoạ dọc: bỏ câu kêu gọi ghép và màn chốt bình luận (David thấy ép buộc, cụt cảm xúc), kết bằng màn hình cuối 3 s mời xem YouTube; nhạc thấp hơn giọng khoảng 23 dB (David nghe 2 mức, chọn mức này).
 - Người xem clip là người xem độc lập; chấm riêng từng clip. David loại clip chỉ nói nỗi buồn.
+- 2026-11-07: David thấy clip 39 giây xem riêng không hiểu gì. Luật gốc mới: clip đạt hai mục tiêu (chuyển hoá ngay trong clip, kéo sang bản dài) qua bốn câu `boi_canh`, `y_tron`, `mang_ve`, `chua_lai`. Claude tự chọn ý, không hỏi David chọn đoạn. Bỏ mọi số cố định về độ dài và số clip. Được ghép đoạn xa khi đúng mạch, phải báo mốc. `cut_highlight.py` dừng nếu thiếu `chon_y`.

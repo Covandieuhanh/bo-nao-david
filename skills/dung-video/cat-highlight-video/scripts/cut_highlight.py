@@ -1,6 +1,6 @@
 # Cắt + ghép các câu đã chọn thành clip highlight: cut_highlight.py <dự án> [mã phương án, mặc định tất cả]
 # Đọc <dự án>/phuong-an.json:
-#   {"options": [{"id": "A", "pieces": [{"start": 812.4, "end": 817.9, "role": "CHAM", "text": "...", "zoom": false}, ...]}, ...]}
+#   {"options": [{"id": "A", "chon_y": {"boi_canh": "...", "y_tron": "...", "mang_ve": "...", "chua_lai": "..."}, "pieces": [{"start": 812.4, "end": 817.9, "role": "CHAM", "text": "...", "zoom": false}, ...]}, ...]}
 # pieces theo THỨ TỰ PHÁT trong clip; start/end = mốc chữ đầu / chữ cuối trong video nguồn (lấy từ words.srt). Script tự:
 #   - lùi 0,15 s trước chữ đầu, thêm 0,25 s sau chữ cuối (không mất âm)
 #   - thêm 1 s lặng sau câu KEUGOI kết bằng "?" và sau câu cuối clip nếu là KEUGOI (người xem kịp nghĩ) — lặng chèn vào
@@ -58,6 +58,10 @@ fmt = lambda s: f"{int(s // 60)}:{s % 60:05.2f}"
 
 for opt in plan["options"]:
     if only and opt["id"] != only: continue
+    # BỐN CÂU CHỌN Ý (David chốt 2026-11-07): thiếu một câu thì không cắt, chọn lại ý.
+    _cy = opt.get("chon_y") or {}
+    _thieu = [k for k in ("boi_canh", "y_tron", "mang_ve", "chua_lai") if not str(_cy.get(k, "")).strip()]
+    if _thieu: sys.exit(f"⛔ Clip {opt['id']} thiếu chon_y: {', '.join(_thieu)} — đọc bốn câu chọn ý trong SKILL.md, chọn lại ý.")
     pcs = opt["pieces"]
     segs = []
     for i, p in enumerate(pcs):
@@ -111,8 +115,11 @@ for opt in plan["options"]:
         t += s["h1"]
     json.dump(dict(src_duration=round(dur, 3), clip_duration=round(t, 3), segs=mp, jumps=jumps),
               open(os.path.join(P, "cat", f"{opt['id']}-map.json"), "w"), indent=1)
-    warn = "" if 30 <= t <= 60 else (" ⚠ ngoài 30–60 s" if t <= 90 else " ⚠ QUÁ 90 s — bỏ bớt câu")
-    md = [f"# Clip {opt['id']} — {t:.1f} s{warn}", "", f"{len(segs)} đoạn cắt từ nguồn (gồm khoảng lặng trong câu đã rút)", "",
+    warn = ""   # độ dài theo ý, không có số cố định (David chốt 2026-11-07)
+    _ghep = [f"{fmt(a['end'])} → {fmt(b['start'])}" for a, b in zip(pcs, pcs[1:]) if b["start"] - a["end"] > 30 or b["start"] < a["end"]]
+    _chon = ["## Bốn câu chọn ý", *[f"- **{k}:** {_cy[k]}" for k in ("boi_canh", "y_tron", "mang_ve", "chua_lai")], "",
+             "## Lời đọc nối", " ".join(p.get("text", "") for p in pcs), ""] + ([f"## Đoạn ghép xa nhau (báo David)", *[f"- {g}" for g in _ghep], ""] if _ghep else [])
+    md = [f"# Clip {opt['id']} — {t:.1f} s{warn}", "", f"{len(segs)} đoạn cắt từ nguồn (gồm khoảng lặng trong câu đã rút)", "", *_chon,
           "| # | Mốc clip | Mốc nguồn | Vai | Lời |", "|---|---|---|---|---|", *rows]
     print(f"{out}  {t:.1f}s  {len(segs)} đoạn{warn}")
     if CHECK:

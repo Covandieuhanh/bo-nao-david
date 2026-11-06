@@ -1,15 +1,5 @@
 {
  "_": "Highlight (clip ngắn kéo người xem về bản đầy đủ) — hình mẫu chính: clip Have A Sip + Sao Việt 24H; quốc tế DOAC / Jay Shetty. Xem highlight.md.",
- "so_clip": [
-  3,
-  5
- ],
- "do_dai_s": [
-  30,
-  60
- ],
- "max_s": 90,
- "max_danh_sach_s": 120,
  "cat_lang": {
   "trong_cau_min_s": 0.45,
   "giu_s": 0.12,
@@ -31,5 +21,6 @@
   "nha_ms": 400
  },
  "man_cuoi_s": 3.0,
- "man_cuoi_kenh": "Trainer David Trần"
+ "man_cuoi_kenh": "Trainer David Trần",
+ "_chon_y": "David chốt 2026-11-07: không có số cố định cho độ dài và số clip; theo bốn câu chọn ý trong cat-highlight-video/SKILL.md."
 }

@@ -1,11 +1,25 @@
 ---
 name: cat-highlight-video
-description: Cắt một video dài (bản YouTube 5–60 phút của người dùng) thành 3–5 clip highlight DỌC 9:16 (1080×1920) 30–60 giây — mỗi clip một khoảnh khắc mạnh khác nhau, tự đứng được — dùng chung cho Reels, TikTok, Shorts, Facebook Reels, theo chuẩn đội cắt clip của kênh lớn (DOAC, Jay Shetty, Hormozi): thẻ tít mở đầu viết như tít báo đúng ý người nói, phụ đề 1–3 chữ to mỗi nhịp, cắt cứng giấu mối + cắt sạch khoảng lặng, nhịp hai tông (sôi động / lắng, nhạc nền cố định của kênh). Highlight ra ĐÚNG LOẠI của video gốc — video tự quay có người nói → hình người nói (khung dựng của skill video-style-edit); podcast/video toàn đồ hoạ → podcast đồ hoạ dọc cùng phong cách, cùng tên tập (skill podcast-style-edit). Lời trong clip chỉ là nguyên văn lời người nói (không viết thêm, không đổi chữ), mỗi clip có lời kêu gọi hành động, tự soát điểm cắt theo độ lớn tiếng và chép lời lại bản cắt để kiểm; kèm lịch đăng, mô tả bài đăng, bình luận ghim. Dùng khi người dùng nói "cắt highlight", "làm video highlight", "cắt clip ngắn từ video dài", "làm Reels/TikTok/Shorts từ video YouTube/podcast", "cắt đoạn hay", "/cat-highlight-video", hoặc đưa một video dài (kể cả video podcast đã dựng, kèm hoặc không kèm phụ đề, dàn ý) và muốn ra clip ngắn — kể cả khi chỉ gửi file mà không nói rõ.
+description: Cắt một video dài (bản YouTube 5–60 phút của người dùng) thành các clip highlight DỌC 9:16 (1080×1920), tự chọn ý: mỗi clip một ý trọn vẹn, tự đứng được, số clip và độ dài theo đúng ý cần truyền tải — dùng chung cho Reels, TikTok, Shorts, Facebook Reels, theo chuẩn đội cắt clip của kênh lớn (DOAC, Jay Shetty, Hormozi): thẻ tít mở đầu viết như tít báo đúng ý người nói, phụ đề 1–3 chữ to mỗi nhịp, cắt cứng giấu mối + cắt sạch khoảng lặng, nhịp hai tông (sôi động / lắng, nhạc nền cố định của kênh). Highlight ra ĐÚNG LOẠI của video gốc — video tự quay có người nói → hình người nói (khung dựng của skill video-style-edit); podcast/video toàn đồ hoạ → podcast đồ hoạ dọc cùng phong cách, cùng tên tập (skill podcast-style-edit). Lời trong clip chỉ là nguyên văn lời người nói (không viết thêm, không đổi chữ), mỗi clip có lời kêu gọi hành động, tự soát điểm cắt theo độ lớn tiếng và chép lời lại bản cắt để kiểm; kèm lịch đăng, mô tả bài đăng, bình luận ghim. Dùng khi người dùng nói "cắt highlight", "làm video highlight", "cắt clip ngắn từ video dài", "làm Reels/TikTok/Shorts từ video YouTube/podcast", "cắt đoạn hay", "/cat-highlight-video", hoặc đưa một video dài (kể cả video podcast đã dựng, kèm hoặc không kèm phụ đề, dàn ý) và muốn ra clip ngắn — kể cả khi chỉ gửi file mà không nói rõ.
 ---
 # Cắt video highlight cho mọi mục video ngắn
 
-Mục tiêu: từ một video gốc, ra **3–5 clip ngắn cùng loại với video gốc**, mỗi clip **tự đứng được**, mang **một khoảnh khắc mạnh**
-gắn với ý chính của cả video, **khiến người xem ở lại, làm một việc**, và **muốn mở bản đầy đủ**. Clip đẹp mà người xem lướt qua là clip hỏng.
+Mục tiêu: từ một video gốc, **tự chọn ý** rồi ra các clip ngắn **cùng loại với video gốc**. Mỗi clip là **một ý trọn vẹn** và đạt cùng lúc **hai mục tiêu** (David chốt 2026-11-07):
+1. Người xem không sang video dài vẫn **mang về được một sự chuyển hoá** từ chính clip.
+2. Người xem **muốn mở bản đầy đủ** vì bản dài còn những điều khác.
+
+Clip đẹp mà xem xong không hiểu gì, hoặc hiểu mà không mang về được gì, là clip hỏng.
+
+## Bốn câu chọn ý (luật gốc của skill, thắng mọi luật khác khi trái nhau)
+Claude **tự chọn ý, không hỏi David chọn đoạn**. Đọc nối lời như người lạ chưa xem bản dài, trả lời đủ 4 câu cho từng clip và ghi vào `chon_y` trong `phuong-an.json`. Thiếu một câu thì chọn lại ý, không nộp.
+| Khoá | Câu hỏi | Đạt khi |
+|---|---|---|
+| `boi_canh` | Ngay đầu clip, người lạ có biết ai đang nói, chuyện gì, vì sao nói không? | Nói được bằng chính lời trong clip; thiếu thì thêm câu nguyên văn nêu hoàn cảnh |
+| `y_tron` | Có đủ từ vấn đề hoặc câu hỏi đến lời giải hoặc điều nhận ra, và kết thúc được không? | Không dừng giữa mạch, không chỉ kể chuyện hay chỉ nêu cảm xúc |
+| `mang_ve` | Không xem video dài, họ mang về điều gì? | Một câu rõ: cách nghĩ mới, câu tự hỏi hoặc việc làm, có trong lời người nói; không bắt buộc câu giao việc |
+| `chua_lai` | Bản dài còn thêm gì ngoài ý đã trọn này? | Một chuyện khác hoặc ý mở rộng; không được chừa phần kết của ý trong clip |
+
+**Không có con số cố định** cho độ dài hay số clip: ý cần bao lâu thì clip dài bấy lâu, video có bao nhiêu ý đạt thì ra bấy nhiêu clip. Dài mà còn giữ được người xem thì giữ; có đoạn thừa thì bỏ đoạn thừa, không cắt vào ý cho vừa số giây. Được ghép hai đoạn xa nhau khi đúng mạch ý của người nói, phải báo rõ các mốc trong báo cáo giao bản. Báo cáo giao bản ghi đủ 4 câu và lời đọc nối; David duyệt ở bản cuối.
 
 Skill này lo phần **nhận loại video gốc, hiểu cả video, chọn khoảnh khắc, cắt câu, bố trí lời kêu gọi**. Phần dựng dùng quy
 trình của skill tương ứng — `$BASE=~/.claude/skills/video-style-edit`, `$POD=~/.claude/skills/podcast-style-edit`, `$SKILL` = thư
@@ -21,16 +35,14 @@ khối + quyết định riêng của loại + tiêu chí đạt. Cách làm t�
 
 1. **Cùng loại với video gốc**: người nói ↔ người nói, đồ hoạ ↔ đồ hoạ; giữ phong cách + tên tập/tên người nói của bản gốc (khối 13, bước 0).
    Luôn **dọc 9:16, 1080×1920**. Không cắt thẳng hình đồ hoạ ngang vào khung dọc — dựng lại.
-2. **3–5 clip mỗi video dài** (David chốt 2026-11-04, chuẩn DOAC/Hormozi cắt nhiều clip mỗi tập): mỗi clip một khoảnh khắc
-   KHÁC NHAU (không phải biến thể của cùng đoạn), không trùng câu chính. Số clip theo số khoảnh khắc thật sự mạnh — video ngắn
-   / ít ý thì 2–3, không độn. Clip A = mạnh nhất (đăng đầu).
+2. **Số clip theo số ý đạt 4 câu** (David chốt 2026-11-07, thay luật 3–5 clip): mỗi clip một ý KHÁC NHAU, không trùng câu chính; không độn. David yêu cầu một số clip cụ thể thì chọn các ý mạnh nhất đủ số đó. Clip A = mạnh nhất (đăng đầu).
 3. **Lời = nguyên văn** (phụ đề, chữ to, màn hành động, ý đang bàn, câu màn chốt, mô tả bài đăng): chỉ chọn câu, bỏ bớt chữ ở
    đầu/cuối câu, sửa chính tả Whisper. **Ngoại lệ duy nhất: thẻ tít mở đầu** (luật 7) viết như tít báo.
 4. **Mỗi clip bắt buộc có lời kêu gọi** = câu mệnh lệnh/giao việc nguyên văn của người nói ("Hãy chọn…", "thử làm…"). Câu mời
    bình luận chỉ dùng khi người nói có nói; còn lại để ở bình luận ghim. Không có câu nào dùng được → dừng, báo David.
-5. **Ý của cả video**: luôn làm bước 2 (bản đồ cả video) trước khi chọn. Mỗi clip phục vụ lời hứa cốt lõi hoặc một ý lớn của video. **Người xem clip là người xem độc lập** (David chốt 2026-11-06): mỗi clip có hoàn cảnh và nội dung riêng, tự đạt câu hỏi gốc của bộ lọc (làm chủ bản thân / công việc); chỉ nói cảm xúc thì không đạt.
+5. **Ý của cả video**: luôn làm bước 2 (bản đồ cả video) trước khi chọn. Mỗi clip phục vụ lời hứa cốt lõi hoặc một ý lớn của video. **Người xem clip là người xem độc lập** (David chốt 2026-11-06): mỗi clip qua đủ bốn câu chọn ý ở đầu file và tự đạt câu hỏi gốc của bộ lọc (làm chủ bản thân / công việc); chỉ nói cảm xúc hoặc chỉ kể chuyện thì không đạt.
 6. **Không thứ tự cố định**: vị trí lời kêu gọi tự bố trí theo mạch (khối 13, bước 4); đổi thứ tự không được làm sai nghĩa.
-   **Độ dài 30–60 s** tự cân (≤ 90 s khi bỏ bớt gãy ý; tới 120 s chỉ khi là câu chuyện hồi hộp có đáp án ở cuối, kiểu DOAC 141 s).
+   **Độ dài theo ý** (không có số cố định): xem bốn câu chọn ý.
 7. **Thẻ tít mở đầu 0 → ~2,5 s** (chuẩn DOAC/Mel Robbins): ≤ 8 chữ, 2 dòng, ở nửa trên khung — **viết như tít báo** nêu tiền cược /
    kết quả / mâu thuẫn của clip, ĐÚNG Ý người nói, không thêm thông tin hay lời hứa ngoài clip (luat-chung 1b). Câu chạm vẫn là
    lời thật ngay giây 0. Ghi tít + câu gốc làm căn cứ vào ke-hoach-cat.md.
@@ -44,19 +56,18 @@ khối + quyết định riêng của loại + tiêu chí đạt. Cách làm t�
    | Chữ to | bật nảy, gạch cam | hiện chậm, nét mảnh, không gạch |
    | Hình | dồn khung | màu dịu |
    Nhạc chỉ các bài cố định trong `$SKILL/assets/music/` — không tự thêm bài. Không nhãn kỹ thuật, không thẻ "TẬP NÀY CÓ GÌ?"/tên vòng.
-10. **Chừa một ý cho bản đầy đủ**: clip trả lời "làm gì" nhưng để dành ít nhất một ý giá trị (lý do sâu, ví dụ, định nghĩa) — không
-    gom hết lời giải vào clip. Câu mở ưu tiên bất ngờ / kết quả lớn / tiền cược hơn lời than chung chung.
+10. **Chừa cho bản đầy đủ đúng chỗ**: chừa một chuyện khác hoặc ý mở rộng; ý trong clip phải đi đến hết. Câu mở ưu tiên bất ngờ / kết quả lớn / tiền cược hơn lời than chung chung.
 11. **Thẻ cuối dẫn về bản đầy đủ ~1,8 s** sau màn chốt (kiểu Have A Sip): ảnh đứng hình người nói + nút phát + nhãn cố định
     **"XEM BẢN ĐẦY ĐỦ"** (HL-5, David duyệt 2026-11-04) + **tên tập gốc** + tên người nói gốc (+ lịch phát nếu David đưa: `"schedule"`). Ghi `"endcard": {"title": "<tên tập gốc>", "speaker": "<tên người nói>"}` vào
     `phuong-an.json` (nguồn podcast: `{}` là đủ). Không có tên tập → hỏi David. Kiểu vòng lặp → bỏ thẻ cuối.
-12. Hỏi theo `hoi-chuyen-gia` một lần đầu; David "ok" thì chạy trọn — cả 3–5 clip.
+12. **Tự chọn, không hỏi** (David chốt 2026-11-07): nhận yêu cầu cắt là tự chọn ý, tít, câu màn cuối rồi dựng trọn một mạch. Chỉ dừng hỏi khi không ý nào đạt 4 câu hoặc câu chủ chốt dính lằn ranh. Luôn ghi rõ đã chọn gì trong báo cáo để David sửa ở bản cuối.
 13. **Học từ 20 highlight Việt** (`references/hoc-tu-20-highlight-vn.md`, David duyệt 2026-11-04):
     - **Tít ghim**: sau thẻ tít mở đầu, tít thu nhỏ thành dải dưới dấu kênh suốt clip tới màn chốt — ghi `"tit"` vào từng option của
       phuong-an.json (`hl_edl.py` tự viết `pow` 0–2,5 s + `pinTitle`); `"pin": false` để tắt. Nhánh podcast: `STAGE.title` = tít.
     - **Khung bìa = 0,3 s** (thẻ tít + mặt người nói rõ) — ghi mốc này vào dang-bai.md.
     - **Cảnh phản ứng**: nguồn có khán giả / người dẫn → piece thêm `"react": {"at": <giây nguồn ngay sau cụm đắt>, "from": <giây
       nguồn có mặt người nghe>, "len": 0.8–1.5}` — hình người nghe, tiếng người nói vẫn chạy.
-    - **Danh sách đếm / hướng dẫn từng bước** (≥ 5 ý): cho phép 60–120 s (BS Phúc 107 s, BS Tùng 94–111 s).
+    - **Danh sách đếm / hướng dẫn từng bước**: giữ đủ các ý trong danh sách để ý được trọn.
 
 ## Đầu vào
 
@@ -72,7 +83,7 @@ Chỉ có phụ đề, không có video → làm bước 2–5, trả bảng c�
 ## Công thức — Highlight · hồ sơ `highlight`
 | # | Bước | Khối |
 |---|---|---|
-| 0–6 | Nhận loại nguồn · dự án · bản đồ cả video · chọn 3–5 khoảnh khắc · chọn câu · bố trí lời kêu gọi · kiểm tự đứng được + lằn ranh · cắt + kiểm lời | [13](../khoi/13-chon-khoanh-khac/README.md) (chi tiết từng bước) · [02](../khoi/02-lam-sach/README.md) (pauses.py) · [01](../khoi/01-chep-loi/README.md) |
+| 0–6 | Nhận loại nguồn · dự án · bản đồ cả video · tự chọn ý theo 4 câu · chọn câu · bố trí lời kêu gọi · kiểm tự đứng được + lằn ranh · cắt + kiểm lời | [13](../khoi/13-chon-khoanh-khac/README.md) (chi tiết từng bước) · [02](../khoi/02-lam-sach/README.md) (pauses.py) · [01](../khoi/01-chep-loi/README.md) |
 | 7A | Dựng nguồn có người nói (mục dưới) | [11](../khoi/11-ghep-canh/README.md) · [04](../khoi/04-khung-hinh/README.md) · [05](../khoi/05-tranh-che-nguoi/README.md) · [06](../khoi/06-mo-dau/README.md) · [07](../khoi/07-canh-minh-hoa/README.md) · [08](../khoi/08-ket-thuc/README.md) · [03](../khoi/03-phu-de/README.md) · [09](../khoi/09-am-thanh/README.md) · [17](../khoi/17-dung-kiem-tra/README.md) |
 | 7B | Dựng nguồn podcast / đồ hoạ (mục dưới) | [12](../khoi/12-san-khau-podcast/README.md) · [07](../khoi/07-canh-minh-hoa/README.md) · [08](../khoi/08-ket-thuc/README.md) · [17](../khoi/17-dung-kiem-tra/README.md) |
 | 8 | Phát hành: lịch đăng, khung bìa, mô tả, bình luận ghim, số liệu | [15](../khoi/15-phat-hanh/README.md) · [16](../khoi/16-so-lieu/README.md) |
@@ -128,7 +139,7 @@ PY=$(zsh $POD/scripts/py_setup.sh); $PY $POD/scripts/speakers.py "$E" <1|2>; $PY
   → `check_frames.sh` như bước 7–9 của `$POD/SKILL.md`.
 
 ### Khuôn podcast đồ hoạ dọc (7B, David duyệt 2026-11-06. Mẫu cho mọi video sau: 3 clip `~/Movies/podcast-hl-di-trainer-{A,B,C}`, thành phẩm ở Drive `Video-xong/Di-trainer-clip-1|2|3.mp4`, lời và kịch bản ở repo David.Claude `dang-lam/video-di-trainer/`) — thắng các luật khác trong skill này khi trái nhau
-- **Không ép hành động trong lời:** bỏ luật 4 và màn chốt `cta` ở nhánh này. Không ghép câu kêu gọi từ chỗ khác. Clip kết ở chính câu đắt nhất, lặng 1 s (nhạc nổi lên), rồi sang màn hình cuối.
+- **Không ép hành động trong lời:** bỏ luật 4 và màn chốt `cta` ở nhánh này. Không ghép câu kêu gọi từ chỗ khác, nhưng clip vẫn phải đạt câu `mang_ve` bằng lời đã có. Clip kết ở câu chốt được ý, lặng 1 s (nhạc nổi lên), rồi sang màn hình cuối.
 - **Màn hình cuối 3 s, không lời:** `"tease"` trong option của phuong-an.json = một câu gợi tò mò (Claude viết, David duyệt, chỉ gợi điều có thật trong video dài) + gạch nhận diện + "Bản đầy đủ trên kênh <`man_cuoi_kenh`>" + tên tập. **Không logo nền tảng nào** (David chốt 2026-11-06: video đăng Reels và TikTok, nút không bấm được mà có thể bị hạn chế phân phối). Câu hỏi "Vấn đề" / "Kết quả" để ở mô tả và bình luận ghim.
 - **Nhạc:** `ho-so/highlight.json` → `nhac_chu_chinh` (thấp hơn giọng khoảng 23 dB lúc nói, nén nhẹ), chạy liền qua màn hình cuối, không tiếng ký hiệu đầu clip.
 - **Hoàn cảnh:** thiếu hoàn cảnh thì đưa câu nguyên văn nêu hoàn cảnh lên đầu clip.
@@ -148,7 +159,7 @@ PY=$(zsh $POD/scripts/py_setup.sh); $PY $POD/scripts/speakers.py "$E" <1|2>; $PY
   `kind` theo việc được kêu gọi (bình luận → `comment`, lưu → `save`…). Báo cáo ghi câu này lấy ở mốc nào của video gốc.
 - Kiểm thêm khi chụp thử: chữ to có đủ lớn không (dòng dài làm chữ co nhỏ → mất lực, rút cụm); `phu-de@<vài mốc>` thấy nhịp
   1–3 chữ đọc rõ, không chạm sóng âm. `phu-de@…` không có trong `composite_stills.sh` khi đứng riêng → tự ghép lên `video_goc.mp4` cùng mốc.
-- Bản cuối: 1080×1920, thời lượng 30–60 s (≤ 90), âm lượng/tiếng rè bằng nguồn.
+- Bản cuối: 1080×1920, thời lượng theo ý, âm lượng/tiếng rè bằng nguồn.
 
 ## Bảng phụ thuộc (sửa X → chạy lại Y)
 | Sửa | Chạy lại |
@@ -159,7 +170,7 @@ PY=$(zsh $POD/scripts/py_setup.sh); $PY $POD/scripts/speakers.py "$E" <1|2>; $PY
 | hồ sơ highlight | hl_edl.py / cut_highlight.py chạy lại |
 
 ## Tiêu chí đạt
-- Mỗi clip: tự đứng được, có lời kêu gọi nguyên văn, chừa ý cho bản đầy đủ, độ dài trong `do_dai_s` (≤ `max_s`)
+- Mỗi clip: đạt đủ bốn câu chọn ý (`chon_y` trong phuong-an.json), báo cáo ghi lại 4 câu + lời đọc nối + mốc đoạn ghép; có lời kêu gọi nguyên văn trừ nhánh podcast đồ hoạ dọc
 - 0–2,5 s thẻ tít; sau đó chỉ 2 trạng thái; thẻ cuối "XEM BẢN ĐẦY ĐỦ" + tên tập gốc; kiểm lời khớp
 - dang-bai.md: lịch đăng, mốc bìa 0,3 s, mô tả, bình luận ghim · so-lieu.md
 
@@ -175,7 +186,7 @@ PY=$(zsh $POD/scripts/py_setup.sh); $PY $POD/scripts/speakers.py "$E" <1|2>; $PY
 ~/Movies/highlight-<tên>/
 ├── nguon.<ext> · loai.txt          # video nguồn (bản không bìa nếu lấy từ dự án) · loại video gốc
 ├── check/goc/                      # transcript.srt · words.srt · loud05.txt · contact.jpg · captions-goc.js · scenes-goc.js · youtube.srt
-├── phuong-an.json                  # 3–5 clip (A, B, C…), câu theo thứ tự phát (Claude viết)
+├── phuong-an.json                  # các clip (A, B, C…), chon_y + câu theo thứ tự phát (Claude viết)
 ├── cat/<id>.mp4 · <id>.md · <id>-map.json · <id>-kiem.txt
 ├── ke-hoach-cat.md · dang-bai.md · so-lieu.md
 ~/Movies/edit-hl-<tên>-<id>/  hoặc  ~/Movies/podcast-hl-<tên>-<id>/   → video-final.mp4 (BẢN CUỐI mỗi clip, 1080×1920)

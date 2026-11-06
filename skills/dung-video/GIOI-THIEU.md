@@ -9,7 +9,7 @@ máy khác chỉ cần chép cả thư mục `dung-video/`. Ở `~/.claude/skill
 | `video-style-edit/` — **1 video** | Gửi 1 video nói trước camera, nói "làm video này" | Giữ nguyên hình, phủ hiệu ứng + phụ đề |
 | `video-style-edit/` — **ghép nhiều video** | Gửi từ 2 clip trở lên, nói "ghép thành 1 video" | Tự sắp mạch, trích dẫn clip minh hoạ; **duyệt kế hoạch trước khi render** |
 | `podcast-style-edit/` — **podcast** | Gửi file tiếng/video và nói "podcast" | Toàn bộ khung là đồ hoạ chuyển động, có bìa 1 giây, thanh thời gian |
-| `cat-highlight-video/` — **cắt highlight** | Gửi 1 video dài (YouTube, podcast đã dựng, hoặc thư mục dự án của nó), nói "cắt highlight" hoặc `/cat-highlight-video` | **3–5 clip** **dọc 9:16** 30–60 giây, mỗi clip một khoảnh khắc mạnh, **cùng loại với video gốc**; thẻ tít mở đầu, phụ đề 1–3 chữ to mỗi nhịp, cắt cứng, lời trong clip nguyên văn; kèm lịch đăng, mô tả bài đăng + bình luận ghim |
+| `cat-highlight-video/` — **cắt highlight** | Gửi 1 video dài (YouTube, podcast đã dựng, hoặc thư mục dự án của nó), nói "cắt highlight" hoặc `/cat-highlight-video` | **các clip tự chọn ý, mỗi clip một ý trọn** **dọc 9:16** 30–60 giây, mỗi clip một khoảnh khắc mạnh, **cùng loại với video gốc**; thẻ tít mở đầu, phụ đề 1–3 chữ to mỗi nhịp, cắt cứng, lời trong clip nguyên văn; kèm lịch đăng, mô tả bài đăng + bình luận ghim |
 
 Video ra ở `~/Movies/edit-<tên>/video-final.mp4` (hoặc `~/Movies/podcast-<tên>/`; highlight: chọn câu ở `~/Movies/highlight-<tên>/`, bản cuối mỗi clip ở `~/Movies/edit-hl-<tên>-A/`, `-B/`… hoặc `~/Movies/podcast-hl-<tên>-A/`…). Tiêu đề + thumbnail ở `phat-hanh/` của dự án. Muốn thêm thì nói kèm:
 "xuất ngang/dọc", "làm thêm timeline CapCut", "không dùng ảnh", "thêm ảnh".
