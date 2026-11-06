@@ -23,3 +23,4 @@
 - [Khuôn video dọc đồ hoạ](video-doc-khuon-chu-chinh.md) — chữ chính thay phụ đề, nhạc thấp hơn giọng ~23 dB, màn hình cuối mời xem YouTube; 3 clip "Đi trainer" là mẫu (2026-11-06)
 - [Không cài HyperFrames](video-motion-hoc-hyperframes.md) — giữ Remotion, chỉ học ý rồi tự viết lại vào bộ skill video (2026-11-06)
 - [Bản chuẩn video](ban-chuan-video-2026-11-06.md) — 5 video chuẩn: 3 clip Đi trainer + 2 video dài; dự án cũ đã bỏ (2026-11-06)
+- [Bìa podcast không mặt](podcast-thumb-khong-mat.md) — podcast chỉ có tiếng thì bìa không có mặt người, phải khớp nội dung; mặt người chỉ cho video quay hình (2026-11-06)

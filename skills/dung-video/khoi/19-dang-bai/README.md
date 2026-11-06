@@ -32,6 +32,7 @@ nền tảng: đi chậm, chụp từng bước, sửa README này theo giao di�
   David đã đăng nhập cả 3 nền tảng trong hồ sơ này (05/11/2026; hồ sơ lưu ở `~/.cache/david-mxh-chrome`). Hết phiên → nhờ David đăng nhập lại, không tự nhập.
 
 ## YouTube (Studio) — bản dài + Shorts
+**Ảnh bìa tuỳ chỉnh cần kênh đã xác minh số điện thoại** (ghi nhận 06/11/2026: chưa xác minh thì Studio hiện hộp thoại "Xác minh"). David tự xác minh, Claude không làm thay.
 1. `https://studio.youtube.com/channel/<id>/videos/upload?d=ud` → ô chọn file → `upload` video.
 2. **Chi tiết:** Tiêu đề (≤ 100 ký tự, theo phat-hanh.md) · Mô tả (tóm ý + "Vấn đề"/"Kết quả" + chương + link nhắn tin trang nếu bài Mời) ·
    Hình thu nhỏ (thumb-1.jpg; chỉ video ngang) · "Không, nội dung này không dành cho trẻ em" · Thẻ / ngôn ngữ: Tiếng Việt.

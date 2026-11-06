@@ -58,7 +58,7 @@ khối + quyết định riêng của loại + tiêu chí đạt. Cách làm t�
 |---|---|---|
 | 1 | Môi trường + dự án (mục dưới) · khung xuất | [01](../khoi/01-chep-loi/README.md) · [04](../khoi/04-khung-hinh/README.md) |
 | 2 | Chép lời + phụ đề | [01](../khoi/01-chep-loi/README.md) · [03](../khoi/03-phu-de/README.md) |
-| 2b | Thumbnail (ngang + YouTube): chữ + nền = khung đồ hoạ của CHÍNH podcast này (ảnh người nói chỉ khi David gửi riêng cho tập này) | [14](../khoi/14-thumbnail/README.md) |
+| 2b | Thumbnail (ngang + YouTube): mẫu podcast không mặt = nền hoạ tiết + một hình theo ý của tập + tiêu đề ngắn + "DAVID · PODCAST", không lộ các bước giải pháp | [14](../khoi/14-thumbnail/README.md) |
 | 3 | Ai đang nói · sóng âm · sân khấu, TOPICS, PHẦN n, nền lắng | [12](../khoi/12-san-khau-podcast/README.md) |
 | 4 | Phong cách · **tuyến nội dung → nhạc nền** (`project.tuyen`, bắt buộc) | [10](../khoi/10-nhan-dien/README.md) · [09](../khoi/09-am-thanh/README.md) |
 | 5–6 | Cảnh minh hoạ 2 trạng thái · màn chốt | [07](../khoi/07-canh-minh-hoa/README.md) · [08](../khoi/08-ket-thuc/README.md) |
@@ -115,7 +115,7 @@ thời lượng = `audio.wav` (+ thẻ cuối nếu có). Khung 0 của video-fi
 
 ### 10. Phát hành + giao
 Phát hành theo `../luat-chung.md` mục 7: `phat-hanh/phat-hanh.md` (3 tiêu đề, mô tả, mốc khung bìa); xuất ngang VÀ đăng YouTube → 2 thumbnail
-`zsh $BASE/scripts/thumbnail.sh "$P" <khung cắt từ video-final.mp4 của chính tập này | ảnh David gửi riêng cho tập này> "<DÒNG 1>" "<DÒNG 2>" 1|2` (chữ từ bước 2b). Chép `../so-lieu-mau.md` → `$P/so-lieu.md`.
+`THUMB_HINH=<hình> THUMB_TAG=PODCAST zsh $BASE/scripts/thumbnail.sh "$P" - "<DÒNG 1>" "<DÒNG 2>" 1|2` (khối 14) (chữ từ bước 2b). Chép `../so-lieu-mau.md` → `$P/so-lieu.md`.
 Gửi `video-final.mp4` (+ thumbnail nếu có) (SendUserFile). Báo cáo tiếng Việt: đã cắt gì (`check/trim.txt`), người nói (tên/vai, tỉ lệ, chỗ không
 chắc), danh sách cảnh + TOPICS theo mốc, nội dung `nguon-anh.txt` nếu có ảnh, đã kiểm tra gì / chưa kiểm tra gì, tên riêng cần
 xác nhận chính tả.

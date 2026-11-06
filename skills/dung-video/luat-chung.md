@@ -78,8 +78,7 @@ Ghi `<dự án>/phat-hanh/phat-hanh.md`:
   Chuẩn: một khuôn mặt có cảm xúc rõ (mắt mở, miệng/biểu cảm), ≤ 4 chữ, một ý. Chọn khung: xem `contact.jpg`/`half_XX.jpg`, lấy
   khoảnh khắc cảm xúc mạnh nhất. Xem `thumb-<số>@160.jpg` (cỡ điện thoại) — không đọc được chữ thì rút chữ. **CHỈ HÌNH CỦA CHÍNH VIDEO ĐANG LÀM** (David chốt 2026-11-05): thumbnail / ảnh bìa / khung bìa
   lấy từ khung của chính video này (hoặc ảnh David gửi RIÊNG cho video này) — không bao giờ lấy mặt, cảnh, ảnh từ video / dự án
-  khác, kể cả khi "đẹp hơn" hay tiện tay (2026-11-05: thumbnail podcast lấy mặt từ vlog Miếu Bà Cam → sai). Podcast không có
-  mặt → nền là khung đồ hoạ của chính podcast (cảnh minh hoạ / sân khấu ở `video-final.mp4`); David gửi ảnh cho tập này thì mới dùng ảnh.
+  khác, kể cả khi "đẹp hơn" hay tiện tay (2026-11-05: thumbnail podcast lấy mặt từ vlog Miếu Bà Cam → sai). **Podcast không mặt** (David duyệt 2026-11-06, khối 14): không dùng mặt người, kể cả ảnh chụp riêng; bìa = nền hoạ tiết + một hình vẽ theo ý của tập + tiêu đề ngắn + góc "DAVID · PODCAST", không liệt kê các bước giải pháp. Hình vẽ theo nội dung là ngoại lệ của luật lấy khung từ video.
   Không hỏi "lấy ảnh từ video cũ" như một lựa chọn.
 - **Video dọc**: không ghép bìa trước video (giây đầu dành cho câu mở); ghi **mốc khung bìa đề xuất** (giây) để David chọn khi đăng.
 - **Kiểu thumbnail Việt** (học 10/10 video dài Việt): mặt biểu cảm mạnh + 2–3 tầng chữ (≤ ~8 chữ), dòng cam = từ khoá to nhất,
