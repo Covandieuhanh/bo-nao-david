@@ -6,8 +6,8 @@
 3. Tôi là ai trên cuộc đời này? Câu chuyện mục tiêu và sứ mệnh
 
 ## Thumbnail (1280×720) — chỉ hình của chính podcast này
-- `thumb-1.jpg` — 10.800 THÀNH VIÊN / **1 TRIỆU ĐÔ** (đi với tiêu đề 2 hoặc 3)
-- `thumb-2.jpg` — KHÔNG / **NGẪU NHIÊN** (đi với tiêu đề 1)
+- `thumb-1.jpg` — David chọn 06/11/2026: 10.800 THÀNH VIÊN / **1 TRIỆU ĐÔ**, mẫu podcast không mặt, hình cộng đồng
+- `thumb-2.jpg` — bìa mẫu cũ, không dùng
 - Nền: biểu tượng của chính podcast này (cộng đồng → thu nhập · mục tiêu)
 
 ## Mô tả bài đăng
