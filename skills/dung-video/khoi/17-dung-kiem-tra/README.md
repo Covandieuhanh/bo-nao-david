@@ -50,3 +50,14 @@ Xem `check/sheet.jpg`: cảnh đúng chỗ, không gì lọt vùng an toàn, kh�
 chênh bản gốc ≤ 1 dB; cao hơn hẳn = âm thanh bị hạ bit ở đâu đó, xem gotchas) và thời lượng (= bản sạch; video KHÔNG có màn hình nguồn ảnh ở cuối).
 Lỗi thì sửa cảnh đó → `node render.mjs <id>` → render_preview lại.
 
+## Soát cảnh tự động (David duyệt 2026-11-06 — học từ `check` + `review.md` của HyperFrames)
+Chạy **trước bước chụp thử** và sau mỗi lần sửa mốc / chữ:
+```bash
+node $SKILL/scripts/soat_canh.mjs "$P"     # in ra + ghi check/soat.md; có P0 thì mã thoát 1. Không sửa gì, không render
+```
+Đọc từ `scenes.js` hoặc `edl.js`, báo mỗi lỗi một dòng `t=… · cảnh · vấn đề → cách sửa`:
+- **P0 (phải sửa):** kiểu cảnh / biểu tượng không tồn tại, phần tử hiện ngoài cảnh, mốc sai.
+- **P1 (nên sửa):** nhãn không đủ đọc (0,5 s + 0,3 s mỗi từ), nhãn `illus` quá số chữ hồ sơ, hai cảnh toàn màn hình chồng nhau.
+- **P2 (tinh chỉnh, giữ có chủ đích được):** hình đứng yên quá 3 s sau khi đọc xong, thẻ tít / màn chốt thiếu hẳn thời gian đọc, không có thẻ tít đầu video.
+Giới hạn: chỉ bắt lỗi đo được. Chữ tràn, che mặt, xấu vẫn soi bằng `check/stills.jpg`. **Xem tờ ảnh ở đúng cỡ (mỗi khung 240–270 px, nhỏ hơn màn điện thoại): chữ cần đọc mà không đọc được = P0.**
+Câu hỏi khi soi tờ ảnh: che chữ đi, hình còn nói được ý không? Thấy mọi cảnh giống nhau thì đổi kiểu vào (khối 07). Video rối → bỏ bớt khoảng một phần ba chuyển động, giữ cái dẫn mắt.

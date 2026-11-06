@@ -129,3 +129,6 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
 ## 2026-11-05
 - **Thumbnail / ảnh bìa chỉ dùng hình của CHÍNH video đang làm** (David chỉ ra: thumbnail podcast "Mục tiêu và sứ mệnh" lấy mặt từ vlog Miếu Bà Cam → sai). Podcast không mặt → nền là khung đồ hoạ của chính podcast; ảnh người nói chỉ khi David gửi riêng cho tập đó. Không đưa "lấy ảnh từ video cũ" thành lựa chọn khi hỏi. Ghi ở luat-chung 7, khối 14, podcast SKILL, thumbnail.sh.
 - **Nhạc nền theo tuyến nội dung + nhạc nhỏ khi nói** (David: "nhạc nền hơi to… tông chưa phù hợp… phải tự chọn được nhạc theo tuyến nội dung"). Hồ sơ chung `nhac`: bảng tuyến → bài, `project.tuyen` bắt buộc (render_preview dừng nếu thiếu — bỏ mặc định soi-1); nén theo giọng tương đối (ngưỡng giọng − 14 dB, tỉ lệ 20, nhả 1,5 s): nhạc khi nói 17 → 30–33 LU dưới giọng. Tuyến kiến thức chờ David tải 1 bài ambient.
+
+## 2026-11-06
+- **Học từ HyperFrames + Motion Studio, không cài** (David duyệt): bỏ lơ lửng, vòng xoay, quầng nhấp nháy; ra ngắn hơn vào; kiểu vào theo ý câu (khối 07). Thêm sơ đồ `xay-tang`, `doi-trang-thai`, `chuyen-giao`. Thêm `scripts/soat_canh.mjs` (khối 17) và `scripts/chu_tren_man.mjs` (khối 03). Bản trước: `~/.claude/skills/dung-video.bak-2026-11-06-hoc-motion`.

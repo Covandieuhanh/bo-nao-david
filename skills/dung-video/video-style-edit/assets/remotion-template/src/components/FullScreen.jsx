@@ -135,10 +135,9 @@ export const Converge = ({start, jobs, mergeAt, outputs}) => {
       {jobs.map((j, i) => {
         // 2 cột x 6 hàng, so le nhẹ cho tự nhiên
         const col = i % 2, row = Math.floor(i / 2);
-        const bob = Math.sin((f + i * 9) / 14) * 8;
         const p = pop(f, 2 + i * 2);
         const x = interpolate(m, [0, 1], [cx + (col ? 1 : -1) * (RX - (row % 2) * 30), cx]);
-        const y = interpolate(m, [0, 1], [cy - RY + row * (RY * 2 / 5) + bob, cy]);
+        const y = interpolate(m, [0, 1], [cy - RY + row * (RY * 2 / 5), cy]);
         return (
           <div key={j} style={{position: 'absolute', left: x, top: y, transform: `translate(-50%, -50%) scale(${(0.6 + 0.4 * p) * (1 - 0.7 * m)})`,
             opacity: Math.min(1, p * 1.4) * (1 - m), padding: '12px 22px', borderRadius: 999, whiteSpace: 'nowrap',
@@ -149,7 +148,7 @@ export const Converge = ({start, jobs, mergeAt, outputs}) => {
       })}
       <div style={{position: 'absolute', left: cx, top: cy, width: 340, height: 340, borderRadius: 170,
         transform: `translate(-50%, -50%) scale(${core})`, background: C.accent,
-        boxShadow: `0 0 ${80 + Math.sin(f / 8) * 20}px rgba(255,122,69,0.6)`, display: 'flex', alignItems: 'center', justifyContent: 'center',
+        boxShadow: '0 0 80px rgba(255,122,69,0.6)', display: 'flex', alignItems: 'center', justifyContent: 'center',
         textAlign: 'center'}}>
         <div style={{fontFamily: HEAD, fontWeight: 800, fontSize: 80, lineHeight: 0.95, color: C.bg}}>ĐIỂM<br />CHUNG</div>
       </div>

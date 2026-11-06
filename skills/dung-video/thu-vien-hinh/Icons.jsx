@@ -1,5 +1,5 @@
 // Biểu tượng nét có chuyển động — minh hoạ thay ảnh (mặc định: không tải ảnh, xem scene-design.md "Ảnh minh hoạ").
-// Mỗi hình vẽ trên lưới 64×64, nét tròn đầu; xuất hiện bằng cách vẽ dần từng nét (stroke-dashoffset), rồi nổi nhịp nhẹ.
+// Mỗi hình vẽ trên lưới 64×64, nét tròn đầu; xuất hiện bằng cách vẽ dần từng nét (stroke-dashoffset), rồi đứng yên.
 // Dùng: <Pictogram name="mic" size={420} at={0} /> trong montage (item.icon) và card job (icon). Thêm hình: thêm vào ICONS.
 import React from 'react';
 import {useCurrentFrame} from 'remotion';
@@ -96,20 +96,19 @@ export const Icon = ({name, size = 300, at = 0, color = C.accent, stroke = 3.2})
   );
 };
 
-// Ô minh hoạ thay ảnh: nền tối + quầng cam + vòng tròn mảnh quay chậm + biểu tượng vẽ dần, nổi nhịp nhẹ
+// Ô minh hoạ thay ảnh: nền tối + quầng cam + vòng tròn mảnh + biểu tượng vẽ dần rồi đứng yên
 export const Pictogram = ({name, w, h, at = 0}) => {
   const f = useCurrentFrame();
   const s = Math.min(w, h);
-  const bob = Math.sin((f - at) / 18) * s * 0.012;
   const ring = ease(f, at, at + 24);
   const k = s > 400 ? 0.6 : 0.74;   // ô nhỏ (thẻ) → biểu tượng chiếm nhiều hơn
   return (
     <div style={{position: 'relative', width: w, height: h, background: `radial-gradient(circle at 50% 46%, rgba(255,122,69,0.22), ${C.card} 62%)`}}>
       <svg width={w} height={h} style={{position: 'absolute', inset: 0}}>
         <circle cx={w / 2} cy={h / 2} r={s * 0.42} fill="none" stroke={C.accent} strokeOpacity={0.25} strokeWidth={2}
-          strokeDasharray={`${s * 0.06} ${s * 0.05}`} transform={`rotate(${f * 0.4} ${w / 2} ${h / 2})`} opacity={ring} />
+          strokeDasharray={`${s * 0.06} ${s * 0.05}`} opacity={ring} />
       </svg>
-      <div style={{position: 'absolute', left: (w - s * k) / 2, top: (h - s * k) / 2 + bob,
+      <div style={{position: 'absolute', left: (w - s * k) / 2, top: (h - s * k) / 2,
         filter: 'drop-shadow(0 0 18px rgba(255,122,69,0.45))'}}>
         <Icon name={name} size={s * k} at={at} stroke={s > 400 ? 2.6 : 3.2} />
       </div>

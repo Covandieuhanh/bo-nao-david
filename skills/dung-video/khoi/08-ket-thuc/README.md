@@ -14,7 +14,7 @@
 - `montage Show.jsx (CtaEnd, EndCard)`
 
 ## Luật
-- **Ngoại lệ podcast đồ hoạ dọc trích ngắn** (David chốt 2026-11-06): không màn chốt `cta`, không câu kêu gọi trong lời; kết bằng màn hình cuối 3 s mời xem bản đầy đủ trên YouTube (`endcard.tease`). "Vấn đề" / "Kết quả" và câu hỏi tự soi nằm ở mô tả + bình luận ghim. Xem `cat-highlight-video/SKILL.md`.
+- **Ngoại lệ podcast đồ hoạ dọc trích ngắn** (David chốt 2026-11-06): không màn chốt `cta`, không câu kêu gọi trong lời; kết bằng màn hình cuối 3 s mời xem bản đầy đủ trên kênh, không logo nền tảng (`endcard.tease`, `endcard.kenh`). "Vấn đề" / "Kết quả" và câu hỏi tự soi nằm ở mô tả + bình luận ghim. Xem `cat-highlight-video/SKILL.md`.
 - **Màn chốt THEO LUẬT KÊNH David** (`ho-so/kenh.json`, David chốt 05/11/2026 — thắng các gợi ý kind bên dưới cho kênh thương hiệu):
   kiểu dẫn dắt của bài do phiếu lọc (khối 00) gán theo tỉ lệ **4 Không · 4 Gợi mở · 2 Mời** (bài thứ 5 và 10 mỗi chục là Mời):
   - **Không** → `comment`: mời bình luận đúng một trong hai từ — "Bình luận **Vấn đề** nếu bạn đang kẹt ở đây" / "**Kết quả**" khi làm được.

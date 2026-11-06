@@ -96,6 +96,7 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
 ## 2026-11-06 — clip DJI_16
 - Nhạc + tiếng hiệu ứng highlight tính theo giọng như video dài; bỏ tiếng ký hiệu khi vào lời ngay giây 0 (đo Clip 1: lúc ngừng nói −19,5 dB, đang nói −17 dB; file thu −35 LUFS).
 - Podcast đồ hoạ dọc: chữ chính thay phụ đề (phương án B, David chọn sau khi thấy phụ đề + đồ hoạ bị rối).
+- 2026-11-06: bỏ nút YouTube ở màn hình cuối clip dọc, ghi tên kênh thay vào. Chưa có bằng chứng chính thức về việc bị hạn chế, nhưng icon gần như không mang lại gì.
 - 2026-11-06: David duyệt cả 3 clip "Đi trainer" làm mẫu cho các video sau; đã thêm vào `mau-chuan/mau.json`.
 - Khuôn podcast đồ hoạ dọc: bỏ câu kêu gọi ghép và màn chốt bình luận (David thấy ép buộc, cụt cảm xúc), kết bằng màn hình cuối 3 s mời xem YouTube; nhạc thấp hơn giọng khoảng 23 dB (David nghe 2 mức, chọn mức này).
 - Người xem clip là người xem độc lập; chấm riêng từng clip. David loại clip chỉ nói nỗi buồn.

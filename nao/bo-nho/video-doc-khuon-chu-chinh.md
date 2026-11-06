@@ -9,6 +9,8 @@ Podcast đồ hoạ dọc trích từ video dài dùng khuôn của bản `clip1
 
 **Mẫu David duyệt 06/11/2026:** cả 3 clip "Đi trainer" (`~/Movies/podcast-hl-di-trainer-A|B|C`, Drive `Video-xong/Di-trainer-clip-1|2|3.mp4`). Dựng video dọc sau này phải giống 3 clip này.
 
+**Màn hình cuối (chốt thêm 06/11/2026):** không logo YouTube hay nền tảng nào, chỉ ghi "Bản đầy đủ trên kênh Trainer David Trần". Clip đăng Reels và TikTok thì nút không bấm được, lại có thể bị hạn chế phân phối.
+
 **Why:** David thấy phụ đề chồng đồ hoạ bị rối trên màn dọc; nhạc phải nghe được để dẫn cảm xúc nhưng không che lời (mức 30 dB thì mất hẳn, mức gần giọng thì che từ); câu kêu gọi ghép vào thì ép buộc, mất trọn vẹn.
 
 **How to apply:** Cách làm nằm ở `cat-highlight-video/SKILL.md` mục "Khuôn podcast đồ hoạ dọc", mức nhạc ở `ho-so/highlight.json`. Chỉ áp dụng cho video dọc đồ hoạ; video ngang và video có người nói không đổi. Mẫu đã có trong `mau-chuan/mau.json`, `kiem-mau.py` sẽ báo nếu khuôn bị đổi. Liên quan [[clip-ngan-dung-doc-lap]].

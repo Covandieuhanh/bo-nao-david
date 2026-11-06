@@ -29,3 +29,15 @@ muốn thấy hình nhiều hơn — và **không bao giờ che mặt/người n
 phụ đề, mặt nằm thấp thì dời lên đỉnh vùng an toàn hoặc chỗ trống khác. Component vẫn thiết kế trên dải gốc như cũ. Cảnh toàn màn hình phải chừa trống ~140 px cuối vùng an toàn. Render tự động (`phu-de` → `phu_de.mov`,
 đè trên cùng ở bản cuối).
 
+## Bảng tự sửa chữ (David duyệt 2026-11-06 — học ý "mỗi chữ một ô" của HyperFrames Studio; không tốn lượt Claude)
+Áp dụng dự án có `motion/src/scenes.js` (làm video, podcast, clip podcast dọc). Dự án ghép (`edl.js`) chưa có: sửa qua Claude.
+```bash
+node $SKILL/scripts/chu_tren_man.mjs xuat "$P"            # → $P/chu-tren-man.txt: chữ từng cảnh, ý đang bàn, phụ đề
+# David mở file, sửa phần sau dấu | rồi lưu
+node $SKILL/scripts/chu_tren_man.mjs ap "$P"              # ghi vào scenes.js / captions.js, tự soát cảnh, báo cảnh cần render
+node $SKILL/scripts/chu_tren_man.mjs ap "$P" --render     # render đúng các cảnh chờ + xuất lại video-final.mp4
+```
+- Sao lưu ở `check/truoc-sua-chu/`. Chữ đổi ở cả bảng lẫn kịch bản, dòng bị xoá / để trống, hoặc không xác định chắc chỗ sửa → **không ghi gì**, liệt kê để hỏi.
+- Claude sửa kịch bản sau khi xuất bảng → xuất lại bảng. Phụ đề vẫn giữ đúng lời đã nói (luật "không bịa").
+- Claude không tự chạy `--render` khi David chưa yêu cầu. Chỉ đổi chữ, không đổi mốc: chữ dài hơn nhiều thì chụp thử cảnh đó.
+- Đồng bộ `hl` (từ tô màu của phụ đề) không tự đổi: sửa đúng từ đang tô thì nhờ Claude.

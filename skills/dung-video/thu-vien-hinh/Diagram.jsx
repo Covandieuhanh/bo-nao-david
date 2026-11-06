@@ -8,16 +8,20 @@
 //   'cot'     biểu đồ cột tăng dần: {value: 10800, label: 'THÀNH VIÊN', show?: '10.800'} (chiều cao theo căn bậc của value)
 //   'luoi'    lưới đếm: {total: 80, items: [{at, upto: 30, label: '30 NĂM'}]} — ô tô dần tới upto (vd. 80 năm cuộc đời)
 //   'tu-thanh' từ → thành: items[0] = trước (mờ), items[1] = sau (cam); {label, sub?, icon?}
+//   'xay-tang' xây từ GỐC lên (khối 07, 2026-11-06) — items từ DƯỚI lên: {label, sub?}; ô trống hiện sẵn, mỗi tầng chỉ sáng đúng lúc nhắc (tầng sau xây trên tầng trước)
+//   'doi-trang-thai' MỘT vật giữ nguyên, trạng thái đổi: items[0] = trước (xám), items[1] = sau (cam); {label, sub?, icon?} — bỏ icon ở items[1] = giữ hình cũ
+//   'chuyen-giao' việc đi từ bên này sang bên kia: items[0] = bên giao, items[cuối] = bên nhận {label, icon}; giữa = các việc được chuyển {icon, label, at}
 //   'anh'     ảnh thật trong khung bo góc: {photo: 'x.jpg' (motion/public/photos/), label, sub?, credit: 'Tác giả · CC BY-SA', ratio?: 3/4, pos?: '50% 30%'}
 //             — chỉ ảnh giấy phép mở dùng thương mại (Wikimedia/Openverse) hoặc ảnh David gửi; ghi nguồn vào mô tả (nguon-anh.txt)
 // Vùng vẽ như Illus: dọc 10–56% chiều cao · ngang 7–71% (chừa phụ đề + thanh thời gian).
 import React from 'react';
-import {AbsoluteFill, Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Easing, Img, interpolate, interpolateColors, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {BODY, C, HEAD, ease} from './tokens';
 import {Icon} from './Icons';
 
 const cl = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'};
 const UP = {textTransform: 'uppercase', fontFamily: HEAD, fontWeight: 800, lineHeight: 1.15, paddingTop: '0.12em'};
+const fit = (txt, width, max) => Math.min(max, width / (Math.max(4, (txt || '').length) * 0.46));   // Barlow Condensed in hoa có dấu ≈ 0,46 em/ký tự
 
 export const Diagram = ({mode = 'tang', items = [], label = '', total = 0, start = 0, len}) => {
   const f = useCurrentFrame();
@@ -26,7 +30,7 @@ export const Diagram = ({mode = 'tang', items = [], label = '', total = 0, start
   const land = W > H, M = Math.min(W, H);
   const rel = (t) => Math.round(((t ?? start) - start) * fps);
   const sp = (a) => spring({frame: f - a, fps, config: {damping: 15, stiffness: 140, mass: 0.7}});
-  const out = interpolate(f, [Lf - 8, Lf], [1, 0], cl);
+  const out = interpolate(f, [Lf - 5, Lf], [1, 0], cl);   // ra ngắn hơn vào ~40%
   const area = {left: W * 0.07, width: W * 0.86, top: H * (land ? 0.07 : 0.1), height: H * (land ? 0.64 : 0.46)};
   const AW = area.width, AH = area.height;
   const head = label ? M * (land ? 0.06 : 0.07) : 0;
@@ -144,6 +148,114 @@ export const Diagram = ({mode = 'tang', items = [], label = '', total = 0, start
             strokeDasharray="140" strokeDashoffset={140 * (1 - ap)} />
         </svg>
         {panel(b, AW - pw, true)}
+      </>
+    );
+  } else if (mode === 'xay-tang') {   // xây từ gốc lên: ô trống hiện sẵn, tầng sáng đúng lúc nhắc; tầng đang nói = cam đặc
+    const n = Math.max(1, items.length), gap = bodyH * 0.04, rh = (bodyH - gap * (n - 1)) / n;
+    const lit = items.filter((it) => f >= rel(it.at)).length;
+    body = items.map((it, i) => {
+      const a = rel(it.at), p = sp(a), cur = i === lit - 1;
+      const w = AW * (1 - 0.3 * (n === 1 ? 0 : i / (n - 1))), x = (AW - w) / 2, y = (n - 1 - i) * (rh + gap);
+      return (
+        <React.Fragment key={i}>
+          <div style={{position: 'absolute', left: x, top: y, width: w, height: rh, borderRadius: rh * 0.16, border: `3px dashed ${C.dim}`, boxSizing: 'border-box'}} />
+          <div style={{position: 'absolute', left: x, top: y, width: w, height: rh, borderRadius: rh * 0.16, boxSizing: 'border-box',
+            background: cur ? C.accent : 'rgba(255,122,69,0.16)', border: `2px solid ${C.accent}`, opacity: Math.min(1, p * 1.4),
+            transform: `translateY(${(1 - p) * rh * 0.45}px)`, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+            <div style={{...UP, fontSize: fit(it.label, w * 0.88, rh * 0.42), color: cur ? C.bg : C.text, whiteSpace: 'nowrap'}}>{it.label}</div>
+            {it.sub && <div style={{fontFamily: BODY, fontWeight: 600, fontSize: rh * 0.15, color: cur ? C.bg : C.muted}}>{it.sub}</div>}
+          </div>
+        </React.Fragment>
+      );
+    });
+  } else if (mode === 'doi-trang-thai') {   // một vật đứng yên, màu tràn từ giữa ra + nhãn đổi: trước (xám) → sau (cam)
+    const [a, b] = items, ta = rel(a?.at), tb = b ? rel(b.at) : 1e9, pIn = sp(ta);
+    const flip = interpolate(f, [tb, tb + 12], [0, 1], {...cl, easing: Easing.inOut(Easing.quad)}), sw = ease(f, tb, tb + 5);
+    const S = Math.min(AW, bodyH) * 0.62, cx = AW / 2, cy = S / 2 + bodyH * 0.02, col = interpolateColors(flip, [0, 1], [C.dim, C.accent]);
+    const nameOf = (it, on, blur) => it && (
+      <div style={{position: 'absolute', left: 0, width: AW, top: S + bodyH * 0.07, textAlign: 'center', opacity: on, filter: `blur(${blur}px)`}}>
+        <div style={{...UP, fontSize: fit(it.label, AW * 0.94, M * (land ? 0.075 : 0.095)), color: it === b ? C.accent : C.text}}>{it.label}</div>
+        {it.sub && <div style={{fontFamily: BODY, fontWeight: 600, fontSize: M * 0.032, color: C.muted, marginTop: M * 0.008}}>{it.sub}</div>}
+      </div>
+    );
+    body = (
+      <>
+        <div style={{position: 'absolute', left: cx - S * 1.5, top: cy - S * 1.5, width: S * 3, height: S * 3, borderRadius: S * 1.5,
+          background: 'radial-gradient(circle, rgba(255,122,69,0.3), transparent 68%)', opacity: flip, transform: `scale(${0.25 + 0.75 * flip})`}} />
+        <div style={{position: 'absolute', left: cx - S / 2, top: cy - S / 2, width: S, height: S, borderRadius: S, boxSizing: 'border-box', border: `4px solid ${col}`,
+          background: flip > 0 ? `rgba(255,122,69,${0.12 * flip})` : 'rgba(255,255,255,0.04)', opacity: Math.min(1, pIn * 1.4), transform: `scale(${0.85 + 0.15 * pIn})`}}>
+          {a?.icon && <div style={{position: 'absolute', left: S * 0.18, top: S * 0.18, opacity: b?.icon ? 1 - sw : 1, filter: `grayscale(${1 - flip}) brightness(${0.75 + 0.25 * flip})`}}>
+            <Icon name={a.icon} size={S * 0.64} at={ta} stroke={2.8} /></div>}
+          {b?.icon && f >= tb && <div style={{position: 'absolute', left: S * 0.18, top: S * 0.18, opacity: sw}}>
+            <Icon name={b.icon} size={S * 0.64} at={tb} stroke={2.8} /></div>}
+        </div>
+        {nameOf(a, Math.min(1, pIn * 1.4) * (1 - sw), 8 * sw)}
+        {nameOf(b, sw, 8 * (1 - sw))}
+      </>
+    );
+  } else if (mode === 'chuyen-giao') {   // việc rời bên giao, đi theo đường cong (đường cam chạy theo), lọt vào bên nhận rồi nằm lại; bên giao nhẹ dần
+    const n = items.length, A = items[0] || {}, Z = n > 1 ? items[n - 1] : {}, moved = items.slice(1, -1);
+    const ns = Math.min(AW * 0.34, bodyH * 0.42), yN = Math.max(0, (bodyH - ns * 2.05) / 2), xZ = AW - ns, cyN = yN + ns / 2;
+    const TR = 24, xFrom = ns / 2, xTo = xZ + ns / 2, arc = ns * 0.3;   // 0,8 s, đủ để mắt theo kịp
+    const land1 = (it) => rel(it.at) + TR, done = moved.filter((it) => f >= land1(it));
+    const cur = moved.filter((it) => f >= rel(it.at) - 6).pop();
+    const lastLand = done.length ? land1(done[done.length - 1]) : -99;
+    const bump = done.length ? 1 + 0.06 * (1 - ease(f, lastLand, lastLand + 12)) : 1;   // bên nhận đón việc một lần rồi đứng yên
+    const ripple = done.length ? ease(f, lastLand, lastLand + 16) : 1;
+    const lighten = moved.length ? done.length / moved.length : 0;
+    const node = (it, x, after, sc = 1, op = 1) => (
+      <div style={{position: 'absolute', left: x, top: yN, width: ns, opacity: op * Math.min(1, sp(rel(it.at)) * 1.4)}}>
+        <div style={{position: 'relative', width: ns, height: ns, borderRadius: ns, boxSizing: 'border-box', border: `4px solid ${after ? C.accent : C.dim}`,
+          background: after ? 'rgba(255,122,69,0.14)' : 'rgba(255,255,255,0.05)', transform: `scale(${sc})`}}>
+          {it.icon && <div style={{position: 'absolute', left: ns * 0.2, top: ns * 0.2}}><Icon name={it.icon} size={ns * 0.6} at={rel(it.at)} stroke={3} /></div>}
+        </div>
+        <div style={{...UP, textAlign: 'center', fontSize: fit(it.label, ns * 1.1, M * (land ? 0.05 : 0.06)), color: after ? C.accent : C.text, marginTop: ns * 0.05}}>{it.label}</div>
+      </div>
+    );
+    const U0 = 0.14, U1 = 0.86;   // đi từ mép bên giao tới mép bên nhận, không che biểu tượng ở hai đầu
+    const uOf = (t) => U0 + (U1 - U0) * t;
+    const pos = (t) => { const u = uOf(t); return [xFrom + (xTo - xFrom) * u, cyN - 4 * arc * u * (1 - u)]; };   // đúng theo đường cong bên dưới
+    const curve = `M${xFrom} ${cyN} Q${(xFrom + xTo) / 2} ${cyN - arc * 2} ${xTo} ${cyN}`;
+    const inFlight = moved.filter((it) => f >= rel(it.at) - 6 && f < land1(it) + 8).pop();
+    const tLine = inFlight ? interpolate(f, [rel(inFlight.at), land1(inFlight)], [0, 1], {...cl, easing: Easing.inOut(Easing.cubic)}) : 0;
+    const lineOp = inFlight ? ease(f, rel(inFlight.at) - 6, rel(inFlight.at)) * (1 - ease(f, land1(inFlight), land1(inFlight) + 8)) : 0;
+    body = (
+      <>
+        <svg width={AW} height={bodyH} style={{position: 'absolute', left: 0, top: 0, overflow: 'visible'}}>
+          <mask id="giao-duong" maskUnits="userSpaceOnUse" x={-AW} y={-bodyH} width={AW * 3} height={bodyH * 3}>   {/* đường dừng ở mép hai vòng tròn */}
+            <rect x={-AW} y={-bodyH} width={AW * 3} height={bodyH * 3} fill="white" />
+            <circle cx={xFrom} cy={cyN} r={ns / 2 + 8} fill="black" /><circle cx={xTo} cy={cyN} r={ns / 2 + 8} fill="black" />
+          </mask>
+          <g mask="url(#giao-duong)">
+          <path d={curve} fill="none" stroke={C.dim} strokeWidth={3} strokeDasharray="4 14" strokeLinecap="round" opacity={0.8} />
+          <path d={curve} pathLength={1} fill="none" stroke={C.accent} strokeWidth={5} strokeLinecap="round" strokeDasharray="1 1" strokeDashoffset={1 - uOf(tLine)} opacity={lineOp} />
+          </g>
+        </svg>
+        {node(A, 0, false, 1, 1 - 0.45 * lighten)}
+        {node(Z, xZ, true, bump)}
+        {done.length > 0 && ripple < 1 && <div style={{position: 'absolute', left: xZ + ns / 2 - ns / 2, top: yN, width: ns, height: ns, borderRadius: ns, boxSizing: 'border-box',
+          border: `4px solid ${C.accent}`, opacity: 0.7 * (1 - ripple), transform: `scale(${1 + 0.35 * ripple})`}} />}
+        {moved.map((it, i) => {
+          const a = rel(it.at);
+          if (f < a - 6 || f >= a + TR) return null;
+          const t = interpolate(f, [a, a + TR], [0, 1], {...cl, easing: Easing.inOut(Easing.cubic)}), [x, y] = pos(t), S = ns * 0.46;
+          const scale = ease(f, a - 6, a, 0.55, 1) * interpolate(t, [0.72, 1], [1, 0.5], cl);   // nhô ra khỏi bên giao · thu nhỏ khi lọt vào bên nhận
+          return (
+            <div key={i} style={{position: 'absolute', left: x - S / 2, top: y - S / 2, width: S, height: S, borderRadius: S, boxSizing: 'border-box', background: C.accent,
+              boxShadow: '0 14px 40px rgba(0,0,0,0.5)', opacity: ease(f, a - 6, a - 2) * (1 - ease(f, a + TR - 3, a + TR)), transform: `scale(${scale})`,
+              display: 'flex', alignItems: 'center', justifyContent: 'center', color: C.bg}}>
+              <div style={{filter: 'brightness(0)'}}><Icon name={it.icon} size={S * 0.62} at={-99} stroke={3.6} /></div>
+            </div>
+          );
+        })}
+        <div style={{position: 'absolute', left: xZ - ns * 0.1, width: ns * 1.2, top: yN + ns * 1.38, display: 'flex', justifyContent: 'center', gap: ns * 0.05}}>
+          {done.map((it, i) => { const p = sp(land1(it)); return <div key={i} style={{opacity: Math.min(1, p * 1.4), transform: `scale(${0.6 + 0.4 * p})`}}><Icon name={it.icon} size={ns * 0.24} at={-99} stroke={4} /></div>; })}
+        </div>
+        {moved.map((it, i) => {   // tên việc: đổi bằng mờ nhoè ngắn, không đè lên nhau
+          const next = moved[i + 1], o = ease(f, rel(it.at) - 6, rel(it.at) + 2) * (next ? 1 - ease(f, rel(next.at) - 8, rel(next.at) - 4) : 1);
+          return o > 0 && <div key={i} style={{position: 'absolute', left: 0, width: AW, top: yN + ns * 1.74, textAlign: 'center', ...UP,
+            fontSize: fit(it.label, AW * 0.92, M * (land ? 0.07 : 0.085)), color: C.text, opacity: o, filter: `blur(${(1 - o) * 8}px)`}}>{it.label}</div>;
+        })}
       </>
     );
   } else if (mode === 'anh') {   // ẢNH THẬT trong khung bo góc + nhãn + nguồn

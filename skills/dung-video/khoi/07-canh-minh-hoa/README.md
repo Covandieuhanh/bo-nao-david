@@ -105,7 +105,20 @@ Không chỉ "biểu tượng + nhãn": khi câu nói có CẤU TRÚC, vẽ chí
 | so sánh độ lớn nhiều con số | `cot` | "thu nhập gấp 10 lần" |
 | đếm phần trên tổng (đời người, tuần, ngày) | `luoi` (`total`, `upto`) | "80 năm cuộc đời … 30 năm đi làm" |
 | trước → sau, từ … thành … | `tu-thanh` | "cộng đồng → nâng cấp thành làng" |
+| xây dần từ gốc, tầng sau cần tầng trước ("bản thân → công việc → mối quan hệ") | `xay-tang` (items từ DƯỚI lên) | "muốn lên tầng sau phải qua tầng trước" |
+| một thứ giữ nguyên nhưng đổi trạng thái (nhấn vào sự đổi, không so sánh hai bên) | `doi-trang-thai` (2 items; bỏ `icon` ở item sau = giữ hình) | "từ làm thay … thành dẫn đội" |
+| việc đi từ người này sang người kia | `chuyen-giao` (items[0] bên giao, giữa = các việc `{icon, label, at}`, cuối = bên nhận) | "báo cáo tuần … xếp lịch … giao lại cho đội" |
 | người / nơi / tổ chức có thật | `anh` (ảnh giấy phép mở hoặc ảnh David gửi, khung bo góc + nhãn + nguồn) | "CCL", "Singapore", "Bác Hồ" |
 Ảnh: `openverse.py search/fetch` (CC0 / PD / CC BY / CC BY-SA, dùng thương mại) → `motion/public/photos/`, ghi `credit` trên ảnh + `nguon-anh.txt`
 cho mô tả. Không có ảnh đúng (logo thương hiệu, ảnh mơ hồ) → dùng sơ đồ, không ép ảnh. Podcast dài: ưu tiên `diagram` hơn `illus`.
 Vlog (`plan.json` fx): `{"type": "diagram", "c", "at", "len", "mode", "label", "items": [{"at": giây clip, …}]}`.
+
+## Luật chuyển động (David duyệt 2026-11-06 — học từ tài liệu `motion.md` của HyperFrames, tự viết lại cho khung dựng Remotion)
+Chuyển động phải dẫn mắt tới ý đang nói, không để trang trí. Thêm hoặc sửa cảnh thì theo:
+- **Đã vào là đứng yên:** không lơ lửng, không vòng xoay, không quầng nhấp nháy lặp lại — đó là dấu hiệu "máy làm". Chuyển động liên tục chỉ giữ khi có nghĩa: sóng âm theo giọng, thanh thời gian, nút mời bấm ở màn kết.
+- **Vào có đuôi dài, ra gọn:** ra ngắn hơn vào 40–50% (hiện: vào 8 khung, ra 5 khung).
+- **Kiểu vào theo ý của câu**, không để mọi cảnh cùng trồi lên: 1 hình = phóng tại chỗ · nhân quả = đi theo hướng đọc · so sánh = hai phía tiến vào · danh sách = trồi lên lần lượt.
+- **Chỉ vị trí và cỡ được nảy nhẹ** (spring damping ~14–15), độ mờ và màu không nảy. Phản hồi một lần thì được (bên nhận đón việc), lặp lại thì không.
+- **Vào cảnh qua một vật trên màn hình khi được** (việc bay sang bên nhận, màu tràn từ vật ra), thay vì mờ chồng cả khung.
+- **Tiêu đề hiện xong thì đứng yên** tới lúc rời đi.
+Không dùng: cắt theo nhịp nhạc (video của David đi theo lời).

@@ -45,7 +45,7 @@ export const Action = ({start, icon = 'check', quote: q0, quoteAt, doneAt, eyebr
         justifyContent: 'center', alignItems: 'flex-start', gap: 56}}>
         <div style={{position: 'relative', width: size, height: size, borderRadius: '50%', border: `3px solid ${C.accent}`,
           background: C.accentSoft, display: 'flex', alignItems: 'center', justifyContent: 'center',
-          transform: `scale(${0.85 + 0.15 * pop(f, 2)})`, boxShadow: `0 0 ${50 + 20 * Math.sin(f / 9)}px rgba(255,122,69,0.25)`}}>
+          transform: `scale(${0.85 + 0.15 * pop(f, 2)})`, boxShadow: '0 0 50px rgba(255,122,69,0.25)'}}>
           <Icon name={icon} size={size * 0.62} at={4} stroke={2.8} />
           <Tick p={done} size={size} />
         </div>

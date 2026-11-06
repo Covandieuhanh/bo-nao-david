@@ -26,27 +26,36 @@ const Mark = ({good, s, o}) => (
   </div>
 );
 
+// KIỂU VÀO theo ý của câu (khối 07 — không để mọi cảnh cùng "trồi lên"): 1 hình = phóng tại chỗ · nhân quả = đi theo hướng đọc ·
+// so sánh = hai phía tiến vào · danh sách = trồi lên lần lượt. Hình đã vào là ĐỨNG YÊN (không lơ lửng, không vòng xoay).
+const enter = (mode, i, p, sz) => {
+  const d = (1 - p) * sz * 0.22;
+  if (mode === 'flow') return `translateX(${-d}px)`;
+  if (mode === 'vs') return `translateX(${i === 0 ? -d : d}px)`;
+  if (mode === 'list') return `translateY(${d}px)`;
+  return `scale(${0.82 + 0.18 * p})`;
+};
+
 export const Illus = ({mode = 'single', items = [], label = '', num = null, start = 0, len, compact = false}) => {   // compact: chừa giữa khung cho chữ chính
   const f = useCurrentFrame();
   const {fps, width: W, height: H, durationInFrames} = useVideoConfig();
   const L = len || durationInFrames;
   const rel = (t) => Math.round(((t ?? start) - start) * fps);
   const land = W > H, M = Math.min(W, H);
-  const out = interpolate(f, [L - 8, L], [1, 0], cl);
+  const out = interpolate(f, [L - 5, L], [1, 0], cl);   // ra ngắn hơn vào ~40% (vào 8 khung · ra 5 khung)
   const n = Math.max(1, items.length);
   // khung ngang (podcast 1920×1080): hình nhỏ hơn để cả dấu ✓/✗ + nhãn nằm gọn trong vùng vẽ (2026-11-05: bản cũ bị cắt mép trên)
   const sz = compact ? M * 0.36 : mode === 'count' ? M * (land ? 0.22 : 0.5) : mode === 'single' ? M * (land ? 0.34 : 0.5) : n === 2 ? M * (land ? 0.26 : 0.36) : M * (land ? 0.2 : 0.24);
   const icon = (it, i) => {
     const a = rel(it.at), p = spring({frame: f - a, fps, config: {damping: 14, stiffness: 150, mass: 0.7}});
-    const bob = Math.sin((f - a) / 20) * sz * 0.012;
     const dim = mode === 'vs' && it.good === false ? 0.55 : 1;
     return (
       <div key={i} style={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: sz * 0.1, opacity: Math.min(1, p * 1.3) * dim,
-        transform: `translateY(${(1 - p) * 50 + bob}px) scale(${0.85 + 0.15 * p})`}}>
+        transform: enter(mode, i, p, sz)}}>
         <div style={{position: 'relative', width: sz, height: sz}}>
           <svg width={sz} height={sz} style={{position: 'absolute', inset: 0}}>
             <circle cx={sz / 2} cy={sz / 2} r={sz * 0.47} fill="rgba(255,122,69,0.07)" stroke={C.accent} strokeOpacity={0.32} strokeWidth={2}
-              strokeDasharray={`${sz * 0.06} ${sz * 0.05}`} transform={`rotate(${f * 0.35} ${sz / 2} ${sz / 2})`} />
+              strokeDasharray={`${sz * 0.06} ${sz * 0.05}`} />
           </svg>
           <div style={{position: 'absolute', left: sz * 0.18, top: sz * 0.18, filter: 'drop-shadow(0 0 22px rgba(255,122,69,0.45))'}}>
             <Icon name={it.icon} size={sz * 0.64} at={a} stroke={sz > 400 ? 2.6 : 3} />

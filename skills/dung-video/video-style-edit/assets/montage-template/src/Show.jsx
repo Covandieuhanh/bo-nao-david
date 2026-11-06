@@ -699,21 +699,20 @@ const Scene = ({len, start, icons, quote, flow = true}) => {
   });
   const span = Math.max(1, len - fr(0.8));   // chữ sáng dần đều theo thời lượng cảnh (≈ nhịp nói)
   return (
-    <AbsoluteFill style={{opacity: inOut(f, len, 8, 8), background: C.bg}}>
+    <AbsoluteFill style={{opacity: inOut(f, len, 8, 5), background: C.bg}}>
       <AbsoluteFill style={{background: 'radial-gradient(circle at 50% 30%, rgba(255,122,69,0.18), transparent 60%)'}} />
       <div style={{position: 'absolute', left: SAFE.left, width: SAFE_W, top: 250, height: 1000, display: 'flex', flexDirection: 'column',
         justifyContent: 'center', gap: 64}}>
         <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 18}}>
           {icons.map(([name, at], i) => {
             const a = fr(at - start), p = pop(f, a, {damping: 15, stiffness: 150, mass: 0.7});
-            const bob = Math.sin((f - a) / 18) * sz * 0.015;
             return (
               <React.Fragment key={i}>
                 {flow && i > 0 && <div style={{opacity: ease(f, a - 4, a + 4)}}><Arrow size={46} /></div>}
-                <div style={{position: 'relative', width: sz, height: sz, opacity: Math.min(1, p * 1.4), transform: `translateY(${(1 - p) * 40 + bob}px)`}}>
+                <div style={{position: 'relative', width: sz, height: sz, opacity: Math.min(1, p * 1.4), transform: `translateY(${(1 - p) * 40}px)`}}>
                   <svg width={sz} height={sz} style={{position: 'absolute', inset: 0}}>
                     <circle cx={sz / 2} cy={sz / 2} r={sz * 0.46} fill="rgba(255,122,69,0.07)" stroke={C.accent} strokeOpacity={0.3} strokeWidth={2}
-                      strokeDasharray={`${sz * 0.06} ${sz * 0.05}`} transform={`rotate(${f * 0.4} ${sz / 2} ${sz / 2})`} />
+                      strokeDasharray={`${sz * 0.06} ${sz * 0.05}`} />
                   </svg>
                   <div style={{position: 'absolute', left: sz * 0.18, top: sz * 0.18, filter: 'drop-shadow(0 0 18px rgba(255,122,69,0.45))'}}>
                     <Icon name={name} size={sz * 0.64} at={a} stroke={2.8} />

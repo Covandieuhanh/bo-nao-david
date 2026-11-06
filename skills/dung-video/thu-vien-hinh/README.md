@@ -9,6 +9,7 @@
 | `Icons.jsx` | biểu tượng nét vẽ dần (Icon, Pictogram) | 07 |
 | `YtEnd.jsx` | màn kết YouTube 15–20 s | 08 |
 | `Illus.jsx` | cảnh minh hoạ toàn màn hình (2 trạng thái) | 07 |
+| `Diagram.jsx` | sơ đồ nói thay lời: tang, vong, moc, cot, luoi, tu-thanh, xay-tang, doi-trang-thai, chuyen-giao, anh | 07 |
 | `EndCardBody.jsx` | ruột thẻ cuối (nút phát / gạch, XEM BẢN ĐẦY ĐỦ, tên, người nói, lịch phát) | 08 |
 
 Cách nối: `remotion-template/src/lib` và `montage-template/src/lib` là **lối tắt** trỏ về thư mục này; lúc tạo dự án, `new_project.sh` /

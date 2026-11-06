@@ -12,15 +12,16 @@ Ghi ngày 06/11/2026. **Chờ David duyệt. Chưa hẹn giờ, chưa đăng bà
 | Ngày (20:00 VN) | YouTube | Trang Facebook | TikTok | Facebook cá nhân |
 |---|---|---|---|---|
 | T3 10/11 | Video dài | Bài viết + link YouTube | Không | David tự bấm chia sẻ |
-| T6 13/11 | Short clip 1 (mới đề xuất) | Reels clip 1 | Clip 1 | Không |
-| T3 17/11 | Short clip 2 (mới đề xuất) | Reels clip 2 | Clip 2 | Không |
-| T6 20/11 | Short clip 3 (mới đề xuất) | Reels clip 3 | Clip 3 | Không |
+| T6 13/11 | Không | Reels clip 1 | Clip 1 | Bạn tự bấm chia sẻ |
+| T3 17/11 | Không | Reels clip 2 | Clip 2 | Bạn tự bấm chia sẻ |
+| T6 20/11 | Không | Reels clip 3 | Clip 3 | Bạn tự bấm chia sẻ |
+
+David đã chốt 06/11: YouTube chỉ đăng video dài, không đăng Shorts. Màn hình cuối clip không có icon YouTube.
 
 ### Cần David chốt (đề xuất của mình ở đầu mỗi dòng)
 1. **Bỏ tiếng ký hiệu** đè lên "David xin chào" ở giây đầu video dài. Chỉ ghép lại tiếng, hình không đổi. Đây là lỗi bạn đã góp ý ở 3 clip.
-2. **Đăng thêm 3 clip lên YouTube Shorts.** Bạn nói "tất cả các trang", còn kế hoạch cũ chỉ có Reels và TikTok. Mỗi Short gắn "Video liên quan" về video dài.
-3. **TikTok không ghi link.** Link trong mô tả TikTok không bấm được, nên đổi thành câu "Bản đầy đủ mình để trên YouTube, kênh Trainer David Trần."
-4. **Giữ nguyên chữ** ở mục "Chữ từng bài" bên dưới, gồm tiêu đề YouTube số 1 và thumb-1.
+2. **TikTok không ghi link.** Link trong mô tả TikTok không bấm được, nên đổi thành câu "Bản đầy đủ mình để trên YouTube, kênh Trainer David Trần."
+3. **Giữ nguyên chữ** ở mục "Chữ từng bài" bên dưới, gồm tiêu đề YouTube số 1 và thumb-1.
 
 ### Bạn nên biết trước khi đăng
 - **TikTok chỉ cho hẹn tối đa 10 ngày.** Hôm nay hẹn được clip 1. Clip 2 và 3 mình đặt việc tự làm ngày 11/11, hôm đó **máy cần bật và ứng dụng Claude cần mở**. Nếu lỡ, mình báo để làm bù.
@@ -30,7 +31,7 @@ Ghi ngày 06/11/2026. **Chờ David duyệt. Chưa hẹn giờ, chưa đăng bà
 ## 3. Quy trình
 1. Đăng YouTube video dài trước để có link, chọn "Lên lịch".
 2. Điền link đó vào bài trang Facebook và các Reels.
-3. Hẹn bài viết trang, 3 Reels, 3 Shorts, TikTok clip 1.
+3. Hẹn bài viết trang, 3 Reels, TikTok clip 1.
 4. Trước mỗi cú bấm "Lên lịch": chụp màn hình, đối chiếu với chữ đã duyệt, kiểm múi giờ là giờ Việt Nam.
 5. Gặp mã xác minh, CAPTCHA hoặc yêu cầu đăng nhập lại thì dừng và gọi bạn. Mình không nhập mật khẩu.
 6. Bình luận không hẹn được trước, nên đến giờ bài lên mình mới đăng và ghim.
@@ -43,7 +44,6 @@ Ghi ngày 06/11/2026. **Chờ David duyệt. Chưa hẹn giờ, chưa đăng bà
 - [ ] Lấy link YouTube, điền vào `[link YouTube]`
 - [ ] Trang Facebook: hẹn bài viết T3 10/11
 - [ ] Trang Facebook: hẹn Reels 13/11, 17/11, 20/11, ảnh bìa giây 0,3
-- [ ] YouTube: hẹn 3 Shorts 13/11, 17/11, 20/11
 - [ ] TikTok: hẹn clip 1 T6 13/11
 - [ ] Đặt các việc tự chạy ở bảng dưới
 - [ ] Ghi sổ danh mục "chờ đăng", gửi bạn ảnh xác nhận
@@ -51,9 +51,9 @@ Ghi ngày 06/11/2026. **Chờ David duyệt. Chưa hẹn giờ, chưa đăng bà
 ### Việc tự chạy sau đó (cần máy bật, ứng dụng Claude mở)
 | Lúc (giờ VN) | Việc |
 |---|---|
-| T3 10/11 20:15 | Kiểm tra bài lên, ghim bình luận, gửi bạn câu chia sẻ Facebook cá nhân |
+| T3 10/11 20:15 | Kiểm tra bài lên, ghim bình luận, nhắc bạn chia sẻ sang Facebook cá nhân |
 | T4 11/11 20:30 | Hẹn TikTok clip 2 và 3. Đọc bình luận, tin nhắn sau 24 giờ, không tự trả lời |
-| T6 13/11, T3 17/11, T6 20/11 20:15 | Kiểm tra bài lên, ghim bình luận |
+| T6 13/11, T3 17/11, T6 20/11 20:15 | Kiểm tra bài lên, ghim bình luận, nhắc bạn chia sẻ Reels sang Facebook cá nhân |
 | T7 14/11, T4 18/11, T7 21/11 20:30 | Đọc bình luận, tin nhắn sau 24 giờ |
 | T3 17/11, T6 20/11, T3 24/11, T6 27/11 20:30 | Số liệu sau 7 ngày, ghi vào sổ, 1–3 đề xuất |
 
@@ -111,10 +111,8 @@ Bạn đang kẹt ở vai trò nào? Bình luận **Vấn đề** để mình bi
 ### Facebook cá nhân — bạn tự bấm chia sẻ
 Vừa làm xong là mình thu âm ngay, dù có lủng củng. Những câu chuyện được phép chia sẻ thật sự là không nhiều.
 
-### Clip 1 (T6 13/11) — Reels, Shorts, TikTok
-Thẻ tít: NGƯỜI THÂN QUEN / KÉO HẾT NHÂN SỰ · Màn hình cuối: David đã nói gì với anh ấy?
-
-**Tiêu đề Short:** Người thân quen kéo hết nhân sự
+### Clip 1 (T6 13/11) — Reels, TikTok
+Thẻ tít: NGƯỜI THÂN QUEN / KÉO HẾT NHÂN SỰ · Màn hình cuối: David đã nói gì với anh ấy? · Bản đầy đủ trên kênh Trainer David Trần
 
 Làm việc với một người rất là thân quen.
 Nhưng cuối cùng, chính cái người thân này lại đi cửa sau.
@@ -127,10 +125,8 @@ Bạn từng gặp chuyện này chưa? Bình luận **Vấn đề** nhé.
 
 **Bình luận ghim:** Bạn từng gặp chuyện này chưa? Bình luận "Vấn đề" và kể mình nghe vì sao chưa gỡ được. Bản đầy đủ: [link YouTube]
 
-### Clip 2 (T3 17/11) — Reels, Shorts, TikTok
-Thẻ tít: KHÔNG PHẢI SAI / MÀ LÀ CHƯA PHÙ HỢP · Màn hình cuối: Chuyện gì đã xảy ra với anh ấy?
-
-**Tiêu đề Short:** Không phải sai, mà là chưa phù hợp
+### Clip 2 (T3 17/11) — Reels, TikTok
+Thẻ tít: KHÔNG PHẢI SAI / MÀ LÀ CHƯA PHÙ HỢP · Màn hình cuối: Chuyện gì đã xảy ra với anh ấy? · Bản đầy đủ trên kênh Trainer David Trần
 
 Mỗi người trong chúng ta sẽ là một cái mảnh ghép.
 Không có mảnh ghép nào nó giống mảnh ghép nào cả.
@@ -143,10 +139,8 @@ Bạn có đang tự trách mình không? Bình luận **Vấn đề** nhé.
 
 **Bình luận ghim:** Bạn có đang tự trách mình không? Bình luận "Vấn đề" và kể mình nghe vì sao chưa gỡ được. Bản đầy đủ: [link YouTube]
 
-### Clip 3 (T6 20/11) — Reels, Shorts, TikTok
-Thẻ tít: BỊ RÚT ĐI NHÂN SỰ / HÃY HIỂU VAI TRÒ · Màn hình cuối: Anh ấy đã bị rút nhân sự thế nào?
-
-**Tiêu đề Short:** Hiểu vai trò, không còn lấn sân
+### Clip 3 (T6 20/11) — Reels, TikTok
+Thẻ tít: BỊ RÚT ĐI NHÂN SỰ / HÃY HIỂU VAI TRÒ · Màn hình cuối: Anh ấy đã bị rút nhân sự thế nào? · Bản đầy đủ trên kênh Trainer David Trần
 
 Nếu như anh có thể nhận định được cái vai trò của mình trong công ty, thì anh sẽ không bị lấn sân sang cái phần khác.
 Cái phần đấy nó có chưa được, thì nó đâu phải là cái kỹ năng, nó đâu phải là cái năng lực của anh.

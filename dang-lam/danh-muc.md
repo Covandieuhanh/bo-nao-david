@@ -9,7 +9,7 @@ Trạng thái: lọc · dựng · chờ đăng · đã đăng · kho · bỏ. D�
 | 2026-11-05 | Vlog Miếu Bà Cam (10 clip + flycam) | 👤 Chỉ Facebook cá nhân | — (chạm lằn ranh) | nhân hiệu | Facebook cá nhân | — | lọc (chấm thử) |
 | 2026-11-05 | Vlog VF3 kỷ niệm (3 clip) | 👤 Chỉ Facebook cá nhân | 3 | nhân hiệu | Facebook cá nhân | — | lọc (chấm thử) |
 | 2026-11-05 | Podcast "Trainer cho người làm trainer" (DJI_16, 8:57, giữ nguyên không cắt) | ✅ Phù hợp · ⚠️ đã cảnh báo lằn ranh, David giữ | 7 | gốc → công việc | YouTube ngang T3 10/11 20:00 | Gợi mở | dựng xong (chờ David duyệt cổng 2) |
-| 2026-11-06 | 3 clip trích từ podcast DJI_16 (`~/Movies/highlight-di-trainer`) | ✂️ Trích ngắn từ gốc | 7 | gốc → công việc | Reels + TikTok: T6 13/11 · T3 17/11 · T6 20/11, 20:00 | Gợi mở (câu hỏi ở mô tả, màn cuối mời xem YouTube) | David duyệt 3 video làm mẫu 06/11 (kế hoạch đăng chờ duyệt, chưa hẹn giờ) |
+| 2026-11-06 | 3 clip trích từ podcast DJI_16 (`~/Movies/highlight-di-trainer`) | ✂️ Trích ngắn từ gốc | 7 | gốc → công việc | Reels + TikTok: T6 13/11 · T3 17/11 · T6 20/11, 20:00 | Gợi mở (câu hỏi ở mô tả, màn cuối mời xem YouTube) | David duyệt 3 video làm mẫu 06/11; dựng lại bằng skill mới, bỏ icon YouTube (kế hoạch và bản mới chờ duyệt, chưa hẹn giờ) |
 
 ## Phiếu lọc (chấm thử 05/11/2026)
 

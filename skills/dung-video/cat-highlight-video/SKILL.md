@@ -129,7 +129,7 @@ PY=$(zsh $POD/scripts/py_setup.sh); $PY $POD/scripts/speakers.py "$E" <1|2>; $PY
 
 ### Khuôn podcast đồ hoạ dọc (7B, David duyệt 2026-11-06. Mẫu cho mọi video sau: 3 clip `~/Movies/podcast-hl-di-trainer-{A,B,C}`, thành phẩm ở Drive `Video-xong/Di-trainer-clip-1|2|3.mp4`, lời và kịch bản ở repo David.Claude `dang-lam/video-di-trainer/`) — thắng các luật khác trong skill này khi trái nhau
 - **Không ép hành động trong lời:** bỏ luật 4 và màn chốt `cta` ở nhánh này. Không ghép câu kêu gọi từ chỗ khác. Clip kết ở chính câu đắt nhất, lặng 1 s (nhạc nổi lên), rồi sang màn hình cuối.
-- **Màn hình cuối 3 s, không lời:** `"tease"` trong option của phuong-an.json = một câu gợi tò mò (Claude viết, David duyệt, chỉ gợi điều có thật trong video dài) + nút YouTube + "Bản đầy đủ trên YouTube" + tên tập. Câu hỏi "Vấn đề" / "Kết quả" để ở mô tả và bình luận ghim.
+- **Màn hình cuối 3 s, không lời:** `"tease"` trong option của phuong-an.json = một câu gợi tò mò (Claude viết, David duyệt, chỉ gợi điều có thật trong video dài) + gạch nhận diện + "Bản đầy đủ trên kênh <`man_cuoi_kenh`>" + tên tập. **Không logo nền tảng nào** (David chốt 2026-11-06: video đăng Reels và TikTok, nút không bấm được mà có thể bị hạn chế phân phối). Câu hỏi "Vấn đề" / "Kết quả" để ở mô tả và bình luận ghim.
 - **Nhạc:** `ho-so/highlight.json` → `nhac_chu_chinh` (thấp hơn giọng khoảng 23 dB lúc nói, nén nhẹ), chạy liền qua màn hình cuối, không tiếng ký hiệu đầu clip.
 - **Hoàn cảnh:** thiếu hoàn cảnh thì đưa câu nguyên văn nêu hoàn cảnh lên đầu clip.
 - **Sau khi cắt:** `new_podcast.sh … cat-thua` còn 0,4 s lặng cuối → đệm đủ 1 s lặng, cập nhật `project.duration`, chạy lại `envelope.py`.
