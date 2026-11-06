@@ -13,6 +13,13 @@ nền tảng: đi chậm, chụp từng bước, sửa README này theo giao di�
 - Trước cú bấm cuối ("Lên lịch" / "Đăng" / "Chia sẻ"): chụp màn hình phần xem trước, đối chiếu với bản đã duyệt; sau đó chụp xác nhận.
 - Gặp mã xác minh, CAPTCHA, đăng nhập lại, cảnh báo bảo mật → **dừng, gọi David** (không tự vượt).
 
+## Thứ tự hẹn giờ một đợt (video dài + clip, ghi 06/11/2026)
+1. YouTube video dài trước, lấy link, điền vào các bài còn lại. 2. Bài trang Facebook, Reels, Shorts. 3. TikTok.
+- **TikTok chỉ hẹn được trong 10 ngày:** clip xa hơn thì đặt việc tự chạy (scheduled task) khi đã vào tầm; việc này cần máy bật và ứng dụng Claude mở.
+- **Bình luận ghim không hẹn được trước:** đặt việc tự chạy ngay sau giờ bài lên, đăng đúng chữ đã duyệt.
+- **Link trong mô tả TikTok không bấm được:** ghi tên kênh thay cho link. Shorts gắn "Video liên quan" về video dài.
+- Kế hoạch đăng theo 4 phần, chữ từng bài nằm chung một file để David duyệt một lần. Mẫu: repo David.Claude `dang-lam/video-di-trainer/ke-hoach-dang.md`.
+
 ## Trình duyệt
 - **Đọc / soạn / kiểm** (không cần tải file): trình duyệt riêng trong app (`mcp__Claude_Browser__*`) — David đã đăng nhập 3 nền tảng.
 - **Tải video lên** cần lệnh chọn file → **Playwright CLI + Chrome hồ sơ riêng** (trình duyệt trong app không chọn file được; YouTube chặn

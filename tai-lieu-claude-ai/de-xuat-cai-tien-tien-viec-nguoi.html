@@ -1,0 +1,546 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}</style></head><body>
+<title>Đề xuất cải tiến — Tiền · Việc · Người</title>
+<style>
+  :root{
+    --paper:#F6F5F1; --card:#FCFBF8; --band:#F0EFE8;
+    --ink:#232B29; --ink-soft:#585F5A; --ink-faint:#8C918A;
+    --line:#E4E2DA; --line-strong:#D2CFC5;
+    --accent:#0F6E5C; --accent-soft:rgba(15,110,92,.10);
+    --tien:#0F6E5C; --viec:#3A5AA6; --nguoi:#B06238; --xuyen:#6C5CA6;
+    --good:#2E7D5B; --warn:#B9862B; --crit:#B0483C;
+    --font-display:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    --font-body:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+    --font-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    --maxw:64rem;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --paper:#14171A; --card:#1B1F21; --band:#1F2427;
+      --ink:#E9EAE4; --ink-soft:#A8AEA6; --ink-faint:#767C76;
+      --line:#2A2F30; --line-strong:#3A4142;
+      --accent:#54B99F; --accent-soft:rgba(84,185,159,.14);
+      --tien:#54B99F; --viec:#8EA2E6; --nguoi:#D89A72; --xuyen:#AB9DE2;
+      --good:#57B88A; --warn:#D6A653; --crit:#DB7365;
+    }
+  }
+  :root[data-theme="light"]{
+    --paper:#F6F5F1; --card:#FCFBF8; --band:#F0EFE8;
+    --ink:#232B29; --ink-soft:#585F5A; --ink-faint:#8C918A;
+    --line:#E4E2DA; --line-strong:#D2CFC5;
+    --accent:#0F6E5C; --accent-soft:rgba(15,110,92,.10);
+    --tien:#0F6E5C; --viec:#3A5AA6; --nguoi:#B06238; --xuyen:#6C5CA6;
+    --good:#2E7D5B; --warn:#B9862B; --crit:#B0483C;
+  }
+  :root[data-theme="dark"]{
+    --paper:#14171A; --card:#1B1F21; --band:#1F2427;
+    --ink:#E9EAE4; --ink-soft:#A8AEA6; --ink-faint:#767C76;
+    --line:#2A2F30; --line-strong:#3A4142;
+    --accent:#54B99F; --accent-soft:rgba(84,185,159,.14);
+    --tien:#54B99F; --viec:#8EA2E6; --nguoi:#D89A72; --xuyen:#AB9DE2;
+    --good:#57B88A; --warn:#D6A653; --crit:#DB7365;
+  }
+
+  *{box-sizing:border-box;}
+  body{margin:0;}
+  .wrap{
+    background:var(--paper); color:var(--ink);
+    font-family:var(--font-body); line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    padding:clamp(1.25rem,4vw,3.5rem) clamp(1rem,4vw,2rem) 4rem;
+  }
+  .page{max-width:var(--maxw); margin:0 auto;}
+
+  .eyebrow{
+    font-family:var(--font-mono); font-size:.72rem; letter-spacing:.18em;
+    text-transform:uppercase; color:var(--accent); margin:0 0 1rem;
+    display:flex; align-items:center; gap:.6rem;
+  }
+  .eyebrow::before{content:""; width:1.6rem; height:1px; background:var(--accent);}
+  h1{
+    font-family:var(--font-display); font-weight:600;
+    font-size:clamp(1.9rem,5vw,3rem); line-height:1.08; letter-spacing:-.01em;
+    margin:0 0 1rem; text-wrap:balance;
+  }
+  .lede{
+    font-size:clamp(1rem,2.2vw,1.15rem); color:var(--ink-soft);
+    max-width:46ch; margin:0 0 2rem;
+  }
+
+  .legend{
+    display:flex; flex-wrap:wrap; gap:1.25rem 2rem; align-items:center;
+    padding:1rem 1.25rem; margin:0 0 3rem;
+    background:var(--card); border:1px solid var(--line); border-radius:10px;
+    font-size:.82rem;
+  }
+  .legend h2{font-size:.7rem; letter-spacing:.14em; text-transform:uppercase;
+    font-family:var(--font-mono); color:var(--ink-faint); margin:0; font-weight:500;}
+  .legend-group{display:flex; align-items:center; gap:.9rem; flex-wrap:wrap;}
+  .legend-item{display:flex; align-items:center; gap:.45rem; color:var(--ink-soft);}
+
+  .meter{display:inline-flex; gap:3px; align-items:center;}
+  .meter i{width:7px; height:7px; border-radius:50%; background:var(--line-strong); display:block;}
+  .meter i.on{background:var(--accent);}
+
+  section{margin:0 0 3.25rem;}
+  .sec-head{
+    display:flex; align-items:baseline; gap:.75rem; flex-wrap:wrap;
+    padding-bottom:.7rem; margin-bottom:.25rem;
+    border-bottom:2px solid var(--pill,var(--accent));
+  }
+  .sec-head .num{font-family:var(--font-mono); font-size:.8rem; color:var(--pill,var(--accent)); font-weight:600;}
+  .sec-head h2{font-family:var(--font-display); font-size:clamp(1.35rem,3vw,1.7rem);
+    font-weight:600; margin:0; color:var(--ink);}
+  .sec-head .desc{color:var(--ink-faint); font-size:.9rem; margin-left:auto;}
+
+  .rows{display:flex; flex-direction:column;}
+  .row{
+    display:grid; grid-template-columns:auto 1fr; gap:.35rem 1rem;
+    padding:1.15rem 0; border-bottom:1px solid var(--line);
+  }
+  .row:last-child{border-bottom:none;}
+  .rid{
+    font-family:var(--font-mono); font-size:.78rem; font-weight:600;
+    color:var(--pill,var(--accent)); padding-top:.15rem;
+    display:flex; align-items:center; gap:.5rem; white-space:nowrap;
+  }
+  .rid::before{content:""; width:8px; height:8px; border-radius:2px; background:var(--pill,var(--accent));}
+  .rbody{min-width:0;}
+  .rtitle{font-family:var(--font-display); font-size:1.12rem; font-weight:600; margin:0 0 .5rem; line-height:1.25;}
+  .rline{font-size:.94rem; margin:0 0 .35rem; color:var(--ink-soft); max-width:64ch;}
+  .rline b{color:var(--ink); font-weight:600;}
+  .rk{font-family:var(--font-mono); font-size:.66rem; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--ink-faint); margin-right:.15rem;}
+
+  .tags{display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.7rem;}
+  .tag{
+    font-size:.74rem; padding:.2rem .6rem; border-radius:20px;
+    border:1px solid var(--line-strong); color:var(--ink-soft);
+    display:inline-flex; align-items:center; gap:.4rem; white-space:nowrap;
+  }
+  .tag.impact{border-color:transparent; background:var(--accent-soft); color:var(--ink);}
+  .tag.eff-lo{border-color:transparent; background:color-mix(in srgb,var(--good) 15%,transparent); color:var(--good);}
+  .tag.eff-mid{border-color:transparent; background:color-mix(in srgb,var(--warn) 16%,transparent); color:var(--warn);}
+  .tag.eff-hi{border-color:transparent; background:color-mix(in srgb,var(--crit) 15%,transparent); color:var(--crit);}
+  .tag.reuse{font-family:var(--font-mono); font-size:.68rem; letter-spacing:.02em;}
+  .tag.reuse::before{content:"↻ "; color:var(--accent);}
+
+  /* Shortlist band */
+  .shortlist{
+    background:var(--band); border:1px solid var(--line);
+    border-radius:12px; padding:clamp(1.25rem,3vw,1.75rem); margin:0 0 3.25rem;
+  }
+  .shortlist .sl-head{display:flex; align-items:baseline; gap:.6rem; margin-bottom:1.1rem; flex-wrap:wrap;}
+  .shortlist .sl-head .tag-now{font-family:var(--font-mono); font-size:.7rem; letter-spacing:.12em;
+    text-transform:uppercase; color:#fff; background:var(--accent); padding:.2rem .55rem; border-radius:5px;}
+  .shortlist h2{font-family:var(--font-display); font-size:1.35rem; font-weight:600; margin:0;}
+  .shortlist p.sl-why{color:var(--ink-soft); font-size:.92rem; margin:.1rem 0 1.1rem; max-width:58ch;}
+  .sl-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(15.5rem,1fr)); gap:.75rem;}
+  .sl-item{
+    background:var(--card); border:1px solid var(--line); border-radius:9px;
+    padding:.85rem .95rem; display:flex; gap:.7rem; align-items:flex-start;
+  }
+  .sl-item .sl-id{font-family:var(--font-mono); font-size:.72rem; font-weight:600;
+    color:var(--accent); padding-top:.1rem;}
+  .sl-item .sl-t{font-size:.92rem; font-weight:600; line-height:1.3;}
+  .sl-item .sl-d{font-size:.8rem; color:var(--ink-faint); margin-top:.15rem;}
+
+  /* Roadmap */
+  .road{overflow-x:auto; -webkit-overflow-scrolling:touch;}
+  table{border-collapse:collapse; width:100%; min-width:34rem; font-size:.88rem;}
+  thead th{
+    text-align:left; font-family:var(--font-mono); font-size:.68rem; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); font-weight:500;
+    padding:.6rem .8rem; border-bottom:1.5px solid var(--line-strong);
+  }
+  tbody td{padding:.85rem .8rem; border-bottom:1px solid var(--line); vertical-align:top;}
+  tbody tr:last-child td{border-bottom:none;}
+  .phase{font-family:var(--font-display); font-weight:600; font-size:1rem; white-space:nowrap;}
+  .phase small{display:block; font-family:var(--font-mono); font-size:.66rem; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--ink-faint); font-weight:400; margin-top:.15rem;}
+  td.items code{font-family:var(--font-mono); font-size:.76rem; background:var(--accent-soft);
+    color:var(--ink); padding:.08rem .35rem; border-radius:4px; margin:0 .12rem .25rem 0; display:inline-block;}
+
+  .foot{margin-top:3.5rem; padding-top:1.5rem; border-top:1px solid var(--line);
+    color:var(--ink-soft); font-size:.9rem;}
+  .foot h2{font-family:var(--font-display); font-size:1.15rem; color:var(--ink); margin:0 0 .6rem;}
+  .foot ul{margin:.3rem 0 0; padding-left:1.1rem;}
+  .foot li{margin:.3rem 0; max-width:62ch;}
+  .foot .principles{display:flex; flex-wrap:wrap; gap:.5rem; margin:0 0 1.25rem;}
+  .foot .principles span{font-family:var(--font-mono); font-size:.72rem; padding:.25rem .6rem;
+    border:1px solid var(--line-strong); border-radius:20px; color:var(--ink-soft);}
+
+  @media (max-width:560px){
+    .row{grid-template-columns:1fr;}
+    .rid{padding-top:0;}
+    .sec-head .desc{margin-left:0; width:100%;}
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .row,.sl-item,.shortlist,.legend{animation:rise .5s ease both;}
+    @keyframes rise{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;}}
+  }
+</style>
+
+<div class="wrap">
+<div class="page">
+
+  <p class="eyebrow">Bản đề xuất cải tiến · Trợ lý toàn năng</p>
+  <h1>Quản trị trọn vẹn Tiền · Việc · Người</h1>
+  <p class="lede">Nền tảng đã vững ở phần ghi chép. Bước tiếp theo là để nó <b>nhắc bạn trước khi việc xảy ra</b> — dòng tiền sắp thiếu, nợ sắp quên đòi, người sắp nguội, quy trình khỏi gõ lại. Dưới đây là các đề xuất tinh gọn, bám sát tình huống đời thường, xếp theo mức độ ưu tiên.</p>
+
+  <div class="legend">
+    <h2>Cách đọc</h2>
+    <div class="legend-group">
+      <span class="legend-item"><span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i></span> Tác động cao</span>
+      <span class="legend-item"><span class="meter"><i class="on"></i><i class="on"></i><i></i></span> Vừa</span>
+      <span class="legend-item"><span class="meter"><i class="on"></i><i></i><i></i></span> Thấp</span>
+    </div>
+    <div class="legend-group">
+      <span class="legend-item"><span class="tag eff-lo">Công sức gọn</span></span>
+      <span class="legend-item"><span class="tag eff-mid">Vừa</span></span>
+      <span class="legend-item"><span class="tag reuse">Tái dùng thứ đã có</span></span>
+    </div>
+  </div>
+
+  <!-- SHORTLIST -->
+  <div class="shortlist">
+    <div class="sl-head">
+      <span class="tag-now">Đợt 1 · làm ngay</span>
+      <h2>Sáu việc gọn nhưng đổi cuộc chơi</h2>
+    </div>
+    <p class="sl-why">Tất cả đều tác động cao và tận dụng dữ liệu/bảng đã có — làm nhanh, thấy giá trị liền.</p>
+    <div class="sl-grid">
+      <div class="sl-item"><span class="sl-id">T2</span><div><div class="sl-t">Dòng tiền dự phóng</div><div class="sl-d">Biết trước ngày quỹ chạm âm</div></div></div>
+      <div class="sl-item"><span class="sl-id">T3</span><div><div class="sl-t">Nhắc thu nợ quá hạn</div><div class="sl-d">Không quên đòi tiền cho mượn/chi hộ</div></div></div>
+      <div class="sl-item"><span class="sl-id">T1</span><div><div class="sl-t">Khoản định kỳ 2 chiều</div><div class="sl-d">Lương, tiền nhà, thuê bao hàng tháng</div></div></div>
+      <div class="sl-item"><span class="sl-id">V1</span><div><div class="sl-t">Mẫu công việc</div><div class="sl-d">Quy trình lặp — tạo 1 chạm</div></div></div>
+      <div class="sl-item"><span class="sl-id">N1</span><div><div class="sl-t">Hiệu suất theo đối tác</div><div class="sl-d">Ai làm nhiều, ai đáng thưởng</div></div></div>
+      <div class="sl-item"><span class="sl-id">X1</span><div><div class="sl-t">Nhìn lại cuối tháng</div><div class="sl-d">Tổng kết 3 trụ, so tháng trước</div></div></div>
+    </div>
+  </div>
+
+  <!-- TIỀN -->
+  <section class="pillar" style="--pill:var(--tien)">
+    <div class="sec-head">
+      <span class="num">I</span><h2>Tiền</h2>
+      <span class="desc">Từ “ghi lại đã tiêu” → “thấy trước sẽ tiêu”</span>
+    </div>
+    <div class="rows">
+
+      <div class="row">
+        <div class="rid">T1</div>
+        <div class="rbody">
+          <p class="rtitle">Khoản định kỳ hai chiều (thu + chi cố định)</p>
+          <p class="rline"><span class="rk">Đời thực</span> Lương về ngày 5, tiền nhà ngày 10, ChatGPT / Netflix / điện nước / học phí đều đặn mỗi tháng. Hiện “Khoản vay” chỉ mô tả khoản <b>phải trả</b>.</p>
+          <p class="rline"><span class="rk">Đề xuất</span> Mở rộng thành <b>Khoản định kỳ</b> có hướng Thu/Chi, kèm tuỳ chọn <b>tự ghi sổ</b> vào ngày đến hạn hoặc chỉ nhắc — để không quên đóng phí và thấy trước dòng tiền cố định.</p>
+          <div class="tags">
+            <span class="tag impact"><span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i></span> Tác động cao</span>
+            <span class="tag eff-mid">Công sức vừa</span>
+            <span class="tag reuse">bảng obligations</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="rid">T2</div>
+        <div class="rbody">
+          <p class="rtitle">Dòng tiền dự phóng 30–60 ngày</p>
+          <p class="rline"><span class="rk">Đời thực</span> Câu hỏi muôn thuở: “cuối tháng còn đủ tiền không?”. Hiện chỉ có “Tồn khả dụng” trừ tĩnh 30 ngày.</p>
+          <p class="rline"><span class="rk">Đề xuất</span> Vẽ <b>đường tồn quỹ dự kiến</b> = tồn hiện tại ± khoản định kỳ + công nợ sắp tới, và <b>cảnh báo ngày quỹ chạm âm</b>. Dữ liệu đã có sẵn, chỉ cần tính và hiển thị.</p>
+          <div class="tags">
+            <span class="tag impact"><span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i></span> Tác động cao</span>
+            <span class="tag eff-lo">Công sức gọn</span>
+            <span class="tag reuse">dữ liệu đã có</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="rid">T3</div>
+        <div class="rbody">
+          <p class="rtitle">Nhắc thu nợ (công nợ phải thu quá hạn)</p>
+          <p class="rline"><span class="rk">Đời thực</span> Cho mượn tiền, chi hộ, khách còn nợ — rất dễ quên đòi. Mục “Theo bên” đã tính ra “Cần thu” nhưng <b>không có hạn và không nhắc</b>.</p>
+          <p class="rline"><span class="rk">Đề xuất</span> Mỗi khoản “của bên khác” cho thêm <b>hạn thu</b>; Tổng quan và Telegram <b>nhắc các khoản cần thu quá hạn</b> như đang nhắc việc.</p>
+          <div class="tags">
+            <span class="tag impact"><span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i></span> Tác động cao</span>
+            <span class="tag eff-lo">Công sức gọn</span>
+            <span class="tag reuse">Theo bên / công nợ</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="rid">T4</div>
+        <div class="rbody">
+          <p class="rtitle">Ngân sách theo danh mục (hạn mức tháng)</p>
+          <p class="rline"><span class="rk">Đời thực</span> “Tháng này ăn ngoài hơi nhiều” — nhưng thường nhận ra khi đã trễ.</p>
+          <p class="rline"><span class="rk">Đề xuất</span> Đặt <b>hạn mức/tháng</b> cho vài danh mục hay vượt (ăn uống, mua sắm…); thanh tiến độ + cảnh báo khi chạm 80% và 100%.</p>
+          <div class="tags">
+            <span class="tag impact"><span class="meter"><i class="on"></i><i class="on"></i><i></i></span> Tác động vừa</span>
+            <span class="tag eff-mid">Công sức vừa</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="rid">T5</div>
+        <div class="rbody">
+          <p class="rtitle">Ảnh chứng từ cho giao dịch</p>
+          <p class="rline"><span class="rk">Đời thực</span> Giữ hoá đơn, ảnh chuyển khoản để đối chiếu về sau.</p>
+          <p class="rline"><span class="rk">Đề xuất</span> Cho <b>đính ảnh vào giao dịch</b> — hạ tầng đính kèm (ảnh cho việc) đã có, chỉ mở thêm cho giao dịch.</p>
+          <div class="tags">
+            <span class="tag impact"><span class="meter"><i class="on"></i><i class="on"></i><i></i></span> Tác động vừa</span>
+            <span class="tag eff-lo">Công sức gọn</span>
+            <span class="tag reuse">đính kèm ảnh</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="rid">T6</div>
+        <div class="rbody">
+          <p class="rtitle">Quỹ mục tiêu / để dành</p>
+          <p class="rline"><span class="rk">Đời thực</span> Để dành mua xe, đi du lịch, hay lập quỹ khẩn cấp — cần thấy mình đã góp tới đâu.</p>
+          <p class="rline"><span class="rk">Đề xuất</span> “Mục tiêu tiền” có <b>số đích + tiến độ góp</b>, tách riêng khỏi tồn chi tiêu để không lẫn.</p>
+          <div class="tags">
+            <span class="tag impact"><span class="meter"><i class="on"></i><i class="on"></i><i></i></span> Tác động vừa</span>
+            <span class="tag eff-mid">Công sức vừa</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VIỆC -->
+  <section class="pillar" style="--pill:var(--viec)">
+    <div class="sec-head">
+      <span class="num">II</span><h2>Việc</h2>
+      <span class="desc">Từ “danh sách phải làm” → “guồng máy chạy đều”</span>
+    </div>
+    <div class="rows">
+
+      <div class="row">
+        <div class="rid">V1</div>
+        <div class="rbody">
+          <p class="rtitle">Mẫu công việc / quy trình (template + checklist)</p>
+          <p class="rline"><span class="rk">Đời thực</span> Những quy trình lặp lại: tiếp nhận kỹ thuật viên mới, xử lý một đơn, chuẩn bị sự kiện. Gõ lại checklist mỗi lần vừa phí vừa dễ sót bước.</p>
+          <p class="rline"><span class="rk">Đề xuất</span> Lưu một việc (kèm các mục Kế hoạch/subtask) thành <b>mẫu</b> → lần sau <b>tạo mới 1 chạm</b>, đủ bước không thiếu.</p>
+          <div class="tags">
+            <span class="tag impact"><span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i></span> Tác động cao</span>
+            <span class="tag eff-mid">Công sức vừa</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="rid">V2</div>
+        <div class="rbody">
+          <p class="rtitle">Giao việc &amp; theo dõi theo người</p>
+          <p class="rline"><span class="rk">Đời thực</span> Giao việc cho thợ/đối tác và cần biết <b>ai đang làm gì, tới đâu</b>. Trường “người liên quan” đã có nhưng chưa có góc nhìn theo người.</p>
+          <p class="rline"><span class="rk">Đề xuất</span> Coi “người liên quan” là <b>người phụ trách</b>; thêm view “Việc theo đối tác” và trong hồ sơ đối tác hiển thị việc đang giao + tiến độ.</p>
+          <div class="tags">
+            <span class="tag impact"><span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i></span> Tác động cao</span>
+            <span class="tag eff-mid">Công sức vừa</span>
+            <span class="tag reuse">tasks.contact_id</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="rid">V3</div>
+        <div class="rbody">
+          <p class="rtitle">Việc “đang chờ” (chờ người khác)</p>
+          <p class="rline"><span class="rk">Đời thực</span> Nhiều việc thực chất đang <b>chờ đối tác phản hồi / giao hàng</b> — không phải mình làm, nhưng dễ rơi khỏi tầm mắt.</p>
+          <p class="rline"><span class="rk">Đề xuất</span> Một cột/nhãn <b>“Đang chờ”</b> + nhắc <b>theo dõi lại sau N ngày</b> để đòi kết quả đúng lúc.</p>
+          <div class="tags">
+            <span class="tag impact"><span class="meter"><i class="on"></i><i class="on"></i><i></i></span> Tác động vừa</span>
+            <span class="tag eff-lo">Công sức gọn</span>
+            <span class="tag reuse">sections</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="rid">V4</div>
+        <div class="rbody">
+          <p class="rtitle">Ma trận ưu tiên (Quan trọng × Khẩn)</p>
+          <p class="rline"><span class="rk">Đời thực</span> Khi việc dồn quá nhiều, cần biết <b>làm gì trước</b> thay vì cuốn theo việc gần hạn nhất.</p>
+          <p class="rline"><span class="rk">Đề xuất</span> View 4 ô Eisenhower, tự xếp việc theo <b>ưu tiên × độ gần hạn</b> — nhìn phát biết đâu là việc “quan trọng nhưng chưa khẩn” hay bỏ lỡ.</p>
+          <div class="tags">
+            <span class="tag impact"><span class="meter"><i class="on"></i><i class="on"></i><i></i></span> Tác động vừa</span>
+            <span class="tag eff-mid">Công sức vừa</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NGƯỜI -->
+  <section class="pillar" style="--pill:var(--nguoi)">
+    <div class="sec-head">
+      <span class="num">III</span><h2>Người</h2>
+      <span class="desc">Từ “danh bạ” → “giữ quan hệ không rơi ai”</span>
+    </div>
+    <div class="rows">
+
+      <div class="row">
+        <div class="rid">N1</div>
+        <div class="rbody">
+          <p class="rtitle">Hiệu suất &amp; doanh thu theo đối tác</p>
+          <p class="rline"><span class="rk">Đời thực</span> Kỹ thuật viên nào làm nhiều việc, mang lại (hoặc nhận) bao nhiêu tiền, ai đáng được thưởng — việc và giao dịch <b>đã gắn sẵn</b> theo người.</p>
+          <p class="rline"><span class="rk">Đề xuất</span> Trong hồ sơ đối tác + một <b>bảng xếp hạng</b>: số việc hoàn thành, tổng thu/chi, công nợ hiện tại — làm cơ sở đánh giá và trả công.</p>
+          <div class="tags">
+            <span class="tag impact"><span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i></span> Tác động cao</span>
+            <span class="tag eff-lo">Công sức gọn</span>
+            <span class="tag reuse">liên kết đã có</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="rid">N2</div>
+        <div class="rbody">
+          <p class="rtitle">Giai đoạn quan hệ (pipeline khách)</p>
+          <p class="rline"><span class="rk">Đời thực</span> Khách đi qua các nấc: <b>tiềm năng → đang trao đổi → chốt → chăm sóc → nguội</b>. Hiện chỉ có trạng thái tự suy theo lịch chăm.</p>
+          <p class="rline"><span class="rk">Đề xuất</span> Thêm trường <b>“giai đoạn”</b> + bảng cột kéo-thả (như Kanban) cho đối tác loại khách — thấy ngay ai đang ở đâu trong phễu.</p>
+          <div class="tags">
+            <span class="tag impact"><span class="meter"><i class="on"></i><i class="on"></i><i></i></span> Tác động vừa</span>
+            <span class="tag eff-mid">Công sức vừa</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="rid">N3</div>
+        <div class="rbody">
+          <p class="rtitle">Soạn tin chăm sóc gợi ý (không tự gửi)</p>
+          <p class="rline"><span class="rk">Đời thực</span> Tới hạn chăm sóc, chúc sinh nhật, hỏi thăm — biết cần nhắn nhưng ngại nghĩ lời.</p>
+          <p class="rline"><span class="rk">Đề xuất</span> Khi tới hạn, <b>gợi ý mẫu tin</b> điền sẵn tên để copy, mở nhanh Zalo/SMS. <b>Không tự gửi</b> — bạn luôn là người bấm gửi.</p>
+          <div class="tags">
+            <span class="tag impact"><span class="meter"><i class="on"></i><i class="on"></i><i></i></span> Tác động vừa</span>
+            <span class="tag eff-mid">Công sức vừa</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="rid">N4</div>
+        <div class="rbody">
+          <p class="rtitle">Cảnh báo đối tác “nguội”</p>
+          <p class="rline"><span class="rk">Đời thực</span> Có những người quan trọng đã <b>lâu không tương tác</b> mà không ai nhắc — quan hệ nguội dần lúc nào không hay.</p>
+          <p class="rline"><span class="rk">Đề xuất</span> Tự lập danh sách <b>“cần hâm nóng”</b>: đối tác quá X ngày không có tương tác nào — dựa trên mốc liên hệ gần nhất đã lưu.</p>
+          <div class="tags">
+            <span class="tag impact"><span class="meter"><i class="on"></i><i class="on"></i><i></i></span> Tác động vừa</span>
+            <span class="tag eff-lo">Công sức gọn</span>
+            <span class="tag reuse">last_contacted_at</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- XUYÊN SUỐT -->
+  <section class="pillar" style="--pill:var(--xuyen)">
+    <div class="sec-head">
+      <span class="num">IV</span><h2>Xuyên suốt</h2>
+      <span class="desc">Nối ba trụ thành một bức tranh</span>
+    </div>
+    <div class="rows">
+
+      <div class="row">
+        <div class="rid">X1</div>
+        <div class="rbody">
+          <p class="rtitle">Nhìn lại cuối tháng (báo cáo 3 trụ)</p>
+          <p class="rline"><span class="rk">Đời thực</span> Cuối tháng cần một lần ngồi lại: tiền vào/ra, việc xong/trễ, đối tác đã chăm hay bỏ lỡ — và <b>so với tháng trước</b>.</p>
+          <p class="rline"><span class="rk">Đề xuất</span> Một trang tổng kết + một <b>tin Telegram cuối tháng</b> gộp cả ba trụ. Bản tin sáng và tổng quan tuần đã có — đây là phiên bản “theo tháng”.</p>
+          <div class="tags">
+            <span class="tag impact"><span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i></span> Tác động cao</span>
+            <span class="tag eff-mid">Công sức vừa</span>
+            <span class="tag reuse">dữ liệu 3 trụ</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="rid">X2</div>
+        <div class="rbody">
+          <p class="rtitle">Ghi chi phí / gắn người ngay trong việc (1 chạm)</p>
+          <p class="rline"><span class="rk">Đời thực</span> Đang xử lý một việc thì phát sinh chi phí và có đối tác liên quan — không muốn nhảy qua tab Tiền để ghi.</p>
+          <p class="rline"><span class="rk">Đề xuất</span> Nút nhanh <b>“Ghi chi phí”</b> ngay trong việc, và từ giao dịch mở thẳng việc/đối tác — khép kín tam giác Việc ↔ Tiền ↔ Người.</p>
+          <div class="tags">
+            <span class="tag impact"><span class="meter"><i class="on"></i><i class="on"></i><i></i></span> Tác động vừa</span>
+            <span class="tag eff-lo">Công sức gọn</span>
+            <span class="tag reuse">liên kết đã có</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="rid">X3</div>
+        <div class="rbody">
+          <p class="rtitle">Nhật ký hoạt động</p>
+          <p class="rline"><span class="rk">Đời thực</span> “Hôm qua mình đã làm/sửa những gì?” — đôi khi cần nhìn lại dấu vết.</p>
+          <p class="rline"><span class="rk">Đề xuất</span> Ghi log các thay đổi quan trọng (hoàn thành việc, thu/chi lớn, chăm sóc) và xem theo ngày.</p>
+          <div class="tags">
+            <span class="tag impact"><span class="meter"><i class="on"></i><i></i><i></i></span> Tác động thấp</span>
+            <span class="tag eff-mid">Công sức vừa</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section>
+    <div class="sec-head" style="--pill:var(--accent)">
+      <span class="num">＊</span><h2>Lộ trình đề xuất</h2>
+      <span class="desc">Gọn trước, sâu sau — mỗi đợt là một mảnh hoàn chỉnh</span>
+    </div>
+    <div class="road">
+      <table>
+        <thead>
+          <tr><th style="width:9rem">Đợt</th><th>Hạng mục</th><th style="width:12rem">Vì sao xếp ở đây</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="phase">Đợt 1<small>Làm ngay</small></td>
+            <td class="items"><code>T2 Dự phóng</code><code>T3 Nhắc thu nợ</code><code>T1 Khoản định kỳ</code><code>V1 Mẫu việc</code><code>N1 Hiệu suất</code><code>X1 Cuối tháng</code></td>
+            <td>Tác động cao, phần lớn tái dùng dữ liệu/bảng sẵn có — thấy giá trị nhanh.</td>
+          </tr>
+          <tr>
+            <td class="phase">Đợt 2<small>Chiều sâu</small></td>
+            <td class="items"><code>T4 Ngân sách</code><code>T5 Ảnh chứng từ</code><code>V2 Giao việc</code><code>V3 Đang chờ</code><code>N2 Pipeline</code><code>N4 Nguội</code></td>
+            <td>Bổ sung chiều sâu quản trị khi luồng cơ bản đã mượt.</td>
+          </tr>
+          <tr>
+            <td class="phase">Đợt 3<small>Nâng cao</small></td>
+            <td class="items"><code>T6 Quỹ mục tiêu</code><code>V4 Eisenhower</code><code>N3 Soạn tin</code><code>X2 Liên kết 1 chạm</code><code>X3 Nhật ký</code></td>
+            <td>Tinh chỉnh trải nghiệm &amp; phân tích — làm khi đã dùng ổn định.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="foot">
+    <h2>Ba nguyên tắc khi làm</h2>
+    <div class="principles">
+      <span>Tinh gọn — không thêm nút thừa</span>
+      <span>Tái dùng — dựa trên bảng/dữ liệu đã có</span>
+      <span>An toàn — không tự gửi tin, không tự chuyển tiền</span>
+    </div>
+    <ul>
+      <li>Mỗi hạng mục đều đi trọn 3 tầng (DB → API → giao diện) và có kiểm thử trước khi bàn giao, đúng nếp đang làm.</li>
+      <li>Không có gì phá dữ liệu cũ: tất cả là thêm cột/màn hình mới, giữ nguyên thứ đang chạy 24/7.</li>
+      <li>Bạn chỉ cần chọn các mã muốn làm (ví dụ “T2, T3, N1”) — tôi sẽ bắt tay ngay theo đúng thứ tự đó.</li>
+    </ul>
+  </div>
+
+</div>
+</div>
+
+</body></html>

@@ -1,0 +1,704 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}</style></head><body>
+<title>Tinh gọn cổng gian hàng</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+<style>
+  :root {
+    --ground:      #F6F7F9;
+    --surface:     #FFFFFF;
+    --surface-2:   #EFF1F4;
+    --line:        #DCE0E6;
+    --line-soft:   #E8EBEF;
+    --ink:         #151A21;
+    --ink-2:       #59636F;
+    --ink-3:       #8791A0;
+    --accent:      #0E5C63;
+    --accent-soft: #DCEDEE;
+    --keep:        #2F6B4F;
+    --keep-soft:   #DFEDE5;
+    --trim:        #8A5A12;
+    --trim-soft:   #F5E9D4;
+    --cut:         #96363B;
+    --cut-soft:    #F5DEDF;
+    --shadow:      0 1px 2px rgba(21,26,33,.05), 0 1px 3px rgba(21,26,33,.04);
+
+    --f-body: "Be Vietnam Pro", "Segoe UI", system-ui, -apple-system, sans-serif;
+    --f-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground:      #101319;
+      --surface:     #171B22;
+      --surface-2:   #1F242C;
+      --line:        #2C333D;
+      --line-soft:   #232932;
+      --ink:         #E8EBEF;
+      --ink-2:       #A2ACB8;
+      --ink-3:       #74808D;
+      --accent:      #5FBEC5;
+      --accent-soft: #163235;
+      --keep:        #7FC2A0;
+      --keep-soft:   #172B22;
+      --trim:        #DBAB5E;
+      --trim-soft:   #2E2415;
+      --cut:         #E08A8E;
+      --cut-soft:    #2E1B1D;
+      --shadow:      0 1px 2px rgba(0,0,0,.4), 0 1px 3px rgba(0,0,0,.3);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground:      #101319;
+    --surface:     #171B22;
+    --surface-2:   #1F242C;
+    --line:        #2C333D;
+    --line-soft:   #232932;
+    --ink:         #E8EBEF;
+    --ink-2:       #A2ACB8;
+    --ink-3:       #74808D;
+    --accent:      #5FBEC5;
+    --accent-soft: #163235;
+    --keep:        #7FC2A0;
+    --keep-soft:   #172B22;
+    --trim:        #DBAB5E;
+    --trim-soft:   #2E2415;
+    --cut:         #E08A8E;
+    --cut-soft:    #2E1B1D;
+    --shadow:      0 1px 2px rgba(0,0,0,.4), 0 1px 3px rgba(0,0,0,.3);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--f-body);
+    font-size: 16px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 62rem;
+    margin: 0 auto;
+    padding: clamp(1.5rem, 4vw, 3.5rem) clamp(1rem, 4vw, 2rem) 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.75rem;
+  }
+
+  /* ---------- mở đầu ---------- */
+  header { display: flex; flex-direction: column; gap: .9rem; }
+
+  .eyebrow {
+    font-size: .74rem;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--accent);
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(1.85rem, 4.6vw, 2.7rem);
+    line-height: 1.14;
+    letter-spacing: -.021em;
+    font-weight: 700;
+    text-wrap: balance;
+  }
+  .lede {
+    margin: 0;
+    max-width: 46ch;
+    font-size: 1.06rem;
+    color: var(--ink-2);
+  }
+
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+    gap: 1px;
+    background: var(--line-soft);
+    border: 1px solid var(--line-soft);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: .5rem;
+  }
+  .fact { background: var(--surface); padding: 1rem 1.15rem; }
+  .fact b {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    font-variant-numeric: tabular-nums;
+  }
+  .fact span { font-size: .82rem; color: var(--ink-2); }
+
+  /* ---------- tiêu đề mục ---------- */
+  h2 {
+    margin: 0 0 .3rem;
+    font-size: 1.42rem;
+    font-weight: 700;
+    letter-spacing: -.014em;
+    text-wrap: balance;
+  }
+  .h2note { margin: 0 0 1.4rem; color: var(--ink-2); max-width: 60ch; font-size: .95rem; }
+
+  section { display: block; }
+
+  /* ---------- thẻ đề xuất ---------- */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin-bottom: 1.1rem;
+  }
+  .card-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: .6rem .8rem;
+    padding: 1.05rem 1.25rem .55rem;
+  }
+  .num-badge {
+    flex: 0 0 auto;
+    display: inline-grid;
+    place-items: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 8px;
+    background: var(--accent);
+    color: var(--surface);
+    font-family: var(--f-mono);
+    font-size: .92rem;
+    font-weight: 500;
+    align-self: center;
+  }
+
+  td.pick {
+    font-family: var(--f-mono);
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .card-head h3 {
+    margin: 0;
+    font-size: 1.09rem;
+    font-weight: 600;
+    letter-spacing: -.008em;
+    flex: 1 1 16rem;
+  }
+  .card-body { padding: 0 1.25rem 1.2rem; }
+  .card-body > p { margin: .55rem 0; color: var(--ink-2); font-size: .95rem; }
+  .card-body > p.lead { color: var(--ink); }
+
+  .tag {
+    display: inline-block;
+    font-size: .7rem;
+    font-weight: 600;
+    letter-spacing: .045em;
+    text-transform: uppercase;
+    padding: .2rem .55rem;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .t-keep { background: var(--keep-soft); color: var(--keep); }
+  .t-trim { background: var(--trim-soft); color: var(--trim); }
+  .t-cut  { background: var(--cut-soft);  color: var(--cut); }
+  .t-info { background: var(--accent-soft); color: var(--accent); }
+
+  /* ---------- trước / sau ---------- */
+  .ba {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: .85rem;
+    background: var(--surface-2);
+    border: 1px solid var(--line-soft);
+    border-radius: 10px;
+    padding: .85rem 1rem;
+    margin: .9rem 0;
+  }
+  .ba .col { min-width: 0; }
+  .ba .lbl {
+    font-size: .68rem;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-weight: 600;
+    color: var(--ink-3);
+    display: block;
+    margin-bottom: .3rem;
+  }
+  .ba .steps {
+    font-family: var(--f-mono);
+    font-size: .8rem;
+    line-height: 1.55;
+    color: var(--ink);
+    overflow-wrap: anywhere;
+  }
+  .ba .arrow { color: var(--accent); font-size: 1.2rem; font-weight: 700; }
+  @media (max-width: 34rem) {
+    .ba { grid-template-columns: 1fr; }
+    .ba .arrow { transform: rotate(90deg); justify-self: start; }
+  }
+
+  /* ---------- dòng chi phí / rủi ro ---------- */
+  .meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    gap: .1rem 1.4rem;
+    border-top: 1px dashed var(--line);
+    margin-top: 1rem;
+    padding-top: .85rem;
+  }
+  .meta div { font-size: .87rem; }
+  .meta dt {
+    font-size: .68rem;
+    text-transform: uppercase;
+    letter-spacing: .09em;
+    font-weight: 600;
+    color: var(--ink-3);
+  }
+  .meta dd { margin: .1rem 0 .6rem; color: var(--ink-2); }
+
+  code {
+    font-family: var(--f-mono);
+    font-size: .855em;
+    background: var(--surface-2);
+    border: 1px solid var(--line-soft);
+    border-radius: 5px;
+    padding: .06em .32em;
+    overflow-wrap: anywhere;
+  }
+
+  /* ---------- bảng ---------- */
+  .tbl-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; font-size: .9rem; min-width: 34rem; }
+  th, td { text-align: left; padding: .68rem .9rem; border-bottom: 1px solid var(--line-soft); vertical-align: top; }
+  thead th {
+    font-size: .7rem;
+    text-transform: uppercase;
+    letter-spacing: .09em;
+    color: var(--ink-3);
+    font-weight: 600;
+    background: var(--surface-2);
+  }
+  tbody tr:last-child td { border-bottom: 0; }
+  td.num { font-variant-numeric: tabular-nums; font-family: var(--f-mono); font-size: .84rem; white-space: nowrap; }
+
+  /* ---------- khối cảnh báo ---------- */
+  .warn {
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--trim);
+    background: var(--surface);
+    border-radius: 0 12px 12px 0;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .warn h4 { margin: 0 0 .35rem; font-size: 1rem; font-weight: 600; }
+  .warn p { margin: .3rem 0 0; font-size: .93rem; color: var(--ink-2); }
+
+  .rec {
+    background: var(--accent-soft);
+    border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+    border-radius: 14px;
+    padding: 1.3rem 1.4rem;
+  }
+  .rec h2 { margin-top: 0; }
+  .rec ol { margin: .6rem 0 0; padding-left: 1.2rem; }
+  .rec li { margin-bottom: .55rem; }
+  .rec p { color: var(--ink-2); }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding-top: 1.2rem;
+    color: var(--ink-3);
+    font-size: .84rem;
+  }
+</style>
+
+<div class="wrap">
+
+  <header>
+    <span class="eyebrow">Đề xuất · chờ xác nhận</span>
+    <h1>Tinh gọn cổng gian hàng</h1>
+    <p class="lede">
+      Cổng gian hàng có 20 màn cho người bán. Bản khảo sát này chỉ ra bốn chỗ phình,
+      kèm đề xuất cho từng chỗ và những thứ <em>trông</em> thừa nhưng không được đụng.
+    </p>
+
+    <div class="facts">
+      <div class="fact"><b>20</b><span>màn hình người bán</span></div>
+      <div class="fact"><b>6</b><span>ô thanh điều hướng (kịch trần)</span></div>
+      <div class="fact"><b>7.367</b><span>dòng mã giao diện</span></div>
+      <div class="fact"><b>4</b><span>màn cho một lần bán tại quầy</span></div>
+    </div>
+  </header>
+
+  <section>
+    <h2>Bốn chỗ phình</h2>
+    <p class="h2note">
+      Xếp theo mức khó chịu với người bán, không theo số dòng mã.
+    </p>
+
+    <div class="tbl-scroll">
+      <table>
+        <thead>
+          <tr><th>Chỗ</th><th>Số màn</th><th class="num">Dòng</th><th>Vấn đề</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Bán tại quầy</b></td>
+            <td>4</td>
+            <td class="num">1.883</td>
+            <td>Bán một món phải đi qua bốn trang, trong đó một trang chỉ để chọn kiểu xác nhận.</td>
+          </tr>
+          <tr>
+            <td><b>Hàng hoá &amp; tin đăng</b></td>
+            <td>6</td>
+            <td class="num">1.373</td>
+            <td>Hai danh sách song song cho cùng một món hàng, người bán phải nhớ cả hai.</td>
+          </tr>
+          <tr>
+            <td><b>Trang chủ</b></td>
+            <td>1</td>
+            <td class="num">376</td>
+            <td>Đọc đúng hai nguồn dữ liệu mà hai màn khác đã hiển thị đầy đủ.</td>
+          </tr>
+          <tr>
+            <td><b>Tài khoản &amp; Quyền</b></td>
+            <td>3</td>
+            <td class="num">1.335</td>
+            <td>Một màn gánh sáu việc, hai màn con nằm sau menu phụ nên khó tìm.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Bảng chọn — bảy việc, mỗi việc chọn riêng được</h2>
+    <p class="h2note">
+      Đánh số phẳng để anh chọn cho gọn: cứ đọc số. Mục 4 và 5 loại trừ nhau (chọn một),
+      mục 7 cần một ô điều hướng trống nên phải đi kèm mục 3 hoặc mục 5.
+    </p>
+
+    <div class="tbl-scroll">
+      <table>
+        <thead>
+          <tr><th>#</th><th>Việc</th><th>Nhóm</th><th>Rủi ro</th><th>Ràng buộc</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="pick">1</td>
+            <td><b>Bỏ trang “chọn phương thức”</b>, đưa ba nút xuống ngay dưới bill</td>
+            <td>Bán tại quầy</td>
+            <td><span class="tag t-keep">Thấp</span></td>
+            <td>Độc lập</td>
+          </tr>
+          <tr>
+            <td class="pick">2</td>
+            <td><b>Gộp hai màn chờ khách</b> (nhập PIN và quét QR) thành một</td>
+            <td>Bán tại quầy</td>
+            <td><span class="tag t-trim">Vừa</span></td>
+            <td>Nên để riêng một đợt</td>
+          </tr>
+          <tr>
+            <td class="pick">3</td>
+            <td><b>Gộp “Tin của tôi” vào “Sản phẩm”</b>, rút khỏi thanh điều hướng</td>
+            <td>Hàng hoá</td>
+            <td><span class="tag t-keep">Thấp</span></td>
+            <td>Giải phóng 1 ô nav</td>
+          </tr>
+          <tr>
+            <td class="pick">4</td>
+            <td><b>Rút gọn trang chủ</b> còn đúng “đơn cần xử lý”</td>
+            <td>Trang chủ</td>
+            <td><span class="tag t-keep">Thấp</span></td>
+            <td>Loại trừ với 5</td>
+          </tr>
+          <tr>
+            <td class="pick">5</td>
+            <td><b>Bỏ hẳn trang chủ</b>, mở app vào thẳng Đơn bán</td>
+            <td>Trang chủ</td>
+            <td><span class="tag t-trim">Thấp, đổi thói quen</span></td>
+            <td>Loại trừ với 4 · giải phóng 1 ô nav</td>
+          </tr>
+          <tr>
+            <td class="pick">6</td>
+            <td><b>Sắp lại màn tài khoản</b>: lịch sử trao đổi lên trên, cài đặt xuống cuối</td>
+            <td>Tài khoản</td>
+            <td><span class="tag t-keep">Thấp</span></td>
+            <td>Độc lập</td>
+          </tr>
+          <tr>
+            <td class="pick">7</td>
+            <td><b>Đưa “Nhận / Chuyển Quyền” lên thanh điều hướng</b>, thôi nằm sau menu phụ</td>
+            <td>Tài khoản</td>
+            <td><span class="tag t-keep">Thấp</span></td>
+            <td>Cần 3 hoặc 5 làm trước</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Bán tại quầy</h2>
+    <p class="h2note">Mục 1 là chỗ tôi tự tin nhất, và cũng là chỗ người bán chạm nhiều lần mỗi ngày.</p>
+
+    <div class="card">
+      <div class="card-head">
+        <span class="num-badge">1</span>
+        <h3>Gộp bước chọn kiểu xác nhận vào ngay màn lập bill</h3>
+        <span class="tag t-cut">Bỏ 1 trang</span>
+        <span class="tag t-keep">Rủi ro thấp</span>
+      </div>
+      <div class="card-body">
+        <p class="lead">
+          Trang <code>/don-ban/$id/trao-doi</code> dài 394 dòng và toàn bộ việc của nó là hỏi
+          “khách xác nhận bằng cách nào?” với ba lựa chọn: nhập số điện thoại, tạo mã QR,
+          hoặc dán link hồ sơ khách.
+        </p>
+        <p>
+          Tôi đã tra: trang này chỉ có <strong>đúng một đường vào</strong> — từ màn lập bill,
+          cả khi lập mới lẫn khi bấm “tiếp tục đơn đang chờ”. Không màn nào khác dẫn tới nó,
+          không có link sâu từ ngoài. Nên gộp vào là gọn, không bỏ sót lối nào.
+        </p>
+
+        <div class="ba">
+          <div class="col">
+            <span class="lbl">Hiện tại</span>
+            <div class="steps">Lập bill → <b>trang chọn cách</b> → màn PIN <em>hoặc</em> màn QR</div>
+          </div>
+          <div class="arrow">→</div>
+          <div class="col">
+            <span class="lbl">Sau khi gộp</span>
+            <div class="steps">Lập bill <em>(ba nút ngay dưới bill)</em> → màn PIN <em>hoặc</em> màn QR</div>
+          </div>
+        </div>
+
+        <p>
+          Bill vẫn được lưu như cũ trước khi hiện ba nút — không đổi gì ở backend, không đổi
+          thứ tự ghi sổ. Chỉ là ba nút xuất hiện tại chỗ thay vì ở trang kế tiếp.
+        </p>
+
+        <dl class="meta">
+          <div><dt>Người bán được gì</dt><dd>Bớt một lần tải trang mỗi lần bán tại quầy.</dd></div>
+          <div><dt>Đụng tới</dt><dd>2 file, xoá 1 route</dd></div>
+          <div><dt>Rủi ro</dt><dd>Thấp — một đường vào duy nhất, backend không đổi.</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <span class="num-badge">2</span>
+        <h3>Gộp hai màn chờ khách (PIN và QR) thành một</h3>
+        <span class="tag t-trim">Gộp 2 → 1</span>
+        <span class="tag t-trim">Rủi ro vừa</span>
+      </div>
+      <div class="card-body">
+        <p class="lead">
+          <code>offline-checkout-session</code> (353 dòng) và <code>offline-qr-session</code>
+          (462 dòng) làm cùng một việc: hiện bill, chờ khách xác nhận, hỏi máy chủ liên tục,
+          rồi báo “đã ghi nhận”. Khác nhau ở phần giữa — một bên chờ PIN, một bên hiện mã QR.
+        </p>
+        <p>
+          Gộp được, nhưng hai màn hỏi hai endpoint khác nhau và có cách hết hạn khác nhau, nên
+          phần thân chung phải viết cẩn thận. Tôi <strong>không khuyên làm cùng đợt</strong> với
+          đề xuất trên — làm cái dễ trước, chạy thật vài hôm, rồi tính tiếp.
+        </p>
+        <dl class="meta">
+          <div><dt>Người bán được gì</dt><dd>Không thấy khác biệt. Đây là gọn cho việc bảo trì.</dd></div>
+          <div><dt>Đụng tới</dt><dd>2 file lớn, ~800 dòng phải đọc kỹ</dd></div>
+          <div><dt>Rủi ro</dt><dd>Vừa — hai luồng chờ khác nhau, dễ lẫn trạng thái.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Hàng hoá &amp; tin đăng</h2>
+    <p class="h2note">
+      Chỗ này gọn được nhiều nhất, nhưng phải làm đúng cách — xem mục “Đừng đụng” bên dưới trước.
+    </p>
+
+    <div class="card">
+      <div class="card-head">
+        <span class="num-badge">3</span>
+        <h3>Đưa “Tin của tôi” thành bộ lọc bên trong “Sản phẩm”</h3>
+        <span class="tag t-cut">Giải phóng 1 ô nav</span>
+        <span class="tag t-keep">Rủi ro thấp</span>
+      </div>
+      <div class="card-body">
+        <p class="lead">
+          Người bán hiện phải giữ trong đầu hai danh sách: <em>Sản phẩm</em> (món hàng) và
+          <em>Tin của tôi</em> (lượt đăng). Nhưng danh sách sản phẩm <strong>đã hiển thị sẵn</strong>
+          “N tin đang đăng” cho từng món, kèm nút “Đăng tin” ngay tại dòng.
+        </p>
+        <p>
+          Nên bổ sung trạng thái duyệt vào chính dòng sản phẩm (Chờ duyệt · Đang đăng · Bị từ chối),
+          và chuyển các tab lọc của “Tin của tôi” vào đầu danh sách sản phẩm. Người bán mở một
+          chỗ là thấy đủ: món này có mấy tin, tin nào đang chờ duyệt.
+        </p>
+        <div class="ba">
+          <div class="col">
+            <span class="lbl">Hiện tại</span>
+            <div class="steps">Nav: Sản phẩm · Tin của tôi<br>(hai danh sách, tự đối chiếu)</div>
+          </div>
+          <div class="arrow">→</div>
+          <div class="col">
+            <span class="lbl">Đề xuất</span>
+            <div class="steps">Nav: Sản phẩm<br>(có tab lọc theo trạng thái tin)</div>
+          </div>
+        </div>
+        <p>
+          Màn <code>/tin-cua-toi</code> <strong>vẫn giữ</strong>, chỉ rút khỏi thanh điều hướng —
+          để link cũ và thói quen của người đang dùng không gãy.
+        </p>
+        <dl class="meta">
+          <div><dt>Người bán được gì</dt><dd>Một danh sách thay vì hai; ô nav trống ra dùng việc khác.</dd></div>
+          <div><dt>Đụng tới</dt><dd>3 file (danh sách sản phẩm, thanh nav, trang chủ)</dd></div>
+          <div><dt>Rủi ro</dt><dd>Thấp — không xoá màn, không đụng backend.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Trang chủ</h2>
+
+    <div class="card">
+      <div class="card-head">
+        <span class="num-badge">4</span><span class="num-badge">5</span>
+        <h3>Trang chủ đang kể lại điều hai màn khác đã kể</h3>
+        <span class="tag t-trim">Cần anh chọn</span>
+      </div>
+      <div class="card-body">
+        <p class="lead">
+          Trang chủ đọc đúng hai nguồn: danh sách tin của tôi và danh sách đơn bán — cùng
+          hai nguồn mà màn “Tin của tôi” và “Đơn bán” đang hiển thị đầy đủ. Nó tóm tắt lại thành
+          bốn con số và hai bảng ngắn, mỗi bảng kèm link “xem tất cả”.
+        </p>
+        <p>Hai lối loại trừ nhau, tôi nghiêng về mục 4:</p>
+        <p>
+          <strong>Mục 4 — Giữ nhưng rút còn một dòng việc cần làm.</strong> Bỏ bốn ô số liệu và bảng
+          “tin xem nhiều nhất”, chỉ giữ “đơn cần xử lý”. Trang chủ trở thành chỗ trả lời đúng
+          một câu: <em>hôm nay tôi phải làm gì?</em>
+        </p>
+        <p>
+          <strong>Mục 5 — Bỏ hẳn, mở app là vào thẳng Đơn bán.</strong> Gọn nhất, nhưng mất chỗ đặt
+          thông báo chung sau này và là thay đổi lớn với người đang quen.
+        </p>
+        <dl class="meta">
+          <div><dt>Người bán được gì</dt><dd>Mở app thấy ngay việc cần làm, không phải đọc lướt số liệu.</dd></div>
+          <div><dt>Đụng tới</dt><dd>1 file (mục 4) · 2 file + thanh nav (mục 5)</dd></div>
+          <div><dt>Rủi ro</dt><dd>Thấp cả hai. Mục 5 đổi thói quen nhiều hơn.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tài khoản</h2>
+
+    <div class="card">
+      <div class="card-head">
+        <span class="num-badge">6</span><span class="num-badge">7</span>
+        <h3>Một màn đang gánh sáu việc</h3>
+        <span class="tag t-trim">Rủi ro thấp</span>
+      </div>
+      <div class="card-body">
+        <p class="lead">
+          Màn tài khoản (528 dòng) hiện chứa: thông tin gian hàng, bốn thẻ hồ sơ quyền, lịch sử
+          trao đổi kèm bộ lọc 5 mục, công tắc giao diện tối, điều khoản với sàn, và menu dẫn sang
+          hai màn con.
+        </p>
+        <p>
+          Lịch sử trao đổi là thứ người bán tra cứu thường xuyên, nhưng đang nằm lẫn giữa các mục
+          cài đặt và phải cuộn qua mới thấy. <strong>Mục 6:</strong> tách lịch sử thành mục riêng đặt ngay dưới
+          bốn thẻ hồ sơ quyền, phần cài đặt (giao diện tối, điều khoản) dồn xuống cuối.
+        </p>
+        <p>
+          Hai màn con — <em>Nhận / Chuyển Quyền</em> và <em>Bậc hành vi</em> — hiện nằm sau một menu
+          phụ giữa trang, khá khuất. Khi mục 3 hoặc mục 5 giải phóng được ô nav thì
+          <em>Nhận / Chuyển Quyền</em> xứng đáng lên thẳng thanh điều hướng.
+        </p>
+        <dl class="meta">
+          <div><dt>Người bán được gì</dt><dd>Tra lịch sử không phải cuộn qua phần cài đặt.</dd></div>
+          <div><dt>Đụng tới</dt><dd>1 file, chỉ đổi thứ tự khối</dd></div>
+          <div><dt>Rủi ro</dt><dd>Thấp — không đổi logic, không đổi dữ liệu.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Đừng đụng — ba thứ trông thừa nhưng không phải</h2>
+    <p class="h2note">
+      Tôi đã định gộp cả ba, rồi đọc mã và bỏ ý định. Ghi lại để lần sau khỏi mất công lại.
+    </p>
+
+    <div class="warn">
+      <h4>Đăng tin có hai đường, cố ý không gộp</h4>
+      <p>
+        Hàng hoá thì chọn từ danh mục hàng đã có; <strong>bất động sản thì không quản theo sản phẩm</strong>,
+        vẫn điền form đầy đủ. Backend cũng giữ hai đường riêng. Chú thích trong mã dặn rõ:
+        “đừng dọn hai đường thành một”. Mục 3 vì vậy chỉ gộp <em>danh sách</em>, không gộp form đăng.
+      </p>
+    </div>
+
+    <div class="warn">
+      <h4>Sản phẩm và tin đăng là hai thứ khác nhau thật</h4>
+      <p>
+        Một món hàng đăng được nhiều lượt: gỡ rồi đăng lại là lượt mới và <strong>thu phí lần nữa</strong>;
+        đăng cùng món ở hai danh mục là hai lượt, hai lần phí. Gộp hẳn thành một bản ghi sẽ làm hỏng
+        cách tính phí. Mục 3 gộp cách <em>nhìn</em>, giữ nguyên mô hình bên dưới.
+      </p>
+    </div>
+
+    <div class="warn">
+      <h4>Bốn thẻ hồ sơ quyền phải giữ đủ bốn</h4>
+      <p>
+        Quyền lao động và quyền gắn kết hiện <em>nhận được nhưng chưa tiêu được</em> — chưa luồng nào
+        trừ chúng. Trông như hai thẻ thừa, nhưng người bán vẫn nhận thưởng vào đó và cần thấy số dư.
+        Ẩn đi là giấu mất tiền của họ.
+      </p>
+    </div>
+  </section>
+
+  <div class="rec">
+    <h2>Nếu anh bảo “làm đi”</h2>
+    <p>
+      Tôi làm theo thứ tự này — dễ và an toàn trước, mỗi bước đứng độc lập nên dừng lại lúc nào cũng được:
+    </p>
+    <p style="margin:.2rem 0 .3rem;font-weight:600;color:var(--ink)">
+      Gói khuyến nghị: <span style="font-family:var(--f-mono);font-size:1.05em">1 &rarr; 3 &rarr; 6 &rarr; 7 &rarr; 4</span>
+    </p>
+    <ol>
+      <li><strong>Mục 1</strong> — bỏ trang chọn phương thức. Gọn ngay một bước thao tác hằng ngày, rủi ro thấp nhất.</li>
+      <li><strong>Mục 3</strong> — gộp “Tin của tôi” vào “Sản phẩm”, giải phóng một ô nav.</li>
+      <li><strong>Mục 6</strong> — sắp lại thứ tự màn tài khoản.</li>
+      <li><strong>Mục 7</strong> — đưa “Nhận / Chuyển Quyền” lên ô nav mà mục 3 vừa dọn trống.</li>
+      <li><strong>Mục 4</strong> — rút trang chủ còn “việc cần làm”.</li>
+    </ol>
+    <p style="margin-bottom:0">
+      Năm bước này <strong>không đụng backend</strong> và không xoá màn nào ngoài trang chọn phương thức.
+      Để ngoài gói: <strong>mục 2</strong> (rủi ro cao hơn hẳn, nên đi riêng một đợt) và
+      <strong>mục 5</strong> (loại trừ với mục 4 — chỉ chọn nếu anh muốn gọn tối đa).
+    </p>
+  </div>
+
+  <footer>
+    Khảo sát trên mã nguồn <code>gianhang.ahasale.vn</code> ngày 04/09/2026 · 20 màn người bán,
+    7.367 dòng · Mọi con số đếm trực tiếp từ mã, không ước lượng.
+  </footer>
+
+</div>
+
+</body></html>

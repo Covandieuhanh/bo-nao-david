@@ -15,6 +15,8 @@ Chặng 1 của nghề: 1–3 ca thật online, miễn phí đổi lời chứng
 | Rà soát video cũ TikTok và fanpage | Có danh sách đề xuất ẩn trong [dang-lam/ra-soat-video-cu.md](dang-lam/ra-soat-video-cu.md), và danh sách bổ sung ngày 06/11 trong [dang-lam/nghien-cuu-trang-ca-nhan.md](dang-lam/nghien-cuu-trang-ca-nhan.md). Ẩn là để riêng tư, không xoá | Chờ David quyết |
 | Làm lại kho 100 video | Kho cũ còn phần kinh doanh đã bỏ | Làm lại theo ba tầng: bản thân → công việc → mối quan hệ |
 
+**Kế hoạch đăng đợt này, chờ David duyệt:** [dang-lam/video-di-trainer/ke-hoach-dang.md](dang-lam/video-di-trainer/ke-hoach-dang.md). Chưa hẹn giờ bài nào.
+
 ## Chờ David quyết hoặc tự làm
 
 - Fanpage: đổi tên thành "David Trần - Trainer định hướng"; ảnh bìa còn chữ kinh doanh cũ.
