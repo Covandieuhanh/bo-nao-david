@@ -1,0 +1,23 @@
+// Chữ chính: mỗi dòng một câu trọn ý, nguyên văn lời David.
+export default [
+  {start: 0.01, end: 1.37, text: "Thì bắt đầu nhìn vào bên trong", hl: ["bên trong"]},
+  {start: 1.37, end: 2.38, text: "Nhìn vào bên trong"},
+  {start: 2.38, end: 4.17, text: "Tức là mình muốn làm gì", hl: ["làm gì"]},
+  {start: 4.17, end: 5.53, text: "Mình muốn trở thành ai", hl: ["trở thành ai"]},
+  {start: 5.53, end: 6.37, text: "Mình muốn như thế nào", hl: ["như thế nào"]},
+  {start: 6.37, end: 9.18, text: "Thì mình bắt đầu định hình được cái vị trí của mình", hl: ["vị trí"]},
+  {start: 9.18, end: 10.39, text: "Là một người trainer", hl: ["trainer"]},
+  {start: 10.39, end: 16.42, text: "Năm 2016 là mình đã bắt đầu trainer cho người ta rồi", hl: ["2016"]},
+  {start: 16.42, end: 18.55, text: "Ngày đấy thì đơn giản là mình hướng dẫn họ thôi", hl: ["hướng dẫn họ"]},
+  {start: 18.55, end: 21.44, text: "À, một bạn, bạn em muốn thấu hiểu bản thân mình", hl: ["thấu hiểu bản thân"]},
+  {start: 21.44, end: 22.54, text: "Thì mình hướng dẫn họ"},
+  {start: 22.54, end: 24.32, text: "Một bạn, bạn em muốn làm quy trình", hl: ["quy trình"]},
+  {start: 24.32, end: 25.38, text: "Thì mình hướng dẫn họ"},
+  {start: 25.38, end: 28.44, text: "Một bạn, bạn em muốn có thể nói được trước công chúng", hl: ["công chúng"]},
+  {start: 28.44, end: 29.34, text: "Mình hướng dẫn họ"},
+  {start: 29.34, end: 31.35, text: "Và mình hướng dẫn đến cái mức độ là", hl: ["mức độ"]},
+  {start: 31.35, end: 34.28, text: "Sau này họ không còn phải lệ thuộc vào mình nữa", hl: ["lệ thuộc"]},
+  {start: 34.28, end: 35.78, text: "Tức là mình trao toàn quyền", hl: ["toàn quyền"]},
+  {start: 35.78, end: 37.58, text: "Và mình dốc hết tâm can", hl: ["tâm can"]},
+  {start: 37.58, end: 39.26, text: "Để mình đào tạo hướng dẫn họ", hl: ["đào tạo"]},
+];
