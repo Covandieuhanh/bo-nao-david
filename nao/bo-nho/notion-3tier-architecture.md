@@ -7,6 +7,8 @@ metadata:
   originSessionId: a330419c-6639-476e-ae0e-32d7f3c2d7fd
 ---
 
+GitHub (private, since 2026-11-06): Covandieuhanh/notion-db, notion-backend, notion-frontend, app-notion-goc (root README, Google Apps Script version, docs).
+
 `/Users/moon/Documents/App notion/` holds a Notion-like project/task manager, deliberately split into **3 independent git repos** so each tier can deploy to its own server:
 
 - **notion-db** — Postgres 16 + Drizzle ORM. Owns schema (`src/schema.ts`, single file so drizzle-kit resolves it), migrations, seed. Publishes `@notion/db` (schema + `createDbClient` + re-exported drizzle operators). Backend consumes it via `file:../notion-db`.

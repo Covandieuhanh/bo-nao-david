@@ -16,4 +16,6 @@ Bộ não dùng chung: https://github.com/Covandieuhanh/David.Claude (Private), 
 
 **Hồ sơ thấu hiểu bản thân:** David chốt 06/11/2026 đưa lên `nao/ho-so-thau-hieu.md` bản bỏ số nợ và khoản chi hằng tháng; không đưa các con số đó lên repo. `sync.sh` không ghi đè file này, bản gốc ở Claude Docs.
 
+**Video đang làm:** `dang-lam/du-an-video.txt` liệt kê dự án trong `~/Movies`; `sync.sh` chép bài đăng, kế hoạch, lời, kịch bản. Xong việc thì bỏ dòng đó.
+
 **Không đưa lên:** lịch sử chat thô, cookie, `.claude.json`, `~/Documents/mk.csv`, video. Liên quan [[david-profile-and-content-filter]].

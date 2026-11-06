@@ -92,3 +92,10 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
 ## 2026-11-04 — TÁI CẤU TRÚC (David: "tách nhỏ để sửa một chỗ")
 - Kiến trúc 5 lớp: nguyen-tac · nhan-dien · ho-so (tham số từ hình mẫu, script + khung dựng đọc) · khoi (18 khối, nội dung SKILL.md cũ chuyển nguyên văn vào) · thu-vien-hinh (một bộ thành phần hình) + mau-chuan (kiem-mau.py). SKILL.md thành công thức mỏng (thứ tự khối, bảng phụ thuộc, tiêu chí đạt).
 - 2 TRẠNG THÁI: cảnh `illus` (single/flow/vs/count/list, nhãn ≤ 3 chữ) ở cả 2 khung dựng; lớp chữ đè người tự vẽ toàn màn hình ≤ 4 s; thẻ/hành động bỏ câu trích dài; tít ghim tắt (hồ sơ highlight `tit_ghim: false`). +11 biểu tượng. Sao lưu trước tái cấu trúc: `~/.claude/skills/dung-video.bak-2026-11-04b`.
+
+## 2026-11-06 — clip DJI_16
+- Nhạc + tiếng hiệu ứng highlight tính theo giọng như video dài; bỏ tiếng ký hiệu khi vào lời ngay giây 0 (đo Clip 1: lúc ngừng nói −19,5 dB, đang nói −17 dB; file thu −35 LUFS).
+- Podcast đồ hoạ dọc: chữ chính thay phụ đề (phương án B, David chọn sau khi thấy phụ đề + đồ hoạ bị rối).
+- 2026-11-06: David duyệt cả 3 clip "Đi trainer" làm mẫu cho các video sau; đã thêm vào `mau-chuan/mau.json`.
+- Khuôn podcast đồ hoạ dọc: bỏ câu kêu gọi ghép và màn chốt bình luận (David thấy ép buộc, cụt cảm xúc), kết bằng màn hình cuối 3 s mời xem YouTube; nhạc thấp hơn giọng khoảng 23 dB (David nghe 2 mức, chọn mức này).
+- Người xem clip là người xem độc lập; chấm riêng từng clip. David loại clip chỉ nói nỗi buồn.

@@ -39,6 +39,8 @@ if os.path.exists(hlf):
         import json as _json
         _hl = _json.loads(_t)
         sfx += [(max(0, j["at"] + j["dur"] / 2 - 0.21), "tua.wav", 0.32) for j in _hl["jumps"] if j.get("tone") != "lang"]
+        # Clip ngắn vào lời ngay giây 0 → bỏ tiếng ký hiệu, không đè những từ đầu (David chốt 2026-11-06)
+        if _hl.get("music"): sfx = [s for s in sfx if s[1] != BRAND["sting"]]
 A0 = "[0:a]asetpts=PTS-STARTPTS"
 # Nhạc nền highlight (highlight.js → music: [{f, a, b, gain}], bài cố định của kênh ở cat-highlight-video/assets/music):
 # mỗi bài một khoảng, chồng mờ 0,8 s ở mối, tự hạ khi có lời (sidechaincompress theo tiếng nói) — mức nền ~ −24 dB dưới lời
@@ -60,6 +62,18 @@ def _pick_music():
     if row["bai"]: return row["bai"][0]
     print(f"⚠ tuyến '{t}' chưa có bài riêng — tạm dùng {row['tam']} (chờ David tải bài)"); return row["tam"]
 _f = None if _mus else _pick_music()
+if _mus:
+    # Highlight: nhạc + tiếng hiệu ứng tính THEO GIỌNG như video dài (David chốt 2026-11-06). Mức cố định cũ giả định giọng −20 LUFS;
+    # file thu nhỏ (−35 LUFS) thì nhạc ngang giọng, che lời.
+    _o = subprocess.run(["ffmpeg", "-nostats", "-i", os.path.join(M, out_["base"]), "-af", "ebur128", "-f", "null", "-"], capture_output=True, text=True).stderr
+    _I = [float(x) for x in __import__("re").findall(r"I:\s+(-?[\d.]+) LUFS", _o)]
+    _voice = _I[-1] if _I else -20.0
+    _n = (locals().get("_hl") or {}).get("nhac") or {}
+    _mv = 10 ** ((_voice - _n.get("duoi_giong", NH.get("khoang_trong_duoi_giong_LU", BRAND["musicGapLU"])) + 15.5) / 20)
+    _th = 10 ** ((_voice - NH.get("nen_nguong_duoi_giong_dB", 14)) / 20)
+    _ty, _nha = _n.get("ty_le", NH.get("nen_ty_le", 20)), _n.get("nha_ms", NH.get("nen_nha_ms", 1500))
+    _k = min(1.0, 10 ** ((_voice + 20) / 20))
+    sfx = [(t, n, v * _k) for t, n, v in sfx]
 if not _mus and _f:
     # Video 1 người nói / podcast: nhạc kênh RẤT NHỎ — khoảng trống/mở/kết thấp hơn giọng `khoang_trong_duoi_giong_LU`; khi đang
     # nói nén theo giọng (ngưỡng = giọng − `nen_nguong_duoi_giong_dB`, tỉ lệ `nen_ty_le`, nhả `nen_nha_ms`) → ~30–33 LU dưới giọng (đo 2026-11-05)
@@ -73,18 +87,24 @@ if not _mus and _f:
     _dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", os.path.join(M, out_["base"])],
                                 capture_output=True, text=True).stdout)
     _mus = [{"f": _f, "a": 0.0, "b": _dur, "gain": _G.get(_f, 1.0)}]
+    _ty, _nha = NH.get("nen_ty_le", 20), NH.get("nen_nha_ms", 1500)
 if _mus:
     XF = 0.8
+    # Chữ chính: nhạc chạy liền qua khoảng lặng cuối và màn hình cuối, không tắt dần ở cuối phần lời
+    _cc = bool((locals().get("_hl") or {}).get("chu_chinh") and (locals().get("_hl") or {}).get("nhac"))
+    if _cc:
+        _bdur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", os.path.join(M, out_["base"])], capture_output=True, text=True).stdout)
+        _mus[-1]["b"] = _bdur
     for j, m in enumerate(_mus):
         k = len([a for a in args if a == "-i"])
         args += ["-stream_loop", "-1", "-i", os.path.join(MUSDIR, m["f"] + ".mp3")]
         a0 = max(0.0, m["a"] - XF); ln = m["b"] + XF - a0; ms = round(a0 * 1000)
-        fi = f",afade=t=in:d={2 * XF if m['a'] > 0 else 0.6}" ; fo = f",afade=t=out:st={ln - 2 * XF:.3f}:d={2 * XF}"
+        fi = f",afade=t=in:d={2 * XF if m['a'] > 0 else 0.6}" ; fo = "" if _cc else f",afade=t=out:st={ln - 2 * XF:.3f}:d={2 * XF}"
         fl.append(f"[{k}:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,atrim=0:{ln:.3f},asetpts=PTS-STARTPTS"
                   f"{fi}{fo},volume={(_mv if _mv is not None else 0.16) * m.get('gain', 1):.4f},adelay={ms}|{ms}[mu{j}]")
     mu = "".join(f"[mu{j}]" for j in range(len(_mus)))
-    _scc = (f"sidechaincompress=threshold={_th:.5f}:ratio={NH.get('nen_ty_le', 20)}:attack=20:release={NH.get('nen_nha_ms', 1500)}" if _th
-            else "sidechaincompress=threshold=0.03:ratio=6:attack=30:release=450")   # highlight: giữ mức cũ (đã duyệt)
+    _scc = (f"sidechaincompress=threshold={_th:.5f}:ratio={_ty}:attack=20:release={_nha}" if _th
+            else "sidechaincompress=threshold=0.03:ratio=6:attack=30:release=450")
     fl.append(f"{A0},aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,asplit=2[sp0][sp1];"
               f"{mu}amix=inputs={len(_mus)}:duration=longest:normalize=0[mub];"
               f"[mub][sp1]{_scc}[mud];"
@@ -115,7 +135,10 @@ if os.path.exists(endc):
     ln = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", endc],
                               capture_output=True, text=True).stdout)
     _em = os.path.join(MUSDIR, (_f or "lang-1") + ".mp3")
-    if ln > 5 and os.path.exists(_em):   # màn kết YouTube 15–20 s: nhạc kênh nhỏ, vào/ra mềm (không để 20 s im lặng)
+    if locals().get("_cc") and _mus:   # màn hình cuối clip ngắn: nhạc chạy tiếp đúng vị trí, tắt dần ở cuối
+        args += ["-i", endc, "-ss", f"{_mus[-1]['b'] + 0:.3f}", "-t", f"{ln:.3f}", "-stream_loop", "-1", "-i", os.path.join(MUSDIR, _mus[-1]["f"] + ".mp3")]
+        _eaf = f",volume={_mv * _mus[-1].get('gain', 1):.4f},afade=t=out:st={max(0, ln - 1.4):.2f}:d=1.4"
+    elif ln > 5 and os.path.exists(_em):   # màn kết YouTube 15–20 s: nhạc kênh nhỏ, vào/ra mềm (không để 20 s im lặng)
         args += ["-i", endc, "-t", f"{ln:.3f}", "-i", _em]
         _eaf = f",volume=0.18,afade=t=in:d=0.8,afade=t=out:st={max(0, ln - 1.5):.2f}:d=1.5"
     else:

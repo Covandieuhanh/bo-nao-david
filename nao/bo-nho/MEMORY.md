@@ -19,3 +19,5 @@
 - [Kết quả hơn tốc độ](result-over-speed.md) — làm đúng quy trình, bước cần kết quả render thì chờ; chỗ chưa rõ thì trao đổi (2026-11-05)
 - [Video dài không cắt](video-long-no-cut.md) — video dài để nguyên, kể cả lặng và ờ ừm; cắt ghép chỉ khi trích video ngắn (2026-11-05)
 - [Bộ não David.Claude](david-claude-brain-repo.md) — repo riêng tư dùng chung cho mọi AI; "cập nhật não" = scripts/sync.sh --push (2026-11-05)
+- [Clip ngắn đứng độc lập](clip-ngan-dung-doc-lap.md) — mỗi clip có hoàn cảnh riêng và đạt trọng tâm làm chủ bản thân/công việc, không chỉ cảm xúc (2026-11-06)
+- [Khuôn video dọc đồ hoạ](video-doc-khuon-chu-chinh.md) — chữ chính thay phụ đề, nhạc thấp hơn giọng ~23 dB, màn hình cuối mời xem YouTube; 3 clip "Đi trainer" là mẫu (2026-11-06)

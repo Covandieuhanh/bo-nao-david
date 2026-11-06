@@ -26,7 +26,7 @@ const Mark = ({good, s, o}) => (
   </div>
 );
 
-export const Illus = ({mode = 'single', items = [], label = '', num = null, start = 0, len}) => {
+export const Illus = ({mode = 'single', items = [], label = '', num = null, start = 0, len, compact = false}) => {   // compact: chừa giữa khung cho chữ chính
   const f = useCurrentFrame();
   const {fps, width: W, height: H, durationInFrames} = useVideoConfig();
   const L = len || durationInFrames;
@@ -35,7 +35,7 @@ export const Illus = ({mode = 'single', items = [], label = '', num = null, star
   const out = interpolate(f, [L - 8, L], [1, 0], cl);
   const n = Math.max(1, items.length);
   // khung ngang (podcast 1920×1080): hình nhỏ hơn để cả dấu ✓/✗ + nhãn nằm gọn trong vùng vẽ (2026-11-05: bản cũ bị cắt mép trên)
-  const sz = mode === 'count' ? M * (land ? 0.22 : 0.5) : mode === 'single' ? M * (land ? 0.34 : 0.5) : n === 2 ? M * (land ? 0.26 : 0.36) : M * (land ? 0.2 : 0.24);
+  const sz = compact ? M * 0.36 : mode === 'count' ? M * (land ? 0.22 : 0.5) : mode === 'single' ? M * (land ? 0.34 : 0.5) : n === 2 ? M * (land ? 0.26 : 0.36) : M * (land ? 0.2 : 0.24);
   const icon = (it, i) => {
     const a = rel(it.at), p = spring({frame: f - a, fps, config: {damping: 14, stiffness: 150, mass: 0.7}});
     const bob = Math.sin((f - a) / 20) * sz * 0.012;
@@ -79,7 +79,7 @@ export const Illus = ({mode = 'single', items = [], label = '', num = null, star
     <AbsoluteFill style={{opacity: Math.min(ease(f, 0, 8), out)}}>
       <AbsoluteFill style={{background: C.bg}} />
       <AbsoluteFill style={{background: `radial-gradient(circle at 50% ${land ? 42 : 38}%, rgba(255,122,69,0.2), transparent 60%)`}} />
-      <div style={{position: 'absolute', left: W * 0.06, right: W * 0.06, top: H * (land ? 0.07 : 0.1), height: H * (land ? 0.64 : 0.46), display: 'flex', flexDirection: 'column',
+      <div style={{position: 'absolute', left: W * 0.06, right: W * 0.06, top: compact ? H * 0.115 : H * (land ? 0.07 : 0.1), height: compact ? H * 0.235 : H * (land ? 0.64 : 0.46), display: 'flex', flexDirection: 'column',
         alignItems: 'center', justifyContent: 'center', gap: M * 0.05}}>
         {numEl}
         <div style={{display: 'flex', flexDirection: row ? 'row' : 'column', flexWrap: mode === 'list' ? 'wrap' : 'nowrap', alignItems: 'center',

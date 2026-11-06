@@ -41,6 +41,7 @@ kênh lớn, ghi lý do vào changelog. Mục tiêu mỗi video: người xem **
   ngang ngực/dưới cằm (`ShortLine`) — chuẩn Hormozi / DOAC / Jay Shetty. Tự bật; ép tay `project.short = true|false` (1 video)
   hoặc `SHORT` trong edl.js (ghép).
 - **Video dài, vlog, podcast**: hộp tối, đầy đủ câu, đáy vùng an toàn (`SUB`).
+- **Podcast đồ hoạ dọc trích ngắn** (David chốt 2026-11-06): không dải phụ đề; cả câu đang nói hiện to giữa khung làm đồ hoạ (`chu_chinh`), mỗi lúc một lớp chữ.
 - **Màu theo nghĩa** (2026-11-04): trong `hl`, mục bắt đầu `+` = nên làm (xanh lá), `-` = tránh (đỏ), còn lại cam — chỉ khi lời có cặp nên/tránh.
 - Luôn đầy đủ, đúng từng chữ; ẩn khi thẻ toàn cảnh đang hiện nguyên văn câu đó. Không đốt phụ đề bằng ffmpeg (không có libass).
 
@@ -67,7 +68,7 @@ tự thêm bài) · giọng −20 LUFS, bản cuối −14 LUFS · màn chốt (
 ## 6. Lời kêu gọi
 - Ưu tiên **câu mệnh lệnh nằm sẵn trong lời** ("Hãy chọn…", "thử làm…") — top video gần như không có câu "hãy bình luận".
 - Màn hành động (`action`) đúng lúc người nói giao một việc làm được; 1–2 lần / video.
-- Màn chốt ~4 s cuối mọi video; highlight dùng nguyên văn câu kêu gọi, video thường Claude tự viết (mục 1).
+- Màn chốt ~4 s cuối mọi video; highlight dùng nguyên văn câu kêu gọi, video thường Claude tự viết (mục 1). **Ngoại lệ podcast đồ hoạ dọc trích ngắn** (David chốt 2026-11-06): không ép hành động, kết bằng màn hình cuối mời xem bản đầy đủ.
 
 ## 7. Phát hành (bước cuối của MỌI skill — David chốt 2026-11-04, chuẩn MrBeast / Paddy Galloway)
 Ghi `<dự án>/phat-hanh/phat-hanh.md`:

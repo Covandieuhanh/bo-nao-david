@@ -33,9 +33,9 @@ export const EndCard = () => {
   return (
     <AbsoluteFill style={{background: C.bg}}>
       <AbsoluteFill style={{background: `radial-gradient(circle at 50% ${LAND ? '42%' : '40%'}, rgba(255,122,69,0.28), transparent 58%)`}} />
-      <div style={{position: 'absolute', left: PF.left, width: PF_W, top: LAND ? 180 : 560, display: 'flex', flexDirection: 'column',
+      <div style={{position: 'absolute', left: PF.left, width: PF_W, top: LAND ? 180 : (ec.tease ? 400 : 560), display: 'flex', flexDirection: 'column',
         alignItems: 'center', gap: LAND ? 36 : 44, transform: `translateY(${(1 - p) * 60}px)`, opacity: ease(f, 0, 6)}}>
-        <EndCardBody title={title} speaker={speaker} play={!brandOnly} schedule={schedule} big={LAND ? 150 : 120} gap={LAND ? 36 : 44} />
+        <EndCardBody tease={ec.tease || ''} title={title} speaker={ec.tease ? '' : speaker} play={!brandOnly} schedule={schedule} big={LAND ? 150 : 120} gap={LAND ? 36 : 44} />
       </div>
       {/* sóng âm lặng dần — nối mạch với sân khấu podcast (chỉ podcast) */}
       {project.podcast && <div style={{position: 'absolute', left: PF.left, width: PF_W, top: LAND ? 900 : 1380, height: 90, display: 'flex', alignItems: 'center', gap}}>

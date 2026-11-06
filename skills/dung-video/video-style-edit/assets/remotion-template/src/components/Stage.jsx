@@ -10,6 +10,7 @@ import {SCENES, STAGE, TOPICS, fr} from '../scenes';
 import {FULL} from '../layout';
 import {LAND, PF, PF_W, VN} from '../podframe';
 import SPEAKERS from '../speakers.js';
+import HL from '../highlight.js';
 import ENVELOPE from '../envelope.js';
 import {BrandMark} from './Overlays';
 
@@ -125,7 +126,7 @@ export const Stage = () => {
       </div>
       {/* Ý đang bàn */}
       {kw && (
-        <div style={{position: 'absolute', left: PF.left, width: L.topic.w, top: L.topic.top, opacity: busy || recap ? 0 : 1}}>
+        <div style={{position: 'absolute', left: PF.left, width: L.topic.w, top: L.topic.top, opacity: busy || recap || (HL && HL.chu_chinh) ? 0 : 1}}>
           {(TOPICS || []).length > 1 && <div style={{position: 'absolute', top: -kSize * 0.75, fontFamily: HEAD, fontWeight: 800,
             fontSize: Math.round(kSize * 0.42), letterSpacing: 4, color: C.accent, opacity: chapIn}}>PHẦN {ki + 1}</div>}
           <div style={{overflow: 'hidden', paddingTop: kSize * VN.top, marginTop: -kSize * VN.top, paddingBottom: kSize * VN.bot, marginBottom: -kSize * VN.bot}}>

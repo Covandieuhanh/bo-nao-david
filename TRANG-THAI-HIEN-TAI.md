@@ -1,6 +1,6 @@
 # Trạng thái hiện tại
 
-Ghi ngày 05/11/2026. File này chóng cũ. Với video, tin sổ [dang-lam/danh-muc.md](dang-lam/danh-muc.md) hơn. Có máy thì kiểm tra lại trên máy trước khi báo David.
+Ghi ngày 06/11/2026. File này chóng cũ. Với video, tin sổ [dang-lam/danh-muc.md](dang-lam/danh-muc.md) hơn. Có máy thì kiểm tra lại trên máy trước khi báo David.
 
 ## Ưu tiên số một
 
@@ -10,7 +10,8 @@ Chặng 1 của nghề: 1–3 ca thật online, miễn phí đổi lời chứng
 
 | Việc | Tình trạng | Bước tiếp |
 |---|---|---|
-| Podcast "Trainer cho người làm trainer" (DJI_16, 8:57, giữ nguyên không cắt) | David đã duyệt bố cục và cho render tối 05/11. Dự án ở `~/Movies/podcast-dji-20261105`. Lúc ghi chưa thấy `video-final.mp4` | Kiểm tra bản cuối, gửi David duyệt kèm thumbnail, tiêu đề, mô tả (cổng 2). Dự kiến YouTube ngang thứ Ba 10/11 20:00 |
+| Podcast "Đi trainer cho người làm trainer" (DJI_16, 9:19, giữ nguyên không cắt) | Dựng xong, chờ David duyệt ở cổng 2. Video ở `~/Movies/podcast-dji-20261105` và Drive `Video-xong`. Bài đăng: [dang-lam/video-di-trainer/video-dai/phat-hanh/phat-hanh.md](dang-lam/video-di-trainer/video-dai/phat-hanh/phat-hanh.md). Giây đầu còn tiếng ký hiệu đè "David xin chào" | David quyết có bỏ tiếng ký hiệu không, rồi duyệt. Dự kiến YouTube ngang T3 10/11 20:00 |
+| 3 clip dọc từ podcast trên | **David duyệt hình và tiếng 06/11, lấy làm mẫu cho các video dọc sau.** Bài đăng, tít và câu màn hình cuối chưa được duyệt riêng. Chưa hẹn giờ, chưa đăng. Bài đăng: [dang-lam/video-di-trainer/ke-hoach-clip/dang-bai.md](dang-lam/video-di-trainer/ke-hoach-clip/dang-bai.md). Video ở Drive `Video-xong/Di-trainer-clip-1\|2\|3.mp4` | David duyệt bài đăng, rồi hẹn giờ qua khối 19 (lần đầu đăng thật, đi chậm). Lịch T6 13/11, T3 17/11, T6 20/11 20:00. Điền `[link YouTube]` sau khi video dài lên |
 | Rà soát video cũ TikTok và fanpage | Có danh sách đề xuất ẩn trong [dang-lam/ra-soat-video-cu.md](dang-lam/ra-soat-video-cu.md), và danh sách bổ sung ngày 06/11 trong [dang-lam/nghien-cuu-trang-ca-nhan.md](dang-lam/nghien-cuu-trang-ca-nhan.md). Ẩn là để riêng tư, không xoá | Chờ David quyết |
 | Làm lại kho 100 video | Kho cũ còn phần kinh doanh đã bỏ | Làm lại theo ba tầng: bản thân → công việc → mối quan hệ |
 
@@ -33,4 +34,4 @@ Chặng 1 của nghề: 1–3 ca thật online, miễn phí đổi lời chứng
 
 ## App notion
 
-Dự án riêng, code ở `~/Documents/App notion` trên Mac hiện tại và không nằm trong repo này. Lần kiểm tra 05/11/2026 không thấy GitHub remote cho `notion-db`, `notion-backend`, `notion-frontend`. Trạng thái sản phẩm xem bộ nhớ [notion-v2-spec-plan](nao/bo-nho/notion-v2-spec-plan.md); ghi chép này từ tháng 8/2026, cần kiểm tra lại trên máy.
+Dự án riêng, code ở `~/Documents/App notion`. Từ 06/11/2026 đã có trên GitHub, đều riêng tư: `Covandieuhanh/notion-db`, `notion-backend`, `notion-frontend`, `app-notion-goc` (README tổng, bản Google Apps Script, tài liệu thiết kế). File `.env` không đưa lên. Trạng thái sản phẩm xem bộ nhớ [notion-v2-spec-plan](nao/bo-nho/notion-v2-spec-plan.md); ghi chép này từ tháng 8/2026, cần kiểm tra lại trên máy.

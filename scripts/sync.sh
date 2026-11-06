@@ -20,6 +20,16 @@ MEM="${NAO_MEMORY_DIR:-$(ls -dt "$CL"/projects/*/memory 2>/dev/null | head -1)}"
 
 [ -f "$HOME/Movies/_so-danh-muc/danh-muc.md" ] && cp "$HOME/Movies/_so-danh-muc/danh-muc.md" "$REPO/dang-lam/danh-muc.md"
 
+# Tài liệu và kịch bản của video đang làm. Video và file nặng không đưa lên, thành phẩm ở Drive.
+[ -f "$REPO/dang-lam/du-an-video.txt" ] && while read -r ten dich; do
+  [ -z "${ten:-}" ] && continue
+  P="$HOME/Movies/$ten"; [ -d "$P" ] || continue
+  D="$REPO/dang-lam/$dich"; mkdir -p "$D"
+  rsync -a --include '*.md' --include 'phuong-an.json' --include 'phat-hanh/***' --include 'motion/' --include 'motion/src/' \
+    --include 'motion/src/captions.js' --include 'motion/src/scenes.js' --include 'motion/src/highlight.js' --include 'motion/src/endcard.js' --include 'motion/src/project.js' \
+    --exclude '*' "${LOAI[@]}" "$P/" "$D/"
+done < "$REPO/dang-lam/du-an-video.txt"
+
 python3 -I "$REPO/scripts/quet-bi-mat.py" "$REPO"
 
 cd "$REPO"

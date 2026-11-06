@@ -2,7 +2,9 @@
 
 ## 1. Tài khoản Claude khác, cùng máy này
 
-Skill và bộ nhớ nằm trong `~/.claude` nên đổi tài khoản vẫn còn. Không cần cài gì.
+Skill và bộ nhớ nằm trong `~/.claude` nên đổi tài khoản vẫn còn. Không cần cài gì. Mở lại đúng thư mục `~/Documents/App notion` để Claude Code nhận bộ nhớ.
+
+Không đi theo sang tài khoản mới: lịch sử trò chuyện trên ứng dụng, các trang và tài liệu đã lưu trên claude.ai (Artifact, Claude Docs), kết nối và trình duyệt của Claude. Tài liệu cần dùng tiếp thì chia sẻ hoặc tải về từ tài khoản cũ trước khi đổi.
 
 ## 2. Claude Code trên máy mới (Mac)
 
@@ -37,8 +39,8 @@ Bộ nhớ của Claude Code gắn theo thư mục dự án. Tham số cuối l�
 | Đăng nhập YouTube, Facebook, TikTok | David tự đăng nhập lại. Hồ sơ Chrome đăng bài ở `~/.cache/david-mxh-chrome` |
 | Google Drive (`Video-goc`, `Video-xong`) | Cài Google Drive cho máy tính, đăng nhập tài khoản của David |
 | Trình duyệt và kết nối của Claude | Bật lại trong ứng dụng Claude |
-| Video gốc và thành phẩm | Ở Drive và `~/Movies`, không nằm trong repo |
-| Code App notion | Ở `~/Documents/App notion` trên Mac hiện tại, không nằm trong repo |
+| Video gốc và thành phẩm | Ở Drive và `~/Movies`, không nằm trong repo. Lời và kịch bản của video đang làm ở `dang-lam/` |
+| Code App notion | Clone 4 repo riêng tư: `notion-db`, `notion-backend`, `notion-frontend`, `app-notion-goc`. Tự tạo lại `.env` từ `.env.example`. Dữ liệu database trên máy không đưa lên |
 
 ## 5. Sau khi cài, kiểm tra nhanh
 

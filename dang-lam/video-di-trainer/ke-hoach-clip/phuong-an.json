@@ -1,0 +1,113 @@
+{
+ "options": [
+  {
+   "id": "A",
+   "layout": "Cao trào cuối",
+   "tit": "NGƯỜI THÂN QUEN KÉO HẾT NHÂN SỰ",
+   "pieces": [
+    {
+     "start": 204.35,
+     "end": 215.34,
+     "role": "CHAM",
+     "tone": "lang",
+     "text": "Làm việc với một người rất là thân quen. Nhưng cuối cùng chính cái người thân này lại đi cửa sau và nhặt hết tất cả các cái nhân sự của anh ấy"
+    },
+    {
+     "start": 215.34,
+     "end": 233.98,
+     "role": "DAUHIEU",
+     "tone": "lang",
+     "text": "Nó dẫn đến cái bài toán là sau khi mà anh này tưởng chừng là mọi thứ về doanh nghiệp của mình nó cũng đã ổn hết tất cả rồi. Thì đùng một phát là cái người này giáng cho anh ấy một cú rất là đau. Bằng cách là kéo hết nhân sự của anh ấy đi và ra ngoài làm công việc riêng. Và đùng một phát"
+    },
+    {
+     "start": 233.98,
+     "end": 248.32,
+     "role": "CHUYEN",
+     "tone": "lang",
+     "text": "là từ cái doanh nghiệp 20 mấy người là cuối cùng là chỉ còn có mấy người. Những cái người cốt cán mà ngày xưa anh ấy đã mang về từ vài năm trước rồi. Thì bây giờ tự nhiên đùng một phát một cái cú sốc rất là lớn"
+    }
+   ],
+   "tease": "David đã nói gì với anh ấy?"
+  },
+  {
+   "id": "B",
+   "layout": "Cao trào cuối",
+   "tit": "KHÔNG PHẢI SAI, MÀ LÀ CHƯA PHÙ HỢP",
+   "pieces": [
+    {
+     "start": 287.6,
+     "end": 299.98,
+     "role": "GOCRE",
+     "tone": "lang",
+     "text": "mỗi cá nhân, mỗi tổ chức, mỗi đội nhóm, mỗi thành viên ở trên xã hội của chúng ta tồn tại đều có sứ mệnh riêng và đều có vai trò riêng. Giống như một cái bức tranh đi"
+    },
+    {
+     "start": 299.98,
+     "end": 311.52,
+     "role": "GOCRE",
+     "tone": "lang",
+     "text": "Thì mỗi người trong chúng ta sẽ là một cái mảnh ghép. Và không có mảnh ghép nào nó giống mảnh ghép nào cả. Kể cả là vai trò hay mảnh ghép có giống nhau đi chăng nữa. Thì nó cũng sẽ ở những cái vị trí khác nhau"
+    },
+    {
+     "start": 311.52,
+     "end": 315.38,
+     "role": "HANHDONG",
+     "tone": "lang",
+     "text": "Nên một là chúng ta cần phải tự tin"
+    },
+    {
+     "start": 315.38,
+     "end": 322.36,
+     "role": "KETQUA",
+     "tone": "lang",
+     "text": "Và bản thân anh ấy cũng phải tự tin rằng không phải là anh ấy sai, mà là anh ấy chưa phù hợp với cái mảnh ghép kia"
+    }
+   ],
+   "tease": "Chuyện gì đã xảy ra với anh ấy?"
+  },
+  {
+   "id": "C",
+   "layout": "Cao trào cuối",
+   "tit": "BỊ RÚT ĐI NHÂN SỰ, HÃY HIỂU VAI TRÒ",
+   "tease": "Anh ấy đã bị rút nhân sự thế nào?",
+   "pieces": [
+    {
+     "start": 372.43,
+     "end": 376.1,
+     "role": "CHAM",
+     "tone": "lang",
+     "text": "Mình bị rút đi nhân sự, mình bị này bị kia từ cái người bạn đấy"
+    },
+    {
+     "start": 334.42,
+     "end": 346.0,
+     "role": "GOCRE",
+     "tone": "lang",
+     "text": "Nếu như qua cái câu chuyện này anh có thể nhận định được cái vai trò của mình trong xã hội là gì, cái vai trò của mình trong công ty và doanh nghiệp của anh là gì"
+    },
+    {
+     "start": 346.0,
+     "end": 351.0,
+     "role": "GOCRE",
+     "tone": "lang",
+     "text": "Thì anh sẽ không bị lấn sân sang cái phần khác. Và khi anh không lấn sân sang cái phần khác"
+    },
+    {
+     "start": 351.0,
+     "end": 359.0,
+     "role": "GOCRE",
+     "tone": "lang",
+     "text": "Thì dù cái phần đấy nó có chưa được, thì đương nhiên nó đâu phải là cái kỹ năng, nó đâu phải là cái năng lực của anh. Nó chưa được là chuyện bình thường"
+    },
+    {
+     "start": 359.0,
+     "end": 366.95,
+     "role": "KETQUA",
+     "tone": "lang",
+     "text": "Thì lúc này cái nỗi đau mà anh gặp phải nó sẽ không còn tiêu tốn của anh quá nhiều thời gian nữa"
+    }
+   ]
+  }
+ ],
+ "endcard": {}
+}

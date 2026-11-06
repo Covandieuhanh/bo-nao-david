@@ -28,7 +28,7 @@ khối + quyết định riêng của loại + tiêu chí đạt. Cách làm t�
    đầu/cuối câu, sửa chính tả Whisper. **Ngoại lệ duy nhất: thẻ tít mở đầu** (luật 7) viết như tít báo.
 4. **Mỗi clip bắt buộc có lời kêu gọi** = câu mệnh lệnh/giao việc nguyên văn của người nói ("Hãy chọn…", "thử làm…"). Câu mời
    bình luận chỉ dùng khi người nói có nói; còn lại để ở bình luận ghim. Không có câu nào dùng được → dừng, báo David.
-5. **Ý của cả video**: luôn làm bước 2 (bản đồ cả video) trước khi chọn. Mỗi clip phục vụ lời hứa cốt lõi hoặc một ý lớn của video.
+5. **Ý của cả video**: luôn làm bước 2 (bản đồ cả video) trước khi chọn. Mỗi clip phục vụ lời hứa cốt lõi hoặc một ý lớn của video. **Người xem clip là người xem độc lập** (David chốt 2026-11-06): mỗi clip có hoàn cảnh và nội dung riêng, tự đạt câu hỏi gốc của bộ lọc (làm chủ bản thân / công việc); chỉ nói cảm xúc thì không đạt.
 6. **Không thứ tự cố định**: vị trí lời kêu gọi tự bố trí theo mạch (khối 13, bước 4); đổi thứ tự không được làm sai nghĩa.
    **Độ dài 30–60 s** tự cân (≤ 90 s khi bỏ bớt gãy ý; tới 120 s chỉ khi là câu chuyện hồi hộp có đáp án ở cuối, kiểu DOAC 141 s).
 7. **Thẻ tít mở đầu 0 → ~2,5 s** (chuẩn DOAC/Mel Robbins): ≤ 8 chữ, 2 dòng, ở nửa trên khung — **viết như tít báo** nêu tiền cược /
@@ -127,7 +127,15 @@ PY=$(zsh $POD/scripts/py_setup.sh); $PY $POD/scripts/speakers.py "$E" <1|2>; $PY
 - `pod_stills.sh` chụp thử (mỗi cảnh lúc đầy nhất + vài mốc `nen@`) → `node render.mjs` → `podcast_base.py` → `render_preview.py`
   → `check_frames.sh` như bước 7–9 của `$POD/SKILL.md`.
 
+### Khuôn podcast đồ hoạ dọc (7B, David duyệt 2026-11-06. Mẫu cho mọi video sau: 3 clip `~/Movies/podcast-hl-di-trainer-{A,B,C}`, thành phẩm ở Drive `Video-xong/Di-trainer-clip-1|2|3.mp4`, lời và kịch bản ở repo David.Claude `dang-lam/video-di-trainer/`) — thắng các luật khác trong skill này khi trái nhau
+- **Không ép hành động trong lời:** bỏ luật 4 và màn chốt `cta` ở nhánh này. Không ghép câu kêu gọi từ chỗ khác. Clip kết ở chính câu đắt nhất, lặng 1 s (nhạc nổi lên), rồi sang màn hình cuối.
+- **Màn hình cuối 3 s, không lời:** `"tease"` trong option của phuong-an.json = một câu gợi tò mò (Claude viết, David duyệt, chỉ gợi điều có thật trong video dài) + nút YouTube + "Bản đầy đủ trên YouTube" + tên tập. Câu hỏi "Vấn đề" / "Kết quả" để ở mô tả và bình luận ghim.
+- **Nhạc:** `ho-so/highlight.json` → `nhac_chu_chinh` (thấp hơn giọng khoảng 23 dB lúc nói, nén nhẹ), chạy liền qua màn hình cuối, không tiếng ký hiệu đầu clip.
+- **Hoàn cảnh:** thiếu hoàn cảnh thì đưa câu nguyên văn nêu hoàn cảnh lên đầu clip.
+- **Sau khi cắt:** `new_podcast.sh … cat-thua` còn 0,4 s lặng cuối → đệm đủ 1 s lặng, cập nhật `project.duration`, chạy lại `envelope.py`.
+
 ### Kịch bản highlight podcast (7B) — tối giản ~3–4 cảnh, MỌI chữ nguyên văn lời trong clip
+- **Chữ chính thay phụ đề** (David chốt 2026-11-06, `hl_apply.py` tự bật `chu_chinh`): không dải phụ đề, không dòng chủ đề, không `kinetic`; mỗi dòng `captions.js` là một câu trọn ý (≤ 3 dòng, ~55 ký tự), có `hl` từ khoá. Cảnh đồ hoạ dùng `illus` `single` `compact: true`, không `label`, để chỉ có một lớp chữ. Video ngang và video có người nói không đổi. Các mục `kinetic`, phụ đề nhịp chữ dưới đây không áp dụng cho nhánh này.
 - `hook` 0 → ~2,5–3 s: **thẻ tít** (luật 7, ≤ 8 chữ, 2 dòng, viết như tít báo đúng ý), `eyebrow` trích lời hoặc bỏ trống.
 - **Hình dày theo lời** (học Pháp Hoà 1,65 Tr): ngoài 3–4 cảnh chính, `montage`/`card` biểu tượng đổi theo từng cụm lời ~1,5–2,5 s ở các đoạn không có cảnh (mỗi cụm một biểu tượng vẽ + nhãn trích lời).
 - `action` đúng lúc câu HANHDONG (`icon` — thiếu thì vẽ thêm: `write` = viết ra giấy; `quote` nguyên văn, `quoteAt`, `doneAt`).

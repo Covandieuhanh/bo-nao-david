@@ -27,6 +27,10 @@ hl = dict(src_duration=m["src_duration"],
           jumps=[dict(j, at=r3(conv(j["at"]))) for j in m["jumps"]])
 # Thanh của cả tập gốc chỉ khi cắt kiểu cũ có chuyển cảnh tua (--tua); mặc định (2026-11-04) cắt cứng → thanh thường của clip
 hl["bar"] = bool(m["jumps"])
+# Podcast đồ hoạ dọc: chữ đang nói LÀ đồ hoạ, không dải phụ đề, không dòng chủ đề (David chốt 2026-11-06)
+hl["chu_chinh"] = True
+_hs = json.load(open(os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../ho-so/highlight.json"), encoding="utf-8"))
+hl["nhac"] = {k: v for k, v in _hs["nhac_chu_chinh"].items() if k != "_"}
 # Tông từng đoạn (phuong-an.json "tone": lang | soi, mặc định soi) → chuyển cảnh lắng không vệt quét/tiếng vút + nhạc nền đổi theo tông
 pcs = next(o for o in json.load(open(os.path.join(P, "phuong-an.json"), encoding="utf-8"))["options"] if o["id"] == ID)["pieces"]
 tone_of = lambda src: next((p.get("tone", "soi") for p in pcs if p["start"] - 0.5 <= src <= p["end"] + 0.5), "soi")
@@ -44,6 +48,9 @@ hl["music"] = [dict(f=MUS[x["k"]], a=x["a"], b=x["b"], gain=GAIN[MUS[x["k"]]]) f
 _plan = json.load(open(os.path.join(P, "phuong-an.json"), encoding="utf-8"))
 if isinstance(_plan.get("endcard"), dict):
     hl["endcard"] = dict({k: v for k, v in _plan["endcard"].items() if k in ("title", "speaker", "schedule") and v}, len=1.8)
+    _opt = next(o for o in _plan["options"] if o["id"] == ID)
+    if _opt.get("tease"):   # câu gợi tò mò do David duyệt → màn hình cuối 3 s mời xem bản đầy đủ, thay màn chốt bình luận
+        hl["endcard"].update(tease=_opt["tease"], len=_hs.get("man_cuoi_s", 3.0))
 out = os.path.join(E, "motion/src/highlight.js")
 head = open(out, encoding="utf-8").read().split("export default", 1)[0] if os.path.exists(out) else ""
 open(out, "w", encoding="utf-8").write(head + "export default " + json.dumps(hl, ensure_ascii=False) + ";\n")

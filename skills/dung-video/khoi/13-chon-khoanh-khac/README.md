@@ -90,7 +90,7 @@ Bất kể kiểu nào:
 - Kiểu nào cũng phải đạt bước 5 (tự đứng được) — đổi chỗ mà câu mất nghĩa thì chọn kiểu khác.
 
 ### 5. Kiểm clip tự đứng được + lằn ranh nội dung
-Đọc nối các câu theo thứ tự đã bố trí như người chưa xem bản đầy đủ. Loại/thay câu khi:
+Đọc nối các câu theo thứ tự đã bố trí như người chưa xem bản đầy đủ. **Người xem clip là người xem độc lập (David chốt 2026-11-06):** xem một mình phải biết hoàn cảnh là gì và clip nói gì; thiếu hoàn cảnh thì thêm câu nguyên văn nêu hoàn cảnh, không có thì bỏ clip. **Chấm riêng từng clip** theo câu hỏi gốc của khối 00: giúp làm chủ bản thân hoặc làm chủ công việc thêm một bước; đoạn chỉ nói về cảm xúc thì không đạt, dù câu nghe đắt. Loại/thay câu khi:
 - Có từ trỏ chỗ khác: "ở trên", "như mình vừa nói", "bước 2" mà không có bước 1, "cái này"/"phương pháp này" chưa nói là gì.
 - Hành động không làm được nếu không xem bản đầy đủ; câu cắt giữa chừng, mất chủ ngữ hoặc mất ý; đổi chỗ làm lệch nghĩa.
 

@@ -5,7 +5,7 @@
 import React from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
 import CAPTIONS from '../captions.js';
-import {BODY, C, SAFE, SAFE_W, ease} from '../theme';
+import {BODY, C, HEAD, SAFE, SAFE_W, ease} from '../theme';
 import {SCENES, fr} from '../scenes';
 import project from '../project.js';
 import {POD, PF} from '../podframe';
@@ -22,6 +22,21 @@ const TWOQ = !!HS.hai_trang_thai;   // 2 trạng thái: không câu trích dài 
 // (podcast dài / video dài giữ hộp tối). Ép tay: project.short = true | false.
 const SHORT = project.short ?? (!!HL || (project.height > project.width && project.duration > 0 && project.duration <= (PD.ngan_max_s ?? 90)));
 
+// CHỮ CHÍNH (David chốt 2026-11-06, podcast đồ hoạ dọc trích ngắn): cả câu đang nói hiện to giữa khung, thay dải phụ đề và dòng chủ đề —
+// mỗi lúc chỉ một lớp chữ. Ẩn khi thẻ tít mở đầu / màn chốt đang hiện (hai màn đó là chữ của đoạn ấy).
+const CHU = !!(HL && HL.chu_chinh);
+const ChuChinh = ({cap, f}) => {
+  if (!cap || SCENES.some((s) => (s.type === 'hook' || s.type === 'cta') && f >= fr(s.start) && f < fr(s.end))) return null;
+  const a = ease(f, fr(cap.start), fr(cap.start) + 4);
+  return (
+    <div style={{position: 'absolute', left: PF.left + 24, width: PF.right - PF.left - 48, top: 660, height: 330, display: 'flex', alignItems: 'center', justifyContent: 'center',
+      opacity: a, transform: `translateY(${(1 - a) * 14}px)`}}>
+      <div style={{fontFamily: HEAD, fontWeight: 800, fontSize: cap.text.length > 42 ? 84 : 96, lineHeight: 1.18, paddingTop: '0.1em', color: C.text, textTransform: 'uppercase', textAlign: 'center', textWrap: 'balance'}}>
+        {highlight(cap.text, cap.hl, C.accent)}</div>
+    </div>
+  );
+};
+
 export const Captions = () => {
   const f = useCurrentFrame();
   // Thẻ toàn cảnh đang hiện NGUYÊN VĂN câu nói (quote) → ẩn phụ đề: câu to giữa màn chính là phụ đề đoạn đó, không đọc 2 lần
@@ -35,7 +50,8 @@ export const Captions = () => {
   const a = cap ? ease(f, fr(cap.start), fr(cap.start) + 3) : 0;
   return (
     <AbsoluteFill>
-      {cap && <div style={{position: 'absolute', left: box.left, width: box.width, top: box.bottom, transform: 'translateY(-100%)',
+      {CHU && <ChuChinh cap={cap} f={f} />}
+      {cap && !CHU && <div style={{position: 'absolute', left: box.left, width: box.width, top: box.bottom, transform: 'translateY(-100%)',
         display: 'flex', justifyContent: 'center', opacity: a}}>
         {SHORT
           ? <ShortLine text={cap.text} hl={cap.hl} f={f - fr(cap.start)} len={fr(cap.end) - fr(cap.start)} font={BODY}
