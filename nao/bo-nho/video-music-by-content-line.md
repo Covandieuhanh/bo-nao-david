@@ -1,6 +1,6 @@
 ---
 name: video-music-by-content-line
-description: Nhạc nền phải tự chọn theo tuyến nội dung (project.tuyen) và rất nhỏ khi đang nói (~30+ LU dưới giọng)
+description: Nhạc nền phải tự chọn theo tuyến nội dung (project.tuyen) và theo chuẩn âm lượng chung khi đang nói (~30+ LU dưới giọng)
 metadata:
   node_type: memory
   type: feedback

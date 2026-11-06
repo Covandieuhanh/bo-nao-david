@@ -142,7 +142,7 @@ if os.path.exists(endc):
         _eaf = f",volume={_mv * _mus[-1].get('gain', 1):.4f},afade=t=out:st={max(0, ln - 1.4):.2f}:d=1.4"
     elif ln > 5 and os.path.exists(_em):   # màn kết YouTube 15–20 s: nhạc kênh nhỏ, vào/ra mềm (không để 20 s im lặng)
         args += ["-i", endc, "-t", f"{ln:.3f}", "-i", _em]
-        _eaf = f",volume=0.18,afade=t=in:d=0.8,afade=t=out:st={max(0, ln - 1.5):.2f}:d=1.5"
+        _eaf = f",volume={_mv * (_mus[-1].get('gain', 1) if _mus else 1):.4f},afade=t=in:d=0.8,afade=t=out:st={max(0, ln - 1.5):.2f}:d=1.5"
     else:
         args += ["-i", endc, "-f", "lavfi", "-t", f"{ln:.3f}", "-i", "anullsrc=r=48000:cl=stereo"]
         _eaf = ""
@@ -166,4 +166,6 @@ fl.append("[a]loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[aout]")
 args += ["-filter_complex", ";".join(fl), "-map", "[v]", "-map", "[aout]", "-r", FPS, "-c:v", "libx264", "-preset", "medium",
          "-crf", "18", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", out]
 subprocess.run(args, check=True, env=node_env())
+# Chuẩn âm lượng chung: lệch mục tiêu thì chỉnh cả bài, giữ tương quan giọng và nhạc (khối 09)
+subprocess.run([sys.executable, "-I", os.path.join(os.path.dirname(os.path.abspath(__file__)), "chuan_am.py"), out], check=True)
 print("done", out)

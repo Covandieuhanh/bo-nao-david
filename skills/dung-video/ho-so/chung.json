@@ -69,13 +69,17 @@
     "khi": "kiến thức, hướng dẫn, giải thích, mẹo (trung tính, tập trung) — CHỜ David tải bài ambient/lo-fi"
    }
   },
-  "khoang_trong_duoi_giong_LU": 20,
+  "khoang_trong_duoi_giong_LU": 14,
   "nen_nguong_duoi_giong_dB": 14,
-  "nen_ty_le": 20,
-  "nen_nha_ms": 1500,
+  "nen_ty_le": 3,
+  "nen_nha_ms": 400,
   "khi_noi_duoi_giong_LU_dat": [
-   30,
-   33
-  ]
+   22,
+   24
+  ],
+  "do_to_cuoi_LUFS": -14,
+  "sai_so_LU": 0.5,
+  "dinh_dB": -1.5,
+  "_chuan_am": "CHUẨN CHUNG MỌI ĐẦU RA, David chốt 2026-11-06 theo 3 clip Đi trainer: nhạc thấp hơn giọng khoảng 23 dB lúc nói, cả bài −14 LUFS. Giọng nhỏ thì kéo lên, nhạc to thì hạ xuống theo mức này."
  }
 }

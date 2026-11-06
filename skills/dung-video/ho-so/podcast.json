@@ -21,5 +21,7 @@
  ],
  "ban_do_chuong": true,
  "tom_tat_truoc_chot_s": 5.5,
- "chot": "theo ho-so/kenh.json (khối 08)"
+ "chot": "theo ho-so/kenh.json (khối 08)",
+ "phu_hinh_muc_tieu": 0.3,
+ "_phu_hinh": "David chốt 2026-11-06: hình phủ khoảng 30% thời lượng, không cố định; đoạn khó hiểu thì dày hơn. Thay luật ít mà sâu 60–120 s."
 }

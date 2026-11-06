@@ -35,7 +35,8 @@ khối + quyết định riêng của loại + tiêu chí đạt. Cách làm t�
 - Màn chốt `cta` ~4 s cuối (ô câu chốt giữa sân khấu, câu Claude tự viết — luat-chung 1a). Không timeline CapCut trừ khi được yêu cầu.
 - **Học NHỊP từ 50 video nổi bật nhất Hieu Nguyen** (`references/hoc-tu-hieu-nguyen-50.md`, David duyệt 2026-11-05 — chỉ học
   nhịp & cách trình bày đơn giản, GIỮ thẩm mỹ của bộ nhận diện; lời là của David, nói tự do — skill không thêm/khuôn lời):
-  - **Ít mà sâu (tập > `it_ma_sau_khi_dai_hon_s` 300 s):** ~1 cảnh / `so_do_moi_s` 60–120 s (tập 8 phút ≈ 6–8 cảnh). Mỗi cảnh là một
+  - **Mật độ hình (David chốt 2026-11-06, thay luật "ít mà sâu" ở dòng dưới):** podcast chỉ có tiếng, người xem YouTube cần hình để vừa nghe vừa xem. Hình phủ **khoảng 30% thời lượng** (`phu_hinh_muc_tieu`), không phải số cố định: đoạn khó hiểu hoặc quan trọng thì dày hơn, đoạn nhẹ thì thưa hơn; không để trống lâu ở đầu video; không phủ kín từ đầu đến cuối. Đoạn chạm lằn ranh không vẽ hình. Trước khi render, chụp thử tất cả cảnh mới cho David chốt.
+  - ~~Ít mà sâu~~ (bỏ về mật độ, giữ cách dùng sơ đồ) **(tập > `it_ma_sau_khi_dai_hon_s` 300 s):** ~1 cảnh / `so_do_moi_s` 60–120 s (tập 8 phút ≈ 6–8 cảnh). Mỗi cảnh là một
     **sơ đồ nói thay lời** (`diagram`, khối 07) diễn tả trọn câu có cấu trúc, hoặc **ảnh thật khung bo góc** (`diagram` mode `anh`) khi
     nhắc người / nơi / tổ chức có thật. `illus` (biểu tượng + nhãn) chỉ còn cho câu ngắn không có cấu trúc. Giữa các cảnh: sân khấu + phụ đề.
   - **Bản đồ chương tích luỹ** (tự bật khi ≥ 3 TOPICS và tập > 5 phút): mỗi phần thêm một thẻ số + tên phần; 5,5 s trước màn chốt hiện cả bản đồ làm tóm tắt.

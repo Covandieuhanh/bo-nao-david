@@ -22,6 +22,8 @@ console.log(`\nrender ${((Date.now() - t0) / 1000).toFixed(0)}s`);
 const ff = fs.existsSync('/opt/homebrew/bin/ffmpeg') ? '/opt/homebrew/bin/ffmpeg' : 'ffmpeg';
 execFileSync(ff, ['-v', 'error', '-y', '-i', raw, '-c:v', 'copy', '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000',
   '-c:a', 'aac', '-b:a', '256k', '-movflags', '+faststart', out]);
+// Chuẩn âm lượng chung (khối 09): lệch mục tiêu thì chỉnh cả bài
+execFileSync('python3', ['-I', path.join(process.env.HOME, '.claude/skills/video-style-edit/scripts/chuan_am.py'), out], {stdio: 'inherit'});
 console.log('xong', out);
 // Bản bundle chép CẢ thư mục clip vào thư mục tạm (vlog 48 clip ≈ 4,4 GB/lần) — không dọn thì đầy ổ sau vài chục lần chạy (2026-11-04)
 fs.rmSync(serveUrl, {recursive: true, force: true});

@@ -131,6 +131,8 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
 - **Nhạc nền theo tuyến nội dung + nhạc nhỏ khi nói** (David: "nhạc nền hơi to… tông chưa phù hợp… phải tự chọn được nhạc theo tuyến nội dung"). Hồ sơ chung `nhac`: bảng tuyến → bài, `project.tuyen` bắt buộc (render_preview dừng nếu thiếu — bỏ mặc định soi-1); nén theo giọng tương đối (ngưỡng giọng − 14 dB, tỉ lệ 20, nhả 1,5 s): nhạc khi nói 17 → 30–33 LU dưới giọng. Tuyến kiến thức chờ David tải 1 bài ambient.
 
 ## 2026-11-06
+- **Podcast: hình phủ khoảng 30% thời lượng**, cân theo nội dung (David, sau khi xem video dài chỉ phủ 12%). Mẫu: `~/Movies/podcast-dji-20261105`, 30 cảnh, 34%.
+- **Chuẩn âm lượng chung mọi đầu ra** (David): mức của 3 clip Đi trainer thành hồ sơ chung, thêm `chuan_am.py` chạy cuối mỗi lần xuất (khối 09). Màn kết YouTube đổi từ mức nhạc cố định sang mức tính theo giọng.
 - `project.sting: false` bỏ tiếng ký hiệu đầu video khi lời vào ngay giây đầu (David chọn cho video dài "Đi trainer").
 - **Mẫu ảnh bìa podcast không mặt** (David duyệt sau khi xem 3 bản): nền hoạ tiết, một hình vẽ, tiêu đề ngắn, "DAVID · PODCAST". Bỏ bản micro vì chỉ nói định dạng; bỏ bản liệt kê 3 bước vì lộ giải pháp. `thumbnail.sh` thêm nguồn `-`, `THUMB_HINH`, `THUMB_TAG`.
 - **Học từ HyperFrames + Motion Studio, không cài** (David duyệt): bỏ lơ lửng, vòng xoay, quầng nhấp nháy; ra ngắn hơn vào; kiểu vào theo ý câu (khối 07). Thêm sơ đồ `xay-tang`, `doi-trang-thai`, `chuyen-giao`. Thêm `scripts/soat_canh.mjs` (khối 17) và `scripts/chu_tren_man.mjs` (khối 03). Bản trước: `~/.claude/skills/dung-video.bak-2026-11-06-hoc-motion`.
