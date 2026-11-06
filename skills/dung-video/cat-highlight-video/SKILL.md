@@ -187,6 +187,5 @@ $SKILL/assets/music/               # soi-*.mp3 · lang-*.mp3 — nhạc cố đ�
 - `../luat-chung.md` — luật chung cả bộ (đọc trước).
 - `references/hoc-tu-top-video.md` — 10 Shorts lượt xem cao đã phân tích (nhịp, cảm xúc, bố cục, mạch) — nguồn của luật 7, 11
   và thang câu mở.
-- Ví dụ thật: `~/Movies/highlight-nang-luc` (podcast 7:32 → highlight podcast dọc 42 s, bố trí "giao việc sớm, chốt cuối") ·
-  `~/Movies/highlight-img3196` (tự quay vừa đi vừa nói 4:29 → highlight người nói 46 s, cú chốt thẻ `ages`) — cả hai dựng theo kiểu cũ (1 clip, chip tua ⏩, thanh tập gốc).
+- Ví dụ thật (bản chuẩn David chốt 2026-11-06): `~/Movies/podcast-hl-di-trainer-A|B|C`, kế hoạch ở `~/Movies/highlight-di-trainer`. Nguồn có người nói chưa có ví dụ đang giữ trên máy.
 

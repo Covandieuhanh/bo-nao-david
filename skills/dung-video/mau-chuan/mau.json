@@ -1,9 +1,7 @@
 [
- {"ten": "lam-video-haruku", "loai": "lam-video", "khung": "remotion", "du_an": "~/Movies/edit-img3196-A", "them_canh": ["{id: 'mau-illus', type: 'illus', start: 24, end: 28, props: {mode: 'flow', items: [{icon: 'footsteps', at: 24.3, label: 'ĐI BỘ'}, {icon: 'heart', at: 25.5, label: 'SỐNG THỌ'}], label: 'HARUKU'}}"], "chup": [["hook", 1.5], ["di-bo", 17], ["mau-illus", 26.5], ["hai-tuan", 37]]},
- {"ten": "podcast-nang-luc", "loai": "podcast", "khung": "remotion", "du_an": "~/Movies/podcast-hl-nang-luc-A", "them_canh": ["{id: 'mau-illus', type: 'illus', start: 12, end: 16, props: {mode: 'count', items: [{icon: 'calendar', at: 12.2}], num: {to: 7, at: 12.4, unit: 'NGÀY'}, label: 'THỬ NGAY'}}"], "chup": [["nen", 5], ["mau-illus", 14], ["hook", 1.5]]},
- {"ten": "vlog-leo-nui", "loai": "ghep-vlog", "khung": "montage", "du_an": "~/Movies/edit-vlog-leo-nui", "chup_s": [3, 60, 200, 600]},
- {"ten": "highlight-haruku", "loai": "highlight", "khung": "montage", "du_an": "~/Movies/edit-hl-haruku", "chup_s": [1, 8, 20, 40]},
  {"ten": "podcast-doc-clip-1", "loai": "highlight", "khung": "remotion", "du_an": "~/Movies/podcast-hl-di-trainer-A", "chup": [["mo", 1.5], ["cua-sau", 4.8], ["nhat-het", 7.7], ["nen", 6.3]]},
  {"ten": "podcast-doc-clip-2", "loai": "highlight", "khung": "remotion", "du_an": "~/Movies/podcast-hl-di-trainer-B", "chup": [["mo", 1.5], ["moi-nguoi", 5.2], ["manh-ghep", 14.8], ["nen", 7.6]]},
- {"ten": "podcast-doc-clip-3", "loai": "highlight", "khung": "remotion", "du_an": "~/Movies/podcast-hl-di-trainer-C", "chup": [["mo", 1.5], ["nguoi-ban", 3.3], ["xa-hoi", 8.7], ["nen", 4.3]]}
+ {"ten": "podcast-doc-clip-3", "loai": "highlight", "khung": "remotion", "du_an": "~/Movies/podcast-hl-di-trainer-C", "chup": [["mo", 1.5], ["nguoi-ban", 3.3], ["xa-hoi", 8.7], ["nen", 4.3]]},
+ {"ten": "podcast-dai-trainer", "loai": "podcast", "khung": "remotion", "du_an": "~/Movies/podcast-dji-20261105", "chup": [["mo", 1.5], ["con-may-nguoi", 237], ["manh-ghep", 303], ["nen", 200]]},
+ {"ten": "podcast-dai-muc-tieu", "loai": "podcast", "khung": "remotion", "du_an": "~/Movies/podcast-muc-tieu-su-menh-v2", "chup": [["hook", 1.5], ["lang", 46], ["muoi-nghin", 157], ["nen", 100]]}
 ]

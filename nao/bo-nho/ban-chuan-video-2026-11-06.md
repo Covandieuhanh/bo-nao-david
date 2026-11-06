@@ -1,0 +1,21 @@
+---
+name: ban-chuan-video-2026-11-06
+description: "Bản chuẩn video David chốt 06/11/2026: 3 clip \"Đi trainer\" + 2 video dài (Mục tiêu sứ mệnh v2, Trainer cho trainer); các dự án cũ đã bỏ vào Thùng rác"
+metadata:
+  node_type: memory
+  type: project
+  originSessionId: 241f9930-2980-493a-b016-898308dc0f47
+  modified: 2026-11-06T07:19:48.311Z
+---
+
+David chốt 06/11/2026: bản chuẩn gồm đúng 5 video, dựng bằng skill sau khi thêm luật chuyển động. Video ngắn và video dài sau này làm theo các bản này.
+
+- 3 clip: `~/Movies/podcast-hl-di-trainer-A|B|C`, kế hoạch ở `~/Movies/highlight-di-trainer`.
+- Video dài "Đi trainer cho người làm trainer": `~/Movies/podcast-dji-20261105`.
+- Video dài "Mục tiêu và sứ mệnh": `~/Movies/podcast-muc-tieu-su-menh-v2`.
+
+Các dự án cũ (vlog, highlight Haruku, podcast năng lực, Miếu Bà Cam, VF3...) đã chuyển vào Thùng rác cùng ngày; bản xong của Miếu Bà Cam và VF3 còn ở Drive `Video-xong`, chữ bài đăng cũ ở repo `dang-lam/phat-hanh-cu/`.
+
+**Why:** David muốn máy chỉ giữ bản mới nhất. Máy còn dưới 5 GB trống trước khi dọn.
+
+**How to apply:** Bộ mẫu `mau-chuan/mau.json` nay chỉ có 5 video này, nên không còn kiểm tra tự động cho loại có người nói và ghép vlog. Khi có video mới loại đó được duyệt thì thêm lại. Liên quan [[video-doc-khuon-chu-chinh]], [[video-long-no-cut]].

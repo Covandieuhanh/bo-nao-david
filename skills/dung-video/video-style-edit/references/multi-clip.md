@@ -231,7 +231,7 @@ Mật độ: cứ 3–5 s một điểm nhấn; không để 2 chữ to chồng 
 **Vlog dài nhiều clip (≳ 15 clip / ≳ 5 phút)**: đừng viết tay — viết `plan.json` (giữ/bỏ từng clip, tông, thẻ địa điểm, sửa chính
 tả `fix`, bỏ dòng nghe không rõ `drop_sub`, mở đầu, tiêu đề, CTA; mẫu ở đầu script) rồi
 `python3 -I $SKILL/scripts/vlog_edl.py "$P"` → edl.js (tự tua đoạn không lời ≥ 4 s, phụ đề theo câu, TONE + nhạc) + `check/vlog-cut.md`.
-Sửa theo góp ý = sửa plan.json rồi chạy lại. Ví dụ: `~/Movies/edit-vlog-leo-nui` (48 clip, 22 phút → 18 phút).
+Sửa theo góp ý = sửa plan.json rồi chạy lại.
 Soát hết phụ đề trước khi render: in `SUBS` ra, câu Whisper nghe sai rõ → `fix`; câu không rõ → `drop_sub` (không đoán).
 **Soát hình trước khi render (bắt buộc):** vlog_edl.py in ⚠ khi đoạn giữ chạm đoạn hỏng trong bad.txt, và ghi `check/segs/*.jpg`
 (1 khung/giây mỗi đoạn giữ) → xem HẾT, bắt hình lật/xoay/quay loạn (độ sáng không dò được), sửa plan.json (`from`/`to`/`drop`/`skip`).

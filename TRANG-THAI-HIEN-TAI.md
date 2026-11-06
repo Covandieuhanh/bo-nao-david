@@ -11,11 +11,13 @@ Chặng 1 của nghề: 1–3 ca thật online, miễn phí đổi lời chứng
 | Việc | Tình trạng | Bước tiếp |
 |---|---|---|
 | Podcast "Đi trainer cho người làm trainer" (DJI_16, 9:19, giữ nguyên không cắt) | Dựng xong, chờ David duyệt ở cổng 2. Video ở `~/Movies/podcast-dji-20261105` và Drive `Video-xong`. Bài đăng: [dang-lam/video-di-trainer/video-dai/phat-hanh/phat-hanh.md](dang-lam/video-di-trainer/video-dai/phat-hanh/phat-hanh.md). Giây đầu còn tiếng ký hiệu đè "David xin chào" | David quyết có bỏ tiếng ký hiệu không, rồi duyệt. Dự kiến YouTube ngang T3 10/11 20:00 |
-| 3 clip dọc từ podcast trên | **David duyệt hình và tiếng 06/11, lấy làm mẫu cho các video dọc sau.** Cùng ngày dựng lại bằng skill chuyển động mới và bỏ icon YouTube ở màn hình cuối, bản này chờ David xem lại. Bài đăng, tít và câu màn hình cuối chưa được duyệt riêng. Chưa hẹn giờ, chưa đăng. Bài đăng: [dang-lam/video-di-trainer/ke-hoach-clip/dang-bai.md](dang-lam/video-di-trainer/ke-hoach-clip/dang-bai.md). Video ở Drive `Video-xong/Di-trainer-clip-1\|2\|3.mp4` | David duyệt bài đăng, rồi hẹn giờ qua khối 19 (lần đầu đăng thật, đi chậm). Lịch T6 13/11, T3 17/11, T6 20/11 20:00. Điền `[link YouTube]` sau khi video dài lên |
+| 3 clip dọc từ podcast trên | **David duyệt hình và tiếng 06/11, lấy làm mẫu cho các video dọc sau.** Cùng ngày dựng lại bằng skill chuyển động mới và bỏ icon YouTube ở màn hình cuối, David đã nghe và chốt 06/11: **đây là bản chuẩn**. Bài đăng, tít và câu màn hình cuối chưa được duyệt riêng. Chưa hẹn giờ, chưa đăng. Bài đăng: [dang-lam/video-di-trainer/ke-hoach-clip/dang-bai.md](dang-lam/video-di-trainer/ke-hoach-clip/dang-bai.md). Video ở Drive `Video-xong/Di-trainer-clip-1\|2\|3.mp4` | David duyệt bài đăng, rồi hẹn giờ qua khối 19 (lần đầu đăng thật, đi chậm). Lịch T6 13/11, T3 17/11, T6 20/11 20:00. Điền `[link YouTube]` sau khi video dài lên |
 | Rà soát video cũ TikTok và fanpage | Có danh sách đề xuất ẩn trong [dang-lam/ra-soat-video-cu.md](dang-lam/ra-soat-video-cu.md), và danh sách bổ sung ngày 06/11 trong [dang-lam/nghien-cuu-trang-ca-nhan.md](dang-lam/nghien-cuu-trang-ca-nhan.md). Ẩn là để riêng tư, không xoá | Chờ David quyết |
 | Làm lại kho 100 video | Kho cũ còn phần kinh doanh đã bỏ | Làm lại theo ba tầng: bản thân → công việc → mối quan hệ |
 
 **Kế hoạch đăng đợt này, chờ David duyệt:** [dang-lam/video-di-trainer/ke-hoach-dang.md](dang-lam/video-di-trainer/ke-hoach-dang.md). Chưa hẹn giờ bài nào.
+
+**Video đang giữ trên máy (06/11):** 3 clip, video dài Đi trainer, video dài Mục tiêu sứ mệnh (`~/Movies/podcast-muc-tieu-su-menh-v2`). Dự án cũ đã bỏ. Chữ bài đăng cũ ở `dang-lam/phat-hanh-cu/`, bản xong Miếu Bà Cam và VF3 ở Drive `Video-xong`.
 
 ## Chờ David quyết hoặc tự làm
 
