@@ -29,7 +29,9 @@ sfx = [(s["start"] + TICK, "ting.wav", 0.55) for s in scenes if s.get("type") ==
 import json as _bj
 BRAND = _bj.load(open(os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../thu-vien-hinh/brand.json"), encoding="utf-8"))
 _hook = next((s for s in scenes if s.get("type") == "hook"), None)
-sfx.append(((_hook["start"] if _hook else 0.0), BRAND["sting"], BRAND["stingVol"]))
+# project.sting = false: bỏ tiếng ký hiệu đầu video khi lời vào ngay giây đầu (David, 2026-11-06)
+if "sting: false" not in open(os.path.join(P, "motion/src/project.js"), encoding="utf-8").read():
+    sfx.append(((_hook["start"] if _hook else 0.0), BRAND["sting"], BRAND["stingVol"]))
 # Highlight (skill cat-highlight-video, motion/src/highlight.js): tiếng "vút tua" ở mỗi mối nhảy đoạn — đặt giữa khoảng chuyển
 # (khoảng chuyển là lặng do cut_highlight.py chèn, nên không đè lời nói)
 hlf = os.path.join(P, "motion/src/highlight.js")

@@ -46,9 +46,8 @@ Chương:
 ### Bình luận ghim
 Bạn đang ở đâu? Bình luận **Vấn đề** (vì sao chưa làm được) hoặc **Kết quả** (làm được thì kết quả là gì).
 
-### Thumbnail đề xuất
-1. KHÔNG PHẢI SAI / CHƯA PHÙ HỢP
-2. BA THÁNG / CHỈ CÒN MỘT NGÀY
+### Thumbnail (David chọn 06/11)
+KHÔNG PHẢI SAI / CHƯA PHÙ HỢP, hình mảnh ghép, `thumb-1.jpg`.
 
 ### Màn kết
 Gắn trong YouTube Studio: 2 video + nút đăng ký (20 giây cuối).

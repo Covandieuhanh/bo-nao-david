@@ -24,3 +24,4 @@
 - [Không cài HyperFrames](video-motion-hoc-hyperframes.md) — giữ Remotion, chỉ học ý rồi tự viết lại vào bộ skill video (2026-11-06)
 - [Bản chuẩn video](ban-chuan-video-2026-11-06.md) — 5 video chuẩn: 3 clip Đi trainer + 2 video dài; dự án cũ đã bỏ (2026-11-06)
 - [Bìa podcast không mặt](podcast-thumb-khong-mat.md) — podcast chỉ có tiếng thì bìa không có mặt người, phải khớp nội dung; mặt người chỉ cho video quay hình (2026-11-06)
+- [Gợi ý để David chọn](goi-y-de-david-chon.md) — không tự chốt chữ, hình, nội dung; "làm đi" không phải chốt lựa chọn (2026-11-06)

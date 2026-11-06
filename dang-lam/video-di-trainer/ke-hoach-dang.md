@@ -16,12 +16,11 @@ Ghi ngày 06/11/2026. **Chờ David duyệt. Chưa hẹn giờ, chưa đăng bà
 | T3 17/11 | Không | Reels clip 2 | Clip 2 | Bạn tự bấm chia sẻ |
 | T6 20/11 | Không | Reels clip 3 | Clip 3 | Bạn tự bấm chia sẻ |
 
-David đã chốt 06/11: YouTube chỉ đăng video dài, không đăng Shorts. Màn hình cuối clip không có icon YouTube.
+David đã chốt 06/11: YouTube chỉ đăng video dài, không đăng Shorts. Màn hình cuối clip không có icon YouTube. Video dài đã dựng lại bằng skill mới, bỏ tiếng ký hiệu đầu video; ảnh bìa "KHÔNG PHẢI SAI / CHƯA PHÙ HỢP" (hình mảnh ghép). Ba điểm này David đã chọn.
 
 ### Cần David chốt (đề xuất của mình ở đầu mỗi dòng)
-1. **Bỏ tiếng ký hiệu** đè lên "David xin chào" ở giây đầu video dài. Chỉ ghép lại tiếng, hình không đổi. Đây là lỗi bạn đã góp ý ở 3 clip.
-2. **TikTok không ghi link.** Link trong mô tả TikTok không bấm được, nên đổi thành câu "Bản đầy đủ mình để trên YouTube, kênh Trainer David Trần."
-3. **Giữ nguyên chữ** ở mục "Chữ từng bài" bên dưới, gồm tiêu đề YouTube số 1 và thumb-1.
+1. **TikTok không ghi link.** Link trong mô tả TikTok không bấm được, nên đổi thành câu "Bản đầy đủ mình để trên YouTube, kênh Trainer David Trần."
+2. **Giữ nguyên chữ** ở mục "Chữ từng bài" bên dưới, gồm tiêu đề YouTube số 1 và thumb-1.
 
 ### Bạn nên biết trước khi đăng
 - **TikTok chỉ cho hẹn tối đa 10 ngày.** Hôm nay hẹn được clip 1. Clip 2 và 3 mình đặt việc tự làm ngày 11/11, hôm đó **máy cần bật và ứng dụng Claude cần mở**. Nếu lỡ, mình báo để làm bù.
@@ -39,7 +38,6 @@ David đã chốt 06/11: YouTube chỉ đăng video dài, không đăng Shorts. 
 ## 4. Thực thi
 
 ### Hôm David duyệt
-- [ ] Ghép lại tiếng video dài, chép bản mới lên Drive (nếu chọn bỏ tiếng ký hiệu)
 - [ ] YouTube: hẹn video dài T3 10/11, thumb-1, chương, màn kết
 - [ ] Lấy link YouTube, điền vào `[link YouTube]`
 - [ ] Trang Facebook: hẹn bài viết T3 10/11
