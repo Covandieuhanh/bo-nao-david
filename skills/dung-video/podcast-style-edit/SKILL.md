@@ -127,6 +127,7 @@ xác nhận chính tả.
 | captions.js | `node render.mjs phu-de` → render_preview.py |
 | STAGE / TOPICS / speakers / envelope | `node render.mjs nen` → podcast_base.py → render_preview.py |
 | một cảnh (scenes.js) | `node render.mjs <id>` → render_preview.py |
+| thêm / bớt / dời cảnh (scenes.js): sân khấu tự ẩn chữ chủ đề theo danh sách cảnh | `node render.mjs <các id> nen` → podcast_base.py → render_preview.py. Bỏ `nen` sẽ lộ chữ sau thẻ; ảnh chụp thử KHÔNG thấy lỗi này, phải soi bản cuối (2026-11-06) |
 | video-final (teaser) | chapters.py |
 
 ## Sửa theo góp ý
