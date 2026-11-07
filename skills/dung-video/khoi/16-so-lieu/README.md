@@ -7,10 +7,10 @@
 **Sửa khối này → chạy lại:** —
 
 **File thật (code, một bản duy nhất):**
-- `so-lieu-mau.md`
+- `mau-so-lieu.md` (mẫu ghi số liệu, nằm ngay trong khối này)
 
 ## Luật
-- Chép `../../so-lieu-mau.md` → `<dự án>/so-lieu.md` lúc giao. 7 ngày sau, David gửi ảnh chụp số liệu → điền lượt xem, % xem hết,
+- Chép `dung-video/khoi/16-so-lieu/mau-so-lieu.md` → `<dự án>/so-lieu.md` lúc giao. 7 ngày sau, David gửi ảnh chụp số liệu → điền lượt xem, % xem hết,
   giây rời nhiều nhất, % còn lại ở giây 3, CTR thumbnail, lưu/chia sẻ.
 - Số liệu dùng để **báo lỗi**, không thay hình mẫu: rời ồ ạt ở 0–3 s → câu mở sai; rời ở một cảnh → cảnh đó. Đề xuất một chỉnh
   sửa vào `ho-so/<loai>` (kèm bằng chứng), David duyệt mới đổi.

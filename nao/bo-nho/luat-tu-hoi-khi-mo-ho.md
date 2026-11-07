@@ -1,5 +1,5 @@
 ---
-name: ask-when-ambiguous
+name: luat-tu-hoi-khi-mo-ho
 description: Tự nhận diện lúc cần hỏi David (câu mơ hồ / đọc chính tả lệch, mâu thuẫn luật, việc tốn kém khó đảo ngược…) — không tự đoán rồi làm
 metadata:
   type: feedback
@@ -9,4 +9,4 @@ David hay nhắn bằng đọc chính tả, nên câu có thể lệch chữ ho�
 
 **Why:** 2026-11-05 em tự đoán câu "không biết thông tin nào khi mà đăng lên" rồi render lại. David muốn em "tự nhận diện vấn đề để tự hỏi lại tôi chứ không cần tôi yêu cầu".
 
-**How to apply:** chi tiết trong skill hoi-chuyen-gia, mục "Tự nhận diện lúc cần hỏi". Liên quan [[video-no-rerender-unless-asked]].
+**How to apply:** chi tiết trong skill hoi-chuyen-gia, mục "Tự nhận diện lúc cần hỏi". Liên quan [[video-khong-tu-render]].

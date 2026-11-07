@@ -1,46 +1,53 @@
 #!/bin/bash
-# Cài bộ não vào máy mới cho Claude Code. Sao lưu file cũ trước khi ghi đè.
-# Dùng: bash scripts/install.sh [thư mục dự án sẽ mở Claude Code]   (mặc định: thư mục đang đứng)
+# Cài bộ não vào máy cho Claude Code: biến repo này thành bản DUY NHẤT trên máy.
+# ~/.claude/David.md, CLAUDE.md, các skill, thư mục bộ nhớ và sổ danh mục được thay bằng LỐI TẮT trỏ vào repo,
+# nên sửa ở máy là sửa trong repo; sync.sh chỉ còn kéo về / đẩy lên GitHub (2 chiều).
+# Bản cũ trên máy được sao lưu trước khi thay. Chạy lại nhiều lần không sao.
+# Dùng: bash scripts/install.sh [thư mục dự án sẽ mở Claude Code]   (mặc định: chính repo này)
 set -euo pipefail
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
 CL="$HOME/.claude"
-DU_AN="${1:-$PWD}"
+DU_AN="${1:-$REPO}"
 DU_AN="$(cd "$DU_AN" && pwd)"
 SAO_LUU="$CL/backups/truoc-cai-nao-$(date +%Y%m%d-%H%M%S)"
-
 mkdir -p "$CL/skills" "$SAO_LUU"
-for f in CLAUDE.md David.md; do [ -e "$CL/$f" ] && cp "$CL/$f" "$SAO_LUU/"; done
+
+# Thay $2 (đường dẫn trên máy) bằng lối tắt tới $1 (trong repo); bản cũ chuyển vào sao lưu.
+lien_ket() {
+  local dich="$1" cho="$2"
+  [ -L "$cho" ] && [ "$(readlink "$cho")" = "$dich" ] && return 0
+  if [ -e "$cho" ] || [ -L "$cho" ]; then mv "$cho" "$SAO_LUU/$(basename "$cho")-$RANDOM"; fi
+  mkdir -p "$(dirname "$cho")"
+  ln -s "$dich" "$cho"
+  echo "  $cho → $dich"
+}
+
+echo "Lối tắt vào repo:"
+lien_ket "$REPO/nao/CLAUDE-toan-cuc.md" "$CL/CLAUDE.md"
+lien_ket "$REPO/nao/David.md" "$CL/David.md"
 for s in dung-video hoi-chuyen-gia playwright-cli; do
-  [ -d "$CL/skills/$s" ] && cp -R "$CL/skills/$s" "$SAO_LUU/$s"
+  lien_ket "$REPO/skills/$s" "$CL/skills/$s"
 done
-
-cp "$REPO/nao/CLAUDE-toan-cuc.md" "$CL/CLAUDE.md"
-cp "$REPO/nao/David.md" "$CL/David.md"
-
-for s in dung-video hoi-chuyen-gia playwright-cli; do
-  rsync -a --delete "$REPO/skills/$s/" "$CL/skills/$s/"
-done
-
 # Lối tắt để Claude nhận lệnh /<tên skill>
 for s in cat-highlight-video dang-da-kenh podcast-style-edit video-style-edit; do
-  rm -rf "$CL/skills/$s"
-  ln -s "$CL/skills/dung-video/$s" "$CL/skills/$s"
+  lien_ket "$REPO/skills/dung-video/$s" "$CL/skills/$s"
 done
 
 # Bộ nhớ gắn theo đường dẫn dự án (Claude Code đổi mọi ký tự không phải chữ/số thành dấu -)
 MA="$(printf '%s' "$DU_AN" | sed 's#[^A-Za-z0-9]#-#g')"
 MEM="$CL/projects/$MA/memory"
-mkdir -p "$MEM"
-[ -z "$(ls -A "$MEM" 2>/dev/null)" ] || cp -R "$MEM" "$SAO_LUU/memory"
-rsync -a "$REPO/nao/bo-nho/" "$MEM/"
+# Ghi nhớ riêng máy (may-*) đang có thì giữ lại trong repo (không lên GitHub vì .gitignore)
+if [ -d "$MEM" ] && [ ! -L "$MEM" ]; then
+  for f in "$MEM"/may-*.md; do [ -e "$f" ] && cp -n "$f" "$REPO/nao/bo-nho/"; done
+fi
+lien_ket "$REPO/nao/bo-nho" "$MEM"
 
-# Sổ danh mục: chỉ chép khi máy chưa có, để không đè sổ đang dùng
-mkdir -p "$HOME/Movies/_so-danh-muc"
-[ -f "$HOME/Movies/_so-danh-muc/danh-muc.md" ] || cp "$REPO/dang-lam/danh-muc.md" "$HOME/Movies/_so-danh-muc/danh-muc.md"
+# Sổ danh mục
+lien_ket "$REPO/dang-lam/danh-muc.md" "$HOME/Movies/_so-danh-muc/danh-muc.md"
 
-# Hook tự đẩy bộ não lên GitHub khi phiên Claude Code kết thúc
+# Hook đồng bộ 2 chiều: đầu phiên kéo về, cuối phiên đẩy lên
 python3 -I "$REPO/scripts/cai-hook.py" "$REPO"
 
-echo "Xong. Bản sao lưu: $SAO_LUU"
+echo "Xong. Bản cũ (nếu có): $SAO_LUU"
 echo "Bộ nhớ gắn với dự án: $DU_AN"
 echo "Kiểm tra công cụ dựng video: zsh \"$CL/skills/dung-video/video-style-edit/scripts/check_env.sh\""

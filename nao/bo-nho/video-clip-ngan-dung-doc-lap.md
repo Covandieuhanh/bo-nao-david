@@ -1,5 +1,5 @@
 ---
-name: clip-ngan-dung-doc-lap
+name: video-clip-ngan-dung-doc-lap
 description: "Mỗi clip ngắn cắt từ video dài phải tự có hoàn cảnh và nội dung riêng cho người xem độc lập, và phải đạt trọng tâm làm chủ bản thân / công việc; không chỉ cảm xúc (2026-11-06)"
 metadata:
   node_type: memory
@@ -14,4 +14,4 @@ Người xem clip ngắn là người xem độc lập, không biết bối cả
 
 **Chốt thêm 07/11/2026:** clip phải đạt hai mục tiêu: không sang video dài vẫn có chuyển hoá, và vẫn muốn sang video dài. Thước là bốn câu `boi_canh`, `y_tron`, `mang_ve`, `chua_lai` ở đầu `cat-highlight-video/SKILL.md`. Không có số cố định cho độ dài hay số clip. Chuyển hoá là cách nghĩ, câu tự hỏi hoặc việc làm trong lời David; không bắt buộc câu giao việc. Được ghép đoạn xa khi đúng mạch, phải báo mốc. David loại bản 39 giây vì xem riêng không hiểu gì.
 
-**How to apply:** Khi chọn khoảnh khắc, đọc nối lời như người chưa xem bản gốc: họ có biết chuyện gì đang xảy ra không? Rồi chấm riêng từng clip theo câu hỏi gốc của bộ lọc, không dựa vào điểm của cả video. Liên quan [[video-long-no-cut]].
+**How to apply:** Khi chọn khoảnh khắc, đọc nối lời như người chưa xem bản gốc: họ có biết chuyện gì đang xảy ra không? Rồi chấm riêng từng clip theo câu hỏi gốc của bộ lọc, không dựa vào điểm của cả video. Liên quan [[video-dai-khong-cat]].

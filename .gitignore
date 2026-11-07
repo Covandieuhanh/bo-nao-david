@@ -20,3 +20,6 @@ cookies*
 *.mp4
 *.mov
 *.MOV
+
+# Ghi nhớ chỉ đúng cho một máy
+nao/bo-nho/may-*

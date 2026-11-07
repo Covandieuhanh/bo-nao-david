@@ -1,5 +1,5 @@
 ---
-name: video-own-footage-only
+name: video-chi-hinh-cua-chinh-video
 description: Thumbnail/ảnh bìa/khung hình của mỗi video chỉ lấy từ chính video đó — không mượn hình từ video/dự án khác
 metadata:
   node_type: memory
@@ -12,4 +12,4 @@ metadata:
 
 **Why:** 2026-11-05 thumbnail podcast "Mục tiêu và sứ mệnh" lấy mặt David từ vlog Miếu Bà Cam → David: "đang bị lẫn lộn… không được phép liên quan đến các video khác".
 
-**How to apply:** khi hỏi nguồn ảnh, đừng đưa "lấy từ video cũ" làm lựa chọn. Đã ghi vào luat-chung 7 + khối 14 của bộ [[video-skill-architecture]].
+**How to apply:** khi hỏi nguồn ảnh, đừng đưa "lấy từ video cũ" làm lựa chọn. Đã ghi vào luat-chung 7 + khối 14 của bộ [[video-kien-truc-skill]].

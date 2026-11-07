@@ -1,5 +1,5 @@
 ---
-name: drive-video-transfer
+name: video-chuyen-qua-drive
 description: Cách David chuyển video giữa điện thoại và Mac khi điều khiển từ xa — qua Google Drive thư mục Video-goc / Video-xong
 metadata:
   node_type: memory
@@ -12,4 +12,4 @@ David điều khiển Mac từ điện thoại bằng Remote Control; không dù
 Video gốc David gửi lên: `~/Library/CloudStorage/GoogleDrive-trainer.davidtran@gmail.com/Drive của tôi/Video-goc/`
 Thành phẩm trả về: `.../Drive của tôi/Video-xong/` (clip ngắn có thể gửi thẳng vào chat bằng SendUserFile).
 Sao lưu đợt chuyển tài khoản: `.../Drive của tôi/Sao-luu-Claude-2026-11-07/` gồm `tai-lieu-claude-ai` và `du-an-video` (âm thanh gốc, kịch bản, bỏ file render).
-Liên quan: [[video-style-edit-workflow]]
+Liên quan: [[video-quy-trinh-style-edit]]

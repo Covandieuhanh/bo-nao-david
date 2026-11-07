@@ -1,5 +1,5 @@
 ---
-name: video-no-technical-labels
+name: video-khong-nhan-ky-thuat
 description: "Khi dựng video, không đưa ghi chú kỹ thuật (×1,6, ×0,5, tua nhanh, slow-mo) lên màn hình"
 metadata:
   node_type: memory
@@ -11,4 +11,4 @@ metadata:
 Không hiện nhãn tốc độ hay ghi chú kỹ thuật trên video (×1,6, ×0,5, "tua nhanh", "slow-mo", "xem chậm"). Hiệu ứng tua nhanh/phát chậm vẫn dùng, chỉ không chú thích.
 
 **Why:** người dùng thấy các ghi chú kỹ thuật thừa, chữ trên màn hình chỉ nên phục vụ nội dung.
-**How to apply:** đã ghi vào skill video-style-edit (SKILL.md + multi-clip.md, template bỏ `speed`); áp cho mọi video, cả khi tự viết component mới. Liên quan [[video-style-edit-workflow]].
+**How to apply:** đã ghi vào skill video-style-edit (SKILL.md + multi-clip.md, template bỏ `speed`); áp cho mọi video, cả khi tự viết component mới. Liên quan [[video-quy-trinh-style-edit]].

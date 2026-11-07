@@ -24,7 +24,7 @@
 Làm bước phát hành theo `../luat-chung.md` mục 7: `phat-hanh/phat-hanh.md` (3 tiêu đề, mô tả, hashtag) + mốc khung bìa đề xuất · **video xuất ngang VÀ
 David đăng YouTube** (đã hỏi lúc đầu): 2 thumbnail (`zsh $SKILL/scripts/thumbnail.sh "$P" <giây> "<DÒNG 1>" "<DÒNG 2>" 1|2 …`, xem bản @160). Video dọc: không thumbnail.
 Video > 3 phút đăng YouTube: `project.ytEnd = 20` trước render (màn kết), `teaser.py` (> 10 phút) rồi `chapters.py` (luat-chung 7).
-Chép `../so-lieu-mau.md` → `$P/so-lieu.md` (điền phần đầu).
+Chép `dung-video/khoi/16-so-lieu/mau-so-lieu.md` → `$P/so-lieu.md` (điền phần đầu).
 Gửi `video-final.mp4` (+ thumbnail nếu có) (SendUserFile). Báo ngắn gọn bằng tiếng Việt: danh sách cảnh theo mốc thời gian,
 nếu có ảnh thì kèm nội dung `nguon-anh.txt` (dán vào mô tả bài đăng), tên riêng/chữ chưa chắc chính tả, đã kiểm tra gì, chưa
 kiểm tra gì (ví dụ chưa đăng thử thật).
@@ -32,7 +32,7 @@ kiểm tra gì (ví dụ chưa đăng thử thật).
 ### 8. Phát hành + giao
 Gửi `video-final.mp4` của từng clip (SendUserFile). Ghi `$P/dang-bai.md` (theo `../luat-chung.md` mục 7) và báo cáo tiếng Việt:
 0. **Lịch đăng**: thứ tự clip (A mạnh nhất trước), cách nhau 1–2 ngày; mỗi clip: thẻ tít, **mốc khung bìa đề xuất** (không ghép bìa), độ dài.
-   Chép `../so-lieu-mau.md` → `$P/so-lieu.md`, một bảng cho mỗi clip.
+   Chép `dung-video/khoi/16-so-lieu/mau-so-lieu.md` → `$P/so-lieu.md`, một bảng cho mỗi clip.
 1. **Loại video gốc → loại highlight**, **ý chính + lời kêu gọi chính của cả video**, **kiểu bố trí** + lý do, **tông** từng đoạn,
    **ý được chừa cho bản đầy đủ**.
 2. **Bảng cắt** + **tổng độ dài** + kết quả kiểm lời; mọi chữ trên video kèm mốc gốc của nó.

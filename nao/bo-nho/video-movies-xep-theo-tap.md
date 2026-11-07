@@ -1,5 +1,5 @@
 ---
-name: movies-xep-theo-tap
+name: video-movies-xep-theo-tap
 description: "~/Movies của David xếp theo tập (gốc → bản dài → highlight chung một thư mục), skill dựng video đã sửa theo"
 metadata:
   node_type: memory

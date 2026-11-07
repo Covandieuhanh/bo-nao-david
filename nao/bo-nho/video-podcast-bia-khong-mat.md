@@ -1,5 +1,5 @@
 ---
-name: podcast-thumb-khong-mat
+name: video-podcast-bia-khong-mat
 description: Ảnh bìa video podcast của David không dùng mặt người vì không có hình trong video; phải khớp nội dung bên trong; tiêu chí mặt người chỉ cho video quay hình (2026-11-06)
 metadata:
   node_type: memory
@@ -14,4 +14,4 @@ Video podcast chỉ có tiếng thì ảnh bìa không đưa mặt người, k�
 
 **Why:** David thấy đề xuất "chụp ảnh mặt cho podcast" sai loại: trong video không có người thì bìa có người là không khớp. David muốn nghiên cứu nội dung đưa lên ảnh, gồm chữ podcast và câu giải pháp hoặc nỗi đau. David xem đó là góc nhìn của mình và cần Claude nghiên cứu độc lập.
 
-**How to apply:** Khi nghiên cứu cho một loại video, chỉ lấy mẫu đúng loại đó, đừng đem kênh quay hình làm chuẩn cho podcast. Liên quan [[video-own-footage-only]], [[david-content-skill-aesthetic]].
+**How to apply:** Khi nghiên cứu cho một loại video, chỉ lấy mẫu đúng loại đó, đừng đem kênh quay hình làm chuẩn cho podcast. Liên quan [[video-chi-hinh-cua-chinh-video]], [[luat-noi-dung-cua-david]].

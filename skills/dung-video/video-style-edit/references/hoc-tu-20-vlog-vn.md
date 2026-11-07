@@ -46,7 +46,7 @@ chuẩn Jessie Luong đã chốt (multi-clip.md 2d) — Jessie Luong có trong b
 10. **Nhân vật + nhóm** là lực chính (Bà Tân, Mixi + bạn, Tony team, Quang Linh + Team Châu Phi) — giữ người khác trong khung đúng
     như luật 2c đã chốt.
 
-## 3. Đề xuất sửa skill (chờ duyệt — số khớp `../../de-xuat-2026-11-04.md`)
+## 3. Đề xuất sửa skill (chờ duyệt — số khớp `luu-tru/de-xuat-skill-video-2026-11-04.md` (repo David.Claude, đã áp xong))
 
 - **VL-1 Màn kết YouTube 15–20 s** cho vlog ngang đăng YouTube (như TH-3): chừa 2 ô video + nút đăng ký; màn chốt CTA đặt trước nó.
 - **VL-2 Cảnh mở đầu ghép nhanh hơn**: mỗi cảnh câm 1,0–1,9 s (1 phách nhạc nhanh) thay 2 phách cố định khi nhạc intro chậm.

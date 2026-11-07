@@ -50,7 +50,7 @@ Ghi chép đầy đủ từng clip: mục 4.
 9. **Ảnh đời thật đúng lúc nhắc** (H17 ảnh mẹ con, H10 ảnh đời tư) tăng cảm xúc.
 10. **Kết = dẫn về bản đầy đủ**: Have A Sip thẻ trắng 5 s "Nghe bản full tại"; Nguyễn Hữu Trí "Đón xem tập 2 vào thứ 4, 27/12".
 
-## 3. Đề xuất sửa skill (chờ David duyệt — số khớp bảng tổng `../../de-xuat-2026-11-04.md`)
+## 3. Đề xuất sửa skill (chờ David duyệt — số khớp bảng tổng `luu-tru/de-xuat-skill-video-2026-11-04.md` (repo David.Claude, đã áp xong))
 
 - **HL-1 Tít ghim**: thẻ tít mở đầu (luật 7) không biến mất sau 2,5 s mà thu nhỏ thành dải tít 1–2 dòng ở đỉnh vùng an toàn suốt
   clip (dải trên, không đè mặt — mặt ở giữa khung). Mẫu: H9, H14, H18, H19.

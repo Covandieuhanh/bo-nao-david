@@ -50,7 +50,7 @@ dung-video/
 - **Không che người nói**, không đè phụ đề, chữ tiếng Việt đủ dấu; minh hoạ mặc định là biểu tượng vẽ.
 - **Phát hành (mọi video):** 3 tiêu đề + mốc khung bìa đề xuất. Ảnh thumbnail 1280×720 chỉ khi video **ngang** và **đăng YouTube** — Claude hỏi "có đăng YouTube không?" lúc đầu với mọi video xuất ngang.
 - **Video dài đăng YouTube (> 3 phút):** màn kết 15–20 s chừa 2 video + nút đăng ký, chương YouTube, teaser 15–25 s câu đắt (> 10 phút).
-- **Học từ 80 video Việt (2026-11-04):** báo cáo ở `*/references/hoc-tu-20-*-vn.md`, đề xuất + trạng thái ở `de-xuat-2026-11-04.md`.
+- **Học từ 80 video Việt (2026-11-04):** báo cáo ở `*/references/hoc-tu-20-*-vn.md`, đề xuất + trạng thái (đã áp xong) ở `luu-tru/de-xuat-skill-video-2026-11-04.md` của repo David.Claude.
 - **Số liệu:** mỗi video có `so-lieu.md`; 7 ngày sau đăng gửi ảnh chụp số liệu để Claude rút ra một điều chỉnh có bằng chứng.
 
 ## Bộ nhận diện David (chốt 2026-11-04 — cả 4 loại: làm video · ghép vlog · podcast · highlight)
@@ -66,7 +66,7 @@ Xem bất kỳ video nào cũng phải nhận ra cùng một người làm. **M�
 
 ## Bên trong mỗi skill
 
-- `luat-chung.md` (thư mục gốc): luật chung cả bộ · `so-lieu-mau.md`: mẫu ghi số liệu sau đăng.
+- `luat-chung.md` (thư mục gốc): luật chung cả bộ · `khoi/16-so-lieu/mau-so-lieu.md`: mẫu ghi số liệu sau đăng.
 - `SKILL.md`: quy trình từng bước + luật riêng của skill.
 - `references/changelog.md`: sổ quyết định của bạn theo ngày, kèm lý do.
 - `references/gotchas.md`: các lỗi đã gặp và cách tránh.

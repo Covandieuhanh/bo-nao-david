@@ -47,7 +47,7 @@ quay người sau này ở `podcast-quay-nguoi.md`.*
 7. **Mở tập dài**: teaser 15–30 s ghép câu đắt (A2, A7) hoặc đoạn đen chữ hé dần + logo (A6) hoặc nhận diện động 4–8 s (A4, B1).
 8. **Kết**: "Nghe bản audio trên Spotify/Apple…", "Đón xem tập tiếp theo vào thứ 6 hàng tuần", 2 thẻ tập khác.
 
-## 3. Đề xuất sửa skill (chờ duyệt — số khớp `../../de-xuat-2026-11-04.md`)
+## 3. Đề xuất sửa skill (chờ duyệt — số khớp `luu-tru/de-xuat-skill-video-2026-11-04.md` (repo David.Claude, đã áp xong))
 
 - **PO-1 Thẻ chương theo TOPICS**: mỗi lần `TOPICS` đổi ý lớn → thẻ chương 2–3 s (số + tên ý, trích lời) + ghi chương YouTube
   (mốc + tên) vào `phat-hanh.md` để dán mô tả.

@@ -1,5 +1,5 @@
 ---
-name: david-profile-and-content-filter
+name: nao-ho-so-va-bo-loc
 description: Hồ sơ David ở ~/.claude/David.md (nạp qua CLAUDE.md); mọi tài nguyên phải qua bộ lọc khối 00 trước khi dựng; luật kênh ở ho-so/kenh.json
 metadata:
   type: reference
@@ -11,4 +11,4 @@ metadata:
 - **Sổ danh mục:** `~/Movies/_so-danh-muc/danh-muc.md`.
 - **Đăng mạng xã hội:** skill `dang-da-kenh` (bước 0–8, 2 cổng duyệt) + khối 19 (đăng / hẹn giờ) + khối 20 (hộp thư, số liệu — chỉ đọc), làm 05/11/2026. David đã đăng nhập YouTube, Facebook (trang "David Sức khoẻ"), TikTok @davidsuckhoe trong trình duyệt riêng của app. Tải video lên phải dùng Playwright + Chrome hồ sơ riêng `~/.cache/david-mxh-chrome`, vì trình duyệt app không chọn được file và Claude in Chrome chỉ nhận ≤ 10 MB.
 
-Liên quan [[david-content-skill-aesthetic]], [[ask-when-ambiguous]].
+Liên quan [[luat-noi-dung-cua-david]], [[luat-tu-hoi-khi-mo-ho]].

@@ -106,7 +106,7 @@ Ghi `<dự án>/phat-hanh/phat-hanh.md`:
 - Báo cáo tiếng Việt: đã làm gì, đã kiểm gì, chưa kiểm gì, tên riêng cần xác nhận.
 
 ## 9. Vòng số liệu (David chốt 2026-11-04)
-Mỗi video giao kèm `<dự án>/so-lieu.md` (mẫu: `dung-video/so-lieu-mau.md`). 7 ngày sau đăng, David gửi ảnh chụp số liệu (YouTube
+Mỗi video giao kèm `<dự án>/so-lieu.md` (mẫu: `dung-video/khoi/16-so-lieu/mau-so-lieu.md`). 7 ngày sau đăng, David gửi ảnh chụp số liệu (YouTube
 Studio / TikTok / Facebook) → Claude điền: lượt xem, tỉ lệ xem hết / thời lượng xem trung bình, giây người xem rời nhiều nhất,
 CTR thumbnail (video ngang YouTube), lượt lưu/chia sẻ/bình luận. So với video trước → đề xuất **một** chỉnh luật kèm bằng chứng, David duyệt
 rồi mới ghi changelog. Tổng hợp nhiều video ở `dung-video/so-lieu-tong.md`.

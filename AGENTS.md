@@ -51,7 +51,7 @@ Muốn hiểu toàn bộ hệ dựng video: [GIOI-THIEU.md](skills/dung-video/GI
 
 - Mỗi khi David chốt một quyết định hoặc sửa cách làm: ghi một file trong `nao/bo-nho/`, thêm một dòng vào `MEMORY.md`.
 - Khi xong một đợt việc: cập nhật `TRANG-THAI-HIEN-TAI.md`.
-- **Xong mỗi thay đổi về skill hoặc não: đẩy lên GitHub ngay** bằng `bash scripts/sync.sh --push` (bắt buộc, không chờ David nói). Máy đã cài `install.sh` còn có hook tự chạy lệnh này khi phiên Claude Code kết thúc, làm lưới an toàn. AI không chạy được lệnh: đề xuất nội dung cần sửa để David duyệt.
+- **Xong mỗi thay đổi về skill hoặc não: đẩy lên GitHub ngay** bằng `bash scripts/sync.sh --push` (bắt buộc, không chờ David nói). Lệnh này đồng bộ 2 chiều: kéo bản mới từ GitHub về rồi đẩy thay đổi lên. Trên máy đã chạy `install.sh`, các file não trong `~/.claude` là lối tắt vào repo (máy và repo là một bản), và hook tự kéo về đầu phiên, đẩy lên cuối phiên. AI không chạy được lệnh: đề xuất nội dung cần sửa để David duyệt.
 - David nói **"cập nhật não"**: chạy ngay lệnh trên.
 - Mọi tên file, thư mục, ghi nhớ đặt bằng tiếng Việt không dấu, chữ thường, gạch nối (ví dụ `video-goc`), đồng nhất ở mọi nơi. Ghi nhớ chỉ đúng cho một máy đặt tên bắt đầu `may-`, không đưa lên repo.
 - Repo chỉ giữ não: hồ sơ, luật, bộ nhớ, skill, việc dở, file mẫu (trong skill). Không đưa lên: thành quả và thư mục sản phẩm (dự án video, bài đăng, tài liệu đã xong), mật khẩu, token, cookie, lịch sử chat thô, video gốc, thông tin khách chưa ẩn danh.

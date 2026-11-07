@@ -4,7 +4,7 @@
 
 ## 1. Tài khoản Claude khác, cùng máy này
 
-Skill, bộ nhớ, lịch sử chat thô nằm trong `~/.claude`, dự án dựng nằm trong `~/Movies`, nên đổi tài khoản trên cùng máy vẫn còn. Không cần cài gì.
+Trên Mac chính, skill, hồ sơ, luật và bộ nhớ trong `~/.claude` là lối tắt trỏ vào repo này; lịch sử chat thô nằm trong `~/.claude/projects`, dự án dựng nằm trong `~/Movies`. Đổi tài khoản trên cùng máy vẫn còn, không cần cài gì.
 
 **Các bước sau khi đăng nhập tài khoản mới:**
 
@@ -38,7 +38,15 @@ gh repo clone Covandieuhanh/David.Claude ~/Documents/David.Claude
 bash ~/Documents/David.Claude/scripts/install.sh ~/Documents/David.Claude
 ```
 
-Bộ nhớ của Claude Code gắn theo thư mục dự án. Tham số cuối là thư mục bạn sẽ mở Claude Code. Muốn dùng ở thư mục khác thì chạy lại với thư mục đó.
+`install.sh` thay `~/.claude/David.md`, `CLAUDE.md`, các skill, thư mục bộ nhớ và sổ danh mục bằng **lối tắt trỏ vào repo** (bản cũ sao lưu vào `~/.claude/backups/`), rồi cài hook đồng bộ 2 chiều: đầu phiên kéo từ GitHub về, cuối phiên đẩy lên. Từ đó máy và GitHub luôn là một bộ não.
+
+Bộ nhớ của Claude Code gắn theo thư mục dự án. Tham số cuối là thư mục bạn sẽ mở Claude Code (mặc định là chính repo). Muốn dùng ở thư mục khác thì chạy lại với thư mục đó.
+
+Đồng bộ tay bất cứ lúc nào:
+
+```bash
+bash ~/Documents/David.Claude/scripts/sync.sh
+```
 
 ## 3. AI khác hoặc Claude bản web
 

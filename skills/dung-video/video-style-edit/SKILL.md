@@ -155,7 +155,7 @@ clip không đổi), rồi `render_preview.py` (+ `build_timeline.py` nếu đã
 
 ## Tài liệu kèm
 
-- `../luat-chung.md` — luật chung cả bộ (đọc trước); `../so-lieu-mau.md` — mẫu số liệu sau đăng.
+- `../luat-chung.md` — luật chung cả bộ (đọc trước); `dung-video/khoi/16-so-lieu/mau-so-lieu.md` — mẫu số liệu sau đăng.
 - `references/style-analysis.md` — cách đọc video mẫu thành token phong cách; bảng font Google có tiếng Việt.
 - `references/scene-design.md` — các loại cảnh có sẵn, khi nào dùng loại nào, mật độ, vùng an toàn.
 - `references/example-scenes.js` — kịch bản 17 cảnh thật đã duyệt.

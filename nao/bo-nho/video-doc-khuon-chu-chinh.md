@@ -13,4 +13,4 @@ Podcast đồ hoạ dọc trích từ video dài dùng khuôn của bản `clip1
 
 **Why:** David thấy phụ đề chồng đồ hoạ bị rối trên màn dọc; nhạc phải nghe được để dẫn cảm xúc nhưng không che lời (mức 30 dB thì mất hẳn, mức gần giọng thì che từ); câu kêu gọi ghép vào thì ép buộc, mất trọn vẹn.
 
-**How to apply:** Cách làm nằm ở `cat-highlight-video/SKILL.md` mục "Khuôn podcast đồ hoạ dọc", mức nhạc ở `ho-so/highlight.json`. Chỉ áp dụng cho video dọc đồ hoạ; video ngang và video có người nói không đổi. Mẫu đã có trong `mau-chuan/mau.json`, `kiem-mau.py` sẽ báo nếu khuôn bị đổi. Liên quan [[clip-ngan-dung-doc-lap]].
+**How to apply:** Cách làm nằm ở `cat-highlight-video/SKILL.md` mục "Khuôn podcast đồ hoạ dọc", mức nhạc ở `ho-so/highlight.json`. Chỉ áp dụng cho video dọc đồ hoạ; video ngang và video có người nói không đổi. Mẫu đã có trong `mau-chuan/mau.json`, `kiem-mau.py` sẽ báo nếu khuôn bị đổi. Liên quan [[video-clip-ngan-dung-doc-lap]].

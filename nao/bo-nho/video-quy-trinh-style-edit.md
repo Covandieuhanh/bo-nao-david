@@ -1,5 +1,5 @@
 ---
-name: video-style-edit-workflow
+name: video-quy-trinh-style-edit
 description: "Người dùng dựng video talking-head dọc theo phong cách mẫu bằng skill ~/.claude/skills/video-style-edit; muốn đưa 2 video là xong, nhận MP4 đăng ngay"
 metadata:
   node_type: memory
@@ -14,7 +14,7 @@ Người dùng quay video dọc nói tiếng Việt, muốn Claude tự dựng t
 
 **How to apply:** Chạy trọn quy trình không dừng hỏi duyệt từng bước; luôn giữ nội dung trong vùng an toàn x 70–900, y 210–1420 (khung 1080×1920); giao `video-final.mp4`; **không làm gói timeline DaVinci/CapCut trừ khi họ yêu cầu** (được hỏi trong lúc làm nếu chưa rõ). Bản Resolve của họ là bản App Store (không có scripting). Họ không tự gõ mật khẩu qua Claude — lệnh cần sudo thì đưa cho họ chạy.
 
-Làm sạch video gốc (thêm 2026-11-01): cắt thừa đầu/cuối và câu nói lại (giữ lần sau cùng), sửa video lộn ngược/nằm ngang/lật gương. ~~Không cắt ngập ngừng~~ → ĐỔI 2026-11-04: mặc định cắt khoảng lặng ≥ 0,45 s + "ờ/ừm" (jump cut chuẩn kênh lớn) cho video nói trước camera và highlight; vlog/podcast dài giữ tự nhiên; bản tự nhiên khi David yêu cầu (`tu-nhien`). Xem [[video-viewer-centric-copy-big-channels]].
+Làm sạch video gốc (thêm 2026-11-01): cắt thừa đầu/cuối và câu nói lại (giữ lần sau cùng), sửa video lộn ngược/nằm ngang/lật gương. ~~Không cắt ngập ngừng~~ → ĐỔI 2026-11-04: mặc định cắt khoảng lặng ≥ 0,45 s + "ờ/ừm" (jump cut chuẩn kênh lớn) cho video nói trước camera và highlight; vlog/podcast dài giữ tự nhiên; bản tự nhiên khi David yêu cầu (`tu-nhien`). Xem [[video-nguoi-xem-trung-tam]].
 
 Đổi khung (thêm 2026-11-01, họ đã duyệt mô tả): gốc dọc → xuất ngang = video giữa nguyên tỉ lệ, trái chủ đề + từ khoá đang nói, phải danh sách ý tích dần; gốc ngang → xuất dọc = khung bám người đang nói, **nhảy cắt qua lại** giữa hai người (không chia đôi màn hình), giữ nguyên thời lượng.
 
@@ -25,7 +25,7 @@ Bố cục chốt: phụ đề ở đáy vùng an toàn (từ 2026-11-04 video n
 
 CapCut (2026-11-02): khi họ yêu cầu thì tạo thẳng dự án CapCut (`build_capcut.py`), phụ đề là chữ CapCut cùng font Be Vietnam Pro (họ thích font mặc định này). CapCut Mac đọc `draft_info.json` — đã mở được.
 
-Podcast (2026-11-02): skill riêng `podcast-style-edit` — file tiếng/video podcast → video toàn motion graphics cùng phong cách, dùng chung template; khung xuất theo nguồn (ngang→ngang, dọc/chỉ tiếng→dọc) trừ khi họ yêu cầu; tập tối đa ~15 phút, 1–2 người nói. [[video-style-edit-workflow]]
+Podcast (2026-11-02): skill riêng `podcast-style-edit` — file tiếng/video podcast → video toàn motion graphics cùng phong cách, dùng chung template; khung xuất theo nguồn (ngang→ngang, dọc/chỉ tiếng→dọc) trừ khi họ yêu cầu; tập tối đa ~15 phút, 1–2 người nói. [[video-quy-trinh-style-edit]]
 
 Minh hoạ (2026-11-02, họ đồng ý đề xuất): mặc định biểu tượng nét vẽ dần thay ảnh; ảnh chỉ khi nhắc địa danh/công trình/sản phẩm có thật và có ảnh tốt; họ nói "không dùng ảnh"/"thêm ảnh" thì theo. Chữ to tiếng Việt phải đủ dấu, không chồng dòng; podcast cỡ chữ/hiệu ứng vừa phải (họ bảo thu nhỏ).
 So sánh 2026-11-02: họ chọn bản KHÔNG ẢNH (biểu tượng vẽ) cho podcast DJI — xác nhận mặc định không ảnh.

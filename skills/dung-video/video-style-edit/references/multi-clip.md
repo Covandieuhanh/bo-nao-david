@@ -270,7 +270,7 @@ nhãn địa điểm). Chuyến > 25 phút: đề xuất tách phần P1/P2 (m�
 tên phần, không tự viết lời) — hỏi David trong kế hoạch ghép.
 Phát hành theo `../../luat-chung.md` mục 7: `phat-hanh/phat-hanh.md` (3 tiêu đề, mô tả, mốc khung bìa) + vlog xuất **ngang** VÀ đăng YouTube (hỏi lúc đầu) → 2 thumbnail
 `zsh $SKILL/scripts/thumbnail.sh "$P" c<N>@<giây> "<DÒNG 1>" "<DÒNG 2>" 1|2` (khung cảm xúc mạnh nhất cả chuyến, mặt rõ — thường
-là cảnh đắt nhất của đoạn ghép mở đầu); chép `../../so-lieu-mau.md` → `$P/so-lieu.md`.
+là cảnh đắt nhất của đoạn ghép mở đầu); chép `dung-video/khoi/16-so-lieu/mau-so-lieu.md` → `$P/so-lieu.md`.
 Gửi `video-final.mp4` (+ thumbnail nếu có) (SendUserFile), bảng mạch chương trình theo mốc thời gian, đoạn đã bỏ và lý do, chỗ tiếng bị
 ghép từ nơi khác. Góp ý kiểu "bỏ đoạn 0:13–0:16" → tra mốc timeline ra `id` đoạn trong `SEGS`, xoá đoạn đó cùng
 phụ đề/lớp phủ/SFX gắn với nó, render lại.

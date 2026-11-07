@@ -18,7 +18,7 @@ Kiểm bài đã lên đúng (link, giờ, ảnh bìa, caption) ở 3 nền tả
 - Viết `hop-thu-<ngày>.md`: "Người xem đang hỏi gì" (nhóm theo chủ đề, ẩn danh) · số "gỡ" · số "Vấn đề" / "Kết quả" · nháp trả lời (nếu David muốn).
   Câu hỏi lặp ≥ 3 lần → đề xuất thành ý video tiếp theo (đưa vào kho, gắn nhánh).
 
-## Số liệu 7 ngày (khối 16 + so-lieu-mau.md)
+## Số liệu 7 ngày (khối 16 + mau-so-lieu.md)
 - **YouTube:** Studio → Số liệu phân tích (lượt xem, thời lượng xem TB, tỉ lệ giữ chân, giây rời nhiều nhất).
 - **Trang Facebook:** Business Suite → Thông tin chi tiết → Nội dung (lượt xem Reels, thời gian xem, tin nhắn bắt đầu).
 - **TikTok:** TikTok Studio → Số liệu phân tích → bài viết (lượt xem, thời gian xem TB, xem hết).

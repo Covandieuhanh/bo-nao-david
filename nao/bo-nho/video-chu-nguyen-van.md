@@ -1,5 +1,5 @@
 ---
-name: chu-tren-man-nguyen-van
+name: video-chu-nguyen-van
 description: "Mọi chữ trong motion graphics của video David phải là nguyên văn lời David; không thẻ tít tự rút ý, màn chốt không tự viết câu, không số chạy hiện số David không nói (David chốt 2026-11-07)"
 metadata:
   node_type: memory
@@ -16,4 +16,4 @@ Motion graphics dùng loại nào cũng được, nhưng **không được sáng
 
 **Why:** 07/11/2026 video "Đi bộ hằng ngày": thẻ tít bị cắt dòng ở khung ngang và David thấy tít có thể lệch ý; soát lại còn 4 chỗ chữ lệch lời.
 
-**How to apply:** soát từng chữ đồ hoạ với captions.js cùng mốc trước khi render. Câu hỏi "Vấn đề / Kết quả" tự viết chỉ để ở bài đăng, bình luận ghim — không lên video. Liên quan [[david-content-skill-aesthetic]], [[video-luon-co-motion-graphics]].
+**How to apply:** soát từng chữ đồ hoạ với captions.js cùng mốc trước khi render. Câu hỏi "Vấn đề / Kết quả" tự viết chỉ để ở bài đăng, bình luận ghim — không lên video. Liên quan [[luat-noi-dung-cua-david]], [[video-luon-co-motion-graphics]].

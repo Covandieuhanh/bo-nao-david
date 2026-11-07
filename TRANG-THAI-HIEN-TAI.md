@@ -14,7 +14,7 @@ Chặng 1 của nghề: 1–3 ca thật online, miễn phí đổi lời chứng
 | 3 clip dọc từ podcast trên | Bản chuẩn David chốt 06/11. Chưa hẹn giờ. Video: Drive `Video-xong/Di-trainer-clip-1|2|3.mp4` | **Chờ David quyết có cắt lại Clip 1 và 2 không** (xem dưới). Lịch dự kiến T6 13/11, T3 17/11, T6 20/11 20:00. Điền `[link YouTube]` sau khi video dài lên |
 | Podcast "Mục tiêu và sứ mệnh" (8:40, render lại 06/11 bằng skill mới) | David nói "mọi thứ ok" 07/11. Chưa có lịch. Video: `~/Movies/podcast-muc-tieu-su-menh-v2`, Drive `Video-xong/podcast-muc-tieu-su-menh-v2.mp4`. Sổ danh mục đề xuất bản đầy đủ chỉ lên Facebook cá nhân vì đoạn 2:30–3:55 và 6:00–6:45 chạm lằn ranh | Mô tả và bình luận ghim còn theo câu chốt cũ, phải đổi theo câu mới "Mục tiêu của bạn đã có tên chưa? Bình luận **Vấn đề** nhé". Đưa gợi ý cho David chọn trước khi lên lịch. Chốt mẫu `podcast-dai-muc-tieu` trong `mau-chuan`, chạy `kiem-mau` |
 | Clip "Mục tiêu sứ mệnh" (76 giây, ghép 4:46–5:40 và 7:19–7:43) | David nói "mọi thứ ok" 07/11. Chưa có lịch. Video: `~/Movies/podcast-hl-muc-tieu-A`, Drive `Video-xong/Muc-tieu-su-menh-clip-1.mp4`. Kế hoạch và 4 câu chọn ý: `~/Movies/highlight-muc-tieu/` | Chữ đăng bài là nháp: đưa gợi ý cho David chọn khi lên lịch. Khung bìa đề xuất giây 1,5 |
-| Rà soát video cũ TikTok và fanpage | Có danh sách đề xuất ẩn trong [ra-soat-video-cu.md](dang-lam/ra-soat-video-cu.md) và [nghien-cuu-trang-ca-nhan.md](dang-lam/nghien-cuu-trang-ca-nhan.md). Ẩn là để riêng tư, không xoá | Chờ David quyết |
+| Rà soát video cũ TikTok và fanpage | Có danh sách đề xuất ẩn trong [ra-soat-video-cu.md](dang-lam/ra-soat-video-cu.md) và [trang-ca-nhan-2026-11-06.md](nghien-cuu/trang-ca-nhan-2026-11-06.md). Ẩn là để riêng tư, không xoá | Chờ David quyết |
 | Làm lại kho 100 video | Kho cũ còn phần kinh doanh đã bỏ | Làm lại theo ba tầng: bản thân → công việc → mối quan hệ |
 
 ## Câu hỏi còn mở với David
@@ -25,7 +25,11 @@ Chặng 1 của nghề: 1–3 ca thật online, miễn phí đổi lời chứng
 
 ## Việc skill vừa đổi (07/11)
 
-Clip ngắn chọn ý bằng 4 câu: bối cảnh, ý trọn, mang về, chừa lại. Claude tự chọn ý, tít, câu màn cuối rồi báo, không còn số độ dài hay số clip cố định. Xem [clip-ngan-dung-doc-lap](nao/bo-nho/clip-ngan-dung-doc-lap.md). Chưa chạy lại `kiem-mau` sau khi sửa skill. Video dài và ảnh bìa vẫn đưa gợi ý để David chọn: [goi-y-de-david-chon](nao/bo-nho/goi-y-de-david-chon.md).
+Clip ngắn chọn ý bằng 4 câu: bối cảnh, ý trọn, mang về, chừa lại. Claude tự chọn ý, tít, câu màn cuối rồi báo, không còn số độ dài hay số clip cố định. Xem [video-clip-ngan-dung-doc-lap](nao/bo-nho/video-clip-ngan-dung-doc-lap.md). Chưa chạy lại `kiem-mau` sau khi sửa skill. Video dài và ảnh bìa vẫn đưa gợi ý để David chọn: [luat-goi-y-de-david-chon](nao/bo-nho/luat-goi-y-de-david-chon.md).
+
+## Bộ não vừa đổi (07/11, tối)
+
+GitHub là bản gốc, đẩy ngay mọi cái mới (luật 6 trong `AGENTS.md`). Mac chính và GitHub đồng bộ 2 chiều: file não trong `~/.claude` là lối tắt vào repo, hook kéo về đầu phiên, đẩy lên cuối phiên. Repo xếp lại: bộ nhớ đổi tên Việt chia nhóm `luat-`/`nao-`/`video-`/`may-`, thêm `nghien-cuu/` và `luu-tru/`, bảng "Muốn tìm… → mở…" trong `README.md`. Bản cũ trên máy sao lưu ở `~/.claude/backups/`.
 
 ## Chờ David quyết hoặc tự làm
 
@@ -50,4 +54,4 @@ Xem [SETUP.md](SETUP.md) mục 1. Drive `Sao-luu-Claude-2026-11-07` giữ tài l
 
 ## App notion
 
-Đã bỏ ngày 07/11/2026, thư mục trên máy đã vào Thùng rác. Code còn trên GitHub (riêng tư): `Covandieuhanh/notion-db`, `notion-backend`, `notion-frontend`, `app-notion-goc`. File `.env` chỉ ở trên máy. Trạng thái sản phẩm xem bộ nhớ [notion-v2-spec-plan](nao/bo-nho/notion-v2-spec-plan.md); ghi chép này từ tháng 8/2026, cần kiểm tra lại trên máy.
+Đã bỏ ngày 07/11/2026, thư mục trên máy đã vào Thùng rác. Code còn trên GitHub (riêng tư): `Covandieuhanh/notion-db`, `notion-backend`, `notion-frontend`, `app-notion-goc`. File `.env` chỉ ở trên máy. Trạng thái sản phẩm xem bộ nhớ [notion-v2-spec-plan](luu-tru/bo-nho-app-notion/notion-v2-spec-plan.md); ghi chép này từ tháng 8/2026, cần kiểm tra lại trên máy.

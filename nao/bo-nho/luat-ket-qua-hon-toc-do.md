@@ -1,5 +1,5 @@
 ---
-name: result-over-speed
+name: luat-ket-qua-hon-toc-do
 description: "David ưu tiên làm đúng quy trình và có kết quả hơn làm nhanh; bước nào cần kết quả render thì chờ, chỗ chưa rõ thì trao đổi (2026-11-05)"
 metadata:
   node_type: memory
@@ -12,4 +12,4 @@ Không cần nhanh mà không được việc. Quy trình có bước nào phả
 
 **Why:** David cần kết quả dùng được, không cần tốc độ.
 
-**How to apply:** Khi muốn rút ngắn hay đảo bước, trao đổi với David để chọn phương án tốt nhất thay vì tự làm. Liên quan [[ask-when-ambiguous]].
+**How to apply:** Khi muốn rút ngắn hay đảo bước, trao đổi với David để chọn phương án tốt nhất thay vì tự làm. Liên quan [[luat-tu-hoi-khi-mo-ho]].
