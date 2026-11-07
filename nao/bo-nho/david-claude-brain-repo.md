@@ -18,6 +18,6 @@ Bộ não dùng chung: https://github.com/Covandieuhanh/David.Claude (Private), 
 
 **Chuyển tài khoản Claude:** ngày 07/11/2026 David chuẩn bị đổi tài khoản; các bước và bản sao ghi ở `SETUP.md` mục 1 của repo.
 
-**Video đang làm:** `dang-lam/du-an-video.txt` liệt kê dự án trong `~/Movies`; `sync.sh` chép bài đăng, kế hoạch, lời, kịch bản. Xong việc thì bỏ dòng đó.
+**Chỉ não, không thành quả (David chốt 07/11/2026):** xem [[github-chi-giu-nao]]. Dự án video, bài đăng, tài liệu đã làm xong nằm ở máy (`~/Movies`) và Drive, không lên repo.
 
 **Không đưa lên:** lịch sử chat thô, cookie, `.claude.json`, `~/Documents/mk.csv`, video. Liên quan [[david-profile-and-content-filter]].

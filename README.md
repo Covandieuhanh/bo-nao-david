@@ -2,6 +2,8 @@
 
 Repo riêng tư. AI nào, tài khoản nào đọc xong cũng nhận đúng vai, đúng cách làm việc với David và biết việc đang dở.
 
+**Chỉ giữ não**: hồ sơ, luật, bộ nhớ, skill, việc dở, file mẫu. Thành quả và thư mục sản phẩm ở lại máy làm ra nó và Drive.
+
 **AI đọc [AGENTS.md](AGENTS.md) trước.** Cài trên máy mới: xem [SETUP.md](SETUP.md).
 
 ## Câu mở đầu dán cho AI mới
@@ -17,7 +19,7 @@ Repo riêng tư. AI nào, tài khoản nào đọc xong cũng nhận đúng vai,
 | `TRANG-THAI-HIEN-TAI.md` | Đang làm gì, việc tiếp theo |
 | `nao/` | Hồ sơ David, luật toàn cục, bộ nhớ |
 | `skills/` | Toàn bộ skill: dựng video, đăng đa kênh, hỏi chuyên gia, trình duyệt |
-| `dang-lam/` | Kho 100 video, sổ danh mục, rà soát video cũ |
+| `dang-lam/` | Việc đang dở: sổ danh mục, kho 100 video, rà soát video cũ (không chứa thành quả) |
 | `scripts/` | Cài vào máy mới, cập nhật lên repo, quét bí mật |
 
 ## Cập nhật

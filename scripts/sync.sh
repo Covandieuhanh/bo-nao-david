@@ -1,5 +1,5 @@
 #!/bin/bash
-# Chép bộ não mới nhất từ máy (~/.claude) vào repo, quét bí mật, rồi (nếu có --push) commit và đẩy lên GitHub.
+# Chép bộ não mới nhất từ máy (~/.claude) vào repo (chỉ não, skill, việc dở, mẫu; không thành quả), quét bí mật, rồi (nếu có --push) commit và đẩy lên GitHub.
 # Dùng: bash scripts/sync.sh [--push]
 set -euo pipefail
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
@@ -14,21 +14,17 @@ for s in dung-video hoi-chuyen-gia playwright-cli; do
   rsync -a --delete "${LOAI[@]}" "$CL/skills/$s/" "$REPO/skills/$s/"
 done
 
-# Bộ nhớ: lấy thư mục memory mới sửa gần nhất. Không dùng --delete để một dự án mới ít ghi nhớ không xoá mất bộ nhớ cũ.
-MEM="${NAO_MEMORY_DIR:-$(ls -dt "$CL"/projects/*/memory 2>/dev/null | head -1)}"
-[ -n "$MEM" ] && rsync -a "${LOAI[@]}" "$MEM/" "$REPO/nao/bo-nho/"
+# Bộ nhớ: không dùng --delete để một dự án mới ít ghi nhớ không xoá mất bộ nhớ cũ.
+# Ưu tiên bộ nhớ của dự án David.Claude (nơi mở phiên), rồi mới tới thư mục memory mới sửa gần nhất mà có nội dung.
+MA="$(printf '%s' "$REPO" | sed 's#[^A-Za-z0-9]#-#g')"
+MEM="${NAO_MEMORY_DIR:-}"
+[ -z "$MEM" ] && [ -f "$CL/projects/$MA/memory/MEMORY.md" ] && MEM="$CL/projects/$MA/memory"
+[ -z "$MEM" ] && for d in $(ls -dt "$CL"/projects/*/memory 2>/dev/null); do [ -f "$d/MEMORY.md" ] && { MEM="$d"; break; }; done
+[ -n "${MEM:-}" ] && rsync -a "${LOAI[@]}" "$MEM/" "$REPO/nao/bo-nho/"
 
 [ -f "$HOME/Movies/_so-danh-muc/danh-muc.md" ] && cp "$HOME/Movies/_so-danh-muc/danh-muc.md" "$REPO/dang-lam/danh-muc.md"
 
-# Tài liệu và kịch bản của video đang làm. Video và file nặng không đưa lên, thành phẩm ở Drive.
-[ -f "$REPO/dang-lam/du-an-video.txt" ] && while read -r ten dich; do
-  [ -z "${ten:-}" ] && continue
-  P="$HOME/Movies/$ten"; [ -d "$P" ] || continue
-  D="$REPO/dang-lam/$dich"; mkdir -p "$D"
-  rsync -a --include '*.md' --include 'phuong-an.json' --include 'phat-hanh/***' --include 'motion/' --include 'motion/src/' \
-    --include 'motion/src/captions.js' --include 'motion/src/scenes.js' --include 'motion/src/highlight.js' --include 'motion/src/endcard.js' --include 'motion/src/project.js' \
-    --exclude '*' "${LOAI[@]}" "$P/" "$D/"
-done < "$REPO/dang-lam/du-an-video.txt"
+# Chỉ đưa não lên GitHub. Dự án video, bài đăng, tài liệu đã làm xong ở lại máy (~/Movies) và Drive.
 
 python3 -I "$REPO/scripts/quet-bi-mat.py" "$REPO"
 

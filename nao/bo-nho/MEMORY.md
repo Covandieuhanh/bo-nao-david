@@ -27,3 +27,5 @@
 - [Gợi ý để David chọn](goi-y-de-david-chon.md) — không tự chốt chữ, hình, nội dung; ngoại lệ: cắt clip thì tự chọn ý (2026-11-07)
 - [Chuẩn âm lượng chung](chuan-am-luong-chung.md) — mọi video: nhạc thấp hơn giọng ~23 dB, cả bài −14 LUFS; giọng nhỏ kéo lên, nhạc to hạ xuống (2026-11-06)
 - [Podcast phủ hình 30%](podcast-mat-do-hinh-30.md) — motion graphic khoảng 30% thời lượng, cân theo nội dung; chụp thử cho David chốt rồi mới render (2026-11-06)
+- [Dọn Documents 07/11](documents-don-dep-2026-11-07.md) — App notion đã bỏ; mở phiên ở ~/Documents/David.Claude (2026-11-07)
+- [GitHub chỉ giữ não](github-chi-giu-nao.md) — repo chỉ hồ sơ, luật, bộ nhớ, skill, việc dở, mẫu; thành quả ở máy và Drive (2026-11-07)

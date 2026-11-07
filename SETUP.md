@@ -1,12 +1,14 @@
 # Dùng bộ não ở nơi khác
 
+**Nguyên tắc:** GitHub chỉ giữ **bộ não**: hồ sơ, luật, bộ nhớ, skill, việc đang dở, và file mẫu (nằm trong skill, ví dụ `skills/dung-video/mau-chuan/`). Thành quả và thư mục sản phẩm (dự án video, bài đăng, tài liệu đã làm xong) ở lại máy nào giữ máy đó, cộng Drive. Máy mới chỉ cần não; thư mục làm việc tự tạo theo máy.
+
 ## 1. Tài khoản Claude khác, cùng máy này
 
 Skill, bộ nhớ, lịch sử chat thô nằm trong `~/.claude`, dự án dựng nằm trong `~/Movies`, nên đổi tài khoản trên cùng máy vẫn còn. Không cần cài gì.
 
 **Các bước sau khi đăng nhập tài khoản mới:**
 
-1. Trong ứng dụng Claude, mở đúng thư mục `~/Documents/App notion` để Claude Code nhận bộ nhớ (bộ nhớ gắn theo đường dẫn thư mục).
+1. Trong ứng dụng Claude, mở đúng thư mục `~/Documents/David.Claude` để Claude Code nhận bộ nhớ (bộ nhớ gắn theo đường dẫn thư mục).
 2. Dán câu này vào phiên đầu tiên:
 
 > Đọc ~/Documents/David.Claude/AGENTS.md rồi đọc tiếp theo đúng thứ tự trong đó. Xong thì tóm tắt 3 dòng: tôi là ai, bạn sẽ làm việc với tôi thế nào, việc đang dở là gì. Sau đó hỏi tôi các câu còn mở trong TRANG-THAI-HIEN-TAI.md.
@@ -17,7 +19,7 @@ Skill, bộ nhớ, lịch sử chat thô nằm trong `~/.claude`, dự án dựn
 
 | Thứ | Bản sao |
 |---|---|
-| Trang và tài liệu trên claude.ai | Toàn bộ ở Drive `Sao-luu-Claude-2026-11-07/tai-lieu-claude-ai`. Bản không nhạy cảm cũng ở `tai-lieu-claude-ai/` trong repo. Danh sách: [tai-lieu-claude-ai/README.md](tai-lieu-claude-ai/README.md). Bản PDF đọc được nhưng không còn sửa trực tiếp như trên claude.ai |
+| Trang và tài liệu trên claude.ai | Toàn bộ ở Drive `Sao-luu-Claude-2026-11-07/tai-lieu-claude-ai` (không còn trong repo). Bản PDF đọc được nhưng không còn sửa trực tiếp như trên claude.ai |
 | Lịch sử trò chuyện | Danh sách phiên trong ứng dụng không theo sang. Bản thô vẫn ở `~/.claude/projects` trên máy, không đưa lên mạng. Những gì cần cho việc tiếp theo đã ghi vào `TRANG-THAI-HIEN-TAI.md` và `nao/bo-nho/` |
 
 **Phòng khi máy này hỏng:** repo này giữ não và skill; Drive `Video-xong` giữ thành phẩm; Drive `Sao-luu-Claude-2026-11-07/du-an-video` giữ âm thanh gốc và kịch bản từng dự án (bỏ `node_modules` và file render, dựng lại được). Giải nén vào `~/Movies`, chạy `npm install` trong `motion/`, rồi render lại. File `.env` của App notion, `~/Documents/mk.csv`, hồ sơ đăng nhập Chrome và lịch sử chat chỉ có trên máy này, cố ý không đưa lên mạng.
@@ -55,8 +57,7 @@ Bộ nhớ của Claude Code gắn theo thư mục dự án. Tham số cuối l�
 | Đăng nhập YouTube, Facebook, TikTok | David tự đăng nhập lại. Hồ sơ Chrome đăng bài ở `~/.cache/david-mxh-chrome` |
 | Google Drive (`Video-goc`, `Video-xong`) | Cài Google Drive cho máy tính, đăng nhập tài khoản của David |
 | Trình duyệt và kết nối của Claude | Bật lại trong ứng dụng Claude |
-| Video gốc và thành phẩm | Ở Drive và `~/Movies`, không nằm trong repo. Lời và kịch bản của video đang làm ở `dang-lam/` |
-| Code App notion | Clone 4 repo riêng tư: `notion-db`, `notion-backend`, `notion-frontend`, `app-notion-goc`. Tự tạo lại `.env` từ `.env.example`. Dữ liệu database trên máy không đưa lên |
+| Video gốc, thành phẩm, kịch bản, bài đăng từng dự án | Ở Drive và `~/Movies` của máy làm, không nằm trong repo. Repo chỉ ghi trạng thái ở `TRANG-THAI-HIEN-TAI.md` và `dang-lam/danh-muc.md` |
 
 ## 5. Sau khi cài, kiểm tra nhanh
 

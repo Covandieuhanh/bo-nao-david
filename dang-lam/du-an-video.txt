@@ -1,8 +1,0 @@
-podcast-dji-20261105 video-di-trainer/video-dai
-highlight-di-trainer video-di-trainer/ke-hoach-clip
-podcast-hl-di-trainer-A video-di-trainer/clip-1
-podcast-hl-di-trainer-B video-di-trainer/clip-2
-podcast-hl-di-trainer-C video-di-trainer/clip-3
-podcast-muc-tieu-su-menh-v2 video-muc-tieu-su-menh
-highlight-muc-tieu video-muc-tieu-su-menh/ke-hoach-clip
-podcast-hl-muc-tieu-A video-muc-tieu-su-menh/clip-1

@@ -51,4 +51,4 @@ Muốn hiểu toàn bộ hệ dựng video: [GIOI-THIEU.md](skills/dung-video/GI
 - Mỗi khi David chốt một quyết định hoặc sửa cách làm: ghi một file trong `nao/bo-nho/`, thêm một dòng vào `MEMORY.md`.
 - Khi xong một đợt việc: cập nhật `TRANG-THAI-HIEN-TAI.md`.
 - David nói **"cập nhật não"**: trên máy có Claude Code thì chạy `bash scripts/sync.sh --push`. Không có máy thì đề xuất nội dung cần sửa để David duyệt.
-- Không đưa lên repo: mật khẩu, token, cookie, lịch sử chat thô, video gốc, thông tin khách chưa ẩn danh.
+- Repo chỉ giữ não: hồ sơ, luật, bộ nhớ, skill, việc dở, file mẫu (trong skill). Không đưa lên: thành quả và thư mục sản phẩm (dự án video, bài đăng, tài liệu đã xong), mật khẩu, token, cookie, lịch sử chat thô, video gốc, thông tin khách chưa ẩn danh.

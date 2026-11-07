@@ -10,10 +10,10 @@ Chặng 1 của nghề: 1–3 ca thật online, miễn phí đổi lời chứng
 
 | Việc | Tình trạng | Bước tiếp |
 |---|---|---|
-| Podcast "Đi trainer cho người làm trainer" (9:19, giữ nguyên không cắt) | David đã duyệt video. Chưa hẹn giờ. Video: `~/Movies/podcast-dji-20261105`, Drive `Video-xong/Di-trainer-cho-nguoi-lam-trainer.mp4`. Bài đăng: [phat-hanh.md](dang-lam/video-di-trainer/video-dai/phat-hanh/phat-hanh.md) | David chốt 2 điểm trong [ke-hoach-dang.md](dang-lam/video-di-trainer/ke-hoach-dang.md), rồi hẹn YouTube T3 10/11 20:00 |
+| Podcast "Đi trainer cho người làm trainer" (9:19, giữ nguyên không cắt) | David đã duyệt video. Chưa hẹn giờ. Video: `~/Movies/podcast-dji-20261105`, Drive `Video-xong/Di-trainer-cho-nguoi-lam-trainer.mp4`. Bài đăng: `~/Movies/podcast-dji-20261105/phat-hanh/phat-hanh.md` | David chốt 2 điểm trong `~/Movies/podcast-dji-20261105/ke-hoach-dang.md`, rồi hẹn YouTube T3 10/11 20:00 |
 | 3 clip dọc từ podcast trên | Bản chuẩn David chốt 06/11. Chưa hẹn giờ. Video: Drive `Video-xong/Di-trainer-clip-1|2|3.mp4` | **Chờ David quyết có cắt lại Clip 1 và 2 không** (xem dưới). Lịch dự kiến T6 13/11, T3 17/11, T6 20/11 20:00. Điền `[link YouTube]` sau khi video dài lên |
 | Podcast "Mục tiêu và sứ mệnh" (8:40, render lại 06/11 bằng skill mới) | David nói "mọi thứ ok" 07/11. Chưa có lịch. Video: `~/Movies/podcast-muc-tieu-su-menh-v2`, Drive `Video-xong/podcast-muc-tieu-su-menh-v2.mp4`. Sổ danh mục đề xuất bản đầy đủ chỉ lên Facebook cá nhân vì đoạn 2:30–3:55 và 6:00–6:45 chạm lằn ranh | Mô tả và bình luận ghim còn theo câu chốt cũ, phải đổi theo câu mới "Mục tiêu của bạn đã có tên chưa? Bình luận **Vấn đề** nhé". Đưa gợi ý cho David chọn trước khi lên lịch. Chốt mẫu `podcast-dai-muc-tieu` trong `mau-chuan`, chạy `kiem-mau` |
-| Clip "Mục tiêu sứ mệnh" (76 giây, ghép 4:46–5:40 và 7:19–7:43) | David nói "mọi thứ ok" 07/11. Chưa có lịch. Video: `~/Movies/podcast-hl-muc-tieu-A`, Drive `Video-xong/Muc-tieu-su-menh-clip-1.mp4`. Kế hoạch và 4 câu chọn ý: [ke-hoach-clip](dang-lam/video-muc-tieu-su-menh/ke-hoach-clip/) | Chữ đăng bài là nháp: đưa gợi ý cho David chọn khi lên lịch. Khung bìa đề xuất giây 1,5 |
+| Clip "Mục tiêu sứ mệnh" (76 giây, ghép 4:46–5:40 và 7:19–7:43) | David nói "mọi thứ ok" 07/11. Chưa có lịch. Video: `~/Movies/podcast-hl-muc-tieu-A`, Drive `Video-xong/Muc-tieu-su-menh-clip-1.mp4`. Kế hoạch và 4 câu chọn ý: `~/Movies/highlight-muc-tieu/` | Chữ đăng bài là nháp: đưa gợi ý cho David chọn khi lên lịch. Khung bìa đề xuất giây 1,5 |
 | Rà soát video cũ TikTok và fanpage | Có danh sách đề xuất ẩn trong [ra-soat-video-cu.md](dang-lam/ra-soat-video-cu.md) và [nghien-cuu-trang-ca-nhan.md](dang-lam/nghien-cuu-trang-ca-nhan.md). Ẩn là để riêng tư, không xoá | Chờ David quyết |
 | Làm lại kho 100 video | Kho cũ còn phần kinh doanh đã bỏ | Làm lại theo ba tầng: bản thân → công việc → mối quan hệ |
 
@@ -21,7 +21,7 @@ Chặng 1 của nghề: 1–3 ca thật online, miễn phí đổi lời chứng
 
 1. **Cắt lại Clip 1 và 2 của Đi trainer theo luật mới?** Chấm theo 4 câu của skill mới: Clip 1 không đạt (dừng ở cú sốc, chưa có lời giải, không có gì mang về); Clip 2 thiếu bối cảnh ("anh ấy" là ai); Clip 3 đạt, hơi vướng chữ "câu chuyện này". Hôm 07/11 David nói "mọi thứ ok" nhưng không trả lời riêng câu này, nên **chưa được cắt và chưa coi là giữ nguyên**: hỏi lại một câu. Nếu cắt lại thì chốt lại mẫu chuẩn và kế hoạch đăng.
 2. **"Bạn ấy" hay "bạn em" ở khoảng 5:12 video dài Mục tiêu?** Máy chép hai lần ra khác nhau. Clip dùng "bạn ấy", phụ đề video dài còn "bạn em". Nếu David xác nhận "bạn ấy" thì sửa phụ đề video dài và render lại phần phụ đề.
-3. **Kế hoạch đăng Đi trainer:** TikTok không ghi link, và giữ nguyên chữ từng bài ([ke-hoach-dang.md](dang-lam/video-di-trainer/ke-hoach-dang.md)).
+3. **Kế hoạch đăng Đi trainer:** TikTok không ghi link, và giữ nguyên chữ từng bài (`~/Movies/podcast-dji-20261105/ke-hoach-dang.md`).
 
 ## Việc skill vừa đổi (07/11)
 
@@ -46,8 +46,8 @@ Clip ngắn chọn ý bằng 4 câu: bối cảnh, ý trọn, mang về, chừa 
 
 ## Sao lưu
 
-Xem [SETUP.md](SETUP.md) mục 1. Drive `Sao-luu-Claude-2026-11-07` giữ tài liệu claude.ai và dự án dựng video.
+Xem [SETUP.md](SETUP.md) mục 1. Drive `Sao-luu-Claude-2026-11-07` giữ tài liệu claude.ai và dự án dựng video. Từ 07/11 repo chỉ giữ não, việc dở và mẫu; bản thành quả từng có trên repo đã chép về `~/Movies/_luu-tu-repo/` trên máy David.
 
 ## App notion
 
-Dự án riêng, code ở `~/Documents/App notion`. Đều riêng tư trên GitHub: `Covandieuhanh/notion-db`, `notion-backend`, `notion-frontend`, `app-notion-goc`. File `.env` chỉ ở trên máy. Trạng thái sản phẩm xem bộ nhớ [notion-v2-spec-plan](nao/bo-nho/notion-v2-spec-plan.md); ghi chép này từ tháng 8/2026, cần kiểm tra lại trên máy.
+Đã bỏ ngày 07/11/2026, thư mục trên máy đã vào Thùng rác. Code còn trên GitHub (riêng tư): `Covandieuhanh/notion-db`, `notion-backend`, `notion-frontend`, `app-notion-goc`. File `.env` chỉ ở trên máy. Trạng thái sản phẩm xem bộ nhớ [notion-v2-spec-plan](nao/bo-nho/notion-v2-spec-plan.md); ghi chép này từ tháng 8/2026, cần kiểm tra lại trên máy.

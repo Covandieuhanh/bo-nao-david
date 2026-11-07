@@ -1,6 +1,6 @@
 # Kho 100 video — David Trần (chữ trích từ PDF)
 
-Bản gốc có bố cục: `kho-100-video.pdf`. Trong bản chữ này, các ô của bảng nằm trên từng dòng riêng.
+Bản gốc có bố cục là file PDF, để trên máy, không đưa lên repo. Trong bản chữ này, các ô của bảng nằm trên từng dòng riêng.
 
 warning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.
 Kho 100 video
