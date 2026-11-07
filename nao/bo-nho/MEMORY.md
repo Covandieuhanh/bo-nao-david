@@ -29,4 +29,4 @@
 - [Podcast phủ hình 30%](podcast-mat-do-hinh-30.md) — motion graphic khoảng 30% thời lượng, cân theo nội dung; chụp thử cho David chốt rồi mới render (2026-11-06)
 - [Dọn Documents 07/11](documents-don-dep-2026-11-07.md) — App notion đã bỏ; mở phiên ở ~/Documents/David.Claude (2026-11-07)
 - [GitHub chỉ giữ não](github-chi-giu-nao.md) — repo chỉ hồ sơ, luật, bộ nhớ, skill, việc dở, mẫu; thành quả ở máy và Drive (2026-11-07)
-- [Tên không dấu dùng tiếng Anh](naming-english-if-unaccented.md) — tên file/thư mục không dấu thì đặt tiếng Anh chuẩn; tên cũ giữ nguyên (2026-11-07)
+- [Đặt tên không dấu](dat-ten-khong-dau.md) — mọi tên đều tiếng Việt không dấu, chữ thường, gạch nối; đồng nhất, không trộn tiếng Anh (2026-11-07)

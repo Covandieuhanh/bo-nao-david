@@ -20,11 +20,11 @@ MA="$(printf '%s' "$REPO" | sed 's#[^A-Za-z0-9]#-#g')"
 MEM="${NAO_MEMORY_DIR:-}"
 [ -z "$MEM" ] && [ -f "$CL/projects/$MA/memory/MEMORY.md" ] && MEM="$CL/projects/$MA/memory"
 [ -z "$MEM" ] && for d in $(ls -dt "$CL"/projects/*/memory 2>/dev/null); do [ -f "$d/MEMORY.md" ] && { MEM="$d"; break; }; done
-# Ghi nhớ tên bắt đầu "local-" chỉ đúng cho một máy: không đưa lên, bỏ cả dòng của nó trong MEMORY.md.
+# Ghi nhớ tên bắt đầu "may-" chỉ đúng cho một máy: không đưa lên, bỏ cả dòng của nó trong MEMORY.md.
 if [ -n "${MEM:-}" ]; then
-  rsync -a "${LOAI[@]}" --exclude 'local-*' --exclude MEMORY.md "$MEM/" "$REPO/nao/bo-nho/"
-  grep -v '](local-' "$MEM/MEMORY.md" > "$REPO/nao/bo-nho/MEMORY.md" || true
-  rm -f "$REPO"/nao/bo-nho/local-*
+  rsync -a "${LOAI[@]}" --exclude 'may-*' --exclude MEMORY.md "$MEM/" "$REPO/nao/bo-nho/"
+  grep -v '](may-' "$MEM/MEMORY.md" > "$REPO/nao/bo-nho/MEMORY.md" || true
+  rm -f "$REPO"/nao/bo-nho/may-*
 fi
 
 [ -f "$HOME/Movies/_so-danh-muc/danh-muc.md" ] && cp "$HOME/Movies/_so-danh-muc/danh-muc.md" "$REPO/dang-lam/danh-muc.md"

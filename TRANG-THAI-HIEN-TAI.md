@@ -46,7 +46,7 @@ Clip ngắn chọn ý bằng 4 câu: bối cảnh, ý trọn, mang về, chừa 
 
 ## Sao lưu
 
-Xem [SETUP.md](SETUP.md) mục 1. Drive `Sao-luu-Claude-2026-11-07` giữ tài liệu claude.ai và dự án dựng video. Từ 07/11 repo chỉ giữ não, việc dở và mẫu; bản thành quả từng có trên repo đã chép về `~/Movies/_Repo-Archive/` trên máy David.
+Xem [SETUP.md](SETUP.md) mục 1. Drive `Sao-luu-Claude-2026-11-07` giữ tài liệu claude.ai và dự án dựng video. Từ 07/11 repo chỉ giữ não, việc dở và mẫu; bản thành quả từng có trên repo đã chép về `~/Movies/_luu-tu-repo/` trên máy David.
 
 ## App notion
 
