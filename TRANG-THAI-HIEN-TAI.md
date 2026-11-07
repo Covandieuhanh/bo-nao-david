@@ -46,7 +46,6 @@ GitHub là bản gốc, đẩy ngay mọi cái mới (luật 6 trong `AGENTS.md`
 - Tháng 11/2026 David sang Đức. Trước khoản thu đầu tiên: hỏi cơ quan ngoại kiều về làm tự do song song và tư vấn thuế ở Đức. Không tư vấn thuế hay pháp lý thay họ.
 - Cần tìm: người giữ nhịp kênh video.
 - Sách CCL Press David tự mua, không dùng bản trôi nổi.
-- Hồ sơ CCL trong `nao/David.md` mục 6 không mở được từ tài khoản ngày 07/11 và chưa có bản sao. Hỏi David nó ở tài khoản nào.
 
 ## Sao lưu
 

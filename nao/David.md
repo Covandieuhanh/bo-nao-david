@@ -98,7 +98,7 @@ Tìm hiểu → mời → phiếu đầu vào → thống nhất → làm trên 
 
 ## 6. Nghiên cứu CCL
 
-- **Tài liệu chính:** "Hồ sơ CCL – Center for Creative Leadership (bản tiếng Việt)", 13 phần, đã chuẩn hoá thuật ngữ: https://claude.ai/artifact/Vx9qR7XrhFkK4wW68BhPfN
+- **Tài liệu chính, tham chiếu chuẩn** (David chốt 07/11/2026): "Hồ sơ CCL – Center for Creative Leadership (bản tiếng Việt)", 10 phần, 04/11/2026, ở `tham-chieu/ccl/` trong repo (PDF gốc + bản chữ `.md`). Dùng làm hình mẫu chuẩn khi xây phương pháp ba tầng và nhân hiệu trainer, rồi nâng cấp dần. Thuật ngữ dịch theo Phần 10.1 của hồ sơ. Link claude.ai cũ (bản ghi "13 phần") không còn mở được, bỏ.
 - Tài liệu cũ "Gốc CCL – Bộ khung dẫn mình, dẫn người" để nguyên, không dùng làm tài liệu chính.
 - Đã đối chiếu bản tổng hợp của GPT và Perplexity; bản Gemini không dùng.
 - Sách CCL Press sẽ tự mua: *Be the Boss Everyone Wants to Work For*, *Feedback That Works*, *Active Listening*, *Delegating Effectively*, *Better Conversations Every Day*, *Learning Agility*.

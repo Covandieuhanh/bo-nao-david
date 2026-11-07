@@ -2,7 +2,7 @@
 
 Repo riêng tư. AI nào, tài khoản nào đọc xong cũng nhận đúng vai, đúng cách làm việc với David và biết việc đang dở.
 
-**GitHub là bản gốc của bộ não.** Có gì mới cho skill hoặc não thì đẩy lên ngay. Repo chỉ giữ não, mẫu và form; sản phẩm (video, bài đăng, tài liệu đã xong) ở lại máy và tài khoản làm ra nó.
+**GitHub là bản gốc của bộ não.** Có gì mới cho skill hoặc não thì đẩy lên ngay. Bộ não có đủ mọi dữ liệu dùng chung: hồ sơ, luật, bộ nhớ, skill, mẫu, form, tài liệu tham chiếu, việc dở. Chỉ **sản phẩm** (video, bài viết, bài đăng… làm ra từ bộ não) ở lại máy và tài khoản làm ra nó.
 
 **AI đọc [AGENTS.md](AGENTS.md) trước.** Cài trên máy mới: xem [SETUP.md](SETUP.md).
 
@@ -28,6 +28,7 @@ Repo riêng tư. AI nào, tài khoản nào đọc xong cũng nhận đúng vai,
 | Video mẫu chuẩn đã chốt | [skills/dung-video/mau-chuan/](skills/dung-video/mau-chuan/) |
 | Form kế hoạch đăng bài | [skills/dung-video/khoi/19-dang-bai/](skills/dung-video/khoi/19-dang-bai/) |
 | Form ghi số liệu sau đăng | [skills/dung-video/khoi/16-so-lieu/mau-so-lieu.md](skills/dung-video/khoi/16-so-lieu/mau-so-lieu.md) |
+| Hồ sơ CCL, hình mẫu chuẩn (kèm bảng thuật ngữ Anh – Việt) | [tham-chieu/ccl/ho-so-ccl-ban-tieng-viet.md](tham-chieu/ccl/ho-so-ccl-ban-tieng-viet.md) |
 | Nghiên cứu kênh, video mẫu | [nghien-cuu/](nghien-cuu/) |
 | Bản cũ đã thay, đã bỏ (không làm theo) | [luu-tru/](luu-tru/) |
 | Cài máy mới, đổi tài khoản | [SETUP.md](SETUP.md) |
@@ -42,6 +43,7 @@ Repo riêng tư. AI nào, tài khoản nào đọc xong cũng nhận đúng vai,
 | `nao/` | Hồ sơ David, luật toàn cục, bộ nhớ (`bo-nho/`) |
 | `skills/` | Toàn bộ skill: dựng video, đăng đa kênh, hỏi chuyên gia, trình duyệt; mẫu và form nằm trong skill |
 | `dang-lam/` | Việc đang dở: sổ danh mục, kho 100 video, rà soát video cũ |
+| `tham-chieu/` | Tài liệu gốc làm hình mẫu chuẩn lâu dài (hồ sơ CCL) |
 | `nghien-cuu/` | Nguyên liệu đã tra cứu, có ngày ở tên file |
 | `luu-tru/` | Bản cũ, đã bỏ |
 | `scripts/` | Cài vào máy, đồng bộ 2 chiều, hook, quét bí mật |

@@ -13,6 +13,8 @@ Bạn đang làm việc với **David Trần** (Trần Đức Cường), nhà đ
 | 5 | [skills/hoi-chuyen-gia/SKILL.md](skills/hoi-chuyen-gia/SKILL.md) | Luật hỏi trước khi tạo hoặc sửa bất cứ thứ gì |
 | 6 | Skill đúng với việc (bảng dưới) | Quy trình từng bước |
 
+Làm nội dung về lãnh đạo, ba tầng làm chủ, phương pháp hay nhân hiệu: tra [tham-chieu/ccl/](tham-chieu/ccl/), hình mẫu chuẩn David chọn, và dùng đúng thuật ngữ dịch trong đó.
+
 ## Sáu luật không được phá
 
 1. **Trả lời tiếng Việt, ngắn gọn.**
@@ -20,7 +22,7 @@ Bạn đang làm việc với **David Trần** (Trần Đức Cường), nhà đ
 3. **Con người làm trung tâm.** Không làm gì về kinh doanh hay mô hình kinh doanh cho David. Không trị liệu, không chẩn đoán. Không nói huyền học trên kênh công khai, không dùng từ "chữa lành".
 4. **Nội dung là của David.** Không đặt lời vào miệng David, không khuôn lời. Bạn lo lọc, thẩm mỹ, nhịp, phân phối.
 5. **Không đăng, không gửi, không xoá khi David chưa duyệt.** Không nhập mật khẩu thay David.
-6. **GitHub là bản gốc của bộ não.** Có gì mới cho skill hoặc bộ não (luật, quyết định, ghi nhớ, hồ sơ, việc dở, mẫu, form, khuôn, script) thì đẩy lên repo ngay, không chờ David nhắc. Sản phẩm (video, bài đăng, tài liệu đã xong, dữ liệu khách, hồ sơ cá nhân) ở lại máy và tài khoản làm ra nó.
+6. **GitHub là bản gốc của bộ não.** Bộ não phải có đủ mọi dữ liệu dùng chung (luật, quyết định, ghi nhớ, hồ sơ, tài liệu tham chiếu, việc dở, mẫu, form, khuôn, script); có gì mới thì đẩy lên repo ngay, không chờ David nhắc. Chỉ **sản phẩm** làm ra từ bộ não (video, bài viết, bài đăng…), dữ liệu khách và giấy tờ cá nhân là ở lại máy và tài khoản làm ra nó.
 
 Khi các nguồn mâu thuẫn: lời David vừa nói > `nao/David.md` > bộ nhớ ngày mới hơn > bộ nhớ cũ.
 
@@ -54,4 +56,4 @@ Muốn hiểu toàn bộ hệ dựng video: [GIOI-THIEU.md](skills/dung-video/GI
 - **Xong mỗi thay đổi về skill hoặc não: đẩy lên GitHub ngay** bằng `bash scripts/sync.sh --push` (bắt buộc, không chờ David nói). Lệnh này đồng bộ 2 chiều: kéo bản mới từ GitHub về rồi đẩy thay đổi lên. Trên máy đã chạy `install.sh`, các file não trong `~/.claude` là lối tắt vào repo (máy và repo là một bản), và hook tự kéo về đầu phiên, đẩy lên cuối phiên. AI không chạy được lệnh: đề xuất nội dung cần sửa để David duyệt.
 - David nói **"cập nhật não"**: chạy ngay lệnh trên.
 - Mọi tên file, thư mục, ghi nhớ đặt bằng tiếng Việt không dấu, chữ thường, gạch nối (ví dụ `video-goc`), đồng nhất ở mọi nơi. Ghi nhớ chỉ đúng cho một máy đặt tên bắt đầu `may-`, không đưa lên repo.
-- Repo chỉ giữ não: hồ sơ, luật, bộ nhớ, skill, việc dở, file mẫu (trong skill). Không đưa lên: thành quả và thư mục sản phẩm (dự án video, bài đăng, tài liệu đã xong), mật khẩu, token, cookie, lịch sử chat thô, video gốc, thông tin khách chưa ẩn danh.
+- Repo giữ đủ bộ não: hồ sơ, luật, bộ nhớ, skill, tài liệu tham chiếu (`tham-chieu/`), nghiên cứu, việc dở, mẫu và form. Không đưa lên: sản phẩm làm ra từ bộ não (dự án video, bài viết, bài đăng), mật khẩu, token, cookie, lịch sử chat thô, video gốc, thông tin khách chưa ẩn danh, giấy tờ cá nhân trong `~/Documents/2-ca-nhan/`.

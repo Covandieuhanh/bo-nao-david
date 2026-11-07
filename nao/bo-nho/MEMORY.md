@@ -13,7 +13,7 @@ Tên file bắt đầu bằng nhóm: `luat-` cách làm việc với David · `n
 ## Bộ não và GitHub
 
 - [Đặt tên không dấu](nao-dat-ten-khong-dau.md) — mọi tên đều tiếng Việt không dấu, chữ thường, gạch nối; đồng nhất, không trộn tiếng Anh (2026-11-07)
-- [GitHub là bản gốc bộ não](nao-github-ban-goc.md) — BẮT BUỘC đẩy ngay mọi cái mới cho skill/não; chỉ mẫu/form/luật; sản phẩm ở máy làm ra nó; repo xếp gọn (2026-11-07)
+- [GitHub là bản gốc bộ não](nao-github-ban-goc.md) — BẮT BUỘC đẩy ngay; não có đủ dữ liệu dùng chung (kể cả tham chiếu như CCL); chỉ sản phẩm ở máy làm ra nó; Mac ↔ GitHub 2 chiều (2026-11-07)
 - [Hồ sơ David + bộ lọc nội dung](nao-ho-so-va-bo-loc.md) — ~/.claude/David.md, khối 00, kenh.json, sổ danh mục; đăng bài chờ "bắt đầu làm" (2026-11-05)
 - [Bộ não David.Claude](nao-repo-david-claude.md) — repo riêng tư dùng chung cho mọi AI; "cập nhật não" = scripts/sync.sh --push (2026-11-05)
 

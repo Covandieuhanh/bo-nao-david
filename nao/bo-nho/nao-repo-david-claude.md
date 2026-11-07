@@ -10,7 +10,7 @@ metadata:
 
 Bộ não dùng chung: https://github.com/Covandieuhanh/David.Claude (Private), bản trên máy `~/Documents/David.Claude`. Lập 05/11/2026.
 
-**Phạm vi David chốt:** bộ não = thấu hiểu David là gì, làm việc thế nào, skill, và việc đang làm (kho 100 video có; hồ sơ CCL và tài liệu đã làm xong thì không).
+**Phạm vi David chốt:** bộ não = thấu hiểu David là gì, làm việc thế nào, skill, tài liệu tham chiếu và việc đang làm. Hồ sơ CCL đã đưa lên `tham-chieu/ccl/` ngày 07/11/2026 (đổi quyết định cũ). Sản phẩm thì không.
 
 **Khi David nói "cập nhật não":** sửa `TRANG-THAI-HIEN-TAI.md` nếu trạng thái đổi, rồi chạy `bash ~/Documents/David.Claude/scripts/sync.sh --push`. Script quét bí mật, commit, kéo bản mới từ GitHub về rồi đẩy lên (2 chiều). Không còn bước chép vì trên máy các file não là lối tắt vào repo (do `scripts/install.sh` tạo).
 
