@@ -9,7 +9,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from _common import load
 
 P = os.path.expanduser(sys.argv[1])
-scenes = [s for s in load(P)["scenes"] if s.get("type") == "nhan"]
+scenes = [s for s in load(P)["scenes"] if s.get("type") in ("nhan", "bocuc")]
 fj = os.path.join(P, "check/faces/faces.json")
 frames = json.load(open(fj)) if os.path.exists(fj) else []
 STEP = 0.5

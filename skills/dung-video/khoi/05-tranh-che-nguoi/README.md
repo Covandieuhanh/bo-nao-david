@@ -1,9 +1,9 @@
-# Khối 05-tranh-che-nguoi: Tránh che người: lớp phủ không chạm mặt + đầu + vai + ngực; không có chỗ → tự toàn màn hình ≤ 4 s
+# Khối 05-tranh-che-nguoi: Tránh che người: lớp phủ không chạm mặt + đầu + vai + ngực; không có chỗ → tự toàn màn hình (dài theo nội dung)
 
 **Dùng trong:** làm video, ghép vlog, highlight người nói
 **Đầu vào:** check/faces/*.json + scenes.js / edl.js
 **Đầu ra:** placement.js (1 video) · guard.js (ghép) + check/faces/{placement,guard}.md
-**Tham số hồ sơ:** chung: toan_man_max_s, mat_hien_min, hai_trang_thai
+**Tham số hồ sơ:** chung: hai_trang_thai (false từ 07/11/2026). Không còn trần giây / tỷ lệ mặt
 **Sửa khối này → chạy lại:** 17 (render lại cảnh đổi chỗ)
 
 **File thật (code, một bản duy nhất):**
@@ -15,7 +15,7 @@
 ## Luật
 - Lớp phủ (không toàn màn hình) **không chạm mặt + đầu + vai + ngực** người nói; chỉ chạm tay / bụng / nền thì được.
 - Không có vị trí / cỡ nào tránh được → **tự thành cảnh toàn màn hình** (nền tối + quầng cam, nội dung phóng ra giữa, phụ đề vẫn
-  chạy), dài tối đa `toan_man_max_s` để mặt vẫn hiện ≥ `mat_hien_min`.
+  chạy), dài theo nội dung. Muốn vừa thấy người vừa thấy ý → dùng bố cục `bocuc` (`o-nguoi`, `the-canh`) thay vì lớp phủ.
 - Tít ghim (highlight) che đầu → tự ẩn (David chốt 2026-11-04).
 - Giữ lớp phủ cho một cảnh: `place: {full: false}` (1 video) · `keep: true` (OVERLAYS, ghép).
 - Lệnh: 1 video `zsh video-style-edit/scripts/face_place.sh "$P"` sau mỗi lần sửa scenes.js; ghép `python3 -I video-style-edit/scripts/lift.py "$P"`

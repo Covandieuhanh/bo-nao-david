@@ -52,11 +52,12 @@ kênh lớn, ghi lý do vào changelog. Mục tiêu mỗi video: người xem **
 ## 4. Hình
 - **2 TRẠNG THÁI** (David chốt 2026-11-04): (A) người + phụ đề · (B) cảnh minh hoạ `illus` toàn màn hình + phụ đề. Không chữ to / thẻ /
   câu trích đè lên người; ngoại lệ: thẻ tít mở đầu 0–2,5 s, màn chốt và điểm nhấn trên người (dưới). Chi tiết: khối 07 (`khoi/07-canh-minh-hoa`).
-- **ĐIỂM NHẤN TRÊN NGƯỜI** (David chốt 2026-11-07, nới luật 2 trạng thái): mọi video phải có motion graphics, hiểu là điểm nhấn kéo mắt người xem — nhiều loại, không chỉ toàn màn hình. Cảnh `nhan` được đè lên người, không che mặt: zoom dồn vào mặt ở câu đắt (`zoom` 1,12–1,2), làm tối viền (`toi`), chữ nhấn ≤ 4 chữ trích lời (`text`) hoặc biểu tượng nhỏ (`icon`) bật cạnh mặt. Mỗi video trộn loại: thẻ tít, cảnh toàn màn hình, điểm nhấn trên người, màn chốt (video ~4 phút: 8–10 điểm nhấn, ~4 trên người). Khối 07.
+- **ĐIỂM NHẤN TRÊN NGƯỜI** (David chốt 2026-11-07, nới luật 2 trạng thái): mọi video phải có motion graphics, hiểu là điểm nhấn kéo mắt người xem — nhiều loại, không chỉ toàn màn hình. Cảnh `nhan` được đè lên người, không che mặt: zoom dồn vào mặt ở câu đắt (`zoom` 1,12–1,2), làm tối viền (`toi`), chữ nhấn ≤ 4 chữ trích lời (`text`) hoặc biểu tượng nhỏ (`icon`) bật cạnh mặt. Mỗi video trộn loại theo nội dung, không số cố định. Khối 07.
+- **BỐ CỤC TỰ CÂN** (David chốt 2026-11-07, thay luật 2 trạng thái): không con số bắt buộc về độ dài cảnh, tỷ lệ mặt / đồ hoạ, số cảnh; Claude chọn bố cục từ `trinh-bay/bo-cuc.md` sao cho hợp nội dung và người xem dễ nhận. Ngang tự do; dọc mỗi lúc ít thứ. Học video mẫu mới: chỉ học trình bày (bố cục, thứ tự hiện, cách nối, âm thanh), không đổi thẩm mỹ — quy trình ở `trinh-bay/README.md`.
 - **Không che người nói** (face_place / LOW_Y), **không đè phụ đề** (chặn cứng ở mọi template).
 - **Che mặt / thân trên → TOÀN MÀN HÌNH** (David chốt 2026-11-04): lớp chữ/hiệu ứng không có chỗ trống tránh được mặt, đầu, vai,
-  ngực người nói → tự thành cảnh toàn màn hình (nền tối + quầng cam, nội dung phóng ra giữa, phụ đề vẫn chạy), dài tối đa 4 s để mặt
-  vẫn hiện ≥ 60% video. Chỉ chạm tay/bụng/nền → giữ lớp phủ. Tít ghim (highlight) che đầu → tự ẩn. 1 video: `face_place.sh` tự làm;
+  ngực người nói → tự thành cảnh toàn màn hình (nền tối + quầng cam, nội dung phóng ra giữa, phụ đề vẫn chạy), dài theo nội dung
+  (không trần cứng). Chỉ chạm tay/bụng/nền → giữ lớp phủ. Tít ghim (highlight) che đầu → tự ẩn. 1 video: `face_place.sh` tự làm;
   ghép (vlog, highlight): `python3 -I video-style-edit/scripts/overlay_guard.py <dự án>` sau `lift.py` và sau mỗi lần sửa edl.js.
   Giữ lớp phủ cho một cảnh: `place: {full: false}` (1 video) hoặc `keep: true` (OVERLAYS). Người/vật chính nằm thấp → nâng khung (`lift.py`).
 - Vùng an toàn dọc 1080×1920: x 70–900, y 210–1420. Chữ tiếng Việt đủ dấu, không chồng dòng (`VN`, chừa 0,5 em trên / 0,32 em dưới).

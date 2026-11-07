@@ -1,4 +1,4 @@
-# Khối 07-canh-minh-hoa: Cảnh minh hoạ toàn màn hình (2 trạng thái) + điểm nhấn trên người: biểu tượng vẽ, số chạy, sơ đồ + nhãn ≤ 3 chữ; ảnh thật chỉ khi cần
+# Khối 07-canh-minh-hoa: Bố cục tự cân (lớp trình bày) + cảnh minh hoạ + điểm nhấn trên người: biểu tượng vẽ, số chạy, sơ đồ + nhãn ≤ 3 chữ; ảnh thật chỉ khi cần
 
 **Dùng trong:** cả 4
 **Đầu vào:** lời (mốc từ words.srt)
@@ -12,9 +12,12 @@
 - `video-style-edit/scripts/openverse.py`
 - `video-style-edit/references/scene-design.md`
 
-## Luật 2 TRẠNG THÁI (David chốt 2026-11-04 — học Wynn Trần, Pháp Hoà, Hành trình kỷ luật; Mayer: thừa chữ làm rối)
-Video chỉ có 2 trạng thái: **(A) người thật + phụ đề** · **(B) cảnh minh hoạ toàn màn hình + phụ đề**. Không chữ to / thẻ / câu trích
-đè lên người. Ngoại lệ: **thẻ tít mở đầu 0–2,5 s** (khối 06) và màn chốt (khối 08). Hồ sơ `hai_trang_thai = true`.
+## Bố cục tự cân (David chốt 2026-11-07 — thay luật 2 trạng thái ngày 04/11)
+Không con số bắt buộc. Mỗi đoạn chọn bố cục từ **`../../trinh-bay/bo-cuc.md`** theo 4 câu hỏi ở `../../trinh-bay/README.md`
+(cần thấy người hay thấy ý · ý dài hay ngắn · khung còn chỗ không · trước / sau là gì). Ngang tự do; dọc mỗi lúc ít thứ. Ghi lý do
+một dòng mỗi cảnh vào `ke-hoach-canh.md`. Bố cục mới học được → thêm vào `trinh-bay/` + `BoCuc.jsx`, không đổi thẩm mỹ.
+Bố cục đã có code: người + phụ đề · `nhan` (dưới đây) · **`bocuc`** (`the-canh` thẻ cạnh mặt · `o-nguoi` người vào ô bo góc + `illus` /
+`diagram` / thẻ chữ · `chuong` màn chương — `components/BoCuc.jsx`) · `illus` / `diagram` toàn màn hình. Chữ trong thẻ: nguyên văn.
 
 ## Điểm nhấn trên người — `nhan` (David chốt 2026-11-07, nới luật trên)
 **Mọi video đều phải có motion graphics** — hiểu là điểm nhấn kéo mắt người xem, có nhiều loại, không chỉ cảnh toàn màn hình.
@@ -29,8 +32,8 @@ Ví dụ: `{id: 'n1', type: 'nhan', start: 37.4, end: 42.1, props: {zoom: 1.15, 
 Không che mặt: `nhan_place.py` (face_place.sh) ghi mặt từng cảnh vào `mat.js`; Nhan.jsx đặt chữ / biểu tượng bên phía trống, khung dọc hẹp → dưới cằm;
 render_preview.py zoom video gốc canh giữa mặt. Đoạn chạm lằn ranh: không dùng. Vlog / highlight (khung ghép): dùng `zoom` + `pow` có sẵn, `keep: true`.
 
-**Cảnh B = `illus`** (`thu-vien-hinh/Illus.jsx`, một bản cho mọi khung dựng): hình động minh hoạ ĐÚNG Ý đang nói + **nhãn ≤ 3 chữ**
-(tên riêng / con số / cụm đắt — trích lời), 3–5 s (`canh_minh_hoa.do_dai_s`), mật độ theo hồ sơ loại (`mat_do_canh_s`). Phụ đề vẫn chạy.
+**Cảnh B = `illus`** (`thu-vien-hinh/Illus.jsx`, một bản cho mọi khung dựng): hình động minh hoạ ĐÚNG Ý đang nói + **nhãn ngắn**
+(tên riêng / con số / cụm đắt — trích lời), dài và dày theo nội dung. Phụ đề vẫn chạy.
 | mode | Dùng khi người nói… | items |
 |---|---|---|
 | `single` | nêu một vật / việc / khái niệm | 1 biểu tượng |
@@ -46,7 +49,7 @@ Viết ở đâu:
 Biểu tượng: `thu-vien-hinh/Icons.jsx` (~60 hình; thiếu thì vẽ thêm lưới 64×64 cùng kiểu nét — thêm ở thư viện là cả 4 loại có).
 
 Tự động (không cần nhớ): lớp chữ cũ (kinetic, lower, listItem, pow, chips, location, nameCard…) nếu vẫn viết → khung dựng tự vẽ
-toàn màn hình ≤ 4 s (`toan_man_max_s`); thẻ `card` / `action` bỏ câu trích dài (chỉ hình + nhãn `label`); tít ghim tắt. Muốn giữ
+toàn màn hình khi che người (dài theo nội dung); thẻ `card` / `action` bỏ câu trích dài (chỉ hình + nhãn `label`); tít ghim tắt. Muốn giữ
 lớp phủ một cảnh: đặt tay `place` (1 video) / `keep: true` (ghép). **Ưu tiên viết `illus`** — lớp chữ tự chuyển chỉ là lưới an toàn.
 
 ## Cách làm (chuyển nguyên văn từ SKILL.md cũ — ngày 2026-11-04)
@@ -70,8 +73,8 @@ thì phải nằm ở chỗ trống — không cố định một vị trí. Sau
 zsh $SKILL/scripts/face_place.sh "$P"     # lần đầu dò mặt ~1 phút / 5 phút video (Vision), sau đó chỉ tính lại
 ```
 → `motion/src/placement.js` (vị trí + cỡ từng cảnh) và `check/faces/placement.md`. Đọc bảng: cột "Lớp phủ" là đáy (mặc định),
-đỉnh hay y giữa; cảnh không có chỗ tránh được **mặt + đầu + vai + ngực** → script **tự chuyển toàn màn hình** (tối đa 4 s, luat-chung 4)
-— xem dòng tổng cuối bảng, cộng các cảnh toàn màn hình khác phải để mặt hiện ≥ 60%. Muốn giữ lớp phủ: `place: {top: <px>, scale: 0.6}`
+đỉnh hay y giữa; cảnh không có chỗ tránh được **mặt + đầu + vai + ngực** → script **tự chuyển toàn màn hình** (luat-chung 4)
+— xem dòng tổng cuối bảng, tự cân tỷ lệ người / đồ hoạ theo nội dung (muốn giữ người: dùng `bocuc`). Muốn giữ lớp phủ: `place: {top: <px>, scale: 0.6}`
 hoặc `place: {full: false}` trong cảnh (thứ tự khoá: `id, type, start, end, place, props`).
 Cảnh toàn màn hình (`FULL`, gồm cả thẻ toàn cảnh) che hết hình nên không cần tránh. Ngang pillar không cần (lớp phủ ở cột trái).
 

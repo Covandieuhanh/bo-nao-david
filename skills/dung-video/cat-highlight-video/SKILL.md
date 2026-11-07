@@ -171,7 +171,7 @@ PY=$(zsh $POD/scripts/py_setup.sh); $PY $POD/scripts/speakers.py "$E"; $PY $POD/
 
 ## Tiêu chí đạt
 - Mỗi clip: đạt đủ bốn câu chọn ý (`chon_y` trong phuong-an.json), báo cáo ghi lại 4 câu + lời đọc nối + mốc đoạn ghép; có lời kêu gọi nguyên văn trừ nhánh podcast đồ hoạ dọc
-- 0–2,5 s thẻ tít; sau đó chỉ 2 trạng thái; thẻ cuối "XEM BẢN ĐẦY ĐỦ" + tên tập gốc; kiểm lời khớp
+- 0–2,5 s thẻ tít; sau đó bố cục tự cân (dọc: mỗi lúc ít thứ, `../trinh-bay/`); thẻ cuối "XEM BẢN ĐẦY ĐỦ" + tên tập gốc; kiểm lời khớp
 - dang-bai.md: lịch đăng, mốc bìa 0,3 s, mô tả, bình luận ghim · so-lieu.md
 
 ## Điều không làm

@@ -28,7 +28,7 @@ const lastOf = (o) => {
 
 export const holdEnds = (list, limit, HS) => {
   const K = (HS && HS.canh_minh_hoa) || {};
-  const giu = K.giu_sau_s ?? 1.2, moi = K.giu_moi_chu_s ?? 0.3, vao = K.hien_vao_s ?? 0.5, ra = K.mo_ra_s ?? 0.3, mx = K.dai_max_s ?? 6;
+  const giu = K.giu_sau_s ?? 1.2, moi = K.giu_moi_chu_s ?? 0.3, vao = K.hien_vao_s ?? 0.5, ra = K.mo_ra_s ?? 0.3, mx = K.dai_max_s ?? Infinity;   // không trần cứng (2026-11-07)
   const starts = list.filter((o) => HOLD.has(o.type)).map((o) => o.start).sort((a, b) => a - b);
   return list.map((o) => {
     if (!HOLD.has(o.type) || o.keepEnd) return o;

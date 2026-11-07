@@ -36,7 +36,7 @@ const enter = (mode, i, p, sz) => {
   return `scale(${0.82 + 0.18 * p})`;
 };
 
-export const Illus = ({mode = 'single', items = [], label = '', num = null, start = 0, len, compact = false}) => {   // compact: chừa giữa khung cho chữ chính
+export const Illus = ({mode = 'single', items = [], label = '', num = null, start = 0, len, compact = false, nen = true}) => {   // nen=false: không vẽ nền (lồng trong bố cục BoCuc)   // compact: chừa giữa khung cho chữ chính
   const f = useCurrentFrame();
   const {fps, width: W, height: H, durationInFrames} = useVideoConfig();
   const L = len || durationInFrames;
@@ -86,8 +86,8 @@ export const Illus = ({mode = 'single', items = [], label = '', num = null, star
   const grid = mode === 'list' && !land && n > 3;
   return (
     <AbsoluteFill style={{opacity: Math.min(ease(f, 0, 8), out)}}>
-      <AbsoluteFill style={{background: C.bg}} />
-      <AbsoluteFill style={{background: `radial-gradient(circle at 50% ${land ? 42 : 38}%, rgba(255,122,69,0.2), transparent 60%)`}} />
+      {nen && <AbsoluteFill style={{background: C.bg}} />}
+      {nen && <AbsoluteFill style={{background: `radial-gradient(circle at 50% ${land ? 42 : 38}%, rgba(255,122,69,0.2), transparent 60%)`}} />}
       <div style={{position: 'absolute', left: W * 0.06, right: W * 0.06, top: compact ? H * 0.115 : H * (land ? 0.07 : 0.1), height: compact ? H * 0.235 : H * (land ? 0.64 : 0.46), display: 'flex', flexDirection: 'column',
         alignItems: 'center', justifyContent: 'center', gap: M * 0.05}}>
         {numEl}

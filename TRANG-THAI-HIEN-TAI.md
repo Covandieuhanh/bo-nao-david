@@ -15,6 +15,7 @@ Chặng 1 của nghề: 1–3 ca thật online, miễn phí đổi lời chứng
 | Podcast "Mục tiêu và sứ mệnh" (8:40, render lại 06/11 bằng skill mới) | David nói "mọi thứ ok" 07/11. Chưa có lịch. Video: `~/Movies/podcast-muc-tieu-su-menh-v2`, Drive `Video-xong/podcast-muc-tieu-su-menh-v2.mp4`. Sổ danh mục đề xuất bản đầy đủ chỉ lên Facebook cá nhân vì đoạn 2:30–3:55 và 6:00–6:45 chạm lằn ranh | Mô tả và bình luận ghim còn theo câu chốt cũ, phải đổi theo câu mới "Mục tiêu của bạn đã có tên chưa? Bình luận **Vấn đề** nhé". Đưa gợi ý cho David chọn trước khi lên lịch. Chốt mẫu `podcast-dai-muc-tieu` trong `mau-chuan`, chạy `kiem-mau` |
 | Clip "Mục tiêu sứ mệnh" (76 giây, ghép 4:46–5:40 và 7:19–7:43) | David nói "mọi thứ ok" 07/11. Chưa có lịch. Video: `~/Movies/podcast-hl-muc-tieu-A`, Drive `Video-xong/Muc-tieu-su-menh-clip-1.mp4`. Kế hoạch và 4 câu chọn ý: `~/Movies/highlight-muc-tieu/` | Chữ đăng bài là nháp: đưa gợi ý cho David chọn khi lên lịch. Khung bìa đề xuất giây 1,5 |
 | Rà soát video cũ TikTok và fanpage | Có danh sách đề xuất ẩn trong [ra-soat-video-cu.md](dang-lam/ra-soat-video-cu.md) và [trang-ca-nhan-2026-11-06.md](nghien-cuu/trang-ca-nhan-2026-11-06.md). Ẩn là để riêng tư, không xoá | Chờ David quyết |
+| Làm lại video cũ (bỏ lời chào kênh cũ) theo skill mới | Skill đã có lớp trình bày `skills/dung-video/trinh-bay/` và bố cục `bocuc` (07/11). Đã đồng ý: lọc từng video qua khối 00, cắt lời chào cũ, Claude tự chọn ra bản gì, làm 1 video thử trước | **Chờ David gửi video cũ** (Drive `Video-goc` hoặc đường dẫn). Mấy video đầu chụp khung bố cục cho David duyệt trước khi render |
 | Làm lại kho 100 video | Kho cũ còn phần kinh doanh đã bỏ | Làm lại theo ba tầng: bản thân → công việc → mối quan hệ |
 
 ## Câu hỏi còn mở với David
@@ -26,6 +27,10 @@ Chặng 1 của nghề: 1–3 ca thật online, miễn phí đổi lời chứng
 ## Việc skill vừa đổi (07/11)
 
 Clip ngắn chọn ý bằng 4 câu: bối cảnh, ý trọn, mang về, chừa lại. Claude tự chọn ý, tít, câu màn cuối rồi báo, không còn số độ dài hay số clip cố định. Xem [video-clip-ngan-dung-doc-lap](nao/bo-nho/video-clip-ngan-dung-doc-lap.md). Chưa chạy lại `kiem-mau` sau khi sửa skill. Video dài và ảnh bìa vẫn đưa gợi ý để David chọn: [luat-goi-y-de-david-chon](nao/bo-nho/luat-goi-y-de-david-chon.md).
+
+## Skill video vừa đổi (07/11, khuya)
+
+Bỏ mọi con số cố định về bố cục (luật 2 trạng thái, toàn màn hình ≤ 4 s, mặt ≥ 60%, cảnh 3–5 s, nhãn ≤ 3 chữ, mật độ cảnh): bố cục tự cân theo nội dung, dọc mỗi lúc ít thứ. Thêm lớp trình bày `skills/dung-video/trinh-bay/` (tiêu chí học video mẫu: chỉ học trình bày, giữ thẩm mỹ) và `BoCuc.jsx` (`the-canh`, `o-nguoi`, `chuong`). Đã chụp thử ngang + dọc trên video đi bộ; **chưa render trọn một video bằng bố cục mới**. Xem [video-bo-cuc-tu-can](nao/bo-nho/video-bo-cuc-tu-can.md).
 
 ## Bộ não vừa đổi (07/11, tối)
 

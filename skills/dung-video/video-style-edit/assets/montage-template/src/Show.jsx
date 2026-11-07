@@ -802,7 +802,7 @@ export const Show = () => {
         let g = GUARD[String(i)];
         if (!g && TWO && !o.keep && o.type === 'pinTitle') g = {off: true};
         if (!g && TWO && !o.keep && CONV.has(o.type) && !(o.type === 'pow' && o.start < 0.5))
-          g = {full: true, end: o.held ? o.end : Math.min(o.end, o.start + (HS.toan_man_max_s || 4)), dy: o.y != null ? Math.round(H * 0.44 - (o.y + 120)) : -260};
+          g = {full: true, end: o.held ? o.end : Math.min(o.end, o.start + (HS.toan_man_max_s ?? Infinity)), dy: o.y != null ? Math.round(H * 0.44 - (o.y + 120)) : -260};
         if (g?.off) return null;   // tít ghim che đầu người nói / tắt theo 2 trạng thái → ẩn
         // TỰ CHUYỂN TOÀN MÀN HÌNH (David chốt 2026-11-04): lớp này sẽ che mặt / thân trên → nền tối che hình, nội dung dời ra giữa
         // khung + phóng nhẹ, dài tối đa 4 s (guard.end); phụ đề vẫn chạy

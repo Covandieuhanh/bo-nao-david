@@ -26,7 +26,7 @@ if (fs.existsSync(path.join(SRC, 'scenes.js'))) {
 let HS = {};
 try { HS = JSON.parse(read('hoso.json')); } catch {}
 const {holdEnds} = await imp('lib/giu.js');
-const K = HS.canh_minh_hoa || {}, MO_RA = K.mo_ra_s ?? 0.3, NHAN = K.nhan_max_chu ?? 3;
+const K = HS.canh_minh_hoa || {}, MO_RA = K.mo_ra_s ?? 0.3, NHAN = K.nhan_max_chu ?? Infinity;   // không trần cứng (2026-11-07)
 
 const icons = new Set([...read('lib/Icons.jsx').matchAll(/^\s*'?([a-zA-Z-]+)'?:\s*[\[(<'`]/gm)].map((m) => m[1]));
 const modes = (f) => new Set([...read(f).matchAll(/mode === '([a-z-]+)'/g)].map((m) => m[1]));
@@ -68,8 +68,9 @@ for (const raw of list) {
   if (big && last - s.start + 1 < need(big)) bao('P2', s.start, s.id, `"${big}" chỉ hiện ${fmt(last - s.start)} s, cần ${fmt(need(big))} s`, 'cân nhắc rút chữ');
 
   if (s.type === 'nhan' && !(s.text || s.icon || s.zoom > 1 || s.toi)) bao('P0', s.start, s.id, 'điểm nhấn trống (không chữ, biểu tượng, zoom hay làm tối)', 'thêm ít nhất một kiểu');
-  if (s.type === 'nhan' && s.text && words(s.text.replace(/\n/g, ' ')) > 7) bao('P1', s.start, s.id, `chữ nhấn "${s.text}" quá 7 chữ`, 'chọn cụm nguyên văn ngắn hơn (không bỏ chữ làm đổi nghĩa)');
-  if (s.type === 'nhan' && s.end - s.start > 6) bao('P2', s.start, s.id, 'điểm nhấn trên người dài quá 6 s', 'giữ 2–5 s quanh câu đắt');
+  // bố cục (BoCuc.jsx): chữ trong thẻ phải hiện trong cảnh; không giới hạn số dòng — tự cân theo khung (dọc: ít thứ cùng lúc)
+  if (s.type === 'bocuc') for (const d of [...(s.dong || []), ...((s.noi_dung && s.noi_dung.props && s.noi_dung.props.dong) || [])])
+    if (d.at != null && (d.at < s.start - 0.01 || d.at >= s.end)) bao('P0', d.at, s.id, `dòng "${d.text}" hiện ngoài cảnh`, 'dời mốc at hoặc kéo dài cảnh');
   if (s.type === 'illus' && s.label && words(s.label) > NHAN) bao('P1', s.start, s.id, `nhãn "${s.label}" ${words(s.label)} chữ (tối đa ${NHAN})`, 'rút còn cụm đắt nhất');
 
   // đứng yên quá lâu: phần tử cuối đã hiện + đã đủ đọc mà cảnh còn hơn 3 s

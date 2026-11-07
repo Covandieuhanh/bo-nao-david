@@ -30,9 +30,9 @@ nhịp, phụ đề, hình, bộ nhận diện, lời kêu gọi, phát hành, v
 1. **Tối giản:** một màn = một ý, một hình, một câu; ~1 hiệu ứng / 15–20 s ở video dài (video ngắn ≤ 90 s: dày hơn, ~1 / 5–8 s);
    chữ to ≤ 3–4 lần / video; giữa hai cảnh chữ ≥ 5 s chỉ có người nói + phụ đề.
 2. **Mở đầu `hook` 0 → ~3 s** — **TẠM BỎ mặc định (David 2026-11-07, khối 06): chỉ làm khi David yêu cầu, chữ nguyên văn.** Khi làm: ý chính cả video, trích lời. `project.js` ghi `topic: '<CHỦ ĐỀ>'` (≤ 3 chữ, trích lời) cho dấu góc + thẻ cuối.
-3. **2 TRẠNG THÁI** (David chốt 2026-11-04, khối 07): người + phụ đề, hoặc cảnh **`illus`** toàn màn hình (hình động + nhãn ≤ 3 chữ)
-   + phụ đề — mỗi ý cần hình là một cảnh `illus` 3–5 s. Không chữ to / thẻ / câu trích dài đè người (khung dựng tự đổi lớp cũ sang
-   toàn màn hình, bỏ câu trích). Mặt người nói hiện ≥ 60%.
+3. **BỐ CỤC TỰ CÂN** (David chốt 2026-11-07, thay luật 2 trạng thái; khối 07 + `../trinh-bay/`): mỗi đoạn chọn từ danh mục
+   `../trinh-bay/bo-cuc.md`: người + phụ đề, `nhan`, `bocuc` (`the-canh` thẻ cạnh mặt · `o-nguoi` người vào ô bo góc + nội dung ·
+   `chuong` màn chương), `illus` / `diagram` toàn màn hình. Không con số bắt buộc; hợp nội dung, người xem dễ nhận; dọc mỗi lúc ít thứ.
    **Trạng thái thứ 3 — điểm nhấn trên người** (`nhan`, David chốt 2026-11-07): zoom dồn / làm tối viền / chữ nhấn hay biểu tượng cạnh mặt
    ở câu đắt, 2–5 s, không che mặt. Mọi video đều có motion graphics trộn nhiều loại — "dựng nhẹ" vẫn có (~8–10 điểm nhấn / 4 phút, ~4 trên người). Khối 07.
 4. **Màn hành động** (`action`, 3–5 s, biểu tượng + tick + `label` ≤ 4 chữ cụm việc nguyên văn) đúng lúc người nói giao việc (1–2 câu cụ thể nhất). **Màn chốt** (`cta`, ~4 s cuối mọi
@@ -123,7 +123,7 @@ Tạo `~/Movies/tap-<tên>/2-ban-dai/` (gốc tự đặt vào `tap-<tên>/1-goc
 
 ## Tiêu chí đạt (soát trước khi giao)
 - 0–3 s có thẻ tít / hook đúng ý chính · người + phụ đề / cảnh minh hoạ toàn màn hình / điểm nhấn trên người `nhan` (không che mặt); không chữ to tự do đè người · có trộn nhiều loại điểm nhấn
-- Mặt người nói hiện ≥ `mat_hien_min` · phụ đề đúng chữ, không bị đè · tiếng Việt đủ dấu · không gì lọt vùng đỏ
+- Bố cục hợp nội dung (xem stills: người / ý có rõ không) · phụ đề đúng chữ, không bị đè · tiếng Việt đủ dấu · không gì lọt vùng đỏ
 - Màn chốt + thẻ cuối · (YouTube > 3 phút) màn kết, chương, teaser > 10 phút · thumbnail nếu ngang · phat-hanh.md + so-lieu.md
 - Âm lượng ±0,5 dB, tiếng rè ±1 dB so nguồn; thời lượng đúng
 

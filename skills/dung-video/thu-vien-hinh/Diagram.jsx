@@ -23,7 +23,7 @@ const cl = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'};
 const UP = {textTransform: 'uppercase', fontFamily: HEAD, fontWeight: 800, lineHeight: 1.15, paddingTop: '0.12em'};
 const fit = (txt, width, max) => Math.min(max, width / (Math.max(4, (txt || '').length) * 0.46));   // Barlow Condensed in hoa có dấu ≈ 0,46 em/ký tự
 
-export const Diagram = ({mode = 'tang', items = [], label = '', total = 0, start = 0, len}) => {
+export const Diagram = ({mode = 'tang', items = [], label = '', total = 0, start = 0, len, nen = true}) => {   // nen=false: không vẽ nền (lồng trong bố cục BoCuc)
   const f = useCurrentFrame();
   const {fps, width: W, height: H, durationInFrames} = useVideoConfig();
   const Lf = len || durationInFrames;
@@ -280,7 +280,7 @@ export const Diagram = ({mode = 'tang', items = [], label = '', total = 0, start
   const first = items.length ? rel(items[0].at) : 0;
   return (
     <AbsoluteFill style={{opacity: Math.min(ease(f, 0, 8), out)}}>
-      <AbsoluteFill style={{background: C.bg}} />
+      {nen && <AbsoluteFill style={{background: C.bg}} />}
       <AbsoluteFill style={{background: `radial-gradient(circle at 50% ${land ? 40 : 36}%, rgba(255,122,69,0.17), transparent 62%)`}} />
       <div style={{position: 'absolute', ...area}}>
         {label && <div style={{position: 'absolute', left: 0, width: AW, top: 0, textAlign: 'center', ...UP, fontSize: head, color: C.text,

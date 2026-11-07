@@ -6,7 +6,7 @@ thử mọi vị trí dọc của dải lớp phủ trong vùng an toàn (trên 
 ít che thân nhất, gần chỗ mặc định (đáy) nhất.
 TỰ CHUYỂN TOÀN MÀN HÌNH (David chốt 2026-11-04): không vị trí/cỡ nào tránh được MẶT + ĐẦU + VAI + NGỰC (thân trên) → cảnh thành
 toàn màn hình (`full: true` trong placement.js, Place vẽ nền + phóng nội dung ra giữa), dài tối đa FULL_MAX s (`end`) để mặt
-người nói vẫn hiện ≥ 60% video. Đặt tay `place: {full: false}` trong cảnh để giữ lớp phủ.
+tỷ lệ người / đồ hoạ tự cân theo nội dung (07/11/2026). Đặt tay `place: {full: false}` trong cảnh để giữ lớp phủ.
 Cảnh có `place` trong scenes.js (đặt tay) thì giữ nguyên, script không ghi đè."""
 import json, os, re, sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../khoi")); import hoso   # tham số: dung-video/ho-so
@@ -39,7 +39,7 @@ OV_BOTTOM = S_BOTTOM - CAP_H
 
 frames = json.load(open(os.path.join(P, "check/faces/faces.json")))
 STEP = 0.5                                                             # face_place.sh dò 2 khung/giây
-FULL_MAX = hoso.get(hoso.load('lam-video'), 'toan_man_max_s', 4.0)    # cảnh tự chuyển toàn màn hình dài tối đa (giây) — hồ sơ
+FULL_MAX = hoso.get(hoso.load('lam-video'), 'toan_man_max_s') or float('inf')   # không trần cứng (2026-11-07)    # cảnh tự chuyển toàn màn hình dài tối đa (giây) — hồ sơ
 
 def pct(v, q):
     v = sorted(v); return v[min(len(v) - 1, max(0, int(round(q * (len(v) - 1)))))]
@@ -87,7 +87,7 @@ body = scenes[scenes.index("export const SCENES"):]
 res, rows = {}, []
 for m in re.finditer(r"\{id: '([^']+)', type: '(\w+)', start: ([\d.]+), end: ([\d.]+)(.*?)(?=\n  \{id: |\n\];)", body, re.S):
     sid, typ, a, b, rest = m.group(1), m.group(2), float(m.group(3)), float(m.group(4)), m.group(5)
-    if typ in FULL or typ == 'nhan': continue   # 'nhan' tự tránh mặt (Nhan.jsx + mat.js)
+    if typ in FULL or typ in ('nhan', 'bocuc'): continue   # 'nhan' tự tránh mặt (Nhan.jsx + mat.js)
     hard, soft = zones(a, b)
     manual = re.search(r"\bplace: \{", rest) is not None
     if hard is None:
@@ -111,7 +111,7 @@ open(os.path.join(SRC, "placement.js"), "w").write(
 tot = float(re.search(r"duration: ([\d.]+)", proj).group(1))
 fulls = sum(v["end"] - float(re.search(rf"id: '{k}', type: '\w+', start: ([\d.]+)", body).group(1)) for k, v in res.items() if v.get("full"))
 rows.append(f"\nTự chuyển toàn màn hình: {sum(1 for v in res.values() if v.get('full'))} cảnh, {fulls:.1f} s"
-            + (f" — cộng cảnh toàn màn hình sẵn có, kiểm mặt vẫn hiện ≥ 60% ({tot:.0f} s)" if tot else ""))
+            + (f" — cộng cảnh toàn màn hình sẵn có, tự cân tỷ lệ mặt / đồ hoạ theo nội dung ({tot:.0f} s)" if tot else ""))
 md = os.path.join(P, "check/faces/placement.md")
 open(md, "w").write("| Cảnh | Giây | Mặt (y px, cấm che) | Lớp phủ | Cỡ | Ghi chú |\n|---|---|---|---|---|---|\n" + "\n".join(rows) + "\n")
 print("\n".join(rows)); print(os.path.join(SRC, "placement.js"))
