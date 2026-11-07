@@ -39,6 +39,7 @@
 5. **Tài liệu do AI khác viết:** lấy khung của Claude làm chuẩn, tài liệu kia chỉ để bổ sung, và phải kiểm tra nguồn gốc trước khi thêm.
 6. **Sách tự mua**, không dùng bản trôi nổi trên mạng.
 7. Viết **tiếng Việt, ngắn gọn**; không hỏi lại điều đã biết.
+8. **GitHub là bản gốc của bộ não** (luật bắt buộc, 07/11/2026): có gì mới cho skill hoặc bộ não (luật, quyết định, ghi nhớ, mẫu, form) thì đẩy lên repo `Covandieuhanh/David.Claude` ngay. Sản phẩm ở lại máy và tài khoản làm ra nó.
 
 ## 4. Định hướng nghề
 

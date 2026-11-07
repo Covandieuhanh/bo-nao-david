@@ -38,6 +38,9 @@ rsync -a "$REPO/nao/bo-nho/" "$MEM/"
 mkdir -p "$HOME/Movies/_so-danh-muc"
 [ -f "$HOME/Movies/_so-danh-muc/danh-muc.md" ] || cp "$REPO/dang-lam/danh-muc.md" "$HOME/Movies/_so-danh-muc/danh-muc.md"
 
+# Hook tự đẩy bộ não lên GitHub khi phiên Claude Code kết thúc
+python3 -I "$REPO/scripts/cai-hook.py" "$REPO"
+
 echo "Xong. Bản sao lưu: $SAO_LUU"
 echo "Bộ nhớ gắn với dự án: $DU_AN"
 echo "Kiểm tra công cụ dựng video: zsh \"$CL/skills/dung-video/video-style-edit/scripts/check_env.sh\""

@@ -28,7 +28,7 @@
 - [Chuẩn âm lượng chung](chuan-am-luong-chung.md) — mọi video: nhạc thấp hơn giọng ~23 dB, cả bài −14 LUFS; giọng nhỏ kéo lên, nhạc to hạ xuống (2026-11-06)
 - [Podcast phủ hình 30%](podcast-mat-do-hinh-30.md) — motion graphic khoảng 30% thời lượng, cân theo nội dung; chụp thử cho David chốt rồi mới render (2026-11-06)
 - [Dọn Documents 07/11](documents-don-dep-2026-11-07.md) — App notion đã bỏ; mở phiên ở ~/Documents/David.Claude (2026-11-07)
-- [GitHub chỉ giữ não](github-chi-giu-nao.md) — repo chỉ hồ sơ, luật, bộ nhớ, skill, việc dở, mẫu; thành quả ở máy và Drive (2026-11-07)
+- [GitHub là bản gốc bộ não](github-chi-giu-nao.md) — BẮT BUỘC đẩy ngay mọi cái mới cho skill/não; chỉ mẫu/form/luật; sản phẩm ở máy làm ra nó; repo xếp gọn (2026-11-07)
 - [Đặt tên không dấu](dat-ten-khong-dau.md) — mọi tên đều tiếng Việt không dấu, chữ thường, gạch nối; đồng nhất, không trộn tiếng Anh (2026-11-07)
 - [Movies xếp theo tập](movies-xep-theo-tap.md) — gốc/bản dài/highlight chung tap-<tên>, skill đã sửa theo
 - [Công cụ cài thì đưa vào skill](cong-cu-cai-thi-dua-vao-skill.md) — David cài công cụ (pyannote…) để nâng skill; giúp việc tốt hơn thì tích hợp luôn (2026-11-07)
