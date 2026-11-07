@@ -2,9 +2,25 @@
 
 ## 1. Tài khoản Claude khác, cùng máy này
 
-Skill và bộ nhớ nằm trong `~/.claude` nên đổi tài khoản vẫn còn. Không cần cài gì. Mở lại đúng thư mục `~/Documents/App notion` để Claude Code nhận bộ nhớ.
+Skill, bộ nhớ, lịch sử chat thô nằm trong `~/.claude`, dự án dựng nằm trong `~/Movies`, nên đổi tài khoản trên cùng máy vẫn còn. Không cần cài gì.
 
-Không đi theo sang tài khoản mới: lịch sử trò chuyện trên ứng dụng, các trang và tài liệu đã lưu trên claude.ai (Artifact, Claude Docs), kết nối và trình duyệt của Claude. Tài liệu cần dùng tiếp thì chia sẻ hoặc tải về từ tài khoản cũ trước khi đổi.
+**Các bước sau khi đăng nhập tài khoản mới:**
+
+1. Trong ứng dụng Claude, mở đúng thư mục `~/Documents/App notion` để Claude Code nhận bộ nhớ (bộ nhớ gắn theo đường dẫn thư mục).
+2. Dán câu này vào phiên đầu tiên:
+
+> Đọc ~/Documents/David.Claude/AGENTS.md rồi đọc tiếp theo đúng thứ tự trong đó. Xong thì tóm tắt 3 dòng: tôi là ai, bạn sẽ làm việc với tôi thế nào, việc đang dở là gì. Sau đó hỏi tôi các câu còn mở trong TRANG-THAI-HIEN-TAI.md.
+
+3. Bật lại trong ứng dụng: trình duyệt Claude in Chrome nếu dùng, kết nối Claude Docs nếu cần viết tài liệu. Đăng nhập YouTube, Facebook, TikTok nằm ở hồ sơ Chrome trên máy, không gắn với tài khoản Claude.
+
+**Không đi theo sang tài khoản mới, và đã sao lưu ở đâu (07/11/2026):**
+
+| Thứ | Bản sao |
+|---|---|
+| Trang và tài liệu trên claude.ai | Toàn bộ ở Drive `Sao-luu-Claude-2026-11-07/tai-lieu-claude-ai`. Bản không nhạy cảm cũng ở `tai-lieu-claude-ai/` trong repo. Danh sách: [tai-lieu-claude-ai/README.md](tai-lieu-claude-ai/README.md). Bản PDF đọc được nhưng không còn sửa trực tiếp như trên claude.ai |
+| Lịch sử trò chuyện | Danh sách phiên trong ứng dụng không theo sang. Bản thô vẫn ở `~/.claude/projects` trên máy, không đưa lên mạng. Những gì cần cho việc tiếp theo đã ghi vào `TRANG-THAI-HIEN-TAI.md` và `nao/bo-nho/` |
+
+**Phòng khi máy này hỏng:** repo này giữ não và skill; Drive `Video-xong` giữ thành phẩm; Drive `Sao-luu-Claude-2026-11-07/du-an-video` giữ âm thanh gốc và kịch bản từng dự án (bỏ `node_modules` và file render, dựng lại được). Giải nén vào `~/Movies`, chạy `npm install` trong `motion/`, rồi render lại. File `.env` của App notion, `~/Documents/mk.csv`, hồ sơ đăng nhập Chrome và lịch sử chat chỉ có trên máy này, cố ý không đưa lên mạng.
 
 ## 2. Claude Code trên máy mới (Mac)
 

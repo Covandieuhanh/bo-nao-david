@@ -5,11 +5,12 @@ Trạng thái: lọc · dựng · chờ đăng · đã đăng · kho · bỏ. D�
 
 | Ngày | Tài nguyên | Kết luận | Điểm | Nhánh | Kênh đề xuất | Dẫn dắt | Trạng thái |
 |---|---|---|---|---|---|---|---|
-| 2026-11-05 | Podcast "Mục tiêu và sứ mệnh" (DJI_11, 8:19) | ✂️ Dùng một phần | 6 (đoạn 4:44–5:40: 7) | nhân hiệu → công việc | 1 highlight 4:44–5:40 Reels + TikTok · bản đầy đủ chỉ Facebook cá nhân | Gợi mở | lọc (chấm thử) |
+| 2026-11-05 | Podcast "Mục tiêu và sứ mệnh" (DJI_11, 8:19) | ✂️ Dùng một phần | 6 (đoạn 4:44–5:40: 7) | nhân hiệu → công việc | Bản đầy đủ chỉ Facebook cá nhân (đề xuất) | Gợi mở | dựng lại 06/11, David ok 07/11, chưa có lịch |
 | 2026-11-05 | Vlog Miếu Bà Cam (10 clip + flycam) | 👤 Chỉ Facebook cá nhân | — (chạm lằn ranh) | nhân hiệu | Facebook cá nhân | — | lọc (chấm thử) |
 | 2026-11-05 | Vlog VF3 kỷ niệm (3 clip) | 👤 Chỉ Facebook cá nhân | 3 | nhân hiệu | Facebook cá nhân | — | lọc (chấm thử) |
 | 2026-11-05 | Podcast "Trainer cho người làm trainer" (DJI_16, 8:57, giữ nguyên không cắt) | ✅ Phù hợp · ⚠️ đã cảnh báo lằn ranh, David giữ | 7 | gốc → công việc | YouTube ngang T3 10/11 20:00 | Gợi mở | dựng xong (chờ David duyệt cổng 2) |
 | 2026-11-06 | 3 clip trích từ podcast DJI_16 (`~/Movies/highlight-di-trainer`) | ✂️ Trích ngắn từ gốc | 7 | gốc → công việc | Reels + TikTok: T6 13/11 · T3 17/11 · T6 20/11, 20:00 | Gợi mở (câu hỏi ở mô tả, màn cuối mời xem YouTube) | David duyệt 3 video làm mẫu 06/11; dựng lại bằng skill mới, bỏ icon YouTube, David chốt bản chuẩn (kế hoạch đăng chờ duyệt, chưa hẹn giờ) |
+| 2026-11-07 | Clip 76 giây trích từ podcast Mục tiêu sứ mệnh, ghép 4:46–5:40 và 7:19–7:43 (`~/Movies/highlight-muc-tieu`) | ✂️ Trích ngắn từ gốc | 7 | nhân hiệu → công việc | Reels + TikTok, chưa có lịch | Gợi mở | David ok 07/11, chữ đăng bài còn là nháp |
 
 ## Phiếu lọc (chấm thử 05/11/2026)
 
