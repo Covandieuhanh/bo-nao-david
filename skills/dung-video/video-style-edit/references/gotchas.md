@@ -200,3 +200,5 @@
   khoảng mặt (`l`, `r` = phân vị 10/90 suốt cảnh), Nhan.jsx đặt chữ ngoài khoảng đó + chừa 0,3 bề rộng mặt.
 - Khung ngang KHÔNG đặt chữ dưới cằm (đè miệng + phụ đề). Hết chỗ → chữ tự thu cỡ cho vừa; chữ dài thì ngắt 2 dòng (≤ 9 ký tự / dòng) để giữ cỡ to.
 - Chụp thử `nhan` bằng preview.mjs không thấy zoom (zoom làm ở render_preview.py) → soát trên video-final.mp4 ở vài mốc trong cảnh.
+
+- **Bố cục "người thu vào ô" (khung ngang): thẻ chữ canh giữa vùng trống bị đẩy lên đè dấu góc kênh** (BrandMark ở top 228 px) khi thẻ cao. Vùng nội dung giờ bắt đầu từ `max(SAFE.top, 320)`. Soát bằng ảnh rải đều cả video, không chỉ ảnh giữa cảnh (08/11/2026).
