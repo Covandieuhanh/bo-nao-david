@@ -67,6 +67,9 @@ for (const raw of list) {
   const big = s.text || (Array.isArray(s.lines) ? s.lines.join(' ') : '');
   if (big && last - s.start + 1 < need(big)) bao('P2', s.start, s.id, `"${big}" chỉ hiện ${fmt(last - s.start)} s, cần ${fmt(need(big))} s`, 'cân nhắc rút chữ');
 
+  if (s.type === 'nhan' && !(s.text || s.icon || s.zoom > 1 || s.toi)) bao('P0', s.start, s.id, 'điểm nhấn trống (không chữ, biểu tượng, zoom hay làm tối)', 'thêm ít nhất một kiểu');
+  if (s.type === 'nhan' && s.text && words(s.text.replace(/\n/g, ' ')) > 7) bao('P1', s.start, s.id, `chữ nhấn "${s.text}" quá 7 chữ`, 'chọn cụm nguyên văn ngắn hơn (không bỏ chữ làm đổi nghĩa)');
+  if (s.type === 'nhan' && s.end - s.start > 6) bao('P2', s.start, s.id, 'điểm nhấn trên người dài quá 6 s', 'giữ 2–5 s quanh câu đắt');
   if (s.type === 'illus' && s.label && words(s.label) > NHAN) bao('P1', s.start, s.id, `nhãn "${s.label}" ${words(s.label)} chữ (tối đa ${NHAN})`, 'rút còn cụm đắt nhất');
 
   // đứng yên quá lâu: phần tử cuối đã hiện + đã đủ đọc mà cảnh còn hơn 3 s
@@ -83,7 +86,7 @@ const fulls = list.map(flat).filter((s) => FULL.has(s.type)).sort((a, b) => a.st
 for (let i = 1; i < fulls.length; i++) if (fulls[i].start < fulls[i - 1].end - 0.01)
   bao('P1', fulls[i].start, fulls[i].id, `chồng lên "${fulls[i - 1].id}" (hết ${fmt(fulls[i - 1].end)})`, 'dời mốc, mỗi lúc một điểm nhìn');
 // mở đầu 3 giây
-if (list.length && !list.map(flat).some((s) => s.start <= 0.5 && ['hook', 'chips', 'pow', 'kinetic'].includes(s.type)))
+if (false && list.length && !list.map(flat).some((s) => s.start <= 0.5 && ['hook', 'chips', 'pow', 'kinetic'].includes(s.type)))
   bao('P2', 0, 'mở đầu', 'không có thẻ tít trong 0,5 s đầu', 'kiểm tra khối 06 (đoạn ghép mở vlog / teaser podcast thì bỏ qua)');
 
 const tong = lines.P0.length + lines.P1.length + lines.P2.length;

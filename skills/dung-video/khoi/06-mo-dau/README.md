@@ -12,6 +12,8 @@
 - `video-style-edit/scripts/vlog_edl.py (intro)`
 
 ## Luật
+- **David chốt 2026-11-07: KHÔNG làm thẻ tít mở đầu mặc định** — tít tự rút ý có thể chưa đúng điều David muốn truyền tải. Chỉ làm khi David
+  yêu cầu, và chữ phải là nguyên văn lời David. (Lỗi kèm: `hook` 2 dòng ở khung ngang bị cắt dòng 2 — sửa Hook trước khi dùng lại cho khung ngang.)
 - 0–3 s nói ngay video về cái gì / đang đặt cược gì (nguyen-tac 1). Thẻ tít là **ngoại lệ duy nhất** của 2 trạng thái — được đè lên
   người 0–2,5 s (khối 05 vẫn chuyển toàn màn hình nếu che mặt/thân trên).
 - Làm video: cảnh `hook` 0 → ~3 s, ý chính cả video, trích lời (scene-design.md "Mở đầu 3 giây").

@@ -16,6 +16,20 @@ ov = scenes + ([{"id": "phu_de", "start": 0}] if os.path.exists(os.path.join(M, 
 for s in ov: args += ["-i", os.path.join(M, s["id"] + ".mov")]
 n = len(ov)
 fl, prev = ["[0:v:0]setpts=PTS-STARTPTS[b0]"], "b0"
+# ZOOM DỒN (cảnh 'nhan' có props.zoom — David chốt 2026-11-07): phóng video gốc vào mặt người nói (mat.js, nhan_place.py),
+# vào nhanh 0,22 s, ra 0,18 s. Khung zoom canh giữa mặt, kẹp trong khung hình (cùng công thức với Nhan.jsx `zoomed`). Không áp cho pillar.
+_zs = [s for s in scenes if s.get("type") == "nhan" and float((s.get("props") or {}).get("zoom") or 1) > 1.001]
+if _zs and not out_.get("layout"):
+    import json as _zj, re as _zr
+    _mf = os.path.join(P, "motion/src/mat.js")
+    MAT = _zj.loads(_zr.search(r"export default (\{.*\});", open(_mf, encoding="utf-8").read(), _zr.S).group(1)) if os.path.exists(_mf) else {}
+    env = lambda s: f"min(1,max(0,(it-{s['start']:.3f})/0.22))*min(1,max(0,({s['end']:.3f}-it)/0.18))"
+    z = "1+" + "+".join(f"{float(s['props']['zoom']) - 1:.3f}*{env(s)}" for s in _zs)
+    cx = "0.5+" + "+".join(f"{MAT.get(s['id'], {}).get('cx', 0.5) - 0.5:.4f}*{env(s)}" for s in _zs)
+    cy = "0.5+" + "+".join(f"{MAT.get(s['id'], {}).get('cy', 0.42) - 0.5:.4f}*{env(s)}" for s in _zs)
+    fl.append(f"[b0]zoompan=z='{z}':x='max(0,min(iw-iw/zoom,({cx})*iw-iw/zoom/2))':y='max(0,min(ih-ih/zoom,({cy})*ih-ih/zoom/2))'"
+              f":d=1:s={out_['width']}x{out_['height']}:fps={FPS}[bz]")
+    prev = "bz"
 for i, s in enumerate(ov):
     st = fr(s["start"]) * pr["fpsDen"] / pr["fpsNum"]
     fl.append(f"[{i + 1}:v]setpts=PTS-STARTPTS+{st:.6f}/TB[m{i}];[{prev}][m{i}]overlay=eof_action=pass[b{i + 1}]")

@@ -2,7 +2,7 @@
 
 | Khoá | Ý nghĩa | Nguồn |
 |---|---|---|
-| `hai_trang_thai` | true = chỉ 2 trạng thái: người + phụ đề / cảnh minh hoạ toàn màn hình + phụ đề (không chữ to đè người) | David 2026-11-04; Wynn Trần, Pháp Hoà, Hành trình kỷ luật |
+| `hai_trang_thai` | true = chỉ 2 trạng thái: người + phụ đề / cảnh minh hoạ toàn màn hình + phụ đề (không chữ to đè người); ngoại lệ thẻ tít, màn chốt, điểm nhấn trên người `nhan` (07/11/2026) | David 2026-11-04; Wynn Trần, Pháp Hoà, Hành trình kỷ luật |
 | `toan_man_max_s` | cảnh toàn màn hình chuyển từ lớp phủ dài tối đa (s) | giữ mặt ≥ 60% |
 | `mat_hien_min` | tỉ lệ thời lượng mặt người nói phải hiện | luật 02/11 |
 | `phu_de.*` | video ngắn (≤ `ngan_max_s`): 1–3 chữ/nhịp, cỡ `ngan_co`, ≤ `ngan_max_ky_tu` ký tự | Hormozi, DOAC, Sao Việt 24H |

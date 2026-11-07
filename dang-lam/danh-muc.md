@@ -11,6 +11,8 @@ Trạng thái: lọc · dựng · chờ đăng · đã đăng · kho · bỏ. D�
 | 2026-11-05 | Podcast "Trainer cho người làm trainer" (DJI_16, 8:57, giữ nguyên không cắt) | ✅ Phù hợp · ⚠️ đã cảnh báo lằn ranh, David giữ | 7 | gốc → công việc | YouTube ngang T3 10/11 20:00 | Gợi mở | dựng xong (chờ David duyệt cổng 2) |
 | 2026-11-06 | 3 clip trích từ podcast DJI_16 (`~/Movies/tap-di-trainer/3-highlight`) | ✂️ Trích ngắn từ gốc | 7 | gốc → công việc | Reels + TikTok: T6 13/11 · T3 17/11 · T6 20/11, 20:00 | Gợi mở (câu hỏi ở mô tả, màn cuối mời xem YouTube) | David duyệt 3 video làm mẫu 06/11; dựng lại bằng skill mới, bỏ icon YouTube, David chốt bản chuẩn (kế hoạch đăng chờ duyệt, chưa hẹn giờ) |
 | 2026-11-07 | Clip 76 giây trích từ podcast Mục tiêu sứ mệnh, ghép 4:46–5:40 và 7:19–7:43 (`~/Movies/tap-muc-tieu-su-menh/3-highlight`) | ✂️ Trích ngắn từ gốc | 7 | nhân hiệu → công việc | Reels + TikTok, chưa có lịch | Gợi mở | David ok 07/11, chữ đăng bài còn là nháp |
+| 2026-11-07 | Zoom họp riêng David · anh Trường · anh Ngọc Anh (2 file DJI_18, 56 phút, `~/Movies/tap-zoom-trainer`) | ❌ Không đăng | 2 (chạm lằn ranh: kinh doanh, thuế, nêu tên người thật, họp riêng) | — | Không | — | bỏ · chỉ lưu biên bản `bien-ban-hop-2026-11-06.md` (David chốt 07/11) |
+| 2026-11-07 | Video đi bộ nói vào máy (DJI_..._0004, 4:19 → 3:58, `~/Movies/tap-di-bo-hang-ngay`) | 👤 Chỉ Facebook cá nhân | 6 · ⚠️ đã cảnh báo: cắt đoạn mời hỏi sức khoẻ, David giữ đoạn vitamin | nhân hiệu | Facebook cá nhân (David tự đăng) · clip 1:25–2:20 chờ gỡ vướng | Không | ✅ David duyệt bản 4 (07/11) · chờ David tự đăng Facebook cá nhân · clip chờ quyết |
 
 ## Phiếu lọc (chấm thử 05/11/2026)
 

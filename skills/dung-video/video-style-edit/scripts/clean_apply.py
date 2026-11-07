@@ -22,7 +22,7 @@ else:   # lần đầu: đổi tên bản thô (macOS không phân biệt hoa/th
 
 probe = lambda *a: subprocess.check_output(["ffprobe", "-v", "error", *a, raw], env=ENV).decode().strip()
 DUR = float(probe("-show_entries", "format=duration", "-of", "csv=p=0"))
-W, H, FR = probe("-select_streams", "v:0", "-show_entries", "stream=width,height,r_frame_rate", "-of", "csv=p=0").split(",")[:3]
+W, H, FR = probe("-select_streams", "v:0", "-show_entries", "stream=width,height,r_frame_rate", "-of", "csv=p=0").splitlines()[0].split(",")[:3]   # file DJI có thêm dòng trống/luồng phụ
 W, H = int(W), int(H)
 rot = probe("-select_streams", "v:0", "-show_entries", "stream_side_data=rotation", "-of", "csv=p=0")
 if re.search(r"-?(90|270)\b", rot): W, H = H, W

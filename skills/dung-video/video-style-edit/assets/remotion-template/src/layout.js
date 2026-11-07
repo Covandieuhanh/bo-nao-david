@@ -14,9 +14,10 @@ import PLACEMENT from './placement.js';
 import HL from './highlight.js';
 import HS from './hoso.json';
 // 2 TRẠNG THÁI (hồ sơ hai_trang_thai, David chốt 2026-11-04): A = người + phụ đề, B = cảnh toàn màn hình + phụ đề. Lớp chữ không
-// toàn màn hình (kinetic, lower, listItem…) KHÔNG được đè lên người → tự vẽ toàn màn hình. Ngoại lệ: thẻ tít mở đầu (hook).
+// toàn màn hình (kinetic, lower, listItem…) KHÔNG được đè lên người → tự vẽ toàn màn hình. Ngoại lệ: thẻ tít mở đầu (hook) và
+// ĐIỂM NHẤN TRÊN NGƯỜI 'nhan' (07/11/2026: zoom dồn, làm tối viền, chữ / biểu tượng cạnh mặt — Nhan.jsx tự tránh mặt, vẽ cả khung).
 export const TWO = !!HS.hai_trang_thai && !project.podcast;
-export const TWO_KEEP = new Set(['hook']);
+export const TWO_KEEP = new Set(['hook', 'nhan']);   // 'nhan' = điểm nhấn trên người (David chốt 2026-11-07): được đè lên người, không che mặt
 
 export const PILLAR = output?.layout === 'pillar';
 export const OUT = PILLAR ? {W: output.width, H: output.height} : {W: project.width, H: project.height};
@@ -57,7 +58,7 @@ const Clip = ({h, children}) => (
 
 export const Place = ({type, id, place, children}) => {
   if (!PILLAR) {
-    if (FULL.has(type) || type === 'captions' || type === 'sides' || type === 'stage' || type === 'cover' || type === 'endcard') return children;
+    if (FULL.has(type) || type === 'captions' || type === 'nhan' || type === 'sides' || type === 'stage' || type === 'cover' || type === 'endcard') return children;
     if (POD) {
       const pl = place || PF.ov;
       const x = PF.left - SAFE.left * pl.scale;   // dải lớp phủ canh trái vùng an toàn (ngang: bên phải là vòng micro)
@@ -86,7 +87,7 @@ export const Place = ({type, id, place, children}) => {
     );
   }
   if (type === 'sides' || type === 'stage' || type === 'endcard') return children;   // sân khấu podcast: khung dọc riêng, pillar_base ghép vào giữa
-  if (FULL.has(type) || type === 'captions') return <AbsoluteFill><Scaled x={CENTER.x} y={0} s={OUT.H / project.height}>{children}</Scaled></AbsoluteFill>;
+  if (FULL.has(type) || type === 'captions' || type === 'nhan') return <AbsoluteFill><Scaled x={CENTER.x} y={0} s={OUT.H / project.height}>{children}</Scaled></AbsoluteFill>;
   const s = SLOT.w / BAND_W;
   return (
     <AbsoluteFill>

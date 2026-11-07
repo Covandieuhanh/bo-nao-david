@@ -16,6 +16,7 @@ import HL from './highlight.js';
 import {BuildL, GensL, MontageL} from './components/FullScreenLand';
 import {LAND, POD} from './podframe';
 import {Captions} from './components/Captions';
+import {Nhan} from './components/Nhan';   // điểm nhấn trên người (2026-11-07)
 import CAPTIONS from './captions.js';
 import PLACEMENT from './placement.js';
 import {ENDCARD_ON} from './endcard.js';
@@ -32,7 +33,7 @@ import {TWO, TWO_KEEP} from './layout';
 const TYPES = {illus: Illus, diagram: Diagram, hook: Hook, lower: LowerThird, kinetic: Kinetic, listItem: ListItem, card: project.podcast ? Card : CardFull,   // thẻ = toàn cảnh (trừ podcast)
   montage: Montage, recap: Recap, converge: Converge, master: Master, gens: Gens, build: Build,
   ...(POD && LAND ? {montage: MontageL, gens: GensL, build: BuildL} : {}),   // podcast ngang: bản thiết kế toàn khung 16:9
-  action: Action, cta: Cta,   // màn hành động (toàn cảnh) · màn chốt bình luận cuối video
+  action: Action, cta: Cta, nhan: Nhan,   // màn hành động (toàn cảnh) · màn chốt bình luận cuối video
   sides: Sides, captions: Captions, stage: Stage, cover: Cover, endcard: EndCard};
 
 // Chờ font tải xong rồi mới chụp khung, tránh chữ bị font dự phòng. Props phải là dữ liệu thuần (không truyền hàm/component).
@@ -42,7 +43,7 @@ const WithFonts = ({type, id, place, ...props}) => {
   useEffect(() => {
     Promise.all(FONT_CHECKS.map((f) => document.fonts.load(f, 'Tiếng Việt ĐẾN ĐÂU'))).then(() => continueRender(handle));
   }, [handle]);
-  return <Place type={type} id={id} place={place}><Comp {...props} /></Place>;
+  return <Place type={type} id={id} place={place}><Comp sceneId={id} {...props} /></Place>;
 };
 
 export const Root = () => (

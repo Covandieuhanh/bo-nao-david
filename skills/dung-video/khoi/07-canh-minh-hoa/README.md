@@ -1,4 +1,4 @@
-# Khối 07-canh-minh-hoa: Cảnh minh hoạ toàn màn hình (2 trạng thái): biểu tượng vẽ, số chạy, sơ đồ + nhãn ≤ 3 chữ; ảnh thật chỉ khi cần
+# Khối 07-canh-minh-hoa: Cảnh minh hoạ toàn màn hình (2 trạng thái) + điểm nhấn trên người: biểu tượng vẽ, số chạy, sơ đồ + nhãn ≤ 3 chữ; ảnh thật chỉ khi cần
 
 **Dùng trong:** cả 4
 **Đầu vào:** lời (mốc từ words.srt)
@@ -14,7 +14,20 @@
 
 ## Luật 2 TRẠNG THÁI (David chốt 2026-11-04 — học Wynn Trần, Pháp Hoà, Hành trình kỷ luật; Mayer: thừa chữ làm rối)
 Video chỉ có 2 trạng thái: **(A) người thật + phụ đề** · **(B) cảnh minh hoạ toàn màn hình + phụ đề**. Không chữ to / thẻ / câu trích
-đè lên người. Ngoại lệ duy nhất: **thẻ tít mở đầu 0–2,5 s** (khối 06) và màn chốt (khối 08). Hồ sơ `hai_trang_thai = true`.
+đè lên người. Ngoại lệ: **thẻ tít mở đầu 0–2,5 s** (khối 06) và màn chốt (khối 08). Hồ sơ `hai_trang_thai = true`.
+
+## Điểm nhấn trên người — `nhan` (David chốt 2026-11-07, nới luật trên)
+**Mọi video đều phải có motion graphics** — hiểu là điểm nhấn kéo mắt người xem, có nhiều loại, không chỉ cảnh toàn màn hình.
+"Dựng nhẹ" vẫn có (vd. video ~4 phút: thẻ tít + ~3 cảnh `illus` + ~4 `nhan` + màn chốt). Trộn loại để mắt không quen; kiểu mạnh nhất để cho câu đắt nhất.
+| Kiểu | props | Khi |
+|---|---|---|
+| Zoom dồn vào mặt | `zoom: 1.15` (1,12–1,2) | cú chốt, câu đắt, lúc cảm xúc lên |
+| Làm tối viền | `toi: true` | câu tâm tình / câu muốn người xem lặng lại nghe |
+| Chữ nhấn cạnh mặt | `text: 'DÒNG 1\nDÒNG 2'` ≤ 4 chữ, trích lời, dòng cuối màu nhấn; `at` = giây bật | cụm đắt người nói vừa thốt ra |
+| Biểu tượng nhỏ cạnh mặt | `icon: '<tên>'`, `at` | vật / việc cụ thể, không cần cả màn minh hoạ |
+Ví dụ: `{id: 'n1', type: 'nhan', start: 37.4, end: 42.1, props: {zoom: 1.15, text: 'NHẤC CHÂN LÊN', at: 39.9}}` — 2–5 s, không chồng cảnh khác.
+Không che mặt: `nhan_place.py` (face_place.sh) ghi mặt từng cảnh vào `mat.js`; Nhan.jsx đặt chữ / biểu tượng bên phía trống, khung dọc hẹp → dưới cằm;
+render_preview.py zoom video gốc canh giữa mặt. Đoạn chạm lằn ranh: không dùng. Vlog / highlight (khung ghép): dùng `zoom` + `pow` có sẵn, `keep: true`.
 
 **Cảnh B = `illus`** (`thu-vien-hinh/Illus.jsx`, một bản cho mọi khung dựng): hình động minh hoạ ĐÚNG Ý đang nói + **nhãn ≤ 3 chữ**
 (tên riêng / con số / cụm đắt — trích lời), 3–5 s (`canh_minh_hoa.do_dai_s`), mật độ theo hồ sơ loại (`mat_do_canh_s`). Phụ đề vẫn chạy.

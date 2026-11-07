@@ -23,6 +23,7 @@
   Bài đăng Facebook cá nhân (đời thường) thì không cần màn chốt kiểu kênh.
 - **Màn chốt** (`cta`, ~4 s cuối mọi video): video lùi vào khung bo góc, một câu kêu gọi + biểu tượng + tick + "ting". Câu: video
   thường Claude tự viết (giọng David, ≤ 55 ký tự, một hành động — luat-chung 1a); highlight = nguyên văn câu mệnh lệnh của người nói.
+  **Từ 07/11/2026 (David): video của David dùng NGUYÊN VĂN câu David nói ở cuối video** (lời kêu gọi, lời chào…), không tự viết; kind theo ý câu đó.
 - **Thẻ cuối**: nhận diện (chủ đề + DAVID, ~1,6 s) mọi video có chủ đề; highlight = dẫn bản đầy đủ ("XEM BẢN ĐẦY ĐỦ" + tên tập gốc + người nói, `the_cuoi_s`).
 - **Màn kết YouTube** (video > 3 phút đăng YouTube): `project.ytEnd = 20` (1 video/podcast, ghi sau làm sạch) · plan.json `"ytEnd": 20` (vlog)
   — khung chừa 2 ô video + nút đăng ký, nhạc kênh nhỏ; David gắn phần tử trong YouTube Studio.

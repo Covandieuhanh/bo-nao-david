@@ -7,7 +7,7 @@
 **Sửa khối này → chạy lại:** 17 (render lại nen → podcast_base → render_preview)
 
 **File thật (code, một bản duy nhất):**
-- `podcast-style-edit/scripts/{speakers.py,envelope.py,podcast_base.py,pod_stills.sh}`
+- `podcast-style-edit/scripts/{speakers.py,diarize.py (pyannote),envelope.py,podcast_base.py,pod_stills.sh}`
 - `video-style-edit/assets/remotion-template/src/components/Stage.jsx`
 - `podcast-style-edit/references/podcast-design.md`
 
@@ -16,7 +16,7 @@
 ### 3. Ai đang nói
 ```bash
 PY=$(zsh $SKILL/scripts/py_setup.sh)                     # lần đầu cài numpy vào venv dùng chung
-$PY $SKILL/scripts/speakers.py "$P" 2                    # 1 nếu độc thoại → motion/src/speakers.js + check/speakers.md
+$PY $SKILL/scripts/speakers.py "$P"                      # pyannote tự đếm người (ghi số nếu biết chắc) → motion/src/speakers.js + check/speakers.md
 $PY $SKILL/scripts/envelope.py "$P"                      # sóng âm → motion/src/envelope.js
 ```
 Đọc `check/speakers.md`: đoạn `?` hoặc đoạn mà lời không hợp người (câu hỏi ↔ câu trả lời) → sửa `spk` trong `speakers.js`.

@@ -11,7 +11,11 @@ kênh lớn, ghi lý do vào changelog. Mục tiêu mỗi video: người xem **
 ## 1. Nội dung
 - **Không bịa.** Phụ đề, chữ to, thẻ, màn hành động = **trích / bỏ bớt lời người nói**, không diễn đạt lại. Tên riêng, con số, vế
   đối lập, từ phủ định giữ nguyên. Tên chưa chắc chính tả → dùng cách Whisper nghe, hỏi trong báo cáo.
-- **Ngoại lệ được viết lời** (chỉ hai chỗ): (a) **câu màn chốt** của video thường (làm video / vlog / podcast) — Claude tự viết, giọng
+- **CHỮ TRÊN VIDEO = NGUYÊN VĂN LỜI DAVID** (David chốt 2026-11-07 — THAY các ngoại lệ (a), (b) dưới cho chữ nằm TRÊN video):
+  motion graphics loại nào cũng được nhưng không sáng tạo sai lời. Không thẻ tít mở đầu mặc định (tít tự rút ý có thể lệch điều David muốn
+  truyền tải). Màn chốt dùng câu David nói ở cuối video. Chữ = cụm nguyên văn liền mạch, được tách mảnh, không bỏ chữ làm đổi nghĩa
+  ("không **muốn** làm một mình"). Không số chạy hiện số David không nói. Câu Claude tự viết (tiêu đề, mô tả, câu hỏi bình luận) chỉ ở bài đăng.
+- **Ngoại lệ được viết lời** (chỉ hai chỗ — (a), (b) không còn áp cho chữ TRÊN video, xem dòng trên): (a) **câu màn chốt** của video thường (làm video / vlog / podcast) — Claude tự viết, giọng
   David, ≤ 55 ký tự, một hành động; (b) **tiêu đề, thumbnail, thẻ tít mở đầu highlight** — viết như tít báo, ĐÚNG Ý người nói,
   không thêm thông tin/lời hứa ngoài video, không giật tít sai sự thật (chuẩn DOAC: "A PATIENT ON MY FLIGHT HAD 5 MINUTES TO LIVE!");
   (c) **nhãn cố định của khung** (David duyệt 2026-11-04): "XEM BẢN ĐẦY ĐỦ" trên thẻ cuối highlight, và **lịch phát do David đưa**
@@ -47,7 +51,8 @@ kênh lớn, ghi lý do vào changelog. Mục tiêu mỗi video: người xem **
 
 ## 4. Hình
 - **2 TRẠNG THÁI** (David chốt 2026-11-04): (A) người + phụ đề · (B) cảnh minh hoạ `illus` toàn màn hình + phụ đề. Không chữ to / thẻ /
-  câu trích đè lên người; ngoại lệ: thẻ tít mở đầu 0–2,5 s và màn chốt. Chi tiết: khối 07 (`khoi/07-canh-minh-hoa`).
+  câu trích đè lên người; ngoại lệ: thẻ tít mở đầu 0–2,5 s, màn chốt và điểm nhấn trên người (dưới). Chi tiết: khối 07 (`khoi/07-canh-minh-hoa`).
+- **ĐIỂM NHẤN TRÊN NGƯỜI** (David chốt 2026-11-07, nới luật 2 trạng thái): mọi video phải có motion graphics, hiểu là điểm nhấn kéo mắt người xem — nhiều loại, không chỉ toàn màn hình. Cảnh `nhan` được đè lên người, không che mặt: zoom dồn vào mặt ở câu đắt (`zoom` 1,12–1,2), làm tối viền (`toi`), chữ nhấn ≤ 4 chữ trích lời (`text`) hoặc biểu tượng nhỏ (`icon`) bật cạnh mặt. Mỗi video trộn loại: thẻ tít, cảnh toàn màn hình, điểm nhấn trên người, màn chốt (video ~4 phút: 8–10 điểm nhấn, ~4 trên người). Khối 07.
 - **Không che người nói** (face_place / LOW_Y), **không đè phụ đề** (chặn cứng ở mọi template).
 - **Che mặt / thân trên → TOÀN MÀN HÌNH** (David chốt 2026-11-04): lớp chữ/hiệu ứng không có chỗ trống tránh được mặt, đầu, vai,
   ngực người nói → tự thành cảnh toàn màn hình (nền tối + quầng cam, nội dung phóng ra giữa, phụ đề vẫn chạy), dài tối đa 4 s để mặt

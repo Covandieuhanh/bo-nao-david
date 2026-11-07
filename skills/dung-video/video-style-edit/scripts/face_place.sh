@@ -19,4 +19,5 @@ if [ ! -f "$O/faces.json" ] || [ "$V" -nt "$O/faces.json" ]; then
   $BIN "$O/f" "$O/faces.json"
   rm -rf "${O:?}/f"
 fi
+python3 -I "$SKILL/scripts/nhan_place.py" "$P"     # điểm nhấn trên người → motion/src/mat.js (cả khung ngang)
 python3 -I "$SKILL/scripts/face_place.py" "$P"

@@ -31,3 +31,6 @@
 - [GitHub chỉ giữ não](github-chi-giu-nao.md) — repo chỉ hồ sơ, luật, bộ nhớ, skill, việc dở, mẫu; thành quả ở máy và Drive (2026-11-07)
 - [Đặt tên không dấu](dat-ten-khong-dau.md) — mọi tên đều tiếng Việt không dấu, chữ thường, gạch nối; đồng nhất, không trộn tiếng Anh (2026-11-07)
 - [Movies xếp theo tập](movies-xep-theo-tap.md) — gốc/bản dài/highlight chung tap-<tên>, skill đã sửa theo
+- [Công cụ cài thì đưa vào skill](cong-cu-cai-thi-dua-vao-skill.md) — David cài công cụ (pyannote…) để nâng skill; giúp việc tốt hơn thì tích hợp luôn (2026-11-07)
+- [Luôn có motion graphics](video-luon-co-motion-graphics.md) — điểm nhấn nhiều loại: hình vẽ, chữ, biểu tượng, làm nổi người nói; không chỉ toàn màn hình (2026-11-07)
+- [Chữ trên màn hình nguyên văn](chu-tren-man-nguyen-van.md) — không thẻ tít tự rút, màn chốt dùng lời David, không số chạy; không bỏ chữ đổi nghĩa (2026-11-07)

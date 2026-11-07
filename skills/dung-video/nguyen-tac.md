@@ -9,7 +9,7 @@ người xem **ở lại → HIỂU ý chính → LÀM theo**.
 1. **3 giây đầu nói ngay "đang đặt cược gì"** — thẻ tít (clip ngắn), đoạn ghép cảnh đắt nhất / câu nêu nhiệm vụ (vlog), teaser câu
    đắt nhất (podcast dài). Khối 06.
 2. **Mỗi lúc một điểm nhìn — 2 trạng thái**: (A) người thật + phụ đề, hoặc (B) cảnh minh hoạ toàn màn hình + phụ đề. Không chồng
-   chữ to / thẻ lên người. Khối 05, 07.
+   chữ to / thẻ lên người — trừ **điểm nhấn trên người** (zoom dồn, làm tối viền, chữ / biểu tượng cạnh mặt ở câu đắt; 2026-11-07). Khối 05, 07.
 3. **Người thật + cảm xúc thắng kỹ xảo** — giữ khoảnh khắc thật, người khác trong khung, không làm quá. Khối 11.
 4. **Nhận diện series** — dấu kênh, khuôn thumbnail cố định, số tập, tên chương trình. Khối 10, 14.
 5. **Thumbnail = mặt có cảm xúc + vài chữ to / một con số.** Khối 14.

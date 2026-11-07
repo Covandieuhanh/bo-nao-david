@@ -2,13 +2,13 @@
 
 > File này giúp Claude (Claude Code, Claude chat) hiểu David là ai và làm việc với David đúng cách.
 > Đặt file vào thư mục hay mở Claude Code, hoặc nhập vào `CLAUDE.md` bằng dòng `@David.md`.
-> Cập nhật lần cuối: 05/11/2026 (bản theo định hướng con người làm trung tâm).
+> Cập nhật lần cuối: 07/11/2026 (thêm mục 9: dữ liệu nền huyền học, đối chiếu với hồ sơ huyền học 31/10/2026).
 
 ---
 
 ## 1. David là ai
 
-- **Tên:** Trần Đức Cường, dùng tên nghề **David Trần**. Nam, sinh 05/09/1995 tại Hưng Yên, Việt Nam.
+- **Tên:** Trần Đức Cường, dùng tên nghề **David Trần**. Nam, sinh 00:20 ngày 05/09/1995 tại Hưng Yên, Việt Nam.
 - **Vai trò:** "Nhà đào tạo thực hành": giúp người đi từ **làm giỏi** đến **dẫn đội làm được**.
   - Công khai là **trainer**; **coach** chỉ trong buổi riêng 1:1.
   - **Lấy con người làm trung tâm.** Không làm gì liên quan đến kinh doanh hay mô hình kinh doanh.
@@ -116,3 +116,12 @@ Tìm hiểu → mời → phiếu đầu vào → thống nhất → làm trên 
 - **Câu hỏi gốc:** nội dung có giúp người lần đầu dẫn người **làm chủ bản thân**, hoặc **áp dụng việc làm chủ bản thân vào chính công việc của họ**, thêm một bước không?
 - **Cây nội dung:** Gốc = làm chủ bản thân · Nhánh chính = áp dụng vào công việc của chính họ · Nhánh phụ = mối quan hệ (khi bắt nguồn từ bản thân) · Nhân hiệu = đời thường/hành trình chỉ khi giúp tin trainer.
 - **David chỉ đưa tài nguyên**; Claude tự phân tích theo bộ lọc, đề xuất làm gì / ở đâu / lúc nào, rồi hỏi lại. Không khung thời lượng cố định. Chi tiết: `~/.claude/skills/dung-video/khoi/00-loc-noi-dung/README.md`.
+
+## 9. Dữ liệu nền huyền học (thông tin nền, tách khỏi nghề)
+
+- **Bản chuẩn:** `~/Documents/2-ca-nhan/ho-so-huyen-hoc-ban-gop-2026-11-07.pdf` (gộp từ bản PDF 31/10/2026 và hai file .md cũ). Hai file .md cũ ghi "chữa lành thông qua luận sim số" và "hiện sống TP.HCM": **đã lỗi thời, không dùng**.
+- **Bát tự:** Ất Hợi · Giáp Thân · Kỷ Hợi · Giáp Tý; nhật chủ Kỷ Thổ; mệnh nạp âm Sơn đầu hoả; đại vận hiện tại Tân Tỵ (11/2024–11/2034).
+- **Tử vi:** Âm nam, Thuỷ nhị cục; Mệnh Ất Dậu vô chính diệu, Thân cư Mệnh; Thiên Di (Mão) Thái Dương–Thiên Lương; Quan Lộc (Sửu) Thiên Đồng–Cự Môn.
+- **Thần số:** đường đời 11/2 · sứ mệnh 6 · linh hồn 4 · nhân cách 11 · ngày sinh 5 · thái độ 5.
+- **Human Design:** Manifesting Generator 1/3, Authority cảm xúc, Split; kênh 3-60, 27-50, 28-38, 35-36; Right Angle Cross of Consciousness 3.
+- **Cách dùng:** chỉ để hiểu cách David làm việc (mục 2 đã rút ra từ đây). Không đưa lên kênh công khai, không dùng làm căn cứ định hướng nghề. Không ghi số căn cước, số điện thoại hay chi tiết sức khoẻ vào bất kỳ file nào.

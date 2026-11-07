@@ -136,3 +136,9 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
 - `project.sting: false` bỏ tiếng ký hiệu đầu video khi lời vào ngay giây đầu (David chọn cho video dài "Đi trainer").
 - **Mẫu ảnh bìa podcast không mặt** (David duyệt sau khi xem 3 bản): nền hoạ tiết, một hình vẽ, tiêu đề ngắn, "DAVID · PODCAST". Bỏ bản micro vì chỉ nói định dạng; bỏ bản liệt kê 3 bước vì lộ giải pháp. `thumbnail.sh` thêm nguồn `-`, `THUMB_HINH`, `THUMB_TAG`.
 - **Học từ HyperFrames + Motion Studio, không cài** (David duyệt): bỏ lơ lửng, vòng xoay, quầng nhấp nháy; ra ngắn hơn vào; kiểu vào theo ý câu (khối 07). Thêm sơ đồ `xay-tang`, `doi-trang-thai`, `chuyen-giao`. Thêm `scripts/soat_canh.mjs` (khối 17) và `scripts/chu_tren_man.mjs` (khối 03). Bản trước: `~/.claude/skills/dung-video.bak-2026-11-06-hoc-motion`.
+
+## 2026-11-07
+- **Điểm nhấn trên người** (David: "mọi video đều phải có motion graphics, nhiều loại, không chỉ toàn màn hình"): cảnh `nhan` (components/Nhan.jsx) — zoom dồn vào mặt (render_preview.py, zoompan theo `mat.js`), làm tối viền, chữ nhấn / biểu tượng cạnh mặt. `nhan_place.py` tính vị trí mặt (chạy trong face_place.sh, cả khung ngang). Nới luật 2 trạng thái: `nhan` thuộc TWO_KEEP. soat_canh kiểm cảnh `nhan`. Vlog / highlight: dùng `zoom` + `pow` sẵn có của khung ghép (đặt `keep: true` để không bị đổi toàn màn hình).
+- `clean_apply.py`: file DJI có luồng phụ làm ffprobe in thêm dòng → lấy dòng đầu.
+- Màn chốt `cta` có bản khung ngang (Action.jsx): ô video 16:9 rộng 56% giữa trên + câu chốt bên dưới (bản dọc làm câu chốt rơi khỏi khung ngang).
+- **Chữ trên video = nguyên văn lời David** (David: "không được sáng tạo sai lời chính xác của tôi"): bỏ thẻ tít mặc định, màn chốt dùng câu David nói cuối video, không số chạy, không bỏ chữ đổi nghĩa. luat-chung 1, khối 06, 08.

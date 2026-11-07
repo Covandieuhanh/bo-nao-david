@@ -22,3 +22,4 @@
   rồi `python3 -I video-style-edit/scripts/overlay_guard.py "$P"` sau mỗi lần sửa edl.js. Đọc bảng `check/faces/placement.md` / `guard.md`.
 - Khi `hai_trang_thai` = true (mặc định): mọi lớp chữ không phải thẻ tít mở đầu / dấu kênh đều vẽ toàn màn hình (khối 07) — khối này
   còn lo phần thẻ tít mở và các lớp đặt tay `place`.
+- Cảnh `nhan` (điểm nhấn trên người) không qua face_place.py: `nhan_place.py` (gọi trong face_place.sh) ghi mặt từng cảnh vào `motion/src/mat.js`, Nhan.jsx tự đặt chữ / biểu tượng bên phía trống, khung dọc hẹp thì dưới cằm.

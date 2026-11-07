@@ -183,3 +183,9 @@
   toàn màn hình ở mép trên dải phụ đề (lưới an toàn, như layout.js chế độ 1 video / PF.contentBottom podcast). Chụp soát ở CUỐI mỗi
   lớp (vlog_edl.py in sẵn mốc), không chụp lúc mới hiện.
 - Sửa `thu-vien-hinh/` khi dự án ĐÃ tạo: dự án giữ bản chép thật (`cp -RL`) → chép file vừa sửa vào `<dự án>/motion/src/lib/` rồi mới chụp/render (2026-11-05: Illus lưới 2 cột chưa vào dự án VF3).
+
+## Điểm nhấn trên người `nhan` (07/11/2026)
+- Selfie vừa đi vừa quay: mặt xê dịch 30–40% chiều ngang trong một cảnh → đặt chữ theo trung vị mặt sẽ đè mặt. `nhan_place.py` ghi
+  khoảng mặt (`l`, `r` = phân vị 10/90 suốt cảnh), Nhan.jsx đặt chữ ngoài khoảng đó + chừa 0,3 bề rộng mặt.
+- Khung ngang KHÔNG đặt chữ dưới cằm (đè miệng + phụ đề). Hết chỗ → chữ tự thu cỡ cho vừa; chữ dài thì ngắt 2 dòng (≤ 9 ký tự / dòng) để giữ cỡ to.
+- Chụp thử `nhan` bằng preview.mjs không thấy zoom (zoom làm ở render_preview.py) → soát trên video-final.mp4 ở vài mốc trong cảnh.

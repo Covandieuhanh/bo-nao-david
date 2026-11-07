@@ -68,14 +68,14 @@ const MiniTick = ({p}) => (
 );
 
 // Ô câu chốt: bong bóng bình luận + ba chấm "đang gõ" → câu hiện từng từ (`**…**` tô nhấn)
-const CtaBox = ({text, kind, top, f, tickF}) => {
+const CtaBox = ({text, kind, top, f, tickF, left = SAFE.left, width = SAFE_W}) => {
   const t = text || CTA.text;
   const kd = kind || (text ? 'comment' : CTA.kind);
   const parts = t.split(/(\*\*[^*]+\*\*)/).filter(Boolean);
   const n = t.replace(/\*\*/g, '').length, size = n <= 45 ? 50 : n <= 60 ? 46 : 42;   // ≤ 3 dòng, đáy ô trên dải phụ đề
   let k = 0;
   return (
-    <div style={{position: 'absolute', left: SAFE.left, top, width: SAFE_W, padding: '30px 34px', boxSizing: 'border-box',
+    <div style={{position: 'absolute', left, top, width, padding: '30px 34px', boxSizing: 'border-box',
       borderRadius: 36, background: C.card, border: `2px solid ${C.line}`, boxShadow: '0 30px 80px rgba(0,0,0,0.45)',
       display: 'flex', alignItems: 'center', gap: 30, transform: `translateY(${(1 - pop(f, 4)) * 40}px)`, opacity: ease(f, 2, 10)}}>
       <div style={{position: 'relative', flexShrink: 0, width: 140, height: 140, borderRadius: '50%', background: C.accent,
@@ -115,7 +115,10 @@ export const Cta = ({start, text, kind}) => {
   }
   // khung video: 9:16 thu nhỏ, co dần từ toàn khung vào chỗ (người xem thấy "video lùi lại nhường chỗ cho lời chốt")
   const k = ease(f, 0, 14);
-  const w0 = 1080, h0 = 1920, w1 = 400, h1 = Math.round(400 * 16 / 9), x1 = (1080 - w1) / 2, y1 = 240;
+  // khung ngang (07/11/2026 — bản dọc làm video co thành ô dọc lệch trái, câu chốt rơi khỏi khung): ô 16:9 rộng 56% giữa trên, câu chốt bên dưới
+  const LAND_ = project.width > project.height, W_ = project.width, H_ = project.height;
+  const w0 = W_, h0 = H_, w1 = LAND_ ? Math.round(W_ * 0.56) : 400, h1 = LAND_ ? Math.round(W_ * 0.56 * 9 / 16) : Math.round(400 * 16 / 9),
+    x1 = (W_ - w1) / 2, y1 = LAND_ ? Math.round(H_ * 0.07) : 240;
   const w = w0 + (w1 - w0) * k, h = h0 + (h1 - h0) * k, x = x1 * k, y = y1 * k;
   return (
     <FullShell hold>
@@ -123,7 +126,8 @@ export const Cta = ({start, text, kind}) => {
         border: k > 0.5 ? `3px solid ${C.accent}` : 'none', boxShadow: '0 30px 90px rgba(0,0,0,0.6)'}}>
         <OffthreadVideo src={staticFile('goc.mp4')} trimBefore={fr(start)} muted style={{width: '100%', height: '100%', objectFit: 'cover'}} />
       </div>
-      <CtaBox text={text} kind={kind} top={y1 + h1 + 30} f={f - 8} tickF={fr(start + CTA_TICK) - fr(start) - 8} />
+      <CtaBox text={text} kind={kind} top={y1 + h1 + (LAND_ ? 24 : 30)} f={f - 8} tickF={fr(start + CTA_TICK) - fr(start) - 8}
+        {...(LAND_ ? {left: Math.round(W_ * 0.16), width: Math.round(W_ * 0.68)} : {})} />
     </FullShell>
   );
 };

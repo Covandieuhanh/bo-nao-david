@@ -43,7 +43,7 @@ khối + quyết định riêng của loại + tiêu chí đạt. Cách làm t�
 5. **Ý của cả video**: luôn làm bước 2 (bản đồ cả video) trước khi chọn. Mỗi clip phục vụ lời hứa cốt lõi hoặc một ý lớn của video. **Người xem clip là người xem độc lập** (David chốt 2026-11-06): mỗi clip qua đủ bốn câu chọn ý ở đầu file và tự đạt câu hỏi gốc của bộ lọc (làm chủ bản thân / công việc); chỉ nói cảm xúc hoặc chỉ kể chuyện thì không đạt.
 6. **Không thứ tự cố định**: vị trí lời kêu gọi tự bố trí theo mạch (khối 13, bước 4); đổi thứ tự không được làm sai nghĩa.
    **Độ dài theo ý** (không có số cố định): xem bốn câu chọn ý.
-7. **Thẻ tít mở đầu 0 → ~2,5 s** (chuẩn DOAC/Mel Robbins): ≤ 8 chữ, 2 dòng, ở nửa trên khung — **viết như tít báo** nêu tiền cược /
+7. **(David 2026-11-07: chữ trên video phải nguyên văn — thẻ tít chỉ dùng cụm nguyên văn đắt nhất của clip, không viết tít báo; luat-chung 1)** **Thẻ tít mở đầu 0 → ~2,5 s** (chuẩn DOAC/Mel Robbins): ≤ 8 chữ, 2 dòng, ở nửa trên khung — **viết như tít báo** nêu tiền cược /
    kết quả / mâu thuẫn của clip, ĐÚNG Ý người nói, không thêm thông tin hay lời hứa ngoài clip (luat-chung 1b). Câu chạm vẫn là
    lời thật ngay giây 0. Ghi tít + câu gốc làm căn cứ vào ke-hoach-cat.md.
 8. **Nhịp kênh lớn** (David chốt 2026-11-04 — trước đây có chip ⏩ + thanh tập gốc, đã bỏ): **cắt cứng** giữa các câu, đoạn xen kẽ
@@ -119,7 +119,7 @@ Không có bước duyệt kế hoạch ghép của multi-clip (người dùng �
 zsh $POD/scripts/new_podcast.sh "$P/cat/<id>.mp4" hl-<tên>-<id> doc cat-thua   # mỗi clip → ~/Movies/tap-<tên>/3-highlight/clip-<id> = $E (chỉ lấy tiếng)
 zsh $POD/scripts/transcribe.sh "$E"
 python3 -I $BASE/scripts/captions.py "$E"                         # rồi sửa chữ theo captions-goc.js của $P (đã sửa chính tả)
-PY=$(zsh $POD/scripts/py_setup.sh); $PY $POD/scripts/speakers.py "$E" <1|2>; $PY $POD/scripts/envelope.py "$E"
+PY=$(zsh $POD/scripts/py_setup.sh); $PY $POD/scripts/speakers.py "$E"; $PY $POD/scripts/envelope.py "$E"
 ```
 - `new_podcast.sh … cat-thua` cắt lặng cuối còn 0,4 s — bình thường.
 - **Tông, nhạc, thẻ cuối**: `python3 -I $SKILL/scripts/hl_apply.py "$P" <id> "$E"` → `motion/src/highlight.js` (cắt cứng: `bar: false`,

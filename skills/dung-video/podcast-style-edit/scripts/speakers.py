@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
-"""Ai đang nói: speakers.py <dự án> [số người = 2]
-Chia lời thành từng đoạn theo chỗ ngắt (words.srt, nghỉ ≥ 0,35 s), đo đặc trưng giọng mỗi đoạn (cao độ, phổ mel, kênh trái/phải
+"""Ai đang nói: speakers.py <dự án> [số người; bỏ trống hoặc 0 = tự đếm]
+CÁCH CHÍNH (07/11/2026): pyannote speaker-diarization-3.1 (diarize.py, venv ~/.venvs/pyannote) — tách người theo dấu vân giọng,
+tự đếm số người; mỗi đoạn lời nhận người có thời gian trùng nhiều nhất, độ chắc = tỉ lệ trùng. Thiếu venv / mô hình / lỗi → cách dự phòng dưới.
+DỰ PHÒNG: chia lời thành từng đoạn theo chỗ ngắt (words.srt, nghỉ ≥ 0,35 s), đo đặc trưng giọng mỗi đoạn (cao độ, phổ mel, kênh trái/phải
 nếu thu stereo tách người) → gom 2 nhóm (k-means) → motion/src/speakers.js {count, turns:[{start,end,spk}]} + check/speakers.md
 (mỗi đoạn: người, độ chắc, lời). Người nói đầu tiên = 0. Đoạn '?' (độ chắc thấp) → đọc lời để quyết, sửa speakers.js.
 Đây là ước đoán theo giọng: hai giọng cùng giới, cùng âm sắc dễ lẫn — luôn đọc lại bảng."""
 import json, os, re, subprocess, sys
 import numpy as np
 
-P = os.path.expanduser(sys.argv[1]); N = int(sys.argv[2]) if len(sys.argv) > 2 else 2
+P = os.path.expanduser(sys.argv[1]); N = int(sys.argv[2]) if len(sys.argv) > 2 else 0
 SR = 16000
 def srt(path):
     out = []
@@ -66,7 +68,34 @@ Z[:, -2] *= 2.5                                               # cao độ là d�
 Z[:, -1] *= 3.0 if np.abs(F[:, -1]).max() > 1.5 else 0.0      # thu stereo tách người → kênh là dấu hiệu chắc chắn
 w = np.array([b - a for a, b, _ in segs])
 
-if N <= 1:
+def pyannote():
+    py = os.path.expanduser("~/.venvs/pyannote/bin/python")
+    if not os.path.exists(py): return None
+    src = os.path.join(P, "check/goc/audio16k.wav")
+    if not os.path.exists(src): src = os.path.join(P, "davinci/media/audio.wav")
+    out = os.path.join(P, "check/pyannote.json")
+    r = subprocess.run([py, "-I", os.path.join(os.path.dirname(os.path.abspath(__file__)), "diarize.py"), src, out, str(N)],
+                       capture_output=True, text=True)
+    if r.returncode or not os.path.exists(out):
+        print("pyannote lỗi → dùng cách dự phòng:", (r.stderr or r.stdout).strip().splitlines()[-1:]); return None
+    d = json.load(open(out)); n = max(1, d["count"])
+    lab, conf = np.zeros(len(segs), int), np.zeros(len(segs))
+    for i, (a, b, _) in enumerate(segs):
+        ov = np.zeros(n)
+        for t in d["turns"]: ov[t["spk"]] += max(0.0, min(b, t["end"]) - max(a, t["start"]))
+        lab[i] = int(ov.argmax()); conf[i] = ov.max() / max(b - a, 1e-6) if ov.sum() else 0.0
+    order = list(dict.fromkeys(lab)); lab = np.array([order.index(x) for x in lab])
+    print(f"pyannote: {len(order)} người"); return len(order), lab, np.clip(conf, 0, 1)
+
+DIA = pyannote()
+if DIA:
+    N, lab, conf = DIA
+    N = max(N, 1)
+elif N <= 0:
+    N = 2                                                     # dự phòng không tự đếm được → mặc định 2 người
+if DIA:
+    pass
+elif N <= 1:
     lab, conf = np.zeros(len(segs), int), np.ones(len(segs))
 else:
     best = None
