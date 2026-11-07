@@ -27,7 +27,7 @@ bản dài) — luôn dựng lại.
 zsh $BASE/scripts/check_env.sh
 zsh $SKILL/scripts/new_highlight.sh "<thư mục dự án gốc | video dài>" <tên-ngắn> ["<phụ đề .srt/.vtt>"]   # chạy nền; dòng cuối = $P
 ```
-→ `~/Movies/highlight-<tên>/`: `nguon.<ext>`, `loai.txt` (podcast · tu-quay · chua-ro), `check/goc/`: `transcript.srt`, `words.srt`,
+→ `~/Movies/tap-<tên>/3-highlight/`: `nguon.<ext>`, `loai.txt` (podcast · tu-quay · chua-ro), `check/goc/`: `transcript.srt`, `words.srt`,
 `loud05.txt` (độ lớn tiếng mỗi 0,05 s), `contact.jpg`; từ dự án gốc thêm `captions-goc.js` (lời đã sửa chính tả — nguồn chữ chính),
 `scenes-goc.js` (tên tập, người nói, kịch bản gốc), `du-an-goc.txt`. Đưa file video → chép lời bằng whisper.cpp + `large-v3-turbo`
 (không dùng faster-whisper/pip); `loai.txt = chua-ro` → xem `contact.jpg` rồi quyết theo bảng bước 0.

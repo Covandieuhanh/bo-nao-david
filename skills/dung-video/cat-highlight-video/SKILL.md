@@ -71,7 +71,7 @@ khối + quyết định riêng của loại + tiêu chí đạt. Cách làm t�
 
 ## Đầu vào
 
-1. **Video gốc** (mp4/mov…) của người dùng — hoặc **thư mục dự án** đã dựng nó (`~/Movies/podcast-<tên>`, `~/Movies/edit-<tên>`,
+1. **Video gốc** (mp4/mov…) của người dùng — hoặc **thư mục dự án** đã dựng nó (`~/Movies/tap-<tên>/2-ban-dai`,
    dự án Codex dạng `…/work/podcast-<tên>`): tốt nhất, vì có lời đã sửa chính tả, tiếng sạch, kịch bản, tên tập. Người dùng chỉ
    đưa video-final của một dự án → tìm thư mục dự án cạnh nó (cùng cha `outputs/` ↔ `work/`, hoặc `~/Movies/*/video-final.mp4`).
    Không tải video từ YouTube/TikTok — nhờ người dùng gửi file.
@@ -92,7 +92,7 @@ Chỉ có phụ đề, không có video → làm bước 2–5, trả bảng c�
 Làm lần lượt cho từng clip `<id>` (A, B…). `cat/<id>.mp4` của bước 6 chỉ để **kiểm lời**; bản dựng đọc thẳng video gốc theo mốc trong phuong-an.json (mỗi câu thêm
 `"tone": "lang"|"soi"`, câu dùng cho màn chốt thêm `"cta": true`):
 ```bash
-zsh $BASE/scripts/new_montage.sh hl-<tên>-<id> "$P/nguon.<ext>"     # chạy nền → ~/Movies/edit-hl-<tên>-<id> = $E (c1 = video gốc)
+zsh $BASE/scripts/new_montage.sh hl-<tên>-<id> "$P/nguon.<ext>"     # chạy nền → ~/Movies/tap-<tên>/3-highlight/clip-<id> = $E (c1 = video gốc)
 python3 -I $SKILL/scripts/hl_edl.py "$P" "$E" <id>                   # → $E/motion/src/edl.js viết sẵn
 cp $SKILL/assets/music/*.mp3 "$E/motion/public/sfx/"                 # nhạc cố định của kênh (soi-*, lang-*)
 ```
@@ -116,7 +116,7 @@ Không có bước duyệt kế hoạch ghép của multi-clip (người dùng �
 
 ### 7B. Dựng — nguồn podcast / toàn đồ hoạ (`podcast-style-edit`, khung dọc)
 ```bash
-zsh $POD/scripts/new_podcast.sh "$P/cat/<id>.mp4" hl-<tên>-<id> doc cat-thua   # mỗi clip → ~/Movies/podcast-hl-<tên>-<id> = $E (chỉ lấy tiếng)
+zsh $POD/scripts/new_podcast.sh "$P/cat/<id>.mp4" hl-<tên>-<id> doc cat-thua   # mỗi clip → ~/Movies/tap-<tên>/3-highlight/clip-<id> = $E (chỉ lấy tiếng)
 zsh $POD/scripts/transcribe.sh "$E"
 python3 -I $BASE/scripts/captions.py "$E"                         # rồi sửa chữ theo captions-goc.js của $P (đã sửa chính tả)
 PY=$(zsh $POD/scripts/py_setup.sh); $PY $POD/scripts/speakers.py "$E" <1|2>; $PY $POD/scripts/envelope.py "$E"
@@ -138,7 +138,7 @@ PY=$(zsh $POD/scripts/py_setup.sh); $PY $POD/scripts/speakers.py "$E" <1|2>; $PY
 - `pod_stills.sh` chụp thử (mỗi cảnh lúc đầy nhất + vài mốc `nen@`) → `node render.mjs` → `podcast_base.py` → `render_preview.py`
   → `check_frames.sh` như bước 7–9 của `$POD/SKILL.md`.
 
-### Khuôn podcast đồ hoạ dọc (7B, David duyệt 2026-11-06. Mẫu cho mọi video sau: 3 clip `~/Movies/podcast-hl-di-trainer-{A,B,C}`, thành phẩm ở Drive `Video-xong/Di-trainer-clip-1|2|3.mp4`, lời và kịch bản ở repo David.Claude `dang-lam/video-di-trainer/`) — thắng các luật khác trong skill này khi trái nhau
+### Khuôn podcast đồ hoạ dọc (7B, David duyệt 2026-11-06. Mẫu cho mọi video sau: 3 clip `~/Movies/tap-di-trainer/3-highlight/clip-{A,B,C}`, thành phẩm ở Drive `Video-xong/Di-trainer-clip-1|2|3.mp4`, lời và kịch bản ở repo David.Claude `dang-lam/video-di-trainer/`) — thắng các luật khác trong skill này khi trái nhau
 - **Không ép hành động trong lời:** bỏ luật 4 và màn chốt `cta` ở nhánh này. Không ghép câu kêu gọi từ chỗ khác, nhưng clip vẫn phải đạt câu `mang_ve` bằng lời đã có. Clip kết ở câu chốt được ý, lặng 1 s (nhạc nổi lên), rồi sang màn hình cuối.
 - **Màn hình cuối 3 s, không lời:** `"tease"` trong option của phuong-an.json = một câu gợi tò mò (Claude viết, David duyệt, chỉ gợi điều có thật trong video dài) + gạch nhận diện + "Bản đầy đủ trên kênh <`man_cuoi_kenh`>" + tên tập. **Không logo nền tảng nào** (David chốt 2026-11-06: video đăng Reels và TikTok, nút không bấm được mà có thể bị hạn chế phân phối). Câu hỏi "Vấn đề" / "Kết quả" để ở mô tả và bình luận ghim.
 - **Nhạc:** `ho-so/highlight.json` → `nhac_chu_chinh` (thấp hơn giọng khoảng 23 dB lúc nói, nén nhẹ), chạy liền qua màn hình cuối, không tiếng ký hiệu đầu clip.
@@ -183,13 +183,13 @@ PY=$(zsh $POD/scripts/py_setup.sh); $PY $POD/scripts/speakers.py "$E" <1|2>; $PY
 
 ## Cấu trúc
 ```
-~/Movies/highlight-<tên>/
+~/Movies/tap-<tên>/3-highlight/   (<tên> = đúng tên tập của bản dài)
 ├── nguon.<ext> · loai.txt          # video nguồn (bản không bìa nếu lấy từ dự án) · loại video gốc
 ├── check/goc/                      # transcript.srt · words.srt · loud05.txt · contact.jpg · captions-goc.js · scenes-goc.js · youtube.srt
 ├── phuong-an.json                  # các clip (A, B, C…), chon_y + câu theo thứ tự phát (Claude viết)
 ├── cat/<id>.mp4 · <id>.md · <id>-map.json · <id>-kiem.txt
 ├── ke-hoach-cat.md · dang-bai.md · so-lieu.md
-~/Movies/edit-hl-<tên>-<id>/  hoặc  ~/Movies/podcast-hl-<tên>-<id>/   → video-final.mp4 (BẢN CUỐI mỗi clip, 1080×1920)
+~/Movies/tap-<tên>/3-highlight/clip-<id>/   → video-final.mp4 (BẢN CUỐI mỗi clip, 1080×1920)
 $SKILL/assets/music/               # soi-*.mp3 · lang-*.mp3 — nhạc cố định của kênh
 ```
 
@@ -198,5 +198,5 @@ $SKILL/assets/music/               # soi-*.mp3 · lang-*.mp3 — nhạc cố đ�
 - `../luat-chung.md` — luật chung cả bộ (đọc trước).
 - `references/hoc-tu-top-video.md` — 10 Shorts lượt xem cao đã phân tích (nhịp, cảm xúc, bố cục, mạch) — nguồn của luật 7, 11
   và thang câu mở.
-- Ví dụ thật (bản chuẩn David chốt 2026-11-06): `~/Movies/podcast-hl-di-trainer-A|B|C`, kế hoạch ở `~/Movies/highlight-di-trainer`. Nguồn có người nói chưa có ví dụ đang giữ trên máy.
+- Ví dụ thật (bản chuẩn David chốt 2026-11-06): `~/Movies/tap-di-trainer/3-highlight/clip-A|B|C`, kế hoạch ở `~/Movies/tap-di-trainer/3-highlight`. Nguồn có người nói chưa có ví dụ đang giữ trên máy.
 

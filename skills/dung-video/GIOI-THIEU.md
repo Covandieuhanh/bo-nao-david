@@ -11,7 +11,7 @@ máy khác chỉ cần chép cả thư mục `dung-video/`. Ở `~/.claude/skill
 | `podcast-style-edit/` — **podcast** | Gửi file tiếng/video và nói "podcast" | Toàn bộ khung là đồ hoạ chuyển động, có bìa 1 giây, thanh thời gian |
 | `cat-highlight-video/` — **cắt highlight** | Gửi 1 video dài (YouTube, podcast đã dựng, hoặc thư mục dự án của nó), nói "cắt highlight" hoặc `/cat-highlight-video` | **các clip tự chọn ý, mỗi clip một ý trọn** **dọc 9:16** 30–60 giây, mỗi clip một khoảnh khắc mạnh, **cùng loại với video gốc**; thẻ tít mở đầu, phụ đề 1–3 chữ to mỗi nhịp, cắt cứng, lời trong clip nguyên văn; kèm lịch đăng, mô tả bài đăng + bình luận ghim |
 
-Video ra ở `~/Movies/edit-<tên>/video-final.mp4` (hoặc `~/Movies/podcast-<tên>/`; highlight: chọn câu ở `~/Movies/highlight-<tên>/`, bản cuối mỗi clip ở `~/Movies/edit-hl-<tên>-A/`, `-B/`… hoặc `~/Movies/podcast-hl-<tên>-A/`…). Tiêu đề + thumbnail ở `phat-hanh/` của dự án. Muốn thêm thì nói kèm:
+Mọi thứ của một tập nằm chung `~/Movies/tap-<tên>/` (David chốt 2026-11-07, xem `video-style-edit/scripts/noi_luu.sh`): gốc ở `1-goc/`, bản dài ở `2-ban-dai/video-final.mp4`, highlight: chọn câu ở `3-highlight/`, bản cuối mỗi clip ở `3-highlight/clip-A/`, `clip-B/`…; vlog ở `~/Movies/vlog/<tên>/`. Bản dài và highlight của cùng tập phải dùng **cùng một `<tên>`**. Tiêu đề + thumbnail ở `phat-hanh/` của dự án. Muốn thêm thì nói kèm:
 "xuất ngang/dọc", "làm thêm timeline CapCut", "không dùng ảnh", "thêm ảnh".
 
 ## Kiến trúc (2026-11-04) — sửa đúng một chỗ, không viết lại khung

@@ -30,3 +30,4 @@
 - [Dọn Documents 07/11](documents-don-dep-2026-11-07.md) — App notion đã bỏ; mở phiên ở ~/Documents/David.Claude (2026-11-07)
 - [GitHub chỉ giữ não](github-chi-giu-nao.md) — repo chỉ hồ sơ, luật, bộ nhớ, skill, việc dở, mẫu; thành quả ở máy và Drive (2026-11-07)
 - [Đặt tên không dấu](dat-ten-khong-dau.md) — mọi tên đều tiếng Việt không dấu, chữ thường, gạch nối; đồng nhất, không trộn tiếng Anh (2026-11-07)
+- [Movies xếp theo tập](movies-xep-theo-tap.md) — gốc/bản dài/highlight chung tap-<tên>, skill đã sửa theo

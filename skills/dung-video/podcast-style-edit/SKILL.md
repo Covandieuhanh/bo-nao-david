@@ -69,7 +69,7 @@ khối + quyết định riêng của loại + tiêu chí đạt. Cách làm t�
 ### 1. Môi trường + dự án
 ```bash
 zsh $BASE/scripts/check_env.sh
-zsh $SKILL/scripts/new_podcast.sh "<file tiếng hoặc video>" <tên-ngắn> [doc|ngang]   # → ~/Movies/podcast-<tên>, dòng cuối = $P
+zsh $SKILL/scripts/new_podcast.sh "<file tiếng hoặc video>" <tên-ngắn> [doc|ngang]   # → ~/Movies/tap-<tên>/2-ban-dai (gốc vào tap-<tên>/1-goc), dòng cuối = $P
 ```
 Lấy tiếng (bỏ hình), giữ nguyên toàn bộ (`cat-thua` ở tham số 4 mới cắt lặng đầu/cuối, chỉ dùng cho clip highlight; ghi `check/trim.txt`), `davinci/media/audio.wav` + `audio.m4a`,
 chép template của skill gốc, `project.js` có `podcast: true`, khung theo nguồn (hoặc tham số 3 `doc`|`ngang`).
@@ -140,7 +140,7 @@ xác nhận chính tả.
 
 ## Cấu trúc dự án
 ```
-~/Movies/podcast-<tên>/
+~/Movies/tap-<tên>/2-ban-dai/
 ├── davinci/media/   nguon.* (file gốc) · audio.wav/.m4a (đã cắt đầu/cuối) · nen.mp4 (sân khấu) · video_goc.mp4 (sân khấu + tiếng)
 │                    <id>.mov (cảnh, nền trong suốt) · phu_de.mov (phụ đề + thanh thời gian)
 ├── motion/src/      scenes.js (STAGE, TOPICS, SCENES) · captions.js · speakers.js · envelope.js · podframe.js · theme.js

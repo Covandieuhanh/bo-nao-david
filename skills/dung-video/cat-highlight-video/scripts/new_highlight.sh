@@ -1,6 +1,6 @@
 #!/bin/zsh
 # Tạo dự án cắt highlight: new_highlight.sh <video dài | thư mục dự án gốc> <tên ngắn> [phụ đề .srt/.vtt]
-# → ~/Movies/highlight-<tên>/ : nguon.<ext> + check/goc/ (transcript.srt, words.srt, contact.jpg, frame_0X.jpg) + loai.txt
+# → ~/Movies/tap-<tên>/3-highlight/ : nguon.<ext> + check/goc/ (transcript.srt, words.srt, contact.jpg, frame_0X.jpg) + loai.txt
 #   - Tham số 1 là THƯ MỤC dự án gốc (podcast-style-edit / video-style-edit, có motion/src/captions.js):
 #     lấy davinci/media/video_goc.mp4 (bản không bìa — mốc khớp phụ đề), chép check/goc/{transcript,words}.srt và
 #     captions.js đã sửa chính tả (check/goc/captions-goc.js), scenes.js (check/goc/scenes-goc.js) — không chép lời lại.
@@ -13,7 +13,7 @@ set -e
 export PATH=/opt/homebrew/bin:$PATH
 BASE=${0:A:h:h:h}/video-style-edit   # cùng bộ dung-video
 SRC=${1:?thiếu video dài hoặc dự án gốc}; NAME=${2:?thiếu tên ngắn}; SUB=${3:-}
-P=~/Movies/highlight-$NAME
+P=~/Movies/tap-$NAME/3-highlight   # cùng thư mục tập với bản dài; clip sau đó đặt tên hl-$NAME-<id>
 [ -e "$P" ] && { echo "Đã có $P — chọn tên khác"; exit 1; }
 mkdir -p "$P"/{check/goc,cat}
 if [ -d "$SRC" ]; then

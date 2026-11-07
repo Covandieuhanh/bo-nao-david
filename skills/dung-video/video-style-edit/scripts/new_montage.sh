@@ -20,8 +20,9 @@ while (( $# )); do
   esac
 done
 (( ${#CLIPS} >= 1 )) || { echo "Cần ít nhất 1 clip"; exit 1; }
-P=~/Movies/edit-$NAME
+source "$SKILL/scripts/noi_luu.sh"; P=$(noi_luu "$NAME")   # hl-<tên>-<id> → tap-<tên>/3-highlight/clip-<id>; vlog-<tên> → vlog/<tên>
 [ -e "$P" ] && { echo "Đã có $P — chọn tên khác"; exit 1; }
+mkdir -p "${P:h}"
 mkdir -p "$P"/{src,check,ref}
 cp -RL "$SKILL/assets/montage-template" "$P/motion"   # -L: chép BẢN THẬT thư viện hình (src/lib — phụ đề, nhận diện, màn chốt, biểu tượng, màn kết, minh hoạ)
 python3 -I "$SKILL/../khoi/hoso.py" ghep-vlog "$P/motion/src/hoso.json" >/dev/null   # hồ sơ tham số (highlight: hl_edl.py ghi đè)

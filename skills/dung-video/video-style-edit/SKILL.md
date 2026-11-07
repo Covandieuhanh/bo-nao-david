@@ -60,7 +60,7 @@ nhịp, phụ đề, hình, bộ nhận diện, lời kêu gọi, phát hành, v
 
 Video mẫu (nếu có) là phong cách, không tính vào số video gốc. Người dùng gửi cả thư mục → dùng mọi video trong đó
 làm video gốc theo thứ tự tên file (chế độ ghép); chỉ hỏi lại khi không rõ file nào là mẫu.
-Muốn "giống video trước"/cùng phong cách với một dự án cũ → lấy token phong cách từ `~/Movies/edit-<tên>/motion/src`
+Muốn "giống video trước"/cùng phong cách với một dự án cũ → lấy token phong cách từ `~/Movies/tap-<tên>/2-ban-dai/motion/src`
 của dự án đó (áp cho cả hai chế độ).
 
 ## Đầu vào
@@ -105,7 +105,7 @@ của dự án đó (áp cho cả hai chế độ).
 ```bash
 zsh $SKILL/scripts/new_project.sh "<video gốc>" "<video mẫu>" <tên-ngắn>
 ```
-Tạo `~/Movies/edit-<tên>/` với cấu trúc chuẩn (xem cuối file), chép video, chép template Remotion vào `motion/`,
+Tạo `~/Movies/tap-<tên>/2-ban-dai/` (gốc tự đặt vào `tap-<tên>/1-goc/`; tên `vlog-…` → `~/Movies/vlog/<tên>/`) với cấu trúc chuẩn (xem cuối file), chép video, chép template Remotion vào `motion/`,
 điền thông số video vào `motion/src/project.js`, cài gói npm. Dòng cuối là đường dẫn dự án `$P`.
 
 ## Bảng phụ thuộc (sửa X → chạy lại Y)
@@ -138,7 +138,7 @@ clip không đổi), rồi `render_preview.py` (+ `build_timeline.py` nếu đã
 ## Cấu trúc dự án
 
 ```
-~/Movies/edit-<tên>/
+~/Movies/tap-<tên>/2-ban-dai/
 ├── davinci/                 # tên lịch sử; chỉ thành "gói DaVinci" khi người dùng yêu cầu timeline
 │   ├── media/               # video_goc.mp4 (bản sạch), video_goc_raw.* (bản thô), <id>.mov (ProRes 4444 alpha), khung_an_toan.png
 │   └── timeline.fcpxml · HUONG-DAN.md   # chỉ khi được yêu cầu

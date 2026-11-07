@@ -9,8 +9,9 @@ export PATH=/opt/homebrew/bin:$PATH
 export NVM_DIR="$HOME/.nvm"; [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 BASE=${0:A:h:h:h}/video-style-edit   # cùng bộ dung-video
 SRC=${1:?thiếu file nguồn}; NAME=${2:-$(date +%Y%m%d-%H%M)}
-P=~/Movies/podcast-$NAME
+source "$BASE/scripts/noi_luu.sh"; P=$(noi_luu "$NAME")   # tap-<tên>/2-ban-dai · hl-<tên>-<id> → tap-<tên>/3-highlight/clip-<id>
 [ -e "$P" ] && { echo "Đã có $P — chọn tên khác"; exit 1; }
+mkdir -p "${P:h}"; luu_goc "$SRC" "$NAME"
 mkdir -p "$P"/{ref,check/goc,images,davinci/media}
 M="$P/davinci/media"
 cp "$SRC" "$M/nguon.${SRC:e:l}"
