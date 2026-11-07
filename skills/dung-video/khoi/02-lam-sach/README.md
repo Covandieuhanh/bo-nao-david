@@ -15,7 +15,9 @@
 ## Cách làm (chuyển nguyên văn từ SKILL.md cũ — ngày 2026-11-04)
 
 **VIDEO DÀI > 3 PHÚT KHÔNG CẮT GÌ** (David chốt 2026-11-05, luat-chung 2): `clean_suggest.py` tự để mọi cut `ok: false` (chỉ liệt kê). Chỉ sửa chiều
-hình khi cần; không đổi cut nào thành `true` trừ đoạn lằn ranh David đã chọn cắt. Các luật cắt dưới đây chỉ cho video ≤ 3 phút.
+hình khi cần; không đổi cut nào thành `true` trừ đoạn lằn ranh David đã chọn cắt.
+**Làm lại video cũ (David 08/11/2026):** được cắt màn tít + lời chào / giới thiệu kênh cũ (đặt cut tay `ok: true`, mọi cut tự động `ok: false`,
+`zoom: "none"`); chữ / viền kênh cũ in trong hình → cắt khung (gotchas). Sau `clean_apply.py` dùng `doi_moc_loi.py "$P"` thay cho chép lại. Các luật cắt dưới đây chỉ cho video ≤ 3 phút.
 
 **3a. Làm sạch** — luôn làm, kể cả khi video trông ổn (không có gì để cắt thì bản sạch chỉ là bản mã hoá lại):
 ```bash

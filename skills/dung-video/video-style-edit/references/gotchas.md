@@ -16,6 +16,9 @@
   là im lặng ("Không thấy lời nói thật"). Ngưỡng giờ lấy min(nền + 12, điểm giữa nền và lời nói).
 
 ## Remotion
+- Cảnh chiếu lại video gốc (`bocuc` o-nguoi, `cta`) đọc khung từ file gốc lớn (1,6 GB) → quá hạn chờ 28 s khi máy bận. render.mjs
+  đã đặt `timeoutInMilliseconds: 240000`, 2 luồng cho cảnh có video; lỗi giữa chừng thì `TIEP=1 node render.mjs` chạy tiếp. Render
+  mỗi lúc MỘT dự án (8 GB RAM).
 - Không đặt `"type": "module"` trong package.json — import không đuôi (`./scenes`) sẽ hỏng.
 - `defaultProps` phải là dữ liệu thuần (JSON) — truyền tên loại cảnh (`type`), không truyền component/hàm.
 - Chữ trong khung `overflow: hidden` (hiệu ứng trồi lên) **cắt mất dấu dưới** (ạ, ợ) → thêm `paddingBottom` + `marginBottom` âm.
@@ -47,6 +50,14 @@
 - 17 clip ProRes ≈ 2 GB — báo người dùng về dung lượng.
 
 ## Làm sạch video gốc (chế độ 1 video)
+- **Video cũ của kênh cũ (David, 08/11/2026)**: hay có **chữ / viền in cứng vào hình** — dải tên tập + ngày + website ở đáy
+  (từ dòng ~902/1080), viền trắng bo góc sát mép (~40 px). Luôn xem 1 khung ở giữa video **cỡ lớn** trước khi dựng; có thì cắt
+  khung 16:9 bên trong rồi phóng lại 1920×1080 (`crop=1592:896:200:0` cho dải đáy; `crop=1808:1017:56:31` cho viền), làm TRƯỚC face_place.
+  Màn tít mở đầu cũ ("PODCAST TẬP 4…") + lời chào/giới thiệu kênh cũ → cắt (ngoại lệ "video dài không cắt", luat-chung 2).
+- **Whisper chép ảo** cả bài một câu ("Hãy subscribe cho kênh Ghiền Mì Gõ…") ở video có tiếng trầm/nhạc mở đầu → clean_analyze.sh tự
+  chép lại với tiếng đã lọc (`highpass=f=120,dynaudnorm`); còn ảo thì thêm `-mc 0` (tắt ngữ cảnh) và chép riêng đoạn đầu rồi ghép.
+- Chỉ cắt vài đoạn (lời chào) ở video dài → **không chép lại** bản sạch: `doi_moc_loi.py "$P"` dời lời bản thô sang mốc bản sạch.
+  Đặt mốc cắt ở khoảng lặng thật (đo RMS 50 ms), không theo mốc từ của Whisper (lệch ~0,3–0,5 s → lẹm chữ "Đò").
 - Bản thô đổi tên thành `video_goc_raw.<ext>` TRƯỚC khi ghi `video_goc.mp4` — macOS coi `video_goc.MP4` và
   `video_goc.mp4` là một file, ghi thẳng sẽ đè mất bản gốc đang đọc.
 - Mốc trong `cuts.json` luôn là mốc **bản thô**; mốc trong scenes.js là mốc **bản sạch** — quy đổi qua `segments.json`.

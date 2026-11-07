@@ -30,7 +30,7 @@ kênh lớn, ghi lý do vào changelog. Mục tiêu mỗi video: người xem **
 - **Mở đầu 0–3 s** nói ngay video về cái gì / đang đặt cược gì: thẻ tiêu đề chữ to ở nửa trên khung, hiện từ giây 0.
 - **VIDEO DÀI KHÔNG CẮT GÌ** (David chốt 2026-11-05 — thắng mọi luật cắt cũ): video dài (> 3 phút: podcast, tâm sự, thực tế, nói trước
   camera) là BẢN GỐC, để nguyên cả khoảng lặng, tiếng "ờ/ừm", ngập ngừng, nói lại, đoạn dẫn dắt, phần đầu/cuối. Những chỗ kỹ thuật coi là
-  lỗi lại là nét tự nhiên của người kể chuyện; giá trị của đoạn hay nằm trong cả câu chuyện dẫn tới nó. Không rút video dài thành đoạn hay.
+  lỗi lại là nét tự nhiên của người kể chuyện; giá trị của đoạn hay nằm trong cả câu chuyện dẫn tới nó. Không rút video dài thành đoạn hay. **Ngoại lệ (David 08/11/2026):** làm lại video cũ thì cắt màn tít + lời chào / giới thiệu kênh cũ (tên kênh cũ, nghề cũ, kinh doanh) và chữ/viền kênh cũ in trong hình — chỉ đúng các đoạn đó.
 - **Lằn ranh ở video dài: CẢNH BÁO, không tự cắt.** Phiếu lọc liệt kê đoạn chạm (mốc giây + lý do + rủi ro), hỏi David cắt hay giữ; David quyết
   từng video. David chọn cắt thì chỉ cắt đúng đoạn đó. Dù giữ, chữ đồ hoạ / tiêu đề / thumbnail / mô tả / clip ngắn vẫn không lấy nội dung chạm lằn ranh.
 - **Cắt chỉ dùng cho video ngắn trích từ video dài** (highlight) và video ngắn ≤ 3 phút: cắt lặng ≥ 0,45 s còn ~0,24 s + tiếng đệm

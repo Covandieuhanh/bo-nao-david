@@ -16,6 +16,15 @@ DUR=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$V")
 ffmpeg -v error -y -i "$V" -vn -ac 1 -ar 16000 "$O/a.wav"
 whisper-cli -m $MODEL -l vi -f "$O/a.wav" -osrt -of "$O/transcript" -np >/dev/null 2>&1
 whisper-cli -m $MODEL -l vi -f "$O/a.wav" -ml 1 -sow -osrt -of "$O/words" -np >/dev/null 2>&1
+# Whisper "ảo" (cả bài lặp một câu kiểu "Hãy subscribe cho kênh…", hoặc rỗng) — gặp ở video cũ nhiều tiếng trầm (2026-11-08):
+# chép lại với tiếng đã lọc (cắt trầm + cân âm động). Chỉ đổi file tiếng cho Whisper, không đổi tiếng video.
+if python3 -I -c "import re,sys;L=[l.strip() for l in open(sys.argv[1],encoding='utf-8') if l.strip() and '-->' not in l and not l.strip().isdigit()];sys.exit(0 if (not L or max(L.count(x) for x in set(L))/len(L)>0.3) else 1)" "$O/transcript.srt"; then
+  echo "Whisper chép ảo → chép lại với tiếng đã lọc"
+  ffmpeg -v error -y -i "$V" -vn -af "highpass=f=120,dynaudnorm" -ac 1 -ar 16000 "$O/a_loc.wav"
+  whisper-cli -m $MODEL -l vi -f "$O/a_loc.wav" -osrt -of "$O/transcript" -np >/dev/null 2>&1
+  whisper-cli -m $MODEL -l vi -f "$O/a_loc.wav" -ml 1 -sow -osrt -of "$O/words" -np >/dev/null 2>&1
+  rm -f "$O/a_loc.wav"
+fi
 ffmpeg -v error -i "$O/a.wav" -af "asetnsamples=8000,astats=metadata=1:reset=1,ametadata=print:key=lavfi.astats.Overall.RMS_level:file=-" -f null - \
   | grep RMS | awk -F= '{printf "%.1fs %d dB\n", (NR-1)*0.5, $2}' > "$O/loud.txt"
 # Khoảng lặng: ngưỡng = nền ồn (phân vị 10 của loud.txt) + 12 dB, nhưng không quá điểm giữa nền ồn và lời nói

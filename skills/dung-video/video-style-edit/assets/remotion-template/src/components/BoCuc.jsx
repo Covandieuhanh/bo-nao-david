@@ -36,7 +36,7 @@ const The = ({start, tieu_de, dong = [], w, f, fs}) => (
         <div key={i} style={{position: 'relative', alignSelf: 'flex-start', opacity: Math.min(1, p * 1.4) * (1 - 0.45 * g),
           transform: `translateY(${(1 - p) * fs * 0.6}px)`}}>
           <div style={{fontFamily: d.to ? HEAD : BODY, fontWeight: d.to ? 800 : 500, lineHeight: 1.08,
-            fontSize: d.to ? Math.min(fs * 1.35, (w - fs * 1.8) / (0.46 * Math.max(4, d.text.length))) : fs * 0.62,
+            fontSize: d.to ? Math.max(fs * 0.8, Math.min(fs * 1.35, (w - fs * 1.8) / (0.46 * Math.max(4, d.text.length)))) : fs * 0.62,   // chữ to: co cho vừa một dòng, không nhỏ hơn 0,8 — dài quá thì xuống dòng
             color: d.to && i === dong.length - 1 ? C.accent : C.text, textTransform: d.to ? 'uppercase' : 'none'}}>{d.text}</div>
           {g > 0 && <div style={{position: 'absolute', left: 0, top: '52%', height: Math.max(3, fs * 0.08), width: `${g * 100}%`, background: C.accent}} />}
         </div>
@@ -101,7 +101,7 @@ const TheCanh = ({sceneId, start, ben, tieu_de, dong}) => {
   const left = side === 'phai' ? W - SAFE.right - w : SAFE.left;
   return (
     <AbsoluteFill style={{opacity: o}}>
-      <div style={{position: 'absolute', left, top: H * 0.1, transform: `translateX(${slide}px)`}}>
+      <div style={{position: 'absolute', left, top: H * 0.17, transform: `translateX(${slide}px)`}}>   {/* dưới dấu góc kênh (tên + chủ đề) */}
         <The start={start} f={f} w={w} fs={H * 0.055} tieu_de={tieu_de} dong={dong} />
       </div>
     </AbsoluteFill>
