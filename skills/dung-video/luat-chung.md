@@ -50,8 +50,9 @@ kênh lớn, ghi lý do vào changelog. Mục tiêu mỗi video: người xem **
 - Luôn đầy đủ, đúng từng chữ; ẩn khi thẻ toàn cảnh đang hiện nguyên văn câu đó. Không đốt phụ đề bằng ffmpeg (không có libass).
 
 ## 4. Hình
-- **2 TRẠNG THÁI** (David chốt 2026-11-04): (A) người + phụ đề · (B) cảnh minh hoạ `illus` toàn màn hình + phụ đề. Không chữ to / thẻ /
-  câu trích đè lên người; ngoại lệ: thẻ tít mở đầu 0–2,5 s, màn chốt và điểm nhấn trên người (dưới). Chi tiết: khối 07 (`khoi/07-canh-minh-hoa`).
+- **BỐ CỤC TỰ CÂN** (David chốt 2026-11-07, thay luật 2 trạng thái ngày 04/11): chọn từ `trinh-bay/bo-cuc.md` (người + phụ đề, điểm
+  nhấn trên người, thẻ cạnh mặt, người vào ô bo góc, minh hoạ toàn màn hình, màn chương…) sao cho hợp nội dung, người xem dễ nhận. Không
+  con số bắt buộc; dọc mỗi lúc ít thứ. Chi tiết: khối 07 (`khoi/07-canh-minh-hoa`) + `trinh-bay/README.md`.
 - **ĐIỂM NHẤN TRÊN NGƯỜI** (David chốt 2026-11-07, nới luật 2 trạng thái): mọi video phải có motion graphics, hiểu là điểm nhấn kéo mắt người xem — nhiều loại, không chỉ toàn màn hình. Cảnh `nhan` được đè lên người, không che mặt: zoom dồn vào mặt ở câu đắt (`zoom` 1,12–1,2), làm tối viền (`toi`), chữ nhấn ≤ 4 chữ trích lời (`text`) hoặc biểu tượng nhỏ (`icon`) bật cạnh mặt. Mỗi video trộn loại theo nội dung, không số cố định. Khối 07.
 - **BỐ CỤC TỰ CÂN** (David chốt 2026-11-07, thay luật 2 trạng thái): không con số bắt buộc về độ dài cảnh, tỷ lệ mặt / đồ hoạ, số cảnh; Claude chọn bố cục từ `trinh-bay/bo-cuc.md` sao cho hợp nội dung và người xem dễ nhận. Ngang tự do; dọc mỗi lúc ít thứ. Học video mẫu mới: chỉ học trình bày (bố cục, thứ tự hiện, cách nối, âm thanh), không đổi thẩm mỹ — quy trình ở `trinh-bay/README.md`.
 - **Không che người nói** (face_place / LOW_Y), **không đè phụ đề** (chặn cứng ở mọi template).
