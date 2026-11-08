@@ -780,6 +780,7 @@ const musicVol = (f) => {
 };
 // MUSIC.tracks = [{f: 'soi-1', a, b, gain}] (highlight): mỗi bài một khoảng timeline, chồng mờ 0,8 s ở mối; không có → music.wav
 const XF = 0.8;
+// gain không ghi → mức cân của bài ở hồ sơ chung nhac.muc (một nguồn), rồi mới tới 1
 const Track = ({tr}) => {
   const a0 = Math.max(0, tr.a - XF);
   const fadeIn = (t) => tr.a <= 0 ? 1 : interpolate(t, [tr.a - XF, tr.a + XF], [0, 1], clamp);
@@ -787,7 +788,7 @@ const Track = ({tr}) => {
   return (
     <Sequence from={fr(a0)} durationInFrames={fr(Math.min(TOTAL, tr.b + XF) - a0)} name={`nhac ${tr.f}`} layout="none">
       <Audio src={staticFile(`sfx/${tr.f}.mp3`)} trimBefore={fr(tr.from || 0)} loop
-        volume={(k) => { const t = a0 + k / FPS; return musicVol(fr(t)) * (tr.gain ?? 1) * fadeIn(t) * fadeOut(t); }} />
+        volume={(k) => { const t = a0 + k / FPS; return musicVol(fr(t)) * (tr.gain ?? HS.nhac?.muc?.[tr.f] ?? 1) * fadeIn(t) * fadeOut(t); }} />
     </Sequence>
   );
 };

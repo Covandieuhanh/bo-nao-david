@@ -41,7 +41,7 @@ mus = []
 for s in hl["segs"]:
     if mus and mus[-1]["k"] == s["tone"]: mus[-1]["b"] = s["clip_end"]
     else: mus.append(dict(k=s["tone"], a=0.0 if not mus else mus[-1]["b"], b=s["clip_end"]))
-GAIN = {"soi-1": 0.55, "soi-2": 0.5, "lang-1": 1.0, "lang-2": 1.6}   # cân về ~ −15 LUFS (xem hl_edl.py)
+GAIN = json.load(open(os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../ho-so/chung.json'), encoding='utf-8'))['nhac']['muc']   # mức cân từng bài: MỘT nguồn ở hồ sơ chung
 hl["music"] = [dict(f=MUS[x["k"]], a=x["a"], b=x["b"], gain=GAIN[MUS[x["k"]]]) for x in mus]
 # Thẻ cuối dẫn về bản đầy đủ (luật 13): phuong-an.json "endcard": {"title"?, "speaker"?} — trống thì EndCard.jsx lấy STAGE
 # (tên tập + người nói gốc). Không có khoá "endcard" (vd. kiểu vòng lặp) → không thẻ cuối.

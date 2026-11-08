@@ -142,3 +142,9 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
 - `clean_apply.py`: file DJI có luồng phụ làm ffprobe in thêm dòng → lấy dòng đầu.
 - Màn chốt `cta` có bản khung ngang (Action.jsx): ô video 16:9 rộng 56% giữa trên + câu chốt bên dưới (bản dọc làm câu chốt rơi khỏi khung ngang).
 - **Chữ trên video = nguyên văn lời David** (David: "không được sáng tạo sai lời chính xác của tôi"): bỏ thẻ tít mặc định, màn chốt dùng câu David nói cuối video, không số chạy, không bỏ chữ đổi nghĩa. luat-chung 1, khối 06, 08.
+
+## 2026-11-08 · nhạc (vlog The View Vũng Tàu)
+- David: "đã tải rất nhiều nhạc để phù hợp với từng nội dung… sao không tự đánh giá để tự ghép nhạc phù hợp". Claude tự chọn nhạc theo tuyến, không hỏi, bỏ câu "nhạc nghe điện tử" (multi-clip.md 8).
+- Kho thêm 5 bài từ `~/Music/nhac-nen`: du-lich-1/2, kham-pha-1/2, ngam-canh-1; tuyến mới du_lich, kham_pha, ngam_canh (`ho-so/chung.json`).
+- Mức cân từng bài gom về một nguồn `nhac.muc` (vlog_edl, render_preview, hl_edl, hl_apply); Show.jsx ghép tự lấy khi edl không ghi gain — lỗi gốc: edl viết tay thiếu gain → nhạc to gấp đôi.
+- vlog_edl.py: plan.json `tuyen` chọn bài đoạn sôi, `nhac: {soi, lang}` ép tay.

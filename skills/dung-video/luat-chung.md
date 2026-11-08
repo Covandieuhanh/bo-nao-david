@@ -69,8 +69,7 @@ giữ người xem; **không chép thẩm mỹ**, **chỉ thêm, không thay** c
 
 ## 5. Bộ nhận diện David (một nguồn: `remotion-template/src/brand.json` + `theme.js`/`brand.js` + `subStyle.js` + `cta.js` + `Icons.jsx`)
 Dấu góc ● DAVID │ chủ đề · khuôn tiêu đề (dòng nhỏ cam → gạch cam → chữ cô đặc in hoa trắng, dòng nhấn cam) · tiếng ký hiệu
-`sting.wav` lúc hiện tiêu đề · nhạc kênh dưới lời (4 bài cố định ở `cat-highlight-video/assets/music`, + 2 bài intro vlog; không
-tự thêm bài) · giọng −20 LUFS, bản cuối −14 LUFS · màn chốt (`cta`, ~4 s, tick + "ting") → thẻ cuối. Sửa nhận diện → giữ đồng bộ cả 4 loại.
+`sting.wav` lúc hiện tiêu đề · nhạc kênh dưới lời (kho `cat-highlight-video/assets/music`, chọn theo tuyến nội dung, cân mức từng bài — khối 09) · giọng −20 LUFS, bản cuối −14 LUFS · màn chốt (`cta`, ~4 s, tick + "ting") → thẻ cuối. Sửa nhận diện → giữ đồng bộ cả 4 loại.
 - **BỘ NHẬN DIỆN CHUNG** (David chốt 08/11/2026): mọi loại video cùng tiêu chuẩn vị trí và thành phần cố định — vùng an toàn, dấu góc,
   thanh thời gian, phụ đề, màn chốt, thẻ cuối. Một nguồn: `thu-vien-hinh/nhan-dien-chung.md` + `nhan-dien.js`. Chỉ motion graphics là tự do theo loại, theo cảnh.
 - **Dấu góc** (sửa 08/11/2026): khung dọc 228 px, khung ngang sát mép trên vùng an toàn (`BRAND_TOP` / `BRAND_BOT` trong `theme.js`).

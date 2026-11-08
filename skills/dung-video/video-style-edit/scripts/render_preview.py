@@ -94,7 +94,7 @@ if not _mus and _f:
     # Video 1 người nói / podcast: nhạc kênh RẤT NHỎ — khoảng trống/mở/kết thấp hơn giọng `khoang_trong_duoi_giong_LU`; khi đang
     # nói nén theo giọng (ngưỡng = giọng − `nen_nguong_duoi_giong_dB`, tỉ lệ `nen_ty_le`, nhả `nen_nha_ms`) → ~30–33 LU dưới giọng (đo 2026-11-05)
     print(f"nhạc nền: {_f} (tuyến {pr.get('tuyen', '—')})")
-    _G = {"soi-1": 0.55, "soi-2": 0.5, "lang-1": 1.0, "lang-2": 1.6, "intro-soi": 0.51, "intro-lang": 1.12}
+    _G = NH.get("muc", {})   # mức cân từng bài: MỘT nguồn ở hồ sơ chung nhac.muc
     _o = subprocess.run(["ffmpeg", "-nostats", "-i", os.path.join(M, out_["base"]), "-af", "ebur128", "-f", "null", "-"], capture_output=True, text=True).stderr
     _I = [float(x) for x in __import__("re").findall(r"I:\s+(-?[\d.]+) LUFS", _o)]
     _voice = _I[-1] if _I else -20.0

@@ -13,7 +13,10 @@
 - `video-style-edit/assets/montage-template/render-show.mjs`
 
 ## Luật
-- Nhạc chỉ các bài cố định: `cat-highlight-video/assets/music` (soi-*, lang-*) + 2 bài intro vlog — không tự thêm bài; thiếu thì báo David.
+- **Kho nhạc kênh** `cat-highlight-video/assets/music` (README liệt kê bài + nguồn). Claude TỰ chọn bài theo tuyến nội dung, không hỏi David
+  (David chốt 08/11/2026: "đã tải rất nhiều nhạc để phù hợp từng nội dung"). Bài mới David tải về `~/Music/nhac-nen` → đặt tên theo tuyến,
+  chép vào kho, đo `ebur128` và ghi mức cân vào hồ sơ chung `nhac.muc` (gain = 10^((−15 − I)/20)), thêm vào `nhac.tuyen`.
+- **Mức cân từng bài: một nguồn** `ho-so/chung.json` → `nhac.muc` (vlog_edl, render_preview, hl_edl, hl_apply, Show.jsx ghép đều đọc từ đây).
 - Tiếng ký hiệu `sting.wav` lúc hiện tiêu đề mở đầu; "ting" ở màn chốt; "vút" chỉ khi bật kiểu tua cũ.
 - Giọng cân −20 LUFS; nhạc dưới lời và bản cuối: theo chuẩn âm lượng chung.
 - Kiểm bản cuối: âm lượng chênh nguồn ≤ 0,5 dB, tiếng rè (highpass 12 kHz) ≤ 1 dB (khối 17).

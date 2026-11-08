@@ -36,7 +36,27 @@
      "soi-1",
      "soi-2"
     ],
-    "khi": "vui, du lịch, khám phá, đi chơi, nhận quà / thành quả, năng lượng cao"
+    "khi": "vui, nhận quà / thành quả, năng lượng cao, sự kiện sôi động"
+   },
+   "du_lich": {
+    "bai": [
+     "du-lich-1",
+     "du-lich-2"
+    ],
+    "khi": "vlog du lịch, tham quan, đi chơi cùng bạn bè / đoàn (du-lich-1 mở nhẹ ~18 s rồi lên; du-lich-2 đều nhịp ngay từ đầu)"
+   },
+   "kham_pha": {
+    "bai": [
+     "kham-pha-1",
+     "kham-pha-2"
+    ],
+    "khi": "phiêu lưu, leo núi, hành trình có cao trào (kham-pha-1 điện ảnh; kham-pha-2 kiểu phim tài liệu tươi)"
+   },
+   "ngam_canh": {
+    "bai": [
+     "ngam-canh-1"
+    ],
+    "khi": "ngắm cảnh chậm, thư thái, du lịch một mình (piano)"
    },
    "tam_su": {
     "bai": [
@@ -73,6 +93,20 @@
   "do_to_cuoi_LUFS": -14,
   "sai_so_LU": 0.5,
   "dinh_dB": -1.5,
-  "_chuan_am": "CHUẨN CHUNG MỌI ĐẦU RA, David chốt 2026-11-06 theo 3 clip Đi trainer: nhạc thấp hơn giọng khoảng 23 dB lúc nói, cả bài −14 LUFS. Giọng nhỏ thì kéo lên, nhạc to thì hạ xuống theo mức này."
+  "_chuan_am": "CHUẨN CHUNG MỌI ĐẦU RA, David chốt 2026-11-06 theo 3 clip Đi trainer: nhạc thấp hơn giọng khoảng 23 dB lúc nói, cả bài −14 LUFS. Giọng nhỏ thì kéo lên, nhạc to thì hạ xuống theo mức này.",
+  "muc": {
+   "_": "Hệ số cân từng bài về ~−15 LUFS — MỘT NGUỒN cho mọi script (vlog_edl, render_preview, hl_edl, hl_apply). Thêm bài: đo ebur128 I rồi gain = 10^((−15 − I)/20)",
+   "soi-1": 0.55,
+   "soi-2": 0.5,
+   "lang-1": 1.0,
+   "lang-2": 1.6,
+   "intro-soi": 0.51,
+   "intro-lang": 1.12,
+   "du-lich-1": 0.55,
+   "du-lich-2": 0.51,
+   "kham-pha-1": 0.68,
+   "kham-pha-2": 0.72,
+   "ngam-canh-1": 1.1
+  }
  }
 }

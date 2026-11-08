@@ -53,7 +53,7 @@ Vị trí và thành phần cố định (dấu góc, thanh thời gian, phụ �
    | Nhạc | bài vui `soi-*` | bài trầm `lang-*` (piano/dây) |
    | Chữ to | bật nảy, gạch cam | hiện chậm, nét mảnh, không gạch |
    | Hình | dồn khung | màu dịu |
-   Nhạc chỉ lấy từ **kho nhạc kênh** (`$SKILL/assets/music/`, chia theo tuyến) — thiếu bài hợp thì báo David, không tự thêm. Mức nhạc
+   Nhạc lấy từ **kho nhạc kênh** (`$SKILL/assets/music/`), Claude tự chọn theo tuyến nội dung (khối 09). Mức nhạc
    theo chuẩn âm lượng chung (thấp hơn giọng ~23 dB). Không nhãn kỹ thuật, không thẻ "TẬP NÀY CÓ GÌ?"/tên vòng.
 10. **Chừa cho bản đầy đủ đúng chỗ**: chừa một chuyện khác hoặc ý mở rộng; ý trong clip phải đi đến hết. Câu mở ưu tiên bất ngờ / kết quả lớn / tiền cược hơn lời than chung chung.
 11. **Thẻ cuối dẫn về bản đầy đủ** sau màn chốt (kiểu Have A Sip), cả hai nhánh: gạch nhận diện + **"Bản đầy đủ trên kênh <`man_cuoi_kenh`>"**

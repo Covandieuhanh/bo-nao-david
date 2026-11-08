@@ -18,7 +18,7 @@ H, E = (os.path.expanduser(a) for a in _a[:2]); OID = _a[2] if len(_a) > 2 else 
 JUMP, PRE, POST = 0.4, 0.04, 0.08
 MUSIC = {'soi': 'soi-1', 'lang': 'lang-1'}           # bài mặc định của kênh (assets/music của skill)
 # cân mức các bài về cùng ~ −15 LUFS (đo ebur128 60 s đầu: soi-1 −10,3 · soi-2 −9,1 · lang-1 −15,2 · lang-2 −19,7)
-GAIN = {'soi-1': 0.55, 'soi-2': 0.5, 'lang-1': 1.0, 'lang-2': 1.6}
+GAIN = json.load(open(os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../ho-so/chung.json'), encoding='utf-8'))['nhac']['muc']   # mức cân từng bài: MỘT nguồn ở hồ sơ chung
 
 plan = json.load(open(os.path.join(H, 'phuong-an.json'), encoding='utf-8'))
 opt = next(o for o in plan['options'] if OID is None or o['id'] == OID)

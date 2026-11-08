@@ -260,8 +260,9 @@ chữ khó đọc trên nền sáng, **người/vật chính bị phụ đề ch
 cd "$P/motion" && node render-show.mjs        # chạy nền, ~3–9 phút/phút video; tự loudnorm → video-final.mp4
 ```
 Sau đó: cắt 12–15 khung trải đều thành dải xem lại; `ffmpeg -i video-final.mp4 -af ebur128=peak=true -vn -f null -`
-(I ≈ −14…−15 LUFS, đỉnh ≤ −1,4 dB). Báo người dùng rằng **chưa nghe thử được** — nhạc/hiệu ứng tự tổng hợp có thể
-nghe "điện tử"; mời họ gửi nhạc riêng (thay `public/sfx/music.wav`).
+(I ≈ −14…−15 LUFS, đỉnh ≤ −1,4 dB). Nhạc lấy từ kho nhạc kênh theo tuyến nội dung (khối 09: plan.json/edl `tuyen`, bài + mức cân ở hồ sơ chung `nhac`) — Claude tự chọn,
+không hỏi David và không nói "nhạc có thể nghe điện tử" (câu cũ của thời nhạc tự tổng hợp, bỏ 08/11/2026). `MUSIC.tracks` viết tay
+không ghi `gain` thì Show.jsx tự lấy `nhac.muc`; đừng ghi `gain: 1`.
 
 ### 9. Phát hành, giao + sửa theo góp ý
 Vlog đăng YouTube > 3 phút: `"ytEnd": 20` trong plan.json (màn kết YouTube 15–20 s sau thẻ nhận diện) + `chapters.py` (chương theo

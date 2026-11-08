@@ -38,7 +38,7 @@ Tên file bắt đầu bằng nhóm: `luat-` cách làm việc với David · `n
 - [Mỗi lúc một chỗ chữ](video-phu-de-mot-cho-chu.md) — phụ đề dọc cụm 5–8 chữ cỡ 58 bằng chữ thẻ; chữ motion graphic hiện thì phụ đề nhường (2026-11-08)
 - [Movies xếp theo tập](video-movies-xep-theo-tap.md) — gốc/bản dài/highlight chung tap-<tên>, skill đã sửa theo
 - [Người xem là trung tâm](video-nguoi-xem-trung-tam.md) — học kênh lớn ở nhịp và trình bày, giữ thẩm mỹ David (2026-11-04, sửa 08/11)
-- [Nhạc theo tuyến nội dung](video-nhac-theo-tuyen.md) — project.tuyen bắt buộc, chỉ kho nhạc kênh; mức ~23 dB dưới giọng (2026-11-05, sửa 08/11)
+- [Nhạc theo tuyến nội dung](video-nhac-theo-tuyen.md) — Claude tự chọn theo tuyến từ kho kênh, không hỏi; cân mức từng bài (nhac.muc); ~23 dB dưới giọng (2026-11-05, sửa 08/11)
 - [Bìa podcast không mặt](video-podcast-bia-khong-mat.md) — podcast chỉ có tiếng thì bìa không có mặt người, phải khớp nội dung; mặt người chỉ cho video quay hình (2026-11-06)
 - [Podcast phủ hình 30%](video-podcast-phu-hinh-30.md) — motion graphic khoảng 30% thời lượng, cân theo nội dung; chụp thử cho David chốt rồi mới render (2026-11-06)
 

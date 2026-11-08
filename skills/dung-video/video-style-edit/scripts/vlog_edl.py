@@ -50,7 +50,7 @@ FAST_GAP, FAST_RATE, FAST_VOL, EDGE = 4.0, 1.8, 0.35, 0.6
 FPS = 30
 fr = lambda s: round(s * FPS) / FPS
 BAD = re.compile(r'subscribe|Ghiền Mì Gõ|La La School|bỏ lỡ những video|theo dõi và hẹn gặp lại', re.I)
-GAIN = {'soi-1': 0.55, 'soi-2': 0.5, 'lang-1': 1.0, 'lang-2': 1.6, 'intro-soi': 0.51, 'intro-lang': 1.12}
+GAIN = json.load(open(os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../ho-so/chung.json'), encoding='utf-8'))['nhac']['muc']   # mức cân từng bài: MỘT nguồn ở hồ sơ chung
 # Bài cho đoạn ghép mở đầu (assets/music, chọn 2026-11-04 theo chất intro vlog kênh mẫu): (nhịp s, pha phách đầu s) đo bằng onset
 #   intro-soi = Upbeat (alex-morgan) — chuyến vui, du lịch · intro-lang = Inspiring Documentary (AtlasAudio) — hành hương, từ thiện, ý nghĩa
 BEAT = {'intro-soi': (0.530, 0.015), 'intro-lang': (0.530, 0.040)}
@@ -59,6 +59,12 @@ SFXDIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../assets/sf
 MUSDIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../cat-highlight-video/assets/music')
 intro_mus = None
 MUS = {'soi': 'soi-1', 'lang': 'lang-1'}
+# plan.json "tuyen" (hồ sơ chung nhac.tuyen, David chốt 08/11: chọn nhạc theo nội dung từ cả kho) → bài đầu của tuyến cho đoạn sôi;
+# "nhac": {"soi": "<bài>", "lang": "<bài>"} ép tay
+_TY = json.load(open(os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../ho-so/chung.json'), encoding='utf-8'))['nhac']['tuyen']
+if plan.get('tuyen') in _TY and _TY[plan['tuyen']]['bai']:
+    MUS['soi'] = _TY[plan['tuyen']]['bai'][0]
+MUS.update(plan.get('nhac') or {})
 
 def ts(x):
     h, m, s = x.replace(',', '.').split(':'); return int(h) * 3600 + int(m) * 60 + float(s)
