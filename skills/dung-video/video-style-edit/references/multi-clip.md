@@ -8,7 +8,7 @@ File này là chi tiết của **khối 11** (`../../khoi/11-ghep-canh`). Thứ 
 |---|---|---|
 | 1 | Môi trường + `new_montage.sh` (cân giọng −20 LUFS) | 01 · 09 |
 | 2–2d | Hiểu từng clip · bản đồ + liên kết · giữ/bỏ · khung mở đầu–chào–hành trình–kết | 11 · 01 · 06 (mở đầu) |
-| 3–6 | Cấu trúc · điểm nhấn = **cảnh minh hoạ toàn màn hình** (`illus`, 2 trạng thái) · phong cách · edl.js / plan.json | 07 · 10 · 11 · 03 |
+| 3–6 | Cấu trúc · điểm nhấn = **cảnh minh hoạ toàn màn hình** (`illus`, bố cục tự cân) · phong cách · edl.js / plan.json | 07 · 10 · 11 · 03 |
 | 6b | Nâng khung → tránh che người: `lift.py` → `overlay_guard.py` | 04 · 05 |
 | 7–8 | Ảnh tĩnh → **DỪNG cho David duyệt kế hoạch** → render | 17 · 09 |
 | 9 | Phát hành: màn kết (`ytEnd`), chương, thumbnail (ngang), tách phần, số liệu | 08 · 15 · 14 · 16 |

@@ -10,7 +10,7 @@
 |---|---|---|---|
 | `hook` | chữ (V4) | **Bắt buộc, 0–3 s**: câu mô tả nội dung chính, hiện ngay khung đầu | eyebrow, lines[2], accentLine |
 | `lower` | chữ (V4) | Giới thiệu người nói, ngay sau hook | name, role |
-| `illus` | **toàn màn hình — MẶC ĐỊNH (2 trạng thái, 2026-11-04)** | Mọi ý cần hình: biểu tượng vẽ động single / flow / vs / count / list + nhãn ≤ 3 chữ; phụ đề vẫn chạy (khối 07) | mode, items[{icon, at, label?, good?}], label, num |
+| `illus` | **toàn màn hình** (một lựa chọn của bố cục tự cân, 2026-11-07) | Mọi ý cần hình: biểu tượng vẽ động single / flow / vs / count / list + nhãn ≤ 3 chữ; phụ đề vẫn chạy (khối 07) | mode, items[{icon, at, label?, good?}], label, num |
 | `nhan` | **điểm nhấn trên người (2026-11-07)** | Câu đắt / cú chốt / lúc muốn người xem nhìn vào người nói: zoom dồn vào mặt, làm tối viền, chữ nhấn ≤ 4 chữ trích lời hoặc biểu tượng nhỏ bật cạnh mặt (bên phía trống; khung dọc → dưới cằm). 2–5 s. Phụ đề vẫn chạy | text ('DÒNG 1\nDÒNG 2', dòng cuối màu nhấn), icon, at (giây bật), zoom (1,12–1,2), toi (true) |
 | `listItem` | nhãn (V4) | Người nói ĐẾM ý (≥ 3): số tròn cam + cụm việc nguyên văn, 2,5–4 s mỗi ý (học BS Tùng, HDK) | n, of (tuỳ chọn), text |
 | `kinetic` | chữ (V4) | Một câu khẳng định đắt giá, ≤ 5 từ/dòng, 2 dòng | lines[] (in hoa, có dấu chấm cuối tạo cảm giác chốt) |
