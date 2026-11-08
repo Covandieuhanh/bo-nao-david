@@ -18,6 +18,13 @@ UID_=$(id -u)
 case ${1:-xem} in
   cai)
     mkdir -p ~/Library/LaunchAgents ~/Movies/_app
+    # App chạy nền KHÔNG nạp .zshrc → không thấy node của nvm (lỗi 09/11: "command not found: node" ở bước soát cảnh).
+    # Lấy đường dẫn lệnh của Terminal (shell tương tác) lúc cài + homebrew + hệ thống.
+    DUONG=$(zsh -ic 'echo $PATH' 2>/dev/null | tail -1)
+    DUONG="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:${DUONG}:/usr/bin:/bin:/usr/sbin:/sbin"
+    for c in node npx ffmpeg ffprobe python3 swiftc; do
+      env -i PATH="$DUONG" zsh -fc "command -v $c" >/dev/null || echo "⚠ app chạy nền sẽ không thấy lệnh: $c"
+    done
     cat > $PL <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -26,7 +33,7 @@ case ${1:-xem} in
   <key>ProgramArguments</key><array><string>$PY</string><string>-I</string><string>$APP</string></array>
   <key>WorkingDirectory</key><string>$REPO</string>
   <key>EnvironmentVariables</key><dict>
-    <key>PATH</key><string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>PATH</key><string>$DUONG</string>
     <key>HOME</key><string>$HOME</string>
   </dict>
   <key>RunAtLoad</key><true/>
