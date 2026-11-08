@@ -51,7 +51,12 @@ Cột "Code": **có** = viết được ngay trong `scenes.js` · **chưa** = m�
 {id: 'c2', type: 'bocuc', start: 143.8, end: 147.5, props: {kieu: 'chuong', so: 2, nhan: 'hằng ngày', ten: 'ĐI BỘ\nNGOÀI NẮNG'}},
 ```
 
-- `o-nguoi` nhận thêm `o: {x, y, w, h}` (tỷ lệ 0–1 của khung) khi muốn ô ở chỗ khác. `the-canh` nhận `ben: 'trai'|'phai'`.
-- Vị trí mặt lấy từ `mat.js`, do `face_place.sh` → `nhan_place.py` tự ghi cho mọi cảnh `nhan` và `bocuc`.
+- **Không có gì cố định (David chốt 08/11/2026):** vị trí, cỡ, tỉ lệ ô, phía đặt thẻ đều tự tính theo người trong khung và nội dung.
+  `o-nguoi`: tỉ lệ ô tự do theo khung cắt quanh người đang nói, ô nằm đúng phía người đó ngồi, không cắt ngang mặt ai (`khung: 'ca-hai'`
+  khi muốn ô chứa mọi người). `the-canh`: thẻ vào khoảng trống sát người đang nói, co theo khoảng trống, hết chỗ thì tự thành `o-nguoi`.
+  `bam: 'trai'|'phai'` khi graphic nói về một người cụ thể (thẻ tên khách). `o: {x, y, w, h}` chỉ khi thật cần ép tay.
+- Vị trí người lấy từ `mat.js`, do `face_place.sh` → `nhan_place.py` tự ghi cho mọi cảnh `nhan` và `bocuc`: **mọi người** trong khung
+  (kể cả người quay nghiêng máy không thấy rõ mặt) + **người đang nói** (pyannote + cử động miệng). Graphic đặt qua `src/lib/cho.js`:
+  không đè, không làm mờ bất kỳ ai.
 - Ô người dùng video gốc (`public/goc.mp4`, render.mjs tự nối), nên cảnh `o-nguoi` / `chuong` là lớp đặc, ghép đè được như cảnh toàn màn hình.
 - Chưa làm cho podcast (không có mặt) và vlog ghép (`montage-template`). Khi cần thì thêm cùng kiểu.

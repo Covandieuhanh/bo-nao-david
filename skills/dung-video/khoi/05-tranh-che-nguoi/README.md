@@ -22,4 +22,4 @@
   rồi `python3 -I video-style-edit/scripts/overlay_guard.py "$P"` sau mỗi lần sửa edl.js. Đọc bảng `check/faces/placement.md` / `guard.md`.
 - Chế độ 2 trạng thái đã bỏ (`hai_trang_thai: false`, 07/11): bố cục tự cân theo khối 07. Khối này lo thẻ tít mở (highlight) và các
   lớp đặt tay `place`.
-- Cảnh `nhan` (điểm nhấn trên người) không qua face_place.py: `nhan_place.py` (gọi trong face_place.sh) ghi mặt từng cảnh vào `motion/src/mat.js`, Nhan.jsx tự đặt chữ / biểu tượng bên phía trống, khung dọc hẹp thì dưới cằm.
+- Cảnh `nhan` và `bocuc` không qua face_place.py: `nhan_place.py` (gọi trong face_place.sh) ghi **mọi người** trong khung + **người đang nói** vào `motion/src/mat.js`; `src/lib/cho.js` tìm khoảng trống quanh mọi người, Nhan.jsx / BoCuc.jsx đặt graphic sát người đang nói, co theo chỗ, không đè ai (08/11/2026). Khung dọc hẹp thì dưới cằm.

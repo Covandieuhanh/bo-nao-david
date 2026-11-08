@@ -29,8 +29,8 @@ Bố cục đã có code: người + phụ đề · `nhan` (dưới đây) · **
 | Chữ nhấn cạnh mặt | `text: 'DÒNG 1\nDÒNG 2'` ≤ 4 chữ, trích lời, dòng cuối màu nhấn; `at` = giây bật | cụm đắt người nói vừa thốt ra |
 | Biểu tượng nhỏ cạnh mặt | `icon: '<tên>'`, `at` | vật / việc cụ thể, không cần cả màn minh hoạ |
 Ví dụ: `{id: 'n1', type: 'nhan', start: 37.4, end: 42.1, props: {zoom: 1.15, text: 'NHẤC CHÂN LÊN', at: 39.9}}` — 2–5 s, không chồng cảnh khác.
-Không che mặt: `nhan_place.py` (face_place.sh) ghi mặt từng cảnh vào `mat.js`; Nhan.jsx đặt chữ / biểu tượng bên phía trống, khung dọc hẹp → dưới cằm;
-render_preview.py zoom video gốc canh giữa mặt. Đoạn chạm lằn ranh: không dùng. Vlog / highlight (khung ghép): dùng `zoom` + `pow` có sẵn, `keep: true`.
+Không che ai: `nhan_place.py` (face_place.sh) ghi mọi người + người đang nói vào `mat.js`; Nhan.jsx đặt chữ / biểu tượng vào khoảng trống sát người đang nói
+(`bam` để bám người khác, vd thẻ tên khách), co cỡ theo chỗ, khung dọc hẹp → dưới cằm; render_preview.py zoom dồn vào **người đang nói**. Đoạn chạm lằn ranh: không dùng. Vlog / highlight (khung ghép): dùng `zoom` + `pow` có sẵn, `keep: true`.
 
 **Cảnh B = `illus`** (`thu-vien-hinh/Illus.jsx`, một bản cho mọi khung dựng): hình động minh hoạ ĐÚNG Ý đang nói + **nhãn ngắn**
 (tên riêng / con số / cụm đắt — trích lời), dài và dày theo nội dung. Phụ đề vẫn chạy.

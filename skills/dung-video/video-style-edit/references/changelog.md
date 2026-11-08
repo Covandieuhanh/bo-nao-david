@@ -152,3 +152,12 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
 ## 2026-11-08 · dọn file tạm
 - David: "cập nhật vào quy trình dọn để lần sau không cần hỏi lại tôi nữa trừ khi vướng vào file đang làm dở của phiên khác". David chốt → `don_tap.py --xoa` chạy thẳng.
 - don_tap.py nhận cả `~/Movies/vlog/<tên>`; tự bỏ qua (⏸, hỏi David) khi có tiến trình chạy trong dự án, kịch bản sửa sau bản cuối, hoặc chưa có bản cuối.
+
+## 2026-11-08 · nhiều người trong khung + người đang nói (David: "tất cả motion graphics không có gì cố định, bố trí tự động cho phù hợp nhất")
+- `nhan_place.py` viết lại: mọi người trong khung (k-means chỗ ngồi, người quay nghiêng vẫn được tính) + người đang nói (pyannote tự chạy
+  khi ≥ 2 người, ghép giọng với miệng). Khoá cũ cx/cy/w/h/l/r = người đang nói → zoom dồn đúng người nói.
+- `src/lib/cho.js` (mới): khoảng trống quanh mọi người; chọn chỗ sát người đang nói, chữ nhỏ lại trước khi phải rời người đó.
+- Nhan.jsx: bỏ chọn phía theo một mặt; thêm `bam`. BoCuc.jsx: `o-nguoi` tỉ lệ tự do, không cắt ngang mặt, ô ở phía người ngồi;
+  `the-canh` co theo khoảng trống, hết chỗ thì thành `o-nguoi`. teaser.py hết tràn bộ nhớ.
+- Nguyên nhân: video phỏng vấn "5 nguyên tắc" — thẻ đè mặt khách, ô thu nhỏ cắt mặt khách. David duyệt 7 cảnh mẫu trước khi sửa skill.
+

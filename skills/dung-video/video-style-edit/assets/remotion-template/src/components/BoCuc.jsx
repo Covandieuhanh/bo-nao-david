@@ -5,9 +5,12 @@
 //
 // kieu:
 //  'o-nguoi'  người thu vào một ô bo góc, phần còn lại của khung là nội dung. Ô co từ toàn khung vào chỗ, hết cảnh nở lại.
-//             props: o? {x, y, w, h} (0–1 theo khung; mặc định ngang = cột phải, dọc = nửa trên) · noi_dung: {type: 'illus'|'diagram'|'the', props}
-//  'the-canh' người giữ nguyên khung, một thẻ ở phía còn trống cạnh mặt (mat.js), chữ hiện dần theo lời.
-//             props: ben? 'trai'|'phai' (mặc định phía trống) · tieu_de? · dong: [{text, at, to?: true, gach?: <giây>}]
+//             Tỉ lệ ô TỰ DO = tỉ lệ khung cắt quanh người đang nói (không cố định 16:9 hay dọc); không bao giờ cắt ngang
+//             một gương mặt — người bên cạnh hoặc vào trọn, hoặc ra hẳn; ô nằm đúng phía người đó ngồi, nội dung phía còn lại.
+//             props: noi_dung: {type: 'illus'|'diagram'|'the', props} · khung? 'ca-hai' (ô chứa mọi người) · bam? 'trai'|'phai'
+//             · o? {x, y, w, h} (0–1, chỉ khi thật cần ép tay)
+//  'the-canh' người giữ nguyên khung, thẻ vào khoảng trống sát người đang nói (lib/cho.js), co theo khoảng trống, không đè ai;
+//             không khoảng nào đủ rộng → tự chuyển sang 'o-nguoi'. props: bam? · tieu_de? · dong: [{text, at, to?: true, gach?: <giây>}]
 //  'chuong'   màn chương toàn khung: số mờ to + nhãn nhỏ + tên phần (dòng cuối màu nhấn). props: so?, nhan?, ten
 // Chữ trong thẻ / chương là NGUYÊN VĂN lời người nói (luật chữ trên màn hình).
 import React from 'react';
@@ -19,6 +22,7 @@ import {Diagram} from '../lib/Diagram';
 import project from '../project.js';
 import {fr} from '../scenes';
 import MAT from '../mat.js';
+import {nguoi, chonCho, nguoiBam} from '../lib/cho';
 
 const W = project.width, H = project.height, LAND = W > H;
 const NOI = {illus: Illus, diagram: Diagram};
@@ -45,29 +49,65 @@ const The = ({start, tieu_de, dong = [], w, f, fs}) => (
   </div>
 );
 
-const ONguoi = ({sceneId, start, o, noi_dung}) => {
+// Ô NGƯỜI tỉ lệ tự do (David chốt 08/11): khung cắt bám NGƯỜI ĐANG NÓI (hoặc props.khung = 'ca-hai' / props.bam), không bao giờ cắt
+// ngang một gương mặt — người bên cạnh hoặc vào trọn, hoặc ra hẳn. Tỉ lệ ô = tỉ lệ khung cắt. Ô nằm đúng phía người đó đang ngồi,
+// nội dung ở phía còn lại.
+const khungCat = (m, khung, bam) => {
+  const ps = (m.nguoi && m.nguoi.length ? m.nguoi : [{...m, t: m.cy - m.h / 2, b: m.cy + m.h / 2, l: m.l ?? m.cx - m.w / 2, r: m.r ?? m.cx + m.w / 2, noi: true}])
+    .slice().sort((a, b) => a.cx - b.cx);
+  const t = bam === 'trai' ? ps[0] : bam === 'phai' ? ps[ps.length - 1] : (ps.find((p) => p.noi) || ps[0]);
+  let chon = khung === 'ca-hai' ? ps : [t];
+  for (let lap = 0; lap < 3; lap++) {
+    const fw = Math.max(...chon.map((p) => p.w));
+    const l = Math.min(...chon.map((p) => p.l)) - fw * 1.1, r = Math.max(...chon.map((p) => p.r)) + fw * 1.1;
+    // người khác mà mặt (kèm đệm tai tóc) bị khung cắt ngang → cho vào trọn
+    const cat = ps.filter((p) => !chon.includes(p) && p.r + p.w * 0.3 > l && p.l - p.w * 0.3 < r);
+    if (!cat.length) break;
+    chon = [...chon, ...cat];
+  }
+  const fw = Math.max(...chon.map((p) => p.w)), fh = Math.max(...chon.map((p) => p.h));
+  let l = Math.min(...chon.map((p) => p.l)) - fw * 1.1, r = Math.max(...chon.map((p) => p.r)) + fw * 1.1;
+  // người ngoài khung: kéo mép khung lùi lại cho khỏi chạm mặt họ
+  for (const p of ps) if (!chon.includes(p)) { if (p.cx < t.cx) l = Math.max(l, p.r + p.w * 0.4); else r = Math.min(r, p.l - p.w * 0.4); }
+  const top = Math.min(...chon.map((p) => p.t)) - fh * 0.9, bot = Math.max(...chon.map((p) => p.b)) + fh * 2.2;   // đầu + vai + tay
+  const c = {l: Math.max(0, l), r: Math.min(1, r), t: Math.max(0, top), b: Math.min(1, bot)};
+  return {...c, phia: t.cx < 0.5 ? 'trai' : 'phai'};
+};
+
+const ONguoi = ({sceneId, start, o, noi_dung, khung, bam}) => {
   const f = useCurrentFrame();
   const {durationInFrames: d} = useVideoConfig();
-  const m = MAT[sceneId] || {cx: 0.5, cy: 0.42};
-  const b = o || (LAND ? {x: 0.62, y: 0.12, w: 0.33, h: 0.7} : {x: 0.06, y: 0.07, w: 0.88, h: 0.36});
-  // co vào (14 khung) · nở lại toàn khung ở cuối (10 khung) — người xem thấy "người lùi lại nhường chỗ cho nội dung" rồi trở về
-  const k = Math.min(ease(f, 0, 14), ease(f, d - 10, d, 1, 0, Easing.inOut(Easing.cubic)));
-  const x = b.x * W * k, y = b.y * H * k, w = W + (b.w * W - W) * k, h = H + (b.h * H - H) * k;
-  // vùng nội dung = phần khung còn lại (bên trái ô khi ngang, bên dưới ô khi dọc), chừa dải phụ đề ở đáy
+  const m = MAT[sceneId] || {cx: 0.5, cy: 0.42, w: 0.18, h: 0.3};
+  const kc = khungCat(m, khung, bam);
+  const cw = (kc.r - kc.l) * W, ch = (kc.b - kc.t) * H, ar = cw / ch;
+  // cỡ ô: theo tỉ lệ khung cắt, vừa trong tối đa 46% bề ngang × 72% bề cao (ngang) — dọc: rộng hết, cao tối đa 40%
+  const maxW = LAND ? W * 0.46 : W * 0.88, maxH = LAND ? H * 0.72 : H * 0.4;
+  const bw = Math.min(maxW, maxH * ar), bh = bw / ar;
   const aTop = Math.max(SAFE.top, BRAND_BOT + 40);   // dưới dấu góc kênh (theme.js)
-  const area = LAND ? {x: SAFE.left, y: aTop, w: b.x * W - SAFE.left * 1.6, h: SAFE.bottom - aTop}
-    : {x: SAFE.left, y: (b.y + b.h) * H + 30, w: W - SAFE.left - SAFE.right * 0.4, h: SAFE.bottom - (b.y + b.h) * H - 60};
+  const b = o ? {x: o.x * W, y: o.y * H, w: o.w * W, h: o.h * H}
+    : LAND ? {x: kc.phia === 'trai' ? SAFE.left : W - SAFE.right - bw, y: aTop + (SAFE.bottom - aTop - bh) / 2, w: bw, h: bh}
+      : {x: (W - bw) / 2, y: H * 0.07, w: bw, h: bh};
+  // co vào (14 khung) · nở lại toàn khung ở cuối (10 khung)
+  const k = Math.min(ease(f, 0, 14), ease(f, d - 10, d, 1, 0, Easing.inOut(Easing.cubic)));
+  const x = b.x * k, y = b.y * k, w = W + (b.w - W) * k, h = H + (b.h - H) * k;
+  const cl = kc.l * k, ct = kc.t * k, cr = 1 + (kc.r - 1) * k, cb = 1 + (kc.b - 1) * k;   // khung cắt từ toàn khung → khung người
+  const sc = Math.max(w / ((cr - cl) * W), h / ((cb - ct) * H));
+  // vùng nội dung = phía còn lại, chừa dải phụ đề
+  const area = LAND
+    ? (kc.phia === 'trai' && !o ? {x: b.x + b.w + SAFE.left * 0.8, y: aTop, w: W - SAFE.right - (b.x + b.w + SAFE.left * 0.8), h: SAFE.bottom - aTop}
+      : {x: SAFE.left, y: aTop, w: b.x - SAFE.left * 1.8, h: SAFE.bottom - aTop})
+    : {x: SAFE.left, y: b.y + b.h + 30, w: W - SAFE.left - SAFE.right * 0.4, h: SAFE.bottom - (b.y + b.h) - 60};
   const show = ease(f, 8, 18) * ease(f, d - 12, d - 4, 1, 0);
   const Comp = noi_dung && NOI[noi_dung.type];
-  // hình minh hoạ vẽ trên khung đầy đủ (vùng vẽ ~ giữa 60% bề ngang, tâm dọc ~0,39) → thu cho vừa vùng nội dung, canh tâm vùng
-  const s = Math.min(1, area.w / (W * 0.6), area.h / (H * (LAND ? 0.64 : 0.46)));   // vùng vẽ Illus: ngang 7–71% · dọc 10–56% chiều cao
+  const s = Math.min(1, area.w / (W * 0.6), area.h / (H * (LAND ? 0.64 : 0.46)));
   const cx = area.x + area.w / 2, cy = area.y + area.h / 2;
   return (
     <FullShell hold>
       <div style={{position: 'absolute', left: x, top: y, width: w, height: h, borderRadius: 36 * k, overflow: 'hidden',
         border: k > 0.5 ? `3px solid ${C.accent}` : 'none', boxShadow: '0 30px 90px rgba(0,0,0,0.6)'}}>
         <OffthreadVideo src={staticFile('goc.mp4')} trimBefore={fr(start)} muted
-          style={{width: '100%', height: '100%', objectFit: 'cover', objectPosition: `${m.cx * 100}% ${m.cy * 100}%`}} />
+          style={{position: 'absolute', left: -cl * W * sc + (w - (cr - cl) * W * sc) / 2, top: -ct * H * sc + (h - (cb - ct) * H * sc) / 2,
+            width: W * sc, height: H * sc, maxWidth: 'none'}} />
       </div>
       {noi_dung && (
         Comp ? <div style={{position: 'absolute', left: cx - W * s / 2, top: cy - H * (LAND ? 0.39 : 0.33) * s, width: W, height: H, opacity: show,
@@ -80,14 +120,15 @@ const ONguoi = ({sceneId, start, o, noi_dung}) => {
   );
 };
 
-const TheCanh = ({sceneId, start, ben, tieu_de, dong}) => {
+// THẺ CẠNH NGƯỜI (David chốt 08/11): thẻ vào khoảng trống sát người đang nói (hoặc props.bam), co theo khoảng trống, không đè ai.
+// Không khoảng nào đủ rộng → chuyển sang ô người (người thu vào ô, thẻ ở phía còn lại).
+const TheCanh = ({sceneId, start, ben, bam, tieu_de, dong}) => {
   const f = useCurrentFrame();
   const {durationInFrames: d} = useVideoConfig();
   const m = MAT[sceneId] || {cx: 0.5, cy: 0.42, w: 0.18};
-  const side = ben || (m.cx > 0.5 ? 'trai' : 'phai');
   const o = Math.min(ease(f, 0, 10), ease(f, d - 8, d, 1, 0, Easing.in(Easing.cubic)));
-  const slide = (1 - ease(f, 0, 14)) * 60 * (side === 'phai' ? 1 : -1);
   if (!LAND) {   // dọc: một thẻ hẹp phía dưới mặt, trên dải phụ đề — ít chữ cùng lúc
+    const slide = (1 - ease(f, 0, 14)) * 60;
     return (
       <AbsoluteFill style={{opacity: o}}>
         <div style={{position: 'absolute', left: SAFE.left, top: SAFE.overlayTop, transform: `translateY(${-slide}px)`}}>
@@ -96,14 +137,19 @@ const TheCanh = ({sceneId, start, ben, tieu_de, dong}) => {
       </AbsoluteFill>
     );
   }
-  const faceR = ((m.r ?? m.cx + m.w / 2) + m.w * 0.35) * W, faceL = ((m.l ?? m.cx - m.w / 2) - m.w * 0.35) * W;
-  const room = side === 'phai' ? W - SAFE.right - faceR : faceL - SAFE.left;
-  const w = Math.max(W * 0.24, Math.min(W * 0.34, room));
-  const left = side === 'phai' ? W - SAFE.right - w : SAFE.left;
+  const ps = nguoi(m);
+  const t = nguoiBam(ps, bam || ben);
+  const MIN = W * 0.2;
+  const k = chonCho(ps, MIN, t);
+  if (k.w < MIN) return <ONguoi sceneId={sceneId} start={start} bam={bam || ben} noi_dung={{type: 'the', props: {tieu_de, dong}}} />;
+  const w = Math.min(W * 0.34, k.w);
+  const left = k.ke === 'trai' ? k.x1 - w : k.x0;     // sát người được bám
+  const slide = (1 - ease(f, 0, 14)) * 60 * (k.ke === 'phai' ? 1 : -1);
+  const fs = Math.min(H * 0.055, w / 9);
   return (
     <AbsoluteFill style={{opacity: o}}>
-      <div style={{position: 'absolute', left, top: Math.max(H * 0.17, BRAND_BOT + 40), transform: `translateX(${slide}px)`}}>   {/* dưới dấu góc kênh (BRAND_BOT, theme.js) */}
-        <The start={start} f={f} w={w} fs={H * 0.055} tieu_de={tieu_de} dong={dong} />
+      <div style={{position: 'absolute', left, top: Math.max(H * 0.17, BRAND_BOT + 40), transform: `translateX(${slide}px)`}}>
+        <The start={start} f={f} w={w} fs={fs} tieu_de={tieu_de} dong={dong} />
       </div>
     </AbsoluteFill>
   );

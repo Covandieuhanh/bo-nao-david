@@ -9,16 +9,18 @@ env = dict(os.environ, PATH="/opt/homebrew/bin:" + os.environ.get("PATH", ""))
 src = os.path.join(P, "video-final-khong-teaser.mp4")
 fin = os.path.join(P, "video-final.mp4")
 if not os.path.exists(src): os.rename(fin, src)
-fc, cat = [], ""
+# Mỗi đoạn teaser là một đầu vào riêng (-ss/-t): dùng chung một đầu vào cho nhiều nhánh làm ffmpeg giữ cả video trong bộ nhớ
+# → video dài bị hệ điều hành giết (SIGKILL, 08/11/2026)
+fc, cat, ins = [], "", []
 for i, (a, b) in enumerate(segs):
     d = b - a; last = i == len(segs) - 1
-    vf = f"trim={a}:{b},setpts=PTS-STARTPTS" + (f",fade=t=out:st={d - 0.25:.3f}:d=0.25" if last else "")
-    fc.append(f"[0:v]{vf}[v{i}]")
-    fc.append(f"[0:a]atrim={a}:{b},asetpts=PTS-STARTPTS,afade=t=in:d=0.03,afade=t=out:st={max(0, d - 0.03):.3f}:d=0.03[a{i}]")
+    ins += ["-ss", f"{a:.3f}", "-t", f"{d:.3f}", "-i", src]
+    fc.append(f"[{i}:v]setpts=PTS-STARTPTS" + (f",fade=t=out:st={d - 0.25:.3f}:d=0.25" if last else "") + f"[v{i}]")
+    fc.append(f"[{i}:a]asetpts=PTS-STARTPTS,afade=t=in:d=0.03,afade=t=out:st={max(0, d - 0.03):.3f}:d=0.03[a{i}]")
     cat += f"[v{i}][a{i}]"
-fc.append(f"[0:v]setpts=PTS-STARTPTS[vm];[0:a]asetpts=PTS-STARTPTS[am]")
-fc.append(f"{cat}[vm][am]concat=n={len(segs) + 1}:v=1:a=1[v][a]")
-subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", src, "-filter_complex", ";".join(fc), "-map", "[v]", "-map", "[a]",
+n = len(segs)
+fc.append(f"{cat}[{n}:v][{n}:a]concat=n={n + 1}:v=1:a=1[v][a]")
+subprocess.run(["ffmpeg", "-v", "error", "-y", *ins, "-i", src, "-filter_complex", ";".join(fc), "-map", "[v]", "-map", "[a]",
                 "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k",
                 "-movflags", "+faststart", fin], check=True, env=env)
 L = round(sum(b - a for a, b in segs), 3)

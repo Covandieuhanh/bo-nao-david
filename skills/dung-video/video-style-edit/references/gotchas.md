@@ -195,3 +195,14 @@ người nói chưa từng chạy với dấu góc. Không do bài học video m
 - **Màn chốt ngang đè dấu góc:** ô video 56% bề ngang + dấu góc vẫn vẽ. Nay ô 50%, dấu góc ẩn trong `cta` khung ngang, thẻ kết thúc trên thanh thời gian.
 - **Thiếu thanh thời gian:** chỉ bật cho podcast và highlight. Nay bật cho mọi video dài (`src/thanh.js`), phụ đề lên trên thanh (`CAP_H` +40).
 - Soát: chụp `phu-de@<giây>` cùng cảnh để thấy dấu góc + thanh; với khung ngang luôn chụp ít nhất một cảnh điểm nhấn, một bố cục, màn chốt.
+
+## Video nhiều người / phỏng vấn (08/11/2026 — video "5 nguyên tắc", 2 người ngồi bàn)
+- Bản cũ chỉ giữ MẶT LỚN NHẤT → không biết có người thứ hai: thẻ `the-canh` đè mặt khách, ô `o-nguoi` (ô đứng, tâm theo mặt chủ) cắt
+  nửa mặt khách. Nay `nhan_place.py` ghi mọi người + người đang nói; graphic đi qua `lib/cho.js`.
+- Người quay nghiêng: Vision hay mất mặt → `nhan_place.py` lấy chỗ ngồi quen của người đó (`uoc: true`). Máy quay di chuyển nhiều
+  (vlog đi bộ 2 người) thì cách gom chỗ ngồi theo bề ngang không còn đúng — soát kỹ khung.
+- Ghép giọng với người: so cử động miệng của mỗi người với MỨC THƯỜNG của chính họ (mặt nghiêng có số đo miệng nhỏ hơn hẳn).
+- Thẻ tên khách: `bam: 'trai'|'phai'` — lúc giới thiệu người đang nói là chủ, nhưng thẻ phải nằm cạnh khách.
+- Khung ngang: `lower` (thẻ tên dưới) không hiện chữ, `action` đẩy câu trích ra ngoài vùng an toàn → dùng `nhan` (thẻ tên) và
+  `bocuc` `o-nguoi` + `the` (câu hành động) cho tới khi hai cảnh đó được làm lại cho khung ngang.
+- teaser.py: mỗi đoạn một đầu vào riêng; dùng chung một đầu vào cho nhiều nhánh → ffmpeg giữ cả video trong bộ nhớ, video 14 phút bị SIGKILL.
