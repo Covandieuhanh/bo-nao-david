@@ -26,6 +26,8 @@ Mọi skill tự làm việc theo một bộ thói quen chung: đúng quy trình
   - [x] Bảng đã xong: `dang-lam/ra-soat-luat.md` (15 ngược · 12 trùng · 8 cũ · 3 câu hỏi), 08/11/2026
   - [x] David duyệt 08/11: ngược thì lấy bên mới nhất; chữ trên video chỉ lời David nói chính xác; lịch phát khi David đưa; tên trang để sau
 - [ ] Bước 2: viết file thói quen chung → David duyệt
+  - [x] Bản nháp: `skills/thoi-quen-lam-viec.md` (08/11)
+  - [ ] David duyệt
 - [ ] Bước 3: gọt từng skill + "Xong khi" (mỗi skill một phiên)
   - [ ] hoi-chuyen-gia
   - [ ] dang-da-kenh
