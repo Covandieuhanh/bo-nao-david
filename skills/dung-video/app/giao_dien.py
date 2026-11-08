@@ -306,6 +306,19 @@ class H(BaseHTTPRequestHandler):
             dung(ten); return self.gui({"ok": True})
         if dang_chay(ten):
             return self.gui({"loi": "việc này đang chạy"}, 409)
+        if u == "/api/cap-nhat-khung":
+            tt = chay.doc(KHO / ten / "trang-thai.json")
+            if not (Path(tt["P"]) / "motion/src").is_dir():
+                return self.gui({"loi": "dự án chưa qua bước Tạo dự án — chưa có khung dựng để cập nhật"}, 400)
+            r = subprocess.run([sys.executable, "-I", str(APP / "ap/cap_nhat_khung.py"), tt["P"]], capture_output=True, text=True, timeout=600)
+            with open(KHO / ten / "chay.log", "a", encoding="utf-8") as lg:
+                lg.write(f"\n=== {time.strftime('%H:%M:%S')} David bấm Cập nhật khung dựng\n{r.stdout}{r.stderr}")
+            if r.returncode != 0:
+                return self.gui({"loi": (r.stdout + r.stderr)[-500:]}, 500)
+            doi = "0 tệp" not in r.stdout
+            if doi and tt["buoc"].get("render", {}).get("trang_thai") in ("xong", "loi", "da-dung"):
+                chay_nen(ten, "lai", ten, "render")      # đã render rồi → render lại với khung mới (các bước Claude sau đó dùng lại kết quả cũ)
+            return self.gui({"ok": True, "ket_qua": r.stdout.strip().split("\n")[0], "render_lai": doi and "render" in tt["buoc"]})
         if u == "/api/xoa":
             xoa(ten); CHAY.pop(ten, None); return self.gui({"ok": True})
         if u == "/api/moi":

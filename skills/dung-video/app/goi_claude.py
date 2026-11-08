@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """GỌI CLAUDE cho một bước `claude`: goi_claude.py <buoc/x.json> '<biến JSON>' [góp ý]
 
-Gửi đúng phần cần: lời nhắc của bước (loi-nhac/*.md) + các file khai trong `doc`. Claude không có công cụ, không đọc skill,
+Gửi đúng phần cần: lời nhắc của bước (loi-nhac/*.md) + các file khai trong `doc`. Claude không đọc skill (chỉ mở ảnh khi phiếu bước khai `anh`),
 chỉ trả về MỘT JSON đúng khuôn (khuon/*.json). Lệnh `kiem` của bước soát JSON; sai → gửi lại một lần kèm lỗi.
 Dùng chính Claude Code trên máy (`claude -p`), tính vào gói của David. Ghi token mỗi lần gọi vào {W}/token.jsonl.
 
 Trong lời nhắc dùng được: {{ho_so:khoá.con}} (giá trị hồ sơ tham số của loại video) · {{bieu_tuong}} (mọi biểu tượng đang có
 trong thư viện hình) · {{file:đường/dẫn}} (chèn file trong skills/dung-video). Thêm biểu tượng hay tuyến nhạc → Claude tự thấy.
 """
-import glob, json, os, re, shutil, subprocess, sys, time
+import glob, hashlib, json, os, re, shutil, subprocess, sys, time
 from pathlib import Path
 
 APP = Path(__file__).resolve().parent
@@ -54,3 +54,79 @@ def muc(f, tieu_de):
     j = next((k for k in range(i + 1, len(d)) if d[k].startswith("#") and len(d[k]) - len(d[k].lstrip("#")) <= cap), len(d))
     return "\n".join(d[i:j])
 
+
+
+def goi(bin_, he_thong, noi_dung, khuon, mo_hinh, anh=()):
+    """anh: ảnh Claude cần XEM (chiều hình, viền in cứng, chọn ảnh minh hoạ) — chỉ khi đó mới bật công cụ Read, chỉ đọc các thư mục đó."""
+    cong_cu = ["--tools", "Read", "--allowedTools", "Read"] + sum((["--add-dir", str(Path(a).parent)] for a in anh), []) if anh else ["--tools", ""]
+    cmd = [bin_, "-p", "--model", mo_hinh, *cong_cu, "--setting-sources", "", "--no-session-persistence",
+           "--output-format", "json", "--json-schema", json.dumps(khuon, ensure_ascii=False), "--system-prompt", he_thong]
+    t = time.time()
+    r = subprocess.run(cmd, input=noi_dung, capture_output=True, text=True, timeout=1800, cwd=str(Path(anh[0]).parent) if anh else None)
+    try:
+        d = json.loads(r.stdout)
+    except Exception:
+        raise SystemExit(f"Claude trả về không đọc được:\n{r.stdout[-2000:]}\n{r.stderr[-2000:]}")
+    if d.get("is_error"):
+        raise SystemExit(f"Claude báo lỗi: {d.get('result')}")
+    kq = d.get("structured_output")
+    if kq is None:
+        s = (d.get("result") or "").strip()
+        s = s[s.find("{"): s.rfind("}") + 1] if "{" in s else s
+        kq = json.loads(s)
+    return kq, {"giay": round(time.time() - t), "usage": d.get("usage"), "cost": d.get("total_cost_usd")}
+
+
+def main():
+    ph = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+    b = json.loads(sys.argv[2]); gop_y = sys.argv[3] if len(sys.argv) > 3 else ""
+    he_thong = dung_loi_nhac((APP / ph["loi_nhac"]).read_text(encoding="utf-8"), b)
+    phan = []
+    for d in ph.get("doc", []):
+        p = Path(thay(d["file"], b))
+        if not p.exists():
+            if d.get("tuy_chon"):
+                continue
+            raise SystemExit(f"Thiếu file đầu vào: {p}")
+        phan.append(f"=== {d['nhan']} ===\n{p.read_text(encoding='utf-8')}")
+    ra = Path(thay(ph["ra"], b)); W = Path(b["W"])
+    if gop_y:
+        if ra.exists():
+            phan.append(f"=== KẾ HOẠCH LẦN TRƯỚC ===\n{ra.read_text(encoding='utf-8')}")
+        phan.append(f"=== GÓP Ý CỦA DAVID (làm theo, giữ nguyên phần không bị nhắc) ===\n{gop_y}")
+    anh = [str(x) for a in ph.get("anh", []) for x in sorted(Path("/").glob(thay(a, b).lstrip("/")))]
+    if anh:
+        phan.append("=== ẢNH CẦN XEM (mở từng ảnh bằng công cụ Read trước khi trả lời) ===\n" + "\n".join(anh))
+    noi_dung = "\n\n".join(phan)
+    khuon = json.loads((APP / ph["khuon"]).read_text(encoding="utf-8"))
+    mo_hinh = os.environ.get("APP_MO_HINH") or MO_HINH.get(ph.get("mo_hinh", "vua"), ph.get("mo_hinh", "sonnet"))
+    # NHỚ KẾT QUẢ: cùng lời nhắc (luật đã ghép) + cùng đầu vào + cùng ảnh + cùng khuôn + cùng mô hình → dùng lại, không gọi Claude.
+    # Sửa skill chỗ không liên quan bước này, hoặc làm lại từ một bước phía trước mà đầu vào bước này không đổi → 0 token.
+    the = hashlib.sha256("\x00".join([he_thong, noi_dung, json.dumps(khuon, sort_keys=True), mo_hinh,
+                                       *[f"{a}:{os.path.getsize(a)}:{os.path.getmtime(a)}" for a in anh]]).encode()).hexdigest()
+    nho = W / "nho-claude" / f"{ph['id']}.txt"
+    if not os.environ.get("APP_KHONG_NHO") and ra.exists() and nho.exists() and nho.read_text().strip() == the:
+        print("Đầu vào không đổi so với lần trước — dùng lại kết quả cũ, không gọi Claude (0 token).")
+        return
+    bin_ = tim_claude()
+    for lan in (1, 2):
+        kq, tk = goi(bin_, he_thong, noi_dung, khuon, mo_hinh, anh)
+        ra.parent.mkdir(parents=True, exist_ok=True)
+        ra.write_text(json.dumps(kq, ensure_ascii=False, indent=1), encoding="utf-8")
+        with open(W / "token.jsonl", "a", encoding="utf-8") as f:
+            f.write(json.dumps({"buoc": ph["id"], "lan": lan, "mo_hinh": mo_hinh, "do_dai_gui": len(he_thong) + len(noi_dung), **tk},
+                               ensure_ascii=False) + "\n")
+        print(f"Claude ({mo_hinh}) lần {lan}: {tk['giay']} s · {tk['usage'] and tk['usage'].get('output_tokens')} token ra")
+        r = subprocess.run(["zsh", "-c", thay(ph["kiem"], b)], capture_output=True, text=True) if ph.get("kiem") else None
+        if r:
+            print(r.stdout[-3000:], r.stderr[-1500:])
+        if r is None or r.returncode == 0:
+            nho.parent.mkdir(exist_ok=True); nho.write_text(the)
+            return
+        noi_dung += (f"\n\n=== KẾ HOẠCH VỪA TRẢ ===\n{json.dumps(kq, ensure_ascii=False)}\n\n=== LỖI KHI KIỂM (sửa đúng các lỗi này, "
+                     f"giữ nguyên phần còn lại) ===\n{r.stdout[-3000:]}")
+    raise SystemExit("Kế hoạch vẫn sai sau 2 lần — xem log.")
+
+
+if __name__ == "__main__":
+    main()
