@@ -18,6 +18,7 @@ Trạng thái: lọc · dựng · chờ đăng · đã đăng · kho · bỏ. D�
 | 2026-11-08 | Video cũ "Thế nào là một cuộc sống giàu có" (kênh cũ, 5:54 → 5:30, `~/Movies/tap-cuoc-song-giau-co`) | ✂️ Làm lại · ⚠️ chủ đề tiền bạc, chờ David xét lằn ranh | chưa chấm | gốc (tự định nghĩa giàu có) | YouTube ngang, chưa có lịch | Gợi mở | dựng xong 08/11, David đã chọn thumbnail · chờ góp ý video |
 | 2026-11-08 | Video cũ "Đừng mua những thứ mà bạn thích" (kênh cũ, 6:35 → 6:09, `~/Movies/tap-dung-mua-thu-ban-thich`) | ✂️ Làm lại, bỏ màn tít "PODCAST TẬP 4" · ⚠️ chuyện vay, tín dụng, chờ David xét lằn ranh | chưa chấm | gốc → công việc (cần gì trước, thích gì sau) | YouTube ngang, chưa có lịch | Gợi mở | dựng xong 08/11, David đã chọn thumbnail · chờ góp ý video |
 | 2026-11-08 | 4 clip dọc trích từ 4 video cũ làm lại (`~/Movies/tap-{thi-lai-dai-hoc,su-tap-trung,cuoc-song-giau-co,dung-mua-thu-ban-thich}/3-highlight/clip-A`, 56–70 s) | ✂️ Trích ngắn từ gốc, mỗi video 1 clip | chưa chấm | theo video gốc | Reels + TikTok: gợi ý T3 24/11 · T6 27/11 · T3 1/12 · T6 4/12, 20:00 | Gợi mở | dựng xong 08/11, chờ David xem |
+| 2026-11-08 | Vlog The View Vũng Tàu (4 clip, quay 11/06) | 👤 Chỉ Facebook cá nhân | — | nhân hiệu | Facebook cá nhân | Không | dựng xong 08/11 (`~/Movies/vlog/the-view-vung-tau`), chờ David duyệt |
 
 ## Phiếu lọc (chấm thử 05/11/2026)
 
@@ -39,6 +40,9 @@ Trạng thái: lọc · dựng · chờ đăng · đã đăng · kho · bỏ. D�
 ### 3. Vlog VF3 kỷ niệm
 - **Điểm 3/10:** Gốc 0 · Tệp 0 · Hành động 0 · Tương tác 1 · Nhân hiệu 2 (gia đình, gần gũi). Không chạm lằn ranh (có mặt người thân → hỏi họ đồng ý trước khi đăng).
 - **Đề xuất:** chỉ Facebook cá nhân.
+
+### 4. Vlog The View Vũng Tàu
+- Ghép 4 clip đi The View cùng anh em trong tổ chức (ăn trưa → ban công nhìn toàn cảnh → hồ bơi), 1:02 dọc. David chốt 08/11: bản kỷ niệm, Facebook cá nhân, không xếp lịch kênh.
 
 ### Cảnh báo sổ
 - Kênh thương hiệu **chưa có bài nào** thuộc gốc "làm chủ bản thân" hay nhánh "công việc" — lần ghi tiếp nên nói về một chỗ kẹt cụ thể của người lần đầu dẫn người.
