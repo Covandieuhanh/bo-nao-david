@@ -3,8 +3,7 @@
   "configurations": [
     {
       "name": "app-dung-video",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["-I", "skills/dung-video/app/giao_dien.py"],
+      "url": "http://localhost:8765",
       "port": 8765
     }
   ]

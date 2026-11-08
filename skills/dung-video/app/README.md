@@ -4,10 +4,13 @@ Mục tiêu: **tiết kiệm token tối đa** mà vẫn ra kết quả như ski
 mỗi lần chỉ nhận đúng thứ cần và trả về một JSON ngắn (trích câu, không dò mốc, không viết code).
 
 ## Mở app
+App chạy nền tự động (LaunchAgent của macOS): mở máy là có, tắt hay lỗi thì macOS tự bật lại. **Chỉ cần mở http://localhost:8765.**
+Cài một lần trên mỗi máy (đã cài trên Mac chính 08/11/2026):
 ```bash
-python3 -I ~/Documents/David.Claude/skills/dung-video/app/giao_dien.py
+zsh ~/Documents/David.Claude/scripts/app-video.sh cai
 ```
-Mở http://localhost:8765 → **+ Việc mới** → kéo thả (hoặc chọn) video, tên tập tự đặt → app tự chạy, dừng ở 2 cổng chờ David duyệt.
+Khác: `app-video.sh xem` (đang chạy không) · `khoi-lai` (sau khi sửa code app; việc đang dựng không bị ngắt) · `go` (gỡ hẳn). Log: `~/Movies/_app/may-chu.log`.
+Trong app: **+ Việc mới** → kéo thả (hoặc chọn) video, tên tập tự đặt → app tự chạy, dừng ở 2 cổng chờ David duyệt.
 Nút: **⏹ Dừng** (tắt cả render) · **▶ Chạy tiếp** (làm lại bước dở) · **làm lại từ đây** · **🗑 Xoá dự án** (chuyển `~/Movies/_app/<tên>` + `~/Movies/tap-<tên>` vào Thùng rác).
 Việc chạy trong nhóm tiến trình riêng: tắt/khởi động lại giao diện không làm ngắt việc đang chạy.
 Dòng lệnh thay giao diện: `python3 -I chay.py moi lam-video <video> <tên>` · `chay.py duyet <tên> [góp ý]` · `chay.py lai <tên> <bước>`.
