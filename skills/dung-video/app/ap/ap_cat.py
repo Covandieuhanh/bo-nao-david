@@ -4,7 +4,7 @@
   ap_cat.py <dự án> <W> <loc-va-cat.json> [--kiem]
         → W/phieu-loc.md (cổng duyệt 1) + đánh dấu cuts.json (ok) + thêm cắt bỏ phần trước/sau câu trích (làm lại video cũ)
 Mốc lấy từ check/clean/words.srt (bản thô) — Claude chỉ trích câu."""
-import json, sys
+import glob, json, os, re, subprocess, sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -18,7 +18,13 @@ def liet_ke(P, W):
     Path(W, "de-xuat-cat.txt").write_text("\n".join(dong) + "\n", encoding="utf-8")
     n = loi.ban_loi(c / "words.srt", c / "transcript.srt", Path(W, "ban-loi-tho.txt"))
     dai = loi.doc_srt(c / "words.srt")[-1][1] if loi.doc_srt(c / "words.srt") else 0
-    Path(W, "thong-tin.txt").write_text(f"Thời lượng lời: {dai:.0f} giây ({dai / 60:.1f} phút)\n", encoding="utf-8")
+    raw = sorted(glob.glob(str(Path(P) / "davinci/media/video_goc_raw.*")) + glob.glob(str(Path(P) / "davinci/media/video_goc.*")))[0]
+    env = dict(os.environ, PATH="/opt/homebrew/bin:" + os.environ.get("PATH", ""))
+    pr = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height", "-of", "csv=p=0", raw],
+                        capture_output=True, text=True, env=env).stdout.strip()
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{dai / 2:.1f}", "-i", raw, "-frames:v", "1", str(Path(W, "khung-giua.jpg"))], env=env)
+    Path(W, "thong-tin.txt").write_text(f"Thời lượng lời: {dai:.0f} giây ({dai / 60:.1f} phút)\nKhung hình gốc (rộng,cao): {pr}\n"
+                                        f"Ảnh khung-giua.jpg = 1 khung giữa video ở đúng cỡ gốc (soát chữ/viền in cứng)\n", encoding="utf-8")
     print(f"{len(dong)} đề xuất cắt · {n} dòng lời")
 
 
@@ -53,12 +59,19 @@ def ap(P, W, kp, kiem):
             moc[k] = "THIẾU"
     for x in lc.get("lan_ranh", []):
         r = loi.tim(x.get("trich", ""), T); x["moc"] = mm(r[0]) if r else "?"
+    if cat.get("khung_trong") and not re.fullmatch(r"\d+:\d+:\d+:\d+", cat["khung_trong"].strip()):
+        loi_ds.append(f"khung_trong '{cat['khung_trong']}' phải dạng rộng:cao:x:y (pixel của khung gốc), hoặc để trống")
+    for o in cat.get("orient") or []:
+        if o not in ("180", "cw", "ccw", "mirror"): loi_ds.append(f"orient '{o}' chỉ được: 180 · cw · ccw · mirror")
+    dx = kh.get("de_xuat_dung", {})
+    if dx.get("cau_chot") and not loi.tim(dx["cau_chot"], T): loi_ds.append(f"cau_chot: không tìm thấy «{dx['cau_chot']}»")
     for x in loi_ds: print("✗", x)
     if loi_ds: sys.exit(1)
     if kiem: return
     for i, x in enumerate(d["cuts"]): x["ok"] = i in set(cat.get("giu_de_xuat", []))
     d["cuts"] = [x for x in d["cuts"] if not str(x.get("why", "")).startswith("app:")] + them
     if cat.get("orient") is not None: d["orient"] = cat["orient"]
+    Path(W, "khung-trong.txt").write_text((cat.get("khung_trong") or "").strip() + "\n", encoding="utf-8")
     (c / "cuts.json").write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf-8")
     dm = lc.get("diem", {}); tong = sum(dm.values()) if dm else "?"
     lr = "; ".join(f"⚠️ {x['moc']} «{x['trich']}» — {x.get('rui_ro', '')}" for x in lc.get("lan_ranh", [])) or "không"
@@ -79,6 +92,12 @@ def ap(P, W, kp, kiem):
 **3 phần:** Vấn đề {moc['van_de']} · Giải pháp {moc['giai_phap']} · Thực thi {moc['thuc_thi']}
 
 **Câu mở:** «{lc.get('cau_mo', '')}»
+
+## Đề xuất dựng (David đổi được bằng góp ý)
+- **Câu chốt (màn chốt cuối video):** «{kh.get('de_xuat_dung', {}).get('cau_chot', '') or 'không có câu kêu gọi — kết ở câu chốt ý'}»
+- **Ý chính sẽ minh hoạ:** {'; '.join(kh.get('de_xuat_dung', {}).get('y_chinh', [])) or '—'}
+- **Chữ thumbnail (nếu video ngang):** {kh.get('de_xuat_dung', {}).get('chu_thumbnail', '') or '—'}
+- **Chiều hình:** {', '.join(cat.get('orient') or []) or 'đúng chiều'} · **Chữ/viền in cứng:** {('cắt khung ' + cat['khung_trong']) if cat.get('khung_trong') else 'không có'}
 
 ## Cắt khi làm sạch
 {chr(10).join(cat_md) or '- không cắt (video dài để nguyên)'}

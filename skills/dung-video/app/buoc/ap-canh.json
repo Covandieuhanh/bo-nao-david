@@ -1,1 +1,1 @@
-{"id":"ap-canh","ten":"Tìm mốc + ghi scenes.js, project.js, sửa phụ đề","loai":"co-dinh","lenh":"python3 -I {APP}/ap/ap_canh.py {P} {W}/ke-hoach-canh.json"}
+{"id": "ap-canh", "ten": "Tìm mốc + ghi scenes.js, project.js, sửa phụ đề", "loai": "co-dinh", "lenh": "python3 -I {APP}/ap/ap_canh.py {P} {W}/ke-hoach-canh.json {W}"}

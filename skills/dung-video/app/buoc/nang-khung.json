@@ -1,0 +1,1 @@
+{"id": "nang-khung", "ten": "Nâng khung khi người nằm thấp", "loai": "co-dinh", "lenh": "python3 -I {S}/lift.py {P} apply"}

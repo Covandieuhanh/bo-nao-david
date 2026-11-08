@@ -56,10 +56,26 @@ def la_ban_da_dung(video):
             or (p.startswith(mv + "/") and any(x in p for x in ("/2-ban-dai/", "/3-highlight/", "/motion/", "/davinci/"))))
 
 
+TEN_KHUNG = {"giu": "giữ khung gốc", "ngang": "xuất NGANG 1920×1080 từ gốc dọc (video giữa, chữ hai bên — cần SIDES)",
+             "doc": "xuất DỌC 1080×1920 từ gốc ngang (bám người nói)"}
+
+
+def ghi_tuy_chon(W, tc):
+    """Tuỳ chọn David chọn khi tạo việc → file chữ cho Claude đọc (yêu cầu của David luôn ưu tiên hơn suy luận)."""
+    d = [f"Khung xuất: {TEN_KHUNG.get(tc.get('khung', 'giu'))}",
+         f"Thẻ tít mở đầu (hook): {'CÓ — David yêu cầu' if tc.get('hook') else 'không'}",
+         f"Lịch phát (ghi lên thẻ cuối): {tc.get('lich') or 'không có'}",
+         f"Ảnh minh hoạ: {dict(mac_dinh='chỉ khi cần (mặc định biểu tượng vẽ)', khong='KHÔNG dùng ảnh nào', them='thêm ảnh cho mọi thứ cụ thể').get(tc.get('anh', 'mac_dinh'))}",
+         f"Yêu cầu riêng của David: {tc.get('yeu_cau') or 'không có'}"]
+    Path(W).mkdir(parents=True, exist_ok=True)
+    (Path(W) / "tuy-chon.txt").write_text("\n".join(d) + "\n", encoding="utf-8")
+
+
 def bien(tt):
-    ct = cong_thuc(tt["cong_thuc"])
+    ct = cong_thuc(tt["cong_thuc"]); tc = tt.get("tuy_chon", {})
     return {"APP": str(APP), "DV": str(DV), "S": str(DV / "video-style-edit/scripts"), "HL": str(DV / "cat-highlight-video/scripts"),
-            "P": tt["P"], "W": str(KHO / tt["ten"]), "VIDEO": tt["video"], "TEN": tt["ten"], "HO_SO": ct.get("ho_so", "chung")}
+            "P": tt["P"], "W": str(KHO / tt["ten"]), "VIDEO": tt["video"], "TEN": tt["ten"], "HO_SO": ct.get("ho_so", "chung"),
+            "TAP": str(Path(tt["P"]).parent), "KHUNG": tc.get("khung", "giu"), "HOOK": "co" if tc.get("hook") else "khong"}
 
 
 def thay(s, b):
@@ -139,7 +155,10 @@ def main():
         W = KHO / ten; p = W / "trang-thai.json"
         if p.exists():
             raise SystemExit(f"Đã có việc '{ten}' — dùng: chay.py tiep {ten}")
-        ghi(p, {"ten": ten, "cong_thuc": ct, "video": video, "P": noi_luu(ten), "buoc": {}, "tao_luc": time.strftime("%Y-%m-%d %H:%M")})
+        tc = json.loads(a[4]) if len(a) > 4 else {}
+        ghi(p, {"ten": ten, "cong_thuc": ct, "video": video, "P": noi_luu(ten), "buoc": {}, "tuy_chon": tc,
+                "tao_luc": time.strftime("%Y-%m-%d %H:%M")})
+        ghi_tuy_chon(W, tc)
         print(chay(p))
     elif lenh == "tiep":
         print(chay(KHO / a[1] / "trang-thai.json"))

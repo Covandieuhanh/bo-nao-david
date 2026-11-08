@@ -1,0 +1,1 @@
+{"id": "lay-anh", "ten": "Tải ảnh đã chọn, ghi nguồn ảnh", "loai": "co-dinh", "khi": "test -s {P}/images/queries.json", "lenh": "python3 -I {APP}/ap/lay_anh.py {P} {W}"}

@@ -85,6 +85,14 @@ def bieu_tuong():
     return list(dict.fromkeys(re.findall(r"^\s*'?([a-zA-Z0-9_-]+)'?\s*:", s, re.M)))
 
 
+def kieu_canh(root_jsx=None):
+    """Kiểu cảnh đăng ký trong TYPES của Root.jsx (dự án, hoặc template) — thêm kiểu vào template là app tự nhận."""
+    f = Path(root_jsx) if root_jsx else Path(__file__).resolve().parents[2] / "video-style-edit/assets/remotion-template/src/Root.jsx"
+    s = re.sub(r"//[^\n]*", "", f.read_text(encoding="utf-8"))
+    m = re.search(r"const TYPES = \{(.*?)\};", s, re.S)
+    return set(re.findall(r"(?:^|[{,])\s*(\w+)\s*:", m.group(1), re.M)) - {"sides", "captions", "stage", "cover", "endcard"}
+
+
 def co_trong_loi(text, T, a, b, phu=20.0):
     """Tỉ lệ token của `text` có mặt trong lời quanh [a-phu, b+phu] — soát chữ trên màn hình là nguyên văn."""
     q = [t for t in chuan(text) if not t.isdigit()]

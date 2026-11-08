@@ -1,0 +1,1 @@
+{"id": "so-loc", "ten": "Ghi sổ danh mục (đã lọc)", "loai": "co-dinh", "lenh": "python3 -I {APP}/ap/so_danh_muc.py {P} {W} 'lọc (app)'"}

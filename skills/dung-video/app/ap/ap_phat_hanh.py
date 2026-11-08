@@ -58,7 +58,8 @@ def main():
         chuong = r.stdout.strip()
     md = [f"# Phát hành — {Path(P).parent.name} ({mm(dur)}) — GỢI Ý để David chọn", "", "## 3 tiêu đề"]
     md += [f"{i}. {t}" for i, t in enumerate(kh["tieu_de"], 1)]
-    md += ["", "## Mô tả", kh["mo_ta"], ""]
+    nguon = Path(P) / "nguon-anh.txt"
+    md += ["", "## Mô tả", kh["mo_ta"] + ("\n\n" + nguon.read_text(encoding="utf-8").strip() if nguon.exists() else ""), ""]
     if chuong: md += ["## Chương YouTube", chuong, ""]
     md += ["## Bình luận ghim", kh["binh_luan_ghim"], ""]
     if bia: md += ["## Khung bìa đề xuất", f"Giây {mm(bia[0] + 0.3)} — «{kh['khung_bia_trich']}»", ""]

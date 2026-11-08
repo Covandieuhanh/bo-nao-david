@@ -1,0 +1,1 @@
+{"id": "don-tap", "ten": "Dọn file tạm của tập (vào Thùng rác)", "loai": "co-dinh", "lenh": "python3 -I {S}/don_tap.py --xoa {TAP}"}
