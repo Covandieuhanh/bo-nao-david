@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """GIAO DIỆN APP DỰNG VIDEO — trang web chỉ chạy trên máy này: python3 -I giao_dien.py → http://localhost:8765
 Chỉ là vỏ: mọi việc chạy qua chay.py (máy chạy bước). Không chứa luật dựng nào."""
-import json, os, re, signal, subprocess, sys, time, glob, mimetypes
+import ipaddress, json, os, re, signal, socket, subprocess, sys, time, glob, mimetypes
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 from pathlib import Path
 from urllib.parse import urlparse, parse_qs
@@ -161,7 +161,18 @@ class H(BaseHTTPRequestHandler):
         self.send_response(ma); self.send_header("Content-Type", kieu); self.send_header("Content-Length", str(len(b)))
         self.end_headers(); self.wfile.write(b)
 
+    def cho_phep(self):
+        """Chỉ chính máy này + thiết bị trong mạng Tailscale của David (100.64.0.0/10, fd7a:115c:a1e0::/48).
+        Máy khác cùng wifi hay ngoài Internet đều bị chặn, dù máy chủ nghe trên mọi cổng mạng."""
+        ip = ipaddress.ip_address(self.client_address[0].split("%")[0])
+        if ip.version == 6 and ip.ipv4_mapped: ip = ip.ipv4_mapped
+        if ip.is_loopback or ip in ipaddress.ip_network("100.64.0.0/10") or ip in ipaddress.ip_network("fd7a:115c:a1e0::/48"):
+            return True
+        self.gui({"loi": "chỉ mở được trên máy này hoặc thiết bị trong Tailscale của David"}, 403)
+        return False
+
     def do_GET(self):
+        if not self.cho_phep(): return
         u = urlparse(self.path); q = parse_qs(u.query)
         try:
             if u.path == "/":
@@ -209,6 +220,7 @@ class H(BaseHTTPRequestHandler):
                 con -= len(k)
 
     def do_POST(self):
+        if not self.cho_phep(): return
         if urlparse(self.path).path == "/api/tai-len":
             return self.tai_len()
         d = json.loads(self.rfile.read(int(self.headers.get("Content-Length", 0))) or b"{}")
@@ -276,4 +288,8 @@ if __name__ == "__main__":
     KHO.mkdir(parents=True, exist_ok=True)
     cong = int(os.environ.get("APP_CONG", 8765))
     print(f"App dựng video: http://localhost:{cong}", flush=True)
-    ThreadingHTTPServer(("127.0.0.1", cong), H).serve_forever()
+    class MayChu(ThreadingHTTPServer):
+        address_family = socket.AF_INET6          # nghe cả IPv4 lẫn IPv6 (Tailscale dùng cả hai); quyền vào lọc ở H.cho_phep
+        def server_bind(self):
+            self.socket.setsockopt(socket.IPPROTO_IPV6, socket.IPV6_V6ONLY, 0); super().server_bind()
+    MayChu(("::", cong), H).serve_forever()

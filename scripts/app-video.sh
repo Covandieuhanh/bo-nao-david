@@ -8,6 +8,8 @@
 set -e
 TEN=vn.davidtran.app-dung-video
 PL=~/Library/LaunchAgents/$TEN.plist
+THUC=vn.davidtran.mac-thuc          # giữ Mac không ngủ khi CẮM SẠC (caffeinate -s; màn hình vẫn tắt được) → iPhone qua Tailscale luôn vào được
+PT=~/Library/LaunchAgents/$THUC.plist
 REPO=${0:A:h:h}
 APP=$REPO/skills/dung-video/app/giao_dien.py
 PY=$(command -v /opt/homebrew/bin/python3 || command -v python3)
@@ -35,12 +37,20 @@ case ${1:-xem} in
   <key>StandardErrorPath</key><string>$HOME/Movies/_app/may-chu.log</string>
 </dict></plist>
 EOF
-    launchctl bootout gui/$UID_/$TEN 2>/dev/null || true
-    launchctl bootstrap gui/$UID_ $PL
-    echo "Đã cài. Mở http://localhost:8765" ;;
+    cat > $PT <<THUC_EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+  <key>Label</key><string>$THUC</string>
+  <key>ProgramArguments</key><array><string>/usr/bin/caffeinate</string><string>-s</string></array>
+  <key>RunAtLoad</key><true/><key>KeepAlive</key><true/>
+</dict></plist>
+THUC_EOF
+    for x in $TEN:$PL $THUC:$PT; do launchctl bootout gui/$UID_/${x%%:*} 2>/dev/null || true; launchctl bootstrap gui/$UID_ ${x#*:}; done
+    echo "Đã cài. Mở http://localhost:8765 · iPhone (Tailscale): http://$(hostname -s | tr 'A-Z' 'a-z'):8765" ;;
   go)
-    launchctl bootout gui/$UID_/$TEN 2>/dev/null || true
-    rm -f $PL; echo "Đã gỡ app tự chạy." ;;
+    for x in $TEN $THUC; do launchctl bootout gui/$UID_/$x 2>/dev/null || true; done
+    rm -f $PL $PT; echo "Đã gỡ app tự chạy (và chế độ giữ máy thức)." ;;
   khoi-lai)
     launchctl kickstart -k gui/$UID_/$TEN && echo "Đã khởi động lại." ;;
   xem)

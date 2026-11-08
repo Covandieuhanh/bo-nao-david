@@ -10,6 +10,10 @@ Cài một lần trên mỗi máy (đã cài trên Mac chính 08/11/2026):
 zsh ~/Documents/David.Claude/scripts/app-video.sh cai
 ```
 Khác: `app-video.sh xem` (đang chạy không) · `khoi-lai` (sau khi sửa code app; việc đang dựng không bị ngắt) · `go` (gỡ hẳn). Log: `~/Movies/_app/may-chu.log`.
+**Từ iPhone / máy khác (Tailscale):** cài Tailscale, đăng nhập cùng tài khoản với Mac → mở `http://macbook-david:8765`
+(tên đầy đủ `http://macbook-david.tail58c7e2.ts.net:8765`). App chỉ nhận chính Mac + thiết bị trong Tailscale của David; máy cùng wifi
+hay ngoài Internet bị chặn. `app-video.sh cai` cũng giữ Mac không ngủ khi cắm sạc (`caffeinate -s`), để iPhone luôn vào được.
+
 Trong app: **+ Việc mới** → kéo thả (hoặc chọn) video, tên tập tự đặt, chọn tuỳ chọn (khung xuất, ảnh minh hoạ, thẻ tít, lịch phát,
 yêu cầu riêng) → app tự chạy, dừng ở 2 cổng chờ David duyệt. Cổng 2: xem video, tờ kiểm tra hình, chọn thumbnail, kết quả kiểm, bài đăng.
 Nút: **⏹ Dừng** (tắt cả render) · **▶ Chạy tiếp** (làm lại bước dở) · **làm lại từ đây** · **🗑 Xoá dự án** (chuyển `~/Movies/_app/<tên>` + `~/Movies/tap-<tên>` vào Thùng rác).

@@ -28,11 +28,11 @@ button.dung{border-color:var(--do);color:var(--do)}
 .nen-hoi{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;padding:16px;z-index:9}
 .hop-hoi{background:var(--the);border:1px solid var(--vien);border-radius:12px;padding:20px;max-width:560px;width:100%;white-space:pre-wrap}
 .so{display:flex;gap:16px;color:var(--phu);font-size:13px}
-@media (max-width:760px){.khung{grid-template-columns:1fr}aside{border-right:0;border-bottom:1px solid var(--vien)}}
+@media (max-width:760px){.khung{grid-template-columns:1fr;grid-template-rows:auto 1fr;min-height:0}aside{border-right:0;border-bottom:1px solid var(--vien);padding:12px 16px}main{padding:16px}#ds{display:flex;gap:6px;overflow-x:auto;margin-top:10px!important}.viec{flex:0 0 auto;margin:0;border:1px solid var(--vien)}.buoc .lai{display:none}.hang button{flex:1}video{max-height:60vh}}
 </style></head><body>
 <div class="khung">
 <aside><h1>Dựng video</h1><button class="chinh" onclick="moMoi()">+ Việc mới</button><div id="ds" style="margin-top:14px"></div></aside>
-<main id="chinh"><p class="mo">Chọn một việc bên trái, hoặc bấm "Việc mới".</p></main>
+<main id="chinh"><p class="mo">Chọn một việc trong danh sách, hoặc bấm "+ Việc mới".</p></main>
 </div>
 <script>
 const $=s=>document.querySelector(s);let chon=null,hen=null;
@@ -67,7 +67,7 @@ async function taoMoi(){const ten=$('#ten').value.trim();if(!/^[a-z0-9-]+$/.test
 let video=$('#vp').value.trim();if(!tepChon&&!video)return alert('Kéo thả hoặc chọn một video');$('#batDau').disabled=true;
 try{if(tepChon)video=await taiLen(ten,tepChon)}catch(e){$('#batDau').disabled=false;return alert(e)}
 $('#tienChu').textContent='Đã tải lên, bắt đầu chạy…';const r=await api('/api/moi',{ten,video,cong_thuc:$('#ct').value,tuy_chon:{khung:$('#khung').value,anh:$('#anhmh').value,hook:$('#hook').checked,lich:$('#lich').value.trim(),yeu_cau:$('#yc').value.trim()}});$('#batDau').disabled=false;if(r.ok){chon=ten;setTimeout(()=>xem(ten),800)}}
-async function xem(ten){chon=ten;clearTimeout(hen);const d=await api('/api/chi-tiet?ten='+encodeURIComponent(ten));danhSach();
+async function xem(ten){const moi=chon!==ten;chon=ten;clearTimeout(hen);const d=await api('/api/chi-tiet?ten='+encodeURIComponent(ten));danhSach();
 const tk=d.token;let h=`<div style="display:flex;align-items:center;gap:12px"><h1 style="margin:0">${esc(d.ten)}</h1><button class="dung" style="margin-left:auto;font-size:13px" ${d.dang_chay?'disabled title="Dừng việc trước khi xoá"':''} onclick="xoaViec()">🗑 Xoá dự án</button></div><div class="so"><span>${esc(d.cong_thuc)}</span><span>Claude: ${tk.lan_goi} lần · ${(tk.vao/1000).toFixed(1)}k vào · ${(tk.ra/1000).toFixed(1)}k ra</span></div>`;
 if(d.cong){h+=`<div class="the"><h2>🟠 ${esc(d.cong.ten)}</h2>${d.cong.video?`<video controls preload="metadata" src="/tep?p=${encodeURIComponent(d.cong.video)}"></video>`:''}
 ${d.cong.chon_anh?`<h2>${esc(d.cong.chon_anh.nhan)}</h2><div class="hang">${d.cong.chon_anh.ds.map((a,i)=>`<div style="flex:1;min-width:220px"><img src="/tep?p=${encodeURIComponent(a)}&v=${Date.now()}" style="width:100%;border-radius:8px;border:3px solid ${d.cong.chon_anh.da_chon==a?'var(--nhan)':'transparent'}"><button style="width:100%;margin-top:4px" ${d.cong.chon_anh.da_chon==a?'class="chinh"':''} onclick="chonAnh('${encodeURIComponent(a)}')">${d.cong.chon_anh.da_chon==a?'✓ Đã chọn':'Chọn mẫu '+(i+1)}</button></div>`).join('')}</div>`:''}
@@ -82,7 +82,7 @@ if(loi&&!d.dang_chay)h+=`<div class="the"><b>❌ Lỗi ở bước "${esc(loi.te
 if(d.xong_luc)h+=`<div class="the">✅ Xong lúc ${esc(d.xong_luc)} · <span class="mo">${esc(d.P)}/video-final.mp4</span></div>`;
 h+=`<h2>Các bước</h2>`+d.buoc.map(b=>`<div class="buoc"><span>${BIEU[b.trang_thai]||'·'}</span><span>${esc(b.ten)}</span><span class="loai">${LOAI[b.loai]} ${b.luc?'· '+b.luc:''}</span>${b.loai!='duyet'&&!d.dang_chay&&b.trang_thai!='chua'?`<button class="lai" onclick="lai('${b.id}')">làm lại từ đây</button>`:''}</div>`).join('');
 if(d.dang_chay&&d.log)h+=`<h2>Đang chạy: ${esc(d.dang)}</h2><pre>${esc(d.log)}</pre>`;
-$('#chinh').innerHTML=h;if(d.dang_chay)hen=setTimeout(()=>xem(ten),3000)}
+$('#chinh').innerHTML=h;if(moi&&innerWidth<760)$('#chinh').scrollIntoView({behavior:'smooth'});if(d.dang_chay)hen=setTimeout(()=>xem(ten),3000)}
 // Hộp xác nhận vẽ trong trang (khung trình duyệt của Claude chặn confirm() mặc định)
 function hoi(noiDung,nut='Đồng ý',nguyHiem=false){return new Promise(ok=>{const n=document.createElement('div');n.className='nen-hoi';
 n.innerHTML=`<div class="hop-hoi"><div>${esc(noiDung)}</div><div class="hang" style="justify-content:flex-end"><button id="hoiKhong">Huỷ</button><button id="hoiCo" class="${nguyHiem?'dung':'chinh'}">${esc(nut)}</button></div></div>`;
