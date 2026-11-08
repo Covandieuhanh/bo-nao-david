@@ -752,8 +752,9 @@ const DiagramOv = ({start, len, ...o}) => <Diagram {...o} start={start} len={len
 // còn lại của dòng vẫn hiện). Không tính lớp chạy suốt clip (dấu góc, tít ghim, nhãn teaser).
 const KHONG_CHU = new Set(['pinTitle', 'hud', 'teaserTag']);
 const nhuong = (s) => {
-  let parts = [{...s, s0: s.start, s1: s.end}];   // s0/s1: mốc gốc của dòng → phần sau tiếp đúng cụm chữ đang nói
-  for (const o of OVS) {
+  let parts = [{...s, s0: s.start, s1: s.end}];
+  const lop = CTA ? [...OVS, {type: 'cta', start: TOTAL - CTA_LEN, end: TOTAL}] : OVS;   // màn chốt cũng là một chỗ chữ   // s0/s1: mốc gốc của dòng → phần sau tiếp đúng cụm chữ đang nói
+  for (const o of lop) {
     if (KHONG_CHU.has(o.type) || o.end == null) continue;
     parts = parts.flatMap((p) => {
       if (o.end <= p.start + 0.1 || o.start >= p.end - 0.1) return [p];
