@@ -124,6 +124,8 @@ for a, b, k in tones:
     if tr and tr[-1][2] == k: tr[-1][1] = b
     else: tr.append([a, b, k])
 cta = next((p for p in reversed(pieces) if p.get('cta')), next((p for p in reversed(pieces) if p.get('role') == 'KEUGOI'), pieces[-1]))
+if len(cta.get('cta_text') or cta['text']) > 55:   # màn chốt ≤ 55 ký tự (SKILL.md) — câu dài tràn đè phụ đề (lỗi 08/11/2026)
+    print(f"⚠ câu màn chốt {len(cta['text'])} ký tự > 55: ghi \"cta_text\" (vế trọn ý, nguyên văn) vào câu đó trong phuong-an.json")
 
 ec = plan.get('endcard') or {}
 endcard = 'null' if not ec.get('title') else json.dumps({'title': ec['title'], 'speaker': ec.get('speaker', ''), 'schedule': ec.get('schedule', ''), 'clip': 'c1',
@@ -171,7 +173,7 @@ export const MUSIC = {{base: 0.2, duck: 0.09, loud: 0.3, loudRanges: [],
   tracks: TONE.map(([a, b, k]) => ({{f: k === 'lang' ? '{MUSIC['lang']}' : '{MUSIC['soi']}', a, b, gain: k === 'lang' ? {GAIN[MUSIC['lang']]} : {GAIN[MUSIC['soi']]}}}))}};
 
 // Màn chốt: câu kêu gọi NGUYÊN VĂN của người nói (luật highlight). kind: 'comment' | 'save' | 'follow' | 'share'
-export const CTA = {{text: {json.dumps(cta['text'], ensure_ascii=False)}, kind: 'save'}};
+export const CTA = {{text: {json.dumps(cta.get('cta_text') or cta['text'], ensure_ascii=False)}, kind: 'save'}};
 
 export const HL = {{src_duration: {dur:.2f}, bar: {'true' if TUA else 'false'}}};   // bar: thanh của cả tập gốc (chỉ kiểu --tua)
 

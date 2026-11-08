@@ -107,3 +107,4 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
 - Chữ to `pow` giữa clip lặp đúng chữ phụ đề nhịp chữ và cũng bị đổi thành màn đen → bỏ. Điểm nhấn giữa clip dùng minh hoạ (`illus` vs/list/count) và màn hành động (`action`), từ khoá tô cam trong phụ đề.
 - Bỏ tiếng ký hiệu đầu clip khi vào lời ngay giây 0 (đúng quyết định 06/11); `hl_edl.py` đã sửa: không thêm `sting`, tít tự `keep: true`.
 - Chưa sửa: màn `pow` toàn khung của khung ghép (lề trái ~18 px thay vì 70 px, dải tối khác màu ở đỉnh). Nếu cần chữ to toàn khung, sửa `Show.jsx` trước.
+- Câu màn chốt dài (cả đoạn HANHDONG ~250 ký tự) tràn đè phụ đề ở clip sự tập trung. `hl_edl.py` giờ cảnh báo khi > 55 ký tự; ghi `"cta_text"` (vế trọn ý, nguyên văn) vào câu `cta` trong phuong-an.json.
