@@ -32,7 +32,7 @@ Mọi skill tự làm việc theo một bộ thói quen chung: đúng quy trình
   - [x] hoi-chuyen-gia (08/11: 2–3 gợi ý, bỏ "kinh doanh", một vòng gộp / thiết kế nhiều vòng, "Xong khi" 7 dòng David duyệt)
   - [x] dang-da-kenh (08/11: đọc trước 2 file, cổng 1 gộp mọi lựa chọn, clip tự chọn theo bốn câu, bước nhẹ 0·7·8, "Xong khi" 7 dòng)
   - [x] video-style-edit (08/11: hỏi một lần đầu, bỏ con số cố định/thẻ tít/2 trạng thái, màn chốt nguyên văn, bước nhẹ 1·2·5, "Xong khi" 7 dòng; sửa 1 dòng scene-design + multi-clip)
-  - [ ] podcast-style-edit
+  - [x] podcast-style-edit (08/11: hỏi một lần + giữ cổng chụp thử, bỏ thẻ tên tập/số nhịp/2 trạng thái, màn chốt nguyên văn, phụ đề dọc cỡ 58, "Xong khi" 7 dòng)
   - [ ] cat-highlight-video
   - [ ] hoc-video-mau
   - [ ] 3 file não
