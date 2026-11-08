@@ -30,7 +30,7 @@ Mọi skill tự làm việc theo một bộ thói quen chung: đúng quy trình
   - [x] David duyệt 08/11
 - [ ] Bước 3: gọt từng skill + "Xong khi" (mỗi skill một phiên)
   - [x] hoi-chuyen-gia (08/11: 2–3 gợi ý, bỏ "kinh doanh", một vòng gộp / thiết kế nhiều vòng, "Xong khi" 7 dòng David duyệt)
-  - [ ] dang-da-kenh
+  - [x] dang-da-kenh (08/11: đọc trước 2 file, cổng 1 gộp mọi lựa chọn, clip tự chọn theo bốn câu, bước nhẹ 0·7·8, "Xong khi" 7 dòng)
   - [ ] video-style-edit
   - [ ] podcast-style-edit
   - [ ] cat-highlight-video

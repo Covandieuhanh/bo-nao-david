@@ -1,50 +1,56 @@
 ---
 name: dang-da-kenh
-description: Quy trình trọn gói của David — từ MỘT tài nguyên David đưa (video quay, file ghi âm, bài nói bộc phát; không kèm yêu cầu) Claude tự lọc theo hồ sơ định hướng (~/.claude/David.md), quyết định có đáng làm không và làm thành gì, hỏi lại David, dựng video bằng các skill dựng sẵn, soạn bài theo giọng David cho từng kênh, rồi hẹn giờ đăng lên YouTube, trang Facebook, TikTok (Facebook cá nhân David tự bấm chia sẻ) qua trình duyệt đã đăng nhập; sau đó gom bình luận/tin nhắn và đọc số liệu. Hai cổng duyệt: phiếu lọc trước khi dựng, bản cuối + bài đăng trước khi đăng. Dùng khi David gửi video/ghi âm mới, bỏ file vào Drive Video-goc, nói "có video mới", "đăng giúp", "đăng lên các kênh", "làm bài đăng", "lọc nội dung này", "/dang-da-kenh" — kể cả khi David chỉ gửi file mà không nói gì.
+description: Quy trình trọn gói của David — từ MỘT tài nguyên (video quay, ghi âm, bài nói bộc phát; thường không kèm yêu cầu) Claude tự lọc theo hồ sơ David, quyết định có đáng làm và làm thành gì, hỏi David một lần ở phiếu lọc, dựng bằng skill dựng sẵn, soạn bài theo giọng David cho từng kênh, hẹn giờ đăng YouTube, trang Facebook, TikTok qua trình duyệt đã đăng nhập, rồi gom bình luận và đọc số liệu. Hai cổng duyệt: phiếu lọc trước khi dựng, bản cuối + bài đăng trước khi đăng. Dùng khi David gửi video/ghi âm mới, bỏ file vào Drive Video-goc, nói "có video mới", "đăng giúp", "đăng lên các kênh", "làm bài đăng", "lọc nội dung này", "/dang-da-kenh" — kể cả khi chỉ gửi file mà không nói gì.
 ---
 
 # Đăng đa kênh — một lần nói → đủ bài cho mọi kênh
 
-**Vai trò (David chốt 05/11/2026):** nội dung là của David (nói tự do, có cảm xúc, không khuôn). Claude lo phần nhận diện, lọc, thẩm mỹ,
-nhịp, phân phối, đăng và đo. Mọi bài phải có mục tiêu: kéo tương tác trên đúng nền tảng → chuyển hoá → người xem nhắn "gỡ".
+**Đọc trước:** `../../thoi-quen-lam-viec.md` · `../luat-chung.md`. File khác chỉ đọc ở đúng bước cần (cột cuối bảng quy trình).
 
-**Đọc trước:** `~/.claude/David.md` (hồ sơ) · `../khoi/00-loc-noi-dung` (bộ lọc) · `../ho-so/kenh.json` (kênh, lịch, dẫn dắt) ·
-`../ho-so/giong-van-david.md` (giọng văn) · `../luat-chung.md` · sổ `~/Movies/_so-danh-muc/danh-muc.md`.
+**Vai trò (chốt 05/11/2026):** nội dung là của David (nói tự do, có cảm xúc, không khuôn). Claude lo nhận diện, lọc, thẩm mỹ, nhịp,
+phân phối, đăng và đo. Mọi bài có mục tiêu: kéo tương tác đúng nền tảng → chuyển hoá → người xem nhắn "gỡ".
 
 ## Mục tiêu
 Một tài nguyên vào → (nếu đáng) video + bài đăng đúng kênh, đúng giờ, đúng định vị trainer; (nếu không đáng) không tốn thời gian dựng.
 
-## Làm song song khi render (David chốt 05/11/2026)
-Qua cổng 1 là Claude đã đọc hết lời, nên **bước 3 (dựng) và bước 4 (soạn bài) chạy cùng lúc**: lệnh render chạy nền thì bắt tay soạn ngay, không chờ render xong,
-không chờ David nhắc. Soạn gồm: tiêu đề, mô tả, bài viết từng kênh, bình luận ghim, chữ thumbnail, lịch đăng, **kế hoạch trích clip ngắn** (mốc từ–đến trên bản gốc,
-kiểu clip, chú thích). Mọi thứ xoay quanh lời đã chép, và video dài để nguyên nên mốc không đổi.
-Chờ bản cuối mới làm: ảnh thumbnail, kiểm tra khung hình và âm lượng. Clip chỉ là kế hoạch: dựng khi David đồng ý ở cổng 2, đăng sau video dài. Claude chỉ đọc lời, chưa nghe giọng, nên mốc clip là đề xuất để David chốt.
-
 ## Quy trình (8 bước, 2 cổng duyệt)
-| # | Bước | Ai | Khối / skill |
+| # | Bước | Ai | Đọc / dùng |
 |---|---|---|---|
-| 0 | **Nhận tài nguyên**: Drive `Video-goc` (`~/Library/CloudStorage/GoogleDrive-…/Drive của tôi/Video-goc/`) hoặc file gửi vào chat. David KHÔNG cần kèm yêu cầu. Chép lời, đo độ dài, khung, chất lượng | Claude | 01 |
-| 1 | **Lọc + nhận diện**: chấm 5 tiêu chí theo hồ sơ, lằn ranh, 7 kết luận, nhánh, trùng/lấp kho, đề xuất sản phẩm → kênh → giờ (thứ Ba / thứ Sáu 20:00 VN), kiểu dẫn dắt theo tỉ lệ 4·4·2, loại dựng (`../nhan-dien.md`) | Claude | 00 |
-| 2 | **CỔNG 1 — phiếu lọc** gửi David + câu hỏi chỉ David quyết được (mỗi câu có đề xuất "đồng ý" được — `hoi-chuyen-gia`, một vòng). Kết luận ⛔ / 👤 / 🗂 → dừng dựng, chỉ cập nhật sổ (👤: soạn câu chia sẻ Facebook cá nhân) | David duyệt | 00 |
-| 3 | **Dựng**: skill dựng theo loại — `video-style-edit` (1 video / ghép vlog), `podcast-style-edit`, `cat-highlight-video` (highlight Reels/TikTok). Chỉ render sau cổng 1; độ dài theo nội dung | Claude | skill dựng |
-| 4 | **Soạn bài từng kênh** theo giọng David: YouTube (tiêu đề, mô tả, chương, thumbnail nếu ngang) · Reels / bài viết trang · TikTok caption · câu chia sẻ Facebook cá nhân · bình luận ghim "Vấn đề / Kết quả" · bài Mời: "nhắn mình một chữ 'gỡ'" + link nhắn tin trang | Claude | 15, giong-van |
-| 5 | **CỔNG 2 — bản cuối + bài đăng**: gửi bản xem được trên điện thoại (nén < 30 MB nếu cần; bản gốc ở Drive `Video-xong`) + bảng bài đăng (kênh · giờ · chữ). David duyệt từng bài | David duyệt | 17 |
-| 6 | **Hẹn giờ đăng** đúng các bài đã duyệt qua trình duyệt (YouTube Studio · Business Suite · TikTok Studio); Facebook cá nhân David tự bấm | Claude | 19 |
-| 7 | **Sau 24 giờ**: kiểm bài đã lên; gom bình luận / tin nhắn → "người xem đang hỏi gì", số "gỡ" (chỉ đọc, không tự trả lời) | Claude | 20 |
-| 8 | **Sau 7 ngày**: số liệu từng kênh → `so-lieu.md` + sổ danh mục → 1–3 đề xuất cho lần sau | Claude | 20, 16 |
+| 0 | **Nhận tài nguyên** *(bước nhẹ)*: Drive `Video-goc` (`~/Library/CloudStorage/GoogleDrive-…/Drive của tôi/Video-goc/`) hoặc file gửi vào chat. Chép lời, đo độ dài, khung, chất lượng | Claude | khối 01 |
+| 1 | **Lọc + nhận diện**: chấm 5 tiêu chí, lằn ranh, 7 kết luận, nhánh, trùng/lấp kho; đề xuất sản phẩm → kênh → giờ, kiểu dẫn dắt theo tỉ lệ, loại dựng | Claude | khối 00 · `~/.claude/David.md` · `../ho-so/kenh.json` (lịch, tỉ lệ dẫn dắt) · `../nhan-dien.md` · sổ `~/Movies/_so-danh-muc/danh-muc.md` |
+| 2 | **CỔNG 1 — phiếu lọc + mọi điểm cần chọn, một vòng** (`hoi-chuyen-gia`): kết luận, loại dựng, kênh và giờ, và mỗi điểm 2–3 gợi ý đề xuất đứng đầu: tiêu đề, chữ bìa, câu chốt (nguyên văn lời David). Kết luận ⛔ / 👤 / 🗂 → dừng dựng, chỉ cập nhật sổ (👤: soạn câu chia sẻ Facebook cá nhân) | David duyệt | khối 00 |
+| 3 | **Dựng** theo loại: `video-style-edit` (1 video / ghép vlog), `podcast-style-edit`. Chỉ render sau cổng 1; độ dài theo nội dung | Claude | skill dựng |
+| 4 | **Soạn bài từng kênh** (chạy song song bước 3, xem dưới): YouTube (tiêu đề, mô tả, chương, thumbnail nếu ngang) · Reels / bài trang · TikTok caption · câu chia sẻ Facebook cá nhân · bình luận ghim "Vấn đề / Kết quả" · bài Mời: "nhắn mình một chữ 'gỡ'" + link nhắn tin trang · **kế hoạch clip ngắn** | Claude | khối 15 · `../ho-so/giong-van-david.md` · `cat-highlight-video` |
+| 5 | **CỔNG 2 — bản cuối + chữ từng bài**: bản xem được trên điện thoại (nén < 30 MB nếu cần; bản gốc ở Drive `Video-xong`) + bảng bài đăng (kênh · giờ · chữ) + clip đã chọn. David duyệt từng bài | David duyệt | khối 17 |
+| 6 | **Hẹn giờ đăng** đúng các bài đã duyệt qua trình duyệt (YouTube Studio · Business Suite · TikTok Studio), chụp xác nhận; Facebook cá nhân David tự bấm | Claude | khối 19 |
+| 7 | **Sau 24 giờ** *(bước nhẹ)*: kiểm bài đã lên; gom bình luận / tin nhắn → "người xem đang hỏi gì", số "gỡ" (chỉ đọc, không tự trả lời) | Claude | khối 20 |
+| 8 | **Sau 7 ngày** *(bước nhẹ)*: số liệu từng kênh → `so-lieu.md` + sổ danh mục → 1–3 đề xuất cho lần sau | Claude | khối 20, 16 |
 
-## Thực thi (checklist mỗi tài nguyên)
-- [ ] Chép lời xong · phiếu lọc gửi David (cổng 1) · ghi dòng "lọc" vào sổ
-- [ ] David duyệt phiếu → dựng (không render trước cổng 1; không tự render lại sau góp ý nhỏ)
-- [ ] Ngay khi render chạy nền: bài đăng soạn đủ kênh theo kết luận + kế hoạch trích clip · kiểu dẫn dắt khớp tỉ lệ 4·4·2 trong sổ
-- [ ] Cổng 2: David duyệt bản cuối + từng bài
-- [ ] Hẹn giờ xong ở từng nền tảng (ảnh chụp xác nhận) · sổ "chờ đăng"
-- [ ] 24 giờ: "đã đăng" + link · gom hộp thư
-- [ ] 7 ngày: số liệu + đề xuất
+Bước nhẹ: tới đó nhắc một dòng "bước này nhẹ, bạn có thể đổi mô hình rẻ hơn" — không tự đổi.
 
-## Luật
-- **Tự hỏi khi cần** (skill `hoi-chuyen-gia`, 6 tín hiệu) — cả giữa chừng; chuyện nhỏ có mặc định rõ thì tự làm và ghi một dòng.
-- **Không đăng bất cứ gì chưa qua cổng 2.** Không nhập mật khẩu, không đổi cài đặt tài khoản (tên, bio, ảnh) khi David chưa duyệt riêng.
-- **Chỉ hình của chính tài nguyên** (thumbnail, ảnh bìa) · không ghi số tập / ngày lên video · nhạc theo tuyến nội dung.
-- **Tiết kiệm thời gian David** (điều David kiêng nhất): phiếu lọc gọn một màn hình; câu hỏi gộp một lần; không render khi chưa cần.
-- Sổ danh mục là nơi duy nhất ghi trạng thái; cảnh báo lệch nhánh, thiếu bài Mời, kho < 4 video, lịch trống.
+## Làm song song khi render (chốt 05/11/2026)
+Qua cổng 1 Claude đã có lời chép và các lựa chọn đã chốt, nên **bước 3 và bước 4 chạy cùng lúc**: render chạy nền thì soạn ngay,
+không chờ David nhắc. Video dài để nguyên nên mốc theo lời không đổi.
+Chờ bản cuối mới làm: ảnh thumbnail, kiểm khung hình và âm lượng.
+**Clip ngắn:** Claude tự chọn ý theo bốn câu của `cat-highlight-video` (chốt 07/11), báo rõ đã chọn gì ở cổng 2 để David sửa;
+chỉ dựng khi David đồng ý ở cổng 2, đăng sau video dài.
+
+## Luật riêng của skill
+- Chung (hỏi, không đăng khi chưa duyệt, không tự render lại, tiết kiệm): `thoi-quen-lam-viec.md`. Video (hình của chính video, nhạc, chữ nguyên văn, video dài không cắt): `luat-chung.md`.
+- **Không đổi cài đặt tài khoản** (tên, bio, ảnh) khi David chưa duyệt riêng.
+- **Sổ danh mục là nơi duy nhất ghi trạng thái** (lọc → dựng → chờ đăng → đã đăng + link).
+- **Cảnh báo** khi lệch nhánh, thiếu bài Mời theo tỉ lệ, kho < 4 video quay sẵn, lịch trống.
+- Phiếu lọc gọn một màn hình.
+
+## Xong khi
+1. Phiếu lọc gọn một màn hình, gửi trước khi dựng; kết luận ⛔ / 👤 / 🗂 thì không dựng.
+2. Cổng 1 gộp mọi điểm cần chọn trong một vòng.
+3. Không render trước cổng 1; bài đăng soạn trong lúc render chạy nền.
+4. Bài đủ kênh theo kết luận, đúng giọng David, kiểu dẫn dắt khớp tỉ lệ.
+5. Không gì được đăng trước cổng 2; mỗi lần hẹn giờ có ảnh chụp xác nhận.
+6. Sổ danh mục đúng trạng thái ở từng bước.
+7. Sau 24 giờ và 7 ngày có báo cáo hộp thư / số liệu + 1–3 đề xuất.
+
+## Nhật ký
+- 2026-11-05 · vai trò Claude; làm song song khi render.
+- 2026-11-08 · chuẩn hoá (`dang-lam/chuan-hoa-skill.md` bước 3): Đọc trước chỉ 2 file, file khác theo bước; cổng 1 gộp mọi điểm cần chọn (tiêu đề, chữ bìa, câu chốt, kênh, giờ), cổng 2 chỉ duyệt bản cuối + chữ bài; clip ngắn Claude tự chọn ý theo bốn câu; đánh dấu bước nhẹ 0, 7, 8; lịch và tỉ lệ trỏ `kenh.json`; luật chung trỏ về nhà; thêm "Xong khi".
