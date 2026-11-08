@@ -8,6 +8,7 @@ Tên file bắt đầu bằng nhóm: `luat-` cách làm việc với David · `n
 - [Gợi ý để David chọn](luat-goi-y-de-david-chon.md) — "làm đi" không chốt lựa chọn; ngoại lệ cắt clip, làm lại video cũ; nhà chính thoi-quen-lam-viec (sửa 08/11)
 - [Học là bổ sung](luat-hoc-la-bo-sung.md) — học mẫu mới chỉ thêm, không thay cái David đã sửa; số khung dọc không dùng cho ngang (2026-11-08)
 - [Kết quả hơn tốc độ](luat-ket-qua-hon-toc-do.md) — làm đúng quy trình, bước cần kết quả render thì chờ; chỗ chưa rõ thì trao đổi (2026-11-05)
+- [Không tự chạy việc của David](luat-khong-tu-chay-viec-cua-david.md) — không tự Chạy tiếp/Duyệt/Làm lại việc David tạo khi chưa có lệnh, kể cả khi Claude làm ngắt (2026-11-08)
 - [Nội dung của David, thẩm mỹ của skill](luat-noi-dung-cua-david.md) — không khuôn lời; học nhịp/trình bày, giữ thẩm mỹ (2026-11-05)
 - [Tự hỏi khi mơ hồ](luat-tu-hoi-khi-mo-ho.md) — 6 tín hiệu tự dừng hỏi, kể cả giữa chừng; không tự đoán rồi làm (2026-11-05)
 
