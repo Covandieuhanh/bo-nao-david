@@ -36,6 +36,7 @@ David thường chỉ gửi tài nguyên (video, ghi âm) mà không kèm yêu c
 | Lọc nội dung có đáng làm không | khối 00 | [README.md](skills/dung-video/khoi/00-loc-noi-dung/README.md) |
 | Dựng video tự quay, ghép vlog | `video-style-edit` | [SKILL.md](skills/dung-video/video-style-edit/SKILL.md) |
 | Podcast thành video đồ hoạ | `podcast-style-edit` | [SKILL.md](skills/dung-video/podcast-style-edit/SKILL.md) |
+| Học cách trình bày từ video mẫu David gửi | `hoc-video-mau` | [SKILL.md](skills/dung-video/hoc-video-mau/SKILL.md) |
 | Cắt highlight dọc | `cat-highlight-video` | [SKILL.md](skills/dung-video/cat-highlight-video/SKILL.md) |
 | Viết bài, kịch bản theo giọng David | giọng văn | [giong-van-david.md](skills/dung-video/ho-so/giong-van-david.md) |
 | Điều khiển trình duyệt | `playwright-cli` | [SKILL.md](skills/playwright-cli/SKILL.md) |

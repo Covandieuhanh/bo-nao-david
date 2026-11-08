@@ -29,7 +29,7 @@ for s in dung-video hoi-chuyen-gia playwright-cli; do
   lien_ket "$REPO/skills/$s" "$CL/skills/$s"
 done
 # Lối tắt để Claude nhận lệnh /<tên skill>
-for s in cat-highlight-video dang-da-kenh podcast-style-edit video-style-edit; do
+for s in cat-highlight-video dang-da-kenh hoc-video-mau podcast-style-edit video-style-edit; do
   lien_ket "$REPO/skills/dung-video/$s" "$CL/skills/$s"
 done
 

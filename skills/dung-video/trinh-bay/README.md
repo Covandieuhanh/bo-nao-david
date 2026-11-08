@@ -34,15 +34,29 @@ Kiểu bố cục mới chỉ mô tả cách sắp xếp, còn hình vẽ thì l
 
 ## 4. Quy trình học một video mẫu mới
 
+Học là **bổ sung**, không thay thế (David chốt 08/11/2026, `luat-hoc-la-bo-sung`). Skill `hoc-video-mau` tự bật khi David gửi video
+và nói "học cái này"; skill đó chỉ trỏ về đây.
+
 1. **Lấy mẫu:** tải bản 720p vào thư mục tạm (không đưa lên repo), đọc mô tả và danh sách chương (`yt-dlp --dump-json`).
+   David gửi file thì dùng file đó.
 2. **Cắt khung:** bảng khung theo nhịp 1,5–3 s (`ffmpeg … fps=1/2,scale=480:-1,tile=4x4`) ở đoạn mở đầu và đoạn đúng loại cần học.
 3. **Nghe:** vẽ phổ âm (`showspectrumpic`) để thấy chỗ có tiếng hiệu ứng, nhạc nền, nốt chuyển chương.
 4. **Rút ra, chỉ phần trình bày:** bố cục · thứ tự hiện · cách nối · nhịp · âm thanh. Không ghi màu, font, kiểu vẽ.
-5. **Ghi vào kho:** một file `nguon-hoc/<ten-nguon>-<ngay>.md` kể học gì từ đâu. Mỗi cách mới thêm một dòng ở `bo-cuc.md` hoặc `am-thanh.md`,
-   ghi rõ "đã có code" hay "chưa có code".
-6. **Làm code khi cần:** thêm `kieu` mới trong `video-style-edit/assets/remotion-template/src/components/BoCuc.jsx` (chỉ dùng
-   `C`, `HEAD`, `BODY`, `ease`, `pop`, `Illus`, `Diagram`, `Icon` sẵn có), chụp thử ngang + dọc, rồi đẩy lên GitHub.
-7. **Không chép công cụ của nguồn** (HyperFrames…): giữ Remotion, chỉ học ý (`video-khong-cai-hyperframes`).
+5. **Phiếu học cho David duyệt** (mẫu ở `phieu-hoc-mau.md`): học được gì, dùng cho loại video nào, thêm thành phần nào, mỗi thành
+   phần đối chiếu với các chặn cũ thế nào. **Chờ David "ok" rồi mới sửa skill.**
+6. **Ghi vào kho:** một file `nguon-hoc/<ten-nguon>-<ngay>.md` kể học gì từ đâu. Mỗi cách mới thêm một dòng ở `bo-cuc.md` hoặc `am-thanh.md`,
+   ghi rõ "đã có code" hay "chưa có code". Không xoá, không sửa nghĩa dòng cũ.
+7. **Làm code khi cần:** thêm `kieu` mới trong `video-style-edit/assets/remotion-template/src/components/BoCuc.jsx` (chỉ dùng
+   `C`, `HEAD`, `BODY`, `ease`, `pop`, `Illus`, `Diagram`, `Icon` sẵn có). Vị trí lấy từ hằng số chung (`SAFE`, `BRAND_TOP`/`BRAND_BOT`,
+   `PF`, `CAP_H`), **không viết số vị trí riêng**.
+8. **Kiểm không phá** (bắt buộc trước khi dùng vào video thật):
+   - Thành phần mới đi qua đủ các chặn cũ: không che mặt · không đè phụ đề · nằm dưới dấu góc · trên thanh thời gian · trong vùng an
+     toàn · chữ tiếng Việt đủ dấu, không chồng dòng · chữ nguyên văn.
+   - Chụp thử **đủ lớp** (cảnh + `phu-de@<giây>` có dấu góc, phụ đề, thanh thời gian) ở **cả khung ngang lẫn dọc**, trên ít nhất
+     một dự án cũ đã duyệt. So với ảnh trước khi thêm: phần cũ phải y nguyên.
+   - Chạy `soat_canh.mjs` và `python3 -I ../mau-chuan/kiem-mau.py` (mẫu chuẩn); có lệch thì sửa thành phần mới, không sửa cái cũ cho vừa.
+9. **Đẩy GitHub** và báo David: thêm gì, đã kiểm gì, chưa kiểm gì.
+10. **Không chép công cụ của nguồn** (HyperFrames…): giữ Remotion, chỉ học ý (`video-khong-cai-hyperframes`).
 
 ## 5. Dùng khi dựng
 
@@ -57,3 +71,4 @@ Kiểu bố cục mới chỉ mô tả cách sắp xếp, còn hình vẽ thì l
 | [bo-cuc.md](bo-cuc.md) | danh mục bố cục: dùng khi nào, viết thế nào, có code chưa |
 | [am-thanh.md](am-thanh.md) | cách đặt tiếng hiệu ứng / nhạc theo bố cục |
 | [nguon-hoc/](nguon-hoc/) | mỗi nguồn đã học một file: học gì, ở phút nào |
+| [phieu-hoc-mau.md](phieu-hoc-mau.md) | mẫu phiếu học đưa David duyệt trước khi sửa skill |

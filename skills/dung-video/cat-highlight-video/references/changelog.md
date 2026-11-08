@@ -105,5 +105,5 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
 ## 2026-11-08 — clip người nói dọc đầu tiên (4 video cũ làm lại)
 - Nguồn ngang có người nói cắt sang dọc: mặt chiếm gần hết nửa trên, nên `overlay_guard.py` đổi thẻ tít `y: 300` thành màn đen toàn khung (mất mặt ngay giây 0, chữ lệch sát mép trái). Cách làm: tít `keep: true`, bỏ `y` → neo vùng ngực ngay trên phụ đề, thấy rõ mặt.
 - Chữ to `pow` giữa clip lặp đúng chữ phụ đề nhịp chữ và cũng bị đổi thành màn đen → bỏ. Điểm nhấn giữa clip dùng minh hoạ (`illus` vs/list/count) và màn hành động (`action`), từ khoá tô cam trong phụ đề.
-- Bỏ tiếng ký hiệu đầu clip khi vào lời ngay giây 0 (đúng quyết định 06/11; `hl_edl.py` vẫn tự thêm `sting` → cần xoá tay hoặc sửa script).
+- Bỏ tiếng ký hiệu đầu clip khi vào lời ngay giây 0 (đúng quyết định 06/11); `hl_edl.py` đã sửa: không thêm `sting`, tít tự `keep: true`.
 - Chưa sửa: màn `pow` toàn khung của khung ghép (lề trái ~18 px thay vì 70 px, dải tối khác màu ở đỉnh). Nếu cần chữ to toàn khung, sửa `Show.jsx` trước.

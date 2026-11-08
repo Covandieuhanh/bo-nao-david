@@ -12,4 +12,5 @@ Học từ mẫu mới (bố cục, trình bày, âm thanh) chỉ được **th�
 **How to apply:**
 - Trước khi thêm gì từ bài học: đọc luật và gotchas liên quan, giữ nguyên các chặn cũ, thêm chặn mới cho thành phần mới (ví dụ thành phần mới phải tránh dấu góc, phụ đề, thanh thời gian).
 - Khung mới (ngang/dọc) lần đầu chạy: chụp đủ lớp (cảnh + phụ đề + dấu góc + thanh) trước khi render, không chỉ chụp lớp cảnh.
+- David gửi video mẫu để học: dùng skill `hoc-video-mau` (cửa vào) → quy trình 10 bước ở `skills/dung-video/trinh-bay/README.md` mục 4: phiếu học David duyệt trước, kiểm không phá sau (David chọn phương án A, 08/11/2026).
 - David góp ý mà bảo không render lại: chỉ sửa skill, chụp thử ảnh để kiểm. Liên quan [[video-khong-tu-render]], [[video-bo-cuc-tu-can]].
