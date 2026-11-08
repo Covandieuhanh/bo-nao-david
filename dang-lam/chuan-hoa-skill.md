@@ -12,9 +12,16 @@ Mọi skill tự làm việc theo một bộ thói quen chung: đúng quy trình
 4. Mỗi skill có danh sách "Xong khi" 5–8 dòng do David duyệt; chạy một việc thật đạt đủ mà không phải sửa lại.
 5. Mỗi bước một phiên ngắn, theo dõi ở file này.
 
+## Đã chốt (vòng 2, 08/11/2026): nội dung file thói quen chung
+1. Bốn nhóm: **đầu việc** (đọc đúng phần cần, không đọc cả repo) · **hỏi** (gộp một lần, có đề xuất) · **trong lúc làm** (chụp khung có giới hạn, agent phụ chỉ khi David cho, chạy lệnh theo lô) · **cuối việc** (cập nhật não + file theo dõi, đề nghị phiên mới cho việc tiếp).
+2. Xung đột thì **chất lượng thắng** ("kết quả hơn tốc độ"); tiết kiệm chỉ ở chỗ không ảnh hưởng kết quả (vd. kiểm video chụp đúng mốc dễ lỗi, không chụp từng cảnh).
+3. Skill ghi rõ bước nào nhẹ; tới đó Claude nhắc một dòng để David tự đổi mô hình, không tự đổi.
+4. Góp ý của David ghi **đúng một chỗ**: skill/khối bị ảnh hưởng + một dòng nhật ký; chỉ luật dùng chung nhiều skill mới vào bộ nhớ, không tạo ghi nhớ trùng.
+5. File đặt ở `skills/thoi-quen-lam-viec.md` (cấp gốc); `skills/dung-video/luat-chung.md` chỉ giữ luật riêng video.
+
 ## Thực thi
 - [x] Bước 0: lưu mốc lên GitHub
-- [ ] Vòng 2: chốt nội dung file thói quen chung
+- [x] Vòng 2: chốt nội dung file thói quen chung
 - [ ] Bước 1: bảng rà soát luật (trùng / ngược / cũ) → David duyệt
 - [ ] Bước 2: viết file thói quen chung → David duyệt
 - [ ] Bước 3: gọt từng skill + "Xong khi" (mỗi skill một phiên)
