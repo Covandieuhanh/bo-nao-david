@@ -108,6 +108,33 @@ def chi_tiet(ten):
             "xong_luc": tt.get("xong_luc")}
 
 
+def thu_xoa(ten):
+    """Những thư mục sẽ vào Thùng rác khi xoá dự án: trạng thái app + cả tập ~/Movies/tap-<tên> (gốc, bản dài, highlight)."""
+    ds = [KHO / ten]
+    f = KHO / ten / "trang-thai.json"
+    if f.exists():
+        P = Path(chay.doc(f)["P"])
+        tap = P.parent if P.name == "2-ban-dai" else P
+        if tap.exists() and str(tap.resolve()).startswith(str(MOVIES) + "/") and tap.resolve() != MOVIES:
+            ds.append(tap)
+    out = []
+    for d in ds:
+        if d.exists():
+            n = sum(x.stat().st_size for x in d.rglob("*") if x.is_file() and not x.is_symlink())
+            out.append({"duong_dan": str(d), "mb": round(n / 1048576)})
+    return out
+
+
+def xoa(ten):
+    """Chuyển vào Thùng rác (lấy lại được), không xoá hẳn."""
+    rac = Path.home() / ".Trash"; luc = time.strftime("%H%M%S")
+    for x in thu_xoa(ten):
+        d = Path(x["duong_dan"]); dich = rac / d.name
+        if dich.exists():
+            dich = rac / f"{d.name}-{luc}"
+        os.rename(d, dich) if os.stat(d).st_dev == os.stat(rac).st_dev else __import__("shutil").move(str(d), str(dich))
+
+
 def video_goc():
     ds = []
     for d in ["~/Downloads", "~/Desktop", "~/Movies/video-goc", "~/Movies/_video-goc"]:
@@ -142,6 +169,8 @@ class H(BaseHTTPRequestHandler):
                 return self.gui(chi_tiet(q["ten"][0]))
             if u.path == "/api/cong-thuc":
                 return self.gui([{"id": f.stem, "ten": chay.doc(f)["ten"]} for f in sorted((APP / "cong-thuc").glob("*.json"))])
+            if u.path == "/api/thu-xoa":
+                return self.gui(thu_xoa(q["ten"][0]))
             if u.path == "/api/video-goc":
                 return self.gui(video_goc())
             if u.path == "/tep":
@@ -183,6 +212,8 @@ class H(BaseHTTPRequestHandler):
             dung(ten); return self.gui({"ok": True})
         if dang_chay(ten):
             return self.gui({"loi": "việc này đang chạy"}, 409)
+        if u == "/api/xoa":
+            xoa(ten); CHAY.pop(ten, None); return self.gui({"ok": True})
         if u == "/api/moi":
             if not Path(os.path.expanduser(d.get("video", ""))).is_file():
                 return self.gui({"loi": "không thấy file video"}, 400)

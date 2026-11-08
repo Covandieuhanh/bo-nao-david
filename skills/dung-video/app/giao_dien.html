@@ -61,7 +61,7 @@ let video=$('#vp').value.trim();if(!tepChon&&!video)return alert('Kéo thả ho�
 try{if(tepChon)video=await taiLen(ten,tepChon)}catch(e){$('#batDau').disabled=false;return alert(e)}
 $('#tienChu').textContent='Đã tải lên, bắt đầu chạy…';const r=await api('/api/moi',{ten,video,cong_thuc:$('#ct').value});$('#batDau').disabled=false;if(r.ok){chon=ten;setTimeout(()=>xem(ten),800)}}
 async function xem(ten){chon=ten;clearTimeout(hen);const d=await api('/api/chi-tiet?ten='+encodeURIComponent(ten));danhSach();
-const tk=d.token;let h=`<h1>${esc(d.ten)}</h1><div class="so"><span>${esc(d.cong_thuc)}</span><span>Claude: ${tk.lan_goi} lần · ${(tk.vao/1000).toFixed(1)}k vào · ${(tk.ra/1000).toFixed(1)}k ra</span></div>`;
+const tk=d.token;let h=`<div style="display:flex;align-items:center;gap:12px"><h1 style="margin:0">${esc(d.ten)}</h1><button class="dung" style="margin-left:auto;font-size:13px" ${d.dang_chay?'disabled title="Dừng việc trước khi xoá"':''} onclick="xoaViec()">🗑 Xoá dự án</button></div><div class="so"><span>${esc(d.cong_thuc)}</span><span>Claude: ${tk.lan_goi} lần · ${(tk.vao/1000).toFixed(1)}k vào · ${(tk.ra/1000).toFixed(1)}k ra</span></div>`;
 if(d.cong){h+=`<div class="the"><h2>🟠 ${esc(d.cong.ten)}</h2>${d.cong.video?`<video controls preload="metadata" src="/tep?p=${encodeURIComponent(d.cong.video)}"></video>`:''}
 ${d.cong.tep.map(t=>`<h2>${esc(t.ten)}</h2><pre>${esc(t.noi_dung)}</pre>`).join('')}
 ${d.cong.nhan_gop_y?`<label>Góp ý (để trống nếu duyệt luôn) — Claude chỉ sửa đúng chỗ được nhắc</label><textarea id="gy" rows="3"></textarea>`:''}
@@ -75,6 +75,9 @@ h+=`<h2>Các bước</h2>`+d.buoc.map(b=>`<div class="buoc"><span>${BIEU[b.trang
 if(d.dang_chay&&d.log)h+=`<h2>Đang chạy: ${esc(d.dang)}</h2><pre>${esc(d.log)}</pre>`;
 $('#chinh').innerHTML=h;if(d.dang_chay)hen=setTimeout(()=>xem(ten),3000)}
 async function dungViec(){if(!confirm('Dừng việc này? Bước đang chạy sẽ làm lại từ đầu khi bấm Chạy tiếp.'))return;if((await api('/api/dung',{ten:chon})).ok)setTimeout(()=>xem(chon),500)}
+async function xoaViec(){const ds=await api('/api/thu-xoa?ten='+encodeURIComponent(chon));
+if(!confirm(`Xoá dự án "${chon}"?\n\nCác thư mục sau sẽ chuyển vào Thùng rác (muốn lấy lại: mở Thùng rác, kéo thư mục về ~/Movies; dọn Thùng rác là mất hẳn):\n\n${ds.map(x=>'• '+x.duong_dan+' ('+x.mb+' MB)').join('\n')}\n\nGồm cả video gốc trong 1-goc.`))return;
+if((await api('/api/xoa',{ten:chon})).ok){chon=null;$('#chinh').innerHTML='<p class="mo">Đã chuyển vào Thùng rác.</p>';$('#ds').dataset.h='';danhSach()}}
 async function duyet(){if((await api('/api/duyet',{ten:chon})).ok)setTimeout(()=>xem(chon),800)}
 async function gopY(){const g=$('#gy').value.trim();if(!g)return alert('Viết góp ý trước');if((await api('/api/duyet',{ten:chon,gop_y:g})).ok)setTimeout(()=>xem(chon),800)}
 async function tiep(){if((await api('/api/tiep',{ten:chon})).ok)setTimeout(()=>xem(chon),800)}

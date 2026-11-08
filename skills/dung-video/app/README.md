@@ -7,7 +7,9 @@ mỗi lần chỉ nhận đúng thứ cần và trả về một JSON ngắn (tr
 ```bash
 python3 -I ~/Documents/David.Claude/skills/dung-video/app/giao_dien.py
 ```
-Mở http://localhost:8765 → **+ Việc mới** → chọn loại, chọn video, đặt tên tập → app tự chạy, dừng ở 2 cổng chờ David duyệt.
+Mở http://localhost:8765 → **+ Việc mới** → kéo thả (hoặc chọn) video, tên tập tự đặt → app tự chạy, dừng ở 2 cổng chờ David duyệt.
+Nút: **⏹ Dừng** (tắt cả render) · **▶ Chạy tiếp** (làm lại bước dở) · **làm lại từ đây** · **🗑 Xoá dự án** (chuyển `~/Movies/_app/<tên>` + `~/Movies/tap-<tên>` vào Thùng rác).
+Việc chạy trong nhóm tiến trình riêng: tắt/khởi động lại giao diện không làm ngắt việc đang chạy.
 Dòng lệnh thay giao diện: `python3 -I chay.py moi lam-video <video> <tên>` · `chay.py duyet <tên> [góp ý]` · `chay.py lai <tên> <bước>`.
 
 ## Lần đầu: đăng nhập Claude cho app (David tự làm, một lần)
