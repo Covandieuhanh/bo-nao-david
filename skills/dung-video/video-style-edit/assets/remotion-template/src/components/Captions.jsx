@@ -12,7 +12,7 @@ import {POD, PF} from '../podframe';
 import {Timeline} from './Timeline';
 import {Tua} from './Tua';
 import HL from '../highlight.js';
-import {BrandMark} from './Overlays';
+import {DauGoc} from '../lib/DauGoc';   // dấu góc chung (thu-vien-hinh)
 import {SUB, ShortLine, highlight} from '../lib/subStyle';
 import HS from '../hoso.json';   // hồ sơ tham số (chép lúc tạo dự án — khoi/hoso.py)
 const PD = HS.phu_de || {};
@@ -62,7 +62,7 @@ export const Captions = () => {
               {highlight(cap.text, cap.hl, C.accent)}</div>}
       </div>}
       {/* dấu kênh ● DAVID │ chủ đề (project.topic) — podcast đã có ở đầu sân khấu (Stage.jsx) */}
-      {!POD && !ctaNgang && <BrandMark topic={project.topic || ''} style={{position: 'absolute', left: SAFE.left, top: BRAND_TOP}} />}
+      {!POD && !ctaNgang && <DauGoc topic={project.topic || ''} style={{position: 'absolute', left: SAFE.left, top: BRAND_TOP}} />}
       {TL_ON && <Timeline />}
       {HL && <Tua />}
     </AbsoluteFill>

@@ -5,6 +5,7 @@ import {AbsoluteFill, Easing, Img, interpolate, staticFile, useCurrentFrame, use
 import {BODY, C, HEAD, SAFE, SAFE_W, ease, inOut, pop, rel} from '../theme';
 import {VN, aboveGap} from '../podframe';
 import BRAND from '../lib/brand.json';
+import {DauGoc} from '../lib/DauGoc';
 import {Pictogram} from '../lib/Icons';
 
 const Arrow = ({size = 30, color = C.accent}) => (
@@ -24,15 +25,7 @@ const Scrim = () => null;
 
 // ---------- DẤU KÊNH (người dùng chốt 2026-11-04): ● DAVID │ chủ đề — CÙNG kiểu ở cả 4 loại video (Hud của chế độ ghép) ----------
 // brand.json = một nguồn tên kênh. Video 1 người: Captions.jsx đặt ở góc trên vùng an toàn; podcast: đầu sân khấu (Stage.jsx).
-export const BrandMark = ({topic, style}) => (
-  <div style={{display: 'flex', alignItems: 'center', gap: 14, ...style}}>
-    <div style={{width: 12, height: 12, borderRadius: 6, background: C.accent, boxShadow: '0 0 14px rgba(255,122,69,0.8)'}} />
-    <div style={{fontFamily: HEAD, fontWeight: 800, fontSize: 38, color: C.accent, letterSpacing: 3, textShadow: '0 6px 30px rgba(0,0,0,0.45)'}}>{BRAND.name}</div>
-    {topic && <div style={{width: 2, height: 30, background: C.line}} />}
-    {topic && <div style={{fontFamily: HEAD, fontWeight: 800, fontSize: 38, color: C.text, letterSpacing: 2, textShadow: '0 6px 30px rgba(0,0,0,0.45)',
-      whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: 640}}>{topic}</div>}
-  </div>
-);
+export const BrandMark = ({topic, style}) => <DauGoc topic={topic} style={style} />;   // một bản: thu-vien-hinh/DauGoc.jsx
 
 // ---------- Tên người nói ----------
 export const LowerThird = ({name, role}) => {

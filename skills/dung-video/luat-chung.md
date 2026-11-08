@@ -68,10 +68,11 @@ kênh lớn, ghi lý do vào changelog. Mục tiêu mỗi video: người xem **
 Dấu góc ● DAVID │ chủ đề · khuôn tiêu đề (dòng nhỏ cam → gạch cam → chữ cô đặc in hoa trắng, dòng nhấn cam) · tiếng ký hiệu
 `sting.wav` lúc hiện tiêu đề · nhạc kênh dưới lời (4 bài cố định ở `cat-highlight-video/assets/music`, + 2 bài intro vlog; không
 tự thêm bài) · giọng −20 LUFS, bản cuối −14 LUFS · màn chốt (`cta`, ~4 s, tick + "ting") → thẻ cuối. Sửa nhận diện → giữ đồng bộ cả 4 loại.
+- **BỘ NHẬN DIỆN CHUNG** (David chốt 08/11/2026): mọi loại video cùng tiêu chuẩn vị trí và thành phần cố định — vùng an toàn, dấu góc,
+  thanh thời gian, phụ đề, màn chốt, thẻ cuối. Một nguồn: `thu-vien-hinh/nhan-dien-chung.md` + `nhan-dien.js`. Chỉ motion graphics là tự do theo loại, theo cảnh.
 - **Dấu góc** (sửa 08/11/2026): khung dọc 228 px, khung ngang sát mép trên vùng an toàn (`BRAND_TOP` / `BRAND_BOT` trong `theme.js`).
   Mọi lớp phủ ở góc trên (thẻ, điểm nhấn, bố cục) nằm dưới `BRAND_BOT`; màn chốt ngang ẩn dấu góc. Không viết số vị trí của khung dọc vào khung ngang.
-- **Thanh thời gian ở đáy** (David chốt 08/11/2026): MỌI video dài đều có (đã chạy mm:ss · còn mm:ss), không chỉ podcast. Clip ngắn
-  dùng thanh của tập gốc (highlight). Bật/tắt một chỗ: `src/thanh.js` (`project.thanh = false` để tắt tay).
+- **Thanh thời gian ở đáy** (David chốt 08/11/2026): MỌI video đều có, kể cả clip ngắn (đã chạy mm:ss · còn mm:ss). Tắt tay chỉ khi David yêu cầu.
 
 ## 6. Lời kêu gọi
 - Ưu tiên **câu mệnh lệnh nằm sẵn trong lời** ("Hãy chọn…", "thử làm…") — top video gần như không có câu "hãy bình luận".

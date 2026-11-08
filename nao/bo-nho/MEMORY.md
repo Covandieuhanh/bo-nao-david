@@ -23,6 +23,7 @@ Tên file bắt đầu bằng nhóm: `luat-` cách làm việc với David · `n
 - [Bản chuẩn video](video-ban-chuan-2026-11-06.md) — 5 video chuẩn: 3 clip Đi trainer + 2 video dài; dự án cũ đã bỏ (2026-11-06)
 - [Làm lại video cũ](video-lam-lai-video-cu.md) — bỏ lời chào/giới thiệu kênh cũ, màn tít cũ, chữ/viền in trong hình; mỗi video một bản; làm trọn rồi David góp ý (2026-11-08)
 - [Bố cục tự cân, học chỉ trình bày](video-bo-cuc-tu-can.md) — bỏ mọi con số cố định; giữ thẩm mỹ gốc; khung học ở skills/dung-video/trinh-bay (2026-11-07)
+- [Bộ nhận diện chung](video-nhan-dien-chung.md) — mọi loại video cùng vị trí, dấu góc, thanh thời gian (cả clip ngắn), thẻ cuối không logo; chỉ motion graphics tự do (2026-11-08)
 - [Chỉ hình của chính video](video-chi-hinh-cua-chinh-video.md) — thumbnail/ảnh bìa chỉ lấy từ chính video đó, không mượn từ video khác (2026-11-05)
 - [Chữ trên màn hình nguyên văn](video-chu-nguyen-van.md) — không thẻ tít tự rút, màn chốt dùng lời David, không số chạy; không bỏ chữ đổi nghĩa (2026-11-07)
 - [Chuẩn âm lượng chung](video-chuan-am-luong.md) — mọi video: nhạc thấp hơn giọng ~23 dB, cả bài −14 LUFS; giọng nhỏ kéo lên, nhạc to hạ xuống (2026-11-06)

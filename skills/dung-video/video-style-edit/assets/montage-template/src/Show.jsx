@@ -20,14 +20,18 @@ import CTA_DEF, {CTA_ICONS, CTA_TICK} from './lib/cta.js';
 import {Icon} from './lib/Icons';
 import BRAND from './lib/brand.json';
 import {YtEnd} from './lib/YtEnd';
-import {EndCardBody} from './lib/EndCardBody';   // ruột thẻ cuối dùng chung (khối 08)   // màn kết YouTube 15–20 s (chép từ remotion-template, một nguồn)   // bộ nhận diện David (một nguồn với chế độ 1 video, podcast, highlight)   // biểu tượng nét vẽ dần — chép từ remotion-template (một nguồn với chế độ 1 video)   // câu màn chốt — chép từ remotion-template (một nguồn với chế độ 1 video)
+import {EndCardBody} from './lib/EndCardBody';
+import {khung} from './lib/nhan-dien';   // bộ nhận diện chung: vùng an toàn, dấu góc, thanh thời gian (David chốt 08/11/2026)
+import {DauGoc} from './lib/DauGoc';
+import {ThanhThoiGian} from './lib/ThanhThoiGian';   // ruột thẻ cuối dùng chung (khối 08)   // màn kết YouTube 15–20 s (chép từ remotion-template, một nguồn)   // bộ nhận diện David (một nguồn với chế độ 1 video, podcast, highlight)   // biểu tượng nét vẽ dần — chép từ remotion-template (một nguồn với chế độ 1 video)   // câu màn chốt — chép từ remotion-template (một nguồn với chế độ 1 video)
 
 // ===== Phong cách (token) — mặc định: thẻ tối, nhấn cam, chữ cô đặc in hoa trồi lên (bộ nhận diện đã duyệt).
 // Có video mẫu/dự án cũ → đổi C, HEAD, BODY (+ fonts.js) theo style.md; component giữ nguyên ngôn ngữ chuyển động. =====
 import {C} from './brand';   // màu nhận diện chung (brand.js) — biểu tượng vẽ (Icons.jsx) cùng đọc
 const HEAD = '"Barlow Condensed", sans-serif';
 const BODY = '"Be Vietnam Pro", sans-serif';
-const SAFE = {left: 70, right: 180, top: 210, bottom: 1420};
+const K = khung(W, H);
+const SAFE = K.safe;
 const SAFE_W = W - SAFE.left - SAFE.right;
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'};
 const pop = (f, at = 0, cfg = {damping: 16, stiffness: 140, mass: 0.7}) => spring({frame: f - at, fps: FPS, config: cfg});
@@ -42,7 +46,10 @@ const SHADOW = '0 6px 30px rgba(0,0,0,0.45)';
 const HL = EDL.HL || null;
 const TONE = EDL.TONE || [];
 const toneAt = (t) => (TONE.find(([a, b]) => t >= a && t < b) || [0, 0, 'soi'])[2];
-const HL_LIFT = HL && HL.bar !== false ? 56 : 0;   // bar: false (mặc định highlight từ 2026-11-04) → không thanh tập gốc
+// THANH THỜI GIAN (David chốt 08/11/2026): mọi loại video đều có, kể cả clip ngắn. HL.bar → thanh của cả tập gốc (SrcBar), còn lại thanh
+// thường của chính video (ThanhThoiGian, nhan-dien.js). Tắt tay: `export const THANH = false` trong edl.js. Phụ đề lên trên thanh.
+const THANH = EDL.THANH !== false;
+const HL_LIFT = HL && HL.bar !== false ? 56 : THANH ? SAFE.bottom - SUB.bottomGap - K.capBottom : 0;
 // SHORT (edl.js, highlight luôn bật): phụ đề 1–3 chữ to mỗi nhịp kiểu kênh lớn (subStyle.js ShortLine) — vlog dài giữ hộp tối
 const SHORT = !!EDL.SHORT;
 // DẢI PHỤ ĐỀ (người dùng chỉ ra 2026-11-04: thẻ địa điểm đè phụ đề): phụ đề tối đa 2 dòng ≈ 140 px ở đáy vùng an toàn — giống
@@ -290,15 +297,8 @@ const Hud = ({len, name = ''}) => {
   const f = useCurrentFrame();
   const o = inOut(f, len, 10, 6);
   return (
-    <div style={{position: 'absolute', top: 228, left: SAFE.left, display: 'flex', alignItems: 'center', gap: 14, opacity: o * 0.95,
-      transform: `translateX(${(1 - ease(f, 0, 12)) * -24}px)`}}>
-      {/* DẤU KÊNH (người dùng chốt 2026-11-04): ● DAVID │ chủ đề — cùng kiểu ở cả 4 loại video (BrandMark của chế độ 1 video) */}
-      <div style={{width: 12, height: 12, borderRadius: 6, background: C.accent, boxShadow: '0 0 14px rgba(255,122,69,0.8)'}} />
-      <div style={{fontFamily: HEAD, fontWeight: 800, fontSize: 38, color: C.accent, letterSpacing: 3, textShadow: SHADOW}}>{BRAND.name}</div>
-      {name && <div style={{width: 2, height: 30, background: C.line}} />}
-      {name && <div style={{fontFamily: HEAD, fontWeight: 800, fontSize: 38, color: C.text, letterSpacing: 2, textShadow: SHADOW,
-        whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: 640}}>{name}</div>}
-    </div>
+    <DauGoc topic={name} style={{position: 'absolute', top: K.brand.top, left: K.brand.left, opacity: o * 0.95,
+      transform: `translateX(${(1 - ease(f, 0, 12)) * -24}px)`}} />
   );
 };
 
@@ -475,7 +475,7 @@ const Replay = ({text, len, eyebrow = 'KHOẢNH KHẮC'}) => {
     <AbsoluteFill>
       <AbsoluteFill style={{background: 'radial-gradient(ellipse at center, transparent 45%, rgba(0,0,0,0.7) 100%)'}} />
       <div style={{position: 'absolute', left: 0, width: W, height: 4, top: (f * 37) % H, background: 'rgba(255,255,255,0.18)'}} />
-      <div style={{position: 'absolute', top: 228, left: SAFE.left, display: 'flex', alignItems: 'center', gap: 16, opacity: o}}>
+      <div style={{position: 'absolute', top: K.brand.top, left: SAFE.left, display: 'flex', alignItems: 'center', gap: 16, opacity: o}}>
         <div style={{display: 'inline-flex', alignItems: 'center', gap: 10, padding: '10px 22px', borderRadius: 999,
           background: C.accentSoft, border: `2px solid ${C.accent}`}}>
           <div style={{width: 12, height: 12, borderRadius: 6, background: C.accent, opacity: 0.4 + 0.6 * Math.abs(Math.sin(f / 8))}} />
@@ -614,7 +614,7 @@ const EndCard = ({title, speaker, clip, at, play = true, yt = 0, schedule = ''})
       <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(13,13,16,0.1) 30%, rgba(13,13,16,0.92) 78%)'}} />
       <div style={{position: 'absolute', left: SAFE.left, width: SAFE_W, top: 1000, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 34,
         transform: `translateY(${(1 - p) * 60}px)`}}>
-        <EndCardBody title={title} speaker={speaker} play={play} schedule={schedule} big={96} gap={34} shadow={SHADOW} />
+        <EndCardBody title={title} speaker={speaker} play={play} schedule={schedule} kenh={HS.man_cuoi_kenh || ''} big={96} gap={34} shadow={SHADOW} />
       </div>
     </AbsoluteFill>
   );
@@ -659,6 +659,7 @@ const srcAt = (t) => {
   if (s.jump) { const p = Math.min(1, (t - s.start) / s.dur); const e = p * p * (3 - 2 * p); return s.jump.from + (s.jump.to - s.jump.from) * e; }
   return Math.min(s.to, s.from + Math.max(0, t - s.start) * s.rate);
 };
+const ThanhGoc = () => { const f = useCurrentFrame(); return <ThanhThoiGian t={f / FPS} T={TOTAL} k={K} />; };
 const SrcBar = () => {
   const f = useCurrentFrame();
   if (!HL || HL.bar === false) return null;
@@ -837,6 +838,7 @@ export const Show = () => {
         );
       })}
       <SrcBar />
+      {THANH && !(HL && HL.bar !== false) && <Sequence from={0} durationInFrames={fr(TOTAL)} name="thanh-thoi-gian" layout="none"><ThanhGoc /></Sequence>}
       {ENDCARD && (
         <Sequence from={fr(TOTAL)} name="the-cuoi" layout="none"><EndCard {...ENDCARD} /></Sequence>
       )}

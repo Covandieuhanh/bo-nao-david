@@ -7,6 +7,7 @@ import HL from '../highlight.js';
 import {BODY, C} from '../theme';
 import {POD, PF, PF_W} from '../podframe';
 import {STAGE} from '../scenes';
+import {ThanhThoiGian} from '../lib/ThanhThoiGian';
 
 const mmss = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
 
@@ -49,18 +50,8 @@ export const Timeline = () => {
       </div>
     );
   }
-  const p = Math.min(1, f / Math.max(1, d - 1));
   const ep = STAGE && STAGE.episode;   // số tập + ngày (2026-11-05, kiểu "đài phát thanh" Hieu Nguyen): {n, date}
-  const plate0 = POD ? {} : {background: 'rgba(0,0,0,0.5)', borderRadius: PF.tl.h, padding: '0 16px', boxSizing: 'border-box'};
-  return (
-    <div style={{...box, ...plate0}}>
-      {ep && (ep.n != null || ep.date) && <div style={{...label, color: C.accent, fontWeight: 800}}>{ep.n != null ? `TẬP ${ep.n}` : ''}{ep.date ? <span style={{color: C.muted, fontWeight: 600}}>{ep.n != null ? ' · ' : ''}{ep.date}</span> : null}</div>}
-      <div style={label}>{mmss(f / fps)}</div>
-      <div style={track}>
-        <div style={{position: 'absolute', left: 0, top: 0, bottom: 0, width: `${p * 100}%`, borderRadius: 4, background: C.accent}} />
-        {dot(p)}
-      </div>
-      <div style={{...label, color: C.text}}>còn {mmss(Math.max(0, (d - f) / fps))}</div>
-    </div>
-  );
+  const truoc = ep && (ep.n != null || ep.date) ? <div style={{...label, color: C.accent, fontWeight: 800}}>{ep.n != null ? `TẬP ${ep.n}` : ''}{ep.date ? <span style={{color: C.muted, fontWeight: 600}}>{ep.n != null ? ' · ' : ''}{ep.date}</span> : null}</div> : null;
+  // thanh thường = thành phần chung của mọi khung dựng (thu-vien-hinh/ThanhThoiGian.jsx); vị trí theo PF (= nhan-dien.js)
+  return <ThanhThoiGian t={f / fps} T={(d - 1) / fps} k={{tl: {left: PF.left, right: PF.right, y: PF.tl.y, h: PF.tl.h}}} nen={!POD} truoc={truoc} />;
 };

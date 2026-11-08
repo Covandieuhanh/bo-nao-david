@@ -33,6 +33,8 @@ khối + quyết định riêng của loại + tiêu chí đạt. Cách làm t�
 
 ## Luật riêng của highlight (kiểm lại trước khi giao)
 
+Vị trí và thành phần cố định (dấu góc, thanh thời gian, phụ đề, màn chốt, thẻ cuối) theo bộ nhận diện chung `../thu-vien-hinh/nhan-dien-chung.md` — clip ngắn cũng có thanh thời gian (David chốt 08/11/2026).
+
 1. **Cùng loại với video gốc**: người nói ↔ người nói, đồ hoạ ↔ đồ hoạ; giữ phong cách + tên tập/tên người nói của bản gốc (khối 13, bước 0).
    Luôn **dọc 9:16, 1080×1920**. Không cắt thẳng hình đồ hoạ ngang vào khung dọc — dựng lại.
 2. **Số clip theo số ý đạt 4 câu** (David chốt 2026-11-07, thay luật 3–5 clip): mỗi clip một ý KHÁC NHAU, không trùng câu chính; không độn. David yêu cầu một số clip cụ thể thì chọn các ý mạnh nhất đủ số đó. Clip A = mạnh nhất (đăng đầu).
@@ -57,8 +59,8 @@ khối + quyết định riêng của loại + tiêu chí đạt. Cách làm t�
    | Hình | dồn khung | màu dịu |
    Nhạc chỉ các bài cố định trong `$SKILL/assets/music/` — không tự thêm bài. Không nhãn kỹ thuật, không thẻ "TẬP NÀY CÓ GÌ?"/tên vòng.
 10. **Chừa cho bản đầy đủ đúng chỗ**: chừa một chuyện khác hoặc ý mở rộng; ý trong clip phải đi đến hết. Câu mở ưu tiên bất ngờ / kết quả lớn / tiền cược hơn lời than chung chung.
-11. **Thẻ cuối dẫn về bản đầy đủ ~1,8 s** sau màn chốt (kiểu Have A Sip): ảnh đứng hình người nói + nút phát + nhãn cố định
-    **"XEM BẢN ĐẦY ĐỦ"** (HL-5, David duyệt 2026-11-04) + **tên tập gốc** + tên người nói gốc (+ lịch phát nếu David đưa: `"schedule"`). Ghi `"endcard": {"title": "<tên tập gốc>", "speaker": "<tên người nói>"}` vào
+11. **Thẻ cuối dẫn về bản đầy đủ ~1,8 s** sau màn chốt (kiểu Have A Sip): ảnh đứng hình người nói + gạch cam + nhãn
+    **"BẢN ĐẦY ĐỦ TRÊN KÊNH <man_cuoi_kenh>"** (không nút phát đỏ, không logo nền tảng — 06/11 và 08/11/2026) + **tên tập gốc** + tên người nói gốc (+ lịch phát nếu David đưa: `"schedule"`). Ghi `"endcard": {"title": "<tên tập gốc>", "speaker": "<tên người nói>"}` vào
     `phuong-an.json` (nguồn podcast: `{}` là đủ). Không có tên tập → hỏi David. Kiểu vòng lặp → bỏ thẻ cuối.
 12. **Tự chọn, không hỏi** (David chốt 2026-11-07): nhận yêu cầu cắt là tự chọn ý, tít, câu màn cuối rồi dựng trọn một mạch. Chỉ dừng hỏi khi không ý nào đạt 4 câu hoặc câu chủ chốt dính lằn ranh. Luôn ghi rõ đã chọn gì trong báo cáo để David sửa ở bản cuối.
 13. **Học từ 20 highlight Việt** (`references/hoc-tu-20-highlight-vn.md`, David duyệt 2026-11-04):
