@@ -110,7 +110,7 @@ def main():
                 if r != T and not os.listdir(r):
                     try: os.rmdir(r)
                     except OSError: pass
-            print(f'   ✓ đã dọn — file tạm ở Thùng rác: {D}')
+            if xoa_han or rac: print(f'   ✓ đã dọn' + (f' — file tạm ở Thùng rác: {D}' if rac else ''))
     print(f'\nTổng giải phóng ~{co(tong)}' + ('' if thuc else ' (CHƯA làm gì — chạy lại với --xoa sau khi David duyệt)')
           + ('\nĐổ Thùng rác để lấy lại chỗ.' if thuc else ''))
 

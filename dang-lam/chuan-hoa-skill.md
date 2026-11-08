@@ -39,7 +39,7 @@ Mọi skill tự làm việc theo một bộ thói quen chung: đúng quy trình
 - [x] Phiên A (08/11): gọt khối 05, 06, 07, 08, 13, 15, 17, 19, `khoi/README`, `luat-chung` mục 0 (N9); bỏ chữ "2 trạng thái là mặc định" ở scene-design, thu-vien-hinh, Illus, vlog_edl, highlight.md; code: thẻ cuối luôn "Bản đầy đủ trên kênh …" (bỏ "XEM BẢN ĐẦY ĐỦ" và `tease`), phụ đề podcast dọc cụm 5–8 chữ mọi độ dài
   - [x] David đồng ý 08/11: câu mời bình luận / câu hỏi tự soi / "gỡ" theo luật kênh nằm ở mô tả + bình luận ghim, không lên video (khối 08, luat-chung)
 - [x] Dọn file tạm (08/11): `video-style-edit/scripts/don_tap.py`, gắn vào khối 17, thoi-quen mục 4, 3 skill; bỏ khối 18 cùng mọi phần xuất CapCut/DaVinci (David không dùng)
-  - [ ] David duyệt danh sách dọn 9 tập cũ (~62 GB) → chạy `--xoa`
+  - [x] David duyệt 08/11 → đã dọn 8 tập (~62 GB; 16 bản cuối còn đủ); tap-zoom-trainer chưa có bản cuối nên giữ nguyên
 - [ ] Bước 4: chạy thử một việc thật, David chấm, sửa đúng một chỗ (chưa render thử thẻ cuối và phụ đề podcast dọc sau phiên A)
 
 ## Code còn lệch với skill
