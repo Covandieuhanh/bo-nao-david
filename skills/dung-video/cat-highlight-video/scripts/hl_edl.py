@@ -132,7 +132,7 @@ endcard = 'null' if not ec.get('title') else json.dumps({'title': ec['title'], '
 tit = opt.get('tit', '')
 tit_lines = ''
 if tit:
-    tit_lines = (f"  {{type: 'pow', start: 0, end: 2.5, text: {json.dumps(tit.upper(), ensure_ascii=False)}, y: 300}},   // thẻ tít mở (khung 0,3 s = ảnh bìa đề xuất)\n"
+    tit_lines = (f"  {{type: 'pow', start: 0, end: 2.5, text: {json.dumps(tit.upper(), ensure_ascii=False)}, keep: true}},   // thẻ tít mở, neo vùng ngực ngay trên phụ đề để không che mặt (08/11/2026) · khung 0,3 s = ảnh bìa đề xuất\n"
                  + (f"  {{type: 'pinTitle', start: 2.5, end: TOTAL - 4, text: {json.dumps(tit, ensure_ascii=False)}}},   // tít ghim\n" if opt.get('pin', hoso.get(_HS, 'tit_ghim', False)) else ''))
 hoso.dump('highlight', os.path.join(E, 'motion/src/hoso.json'))   # khung dựng đọc hồ sơ highlight (cỡ phụ đề nhịp chữ…)
 tpl = open(os.path.join(E, 'motion/src/edl.js'), encoding='utf-8').read()
@@ -163,7 +163,7 @@ export const OVERLAYS = [
 {tit_lines}];
 
 export const SFX = [
-  {{f: 'sting', at: 0.05, v: 0.5}},   // tiếng ký hiệu kênh (brand.json) — mở đầu như mọi loại video của David
+  // không tiếng ký hiệu đầu clip: highlight vào lời ngay giây 0 (David chốt 06/11/2026)
 ];
 
 export const TONE = {json.dumps([[round(a, 2), round(b, 2), k] for a, b, k in tr])};

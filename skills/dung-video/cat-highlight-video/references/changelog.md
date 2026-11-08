@@ -101,3 +101,9 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
 - Khuôn podcast đồ hoạ dọc: bỏ câu kêu gọi ghép và màn chốt bình luận (David thấy ép buộc, cụt cảm xúc), kết bằng màn hình cuối 3 s mời xem YouTube; nhạc thấp hơn giọng khoảng 23 dB (David nghe 2 mức, chọn mức này).
 - Người xem clip là người xem độc lập; chấm riêng từng clip. David loại clip chỉ nói nỗi buồn.
 - 2026-11-07: David thấy clip 39 giây xem riêng không hiểu gì. Luật gốc mới: clip đạt hai mục tiêu (chuyển hoá ngay trong clip, kéo sang bản dài) qua bốn câu `boi_canh`, `y_tron`, `mang_ve`, `chua_lai`. Claude tự chọn ý, không hỏi David chọn đoạn. Bỏ mọi số cố định về độ dài và số clip. Được ghép đoạn xa khi đúng mạch, phải báo mốc. `cut_highlight.py` dừng nếu thiếu `chon_y`.
+
+## 2026-11-08 — clip người nói dọc đầu tiên (4 video cũ làm lại)
+- Nguồn ngang có người nói cắt sang dọc: mặt chiếm gần hết nửa trên, nên `overlay_guard.py` đổi thẻ tít `y: 300` thành màn đen toàn khung (mất mặt ngay giây 0, chữ lệch sát mép trái). Cách làm: tít `keep: true`, bỏ `y` → neo vùng ngực ngay trên phụ đề, thấy rõ mặt.
+- Chữ to `pow` giữa clip lặp đúng chữ phụ đề nhịp chữ và cũng bị đổi thành màn đen → bỏ. Điểm nhấn giữa clip dùng minh hoạ (`illus` vs/list/count) và màn hành động (`action`), từ khoá tô cam trong phụ đề.
+- Bỏ tiếng ký hiệu đầu clip khi vào lời ngay giây 0 (đúng quyết định 06/11; `hl_edl.py` vẫn tự thêm `sting` → cần xoá tay hoặc sửa script).
+- Chưa sửa: màn `pow` toàn khung của khung ghép (lề trái ~18 px thay vì 70 px, dải tối khác màu ở đỉnh). Nếu cần chữ to toàn khung, sửa `Show.jsx` trước.
