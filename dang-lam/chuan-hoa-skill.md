@@ -22,9 +22,9 @@ Mọi skill tự làm việc theo một bộ thói quen chung: đúng quy trình
 ## Thực thi
 - [x] Bước 0: lưu mốc lên GitHub
 - [x] Vòng 2: chốt nội dung file thói quen chung
-- [ ] Bước 1: bảng rà soát luật (trùng / ngược / cũ) → David duyệt
+- [x] Bước 1: bảng rà soát luật (trùng / ngược / cũ) → David duyệt
   - [x] Bảng đã xong: `dang-lam/ra-soat-luat.md` (15 ngược · 12 trùng · 8 cũ · 3 câu hỏi), 08/11/2026
-  - [ ] David duyệt
+  - [x] David duyệt 08/11: ngược thì lấy bên mới nhất; chữ trên video chỉ lời David nói chính xác; lịch phát khi David đưa; tên trang để sau
 - [ ] Bước 2: viết file thói quen chung → David duyệt
 - [ ] Bước 3: gọt từng skill + "Xong khi" (mỗi skill một phiên)
   - [ ] hoi-chuyen-gia

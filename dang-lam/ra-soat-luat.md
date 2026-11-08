@@ -4,6 +4,13 @@ Ngày 08/11/2026. Phạm vi: 5 skill video + `hoi-chuyen-gia` + khối dùng chu
 Cách đọc: mỗi dòng có **đề xuất**. David trả lời "đồng ý hết" hoặc sửa theo số (vd. "N4 chọn khác: …"). Chưa sửa file nào; sửa ở bước 2–3.
 Nguyên tắc khi lệch: lời David mới nhất thắng (theo ngày chốt).
 
+## David đã duyệt (08/11/2026)
+- **Luật gỡ ngược:** chỗ nào ngược nhau thì lấy bên có ngày gần hiện tại nhất. Lý do: trước đây các skill không nối với nhau, sửa phần nào chỉ phần đó được cập nhật.
+- **N4:** chữ trên video chỉ lấy những gì David nói chính xác trong video, không sáng tạo thêm. "Gỡ" chỉ lên video khi David nói câu đó.
+- **N15:** lịch phát chỉ ghi khi David đưa cho đúng video đó.
+- **C6:** tên trang Facebook, TikTok để sau; giữ nguyên trong `kenh.json`.
+- **Đối chiếu sản phẩm mới nhất** (`~/Movies/tap-cuoc-song-giau-co`, render 08/11 13:40): bản dài không thẻ tít; màn chốt nguyên văn ("Bạn cứ chia sẻ với mình nhá"); bố cục `bocuc` / `nhan` / `the` (không 2 trạng thái); nhạc theo tuyến (`tam_su`). Clip highlight: tít nguyên văn ("Tại sao anh vẫn còn đi làm" có trong lời), câu kêu gọi nguyên văn, phụ đề `SHORT`, nhạc kho `soi` / `lang`, thẻ cuối không nút phát. **Khớp mọi đề xuất bên dưới** → mọi dòng N, T, C coi như đã duyệt theo đề xuất.
+
 ## A. Ngược nhau (cần David chốt)
 
 | # | Chuyện | Bên này | Bên kia (mới hơn) | Đề xuất |
