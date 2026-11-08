@@ -25,6 +25,8 @@ video{width:100%;max-height:480px;background:#000;border-radius:8px}
 .tha{border:2px dashed var(--vien);border-radius:12px;padding:28px 16px;text-align:center;cursor:pointer;color:var(--phu)}.tha.tren{border-color:var(--nhan);color:var(--nhan)}
 .tien{height:8px;background:var(--nen);border-radius:4px;overflow:hidden;margin-top:8px}.tien>div{height:100%;width:0;background:var(--nhan)}
 button.dung{border-color:var(--do);color:var(--do)}
+.nen-hoi{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;padding:16px;z-index:9}
+.hop-hoi{background:var(--the);border:1px solid var(--vien);border-radius:12px;padding:20px;max-width:560px;width:100%;white-space:pre-wrap}
 .so{display:flex;gap:16px;color:var(--phu);font-size:13px}
 @media (max-width:760px){.khung{grid-template-columns:1fr}aside{border-right:0;border-bottom:1px solid var(--vien)}}
 </style></head><body>
@@ -74,13 +76,17 @@ if(d.xong_luc)h+=`<div class="the">✅ Xong lúc ${esc(d.xong_luc)} · <span cla
 h+=`<h2>Các bước</h2>`+d.buoc.map(b=>`<div class="buoc"><span>${BIEU[b.trang_thai]||'·'}</span><span>${esc(b.ten)}</span><span class="loai">${LOAI[b.loai]} ${b.luc?'· '+b.luc:''}</span>${b.loai!='duyet'&&!d.dang_chay&&b.trang_thai!='chua'?`<button class="lai" onclick="lai('${b.id}')">làm lại từ đây</button>`:''}</div>`).join('');
 if(d.dang_chay&&d.log)h+=`<h2>Đang chạy: ${esc(d.dang)}</h2><pre>${esc(d.log)}</pre>`;
 $('#chinh').innerHTML=h;if(d.dang_chay)hen=setTimeout(()=>xem(ten),3000)}
-async function dungViec(){if(!confirm('Dừng việc này? Bước đang chạy sẽ làm lại từ đầu khi bấm Chạy tiếp.'))return;if((await api('/api/dung',{ten:chon})).ok)setTimeout(()=>xem(chon),500)}
+// Hộp xác nhận vẽ trong trang (khung trình duyệt của Claude chặn confirm() mặc định)
+function hoi(noiDung,nut='Đồng ý',nguyHiem=false){return new Promise(ok=>{const n=document.createElement('div');n.className='nen-hoi';
+n.innerHTML=`<div class="hop-hoi"><div>${esc(noiDung)}</div><div class="hang" style="justify-content:flex-end"><button id="hoiKhong">Huỷ</button><button id="hoiCo" class="${nguyHiem?'dung':'chinh'}">${esc(nut)}</button></div></div>`;
+document.body.appendChild(n);const xong=v=>{n.remove();ok(v)};n.querySelector('#hoiKhong').onclick=()=>xong(false);n.querySelector('#hoiCo').onclick=()=>xong(true);n.onclick=e=>{if(e.target===n)xong(false)}})}
+async function dungViec(){if(!await hoi('Dừng việc này? Bước đang chạy sẽ làm lại từ đầu khi bấm Chạy tiếp.','⏹ Dừng',true))return;if((await api('/api/dung',{ten:chon})).ok)setTimeout(()=>xem(chon),500)}
 async function xoaViec(){const ds=await api('/api/thu-xoa?ten='+encodeURIComponent(chon));
-if(!confirm(`Xoá dự án "${chon}"?\n\nCác thư mục sau sẽ chuyển vào Thùng rác (muốn lấy lại: mở Thùng rác, kéo thư mục về ~/Movies; dọn Thùng rác là mất hẳn):\n\n${ds.map(x=>'• '+x.duong_dan+' ('+x.mb+' MB)').join('\n')}\n\nGồm cả video gốc trong 1-goc.`))return;
+if(!await hoi(`Xoá dự án "${chon}"?\n\nCác thư mục sau sẽ chuyển vào Thùng rác (muốn lấy lại: mở Thùng rác, kéo thư mục về ~/Movies; dọn Thùng rác là mất hẳn):\n\n${ds.map(x=>'• '+x.duong_dan+' ('+x.mb+' MB)').join('\n')}\n\nGồm cả video gốc trong 1-goc.`,'🗑 Xoá dự án',true))return;
 if((await api('/api/xoa',{ten:chon})).ok){chon=null;$('#chinh').innerHTML='<p class="mo">Đã chuyển vào Thùng rác.</p>';$('#ds').dataset.h='';danhSach()}}
 async function duyet(){if((await api('/api/duyet',{ten:chon})).ok)setTimeout(()=>xem(chon),800)}
 async function gopY(){const g=$('#gy').value.trim();if(!g)return alert('Viết góp ý trước');if((await api('/api/duyet',{ten:chon,gop_y:g})).ok)setTimeout(()=>xem(chon),800)}
 async function tiep(){if((await api('/api/tiep',{ten:chon})).ok)setTimeout(()=>xem(chon),800)}
-async function lai(b){if(!confirm('Làm lại từ bước này trở đi?'))return;if((await api('/api/lai',{ten:chon,buoc:b})).ok)setTimeout(()=>xem(chon),800)}
+async function lai(b){if(!await hoi('Làm lại từ bước này trở đi? Các bước sau đó cũng chạy lại.','Làm lại'))return;if((await api('/api/lai',{ten:chon,buoc:b})).ok)setTimeout(()=>xem(chon),800)}
 danhSach();setInterval(danhSach,5000);
 </script></body></html>
