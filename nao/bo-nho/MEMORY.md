@@ -27,7 +27,7 @@ Tên file bắt đầu bằng nhóm: `luat-` cách làm việc với David · `n
 - [Chỉ hình của chính video](video-chi-hinh-cua-chinh-video.md) — thumbnail/ảnh bìa chỉ lấy từ chính video đó, không mượn từ video khác (2026-11-05)
 - [Chữ trên màn hình nguyên văn](video-chu-nguyen-van.md) — không thẻ tít tự rút, màn chốt dùng lời David, không số chạy; không bỏ chữ đổi nghĩa (2026-11-07)
 - [Chuẩn âm lượng chung](video-chuan-am-luong.md) — mọi video: nhạc thấp hơn giọng ~23 dB, cả bài −14 LUFS; giọng nhỏ kéo lên, nhạc to hạ xuống (2026-11-06)
-- [Chuyển video qua Drive](video-chuyen-qua-drive.md) — điện thoại ↔ Mac qua Google Drive Video-goc / Video-xong
+- [Chuyển video qua Drive](video-chuyen-qua-drive.md) — điện thoại ↔ Mac qua Drive covandieuhanh@gmail.com, Video-goc / Video-xong (đổi 08/11)
 - [Clip ngắn đứng độc lập](video-clip-ngan-dung-doc-lap.md) — bốn câu bối cảnh, ý trọn, mang về, chừa lại; tự chọn ý; không số cố định (2026-11-07)
 - [Video dài không cắt](video-dai-khong-cat.md) — video dài để nguyên, kể cả lặng và ờ ừm; cắt ghép chỉ khi trích video ngắn (2026-11-05)
 - [Khuôn video dọc đồ hoạ](video-doc-khuon-chu-chinh.md) — chữ chính thay phụ đề, nhạc thấp hơn giọng ~23 dB, màn hình cuối mời xem YouTube; 3 clip "Đi trainer" là mẫu (2026-11-06)

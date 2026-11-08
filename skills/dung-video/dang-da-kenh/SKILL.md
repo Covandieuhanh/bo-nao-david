@@ -16,7 +16,7 @@ Một tài nguyên vào → (nếu đáng) video + bài đăng đúng kênh, đ�
 ## Quy trình (8 bước, 2 cổng duyệt)
 | # | Bước | Ai | Đọc / dùng |
 |---|---|---|---|
-| 0 | **Nhận tài nguyên** *(bước nhẹ)*: Drive `Video-goc` (`~/Library/CloudStorage/GoogleDrive-…/Drive của tôi/Video-goc/`) hoặc file gửi vào chat. Chép lời, đo độ dài, khung, chất lượng | Claude | khối 01 |
+| 0 | **Nhận tài nguyên** *(bước nhẹ)*: Drive `Video-goc` (`~/Library/CloudStorage/GoogleDrive-covandieuhanh@gmail.com/Drive của tôi/Video-goc/`) hoặc file gửi vào chat. Chép lời, đo độ dài, khung, chất lượng | Claude | khối 01 |
 | 1 | **Lọc + nhận diện**: chấm 5 tiêu chí, lằn ranh, 7 kết luận, nhánh, trùng/lấp kho; đề xuất sản phẩm → kênh → giờ, kiểu dẫn dắt theo tỉ lệ, loại dựng | Claude | khối 00 · `~/.claude/David.md` · `../ho-so/kenh.json` (lịch, tỉ lệ dẫn dắt) · `../nhan-dien.md` · sổ `~/Movies/_so-danh-muc/danh-muc.md` |
 | 2 | **CỔNG 1 — phiếu lọc + mọi điểm cần chọn, một vòng** (`hoi-chuyen-gia`): kết luận, loại dựng, kênh và giờ, và mỗi điểm 2–3 gợi ý đề xuất đứng đầu: tiêu đề, chữ bìa, câu chốt (nguyên văn lời David). Kết luận ⛔ / 👤 / 🗂 → dừng dựng, chỉ cập nhật sổ (👤: soạn câu chia sẻ Facebook cá nhân) | David duyệt | khối 00 |
 | 3 | **Dựng** theo loại: `video-style-edit` (1 video / ghép vlog), `podcast-style-edit`. Chỉ render sau cổng 1; độ dài theo nội dung | Claude | skill dựng |
