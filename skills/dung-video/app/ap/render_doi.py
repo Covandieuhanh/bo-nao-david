@@ -6,7 +6,8 @@ import hashlib, json, os, re, subprocess, sys
 from pathlib import Path
 P = Path(sys.argv[1]); src = P / "motion/src"; S = Path(__file__).resolve().parents[2] / "video-style-edit/scripts"
 h = lambda t: hashlib.md5(t.encode()).hexdigest()
-DU_LIEU = {"scenes.js", "captions.js", "project.js", "output.js", "placement.js", "mat.js", "speakers.js", "envelope.js", "highlight.js"}
+sys.path.insert(0, str(Path(__file__).parent))
+from cap_nhat_khung import DU_LIEU   # một nguồn: tệp nào là dữ liệu riêng của video
 s = (src / "scenes.js").read_text(encoding="utf-8")
 i = s.index("export const SCENES = ") + len("export const SCENES = "); j = s.index("\n];", i) + 2
 moi = {"canh": {c["id"]: h(json.dumps(c, sort_keys=True)) for c in json.loads(s[i:j])},
@@ -14,7 +15,7 @@ moi = {"canh": {c["id"]: h(json.dumps(c, sort_keys=True)) for c in json.loads(s[
        "con_lai": h(s[j:]),
        # khung dựng = mọi tệp code trong motion/src trừ dữ liệu riêng của video (đổi thư viện hình / template → render lại tất cả)
        "giao_dien": h("".join(f.read_text(encoding="utf-8", errors="ignore") for f in sorted(src.rglob("*"))
-                              if f.is_file() and f.relative_to(src).parts[0] not in DU_LIEU))}
+                              if f.is_file() and (f.relative_to(src).parts[0] not in DU_LIEU or f.name == "hoso.json")))}
 snap = P / "check/app-render.json"; cu = json.loads(snap.read_text()) if snap.exists() else None
 media = P / "davinci/media"
 if not cu or cu["giao_dien"] != moi["giao_dien"]:

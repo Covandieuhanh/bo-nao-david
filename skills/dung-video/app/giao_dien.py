@@ -111,7 +111,13 @@ def chi_tiet(ten):
     log_buoc = None
     if dang:
         log_buoc = doc_tep(KHO / ten / "log" / f"{dang}.txt", 6000)
-    return {"ten": ten, "cong_thuc": ct["ten"], "video": tt["video"], "P": tt["P"], "dang": dang, "dang_chay": dang_chay(ten),
+    rs = {"buoc_cu": [], "khung_cu": []}
+    if not dang_chay(ten):
+        try:
+            import ra_soat; rs = ra_soat.ra_soat(ten)
+        except Exception as e:
+            rs["loi"] = str(e)
+    return {"ra_soat": rs, "ten": ten, "cong_thuc": ct["ten"], "video": tt["video"], "P": tt["P"], "dang": dang, "dang_chay": dang_chay(ten),
             "buoc": buoc, "cong": cong, "log": log_buoc, "log_chung": doc_tep(KHO / ten / "chay.log", 3000), "token": token(ten),
             "xong_luc": tt.get("xong_luc")}
 

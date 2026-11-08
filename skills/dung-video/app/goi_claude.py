@@ -77,6 +77,11 @@ def goi(bin_, he_thong, noi_dung, khuon, mo_hinh, anh=()):
     return kq, {"giay": round(time.time() - t), "usage": d.get("usage"), "cost": d.get("total_cost_usd")}
 
 
+def dau_luat(he_thong, khuon, mo_hinh):
+    """Dấu của LUẬT một bước Claude (lời nhắc đã ghép skill + khuôn + mô hình) — ra_soat.py so lại để biết skill đổi sau khi bước chạy."""
+    return hashlib.sha256("\x00".join([he_thong, json.dumps(khuon, sort_keys=True), mo_hinh]).encode()).hexdigest()
+
+
 def main():
     ph = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
     b = json.loads(sys.argv[2]); gop_y = sys.argv[3] if len(sys.argv) > 3 else ""
@@ -105,6 +110,8 @@ def main():
     the = hashlib.sha256("\x00".join([he_thong, noi_dung, json.dumps(khuon, sort_keys=True), mo_hinh,
                                        *[f"{a}:{os.path.getsize(a)}:{os.path.getmtime(a)}" for a in anh]]).encode()).hexdigest()
     nho = W / "nho-claude" / f"{ph['id']}.txt"
+    (W / "nho-claude").mkdir(parents=True, exist_ok=True)
+    (W / "nho-claude" / f"{ph['id']}.luat").write_text(dau_luat(he_thong, khuon, mo_hinh))
     if not os.environ.get("APP_KHONG_NHO") and ra.exists() and nho.exists() and nho.read_text().strip() == the:
         print("Đầu vào không đổi so với lần trước — dùng lại kết quả cũ, không gọi Claude (0 token).")
         return

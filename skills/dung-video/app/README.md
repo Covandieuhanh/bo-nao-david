@@ -18,6 +18,10 @@ Trong app: **+ Việc mới** → kéo thả / chọn tệp từ máy đang cầ
 Màn hình nền, Phim… có ảnh nhỏ; chỉ trong thư mục nhà, bỏ thư mục ẩn và ~/Library trừ Google Drive) → tên tập tự đặt, chọn tuỳ chọn (khung xuất, ảnh minh hoạ, thẻ tít, lịch phát,
 yêu cầu riêng) → app tự chạy, dừng ở 2 cổng chờ David duyệt. Cổng 2: xem video, tờ kiểm tra hình, chọn thumbnail, kết quả kiểm, bài đăng.
 Nút: **⏹ Dừng** (tắt cả render) · **▶ Chạy tiếp** (làm lại bước dở) · **làm lại từ đây** · **🗑 Xoá dự án** (chuyển `~/Movies/_app/<tên>` + `~/Movies/tap-<tên>` vào Thùng rác).
+**Rà soát tự động (`ra_soat.py`):** mở một dự án, app tự so skill hiện tại với lúc từng bước chạy — bước Claude so lại cả luật đã
+ghép, bước máy so script nó gọi + hồ sơ, phần hình so khung dựng. Có đổi → khung ⚠ "Skill đã đổi sau khi dự án này chạy", ⚠ cạnh
+từng bước, nút **Làm lại từ** bước sớm nhất bị ảnh hưởng và nút **Cập nhật khung dựng**. Phiên Claude Code khác sửa skill cũng thấy
+(cùng thư mục). Bước chạy trước bản app 08/11 23:30 chưa có giờ chạy nên không rà được.
 **Sửa skill khi đang có dự án:** bước CHƯA chạy tự dùng skill mới (lời nhắc, hồ sơ, script đọc lúc chạy). Bước đã chạy: bấm
 **làm lại từ đây** — chạy lại bước đó và các bước sau; bước Claude nào đầu vào không đổi thì **dùng lại kết quả cũ, 0 token**
 (`~/Movies/_app/<tên>/nho-claude/`; `APP_KHONG_NHO=1` để tắt). Phần hình (khung dựng, thư viện hình) được CHÉP vào dự án lúc tạo →

@@ -92,10 +92,15 @@ ${d.cong.nhan_gop_y?`<label>Góp ý (để trống nếu duyệt luôn) — Clau
 <div class="hang"><button class="chinh" ${d.dang_chay?'disabled':''} onclick="duyet()">Duyệt, chạy tiếp</button>${d.cong.nhan_gop_y?`<button ${d.dang_chay?'disabled':''} onclick="gopY()">Gửi góp ý, làm lại</button>`:''}</div></div>`}
 if(d.dang_chay)h+=`<div class="hang"><button class="dung" onclick="dungViec()">⏹ Dừng việc đang chạy</button></div>`;
 const ngung=d.buoc.find(b=>b.trang_thai=='da-dung');if(ngung&&!d.dang_chay)h+=`<div class="the">⏸ Đã dừng ở bước "${esc(ngung.ten)}".<div class="hang"><button class="chinh" onclick="tiep()">▶ Chạy tiếp</button></div></div>`;
+const rs=d.ra_soat||{buoc_cu:[],khung_cu:[]};const cuIds=new Set(rs.buoc_cu.map(x=>x.id));
+if(!d.dang_chay&&(rs.buoc_cu.length||rs.khung_cu.length))h+=`<div class="the" style="border-color:var(--vang)"><b>⚠ Skill đã đổi sau khi dự án này chạy</b>
+${rs.buoc_cu.length?`<div style="margin-top:6px">Bước bị ảnh hưởng: ${rs.buoc_cu.map(x=>`<b>${esc(x.ten)}</b> <small class="mo">(${esc(x.tep.slice(0,4).join(', '))}${x.tep.length>4?'…':''})</small>`).join(' · ')}</div>
+<div class="hang"><button class="chinh" onclick="lai('${rs.buoc_cu[0].id}')">Làm lại từ "${esc(rs.buoc_cu[0].ten)}"</button></div><small class="mo">Bước Claude nào đầu vào không đổi sẽ dùng lại kết quả cũ (0 token).</small>`:''}
+${rs.khung_cu.length?`<div style="margin-top:8px">Phần hình (khung dựng) cũ hơn skill: ${rs.khung_cu.length} tệp <small class="mo">(${esc(rs.khung_cu.slice(0,5).join(', '))}${rs.khung_cu.length>5?'…':''})</small></div><div class="hang"><button onclick="capNhatKhung()">🔄 Cập nhật khung dựng</button></div>`:''}</div>`;
 const loi=d.buoc.find(b=>b.trang_thai=='loi');
 if(loi&&!d.dang_chay)h+=`<div class="the"><b>❌ Lỗi ở bước "${esc(loi.ten)}"</b><pre>${esc(d.log)}</pre><div class="hang"><button class="chinh" onclick="tiep()">Chạy lại bước này</button></div></div>`;
 if(d.xong_luc)h+=`<div class="the">✅ Xong lúc ${esc(d.xong_luc)} · <span class="mo">${esc(d.P)}/video-final.mp4</span></div>`;
-h+=`<h2>Các bước</h2>`+d.buoc.map(b=>`<div class="buoc"><span>${BIEU[b.trang_thai]||'·'}</span><span>${esc(b.ten)}</span><span class="loai">${LOAI[b.loai]} ${b.luc?'· '+b.luc:''}</span>${b.loai!='duyet'&&!d.dang_chay&&b.trang_thai!='chua'?`<button class="lai" onclick="lai('${b.id}')">làm lại từ đây</button>`:''}</div>`).join('');
+h+=`<h2>Các bước</h2>`+d.buoc.map(b=>`<div class="buoc"><span>${BIEU[b.trang_thai]||'·'}</span><span>${esc(b.ten)}${cuIds.has(b.id)?' <span title="skill đã đổi sau khi bước này chạy" style="color:var(--vang)">⚠</span>':''}</span><span class="loai">${LOAI[b.loai]} ${b.luc?'· '+b.luc:''}</span>${b.loai!='duyet'&&!d.dang_chay&&b.trang_thai!='chua'?`<button class="lai" onclick="lai('${b.id}')">làm lại từ đây</button>`:''}</div>`).join('');
 if(d.dang_chay&&d.log)h+=`<h2>Đang chạy: ${esc(d.dang)}</h2><pre>${esc(d.log)}</pre>`;
 $('#chinh').innerHTML=h;if(moi&&innerWidth<760)$('#chinh').scrollIntoView({behavior:'smooth'});if(d.dang_chay)hen=setTimeout(()=>xem(ten),3000)}
 // Hộp xác nhận vẽ trong trang (khung trình duyệt của Claude chặn confirm() mặc định)

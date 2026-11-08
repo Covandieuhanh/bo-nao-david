@@ -136,7 +136,7 @@ def chay(tt_path, tu=None, gop_y=None):
         tt["dang"] = bid; tt["buoc"][bid] = {"trang_thai": "dang-chay", "luc": time.strftime("%H:%M:%S")}; ghi(tt_path, tt)
         kq = mot_buoc(tt, bid, gop_y if bid == tu else None)
         tt = doc(tt_path)
-        tt["buoc"][bid] = {"trang_thai": kq, "luc": time.strftime("%H:%M:%S")}
+        tt["buoc"][bid] = {"trang_thai": kq, "luc": time.strftime("%H:%M:%S"), "ts": time.time()}   # ts: rà soát skill đổi sau bước này
         ghi(tt_path, tt)
         print(f"[{time.strftime('%H:%M:%S')}] {bid}: {kq}", flush=True)
         if kq in ("loi", "cho-duyet"):
