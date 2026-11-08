@@ -34,7 +34,7 @@ Luật chung video ở `../luat-chung.md` (chữ nguyên văn, không cắt vide
 - **Thanh thời gian** ở đáy vùng an toàn (đã chạy · "còn m:ss") suốt video, trên mọi cảnh.
 - **Màn chốt** `cta` cuối video: ô câu chốt giữa sân khấu = **nguyên văn câu David nói cuối tập** (luat-chung 1). "Vấn đề / Kết quả"
   chỉ ở bài đăng; "gỡ" chỉ lên video khi David nói trong tập.
-- Không timeline CapCut trừ khi được yêu cầu.
+- Không làm bản cho app chỉnh sửa (CapCut/DaVinci); dọn file tạm sau khi David chốt (`don_tap.py`, khối 17).
 - **Học nhịp từ 50 video Hieu Nguyen** (`references/hoc-tu-hieu-nguyen-50.md`, duyệt 05/11 — chỉ học nhịp & cách trình bày, giữ thẩm
   mỹ; lời là của David, không thêm/khuôn lời):
   - **Mật độ hình (06/11):** hình phủ **khoảng 30% thời lượng** (`phu_hinh_muc_tieu`), không cố định: đoạn khó hiểu hoặc quan trọng dày
@@ -136,8 +136,6 @@ cảnh + TOPICS theo mốc, `nguon-anh.txt` nếu có ảnh, đã kiểm gì / c
 - TOPICS / STAGE / người nói / sóng âm → `node render.mjs nen` → `podcast_base.py` → `render_preview.py`.
 - Phụ đề / thanh thời gian → `node render.mjs phu-de` → `render_preview.py`.
 - Thumbnail → chạy lại `thumbnail.sh` với chữ/ảnh mới (không cần render video).
-- **CapCut** (khi được yêu cầu): `PY=$(zsh $BASE/scripts/capcut_setup.sh); $PY $BASE/scripts/build_capcut.py "$P"`.
-  Track chính là sân khấu + tiếng (video_goc.mp4), track "Hieu ung" là từng cảnh, phụ đề là chữ CapCut cùng font.
 - Ghi góp ý đúng một chỗ: khối/skill bị ảnh hưởng + một dòng `references/changelog.md`.
 
 ## Cấu trúc dự án

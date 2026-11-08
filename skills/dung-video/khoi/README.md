@@ -22,7 +22,6 @@ Sửa một cách làm → sửa đúng một khối (README + code của nó). 
 | [15-phat-hanh](15-phat-hanh/README.md) | Phát hành: 3 tiêu đề, mô tả, mốc khung bìa, chương YouTube, teaser, bình luận ghim | cả 4 |
 | [16-so-lieu](16-so-lieu/README.md) | Số liệu sau đăng (báo lỗi, không quyết định): ảnh chụp số liệu 7 ngày → so-lieu.md | cả 4 |
 | [17-dung-kiem-tra](17-dung-kiem-tra/README.md) | Dựng + kiểm tra: chụp thử từng cảnh, render, ghép bản cuối, soát khung / âm lượng / tiếng rè | cả 4 |
-| [18-xuat-app-dung](18-xuat-app-dung/README.md) | Xuất timeline DaVinci / dự án CapCut (chỉ khi David yêu cầu) | làm video, podcast |
 | [19-dang-bai](19-dang-bai/README.md) | Đăng / hẹn giờ YouTube, trang Facebook, TikTok qua trình duyệt (sau cổng 2); Facebook cá nhân David tự chia sẻ | dang-da-kenh |
 | [20-hop-thu-so-lieu](20-hop-thu-so-lieu/README.md) | Gom bình luận + tin nhắn (đếm "gỡ"), số liệu 24 giờ / 7 ngày — chỉ đọc | dang-da-kenh |
 

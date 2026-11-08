@@ -78,22 +78,6 @@
   dễ sai → shot `?` trong plan.md phải đọc câu nói để quyết.
 - `check_frames.sh` với mốc vượt thời lượng video → lỗi "Could not open encoder" và giữ sheet CŨ; mốc phải < thời lượng.
 
-## CapCut (dự án draft, build_capcut.py)
-- **CapCut Mac mở dự án bằng `draft_info.json`**; pycapcut chỉ ghi `draft_content.json` (bản Windows) → CapCut hiện dự án
-  trong danh sách nhưng bấm vào không mở được. Script ghi cả hai file + `platform.os = "mac"`.
-- CapCut App Store chạy sandbox: thư mục thật là `~/Library/Containers/com.lemon.lvoverseas/Data/Movies/CapCut/...` nhưng
-  CapCut tự ghi đường dẫn là `/Users/<tên>/Movies/CapCut/...` (xem `root_meta_info.json`) → đường dẫn media/font trong draft
-  viết theo dạng CapCut thấy. Giữ `draft_id` cũ khi tạo lại dự án cùng tên.
-- CapCut đang mở thì không thấy dự án mới/đã sửa → thoát hẳn (⌘Q) rồi mở lại.
-- CapCut có công cụ `lyra-cli-ipc` (Resources/common_agent, chạy bằng `Contents/Frameworks/bun`) nhưng chỉ hoạt động khi
-  CapCut đang chạy và trong phiên agent của nó — chưa dùng được để kiểm tra dự án từ ngoài.
-
-## DaVinci Resolve
-- Bản App Store **không cho script bên ngoài điều khiển** → giao FCPXML để người dùng tự import.
-- Tránh phụ thuộc transform trong FCPXML: mọi clip/ảnh phủ đều **toàn khung, nền trong suốt**, đã đặt đúng vị trí.
-- File ngoài thư mục được cấp quyền có thể "offline" (sandbox) → mọi media nằm chung `davinci/media`, người dùng Relink một lần.
-- Clip `enabled="0"` cho track khung an toàn (người dùng bật khi cần, tắt trước khi xuất).
-
 ## Nội dung chữ
 - Né tên riêng chưa chắc chính tả bằng cụm chung chung ("ĐI BỘ MỖI NGÀY" thay cho "HARUKU") → người dùng thấy minh hoạ
   sai ý. Hiện đúng tên theo Whisper + hỏi chính tả trong báo cáo.

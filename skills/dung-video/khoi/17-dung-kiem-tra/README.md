@@ -7,7 +7,7 @@
 **Sửa khối này → chạy lại:** —
 
 **File thật (code, một bản duy nhất):**
-- `video-style-edit/scripts/{safe_guide.py,composite_stills.sh,check_frames.sh,render_preview.py}`
+- `video-style-edit/scripts/{safe_guide.py,composite_stills.sh,check_frames.sh,render_preview.py,don_tap.py}`
 - `…/remotion-template/{preview.mjs,render.mjs}`
 - `…/montage-template/{stills.mjs,render-show.mjs}`
 - `video-style-edit/references/gotchas.md`
@@ -61,3 +61,15 @@ node $SKILL/scripts/soat_canh.mjs "$P"     # in ra + ghi check/soat.md; có P0 t
 - **P2 (tinh chỉnh, giữ có chủ đích được):** hình đứng yên quá 3 s sau khi đọc xong, thẻ tít / màn chốt thiếu hẳn thời gian đọc.
 Giới hạn: chỉ bắt lỗi đo được. Chữ tràn, che mặt, xấu vẫn soi bằng `check/stills.jpg`. **Xem tờ ảnh ở đúng cỡ (mỗi khung 240–270 px, nhỏ hơn màn điện thoại): chữ cần đọc mà không đọc được = P0.**
 Câu hỏi khi soi tờ ảnh: che chữ đi, hình còn nói được ý không? Thấy mọi cảnh giống nhau thì đổi kiểu vào (khối 07). Video rối → bỏ bớt khoảng một phần ba chuyển động, giữ cái dẫn mắt.
+
+### Dọn file tạm khi David chốt bản cuối (David chốt 08/11/2026)
+
+Không dọn ngay lúc render xong, mà dọn khi David nói "chốt" hoặc khi video đã đăng. Nếu tập còn cắt highlight thì dọn sau khi đã có clip, vì dọn xong thì không còn `davinci/media/video_goc.mp4` để cắt.
+```bash
+python3 -I $SKILL/scripts/don_tap.py ~/Movies/tap-<tên>          # chỉ liệt kê kèm dung lượng → gửi David duyệt
+python3 -I $SKILL/scripts/don_tap.py --xoa ~/Movies/tap-<tên>    # chỉ chạy sau khi David "ok"
+```
+- **Giữ:** `1-goc/` · `video-final*.mp4` ở gốc mỗi dự án · `phat-hanh/` · mọi file chữ.
+- **Xoá hẳn:** `node_modules` · `.remotion` · `.cache`.
+- **Đưa vào Thùng rác** (David tự đổ): mọi file hình, tiếng, video còn lại.
+- Dự án chưa có bản cuối thì script tự bỏ qua. Không có bản cho app chỉnh sửa (CapCut/DaVinci).

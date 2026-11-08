@@ -1,6 +1,6 @@
 ---
 name: video-style-edit
-description: Dựng video tự quay thành bản đăng được ngay (Reels/TikTok/Shorts/YouTube) theo phong cách video mẫu hoặc dự án cũ. Hai chế độ tự chọn — (1) MỘT video nói trước camera → làm sạch (video ngắn: cắt thừa, câu nói lại, khoảng lặng; sửa video lộn ngược, nằm ngang, lật gương) rồi phủ motion graphics: điểm nhấn trên người, cảnh minh hoạ toàn màn hình bằng biểu tượng vẽ, thẻ, màn chốt bằng nguyên văn lời người nói; đổi khung khi cần (dọc → ngang, ngang → dọc bám người nói); (2) NHIỀU video gốc / cảnh vlog → chọn cảnh, ghép thành vlog kiểu chương trình có teaser, chia vòng, zoom dồn, phụ đề, âm thanh. Kết bằng bước phát hành: tiêu đề, khung bìa, thumbnail khi video ngang, mẫu số liệu. Timeline DaVinci/CapCut chỉ khi được yêu cầu. Dùng khi người dùng đưa một hay nhiều video gốc (kèm hoặc không kèm mẫu) và muốn edit, dựng, ghép, làm vlog, thêm hiệu ứng, chữ, ảnh minh hoạ, "giống video này", "theo style này", "edit như mẫu", "ghép mấy video này", "/video-style-edit" — kể cả khi chỉ gửi file mà không nói rõ.
+description: Dựng video tự quay thành bản đăng được ngay (Reels/TikTok/Shorts/YouTube) theo phong cách video mẫu hoặc dự án cũ. Hai chế độ tự chọn — (1) MỘT video nói trước camera → làm sạch (video ngắn: cắt thừa, câu nói lại, khoảng lặng; sửa video lộn ngược, nằm ngang, lật gương) rồi phủ motion graphics: điểm nhấn trên người, cảnh minh hoạ toàn màn hình bằng biểu tượng vẽ, thẻ, màn chốt bằng nguyên văn lời người nói; đổi khung khi cần (dọc → ngang, ngang → dọc bám người nói); (2) NHIỀU video gốc / cảnh vlog → chọn cảnh, ghép thành vlog kiểu chương trình có teaser, chia vòng, zoom dồn, phụ đề, âm thanh. Kết bằng bước phát hành: tiêu đề, khung bìa, thumbnail khi video ngang, mẫu số liệu. Không làm bản cho app chỉnh sửa (DaVinci/CapCut). Dùng khi người dùng đưa một hay nhiều video gốc (kèm hoặc không kèm mẫu) và muốn edit, dựng, ghép, làm vlog, thêm hiệu ứng, chữ, ảnh minh hoạ, "giống video này", "theo style này", "edit như mẫu", "ghép mấy video này", "/video-style-edit" — kể cả khi chỉ gửi file mà không nói rõ.
 ---
 # Dựng video theo phong cách mẫu
 
@@ -10,7 +10,7 @@ Skill này là **CÔNG THỨC**: thứ tự khối + quyết định riêng củ
 sửa cách làm → sửa khối, không sửa công thức.
 
 Người dùng đưa **video gốc** (thường dọc 9:16, tiếng Việt) và có thể kèm **video mẫu**. Mục tiêu: video **đăng được ngay**, khớp từng
-câu nói, không cần mở CapCut/DaVinci. Cách làm cốt lõi: **viết code hoạt hình** (Remotion/React) theo token phong cách, gắn cảnh vào
+câu nói; David không cần bản cho app chỉnh sửa (CapCut/DaVinci). Cách làm cốt lõi: **viết code hoạt hình** (Remotion/React) theo token phong cách, gắn cảnh vào
 mốc lời Whisper, render clip nền trong suốt rồi ghép lên video gốc.
 
 **Hỏi một lần ở đầu** (`hoi-chuyen-gia`, sau khi chép lời): gộp mọi điểm cần chọn — chữ bìa, câu chốt, cảnh minh hoạ chính, khung xuất —
@@ -36,8 +36,8 @@ bộ nhận diện, phát hành. Dưới đây chỉ là luật RIÊNG của ski
 5. **Làm sạch:** video dài không cắt (luat-chung 2), chỉ sửa chiều hình; video ngắn: cắt thừa đầu/cuối, câu nói lại (giữ lần sau cùng),
    khoảng lặng + tiếng đệm theo hồ sơ; giữ vẫy tay chào cuối.
 6. **Lớp phủ không che mặt** (`face_place.sh`); nhân vật nằm thấp → nâng khung (`lift.py`), mức theo hồ sơ.
-7. Mặc định KHÔNG làm timeline DaVinci/CapCut, không nhắc DaVinci trong báo cáo (chỉ khi được yêu cầu — khối 18).
-   Thư mục `davinci/media/` chỉ là tên chứa video nguồn và clip trung gian.
+7. Không làm bản cho app chỉnh sửa (DaVinci/CapCut…), không nhắc trong báo cáo — David chỉ dùng bản render cuối (08/11).
+   Thư mục `davinci/media/` chỉ là tên lịch sử, chứa video nguồn và clip trung gian; dọn sau khi David chốt (bước 12).
 8. **Học từ 20 video nói trước camera Việt** (`references/hoc-tu-20-video-noi-truoc-camera-vn.md`, David duyệt 04/11):
    - **Nhãn số danh sách** (`listItem` {n, of?, text}): người nói đếm ≥ 3 ý → mỗi ý một nhãn đúng lúc nói, text nguyên văn cụm việc.
    - **Thẻ tóm tắt để lưu**: video danh sách / hướng dẫn → `card` variant `steps` ngay trước màn chốt, liệt kê các ý nguyên văn (bỏ bớt chữ).
@@ -81,7 +81,7 @@ khi không rõ file nào là mẫu. "Giống video trước" → lấy token pho
 | 9 | Tránh che người | [05](../khoi/05-tranh-che-nguoi/README.md) | `face_place.sh` |
 | 10 | Chụp thử → render → kiểm bản cuối (+ âm thanh) | [17](../khoi/17-dung-kiem-tra/README.md) · [09](../khoi/09-am-thanh/README.md) | `preview.mjs` → `render.mjs` → `render_preview.py` → `check_frames.sh` |
 | 11 | Phát hành: tiêu đề, khung bìa, màn kết/chương/teaser (YouTube video dài), thumbnail (ngang), số liệu | [15](../khoi/15-phat-hanh/README.md) · [08](../khoi/08-ket-thuc/README.md) · [14](../khoi/14-thumbnail/README.md) · [16](../khoi/16-so-lieu/README.md) | `teaser.py` · `chapters.py` · `thumbnail.sh` |
-| — | Timeline DaVinci / CapCut (chỉ khi được yêu cầu) | [18](../khoi/18-xuat-app-dung/README.md) | `build_timeline.py` / `build_capcut.py` |
+| 12 | David chốt bản cuối → dọn file tạm (liệt kê, David duyệt, rồi xoá) | [17](../khoi/17-dung-kiem-tra/README.md) | `don_tap.py` |
 
 Bước nhẹ: tới đó nhắc một dòng "bước này nhẹ, bạn có thể đổi mô hình rẻ hơn" — không tự đổi.
 
@@ -114,19 +114,17 @@ Tạo `~/Movies/tap-<tên>/2-ban-dai/` (gốc tự đặt vào `tap-<tên>/1-goc
 
 Người dùng thường nói kiểu "cảnh 2:08 chữ to quá", "đổi hình thợ hồ", "bỏ cảnh AI". Sửa đúng chỗ trong `scenes.js`/component/ảnh →
 đổi mốc thì chạy lại `python3 -I $SKILL/scripts/face_place.py "$P"` → `node render.mjs <id>` (chỉ cảnh đó) → `render_preview.py` →
-kiểm khung quanh mốc đó. Đổi phong cách toàn bộ → sửa `theme.js`, render lại tất cả. Đã có timeline → chạy lại `build_timeline.py`.
+kiểm khung quanh mốc đó. Đổi phong cách toàn bộ → sửa `theme.js`, render lại tất cả.
 "Giữ lại đoạn bị cắt"/"cắt thêm đoạn X" → đổi mốc bản cuối sang mốc thô bằng `segments.json`, sửa `cuts.json`, lưu bản `segments.json`
 cũ, chạy `clean_apply.py`, dời mốc mọi cảnh (`start`, `end`, `at`…) theo bảng mới. Chỉ render lại cảnh có mối đổi nằm **bên trong**
-nó, rồi `render_preview.py` (+ `build_timeline.py` nếu đã làm timeline).
+nó, rồi `render_preview.py`.
 Ghi góp ý đúng một chỗ: khối/skill bị ảnh hưởng + một dòng `references/changelog.md`.
 
 ## Cấu trúc dự án
 
 ```
 ~/Movies/tap-<tên>/2-ban-dai/
-├── davinci/                 # tên lịch sử; chỉ thành "gói DaVinci" khi người dùng yêu cầu timeline
-│   ├── media/               # video_goc.mp4 (bản sạch), video_goc_raw.* (bản thô), <id>.mov (ProRes 4444 alpha), khung_an_toan.png
-│   └── timeline.fcpxml · HUONG-DAN.md   # chỉ khi được yêu cầu
+├── davinci/media/           # tên lịch sử (file tạm): video_goc.mp4 (bản sạch), video_goc_raw.*, <id>.mov (ProRes 4444 alpha), khung_an_toan.png
 ├── motion/                  # dự án Remotion (src/scenes.js, theme.js, fonts.js, components/, public/photos/)
 ├── images/                  # queries.json, candidates.json, thumbs/, sheets/, picks.json, credits.tsv
 ├── ref/                     # video mẫu + phân tích
@@ -144,6 +142,7 @@ Ghi góp ý đúng một chỗ: khối/skill bị ảnh hưởng + một dòng `
 5. Phụ đề đúng chữ, đủ dấu, không bị đè; âm lượng đạt chuẩn chung.
 6. Đã chụp kiểm đúng các mốc dễ lỗi trước khi giao.
 7. Đủ gói phát hành (tiêu đề, khung bìa, thumbnail nếu ngang, mẫu số liệu); David không phải sửa lại vì trái luật đã chốt.
+8. Sau khi David chốt: đã chạy `don_tap.py`, David duyệt danh sách, file tạm đã vào Thùng rác.
 
 ## Tài liệu kèm (chỉ đọc khi bước cần, cân nhắc đổi luật hoặc gỡ lỗi)
 
@@ -152,7 +151,7 @@ Ghi góp ý đúng một chỗ: khối/skill bị ảnh hưởng + một dòng `
 - `references/scene-design.md` — các loại cảnh có sẵn, khi nào dùng loại nào, vùng an toàn.
 - `references/example-scenes.js` — kịch bản 17 cảnh thật đã duyệt.
 - `references/changelog.md` — sổ quyết định theo ngày + lý do.
-- `references/handoff.md` — mẫu báo cáo; mẫu HUONG-DAN.md (chỉ khi được yêu cầu timeline).
+- `references/handoff.md` — mẫu báo cáo.
 - `references/multi-clip.md` + `references/example-edl.js` — chế độ ghép nhiều clip; kịch bản ghép thật đã duyệt.
 - `../khoi/16-so-lieu/mau-so-lieu.md` — mẫu số liệu sau đăng.
 - Template Remotion dùng chung với **podcast-style-edit**: `Stage.jsx`, composition `nen`, `speakers.js`, `envelope.js`, nhánh

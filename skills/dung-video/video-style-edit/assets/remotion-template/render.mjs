@@ -1,4 +1,4 @@
-// Render cảnh thành ProRes 4444 có kênh alpha (cho DaVinci): node render.mjs [id ...]  (id 'hai-ben' = hai bên khung ngang, 'phu-de' = phụ đề)
+// Render cảnh thành ProRes 4444 có kênh alpha (render_preview.py ghép lên video gốc): node render.mjs [id ...]  (id 'hai-ben' = hai bên khung ngang, 'phu-de' = phụ đề)
 import fs from 'node:fs';
 import path from 'node:path';
 import {bundle} from '@remotion/bundler';

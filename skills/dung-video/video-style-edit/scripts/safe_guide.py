@@ -1,5 +1,5 @@
 # Ảnh khung an toàn (vùng đỏ = bị giao diện nền tảng che): safe_guide.py <dự án>
-# Ra davinci/media/khung_an_toan.png — dùng để kiểm tra khung hình và làm track tắt sẵn trong DaVinci.
+# Ra davinci/media/khung_an_toan.png — dùng để kiểm tra khung hình (check_frames, chụp thử).
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from _common import load, safe_zone

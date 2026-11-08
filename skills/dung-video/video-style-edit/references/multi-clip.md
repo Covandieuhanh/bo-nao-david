@@ -18,7 +18,6 @@ Sửa → chạy lại: plan.json → vlog_edl.py → lift.py → overlay_guard.
 Dùng khi người dùng đưa **từ 2 video gốc trở lên** (hoặc 1 clip không phải nói trước camera mà là cảnh quay sự kiện)
 và muốn ghép thành một video hoàn chỉnh có điểm nhấn. Khác chế độ 1 video ở chỗ: **hình gốc bị cắt, sắp lại, đổi tốc độ**,
 và **toàn bộ video render trong Remotion một lần (có tiếng)**, không phải lớp phủ trong suốt ghép lên video gốc.
-Không có gói DaVinci ở chế độ này.
 
 Ví dụ thật đã duyệt: dự án `~/Movies/edit-vlog-nhan-xe` (3 clip iPhone đi nhận xe VF3 → 56 s), kịch bản ở
 `references/example-edl.js`. Đọc nó trước khi viết kịch bản mới để lấy cảm giác về nhịp.

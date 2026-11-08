@@ -1,6 +1,6 @@
 ---
 name: video-kien-truc-skill
-description: Kiến trúc bộ skill video sau tái cấu trúc 2026-11-04 — hồ sơ tham số, 21 khối (00–20), thư viện hình chung, mẫu chuẩn; sửa đúng một chỗ
+description: Kiến trúc bộ skill video sau tái cấu trúc 2026-11-04 — hồ sơ tham số, 20 khối (00–20, bỏ 18 xuất app dựng 08/11), thư viện hình chung, mẫu chuẩn; sửa đúng một chỗ
 metadata:
   type: project
 ---

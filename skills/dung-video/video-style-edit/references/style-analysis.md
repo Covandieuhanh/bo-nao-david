@@ -57,6 +57,6 @@ thêm dòng vào `FONT_CHECKS`, đổi `HEAD`/`BODY`. Luôn thử chữ có dấ
 
 Template chỉ là điểm xuất phát. Nếu mẫu dùng thứ template không có (ví dụ phụ đề chạy theo từng chữ, khung ảnh polaroid,
 nhãn dán emoji, hiệu ứng zoom vào mặt, chia đôi màn hình), viết component mới trong `components/`, đăng ký trong
-`Root.jsx` (TYPES) và gán lane trong `build_timeline.py` (toàn màn hình → lane 1, thẻ → 2, chữ → 3).
+`Root.jsx` (TYPES).
 Hiệu ứng tác động lên chính video gốc (zoom mặt, cắt nhịp, đổi màu) không làm bằng clip phủ được — làm trong
-`render_preview.py` bằng filter ffmpeg (ví dụ `zoompan`/`crop` theo đoạn) và ghi chú rằng gói DaVinci không có phần đó.
+`render_preview.py` bằng filter ffmpeg (ví dụ `zoompan`/`crop` theo đoạn).

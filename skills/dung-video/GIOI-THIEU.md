@@ -12,7 +12,7 @@ máy khác chỉ cần chép cả thư mục `dung-video/`. Ở `~/.claude/skill
 | `cat-highlight-video/` — **cắt highlight** | Gửi 1 video dài (YouTube, podcast đã dựng, hoặc thư mục dự án của nó), nói "cắt highlight" hoặc `/cat-highlight-video` | **các clip tự chọn ý, mỗi clip một ý trọn** **dọc 9:16** 30–60 giây, mỗi clip một khoảnh khắc mạnh, **cùng loại với video gốc**; thẻ tít mở đầu, phụ đề 1–3 chữ to mỗi nhịp, cắt cứng, lời trong clip nguyên văn; kèm lịch đăng, mô tả bài đăng + bình luận ghim |
 
 Mọi thứ của một tập nằm chung `~/Movies/tap-<tên>/` (David chốt 2026-11-07, xem `video-style-edit/scripts/noi_luu.sh`): gốc ở `1-goc/`, bản dài ở `2-ban-dai/video-final.mp4`, highlight: chọn câu ở `3-highlight/`, bản cuối mỗi clip ở `3-highlight/clip-A/`, `clip-B/`…; vlog ở `~/Movies/vlog/<tên>/`. Bản dài và highlight của cùng tập phải dùng **cùng một `<tên>`**. Tiêu đề + thumbnail ở `phat-hanh/` của dự án. Muốn thêm thì nói kèm:
-"xuất ngang/dọc", "làm thêm timeline CapCut", "không dùng ảnh", "thêm ảnh".
+"xuất ngang/dọc", "không dùng ảnh", "thêm ảnh". Không làm bản cho CapCut/DaVinci; David chốt bản cuối thì dọn file tạm (`don_tap.py`).
 
 ## Kiến trúc (2026-11-04) — sửa đúng một chỗ, không viết lại khung
 
@@ -72,7 +72,7 @@ Xem bất kỳ video nào cũng phải nhận ra cùng một người làm. **M�
 - `references/gotchas.md`: các lỗi đã gặp và cách tránh.
 - `references/scene-design.md`, `multi-clip.md`, `podcast-design.md`: các loại cảnh, cách ghép, cách thiết kế podcast.
 - Highlight: `cat-highlight-video/scripts/` (`new_highlight.sh`, `loud_check.py`, `cut_highlight.py`, `hl_edl.py`, `hl_apply.py`) — chọn, soát, cắt câu, viết kịch bản dựng; dựng qua 2 skill kia. `cat-highlight-video/assets/music/` — 4 bài nhạc nền của kênh (xem README trong đó).
-- `scripts/`: công cụ (làm sạch, dò mặt, nâng khung, phụ đề, render, CapCut, `thumbnail.sh` ảnh thumbnail…).
+- `scripts/`: công cụ (làm sạch, dò mặt, nâng khung, phụ đề, render, `thumbnail.sh` ảnh thumbnail…).
 - `assets/`: mẫu Remotion cho video đơn, video ghép (cũng là khung game show của highlight) và podcast, cộng tiếng "ting", "vút tua".
 
 Công cụ phụ (mô hình Whisper, bộ dò mặt, môi trường Python) nằm ở `~/.cache/video-style-edit` và `~/whisper-models` — đừng xoá.
