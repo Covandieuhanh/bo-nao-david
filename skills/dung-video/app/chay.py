@@ -123,6 +123,8 @@ def mot_buoc(tt, bid, gop_y=None):
 
 def chay(tt_path, tu=None, gop_y=None):
     tt = doc(tt_path)
+    if not (Path(tt_path).parent / "tuy-chon.txt").exists():      # việc tạo từ bản app cũ: tuỳ chọn mặc định
+        ghi_tuy_chon(Path(tt_path).parent, tt.get("tuy_chon", {}))
     ds = cong_thuc(tt["cong_thuc"])["buoc"]
     if tu:
         for x in ds[ds.index(tu):]:
