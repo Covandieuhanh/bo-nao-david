@@ -7,7 +7,7 @@ metadata:
 
 Podcast đồ hoạ dọc trích từ video dài dùng khuôn của bản `clip1-nhac-22dB`: cả câu đang nói hiện to làm đồ hoạ, không dải phụ đề; nhạc thấp hơn giọng khoảng 23 dB; không ghép câu kêu gọi, kết ở câu đắt nhất rồi màn hình cuối 3 giây mời xem bản đầy đủ. Câu hỏi "Vấn đề" / "Kết quả" để ở mô tả và bình luận ghim.
 
-**Mẫu David duyệt 06/11/2026:** cả 3 clip "Đi trainer" (`~/Movies/tap-di-trainer/3-highlight/clip-A|B|C`, Drive `Video-xong/Di-trainer-clip-1|2|3.mp4`). Dựng video dọc sau này phải giống 3 clip này.
+**Mẫu David duyệt 06/11/2026:** cả 3 clip "Đi trainer" (`~/Movies/tap-di-trainer/3-highlight/clip-A|B|C`, Drive `Video-xong/tap-di-trainer/highlight/clip-a|b|c.mp4`). Dựng video dọc sau này phải giống 3 clip này.
 
 **Màn hình cuối (chốt thêm 06/11/2026):** không logo YouTube hay nền tảng nào, chỉ ghi "Bản đầy đủ trên kênh Trainer David Trần". Clip đăng Reels và TikTok thì nút không bấm được, lại có thể bị hạn chế phân phối.
 

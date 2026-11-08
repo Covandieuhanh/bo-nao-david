@@ -140,7 +140,7 @@ PY=$(zsh $POD/scripts/py_setup.sh); $PY $POD/scripts/speakers.py "$E"; $PY $POD/
   → `check_frames.sh` như bước 7–9 của `$POD/SKILL.md`.
 
 ### Kịch bản highlight podcast (7B) — mẫu chuẩn 3 clip "Đi trainer" (06/11), MỌI chữ nguyên văn lời trong clip
-Mẫu: `~/Movies/tap-di-trainer/3-highlight/clip-{A,B,C}`, thành phẩm ở Drive `Video-xong/Di-trainer-clip-1|2|3.mp4`, lời và kịch bản ở `dang-lam/video-di-trainer/`.
+Mẫu: `~/Movies/tap-di-trainer/3-highlight/clip-{A,B,C}`, thành phẩm ở Drive `Video-xong/tap-di-trainer/highlight/clip-a|b|c.mp4`, lời và kịch bản ở `dang-lam/video-di-trainer/`.
 - **Chữ chính thay phụ đề** (06/11, `hl_apply.py` tự bật `chu_chinh`): không dải phụ đề, không dòng chủ đề, không `kinetic`; mỗi dòng `captions.js` là một câu trọn ý (≤ 3 dòng, ~55 ký tự), có `hl` từ khoá. Cảnh đồ hoạ dùng `illus` `single` `compact: true`, không `label`, để chỉ có một lớp chữ.
 - **Hoàn cảnh:** thiếu thì đưa câu nguyên văn nêu hoàn cảnh lên đầu clip.
 - `hook` mở đầu: **thẻ tít** nguyên văn (luật 7), `eyebrow` trích lời hoặc bỏ trống.
