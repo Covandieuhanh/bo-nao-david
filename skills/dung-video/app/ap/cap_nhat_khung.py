@@ -28,9 +28,18 @@ def khac_biet(P):
         if not dich.exists() or not filecmp.cmp(that, dich, shallow=False):
             ds.append((that, dich, str(r)))
     for f in NGOAI:
-        if (MAU / f).exists() and (not (M / f).exists() or not filecmp.cmp(MAU / f, M / f, shallow=False)):
+        if (MAU / f).exists() and (not (M / f).exists() or not cung_noi_dung(MAU / f, M / f)):
             ds.append((MAU / f, M / f, f))
     return ds
+
+
+def cung_noi_dung(a, b):
+    """package.json: chỉ so gói phụ thuộc — npm tự ghi thêm phiên bản lúc cài (allowScripts…), không phải khung dựng đổi."""
+    if a.name != "package.json":
+        return filecmp.cmp(a, b, shallow=False)
+    import json
+    g = lambda f: {k: v for k, v in json.loads(f.read_text()).items() if k in ("dependencies", "devDependencies", "type")}
+    return g(a) == g(b)
 
 
 def cap_nhat(P):
