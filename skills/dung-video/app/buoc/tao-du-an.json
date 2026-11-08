@@ -1,1 +1,1 @@
-{"id":"tao-du-an","ten":"Tạo dự án","loai":"co-dinh","khi":"test ! -e {P}","lenh":"zsh {S}/new_project.sh \"{VIDEO}\" \"\" {TEN}"}
+{"id": "tao-du-an", "ten": "Tạo dự án", "loai": "co-dinh", "lenh": "python3 -I {APP}/ap/tao_du_an.py {W}"}

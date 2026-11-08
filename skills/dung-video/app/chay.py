@@ -74,7 +74,7 @@ def ghi_tuy_chon(W, tc):
 def bien(tt):
     ct = cong_thuc(tt["cong_thuc"]); tc = tt.get("tuy_chon", {})
     return {"APP": str(APP), "DV": str(DV), "S": str(DV / "video-style-edit/scripts"), "HL": str(DV / "cat-highlight-video/scripts"),
-            "P": tt["P"], "W": str(KHO / tt["ten"]), "VIDEO": tt["video"], "TEN": tt["ten"], "HO_SO": ct.get("ho_so", "chung"),
+            "P": tt["P"], "W": str(KHO / tt["ten"]), "VIDEO": tt.get("video_may") or tt["video"], "TEN": tt["ten"], "HO_SO": ct.get("ho_so", "chung"),
             "TAP": str(Path(tt["P"]).parent), "KHUNG": tc.get("khung", "giu"), "HOOK": "co" if tc.get("hook") else "khong"}
 
 

@@ -26,6 +26,8 @@ từng bước, nút **Làm lại từ** bước sớm nhất bị ảnh hưởn
 mục "Mới trong Drive Video-goc" hiện sẵn video mới nhất, bấm là chọn. Hoặc **dán link Drive** (tệp hay thư mục): app tìm đúng tệp
 trên Mac qua mã Drive (`com.google.drivefs.item-id#S`) — không tải qua mạng, không cần mở chia sẻ công khai; chỉ thấy tệp của các
 tài khoản Drive đã liên kết với Mac. Tệp vừa tải từ điện thoại cần vài phút để Drive trên Mac thấy.
+Bước **Lấy video gốc về Mac** (`ap/lay_video.py`) tải tệp "chỉ trên mây" về `tap-<tên>/1-goc/` trước khi tạo dự án — app chạy nền phải tự xin
+quyền kéo tệp về (`setiopolicy_np`), không thì macOS báo `Resource deadlock avoided` và để lại tệp 0 byte (lỗi 08/11/2026).
 **Sửa skill khi đang có dự án:** bước CHƯA chạy tự dùng skill mới (lời nhắc, hồ sơ, script đọc lúc chạy). Bước đã chạy: bấm
 **làm lại từ đây** — chạy lại bước đó và các bước sau; bước Claude nào đầu vào không đổi thì **dùng lại kết quả cũ, 0 token**
 (`~/Movies/_app/<tên>/nho-claude/`; `APP_KHONG_NHO=1` để tắt). Phần hình (khung dựng, thư viện hình) được CHÉP vào dự án lúc tạo →

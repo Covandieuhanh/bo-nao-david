@@ -1,0 +1,1 @@
+{"id": "lay-video", "ten": "Lấy video gốc về Mac (tải từ Drive nếu cần)", "loai": "co-dinh", "lenh": "python3 -I {APP}/ap/lay_video.py {W}"}
