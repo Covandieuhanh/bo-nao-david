@@ -108,3 +108,9 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
 - Bỏ tiếng ký hiệu đầu clip khi vào lời ngay giây 0 (đúng quyết định 06/11); `hl_edl.py` đã sửa: không thêm `sting`, tít tự `keep: true`.
 - Chưa sửa: màn `pow` toàn khung của khung ghép (lề trái ~18 px thay vì 70 px, dải tối khác màu ở đỉnh). Nếu cần chữ to toàn khung, sửa `Show.jsx` trước.
 - Câu màn chốt dài (cả đoạn HANHDONG ~250 ký tự) tràn đè phụ đề ở clip sự tập trung. `hl_edl.py` giờ cảnh báo khi > 55 ký tự; ghi `"cta_text"` (vế trọn ý, nguyên văn) vào câu `cta` trong phuong-an.json.
+
+## 2026-11-08 — Phụ đề dọc cụm 5–8 chữ, mỗi lúc một chỗ chữ (David chốt)
+- David: phụ đề 3–4 chữ cỡ 84 quá ngắn, quá to; đọc chữ motion graphic và phụ đề cùng lúc là rối. Đổi: cỡ 58 bằng chữ thẻ, chữ thường, viền mảnh, cụm trọn ý 5–8 chữ (≤ 2 dòng).
+- Mọi lớp chữ motion graphic (pow, illus, action, chips, thẻ tít, màn chốt…) đang hiện → phụ đề nhường, hết lớp thì hiện tiếp đúng cụm (Show.jsx `nhuong`, Captions.jsx `LOP`).
+- `hl_edl.py`: chia dòng bằng quy hoạch động (hết câu / dấu phẩy / trước từ nối; không ngắt sau "rất, của, là, những…"). Sửa lỗi chạy lại `hl_edl.py` nhân đôi khối `TS`.
+- Chạy lại `hl_edl.py` sẽ ghi đè lớp phủ và `hl` sửa tay trong edl.js → lưu bản cũ, chép lại sau.

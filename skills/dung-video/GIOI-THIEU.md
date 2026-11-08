@@ -45,7 +45,7 @@ dung-video/
 - **Không bịa:** chữ trên video = lời người nói. Chỉ tiêu đề, thumbnail, thẻ tít highlight và câu màn chốt (video thường) được viết lời — đúng ý video.
 - **Nhịp:** video nói trước camera + highlight cắt khoảng lặng ≥ 0,45 s và "ờ/ừm" (jump cut, phóng xen kẽ); vlog, podcast dài giữ tự nhiên.
   Muốn bản tự nhiên cho một video thì nói "giữ ngập ngừng".
-- **Phụ đề:** video ngắn → 1–3 chữ to mỗi nhịp, ngang ngực; video dài → hộp tối đầy câu ở đáy.
+- **Phụ đề:** video ngắn → cụm 5–8 chữ cỡ bằng chữ thẻ, ngay trên thanh thời gian; chữ motion graphic hiện thì phụ đề nhường; video dài → hộp tối đầy câu ở đáy.
 - **Bố cục tự cân theo nội dung** (07/11/2026): chọn từ danh mục `trinh-bay/bo-cuc.md`: người + phụ đề, điểm nhấn trên người (`nhan`), thẻ cạnh mặt, người vào ô bo góc, minh hoạ toàn màn hình, màn chương. Không con số bắt buộc; dọc mỗi lúc ít thứ. Mọi video đều có motion graphics. Học video mẫu mới bằng skill `hoc-video-mau` (quy trình ở `trinh-bay/README.md`): chỉ học trình bày, giữ thẩm mỹ, phiếu học David duyệt trước, kiểm không phá sau.
 - **Không che người nói**, không đè phụ đề, chữ tiếng Việt đủ dấu; minh hoạ mặc định là biểu tượng vẽ.
 - **Phát hành (mọi video):** 3 tiêu đề + mốc khung bìa đề xuất. Ảnh thumbnail 1280×720 chỉ khi video **ngang** và **đăng YouTube** — Claude hỏi "có đăng YouTube không?" lúc đầu với mọi video xuất ngang.

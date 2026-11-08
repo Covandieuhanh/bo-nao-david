@@ -4,7 +4,7 @@
 |---|---|---|
 | `tokens.js` | màu, font, hàm ease của kênh | 10 |
 | `brand.json` | tên kênh, tiếng ký hiệu, mức nhạc, độ dài thẻ cuối | 10 · 09 |
-| `subStyle.js` | phụ đề dài (SUB) + ngắn 1–3 chữ (ShortLine, chunks) + tô màu theo nghĩa | 03 |
+| `subStyle.js` | phụ đề dài (SUB) + ngắn cụm 5–8 chữ cỡ 58 (ShortLine, chunks) + tô màu theo nghĩa | 03 |
 | `cta.js` | câu màn chốt dự phòng + biểu tượng + mốc tick | 08 |
 | `Icons.jsx` | biểu tượng nét vẽ dần (Icon, Pictogram) | 07 |
 | `YtEnd.jsx` | màn kết YouTube 15–20 s | 08 |

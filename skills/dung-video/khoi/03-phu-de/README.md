@@ -1,4 +1,4 @@
-# Khối 03-phu-de: Phụ đề: dài = hộp tối đầy câu; ngắn = 1–3 chữ to mỗi nhịp, màu theo nghĩa
+# Khối 03-phu-de: Phụ đề: dài = hộp tối đầy câu; ngắn = cụm 5–8 chữ cỡ bằng chữ thẻ, màu theo nghĩa; mỗi lúc một chỗ chữ
 
 **Dùng trong:** cả 4
 **Đầu vào:** check/goc/words.srt + transcript.srt
@@ -23,7 +23,8 @@ python3 -I $SKILL/scripts/captions.py "$P"          # check/goc/words.srt + tran
 - **Câu bị mất / câu bịa**: script bỏ câu kiểu "Hãy subscribe cho kênh…"; nếu chỗ đó người nói có nói thật (vd. "Xin chào"
   cuối video) thì đối chiếu `check/clean/transcript.srt` (lần chạy khác) + `loud.txt` và thêm tay.
 - **Chỗ ngắt dòng**: không tách đôi từ ghép ("chia | sẻ", "giải | trình"); ngắt trước từ nối (thì, là, nhưng, mà…).
-Kiểu phụ đề tự chọn theo độ dài (luat-chung 3): video dọc ≤ 90 s → 1–3 chữ to mỗi nhịp ngang ngực; còn lại hộp tối đầy câu.
+Kiểu phụ đề tự chọn theo độ dài (luat-chung 3): video dọc ≤ 90 s → cụm trọn ý 5–8 chữ, cỡ 58 bằng chữ thẻ (David chốt 2026-11-08); còn lại hộp tối đầy câu.
+Lớp motion graphic có chữ đang hiện → phụ đề ẩn đúng khoảng đó (Captions.jsx `LOP`, Show.jsx `nhuong`). Highlight: `hl_edl.py` chia dòng bằng quy hoạch động — ngắt ở hết câu / dấu phẩy / trước từ nối, không ngắt sau "rất, của, là, những…".
 Cả hai nằm trong dải 140 px ở **đáy vùng an toàn**. Lớp phủ (thẻ, chữ to, hook, tên) tự **thu nhỏ còn 78%** — người dùng
 muốn thấy hình nhiều hơn — và **không bao giờ che mặt/người nói** (xem bước 5, `face_place.sh`): mặc định ngay trên dải
 phụ đề, mặt nằm thấp thì dời lên đỉnh vùng an toàn hoặc chỗ trống khác. Component vẫn thiết kế trên dải gốc như cũ. Cảnh toàn màn hình phải chừa trống ~140 px cuối vùng an toàn. Render tự động (`phu-de` → `phu_de.mov`,

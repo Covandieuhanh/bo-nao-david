@@ -1,6 +1,6 @@
 ---
 name: cat-highlight-video
-description: Cắt một video dài (bản YouTube 5–60 phút của người dùng) thành các clip highlight DỌC 9:16 (1080×1920), tự chọn ý: mỗi clip một ý trọn vẹn, tự đứng được, số clip và độ dài theo đúng ý cần truyền tải — dùng chung cho Reels, TikTok, Shorts, Facebook Reels, theo chuẩn đội cắt clip của kênh lớn (DOAC, Jay Shetty, Hormozi): thẻ tít mở đầu viết như tít báo đúng ý người nói, phụ đề 1–3 chữ to mỗi nhịp, cắt cứng giấu mối + cắt sạch khoảng lặng, nhịp hai tông (sôi động / lắng, nhạc nền cố định của kênh). Highlight ra ĐÚNG LOẠI của video gốc — video tự quay có người nói → hình người nói (khung dựng của skill video-style-edit); podcast/video toàn đồ hoạ → podcast đồ hoạ dọc cùng phong cách, cùng tên tập (skill podcast-style-edit). Lời trong clip chỉ là nguyên văn lời người nói (không viết thêm, không đổi chữ), mỗi clip có lời kêu gọi hành động, tự soát điểm cắt theo độ lớn tiếng và chép lời lại bản cắt để kiểm; kèm lịch đăng, mô tả bài đăng, bình luận ghim. Dùng khi người dùng nói "cắt highlight", "làm video highlight", "cắt clip ngắn từ video dài", "làm Reels/TikTok/Shorts từ video YouTube/podcast", "cắt đoạn hay", "/cat-highlight-video", hoặc đưa một video dài (kể cả video podcast đã dựng, kèm hoặc không kèm phụ đề, dàn ý) và muốn ra clip ngắn — kể cả khi chỉ gửi file mà không nói rõ.
+description: Cắt một video dài (bản YouTube 5–60 phút của người dùng) thành các clip highlight DỌC 9:16 (1080×1920), tự chọn ý: mỗi clip một ý trọn vẹn, tự đứng được, số clip và độ dài theo đúng ý cần truyền tải — dùng chung cho Reels, TikTok, Shorts, Facebook Reels, theo chuẩn đội cắt clip của kênh lớn (DOAC, Jay Shetty, Hormozi): thẻ tít mở đầu viết như tít báo đúng ý người nói, phụ đề cụm 5–8 chữ cỡ bằng chữ thẻ (ẩn khi chữ motion graphic hiện), cắt cứng giấu mối + cắt sạch khoảng lặng, nhịp hai tông (sôi động / lắng, nhạc nền cố định của kênh). Highlight ra ĐÚNG LOẠI của video gốc — video tự quay có người nói → hình người nói (khung dựng của skill video-style-edit); podcast/video toàn đồ hoạ → podcast đồ hoạ dọc cùng phong cách, cùng tên tập (skill podcast-style-edit). Lời trong clip chỉ là nguyên văn lời người nói (không viết thêm, không đổi chữ), mỗi clip có lời kêu gọi hành động, tự soát điểm cắt theo độ lớn tiếng và chép lời lại bản cắt để kiểm; kèm lịch đăng, mô tả bài đăng, bình luận ghim. Dùng khi người dùng nói "cắt highlight", "làm video highlight", "cắt clip ngắn từ video dài", "làm Reels/TikTok/Shorts từ video YouTube/podcast", "cắt đoạn hay", "/cat-highlight-video", hoặc đưa một video dài (kể cả video podcast đã dựng, kèm hoặc không kèm phụ đề, dàn ý) và muốn ra clip ngắn — kể cả khi chỉ gửi file mà không nói rõ.
 ---
 # Cắt video highlight cho mọi mục video ngắn
 
@@ -49,8 +49,8 @@ Vị trí và thành phần cố định (dấu góc, thanh thời gian, phụ �
    kết quả / mâu thuẫn của clip, ĐÚNG Ý người nói, không thêm thông tin hay lời hứa ngoài clip (luat-chung 1b). Câu chạm vẫn là
    lời thật ngay giây 0. Ghi tít + câu gốc làm căn cứ vào ke-hoach-cat.md.
 8. **Nhịp kênh lớn** (David chốt 2026-11-04 — trước đây có chip ⏩ + thanh tập gốc, đã bỏ): **cắt cứng** giữa các câu, đoạn xen kẽ
-   phóng 1,08× để giấu mối; khoảng lặng ≥ 0,45 s **trong** câu và > 0,6 s **giữa** câu rút còn ~0,24 s; phụ đề **1–3 chữ to mỗi
-   nhịp** (luat-chung 3). Giữ 1 s lặng sau câu hỏi kêu gọi. Kiểu cũ có chip tua chỉ khi David yêu cầu: `--tua` cho `cut_highlight.py` + `hl_edl.py`.
+   phóng 1,08× để giấu mối; khoảng lặng ≥ 0,45 s **trong** câu và > 0,6 s **giữa** câu rút còn ~0,24 s; phụ đề **cụm trọn ý 5–8 chữ, cỡ bằng chữ thẻ, ẩn khi lớp chữ motion graphic hiện**
+   (luat-chung 3, David chốt 2026-11-08). Giữ 1 s lặng sau câu hỏi kêu gọi. Kiểu cũ có chip tua chỉ khi David yêu cầu: `--tua` cho `cut_highlight.py` + `hl_edl.py`.
 9. **Hai tông** theo cảm xúc lời nói, đổi giữa chừng được (cú đổi tông là cú cảm xúc):
    | | **Sôi động** `soi` (mẹo, tin vui, kết quả, lời mời) | **Lắng** `lang` (tâm sự, nỗi đau, mất mát, câu hỏi day dứt) |
    |---|---|---|
@@ -99,7 +99,7 @@ python3 -I $SKILL/scripts/hl_edl.py "$P" "$E" <id>                   # → $E/mo
 cp $SKILL/assets/music/*.mp3 "$E/motion/public/sfx/"                 # nhạc cố định của kênh (soi-*, lang-*)
 ```
 `hl_edl.py` viết: các câu `p1…pN` **cắt cứng**, khoảng lặng trong câu đã rút (đoạn con `p2b`, `p2c`…), đoạn xen kẽ phóng 1,08×;
-`SUBS` (giây timeline, chữ đúng câu nguyên văn — hiện 1–3 chữ mỗi nhịp nhờ `SHORT = true`); `TS(src)` đổi giây video gốc → giây
+`SUBS` (giây timeline, chữ đúng câu nguyên văn — hiện cụm 5–8 chữ nhờ `SHORT = true`); `TS(src)` đổi giây video gốc → giây
 timeline cho lớp phủ; `TONE` + `MUSIC.tracks`; `CTA` = câu kêu gọi nguyên văn; `HL = {…, bar: false}` (không thanh tập gốc).
 Claude chỉnh tiếp trong edl.js:
 - **Phụ đề**: sửa chính tả, tô `hl` từ khoá (từ trong `hl` hiện màu cam khi tới nhịp của nó).
@@ -125,7 +125,7 @@ PY=$(zsh $POD/scripts/py_setup.sh); $PY $POD/scripts/speakers.py "$E"; $PY $POD/
 ```
 - `new_podcast.sh … cat-thua` cắt lặng cuối còn 0,4 s — bình thường.
 - **Tông, nhạc, thẻ cuối**: `python3 -I $SKILL/scripts/hl_apply.py "$P" <id> "$E"` → `motion/src/highlight.js` (cắt cứng: `bar: false`,
-  không chip tua; phụ đề 1–3 chữ mỗi nhịp tự bật; tự trừ phần cắt đầu trong `check/trim.txt`).
+  không chip tua; phụ đề cụm ngắn tự bật; tự trừ phần cắt đầu trong `check/trim.txt`).
 - Số người nói (1|2) và `STAGE` lấy từ `scenes-goc.js`: `title` = tên tập gốc, `speakers` = tên người nói gốc, `show` như gốc.
   `theme.js`/`fonts.js` khác mặc định → chép sang. Biểu tượng vẽ thêm trong dự án gốc → chép `Icons.jsx` nếu cảnh cần.
 - **Không bìa** (`COVER = null`) trừ khi người dùng muốn — video ngắn vào thẳng câu chạm.

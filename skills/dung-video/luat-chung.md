@@ -41,9 +41,13 @@ kênh lớn, ghi lý do vào changelog. Mục tiêu mỗi video: người xem **
 - Một màn = một ý, một hình, một câu. Không chồng 2 lớp phủ.
 
 ## 3. Phụ đề (một nguồn: `video-style-edit/assets/remotion-template/src/subStyle.js`)
-- **Video ngắn** (highlight; video 1 người dọc ≤ 90 s): **1–3 chữ to mỗi nhịp**, in hoa, viền đen dày, không hộp nền, từ khoá cam,
-  ngang ngực/dưới cằm (`ShortLine`) — chuẩn Hormozi / DOAC / Jay Shetty. Tự bật; ép tay `project.short = true|false` (1 video)
-  hoặc `SHORT` trong edl.js (ghép).
+- **Video ngắn** (highlight; video 1 người dọc ≤ 90 s) — David chốt 2026-11-08, thay kiểu 1–3 chữ to in hoa của Hormozi/DOAC:
+  mỗi lần hiện **một cụm trọn ý ~5–8 chữ** (tối đa 2 dòng), **cỡ bằng chữ trong thẻ motion graphic** (`ngan_co` 58), chữ thường,
+  viền đen mảnh, không hộp nền, từ khoá cam, ngay trên thanh thời gian (`ShortLine`). Tự bật; ép tay `project.short = true|false`
+  (1 video) hoặc `SHORT` trong edl.js (ghép).
+- **MỖI LÚC MỘT CHỖ CHỮ** (David chốt 2026-11-08, mọi loại video, mọi khung): lớp motion graphic có chữ (chữ to, thẻ, nhãn, ô liệt kê,
+  sơ đồ, màn hành động, thẻ tít, màn chốt) đang hiện thì **phụ đề nhường**; hết lớp đó phụ đề hiện tiếp đúng cụm đang nói. Không tính
+  dấu góc, tít ghim, thanh thời gian. Cảnh không có chữ: `props.giuPhuDe = true` để giữ phụ đề. Người xem không đọc được hai chỗ cùng lúc.
 - **Video dài, vlog, podcast**: hộp tối, đầy đủ câu, đáy vùng an toàn (`SUB`).
 - **Podcast đồ hoạ dọc trích ngắn** (David chốt 2026-11-06): không dải phụ đề; cả câu đang nói hiện to giữa khung làm đồ hoạ (`chu_chinh`), mỗi lúc một lớp chữ.
 - **Màu theo nghĩa** (2026-11-04): trong `hl`, mục bắt đầu `+` = nên làm (xanh lá), `-` = tránh (đỏ), còn lại cam — chỉ khi lời có cặp nên/tránh.

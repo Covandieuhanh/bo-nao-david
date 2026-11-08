@@ -7,7 +7,7 @@ Sửa một cách làm → sửa đúng một khối (README + code của nó). 
 | [00-loc-noi-dung](00-loc-noi-dung/README.md) | **Bộ lọc nội dung + phân phối kênh** (làm TRƯỚC): chấm theo hồ sơ David, 7 kết luận, phiếu lọc = cổng duyệt 1, sổ danh mục | mọi tài nguyên |
 | [01-chep-loi](01-chep-loi/README.md) | Chép lời (Whisper) + hiểu video | cả 4 |
 | [02-lam-sach](02-lam-sach/README.md) | Làm sạch: cắt thừa đầu/cuối, câu nói lại, khoảng lặng + tiếng đệm, sửa chiều hình | làm video, highlight (cắt lặng trong câu) |
-| [03-phu-de](03-phu-de/README.md) | Phụ đề: dài = hộp tối đầy câu; ngắn = 1–3 chữ to mỗi nhịp, màu theo nghĩa | cả 4 |
+| [03-phu-de](03-phu-de/README.md) | Phụ đề: dài = hộp tối đầy câu; ngắn = cụm 5–8 chữ cỡ bằng chữ thẻ, mỗi lúc một chỗ chữ | cả 4 |
 | [04-khung-hinh](04-khung-hinh/README.md) | Khung hình: đổi khung (ngang↔dọc), nâng khung khi người nằm thấp | làm video, ghép vlog, highlight người nói (podcast: khung xuất riêng) |
 | [05-tranh-che-nguoi](05-tranh-che-nguoi/README.md) | Tránh che người: lớp phủ không chạm mặt + đầu + vai + ngực; không có chỗ → tự toàn màn hình ≤ 4 s | làm video, ghép vlog, highlight người nói |
 | [06-mo-dau](06-mo-dau/README.md) | Mở đầu 0–3 s: thẻ tít / hook, đoạn ghép mở vlog, teaser podcast dài | cả 4 |
