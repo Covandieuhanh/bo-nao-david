@@ -17,7 +17,7 @@ Chặng 1 của nghề: 1–3 ca thật online, miễn phí đổi lời chứng
 | Rà soát video cũ TikTok và fanpage | Có danh sách đề xuất ẩn trong [ra-soat-video-cu.md](dang-lam/ra-soat-video-cu.md) và [trang-ca-nhan-2026-11-06.md](nghien-cuu/trang-ca-nhan-2026-11-06.md). Ẩn là để riêng tư, không xoá | Chờ David quyết |
 | Làm lại 4 video cũ (thi lại đại học, sự tập trung, cuộc sống giàu có, đừng mua thứ bạn thích) | David bảo làm trọn không hỏi lại. Đã render xong 4 bản ngang riêng 08/11 (−14 LUFS), bài đăng gợi ý ở `phat-hanh/phat-hanh.md` từng dự án `~/Movies/tap-<tên>/2-ban-dai`. Giàu có và đừng mua chạm chủ đề tiền bạc, vay, tín dụng | **Chờ David xem và góp ý.** Chưa làm thumbnail, chưa đưa lên Drive, chưa hẹn giờ |
 | 4 clip dọc từ 4 video cũ (mỗi video 1 clip) | Render xong 08/11 với bộ nhận diện chung (có thanh thời gian, thẻ cuối không logo). Bài đăng gợi ý: `3-highlight/dang-bai.md` từng tập | **Chờ David xem và góp ý.** Chưa hẹn giờ |
-| Chuẩn hoá bộ skill ([chuan-hoa-skill.md](dang-lam/chuan-hoa-skill.md)) | Bước 0–3 xong 08/11: thói quen chung, 6 skill + 3 file não đã gọt, có "Xong khi". Code còn lệch vài chỗ (ghi trong file theo dõi) | Bước 4: chạy thử một việc thật, David chấm, sửa đúng một chỗ |
+| Chuẩn hoá bộ skill ([chuan-hoa-skill.md](dang-lam/chuan-hoa-skill.md)) | Bước 0–3 xong 08/11: thói quen chung, 6 skill + 3 file não đã gọt, có "Xong khi". Phiên A sửa xong code lệch; bỏ phần CapCut/DaVinci; thêm `don_tap.py`, đã dọn 8 tập cũ (~62 GB) | Bước 4: chạy thử một việc thật, David chấm, sửa đúng một chỗ |
 | Làm lại kho 100 video | Kho cũ còn phần kinh doanh đã bỏ | Làm lại theo ba tầng: bản thân → công việc → mối quan hệ |
 
 ## Câu hỏi còn mở với David
