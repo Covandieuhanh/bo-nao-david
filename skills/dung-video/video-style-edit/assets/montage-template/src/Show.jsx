@@ -598,7 +598,7 @@ const CtaEnd = ({text, kind}) => {
 // ENDCARD = {title, speaker, clip, at, len} trong edl.js (null = không có). CHỈ chữ của bản gốc: title = tên tập gốc, speaker = tên
 // người nói gốc — không nhãn tự viết ("BẢN ĐẦY ĐỦ", "XEM NGAY"…). Ảnh = khung đứng hình của người nói (clip, at = giây trong clip). =====
 const ENDCARD = EDL.ENDCARD || null;
-const EndCard = ({title, speaker, clip, at, play = true, yt = 0, schedule = ''}) => {   // schedule: lịch phát David đưa (PO-6)   // play=false: thẻ cuối nhận diện (vlog) — không nút phát
+const EndCard = ({title, speaker, clip, at, play = true, yt = 0, schedule = ''}) => {   // schedule: lịch phát David đưa (PO-6)   // play: nhãn "Bản đầy đủ trên kênh …"; false = thẻ nhận diện (vlog)
   const f = useCurrentFrame();
   // yt (giây, plan.json "ytEnd"): sau thẻ nhận diện là MÀN KẾT YOUTUBE (khung chừa 2 video + nút đăng ký), có nhạc kênh nhỏ
   if (yt > 5 && f >= fr(BRAND.endcardLen)) return (

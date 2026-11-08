@@ -20,6 +20,6 @@
 - Giữ lớp phủ cho một cảnh: `place: {full: false}` (1 video) · `keep: true` (OVERLAYS, ghép).
 - Lệnh: 1 video `zsh video-style-edit/scripts/face_place.sh "$P"` sau mỗi lần sửa scenes.js; ghép `python3 -I video-style-edit/scripts/lift.py "$P"`
   rồi `python3 -I video-style-edit/scripts/overlay_guard.py "$P"` sau mỗi lần sửa edl.js. Đọc bảng `check/faces/placement.md` / `guard.md`.
-- Khi `hai_trang_thai` = true (mặc định): mọi lớp chữ không phải thẻ tít mở đầu / dấu kênh đều vẽ toàn màn hình (khối 07) — khối này
-  còn lo phần thẻ tít mở và các lớp đặt tay `place`.
+- Chế độ 2 trạng thái đã bỏ (`hai_trang_thai: false`, 07/11): bố cục tự cân theo khối 07. Khối này lo thẻ tít mở (highlight) và các
+  lớp đặt tay `place`.
 - Cảnh `nhan` (điểm nhấn trên người) không qua face_place.py: `nhan_place.py` (gọi trong face_place.sh) ghi mặt từng cảnh vào `motion/src/mat.js`, Nhan.jsx tự đặt chữ / biểu tượng bên phía trống, khung dọc hẹp thì dưới cằm.

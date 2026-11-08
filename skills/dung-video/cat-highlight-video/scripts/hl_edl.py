@@ -188,7 +188,7 @@ export const CTA = {{text: {json.dumps(cta.get('cta_text') or cta['text'], ensur
 
 export const HL = {{src_duration: {dur:.2f}, bar: {'true' if TUA else 'false'}}};   // bar: thanh của cả tập gốc (chỉ kiểu --tua)
 
-// Thẻ cuối ~1,8 s sau màn chốt: tên tập gốc + người nói gốc + nút phát — không chữ tự viết
+// Thẻ cuối ~1,8 s sau màn chốt: "Bản đầy đủ trên kênh …" + tên tập gốc + người nói gốc — không nút phát, không chữ tự viết
 export const ENDCARD = {endcard};
 """
 open(os.path.join(E, 'motion/src/edl.js'), 'w', encoding='utf-8').write(src)

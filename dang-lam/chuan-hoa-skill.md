@@ -36,13 +36,12 @@ Mọi skill tự làm việc theo một bộ thói quen chung: đúng quy trình
   - [x] cat-highlight-video (08/11: mọi chữ nguyên văn, màn chốt một luật, thẻ cuối không nút phát/không câu Claude viết, bỏ số nhịp, "Xong khi" 7 dòng)
   - [x] hoc-video-mau (08/11: đọc trước thói quen chung, phiếu học là cổng hỏi duy nhất, tải 720p chỉ để học rồi xoá, bước nhẹ 1–3 ở trinh-bay, "Xong khi" 6 dòng)
   - [x] 3 file não (08/11: David.md 3.1/3.8/5 trỏ nhà chính; AGENTS thêm thoi-quen vào bảng đọc, rút mục giữ não; CLAUDE-toan-cuc trỏ thoi-quen; 2 ghi nhớ vào luu-tru, 3 ghi nhớ rút ngắn, 9 ghi nhớ sửa theo N8/N9/C2/C4/C7/T3/T8; MEMORY khớp 33 file)
-- [ ] Bước 4: chạy thử một việc thật, David chấm, sửa đúng một chỗ
+- [x] Phiên A (08/11): gọt khối 05, 06, 07, 08, 13, 15, 17, 19, `khoi/README`, `luat-chung` mục 0 (N9); bỏ chữ "2 trạng thái là mặc định" ở scene-design, thu-vien-hinh, Illus, vlog_edl, highlight.md; code: thẻ cuối luôn "Bản đầy đủ trên kênh …" (bỏ "XEM BẢN ĐẦY ĐỦ" và `tease`), phụ đề podcast dọc cụm 5–8 chữ mọi độ dài
+  - [x] David đồng ý 08/11: câu mời bình luận / câu hỏi tự soi / "gỡ" theo luật kênh nằm ở mô tả + bình luận ghim, không lên video (khối 08, luat-chung)
+- [ ] Bước 4: chạy thử một việc thật, David chấm, sửa đúng một chỗ (chưa render thử thẻ cuối và phụ đề podcast dọc sau phiên A)
 
-## Code còn lệch với skill đã gọt (ghi 08/11, làm ở bước 4 hoặc khi gọt khối)
-- Phụ đề podcast dọc: skill ghi cụm 5–8 chữ cỡ 58; code (`Captions.jsx`) có thể chỉ bật kiểu này cho video ngắn, podcast dài vẫn hộp tối.
-- Thẻ cuối highlight: skill ghi không nút phát; `hl_edl.py` (dòng ~191) và `EndCard` (`Show.jsx`, `play = true` mặc định) còn nút phát.
-- Câu gợi tò mò `tease`: skill đã bỏ; `hl_apply.py` dòng ~52 vẫn đọc `tease` (không đặt `tease` trong phuong-an.json là đủ).
-- `luat-chung.md` mục 0 còn "sao chép luôn chuẩn kênh lớn" (N9); khối 06, 08, 00, 15 có thể còn thẻ tít / màn chốt / chọn chữ bìa kiểu cũ.
+## Code còn lệch với skill
+Đã sửa ở phiên A (08/11).
 
 ## Xong khi (mục não, David duyệt 08/11)
 1. Mỗi luật chỉ một nhà; chỗ khác một dòng trỏ.

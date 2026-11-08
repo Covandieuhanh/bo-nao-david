@@ -10,8 +10,8 @@ Sửa một cách làm → sửa đúng một khối (README + code của nó). 
 | [03-phu-de](03-phu-de/README.md) | Phụ đề: dài = hộp tối đầy câu; ngắn = cụm 5–8 chữ cỡ bằng chữ thẻ, mỗi lúc một chỗ chữ | cả 4 |
 | [04-khung-hinh](04-khung-hinh/README.md) | Khung hình: đổi khung (ngang↔dọc), nâng khung khi người nằm thấp | làm video, ghép vlog, highlight người nói (podcast: khung xuất riêng) |
 | [05-tranh-che-nguoi](05-tranh-che-nguoi/README.md) | Tránh che người: lớp phủ không chạm mặt + đầu + vai + ngực; không có chỗ → tự toàn màn hình ≤ 4 s | làm video, ghép vlog, highlight người nói |
-| [06-mo-dau](06-mo-dau/README.md) | Mở đầu 0–3 s: thẻ tít / hook, đoạn ghép mở vlog, teaser podcast dài | cả 4 |
-| [07-canh-minh-hoa](07-canh-minh-hoa/README.md) | Cảnh minh hoạ toàn màn hình (2 trạng thái): biểu tượng vẽ, số chạy, sơ đồ + nhãn ≤ 3 chữ; ảnh thật chỉ khi cần | cả 4 |
+| [06-mo-dau](06-mo-dau/README.md) | Mở đầu 0–3 s: câu chạm, thẻ tít nguyên văn (highlight), đoạn ghép mở vlog, teaser podcast dài | cả 4 |
+| [07-canh-minh-hoa](07-canh-minh-hoa/README.md) | Cảnh minh hoạ, bố cục tự cân: biểu tượng vẽ, số chạy, sơ đồ + nhãn ≤ 3 chữ; ảnh thật chỉ khi cần | cả 4 |
 | [08-ket-thuc](08-ket-thuc/README.md) | Kết: màn chốt (cta) · thẻ cuối (nhận diện / dẫn bản đầy đủ) · màn kết YouTube 15–20 s · lịch phát | cả 4 |
 | [09-am-thanh](09-am-thanh/README.md) | Âm thanh: nhạc kênh cố định, tiếng ký hiệu, ting, vút; cân giọng −20 LUFS, bản cuối −14 LUFS | cả 4 |
 | [10-nhan-dien](10-nhan-dien/README.md) | Bộ nhận diện David + phong cách (màu, font, dấu kênh, khuôn tiêu đề); rút phong cách từ video mẫu | cả 4 |

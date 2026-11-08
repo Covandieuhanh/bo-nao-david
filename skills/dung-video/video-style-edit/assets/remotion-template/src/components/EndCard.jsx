@@ -1,5 +1,5 @@
 // THẺ CUỐI (highlight podcast — skill cat-highlight-video, người dùng chốt 2026-11-03): ~1,8 s ghép SAU video (render_preview.py),
-// dẫn về bản đầy đủ kiểu thẻ cuối Have A Sip. CHỈ chữ của bản gốc: tên tập gốc + tên người nói — không "BẢN ĐẦY ĐỦ"/"XEM NGAY".
+// dẫn về bản đầy đủ kiểu thẻ cuối Have A Sip. "Bản đầy đủ trên kênh …" + tên tập gốc + tên người nói — không nút phát, không câu tự viết (08/11).
 // Dữ liệu: highlight.js → endcard {title?, speaker?}; thiếu thì lấy STAGE.title / STAGE.speakers (tên tập, người nói của bản gốc).
 import React from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
@@ -33,9 +33,9 @@ export const EndCard = () => {
   return (
     <AbsoluteFill style={{background: C.bg}}>
       <AbsoluteFill style={{background: `radial-gradient(circle at 50% ${LAND ? '42%' : '40%'}, rgba(255,122,69,0.28), transparent 58%)`}} />
-      <div style={{position: 'absolute', left: PF.left, width: PF_W, top: LAND ? 180 : (ec.tease ? 400 : 560), display: 'flex', flexDirection: 'column',
+      <div style={{position: 'absolute', left: PF.left, width: PF_W, top: LAND ? 180 : 560, display: 'flex', flexDirection: 'column',
         alignItems: 'center', gap: LAND ? 36 : 44, transform: `translateY(${(1 - p) * 60}px)`, opacity: ease(f, 0, 6)}}>
-        <EndCardBody tease={ec.tease || ''} kenh={ec.kenh || ''} title={title} speaker={ec.tease ? '' : speaker} play={!brandOnly} schedule={schedule} big={LAND ? 150 : 120} gap={LAND ? 36 : 44} />
+        <EndCardBody kenh={ec.kenh || ''} title={title} speaker={speaker} play={!brandOnly} schedule={schedule} big={LAND ? 150 : 120} gap={LAND ? 36 : 44} />
       </div>
       {/* sóng âm lặng dần — nối mạch với sân khấu podcast (chỉ podcast) */}
       {project.podcast && <div style={{position: 'absolute', left: PF.left, width: PF_W, top: LAND ? 900 : 1380, height: 90, display: 'flex', alignItems: 'center', gap}}>

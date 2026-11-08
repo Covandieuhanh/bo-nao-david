@@ -26,7 +26,7 @@
 #     {"type": "action", "c": "c3", "at": 246.0, "len": 4.5, "quote": "câu hành động **nhấn**", "done": 248.5},   # thẻ toàn cảnh
 #     {"type": "diagram", "c": "c3", "at": 60.0, "len": 5, "mode": "tang|vong|moc|cot|luoi|tu-thanh|anh", "label": "…", "items": [{"at": 60.5, "value": "108", "label": "LÃNH ĐẠO"}]},   # sơ đồ nói thay lời / ảnh khung bo góc (khối 07)
 #     {"type": "illus", "c": "c3", "at": 82.0, "len": 4, "mode": "flow", "items": [["footsteps", 82.5, "ĐI BỘ"], ["heart", 84.0, "SỐNG THỌ"]], "label": "HARUKU"},
-#       # illus = CẢNH MINH HOẠ 2 TRẠNG THÁI (mặc định — David chốt 2026-11-04): toàn màn hình, phụ đề vẫn chạy, nhãn ≤ 3 chữ trích lời;
+#       # illus = CẢNH MINH HOẠ toàn màn hình (khối 07, bố cục tự cân): toàn màn hình, phụ đề vẫn chạy, nhãn ≤ 3 chữ trích lời;
 #       # mode single · flow · vs (item thứ 4 = true/false) · count ("num": {"to": 15, "at": 83, "unit": "PHÚT"}) · list
 #     {"type": "scene", "c": "c3", "at": 82.0, "len": 6, "icons": [["fruit", 84.5], ["tree", 92.0]], "quote": "câu nguyên văn **nhấn**"}],   # (cũ — có câu trích dài)
 #     # scene = cảnh minh hoạ VẼ toàn màn hình (biểu tượng Icons.jsx vẽ dần đúng lúc nhắc + câu nguyên văn), 3–4 cảnh/video                      # cú zoom dồn vào mặt ở câu đắt

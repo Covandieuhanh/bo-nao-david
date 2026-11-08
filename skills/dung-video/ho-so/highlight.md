@@ -7,7 +7,7 @@
 |---|---|
 | `cat_lang.*` | lặng trong câu ≥ `trong_cau_min_s` rút còn 2×`giu_s`; lùi/thêm `bien_cau_s`; gộp câu liền ≤ `gop_cau_lien_s`; lặng chèn sau câu hỏi kêu gọi |
 | `phong_xen_ke` | đoạn xen kẽ phóng (jump cut) |
-| `tit_ghim` | dải tít ghim suốt clip — **false** theo 2 trạng thái (thêm chữ thứ 3 trên người); bật lại từng clip `"pin": true` |
+| `tit_ghim` | dải tít ghim suốt clip — **false** (thêm chữ thứ 3 trên người, dọc mỗi lúc ít thứ); bật lại từng clip `"pin": true` |
 | `the_cuoi_s` | thẻ cuối dẫn về bản đầy đủ |
 | `phan_ung_s` | cảnh phản ứng người nghe |
 

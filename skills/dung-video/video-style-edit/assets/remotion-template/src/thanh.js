@@ -5,5 +5,5 @@ import HL from './highlight.js';
 import HS from './hoso.json';
 import {POD} from './podframe';
 const PD = HS.phu_de || {};
-export const SHORT = project.short ?? (!!HL || (project.height > project.width && project.duration > 0 && project.duration <= (PD.ngan_max_s ?? 90)));
+export const SHORT = project.short ?? (!!HL || (project.height > project.width && (POD || (project.duration > 0 && project.duration <= (PD.ngan_max_s ?? 90)))));
 export const TL_ON = project.thanh ?? true;

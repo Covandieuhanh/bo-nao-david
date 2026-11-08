@@ -3,10 +3,9 @@
 Đọc file này trước mọi skill dựng video. Mỗi SKILL.md chỉ ghi luật RIÊNG của nó; trùng ý thì file này thắng, trừ khi SKILL.md
 ghi rõ "ngoại lệ". Sổ quyết định + lý do: `<skill>/references/changelog.md`.
 
-## 0. Kim chỉ nam (David chốt 2026-11-04)
-**Người xem là trung tâm.** Kênh lớn đã chứng minh cách nào giữ người xem (DOAC, Hormozi, MrBeast, Ali Abdaal, Jay Shetty, Mel
-Robbins…) thì **sao chép luôn chuẩn đó** — không cần thử A/B. Luật dựa trên gu riêng mà trái chuẩn kênh lớn → nghiêng về chuẩn
-kênh lớn, ghi lý do vào changelog. Mục tiêu mỗi video: người xem **ở lại → HIỂU ý chính → LÀM theo**. Đo lại bằng số thật (mục 9).
+## 0. Kim chỉ nam (David chốt 2026-11-04, sửa 08/11/2026 — N9)
+**Người xem là trung tâm.** Học kênh lớn (DOAC, Hormozi, MrBeast, Ali Abdaal, Jay Shetty, Mel Robbins…) ở **nhịp và cách trình bày**
+giữ người xem; **không chép thẩm mỹ**, **chỉ thêm, không thay** cái David đã chốt (ghi nhớ `luat-hoc-la-bo-sung`). Mục tiêu mỗi video: người xem **ở lại → HIỂU ý chính → LÀM theo**. Đo lại bằng số thật (mục 9).
 
 ## 1. Nội dung
 - **Không bịa.** Phụ đề, chữ to, thẻ, màn hành động = **trích / bỏ bớt lời người nói**, không diễn đạt lại. Tên riêng, con số, vế
@@ -81,7 +80,7 @@ tự thêm bài) · giọng −20 LUFS, bản cuối −14 LUFS · màn chốt (
 ## 6. Lời kêu gọi
 - Ưu tiên **câu mệnh lệnh nằm sẵn trong lời** ("Hãy chọn…", "thử làm…") — top video gần như không có câu "hãy bình luận".
 - Màn hành động (`action`) đúng lúc người nói giao một việc làm được; 1–2 lần / video.
-- Màn chốt ~4 s cuối mọi video; highlight dùng nguyên văn câu kêu gọi, video thường Claude tự viết (mục 1). **Ngoại lệ podcast đồ hoạ dọc trích ngắn** (David chốt 2026-11-06): không ép hành động, kết bằng màn hình cuối mời xem bản đầy đủ.
+- Màn chốt ~4 s cuối mọi video, câu = nguyên văn lời người nói (mục 1, 07/11); podcast dọc trích ngắn theo cùng luật highlight (khối 08, 08/11). Câu mời bình luận / "gỡ" theo luật kênh nằm ở mô tả + bình luận ghim, không lên video.
 
 ## 7. Phát hành (bước cuối của MỌI skill — David chốt 2026-11-04, chuẩn MrBeast / Paddy Galloway)
 Ghi `<dự án>/phat-hanh/phat-hanh.md`:

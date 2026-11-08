@@ -1,4 +1,4 @@
-// CẢNH MINH HOẠ TOÀN MÀN HÌNH — trạng thái B của "2 trạng thái" (David chốt 2026-11-04; khối 07). Một bản cho mọi khung dựng.
+// CẢNH MINH HOẠ TOÀN MÀN HÌNH — một kiểu của bố cục tự cân (khối 07; "2 trạng thái" 04/11 đã bỏ 07/11). Một bản cho mọi khung dựng.
 // Người xem chỉ có MỘT điểm nhìn: hình động minh hoạ đúng ý đang nói + phụ đề vẫn chạy bên dưới (không câu trích dài, không chữ to).
 // props:
 //   mode : 'single' (1 hình lớn) · 'flow' (A → B → C) · 'vs' (A ✗ | B ✓) · 'count' (số chạy + biểu tượng) · 'list' (2–5 hình hiện dần)

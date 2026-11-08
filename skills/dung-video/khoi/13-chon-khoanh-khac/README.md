@@ -66,7 +66,7 @@ ngay…) kèm mốc; chấm theo 4 câu trước, rồi theo câu mở (mục 6 
    thang") > nỗi đau cụ thể > lời than chung. Câu mở có thể là một vế ngắn 2–4 s đặt trước câu chạm.
 7. **Chừa cho bản đầy đủ** (luật 10): ghi trong ke-hoach-cat.md chuyện hoặc ý mở rộng nào được để dành; không chừa phần kết của ý trong clip.
 
-8. **Thẻ tít mở đầu** (luật 7): viết 1 tít ≤ 8 chữ cho từng clip, ghi kèm câu gốc làm căn cứ.
+8. **Thẻ tít mở đầu** (luật 7): chọn **cụm nguyên văn đắt nhất** của từng clip, ghi kèm mốc câu gốc.
 
 Các clip không dùng chung câu chính; một câu kêu gọi mạnh có thể dùng lại ở 2 clip khi mỗi clip có chạm + ý khác nhau.
 Ghi ngắn trong ke-hoach-cat.md vì sao chọn các khoảnh khắc này và bỏ các ứng viên khác.

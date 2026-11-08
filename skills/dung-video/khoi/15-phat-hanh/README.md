@@ -31,7 +31,7 @@ kiểm tra gì (ví dụ chưa đăng thử thật).
 
 ### 8. Phát hành + giao
 Gửi `video-final.mp4` của từng clip (SendUserFile). Ghi `$P/dang-bai.md` (theo `../luat-chung.md` mục 7) và báo cáo tiếng Việt:
-0. **Lịch đăng**: thứ tự clip (A mạnh nhất trước), cách nhau 1–2 ngày; mỗi clip: thẻ tít, **mốc khung bìa đề xuất** (không ghép bìa), độ dài.
+0. **Lịch đăng**: thứ tự clip (A mạnh nhất trước), cách nhau 1–2 ngày; mỗi clip: thẻ tít (nguyên văn), **mốc khung bìa đề xuất** (không ghép bìa), độ dài.
    Chép `dung-video/khoi/16-so-lieu/mau-so-lieu.md` → `$P/so-lieu.md`, một bảng cho mỗi clip.
 1. **Loại video gốc → loại highlight**, **ý chính + lời kêu gọi chính của cả video**, **kiểu bố trí** + lý do, **tông** từng đoạn,
    **ý được chừa cho bản đầy đủ**.

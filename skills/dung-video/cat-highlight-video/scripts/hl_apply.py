@@ -48,9 +48,7 @@ hl["music"] = [dict(f=MUS[x["k"]], a=x["a"], b=x["b"], gain=GAIN[MUS[x["k"]]]) f
 _plan = json.load(open(os.path.join(P, "phuong-an.json"), encoding="utf-8"))
 if isinstance(_plan.get("endcard"), dict):
     hl["endcard"] = dict({k: v for k, v in _plan["endcard"].items() if k in ("title", "speaker", "schedule") and v}, len=1.8)
-    _opt = next(o for o in _plan["options"] if o["id"] == ID)
-    if _opt.get("tease"):   # câu gợi tò mò do David duyệt → màn hình cuối 3 s mời xem bản đầy đủ, thay màn chốt bình luận
-        hl["endcard"].update(tease=_opt["tease"], kenh=_hs.get("man_cuoi_kenh", ""), len=_hs.get("man_cuoi_s", 3.0))
+    hl["endcard"]["kenh"] = _hs.get("man_cuoi_kenh", "")   # "Bản đầy đủ trên kênh …" (luật 11, 08/11) — đã bỏ câu gợi tò mò `tease`
 out = os.path.join(E, "motion/src/highlight.js")
 head = open(out, encoding="utf-8").read().split("export default", 1)[0] if os.path.exists(out) else ""
 open(out, "w", encoding="utf-8").write(head + "export default " + json.dumps(hl, ensure_ascii=False) + ";\n")

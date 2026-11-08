@@ -21,7 +21,7 @@ Bố cục đã có code: người + phụ đề · `nhan` (dưới đây) · **
 
 ## Điểm nhấn trên người — `nhan` (David chốt 2026-11-07, nới luật trên)
 **Mọi video đều phải có motion graphics** — hiểu là điểm nhấn kéo mắt người xem, có nhiều loại, không chỉ cảnh toàn màn hình.
-"Dựng nhẹ" vẫn có (vd. video ~4 phút: thẻ tít + ~3 cảnh `illus` + ~4 `nhan` + màn chốt). Trộn loại để mắt không quen; kiểu mạnh nhất để cho câu đắt nhất.
+"Dựng nhẹ" vẫn có (vd. video ~4 phút: ~3 cảnh `illus` + ~4 `nhan` + màn chốt). Trộn loại để mắt không quen; kiểu mạnh nhất để cho câu đắt nhất.
 | Kiểu | props | Khi |
 |---|---|---|
 | Zoom dồn vào mặt | `zoom: 1.15` (1,12–1,2) | cú chốt, câu đắt, lúc cảm xúc lên |

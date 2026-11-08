@@ -23,8 +23,8 @@ import {holdEnds} from '../lib/giu';
 const _cta0 = SCENES.find((s) => s.type === 'cta');
 const LOP = holdEnds(SCENES, _cta0 ? _cta0.start : project.duration, HS).filter((s) => !s.props?.giuPhuDe && s.type !== 'endcard' && s.type !== 'cover');
 
-// Video ngắn (David chốt 2026-11-08, thay 1–3 chữ ngày 04/11): phụ đề cụm 5–8 chữ, cỡ bằng chữ thẻ (subStyle.js ShortLine). Tự bật: highlight, hoặc video dọc ≤ 90 s
-// (podcast dài / video dài giữ hộp tối). Ép tay: project.short = true | false.
+// Video ngắn (David chốt 2026-11-08, thay 1–3 chữ ngày 04/11): phụ đề cụm 5–8 chữ, cỡ bằng chữ thẻ (subStyle.js ShortLine). Tự bật: highlight, podcast dọc (mọi độ dài, 08/11), hoặc video dọc ≤ 90 s
+// (video ngang / video dọc dài không phải podcast giữ hộp tối). Ép tay: project.short = true | false.
 import {SHORT, TL_ON} from '../thanh';
 
 // CHỮ CHÍNH (David chốt 2026-11-06, podcast đồ hoạ dọc trích ngắn): cả câu đang nói hiện to giữa khung, thay dải phụ đề và dòng chủ đề —

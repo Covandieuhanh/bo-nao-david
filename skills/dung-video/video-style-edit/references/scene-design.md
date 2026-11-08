@@ -1,6 +1,6 @@
 # Thiết kế kịch bản cảnh
 
-> **2 TRẠNG THÁI (David chốt 2026-11-04, `../../khoi/07-canh-minh-hoa/README.md`):** chỉ người + phụ đề, hoặc cảnh `illus` toàn màn hình + phụ đề.
+> **Bố cục tự cân (David chốt 2026-11-07, thay "2 trạng thái" 04/11):** chọn bố cục theo `../../trinh-bay/` và khối 07; không còn chế độ chỉ hai trạng thái.
 > Các loại chữ to / thẻ có câu trích bên dưới là kiểu cũ — khung dựng tự đổi chúng thành toàn màn hình, không câu trích. Viết cảnh mới bằng `illus`
 > (hook vẫn là thẻ tít mở đầu). **Từ 07/11/2026 có thêm `nhan` — điểm nhấn trên người** (bảng dưới): được đè lên người, không che mặt.
 

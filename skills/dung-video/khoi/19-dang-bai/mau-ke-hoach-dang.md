@@ -110,7 +110,7 @@ Bạn đang kẹt ở vai trò nào? Bình luận **Vấn đề** để mình bi
 Vừa làm xong là mình thu âm ngay, dù có lủng củng. Những câu chuyện được phép chia sẻ thật sự là không nhiều.
 
 ### Clip 1 (T6 13/11) — Reels, TikTok
-Thẻ tít: NGƯỜI THÂN QUEN / KÉO HẾT NHÂN SỰ · Màn hình cuối: David đã nói gì với anh ấy? · Bản đầy đủ trên kênh Trainer David Trần
+Thẻ tít: CHÍNH CÁI NGƯỜI THÂN NÀY / LẠI ĐI CỬA SAU · Thẻ cuối: Bản đầy đủ trên kênh Trainer David Trần
 
 Làm việc với một người rất là thân quen.
 Nhưng cuối cùng, chính cái người thân này lại đi cửa sau.
@@ -124,7 +124,7 @@ Bạn từng gặp chuyện này chưa? Bình luận **Vấn đề** nhé.
 **Bình luận ghim:** Bạn từng gặp chuyện này chưa? Bình luận "Vấn đề" và kể mình nghe vì sao chưa gỡ được. Bản đầy đủ: [link YouTube]
 
 ### Clip 2 (T3 17/11) — Reels, TikTok
-Thẻ tít: KHÔNG PHẢI SAI / MÀ LÀ CHƯA PHÙ HỢP · Màn hình cuối: Chuyện gì đã xảy ra với anh ấy? · Bản đầy đủ trên kênh Trainer David Trần
+Thẻ tít: KHÔNG PHẢI LÀ ANH ẤY SAI / MÀ LÀ CHƯA PHÙ HỢP · Thẻ cuối: Bản đầy đủ trên kênh Trainer David Trần
 
 Mỗi người trong chúng ta sẽ là một cái mảnh ghép.
 Không có mảnh ghép nào nó giống mảnh ghép nào cả.
@@ -138,7 +138,7 @@ Bạn có đang tự trách mình không? Bình luận **Vấn đề** nhé.
 **Bình luận ghim:** Bạn có đang tự trách mình không? Bình luận "Vấn đề" và kể mình nghe vì sao chưa gỡ được. Bản đầy đủ: [link YouTube]
 
 ### Clip 3 (T6 20/11) — Reels, TikTok
-Thẻ tít: BỊ RÚT ĐI NHÂN SỰ / HÃY HIỂU VAI TRÒ · Màn hình cuối: Anh ấy đã bị rút nhân sự thế nào? · Bản đầy đủ trên kênh Trainer David Trần
+Thẻ tít: NHẬN ĐỊNH ĐƯỢC / CÁI VAI TRÒ CỦA MÌNH · Thẻ cuối: Bản đầy đủ trên kênh Trainer David Trần
 
 Nếu như anh có thể nhận định được cái vai trò của mình trong công ty, thì anh sẽ không bị lấn sân sang cái phần khác.
 Cái phần đấy nó có chưa được, thì nó đâu phải là cái kỹ năng, nó đâu phải là cái năng lực của anh.
