@@ -4,7 +4,7 @@
 // Vị trí mặt: mat.js (scripts/nhan_place.py). Chữ / biểu tượng đặt bên phía còn trống cạnh mặt; khung dọc hẹp → dưới cằm.
 import React from 'react';
 import {AbsoluteFill, Easing, useCurrentFrame, useVideoConfig} from 'remotion';
-import {BODY, C, HEAD, SAFE, ease, pop, rel} from '../theme';
+import {BODY, C, HEAD, SAFE, BRAND_BOT, ease, pop, rel} from '../theme';
 import {Icon} from '../lib/Icons';
 import project from '../project.js';
 import MAT from '../mat.js';
@@ -42,8 +42,8 @@ export const Nhan = ({sceneId, start, text, icon, at, zoom = 1, toi = false}) =>
   const box = under
     ? {left: W / 2, maxWidth: W - SAFE.left - SAFE.right, top: Math.min(fy + m.h * 0.75 * H, SAFE.bottom - 140 - size * lines.length * 1.2 - 40), textAlign: 'center', alignItems: 'center'}
     : side === 'right'
-      ? {left: fr_, maxWidth: room, top: fy - size * lines.length * 0.6, alignItems: 'flex-start', textAlign: 'left'}
-      : {right: W - fl, maxWidth: room, top: fy - size * lines.length * 0.6, alignItems: 'flex-end', textAlign: 'right'};
+      ? {left: fr_, maxWidth: room, top: Math.max(BRAND_BOT + 24, fy - size * lines.length * 0.6), alignItems: 'flex-start', textAlign: 'left'}
+      : {right: W - fl, maxWidth: room, top: Math.max(BRAND_BOT + 24, fy - size * lines.length * 0.6), alignItems: 'flex-end', textAlign: 'right'};
   const dx = under ? 0 : (side === 'right' ? -1 : 1) * (1 - p) * 60;
   const cxT = under ? 'translateX(-50%) ' : '';
   return (

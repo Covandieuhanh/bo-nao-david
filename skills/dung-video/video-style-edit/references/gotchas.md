@@ -202,3 +202,12 @@
 - Chụp thử `nhan` bằng preview.mjs không thấy zoom (zoom làm ở render_preview.py) → soát trên video-final.mp4 ở vài mốc trong cảnh.
 
 - **Bố cục "người thu vào ô" (khung ngang): thẻ chữ canh giữa vùng trống bị đẩy lên đè dấu góc kênh** (BrandMark ở top 228 px) khi thẻ cao. Vùng nội dung giờ bắt đầu từ `max(SAFE.top, 320)`. Soát bằng ảnh rải đều cả video, không chỉ ảnh giữa cảnh (08/11/2026).
+
+### Lỗi khung ngang David chỉ ra 08/11/2026 (4 video cũ làm lại)
+Gốc chung: template dựng cho khung dọc trước; các video ngang trước đó đều là podcast (dấu góc nằm trong sân khấu), nên khung ngang
+người nói chưa từng chạy với dấu góc. Không do bài học video mẫu xoá gì; riêng `BoCuc.jsx` (từ bài học) đã chép số 300/320 theo giả định cũ.
+- **Dấu góc thấp:** `top: 228` là số của khung dọc, dùng luôn cho khung ngang (21% chiều cao). Nay `BRAND_TOP` theo khung (`theme.js`).
+- **Điểm nhấn đè dấu góc** ("TỪ 98 ĐẾN 2002"): `Nhan.jsx` chỉ tránh mặt. Nay chữ cạnh mặt không lên trên `BRAND_BOT + 24`.
+- **Màn chốt ngang đè dấu góc:** ô video 56% bề ngang + dấu góc vẫn vẽ. Nay ô 50%, dấu góc ẩn trong `cta` khung ngang, thẻ kết thúc trên thanh thời gian.
+- **Thiếu thanh thời gian:** chỉ bật cho podcast và highlight. Nay bật cho mọi video dài (`src/thanh.js`), phụ đề lên trên thanh (`CAP_H` +40).
+- Soát: chụp `phu-de@<giây>` cùng cảnh để thấy dấu góc + thanh; với khung ngang luôn chụp ít nhất một cảnh điểm nhấn, một bố cục, màn chốt.

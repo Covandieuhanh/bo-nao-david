@@ -6,6 +6,7 @@ Tên file bắt đầu bằng nhóm: `luat-` cách làm việc với David · `n
 
 - [Công cụ cài thì đưa vào skill](luat-cong-cu-cai-dua-vao-skill.md) — David cài công cụ (pyannote…) để nâng skill; giúp việc tốt hơn thì tích hợp luôn (2026-11-07)
 - [Gợi ý để David chọn](luat-goi-y-de-david-chon.md) — không tự chốt chữ, hình, nội dung; ngoại lệ: cắt clip thì tự chọn ý (2026-11-07)
+- [Học là bổ sung](luat-hoc-la-bo-sung.md) — học mẫu mới chỉ thêm, không thay cái David đã sửa; số khung dọc không dùng cho ngang (2026-11-08)
 - [Kết quả hơn tốc độ](luat-ket-qua-hon-toc-do.md) — làm đúng quy trình, bước cần kết quả render thì chờ; chỗ chưa rõ thì trao đổi (2026-11-05)
 - [Nội dung của David, thẩm mỹ của skill](luat-noi-dung-cua-david.md) — không khuôn lời; học nhịp/trình bày, giữ thẩm mỹ (2026-11-05)
 - [Tự hỏi khi mơ hồ](luat-tu-hoi-khi-mo-ho.md) — 6 tín hiệu tự dừng hỏi, kể cả giữa chừng; không tự đoán rồi làm (2026-11-05)

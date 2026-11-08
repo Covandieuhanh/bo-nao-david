@@ -12,7 +12,7 @@
 // Chữ trong thẻ / chương là NGUYÊN VĂN lời người nói (luật chữ trên màn hình).
 import React from 'react';
 import {AbsoluteFill, Easing, OffthreadVideo, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
-import {BODY, C, HEAD, SAFE, ease, pop, rel} from '../theme';
+import {BODY, C, HEAD, SAFE, BRAND_BOT, ease, pop, rel} from '../theme';
 import {FullShell} from './FullScreen';
 import {Illus} from '../lib/Illus';
 import {Diagram} from '../lib/Diagram';
@@ -54,7 +54,7 @@ const ONguoi = ({sceneId, start, o, noi_dung}) => {
   const k = Math.min(ease(f, 0, 14), ease(f, d - 10, d, 1, 0, Easing.inOut(Easing.cubic)));
   const x = b.x * W * k, y = b.y * H * k, w = W + (b.w * W - W) * k, h = H + (b.h * H - H) * k;
   // vùng nội dung = phần khung còn lại (bên trái ô khi ngang, bên dưới ô khi dọc), chừa dải phụ đề ở đáy
-  const aTop = Math.max(SAFE.top, 320);   // dưới dấu góc kênh (BrandMark ở top 228 px)
+  const aTop = Math.max(SAFE.top, BRAND_BOT + 40);   // dưới dấu góc kênh (theme.js)
   const area = LAND ? {x: SAFE.left, y: aTop, w: b.x * W - SAFE.left * 1.6, h: SAFE.bottom - aTop}
     : {x: SAFE.left, y: (b.y + b.h) * H + 30, w: W - SAFE.left - SAFE.right * 0.4, h: SAFE.bottom - (b.y + b.h) * H - 60};
   const show = ease(f, 8, 18) * ease(f, d - 12, d - 4, 1, 0);
@@ -102,7 +102,7 @@ const TheCanh = ({sceneId, start, ben, tieu_de, dong}) => {
   const left = side === 'phai' ? W - SAFE.right - w : SAFE.left;
   return (
     <AbsoluteFill style={{opacity: o}}>
-      <div style={{position: 'absolute', left, top: Math.max(H * 0.17, 300), transform: `translateX(${slide}px)`}}>   {/* dưới dấu góc kênh (BrandMark ở top 228 px, Captions.jsx) */}
+      <div style={{position: 'absolute', left, top: Math.max(H * 0.17, BRAND_BOT + 40), transform: `translateX(${slide}px)`}}>   {/* dưới dấu góc kênh (BRAND_BOT, theme.js) */}
         <The start={start} f={f} w={w} fs={H * 0.055} tieu_de={tieu_de} dong={dong} />
       </div>
     </AbsoluteFill>
@@ -115,7 +115,7 @@ const Chuong = ({start, so, nhan, ten = ''}) => {
   const fs = LAND ? H * 0.12 : W * 0.13;
   return (
     <FullShell>
-      <div style={{position: 'absolute', left: SAFE.left * 1.4, top: Math.max(LAND ? H * 0.22 : H * 0.28, 320)}}>
+      <div style={{position: 'absolute', left: SAFE.left * 1.4, top: Math.max(LAND ? H * 0.22 : H * 0.28, BRAND_BOT + 60)}}>
         {so != null && <div style={{position: 'absolute', left: -fs * 0.1, top: -fs * 1.1, fontFamily: HEAD, fontWeight: 800, fontSize: fs * 2.4,
           color: C.text, opacity: 0.06 * ease(f, 0, 12), lineHeight: 1}}>{String(so).padStart(2, '0')}</div>}
         {nhan && <div style={{fontFamily: BODY, fontWeight: 700, fontSize: fs * 0.22, letterSpacing: 4, color: C.accent, textTransform: 'uppercase',

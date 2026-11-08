@@ -117,8 +117,8 @@ export const Cta = ({start, text, kind}) => {
   const k = ease(f, 0, 14);
   // khung ngang (07/11/2026 — bản dọc làm video co thành ô dọc lệch trái, câu chốt rơi khỏi khung): ô 16:9 rộng 56% giữa trên, câu chốt bên dưới
   const LAND_ = project.width > project.height, W_ = project.width, H_ = project.height;
-  const w0 = W_, h0 = H_, w1 = LAND_ ? Math.round(W_ * 0.56) : 400, h1 = LAND_ ? Math.round(W_ * 0.56 * 9 / 16) : Math.round(400 * 16 / 9),
-    x1 = (W_ - w1) / 2, y1 = LAND_ ? Math.round(H_ * 0.07) : 240;
+  const w0 = W_, h0 = H_, w1 = LAND_ ? Math.round(W_ * 0.5) : 400, h1 = LAND_ ? Math.round(W_ * 0.5 * 9 / 16) : Math.round(400 * 16 / 9),
+    x1 = (W_ - w1) / 2, y1 = LAND_ ? Math.round(H_ * 0.07) : 240;   // ngang: ô 50% bề ngang để thẻ kết thúc trên thanh thời gian (08/11/2026)
   const w = w0 + (w1 - w0) * k, h = h0 + (h1 - h0) * k, x = x1 * k, y = y1 * k;
   return (
     <FullShell hold>

@@ -17,6 +17,10 @@ export const SAFE = V
   ? {left: 70, right: 180, top: 210, bottom: 1420, overlayTop: 985}         // khung dọc 1080×1920 (= khung thiết kế)
   : {left: Math.round(project.width * 0.05), right: Math.round(project.width * 0.05),
     top: Math.round(project.height * 0.05), bottom: Math.round(project.height * 0.85), overlayTop: Math.round(project.height * 0.55)};
+// DẤU GÓC KÊNH ● DAVID │ chủ đề (Captions.jsx): khung dọc 228 px (dưới thanh trạng thái Reels/TikTok); khung NGANG sát mép trên vùng an toàn
+// (lỗi 08/11/2026: dùng số 228 của khung dọc cho khung ngang → dấu góc thấp, đè thẻ). Mọi lớp phủ góc trên trái phải nằm dưới BRAND_BOT.
+export const BRAND_TOP = V && !project.podcast ? 228 : SAFE.top;
+export const BRAND_BOT = BRAND_TOP + 56;   // chữ 38 px + bóng
 export const SAFE_W = (V ? 1080 : project.width) - SAFE.left - SAFE.right;
 
 // Đổi mốc thời gian tuyệt đối (giây trong video gốc) sang khung tính từ đầu cảnh

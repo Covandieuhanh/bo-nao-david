@@ -13,6 +13,7 @@ import CAPTIONS from './captions.js';
 import PLACEMENT from './placement.js';
 import HL from './highlight.js';
 import HS from './hoso.json';
+import {TL_ON} from './thanh';
 // 2 TRẠNG THÁI (hồ sơ hai_trang_thai, David chốt 2026-11-04): A = người + phụ đề, B = cảnh toàn màn hình + phụ đề. Lớp chữ không
 // toàn màn hình (kinetic, lower, listItem…) KHÔNG được đè lên người → tự vẽ toàn màn hình. Ngoại lệ: thẻ tít mở đầu (hook) và
 // ĐIỂM NHẤN TRÊN NGƯỜI 'nhan' (07/11/2026: zoom dồn, làm tối viền, chữ / biểu tượng cạnh mặt — Nhan.jsx tự tránh mặt, vẽ cả khung).
@@ -40,7 +41,7 @@ export const SLOT_H = Math.round(BAND_H * SLOT.w / BAND_W);
 // đặt tay trong scenes.js. Component vẫn vẽ trên dải gốc (overlayTop → bottom); Place dời/thu cả dải.
 export const OV_SCALE = 0.78;
 // dải phụ đề (đáy vùng an toàn); highlight ở video người nói (highlight.js): thanh tập gốc chiếm đáy, phụ đề lên 40 px → dải cao hơn
-export const CAP_H = CAPTIONS.length ? 140 + (HL && HL.bar !== false && !POD ? 40 : 0) : 0;
+export const CAP_H = CAPTIONS.length ? 140 + (TL_ON && !POD ? 40 : 0) : 0;   // thanh thời gian chiếm đáy → phụ đề lên
 const OV_BOTTOM = SAFE.bottom - CAP_H;                           // đáy dải lớp phủ khi đặt mặc định
 export const OV_TOP = Math.round(OV_BOTTOM - BAND_H * OV_SCALE);  // đỉnh mặc định
 

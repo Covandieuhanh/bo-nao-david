@@ -51,8 +51,9 @@ export const Timeline = () => {
   }
   const p = Math.min(1, f / Math.max(1, d - 1));
   const ep = STAGE && STAGE.episode;   // số tập + ngày (2026-11-05, kiểu "đài phát thanh" Hieu Nguyen): {n, date}
+  const plate0 = POD ? {} : {background: 'rgba(0,0,0,0.5)', borderRadius: PF.tl.h, padding: '0 16px', boxSizing: 'border-box'};
   return (
-    <div style={box}>
+    <div style={{...box, ...plate0}}>
       {ep && (ep.n != null || ep.date) && <div style={{...label, color: C.accent, fontWeight: 800}}>{ep.n != null ? `TẬP ${ep.n}` : ''}{ep.date ? <span style={{color: C.muted, fontWeight: 600}}>{ep.n != null ? ' · ' : ''}{ep.date}</span> : null}</div>}
       <div style={label}>{mmss(f / fps)}</div>
       <div style={track}>
