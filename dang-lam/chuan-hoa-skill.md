@@ -29,7 +29,7 @@ Mọi skill tự làm việc theo một bộ thói quen chung: đúng quy trình
   - [x] Bản nháp: `skills/thoi-quen-lam-viec.md` (08/11)
   - [x] David duyệt 08/11
 - [ ] Bước 3: gọt từng skill + "Xong khi" (mỗi skill một phiên)
-  - [ ] hoi-chuyen-gia
+  - [x] hoi-chuyen-gia (08/11: 2–3 gợi ý, bỏ "kinh doanh", một vòng gộp / thiết kế nhiều vòng, "Xong khi" 7 dòng David duyệt)
   - [ ] dang-da-kenh
   - [ ] video-style-edit
   - [ ] podcast-style-edit
