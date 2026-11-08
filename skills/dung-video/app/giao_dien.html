@@ -7,7 +7,7 @@
 *{box-sizing:border-box}body{margin:0;background:var(--nen);color:var(--chu);font:15px/1.5 -apple-system,system-ui,sans-serif}
 .khung{display:grid;grid-template-columns:260px 1fr;min-height:100vh}
 aside{border-right:1px solid var(--vien);padding:16px;background:var(--the)}
-main{padding:20px 24px;max-width:1100px}
+main{padding:20px 24px;max-width:1100px;min-width:0;overflow-wrap:anywhere}
 h1{font-size:18px;margin:0 0 12px}h2{font-size:16px;margin:20px 0 8px}
 button{font:inherit;border:1px solid var(--vien);background:var(--the);color:var(--chu);border-radius:8px;padding:7px 12px;cursor:pointer}
 button.chinh{background:var(--nhan);border-color:var(--nhan);color:#fff;font-weight:600}
@@ -22,7 +22,7 @@ textarea,input,select{font:inherit;width:100%;padding:8px;border:1px solid var(-
 label{display:block;margin:10px 0 4px;color:var(--phu);font-size:13px}
 video{width:100%;max-height:480px;background:#000;border-radius:8px}
 .hang{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.mo{color:var(--phu)}
-.tha{border:2px dashed var(--vien);border-radius:12px;padding:28px 16px;text-align:center;cursor:pointer;color:var(--phu)}.tha.tren{border-color:var(--nhan);color:var(--nhan)}
+.tha{overflow-wrap:anywhere;min-width:0;border:2px dashed var(--vien);border-radius:12px;padding:28px 16px;text-align:center;cursor:pointer;color:var(--phu)}.tha.tren{border-color:var(--nhan);color:var(--nhan)}
 .tien{height:8px;background:var(--nen);border-radius:4px;overflow:hidden;margin-top:8px}.tien>div{height:100%;width:0;background:var(--nhan)}
 button.dung{border-color:var(--do);color:var(--do)}
 .nen-hoi{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;padding:16px;z-index:9}
@@ -60,11 +60,15 @@ n.querySelectorAll('[data-p]').forEach(e=>e.onclick=ev=>{ev.preventDefault();con
 function boDau(t){return t.normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/đ/g,'d').replace(/Đ/g,'D').toLowerCase().replace(/\.[^.]+$/,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,40)}
 function nhanTep(f){if(!f)return;if(!/\.(mp4|mov|m4v|mts|avi|mkv)$/i.test(f.name))return alert('Chỉ nhận tệp video');tepChon=f;$('#vp').value='';
 $('#tha').innerHTML=`🎬 <b>${esc(f.name)}</b><br><small>${(f.size/1048576).toFixed(0)} MB · bấm để đổi tệp</small>`;if(!$('#ten').value)$('#ten').value=boDau(f.name)}
-async function moMoi(){chon=null;tepChon=null;clearTimeout(hen);const ct=await api('/api/cong-thuc');
+async function moMoi(){chon=null;tepChon=null;clearTimeout(hen);const ct=await api('/api/cong-thuc');setTimeout(driveMoi,0);
 $('#chinh').innerHTML=`<h1>Việc mới</h1><div class="the"><label>Loại video</label><select id="ct">${ct.map(c=>`<option value="${c.id}">${esc(c.ten)}</option>`).join('')}</select>
 <label>Video gốc</label><div id="tha" class="tha" onclick="$('#chonTep').click()">Kéo thả video vào đây<br><small>hoặc bấm để chọn tệp</small></div>
 <input type="file" id="chonTep" accept="video/*,.mts,.mkv" style="display:none" onchange="nhanTep(this.files[0])">
-<div class="hang" style="margin-top:8px"><button onclick="moTep()">📁 Chọn tệp trên Mac</button></div><input type="hidden" id="vp">
+<div class="hang" style="margin-top:8px"><button onclick="moTep()">📁 Chọn tệp trên Mac</button></div>
+<div id="driveMoi"></div>
+<label>Hoặc dán link Google Drive (tệp phải nằm trong Drive đã liên kết với Mac)</label>
+<div style="display:flex;gap:8px;min-width:0"><input id="link" style="min-width:0;flex:1" placeholder="https://drive.google.com/file/d/…" onkeydown="if(event.key=='Enter')timLink()"><button style="flex:0 0 auto" onclick="timLink()">Tìm</button></div>
+<div id="linkKq" class="mo" style="font-size:13px;margin-top:4px"></div><input type="hidden" id="vp">
 <label>Tên tập (tự đặt theo tên tệp, sửa được: chữ thường không dấu, gạch nối)</label><input id="ten" placeholder="ten-tap">
 <label>Khung xuất</label><select id="khung"><option value="giu">Giữ khung gốc (mặc định)</option><option value="ngang">Gốc dọc → xuất ngang (video giữa, chữ hai bên)</option><option value="doc">Gốc ngang → xuất dọc (bám người nói)</option></select>
 <label>Ảnh minh hoạ</label><select id="anhmh"><option value="mac_dinh">Chỉ khi cần — mặc định dùng biểu tượng vẽ</option><option value="khong">Không dùng ảnh nào</option><option value="them">Thêm ảnh cho mọi thứ cụ thể</option></select>
@@ -78,6 +82,13 @@ const t=$('#tha');['dragenter','dragover'].forEach(e=>t.addEventListener(e,v=>{v
 function taiLen(ten,f){return new Promise((ok,hong)=>{const x=new XMLHttpRequest();x.open('POST',`/api/tai-len?ten=${encodeURIComponent(ten)}&tep=${encodeURIComponent(f.name)}`);
 $('#tien').style.display='block';x.upload.onprogress=e=>{const p=e.loaded/e.total*100;$('#tien>div').style.width=p+'%';$('#tienChu').textContent=`Đang tải lên ${p.toFixed(0)}% (${(e.loaded/1048576).toFixed(0)}/${(e.total/1048576).toFixed(0)} MB)`};
 x.onload=()=>{const j=JSON.parse(x.responseText);x.status==200?ok(j.duong_dan):hong(j.loi)};x.onerror=()=>hong('mất kết nối khi tải lên');x.send(f)})}
+async function driveMoi(){const ds=await api('/api/drive-moi');if(!$('#driveMoi'))return;
+$('#driveMoi').innerHTML=ds.length?`<label>Mới trong Drive Video-goc — bấm để chọn</label><div class="hang-chip">${ds.map(x=>`<button class="chip" data-p="${esc(x.p)}">☁️ ${esc(x.ten)} <small class="mo">· ${x.mb} MB · ${new Date(x.luc*1000).toLocaleDateString('vi-VN')}</small></button>`).join('')}</div>`:'<div class="mo" style="font-size:13px;margin-top:6px">Drive Video-goc đang trống — tải video vào đó từ điện thoại, vài phút sau sẽ hiện ở đây.</div>';
+$('#driveMoi').querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>chonDuongDan(b.dataset.p))}
+async function timLink(){const l=$('#link').value.trim();if(!l)return;$('#linkKq').textContent='Đang tìm trên Mac…';
+const r=await fetch('/api/tu-link?link='+encodeURIComponent(l)).then(x=>x.json());
+if(r.loi){$('#linkKq').textContent='⚠ '+r.loi;return}
+if(r.loai=='video'){chonDuongDan(r.p);$('#linkKq').textContent='✓ Đã thấy tệp trên Mac'}else{$('#linkKq').textContent='Link là một thư mục — mở để chọn video';moTep(r.p)}}
 async function taoMoi(){const ten=$('#ten').value.trim();if(!/^[a-z0-9-]+$/.test(ten))return alert('Tên: chữ thường không dấu, số, gạch nối');
 let video=$('#vp').value.trim();if(!tepChon&&!video)return alert('Kéo thả hoặc chọn một video');$('#batDau').disabled=true;
 try{if(tepChon)video=await taiLen(ten,tepChon)}catch(e){$('#batDau').disabled=false;return alert(e)}

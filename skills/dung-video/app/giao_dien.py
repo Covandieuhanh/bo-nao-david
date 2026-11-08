@@ -260,6 +260,10 @@ class H(BaseHTTPRequestHandler):
                 return self.gui([{"id": f.stem, "ten": chay.doc(f)["ten"]} for f in sorted((APP / "cong-thuc").glob("*.json"))])
             if u.path == "/api/thu-xoa":
                 return self.gui(thu_xoa(q["ten"][0]))
+            if u.path == "/api/drive-moi":
+                import drive; return self.gui(drive.moi())
+            if u.path == "/api/tu-link":
+                import drive; return self.gui(drive.tim(q.get("link", [""])[0], han=20))
             if u.path == "/api/noi-nhanh":
                 return self.gui(noi_nhanh())
             if u.path == "/api/thu-muc":

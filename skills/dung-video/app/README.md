@@ -22,6 +22,10 @@ Nút: **⏹ Dừng** (tắt cả render) · **▶ Chạy tiếp** (làm lại b�
 ghép, bước máy so script nó gọi + hồ sơ, phần hình so khung dựng. Có đổi → khung ⚠ "Skill đã đổi sau khi dự án này chạy", ⚠ cạnh
 từng bước, nút **Làm lại từ** bước sớm nhất bị ảnh hưởng và nút **Cập nhật khung dựng**. Phiên Claude Code khác sửa skill cũng thấy
 (cùng thư mục). Bước chạy trước bản app 08/11 23:30 chưa có giờ chạy nên không rà được.
+**Video từ điện thoại qua Google Drive (`drive.py`):** tải video vào thư mục **Video-goc** trên Drive bằng điện thoại → ở Việc mới,
+mục "Mới trong Drive Video-goc" hiện sẵn video mới nhất, bấm là chọn. Hoặc **dán link Drive** (tệp hay thư mục): app tìm đúng tệp
+trên Mac qua mã Drive (`com.google.drivefs.item-id#S`) — không tải qua mạng, không cần mở chia sẻ công khai; chỉ thấy tệp của các
+tài khoản Drive đã liên kết với Mac. Tệp vừa tải từ điện thoại cần vài phút để Drive trên Mac thấy.
 **Sửa skill khi đang có dự án:** bước CHƯA chạy tự dùng skill mới (lời nhắc, hồ sơ, script đọc lúc chạy). Bước đã chạy: bấm
 **làm lại từ đây** — chạy lại bước đó và các bước sau; bước Claude nào đầu vào không đổi thì **dùng lại kết quả cũ, 0 token**
 (`~/Movies/_app/<tên>/nho-claude/`; `APP_KHONG_NHO=1` để tắt). Phần hình (khung dựng, thư viện hình) được CHÉP vào dự án lúc tạo →
