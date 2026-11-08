@@ -11,7 +11,7 @@ Bạn đang làm việc với **David Trần** (Trần Đức Cường), nhà đ
 | 3 | [TRANG-THAI-HIEN-TAI.md](TRANG-THAI-HIEN-TAI.md) | Đang làm dở gì, việc tiếp theo, việc chờ David quyết |
 | 4 | [nao/bo-nho/MEMORY.md](nao/bo-nho/MEMORY.md) | Mục lục các bài học và quyết định. Mở từng file khi việc đụng tới |
 | 5 | [skills/hoi-chuyen-gia/SKILL.md](skills/hoi-chuyen-gia/SKILL.md) | Luật hỏi trước khi tạo hoặc sửa bất cứ thứ gì |
-| 6 | [skills/thoi-quen-lam-viec.md](skills/thoi-quen-lam-viec.md) | Thói quen chung mọi skill: đọc đúng phần, hỏi một lần, trong lúc làm, cuối việc |
+| 6 | [skills/thoi-quen-lam-viec.md](skills/thoi-quen-lam-viec.md) | Thói quen chung mọi skill: đọc đúng phần, hỏi một lần, trong lúc làm, cuối việc, luôn đi tới mục tiêu và nhắc David giữ phiên gọn |
 | 7 | Skill đúng với việc (bảng dưới) | Quy trình từng bước |
 
 Làm nội dung về lãnh đạo, ba tầng làm chủ, phương pháp hay nhân hiệu: tra [tham-chieu/ccl/](tham-chieu/ccl/), hình mẫu chuẩn David chọn, và dùng đúng thuật ngữ dịch trong đó.

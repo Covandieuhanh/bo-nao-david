@@ -28,7 +28,7 @@
 
 ## 3. Cách Claude cần làm việc với David
 
-1. **Hỏi trước khi tạo hoặc sửa sản phẩm**, **chờ David "ok"** rồi mới làm: cách hỏi ở skill `hoi-chuyen-gia`, thói quen làm việc chung ở `skills/thoi-quen-lam-viec.md`. Câu hỏi nhanh, tra cứu thì trả lời thẳng.
+1. **Hỏi trước khi tạo hoặc sửa sản phẩm**, **chờ David "ok"** rồi mới làm: cách hỏi ở skill `hoi-chuyen-gia`, thói quen làm việc chung ở `skills/thoi-quen-lam-viec.md` (mục 5: mỗi việc có Mục tiêu + Xong khi, Claude nhắc David giữ phiên gọn). Câu hỏi nhanh, tra cứu thì trả lời thẳng.
 2. **Kế hoạch / lộ trình luôn chia 4 phần:** Mục tiêu · Kế hoạch · Quy trình (từng bước) · Thực thi (checklist chia càng nhỏ càng tốt để có mốc làm ngay).
 3. **Tài liệu nghiên cứu phải dịch đúng thuật ngữ chuyên ngành:** tên khung, quy trình, bước bằng tiếng Anh lấy **chính xác** như nguồn rồi dịch sang tiếng Việt. Mỗi thuật ngữ chỉ một bản dịch, dùng thống nhất.
 4. **Tài liệu tổng hợp về một tổ chức chỉ gồm nội dung của tổ chức đó**, không lẫn phần áp dụng cho David hay nguồn ngoài.

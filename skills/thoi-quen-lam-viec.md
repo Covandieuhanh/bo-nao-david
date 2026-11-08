@@ -11,6 +11,7 @@ File này giữ các thói quen **dùng chung cho mọi skill**. Luật riêng c
 3. Luật còn mơ hồ → xem **sản phẩm mới nhất David đã duyệt** làm chứng cứ, rồi hỏi nếu vẫn chưa rõ.
 
 ## 1. Đầu việc: đọc đúng phần cần
+- Đặt **Mục tiêu** và **Xong khi** cho việc (mục 5).
 - Đi theo đường: bảng chọn skill trong `AGENTS.md` → `SKILL.md` → chỉ những khối, hồ sơ mà bước đang làm cần.
 - Không đọc cả repo. Không đọc `references/`, `changelog`, `hoc-tu-*` trừ khi đang cân nhắc đổi luật hoặc đang gỡ lỗi.
   `gotchas.md` của skill đọc một lần ở đầu phiên.
@@ -43,3 +44,28 @@ File này giữ các thói quen **dùng chung cho mọi skill**. Luật riêng c
 - **Cập nhật file theo dõi** (`dang-lam/…`, `TRANG-THAI-HIEN-TAI.md`) khi xong một đợt việc.
 - **Đẩy GitHub ngay** khi có thay đổi về skill hoặc não: `bash scripts/sync.sh --push`.
 - Việc tiếp theo lớn → đề nghị mở **phiên mới**, ghi sẵn bước tiếp ở file theo dõi để phiên mới không phải tìm lại.
+
+## 5. Luôn đi tới mục tiêu, giữ phiên gọn (David chốt 08/11/2026)
+**Mục tiêu và "Xong khi":** mọi việc, trừ câu hỏi nhanh.
+- **Đầu việc:** trong lần hỏi đầu, ghi một dòng **Mục tiêu** và 2–4 dòng **Xong khi**. Skill đã có "Xong khi" thì lấy từ đó. David "ok" là chốt.
+- **Trong lúc làm:** trước mỗi bước, tự hỏi bước đó có đưa tới "Xong khi" không. Không thì bỏ, hoặc hỏi David.
+  David đổi ý giữa chừng → viết lại mục tiêu một dòng, chờ "ok".
+- **Cuối việc:** đối chiếu từng dòng "Xong khi": **đạt / chưa đạt / chưa kiểm**.
+  Còn dòng chưa đạt thì không báo "xong": nói rõ dòng nào, ghi bước tiếp vào file theo dõi.
+
+**Nhắc hoặc hỏi lại David:** chỉ một dòng, mỗi chuyện nhắc một lần. David nói "cứ làm" thì làm tiếp, không nhắc lại.
+
+| Khi | Claude làm |
+|---|---|
+| David đưa việc mới, khác hẳn việc đang làm | Đề nghị mở phiên mới, ghi sẵn bước tiếp ở file theo dõi |
+| Việc chính của phiên đã xong, hoặc phiên đã tự tóm tắt hội thoại | Nhắc "cập nhật não" rồi đóng phiên |
+| David quay lại phiên cũ sau nhiều giờ để làm việc mới | Đề nghị phiên mới, vì phiên cũ nạp lại tốn hơn |
+| Tin nhắn thiếu một trong ba điều: việc gì, file nào, muốn ra cái gì | Hỏi gộp một lần, có đề xuất (mục 2) |
+| David dán log hoặc văn bản dài | Vẫn làm; cuối việc nhắc lần sau chỉ cần đưa đường dẫn file |
+| Tới bước nhẹ | Nhắc đổi mô hình rẻ hơn (mục 3) |
+| Buổi nhìn lại cuối tuần, hoặc `nao/bo-nho/` quá 40 ghi nhớ | Đề nghị "dọn bộ nhớ" (skill `consolidate-memory`) |
+| David hỏi phiên tốn vào đâu | Chạy "giải thích mức dùng" (skill `explain-usage`) |
+
+**Thói quen của David** (để Claude biết mà nhắc): mỗi việc một phiên · xong thì "cập nhật não" rồi đóng · làm liền một mạch ·
+nói đủ việc, file, kết quả trong một tin nhắn · gộp việc nhỏ · vòng hỏi trả lời gộp ("đồng ý cả 5", chỉ nêu câu muốn đổi) ·
+đưa đường dẫn thay vì dán · nói "chỉ chụp 2–3 khung" khi muốn kiểm nhanh.

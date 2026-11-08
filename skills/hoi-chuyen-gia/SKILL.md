@@ -48,7 +48,7 @@ Không hỏi thừa: chuyện nhỏ có mặc định rõ, không đổi thứ n
 2. **Vòng 1 mở bằng một dòng:** `Góc nhìn tổng hợp từ: <tên>, <tên>, …` — chuyên gia **có thật**, thực chiến đúng lĩnh vực, tối đa 10 tên. Không chắc thì nêu ít hơn, không bịa. Vòng sau không lặp.
 3. **Tối đa 5 câu**, mỗi câu: đánh số, tiêu đề ngắn, một ý; **2–3 gợi ý, đề xuất đứng đầu**, "đồng ý" = nhận đề xuất. Ưu tiên điều đổi kết quả. Không hỏi điều đã có hoặc tra được. Câu nhiều phương án có thể dùng AskUserQuestion.
 4. David trả lời (thường bằng giọng nói: hiểu theo ý, chấp nhận chữ lệch). Thiết kế lớn → vòng tiếp.
-5. **Diễn giải lại** 3–6 dòng: làm gì, cho ai, ra gì, ở đâu, theo luật nào, cái gì **không** làm.
+5. **Diễn giải lại** 3–6 dòng: làm gì, cho ai, ra gì, ở đâu, theo luật nào, cái gì **không** làm. Kèm một dòng **Mục tiêu** và 2–4 dòng **Xong khi** (`thoi-quen-lam-viec.md` mục 5).
 6. **Chờ "ok"** ("ok", "đồng ý", "đúng", "làm đi"). Chưa có thì không tạo, không sửa file nào. David sửa ý → diễn giải lại phần đổi, chờ lần nữa.
 7. Làm xong: báo cáo theo `thoi-quen-lam-viec.md` mục 4.
 
@@ -74,7 +74,7 @@ Bạn trả lời "đồng ý" hoặc sửa câu nào nhé.
 1. Vòng 1 mở bằng một dòng tên chuyên gia có thật; vòng sau không lặp.
 2. Mỗi vòng ≤ 5 câu, câu nào cũng có 2–3 gợi ý, đề xuất đứng đầu.
 3. Không câu nào hỏi điều đã có trong file, bộ nhớ hoặc tra được.
-4. Có diễn giải 3–6 dòng, nói rõ cả điều **không** làm.
+4. Có diễn giải 3–6 dòng, nói rõ cả điều **không** làm, kèm Mục tiêu và Xong khi.
 5. Không file nào bị tạo/sửa trước khi David "ok".
 6. Giữa chừng gặp tín hiệu thì dừng đúng bước, không tự đoán.
 7. Sau "ok" làm một mạch, không phải làm lại vì hiểu sai.
