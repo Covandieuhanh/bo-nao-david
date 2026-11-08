@@ -16,6 +16,7 @@ Chặng 1 của nghề: 1–3 ca thật online, miễn phí đổi lời chứng
 | Clip "Mục tiêu sứ mệnh" (76 giây, ghép 4:46–5:40 và 7:19–7:43) | David nói "mọi thứ ok" 07/11. Chưa có lịch. Video: `~/Movies/podcast-hl-muc-tieu-A`, Drive `Video-xong/Muc-tieu-su-menh-clip-1.mp4`. Kế hoạch và 4 câu chọn ý: `~/Movies/highlight-muc-tieu/` | Chữ đăng bài là nháp: đưa gợi ý cho David chọn khi lên lịch. Khung bìa đề xuất giây 1,5 |
 | Rà soát video cũ TikTok và fanpage | Có danh sách đề xuất ẩn trong [ra-soat-video-cu.md](dang-lam/ra-soat-video-cu.md) và [trang-ca-nhan-2026-11-06.md](nghien-cuu/trang-ca-nhan-2026-11-06.md). Ẩn là để riêng tư, không xoá | Chờ David quyết |
 | Làm lại 4 video cũ (thi lại đại học, sự tập trung, cuộc sống giàu có, đừng mua thứ bạn thích) | David bảo làm trọn không hỏi lại. Đã render xong 4 bản ngang riêng 08/11 (−14 LUFS), bài đăng gợi ý ở `phat-hanh/phat-hanh.md` từng dự án `~/Movies/tap-<tên>/2-ban-dai`. Giàu có và đừng mua chạm chủ đề tiền bạc, vay, tín dụng | **Chờ David xem và góp ý.** Chưa làm thumbnail, chưa đưa lên Drive, chưa hẹn giờ |
+| 4 clip dọc từ 4 video cũ (mỗi video 1 clip) | Render xong 08/11 với bộ nhận diện chung (có thanh thời gian, thẻ cuối không logo). Bài đăng gợi ý: `3-highlight/dang-bai.md` từng tập | **Chờ David xem và góp ý.** Chưa hẹn giờ |
 | Làm lại kho 100 video | Kho cũ còn phần kinh doanh đã bỏ | Làm lại theo ba tầng: bản thân → công việc → mối quan hệ |
 
 ## Câu hỏi còn mở với David
@@ -31,6 +32,10 @@ Clip ngắn chọn ý bằng 4 câu: bối cảnh, ý trọn, mang về, chừa 
 ## Skill video vừa đổi (07/11, khuya)
 
 Bỏ mọi con số cố định về bố cục (luật 2 trạng thái, toàn màn hình ≤ 4 s, mặt ≥ 60%, cảnh 3–5 s, nhãn ≤ 3 chữ, mật độ cảnh): bố cục tự cân theo nội dung, dọc mỗi lúc ít thứ. Thêm lớp trình bày `skills/dung-video/trinh-bay/` (tiêu chí học video mẫu: chỉ học trình bày, giữ thẩm mỹ) và `BoCuc.jsx` (`the-canh`, `o-nguoi`, `chuong`). Đã render trọn 4 video cũ bằng bố cục mới (08/11). Xem [video-bo-cuc-tu-can](nao/bo-nho/video-bo-cuc-tu-can.md).
+
+## Skill video vừa đổi (08/11)
+
+Bộ nhận diện chung cho mọi loại video (`skills/dung-video/thu-vien-hinh/nhan-dien-chung.md`): vùng an toàn, dấu góc, thanh thời gian (cả clip ngắn), thẻ cuối không logo. Skill mới `hoc-video-mau` (học là bổ sung, phiếu học David duyệt trước). Còn thiếu: vlog ghép clip khung ngang chưa kiểm.
 
 ## Bộ não vừa đổi (07/11, tối)
 
