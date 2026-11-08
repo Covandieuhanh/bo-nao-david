@@ -32,6 +32,9 @@ quyền kéo tệp về (`setiopolicy_np`), không thì macOS báo `Resource dea
 **làm lại từ đây** — chạy lại bước đó và các bước sau; bước Claude nào đầu vào không đổi thì **dùng lại kết quả cũ, 0 token**
 (`~/Movies/_app/<tên>/nho-claude/`; `APP_KHONG_NHO=1` để tắt). Phần hình (khung dựng, thư viện hình) được CHÉP vào dự án lúc tạo →
 bấm **🔄 Cập nhật khung dựng** để lấy bản mới (giữ kịch bản, phụ đề, thông số; bản cũ cất ở `check/khung-truoc-<giờ>/`; đã render thì tự render lại).
+**Nhiều việc cùng lúc:** tạo bao nhiêu việc cũng được. Bước nhẹ, bước Claude, cổng duyệt chạy song song; **bước nặng** (phiếu bước
+`"nang": true`: chép lời, làm sạch, dò mặt, render, kiểm…) xếp hàng — mỗi lúc một việc (Mac M1 8 GB), việc sau hiện ⏳ và tự chạy khi tới lượt.
+Bước ⏭/– "bỏ qua" = không cần cho video này (vd video ngang thì bỏ nâng khung), không phải đang chạy.
 Việc chạy trong nhóm tiến trình riêng: tắt/khởi động lại giao diện không làm ngắt việc đang chạy.
 Dòng lệnh thay giao diện: `python3 -I chay.py moi lam-video <video> <tên>` · `chay.py duyet <tên> [góp ý]` · `chay.py lai <tên> <bước>`.
 

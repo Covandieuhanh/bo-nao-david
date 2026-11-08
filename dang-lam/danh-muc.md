@@ -21,6 +21,7 @@ Trạng thái: lọc · dựng · chờ đăng · đã đăng · kho · bỏ. D�
 | 2026-11-08 | Vlog The View Vũng Tàu (4 clip, quay 11/06) | 👤 Chỉ Facebook cá nhân | — | nhân hiệu | Facebook cá nhân | Không | David chốt bản 2 (nhạc du-lich-1) 08/11, đã dọn file tạm; chờ David tự đăng Facebook cá nhân (`~/Movies/vlog/the-view-vung-tau`) |
 | 2026-11-08 | Video cũ phỏng vấn "5 nguyên tắc quản lý tiền bạc" (khách anh Trần Văn Trung, 15:54 → 14:08 + teaser 19 s, `~/Movies/tap-5-nguyen-tac-tien`) | ⛔ chạm lằn ranh tiền bạc/đầu tư, khách hiện mặt · David chọn dựng thử dạng phỏng vấn | 2/10 | — | Không đăng (bản thử) | — | dựng xong 08/11, chờ David góp ý skill dạng phỏng vấn |
 | 2026-11-09 | Video img-2888 (app dựng, `~/Movies/tap-img-2888`) | 👤 Chỉ Facebook cá nhân | 1 | nhân hiệu (đời thường) | Không dựng nặng. Dùng làm tư liệu ghép vlog, hoặc đăng một câu chia sẻ ngắn trên Facebook cá nhân nếu có chuyện kèm theo. Chưa nên lên YouTube hay trang. | — | lọc (app) |
+| 2026-11-09 | Video spa-thuy-moc-huong (app dựng, `~/Movies/tap-spa-thuy-moc-huong`) | ⛔ Không làm · ⚠️ đã cảnh báo lằn ranh | 1 | nhân hiệu | Không dựng. Nếu David muốn giữ làm kỷ niệm thì chỉ để ở Facebook cá nhân, không đưa lên kênh chính. | — | lọc (app) |
 
 ## Phiếu lọc (chấm thử 05/11/2026)
 

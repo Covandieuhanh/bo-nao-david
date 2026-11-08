@@ -10,7 +10,7 @@
 Ba loại bước: co-dinh (chạy lệnh) · claude (goi_claude.py, ra JSON đúng khuôn, có lệnh kiểm) · duyet (dừng chờ David).
 Biến trong lệnh: {APP} {DV} {S} {HL} {P} {W} {VIDEO} {TEN} {HO_SO}. Thêm bước = thêm buoc/<id>.json + tên vào công thức, không sửa file này.
 """
-import json, os, subprocess, sys, time, glob
+import fcntl, json, os, subprocess, sys, time, glob
 from pathlib import Path
 
 APP = Path(__file__).resolve().parent
@@ -98,6 +98,24 @@ def chay_lenh(lenh, log, cwd=None):
     return r.returncode
 
 
+def cho_luot(ten, bid):
+    """HÀNG ĐỢI BƯỚC NẶNG (render, chép lời, dò mặt, mã hoá video…): mỗi lúc chỉ MỘT việc chạy bước nặng trên máy (Mac 8 GB RAM —
+    hai render cùng lúc dễ hết bộ nhớ, hỏng cả hai). Bước nhẹ, bước Claude, cổng duyệt vẫn chạy song song. Phiếu bước khai `"nang": true`.
+    Khoá tự nhả khi tiến trình kết thúc (kể cả khi David bấm Dừng)."""
+    KHO.mkdir(parents=True, exist_ok=True)
+    fd = open(KHO / "_hang-doi.lock", "a+")
+    fcntl.flock(fd, fcntl.LOCK_EX)
+    (KHO / "_dang-giu.txt").write_text(f"{ten} · {bid}")
+    return fd
+
+
+def nha_luot(fd):
+    try:
+        (KHO / "_dang-giu.txt").unlink(missing_ok=True)
+    finally:
+        fcntl.flock(fd, fcntl.LOCK_UN); fd.close()
+
+
 def mot_buoc(tt, bid, gop_y=None):
     ph = phieu(bid); b = bien(tt)
     W = Path(b["W"]); log = W / "log" / f"{bid}.txt"; log.parent.mkdir(parents=True, exist_ok=True)
@@ -133,8 +151,16 @@ def chay(tt_path, tu=None, gop_y=None):
         cu = tt["buoc"].get(bid, {}).get("trang_thai")
         if cu in ("xong", "bo-qua", "da-duyet"):
             continue
+        ph = phieu(bid); khoa = None
+        if ph.get("nang") and dieu_kien(ph, bien(tt)):
+            tt["dang"] = bid; tt["buoc"][bid] = {"trang_thai": "xep-hang", "luc": time.strftime("%H:%M:%S")}; ghi(tt_path, tt)
+            khoa = cho_luot(tt["ten"], bid)
+            tt = doc(tt_path)
         tt["dang"] = bid; tt["buoc"][bid] = {"trang_thai": "dang-chay", "luc": time.strftime("%H:%M:%S")}; ghi(tt_path, tt)
-        kq = mot_buoc(tt, bid, gop_y if bid == tu else None)
+        try:
+            kq = mot_buoc(tt, bid, gop_y if bid == tu else None)
+        finally:
+            if khoa: nha_luot(khoa)
         tt = doc(tt_path)
         tt["buoc"][bid] = {"trang_thai": kq, "luc": time.strftime("%H:%M:%S"), "ts": time.time()}   # ts: rà soát skill đổi sau bước này
         ghi(tt_path, tt)

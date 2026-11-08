@@ -84,9 +84,9 @@ def token(ten):
 
 def chi_tiet(ten):
     f = KHO / ten / "trang-thai.json"; tt = chay.doc(f)
-    if not dang_chay(ten) and any(v.get("trang_thai") == "dang-chay" for v in tt["buoc"].values()):
+    if not dang_chay(ten) and any(v.get("trang_thai") in ("dang-chay", "xep-hang") for v in tt["buoc"].values()):
         for k, v in tt["buoc"].items():      # tiến trình đã chết giữa chừng (tắt máy, tắt app) → coi như đã dừng
-            if v.get("trang_thai") == "dang-chay":
+            if v.get("trang_thai") in ("dang-chay", "xep-hang"):
                 tt["buoc"][k] = {"trang_thai": "da-dung", "luc": v.get("luc")}
         chay.ghi(f, tt)
     ct = chay.cong_thuc(tt["cong_thuc"]); b = chay.bien(tt)
@@ -117,7 +117,8 @@ def chi_tiet(ten):
             import ra_soat; rs = ra_soat.ra_soat(ten)
         except Exception as e:
             rs["loi"] = str(e)
-    return {"ra_soat": rs, "ten": ten, "cong_thuc": ct["ten"], "video": tt["video"], "P": tt["P"], "dang": dang, "dang_chay": dang_chay(ten),
+    giu = KHO / "_dang-giu.txt"
+    return {"hang_doi": giu.read_text().strip() if giu.exists() else None, "ra_soat": rs, "ten": ten, "cong_thuc": ct["ten"], "video": tt["video"], "P": tt["P"], "dang": dang, "dang_chay": dang_chay(ten),
             "buoc": buoc, "cong": cong, "log": log_buoc, "log_chung": doc_tep(KHO / ten / "chay.log", 3000), "token": token(ten),
             "xong_luc": tt.get("xong_luc")}
 

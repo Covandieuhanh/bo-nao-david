@@ -40,7 +40,7 @@ button.dung{border-color:var(--do);color:var(--do)}
 </div>
 <script>
 const $=s=>document.querySelector(s);let chon=null,hen=null;
-const BIEU={'da-dung':'⏸',xong:'✅','da-duyet':'✅','bo-qua':'⏭','dang-chay':'⏳',loi:'❌','cho-duyet':'🟠',chua:'·'};
+const BIEU={'xep-hang':'⏳','bo-qua':'–','da-dung':'⏸',xong:'✅','da-duyet':'✅','dang-chay':'⏳',loi:'❌','cho-duyet':'🟠',chua:'·'};
 const LOAI={'co-dinh':'máy','claude':'Claude','duyet':'David duyệt'};
 const esc=s=>(s??'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 async function api(u,d){const r=await fetch(u,d?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)}:{});const j=await r.json();if(!r.ok)alert(j.loi||'lỗi');return j}
@@ -111,7 +111,8 @@ ${rs.khung_cu.length?`<div style="margin-top:8px">Phần hình (khung dựng) c�
 const loi=d.buoc.find(b=>b.trang_thai=='loi');
 if(loi&&!d.dang_chay)h+=`<div class="the"><b>❌ Lỗi ở bước "${esc(loi.ten)}"</b><pre>${esc(d.log)}</pre><div class="hang"><button class="chinh" onclick="tiep()">Chạy lại bước này</button></div></div>`;
 if(d.xong_luc)h+=`<div class="the">✅ Xong lúc ${esc(d.xong_luc)} · <span class="mo">${esc(d.P)}/video-final.mp4</span></div>`;
-h+=`<h2>Các bước</h2>`+d.buoc.map(b=>`<div class="buoc"><span>${BIEU[b.trang_thai]||'·'}</span><span>${esc(b.ten)}${cuIds.has(b.id)?' <span title="skill đã đổi sau khi bước này chạy" style="color:var(--vang)">⚠</span>':''}</span><span class="loai">${LOAI[b.loai]} ${b.luc?'· '+b.luc:''}</span>${b.loai!='duyet'&&!d.dang_chay&&b.trang_thai!='chua'?`<button class="lai" onclick="lai('${b.id}')">làm lại từ đây</button>`:''}</div>`).join('');
+const xh=d.buoc.find(b=>b.trang_thai=='xep-hang');if(xh&&d.dang_chay)h+=`<div class="the">⏳ <b>Đang xếp hàng</b> ở bước "${esc(xh.ten)}" — máy đang làm bước nặng của: <b>${esc(d.hang_doi||'việc khác')}</b>. Mỗi lúc chỉ một việc chạy bước nặng (render, chép lời, dò mặt) để Mac không quá tải; tới lượt sẽ tự chạy.</div>`;
+h+=`<h2>Các bước</h2>`+d.buoc.map(b=>`<div class="buoc" ${b.trang_thai=='bo-qua'?'style="opacity:.45"':''}><span>${BIEU[b.trang_thai]||'·'}</span><span>${esc(b.ten)}${cuIds.has(b.id)?' <span title="skill đã đổi sau khi bước này chạy" style="color:var(--vang)">⚠</span>':''}</span><span class="loai">${b.trang_thai=='bo-qua'?'bỏ qua — không cần cho video này':b.trang_thai=='xep-hang'?'đang xếp hàng':LOAI[b.loai]+' '+(b.luc?'· '+b.luc:'')}</span>${b.loai!='duyet'&&!d.dang_chay&&b.trang_thai!='chua'?`<button class="lai" onclick="lai('${b.id}')">làm lại từ đây</button>`:''}</div>`).join('');
 if(d.dang_chay&&d.log)h+=`<h2>Đang chạy: ${esc(d.dang)}</h2><pre>${esc(d.log)}</pre>`;
 $('#chinh').innerHTML=h;if(moi&&innerWidth<760)$('#chinh').scrollIntoView({behavior:'smooth'});if(d.dang_chay)hen=setTimeout(()=>xem(ten),3000)}
 // Hộp xác nhận vẽ trong trang (khung trình duyệt của Claude chặn confirm() mặc định)
