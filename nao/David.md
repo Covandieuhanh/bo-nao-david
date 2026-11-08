@@ -2,7 +2,7 @@
 
 > File này giúp Claude (Claude Code, Claude chat) hiểu David là ai và làm việc với David đúng cách.
 > Đặt file vào thư mục hay mở Claude Code, hoặc nhập vào `CLAUDE.md` bằng dòng `@David.md`.
-> Cập nhật lần cuối: 07/11/2026 (thêm mục 9: dữ liệu nền huyền học, đối chiếu với hồ sơ huyền học 31/10/2026).
+> Cập nhật lần cuối: 08/11/2026 (chuẩn hoá: mục 3.1, 3.8, 5 trỏ về nhà chính của luật).
 
 ---
 
@@ -28,18 +28,14 @@
 
 ## 3. Cách Claude cần làm việc với David
 
-1. **Hỏi trước khi tạo hoặc sửa sản phẩm** (file, tài liệu, kịch bản, kế hoạch, code):
-   - Nêu một dòng góc nhìn tổng hợp từ các chuyên gia thật trong lĩnh vực.
-   - Hỏi 3–5 câu, mỗi câu kèm 2–3 gợi ý đáp án (đáp án nên chọn đứng đầu).
-   - Diễn giải lại ý hiểu, **chờ David "ok"** rồi mới làm.
-   - Câu hỏi nhanh, tra cứu thì trả lời thẳng.
+1. **Hỏi trước khi tạo hoặc sửa sản phẩm**, **chờ David "ok"** rồi mới làm: cách hỏi ở skill `hoi-chuyen-gia`, thói quen làm việc chung ở `skills/thoi-quen-lam-viec.md`. Câu hỏi nhanh, tra cứu thì trả lời thẳng.
 2. **Kế hoạch / lộ trình luôn chia 4 phần:** Mục tiêu · Kế hoạch · Quy trình (từng bước) · Thực thi (checklist chia càng nhỏ càng tốt để có mốc làm ngay).
 3. **Tài liệu nghiên cứu phải dịch đúng thuật ngữ chuyên ngành:** tên khung, quy trình, bước bằng tiếng Anh lấy **chính xác** như nguồn rồi dịch sang tiếng Việt. Mỗi thuật ngữ chỉ một bản dịch, dùng thống nhất.
 4. **Tài liệu tổng hợp về một tổ chức chỉ gồm nội dung của tổ chức đó**, không lẫn phần áp dụng cho David hay nguồn ngoài.
 5. **Tài liệu do AI khác viết:** lấy khung của Claude làm chuẩn, tài liệu kia chỉ để bổ sung, và phải kiểm tra nguồn gốc trước khi thêm.
 6. **Sách tự mua**, không dùng bản trôi nổi trên mạng.
 7. Viết **tiếng Việt, ngắn gọn**; không hỏi lại điều đã biết.
-8. **GitHub là bản gốc của bộ não** (luật bắt buộc, 07/11/2026): có gì mới cho skill hoặc bộ não (luật, quyết định, ghi nhớ, mẫu, form) thì đẩy lên repo `Covandieuhanh/David.Claude` ngay. Sản phẩm ở lại máy và tài khoản làm ra nó.
+8. **GitHub là bản gốc của bộ não** (bắt buộc, 07/11/2026): có gì mới cho skill hoặc não thì đẩy lên ngay — chi tiết ở ghi nhớ `nao-github-ban-goc`.
 
 ## 4. Định hướng nghề
 
@@ -92,8 +88,7 @@ Tìm hiểu → mời → phiếu đầu vào → thống nhất → làm trên 
 - Mỗi video 3 phần: **Vấn đề · Giải pháp · Thực thi**; luôn kích thích tương tác; David tự kể câu chuyện thật của mình.
 - Tương tác bình luận dùng đúng hai từ: **"Vấn đề"** (vì sao chưa làm được) và **"Kết quả"** (làm được thì kết quả là gì).
 - Trước khi quay ghi 3 dòng: khoảnh khắc chạm nỗi đau; chỗ kẹt và cách đã gỡ; câu hỏi người xem mang về.
-- Lịch: thứ Ba và thứ Sáu 20:00 giờ Việt Nam; quay theo đợt (2 tuần chọn 4 ý), luôn giữ ≥4 video quay sẵn, tuần khó đăng tối thiểu 1. Đo bằng số người nhắn "gỡ", không bằng lượt xem.
-- Tỷ lệ dẫn dắt: 4 Không · 4 Gợi mở · 2 Mời ("nhắn mình một chữ 'gỡ'", không nói giá); video thứ 5 và 10 của mỗi chục là Mời.
+- Lịch đăng, tỉ lệ dẫn dắt (Không · Gợi mở · Mời "gỡ", không nói giá), số video quay sẵn: `skills/dung-video/ho-so/kenh.json`. Quay theo đợt (2 tuần chọn 4 ý); tuần khó đăng tối thiểu 1. **Đo bằng số người nhắn "gỡ"**, không bằng lượt xem.
 - **Kho 100 video:** đã có tài liệu "Kế hoạch ý chính 100 video — chuyển đổi hành động", viết theo giọng David. Bản cũ chia 5 giai đoạn; giai đoạn 3 "Cơ sở chạy khi vắng chủ" và trụ nội dung "chuyện ở cơ sở" thuộc hướng kinh doanh đã bỏ. **Kho cần làm lại theo ba tầng: bản thân → công việc → mối quan hệ.**
 
 ## 6. Nghiên cứu CCL

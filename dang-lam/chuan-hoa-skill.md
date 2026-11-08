@@ -28,14 +28,14 @@ Mọi skill tự làm việc theo một bộ thói quen chung: đúng quy trình
 - [x] Bước 2: viết file thói quen chung → David duyệt
   - [x] Bản nháp: `skills/thoi-quen-lam-viec.md` (08/11)
   - [x] David duyệt 08/11
-- [ ] Bước 3: gọt từng skill + "Xong khi" (mỗi skill một phiên)
+- [x] Bước 3: gọt từng skill + "Xong khi" (mỗi skill một phiên)
   - [x] hoi-chuyen-gia (08/11: 2–3 gợi ý, bỏ "kinh doanh", một vòng gộp / thiết kế nhiều vòng, "Xong khi" 7 dòng David duyệt)
   - [x] dang-da-kenh (08/11: đọc trước 2 file, cổng 1 gộp mọi lựa chọn, clip tự chọn theo bốn câu, bước nhẹ 0·7·8, "Xong khi" 7 dòng)
   - [x] video-style-edit (08/11: hỏi một lần đầu, bỏ con số cố định/thẻ tít/2 trạng thái, màn chốt nguyên văn, bước nhẹ 1·2·5, "Xong khi" 7 dòng; sửa 1 dòng scene-design + multi-clip)
   - [x] podcast-style-edit (08/11: hỏi một lần + giữ cổng chụp thử, bỏ thẻ tên tập/số nhịp/2 trạng thái, màn chốt nguyên văn, phụ đề dọc cỡ 58, "Xong khi" 7 dòng)
   - [x] cat-highlight-video (08/11: mọi chữ nguyên văn, màn chốt một luật, thẻ cuối không nút phát/không câu Claude viết, bỏ số nhịp, "Xong khi" 7 dòng)
   - [x] hoc-video-mau (08/11: đọc trước thói quen chung, phiếu học là cổng hỏi duy nhất, tải 720p chỉ để học rồi xoá, bước nhẹ 1–3 ở trinh-bay, "Xong khi" 6 dòng)
-  - [ ] 3 file não
+  - [x] 3 file não (08/11: David.md 3.1/3.8/5 trỏ nhà chính; AGENTS thêm thoi-quen vào bảng đọc, rút mục giữ não; CLAUDE-toan-cuc trỏ thoi-quen; 2 ghi nhớ vào luu-tru, 3 ghi nhớ rút ngắn, 9 ghi nhớ sửa theo N8/N9/C2/C4/C7/T3/T8; MEMORY khớp 33 file)
 - [ ] Bước 4: chạy thử một việc thật, David chấm, sửa đúng một chỗ
 
 ## Code còn lệch với skill đã gọt (ghi 08/11, làm ở bước 4 hoặc khi gọt khối)
@@ -43,3 +43,10 @@ Mọi skill tự làm việc theo một bộ thói quen chung: đúng quy trình
 - Thẻ cuối highlight: skill ghi không nút phát; `hl_edl.py` (dòng ~191) và `EndCard` (`Show.jsx`, `play = true` mặc định) còn nút phát.
 - Câu gợi tò mò `tease`: skill đã bỏ; `hl_apply.py` dòng ~52 vẫn đọc `tease` (không đặt `tease` trong phuong-an.json là đủ).
 - `luat-chung.md` mục 0 còn "sao chép luôn chuẩn kênh lớn" (N9); khối 06, 08, 00, 15 có thể còn thẻ tít / màn chốt / chọn chữ bìa kiểu cũ.
+
+## Xong khi (mục não, David duyệt 08/11)
+1. Mỗi luật chỉ một nhà; chỗ khác một dòng trỏ.
+2. Không ghi nhớ nào ngược luật đã chốt hoặc trỏ đường dẫn không tồn tại.
+3. `MEMORY.md` khớp từng file (33/33, đã kiểm 08/11).
+4. AI mới đọc `AGENTS.md` đi tới được `thoi-quen-lam-viec.md`.
+5. Đã đẩy GitHub; file trong `~/.claude` vẫn là lối tắt vào repo.

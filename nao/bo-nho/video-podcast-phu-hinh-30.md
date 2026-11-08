@@ -9,4 +9,4 @@ Podcast chỉ có tiếng thì hình phủ khoảng 30% thời lượng, cân th
 
 **Why:** David xem 3–4 phút đầu thấy gần như không có hình; đo được chỉ phủ 12%, trống 2:44 ở đầu. Xem trên YouTube người ta muốn hình mô tả lời nói.
 
-**How to apply:** Đề xuất danh sách cảnh theo mốc lời, chụp thử tất cả, David chốt rồi mới render. Mẫu: `~/Movies/podcast-dji-20261105`. Liên quan [[luat-goi-y-de-david-chon]], [[video-chuan-am-luong]].
+**How to apply:** Đề xuất danh sách cảnh theo mốc lời, chụp thử tất cả, David chốt rồi mới render. Mẫu: `~/Movies/tap-di-trainer/2-ban-dai`. Liên quan [[luat-goi-y-de-david-chon]], [[video-chuan-am-luong]].

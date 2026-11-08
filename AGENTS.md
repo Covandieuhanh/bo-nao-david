@@ -11,7 +11,8 @@ Bạn đang làm việc với **David Trần** (Trần Đức Cường), nhà đ
 | 3 | [TRANG-THAI-HIEN-TAI.md](TRANG-THAI-HIEN-TAI.md) | Đang làm dở gì, việc tiếp theo, việc chờ David quyết |
 | 4 | [nao/bo-nho/MEMORY.md](nao/bo-nho/MEMORY.md) | Mục lục các bài học và quyết định. Mở từng file khi việc đụng tới |
 | 5 | [skills/hoi-chuyen-gia/SKILL.md](skills/hoi-chuyen-gia/SKILL.md) | Luật hỏi trước khi tạo hoặc sửa bất cứ thứ gì |
-| 6 | Skill đúng với việc (bảng dưới) | Quy trình từng bước |
+| 6 | [skills/thoi-quen-lam-viec.md](skills/thoi-quen-lam-viec.md) | Thói quen chung mọi skill: đọc đúng phần, hỏi một lần, trong lúc làm, cuối việc |
+| 7 | Skill đúng với việc (bảng dưới) | Quy trình từng bước |
 
 Làm nội dung về lãnh đạo, ba tầng làm chủ, phương pháp hay nhân hiệu: tra [tham-chieu/ccl/](tham-chieu/ccl/), hình mẫu chuẩn David chọn, và dùng đúng thuật ngữ dịch trong đó.
 
@@ -52,9 +53,7 @@ Muốn hiểu toàn bộ hệ dựng video: [GIOI-THIEU.md](skills/dung-video/GI
 
 ## Giữ bộ não luôn mới
 
-- Mỗi khi David chốt một quyết định hoặc sửa cách làm: ghi một file trong `nao/bo-nho/`, thêm một dòng vào `MEMORY.md`.
-- Khi xong một đợt việc: cập nhật `TRANG-THAI-HIEN-TAI.md`.
-- **Xong mỗi thay đổi về skill hoặc não: đẩy lên GitHub ngay** bằng `bash scripts/sync.sh --push` (bắt buộc, không chờ David nói). Lệnh này đồng bộ 2 chiều: kéo bản mới từ GitHub về rồi đẩy thay đổi lên. Trên máy đã chạy `install.sh`, các file não trong `~/.claude` là lối tắt vào repo (máy và repo là một bản), và hook tự kéo về đầu phiên, đẩy lên cuối phiên. AI không chạy được lệnh: đề xuất nội dung cần sửa để David duyệt.
-- David nói **"cập nhật não"**: chạy ngay lệnh trên.
+- Cuối mỗi việc làm theo `skills/thoi-quen-lam-viec.md` mục 4: ghi góp ý đúng một chỗ, cập nhật `TRANG-THAI-HIEN-TAI.md` / file `dang-lam/`, đẩy GitHub.
+- **Xong mỗi thay đổi về skill hoặc não: đẩy lên GitHub ngay** bằng `bash scripts/sync.sh --push` (bắt buộc, đồng bộ 2 chiều). David nói **"cập nhật não"** cũng chạy lệnh này. Chi tiết: ghi nhớ `nao-github-ban-goc`. AI không chạy được lệnh: đề xuất nội dung cần sửa để David duyệt.
 - Mọi tên file, thư mục, ghi nhớ đặt bằng tiếng Việt không dấu, chữ thường, gạch nối (ví dụ `video-goc`), đồng nhất ở mọi nơi. Ghi nhớ chỉ đúng cho một máy đặt tên bắt đầu `may-`, không đưa lên repo.
-- Repo giữ đủ bộ não: hồ sơ, luật, bộ nhớ, skill, tài liệu tham chiếu (`tham-chieu/`), nghiên cứu, việc dở, mẫu và form. Không đưa lên: sản phẩm làm ra từ bộ não (dự án video, bài viết, bài đăng), mật khẩu, token, cookie, lịch sử chat thô, video gốc, thông tin khách chưa ẩn danh, giấy tờ cá nhân trong `~/Documents/2-ca-nhan/`.
+- Không đưa lên: sản phẩm làm ra từ bộ não (dự án video, bài viết, bài đăng), mật khẩu, token, cookie, lịch sử chat thô, video gốc, thông tin khách chưa ẩn danh, giấy tờ cá nhân trong `~/Documents/2-ca-nhan/`.

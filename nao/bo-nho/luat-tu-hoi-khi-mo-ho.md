@@ -5,8 +5,8 @@ metadata:
   type: feedback
 ---
 
-David hay nhắn bằng đọc chính tả, nên câu có thể lệch chữ hoặc mơ hồ. Gặp một trong 6 tín hiệu (hiểu nhiều cách, mâu thuẫn luật đã chốt, việc tốn kém hoặc khó đảo ngược, thiếu quyết định, vấn đề phát sinh giữa chừng, giả định chưa xác nhận) thì em tự dừng hỏi 1 vòng ngắn có đề xuất, kể cả khi đang làm giữa chừng. Chuyện nhỏ có mặc định rõ thì tự làm và ghi một dòng.
+Gặp một trong 6 tín hiệu (hiểu nhiều cách — nhất là chữ đọc chính tả lệch, mâu thuẫn luật đã chốt, tốn kém/khó đảo ngược, thiếu quyết định, vấn đề giữa chừng, giả định chưa xác nhận) thì **tự dừng hỏi**, kể cả giữa chừng. Nhà chính: skill `hoi-chuyen-gia`.
 
-**Why:** 2026-11-05 em tự đoán câu "không biết thông tin nào khi mà đăng lên" rồi render lại. David muốn em "tự nhận diện vấn đề để tự hỏi lại tôi chứ không cần tôi yêu cầu".
+**Why:** 05/11/2026 em tự đoán câu "không biết thông tin nào khi mà đăng lên" rồi render lại. David: "tự nhận diện vấn đề để tự hỏi lại tôi chứ không cần tôi yêu cầu".
 
-**How to apply:** chi tiết trong skill hoi-chuyen-gia, mục "Tự nhận diện lúc cần hỏi". Liên quan [[video-khong-tu-render]].
+**How to apply:** theo `hoi-chuyen-gia` mục "Sáu tín hiệu". Liên quan [[video-khong-tu-render]], [[luat-goi-y-de-david-chon]].

@@ -5,7 +5,7 @@ Tên file bắt đầu bằng nhóm: `luat-` cách làm việc với David · `n
 ## Luật làm việc với David
 
 - [Công cụ cài thì đưa vào skill](luat-cong-cu-cai-dua-vao-skill.md) — David cài công cụ (pyannote…) để nâng skill; giúp việc tốt hơn thì tích hợp luôn (2026-11-07)
-- [Gợi ý để David chọn](luat-goi-y-de-david-chon.md) — không tự chốt chữ, hình, nội dung; ngoại lệ: cắt clip thì tự chọn ý (2026-11-07)
+- [Gợi ý để David chọn](luat-goi-y-de-david-chon.md) — "làm đi" không chốt lựa chọn; ngoại lệ cắt clip, làm lại video cũ; nhà chính thoi-quen-lam-viec (sửa 08/11)
 - [Học là bổ sung](luat-hoc-la-bo-sung.md) — học mẫu mới chỉ thêm, không thay cái David đã sửa; số khung dọc không dùng cho ngang (2026-11-08)
 - [Kết quả hơn tốc độ](luat-ket-qua-hon-toc-do.md) — làm đúng quy trình, bước cần kết quả render thì chờ; chỗ chưa rõ thì trao đổi (2026-11-05)
 - [Nội dung của David, thẩm mỹ của skill](luat-noi-dung-cua-david.md) — không khuôn lời; học nhịp/trình bày, giữ thẩm mỹ (2026-11-05)
@@ -14,9 +14,8 @@ Tên file bắt đầu bằng nhóm: `luat-` cách làm việc với David · `n
 ## Bộ não và GitHub
 
 - [Đặt tên không dấu](nao-dat-ten-khong-dau.md) — mọi tên đều tiếng Việt không dấu, chữ thường, gạch nối; đồng nhất, không trộn tiếng Anh (2026-11-07)
-- [GitHub là bản gốc bộ não](nao-github-ban-goc.md) — BẮT BUỘC đẩy ngay; não có đủ dữ liệu dùng chung (kể cả tham chiếu như CCL); chỉ sản phẩm ở máy làm ra nó; Mac ↔ GitHub 2 chiều (2026-11-07)
-- [Hồ sơ David + bộ lọc nội dung](nao-ho-so-va-bo-loc.md) — ~/.claude/David.md, khối 00, kenh.json, sổ danh mục; đăng bài chờ "bắt đầu làm" (2026-11-05)
-- [Bộ não David.Claude](nao-repo-david-claude.md) — repo riêng tư dùng chung cho mọi AI; "cập nhật não" = scripts/sync.sh --push (2026-11-05)
+- [GitHub là bản gốc bộ não](nao-github-ban-goc.md) — BẮT BUỘC đẩy ngay; link repo, "cập nhật não" = sync.sh --push; chỉ sản phẩm ở máy làm ra nó; Mac ↔ GitHub 2 chiều (gộp 08/11)
+- [Hồ sơ David + bộ lọc nội dung](nao-ho-so-va-bo-loc.md) — ~/.claude/David.md, khối 00, kenh.json (nhà duy nhất của luật kênh), sổ danh mục
 
 ## Video
 
@@ -34,15 +33,14 @@ Tên file bắt đầu bằng nhóm: `luat-` cách làm việc với David · `n
 - [Không cài HyperFrames](video-khong-cai-hyperframes.md) — giữ Remotion, chỉ học ý rồi tự viết lại vào bộ skill video (2026-11-06)
 - [Không ghi chú kỹ thuật trên video](video-khong-nhan-ky-thuat.md) — bỏ nhãn ×1,6/×0,5/slow-mo; chữ chỉ cho nội dung
 - [Không tự render lại](video-khong-tu-render.md) — góp ý nhỏ chỉ sửa skill/kịch bản; render khi David yêu cầu (2026-11-05)
-- [Kiến trúc skill video](video-kien-truc-skill.md) — hồ sơ tham số + 18 khối + thư viện hình + mẫu chuẩn; sửa đúng một chỗ (2026-11-04)
+- [Kiến trúc skill video](video-kien-truc-skill.md) — hồ sơ tham số + 21 khối (00–20) + thư viện hình + mẫu chuẩn; sửa đúng một chỗ (2026-11-04, sửa 08/11)
 - [Luôn có motion graphics](video-luon-co-motion-graphics.md) — điểm nhấn nhiều loại: hình vẽ, chữ, biểu tượng, làm nổi người nói; không chỉ toàn màn hình (2026-11-07)
 - [Mỗi lúc một chỗ chữ](video-phu-de-mot-cho-chu.md) — phụ đề dọc cụm 5–8 chữ cỡ 58 bằng chữ thẻ; chữ motion graphic hiện thì phụ đề nhường (2026-11-08)
 - [Movies xếp theo tập](video-movies-xep-theo-tap.md) — gốc/bản dài/highlight chung tap-<tên>, skill đã sửa theo
-- [Người xem là trung tâm](video-nguoi-xem-trung-tam.md) — chuẩn kênh lớn đã chứng minh thì sao chép luôn (2026-11-04)
-- [Nhạc theo tuyến nội dung](video-nhac-theo-tuyen.md) — project.tuyen bắt buộc; mức nhạc theo chuẩn âm lượng chung (2026-11-05, sửa 06/11)
+- [Người xem là trung tâm](video-nguoi-xem-trung-tam.md) — học kênh lớn ở nhịp và trình bày, giữ thẩm mỹ David (2026-11-04, sửa 08/11)
+- [Nhạc theo tuyến nội dung](video-nhac-theo-tuyen.md) — project.tuyen bắt buộc, chỉ kho nhạc kênh; mức ~23 dB dưới giọng (2026-11-05, sửa 08/11)
 - [Bìa podcast không mặt](video-podcast-bia-khong-mat.md) — podcast chỉ có tiếng thì bìa không có mặt người, phải khớp nội dung; mặt người chỉ cho video quay hình (2026-11-06)
 - [Podcast phủ hình 30%](video-podcast-phu-hinh-30.md) — motion graphic khoảng 30% thời lượng, cân theo nội dung; chụp thử cho David chốt rồi mới render (2026-11-06)
-- [Video style edit](video-quy-trinh-style-edit.md) — bộ skill ở ~/.claude/skills/dung-video; highlight 3–5 clip, 2 trạng thái, 4 bài nhạc cố định; vlog chuẩn Khoai Lang Thang + Jessie Luong
 
 ## Chỉ máy Mac chính (file không lên GitHub)
 

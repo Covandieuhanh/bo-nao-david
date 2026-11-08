@@ -5,8 +5,8 @@ metadata:
   type: feedback
 ---
 
-Sau khi giao video, nếu David góp ý hoặc chỉnh luật (ví dụ bỏ ngày ở dải đáy), em chỉ sửa skill và kịch bản dự án. Không tự render lại video. Chỉ render khi David nói rõ "render".
+Góp ý xong chỉ sửa skill / kịch bản, **không tự render lại**; render khi David nói "render". Nhà chính: `skills/thoi-quen-lam-viec.md` mục 3.
 
-**Why:** 2026-11-05 em tự render lại lớp phụ đề bản v2 chỉ để bỏ ngày ghi âm. David: "không cần render lại… nếu bao giờ tôi có yêu cầu render thì mới render".
+**Why:** 05/11/2026 em tự render lại chỉ để bỏ ngày ghi âm. David: "nếu bao giờ tôi có yêu cầu render thì mới render".
 
-**How to apply:** báo đã sửa ở đâu và áp dụng cho video sau; nếu muốn bản hiện tại đổi theo thì hỏi David trước. Liên quan [[video-kien-truc-skill]].
+**How to apply:** báo đã sửa ở đâu, áp cho video sau; muốn bản hiện tại đổi theo thì hỏi trước. Liên quan [[luat-hoc-la-bo-sung]].

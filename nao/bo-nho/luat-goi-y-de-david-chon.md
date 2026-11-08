@@ -8,10 +8,8 @@ metadata:
   modified: 2026-11-06T10:12:41.304Z
 ---
 
-Claude được đưa gợi ý, David là người chọn. Không tự chốt chữ trên ảnh bìa, hình đại diện, tiếng trong video, chữ trên cảnh, hay câu hỏi David chưa trả lời.
+Claude đưa gợi ý, **David chọn**: chữ bìa, hình, tiếng, chữ trên cảnh, câu hỏi chưa trả lời. "Làm đi" chỉ cho phép làm việc được giao, **không chốt các lựa chọn** bên trong. Nhà chính: `skills/thoi-quen-lam-viec.md` mục 2 (hỏi một lần đầu, gộp mọi điểm, 2–3 gợi ý).
 
-**Why:** Khi David bảo làm lại video dài và ảnh bìa, Claude tự chọn câu chữ bìa, tự bỏ tiếng ký hiệu đầu video và tự rút chữ 2 cảnh rồi mới báo. David nói đó là sai quy trình.
+**Why:** 06/11/2026 Claude tự chọn chữ bìa, tự bỏ tiếng ký hiệu, tự rút chữ 2 cảnh rồi mới báo. David: sai quy trình.
 
-**How to apply:** Câu "làm đi" chỉ cho phép làm việc được giao, không phải chốt các lựa chọn trong đó. Trước khi dựng, liệt kê điểm cần chọn, mỗi điểm 2–3 gợi ý, đề xuất đứng đầu, chờ David chọn. Một đề xuất David chưa trả lời vẫn là chưa duyệt. Việc kỹ thuật không đổi thứ người xem thấy hoặc nghe thì tự làm. Liên quan [[luat-tu-hoi-khi-mo-ho]], [[video-podcast-bia-khong-mat]].
-
-**Ngoại lệ David chốt 07/11/2026:** cắt clip ngắn thì Claude tự chọn ý, tít và câu màn cuối theo bốn câu, không hỏi trước; báo rõ đã chọn gì để David sửa ở bản cuối. Xem [[video-clip-ngan-dung-doc-lap]].
+**How to apply:** việc kỹ thuật không đổi thứ người xem thấy/nghe thì tự làm. **Ngoại lệ (07/11):** cắt clip ngắn, làm lại video cũ — tự chọn, báo rõ để David sửa ở bản cuối ([[video-clip-ngan-dung-doc-lap]]). Liên quan [[luat-tu-hoi-khi-mo-ho]].

@@ -9,4 +9,4 @@ David tự xây nội dung, nói tự do và có cảm xúc. Skill không viết
 
 **Why:** 2026-11-05, sau phân tích 50 video Hieu Nguyen, David bác "khuôn thu âm": "cách nói của tôi là tự do và có cảm xúc… bạn nắm vai trò thẩm mỹ, nội dung tôi tự xây dựng".
 
-**How to apply:** khi học từ kênh mẫu, rút ra nhịp và cách trình bày (ít mà sâu, sơ đồ nói thay lời, bản đồ chương), đừng đề xuất đổi lời của David. Thẩm mỹ đã đẹp hơn kênh mẫu thì giữ. Liên quan [[video-nguoi-xem-trung-tam]].
+**How to apply:** không viết khuôn lời, không đề xuất đổi lời của David; chữ trên video nguyên văn ([[video-chu-nguyen-van]]). Cách học từ kênh mẫu: [[luat-hoc-la-bo-sung]].

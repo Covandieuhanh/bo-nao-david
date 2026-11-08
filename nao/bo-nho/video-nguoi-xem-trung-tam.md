@@ -1,6 +1,6 @@
 ---
 name: video-nguoi-xem-trung-tam
-description: "Kim chỉ nam bộ skill video (David chốt 2026-11-04) — người xem làm trung tâm; chuẩn kênh lớn đã chứng minh thì sao chép luôn, không cần thử A/B"
+description: "Kim chỉ nam bộ skill video — người xem làm trung tâm; học kênh lớn ở nhịp và cách trình bày, giữ thẩm mỹ của David (04/11, sửa 08/11)"
 metadata:
   node_type: memory
   type: feedback
@@ -8,8 +8,8 @@ metadata:
   modified: 2026-11-04T08:25:17.029Z
 ---
 
-Mục tiêu của David: **lấy người xem làm trung tâm**. Kênh lớn (DOAC, Hormozi, MrBeast, Ali Abdaal, Jay Shetty…) đã chứng minh cách nào giữ người xem thì **sao chép luôn** chuẩn đó, không cần thử A/B.
+Mục tiêu của David: **lấy người xem làm trung tâm** — người xem ở lại → hiểu ý chính → làm theo. Kênh lớn (DOAC, Hormozi, MrBeast, Ali Abdaal, Jay Shetty…) là nơi **học nhịp và cách trình bày** đã được chứng minh; **thẩm mỹ, bộ nhận diện và lời của David giữ nguyên**, học chỉ là bổ sung.
 
-**Why:** David nói khi duyệt kế hoạch sửa skill sau bản đánh giá đối chiếu 2026-11-04: "các kênh lớn là hình mẫu thành công đã đạt được điều này rồi thì sao chép luôn".
+**Why:** 04/11/2026 David: "các kênh lớn là hình mẫu thành công… thì sao chép luôn". Từ 05–08/11 David chốt thêm: nội dung là của David ([[luat-noi-dung-cua-david]]), bố cục tự cân và chỉ học trình bày ([[video-bo-cuc-tu-can]]), học là bổ sung ([[luat-hoc-la-bo-sung]]). Bản 08/11 gộp các ý đó, bỏ câu "sao chép luôn" (rà soát N9).
 
-**How to apply:** khi luật cũ dựa trên gu riêng mâu thuẫn với chuẩn kênh lớn (vd. phụ đề đáy so với phụ đề giữa khung 1–3 chữ ở video ngắn, giữ ngập ngừng, chip ⏩ lộ mối cắt), nghiêng về chuẩn kênh lớn và ghi lý do vào changelog. Vẫn giữ: bộ nhận diện David, lằn ranh nội dung, phụ đề nguyên văn, không bịa. Mỗi video ghi `so-lieu.md` để kiểm lại bằng số thật. Liên quan [[video-quy-trinh-style-edit]].
+**How to apply:** luật nhịp/trình bày dựa trên gu riêng mà trái chuẩn kênh lớn → nghiêng về chuẩn kênh lớn, ghi lý do vào changelog. Không đổi màu, font, nét vẽ, nhạc kênh, lời David. Mỗi video ghi `so-lieu.md` để kiểm bằng số thật.
