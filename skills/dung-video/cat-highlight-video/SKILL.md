@@ -196,7 +196,7 @@ $SKILL/assets/music/               # soi-*.mp3 · lang-*.mp3 — kho nhạc kên
 5. Phụ đề cụm 5–8 chữ không chồng chữ motion graphic; có thanh thời gian và thẻ cuối đúng bộ nhận diện.
 6. Nhạc từ kho kênh, thấp hơn giọng ~23 dB.
 7. Có dang-bai.md (lịch đăng, mốc bìa, mô tả, bình luận ghim) + so-lieu.md; David không phải sửa lại vì trái luật đã chốt.
-8. David chốt cả tập → dọn file tạm bằng `don_tap.py` (khối 17), David duyệt danh sách trước.
+8. David chốt cả tập → dọn file tạm luôn bằng `don_tap.py --xoa` (khối 17), không hỏi lại; chỉ hỏi phần ⏸ đang dở.
 
 ## Tài liệu kèm (chỉ đọc khi bước cần, cân nhắc đổi luật hoặc gỡ lỗi)
 - `references/changelog.md` — quyết định theo ngày + lý do.

@@ -40,7 +40,8 @@ File này giữ các thói quen **dùng chung cho mọi skill**. Luật riêng c
 - **Báo cáo ngắn, tiếng Việt:** đã làm gì · đã kiểm gì · chưa kiểm gì · điều cần David xác nhận.
 - **Góp ý của David ghi đúng một chỗ:** sửa skill hoặc khối bị ảnh hưởng + một dòng nhật ký (`changelog` của skill, hoặc mục "Nhật ký").
   Chỉ luật dùng chung cho nhiều skill mới vào `nao/bo-nho/`; đã có ghi nhớ gần giống thì sửa ghi nhớ đó, không tạo cái mới.
-- **Video đã chốt hoặc đã đăng:** dọn file tạm của tập bằng `don_tap.py` (khối 17). Script liệt kê trước, David duyệt rồi mới xoá.
+- **Video đã chốt hoặc đã đăng:** dọn file tạm luôn bằng `don_tap.py --xoa` (khối 17), không hỏi lại David (chốt 08/11/2026).
+  Chỉ hỏi khi script báo ⏸ (việc đang dở, có thể của phiên khác). File vào Thùng rác, David tự đổ.
 - **Cập nhật file theo dõi** (`dang-lam/…`, `TRANG-THAI-HIEN-TAI.md`) khi xong một đợt việc.
 - **Đẩy GitHub ngay** khi có thay đổi về skill hoặc não: `bash scripts/sync.sh --push`.
 - Việc tiếp theo lớn → đề nghị mở **phiên mới**, ghi sẵn bước tiếp ở file theo dõi để phiên mới không phải tìm lại.

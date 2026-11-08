@@ -66,9 +66,12 @@ Câu hỏi khi soi tờ ảnh: che chữ đi, hình còn nói được ý không
 
 Không dọn ngay lúc render xong, mà dọn khi David nói "chốt" hoặc khi video đã đăng. Nếu tập còn cắt highlight thì dọn sau khi đã có clip, vì dọn xong thì không còn `davinci/media/video_goc.mp4` để cắt.
 ```bash
-python3 -I $SKILL/scripts/don_tap.py ~/Movies/tap-<tên>          # chỉ liệt kê kèm dung lượng → gửi David duyệt
-python3 -I $SKILL/scripts/don_tap.py --xoa ~/Movies/tap-<tên>    # chỉ chạy sau khi David "ok"
+python3 -I $SKILL/scripts/don_tap.py --xoa <dự án>    # David chốt → chạy thẳng, KHÔNG gửi danh sách hỏi lại (David chốt 08/11/2026)
+python3 -I $SKILL/scripts/don_tap.py <dự án>          # chỉ liệt kê, khi cần xem trước
 ```
+`<dự án>` = `~/Movies/tap-<tên>` hoặc `~/Movies/vlog/<tên>`. Chỉ hỏi David khi script báo **⏸** — việc đang dở: tiến trình đang chạy
+trong dự án (thường là phiên khác), file kịch bản sửa sau bản cuối mà chưa render lại, hoặc chưa có `video-final.mp4`. Phần ⏸ để
+nguyên, phần còn lại vẫn dọn. Báo David một dòng: đã giải phóng bao nhiêu, Thùng rác ở đâu, phần nào bỏ qua và vì sao.
 - **Giữ:** `1-goc/` · `video-final*.mp4` ở gốc mỗi dự án · `phat-hanh/` · mọi file chữ.
 - **Xoá hẳn:** `node_modules` · `.remotion` · `.cache`.
 - **Đưa vào Thùng rác** (David tự đổ): mọi file hình, tiếng, video còn lại.

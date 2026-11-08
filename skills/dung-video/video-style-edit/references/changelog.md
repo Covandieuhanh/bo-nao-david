@@ -148,3 +148,7 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
 - Kho thêm 5 bài từ `~/Music/nhac-nen`: du-lich-1/2, kham-pha-1/2, ngam-canh-1; tuyến mới du_lich, kham_pha, ngam_canh (`ho-so/chung.json`).
 - Mức cân từng bài gom về một nguồn `nhac.muc` (vlog_edl, render_preview, hl_edl, hl_apply); Show.jsx ghép tự lấy khi edl không ghi gain — lỗi gốc: edl viết tay thiếu gain → nhạc to gấp đôi.
 - vlog_edl.py: plan.json `tuyen` chọn bài đoạn sôi, `nhac: {soi, lang}` ép tay.
+
+## 2026-11-08 · dọn file tạm
+- David: "cập nhật vào quy trình dọn để lần sau không cần hỏi lại tôi nữa trừ khi vướng vào file đang làm dở của phiên khác". David chốt → `don_tap.py --xoa` chạy thẳng.
+- don_tap.py nhận cả `~/Movies/vlog/<tên>`; tự bỏ qua (⏸, hỏi David) khi có tiến trình chạy trong dự án, kịch bản sửa sau bản cuối, hoặc chưa có bản cuối.
