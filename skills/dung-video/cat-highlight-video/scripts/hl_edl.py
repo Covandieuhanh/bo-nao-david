@@ -53,18 +53,28 @@ def sub_lines(p):
             nxt = min((k for k in known if k[0] > i), default=(len(toks), p['end'] - off), key=lambda k: k[0])
             t[i] = prv[1] + (nxt[1] - prv[1]) * (i - prv[0]) / max(1, nxt[0] - prv[0])
     t = [min(p['end'] - 0.3, max(p['start'], x + off)) for x in t]
-    # chia dòng theo cụm nghĩa: ngắt TRƯỚC từ nối khi dòng đã ≥ 3 chữ, sau dấu phẩy khi ≥ 3 chữ, tối đa 8 chữ
-    CONJ = {'thì', 'mà', 'để', 'nhưng', 'nên', 'hay', 'từ', 'và', 'là', 'không', 'các', 'sẽ', 'trong', 'của', 'với'}
-    lines, cur = [], []
-    for i, w in enumerate(toks):
-        nxt = norm(toks[i + 1]) if i + 1 < len(toks) else ''
-        cur.append(i)
-        if len(cur) >= 8 or (len(cur) >= 3 and w.endswith(',')) or (len(cur) >= 4 and nxt in CONJ) \
-                or (len(cur) >= 3 and i + 1 < len(toks) and toks[i + 1][0].isupper()):
-            lines.append(cur); cur = []
-    if cur:
-        if len(cur) <= 2 and lines: lines[-1] += cur
-        else: lines.append(cur)
+    # chia dòng theo cụm nghĩa (David chốt 2026-11-08: cụm trọn ý ~5–8 chữ, không nhịp 3 chữ). Quy hoạch động: mỗi dòng 3–10 chữ
+    # (gần 6–7 chữ là đẹp), chỗ ngắt tốt nhất là hết câu / sau dấu phẩy, kế đó là trước từ nối; ngắt giữa cụm khác bị phạt nặng.
+    # Không ngắt giữa cụm cố định ("rất là"). Dòng > 8 chữ thì ShortLine chia đều 2 cụm.
+    CONJ = {'thì', 'mà', 'để', 'nhưng', 'nên', 'hay', 'từ', 'và', 'là', 'không', 'các', 'sẽ', 'trong', 'của', 'với', 'đó', 'khi', 'nếu'}
+    LIEN = {'rất', 'cũng', 'chính', 'đó', 'là', 'của', 'các', 'những', 'một', 'cái', 'được', 'bị', 'tự', 'đối', 'câu', 'về', 'mặt'}   # không ngắt NGAY SAU các chữ này
+    n = len(toks)
+    def cut_cost(i):   # giá ngắt SAU chữ i
+        if i == n - 1: return 0
+        w, nx = toks[i], toks[i + 1]
+        if w[-1] in '.?!' or (len(nx) > 1 and nx[0].isupper()): return 0
+        if w[-1] in ',;:': return 0.5
+        if norm(w) in LIEN: return 9
+        if norm(nx) in CONJ: return 1.5
+        return 8
+    best = [0.0] + [float('inf')] * n; prev = [0] * (n + 1)
+    for j in range(1, n + 1):
+        for i in range(max(0, j - 10), j):
+            L = j - i
+            c = best[i] + cut_cost(j - 1) + 0.12 * (L - 6.5) ** 2 + (8 if L < 3 and j < n else 0)
+            if c < best[j]: best[j], prev[j] = c, i
+    lines, j = [], n
+    while j > 0: lines.insert(0, list(range(prev[j], j))); j = prev[j]
     out = []
     for j, ln in enumerate(lines):
         a = t[ln[0]]; b = t[lines[j + 1][0]] if j + 1 < len(lines) else p['end']
@@ -139,7 +149,8 @@ if tit:
 hoso.dump('highlight', os.path.join(E, 'motion/src/hoso.json'))   # khung dựng đọc hồ sơ highlight (cỡ phụ đề nhịp chữ…)
 tpl = open(os.path.join(E, 'motion/src/edl.js'), encoding='utf-8').read()
 head = tpl[:tpl.index('const RAW = [')]
-mid = tpl[tpl.index('let acc = 0;'):tpl.index('// ===== Phụ đề')]
+_endmid = tpl.index('// TS(src)') if '// TS(src)' in tpl else tpl.index('// ===== Phụ đề')   # chạy lại nhiều lần không nhân đôi khối TS
+mid = tpl[tpl.index('let acc = 0;'):_endmid]
 src = f"""{head}// Viết bởi cat-highlight-video/scripts/hl_edl.py từ {H}/phuong-an.json (phương án {opt['id']}) — Claude chỉnh tiếp.
 const RAW = [
 {chr(10).join(raw)}
@@ -156,7 +167,7 @@ export const TS = (src) => {{
 export const SUBS = [
 {chr(10).join(subs)}
 ];
-// Video ngắn: phụ đề 1–3 chữ to mỗi nhịp kiểu kênh lớn (subStyle.js ShortLine)
+// Video ngắn: phụ đề cụm 5–8 chữ, cỡ bằng chữ thẻ (subStyle.js ShortLine, David chốt 2026-11-08)
 export const SHORT = true;
 
 // ===== Lớp đồ hoạ (pow · action · pointer …) — Claude thêm theo nội dung; chữ CHỈ lấy nguyên văn từ lời nói =====

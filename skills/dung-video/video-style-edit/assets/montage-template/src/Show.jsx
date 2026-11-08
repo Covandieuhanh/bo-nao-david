@@ -195,9 +195,9 @@ const Arrow = ({size = 30, color = C.accent}) => (
 
 // ===== Phụ đề: KIỂU CHUẨN DÙNG CHUNG (subStyle.js — giống hệt chế độ 1 video): hộp nền tối, đáy vùng an toàn, từ khoá cam =====
 const WHO = {1: C.accent, 2: '#4DA3FF'};   // ô phụ đề theo người nói (kiểu hội thoại GaryVee) — chỉ đổi viền
-const Caption = ({text, hl, len, who}) => {
-  const f = useCurrentFrame();
-  const o = Math.min(ease(f, 0, 3), 1 - ease(f, len - 3, len));
+const Caption = ({text, hl, len, who, off = 0}) => {
+  const fl = useCurrentFrame(), f = fl + off;
+  const o = Math.min(ease(fl, 0, 3), 1 - ease(f, len - 3, len));
   return (
     <AbsoluteFill>
       <div style={{position: 'absolute', left: SAFE.left, width: SAFE_W, top: SAFE.bottom - SUB.bottomGap - HL_LIFT, transform: 'translateY(-100%)',
@@ -748,6 +748,23 @@ const FullOv = ({children}) => {
 
 const IllusOv = ({start, len, ...o}) => <Illus {...o} start={start} len={len} />;
 const DiagramOv = ({start, len, ...o}) => <Diagram {...o} start={start} len={len} />;
+// MỖI LÚC MỘT CHỖ CHỮ (David chốt 2026-11-08): lớp motion graphic có chữ đang hiện → phụ đề nhường (ẩn đúng khoảng đó, phần
+// còn lại của dòng vẫn hiện). Không tính lớp chạy suốt clip (dấu góc, tít ghim, nhãn teaser).
+const KHONG_CHU = new Set(['pinTitle', 'hud', 'teaserTag']);
+const nhuong = (s) => {
+  let parts = [{...s, s0: s.start, s1: s.end}];   // s0/s1: mốc gốc của dòng → phần sau tiếp đúng cụm chữ đang nói
+  for (const o of OVS) {
+    if (KHONG_CHU.has(o.type) || o.end == null) continue;
+    parts = parts.flatMap((p) => {
+      if (o.end <= p.start + 0.1 || o.start >= p.end - 0.1) return [p];
+      const r = [];
+      if (o.start - p.start >= 0.6) r.push({...p, end: o.start});
+      if (p.end - o.end >= 0.6) r.push({...p, start: o.end});
+      return r;
+    });
+  }
+  return parts;
+};
 const TYPES = {illus: IllusOv, diagram: DiagramOv, pinTitle: PinTitle, action: Action, pow: Pow, title: Title, teaserTag: TeaserTag, hud: Hud, round: Round, pointer: Pointer,
   nameCard: NameCard, chips: Chips, callout: Callout, replay: Replay, outro: Outro, location: Location, scene: Scene};
 
@@ -829,11 +846,11 @@ export const Show = () => {
           </Sequence>
         );
       })}
-      {SUBS.filter((s) => !OVS.some((o) => FULLSCREEN.has(o.type) && s.start < o.end - 0.1 && s.end > o.start + 0.1)).map((s, i) => {
+      {SUBS.flatMap((s) => nhuong(s)).map((s, i) => {
         const len = fr(s.end) - fr(s.start);
         return (
           <Sequence key={`s${i}`} from={fr(s.start)} durationInFrames={len} name="sub" layout="none">
-            <AbsoluteFill><Caption {...s} len={len} /></AbsoluteFill>
+            <AbsoluteFill><Caption {...s} len={fr(s.s1) - fr(s.s0)} off={fr(s.start) - fr(s.s0)} /></AbsoluteFill>
           </Sequence>
         );
       })}

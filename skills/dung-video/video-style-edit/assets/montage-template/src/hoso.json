@@ -4,9 +4,9 @@
  "hai_trang_thai": false,
  "phu_de": {
   "ngan_max_s": 90,
-  "ngan_co": 84,
-  "ngan_max_chu": 3,
-  "ngan_max_ky_tu": 16,
+  "ngan_co": 58,
+  "ngan_max_chu": 10,
+  "ngan_max_ky_tu": 52,
   "dai_co": 42
  },
  "canh_minh_hoa": {

@@ -16,9 +16,14 @@ import {DauGoc} from '../lib/DauGoc';   // dấu góc chung (thu-vien-hinh)
 import {SUB, ShortLine, highlight} from '../lib/subStyle';
 import HS from '../hoso.json';   // hồ sơ tham số (chép lúc tạo dự án — khoi/hoso.py)
 const PD = HS.phu_de || {};
-const TWOQ = !!HS.hai_trang_thai;   // 2 trạng thái: không câu trích dài trên màn → phụ đề luôn chạy
+import {holdEnds} from '../lib/giu';
+// MỖI LÚC MỘT CHỖ CHỮ (David chốt 2026-11-08, thay luật 02/11 chỉ ẩn khi thẻ có quote): cảnh motion graphic nào đang hiện (chữ to,
+// thẻ, nhãn, sơ đồ, màn hành động…) thì phụ đề nhường — chữ trên hình là lời nguyên văn của đúng lúc đó. Phần còn lại của dòng hiện
+// tiếp đúng cụm đang nói. Cảnh không có chữ: props.giuPhuDe = true để giữ phụ đề. Áp cho mọi khung (dọc, ngang, podcast).
+const _cta0 = SCENES.find((s) => s.type === 'cta');
+const LOP = holdEnds(SCENES, _cta0 ? _cta0.start : project.duration, HS).filter((s) => !s.props?.giuPhuDe && s.type !== 'endcard' && s.type !== 'cover');
 
-// Video ngắn (David chốt 2026-11-04): phụ đề 1–3 chữ to mỗi nhịp kiểu kênh lớn. Tự bật: highlight, hoặc video dọc ≤ 90 s
+// Video ngắn (David chốt 2026-11-08, thay 1–3 chữ ngày 04/11): phụ đề cụm 5–8 chữ, cỡ bằng chữ thẻ (subStyle.js ShortLine). Tự bật: highlight, hoặc video dọc ≤ 90 s
 // (podcast dài / video dài giữ hộp tối). Ép tay: project.short = true | false.
 import {SHORT, TL_ON} from '../thanh';
 
@@ -40,7 +45,7 @@ const ChuChinh = ({cap, f}) => {
 export const Captions = () => {
   const f = useCurrentFrame();
   // Thẻ toàn cảnh đang hiện NGUYÊN VĂN câu nói (quote) → ẩn phụ đề: câu to giữa màn chính là phụ đề đoạn đó, không đọc 2 lần
-  const quoted = !project.podcast && !TWOQ && SCENES.some((s) => (s.type === 'card' || s.type === 'action') && s.props?.quote && f >= fr(s.start) && f < fr(s.end));
+  const quoted = !CHU && LOP.some((s) => f >= fr(s.start) && f < fr(s.end));   // tên cũ giữ lại: có lớp chữ đang hiện → ẩn phụ đề
   const jumping = HL && HL.jumps.some((j) => f >= fr(j.at) && f < fr(j.at + j.dur));   // highlight: đang tua → không phụ đề
   const cap = quoted || jumping ? null : CAPTIONS.find((c) => f >= fr(c.start) && f < fr(c.end));
   // Podcast: phụ đề ngay trên thanh thời gian (đáy vùng an toàn), khung dọc hoặc ngang toàn khung
