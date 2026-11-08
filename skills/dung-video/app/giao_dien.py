@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """GIAO DIỆN APP DỰNG VIDEO — trang web chỉ chạy trên máy này: python3 -I giao_dien.py → http://localhost:8765
 Chỉ là vỏ: mọi việc chạy qua chay.py (máy chạy bước). Không chứa luật dựng nào."""
-import json, os, subprocess, sys, time, glob, mimetypes
+import json, os, re, signal, subprocess, sys, time, glob, mimetypes
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 from pathlib import Path
 from urllib.parse import urlparse, parse_qs
@@ -18,12 +18,49 @@ def chay_nen(ten, *args):
     KHO.joinpath(ten).mkdir(parents=True, exist_ok=True)
     log = open(KHO / ten / "chay.log", "a", encoding="utf-8")
     log.write(f"\n=== {time.strftime('%Y-%m-%d %H:%M:%S')} chay.py {' '.join(args)}\n"); log.flush()
-    CHAY[ten] = subprocess.Popen([sys.executable, "-I", str(APP / "chay.py"), *args], stdout=log, stderr=subprocess.STDOUT)
+    p = subprocess.Popen([sys.executable, "-I", str(APP / "chay.py"), *args], stdout=log, stderr=subprocess.STDOUT,
+                         start_new_session=True)   # nhóm tiến trình riêng: nút Dừng tắt được cả render/ffmpeg con
+    CHAY[ten] = p; (KHO / ten / "pid").write_text(str(p.pid))
+
+
+def pid(ten):
+    try:
+        return int((KHO / ten / "pid").read_text())
+    except Exception:
+        return None
 
 
 def dang_chay(ten):
     p = CHAY.get(ten)
-    return bool(p and p.poll() is None)
+    if p is not None:
+        return p.poll() is None
+    n = pid(ten)               # máy chủ khởi động lại khi việc vẫn chạy
+    if not n:
+        return False
+    try:
+        os.kill(n, 0); return True
+    except OSError:
+        return False
+
+
+def dung(ten):
+    """Dừng việc đang chạy (cả tiến trình con), đánh dấu bước dở là ⏸ để Chạy tiếp làm lại đúng bước đó."""
+    n = pid(ten)
+    if n and dang_chay(ten):
+        for sig in (signal.SIGTERM, signal.SIGKILL):
+            try: os.killpg(n, sig)
+            except OSError: break
+            for _ in range(20):
+                if not dang_chay(ten): break
+                time.sleep(0.2)
+            if not dang_chay(ten): break
+    f = KHO / ten / "trang-thai.json"; tt = chay.doc(f)
+    for k, v in tt["buoc"].items():
+        if v.get("trang_thai") == "dang-chay":
+            tt["buoc"][k] = {"trang_thai": "da-dung", "luc": time.strftime("%H:%M:%S")}
+    chay.ghi(f, tt)
+    with open(KHO / ten / "chay.log", "a", encoding="utf-8") as lg:
+        lg.write(f"\n=== {time.strftime('%H:%M:%S')} David bấm Dừng\n")
 
 
 def doc_tep(p, toi_da=20000):
@@ -46,7 +83,13 @@ def token(ten):
 
 
 def chi_tiet(ten):
-    tt = chay.doc(KHO / ten / "trang-thai.json"); ct = chay.cong_thuc(tt["cong_thuc"]); b = chay.bien(tt)
+    f = KHO / ten / "trang-thai.json"; tt = chay.doc(f)
+    if not dang_chay(ten) and any(v.get("trang_thai") == "dang-chay" for v in tt["buoc"].values()):
+        for k, v in tt["buoc"].items():      # tiến trình đã chết giữa chừng (tắt máy, tắt app) → coi như đã dừng
+            if v.get("trang_thai") == "dang-chay":
+                tt["buoc"][k] = {"trang_thai": "da-dung", "luc": v.get("luc")}
+        chay.ghi(f, tt)
+    ct = chay.cong_thuc(tt["cong_thuc"]); b = chay.bien(tt)
     buoc = []
     for bid in ct["buoc"]:
         ph = chay.phieu(bid)
@@ -129,13 +172,17 @@ class H(BaseHTTPRequestHandler):
                 con -= len(k)
 
     def do_POST(self):
+        if urlparse(self.path).path == "/api/tai-len":
+            return self.tai_len()
         d = json.loads(self.rfile.read(int(self.headers.get("Content-Length", 0))) or b"{}")
         ten = d.get("ten", "").strip()
         if not ten or "/" in ten or ten.startswith("."):
             return self.gui({"loi": "tên không hợp lệ"}, 400)
+        u = urlparse(self.path).path
+        if u == "/api/dung":
+            dung(ten); return self.gui({"ok": True})
         if dang_chay(ten):
             return self.gui({"loi": "việc này đang chạy"}, 409)
-        u = urlparse(self.path).path
         if u == "/api/moi":
             if not Path(os.path.expanduser(d.get("video", ""))).is_file():
                 return self.gui({"loi": "không thấy file video"}, 400)
@@ -153,6 +200,29 @@ class H(BaseHTTPRequestHandler):
         else:
             return self.gui({"loi": "không có"}, 404)
         self.gui({"ok": True})
+
+
+def _tai_len(self):
+    """Nhận video kéo thả / chọn tệp: ghi thẳng vào ~/Movies/tap-<tên>/1-goc/ (đúng chỗ skill lưu file gốc)."""
+    q = parse_qs(urlparse(self.path).query); ten = q.get("ten", [""])[0]; tep = os.path.basename(q.get("tep", [""])[0])
+    if not re.fullmatch(r"[a-z0-9-]+", ten) or not tep or tep.startswith("."):
+        return self.gui({"loi": "tên tập hoặc tên tệp không hợp lệ"}, 400)
+    if not tep.lower().endswith((".mp4", ".mov", ".m4v", ".mts", ".avi", ".mkv")):
+        return self.gui({"loi": "chỉ nhận tệp video"}, 400)
+    d = MOVIES / f"tap-{ten}" / "1-goc"; d.mkdir(parents=True, exist_ok=True); f = d / tep
+    con = int(self.headers.get("Content-Length", 0)); tmp = f.with_name("." + tep + ".dang-tai")
+    with open(tmp, "wb") as fh:
+        while con > 0:
+            k = self.rfile.read(min(1 << 20, con))
+            if not k: break
+            fh.write(k); con -= len(k)
+    if con > 0:
+        tmp.unlink(missing_ok=True); return self.gui({"loi": "tải lên bị ngắt"}, 400)
+    os.replace(tmp, f)
+    return self.gui({"ok": True, "duong_dan": str(f)})
+
+
+H.tai_len = _tai_len
 
 
 if __name__ == "__main__":

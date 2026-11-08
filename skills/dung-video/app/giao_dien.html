@@ -22,6 +22,9 @@ textarea,input,select{font:inherit;width:100%;padding:8px;border:1px solid var(-
 label{display:block;margin:10px 0 4px;color:var(--phu);font-size:13px}
 video{width:100%;max-height:480px;background:#000;border-radius:8px}
 .hang{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.mo{color:var(--phu)}
+.tha{border:2px dashed var(--vien);border-radius:12px;padding:28px 16px;text-align:center;cursor:pointer;color:var(--phu)}.tha.tren{border-color:var(--nhan);color:var(--nhan)}
+.tien{height:8px;background:var(--nen);border-radius:4px;overflow:hidden;margin-top:8px}.tien>div{height:100%;width:0;background:var(--nhan)}
+button.dung{border-color:var(--do);color:var(--do)}
 .so{display:flex;gap:16px;color:var(--phu);font-size:13px}
 @media (max-width:760px){.khung{grid-template-columns:1fr}aside{border-right:0;border-bottom:1px solid var(--vien)}}
 </style></head><body>
@@ -31,31 +34,47 @@ video{width:100%;max-height:480px;background:#000;border-radius:8px}
 </div>
 <script>
 const $=s=>document.querySelector(s);let chon=null,hen=null;
-const BIEU={xong:'✅','da-duyet':'✅','bo-qua':'⏭','dang-chay':'⏳',loi:'❌','cho-duyet':'🟠',chua:'·'};
+const BIEU={'da-dung':'⏸',xong:'✅','da-duyet':'✅','bo-qua':'⏭','dang-chay':'⏳',loi:'❌','cho-duyet':'🟠',chua:'·'};
 const LOAI={'co-dinh':'máy','claude':'Claude','duyet':'David duyệt'};
 const esc=s=>(s??'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 async function api(u,d){const r=await fetch(u,d?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)}:{});const j=await r.json();if(!r.ok)alert(j.loi||'lỗi');return j}
 async function danhSach(){const ds=await api('/api/viec');const h=ds.map(v=>`<div class="viec ${v.ten==chon?'chon':''}" onclick="xem('${v.ten}')">${BIEU[v.trang_thai]||'·'} ${esc(v.ten)}<small>${v.dang_chay?'đang chạy · ':''}${esc(v.dang||'xong')}</small></div>`).join('')||'<p class="mo">Chưa có việc nào.</p>';if($('#ds').dataset.h!==h){$('#ds').dataset.h=h;$('#ds').innerHTML=h}}
-async function moMoi(){chon=null;clearTimeout(hen);const [ct,vg]=await Promise.all([api('/api/cong-thuc'),api('/api/video-goc')]);
+let tepChon=null;
+function boDau(t){return t.normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/đ/g,'d').replace(/Đ/g,'D').toLowerCase().replace(/\.[^.]+$/,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,40)}
+function nhanTep(f){if(!f)return;if(!/\.(mp4|mov|m4v|mts|avi|mkv)$/i.test(f.name))return alert('Chỉ nhận tệp video');tepChon=f;$('#vp').value='';
+$('#tha').innerHTML=`🎬 <b>${esc(f.name)}</b><br><small>${(f.size/1048576).toFixed(0)} MB · bấm để đổi tệp</small>`;if(!$('#ten').value)$('#ten').value=boDau(f.name)}
+async function moMoi(){chon=null;tepChon=null;clearTimeout(hen);const [ct,vg]=await Promise.all([api('/api/cong-thuc'),api('/api/video-goc')]);
 $('#chinh').innerHTML=`<h1>Việc mới</h1><div class="the"><label>Loại video</label><select id="ct">${ct.map(c=>`<option value="${c.id}">${esc(c.ten)}</option>`).join('')}</select>
-<label>Video gốc (chọn file mới nhất, hoặc dán đường dẫn)</label><select id="vg" onchange="$('#vp').value=this.value"><option value="">— chọn —</option>${vg.map(f=>`<option>${esc(f)}</option>`).join('')}</select>
-<input id="vp" placeholder="/Users/moon/Downloads/....mp4" style="margin-top:6px">
-<label>Tên tập (không dấu, gạch nối, vd: su-tap-trung)</label><input id="ten" placeholder="ten-tap">
-<div class="hang"><button class="chinh" onclick="taoMoi()">Bắt đầu</button></div></div>`}
-async function taoMoi(){const ten=$('#ten').value.trim(),video=$('#vp').value.trim();if(!/^[a-z0-9-]+$/.test(ten))return alert('Tên: chữ thường không dấu, số, gạch nối');
-const r=await api('/api/moi',{ten,video,cong_thuc:$('#ct').value});if(r.ok){chon=ten;setTimeout(()=>xem(ten),800)}}
+<label>Video gốc</label><div id="tha" class="tha" onclick="$('#chonTep').click()">Kéo thả video vào đây<br><small>hoặc bấm để chọn tệp</small></div>
+<input type="file" id="chonTep" accept="video/*,.mts,.mkv" style="display:none" onchange="nhanTep(this.files[0])">
+<details style="margin-top:8px"><summary class="mo">Hoặc chọn video đã có trên máy</summary><select id="vg" style="margin-top:6px" onchange="$('#vp').value=this.value;tepChon=null;$('#tha').innerHTML='Kéo thả video vào đây<br><small>hoặc bấm để chọn tệp</small>';if(!$('#ten').value&&this.value)$('#ten').value=boDau(this.value.split('/').pop())"><option value="">— chọn —</option>${vg.map(f=>`<option value="${esc(f)}">${esc(f.split('/').pop())} — ${esc(f.split('/').slice(-2,-1)[0])}</option>`).join('')}</select><input type="hidden" id="vp"></details>
+<label>Tên tập (tự đặt theo tên tệp, sửa được: chữ thường không dấu, gạch nối)</label><input id="ten" placeholder="ten-tap">
+<div id="tien" class="tien" style="display:none"><div></div></div><div id="tienChu" class="mo" style="font-size:13px"></div>
+<div class="hang"><button class="chinh" id="batDau" onclick="taoMoi()">Bắt đầu</button></div></div>`;
+const t=$('#tha');['dragenter','dragover'].forEach(e=>t.addEventListener(e,v=>{v.preventDefault();t.classList.add('tren')}));
+['dragleave','drop'].forEach(e=>t.addEventListener(e,v=>{v.preventDefault();t.classList.remove('tren')}));t.addEventListener('drop',v=>nhanTep(v.dataTransfer.files[0]))}
+function taiLen(ten,f){return new Promise((ok,hong)=>{const x=new XMLHttpRequest();x.open('POST',`/api/tai-len?ten=${encodeURIComponent(ten)}&tep=${encodeURIComponent(f.name)}`);
+$('#tien').style.display='block';x.upload.onprogress=e=>{const p=e.loaded/e.total*100;$('#tien>div').style.width=p+'%';$('#tienChu').textContent=`Đang tải lên ${p.toFixed(0)}% (${(e.loaded/1048576).toFixed(0)}/${(e.total/1048576).toFixed(0)} MB)`};
+x.onload=()=>{const j=JSON.parse(x.responseText);x.status==200?ok(j.duong_dan):hong(j.loi)};x.onerror=()=>hong('mất kết nối khi tải lên');x.send(f)})}
+async function taoMoi(){const ten=$('#ten').value.trim();if(!/^[a-z0-9-]+$/.test(ten))return alert('Tên: chữ thường không dấu, số, gạch nối');
+let video=$('#vp').value.trim();if(!tepChon&&!video)return alert('Kéo thả hoặc chọn một video');$('#batDau').disabled=true;
+try{if(tepChon)video=await taiLen(ten,tepChon)}catch(e){$('#batDau').disabled=false;return alert(e)}
+$('#tienChu').textContent='Đã tải lên, bắt đầu chạy…';const r=await api('/api/moi',{ten,video,cong_thuc:$('#ct').value});$('#batDau').disabled=false;if(r.ok){chon=ten;setTimeout(()=>xem(ten),800)}}
 async function xem(ten){chon=ten;clearTimeout(hen);const d=await api('/api/chi-tiet?ten='+encodeURIComponent(ten));danhSach();
 const tk=d.token;let h=`<h1>${esc(d.ten)}</h1><div class="so"><span>${esc(d.cong_thuc)}</span><span>Claude: ${tk.lan_goi} lần · ${(tk.vao/1000).toFixed(1)}k vào · ${(tk.ra/1000).toFixed(1)}k ra</span></div>`;
 if(d.cong){h+=`<div class="the"><h2>🟠 ${esc(d.cong.ten)}</h2>${d.cong.video?`<video controls preload="metadata" src="/tep?p=${encodeURIComponent(d.cong.video)}"></video>`:''}
 ${d.cong.tep.map(t=>`<h2>${esc(t.ten)}</h2><pre>${esc(t.noi_dung)}</pre>`).join('')}
 ${d.cong.nhan_gop_y?`<label>Góp ý (để trống nếu duyệt luôn) — Claude chỉ sửa đúng chỗ được nhắc</label><textarea id="gy" rows="3"></textarea>`:''}
 <div class="hang"><button class="chinh" ${d.dang_chay?'disabled':''} onclick="duyet()">Duyệt, chạy tiếp</button>${d.cong.nhan_gop_y?`<button ${d.dang_chay?'disabled':''} onclick="gopY()">Gửi góp ý, làm lại</button>`:''}</div></div>`}
+if(d.dang_chay)h+=`<div class="hang"><button class="dung" onclick="dungViec()">⏹ Dừng việc đang chạy</button></div>`;
+const ngung=d.buoc.find(b=>b.trang_thai=='da-dung');if(ngung&&!d.dang_chay)h+=`<div class="the">⏸ Đã dừng ở bước "${esc(ngung.ten)}".<div class="hang"><button class="chinh" onclick="tiep()">▶ Chạy tiếp</button></div></div>`;
 const loi=d.buoc.find(b=>b.trang_thai=='loi');
 if(loi&&!d.dang_chay)h+=`<div class="the"><b>❌ Lỗi ở bước "${esc(loi.ten)}"</b><pre>${esc(d.log)}</pre><div class="hang"><button class="chinh" onclick="tiep()">Chạy lại bước này</button></div></div>`;
 if(d.xong_luc)h+=`<div class="the">✅ Xong lúc ${esc(d.xong_luc)} · <span class="mo">${esc(d.P)}/video-final.mp4</span></div>`;
 h+=`<h2>Các bước</h2>`+d.buoc.map(b=>`<div class="buoc"><span>${BIEU[b.trang_thai]||'·'}</span><span>${esc(b.ten)}</span><span class="loai">${LOAI[b.loai]} ${b.luc?'· '+b.luc:''}</span>${b.loai!='duyet'&&!d.dang_chay&&b.trang_thai!='chua'?`<button class="lai" onclick="lai('${b.id}')">làm lại từ đây</button>`:''}</div>`).join('');
 if(d.dang_chay&&d.log)h+=`<h2>Đang chạy: ${esc(d.dang)}</h2><pre>${esc(d.log)}</pre>`;
 $('#chinh').innerHTML=h;if(d.dang_chay)hen=setTimeout(()=>xem(ten),3000)}
+async function dungViec(){if(!confirm('Dừng việc này? Bước đang chạy sẽ làm lại từ đầu khi bấm Chạy tiếp.'))return;if((await api('/api/dung',{ten:chon})).ok)setTimeout(()=>xem(chon),500)}
 async function duyet(){if((await api('/api/duyet',{ten:chon})).ok)setTimeout(()=>xem(chon),800)}
 async function gopY(){const g=$('#gy').value.trim();if(!g)return alert('Viết góp ý trước');if((await api('/api/duyet',{ten:chon,gop_y:g})).ok)setTimeout(()=>xem(chon),800)}
 async function tiep(){if((await api('/api/tiep',{ten:chon})).ok)setTimeout(()=>xem(chon),800)}
