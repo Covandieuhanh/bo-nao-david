@@ -56,8 +56,8 @@ khi không rõ file nào là mẫu. "Giống video trước" → lấy token pho
 ## Đầu vào
 
 - **Video gốc**: đường dẫn file (chế độ ghép: nhiều file).
-- **Video mẫu**: file video hoặc bản quay màn hình. Chỉ có link YouTube/TikTok → không tải từ nền tảng (vi phạm điều khoản); nhờ gửi
-  file hoặc 4–8 ảnh chụp các cảnh tiêu biểu. Không có mẫu → phong cách mặc định của template (đã duyệt).
+- **Video mẫu**: file video hoặc bản quay màn hình. Chỉ có link YouTube/TikTok → tải bản 720p **chỉ để học** vào thư mục tạm, học xong
+  xoá (David chốt 08/11, `../trinh-bay/README.md` mục 4); hoặc 4–8 ảnh chụp các cảnh tiêu biểu. Không có mẫu → phong cách mặc định của template (đã duyệt).
 - Yêu cầu thêm của người dùng (thông điệp chính, tên, chỗ muốn nhấn) luôn ưu tiên hơn suy luận.
 - **Khung xuất**: mặc định cùng khung video gốc; chỉ đổi khi người dùng nói:
 
@@ -160,4 +160,4 @@ Ghi góp ý đúng một chỗ: khối/skill bị ảnh hưởng + một dòng `
 - `assets/montage-template/` + `scripts/new_montage.sh` — template dựng cả video có tiếng cho chế độ ghép.
 
 ## Nhật ký
-- 2026-11-08 · chuẩn hoá (`dang-lam/chuan-hoa-skill.md` bước 3): hỏi một lần đầu thay "chạy một mạch không hỏi" (N1); bỏ con số cố định (N6), thẻ tít mặc định (N2), chữ "2 trạng thái" (C3), ví dụ cũ hướng sức khoẻ; màn chốt nguyên văn, không tự đặt câu kêu gọi (N4); đọc trước 3 file, luật chung trỏ `luat-chung`; đánh dấu bước nhẹ 1·2·5; rút mô tả; thêm "Xong khi". Chi tiết các quyết định trước: `references/changelog.md`.
+- 2026-11-08 · chuẩn hoá (`dang-lam/chuan-hoa-skill.md` bước 3): hỏi một lần đầu thay "chạy một mạch không hỏi" (N1); bỏ con số cố định (N6), thẻ tít mặc định (N2), chữ "2 trạng thái" (C3), ví dụ cũ hướng sức khoẻ; màn chốt nguyên văn, không tự đặt câu kêu gọi (N4); đọc trước 3 file, luật chung trỏ `luat-chung`; đánh dấu bước nhẹ 1·2·5; rút mô tả; thêm "Xong khi"; video mẫu chỉ có link → được tải 720p chỉ để học, học xong xoá (khớp `trinh-bay`). Chi tiết các quyết định trước: `references/changelog.md`.

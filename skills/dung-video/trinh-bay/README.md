@@ -37,13 +37,16 @@ Kiểu bố cục mới chỉ mô tả cách sắp xếp, còn hình vẽ thì l
 Học là **bổ sung**, không thay thế (David chốt 08/11/2026, `luat-hoc-la-bo-sung`). Skill `hoc-video-mau` tự bật khi David gửi video
 và nói "học cái này"; skill đó chỉ trỏ về đây.
 
-1. **Lấy mẫu:** tải bản 720p vào thư mục tạm (không đưa lên repo), đọc mô tả và danh sách chương (`yt-dlp --dump-json`).
-   David gửi file thì dùng file đó.
-2. **Cắt khung:** bảng khung theo nhịp 1,5–3 s (`ffmpeg … fps=1/2,scale=480:-1,tile=4x4`) ở đoạn mở đầu và đoạn đúng loại cần học.
-3. **Nghe:** vẽ phổ âm (`showspectrumpic`) để thấy chỗ có tiếng hiệu ứng, nhạc nền, nốt chuyển chương.
+Bước nhẹ (1–3): tới đó nhắc một dòng để David tự đổi mô hình rẻ hơn, không tự đổi.
+
+1. **Lấy mẫu** *(bước nhẹ)*: David gửi file thì dùng file đó. Chỉ có link → tải bản 720p **chỉ để học** vào thư mục tạm (không đưa
+   lên repo, **học xong xoá**; David chốt 08/11), đọc mô tả và danh sách chương (`yt-dlp --dump-json`).
+2. **Cắt khung** *(bước nhẹ)*: bảng khung theo nhịp 1,5–3 s (`ffmpeg … fps=1/2,scale=480:-1,tile=4x4`) ở đoạn mở đầu và đoạn đúng loại cần học.
+3. **Nghe** *(bước nhẹ)*: vẽ phổ âm (`showspectrumpic`) để thấy chỗ có tiếng hiệu ứng, nhạc nền, nốt chuyển chương.
 4. **Rút ra, chỉ phần trình bày:** bố cục · thứ tự hiện · cách nối · nhịp · âm thanh. Không ghi màu, font, kiểu vẽ.
 5. **Phiếu học cho David duyệt** (mẫu ở `phieu-hoc-mau.md`): học được gì, dùng cho loại video nào, thêm thành phần nào, mỗi thành
-   phần đối chiếu với các chặn cũ thế nào. **Chờ David "ok" rồi mới sửa skill.**
+   phần đối chiếu với các chặn cũ thế nào. Đây là **cổng hỏi duy nhất**: gộp mọi điểm cần chọn, mỗi điểm 2–3 gợi ý.
+   **Chờ David "ok" rồi mới sửa skill.**
 6. **Ghi vào kho:** một file `nguon-hoc/<ten-nguon>-<ngay>.md` kể học gì từ đâu. Mỗi cách mới thêm một dòng ở `bo-cuc.md` hoặc `am-thanh.md`,
    ghi rõ "đã có code" hay "chưa có code". Không xoá, không sửa nghĩa dòng cũ.
 7. **Làm code khi cần:** thêm `kieu` mới trong `video-style-edit/assets/remotion-template/src/components/BoCuc.jsx` (chỉ dùng
@@ -55,7 +58,7 @@ và nói "học cái này"; skill đó chỉ trỏ về đây.
    - Chụp thử **đủ lớp** (cảnh + `phu-de@<giây>` có dấu góc, phụ đề, thanh thời gian) ở **cả khung ngang lẫn dọc**, trên ít nhất
      một dự án cũ đã duyệt. So với ảnh trước khi thêm: phần cũ phải y nguyên.
    - Chạy `soat_canh.mjs` và `python3 -I ../mau-chuan/kiem-mau.py` (mẫu chuẩn); có lệch thì sửa thành phần mới, không sửa cái cũ cho vừa.
-9. **Đẩy GitHub** và báo David: thêm gì, đã kiểm gì, chưa kiểm gì.
+9. **Xoá file mẫu đã tải**, **đẩy GitHub** và báo David: thêm gì, đã kiểm gì, chưa kiểm gì.
 10. **Không chép công cụ của nguồn** (HyperFrames…): giữ Remotion, chỉ học ý (`video-khong-cai-hyperframes`).
 
 ## 5. Dùng khi dựng
