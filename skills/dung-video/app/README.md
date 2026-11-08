@@ -10,7 +10,8 @@ Cài một lần trên mỗi máy (đã cài trên Mac chính 08/11/2026):
 zsh ~/Documents/David.Claude/scripts/app-video.sh cai
 ```
 Khác: `app-video.sh xem` (đang chạy không) · `khoi-lai` (sau khi sửa code app; việc đang dựng không bị ngắt) · `go` (gỡ hẳn). Log: `~/Movies/_app/may-chu.log`.
-Trong app: **+ Việc mới** → kéo thả (hoặc chọn) video, tên tập tự đặt → app tự chạy, dừng ở 2 cổng chờ David duyệt.
+Trong app: **+ Việc mới** → kéo thả (hoặc chọn) video, tên tập tự đặt, chọn tuỳ chọn (khung xuất, ảnh minh hoạ, thẻ tít, lịch phát,
+yêu cầu riêng) → app tự chạy, dừng ở 2 cổng chờ David duyệt. Cổng 2: xem video, tờ kiểm tra hình, chọn thumbnail, kết quả kiểm, bài đăng.
 Nút: **⏹ Dừng** (tắt cả render) · **▶ Chạy tiếp** (làm lại bước dở) · **làm lại từ đây** · **🗑 Xoá dự án** (chuyển `~/Movies/_app/<tên>` + `~/Movies/tap-<tên>` vào Thùng rác).
 Việc chạy trong nhóm tiến trình riêng: tắt/khởi động lại giao diện không làm ngắt việc đang chạy.
 Dòng lệnh thay giao diện: `python3 -I chay.py moi lam-video <video> <tên>` · `chay.py duyet <tên> [góp ý]` · `chay.py lai <tên> <bước>`.
@@ -27,7 +28,7 @@ Gõ `/login`, đăng nhập bằng tài khoản Claude của David trên trình 
 |---|---|
 | `cong-thuc/<loại>.json` | thứ tự bước cho một loại video |
 | `buoc/<id>.json` | phiếu một bước: `co-dinh` (lệnh) · `claude` (lời nhắc + khuôn + lệnh kiểm) · `duyet` (cổng) |
-| `loi-nhac/*.md` | lời nhắc cho Claude — **chèn thẳng README khối** (`{{file:…}}`), hồ sơ tham số (`{{ho_so:…}}`), danh sách biểu tượng (`{{bieu_tuong}}`) |
+| `loi-nhac/*.md` | lời nhắc cho Claude — **chèn thẳng luật gốc**: cả file (`{{file:…}}`), một mục (`{{muc:file|tiêu đề}}`), hồ sơ tham số (`{{ho_so:…}}`), biểu tượng (`{{bieu_tuong}}`), kiểu cảnh của template (`{{kieu_canh}}`) |
 | `khuon/*.json` | khuôn JSON Claude phải trả |
 | `ap/` | script biến kế hoạch của Claude thành file dự án (tìm mốc từ câu trích, soát nguyên văn) |
 | `kiem/kiem_*.py` | luật kiểm bản cuối, app tự chạy mọi file trong thư mục |
@@ -45,7 +46,27 @@ Trạng thái từng việc, log, kế hoạch Claude, số token: `~/Movies/_ap
 | Đổi luật dựng (bố cục, kết thúc, lọc, phát hành) | sửa README khối — lời nhắc chèn thẳng file đó |
 | Đổi bước nào cần Claude hay không | đổi `loai` trong phiếu bước |
 
-## Giới hạn hiện tại (làm bằng Claude Code như cũ)
-- Mới có công thức **làm video 1 người nói** (`lam-video`). Highlight, podcast, ghép vlog: thêm công thức sau.
-- Không tự xử lý chữ/viền in cứng trong hình của video cũ (cần nhìn hình).
-- Góp ý ở cổng 2 làm lại từ bước kịch bản cảnh và render lại cả video.
+## Công thức `lam-video` (28 bước = đủ skill video-style-edit chế độ 1 video)
+| Nhóm | Bước | Ai |
+|---|---|---|
+| Chuẩn bị | kiểm công cụ · tạo dự án · chép lời thô + đề xuất cắt | máy |
+| Lọc | lọc nội dung + chọn chỗ cắt + **xem ảnh**: chiều hình, chữ/viền in cứng; đề xuất câu chốt, ý chính, chữ thumbnail | Claude |
+| | ghi phiếu lọc · ghi sổ danh mục | máy |
+| **Cổng 1** | David duyệt phiếu lọc (thay "hỏi một lần" của skill) | David |
+| Làm sạch | cắt + sửa chiều hình · cắt chữ/viền in cứng · đổi khung (ngang↔dọc, nếu chọn) · nâng khung · chép lời bản sạch + phụ đề | máy |
+| Kịch bản | kịch bản cảnh: mọi kiểu cảnh của template, trích câu | Claude |
+| | tìm mốc, ghi scenes.js / project.js (chủ đề, nhạc, **màn kết YouTube**, lịch), sửa phụ đề, ke-hoach-canh.md | máy |
+| Ảnh (khi cần) | tìm ảnh Openverse → **Claude xem & chọn** → tải ảnh, nguồn ảnh (không có ảnh tốt thì giữ biểu tượng) | máy · Claude |
+| Dựng | tránh che mặt · soát cảnh · render (**chỉ phần bị đổi**) · tờ kiểm tra hình · luật kiểm | máy |
+| Phát hành | tiêu đề, mô tả, bình luận ghim, khung bìa, chữ thumbnail, teaser | Claude |
+| | thumbnail 2 mẫu (ngang) · teaser · chương · phat-hanh.md · so-lieu.md | máy |
+| **Cổng 2** | David xem video + tờ kiểm tra, chọn thumbnail, duyệt hoặc góp ý | David |
+| Xong | ghi sổ danh mục (chờ đăng) · dọn file tạm (vào Thùng rác) | máy |
+
+Luật kiểm (`kiem/`): âm lượng −14 LUFS · âm so bản gốc + tiếng rè · thời lượng · chữ nguyên văn.
+
+## Ngoài app (làm bằng Claude Code như cũ)
+- Highlight, podcast, ghép vlog: chưa có công thức.
+- Học cách trình bày từ video mẫu: skill `hoc-video-mau` (sửa bộ skill, app tự theo vì dùng chung luật và thư viện hình).
+- Đưa video lên Drive, đăng bài lên kênh: skill `dang-da-kenh` (cần trình duyệt, David duyệt từng bài).
+- Đổi khung ngang → dọc dùng kế hoạch tự động của `reframe_plan.py`, chưa có bước Claude xem lại `tracks.jpg`.

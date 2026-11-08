@@ -19,6 +19,7 @@ Trạng thái: lọc · dựng · chờ đăng · đã đăng · kho · bỏ. D�
 | 2026-11-08 | Video cũ "Đừng mua những thứ mà bạn thích" (kênh cũ, 6:35 → 6:09, `~/Movies/tap-dung-mua-thu-ban-thich`) | ✂️ Làm lại, bỏ màn tít "PODCAST TẬP 4" · ⚠️ chuyện vay, tín dụng, chờ David xét lằn ranh | chưa chấm | gốc → công việc (cần gì trước, thích gì sau) | YouTube ngang, chưa có lịch | Gợi mở | dựng xong 08/11, David đã chọn thumbnail · chờ góp ý video |
 | 2026-11-08 | 4 clip dọc trích từ 4 video cũ làm lại (`~/Movies/tap-{thi-lai-dai-hoc,su-tap-trung,cuoc-song-giau-co,dung-mua-thu-ban-thich}/3-highlight/clip-A`, 56–70 s) | ✂️ Trích ngắn từ gốc, mỗi video 1 clip | chưa chấm | theo video gốc | Reels + TikTok: gợi ý T3 24/11 · T6 27/11 · T3 1/12 · T6 4/12, 20:00 | Gợi mở | dựng xong 08/11, chờ David xem |
 | 2026-11-08 | Vlog The View Vũng Tàu (4 clip, quay 11/06) | 👤 Chỉ Facebook cá nhân | — | nhân hiệu | Facebook cá nhân | Không | David chốt bản 2 (nhạc du-lich-1) 08/11, đã dọn file tạm; chờ David tự đăng Facebook cá nhân (`~/Movies/vlog/the-view-vung-tau`) |
+| 2026-11-08 | Video cũ phỏng vấn "5 nguyên tắc quản lý tiền bạc" (khách anh Trần Văn Trung, 15:54 → 14:08 + teaser 19 s, `~/Movies/tap-5-nguyen-tac-tien`) | ⛔ chạm lằn ranh tiền bạc/đầu tư, khách hiện mặt · David chọn dựng thử dạng phỏng vấn | 2/10 | — | Không đăng (bản thử) | — | dựng xong 08/11, chờ David góp ý skill dạng phỏng vấn |
 
 ## Phiếu lọc (chấm thử 05/11/2026)
 

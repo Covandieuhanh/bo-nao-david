@@ -99,7 +99,15 @@ def chi_tiet(ten):
         ph = chay.phieu(dang)
         cong = {"id": dang, "ten": ph.get("ten"), "nhan_gop_y": bool(ph.get("gop_y_cho")),
                 "tep": [{"ten": Path(chay.thay(h, b)).name, "noi_dung": doc_tep(chay.thay(h, b)) or "(chưa có)"} for h in ph.get("hien", [])],
-                "video": chay.thay(ph["video"], b) if ph.get("video") and Path(chay.thay(ph["video"], b)).exists() else None}
+                "video": chay.thay(ph["video"], b) if ph.get("video") and Path(chay.thay(ph["video"], b)).exists() else None,
+                "anh": [str(x) for a in ph.get("anh", []) for x in sorted(Path("/").glob(chay.thay(a, b).lstrip("/")))],
+                "chon_anh": None}
+        if ph.get("chon_anh"):
+            ca = ph["chon_anh"]; dich = Path(chay.thay(ca["dich"], b))
+            ds = [str(x) for x in sorted(Path("/").glob(chay.thay(ca["tep"], b).lstrip("/")))]
+            if ds:
+                cong["chon_anh"] = {"nhan": ca.get("nhan", "Chọn ảnh"), "ds": ds, "da_chon": (KHO / ten / "da-chon-anh.txt").read_text().strip()
+                                    if (KHO / ten / "da-chon-anh.txt").exists() and dich.exists() else None}
     log_buoc = None
     if dang:
         log_buoc = doc_tep(KHO / ten / "log" / f"{dang}.txt", 6000)
@@ -221,7 +229,15 @@ class H(BaseHTTPRequestHandler):
                 return self.gui({"loi": "Video này là bản đã dựng (có sẵn chữ, dấu góc) — chọn video gốc quay từ máy"}, 400)
             if (KHO / ten / "trang-thai.json").exists():
                 return self.gui({"loi": "đã có việc tên này"}, 409)
-            chay_nen(ten, "moi", d["cong_thuc"], d["video"], ten)
+            chay_nen(ten, "moi", d["cong_thuc"], d["video"], ten, json.dumps(d.get("tuy_chon", {}), ensure_ascii=False))
+        elif u == "/api/chon-anh":
+            tt = chay.doc(KHO / ten / "trang-thai.json"); ph = chay.phieu(tt.get("dang") or ""); b = chay.bien(tt)
+            ca = ph.get("chon_anh") or {}; tep = Path(d.get("tep", "")).resolve()
+            ds = [x.resolve() for x in Path("/").glob(chay.thay(ca.get("tep", "-"), b).lstrip("/"))]
+            if tep not in ds:
+                return self.gui({"loi": "ảnh không có trong danh sách"}, 400)
+            __import__("shutil").copyfile(tep, chay.thay(ca["dich"], b)); (KHO / ten / "da-chon-anh.txt").write_text(str(tep))
+            return self.gui({"ok": True})
         elif u == "/api/duyet":
             chay_nen(ten, "duyet", ten, *( [d["gop_y"]] if d.get("gop_y") else []))
         elif u == "/api/tiep":
