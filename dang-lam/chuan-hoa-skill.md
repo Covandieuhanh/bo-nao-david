@@ -37,3 +37,9 @@ Mọi skill tự làm việc theo một bộ thói quen chung: đúng quy trình
   - [ ] hoc-video-mau
   - [ ] 3 file não
 - [ ] Bước 4: chạy thử một việc thật, David chấm, sửa đúng một chỗ
+
+## Code còn lệch với skill đã gọt (ghi 08/11, làm ở bước 4 hoặc khi gọt khối)
+- Phụ đề podcast dọc: skill ghi cụm 5–8 chữ cỡ 58; code (`Captions.jsx`) có thể chỉ bật kiểu này cho video ngắn, podcast dài vẫn hộp tối.
+- Thẻ cuối highlight: skill ghi không nút phát; `hl_edl.py` (dòng ~191) và `EndCard` (`Show.jsx`, `play = true` mặc định) còn nút phát.
+- Câu gợi tò mò `tease`: skill đã bỏ; `hl_apply.py` dòng ~52 vẫn đọc `tease` (không đặt `tease` trong phuong-an.json là đủ).
+- `luat-chung.md` mục 0 còn "sao chép luôn chuẩn kênh lớn" (N9); khối 06, 08, 00, 15 có thể còn thẻ tít / màn chốt / chọn chữ bìa kiểu cũ.
