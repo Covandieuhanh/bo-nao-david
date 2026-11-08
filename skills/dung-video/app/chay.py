@@ -47,6 +47,15 @@ def noi_luu(ten):
     return r.stdout.strip().splitlines()[-1]
 
 
+def la_ban_da_dung(video):
+    """Video đã dựng (có sẵn chữ, dấu góc, thanh thời gian) không được làm video gốc — phủ thêm sẽ chồng hai lớp
+    (luật skill: không phủ lên video đã có chữ đốt sẵn). Lỗi gặp 08/11 khi thử bằng clip-C/video-final.mp4."""
+    p = str(Path(video).expanduser().resolve())
+    mv = str(Path("~/Movies").expanduser().resolve())
+    return ("video-final" in Path(p).name or p.startswith(mv + "/_app/")
+            or (p.startswith(mv + "/") and any(x in p for x in ("/2-ban-dai/", "/3-highlight/", "/motion/", "/davinci/"))))
+
+
 def bien(tt):
     ct = cong_thuc(tt["cong_thuc"])
     return {"APP": str(APP), "DV": str(DV), "S": str(DV / "video-style-edit/scripts"), "HL": str(DV / "cat-highlight-video/scripts"),
@@ -125,6 +134,8 @@ def main():
     lenh = a[0]
     if lenh == "moi":
         ct, video, ten = a[1], os.path.expanduser(a[2]), a[3]
+        if la_ban_da_dung(video):
+            raise SystemExit("Video này là bản đã dựng (có sẵn chữ, dấu góc). Chọn video gốc quay từ máy.")
         W = KHO / ten; p = W / "trang-thai.json"
         if p.exists():
             raise SystemExit(f"Đã có việc '{ten}' — dùng: chay.py tiep {ten}")

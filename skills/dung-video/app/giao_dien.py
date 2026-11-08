@@ -69,7 +69,7 @@ def video_goc():
     ds = []
     for d in ["~/Downloads", "~/Desktop", "~/Movies/video-goc", "~/Movies/_video-goc"]:
         for f in glob.glob(os.path.expanduser(d) + "/**/*", recursive=True):
-            if f.lower().endswith((".mp4", ".mov", ".m4v")) and "/_app/" not in f:
+            if f.lower().endswith((".mp4", ".mov", ".m4v")) and not chay.la_ban_da_dung(f):
                 ds.append((os.path.getmtime(f), f))
     return [f for _, f in sorted(ds, reverse=True)[:40]]
 
@@ -139,6 +139,8 @@ class H(BaseHTTPRequestHandler):
         if u == "/api/moi":
             if not Path(os.path.expanduser(d.get("video", ""))).is_file():
                 return self.gui({"loi": "không thấy file video"}, 400)
+            if chay.la_ban_da_dung(d["video"]):
+                return self.gui({"loi": "Video này là bản đã dựng (có sẵn chữ, dấu góc) — chọn video gốc quay từ máy"}, 400)
             if (KHO / ten / "trang-thai.json").exists():
                 return self.gui({"loi": "đã có việc tên này"}, 409)
             chay_nen(ten, "moi", d["cong_thuc"], d["video"], ten)
