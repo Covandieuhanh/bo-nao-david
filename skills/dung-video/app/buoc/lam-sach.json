@@ -1,0 +1,1 @@
+{"id":"lam-sach","ten":"Làm sạch + nâng khung","loai":"co-dinh","lenh":["python3 -I {S}/clean_apply.py {P}","python3 -I {S}/lift.py {P} apply"]}

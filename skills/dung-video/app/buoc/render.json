@@ -1,0 +1,1 @@
+{"id":"render","ten":"Render + ghép bản cuối","loai":"co-dinh","cwd":"{P}/motion","lenh":["node render.mjs","python3 -I {S}/render_preview.py {P}"]}

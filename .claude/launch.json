@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "app-dung-video",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-I", "skills/dung-video/app/giao_dien.py"],
+      "port": 8765
+    }
+  ]
+}

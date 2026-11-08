@@ -1,0 +1,6 @@
+{"type":"object","required":["tieu_de","mo_ta","binh_luan_ghim","khung_bia_trich"],"properties":{
+ "tieu_de":{"type":"array","items":{"type":"string"},"minItems":3,"maxItems":3},
+ "mo_ta":{"type":"string"},"binh_luan_ghim":{"type":"string"},
+ "khung_bia_trich":{"type":"string","description":"câu nguyên văn lúc có hình đẹp làm khung bìa"},
+ "thumbnail":{"type":"array","items":{"type":"object","required":["trich","dong1","dong2"],"properties":{"trich":{"type":"string"},"dong1":{"type":"string"},"dong2":{"type":"string"},"so_lon":{"type":"string"}}}},
+ "teaser":{"type":"array","items":{"type":"object","required":["trich_dau","trich_cuoi"],"properties":{"trich_dau":{"type":"string"},"trich_cuoi":{"type":"string"}}}}}}

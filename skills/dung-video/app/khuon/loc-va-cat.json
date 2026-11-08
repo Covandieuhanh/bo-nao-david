@@ -1,0 +1,14 @@
+{"type":"object","required":["loc","cat"],"properties":{
+ "loc":{"type":"object","required":["ket_luan","diem","ly_do","nhanh","de_xuat","ba_phan","cau_mo"],"properties":{
+  "ket_luan":{"type":"string","description":"một trong 7 nhãn: ⭐ Rất tốt · ✅ Phù hợp · ✂️ Trích ngắn từ gốc · 🔁 Trùng / dư · 🗂 Lưu kho · 👤 Chỉ Facebook cá nhân · ⛔ Không làm"},
+  "diem":{"type":"object","required":["goc","tep","hanh_dong","tuong_tac","nhan_hieu"],"properties":{"goc":{"type":"integer"},"tep":{"type":"integer"},"hanh_dong":{"type":"integer"},"tuong_tac":{"type":"integer"},"nhan_hieu":{"type":"integer"}}},
+  "ly_do":{"type":"string"},
+  "lan_ranh":{"type":"array","items":{"type":"object","required":["trich","rui_ro"],"properties":{"trich":{"type":"string"},"rui_ro":{"type":"string"}}}},
+  "nhanh":{"type":"string"},"de_xuat":{"type":"string"},
+  "ba_phan":{"type":"object","properties":{"van_de":{"type":"string"},"giai_phap":{"type":"string"},"thuc_thi":{"type":"string"}}},
+  "cau_mo":{"type":"string"},"hoi":{"type":"array","items":{"type":"string"}}}},
+ "cat":{"type":"object","required":["giu_de_xuat"],"properties":{
+  "giu_de_xuat":{"type":"array","items":{"type":"integer"},"description":"số # các đề xuất cắt của máy được giữ"},
+  "bo_truoc":{"type":"string","description":"câu nguyên văn: cắt hết mọi thứ TRƯỚC câu này (trống = không)"},
+  "bo_sau":{"type":"string","description":"câu nguyên văn: cắt hết mọi thứ SAU câu này (trống = không)"},
+  "ly_do":{"type":"string"}}}}}

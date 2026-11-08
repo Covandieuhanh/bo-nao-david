@@ -1,0 +1,1 @@
+{"id":"ap-cat","ten":"Ghi phiếu lọc + danh sách cắt","loai":"co-dinh","lenh":"python3 -I {APP}/ap/ap_cat.py {P} {W} {W}/loc-va-cat.json"}

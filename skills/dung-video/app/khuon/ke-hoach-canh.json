@@ -1,0 +1,10 @@
+{"type":"object","required":["topic","tuyen","ly_do_tuyen","canh","sua_chu"],"properties":{
+ "topic":{"type":"string","description":"chủ đề ≤ 3 chữ, trích lời, VIẾT HOA"},
+ "tuyen":{"type":"string"},"ly_do_tuyen":{"type":"string"},
+ "canh":{"type":"array","items":{"type":"object","required":["id","type","trich","props"],"properties":{
+  "id":{"type":"string"},"type":{"type":"string","enum":["nhan","bocuc","illus","action","cta"]},
+  "trich":{"type":"string","description":"4–10 chữ nguyên văn liền nhau trong BẢN LỜI, nơi cảnh bắt đầu"},
+  "het":{"type":"string","description":"(tuỳ chọn) 3–8 chữ nguyên văn nơi cảnh kết thúc"},
+  "props":{"type":"object"}}}},
+ "chuong":{"type":"array","items":{"type":"object","required":["trich","text"],"properties":{"trich":{"type":"string"},"text":{"type":"string"}}}},
+ "sua_chu":{"type":"array","items":{"type":"object","required":["sai","dung"],"properties":{"sai":{"type":"string"},"dung":{"type":"string"}}}}}}

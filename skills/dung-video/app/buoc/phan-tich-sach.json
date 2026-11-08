@@ -1,0 +1,1 @@
+{"id":"phan-tich-sach","ten":"Chép lời bản thô + đề xuất cắt","loai":"co-dinh","lenh":["zsh {S}/clean_analyze.sh {P}","python3 -I {APP}/ap/ap_cat.py {P} {W} --liet-ke"]}
