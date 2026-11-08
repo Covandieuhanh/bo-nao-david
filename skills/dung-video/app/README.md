@@ -14,7 +14,8 @@ Khác: `app-video.sh xem` (đang chạy không) · `khoi-lai` (sau khi sửa cod
 (tên đầy đủ `http://macbook-david.tail58c7e2.ts.net:8765`). App chỉ nhận chính Mac + thiết bị trong Tailscale của David; máy cùng wifi
 hay ngoài Internet bị chặn. `app-video.sh cai` cũng giữ Mac không ngủ khi cắm sạc (`caffeinate -s`), để iPhone luôn vào được.
 
-Trong app: **+ Việc mới** → kéo thả (hoặc chọn) video, tên tập tự đặt, chọn tuỳ chọn (khung xuất, ảnh minh hoạ, thẻ tít, lịch phát,
+Trong app: **+ Việc mới** → kéo thả / chọn tệp từ máy đang cầm (tải lên Mac), hoặc **📁 Chọn tệp trên Mac** (duyệt Drive Video-goc, Tải về,
+Màn hình nền, Phim… có ảnh nhỏ; chỉ trong thư mục nhà, bỏ thư mục ẩn và ~/Library trừ Google Drive) → tên tập tự đặt, chọn tuỳ chọn (khung xuất, ảnh minh hoạ, thẻ tít, lịch phát,
 yêu cầu riêng) → app tự chạy, dừng ở 2 cổng chờ David duyệt. Cổng 2: xem video, tờ kiểm tra hình, chọn thumbnail, kết quả kiểm, bài đăng.
 Nút: **⏹ Dừng** (tắt cả render) · **▶ Chạy tiếp** (làm lại bước dở) · **làm lại từ đây** · **🗑 Xoá dự án** (chuyển `~/Movies/_app/<tên>` + `~/Movies/tap-<tên>` vào Thùng rác).
 Việc chạy trong nhóm tiến trình riêng: tắt/khởi động lại giao diện không làm ngắt việc đang chạy.

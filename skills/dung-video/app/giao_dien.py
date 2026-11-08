@@ -143,6 +143,70 @@ def xoa(ten):
         os.rename(d, dich) if os.stat(d).st_dev == os.stat(rac).st_dev else __import__("shutil").move(str(d), str(dich))
 
 
+NHA = Path.home().resolve()
+DUOI_VIDEO = (".mp4", ".mov", ".m4v", ".mts", ".avi", ".mkv")
+
+
+def trong_nha(p):
+    """Trình duyệt tệp chỉ đi trong thư mục nhà, bỏ thư mục ẩn và ~/Library (trừ Google Drive ở ~/Library/CloudStorage)."""
+    try:
+        p = Path(p).expanduser().resolve()
+        r = p.relative_to(NHA)
+    except Exception:
+        return None
+    if any(x.startswith(".") for x in r.parts):
+        return None
+    if r.parts[:1] == ("Library",) and r.parts[:2] != ("Library", "CloudStorage"):
+        return None
+    return p
+
+
+def noi_nhanh():
+    ds = [("Tải về", NHA / "Downloads"), ("Màn hình nền", NHA / "Desktop"), ("Phim", NHA / "Movies")]
+    for d in sorted((NHA / "Library/CloudStorage").glob("GoogleDrive-*")):
+        tk = d.name.split("-", 1)[1].split("@")[0]
+        for goc in d.iterdir():
+            if (goc / "Video-goc").is_dir(): ds.insert(0, (f"Drive Video-goc ({tk})", goc / "Video-goc"))
+            if goc.is_dir() and not goc.name.startswith("."): ds.append((f"Drive {tk}", goc))
+    return [{"ten": t, "p": str(p)} for t, p in ds if p.is_dir()]
+
+
+def thu_muc(p):
+    p = trong_nha(p)
+    if not p or not p.is_dir():
+        raise ValueError("không mở được thư mục này")
+    muc = []
+    for x in p.iterdir():
+        if x.name.startswith(".") or x.name.startswith("._"):
+            continue
+        try:
+            st = x.stat()
+        except OSError:
+            continue
+        if x.is_dir():
+            muc.append({"ten": x.name, "p": str(x), "loai": "thu-muc", "luc": st.st_mtime})
+        elif x.suffix.lower() in DUOI_VIDEO:
+            muc.append({"ten": x.name, "p": str(x), "loai": "video", "mb": round(st.st_size / 1048576), "luc": st.st_mtime,
+                        "drive": "/Library/CloudStorage/" in str(x), "da_dung": chay.la_ban_da_dung(x)})
+    muc.sort(key=lambda m: (m["loai"] != "thu-muc", -m["luc"] if m["loai"] == "video" else 0, m["ten"].lower()))
+    cha = trong_nha(p.parent) if p != NHA else None
+    return {"p": str(p), "hien": str(p).replace(str(NHA), "~", 1), "cha": str(cha) if cha and cha != p else None, "muc": muc[:400]}
+
+
+def anh_nho(p):
+    """Ảnh nhỏ một khung của video (lưu đệm ~/Movies/_app/_anh-nho). Không làm cho tệp trên Drive để khỏi kéo cả tệp về."""
+    p = trong_nha(p)
+    if not p or not p.is_file() or "/Library/CloudStorage/" in str(p):
+        return None
+    import hashlib
+    st = p.stat(); dem = KHO / "_anh-nho" / (hashlib.md5(f"{p}{st.st_mtime}".encode()).hexdigest() + ".jpg")
+    if not dem.exists():
+        dem.parent.mkdir(parents=True, exist_ok=True)
+        subprocess.run(["/opt/homebrew/bin/ffmpeg", "-v", "error", "-y", "-ss", "1", "-i", str(p), "-frames:v", "1",
+                        "-vf", "scale=240:-2", str(dem)], timeout=30)
+    return dem if dem.exists() else None
+
+
 def video_goc():
     ds = []
     for d in ["~/Downloads", "~/Desktop", "~/Movies/video-goc", "~/Movies/_video-goc"]:
@@ -190,6 +254,16 @@ class H(BaseHTTPRequestHandler):
                 return self.gui([{"id": f.stem, "ten": chay.doc(f)["ten"]} for f in sorted((APP / "cong-thuc").glob("*.json"))])
             if u.path == "/api/thu-xoa":
                 return self.gui(thu_xoa(q["ten"][0]))
+            if u.path == "/api/noi-nhanh":
+                return self.gui(noi_nhanh())
+            if u.path == "/api/thu-muc":
+                try:
+                    return self.gui(thu_muc(q.get("p", [str(NHA / "Downloads")])[0]))
+                except (ValueError, PermissionError) as e:
+                    return self.gui({"loi": str(e) if isinstance(e, ValueError) else "macOS chưa cho app đọc thư mục này"}, 400)
+            if u.path == "/api/anh-nho":
+                f = anh_nho(q["p"][0])
+                return self.gui(f.read_bytes(), kieu="image/jpeg") if f else self.gui({"loi": "không có ảnh"}, 404)
             if u.path == "/api/video-goc":
                 return self.gui(video_goc())
             if u.path == "/tep":
