@@ -339,8 +339,9 @@ class H(BaseHTTPRequestHandler):
                                "nguon": (lambda n: ten_nguon(n[0]) + (f" +{len(n) - 1} clip" if len(n) > 1 else "") if n else "")(nguon(tt)),
                                "trang_thai": tt["buoc"].get(dang, {}).get("trang_thai") if dang else ("xong" if tt.get("xong_luc") else "chua")})
                 return self.gui(ds)
-            if u.path == "/api/han-muc":      # hạn mức Claude còn lại (han_muc.py)
-                import han_muc; return self.gui(han_muc.doc() or {})
+            if u.path == "/api/han-muc":      # hạn mức + tài khoản Claude (han_muc.py)
+                import han_muc
+                return self.gui({**(han_muc.doc() or {}), "tai_khoan": han_muc.tai_khoan(), "dang_cho_dang_nhap": han_muc.dang_cho_dang_nhap()})
             if u.path == "/api/chi-tiet":
                 return self.gui(chi_tiet(q["ten"][0]))
             if u.path == "/api/cong-thuc":
@@ -404,8 +405,13 @@ class H(BaseHTTPRequestHandler):
         if not self.cho_phep(): return
         if urlparse(self.path).path == "/api/tai-len":
             return self.tai_len()
-        if urlparse(self.path).path == "/api/han-muc":   # ↻ hỏi lại hạn mức (một câu haiku rất nhỏ)
-            import han_muc; return self.gui(han_muc.lam_moi() or {})
+        if urlparse(self.path).path == "/api/han-muc":   # ↻ hỏi lại hạn mức (/usage, 0 token) + tài khoản
+            import han_muc; return self.gui({**(han_muc.lam_moi() or {}), "tai_khoan": han_muc.tai_khoan(True), "dang_cho_dang_nhap": han_muc.dang_cho_dang_nhap()})
+        if urlparse(self.path).path == "/api/doi-tai-khoan":   # đăng xuất + mở trang đăng nhập Claude (David tự đăng nhập)
+            import han_muc
+            if any(dang_chay(t.parent.name) for t in KHO.glob("*/trang-thai.json")):
+                return self.gui({"loi": "Đang có việc chạy — dừng hoặc chờ xong rồi mới đổi tài khoản."}, 409)
+            return self.gui(han_muc.doi_tai_khoan())
         d = json.loads(self.rfile.read(int(self.headers.get("Content-Length", 0))) or b"{}")
         ten = d.get("ten", "").strip()
         if not ten or "/" in ten or ten.startswith("."):
@@ -506,6 +512,20 @@ def _tai_len(self):
 H.tai_len = _tai_len
 
 
+def tu_cap_nhat_han_muc():
+    """Mỗi 5 phút hỏi /usage (0 token) để thanh hạn mức đúng cả khi David dùng Claude ngoài app; đang chờ đăng nhập thì thôi."""
+    import threading, han_muc
+    def vong():
+        while True:
+            try:
+                if not han_muc.dang_cho_dang_nhap():
+                    han_muc.tai_khoan(True); han_muc.lam_moi()
+            except Exception as e:
+                print("hạn mức:", e, flush=True)
+            time.sleep(300)
+    threading.Thread(target=vong, daemon=True).start()
+
+
 if __name__ == "__main__":
     KHO.mkdir(parents=True, exist_ok=True)
     cong = int(os.environ.get("APP_CONG", 8765))
@@ -514,4 +534,5 @@ if __name__ == "__main__":
         address_family = socket.AF_INET6          # nghe cả IPv4 lẫn IPv6 (Tailscale dùng cả hai); quyền vào lọc ở H.cho_phep
         def server_bind(self):
             self.socket.setsockopt(socket.IPPROTO_IPV6, socket.IPV6_V6ONLY, 0); super().server_bind()
+    tu_cap_nhat_han_muc()
     MayChu(("::1", cong), H).serve_forever()

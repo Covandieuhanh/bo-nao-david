@@ -178,10 +178,18 @@ async function doiAi(ai){if((await api('/api/doi-ai',{ten:chon,ai})).ok)xem(chon
 async function tiep(){if((await api('/api/tiep',{ten:chon})).ok)setTimeout(()=>xem(chon),800)}
 async function lai(b){if(!await hoi('Làm lại từ bước này trở đi? Các bước sau đó cũng chạy lại.','Làm lại'))return;if((await api('/api/lai',{ten:chon,buoc:b})).ok)setTimeout(()=>xem(chon),800)}
 function gio(t){if(!t)return'';const d=new Date(t*1000),n=new Date(),hh=d.toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit'});return d.toDateString()==n.toDateString()?hh:hh+' '+d.getDate()+'/'+(d.getMonth()+1)}
-function veHanMuc(h){const ten={five_hour:'5 giờ',seven_day:'7 ngày'};if(!h||!h.five_hour){$('#hm').innerHTML='Hạn mức Claude: chưa có số <button onclick="lamMoiHanMuc(this)">↻</button>';return}
-const mau=p=>p>80?'var(--do)':p>=50?'var(--vang)':'var(--xanh)';const cao=Math.max(...['five_hour','seven_day'].map(k=>(h[k]||{}).dung||0));
-$('#hm').innerHTML=`<div class="d"><b>Hạn mức Claude</b><button title="Hỏi lại (gần như 0 token)" onclick="lamMoiHanMuc(this)">↻</button></div>`+['five_hour','seven_day'].filter(k=>h[k]).map(k=>`<div class="d" title="cập nhật ${gio(h.luc)}"><span style="width:44px">${ten[k]}</span><span class="t"><i style="width:${h[k].dung}%;background:${mau(h[k].dung)}"></i></span><span>${h[k].dung}% · mở lại ${gio(h[k].mo_lai)}</span></div>`).join('')+(cao>90?'<div class="canh">Sắp hết hạn mức — việc đang chạy có thể dừng giữa chừng.</div>':'')}
+function veHanMuc(h){const ten={five_hour:'5 giờ',seven_day:'7 ngày'};const tk=(h&&h.tai_khoan)||{};
+const dongTk=h&&h.dang_cho_dang_nhap?`<div class="d" style="color:var(--vang)">Đang chờ bạn đăng nhập Claude trên trình duyệt…</div>`
+ :tk.dang_nhap?`<div class="d" title="App chạy bằng tài khoản Claude đang đăng nhập trên máy này"><span style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">👤 ${esc(tk.email||'?')}${tk.goi?' · '+esc(tk.goi):''}</span><button onclick="doiTaiKhoan(this)">Đổi</button></div>`
+ :`<div class="d" style="color:var(--do)">Chưa đăng nhập Claude <button onclick="doiTaiKhoan(this)">Đăng nhập</button></div>`;
+const mau=p=>p>80?'var(--do)':p>=50?'var(--vang)':'var(--xanh)';
+if(!h||!h.five_hour){$('#hm').innerHTML=`<div class="d"><b>Hạn mức Claude</b><button title="Hỏi lại (0 token)" onclick="lamMoiHanMuc(this)">↻</button></div>`+dongTk;return}
+const cao=Math.max(...['five_hour','seven_day'].map(k=>(h[k]||{}).dung||0));
+$('#hm').innerHTML=`<div class="d"><b>Hạn mức Claude</b><span title="tự cập nhật mỗi 5 phút">· ${gio(h.luc)}</span><button title="Hỏi lại ngay (0 token)" onclick="lamMoiHanMuc(this)">↻</button></div>`
+ +['five_hour','seven_day'].filter(k=>h[k]).map(k=>`<div class="d"><span style="width:44px">${ten[k]}</span><span class="t"><i style="width:${h[k].dung}%;background:${mau(h[k].dung)}"></i></span><span>${h[k].dung}% · mở lại ${gio(h[k].mo_lai)}</span></div>`).join('')
+ +dongTk+(cao>90?'<div class="canh">Sắp hết hạn mức — việc đang chạy có thể dừng giữa chừng.</div>':'')}
+async function doiTaiKhoan(b){if(!confirm('Đăng xuất tài khoản Claude hiện tại và mở trang đăng nhập trên trình duyệt?\nApp sẽ chạy bằng tài khoản bạn đăng nhập.'))return;b.disabled=true;const r=await api('/api/doi-tai-khoan',{});if(r.ok)setTimeout(hanMuc,1500)}
 async function hanMuc(){try{const r=await fetch('/api/han-muc');veHanMuc(await r.json())}catch(e){}}
 async function lamMoiHanMuc(b){b.disabled=true;b.textContent='…';veHanMuc(await api('/api/han-muc',{}))}
-danhSach();setInterval(danhSach,5000);hanMuc();setInterval(hanMuc,15000);
+danhSach();setInterval(danhSach,5000);hanMuc();setInterval(hanMuc,10000);
 </script></body></html>

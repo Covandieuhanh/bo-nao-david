@@ -44,3 +44,18 @@ class HanMuc(unittest.TestCase):
    han_muc.doc_dong(json.dumps({'type':'rate_limit_event','rate_limit_info':{'unifiedWindows':{'five_hour':{'utilization':0.82,'resetsAt':1,'status':'allowed'},'seven_day':{'utilization':0.5,'resetsAt':2}}}}))
    d=han_muc.doc();self.assertEqual((d['five_hour']['dung'],d['seven_day']['dung']),(82,50))
    han_muc.doc_dong('{"type":"assistant"}');self.assertEqual(han_muc.doc()['five_hour']['dung'],82)
+
+class Usage(unittest.TestCase):
+ def test_doc_usage(self):
+  import json,subprocess;sys.path.insert(0,str(A));import han_muc
+  chu="Current session: 27% used · resets Nov 10 at 3:10am (Asia/Saigon)\nCurrent week (all models): 90% used · resets Nov 13 at 1pm (Asia/Saigon)"
+  with tempfile.TemporaryDirectory() as t:
+   han_muc.KHO=Path(t);han_muc.F=Path(t)/'_han-muc.json'
+   han_muc._claude=lambda:('claude',{})
+   that=subprocess.run
+   subprocess.run=lambda *a,**k:subprocess.CompletedProcess(a,0,json.dumps({'result':chu}),'')
+   try:d=han_muc.lam_moi()
+   finally:subprocess.run=that
+   self.assertEqual((d['five_hour']['dung'],d['seven_day']['dung']),(27,90))
+   from datetime import datetime;from zoneinfo import ZoneInfo
+   m=datetime.fromtimestamp(d['seven_day']['mo_lai'],ZoneInfo('Asia/Saigon'));self.assertEqual((m.day,m.hour,m.minute),(13,13,0))

@@ -13,8 +13,11 @@ Kết quả video là chính; token là phụ.
   `~/Movies/_app/<tên>/bao-cao/<bước>.md`. Không hỏi lại David: điểm còn mở thì chọn đề xuất đứng đầu và ghi giả định.
 - Bước `"loai": "co-dinh"`: máy chạy lệnh của skill (chép lời, làm sạch, tránh che, chụp thử, render, đo).
 - Máy đọc `scenes.js` bằng node (`ap/canh_js.py`), không bắt AI viết dạng JSON.
-- Chọn AI cho mỗi việc trên giao diện (Claude mặc định; Codex: cài CLI + `codex login`). Hạn mức Claude còn lại hiện ở đầu cột
-  trái (`han_muc.py`, lấy từ chính các lần gọi; ↻ hỏi lại bằng một câu haiku rất nhỏ).
+- Chọn AI cho mỗi việc trên giao diện (Claude mặc định; Codex: cài CLI + `codex login`).
+- **Hạn mức + tài khoản Claude** ở đầu cột trái (`han_muc.py`): % phiên 5 giờ và cả tuần, giờ mở lại — hỏi `/usage` của Claude Code
+  (0 token) mỗi 5 phút, sau mỗi bước AI, hoặc bấm ↻; tính cả phần dùng ngoài app. Dòng 👤 = tài khoản app đang chạy (email · gói).
+  **Đổi** → đăng xuất, mở trang đăng nhập Claude trên trình duyệt, David tự đăng nhập; từ bước AI sau app chạy và trừ hạn mức trên
+  tài khoản mới (Claude Code trong Terminal của máy cũng đổi theo, vì dùng chung chỗ đăng nhập). Khoá khi đang có việc chạy.
 - **AI sáng tạo hết sức** (David chốt 09/11): chỉ dựa trên bộ khung, tiêu chí của skill và nhận diện lớn (nền, màu chủ đạo, kiểu vẽ
   biểu tượng); bên trong mỗi bước AI sáng tạo cho hợp nội dung video — lời dặn chung trong `goi_ai.py` nói điều này cho mọi bước.
 - Cả 4 công thức (lam-video, highlight, podcast, ghep-vlog) đã làm lại theo nguyên tắc này 09/11; kiểu cũ (khuôn JSON, lời nhắc
