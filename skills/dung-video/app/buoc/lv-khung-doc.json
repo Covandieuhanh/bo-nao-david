@@ -1,0 +1,12 @@
+{
+ "id": "lv-khung-doc",
+ "ten": "AI duyệt khung dọc bám người nói (khối 04)",
+ "loai": "ai",
+ "nang": true,
+ "khi": "test {KHUNG} = doc",
+ "viec": "Làm phần đổi khung NGANG → DỌC của `video-style-edit/SKILL.md` bước 4 theo `khoi/04-khung-hinh/README.md`: app đã chạy `reframe_analyze.sh`; bạn xem kế hoạch và ảnh kiểm của khối, sửa nếu cần, rồi áp dụng đúng lệnh khối đó dặn. Không làm việc của bước khác.",
+ "doc": [
+  "{W}/tuy-chon.txt",
+  "{W}/phieu-loc.md"
+ ]
+}

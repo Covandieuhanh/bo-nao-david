@@ -1,5 +1,6 @@
-"""Âm thanh bản cuối so với bản sạch (khối 17 bước 9): âm lượng giọng chênh ≤ 0,5 dB (đo đoạn trước màn kết, có nhạc nền ~23 dB dưới
-giọng nên chênh nhỏ), tiếng rè (dải > 12 kHz) chênh ≤ 1 dB — cao hơn hẳn = âm thanh bị hạ bit ở đâu đó (xem gotchas)."""
+"""Âm thanh bản cuối so với bản sạch (khối 17 bước 9): tiếng rè (dải > 12 kHz) SO VỚI giọng không tăng quá 1 dB — cao hơn hẳn = âm
+thanh bị hạ bit ở đâu đó (xem gotchas). Đo tương đối vì bản cuối được kéo cả bài về −14 LUFS (giọng nhỏ kéo lên, luật âm lượng chung):
+kéo lên 10 dB thì rè cũng lên 10 dB, không phải lỗi (báo nhầm 09/11/2026 ở img-2888, spa-thuy-moc-huong). Mức −14 LUFS do kiem_am_luong lo."""
 import re, subprocess, sys
 P = sys.argv[1]
 import os as _os
@@ -16,5 +17,6 @@ if not os.path.exists(g): print("không còn bản sạch (đã dọn tập) —
 a, b = mean(g), mean(c)
 if a is None or b is None: print("không đo được"); sys.exit(1)
 ra, rb = re_(g), re_(c)
-print(f"âm lượng gốc {a:.1f} dB → bản cuối {b:.1f} dB · tiếng rè {ra:.1f} → {rb:.1f} dB")
-sys.exit(0 if abs(b - a) <= 0.5 and rb - ra <= 1.0 else 1)
+tang = (rb - b) - (ra - a)   # rè so với giọng: bản cuối trừ bản sạch
+print(f"âm lượng {a:.1f} → {b:.1f} dB (kéo {b - a:+.1f}) · rè so với giọng {ra - a:.1f} → {rb - b:.1f} dB ({tang:+.1f})")
+sys.exit(0 if tang <= 1.0 else 1)

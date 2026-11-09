@@ -1,0 +1,7 @@
+{
+ "id": "lv-kiem",
+ "ten": "Máy đo bản cuối (âm lượng, tiếng rè, thời lượng, chữ nguyên văn)",
+ "loai": "co-dinh",
+ "nang": true,
+ "lenh": "python3 -I {APP}/kiem/chay_kiem.py {P} {W} || true"
+}

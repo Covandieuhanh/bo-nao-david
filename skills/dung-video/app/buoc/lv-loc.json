@@ -1,0 +1,13 @@
+{
+ "id": "lv-loc",
+ "ten": "AI lọc nội dung + đề xuất cắt (dang-da-kenh bước 0–2 · video-style-edit bước 3)",
+ "loai": "ai",
+ "nang": false,
+ "viec": "Làm như skill `dang-da-kenh` bước 0–2 cho video gốc của dự án này, cộng phần AI của bước 3 \"Làm sạch\" trong `video-style-edit/SKILL.md`:\n1. Đọc lời đã chép và đề xuất cắt của máy trong `$P/check/clean/` (app đã chạy `clean_analyze.sh`), xem ảnh khung trong đó.\n2. Lọc theo `khoi/00-loc-noi-dung/README.md` (hồ sơ David: `nao/David.md` trong repo; kênh: `ho-so/kenh.json`; sổ `~/Movies/_so-danh-muc/danh-muc.md`).\n3. Làm sạch theo `khoi/02-lam-sach/README.md` + luật 5 của `video-style-edit/SKILL.md`: sửa `$P/check/clean/cuts.json` (video dài: không cắt, chỉ sửa chiều hình / viền in cứng theo khối). Chữ / viền kênh cũ in cứng trong hình → ghi khung giữ lại `rộng:cao:x:y` (pixel của video gốc) vào `$W/khung-trong.txt` cho máy cắt (để trống nếu không cần). KHÔNG chạy `clean_apply.py` (app chạy sau cổng duyệt).\n4. Viết PHIẾU LỌC vào `$W/phieu-loc.md` đúng mẫu khối 00, gộp MỌI điểm cần David chọn trong một vòng (cổng 1 của dang-da-kenh + \"hỏi một lần\" của video-style-edit: chữ bìa, câu chốt nguyên văn, cảnh minh hoạ chính, khung xuất, chỗ cắt), mỗi điểm 2–3 gợi ý, đề xuất đứng đầu. Thêm mục \"Cắt khi làm sạch\" liệt kê các đoạn cắt (giây, lý do).",
+ "doc": [
+  "{W}/tuy-chon.txt"
+ ],
+ "ra": [
+  "{W}/phieu-loc.md"
+ ]
+}

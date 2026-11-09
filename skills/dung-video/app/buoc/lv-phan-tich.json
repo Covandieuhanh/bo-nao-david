@@ -1,0 +1,7 @@
+{
+ "id": "lv-phan-tich",
+ "ten": "Máy chép lời bản thô + đề xuất cắt (khối 02)",
+ "loai": "co-dinh",
+ "nang": true,
+ "lenh": "zsh {S}/clean_analyze.sh {P}"
+}

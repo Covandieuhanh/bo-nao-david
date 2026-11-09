@@ -1,0 +1,11 @@
+{
+ "id": "lv-kiem-cuoi",
+ "ten": "AI kiểm bản cuối, sửa cảnh lỗi (khối 17 mục 9)",
+ "loai": "ai",
+ "nang": true,
+ "viec": "Làm phần \"Kiểm tra bản cuối\" của `video-style-edit/SKILL.md` bước 10 theo `khoi/17-dung-kiem-tra/README.md` mục 9 và \"Tiêu chí đạt\" của SKILL.md: app đã render `$P/video-final.mp4`, ghép tờ khung `$P/check/sheet*.jpg` và chạy các phép đo (kết quả: `$W/kiem.md`). Xem tờ khung; cảnh nào lỗi thì sửa cảnh đó rồi `node render.mjs <id>` (trong `$P/motion`) và `python3 -I {S}/render_preview.py {P}` như khối dặn. Không lỗi thì không làm gì. Ghi vào báo cáo từng mục Tiêu chí đạt: đạt / chưa đạt / chưa kiểm.",
+ "doc": [
+  "{W}/kiem.md",
+  "{W}/phieu-loc.md"
+ ]
+}

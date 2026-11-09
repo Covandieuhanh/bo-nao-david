@@ -8,11 +8,11 @@ P = Path(sys.argv[1]); src = P / "motion/src"; S = Path(__file__).resolve().pare
 h = lambda t: hashlib.md5(t.encode()).hexdigest()
 sys.path.insert(0, str(Path(__file__).parent))
 from cap_nhat_khung import DU_LIEU   # một nguồn: tệp nào là dữ liệu riêng của video
-s = (src / "scenes.js").read_text(encoding="utf-8")
-i = s.index("export const SCENES = ") + len("export const SCENES = "); j = s.index("\n];", i) + 2
-moi = {"canh": {c["id"]: h(json.dumps(c, sort_keys=True)) for c in json.loads(s[i:j])},
+import canh_js
+_m = canh_js.doc(P); s = (src / "scenes.js").read_text(encoding="utf-8")
+moi = {"canh": {c["id"]: h(json.dumps(c, sort_keys=True)) for c in _m["SCENES"]},
        "phu_de": h((src / "captions.js").read_text(encoding="utf-8")), "du_an": h((src / "project.js").read_text(encoding="utf-8")),
-       "con_lai": h(s[j:]),
+       "con_lai": h(json.dumps({k: v for k, v in _m.items() if k != "SCENES"}, sort_keys=True)),
        # khung dựng = mọi tệp code trong motion/src trừ dữ liệu riêng của video (đổi thư viện hình / template → render lại tất cả)
        "giao_dien": h("".join(f.read_text(encoding="utf-8", errors="ignore") for f in sorted(src.rglob("*"))
                               if f.is_file() and (f.relative_to(src).parts[0] not in DU_LIEU or f.name == "hoso.json")))}

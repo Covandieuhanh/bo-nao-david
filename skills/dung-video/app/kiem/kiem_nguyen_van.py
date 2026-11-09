@@ -7,8 +7,8 @@ P = sys.argv[1]
 import os as _os
 if not _os.path.exists(P + "/motion/src/scenes.js"): print("không áp dụng cho loại video này (clip ghép)"); sys.exit(0)
 s = Path(P + "/motion/src/scenes.js").read_text(encoding="utf-8")
-i = s.index("export const SCENES = ") + len("export const SCENES = "); j = s.index("\n];", i) + 2
-S = json.loads(s[i:j]); T = loi.tu(P + "/check/goc/words.srt"); sai = []
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "ap")); import canh_js
+S = canh_js.canh(P); T = loi.tu(P + "/check/goc/words.srt"); sai = []
 import os
 SUA = frozenset(t for x in (json.load(open(P + "/check/app-sua-chu.json")) if os.path.exists(P + "/check/app-sua-chu.json") else [])
                 for t in loi.chuan(x.get("dung", "")))

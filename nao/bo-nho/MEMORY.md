@@ -21,7 +21,7 @@ Tên file bắt đầu bằng nhóm: `luat-` cách làm việc với David · `n
 
 ## Video
 
-- [App dựng video](video-app-dung-video.md) — localhost:8765 / iPhone Tailscale; lọc chấm đúng chuẩn, David tự duyệt video muốn làm (2026-11-09)
+- [App dựng video](video-app-dung-video.md) — localhost:8765 = skill chạy tự động: cố định thì máy, phán đoán thì AI làm y như skill; không luật/vòng riêng (2026-11-09)
 - [Bản chuẩn video](video-ban-chuan-2026-11-06.md) — 5 video chuẩn: 3 clip Đi trainer + 2 video dài; dự án cũ đã bỏ (2026-11-06)
 - [Làm lại video cũ](video-lam-lai-video-cu.md) — bỏ lời chào/giới thiệu kênh cũ, màn tít cũ, chữ/viền in trong hình; mỗi video một bản; làm trọn rồi David góp ý (2026-11-08)
 - [Bố cục tự cân, học chỉ trình bày](video-bo-cuc-tu-can.md) — bỏ mọi con số cố định; graphic tránh mọi người, bám người đang nói; ô tỉ lệ tự do; giữ thẩm mỹ gốc (2026-11-07, thêm 08/11)

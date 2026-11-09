@@ -3,26 +3,37 @@
 Mục tiêu ưu tiên David xác nhận 09/11/2026: **chất lượng render phải đạt chuẩn skill về thẩm mỹ, nội dung và kỹ thuật**.
 Tiết kiệm token chỉ là mục tiêu phụ sau khi giữ được chất lượng. Chưa có đối chiếu thành phẩm đầy đủ thì không tuyên bố ngang skill.
 
-## Chọn Claude hoặc Codex
-- Việc mới: chọn AI trên giao diện. Việc cũ đang dừng: đổi “AI cho các bước tiếp theo”; không tự chạy lại bước đã xong.
-- Mọi bước có `loai: claude` (tên cũ để tương thích) đều qua adapter chung: Claude CLI hoặc Codex CLI.
-- Codex: cài CLI, `codex login`, kiểm tra `codex login status`. Dùng đăng nhập sẵn của chính máy, không bắt buộc API key.
-- `APP_AI=codex` đặt mặc định cho việc mới; `APP_CODEX_MODEL=<tên>` hoặc `tuy_chon.ai_model` ghim model khi cần đối chiếu có thể lặp lại.
-  Không ghim thì CLI chọn mặc định; log ghi rõ không ghim, không coi là so sánh model cố định.
-- Codex nhận ảnh trực tiếp qua `--image`, trả JSON qua `--output-schema`; chạy read-only và không lưu phiên.
-  JSON bên trong qua kiểm khuôn cục bộ và cùng bộ kiểm nghiệp vụ như Claude.
-- Cache gồm AI, model yêu cầu, mức suy nghĩ, luật, đầu vào và nội dung ảnh. Đổi AI không dùng nhầm kết quả AI cũ.
-- Không tự đổi nhà cung cấp hoặc hạ model khi hết hạn mức. Người dùng chọn rõ ràng trên app.
-- Lời, hình và kế hoạch được gửi đến nhà cung cấp AI đã chọn, dùng tài khoản của David; không phải AI chạy hoàn toàn offline.
-- Tài liệu chính thức: https://learn.chatgpt.com/docs/non-interactive-mode
+## Nguyên tắc (David chốt 09/11/2026)
+**App = skill chạy tự động.** Cái gì cố định thì máy chạy lệnh; cái gì cần phán đoán thì AI làm **y như khi dùng skill**.
+App làm khác skill là sai: không khuôn JSON, không luật riêng của app, không vòng duyệt/sửa lồng nhau mà skill không có.
+Kết quả video là chính; token là phụ.
 
-## Kiểm chất lượng
-- Video người nói: chụp thử từng cảnh → AI duyệt → sửa và AI xem lại ảnh mới trước render.
-- Sau render: AI duyệt → sửa → tạo ảnh kiểm mới → AI duyệt lại. Tối đa 2 lần sửa mỗi đợt; vẫn chưa đạt thì dừng, không chuyển phát hành.
-- Lỗi cần sửa nguồn hoặc code mà JSON không xử lý được: trả `can_xu_ly_ngoai_ke_hoach`, app dừng và báo; chưa có agent tự sửa code trong app.
-- Tờ kiểm bản cuối chia trang 32 mốc, giữ mọi cảnh, không cắt bỏ mốc cuối video.
-- Kiểm kỹ thuật thất bại phải dừng. Các phép kiểm hiện tại chưa thay thế nghe/xem toàn video hoặc David chấm thẩm mỹ.
-- Kiểm thử: `python3 -I app/tests/test_app.py` (chạy từ thư mục skill).
+- Bước `"loai": "ai"` (`goi_ai.py`): mở Claude Code (`claude -p`) hoặc Codex (`codex exec`) **trong thư mục dự án**, đưa đúng
+  bước của SKILL.md + README khối cần đọc. AI tự sửa file dự án và tự chạy lệnh kiểm mà khối dặn, rồi ghi báo cáo ngắn vào
+  `~/Movies/_app/<tên>/bao-cao/<bước>.md`. Không hỏi lại David: điểm còn mở thì chọn đề xuất đứng đầu và ghi giả định.
+- Bước `"loai": "co-dinh"`: máy chạy lệnh của skill (chép lời, làm sạch, tránh che, chụp thử, render, đo).
+- Máy đọc `scenes.js` bằng node (`ap/canh_js.py`), không bắt AI viết dạng JSON.
+- Chọn AI cho mỗi việc trên giao diện (Claude mặc định; Codex: cài CLI + `codex login`). Hạn mức Claude còn lại hiện ở đầu cột
+  trái (`han_muc.py`, lấy từ chính các lần gọi; ↻ hỏi lại bằng một câu haiku rất nhỏ).
+- Công thức đã làm lại theo nguyên tắc này: **lam-video**. Highlight, podcast, vlog còn kiểu cũ (`claude` + khuôn JSON +
+  `chat_luong.py`), sẽ làm lại cùng cách rồi xoá kiểu cũ.
+
+## Công thức `lam-video` (khớp `video-style-edit/SKILL.md` + cổng của `dang-da-kenh`)
+| Skill | Bước app | Ai |
+|---|---|---|
+| 1–2 | moi-truong · lay-video · tao-du-an | máy |
+| 3 | lv-phan-tich (`clean_analyze.sh`) | máy |
+| dang-da-kenh 1 + 3 | **lv-loc**: lọc khối 00, sửa `cuts.json`, khung cắt viền in cứng, phiếu lọc gộp mọi điểm cần chọn | AI |
+| dang-da-kenh 2 | **Cổng 1** — David duyệt phiếu lọc (góp ý → lv-loc làm lại) | David |
+| 3–5 | lam-sach · cat-khung · đổi khung (dọc: **lv-khung-doc** AI duyệt) · nang-khung · chep-loi (`analyze_video.sh` + `captions.py`) | máy |
+| 6–9 | **lv-kich-ban**: sửa phụ đề, phong cách + tuyến nhạc, `scenes.js` + `ke-hoach-canh.md`, `face_place`, `soat_canh` tới hết P0 | AI |
+| 9–10 | tranh-che · chup-thu | máy |
+| 10 | **lv-xem-chup-thu**: xem `stills.jpg` theo khối 17 mục 7, sửa rồi chụp lại tới khi sạch | AI |
+| 10 | render (chỉ phần đổi) · to-kiem-tra · lv-kiem (đo) | máy |
+| 10 | **lv-kiem-cuoi**: xem tờ khung theo khối 17 mục 9, sửa cảnh lỗi + render lại cảnh đó; báo cáo từng Tiêu chí đạt | AI |
+| 10 | lv-kiem-lai: đo lại, không đạt thì dừng | máy |
+| 11 | **lv-phat-hanh**: khối 15/14/16/08 → `phat-hanh/` | AI |
+| dang-da-kenh 5 | **Cổng 2** — David xem bản cuối, báo cáo kiểm, bài đăng (góp ý → lv-kich-ban làm lại) | David |
 
 ## Mở app
 App chạy nền tự động (LaunchAgent của macOS): mở máy là có, tắt hay lỗi thì macOS tự bật lại. **Chỉ cần mở http://localhost:8765.**
@@ -36,6 +47,7 @@ Khác: `app-video.sh xem` (đang chạy không) · `khoi-lai` (sau khi sửa cod
 Trong app: **+ Việc mới** → kéo thả / chọn tệp từ máy đang cầm (tải lên Mac), hoặc **📁 Chọn tệp trên Mac** (duyệt Drive Video-goc, Tải về,
 Màn hình nền, Phim… có ảnh nhỏ; chỉ trong thư mục nhà, bỏ thư mục ẩn và ~/Library trừ Google Drive) → tên tập tự đặt, chọn tuỳ chọn (khung xuất, ảnh minh hoạ, thẻ tít, lịch phát,
 yêu cầu riêng) → app tự chạy, dừng ở 2 cổng chờ David duyệt. Cổng 2: xem video, tờ kiểm tra hình, chọn thumbnail, kết quả kiểm, bài đăng.
+**🎬 Nguồn + 📄 File đang làm** (đầu trang mỗi việc; danh sách trái ghi tên file gốc): video gốc (vlog: mọi clip theo thứ tự), bản sạch, ảnh chụp thử, tờ kiểm hình, bản render — ▶ Xem ngay trong trang, 📂 Mở trong Finder; chỉ mở đúng file của việc đó.
 Nút: **⏹ Dừng** (tắt cả render) · **▶ Chạy tiếp** (làm lại bước dở) · **làm lại từ đây** · **🗑 Xoá dự án** (chuyển `~/Movies/_app/<tên>` + `~/Movies/tap-<tên>` vào Thùng rác).
 **Rà soát tự động (`ra_soat.py`):** mở một dự án, app tự so skill hiện tại với lúc từng bước chạy — bước Claude so lại cả luật đã
 ghép, bước máy so script nó gọi + hồ sơ, phần hình so khung dựng. Có đổi → khung ⚠ "Skill đã đổi sau khi dự án này chạy", ⚠ cạnh
@@ -101,25 +113,6 @@ Trạng thái từng việc, log, kế hoạch Claude, số token: `~/Movies/_ap
 Highlight: chọn "Cắt highlight từ tập đã dựng bản dài" (dùng bản sạch + lời đã sửa) hoặc một video dài. Bản dài **không tự dọn** sau
 cổng 2 (highlight cần bản sạch); highlight dọn cả tập ở cuối, hoặc bấm **🧹 Dọn tập**. Ghép vlog: chọn nhiều clip theo thứ tự ghép.
 Nguồn podcast/highlight là podcast (đồ hoạ) → nhánh 7B của highlight chưa có trong app (làm bằng Claude Code).
-
-## Công thức `lam-video` (28 bước = đủ skill video-style-edit chế độ 1 video)
-| Nhóm | Bước | Ai |
-|---|---|---|
-| Chuẩn bị | kiểm công cụ · tạo dự án · chép lời thô + đề xuất cắt | máy |
-| Lọc | lọc nội dung + chọn chỗ cắt + **xem ảnh**: chiều hình, chữ/viền in cứng; đề xuất câu chốt, ý chính, chữ thumbnail | Claude |
-| | ghi phiếu lọc · ghi sổ danh mục | máy |
-| **Cổng 1** | David duyệt phiếu lọc (thay "hỏi một lần" của skill) | David |
-| Làm sạch | cắt + sửa chiều hình · cắt chữ/viền in cứng · đổi khung (ngang↔dọc, nếu chọn) · nâng khung · chép lời bản sạch + phụ đề | máy |
-| Kịch bản | kịch bản cảnh: mọi kiểu cảnh của template, trích câu | Claude |
-| | tìm mốc, ghi scenes.js / project.js (chủ đề, nhạc, **màn kết YouTube**, lịch), sửa phụ đề, ke-hoach-canh.md | máy |
-| Ảnh (khi cần) | tìm ảnh Openverse → **Claude xem & chọn** → tải ảnh, nguồn ảnh (không có ảnh tốt thì giữ biểu tượng) | máy · Claude |
-| Dựng | tránh che mặt · soát cảnh · render (**chỉ phần bị đổi**) · tờ kiểm tra hình · luật kiểm | máy |
-| Phát hành | tiêu đề, mô tả, bình luận ghim, khung bìa, chữ thumbnail, teaser | Claude |
-| | thumbnail 2 mẫu (ngang) · teaser · chương · phat-hanh.md · so-lieu.md | máy |
-| **Cổng 2** | David xem video + tờ kiểm tra, chọn thumbnail, duyệt hoặc góp ý | David |
-| Xong | ghi sổ danh mục (chờ đăng) · dọn file tạm (vào Thùng rác) | máy |
-
-Luật kiểm (`kiem/`): âm lượng −14 LUFS · âm so bản gốc + tiếng rè · thời lượng · chữ nguyên văn.
 
 ## Ngoài app (làm bằng Claude Code như cũ)
 - Highlight từ nguồn podcast (nhánh 7B): chưa có trong app.

@@ -5,8 +5,8 @@ import json, os, re, subprocess, sys, shutil
 from pathlib import Path
 P = Path(sys.argv[1]); S = Path(__file__).resolve().parents[2] / "video-style-edit/scripts"
 s = (P / "motion/src/scenes.js").read_text(encoding="utf-8")
-i = s.index("export const SCENES = ") + len("export const SCENES = "); j = s.index("\n];", i) + 2
-C = json.loads(s[i:j]); dur = float(re.search(r"duration: *([\d.]+)", (P / "motion/src/project.js").read_text()).group(1))
+sys.path.insert(0, str(Path(__file__).parent)); import canh_js
+C = canh_js.canh(P); dur = float(re.search(r"duration: *([\d.]+)", (P / "motion/src/project.js").read_text()).group(1))
 moc = []
 for c in C:
     moc += [(c["start"] + c["end"]) / 2, c["end"] - 0.4]

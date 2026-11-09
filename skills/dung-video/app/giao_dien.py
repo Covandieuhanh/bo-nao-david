@@ -107,6 +107,54 @@ def token(ten):
     return tong
 
 
+# FILE ĐANG LÀM (David muốn 09/11/2026): biết ngay việc nào làm file nào, xem được file gốc và file dở mới nhất, không chờ cổng 2.
+FILE_DO = [("Bản sạch", "davinci/media/video_goc.mp4"), ("Ảnh chụp thử", "check/stills.jpg"),
+           ("Tờ kiểm hình", "check/sheet*.jpg"), ("Bản render", "video-final.mp4"), ("Clip", "clip-*/video-final.mp4")]
+
+
+def nguon(tt):
+    """Video gốc của việc: bản đã chép về Mac (1-goc) nếu có, không thì đường dẫn lúc chọn; ghép vlog = mọi clip theo thứ tự."""
+    ds = tt.get("tuy_chon", {}).get("videos") or [tt.get("video_may") or tt.get("video")]
+    ra = []
+    for x in ds:
+        if x and Path(x).is_dir() and (Path(x) / "davinci/media/video_goc.mp4").exists():   # highlight từ tập đã dựng bản dài
+            x = str(Path(x) / "davinci/media/video_goc.mp4")
+        if x: ra.append(str(x))
+    return ra
+
+
+def ten_nguon(p):
+    p = Path(p)
+    if p.name == "video_goc.mp4" and p.parent.name == "media":   # bản sạch của một tập: gọi theo tên tập cho dễ nhận
+        return f"{p.parents[3].name} · bản sạch {p.parents[2].name}"
+    return p.name
+
+
+def file_do(P):
+    P = Path(P); ra = []
+    for nhan, mau in FILE_DO:
+        for x in sorted(P.glob(mau)):
+            if x.is_file():
+                ra.append({"nhan": nhan + (f" · {x.parent.name}" if nhan == "Clip" else f" · {x.name}" if "*" in mau else ""),
+                           "p": str(x), "luc": time.strftime("%H:%M %d/%m", time.localtime(x.stat().st_mtime))})
+    return ra
+
+
+def thoi_luong(p):
+    try:
+        r = subprocess.run(["/opt/homebrew/bin/ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", p],
+                           capture_output=True, text=True, timeout=10)
+        return round(float(r.stdout.strip()), 1)
+    except Exception:
+        return None
+
+
+def tep_cua_viec(ten, p):
+    """Chỉ đúng file gốc / file dở của việc này mới được mở (phát, Finder) — không mở file bất kỳ theo đường dẫn gửi lên."""
+    tt = chay.doc(KHO / ten / "trang-thai.json")
+    return p in nguon(tt) or p in [x["p"] for x in file_do(tt["P"])]
+
+
 def chi_tiet(ten):
     f = KHO / ten / "trang-thai.json"; tt = chay.doc(f)
     if not dang_chay(ten) and any(v.get("trang_thai") in ("dang-chay", "xep-hang") for v in tt["buoc"].values()):
@@ -153,7 +201,9 @@ def chi_tiet(ten):
     trao_doi = json.loads(gy.read_text(encoding="utf-8")) if gy.exists() else []
     return {"ai": tt.get("tuy_chon", {}).get("ai", "claude"), "video_xong": xong, "anh_bia": anh_bia, "trao_doi": trao_doi, "hang_doi": giu.read_text().strip() if giu.exists() else None, "ra_soat": rs, "ten": ten, "cong_thuc": ct["ten"], "video": tt["video"], "P": tt["P"], "dang": dang, "dang_chay": dang_chay(ten),
             "buoc": buoc, "cong": cong, "log": log_buoc, "log_chung": doc_tep(KHO / ten / "chay.log", 3000), "token": token(ten),
-            "xong_luc": tt.get("xong_luc")}
+            "xong_luc": tt.get("xong_luc"),
+            "nguon": [{"p": x, "ten": ten_nguon(x), "co": Path(x).exists(), "giay": thoi_luong(x) if Path(x).exists() and "/CloudStorage/" not in x else None} for x in nguon(tt)],
+            "file_do": file_do(tt["P"])}
 
 
 def thu_xoa(ten):
@@ -286,8 +336,11 @@ class H(BaseHTTPRequestHandler):
                 for f in sorted(KHO.glob("*/trang-thai.json"), key=os.path.getmtime, reverse=True):
                     tt = chay.doc(f); dang = tt.get("dang")
                     ds.append({"ten": tt["ten"], "cong_thuc": tt["cong_thuc"], "dang": dang, "dang_chay": dang_chay(tt["ten"]),
+                               "nguon": (lambda n: ten_nguon(n[0]) + (f" +{len(n) - 1} clip" if len(n) > 1 else "") if n else "")(nguon(tt)),
                                "trang_thai": tt["buoc"].get(dang, {}).get("trang_thai") if dang else ("xong" if tt.get("xong_luc") else "chua")})
                 return self.gui(ds)
+            if u.path == "/api/han-muc":      # hạn mức Claude còn lại (han_muc.py)
+                import han_muc; return self.gui(han_muc.doc() or {})
             if u.path == "/api/chi-tiet":
                 return self.gui(chi_tiet(q["ten"][0]))
             if u.path == "/api/cong-thuc":
@@ -324,13 +377,14 @@ class H(BaseHTTPRequestHandler):
 
     def tep(self, p):
         f = Path(p).resolve()
-        if not (str(f).startswith(str(MOVIES)) and f.is_file()):
+        cua_viec = any(tep_cua_viec(t.parent.name, p) for t in KHO.glob("*/trang-thai.json")) if not str(f).startswith(str(MOVIES)) else False
+        if not ((str(f).startswith(str(MOVIES)) or cua_viec) and f.is_file()):
             return self.gui({"loi": "chỉ mở file trong ~/Movies"}, 403)
         n = f.stat().st_size; rg = self.headers.get("Range"); a, b = 0, n - 1
         if rg and rg.startswith("bytes="):
             x, y = rg[6:].split("-"); a = int(x or 0); b = int(y) if y else min(n - 1, a + 8 * 1024 * 1024)
         self.send_response(206 if rg else 200)
-        self.send_header("Content-Type", mimetypes.guess_type(str(f))[0] or "application/octet-stream")
+        self.send_header("Content-Type", "audio/wav" if f.suffix.lower() == ".wav" else mimetypes.guess_type(str(f))[0] or "application/octet-stream")
         self.send_header("Accept-Ranges", "bytes"); self.send_header("Content-Length", str(b - a + 1))
         if self.path.find("&tai=1") > 0:   # nút Tải về: lưu tệp thay vì phát
             from urllib.parse import quote
@@ -350,6 +404,8 @@ class H(BaseHTTPRequestHandler):
         if not self.cho_phep(): return
         if urlparse(self.path).path == "/api/tai-len":
             return self.tai_len()
+        if urlparse(self.path).path == "/api/han-muc":   # ↻ hỏi lại hạn mức (một câu haiku rất nhỏ)
+            import han_muc; return self.gui(han_muc.lam_moi() or {})
         d = json.loads(self.rfile.read(int(self.headers.get("Content-Length", 0))) or b"{}")
         ten = d.get("ten", "").strip()
         if not ten or "/" in ten or ten.startswith("."):
@@ -357,6 +413,10 @@ class H(BaseHTTPRequestHandler):
         u = urlparse(self.path).path
         if u == "/api/dung":
             dung(ten); return self.gui({"ok": True})
+        if u == "/api/mo-finder":   # chạy được cả khi việc đang chạy; chỉ file của đúng việc này
+            if not tep_cua_viec(ten, d.get("p", "")) or not Path(d["p"]).exists():
+                return self.gui({"loi": "không mở được file này"}, 403)
+            subprocess.run(["open", "-R", d["p"]]); return self.gui({"ok": True})
         if dang_chay(ten):
             return self.gui({"loi": "việc này đang chạy"}, 409)
         if u == "/api/doi-ai":

@@ -1,6 +1,6 @@
 ---
 name: video-app-dung-video
-description: "App dựng video trên Mac (localhost:8765, iPhone qua Tailscale) — lọc/chấm phải đúng chuẩn, không chiều; David tự duyệt video nào vẫn muốn làm"
+description: "App dựng video trên Mac (localhost:8765) = skill chạy tự động: cố định thì máy, phán đoán thì AI làm y như skill; lọc đúng chuẩn, David tự duyệt"
 metadata:
   node_type: memory
   type: project
@@ -9,8 +9,7 @@ metadata:
 ---
 
 Từ 08–09/11/2026 David dựng video "1 người nói" bằng app `skills/dung-video/app/` (README trong đó), chạy nền trên Mac:
-http://localhost:8765, iPhone qua Tailscale http://macbook-david:8765. 3 bước Claude (lọc, kịch bản, phát hành), còn lại máy chạy;
-2 cổng David duyệt; sổ góp ý 💬 Trao đổi; tự rà soát skill đổi.
+http://localhost:8765 (chỉ máy này). 2 cổng David duyệt; sổ góp ý 💬 Trao đổi; tự rà soát skill đổi; thanh hạn mức Claude.
 
 David chốt 09/11: phiếu lọc **cứ chấm và báo đúng chuẩn** (kể cả "⛔ Không làm", cảnh báo lằn ranh) — video nào David vẫn muốn làm thì
 David tự duyệt. Không hạ chuẩn để chiều, không tự quyết thay.
@@ -22,10 +21,15 @@ Không tự Duyệt / Chạy tiếp / Làm lại việc của David ([[luat-khon
 của David đang chạy — chờ nó tạm dừng. Liên quan [[nao-ho-so-va-bo-loc]], [[luat-goi-y-de-david-chon]].
 
 
-## David xác nhận 09/11/2026 — chất lượng trước token
-- App chỉ có giá trị nếu video render đạt cùng tiêu chuẩn thẩm mỹ, nội dung và kỹ thuật như AI dùng skill trực tiếp. Tiết kiệm token là mục tiêu phụ; không đổi chất lượng lấy token.
-- David yêu cầu hỗ trợ cả Claude và Codex, không khoá app vào Claude. Đã cho phép kiểm thử dự án đọc sách với Codex/OpenAI trong phiên Codex ngày 09/11.
-- Đã thêm adapter hai AI, chọn AI trong giao diện, duyệt lại sau sửa, chụp thử video người nói, chặn lỗi kỹ thuật và chia trang ảnh kiểm. CLI Codex đã nhận ảnh, trả kế hoạch hợp lệ và render được bản thử riêng.
-- **Chưa kết luận ngang skill 100%.** Kiểm thử đơn vị/luồng không chứng minh thẩm mỹ; bản thử vẫn cần xem và đánh giá lại. Chưa chạy nghiệm thu toàn bộ podcast, highlight, vlog bằng Codex.
-- App hiện chỉ sửa tự động trong khuôn kế hoạch; lỗi cần thay code/template/nguồn phải báo dừng, chưa có agent tự sửa code.
-- Nguồn: David xác nhận và yêu cầu triển khai trong chat Codex ngày 09/11/2026; không coi đề xuất kỹ thuật là quyết định mở rộng phạm vi khác của David.
+## Nguyên tắc app — David chốt 09/11/2026 (thay hướng "khuôn JSON + vòng duyệt" của Codex)
+- App = **skill chạy tự động**: bước có lệnh cố định thì máy chạy; bước cần phán đoán thì AI (Claude Code hoặc Codex) làm **y như
+  skill**, ngay trong thư mục dự án, đọc đúng SKILL.md + README khối (`app/goi_ai.py`, phiếu bước `"loai": "ai"`).
+- **App làm khác skill là sai.** Không khuôn JSON, không luật riêng của app, không vòng duyệt/sửa lồng nhau mà skill không có.
+  Kết quả video quan trọng nhất; token phụ. Lần Codex thêm vòng lặp làm chậm ×4 (65 phút AI cho 54 giây video) → David dừng, bỏ.
+- Công thức `lam-video` đã làm lại theo nguyên tắc này (khớp 12 bước `video-style-edit` + 2 cổng `dang-da-kenh`); thử 09/11 đoạn
+  54 giây: mỗi bước AI một lượt 3,5–5 phút, 4 phép đo đạt. Highlight, podcast, vlog còn kiểu cũ → làm lại cùng cách.
+
+**Why:** David muốn thay việc ngồi chat với skill bằng app, không muốn một hệ thứ hai cho ra video khác.
+
+**How to apply:** sửa luật dựng → sửa skill/khối (app tự theo); sửa app chỉ ở phần máy. Thêm bước AI = phiếu `buoc/<id>.json`
+loại `ai` trỏ tới bước của skill, không viết lại luật vào phiếu.

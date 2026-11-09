@@ -7,8 +7,8 @@ import json, re, subprocess, sys
 from pathlib import Path
 from hl_chung import DV, ENV
 P, W = Path(sys.argv[1]), Path(sys.argv[2]); src = P / "motion/src"
-s = (src / "scenes.js").read_text(encoding="utf-8"); i = s.index("export const SCENES = ") + 22; j = s.index("\n];", i) + 2
-C = json.loads(s[i:j]); dur = float(re.search(r"duration: *([\d.]+)", (src / "project.js").read_text()).group(1))
+s = (src / "scenes.js").read_text(encoding="utf-8"); import sys as _s; _s.path.insert(0, str(Path(__file__).parent)); import canh_js
+C = canh_js.canh(P); dur = float(re.search(r"duration: *([\d.]+)", (src / "project.js").read_text()).group(1))
 tp = [float(x) for x in re.findall(r"\{at: ([\d.]+), text:", s[s.find("export const TOPICS"):])] if "export const TOPICS" in s else []
 def day(c):   # lúc "đầy nhất": sau mốc phần tử cuối hiện ~0,8 s
     ats = [float(v) for v in re.findall(r'"(?:at|quoteAt|doneAt)": ([\d.]+)', json.dumps(c["props"]))]

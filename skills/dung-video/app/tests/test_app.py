@@ -64,7 +64,10 @@ class BaoVe(unittest.TestCase):
    (P/'motion/src/scenes.js').write_text('export const SCENES = '+json.dumps(C)[:-1]+'\n];')
    (P/'motion/src/project.js').write_text('export default {duration: 185};')
    calls=[]
-   def fake(cmd,**kw):calls.append(cmd);(P/'check/sheet.jpg').write_bytes(b'fixture');return subprocess.CompletedProcess(cmd,0)
+   that=subprocess.run
+   def fake(cmd,**kw):
+    if cmd[0]=='node':return that(cmd,**kw)   # đọc scenes.js bằng node thật (canh_js)
+    calls.append(cmd);(P/'check/sheet.jpg').write_bytes(b'fixture');return subprocess.CompletedProcess(cmd,0)
    with patch.object(sys,'argv',['to_kiem_tra.py',tmp]),patch('subprocess.run',side_effect=fake):runpy.run_path(str(A/'ap/to_kiem_tra.py'),run_name='__main__')
    self.assertGreater(len(calls),1)
    self.assertIn('178.6',[v for cmd in calls for v in cmd])

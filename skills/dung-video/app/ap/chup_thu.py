@@ -4,8 +4,8 @@ from pathlib import Path
 P, W = Path(sys.argv[1]), Path(sys.argv[2]); DV = Path(__file__).resolve().parents[2]
 S = DV / "video-style-edit/scripts"; env = dict(os.environ, PATH="/opt/homebrew/bin:/usr/local/bin:"+os.environ.get("PATH", ""))
 def run(*args, **kw): subprocess.run(args, env=env, check=True, **kw)
-s = (P/"motion/src/scenes.js").read_text(); i=s.index("export const SCENES = ")+len("export const SCENES = "); j=s.index("\n];",i)+2
-C=json.loads(s[i:j]); moc=[]
+import sys as _s; _s.path.insert(0, str(Path(__file__).parent)); import canh_js
+C=canh_js.canh(P); moc=[]
 for c in C:
     t=max(c["start"], c["end"]-0.25)
     moc += [f"{c['id']}@{t:.2f}", f"phu-de@{t:.2f}"]

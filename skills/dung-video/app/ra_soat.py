@@ -70,6 +70,11 @@ def ra_soat(ten):
             if moi != f.read_text().strip():
                 doi = [x for x in phu_thuoc_claude(ph) if x.stat().st_mtime > st["ts"]]
                 cu.append({"id": bid, "ten": ph.get("ten", bid), "tep": [str(x.relative_to(DV)) for x in doi] or ["luật ghép trong lời nhắc"]})
+        elif ph["loai"] == "ai":   # bước AI: skill/khối mà phiếu bước nhắc tới, đổi sau lúc bước chạy
+            ten_tep = set(re.findall(r"((?:khoi|trinh-bay|ho-so|video-style-edit|dang-da-kenh|cat-highlight-video|podcast-style-edit)/[\w./-]+\.(?:md|json)|luat-chung\.md)", ph["viec"]))
+            doi = [DV / x for x in ten_tep if (DV / x).exists() and (DV / x).stat().st_mtime > st["ts"]]
+            if doi:
+                cu.append({"id": bid, "ten": ph.get("ten", bid), "tep": sorted(str(x.relative_to(DV)) for x in doi)})
         elif ph["loai"] == "co-dinh":
             doi = [x for x in phu_thuoc_may(ph, b) if x.stat().st_mtime > st["ts"]]
             if doi:

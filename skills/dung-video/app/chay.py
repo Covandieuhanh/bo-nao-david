@@ -7,7 +7,8 @@
   python3 -I chay.py lai <tên> <bước>                     → chạy lại từ bước đó trở đi
   python3 -I chay.py xem <tên>                            → in trạng thái
 
-Ba loại bước: co-dinh (chạy lệnh) · claude (goi_claude.py, ra JSON đúng khuôn, có lệnh kiểm) · duyet (dừng chờ David).
+Loại bước: co-dinh (app chạy lệnh cố định) · ai (goi_ai.py: AI làm đúng bước của skill trong thư mục dự án) · duyet (dừng chờ David).
+(claude = kiểu cũ JSON theo khuôn, chỉ còn ở công thức chưa làm lại.)
 Biến trong lệnh: {APP} {DV} {S} {HL} {P} {W} {VIDEO} {TEN} {HO_SO}. Thêm bước = thêm buoc/<id>.json + tên vào công thức, không sửa file này.
 """
 import fcntl, json, os, subprocess, sys, time, glob
@@ -125,7 +126,7 @@ def mot_buoc(tt, bid, gop_y=None):
         return "bo-qua"
     if ph["loai"] == "duyet":
         return "cho-duyet"
-    if ph.get("duyet_lai"):
+    if ph.get("duyet_lai"):      # kiểu cũ: vòng duyệt lại của highlight/podcast/vlog — bỏ khi các công thức đó làm lại theo "ai"
         import chat_luong
         return chat_luong.chay(tt, ph, log, mot_buoc, bien, chay_lenh, thay)
     if ph["loai"] == "co-dinh":
@@ -134,7 +135,14 @@ def mot_buoc(tt, bid, gop_y=None):
             if chay_lenh(thay(l, b), log, cwd=thay(ph["cwd"], b) if ph.get("cwd") else None) != 0:
                 return "loi"
         return "xong"
-    if ph["loai"] == "claude":
+    if ph["loai"] == "ai":       # AI làm đúng bước của skill ngay trong thư mục dự án (goi_ai.py)
+        cmd = [sys.executable, "-I", str(APP / "goi_ai.py"), str(APP / "buoc" / f"{bid}.json"), json.dumps(b, ensure_ascii=False)]
+        if gop_y:
+            cmd.append(gop_y)
+        with open(log, "a", encoding="utf-8") as f:
+            r = subprocess.run(cmd, stdout=f, stderr=subprocess.STDOUT, env=ENV)
+        return "xong" if r.returncode == 0 else "loi"
+    if ph["loai"] == "claude":   # kiểu cũ (JSON theo khuôn) — chỉ còn ở highlight/podcast/vlog, sẽ chuyển sang "ai"
         cmd = [sys.executable, "-I", str(APP / "goi_claude.py"), str(APP / "buoc" / f"{bid}.json"), json.dumps(b, ensure_ascii=False)]
         if gop_y:
             cmd.append(gop_y)
@@ -153,7 +161,7 @@ def ghi_gop_y(W, noi, chu, tu):
 
 
 # Góp ý sau khi video đã xong: sửa gì → làm lại từ bước Claude nào
-GOP_TU = {"video": "ke-hoach-canh", "bai-dang": "phat-hanh", "loc": "loc-va-cat"}
+GOP_TU = {"video": "ke-hoach-canh", "bai-dang": "phat-hanh", "loc": "loc-va-cat"}   # công thức có "gop_tu" thì theo công thức
 
 
 def chay(tt_path, tu=None, gop_y=None, gop_cho=None, giu=()):
@@ -204,11 +212,21 @@ def chay(tt_path, tu=None, gop_y=None, gop_cho=None, giu=()):
     return "xong-het"
 
 
+def nhan_viec(ten):
+    """Việc chạy từ dòng lệnh (không qua giao diện) cũng ghi pid + nhóm tiến trình riêng: giao diện thấy đang chạy, nút Dừng tắt
+    được cả render con. Thiếu bước này giao diện tưởng việc đã chết, đánh dấu ⏸ trong khi việc vẫn chạy (lỗi 09/11/2026, thu-0911)."""
+    try: os.setpgid(0, 0)          # giao diện đã mở nhóm riêng (start_new_session) thì lệnh này báo lỗi — bỏ qua
+    except OSError: pass
+    (KHO / ten).mkdir(parents=True, exist_ok=True); (KHO / ten / "pid").write_text(str(os.getpid()))
+
+
 def main():
     a = sys.argv[1:]
     if not a:
         print(__doc__); return
     lenh = a[0]
+    if lenh in ("moi", "tiep", "duyet", "lai") and len(a) > (3 if lenh == "moi" else 1):
+        nhan_viec(a[3] if lenh == "moi" else a[1])
     if lenh == "moi":
         ct, video, ten = a[1], os.path.expanduser(a[2]), a[3]
         if la_ban_da_dung(video):
@@ -242,7 +260,7 @@ def main():
             print(chay(p))
     elif lenh == "gop":   # chay.py gop <tên> video|bai-dang|loc <góp ý> — góp ý bất kỳ lúc nào, kể cả khi video đã xong
         p = KHO / a[1] / "trang-thai.json"; tt = doc(p); loai, gop = a[2], " ".join(a[3:]).strip()
-        dich = GOP_TU[loai]; ghi_gop_y(p.parent, f"sau khi xong · {loai}", gop, dich)
+        dich = cong_thuc(tt["cong_thuc"]).get("gop_tu", GOP_TU)[loai]; ghi_gop_y(p.parent, f"sau khi xong · {loai}", gop, dich)
         P = Path(tt["P"]); giu = ()
         print(chay(p, tu=dich, gop_y=gop, giu=("CONG-1",) if loai != "loc" else ()))   # tập đã dọn → chay() tự dựng lại từ video gốc
     elif lenh == "lai":

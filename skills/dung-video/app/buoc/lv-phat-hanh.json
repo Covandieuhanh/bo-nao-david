@@ -1,0 +1,14 @@
+{
+ "id": "lv-phat-hanh",
+ "ten": "AI làm gói phát hành (bước 11)",
+ "loai": "ai",
+ "nang": true,
+ "viec": "Làm bước 11 Phát hành của `video-style-edit/SKILL.md` theo `khoi/15-phat-hanh/README.md`, `khoi/08-ket-thuc/README.md` (màn kết/chương/teaser chỉ khi YouTube video dài), `khoi/14-thumbnail/README.md` (thumbnail khi video ngang), `khoi/16-so-lieu/README.md`, giọng văn `ho-so/giong-van-david.md` và phiếu lọc David đã duyệt (kênh, kiểu dẫn dắt). Ra `$P/phat-hanh/phat-hanh.md` (+ thumbnail, so-lieu.md như các khối dặn). Không đăng gì.",
+ "doc": [
+  "{W}/phieu-loc.md",
+  "{P}/ke-hoach-canh.md"
+ ],
+ "ra": [
+  "{P}/phat-hanh/phat-hanh.md"
+ ]
+}
