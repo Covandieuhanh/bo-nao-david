@@ -206,31 +206,82 @@ def chi_tiet(ten):
             "file_do": file_do(tt["P"])}
 
 
-def thu_xoa(ten):
-    """Những thư mục sẽ vào Thùng rác khi xoá dự án: trạng thái app + cả tập ~/Movies/tap-<tên> (gốc, bản dài, highlight)."""
-    ds = [KHO / ten]
-    f = KHO / ten / "trang-thai.json"
-    if f.exists():
-        P = Path(chay.doc(f)["P"])
-        tap = P.parent if P.name == "2-ban-dai" else P
-        if tap.exists() and str(tap.resolve()).startswith(str(MOVIES) + "/") and tap.resolve() != MOVIES:
-            ds.append(tap)
-    out = []
-    for d in ds:
-        if d.exists():
-            n = sum(x.stat().st_size for x in d.rglob("*") if x.is_file() and not x.is_symlink())
-            out.append({"duong_dan": str(d), "mb": round(n / 1048576)})
-    return out
+def _trong(con, cha):
+    try:
+        Path(con).resolve().relative_to(Path(cha).resolve()); return True
+    except Exception:
+        return False
 
 
-def xoa(ten):
-    """Chuyển vào Thùng rác (lấy lại được), không xoá hẳn."""
+def _thu_muc_viec(tt):
+    """Thư mục làm việc RIÊNG của một việc: 2-ban-dai · 3-highlight · vlog/<tên> (không bao giờ cả thư mục tập)."""
+    P = Path(tt["P"])
+    return P if P.exists() and _trong(P, MOVIES) and P.resolve() != MOVIES and P.parent.resolve() != MOVIES else None
+
+
+def _goc_viec(tt):
+    """Thư mục file gốc của việc (tap-<tên>/1-goc) nếu có."""
+    P = Path(tt["P"]); g = P.parent / "1-goc"
+    return g if P.name in ("2-ban-dai", "3-highlight") and g.exists() else None
+
+
+def _ai_dung(d, tru):
+    """Các việc KHÁC đang dùng thư mục d (làm việc ở trong, lấy nguồn từ trong, hoặc d nằm trong thư mục của việc đó)."""
+    ra = []
+    for f in KHO.glob("*/trang-thai.json"):
+        ten = f.parent.name
+        if ten == tru: continue
+        try: tt = chay.doc(f)
+        except Exception: continue
+        nguon = [tt.get("video"), tt.get("video_may"), *(tt.get("tuy_chon", {}).get("videos") or [])]
+        if _trong(tt["P"], d) or _trong(d, tt["P"]) or any(x and _trong(x, d) for x in nguon):
+            ra.append(ten)
+    return ra
+
+
+def _co(d):
+    n = sum(x.stat().st_size for x in Path(d).rglob("*") if x.is_file() and not x.is_symlink())
+    return round(n / 1048576)
+
+
+def thu_xoa(ten, muc=1):
+    """XOÁ 3 MỨC (David chốt 09/11/2026 — nút cũ xoá cả thư mục tập, mất luôn highlight + file gốc của việc khác):
+    1 = bỏ khỏi danh sách (~/Movies/_app/<tên>) · 2 = + thư mục làm việc riêng của việc này · 3 = + file gốc (1-goc).
+    Thư mục nào việc khác đang dùng → không xoá, trả trong `chan` kèm tên việc đang dùng."""
+    f = KHO / ten / "trang-thai.json"; tt = chay.doc(f) if f.exists() else None
+    xoa_ds, chan = [{"duong_dan": str(KHO / ten), "mb": _co(KHO / ten), "loai": "việc trong app"}], []
+    if tt and int(muc) >= 2:
+        for d, loai in ((_thu_muc_viec(tt), "file làm việc"), (_goc_viec(tt) if int(muc) >= 3 else None, "file gốc")):
+            if not d: continue
+            ai = _ai_dung(d, ten)
+            (chan if ai else xoa_ds).append({"duong_dan": str(d), "mb": _co(d), "loai": loai, **({"dang_dung": ai} if ai else {})})
+    return {"xoa": [x for x in xoa_ds if Path(x["duong_dan"]).exists()], "chan": chan,
+            "co_goc": bool(tt and _goc_viec(tt)), "co_lam_viec": bool(tt and _thu_muc_viec(tt))}
+
+
+def xoa(ten, muc=1):
+    """Chuyển vào Thùng rác (lấy lại được), không xoá hẳn. Chỉ những thư mục thu_xoa cho phép."""
     rac = Path.home() / ".Trash"; luc = time.strftime("%H%M%S")
-    for x in thu_xoa(ten):
-        d = Path(x["duong_dan"]); dich = rac / d.name
+    for x in thu_xoa(ten, muc)["xoa"]:
+        d = Path(x["duong_dan"]); dich = rac / (f"{Path(d).parent.name}-{d.name}" if d.name in ("2-ban-dai", "3-highlight", "1-goc") else d.name)
         if dich.exists():
-            dich = rac / f"{d.name}-{luc}"
+            dich = rac / f"{dich.name}-{luc}"
         os.rename(d, dich) if os.stat(d).st_dev == os.stat(rac).st_dev else __import__("shutil").move(str(d), str(dich))
+
+
+def sua_viec(ten, ten_moi=None, tuy_chon=None):
+    """SỬA VIỆC: đổi tên (thư mục trong app) và tuỳ chọn — áp cho bước chưa chạy. Không đổi file nguồn (đổi nguồn = việc mới)."""
+    f = KHO / ten / "trang-thai.json"; tt = chay.doc(f)
+    if tuy_chon:
+        GIU = ("khung", "anh", "hook", "lich", "yeu_cau", "ai")
+        tt["tuy_chon"] = {**tt.get("tuy_chon", {}), **{k: v for k, v in tuy_chon.items() if k in GIU}}
+        chay.ghi(f, tt); chay.ghi_tuy_chon(KHO / ten, tt["tuy_chon"])
+    if ten_moi and ten_moi != ten:
+        if (KHO / ten_moi).exists(): raise ValueError("đã có việc tên này")
+        os.rename(KHO / ten, KHO / ten_moi)
+        f = KHO / ten_moi / "trang-thai.json"; tt = chay.doc(f); tt["ten"] = ten_moi; chay.ghi(f, tt)
+        (KHO / ten_moi / "pid").unlink(missing_ok=True)
+    return {"ok": True, "ten": ten_moi or ten}
 
 
 NHA = Path.home().resolve()
@@ -347,7 +398,7 @@ class H(BaseHTTPRequestHandler):
             if u.path == "/api/cong-thuc":
                 return self.gui([{"id": f.stem, "ten": chay.doc(f)["ten"]} for f in sorted((APP / "cong-thuc").glob("*.json"))])
             if u.path == "/api/thu-xoa":
-                return self.gui(thu_xoa(q["ten"][0]))
+                return self.gui(thu_xoa(q["ten"][0], int(q.get("muc", ["1"])[0])))
             if u.path == "/api/tap-ban-dai":   # nguồn cho highlight: tập đã dựng bản dài, còn bản sạch
                 ds = []
                 for v in sorted(MOVIES.glob("tap-*/2-ban-dai/davinci/media/video_goc.mp4"), key=os.path.getmtime, reverse=True):
@@ -460,7 +511,13 @@ class H(BaseHTTPRequestHandler):
                 chay_nen(ten, "lai", ten, "render")      # đã render rồi → render lại với khung mới (các bước Claude sau đó dùng lại kết quả cũ, ai=tu_may(self.client_address[0]))
             return self.gui({"ok": True, "ket_qua": r.stdout.strip().split("\n")[0], "render_lai": doi and "render" in tt["buoc"]})
         if u == "/api/xoa":
-            xoa(ten); CHAY.pop(ten, None); return self.gui({"ok": True})
+            xoa(ten, int(d.get("muc", 1))); CHAY.pop(ten, None); return self.gui({"ok": True})
+        if u == "/api/sua-viec":
+            ten_moi = (d.get("ten_moi") or "").strip() or None
+            if ten_moi and ("/" in ten_moi or ten_moi.startswith(".")):
+                return self.gui({"loi": "tên không hợp lệ"}, 400)
+            try: return self.gui(sua_viec(ten, ten_moi, d.get("tuy_chon")))
+            except ValueError as e: return self.gui({"loi": str(e)}, 400)
         if u == "/api/moi":
             vv = Path(os.path.expanduser(d.get("video", "")))
             if not (vv.is_file() or (vv.is_dir() and (vv / "davinci/media/video_goc.mp4").exists())):

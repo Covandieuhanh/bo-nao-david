@@ -12,6 +12,7 @@ import glob, json, os, shutil, subprocess, sys, time
 from pathlib import Path
 
 APP = Path(__file__).resolve().parent; DV = APP.parent; REPO = DV.parents[1]
+sys.path.insert(0, str(APP))   # python -I không tự thấy file cùng thư mục (han_muc.py) — lỗi 09/11/2026 ở bước AI đầu tiên
 ENV = dict(os.environ, PATH="/opt/homebrew/bin:/usr/local/bin:" + os.environ.get("PATH", ""))
 
 # Công cụ AI được dùng: đọc/sửa file + đúng các lệnh mà skill dùng. Không mạng, không xoá ngoài dự án, không đăng.
