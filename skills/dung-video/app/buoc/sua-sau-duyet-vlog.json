@@ -1,0 +1,1 @@
+{"id": "sua-sau-duyet-vlog", "ten": "Sửa theo duyệt hình + dựng lại", "loai": "co-dinh", "nang": true, "lenh": "python3 -I {APP}/ap/sua_sau_duyet.py ghep {P} {W}"}

@@ -3,7 +3,8 @@
  "required": [
   "loc",
   "cat",
-  "de_xuat_dung"
+  "de_xuat_dung",
+  "loai_video"
  ],
  "properties": {
   "loc": {
@@ -171,6 +172,28 @@
   "phan_hoi": {
    "type": "string",
    "description": "chỉ khi có GÓP Ý CỦA DAVID: 1–2 câu cho David biết đã sửa gì"
+  },
+  "loai_video": {
+   "type": "object",
+   "required": [
+    "loai",
+    "ly_do"
+   ],
+   "properties": {
+    "loai": {
+     "type": "string",
+     "enum": [
+      "noi-truoc-camera",
+      "vlog-canh",
+      "podcast-tieng",
+      "khac"
+     ]
+    },
+    "ly_do": {
+     "type": "string"
+    }
+   },
+   "description": "loại video THẬT nhìn từ hình + lời: 1 người nói trước camera · vlog/cảnh sự kiện (ít nói trước camera) · podcast chỉ tiếng · khác"
   }
  }
 }

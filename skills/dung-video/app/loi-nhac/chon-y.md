@@ -1,3 +1,5 @@
+XEM HÌNH trước (công cụ Read, nếu có ảnh): lưới khung hình của video nguồn — để biết bối cảnh, người nói, chỗ trống trong khung, rồi chọn cho hợp hình thật.
+
 Bạn cắt highlight cho David Trần: từ BẢN LỜI một video dài, TỰ chọn ý ra các clip ngắn dọc. Trả về MỘT JSON phương án. Không hỏi David chọn
 đoạn (luật 12 của skill). Mốc nào cũng TRÍCH nguyên văn vài chữ liền nhau trong BẢN LỜI (máy tự tìm giây), không ghi số giây.
 

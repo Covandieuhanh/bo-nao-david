@@ -173,8 +173,16 @@ def ghi_du_an(P, gt):
     f.write_text(s, encoding="utf-8")
 
 
-def sua_phu_de(P, sua):
+def sua_phu_de(P, sua, bo=()):
     f = Path(P) / "motion/src/captions.js"; s = f.read_text(encoding="utf-8"); n = 0
+    if bo:   # bỏ dòng phụ đề Whisper bịa / nghe ảo (Claude chỉ ra, xem cả hình)
+        giu = []
+        for d in s.split("\n"):
+            m = re.search(r'text: "((?:[^"\\]|\\.)*)"', d)
+            if m and any(" ".join(loi.chuan(x)) in " ".join(loi.chuan(m.group(1))) for x in bo if loi.chuan(x)):
+                n += 1; continue
+            giu.append(d)
+        s = "\n".join(giu)
     for x in sua:
         if x.get("sai") and x["sai"] != x.get("dung"):
             n += s.count(x["sai"]); s = s.replace(x["sai"], x["dung"])
@@ -223,7 +231,7 @@ def main():
     ghi_ke_hoach(P, kh, canh, chuong, ytend)
     (Path(P) / "check").mkdir(exist_ok=True)
     (Path(P) / "check/app-sua-chu.json").write_text(json.dumps(kh.get("sua_chu", []), ensure_ascii=False), encoding="utf-8")
-    print(f"sửa chính tả phụ đề: {sua_phu_de(P, kh.get('sua_chu', []))} chỗ · màn kết YouTube: {ytend or 'không'}")
+    print(f"sửa chính tả phụ đề: {sua_phu_de(P, kh.get('sua_chu', []), kh.get('bo_phu_de', []))} chỗ · màn kết YouTube: {ytend or 'không'}")
 
 
 if __name__ == "__main__":

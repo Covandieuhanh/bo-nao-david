@@ -131,6 +131,13 @@
      }
     }
    }
+  },
+  "bo_phu_de": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   },
+   "description": "cụm nguyên văn của câu phụ đề Whisper bịa/ảo cần bỏ"
   }
  }
 }

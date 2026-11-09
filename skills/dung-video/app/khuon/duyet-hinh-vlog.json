@@ -1,0 +1,37 @@
+{
+ "type": "object",
+ "required": [
+  "dat",
+  "nhan_xet"
+ ],
+ "properties": {
+  "dat": {
+   "type": "boolean"
+  },
+  "nhan_xet": {
+   "type": "string"
+  },
+  "ke_hoach": {
+   "type": "object",
+   "required": [
+    "plan",
+    "ke_hoach_md"
+   ],
+   "properties": {
+    "plan": {
+     "type": "object",
+     "required": [
+      "clips",
+      "tuyen"
+     ]
+    },
+    "ke_hoach_md": {
+     "type": "string"
+    },
+    "phan_hoi": {
+     "type": "string"
+    }
+   }
+  }
+ }
+}

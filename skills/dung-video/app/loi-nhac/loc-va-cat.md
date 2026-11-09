@@ -21,6 +21,12 @@ Mọi chỗ cần mốc thì TRÍCH nguyên văn vài chữ liền nhau trong B�
   bo góc, logo) → `khung_trong` = vùng giữ lại "rộng:cao:x:y" bằng pixel khung gốc, **cùng tỉ lệ khung gốc**, bỏ hết phần in cứng
   (ví dụ đã dùng: dải đáy 1920×1080 → "1592:896:200:0"; viền 40 px → "1808:1017:56:31"). Không có → để trống.
 
+# Nhận loại video (`loai_video`) — nhìn hình + đọc lời
+Theo bảng "Chọn chế độ" của skill: người nói trước camera là chính → `noi-truoc-camera`; cảnh đi lại, tham quan, sự kiện, ít nói thẳng vào
+máy → `vlog-canh` (phải dựng bằng GHÉP VLOG); chỉ có tiếng → `podcast-tieng`. Ghi `ly_do` 1 câu (thấy gì trong hình).
+{{muc:video-style-edit/SKILL.md|Chọn chế độ}}
+Câu lặp đi lặp lại vô nghĩa trong bản lời thường là Whisper nghe "ảo" — nêu trong `hoi` để David biết.
+
 # Đề xuất dựng (`de_xuat_dung`) — thay cho "hỏi một lần" của skill, David duyệt ở cổng 1
 - `cau_chot`: câu nguyên văn ở cuối video dùng cho màn chốt (ưu tiên câu kêu gọi / giao việc); không có thì để trống.
 - `y_chinh`: 2–5 ý chính sẽ minh hoạ. `chu_thumbnail` (video ngang): "DÒNG 1 / DÒNG 2" trích lời, ≤ 8 chữ, không lặp tiêu đề.

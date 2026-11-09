@@ -1,0 +1,90 @@
+{
+ "type": "object",
+ "required": [
+  "dat",
+  "nhan_xet"
+ ],
+ "properties": {
+  "dat": {
+   "type": "boolean"
+  },
+  "nhan_xet": {
+   "type": "string"
+  },
+  "ke_hoach": {
+   "type": "object",
+   "required": [
+    "clips"
+   ],
+   "properties": {
+    "clips": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "id",
+       "overlays",
+       "hl"
+      ],
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "overlays": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "required": [
+          "type",
+          "trich",
+          "props"
+         ],
+         "properties": {
+          "type": {
+           "type": "string"
+          },
+          "trich": {
+           "type": "string"
+          },
+          "het": {
+           "type": "string"
+          },
+          "props": {
+           "type": "object"
+          }
+         }
+        }
+       },
+       "hl": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       },
+       "cta_kind": {
+        "type": "string"
+       }
+      }
+     }
+    },
+    "sua_chu": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "sai": {
+        "type": "string"
+       },
+       "dung": {
+        "type": "string"
+       }
+      }
+     }
+    },
+    "phan_hoi": {
+     "type": "string"
+    }
+   }
+  }
+ }
+}

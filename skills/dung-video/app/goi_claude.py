@@ -65,10 +65,10 @@ def muc(f, tieu_de):
 
 
 
-def goi(bin_, he_thong, noi_dung, khuon, mo_hinh, anh=()):
+def goi(bin_, he_thong, noi_dung, khuon, mo_hinh, anh=(), suy_nghi=None):
     """anh: ảnh Claude cần XEM (chiều hình, viền in cứng, chọn ảnh minh hoạ) — chỉ khi đó mới bật công cụ Read, chỉ đọc các thư mục đó."""
     cong_cu = ["--tools", "Read", "--allowedTools", "Read"] + sum((["--add-dir", str(Path(a).parent)] for a in anh), []) if anh else ["--tools", ""]
-    cmd = [bin_, "-p", "--model", mo_hinh, *cong_cu, "--setting-sources", "", "--no-session-persistence",
+    cmd = [bin_, "-p", "--model", mo_hinh, *(["--effort", suy_nghi] if suy_nghi else []), *cong_cu, "--setting-sources", "", "--no-session-persistence",
            "--output-format", "json", "--json-schema", json.dumps(khuon, ensure_ascii=False), "--system-prompt", he_thong]
     t = time.time()
     r = subprocess.run(cmd, input=noi_dung, capture_output=True, text=True, timeout=1800, cwd=str(Path(anh[0]).parent) if anh else None)
@@ -157,7 +157,7 @@ def main():
         return
     bin_ = tim_claude()
     for lan in (1, 2):
-        kq, tk = goi(bin_, he_thong, noi_dung, khuon, mo_hinh, anh)
+        kq, tk = goi(bin_, he_thong, noi_dung, khuon, mo_hinh, anh, ph.get("suy_nghi"))
         ra.parent.mkdir(parents=True, exist_ok=True)
         ra.write_text(json.dumps(kq, ensure_ascii=False, indent=1), encoding="utf-8")
         with open(W / "token.jsonl", "a", encoding="utf-8") as f:

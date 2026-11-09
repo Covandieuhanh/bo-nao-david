@@ -80,9 +80,18 @@ def ap(P, W, kp, kiem):
     lr = "; ".join(f"⚠️ {x['moc']} «{x['trich']}» — {x.get('rui_ro', '')}" for x in lc.get("lan_ranh", [])) or "không"
     cat_md = [f"- #{i}: {d['cuts'][i].get('why')} [{d['cuts'][i]['start']:.1f}–{d['cuts'][i]['end']:.1f}]" for i in cat.get("giu_de_xuat", [])]
     cat_md += [f"- {x['why']}: [{x['start']:.1f}–{x['end']:.1f}] «{x['text']}»" for x in them]
+    lv = kh.get("loai_video") or {}
+    tt = json.loads((Path(W) / "trang-thai.json").read_text(encoding="utf-8")) if (Path(W) / "trang-thai.json").exists() else {}
+    ct = tt.get("cong_thuc", ""); hop = {"lam-video": "noi-truoc-camera", "podcast": "podcast-tieng", "ghep-vlog": "vlog-canh"}.get(ct)
+    ten_loai = {"noi-truoc-camera": "1 người nói trước camera", "vlog-canh": "vlog / cảnh sự kiện (dựng bằng Ghép vlog)",
+                "podcast-tieng": "podcast chỉ có tiếng", "khac": "khác"}
+    canh_bao_loai = (f"> ⚠️ **Loại video thật: {ten_loai.get(lv.get('loai'), lv.get('loai'))}** — {lv.get('ly_do', '')}. Việc này đang dùng công thức "
+                     f"`{ct}`, không khớp. Nên Huỷ việc này và tạo việc mới đúng loại (hoặc vẫn duyệt nếu David muốn).\n\n"
+                     if hop and lv.get("loai") and lv["loai"] != hop else
+                     (f"**Loại video:** {ten_loai.get(lv.get('loai'), '')} — {lv.get('ly_do', '')}\n\n" if lv.get("loai") else ""))
     md = f"""# Phiếu lọc — {Path(P).parent.name}
 
-**Kết luận:** {lc.get('ket_luan', '?')} · **{tong}/10** (Gốc {dm.get('goc', '?')} · Tệp {dm.get('tep', '?')} · Hành động {dm.get('hanh_dong', '?')} · Tương tác {dm.get('tuong_tac', '?')} · Nhân hiệu {dm.get('nhan_hieu', '?')})
+{canh_bao_loai}**Kết luận:** {lc.get('ket_luan', '?')} · **{tong}/10** (Gốc {dm.get('goc', '?')} · Tệp {dm.get('tep', '?')} · Hành động {dm.get('hanh_dong', '?')} · Tương tác {dm.get('tuong_tac', '?')} · Nhân hiệu {dm.get('nhan_hieu', '?')})
 
 **Lý do:** {lc.get('ly_do', '')}
 

@@ -1,0 +1,1 @@
+{"id": "to-hinh-hl", "ten": "Tờ hình từng clip", "loai": "co-dinh", "nang": true, "khi": "grep -q tu-quay {P}/loai.txt", "lenh": "for c in {P}/clip-*; do python3 -I {APP}/ap/to_hinh.py $c/video-final.mp4 $c/check/sheet.jpg 18; done"}

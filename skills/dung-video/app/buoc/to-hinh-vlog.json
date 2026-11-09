@@ -1,0 +1,1 @@
+{"id": "to-hinh-vlog", "ten": "Tờ hình bản cuối", "loai": "co-dinh", "nang": true, "lenh": "python3 -I {APP}/ap/to_hinh.py {P}/video-final.mp4 {P}/check/sheet.jpg 30"}
