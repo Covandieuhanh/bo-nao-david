@@ -136,9 +136,12 @@ def chi_tiet(ten):
         except Exception as e:
             rs["loi"] = str(e)
     giu = KHO / "_dang-giu.txt"
+    P_ = Path(tt["P"])   # video đã xong: bản cuối, các clip highlight, thumbnail đã chọn — xem/tải bất kỳ lúc nào
+    xong = [str(x) for x in [P_ / "video-final.mp4", *sorted(P_.glob("clip-*/video-final.mp4"))] if x.exists()]
+    anh_bia = [str(x) for x in [P_ / "phat-hanh/thumbnail.jpg"] if x.exists()]
     gy = KHO / ten / "gop-y.json"
     trao_doi = json.loads(gy.read_text(encoding="utf-8")) if gy.exists() else []
-    return {"trao_doi": trao_doi, "hang_doi": giu.read_text().strip() if giu.exists() else None, "ra_soat": rs, "ten": ten, "cong_thuc": ct["ten"], "video": tt["video"], "P": tt["P"], "dang": dang, "dang_chay": dang_chay(ten),
+    return {"video_xong": xong, "anh_bia": anh_bia, "trao_doi": trao_doi, "hang_doi": giu.read_text().strip() if giu.exists() else None, "ra_soat": rs, "ten": ten, "cong_thuc": ct["ten"], "video": tt["video"], "P": tt["P"], "dang": dang, "dang_chay": dang_chay(ten),
             "buoc": buoc, "cong": cong, "log": log_buoc, "log_chung": doc_tep(KHO / ten / "chay.log", 3000), "token": token(ten),
             "xong_luc": tt.get("xong_luc")}
 
@@ -319,6 +322,9 @@ class H(BaseHTTPRequestHandler):
         self.send_response(206 if rg else 200)
         self.send_header("Content-Type", mimetypes.guess_type(str(f))[0] or "application/octet-stream")
         self.send_header("Accept-Ranges", "bytes"); self.send_header("Content-Length", str(b - a + 1))
+        if self.path.find("&tai=1") > 0:   # nút Tải về: lưu tệp thay vì phát
+            from urllib.parse import quote
+            self.send_header("Content-Disposition", f"attachment; filename*=UTF-8''{quote(f.parent.name + '-' + f.name if f.name == 'video-final.mp4' else f.name)}")
         if rg: self.send_header("Content-Range", f"bytes {a}-{b}/{n}")
         self.end_headers()
         with open(f, "rb") as fh:

@@ -43,7 +43,7 @@ def main():
                 loi_ds.append(f"{oid} câu {i}: không tìm thấy trich_cuoi «{p.get('trich_cuoi')}» sau trich_dau"); continue
             if p.get("role") not in VAI:
                 loi_ds.append(f"{oid} câu {i}: role '{p.get('role')}' không có (chỉ: {sorted(VAI)})")
-            text = " ".join(t for s, e, t in W_ if a[0] - 0.01 <= s <= b[0] + 0.01).strip()
+            text = " ".join(t for s, e, t in W_ if a[0] - 0.01 <= s < b[1] - 0.01).strip()   # tới HẾT cụm trích cuối
             x = {"start": round(a[0], 2), "end": round(b[1], 2), "role": p.get("role"), "tone": p.get("tone", "soi"), "text": text}
             for k in ("zoom", "cta"):
                 if p.get(k): x[k] = True
