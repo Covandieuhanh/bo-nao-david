@@ -1,0 +1,16 @@
+{
+ "id": "CONG-cuoi-hl",
+ "ten": "Cổng — David duyệt các clip + kế hoạch đăng",
+ "loai": "duyet",
+ "video": "{P}/clip-*/video-final.mp4",
+ "anh": [
+  "{P}/clip-*/check/sheet*.jpg"
+ ],
+ "hien": [
+  "{W}/bao-cao/hl-kiem-cuoi.md",
+  "{W}/kiem.md",
+  "{P}/dang-bai.md",
+  "{P}/ke-hoach-cat.md"
+ ],
+ "gop_y_cho": "hl-lop-phu"
+}

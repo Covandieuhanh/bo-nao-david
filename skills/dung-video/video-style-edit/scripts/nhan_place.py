@@ -91,7 +91,7 @@ else:
     speaker = lambda a, b: None
 
 # 3. Từng cảnh
-scenes = [s for s in load(P)['scenes'] if s.get('type') in ('nhan', 'bocuc')]
+scenes = [s for s in load(P)['scenes'] if s.get('type') in ('nhan', 'bocuc', 've')]   # 've' = cảnh tự vẽ (AI tự tránh người bằng lib/cho.js)
 res = {}
 for s in scenes:
     by = {}

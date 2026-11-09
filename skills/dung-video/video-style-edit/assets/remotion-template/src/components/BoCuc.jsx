@@ -23,6 +23,8 @@ import project from '../project.js';
 import {fr} from '../scenes';
 import MAT from '../mat.js';
 import {nguoi, chonCho, nguoiBam} from '../lib/cho';
+import {ChuHien} from '../lib/ChuHien';
+import {kieuChu} from '../lib/chuyen-dong';
 
 const W = project.width, H = project.height, LAND = W > H;
 const NOI = {illus: Illus, diagram: Diagram};
@@ -30,7 +32,7 @@ const NOI = {illus: Illus, diagram: Diagram};
 // Thẻ chữ hiện dần (dùng cho 'the-canh' và nội dung 'the' trong 'o-nguoi')
 // Xuống dòng cân (textWrap balance): dòng đều nhau, không để một chữ đứng lẻ ("LUYỆN TẬP LẠI THÓI / QUEN" — lỗi 09/11/2026);
 // '\n' trong chữ = chỗ xuống dòng theo cụm nghĩa do kịch bản đặt.
-const The = ({start, tieu_de, dong = [], w, f, fs}) => (
+const The = ({start, tieu_de, dong = [], w, f, fs, kc = 'mo'}) => (
   <div style={{width: w, padding: fs * 0.9, borderRadius: fs * 0.7, background: C.card, border: `2px solid ${C.line}`,
     boxShadow: '0 30px 90px rgba(0,0,0,0.5)', backdropFilter: 'blur(14px)', display: 'flex', flexDirection: 'column', gap: fs * 0.35}}>
     {tieu_de && <div style={{fontFamily: BODY, fontWeight: 700, fontSize: fs * 0.42, letterSpacing: 3, color: C.accent, textTransform: 'uppercase',
@@ -39,12 +41,11 @@ const The = ({start, tieu_de, dong = [], w, f, fs}) => (
       const a = rel(d.at ?? start, start), p = pop(f, a);
       const g = d.gach != null ? ease(f, rel(d.gach, start), rel(d.gach, start) + 8) : 0;
       return (
-        <div key={i} style={{position: 'relative', alignSelf: 'flex-start', opacity: Math.min(1, p * 1.4) * (1 - 0.45 * g),
-          transform: `translateY(${(1 - p) * fs * 0.6}px)`}}>
+        <div key={i} style={{position: 'relative', alignSelf: 'flex-start', opacity: 1 - 0.45 * g}}>
           <div style={{fontFamily: d.to ? HEAD : BODY, fontWeight: d.to ? 800 : 500, lineHeight: 1.08,
             fontSize: d.to ? Math.max(fs * 0.8, Math.min(fs * 1.35, (w - fs * 1.8) / (0.46 * Math.max(4, d.text.length)))) : fs * 0.62,   // chữ to: co cho vừa một dòng, không nhỏ hơn 0,8 — dài quá thì xuống dòng
             color: d.to && i === dong.length - 1 ? C.accent : C.text, textTransform: d.to ? 'uppercase' : 'none',
-            textWrap: 'balance', whiteSpace: 'pre-line', hyphens: 'none'}}>{d.text}</div>
+            textWrap: 'balance', whiteSpace: 'pre-line', hyphens: 'none'}}><ChuHien text={d.text} a={a} kieu={kc} /></div>
           {g > 0 && <div style={{position: 'absolute', left: 0, top: '52%', height: Math.max(3, fs * 0.08), width: `${g * 100}%`, background: C.accent}} />}
         </div>
       );
@@ -129,13 +130,14 @@ const TheCanh = ({sceneId, start, ben, bam, tieu_de, dong}) => {
   const f = useCurrentFrame();
   const {durationInFrames: d} = useVideoConfig();
   const m = MAT[sceneId] || {cx: 0.5, cy: 0.42, w: 0.18};
-  const o = Math.min(ease(f, 0, 10), ease(f, d - 8, d, 1, 0, Easing.in(Easing.cubic)));
+  const o = Math.min(ease(f, 0, 10), ease(f, d - 6, d, 1, 0, Easing.in(Easing.cubic)));
+  const mo = o < 1 && f > d / 2 ? `blur(${(8 * (1 - o)).toFixed(2)}px)` : undefined;   // ra: mờ nhoè + tan (chuyen-dong.js luật 5)
   if (!LAND) {   // dọc: một thẻ hẹp phía dưới mặt, trên dải phụ đề — ít chữ cùng lúc
     const slide = (1 - ease(f, 0, 14)) * 60;
     return (
-      <AbsoluteFill style={{opacity: o}}>
+      <AbsoluteFill style={{opacity: o, filter: mo}}>
         <div style={{position: 'absolute', left: SAFE.left, top: SAFE.overlayTop, transform: `translateY(${-slide}px)`}}>
-          <The start={start} f={f} w={W - SAFE.left - SAFE.right} fs={W * 0.07} tieu_de={tieu_de} dong={dong} />
+          <The start={start} f={f} w={W - SAFE.left - SAFE.right} fs={W * 0.07} tieu_de={tieu_de} dong={dong} kc={kieuChu(sceneId)} />
         </div>
       </AbsoluteFill>
     );
@@ -150,15 +152,15 @@ const TheCanh = ({sceneId, start, ben, bam, tieu_de, dong}) => {
   const slide = (1 - ease(f, 0, 14)) * 60 * (k.ke === 'phai' ? 1 : -1);
   const fs = Math.min(H * 0.055, w / 9);
   return (
-    <AbsoluteFill style={{opacity: o}}>
+    <AbsoluteFill style={{opacity: o, filter: mo}}>
       <div style={{position: 'absolute', left, top: Math.max(H * 0.17, BRAND_BOT + 40), transform: `translateX(${slide}px)`}}>
-        <The start={start} f={f} w={w} fs={fs} tieu_de={tieu_de} dong={dong} />
+        <The start={start} f={f} w={w} fs={fs} tieu_de={tieu_de} dong={dong} kc={kieuChu(sceneId)} />
       </div>
     </AbsoluteFill>
   );
 };
 
-const Chuong = ({start, so, nhan, ten = ''}) => {
+const Chuong = ({sceneId, start, so, nhan, ten = ''}) => {
   const f = useCurrentFrame();
   const lines = ten.split('\n');
   const fs = LAND ? H * 0.12 : W * 0.13;
@@ -170,10 +172,8 @@ const Chuong = ({start, so, nhan, ten = ''}) => {
         {nhan && <div style={{fontFamily: BODY, fontWeight: 700, fontSize: fs * 0.22, letterSpacing: 4, color: C.accent, textTransform: 'uppercase',
           opacity: ease(f, 4, 12), marginBottom: fs * 0.15}}>{nhan}</div>}
         {lines.map((l, i) => {
-          const p = pop(f, 8 + i * 5);
           return <div key={i} style={{fontFamily: HEAD, fontWeight: 800, fontSize: fs, lineHeight: 1.02, textTransform: 'uppercase',
-            color: i === lines.length - 1 && lines.length > 1 ? C.accent : C.text, opacity: Math.min(1, p * 1.3),
-            transform: `translateY(${(1 - p) * 40}px)`}}>{l}</div>;
+            color: i === lines.length - 1 && lines.length > 1 ? C.accent : C.text}}><ChuHien text={l} a={8 + i * 5} kieu={kieuChu(sceneId)} /></div>;
         })}
       </div>
     </FullShell>

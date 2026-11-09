@@ -22,10 +22,10 @@ sửa đúng cảnh được nêu (không tự render lại — `thoi-quen-lam-v
 Luật chung của video ở `../luat-chung.md`: chữ nguyên văn (1), video dài không cắt (2), không ghi chú kỹ thuật trên video (4), hình,
 bộ nhận diện, phát hành. Dưới đây chỉ là luật RIÊNG của skill này.
 
-1. **Tối giản:** một màn = một ý, một hình, một câu. Mật độ, nhịp, độ dài cảnh theo `../trinh-bay/` và hồ sơ `lam-video` — không con số cố định.
+1. **Motion graphic kể chuyện, tự do sáng tạo** (David chốt 09/11, khối 07 mục đầu): giữ nền, màu chủ đạo, kiểu vẽ biểu tượng; còn lại AI sáng tạo theo video — một hình có thể diễn tả 1–2 ý hoặc cả video, ý quay lại thì vẽ tiếp lên hình đã có (mạch hình, cảnh tự vẽ `ve`). Không con số cố định.
 2. **Mở đầu `hook`** — **không làm mặc định** (David 07/11, khối 06): chỉ khi David yêu cầu, chữ nguyên văn. `project.js` ghi
    `topic: '<CHỦ ĐỀ>'` (≤ 3 chữ, trích lời) cho dấu góc + thẻ cuối.
-3. **Bố cục tự cân** (David chốt 07/11; khối 07 + `../trinh-bay/bo-cuc.md`): mỗi đoạn chọn từ danh mục — người + phụ đề, `nhan`,
+3. **Bố cục tự cân** (David chốt 07/11; khối 07 + `../trinh-bay/bo-cuc.md`): danh mục có sẵn (dùng khi hợp, không bắt buộc — cần hình riêng thì viết cảnh tự vẽ `ve`) — người + phụ đề, `nhan`,
    `bocuc` (`the-canh` thẻ cạnh mặt · `o-nguoi` người vào ô bo góc + nội dung · `chuong` màn chương), `illus` / `diagram` toàn màn hình.
    Hợp nội dung, người xem dễ nhận; dọc mỗi lúc ít thứ. **Điểm nhấn trên người** (`nhan`): zoom dồn / làm tối viền / chữ nhấn hay biểu
    tượng cạnh mặt ở câu đắt, không che mặt. Mọi video đều có motion graphics trộn nhiều loại — "dựng nhẹ" vẫn có.
@@ -159,4 +159,5 @@ Ghi góp ý đúng một chỗ: khối/skill bị ảnh hưởng + một dòng `
 - `assets/montage-template/` + `scripts/new_montage.sh` — template dựng cả video có tiếng cho chế độ ghép.
 
 ## Nhật ký
+- 2026-11-09 · David chốt: motion graphic kể chuyện, tự do sáng tạo (luật 1 mới, khối 07); thêm cảnh tự vẽ `ve` + thư mục `motion/src/rieng/` + mạch hình `lib/mach.js`; chuyển động dùng chung `lib/chuyen-dong.js`.
 - 2026-11-08 · chuẩn hoá (`dang-lam/chuan-hoa-skill.md` bước 3): hỏi một lần đầu thay "chạy một mạch không hỏi" (N1); bỏ con số cố định (N6), thẻ tít mặc định (N2), chữ "2 trạng thái" (C3), ví dụ cũ hướng sức khoẻ; màn chốt nguyên văn, không tự đặt câu kêu gọi (N4); đọc trước 3 file, luật chung trỏ `luat-chung`; đánh dấu bước nhẹ 1·2·5; rút mô tả; thêm "Xong khi"; video mẫu chỉ có link → được tải 720p chỉ để học, học xong xoá (khớp `trinh-bay`). Chi tiết các quyết định trước: `references/changelog.md`.

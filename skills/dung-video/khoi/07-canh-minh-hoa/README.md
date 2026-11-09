@@ -7,10 +7,27 @@
 **Sửa khối này → chạy lại:** 05, 17
 
 **File thật (code, một bản duy nhất):**
+- `thu-vien-hinh/{chuyen-dong.js,ChuHien.jsx,mach.js}` · cảnh tự vẽ: `remotion-template/src/rieng/` (mẫu `MauMach.jsx`)
 - `thu-vien-hinh/Illus.jsx (một nguồn)`
 - `video-style-edit/assets/remotion-template/src/components/{CardFull,FullScreen,Action,Icons}.jsx`
 - `video-style-edit/scripts/openverse.py`
 - `video-style-edit/references/scene-design.md`
+
+## Motion graphic KỂ CHUYỆN — tự do sáng tạo (David chốt 2026-11-09, đứng trên mọi mục bên dưới)
+Motion graphic là để **diễn tả lại câu chuyện**, không phải đưa hình vào cho có. AI sáng tạo theo từng video, không dập khuôn.
+- **Giữ cố định (nhận diện lớn):** nền, màu chủ đạo (`lib/tokens`: C, HEAD, BODY), biểu tượng cùng một kiểu vẽ (`lib/Icons`, nét
+  tròn vẽ dần — vẽ thêm hình mới thì theo đúng kiểu đó), bộ nhận diện chung (dấu góc, thanh thời gian, phụ đề, thẻ cuối).
+- **Tự do:** bố cục, chuyển động, kiểu hình, độ dài, số cảnh. Danh mục kiểu cảnh dưới đây (`nhan`, `bocuc`, `illus`, `diagram`, `card`…)
+  chỉ là công cụ có sẵn — dùng khi hợp, không bắt buộc. Cần hình riêng thì viết **cảnh tự vẽ** (`type: 've'`): component React riêng của
+  video trong `motion/src/rieng/` (đăng ký ở `rieng/index.js`, xem mẫu `MauMach.jsx`), dùng `lib/chuyen-dong.js`, `lib/ChuHien.jsx`, `lib/cho.js` (tránh người).
+- **Một hình diễn tả 1–2 ý, hoặc cả video:** không phải mỗi câu một hình. Trước khi viết cảnh, đọc cả lời và vẽ **mạch hình** — hình
+  chính của câu chuyện sẽ lớn dần theo video.
+- **Ý quay lại → vẽ tiếp:** người nói nhắc lại hay đi tiếp ý trước thì cảnh sau **vẽ tiếp lên hình đã có** (thêm nét, đổi trạng thái,
+  đi tiếp con đường), không vẽ hình mới rời rạc. Dùng `lib/mach.js`: cùng component, `buoc` tăng dần, `tu_buoc` = bước đã vẽ ở cảnh trước.
+- **Vẫn giữ:** chữ trên màn hình nguyên văn lời người nói (được rút gọn, đặt ở khoá `text`/`label`/`lines`/`quote`/`title` để máy soát);
+  không che mặt khi vẽ cạnh người; câu cảm xúc, chuyện riêng thì để thấy mặt; đã vào là đứng yên; luật chuyển động cuối khối.
+- **Mặt người / hình chiếm bao nhiêu:** AI tự cân theo câu chuyện, không con số cố định.
+- Ghi trong `ke-hoach-canh.md`: mạch hình của video (một đoạn), mỗi cảnh vẽ bước nào của mạch, vì sao.
 
 ## Bố cục tự cân (David chốt 2026-11-07 — thay luật 2 trạng thái ngày 04/11)
 Không con số bắt buộc. Mỗi đoạn chọn bố cục từ **`../../trinh-bay/bo-cuc.md`** theo 4 câu hỏi ở `../../trinh-bay/README.md`
@@ -138,3 +155,14 @@ Chuyển động phải dẫn mắt tới ý đang nói, không để trang trí
 - **Vào cảnh qua một vật trên màn hình khi được** (việc bay sang bên nhận, màu tràn từ vật ra), thay vì mờ chồng cả khung.
 - **Tiêu đề hiện xong thì đứng yên** tới lúc rời đi.
 Không dùng: cắt theo nhịp nhạc (video của David đi theo lời).
+
+### Bổ sung 2026-11-09 (David duyệt — học thêm bản mới của `motion.md` HyperFrames, tự viết lại; code ở `thu-vien-hinh/chuyen-dong.js` + `ChuHien.jsx`)
+Không đổi màu, font, bố cục; chỉ nâng cách VÀO, ĐỨNG, RA. Thành phần mới dùng hàm ở `chuyen-dong.js`, không tự đặt easing riêng.
+- **Easing theo vai:** vào = đuôi dài (`EASE.vao` exp-out) · zoom/đẩy khung, đổi nền = `EASE.camera` (inOut) · ra = `EASE.ra` (tăng tốc). Một kiểu cho mọi thứ là dấu hiệu "máy làm".
+- **Nối gối, so le:** phần sau bắt đầu khi phần trước xong 30–50 %; từ cách nhau 60–120 ms, mục danh sách 40–80 ms.
+- **Chữ hiện từng từ, không dịch chỗ** (`ChuHien`): `mo` (mờ 6 px → nét, 0,13 s, cách ~0,067 s) · `muc` (xám nhạt → màu chữ) · `dong` (cả dòng mờ → nét). Kiểu đổi theo cảnh (`kieuChu(id)`), không để mọi cảnh mờ + trượt lên.
+- **Thoát:** mờ nhoè + tan 0,13–0,25 s, ngắn hơn lúc vào; khung toàn màn hình vào bằng mờ nhoè → nét (`vaoRa`).
+- **Giữ đủ đọc:** 0,5 s + 0,3 s mỗi từ (`docDu`); câu cuối video ≥ 2 s.
+- **Lò xo theo ζ** (`loXo(zeta)`): 0,7–0,85 sang, 0,4–0,6 vui; chỉ vị trí/cỡ được nảy.
+- **Chuyển cảnh có nguyên do, 3–5 kiểu một video:** tối nhẹ ~40 % trong 3 khung trước cắt cứng · đổi trên cùng nền (mờ ra 8 px → mờ vào) · màu tràn nền · vật trên màn hình lớn dần thành cảnh sau. Tối đa một phần ba số mối nối là cắt cứng.
+- **Soát kiểu "máy làm" khi xem chụp thử:** che chữ đi, hình còn kể được ý không; mọi cảnh có vào giống nhau không; có gì còn trôi/phóng sau khi đã vào không.

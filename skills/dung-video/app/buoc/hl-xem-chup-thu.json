@@ -1,0 +1,11 @@
+{
+ "id": "hl-xem-chup-thu",
+ "ten": "AI chụp thử + sửa từng clip (7A)",
+ "loai": "ai",
+ "khi": "grep -q tu-quay {P}/loai.txt",
+ "nang": true,
+ "viec": "Làm phần chụp thử của mục 7A `cat-highlight-video/SKILL.md` (khối `khoi/17-dung-kiem-tra/README.md` mục 7): app đã chạy `lift.py` + `overlay_guard.py` cho mọi clip. Với từng `$P/clip-*`: `node stills.mjs <mốc>` đúng các mốc skill liệt kê, xem, sửa edl.js tới khi sạch (sửa lớp phủ thì chạy lại `overlay_guard.py` như skill dặn). KHÔNG render.",
+ "doc": [
+  "{P}/ke-hoach-cat.md"
+ ]
+}

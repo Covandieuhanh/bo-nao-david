@@ -1,6 +1,7 @@
 // Cảnh toàn màn hình (thay hẳn hình người nói, tiếng vẫn chạy).
 // Mọi nội dung nằm trong vùng an toàn x 70–900, y 210–1420; phần ngoài chỉ có nền.
 import React from 'react';
+import {vaoRa, tien, EASE} from '../lib/chuyen-dong';
 import {AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {BODY, C, HEAD, SAFE, SAFE_W, ease, inOut, pop, rel} from '../theme';
 import {Eyebrow} from './Overlays';
@@ -11,9 +12,10 @@ import {FULL_ORIGIN, FULL_SCALE, POD, VN, aboveGap} from '../podframe';
 export const FullShell = ({children, hold}) => {   // hold: không mờ ra ở cuối (màn chốt kết thúc video)
   const f = useCurrentFrame();
   const {durationInFrames: d} = useVideoConfig();
-  const o = hold ? ease(f, 0, 8) : inOut(f, d, 8, 8);
+  // vào: mờ nhoè → nét, đuôi dài; ra: ngắn hơn ~40 %, tăng tốc, mờ nhoè (thư viện hình chuyen-dong.js)
+  const v = vaoRa(f, hold ? 1e9 : d, {vao: 9, ra: 5, mo: 12});
   return (
-    <AbsoluteFill style={{opacity: o, background: C.bg, transform: `scale(${1.04 - 0.04 * ease(f, 0, 12)})`}}>
+    <AbsoluteFill style={{opacity: v.opacity, filter: v.filter, background: C.bg, transform: `scale(${1.03 - 0.03 * tien(f, 0, 14, EASE.camera)})`}}>
       <AbsoluteFill style={{background: `radial-gradient(circle at 45% 38%, rgba(255,122,69,0.16), transparent 60%)`}} />
       <AbsoluteFill style={{backgroundImage: `linear-gradient(${C.line} 2px, transparent 2px), linear-gradient(90deg, ${C.line} 2px, transparent 2px)`,
         backgroundSize: '120px 120px', opacity: 0.35, maskImage: 'radial-gradient(circle at 50% 45%, black, transparent 75%)'}} />

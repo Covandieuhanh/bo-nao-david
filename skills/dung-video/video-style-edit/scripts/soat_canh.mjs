@@ -67,6 +67,7 @@ for (const raw of list) {
   const big = s.text || (Array.isArray(s.lines) ? s.lines.join(' ') : '');
   if (big && last - s.start + 1 < need(big)) bao('P2', s.start, s.id, `"${big}" chỉ hiện ${fmt(last - s.start)} s, cần ${fmt(need(big))} s`, 'cân nhắc rút chữ');
 
+  if (s.type === 've' && !s.ve) bao('P0', s.start, s.id, 'cảnh tự vẽ thiếu props.ve (tên component trong rieng/index.js)', 'đặt ve: \'TenComponent\'');
   if (s.type === 'nhan' && !(s.text || s.icon || s.zoom > 1 || s.toi)) bao('P0', s.start, s.id, 'điểm nhấn trống (không chữ, biểu tượng, zoom hay làm tối)', 'thêm ít nhất một kiểu');
   // bố cục (BoCuc.jsx): chữ trong thẻ phải hiện trong cảnh; không giới hạn số dòng — tự cân theo khung (dọc: ít thứ cùng lúc)
   if (s.type === 'bocuc') for (const d of [...(s.dong || []), ...((s.noi_dung && s.noi_dung.props && s.noi_dung.props.dong) || [])])

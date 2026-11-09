@@ -37,6 +37,7 @@ Tên file bắt đầu bằng nhóm: `luat-` cách làm việc với David · `n
 - [Không ghi chú kỹ thuật trên video](video-khong-nhan-ky-thuat.md) — bỏ nhãn ×1,6/×0,5/slow-mo; chữ chỉ cho nội dung
 - [Không tự render lại](video-khong-tu-render.md) — góp ý nhỏ chỉ sửa skill/kịch bản; render khi David yêu cầu (2026-11-05)
 - [Kiến trúc skill video](video-kien-truc-skill.md) — hồ sơ tham số + 21 khối (00–20) + thư viện hình + mẫu chuẩn; sửa đúng một chỗ (2026-11-04, sửa 08/11)
+- [Motion kể chuyện, tự do](video-motion-ke-chuyen.md) — chỉ giữ nền, màu chủ đạo, kiểu vẽ biểu tượng; AI sáng tạo, ý quay lại thì vẽ tiếp (2026-11-09)
 - [Luôn có motion graphics](video-luon-co-motion-graphics.md) — điểm nhấn nhiều loại: hình vẽ, chữ, biểu tượng, làm nổi người nói; không chỉ toàn màn hình (2026-11-07)
 - [Mỗi lúc một chỗ chữ](video-phu-de-mot-cho-chu.md) — phụ đề dọc cụm 5–8 chữ cỡ 58 bằng chữ thẻ; chữ motion graphic hiện thì phụ đề nhường (2026-11-08)
 - [Movies xếp theo tập](video-movies-xep-theo-tap.md) — gốc/bản dài/highlight chung tap-<tên>, skill đã sửa theo

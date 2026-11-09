@@ -14,6 +14,9 @@
 | `nhan-dien.js` | **bộ nhận diện chung**: vùng an toàn ngang/dọc, vị trí dấu góc, thanh thời gian, đáy phụ đề (`khung(W, H)`) — xem `nhan-dien-chung.md` | 10 |
 | `DauGoc.jsx` | dấu góc ● DAVID │ chủ đề | 10 |
 | `ThanhThoiGian.jsx` | thanh thời gian ở đáy: đã chạy · thanh · còn m:ss | 10 |
+| `chuyen-dong.js` | easing theo vai, vào/ra mờ nhoè, chữ hiện từng từ (3 kiểu), lò xo theo ζ, thời gian đọc | 07 |
+| `ChuHien.jsx` | một dòng chữ hiện từng từ theo kiểu của `chuyen-dong.js`, không dịch chỗ | 07 |
+| `mach.js` | **mạch hình**: một hình kể chuyện vẽ tiếp qua nhiều cảnh tự vẽ (`buoc`, `tu_buoc`, `moc_buoc`) + nét vẽ dần `net()` | 07 |
 
 Cách nối: `remotion-template/src/lib` và `montage-template/src/lib` là **lối tắt** trỏ về thư mục này; lúc tạo dự án, `new_project.sh` /
 `new_podcast.sh` / `new_montage.sh` chép **bản thật** (`cp -RL`) vào `motion/src/lib/` — dự án cũ giữ nguyên bản lúc tạo, dự án mới

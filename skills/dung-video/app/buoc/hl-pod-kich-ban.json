@@ -1,0 +1,13 @@
+{
+ "id": "hl-pod-kich-ban",
+ "ten": "AI làm kịch bản + chụp thử từng clip podcast (7B)",
+ "loai": "ai",
+ "khi": "grep -q podcast {P}/loai.txt",
+ "nang": true,
+ "gioi_han_s": 5400,
+ "viec": "Làm mục 7B + \"Kịch bản highlight podcast (7B)\" của `cat-highlight-video/SKILL.md` (khối `khoi/12-san-khau-podcast/README.md`, `khoi/07-canh-minh-hoa/README.md`, `khoi/08-ket-thuc/README.md`, `khoi/17-dung-kiem-tra/README.md` mục 7) cho MỌI clip `$P/clip-*`: app đã chạy new_podcast, transcribe, captions, speakers, envelope, hl_apply và chép STAGE/theme từ bản gốc. Trước hết kiểm lời bản cắt (khối 13 mục 6). Sửa captions.js theo bản gốc, viết scenes.js (TOPICS, cảnh, màn chốt), chụp thử bằng `pod_stills.sh`, sửa tới khi sạch. KHÔNG render.",
+ "doc": [
+  "{W}/tuy-chon.txt",
+  "{P}/ke-hoach-cat.md"
+ ]
+}

@@ -10,7 +10,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 from cap_nhat_khung import DU_LIEU   # một nguồn: tệp nào là dữ liệu riêng của video
 import canh_js
 _m = canh_js.doc(P); s = (src / "scenes.js").read_text(encoding="utf-8")
-moi = {"canh": {c["id"]: h(json.dumps(c, sort_keys=True)) for c in _m["SCENES"]},
+_rieng = "".join(f.read_text(encoding="utf-8", errors="ignore") for f in sorted((src / "rieng").rglob("*")) if f.is_file()) if (src / "rieng").is_dir() else ""
+moi = {"canh": {c["id"]: h(json.dumps(c, sort_keys=True) + (_rieng if c.get("type") == "ve" else "")) for c in _m["SCENES"]},   # cảnh tự vẽ: đổi code riêng → render lại
        "phu_de": h((src / "captions.js").read_text(encoding="utf-8")), "du_an": h((src / "project.js").read_text(encoding="utf-8")),
        "con_lai": h(json.dumps({k: v for k, v in _m.items() if k != "SCENES"}, sort_keys=True)),
        # khung dựng = mọi tệp code trong motion/src trừ dữ liệu riêng của video (đổi thư viện hình / template → render lại tất cả)

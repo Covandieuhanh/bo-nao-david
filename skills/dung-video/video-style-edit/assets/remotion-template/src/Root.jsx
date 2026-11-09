@@ -23,6 +23,7 @@ import PLACEMENT from './placement.js';
 import {ENDCARD_ON} from './endcard.js';
 import BRAND from './lib/brand.json';
 import {Illus} from './lib/Illus';
+import {VE} from './rieng';   // cảnh tự vẽ riêng của video (type 've', khối 07 — 2026-11-09)
 import {Diagram} from './lib/Diagram';   // sơ đồ nói thay lời + ảnh khung bo góc (khối 07, 2026-11-05)   // cảnh minh hoạ toàn màn hình — 2 trạng thái (khối 07)
 import HS from './hoso.json';
 import {holdEnds} from './lib/giu';   // giữ cảnh ≥ 1,2 s sau chữ cuối (khối 07)
@@ -34,6 +35,7 @@ import {TWO, TWO_KEEP} from './layout';
 const TYPES = {illus: Illus, diagram: Diagram, hook: Hook, lower: LowerThird, kinetic: Kinetic, listItem: ListItem, card: project.podcast ? Card : CardFull,   // thẻ = toàn cảnh (trừ podcast)
   montage: Montage, recap: Recap, converge: Converge, master: Master, gens: Gens, build: Build,
   ...(POD && LAND ? {montage: MontageL, gens: GensL, build: BuildL} : {}),   // podcast ngang: bản thiết kế toàn khung 16:9
+  ve: ({ve, ...p}) => { const V = VE[ve]; if (!V) throw new Error(`cảnh tự vẽ '${ve}' chưa đăng ký trong rieng/index.js`); return <V {...p} />; },
   action: Action, cta: Cta, nhan: Nhan, bocuc: BoCuc,   // màn hành động (toàn cảnh) · màn chốt bình luận cuối video
   sides: Sides, captions: Captions, stage: Stage, cover: Cover, endcard: EndCard};
 

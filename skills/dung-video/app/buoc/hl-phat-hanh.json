@@ -1,0 +1,12 @@
+{
+ "id": "hl-phat-hanh",
+ "ten": "AI làm kế hoạch đăng (highlight bước 8)",
+ "loai": "ai",
+ "viec": "Làm bước 8 Phát hành của `cat-highlight-video/SKILL.md` theo `khoi/15-phat-hanh/README.md`, `khoi/16-so-lieu/README.md`, giọng văn `ho-so/giong-van-david.md`, lịch và tỉ lệ dẫn dắt ở `ho-so/kenh.json`: ra `$P/dang-bai.md` (lịch đăng, mốc bìa 0,3 s, mô tả, bình luận ghim từng clip) + `$P/so-lieu.md`. Không đăng gì.",
+ "doc": [
+  "{P}/ke-hoach-cat.md"
+ ],
+ "ra": [
+  "{P}/dang-bai.md"
+ ]
+}

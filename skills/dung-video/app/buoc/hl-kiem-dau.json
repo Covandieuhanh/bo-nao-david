@@ -1,0 +1,7 @@
+{
+ "id": "hl-kiem-dau",
+ "ten": "Máy đo các clip (âm lượng, tiếng rè, thời lượng, chữ)",
+ "loai": "co-dinh",
+ "nang": true,
+ "lenh": "python3 -I {APP}/ap/hl_moi_clip.py {P} kiem {W} || true"
+}

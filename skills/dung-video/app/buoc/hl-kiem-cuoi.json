@@ -1,0 +1,11 @@
+{
+ "id": "hl-kiem-cuoi",
+ "ten": "AI kiểm bản cuối từng clip, sửa clip lỗi",
+ "loai": "ai",
+ "nang": true,
+ "viec": "Kiểm bản cuối từng clip như `cat-highlight-video/SKILL.md` \"Tiêu chí đạt\" + \"Xong khi\" và `khoi/17-dung-kiem-tra/README.md` mục 9: app đã render `$P/clip-*/video-final.mp4`, tờ khung `clip-*/check/sheet*.jpg`, kết quả đo `$W/kiem.md`. Clip nào lỗi thì sửa đúng chỗ rồi render lại riêng clip đó bằng đúng lệnh của skill (7A: `node render-show.mjs`; 7B: `node render.mjs <id>` → `podcast_base.py` → `render_preview.py`). Báo cáo từng clip, từng mục Xong khi: đạt / chưa đạt / chưa kiểm.",
+ "doc": [
+  "{W}/kiem.md",
+  "{P}/ke-hoach-cat.md"
+ ]
+}

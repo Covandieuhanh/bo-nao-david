@@ -11,6 +11,8 @@ import {Icon} from '../lib/Icons';
 import project from '../project.js';
 import MAT from '../mat.js';
 import {nguoi, chonCho, nguoiBam} from '../lib/cho';
+import {ChuHien} from '../lib/ChuHien';
+import {kieuChu, k as khung} from '../lib/chuyen-dong';
 
 const W = project.width, H = project.height;
 // Vị trí mặt SAU zoom (cùng công thức với render_preview.py: khung zoom canh giữa mặt, kẹp trong khung hình)
@@ -22,9 +24,10 @@ export const zoomed = (m, Z) => {
 
 export const Nhan = ({sceneId, start, text, icon, at, zoom = 1, toi = false, bam}) => {
   const f = useCurrentFrame();
-  const {durationInFrames: d} = useVideoConfig();
+  const {durationInFrames: d, fps} = useVideoConfig();
   const a = at != null ? rel(at, start) : 6;
-  const out = ease(f, d - 8, d, 1, 0, Easing.in(Easing.cubic));
+  const out = ease(f, d - 6, d, 1, 0, Easing.in(Easing.cubic));   // ra gọn hơn vào (chuyen-dong.js luật 2)
+  const kc = kieuChu(sceneId);
   const p = pop(f, a);
   const V = H > W;
   // Mọi người trong khung (sau zoom) — chữ đặt vào khoảng trống sát NGƯỜI ĐANG NÓI (hoặc người được bám), không đè ai
@@ -50,7 +53,7 @@ export const Nhan = ({sceneId, start, text, icon, at, zoom = 1, toi = false, bam
   const dx = under ? 0 : (side === 'right' ? -1 : 1) * (1 - p) * 60;
   const cxT = under ? 'translateX(-50%) ' : '';
   return (
-    <AbsoluteFill style={{opacity: out}}>
+    <AbsoluteFill style={{opacity: out, filter: out < 1 ? `blur(${(8 * (1 - out)).toFixed(2)}px)` : undefined}}>
       {toi && <AbsoluteFill style={{opacity: ease(f, 0, 8) * 0.9,
         background: `radial-gradient(ellipse ${m.w * 190}% ${m.h * 160}% at ${m.cx * 100}% ${m.cy * 100}%, transparent 30%, rgba(0,0,0,0.8) 100%)`}} />}
       {(text || icon) && (
@@ -64,7 +67,7 @@ export const Nhan = ({sceneId, start, text, icon, at, zoom = 1, toi = false, bam
           {text && lines.map((l, i) => (
             <div key={i} style={{fontFamily: HEAD, fontWeight: 800, fontSize: size, lineHeight: 1.12, letterSpacing: 2,
               color: lines.length > 1 && i === lines.length - 1 ? C.accent : C.text, whiteSpace: 'nowrap',
-              textShadow: '0 4px 24px rgba(0,0,0,0.75), 0 0 2px rgba(0,0,0,0.9)'}}>{l}</div>
+              textShadow: '0 4px 24px rgba(0,0,0,0.75), 0 0 2px rgba(0,0,0,0.9)'}}><ChuHien text={l} a={a + 3 + i * khung(0.15, fps)} kieu={kc} /></div>
           ))}
           {text && <div style={{height: Math.max(4, size * 0.07), borderRadius: 4, background: C.accent,
             width: ease(f, a + 6, a + 18) * size * 0.5 * Math.max(...lines.map((l) => l.length)),

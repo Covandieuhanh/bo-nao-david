@@ -60,7 +60,7 @@ const Clip = ({h, children}) => (
 
 export const Place = ({type, id, place, children}) => {
   if (!PILLAR) {
-    if (FULL.has(type) || type === 'captions' || type === 'nhan' || type === 'bocuc' || type === 'sides' || type === 'stage' || type === 'cover' || type === 'endcard') return children;
+    if (FULL.has(type) || type === 'captions' || type === 'nhan' || type === 'bocuc' || type === 've' || type === 'sides' || type === 'stage' || type === 'cover' || type === 'endcard') return children;
     if (POD) {
       const pl = place || PF.ov;
       const x = PF.left - SAFE.left * pl.scale;   // dải lớp phủ canh trái vùng an toàn (ngang: bên phải là vòng micro)
@@ -89,7 +89,7 @@ export const Place = ({type, id, place, children}) => {
     );
   }
   if (type === 'sides' || type === 'stage' || type === 'endcard') return children;   // sân khấu podcast: khung dọc riêng, pillar_base ghép vào giữa
-  if (FULL.has(type) || type === 'captions' || type === 'nhan' || type === 'bocuc') return <AbsoluteFill><Scaled x={CENTER.x} y={0} s={OUT.H / project.height}>{children}</Scaled></AbsoluteFill>;
+  if (FULL.has(type) || type === 'captions' || type === 'nhan' || type === 'bocuc' || type === 've') return <AbsoluteFill><Scaled x={CENTER.x} y={0} s={OUT.H / project.height}>{children}</Scaled></AbsoluteFill>;
   const s = SLOT.w / BAND_W;
   return (
     <AbsoluteFill>

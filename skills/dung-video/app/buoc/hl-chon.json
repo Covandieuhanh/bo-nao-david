@@ -1,0 +1,13 @@
+{
+ "id": "hl-chon",
+ "ten": "AI chọn ý + câu cho từng clip (highlight bước 2–5)",
+ "loai": "ai",
+ "gioi_han_s": 5400,
+ "viec": "Làm bước 2–5 của `cat-highlight-video/SKILL.md` theo `khoi/13-chon-khoanh-khac/README.md` (mục 2–5) cho dự án highlight này ($P): bản đồ cả video, TỰ CHỌN ý theo bốn câu (David đã chốt: highlight được tự chọn, không hỏi trước), chọn câu cho từng clip (chạy `loud_check.py` / `pauses.py` của skill như khối dặn để đặt mốc), bố trí lời kêu gọi, kiểm tự đứng được + lằn ranh. Ghi `$P/phuong-an.json` đúng mẫu khối 13 (kèm `tone`, `cta`, `endcard`, tít) và `$P/ke-hoach-cat.md` (4 câu + lời đọc nối + mốc từng clip). KHÔNG chạy `cut_highlight.py` (app chạy ngay sau).",
+ "doc": [
+  "{W}/tuy-chon.txt"
+ ],
+ "ra": [
+  "{P}/phuong-an.json"
+ ]
+}
