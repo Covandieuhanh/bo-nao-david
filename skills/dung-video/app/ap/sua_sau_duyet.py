@@ -19,7 +19,10 @@ if not kq.get("dat") and kq.get("ke_hoach"):
     if loai == "canh":
         chay("python3", "-I", str(APP / "ap/ap_canh.py"), str(P), str(W / ten), str(W))
         if "podcast: true" not in (P / "motion/src/project.js").read_text():
-            chay("zsh", str(S / "face_place.sh"), str(P))
+            r = subprocess.run(["zsh", str(S / "face_place.sh"), str(P)], env=ENV, capture_output=True, text=True)
+            print(r.stdout[-1500:])   # video ngang: face_place.py báo "script này cho khung dọc" sau khi đã ghi mat.js — không phải lỗi
+            if r.returncode != 0 and "script này cho khung dọc" not in r.stdout + r.stderr:
+                raise SystemExit(r.stderr[-1500:] or "face_place.sh lỗi")
         chay("node", str(S / "soat_canh.mjs"), str(P), cwd=P / "motion")
         chay("python3", "-I", str(APP / "ap/render_doi.py"), str(P))
         chay("python3", "-I", str(APP / "ap/to_kiem_tra.py"), str(P))
