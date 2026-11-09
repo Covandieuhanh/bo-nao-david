@@ -47,9 +47,13 @@ def mo_duoc(p):
     r = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(p)],
                        capture_output=True, text=True, env=ENV)
     try:
-        return float(r.stdout.strip()) > 0
+        if float(r.stdout.strip()) > 0: return True
     except ValueError:
-        return False
+        pass
+    # WAV ghi âm có khi không ghi tổng thời lượng ở đầu tệp (N/A) — vẫn hợp lệ nếu có luồng tiếng/hình và giải mã được 1 giây
+    r = subprocess.run(["ffmpeg", "-v", "error", "-t", "1", "-i", str(p), "-f", "null", "-"], capture_output=True, text=True, env=ENV)
+    q = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "stream=codec_type", "-of", "csv=p=0", str(p)], capture_output=True, text=True, env=ENV)
+    return r.returncode == 0 and bool(q.stdout.strip())
 
 
 if not nguon.exists():

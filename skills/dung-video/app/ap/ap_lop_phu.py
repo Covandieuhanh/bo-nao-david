@@ -74,6 +74,10 @@ def main():
             for t in chu(props, []):
                 if loi.co_trong_loi(t, T, a[0], a[1], them=SUA) < 0.6 and loi.co_trong_loi(t, T, 0, 1e9, 0, them=SUA) < 0.85:
                     loi_ds.append(f"{nhan}: chữ «{t}» không nguyên văn lời — chỉ chọn câu, bỏ bớt chữ đầu/cuối, viết hoa")
+            if ov["type"] == "chips":   # khung ghép đọc items dạng [chữ, mốc] (Show.jsx Chips) — đổi từ {text, at}
+                props["items"] = [[it.get("text") or it.get("label", ""), it.get("at")] if isinstance(it, dict) else it for it in props.get("items", [])]
+            if ov["type"] == "illus" and props.get("mode") not in ("single", "flow", "vs", "count", "list"):
+                loi_ds.append(f"{nhan}: illus mode '{props.get('mode')}' không có (chỉ: single · flow · vs · count · list)"); continue
             ovs.append({"type": ov["type"], "start": f"__TS__{max(0, a[0] - 0.1):.2f}", "end": end, **props})
         if c.get("cta_kind") and c["cta_kind"] not in KIND: loi_ds.append(f"clip {cid}: cta_kind chỉ: {sorted(KIND)}")
         ket[cid] = (ovs, c.get("hl", []), c.get("cta_kind"))

@@ -19,4 +19,8 @@ Mọi chữ trên màn hình NGUYÊN VĂN lời trong clip (chỉ chọn câu, b
 
 {{muc:video-style-edit/references/multi-clip.md|4. Điểm nhấn}}
 
+## Props từng loại lớp phủ (đúng dạng khung ghép đọc)
+{{muc:video-style-edit/references/multi-clip.md|6. Viết}}
+Ghi `chips` items là [{text, trich}] (máy đổi sang [chữ, mốc]); illus mode chỉ single · flow · vs · count · list.
+
 Có GÓP Ý CỦA DAVID thì sửa đúng chỗ được nhắc, giữ nguyên phần còn lại của KẾ HOẠCH LẦN TRƯỚC.
