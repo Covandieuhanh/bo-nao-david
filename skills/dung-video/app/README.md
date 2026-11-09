@@ -14,7 +14,7 @@ Kết quả video là chính; token là phụ.
 - Bước `"loai": "co-dinh"`: máy chạy lệnh của skill (chép lời, làm sạch, tránh che, chụp thử, render, đo).
 - Máy đọc `scenes.js` bằng node (`ap/canh_js.py`), không bắt AI viết dạng JSON.
 - Chọn AI cho mỗi việc trên giao diện (Claude mặc định; Codex: cài CLI + `codex login`).
-- **Hạn mức + tài khoản Claude** ở đầu cột trái (`han_muc.py`): % phiên 5 giờ và cả tuần, giờ mở lại — hỏi `/usage` của Claude Code
+- **Hạn mức + tài khoản Claude** ở cuối cột trái (một dòng, bấm để xem chi tiết) (`han_muc.py`): % phiên 5 giờ và cả tuần, giờ mở lại — hỏi `/usage` của Claude Code
   (0 token) mỗi 5 phút, sau mỗi bước AI, hoặc bấm ↻; tính cả phần dùng ngoài app. Dòng 👤 = tài khoản app đang chạy (email · gói).
   **Đổi** → đăng xuất, mở trang đăng nhập Claude trên trình duyệt, David tự đăng nhập; từ bước AI sau app chạy và trừ hạn mức trên
   tài khoản mới (Claude Code trong Terminal của máy cũng đổi theo, vì dùng chung chỗ đăng nhập). Khoá khi đang có việc chạy.
@@ -40,6 +40,16 @@ Kết quả video là chính; token là phụ.
 | 11 | **lv-phat-hanh**: khối 15/14/16/08 → `phat-hanh/` | AI |
 | dang-da-kenh 5 | **Cổng 2** — David xem bản cuối, báo cáo kiểm, bài đăng (góp ý → lv-kich-ban làm lại) | David |
 
+## Giao diện gọn (David chốt 09/11/2026)
+Theo tiêu chuẩn của skill `scroll-craft` (chữ dễ đọc, tự mở trang kiểm ở khổ máy tính và điện thoại):
+- **Trang chính** chỉ hiện việc **cần David** (chờ duyệt, lỗi, đã dừng) và việc **đang chạy**, mỗi việc một nút chính.
+  Cột trái xếp theo trạng thái (chấm màu: cam chờ duyệt · xanh đang chạy · vàng xếp hàng/dừng · đỏ lỗi), "Đã xong" gấp lại.
+- **Trang một việc:** nút chính ở trên (Duyệt / Chạy tiếp / Dừng / Góp ý). Nút ít dùng (Sửa việc, Cập nhật khung dựng, Dọn tập,
+  đổi AI, Xoá) nằm trong **⋯**. Bước, token, nguồn, file, log nằm trong **Chi tiết**.
+- **Việc mới:** chỉ chọn video + **Bắt đầu**; loại video, tên tập, khung, ảnh minh hoạ, thẻ tít, lịch phát, yêu cầu riêng, link
+  Drive, AI nằm trong **Tuỳ chọn thêm** (mặc định như cũ).
+- Thêm chức năng mới: đặt vào ⋯ hoặc Chi tiết, chỉ lên mặt trang khi đó là việc David phải làm ngay.
+
 ## Mở app
 App chạy nền tự động (LaunchAgent của macOS): mở máy là có, tắt hay lỗi thì macOS tự bật lại. **Chỉ cần mở http://localhost:8765.**
 Cài một lần trên mỗi máy (đã cài trên Mac chính 08/11/2026):
@@ -52,7 +62,7 @@ Khác: `app-video.sh xem` (đang chạy không) · `khoi-lai` (sau khi sửa cod
 Trong app: **+ Việc mới** → kéo thả / chọn tệp từ máy đang cầm (tải lên Mac), hoặc **📁 Chọn tệp trên Mac** (duyệt Drive Video-goc, Tải về,
 Màn hình nền, Phim… có ảnh nhỏ; chỉ trong thư mục nhà, bỏ thư mục ẩn và ~/Library trừ Google Drive) → tên tập tự đặt, chọn tuỳ chọn (khung xuất, ảnh minh hoạ, thẻ tít, lịch phát,
 yêu cầu riêng) → app tự chạy, dừng ở 2 cổng chờ David duyệt. Cổng 2: xem video, tờ kiểm tra hình, chọn thumbnail, kết quả kiểm, bài đăng.
-**🎬 Nguồn + 📄 File đang làm** (đầu trang mỗi việc; danh sách trái ghi tên file gốc): video gốc (vlog: mọi clip theo thứ tự), bản sạch, ảnh chụp thử, tờ kiểm hình, bản render — ▶ Xem ngay trong trang, 📂 Mở trong Finder; chỉ mở đúng file của việc đó.
+**Nguồn + File đang làm** (trong mục "Chi tiết" của mỗi việc): video gốc (vlog: mọi clip theo thứ tự), bản sạch, ảnh chụp thử, tờ kiểm hình, bản render — ▶ Xem ngay trong trang, 📂 Mở trong Finder; chỉ mở đúng file của việc đó.
 Nút: **⏹ Dừng** (tắt cả render) · **▶ Chạy tiếp** (làm lại bước dở) · **làm lại từ đây** · **🗑 Xoá dự án** (chuyển `~/Movies/_app/<tên>` + `~/Movies/tap-<tên>` vào Thùng rác).
 **Rà soát tự động (`ra_soat.py`):** mở một dự án, app tự so skill hiện tại với lúc từng bước chạy — bước Claude so lại cả luật đã
 ghép, bước máy so script nó gọi + hồ sơ, phần hình so khung dựng. Có đổi → khung ⚠ "Skill đã đổi sau khi dự án này chạy", ⚠ cạnh
