@@ -1,0 +1,14 @@
+{
+ "id": "pod-chup-thu-ai",
+ "ten": "AI chụp thử, sửa tới sạch (podcast bước 7)",
+ "loai": "ai",
+ "nang": true,
+ "viec": "Làm bước 7 Chụp thử của `podcast-style-edit/SKILL.md` (khối `khoi/17-dung-kiem-tra/README.md` mục 7): `zsh {DV}/podcast-style-edit/scripts/pod_stills.sh {P} nen@<giây> <id>@<giây> …` đúng các mốc skill dặn, xem, sửa tới khi sạch. KHÔNG render. Ghi vào báo cáo những gì đã sửa để David chốt ở cổng.",
+ "doc": [
+  "{W}/phieu-loc.md"
+ ],
+ "ra": [
+  "{P}/check/stills.jpg"
+ ],
+ "kiem": "node {S}/soat_canh.mjs {P}"
+}

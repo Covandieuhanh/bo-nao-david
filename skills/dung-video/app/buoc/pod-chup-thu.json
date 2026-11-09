@@ -1,1 +1,0 @@
-{"id": "pod-chup-thu", "ten": "Chụp thử mọi cảnh + đo tỉ lệ phủ hình", "loai": "co-dinh", "nang": true, "lenh": "python3 -I {APP}/ap/pod_chup_thu.py {P} {W}"}

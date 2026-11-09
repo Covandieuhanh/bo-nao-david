@@ -1,0 +1,16 @@
+{
+ "id": "pod-kich-ban",
+ "ten": "AI làm phụ đề, sân khấu, phong cách, cảnh (podcast bước 2–6)",
+ "loai": "ai",
+ "gioi_han_s": 5400,
+ "viec": "Làm bước 2 (sửa phụ đề), 3 (sân khấu, TOPICS, PHẦN n, tên người nói), 4 (phong cách + tuyến nhạc `project.tuyen`), 5–6 (cảnh minh hoạ, màn chốt nguyên văn) của `podcast-style-edit/SKILL.md`, theo `khoi/03-phu-de/README.md`, `khoi/12-san-khau-podcast/README.md`, `khoi/10-nhan-dien/README.md`, `khoi/09-am-thanh/README.md`, `khoi/07-canh-minh-hoa/README.md` (mục đầu: motion graphic kể chuyện, mạch hình, cảnh tự vẽ `ve` trong `motion/src/rieng/`), `khoi/08-ket-thuc/README.md`, phiếu lọc David đã duyệt. Cần ảnh thì làm theo khối 07. Rồi chạy `node {S}/soat_canh.mjs {P}` sửa tới hết P0. KHÔNG chụp thử, KHÔNG render.",
+ "doc": [
+  "{W}/tuy-chon.txt",
+  "{W}/phieu-loc.md",
+  "{W}/nguoi-noi.txt"
+ ],
+ "ra": [
+  "{P}/motion/src/scenes.js"
+ ],
+ "kiem": "node {S}/soat_canh.mjs {P}"
+}

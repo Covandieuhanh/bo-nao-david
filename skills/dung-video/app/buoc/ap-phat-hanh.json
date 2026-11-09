@@ -1,1 +1,0 @@
-{"id": "ap-phat-hanh", "ten": "Thumbnail, teaser, chương, phat-hanh.md", "loai": "co-dinh", "lenh": "python3 -I {APP}/ap/ap_phat_hanh.py {P} {W}/phat-hanh.json", "nang": true}

@@ -1,1 +1,18 @@
-{"id": "CONG-2-vlog", "ten": "Cổng 2 — David duyệt bản cuối + bài đăng", "loai": "duyet", "video": "{P}/video-final.mp4", "chon_anh": {"tep": "{P}/phat-hanh/thumb-[0-9].jpg", "dich": "{P}/phat-hanh/thumbnail.jpg", "nhan": "Chọn thumbnail"}, "hien": ["{W}/duyet-hinh.md", "{W}/kiem.md", "{P}/phat-hanh/phat-hanh.md", "{P}/ke-hoach-ghep.md"], "gop_y_cho": "ke-hoach-ghep"}
+{
+ "id": "CONG-2-vlog",
+ "ten": "Cổng 2 — David duyệt bản cuối + bài đăng",
+ "loai": "duyet",
+ "video": "{P}/video-final.mp4",
+ "chon_anh": {
+  "tep": "{P}/phat-hanh/thumb-[0-9].jpg",
+  "dich": "{P}/phat-hanh/thumbnail.jpg",
+  "nhan": "Chọn thumbnail"
+ },
+ "hien": [
+  "{W}/bao-cao/vlog-kiem-cuoi.md",
+  "{W}/kiem.md",
+  "{P}/phat-hanh/phat-hanh.md",
+  "{P}/ke-hoach-ghep.md"
+ ],
+ "gop_y_cho": "vlog-ke-hoach"
+}

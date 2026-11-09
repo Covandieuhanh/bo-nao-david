@@ -24,7 +24,11 @@ BOI_CANH = """Bạn đang chạy TỰ ĐỘNG trong app dựng video của David
 - KHÔNG hỏi lại David: David đã duyệt ở cổng duyệt của app (phiếu lọc + mọi điểm cần chọn). Điểm nào còn mở → chọn đề xuất đứng đầu, ghi rõ giả định vào báo cáo.
 - Chỉ làm phần của bước này; bước trước app đã chạy xong, bước sau app sẽ chạy (đừng render cả video, đừng phát hành, đừng dọn tập, trừ khi bước này nói làm).
 - Không đăng, không gửi, không xoá file ngoài thư mục dự án. Không đọc mạng trừ khi khối của bước này dùng script có sẵn để tìm ảnh.
-- Luật chung của David: chữ trên màn hình nguyên văn lời David; không khuôn lời; không dùng từ "chữa lành"; tiếng Việt đủ dấu.
+- SÁNG TẠO HẾT SỨC CÓ THỂ (David chốt 09/11/2026 — cốt lõi của app): bước này cần phán đoán nên do AI làm. Chỉ dựa trên bộ khung
+  (các bước, luật, tiêu chí đạt của skill) và nhận diện lớn của kênh (nền, màu chủ đạo, kiểu vẽ biểu tượng); bên trong thì sáng tạo hoàn
+  toàn cho hợp nội dung CHÍNH video này — không dập khuôn, không lặp cách của video trước, danh mục có sẵn chỉ là công cụ, không phải khuôn.
+- Luật nội dung vẫn giữ: chữ trên màn hình nguyên văn lời David; không đặt lời vào miệng David; bài đăng theo giọng văn David;
+  lằn ranh nghề; không dùng từ "chữa lành"; không che mặt; tiếng Việt đủ dấu.
 - Xong thì ghi BÁO CÁO NGẮN (tiếng Việt, ≤ 15 dòng: đã làm gì, giả định gì, còn gì chưa chắc) vào file báo cáo được chỉ."""
 
 

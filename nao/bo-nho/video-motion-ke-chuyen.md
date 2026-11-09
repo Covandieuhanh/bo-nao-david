@@ -1,6 +1,6 @@
 ---
 name: video-motion-ke-chuyen
-description: "Motion graphic kể chuyện, AI tự do sáng tạo: chỉ giữ nền, màu chủ đạo, kiểu vẽ biểu tượng; ý quay lại thì vẽ tiếp (mạch hình) (2026-11-09)"
+description: "Mọi bước AI làm: sáng tạo hết sức, không khuôn — chỉ giữ khung + tiêu chí + nhận diện lớn; motion kể chuyện, ý quay lại thì vẽ tiếp (2026-11-09)"
 metadata:
   type: feedback
 ---
@@ -15,3 +15,9 @@ một hình có thể diễn tả 1–2 ý hoặc chạy từ đầu tới cuố
 `motion/src/rieng/`, mạch hình `lib/mach.js`, chuyển động `lib/chuyen-dong.js`. Vẫn giữ: chữ nguyên văn
 ([[video-chu-nguyen-van]]), không che mặt ([[video-bo-cuc-tu-can]]), đã vào là đứng yên. Thay phần "một màn = một ý" cũ; bổ sung
 [[video-luon-co-motion-graphics]], [[luat-hoc-la-bo-sung]] (học là bổ sung chỉ áp cho cái lớn, motion thì tự do).
+
+**Mở rộng cùng ngày (David chốt):** nguyên tắc không chỉ cho motion mà cho **mọi bước AI làm** (lọc, kịch bản, motion, phát hành…):
+"phần nào cố định thì làm app, phần nào AI thì gọi AI, và AI phải thể hiện sức mạnh nhiều nhất bằng cách sáng tạo — chỉ dựa trên bộ
+khung và tiêu chí, bên trong hoàn toàn sáng tạo cho hợp nội dung video. Đó là cốt lõi." Nhà của luật: `skills/thoi-quen-lam-viec.md`
+(đầu file) và lời dặn chung của app `app/goi_ai.py`. Liên quan [[video-app-dung-video]].
+

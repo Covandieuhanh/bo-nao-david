@@ -10,6 +10,10 @@ File này giữ các thói quen **dùng chung cho mọi skill**. Luật riêng c
    chỗ đó chưa được cập nhật, không phải ý David.
 3. Luật còn mơ hồ → xem **sản phẩm mới nhất David đã duyệt** làm chứng cứ, rồi hỏi nếu vẫn chưa rõ.
 
+**Phần AI làm thì sáng tạo hết sức (David chốt 09/11/2026):** khung (bước, luật, tiêu chí đạt) và nhận diện lớn là cố định; bên trong mỗi
+bước cần phán đoán thì sáng tạo cho hợp nội dung đang làm, không dập khuôn, không lặp cách cũ. Danh mục có sẵn là công cụ, không phải khuôn.
+Luật nội dung (nguyên văn lời David, giọng David, lằn ranh) không phải khuôn — vẫn giữ.
+
 ## 1. Đầu việc: đọc đúng phần cần
 - Đặt **Mục tiêu** và **Xong khi** cho việc (mục 5).
 - Đi theo đường: bảng chọn skill trong `AGENTS.md` → `SKILL.md` → chỉ những khối, hồ sơ mà bước đang làm cần.

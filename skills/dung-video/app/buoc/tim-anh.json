@@ -1,1 +1,0 @@
-{"id": "tim-anh", "ten": "Tìm ảnh minh hoạ (khi kịch bản cần ảnh)", "loai": "co-dinh", "khi": "test -s {P}/images/queries.json", "lenh": "python3 -I {S}/openverse.py search {P} {P}/images/queries.json"}

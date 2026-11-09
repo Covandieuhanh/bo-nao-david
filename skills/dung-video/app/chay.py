@@ -3,12 +3,11 @@
 
   python3 -I chay.py moi <công thức> <video gốc> <tên>   → tạo việc mới ở ~/Movies/_app/<tên>/ rồi chạy
   python3 -I chay.py tiep <tên>                           → chạy tiếp từ bước chưa xong (dừng ở cổng duyệt)
-  python3 -I chay.py duyet <tên> [góp ý]                  → duyệt cổng đang chờ (có góp ý → chạy lại bước Claude của cổng)
+  python3 -I chay.py duyet <tên> [góp ý]                  → duyệt cổng đang chờ (có góp ý → chạy lại bước AI của cổng)
   python3 -I chay.py lai <tên> <bước>                     → chạy lại từ bước đó trở đi
   python3 -I chay.py xem <tên>                            → in trạng thái
 
 Loại bước: co-dinh (app chạy lệnh cố định) · ai (goi_ai.py: AI làm đúng bước của skill trong thư mục dự án) · duyet (dừng chờ David).
-(claude = kiểu cũ JSON theo khuôn, chỉ còn ở công thức chưa làm lại.)
 Biến trong lệnh: {APP} {DV} {S} {HL} {P} {W} {VIDEO} {TEN} {HO_SO}. Thêm bước = thêm buoc/<id>.json + tên vào công thức, không sửa file này.
 """
 import fcntl, json, os, subprocess, sys, time, glob
@@ -126,9 +125,6 @@ def mot_buoc(tt, bid, gop_y=None):
         return "bo-qua"
     if ph["loai"] == "duyet":
         return "cho-duyet"
-    if ph.get("duyet_lai"):      # kiểu cũ: vòng duyệt lại của highlight/podcast/vlog — bỏ khi các công thức đó làm lại theo "ai"
-        import chat_luong
-        return chat_luong.chay(tt, ph, log, mot_buoc, bien, chay_lenh, thay)
     if ph["loai"] == "co-dinh":
         lenh = ph["lenh"] if isinstance(ph["lenh"], list) else [ph["lenh"]]
         for l in lenh:
@@ -142,19 +138,12 @@ def mot_buoc(tt, bid, gop_y=None):
         with open(log, "a", encoding="utf-8") as f:
             r = subprocess.run(cmd, stdout=f, stderr=subprocess.STDOUT, env=ENV)
         return "xong" if r.returncode == 0 else "loi"
-    if ph["loai"] == "claude":   # kiểu cũ (JSON theo khuôn) — chỉ còn ở highlight/podcast/vlog, sẽ chuyển sang "ai"
-        cmd = [sys.executable, "-I", str(APP / "goi_claude.py"), str(APP / "buoc" / f"{bid}.json"), json.dumps(b, ensure_ascii=False)]
-        if gop_y:
-            cmd.append(gop_y)
-        with open(log, "a", encoding="utf-8") as f:
-            r = subprocess.run(cmd, stdout=f, stderr=subprocess.STDOUT, env=ENV | ({"APP_DUYET_MOI":"1"} if os.environ.get("APP_DUYET_MOI") else {}))
-        return "xong" if r.returncode == 0 else "loi"
     raise SystemExit(f"loại bước lạ: {ph['loai']}")
 
 
 def ghi_gop_y(W, noi, chu, tu):
     """Sổ trao đổi của dự án (W/gop-y.json): mọi góp ý của David + câu trả lời của Claude. Mọi bước Claude đều đọc sổ này
-    (goi_claude.py), nên góp ý ở bất kỳ cổng nào — vd sửa tên "White Spa" — áp dụng cho cả kịch bản, phụ đề lẫn bài đăng."""
+    (goi_ai.py), nên góp ý ở bất kỳ cổng nào — vd sửa tên "White Spa" — áp dụng cho cả kịch bản, phụ đề lẫn bài đăng."""
     f = Path(W) / "gop-y.json"; ds = json.loads(f.read_text(encoding="utf-8")) if f.exists() else []
     ds.append({"luc": time.strftime("%Y-%m-%d %H:%M"), "noi": noi, "tu": tu, "david": chu})   # tu: áp dụng từ bước này trở đi
     ghi(f, ds)

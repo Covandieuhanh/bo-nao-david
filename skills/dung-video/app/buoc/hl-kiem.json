@@ -1,1 +1,0 @@
-{"id": "hl-kiem", "ten": "Chạy mọi luật kiểm cho từng clip", "loai": "co-dinh", "nang": true, "lenh": "python3 -I {APP}/ap/hl_moi_clip.py {P} kiem {W}"}

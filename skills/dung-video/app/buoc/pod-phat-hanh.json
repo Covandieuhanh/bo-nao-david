@@ -1,0 +1,14 @@
+{
+ "id": "pod-phat-hanh",
+ "ten": "AI làm gói phát hành (podcast bước 2b + 10)",
+ "loai": "ai",
+ "nang": true,
+ "viec": "Làm bước 2b (thumbnail không mặt, khi ngang + YouTube) và bước 10 Phát hành của `podcast-style-edit/SKILL.md` theo `khoi/14-thumbnail/README.md`, `khoi/15-phat-hanh/README.md`, `khoi/16-so-lieu/README.md`, `khoi/08-ket-thuc/README.md` (teaser > 10 phút, chương, màn kết), giọng văn `ho-so/giong-van-david.md`, phiếu lọc David đã duyệt. Ra `$P/phat-hanh/phat-hanh.md` (+ thumbnail, so-lieu.md như khối dặn). Không đăng gì.",
+ "doc": [
+  "{W}/phieu-loc.md",
+  "{P}/ke-hoach-canh.md"
+ ],
+ "ra": [
+  "{P}/phat-hanh/phat-hanh.md"
+ ]
+}

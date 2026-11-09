@@ -15,8 +15,10 @@ Kết quả video là chính; token là phụ.
 - Máy đọc `scenes.js` bằng node (`ap/canh_js.py`), không bắt AI viết dạng JSON.
 - Chọn AI cho mỗi việc trên giao diện (Claude mặc định; Codex: cài CLI + `codex login`). Hạn mức Claude còn lại hiện ở đầu cột
   trái (`han_muc.py`, lấy từ chính các lần gọi; ↻ hỏi lại bằng một câu haiku rất nhỏ).
-- Công thức đã làm lại theo nguyên tắc này: **lam-video**. Highlight, podcast, vlog còn kiểu cũ (`claude` + khuôn JSON +
-  `chat_luong.py`), sẽ làm lại cùng cách rồi xoá kiểu cũ.
+- **AI sáng tạo hết sức** (David chốt 09/11): chỉ dựa trên bộ khung, tiêu chí của skill và nhận diện lớn (nền, màu chủ đạo, kiểu vẽ
+  biểu tượng); bên trong mỗi bước AI sáng tạo cho hợp nội dung video — lời dặn chung trong `goi_ai.py` nói điều này cho mọi bước.
+- Cả 4 công thức (lam-video, highlight, podcast, ghep-vlog) đã làm lại theo nguyên tắc này 09/11; kiểu cũ (khuôn JSON, lời nhắc
+  riêng của app, vòng duyệt lồng nhau) đã xoá.
 
 ## Công thức `lam-video` (khớp `video-style-edit/SKILL.md` + cổng của `dang-da-kenh`)
 | Skill | Bước app | Ai |
@@ -83,39 +85,34 @@ Gõ `/login`, đăng nhập bằng tài khoản Claude của David trên trình 
 ## Cấu trúc (app không chứa luật)
 | Thư mục | Là gì |
 |---|---|
-| `cong-thuc/<loại>.json` | thứ tự bước cho một loại video |
-| `buoc/<id>.json` | phiếu một bước: `co-dinh` (lệnh) · `claude` (lời nhắc + khuôn + lệnh kiểm) · `duyet` (cổng) |
-| `loi-nhac/*.md` | lời nhắc cho Claude — **chèn thẳng luật gốc**: cả file (`{{file:…}}`), một mục (`{{muc:file|tiêu đề}}`), hồ sơ tham số (`{{ho_so:…}}`), biểu tượng (`{{bieu_tuong}}`), kiểu cảnh của template (`{{kieu_canh}}`) |
-| `khuon/*.json` | khuôn JSON Claude phải trả |
-| `ap/` | script biến kế hoạch của Claude thành file dự án (tìm mốc từ câu trích, soát nguyên văn) |
+| `cong-thuc/<loại>.json` | thứ tự bước một loại video — khớp 1-1 bảng công thức của skill (`ghi_chu` nói skill nào) |
+| `buoc/<id>.json` | phiếu một bước: `co-dinh` (lệnh) · `ai` (`viec` = bước nào của skill, đọc khối nào; `ra`; `kiem`) · `duyet` (cổng) |
+| `goi_ai.py` | mở Claude Code / Codex trong thư mục dự án làm đúng bước của skill; lời dặn chung (sáng tạo, luật nội dung) |
+| `ap/` | script máy (tạo dự án, cắt viền, chụp thử, render phần đổi, tờ kiểm, đọc scenes.js bằng node) — không chứa luật dựng |
 | `kiem/kiem_*.py` | luật kiểm bản cuối, app tự chạy mọi file trong thư mục |
-| `chay.py` · `goi_claude.py` · `giao_dien.*` | máy chạy bước, gọi Claude, giao diện |
+| `chay.py` · `giao_dien.*` · `han_muc.py` | máy chạy bước, giao diện, hạn mức Claude |
 
-Trạng thái từng việc, log, kế hoạch Claude, số token: `~/Movies/_app/<tên>/` (ở lại máy, không lên GitHub).
+Trạng thái từng việc, log, báo cáo AI (`bao-cao/`), số token: `~/Movies/_app/<tên>/` (ở lại máy, không lên GitHub).
 
 ## Thêm tiêu chí cố định — KHÔNG sửa app
 | Muốn | Làm |
 |---|---|
 | Đổi một con số | sửa `ho-so/*.json` |
 | Thêm luật kiểm | thả `kiem/kiem_<tên>.py` (nhận `<dự án>`, in 1 dòng, thoát 0 = đạt) |
-| Thêm bước | thêm `buoc/<id>.json` + tên bước vào `cong-thuc/<loại>.json` |
-| Thêm biểu tượng / tuyến nhạc | thêm vào thư viện hình / hồ sơ — Claude tự thấy |
-| Đổi luật dựng (bố cục, kết thúc, lọc, phát hành) | sửa README khối — lời nhắc chèn thẳng file đó |
-| Đổi bước nào cần Claude hay không | đổi `loai` trong phiếu bước |
+| Đổi luật dựng (bố cục, motion, kết thúc, lọc, phát hành) | sửa skill / README khối — bước AI đọc thẳng file đó |
+| Thêm bước | sửa bảng công thức của skill trước, rồi thêm `buoc/<id>.json` + tên bước vào `cong-thuc/<loại>.json` |
+| Thêm biểu tượng / tuyến nhạc | thêm vào thư viện hình / hồ sơ — AI tự thấy |
 
 ## Các loại video (công thức)
-| Loại | Công thức | Claude làm | Cổng David |
-|---|---|---|---|
-| Làm video — 1 người nói (ngang/dọc, cả video cũ) | `lam-video` | lọc + cắt · kịch bản cảnh · phát hành | phiếu lọc · bản cuối |
-| **Highlight** — clip dọc từ video dài (người nói) | `highlight` | tự chọn ý theo 4 câu · lớp phủ · kế hoạch đăng | các clip + kế hoạch đăng |
-| **Podcast** — tiếng → toàn motion graphics | `podcast` | lọc · sân khấu + ý đang bàn + cảnh · phát hành (bìa không mặt) | phiếu lọc · bản cuối |
-| **Ghép vlog** — nhiều clip → một video | `ghep-vlog` | xem từng clip + kế hoạch ghép · soát hình · phát hành | **kế hoạch ghép (trước render)** · bản cuối |
+| Loại | Công thức | Theo skill | AI làm | Cổng David |
+|---|---|---|---|---|
+| Làm video — 1 người nói | `lam-video` | `video-style-edit` + cổng `dang-da-kenh` | lọc + cắt · (khung dọc) · phụ đề + kịch bản · xem chụp thử · kiểm cuối · phát hành | phiếu lọc · bản cuối |
+| **Highlight** — clip dọc từ video dài | `highlight` | `cat-highlight-video` (7A người nói · 7B podcast) | chọn ý + câu · lớp phủ / kịch bản từng clip · chụp thử · kiểm cuối · kế hoạch đăng | các clip + kế hoạch đăng |
+| **Podcast** — tiếng → toàn motion graphics | `podcast` | `podcast-style-edit` + cổng `dang-da-kenh` | lọc · phụ đề + sân khấu + cảnh · chụp thử · kiểm cuối · phát hành | phiếu lọc · ảnh chụp thử · bản cuối |
+| **Ghép vlog** — nhiều clip → một video | `ghep-vlog` | `video-style-edit/references/multi-clip.md` | kế hoạch ghép + edl.js · chụp thử · kiểm cuối · phát hành | **kế hoạch ghép (trước render)** · bản cuối |
 Highlight: chọn "Cắt highlight từ tập đã dựng bản dài" (dùng bản sạch + lời đã sửa) hoặc một video dài. Bản dài **không tự dọn** sau
 cổng 2 (highlight cần bản sạch); highlight dọn cả tập ở cuối, hoặc bấm **🧹 Dọn tập**. Ghép vlog: chọn nhiều clip theo thứ tự ghép.
-Nguồn podcast/highlight là podcast (đồ hoạ) → nhánh 7B của highlight chưa có trong app (làm bằng Claude Code).
 
 ## Ngoài app (làm bằng Claude Code như cũ)
-- Highlight từ nguồn podcast (nhánh 7B): chưa có trong app.
 - Học cách trình bày từ video mẫu: skill `hoc-video-mau` (sửa bộ skill, app tự theo vì dùng chung luật và thư viện hình).
 - Đưa video lên Drive, đăng bài lên kênh: skill `dang-da-kenh` (cần trình duyệt, David duyệt từng bài).
-- Đổi khung ngang → dọc dùng kế hoạch tự động của `reframe_plan.py`, chưa có bước Claude xem lại `tracks.jpg`.

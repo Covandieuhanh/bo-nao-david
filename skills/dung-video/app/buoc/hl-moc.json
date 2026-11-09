@@ -1,1 +1,0 @@
-{"id": "hl-moc", "ten": "Sửa mốc cắt theo độ lớn tiếng (loud_check)", "loai": "co-dinh", "lenh": "python3 -I {APP}/ap/hl_moc.py {P} {W}"}

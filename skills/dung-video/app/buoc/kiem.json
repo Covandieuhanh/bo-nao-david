@@ -1,1 +1,0 @@
-{"id": "kiem", "ten": "Chạy mọi luật kiểm (kiem/)", "loai": "co-dinh", "lenh": "python3 -I {APP}/kiem/chay_kiem.py {P} {W}", "nang": true}

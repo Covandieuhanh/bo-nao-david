@@ -1,9 +1,0 @@
-{
- "id": "sua-sau-duyet",
- "ten": "Sửa theo duyệt hình + dựng lại phần bị đổi",
- "loai": "co-dinh",
- "nang": true,
- "lenh": "python3 -I {APP}/ap/sua_sau_duyet.py canh {P} {W}",
- "duyet_lai": "duyet-hinh",
- "so_vong_sua": 2
-}

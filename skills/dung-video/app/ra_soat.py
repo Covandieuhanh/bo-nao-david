@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """RÀ SOÁT SKILL ĐỔI SAU KHI CHẠY: ra_soat.py <tên việc>
 Với mỗi bước ĐÃ CHẠY của một dự án, cho biết skill có đổi sau lúc bước đó chạy không — để David biết nên "làm lại từ" bước nào.
-  · Bước Claude: ghép lại lời nhắc từ skill hiện tại, so với dấu luật lúc chạy (goi_claude.dau_luat) — chính xác tới từng chữ luật.
+  · Bước AI: file skill / khối mà phiếu bước nhắc tới, đổi sau lúc bước chạy.
   · Bước máy: các script bước đó gọi (kể cả script nó gọi tiếp, một tầng) + hồ sơ tham số nếu script đọc hồ sơ, có sửa sau lúc chạy không.
   · Phần hình: khung dựng của dự án khác bản mới nhất của skill → gợi ý "Cập nhật khung dựng".
 Tiến trình khác sửa skill (phiên Claude Code khác, sync GitHub) đều được thấy vì app và skill dùng chung một thư mục."""
@@ -10,7 +10,7 @@ from pathlib import Path
 
 APP = Path(__file__).resolve().parent; DV = APP.parent
 sys.path.insert(0, str(APP)); sys.path.insert(0, str(APP / "ap"))
-import chay, goi_claude, cap_nhat_khung  # noqa: E402
+import chay, cap_nhat_khung  # noqa: E402
 
 THU_MUC_SCRIPT = [DV / "video-style-edit/scripts", DV / "cat-highlight-video/scripts", APP / "ap", APP / "kiem", DV / "khoi"]
 
@@ -40,18 +40,6 @@ def phu_thuoc_may(ph, b):
     return {f for f in tep if f.exists()}
 
 
-def phu_thuoc_claude(ph):
-    """Tệp skill ghép vào lời nhắc của một bước Claude (để nói CÁI GÌ đổi; còn đổi hay không thì so dấu luật)."""
-    t = (APP / ph["loi_nhac"]).read_text(encoding="utf-8")
-    tep = {APP / ph["loi_nhac"], APP / ph["khuon"], DV / "luat-chung.md"}
-    tep.update(DV / m for m in re.findall(r"\{\{file:([^}]+)\}\}", t))
-    tep.update(DV / m for m in re.findall(r"\{\{muc:([^|}]+)\|", t))
-    if "{{ho_so:" in t: tep.update((DV / "ho-so").glob("*.json"))
-    if "{{bieu_tuong}}" in t: tep.add(DV / "thu-vien-hinh/Icons.jsx")
-    if "{{kieu_canh}}" in t: tep.add(DV / "video-style-edit/assets/remotion-template/src/Root.jsx")
-    return {f for f in tep if f.exists()}
-
-
 def ra_soat(ten):
     W = chay.KHO / ten; tt = chay.doc(W / "trang-thai.json"); b = chay.bien(tt)
     cu = []
@@ -60,17 +48,7 @@ def ra_soat(ten):
         if st.get("trang_thai") not in ("xong", "loi") or not st.get("ts"):
             continue
         ph = chay.phieu(bid)
-        if ph["loai"] == "claude":
-            f = W / "nho-claude" / f"{bid}.luat"
-            if not f.exists():
-                continue
-            khuon = json.loads((APP / ph["khuon"]).read_text(encoding="utf-8"))
-            mo_hinh = goi_claude.nha_cung_cap.model(goi_claude.nha_cung_cap.cau_hinh(b), ph, b)
-            moi = goi_claude.dau_luat(goi_claude.loi_he_thong(ph, b), khuon, mo_hinh)
-            if moi != f.read_text().strip():
-                doi = [x for x in phu_thuoc_claude(ph) if x.stat().st_mtime > st["ts"]]
-                cu.append({"id": bid, "ten": ph.get("ten", bid), "tep": [str(x.relative_to(DV)) for x in doi] or ["luật ghép trong lời nhắc"]})
-        elif ph["loai"] == "ai":   # bước AI: skill/khối mà phiếu bước nhắc tới, đổi sau lúc bước chạy
+        if ph["loai"] == "ai":   # bước AI: skill/khối mà phiếu bước nhắc tới, đổi sau lúc bước chạy
             ten_tep = set(re.findall(r"((?:khoi|trinh-bay|ho-so|video-style-edit|dang-da-kenh|cat-highlight-video|podcast-style-edit)/[\w./-]+\.(?:md|json)|luat-chung\.md)", ph["viec"]))
             doi = [DV / x for x in ten_tep if (DV / x).exists() and (DV / x).stat().st_mtime > st["ts"]]
             if doi:

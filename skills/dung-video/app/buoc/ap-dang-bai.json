@@ -1,1 +1,0 @@
-{"id": "ap-dang-bai", "ten": "Ghi dang-bai.md + so-lieu.md", "loai": "co-dinh", "lenh": "python3 -I {APP}/ap/ap_dang_bai.py {P} {W}/dang-bai.json"}

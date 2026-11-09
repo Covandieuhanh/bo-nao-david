@@ -17,3 +17,20 @@ def doc(P):
 
 def canh(P):
     return doc(P)["SCENES"]
+
+
+CHU = {"text", "tieu_de", "label", "quote", "ten", "title", "eyebrow", "name", "subtitle", "lines"}   # khoá chứa chữ trên màn hình
+
+
+def chu_tren_man(o, out=None):
+    """Mọi chữ trên màn hình trong props (lồng nhau) — để soát nguyên văn. Cảnh tự vẽ đặt chữ ở các khoá này."""
+    out = [] if out is None else out
+    if isinstance(o, list):
+        for x in o: chu_tren_man(x, out)
+    elif isinstance(o, dict):
+        for k, v in o.items():
+            if k in CHU and isinstance(v, str): out.append(v)
+            elif k in CHU and isinstance(v, list) and all(isinstance(x, str) for x in v): out.extend(v)
+            elif k == "nhan" and isinstance(v, str): out.append(v)
+            else: chu_tren_man(v, out)
+    return out

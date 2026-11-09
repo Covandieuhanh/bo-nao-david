@@ -1,0 +1,10 @@
+{
+ "id": "vlog-chup-thu",
+ "ten": "AI chụp thử lớp phủ, sửa tới sạch (vlog bước 7)",
+ "loai": "ai",
+ "nang": true,
+ "viec": "Làm bước 7 \"Kiểm tra bằng ảnh tĩnh\" của `video-style-edit/references/multi-clip.md`: app đã chạy `lift.py` + `overlay_guard.py`. Chụp `node stills.mjs <giây timeline>…` mỗi lớp phủ lúc đầy nhất, xem đúng các điều skill dặn, sửa edl.js tới khi sạch (sửa lớp phủ thì chạy lại `overlay_guard.py`), rồi chạy lại `link_sheet.py` cho David duyệt. KHÔNG render.",
+ "doc": [
+  "{P}/ke-hoach-ghep.md"
+ ]
+}

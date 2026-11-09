@@ -7,21 +7,24 @@
   "lay-video",
   "vlog-tao",
   "vlog-ban-loi",
-  "ke-hoach-ghep",
-  "ap-vlog",
-  "soat-hinh",
-  "ap-soat-hinh",
+  "vlog-ke-hoach",
   "vlog-bao-ve",
+  "vlog-chup-thu",
   "CONG-1-vlog",
   "vlog-render",
   "to-hinh-vlog",
-  "duyet-hinh-vlog",
-  "sua-sau-duyet-vlog",
-  "kiem",
-  "phat-hanh-vlog",
-  "ap-phat-hanh-vlog",
+  "vlog-kiem",
+  "vlog-kiem-cuoi",
+  "vlog-kiem-lai",
+  "vlog-phat-hanh",
   "CONG-2-vlog",
   "so-xong-vlog",
   "don-tap-vlog"
- ]
+ ],
+ "ghi_chu": "Khớp 1-1 quy trình ghép nhiều clip của video-style-edit/references/multi-clip.md (bước 1–9, David duyệt kế hoạch trước render). Máy chạy lệnh cố định, AI làm bước cần phán đoán.",
+ "gop_tu": {
+  "video": "vlog-ke-hoach",
+  "bai-dang": "vlog-phat-hanh",
+  "loc": "vlog-ke-hoach"
+ }
 }

@@ -15,10 +15,10 @@ class AmGoc(unittest.TestCase):
    r=subprocess.run([sys.executable,'-I',str(A/'kiem/kiem_am_goc.py'),str(P)],capture_output=True,text=True)
    self.assertEqual(r.returncode,0,r.stdout)
 class CongThuc(unittest.TestCase):
- """Làm video khớp skill: mọi bước có phiếu, bước AI chỉ tới file skill có thật, lời nhắc không sót biến."""
+ """Mọi công thức khớp skill: mọi bước có phiếu, bước AI chỉ tới file skill có thật, lời nhắc không sót biến."""
  def setUp(self):
   import json;sys.path.insert(0,str(A));import chay,goi_ai;self.chay,self.goi_ai,self.json=chay,goi_ai,json
-  self.ds=json.loads((A/'cong-thuc/lam-video.json').read_text())['buoc']
+  self.ds=list(dict.fromkeys(b for p in sorted((A/'cong-thuc').glob('*.json')) for b in json.loads(p.read_text())['buoc']))   # mọi công thức
  def test_moi_buoc_co_phieu_khong_trung(self):
   self.assertEqual(len(self.ds),len(set(self.ds)))
   for b in self.ds:self.chay.phieu(b)
@@ -27,7 +27,7 @@ class CongThuc(unittest.TestCase):
   for b in self.ds:
    ph=self.chay.phieu(b)
    if ph['loai']!='ai':continue
-   for f in re.findall(r"`((?:khoi|trinh-bay|ho-so|video-style-edit|dang-da-kenh)/[\w./-]+)`",ph['viec']):
+   for f in re.findall(r"`((?:khoi|trinh-bay|ho-so|video-style-edit|dang-da-kenh|cat-highlight-video|podcast-style-edit)/[\w./-]+)`",ph['viec']):
     self.assertTrue((A.parent/f.rstrip('/')).exists(),f'{b}: {f}')
  def test_loi_nhac_khong_sot_bien(self):
   b={k:'X' for k in ('APP','DV','S','HL','P','W','VIDEO','TEN','HO_SO','TAP','KHUNG','HOOK','AI','AI_MODEL')}

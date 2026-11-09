@@ -1,1 +1,15 @@
-{"id": "CONG-1-pod", "ten": "Cổng 1 — David duyệt phiếu lọc", "loai": "duyet", "hien": ["{W}/phieu-loc.md", "{W}/nguoi-noi.txt", {"file": "{W}/ban-loi.txt", "nhan": "📝 Bản lời máy chép (giây · câu) — soát tên riêng, chữ nghe nhầm", "gon": true}], "gop_y_cho": "loc-pod"}
+{
+ "id": "CONG-1-pod",
+ "ten": "Cổng 1 — David duyệt phiếu lọc + các điểm cần chọn",
+ "loai": "duyet",
+ "hien": [
+  "{W}/phieu-loc.md",
+  "{W}/nguoi-noi.txt",
+  {
+   "file": "{W}/ban-loi.txt",
+   "nhan": "📝 Bản lời máy chép (giây · câu) — soát tên riêng, chữ nghe nhầm",
+   "gon": true
+  }
+ ],
+ "gop_y_cho": "pod-loc"
+}

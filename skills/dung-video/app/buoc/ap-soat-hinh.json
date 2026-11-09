@@ -1,1 +1,0 @@
-{"id": "ap-soat-hinh", "ten": "Bỏ đoạn hình hỏng, viết lại edl.js", "loai": "co-dinh", "khi": "test -s {W}/soat-hinh.json", "lenh": "python3 -I {APP}/ap/ap_soat_hinh.py {P} {W}/soat-hinh.json"}

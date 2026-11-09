@@ -1,0 +1,7 @@
+{
+ "id": "vlog-kiem",
+ "ten": "Máy đo bản cuối vlog",
+ "loai": "co-dinh",
+ "nang": true,
+ "lenh": "python3 -I {APP}/kiem/chay_kiem.py {P} {W} || true"
+}

@@ -1,0 +1,15 @@
+{
+ "id": "vlog-ke-hoach",
+ "ten": "AI hiểu từng clip, lên mạch, viết edl.js + kế hoạch ghép (vlog bước 2–6)",
+ "loai": "ai",
+ "gioi_han_s": 5400,
+ "viec": "Làm bước 2, 2b, 2c, 2d, 3, 4, 4b, 5, 6 của `video-style-edit/references/multi-clip.md` (chế độ ghép nhiều clip, hồ sơ `ho-so/ghep-vlog.md`, khối `khoi/11-ghep-canh/README.md`, `khoi/07-canh-minh-hoa/README.md` mục đầu — motion graphic kể chuyện, `khoi/10-nhan-dien/README.md`, `khoi/03-phu-de/README.md`, `khoi/06-mo-dau/README.md`) cho dự án ghép này: app đã chạy `new_montage.sh` (clip `c1…` theo thứ tự David đưa, `clips.tsv`) và chép lời từng clip (`$W/ban-loi-clip.txt`). Xem ảnh từng clip, lên bản đồ + liên kết, giữ/bỏ, mạch chương trình; viết `motion/src/edl.js` (+ plan.json) và `ke-hoach-ghep.md` đúng mẫu; chạy `node stills.mjs` vài mốc và `python3 -I {S}/link_sheet.py {P}` như bước 5. KHÔNG render (David duyệt kế hoạch trước — bước 6).",
+ "doc": [
+  "{W}/tuy-chon.txt",
+  "{W}/ban-loi-clip.txt"
+ ],
+ "ra": [
+  "{P}/ke-hoach-ghep.md",
+  "{P}/motion/src/edl.js"
+ ]
+}
