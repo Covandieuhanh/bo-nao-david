@@ -4,6 +4,7 @@ Mỗi phương án: new_montage.sh hl-<tập>-<mã> <nguồn> → clip-<mã>/, h
 Giữ bản edl.js gốc (edl.goc.js) để bước lớp phủ luôn áp lên bản sạch (chạy lại không bị nhân đôi)."""
 import glob, shutil, subprocess, sys
 from pathlib import Path
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))   # python -I không tự thấy file cùng thư mục
 from hl_chung import HL, S, ENV, clips, tap
 H = Path(sys.argv[1]); nguon = glob.glob(str(H / "nguon.*"))[0]
 for ma, E in clips(H):

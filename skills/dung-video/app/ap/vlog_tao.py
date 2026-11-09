@@ -3,6 +3,7 @@
 Clip trên Drive đã được bước Lấy video tải về Mac (video_may). Đủ (motion/public/clips/c1.mp4 + check/c1) → bỏ qua; dở → Thùng rác, tạo lại."""
 import json, shutil, subprocess, sys, time
 from pathlib import Path
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))   # python -I không tự thấy file cùng thư mục
 from hl_chung import S, ENV
 W = Path(sys.argv[1]); tt = json.loads((W / "trang-thai.json").read_text(encoding="utf-8"))
 P = Path(tt["P"]); clips = tt.get("videos_may") or tt.get("tuy_chon", {}).get("videos") or [tt.get("video_may") or tt["video"]]

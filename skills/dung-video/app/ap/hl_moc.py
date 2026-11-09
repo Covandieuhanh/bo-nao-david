@@ -4,6 +4,7 @@ Chạy loud_check.py của skill (một nguồn luật), đọc mốc đề xu�
 Mốc lệch > 1 s hoặc "nói liền" → giữ mốc Whisper (an toàn hơn đoán)."""
 import json, re, subprocess, sys
 from pathlib import Path
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))   # python -I không tự thấy file cùng thư mục
 from hl_chung import HL, ENV
 H = Path(sys.argv[1]); f = H / "phuong-an.json"; pa = json.loads(f.read_text(encoding="utf-8"))
 out = subprocess.run(["python3", "-I", str(HL / "loud_check.py"), str(H)], capture_output=True, text=True, env=ENV).stdout

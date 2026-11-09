@@ -5,6 +5,7 @@ Dự án đủ (nguon.* + check/goc/words.srt) → bỏ qua; dở dang (lần ch
 Loại nguồn chưa rõ (video thô) → theo tuỳ chọn của việc (mặc định người nói)."""
 import glob, json, shutil, subprocess, sys, time
 from pathlib import Path
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))   # python -I không tự thấy file cùng thư mục
 from hl_chung import HL, ENV
 W = Path(sys.argv[1]); tt = json.loads((W / "trang-thai.json").read_text(encoding="utf-8"))
 H = Path(tt["P"]); nguon = tt.get("video_may") or tt["video"]; tap = H.parent.name[4:]

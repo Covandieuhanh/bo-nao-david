@@ -3,6 +3,7 @@
 bìa 0,3 s) + so-lieu.md từ mẫu (khối 16)."""
 import json, sys
 from pathlib import Path
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))   # python -I không tự thấy file cùng thư mục
 from hl_chung import pa, DV
 H = Path(sys.argv[1]); kh = json.loads(Path(sys.argv[2]).read_text(encoding="utf-8"))
 tit = {o["id"]: o.get("tit", "") for o in pa(H)["options"]}

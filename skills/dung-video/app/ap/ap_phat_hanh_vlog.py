@@ -3,6 +3,7 @@
 chương YouTube (chapters.py lấy nhãn địa điểm), phat-hanh.md, so-lieu.md."""
 import json, re, subprocess, sys
 from pathlib import Path
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))   # python -I không tự thấy file cùng thư mục
 from hl_chung import S, ENV, DV
 P = Path(sys.argv[1]); kh = json.loads(Path(sys.argv[2]).read_text(encoding="utf-8")); ph = P / "phat-hanh"; ph.mkdir(exist_ok=True)
 tb = []

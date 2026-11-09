@@ -4,6 +4,7 @@ bao-ve: lift.py + overlay_guard.py (lớp phủ không che mặt/thân trên) ·
 kiem: mọi luật kiểm (app/kiem) cho từng clip → <W>/kiem.md gộp."""
 import subprocess, sys
 from pathlib import Path
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))   # python -I không tự thấy file cùng thư mục
 from hl_chung import S, ENV, clips
 H, viec = Path(sys.argv[1]), sys.argv[2]; W = sys.argv[3] if len(sys.argv) > 3 else None
 md = ["# Kết quả kiểm tự động — các clip highlight", ""]

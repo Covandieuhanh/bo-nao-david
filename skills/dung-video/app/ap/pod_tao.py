@@ -3,6 +3,7 @@
 Đủ (audio.wav + project.js) → bỏ qua; dở dang → Thùng rác rồi tạo lại (như tao_du_an.py)."""
 import json, shutil, subprocess, sys, time
 from pathlib import Path
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))   # python -I không tự thấy file cùng thư mục
 from hl_chung import DV, ENV
 W = Path(sys.argv[1]); tt = json.loads((W / "trang-thai.json").read_text(encoding="utf-8"))
 P = Path(tt["P"]); video = tt.get("video_may") or tt["video"]
