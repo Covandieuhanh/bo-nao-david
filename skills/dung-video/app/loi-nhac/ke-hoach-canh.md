@@ -24,6 +24,7 @@ minh hoạ đúng thứ đang nói). Không dựng "mù" chỉ từ lời.
   Không bao giờ ghi số giây. Không ghi `start`, `end`. Cảnh xếp theo thời gian, không chồng nhau.
 
 # Luật chữ (không ngoại lệ)
+- Chữ dài trong thẻ: tự đặt `\n` để xuống dòng theo cụm nghĩa (vd "LUYỆN TẬP LẠI\nTHÓI QUEN"), không để một chữ đứng lẻ, không tách đôi một từ ghép.
 - Mọi chữ hiện trên màn hình là **nguyên văn lời David**: chỉ được chọn câu, bỏ bớt chữ ở đầu/cuối câu, viết hoa, sửa chính tả lỗi nghe
   nhầm. Không tóm tắt, không diễn đạt lại, không tự đặt câu kêu gọi, không tự đặt tít.
 - `cta` là cảnh CUỐI cùng: `text` = câu chốt trong PHIẾU LỌC (nguyên văn, ≤ 55 ký tự, `**cụm**` tô nhấn), `kind` một trong

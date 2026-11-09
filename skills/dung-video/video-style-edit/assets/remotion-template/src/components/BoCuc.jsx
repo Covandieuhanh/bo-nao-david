@@ -28,11 +28,13 @@ const W = project.width, H = project.height, LAND = W > H;
 const NOI = {illus: Illus, diagram: Diagram};
 
 // Thẻ chữ hiện dần (dùng cho 'the-canh' và nội dung 'the' trong 'o-nguoi')
+// Xuống dòng cân (textWrap balance): dòng đều nhau, không để một chữ đứng lẻ ("LUYỆN TẬP LẠI THÓI / QUEN" — lỗi 09/11/2026);
+// '\n' trong chữ = chỗ xuống dòng theo cụm nghĩa do kịch bản đặt.
 const The = ({start, tieu_de, dong = [], w, f, fs}) => (
   <div style={{width: w, padding: fs * 0.9, borderRadius: fs * 0.7, background: C.card, border: `2px solid ${C.line}`,
     boxShadow: '0 30px 90px rgba(0,0,0,0.5)', backdropFilter: 'blur(14px)', display: 'flex', flexDirection: 'column', gap: fs * 0.35}}>
     {tieu_de && <div style={{fontFamily: BODY, fontWeight: 700, fontSize: fs * 0.42, letterSpacing: 3, color: C.accent, textTransform: 'uppercase',
-      opacity: ease(f, 2, 10)}}>{tieu_de}</div>}
+      opacity: ease(f, 2, 10), textWrap: 'balance'}}>{tieu_de}</div>}
     {dong.map((d, i) => {
       const a = rel(d.at ?? start, start), p = pop(f, a);
       const g = d.gach != null ? ease(f, rel(d.gach, start), rel(d.gach, start) + 8) : 0;
@@ -41,7 +43,8 @@ const The = ({start, tieu_de, dong = [], w, f, fs}) => (
           transform: `translateY(${(1 - p) * fs * 0.6}px)`}}>
           <div style={{fontFamily: d.to ? HEAD : BODY, fontWeight: d.to ? 800 : 500, lineHeight: 1.08,
             fontSize: d.to ? Math.max(fs * 0.8, Math.min(fs * 1.35, (w - fs * 1.8) / (0.46 * Math.max(4, d.text.length)))) : fs * 0.62,   // chữ to: co cho vừa một dòng, không nhỏ hơn 0,8 — dài quá thì xuống dòng
-            color: d.to && i === dong.length - 1 ? C.accent : C.text, textTransform: d.to ? 'uppercase' : 'none'}}>{d.text}</div>
+            color: d.to && i === dong.length - 1 ? C.accent : C.text, textTransform: d.to ? 'uppercase' : 'none',
+            textWrap: 'balance', whiteSpace: 'pre-line', hyphens: 'none'}}>{d.text}</div>
           {g > 0 && <div style={{position: 'absolute', left: 0, top: '52%', height: Math.max(3, fs * 0.08), width: `${g * 100}%`, background: C.accent}} />}
         </div>
       );

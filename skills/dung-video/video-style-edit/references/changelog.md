@@ -161,3 +161,8 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
   `the-canh` co theo khoảng trống, hết chỗ thì thành `o-nguoi`. teaser.py hết tràn bộ nhớ.
 - Nguyên nhân: video phỏng vấn "5 nguyên tắc" — thẻ đè mặt khách, ô thu nhỏ cắt mặt khách. David duyệt 7 cảnh mẫu trước khi sửa skill.
 
+
+## 2026-11-09 · thẻ cạnh mặt xuống dòng cân (app dựng video, bản thử "Sự tập trung")
+- Lỗi: chữ trong thẻ `bocuc` (the-canh / ô người + thẻ) tự ngắt ở chỗ vô nghĩa, để một chữ đứng lẻ ("LUYỆN TẬP LẠI THÓI / QUEN").
+- Sửa `components/BoCuc.jsx`: `textWrap: 'balance'` (dòng đều nhau) + `whiteSpace: 'pre-line'` (kịch bản đặt `\n` theo cụm nghĩa).
+  Dự án cũ muốn theo: bấm "Cập nhật khung dựng" trong app (hoặc chép lại BoCuc.jsx) rồi render lại cảnh bocuc.
