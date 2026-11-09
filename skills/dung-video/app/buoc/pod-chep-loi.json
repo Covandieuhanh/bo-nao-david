@@ -1,0 +1,1 @@
+{"id": "pod-chep-loi", "ten": "Chép lời + phụ đề nháp", "loai": "co-dinh", "nang": true, "lenh": ["zsh {DV}/podcast-style-edit/scripts/transcribe.sh {P}", "python3 -I {S}/captions.py {P}", "python3 -I {APP}/ap/loi.py ban-loi {P}/check/goc/words.srt {P}/check/goc/transcript.srt {W}/ban-loi.txt"]}

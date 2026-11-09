@@ -56,14 +56,25 @@ n.innerHTML=`<div class="hop-hoi duyet"><div style="display:flex;align-items:cen
 <div class="mo" style="font-size:13px;margin-top:8px;word-break:break-all">${d.cha?`<a href="#" data-p="${esc(d.cha)}" class="len">⬆ Lên</a> · `:''}${esc(d.hien)}</div>
 <div class="ds-tep">${d.muc.map(m=>m.loai=='thu-muc'?`<div class="dong-tep" data-p="${esc(m.p)}" data-loai="tm"><div class="o">📁</div><div>${esc(m.ten)}</div></div>`
 :`<div class="dong-tep" data-p="${esc(m.p)}" data-loai="${m.da_dung?'dd':'v'}" ${m.da_dung?'style="opacity:.45"':''}>${m.drive?'<div class="o">☁️</div>':`<img loading="lazy" src="/api/anh-nho?p=${encodeURIComponent(m.p)}" onerror="this.outerHTML='<div class=o>🎬</div>'">`}<div>${esc(m.ten)}<small>${kb(m.mb)} · ${ngay(m.luc)}${m.drive?' · trên Drive, tải về khi bắt đầu':''}${m.da_dung?' · bản đã dựng, không dùng làm gốc':''}</small></div></div>`).join('')||'<p class="mo">Không có thư mục hay video nào ở đây.</p>'}</div></div>`;
-n.querySelectorAll('[data-p]').forEach(e=>e.onclick=ev=>{ev.preventDefault();const q=e.dataset.p,l=e.dataset.loai;if(l=='v'){chonDuongDan(q);n.remove()}else if(l=='dd'){alert('Đây là bản đã dựng — chọn video gốc quay từ máy')}else moTep(q)})}
+if(window.nhieu){const b=document.createElement('div');b.className='hang';b.innerHTML=`<button class="chinh" id="xongClip">Xong — ${(window.dsVideo||[]).length} clip</button><small class="mo">Bấm từng clip theo thứ tự muốn ghép; bấm lại để bỏ.</small>`;n.querySelector('.duyet').appendChild(b);b.querySelector('#xongClip').onclick=()=>{veClip();n.remove()};
+n.querySelectorAll('[data-loai="v"]').forEach(e=>{if((window.dsVideo||[]).includes(e.dataset.p))e.style.outline='2px solid var(--nhan)'})}
+n.querySelectorAll('[data-p]').forEach(e=>e.onclick=ev=>{ev.preventDefault();const q=e.dataset.p,l=e.dataset.loai;if(l=='v'){if(window.nhieu){themClip(q,e)}else{chonDuongDan(q);n.remove()}}else if(l=='dd'){alert('Đây là bản đã dựng — chọn video gốc quay từ máy')}else moTep(q)})}
 function boDau(t){return t.normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/đ/g,'d').replace(/Đ/g,'D').toLowerCase().replace(/\.[^.]+$/,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,40)}
+function themClip(q,e){window.dsVideo=window.dsVideo||[];const i=window.dsVideo.indexOf(q);if(i>=0){window.dsVideo.splice(i,1);e.style.outline=''}else{window.dsVideo.push(q);e.style.outline='2px solid var(--nhan)'}
+const x=document.querySelector('#xongClip');if(x)x.textContent=`Xong — ${window.dsVideo.length} clip`}
+function veClip(){const d=window.dsVideo||[];$('#vp').value=d[0]||'';$('#tha').innerHTML=d.length?`🎬 <b>${d.length} clip</b> (thứ tự ghép)<br><small>${d.map((p,i)=>`${i+1}. ${esc(p.split('/').pop())}`).join(' · ')}</small>`:'Kéo thả video vào đây<br><small>hoặc bấm để chọn tệp</small>';
+if(!$('#ten').value&&d.length)$('#ten').value=boDau(d[0].split('/').pop())}
+function nhanNhieu(fs){window.tepNhieu=[...fs].filter(f=>/\.(mp4|mov|m4v|mts|avi|mkv)$/i.test(f.name));
+$('#tha').innerHTML=`🎬 <b>${window.tepNhieu.length} clip sẽ tải lên</b><br><small>${window.tepNhieu.map((f,i)=>`${i+1}. ${esc(f.name)}`).join(' · ')}</small>`;
+if(!$('#ten').value&&window.tepNhieu[0])$('#ten').value=boDau(window.tepNhieu[0].name)}
 function nhanTep(f){if(!f)return;if(!/\.(mp4|mov|m4v|mts|avi|mkv)$/i.test(f.name))return alert('Chỉ nhận tệp video');tepChon=f;$('#vp').value='';
 $('#tha').innerHTML=`🎬 <b>${esc(f.name)}</b><br><small>${(f.size/1048576).toFixed(0)} MB · bấm để đổi tệp</small>`;if(!$('#ten').value)$('#ten').value=boDau(f.name)}
 async function moMoi(){chon=null;tepChon=null;clearTimeout(hen);const ct=await api('/api/cong-thuc');setTimeout(driveMoi,0);
-$('#chinh').innerHTML=`<h1>Việc mới</h1><div class="the"><label>Loại video</label><select id="ct">${ct.map(c=>`<option value="${c.id}">${esc(c.ten)}</option>`).join('')}</select>
+$('#chinh').innerHTML=`<h1>Việc mới</h1><div class="the"><label>Loại video</label><select id="ct" onchange="doiLoai()">${ct.map(c=>`<option value="${c.id}">${esc(c.ten)}</option>`).join('')}</select>
+<div id="nguonHl" style="display:none"><label>Cắt highlight từ tập đã dựng bản dài (tốt nhất: dùng lời đã sửa chính tả)</label><select id="tapHl" onchange="chonTapHl()"></select>
+<div class="mo" style="font-size:13px;margin-top:4px">Hoặc chọn một video dài bên dưới.</div></div>
 <label>Video gốc</label><div id="tha" class="tha" onclick="$('#chonTep').click()">Kéo thả video vào đây<br><small>hoặc bấm để chọn tệp</small></div>
-<input type="file" id="chonTep" accept="video/*,.mts,.mkv" style="display:none" onchange="nhanTep(this.files[0])">
+<input type="file" id="chonTep" accept="video/*,.mts,.mkv" style="display:none" multiple onchange="window.nhieu?nhanNhieu(this.files):nhanTep(this.files[0])">
 <div class="hang" style="margin-top:8px"><button onclick="moTep()">📁 Chọn tệp trên Mac</button></div>
 <div id="driveMoi"></div>
 <label>Hoặc dán link Google Drive (tệp phải nằm trong Drive đã liên kết với Mac)</label>
@@ -78,7 +89,7 @@ $('#chinh').innerHTML=`<h1>Việc mới</h1><div class="the"><label>Loại video
 <div id="tien" class="tien" style="display:none"><div></div></div><div id="tienChu" class="mo" style="font-size:13px"></div>
 <div class="hang"><button class="chinh" id="batDau" onclick="taoMoi()">Bắt đầu</button></div></div>`;
 const t=$('#tha');['dragenter','dragover'].forEach(e=>t.addEventListener(e,v=>{v.preventDefault();t.classList.add('tren')}));
-['dragleave','drop'].forEach(e=>t.addEventListener(e,v=>{v.preventDefault();t.classList.remove('tren')}));t.addEventListener('drop',v=>nhanTep(v.dataTransfer.files[0]))}
+['dragleave','drop'].forEach(e=>t.addEventListener(e,v=>{v.preventDefault();t.classList.remove('tren')}));t.addEventListener('drop',v=>window.nhieu?nhanNhieu(v.dataTransfer.files):nhanTep(v.dataTransfer.files[0]))}
 function taiLen(ten,f){return new Promise((ok,hong)=>{const x=new XMLHttpRequest();x.open('POST',`/api/tai-len?ten=${encodeURIComponent(ten)}&tep=${encodeURIComponent(f.name)}`);
 $('#tien').style.display='block';x.upload.onprogress=e=>{const p=e.loaded/e.total*100;$('#tien>div').style.width=p+'%';$('#tienChu').textContent=`Đang tải lên ${p.toFixed(0)}% (${(e.loaded/1048576).toFixed(0)}/${(e.total/1048576).toFixed(0)} MB)`};
 x.onload=()=>{const j=JSON.parse(x.responseText);x.status==200?ok(j.duong_dan):hong(j.loi)};x.onerror=()=>hong('mất kết nối khi tải lên');x.send(f)})}
@@ -89,13 +100,20 @@ async function timLink(){const l=$('#link').value.trim();if(!l)return;$('#linkKq
 const r=await fetch('/api/tu-link?link='+encodeURIComponent(l)).then(x=>x.json());
 if(r.loi){$('#linkKq').textContent='⚠ '+r.loi;return}
 if(r.loai=='video'){chonDuongDan(r.p);$('#linkKq').textContent='✓ Đã thấy tệp trên Mac'}else{$('#linkKq').textContent='Link là một thư mục — mở để chọn video';moTep(r.p)}}
+async function doiLoai(){window.nhieu=$('#ct').value=='ghep-vlog';window.dsVideo=[];window.tepNhieu=[];const hl=$('#ct').value=='highlight';$('#nguonHl').style.display=hl?'block':'none';window.tapHl=null;
+if(hl){const ds=await api('/api/tap-ban-dai');$('#tapHl').innerHTML='<option value="">— chọn tập —</option>'+ds.map(x=>`<option value="${esc(x.p)}" data-tap="${esc(x.tap)}">${esc(x.tap)}${x.co_hl?' (đã có highlight)':''}</option>`).join('')}}
+function chonTapHl(){const o=$('#tapHl').selectedOptions[0];if(!o||!o.value){window.tapHl=null;return}window.tapHl=o.dataset.tap;tepChon=null;$('#vp').value=o.value;
+$('#tha').innerHTML=`🎞 <b>Tập ${esc(o.dataset.tap)}</b><br><small>bản sạch + lời đã sửa của bản dài</small>`;$('#ten').value=o.dataset.tap+'-hl'}
 async function taoMoi(){const ten=$('#ten').value.trim();if(!/^[a-z0-9-]+$/.test(ten))return alert('Tên: chữ thường không dấu, số, gạch nối');
-let video=$('#vp').value.trim();if(!tepChon&&!video)return alert('Kéo thả hoặc chọn một video');$('#batDau').disabled=true;
+let video=$('#vp').value.trim();let ds=null;
+if(window.nhieu){$('#batDau').disabled=true;ds=[...(window.dsVideo||[])];try{for(const f of (window.tepNhieu||[]))ds.push(await taiLen(ten,f))}catch(e){$('#batDau').disabled=false;return alert(e)}
+ if(ds.length<1){$('#batDau').disabled=false;return alert('Chọn ít nhất một clip')}video=ds[0]}
+else{if(!tepChon&&!video)return alert('Kéo thả hoặc chọn một video');$('#batDau').disabled=true}
 try{if(tepChon)video=await taiLen(ten,tepChon)}catch(e){$('#batDau').disabled=false;return alert(e)}
-$('#tienChu').textContent='Đã tải lên, bắt đầu chạy…';const r=await api('/api/moi',{ten,video,cong_thuc:$('#ct').value,tuy_chon:{khung:$('#khung').value,anh:$('#anhmh').value,hook:$('#hook').checked,lich:$('#lich').value.trim(),yeu_cau:$('#yc').value.trim()}});$('#batDau').disabled=false;if(r.ok){chon=ten;setTimeout(()=>xem(ten),800)}}
+$('#tienChu').textContent='Đã tải lên, bắt đầu chạy…';const r=await api('/api/moi',{ten,video,cong_thuc:$('#ct').value,tuy_chon:{tap:window.tapHl||undefined,videos:ds||undefined,khung:$('#khung').value,anh:$('#anhmh').value,hook:$('#hook').checked,lich:$('#lich').value.trim(),yeu_cau:$('#yc').value.trim()}});$('#batDau').disabled=false;if(r.ok){chon=ten;setTimeout(()=>xem(ten),800)}}
 async function xem(ten){const moi=chon!==ten;chon=ten;clearTimeout(hen);const d=await api('/api/chi-tiet?ten='+encodeURIComponent(ten));danhSach();
-const tk=d.token;let h=`<div style="display:flex;align-items:center;gap:12px"><h1 style="margin:0">${esc(d.ten)}</h1><button class="dung" style="margin-left:auto;font-size:13px" ${d.dang_chay?'disabled title="Dừng việc trước khi xoá"':''} onclick="xoaViec()">🗑 Xoá dự án</button></div><div class="hang" style="margin-top:6px"><button style="font-size:13px" ${d.dang_chay?'disabled title="Dừng việc trước"':''} onclick="capNhatKhung()">🔄 Cập nhật khung dựng</button></div><div class="so"><span>${esc(d.cong_thuc)}</span><span>Claude: ${tk.lan_goi} lần · ${(tk.vao/1000).toFixed(1)}k vào · ${(tk.ra/1000).toFixed(1)}k ra</span></div>`;
-if(d.cong){h+=`<div class="the"><h2>🟠 ${esc(d.cong.ten)}</h2>${d.cong.video?`<video controls preload="metadata" src="/tep?p=${encodeURIComponent(d.cong.video)}"></video>`:''}
+const tk=d.token;let h=`<div style="display:flex;align-items:center;gap:12px"><h1 style="margin:0">${esc(d.ten)}</h1><button class="dung" style="margin-left:auto;font-size:13px" ${d.dang_chay?'disabled title="Dừng việc trước khi xoá"':''} onclick="xoaViec()">🗑 Xoá dự án</button></div><div class="hang" style="margin-top:6px"><button style="font-size:13px" ${d.dang_chay?'disabled title="Dừng việc trước"':''} onclick="capNhatKhung()">🔄 Cập nhật khung dựng</button><button style="font-size:13px" ${d.dang_chay?'disabled':''} onclick="donTap()">🧹 Dọn tập</button></div><div class="so"><span>${esc(d.cong_thuc)}</span><span>Claude: ${tk.lan_goi} lần · ${(tk.vao/1000).toFixed(1)}k vào · ${(tk.ra/1000).toFixed(1)}k ra</span></div>`;
+if(d.cong){h+=`<div class="the"><h2>🟠 ${esc(d.cong.ten)}</h2>${(d.cong.video||[]).map(v=>`${d.cong.video.length>1?`<h2>${esc(v.split('/').slice(-2,-1)[0])}</h2>`:''}<video controls preload="metadata" src="/tep?p=${encodeURIComponent(v)}"></video>`).join('')}
 ${d.cong.chon_anh?`<h2>${esc(d.cong.chon_anh.nhan)}</h2><div class="hang">${d.cong.chon_anh.ds.map((a,i)=>`<div style="flex:1;min-width:220px"><img src="/tep?p=${encodeURIComponent(a)}&v=${Date.now()}" style="width:100%;border-radius:8px;border:3px solid ${d.cong.chon_anh.da_chon==a?'var(--nhan)':'transparent'}"><button style="width:100%;margin-top:4px" ${d.cong.chon_anh.da_chon==a?'class="chinh"':''} onclick="chonAnh('${encodeURIComponent(a)}')">${d.cong.chon_anh.da_chon==a?'✓ Đã chọn':'Chọn mẫu '+(i+1)}</button></div>`).join('')}</div>`:''}
 ${d.cong.anh.map(a=>`<h2>${esc(a.split('/').pop())}</h2><a href="/tep?p=${encodeURIComponent(a)}" target="_blank"><img src="/tep?p=${encodeURIComponent(a)}&v=${Date.now()}" style="width:100%;border-radius:8px"></a>`).join('')}
 ${d.cong.tep.map(t=>t.gon?`<details style="margin-top:14px"><summary style="cursor:pointer;font-weight:600">${esc(t.ten)}</summary><pre>${esc(t.noi_dung)}</pre></details>`:`<h2>${esc(t.ten)}</h2><pre>${esc(t.noi_dung)}</pre>`).join('')}
@@ -134,6 +152,8 @@ const r=await api('/api/cap-nhat-khung',{ten:chon});if(r.ok){await hoi(r.ket_qua
 async function gopSau(loai){const g=$('#gySau').value.trim();if(!g)return alert('Viết góp ý trước');
 if(!await hoi(`Gửi góp ý và làm lại ${loai=='video'?'video (kịch bản → dựng lại → cổng 2)':'bài đăng'}?\n\n«${g}»`,'Gửi góp ý'))return;
 if((await api('/api/gop-y',{ten:chon,loai,gop_y:g})).ok)setTimeout(()=>xem(chon),800)}
+async function donTap(){if(!await hoi('Dọn file tạm của cả tập (bản sạch, cảnh đã render, ảnh kiểm…) vào Thùng rác?\n\nGiữ: video gốc, bản cuối, bài đăng, kế hoạch. Nên dọn khi đã xong CẢ tập (bản dài + highlight) — highlight cần bản sạch của bản dài. Sửa lại sau khi dọn thì app tự dựng lại từ video gốc.','🧹 Dọn'))return;
+const r=await api('/api/don-tap',{ten:chon});if(r.ok){await hoi((r.ket_qua||[]).join('\n')||'Đã dọn.','Đóng');xem(chon)}}
 async function duyet(){const g=$('#gy')&&$('#gy').value.trim();
 if(g){if(await hoi('Ô góp ý đang có chữ. Bấm "Duyệt" sẽ BỎ QUA góp ý này.\n\nGửi góp ý và làm lại thay vì duyệt?','Gửi góp ý, làm lại'))return gopY();return}
 if(!await hoi('Duyệt cổng này và cho app chạy tiếp?\n\nMuốn sửa gì thì Huỷ, ghi vào ô góp ý rồi bấm "Gửi góp ý, làm lại".','✓ Duyệt'))return;if((await api('/api/duyet',{ten:chon})).ok)setTimeout(()=>xem(chon),800)}

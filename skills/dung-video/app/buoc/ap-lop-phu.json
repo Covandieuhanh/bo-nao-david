@@ -1,0 +1,1 @@
+{"id": "ap-lop-phu", "ten": "Ghi lớp phủ, phụ đề, màn chốt vào edl.js", "loai": "co-dinh", "khi": "grep -q tu-quay {P}/loai.txt", "lenh": "python3 -I {APP}/ap/ap_lop_phu.py {P} {W}/lop-phu.json"}

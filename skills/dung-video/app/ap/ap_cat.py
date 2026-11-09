@@ -34,8 +34,11 @@ def mm(s):
 
 def ap(P, W, kp, kiem):
     kh = json.loads(Path(kp).read_text(encoding="utf-8"))
-    c = Path(P) / "check/clean"; T = loi.tu(c / "words.srt")
-    d = json.loads((c / "cuts.json").read_text(encoding="utf-8")); loi_ds = []
+    c = Path(P) / "check/clean"
+    if not (c / "cuts.json").exists():     # podcast: giữ nguyên toàn bộ (không làm sạch) — chỉ ghi phiếu lọc, lời ở check/goc
+        c = Path(P) / "check/goc"
+    T = loi.tu(c / "words.srt")
+    d = json.loads((c / "cuts.json").read_text(encoding="utf-8")) if (c / "cuts.json").exists() else {"cuts": []}; loi_ds = []
     cat = kh.get("cat", {})
     for i in cat.get("giu_de_xuat", []):
         if not 0 <= i < len(d["cuts"]): loi_ds.append(f"không có đề xuất cắt #{i}")
@@ -72,7 +75,7 @@ def ap(P, W, kp, kiem):
     d["cuts"] = [x for x in d["cuts"] if not str(x.get("why", "")).startswith("app:")] + them
     if cat.get("orient") is not None: d["orient"] = cat["orient"]
     Path(W, "khung-trong.txt").write_text((cat.get("khung_trong") or "").strip() + "\n", encoding="utf-8")
-    (c / "cuts.json").write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf-8")
+    if c.name == "clean": (c / "cuts.json").write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf-8")
     dm = lc.get("diem", {}); tong = sum(dm.values()) if dm else "?"
     lr = "; ".join(f"⚠️ {x['moc']} «{x['trich']}» — {x.get('rui_ro', '')}" for x in lc.get("lan_ranh", [])) or "không"
     cat_md = [f"- #{i}: {d['cuts'][i].get('why')} [{d['cuts'][i]['start']:.1f}–{d['cuts'][i]['end']:.1f}]" for i in cat.get("giu_de_xuat", [])]

@@ -1,0 +1,26 @@
+{
+ "ten": "Highlight — cắt clip dọc từ video dài (người nói)",
+ "ho_so": "highlight",
+ "thu_muc": "3-highlight",
+ "buoc": [
+  "moi-truong",
+  "lay-video",
+  "hl-tao",
+  "hl-ban-loi",
+  "chon-y",
+  "ap-chon-y",
+  "hl-moc",
+  "hl-cat",
+  "hl-dung",
+  "lop-phu",
+  "ap-lop-phu",
+  "hl-bao-ve",
+  "hl-render",
+  "hl-kiem",
+  "dang-bai",
+  "ap-dang-bai",
+  "CONG-2-hl",
+  "so-xong-hl",
+  "don-tap"
+ ]
+}

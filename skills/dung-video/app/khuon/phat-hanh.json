@@ -30,7 +30,6 @@
    "items": {
     "type": "object",
     "required": [
-     "trich",
      "dong1",
      "dong2"
     ],
@@ -46,6 +45,10 @@
      },
      "so_lon": {
       "type": "string"
+     },
+     "hinh": {
+      "type": "string",
+      "description": "podcast (bìa không mặt): tên biểu tượng theo ý của tập"
      }
     }
    }

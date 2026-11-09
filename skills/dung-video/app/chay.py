@@ -212,7 +212,10 @@ def main():
         if p.exists():
             raise SystemExit(f"Đã có việc '{ten}' — dùng: chay.py tiep {ten}")
         tc = json.loads(a[4]) if len(a) > 4 else {}
-        ghi(p, {"ten": ten, "cong_thuc": ct, "video": video, "P": noi_luu(ten), "buoc": {}, "tuy_chon": tc,
+        ctt = cong_thuc(ct); tap = tc.get("tap") or ten
+        tm = ctt.get("thu_muc", "2-ban-dai")
+        P = noi_luu(tap) if tm == "2-ban-dai" else noi_luu(f"vlog-{ten}") if tm == "vlog" else str(Path(noi_luu(tap)).parent / tm)
+        ghi(p, {"ten": ten, "cong_thuc": ct, "video": video, "P": P, "buoc": {}, "tuy_chon": tc,
                 "tao_luc": time.strftime("%Y-%m-%d %H:%M")})
         ghi_tuy_chon(W, tc)
         print(chay(p))

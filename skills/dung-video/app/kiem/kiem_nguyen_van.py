@@ -4,6 +4,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "ap"))
 import loi, ap_canh
 P = sys.argv[1]; s = open(P + "/motion/src/scenes.js", encoding="utf-8").read()
+import os as _os
+if not _os.path.exists(P + "/motion/src/scenes.js"): print("không áp dụng cho loại video này (clip ghép)"); sys.exit(0)
 i = s.index("export const SCENES = ") + len("export const SCENES = "); j = s.index("\n];", i) + 2
 S = json.loads(s[i:j]); T = loi.tu(P + "/check/goc/words.srt"); sai = []
 import os

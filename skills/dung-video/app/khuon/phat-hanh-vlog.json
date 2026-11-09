@@ -1,0 +1,56 @@
+{
+ "type": "object",
+ "required": [
+  "tieu_de",
+  "mo_ta",
+  "binh_luan_ghim"
+ ],
+ "properties": {
+  "tieu_de": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   },
+   "minItems": 3,
+   "maxItems": 3
+  },
+  "mo_ta": {
+   "type": "string"
+  },
+  "binh_luan_ghim": {
+   "type": "string"
+  },
+  "khung_bia": {
+   "type": "string"
+  },
+  "thumbnail": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "clip",
+     "giay",
+     "dong1",
+     "dong2"
+    ],
+    "properties": {
+     "clip": {
+      "type": "string"
+     },
+     "giay": {
+      "type": "number"
+     },
+     "dong1": {
+      "type": "string"
+     },
+     "dong2": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "phan_hoi": {
+   "type": "string"
+  }
+ }
+}

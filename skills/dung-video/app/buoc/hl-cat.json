@@ -1,0 +1,1 @@
+{"id": "hl-cat", "ten": "Cắt thử + chép lời lại để kiểm lời", "loai": "co-dinh", "nang": true, "lenh": "python3 -I {HL}/cut_highlight.py {P}"}

@@ -23,7 +23,7 @@ if not cu or cu["giao_dien"] != moi["giao_dien"]:
 else:
     ids = [k for k, v in moi["canh"].items() if cu["canh"].get(k) != v or not (media / f"{k}.mov").exists()]
     if cu["phu_de"] != moi["phu_de"]: ids.append("phu-de")
-    if cu["du_an"] != moi["du_an"] or cu["con_lai"] != moi["con_lai"]: ids += ["the-cuoi", "hai-ben", "phu-de"]
+    if cu["du_an"] != moi["du_an"] or cu["con_lai"] != moi["con_lai"]: ids += ["the-cuoi", "hai-ben", "phu-de", "nen"]
     for k in set(cu["canh"]) - set(moi["canh"]):      # cảnh đã bỏ
         (media / f"{k}.mov").unlink(missing_ok=True)
     if not ids:
@@ -32,5 +32,7 @@ env = dict(os.environ, PATH="/opt/homebrew/bin:" + os.environ.get("PATH", ""))
 print("render:", "tất cả" if not ids else ("không cảnh nào đổi" if ids == ["__khong__"] else ", ".join(dict.fromkeys(ids))), flush=True)
 if ids != ["__khong__"]:
     subprocess.run(["node", "render.mjs", *dict.fromkeys(ids)], cwd=P / "motion", env=env, check=True)
+if "podcast: true" in (src / "project.js").read_text(encoding="utf-8"):   # podcast: sân khấu nen.mp4 + tiếng → video_goc.mp4
+    subprocess.run(["python3", str(S.parent.parent / "podcast-style-edit/scripts/podcast_base.py"), str(P)], env=env, check=True)
 subprocess.run(["python3", "-I", str(S / "render_preview.py"), str(P)], env=env, check=True)
 snap.write_text(json.dumps(moi))

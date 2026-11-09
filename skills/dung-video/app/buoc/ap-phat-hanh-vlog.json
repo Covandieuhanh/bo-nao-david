@@ -1,0 +1,1 @@
+{"id": "ap-phat-hanh-vlog", "ten": "Thumbnail, chương, phat-hanh.md", "loai": "co-dinh", "nang": true, "lenh": "python3 -I {APP}/ap/ap_phat_hanh_vlog.py {P} {W}/phat-hanh-vlog.json"}

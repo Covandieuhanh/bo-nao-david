@@ -2,6 +2,8 @@
 giọng nên chênh nhỏ), tiếng rè (dải > 12 kHz) chênh ≤ 1 dB — cao hơn hẳn = âm thanh bị hạ bit ở đâu đó (xem gotchas)."""
 import re, subprocess, sys
 P = sys.argv[1]
+import os as _os
+if not _os.path.exists(P + "/motion/src/project.js"): print("không áp dụng cho loại video này (clip ghép)"); sys.exit(0)
 dur = float(re.search(r"duration: *([\d.]+)", open(P + "/motion/src/project.js", encoding="utf-8").read()).group(1))
 def do(f, loc):
     r = subprocess.run(["ffmpeg", "-nostats", "-t", f"{dur:.2f}", "-i", f, "-vn", "-af", loc, "-f", "null", "-"], capture_output=True, text=True).stderr

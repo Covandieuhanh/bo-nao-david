@@ -72,6 +72,17 @@ Trạng thái từng việc, log, kế hoạch Claude, số token: `~/Movies/_ap
 | Đổi luật dựng (bố cục, kết thúc, lọc, phát hành) | sửa README khối — lời nhắc chèn thẳng file đó |
 | Đổi bước nào cần Claude hay không | đổi `loai` trong phiếu bước |
 
+## Các loại video (công thức)
+| Loại | Công thức | Claude làm | Cổng David |
+|---|---|---|---|
+| Làm video — 1 người nói (ngang/dọc, cả video cũ) | `lam-video` | lọc + cắt · kịch bản cảnh · phát hành | phiếu lọc · bản cuối |
+| **Highlight** — clip dọc từ video dài (người nói) | `highlight` | tự chọn ý theo 4 câu · lớp phủ · kế hoạch đăng | các clip + kế hoạch đăng |
+| **Podcast** — tiếng → toàn motion graphics | `podcast` | lọc · sân khấu + ý đang bàn + cảnh · phát hành (bìa không mặt) | phiếu lọc · bản cuối |
+| **Ghép vlog** — nhiều clip → một video | `ghep-vlog` | xem từng clip + kế hoạch ghép · soát hình · phát hành | **kế hoạch ghép (trước render)** · bản cuối |
+Highlight: chọn "Cắt highlight từ tập đã dựng bản dài" (dùng bản sạch + lời đã sửa) hoặc một video dài. Bản dài **không tự dọn** sau
+cổng 2 (highlight cần bản sạch); highlight dọn cả tập ở cuối, hoặc bấm **🧹 Dọn tập**. Ghép vlog: chọn nhiều clip theo thứ tự ghép.
+Nguồn podcast/highlight là podcast (đồ hoạ) → nhánh 7B của highlight chưa có trong app (làm bằng Claude Code).
+
 ## Công thức `lam-video` (28 bước = đủ skill video-style-edit chế độ 1 video)
 | Nhóm | Bước | Ai |
 |---|---|---|
@@ -92,7 +103,7 @@ Trạng thái từng việc, log, kế hoạch Claude, số token: `~/Movies/_ap
 Luật kiểm (`kiem/`): âm lượng −14 LUFS · âm so bản gốc + tiếng rè · thời lượng · chữ nguyên văn.
 
 ## Ngoài app (làm bằng Claude Code như cũ)
-- Highlight, podcast, ghép vlog: chưa có công thức.
+- Highlight từ nguồn podcast (nhánh 7B): chưa có trong app.
 - Học cách trình bày từ video mẫu: skill `hoc-video-mau` (sửa bộ skill, app tự theo vì dùng chung luật và thư viện hình).
 - Đưa video lên Drive, đăng bài lên kênh: skill `dang-da-kenh` (cần trình duyệt, David duyệt từng bài).
 - Đổi khung ngang → dọc dùng kế hoạch tự động của `reframe_plan.py`, chưa có bước Claude xem lại `tracks.jpg`.

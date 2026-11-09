@@ -18,6 +18,27 @@ except Exception:
 
 W = Path(sys.argv[1]); f = W / "trang-thai.json"
 tt = json.loads(f.read_text(encoding="utf-8"))
+if tt.get("tuy_chon", {}).get("videos"):   # GHÉP VLOG: nhiều clip — clip trên Drive tải về W/goc/, clip trên Mac giữ nguyên
+    ra = []
+    for v in tt["tuy_chon"]["videos"]:
+        v = Path(v)
+        if "/Library/CloudStorage/" in str(v):
+            d = W / "goc" / v.name; d.parent.mkdir(exist_ok=True)
+            if not (d.exists() and d.stat().st_size == v.stat().st_size):
+                try:
+                    ctypes.CDLL("libc.dylib").setiopolicy_np(3, 0, 2)
+                except Exception:
+                    pass
+                with open(v, "rb") as a, open(d, "wb") as b:
+                    while True:
+                        k = a.read(8 << 20)
+                        if not k: break
+                        b.write(k)
+                if d.stat().st_size != v.stat().st_size: raise SystemExit(f"Tải chưa đủ: {v.name}")
+            print(f"✓ {v.name} (từ Drive)"); ra.append(str(d))
+        else:
+            print(f"✓ {v.name}"); ra.append(str(v))
+    tt["videos_may"] = ra; f.write_text(json.dumps(tt, ensure_ascii=False, indent=1), encoding="utf-8"); sys.exit(0)
 nguon = Path(tt["video"]); tap = Path(tt["P"]).parent
 ENV = dict(os.environ, PATH="/opt/homebrew/bin:" + os.environ.get("PATH", ""))
 
@@ -33,6 +54,8 @@ def mo_duoc(p):
 
 if not nguon.exists():
     raise SystemExit(f"Không thấy video gốc: {nguon}")
+if nguon.is_dir():   # nguồn là thư mục dự án bản dài (highlight) — dùng bản sạch trong đó, không cần tải
+    print(f"Nguồn là dự án bản dài: {nguon}"); sys.exit(0)
 if "/Library/CloudStorage/" not in str(nguon):
     if not mo_duoc(nguon): raise SystemExit(f"Video gốc không mở được (hỏng hoặc chưa ghi xong): {nguon}")
     print(f"Video đã nằm trên Mac: {nguon}"); sys.exit(0)

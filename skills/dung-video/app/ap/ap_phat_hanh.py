@@ -26,6 +26,7 @@ def main():
     P, kp = sys.argv[1], sys.argv[2]; kiem = "--kiem" in sys.argv
     kh = json.loads(Path(kp).read_text(encoding="utf-8")); T = loi.tu(Path(P) / "check/goc/words.srt"); loi_ds = []
     w, h, dur = du_an(P); ngang = w > h
+    pod = "podcast: true" in (Path(P) / "motion/src/project.js").read_text(encoding="utf-8")
 
     def m(q, sau=0):
         r = loi.tim(q, T, sau=sau)
@@ -33,7 +34,7 @@ def main():
         return r
 
     bia = m(kh["khung_bia_trich"]) if kh.get("khung_bia_trich") else None
-    thumbs = [(m(t["trich"]), t) for t in kh.get("thumbnail", [])] if ngang else []
+    thumbs = [((m(t["trich"]) if not pod else (0, 0, 1)), t) for t in kh.get("thumbnail", [])] if ngang else []
     teaser = []
     for t in kh.get("teaser", []) if dur > 180 else []:
         a = m(t["trich_dau"]); b = m(t["trich_cuoi"], sau=a[0] if a else 0) if a else None
@@ -47,7 +48,10 @@ def main():
     tb = []
     for i, (r, t) in enumerate(thumbs, 1):
         env = dict(ENV, **({"THUMB_NUM": str(t["so_lon"])} if t.get("so_lon") else {}))
-        sub = subprocess.run(["zsh", str(S / "thumbnail.sh"), P, f"{r[0] + 0.3:.1f}", t["dong1"], t["dong2"], str(i)], env=env,
+        nguon = f"{r[0] + 0.3:.1f}"
+        if pod:   # podcast chỉ có tiếng: bìa KHÔNG MẶT = nền hoạ tiết + hình theo ý + "DAVID · PODCAST" (khối 14)
+            env.update(THUMB_HINH=t.get("hinh") or "danh-sach", THUMB_TAG="PODCAST"); nguon = "-"
+        sub = subprocess.run(["zsh", str(S / "thumbnail.sh"), P, nguon, t["dong1"], t["dong2"], str(i)], env=env,
                              capture_output=True, text=True)
         tb.append(f"- `thumb-{i}.jpg`: giây {r[0] + 0.3:.0f}, chữ \"{t['dong1']} / {t['dong2']}\"" + ("" if sub.returncode == 0 else " (⚠ lỗi tạo ảnh)"))
     if teaser:

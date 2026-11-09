@@ -37,6 +37,15 @@ def thay(s, b):
 
 
 def dung_loi_nhac(text, b):
+    """Ghép lời nhắc; lặp tới khi hết chỗ chèn (một lời nhắc có thể chèn lời nhắc khác, vd podcast chèn kịch bản cảnh)."""
+    for _ in range(4):
+        moi = _ghep(text, b)
+        if moi == text: break
+        text = moi
+    return text
+
+
+def _ghep(text, b):
     cfg = hoso.load(b["HO_SO"])
     text = re.sub(r"\{\{ho_so:([\w.]+)\}\}", lambda m: json.dumps(hoso.get(cfg, m.group(1)), ensure_ascii=False), text)
     text = text.replace("{{bieu_tuong}}", " ".join(loi.bieu_tuong()))

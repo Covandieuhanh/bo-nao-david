@@ -132,21 +132,33 @@ def lap(P, kh, tc):
         chuong.append({"at": round(r[0], 2), "text": ch["text"]})
     chuong.sort(key=lambda c: c["at"])
     if chuong: chuong[0]["at"] = 0          # luật YouTube: chương đầu 0:00
+    stage = topics = None      # podcast (khối 12): sân khấu + ý đang bàn
+    if kh.get("stage"):
+        stage = kh["stage"]
+        topics = []
+        for tp in kh.get("topics", []):
+            r = loi.tim(tp.get("trich", ""), T)
+            if not r: loi_ds.append(f"ý đang bàn «{tp.get('text')}»: không tìm thấy câu trích"); continue
+            if loi.co_trong_loi(tp["text"], T, r[0], r[0] + 60, them=SUA) < 0.6:
+                loi_ds.append(f"ý đang bàn «{tp['text']}» không trích lời (≤ 5 từ/dòng, chữ của người nói)")
+            topics.append({"at": round(r[0], 2), "text": tp["text"]})
+        topics.sort(key=lambda x: x["at"])
+        if topics: topics[0]["at"] = 0
     sides = None
     if tc.get("khung") == "ngang":
         if not kh.get("sides"):
             loi_ds.append("khung xuất ngang từ gốc dọc: thiếu `sides` (eyebrow, title, speaker, keywords, points)")
         else:
             sides = giai(kh["sides"], T, [], loi_ds, "sides", 0, None)
-    return canh, chuong, sides, loi_ds
+    return canh, chuong, sides, loi_ds, stage, topics
 
 
-def ghi_scenes(P, canh, chuong, sides):
+def ghi_scenes(P, canh, chuong, sides, stage=None, topics=None):
     f = Path(P) / "motion/src/scenes.js"; s = f.read_text(encoding="utf-8")
     sach = [{k: v for k, v in c.items() if not k.startswith("_")} for c in canh]
     i = s.index("export const SCENES = "); j = s.index("\n];", i) + 3
     s = s[:i] + "export const SCENES = " + json.dumps(sach, ensure_ascii=False, indent=1) + ";" + s[j:]
-    for ten, gt in (("CHAPTERS", chuong), ("SIDES", sides)):
+    for ten, gt in (("CHAPTERS", chuong), ("SIDES", sides)) + ((("STAGE", stage), ("TOPICS", topics)) if stage else ()):
         s = re.sub(rf"export const {ten} = .*?;\n", lambda m: f"export const {ten} = " + json.dumps(gt, ensure_ascii=False) + ";\n",
                    s, count=1, flags=re.S)
     f.write_text(s, encoding="utf-8")
@@ -192,7 +204,7 @@ def main():
     P, kh_p, W = sys.argv[1], sys.argv[2], sys.argv[3]; kiem = "--kiem" in sys.argv
     kh = json.loads(Path(kh_p).read_text(encoding="utf-8"))
     tt = json.loads((Path(W) / "trang-thai.json").read_text(encoding="utf-8")); tc = tt.get("tuy_chon", {})
-    canh, chuong, sides, loi_ds = lap(P, kh, tc)
+    canh, chuong, sides, loi_ds, stage, topics = lap(P, kh, tc)
     print(f"{len(canh)} cảnh · {len(chuong)} chương · {len(kh.get('anh', []))} ảnh cần tìm · {len(loi_ds)} lỗi")
     for x in loi_ds: print("✗", x)
     if loi_ds:
@@ -201,7 +213,7 @@ def main():
         return
     w, h, dur = du_an(P)
     ytend = hoso.get(hoso.load("lam-video"), "youtube.man_ket_s", 20) if dur > 180 else None   # khối 08: video > 3 phút
-    ghi_scenes(P, canh, chuong, sides)
+    ghi_scenes(P, canh, chuong, sides, stage, topics)
     ghi_du_an(P, {"topic": kh.get("topic", ""), "tuyen": kh["tuyen"], "ytEnd": ytend, "schedule": tc.get("lich") or None})
     q = Path(P) / "images/queries.json"
     if kh.get("anh"):

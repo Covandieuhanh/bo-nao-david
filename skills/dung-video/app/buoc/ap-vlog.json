@@ -1,0 +1,1 @@
+{"id": "ap-vlog", "ten": "Ghi plan.json, kế hoạch ghép, viết edl.js (vlog_edl)", "loai": "co-dinh", "lenh": "python3 -I {APP}/ap/ap_vlog.py {P} {W}/ke-hoach-ghep.json"}

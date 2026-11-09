@@ -1,0 +1,1 @@
+{"id": "ap-chon-y", "ten": "Tìm mốc, ghi phuong-an.json + ke-hoach-cat.md", "loai": "co-dinh", "lenh": "python3 -I {APP}/ap/ap_chon_y.py {P} {W}/chon-y.json"}

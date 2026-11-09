@@ -1,0 +1,1 @@
+{"id": "vlog-bao-ve", "ten": "Nâng khung + tránh che người", "loai": "co-dinh", "nang": true, "lenh": ["python3 -I {S}/lift.py {P}", "python3 -I {S}/overlay_guard.py {P}"]}

@@ -1,0 +1,24 @@
+{
+ "ten": "Ghép vlog — nhiều clip thành một video (chuyến đi, sự kiện)",
+ "ho_so": "ghep-vlog",
+ "thu_muc": "vlog",
+ "buoc": [
+  "moi-truong",
+  "lay-video",
+  "vlog-tao",
+  "vlog-ban-loi",
+  "ke-hoach-ghep",
+  "ap-vlog",
+  "soat-hinh",
+  "ap-soat-hinh",
+  "vlog-bao-ve",
+  "CONG-1-vlog",
+  "vlog-render",
+  "kiem",
+  "phat-hanh-vlog",
+  "ap-phat-hanh-vlog",
+  "CONG-2-vlog",
+  "so-xong-vlog",
+  "don-tap-vlog"
+ ]
+}

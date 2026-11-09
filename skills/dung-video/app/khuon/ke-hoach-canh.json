@@ -112,6 +112,25 @@
   "phan_hoi": {
    "type": "string",
    "description": "chỉ khi có GÓP Ý CỦA DAVID: 1–2 câu cho David biết đã sửa gì"
+  },
+  "stage": {
+   "type": "object",
+   "description": "CHỈ podcast: {show, title (tên tập), speakers: [{name, role}] theo thứ tự người 0, 1}"
+  },
+  "topics": {
+   "type": "array",
+   "description": "CHỈ podcast: ý đang bàn [{trich, text ≤ 5 từ/dòng, '\\n' tách 2 dòng, trích lời}]",
+   "items": {
+    "type": "object",
+    "properties": {
+     "trich": {
+      "type": "string"
+     },
+     "text": {
+      "type": "string"
+     }
+    }
+   }
   }
  }
 }

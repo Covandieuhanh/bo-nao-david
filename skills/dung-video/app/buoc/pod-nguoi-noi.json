@@ -1,0 +1,1 @@
+{"id": "pod-nguoi-noi", "ten": "Ai đang nói + sóng âm", "loai": "co-dinh", "nang": true, "lenh": "python3 -I {APP}/ap/pod_nguoi_noi.py {P} {W}"}

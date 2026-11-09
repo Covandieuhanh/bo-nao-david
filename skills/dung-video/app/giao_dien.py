@@ -117,7 +117,7 @@ def chi_tiet(ten):
                          "gon": isinstance(h, dict) and h.get("gon", False),
                          "noi_dung": doc_tep(chay.thay(h if isinstance(h, str) else h["file"], b), 200000) or "(chưa có)"}
                         for h in ph.get("hien", [])],
-                "video": chay.thay(ph["video"], b) if ph.get("video") and Path(chay.thay(ph["video"], b)).exists() else None,
+                "video": [str(x) for x in sorted(Path("/").glob(chay.thay(ph["video"], b).lstrip("/")))] if ph.get("video") else [],
                 "anh": [str(x) for a in ph.get("anh", []) for x in sorted(Path("/").glob(chay.thay(a, b).lstrip("/")))],
                 "chon_anh": None}
         if ph.get("chon_anh"):
@@ -281,6 +281,12 @@ class H(BaseHTTPRequestHandler):
                 return self.gui([{"id": f.stem, "ten": chay.doc(f)["ten"]} for f in sorted((APP / "cong-thuc").glob("*.json"))])
             if u.path == "/api/thu-xoa":
                 return self.gui(thu_xoa(q["ten"][0]))
+            if u.path == "/api/tap-ban-dai":   # nguồn cho highlight: tập đã dựng bản dài, còn bản sạch
+                ds = []
+                for v in sorted(MOVIES.glob("tap-*/2-ban-dai/davinci/media/video_goc.mp4"), key=os.path.getmtime, reverse=True):
+                    P = v.parents[2]
+                    ds.append({"tap": P.parent.name[4:], "p": str(P), "co_hl": (P.parent / "3-highlight").exists()})
+                return self.gui(ds)
             if u.path == "/api/drive-moi":
                 import drive; return self.gui(drive.moi())
             if u.path == "/api/tu-link":
@@ -342,6 +348,14 @@ class H(BaseHTTPRequestHandler):
                 return self.gui({"loi": "thiếu góp ý"}, 400)
             chay_nen(ten, "gop", ten, d["loai"], d["gop_y"].strip(), ai=tu_may(self.client_address[0]))
             return self.gui({"ok": True})
+        if u == "/api/don-tap":   # dọn file tạm cả tập (bản dài + highlight) hoặc vlog — vào Thùng rác; việc đang dở tự bỏ qua (don_tap.py)
+            tt = chay.doc(KHO / ten / "trang-thai.json"); P = Path(tt["P"])
+            dich = P if P.parent.name == "vlog" else P.parent
+            r = subprocess.run([sys.executable, "-I", str(APP.parent / "video-style-edit/scripts/don_tap.py"), "--xoa", str(dich)],
+                               capture_output=True, text=True, timeout=600)
+            with open(KHO / ten / "chay.log", "a", encoding="utf-8") as lg:
+                lg.write(f"\n=== {time.strftime('%H:%M:%S')} Dọn tập ← bấm từ: {tu_may(self.client_address[0])}\n{r.stdout[-2000:]}")
+            return self.gui({"ok": True, "ket_qua": r.stdout.strip().split("\n")[-3:]})
         if u == "/api/cap-nhat-khung":
             tt = chay.doc(KHO / ten / "trang-thai.json")
             if not (Path(tt["P"]) / "motion/src").is_dir():
@@ -358,7 +372,8 @@ class H(BaseHTTPRequestHandler):
         if u == "/api/xoa":
             xoa(ten); CHAY.pop(ten, None); return self.gui({"ok": True})
         if u == "/api/moi":
-            if not Path(os.path.expanduser(d.get("video", ""))).is_file():
+            vv = Path(os.path.expanduser(d.get("video", "")))
+            if not (vv.is_file() or (vv.is_dir() and (vv / "davinci/media/video_goc.mp4").exists())):
                 return self.gui({"loi": "không thấy file video"}, 400)
             if chay.la_ban_da_dung(d["video"]):
                 return self.gui({"loi": "Video này là bản đã dựng (có sẵn chữ, dấu góc) — chọn video gốc quay từ máy"}, 400)

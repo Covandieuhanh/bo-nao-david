@@ -1,0 +1,33 @@
+{
+ "type": "object",
+ "required": [
+  "bo"
+ ],
+ "properties": {
+  "bo": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "c",
+     "from",
+     "to"
+    ],
+    "properties": {
+     "c": {
+      "type": "string"
+     },
+     "from": {
+      "type": "number"
+     },
+     "to": {
+      "type": "number"
+     },
+     "ly_do": {
+      "type": "string"
+     }
+    }
+   }
+  }
+ }
+}
