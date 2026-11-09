@@ -14,8 +14,10 @@ with tempfile.TemporaryDirectory(prefix="to-hinh-",dir=ra.parent) as tmp:
         f=tmp/f"{i:03d}.jpg"
         cmd=["ffmpeg","-v","error","-y","-ss",f"{t:.2f}","-i",v,"-frames:v","1","-vf"]
         r=subprocess.run(cmd+[f"scale=360:-2,drawtext=text='{t:.1f}s':x=8:y=8:fontsize=22:fontcolor=white:box=1:boxcolor=black@0.6",str(f)],capture_output=True,env=env)
-        if r.returncode:
-            subprocess.run(cmd+["scale=360:-2",str(f)],env=env,check=True)
+        if r.returncode or not f.exists():
+            for lui in (0, 0.2, 0.5, 1.0):   # cuối video: tiếng có thể dài hơn hình vài khung → lùi lại tới khi lấy được hình (lỗi 10/11/2026)
+                c2=["ffmpeg","-v","error","-y","-ss",f"{max(0.0,t-lui):.2f}","-i",v,"-frames:v","1","-vf","scale=360:-2",str(f)]
+                if subprocess.run(c2,capture_output=True,env=env).returncode==0 and f.exists(): break
             print(f"Lưu ý: khung {t:.1f}s không ghi được chữ mốc")
         if not f.exists():raise SystemExit(f"Không lấy được khung {t:.2f}s; dừng thay vì dùng ảnh cũ")
     output=tmp/"sheet.jpg"
