@@ -5,3 +5,4 @@ Kênh/video David gửi để học phong cách sau. Khi David nói "học", ch�
 | Ngày lưu | Mẫu | Ghi chú | Trạng thái |
 |---|---|---|---|
 | 09/11/2026 | Kênh Ali Abdaal — https://www.youtube.com/@aliabdaal/videos | David lưu tạm, sẽ cho học phong cách sau | Chờ David chọn video và nói "học" |
+| 09/11/2026 | Kênh Joseph Video Editing — https://www.youtube.com/@josephvideoediting/videos | David lưu tạm, sẽ cho học phong cách sau | Chờ David chọn video và nói "học" |
