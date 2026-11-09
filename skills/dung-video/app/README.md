@@ -32,6 +32,10 @@ quyền kéo tệp về (`setiopolicy_np`), không thì macOS báo `Resource dea
 **làm lại từ đây** — chạy lại bước đó và các bước sau; bước Claude nào đầu vào không đổi thì **dùng lại kết quả cũ, 0 token**
 (`~/Movies/_app/<tên>/nho-claude/`; `APP_KHONG_NHO=1` để tắt). Phần hình (khung dựng, thư viện hình) được CHÉP vào dự án lúc tạo →
 bấm **🔄 Cập nhật khung dựng** để lấy bản mới (giữ kịch bản, phụ đề, thông số; bản cũ cất ở `check/khung-truoc-<giờ>/`; đã render thì tự render lại).
+**💬 Trao đổi (sổ góp ý `~/Movies/_app/<tên>/gop-y.json`):** mọi góp ý của David (ở cổng 1, cổng 2, hay sau khi video đã xong) được lưu
+lại kèm câu trả lời của Claude ("đã sửa gì"). MỌI bước Claude từ bước được góp ý trở đi đều đọc sổ này → sửa tên/chính tả một lần là đúng
+ở chữ trên màn hình, phụ đề (`sua_chu`) lẫn bài đăng; chữ đã sửa được coi là nguyên văn. Gõ góp ý mà bấm Duyệt → app hỏi lại, không để
+mất góp ý. Video đã xong: ô góp ý + "Sửa video" / "Chỉ sửa bài đăng"; tập đã dọn file tạm thì dựng lại từ video gốc (giữ phiếu lọc).
 **Nhiều việc cùng lúc:** tạo bao nhiêu việc cũng được. Bước nhẹ, bước Claude, cổng duyệt chạy song song; **bước nặng** (phiếu bước
 `"nang": true`: chép lời, làm sạch, dò mặt, render, kiểm…) xếp hàng — mỗi lúc một việc (Mac M1 8 GB), việc sau hiện ⏳ và tự chạy khi tới lượt.
 Bước ⏭/– "bỏ qua" = không cần cho video này (vd video ngang thì bỏ nâng khung), không phải đang chạy.

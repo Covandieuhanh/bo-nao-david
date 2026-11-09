@@ -167,6 +167,10 @@
      "description": "video ngang: 'DÒNG 1 / DÒNG 2' trích lời, ≤ 8 chữ"
     }
    }
+  },
+  "phan_hoi": {
+   "type": "string",
+   "description": "chỉ khi có GÓP Ý CỦA DAVID: 1–2 câu cho David biết đã sửa gì"
   }
  }
 }

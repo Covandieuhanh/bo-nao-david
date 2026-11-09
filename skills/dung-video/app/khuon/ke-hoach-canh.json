@@ -108,6 +108,10 @@
   "sides": {
    "type": "object",
    "description": "CHỈ khi khung xuất ngang từ gốc dọc: {eyebrow, title, speaker, keywords:[{trich,text}], points:[{trich,label}]}"
+  },
+  "phan_hoi": {
+   "type": "string",
+   "description": "chỉ khi có GÓP Ý CỦA DAVID: 1–2 câu cho David biết đã sửa gì"
   }
  }
 }

@@ -77,6 +77,31 @@ def goi(bin_, he_thong, noi_dung, khuon, mo_hinh, anh=()):
     return kq, {"giay": round(time.time() - t), "usage": d.get("usage"), "cost": d.get("total_cost_usd")}
 
 
+def so_gop_y(W, buoc):
+    """Góp ý của David áp dụng cho bước này: các góp ý có `tu` là bước này hoặc một bước trước nó trong công thức."""
+    f = W / "gop-y.json"
+    if not f.exists():
+        return ""
+    sys.path.insert(0, str(APP)); import chay
+    ds_buoc = chay.cong_thuc(json.loads((W / "trang-thai.json").read_text(encoding="utf-8"))["cong_thuc"])["buoc"]
+    vt = ds_buoc.index(buoc) if buoc in ds_buoc else 10 ** 6
+    dong = []
+    for g in json.loads(f.read_text(encoding="utf-8")):
+        tu = g.get("tu") if g.get("tu") in ds_buoc else ds_buoc[0]
+        if ds_buoc.index(tu) <= vt:
+            dong.append(f"- [{g['luc']}] {g['david']}")
+    return "\n".join(dong)
+
+
+def ghi_phan_hoi(W, buoc, phan_hoi):
+    f = W / "gop-y.json"
+    if not f.exists() or not phan_hoi:
+        return
+    ds = json.loads(f.read_text(encoding="utf-8"))
+    ds[-1].setdefault("claude", []).append({"buoc": buoc, "luc": time.strftime("%H:%M"), "noi_dung": phan_hoi})
+    f.write_text(json.dumps(ds, ensure_ascii=False, indent=1), encoding="utf-8")
+
+
 def dau_luat(he_thong, khuon, mo_hinh):
     """Dấu của LUẬT một bước Claude (lời nhắc đã ghép skill + khuôn + mô hình) — ra_soat.py so lại để biết skill đổi sau khi bước chạy."""
     return hashlib.sha256("\x00".join([he_thong, json.dumps(khuon, sort_keys=True), mo_hinh]).encode()).hexdigest()
@@ -95,6 +120,12 @@ def main():
             raise SystemExit(f"Thiếu file đầu vào: {p}")
         phan.append(f"=== {d['nhan']} ===\n{p.read_text(encoding='utf-8')}")
     ra = Path(thay(ph["ra"], b)); W = Path(b["W"])
+    luat_goc = he_thong                       # dấu luật (ra_soat) tính trên luật skill, không tính phần góp ý
+    so = so_gop_y(W, ph["id"])
+    if so:
+        phan.append("=== GÓP Ý CỦA DAVID CHO VIDEO NÀY (luôn áp dụng: tên riêng, chính tả, nội dung… — thắng mọi suy luận) ===\n" + so)
+        he_thong += ("\n\n# Góp ý của David\nPhần GÓP Ý CỦA DAVID luôn được áp dụng. Tên riêng/chính tả David sửa → dùng đúng chữ David ghi ở MỌI chỗ "
+                     "(chữ trên màn hình, `sua_chu` cho phụ đề, bài đăng). Ghi `phan_hoi`: 1–2 câu tiếng Việt cho David biết đã sửa gì.")
     if gop_y:
         if ra.exists():
             phan.append(f"=== KẾ HOẠCH LẦN TRƯỚC ===\n{ra.read_text(encoding='utf-8')}")
@@ -108,10 +139,10 @@ def main():
     # NHỚ KẾT QUẢ: cùng lời nhắc (luật đã ghép) + cùng đầu vào + cùng ảnh + cùng khuôn + cùng mô hình → dùng lại, không gọi Claude.
     # Sửa skill chỗ không liên quan bước này, hoặc làm lại từ một bước phía trước mà đầu vào bước này không đổi → 0 token.
     the = hashlib.sha256("\x00".join([he_thong, noi_dung, json.dumps(khuon, sort_keys=True), mo_hinh,
-                                       *[f"{a}:{os.path.getsize(a)}:{os.path.getmtime(a)}" for a in anh]]).encode()).hexdigest()
+                                       *[hashlib.sha256(Path(a).read_bytes()).hexdigest() for a in anh]]).encode()).hexdigest()
     nho = W / "nho-claude" / f"{ph['id']}.txt"
     (W / "nho-claude").mkdir(parents=True, exist_ok=True)
-    (W / "nho-claude" / f"{ph['id']}.luat").write_text(dau_luat(he_thong, khuon, mo_hinh))
+    (W / "nho-claude" / f"{ph['id']}.luat").write_text(dau_luat(luat_goc, khuon, mo_hinh))
     if not os.environ.get("APP_KHONG_NHO") and ra.exists() and nho.exists() and nho.read_text().strip() == the:
         print("Đầu vào không đổi so với lần trước — dùng lại kết quả cũ, không gọi Claude (0 token).")
         return
@@ -129,6 +160,7 @@ def main():
             print(r.stdout[-3000:], r.stderr[-1500:])
         if r is None or r.returncode == 0:
             nho.parent.mkdir(exist_ok=True); nho.write_text(the)
+            if gop_y: ghi_phan_hoi(W, ph["id"], kq.get("phan_hoi"))
             return
         noi_dung += (f"\n\n=== KẾ HOẠCH VỪA TRẢ ===\n{json.dumps(kq, ensure_ascii=False)}\n\n=== LỖI KHI KIỂM (sửa đúng các lỗi này, "
                      f"giữ nguyên phần còn lại) ===\n{r.stdout[-3000:]}")

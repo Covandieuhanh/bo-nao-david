@@ -118,7 +118,9 @@ def chi_tiet(ten):
         except Exception as e:
             rs["loi"] = str(e)
     giu = KHO / "_dang-giu.txt"
-    return {"hang_doi": giu.read_text().strip() if giu.exists() else None, "ra_soat": rs, "ten": ten, "cong_thuc": ct["ten"], "video": tt["video"], "P": tt["P"], "dang": dang, "dang_chay": dang_chay(ten),
+    gy = KHO / ten / "gop-y.json"
+    trao_doi = json.loads(gy.read_text(encoding="utf-8")) if gy.exists() else []
+    return {"trao_doi": trao_doi, "hang_doi": giu.read_text().strip() if giu.exists() else None, "ra_soat": rs, "ten": ten, "cong_thuc": ct["ten"], "video": tt["video"], "P": tt["P"], "dang": dang, "dang_chay": dang_chay(ten),
             "buoc": buoc, "cong": cong, "log": log_buoc, "log_chung": doc_tep(KHO / ten / "chay.log", 3000), "token": token(ten),
             "xong_luc": tt.get("xong_luc")}
 
@@ -317,6 +319,11 @@ class H(BaseHTTPRequestHandler):
             dung(ten); return self.gui({"ok": True})
         if dang_chay(ten):
             return self.gui({"loi": "việc này đang chạy"}, 409)
+        if u == "/api/gop-y":
+            if d.get("loai") not in ("video", "bai-dang", "loc") or not d.get("gop_y", "").strip():
+                return self.gui({"loi": "thiếu góp ý"}, 400)
+            chay_nen(ten, "gop", ten, d["loai"], d["gop_y"].strip())
+            return self.gui({"ok": True})
         if u == "/api/cap-nhat-khung":
             tt = chay.doc(KHO / ten / "trang-thai.json")
             if not (Path(tt["P"]) / "motion/src").is_dir():

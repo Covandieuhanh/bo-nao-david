@@ -112,6 +112,11 @@ const loi=d.buoc.find(b=>b.trang_thai=='loi');
 if(loi&&!d.dang_chay)h+=`<div class="the"><b>❌ Lỗi ở bước "${esc(loi.ten)}"</b><pre>${esc(d.log)}</pre><div class="hang"><button class="chinh" onclick="tiep()">Chạy lại bước này</button></div></div>`;
 if(d.xong_luc)h+=`<div class="the">✅ Xong lúc ${esc(d.xong_luc)} · <span class="mo">${esc(d.P)}/video-final.mp4</span></div>`;
 const xh=d.buoc.find(b=>b.trang_thai=='xep-hang');if(xh&&d.dang_chay)h+=`<div class="the">⏳ <b>Đang xếp hàng</b> ở bước "${esc(xh.ten)}" — máy đang làm bước nặng của: <b>${esc(d.hang_doi||'việc khác')}</b>. Mỗi lúc chỉ một việc chạy bước nặng (render, chép lời, dò mặt) để Mac không quá tải; tới lượt sẽ tự chạy.</div>`;
+const td=d.trao_doi||[];const xongHet=!d.dang_chay&&!d.cong;
+if(td.length||xongHet)h+=`<div class="the"><h2 style="margin-top:0">💬 Trao đổi</h2>${td.map(g=>`<div style="border-left:3px solid var(--nhan);padding:4px 10px;margin:8px 0"><small class="mo">${esc(g.luc)} · ${esc(g.noi)}</small><div><b>David:</b> ${esc(g.david)}</div>${(g.claude||[]).map(c=>`<div style="margin-top:4px"><b>Claude</b> <small class="mo">(${esc(c.buoc)})</small>: ${esc(c.noi_dung)}</div>`).join('')}</div>`).join('')||'<p class="mo">Chưa có trao đổi nào.</p>'}
+${xongHet?`<label>Góp ý cho video này (sai tên, sai chữ, muốn đổi cảnh, đổi tiêu đề…) — Claude sửa đúng chỗ được nhắc, áp dụng cho mọi bước liên quan</label><textarea id="gySau" rows="3"></textarea>
+<div class="hang"><button class="chinh" onclick="gopSau('video')">Sửa video (kịch bản → dựng lại)</button><button onclick="gopSau('bai-dang')">Chỉ sửa bài đăng</button></div>
+<small class="mo">Video đã duyệt và dọn file tạm: app dựng lại từ video gốc; bước Claude không bị ảnh hưởng dùng lại kết quả cũ (0 token).</small>`:''}</div>`;
 h+=`<h2>Các bước</h2>`+d.buoc.map(b=>`<div class="buoc" ${b.trang_thai=='bo-qua'?'style="opacity:.45"':''}><span>${BIEU[b.trang_thai]||'·'}</span><span>${esc(b.ten)}${cuIds.has(b.id)?' <span title="skill đã đổi sau khi bước này chạy" style="color:var(--vang)">⚠</span>':''}</span><span class="loai">${b.trang_thai=='bo-qua'?'bỏ qua — không cần cho video này':b.trang_thai=='xep-hang'?'đang xếp hàng':LOAI[b.loai]+' '+(b.luc?'· '+b.luc:'')}</span>${b.loai!='duyet'&&!d.dang_chay&&b.trang_thai!='chua'?`<button class="lai" onclick="lai('${b.id}')">làm lại từ đây</button>`:''}</div>`).join('');
 if(d.dang_chay&&d.log)h+=`<h2>Đang chạy: ${esc(d.dang)}</h2><pre>${esc(d.log)}</pre>`;
 $('#chinh').innerHTML=h;if(moi&&innerWidth<760)$('#chinh').scrollIntoView({behavior:'smooth'});if(d.dang_chay)hen=setTimeout(()=>xem(ten),3000)}
@@ -126,7 +131,11 @@ if((await api('/api/xoa',{ten:chon})).ok){chon=null;$('#chinh').innerHTML='<p cl
 async function chonAnh(a){if((await api('/api/chon-anh',{ten:chon,tep:decodeURIComponent(a)})).ok)xem(chon)}
 async function capNhatKhung(){if(!await hoi(`Cập nhật khung dựng cho "${chon}"?\n\nChép phần hình mới nhất của skill (thư viện hình, khung dựng) vào dự án này; GIỮ NGUYÊN kịch bản, phụ đề, thông số của video. Bản cũ được cất lại.\n\nNếu dự án đã render: app render lại cả video với khung mới (các bước Claude phía sau dùng lại kết quả cũ, không tốn token).`,'🔄 Cập nhật'))return;
 const r=await api('/api/cap-nhat-khung',{ten:chon});if(r.ok){await hoi(r.ket_qua+(r.render_lai?'\n\nĐang render lại với khung mới.':''),'Đóng');xem(chon)}}
-async function duyet(){if((await api('/api/duyet',{ten:chon})).ok)setTimeout(()=>xem(chon),800)}
+async function gopSau(loai){const g=$('#gySau').value.trim();if(!g)return alert('Viết góp ý trước');
+if(!await hoi(`Gửi góp ý và làm lại ${loai=='video'?'video (kịch bản → dựng lại → cổng 2)':'bài đăng'}?\n\n«${g}»`,'Gửi góp ý'))return;
+if((await api('/api/gop-y',{ten:chon,loai,gop_y:g})).ok)setTimeout(()=>xem(chon),800)}
+async function duyet(){const g=$('#gy')&&$('#gy').value.trim();
+if(g){if(await hoi('Ô góp ý đang có chữ. Bấm "Duyệt" sẽ BỎ QUA góp ý này.\n\nGửi góp ý và làm lại thay vì duyệt?','Gửi góp ý, làm lại'))return gopY();return}if((await api('/api/duyet',{ten:chon})).ok)setTimeout(()=>xem(chon),800)}
 async function gopY(){const g=$('#gy').value.trim();if(!g)return alert('Viết góp ý trước');if((await api('/api/duyet',{ten:chon,gop_y:g})).ok)setTimeout(()=>xem(chon),800)}
 async function tiep(){if((await api('/api/tiep',{ten:chon})).ok)setTimeout(()=>xem(chon),800)}
 async function lai(b){if(!await hoi('Làm lại từ bước này trở đi? Các bước sau đó cũng chạy lại.','Làm lại'))return;if((await api('/api/lai',{ten:chon,buoc:b})).ok)setTimeout(()=>xem(chon),800)}

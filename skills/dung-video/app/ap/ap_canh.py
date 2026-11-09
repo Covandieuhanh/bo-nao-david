@@ -20,6 +20,7 @@ import loi, hoso  # noqa: E402
 CON = {"bocuc": ("kieu", {"the-canh", "o-nguoi", "chuong"}), "illus": ("mode", {"single", "flow", "vs", "count", "list"})}
 CHU = {"text", "tieu_de", "label", "quote", "ten", "title", "eyebrow", "name", "subtitle", "lines"}   # chữ trên màn hình
 TRUOC = 0.4
+SUA = frozenset()
 SAU = {"nhan": 3.0, "bocuc": 2.5, "illus": 2.0, "diagram": 2.5, "action": 2.5, "cta": 1.0, "hook": 0.5, "listItem": 2.5,
        "kinetic": 2.0, "lower": 3.0}
 TOI_THIEU = {"nhan": 3.0, "bocuc": 3.5, "illus": 3.0, "diagram": 4.0, "action": 5.0, "cta": 4.0, "hook": 2.5, "listItem": 2.5,
@@ -81,6 +82,8 @@ def lap(P, kh, tc):
     if kh.get("tuyen") not in tuyen:
         loi_ds.append(f"tuyen '{kh.get('tuyen')}' không có trong hồ sơ: {list(tuyen)}")
     anh_keys = {a["key"] for a in kh.get("anh", [])}
+    global SUA   # chữ đúng sau khi sửa lỗi Whisper nghe nhầm (vd "White Spa" thay "Wild Spa") — hợp lệ trên màn hình
+    SUA = frozenset(t for x in kh.get("sua_chu", []) for t in loi.chuan(x.get("dung", "")))
     sau = 0.0
     for c in kh.get("canh", []):
         cid, typ = c.get("id", "?"), c.get("type")
@@ -110,7 +113,7 @@ def lap(P, kh, tc):
             b = max(moc) + SAU.get(typ, 2.5)
         b = max(b, a + TOI_THIEU.get(typ, 3.0))
         for t in chu_tren_man(props, []):
-            if loi.co_trong_loi(t, T, a, b) < 0.6 and loi.co_trong_loi(t, T, 0, 1e9, 0) < 0.85:   # quanh cảnh, hoặc thẻ tóm tắt cả video
+            if loi.co_trong_loi(t, T, a, b, them=SUA) < 0.6 and loi.co_trong_loi(t, T, 0, 1e9, 0, them=SUA) < 0.85:   # quanh cảnh, hoặc thẻ tóm tắt cả video
                 loi_ds.append(f"cảnh {cid}: chữ «{t}» không phải nguyên văn lời — chỉ được chọn câu, bỏ bớt chữ đầu/cuối, viết hoa")
         canh.append({"id": cid, "type": typ, "start": round(a, 2), "end": round(b, 2), "props": props, "_trich": c.get("trich")})
         sau = r[0]
@@ -206,6 +209,8 @@ def main():
     elif q.exists():
         q.unlink()
     ghi_ke_hoach(P, kh, canh, chuong, ytend)
+    (Path(P) / "check").mkdir(exist_ok=True)
+    (Path(P) / "check/app-sua-chu.json").write_text(json.dumps(kh.get("sua_chu", []), ensure_ascii=False), encoding="utf-8")
     print(f"sửa chính tả phụ đề: {sua_phu_de(P, kh.get('sua_chu', []))} chỗ · màn kết YouTube: {ytend or 'không'}")
 
 

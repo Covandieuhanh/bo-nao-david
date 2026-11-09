@@ -6,7 +6,10 @@ import loi, ap_canh
 P = sys.argv[1]; s = open(P + "/motion/src/scenes.js", encoding="utf-8").read()
 i = s.index("export const SCENES = ") + len("export const SCENES = "); j = s.index("\n];", i) + 2
 S = json.loads(s[i:j]); T = loi.tu(P + "/check/goc/words.srt"); sai = []
+import os
+SUA = frozenset(t for x in (json.load(open(P + "/check/app-sua-chu.json")) if os.path.exists(P + "/check/app-sua-chu.json") else [])
+                for t in loi.chuan(x.get("dung", "")))
 for c in S:
     for t in ap_canh.chu_tren_man(c["props"], []):
-        if loi.co_trong_loi(t, T, c["start"], c["end"]) < 0.6 and loi.co_trong_loi(t, T, 0, 1e9, 0) < 0.85: sai.append(f"{c['id']}: «{t}»")
+        if loi.co_trong_loi(t, T, c["start"], c["end"], them=SUA) < 0.6 and loi.co_trong_loi(t, T, 0, 1e9, 0, them=SUA) < 0.85: sai.append(f"{c['id']}: «{t}»")
 print(f"{len(S)} cảnh · " + ("mọi chữ nguyên văn" if not sai else "không nguyên văn: " + "; ".join(sai))); sys.exit(1 if sai else 0)

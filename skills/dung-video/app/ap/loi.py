@@ -93,12 +93,12 @@ def kieu_canh(root_jsx=None):
     return set(re.findall(r"(?:^|[{,])\s*(\w+)\s*:", m.group(1), re.M)) - {"sides", "captions", "stage", "cover", "endcard"}
 
 
-def co_trong_loi(text, T, a, b, phu=20.0):
+def co_trong_loi(text, T, a, b, phu=20.0, them=frozenset()):
     """Tỉ lệ token của `text` có mặt trong lời quanh [a-phu, b+phu] — soát chữ trên màn hình là nguyên văn."""
     q = [t for t in chuan(text) if not t.isdigit()]
     if not q:
         return 1.0
-    vung = {t for s, e, t in T if a - phu <= s <= b + phu}
+    vung = {t for s, e, t in T if a - phu <= s <= b + phu} | set(them)   # them: chữ đã sửa chính tả (sua_chu), coi như lời thật
     return sum(t in vung for t in q) / len(q)
 
 

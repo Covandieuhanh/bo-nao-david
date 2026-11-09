@@ -139,14 +139,30 @@ def mot_buoc(tt, bid, gop_y=None):
     raise SystemExit(f"loại bước lạ: {ph['loai']}")
 
 
-def chay(tt_path, tu=None, gop_y=None):
-    tt = doc(tt_path)
+def ghi_gop_y(W, noi, chu, tu):
+    """Sổ trao đổi của dự án (W/gop-y.json): mọi góp ý của David + câu trả lời của Claude. Mọi bước Claude đều đọc sổ này
+    (goi_claude.py), nên góp ý ở bất kỳ cổng nào — vd sửa tên "White Spa" — áp dụng cho cả kịch bản, phụ đề lẫn bài đăng."""
+    f = Path(W) / "gop-y.json"; ds = json.loads(f.read_text(encoding="utf-8")) if f.exists() else []
+    ds.append({"luc": time.strftime("%Y-%m-%d %H:%M"), "noi": noi, "tu": tu, "david": chu})   # tu: áp dụng từ bước này trở đi
+    ghi(f, ds)
+
+
+# Góp ý sau khi video đã xong: sửa gì → làm lại từ bước Claude nào
+GOP_TU = {"video": "ke-hoach-canh", "bai-dang": "phat-hanh", "loc": "loc-va-cat"}
+
+
+def chay(tt_path, tu=None, gop_y=None, gop_cho=None, giu=()):
+    """tu: làm lại từ bước này · gop_y + gop_cho: bước Claude nhận góp ý kèm KẾ HOẠCH LẦN TRƯỚC (sửa đúng chỗ) ·
+    giu: cổng đã duyệt giữ nguyên khi làm lại (vd CONG-1 khi chỉ sửa video)."""
+    tt = doc(tt_path); gop_cho = gop_cho or tu
     if not (Path(tt_path).parent / "tuy-chon.txt").exists():      # việc tạo từ bản app cũ: tuỳ chọn mặc định
         ghi_tuy_chon(Path(tt_path).parent, tt.get("tuy_chon", {}))
     ds = cong_thuc(tt["cong_thuc"])["buoc"]
     if tu:
         for x in ds[ds.index(tu):]:
-            tt["buoc"].pop(x, None)
+            if x not in giu:
+                tt["buoc"].pop(x, None)
+        tt.pop("xong_luc", None)
     for bid in ds:
         cu = tt["buoc"].get(bid, {}).get("trang_thai")
         if cu in ("xong", "bo-qua", "da-duyet"):
@@ -158,7 +174,7 @@ def chay(tt_path, tu=None, gop_y=None):
             tt = doc(tt_path)
         tt["dang"] = bid; tt["buoc"][bid] = {"trang_thai": "dang-chay", "luc": time.strftime("%H:%M:%S")}; ghi(tt_path, tt)
         try:
-            kq = mot_buoc(tt, bid, gop_y if bid == tu else None)
+            kq = mot_buoc(tt, bid, gop_y if bid == gop_cho else None)
         finally:
             if khoa: nha_luot(khoa)
         tt = doc(tt_path)
@@ -199,10 +215,22 @@ def main():
             ph = phieu(cong); lai = ph.get("gop_y_cho")
             if not lai:
                 raise SystemExit("Cổng này không nhận góp ý.")
+            ghi_gop_y(p.parent, cong, gop, lai)
             print(chay(p, tu=lai, gop_y=gop))
         else:
             tt["buoc"][cong] = {"trang_thai": "da-duyet", "luc": time.strftime("%H:%M:%S")}; ghi(p, tt)
             print(chay(p))
+    elif lenh == "gop":   # chay.py gop <tên> video|bai-dang|loc <góp ý> — góp ý bất kỳ lúc nào, kể cả khi video đã xong
+        p = KHO / a[1] / "trang-thai.json"; tt = doc(p); loai, gop = a[2], " ".join(a[3:]).strip()
+        dich = GOP_TU[loai]; ghi_gop_y(p.parent, f"sau khi xong · {loai}", gop, dich)
+        P = Path(tt["P"]); giu = ()
+        if loai != "loc" and not glob.glob(str(P / "davinci/media/video_goc.*")):
+            # Tập đã dọn (don_tap) → không còn bản sạch/cảnh đã render: dựng lại từ video gốc ở 1-goc. Giữ cổng 1 đã duyệt;
+            # bước Claude nào đầu vào không đổi dùng lại kết quả cũ (0 token).
+            print("Tập đã dọn file làm việc → dựng lại từ video gốc (giữ phiếu lọc đã duyệt)")
+            print(chay(p, tu="tao-du-an", gop_y=gop, gop_cho=dich, giu=("CONG-1",)))
+        else:
+            print(chay(p, tu=dich, gop_y=gop, giu=("CONG-1",) if loai != "loc" else ()))
     elif lenh == "lai":
         print(chay(KHO / a[1] / "trang-thai.json", tu=a[2]))
     elif lenh == "xem":
