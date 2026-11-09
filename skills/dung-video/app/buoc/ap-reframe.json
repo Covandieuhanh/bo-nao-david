@@ -1,0 +1,1 @@
+{"id": "ap-reframe", "ten": "Áp kế hoạch, cắt khung dọc 1080×1920", "loai": "co-dinh", "nang": true, "khi": "test {KHUNG} = doc", "lenh": "python3 -I {APP}/ap/ap_reframe.py {P} {W}/reframe.json"}

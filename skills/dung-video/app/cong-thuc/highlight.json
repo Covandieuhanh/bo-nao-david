@@ -1,5 +1,5 @@
 {
- "ten": "Highlight — cắt clip dọc từ video dài (người nói)",
+ "ten": "Highlight — cắt clip dọc từ video dài (người nói hoặc podcast đồ hoạ)",
  "ho_so": "highlight",
  "thu_muc": "3-highlight",
  "buoc": [
@@ -10,6 +10,8 @@
   "chon-y",
   "ap-chon-y",
   "hl-moc",
+  "chon-moc",
+  "ap-chon-moc",
   "hl-cat",
   "hl-dung",
   "lop-phu",
@@ -19,6 +21,12 @@
   "to-hinh-hl",
   "duyet-hinh-hl",
   "sua-sau-duyet-hl",
+  "hl-pod-dung",
+  "hl-pod-canh",
+  "ap-hl-pod",
+  "hl-pod-render",
+  "duyet-hinh-hl-pod",
+  "sua-sau-duyet-hl-pod",
   "hl-kiem",
   "dang-bai",
   "ap-dang-bai",

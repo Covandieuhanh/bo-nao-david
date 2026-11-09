@@ -6,7 +6,7 @@ import json, re, subprocess, sys
 from pathlib import Path
 import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))   # python -I không tự thấy file cùng thư mục
 from hl_chung import HL, ENV
-H = Path(sys.argv[1]); f = H / "phuong-an.json"; pa = json.loads(f.read_text(encoding="utf-8"))
+H = Path(sys.argv[1]); W = Path(sys.argv[2]) if len(sys.argv) > 2 else None; f = H / "phuong-an.json"; pa = json.loads(f.read_text(encoding="utf-8"))
 out = subprocess.run(["python3", "-I", str(HL / "loud_check.py"), str(H)], capture_output=True, text=True, env=ENV).stdout
 print(out[-4000:])
 de = {}; cur = None; k = 0
@@ -26,3 +26,15 @@ for o in pa["options"]:
                 p[kk] = v; n += 1
 f.write_text(json.dumps(pa, ensure_ascii=False, indent=1), encoding="utf-8")
 print(f"Đã áp {n} mốc theo độ lớn tiếng")
+# Câu máy KHÔNG chắc (lệch > 1 s, nói liền) → để Claude đọc dải độ lớn + lời và chọn mốc (như khi làm bằng Claude Code)
+khoi, cur, k, blk = [], None, 0, []
+for l in out.splitlines():
+    m = re.match(r"=== Phương án (\S+)", l)
+    if m: cur = m.group(1); k = 0; continue
+    if re.match(r"\d+\. ", l): k += 1; blk = [f"[{cur} · câu {k}] {l.strip()}"]; continue
+    if re.match(r"\s+(start|end)", l):
+        blk.append(l.rstrip())
+        if "⚠" in l and blk not in khoi: khoi.append(blk)
+if W:
+    (W / "moc-can-xem.txt").write_text("\n\n".join("\n".join(b) for b in khoi) + ("\n" if khoi else ""), encoding="utf-8")
+    print(f"{len(khoi)} câu cần Claude xem mốc")

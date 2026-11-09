@@ -1,0 +1,42 @@
+{
+ "type": "object",
+ "required": [
+  "shots"
+ ],
+ "properties": {
+  "shots": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "start",
+     "end",
+     "target"
+    ],
+    "properties": {
+     "start": {
+      "type": "number"
+     },
+     "end": {
+      "type": "number"
+     },
+     "target": {
+      "type": "string"
+     },
+     "cx": {
+      "type": "number"
+     },
+     "follow": {
+      "type": "boolean"
+     },
+     "text": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "phan_hoi": {
+   "type": "string"
+  }
+ }
+}

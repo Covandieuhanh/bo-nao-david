@@ -1,0 +1,32 @@
+{
+ "type": "object",
+ "required": [
+  "sua"
+ ],
+ "properties": {
+  "sua": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "cau"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "cau": {
+      "type": "integer"
+     },
+     "start": {
+      "type": "number"
+     },
+     "end": {
+      "type": "number"
+     }
+    }
+   }
+  }
+ }
+}

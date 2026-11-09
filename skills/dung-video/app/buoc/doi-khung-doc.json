@@ -1,1 +1,1 @@
-{"id": "doi-khung-doc", "ten": "Đổi khung: ngang → dọc (bám người nói)", "loai": "co-dinh", "khi": "test {KHUNG} = doc", "lenh": ["zsh {S}/reframe_analyze.sh {P}", "python3 -I {S}/reframe_plan.py {P} apply"], "nang": true}
+{"id": "doi-khung-doc", "ten": "Đổi khung ngang → dọc: dò mặt, đoán người nói", "loai": "co-dinh", "nang": true, "khi": "test {KHUNG} = doc", "lenh": "zsh {S}/reframe_analyze.sh {P}"}

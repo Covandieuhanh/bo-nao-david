@@ -58,7 +58,9 @@ def _ghep(text, b):
 def muc(f, tieu_de):
     """Trích một mục (từ dòng tiêu đề chứa `tieu_de` tới tiêu đề cùng cấp kế tiếp) — luật vẫn ở một nhà, lời nhắc chỉ trỏ tới."""
     d = f.read_text(encoding="utf-8").split("\n")
-    i = next(k for k, x in enumerate(d) if x.startswith("#") and tieu_de in x)
+    i = next((k for k, x in enumerate(d) if x.startswith("#") and tieu_de in x), None)
+    if i is None:
+        raise SystemExit(f"Lời nhắc trỏ tới mục «{tieu_de}» trong {f.name} nhưng không thấy tiêu đề đó — skill đã đổi tên mục? Sửa lời nhắc.")
     cap = len(d[i]) - len(d[i].lstrip("#"))
     j = next((k for k in range(i + 1, len(d)) if d[k].startswith("#") and len(d[k]) - len(d[k].lstrip("#")) <= cap), len(d))
     return "\n".join(d[i:j])

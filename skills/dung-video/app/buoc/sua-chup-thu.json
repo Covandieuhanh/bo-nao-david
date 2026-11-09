@@ -1,0 +1,1 @@
+{"id": "sua-chup-thu", "ten": "Sửa theo duyệt ảnh + chụp lại", "loai": "co-dinh", "nang": true, "lenh": "python3 -I {APP}/ap/sua_sau_duyet.py canh-truoc {P} {W}"}

@@ -1,0 +1,1 @@
+{"id": "ap-hl-pod", "ten": "Ghi kịch bản từng clip podcast", "loai": "co-dinh", "khi": "grep -q podcast {P}/loai.txt", "lenh": "python3 -I {APP}/ap/hl_pod.py {P} {W} ap"}

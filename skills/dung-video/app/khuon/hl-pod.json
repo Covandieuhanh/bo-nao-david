@@ -1,0 +1,161 @@
+{
+ "type": "object",
+ "required": [
+  "clips"
+ ],
+ "properties": {
+  "clips": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "topic",
+     "tuyen",
+     "ly_do_tuyen",
+     "canh",
+     "sua_chu"
+    ],
+    "properties": {
+     "topic": {
+      "type": "string",
+      "description": "chủ đề ≤ 3 chữ, trích lời, VIẾT HOA"
+     },
+     "tuyen": {
+      "type": "string"
+     },
+     "ly_do_tuyen": {
+      "type": "string"
+     },
+     "canh": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "required": [
+        "id",
+        "type",
+        "trich",
+        "props"
+       ],
+       "properties": {
+        "id": {
+         "type": "string"
+        },
+        "type": {
+         "type": "string",
+         "description": "một kiểu trong danh sách KIỂU CẢNH của lời nhắc"
+        },
+        "trich": {
+         "type": "string",
+         "description": "4–10 chữ nguyên văn liền nhau trong BẢN LỜI, nơi cảnh bắt đầu"
+        },
+        "het": {
+         "type": "string",
+         "description": "(tuỳ chọn) 3–8 chữ nguyên văn nơi cảnh kết thúc"
+        },
+        "props": {
+         "type": "object"
+        }
+       }
+      }
+     },
+     "chuong": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "required": [
+        "trich",
+        "text"
+       ],
+       "properties": {
+        "trich": {
+         "type": "string"
+        },
+        "text": {
+         "type": "string"
+        }
+       }
+      }
+     },
+     "sua_chu": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "required": [
+        "sai",
+        "dung"
+       ],
+       "properties": {
+        "sai": {
+         "type": "string"
+        },
+        "dung": {
+         "type": "string"
+        }
+       }
+      }
+     },
+     "anh": {
+      "type": "array",
+      "description": "chỉ khi cần ảnh thật: key 2 chữ số + từ khoá tiếng Anh; cảnh dùng photo:'<key>.jpg' và luôn có icon dự phòng",
+      "items": {
+       "type": "object",
+       "required": [
+        "key",
+        "q"
+       ],
+       "properties": {
+        "key": {
+         "type": "string"
+        },
+        "q": {
+         "type": "string"
+        }
+       }
+      }
+     },
+     "sides": {
+      "type": "object",
+      "description": "CHỈ khi khung xuất ngang từ gốc dọc: {eyebrow, title, speaker, keywords:[{trich,text}], points:[{trich,label}]}"
+     },
+     "phan_hoi": {
+      "type": "string",
+      "description": "chỉ khi có GÓP Ý CỦA DAVID: 1–2 câu cho David biết đã sửa gì"
+     },
+     "stage": {
+      "type": "object",
+      "description": "CHỈ podcast: {show, title (tên tập), speakers: [{name, role}] theo thứ tự người 0, 1}"
+     },
+     "topics": {
+      "type": "array",
+      "description": "CHỈ podcast: ý đang bàn [{trich, text ≤ 5 từ/dòng, '\\n' tách 2 dòng, trích lời}]",
+      "items": {
+       "type": "object",
+       "properties": {
+        "trich": {
+         "type": "string"
+        },
+        "text": {
+         "type": "string"
+        }
+       }
+      }
+     },
+     "bo_phu_de": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      },
+      "description": "cụm nguyên văn của câu phụ đề Whisper bịa/ảo cần bỏ"
+     },
+     "id": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "phan_hoi": {
+   "type": "string"
+  }
+ }
+}
