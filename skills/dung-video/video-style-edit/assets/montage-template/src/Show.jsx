@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {createContext, useContext, useEffect, useState} from 'react';
 import {AbsoluteFill, Audio, Easing, Freeze, OffthreadVideo, Sequence, continueRender, delayRender,
   interpolate, random, spring, staticFile, useCurrentFrame} from 'remotion';
 import {FONT_CHECKS} from './fonts';
@@ -57,6 +57,12 @@ const SHORT = !!EDL.SHORT;
 // không cũng không chạm phụ đề; lớp đặt tay (pow y, pointer, chips top) phải có đáy ≤ LOW_Y.
 const CAP_H = 140;
 const CAP_TOP = SAFE.bottom - SUB.bottomGap - HL_LIFT - CAP_H;
+// CHẾ ĐỘ GIỮA (lỗi 09/11/2026, app dựng video): lớp phủ bị đổi sang TOÀN MÀN HÌNH (che người) trước đây chỉ bị đẩy lên + phóng 1,12 —
+// chữ neo mép trái vẫn dính mép trái, chữ dài tràn khung. Nay FullOv bật GIUA: nội dung căn giữa trong vùng an toàn, không phóng.
+const GiuaCtx = createContext(false);
+const useGiua = () => useContext(GiuaCtx);
+const KHOI_GIUA = {left: SAFE.left, width: SAFE_W, top: H * 0.46, transform: 'translateY(-50%)', display: 'flex', flexDirection: 'column',
+  alignItems: 'center', textAlign: 'center'};
 const LOW_Y = CAP_TOP - 20;
 const FULLSCREEN = new Set(['action', 'scene', 'outro']);   // lớp toàn màn hình (phụ đề ẩn hoặc không có) — không chặn
 const mmss = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
@@ -214,22 +220,24 @@ const Caption = ({text, hl, len, who, off = 0}) => {
 
 // ===== Chữ to nhấn mạnh (kinetic như mẫu) =====
 const Pow = ({text, y, len, start = 0}) => {
-  const f = useCurrentFrame();
+  const f = useCurrentFrame(); const giua = useGiua();
   const soft = toneAt(start) === 'lang';   // tông lắng: chữ hiện chậm, không nảy, không gạch
   const o = soft ? inOut(f, len, 12, 12) : inOut(f, len, 4, 6);
-  const words = text.split(' ');
-  const size = text.length > 12 ? 124 : 150;
+  // '\n' = chỗ xuống dòng theo cụm nghĩa (kịch bản đặt); cỡ chữ tự co theo DÒNG dài nhất để không tràn khung (lỗi 09/11/2026)
+  const dongs = text.split('\n').map((d) => d.trim()).filter(Boolean);
+  const words = dongs.flatMap((d, k) => d.split(' ').map((w, j) => ({w, br: k > 0 && j === 0})));
+  const dai = Math.max(...dongs.map((d) => d.length));
+  const size = Math.max(84, Math.min(150, Math.floor(SAFE_W / (0.5 * Math.max(dai, 6)))));
   const done = 4 + words.length * 3;
   return (
     <AbsoluteFill style={{opacity: o}}>
-      <Scrim from={y != null && y < 900 ? 'top' : 'bottom'} o={0.8} />
+      {!giua && <Scrim from={y != null && y < 900 ? 'top' : 'bottom'} o={0.8} />}
       {/* y bỏ trống (vlog_edl.py fx): canh ĐÁY vào LOW_Y — chữ nằm ngực/dưới, không che mặt, không chạm phụ đề */}
-      <div style={{position: 'absolute', left: SAFE.left, width: SAFE_W, ...(y == null ? {top: LOW_Y, transform: 'translateY(-100%)'} : {top: y})}}>
-        <div style={{display: 'flex', flexWrap: 'wrap', gap: `${size * 0.24}px 24px`}}>   {/* khe dòng 0,24 em cho dấu tiếng Việt */}
-          {words.map((w, i) => (
+      <div style={giua ? {position: 'absolute', ...KHOI_GIUA} : {position: 'absolute', left: SAFE.left, width: SAFE_W, ...(y == null ? {top: LOW_Y, transform: 'translateY(-100%)'} : {top: y})}}>
+        <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: giua ? 'center' : 'flex-start', gap: `${size * 0.24}px 24px`}}>   {/* khe dòng 0,24 em cho dấu tiếng Việt */}
+          {words.map(({w, br}, i) => [br && <div key={'br' + i} style={{flexBasis: '100%', height: 0}} />,
             <Rise key={i} p={soft ? ease(f, 2 + i * 6, 16 + i * 6) : pop(f, 1 + i * 3, {damping: 18, stiffness: 170, mass: 0.6})}
-              style={{fontFamily: HEAD, fontWeight: soft ? 600 : 800, fontSize: size, lineHeight: 1.14, color: C.text, textShadow: SHADOW}}>{w}</Rise>
-          ))}
+              style={{fontFamily: HEAD, fontWeight: soft ? 600 : 800, fontSize: size, lineHeight: 1.14, color: C.text, textShadow: SHADOW}}>{w}</Rise>])}
         </div>
         {!soft && <Bar w={`${ease(f, done, done + 12) * 70}%`} style={{marginTop: 26}} />}
       </div>
@@ -367,13 +375,13 @@ const Pointer = ({text, x, y, len}) => {
 
 // Giới thiệu nhân vật: đúng kiểu LowerThird của mẫu
 const NameCard = ({tag, name, sub, len}) => {
-  const f = useCurrentFrame();
+  const f = useCurrentFrame(); const giua = useGiua();
   const o = inOut(f, len, 8, 8);
   return (
     <AbsoluteFill style={{opacity: o}}>
-      <Scrim o={1} />
+      {!giua && <Scrim o={1} />}
       <AbsoluteFill style={{border: `6px solid ${C.accent}`, opacity: ease(f, 0, 6) * 0.9}} />
-      <div style={{position: 'absolute', left: SAFE.left, top: LOW_Y, transform: 'translateY(-100%)'}}>
+      <div style={giua ? {position: 'absolute', ...KHOI_GIUA} : {position: 'absolute', left: SAFE.left, top: LOW_Y, transform: 'translateY(-100%)'}}>
         <Eyebrow style={{opacity: ease(f, 2, 12)}}>{tag}</Eyebrow>
         <Bar w={420 * ease(f, 4, 22)} style={{height: 6, marginTop: 14}} />
         <div style={{marginTop: 16}}>
@@ -388,7 +396,7 @@ const NameCard = ({tag, name, sub, len}) => {
 
 // Danh sách hiện theo lời (1–2–3 năm sau, các nước…): dòng bắt đầu bằng số → số viền cam; hiện đúng mốc được nói
 const Chips = ({items, start, len, top}) => {
-  const f = useCurrentFrame();
+  const f = useCurrentFrame(); const giua = useGiua();
   const o = inOut(f, len, 4, 6);
   const n = items.length;
   // cỡ chữ tự thu cho mục DÀI NHẤT vẫn một dòng (người dùng chỉ ra 2026-11-04: "KHÔNG BỆNH TẬT NHIỀU" xuống 2 dòng → tràn đè phụ đề)
@@ -396,16 +404,16 @@ const Chips = ({items, start, len, top}) => {
   const size = Math.min(n > 3 ? 92 : 110, Math.floor(SAFE_W / (longest * 0.46)));
   return (
     <AbsoluteFill style={{opacity: o}}>
-      <Scrim o={0.9} />
+      {!giua && <Scrim o={0.9} />}
       {/* neo ĐÁY vào LOW_Y: khối mọc LÊN, không bao giờ xuống dải phụ đề (không ước chiều cao) */}
-      <div style={{position: 'absolute', left: SAFE.left, width: SAFE_W, ...(top != null ? {top} : {top: LOW_Y, transform: 'translateY(-100%)'})}}>
+      <div style={giua ? {position: 'absolute', ...KHOI_GIUA, alignItems: 'stretch'} : {position: 'absolute', left: SAFE.left, width: SAFE_W, ...(top != null ? {top} : {top: LOW_Y, transform: 'translateY(-100%)'})}}>
         {items.map(([t, at], i) => {
           const p = pop(f, fr(at - start), {damping: 18, stiffness: 170, mass: 0.6});
           const parts = t.split(' ');
           const num = /^\d+$/.test(parts[0]) ? parts.shift() : null;
           const last = i === n - 1;
           return (
-            <div key={i} style={{display: 'flex', alignItems: 'baseline', gap: 26, padding: '6px 0', borderBottom: !last ? `2px solid ${C.line}` : 'none',
+            <div key={i} style={{display: 'flex', alignItems: 'baseline', justifyContent: giua ? 'center' : 'flex-start', gap: 26, padding: '6px 0', borderBottom: !last ? `2px solid ${C.line}` : 'none',
               opacity: Math.min(1, p * 1.5)}}>
               {num && <div style={{fontFamily: HEAD, fontWeight: 800, fontSize: size * 1.18, lineHeight: 1, width: 90, color: 'transparent',
                 WebkitTextStroke: `4px ${C.accent}`, transform: `translateY(${(1 - p) * 40}px)`}}>{num}</div>}
@@ -420,14 +428,14 @@ const Chips = ({items, start, len, top}) => {
 
 // Thẻ địa điểm: ghim cam + tên nơi chốn (kiểu LowerThird)
 const Location = ({eyebrow = 'ĐỊA ĐIỂM', place, sub, len}) => {
-  const f = useCurrentFrame();
+  const f = useCurrentFrame(); const giua = useGiua();
   const o = inOut(f, len, 8, 8);
   const p = pop(f, 0);
   return (
     <AbsoluteFill style={{opacity: o}}>
-      <Scrim o={1} />
-      <div style={{position: 'absolute', left: SAFE.left, top: LOW_Y, transform: 'translateY(-100%)', width: SAFE_W}}>
-        <div style={{display: 'flex', alignItems: 'center', gap: 14}}>
+      {!giua && <Scrim o={1} />}
+      <div style={giua ? {position: 'absolute', ...KHOI_GIUA} : {position: 'absolute', left: SAFE.left, top: LOW_Y, transform: 'translateY(-100%)', width: SAFE_W}}>
+        <div style={{display: 'flex', alignItems: 'center', justifyContent: giua ? 'center' : 'flex-start', gap: 14}}>
           <svg width="40" height="40" viewBox="0 0 24 24" style={{transform: `translateY(${(1 - p) * -30}px)`, opacity: p}}>
             <path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" fill={C.accent} />
             <circle cx="12" cy="10" r="2.6" fill={C.bg} />
@@ -436,7 +444,7 @@ const Location = ({eyebrow = 'ĐỊA ĐIỂM', place, sub, len}) => {
         </div>
         <Bar w={420 * ease(f, 4, 22)} style={{height: 6, marginTop: 14}} />
         <div style={{marginTop: 16}}>
-          <Rise p={pop(f, 6)} style={{fontFamily: HEAD, fontWeight: 800, fontSize: place.length > 10 ? 120 : 150, lineHeight: 1, color: C.text, textShadow: SHADOW}}>{place}</Rise>
+          <Rise p={pop(f, 6)} style={{fontFamily: HEAD, fontWeight: 800, fontSize: Math.max(84, Math.min(150, Math.floor(SAFE_W / (0.5 * Math.max(place.length, 6))))), lineHeight: 1.05, color: C.text, textShadow: SHADOW, textWrap: 'balance'}}>{place}</Rise>
         </div>
         {sub && <div style={{fontFamily: BODY, fontWeight: 500, fontSize: 42, color: C.muted, marginTop: 10,
           opacity: ease(f, 16, 28), transform: `translateX(${(1 - ease(f, 16, 30)) * -30}px)`}}>{sub}</div>}
@@ -830,8 +838,8 @@ export const Show = () => {
           const lenF = fr(g.end) - fr(o.start);
           return (
             <Sequence key={i} from={fr(o.start)} durationInFrames={lenF} name={`${o.type} (toàn màn hình)`} layout="none">
-              <FullOv><AbsoluteFill style={{transform: `translateY(${g.dy}px) scale(1.12)`, transformOrigin: '50% 44%'}}>
-                <Comp {...o} len={lenF} /></AbsoluteFill></FullOv>
+              <FullOv><GiuaCtx.Provider value={true}><AbsoluteFill>
+                <Comp {...o} len={lenF} /></AbsoluteFill></GiuaCtx.Provider></FullOv>
             </Sequence>
           );
         }

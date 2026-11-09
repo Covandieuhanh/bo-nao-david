@@ -28,7 +28,8 @@
      "id",
      "tit",
      "chon_y",
-     "pieces"
+     "pieces",
+     "topic"
     ],
     "properties": {
      "id": {
@@ -102,6 +103,10 @@
         }
        }
       }
+     },
+     "topic": {
+      "type": "string",
+      "description": "chủ đề clip ≤ 3 chữ trích lời, cho dấu góc ● DAVID │ chủ đề"
      }
     }
    }

@@ -166,3 +166,12 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
 - Lỗi: chữ trong thẻ `bocuc` (the-canh / ô người + thẻ) tự ngắt ở chỗ vô nghĩa, để một chữ đứng lẻ ("LUYỆN TẬP LẠI THÓI / QUEN").
 - Sửa `components/BoCuc.jsx`: `textWrap: 'balance'` (dòng đều nhau) + `whiteSpace: 'pre-line'` (kịch bản đặt `\n` theo cụm nghĩa).
   Dự án cũ muốn theo: bấm "Cập nhật khung dựng" trong app (hoặc chép lại BoCuc.jsx) rồi render lại cảnh bocuc.
+
+## 2026-11-09 · khung ghép clip (highlight người nói, vlog) — lớp phủ toàn màn hình căn giữa, màn chốt theo luật 4
+- Lỗi (app dựng video, thử 2 đoạn ngắn; Claude tự duyệt hình chỉ ra): lớp phủ bị overlay_guard đổi sang toàn màn hình chỉ bị đẩy lên +
+  phóng 1,12 → chữ/biểu tượng dính mép trái, chữ dài tràn khung; pow chia theo từ, không theo cụm; dấu góc highlight lấy tên tập dài
+  ("…ĐẾN MỨC KHÔN…"); hl_edl.py luôn lấy câu cuối làm màn chốt (trái luật 4).
+- Sửa: `montage-template/src/Show.jsx` thêm CHẾ ĐỘ GIỮA (GiuaCtx) cho pow · chips · nameCard · location khi toàn màn hình — căn giữa trong
+  vùng an toàn, không phóng; pow nhận `\n` theo cụm nghĩa + cỡ chữ tự co theo dòng dài nhất; location tự co + textWrap balance.
+  `hl_edl.py`: màn chốt chỉ khi có câu `cta` / KEUGOI nguyên văn (không có → CTA = null, kết ở câu chốt ý + thẻ cuối); dấu góc dùng
+  `topic` ngắn của phương án (≤ 3 chữ) trước tên tập.

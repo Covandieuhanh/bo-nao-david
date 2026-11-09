@@ -133,13 +133,16 @@ tr = []
 for a, b, k in tones:
     if tr and tr[-1][2] == k: tr[-1][1] = b
     else: tr.append([a, b, k])
-cta = next((p for p in reversed(pieces) if p.get('cta')), next((p for p in reversed(pieces) if p.get('role') == 'KEUGOI'), pieces[-1]))
-if len(cta.get('cta_text') or cta['text']) > 55:   # màn chốt ≤ 55 ký tự (SKILL.md) — câu dài tràn đè phụ đề (lỗi 08/11/2026)
+# Luật 4 (David chốt 08/11): màn chốt CHỈ khi có câu kêu gọi / giao việc nguyên văn (cta hoặc KEUGOI); không có → kết ở câu chốt ý,
+# lặng 1 s rồi thẻ cuối — trước đây luôn lấy câu cuối làm màn chốt (lỗi 09/11/2026, app dựng video)
+cta = next((p for p in reversed(pieces) if p.get('cta')), next((p for p in reversed(pieces) if p.get('role') == 'KEUGOI'), None))
+moc_cuoi = cta or pieces[-1]
+if cta and len(cta.get('cta_text') or cta['text']) > 55:   # màn chốt ≤ 55 ký tự (SKILL.md) — câu dài tràn đè phụ đề (lỗi 08/11/2026)
     print(f"⚠ câu màn chốt {len(cta['text'])} ký tự > 55: ghi \"cta_text\" (vế trọn ý, nguyên văn) vào câu đó trong phuong-an.json")
 
 ec = plan.get('endcard') or {}
 endcard = 'null' if not ec.get('title') else json.dumps({'title': ec['title'], 'speaker': ec.get('speaker', ''), 'schedule': ec.get('schedule', ''), 'clip': 'c1',
-    'at': round(min(dur - 0.1, cta['start'] + 0.5), 2), 'len': 1.8}, ensure_ascii=False)
+    'at': round(min(dur - 0.1, moc_cuoi['start'] + 0.5), 2), 'len': 1.8}, ensure_ascii=False)
 # Thẻ tít mở đầu (luật 7) + TÍT GHIM suốt clip (HL-1): phuong-an.json option "tit": "<tít ≤ 8 chữ>", "pin": false để tắt ghim
 tit = opt.get('tit', '')
 tit_lines = ''
@@ -172,7 +175,7 @@ export const SHORT = true;
 
 // ===== Lớp đồ hoạ (pow · action · pointer …) — Claude thêm theo nội dung; chữ CHỈ lấy nguyên văn từ lời nói =====
 export const OVERLAYS = [
-  {{type: 'hud', start: 0, end: TOTAL - 4, name: {json.dumps((ec.get('title') or plan.get('topic') or '').upper(), ensure_ascii=False)}}},   // dấu kênh ● DAVID │ chủ đề (nhận diện chung)
+  {{type: 'hud', start: 0, end: TOTAL - 4, name: {json.dumps((opt.get('topic') or plan.get('topic') or ec.get('title') or '').upper(), ensure_ascii=False)}}},   // dấu kênh ● DAVID │ chủ đề (nhận diện chung)
 {tit_lines}];
 
 export const SFX = [
@@ -184,7 +187,7 @@ export const MUSIC = {{base: 0.2, duck: 0.09, loud: 0.3, loudRanges: [],
   tracks: TONE.map(([a, b, k]) => ({{f: k === 'lang' ? '{MUSIC['lang']}' : '{MUSIC['soi']}', a, b, gain: k === 'lang' ? {GAIN[MUSIC['lang']]} : {GAIN[MUSIC['soi']]}}}))}};
 
 // Màn chốt: câu kêu gọi NGUYÊN VĂN của người nói (luật highlight). kind: 'comment' | 'save' | 'follow' | 'share'
-export const CTA = {{text: {json.dumps(cta.get('cta_text') or cta['text'], ensure_ascii=False)}, kind: 'save'}};
+export const CTA = {('{text: ' + json.dumps(cta.get('cta_text') or cta['text'], ensure_ascii=False) + ", kind: 'save'}") if cta else 'null'};
 
 export const HL = {{src_duration: {dur:.2f}, bar: {'true' if TUA else 'false'}}};   // bar: thanh của cả tập gốc (chỉ kiểu --tua)
 

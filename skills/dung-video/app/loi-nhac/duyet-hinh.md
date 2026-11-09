@@ -7,6 +7,8 @@ Trả về: `dat` (true chỉ khi đã ngang các video đã duyệt), `nhan_xet
 và — CHỈ khi chưa đạt — `ke_hoach`: bản kế hoạch SỬA ĐẦY ĐỦ, cùng khuôn và cùng cách ghi mốc (trích câu nguyên văn) với KẾ HOẠCH HIỆN TẠI,
 giữ nguyên phần tốt, sửa/thêm đúng chỗ lỗi. Không đổi lời người nói, không tự đặt câu.
 
+Lưu ý loại video: clip HIGHLIGHT luôn có thẻ tít mở đầu (luật 7 cat-highlight-video) và chỉ có màn chốt khi có câu kêu gọi nguyên văn (luật 4) — đừng chấm thẻ tít là lỗi.
+
 # Chuẩn (nguồn duy nhất)
 {{muc:video-style-edit/SKILL.md|Tiêu chí đạt}}
 {{file:../../nao/bo-nho/video-luon-co-motion-graphics.md}}

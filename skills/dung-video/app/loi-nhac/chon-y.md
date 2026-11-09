@@ -10,6 +10,7 @@ Bạn cắt highlight cho David Trần: từ BẢN LỜI một video dài, TỰ 
   1–2 dòng, trả lời đúng câu hỏi của bảng 4 câu), `pieces` = các câu theo THỨ TỰ PHÁT: {trich_dau (4–8 chữ đầu câu), trich_cuoi (3–8 chữ
   cuối câu), role (CHAM · BOICANH · BUOC · HANHDONG · KEUGOI · KETQUA · CHUYEN), tone ("soi" | "lang"), zoom? (cú chốt), cta? (câu dùng cho
   màn chốt), cta_text? (vế nguyên văn ≤ 55 ký tự của câu màn chốt, `**cụm**` tô nhấn)}.
+- `topic` mỗi clip: ≤ 3 chữ trích lời (dấu góc). Thẻ tít mở đầu là LUẬT của highlight (luật 7, luôn có) — dòng "Thẻ tít mở đầu" trong TUỲ CHỌN chỉ áp cho video dài.
 - Không có câu kêu gọi / giao việc nguyên văn → không đặt `cta` (clip kết ở câu chốt ý, lặng 1 s, thẻ cuối — luật 4).
 - `sua_chu` (nếu có): chữ Whisper nghe nhầm ({sai, dung}) — tên riêng/chính tả.
 
