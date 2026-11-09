@@ -7,6 +7,8 @@ from pathlib import Path
 P, W, tt = Path(sys.argv[1]), Path(sys.argv[2]), sys.argv[3]
 SO = Path(__file__).resolve().parents[4] / "dang-lam/danh-muc.md"
 tap = P.parent.name
+if tap.startswith("tap-thu-") or P.name.startswith("thu-"):   # việc THỬ của Claude không ghi vào sổ thật (lỗi 09/11/2026)
+    print("việc thử — không ghi sổ danh mục"); sys.exit(0)
 loc = json.loads((W / "loc-va-cat.json").read_text())["loc"] if (W / "loc-va-cat.json").exists() else {"ket_luan": "✂️ Trích ngắn từ gốc"}
 dm = loc.get("diem", {}); diem = sum(dm.values()) if dm else "—"
 lr = " · ⚠️ đã cảnh báo lằn ranh" if loc.get("lan_ranh") else ""
