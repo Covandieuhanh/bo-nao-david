@@ -14,6 +14,16 @@ sys.path.insert(0, str(APP))
 import chay  # noqa: E402
 
 
+def ten_tai(f):
+    """Tên tệp khi tải về: theo tên tập — img-2888.mp4, su-tap-trung-clip-A.mp4, the-view-vung-tau.mp4 (vlog)."""
+    if f.name != "video-final.mp4":
+        return f.name
+    cha = f.parent
+    if cha.name.startswith("clip-"): return f"{cha.parent.parent.name.removeprefix('tap-')}-{cha.name}.mp4"
+    if cha.name == "2-ban-dai": return f"{cha.parent.name.removeprefix('tap-')}.mp4"
+    return f"{cha.name}.mp4"
+
+
 def tu_may(ip):
     """Ai bấm: Mac này hay thiết bị Tailscale nào (tên máy trong Tailscale) — ghi vào nhật ký mỗi lần duyệt / góp ý / chạy."""
     if ip in ("127.0.0.1", "::1", "::ffff:127.0.0.1"):
@@ -324,7 +334,7 @@ class H(BaseHTTPRequestHandler):
         self.send_header("Accept-Ranges", "bytes"); self.send_header("Content-Length", str(b - a + 1))
         if self.path.find("&tai=1") > 0:   # nút Tải về: lưu tệp thay vì phát
             from urllib.parse import quote
-            self.send_header("Content-Disposition", f"attachment; filename*=UTF-8''{quote(f.parent.name + '-' + f.name if f.name == 'video-final.mp4' else f.name)}")
+            self.send_header("Content-Disposition", f"attachment; filename*=UTF-8''{quote(ten_tai(f))}")
         if rg: self.send_header("Content-Range", f"bytes {a}-{b}/{n}")
         self.end_headers()
         with open(f, "rb") as fh:
