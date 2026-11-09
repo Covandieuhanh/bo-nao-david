@@ -1,1 +1,1 @@
-{"id":"CONG-1","ten":"Cổng 1 — David duyệt phiếu lọc","loai":"duyet","hien":["{W}/phieu-loc.md"],"gop_y_cho":"loc-va-cat"}
+{"id": "CONG-1", "ten": "Cổng 1 — David duyệt phiếu lọc", "loai": "duyet", "hien": ["{W}/phieu-loc.md", {"file": "{W}/ban-loi-tho.txt", "nhan": "📝 Bản lời máy chép (giây · câu) — đọc để soát tên riêng, chữ nghe nhầm; sai thì ghi vào góp ý", "gon": true}], "gop_y_cho": "loc-va-cat"}

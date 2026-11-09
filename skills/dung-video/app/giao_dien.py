@@ -113,7 +113,10 @@ def chi_tiet(ten):
     if dang and tt["buoc"].get(dang, {}).get("trang_thai") == "cho-duyet":
         ph = chay.phieu(dang)
         cong = {"id": dang, "ten": ph.get("ten"), "nhan_gop_y": bool(ph.get("gop_y_cho")),
-                "tep": [{"ten": Path(chay.thay(h, b)).name, "noi_dung": doc_tep(chay.thay(h, b)) or "(chưa có)"} for h in ph.get("hien", [])],
+                "tep": [{"ten": (h.get("nhan") if isinstance(h, dict) else None) or Path(chay.thay(h if isinstance(h, str) else h["file"], b)).name,
+                         "gon": isinstance(h, dict) and h.get("gon", False),
+                         "noi_dung": doc_tep(chay.thay(h if isinstance(h, str) else h["file"], b), 200000) or "(chưa có)"}
+                        for h in ph.get("hien", [])],
                 "video": chay.thay(ph["video"], b) if ph.get("video") and Path(chay.thay(ph["video"], b)).exists() else None,
                 "anh": [str(x) for a in ph.get("anh", []) for x in sorted(Path("/").glob(chay.thay(a, b).lstrip("/")))],
                 "chon_anh": None}
