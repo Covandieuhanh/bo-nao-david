@@ -203,7 +203,7 @@ def chi_tiet(ten):
             "buoc": buoc, "cong": cong, "log": log_buoc, "log_chung": doc_tep(KHO / ten / "chay.log", 3000), "token": token(ten),
             "xong_luc": tt.get("xong_luc"),
             "nguon": [{"p": x, "ten": ten_nguon(x), "co": Path(x).exists(), "giay": thoi_luong(x) if Path(x).exists() and "/CloudStorage/" not in x else None} for x in nguon(tt)],
-            "file_do": file_do(tt["P"])}
+            "file_do": file_do(tt["P"]), "tuy_chon": tt.get("tuy_chon", {})}
 
 
 def _trong(con, cha):
@@ -222,7 +222,7 @@ def _thu_muc_viec(tt):
 def _goc_viec(tt):
     """Thư mục file gốc của việc (tap-<tên>/1-goc) nếu có."""
     P = Path(tt["P"]); g = P.parent / "1-goc"
-    return g if P.name in ("2-ban-dai", "3-highlight") and g.exists() else None
+    return g if P.name == "2-ban-dai" and g.exists() else None   # highlight: file gốc là của việc bản dài, không phải của nó
 
 
 def _ai_dung(d, tru):
@@ -387,6 +387,7 @@ class H(BaseHTTPRequestHandler):
                 for f in sorted(KHO.glob("*/trang-thai.json"), key=os.path.getmtime, reverse=True):
                     tt = chay.doc(f); dang = tt.get("dang")
                     ds.append({"ten": tt["ten"], "cong_thuc": tt["cong_thuc"], "dang": dang, "dang_chay": dang_chay(tt["ten"]),
+                               "nhom": (lambda P: P.parent.name if P.name in ("2-ban-dai", "3-highlight") else "vlog")(Path(tt["P"])),
                                "nguon": (lambda n: ten_nguon(n[0]) + (f" +{len(n) - 1} clip" if len(n) > 1 else "") if n else "")(nguon(tt)),
                                "trang_thai": tt["buoc"].get(dang, {}).get("trang_thai") if dang else ("xong" if tt.get("xong_luc") else "chua")})
                 return self.gui(ds)

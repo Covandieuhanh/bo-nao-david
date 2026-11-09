@@ -36,6 +36,8 @@ button.dung{border-color:var(--do);color:var(--do)}
 .hm{font-size:12px;margin:-4px 0 12px;color:var(--phu)}.hm .d{display:flex;align-items:center;gap:6px;margin:3px 0}
 .hm .t{flex:1;height:6px;border-radius:3px;background:var(--vien);overflow:hidden;min-width:40px}.hm .t i{display:block;height:100%}
 .hm button{font-size:11px;padding:1px 6px;margin-left:auto}.hm .canh{color:var(--do);margin-top:3px}
+input[type=radio],input[type=checkbox]{width:auto!important;display:inline-block;margin:0 6px 0 0;vertical-align:middle}
+.nhom{font-size:11px;color:var(--phu);letter-spacing:1px;text-transform:uppercase;margin:12px 0 4px}
 </style></head><body>
 <div class="khung">
 <aside><h1>Dựng video</h1><div id="hm" class="hm"></div><button class="chinh" onclick="moMoi()">+ Việc mới</button><div id="ds" style="margin-top:14px"></div></aside>
@@ -55,7 +57,7 @@ if(f.length)h+=`<h2>📄 File đang làm</h2>`+f.map(x=>`<div style="margin:6px 
 return h+'</div>'}
 function xemTep(b,p){const o=b.closest('.hang').nextElementSibling;if(o.innerHTML){o.innerHTML='';return}const u='/tep?p='+p;const pp=decodeURIComponent(p);o.innerHTML=TIENG(pp)?`<audio controls autoplay preload="metadata" src="${u}" style="width:100%;margin-top:6px"></audio>`:MED(pp)?`<video controls autoplay preload="metadata" src="${u}" style="max-width:100%;margin-top:6px"></video>`:`<a href="${u}" target="_blank"><img src="${u}" style="max-width:100%;margin-top:6px;border-radius:6px"></a>`}
 async function moFinder(ten,p){await api('/api/mo-finder',{ten,p:decodeURIComponent(p)})}
-async function danhSach(){const ds=await api('/api/viec');const h=ds.map(v=>`<div class="viec ${v.ten==chon?'chon':''}" onclick="xem('${v.ten}')">${BIEU[v.trang_thai]||'·'} ${esc(v.ten)}<small>${v.nguon?'🎬 '+esc(v.nguon)+'<br>':''}${v.dang_chay?'đang chạy · ':''}${esc(v.dang||'xong')}</small></div>`).join('')||'<p class="mo">Chưa có việc nào.</p>';if($('#ds').dataset.h!==h){$('#ds').dataset.h=h;$('#ds').innerHTML=h}}
+async function danhSach(){const ds=await api('/api/viec');const nh={};ds.forEach(v=>(nh[v.nhom]=nh[v.nhom]||[]).push(v));const h=Object.entries(nh).map(([n,vs])=>`<div class="nhom">${esc(n==='vlog'?'🎒 vlog':n.replace(/^tap-/,'📁 '))}</div>`+vs.map(v=>`<div class="viec ${v.ten==chon?'chon':''}" onclick="xem('${v.ten}')">${BIEU[v.trang_thai]||'·'} ${esc(v.ten)}<small>${v.nguon?'🎬 '+esc(v.nguon)+'<br>':''}${v.dang_chay?'đang chạy · ':''}${esc(v.dang||'xong')}</small></div>`).join('')).join('')||'<p class="mo">Chưa có việc nào.</p>';if($('#ds').dataset.h!==h){$('#ds').dataset.h=h;$('#ds').innerHTML=h}}
 let tepChon=null;
 function chonDuongDan(p){tepChon=null;$('#vp').value=p;$('#tha').innerHTML=`🖥 <b>${esc(p.split('/').pop())}</b><br><small>trên Mac · ${esc(p.replace(/^\/Users\/[^/]+/,'~'))} · bấm để tải tệp khác lên</small>`;
 if(!$('#ten').value)$('#ten').value=boDau(p.split('/').pop())}
@@ -122,8 +124,8 @@ if(window.nhieu){$('#batDau').disabled=true;ds=[...(window.dsVideo||[])];try{for
 else{if(!tepChon&&!video)return alert('Kéo thả hoặc chọn một video');$('#batDau').disabled=true}
 try{if(tepChon)video=await taiLen(ten,tepChon)}catch(e){$('#batDau').disabled=false;return alert(e)}
 $('#tienChu').textContent='Đã tải lên, bắt đầu chạy…';const r=await api('/api/moi',{ten,video,cong_thuc:$('#ct').value,tuy_chon:{ai:$('#ai').value,tap:window.tapHl||undefined,videos:ds||undefined,khung:$('#khung').value,anh:$('#anhmh').value,hook:$('#hook').checked,lich:$('#lich').value.trim(),yeu_cau:$('#yc').value.trim()}});$('#batDau').disabled=false;if(r.ok){chon=ten;setTimeout(()=>xem(ten),800)}}
-async function xem(ten){const moi=chon!==ten;chon=ten;clearTimeout(hen);const d=await api('/api/chi-tiet?ten='+encodeURIComponent(ten));danhSach();
-const tk=d.token;let h=`<div style="display:flex;align-items:center;gap:12px"><h1 style="margin:0">${esc(d.ten)}</h1><button class="dung" style="margin-left:auto;font-size:13px" ${d.dang_chay?'disabled title="Dừng việc trước khi xoá"':''} onclick="xoaViec()">🗑 Xoá dự án</button></div><div class="hang" style="margin-top:6px"><button style="font-size:13px" ${d.dang_chay?'disabled title="Dừng việc trước"':''} onclick="capNhatKhung()">🔄 Cập nhật khung dựng</button><button style="font-size:13px" ${d.dang_chay?'disabled':''} onclick="donTap()">🧹 Dọn tập</button></div><div class="so"><span>${esc(d.cong_thuc)}</span><span>AI: ${tk.lan_goi} lần · ${(tk.vao/1000).toFixed(1)}k vào · ${(tk.ra/1000).toFixed(1)}k ra</span></div>`;
+async function xem(ten){const moi=chon!==ten;chon=ten;clearTimeout(hen);const d=await api('/api/chi-tiet?ten='+encodeURIComponent(ten));window.chiTiet=d;danhSach();
+const tk=d.token;let h=`<div style="display:flex;align-items:center;gap:12px"><h1 style="margin:0">${esc(d.ten)}</h1><button class="dung" style="margin-left:auto;font-size:13px" ${d.dang_chay?'disabled title="Dừng việc trước khi xoá"':''} onclick="xoaViec()">🗑 Xoá…</button></div><div class="hang" style="margin-top:6px"><button style="font-size:13px" ${d.dang_chay?'disabled title="Dừng việc trước"':''} onclick="suaViec()">✏️ Sửa việc</button><button style="font-size:13px" ${d.dang_chay?'disabled title="Dừng việc trước"':''} onclick="capNhatKhung()">🔄 Cập nhật khung dựng</button><button style="font-size:13px" ${d.dang_chay?'disabled':''} onclick="donTap()">🧹 Dọn tập</button></div><div class="so"><span>${esc(d.cong_thuc)}</span><span>AI: ${tk.lan_goi} lần · ${(tk.vao/1000).toFixed(1)}k vào · ${(tk.ra/1000).toFixed(1)}k ra</span></div>`;
 h+='<div id="nguonCho"></div>';
 h+=`<div class="hang"><label for="doiAi">AI cho các bước tiếp theo</label><select id="doiAi" ${d.dang_chay?'disabled':''} onchange="doiAi(this.value)"><option value="claude" ${d.ai==='claude'?'selected':''}>Claude</option><option value="codex" ${d.ai==='codex'?'selected':''}>Codex</option></select><small class="mo">Đổi AI không tự chạy lại bước đã xong. Chọn “làm lại từ đây” để đối chiếu bằng AI mới.</small></div>`;
 if(d.cong){h+=`<div class="the"><h2>🟠 ${esc(d.cong.ten)}</h2>${(d.cong.video||[]).map(v=>`${d.cong.video.length>1?`<h2>${esc(v.split('/').slice(-2,-1)[0])}</h2>`:''}<video controls preload="metadata" src="/tep?p=${encodeURIComponent(v)}"></video>`).join('')}
@@ -159,9 +161,35 @@ function hoi(noiDung,nut='Đồng ý',nguyHiem=false){return new Promise(ok=>{co
 n.innerHTML=`<div class="hop-hoi"><div>${esc(noiDung)}</div><div class="hang" style="justify-content:flex-end"><button id="hoiKhong">Huỷ</button><button id="hoiCo" class="${nguyHiem?'dung':'chinh'}">${esc(nut)}</button></div></div>`;
 document.body.appendChild(n);const xong=v=>{n.remove();ok(v)};n.querySelector('#hoiKhong').onclick=()=>xong(false);n.querySelector('#hoiCo').onclick=()=>xong(true);n.onclick=e=>{if(e.target===n)xong(false)}})}
 async function dungViec(){if(!await hoi('Dừng việc này? Bước đang chạy sẽ làm lại từ đầu khi bấm Chạy tiếp.','⏹ Dừng',true))return;if((await api('/api/dung',{ten:chon})).ok)setTimeout(()=>xem(chon),500)}
-async function xoaViec(){const ds=await api('/api/thu-xoa?ten='+encodeURIComponent(chon));
-if(!await hoi(`Xoá dự án "${chon}"?\n\nCác thư mục sau sẽ chuyển vào Thùng rác (muốn lấy lại: mở Thùng rác, kéo thư mục về ~/Movies; dọn Thùng rác là mất hẳn):\n\n${ds.map(x=>'• '+x.duong_dan+' ('+x.mb+' MB)').join('\n')}\n\nGồm cả video gốc trong 1-goc.`,'🗑 Xoá dự án',true))return;
-if((await api('/api/xoa',{ten:chon})).ok){chon=null;$('#chinh').innerHTML='<p class="mo">Đã chuyển vào Thùng rác.</p>';$('#ds').dataset.h='';danhSach()}}
+// XOÁ 3 MỨC (09/11/2026): mặc định chỉ bỏ khỏi danh sách; thư mục việc khác đang dùng thì bị chặn, ghi rõ việc nào
+async function xoaViec(){const d=window.chiTiet||{};let muc=1;
+const ve=async()=>{const r=await api('/api/thu-xoa?ten='+encodeURIComponent(chon)+'&muc='+muc);
+ $('#xoaDs').innerHTML=r.xoa.map(x=>`<div>🗑 <b>${esc(x.loai)}</b> · <small class="mo">${esc(x.duong_dan)} · ${x.mb} MB</small></div>`).join('')
+  +r.chan.map(x=>`<div style="color:var(--do)">⛔ <b>Không xoá ${esc(x.loai)}</b> — việc khác đang dùng: ${x.dang_dung.map(esc).join(', ')}<br><small class="mo">${esc(x.duong_dan)}</small></div>`).join('');
+ $('#xoaM2').disabled=!r.co_lam_viec;$('#xoaM3').disabled=!r.co_goc};
+$('#chinh').innerHTML=`<div class="the"><h2 style="margin-top:0">🗑 Xoá "${esc(chon)}"</h2>
+<label style="display:block;margin:6px 0"><input type="radio" name="xm" value="1" checked> <b>Chỉ bỏ khỏi danh sách</b> — mọi file video giữ nguyên</label>
+<label style="display:block;margin:6px 0"><input type="radio" name="xm" value="2" id="xoaM2"> Bỏ khỏi danh sách <b>+ file làm việc của riêng việc này</b></label>
+<label style="display:block;margin:6px 0"><input type="radio" name="xm" value="3" id="xoaM3"> Như trên <b>+ file gốc</b> (1-goc) — chỉ khi không việc nào dùng</label>
+<h2>Sẽ chuyển vào Thùng rác</h2><div id="xoaDs" class="mo">…</div>
+<p class="mo" style="font-size:13px">Thùng rác lấy lại được: mở Thùng rác, kéo thư mục về chỗ cũ. Dọn Thùng rác là mất hẳn.</p>
+<div class="hang"><button class="dung" onclick="xacNhanXoa()">Chuyển vào Thùng rác</button><button onclick="xem(chon)">Huỷ</button></div></div>`;
+document.querySelectorAll('input[name=xm]').forEach(x=>x.onchange=()=>{muc=+x.value;ve()});window.xacNhanXoa=async()=>{
+ if((await api('/api/xoa',{ten:chon,muc})).ok){chon=null;$('#chinh').innerHTML='<p class="mo">Đã chuyển vào Thùng rác.</p>';$('#ds').dataset.h='';danhSach()}};ve()}
+// SỬA VIỆC: tên + tuỳ chọn, áp cho bước chưa chạy; không đổi file nguồn
+async function suaViec(){const d=window.chiTiet||{};const t=d.tuy_chon||{};
+$('#chinh').innerHTML=`<div class="the"><h2 style="margin-top:0">✏️ Sửa việc "${esc(chon)}"</h2>
+<label>Tên việc<br><input id="svTen" value="${esc(chon)}" style="width:100%"></label>
+<label>Khung xuất<br><select id="svKhung"><option value="giu">Giữ khung gốc</option><option value="ngang">Xuất ngang</option><option value="doc">Xuất dọc</option></select></label>
+<label>Ảnh minh hoạ<br><select id="svAnh"><option value="mac_dinh">Chỉ khi cần</option><option value="khong">Không dùng ảnh</option><option value="them">Thêm ảnh cho mọi thứ cụ thể</option></select></label>
+<label style="display:block;margin:8px 0"><input type="checkbox" id="svHook" ${t.hook?'checked':''}> Thẻ tít mở đầu</label>
+<label>Lịch phát (ghi lên thẻ cuối)<br><input id="svLich" value="${esc(t.lich||'')}" style="width:100%"></label>
+<label>Yêu cầu riêng<br><textarea id="svYc" rows="3" style="width:100%">${esc(t.yeu_cau||'')}</textarea></label>
+<p class="mo" style="font-size:13px">Áp cho các bước chưa chạy. Muốn áp cho bước đã xong: bấm "làm lại từ đây" ở bước đó. File nguồn không đổi được (đổi nguồn = tạo việc mới).</p>
+<div class="hang"><button class="chinh" onclick="luuSua()">Lưu</button><button onclick="xem(chon)">Huỷ</button></div></div>`;
+$('#svKhung').value=t.khung||'giu';$('#svAnh').value=t.anh||'mac_dinh';
+window.luuSua=async()=>{const r=await api('/api/sua-viec',{ten:chon,ten_moi:$('#svTen').value.trim(),tuy_chon:{khung:$('#svKhung').value,anh:$('#svAnh').value,hook:$('#svHook').checked,lich:$('#svLich').value.trim(),yeu_cau:$('#svYc').value.trim()}});
+ if(r.ok){chon=r.ten;$('#ds').dataset.h='';danhSach();xem(chon)}}}
 async function chonAnh(a){if((await api('/api/chon-anh',{ten:chon,tep:decodeURIComponent(a)})).ok)xem(chon)}
 async function capNhatKhung(){if(!await hoi(`Cập nhật khung dựng cho "${chon}"?\n\nChép phần hình mới nhất của skill (thư viện hình, khung dựng) vào dự án này; GIỮ NGUYÊN kịch bản, phụ đề, thông số của video. Bản cũ được cất lại.\n\nNếu dự án đã render: app render lại cả video với khung mới (các bước Claude phía sau dùng lại kết quả cũ, không tốn token).`,'🔄 Cập nhật'))return;
 const r=await api('/api/cap-nhat-khung',{ten:chon});if(r.ok){await hoi(r.ket_qua+(r.render_lai?'\n\nĐang render lại với khung mới.':''),'Đóng');xem(chon)}}

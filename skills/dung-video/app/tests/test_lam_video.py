@@ -59,3 +59,19 @@ class Usage(unittest.TestCase):
    self.assertEqual((d['five_hour']['dung'],d['seven_day']['dung']),(27,90))
    from datetime import datetime;from zoneinfo import ZoneInfo
    m=datetime.fromtimestamp(d['seven_day']['mo_lai'],ZoneInfo('Asia/Saigon'));self.assertEqual((m.day,m.hour,m.minute),(13,13,0))
+class XoaSua(unittest.TestCase):
+ def test_chan_xoa_dung_chung_va_doi_ten(self):
+  import json;sys.path.insert(0,str(A));import giao_dien as g
+  with tempfile.TemporaryDirectory() as t:
+   T=Path(t);g.KHO=T/'_app';g.MOVIES=T
+   tap=T/'tap-x';(tap/'1-goc').mkdir(parents=True);(tap/'2-ban-dai').mkdir();(tap/'3-highlight').mkdir()
+   def viec(ten,P,video):(g.KHO/ten).mkdir(parents=True);(g.KHO/ten/'trang-thai.json').write_text(json.dumps({'ten':ten,'cong_thuc':'lam-video','video':video,'P':str(P),'buoc':{},'tuy_chon':{}}))
+   viec('dai',tap/'2-ban-dai',str(tap/'1-goc/a.mov'));viec('hl',tap/'3-highlight',str(tap/'2-ban-dai'))
+   r=g.thu_xoa('dai',3)
+   self.assertEqual([Path(x['duong_dan']).name for x in r['xoa']],['dai','1-goc'])
+   self.assertEqual(r['chan'][0]['dang_dung'],['hl'])               # bản dài đang là nguồn của highlight → không xoá
+   self.assertEqual([Path(x['duong_dan']).name for x in g.thu_xoa('hl',3)['xoa']],['hl','3-highlight'])   # highlight không đụng file gốc
+   self.assertEqual(g.thu_xoa('dai',1)['xoa'][0]['duong_dan'],str(g.KHO/'dai'))
+   g.sua_viec('hl','hl-moi',{'yeu_cau':'mới','P':'không được đổi'})
+   tt=json.loads((g.KHO/'hl-moi/trang-thai.json').read_text())
+   self.assertEqual((tt['ten'],tt['tuy_chon']['yeu_cau'],tt['P']),('hl-moi','mới',str(tap/'3-highlight')))
