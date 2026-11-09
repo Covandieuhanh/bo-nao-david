@@ -14,10 +14,25 @@ sys.path.insert(0, str(APP))
 import chay  # noqa: E402
 
 
-def chay_nen(ten, *args):
+def tu_may(ip):
+    """Ai bấm: Mac này hay thiết bị Tailscale nào (tên máy trong Tailscale) — ghi vào nhật ký mỗi lần duyệt / góp ý / chạy."""
+    if ip in ("127.0.0.1", "::1", "::ffff:127.0.0.1"):
+        return "Mac này"
+    try:
+        r = subprocess.run(["/Applications/Tailscale.app/Contents/MacOS/Tailscale", "status", "--json"], capture_output=True, text=True, timeout=5)
+        ip4 = ip.replace("::ffff:", "")
+        for x in json.loads(r.stdout).get("Peer", {}).values():
+            if ip4 in x.get("TailscaleIPs", []):
+                return x.get("HostName") or ip4
+    except Exception:
+        pass
+    return ip
+
+
+def chay_nen(ten, *args, ai=""):
     KHO.joinpath(ten).mkdir(parents=True, exist_ok=True)
     log = open(KHO / ten / "chay.log", "a", encoding="utf-8")
-    log.write(f"\n=== {time.strftime('%Y-%m-%d %H:%M:%S')} chay.py {' '.join(args)}\n"); log.flush()
+    log.write(f"\n=== {time.strftime('%Y-%m-%d %H:%M:%S')} chay.py {' '.join(args)}" + (f"  ← bấm từ: {ai}" if ai else "") + "\n"); log.flush()
     p = subprocess.Popen([sys.executable, "-I", str(APP / "chay.py"), *args], stdout=log, stderr=subprocess.STDOUT,
                          start_new_session=True)   # nhóm tiến trình riêng: nút Dừng tắt được cả render/ffmpeg con
     CHAY[ten] = p; (KHO / ten / "pid").write_text(str(p.pid))
@@ -322,7 +337,7 @@ class H(BaseHTTPRequestHandler):
         if u == "/api/gop-y":
             if d.get("loai") not in ("video", "bai-dang", "loc") or not d.get("gop_y", "").strip():
                 return self.gui({"loi": "thiếu góp ý"}, 400)
-            chay_nen(ten, "gop", ten, d["loai"], d["gop_y"].strip())
+            chay_nen(ten, "gop", ten, d["loai"], d["gop_y"].strip(), ai=tu_may(self.client_address[0]))
             return self.gui({"ok": True})
         if u == "/api/cap-nhat-khung":
             tt = chay.doc(KHO / ten / "trang-thai.json")
@@ -335,7 +350,7 @@ class H(BaseHTTPRequestHandler):
                 return self.gui({"loi": (r.stdout + r.stderr)[-500:]}, 500)
             doi = "0 tệp" not in r.stdout
             if doi and tt["buoc"].get("render", {}).get("trang_thai") in ("xong", "loi", "da-dung"):
-                chay_nen(ten, "lai", ten, "render")      # đã render rồi → render lại với khung mới (các bước Claude sau đó dùng lại kết quả cũ)
+                chay_nen(ten, "lai", ten, "render")      # đã render rồi → render lại với khung mới (các bước Claude sau đó dùng lại kết quả cũ, ai=tu_may(self.client_address[0]))
             return self.gui({"ok": True, "ket_qua": r.stdout.strip().split("\n")[0], "render_lai": doi and "render" in tt["buoc"]})
         if u == "/api/xoa":
             xoa(ten); CHAY.pop(ten, None); return self.gui({"ok": True})
@@ -346,7 +361,7 @@ class H(BaseHTTPRequestHandler):
                 return self.gui({"loi": "Video này là bản đã dựng (có sẵn chữ, dấu góc) — chọn video gốc quay từ máy"}, 400)
             if (KHO / ten / "trang-thai.json").exists():
                 return self.gui({"loi": "đã có việc tên này"}, 409)
-            chay_nen(ten, "moi", d["cong_thuc"], d["video"], ten, json.dumps(d.get("tuy_chon", {}), ensure_ascii=False))
+            chay_nen(ten, "moi", d["cong_thuc"], d["video"], ten, json.dumps(d.get("tuy_chon", {}), ensure_ascii=False), ai=tu_may(self.client_address[0]))
         elif u == "/api/chon-anh":
             tt = chay.doc(KHO / ten / "trang-thai.json"); ph = chay.phieu(tt.get("dang") or ""); b = chay.bien(tt)
             ca = ph.get("chon_anh") or {}; tep = Path(d.get("tep", "")).resolve()
@@ -356,11 +371,11 @@ class H(BaseHTTPRequestHandler):
             __import__("shutil").copyfile(tep, chay.thay(ca["dich"], b)); (KHO / ten / "da-chon-anh.txt").write_text(str(tep))
             return self.gui({"ok": True})
         elif u == "/api/duyet":
-            chay_nen(ten, "duyet", ten, *( [d["gop_y"]] if d.get("gop_y") else []))
+            chay_nen(ten, "duyet", ten, *( [d["gop_y"]] if d.get("gop_y") else []), ai=tu_may(self.client_address[0]))
         elif u == "/api/tiep":
-            chay_nen(ten, "tiep", ten)
+            chay_nen(ten, "tiep", ten, ai=tu_may(self.client_address[0]))
         elif u == "/api/lai":
-            chay_nen(ten, "lai", ten, d["buoc"])
+            chay_nen(ten, "lai", ten, d["buoc"], ai=tu_may(self.client_address[0]))
         else:
             return self.gui({"loi": "không có"}, 404)
         self.gui({"ok": True})

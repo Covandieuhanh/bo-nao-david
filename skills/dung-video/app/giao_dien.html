@@ -135,7 +135,8 @@ async function gopSau(loai){const g=$('#gySau').value.trim();if(!g)return alert(
 if(!await hoi(`Gửi góp ý và làm lại ${loai=='video'?'video (kịch bản → dựng lại → cổng 2)':'bài đăng'}?\n\n«${g}»`,'Gửi góp ý'))return;
 if((await api('/api/gop-y',{ten:chon,loai,gop_y:g})).ok)setTimeout(()=>xem(chon),800)}
 async function duyet(){const g=$('#gy')&&$('#gy').value.trim();
-if(g){if(await hoi('Ô góp ý đang có chữ. Bấm "Duyệt" sẽ BỎ QUA góp ý này.\n\nGửi góp ý và làm lại thay vì duyệt?','Gửi góp ý, làm lại'))return gopY();return}if((await api('/api/duyet',{ten:chon})).ok)setTimeout(()=>xem(chon),800)}
+if(g){if(await hoi('Ô góp ý đang có chữ. Bấm "Duyệt" sẽ BỎ QUA góp ý này.\n\nGửi góp ý và làm lại thay vì duyệt?','Gửi góp ý, làm lại'))return gopY();return}
+if(!await hoi('Duyệt cổng này và cho app chạy tiếp?\n\nMuốn sửa gì thì Huỷ, ghi vào ô góp ý rồi bấm "Gửi góp ý, làm lại".','✓ Duyệt'))return;if((await api('/api/duyet',{ten:chon})).ok)setTimeout(()=>xem(chon),800)}
 async function gopY(){const g=$('#gy').value.trim();if(!g)return alert('Viết góp ý trước');if((await api('/api/duyet',{ten:chon,gop_y:g})).ok)setTimeout(()=>xem(chon),800)}
 async function tiep(){if((await api('/api/tiep',{ten:chon})).ok)setTimeout(()=>xem(chon),800)}
 async function lai(b){if(!await hoi('Làm lại từ bước này trở đi? Các bước sau đó cũng chạy lại.','Làm lại'))return;if((await api('/api/lai',{ten:chon,buoc:b})).ok)setTimeout(()=>xem(chon),800)}
