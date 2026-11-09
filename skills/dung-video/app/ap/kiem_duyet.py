@@ -5,6 +5,8 @@ import json, subprocess, sys
 from pathlib import Path
 loai, P, W = sys.argv[1], sys.argv[2], Path(sys.argv[3]); APP = Path(__file__).resolve().parents[1]
 kq = json.loads((W / (sys.argv[4] if len(sys.argv) > 4 else "duyet-hinh.json")).read_text(encoding="utf-8"))
+if kq.get("can_xu_ly_ngoai_ke_hoach"):
+    print("Cần xử lý ngoài kế hoạch cảnh; app phải dừng ở bước sửa:", "; ".join(kq["can_xu_ly_ngoai_ke_hoach"])); sys.exit(0)
 if kq.get("dat") or not kq.get("ke_hoach"):
     print("đạt" if kq.get("dat") else "✗ chưa đạt nhưng thiếu `ke_hoach` sửa — trả kế hoạch sửa đầy đủ"); sys.exit(0 if kq.get("dat") else 1)
 tam = W / "duyet-hinh-ke-hoach.tmp.json"; tam.write_text(json.dumps(kq["ke_hoach"], ensure_ascii=False), encoding="utf-8")

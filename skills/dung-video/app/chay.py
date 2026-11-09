@@ -14,6 +14,7 @@ import fcntl, json, os, subprocess, sys, time, glob
 from pathlib import Path
 
 APP = Path(__file__).resolve().parent
+sys.path.insert(0, str(APP))
 DV = APP.parent                                   # skills/dung-video
 KHO = Path(os.path.expanduser("~/Movies/_app"))   # trạng thái từng việc (sản phẩm, ở lại máy)
 ENV = dict(os.environ, PATH="/opt/homebrew/bin:/usr/local/bin:" + os.environ.get("PATH", ""))
@@ -75,7 +76,8 @@ def bien(tt):
     ct = cong_thuc(tt["cong_thuc"]); tc = tt.get("tuy_chon", {})
     return {"APP": str(APP), "DV": str(DV), "S": str(DV / "video-style-edit/scripts"), "HL": str(DV / "cat-highlight-video/scripts"),
             "P": tt["P"], "W": str(KHO / tt["ten"]), "VIDEO": tt.get("video_may") or tt["video"], "TEN": tt["ten"], "HO_SO": ct.get("ho_so", "chung"),
-            "TAP": str(Path(tt["P"]).parent), "KHUNG": tc.get("khung", "giu"), "HOOK": "co" if tc.get("hook") else "khong"}
+            "TAP": str(Path(tt["P"]).parent), "KHUNG": tc.get("khung", "giu"), "HOOK": "co" if tc.get("hook") else "khong",
+            "AI": tc.get("ai") or os.environ.get("APP_AI", "claude"), "AI_MODEL": tc.get("ai_model", "")}
 
 
 def thay(s, b):
@@ -123,6 +125,9 @@ def mot_buoc(tt, bid, gop_y=None):
         return "bo-qua"
     if ph["loai"] == "duyet":
         return "cho-duyet"
+    if ph.get("duyet_lai"):
+        import chat_luong
+        return chat_luong.chay(tt, ph, log, mot_buoc, bien, chay_lenh, thay)
     if ph["loai"] == "co-dinh":
         lenh = ph["lenh"] if isinstance(ph["lenh"], list) else [ph["lenh"]]
         for l in lenh:
@@ -134,7 +139,7 @@ def mot_buoc(tt, bid, gop_y=None):
         if gop_y:
             cmd.append(gop_y)
         with open(log, "a", encoding="utf-8") as f:
-            r = subprocess.run(cmd, stdout=f, stderr=subprocess.STDOUT, env=ENV)
+            r = subprocess.run(cmd, stdout=f, stderr=subprocess.STDOUT, env=ENV | ({"APP_DUYET_MOI":"1"} if os.environ.get("APP_DUYET_MOI") else {}))
         return "xong" if r.returncode == 0 else "loi"
     raise SystemExit(f"loại bước lạ: {ph['loai']}")
 

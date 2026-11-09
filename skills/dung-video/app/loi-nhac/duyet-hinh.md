@@ -16,3 +16,6 @@ Lưu ý loại video: clip HIGHLIGHT luôn có thẻ tít mở đầu (luật 7 
 {{file:../../nao/bo-nho/video-phu-de-mot-cho-chu.md}}
 {{file:../../nao/bo-nho/video-nhan-dien-chung.md}}
 {{file:app/loi-nhac/_mau-ke-hoach.md}}
+
+
+Nếu lỗi cần sửa nguồn / âm thanh / code khuôn mà JSON kế hoạch không thể sửa, ghi rõ vào `can_xu_ly_ngoai_ke_hoach`. Không nói đã sửa bằng kế hoạch khi renderer không có props tương ứng. Có lỗi này thì `dat=false`. Chỉ liệt kê lỗi có bằng chứng; phần không thể kiểm bằng ảnh ghi là chưa kiểm.

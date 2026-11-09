@@ -151,7 +151,7 @@ def chi_tiet(ten):
     anh_bia = [str(x) for x in [P_ / "phat-hanh/thumbnail.jpg"] if x.exists()]
     gy = KHO / ten / "gop-y.json"
     trao_doi = json.loads(gy.read_text(encoding="utf-8")) if gy.exists() else []
-    return {"video_xong": xong, "anh_bia": anh_bia, "trao_doi": trao_doi, "hang_doi": giu.read_text().strip() if giu.exists() else None, "ra_soat": rs, "ten": ten, "cong_thuc": ct["ten"], "video": tt["video"], "P": tt["P"], "dang": dang, "dang_chay": dang_chay(ten),
+    return {"ai": tt.get("tuy_chon", {}).get("ai", "claude"), "video_xong": xong, "anh_bia": anh_bia, "trao_doi": trao_doi, "hang_doi": giu.read_text().strip() if giu.exists() else None, "ra_soat": rs, "ten": ten, "cong_thuc": ct["ten"], "video": tt["video"], "P": tt["P"], "dang": dang, "dang_chay": dang_chay(ten),
             "buoc": buoc, "cong": cong, "log": log_buoc, "log_chung": doc_tep(KHO / ten / "chay.log", 3000), "token": token(ten),
             "xong_luc": tt.get("xong_luc")}
 
@@ -266,13 +266,13 @@ class H(BaseHTTPRequestHandler):
         self.end_headers(); self.wfile.write(b)
 
     def cho_phep(self):
-        """Chỉ chính máy này + thiết bị trong mạng Tailscale của David (100.64.0.0/10, fd7a:115c:a1e0::/48).
+        """Chỉ loopback của máy này.
         Máy khác cùng wifi hay ngoài Internet đều bị chặn, dù máy chủ nghe trên mọi cổng mạng."""
         ip = ipaddress.ip_address(self.client_address[0].split("%")[0])
         if ip.version == 6 and ip.ipv4_mapped: ip = ip.ipv4_mapped
-        if ip.is_loopback or ip in ipaddress.ip_network("100.64.0.0/10") or ip in ipaddress.ip_network("fd7a:115c:a1e0::/48"):
+        if ip.is_loopback:
             return True
-        self.gui({"loi": "chỉ mở được trên máy này hoặc thiết bị trong Tailscale của David"}, 403)
+        self.gui({"loi": "chỉ mở được trên máy này"}, 403)
         return False
 
     def do_GET(self):
@@ -359,6 +359,14 @@ class H(BaseHTTPRequestHandler):
             dung(ten); return self.gui({"ok": True})
         if dang_chay(ten):
             return self.gui({"loi": "việc này đang chạy"}, 409)
+        if u == "/api/doi-ai":
+            if d.get("ai") not in ("claude", "codex"):
+                return self.gui({"loi": "AI không hợp lệ"}, 400)
+            p = KHO / ten / "trang-thai.json"; tt = chay.doc(p)
+            tt.setdefault("tuy_chon", {})["ai"] = d["ai"]
+            tt["tuy_chon"].pop("ai_model", None)
+            chay.ghi(p, tt)
+            return self.gui({"ok": True})
         if u == "/api/gop-y":
             if d.get("loai") not in ("video", "bai-dang", "loc") or not d.get("gop_y", "").strip():
                 return self.gui({"loi": "thiếu góp ý"}, 400)
@@ -446,4 +454,4 @@ if __name__ == "__main__":
         address_family = socket.AF_INET6          # nghe cả IPv4 lẫn IPv6 (Tailscale dùng cả hai); quyền vào lọc ở H.cho_phep
         def server_bind(self):
             self.socket.setsockopt(socket.IPPROTO_IPV6, socket.IPV6_V6ONLY, 0); super().server_bind()
-    MayChu(("::", cong), H).serve_forever()
+    MayChu(("::1", cong), H).serve_forever()

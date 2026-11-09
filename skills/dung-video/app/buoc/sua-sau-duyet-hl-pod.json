@@ -1,1 +1,10 @@
-{"id": "sua-sau-duyet-hl-pod", "ten": "Sửa theo duyệt hình + dựng lại clip", "loai": "co-dinh", "nang": true, "khi": "grep -q podcast {P}/loai.txt", "lenh": "python3 -I {APP}/ap/sua_sau_duyet.py hl-pod {P} {W}"}
+{
+ "id": "sua-sau-duyet-hl-pod",
+ "ten": "Sửa theo duyệt hình + dựng lại clip",
+ "loai": "co-dinh",
+ "nang": true,
+ "khi": "grep -q podcast {P}/loai.txt",
+ "lenh": "python3 -I {APP}/ap/sua_sau_duyet.py hl-pod {P} {W}",
+ "duyet_lai": "duyet-hinh-hl-pod",
+ "so_vong_sua": 2
+}

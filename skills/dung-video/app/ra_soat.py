@@ -43,7 +43,7 @@ def phu_thuoc_may(ph, b):
 def phu_thuoc_claude(ph):
     """Tệp skill ghép vào lời nhắc của một bước Claude (để nói CÁI GÌ đổi; còn đổi hay không thì so dấu luật)."""
     t = (APP / ph["loi_nhac"]).read_text(encoding="utf-8")
-    tep = {APP / ph["loi_nhac"], APP / ph["khuon"]}
+    tep = {APP / ph["loi_nhac"], APP / ph["khuon"], DV / "luat-chung.md"}
     tep.update(DV / m for m in re.findall(r"\{\{file:([^}]+)\}\}", t))
     tep.update(DV / m for m in re.findall(r"\{\{muc:([^|}]+)\|", t))
     if "{{ho_so:" in t: tep.update((DV / "ho-so").glob("*.json"))
@@ -65,8 +65,8 @@ def ra_soat(ten):
             if not f.exists():
                 continue
             khuon = json.loads((APP / ph["khuon"]).read_text(encoding="utf-8"))
-            mo_hinh = goi_claude.MO_HINH.get(ph.get("mo_hinh", "vua"), ph.get("mo_hinh", "sonnet"))
-            moi = goi_claude.dau_luat(goi_claude.dung_loi_nhac((APP / ph["loi_nhac"]).read_text(encoding="utf-8"), b), khuon, mo_hinh)
+            mo_hinh = goi_claude.nha_cung_cap.model(goi_claude.nha_cung_cap.cau_hinh(b), ph, b)
+            moi = goi_claude.dau_luat(goi_claude.loi_he_thong(ph, b), khuon, mo_hinh)
             if moi != f.read_text().strip():
                 doi = [x for x in phu_thuoc_claude(ph) if x.stat().st_mtime > st["ts"]]
                 cu.append({"id": bid, "ten": ph.get("ten", bid), "tep": [str(x.relative_to(DV)) for x in doi] or ["luật ghép trong lời nhắc"]})

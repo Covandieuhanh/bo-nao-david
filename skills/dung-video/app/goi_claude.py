@@ -14,7 +14,9 @@ from pathlib import Path
 APP = Path(__file__).resolve().parent
 DV = APP.parent
 sys.path.insert(0, str(DV / "khoi")); sys.path.insert(0, str(APP / "ap"))
+sys.path.insert(0, str(APP))
 import hoso, loi  # noqa: E402
+import nha_cung_cap, kiem_khuon
 
 MO_HINH = {"nhe": "haiku", "vua": "sonnet", "manh": "opus"}
 
@@ -118,10 +120,15 @@ def dau_luat(he_thong, khuon, mo_hinh):
     return hashlib.sha256("\x00".join([he_thong, json.dumps(khuon, sort_keys=True), mo_hinh]).encode()).hexdigest()
 
 
+def loi_he_thong(ph, b):
+    return "# Luật chung (quyết định mới hơn thắng đoạn cũ)\n" + (DV / "luat-chung.md").read_text(encoding="utf-8") + "\n\n" + dung_loi_nhac((APP / ph["loi_nhac"]).read_text(encoding="utf-8"), b)
+
+
 def main():
     ph = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
     b = json.loads(sys.argv[2]); gop_y = sys.argv[3] if len(sys.argv) > 3 else ""
-    he_thong = dung_loi_nhac((APP / ph["loi_nhac"]).read_text(encoding="utf-8"), b)
+    provider = nha_cung_cap.cau_hinh(b)
+    he_thong = loi_he_thong(ph, b)
     phan = []
     for d in ph.get("doc", []):
         p = Path(thay(d["file"], b))
@@ -141,31 +148,48 @@ def main():
         if ra.exists():
             phan.append(f"=== KẾ HOẠCH LẦN TRƯỚC ===\n{ra.read_text(encoding='utf-8')}")
         phan.append(f"=== GÓP Ý CỦA DAVID (làm theo, giữ nguyên phần không bị nhắc) ===\n{gop_y}")
+    for pattern in ph.get("anh", []):
+        if "sheet-page-" not in pattern and not list(Path("/").glob(thay(pattern, b).lstrip("/"))):
+            raise SystemExit("Thiếu ảnh bắt buộc: " + thay(pattern,b))
     anh = [str(x) for a in ph.get("anh", []) for x in sorted(Path("/").glob(thay(a, b).lstrip("/")))]
+    # Ảnh trang đầu có thể cũng là sheet.jpg: gửi một lần theo nội dung.
+    anh = list({hashlib.sha256(Path(a).read_bytes()).hexdigest(): a for a in reversed(anh)}.values())[::-1]
     if anh:
         phan.append("=== ẢNH CẦN XEM (mở từng ảnh bằng công cụ Read trước khi trả lời) ===\n" + "\n".join(anh))
     noi_dung = "\n\n".join(phan)
     khuon = json.loads((APP / ph["khuon"]).read_text(encoding="utf-8"))
-    mo_hinh = os.environ.get("APP_MO_HINH") or MO_HINH.get(ph.get("mo_hinh", "vua"), ph.get("mo_hinh", "sonnet"))
+    mo_hinh = nha_cung_cap.model(provider, ph, b)
     # NHỚ KẾT QUẢ: cùng lời nhắc (luật đã ghép) + cùng đầu vào + cùng ảnh + cùng khuôn + cùng mô hình → dùng lại, không gọi Claude.
     # Sửa skill chỗ không liên quan bước này, hoặc làm lại từ một bước phía trước mà đầu vào bước này không đổi → 0 token.
-    the = hashlib.sha256("\x00".join([he_thong, noi_dung, json.dumps(khuon, sort_keys=True), mo_hinh,
+    the = hashlib.sha256("\x00".join([he_thong, noi_dung, json.dumps(khuon, sort_keys=True), provider, mo_hinh, ph.get("suy_nghi", ""),
                                        *[hashlib.sha256(Path(a).read_bytes()).hexdigest() for a in anh]]).encode()).hexdigest()
     nho = W / "nho-claude" / f"{ph['id']}.txt"
     (W / "nho-claude").mkdir(parents=True, exist_ok=True)
     (W / "nho-claude" / f"{ph['id']}.luat").write_text(dau_luat(luat_goc, khuon, mo_hinh))
-    if not os.environ.get("APP_KHONG_NHO") and ra.exists() and nho.exists() and nho.read_text().strip() == the:
+    if not os.environ.get("APP_KHONG_NHO") and ra.exists() and nho.exists() and nho.read_text().strip() == the and not os.environ.get("APP_DUYET_MOI"):
         print("Đầu vào không đổi so với lần trước — dùng lại kết quả cũ, không gọi Claude (0 token).")
         return
-    bin_ = tim_claude()
+    if ph.get("anh") and not anh:
+        raise SystemExit("Thiếu ảnh bắt buộc để AI đánh giá; không được dựng hoặc duyệt mù.")
+    bin_ = tim_claude() if provider == "claude" else None
     for lan in (1, 2):
-        kq, tk = goi(bin_, he_thong, noi_dung, khuon, mo_hinh, anh, ph.get("suy_nghi"))
+        if provider == "codex":
+            kq, tk = nha_cung_cap.goi_codex(he_thong, noi_dung, khuon, mo_hinh, anh, ph.get("suy_nghi"))
+        else:
+            kq, tk = goi(bin_, he_thong, noi_dung, khuon, mo_hinh, anh, ph.get("suy_nghi"))
+        tk["provider"] = provider
         ra.parent.mkdir(parents=True, exist_ok=True)
         ra.write_text(json.dumps(kq, ensure_ascii=False, indent=1), encoding="utf-8")
         with open(W / "token.jsonl", "a", encoding="utf-8") as f:
             f.write(json.dumps({"buoc": ph["id"], "lan": lan, "mo_hinh": mo_hinh, "do_dai_gui": len(he_thong) + len(noi_dung), **tk},
                                ensure_ascii=False) + "\n")
-        print(f"Claude ({mo_hinh}) lần {lan}: {tk['giay']} s · {tk['usage'] and tk['usage'].get('output_tokens')} token ra")
+        print(f"{provider} ({mo_hinh or 'mặc định'}) lần {lan}: {tk['giay']} s · {tk['usage'] and tk['usage'].get('output_tokens')} token ra")
+        try:
+            kiem_khuon.kiem(kq, khuon)
+        except ValueError as e:
+            noi_dung += "\nKẾT QUẢ VỪA TRẢ:\n" + json.dumps(kq,ensure_ascii=False) + "\nLỖI KHUÔN: " + str(e)
+            print("Lỗi khuôn:", e)
+            continue
         r = subprocess.run(["zsh", "-c", thay(ph["kiem"], b)], capture_output=True, text=True) if ph.get("kiem") else None
         if r:
             print(r.stdout[-3000:], r.stderr[-1500:])

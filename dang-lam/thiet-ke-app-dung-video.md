@@ -69,3 +69,10 @@ Máy (14 bước): kiểm công cụ · tạo dự án · chép lời thô + đ�
 ### Giới hạn hiện tại
 - Chữ/viền in cứng trong hình video cũ cần nhìn hình: vẫn làm bằng Claude Code.
 - Kịch bản dùng 5 kiểu cảnh có sẵn (nhan, bocuc, illus, action, cta). Kiểu mới cần code thêm như hiện nay.
+
+
+## Kiểm thực tế 09/11/2026 (Codex)
+Thứ tự ưu tiên mới David chốt: chất lượng render ngang skill → linh hoạt Claude/Codex → mới xét token.
+Đã thêm adapter và lựa chọn AI, duyệt lại sau sửa (hết số vòng chưa đạt thì dừng), chụp thử video người nói, chặn kiểm kỹ thuật thất bại, giữ đủ mốc ảnh kiểm.
+Đã thử ảnh + duyệt hình + kế hoạch hợp lệ + render riêng video đọc sách bằng Codex; 13 kiểm thử tự động đạt. Bản render thử qua 4 kiểm kỹ thuật.
+**Chưa nghiệm thu thay thế AI dùng skill trực tiếp.** Còn phải so thành phẩm, chuyển động và lời/âm thanh; chưa nghiệm thu các loại còn lại bằng Codex. Agent sửa code trong app chưa có.

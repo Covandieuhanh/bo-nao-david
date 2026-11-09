@@ -20,3 +20,12 @@ David tự duyệt. Không hạ chuẩn để chiều, không tự quyết thay.
 **How to apply:** sửa app không được nới bộ lọc khối 00 hay luật dựng cho "qua cổng"; lỗi app thì sửa app, không sửa chuẩn.
 Không tự Duyệt / Chạy tiếp / Làm lại việc của David ([[luat-khong-tu-chay-viec-cua-david]]); không khởi động lại app khi việc
 của David đang chạy — chờ nó tạm dừng. Liên quan [[nao-ho-so-va-bo-loc]], [[luat-goi-y-de-david-chon]].
+
+
+## David xác nhận 09/11/2026 — chất lượng trước token
+- App chỉ có giá trị nếu video render đạt cùng tiêu chuẩn thẩm mỹ, nội dung và kỹ thuật như AI dùng skill trực tiếp. Tiết kiệm token là mục tiêu phụ; không đổi chất lượng lấy token.
+- David yêu cầu hỗ trợ cả Claude và Codex, không khoá app vào Claude. Đã cho phép kiểm thử dự án đọc sách với Codex/OpenAI trong phiên Codex ngày 09/11.
+- Đã thêm adapter hai AI, chọn AI trong giao diện, duyệt lại sau sửa, chụp thử video người nói, chặn lỗi kỹ thuật và chia trang ảnh kiểm. CLI Codex đã nhận ảnh, trả kế hoạch hợp lệ và render được bản thử riêng.
+- **Chưa kết luận ngang skill 100%.** Kiểm thử đơn vị/luồng không chứng minh thẩm mỹ; bản thử vẫn cần xem và đánh giá lại. Chưa chạy nghiệm thu toàn bộ podcast, highlight, vlog bằng Codex.
+- App hiện chỉ sửa tự động trong khuôn kế hoạch; lỗi cần thay code/template/nguồn phải báo dừng, chưa có agent tự sửa code.
+- Nguồn: David xác nhận và yêu cầu triển khai trong chat Codex ngày 09/11/2026; không coi đề xuất kỹ thuật là quyết định mở rộng phạm vi khác của David.

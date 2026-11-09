@@ -1,1 +1,1 @@
-{"id": "ap-chon-moc", "ten": "Áp mốc Claude chọn", "loai": "co-dinh", "khi": "test -s {W}/chon-moc.json", "lenh": "python3 -I {APP}/ap/ap_chon_moc.py {P} {W}/chon-moc.json"}
+{"id": "ap-chon-moc", "ten": "Áp mốc AI chọn", "loai": "co-dinh", "khi": "test -s {W}/chon-moc.json", "lenh": "python3 -I {APP}/ap/ap_chon_moc.py {P} {W}/chon-moc.json"}

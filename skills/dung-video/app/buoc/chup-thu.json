@@ -1,0 +1,7 @@
+{
+ "id": "chup-thu",
+ "ten": "Chụp thử từng cảnh trước render",
+ "loai": "co-dinh",
+ "nang": true,
+ "lenh": "python3 -I {APP}/ap/chup_thu.py {P} {W}"
+}

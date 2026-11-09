@@ -153,6 +153,13 @@
      "description": "cụm nguyên văn của câu phụ đề Whisper bịa/ảo cần bỏ"
     }
    }
+  },
+  "can_xu_ly_ngoai_ke_hoach": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   },
+   "description": "Lỗi bắt buộc sửa nguồn, âm thanh hoặc code template mà kế hoạch không xử lý được. Có lỗi này thì dừng, không lặp kế hoạch giả sửa."
   }
  }
 }

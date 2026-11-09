@@ -1,0 +1,9 @@
+{
+ "id": "sua-chup-thu-video",
+ "ten": "Sửa ảnh thử và AI kiểm lại",
+ "loai": "co-dinh",
+ "nang": true,
+ "duyet_lai": "duyet-chup-thu-video",
+ "so_vong_sua": 2,
+ "lenh": "python3 -I {APP}/ap/sua_sau_duyet.py video-truoc {P} {W}"
+}

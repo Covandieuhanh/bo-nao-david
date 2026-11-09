@@ -1,4 +1,4 @@
-# MẪU ĐÃ DUYỆT — "Sự tập trung" (video ngang 7:38, David nói trước camera, làm lại video cũ, David duyệt 08/11/2026)
+# MẪU ĐÃ DUYỆT — "Sự kiên trì" (ví dụ kế hoạch; cần đối chiếu hình bản chuẩn David đã duyệt khi chấm thẩm mỹ)
 Đây là MỨC CHẤT LƯỢNG cần đạt: 18 cảnh trộn nhiều loại (thẻ cạnh mặt nhiều dòng hiện theo lời, điểm nhấn trên người, ô người + thẻ, màn chương, minh hoạ toàn màn hình có số chạy / so sánh, màn hành động, màn chốt), gần như mỗi ý lớn đều có hình. Học MẬT ĐỘ, SỰ ĐA DẠNG và cách chữ hiện dần theo lời — không chép chữ (mỗi video chữ là lời của chính video đó).
 ```json
 {

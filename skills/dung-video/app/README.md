@@ -1,7 +1,28 @@
 # App dựng video (chạy trên máy này)
 
-Mục tiêu: **tiết kiệm token tối đa** mà vẫn ra kết quả như skill. Phần cố định do máy chạy; Claude chỉ được gọi ở bước cần phán đoán,
-mỗi lần chỉ nhận đúng thứ cần và trả về một JSON ngắn (trích câu, không dò mốc, không viết code).
+Mục tiêu ưu tiên David xác nhận 09/11/2026: **chất lượng render phải đạt chuẩn skill về thẩm mỹ, nội dung và kỹ thuật**.
+Tiết kiệm token chỉ là mục tiêu phụ sau khi giữ được chất lượng. Chưa có đối chiếu thành phẩm đầy đủ thì không tuyên bố ngang skill.
+
+## Chọn Claude hoặc Codex
+- Việc mới: chọn AI trên giao diện. Việc cũ đang dừng: đổi “AI cho các bước tiếp theo”; không tự chạy lại bước đã xong.
+- Mọi bước có `loai: claude` (tên cũ để tương thích) đều qua adapter chung: Claude CLI hoặc Codex CLI.
+- Codex: cài CLI, `codex login`, kiểm tra `codex login status`. Dùng đăng nhập sẵn của chính máy, không bắt buộc API key.
+- `APP_AI=codex` đặt mặc định cho việc mới; `APP_CODEX_MODEL=<tên>` hoặc `tuy_chon.ai_model` ghim model khi cần đối chiếu có thể lặp lại.
+  Không ghim thì CLI chọn mặc định; log ghi rõ không ghim, không coi là so sánh model cố định.
+- Codex nhận ảnh trực tiếp qua `--image`, trả JSON qua `--output-schema`; chạy read-only và không lưu phiên.
+  JSON bên trong qua kiểm khuôn cục bộ và cùng bộ kiểm nghiệp vụ như Claude.
+- Cache gồm AI, model yêu cầu, mức suy nghĩ, luật, đầu vào và nội dung ảnh. Đổi AI không dùng nhầm kết quả AI cũ.
+- Không tự đổi nhà cung cấp hoặc hạ model khi hết hạn mức. Người dùng chọn rõ ràng trên app.
+- Lời, hình và kế hoạch được gửi đến nhà cung cấp AI đã chọn, dùng tài khoản của David; không phải AI chạy hoàn toàn offline.
+- Tài liệu chính thức: https://learn.chatgpt.com/docs/non-interactive-mode
+
+## Kiểm chất lượng
+- Video người nói: chụp thử từng cảnh → AI duyệt → sửa và AI xem lại ảnh mới trước render.
+- Sau render: AI duyệt → sửa → tạo ảnh kiểm mới → AI duyệt lại. Tối đa 2 lần sửa mỗi đợt; vẫn chưa đạt thì dừng, không chuyển phát hành.
+- Lỗi cần sửa nguồn hoặc code mà JSON không xử lý được: trả `can_xu_ly_ngoai_ke_hoach`, app dừng và báo; chưa có agent tự sửa code trong app.
+- Tờ kiểm bản cuối chia trang 32 mốc, giữ mọi cảnh, không cắt bỏ mốc cuối video.
+- Kiểm kỹ thuật thất bại phải dừng. Các phép kiểm hiện tại chưa thay thế nghe/xem toàn video hoặc David chấm thẩm mỹ.
+- Kiểm thử: `python3 -I app/tests/test_app.py` (chạy từ thư mục skill).
 
 ## Mở app
 App chạy nền tự động (LaunchAgent của macOS): mở máy là có, tắt hay lỗi thì macOS tự bật lại. **Chỉ cần mở http://localhost:8765.**
@@ -10,9 +31,7 @@ Cài một lần trên mỗi máy (đã cài trên Mac chính 08/11/2026):
 zsh ~/Documents/David.Claude/scripts/app-video.sh cai
 ```
 Khác: `app-video.sh xem` (đang chạy không) · `khoi-lai` (sau khi sửa code app; việc đang dựng không bị ngắt) · `go` (gỡ hẳn). Log: `~/Movies/_app/may-chu.log`.
-**Từ iPhone / máy khác (Tailscale):** cài Tailscale, đăng nhập cùng tài khoản với Mac → mở `http://macbook-david:8765`
-(tên đầy đủ `http://macbook-david.tail58c7e2.ts.net:8765`). App chỉ nhận chính Mac + thiết bị trong Tailscale của David; máy cùng wifi
-hay ngoài Internet bị chặn. `app-video.sh cai` cũng giữ Mac không ngủ khi cắm sạc (`caffeinate -s`), để iPhone luôn vào được.
+**Truy cập:** chỉ trên Mac này qua localhost; máy chủ bind loopback. Không mở qua Tailscale hoặc mạng ngoài.
 
 Trong app: **+ Việc mới** → kéo thả / chọn tệp từ máy đang cầm (tải lên Mac), hoặc **📁 Chọn tệp trên Mac** (duyệt Drive Video-goc, Tải về,
 Màn hình nền, Phim… có ảnh nhỏ; chỉ trong thư mục nhà, bỏ thư mục ẩn và ~/Library trừ Google Drive) → tên tập tự đặt, chọn tuỳ chọn (khung xuất, ảnh minh hoạ, thẻ tít, lịch phát,
