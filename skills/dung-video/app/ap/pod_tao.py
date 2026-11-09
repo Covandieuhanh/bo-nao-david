@@ -7,7 +7,8 @@ import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__
 from hl_chung import DV, ENV
 W = Path(sys.argv[1]); tt = json.loads((W / "trang-thai.json").read_text(encoding="utf-8"))
 P = Path(tt["P"]); video = tt.get("video_may") or tt["video"]
-du = lambda: (P / "davinci/media/audio.wav").exists() and (P / "motion/src/project.js").exists()
+du = lambda: (P / "davinci/media/audio.wav").exists() and (P / "davinci/media/audio.wav").stat().st_size > 48000 \
+    and (P / "motion/src/project.js").exists()   # tiếng rỗng (vài chục byte) không được tính là xong
 if P.exists():
     if du(): print(f"Dự án podcast đã có đủ: {P} — bỏ qua"); sys.exit(0)
     rac = Path.home() / ".Trash" / f"{P.parent.name}-2-ban-dai-do-dang-{time.strftime('%H%M%S')}"

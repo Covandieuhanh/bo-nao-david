@@ -6,7 +6,7 @@ Video trên Google Drive (~/Library/CloudStorage) thường chỉ là "bản tr�
 (Drive tự tải về), ghi thẳng vào ~/Movies/tap-<tên>/1-goc/ (đúng chỗ skill để file gốc), kiểm đủ dung lượng + ffprobe mở được,
 rồi ghi `video_may` vào trạng thái để các bước sau dùng bản trên Mac. Video vốn nằm trên Mac thì chỉ kiểm, không chép.
 """
-import ctypes, json, os, subprocess, sys, time
+import ctypes, json, os, re, subprocess, sys, time
 from pathlib import Path
 
 # Tiến trình chạy nền (app tự chạy bằng LaunchAgent) mặc định KHÔNG được kéo tệp "chỉ trên mây" về → EDEADLK "Resource deadlock
@@ -51,9 +51,9 @@ def mo_duoc(p):
     except ValueError:
         pass
     # WAV ghi âm có khi không ghi tổng thời lượng ở đầu tệp (N/A) — vẫn hợp lệ nếu có luồng tiếng/hình và giải mã được 1 giây
-    r = subprocess.run(["ffmpeg", "-v", "error", "-t", "1", "-i", str(p), "-f", "null", "-"], capture_output=True, text=True, env=ENV)
-    q = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "stream=codec_type", "-of", "csv=p=0", str(p)], capture_output=True, text=True, env=ENV)
-    return r.returncode == 0 and bool(q.stdout.strip())
+    r = subprocess.run(["ffmpeg", "-v", "info", "-nostats", "-t", "3", "-i", str(p), "-f", "null", "-"], capture_output=True, text=True, env=ENV)
+    t = re.findall(r"time=(\d+):(\d+):([\d.]+)", r.stderr)   # phải giải mã được thật (tệp 78 byte rỗng vẫn "mở được" — lỗi 09/11/2026)
+    return r.returncode == 0 and bool(t) and (int(t[-1][0]) * 3600 + int(t[-1][1]) * 60 + float(t[-1][2])) > 0.5
 
 
 if not nguon.exists():
