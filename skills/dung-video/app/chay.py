@@ -155,6 +155,18 @@ def chay(tt_path, tu=None, gop_y=None, gop_cho=None, giu=()):
     """tu: làm lại từ bước này · gop_y + gop_cho: bước Claude nhận góp ý kèm KẾ HOẠCH LẦN TRƯỚC (sửa đúng chỗ) ·
     giu: cổng đã duyệt giữ nguyên khi làm lại (vd CONG-1 khi chỉ sửa video)."""
     tt = doc(tt_path); gop_cho = gop_cho or tu
+    ds0 = cong_thuc(tt["cong_thuc"])["buoc"]
+    # TẬP ĐÃ DỌN (don_tap sau cổng 2 chuyển file làm việc vào Thùng rác): mọi lần làm lại / chạy tiếp từ sau bước Tạo dự án phải
+    # dựng lại từ video gốc ở 1-goc, không thì Làm sạch báo IndexError (lỗi 09/11, img-2888). Giữ mọi cổng David đã duyệt; bước
+    # Claude nào đầu vào không đổi dùng lại kết quả cũ (0 token).
+    if ("tao-du-an" in ds0 and tt["buoc"].get("tao-du-an", {}).get("trang_thai") == "xong"
+            and not glob.glob(str(Path(tt["P"]) / "davinci/media/video_goc.*"))
+            and (tu is None or ds0.index(tu) > ds0.index("tao-du-an"))):
+        moc = ds0.index(tu) if tu else len(ds0)          # chỉ giữ cổng đã duyệt nằm TRƯỚC bước David chọn làm lại
+        giu = tuple(set(giu) | {k for k, v in tt["buoc"].items() if v.get("trang_thai") == "da-duyet" and k in ds0 and ds0.index(k) < moc})
+        gop_cho = gop_cho or tu
+        tu = "tao-du-an"
+        print("Tập đã dọn file làm việc → dựng lại từ video gốc (giữ các cổng đã duyệt)", flush=True)
     if not (Path(tt_path).parent / "tuy-chon.txt").exists():      # việc tạo từ bản app cũ: tuỳ chọn mặc định
         ghi_tuy_chon(Path(tt_path).parent, tt.get("tuy_chon", {}))
     ds = cong_thuc(tt["cong_thuc"])["buoc"]
@@ -224,13 +236,7 @@ def main():
         p = KHO / a[1] / "trang-thai.json"; tt = doc(p); loai, gop = a[2], " ".join(a[3:]).strip()
         dich = GOP_TU[loai]; ghi_gop_y(p.parent, f"sau khi xong · {loai}", gop, dich)
         P = Path(tt["P"]); giu = ()
-        if loai != "loc" and not glob.glob(str(P / "davinci/media/video_goc.*")):
-            # Tập đã dọn (don_tap) → không còn bản sạch/cảnh đã render: dựng lại từ video gốc ở 1-goc. Giữ cổng 1 đã duyệt;
-            # bước Claude nào đầu vào không đổi dùng lại kết quả cũ (0 token).
-            print("Tập đã dọn file làm việc → dựng lại từ video gốc (giữ phiếu lọc đã duyệt)")
-            print(chay(p, tu="tao-du-an", gop_y=gop, gop_cho=dich, giu=("CONG-1",)))
-        else:
-            print(chay(p, tu=dich, gop_y=gop, giu=("CONG-1",) if loai != "loc" else ()))
+        print(chay(p, tu=dich, gop_y=gop, giu=("CONG-1",) if loai != "loc" else ()))   # tập đã dọn → chay() tự dựng lại từ video gốc
     elif lenh == "lai":
         print(chay(KHO / a[1] / "trang-thai.json", tu=a[2]))
     elif lenh == "xem":
