@@ -11,7 +11,7 @@ Tên file bắt đầu bằng nhóm: `luat-` cách làm việc với David · `n
 - [Không tự chạy việc của David](luat-khong-tu-chay-viec-cua-david.md) — không tự Chạy tiếp/Duyệt/Làm lại việc David tạo khi chưa có lệnh, kể cả khi Claude làm ngắt (2026-11-08)
 - [Nội dung của David, thẩm mỹ của skill](luat-noi-dung-cua-david.md) — không khuôn lời; học nhịp/trình bày; thẩm mỹ chỉ giữ nhận diện từ 10/11 (2026-11-05)
 - [Thử bằng đoạn ngắn](luat-thu-bang-doan-ngan.md) — thử skill video bằng một đoạn trọn vẹn một ý (không cố định số giây), cho David xem kết quả cuối (2026-11-09)
-- [Sửa thẳng, tái bản định kỳ](luat-sua-thang-tai-ban.md) — đổi luật thì viết lại câu cũ, không chồng câu; máy đo báo thì tái bản từng bộ (skill tai-ban) (2026-11-10)
+- [Sửa thẳng, tái bản định kỳ](luat-sua-thang-tai-ban.md) — đổi luật thì viết lại câu cũ, không chồng câu; máy đo báo thì tái bản toàn bộ một đợt (skill tai-ban) (2026-11-10)
 - [Tự hỏi khi mơ hồ](luat-tu-hoi-khi-mo-ho.md) — 6 tín hiệu tự dừng hỏi, kể cả giữa chừng; không tự đoán rồi làm (2026-11-05)
 
 ## Bộ não và GitHub

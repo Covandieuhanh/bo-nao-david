@@ -7,7 +7,7 @@
   trung     câu dài giống hệt nhau ở hai file (một luật hai nhà)
   sua       số lần bản luật bị sửa kể từ lần tái bản gần nhất (git, mốc ở lich-su.md)
   dong      tổng số dòng bản luật
-Vượt một ngưỡng (bo.json "nguong") → in "NÊN TÁI BẢN" kèm lý do, mã thoát 1. Không sửa file nào.
+Một bộ bất kỳ vượt một ngưỡng (bo.json "nguong") → in một dòng "NÊN TÁI BẢN TOÀN BỘ" kèm lý do, mã thoát 1 (tái bản là cả đợt, mọi bộ). Không sửa file nào.
 Phần "## Nhật ký" cuối file là sổ, không tính.
 """
 import fnmatch, glob, json, os, re, subprocess, sys
@@ -48,10 +48,17 @@ def cau(s):
         if len(t) >= 70: yield t
 
 def moc(bo):
+    """Mốc gần nhất của bộ: tag chung tai-ban-<n> (tái bản toàn bộ) hoặc tag riêng cũ tai-ban-<bộ>-<n>, lấy tag mới nhất có thật trong git."""
     p = os.path.join(HERE, 'lich-su.md')
     if not os.path.exists(p): return None
-    tags = re.findall(rf"`(tai-ban-{bo}-\d+)`", open(p, encoding='utf-8').read())
-    return tags[-1] if tags else None
+    tags = set(re.findall(rf"`(tai-ban-(?:{bo}-)?\d+)`", open(p, encoding='utf-8').read()))
+    try:
+        out = subprocess.run(['git', '-C', REPO, 'for-each-ref', '--sort=creatordate', '--format=%(refname:short)', 'refs/tags/tai-ban-*'],
+                             capture_output=True, text=True, check=True).stdout.split()
+    except Exception:
+        out = []
+    co = [t for t in out if t in tags]
+    return co[-1] if co else None
 
 def so_lan_sua(bo, files):
     m = moc(bo)
@@ -63,7 +70,7 @@ def so_lan_sua(bo, files):
     except Exception:
         return 0, m
 
-ket = 0
+ket = 0; vuot_bo = []
 for bo in (args or [k for k in CFG if not k.startswith('_')]):
     if bo not in CFG: print(f'không có bộ "{bo}" trong bo.json'); continue
     files = ban_luat(bo)
@@ -90,7 +97,8 @@ for bo in (args or [k for k in CFG if not k.startswith('_')]):
         for c, fs in list(trung.items())[: (len(trung) if CHI_TIET else 3)]:
             print(f"   - \"{c[:90]}…\" ở {', '.join(sorted(fs))}")
     if vuot:
-        ket = 1; print(f"  ⇒ NÊN TÁI BẢN bộ {bo}: " + '; '.join(vuot))
+        ket = 1; vuot_bo.append(f"{bo} ({'; '.join(vuot)})"); print(f"  ⇒ bộ {bo} vượt ngưỡng: " + '; '.join(vuot))
     else:
-        print(f"  ⇒ Chưa cần tái bản bộ {bo}.")
+        print(f"  ⇒ bộ {bo} dưới ngưỡng.")
+print('\n' + (f"⇒ NÊN TÁI BẢN TOÀN BỘ (skill tai-ban): vượt ngưỡng ở {', '.join(vuot_bo)}" if vuot_bo else "⇒ Chưa cần tái bản."))
 sys.exit(ket)

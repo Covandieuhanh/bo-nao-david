@@ -41,7 +41,7 @@ David thường chỉ gửi tài nguyên (video, ghi âm) mà không kèm yêu c
 | Cắt highlight dọc | `cat-highlight-video` | [SKILL.md](skills/dung-video/cat-highlight-video/SKILL.md) |
 | Viết bài, kịch bản theo giọng David | giọng văn | [giong-van-david.md](skills/dung-video/ho-so/giong-van-david.md) |
 | Điều khiển trình duyệt | `playwright-cli` | [SKILL.md](skills/playwright-cli/SKILL.md) |
-| Luật chồng chéo, viết lại toàn bộ một bộ skill ("tái bản") | `tai-ban` | [SKILL.md](skills/tai-ban/SKILL.md) |
+| Luật chồng chéo, viết lại toàn bộ bộ não ("tái bản") | `tai-ban` | [SKILL.md](skills/tai-ban/SKILL.md) |
 
 Muốn hiểu toàn bộ hệ dựng video: [GIOI-THIEU.md](skills/dung-video/GIOI-THIEU.md), [luat-chung.md](skills/dung-video/luat-chung.md).
 
