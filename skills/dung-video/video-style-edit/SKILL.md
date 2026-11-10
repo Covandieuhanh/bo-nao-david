@@ -107,7 +107,7 @@ Tạo `~/Movies/tap-<tên>/2-ban-dai/` (gốc tự đặt vào `tap-<tên>/1-goc
 ## Tiêu chí đạt (soát trước khi giao)
 - Không thẻ tít mở đầu trừ khi được yêu cầu · có trộn nhiều loại điểm nhấn (người + phụ đề / `nhan` / cảnh toàn màn hình), không che mặt, không chữ to tự do đè người
 - Bố cục hợp nội dung (xem stills: người / ý có rõ không) · phụ đề đúng chữ, không bị đè · tiếng Việt đủ dấu · không gì lọt vùng đỏ
-- Màn chốt nguyên văn + thẻ cuối · (YouTube video dài) màn kết, chương, teaser · thumbnail nếu ngang · phat-hanh.md + so-lieu.md
+- Màn chốt nguyên văn + thẻ cuối (video dọc ngắn: màn chốt trên hình, không thẻ cuối, không thanh thời gian — luat-chung 5) · (YouTube video dài) màn kết, chương, teaser · thumbnail nếu ngang · phat-hanh.md + so-lieu.md
 - Âm lượng theo chuẩn chung, tiếng rè không tăng so nguồn; thời lượng đúng
 
 ## Sửa theo góp ý

@@ -30,6 +30,7 @@ const Tick = ({p, size}) => (
 );
 
 import HS from '../hoso.json';
+import {NGAN_DOC} from '../thanh.js';   // video dọc ngắn → màn chốt trên hình (10/11/2026)
 // 2 trạng thái: không câu trích dài — chỉ biểu tượng + tick + nhãn ngắn `label` (≤ 4 chữ, cụm việc nguyên văn); phụ đề vẫn chạy
 export const Action = ({start, icon = 'check', quote: q0, quoteAt, doneAt, eyebrow, label}) => {
   // 2 trạng thái: nhãn = `label`, không có thì lấy cụm **nhấn** trong câu (cụm việc nguyên văn), tối đa 5 chữ
@@ -110,6 +111,13 @@ const CtaBox = ({text, kind, top, f, tickF, left = SAFE.left, width = SAFE_W}) =
 export const Cta = ({start, text, kind}) => {
   const f = useCurrentFrame();
   const {durationInFrames: d} = useVideoConfig();
+  // VIDEO DỌC NGẮN (David chốt 10/11/2026): không thu nhỏ video — câu chốt hiện ngay trên khung hình, đáy vùng an toàn, video kết ở chữ cuối
+  if (NGAN_DOC && !project.podcast) {
+    return <AbsoluteFill style={{opacity: ease(f, 0, 8)}}>
+      <AbsoluteFill style={{background: 'linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0) 45%)'}} />
+      <CtaBox text={text} kind={kind} top={SAFE.bottom - 330} f={f} tickF={fr(start + CTA_TICK) - fr(start)} />
+    </AbsoluteFill>;
+  }
   if (project.podcast) {
     return <AbsoluteFill style={{opacity: inOut(f, d, 10, 10)}}><CtaBox text={text} kind={kind} top={SAFE.overlayTop + 10} f={f} tickF={fr(start + CTA_TICK) - fr(start)} /></AbsoluteFill>;
   }

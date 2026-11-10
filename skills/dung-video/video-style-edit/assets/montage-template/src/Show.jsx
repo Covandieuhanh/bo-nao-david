@@ -21,7 +21,7 @@ import {Icon} from './lib/Icons';
 import BRAND from './lib/brand.json';
 import {YtEnd} from './lib/YtEnd';
 import {EndCardBody} from './lib/EndCardBody';
-import {khung} from './lib/nhan-dien';   // bộ nhận diện chung: vùng an toàn, dấu góc, thanh thời gian (David chốt 08/11/2026)
+import {khung, nganDoc} from './lib/nhan-dien';   // bộ nhận diện chung: vùng an toàn, dấu góc, thanh thời gian (David chốt 08/11/2026)
 import {DauGoc} from './lib/DauGoc';
 import {ThanhThoiGian} from './lib/ThanhThoiGian';   // ruột thẻ cuối dùng chung (khối 08)   // màn kết YouTube 15–20 s (chép từ remotion-template, một nguồn)   // bộ nhận diện David (một nguồn với chế độ 1 video, podcast, highlight)   // biểu tượng nét vẽ dần — chép từ remotion-template (một nguồn với chế độ 1 video)   // câu màn chốt — chép từ remotion-template (một nguồn với chế độ 1 video)
 
@@ -48,8 +48,9 @@ const TONE = EDL.TONE || [];
 const toneAt = (t) => (TONE.find(([a, b]) => t >= a && t < b) || [0, 0, 'soi'])[2];
 // THANH THỜI GIAN (David chốt 08/11/2026): mọi loại video đều có, kể cả clip ngắn. HL.bar → thanh của cả tập gốc (SrcBar), còn lại thanh
 // thường của chính video (ThanhThoiGian, nhan-dien.js). Tắt tay: `export const THANH = false` trong edl.js. Phụ đề lên trên thanh.
-const THANH = EDL.THANH !== false;
-const HL_LIFT = HL && HL.bar !== false ? 56 : THANH ? SAFE.bottom - SUB.bottomGap - K.capBottom : 0;
+const NGAN_DOC = nganDoc(W, H, TOTAL, EDL.SHORT || EDL.HL);   // David chốt 10/11/2026: dọc ngắn → không thanh, không thẻ cuối, màn chốt trên hình
+const THANH = EDL.THANH ?? !NGAN_DOC;
+const HL_LIFT = HL && HL.bar !== false && THANH ? 56 : THANH ? SAFE.bottom - SUB.bottomGap - K.capBottom : 0;
 // SHORT (edl.js, highlight luôn bật): phụ đề 1–3 chữ to mỗi nhịp kiểu kênh lớn (subStyle.js ShortLine) — vlog dài giữ hộp tối
 const SHORT = !!EDL.SHORT;
 // DẢI PHỤ ĐỀ (người dùng chỉ ra 2026-11-04: thẻ địa điểm đè phụ đề): phụ đề tối đa 2 dòng ≈ 140 px ở đáy vùng an toàn — giống
@@ -570,7 +571,7 @@ const Action = ({len, quote, doneAt, start}) => {
 // bên dưới — câu Claude TỰ SÁNG TẠO theo nội dung: CTA = {text, kind} trong edl.js (null = không có màn chốt). Phụ đề vẫn chạy ở đáy. =====
 const CTA_LEN = 4;
 const OVS = holdEnds(OVERLAYS, CTA ? TOTAL - CTA_LEN : TOTAL, HS);   // lớp phủ đã kéo dài theo luật giữ (giu.js)
-const ctaK = (f) => !CTA ? 0 : ease(f, fr(TOTAL - CTA_LEN), fr(TOTAL - CTA_LEN) + 14);
+const ctaK = (f) => !CTA || NGAN_DOC ? 0 : ease(f, fr(TOTAL - CTA_LEN), fr(TOTAL - CTA_LEN) + 14);
 const WIN = {w: 400, h: Math.round(400 * 16 / 9), y: 240};
 const ctaFrame = (k) => k <= 0 ? {} : {transform: `translate(${(W - WIN.w) / 2 * k}px, ${WIN.y * k}px) scale(${1 + (WIN.w / W - 1) * k})`,
   transformOrigin: '0 0', borderRadius: 36 / (WIN.w / W) * k, overflow: 'hidden', border: k > 0.5 ? `${3 / (WIN.w / W)}px solid ${C.accent}` : 'none'};
@@ -580,7 +581,7 @@ const CtaEnd = ({text, kind}) => {
   const kd = kind || (text ? 'comment' : CTA_DEF.kind);
   const tk = pop(f, fr(CTA_TICK), {damping: 9, stiffness: 220, mass: 0.6});   // tick nhỏ + tiếng ting (Audio trong Show)
   return (
-    <div style={{position: 'absolute', left: SAFE.left, top: WIN.y + WIN.h + 30, width: SAFE_W, padding: '30px 34px', boxSizing: 'border-box',
+    <div style={{position: 'absolute', left: SAFE.left, top: NGAN_DOC ? SAFE.bottom - 330 : WIN.y + WIN.h + 30, width: SAFE_W, padding: '30px 34px', boxSizing: 'border-box',
       borderRadius: 36, background: C.card, border: `2px solid ${C.line}`, boxShadow: '0 30px 80px rgba(0,0,0,0.45)', display: 'flex',
       alignItems: 'center', gap: 30, opacity: ease(f, 10, 18), transform: `translateY(${(1 - pop(f, 12)) * 40}px)`}}>
       <div style={{position: 'relative', flexShrink: 0, width: 140, height: 140, borderRadius: '50%', background: C.accent, display: 'flex',
@@ -605,7 +606,7 @@ const CtaEnd = ({text, kind}) => {
 // ===== THẺ CUỐI (highlight, người dùng chốt 2026-11-03): ~1,8 s SAU màn chốt, dẫn về bản đầy đủ — kiểu thẻ cuối Have A Sip.
 // ENDCARD = {title, speaker, clip, at, len} trong edl.js (null = không có). CHỈ chữ của bản gốc: title = tên tập gốc, speaker = tên
 // người nói gốc — không nhãn tự viết ("BẢN ĐẦY ĐỦ", "XEM NGAY"…). Ảnh = khung đứng hình của người nói (clip, at = giây trong clip). =====
-const ENDCARD = EDL.ENDCARD || null;
+const ENDCARD = (EDL.THE_CUOI ?? !NGAN_DOC) ? (EDL.ENDCARD || null) : null;   // dọc ngắn: không thẻ cuối (10/11/2026)
 const EndCard = ({title, speaker, clip, at, play = true, yt = 0, schedule = ''}) => {   // schedule: lịch phát David đưa (PO-6)   // play: nhãn "Bản đầy đủ trên kênh …"; false = thẻ nhận diện (vlog)
   const f = useCurrentFrame();
   // yt (giây, plan.json "ytEnd"): sau thẻ nhận diện là MÀN KẾT YOUTUBE (khung chừa 2 video + nút đăng ký), có nhạc kênh nhỏ
@@ -864,7 +865,7 @@ export const Show = () => {
           </Sequence>
         );
       })}
-      <SrcBar />
+      {THANH && <SrcBar />}
       {THANH && !(HL && HL.bar !== false) && <Sequence from={0} durationInFrames={fr(TOTAL)} name="thanh-thoi-gian" layout="none"><ThanhGoc /></Sequence>}
       {ENDCARD && (
         <Sequence from={fr(TOTAL)} name="the-cuoi" layout="none"><EndCard {...ENDCARD} /></Sequence>

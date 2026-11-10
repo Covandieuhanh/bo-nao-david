@@ -1,6 +1,6 @@
 ---
 name: video-doc-khuon-chu-chinh
-description: Khuôn podcast đồ hoạ dọc David chốt: chữ chính thay phụ đề, nhạc thấp hơn giọng ~23 dB vẫn nghe được, không ép hành động, màn hình cuối mời xem YouTube (2026-11-06)
+description: Khuôn podcast đồ hoạ dọc David chốt: chữ chính thay phụ đề, nhạc thấp hơn giọng ~23 dB vẫn nghe được, không ép hành động, không màn hình cuối (10/11) (2026-11-06)
 metadata:
   type: feedback
 ---
@@ -9,7 +9,7 @@ Podcast đồ hoạ dọc trích từ video dài dùng khuôn của bản `clip1
 
 **Mẫu David duyệt 06/11/2026:** cả 3 clip "Đi trainer" (`~/Movies/tap-di-trainer/3-highlight/clip-A|B|C`, Drive `Video-xong/tap-di-trainer/highlight/clip-a|b|c.mp4`). Dựng video dọc sau này phải giống 3 clip này.
 
-**Màn hình cuối (chốt thêm 06/11/2026):** không logo YouTube hay nền tảng nào, chỉ ghi "Bản đầy đủ trên kênh Trainer David Trần". Clip đăng Reels và TikTok thì nút không bấm được, lại có thể bị hạn chế phân phối.
+**Màn hình cuối — ĐÃ BỎ 10/11/2026** (video dọc ngắn không thẻ cuối, xem [[video-doc-ngan-khong-thanh]]). Luật cũ (06/11/2026): không logo YouTube hay nền tảng nào, chỉ ghi "Bản đầy đủ trên kênh Trainer David Trần". Clip đăng Reels và TikTok thì nút không bấm được, lại có thể bị hạn chế phân phối.
 
 **Why:** David thấy phụ đề chồng đồ hoạ bị rối trên màn dọc; nhạc phải nghe được để dẫn cảm xúc nhưng không che lời (mức 30 dB thì mất hẳn, mức gần giọng thì che từ); câu kêu gọi ghép vào thì ép buộc, mất trọn vẹn.
 

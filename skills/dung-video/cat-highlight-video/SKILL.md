@@ -38,7 +38,7 @@ Vị trí và thành phần cố định (dấu góc, thanh thời gian, phụ �
 3. **Mọi chữ = nguyên văn** (thẻ tít, phụ đề, chữ to, màn hành động, ý đang bàn, màn chốt, thẻ cuối) — luat-chung 1, David chốt 08/11: chỉ chọn câu,
    bỏ bớt chữ ở đầu/cuối câu, sửa chính tả Whisper. Không có ngoại lệ. Mô tả bài đăng theo giọng David (khối 15).
 4. **Màn chốt — một luật cho cả hai nhánh** (08/11): người nói có câu mệnh lệnh/giao việc hay câu mời bình luận nguyên văn ("Hãy chọn…",
-   "thử làm…") → màn chốt bằng câu đó. Không có → clip kết ở câu chốt ý, lặng 1 s, rồi sang thẻ cuối; **không dừng báo David**, không ghép
+   "thử làm…") → màn chốt bằng câu đó. Không có → clip kết ở câu chốt ý (không thẻ cuối, 10/11); **không dừng báo David**, không ghép
    câu kêu gọi từ chỗ khác; clip vẫn phải đạt `mang_ve`. "Vấn đề / Kết quả" để ở mô tả và bình luận ghim.
 5. **Ý của cả video**: luôn làm bước 2 (bản đồ cả video) trước khi chọn. Mỗi clip phục vụ lời hứa cốt lõi hoặc một ý lớn của video. **Người xem clip là người xem độc lập** (06/11): mỗi clip qua đủ bốn câu chọn ý và tự đạt câu hỏi gốc của bộ lọc (làm chủ bản thân / công việc); chỉ nói cảm xúc hoặc chỉ kể chuyện thì không đạt.
 6. **Không thứ tự cố định**: vị trí lời kêu gọi tự bố trí theo mạch (khối 13, bước 4); đổi thứ tự không được làm sai nghĩa. Độ dài theo ý.
@@ -56,7 +56,7 @@ Vị trí và thành phần cố định (dấu góc, thanh thời gian, phụ �
    Nhạc lấy từ **kho nhạc kênh** (`$SKILL/assets/music/`), Claude tự chọn theo tuyến nội dung (khối 09). Mức nhạc
    theo chuẩn âm lượng chung (thấp hơn giọng ~23 dB). Không nhãn kỹ thuật, không thẻ "TẬP NÀY CÓ GÌ?"/tên vòng.
 10. **Chừa cho bản đầy đủ đúng chỗ**: chừa một chuyện khác hoặc ý mở rộng; ý trong clip phải đi đến hết. Câu mở ưu tiên bất ngờ / kết quả lớn / tiền cược hơn lời than chung chung.
-11. **Thẻ cuối dẫn về bản đầy đủ** sau màn chốt (kiểu Have A Sip), cả hai nhánh: gạch nhận diện + **"Bản đầy đủ trên kênh <`man_cuoi_kenh`>"**
+11. **BỎ ở clip dọc (David chốt 10/11/2026, luat-chung 5): không thẻ cuối, không thanh thời gian; dẫn về bản đầy đủ nằm ở caption + bình luận ghim.** Luật cũ giữ để tham khảo: **Thẻ cuối dẫn về bản đầy đủ** sau màn chốt (kiểu Have A Sip), cả hai nhánh: gạch nhận diện + **"Bản đầy đủ trên kênh <`man_cuoi_kenh`>"**
     + **tên tập gốc** (+ tên người nói gốc; + lịch phát chỉ khi David đưa cho đúng video đó: `"schedule"`). **Không nút phát, không logo
     nền tảng, không câu do Claude viết** (06/11, 08/11). Nhánh người nói: nền là ảnh đứng hình người nói. Ghi `"endcard": {"title": "<tên tập gốc>",
     "speaker": "<tên người nói>"}` vào `phuong-an.json` (nguồn podcast: `{}` là đủ). Không có tên tập → hỏi David. Kiểu vòng lặp → bỏ thẻ cuối.
@@ -151,7 +151,7 @@ Mẫu: `~/Movies/tap-di-trainer/3-highlight/clip-{A,B,C}`, thành phẩm ở Dri
   nguyên văn; `ages` cần `pillAt` kể cả khi nhãn tự ẩn, thiếu thì lỗi "Frame NaN"), đặt sau phần dồn khung.
 - Tối đa một `card` nếu ý chính có con số, so sánh, danh sách — không thì bỏ.
 - **Màn chốt** theo luật 4: có câu kêu gọi nguyên văn → `cta` `text` = câu đó (≤ 55 ký tự; dài hơn → chọn vế trọn ý; `**cụm**` tô nhấn),
-  `kind` theo việc được kêu gọi; báo cáo ghi mốc của câu. Không có → kết ở câu chốt ý, lặng 1 s (nhạc nổi lên), rồi thẻ cuối.
+  `kind` theo việc được kêu gọi; báo cáo ghi mốc của câu. Không có → kết ở câu chốt ý (không thẻ cuối, 10/11).
 - Kiểm thêm khi chụp thử: chữ to có đủ lớn không (dòng dài làm chữ co nhỏ → mất lực, rút cụm); vài mốc thấy chữ chính đọc rõ, không chạm
   sóng âm. `phu-de@…` không có trong `composite_stills.sh` khi đứng riêng → tự ghép lên `video_goc.mp4` cùng mốc.
 - Bản cuối: 1080×1920, thời lượng theo ý, âm lượng/tiếng rè bằng nguồn.
@@ -193,7 +193,7 @@ $SKILL/assets/music/               # soi-*.mp3 · lang-*.mp3 — kho nhạc kên
 2. Clip cùng loại video gốc, dọc 1080×1920.
 3. Mọi chữ trên clip nguyên văn (cả tít, màn chốt, thẻ cuối).
 4. Không cắt vào giữa ý; lời bản cắt đã chép lại đối chiếu khớp.
-5. Phụ đề cụm ~5–8 chữ (tối đa theo hồ sơ `phu_de.ngan_max_chu`) không chồng chữ motion graphic; có thanh thời gian và thẻ cuối đúng bộ nhận diện.
+5. Phụ đề cụm ~5–8 chữ (tối đa theo hồ sơ `phu_de.ngan_max_chu`) không chồng chữ motion graphic; không thanh thời gian, không thẻ cuối (10/11).
 6. Nhạc từ kho kênh, thấp hơn giọng ~23 dB.
 7. Có dang-bai.md (lịch đăng, mốc bìa, mô tả, bình luận ghim) + so-lieu.md; David không phải sửa lại vì trái luật đã chốt.
 8. David chốt cả tập → dọn file tạm luôn bằng `don_tap.py --xoa` (khối 17), không hỏi lại; chỉ hỏi phần ⏸ đang dở.
@@ -204,4 +204,5 @@ $SKILL/assets/music/               # soi-*.mp3 · lang-*.mp3 — kho nhạc kên
 - Ví dụ thật (bản chuẩn 06/11): `~/Movies/tap-di-trainer/3-highlight/clip-A|B|C`. Nguồn có người nói chưa có ví dụ đang giữ trên máy.
 
 ## Nhật ký
+- 2026-11-10 · David chốt: clip dọc bỏ thanh thời gian và thẻ cuối, màn chốt trên hình (luat-chung 5); `hl_edl.py` vẫn ghi ENDCARD nhưng khuôn tự bỏ (`nganDoc`).
 - 2026-11-08 · chuẩn hoá (`dang-lam/chuan-hoa-skill.md` bước 3): mọi chữ nguyên văn, tít = cụm đắt nhất, bỏ "tít báo" (N3); màn chốt một luật cả hai nhánh, không có câu kêu gọi thì không dừng (N13); thẻ cuối "Bản đầy đủ trên kênh …", không nút phát, bỏ câu gợi tò mò Claude viết (N14); phụ đề cụm 5–8 chữ (N5); bỏ số nhịp/mật độ (N6); "kho nhạc kênh" (N7); gộp khuôn podcast dọc vào kịch bản 7B; đọc trước 3 file; bước nhẹ 0–1; sửa link tài liệu; rút mô tả; thêm "Xong khi". Chi tiết các quyết định trước: `references/changelog.md`.

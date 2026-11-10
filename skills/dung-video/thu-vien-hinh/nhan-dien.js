@@ -15,4 +15,7 @@ export const khung = (W, H) => {
     capBottom: V ? 1374 : tl.y - 14,                                    // đáy phụ đề ngay trên thanh thời gian (= podframe.js PF.capBottom)
   };
 };
+// VIDEO DỌC NGẮN (Reels / TikTok / Shorts — David chốt 10/11/2026): KHÔNG thanh thời gian, KHÔNG thẻ cuối, màn chốt hiện chữ trên khung hình
+// (không thu nhỏ video) để video kết ở chữ cuối và tự lặp. Dọc + (ép ngắn | ≤ 90 s). Video ngang / dọc dài giữ nguyên bộ nhận diện.
+export const nganDoc = (W, H, dur, ep) => H > W && (!!ep || (dur > 0 && dur <= 90));
 export const mmss = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;

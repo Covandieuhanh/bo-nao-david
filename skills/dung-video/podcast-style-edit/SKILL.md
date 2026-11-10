@@ -31,7 +31,7 @@ Luật chung video ở `../luat-chung.md` (chữ nguyên văn, không cắt vide
 - **Không thẻ tít mở đầu, không bìa ghép trước video**: thẻ tít chỉ khi David yêu cầu, chữ nguyên văn. Ảnh bìa = **thumbnail** ở bước
   phát hành, chỉ khi xuất ngang VÀ đăng YouTube; video dọc chọn khung bìa khi đăng. `COVER` chỉ bật khi David yêu cầu.
 - **Không ghi số tập, ngày ghi âm hay thông tin phát hành nào lên video** (05/11) — không đặt `STAGE.episode`, không hỏi; dải đáy chỉ có thanh thời gian.
-- **Thanh thời gian** ở đáy vùng an toàn (đã chạy · "còn m:ss") suốt video, trên mọi cảnh.
+- **Thanh thời gian** ở đáy vùng an toàn (đã chạy · "còn m:ss") suốt video, trên mọi cảnh — trừ podcast dọc trích ngắn: không thanh, không thẻ cuối (10/11/2026, luat-chung 5).
 - **Màn chốt** `cta` cuối video: ô câu chốt giữa sân khấu = **nguyên văn câu David nói cuối tập** (luat-chung 1). "Vấn đề / Kết quả"
   chỉ ở bài đăng; "gỡ" chỉ lên video khi David nói trong tập.
 - Không làm bản cho app chỉnh sửa (CapCut/DaVinci); dọn file tạm sau khi David chốt (`don_tap.py`, khối 17).

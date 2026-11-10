@@ -1,9 +1,10 @@
 // THANH THỜI GIAN ở đáy (David chốt 08/11/2026): người xem biết video đang ở phút nào, còn bao lâu.
-// Bật cho MỌI loại video, kể cả clip ngắn (David chốt 08/11/2026: các loại có tiêu chuẩn giống nhau). Tắt tay: project.thanh = false.
+// Video DỌC NGẮN thì TẮT (David chốt 10/11/2026: nền tảng đã có thanh riêng, "còn 0:20" khiến người xem lướt đi). Ép tay: project.thanh = true|false.
 import project from './project.js';
 import HL from './highlight.js';
 import HS from './hoso.json';
 import {POD} from './podframe';
 const PD = HS.phu_de || {};
 export const SHORT = project.short ?? (!!HL || (project.height > project.width && (POD || (project.duration > 0 && project.duration <= (PD.ngan_max_s ?? 90)))));
-export const TL_ON = project.thanh ?? true;
+export const NGAN_DOC = project.height > project.width && SHORT;   // video dọc ngắn: không thanh, không thẻ cuối, màn chốt trên hình
+export const TL_ON = project.thanh ?? !NGAN_DOC;

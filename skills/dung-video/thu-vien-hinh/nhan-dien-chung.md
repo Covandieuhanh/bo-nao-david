@@ -10,16 +10,17 @@ tự do chọn theo loại video và theo từng cảnh. Một nguồn code: `nh
 |---|---|---|---|
 | Vùng an toàn | x 70–900, y 210–1420 (chừa nút, chữ của Reels/TikTok) | lề 5 % mỗi bên, trên 5 %, dưới 15 % | `khung().safe` |
 | Dấu góc ● DAVID │ chủ đề | góc trên trái, top 228 | góc trên trái, top 54 (sát mép vùng an toàn) | `DauGoc.jsx`, `khung().brand` |
-| Thanh thời gian (đã chạy · thanh · còn m:ss) | y 1386, cao 30 | y 884, cao 30 | `ThanhThoiGian.jsx`, `khung().tl` |
+| Thanh thời gian (đã chạy · thanh · còn m:ss) | y 1386, cao 30 — **chỉ video dọc dài**; dọc ngắn không có (10/11) | y 884, cao 30 | `ThanhThoiGian.jsx`, `khung().tl` |
 | Phụ đề | luôn chạy, đáy ngay trên thanh thời gian (y 1374) | như dọc (y 870) | `subStyle.js`, `khung().capBottom` |
-| Màn chốt (`cta`) | câu nguyên văn ≤ 55 ký tự, tick + "ting" | như dọc, ô video 50 % bề ngang, ẩn dấu góc | `cta.js`, `Action.jsx` / `Show.jsx` |
-| Thẻ cuối clip ngắn | gạch cam + "BẢN ĐẦY ĐỦ TRÊN KÊNH TRAINER DAVID TRẦN" + tên tập + người nói | — | `EndCardBody.jsx` |
+| Màn chốt (`cta`) | câu nguyên văn ≤ 55 ký tự, tick + "ting"; dọc ngắn: ô câu đặt trên khung hình, không thu nhỏ video (10/11) | như dọc, ô video 50 % bề ngang, ẩn dấu góc | `cta.js`, `Action.jsx` / `Show.jsx` |
+| Thẻ cuối | **bỏ ở video dọc ngắn** (10/11/2026); video dọc dài: nhận diện / dẫn bản đầy đủ | — | `EndCardBody.jsx` |
 | Màn kết YouTube (video dài) | — | 15–20 s, khung chừa 2 video + nút đăng ký | `YtEnd.jsx` |
 
 Luật kèm theo:
 - **Không logo nền tảng, không nút phát đỏ** ở bất kỳ thẻ nào (06/11/2026).
 - Mọi lớp phủ góc trên nằm **dưới** `brand.bottom`; mọi lớp phủ đáy nằm **trên** phụ đề và thanh thời gian.
-- Thanh thời gian tắt tay chỉ khi David yêu cầu: `project.thanh = false` (khuôn 1 video, podcast) · `export const THANH = false` (edl.js khuôn ghép).
+- **Video dọc ngắn** (Reels/TikTok/Shorts — dọc ≤ 90 s, mọi highlight, podcast dọc trích ngắn; David chốt 10/11/2026): **không thanh thời gian, không thẻ cuối**; màn chốt hiện câu nguyên văn ngay trên khung hình (không thu nhỏ video), video kết ở chữ cuối để tự lặp. Lý do: nền tảng đã có thanh riêng, "còn 0:20" và màn "hết rồi" khiến người xem lướt đi, thẻ cuối làm đứt vòng lặp. Dẫn về bản đầy đủ / mời bình luận để ở caption + bình luận ghim. Máy tự nhận (`nganDoc()` trong `nhan-dien.js`, `NGAN_DOC` trong `thanh.js`); ép tay `project.thanh` / `project.theCuoi` (1 video, podcast) · `THANH` / `THE_CUOI` (edl.js).
+- Ép tay thanh thời gian: `project.thanh = false` (khuôn 1 video, podcast) · `export const THANH = false` (edl.js khuôn ghép).
 - Highlight có thanh của cả tập gốc (`HL.bar`) thì thanh đó thay thanh thường, cùng vị trí.
 - Màu, font, nét vẽ, tiếng ký hiệu, nhạc kênh: `tokens.js`, `Icons.jsx`, `brand.json` — không đổi khi học video mẫu.
 

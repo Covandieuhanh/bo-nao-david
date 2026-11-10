@@ -17,7 +17,7 @@ giữ người xem; **không chép thẩm mỹ**, **chỉ thêm, không thay** c
 - **Ngoại lệ được viết lời** (chỉ hai chỗ — (a), (b) không còn áp cho chữ TRÊN video, xem dòng trên): (a) **câu màn chốt** của video thường (làm video / vlog / podcast) — Claude tự viết, giọng
   David, ≤ 55 ký tự, một hành động; (b) **tiêu đề, thumbnail, thẻ tít mở đầu highlight** — viết như tít báo, ĐÚNG Ý người nói,
   không thêm thông tin/lời hứa ngoài video, không giật tít sai sự thật (chuẩn DOAC: "A PATIENT ON MY FLIGHT HAD 5 MINUTES TO LIVE!");
-  (c) **nhãn cố định của khung** (David duyệt 2026-11-04): "XEM BẢN ĐẦY ĐỦ" trên thẻ cuối highlight, và **lịch phát do David đưa**
+  (c) **nhãn cố định của khung** (David duyệt 2026-11-04): "XEM BẢN ĐẦY ĐỦ" trên thẻ cuối highlight (thẻ này đã bỏ ở video dọc ngắn 10/11/2026, mục 5), và **lịch phát do David đưa**
   ("Tập mới mỗi thứ 6") trên thẻ cuối / màn kết — `project.schedule` (1 video), `STAGE.schedule` (podcast), plan.json `"schedule"`
   (vlog), `"endcard": {"schedule"}` (highlight). Không tự đặt lịch.
 - **Lằn ranh** (loại khỏi mọi chữ/clip): huyền học, thần số học, phong thuỷ, lá số · "chữa lành", công dụng sức khoẻ của sản phẩm ·
@@ -74,7 +74,8 @@ Dấu góc ● DAVID │ chủ đề · khuôn tiêu đề (dòng nhỏ cam → 
   thanh thời gian, phụ đề, màn chốt, thẻ cuối. Một nguồn: `thu-vien-hinh/nhan-dien-chung.md` + `nhan-dien.js`. Chỉ motion graphics là tự do theo loại, theo cảnh.
 - **Dấu góc** (sửa 08/11/2026): khung dọc 228 px, khung ngang sát mép trên vùng an toàn (`BRAND_TOP` / `BRAND_BOT` trong `theme.js`).
   Mọi lớp phủ ở góc trên (thẻ, điểm nhấn, bố cục) nằm dưới `BRAND_BOT`; màn chốt ngang ẩn dấu góc. Không viết số vị trí của khung dọc vào khung ngang.
-- **Thanh thời gian ở đáy** (David chốt 08/11/2026): MỌI video đều có, kể cả clip ngắn (đã chạy mm:ss · còn mm:ss). Tắt tay chỉ khi David yêu cầu.
+- **Thanh thời gian ở đáy** (David chốt 08/11/2026): video ngang và video dọc dài có (đã chạy mm:ss · còn mm:ss).
+- **Video dọc ngắn** (Reels/TikTok/Shorts — dọc ≤ 90 s, mọi highlight, podcast dọc trích ngắn; David chốt 10/11/2026): **không thanh thời gian, không thẻ cuối**; màn chốt hiện câu nguyên văn ngay trên khung hình (không thu nhỏ video), video kết ở chữ cuối để tự lặp. Lý do: nền tảng đã có thanh riêng, "còn 0:20" và màn "hết rồi" khiến người xem lướt đi, thẻ cuối làm đứt vòng lặp. Dẫn về bản đầy đủ / mời bình luận để ở caption + bình luận ghim. Máy tự nhận (`nganDoc()` trong `nhan-dien.js`, `NGAN_DOC` trong `thanh.js`); ép tay `project.thanh` / `project.theCuoi` (1 video, podcast) · `THANH` / `THE_CUOI` (edl.js).
 
 ## 6. Lời kêu gọi
 - Ưu tiên **câu mệnh lệnh nằm sẵn trong lời** ("Hãy chọn…", "thử làm…") — top video gần như không có câu "hãy bình luận".

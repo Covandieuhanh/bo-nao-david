@@ -25,6 +25,7 @@
 - **Màn chốt** (`cta`, ~4 s cuối mọi video): video lùi vào khung bo góc, một câu kêu gọi + biểu tượng + tick + "ting".
   Câu = **NGUYÊN VĂN lời người nói** (07/11): video của David dùng câu David nói ở cuối (lời kêu gọi, lời chào…); highlight theo
   `cat-highlight-video` luật 4. Không tự viết; `kind` theo ý câu.
+- **Video dọc ngắn** (David chốt 10/11/2026, nhà luật: `luat-chung.md` mục 5): màn chốt không thu nhỏ video — ô câu nguyên văn nằm trên khung hình, đáy vùng an toàn; **không thẻ cuối**, video kết ở chữ cuối để tự lặp. Mọi dòng dưới về thẻ cuối chỉ cho video ngang / dọc dài.
 - **Thẻ cuối**: nhận diện (chủ đề + DAVID, ~1,6 s) mọi video có chủ đề; highlight = dẫn bản đầy đủ ("Bản đầy đủ trên kênh …" + tên tập gốc + người nói, không nút phát, `the_cuoi_s`).
 - **Màn kết YouTube** (video > 3 phút đăng YouTube): `project.ytEnd = 20` (1 video/podcast, ghi sau làm sạch) · plan.json `"ytEnd": 20` (vlog)
   — khung chừa 2 ô video + nút đăng ký, nhạc kênh nhỏ; David gắn phần tử trong YouTube Studio.

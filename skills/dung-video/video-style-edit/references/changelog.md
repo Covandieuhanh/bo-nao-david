@@ -180,3 +180,4 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
 - Lỗi: video vòng đồng xu (mặt thấp, khung dọc hẹp) — `Nhan.jsx` kẹp ô "dưới cằm" lên trên dải phụ đề → ô chữ đè miệng/cằm.
 - Sửa: `remotion-template/src/components/Nhan.jsx` — khi ô dưới cằm bị kẹp lên quá cằm, đưa ô lên **trên đầu** (dưới dấu góc);
   không đủ chỗ trên đầu thì giữ cách cũ.
+- 2026-11-10 · David chốt: video dọc ngắn bỏ thanh thời gian + thẻ cuối, màn chốt trên hình (luat-chung 5); thêm `nganDoc()` (nhan-dien.js), `NGAN_DOC` (thanh.js), Cta dọc ngắn trong Action.jsx / Show.jsx.
