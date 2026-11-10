@@ -6,7 +6,7 @@
 @media (prefers-color-scheme:dark){:root{--nen:#151514;--the:#1f1f1d;--chu:#ecebe7;--phu:#9a9892;--vien:#33322f}}
 *{box-sizing:border-box}body{margin:0;background:var(--nen);color:var(--chu);font:16px/1.55 -apple-system,system-ui,sans-serif}
 .khung{display:grid;grid-template-columns:240px 1fr;min-height:100vh}
-aside{border-right:1px solid var(--vien);padding:18px 14px;background:var(--the);display:flex;flex-direction:column;gap:14px}
+aside{min-width:0;border-right:1px solid var(--vien);padding:18px 14px;background:var(--the);display:flex;flex-direction:column;gap:14px}
 main{padding:28px 32px;max-width:900px;min-width:0;overflow-wrap:anywhere}
 h1{font-size:20px;margin:0}h2{font-size:17px;margin:22px 0 8px}
 aside h1{font-size:17px;cursor:pointer}
@@ -23,6 +23,7 @@ button.dung{border-color:var(--do);color:var(--do)}
 .nhom{font-size:12px;color:var(--phu);margin:0 0 4px 4px}
 .viec{display:flex;gap:9px;align-items:center;padding:7px 8px;border-radius:8px;cursor:pointer}.viec:hover,.viec.chon{background:var(--nen)}
 .viec span:last-child{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.phu-viec{display:block;font-size:11px;color:var(--phu);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 details.xong>summary{font-size:12px;color:var(--phu);cursor:pointer;margin-left:4px;list-style:none}
 details>summary::-webkit-details-marker{display:none}
 .the{background:var(--the);border:1px solid var(--vien);border-radius:14px;padding:20px;margin:16px 0}
@@ -60,7 +61,7 @@ details.them{margin-top:18px}details.them>summary{cursor:pointer;color:var(--phu
 .o-viec{display:flex;gap:12px;align-items:center;padding:14px 16px;border:1px solid var(--vien);border-radius:12px;background:var(--the);margin:8px 0;cursor:pointer}
 .o-viec b{flex:1;min-width:0}.o-viec:hover{border-color:var(--phu)}
 input[type=radio],input[type=checkbox]{width:auto!important;display:inline-block;margin:0 6px 0 0;vertical-align:middle}
-@media (max-width:760px){.khung{grid-template-columns:1fr;grid-template-rows:auto 1fr;min-height:0}aside{border-right:0;border-bottom:1px solid var(--vien);padding:12px 16px;gap:10px}main{padding:16px}#ds{display:flex;gap:6px;overflow-x:auto}#ds .nhom,#ds details.xong{display:none}.viec{flex:0 0 auto;border:1px solid var(--vien)}.buoc .lai{display:none}.hang button{flex:1}video{max-height:60vh}}
+@media (max-width:760px){.khung{grid-template-columns:1fr;grid-template-rows:auto 1fr;min-height:0}aside{border-right:0;border-bottom:1px solid var(--vien);padding:12px 16px;gap:10px}main{padding:16px}#ds{display:flex;gap:6px;overflow-x:auto;min-width:0;max-width:100%}#ds .nhom,#ds details.xong{display:none}.viec{flex:0 0 auto;border:1px solid var(--vien)}.buoc .lai{display:none}.hang button{flex:1}video{max-height:60vh}}
 </style></head><body>
 <div class="khung">
 <aside><h1 onclick="veNha()">Dựng video</h1><button class="chinh to" onclick="moMoi()">+ Việc mới</button><div id="ds"></div><details id="hm" class="hm" style="margin-top:auto"></details></aside>
@@ -82,7 +83,9 @@ function xemTep(b,p){const o=b.closest('.hang').nextElementSibling;if(o.innerHTM
 async function moFinder(ten,p){await api('/api/mo-finder',{ten,p:decodeURIComponent(p)})}
 function trangThai(v){if(v.trang_thai=='cho-duyet')return['cho','Chờ bạn duyệt'];if(v.trang_thai=='loi')return['loi','Bị lỗi'];if(v.trang_thai=='da-dung')return['dung','Đã dừng'];
 if(v.dang_chay)return v.trang_thai=='xep-hang'?['hang','Đang xếp hàng']:['chay','Đang chạy'];return v.trang_thai=='xong'||!v.dang?['xong','Xong']:['dung','Chưa chạy xong']}
-async function danhSach(){const ds=await api('/api/viec');window.dsViec=ds;const o=v=>{const[c,t]=trangThai(v);return`<div class="viec ${v.ten==chon?'chon':''}" title="${esc(t)}" onclick="xem('${v.ten}')"><span class="cham ${c}"></span><span>${esc(v.ten)}</span></div>`};
+// Dòng nhỏ dưới tên việc: file gốc / tập nguồn — để thấy việc nào dùng chung dự án (David nhờ 09/11/2026)
+function dongPhu(v){const s=v.nguon||'',m=s.match(/^tap-(.+?) · bản sạch/);if(m)return'từ tập '+m[1];const tap=(v.nhom||'').replace(/^tap-/,'');return s+(v.nhom!=='vlog'&&tap&&tap!==v.ten?' · tập '+tap:'')}
+async function danhSach(){const ds=await api('/api/viec');window.dsViec=ds;const o=v=>{const[c,t]=trangThai(v);const p=dongPhu(v);return`<div class="viec ${v.ten==chon?'chon':''}" title="${esc(t)}" onclick="xem('${v.ten}')"><span class="cham ${c}"></span><span>${esc(v.ten)}${p?`<small class="phu-viec">${esc(p)}</small>`:''}</span></div>`};
 const can=ds.filter(v=>['cho','loi','dung'].includes(trangThai(v)[0])),chay=ds.filter(v=>['chay','hang'].includes(trangThai(v)[0])),xong=ds.filter(v=>trangThai(v)[0]=='xong');
 const mo=document.querySelector('#ds details.xong')?.open;
 const h=(can.length?`<div class="nhom">Cần bạn</div>${can.map(o).join('')}`:'')+(chay.length?`<div class="nhom" style="margin-top:10px">Đang chạy</div>${chay.map(o).join('')}`:'')+(xong.length?`<details class="xong" style="margin-top:10px"${mo?' open':''}><summary>Đã xong (${xong.length})</summary>${xong.map(o).join('')}</details>`:'')||'<p class="mo">Chưa có việc nào.</p>';
@@ -176,8 +179,14 @@ let h=`<div class="dau"><h1>${esc(d.ten)}</h1><details class="menu" data-k="menu
 // 1. Cổng duyệt
 if(d.cong){h+=`<div class="the noi"><h2>${esc(d.cong.ten)}</h2>${(d.cong.video||[]).map(v=>`${d.cong.video.length>1?`<h2>${esc(v.split('/').slice(-2,-1)[0])}</h2>`:''}<video controls preload="metadata" src="/tep?p=${encodeURIComponent(v)}"></video>`).join('')}
 ${d.cong.chon_anh?`<h2>${esc(d.cong.chon_anh.nhan)}</h2><div class="hang">${d.cong.chon_anh.ds.map((a,i)=>`<div style="flex:1;min-width:220px"><img src="/tep?p=${encodeURIComponent(a)}&v=${Date.now()}" style="width:100%;border-radius:8px;border:3px solid ${d.cong.chon_anh.da_chon==a?'var(--nhan)':'transparent'}"><button style="width:100%;margin-top:4px" ${d.cong.chon_anh.da_chon==a?'class="chinh"':''} onclick="chonAnh('${encodeURIComponent(a)}')">${d.cong.chon_anh.da_chon==a?'✓ Đã chọn':'Chọn mẫu '+(i+1)}</button></div>`).join('')}</div>`:''}
-${d.cong.anh.map(a=>`<h2>${esc(a.split('/').pop())}</h2><a href="/tep?p=${encodeURIComponent(a)}" target="_blank"><img src="/tep?p=${encodeURIComponent(a)}&v=${Date.now()}" style="width:100%;border-radius:8px"></a>`).join('')}
-${d.cong.tep.map((t,i)=>t.gon?`<details class="gon" data-k="tep${i}" style="margin-top:14px"><summary style="font-weight:600">${esc(t.ten)}</summary><pre>${esc(t.noi_dung)}</pre></details>`:`<h2>${esc(t.ten)}</h2><pre>${esc(t.noi_dung)}</pre>`).join('')}
+${(()=>{// CỔNG GỌN (10/11/2026): chỉ mở nội dung David cần quyết; phần kèm (tờ khung khi đã có video, kết quả đo, kế hoạch cảnh…) vào "Xem thêm"
+ const coVideo=(d.cong.video||[]).length>0,anhH=a=>`<a href="/tep?p=${encodeURIComponent(a)}" target="_blank"><img src="/tep?p=${encodeURIComponent(a)}&v=${Date.now()}" style="width:100%;border-radius:8px;margin-top:8px"></a>`;
+ const CHINH=coVideo?/phat-hanh|dang-bai|kiem-cuoi/i:/phieu-loc|ke-hoach-ghep|chup-thu-ai/i,chinh=[],phu=[];   // cổng cuối: báo cáo kiểm + bài đăng · cổng trước render: phiếu / kế hoạch
+ d.cong.tep.forEach(t=>(!t.gon&&CHINH.test(t.ten)?chinh:phu).push(t));if(!chinh.length&&phu.length&&!coVideo)chinh.push(phu.shift());
+ const TEN=[[/kiem-cuoi/,'Báo cáo kiểm bản cuối'],[/chup-thu-ai/,'Báo cáo chụp thử'],[/phat-hanh|dang-bai/,'Bài đăng'],[/phieu-loc/,'Phiếu lọc'],[/ke-hoach-ghep/,'Kế hoạch ghép'],[/ke-hoach-canh/,'Kế hoạch cảnh'],[/ke-hoach-cat/,'Kế hoạch cắt'],[/^kiem\.md$/,'Kết quả đo'],[/nguoi-noi/,'Người nói']];
+ const tenDe=x=>(TEN.find(([r])=>r.test(x))||[0,x.replace(/\.md$/,'')])[1],tepH=t=>`<h2>${esc(tenDe(t.ten))}</h2><pre>${esc(t.noi_dung)}</pre>`;
+ const anhChinh=coVideo?[]:d.cong.anh,anhPhu=coVideo?d.cong.anh:[];
+ return anhChinh.map(anhH).join('')+chinh.map(tepH).join('')+(phu.length||anhPhu.length?`<details class="gon" data-k="themCong" style="margin-top:16px"><summary>Xem thêm (${phu.length+anhPhu.length})</summary>${anhPhu.map(a=>`<h2>${esc(a.split('/').pop())}</h2>`+anhH(a)).join('')}${phu.map(tepH).join('')}</details>`:'')})()}
 ${d.cong.nhan_gop_y?`<label>Góp ý (để trống nếu duyệt luôn)</label><textarea id="gy" rows="3"></textarea>`:''}
 <div class="hang"><button class="chinh to" ${d.dang_chay?'disabled':''} onclick="duyet()">Duyệt, chạy tiếp</button>${d.cong.nhan_gop_y?`<button ${d.dang_chay?'disabled':''} onclick="gopY()">Gửi góp ý, làm lại</button>`:''}</div></div>`}
 // 2. Lỗi / dừng / đang chạy
