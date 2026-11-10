@@ -25,7 +25,9 @@ if [ -d "$SRC" ]; then
   cp "$G/motion/src/scenes.js" "$P/check/goc/scenes-goc.js"
   grep -q "podcast: true" "$G/motion/src/project.js" && echo podcast > "$P/loai.txt" || echo tu-quay > "$P/loai.txt"
   echo "$G" > "$P/check/goc/du-an-goc.txt"
-  [ -f "$P/check/goc/words.srt" ] || zsh $BASE/scripts/analyze_video.sh "$P/nguon.mp4" "$P/check/goc"
+  # lời chép sẵn của dự án gốc có thể bị Whisper "ảo" → kiểm, ảo thì chép lại
+  { [ -f "$P/check/goc/words.srt" ] && python3 -I $BASE/scripts/loi_ao.py kiem "$P/check/goc/transcript.srt" >/dev/null; } \
+    || zsh $BASE/scripts/analyze_video.sh "$P/nguon.mp4" "$P/check/goc"
 else
   cp "$SRC" "$P/nguon.${SRC:e:l}"
   echo chua-ro > "$P/loai.txt"
