@@ -250,5 +250,5 @@ Tag `tai-ban-video-1`, dòng trong `skills/tai-ban/lich-su.md`, đẩy GitHub. N
 
 ## Bước tiếp
 - David chấm đoạn thử; đạt thì đóng hẳn đợt này.
-- Sửa 2 lỗi code ở trên (phiên riêng).
+- ~~Sửa 2 lỗi code ở trên~~ — **xong 10/11**: `thanh.js` nạp json có `with {type: 'json'}` + `./podframe.js`; `chuan_am.py` đo lại và bù tối đa 3 lượt từ bản trước khi chỉnh. Dự án thử: render.mjs chạy trọn, −14,2 LUFS ngay lần đầu; kiem-mau 5/5 ✓ (changelog video-style-edit).
 - Máy đo cũng báo bộ `nao` NÊN TÁI BẢN (dấu ngày 17/15) — việc của phiên khác.

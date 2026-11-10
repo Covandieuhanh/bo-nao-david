@@ -209,3 +209,9 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
   `nguoi.js` và mọi chỗ nhắc (layout, Root, face_place, nhan_place, soat_canh, bo-cuc, khối 07/17, nhan-dien-chung). Giữ: muc-luc, tien-trinh, canh-nguoi, phong, `*từ*`.
 - David: "học nhiều là để ứng dụng cho phù hợp với tuỳ mỗi loại nội dung chứ không cần nhét hết vào cùng 1 video… quan trọng nhất là truyền tải cho người xem hiểu chứ không phải cầu kì".
   → luat-chung §0 "Hiểu hơn cầu kì"; khối 07 nới luật không lặp (giữ cùng kiểu được khi giúp dễ theo); khối 17 thêm câu soát "video có rối không".
+
+## 2026-11-10 · Sửa 2 lỗi code lộ khi dựng đoạn thử tái bản 1 (David chọn cách sửa)
+- `render.mjs` dừng ở bước thẻ cuối trên Node 24: `endcard.js` kéo `thanh.js`, file này nạp `hoso.json` không có `with {type: 'json'}` (ERR_IMPORT_ATTRIBUTE_MISSING) và nạp `./podframe` thiếu đuôi `.js`.
+  Chỉ sửa `thanh.js` (file duy nhất Node chạm tới; các `.jsx` nạp json chỉ chạy trong bundle nên để nguyên). Đã thử: `with` chạy được cả Node lẫn webpack của Remotion.
+- `chuan_am.py` ra −14,8 LUFS khi render_preview tự gọi: bộ chặn đỉnh làm bài nhỏ đi sau khi kéo mức. Giờ đo lại bản ra, bù phần thiếu, xuất lại TỪ BẢN TRƯỚC KHI CHỈNH (không nén AAC chồng), tối đa 3 lượt.
+- Thử trên `tap-thu-tai-ban-video-1/2-ban-dai`: render.mjs chạy trọn (có the-cuoi), bản cuối −17,2 → −14,2 LUFS, đỉnh −1,5 dBTP, 2 lượt, ngay lần đầu.
