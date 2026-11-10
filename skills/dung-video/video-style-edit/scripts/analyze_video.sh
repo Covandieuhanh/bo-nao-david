@@ -8,8 +8,10 @@ MODEL=~/whisper-models/ggml-large-v3-turbo.bin
 mkdir -p "$O"
 DUR=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$V")
 ffmpeg -v error -y -i "$V" -vn -ac 1 -ar 16000 "$O/audio16k.wav"
-whisper-cli -m $MODEL -l $LANG_ -f "$O/audio16k.wav" -osrt -of "$O/transcript" -np >/dev/null 2>&1
-whisper-cli -m $MODEL -l $LANG_ -f "$O/audio16k.wav" -ml 1 -sow -osrt -of "$O/words" -np >/dev/null 2>&1   # mốc từng từ (phụ đề)
+whisper-cli -m $MODEL -l $LANG_ -f "$O/audio16k.wav" -mc 0 -osrt -of "$O/transcript" -np >/dev/null 2>&1
+whisper-cli -m $MODEL -l $LANG_ -f "$O/audio16k.wav" -mc 0 -ml 1 -sow -osrt -of "$O/words" -np >/dev/null 2>&1   # mốc từng từ (phụ đề)
+# Whisper kẹt vòng ("Hãy subscribe cho kênh…" lặp cả bài): chép lại riêng đoạn ảo; còn ảo thì dừng, không chạy tiếp với lời sai
+python3 -I ${0:A:h}/loi_ao.py sua "$O/audio16k.wav" "$O" $LANG_ || { rm -f "$O/audio16k.wav"; echo "⛔ Bản lời vẫn ảo sau khi chép lại — xem $O/transcript.srt"; exit 1; }
 STEP=$(python3 -c "print(max(0.5, $DUR / 24))")
 ffmpeg -v error -y -i "$V" -map 0:v:0 -vf "fps=1/$STEP,scale=270:-2,tile=6x4:padding=4:color=white" -frames:v 1 "$O/contact.jpg"
 for i in 1 2 3 4 5 6 7 8; do

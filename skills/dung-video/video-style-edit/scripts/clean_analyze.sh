@@ -25,6 +25,8 @@ if python3 -I -c "import re,sys;L=[l.strip() for l in open(sys.argv[1],encoding=
   whisper-cli -m $MODEL -l vi -f "$O/a_loc.wav" -ml 1 -sow -osrt -of "$O/words" -np >/dev/null 2>&1
   rm -f "$O/a_loc.wav"
 fi
+# Còn đoạn ảo lẻ (vd 30 s đầu) → chép lại riêng đoạn đó
+python3 -I "$SKILL/scripts/loi_ao.py" sua "$O/a.wav" "$O" vi || { rm -f "$O/a.wav"; echo "⛔ Bản lời vẫn ảo — xem $O/transcript.srt"; exit 1; }
 ffmpeg -v error -i "$O/a.wav" -af "asetnsamples=8000,astats=metadata=1:reset=1,ametadata=print:key=lavfi.astats.Overall.RMS_level:file=-" -f null - \
   | grep RMS | awk -F= '{printf "%.1fs %d dB\n", (NR-1)*0.5, $2}' > "$O/loud.txt"
 # Khoảng lặng: ngưỡng = nền ồn (phân vị 10 của loud.txt) + 12 dB, nhưng không quá điểm giữa nền ồn và lời nói

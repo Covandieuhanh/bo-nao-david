@@ -46,6 +46,8 @@ def verify(clip, expected):
         if op in ("replace", "delete"): miss.append(" ".join(exp[a1:a2]))
     return sm.ratio(), extra, miss
 plan = json.load(open(os.path.join(P, "phuong-an.json"), encoding="utf-8"))
+if plan.get("status") == "blocked" or not plan.get("options"):
+    sys.exit("⛔ phuong-an.json chưa có clip để cắt" + (f": {plan['reason']}" if plan.get("reason") else "") + " — sửa đầu vào rồi chạy lại bước chọn ý.")
 src = next(os.path.join(P, f) for f in sorted(os.listdir(P)) if f.startswith("nguon."))
 env = dict(os.environ, PATH="/opt/homebrew/bin:" + os.environ.get("PATH", ""))
 dur = float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", src], env=env))
