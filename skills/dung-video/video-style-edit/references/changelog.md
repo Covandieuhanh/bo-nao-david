@@ -1,5 +1,8 @@
 # Sổ thay đổi — video-style-edit (quyết định của người dùng + lý do)
 
+## Tái bản 2 — 10/11/2026: bản luật viết lại từ bảng dang-lam/tai-ban-2-video.md
+- Nhà luật bỏ phóng xen kẽ ở mối cắt là luat-chung mục 2 (kèm lý do); khối 02, ho-so/highlight.md, cat-highlight luật 8 trỏ về đó. luat-chung mục 8 trỏ thói quen chung (hỏi, lệnh nền, mật khẩu, báo cáo), chỉ giữ phần riêng video. Bỏ câu chép ở gotchas, dang-da-kenh; sửa đường trỏ "hình của chính video" về khối 14. Viết lại 6 câu máy đo bắt nhầm ("thay cho", "THAY", tên file có ngày).
+
 ## 10/11/2026 — Bỏ phóng xen kẽ 1,08× ở mối cắt
 - David xem đoạn thử tap-thu-tai-ban-video-1: "tôi không thích mấy đoạn zoom giật ra giật vào" → "bỏ 1 giữ 2": bỏ mặc định phóng xen kẽ 1,08× ở mỗi mối cắt (mọi loại video), giữ zoom dồn chậm vào mặt ở câu đắt (`nhan` zoom, câu `"zoom": true`). Sửa: luat-chung §2, khối 02, `clean_apply.py` + `clean_suggest.py` mặc định `zoom: "none"`.
 

@@ -25,7 +25,7 @@ Nguồn phụ: bài viết chữ trên Facebook cá nhân. Fanpage chưa có bà
 
 ## Nâng cấp giọng cho thương hiệu trainer (hướng David duyệt)
 - **Bình tĩnh, rõ, có khung**: mỗi bài đi Vấn đề → Giải pháp → Thực thi (rút từ lời David), không lan man.
-- **Người thầy đứng cạnh, không đứng trên**: kể "mình từng kẹt ở…", không ra lệnh, không dạy đời; câu hỏi tự soi thay cho khẳng định.
+- **Người thầy đứng cạnh, không đứng trên**: kể "mình từng kẹt ở…", không ra lệnh, không dạy đời; câu hỏi tự soi thay vì khẳng định.
 - **Cụ thể hơn cảm hứng**: một việc làm được ngay (Thực thi) quan trọng hơn câu truyền động lực chung chung.
 - Giữ ấm áp của David: "các bạn", "mình", thỉnh thoảng "nha" ở câu kết — tối đa 1 lần / bài.
 - Hashtag thương hiệu mới (2–3 / bài): #DavidTran #TrainerDinhHuong + 1 chủ đề (#lamchubanthan #quanlymoi #danguoi).

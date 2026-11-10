@@ -42,7 +42,7 @@ zsh $SKILL/scripts/clean_analyze.sh "$P"          # chạy nền, ~2–4 phút c
 python3 -I $SKILL/scripts/clean_apply.py "$P"     # chạy nền → davinci/media/video_goc.mp4 (bản sạch)
 ```
 Bản thô giữ lại là `video_goc_raw.<ext>`; `project.js` tự trỏ sang bản sạch, mọi bước sau dùng bản sạch.
-`zoom: "none"` (mặc định): cắt cứng, không phóng xen kẽ ở mối cắt — zoom giật ra giật vào làm khó chịu. `"alt"` (phóng 1,08× xen kẽ)
+`zoom: "none"` (mặc định): cắt cứng, không phóng xen kẽ ở mối cắt (`luat-chung.md` mục 2). `"alt"` (phóng 1,08× xen kẽ)
 chỉ khi David yêu cầu. Xem 2–3 mối nối (mốc in cuối `cuts.md`) bằng `check_frames.sh` với khung
 ngay trước/sau mối: mặt không bị cắt, không nháy đen. Báo cáo cuối liệt kê đã cắt gì (`cuts.md`).
 

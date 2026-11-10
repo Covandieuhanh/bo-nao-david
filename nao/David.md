@@ -2,7 +2,7 @@
 
 > File này giúp Claude (Claude Code, Claude chat) hiểu David là ai và làm việc với David đúng cách.
 > Đặt file vào thư mục hay mở Claude Code, hoặc nhập vào `CLAUDE.md` bằng dòng `@David.md`.
-> Cập nhật lần cuối: 08/11/2026 (chuẩn hoá: mục 3.1, 3.8, 5 trỏ về nhà chính của luật).
+> Cập nhật lần cuối: 10/11/2026.
 
 ---
 
@@ -28,20 +28,19 @@
 
 ## 3. Cách Claude cần làm việc với David
 
-1. **Hỏi trước khi tạo hoặc sửa sản phẩm**, **chờ David "ok"** rồi mới làm: cách hỏi ở skill `hoi-chuyen-gia`, thói quen làm việc chung ở `skills/thoi-quen-lam-viec.md` (mục 5: mỗi việc có Mục tiêu + Xong khi, Claude nhắc David giữ phiên gọn). Câu hỏi nhanh, tra cứu thì trả lời thẳng.
-2. **Kế hoạch / lộ trình luôn chia 4 phần:** Mục tiêu · Kế hoạch · Quy trình (từng bước) · Thực thi (checklist chia càng nhỏ càng tốt để có mốc làm ngay).
-3. **Tài liệu nghiên cứu phải dịch đúng thuật ngữ chuyên ngành:** tên khung, quy trình, bước bằng tiếng Anh lấy **chính xác** như nguồn rồi dịch sang tiếng Việt. Mỗi thuật ngữ chỉ một bản dịch, dùng thống nhất.
-4. **Tài liệu tổng hợp về một tổ chức chỉ gồm nội dung của tổ chức đó**, không lẫn phần áp dụng cho David hay nguồn ngoài.
-5. **Tài liệu do AI khác viết:** lấy khung của Claude làm chuẩn, tài liệu kia chỉ để bổ sung, và phải kiểm tra nguồn gốc trước khi thêm.
-6. **Sách tự mua**, không dùng bản trôi nổi trên mạng.
-7. Viết **tiếng Việt, ngắn gọn**; không hỏi lại điều đã biết.
-8. **GitHub là bản gốc của bộ não** (bắt buộc, 07/11/2026): có gì mới cho skill hoặc não thì đẩy lên ngay — chi tiết ở ghi nhớ `nao-github-ban-goc`.
+Sáu luật nền (tiếng Việt ngắn gọn, hỏi trước khi tạo/sửa, con người làm trung tâm, nội dung là của David, không đăng/gửi/xoá khi chưa duyệt, GitHub là bản gốc): `AGENTS.md`. Thói quen chung mọi việc: `skills/thoi-quen-lam-viec.md`. Thêm:
+
+1. **Kế hoạch / lộ trình luôn chia 4 phần:** Mục tiêu · Kế hoạch · Quy trình (từng bước) · Thực thi (checklist chia càng nhỏ càng tốt để có mốc làm ngay).
+2. **Tài liệu nghiên cứu phải dịch đúng thuật ngữ chuyên ngành:** tên khung, quy trình, bước bằng tiếng Anh lấy **chính xác** như nguồn rồi dịch sang tiếng Việt. Mỗi thuật ngữ chỉ một bản dịch, dùng thống nhất.
+3. **Tài liệu tổng hợp về một tổ chức chỉ gồm nội dung của tổ chức đó**, không lẫn phần áp dụng cho David hay nguồn ngoài.
+4. **Tài liệu do AI khác viết:** lấy khung của Claude làm chuẩn, tài liệu kia chỉ để bổ sung, và phải kiểm tra nguồn gốc trước khi thêm.
+5. **Sách tự mua**, không dùng bản trôi nổi trên mạng.
 
 ## 4. Định hướng nghề
 
-### 4.1. Định hướng gốc (05/11/2026)
+### 4.1. Định hướng gốc
 - **Chỉ thiên về con người, lấy con người làm trung tâm.** Không còn làm gì liên quan đến kinh doanh hay mô hình kinh doanh: không "cơ sở vắng chủ", không gói doanh nghiệp, không mở sang L&D hay hợp đồng doanh nghiệp.
-- **Tệp chính** (quyết định 04/11/2026): **"người lần đầu dẫn người"** (quản lý trẻ, quản lý mới).
+- **Tệp chính:** **"người lần đầu dẫn người"** (quản lý trẻ, quản lý mới).
 
 ### 4.2. Khung phương pháp: ba tầng làm chủ
 | Tầng | Nội dung |
@@ -89,11 +88,11 @@ Tìm hiểu → mời → phiếu đầu vào → thống nhất → làm trên 
 - Tương tác bình luận dùng đúng hai từ: **"Vấn đề"** (vì sao chưa làm được) và **"Kết quả"** (làm được thì kết quả là gì).
 - Trước khi quay ghi 3 dòng: khoảnh khắc chạm nỗi đau; chỗ kẹt và cách đã gỡ; câu hỏi người xem mang về.
 - Lịch đăng, tỉ lệ dẫn dắt (Không · Gợi mở · Mời "gỡ", không nói giá), số video quay sẵn: `skills/dung-video/ho-so/kenh.json`. Quay theo đợt (2 tuần chọn 4 ý); tuần khó đăng tối thiểu 1. **Đo bằng số người nhắn "gỡ"**, không bằng lượt xem.
-- **Kho 100 video** = kế hoạch nội dung của kênh, bảng ở `dang-lam/kho-100-video.md` (PDF gốc ở máy). Mọi video mới đối chiếu kho ở phiếu lọc (khối 00 mục 1b): khớp ý số mấy, lệch kho thì cảnh báo, gợi ý ý kế tiếp nên quay (David chốt 10/11/2026). Giai đoạn 3 "Cơ sở chạy khi vắng chủ" đã bỏ. **Kho cần làm lại theo ba tầng: bản thân → công việc → mối quan hệ** (phiên riêng).
+- **Kho 100 video** = kế hoạch nội dung của kênh, bảng ở `dang-lam/kho-100-video.md` (PDF gốc ở máy). Mọi video mới đối chiếu kho ở phiếu lọc (khối 00 mục 1b): khớp ý số mấy, lệch kho thì cảnh báo, gợi ý ý kế tiếp nên quay. Bỏ qua giai đoạn 3 "Cơ sở chạy khi vắng chủ" của kho (lệch định hướng 4.1). **Kho cần làm lại theo ba tầng: bản thân → công việc → mối quan hệ** (phiên riêng).
 
 ## 6. Nghiên cứu CCL
 
-- **Tài liệu chính, tham chiếu chuẩn** (David chốt 07/11/2026): "Hồ sơ CCL – Center for Creative Leadership (bản tiếng Việt)", 10 phần, 04/11/2026, ở `tham-chieu/ccl/` trong repo (PDF gốc + bản chữ `.md`). Dùng làm hình mẫu chuẩn khi xây phương pháp ba tầng và nhân hiệu trainer, rồi nâng cấp dần. Thuật ngữ dịch theo Phần 10.1 của hồ sơ. Link claude.ai cũ (bản ghi "13 phần") không còn mở được, bỏ.
+- **Tài liệu chính, tham chiếu chuẩn:** "Hồ sơ CCL – Center for Creative Leadership (bản tiếng Việt)", 10 phần, 04/11/2026, ở `tham-chieu/ccl/` trong repo (PDF gốc + bản chữ `.md`). Dùng làm hình mẫu chuẩn khi xây phương pháp ba tầng và nhân hiệu trainer, rồi nâng cấp dần. Thuật ngữ dịch theo Phần 10.1 của hồ sơ.
 - Tài liệu cũ "Gốc CCL – Bộ khung dẫn mình, dẫn người" để nguyên, không dùng làm tài liệu chính.
 - Đã đối chiếu bản tổng hợp của GPT và Perplexity; bản Gemini không dùng.
 - Sách CCL Press sẽ tự mua: *Be the Boss Everyone Wants to Work For*, *Feedback That Works*, *Active Listening*, *Delegating Effectively*, *Better Conversations Every Day*, *Learning Agility*.
@@ -107,7 +106,7 @@ Tìm hiểu → mời → phiếu đầu vào → thống nhất → làm trên 
 
 ---
 
-## 8. Bộ lọc nội dung (David chốt 05/11/2026 với Claude Code)
+## 8. Bộ lọc nội dung
 
 - **Câu hỏi gốc:** nội dung có giúp người lần đầu dẫn người **làm chủ bản thân**, hoặc **áp dụng việc làm chủ bản thân vào chính công việc của họ**, thêm một bước không?
 - **Cây nội dung:** Gốc = làm chủ bản thân · Nhánh chính = áp dụng vào công việc của chính họ · Nhánh phụ = mối quan hệ (khi bắt nguồn từ bản thân) · Nhân hiệu = đời thường/hành trình chỉ khi giúp tin trainer.
@@ -115,7 +114,7 @@ Tìm hiểu → mời → phiếu đầu vào → thống nhất → làm trên 
 
 ## 9. Dữ liệu nền huyền học (thông tin nền, tách khỏi nghề)
 
-- **Bản chuẩn:** `~/Documents/2-ca-nhan/ho-so-huyen-hoc-ban-gop-2026-11-07.pdf` (gộp từ bản PDF 31/10/2026 và hai file .md cũ). Hai file .md cũ ghi "chữa lành thông qua luận sim số" và "hiện sống TP.HCM": **đã lỗi thời, không dùng**.
+- **Bản chuẩn:** `~/Documents/2-ca-nhan/ho-so-huyen-hoc-ban-gop-2026-11-07.pdf`. Hai file .md cũ (ghi "chữa lành thông qua luận sim số" và "hiện sống TP.HCM") lỗi thời: **không dùng**.
 - **Bát tự:** Ất Hợi · Giáp Thân · Kỷ Hợi · Giáp Tý; nhật chủ Kỷ Thổ; mệnh nạp âm Sơn đầu hoả; đại vận hiện tại Tân Tỵ (11/2024–11/2034).
 - **Tử vi:** Âm nam, Thuỷ nhị cục; Mệnh Ất Dậu vô chính diệu, Thân cư Mệnh; Thiên Di (Mão) Thái Dương–Thiên Lương; Quan Lộc (Sửu) Thiên Đồng–Cự Môn.
 - **Thần số:** đường đời 11/2 · sứ mệnh 6 · linh hồn 4 · nhân cách 11 · ngày sinh 5 · thái độ 5.

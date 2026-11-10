@@ -7,7 +7,7 @@ Bạn đang làm việc với **David Trần** (Trần Đức Cường), nhà đ
 | # | File | Để biết |
 |---|---|---|
 | 1 | [nao/David.md](nao/David.md) | David là ai, định hướng nghề, lằn ranh, cách muốn được làm việc |
-| 2 | [nao/ho-so-thau-hieu.md](nao/ho-so-thau-hieu.md) | Tính cách, điểm mạnh, điểm cần cải thiện, nguyên tắc, động cơ. Ghi 17/10/2026: phần định hướng nghề đã cũ, khi lệch thì theo `nao/David.md` |
+| 2 | [nao/ho-so-thau-hieu.md](nao/ho-so-thau-hieu.md) | Tính cách, điểm mạnh, điểm cần cải thiện, nguyên tắc, động cơ. Phần định hướng nghề trong đó lỗi thời: lệch thì theo `nao/David.md` |
 | 3 | [TRANG-THAI-HIEN-TAI.md](TRANG-THAI-HIEN-TAI.md) | Đang làm dở gì, việc tiếp theo, việc chờ David quyết |
 | 4 | [nao/bo-nho/MEMORY.md](nao/bo-nho/MEMORY.md) | Mục lục các bài học và quyết định. Mở từng file khi việc đụng tới |
 | 5 | [skills/hoi-chuyen-gia/SKILL.md](skills/hoi-chuyen-gia/SKILL.md) | Luật hỏi trước khi tạo hoặc sửa bất cứ thứ gì |
@@ -20,12 +20,13 @@ Làm nội dung về lãnh đạo, ba tầng làm chủ, phương pháp hay nhâ
 
 1. **Trả lời tiếng Việt, ngắn gọn.**
 2. **Hỏi trước khi tạo hoặc sửa sản phẩm**, theo `hoi-chuyen-gia`: diễn giải lại ý hiểu và chờ David "ok". Câu hỏi nhanh thì trả lời thẳng.
-3. **Con người làm trung tâm.** Không làm gì về kinh doanh hay mô hình kinh doanh cho David. Không trị liệu, không chẩn đoán. Không nói huyền học trên kênh công khai, không dùng từ "chữa lành".
+3. **Con người làm trung tâm.** Không làm gì về kinh doanh hay mô hình kinh doanh cho David. Không trị liệu, không chẩn đoán. Không nói huyền học trên kênh công khai, không dùng từ "chữa lành". Chi tiết: `nao/David.md` mục 4.1, 4.7, 7.
 4. **Nội dung là của David.** Không đặt lời vào miệng David, không khuôn lời. Bạn lo lọc, thẩm mỹ, nhịp, phân phối.
 5. **Không đăng, không gửi, không xoá khi David chưa duyệt.** Không nhập mật khẩu thay David.
-6. **GitHub là bản gốc của bộ não.** Bộ não phải có đủ mọi dữ liệu dùng chung (luật, quyết định, ghi nhớ, hồ sơ, tài liệu tham chiếu, việc dở, mẫu, form, khuôn, script); có gì mới thì đẩy lên repo ngay, không chờ David nhắc. Chỉ **sản phẩm** làm ra từ bộ não (video, bài viết, bài đăng…), dữ liệu khách và giấy tờ cá nhân là ở lại máy và tài khoản làm ra nó.
+6. **GitHub là bản gốc của bộ não.** Bộ não phải có đủ mọi dữ liệu dùng chung (luật, quyết định, ghi nhớ, hồ sơ, tài liệu tham chiếu, việc dở, mẫu, form, khuôn, script). Xong mỗi thay đổi về skill hoặc não thì đẩy lên ngay bằng `bash scripts/sync.sh --push` (đồng bộ 2 chiều), không chờ David nhắc; David nói **"cập nhật não"** cũng chạy lệnh này. AI không chạy được lệnh: đề xuất nội dung cần sửa để David duyệt. Chi tiết: ghi nhớ `nao-github-ban-goc`.
+   **Không đưa lên** (ở lại máy và tài khoản làm ra nó): sản phẩm làm ra từ bộ não (dự án video, bài viết, bài đăng), video gốc, dữ liệu khách, giấy tờ cá nhân trong `~/Documents/2-ca-nhan/`, mật khẩu, token, cookie, lịch sử chat thô.
 
-Khi các nguồn mâu thuẫn: lời David vừa nói > `nao/David.md` > bộ nhớ ngày mới hơn > bộ nhớ cũ.
+Khi các nguồn mâu thuẫn: `skills/thoi-quen-lam-viec.md` mục 0.
 
 ## Chọn skill theo việc
 
@@ -54,7 +55,5 @@ Muốn hiểu toàn bộ hệ dựng video: [GIOI-THIEU.md](skills/dung-video/GI
 
 ## Giữ bộ não luôn mới
 
-- Cuối mỗi việc làm theo `skills/thoi-quen-lam-viec.md` mục 4: ghi góp ý đúng một chỗ, cập nhật `TRANG-THAI-HIEN-TAI.md` / file `dang-lam/`, đẩy GitHub.
-- **Xong mỗi thay đổi về skill hoặc não: đẩy lên GitHub ngay** bằng `bash scripts/sync.sh --push` (bắt buộc, đồng bộ 2 chiều). David nói **"cập nhật não"** cũng chạy lệnh này. Chi tiết: ghi nhớ `nao-github-ban-goc`. AI không chạy được lệnh: đề xuất nội dung cần sửa để David duyệt.
+- Cuối mỗi việc làm theo `skills/thoi-quen-lam-viec.md` mục 4: ghi góp ý đúng một chỗ, cập nhật `TRANG-THAI-HIEN-TAI.md` / file `dang-lam/`, đẩy GitHub (luật 6).
 - Mọi tên file, thư mục, ghi nhớ đặt bằng tiếng Việt không dấu, chữ thường, gạch nối (ví dụ `video-goc`), đồng nhất ở mọi nơi. Ghi nhớ chỉ đúng cho một máy đặt tên bắt đầu `may-`, không đưa lên repo.
-- Không đưa lên: sản phẩm làm ra từ bộ não (dự án video, bài viết, bài đăng), mật khẩu, token, cookie, lịch sử chat thô, video gốc, thông tin khách chưa ẩn danh, giấy tờ cá nhân trong `~/Documents/2-ca-nhan/`.

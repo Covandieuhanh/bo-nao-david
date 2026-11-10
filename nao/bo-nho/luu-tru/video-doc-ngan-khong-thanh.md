@@ -5,6 +5,8 @@ metadata:
   type: feedback
 ---
 
+> Đã gộp vào `video-nhan-dien-chung` ở tái bản 2 (10/11/2026). Bản dưới là lịch sử.
+
 Video dọc ngắn (dọc ≤ 90 s, mọi highlight, podcast dọc trích ngắn): **không thanh thời gian, không thẻ cuối**; màn chốt là ô câu nguyên văn
 nằm trên khung hình (không thu nhỏ video). Video ngang và dọc dài giữ thanh, thẻ cuối, màn kết YouTube.
 

@@ -17,4 +17,4 @@ David 10/11/2026: "Về thẩm mỹ thì tôi chỉ cần duy nhất 1 thứ là
 - Ngoài chữ ký: nền, kết cấu, kiểu hình, chiều sâu, bố cục, chuyển động chọn theo nội dung từng video.
 - Học video mẫu: rút đủ cả phần thẩm mỹ làm tài nguyên, không chỉ bố cục. Vẫn giữ mọi chặn cũ ([[luat-hoc-la-bo-sung]]) và chữ nguyên văn ([[video-chu-nguyen-van]]).
 - Tự do nhưng **hiểu hơn cầu kì**: chọn ít kiểu hợp nội dung ([[video-hieu-hon-cau-ki]]).
-- Thay phần "giữ thẩm mỹ" trong [[video-nguoi-xem-trung-tam]], [[video-bo-cuc-tu-can]], [[luat-noi-dung-cua-david]]; liên quan [[video-nhan-dien-chung]], [[video-motion-ke-chuyen]].
+- Thay phần "giữ thẩm mỹ" cũ trong [[luat-noi-dung-cua-david]], [[video-bo-cuc-tu-can]]; liên quan [[video-nhan-dien-chung]], [[video-motion-ke-chuyen]].

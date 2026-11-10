@@ -79,7 +79,7 @@
 - `check_frames.sh` với mốc vượt thời lượng video → lỗi "Could not open encoder" và giữ sheet CŨ; mốc phải < thời lượng.
 
 ## Nội dung chữ
-- Né tên riêng chưa chắc chính tả bằng cụm chung chung ("ĐI BỘ MỖI NGÀY" thay cho "HARUKU") → người dùng thấy minh hoạ
+- Né tên riêng chưa chắc chính tả bằng cụm chung chung (viết "ĐI BỘ MỖI NGÀY" chứ không "HARUKU") → người dùng thấy minh hoạ
   sai ý. Hiện đúng tên theo Whisper + hỏi chính tả trong báo cáo.
 
 ## Vị trí lớp phủ (không che người nói)
@@ -120,13 +120,13 @@
 - `theme.js`: SAFE dọc cố định (bottom 1420, rộng 830) — đúng cho mọi dự án dọc 1080×1920 (clean_apply luôn đưa về khung này).
 
 ## Phụ đề
-- Lần chạy Whisper theo từ (`-ml 1`) và theo câu cho kết quả khác nhau; cả hai đều có thể THAY câu thật cuối video bằng
-  câu bịa ("Hãy subscribe cho kênh Ghiền Mì Gõ…" thay cho "Xin chào") → đối chiếu lần chạy ở `check/clean/`.
+- Lần chạy Whisper theo từ (`-ml 1`) và theo câu cho kết quả khác nhau; cả hai đều có thể đè câu bịa lên câu thật cuối
+  video ("Hãy subscribe cho kênh Ghiền Mì Gõ…" ở chỗ David nói "Xin chào") → đối chiếu lần chạy ở `check/clean/`.
 - Khung chữ phụ đề rộng ~37 ký tự ở cỡ 42 px; dòng dài hơn thì `textWrap: 'balance'` chia đều 2 dòng, tránh rơi 1 chữ.
 
 ## Giao tiếp
 - Người dùng không xem được video trong khung chat → gửi file bằng SendUserFile và mô tả cảnh theo mốc thời gian.
-- Không tự nhập mật khẩu máy dù người dùng đưa; không tải video từ YouTube/TikTok.
+- Mật khẩu, tải video từ mạng: `../../luat-chung.md` mục 8.
 
 ## Chế độ ghép nhiều clip
 - **macOS không phân biệt hoa/thường tên file**: `Show.jsx` và `show.js` là MỘT file → import nhầm, lỗi

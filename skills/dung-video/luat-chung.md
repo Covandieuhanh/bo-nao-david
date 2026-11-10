@@ -36,7 +36,7 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
   Riêng **làm lại video cũ**: cắt màn tít + lời chào / giới thiệu kênh cũ (tên kênh cũ, nghề cũ, kinh doanh) và chữ/viền kênh cũ in
   trong hình — chỉ đúng các đoạn đó (khối 02). Lằn ranh David chọn cắt thì chỉ cắt đúng đoạn đó.
 - **Cắt chỉ cho video ≤ 3 phút và highlight**: lặng ≥ 0,45 s còn ~0,24 s + tiếng đệm "ờ/ừm" đứng riêng (cắt cứng, không phóng
-  xen kẽ ở mối cắt); giữ 1 s lặng sau câu hỏi kêu gọi. Clip ngắn luôn trích từ bản gốc, ưu tiên kéo người xem về video dài trên YouTube; không
+  xen kẽ ở mối cắt vì zoom giật ra giật vào làm khó chịu; zoom dồn chậm vào mặt ở câu đắt vẫn dùng); giữ 1 s lặng sau câu hỏi kêu gọi. Clip ngắn luôn trích từ bản gốc, ưu tiên kéo người xem về video dài trên YouTube; không
   về thì vẫn cần tương tác / nhắn tin trên Facebook, TikTok. **Vlog ghép** giữ nhịp tự nhiên.
 - Video ngắn đổi gì đó mỗi 1–3 s (nhịp chữ phụ đề, phóng, chữ to, cắt), không để 5–8 s trôi qua không đổi gì. Video dài thưa, nhịp
   từ nội dung.
@@ -100,9 +100,7 @@ Ghi `<dự án>/phat-hanh/phat-hanh.md`:
 - Gửi David: video + thumbnail (SendUserFile) + tiêu đề.
 
 ## 8. Quy trình chung
-- Hỏi theo `hoi-chuyen-gia` một lần đầu (diễn giải ngắn + câu thật sự thiếu); David "ok" thì chạy trọn một mạch. Ngoại lệ dừng duyệt:
-  kế hoạch ghép vlog (multi-clip.md 2b). Phần quy trình đã định thì không hỏi (`thoi-quen-lam-viec.md` mục 2).
-- Lệnh dài (> 2 phút) chạy nền, không thăm dò. Không tự nhập mật khẩu máy. Không tải video từ YouTube/TikTok để dựng (nhờ David gửi
-  file); tải để học mẫu: `trinh-bay/README.md` mục 4.
+- Hỏi, chạy một mạch, lệnh nền, báo cáo cuối: `../thoi-quen-lam-viec.md` mục 2–4; mật khẩu: `AGENTS.md` luật 5. Riêng video: điểm dừng duyệt duy nhất
+  giữa chừng là kế hoạch ghép vlog (multi-clip.md 2b); báo cáo cuối thêm tên riêng cần xác nhận.
+- Không tải video từ YouTube/TikTok để dựng (nhờ David gửi file); tải để học mẫu: `trinh-bay/README.md` mục 4.
 - Chụp thử (stills) trước khi render; kiểm bản cuối theo khối 17 + 09.
-- Báo cáo tiếng Việt: đã làm gì, đã kiểm gì, chưa kiểm gì, tên riêng cần xác nhận.

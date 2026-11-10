@@ -18,7 +18,7 @@ Skill này chỉ là **cửa vào**; không ghi luật riêng ở đây để ch
 ## Đọc kèm (ở đúng bước cần)
 - `../trinh-bay/bo-cuc.md`, `../trinh-bay/am-thanh.md`: kho đã có, để biết điều mới có trùng cái cũ không.
 - `../luat-chung.md`, `../video-style-edit/references/gotchas.md`: các chặn cũ phải giữ.
-- `../trinh-bay/nguon-hoc/`: các nguồn đã học (ví dụ `sang-huynh-claude-motion-2026-11-07.md`).
+- `../trinh-bay/nguon-hoc/`: các nguồn đã học, mỗi nguồn một file.
 
 ## Xong khi
 1. Phiếu học đã được David duyệt và nằm trong `nguon-hoc/`.

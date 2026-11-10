@@ -1,56 +1,53 @@
 # Mục lục bộ nhớ
 
-Tên file bắt đầu bằng nhóm: `luat-` cách làm việc với David · `nao-` bộ não và GitHub · `video-` dựng và đăng video · `may-` chỉ đúng máy Mac chính (không lên GitHub). Ghi nhớ đã bỏ nằm ở `luu-tru/`.
+Ghi nhớ là sổ (ngày + lời David + lý do); luật hiện hành nằm ở bản luật mỗi ghi nhớ trỏ tới. Nhóm theo tên: `luat-` cách làm việc với
+David · `nao-` bộ não và GitHub · `video-` dựng và đăng video · `may-` chỉ máy Mac chính (không lên GitHub). Đã bỏ / đã gộp: `luu-tru/`.
 
 ## Luật làm việc với David
 
-- [Công cụ cài thì đưa vào skill](luat-cong-cu-cai-dua-vao-skill.md) — David cài công cụ (pyannote…) để nâng skill; giúp việc tốt hơn thì tích hợp luôn (2026-11-07)
-- [Gợi ý để David chọn](luat-goi-y-de-david-chon.md) — "làm đi" không chốt lựa chọn; ngoại lệ cắt clip, làm lại video cũ; nhà chính thoi-quen-lam-viec (sửa 08/11)
-- [Học là bổ sung](luat-hoc-la-bo-sung.md) — học mẫu mới chỉ thêm, không thay cái David đã sửa; số khung dọc không dùng cho ngang (2026-11-08)
-- [Kết quả hơn tốc độ](luat-ket-qua-hon-toc-do.md) — làm đúng quy trình, bước cần kết quả render thì chờ; chỗ chưa rõ thì trao đổi (2026-11-05)
-- [Không tự chạy việc của David](luat-khong-tu-chay-viec-cua-david.md) — không tự Chạy tiếp/Duyệt/Làm lại việc David tạo khi chưa có lệnh, kể cả khi Claude làm ngắt (2026-11-08)
-- [Nội dung của David, thẩm mỹ của skill](luat-noi-dung-cua-david.md) — không khuôn lời; học nhịp/trình bày; thẩm mỹ chỉ giữ nhận diện từ 10/11 (2026-11-05)
-- [Thử bằng đoạn ngắn](luat-thu-bang-doan-ngan.md) — thử skill video bằng một đoạn trọn vẹn một ý (không cố định số giây), cho David xem kết quả cuối (2026-11-09)
-- [Sửa thẳng, tái bản định kỳ](luat-sua-thang-tai-ban.md) — đổi luật thì viết lại câu cũ, không chồng câu; máy đo báo thì tái bản toàn bộ một đợt (skill tai-ban) (2026-11-10)
-- [Tự hỏi khi mơ hồ](luat-tu-hoi-khi-mo-ho.md) — 6 tín hiệu tự dừng hỏi, kể cả giữa chừng; không tự đoán rồi làm (2026-11-05)
+- [Công cụ cài thì đưa vào skill](luat-cong-cu-cai-dua-vao-skill.md) — công cụ David cài (pyannote…) giúp việc tốt hơn thì tích hợp, giữ cách cũ dự phòng (07/11)
+- [Gợi ý để David chọn](luat-goi-y-de-david-chon.md) — "làm đi" không chốt lựa chọn; ngoại lệ cắt highlight, làm lại video cũ (06/11)
+- [Học là bổ sung](luat-hoc-la-bo-sung.md) — học mẫu chỉ thêm, giữ chặn cũ; khung mới chụp đủ lớp trước render (08/11)
+- [Kết quả hơn tốc độ](luat-ket-qua-hon-toc-do.md) — bước cần kết quả render thì chờ; muốn rút ngắn thì trao đổi (05/11)
+- [Không tự chạy việc của David](luat-khong-tu-chay-viec-cua-david.md) — không tự Chạy tiếp/Duyệt/Làm lại việc David tạo; việc thử tên `thu-…` (08/11)
+- [Nội dung của David, người xem trung tâm](luat-noi-dung-cua-david.md) — không khuôn lời; học kênh lớn ở nhịp, trình bày (05/11, gộp 10/11)
+- [Sửa thẳng, tái bản toàn bộ](luat-sua-thang-tai-ban.md) — đổi luật thì viết lại câu cũ; máy đo báo thì tái bản cả bộ não một đợt (10/11)
+- [Thử bằng đoạn ngắn](luat-thu-bang-doan-ngan.md) — thử skill video bằng một đoạn trọn một ý, cho David xem bản cuối (09/11)
+- [Tự hỏi khi mơ hồ](luat-tu-hoi-khi-mo-ho.md) — 6 tín hiệu tự dừng hỏi, kể cả giữa chừng (05/11)
 
 ## Bộ não và GitHub
 
-- [Đặt tên không dấu](nao-dat-ten-khong-dau.md) — mọi tên đều tiếng Việt không dấu, chữ thường, gạch nối; đồng nhất, không trộn tiếng Anh (2026-11-07)
-- [GitHub là bản gốc bộ não](nao-github-ban-goc.md) — BẮT BUỘC đẩy ngay; link repo, "cập nhật não" = sync.sh --push; chỉ sản phẩm ở máy làm ra nó; Mac ↔ GitHub 2 chiều (gộp 08/11)
-- [Hồ sơ David + bộ lọc nội dung](nao-ho-so-va-bo-loc.md) — ~/.claude/David.md, khối 00, kenh.json (nhà duy nhất của luật kênh), sổ danh mục
+- [Đặt tên không dấu](nao-dat-ten-khong-dau.md) — tiếng Việt không dấu, chữ thường, gạch nối, đồng nhất mọi nơi (07/11)
+- [GitHub là bản gốc bộ não](nao-github-ban-goc.md) — bắt buộc đẩy ngay; repo, "cập nhật não" = sync.sh --push; Mac ↔ GitHub 2 chiều (07/11)
+- [Hồ sơ David + bộ lọc nội dung](nao-ho-so-va-bo-loc.md) — đường dẫn hồ sơ, khối 00, kenh.json, sổ danh mục, đăng mạng xã hội
 
 ## Video
 
-- [Bỏ app dựng video](video-bo-app.md) — 10/11/2026 bỏ app localhost:8765 vì tốn token hơn; dựng video làm trực tiếp trong phiên Claude theo skill
-- [Bản chuẩn video](video-ban-chuan-2026-11-06.md) — 5 video chuẩn: 3 clip Đi trainer + 2 video dài; dự án cũ đã bỏ (2026-11-06)
-- [Làm lại video cũ](video-lam-lai-video-cu.md) — bỏ lời chào/giới thiệu kênh cũ, màn tít cũ, chữ/viền in trong hình; mỗi video một bản; làm trọn rồi David góp ý (2026-11-08)
-- [Bố cục tự cân, học chỉ trình bày](video-bo-cuc-tu-can.md) — bỏ mọi con số cố định; graphic tránh mọi người, bám người đang nói; ô tỉ lệ tự do; thẩm mỹ chỉ giữ nhận diện từ 10/11 (2026-11-07, thêm 08/11)
-- [Hiểu hơn cầu kì](video-hieu-hon-cau-ki.md) — kho hiệu ứng để chọn theo nội dung, mỗi video ít kiểu; chữ sau người / bóng người đã bỏ (2026-11-10)
-- [Thẩm mỹ chỉ giữ nhận diện](video-tham-my-chi-giu-nhan-dien.md) — chỉ cần người xem nhận ra là của David (chữ ký: bộ nhận diện chung, cam, 2 font); còn lại sáng tạo tự do, học mẫu lấy đủ (2026-11-10)
-- [Bộ nhận diện chung](video-nhan-dien-chung.md) — mọi loại video cùng vị trí, dấu góc, thanh thời gian (trừ dọc ngắn), thẻ cuối không logo; chỉ motion graphics tự do (2026-11-08)
-- [Video dọc ngắn không thanh, không thẻ cuối](video-doc-ngan-khong-thanh.md) — Reels/TikTok/Shorts bỏ thanh thời gian + thẻ cuối, màn chốt trên hình để video tự lặp (2026-11-10)
-- [Chỉ hình của chính video](video-chi-hinh-cua-chinh-video.md) — thumbnail/ảnh bìa chỉ lấy từ chính video đó, không mượn từ video khác (2026-11-05)
-- [Chữ trên màn hình nguyên văn](video-chu-nguyen-van.md) — không thẻ tít tự rút, màn chốt dùng lời David, không số chạy; không bỏ chữ đổi nghĩa (2026-11-07)
-- [Chuẩn âm lượng chung](video-chuan-am-luong.md) — mọi video: nhạc thấp hơn giọng ~23 dB, cả bài −14 LUFS; giọng nhỏ kéo lên, nhạc to hạ xuống (2026-11-06)
-- [Chuyển video qua Drive](video-chuyen-qua-drive.md) — điện thoại ↔ Mac qua Drive covandieuhanh@gmail.com, Video-goc / Video-xong chia theo tập: ban-dai, highlight (đổi 08/11)
-- [Clip ngắn đứng độc lập](video-clip-ngan-dung-doc-lap.md) — bốn câu bối cảnh, ý trọn, mang về, chừa lại; tự chọn ý; không số cố định (2026-11-07)
-- [Video dài không cắt](video-dai-khong-cat.md) — video dài để nguyên, kể cả lặng và ờ ừm; cắt ghép chỉ khi trích video ngắn (2026-11-05)
-- [Khuôn video dọc đồ hoạ](video-doc-khuon-chu-chinh.md) — chữ chính thay phụ đề, nhạc thấp hơn giọng ~23 dB, không màn hình cuối (10/11); 3 clip "Đi trainer" là mẫu (2026-11-06)
-- [Không cài HyperFrames](video-khong-cai-hyperframes.md) — giữ Remotion, chỉ học ý rồi tự viết lại vào bộ skill video (2026-11-06)
-- [Không ghi chú kỹ thuật trên video](video-khong-nhan-ky-thuat.md) — bỏ nhãn ×1,6/×0,5/slow-mo; chữ chỉ cho nội dung
-- [Không tự render lại](video-khong-tu-render.md) — góp ý nhỏ chỉ sửa skill/kịch bản; render khi David yêu cầu (2026-11-05)
-- [Kiến trúc skill video](video-kien-truc-skill.md) — hồ sơ tham số + 21 khối (00–20) + thư viện hình + mẫu chuẩn; sửa đúng một chỗ (2026-11-04, sửa 08/11)
-- [AI sáng tạo, không khuôn](video-motion-ke-chuyen.md) — mọi bước AI: chỉ giữ khung + tiêu chí + nhận diện lớn, bên trong sáng tạo; motion kể chuyện, vẽ tiếp (2026-11-09)
-- [Luôn có motion graphics](video-luon-co-motion-graphics.md) — điểm nhấn nhiều loại: hình vẽ, chữ, biểu tượng, làm nổi người nói; không chỉ toàn màn hình (2026-11-07)
-- [Mỗi lúc một chỗ chữ](video-phu-de-mot-cho-chu.md) — phụ đề dọc cụm 5–8 chữ cỡ 58 bằng chữ thẻ; chữ motion graphic hiện thì phụ đề nhường (2026-11-08)
-- [Movies xếp theo tập](video-movies-xep-theo-tap.md) — gốc/bản dài/highlight chung tap-<tên>, skill đã sửa theo
-- [Người xem là trung tâm](video-nguoi-xem-trung-tam.md) — học kênh lớn ở nhịp và trình bày; thẩm mỹ chỉ giữ nhận diện (2026-11-04, sửa 10/11)
-- [Nhạc theo tuyến nội dung](video-nhac-theo-tuyen.md) — Claude tự chọn theo tuyến từ kho kênh, không hỏi; cân mức từng bài (nhac.muc); ~23 dB dưới giọng (2026-11-05, sửa 08/11)
-- [Bìa podcast không mặt](video-podcast-bia-khong-mat.md) — podcast chỉ có tiếng thì bìa không có mặt người, phải khớp nội dung; mặt người chỉ cho video quay hình (2026-11-06)
-- [Podcast phủ hình 30%](video-podcast-phu-hinh-30.md) — motion graphic khoảng 30% thời lượng, cân theo nội dung; chụp thử cho David chốt rồi mới render (2026-11-06)
+- [Bản chuẩn video](video-ban-chuan-2026-11-06.md) — 5 video chuẩn: 3 clip Đi trainer + 2 video dài; `mau.json` 5 mẫu (06/11)
+- [Bỏ app dựng video](video-bo-app.md) — bỏ app localhost:8765 vì tốn token hơn; dựng trực tiếp trong phiên theo skill (10/11)
+- [Bố cục tự cân](video-bo-cuc-tu-can.md) — bỏ số cố định; graphic tránh mọi người, bám người đang nói; khung gốc `trinh-bay/` (07/11, 08/11)
+- [Bộ nhận diện chung](video-nhan-dien-chung.md) — mọi video cùng dấu góc, thanh, thẻ cuối không logo; dọc ngắn bỏ thanh + thẻ cuối (08/11, 10/11)
+- [Chỉ hình của chính video](video-chi-hinh-cua-chinh-video.md) — thumbnail/ảnh bìa chỉ lấy từ chính video đó (05/11)
+- [Chữ trên màn hình nguyên văn](video-chu-nguyen-van.md) — không tít tự rút, màn chốt lời David, không số chạy (07/11)
+- [Chuyển video qua Drive](video-chuyen-qua-drive.md) — Drive covandieuhanh, Video-goc / Video-xong chia theo tập (08/11)
+- [Clip ngắn đứng độc lập](video-clip-ngan-dung-doc-lap.md) — bốn câu bối cảnh, ý trọn, mang về, chừa lại; không số cố định (06/11, 07/11)
+- [Video dài không cắt](video-dai-khong-cat.md) — để nguyên cả lặng và ờ ừm; cắt chỉ khi trích video ngắn (05/11)
+- [Khuôn podcast dọc đồ hoạ](video-doc-khuon-chu-chinh.md) — chữ chính thay phụ đề, không màn hình cuối; 3 clip Đi trainer là mẫu (06/11, sửa 10/11)
+- [Hiểu hơn cầu kì](video-hieu-hon-cau-ki.md) — kho hiệu ứng để chọn, mỗi video ít kiểu; bỏ chữ sau người / bóng người (10/11)
+- [Không cài HyperFrames](video-khong-cai-hyperframes.md) — giữ Remotion, chỉ học ý rồi tự viết lại (06/11)
+- [Không ghi chú kỹ thuật trên video](video-khong-nhan-ky-thuat.md) — bỏ nhãn ×1,6 / ×0,5 / slow-mo; chữ chỉ cho nội dung
+- [Không tự render lại](video-khong-tu-render.md) — góp ý thì sửa skill/kịch bản; render khi David yêu cầu (05/11)
+- [Kiến trúc skill video](video-kien-truc-skill.md) — hồ sơ tham số + 20 khối + thư viện hình + mẫu chuẩn; sửa đúng một chỗ (04/11)
+- [Làm lại video cũ](video-lam-lai-video-cu.md) — bỏ lời chào/kênh cũ, tít cũ, chữ/viền in trong hình; mỗi video một bản (08/11)
+- [Motion graphics kể chuyện](video-motion-ke-chuyen.md) — mọi video có điểm nhấn nhiều loại; kể chuyện, vẽ tiếp; AI sáng tạo trong khung (07/11, 09/11)
+- [Movies xếp theo tập](video-movies-xep-theo-tap.md) — gốc / bản dài / highlight chung `tap-<tên>` (07/11)
+- [Nhạc theo tuyến, chuẩn âm chung](video-nhac-theo-tuyen.md) — tự chọn nhạc theo tuyến, cân từng bài; ~23 dB dưới giọng, −14 LUFS (05–08/11)
+- [Mỗi lúc một chỗ chữ](video-phu-de-mot-cho-chu.md) — phụ đề dọc cụm 5–8 chữ cỡ 58; chữ motion graphic hiện thì phụ đề nhường (08/11)
+- [Bìa podcast không mặt](video-podcast-bia-khong-mat.md) — podcast chỉ tiếng thì bìa không mặt người, khớp nội dung (06/11)
+- [Podcast phủ hình 30%](video-podcast-phu-hinh-30.md) — motion graphic ~30% thời lượng, cân theo nội dung; chụp thử cho David chốt (06/11)
+- [Thẩm mỹ chỉ giữ nhận diện](video-tham-my-chi-giu-nhan-dien.md) — chỉ giữ chữ ký nhận diện (cam, 2 font, bộ nhận diện); còn lại tự do (10/11)
 
 ## Chỉ máy Mac chính (file không lên GitHub)
 
-- [Bố cục thư mục máy này](may-bo-cuc-thu-muc.md) — chỉ máy Mac này: 1-nghe-trainer, 2-ca-nhan, 9-luu-tru, video-goc, sổ xếp file (2026-11-07)
-- [Dọn Documents 07/11](may-don-documents-2026-11-07.md) — App notion đã bỏ; mở phiên ở ~/Documents/David.Claude (2026-11-07)
+- [Bố cục thư mục máy này](may-bo-cuc-thu-muc.md) — 1-nghe-trainer, 2-ca-nhan, 9-luu-tru, video-goc, sổ xếp file (07/11)
+- [Dọn Documents 07/11](may-don-documents-2026-11-07.md) — App notion đã bỏ; mở phiên ở ~/Documents/David.Claude (07/11)

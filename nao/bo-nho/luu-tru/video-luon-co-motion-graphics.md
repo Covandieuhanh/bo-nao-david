@@ -8,6 +8,8 @@ metadata:
   modified: 2026-11-07T10:46:03.183Z
 ---
 
+> Đã gộp vào `video-motion-ke-chuyen` ở tái bản 2 (10/11/2026). Bản dưới là lịch sử.
+
 "Dựng nhẹ" không có nghĩa là chỉ phụ đề + nhạc. Mọi video phải có motion graphics. Motion graphics hiểu rộng: **điểm nhấn để người xem tập trung vào một cái gì đó**, thỉnh thoảng xuất hiện như các video ấn tượng. Gồm nhiều loại:
 - hình vẽ / biểu tượng bật ra minh hoạ ý,
 - chữ giải thích, chữ nhấn cụm đắt,
