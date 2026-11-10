@@ -1,1 +1,0 @@
-{"id": "hl-render", "ten": "Render từng clip (nối tiếp)", "loai": "co-dinh", "nang": true, "khi": "grep -q tu-quay {P}/loai.txt", "lenh": "python3 -I {APP}/ap/hl_moi_clip.py {P} render"}

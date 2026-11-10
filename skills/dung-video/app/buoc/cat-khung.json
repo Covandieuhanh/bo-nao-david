@@ -1,1 +1,0 @@
-{"id": "cat-khung", "ten": "Cắt chữ/viền in cứng (video cũ)", "loai": "co-dinh", "khi": "test -s {W}/khung-trong.txt && grep -q : {W}/khung-trong.txt", "lenh": "python3 -I {APP}/ap/cat_khung.py {P} {W}", "nang": true}

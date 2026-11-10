@@ -1,1 +1,0 @@
-{"id": "doi-khung-ngang", "ten": "Đổi khung: dọc → ngang (chữ hai bên)", "loai": "co-dinh", "khi": "test {KHUNG} = ngang", "lenh": "python3 -I {S}/set_output.py {P} pillar"}

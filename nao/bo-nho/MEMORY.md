@@ -10,7 +10,7 @@ Tên file bắt đầu bằng nhóm: `luat-` cách làm việc với David · `n
 - [Kết quả hơn tốc độ](luat-ket-qua-hon-toc-do.md) — làm đúng quy trình, bước cần kết quả render thì chờ; chỗ chưa rõ thì trao đổi (2026-11-05)
 - [Không tự chạy việc của David](luat-khong-tu-chay-viec-cua-david.md) — không tự Chạy tiếp/Duyệt/Làm lại việc David tạo khi chưa có lệnh, kể cả khi Claude làm ngắt (2026-11-08)
 - [Nội dung của David, thẩm mỹ của skill](luat-noi-dung-cua-david.md) — không khuôn lời; học nhịp/trình bày, giữ thẩm mỹ (2026-11-05)
-- [Thử bằng đoạn ngắn](luat-thu-bang-doan-ngan.md) — thử app/skill video bằng một đoạn trọn vẹn một ý (không cố định số giây), chạy qua app, cho David xem kết quả cuối (2026-11-09)
+- [Thử bằng đoạn ngắn](luat-thu-bang-doan-ngan.md) — thử skill video bằng một đoạn trọn vẹn một ý (không cố định số giây), cho David xem kết quả cuối (2026-11-09)
 - [Tự hỏi khi mơ hồ](luat-tu-hoi-khi-mo-ho.md) — 6 tín hiệu tự dừng hỏi, kể cả giữa chừng; không tự đoán rồi làm (2026-11-05)
 
 ## Bộ não và GitHub
@@ -21,7 +21,7 @@ Tên file bắt đầu bằng nhóm: `luat-` cách làm việc với David · `n
 
 ## Video
 
-- [App dựng video](video-app-dung-video.md) — localhost:8765 = skill chạy tự động: cố định thì máy, phán đoán thì AI làm y như skill; không luật/vòng riêng (2026-11-09)
+- [Bỏ app dựng video](video-bo-app.md) — 10/11/2026 bỏ app localhost:8765 vì tốn token hơn; dựng video làm trực tiếp trong phiên Claude theo skill
 - [Bản chuẩn video](video-ban-chuan-2026-11-06.md) — 5 video chuẩn: 3 clip Đi trainer + 2 video dài; dự án cũ đã bỏ (2026-11-06)
 - [Làm lại video cũ](video-lam-lai-video-cu.md) — bỏ lời chào/giới thiệu kênh cũ, màn tít cũ, chữ/viền in trong hình; mỗi video một bản; làm trọn rồi David góp ý (2026-11-08)
 - [Bố cục tự cân, học chỉ trình bày](video-bo-cuc-tu-can.md) — bỏ mọi con số cố định; graphic tránh mọi người, bám người đang nói; ô tỉ lệ tự do; giữ thẩm mỹ gốc (2026-11-07, thêm 08/11)

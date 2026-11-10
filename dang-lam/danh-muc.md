@@ -25,6 +25,7 @@ Trạng thái: lọc · dựng · chờ đăng · đã đăng · kho · bỏ. D�
 | 2026-11-09 | Podcast thử app "người thân đi cửa sau" (thu-pod-trainer.wav, 0:59, `~/Movies/tap-thu-pod-moi`) | 🗂 Lưu kho · ⚠️ đã cảnh báo lằn ranh kinh doanh 0:43–0:59 · dựng BẢN THỬ theo yêu cầu, không đăng | 4 | quan hệ → công việc | Không đăng (bản thử). Cần David nói thêm Giải pháp + Thực thi mới thành video thật | Không | lọc (app) |
 | 2026-11-10 | Video su-tap-trung-video-ngan-da-khien-chung-t (app dựng, `~/Movies/tap-su-tap-trung-video-ngan-da-khien-chung-t`) | ✂️ Trích ngắn từ gốc | — |  |  | — | highlight David duyệt (app) · chờ đăng |
 | 2026-11-10 | Video quay trong xe "thói quen phơi nắng" (D9BF90F2, 1:29 → 1:16, dọc, `~/Movies/tap-thoi-quen-nho`) | ✅ Phù hợp | 8 | gốc (làm chủ bản thân) | Shorts + Reels + TikTok, T6 13/11 20:00 (⚠️ trùng lịch clip Đi trainer — chờ David chọn) | Gợi mở | dựng (render 10/11) · chờ cổng 2 |
+| 2026-11-10 | Video vòng đồng xu cổ (E230CDE7, 0:46 → 0:45, dọc, `~/Movies/tap-vong-dong-xu`) | ⛔ Không làm (lằn ranh tâm linh) · David chọn dựng BẢN RIÊNG | 2 | — | Không lên kênh (bản riêng) | — | dựng (render 10/11) · chờ David xem |
 
 ## Phiếu lọc (chấm thử 05/11/2026)
 

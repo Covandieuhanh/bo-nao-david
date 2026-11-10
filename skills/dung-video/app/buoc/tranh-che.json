@@ -1,1 +1,0 @@
-{"id": "tranh-che", "ten": "Tránh che mặt", "loai": "co-dinh", "lenh": "zsh {S}/face_place.sh {P} || grep -q \"script này cho khung dọc\" {W}/log/tranh-che.txt", "ghi_chu": "Video ngang: face_place.sh đã dò mặt + ghi mat.js (điểm nhấn cạnh mặt); phần face_place.py chỉ cho khung dọc nên thoát kèm thông báo — đó không phải lỗi.", "nang": true}

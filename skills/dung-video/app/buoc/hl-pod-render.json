@@ -1,1 +1,0 @@
-{"id": "hl-pod-render", "ten": "Render từng clip podcast + tờ kiểm tra", "loai": "co-dinh", "nang": true, "khi": "grep -q podcast {P}/loai.txt", "lenh": "python3 -I {APP}/ap/hl_pod.py {P} {W} render"}

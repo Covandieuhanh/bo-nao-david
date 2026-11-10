@@ -1,1 +1,0 @@
-{"id": "hl-ban-loi", "ten": "Bản lời video dài", "loai": "co-dinh", "lenh": "python3 -I {APP}/ap/loi.py ban-loi {P}/check/goc/words.srt {P}/check/goc/transcript.srt {W}/ban-loi.txt"}

@@ -1,1 +1,0 @@
-{"id": "vlog-render", "ten": "Render cả vlog (có tiếng, tự cân âm)", "loai": "co-dinh", "nang": true, "cwd": "{P}/motion", "lenh": "node render-show.mjs"}

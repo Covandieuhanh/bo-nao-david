@@ -19,5 +19,5 @@ một hình có thể diễn tả 1–2 ý hoặc chạy từ đầu tới cuố
 **Mở rộng cùng ngày (David chốt):** nguyên tắc không chỉ cho motion mà cho **mọi bước AI làm** (lọc, kịch bản, motion, phát hành…):
 "phần nào cố định thì làm app, phần nào AI thì gọi AI, và AI phải thể hiện sức mạnh nhiều nhất bằng cách sáng tạo — chỉ dựa trên bộ
 khung và tiêu chí, bên trong hoàn toàn sáng tạo cho hợp nội dung video. Đó là cốt lõi." Nhà của luật: `skills/thoi-quen-lam-viec.md`
-(đầu file) và lời dặn chung của app `app/goi_ai.py`. Liên quan [[video-app-dung-video]].
+(đầu file). App đã bỏ 10/11/2026 — mọi bước AI làm trực tiếp trong phiên Claude, xem [[video-bo-app]].
 

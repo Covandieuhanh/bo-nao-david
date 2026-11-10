@@ -1,1 +1,0 @@
-{"id": "so-xong-hl", "ten": "Ghi sổ danh mục (David duyệt highlight)", "loai": "co-dinh", "lenh": "python3 -I {APP}/ap/so_danh_muc.py {P} {W} 'highlight David duyệt (app) · chờ đăng'"}

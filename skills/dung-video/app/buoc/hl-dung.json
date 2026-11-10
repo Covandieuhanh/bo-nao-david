@@ -1,1 +1,0 @@
-{"id": "hl-dung", "ten": "Dựng khung từng clip (cắt cứng, phụ đề, nhạc, tít, thẻ cuối)", "loai": "co-dinh", "nang": true, "khi": "grep -q tu-quay {P}/loai.txt", "lenh": "python3 -I {APP}/ap/hl_dung.py {P}"}

@@ -1,1 +1,0 @@
-{"id": "render", "ten": "Render (chỉ phần bị đổi) + ghép bản cuối", "loai": "co-dinh", "lenh": "python3 -I {APP}/ap/render_doi.py {P}", "nang": true}

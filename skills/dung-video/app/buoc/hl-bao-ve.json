@@ -1,1 +1,0 @@
-{"id": "hl-bao-ve", "ten": "Nâng khung + tránh che người (mọi clip)", "loai": "co-dinh", "nang": true, "khi": "grep -q tu-quay {P}/loai.txt", "lenh": "python3 -I {APP}/ap/hl_moi_clip.py {P} bao-ve"}

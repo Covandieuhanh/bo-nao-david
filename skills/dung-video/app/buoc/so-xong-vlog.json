@@ -1,1 +1,0 @@
-{"id": "so-xong-vlog", "ten": "Ghi sổ danh mục (David duyệt vlog)", "loai": "co-dinh", "lenh": "python3 -I {APP}/ap/so_danh_muc.py {P} {W} 'vlog David duyệt (app) · chờ đăng'"}

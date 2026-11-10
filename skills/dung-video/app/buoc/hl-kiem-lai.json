@@ -1,7 +1,0 @@
-{
- "id": "hl-kiem-lai",
- "ten": "Máy đo lại sau khi AI sửa (không đạt thì dừng)",
- "loai": "co-dinh",
- "nang": true,
- "lenh": "python3 -I {APP}/ap/hl_moi_clip.py {P} kiem {W}"
-}

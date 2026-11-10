@@ -1,1 +1,0 @@
-{"id": "vlog-ban-loi", "ten": "Lời từng clip", "loai": "co-dinh", "lenh": "python3 -I {APP}/ap/vlog_ban_loi.py {P} {W}"}

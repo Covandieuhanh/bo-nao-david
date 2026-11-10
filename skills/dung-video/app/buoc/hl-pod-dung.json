@@ -1,1 +1,0 @@
-{"id": "hl-pod-dung", "ten": "Dựng khung podcast dọc từng clip (7B)", "loai": "co-dinh", "nang": true, "khi": "grep -q podcast {P}/loai.txt", "lenh": "python3 -I {APP}/ap/hl_pod.py {P} {W} dung"}

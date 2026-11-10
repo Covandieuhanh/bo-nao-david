@@ -1,1 +1,0 @@
-{"id": "hl-tao", "ten": "Tạo dự án highlight (lấy lời đã sửa của bản dài nếu có)", "loai": "co-dinh", "nang": true, "lenh": "python3 -I {APP}/ap/hl_tao.py {W}"}

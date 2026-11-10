@@ -1,1 +1,0 @@
-{"id": "vlog-tao", "ten": "Tạo dự án ghép (chuẩn hoá clip, chép lời, lưới hình từng clip)", "loai": "co-dinh", "nang": true, "lenh": "python3 -I {APP}/ap/vlog_tao.py {W}"}

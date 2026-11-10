@@ -175,3 +175,8 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
   vùng an toàn, không phóng; pow nhận `\n` theo cụm nghĩa + cỡ chữ tự co theo dòng dài nhất; location tự co + textWrap balance.
   `hl_edl.py`: màn chốt chỉ khi có câu `cta` / KEUGOI nguyên văn (không có → CTA = null, kết ở câu chốt ý + thẻ cuối); dấu góc dùng
   `topic` ngắn của phương án (≤ 3 chữ) trước tên tập.
+
+## 2026-11-10 · Chữ nhấn dưới cằm đè miệng khi mặt nằm thấp
+- Lỗi: video vòng đồng xu (mặt thấp, khung dọc hẹp) — `Nhan.jsx` kẹp ô "dưới cằm" lên trên dải phụ đề → ô chữ đè miệng/cằm.
+- Sửa: `remotion-template/src/components/Nhan.jsx` — khi ô dưới cằm bị kẹp lên quá cằm, đưa ô lên **trên đầu** (dưới dấu góc);
+  không đủ chỗ trên đầu thì giữ cách cũ.

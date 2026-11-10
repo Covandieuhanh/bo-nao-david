@@ -1,1 +1,0 @@
-{"id": "nang-khung", "ten": "Nâng khung khi người nằm thấp (chỉ video dọc)", "loai": "co-dinh", "lenh": "python3 -I {S}/lift.py {P} apply", "khi": "test \"$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0:s=x {P}/davinci/media/video_goc.mp4)\" = 1080x1920", "nang": true}

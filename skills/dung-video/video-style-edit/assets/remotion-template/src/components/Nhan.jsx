@@ -44,8 +44,13 @@ export const Nhan = ({sceneId, start, text, icon, at, zoom = 1, toi = false, bam
   const size = Math.round(under ? base : Math.max(minS * 0.8, Math.min(base, fit)));
   const side = k.ke === 'phai' ? 'right' : 'left';
   const top = Math.max(BRAND_BOT + 24, fy - size * lines.length * 0.6);
+  // Dưới cằm; mặt nằm thấp tới mức ô chữ bị kẹp lên đè miệng/cằm → đưa lên trên đầu (10/11/2026: chữ đè miệng ở video vòng đồng xu)
+  const boxH = size * (1.12 * lines.length + 0.8) + (icon ? size * 2.3 : 0);
+  const duoiCam = fy + t.h * 0.75 * H, tranDuoi = SAFE.bottom - 140 - size * lines.length * 1.2 - 40;
+  const trenDau = Math.max(BRAND_BOT + 24, fy - t.h * 0.95 * H - boxH);
+  const yUnder = duoiCam <= tranDuoi || trenDau + boxH > fy - t.h * 0.6 * H ? Math.min(duoiCam, tranDuoi) : trenDau;
   const box = under
-    ? {left: W / 2, maxWidth: W - SAFE.left - SAFE.right, top: Math.min(fy + t.h * 0.75 * H, SAFE.bottom - 140 - size * lines.length * 1.2 - 40), textAlign: 'center', alignItems: 'center'}
+    ? {left: W / 2, maxWidth: W - SAFE.left - SAFE.right, top: yUnder, textAlign: 'center', alignItems: 'center'}
     : side === 'right'
       ? {left: k.x0, maxWidth: k.w, top, alignItems: 'flex-start', textAlign: 'left'}
       : {right: W - k.x1, maxWidth: k.w, top, alignItems: 'flex-end', textAlign: 'right'};

@@ -1,1 +1,0 @@
-{"id": "lam-sach", "ten": "Làm sạch (cắt, sửa chiều hình)", "loai": "co-dinh", "lenh": "python3 -I {S}/clean_apply.py {P}", "nang": true}

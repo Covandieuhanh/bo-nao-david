@@ -1,1 +1,0 @@
-{"id": "pod-tao", "ten": "Tạo dự án podcast (chỉ lấy tiếng, giữ nguyên toàn bộ)", "loai": "co-dinh", "nang": true, "lenh": "python3 -I {APP}/ap/pod_tao.py {W}"}

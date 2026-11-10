@@ -1,1 +1,0 @@
-{"id": "don-tap-vlog", "ten": "Dọn file tạm của vlog (vào Thùng rác)", "loai": "co-dinh", "lenh": "python3 -I {S}/don_tap.py --xoa {P}"}
