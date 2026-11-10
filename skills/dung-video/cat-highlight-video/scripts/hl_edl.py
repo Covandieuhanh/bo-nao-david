@@ -3,7 +3,7 @@
 # <E>/motion/public/clips/c1.mp4 = video gốc (new_montage.sh <tên> <H>/nguon.*). Mỗi câu có thể có:
 #   "tone": "lang" | "soi" (mặc định soi) · "zoom": true (dồn khung chậm suốt câu — cú chốt) · "cta": true (câu dùng cho màn chốt)
 # Ghi <E>/motion/src/edl.js: RAW = các câu CẮT CỨNG (David chốt 2026-11-04, chuẩn kênh lớn), khoảng lặng trong câu rút còn
-# 0,24 s (pauses.py), đoạn con xen kẽ phóng 1,08× (jump cut); --tua = kiểu cũ có đoạn `jump` 0,4 s chip ⏩ + thanh tập gốc.
+# 0,24 s (pauses.py), không phóng xen kẽ (phong_xen_ke = 1.0); --tua = kiểu cũ có đoạn `jump` 0,4 s chip ⏩ + thanh tập gốc.
 # SUBS = phụ đề (giây timeline) theo đúng chữ
 # của câu (chia dòng ≤ 7 chữ, ngắt ở dấu phẩy; mốc lấy từ words.srt đã bù độ lệch Whisper), TONE + MUSIC.tracks theo tông,
 # CTA = câu kêu gọi cuối (nguyên văn), HL = {src_duration}, ENDCARD = thẻ cuối dẫn về bản đầy đủ khi phuong-an.json có
@@ -11,7 +11,7 @@
 import difflib, json, os, re, subprocess, sys, unicodedata
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../khoi")); import hoso   # tham số: dung-video/ho-so
 _HS = hoso.load('highlight')
-PUNCH = hoso.get(_HS, 'phong_xen_ke', 1.08)
+PUNCH = hoso.get(_HS, 'phong_xen_ke', 1.0)   # 1.0 = không phóng xen kẽ ở mối cắt
 
 _a = [x for x in sys.argv[1:] if not x.startswith('--')]
 H, E = (os.path.expanduser(a) for a in _a[:2]); OID = _a[2] if len(_a) > 2 else None
@@ -112,8 +112,8 @@ for i, p in enumerate(pieces):
         q = pieces[i - 1]
         raw.append(f"  {{id: 'j{i}', clip: 'c1', from: {min(dur, q['end'] + POST) - 0.04:.2f}, freeze: {JUMP}, vol: 0, jump: {{from: {q['end']:.2f}, to: {p['start']:.2f}}}}},")
         tones.append((acc, acc + JUMP, p.get('tone', 'soi'))); acc += fr(JUMP)
-    # cắt cứng + cắt khoảng lặng trong câu (David chốt 2026-11-04, chuẩn kênh lớn); mỗi đoạn con xen kẽ phóng 1,0 / 1,08 để mối
-    # cắt thành cú "đẩy máy" (jump cut kiểu Ali Abdaal / Hormozi). Câu `zoom` (cú chốt) giữ nguyên một đoạn, dồn chậm 1 → 1,12.
+    # cắt cứng + cắt khoảng lặng trong câu (David chốt 2026-11-04, chuẩn kênh lớn); mặc định không phóng xen kẽ đoạn con
+    # (phong_xen_ke = 1.0; > 1 chỉ khi David yêu cầu). Câu `zoom` (cú chốt) giữ nguyên một đoạn, dồn chậm 1 → 1,12.
     parts = [(a, b)] if p.get('zoom') else pauses.split(H, a, b)
     # CẢNH PHẢN ỨNG (David duyệt 2026-11-04, HL-3): "react": {"at": <giây nguồn ngay sau cụm đắt>, "from": <giây nguồn có mặt người
     # nghe/khán giả>, "len": 0.8–1.5} → hình người nghe đè lên, TIẾNG người nói vẫn chạy (audio của đoạn chính)
@@ -135,7 +135,7 @@ for i, p in enumerate(pieces):
         x, y = part
         sid = f"p{i + 1}" + ('' if k == 0 else 'bcdefghijklmnopqrstuvwxyz'[k - 1])
         if p.get('zoom'): z = ", zoomIn: [1, 1.12, 0.5, 0.38]"
-        else: z = f", zoomIn: [{PUNCH}, {PUNCH}, 0.5, 0.38]" if nseg % 2 else ''
+        else: z = f", zoomIn: [{PUNCH}, {PUNCH}, 0.5, 0.38]" if PUNCH > 1 and nseg % 2 else ''
         nseg += 1
         extra = (", grade: 'lang'" if p.get('tone') == 'lang' else '') + z
         note = f"   // {p.get('role', '')} {int(p['start'] // 60)}:{p['start'] % 60:05.2f} «{p['text'][:50]}…»" if k == 0 else ''

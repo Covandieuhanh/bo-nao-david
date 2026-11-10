@@ -45,7 +45,7 @@ thời gian, không thẻ cuối, màn chốt trên hình, kết ở chữ cuố
 6. **Không thứ tự cố định**: vị trí lời kêu gọi tự bố trí theo mạch (khối 13, bước 4); đổi thứ tự không được làm sai nghĩa. Độ dài theo ý.
 7. **Thẻ tít mở đầu** (chuẩn DOAC/Mel Robbins): **cụm nguyên văn đắt nhất của clip**, Claude tự chọn, ngắn, 2 dòng, nửa trên khung; nêu
    tiền cược / kết quả / mâu thuẫn của clip nếu lời có. Câu chạm vẫn là lời thật ngay giây 0. Ghi tít + mốc câu gốc vào ke-hoach-cat.md.
-8. **Nhịp kênh lớn**: **cắt cứng** giữa các câu, đoạn xen kẽ phóng 1,08× để giấu mối; khoảng lặng ≥ 0,45 s **trong** câu và
+8. **Nhịp kênh lớn**: **cắt cứng** giữa các câu, không phóng xen kẽ ở mối cắt; khoảng lặng ≥ 0,45 s **trong** câu và
    > 0,6 s **giữa** câu rút còn ~0,24 s; phụ đề **cụm trọn ý 5–8 chữ, cỡ bằng chữ thẻ, ẩn khi lớp chữ motion graphic hiện** (luat-chung mục 3). Giữ 1 s lặng sau câu hỏi kêu gọi. Kiểu cũ có chip tua chỉ khi David yêu cầu: `--tua` cho `cut_highlight.py` + `hl_edl.py`.
 9. **Hai tông** theo cảm xúc lời nói, đổi giữa chừng được (cú đổi tông là cú cảm xúc):
    | | **Sôi động** `soi` (mẹo, tin vui, kết quả, lời mời) | **Lắng** `lang` (tâm sự, nỗi đau, mất mát, câu hỏi day dứt) |
@@ -99,7 +99,7 @@ LOI_SAN="$P/check/goc" zsh $BASE/scripts/new_montage.sh hl-<tên>-<id> "$P/nguon
 python3 -I $SKILL/scripts/hl_edl.py "$P" "$E" <id>                   # → $E/motion/src/edl.js viết sẵn
 cp $SKILL/assets/music/*.mp3 "$E/motion/public/sfx/"                 # kho nhạc kênh (soi-*, lang-*)
 ```
-`hl_edl.py` viết: các câu `p1…pN` **cắt cứng**, khoảng lặng trong câu đã rút (đoạn con `p2b`, `p2c`…), đoạn xen kẽ phóng 1,08×;
+`hl_edl.py` viết: các câu `p1…pN` **cắt cứng**, khoảng lặng trong câu đã rút (đoạn con `p2b`, `p2c`…), không phóng xen kẽ;
 `SUBS` (giây timeline, chữ đúng câu nguyên văn — hiện cụm 5–8 chữ nhờ `SHORT = true`); `TS(src)` đổi giây video gốc → giây
 timeline cho lớp phủ; `TONE` + `MUSIC.tracks`; `CTA` = câu kêu gọi nguyên văn (nếu có); `HL = {…, bar: false}` (không thanh tập gốc).
 Claude chỉnh tiếp trong edl.js:

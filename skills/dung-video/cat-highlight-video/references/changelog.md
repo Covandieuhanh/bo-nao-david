@@ -1,5 +1,8 @@
 # Sổ thay đổi — cat-highlight-video (quyết định của người dùng + lý do)
 
+## 10/11/2026 — Bỏ phóng xen kẽ 1,08× ở mối cắt
+- David xem đoạn thử tap-thu-tai-ban-video-1: "tôi không thích mấy đoạn zoom giật ra giật vào" → "bỏ 1 giữ 2": bỏ mặc định phóng xen kẽ 1,08× ở mỗi mối cắt (mọi loại video), giữ zoom dồn chậm vào mặt ở câu đắt (`nhan` zoom, câu `"zoom": true`). Sửa: luật 8, bước 7A, `ho-so/highlight.json` `phong_xen_ke: 1.0`, `hl_edl.py` chỉ phóng khi > 1.
+
 ## Tái bản 1 — 10/11/2026: bản luật viết lại từ bảng dang-lam/tai-ban-video-1.md
 - Luật 11 chỉ còn "không thẻ cuối, không thanh thời gian"; tít ghim mặc định tắt (`tit_ghim: false`, bật `"pin": true`); không có câu kêu gọi thì không dừng (khối 13 sửa theo luật 4); ghim theo kiểu dẫn dắt + link bản đầy đủ.
 - David "Đồng ý cả 5", câu 2: khuôn 7B bỏ "hình dày theo từng cụm lời", hình theo ý cần hiểu; 3 clip Đi trainer vẫn là mẫu về khuôn.

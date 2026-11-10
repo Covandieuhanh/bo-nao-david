@@ -35,8 +35,8 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
   nằm trong cả câu chuyện dẫn tới nó. Không rút video dài thành đoạn hay.
   Riêng **làm lại video cũ**: cắt màn tít + lời chào / giới thiệu kênh cũ (tên kênh cũ, nghề cũ, kinh doanh) và chữ/viền kênh cũ in
   trong hình — chỉ đúng các đoạn đó (khối 02). Lằn ranh David chọn cắt thì chỉ cắt đúng đoạn đó.
-- **Cắt chỉ cho video ≤ 3 phút và highlight**: lặng ≥ 0,45 s còn ~0,24 s + tiếng đệm "ờ/ừm" đứng riêng (jump cut + phóng xen kẽ
-  1,08×); giữ 1 s lặng sau câu hỏi kêu gọi. Clip ngắn luôn trích từ bản gốc, ưu tiên kéo người xem về video dài trên YouTube; không
+- **Cắt chỉ cho video ≤ 3 phút và highlight**: lặng ≥ 0,45 s còn ~0,24 s + tiếng đệm "ờ/ừm" đứng riêng (cắt cứng, không phóng
+  xen kẽ ở mối cắt); giữ 1 s lặng sau câu hỏi kêu gọi. Clip ngắn luôn trích từ bản gốc, ưu tiên kéo người xem về video dài trên YouTube; không
   về thì vẫn cần tương tác / nhắn tin trên Facebook, TikTok. **Vlog ghép** giữ nhịp tự nhiên.
 - Video ngắn đổi gì đó mỗi 1–3 s (nhịp chữ phụ đề, phóng, chữ to, cắt), không để 5–8 s trôi qua không đổi gì. Video dài thưa, nhịp
   từ nội dung.

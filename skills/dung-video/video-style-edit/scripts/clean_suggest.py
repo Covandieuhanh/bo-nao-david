@@ -92,7 +92,7 @@ if DUR > hoso.get(HS, 'cat_lang.nguong_dai_s', 180):
     for c in cuts: c["ok"] = False
 
 cuts.sort(key=lambda c: c["start"])
-data = dict(orient=[], zoom="alt", cuts=cuts)
+data = dict(orient=[], zoom="none", cuts=cuts)
 dst = os.path.join(O, "cuts.json")
 if os.path.exists(dst):   # đã có bản Claude chỉnh tay → không ghi đè
     dst = os.path.join(O, "cuts.new.json")

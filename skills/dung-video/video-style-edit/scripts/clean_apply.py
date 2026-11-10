@@ -2,7 +2,7 @@
 # Đọc check/clean/cuts.json (chỉ các cut ok=true) → davinci/media/video_goc.mp4 (bản sạch), giữ bản thô là
 # video_goc_raw.<ext>, cập nhật motion/src/project.js, ghi segments.json (mốc thô ↔ mốc sạch) + bảng vào cuts.md.
 #   orient: danh sách trong "180", "cw" (xoay phải 90°), "ccw" (xoay trái 90°), "mirror" (lật gương)
-#   zoom:   "alt" = đoạn xen kẽ phóng 1,08× để che cú nhảy hình ở mối cắt giữa video; "none" = không
+#   zoom:   "none" (mặc định) = không phóng; "alt" = đoạn xen kẽ phóng 1,08× ở mối cắt (chỉ khi David yêu cầu)
 import glob, json, os, re, subprocess, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from _common import node_env
@@ -54,7 +54,7 @@ zoom = f"crop=trunc(iw/{Z}/2)*2:trunc(ih/{Z}/2)*2:(iw-ow)/2:(ih-oh)*0.35"   # ne
 fc, cat = [], ""
 for i, (a, b) in enumerate(keep):
     v = [f"trim=start={a:.4f}:end={b:.4f}", "setpts=PTS-STARTPTS", *vf]
-    if cfg.get("zoom", "alt") == "alt" and i % 2: v.append(zoom)
+    if cfg.get("zoom", "none") == "alt" and i % 2: v.append(zoom)
     v.append(fit)
     d = b - a
     fc.append(f"[0:v]{','.join(v)}[v{i}]")
@@ -83,7 +83,7 @@ for a, b in keep:
 json.dump(seg, open(os.path.join(O, "segments.json"), "w"), indent=1)
 mmss = lambda t: f"{int(t // 60)}:{t % 60:04.1f}"
 with open(os.path.join(O, "cuts.md"), "a", encoding="utf-8") as f:
-    f.write(f"\n## Đã áp ({len(cuts)} cắt, xoay/lật: {cfg.get('orient') or 'không'}, zoom: {cfg.get('zoom', 'alt')})\n"
+    f.write(f"\n## Đã áp ({len(cuts)} cắt, xoay/lật: {cfg.get('orient') or 'không'}, zoom: {cfg.get('zoom', 'none')})\n"
             f"Thô {DUR:.1f}s → sạch {new_dur:.1f}s (−{DUR - new_dur:.1f}s). Mối nối trong bản sạch: "
             + ", ".join(mmss(s["clean_start"]) for s in seg[1:]) + "\n")
 print(f"{len(keep)} đoạn · {DUR:.1f}s → {new_dur:.1f}s · {OW}x{OH} → {out}")
