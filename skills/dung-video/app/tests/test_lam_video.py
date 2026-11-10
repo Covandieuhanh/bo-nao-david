@@ -78,7 +78,7 @@ class XoaSua(unittest.TestCase):
 @unittest.skipUnless(shutil.which('ffmpeg'),'cần ffmpeg')
 class DinhAm(unittest.TestCase):
  def test_bat_dinh_vuot(self):
-  for vol,mong in (('0.95',1),('0.5',0)):
+  for vol,mong in (('7.8',1),('2',0)):   # sine của ffmpeg mặc định biên độ 1/8 (≈ −18 dB)
    with tempfile.TemporaryDirectory() as t:
     P=Path(t);subprocess.run(['ffmpeg','-v','error','-f','lavfi','-i','sine=f=440:d=2','-af',f'volume={vol}','-c:a','aac','-b:a','192k',str(P/'video-final.mp4')],check=True)
     r=subprocess.run([sys.executable,'-I',str(A/'kiem/kiem_dinh_am.py'),str(P)],capture_output=True,text=True)
