@@ -232,18 +232,23 @@ Thêm "## Tái bản 1" vào đầu 3 changelog (video-style-edit, cat-highlight
   "Câu ghi đè" 81 → 33, nhưng **cả 33 là chữ "thay" thường** ("chữ chính thay phụ đề", "nói thay lời"): regex `\bTHAY\b` trong
   `do_chong_cheo.py` chạy với `re.I` nên bắt mọi chữ "thay". Câu ghi đè thật = 0. Cần sửa máy đo (ngoài phạm vi tái bản bộ video).
 - **Mẫu chuẩn:** `kiem-mau.py` 5/5 ✓ giữ nguyên (SSIM 0,982–0,990); node_modules nối tạm từ tap-5-nguyen-tac-tien rồi đã gỡ.
-- **Việc thật:** đề xuất đoạn 4:10–4:56 bản sạch `tap-5-nguyen-tac-tien` (nguyên tắc 2 "đầu tư vào bản thân — kiến thức chính là tiền",
-  ~46 s, trọn một ý), dựng ngang theo bản luật mới. Chờ David đồng ý mới render.
+- **Việc thật:** David đồng ý → dựng `~/Movies/tap-thu-tai-ban-video-1/2-ban-dai/video-final.mp4` (43,3 s, ngang) từ bản sạch
+  `tap-5-nguyen-tac-tien` 4:10–4:56 theo bản luật mới: không thẻ tít, 3 kiểu (nhan · diagram tu-thanh ở đỉnh · cta nguyên văn), đường
+  cảm xúc trong `ke-hoach-canh.md`. Soát cảnh P0/P1/P2 = 0; âm −14,2 LUFS, đỉnh −1,9 dB, rè +0,3 dB. **Chờ David chấm.**
+  Gặp 2 lỗi code có sẵn (không do tái bản): (a) `render.mjs` dừng ở bước thẻ cuối trên Node 24 vì `endcard.js → thanh.js` import
+  `hoso.json` không có `with {type: 'json'}` — đã render tạm thẻ cuối bằng script riêng trong dự án thử; (b) `chuan_am.py` tự chạy
+  trong render_preview ra −14,8 LUFS, phải chạy lại lần 2 mới đạt.
 
 ## Bước 6 — Đóng mốc
 Tag `tai-ban-video-1`, dòng trong `skills/tai-ban/lich-su.md`, đẩy GitHub. Ngưỡng `bo.json` giữ nguyên (sau khi sửa máy đo mới biết có lệch không).
 
 ## Đối chiếu "Xong khi"
 1. Bảng đủ, mỗi dòng có nhà — **đạt**.
-2. Máy đo "Chưa cần tái bản" — **chưa đạt** chỉ vì máy đo bắt nhầm chữ "thay" (33); dấu ngày 3, trùng 0, ghi đè thật 0. Cần sửa regex.
-3. Mẫu chuẩn y nguyên — **đạt**; việc thật David chấm — **chưa kiểm** (chờ David đồng ý render đoạn 4:10–4:56).
+2. Máy đo "Chưa cần tái bản" — **đạt** sau khi sửa máy đo (`\bTHAY\b` chỉ bắt chữ in hoa): dấu ngày 1 · ghi đè 5 (đều là "thay cho" thường) · trùng 0 · dòng 3081.
+3. Mẫu chuẩn y nguyên — **đạt**; việc thật — đã gửi, **chờ David chấm**.
 4. Tag, lịch sử, GitHub — **đạt**.
 
 ## Bước tiếp
-- David đồng ý → dựng đoạn 4:10–4:56 `tap-5-nguyen-tac-tien` theo bản luật mới, gửi David chấm.
-- Sửa `do_chong_cheo.py`: `\bTHAY\b` chỉ bắt chữ in hoa (bỏ cờ re.I cho riêng mẫu này), chạy lại máy đo.
+- David chấm đoạn thử; đạt thì đóng hẳn đợt này.
+- Sửa 2 lỗi code ở trên (phiên riêng).
+- Máy đo cũng báo bộ `nao` NÊN TÁI BẢN (dấu ngày 17/15) — việc của phiên khác.
