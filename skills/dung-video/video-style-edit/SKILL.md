@@ -15,7 +15,7 @@ mốc lời Whisper, render clip nền trong suốt rồi ghép lên video gốc
 
 **Hỏi một lần ở đầu** (`hoi-chuyen-gia`, sau khi chép lời): gộp mọi điểm cần chọn — chữ bìa, cảnh minh hoạ chính, khung xuất, có đăng
 YouTube không — mỗi điểm 2–3 gợi ý. Phần quy trình đã định (màn chốt nguyên văn, nhạc theo tuyến, nhận diện…) không hỏi. David "ok" → chạy một mạch; giữa chừng chỉ dừng khi gặp một trong 6 tín hiệu. Giao bản cuối xong, nhận góp ý và
-sửa đúng cảnh được nêu (không tự render lại — `thoi-quen-lam-viec.md` mục 3).
+sửa đúng cảnh được nêu (không tự render lại — `luat-chung.md` mục 8).
 
 ## Luật riêng (kiểm lại trước khi giao)
 

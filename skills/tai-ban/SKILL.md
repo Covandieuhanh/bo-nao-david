@@ -17,7 +17,7 @@ description: Tái bản bộ skill — khi luật đã chồng nhiều lớp (h�
 | **Sổ quyết định** | ngày · lời David nguyên văn · lý do · luật nào bị thay | không đọc (chỉ khi cân nhắc đổi luật, gỡ lỗi) |
 | **Kho** | thực đơn để chọn (bố cục, nguồn học, hình mẫu) — không phải luật | chỉ khi cần chọn |
 
-Bộ: `video` (skills/dung-video) · `hoi` (hoi-chuyen-gia) · `nao` (AGENTS, CLAUDE, David.md, thoi-quen-lam-viec). Ghi nhớ `nao/bo-nho/`
+Bộ: `video` (skills/dung-video) · `hoi` (hoi-chuyen-gia) · `nao` (AGENTS, CLAUDE, CLAUDE-toan-cuc, David.md, thoi-quen-lam-viec). Ghi nhớ `nao/bo-nho/`
 là sổ, không đo ở đây, nhưng **dọn cùng đợt** bằng skill `consolidate-memory`.
 
 ## Tái bản là tái bản toàn bộ

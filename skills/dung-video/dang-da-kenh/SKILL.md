@@ -36,7 +36,7 @@ Chờ bản cuối mới làm: ảnh thumbnail, kiểm khung hình và âm lư�
 chỉ dựng khi David đồng ý ở cổng 2, đăng sau video dài.
 
 ## Luật riêng của skill
-- Chung (hỏi, không đăng khi chưa duyệt, không tự render lại, tiết kiệm): `thoi-quen-lam-viec.md`. Video (nhạc, chữ nguyên văn, video dài không cắt): `luat-chung.md`; hình của chính video: khối 14.
+- Chung (hỏi, không đăng khi chưa duyệt, tiết kiệm): `thoi-quen-lam-viec.md`. Video (nhạc, chữ nguyên văn, video dài không cắt, không tự render lại): `luat-chung.md`; hình của chính video: khối 14.
 - Luật an toàn khi đăng (mật khẩu, cài đặt tài khoản, chỉ đăng bài đã duyệt): khối 19.
 - **Sổ danh mục là nơi duy nhất ghi trạng thái** (lọc → dựng → chờ đăng → đã đăng + link).
 - **Cảnh báo** khi lệch nhánh, thiếu bài Mời theo tỉ lệ, kho < 4 video quay sẵn, lịch trống.

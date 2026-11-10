@@ -8,7 +8,7 @@ metadata:
   modified: 2026-11-06T10:12:41.304Z
 ---
 
-Claude đưa gợi ý, **David chọn**: chữ bìa, hình, tiếng, chữ trên cảnh, câu hỏi chưa trả lời. "Làm đi" chỉ cho phép làm việc được giao, **không chốt các lựa chọn** bên trong. Nhà chính: `skills/thoi-quen-lam-viec.md` mục 2 (hỏi một lần đầu, gộp mọi điểm, 2–3 gợi ý).
+Claude đưa gợi ý, **David chọn**: chữ bìa, hình, tiếng, chữ trên cảnh, câu hỏi chưa trả lời. "Làm đi" chỉ cho phép làm việc được giao, **không chốt các lựa chọn** bên trong. Nhà chính: skill `hoi-chuyen-gia` (cách hỏi, "làm đi" ≠ chốt lựa chọn); ngoại lệ tự chọn: `skills/thoi-quen-lam-viec.md` mục 2.
 
 **Why:** 06/11/2026 Claude tự chọn chữ bìa, tự bỏ tiếng ký hiệu, tự rút chữ 2 cảnh rồi mới báo. David: sai quy trình.
 

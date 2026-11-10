@@ -17,3 +17,5 @@ cố định 60 hay 90 giây… thử trọn vẹn một ý là được… làm
 **How to apply:** chọn đoạn từ đầu tới cuối một ý (đọc bản lời), cắt bằng ffmpeg vào thư mục thử riêng (`tap-thu-…`), chạy thử ngay
 trong phiên Claude theo skill (app đã bỏ 10/11/2026), cho David xem bản cuối, xong thì dọn đồ thử. Liên quan
 [[luat-khong-tu-chay-viec-cua-david]].
+
+Nhà của luật: `skills/dung-video/luat-chung.md` mục 8. Ghi nhớ này giữ ngày, lời David, lý do.

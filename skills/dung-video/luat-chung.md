@@ -103,4 +103,13 @@ Ghi `<dự án>/phat-hanh/phat-hanh.md`:
 - Hỏi, chạy một mạch, lệnh nền, báo cáo cuối: `../thoi-quen-lam-viec.md` mục 2–4; mật khẩu: `AGENTS.md` luật 5. Riêng video: điểm dừng duyệt duy nhất
   giữa chừng là kế hoạch ghép vlog (multi-clip.md 2b); báo cáo cuối thêm tên riêng cần xác nhận.
 - Không tải video từ YouTube/TikTok để dựng (nhờ David gửi file); tải để học mẫu: `trinh-bay/README.md` mục 4.
-- Chụp thử (stills) trước khi render; kiểm bản cuối theo khối 17 + 09.
+- Chụp thử (stills) trước khi render; kiểm bản cuối theo khối 17 + 09. **Chụp có giới hạn:** chụp đúng mốc dễ lỗi (khung mới lần
+  đầu, chỗ chồng lớp, mối cắt, màn chốt, thẻ cuối, chỗ David góp ý), không chụp từng cảnh; xem bố cục thì dùng ảnh thu nhỏ.
+- **Không tự render lại** sau góp ý: chỉ sửa skill, kịch bản; render khi David nói "render". Render nối tiếp, không song song.
+- **Phần cứng không hỏi, không đổi** (`../thoi-quen-lam-viec.md` mục 2): nhận diện, dấu góc, màn chốt, thẻ cuối, nhạc theo tuyến, mức
+  motion graphics, phụ đề, chuẩn âm lượng, nơi giao file; tên riêng chưa chắc → dùng cách Whisper nghe và nêu ở báo cáo.
+- **Thử skill bằng đoạn ngắn trọn một ý:** cắt từ đầu tới cuối một ý của video nguồn (không cố định số giây, không chạy cả video dài)
+  vào thư mục thử riêng `tap-thu-…`, chạy theo skill, cho David xem bản cuối, xong thì dọn. Đoạn ngắn trọn ý ra tốt thì video dài cũng tốt.
+- **Dựng ngay trong phiên Claude** theo skill (`dang-da-kenh` → skill dựng). Không đề xuất dựng app hay công cụ tự động dựng video
+  trừ khi David yêu cầu, vì chạy app tốn token hơn.
+- Video đã chốt hoặc đã đăng: dọn file tạm theo khối 17 (`don_tap.py --xoa`, không hỏi lại; chỉ hỏi phần ⏸ đang dở).

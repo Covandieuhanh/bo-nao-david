@@ -25,7 +25,7 @@ bằng `python3 $SKILL/scripts/safe_guide.py "$P"` (một lần) và `zsh $SKILL
 có bị cắt, **hai dòng chữ có chồng nhau / chữ có chạm khung ảnh không** (soi chữ có Ố Ễ Ỗ), **ô hiệu ứng có bị cắt ở đáy hoặc chạm phụ đề không**
 (lớp phủ bị chặn cứng ở đỉnh dải phụ đề — thấy bị cắt thì rút nội dung), có gì lọt vùng đỏ, **lớp phủ có đè lên mặt/đầu người nói không** (script dò mặt theo khung 0,5 s — cử động
 nhanh vẫn có thể lọt; thấy đè thì đặt tay `place`), chữ có đọc được trên nền, cảnh có khớp lời nói không. Sửa rồi chụp lại tới khi sạch.
-Chụp đúng mốc dễ lỗi (thoi-quen mục 3), không chụp thừa. Đây là bước tiết kiệm nhất — sửa ở đây rẻ hơn nhiều so với sau khi render.
+Chụp đúng mốc dễ lỗi (`luat-chung.md` mục 8), không chụp thừa. Đây là bước tiết kiệm nhất — sửa ở đây rẻ hơn nhiều so với sau khi render.
 Khung ngang (pillar): trước khi chụp, dựng nền ngang một lần —
 `node render.mjs hai-ben` (~1 phút / phút video) rồi `python3 -I $SKILL/scripts/pillar_base.py "$P"` → `nen_ngang.mp4`;
 composite_stills tự dùng nền này. Chụp thêm `hai-ben@<giây>` ở vài mốc để kiểm chữ hai bên (tràn, xuống dòng xấu).

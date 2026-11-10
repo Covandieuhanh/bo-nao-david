@@ -85,9 +85,8 @@ Tìm hiểu → mời → phiếu đầu vào → thống nhất → làm trên 
 
 - **Bản gốc 10 phút đăng YouTube**; dùng AI cắt highlight ngắn đăng Reels/TikTok (skill `cat-highlight-video`).
 - Mỗi video 3 phần: **Vấn đề · Giải pháp · Thực thi**; luôn kích thích tương tác; David tự kể câu chuyện thật của mình.
-- Tương tác bình luận dùng đúng hai từ: **"Vấn đề"** (vì sao chưa làm được) và **"Kết quả"** (làm được thì kết quả là gì).
 - Trước khi quay ghi 3 dòng: khoảnh khắc chạm nỗi đau; chỗ kẹt và cách đã gỡ; câu hỏi người xem mang về.
-- Lịch đăng, tỉ lệ dẫn dắt (Không · Gợi mở · Mời "gỡ", không nói giá), số video quay sẵn: `skills/dung-video/ho-so/kenh.json`. Quay theo đợt (2 tuần chọn 4 ý); tuần khó đăng tối thiểu 1. **Đo bằng số người nhắn "gỡ"**, không bằng lượt xem.
+- Lịch đăng, dẫn dắt, từ khoá bình luận, cách đo, số video quay sẵn: `skills/dung-video/ho-so/kenh.json` (nhà duy nhất của luật kênh). Quay theo đợt (2 tuần chọn 4 ý); tuần khó đăng tối thiểu 1.
 - **Kho 100 video** = kế hoạch nội dung của kênh, bảng ở `dang-lam/kho-100-video.md` (PDF gốc ở máy). Mọi video mới đối chiếu kho ở phiếu lọc (khối 00 mục 1b): khớp ý số mấy, lệch kho thì cảnh báo, gợi ý ý kế tiếp nên quay. Bỏ qua giai đoạn 3 "Cơ sở chạy khi vắng chủ" của kho (lệch định hướng 4.1). **Kho cần làm lại theo ba tầng: bản thân → công việc → mối quan hệ** (phiên riêng).
 
 ## 6. Nghiên cứu CCL

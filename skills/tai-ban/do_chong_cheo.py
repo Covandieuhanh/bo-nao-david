@@ -22,7 +22,7 @@ CHI_TIET = '--chi-tiet' in sys.argv
 NGAY = re.compile(r"20\d\d-\d\d-\d\d|\b\d{1,2}/\d{1,2}/20\d\d\b|"
                   r"\b(?:chốt|sửa|duyệt|thêm|bổ sung|nới|đổi|cập nhật|học)\s+(?:ngày\s+)?\d{1,2}/\d{1,2}\b", re.I)
 GHI_DE = re.compile(r"thay luật|thay các|thay thế luật|thắng mọi|không còn áp|nới luật|nới\)|luật cũ|"
-                    r"bổ sung 20\d\d|bổ sung \d{1,2}/\d{1,2}|chuyển nguyên văn từ SKILL\.md cũ|\(cũ[,)]|đã bỏ|bỏ từ \d|thay cho", re.I)   # "ngoại lệ" không tính: luật viết sạch vẫn có ngoại lệ thật
+                    r"bổ sung 20\d\d|bổ sung \d{1,2}/\d{1,2}|chuyển nguyên văn từ SKILL\.md cũ|\(cũ[,)]|đã bỏ|bỏ từ \d|thay cho luật", re.I)   # "ngoại lệ" không tính: luật viết sạch vẫn có ngoại lệ thật
 
 THAY_HOA = re.compile(r"\bTHAY\b")   # chỉ chữ in hoa kiểu "THAY các ngoại lệ"; chữ "thay" thường không phải dấu ghi đè
 
