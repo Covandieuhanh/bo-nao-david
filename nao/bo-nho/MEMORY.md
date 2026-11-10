@@ -9,7 +9,7 @@ Tên file bắt đầu bằng nhóm: `luat-` cách làm việc với David · `n
 - [Học là bổ sung](luat-hoc-la-bo-sung.md) — học mẫu mới chỉ thêm, không thay cái David đã sửa; số khung dọc không dùng cho ngang (2026-11-08)
 - [Kết quả hơn tốc độ](luat-ket-qua-hon-toc-do.md) — làm đúng quy trình, bước cần kết quả render thì chờ; chỗ chưa rõ thì trao đổi (2026-11-05)
 - [Không tự chạy việc của David](luat-khong-tu-chay-viec-cua-david.md) — không tự Chạy tiếp/Duyệt/Làm lại việc David tạo khi chưa có lệnh, kể cả khi Claude làm ngắt (2026-11-08)
-- [Nội dung của David, thẩm mỹ của skill](luat-noi-dung-cua-david.md) — không khuôn lời; học nhịp/trình bày, giữ thẩm mỹ (2026-11-05)
+- [Nội dung của David, thẩm mỹ của skill](luat-noi-dung-cua-david.md) — không khuôn lời; học nhịp/trình bày; thẩm mỹ chỉ giữ nhận diện từ 10/11 (2026-11-05)
 - [Thử bằng đoạn ngắn](luat-thu-bang-doan-ngan.md) — thử skill video bằng một đoạn trọn vẹn một ý (không cố định số giây), cho David xem kết quả cuối (2026-11-09)
 - [Tự hỏi khi mơ hồ](luat-tu-hoi-khi-mo-ho.md) — 6 tín hiệu tự dừng hỏi, kể cả giữa chừng; không tự đoán rồi làm (2026-11-05)
 
@@ -24,7 +24,8 @@ Tên file bắt đầu bằng nhóm: `luat-` cách làm việc với David · `n
 - [Bỏ app dựng video](video-bo-app.md) — 10/11/2026 bỏ app localhost:8765 vì tốn token hơn; dựng video làm trực tiếp trong phiên Claude theo skill
 - [Bản chuẩn video](video-ban-chuan-2026-11-06.md) — 5 video chuẩn: 3 clip Đi trainer + 2 video dài; dự án cũ đã bỏ (2026-11-06)
 - [Làm lại video cũ](video-lam-lai-video-cu.md) — bỏ lời chào/giới thiệu kênh cũ, màn tít cũ, chữ/viền in trong hình; mỗi video một bản; làm trọn rồi David góp ý (2026-11-08)
-- [Bố cục tự cân, học chỉ trình bày](video-bo-cuc-tu-can.md) — bỏ mọi con số cố định; graphic tránh mọi người, bám người đang nói; ô tỉ lệ tự do; giữ thẩm mỹ gốc (2026-11-07, thêm 08/11)
+- [Bố cục tự cân, học chỉ trình bày](video-bo-cuc-tu-can.md) — bỏ mọi con số cố định; graphic tránh mọi người, bám người đang nói; ô tỉ lệ tự do; thẩm mỹ chỉ giữ nhận diện từ 10/11 (2026-11-07, thêm 08/11)
+- [Thẩm mỹ chỉ giữ nhận diện](video-tham-my-chi-giu-nhan-dien.md) — chỉ cần người xem nhận ra là của David (chữ ký: bộ nhận diện chung, cam, 2 font); còn lại sáng tạo tự do, học mẫu lấy đủ (2026-11-10)
 - [Bộ nhận diện chung](video-nhan-dien-chung.md) — mọi loại video cùng vị trí, dấu góc, thanh thời gian (trừ dọc ngắn), thẻ cuối không logo; chỉ motion graphics tự do (2026-11-08)
 - [Video dọc ngắn không thanh, không thẻ cuối](video-doc-ngan-khong-thanh.md) — Reels/TikTok/Shorts bỏ thanh thời gian + thẻ cuối, màn chốt trên hình để video tự lặp (2026-11-10)
 - [Chỉ hình của chính video](video-chi-hinh-cua-chinh-video.md) — thumbnail/ảnh bìa chỉ lấy từ chính video đó, không mượn từ video khác (2026-11-05)
@@ -42,7 +43,7 @@ Tên file bắt đầu bằng nhóm: `luat-` cách làm việc với David · `n
 - [Luôn có motion graphics](video-luon-co-motion-graphics.md) — điểm nhấn nhiều loại: hình vẽ, chữ, biểu tượng, làm nổi người nói; không chỉ toàn màn hình (2026-11-07)
 - [Mỗi lúc một chỗ chữ](video-phu-de-mot-cho-chu.md) — phụ đề dọc cụm 5–8 chữ cỡ 58 bằng chữ thẻ; chữ motion graphic hiện thì phụ đề nhường (2026-11-08)
 - [Movies xếp theo tập](video-movies-xep-theo-tap.md) — gốc/bản dài/highlight chung tap-<tên>, skill đã sửa theo
-- [Người xem là trung tâm](video-nguoi-xem-trung-tam.md) — học kênh lớn ở nhịp và trình bày, giữ thẩm mỹ David (2026-11-04, sửa 08/11)
+- [Người xem là trung tâm](video-nguoi-xem-trung-tam.md) — học kênh lớn ở nhịp và trình bày; thẩm mỹ chỉ giữ nhận diện (2026-11-04, sửa 10/11)
 - [Nhạc theo tuyến nội dung](video-nhac-theo-tuyen.md) — Claude tự chọn theo tuyến từ kho kênh, không hỏi; cân mức từng bài (nhac.muc); ~23 dB dưới giọng (2026-11-05, sửa 08/11)
 - [Bìa podcast không mặt](video-podcast-bia-khong-mat.md) — podcast chỉ có tiếng thì bìa không có mặt người, phải khớp nội dung; mặt người chỉ cho video quay hình (2026-11-06)
 - [Podcast phủ hình 30%](video-podcast-phu-hinh-30.md) — motion graphic khoảng 30% thời lượng, cân theo nội dung; chụp thử cho David chốt rồi mới render (2026-11-06)

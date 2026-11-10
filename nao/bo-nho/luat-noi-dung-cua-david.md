@@ -5,7 +5,7 @@ metadata:
   type: feedback
 ---
 
-David tự xây nội dung, nói tự do và có cảm xúc. Skill không viết khuôn lời, không đặt kịch bản thu âm. Skill tự nhận diện thể loại rồi lo phần hình: thẩm mỹ, nhịp, cách trình bày. Học từ kênh thành công chỉ ở phần nhịp và cách trình bày; thẩm mỹ thì giữ của mình. Mục tiêu cuối: người xem thấy hành động và chuyển hoá bằng hành động.
+David tự xây nội dung, nói tự do và có cảm xúc. Skill không viết khuôn lời, không đặt kịch bản thu âm. Skill tự nhận diện thể loại rồi lo phần hình: thẩm mỹ, nhịp, cách trình bày. Học từ kênh thành công chỉ ở phần nhịp và cách trình bày; thẩm mỹ thì giữ của mình (từ 10/11/2026 chỉ giữ chữ ký nhận diện, còn lại học và sáng tạo tự do: [[video-tham-my-chi-giu-nhan-dien]]). Mục tiêu cuối: người xem thấy hành động và chuyển hoá bằng hành động.
 
 **Why:** 2026-11-05, sau phân tích 50 video Hieu Nguyen, David bác "khuôn thu âm": "cách nói của tôi là tự do và có cảm xúc… bạn nắm vai trò thẩm mỹ, nội dung tôi tự xây dựng".
 

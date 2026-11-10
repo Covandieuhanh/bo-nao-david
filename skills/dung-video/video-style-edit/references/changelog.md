@@ -189,3 +189,12 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
 - Khối 17: **kiểm cảm nhận** (Claude tự làm, xem lạnh → so đường dự định → lệch thì sửa cảnh), ghi `check/cam-nhan.md`.
 - `soat_canh.mjs`: thêm P2 "cùng kiểu với cảnh liền trước". Thử trên tap-5-nguyen-tac-tien (4), tap-di-trainer (16), vlog the-view-vung-tau (1) — báo đúng.
 - Không lấy: tạo ảnh AI, phỏng vấn 8 câu, con số "≥ 4 kiểu" (ngược "bố cục tự cân").
+
+## 2026-11-10 · Thẩm mỹ chỉ giữ chữ ký nhận diện + học Ali Abdaal / Joseph Video Editing (David chốt)
+- David: thẩm mỹ chỉ cần người xem nhận ra mọi video là của cùng một người; sáng tạo theo nội dung thì thoải mái; học càng nhiều tài nguyên càng tốt.
+  → `thu-vien-hinh/nhan-dien-chung.md` mục 0 "Chữ ký nhận diện" (bộ nhận diện chung, cam nhấn, HEAD/BODY); sửa luat-chung §0, khối 07, trinh-bay README, hoc-video-mau, BoCuc, rieng.
+- Thành phần mới (có code): `chusau` (chữ sau người, `bong` bóng người) + `scripts/tach_nguoi.{swift,py}` (Vision tách người từng khung → public/nguoi/<id>/, src/nguoi.js);
+  `bocuc` `muc-luc`, `tien-trinh`, `canh-nguoi`; `phong: 'nguoi-mo'|'hat'` (lib/Phong.jsx, FullShell/Illus/Diagram); `*từ*` font phụ NHAN = Playfair Display nghiêng (file font trong thu-vien-hinh/font, lib/font-nhan.css — không cần cài gói; kiểm mẫu chuẩn bắt lỗi khi còn dùng gói npm).
+- Place / TWO_KEEP / face_place / nhan_place nhận 'chusau'; soat_canh: P0 chưa tách người / thiếu khung, P1 chữ sau người > 6 chữ, bỏ dấu * khi đếm chữ.
+- Lỗi gặp khi thử: lớp chusau bị Place thu nhỏ như lớp phủ → người nhân đôi lệch; sửa bằng cách để nguyên khung. Chữ dòng 2 bị thân người che → đáy khối chữ ngang mắt, thêm `cao`.
+- Kiểm không phá: 10 cảnh cũ ngang + dọc trùng từng điểm ảnh với skill trước khi sửa. Phiếu: `trinh-bay/nguon-hoc/ali-joseph-2026-11-10.md`.

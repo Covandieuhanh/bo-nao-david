@@ -3,9 +3,10 @@ import project from './project.js';
 import {FPS, fr} from './scenes';
 
 // ===== Phong cách — Claude điền từ style.md (phân tích video mẫu) =====
-import {C as _C, HEAD as _H, BODY as _B} from './lib/tokens';   // màu/font: MỘT NGUỒN thư viện hình (khối 10)
+import {C as _C, HEAD as _H, BODY as _B, NHAN as _N} from './lib/tokens';   // màu/font: MỘT NGUỒN thư viện hình (khối 10)
 export const C = {..._C};
 export const HEAD = _H;   // chữ to, tiêu đề
+export const NHAN = _N;   // một từ nhấn (chữ có chân, nghiêng) — `*từ*` trong chữ
 export const BODY = _B;     // chữ thường trong thẻ
 
 // ===== Vùng an toàn =====

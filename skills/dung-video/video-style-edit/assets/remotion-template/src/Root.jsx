@@ -23,7 +23,9 @@ import PLACEMENT from './placement.js';
 import {ENDCARD_ON} from './endcard.js';
 import BRAND from './lib/brand.json';
 import {Illus} from './lib/Illus';
-import {VE} from './rieng';   // cảnh tự vẽ riêng của video (type 've', khối 07 — 2026-11-09)
+import {VE} from './rieng';
+import {ChuSau} from './components/ChuSau';
+import {PhongCtx} from './lib/Phong';   // cảnh tự vẽ riêng của video (type 've', khối 07 — 2026-11-09)
 import {Diagram} from './lib/Diagram';   // sơ đồ nói thay lời + ảnh khung bo góc (khối 07, 2026-11-05)   // cảnh minh hoạ toàn màn hình — 2 trạng thái (khối 07)
 import HS from './hoso.json';
 import {holdEnds} from './lib/giu';   // giữ cảnh ≥ 1,2 s sau chữ cuối (khối 07)
@@ -36,7 +38,7 @@ const TYPES = {illus: Illus, diagram: Diagram, hook: Hook, lower: LowerThird, ki
   montage: Montage, recap: Recap, converge: Converge, master: Master, gens: Gens, build: Build,
   ...(POD && LAND ? {montage: MontageL, gens: GensL, build: BuildL} : {}),   // podcast ngang: bản thiết kế toàn khung 16:9
   ve: ({ve, ...p}) => { const V = VE[ve]; if (!V) throw new Error(`cảnh tự vẽ '${ve}' chưa đăng ký trong rieng/index.js`); return <V {...p} />; },
-  action: Action, cta: Cta, nhan: Nhan, bocuc: BoCuc,   // màn hành động (toàn cảnh) · màn chốt bình luận cuối video
+  action: Action, cta: Cta, nhan: Nhan, bocuc: BoCuc, chusau: ChuSau,   // chusau: chữ sau người / bóng người (10/11/2026)   // màn hành động (toàn cảnh) · màn chốt bình luận cuối video
   sides: Sides, captions: Captions, stage: Stage, cover: Cover, endcard: EndCard};
 
 // Chờ font tải xong rồi mới chụp khung, tránh chữ bị font dự phòng. Props phải là dữ liệu thuần (không truyền hàm/component).
@@ -46,7 +48,8 @@ const WithFonts = ({type, id, place, ...props}) => {
   useEffect(() => {
     Promise.all(FONT_CHECKS.map((f) => document.fonts.load(f, 'Tiếng Việt ĐẾN ĐÂU'))).then(() => continueRender(handle));
   }, [handle]);
-  return <Place type={type} id={id} place={place}><Comp sceneId={id} {...props} /></Place>;
+  return <PhongCtx.Provider value={{phong: props.phong || null, khungDau: fr(props.start || 0)}}>
+    <Place type={type} id={id} place={place}><Comp sceneId={id} {...props} /></Place></PhongCtx.Provider>;
 };
 
 export const Root = () => (

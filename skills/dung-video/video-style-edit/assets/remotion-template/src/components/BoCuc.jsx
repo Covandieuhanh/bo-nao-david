@@ -1,6 +1,6 @@
 // BỐ CỤC (type 'bocuc' — lớp trình bày, David chốt 2026-11-07; xem ../../../../trinh-bay/README.md)
 // Chỉ lo SẮP XẾP: người ở đâu, nội dung ở đâu, hiện theo thứ tự nào. Màu, chữ, nét, chuyển động lấy từ thư viện hình (lib/tokens,
-// Illus, Diagram, Icons) — học bố cục mới thì thêm `kieu` ở đây, KHÔNG thêm màu / font / kiểu chuyển động riêng.
+// Illus, Diagram, Icons) — học bố cục mới thì thêm `kieu` ở đây, giữ chữ ký nhận diện (lib/nhan-dien-chung.md mục 0); ngoài đó tự do.
 // Không có con số bắt buộc: vị trí, cỡ ô, độ dài cảnh do Claude tự cân theo nội dung (props ghi đè mặc định).
 //
 // kieu:
@@ -12,6 +12,18 @@
 //  'the-canh' người giữ nguyên khung, thẻ vào khoảng trống sát người đang nói (lib/cho.js), co theo khoảng trống, không đè ai;
 //             không khoảng nào đủ rộng → tự chuyển sang 'o-nguoi'. props: bam? · tieu_de? · dong: [{text, at, to?: true, gach?: <giây>}]
 //  'chuong'   màn chương toàn khung: số mờ to + nhãn nhỏ + tên phần (dòng cuối màu nhấn). props: so?, nhan?, ten
+//  — thêm 10/11/2026 (học Ali Abdaal, Joseph Video Editing) —
+//  'muc-luc'  MỤC LỤC TÍCH LUỸ: người vào ô, danh sách đánh số hiện dần theo lời; mục đang nói sáng, mục cũ mờ lại.
+//             props: tieu_de? · muc: [{text, at}] · (mọi props của 'o-nguoi': bam, khung…) · nen? (xem FullShell)
+//             Dùng cho "trong video này có 3 điều", nhắc lại các ý đã qua. Cũng đặt được làm noi_dung {type: 'muc-luc'} của 'o-nguoi'.
+//  'tien-trinh' THANH TIẾN TRÌNH Ý: một đường nối các nút 1…n, nút đang tới sáng lên, thẻ tên ý hiện dưới nút.
+//             props: so (ý thứ mấy) · tong · nhan? ('Ý' / 'Bước'…, nguyên văn) · ten (tên ý, nguyên văn). Thay màn chương khi
+//             video đi theo danh sách (mẹo 1, 2, 3); người xem thấy mình đang ở đâu.
+//  'canh-nguoi' MẠCH HÌNH CẠNH NGƯỜI (kiểu bảng phấn của Ali): người giữ nguyên khung, hình (illus / diagram / cảnh tự vẽ 've')
+//             vẽ thẳng vào khoảng trống sát người, KHÔNG thẻ nền — như vẽ lên tường phía sau. Hợp khung ngang, đoạn giải thích dài
+//             mà vẫn muốn thấy người; nhiều cảnh nối nhau vẽ tiếp một mạch (`buoc`, `tu_buoc` của lib/mach.js).
+//             props: noi_dung: {type: 'illus'|'diagram'|'ve', props} · bam? · toi? (false = không làm tối khoảng trống)
+//             Không khoảng nào đủ rộng → tự chuyển 'o-nguoi'.
 // Chữ trong thẻ / chương là NGUYÊN VĂN lời người nói (luật chữ trên màn hình).
 import React from 'react';
 import {AbsoluteFill, Easing, OffthreadVideo, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
@@ -25,9 +37,10 @@ import MAT from '../mat.js';
 import {nguoi, chonCho, nguoiBam} from '../lib/cho';
 import {ChuHien} from '../lib/ChuHien';
 import {kieuChu} from '../lib/chuyen-dong';
+import {VE} from '../rieng';
 
 const W = project.width, H = project.height, LAND = W > H;
-const NOI = {illus: Illus, diagram: Diagram};
+const NOI = {illus: Illus, diagram: Diagram, ve: ({ve, ...p}) => { const V = VE[ve]; if (!V) throw new Error(`cảnh tự vẽ '${ve}' chưa đăng ký`); return <V {...p} />; }};
 
 // Thẻ chữ hiện dần (dùng cho 'the-canh' và nội dung 'the' trong 'o-nguoi')
 // Xuống dòng cân (textWrap balance): dòng đều nhau, không để một chữ đứng lẻ ("LUYỆN TẬP LẠI THÓI / QUEN" — lỗi 09/11/2026);
@@ -52,6 +65,31 @@ const The = ({start, tieu_de, dong = [], w, f, fs, kc = 'mo'}) => (
     })}
   </div>
 );
+
+// Mục lục tích luỹ: hàng số + chữ, mục mới nhất sáng, mục cũ mờ 45 %
+const MucLuc = ({start, f, w, fs, tieu_de, muc = []}) => {
+  const hien = muc.filter((m) => rel(m.at ?? start, start) <= f);
+  return (
+    <div style={{width: w, display: 'flex', flexDirection: 'column', gap: fs * 0.45}}>
+      {tieu_de && <div style={{fontFamily: BODY, fontWeight: 700, fontSize: fs * 0.55, letterSpacing: 3, color: C.muted, textTransform: 'uppercase',
+        opacity: ease(f, 2, 10)}}><ChuHien text={tieu_de} a={2} /></div>}
+      {muc.map((m, i) => {
+        const a = rel(m.at ?? start, start), p = pop(f, a);
+        const cu = hien.length && hien[hien.length - 1] !== m && f >= a ? 1 : 0;
+        return (
+          <div key={i} style={{display: 'flex', alignItems: 'center', gap: fs * 0.55, padding: `${fs * 0.42}px ${fs * 0.6}px`, borderRadius: fs * 0.5,
+            background: C.card, border: `2px solid ${cu ? C.line : 'rgba(255,122,69,0.45)'}`, boxShadow: '0 20px 60px rgba(0,0,0,0.45)',
+            opacity: Math.min(1, p * 1.4) * (1 - 0.55 * cu), transform: `translateY(${(1 - p) * 24}px) scale(${0.95 + 0.05 * p})`}}>
+            <div style={{flex: 'none', width: fs * 1.25, height: fs * 1.25, borderRadius: '50%', background: cu ? C.dim : C.accent, color: '#120C09',
+              display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: HEAD, fontWeight: 800, fontSize: fs * 0.8}}>{i + 1}</div>
+            <div style={{fontFamily: BODY, fontWeight: 600, fontSize: fs * 0.82, lineHeight: 1.25, color: C.text, textWrap: 'balance'}}>
+              <ChuHien text={m.text} a={a + 3} kieu="muc" /></div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
 // Ô NGƯỜI tỉ lệ tự do (David chốt 08/11): khung cắt bám NGƯỜI ĐANG NÓI (hoặc props.khung = 'ca-hai' / props.bam), không bao giờ cắt
 // ngang một gương mặt — người bên cạnh hoặc vào trọn, hoặc ra hẳn. Tỉ lệ ô = tỉ lệ khung cắt. Ô nằm đúng phía người đó đang ngồi,
@@ -118,7 +156,10 @@ const ONguoi = ({sceneId, start, o, noi_dung, khung, bam}) => {
             transform: `scale(${s})`, transformOrigin: '0 0'}}><Comp start={start} sceneId={sceneId} nen={false} {...noi_dung.props} /></div>
           : <div style={{position: 'absolute', left: area.x, top: area.y, width: area.w, height: area.h, opacity: show,
             display: 'flex', alignItems: LAND ? 'center' : 'flex-start', justifyContent: 'center'}}>
-            <The start={start} f={f} w={area.w * 0.92} fs={LAND ? H * 0.06 : W * 0.075} {...noi_dung.props} /></div>
+            {noi_dung.type === 'muc-luc'
+              ? <MucLuc start={start} f={f} w={area.w * 0.94} fs={Math.min(LAND ? H * 0.05 : W * 0.062,   // co cho đủ mọi mục trong vùng nội dung
+                  area.h / ((noi_dung.props.muc || []).length * 2.15 + (noi_dung.props.tieu_de ? 1.4 : 0) + 0.6))} {...noi_dung.props} />
+              : <The start={start} f={f} w={area.w * 0.92} fs={LAND ? H * 0.06 : W * 0.075} {...noi_dung.props} />}</div>
       )}
     </FullShell>
   );
@@ -160,6 +201,64 @@ const TheCanh = ({sceneId, start, ben, bam, tieu_de, dong}) => {
   );
 };
 
+// Thanh tiến trình ý: nút 1…tong trên một đường, đường chạy tới nút `so`, thẻ tên ý dưới nút đó
+const TienTrinh = ({sceneId, start, so = 1, tong = 3, nhan, ten = ''}) => {
+  const f = useCurrentFrame();
+  const L = SAFE.left * (LAND ? 2.2 : 1.3), R = W - L, y = LAND ? H * 0.4 : H * 0.36;
+  const xs = Array.from({length: tong}, (_, i) => L + (R - L) * (tong === 1 ? 0.5 : i / (tong - 1)));
+  const toi = ease(f, 4, 22, so - 1.6, so - 1, Easing.inOut(Easing.cubic));   // đường chạy từ ý trước tới ý này
+  const xRun = L + (R - L) * Math.max(0, toi) / Math.max(1, tong - 1);
+  const r = LAND ? H * 0.034 : W * 0.04, fs = LAND ? H * 0.075 : W * 0.085;
+  const x = xs[so - 1], p = pop(f, 18);
+  return (
+    <FullShell>
+      <div style={{position: 'absolute', left: L, top: y - 3, width: R - L, height: 6, borderRadius: 3, background: C.line}} />
+      <div style={{position: 'absolute', left: L, top: y - 3, width: xRun - L, height: 6, borderRadius: 3, background: C.accent}} />
+      {xs.map((cx, i) => {
+        const on = i < so - 1 || (i === so - 1 && f >= 18);
+        return <div key={i} style={{position: 'absolute', left: cx - r, top: y - r, width: r * 2, height: r * 2, borderRadius: '50%',
+          background: on ? C.accent : C.bg, border: `4px solid ${on ? C.accent : C.dim}`, display: 'flex', alignItems: 'center', justifyContent: 'center',
+          fontFamily: HEAD, fontWeight: 800, fontSize: r * 1.05, color: on ? '#120C09' : C.dim,
+          transform: i === so - 1 ? `scale(${1 + 0.18 * p - 0.18 * ease(f, 26, 36)})` : undefined}}>{i + 1}</div>;
+      })}
+      <div style={{position: 'absolute', top: y + r * 2.1, left: Math.min(Math.max(SAFE.left, x - W * 0.3), W - SAFE.right - W * 0.6), width: W * 0.6,
+        display: 'flex', flexDirection: 'column', alignItems: 'center', opacity: Math.min(1, p * 1.3), transform: `translateY(${(1 - p) * 30}px)`}}>
+        {nhan && <div style={{fontFamily: BODY, fontWeight: 700, fontSize: fs * 0.32, letterSpacing: 4, color: C.accent, textTransform: 'uppercase',
+          marginBottom: fs * 0.12}}>{nhan}</div>}
+        <div style={{fontFamily: HEAD, fontWeight: 800, fontSize: fs, lineHeight: 1.04, textTransform: 'uppercase', color: C.text,
+          textAlign: 'center', textWrap: 'balance', whiteSpace: 'pre-line'}}><ChuHien text={ten} a={22} kieu={kieuChu(sceneId)} /></div>
+      </div>
+    </FullShell>
+  );
+};
+
+// Mạch hình cạnh người: người giữ nguyên, hình vẽ thẳng vào khoảng trống sát người (không thẻ nền)
+const CanhNguoi = ({sceneId, start, noi_dung, bam, toi = true}) => {
+  const f = useCurrentFrame();
+  const {durationInFrames: d} = useVideoConfig();
+  const m = MAT[sceneId] || {cx: 0.5, cy: 0.42, w: 0.18};
+  const ps = nguoi(m);
+  const t = nguoiBam(ps, bam);
+  const MIN = W * (LAND ? 0.26 : 0.6);
+  const k = chonCho(ps, MIN, t);
+  if (k.w < MIN || !noi_dung) return <ONguoi sceneId={sceneId} start={start} bam={bam} noi_dung={noi_dung} />;
+  const Comp = NOI[noi_dung.type];
+  const o = Math.min(ease(f, 0, 10), ease(f, d - 6, d, 1, 0, Easing.in(Easing.cubic)));
+  const top = Math.max(BRAND_BOT + 30, SAFE.top), bot = SAFE.bottom - 40;
+  const s = Math.min(1, k.w / (W * 0.62), (bot - top) / (H * (LAND ? 0.7 : 0.55)));   // nội dung illus/diagram chiếm ~60 % bề ngang khung
+  const cx = (k.x0 + k.x1) / 2;
+  return (
+    <AbsoluteFill style={{opacity: o, filter: o < 1 && f > d / 2 ? `blur(${(8 * (1 - o)).toFixed(2)}px)` : undefined}}>
+      {toi && <div style={{position: 'absolute', left: k.x0 - W * 0.04, top: 0, width: k.x1 - k.x0 + W * 0.08, height: H,
+        background: `linear-gradient(${k.ke === 'phai' ? 90 : 270}deg, transparent, rgba(8,8,10,0.55) 25%, rgba(8,8,10,0.55) 75%, transparent)`}} />}
+      <div style={{position: 'absolute', left: cx - W * s / 2, top: top + ((bot - top) - H * s) / 2, width: W, height: H,
+        transform: `scale(${s})`, transformOrigin: '0 0'}}>
+        {Comp && <Comp start={start} sceneId={sceneId} nen={false} {...noi_dung.props} />}
+      </div>
+    </AbsoluteFill>
+  );
+};
+
 const Chuong = ({sceneId, start, so, nhan, ten = ''}) => {
   const f = useCurrentFrame();
   const lines = ten.split('\n');
@@ -181,4 +280,6 @@ const Chuong = ({sceneId, start, so, nhan, ten = ''}) => {
 };
 
 export const BoCuc = ({kieu = 'o-nguoi', ...p}) =>
-  kieu === 'the-canh' ? <TheCanh {...p} /> : kieu === 'chuong' ? <Chuong {...p} /> : <ONguoi {...p} />;
+  kieu === 'the-canh' ? <TheCanh {...p} /> : kieu === 'chuong' ? <Chuong {...p} /> : kieu === 'tien-trinh' ? <TienTrinh {...p} />
+    : kieu === 'canh-nguoi' ? <CanhNguoi {...p} />
+      : kieu === 'muc-luc' ? <ONguoi {...p} noi_dung={{type: 'muc-luc', props: {tieu_de: p.tieu_de, muc: p.muc}}} /> : <ONguoi {...p} />;

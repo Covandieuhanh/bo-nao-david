@@ -15,9 +15,10 @@
 
 ## Motion graphic KỂ CHUYỆN — tự do sáng tạo (David chốt 2026-11-09, đứng trên mọi mục bên dưới)
 Motion graphic là để **diễn tả lại câu chuyện**, không phải đưa hình vào cho có. AI sáng tạo theo từng video, không dập khuôn.
-- **Giữ cố định (nhận diện lớn):** nền, màu chủ đạo (`lib/tokens`: C, HEAD, BODY), biểu tượng cùng một kiểu vẽ (`lib/Icons`, nét
-  tròn vẽ dần — vẽ thêm hình mới thì theo đúng kiểu đó), bộ nhận diện chung (dấu góc, thanh thời gian, phụ đề, thẻ cuối).
-- **Tự do:** bố cục, chuyển động, kiểu hình, độ dài, số cảnh. Danh mục kiểu cảnh dưới đây (`nhan`, `bocuc`, `illus`, `diagram`, `card`…)
+- **Giữ cố định = chữ ký nhận diện** (David chốt 10/11/2026, `lib/nhan-dien-chung.md` mục 0): dấu góc, phụ đề, thanh thời gian,
+  màn chốt, thẻ cuối, màu nhấn cam, hai font chính. Đủ để người xem nhận ra video của David.
+- **Tự do:** nền (tối, sáng, giấy, người mờ), kết cấu, kiểu hình (biểu tượng nét tròn, phấn, ảnh, bóng người), chữ nhấn phụ,
+  bố cục, chuyển động, độ dài, số cảnh. Danh mục kiểu cảnh dưới đây (`nhan`, `bocuc`, `illus`, `diagram`, `card`…)
   chỉ là công cụ có sẵn — dùng khi hợp, không bắt buộc. Cần hình riêng thì viết **cảnh tự vẽ** (`type: 've'`): component React riêng của
   video trong `motion/src/rieng/` (đăng ký ở `rieng/index.js`, xem mẫu `MauMach.jsx`), dùng `lib/chuyen-dong.js`, `lib/ChuHien.jsx`, `lib/cho.js` (tránh người).
 - **Một hình diễn tả 1–2 ý, hoặc cả video:** không phải mỗi câu một hình. Trước khi viết cảnh, đọc cả lời và vẽ **mạch hình** — hình
@@ -45,6 +46,15 @@ Viết **trước** bảng cảnh, vì cảm xúc chọn kiểu cảnh chứ kh�
 - **Một đỉnh**, thường là câu đắt nhất của David. Đỉnh nhận cảnh lớn nhất (thường là bước lớn nhất của mạch hình); không có ba đỉnh tranh nhau.
 - Mỗi cảnh trong bảng cảnh ghi thêm cột "cảm xúc", lấy từ đường này.
 
+## Chiều sâu, nền, chữ nhấn (David chốt 2026-11-10 — học Ali Abdaal + Joseph Video Editing)
+Thêm vào kho, dùng khi hợp nội dung (cách viết + khi nào dùng: `../../trinh-bay/bo-cuc.md` mục "Chiều sâu, nền, chữ nhấn"):
+- **`chusau`** chữ to sau người / `bong: true` bóng người trên nền giấy. Sau khi viết scenes.js: `python3 -I $SKILL/scripts/tach_nguoi.py "$P"`
+  (Vision tách người từng khung). Chữ nguyên văn, 2–6 chữ; chụp thử xem người che có làm mất chữ không.
+- **`bocuc` `muc-luc`** (mục lục tích luỹ) · **`tien-trinh`** (thanh tiến trình ý) · **`canh-nguoi`** (mạch hình vẽ cạnh người, không thẻ).
+- **`phong: 'nguoi-mo' | 'hat'`** ở cảnh toàn màn hình: nền là người nói làm mờ / nền hạt, thay nền tối mặc định.
+- **`*từ*`** trong mọi chữ: một từ nhấn font phụ nghiêng màu cam; tối đa một chỗ mỗi cụm.
+- Mỗi khung **một tiêu điểm**; cam chỉ là màu nhấn (khoảng 10 % khung) — soát ở khối 17.
+
 ## Không hai cảnh cùng kiểu liền nhau (David chốt 2026-11-10)
 Hai cảnh đi liền nhau không cùng kiểu (`type` + `mode` / `kieu`, ví dụ hai `bocuc` `the-canh` liền nhau). Xen kiểu khác: `nhan` zoom,
 biểu tượng, sơ đồ, toàn màn hình… Không con số tối thiểu (bố cục tự cân). **Ngoại lệ:** cảnh "vẽ tiếp" cùng mạch hình (`tu_buoc`) được
@@ -53,7 +63,7 @@ nối nhau. `soat_canh.mjs` (khối 17) tự nhắc P2.
 ## Bố cục tự cân (David chốt 2026-11-07 — thay luật 2 trạng thái ngày 04/11)
 Không con số bắt buộc. Mỗi đoạn chọn bố cục từ **`../../trinh-bay/bo-cuc.md`** theo 4 câu hỏi ở `../../trinh-bay/README.md`
 (cần thấy người hay thấy ý · ý dài hay ngắn · khung còn chỗ không · trước / sau là gì). Ngang tự do; dọc mỗi lúc ít thứ. Ghi lý do
-một dòng mỗi cảnh vào `ke-hoach-canh.md`. Bố cục mới học được → thêm vào `trinh-bay/` + `BoCuc.jsx`, không đổi thẩm mỹ.
+một dòng mỗi cảnh vào `ke-hoach-canh.md`. Bố cục mới học được → thêm vào `trinh-bay/` + `BoCuc.jsx`, giữ chữ ký nhận diện.
 Bố cục đã có code: người + phụ đề · `nhan` (dưới đây) · **`bocuc`** (`the-canh` thẻ cạnh mặt · `o-nguoi` người vào ô bo góc + `illus` /
 `diagram` / thẻ chữ · `chuong` màn chương — `components/BoCuc.jsx`) · `illus` / `diagram` toàn màn hình. Chữ trong thẻ: nguyên văn.
 

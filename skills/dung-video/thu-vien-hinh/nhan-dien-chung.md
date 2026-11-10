@@ -4,6 +4,20 @@ David chốt 08/11/2026: **mọi loại video có cùng tiêu chuẩn** (vị tr
 tự do chọn theo loại video và theo từng cảnh. Một nguồn code: `nhan-dien.js` (`khung(W, H)`), `DauGoc.jsx`, `ThanhThoiGian.jsx`,
 `EndCardBody.jsx`, `tokens.js`, `brand.json`, `subStyle.js`. Khuôn 1 video, podcast, ghép vlog, highlight đều đọc ở đây.
 
+## 0. Chữ ký nhận diện — thứ duy nhất thẩm mỹ phải giữ (David chốt 10/11/2026)
+
+> "Về thẩm mỹ thì tôi chỉ cần duy nhất 1 thứ là người xem có thể nhận diện được dù xem video nào cũng là của cùng 1 người làm."
+
+Giữ ở MỌI video, mọi cảnh có chữ:
+1. Các thành phần cố định ở mục 1 (dấu góc ● DAVID, phụ đề, thanh thời gian, màn chốt, thẻ cuối) — đúng vị trí, đúng kiểu.
+2. **Màu nhấn cam** `C.accent` là màu nhấn duy nhất (khoảng 10 % khung). Màu nền và màu phụ đổi theo nội dung được.
+3. **Hai font chính** `HEAD` (Barlow Condensed) cho chữ to, `BODY` (Be Vietnam Pro) cho chữ thường. Font phụ `NHAN` (chữ có chân,
+   nghiêng) chỉ cho **một từ nhấn** trong cụm (`*từ*` trong ChuHien), không thay font chính.
+
+Ngoài ba điều trên là **tự do sáng tạo theo nội dung**: nền tối / sáng / giấy / người mờ, kết cấu, ánh sáng, kiểu hình (biểu tượng nét
+tròn, phấn vẽ tay, ảnh, bóng người), chiều sâu (chữ sau người), bố cục, chuyển động. Thử: che dấu góc đi, người xem quen kênh vẫn đoán
+được là video của David nhờ cam + chữ + phụ đề → đạt.
+
 ## 1. Thành phần cố định (có ở mọi video)
 
 | Thành phần | Khung dọc 1080×1920 | Khung ngang 1920×1080 | Code |
@@ -22,7 +36,7 @@ Luật kèm theo:
 - **Video dọc ngắn** (Reels/TikTok/Shorts — dọc ≤ 90 s, mọi highlight, podcast dọc trích ngắn; David chốt 10/11/2026): **không thanh thời gian, không thẻ cuối**; màn chốt hiện câu nguyên văn ngay trên khung hình (không thu nhỏ video), video kết ở chữ cuối để tự lặp. Lý do: nền tảng đã có thanh riêng, "còn 0:20" và màn "hết rồi" khiến người xem lướt đi, thẻ cuối làm đứt vòng lặp. Dẫn về bản đầy đủ / mời bình luận để ở caption + bình luận ghim. Máy tự nhận (`nganDoc()` trong `nhan-dien.js`, `NGAN_DOC` trong `thanh.js`); ép tay `project.thanh` / `project.theCuoi` (1 video, podcast) · `THANH` / `THE_CUOI` (edl.js).
 - Ép tay thanh thời gian: `project.thanh = false` (khuôn 1 video, podcast) · `export const THANH = false` (edl.js khuôn ghép).
 - Highlight có thanh của cả tập gốc (`HL.bar`) thì thanh đó thay thanh thường, cùng vị trí.
-- Màu, font, nét vẽ, tiếng ký hiệu, nhạc kênh: `tokens.js`, `Icons.jsx`, `brand.json` — không đổi khi học video mẫu.
+- Màu nhấn, hai font chính, nhạc kênh: `tokens.js`, `brand.json` — thuộc chữ ký (mục 0), không đổi khi học video mẫu.
 
 ## 2. Phần tự do (motion graphics)
 

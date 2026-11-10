@@ -87,7 +87,7 @@ body = scenes[scenes.index("export const SCENES"):]
 res, rows = {}, []
 for m in re.finditer(r"\{id: '([^']+)', type: '(\w+)', start: ([\d.]+), end: ([\d.]+)(.*?)(?=\n  \{id: |\n\];)", body, re.S):
     sid, typ, a, b, rest = m.group(1), m.group(2), float(m.group(3)), float(m.group(4)), m.group(5)
-    if typ in FULL or typ in ('nhan', 'bocuc', 've'): continue   # 'nhan' tự tránh mặt (Nhan.jsx + mat.js)
+    if typ in FULL or typ in ('nhan', 'bocuc', 've', 'chusau'): continue   # 'nhan' tự tránh mặt (Nhan.jsx + mat.js)
     hard, soft = zones(a, b)
     manual = re.search(r"\bplace: \{", rest) is not None
     if hard is None:

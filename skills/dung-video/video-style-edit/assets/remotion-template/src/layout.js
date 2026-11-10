@@ -18,7 +18,7 @@ import {TL_ON} from './thanh';
 // toàn màn hình (kinetic, lower, listItem…) KHÔNG được đè lên người → tự vẽ toàn màn hình. Ngoại lệ: thẻ tít mở đầu (hook) và
 // ĐIỂM NHẤN TRÊN NGƯỜI 'nhan' (07/11/2026: zoom dồn, làm tối viền, chữ / biểu tượng cạnh mặt — Nhan.jsx tự tránh mặt, vẽ cả khung).
 export const TWO = !!HS.hai_trang_thai && !project.podcast;
-export const TWO_KEEP = new Set(['hook', 'nhan', 'bocuc']);   // 'bocuc' tự sắp người + nội dung (BoCuc.jsx)
+export const TWO_KEEP = new Set(['hook', 'nhan', 'bocuc', 'chusau']);   // 'bocuc' tự sắp người + nội dung (BoCuc.jsx)
 //   // 'nhan' = điểm nhấn trên người (David chốt 2026-11-07): được đè lên người, không che mặt
 
 export const PILLAR = output?.layout === 'pillar';
@@ -60,7 +60,7 @@ const Clip = ({h, children}) => (
 
 export const Place = ({type, id, place, children}) => {
   if (!PILLAR) {
-    if (FULL.has(type) || type === 'captions' || type === 'nhan' || type === 'bocuc' || type === 've' || type === 'sides' || type === 'stage' || type === 'cover' || type === 'endcard') return children;
+    if (FULL.has(type) || type === 'captions' || type === 'nhan' || type === 'bocuc' || type === 've' || type === 'chusau' || type === 'sides' || type === 'stage' || type === 'cover' || type === 'endcard') return children;
     if (POD) {
       const pl = place || PF.ov;
       const x = PF.left - SAFE.left * pl.scale;   // dải lớp phủ canh trái vùng an toàn (ngang: bên phải là vòng micro)
@@ -89,7 +89,7 @@ export const Place = ({type, id, place, children}) => {
     );
   }
   if (type === 'sides' || type === 'stage' || type === 'endcard') return children;   // sân khấu podcast: khung dọc riêng, pillar_base ghép vào giữa
-  if (FULL.has(type) || type === 'captions' || type === 'nhan' || type === 'bocuc' || type === 've') return <AbsoluteFill><Scaled x={CENTER.x} y={0} s={OUT.H / project.height}>{children}</Scaled></AbsoluteFill>;
+  if (FULL.has(type) || type === 'captions' || type === 'nhan' || type === 'bocuc' || type === 've' || type === 'chusau') return <AbsoluteFill><Scaled x={CENTER.x} y={0} s={OUT.H / project.height}>{children}</Scaled></AbsoluteFill>;
   const s = SLOT.w / BAND_W;
   return (
     <AbsoluteFill>

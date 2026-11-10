@@ -8,6 +8,7 @@ import {Eyebrow} from './Overlays';
 import {Pictogram} from '../lib/Icons';
 import CAPTIONS from '../captions.js';
 import {FULL_ORIGIN, FULL_SCALE, POD, VN, aboveGap} from '../podframe';
+import {NenPhong, usePhong} from '../lib/Phong';
 
 export const FullShell = ({children, hold}) => {   // hold: không mờ ra ở cuối (màn chốt kết thúc video)
   const f = useCurrentFrame();
@@ -15,10 +16,10 @@ export const FullShell = ({children, hold}) => {   // hold: không mờ ra ở c
   // vào: mờ nhoè → nét, đuôi dài; ra: ngắn hơn ~40 %, tăng tốc, mờ nhoè (thư viện hình chuyen-dong.js)
   const v = vaoRa(f, hold ? 1e9 : d, {vao: 9, ra: 5, mo: 12});
   return (
-    <AbsoluteFill style={{opacity: v.opacity, filter: v.filter, background: C.bg, transform: `scale(${1.03 - 0.03 * tien(f, 0, 14, EASE.camera)})`}}>
-      <AbsoluteFill style={{background: `radial-gradient(circle at 45% 38%, rgba(255,122,69,0.16), transparent 60%)`}} />
-      <AbsoluteFill style={{backgroundImage: `linear-gradient(${C.line} 2px, transparent 2px), linear-gradient(90deg, ${C.line} 2px, transparent 2px)`,
-        backgroundSize: '120px 120px', opacity: 0.35, maskImage: 'radial-gradient(circle at 50% 45%, black, transparent 75%)'}} />
+    <AbsoluteFill style={{opacity: v.opacity, filter: v.filter, transform: `scale(${1.03 - 0.03 * tien(f, 0, 14, EASE.camera)})`}}>
+      <NenPhong />
+      {!usePhong().phong && <AbsoluteFill style={{backgroundImage: `linear-gradient(${C.line} 2px, transparent 2px), linear-gradient(90deg, ${C.line} 2px, transparent 2px)`,
+        backgroundSize: '120px 120px', opacity: 0.35, maskImage: 'radial-gradient(circle at 50% 45%, black, transparent 75%)'}} />}
       {POD ? <AbsoluteFill style={{transform: `scale(${FULL_SCALE})`, transformOrigin: FULL_ORIGIN}}>{children}</AbsoluteFill> : children}
     </AbsoluteFill>
   );

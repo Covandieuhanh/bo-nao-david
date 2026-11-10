@@ -43,7 +43,8 @@ Bước nhẹ (1–3): tới đó nhắc một dòng để David tự đổi mô
    lên repo, **học xong xoá**; David chốt 08/11), đọc mô tả và danh sách chương (`yt-dlp --dump-json`).
 2. **Cắt khung** *(bước nhẹ)*: bảng khung theo nhịp 1,5–3 s (`ffmpeg … fps=1/2,scale=480:-1,tile=4x4`) ở đoạn mở đầu và đoạn đúng loại cần học.
 3. **Nghe** *(bước nhẹ)*: vẽ phổ âm (`showspectrumpic`) để thấy chỗ có tiếng hiệu ứng, nhạc nền, nốt chuyển chương.
-4. **Rút ra, chỉ phần trình bày:** bố cục · thứ tự hiện · cách nối · nhịp · âm thanh. Không ghi màu, font, kiểu vẽ.
+4. **Rút ra đủ:** bố cục · thứ tự hiện · cách nối · nhịp · âm thanh · nền, kết cấu, kiểu hình, chữ nhấn (David 10/11/2026: càng nhiều
+   tài nguyên sáng tạo càng tốt). Chỉ không đụng chữ ký nhận diện (`thu-vien-hinh/nhan-dien-chung.md` mục 0).
 5. **Phiếu học cho David duyệt** (mẫu ở `phieu-hoc-mau.md`): học được gì, dùng cho loại video nào, thêm thành phần nào, mỗi thành
    phần đối chiếu với các chặn cũ thế nào. Đây là **cổng hỏi duy nhất**: gộp mọi điểm cần chọn, mỗi điểm 2–3 gợi ý.
    **Chờ David "ok" rồi mới sửa skill.**

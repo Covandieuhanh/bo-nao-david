@@ -10,8 +10,9 @@ import '@fontsource/be-vietnam-pro/vietnamese-700.css';
 import '@fontsource/be-vietnam-pro/500.css';
 import '@fontsource/be-vietnam-pro/600.css';
 import '@fontsource/be-vietnam-pro/700.css';
+import './lib/font-nhan.css';   // font phụ: một từ nhấn (tokens.js NHAN) — file font nằm trong thư viện hình, không cần cài gói
 
 export const FONT_CHECKS = [
   '800 100px "Barlow Condensed"', '700 100px "Barlow Condensed"',
-  '500 40px "Be Vietnam Pro"', '600 40px "Be Vietnam Pro"', '700 40px "Be Vietnam Pro"',
+  '500 40px "Be Vietnam Pro"', '600 40px "Be Vietnam Pro"', '700 40px "Be Vietnam Pro"', 'italic 700 40px "Playfair Display"',
 ];

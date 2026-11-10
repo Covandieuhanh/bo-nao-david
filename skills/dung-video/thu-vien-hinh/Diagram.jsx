@@ -18,6 +18,7 @@ import React from 'react';
 import {AbsoluteFill, Easing, Img, interpolate, interpolateColors, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {BODY, C, HEAD, ease} from './tokens';
 import {Icon} from './Icons';
+import {NenPhong, usePhong} from './Phong';
 
 const cl = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'};
 const UP = {textTransform: 'uppercase', fontFamily: HEAD, fontWeight: 800, lineHeight: 1.15, paddingTop: '0.12em'};
@@ -280,7 +281,7 @@ export const Diagram = ({mode = 'tang', items = [], label = '', total = 0, start
   const first = items.length ? rel(items[0].at) : 0;
   return (
     <AbsoluteFill style={{opacity: Math.min(ease(f, 0, 8), out)}}>
-      {nen && <AbsoluteFill style={{background: C.bg}} />}
+      {nen && (usePhong().phong ? <NenPhong glow={false} /> : <AbsoluteFill style={{background: C.bg}} />)}
       <AbsoluteFill style={{background: `radial-gradient(circle at 50% ${land ? 40 : 36}%, rgba(255,122,69,0.17), transparent 62%)`}} />
       <div style={{position: 'absolute', ...area}}>
         {label && <div style={{position: 'absolute', left: 0, width: AW, top: 0, textAlign: 'center', ...UP, fontSize: head, color: C.text,

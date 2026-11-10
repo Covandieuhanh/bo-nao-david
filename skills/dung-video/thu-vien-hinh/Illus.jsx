@@ -11,6 +11,7 @@ import React from 'react';
 import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import {BODY, C, HEAD, ease} from './tokens';
 import {Icon} from './Icons';
+import {NenPhong, usePhong} from './Phong';
 
 const cl = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'};
 const Arrow = ({s, o, flip}) => (
@@ -42,6 +43,7 @@ export const Illus = ({mode = 'single', items = [], label = '', num = null, star
   const L = len || durationInFrames;
   const rel = (t) => Math.round(((t ?? start) - start) * fps);
   const land = W > H, M = Math.min(W, H);
+  const {phong} = usePhong();
   const out = interpolate(f, [L - 5, L], [1, 0], cl);   // ra ngắn hơn vào ~40% (vào 8 khung · ra 5 khung)
   const n = Math.max(1, items.length);
   // khung ngang (podcast 1920×1080): hình nhỏ hơn để cả dấu ✓/✗ + nhãn nằm gọn trong vùng vẽ (2026-11-05: bản cũ bị cắt mép trên)
@@ -86,8 +88,9 @@ export const Illus = ({mode = 'single', items = [], label = '', num = null, star
   const grid = mode === 'list' && !land && n > 3;
   return (
     <AbsoluteFill style={{opacity: Math.min(ease(f, 0, 8), out)}}>
-      {nen && <AbsoluteFill style={{background: C.bg}} />}
-      {nen && <AbsoluteFill style={{background: `radial-gradient(circle at 50% ${land ? 42 : 38}%, rgba(255,122,69,0.2), transparent 60%)`}} />}
+      {nen && phong && <NenPhong />}
+      {nen && !phong && <AbsoluteFill style={{background: C.bg}} />}
+      {nen && !phong && <AbsoluteFill style={{background: `radial-gradient(circle at 50% ${land ? 42 : 38}%, rgba(255,122,69,0.2), transparent 60%)`}} />}
       <div style={{position: 'absolute', left: W * 0.06, right: W * 0.06, top: compact ? H * 0.115 : H * (land ? 0.07 : 0.1), height: compact ? H * 0.235 : H * (land ? 0.64 : 0.46), display: 'flex', flexDirection: 'column',
         alignItems: 'center', justifyContent: 'center', gap: M * 0.05}}>
         {numEl}

@@ -7,5 +7,7 @@ export const C = {
 };
 export const HEAD = '"Barlow Condensed", sans-serif';
 export const BODY = '"Be Vietnam Pro", sans-serif';
+// Font phụ — CHỈ cho một từ nhấn trong cụm (`*từ*` trong ChuHien), không thay HEAD/BODY (chữ ký nhận diện, nhan-dien-chung.md mục 0)
+export const NHAN = '"Playfair Display", serif';
 export const ease = (f, a, b, o0 = 0, o1 = 1, e = Easing.out(Easing.cubic)) =>
   interpolate(f, [a, b], [o0, o1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: e});

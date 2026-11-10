@@ -5,7 +5,9 @@ ghi rõ "ngoại lệ". Sổ quyết định + lý do: `<skill>/references/chang
 
 ## 0. Kim chỉ nam (David chốt 2026-11-04, sửa 08/11/2026 — N9)
 **Người xem là trung tâm.** Học kênh lớn (DOAC, Hormozi, MrBeast, Ali Abdaal, Jay Shetty, Mel Robbins…) ở **nhịp và cách trình bày**
-giữ người xem; **không chép thẩm mỹ**, **chỉ thêm, không thay** cái David đã chốt (ghi nhớ `luat-hoc-la-bo-sung`). Mục tiêu mỗi video: người xem **ở lại → HIỂU ý chính → LÀM theo**. Đo lại bằng số thật (mục 9).
+giữ người xem. **Thẩm mỹ chỉ giữ một điều** (David chốt 10/11/2026): xem video nào người xem cũng nhận ra là của cùng một người — giữ
+"chữ ký nhận diện" ở `thu-vien-hinh/nhan-dien-chung.md` mục 0; ngoài chữ ký, sáng tạo tự do theo nội dung (nền, kết cấu, kiểu hình,
+chữ nhấn phụ, bố cục, chuyển động), học được gì từ mẫu cũng dùng được. **Chỉ thêm, không thay** chặn cũ (ghi nhớ `luat-hoc-la-bo-sung`). Mục tiêu mỗi video: người xem **ở lại → HIỂU ý chính → LÀM theo**. Đo lại bằng số thật (mục 9).
 
 ## 1. Nội dung
 - **Không bịa.** Phụ đề, chữ to, thẻ, màn hành động = **trích / bỏ bớt lời người nói**, không diễn đạt lại. Tên riêng, con số, vế

@@ -9,6 +9,8 @@ Học từ mẫu mới (bố cục, trình bày, âm thanh) chỉ được **th�
 
 **Why:** 08/11/2026 David xem 4 video cũ làm lại, thấy dấu góc đè hình, điểm nhấn chồng lên dấu góc, thiếu thanh thời gian, dấu góc thấp. David nói "học là bổ sung chứ không phải thay thế đi các thứ trong skill đã xây dựng". Tra lại thì gốc lỗi là template viết cho khung dọc, áp sang khung ngang người nói lần đầu (chi tiết ở `video-style-edit/references/gotchas.md`).
 
+**Từ 10/11/2026:** "bổ sung" giờ gồm cả thẩm mỹ (nền, kết cấu, kiểu hình, chữ nhấn) — chỉ giữ chữ ký nhận diện: [[video-tham-my-chi-giu-nhan-dien]].
+
 **How to apply:**
 - Trước khi thêm gì từ bài học: đọc luật và gotchas liên quan, giữ nguyên các chặn cũ, thêm chặn mới cho thành phần mới (ví dụ thành phần mới phải tránh dấu góc, phụ đề, thanh thời gian).
 - Khung mới (ngang/dọc) lần đầu chạy: chụp đủ lớp (cảnh + phụ đề + dấu góc + thanh) trước khi render, không chỉ chụp lớp cảnh.

@@ -1,6 +1,6 @@
 ---
 name: hoc-video-mau
-description: Học cách trình bày từ một video mẫu David gửi (link YouTube/TikTok hoặc file) để BỔ SUNG vào bộ skill dựng video — chỉ học bố cục, thứ tự hiện, cách nối cảnh, nhịp, hiệu ứng âm thanh; GIỮ NGUYÊN thẩm mỹ, bố cục và thành phần đang có của David. Ra phiếu học cho David duyệt trước khi sửa skill, rồi kiểm không phá (mặt, phụ đề, dấu góc, thanh thời gian, cả khung ngang và dọc). Dùng khi David gửi video và nói "học cái này", "học video này", "học mẫu này", "học cách họ làm", "học bố cục", "học hiệu ứng", "/hoc-video-mau" — kể cả khi chỉ gửi link kèm chữ "học".
+description: Học cách trình bày từ một video mẫu David gửi (link YouTube/TikTok hoặc file) để BỔ SUNG vào bộ skill dựng video — chỉ học bố cục, thứ tự hiện, cách nối cảnh, nhịp, hiệu ứng âm thanh; học cả nền, kết cấu, kiểu hình, chữ nhấn làm tài nguyên sáng tạo; chỉ giữ chữ ký nhận diện (người xem nhận ra video của David) và thành phần đang có. Ra phiếu học cho David duyệt trước khi sửa skill, rồi kiểm không phá (mặt, phụ đề, dấu góc, thanh thời gian, cả khung ngang và dọc). Dùng khi David gửi video và nói "học cái này", "học video này", "học mẫu này", "học cách họ làm", "học bố cục", "học hiệu ứng", "/hoc-video-mau" — kể cả khi chỉ gửi link kèm chữ "học".
 ---
 
 # Học video mẫu
@@ -9,8 +9,8 @@ description: Học cách trình bày từ một video mẫu David gửi (link Yo
 Skill này chỉ là **cửa vào**; không ghi luật riêng ở đây để chỉ có một chỗ phải sửa.
 
 ## Ba điều không được quên
-1. **Học là bổ sung, không thay thế** (bộ nhớ `luat-hoc-la-bo-sung`). Không đổi màu, font, nét vẽ, kiểu chuyển động, nhạc kênh.
-   Không xoá hay sửa nghĩa thành phần cũ.
+1. **Học là bổ sung, không thay thế** (bộ nhớ `luat-hoc-la-bo-sung`). Không xoá hay sửa nghĩa thành phần cũ. Thẩm mỹ chỉ giữ **chữ ký nhận diện**
+   (`../thu-vien-hinh/nhan-dien-chung.md` mục 0); ngoài đó học gì cũng thêm được (David 10/11/2026).
 2. **Phiếu học trước, sửa skill sau.** Điền `../trinh-bay/phieu-hoc-mau.md` thành `../trinh-bay/nguon-hoc/<ten-nguon>-<ngay>.md`,
    gửi David. Đây là **cổng hỏi duy nhất** (`hoi-chuyen-gia`): gộp mọi điểm cần chọn vào phiếu, mỗi điểm 2–3 gợi ý, đề xuất đứng đầu. Chờ "ok".
 3. **Kiểm không phá** trước khi dùng vào video thật: chụp đủ lớp ở cả khung ngang lẫn dọc, phần cũ phải y nguyên.
