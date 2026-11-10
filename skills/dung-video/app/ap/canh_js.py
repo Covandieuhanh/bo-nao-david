@@ -5,8 +5,8 @@ import json, os, subprocess
 from pathlib import Path
 
 
-def doc(P):
-    f = (Path(P) / "motion/src/scenes.js").resolve()
+def doc(P, ten="scenes.js"):
+    f = (Path(P) / "motion/src" / ten).resolve()
     js = f"const m = await import({json.dumps(f.as_uri())}); console.log(JSON.stringify(Object.fromEntries(Object.entries(m))));"
     r = subprocess.run(["node", "--no-warnings", "--input-type=module", "-e", js], capture_output=True, text=True,
                        env=dict(os.environ, PATH="/opt/homebrew/bin:/usr/local/bin:" + os.environ.get("PATH", "")))

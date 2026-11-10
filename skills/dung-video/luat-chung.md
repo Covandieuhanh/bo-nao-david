@@ -108,7 +108,7 @@ Ghi `<dự án>/phat-hanh/phat-hanh.md`:
 - Hỏi theo `hoi-chuyen-gia` một lần đầu (diễn giải ngắn + câu thật sự thiếu); David "ok" thì chạy trọn một mạch. Ngoại lệ dừng duyệt:
   kế hoạch ghép vlog (multi-clip.md 2b).
 - Lệnh dài (> 2 phút) chạy nền, không thăm dò. Không tự nhập mật khẩu máy. Không tải video từ YouTube/TikTok (nhờ David gửi file).
-- Chụp thử (stills) trước khi render; kiểm bản cuối (khung, âm lượng ±0,5 dB, tiếng rè ±1 dB, thời lượng).
+- Chụp thử (stills) trước khi render; kiểm bản cuối (khung, cả bài −14 LUFS, đỉnh ≤ −1,5 dB, rè so với giọng ≤ +1 dB, nhạc dưới giọng ~23 LU, thời lượng — khối 09).
 - Báo cáo tiếng Việt: đã làm gì, đã kiểm gì, chưa kiểm gì, tên riêng cần xác nhận.
 
 ## 9. Vòng số liệu (David chốt 2026-11-04)

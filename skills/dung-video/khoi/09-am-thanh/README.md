@@ -19,7 +19,7 @@
 - **Mức cân từng bài: một nguồn** `ho-so/chung.json` → `nhac.muc` (vlog_edl, render_preview, hl_edl, hl_apply, Show.jsx ghép đều đọc từ đây).
 - Tiếng ký hiệu `sting.wav` lúc hiện tiêu đề mở đầu; "ting" ở màn chốt; "vút" chỉ khi bật kiểu tua cũ.
 - Giọng cân −20 LUFS; nhạc dưới lời và bản cuối: theo chuẩn âm lượng chung.
-- Kiểm bản cuối: âm lượng chênh nguồn ≤ 0,5 dB, tiếng rè (highpass 12 kHz) ≤ 1 dB (khối 17).
+- Kiểm bản cuối: cả bài −14 LUFS ±0,5 (hồ sơ `nhac.do_to_cuoi_LUFS`), đỉnh ≤ −1,5 dB, tiếng rè (highpass 12 kHz) **so với giọng** tăng ≤ 1 dB, nhạc lúc nói thấp hơn giọng 22–24 LU (khối 17; máy đo ở `app/kiem/`). Không so âm lượng thô với nguồn: giọng nhỏ được kéo lên −14 LUFS nên chênh là đúng (sửa 10/11/2026).
 
 ## Chuẩn âm lượng chung cho mọi đầu ra (David chốt 2026-11-06, theo 3 clip "Đi trainer")
 Áp dụng cho làm video, podcast, highlight, vlog ghép. Mức nằm ở một chỗ: hồ sơ chung `nhac`.

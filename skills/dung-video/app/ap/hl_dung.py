@@ -10,7 +10,8 @@ H = Path(sys.argv[1]); nguon = glob.glob(str(H / "nguon.*"))[0]
 for ma, E in clips(H):
     if not (E / "motion/public/clips/c1.mp4").exists():
         if E.exists(): shutil.move(str(E), str(Path.home() / ".Trash" / f"{H.parent.name}-clip-{ma}-do-dang"))
-        subprocess.run(["zsh", str(S / "new_montage.sh"), f"hl-{tap(H)}-{ma}", nguon], env=ENV, check=True)
+        subprocess.run(["zsh", str(S / "new_montage.sh"), f"hl-{tap(H)}-{ma}", nguon], check=True,
+                       env={**ENV, "LOI_SAN": str(H / "check/goc")})   # dùng lại bản chép lời của nguồn, không chép lại cho từng clip
     subprocess.run(["python3", "-I", str(HL / "hl_edl.py"), str(H), str(E), ma], env=ENV, check=True)
     shutil.copy2(E / "motion/src/edl.js", E / "motion/src/edl.goc.js")
     for m in (HL.parent / "assets/music").glob("*.mp3"):

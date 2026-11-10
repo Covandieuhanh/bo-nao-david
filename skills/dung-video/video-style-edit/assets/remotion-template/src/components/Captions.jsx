@@ -8,7 +8,7 @@ import CAPTIONS from '../captions.js';
 import {BODY, C, HEAD, SAFE, SAFE_W, BRAND_TOP, ease} from '../theme';
 import {SCENES, fr} from '../scenes';
 import project from '../project.js';
-import {POD, PF} from '../podframe';
+import {POD, PF, LAND} from '../podframe';
 import {Timeline} from './Timeline';
 import {Tua} from './Tua';
 import HL from '../highlight.js';
@@ -50,7 +50,9 @@ export const Captions = () => {
   const cap = quoted || jumping ? null : CAPTIONS.find((c) => f >= fr(c.start) && f < fr(c.end));
   // Podcast: phụ đề ngay trên thanh thời gian (đáy vùng an toàn), khung dọc hoặc ngang toàn khung
   // Highlight (highlight.js) ở video người nói: thanh tập gốc chiếm đáy vùng an toàn → phụ đề lên ngay trên nó như podcast
-  const box = POD ? {left: (PF.W - PF.capW) / 2, width: PF.capW, bottom: PF.capBottom, size: PF.capSize}
+  // podcast dọc: canh theo vùng an toàn (lề phải chừa cột nút nền tảng) — canh giữa khung 1080 làm phụ đề lấn vùng đỏ bên phải
+  // (AI bắt ở chụp thử podcast 10/11/2026). Ngang giữ canh giữa.
+  const box = POD ? {left: LAND ? (PF.W - PF.capW) / 2 : PF.left, width: PF.capW, bottom: PF.capBottom, size: PF.capSize}
     : {left: SAFE.left, width: SAFE_W, bottom: TL_ON ? PF.capBottom : SAFE.bottom - SUB.bottomGap, size: SUB.size};   // luôn ở đáy vùng an toàn (người dùng chốt)
   const a = cap ? ease(f, fr(cap.start), fr(cap.start) + 3) : 0;
   // màn chốt khung ngang: ô video to chiếm nửa trên → ẩn dấu góc (lỗi 08/11/2026: dấu góc đè lên ô video)

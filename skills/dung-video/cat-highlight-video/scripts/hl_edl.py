@@ -20,12 +20,32 @@ MUSIC = {'soi': 'soi-1', 'lang': 'lang-1'}           # bài mặc định của 
 # cân mức các bài về cùng ~ −15 LUFS (đo ebur128 60 s đầu: soi-1 −10,3 · soi-2 −9,1 · lang-1 −15,2 · lang-2 −19,7)
 GAIN = json.load(open(os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../ho-so/chung.json'), encoding='utf-8'))['nhac']['muc']   # mức cân từng bài: MỘT nguồn ở hồ sơ chung
 
+
+
+def muc_nhac(clip, pieces):
+    """MỨC NHẠC THEO GIỌNG (khối 09, chuẩn chung: nhạc thấp hơn giọng ~23 dB lúc nói, ~14 LU lúc lặng). Trước 10/11/2026 ghi cứng
+    duck 0.09 / base 0.2 → nhạc chỉ thấp hơn giọng 13–17 LU (AI bắt ở kiểm cuối highlight). Bài nhạc đã cân về ~−15 LUFS (nhac.muc)."""
+    nh = json.load(open(os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../ho-so/chung.json'), encoding='utf-8'))['nhac']
+    duoi = sum(nh.get('khi_noi_duoi_giong_LU_dat', [22, 24])) / 2; lang = nh.get('khoang_trong_duoi_giong_LU', 14)
+    import math
+    e = n = 0.0
+    for p in pieces:                                   # năng lượng trung bình của giọng trên đúng các câu của clip
+        r = subprocess.run(['ffmpeg', '-nostats', '-ss', str(p['start']), '-t', str(max(0.3, p['end'] - p['start'])), '-i', clip,
+                            '-vn', '-af', 'ebur128', '-f', 'null', '-'], capture_output=True, text=True).stderr
+        m = [float(x) for x in __import__('re').findall(r'I:\s+(-?[\d.]+) LUFS', r)]
+        if m and m[-1] > -70:
+            w = p['end'] - p['start']; e += w * 10 ** (m[-1] / 10); n += w
+    giong = 10 * math.log10(e / n) if n else -20.0
+    duck = 10 ** ((giong - duoi + 15) / 20)            # bài ở −15 LUFS → nhân duck để còn (giọng − 23)
+    return round(min(duck, 0.6), 3), round(min(duck * 10 ** ((duoi - lang) / 20), 1.0), 3)
+
 plan = json.load(open(os.path.join(H, 'phuong-an.json'), encoding='utf-8'))
 opt = next(o for o in plan['options'] if OID is None or o['id'] == OID)
 pieces = opt['pieces']
 clip = os.path.join(E, 'motion/public/clips/c1.mp4')
 dur = float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', clip],
                            capture_output=True, text=True).stdout)
+M_DUCK, M_BASE = muc_nhac(clip, pieces)
 
 def ts(x):
     h, m, s = x.replace(',', '.').split(':'); return int(h) * 3600 + int(m) * 60 + float(s)
@@ -183,7 +203,7 @@ export const SFX = [
 ];
 
 export const TONE = {json.dumps([[round(a, 2), round(b, 2), k] for a, b, k in tr])};
-export const MUSIC = {{base: 0.2, duck: 0.09, loud: 0.3, loudRanges: [],
+export const MUSIC = {{base: {M_BASE}, duck: {M_DUCK}, loud: 0.3, loudRanges: [],   // tính theo giọng đo được của clip (khối 09)
   tracks: TONE.map(([a, b, k]) => ({{f: k === 'lang' ? '{MUSIC['lang']}' : '{MUSIC['soi']}', a, b, gain: k === 'lang' ? {GAIN[MUSIC['lang']]} : {GAIN[MUSIC['soi']]}}}))}};
 
 // Màn chốt: câu kêu gọi NGUYÊN VĂN của người nói (luật highlight). kind: 'comment' | 'save' | 'follow' | 'share'

@@ -54,8 +54,14 @@ for f in "${CLIPS[@]}"; do
   # Quay ngoài trời (gió, bước chân, đám đông) → Whisper bịa "Hãy subscribe…" cả clip. Lọc ồn + cân tiếng RIÊNG cho bản chép lời
   # (a.wav giữ nguyên cho loud.txt) và -mc 0 (không mang ngữ cảnh câu bịa sang đoạn sau) — vlog leo núi 2026-11-03: 10/48 clip hết bịa.
   ffmpeg -v error -y -i "$O/a.wav" -af "highpass=f=120,lowpass=f=6000,afftdn=nf=-25,dynaudnorm" "$O/w.wav"
+  # LOI_SAN=<thư mục có words.srt + transcript.srt CỦA CHÍNH FILE NÀY> (highlight: clip c1 = video nguồn đã chép lời ở check/goc)
+  # → dùng lại, không cho Whisper chép lại cả video dài cho từng clip (10/11/2026: tập 14 phút mất ~30 phút mỗi clip).
+  if [[ -n "$LOI_SAN" && "$id" == c1 && -s "$LOI_SAN/words.srt" && -s "$LOI_SAN/transcript.srt" ]]; then
+    cp "$LOI_SAN/words.srt" "$O/words.srt"; cp "$LOI_SAN/transcript.srt" "$O/transcript.srt"
+  else
   whisper-cli -m $MODEL -l vi -f "$O/w.wav" -mc 0 -osrt -of "$O/transcript" -np >/dev/null 2>&1 || true
   whisper-cli -m $MODEL -l vi -f "$O/w.wav" -mc 0 -ml 1 -sow -osrt -of "$O/words" -np >/dev/null 2>&1 || true
+  fi
   rm -f "$O/w.wav"
   ffmpeg -v error -i "$O/a.wav" -af "asetnsamples=8000,astats=metadata=1:reset=1,ametadata=print:key=lavfi.astats.Overall.RMS_level:file=-" -f null - \
     | grep RMS | awk -F= '{printf "%.1fs %d dB\n", (NR-1)*0.5, $2}' > "$O/loud.txt"

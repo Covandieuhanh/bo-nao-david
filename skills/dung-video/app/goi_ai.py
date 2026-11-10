@@ -15,10 +15,10 @@ APP = Path(__file__).resolve().parent; DV = APP.parent; REPO = DV.parents[1]
 sys.path.insert(0, str(APP))   # python -I không tự thấy file cùng thư mục (han_muc.py) — lỗi 09/11/2026 ở bước AI đầu tiên
 ENV = dict(os.environ, PATH="/opt/homebrew/bin:/usr/local/bin:" + os.environ.get("PATH", ""))
 
-# Công cụ AI được dùng: đọc/sửa file + đúng các lệnh mà skill dùng. Không mạng, không xoá ngoài dự án, không đăng.
-CONG_CU = ["Read", "Edit", "Write", "Glob", "Grep", "Bash(node *)", "Bash(python3 *)", "Bash(zsh *)", "Bash(bash *)", "Bash(ffmpeg *)",
-           "Bash(ffprobe *)", "Bash(ls *)", "Bash(cat *)", "Bash(head *)", "Bash(tail *)", "Bash(cd *)", "Bash(mkdir *)",
-           "Bash(cp *)", "Bash(mv *)", "Bash(grep *)", "Bash(wc *)", "Bash(sed -n *)", "Bash(sips *)", "Bash(open -R *)"]
+# Công cụ AI được dùng (David chốt 10/11/2026): MỌI lệnh Bash như khi David bấm "cho phép" trong chat — danh sách hẹp làm AI bị chặn
+# ~25 lệnh mỗi đợt thử (cd …; …, for, awk, rm, whisper-cli, node đường dẫn đầy đủ) nên làm vòng hoặc bỏ bước kiểm. Sửa file chỉ trong
+# thư mục dự án + các --add-dir; lời dặn chung cấm xoá ngoài dự án, đăng, gửi.
+CONG_CU = ["Read", "Edit", "Write", "Glob", "Grep", "Bash"]
 
 BOI_CANH = """Bạn đang chạy TỰ ĐỘNG trong app dựng video của David Trần (không có David ngồi trả lời).
 - Làm đúng MỘT bước của skill như dưới đây, theo đúng chữ của SKILL.md và README các khối được chỉ — như khi David dùng skill trong Claude Code.

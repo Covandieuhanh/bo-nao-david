@@ -95,7 +95,7 @@ Bước nhẹ: tới đó nhắc một dòng "bước này nhẹ, bạn có th�
 Làm lần lượt cho từng clip `<id>` (A, B…). `cat/<id>.mp4` của bước 6 chỉ để **kiểm lời**; bản dựng đọc thẳng video gốc theo mốc trong phuong-an.json (mỗi câu thêm
 `"tone": "lang"|"soi"`, câu dùng cho màn chốt thêm `"cta": true`):
 ```bash
-zsh $BASE/scripts/new_montage.sh hl-<tên>-<id> "$P/nguon.<ext>"     # chạy nền → ~/Movies/tap-<tên>/3-highlight/clip-<id> = $E (c1 = video gốc)
+LOI_SAN="$P/check/goc" zsh $BASE/scripts/new_montage.sh hl-<tên>-<id> "$P/nguon.<ext>"   # chạy nền → ~/Movies/tap-<tên>/3-highlight/clip-<id> = $E (c1 = video gốc; LOI_SAN = dùng lại lời đã chép, không chép lại cả video cho mỗi clip)
 python3 -I $SKILL/scripts/hl_edl.py "$P" "$E" <id>                   # → $E/motion/src/edl.js viết sẵn
 cp $SKILL/assets/music/*.mp3 "$E/motion/public/sfx/"                 # kho nhạc kênh (soi-*, lang-*)
 ```
@@ -193,7 +193,7 @@ $SKILL/assets/music/               # soi-*.mp3 · lang-*.mp3 — kho nhạc kên
 2. Clip cùng loại video gốc, dọc 1080×1920.
 3. Mọi chữ trên clip nguyên văn (cả tít, màn chốt, thẻ cuối).
 4. Không cắt vào giữa ý; lời bản cắt đã chép lại đối chiếu khớp.
-5. Phụ đề cụm 5–8 chữ không chồng chữ motion graphic; có thanh thời gian và thẻ cuối đúng bộ nhận diện.
+5. Phụ đề cụm ~5–8 chữ (tối đa theo hồ sơ `phu_de.ngan_max_chu`) không chồng chữ motion graphic; có thanh thời gian và thẻ cuối đúng bộ nhận diện.
 6. Nhạc từ kho kênh, thấp hơn giọng ~23 dB.
 7. Có dang-bai.md (lịch đăng, mốc bìa, mô tả, bình luận ghim) + so-lieu.md; David không phải sửa lại vì trái luật đã chốt.
 8. David chốt cả tập → dọn file tạm luôn bằng `don_tap.py --xoa` (khối 17), không hỏi lại; chỉ hỏi phần ⏸ đang dở.

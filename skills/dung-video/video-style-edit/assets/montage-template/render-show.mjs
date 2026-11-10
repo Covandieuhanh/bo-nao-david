@@ -1,6 +1,6 @@
 // Render bản cuối có tiếng rồi chuẩn hoá âm lượng mạng xã hội: node render-show.mjs → ../video-final.mp4
 // Một đoạn (xem thử intro…): node render-show.mjs <từ giây> <đến giây> <tên.mp4> → ../<tên.mp4>
-import {execFileSync} from 'node:child_process';
+import {execFileSync, spawnSync} from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import {bundle} from '@remotion/bundler';
@@ -18,9 +18,15 @@ await renderMedia({serveUrl, composition, codec: 'h264', crf: 18, audioCodec: 'a
   outputLocation: raw,
   onProgress: ({progress}) => { const p = Math.floor(progress * 10) * 10; if (p !== last) { last = p; process.stdout.write(`${p}% `); } }});
 console.log(`\nrender ${((Date.now() - t0) / 1000).toFixed(0)}s`);
-// Hiệu ứng + nhạc dễ làm chạm 0 dB → loudnorm về -14 LUFS, đỉnh -1.5 dB
+// Hiệu ứng + nhạc dễ làm chạm 0 dB. loudnorm MỘT lượt rồi nén AAC cho đỉnh thật −1,0 dB, vượt chuẩn −1,5 (AI bắt ở kiểm cuối vlog
+// 10/11/2026) → đo độ to bản thô, tăng đúng mức còn thiếu tới −14 LUFS, chặn đỉnh ở 192 kHz (≈ đỉnh thật) tại −2 dB; lệch nhỏ còn lại
+// do chuan_am.py chỉnh. +0,6 dB bù phần limiter ăn bớt.
 const ff = fs.existsSync('/opt/homebrew/bin/ffmpeg') ? '/opt/homebrew/bin/ffmpeg' : 'ffmpeg';
-execFileSync(ff, ['-v', 'error', '-y', '-i', raw, '-c:v', 'copy', '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000',
+const ebur = spawnSync(ff, ['-hide_banner', '-nostats', '-i', raw, '-map', '0:a', '-af', 'ebur128', '-f', 'null', '-'], {encoding: 'utf8'}).stderr;
+const inI = Number([...ebur.matchAll(/I:\s+(-?[\d.]+) LUFS/g)].pop()?.[1] ?? -14);
+const gain = (-14 - inI + 0.6).toFixed(2);
+execFileSync(ff, ['-v', 'error', '-y', '-i', raw, '-c:v', 'copy', '-af',
+  `volume=${gain}dB,aresample=192000,alimiter=limit=0.79:level=disabled:attack=5:release=60,aresample=48000`,
   '-c:a', 'aac', '-b:a', '256k', '-movflags', '+faststart', out]);
 // Chuẩn âm lượng chung (khối 09): lệch mục tiêu thì chỉnh cả bài
 execFileSync('python3', ['-I', path.join(process.env.HOME, '.claude/skills/video-style-edit/scripts/chuan_am.py'), out], {stdio: 'inherit'});

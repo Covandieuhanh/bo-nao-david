@@ -45,8 +45,8 @@ python3 -I $SKILL/scripts/render_preview.py "$P"                   # chạy nề
 ```bash
 zsh $SKILL/scripts/check_frames.sh "$P" "$P/video-final.mp4" <các mốc giây: giữa & cuối mỗi cảnh, vài chỗ không có cảnh, màn hình nguồn>
 ```
-Xem `check/sheet.jpg`: cảnh đúng chỗ, không gì lọt vùng an toàn, không lớp phủ nào che mặt, không nháy/đen. So âm lượng với bản gốc
-(`ffmpeg -i ... -af volumedetect -f null -`, chênh ≤ 0,5 dB) và tiếng rè (`-af highpass=f=12000,astats` — mức RMS bản cuối
+Xem `check/sheet.jpg`: cảnh đúng chỗ, không gì lọt vùng an toàn, không lớp phủ nào che mặt, không nháy/đen. Âm thanh
+(cả bài −14 LUFS, đỉnh ≤ −1,5 dB — `ebur128=peak=true`; KHÔNG so dB thô với nguồn vì giọng nhỏ được kéo lên, sửa 10/11/2026) và tiếng rè so với giọng (`-af highpass=f=12000,astats` — mức RMS bản cuối
 chênh bản gốc ≤ 1 dB; cao hơn hẳn = âm thanh bị hạ bit ở đâu đó, xem gotchas) và thời lượng (= bản sạch; video KHÔNG có màn hình nguồn ảnh ở cuối).
 Lỗi thì sửa cảnh đó → `node render.mjs <id>` → render_preview lại.
 

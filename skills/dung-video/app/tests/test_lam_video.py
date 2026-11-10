@@ -75,3 +75,11 @@ class XoaSua(unittest.TestCase):
    g.sua_viec('hl','hl-moi',{'yeu_cau':'mới','P':'không được đổi'})
    tt=json.loads((g.KHO/'hl-moi/trang-thai.json').read_text())
    self.assertEqual((tt['ten'],tt['tuy_chon']['yeu_cau'],tt['P']),('hl-moi','mới',str(tap/'3-highlight')))
+@unittest.skipUnless(shutil.which('ffmpeg'),'cần ffmpeg')
+class DinhAm(unittest.TestCase):
+ def test_bat_dinh_vuot(self):
+  for vol,mong in (('0.95',1),('0.5',0)):
+   with tempfile.TemporaryDirectory() as t:
+    P=Path(t);subprocess.run(['ffmpeg','-v','error','-f','lavfi','-i','sine=f=440:d=2','-af',f'volume={vol}','-c:a','aac','-b:a','192k',str(P/'video-final.mp4')],check=True)
+    r=subprocess.run([sys.executable,'-I',str(A/'kiem/kiem_dinh_am.py'),str(P)],capture_output=True,text=True)
+    self.assertEqual(r.returncode,mong,r.stdout+r.stderr)

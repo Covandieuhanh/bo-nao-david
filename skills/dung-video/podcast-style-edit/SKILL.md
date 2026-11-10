@@ -112,7 +112,7 @@ Podcast 15 phút: sân khấu ~25 phút, phụ đề ~10 phút, ghép cuối ~10
 
 ### 9. Kiểm tra bản cuối
 `zsh $BASE/scripts/check_frames.sh "$P" "$P/video-final.mp4" <mốc giữa & cuối mỗi cảnh, vài mốc chỉ sân khấu>` → xem `check/sheet.jpg`.
-So âm lượng và tiếng rè với `davinci/media/audio.wav` (volumedetect chênh ≤ 0,5 dB; `highpass=f=12000,astats` chênh ≤ 1 dB),
+Âm thanh theo khối 09 (cả bài −14 LUFS ±0,5 (hồ sơ `nhac.do_to_cuoi_LUFS`), đỉnh ≤ −1,5 dB, tiếng rè (highpass 12 kHz) **so với giọng** tăng ≤ 1 dB; không so dB thô với `audio.wav` vì giọng nhỏ được kéo lên),
 thời lượng = `audio.wav` (+ thẻ cuối nếu có).
 
 ### 10. Phát hành + giao
