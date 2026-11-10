@@ -34,15 +34,16 @@ theo bỏ hoặc đổi luật ở nhiều bộ cùng lúc; tái bản lẻ mộ
 
 ## Quy trình (mỗi đợt)
 1. **Mốc** *(bước nhẹ)*: `bash scripts/sync.sh --push`, rồi `git tag tai-ban-<n>-truoc`. Chạy máy đo, lưu kết quả vào
-   `dang-lam/tai-ban-<n>.md` (file theo dõi chung của đợt, mỗi bộ một mục).
+   `dang-lam/tai-ban-<n>.md` (file theo dõi chung của đợt). Mỗi phiên con ghi file riêng `dang-lam/tai-ban-<n>-<bộ>.md`
+   (video · hoi · nao · ghi-nho) để không ghi đè nhau.
 2. **Chia phiên:** phiên điều phối mở một phiên con cho mỗi bộ (video · hoi · nao) và một phiên dọn ghi nhớ, chạy cùng lúc.
    Mỗi phiên chỉ sửa file của bộ mình, không commit, không chạy `sync.sh` — phiên điều phối đẩy một lần khi đóng mốc.
    Bộ vừa sạch (máy đo gần 0) vẫn làm bước 3 để tìm luật lệch với bộ khác, viết lại chỗ lệch.
-3. **Bảng luật đang sống** (mục của bộ trong file theo dõi): đọc toàn bộ bản luật + sổ quyết định + ghi nhớ liên quan, mỗi luật một dòng:
+3. **Bảng luật đang sống** (file của bộ): đọc toàn bộ bản luật + sổ quyết định + ghi nhớ liên quan, mỗi luật một dòng:
    `luật · nhà nên ở · nguồn hiện tại (file:dòng, có thể nhiều) · ngày chốt gần nhất · trạng thái (sống / trùng / ngược / cũ)`.
    Luật ngược nhau: theo `thoi-quen-lam-viec.md` mục 0 (lời David vừa nói > ngày chốt gần nhất > cũ); chỗ vẫn không rõ → gom lại
    **hỏi David một lần** (hoi-chuyen-gia), có đề xuất. Không tự bỏ luật nào David đã chốt mà không có luật mới hơn thay.
-   Luật đụng bộ khác → ghi vào mục "Chéo bộ" của file theo dõi; phiên điều phối chốt nhà duy nhất.
+   Luật đụng bộ khác → ghi vào mục "Chéo bộ" của file bộ mình; phiên điều phối gom, chốt nhà duy nhất.
 4. **Viết lại từ bảng, không vá:** mỗi file bản luật viết lại thành trạng thái hiện hành.
    - Mỗi luật **một nhà**; nơi khác một dòng trỏ. Luật dùng chung nhiều skill → `thoi-quen-lam-viec.md` / `luat-chung.md`, không chép.
    - Không ngày, không "(David chốt …)", không "thay luật cũ", không "chuyển nguyên văn từ SKILL.md cũ". Lý do một luật tồn tại
