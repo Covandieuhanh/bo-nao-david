@@ -25,7 +25,7 @@ lien_ket() {
 echo "Lối tắt vào repo:"
 lien_ket "$REPO/nao/CLAUDE-toan-cuc.md" "$CL/CLAUDE.md"
 lien_ket "$REPO/nao/David.md" "$CL/David.md"
-for s in dung-video hoi-chuyen-gia playwright-cli scroll-craft; do
+for s in dung-video hoi-chuyen-gia playwright-cli scroll-craft tai-ban; do
   lien_ket "$REPO/skills/$s" "$CL/skills/$s"
 done
 # Lối tắt để Claude nhận lệnh /<tên skill>

@@ -48,7 +48,8 @@ Bước nhẹ (1–3): tới đó nhắc một dòng để David tự đổi mô
 5. **Phiếu học cho David duyệt** (mẫu ở `phieu-hoc-mau.md`): học được gì, dùng cho loại video nào, thêm thành phần nào, mỗi thành
    phần đối chiếu với các chặn cũ thế nào. Đây là **cổng hỏi duy nhất**: gộp mọi điểm cần chọn, mỗi điểm 2–3 gợi ý.
    **Chờ David "ok" rồi mới sửa skill.**
-6. **Ghi vào kho:** một file `nguon-hoc/<ten-nguon>-<ngay>.md` kể học gì từ đâu. Mỗi cách mới thêm một dòng ở `bo-cuc.md` hoặc `am-thanh.md`,
+6. **Ghi vào kho** (kho là thực đơn, không phải luật). Điều học được làm **đổi luật** → sửa thẳng câu luật đó, lý do vào sổ (thoi-quen mục 4), không thêm câu chồng.
+   **Cách ghi kho:** một file `nguon-hoc/<ten-nguon>-<ngay>.md` kể học gì từ đâu. Mỗi cách mới thêm một dòng ở `bo-cuc.md` hoặc `am-thanh.md`,
    ghi rõ "đã có code" hay "chưa có code". Không xoá, không sửa nghĩa dòng cũ.
 7. **Làm code khi cần:** thêm `kieu` mới trong `video-style-edit/assets/remotion-template/src/components/BoCuc.jsx` (chỉ dùng
    `C`, `HEAD`, `BODY`, `ease`, `pop`, `Illus`, `Diagram`, `Icon` sẵn có). Vị trí lấy từ hằng số chung (`SAFE`, `BRAND_TOP`/`BRAND_BOT`,

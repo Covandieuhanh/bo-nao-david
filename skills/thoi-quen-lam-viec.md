@@ -46,6 +46,12 @@ Luật nội dung (nguyên văn lời David, giọng David, lằn ranh) không p
 ## 4. Cuối việc
 - **Báo cáo ngắn, tiếng Việt:** đã làm gì · đã kiểm gì · chưa kiểm gì · điều cần David xác nhận.
 - **Góp ý của David ghi đúng một chỗ:** sửa skill hoặc khối bị ảnh hưởng + một dòng nhật ký (`changelog` của skill, hoặc mục "Nhật ký").
+- **Sửa thẳng, không chồng câu:** đổi một luật (góp ý, học mẫu, quyết định mới) thì **viết lại chính câu luật đó** thành trạng thái mới
+  và xoá câu cũ. Trong bản luật không ghi ngày, không "(David chốt …)", không "thay luật cũ", "bổ sung …", "ngoại lệ mới"; ngày, lời
+  David nguyên văn và lý do ghi vào sổ quyết định (changelog / Nhật ký). Luật mới đụng luật ở nơi khác → sửa luôn nơi đó, không để hai
+  câu cãi nhau. Ba loại file (bản luật · sổ · kho) và định nghĩa từng bộ: skill `tai-ban`.
+- **Đo chồng chéo** sau mỗi việc có sửa bản luật: `python3 -I skills/tai-ban/do_chong_cheo.py`. Báo "NÊN TÁI BẢN" → nhắc David
+  một dòng; David đồng ý thì tái bản ở phiên riêng (skill `tai-ban`).
   Chỉ luật dùng chung cho nhiều skill mới vào `nao/bo-nho/`; đã có ghi nhớ gần giống thì sửa ghi nhớ đó, không tạo cái mới.
 - **Video đã chốt hoặc đã đăng:** dọn file tạm luôn bằng `don_tap.py --xoa` (khối 17), không hỏi lại David (chốt 08/11/2026).
   Chỉ hỏi khi script báo ⏸ (việc đang dở, có thể của phiên khác). File vào Thùng rác, David tự đổ.
@@ -72,6 +78,7 @@ Luật nội dung (nguyên văn lời David, giọng David, lằn ranh) không p
 | David dán log hoặc văn bản dài | Vẫn làm; cuối việc nhắc lần sau chỉ cần đưa đường dẫn file |
 | Tới bước nhẹ | Nhắc đổi mô hình rẻ hơn (mục 3) |
 | Buổi nhìn lại cuối tuần, hoặc `nao/bo-nho/` quá 40 ghi nhớ | Đề nghị "dọn bộ nhớ" (skill `consolidate-memory`) |
+| Máy đo chồng chéo báo "NÊN TÁI BẢN" | Nhắc một dòng, David quyết; tái bản ở phiên riêng (skill `tai-ban`) |
 | David hỏi phiên tốn vào đâu | Chạy "giải thích mức dùng" (skill `explain-usage`) |
 
 **Thói quen của David** (để Claude biết mà nhắc): mỗi việc một phiên · xong thì "cập nhật não" rồi đóng · làm liền một mạch ·

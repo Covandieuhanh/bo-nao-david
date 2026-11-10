@@ -20,6 +20,7 @@ Chặng 1 của nghề: 1–3 ca thật online, miễn phí đổi lời chứng
 | 4 clip dọc từ 4 video cũ (mỗi video 1 clip) | Render xong 08/11 với bộ nhận diện chung (có thanh thời gian, thẻ cuối không logo). Bài đăng gợi ý: `3-highlight/dang-bai.md` từng tập | **Chờ David xem và góp ý.** Chưa hẹn giờ |
 | Chuẩn hoá bộ skill ([chuan-hoa-skill.md](dang-lam/chuan-hoa-skill.md)) | Bước 0–3 xong 08/11: thói quen chung, 6 skill + 3 file não đã gọt, có "Xong khi". Phiên A sửa xong code lệch; bỏ phần CapCut/DaVinci; thêm `don_tap.py`, đã dọn 8 tập cũ (~62 GB) | Bước 4: chạy thử một việc thật, David chấm, sửa đúng một chỗ |
 | App dựng video = skill chạy tự động — **đã bỏ 10/11/2026** (tốn token hơn làm trực tiếp), code đã xoá, LaunchAgent đã gỡ (ghi nhớ `video-bo-app`) | — | Dựng video làm trực tiếp trong phiên Claude theo skill |
+| Tái bản bộ skill (skill `tai-ban`, tạo 10/11) | Máy đo lần đầu 10/11: bộ **video** nên tái bản (165 dấu ngày, 81 câu ghi đè, luật cũ/mới cãi nhau ở khối 07), bộ **nao** nên tái bản nhẹ, bộ hoi chưa cần | Tái bản lần 1 bộ video ở phiên riêng: `/tai-ban video` (David đã đồng ý cách làm 10/11) |
 | Làm lại kho 100 video | Kho đã thành bảng `dang-lam/kho-100-video.md` và nối vào phiếu lọc (10/11); giai đoạn 3 đánh dấu đã bỏ | Làm lại theo ba tầng: bản thân → công việc → mối quan hệ |
 
 ## Câu hỏi còn mở với David
