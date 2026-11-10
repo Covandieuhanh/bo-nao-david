@@ -177,7 +177,7 @@ let h=`<div class="dau"><h1>${esc(d.ten)}</h1><details class="menu" data-k="menu
 <button class="dung" ${khoa} onclick="xoaViec()">Xoá…</button></div></details></div>
 <div class="trang"><span class="cham ${c}"></span><span>${esc(t)}</span></div>`;
 // 1. Cổng duyệt
-if(d.cong){h+=`<div class="the noi"><h2>${esc(d.cong.ten)}</h2>${(d.cong.video||[]).map(v=>`${d.cong.video.length>1?`<h2>${esc(v.split('/').slice(-2,-1)[0])}</h2>`:''}<video controls preload="metadata" src="/tep?p=${encodeURIComponent(v)}"></video>`).join('')}
+if(d.cong){h+=`<div class="the noi"><h2>${esc(d.cong.ten)}</h2>${(d.cong.video||[]).map(v=>`${d.cong.video.length>1?`<h2>${esc(v.split('/').slice(-2,-1)[0])}</h2>`:''}<video controls preload="metadata" src="/tep?p=${encodeURIComponent(v)}"></video><div class="hang" style="margin-top:6px"><button class="nho" onclick="moFinder('${d.ten}','${encodeURIComponent(v)}')">Mở trong Finder</button></div>`).join('')}
 ${d.cong.chon_anh?`<h2>${esc(d.cong.chon_anh.nhan)}</h2><div class="hang">${d.cong.chon_anh.ds.map((a,i)=>`<div style="flex:1;min-width:220px"><img src="/tep?p=${encodeURIComponent(a)}&v=${Date.now()}" style="width:100%;border-radius:8px;border:3px solid ${d.cong.chon_anh.da_chon==a?'var(--nhan)':'transparent'}"><button style="width:100%;margin-top:4px" ${d.cong.chon_anh.da_chon==a?'class="chinh"':''} onclick="chonAnh('${encodeURIComponent(a)}')">${d.cong.chon_anh.da_chon==a?'✓ Đã chọn':'Chọn mẫu '+(i+1)}</button></div>`).join('')}</div>`:''}
 ${(()=>{// CỔNG GỌN (10/11/2026): chỉ mở nội dung David cần quyết; phần kèm (tờ khung khi đã có video, kết quả đo, kế hoạch cảnh…) vào "Xem thêm"
  const coVideo=(d.cong.video||[]).length>0,anhH=a=>`<a href="/tep?p=${encodeURIComponent(a)}" target="_blank"><img src="/tep?p=${encodeURIComponent(a)}&v=${Date.now()}" style="width:100%;border-radius:8px;margin-top:8px"></a>`;
@@ -199,7 +199,7 @@ if(!d.dang_chay&&(rs.buoc_cu.length||rs.khung_cu.length))h+=`<div class="the" st
 <details class="gon" data-k="rs" style="margin-top:8px"><summary>Chỗ nào đổi</summary>${rs.buoc_cu.map(x=>`<div><b>${esc(x.ten)}</b> <small class="mo">(${esc(x.tep.slice(0,4).join(', '))}${x.tep.length>4?'…':''})</small></div>`).join('')}${rs.khung_cu.length?`<div>Khung dựng: ${rs.khung_cu.length} tệp</div>`:''}<small class="mo">Bước AI nào đầu vào không đổi sẽ dùng lại kết quả cũ (0 token).</small></details></div>`;
 // 4. Video xong
 if((d.video_xong||[]).length&&!d.cong)h+=`<div class="the">${d.video_xong.map(v=>{const ten=v.split('/').slice(-2,-1)[0];return `${d.video_xong.length>1?`<h2>${esc(ten)}</h2>`:''}<video controls playsinline preload="metadata" src="/tep?p=${encodeURIComponent(v)}"></video>
-<div class="hang"><a href="/tep?p=${encodeURIComponent(v)}&tai=1"><button>Tải về</button></a><a href="/tep?p=${encodeURIComponent(v)}" target="_blank"><button>Toàn màn hình</button></a></div>`}).join('')}
+<div class="hang"><button onclick="moFinder('${d.ten}','${encodeURIComponent(v)}')">Mở trong Finder</button><a href="/tep?p=${encodeURIComponent(v)}&tai=1"><button>Tải về</button></a><a href="/tep?p=${encodeURIComponent(v)}" target="_blank"><button>Toàn màn hình</button></a></div>`}).join('')}
 ${(d.anh_bia||[]).map(a=>`<h2>Thumbnail</h2><img src="/tep?p=${encodeURIComponent(a)}" style="width:100%;max-width:480px;border-radius:8px"><div class="hang"><a href="/tep?p=${encodeURIComponent(a)}&tai=1"><button>Tải thumbnail</button></a></div>`).join('')}</div>`;
 // 5. Góp ý sau khi xong + trao đổi
 const td=d.trao_doi||[];const xongHet=!d.dang_chay&&!d.cong;
