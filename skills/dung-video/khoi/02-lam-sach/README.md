@@ -12,14 +12,16 @@
 - `video-style-edit/scripts/clean_apply.py`
 - `cat-highlight-video/scripts/pauses.py`
 
-## Cách làm (chuyển nguyên văn từ SKILL.md cũ — ngày 2026-11-04)
+## Luật
+- **Video dài > 3 phút không cắt gì** (luat-chung mục 2): `clean_suggest.py` tự để mọi cut `ok: false` (chỉ liệt kê). Chỉ sửa chiều
+  hình khi cần; không đổi cut nào thành `true` trừ đoạn lằn ranh David đã chọn cắt.
+- **Làm lại video cũ:** cắt màn tít + lời chào / giới thiệu kênh cũ bằng cut tay `ok: true` (mọi cut tự động `ok: false`,
+  `zoom: "none"`); chữ / viền kênh cũ in trong hình → cắt khung (gotchas). Sau `clean_apply.py` chạy `doi_moc_loi.py "$P"`, không chép lại.
+- Các luật cắt ở mục dưới chỉ cho video ≤ 3 phút.
 
-**VIDEO DÀI > 3 PHÚT KHÔNG CẮT GÌ** (David chốt 2026-11-05, luat-chung 2): `clean_suggest.py` tự để mọi cut `ok: false` (chỉ liệt kê). Chỉ sửa chiều
-hình khi cần; không đổi cut nào thành `true` trừ đoạn lằn ranh David đã chọn cắt.
-**Làm lại video cũ (David 08/11/2026):** được cắt màn tít + lời chào / giới thiệu kênh cũ (đặt cut tay `ok: true`, mọi cut tự động `ok: false`,
-`zoom: "none"`); chữ / viền kênh cũ in trong hình → cắt khung (gotchas). Sau `clean_apply.py` dùng `doi_moc_loi.py "$P"` thay cho chép lại. Các luật cắt dưới đây chỉ cho video ≤ 3 phút.
+## Cách làm
 
-**3a. Làm sạch** — luôn làm, kể cả khi video trông ổn (không có gì để cắt thì bản sạch chỉ là bản mã hoá lại):
+**Làm sạch** — luôn làm, kể cả khi video trông ổn (không có gì để cắt thì bản sạch chỉ là bản mã hoá lại):
 ```bash
 zsh $SKILL/scripts/clean_analyze.sh "$P"          # chạy nền, ~2–4 phút cho video 3–4 phút
 ```
@@ -29,7 +31,7 @@ zsh $SKILL/scripts/clean_analyze.sh "$P"          # chạy nền, ~2–4 phút c
 - **Đầu/cuối** (ok sẵn): kiểm `head.jpg`/`tail.jpg` — đang đi về chỗ, chỉnh máy, "ok bắt đầu nhé", "vậy thôi"
   rồi với tay tắt máy → dời `start`/`end` của cut cho gọn hơn. Câu chào mở đầu thật thì giữ;
   cười/vẫy tay chào sau câu cuối là phần kết → giữ (dời `start` của cut thừa cuối ra sau, hoặc bỏ cut).
-- **Khoảng lặng: CẮT sẵn** (`ok: true`, luat-chung 2) — video ≤ 3 phút: lặng ≥ 0,45 s + tiếng đệm "ờ/ừm"; video > 3 phút: chỉ lặng ≥ 1,2 s (còn 0,5 s), giữ tiếng đệm.
+- **Khoảng lặng: CẮT sẵn** (`ok: true`, luat-chung mục 2): lặng ≥ 0,45 s + tiếng đệm "ờ/ừm".
   Soát `cuts.md`: lặng ngay sau câu hỏi tu từ / trước cú chốt cảm xúc mà khoảng ngừng là chủ ý → đổi `ok: false` để giữ.
   David muốn bản tự nhiên → chạy `clean_analyze.sh "$P" tu-nhien` (chỉ liệt kê lặng ≥ 3 s, không cắt).
 - **Nói lại** (`ok: false`): đọc `words.srt` quanh mốc; đúng là bỏ dở rồi nói lại → giữ **lần nói sau cùng**, đặt

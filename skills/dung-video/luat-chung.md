@@ -1,127 +1,108 @@
 # Luật chung — bộ skill dựng video của David (một nguồn cho cả 3 skill, 4 loại video)
 
 Đọc file này trước mọi skill dựng video. Mỗi SKILL.md chỉ ghi luật RIÊNG của nó; trùng ý thì file này thắng, trừ khi SKILL.md
-ghi rõ "ngoại lệ". Sổ quyết định + lý do: `<skill>/references/changelog.md`.
+ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cuối việc) ở `../thoi-quen-lam-viec.md`. Lý do từng luật: sổ
+`<skill>/references/changelog.md`.
 
-## 0. Kim chỉ nam (David chốt 2026-11-04, sửa 08/11/2026 — N9)
-**Người xem là trung tâm.** Học kênh lớn (DOAC, Hormozi, MrBeast, Ali Abdaal, Jay Shetty, Mel Robbins…) ở **nhịp và cách trình bày**
-giữ người xem. **Thẩm mỹ chỉ giữ một điều** (David chốt 10/11/2026): xem video nào người xem cũng nhận ra là của cùng một người — giữ
-"chữ ký nhận diện" ở `thu-vien-hinh/nhan-dien-chung.md` mục 0; ngoài chữ ký, sáng tạo tự do theo nội dung (nền, kết cấu, kiểu hình,
-chữ nhấn phụ, bố cục, chuyển động), học được gì từ mẫu cũng dùng được. **Chỉ thêm, không thay** chặn cũ (ghi nhớ `luat-hoc-la-bo-sung`).
-**HIỂU HƠN CẦU KÌ** (David chốt 10/11/2026): kho học được là để **chọn cho hợp từng loại nội dung**, không nhét hết vào một video. Mỗi
-video chỉ dùng vài kiểu hợp nhất, tự cân; hiệu ứng nào không giúp người xem hiểu nhanh hơn thì bỏ. Rối hay lỗi hình → bớt, không thêm. Mục tiêu mỗi video: người xem **ở lại → HIỂU ý chính → LÀM theo**. Đo lại bằng số thật (mục 9).
+## 0. Kim chỉ nam
+- **Người xem là trung tâm.** Học kênh lớn (DOAC, Hormozi, MrBeast, Ali Abdaal, Jay Shetty, Mel Robbins…) ở **nhịp và cách trình bày**
+  giữ người xem. Mục tiêu mỗi video: người xem **ở lại → HIỂU ý chính → LÀM theo**; đo lại bằng số thật (khối 16).
+- **Thẩm mỹ chỉ giữ chữ ký nhận diện** (`thu-vien-hinh/nhan-dien-chung.md` mục 0): xem video nào cũng nhận ra cùng một người làm.
+  Ngoài chữ ký là sáng tạo tự do theo nội dung; học được gì từ mẫu cũng dùng được, và học chỉ thêm vào kho, không thay cái đã có
+  (`trinh-bay/README.md` mục 4).
+- **Hiểu hơn cầu kì.** Kho học được là để chọn cho hợp từng loại nội dung, không nhét hết vào một video. Mỗi video chỉ dùng vài kiểu
+  hợp nhất, tự cân; hiệu ứng nào không giúp người xem hiểu nhanh hơn thì bỏ. Rối hay lỗi hình → bớt, không thêm.
 
 ## 1. Nội dung
-- **Không bịa.** Phụ đề, chữ to, thẻ, màn hành động = **trích / bỏ bớt lời người nói**, không diễn đạt lại. Tên riêng, con số, vế
-  đối lập, từ phủ định giữ nguyên. Tên chưa chắc chính tả → dùng cách Whisper nghe, hỏi trong báo cáo.
-- **CHỮ TRÊN VIDEO = NGUYÊN VĂN LỜI DAVID** (David chốt 2026-11-07 — THAY các ngoại lệ (a), (b) dưới cho chữ nằm TRÊN video):
-  motion graphics loại nào cũng được nhưng không sáng tạo sai lời. Không thẻ tít mở đầu mặc định (tít tự rút ý có thể lệch điều David muốn
-  truyền tải). Màn chốt dùng câu David nói ở cuối video. Chữ = cụm nguyên văn liền mạch, được tách mảnh, không bỏ chữ làm đổi nghĩa
-  ("không **muốn** làm một mình"). Không số chạy hiện số David không nói. Câu Claude tự viết (tiêu đề, mô tả, câu hỏi bình luận) chỉ ở bài đăng.
-- **Ngoại lệ được viết lời** (chỉ hai chỗ — (a), (b) không còn áp cho chữ TRÊN video, xem dòng trên): (a) **câu màn chốt** của video thường (làm video / vlog / podcast) — Claude tự viết, giọng
-  David, ≤ 55 ký tự, một hành động; (b) **tiêu đề, thumbnail, thẻ tít mở đầu highlight** — viết như tít báo, ĐÚNG Ý người nói,
-  không thêm thông tin/lời hứa ngoài video, không giật tít sai sự thật (chuẩn DOAC: "A PATIENT ON MY FLIGHT HAD 5 MINUTES TO LIVE!");
-  (c) **nhãn cố định của khung** (David duyệt 2026-11-04): "XEM BẢN ĐẦY ĐỦ" trên thẻ cuối highlight (thẻ này đã bỏ ở video dọc ngắn 10/11/2026, mục 5), và **lịch phát do David đưa**
-  ("Tập mới mỗi thứ 6") trên thẻ cuối / màn kết — `project.schedule` (1 video), `STAGE.schedule` (podcast), plan.json `"schedule"`
-  (vlog), `"endcard": {"schedule"}` (highlight). Không tự đặt lịch.
+- **Không bịa.** Phụ đề, chữ to, thẻ, màn hành động, màn chốt = **trích / bỏ bớt lời người nói**, không diễn đạt lại. Tên riêng, con
+  số, vế đối lập, từ phủ định giữ nguyên. Tên chưa chắc chính tả → khối 01.
+- **Chữ trên video là nguyên văn lời David.** Motion graphics loại nào cũng được nhưng không sáng tạo sai lời. Chữ = cụm nguyên văn
+  liền mạch, được tách mảnh, không bỏ chữ làm đổi nghĩa ("không **muốn** làm một mình"). Không số chạy hiện số David không nói.
+- **Câu Claude tự viết chỉ ở bài đăng**: tiêu đề, thumbnail, mô tả, bình luận ghim — viết đúng ý người nói, không thêm thông tin hay
+  lời hứa ngoài video, không giật tít sai sự thật.
+- **Nhãn cố định của khung** (không phải lời): "Bản đầy đủ trên kênh …" ở thẻ cuối dẫn bản đầy đủ, và **lịch phát do David đưa**
+  ("Tập mới mỗi thứ 6") — `project.schedule` (1 video), `STAGE.schedule` (podcast), plan.json `"schedule"` (vlog),
+  `"endcard": {"schedule"}` (highlight). Không tự đặt lịch.
 - **Lằn ranh** (loại khỏi mọi chữ/clip): huyền học, thần số học, phong thuỷ, lá số · "chữa lành", công dụng sức khoẻ của sản phẩm ·
   tư vấn thuế/pháp lý · tên thật/nơi làm/chi tiết lộ danh tính khách, học viên, nhân viên · giá, tên gói dịch vụ. Câu chủ chốt dính
-  lằn ranh → báo David, không tự sửa lời.
+  lằn ranh → báo David, không tự sửa lời. Ở video dài: cảnh báo trong phiếu lọc, David quyết (khối 00 mục 3).
 - Whisper bịa câu ở đoạn không lời ("Hãy subscribe cho kênh…", "Cảm ơn các bạn đã xem") → bỏ.
 
-## 2. Nhịp (chuẩn kênh lớn)
-- **Mở đầu 0–3 s** nói ngay video về cái gì / đang đặt cược gì: thẻ tiêu đề chữ to ở nửa trên khung, hiện từ giây 0.
-- **VIDEO DÀI KHÔNG CẮT GÌ** (David chốt 2026-11-05 — thắng mọi luật cắt cũ): video dài (> 3 phút: podcast, tâm sự, thực tế, nói trước
-  camera) là BẢN GỐC, để nguyên cả khoảng lặng, tiếng "ờ/ừm", ngập ngừng, nói lại, đoạn dẫn dắt, phần đầu/cuối. Những chỗ kỹ thuật coi là
-  lỗi lại là nét tự nhiên của người kể chuyện; giá trị của đoạn hay nằm trong cả câu chuyện dẫn tới nó. Không rút video dài thành đoạn hay. **Ngoại lệ (David 08/11/2026):** làm lại video cũ thì cắt màn tít + lời chào / giới thiệu kênh cũ (tên kênh cũ, nghề cũ, kinh doanh) và chữ/viền kênh cũ in trong hình — chỉ đúng các đoạn đó.
-- **Lằn ranh ở video dài: CẢNH BÁO, không tự cắt.** Phiếu lọc liệt kê đoạn chạm (mốc giây + lý do + rủi ro), hỏi David cắt hay giữ; David quyết
-  từng video. David chọn cắt thì chỉ cắt đúng đoạn đó. Dù giữ, chữ đồ hoạ / tiêu đề / thumbnail / mô tả / clip ngắn vẫn không lấy nội dung chạm lằn ranh.
-- **Cắt chỉ dùng cho video ngắn trích từ video dài** (highlight) và video ngắn ≤ 3 phút: cắt lặng ≥ 0,45 s còn ~0,24 s + tiếng đệm
-  "ờ/ừm" đứng riêng (jump cut + phóng xen kẽ 1,08×); vẫn giữ 1 s lặng sau câu hỏi kêu gọi. Clip luôn trích từ bản gốc, ưu tiên kéo người
-  xem về video dài trên YouTube, không về thì vẫn cần tương tác / nhắn tin trên Facebook, TikTok. **Vlog ghép** giữ nhịp tự nhiên.
-- **Không để 5–8 s trôi qua không đổi gì** ở video ngắn (nhịp chữ phụ đề, phóng, chữ to, cắt); video dài ~1 điểm nhấn / 15–20 s
-  là đủ vì phụ đề + jump cut đã tạo nhịp.
+## 2. Nhịp
+- **Mở đầu 0–3 s** nói ngay video về cái gì / đang đặt cược gì, bằng lời thật của David. Thẻ tít mở đầu: khối 06.
+- **Video dài (> 3 phút) không cắt gì**: podcast, tâm sự, thực tế, nói trước camera là BẢN GỐC, để nguyên cả khoảng lặng, "ờ/ừm",
+  ngập ngừng, nói lại, đoạn dẫn dắt, phần đầu/cuối. Những chỗ kỹ thuật coi là lỗi là nét tự nhiên của người kể; giá trị của đoạn hay
+  nằm trong cả câu chuyện dẫn tới nó. Không rút video dài thành đoạn hay.
+  Riêng **làm lại video cũ**: cắt màn tít + lời chào / giới thiệu kênh cũ (tên kênh cũ, nghề cũ, kinh doanh) và chữ/viền kênh cũ in
+  trong hình — chỉ đúng các đoạn đó (khối 02). Lằn ranh David chọn cắt thì chỉ cắt đúng đoạn đó.
+- **Cắt chỉ cho video ≤ 3 phút và highlight**: lặng ≥ 0,45 s còn ~0,24 s + tiếng đệm "ờ/ừm" đứng riêng (jump cut + phóng xen kẽ
+  1,08×); giữ 1 s lặng sau câu hỏi kêu gọi. Clip ngắn luôn trích từ bản gốc, ưu tiên kéo người xem về video dài trên YouTube; không
+  về thì vẫn cần tương tác / nhắn tin trên Facebook, TikTok. **Vlog ghép** giữ nhịp tự nhiên.
+- Video ngắn đổi gì đó mỗi 1–3 s (nhịp chữ phụ đề, phóng, chữ to, cắt), không để 5–8 s trôi qua không đổi gì. Video dài thưa, nhịp
+  từ nội dung.
 - Một màn = một ý, một hình, một câu. Không chồng 2 lớp phủ.
-- **ĐƯỜNG CẢM XÚC + MỘT ĐỈNH** (David chốt 2026-11-10, học từ scroll-craft `feel.md`; mọi loại video): trước khi lên cảnh, viết cảm xúc
-  từng đoạn (cảm xúc → cái gì trên màn hình gây ra nó) và chọn **một** đỉnh. Đỉnh nhận motion graphic lớn nhất; đoạn ngay trước đỉnh để ít
-  hình (phụ đề vẫn chạy). Video dài vẫn không cắt: đường cảm xúc chỉ để đặt motion graphic. **Vlog ghép:** hai đoạn liền nhau cùng cảm xúc
-  thì bỏ hoặc đổi một. Highlight vẫn chọn theo 4 câu (khối 13). Cách làm: khối 07; kiểm cảm nhận: khối 17.
+- **Đường cảm xúc + một đỉnh** (mọi loại video): trước khi lên cảnh, viết cảm xúc từng đoạn (cảm xúc → cái gì trên màn hình gây ra
+  nó) và chọn **một** đỉnh. Đỉnh nhận motion graphic lớn nhất; đoạn ngay trước đỉnh để ít hình (phụ đề vẫn chạy). Video dài vẫn không
+  cắt: đường cảm xúc chỉ để đặt motion graphic. Vlog ghép: hai đoạn liền nhau cùng cảm xúc thì bỏ hoặc đổi một. Highlight vẫn chọn
+  theo 4 câu (khối 13). Cách làm: khối 07; kiểm cảm nhận: khối 17.
 
-## 3. Phụ đề (một nguồn: `video-style-edit/assets/remotion-template/src/subStyle.js`)
-- **Video ngắn** (highlight; video 1 người dọc ≤ 90 s) — David chốt 2026-11-08, thay kiểu 1–3 chữ to in hoa của Hormozi/DOAC:
-  mỗi lần hiện **một cụm trọn ý ~5–8 chữ** (tối đa 2 dòng), **cỡ bằng chữ trong thẻ motion graphic** (`ngan_co` 58), chữ thường,
-  viền đen mảnh, không hộp nền, từ khoá cam, ngay trên thanh thời gian (`ShortLine`). Tự bật; ép tay `project.short = true|false`
-  (1 video) hoặc `SHORT` trong edl.js (ghép).
-- **MỖI LÚC MỘT CHỖ CHỮ** (David chốt 2026-11-08, mọi loại video, mọi khung): lớp motion graphic có chữ (chữ to, thẻ, nhãn, ô liệt kê,
-  sơ đồ, màn hành động, thẻ tít, màn chốt) đang hiện thì **phụ đề nhường**; hết lớp đó phụ đề hiện tiếp đúng cụm đang nói. Không tính
-  dấu góc, tít ghim, thanh thời gian. Cảnh không có chữ: `props.giuPhuDe = true` để giữ phụ đề. Người xem không đọc được hai chỗ cùng lúc.
-- **Video dài, vlog, podcast**: hộp tối, đầy đủ câu, đáy vùng an toàn (`SUB`).
-- **Podcast đồ hoạ dọc trích ngắn** (David chốt 2026-11-06): không dải phụ đề; cả câu đang nói hiện to giữa khung làm đồ hoạ (`chu_chinh`), mỗi lúc một lớp chữ.
-- **Màu theo nghĩa** (2026-11-04): trong `hl`, mục bắt đầu `+` = nên làm (xanh lá), `-` = tránh (đỏ), còn lại cam — chỉ khi lời có cặp nên/tránh.
-- Luôn đầy đủ, đúng từng chữ; ẩn khi thẻ toàn cảnh đang hiện nguyên văn câu đó. Không đốt phụ đề bằng ffmpeg (không có libass).
+## 3. Phụ đề (một nguồn: `thu-vien-hinh/subStyle.js`; cách làm: khối 03)
+- **Video ngắn** — highlight, podcast dọc (mọi độ dài), video 1 người dọc ≤ 90 s: mỗi lần hiện **một cụm trọn ý ~5–8 chữ** (tối đa
+  2 dòng), **cỡ bằng chữ trong thẻ motion graphic** (`ngan_co` 58), chữ thường, viền đen mảnh, không hộp nền, từ khoá cam, ngay trên
+  thanh thời gian (`ShortLine`). Tự bật; ép tay `project.short = true|false` (1 video) hoặc `SHORT` trong edl.js (ghép).
+- **Video dài, vlog, podcast ngang**: hộp tối, đầy đủ câu, đáy vùng an toàn (`SUB`).
+- **Podcast đồ hoạ dọc trích ngắn**: không dải phụ đề; cả câu đang nói hiện to giữa khung làm đồ hoạ (`chu_chinh`).
+- **Mỗi lúc một chỗ chữ** (mọi loại, mọi khung): lớp motion graphic có chữ (chữ to, thẻ, nhãn, ô liệt kê, sơ đồ, màn hành động, thẻ
+  tít, màn chốt) đang hiện thì **phụ đề nhường**; hết lớp đó phụ đề hiện tiếp đúng cụm đang nói. Không tính dấu góc, tít ghim, thanh
+  thời gian. Cảnh không có chữ: `props.giuPhuDe = true` để giữ phụ đề. Vì người xem không đọc được hai chỗ cùng lúc.
+- **Màu theo nghĩa**: trong `hl`, mục bắt đầu `+` = nên làm (xanh lá), `-` = tránh (đỏ), còn lại cam — chỉ khi lời có cặp nên/tránh.
+- Luôn đầy đủ, đúng từng chữ. Không đốt phụ đề bằng ffmpeg (không có libass).
 
 ## 4. Hình
-- **ĐIỂM NHẤN TRÊN NGƯỜI** (David chốt 2026-11-07, nới luật 2 trạng thái): mọi video phải có motion graphics, hiểu là điểm nhấn kéo mắt người xem — nhiều loại, không chỉ toàn màn hình. Cảnh `nhan` được đè lên người, không che mặt: zoom dồn vào mặt ở câu đắt (`zoom` 1,12–1,2), làm tối viền (`toi`), chữ nhấn ≤ 4 chữ trích lời (`text`) hoặc biểu tượng nhỏ (`icon`) bật cạnh mặt. Mỗi video trộn loại theo nội dung, không số cố định. Khối 07.
-- **BỐ CỤC TỰ CÂN** (David chốt 2026-11-07, thay luật 2 trạng thái): không con số bắt buộc về độ dài cảnh, tỷ lệ mặt / đồ hoạ, số cảnh; Claude chọn bố cục từ `trinh-bay/bo-cuc.md` sao cho hợp nội dung và người xem dễ nhận. Ngang tự do; dọc mỗi lúc ít thứ. Học video mẫu mới: chỉ học trình bày (bố cục, thứ tự hiện, cách nối, âm thanh), không đổi thẩm mỹ — quy trình ở `trinh-bay/README.md`.
-- **Không che người nói** (face_place / LOW_Y), **không đè phụ đề** (chặn cứng ở mọi template).
-- **Che mặt / thân trên → TOÀN MÀN HÌNH** (David chốt 2026-11-04): lớp chữ/hiệu ứng không có chỗ trống tránh được mặt, đầu, vai,
-  ngực người nói → tự thành cảnh toàn màn hình (nền tối + quầng cam, nội dung phóng ra giữa, phụ đề vẫn chạy), dài theo nội dung
-  (không trần cứng). Chỉ chạm tay/bụng/nền → giữ lớp phủ. Tít ghim (highlight) che đầu → tự ẩn. 1 video: `face_place.sh` tự làm;
-  ghép (vlog, highlight): `python3 -I video-style-edit/scripts/overlay_guard.py <dự án>` sau `lift.py` và sau mỗi lần sửa edl.js.
-  Giữ lớp phủ cho một cảnh: `place: {full: false}` (1 video) hoặc `keep: true` (OVERLAYS). Người/vật chính nằm thấp → nâng khung (`lift.py`).
-- Vùng an toàn dọc 1080×1920: x 70–900, y 210–1420. Chữ tiếng Việt đủ dấu, không chồng dòng (`VN`, chừa 0,5 em trên / 0,32 em dưới).
+- **Mọi video đều có điểm nhấn** (motion graphics hiểu rộng: thứ kéo mắt người xem vào ý đang nói) — "dựng nhẹ" vẫn có. Có nhiều
+  loại: hình vẽ, chữ nhấn cụm đắt, làm nổi người đang nói (`nhan`), sơ đồ, cảnh toàn màn hình. Mỗi video chỉ dùng vài kiểu hợp nội
+  dung nhất (mục 0). Cách chọn: khối 07.
+- **Bố cục tự cân**: không con số bắt buộc về độ dài cảnh, tỷ lệ mặt / đồ hoạ, số cảnh; chọn từ `trinh-bay/bo-cuc.md` theo 4 câu hỏi
+  ở `trinh-bay/README.md` mục 2. Ngang tự do; dọc mỗi lúc ít thứ.
+- **Không che người nói, không đè phụ đề** (chặn cứng ở mọi template). Khung có nhiều người: graphic không đè hay làm mờ bất kỳ ai;
+  zoom, chuyển cảnh, ô thu nhỏ bám đúng người đang nói. Thu người vào ô bo góc không tính là che. Che mặt / thân trên → tự toàn màn
+  hình: khối 05.
+- Chữ tiếng Việt đủ dấu, không chồng dòng (`VN`, chừa 0,5 em trên / 0,32 em dưới).
 - Minh hoạ mặc định = biểu tượng vẽ (`Icons.jsx`); ảnh thật chỉ cho địa danh, nhân vật có thật, tư liệu, minh chứng, sản phẩm cụ thể.
   Số liệu luôn bằng hiệu ứng, đúng con số người nói. Kết quả/con số mà clip gốc có bằng chứng thật (ảnh giá, hoá đơn) → ưu tiên chiếu.
 - Không ghi chú kỹ thuật trên video (×1,6, slow-mo…). Không màn nguồn ảnh cuối video → `nguon-anh.txt`.
 - Khung xuất = khung gốc trừ khi David yêu cầu (highlight luôn dọc 9:16).
 
-## 5. Bộ nhận diện David (một nguồn: `remotion-template/src/brand.json` + `theme.js`/`brand.js` + `subStyle.js` + `cta.js` + `Icons.jsx`)
-Dấu góc ● DAVID │ chủ đề · khuôn tiêu đề (dòng nhỏ cam → gạch cam → chữ cô đặc in hoa trắng, dòng nhấn cam) · tiếng ký hiệu
-`sting.wav` lúc hiện tiêu đề · nhạc kênh dưới lời (kho `cat-highlight-video/assets/music`, chọn theo tuyến nội dung, cân mức từng bài — khối 09) · giọng −20 LUFS, bản cuối −14 LUFS · màn chốt (`cta`, ~4 s, tick + "ting") → thẻ cuối. Sửa nhận diện → giữ đồng bộ cả 4 loại.
-- **BỘ NHẬN DIỆN CHUNG** (David chốt 08/11/2026): mọi loại video cùng tiêu chuẩn vị trí và thành phần cố định — vùng an toàn, dấu góc,
-  thanh thời gian, phụ đề, màn chốt, thẻ cuối. Một nguồn: `thu-vien-hinh/nhan-dien-chung.md` + `nhan-dien.js`. Chỉ motion graphics là tự do theo loại, theo cảnh.
-- **Dấu góc** (sửa 08/11/2026): khung dọc 228 px, khung ngang sát mép trên vùng an toàn (`BRAND_TOP` / `BRAND_BOT` trong `theme.js`).
-  Mọi lớp phủ ở góc trên (thẻ, điểm nhấn, bố cục) nằm dưới `BRAND_BOT`; màn chốt ngang ẩn dấu góc. Không viết số vị trí của khung dọc vào khung ngang.
-- **Thanh thời gian ở đáy** (David chốt 08/11/2026): video ngang và video dọc dài có (đã chạy mm:ss · còn mm:ss).
-- **Video dọc ngắn** (Reels/TikTok/Shorts — dọc ≤ 90 s, mọi highlight, podcast dọc trích ngắn; David chốt 10/11/2026): **không thanh thời gian, không thẻ cuối**; màn chốt hiện câu nguyên văn ngay trên khung hình (không thu nhỏ video), video kết ở chữ cuối để tự lặp. Lý do: nền tảng đã có thanh riêng, "còn 0:20" và màn "hết rồi" khiến người xem lướt đi, thẻ cuối làm đứt vòng lặp. Dẫn về bản đầy đủ / mời bình luận để ở caption + bình luận ghim. Máy tự nhận (`nganDoc()` trong `nhan-dien.js`, `NGAN_DOC` trong `thanh.js`); ép tay `project.thanh` / `project.theCuoi` (1 video, podcast) · `THANH` / `THE_CUOI` (edl.js).
+## 5. Bộ nhận diện
+Một nguồn: `thu-vien-hinh/nhan-dien-chung.md` — chữ ký nhận diện, vị trí và luật của thành phần cố định (vùng an toàn, dấu góc, thanh
+thời gian, phụ đề, màn chốt, thẻ cuối, màn kết YouTube), video dọc ngắn. Âm thanh nhận diện (tiếng ký hiệu, nhạc kênh, mức âm lượng):
+khối 09. Sửa nhận diện → giữ đồng bộ cả 4 loại.
 
 ## 6. Lời kêu gọi
 - Ưu tiên **câu mệnh lệnh nằm sẵn trong lời** ("Hãy chọn…", "thử làm…") — top video gần như không có câu "hãy bình luận".
 - Màn hành động (`action`) đúng lúc người nói giao một việc làm được; 1–2 lần / video.
-- Màn chốt ~4 s cuối mọi video, câu = nguyên văn lời người nói (mục 1, 07/11); podcast dọc trích ngắn theo cùng luật highlight (khối 08, 08/11). Câu mời bình luận / "gỡ" theo luật kênh nằm ở mô tả + bình luận ghim, không lên video.
+- Màn chốt ~4 s cuối mọi video, câu = nguyên văn lời người nói (khối 08). Câu mời bình luận / "gỡ" theo luật kênh nằm ở mô tả + bình
+  luận ghim, chỉ lên video khi David tự nói trong video.
 
-## 7. Phát hành (bước cuối của MỌI skill — David chốt 2026-11-04, chuẩn MrBeast / Paddy Galloway)
+## 7. Phát hành (bước cuối của MỌI skill — chuẩn MrBeast / Paddy Galloway; cách làm: khối 15)
 Ghi `<dự án>/phat-hanh/phat-hanh.md`:
-- **3 tiêu đề** (≤ 60 ký tự, một ý, gây tò mò nhưng đúng ý video — mục 1b) xếp theo độ mạnh; tiêu đề và thumbnail **bổ sung**, không lặp chữ.
-- **Thumbnail 1280×720 CHỈ khi video xuất NGANG 16:9 VÀ đăng YouTube** (David chốt 2026-11-04). Video dọc (Reels/TikTok/Shorts) không cần thumbnail — chỉ đề xuất mốc khung bìa. Video xuất ngang → **hỏi David một câu lúc đầu** (cùng lượt hỏi `hoi-chuyen-gia`): "Video này có đăng YouTube không?" — có thì làm 2 thumbnail, không thì bỏ.
-  Cách làm: `zsh video-style-edit/scripts/thumbnail.sh <dự án> <nguồn> "<DÒNG 1>" "<DÒNG 2>" <số> [left|right] [vị trí] [phóng]`.
-  Chuẩn: một khuôn mặt có cảm xúc rõ (mắt mở, miệng/biểu cảm), ≤ 4 chữ, một ý. Chọn khung: xem `contact.jpg`/`half_XX.jpg`, lấy
-  khoảnh khắc cảm xúc mạnh nhất. Xem `thumb-<số>@160.jpg` (cỡ điện thoại) — không đọc được chữ thì rút chữ. **CHỈ HÌNH CỦA CHÍNH VIDEO ĐANG LÀM** (David chốt 2026-11-05): thumbnail / ảnh bìa / khung bìa
-  lấy từ khung của chính video này (hoặc ảnh David gửi RIÊNG cho video này) — không bao giờ lấy mặt, cảnh, ảnh từ video / dự án
-  khác, kể cả khi "đẹp hơn" hay tiện tay (2026-11-05: thumbnail podcast lấy mặt từ vlog Miếu Bà Cam → sai). **Podcast không mặt** (David duyệt 2026-11-06, khối 14): không dùng mặt người, kể cả ảnh chụp riêng; bìa = nền hoạ tiết + một hình vẽ theo ý của tập + tiêu đề ngắn + góc "DAVID · PODCAST", không liệt kê các bước giải pháp. Hình vẽ theo nội dung là ngoại lệ của luật lấy khung từ video.
-  Không hỏi "lấy ảnh từ video cũ" như một lựa chọn.
-- **Video dọc**: không ghép bìa trước video (giây đầu dành cho câu mở); ghi **mốc khung bìa đề xuất** (giây) để David chọn khi đăng.
-- **Kiểu thumbnail Việt** (học 10/10 video dài Việt): mặt biểu cảm mạnh + 2–3 tầng chữ (≤ ~8 chữ), dòng cam = từ khoá to nhất,
-  con số khổng lồ riêng (`THUMB_NUM`), nhãn series/số tập (`THUMB_BADGE`), dòng 3 (`THUMB_L3`).
-- **Video > 3 phút đăng YouTube** (hỏi "có đăng YouTube không?" lúc đầu với MỌI video > 3 phút, ngang hay dọc):
+- **3 tiêu đề** (≤ 60 ký tự, một ý, gây tò mò nhưng đúng ý video) xếp theo độ mạnh; tiêu đề và thumbnail **bổ sung**, không lặp chữ.
+- **Thumbnail** chỉ khi video xuất ngang VÀ đăng YouTube; luật và mẫu ở khối 14. **Video dọc**: không ghép bìa trước video (giây đầu
+  dành cho câu mở); ghi **mốc khung bìa đề xuất** (giây) để David chọn khi đăng.
+- **Video > 3 phút đăng YouTube** (hỏi "có đăng YouTube không?" lúc đầu với mọi video > 3 phút, ngang hay dọc):
   - **Màn kết YouTube 15–20 s**: 1 video/podcast `project.ytEnd = 20` (ghi sau bước làm sạch — clean_apply viết lại project.js);
-    vlog ghép `"ytEnd": 20` trong plan.json. Khung chừa 2 ô video + nút đăng ký, nhạc kênh nhỏ; ghi vào phat-hanh.md: "gắn màn kết
-    trong YouTube Studio: 2 video (trái/phải hoặc trên/dưới) + nút đăng ký (tròn giữa dưới)".
+    vlog ghép `"ytEnd": 20` trong plan.json. Ghi vào phat-hanh.md: "gắn màn kết trong YouTube Studio: 2 video (trái/phải hoặc
+    trên/dưới) + nút đăng ký (tròn giữa dưới)".
   - **Chương YouTube**: `python3 -I video-style-edit/scripts/chapters.py <dự án>` → `phat-hanh/chuong.txt` dán vào mô tả.
   - **Teaser 15–25 s** cho video > 10 phút (podcast, nói trước camera, vlog nói chuyện): sau render, chọn 2–3 câu đắt nhất (trọn câu,
     nguyên văn) → `python3 -I video-style-edit/scripts/teaser.py <dự án> <từ-đến> …` (chạy TRƯỚC chapters.py).
-- Mô tả bài đăng + bình luận ghim (highlight theo mẫu cố định của skill), hashtag 3–5 tiếng Việt.
+- Mô tả bài đăng + bình luận ghim theo luật kênh (khối 15), hashtag theo `ho-so/giong-van-david.md`.
 - Gửi David: video + thumbnail (SendUserFile) + tiêu đề.
 
 ## 8. Quy trình chung
 - Hỏi theo `hoi-chuyen-gia` một lần đầu (diễn giải ngắn + câu thật sự thiếu); David "ok" thì chạy trọn một mạch. Ngoại lệ dừng duyệt:
-  kế hoạch ghép vlog (multi-clip.md 2b).
-- Lệnh dài (> 2 phút) chạy nền, không thăm dò. Không tự nhập mật khẩu máy. Không tải video từ YouTube/TikTok (nhờ David gửi file).
-- Chụp thử (stills) trước khi render; kiểm bản cuối (khung, cả bài −14 LUFS, đỉnh ≤ −1,5 dB, rè so với giọng ≤ +1 dB, nhạc dưới giọng ~23 LU, thời lượng — khối 09).
+  kế hoạch ghép vlog (multi-clip.md 2b). Phần quy trình đã định thì không hỏi (`thoi-quen-lam-viec.md` mục 2).
+- Lệnh dài (> 2 phút) chạy nền, không thăm dò. Không tự nhập mật khẩu máy. Không tải video từ YouTube/TikTok để dựng (nhờ David gửi
+  file); tải để học mẫu: `trinh-bay/README.md` mục 4.
+- Chụp thử (stills) trước khi render; kiểm bản cuối theo khối 17 + 09.
 - Báo cáo tiếng Việt: đã làm gì, đã kiểm gì, chưa kiểm gì, tên riêng cần xác nhận.
-
-## 9. Vòng số liệu (David chốt 2026-11-04)
-Mỗi video giao kèm `<dự án>/so-lieu.md` (mẫu: `dung-video/khoi/16-so-lieu/mau-so-lieu.md`). 7 ngày sau đăng, David gửi ảnh chụp số liệu (YouTube
-Studio / TikTok / Facebook) → Claude điền: lượt xem, tỉ lệ xem hết / thời lượng xem trung bình, giây người xem rời nhiều nhất,
-CTR thumbnail (video ngang YouTube), lượt lưu/chia sẻ/bình luận. So với video trước → đề xuất **một** chỉnh luật kèm bằng chứng, David duyệt
-rồi mới ghi changelog. Tổng hợp nhiều video ở `dung-video/so-lieu-tong.md`.

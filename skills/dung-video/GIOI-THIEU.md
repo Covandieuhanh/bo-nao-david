@@ -8,71 +8,56 @@ máy khác chỉ cần chép cả thư mục `dung-video/`. Ở `~/.claude/skill
 |---|---|---|
 | `video-style-edit/` — **1 video** | Gửi 1 video nói trước camera, nói "làm video này" | Giữ nguyên hình, phủ hiệu ứng + phụ đề |
 | `video-style-edit/` — **ghép nhiều video** | Gửi từ 2 clip trở lên, nói "ghép thành 1 video" | Tự sắp mạch, trích dẫn clip minh hoạ; **duyệt kế hoạch trước khi render** |
-| `podcast-style-edit/` — **podcast** | Gửi file tiếng/video và nói "podcast" | Toàn bộ khung là đồ hoạ chuyển động, có bìa 1 giây, thanh thời gian |
-| `cat-highlight-video/` — **cắt highlight** | Gửi 1 video dài (YouTube, podcast đã dựng, hoặc thư mục dự án của nó), nói "cắt highlight" hoặc `/cat-highlight-video` | **các clip tự chọn ý, mỗi clip một ý trọn** **dọc 9:16** 30–60 giây, mỗi clip một khoảnh khắc mạnh, **cùng loại với video gốc**; thẻ tít mở đầu, phụ đề 1–3 chữ to mỗi nhịp, cắt cứng, lời trong clip nguyên văn; kèm lịch đăng, mô tả bài đăng + bình luận ghim |
+| `podcast-style-edit/` — **podcast** | Gửi file tiếng/video và nói "podcast" | Toàn bộ khung là đồ hoạ chuyển động, thanh thời gian |
+| `cat-highlight-video/` — **cắt highlight** | Gửi 1 video dài (YouTube, podcast đã dựng, hoặc thư mục dự án của nó), nói "cắt highlight" hoặc `/cat-highlight-video` | Các clip **dọc 9:16** tự chọn ý, mỗi clip một ý trọn, **cùng loại với video gốc**; thẻ tít nguyên văn, phụ đề cụm 5–8 chữ, cắt cứng; kèm lịch đăng, mô tả + bình luận ghim |
+| `hoc-video-mau/` — **học mẫu** | Gửi video mẫu, nói "học cái này" | Phiếu học để duyệt, rồi thêm vào kho trình bày |
+| `dang-da-kenh/` — **trọn gói** | Gửi tài nguyên mới (thường không kèm yêu cầu) | Lọc → dựng → bài đăng → hẹn giờ → số liệu |
 
-Mọi thứ của một tập nằm chung `~/Movies/tap-<tên>/` (David chốt 2026-11-07, xem `video-style-edit/scripts/noi_luu.sh`): gốc ở `1-goc/`, bản dài ở `2-ban-dai/video-final.mp4`, highlight: chọn câu ở `3-highlight/`, bản cuối mỗi clip ở `3-highlight/clip-A/`, `clip-B/`…; vlog ở `~/Movies/vlog/<tên>/`. Bản dài và highlight của cùng tập phải dùng **cùng một `<tên>`**. Tiêu đề + thumbnail ở `phat-hanh/` của dự án. Muốn thêm thì nói kèm:
-"xuất ngang/dọc", "không dùng ảnh", "thêm ảnh". Không làm bản cho CapCut/DaVinci; David chốt bản cuối thì dọn file tạm (`don_tap.py`).
+Mọi thứ của một tập nằm chung `~/Movies/tap-<tên>/` (xem `video-style-edit/scripts/noi_luu.sh`): gốc ở `1-goc/`, bản dài ở
+`2-ban-dai/video-final.mp4`, highlight: chọn câu ở `3-highlight/`, bản cuối mỗi clip ở `3-highlight/clip-A/`, `clip-B/`…; vlog ở
+`~/Movies/vlog/<tên>/`. Bản dài và highlight của cùng tập phải dùng **cùng một `<tên>`**. Tiêu đề + thumbnail ở `phat-hanh/` của dự
+án. Muốn thêm thì nói kèm: "xuất ngang/dọc", "không dùng ảnh", "thêm ảnh", "giữ ngập ngừng". Không làm bản cho CapCut/DaVinci; David
+chốt bản cuối thì dọn file tạm (`don_tap.py`, khối 17).
 
-## Kiến trúc (2026-11-04) — sửa đúng một chỗ, không viết lại khung
+## Kiến trúc — sửa đúng một chỗ, không viết lại khung
 
 ```
 dung-video/
 ├── nguyen-tac.md      7 điểm chung của 80 video thành công (hiếm đổi)
 ├── nhan-dien.md       đầu vào → chọn loại video (1 chỗ duy nhất)
-├── luat-chung.md      luật nền: không bịa, lằn ranh, phụ đề, hình, nhận diện, phát hành
+├── luat-chung.md      luật nền: kim chỉ nam, nội dung, nhịp, phụ đề, hình, lời kêu gọi, phát hành
 ├── ho-so/             HÌNH MẪU → THAM SỐ cho từng loại (.json đọc bằng máy + .md giải thích + nhật ký)  ← đổi nhiều nhất
-├── khoi/              18 khối: mỗi khối = README (luật, đầu vào/ra, sửa thì chạy lại gì) + code của nó
-├── thu-vien-hinh/     MỘT bộ thành phần hình cho cả 4 loại (phụ đề, nhận diện, minh hoạ, màn chốt, thẻ cuối, màn kết…)
-├── mau-chuan/         4 dự án mẫu + `kiem-mau.py` — chạy sau mỗi lần sửa để chắc không vỡ chỗ khác
+├── khoi/              các khối 00–20: mỗi khối = README (luật, đầu vào/ra, sửa thì chạy lại gì) + code của nó
+├── thu-vien-hinh/     MỘT bộ thành phần hình cho cả 4 loại + bộ nhận diện chung (nhan-dien-chung.md)
+├── trinh-bay/         khung gốc để học video mẫu + kho bố cục, âm thanh, nguồn học
+├── mau-chuan/         dự án mẫu + `kiem-mau.py` — chạy sau mỗi lần sửa để chắc không vỡ chỗ khác
 ├── video-style-edit/  công thức Làm video + Ghép vlog (references/multi-clip.md) — thứ tự khối + tiêu chí đạt
 ├── podcast-style-edit/  công thức Podcast
-└── cat-highlight-video/ công thức Highlight
+├── cat-highlight-video/ công thức Highlight
+├── hoc-video-mau/     cửa vào học video mẫu
+└── dang-da-kenh/      quy trình trọn gói từ tài nguyên tới đăng
 ```
 
 | Anh muốn | Sửa ở đâu |
 |---|---|
 | Học thêm hình mẫu → đổi một con số / một lựa chọn | `ho-so/<loai>.json` (+ 1 dòng nhật ký trong `.md`) |
 | Đổi / thêm cách làm (kiểu phụ đề, kiểu cảnh minh hoạ, màn kết…) | đúng 1 khối (`khoi/NN-…`) — phần hình nằm ở `thu-vien-hinh/`, cả 4 loại tự dùng |
+| Đổi luật dùng chung | `luat-chung.md` (một luật một nhà, sửa thẳng câu cũ) |
 | Thêm loại video mới | 1 công thức (skill) + 1 hồ sơ, nhặt lại khối có sẵn |
 | Sau mọi lần sửa | `python3 -I mau-chuan/kiem-mau.py` → ✓ giữ nguyên / ⚠ xem lại |
 
-## Luật đã chốt (áp dụng mọi video)
-
-**Một nguồn: [`luat-chung.md`](luat-chung.md)** — Claude đọc file này trước mọi skill. Tóm tắt:
-
-- **Kim chỉ nam (2026-11-04):** người xem là trung tâm — kênh lớn đã chứng minh cách nào giữ người xem thì sao chép chuẩn đó.
-- **Không bịa:** chữ trên video = lời người nói. Chỉ tiêu đề, thumbnail, thẻ tít highlight và câu màn chốt (video thường) được viết lời — đúng ý video.
-- **Nhịp:** video nói trước camera + highlight cắt khoảng lặng ≥ 0,45 s và "ờ/ừm" (jump cut, phóng xen kẽ); vlog, podcast dài giữ tự nhiên.
-  Muốn bản tự nhiên cho một video thì nói "giữ ngập ngừng".
-- **Phụ đề:** video ngắn → cụm 5–8 chữ cỡ bằng chữ thẻ, ngay trên thanh thời gian; chữ motion graphic hiện thì phụ đề nhường; video dài → hộp tối đầy câu ở đáy.
-- **Bố cục tự cân theo nội dung** (07/11/2026): chọn từ danh mục `trinh-bay/bo-cuc.md`: người + phụ đề, điểm nhấn trên người (`nhan`), thẻ cạnh mặt, người vào ô bo góc, minh hoạ toàn màn hình, màn chương. Không con số bắt buộc; dọc mỗi lúc ít thứ. Mọi video đều có motion graphics. Học video mẫu mới bằng skill `hoc-video-mau` (quy trình ở `trinh-bay/README.md`): chỉ học trình bày, giữ thẩm mỹ, phiếu học David duyệt trước, kiểm không phá sau.
-- **Không che người nói**, không đè phụ đề, chữ tiếng Việt đủ dấu; minh hoạ mặc định là biểu tượng vẽ.
-- **Phát hành (mọi video):** 3 tiêu đề + mốc khung bìa đề xuất. Ảnh thumbnail 1280×720 chỉ khi video **ngang** và **đăng YouTube** — Claude hỏi "có đăng YouTube không?" lúc đầu với mọi video xuất ngang.
-- **Video dài đăng YouTube (> 3 phút):** màn kết 15–20 s chừa 2 video + nút đăng ký, chương YouTube, teaser 15–25 s câu đắt (> 10 phút).
-- **Học từ 80 video Việt (2026-11-04):** báo cáo ở `*/references/hoc-tu-20-*-vn.md`, đề xuất + trạng thái (đã áp xong) ở `luu-tru/de-xuat-skill-video-2026-11-04.md` của repo David.Claude.
-- **Số liệu:** mỗi video có `so-lieu.md`; 7 ngày sau đăng gửi ảnh chụp số liệu để Claude rút ra một điều chỉnh có bằng chứng.
-
-## Bộ nhận diện David (chốt 2026-11-04 — cả 4 loại: làm video · ghép vlog · podcast · highlight)
-Xem bất kỳ video nào cũng phải nhận ra cùng một người làm. **Một nguồn:** `video-style-edit/assets/remotion-template/src/brand.json`
-(tên kênh, tiếng ký hiệu, mức nhạc) + bảng màu/font (`theme.js` = `montage-template/src/brand.js`) + `subStyle.js` + `cta.js` + `Icons.jsx`.
-- **Dấu góc trên** ● DAVID │ chủ đề — mọi video (BrandMark / Hud; podcast ở đầu sân khấu). Chủ đề: `project.topic` (1 video),
-  `show.name` (vlog), tên chương trình (podcast), tên tập gốc (highlight).
-- **Khuôn tiêu đề**: dòng nhỏ cam → gạch cam → chữ cô đặc in hoa trắng, dòng nhấn cam (Hook / Title).
-- **Âm thanh**: tiếng ký hiệu `sting.wav` đúng lúc hiện tiêu đề mở đầu; nhạc kênh (`cat-highlight-video/assets/music`) dưới lời —
-  vlog thấp hơn giọng 20 LU, 1 video / podcast rất nhỏ 22 LU (tự đo giọng); giọng cân −20 LUFS; bản cuối −14 LUFS.
-- **Khuôn kết**: màn chốt kêu gọi (cta.js) → thẻ cuối: gạch cam + chủ đề + DAVID (highlight: tên tập gốc + nút phát).
-- Biểu tượng nét vẽ dần dùng chung (Icons.jsx) cho cảnh minh hoạ ở mọi loại.
+Luật áp dụng mọi video: **[`luat-chung.md`](luat-chung.md)**. Bộ nhận diện: [`thu-vien-hinh/nhan-dien-chung.md`](thu-vien-hinh/nhan-dien-chung.md).
 
 ## Bên trong mỗi skill
 
-- `luat-chung.md` (thư mục gốc): luật chung cả bộ · `khoi/16-so-lieu/mau-so-lieu.md`: mẫu ghi số liệu sau đăng.
 - `SKILL.md`: quy trình từng bước + luật riêng của skill.
-- `references/changelog.md`: sổ quyết định của bạn theo ngày, kèm lý do.
+- `references/changelog.md`: sổ quyết định của David theo ngày, kèm lý do (không đọc lúc làm việc).
 - `references/gotchas.md`: các lỗi đã gặp và cách tránh.
 - `references/scene-design.md`, `multi-clip.md`, `podcast-design.md`: các loại cảnh, cách ghép, cách thiết kế podcast.
-- Highlight: `cat-highlight-video/scripts/` (`new_highlight.sh`, `loud_check.py`, `cut_highlight.py`, `hl_edl.py`, `hl_apply.py`) — chọn, soát, cắt câu, viết kịch bản dựng; dựng qua 2 skill kia. `cat-highlight-video/assets/music/` — 4 bài nhạc nền của kênh (xem README trong đó).
-- `scripts/`: công cụ (làm sạch, dò mặt, nâng khung, phụ đề, render, `thumbnail.sh` ảnh thumbnail…).
-- `assets/`: mẫu Remotion cho video đơn, video ghép (cũng là khung game show của highlight) và podcast, cộng tiếng "ting", "vút tua".
+- `references/hoc-tu-*`: báo cáo học hình mẫu (kho, không phải luật).
+- Highlight: `cat-highlight-video/scripts/` (`new_highlight.sh`, `loud_check.py`, `cut_highlight.py`, `hl_edl.py`, `hl_apply.py`) —
+  chọn, soát, cắt câu, viết kịch bản dựng; dựng qua 2 skill kia. `cat-highlight-video/assets/music/` — kho nhạc kênh (README trong đó).
+- `scripts/`: công cụ (làm sạch, dò mặt, nâng khung, phụ đề, render, `thumbnail.sh`…).
+- `assets/`: mẫu Remotion cho video đơn, video ghép (cũng là khung của highlight người nói) và podcast, cộng tiếng "ting", "vút tua".
 
 Công cụ phụ (mô hình Whisper, bộ dò mặt, môi trường Python) nằm ở `~/.cache/video-style-edit` và `~/whisper-models` — đừng xoá.

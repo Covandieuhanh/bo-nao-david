@@ -11,9 +11,9 @@
 - `video-style-edit/assets/remotion-template/src/subStyle.js (một nguồn)`
 - `video-style-edit/assets/remotion-template/src/components/Captions.jsx`
 
-## Cách làm (chuyển nguyên văn từ SKILL.md cũ — ngày 2026-11-04)
+## Cách làm
 
-**3d. Phụ đề đầy đủ** — luôn có (người dùng chốt): toàn bộ lời nói, đúng từng chữ, chạy suốt video.
+**Phụ đề đầy đủ** — luôn có: toàn bộ lời nói, đúng từng chữ, chạy suốt video. Kiểu phụ đề theo loại video: `luat-chung.md` mục 3.
 ```bash
 python3 -I $SKILL/scripts/captions.py "$P"          # check/goc/words.srt + transcript.srt → motion/src/captions.js (nháp)
 ```
@@ -23,14 +23,11 @@ python3 -I $SKILL/scripts/captions.py "$P"          # check/goc/words.srt + tran
 - **Câu bị mất / câu bịa**: script bỏ câu kiểu "Hãy subscribe cho kênh…"; nếu chỗ đó người nói có nói thật (vd. "Xin chào"
   cuối video) thì đối chiếu `check/clean/transcript.srt` (lần chạy khác) + `loud.txt` và thêm tay.
 - **Chỗ ngắt dòng**: không tách đôi từ ghép ("chia | sẻ", "giải | trình"); ngắt trước từ nối (thì, là, nhưng, mà…).
-Kiểu phụ đề tự chọn theo độ dài (luat-chung 3): video dọc ≤ 90 s → cụm trọn ý 5–8 chữ, cỡ 58 bằng chữ thẻ (David chốt 2026-11-08); còn lại hộp tối đầy câu.
 Lớp motion graphic có chữ đang hiện → phụ đề ẩn đúng khoảng đó (Captions.jsx `LOP`, Show.jsx `nhuong`). Highlight: `hl_edl.py` chia dòng bằng quy hoạch động — ngắt ở hết câu / dấu phẩy / trước từ nối, không ngắt sau "rất, của, là, những…".
-Cả hai nằm trong dải 140 px ở **đáy vùng an toàn**. Lớp phủ (thẻ, chữ to, hook, tên) tự **thu nhỏ còn 78%** — người dùng
-muốn thấy hình nhiều hơn — và **không bao giờ che mặt/người nói** (xem bước 5, `face_place.sh`): mặc định ngay trên dải
-phụ đề, mặt nằm thấp thì dời lên đỉnh vùng an toàn hoặc chỗ trống khác. Component vẫn thiết kế trên dải gốc như cũ. Cảnh toàn màn hình phải chừa trống ~140 px cuối vùng an toàn. Render tự động (`phu-de` → `phu_de.mov`,
-đè trên cùng ở bản cuối).
+Phụ đề nằm trong dải 140 px ở **đáy vùng an toàn**; cảnh toàn màn hình chừa trống dải này (vị trí lớp phủ: khối 05). Render tự động
+(`phu-de` → `phu_de.mov`, đè trên cùng ở bản cuối).
 
-## Bảng tự sửa chữ (David duyệt 2026-11-06 — học ý "mỗi chữ một ô" của HyperFrames Studio; không tốn lượt Claude)
+## Bảng tự sửa chữ (David tự sửa chữ, không tốn lượt Claude)
 Áp dụng dự án có `motion/src/scenes.js` (làm video, podcast, clip podcast dọc). Dự án ghép (`edl.js`) chưa có: sửa qua Claude.
 ```bash
 node $SKILL/scripts/chu_tren_man.mjs xuat "$P"            # → $P/chu-tren-man.txt: chữ từng cảnh, ý đang bàn, phụ đề

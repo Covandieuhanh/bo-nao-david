@@ -8,7 +8,7 @@
 | `cta.js` | câu màn chốt dự phòng + biểu tượng + mốc tick | 08 |
 | `Icons.jsx` | biểu tượng nét vẽ dần (Icon, Pictogram) | 07 |
 | `YtEnd.jsx` | màn kết YouTube 15–20 s | 08 |
-| `Illus.jsx` | cảnh minh hoạ toàn màn hình (một kiểu của bố cục tự cân) | 07 |
+| `Illus.jsx` | cảnh minh hoạ toàn màn hình | 07 |
 | `Diagram.jsx` | sơ đồ nói thay lời: tang, vong, moc, cot, luoi, tu-thanh, xay-tang, doi-trang-thai, chuyen-giao, anh | 07 |
 | `EndCardBody.jsx` | ruột thẻ cuối (gạch nhận diện, BẢN ĐẦY ĐỦ TRÊN KÊNH…, tên, người nói, lịch phát; không logo nền tảng) | 08 |
 | `nhan-dien.js` | **bộ nhận diện chung**: vùng an toàn ngang/dọc, vị trí dấu góc, thanh thời gian, đáy phụ đề (`khung(W, H)`) — xem `nhan-dien-chung.md` | 10 |
