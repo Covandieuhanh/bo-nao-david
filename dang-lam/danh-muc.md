@@ -23,6 +23,7 @@ Trạng thái: lọc · dựng · chờ đăng · đã đăng · kho · bỏ. D�
 | 2026-11-09 | Video img-2888 (app dựng, `~/Movies/tap-img-2888`) | 👤 Chỉ Facebook cá nhân | 1 | nhân hiệu (đời thường) | Không dựng nặng. Dùng làm tư liệu ghép vlog, hoặc đăng một câu chia sẻ ngắn trên Facebook cá nhân nếu có chuyện kèm theo. Chưa nên lên YouTube hay trang. | — | David duyệt bản cuối (app) · chờ đăng |
 | 2026-11-09 | Video spa-thuy-moc-huong (app dựng, `~/Movies/tap-spa-thuy-moc-huong`) | ⛔ Không làm · ⚠️ đã cảnh báo lằn ranh | 1 | nhân hiệu | Không dựng. Nếu David muốn giữ làm kỷ niệm thì chỉ để ở Facebook cá nhân, không đưa lên kênh chính. | — | David duyệt bản cuối (app) · chờ đăng |
 | 2026-11-09 | Podcast thử app "người thân đi cửa sau" (thu-pod-trainer.wav, 0:59, `~/Movies/tap-thu-pod-moi`) | 🗂 Lưu kho · ⚠️ đã cảnh báo lằn ranh kinh doanh 0:43–0:59 · dựng BẢN THỬ theo yêu cầu, không đăng | 4 | quan hệ → công việc | Không đăng (bản thử). Cần David nói thêm Giải pháp + Thực thi mới thành video thật | Không | lọc (app) |
+| 2026-11-10 | Video su-tap-trung-video-ngan-da-khien-chung-t (app dựng, `~/Movies/tap-su-tap-trung-video-ngan-da-khien-chung-t`) | ✂️ Trích ngắn từ gốc | — |  |  | — | highlight David duyệt (app) · chờ đăng |
 
 ## Phiếu lọc (chấm thử 05/11/2026)
 
