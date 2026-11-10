@@ -87,6 +87,16 @@ for (const raw of list) {
 const fulls = list.map(flat).filter((s) => FULL.has(s.type)).sort((a, b) => a.start - b.start);
 for (let i = 1; i < fulls.length; i++) if (fulls[i].start < fulls[i - 1].end - 0.01)
   bao('P1', fulls[i].start, fulls[i].id, `chồng lên "${fulls[i - 1].id}" (hết ${fmt(fulls[i - 1].end)})`, 'dời mốc, mỗi lúc một điểm nhìn');
+// không hai cảnh cùng kiểu liền nhau (khối 07, 2026-11-10); cảnh vẽ tiếp cùng mạch (tu_buoc) được nối
+const kieu = (s) => s.type === 'nhan' ? `nhan:${s.icon ? 'icon' : s.text ? 'text' : s.zoom > 1 ? 'zoom' : 'toi'}`
+  : [s.type, s.mode || s.kieu].filter(Boolean).join(':');
+const BO_QUA = new Set(['hook', 'cta', 'action']);   // mở đầu, màn hành động, màn chốt có chỗ cố định
+const chuoi = list.map(flat).filter((s) => !BO_QUA.has(s.type)).sort((a, b) => a.start - b.start);
+for (let i = 1; i < chuoi.length; i++) {
+  const a = chuoi[i - 1], b = chuoi[i];
+  if (kieu(a) === kieu(b) && b.tu_buoc == null)
+    bao('P2', b.start, b.id, `cùng kiểu "${kieu(b)}" với cảnh liền trước "${a.id}"`, 'đổi kiểu một cảnh, hoặc vẽ tiếp mạch (tu_buoc)');
+}
 // mở đầu 3 giây
 if (false && list.length && !list.map(flat).some((s) => s.start <= 0.5 && ['hook', 'chips', 'pow', 'kinetic'].includes(s.type)))
   bao('P2', 0, 'mở đầu', 'không có thẻ tít trong 0,5 s đầu', 'kiểm tra khối 06 (đoạn ghép mở vlog / teaser podcast thì bỏ qua)');

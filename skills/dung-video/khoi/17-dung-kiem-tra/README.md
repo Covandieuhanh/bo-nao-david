@@ -58,9 +58,18 @@ node $SKILL/scripts/soat_canh.mjs "$P"     # in ra + ghi check/soat.md; có P0 t
 Đọc từ `scenes.js` hoặc `edl.js`, báo mỗi lỗi một dòng `t=… · cảnh · vấn đề → cách sửa`:
 - **P0 (phải sửa):** kiểu cảnh / biểu tượng không tồn tại, phần tử hiện ngoài cảnh, mốc sai.
 - **P1 (nên sửa):** nhãn không đủ đọc (0,5 s + 0,3 s mỗi từ), nhãn `illus` quá số chữ hồ sơ, hai cảnh toàn màn hình chồng nhau.
-- **P2 (tinh chỉnh, giữ có chủ đích được):** hình đứng yên quá 3 s sau khi đọc xong, thẻ tít / màn chốt thiếu hẳn thời gian đọc.
+- **P2 (tinh chỉnh, giữ có chủ đích được):** hình đứng yên quá 3 s sau khi đọc xong, thẻ tít / màn chốt thiếu hẳn thời gian đọc, hai cảnh cùng kiểu liền nhau (trừ cảnh vẽ tiếp `tu_buoc`, khối 07).
 Giới hạn: chỉ bắt lỗi đo được. Chữ tràn, che mặt, xấu vẫn soi bằng `check/stills.jpg`. **Xem tờ ảnh ở đúng cỡ (mỗi khung 240–270 px, nhỏ hơn màn điện thoại): chữ cần đọc mà không đọc được = P0.**
 Câu hỏi khi soi tờ ảnh: che chữ đi, hình còn nói được ý không? Thấy mọi cảnh giống nhau thì đổi kiểu vào (khối 07). Video rối → bỏ bớt khoảng một phần ba chuyển động, giữ cái dẫn mắt.
+
+## Kiểm cảm nhận (David chốt 2026-11-10 — học từ scroll-craft `feel.md` §6)
+Claude tự làm, hai lần: sau bước chụp thử và sau bản cuối. Không gửi David chấm.
+1. **Xem lạnh trước:** xem tờ ảnh theo thứ tự thời gian (bản cuối: thêm vài đoạn video quanh đỉnh), chưa mở `ke-hoach-canh.md`. Ghi một
+   từ cho cảm xúc mỗi đoạn vào `check/cam-nhan.md`.
+2. **Rồi mới so** với "Đường cảm xúc" trong `ke-hoach-canh.md` (khối 07): bảng ba cột `đoạn · dự định · cảm thấy`.
+3. **Lệch thì video sai, không phải đường sai:** sửa cảnh (đổi kiểu, bỏ bớt hình, đưa lớn hình ở đỉnh) rồi chụp lại. Đồng thời soát:
+   đỉnh có phải chỗ đổi hình lớn nhất không · đoạn trước đỉnh có lặng hơn không · màn cuối có khép lại (không tắt dần) không.
+4. Báo cáo David chỉ thêm một dòng: "Cảm nhận: khớp N/M đoạn; đã sửa <đoạn>".
 
 ### Dọn file tạm khi David chốt bản cuối (David chốt 08/11/2026)
 

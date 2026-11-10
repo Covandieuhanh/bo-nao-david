@@ -38,6 +38,10 @@ giữ người xem; **không chép thẩm mỹ**, **chỉ thêm, không thay** c
 - **Không để 5–8 s trôi qua không đổi gì** ở video ngắn (nhịp chữ phụ đề, phóng, chữ to, cắt); video dài ~1 điểm nhấn / 15–20 s
   là đủ vì phụ đề + jump cut đã tạo nhịp.
 - Một màn = một ý, một hình, một câu. Không chồng 2 lớp phủ.
+- **ĐƯỜNG CẢM XÚC + MỘT ĐỈNH** (David chốt 2026-11-10, học từ scroll-craft `feel.md`; mọi loại video): trước khi lên cảnh, viết cảm xúc
+  từng đoạn (cảm xúc → cái gì trên màn hình gây ra nó) và chọn **một** đỉnh. Đỉnh nhận motion graphic lớn nhất; đoạn ngay trước đỉnh để ít
+  hình (phụ đề vẫn chạy). Video dài vẫn không cắt: đường cảm xúc chỉ để đặt motion graphic. **Vlog ghép:** hai đoạn liền nhau cùng cảm xúc
+  thì bỏ hoặc đổi một. Highlight vẫn chọn theo 4 câu (khối 13). Cách làm: khối 07; kiểm cảm nhận: khối 17.
 
 ## 3. Phụ đề (một nguồn: `video-style-edit/assets/remotion-template/src/subStyle.js`)
 - **Video ngắn** (highlight; video 1 người dọc ≤ 90 s) — David chốt 2026-11-08, thay kiểu 1–3 chữ to in hoa của Hormozi/DOAC:

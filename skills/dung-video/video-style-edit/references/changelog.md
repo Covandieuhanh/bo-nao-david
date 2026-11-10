@@ -181,3 +181,11 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
 - Sửa: `remotion-template/src/components/Nhan.jsx` — khi ô dưới cằm bị kẹp lên quá cằm, đưa ô lên **trên đầu** (dưới dấu góc);
   không đủ chỗ trên đầu thì giữ cách cũ.
 - 2026-11-10 · David chốt: video dọc ngắn bỏ thanh thời gian + thẻ cuối, màn chốt trên hình (luat-chung 5); thêm `nganDoc()` (nhan-dien.js), `NGAN_DOC` (thanh.js), Cta dọc ngắn trong Action.jsx / Show.jsx.
+
+## 2026-11-10 · Học từ scroll-craft: đường cảm xúc, không lặp kiểu cảnh, kiểm cảm nhận (David chốt)
+- Lý do: video dễ giống nhau và thiếu một khoảnh khắc người xem nhớ; bộ skill mới kiểm kỹ thuật, chưa kiểm cảm nhận.
+- `luat-chung.md` mục 2: **đường cảm xúc + một đỉnh** cho mọi loại video (video dài vẫn không cắt; vlog ghép bỏ đoạn trùng cảm xúc liền nhau; highlight giữ 4 câu).
+- Khối 07: cách viết đường cảm xúc trong `ke-hoach-canh.md`; **không hai cảnh cùng kiểu liền nhau**, không con số tối thiểu, ngoại lệ vẽ tiếp `tu_buoc`.
+- Khối 17: **kiểm cảm nhận** (Claude tự làm, xem lạnh → so đường dự định → lệch thì sửa cảnh), ghi `check/cam-nhan.md`.
+- `soat_canh.mjs`: thêm P2 "cùng kiểu với cảnh liền trước". Thử trên tap-5-nguyen-tac-tien (4), tap-di-trainer (16), vlog the-view-vung-tau (1) — báo đúng.
+- Không lấy: tạo ảnh AI, phỏng vấn 8 câu, con số "≥ 4 kiểu" (ngược "bố cục tự cân").

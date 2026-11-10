@@ -29,6 +29,27 @@ Motion graphic là để **diễn tả lại câu chuyện**, không phải đư
 - **Mặt người / hình chiếm bao nhiêu:** AI tự cân theo câu chuyện, không con số cố định.
 - Ghi trong `ke-hoach-canh.md`: mạch hình của video (một đoạn), mỗi cảnh vẽ bước nào của mạch, vì sao.
 
+## Đường cảm xúc + một đỉnh (David chốt 2026-11-10 — luật ở `luat-chung.md` mục 2, học từ scroll-craft)
+Viết **trước** bảng cảnh, vì cảm xúc chọn kiểu cảnh chứ không ngược lại. Ghi vào `ke-hoach-canh.md` ngay dưới mạch hình:
+```
+## Đường cảm xúc
+0:00–0:40  tò mò     → câu hỏi David đặt ra, mặt cận, chưa có hình
+0:40–2:10  day dứt   → chuyện thật, để thấy mặt, ít hình
+2:10–2:30  lặng      → (trước đỉnh) chỉ phụ đề
+2:30–3:00  vỡ ra     → ĐỈNH: cảnh vẽ lớn nhất của mạch hình
+...
+Đỉnh: 2:30 — "<câu người xem sẽ kể lại với bạn>"
+```
+- Gợi ý cảm xúc (không đóng): tò mò, nhận ra mình, day dứt, nghi ngờ, căng, vỡ ra, nhẹ nhõm, gần gũi, tin, quyết, bình yên.
+- Cảm xúc được định nghĩa bởi cái đứng trước nó: nhẹ nhõm cần căng phía trước, vỡ ra cần lặng phía trước.
+- **Một đỉnh**, thường là câu đắt nhất của David. Đỉnh nhận cảnh lớn nhất (thường là bước lớn nhất của mạch hình); không có ba đỉnh tranh nhau.
+- Mỗi cảnh trong bảng cảnh ghi thêm cột "cảm xúc", lấy từ đường này.
+
+## Không hai cảnh cùng kiểu liền nhau (David chốt 2026-11-10)
+Hai cảnh đi liền nhau không cùng kiểu (`type` + `mode` / `kieu`, ví dụ hai `bocuc` `the-canh` liền nhau). Xen kiểu khác: `nhan` zoom,
+biểu tượng, sơ đồ, toàn màn hình… Không con số tối thiểu (bố cục tự cân). **Ngoại lệ:** cảnh "vẽ tiếp" cùng mạch hình (`tu_buoc`) được
+nối nhau. `soat_canh.mjs` (khối 17) tự nhắc P2.
+
 ## Bố cục tự cân (David chốt 2026-11-07 — thay luật 2 trạng thái ngày 04/11)
 Không con số bắt buộc. Mỗi đoạn chọn bố cục từ **`../../trinh-bay/bo-cuc.md`** theo 4 câu hỏi ở `../../trinh-bay/README.md`
 (cần thấy người hay thấy ý · ý dài hay ngắn · khung còn chỗ không · trước / sau là gì). Ngang tự do; dọc mỗi lúc ít thứ. Ghi lý do
