@@ -1,6 +1,6 @@
 # Số liệu — <tên video>
 
-*Chép mẫu này vào `<dự án>/so-lieu.md` lúc giao. Điền sau 7 ngày từ ảnh chụp số liệu David gửi (luat-chung.md mục 9).*
+*Chép mẫu này vào `<dự án>/so-lieu.md` lúc giao. Điền sau 7 ngày từ ảnh chụp số liệu David gửi (khối 16).*
 
 | | |
 |---|---|

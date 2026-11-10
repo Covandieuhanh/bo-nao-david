@@ -1,7 +1,7 @@
 # Giọng văn David — viết caption, bài viết, mô tả, bình luận ghim
 
-Nguồn chính (05/11/2026): lời nói thật của David trong podcast "Mục tiêu và sứ mệnh" (8:19), vlog Miếu Bà Cam, vlog VF3 → học từ cách David NÓI.
-Bổ sung (06/11/2026): bài viết chữ trên Facebook cá nhân, 11/08–26/10/2026. Fanpage chưa có bài chữ đủ để học. Cập nhật khi David có bài viết mới.
+Nguồn chính: lời nói thật của David trong podcast "Mục tiêu và sứ mệnh" (8:19), vlog Miếu Bà Cam, vlog VF3 → học từ cách David NÓI.
+Nguồn phụ: bài viết chữ trên Facebook cá nhân. Fanpage chưa có bài chữ đủ để học. Cập nhật khi David có bài viết mới.
 
 ## David nói thế nào (quan sát)
 - **Xưng hô:** "mình" (chủ yếu), đôi khi tự gọi "David"; gọi người nghe "các bạn", "mọi người". Khi kể lời người khác thì "tôi".
@@ -11,19 +11,19 @@ Bổ sung (06/11/2026): bài viết chữ trên Facebook cá nhân, 11/08–26/1
 - **Kết ấm, gần:** "Mình chỉ muốn chia sẻ với các bạn như vậy", "chúc các bạn…", "hẹn gặp lại các bạn", "bye bye".
 - **Không**: thuật ngữ khoe khoang, giọng bán hàng, tiếng lóng mạng, chữ in hoa hét, emoji dày.
 
-## Caption cũ trên mạng xã hội (TikTok @davidsuckhoe, đọc 05/11/2026 — hướng sức khoẻ / spa đã bỏ)
+## Caption cũ trên mạng xã hội (TikTok @davidsuckhoe — hướng sức khoẻ / spa David không còn làm)
 - Ngắn, 1 câu + hashtag thương hiệu cũ (#DavidSuckhoe, #MunAha, #135Aha, #SucKhoe); giọng miền Nam thân mật cuối câu "nha", "nè".
 - Dạng: giới thiệu dịch vụ / thiết bị / đối tác spa, voucher "trải nghiệm 0 đồng", mẹo sức khoẻ ("diện chẩn tụt huyết áp…").
 - **Giữ:** sự thân mật, câu ngắn, kể trải nghiệm thật ("Lưu lại làm kỉ niệm rồi sẽ ghé lại…").
 - **Bỏ cho thương hiệu trainer:** giọng giới thiệu dịch vụ / bán hàng, voucher, công dụng sức khoẻ, hashtag cũ, "nha / nè" ở mọi câu.
 
-## Bài viết chữ trên Facebook cá nhân (đọc 06/11/2026 — phần lớn còn hướng cũ)
+## Bài viết chữ trên Facebook cá nhân (phần lớn còn hướng cũ)
 - Trang trọng hơn lúc nói: tự gọi "David"; câu dài, một đoạn liền; từ hay gặp "nhân duyên", "phụng sự", "thấu hiểu", "biết ơn", "xứng đáng", "chiêm nghiệm".
 - **Giữ:** câu có hình ảnh của nghề, như "văn vẫn phải ôn, võ vẫn phải luyện"; tự nhìn lại bản thân, như "nhận biết và thấu hiểu chính mình ở hiện tại"; lòng biết ơn khi nó gắn với một việc cụ thể.
 - **Bỏ cho thương hiệu trainer:** "hệ sinh thái", "đối tác", "giải pháp", "doanh chủ"; lời chào mừng trang trọng kiểu sự kiện; "nhân duyên", "phụng sự" dùng dày vì dễ nghe xa người đọc mới.
 - Khi bài viết và lời nói lệch nhau, theo cách David nói.
 
-## Nâng cấp giọng cho thương hiệu trainer (David duyệt hướng 05/11/2026)
+## Nâng cấp giọng cho thương hiệu trainer (hướng David duyệt)
 - **Bình tĩnh, rõ, có khung**: mỗi bài đi Vấn đề → Giải pháp → Thực thi (rút từ lời David), không lan man.
 - **Người thầy đứng cạnh, không đứng trên**: kể "mình từng kẹt ở…", không ra lệnh, không dạy đời; câu hỏi tự soi thay cho khẳng định.
 - **Cụ thể hơn cảm hứng**: một việc làm được ngay (Thực thi) quan trọng hơn câu truyền động lực chung chung.

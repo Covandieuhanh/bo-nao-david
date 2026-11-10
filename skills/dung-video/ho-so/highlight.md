@@ -7,8 +7,9 @@
 |---|---|
 | `cat_lang.*` | lặng trong câu ≥ `trong_cau_min_s` rút còn 2×`giu_s`; lùi/thêm `bien_cau_s`; gộp câu liền ≤ `gop_cau_lien_s`; lặng chèn sau câu hỏi kêu gọi |
 | `phong_xen_ke` | đoạn xen kẽ phóng (jump cut) |
-| `tit_ghim` | dải tít ghim suốt clip — **false** (thêm chữ thứ 3 trên người, dọc mỗi lúc ít thứ); bật lại từng clip `"pin": true` |
-| `the_cuoi_s` | thẻ cuối dẫn về bản đầy đủ |
+| `tit_ghim` | dải tít ghim suốt clip — **false** (thêm chữ thứ 3 trên người, dọc mỗi lúc ít thứ); bật từng clip `"pin": true` |
+| `the_cuoi_s` · `man_cuoi_s` · `man_cuoi_kenh` | thẻ cuối dẫn về bản đầy đủ — chỉ dùng khi xuất dọc dài; video dọc ngắn không thẻ cuối |
+| `nhac_chu_chinh` | mức nhạc khuôn podcast đồ hoạ dọc (thấp hơn giọng ~23 dB) |
 | `phan_ung_s` | cảnh phản ứng người nghe |
 
 ## Nhật ký

@@ -1,39 +1,40 @@
-# Khối 09-am-thanh: Âm thanh: nhạc kênh cố định, tiếng ký hiệu, ting, vút; cân giọng −20 LUFS, bản cuối −14 LUFS
+# Khối 09-am-thanh: Âm thanh: nhạc kênh, tiếng ký hiệu, ting, vút; cân giọng −20 LUFS, bản cuối −14 LUFS
 
 **Dùng trong:** cả 4
 **Đầu vào:** tiếng gốc
 **Đầu ra:** trộn trong render_preview.py / render-show.mjs
-**Tham số hồ sơ:** ghep-vlog: nhac_duoi_giong_LU, brand.json: musicGapLU
+**Tham số hồ sơ:** chung: `nhac.*` (một nguồn mức nhạc), ghep-vlog: nhac_duoi_giong_LU, brand.json: musicGapLU, highlight: nhac_chu_chinh
 **Sửa khối này → chạy lại:** 17
 
 **File thật (code, một bản duy nhất):**
 - `cat-highlight-video/assets/music/`
 - `video-style-edit/assets/sfx/`
-- `video-style-edit/scripts/render_preview.py`
+- `video-style-edit/scripts/render_preview.py` · `scripts/chuan_am.py`
 - `video-style-edit/assets/montage-template/render-show.mjs`
 
 ## Luật
-- **Kho nhạc kênh** `cat-highlight-video/assets/music` (README liệt kê bài + nguồn). Claude TỰ chọn bài theo tuyến nội dung, không hỏi David
-  (David chốt 08/11/2026: "đã tải rất nhiều nhạc để phù hợp từng nội dung"). Bài mới David tải về `~/Music/nhac-nen` → đặt tên theo tuyến,
-  chép vào kho, đo `ebur128` và ghi mức cân vào hồ sơ chung `nhac.muc` (gain = 10^((−15 − I)/20)), thêm vào `nhac.tuyen`.
-- **Mức cân từng bài: một nguồn** `ho-so/chung.json` → `nhac.muc` (vlog_edl, render_preview, hl_edl, hl_apply, Show.jsx ghép đều đọc từ đây).
-- Tiếng ký hiệu `sting.wav` lúc hiện tiêu đề mở đầu; "ting" ở màn chốt; "vút" chỉ khi bật kiểu tua cũ.
-- Giọng cân −20 LUFS; nhạc dưới lời và bản cuối: theo chuẩn âm lượng chung.
-- Kiểm bản cuối: cả bài −14 LUFS ±0,5 (hồ sơ `nhac.do_to_cuoi_LUFS`), đỉnh ≤ −1,5 dB, tiếng rè (highpass 12 kHz) **so với giọng** tăng ≤ 1 dB, nhạc lúc nói thấp hơn giọng 22–24 LU (khối 17; máy đo ở `app/kiem/`). Không so âm lượng thô với nguồn: giọng nhỏ được kéo lên −14 LUFS nên chênh là đúng (sửa 10/11/2026).
+- **Âm thanh nhận diện:** tiếng ký hiệu `sting.wav` lúc hiện tiêu đề mở đầu; "ting" ở màn chốt; "vút" chỉ khi bật kiểu tua cũ.
+- **Kho nhạc kênh** `cat-highlight-video/assets/music` (README liệt kê bài + nguồn). Claude TỰ chọn bài theo tuyến nội dung, không hỏi
+  David (David đã tải nhiều nhạc cho từng loại nội dung). Bài mới David tải về `~/Music/nhac-nen` → đặt tên theo tuyến, chép vào kho,
+  đo `ebur128` và ghi mức cân vào hồ sơ chung `nhac.muc` (gain = 10^((−15 − I)/20)), thêm vào `nhac.tuyen`.
+- **Mức cân từng bài: một nguồn** `ho-so/chung.json` → `nhac.muc` (vlog_edl, render_preview, hl_edl, hl_apply, Show.jsx ghép đều đọc
+  từ đây). `MUSIC.tracks` viết tay không ghi `gain` thì Show.jsx tự lấy `nhac.muc`; đừng ghi `gain: 1`.
 
-## Chuẩn âm lượng chung cho mọi đầu ra (David chốt 2026-11-06, theo 3 clip "Đi trainer")
-Áp dụng cho làm video, podcast, highlight, vlog ghép. Mức nằm ở một chỗ: hồ sơ chung `nhac`.
+## Chuẩn âm lượng chung (mọi đầu ra: làm video, podcast, highlight, vlog ghép — mẫu: 3 clip "Đi trainer")
+Mức nằm ở một chỗ: hồ sơ chung `nhac`.
+- **Giọng cân −20 LUFS** lúc tạo dự án.
 - **Giọng và nhạc:** nhạc thấp hơn giọng khoảng 23 dB lúc đang nói (`khoang_trong_duoi_giong_LU` 14, `nen_ty_le` 3, `nen_nha_ms` 400).
-- **Cả bài:** −14 LUFS, sai số 0,5 LU, đỉnh −1,5 dB.
-- **Giọng thu nhỏ thì kéo lên, nhạc to thì hạ xuống:** nhạc tính theo độ to giọng đo được của từng video, rồi cả bài được đưa về chuẩn, nên giọng nhỏ hay to đều ra cùng một mức.
+- **Cả bài:** −14 LUFS, sai số 0,5 LU (`nhac.do_to_cuoi_LUFS`), đỉnh −1,5 dB.
+- **Giọng thu nhỏ thì kéo lên, nhạc to thì hạ xuống:** nhạc tính theo độ to giọng đo được của từng video, rồi cả bài được đưa về chuẩn,
+  nên giọng nhỏ hay to đều ra cùng một mức.
 - `scripts/chuan_am.py <video>` tự chạy cuối mỗi lần xuất; thêm `--chi-do` để chỉ đo.
-- Mức nhạc 30–33 LU ở mục dưới là luật cũ, không còn dùng.
+- **Kiểm bản cuối:** cả bài −14 LUFS ±0,5, đỉnh ≤ −1,5 dB, tiếng rè (highpass 12 kHz) **so với giọng** tăng ≤ 1 dB, nhạc lúc nói thấp
+  hơn giọng 22–24 LU (khối 17). Không so âm lượng thô với nguồn: giọng nhỏ được kéo lên −14 LUFS nên chênh là đúng.
 
-## Nhạc nền theo TUYẾN NỘI DUNG + mức nhạc khi nói (David chốt 2026-11-05)
+## Nhạc theo tuyến nội dung
 1. Sau khi chép lời, Claude đọc toàn bộ lời → chọn MỘT tuyến trong bảng hồ sơ chung `nhac.tuyen` (vui · tam_su · mat_mat · y_nghia ·
    kien_thuc), ghi `tuyen: '<tuyến>'` vào `motion/src/project.js` (1 video: ghi SAU clean_apply — nó viết đè project.js) + lý do 1 dòng
-   vào ke-hoach-canh.md. Không ghi → `render_preview.py` DỪNG (hết mặc định "Upbeat Vlog" — 2026-11-05 podcast tâm sự bị gắn nhạc sôi động).
+   vào ke-hoach-canh.md. Không ghi → `render_preview.py` DỪNG (không có bài mặc định, để không gắn nhạc sôi động cho bài tâm sự).
    Cách chọn: tuyến = cảm xúc chủ đạo người xem cần (hình mẫu: Hieu Nguyen / Have A Sip tâm sự → piano ấm; Khoai Lang Thang du lịch →
    upbeat; video kiến thức → ambient trung tính). Ép tay bài: `music: '<bài>'`; tắt: `music: ''`.
-2. Mức: theo chuẩn âm lượng chung ở trên. Luật cũ 05/11 (khoảng trống 20 LU, nén tỉ lệ 20, 30–33 LU dưới giọng) bị David thay ngày 06/11 vì nhạc quá nhỏ.
-3. Vlog ghép giữ tông theo đoạn (`TONE` soi/lang) như cũ; highlight giữ mức cũ.
+2. Vlog ghép và highlight đổi tông theo đoạn (`TONE` soi / lang, multi-clip mục 2c, highlight luật 9); mức nhạc vẫn theo chuẩn chung.

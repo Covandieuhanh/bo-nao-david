@@ -9,8 +9,8 @@ description: Học cách trình bày từ một video mẫu David gửi (link Yo
 Skill này chỉ là **cửa vào**; không ghi luật riêng ở đây để chỉ có một chỗ phải sửa.
 
 ## Ba điều không được quên
-1. **Học là bổ sung, không thay thế** (bộ nhớ `luat-hoc-la-bo-sung`). Không xoá hay sửa nghĩa thành phần cũ. Thẩm mỹ chỉ giữ **chữ ký nhận diện**
-   (`../thu-vien-hinh/nhan-dien-chung.md` mục 0); ngoài đó học gì cũng thêm được (David 10/11/2026).
+1. **Học là bổ sung** (bộ nhớ `luat-hoc-la-bo-sung`): không xoá hay sửa nghĩa thành phần cũ. Thẩm mỹ chỉ giữ **chữ ký nhận diện**
+   (`../thu-vien-hinh/nhan-dien-chung.md` mục 0); ngoài đó học gì cũng thêm được.
 2. **Phiếu học trước, sửa skill sau.** Điền `../trinh-bay/phieu-hoc-mau.md` thành `../trinh-bay/nguon-hoc/<ten-nguon>-<ngay>.md`,
    gửi David. Đây là **cổng hỏi duy nhất** (`hoi-chuyen-gia`): gộp mọi điểm cần chọn vào phiếu, mỗi điểm 2–3 gợi ý, đề xuất đứng đầu. Chờ "ok".
 3. **Kiểm không phá** trước khi dùng vào video thật: chụp đủ lớp ở cả khung ngang lẫn dọc, phần cũ phải y nguyên.
@@ -22,7 +22,7 @@ Skill này chỉ là **cửa vào**; không ghi luật riêng ở đây để ch
 
 ## Xong khi
 1. Phiếu học đã được David duyệt và nằm trong `nguon-hoc/`.
-2. Chỉ thêm vào lớp trình bày; màu, font, nét vẽ, chuyển động, nhạc kênh không đổi.
+2. Chỉ thêm vào kho; chữ ký nhận diện (màu nhấn cam, hai font chính, thành phần cố định) không đổi.
 3. `bo-cuc.md` / `am-thanh.md` có dòng mới, ghi rõ "đã có code" hay "chưa có code".
 4. Ảnh kiểm ngang + dọc đã xem; phần cũ y nguyên so với ảnh trước khi thêm.
 5. File mẫu đã tải (nếu có) đã xoá khỏi thư mục tạm.

@@ -2,7 +2,7 @@
 
 **Dùng trong:** skill `dang-da-kenh` bước 6 · **Đầu vào:** bản cuối + bài đăng đã qua CỔNG DUYỆT 2 · `ho-so/kenh.json` · `ho-so/giong-van-david.md`
 **Đầu ra:** bài đã hẹn giờ (hoặc đăng) + ảnh chụp xác nhận · dòng "chờ đăng / đã đăng" trong sổ danh mục
-**Trạng thái:** các bước dưới lấy từ giao diện thật ngày 05/11/2026 (đọc trang, CHƯA bấm đăng lần nào). Lần đăng thật đầu tiên ở mỗi
+**Trạng thái:** các bước dưới lấy từ giao diện thật lúc đọc trang, chưa kiểm bằng một lần bấm đăng. Lần đăng thật đầu tiên ở mỗi
 nền tảng: đi chậm, chụp từng bước, sửa README này theo giao diện thật.
 
 ## Luật an toàn (không ngoại lệ)
@@ -13,12 +13,12 @@ nền tảng: đi chậm, chụp từng bước, sửa README này theo giao di�
 - Trước cú bấm cuối ("Lên lịch" / "Đăng" / "Chia sẻ"): chụp màn hình phần xem trước, đối chiếu với bản đã duyệt; sau đó chụp xác nhận.
 - Gặp mã xác minh, CAPTCHA, đăng nhập lại, cảnh báo bảo mật → **dừng, gọi David** (không tự vượt).
 
-## Thứ tự hẹn giờ một đợt (video dài + clip, ghi 06/11/2026)
+## Thứ tự hẹn giờ một đợt (video dài + clip)
 1. YouTube video dài trước, lấy link, điền vào các bài còn lại. 2. Bài trang Facebook, Reels, Shorts. 3. TikTok.
 - **TikTok chỉ hẹn được trong 10 ngày:** clip xa hơn thì đặt việc tự chạy (scheduled task) khi đã vào tầm; việc này cần máy bật và ứng dụng Claude mở.
 - **Bình luận ghim không hẹn được trước:** đặt việc tự chạy ngay sau giờ bài lên, đăng đúng chữ đã duyệt.
 - **Link trong mô tả TikTok không bấm được:** ghi tên kênh thay cho link. Shorts gắn "Video liên quan" về video dài.
-- Kế hoạch đăng theo 4 phần, chữ từng bài nằm chung một file để David duyệt một lần. Mẫu: [mau-ke-hoach-dang.md](mau-ke-hoach-dang.md) (đợt Đi trainer, 11/2026).
+- Kế hoạch đăng theo 4 phần, chữ từng bài nằm chung một file để David duyệt một lần. Mẫu: [mau-ke-hoach-dang.md](mau-ke-hoach-dang.md) (đợt Đi trainer).
 
 ## Trình duyệt
 - **Đọc / soạn / kiểm** (không cần tải file): trình duyệt riêng trong app (`mcp__Claude_Browser__*`) — David đã đăng nhập 3 nền tảng.
@@ -29,10 +29,10 @@ nền tảng: đi chậm, chụp từng bước, sửa README này theo giao di�
   playwright-cli -s=mxh snapshot            # lấy ref của ô chọn file / nút
   playwright-cli -s=mxh upload "<đường dẫn video-final.mp4>"
   ```
-  David đã đăng nhập cả 3 nền tảng trong hồ sơ này (05/11/2026; hồ sơ lưu ở `~/.cache/david-mxh-chrome`). Hết phiên → nhờ David đăng nhập lại, không tự nhập.
+  David đã đăng nhập cả 3 nền tảng trong hồ sơ này (`~/.cache/david-mxh-chrome`). Hết phiên → nhờ David đăng nhập lại, không tự nhập.
 
 ## YouTube (Studio) — bản dài + Shorts
-**Ảnh bìa tuỳ chỉnh cần kênh đã xác minh số điện thoại** (ghi nhận 06/11/2026: chưa xác minh thì Studio hiện hộp thoại "Xác minh"). David tự xác minh, Claude không làm thay.
+**Ảnh bìa tuỳ chỉnh cần kênh đã xác minh số điện thoại** (chưa xác minh thì Studio hiện hộp thoại "Xác minh"). David tự xác minh, Claude không làm thay.
 1. `https://studio.youtube.com/channel/<id>/videos/upload?d=ud` → ô chọn file → `upload` video.
 2. **Chi tiết:** Tiêu đề (≤ 100 ký tự, theo phat-hanh.md) · Mô tả (tóm ý + "Vấn đề"/"Kết quả" + chương + link nhắn tin trang nếu bài Mời) ·
    Hình thu nhỏ (thumb-1.jpg; chỉ video ngang) · "Không, nội dung này không dành cho trẻ em" · Thẻ / ngôn ngữ: Tiếng Việt.

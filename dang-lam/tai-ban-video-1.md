@@ -211,5 +211,39 @@ A8, A9, A15, A20, A23, A28, A48, A56, A60 (hashtag 2–3), B16, B21, B26, B32, B
    ➡️ Đề xuất: sửa thành *"chữ ký nhận diện (cam, hai font, thành phần cố định) không đổi"*. · Khác: giữ nguyên.
 5. **Việc thật để chấm (bước 5):** ➡️ Đề xuất: làm một đoạn ~30–60 s trọn một ý từ `tap-5-nguyen-tac-tien` (video người nói ngang, đã có dự án) theo bản luật mới, chỉ render khi bạn đồng ý. · Khác: một clip highlight dọc.
 
-## Bước tiếp (cho phiên sau nếu phiên này dừng)
-- Chờ David trả lời 5 câu → bước 3 viết lại 50 file theo bảng (nhóm A → B → C), bước 4 đóng sổ 3 changelog, bước 5 kiểm, bước 6 đóng mốc.
+## Trả lời của David
+"Đồng ý cả 5" — áp đúng 5 đề xuất ở trên.
+
+## Bước 3 — Đã viết lại
+- Viết lại hẳn: `luat-chung.md`, `nguyen-tac.md`, `nhan-dien.md`, `GIOI-THIEU.md`, `thu-vien-hinh/nhan-dien-chung.md`, khối 07, 08, 09, 10, 15.
+- Sửa theo bảng (bỏ dấu ngày, "chuyển nguyên văn", luật cũ; áp bên thắng): khối README, 00, 01, 02, 03, 04, 05, 06, 12, 13, 14, 16, 17, 19;
+  3 SKILL.md công thức + hoc-video-mau + dang-da-kenh; trinh-bay/README; ho-so chung/lam-video/podcast/highlight/giong-van;
+  references scene-design, multi-clip, style-analysis, gotchas (2 skill), podcast-design.
+- Không đổi code. `bo.json`: `mau-ke-hoach-dang.md` chuyển sang kho (mẫu của một đợt đăng, không phải luật).
+- Gộp nhà: 4 câu "video dọc ngắn" chỉ còn ở nhan-dien-chung; câu "bước nhẹ" của 4 SKILL trỏ về thoi-quen mục 3; luat-chung §5, §9
+  thành dòng trỏ (nhận diện → nhan-dien-chung, số liệu → khối 16); GIOI-THIEU bỏ phần chép lại luật.
+
+## Bước 4 — Đóng sổ
+Thêm "## Tái bản 1" vào đầu 3 changelog (video-style-edit, cat-highlight-video, podcast-style-edit). Cả 3 < 400 dòng, không cần lưu trữ.
+
+## Bước 5 — Kiểm
+- **Đủ luật:** soát bằng grep từng luật "sống" trong nhà mới (A1–A66, B8–B66, C8–C27): đủ.
+- **Máy đo sau tái bản:** dấu ngày 165 → 3 (2 trong file mẫu đã chuyển kho, 1 là tên file nguồn học) · trùng 5 → 0 · dòng 3292 → 3236.
+  "Câu ghi đè" 81 → 33, nhưng **cả 33 là chữ "thay" thường** ("chữ chính thay phụ đề", "nói thay lời"): regex `\bTHAY\b` trong
+  `do_chong_cheo.py` chạy với `re.I` nên bắt mọi chữ "thay". Câu ghi đè thật = 0. Cần sửa máy đo (ngoài phạm vi tái bản bộ video).
+- **Mẫu chuẩn:** `kiem-mau.py` 5/5 ✓ giữ nguyên (SSIM 0,982–0,990); node_modules nối tạm từ tap-5-nguyen-tac-tien rồi đã gỡ.
+- **Việc thật:** đề xuất đoạn 4:10–4:56 bản sạch `tap-5-nguyen-tac-tien` (nguyên tắc 2 "đầu tư vào bản thân — kiến thức chính là tiền",
+  ~46 s, trọn một ý), dựng ngang theo bản luật mới. Chờ David đồng ý mới render.
+
+## Bước 6 — Đóng mốc
+Tag `tai-ban-video-1`, dòng trong `skills/tai-ban/lich-su.md`, đẩy GitHub. Ngưỡng `bo.json` giữ nguyên (sau khi sửa máy đo mới biết có lệch không).
+
+## Đối chiếu "Xong khi"
+1. Bảng đủ, mỗi dòng có nhà — **đạt**.
+2. Máy đo "Chưa cần tái bản" — **chưa đạt** chỉ vì máy đo bắt nhầm chữ "thay" (33); dấu ngày 3, trùng 0, ghi đè thật 0. Cần sửa regex.
+3. Mẫu chuẩn y nguyên — **đạt**; việc thật David chấm — **chưa kiểm** (chờ David đồng ý render đoạn 4:10–4:56).
+4. Tag, lịch sử, GitHub — **đạt**.
+
+## Bước tiếp
+- David đồng ý → dựng đoạn 4:10–4:56 `tap-5-nguyen-tac-tien` theo bản luật mới, gửi David chấm.
+- Sửa `do_chong_cheo.py`: `\bTHAY\b` chỉ bắt chữ in hoa (bỏ cờ re.I cho riêng mẫu này), chạy lại máy đo.

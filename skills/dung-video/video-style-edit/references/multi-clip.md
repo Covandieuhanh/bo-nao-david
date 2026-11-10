@@ -8,7 +8,7 @@ File này là chi tiết của **khối 11** (`../../khoi/11-ghep-canh`). Thứ 
 |---|---|---|
 | 1 | Môi trường + `new_montage.sh` (cân giọng −20 LUFS) | 01 · 09 |
 | 2–2d | Hiểu từng clip · bản đồ + liên kết · giữ/bỏ · khung mở đầu–chào–hành trình–kết | 11 · 01 · 06 (mở đầu) |
-| 3–6 | Cấu trúc · điểm nhấn = **cảnh minh hoạ toàn màn hình** (`illus`, bố cục tự cân) · phong cách · edl.js / plan.json | 07 · 10 · 11 · 03 |
+| 3–6 | Cấu trúc · điểm nhấn (bố cục tự cân, khối 07) · phong cách · edl.js / plan.json | 07 · 10 · 11 · 03 |
 | 6b | Nâng khung → tránh che người: `lift.py` → `overlay_guard.py` | 04 · 05 |
 | 7–8 | Ảnh tĩnh → **DỪNG cho David duyệt kế hoạch** → render | 17 · 09 |
 | 9 | Phát hành: màn kết (`ytEnd`), chương, thumbnail (ngang), tách phần, số liệu | 08 · 15 · 14 · 16 |
@@ -41,7 +41,7 @@ Với mỗi `check/cN/`:
 - Cảnh chọn nhanh hơn: dải 1 khung/giây cho một khoảng `ffmpeg -ss <t> -t <n> -i cN.mp4 -vf "fps=1,scale=150:-2,tile=<n>x1" -frames:v 1 x.jpg`.
 - `python3 -I $SKILL/scripts/bad_frames.py "$P"` → `check/cN/bad.txt`: đoạn TÚI/CHE (khung một màu) và TỐI — gợi ý bỏ, đối chiếu lời trước.
   **Hình hỏng thì bỏ kể cả có lời** (trong túi, che ống kính, vừa rút máy ra → hình lật ngang/lộn ngược/quay loạn): người xem
-  không theo được, lời hay cũng không cứu được (người dùng chỉ ra 2026-11-04, c13 vlog leo núi).
+  không theo được, lời hay cũng không cứu được (David chỉ ra ở c13 vlog leo núi).
 - `half_XX.jpg` (khung mỗi 0,5 s, 13 khung/hàng, khung thứ k của ảnh XX ở giây `XX*13 + k*0,5`): tìm
   **khoảnh khắc đắt** (cười to, quay sang camera, lần đầu thấy thứ quan trọng, cử chỉ chỉ trỏ) và **đoạn hỏng**
   (rung nhoè, quay vào túi/sàn/tay, máy cầm ngang, che ống kính) → bỏ. Đoạn quay ngang nhưng đẹp: xoay lại
@@ -51,16 +51,16 @@ Với mỗi `check/cN/`:
   (mỗi ô = 10% khung) → nhân ra px trên 1080×1920. Camera cầm tay luôn trôi → lấy 3–4 mốc và cho điểm neo
   **bám theo** (`track` của callout).
 
-### 2b. Bản đồ nội dung + liên kết giữa các clip (BẮT BUỘC — người dùng chốt)
+### 2b. Bản đồ nội dung + liên kết giữa các clip (BẮT BUỘC)
 Ghép nhiều clip KHÔNG phải nối cho đủ số lượng: dù ra game show, video giải thích hay vlog, lời nói ở clip này nhắc
 tới thứ gì mà clip khác có hình thì hình đó phải xuất hiện ĐÚNG LÚC câu đó được nói.
 
-1. **Phân loại** — người dùng chỉ đưa clip thuộc một trong hai loại (không có clip "thừa", đừng bỏ clip):
+1. **Phân loại** — David chỉ đưa clip thuộc một trong hai loại (không có clip "thừa", đừng bỏ clip):
    - **Clip chính**: có người nói / diễn biến, được ghép nối tiếp thành video dài, giữ tiếng.
    - **Clip minh hoạ**: quay vật, thao tác, nơi chốn (ví dụ quay cuốn sổ) để minh hoạ một ý ở clip chính → luôn
      **tắt tiếng**, chèn dạng **trích dẫn** (khung bo góc trên nền theo phong cách, không toàn khung).
    Dấu hiệu clip minh hoạ: ít/không lời (`loud.txt`, transcript rỗng hoặc toàn câu bịa), quay cận vật, ngắn.
-   Không chắc → ghi rõ trong kế hoạch để người dùng chọn.
+   Không chắc → ghi rõ trong kế hoạch để David chọn.
 2. **Bản đồ**: mỗi clip chính — các chỗ nhắc tới thứ NHÌN THẤY ĐƯỢC (vật, việc, nơi, người; "như hôm trước…") kèm
    mốc từ `words.srt`; mỗi clip minh hoạ — đoạn nào quay gì (`half_XX.jpg`), đoạn đẹp nhất.
 3. **Ghép cặp**: mỗi clip minh hoạ gắn vào câu nói khớp nghĩa nhất (vd. "hàng ngày mình dành khoảng 15 phút để viết"
@@ -73,7 +73,7 @@ tới thứ gì mà clip khác có hình thì hình đó phải xuất hiện Đ
    cd "$P/motion" && node stills.mjs <vài mốc lớp phủ>          # như bước 7
    python3 -I $SKILL/scripts/link_sheet.py "$P"                  # → check/links.jpg: [người nói | khung trích dẫn]
    ```
-6. **DỪNG, gửi người dùng duyệt TRƯỚC KHI RENDER** (ngoại lệ duy nhất của "chạy một mạch" — họ muốn tránh render lại):
+6. **DỪNG, gửi David duyệt TRƯỚC KHI RENDER** (ngoại lệ duy nhất của "chạy một mạch" — để tránh render lại):
    gửi `ke-hoach-ghep.md` + `check/links.jpg` (SendUserFile), hỏi duyệt/sửa. Có góp ý → sửa edl.js, chạy lại
    link_sheet, hỏi lại. Duyệt xong mới sang bước 8.
 
@@ -98,7 +98,7 @@ Mẫu `ke-hoach-ghep.md`:
 
 Ghi `ke-hoach-dung.md` (hoặc gộp vào ke-hoach-ghep.md): câu chuyện 1 dòng, khoảnh khắc (clip, giây), đoạn bỏ và lý do.
 
-### 2c. Tiêu chí giữ / bỏ cảnh (người dùng chốt 2026-11-03)
+### 2c. Tiêu chí giữ / bỏ cảnh
 **Thứ tự ưu tiên** khi chọn hay bỏ (Walter Murch): **cảm xúc > câu chuyện > nhịp > hình đẹp**. Cảnh rung mà có khoảnh khắc thật
 hơn cảnh đẹp mà trống.
 
@@ -132,15 +132,15 @@ không áp một tông cho cả video khi cảnh không khớp.
 
 Kế hoạch ghép ghi rõ: tổng nguồn → tổng video, bảng đoạn bỏ (clip, giây, lý do: hỏng / trùng / đầu-cuối clip) và đoạn tua.
 
-### 2d. Khung vlog: mở đầu · chào · hành trình · kết (người dùng chốt 2026-11-04)
+### 2d. Khung vlog: mở đầu · chào · hành trình · kết
 Chuẩn tham khảo: kênh Jessie Luong (youtube.com/@jessieluongchannel), học từ 13 vlog, theo các video **gần đây nhất**
 (2023–2026: không có thẻ nhận diện kênh, đoạn ghép ngắn, nhanh). Chỉ học cấu trúc và nhịp — không chép hình, nhạc, thẻ của kênh.
 1. **Mở đầu = đoạn GHÉP** (`plan.json` → `intro`): cảnh đắt nhất **cả chuyến**, mỗi cảnh câm 2 phách nhạc.
-   **Độ dài KHÔNG cố định — do chất liệu và cảm xúc quyết định** (người dùng chốt 2026-11-04, sau intro Haruku 16,7 s toàn cảnh
-   selfie giống nhau): chỉ nhận cảnh THẬT SỰ khác (khác nơi / người / hành động); cảnh gần giống cảnh đã có thì bỏ dù intro rất
+   **Độ dài KHÔNG cố định — do chất liệu và cảm xúc quyết định** (intro Haruku 16,7 s toàn cảnh selfie giống nhau là ví dụ sai): chỉ nhận cảnh THẬT SỰ khác (khác nơi / người / hành động); cảnh gần giống cảnh đã có thì bỏ dù intro rất
    ngắn. Câu nói là xương sống: 1 câu đắt nhất, câu thứ 2 chỉ khi nó tăng cảm xúc. Thước đo: bỏ cảnh nào mà intro không yếu
    đi → bỏ. Gợi ý: chất liệu chủ yếu tự quay mặt nói → 1 câu + tiêu đề trên 1–2 cảnh ≈ 5–8 s; vlog nhiều nơi, nhiều người ≈ 10–20 s.
-   Thẻ tiêu đề nằm ngay trên đoạn ghép, ở dải cảnh câm (vlog_edl.py tự đặt, không chồng phụ đề). 1–2 cảnh `voice` giữ tiếng
+   Thẻ tiêu đề nằm ngay trên đoạn ghép, ở dải cảnh câm (vlog_edl.py tự đặt, không chồng phụ đề) — chỉ ghi tên chương trình / tên nơi
+   hoặc lời nguyên văn, không câu Claude tự viết. 1–2 cảnh `voice` giữ tiếng
    thật + phụ đề nguyên văn: câu đắt nhất làm cảnh đầu (≈ 3 s), câu cảm xúc làm cảnh cuối. Nhạc riêng cho intro: `intro.music` =
    `intro-soi` (chuyến vui) | `intro-lang` (hành hương, từ thiện, ý nghĩa); cảnh câm tự dài 2 phách, cắt đúng nhịp. Claude **tự chọn kiểu theo nội dung**:
    - kiểu 1 (mặc định, đa số): ghép TRƯỚC → lời chào;
@@ -148,7 +148,7 @@ Chuẩn tham khảo: kênh Jessie Luong (youtube.com/@jessieluongchannel), học
    **Đa dạng là bắt buộc:** cảnh nơi chốn / toàn cảnh, người trong đoàn, hành động cao trào, biểu tượng của nơi đến (tượng, rồng,
    bảng tên điện), cảm xúc — KHÔNG quá 2 cảnh mặt người quay cận (vlog tự quay toàn selfie dễ ra 9 cảnh giống nhau). Chọn từ
    `check/segs/` hoặc tờ 1 khung/giây của clip; mỗi cảnh vẫn xuất hiện lại ở đúng chỗ trong video. Chụp `stills.mjs` từng cảnh để soát.
-   - kiểu 3 (học 7/20 vlog Việt — Lâm Vlog, Bắp Sam, SAM, Thương Lê): video có câu nêu NHIỆM VỤ / THỬ THÁCH / LỜI HỨA ("hôm nay
+   - kiểu 3 (7 trên 20 vlog Việt đã học — Lâm Vlog, Bắp Sam, SAM, Thương Lê): video có câu nêu NHIỆM VỤ / THỬ THÁCH / LỜI HỨA ("hôm nay
      mình sẽ…", "24 giờ…", luật + phần thưởng) → câu đó lên đầu (0–5 s) + `pow` tiền cược nguyên văn (thời gian, số lượng, giải), rồi mới hành trình.
    Cảnh câm đoạn ghép: 2 phách bài intro ≈ 1,06 s — đúng nhịp 1,0–1,9 s của vlog Việt top (Khoai Lang Thang, Quang Linh, Kẻ Du Mục).
    **Flycam / cảnh rộng nhất** của chuyến ưu tiên làm cảnh đầu đoạn ghép và cảnh mở mỗi nơi mới (Khoai Lang Thang Cao Bằng, Quang Linh).
@@ -157,31 +157,31 @@ Chuẩn tham khảo: kênh Jessie Luong (youtube.com/@jessieluongchannel), học
 3. **Hành trình theo thời gian:** mỗi điểm = tới nơi → gọi tên (lời + thẻ địa điểm) → xem/thử → phản ứng; đoạn đi đường không lời
    tua thành đoạn chuyển chạy nhạc (vlog_edl.py tự làm); giữ đoạn đùa với người trong đoàn.
 3b. **Hiệu ứng theo lời (`fx`, bắt buộc với vlog nói chuyện nhiều):** chữ to `pow` trích nguyên văn cụm đắt (≤ 4–5 chữ), `chips`
-   khi lời liệt kê, `zoom` dồn ở câu đắt / bật mí, một `action` ở câu kêu gọi làm theo. ~1 hiệu ứng / 20–30 s; chữ không che mặt,
-   không đè phụ đề (tự canh LOW_Y). Chụp `stills.mjs` từng hiệu ứng trước render.
-   **Âm lượng:** giọng mỗi clip đã cân về −20 LUFS lúc tạo dự án; nhạc khi có lời tự thấp hơn giọng 20 LU — không chỉnh tay.
+   khi lời liệt kê, `zoom` dồn ở câu đắt / bật mí, một `action` ở câu kêu gọi làm theo. Mật độ theo nội dung (bố cục tự cân), vài
+   kiểu hợp nhất; chữ không che mặt, không đè phụ đề (tự canh LOW_Y). Chụp `stills.mjs` từng hiệu ứng trước render.
+   **Âm lượng:** giọng mỗi clip đã cân về −20 LUFS lúc tạo dự án; nhạc theo chuẩn âm lượng chung (khối 09) — không chỉnh tay.
 4. **Kết bằng lời của chính người quay** (20–40 s): tổng kết chuyến → cảm xúc / lời khuyên → hẹn lần sau → chào; cảnh toàn đẹp
    nhất của nơi đến ở cuối, rồi mới tới màn chốt CTA. Xếp clip có câu tổng kết xuống cuối `clips` (theo thời gian nếu nó ở cuối);
    không có thì kết bằng cảnh toàn đẹp nhất — không viết lời tổng kết thay.
 
 ### 3. Cấu trúc chương trình
-**Thời lượng do nội dung quyết định** (người dùng chốt) — không có tỉ lệ hay con số mặc định. Giữ MỌI cảnh rõ nét, có nội dung,
+**Thời lượng do nội dung quyết định** — không có tỉ lệ hay con số mặc định. Giữ MỌI cảnh rõ nét, có nội dung,
 không trùng; chỉ bỏ đoạn hỏng (quay trong túi/đen xì, rung nhoè, quay sàn/tay, cảnh không rõ gì), đoạn trùng (cùng cảnh/cùng lời
 quay lại), chờ đợi thừa. Kết quả có thể chỉ còn 50% tổng nguồn (nhiều cảnh hỏng) hoặc gần 100% (cảnh nào cũng rõ, không trùng).
 Đây là GHÉP, không phải highlight: không rút gọn thành clip ngắn trừ khi người dùng yêu cầu. Ghi trong kế hoạch tổng nguồn →
 tổng video và lý do bỏ từng phần.
 Mạch (chọn phần hợp với độ dài và nội dung):
-1. **Teaser 3–4 s**: khoảnh khắc đắt nhất (thường là cảm xúc + câu nói hay) + thẻ "TẬP NÀY CÓ GÌ?" + chữ nhấn.
-2. **Tiêu đề 2,5–3 s**: nền là một clip làm mờ (`grade: 'title'`), tên chương trình + 1 dòng phụ. whoosh + boom + sting.
-3. **2–4 "vòng" — CHỈ vlog THỬ THÁCH/game** (David duyệt 2026-11-04: 0/12 vlog du lịch Việt top có thẻ vòng; vlog du lịch dùng
-   nhãn địa điểm `location` + chương YouTube `chapters.py`), mỗi vòng mở bằng thẻ `round` (số viền 01/03 + tên vòng) — chia theo diễn biến thật
+1. **Teaser 3–4 s**: khoảnh khắc đắt nhất (thường là cảm xúc + câu nói hay) + chữ nhấn nguyên văn. Không thẻ "TẬP NÀY CÓ GÌ?".
+2. **Tiêu đề 2,5–3 s**: nền là một clip làm mờ (`grade: 'title'`), tên chương trình + 1 dòng phụ trích lời hoặc tên nơi. whoosh + boom + sting.
+3. **2–4 "vòng" — CHỈ vlog THỬ THÁCH/game** (0/12 vlog du lịch Việt top có thẻ vòng; vlog du lịch dùng nhãn địa điểm `location`
+   + chương YouTube `chapters.py`), mỗi vòng mở bằng thẻ `round` (số viền 01/03 + tên vòng) — chia theo diễn biến thật
    (đến nơi → gặp nhân vật → khoảnh khắc chính → …), không bịa sự kiện.
 4. **Replay** khoảnh khắc cảm xúc nhất: phát chậm 0,4×, tắt tiếng gốc, `grade: 'replay'`, tiếng rewind.
-5. **Kết 3–4 s**: chúc mừng/tổng kết + lời mời theo dõi, pháo giấy, tada.
+5. **Kết**: lời tổng kết của chính người quay (mục 2d.4) → màn chốt nguyên văn; pháo giấy, tada khi tông vui. Không lời mời do Claude viết.
 
 Đoạn đi lại/chờ đợi: tua 1,5–1,8×. Đoạn không lời mà cần nối: tua nhanh, tắt tiếng, whoosh.
 
-**Không hiện ghi chú kỹ thuật lên video** (người dùng đã yêu cầu): không nhãn tốc độ ("×1,6", "TUA NHANH", "×0,5"),
+**Không hiện ghi chú kỹ thuật lên video** (luat-chung mục 4): không nhãn tốc độ ("×1,6", "TUA NHANH", "×0,5"),
 không "SLOW-MO"/"Xem chậm", không thông số máy quay/khung hình. Tua nhanh, phát chậm cứ làm — người xem tự cảm nhận;
 chữ trên màn hình chỉ dành cho nội dung (lời nói, cảm xúc, tên, địa điểm). Thẻ REPLAY giữ được vì là yếu tố chương trình.
 
@@ -201,28 +201,29 @@ chữ trên màn hình chỉ dành cho nội dung (lời nói, cảm xúc, tên,
 | Mọi lời nói nghe rõ | phụ đề `SUB`, từ khoá tô màu nhấn (cụm nhiều chữ được); đúng chính tả; câu không nghe rõ thì **bỏ**, không đoán. **Kiểu phụ đề = chuẩn chung `subStyle.js`** (giống hệt chế độ 1 video: hộp nền tối, đáy vùng an toàn, giãn dòng 1,28) — không tự viết kiểu riêng |
 | Chuyển đoạn | chớp trắng tự động + whoosh ở chuyển cảnh lớn |
 
-Mật độ: cứ 3–5 s một điểm nhấn; không để 2 chữ to chồng nhau; chữ to và thẻ vòng không đè logo góc (`hud`
+Mật độ theo nội dung, vài kiểu hợp nhất (luat-chung mục 0); không để 2 chữ to chồng nhau; chữ to và thẻ vòng không đè logo góc (`hud`
 ở y≈228, ẩn khi có replay). Mọi chữ trong vùng an toàn x 70–900, y 210–1420.
 
-### 4b. Chuẩn chung với chế độ 1 video (người dùng chốt: "khớp 100%")
+### 4b. Chuẩn chung với chế độ 1 video ("khớp 100%")
 - Phụ đề: `src/subStyle.js` (new_montage.sh chép từ remotion-template — MỘT nguồn; sửa kiểu phụ đề chỉ ở đó).
 - Chữ to nhiều dòng: chừa chỗ dấu theo cỡ chữ (`Rise`: 0,5 em trên / 0,32 em dưới), giãn dòng 1,12–1,14, khe giữa dòng 0,24 em.
-- Tối giản như chế độ 1 video: ~1 hiệu ứng / 15–20 s, chỉ những điểm nhấn có nội dung (tiêu đề, địa điểm, trích dẫn).
-- **Màn hành động + màn chốt** (người dùng chốt, như chế độ 1 video): lớp phủ `{type: 'action', start, end, quote, doneAt}` khi
-  người nói nêu việc người xem làm được (phụ đề tự ẩn trong cảnh đó); màn chốt TỰ có ở 4 s cuối (cả hình lùi vào khung) — câu tự sáng tạo theo
-  nội dung (khối 08 + luat-chung 1a) ghi vào `CTA = {text, kind}` trong edl.js. Lớp `outro` kiểu game show nếu dùng phải kết thúc trước màn chốt.
-- Trích dẫn clip minh hoạ trong khung bo góc (`cite()`) — người dùng đã khen chuẩn, giữ nguyên.
-- **Nâng khung** (người dùng chốt): đoạn có người/vật chính nằm nửa dưới → đẩy hình lên, đáy lấp hình mờ, mép chuyển mềm
+- Chỉ những điểm nhấn có nội dung (tiêu đề, địa điểm, trích dẫn) — bố cục tự cân như chế độ 1 video.
+- **Màn hành động + màn chốt** (như chế độ 1 video): lớp phủ `{type: 'action', start, end, quote, doneAt}` khi người nói nêu việc
+  người xem làm được (phụ đề tự ẩn trong cảnh đó); màn chốt TỰ có ở 4 s cuối (cả hình lùi vào khung) — câu = nguyên văn câu người quay
+  nói ở cuối (khối 08), ghi vào `CTA = {text, kind}` trong edl.js. Lớp `outro` kiểu game show nếu dùng phải kết thúc trước màn chốt.
+- Trích dẫn clip minh hoạ trong khung bo góc (`cite()`) — David đã khen chuẩn, giữ nguyên.
+- **Nâng khung**: đoạn có người/vật chính nằm nửa dưới → đẩy hình lên, đáy lấp hình mờ, mép chuyển mềm
   (`Show.jsx` → `Clip`). Sau khi viết edl.js chạy `python3 -I $SKILL/scripts/lift.py "$P"` → `src/lift.js`, rồi **`python3 -I $SKILL/scripts/overlay_guard.py "$P"`**
-  → `src/guard.js` (lớp chữ che mặt/thân trên tự thành toàn màn hình ≤ 4 s; tít ghim che đầu tự ẩn — luat-chung 4; chạy lại sau mỗi lần sửa edl.js) (tự tính theo mặt, đọc
+  → `src/guard.js` (lớp chữ che mặt/thân trên tự thành toàn màn hình, dài theo nội dung; tít ghim che đầu tự ẩn — khối 05; chạy lại sau mỗi lần sửa edl.js) (tự tính theo mặt, đọc
   bảng `check/faces/lift.md`). Đoạn không có mặt (quay đồ vật, cầu thang, khay đồ uống…) mà vật chính thấp → đặt tay
   `lift: {y: 150–250}` trong đoạn ở edl.js (đặt tay thắng tự tính). Không nâng: đoạn tiêu đề, `fit: 'blur'`, trích dẫn.
 
 ### 5. Phong cách
-- Có `--style-from <dự án cũ>`: đọc `motion/src/theme.js` (+ fonts, components) của dự án đó → chép đúng màu, font,
-  kiểu chuyển động vào `C/HEAD/BODY` trong `Show.jsx` và `fonts.js`. Người dùng muốn các video "cùng một nhà sản xuất".
+- Chữ ký nhận diện (nhấn cam #FF7A45, Barlow Condensed + Be Vietnam Pro, thành phần cố định) giữ ở mọi vlog.
+- Có `--style-from <dự án cũ>`: đọc `motion/src/theme.js` (+ fonts, components) của dự án đó → chép phần ngoài chữ ký (nền, màu phụ,
+  kiểu chuyển động) vào `C` trong `Show.jsx` và `fonts.js`, để các video "cùng một nhà sản xuất".
 - Có `--ref <video mẫu>`: phân tích như `style-analysis.md` rồi áp vào cùng chỗ.
-- Không có gì: giữ mặc định của template (thẻ tối, nhấn cam #FF7A45, Barlow Condensed + Be Vietnam Pro) — đã duyệt.
+- Không có gì: giữ mặc định của template (thẻ tối).
   Phong cách game show sặc sỡ (vàng/hồng, chữ viền đen, emoji) đã thử và bị thay bằng bộ mặc định cho đồng bộ.
 - Không dùng emoji trong chữ khi phong cách mẫu không dùng.
 
@@ -261,8 +262,7 @@ cd "$P/motion" && node render-show.mjs        # chạy nền, ~3–9 phút/phút
 ```
 Sau đó: cắt 12–15 khung trải đều thành dải xem lại; `ffmpeg -i video-final.mp4 -af ebur128=peak=true -vn -f null -`
 (I ≈ −14…−15 LUFS, đỉnh ≤ −1,4 dB). Nhạc lấy từ kho nhạc kênh theo tuyến nội dung (khối 09: plan.json/edl `tuyen`, bài + mức cân ở hồ sơ chung `nhac`) — Claude tự chọn,
-không hỏi David và không nói "nhạc có thể nghe điện tử" (câu cũ của thời nhạc tự tổng hợp, bỏ 08/11/2026). `MUSIC.tracks` viết tay
-không ghi `gain` thì Show.jsx tự lấy `nhac.muc`; đừng ghi `gain: 1`.
+không hỏi David; mức nhạc theo khối 09.
 
 ### 9. Phát hành, giao + sửa theo góp ý
 Vlog đăng YouTube > 3 phút: `"ytEnd": 20` trong plan.json (màn kết YouTube 15–20 s sau thẻ nhận diện) + `chapters.py` (chương theo
@@ -271,7 +271,7 @@ tên phần, không tự viết lời) — hỏi David trong kế hoạch ghép.
 Phát hành theo `../../luat-chung.md` mục 7: `phat-hanh/phat-hanh.md` (3 tiêu đề, mô tả, mốc khung bìa) + vlog xuất **ngang** VÀ đăng YouTube (hỏi lúc đầu) → 2 thumbnail
 `zsh $SKILL/scripts/thumbnail.sh "$P" c<N>@<giây> "<DÒNG 1>" "<DÒNG 2>" 1|2` (khung cảm xúc mạnh nhất cả chuyến, mặt rõ — thường
 là cảnh đắt nhất của đoạn ghép mở đầu); chép `dung-video/khoi/16-so-lieu/mau-so-lieu.md` → `$P/so-lieu.md`.
-Gửi `video-final.mp4` (+ thumbnail nếu có) (SendUserFile), bảng mạch chương trình theo mốc thời gian, đoạn đã bỏ và lý do, chỗ tiếng bị
+Gửi `video-final.mp4` (+ thumbnail nếu có) (SendUserFile), bảng mạch chương trình theo mốc thời gian, các đoạn bỏ và lý do, chỗ tiếng bị
 ghép từ nơi khác. Góp ý kiểu "bỏ đoạn 0:13–0:16" → tra mốc timeline ra `id` đoạn trong `SEGS`, xoá đoạn đó cùng
 phụ đề/lớp phủ/SFX gắn với nó, render lại.
 
@@ -285,9 +285,9 @@ Một clip duy nhất `c1` = video gốc dài; `cat-highlight-video/scripts/hl_e
   chip viền cam; đoạn hình `grade: 'lang'` (màu dịu). `soi` = như vlog game show.
 - `MUSIC.tracks = [{f, a, b, gain, from?}]`: mỗi bài (`public/sfx/<f>.mp3`, lặp nếu ngắn) chạy một khoảng, chồng mờ 0,8 s ở mối,
   vẫn hạ khi có phụ đề theo `base/duck/loud`. Không có `tracks` → `music.wav` như cũ.
-- `CTA.text` = câu kêu gọi NGUYÊN VĂN (luật highlight), không phải câu Claude tự viết.
+- `CTA.text` = câu kêu gọi NGUYÊN VĂN (luật highlight).
 - `ENDCARD = {title, speaker, clip, at, len}` → `EndCard`: ~1,8 s **nối thêm sau** `TOTAL` (Root cộng vào thời lượng): ảnh đứng
-  hình người nói (giây `at` của `clip`) làm tối + nút phát đỏ + tên tập gốc (chữ to) + tên người nói. Chỉ chữ của bản gốc.
-  `null` (vlog thường, kiểu vòng lặp) → không có.
+  hình người nói (giây `at` của `clip`) làm tối + "Bản đầy đủ trên kênh …" + tên tập gốc + tên người nói; không nút phát. Khuôn tự
+  bỏ ở video dọc ngắn (`THE_CUOI`, nhan-dien-chung mục 1). `null` (vlog thường) → không có.
 - Không dùng `teaserTag`, `title`, `round`, `hud`, `outro` (chữ tự viết) trong highlight.
 

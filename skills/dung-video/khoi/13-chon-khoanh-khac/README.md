@@ -9,7 +9,7 @@
 **File thật (code, một bản duy nhất):**
 - `cat-highlight-video/scripts/{new_highlight.sh,loud_check.py,cut_highlight.py,pauses.py,hl_edl.py,hl_apply.py}`
 
-## Cách làm (chuyển nguyên văn từ SKILL.md cũ — ngày 2026-11-04)
+## Cách làm
 
 ### 0. Nhận loại video gốc (quyết định cách dựng)
 | Video gốc | Nhận ra | Highlight ra | Dựng bằng |
@@ -17,7 +17,7 @@
 | **Tự quay có người nói** (talking-head, ngang hoặc dọc) | thấy người trong hình; chưa có chữ/phụ đề đốt sẵn | hình người nói, khung dọc bám người nói, phủ hiệu ứng như skill gốc | bước 7A — `video-style-edit` |
 | **Podcast / video toàn đồ hoạ** (sân khấu, sóng âm, thẻ — vd. bản dựng của `podcast-style-edit`) | không có người; đồ hoạ, phụ đề, thanh thời gian đốt sẵn | podcast đồ hoạ **dọc** dựng lại từ tiếng gốc, cùng phong cách + tên tập (`STAGE`) + người nói của bản gốc | bước 7B — `podcast-style-edit` |
 | **Video đã dựng có người nói** (bản `video-style-edit` đã phủ chữ/phụ đề) | có người + chữ/phụ đề đốt sẵn | như hàng 1, nhưng dựng từ **bản sạch** `davinci/media/video_goc.mp4` của dự án gốc (không chồng 2 lớp chữ) | bước 7A |
-| Không rõ / đã đốt chữ mà không tìm được dự án gốc | — | **hỏi người dùng** bản thô hoặc thư mục dự án; không phủ thêm phụ đề lên phụ đề | — |
+| Không rõ / đã đốt chữ mà không tìm được dự án gốc | — | **hỏi David** bản thô hoặc thư mục dự án; không phủ thêm phụ đề lên phụ đề | — |
 
 Cắt thẳng hình đồ hoạ ngang rồi đặt vào khung dọc là **không đạt** (chữ nhỏ, bố cục ngang vỡ, thanh thời gian hiện thời lượng
 bản dài) — luôn dựng lại.
@@ -57,7 +57,7 @@ ngay…) kèm mốc; chấm theo 4 câu trước, rồi theo câu mở (mục 6 
 2. 1–2 câu DAUHIEU / GOCRE nối tự nhiên với câu chạm — là ý chính của cả video, không phải chi tiết phụ.
 3. Đúng **một** việc HANHDONG — ưu tiên việc làm được ngay khi đang xem; là việc lời kêu gọi chính nhắm tới. Bỏ nhãn "bước 1"
    nếu clip không có các bước kia (bắt đầu câu ở chữ sau nhãn).
-4. **Lời kêu gọi chính** — bắt buộc; thêm câu mạnh nhất về cảm xúc + KETQUA nếu chúng làm cú chốt mạnh hơn.
+4. **Lời kêu gọi chính** — nếu clip có; thêm câu mạnh nhất về cảm xúc + KETQUA nếu chúng làm cú chốt mạnh hơn.
 5. Chỉ thêm CHUYEN/BUOC khi thiếu nó thì hành động không hiểu được, và vẫn trong giới hạn thời gian.
 
 6. **Câu mở đầu** chấm theo: bất ngờ / kết quả lớn ("họ sống thọ… không bị bệnh tật nhiều") = **tiền cược** (sinh mạng, tiền,
@@ -80,7 +80,7 @@ cuối. Chọn MỘT kiểu hợp mạch nội dung (ghi kiểu + lý do vào ke
 | **Thách thức mở đầu** | Câu kêu gọi/việc cần làm LÀ câu chạm (0–3 s) → ý chính giải thích vì sao → chốt lại bằng kết quả | Câu kêu gọi tự nó gây tò mò hoặc thách thức ("Trong 48 giờ, hãy viết ra…") |
 | **Giao việc sớm, chốt cuối** | Chạm → ý chính → giao việc sớm (~8–15 s) → kết quả → các câu kêu gọi dồn thành cao trào cuối | Mặc định cho video dạy cách làm: người rời sớm vẫn kịp nhận việc, người ở lại nhận lời mời bình luận |
 | **Cao trào cuối** | Chạm → dấu hiệu → gốc rễ dồn nén → hành động + kêu gọi ở đỉnh cảm xúc cuối | Video kể chuyện, cảm xúc tăng dần; câu chạm đã đủ giữ người xem |
-| **Vòng lặp** | Câu cuối nối ngược về câu chạm (câu hỏi cuối được câu đầu trả lời, hoặc câu cuối lặp ý câu đầu — Tony Robbins "3 chữ P", Hormozi) | **Mặc định khi clip ≤ 35 s và có cặp câu như vậy**; nền tảng tự phát lại — tăng lượt xem lại. Thẻ cuối (luật 11) bỏ ở kiểu này để vòng lặp liền |
+| **Vòng lặp** | Câu cuối nối ngược về câu chạm (câu hỏi cuối được câu đầu trả lời, hoặc câu cuối lặp ý câu đầu — Tony Robbins "3 chữ P", Hormozi) | **Mặc định khi clip ≤ 35 s và có cặp câu như vậy**; nền tảng tự phát lại — tăng lượt xem lại |
 
 Bất kể kiểu nào:
 - **Câu kêu gọi chính có thể xuất hiện 2 lần** — lời nói một lần ở vị trí đã chọn, và **chữ nguyên văn** của nó ở màn chốt 4 s
@@ -91,12 +91,13 @@ Bất kể kiểu nào:
 - Kiểu nào cũng phải đạt bước 5 (tự đứng được) — đổi chỗ mà câu mất nghĩa thì chọn kiểu khác.
 
 ### 5. Kiểm clip tự đứng được + lằn ranh nội dung
-Đọc nối các câu theo thứ tự đã bố trí như người chưa xem bản đầy đủ. **Người xem clip là người xem độc lập (David chốt 2026-11-06):** xem một mình phải biết hoàn cảnh là gì và clip nói gì; thiếu hoàn cảnh thì thêm câu nguyên văn nêu hoàn cảnh, không có thì bỏ clip. **Chấm riêng từng clip** theo câu hỏi gốc của khối 00: giúp làm chủ bản thân hoặc làm chủ công việc thêm một bước; đoạn chỉ nói về cảm xúc thì không đạt, dù câu nghe đắt. Loại/thay câu khi:
+Đọc nối các câu theo thứ tự đã bố trí như người chưa xem bản đầy đủ. **Người xem clip là người xem độc lập:** xem một mình phải biết hoàn cảnh là gì và clip nói gì; thiếu hoàn cảnh thì thêm câu nguyên văn nêu hoàn cảnh, không có thì bỏ clip. **Chấm riêng từng clip** theo câu hỏi gốc của khối 00: giúp làm chủ bản thân hoặc làm chủ công việc thêm một bước; đoạn chỉ nói về cảm xúc thì không đạt, dù câu nghe đắt. Loại/thay câu khi:
 - Có từ trỏ chỗ khác: "ở trên", "như mình vừa nói", "bước 2" mà không có bước 1, "cái này"/"phương pháp này" chưa nói là gì.
 - Hành động không làm được nếu không xem bản đầy đủ; câu cắt giữa chừng, mất chủ ngữ hoặc mất ý; đổi chỗ làm lệch nghĩa.
 
 Loại mọi câu dính **lằn ranh** (`../luat-chung.md` mục 1). Câu bị loại mà là câu chủ chốt → báo David, **không tự sửa lời**.
-Video không có câu HANHDONG hoặc KEUGOI dùng được → **dừng, báo người dùng** (gợi ý đoạn gần nhất); không thêm chữ thay lời.
+Clip không có câu HANHDONG hoặc KEUGOI dùng được → không dừng: kết ở câu chốt ý, clip vẫn phải đạt `mang_ve`
+(`cat-highlight-video` luật 4); không thêm chữ, không ghép câu kêu gọi từ chỗ khác.
 
 ### 6. Cắt ghép + tự kiểm
 Viết `$P/phuong-an.json` — mỗi clip một mục trong `options` (A, B, C…), câu **theo thứ tự phát trong clip**; mốc `start`/`end` = chữ đầu / chữ cuối của câu (tra `check/goc/words.srt`),

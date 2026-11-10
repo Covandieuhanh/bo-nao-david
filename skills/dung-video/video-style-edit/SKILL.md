@@ -13,8 +13,8 @@ Người dùng đưa **video gốc** (thường dọc 9:16, tiếng Việt) và 
 câu nói; David không cần bản cho app chỉnh sửa (CapCut/DaVinci). Cách làm cốt lõi: **viết code hoạt hình** (Remotion/React) theo token phong cách, gắn cảnh vào
 mốc lời Whisper, render clip nền trong suốt rồi ghép lên video gốc.
 
-**Hỏi một lần ở đầu** (`hoi-chuyen-gia`, sau khi chép lời): gộp mọi điểm cần chọn — chữ bìa, câu chốt, cảnh minh hoạ chính, khung xuất —
-mỗi điểm 2–3 gợi ý. David "ok" → chạy một mạch; giữa chừng chỉ dừng khi gặp một trong 6 tín hiệu. Giao bản cuối xong, nhận góp ý và
+**Hỏi một lần ở đầu** (`hoi-chuyen-gia`, sau khi chép lời): gộp mọi điểm cần chọn — chữ bìa, cảnh minh hoạ chính, khung xuất, có đăng
+YouTube không — mỗi điểm 2–3 gợi ý. Phần quy trình đã định (màn chốt nguyên văn, nhạc theo tuyến, nhận diện…) không hỏi. David "ok" → chạy một mạch; giữa chừng chỉ dừng khi gặp một trong 6 tín hiệu. Giao bản cuối xong, nhận góp ý và
 sửa đúng cảnh được nêu (không tự render lại — `thoi-quen-lam-viec.md` mục 3).
 
 ## Luật riêng (kiểm lại trước khi giao)
@@ -22,13 +22,14 @@ sửa đúng cảnh được nêu (không tự render lại — `thoi-quen-lam-v
 Luật chung của video ở `../luat-chung.md`: chữ nguyên văn (1), video dài không cắt (2), không ghi chú kỹ thuật trên video (4), hình,
 bộ nhận diện, phát hành. Dưới đây chỉ là luật RIÊNG của skill này.
 
-1. **Motion graphic kể chuyện, tự do sáng tạo** (David chốt 09/11, khối 07 mục đầu): giữ nền, màu chủ đạo, kiểu vẽ biểu tượng; còn lại AI sáng tạo theo video — một hình có thể diễn tả 1–2 ý hoặc cả video, ý quay lại thì vẽ tiếp lên hình đã có (mạch hình, cảnh tự vẽ `ve`). Không con số cố định.
-2. **Mở đầu `hook`** — **không làm mặc định** (David 07/11, khối 06): chỉ khi David yêu cầu, chữ nguyên văn. `project.js` ghi
+1. **Motion graphic kể chuyện, tự do sáng tạo** (khối 07 mục 1): chỉ giữ chữ ký nhận diện; còn lại AI sáng tạo theo video — một hình có
+   thể diễn tả 1–2 ý hoặc cả video, ý quay lại thì vẽ tiếp lên hình đã có (mạch hình, cảnh tự vẽ `ve`). Không con số cố định.
+2. **Mở đầu `hook`** — **không làm mặc định** (khối 06): chỉ khi David yêu cầu, chữ nguyên văn. `project.js` ghi
    `topic: '<CHỦ ĐỀ>'` (≤ 3 chữ, trích lời) cho dấu góc + thẻ cuối.
-3. **Bố cục tự cân** (David chốt 07/11; khối 07 + `../trinh-bay/bo-cuc.md`): danh mục có sẵn (dùng khi hợp, không bắt buộc — cần hình riêng thì viết cảnh tự vẽ `ve`) — người + phụ đề, `nhan`,
+3. **Bố cục tự cân** (khối 07 + `../trinh-bay/bo-cuc.md`): danh mục có sẵn (dùng khi hợp, không bắt buộc — cần hình riêng thì viết cảnh tự vẽ `ve`) — người + phụ đề, `nhan`,
    `bocuc` (`the-canh` thẻ cạnh mặt · `o-nguoi` người vào ô bo góc + nội dung · `chuong` màn chương), `illus` / `diagram` toàn màn hình.
    Hợp nội dung, người xem dễ nhận; dọc mỗi lúc ít thứ. **Điểm nhấn trên người** (`nhan`): zoom dồn / làm tối viền / chữ nhấn hay biểu
-   tượng cạnh mặt ở câu đắt, không che mặt. Mọi video đều có motion graphics trộn nhiều loại — "dựng nhẹ" vẫn có.
+   tượng cạnh mặt ở câu đắt, không che mặt. Mọi video đều có điểm nhấn — "dựng nhẹ" vẫn có — nhưng chỉ vài kiểu hợp nội dung nhất.
 4. **Màn hành động** (`action`: biểu tượng + tick + `label` cụm việc nguyên văn) đúng lúc người nói giao việc cụ thể.
    **Màn chốt** (`cta`, cuối mọi video): video lùi vào khung bo góc, chữ = **nguyên văn câu David nói cuối video** (luat-chung 1).
    "Vấn đề / Kết quả" và "gỡ" chỉ lên video khi David tự nói trong video; không thì chỉ ở bài đăng. Không tự đặt câu hỏi kêu gọi,
@@ -36,9 +37,9 @@ bộ nhận diện, phát hành. Dưới đây chỉ là luật RIÊNG của ski
 5. **Làm sạch:** video dài không cắt (luat-chung 2), chỉ sửa chiều hình; video ngắn: cắt thừa đầu/cuối, câu nói lại (giữ lần sau cùng),
    khoảng lặng + tiếng đệm theo hồ sơ; giữ vẫy tay chào cuối.
 6. **Lớp phủ không che mặt** (`face_place.sh`); nhân vật nằm thấp → nâng khung (`lift.py`), mức theo hồ sơ.
-7. Không làm bản cho app chỉnh sửa (DaVinci/CapCut…), không nhắc trong báo cáo — David chỉ dùng bản render cuối (08/11).
+7. Không làm bản cho app chỉnh sửa (DaVinci/CapCut…), không nhắc trong báo cáo — David chỉ dùng bản render cuối.
    Thư mục `davinci/media/` chỉ là tên lịch sử, chứa video nguồn và clip trung gian; dọn sau khi David chốt (bước 12).
-8. **Học từ 20 video nói trước camera Việt** (`references/hoc-tu-20-video-noi-truoc-camera-vn.md`, David duyệt 04/11):
+8. **Học từ 20 video nói trước camera Việt** (`references/hoc-tu-20-video-noi-truoc-camera-vn.md`):
    - **Nhãn số danh sách** (`listItem` {n, of?, text}): người nói đếm ≥ 3 ý → mỗi ý một nhãn đúng lúc nói, text nguyên văn cụm việc.
    - **Thẻ tóm tắt để lưu**: video danh sách / hướng dẫn → `card` variant `steps` ngay trước màn chốt, liệt kê các ý nguyên văn (bỏ bớt chữ).
    - **Thẻ chương + chương YouTube** cho video dài có ý lớn: `CHAPTERS` trong scenes.js (mốc + tên trích lời) → `chapters.py`.
@@ -57,9 +58,9 @@ khi không rõ file nào là mẫu. "Giống video trước" → lấy token pho
 
 - **Video gốc**: đường dẫn file (chế độ ghép: nhiều file).
 - **Video mẫu**: file video hoặc bản quay màn hình. Chỉ có link YouTube/TikTok → tải bản 720p **chỉ để học** vào thư mục tạm, học xong
-  xoá (David chốt 08/11, `../trinh-bay/README.md` mục 4); hoặc 4–8 ảnh chụp các cảnh tiêu biểu. Không có mẫu → phong cách mặc định của template (đã duyệt).
-- Yêu cầu thêm của người dùng (thông điệp chính, tên, chỗ muốn nhấn) luôn ưu tiên hơn suy luận.
-- **Khung xuất**: mặc định cùng khung video gốc; chỉ đổi khi người dùng nói:
+  xoá (`../trinh-bay/README.md` mục 4); hoặc 4–8 ảnh chụp các cảnh tiêu biểu. Không có mẫu → phong cách mặc định của template. Học phong cách mẫu không đụng chữ ký nhận diện (khối 10).
+- Yêu cầu thêm của David (thông điệp chính, tên, chỗ muốn nhấn) luôn ưu tiên hơn suy luận.
+- **Khung xuất**: mặc định cùng khung video gốc; chỉ đổi khi David nói:
 
 | Gốc → xuất | Cách làm | Ở đâu |
 |---|---|---|
@@ -83,7 +84,7 @@ khi không rõ file nào là mẫu. "Giống video trước" → lấy token pho
 | 11 | Phát hành: tiêu đề, khung bìa, màn kết/chương/teaser (YouTube video dài), thumbnail (ngang), số liệu | [15](../khoi/15-phat-hanh/README.md) · [08](../khoi/08-ket-thuc/README.md) · [14](../khoi/14-thumbnail/README.md) · [16](../khoi/16-so-lieu/README.md) | `teaser.py` · `chapters.py` · `thumbnail.sh` |
 | 12 | David chốt bản cuối → dọn file tạm luôn (`--xoa`, không hỏi; chỉ hỏi phần ⏸ đang dở) | [17](../khoi/17-dung-kiem-tra/README.md) | `don_tap.py` |
 
-Bước nhẹ: tới đó nhắc một dòng "bước này nhẹ, bạn có thể đổi mô hình rẻ hơn" — không tự đổi.
+Bước đánh dấu *(bước nhẹ)*: nhắc đổi mô hình rẻ hơn theo `thoi-quen-lam-viec.md` mục 3.
 
 ### Tạo dự án
 
@@ -105,14 +106,14 @@ Tạo `~/Movies/tap-<tên>/2-ban-dai/` (gốc tự đặt vào `tap-<tên>/1-goc
 | hồ sơ lam-video | chạy lại khối dùng khoá đó (bảng khoá trong ho-so/lam-video.md) |
 
 ## Tiêu chí đạt (soát trước khi giao)
-- Không thẻ tít mở đầu trừ khi được yêu cầu · có trộn nhiều loại điểm nhấn (người + phụ đề / `nhan` / cảnh toàn màn hình), không che mặt, không chữ to tự do đè người
+- Không thẻ tít mở đầu trừ khi được yêu cầu · có điểm nhấn, vài kiểu hợp nội dung, video không rối · không che mặt, không chữ to tự do đè người
 - Bố cục hợp nội dung (xem stills: người / ý có rõ không) · phụ đề đúng chữ, không bị đè · tiếng Việt đủ dấu · không gì lọt vùng đỏ
-- Màn chốt nguyên văn + thẻ cuối (video dọc ngắn: màn chốt trên hình, không thẻ cuối, không thanh thời gian — luat-chung 5) · (YouTube video dài) màn kết, chương, teaser · thumbnail nếu ngang · phat-hanh.md + so-lieu.md
+- Màn chốt nguyên văn + thẻ cuối (video dọc ngắn: màn chốt trên hình, không thẻ cuối, không thanh thời gian — `../thu-vien-hinh/nhan-dien-chung.md` mục 1) · (YouTube video dài) màn kết, chương, teaser · thumbnail nếu ngang · phat-hanh.md + so-lieu.md
 - Âm lượng theo chuẩn chung, tiếng rè không tăng so nguồn; thời lượng đúng
 
 ## Sửa theo góp ý
 
-Người dùng thường nói kiểu "cảnh 2:08 chữ to quá", "đổi hình thợ hồ", "bỏ cảnh AI". Sửa đúng chỗ trong `scenes.js`/component/ảnh →
+David thường nói kiểu "cảnh 2:08 chữ to quá", "đổi hình thợ hồ", "bỏ cảnh AI". Sửa đúng chỗ trong `scenes.js`/component/ảnh →
 đổi mốc thì chạy lại `python3 -I $SKILL/scripts/face_place.py "$P"` → `node render.mjs <id>` (chỉ cảnh đó) → `render_preview.py` →
 kiểm khung quanh mốc đó. Đổi phong cách toàn bộ → sửa `theme.js`, render lại tất cả.
 "Giữ lại đoạn bị cắt"/"cắt thêm đoạn X" → đổi mốc bản cuối sang mốc thô bằng `segments.json`, sửa `cuts.json`, lưu bản `segments.json`
@@ -138,7 +139,7 @@ Ghi góp ý đúng một chỗ: khối/skill bị ảnh hưởng + một dòng `
 1. Đã hỏi một lần ở đầu, gộp mọi điểm cần chọn; sau "ok" chạy một mạch.
 2. Chữ trên video (kể cả màn chốt) là nguyên văn lời David; không thẻ tít trừ khi được yêu cầu.
 3. Video dài để nguyên; video ngắn làm sạch mà không mất ý.
-4. Có motion graphics nhiều loại, bố cục tự cân, không che mặt, không gì lọt vùng đỏ.
+4. Có motion graphics hợp nội dung (vài kiểu, không rối), bố cục tự cân, không che mặt, không gì lọt vùng đỏ.
 5. Phụ đề đúng chữ, đủ dấu, không bị đè; âm lượng đạt chuẩn chung.
 6. Đã chụp kiểm đúng các mốc dễ lỗi trước khi giao.
 7. Đủ gói phát hành (tiêu đề, khung bìa, thumbnail nếu ngang, mẫu số liệu); David không phải sửa lại vì trái luật đã chốt.

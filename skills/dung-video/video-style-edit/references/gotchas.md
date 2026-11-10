@@ -36,7 +36,7 @@
 - Wikimedia chỉ cho độ rộng thu nhỏ chuẩn (500, 960, 1280); độ rộng lạ trả 400.
 - Không đưa email/tên người dùng vào User-Agent.
 - Ảnh có người nổi tiếng dễ nhận ra (vd. vận động viên hút xì gà) → bỏ. Clip-art giữa ảnh chụp → lạc tông, bỏ.
-- Ảnh CC BY / BY-SA bắt buộc ghi nguồn → `nguon-anh.txt` để dán vào mô tả bài đăng (người dùng bỏ màn hình 5 s cuối video).
+- Ảnh CC BY / BY-SA bắt buộc ghi nguồn → `nguon-anh.txt` để dán vào mô tả bài đăng (video không có màn nguồn ảnh cuối).
   Cách ghi nguồn này hợp lệ khi video đăng kèm mô tả; nhắc người dùng dán vào mỗi lần đăng.
 
 ## ffmpeg ghép video
@@ -50,10 +50,10 @@
 - 17 clip ProRes ≈ 2 GB — báo người dùng về dung lượng.
 
 ## Làm sạch video gốc (chế độ 1 video)
-- **Video cũ của kênh cũ (David, 08/11/2026)**: hay có **chữ / viền in cứng vào hình** — dải tên tập + ngày + website ở đáy
+- **Video cũ của kênh cũ**: hay có **chữ / viền in cứng vào hình** — dải tên tập + ngày + website ở đáy
   (từ dòng ~902/1080), viền trắng bo góc sát mép (~40 px). Luôn xem 1 khung ở giữa video **cỡ lớn** trước khi dựng; có thì cắt
   khung 16:9 bên trong rồi phóng lại 1920×1080 (`crop=1592:896:200:0` cho dải đáy; `crop=1808:1017:56:31` cho viền), làm TRƯỚC face_place.
-  Màn tít mở đầu cũ ("PODCAST TẬP 4…") + lời chào/giới thiệu kênh cũ → cắt (ngoại lệ "video dài không cắt", luat-chung 2).
+  Màn tít mở đầu cũ ("PODCAST TẬP 4…") + lời chào/giới thiệu kênh cũ → cắt (luat-chung mục 2, làm lại video cũ).
 - **Whisper chép ảo** cả bài một câu ("Hãy subscribe cho kênh Ghiền Mì Gõ…") ở video có tiếng trầm/nhạc mở đầu → clean_analyze.sh tự
   chép lại với tiếng đã lọc (`highpass=f=120,dynaudnorm`); còn ảo thì thêm `-mc 0` (tắt ngữ cảnh) và chép riêng đoạn đầu rồi ghép.
 - Chỉ cắt vài đoạn (lời chào) ở video dài → **không chép lại** bản sạch: `doi_moc_loi.py "$P"` dời lời bản thô sang mốc bản sạch.
@@ -116,7 +116,7 @@
 ## Template dùng chung với podcast
 - `podframe.js`, `Stage.jsx`, `Timeline.jsx`, `FullScreenLand.jsx`, `Icons.jsx`, composition `nen` thuộc skill podcast-style-edit;
   mọi nhánh podcast chỉ bật khi `project.podcast`. Sửa template → chụp thử cả một dự án tự quay (vd. edit-img0499) lẫn một
-  dự án podcast (dọc + ngang) trước khi coi là xong. Đã thử 2026-11-02: dự án tự quay hiển thị như cũ.
+  dự án podcast (dọc + ngang) trước khi coi là xong.
 - `theme.js`: SAFE dọc cố định (bottom 1420, rộng 830) — đúng cho mọi dự án dọc 1080×1920 (clean_apply luôn đưa về khung này).
 
 ## Phụ đề
@@ -157,46 +157,46 @@
 
 ## Highlight (dùng chung template với cat-highlight-video)
 - `motion/src/highlight.js` = null ở mọi dự án thường; có dữ liệu (hl_apply.py) thì phụ đề hiện thanh tập gốc + hiệu ứng tua
-  (Tua.jsx) và render_preview.py trộn `assets/sfx/tua.wav`. Sửa Captions/Timeline → chụp thử cả dự án thường lẫn highlight.
+  (Tua.jsx, chỉ khi bật `--tua`) và render_preview.py trộn `assets/sfx/tua.wav`. Sửa Captions/Timeline → chụp thử cả dự án thường lẫn highlight.
 - render_preview.py: chỉ số đầu vào của màn nguồn ảnh phải đếm sau mọi tiếng hiệu ứng (trước đây cố định n + 1 → sai khi có ting).
 - Highlight ở video người nói: phụ đề lên 40 px nhường thanh tập gốc → dải lớp phủ phải dừng sớm 40 px (CAP_H = 180 trong layout.js
   + face_place.py khi highlight.js có dữ liệu), không thì ô chữ (hook) chạm phụ đề 2 dòng (gặp ở IMG_3196). Sửa CAP_H ở một nơi → sửa cả hai.
-- Highlight người nói dựng bằng montage-template (từ 2026-11-03): sửa `Show.jsx` phần `HL/TONE/MUSIC.tracks/jump` → chụp thử cả
+- Highlight người nói dựng bằng montage-template: sửa `Show.jsx` phần `HL/TONE/MUSIC.tracks/jump` → chụp thử cả
   một dự án vlog thường (`edit-vlog-nhan-xe`) để chắc không đổi gì khi `HL = null`.
 - Nhạc Pixabay to nhỏ rất khác nhau (−9 … −20 LUFS) → `gain` theo bài (hl_edl.py / hl_apply.py `GAIN`), đo lại khi thêm bài.
 - Pixabay chặn tải bằng curl / fetch thẳng CDN (403) — nhờ người dùng bấm "Free download"; không lách.
 
-- new_montage.sh: lưới khung mỗi 13 s — phần dư cuối < 0,6 s (clip 13,17 s) không ra khung nào → ffmpeg lỗi, cả dự án dừng (gặp ở vlog leo núi 48 clip, 2026-11-03) → bỏ phần dư đó.
-- Montage: lớp chữ toạ độ cố định (thẻ địa điểm top 1060…) đè phụ đề 2 dòng → canh đáy vào `LOW_Y` (2026-11-04).
+- new_montage.sh: lưới khung mỗi 13 s — phần dư cuối < 0,6 s (clip 13,17 s) không ra khung nào → ffmpeg lỗi, cả dự án dừng (gặp ở vlog leo núi 48 clip) → bỏ phần dư đó.
+- Montage: lớp chữ toạ độ cố định (thẻ địa điểm top 1060…) đè phụ đề 2 dòng → canh đáy vào `LOW_Y`.
 - Hình lật ngang/lộn ngược lúc rút máy khỏi túi có độ sáng/độ tương phản/YDIF như cảnh đi bộ thường → không dò bằng signalstats;
-  chỉ bắt được bằng mắt trên `check/segs/` (2026-11-04, c13 vlog leo núi).
+  chỉ bắt được bằng mắt trên `check/segs/` (c13 vlog leo núi).
 - Remotion `bundle()` chép CẢ `public/` (clip gốc) vào thư mục tạm mỗi lần chạy, không tự xoá → vlog 48 clip: 205 bản sót, đầy ổ,
-  render kẹt/ENOSPC (2026-11-04). Mọi script render/stills giờ `fs.rmSync(serveUrl)` ở cuối; script tự viết thêm cũng phải dọn.
-- Chữ đè phụ đề lặp nhiều lần (thẻ địa điểm 11-04 sáng, danh sách `chips` 11-04 chiều): nguyên nhân chung = đặt vị trí bằng ƯỚC
+  render kẹt/ENOSPC. Mọi script render/stills giờ `fs.rmSync(serveUrl)` ở cuối; script tự viết thêm cũng phải dọn.
+- Chữ đè phụ đề lặp nhiều lần (thẻ địa điểm, danh sách `chips`): nguyên nhân chung = đặt vị trí bằng ƯỚC
   chiều cao (top cố định, n × cỡ chữ) trong khi chữ dài tự xuống dòng. Luật: lớp chữ KHÔNG BAO GIỜ đặt `top` ước lượng — neo ĐÁY
   vào LOW_Y (translateY(-100%)) để khối mọc lên; chữ một dòng thì tự thu cỡ theo mục dài nhất; Show.jsx chặn cứng mọi lớp không
   toàn màn hình ở mép trên dải phụ đề (lưới an toàn, như layout.js chế độ 1 video / PF.contentBottom podcast). Chụp soát ở CUỐI mỗi
   lớp (vlog_edl.py in sẵn mốc), không chụp lúc mới hiện.
-- Sửa `thu-vien-hinh/` khi dự án ĐÃ tạo: dự án giữ bản chép thật (`cp -RL`) → chép file vừa sửa vào `<dự án>/motion/src/lib/` rồi mới chụp/render (2026-11-05: Illus lưới 2 cột chưa vào dự án VF3).
+- Sửa `thu-vien-hinh/` khi dự án ĐÃ tạo: dự án giữ bản chép thật (`cp -RL`) → chép file vừa sửa vào `<dự án>/motion/src/lib/` rồi mới chụp/render (đã gặp: Illus lưới 2 cột chưa vào dự án VF3).
 
-## Điểm nhấn trên người `nhan` (07/11/2026)
+## Điểm nhấn trên người `nhan`
 - Selfie vừa đi vừa quay: mặt xê dịch 30–40% chiều ngang trong một cảnh → đặt chữ theo trung vị mặt sẽ đè mặt. `nhan_place.py` ghi
   khoảng mặt (`l`, `r` = phân vị 10/90 suốt cảnh), Nhan.jsx đặt chữ ngoài khoảng đó + chừa 0,3 bề rộng mặt.
 - Khung ngang KHÔNG đặt chữ dưới cằm (đè miệng + phụ đề). Hết chỗ → chữ tự thu cỡ cho vừa; chữ dài thì ngắt 2 dòng (≤ 9 ký tự / dòng) để giữ cỡ to.
 - Chụp thử `nhan` bằng preview.mjs không thấy zoom (zoom làm ở render_preview.py) → soát trên video-final.mp4 ở vài mốc trong cảnh.
 
-- **Bố cục "người thu vào ô" (khung ngang): thẻ chữ canh giữa vùng trống bị đẩy lên đè dấu góc kênh** (BrandMark ở top 228 px) khi thẻ cao. Vùng nội dung giờ bắt đầu từ `max(SAFE.top, 320)`. Soát bằng ảnh rải đều cả video, không chỉ ảnh giữa cảnh (08/11/2026).
+- **Bố cục "người thu vào ô" (khung ngang): thẻ chữ canh giữa vùng trống bị đẩy lên đè dấu góc kênh** (BrandMark ở top 228 px) khi thẻ cao. Vùng nội dung giờ bắt đầu từ `max(SAFE.top, 320)`. Soát bằng ảnh rải đều cả video, không chỉ ảnh giữa cảnh.
 
-### Lỗi khung ngang David chỉ ra 08/11/2026 (4 video cũ làm lại)
+### Lỗi khung ngang David chỉ ra (4 video cũ làm lại)
 Gốc chung: template dựng cho khung dọc trước; các video ngang trước đó đều là podcast (dấu góc nằm trong sân khấu), nên khung ngang
 người nói chưa từng chạy với dấu góc. Không do bài học video mẫu xoá gì; riêng `BoCuc.jsx` (từ bài học) đã chép số 300/320 theo giả định cũ.
 - **Dấu góc thấp:** `top: 228` là số của khung dọc, dùng luôn cho khung ngang (21% chiều cao). Nay `BRAND_TOP` theo khung (`theme.js`).
 - **Điểm nhấn đè dấu góc** ("TỪ 98 ĐẾN 2002"): `Nhan.jsx` chỉ tránh mặt. Nay chữ cạnh mặt không lên trên `BRAND_BOT + 24`.
 - **Màn chốt ngang đè dấu góc:** ô video 56% bề ngang + dấu góc vẫn vẽ. Nay ô 50%, dấu góc ẩn trong `cta` khung ngang, thẻ kết thúc trên thanh thời gian.
-- **Thiếu thanh thời gian:** chỉ bật cho podcast và highlight. Nay bật cho mọi video dài (`src/thanh.js`), phụ đề lên trên thanh (`CAP_H` +40).
+- **Thiếu thanh thời gian:** từng chỉ bật cho podcast và highlight. Nay bật cho mọi video dài (`src/thanh.js`), phụ đề lên trên thanh (`CAP_H` +40).
 - Soát: chụp `phu-de@<giây>` cùng cảnh để thấy dấu góc + thanh; với khung ngang luôn chụp ít nhất một cảnh điểm nhấn, một bố cục, màn chốt.
 
-## Video nhiều người / phỏng vấn (08/11/2026 — video "5 nguyên tắc", 2 người ngồi bàn)
+## Video nhiều người / phỏng vấn (video "5 nguyên tắc", 2 người ngồi bàn)
 - Bản cũ chỉ giữ MẶT LỚN NHẤT → không biết có người thứ hai: thẻ `the-canh` đè mặt khách, ô `o-nguoi` (ô đứng, tâm theo mặt chủ) cắt
   nửa mặt khách. Nay `nhan_place.py` ghi mọi người + người đang nói; graphic đi qua `lib/cho.js`.
 - Người quay nghiêng: Vision hay mất mặt → `nhan_place.py` lấy chỗ ngồi quen của người đó (`uoc: true`). Máy quay di chuyển nhiều

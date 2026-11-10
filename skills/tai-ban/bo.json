@@ -14,6 +14,7 @@
       "skills/dung-video/trinh-bay/bo-cuc.md",
       "skills/dung-video/trinh-bay/am-thanh.md",
       "skills/dung-video/trinh-bay/phieu-hoc-mau.md",
+      "skills/dung-video/khoi/19-dang-bai/mau-ke-hoach-dang.md",
       "**/assets/**"
     ],
     "so": [
@@ -23,7 +24,8 @@
       "skills/dung-video/trinh-bay/bo-cuc.md",
       "skills/dung-video/trinh-bay/am-thanh.md",
       "skills/dung-video/trinh-bay/nguon-hoc/",
-      "skills/dung-video/*/references/hoc-tu-*"
+      "skills/dung-video/*/references/hoc-tu-*",
+      "skills/dung-video/khoi/19-dang-bai/mau-ke-hoach-dang.md"
     ],
     "nguong": {
       "dau_ngay": 30,

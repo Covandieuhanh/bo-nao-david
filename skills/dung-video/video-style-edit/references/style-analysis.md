@@ -1,7 +1,11 @@
 # Đọc video mẫu thành token phong cách
 
 Mục tiêu không phải sao chép từng khung hình của mẫu, mà rút ra **ngôn ngữ thiết kế** của nó để áp lên nội dung
-của người dùng. Một người xem hai video phải thấy "cùng một nhà sản xuất", dù nội dung khác hẳn.
+của David. Một người xem hai video phải thấy "cùng một nhà sản xuất", dù nội dung khác hẳn.
+
+**Chữ ký nhận diện không đổi** (`../../thu-vien-hinh/nhan-dien-chung.md` mục 0): màu nhấn cam `C.accent`, hai font chính `HEAD` /
+`BODY`, thành phần cố định. Từ mẫu chỉ lấy phần ngoài chữ ký: nền, màu phụ, hình dạng thẻ, kiểu hình, chuyển động, loại cảnh, mật độ,
+font phụ cho một từ nhấn.
 
 ## Nhìn gì trong video mẫu
 
@@ -10,15 +14,14 @@ Cần thì cắt thêm khung ở mốc cụ thể: `ffmpeg -ss <giây> -i ref/ma
 
 | Hạng mục | Câu hỏi | Ghi vào |
 |---|---|---|
-| Màu | Nền thẻ/cảnh màu gì? Màu nhấn (thường 1 màu)? Chữ trắng tinh hay ngà? Có gradient, phát sáng không? | `C` trong theme.js (hex) |
-| Chữ to | Cô đặc (condensed) hay rộng? Đậm cỡ nào? In hoa? Có gạch chân/khung/nền sau chữ? | `HEAD` + component Kinetic |
-| Chữ thường | Sans tròn hay vuông? Cỡ chữ so với khung? | `BODY` |
+| Màu | Nền thẻ/cảnh màu gì? Chữ trắng tinh hay ngà? Có gradient, phát sáng không? (màu nhấn giữ cam) | `C` trong theme.js (hex), trừ `accent` |
+| Chữ | Đậm cỡ nào? In hoa? Có gạch chân/khung/nền sau chữ? Có font phụ cho từ nhấn không? | component Kinetic; font phụ `NHAN` (font chính giữ `HEAD`/`BODY`) |
 | Thẻ | Bo góc nhiều/ít? Trong suốt, mờ kính, đặc? Có viền, bóng? Tiêu đề nhỏ màu nhấn (eyebrow) không? | CardShell |
 | Chuyển động | Bật nảy (spring) hay trượt mượt? Nhanh (≤8 khung) hay chậm? Chữ hiện từng từ, từng dòng hay cả khối? Có đường kẻ tự vẽ, số đếm chạy không? | `pop`, `ease`, thời lượng vào/ra |
 | Loại cảnh | Có cảnh toàn màn hình không? Biểu đồ, sơ đồ, dòng thời gian, danh sách tick, so sánh 2 cột, ảnh dồn dập? | chọn loại cảnh / viết component mới |
 | Vị trí | Lớp phủ đặt cạnh mặt, dưới mặt hay giữa? (dù mẫu thế nào, KHÔNG che mặt người nói — `face_place.sh` lo) | bố cục component; vị trí từng cảnh = placement.js |
 | Mật độ | Trung bình bao nhiêu giây có một hiệu ứng? Bao nhiêu % thời lượng là toàn màn hình? | nhịp trong scenes.js |
-| Âm thanh/nhịp cắt | (Chỉ ghi nhận) có nhạc nền, tiếng "whoosh"? | Ghi chú cho người dùng; template không thêm âm thanh |
+| Âm thanh/nhịp cắt | Có nhạc nền, tiếng "whoosh"? Đặt ở đâu? | `trinh-bay/am-thanh.md` (nhạc vẫn lấy kho kênh, khối 09) |
 
 Transcript của mẫu (`ref/transcript.srt`) giúp thấy hiệu ứng được gắn vào loại câu nào (con số, khẳng định, liệt kê).
 
@@ -36,7 +39,7 @@ Cảnh hay dùng: thẻ số liệu/biểu đồ, chữ to nhấn ý, (không/í
 Mật độ: ~1 hiệu ứng / 10–12 s, toàn màn hình ≈ 25% thời lượng
 ```
 
-## Chọn font có tiếng Việt
+## Chọn font có tiếng Việt (font phụ cho từ nhấn)
 
 Font phải có subset `vietnamese` trong `@fontsource` (kiểm tra: `ls node_modules/@fontsource/<font>/files | grep vietnamese`).
 Ánh xạ kiểu chữ thường gặp:
@@ -51,12 +54,12 @@ Font phải có subset `vietnamese` trong `@fontsource` (kiểm tra: `ls node_mo
 | Đơn cách, kiểu code/kỹ thuật | jetbrains-mono, roboto-mono |
 
 Cài: `cd motion && npm install @fontsource/<font>` → import `vietnamese-<weight>.css` và `<weight>.css` trong `fonts.js`,
-thêm dòng vào `FONT_CHECKS`, đổi `HEAD`/`BODY`. Luôn thử chữ có dấu chồng (Ở, Ữ, Ặ, Ễ) và dấu dưới (ạ, ợ, ụ) khi chụp kiểm tra.
+thêm dòng vào `FONT_CHECKS`; dùng cho từ nhấn, không đổi `HEAD`/`BODY`. Luôn thử chữ có dấu chồng (Ở, Ữ, Ặ, Ễ) và dấu dưới (ạ, ợ, ụ) khi chụp kiểm tra.
 
 ## Khi mẫu khác hẳn template
 
 Template chỉ là điểm xuất phát. Nếu mẫu dùng thứ template không có (ví dụ phụ đề chạy theo từng chữ, khung ảnh polaroid,
-nhãn dán emoji, hiệu ứng zoom vào mặt, chia đôi màn hình), viết component mới trong `components/`, đăng ký trong
+nhãn dán emoji, hiệu ứng zoom vào mặt, chia đôi màn hình), viết component mới trong `components/` (hoặc cảnh tự vẽ `ve`, khối 07), đăng ký trong
 `Root.jsx` (TYPES).
 Hiệu ứng tác động lên chính video gốc (zoom mặt, cắt nhịp, đổi màu) không làm bằng clip phủ được — làm trong
 `render_preview.py` bằng filter ffmpeg (ví dụ `zoompan`/`crop` theo đoạn).

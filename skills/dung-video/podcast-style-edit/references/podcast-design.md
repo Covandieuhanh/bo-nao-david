@@ -7,7 +7,7 @@ Ngang 1920×1080: x 96–1824, y 54–918 — **thiết kế toàn khung**, khô
 
 | Phần | Dọc (y) | Ngang | Dữ liệu |
 |---|---|---|---|
-| Tên chương trình (chỉ khi người dùng đưa) + tên tập | 226– | trái trên, y 70– | `STAGE.show`, `STAGE.title` |
+| Tên chương trình (chỉ khi David đưa) + tên tập | 226– | trái trên, y 70– | `STAGE.show`, `STAGE.title` |
 | **Ý đang bàn** — chữ to 2 dòng, dòng 2 màu nhấn | 560–900 | trái, y 300–600, rộng 1180 | `TOPICS` (tự ẩn khi có lớp phủ) |
 | Vòng micro phát theo giọng | — | phải, tâm (1560, 400) | `envelope.js` |
 | Tên người nói (chỉ khi biết tên) | 1020– | dưới vòng micro | `STAGE.speakers` |
@@ -27,15 +27,14 @@ Phụ đề + thanh thời gian ở lớp trên cùng → không cảnh nào che
 ## Chọn cảnh cho lời nói
 Ưu tiên như `$BASE/references/scene-design.md`, thêm:
 1. Đổi chủ đề / câu hỏi mở ra đoạn mới → `TOPICS` đổi ngay mốc đó (trích phần chính), hoặc `card quote`.
-2. Con số / mốc / tên riêng → `card` (`ages`, `year`, `years4`, `daily`, `vs`…).
-3. Liệt kê, các bước → `card steps` (≤ 4 mục) hoặc `build` / `montage` (toàn màn hình).
-4. Câu chốt, quan điểm → `kinetic`.
+2. Câu có cấu trúc (tầng bậc, mốc, so sánh, trước → sau) → `diagram` (khối 07); nhắc người / nơi / tổ chức có thật → `diagram` `anh`.
+3. Con số / mốc / tên riêng → `card` (`ages`, `year`, `years4`, `daily`, `vs`…) hoặc `illus` `count`.
+4. Liệt kê, các bước → `card steps` (≤ 4 mục) hoặc `build` / `montage` (toàn màn hình).
 5. Người nói tự giới thiệu tên → `lower` (tên + vai) — chỉ khi có trong lời.
-6. Lời chào cuối → `kinetic` cuối.
+6. Câu cuối → màn chốt `cta` nguyên văn (khối 08).
 
 ## Nhịp
-- **Tối giản (người dùng chốt)**: ~1 cảnh / 15–20 s — một màn một ý, một hình. Toàn màn hình mỗi lần ≤ 15 s. Sân khấu (ý đang
-  bàn + sóng âm) đã đủ "sống" giữa các cảnh, không cần lấp kín. Chữ to ≤ 3–4 lần / video. Thẻ: chữ ngắn, hình là chính.
-- Giữa hai cảnh luôn là sân khấu (ý đang bàn + sóng âm) — không cần nhồi cảnh kín mọi giây.
+- Hình phủ **khoảng 30 % thời lượng**, cân theo nội dung (`phu_hinh_muc_tieu`, podcast SKILL): một màn một ý, một hình. Sân khấu (ý
+  đang bàn + sóng âm) đã đủ "sống" giữa các cảnh, không cần lấp kín. Thẻ: chữ ngắn, hình là chính.
 - `TOPICS` phủ từ 0 s đến hết, đổi **thưa** theo ý lớn (40–90 s); không lặp nguyên văn chữ của cảnh đang/sắp hiện.
-- Không 1 loại cảnh quá 3 lần liên tiếp; không chồng 2 lớp phủ.
+- Không hai cảnh cùng kiểu liền nhau (khối 07); không chồng 2 lớp phủ.

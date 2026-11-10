@@ -1,5 +1,10 @@
 # Sổ thay đổi — video-style-edit (quyết định của người dùng + lý do)
 
+## Tái bản 1 — 10/11/2026: bản luật viết lại từ bảng dang-lam/tai-ban-video-1.md
+- Gom bản luật cả bộ video: mỗi luật một nhà, bỏ dấu ngày và câu "thay luật cũ"; luật cũ đã bị thay (hook mặc định, câu chốt tự viết, con số mật độ, nhạc 20/30 LU, chép màu/font từ mẫu, nút phát ở thẻ cuối) bỏ hẳn khỏi bản luật.
+- David trả lời 5 câu: "Đồng ý cả 5" → (1) mọi video có điểm nhấn nhưng chỉ vài kiểu hợp nội dung, bỏ "trộn nhiều loại" và ví dụ "~3 illus + ~4 nhan"; (3) vlog: thẻ tiêu đề chỉ tên chương trình / tên nơi / lời nguyên văn, bỏ "TẬP NÀY CÓ GÌ?" và lời mời tự viết ở kết; (4) hoc-video-mau "Xong khi" 2 = chữ ký nhận diện không đổi; (5) việc thật chấm bằng một đoạn ngắn từ tap-5-nguyen-tac-tien.
+- Tự phân xử theo ngày / mẫu đã duyệt: hashtag 2–3; bình luận ghim theo kiểu dẫn dắt (bỏ mẫu "Làm thử trong 48 giờ"); không hỏi câu chốt ở lần hỏi đầu.
+
 ## 2026-11-01
 - Skill tạo từ dự án DJI (12 nghề). Phong cách mặc định: nền tối, nhấn cam, Barlow Condensed in hoa + Be Vietnam Pro — đã duyệt.
 - Làm sạch: cắt thừa đầu/cuối + câu nói lại; KHÔNG cắt ngập ngừng/khoảng lặng ("muốn video thực tế nhất").

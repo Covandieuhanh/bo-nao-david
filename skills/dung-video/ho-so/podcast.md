@@ -7,8 +7,8 @@
 | Khoá | Ý nghĩa |
 |---|---|
 | `topics_doi_s` | "ý đang bàn" đổi mỗi 40–90 s |
-| `mat_do_canh_s` | khoảng cách cảnh minh hoạ thường |
-| `thua_canh_khi_dai_hon_s` / `thua_canh_s` | tập dài hơn → thưa cảnh (1 cảnh / 40–60 s) |
+| `phu_hinh_muc_tieu` | hình phủ khoảng 30 % thời lượng, cân theo nội dung (podcast SKILL) |
+| `thua_canh_khi_dai_hon_s` / `thua_canh_s` | tập dài hơn → thưa cảnh hơn trong mức 30 % |
 | `the_chuong` | hiện "PHẦN n" 3 s đầu mỗi ý lớn |
 
 ## Nhật ký

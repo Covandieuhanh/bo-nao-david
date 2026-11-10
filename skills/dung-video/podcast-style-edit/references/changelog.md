@@ -1,5 +1,8 @@
 # Sổ thay đổi — podcast-style-edit (quyết định của người dùng + lý do)
 
+## Tái bản 1 — 10/11/2026: bản luật viết lại từ bảng dang-lam/tai-ban-video-1.md
+- Bỏ khỏi bản luật: `hook` đầu tiên, "~1 cảnh / 15–20 s", câu chốt tự sáng tạo (khối 12, podcast-design); hình phủ ~30 % là luật nhịp duy nhất. Phụ đề podcast dọc mọi độ dài = cụm 5–8 chữ (theo code Captions.jsx).
+
 ## 2026-11-02
 - Tạo skill: file tiếng / video podcast → video toàn motion graphics, cùng phong cách skill gốc, dùng chung template.
   Lựa chọn của người dùng: nhận cả file tiếng lẫn video; 1–2 người nói; tập tối đa ~15 phút.

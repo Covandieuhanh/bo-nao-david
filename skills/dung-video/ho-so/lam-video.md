@@ -7,9 +7,9 @@ Báo cáo: `video-style-edit/references/hoc-tu-20-video-noi-truoc-camera-vn.md`.
 | Khoá | Ý nghĩa |
 |---|---|
 | `cat_lang.nguong_dai_s` | > giá trị này là video dài |
-| `cat_lang.ngan / dai` | cắt khoảng lặng ≥ `min_s`, chừa `giu_s` mỗi bên; `cat_tieng_dem` = cắt "ờ/ừm" đứng riêng |
-| `mat_do_canh_s.ngan / dai` | khoảng cách giữa 2 cảnh minh hoạ (s) |
-| `the_tit_mo_s` | thẻ tít mở đầu (video ngắn) |
+| `cat_lang.ngan` | cắt khoảng lặng ≥ `min_s`, chừa `giu_s` mỗi bên; `cat_tieng_dem` = cắt "ờ/ừm" đứng riêng |
+| `cat_lang.dai` | chỉ để liệt kê: video dài không cắt (luat-chung mục 2), `clean_suggest.py` để mọi cut `ok: false` |
+| `the_tit_mo_s` | độ dài thẻ tít mở đầu khi David yêu cầu (khối 06) |
 
 ## Nhật ký
 - 2026-11-04 · ngắn 0,45 s + cắt tiếng đệm (kênh quốc tế); dài 1,2 s, giữ tiếng đệm (7/10 video dài Việt không jump cut — TH-1).
