@@ -23,9 +23,6 @@ if (fs.existsSync(path.join(SRC, 'scenes.js'))) {
   list = (e.OVERLAYS || []).map((o, i) => ({id: o.id || `${o.type}-${i + 1}`, ...o}));
   duration = e.TOTAL ? e.TOTAL / (e.FPS || 30) : 0;
 }
-let NGUOI = {}, FPS_ = 30;
-try { NGUOI = (await imp('nguoi.js')).default || {}; } catch {}
-try { const pj = (await imp('project.js')).default; FPS_ = pj.fpsNum ? pj.fpsNum / pj.fpsDen : (pj.fps || 30); } catch {}
 let HS = {};
 try { HS = JSON.parse(read('hoso.json')); } catch {}
 const {holdEnds} = await imp('lib/giu.js');
@@ -71,12 +68,6 @@ for (const raw of list) {
   if (big && last - s.start + 1 < need(big)) bao('P2', s.start, s.id, `"${big}" chỉ hiện ${fmt(last - s.start)} s, cần ${fmt(need(big))} s`, 'cân nhắc rút chữ');
 
   if (s.type === 've' && !s.ve) bao('P0', s.start, s.id, 'cảnh tự vẽ thiếu props.ve (tên component trong rieng/index.js)', 'đặt ve: \'TenComponent\'');
-  if (s.type === 'chusau') {   // chữ sau người: cần lớp người đã tách (tach_nguoi.py), đủ khung cho cả cảnh (10/11/2026)
-    const n = NGUOI[s.id], can = Math.ceil((s.end - s.start) * FPS_);
-    if (!n) bao('P0', s.start, s.id, 'chưa tách người', 'chạy python3 -I $SKILL/scripts/tach_nguoi.py "$P"');
-    else if (n < can) bao('P0', s.start, s.id, `lớp người chỉ có ${n} khung, cảnh cần ${can}`, 'mốc cảnh đã đổi → chạy lại tach_nguoi.py');
-    if (words(s.text) > 6) bao('P1', s.start, s.id, `chữ sau người ${words(s.text)} chữ`, 'rút còn 2–6 chữ để người che vẫn đọc được');
-  }
   if (s.type === 'nhan' && !(s.text || s.icon || s.zoom > 1 || s.toi)) bao('P0', s.start, s.id, 'điểm nhấn trống (không chữ, biểu tượng, zoom hay làm tối)', 'thêm ít nhất một kiểu');
   // bố cục (BoCuc.jsx): chữ trong thẻ phải hiện trong cảnh; không giới hạn số dòng — tự cân theo khung (dọc: ít thứ cùng lúc)
   if (s.type === 'bocuc') for (const d of [...(s.dong || []), ...((s.noi_dung && s.noi_dung.props && s.noi_dung.props.dong) || [])])
@@ -98,7 +89,7 @@ for (let i = 1; i < fulls.length; i++) if (fulls[i].start < fulls[i - 1].end - 0
   bao('P1', fulls[i].start, fulls[i].id, `chồng lên "${fulls[i - 1].id}" (hết ${fmt(fulls[i - 1].end)})`, 'dời mốc, mỗi lúc một điểm nhìn');
 // không hai cảnh cùng kiểu liền nhau (khối 07, 2026-11-10); cảnh vẽ tiếp cùng mạch (tu_buoc) được nối
 const kieu = (s) => s.type === 'nhan' ? `nhan:${s.icon ? 'icon' : s.text ? 'text' : s.zoom > 1 ? 'zoom' : 'toi'}`
-  : [s.type, s.mode || s.kieu || (s.bong ? 'bong' : '')].filter(Boolean).join(':');
+  : [s.type, s.mode || s.kieu].filter(Boolean).join(':');
 const BO_QUA = new Set(['hook', 'cta', 'action']);   // mở đầu, màn hành động, màn chốt có chỗ cố định
 const chuoi = list.map(flat).filter((s) => !BO_QUA.has(s.type)).sort((a, b) => a.start - b.start);
 for (let i = 1; i < chuoi.length; i++) {

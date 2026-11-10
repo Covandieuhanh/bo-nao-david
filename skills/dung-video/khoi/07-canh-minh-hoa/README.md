@@ -17,7 +17,7 @@
 Motion graphic là để **diễn tả lại câu chuyện**, không phải đưa hình vào cho có. AI sáng tạo theo từng video, không dập khuôn.
 - **Giữ cố định = chữ ký nhận diện** (David chốt 10/11/2026, `lib/nhan-dien-chung.md` mục 0): dấu góc, phụ đề, thanh thời gian,
   màn chốt, thẻ cuối, màu nhấn cam, hai font chính. Đủ để người xem nhận ra video của David.
-- **Tự do:** nền (tối, sáng, giấy, người mờ), kết cấu, kiểu hình (biểu tượng nét tròn, phấn, ảnh, bóng người), chữ nhấn phụ,
+- **Tự do:** nền (tối, sáng, giấy, người mờ), kết cấu, kiểu hình (biểu tượng nét tròn, phấn, ảnh), chữ nhấn phụ,
   bố cục, chuyển động, độ dài, số cảnh. Danh mục kiểu cảnh dưới đây (`nhan`, `bocuc`, `illus`, `diagram`, `card`…)
   chỉ là công cụ có sẵn — dùng khi hợp, không bắt buộc. Cần hình riêng thì viết **cảnh tự vẽ** (`type: 've'`): component React riêng của
   video trong `motion/src/rieng/` (đăng ký ở `rieng/index.js`, xem mẫu `MauMach.jsx`), dùng `lib/chuyen-dong.js`, `lib/ChuHien.jsx`, `lib/cho.js` (tránh người).
@@ -46,10 +46,8 @@ Viết **trước** bảng cảnh, vì cảm xúc chọn kiểu cảnh chứ kh�
 - **Một đỉnh**, thường là câu đắt nhất của David. Đỉnh nhận cảnh lớn nhất (thường là bước lớn nhất của mạch hình); không có ba đỉnh tranh nhau.
 - Mỗi cảnh trong bảng cảnh ghi thêm cột "cảm xúc", lấy từ đường này.
 
-## Chiều sâu, nền, chữ nhấn (David chốt 2026-11-10 — học Ali Abdaal + Joseph Video Editing)
-Thêm vào kho, dùng khi hợp nội dung (cách viết + khi nào dùng: `../../trinh-bay/bo-cuc.md` mục "Chiều sâu, nền, chữ nhấn"):
-- **`chusau`** chữ to sau người / `bong: true` bóng người trên nền giấy. Sau khi viết scenes.js: `python3 -I $SKILL/scripts/tach_nguoi.py "$P"`
-  (Vision tách người từng khung). Chữ nguyên văn, 2–6 chữ; chụp thử xem người che có làm mất chữ không.
+## Mục lục, nền, chữ nhấn (David chốt 2026-11-10 — học Ali Abdaal + Joseph Video Editing)
+Thêm vào kho, dùng khi hợp nội dung (cách viết + khi nào dùng: `../../trinh-bay/bo-cuc.md` mục "Mục lục, nền, chữ nhấn"):
 - **`bocuc` `muc-luc`** (mục lục tích luỹ) · **`tien-trinh`** (thanh tiến trình ý) · **`canh-nguoi`** (mạch hình vẽ cạnh người, không thẻ).
 - **`phong: 'nguoi-mo' | 'hat'`** ở cảnh toàn màn hình: nền là người nói làm mờ / nền hạt, thay nền tối mặc định.
 - **`*từ*`** trong mọi chữ: một từ nhấn font phụ nghiêng màu cam; tối đa một chỗ mỗi cụm.
@@ -57,7 +55,9 @@ Thêm vào kho, dùng khi hợp nội dung (cách viết + khi nào dùng: `../.
 
 ## Không hai cảnh cùng kiểu liền nhau (David chốt 2026-11-10)
 Hai cảnh đi liền nhau không cùng kiểu (`type` + `mode` / `kieu`, ví dụ hai `bocuc` `the-canh` liền nhau). Xen kiểu khác: `nhan` zoom,
-biểu tượng, sơ đồ, toàn màn hình… Không con số tối thiểu (bố cục tự cân). **Ngoại lệ:** cảnh "vẽ tiếp" cùng mạch hình (`tu_buoc`) được
+biểu tượng, sơ đồ, toàn màn hình… Không con số tối thiểu (bố cục tự cân). **Nhưng hiểu hơn cầu kì** (luat-chung §0): đổi kiểu để đỡ
+nhàm, không phải để thêm kiểu mới; cả video vẫn chỉ xoay quanh vài kiểu hợp nội dung. Hai ý cùng loại liền nhau mà giữ cùng kiểu giúp
+người xem dễ theo hơn thì giữ, ghi lý do một dòng ở `ke-hoach-canh.md`. **Ngoại lệ:** cảnh "vẽ tiếp" cùng mạch hình (`tu_buoc`) được
 nối nhau. `soat_canh.mjs` (khối 17) tự nhắc P2.
 
 ## Bố cục tự cân (David chốt 2026-11-07 — thay luật 2 trạng thái ngày 04/11)

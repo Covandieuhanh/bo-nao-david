@@ -25,6 +25,7 @@ Tên file bắt đầu bằng nhóm: `luat-` cách làm việc với David · `n
 - [Bản chuẩn video](video-ban-chuan-2026-11-06.md) — 5 video chuẩn: 3 clip Đi trainer + 2 video dài; dự án cũ đã bỏ (2026-11-06)
 - [Làm lại video cũ](video-lam-lai-video-cu.md) — bỏ lời chào/giới thiệu kênh cũ, màn tít cũ, chữ/viền in trong hình; mỗi video một bản; làm trọn rồi David góp ý (2026-11-08)
 - [Bố cục tự cân, học chỉ trình bày](video-bo-cuc-tu-can.md) — bỏ mọi con số cố định; graphic tránh mọi người, bám người đang nói; ô tỉ lệ tự do; thẩm mỹ chỉ giữ nhận diện từ 10/11 (2026-11-07, thêm 08/11)
+- [Hiểu hơn cầu kì](video-hieu-hon-cau-ki.md) — kho hiệu ứng để chọn theo nội dung, mỗi video ít kiểu; chữ sau người / bóng người đã bỏ (2026-11-10)
 - [Thẩm mỹ chỉ giữ nhận diện](video-tham-my-chi-giu-nhan-dien.md) — chỉ cần người xem nhận ra là của David (chữ ký: bộ nhận diện chung, cam, 2 font); còn lại sáng tạo tự do, học mẫu lấy đủ (2026-11-10)
 - [Bộ nhận diện chung](video-nhan-dien-chung.md) — mọi loại video cùng vị trí, dấu góc, thanh thời gian (trừ dọc ngắn), thẻ cuối không logo; chỉ motion graphics tự do (2026-11-08)
 - [Video dọc ngắn không thanh, không thẻ cuối](video-doc-ngan-khong-thanh.md) — Reels/TikTok/Shorts bỏ thanh thời gian + thẻ cuối, màn chốt trên hình để video tự lặp (2026-11-10)

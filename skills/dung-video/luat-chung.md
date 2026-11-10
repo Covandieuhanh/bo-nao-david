@@ -7,7 +7,9 @@ ghi rõ "ngoại lệ". Sổ quyết định + lý do: `<skill>/references/chang
 **Người xem là trung tâm.** Học kênh lớn (DOAC, Hormozi, MrBeast, Ali Abdaal, Jay Shetty, Mel Robbins…) ở **nhịp và cách trình bày**
 giữ người xem. **Thẩm mỹ chỉ giữ một điều** (David chốt 10/11/2026): xem video nào người xem cũng nhận ra là của cùng một người — giữ
 "chữ ký nhận diện" ở `thu-vien-hinh/nhan-dien-chung.md` mục 0; ngoài chữ ký, sáng tạo tự do theo nội dung (nền, kết cấu, kiểu hình,
-chữ nhấn phụ, bố cục, chuyển động), học được gì từ mẫu cũng dùng được. **Chỉ thêm, không thay** chặn cũ (ghi nhớ `luat-hoc-la-bo-sung`). Mục tiêu mỗi video: người xem **ở lại → HIỂU ý chính → LÀM theo**. Đo lại bằng số thật (mục 9).
+chữ nhấn phụ, bố cục, chuyển động), học được gì từ mẫu cũng dùng được. **Chỉ thêm, không thay** chặn cũ (ghi nhớ `luat-hoc-la-bo-sung`).
+**HIỂU HƠN CẦU KÌ** (David chốt 10/11/2026): kho học được là để **chọn cho hợp từng loại nội dung**, không nhét hết vào một video. Mỗi
+video chỉ dùng vài kiểu hợp nhất, tự cân; hiệu ứng nào không giúp người xem hiểu nhanh hơn thì bỏ. Rối hay lỗi hình → bớt, không thêm. Mục tiêu mỗi video: người xem **ở lại → HIỂU ý chính → LÀM theo**. Đo lại bằng số thật (mục 9).
 
 ## 1. Nội dung
 - **Không bịa.** Phụ đề, chữ to, thẻ, màn hành động = **trích / bỏ bớt lời người nói**, không diễn đạt lại. Tên riêng, con số, vế

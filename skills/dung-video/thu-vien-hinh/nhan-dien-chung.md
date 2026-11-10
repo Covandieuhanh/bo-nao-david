@@ -15,7 +15,7 @@ Giữ ở MỌI video, mọi cảnh có chữ:
    nghiêng) chỉ cho **một từ nhấn** trong cụm (`*từ*` trong ChuHien), không thay font chính.
 
 Ngoài ba điều trên là **tự do sáng tạo theo nội dung**: nền tối / sáng / giấy / người mờ, kết cấu, ánh sáng, kiểu hình (biểu tượng nét
-tròn, phấn vẽ tay, ảnh, bóng người), chiều sâu (chữ sau người), bố cục, chuyển động. Thử: che dấu góc đi, người xem quen kênh vẫn đoán
+tròn, phấn vẽ tay, ảnh), bố cục, chuyển động. Thử: che dấu góc đi, người xem quen kênh vẫn đoán
 được là video của David nhờ cam + chữ + phụ đề → đạt.
 
 ## 1. Thành phần cố định (có ở mọi video)

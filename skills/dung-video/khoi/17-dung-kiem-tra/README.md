@@ -17,7 +17,6 @@
 ### 7. Dựng & kiểm tra từng cảnh (trước khi render thật)
 
 ```bash
-python3 -I $SKILL/scripts/tach_nguoi.py "$P"          # chỉ khi có cảnh 'chusau' (chữ sau người / bóng người) — tách người từng khung
 cd "$P/motion" && node preview.mjs <id>@<giây> phu-de@<giây> <id>@<giây> phu-de@<giây> ...
 ```
 (chụp `phu-de` cùng mốc với mỗi cảnh → composite_stills ghép phụ đề lên cảnh đó để thấy chồng lấn, nếu có)
@@ -61,7 +60,7 @@ node $SKILL/scripts/soat_canh.mjs "$P"     # in ra + ghi check/soat.md; có P0 t
 - **P1 (nên sửa):** nhãn không đủ đọc (0,5 s + 0,3 s mỗi từ), nhãn `illus` quá số chữ hồ sơ, hai cảnh toàn màn hình chồng nhau.
 - **P2 (tinh chỉnh, giữ có chủ đích được):** hình đứng yên quá 3 s sau khi đọc xong, thẻ tít / màn chốt thiếu hẳn thời gian đọc, hai cảnh cùng kiểu liền nhau (trừ cảnh vẽ tiếp `tu_buoc`, khối 07).
 Giới hạn: chỉ bắt lỗi đo được. Chữ tràn, che mặt, xấu vẫn soi bằng `check/stills.jpg`. **Xem tờ ảnh ở đúng cỡ (mỗi khung 240–270 px, nhỏ hơn màn điện thoại): chữ cần đọc mà không đọc được = P0.**
-Câu hỏi khi soi tờ ảnh: **mỗi khung có đúng một tiêu điểm không** (nheo mắt vẫn biết nhìn vào đâu) · cam có còn là màu nhấn (khoảng 10 % khung), không phủ cả khung · cảnh `chusau` người có che mất chữ không. Che chữ đi, hình còn nói được ý không? Thấy mọi cảnh giống nhau thì đổi kiểu vào (khối 07). Video rối → bỏ bớt khoảng một phần ba chuyển động, giữ cái dẫn mắt.
+Câu hỏi khi soi tờ ảnh: **video có rối không** — đếm số kiểu hiệu ứng cả video, kiểu nào không giúp hiểu thì bỏ (luat-chung §0, hiểu hơn cầu kì) · **mỗi khung có đúng một tiêu điểm không** (nheo mắt vẫn biết nhìn vào đâu) · cam có còn là màu nhấn (khoảng 10 % khung), không phủ cả khung. Che chữ đi, hình còn nói được ý không? Thấy mọi cảnh giống nhau thì đổi kiểu vào (khối 07). Video rối → bỏ bớt khoảng một phần ba chuyển động, giữ cái dẫn mắt.
 
 ## Kiểm cảm nhận (David chốt 2026-11-10 — học từ scroll-craft `feel.md` §6)
 Claude tự làm, hai lần: sau bước chụp thử và sau bản cuối. Không gửi David chấm.

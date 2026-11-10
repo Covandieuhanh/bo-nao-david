@@ -28,12 +28,10 @@ Cột "Code": **có** = viết được ngay trong `scenes.js` · **chưa** = m�
 | Tít nhỏ trên + tít to + hàng thẻ bên dưới (thẻ hiện lần lượt, thẻ đang nói sáng lên, thẻ cũ mờ đi) | tổng quan nhiều mục, kết quả, "trong video này" | ngang | chưa (gần `illus` list) |
 | Vòng lặp / chu trình (V1 → góp ý → sửa → V2) | quy trình lặp | cả hai | gần `diagram` `vong` |
 
-## Chiều sâu, nền, chữ nhấn (học Ali Abdaal + Joseph Video Editing, 10/11/2026 — `nguon-hoc/ali-joseph-2026-11-10.md`)
+## Mục lục, nền, chữ nhấn (học Ali Abdaal + Joseph Video Editing, 10/11/2026 — `nguon-hoc/ali-joseph-2026-11-10.md`)
 
 | Kiểu | Hợp khi | Ngang / dọc | Code |
 |---|---|---|---|
-| **Chữ sau người** (`chusau`): chữ to đứng giữa nền và người, đầu người che phần dưới chữ | câu đắt ngắn (2–6 chữ), tít mở đầu, đổi phần | cả hai (dọc mặt to rất hợp) | có — cần `tach_nguoi.py` |
-| **Bóng người** (`chusau` + `bong: true`): nền giấy sáng, người thành bóng cam, chữ tối phía sau | câu tâm tình, chuyện riêng, khoảnh khắc lắng | cả hai; dọc nên 1 dòng chữ | có — cần `tach_nguoi.py` |
 | **Mục lục tích luỹ** (`bocuc` · `muc-luc`): người vào ô, danh sách đánh số hiện dần, mục đang nói sáng, mục cũ mờ | "trong video này", nhắc lại các ý đã qua | cả hai | có |
 | **Thanh tiến trình ý** (`bocuc` · `tien-trinh`): đường nối nút 1…n, chạy tới ý hiện tại, tên ý dưới nút | video theo danh sách (ý 1, 2, 3…), thay màn chương | cả hai | có |
 | **Mạch hình cạnh người** (`bocuc` · `canh-nguoi`): người giữ khung, hình vẽ thẳng vào khoảng trống sát người, không thẻ nền (như bảng phấn) | giải thích dài mà vẫn muốn thấy người; nhiều cảnh vẽ tiếp một mạch | ngang (cần khoảng trống ≥ 26 % bề ngang); thiếu chỗ tự thành `o-nguoi` | có |
@@ -81,9 +79,6 @@ Cột "Code": **có** = viết được ngay trong `scenes.js` · **chưa** = m�
 - Chưa làm cho podcast (không có mặt) và vlog ghép (`montage-template`). Khi cần thì thêm cùng kiểu.
 
 ```js
-// chữ sau người (chạy python3 -I $SKILL/scripts/tach_nguoi.py "$P" sau khi viết cảnh) · bóng người
-{id: 's1', type: 'chusau', start: 9.8, end: 12.9, props: {text: 'NHỎ NHẤT\n*mỗi ngày*', at: 10}},
-{id: 's2', type: 'chusau', start: 40.1, end: 44.0, props: {text: 'THÓI QUEN', bong: true}},
 // mục lục tích luỹ · thanh tiến trình ý · mạch hình cạnh người
 {id: 'l1', type: 'bocuc', start: 56, end: 70, props: {kieu: 'muc-luc', tieu_de: '5 nguyên tắc', muc: [{text: 'Tiền phải tiết kiệm', at: 57}, …]}},
 {id: 't2', type: 'bocuc', start: 250.9, end: 254.5, props: {kieu: 'tien-trinh', so: 2, tong: 5, nhan: 'Nguyên tắc 2', ten: 'Đầu tư vào *bản thân*'}},
@@ -91,5 +86,4 @@ Cột "Code": **có** = viết được ngay trong `scenes.js` · **chưa** = m�
 // cảnh toàn màn hình trên nền người mờ
 {id: 'm1', type: 'illus', start: 132.6, end: 137.7, props: {mode: 'count', …, phong: 'nguoi-mo'}},
 ```
-- `chusau`: chữ phải còn đọc được khi người che — chụp thử; che nhiều thì đổi `cao: 'tren'` / `'vai'` hoặc rút còn một dòng.
-  Lớp người là PNG trong suốt từng khung (`public/nguoi/<id>/`); không chồng `nhan` zoom cùng lúc. Tách ~1 phút cho 5 s video 1080p.
+

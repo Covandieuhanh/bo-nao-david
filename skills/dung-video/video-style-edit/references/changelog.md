@@ -198,3 +198,9 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
 - Place / TWO_KEEP / face_place / nhan_place nhận 'chusau'; soat_canh: P0 chưa tách người / thiếu khung, P1 chữ sau người > 6 chữ, bỏ dấu * khi đếm chữ.
 - Lỗi gặp khi thử: lớp chusau bị Place thu nhỏ như lớp phủ → người nhân đôi lệch; sửa bằng cách để nguyên khung. Chữ dòng 2 bị thân người che → đáy khối chữ ngang mắt, thêm `cao`.
 - Kiểm không phá: 10 cảnh cũ ngang + dọc trùng từng điểm ảnh với skill trước khi sửa. Phiếu: `trinh-bay/nguon-hoc/ali-joseph-2026-11-10.md`.
+
+## 2026-11-10 · Gỡ chữ sau người + bóng người; luật "hiểu hơn cầu kì" (David chốt)
+- David xem ảnh thử: "hiệu ứng chữ sau người là không cần, nhiều hiệu ứng quá là bị rối, nhìn ảnh toàn lỗi". Gỡ `ChuSau.jsx`, `tach_nguoi.{swift,py}`,
+  `nguoi.js` và mọi chỗ nhắc (layout, Root, face_place, nhan_place, soat_canh, bo-cuc, khối 07/17, nhan-dien-chung). Giữ: muc-luc, tien-trinh, canh-nguoi, phong, `*từ*`.
+- David: "học nhiều là để ứng dụng cho phù hợp với tuỳ mỗi loại nội dung chứ không cần nhét hết vào cùng 1 video… quan trọng nhất là truyền tải cho người xem hiểu chứ không phải cầu kì".
+  → luat-chung §0 "Hiểu hơn cầu kì"; khối 07 nới luật không lặp (giữ cùng kiểu được khi giúp dễ theo); khối 17 thêm câu soát "video có rối không".
