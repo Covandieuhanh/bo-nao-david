@@ -20,7 +20,7 @@ Chặng 1 của nghề: 1–3 ca thật online, miễn phí đổi lời chứng
 | 4 clip dọc từ 4 video cũ (mỗi video 1 clip) | Render xong 08/11 với bộ nhận diện chung (có thanh thời gian, thẻ cuối không logo). Bài đăng gợi ý: `3-highlight/dang-bai.md` từng tập | **Chờ David xem và góp ý.** Chưa hẹn giờ |
 | Chuẩn hoá bộ skill ([chuan-hoa-skill.md](dang-lam/chuan-hoa-skill.md)) | Bước 0–3 xong 08/11: thói quen chung, 6 skill + 3 file não đã gọt, có "Xong khi". Phiên A sửa xong code lệch; bỏ phần CapCut/DaVinci; thêm `don_tap.py`, đã dọn 8 tập cũ (~62 GB) | Bước 4: chạy thử một việc thật, David chấm, sửa đúng một chỗ |
 | App dựng video = skill chạy tự động ([app/README.md](skills/dung-video/app/README.md), ghi nhớ `video-app-dung-video`) | 09/11: làm lại công thức `lam-video` theo nguyên tắc David chốt (cố định → máy, phán đoán → AI làm y như skill trong thư mục dự án); bỏ khuôn JSON + vòng lặp Codex; thêm xem file nguồn/file dở, thanh hạn mức Claude. 09/11 tối: cài skill `scroll-craft` (skills/scroll-craft); giao diện app làm gọn — trang chính chỉ việc cần David + đang chạy, nút ít dùng vào ⋯, bước/log vào Chi tiết, Việc mới chỉ chọn video + Bắt đầu. Thử đoạn 54 s `thu-skill` chạy trọn qua app | David xem bản `thu-skill` ở cổng 2 và so với bản làm bằng skill; đạt thì làm lại highlight → podcast → vlog cùng cách, rồi xoá kiểu cũ (`goi_claude.py`, `khuon/`, `chat_luong.py`) |
-| Làm lại kho 100 video | Kho cũ còn phần kinh doanh đã bỏ | Làm lại theo ba tầng: bản thân → công việc → mối quan hệ |
+| Làm lại kho 100 video | Kho đã thành bảng `dang-lam/kho-100-video.md` và nối vào phiếu lọc (10/11); giai đoạn 3 đánh dấu đã bỏ | Làm lại theo ba tầng: bản thân → công việc → mối quan hệ |
 
 ## Câu hỏi còn mở với David
 

@@ -1,7 +1,7 @@
 # Khối 00-loc-noi-dung: Bộ lọc nội dung + phân phối kênh (làm TRƯỚC mọi việc dựng)
 
 **Dùng trong:** cả 4 loại, và mọi tài nguyên David đưa (video, file ghi âm, bài viết).
-**Đầu vào:** tài nguyên David đưa — KHÔNG kèm yêu cầu (David chốt 05/11/2026) · hồ sơ `~/.claude/David.md` · hồ sơ kênh `../../ho-so/kenh.json` · sổ `~/Movies/_so-danh-muc/danh-muc.md`
+**Đầu vào:** tài nguyên David đưa — KHÔNG kèm yêu cầu (David chốt 05/11/2026) · hồ sơ `~/.claude/David.md` · hồ sơ kênh `../../ho-so/kenh.json` · sổ `~/Movies/_so-danh-muc/danh-muc.md` · **kho 100 video `dang-lam/kho-100-video.md`** (kế hoạch nội dung, repo bộ não)
 **Đầu ra:** phiếu lọc (gửi David = cổng duyệt 1) · một dòng trong sổ danh mục
 **Hình mẫu:** Hieu Nguyen (2 mảng lặp lại 50/50 tập), Alex Hormozi ("được biết đến vì một điều"), Justin Welsh (content pillars), Gary Vaynerchuk (một lần nói → nhiều bài).
 **Sửa khối này → chạy lại:** không có code; đổi luật kênh → sửa `ho-so/kenh.json`.
@@ -21,6 +21,15 @@
 **Cây nội dung** (hồ sơ David mục 4.2): **Gốc** = làm chủ bản thân · **Nhánh chính** = áp dụng vào công việc của chính họ (môi trường
 để tự phát huy thế mạnh) · **Nhánh phụ** = mối quan hệ, chỉ khi bắt nguồn từ bản thân · **Nhân hiệu** = đời thường / hành trình của
 David, chỉ khi giúp người xem tin David là trainer. Không có nhánh kinh doanh / mô hình kinh doanh.
+
+## 1b. Đối chiếu kho 100 video (David chốt 10/11/2026 — bắt buộc mọi tài nguyên)
+Kho `dang-lam/kho-100-video.md` là **kế hoạch nội dung** của kênh: dần dần mọi video phải đi theo kho, tránh làm video lệch mục tiêu.
+Đọc phần "Luật đối chiếu" ở đầu kho, rồi tìm (`grep` nỗi đau / cách làm / từ khoá của lời chép) ý khớp nhất:
+- **Khớp** → ghi `Kho 100: ý <số> "<nỗi đau>"` + kiểu dẫn dắt của ý đó (kho thắng tỉ lệ tự đếm, trừ khi David chọn khác).
+- **Không khớp ý nào** → ⚠️ cảnh báo trong phiếu, David chọn: thêm làm ý mới (cuối giai đoạn hợp) · cất kho · bỏ. Không tự dựng.
+- **Khớp giai đoạn 3** (cơ sở chạy khi vắng chủ — hướng kinh doanh đã bỏ) → ⚠️ cảnh báo rõ.
+- Luôn gợi ý **ý kế tiếp nên quay**: ý "Ý tưởng" số nhỏ nhất (bỏ giai đoạn 3) — nhắc David quay theo kế hoạch.
+- Sau cổng 1 / dựng / đăng: đổi cột Trạng thái của ý trong kho (Đã dựng <ngày> · `tap-<tên>` → Đã đăng <ngày> + link), đẩy GitHub.
 
 ## 2. Chấm 5 tiêu chí (0–2 mỗi tiêu chí)
 | # | Tiêu chí | 2 | 1 | 0 |
@@ -65,7 +74,8 @@ Facebook cá nhân = đời thường, hành trình, chia sẻ lại bài trang.
 📥 <tên file> · <độ dài> · <loại dựng: làm video / ghép vlog / podcast / highlight>
 Kết luận: <nhãn> · <điểm>/10   (Gốc x · Tệp x · Hành động x · Tương tác x · Nhân hiệu x)
 Lý do: <1–2 dòng>  · Lằn ranh: <không / ⚠️ chạm ở mm:ss, lý do, rủi ro → hỏi cắt hay giữ>
-Nhánh: <gốc / công việc / quan hệ / nhân hiệu> · Trùng/lấp kho: <ý số … / không>
+Nhánh: <gốc / công việc / quan hệ / nhân hiệu> · Trùng sổ 30 ngày: <… / không>
+Kho 100: <ý số … "nỗi đau" · dẫn dắt theo kho / ⚠️ không khớp ý nào / ⚠️ giai đoạn 3 đã bỏ> · Ý kế tiếp nên quay: <số + nỗi đau>
 Đề xuất: <sản phẩm → kênh → ngày giờ> (vd. YouTube bản biên tập ~9 phút T3 20:00 · 2 highlight Reels+TikTok T6 · bài viết trang)
 3 phần: Vấn đề <mm:ss> · Giải pháp <mm:ss> · Thực thi <mm:ss / THIẾU>
 Câu mở: "<trích lời>" · Bình luận: "Vấn đề" / "Kết quả" · Dẫn dắt: <Không / Gợi mở / Mời>

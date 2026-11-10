@@ -29,6 +29,9 @@ Luật nội dung (nguyên văn lời David, giọng David, lằn ranh) không p
 - David "ok" → chạy trọn một mạch. "Làm đi" chỉ cho phép làm việc được giao, **không phải chốt các lựa chọn** bên trong nó.
 - Giữa chừng chỉ dừng khi gặp một trong 6 tín hiệu của `hoi-chuyen-gia`; phần không bị ảnh hưởng vẫn làm tiếp.
 - Ngoại lệ được tự chọn, không hỏi trước (David đã chốt): cắt highlight, làm lại video cũ. Vẫn báo rõ đã chọn gì để David sửa.
+- **Phần cứng không hỏi, không đổi** (David chốt 10/11/2026): những gì quy trình mặc định đã định (nhận diện, dấu góc, màn chốt, thẻ cuối,
+  nhạc theo tuyến, mức motion graphics, phụ đề, chuẩn âm lượng, nơi giao file, tên riêng chưa chắc → dùng cách Whisper nghe và nêu ở báo cáo)
+  thì cứ làm đúng mặc định, kể cả với bản "riêng", bản thử. Không đưa thành câu hỏi, không đề xuất bỏ hay giảm. Chỉ hỏi điều quy trình chưa định.
 
 ## 3. Trong lúc làm
 - **Lệnh theo lô:** các lệnh không phụ thuộc nhau gộp vào một lần gọi. Lệnh > 2 phút chạy nền, không thăm dò; render nối tiếp, không song song.
