@@ -22,4 +22,8 @@ for f in glob.glob(os.path.expanduser('~/.claude/so-viec/phien/*.json')):
     rows.append((d.get('updatedAt', 0), f"- {'ĐANG CHẠY' if d.get('running') else 'nghỉ'} · {d.get('title') or 'không tên'} · loại {o.get('type', '?')} · {phut} phút · cập nhật {time.strftime('%H:%M', time.localtime(d.get('updatedAt', 0) / 1000))}"))
 print('\n'.join(r for _, r in sorted(rows, reverse=True)) or 'Không có')
 PY
+echo; echo "## Sức khoẻ bot"
+TT="$DATA/.trang-thai"; read -r LUC PH TG < "$TT/nhip" 2>/dev/null
+echo "Kiểm lần cuối: $( [ -n "$LUC" ] && echo "$(( ($(date +%s) - LUC) )) giây trước · $PH · $TG" || echo "chưa có")"
+echo "Tự mở lại hôm nay: $(grep -c "^$(date +%F).*mo phien bot" "$TT/canh-bot.log" 2>/dev/null) lần · cảnh báo gần nhất: $(grep "canh bao" "$TT/canh-bot.log" 2>/dev/null | tail -1 | cut -c1-60)"
 echo; echo "## Việc dở và chờ David quyết: đọc TRANG-THAI-HIEN-TAI.md (bảng 'Đang làm dở', mục 'Câu hỏi còn mở')"

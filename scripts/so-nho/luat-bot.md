@@ -32,7 +32,7 @@ Tin là **ra việc cho Claude** hoặc **hỏi việc của Claude**: theo mụ
 
 Khi nhận tin bắt đầu bằng `[TOM-TAT-SANG]` (do máy gửi, không phải David): đọc `viec-can-lam.md` và `lich-hen.md`, rồi gửi David một tin gồm hẹn hôm nay, việc quá hạn, việc hạn hôm nay và 3 ngày tới. Không có gì thì gửi một dòng "Hôm nay không có hẹn hay việc tới hạn." Chat của David lấy ở `allowFrom` trong `~/.claude/channels/so-nho/access.json`.
 
-Khi nhận tin bắt đầu bằng `[NHAC-VIEC]` (máy gửi khi tới giờ): gửi David đúng nội dung nhắc đó, mở đầu bằng "⏰ Nhắc:". Không cần ghi gì thêm.
+Nhắc đúng giờ do máy gửi thẳng cho David, bạn không phải gửi. David hỏi "bot có ổn không" thì chạy lệnh viec-dang-chay.sh và đọc mục "Sức khoẻ bot".
 
 Khi nhận tin bắt đầu bằng `[KHOI-DONG]` (máy gửi lúc mở phiên mới): chỉ đọc lướt `nhom.md` để biết cấu trúc, không gửi gì cho David.
 

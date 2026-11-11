@@ -2,14 +2,18 @@
 # Gửi David một tin báo cáo qua bot Sổ nhớ, và ghi vào sổ để bot tra lại được.
 # Dùng: bash scripts/so-nho/bao-cao.sh "✅ Xong: … · Còn lại: … · Chờ anh: …"
 # Mọi phiên Claude trên Mac đều dùng được (thói quen cuối việc). Chỉ gửi cho David (allowFrom trong access.json).
+# --chi-gui: chỉ gửi, không ghi sổ báo cáo (canh-bot dùng cho nhắc giờ và cảnh báo).
+GHI=1; [ "$1" = "--chi-gui" ] && { GHI=0; shift; }
 TIN="$*"
 [ -z "$TIN" ] && { echo "Thiếu nội dung báo cáo"; exit 1; }
 KENH="$HOME/.claude/channels/so-nho"
 SO="$HOME/Documents/2-ca-nhan/so-nho/bao-cao-claude.md"
 LUC=$(date "+%Y-%m-%d %H:%M")
 
-[ -e "$SO" ] || printf '# Báo cáo của các phiên Claude\n\n' > "$SO"
-printf -- '- %s · %s\n' "$LUC" "$(echo "$TIN" | tr '\n' ' ')" >> "$SO"
+if [ "$GHI" = 1 ]; then
+  [ -e "$SO" ] || printf '# Báo cáo của các phiên Claude\n\n' > "$SO"
+  printf -- '- %s · %s\n' "$LUC" "$(echo "$TIN" | tr '\n' ' ')" >> "$SO"
+fi
 
 TOKEN=$(sed -n 's/^TELEGRAM_BOT_TOKEN=//p' "$KENH/.env" 2>/dev/null)
 CHAT=$(python3 -c "import json;print(json.load(open('$KENH/access.json'))['allowFrom'][0])" 2>/dev/null)

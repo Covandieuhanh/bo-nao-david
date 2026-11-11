@@ -1,15 +1,17 @@
 #!/bin/bash
-# Canh bot Sổ nhớ: launchd chạy script này suốt (KeepAlive).
-# - Giữ Mac thức, giữ phiên bot chạy trong screen tên "so-nho".
-# - Mở lại phiên khi lỗi, khi đổi tài khoản Claude, và mỗi ngày lúc 4h (làm mới ngữ cảnh).
-# - 7h sáng nhắc bot gửi tóm tắt; 3h sáng sao lưu sổ nhớ lên Drive.
+# Canh bot Sổ nhớ: launchd chạy script này suốt (KeepAlive), mỗi phút kiểm một vòng.
+# Tự sửa: phiên chết · thừa phiên · máy chủ Telegram chết hoặc mất kết nối mạng · phiên treo · hộp thoại chặn · đổi tài khoản ·
+#         làm mới ngữ cảnh 4h sáng. Việc theo giờ: tóm tắt 7h, nhắc đúng giờ (gửi thẳng, không cần Claude), sao lưu Drive 3h.
+# Báo David qua Telegram (gửi thẳng) khi: chưa đăng nhập Claude · hết hạn mức · mở lại liên tục · mất mạng lâu.
 export PATH="$HOME/.bun/bin:$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
 export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
 
+GOC="$(cd "$(dirname "$0")" && pwd)"
 DATA="$HOME/Documents/2-ca-nhan/so-nho"
 TT="$DATA/.trang-thai"
 TEN="so-nho"
-TOKEN_FILE="$HOME/.claude/channels/so-nho/.env"  # thư mục riêng: phiên Claude khác không thấy token nên không giành bot
+KENH="$HOME/.claude/channels/so-nho"   # thư mục riêng: phiên Claude khác không thấy token nên không giành bot
+TOKEN_FILE="$KENH/.env"
 DRIVE="$HOME/Library/CloudStorage/GoogleDrive-covandieuhanh@gmail.com/Drive của tôi/Sao-luu-mac/So-nho"
 mkdir -p "$TT"
 LOG="$TT/canh-bot.log"
@@ -22,56 +24,116 @@ echo $$ > "$TT/canh.pid"
 
 # launchd xếp tiến trình nền vào hàng ưu tiên thấp (đọc/sửa file chậm 10 giây mỗi lần): gỡ ra cho bot chạy như app thường.
 taskpolicy -B -p $$ 2>/dev/null; taskpolicy -t 0 -l 0 -p $$ 2>/dev/null
-
-# Giữ Mac không ngủ (khi cắm điện) chừng nào script còn chạy.
+# Giữ Mac không ngủ (khi cắm điện) chừng nào script còn chạy. Gập máy thì macOS vẫn ngủ.
 caffeinate -is -w $$ &
 
-dang_chay() { screen -ls 2>/dev/null | grep -q "[0-9]\.$TEN[[:space:]]"; }
+# Tên "so-nho" là đầu của "so-nho-canh" nên screen -S "so-nho" bị nhầm: luôn gọi phiên bot bằng mã đủ (12345.so-nho).
+sid() { screen -ls 2>/dev/null | awk -v t=".$TEN" '$1 ~ t"$" {print $1; exit}'; }
+dang_chay() { [ -n "$(sid)" ]; }
+may_chu() { pgrep -f "bun server.ts" | head -1; }
 tai_khoan() { claude auth status 2>/dev/null | python3 -c "import json,sys;d=json.load(sys.stdin);print(d.get('email','') if d.get('loggedIn') else '')" 2>/dev/null; }
-gui() { # gõ một tin vào phiên bot
-  screen -S "$TEN" -p 0 -X stuff "$1"; sleep 1; screen -S "$TEN" -p 0 -X stuff $'\r'
+tuoi_phien() { echo $(( $(date +%s) - $(cat "$TT/mo-luc" 2>/dev/null || echo 0) )); }
+gui() { # gõ một tin vào phiên bot; lỗi nếu bot chưa sẵn sàng
+  dang_chay && [ -n "$(may_chu)" ] || return 1
+  screen -S "$(sid)" -p 0 -X stuff "$1"; sleep 1; screen -S "$(sid)" -p 0 -X stuff $'\r'
 }
-tat_bot() { # tắt mọi phiên bot (kể cả phiên thừa)
+man_hinh() { rm -f "$TT/man-hinh.txt"; screen -S "$(sid)" -p 0 -X hardcopy "$TT/man-hinh.txt" 2>/dev/null; sleep 1; tr -d '\000' < "$TT/man-hinh.txt" 2>/dev/null; }
+gui_thang() { bash "$GOC/bao-cao.sh" --chi-gui "$1" >/dev/null 2>&1; } # gửi David, không qua Claude
+canh_bao() { # $1 khoá, $2 số giây giữa hai lần báo, $3 nội dung
+  local f="$TT/bao-$1"
+  [ $(( $(date +%s) - $(cat "$f" 2>/dev/null || echo 0) )) -lt "$2" ] && return
+  gui_thang "⚠️ Bot Sổ nhớ: $3" && date +%s > "$f" && ghi "canh bao $1"
+}
+tat_bot() { # tắt mọi phiên bot (kể cả phiên thừa) và máy chủ Telegram còn sót
   screen -ls 2>/dev/null | awk -v t=".$TEN" '$1 ~ t"$" {print $1}' | while read -r id; do screen -S "$id" -X quit; done
-  sleep 3; }
-mo_bot() {
-  screen -dmS "$TEN" -h 2000 bash -c "cd '$DATA' && TELEGRAM_STATE_DIR=$HOME/.claude/channels/so-nho MCP_TIMEOUT=120000 ENABLE_TOOL_SEARCH=false ENABLE_CLAUDEAI_MCP_SERVERS=false CLAUDE_CODE_DISABLE_AUTO_MEMORY=1 exec claude --channels plugin:telegram@claude-plugins-official --permission-mode dontAsk --model haiku"
-  date +%F > "$TT/mo-ngay"; echo "$TK" > "$TT/tai-khoan"; date +%s > "$TT/mo-luc"
-  ghi "mo phien bot"
+  sleep 3; pkill -f "^claude --channels" 2>/dev/null; sleep 1; }
+mo_bot() { # $1 lý do
+  echo "$(date +%s)" >> "$TT/lan-mo"
+  screen -dmS "$TEN" -h 2000 bash -c "cd '$DATA' && TELEGRAM_STATE_DIR=$KENH MCP_TIMEOUT=120000 ENABLE_TOOL_SEARCH=false ENABLE_CLAUDEAI_MCP_SERVERS=false CLAUDE_CODE_DISABLE_AUTO_MEMORY=1 exec claude --channels plugin:telegram@claude-plugins-official --permission-mode dontAsk --model haiku"
+  date +%F > "$TT/mo-ngay"; echo "$TK" > "$TT/tai-khoan"; date +%s > "$TT/mo-luc"; rm -f "$TT/ban-tu" "$TT/mat-mang-tu"
+  ghi "mo phien bot ($1)"
+  # Mở lại liên tục (>4 lần trong 30 phút) là có lỗi không tự sửa được.
+  local gan=$(awk -v t=$(( $(date +%s) - 1800 )) '$1>t' "$TT/lan-mo" | wc -l | tr -d ' ')
+  [ "$gan" -gt 4 ] && canh_bao mo-lai 3600 "đã tự mở lại $gan lần trong 30 phút (lý do cuối: $1). Cần xem lại: screen -r so-nho, nhật ký $LOG."
   sleep 25; gui "[KHOI-DONG] Phiên mới. Đọc lướt nhom.md, không gửi gì."
 }
+co_mang() { curl -s -m 8 -o /dev/null https://api.telegram.org; }
+noi_telegram() { lsof -nP -a -p "$1" -iTCP -sTCP:ESTABLISHED 2>/dev/null | grep -q ':443'; }
 
 while true; do
-  NGAY=$(date +%F); GIO=$(date +%H)
+  NGAY=$(date +%F); GIO=$(date +%H); BAY=$(date +%s)
+  # Giữ nhật ký gọn.
+  [ "$(wc -l < "$LOG" 2>/dev/null || echo 0)" -gt 3000 ] && tail -1500 "$LOG" > "$LOG.tmp" && mv "$LOG.tmp" "$LOG"
+  [ -f "$TT/lan-mo" ] && tail -50 "$TT/lan-mo" > "$TT/lan-mo.tmp" && mv "$TT/lan-mo.tmp" "$TT/lan-mo"
+
   if [ ! -s "$TOKEN_FILE" ]; then ghi "chua co token"; sleep 300; continue; fi
   TK=$(tai_khoan)
   if [ -z "$TK" ]; then
-    ghi "chua dang nhap Claude"; dang_chay && tat_bot; sleep 300; continue
+    ghi "chua dang nhap Claude"; dang_chay && tat_bot
+    canh_bao dang-nhap 21600 "Claude trên Mac chưa đăng nhập (hoặc hết hạn), bot đang tắt. Mở Claude trên Mac đăng nhập lại, bot tự chạy lại sau 5 phút."
+    sleep 300; continue
   fi
 
+  # 1. Đúng một phiên bot đang chạy.
   SO=$(screen -ls 2>/dev/null | awk -v t=".$TEN" '$1 ~ t"$"' | wc -l | tr -d ' ')
   if [ "$SO" -gt 1 ]; then ghi "co $SO phien, tat bot thua"; tat_bot; fi
   if ! dang_chay; then
-    mo_bot
-  elif ! pgrep -f "telegram/0.0.7.*start|bun server.ts" >/dev/null && [ $(( $(date +%s) - $(cat "$TT/mo-luc" 2>/dev/null || echo 0) )) -gt 120 ]; then
-    # Kết nối Telegram đôi khi hỏng lúc mở phiên mà không báo: không thấy máy chủ Telegram sau 2 phút thì mở lại.
-    ghi "mat ket noi Telegram, mo lai"; tat_bot; mo_bot
+    tat_bot; mo_bot "phien khong chay"
   elif [ "$TK" != "$(cat "$TT/tai-khoan" 2>/dev/null)" ]; then
-    ghi "doi tai khoan, mo lai"; tat_bot; mo_bot
+    tat_bot; mo_bot "doi tai khoan"
   elif [ "$GIO" -ge 4 ] && [ "$(cat "$TT/mo-ngay" 2>/dev/null)" != "$NGAY" ]; then
-    ghi "lam moi hang ngay"; tat_bot; mo_bot
+    tat_bot; mo_bot "lam moi hang ngay"
+  elif [ "$(tuoi_phien)" -gt 120 ]; then
+    MC=$(may_chu)
+    MH=$(man_hinh)
+    if [ -z "$MC" ]; then
+      # 2. Máy chủ Telegram chết (hỏng lúc mở, bị phiên khác giành, 409 kéo dài).
+      tat_bot; mo_bot "khong co may chu Telegram"
+    elif ! noi_telegram "$MC"; then
+      # 3. Máy chủ còn nhưng không giữ kết nối tới Telegram.
+      [ -f "$TT/mat-mang-tu" ] || echo "$BAY" > "$TT/mat-mang-tu"
+      MAT=$(( BAY - $(cat "$TT/mat-mang-tu") ))
+      if co_mang; then
+        [ "$MAT" -gt 180 ] && { tat_bot; mo_bot "mat ket noi Telegram ${MAT}s"; }
+      else
+        ghi "khong co mang ${MAT}s"
+        [ "$MAT" -gt 1800 ] && canh_bao mat-mang 7200 "Mac mất mạng hơn 30 phút. Có mạng lại bot tự nối, tin nhắn trong lúc mất mạng vẫn được nhận sau."
+      fi
+    else
+      rm -f "$TT/mat-mang-tu"
+      # 4. Hết hạn mức gói Claude: báo David một lần mỗi 3 giờ.
+      if echo "$MH" | grep -qiE "usage limit|limit reached|hit your limit|reached your|out of (extra )?usage"; then
+        canh_bao han-muc 10800 "gói Claude đã hết hạn mức, bot tạm không trả lời được. Hạn mức mở lại theo giờ ghi trên màn hình Claude; tin nhắn vẫn được giữ."
+      fi
+      # 5. Hộp thoại chặn (chọn mục, xác nhận): bấm Esc.
+      if echo "$MH" | grep -qE "Enter to (confirm|select)|to navigate"; then
+        ghi "hop thoai chan, bam Esc"; screen -S "$(sid)" -p 0 -X stuff $'\033'
+      fi
+      # 6. Phiên treo: đang làm (có "esc to interrupt") liên tục quá 10 phút thì ngắt, quá 15 phút thì mở lại.
+      if echo "$MH" | grep -q "esc to interrupt"; then
+        [ -f "$TT/ban-tu" ] || echo "$BAY" > "$TT/ban-tu"
+        BAN=$(( BAY - $(cat "$TT/ban-tu") ))
+        if [ "$BAN" -gt 900 ]; then tat_bot; mo_bot "treo ${BAN}s"
+        elif [ "$BAN" -gt 600 ] && [ ! -f "$TT/da-ngat" ]; then ghi "ban ${BAN}s, ngat"; screen -S "$(sid)" -p 0 -X stuff $'\033'; touch "$TT/da-ngat"; fi
+      else
+        rm -f "$TT/ban-tu" "$TT/da-ngat"
+      fi
+    fi
   fi
 
+  # Tóm tắt sáng: chỉ đánh dấu đã gửi khi gửi được (bot chưa sẵn sàng thì thử lại phút sau, tới 12h).
   if [ "$GIO" -ge 7 ] && [ "$GIO" -lt 12 ] && [ "$(cat "$TT/tom-tat" 2>/dev/null)" != "$NGAY" ]; then
-    gui "[TOM-TAT-SANG] Gửi David tóm tắt hôm nay $NGAY."; echo "$NGAY" > "$TT/tom-tat"; ghi "gui tom tat"
+    HOM_QUA=$(grep -c "^$(date -v-1d +%F).*mo phien bot" "$LOG")
+    gui "[TOM-TAT-SANG] Gửi David tóm tắt hôm nay $NGAY. Cuối tin thêm một dòng: bot tự mở lại $HOM_QUA lần hôm qua." \
+      && echo "$NGAY" > "$TT/tom-tat" && ghi "gui tom tat"
   fi
 
-  # Nhắc đúng giờ: dòng "- YYYY-MM-DD HH:MM · nội dung" trong nhac-viec.md, tới giờ thì gửi một lần.
+  # Nhắc đúng giờ: dòng "- YYYY-MM-DD HH:MM · nội dung" trong nhac-viec.md. Gửi thẳng qua Telegram nên bot hỏng vẫn nhắc được.
   BAY_GIO=$(date "+%Y-%m-%d %H:%M")
   grep -E '^- [0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2} · ' "$DATA/nhac-viec.md" 2>/dev/null | while IFS= read -r dong; do
     LUC="${dong:2:16}"
     if [[ ! "$LUC" > "$BAY_GIO" ]] && ! grep -qxF -- "$dong" "$TT/da-nhac" 2>/dev/null; then
-      echo "$dong" >> "$TT/da-nhac"; gui "[NHAC-VIEC] ${dong:21}"; ghi "nhac $LUC"; sleep 5
+      gui_thang "⏰ Nhắc: ${dong:21}" && echo "$dong" >> "$TT/da-nhac" && ghi "nhac $LUC"
     fi
   done
 
@@ -79,5 +141,8 @@ while true; do
     mkdir -p "$DRIVE" && rsync -a --exclude ".trang-thai" --exclude ".claude" "$DATA/" "$DRIVE/" \
       && echo "$NGAY" > "$TT/sao-luu" && ghi "sao luu Drive"
   fi
+
+  # Nhịp sống cho lệnh kiểm tra sức khoẻ.
+  echo "$BAY $(dang_chay && echo phien-ok || echo phien-tat) $([ -n "$(may_chu)" ] && echo telegram-ok || echo telegram-tat)" > "$TT/nhip"
   sleep 60
 done
