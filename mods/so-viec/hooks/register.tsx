@@ -58,10 +58,10 @@ const BRAIN_TYPES = new Set(['xay-bo-nao', 'sua-bo-nao', 'lam-mod', 'tai-ban'])
 const BRAIN_SKILLS = new Set(['tai-ban', 'plugin-authoring', 'skill-creator', 'update-config', 'consolidate-memory', 'keybindings-help', 'fewer-permission-prompts', 'init'])
 
 /** Việc nhỏ → việc lớn. Việc mới chưa biết tự rơi vào trò chuyện. */
-function groupOf(type: string | null | undefined, book?: { isTelegram?: boolean }): GroupId | null {
+function groupOf(type: string | null | undefined, book?: { isTelegram?: boolean; title?: string }): GroupId | null {
   if (!type) return null
   if (VIDEO.has(type) || type.startsWith('video:')) return 'video'
-  if (type === 'bot-telegram' || type.startsWith('telegram:') || book?.isTelegram) return 'telegram'
+  if (type === 'bot-telegram' || type.startsWith('telegram:') || book?.isTelegram || /telegram/i.test(book?.title ?? '')) return 'telegram'
   if (BRAIN_TYPES.has(type) || type.startsWith('bo-nao:')) return 'bo-nao'
   return 'tro-chuyen'
 }

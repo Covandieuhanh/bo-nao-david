@@ -1,14 +1,24 @@
 # Sổ việc (mod của Claude Code)
 
-Bảng cạnh khung chat, chỉ 3 phần, chữ viết đầy đủ, tự chạy ở mọi khung Claude Code trên máy:
+Báo cáo tổng hợp theo **việc lớn**, chữ viết đầy đủ, tự chạy ở mọi khung Claude Code trên máy, gộp mọi tài khoản. Bảng cạnh khung chat có 4 phần:
 
-- **🎬 Video đang làm** (mọi khung đang làm video, cả khung mở trước khi cài mod): thời gian và phần trăm hạn mức tuần đã tốn, mỗi thứ một thanh so với trung bình một video.
-- **Hạn mức tuần này:** từng tài khoản Claude đã đăng nhập trên máy một dòng có thanh (đã dùng bao nhiêu phần trăm, ngày làm mới), và gộp mọi tài khoản còn đủ khoảng bao nhiêu video.
-- **Trung bình một video:** mất bao nhiêu phút, tốn bao nhiêu phần trăm hạn mức tuần, **gộp mọi tài khoản**.
+- **Đang làm trên Claude:** mọi khung đang chạy (cả khung mở trước khi cài mod): tên khung, việc lớn, đã chạy bao lâu.
+- **Hạn mức tuần:** từng tài khoản Claude đã đăng nhập trên máy, đã dùng bao nhiêu phần trăm, ngày làm mới.
+- **Tuần này, mỗi việc lớn tốn bao nhiêu:** phần trăm hạn mức tuần và số giờ, có thanh. Riêng làm video có thêm trung bình một video.
+- **Từ đầu tới giờ:** mỗi việc lớn chiếm bao nhiêu phần trong tổng token.
 
-**Video** gộp mọi skill video: `video-style-edit`, `podcast-style-edit`, `cat-highlight-video`, `dang-da-kenh`, `hoc-video-mau`. **Một video = mọi việc video trong cùng một khung chat** (dựng, cắt highlight, đăng bài), chỉ tính khi **skill video được gọi** (model nhỏ không gán nhãn video) và làm từ 3 phút trở lên. Bảng hiện **mọi khung đang làm video** trên máy, ghi tên khung. Thời gian là lúc Claude chạy.
+**Bốn việc lớn**, mọi việc nhỏ tự quy về một việc lớn (hàm `groupOf`), việc mới xuất hiện sau này cũng tự xếp:
 
-**Nhiều tài khoản:** mod gắn với máy nên đổi tài khoản vẫn chạy. Mỗi tài khoản có sổ hạn mức riêng (`~/.claude/so-viec/tai-khoan/<mã>.json`, ghi khi tài khoản đó đang đăng nhập): phần trăm đã dùng, ngày làm mới, và **1% hạn mức tuần ≈ bao nhiêu token** (tổng token tài khoản đó dùng từ đầu tuần chia phần trăm đã dùng). Mỗi lượt ghi kèm 8 ký tự đầu mã tài khoản; tên hiện trên bảng là phần trước @ của email. Mỗi video đổi ra phần trăm theo đúng tài khoản đã làm nó, rồi lấy trung bình. Tài khoản chưa đo được thì dùng mức trung bình của các tài khoản khác. Đây là ước tính.
+| Việc lớn | Gồm |
+|---|---|
+| Làm video | Mọi skill trong bộ skill video (`skills/dung-video/`, kể cả skill video thêm sau này): dựng, podcast, cắt highlight, đăng bài, học video mẫu. Một video = mọi việc video trong một khung, từ 3 phút |
+| Bot Telegram | Khung có tên liên quan Telegram, tin nhắn tới từ Telegram, skill `telegram:*`, lượt model nhỏ xếp vào bot Telegram |
+| Xây bộ não (skill, luật, mod) | Sửa skill, luật, ghi nhớ, cấu hình Claude, làm mod; skill `tai-ban`, `plugin-authoring`, `skill-creator`, `update-config`, `consolidate-memory` |
+| Trò chuyện, hỏi đáp, viết, lên kế hoạch | Mọi việc còn lại |
+
+Lượt không gọi skill: model nhỏ chỉ chọn giữa xây bộ não, bot Telegram, trò chuyện. Skill chỉ là luật chung (`hoi-chuyen-gia`...) không đổi việc.
+
+**Nhiều tài khoản:** mod gắn với máy nên đổi tài khoản vẫn chạy. Mỗi tài khoản có sổ hạn mức riêng (`~/.claude/so-viec/tai-khoan/<mã>.json`, ghi khi tài khoản đó đang đăng nhập): phần trăm đã dùng, ngày làm mới, và **1% hạn mức tuần ≈ bao nhiêu token** (tổng token tài khoản đó dùng từ đầu tuần chia phần trăm đã dùng). Mỗi lượt ghi kèm 8 ký tự đầu mã tài khoản; tên hiện trên bảng là phần trước @ của email. Mỗi việc đổi ra phần trăm theo đúng tài khoản đã làm nó. Tài khoản chưa đo được thì dùng mức trung bình của các tài khoản khác. Đây là ước tính.
 
 `/bao-cao` in bản chữ vào khung chat, `/so-viec` mở lại bảng.
 

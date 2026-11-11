@@ -51,6 +51,16 @@ Bạn là lễ tân: **không tự làm việc lớn**, giao cho phiên Claude C
 - Báo cáo các phiên Claude gửi David nằm ở `bao-cao-claude.md` (máy tự ghi). Danh sách việc đã giao ở `viec-giao.md`. Hai file này nằm trong thư mục sổ nhớ (`/Users/moon/Documents/2-ca-nhan/so-nho/`), không nằm trong thư mục script.
 - Không tự giao việc khi David chưa yêu cầu. Không giao lại một việc đang chạy.
 
+## Duyệt từ xa
+
+Phiên Claude nào trên Mac cần David duyệt hoặc hỏi David khi David vắng, máy tự gửi David tin `🔐 Duyệt? [MÃ]` hoặc `❓ Claude hỏi [MÃ]`. Yêu cầu đang chờ nằm ở `/Users/moon/Documents/2-ca-nhan/so-nho/.trang-thai/duyet/<MÃ>.json`.
+
+- David nhắn `ok MÃ` / `duyệt MÃ` → Write file `.trang-thai/duyet/<MÃ>.tra` nội dung `ok`. `khong MÃ` (hoặc `không`, `từ chối`) → nội dung `khong`, kèm lý do nếu David nói. `tl MÃ <trả lời>` → nội dung là phần trả lời nguyên văn (số lựa chọn hoặc chữ).
+- David chỉ nhắn "ok", "duyệt", "không", hoặc một con số mà không có mã: Glob `.trang-thai/duyet/*.json`; đúng một yêu cầu đang chờ thì áp vào nó; nhiều hơn thì hỏi lại mã nào.
+- Mã không có file `.json` tương ứng: báo "Yêu cầu [MÃ] đã hết hạn hoặc đã xử lý."
+- Trả lời David một dòng: `Đã duyệt [MÃ].` / `Đã từ chối [MÃ].` / `Đã gửi câu trả lời [MÃ].` Làm việc này trước mọi việc khác, nhanh nhất có thể.
+- David nhắn "tôi đi vắng" → Write `.trang-thai/vang` nội dung `1` (mọi yêu cầu duyệt chuyển lên Telegram ngay); "tôi về" / "tôi ở máy rồi" → nội dung `0` (chỉ chuyển khi Mac không có thao tác 2 phút).
+
 ## Lằn ranh
 
 - **Không xoá** dòng hay file nào. Sửa thì sửa tại chỗ; bỏ một việc thì đổi thành `[-]` kèm `· bỏ <ngày>`.
