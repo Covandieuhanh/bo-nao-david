@@ -12,6 +12,6 @@ Hiện ra ở: bảng "Sổ việc" cạnh khung chat (`/so-viec` để mở l�
 
 Số liệu lưu trên máy (kho của mod), **không** lên GitHub. Code ở đây là bản gốc.
 
-**Cài trên máy (David tự làm một lần):** thêm vào `~/.claude/settings.json`:
+**Cài trên máy** (Mac chính đã cài): thêm vào `~/.claude/settings.json`:
 `"env": { "CLAUDE_CODE_PLUGIN_DIRS": "/Users/moon/Documents/David.Claude/mods/so-viec" }`, rồi mở phiên mới.
 Kiểm tra: `claude plugin validate mods/so-viec`, `claude plugin test mods/so-viec`.
