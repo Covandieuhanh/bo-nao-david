@@ -1,6 +1,6 @@
 ---
 name: hoi-chuyen-gia
-description: Luật của David trước khi TẠO hoặc SỬA bất kỳ sản phẩm nào (file, skill, tài liệu, video, kịch bản, bài đăng, code) — Claude dừng lại, hỏi theo vòng từ góc nhìn chuyên gia thực chiến (nêu tên ngắn), mỗi câu 2–3 gợi ý có đề xuất đứng đầu; sự thật tự tra, quyết định David chốt; diễn giải lại ý hiểu và CHỜ David "ok" mới làm. Tự nhận diện lúc cần hỏi (6 tín hiệu), cả lúc bắt đầu lẫn giữa chừng. Dùng ở đầu mọi yêu cầu tạo/sửa sản phẩm, khi David nói "hỏi kỹ", "hỏi chuyên gia", "grill me", "/hoi-chuyen-gia", kể cả khi không nhắc. Không dùng cho câu hỏi nhanh, tra cứu, việc 1–2 bước.
+description: Luật hỏi của David — sản phẩm làm từ tài nguyên (video, bài đăng) thì KHÔNG hỏi, làm theo mặc định skill + đề xuất của Claude rồi báo lựa chọn; thiết kế lớn và sửa bộ não / skill / tài liệu thì Claude dừng lại, hỏi theo vòng từ góc nhìn chuyên gia thực chiến (nêu tên ngắn), mỗi câu 2–3 gợi ý có đề xuất đứng đầu; sự thật tự tra, quyết định David chốt; diễn giải lại ý hiểu và CHỜ David "ok" mới làm. Tự nhận diện lúc cần hỏi (6 tín hiệu), cả lúc bắt đầu lẫn giữa chừng. Dùng ở đầu mọi yêu cầu tạo/sửa, khi David nói "hỏi kỹ", "hỏi chuyên gia", "grill me", "/hoi-chuyen-gia", kể cả khi không nhắc. Không dùng cho câu hỏi nhanh, tra cứu, việc 1–2 bước.
 ---
 
 # Hỏi chuyên gia trước khi làm
@@ -11,15 +11,19 @@ description: Luật của David trước khi TẠO hoặc SỬA bất kỳ sản
 
 ## Khi nào áp dụng
 
-- **Áp:** mọi yêu cầu tạo hoặc sửa sản phẩm: file, skill, tài liệu, video, kịch bản, bài đăng, kế hoạch, code.
-- **Không áp:** câu hỏi nhanh, tra cứu, giải thích, việc 1–2 bước không tạo sản phẩm → trả lời thẳng.
-- **David nói đủ / "làm đi":** bỏ những câu đã có lời đáp, **vẫn diễn giải** và chờ "ok". "Làm đi" chỉ cho phép làm việc được giao, **không chốt các lựa chọn** bên trong nó (chữ, hình, câu chốt…); lựa chọn nào chưa được trả lời vẫn phải hỏi.
-- **Không hỏi:** ngoại lệ được tự chọn (cắt highlight, làm lại video cũ) và phần quy trình mặc định đã định → `thoi-quen-lam-viec.md` mục 2.
+- **Áp (hỏi theo vòng, diễn giải, chờ "ok"):** thiết kế lớn (kế hoạch, chiến lược, skill hay quy trình mới) và sửa bộ não, skill,
+  tài liệu, code.
+- **Không hỏi — làm thẳng tới kết quả:** sản phẩm làm từ tài nguyên David đưa (video, highlight, podcast, bài đăng, bài viết). Điểm skill
+  đã định thì theo skill; điểm chưa định Claude tự chọn; báo "đã chọn X vì Y" ở báo cáo cuối để David sửa ở bản cuối
+  (`thoi-quen-lam-viec.md` mục 2). Giữa chừng chỉ dừng khi gặp tín hiệu nặng (dưới).
+- **Không áp:** câu hỏi nhanh, tra cứu, giải thích, việc 1–2 bước → trả lời thẳng.
+- **"Làm đi", "theo skill", câu không được trả lời** = chốt theo mặc định của skill, phần chưa định theo đề xuất của Claude. Đề xuất
+  đứng đầu luôn là mặc định của skill khi skill đã định.
 - **Không có David để trả lời** (việc tự động, lịch chạy): làm theo giả định hợp lý nhất, ghi rõ giả định ở đầu báo cáo.
 
 ## Sáu tín hiệu phải tự dừng hỏi
 
-Lúc bắt đầu và cả giữa chừng, không đợi David yêu cầu:
+Lúc bắt đầu và cả giữa chừng, không đợi David yêu cầu. Với sản phẩm từ tài nguyên chỉ các tín hiệu **nặng** (1 khi làm đổi hẳn kết quả, 2, 3 khi đăng / xoá / khó đảo ngược, 5) mới dừng; tín hiệu 4 và 6 thì tự chọn theo mặc định + đề xuất và ghi vào báo cáo:
 1. **Hiểu được nhiều cách**: câu mơ hồ, nhất là chữ đọc chính tả lệch làm đổi nghĩa — không tự đoán rồi làm.
 2. **Mâu thuẫn** với luật, bộ nhớ, skill hoặc quyết định David đã chốt.
 3. **Tốn thời gian / tiền / khó đảo ngược**: render > 10 phút, xoá, đăng, gửi tin, dịch vụ trả phí, sửa hàng loạt.
@@ -28,7 +32,7 @@ Lúc bắt đầu và cả giữa chừng, không đợi David yêu cầu:
 6. **Sắp tự đặt một giả định** David chưa xác nhận.
 
 Giữa chừng: dừng đúng bước bị ảnh hưởng, hỏi một vòng ngắn; phần không bị ảnh hưởng vẫn làm tiếp.
-Không hỏi thừa: chuyện nhỏ có mặc định rõ, không đổi thứ người xem thấy/nghe, đảo ngược dễ → tự làm, ghi một dòng "đã chọn X vì Y".
+Không hỏi thừa: có mặc định rõ, hoặc sửa được ở bản cuối → tự làm, ghi một dòng "đã chọn X vì Y".
 
 ## Độ sâu
 
@@ -36,7 +40,8 @@ Claude tự xếp loại việc, David không cần nói "grill me":
 
 | Loại việc | Cách hỏi |
 |---|---|
-| **Làm ra sản phẩm** (video, bài, sửa một file/tài liệu) | **Một vòng gộp** mọi điểm cần chọn; "ok" xong chạy một mạch |
+| **Sản phẩm từ tài nguyên** (video, highlight, podcast, bài đăng) | **Không hỏi**: chạy một mạch tới kết quả, báo các lựa chọn đã làm |
+| **Sửa một file / tài liệu / skill** | **Một vòng gộp** mọi điểm cần chọn; "ok" xong chạy một mạch |
 | **Thiết kế lớn** (kế hoạch, chiến lược, skill hoặc quy trình mới) | **Nhiều vòng** tới khi hết điểm mờ |
 | David nói **"grill me" / "hỏi kỹ"** | Nhiều vòng, kể cả việc nhỏ |
 
@@ -82,6 +87,7 @@ Bạn trả lời "đồng ý" hoặc sửa câu nào nhé.
 7. Sau "ok" làm một mạch, không phải làm lại vì hiểu sai.
 
 ## Nhật ký
+- 2026-11-11 · David: "Hạn chế hỏi những thứ theo tiêu chí nhất có thể… mục tiêu cuối cùng của tôi luôn là đưa tài nguyên vào và chờ kết quả là xong." Nguyên nhân: video cuộc gọi hợp tác, Claude đưa khung hình vào câu hỏi dù skill đã định khung = gốc, đề xuất đầu (dọc) trái mặc định, David không trả lời câu đó → Claude lấy đề xuất của mình, làm sai. Sửa: sản phẩm từ tài nguyên không hỏi; đề xuất đứng đầu = mặc định skill; câu không trả lời / "làm đi" = theo mặc định; chỉ tín hiệu nặng mới dừng. Thay luật cũ "làm đi ≠ chốt lựa chọn".
 ## Tái bản 2 — 10/11/2026: bản luật viết lại từ bảng `dang-lam/tai-ban-2-hoi.md` (24 dòng; không bỏ luật nào). Bỏ dấu "(chốt 05/11/2026)" và ví dụ có ngày ở tín hiệu 1 (chuyện 05/11: Claude tự đoán câu "không biết thông tin nào khi mà đăng lên" rồi render → sai; giữ ở ghi nhớ `luat-tu-hoi-khi-mo-ho`). Gộp hai câu "tự tra / không hỏi điều tra được" làm một; "tối đa 5 câu" nói một lần; thêm lại "Claude tự xếp loại việc" (luật bản đầu bị rơi ở lần chuẩn hoá); ghi rõ chữ lệch chỉ hỏi lại khi hiểu được nhiều cách; ngoại lệ tự chọn + phần cứng không hỏi trỏ về thoi-quen mục 2; "nội dung của David" trỏ AGENTS luật 4.
 - 2026-11-05 · học grill-me / grilling (mattpocock/skills): hỏi theo vòng theo cây quyết định, đề xuất "đồng ý" được, sự thật tự tra, nhiều vòng cho việc lớn.
 - 2026-11-05 · tự nhận diện lúc cần hỏi (6 tín hiệu), hỏi cả giữa chừng — David: "tự nhận diện vấn đề để tự hỏi lại tôi chứ không cần tôi yêu cầu".

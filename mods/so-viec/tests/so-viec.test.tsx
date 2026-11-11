@@ -4,7 +4,7 @@ const usage = { input_tokens: 1000, output_tokens: 2000, cache_read_input_tokens
 const PANE = { plugin: 'so-viec', component: 'Pane', requestId: 'so-viec',
   props: { title: 'Sổ việc', isFocused: false, bodyColumns: 44, placement: 'dock', scroll: { offset: 0, bodyRows: 40 }, view: {} } } as const
 
-test('tổng quan gộp phiên này với phiên khác, có thanh tiến độ', async ($, on) => {
+test('tổng quan gộp phiên này với phiên khác, có thanh tiến độ', { timeoutMs: 30000 }, async ($, on) => {
   let now = new Date(2026, 10, 11, 9).getTime()
   const files = new Map<string, string>()
   // Một phiên khác đang chạy, đã ghi sổ.

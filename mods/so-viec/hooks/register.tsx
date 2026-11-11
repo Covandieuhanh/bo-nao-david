@@ -118,6 +118,89 @@ async function readBooks($: $T, dir: string): Promise<Book[]> {
   return out
 }
 
+/** Phiên đang chạy chưa nạp mod (mở trước khi cài): đọc đuôi lịch sử phiên đó đang ghi. */
+type Foreign = { sid: string; title: string; start: number; tokens: number; type: string | null }
+
+function promptOf(d: Record<string, unknown>): string | null {
+  if (d.type !== 'user' || d.isMeta || d.isSidechain) return null
+  const c = (d.message as { content?: unknown } | undefined)?.content
+  let text = ''
+  if (typeof c === 'string') text = c
+  else if (Array.isArray(c)) {
+    if (c.some(b => (b as { type?: string })?.type === 'tool_result')) return null
+    text = c.map(b => ((b as { type?: string; text?: string }).type === 'text' ? ((b as { text?: string }).text ?? '') : '')).join(' ')
+  } else return null
+  text = text.trim()
+  if (!text || /^<(local-command|command-stdout|task-notification|system-reminder)/.test(text)) return null
+  return text
+}
+
+async function scanForeign($: $T, home: string, known: Set<string>, now: number): Promise<Foreign[]> {
+  const root = `${home}/.claude/projects`
+  const out: Foreign[] = []
+  if (!(await $.fs.exists(root))) return out
+  for (const p of await $.fs.list(root)) {
+    if (p.kind !== 'dir') continue
+    for (const f of await $.fs.list(`${root}/${p.name}`)) {
+      if (f.kind !== 'file' || !f.name.endsWith('.jsonl') || now - f.mtimeMs > LIVE_MS) continue
+      const sid = f.name.slice(0, -6)
+      if (known.has(sid)) continue
+      try {
+        const r = await $.process.run(['tail', '-n', '800', `${root}/${p.name}/${f.name}`], { timeoutMs: 5000 })
+        const rows: Record<string, unknown>[] = []
+        for (const line of r.stdout.split('\n')) {
+          try {
+            rows.push(JSON.parse(line) as Record<string, unknown>)
+          } catch {
+            // dòng đầu bị cắt dở
+          }
+        }
+        let at = -1
+        for (let i = rows.length - 1; i >= 0; i--) if (promptOf(rows[i]!) !== null) { at = i; break }
+        const from = at >= 0 ? at : 0
+        const first = rows[from]
+        const start = first && typeof first.timestamp === 'string' ? Date.parse(first.timestamp) : now
+        let tokens = 0
+        let type: string | null = null
+        const cmd = at >= 0 ? /<command-name>\/?([\w:-]+)<\/command-name>/.exec(promptOf(rows[at]!) ?? '') : null
+        if (cmd) type = SKILL_TYPES[cmd[1]!.split(':').pop()!] ?? null
+        const seen = new Set<string>()
+        for (const d of rows.slice(from)) {
+          if (d.type !== 'assistant') continue
+          const m = d.message as { id?: string; usage?: Record<string, number>; content?: unknown[] }
+          if (m?.usage && m.id && !seen.has(m.id)) {
+            seen.add(m.id)
+            const u = m.usage
+            tokens += (u.input_tokens ?? 0) + (u.output_tokens ?? 0) + (u.cache_read_input_tokens ?? 0) + (u.cache_creation_input_tokens ?? 0)
+          }
+          for (const b of m?.content ?? []) {
+            const tb = b as { type?: string; name?: string; input?: { skill?: string } }
+            if (tb.type === 'tool_use' && tb.name === 'Skill' && !type)
+              type = SKILL_TYPES[String(tb.input?.skill ?? '').split(':').pop() ?? ''] ?? null
+          }
+        }
+        // Lượt này chưa gọi skill: lấy skill gần nhất của phiên (thường là việc đang làm tiếp).
+        for (let i = rows.length - 1; i >= 0 && !type; i--) {
+          const d = rows[i]!
+          if (d.type !== 'assistant') continue
+          for (const b of (d.message as { content?: unknown[] })?.content ?? []) {
+            const tb = b as { type?: string; name?: string; input?: { skill?: string } }
+            if (tb.type === 'tool_use' && tb.name === 'Skill')
+              type = SKILL_TYPES[String(tb.input?.skill ?? '').split(':').pop() ?? ''] ?? type
+          }
+        }
+        let title = ''
+        const tf =`${root}/${p.name}/${sid}/custom-title.json`
+        if (await $.fs.exists(tf)) title = ((JSON.parse(await $.fs.read(tf)) as { customTitle?: string }).customTitle ?? '').slice(0, 40)
+        out.push({ sid, title: title || sid.slice(0, 8), start, tokens, type })
+      } catch {
+        // không đọc được thì bỏ qua lần này
+      }
+    }
+  }
+  return out
+}
+
 function closeJob(book: Book) {
   if (book.open && book.open.turns > 0) book.jobs.push(book.open)
   book.jobs = book.jobs.slice(-MAX_JOBS)
@@ -164,7 +247,7 @@ function period(turns: Turn[], jobs: Job[], from: number, to: number): Period {
   }
 }
 
-function overview(books: Book[], mine: string, now: number): Overview {
+function overview(books: Book[], mine: string, now: number, foreign: Foreign[] = []): Overview {
   const closed = books.flatMap(b => b.jobs)
   const avgs = averages(closed)
   const avgOf = (type: string) => avgs.find(a => a.type === type && a.count >= MIN_SAMPLES) ?? null
@@ -202,11 +285,21 @@ function overview(books: Book[], mine: string, now: number): Overview {
         isRunning: isRun,
         type: type ?? (isRun ? 'đang xác định loại việc' : null),
         ms: (isSame ? (b.open?.activeMs ?? 0) : 0) + run,
-        tokens: isSame && b.open ? total(b.open.tokens) : 0,
+        tokens: (isSame && b.open ? total(b.open.tokens) : 0) + (isRun ? (b.liveTokens ?? 0) : 0),
         avg: own ?? overall,
         basis: own ? 'loai' : overall ? 'chung' : null,
       }
     })
+    .concat(
+      foreign.map((f): Live => {
+        const own = f.type ? avgOf(f.type) : null
+        return {
+          sid: f.sid, title: f.title, isMine: false, isRunning: true, isNoMod: true,
+          type: f.type ?? 'chưa rõ loại việc', ms: now - f.start, tokens: f.tokens,
+          avg: own ?? overall, basis: own ? 'loai' : overall ? 'chung' : null,
+        }
+      }),
+    )
     .sort((a, b) => Number(b.isMine) - Number(a.isMine))
 
   const allTurns = books.flatMap(b => b.turns)
@@ -309,7 +402,10 @@ async function save($: $T) {
 async function refresh($: $T) {
   const book = await mine($)
   const now = await $.clock.now()
-  const o = overview(await readBooks($, dir), book.sid, now)
+  const books = await readBooks($, dir)
+  const home = dir.replace(/\/\.claude\/so-viec$/, '')
+  const foreign = await scanForeign($, home, new Set(books.map(b => b.sid)), now).catch(() => [])
+  const o = overview(books, book.sid, now, foreign)
   await update($, view, () => o)
 
   const brain = `hôm nay ${hm(o.today.ms)}/4h`
@@ -393,6 +489,17 @@ export const register: Register = on => {
     return next(e)
   })
 
+  // Mỗi lần gọi model (cả trợ lý con): cộng token ngay, thanh token chạy theo trong lúc lượt dài.
+  on('turn.step', async function* ($, e, next) {
+    const result = yield* next(e)
+    if (result.usage) {
+      const book = await mine($)
+      book.liveTokens = (book.liveTokens ?? 0) + sumUsage(result.usage)
+      await save($)
+    }
+    return result
+  })
+
   on('skill.prompt', async ($, e, next) => {
     const type = SKILL_TYPES[e.skill]
     if (type && currentTurn) {
@@ -414,6 +521,7 @@ export const register: Register = on => {
 
     // Token của trợ lý con cộng vào việc đang mở; thời gian thì không (chạy song song).
     if (e.agentId !== undefined) {
+      if (usage) book.liveTokens = Math.max(0, (book.liveTokens ?? 0) - sumUsage(usage))
       if (book.open && usage) {
         add(book.open.tokens, usage)
         const last = book.turns[book.turns.length - 1]
@@ -449,6 +557,7 @@ export const register: Register = on => {
       currentTurn = null
       book.running = null
       book.runningType = null
+      book.liveTokens = 0
     }
     await save($)
 
@@ -487,6 +596,7 @@ export const register: Register = on => {
             <Box flexDirection="column" key={l.sid}>
               <Text>
                 {l.isMine ? '▶ Khung này' : `▷ ${l.title}`} · {l.type}
+                {l.isNoMod ? <Text dimColor> (chưa có mod)</Text> : ''}
                 {l.isRunning ? <Text dimColor> · đang chạy</Text> : ''}
               </Text>
               {l.avg ? (
@@ -509,7 +619,7 @@ export const register: Register = on => {
                   : l.basis === 'chung'
                     ? `chưa đủ ${MIN_SAMPLES} lần cùng loại: so với TB mọi việc`
                     : 'chưa có dữ liệu để so'}
-                {l.isRunning ? ' · token cộng khi lượt xong' : ''}
+                {l.isNoMod ? ' · đọc từ lịch sử phiên' : ''}
               </Text>
             </Box>
           ))}

@@ -24,6 +24,8 @@ export type Book = {
   running: number | null
   /** Loại việc của lượt đang chạy, khi đã biết (skill vừa gọi, tiếp nối). */
   runningType?: string | null
+  /** Token đã dùng trong lượt đang chạy (cộng từng bước). */
+  liveTokens?: number
   open: Job | null
   jobs: Job[]
   turns: Turn[]
@@ -36,6 +38,8 @@ export type Live = {
   title: string
   isMine: boolean
   isRunning: boolean
+  /** Phiên mở trước khi cài mod: số liệu đọc từ lịch sử phiên. */
+  isNoMod?: boolean
   type: string | null
   ms: number
   tokens: number

@@ -21,12 +21,17 @@ Luật nội dung (nguyên văn lời David, giọng David, lằn ranh) không p
   `gotchas.md` của skill đọc một lần ở đầu phiên.
 - File dài: tìm (`grep`) rồi đọc đúng đoạn. Đã đọc trong phiên thì không đọc lại.
 
-## 2. Hỏi: theo `hoi-chuyen-gia`; những gì không hỏi
-- Khi nào hỏi và cách hỏi (một lần ở đầu, gộp, đề xuất đứng đầu, tự tra sự thật, "ok" → chạy một mạch, 6 tín hiệu giữa chừng):
-  skill `hoi-chuyen-gia`. Mục này chỉ giữ những gì **không hỏi**:
-- Ngoại lệ được tự chọn, không hỏi trước: cắt highlight, làm lại video cũ. Vẫn báo rõ đã chọn gì để David sửa.
-- **Phần cứng không hỏi, không đổi:** những gì quy trình mặc định của skill đã định thì cứ làm đúng mặc định, kể cả với bản "riêng",
-  bản thử. Không đưa thành câu hỏi, không đề xuất bỏ hay giảm. Chỉ hỏi điều quy trình chưa định. Phần cứng của video: `dung-video/luat-chung.md` mục 8.
+## 2. Mặc định là tự làm, hỏi là ngoại lệ
+Mục tiêu của David: **đưa tài nguyên vào, nhận kết quả**. Các lần làm thật là để chỉnh phần giữa, không phải để trả lời câu hỏi.
+- **Skill / hồ sơ đã định → làm đúng như vậy**, không hỏi, không đề xuất khác. Đề xuất của Claude không bao giờ trái mặc định của
+  skill; thấy cần khác mặc định thì đó là tín hiệu 2 (mâu thuẫn) — dừng hỏi, không tự đổi.
+- **Skill chưa định → Claude tự chọn** phương án tốt nhất theo tiêu chí của skill, làm luôn, ghi "đã chọn X vì Y" trong báo cáo cuối
+  để David sửa ở bản cuối.
+- **Yêu cầu của David làm được trong mặc định → giữ mặc định**, không đổi thứ khác để đáp ứng (vd. "tập trung vào điện thoại" ≠ đổi khung).
+- **Câu David không trả lời, "làm đi", "theo skill"** = theo mặc định của skill, phần chưa định thì theo đề xuất của Claude.
+- **Chỉ dừng hỏi khi:** đăng / gửi / xoá / mật khẩu (`AGENTS.md` luật 5) · tín hiệu nặng của `hoi-chuyen-gia` (mâu thuẫn luật, khó đảo
+  ngược, thiếu file / nguồn hỏng, hiểu được nhiều cách làm đổi hẳn kết quả) · thiết kế lớn và sửa bộ não, skill (vẫn diễn giải + chờ "ok").
+- Phần cứng của video: `dung-video/luat-chung.md` mục 8.
 
 ## 3. Trong lúc làm
 - **Lệnh theo lô:** các lệnh không phụ thuộc nhau gộp vào một lần gọi. Lệnh > 2 phút chạy nền, không thăm dò.
@@ -56,7 +61,7 @@ Luật nội dung (nguyên văn lời David, giọng David, lằn ranh) không p
 
 ## 5. Luôn đi tới mục tiêu, giữ phiên gọn
 **Mục tiêu và "Xong khi":** mọi việc, trừ câu hỏi nhanh.
-- **Đầu việc:** trong lần hỏi đầu, ghi một dòng **Mục tiêu** và 2–4 dòng **Xong khi**. Skill đã có "Xong khi" thì lấy từ đó. David "ok" là chốt.
+- **Đầu việc:** ghi một dòng **Mục tiêu** và 2–4 dòng **Xong khi** ngay tin nhắn đầu (việc cần hỏi: trong lần hỏi). Skill đã có "Xong khi" thì lấy từ đó.
 - **Trong lúc làm:** trước mỗi bước, tự hỏi bước đó có đưa tới "Xong khi" không. Không thì bỏ, hoặc hỏi David.
   David đổi ý giữa chừng → viết lại mục tiêu một dòng, chờ "ok".
 - **Cuối việc:** đối chiếu từng dòng "Xong khi": **đạt / chưa đạt / chưa kiểm**.
@@ -69,7 +74,7 @@ Luật nội dung (nguyên văn lời David, giọng David, lằn ranh) không p
 | Việc tiếp theo lớn, hoặc David đưa việc mới khác hẳn việc đang làm | Đề nghị mở phiên mới, ghi sẵn bước tiếp ở file theo dõi |
 | Việc chính của phiên đã xong, hoặc phiên đã tự tóm tắt hội thoại | Nhắc "cập nhật não" rồi đóng phiên |
 | David quay lại phiên cũ sau nhiều giờ để làm việc mới | Đề nghị phiên mới, vì phiên cũ nạp lại tốn hơn |
-| Tin nhắn thiếu một trong ba điều: việc gì, file nào, muốn ra cái gì | Hỏi gộp một lần, có đề xuất (mục 2) |
+| Tin nhắn thiếu một trong ba điều: việc gì, file nào, muốn ra cái gì | Tự suy từ tài nguyên và skill (mục 2); chỉ hỏi khi không đoán được việc gì |
 | David dán log hoặc văn bản dài | Vẫn làm; cuối việc nhắc lần sau chỉ cần đưa đường dẫn file |
 | Tới bước nhẹ | Nhắc đổi mô hình rẻ hơn (mục 3) |
 | Buổi nhìn lại cuối tuần, hoặc `nao/bo-nho/` quá 40 ghi nhớ | Đề nghị "dọn bộ nhớ" (skill `consolidate-memory`) |
