@@ -118,6 +118,17 @@ for s in scenes:
                     'nguoi': [{k: v for k, v in p.items() if k != 'i'} for p in people],
                     'vung': {'l': min(p['l'] for p in people), 'r': max(p['r'] for p in people),
                              't': min(p['t'] for p in people), 'b': max(p['b'] for p in people)}}
+# KHUNG CHỦ THỂ (khung_chu_the.py, 11/11/2026): "người" = khung chủ thể trên hình xuất — Vision không dò được mặt trong màn hình
+# điện thoại / laptop (11/11/2026 phải chỉnh tay mat.js); graphic tránh đúng khung đó, bám phía còn lại.
+import re as _re
+_kf = f'{P}/motion/src/khung.js'
+_kt = _re.search(r"export default (\{.*\});", open(_kf, encoding="utf-8").read(), _re.S) if os.path.exists(_kf) else None
+if _kt:
+    K = json.loads(_kt.group(1))
+    _b = {'cx': K['x'] + K['w'] / 2, 'cy': K['y'] + K['h'] / 2, 'w': K['w'], 'h': K['h'], 'l': K['x'], 'r': K['x'] + K['w'],
+          't': K['y'], 'b': K['y'] + K['h']}
+    res = {s['id']: {**{k: _b[k] for k in ('cx', 'cy', 'w', 'h', 'l', 'r')}, 'nguoi': [{**_b, 'noi': True, 'uoc': True}],
+                     'vung': {k: _b[k] for k in ('l', 'r', 't', 'b')}, 'khung': True} for s in scenes}
 open(f'{P}/motion/src/mat.js', 'w').write(
     "// Mọi người trong từng cảnh + người đang nói — tự sinh bởi scripts/nhan_place.py, toạ độ 0–1\n"
     "export default " + json.dumps(res, ensure_ascii=False, indent=1) + ";\n")

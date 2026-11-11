@@ -17,6 +17,9 @@ Mục tiêu: từ một video gốc, **tự chọn ý** rồi ra các clip ngắ
 
 Clip đẹp mà xem xong không hiểu gì, hoặc hiểu mà không mang về được gì, là clip hỏng.
 
+
+**Tự chọn cách trình bày:** trước kịch bản cảnh, chẩn đoán + chọn theo `../trinh-bay/tu-chon.md` (`video-style-edit/scripts/chan_doan.py`): lớp thông tin, kiểu cảnh theo dạng câu nói; ghi "đã chọn X vì Y" vào kế hoạch cảnh.
+
 ## Bốn câu chọn ý (luật gốc của skill, đứng trên mọi luật khác của skill khi trái nhau)
 Claude **tự chọn ý, không hỏi David chọn đoạn**. Đọc nối lời như người lạ chưa xem bản dài, trả lời đủ 4 câu cho từng clip và ghi vào `chon_y` trong `phuong-an.json`. Thiếu một câu thì chọn lại ý, không nộp.
 | Khoá | Câu hỏi | Đạt khi |

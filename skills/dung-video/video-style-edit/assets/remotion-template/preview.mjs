@@ -18,7 +18,7 @@ for (const arg of process.argv.slice(2)) {
   const [id, t] = arg.split('@');
   const comp = await selectComposition({serveUrl, id});
   const frame = Math.min(comp.durationInFrames - 1, Math.max(0, fr(Number(t)) - fr(comp.defaultProps.start)));
-  await renderStill({serveUrl, composition: comp, frame, output: path.join(out, `${id}@${t}.png`), imageFormat: 'png'});
+  await renderStill({serveUrl, composition: comp, frame, output: path.join(out, `${id}@${t}.png`), imageFormat: 'png', timeoutInMilliseconds: 240000});   // màn chốt đọc khung từ video gốc lớn → mặc định 28 s quá hạn (11/11/2026)
   console.log('ok', id, t, frame);
 }
 

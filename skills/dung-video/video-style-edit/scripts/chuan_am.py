@@ -27,17 +27,19 @@ if "--chi-do" in sys.argv or (abs(lech) <= SAI and not dinh_vuot):
     sys.exit(0)
 tam, goc = f + ".chinh-am.mp4", f + ".truoc-chinh.mp4"
 os.replace(f, goc)                                  # giữ bản trước khi chỉnh: mỗi lượt xuất lại TỪ BẢN NÀY, không nén AAC chồng
-han = 10 ** ((NH["dinh_dB"] - 0.5) / 20)          # chặn thấp hơn chuẩn 0,5 dB: AAC đẩy đỉnh lên lại một chút
+han_db = NH["dinh_dB"] - 0.5                       # chặn thấp hơn chuẩn 0,5 dB: AAC đẩy đỉnh lên lại một chút
 gain = lech if abs(lech) > SAI else 0.0
 i2, tp2 = i, tp
-for luot in range(1, 4):                            # bộ chặn đỉnh làm bài nhỏ đi (10/11/2026 ra −14,8) → đo lại, bù phần thiếu, tối đa 3 lượt
+for luot in range(1, 7):                            # bộ chặn đỉnh làm bài nhỏ đi (10/11/2026 ra −14,8) → đo lại, bù phần thiếu, tối đa 6 lượt
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", goc, "-map", "0:v", "-map", "0:a", "-c:v", "copy",
-                    "-af", f"volume={gain:.2f}dB,aresample=192000,alimiter=limit={han:.4f}:level=disabled:attack=5:release=60,aresample=48000",
+                    "-af", f"volume={gain:.2f}dB,aresample=192000,alimiter=limit={10 ** (han_db / 20):.4f}:level=disabled:attack=5:release=60,aresample=48000",
                     "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", tam], check=True)
     i2, tp2 = do(tam)
     if abs(MUC - i2) <= SAI and tp2 <= NH["dinh_dB"]:
         break
     gain += MUC - i2
+    # AAC đẩy đỉnh vượt ngưỡng chặn (11/11/2026: chặn −2,0 ra −1,0 sau AAC, 3 lượt không đạt) → hạ ngưỡng đúng phần vượt
+    if tp2 > NH["dinh_dB"]: han_db -= tp2 - NH["dinh_dB"] + 0.1
 os.replace(tam, f)
 os.remove(goc)
 dat = abs(MUC - i2) <= SAI and tp2 <= NH["dinh_dB"]

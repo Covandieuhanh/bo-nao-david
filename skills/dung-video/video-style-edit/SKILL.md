@@ -18,6 +18,15 @@ video > 3 phút làm đủ gói YouTube (màn kết, chương, teaser, thumbnail
 theo khối. Giữa chừng chỉ dừng khi gặp tín hiệu nặng (`hoi-chuyen-gia`). Báo cáo cuối liệt kê "đã chọn X vì Y" để David sửa ở bản
 cuối; nhận góp ý thì sửa đúng cảnh được nêu (không tự render lại — `luat-chung.md` mục 8).
 
+## Nhịp làm (mục tiêu: video 10 phút xong trong ~1 giờ)
+
+- **Tự chọn trước, không thử bằng render** (`../trinh-bay/tu-chon.md`): chẩn đoán → chọn bố cục nền, lớp thông tin, kiểu cảnh →
+  `soat_canh.mjs` chặn kiểu lỗi theo khung → chụp thử đủ lớp → render một lần.
+- Render và ghép chạy nền; `render_preview.py` tự dừng khi render còn chạy hoặc thiếu lớp (không ghép thiếu).
+- **Lỗi skill giữa chừng không mổ xẻ tại chỗ**: ghi một dòng vào `check/loi-skill.md`, làm tiếp bằng cách đơn giản nhất cho đúng kết
+  quả, cuối việc báo David + đề xuất sửa skill.
+- Báo mốc giờ ở mỗi bước dài (render, ghép); quá 1,5 lần dự kiến thì nói lý do.
+
 ## Luật riêng (kiểm lại trước khi giao)
 
 Luật chung của video ở `../luat-chung.md`: chữ nguyên văn (1), video dài không cắt (2), không ghi chú kỹ thuật trên video (4), hình,
@@ -27,7 +36,7 @@ bộ nhận diện, phát hành. Dưới đây chỉ là luật RIÊNG của ski
    thể diễn tả 1–2 ý hoặc cả video, ý quay lại thì vẽ tiếp lên hình đã có (mạch hình, cảnh tự vẽ `ve`). Không con số cố định.
 2. **Mở đầu `hook`** — **không làm mặc định** (khối 06): chỉ khi David yêu cầu, chữ nguyên văn. `project.js` ghi
    `topic: '<CHỦ ĐỀ>'` (≤ 3 chữ, trích lời) cho dấu góc + thẻ cuối.
-3. **Bố cục tự cân** (khối 07 + `../trinh-bay/bo-cuc.md`): danh mục có sẵn (dùng khi hợp, không bắt buộc — cần hình riêng thì viết cảnh tự vẽ `ve`) — người + phụ đề, `nhan`,
+3. **Bố cục tự chọn theo nội dung** (`../trinh-bay/tu-chon.md` → khối 07 + `../trinh-bay/bo-cuc.md`): danh mục có sẵn (dùng khi hợp, không bắt buộc — cần hình riêng thì viết cảnh tự vẽ `ve`) — người + phụ đề, `nhan`,
    `bocuc` (`the-canh` thẻ cạnh mặt · `o-nguoi` người vào ô bo góc + nội dung · `chuong` màn chương), `illus` / `diagram` toàn màn hình.
    Hợp nội dung, người xem dễ nhận; dọc mỗi lúc ít thứ. **Điểm nhấn trên người** (`nhan`): zoom dồn / làm tối viền / chữ nhấn hay biểu
    tượng cạnh mặt ở câu đắt, không che mặt. Mọi video đều có điểm nhấn — "dựng nhẹ" vẫn có — nhưng chỉ vài kiểu hợp nội dung nhất.
@@ -61,7 +70,8 @@ khi không rõ file nào là mẫu. "Giống video trước" → lấy token pho
 - **Video mẫu**: file video hoặc bản quay màn hình. Chỉ có link YouTube/TikTok → tải bản 720p **chỉ để học** vào thư mục tạm, học xong
   xoá (`../trinh-bay/README.md` mục 4); hoặc 4–8 ảnh chụp các cảnh tiêu biểu. Không có mẫu → phong cách mặc định của template. Học phong cách mẫu không đụng chữ ký nhận diện (khối 10).
 - Yêu cầu thêm của David (thông điệp chính, tên, chỗ muốn nhấn) luôn ưu tiên hơn suy luận.
-- **Khung xuất**: cùng khung video gốc; chỉ đổi khi David **nói rõ khung** ("làm dọc", "xuất ngang"). Yêu cầu khác (tập trung vào một vùng, phóng to…) làm trong khung gốc:
+- **Khung xuất**: cùng khung video gốc; chỉ đổi khi David **nói rõ khung** ("làm dọc", "xuất ngang"). Yêu cầu khác làm trong khung gốc — **tập trung vào một vùng / bỏ rác quanh chủ thể** (màn hình điện thoại, laptop, vật) → **khung chủ thể**
+  (`khung_chu_the.py`, khối 04): chủ thể thành khung bo góc trên nền kênh, phần còn lại cho bảng ghi chú + cảnh — không cắt-phóng cả khung:
 
 | Gốc → xuất | Cách làm | Ở đâu |
 |---|---|---|
@@ -78,6 +88,7 @@ khi không rõ file nào là mẫu. "Giống video trước" → lấy token pho
 | 4 | Đổi khung (nếu cần) + nâng khung | [04](../khoi/04-khung-hinh/README.md) | `reframe_*` / `set_output.py` · `lift.py "$P" apply` |
 | 5 | Chép lời + hiểu video *(bước nhẹ)* | [01](../khoi/01-chep-loi/README.md) | `analyze_video.sh` |
 | 6 | Phụ đề | [03](../khoi/03-phu-de/README.md) | `captions.py` → sửa từng dòng |
+| 6b | **Chẩn đoán → tự chọn**: bố cục nền (khung gốc / khung chủ thể / pillar), lớp thông tin (bảng ghi chú chạy `GHI_CHU`, chương), kiểu cảnh | [`tu-chon.md`](../trinh-bay/tu-chon.md) · [04](../khoi/04-khung-hinh/README.md) | `chan_doan.py` → (`khung_chu_the.py luoi` → `apply`) |
 | 7 | Phong cách (video mẫu / dự án cũ) · **tuyến nội dung → nhạc** (`project.tuyen`, bắt buộc, ghi sau clean_apply) | [10](../khoi/10-nhan-dien/README.md) · [09](../khoi/09-am-thanh/README.md) | style.md → theme.js |
 | 8 | Kịch bản: bố cục tự cân · điểm nhấn · màn chốt nguyên văn | [07](../khoi/07-canh-minh-hoa/README.md) · [08](../khoi/08-ket-thuc/README.md) · ([06](../khoi/06-mo-dau/README.md) chỉ khi được yêu cầu) | scenes.js + ke-hoach-canh.md |
 | 9 | Tránh che người | [05](../khoi/05-tranh-che-nguoi/README.md) | `face_place.sh` |
@@ -161,6 +172,7 @@ Ghi góp ý đúng một chỗ: khối/skill bị ảnh hưởng + một dòng `
 - `assets/montage-template/` + `scripts/new_montage.sh` — template dựng cả video có tiếng cho chế độ ghép.
 
 ## Nhật ký
+- 2026-11-11 · David: "học rất nhiều… các skill phải tự động chọn ra được cách nào phù hợp với nội dung"; video cuộc gọi mất 4–5 giờ, "tập trung vào điện thoại" mà vẫn còn rác. Thêm bước 6b chẩn đoán → tự chọn (`trinh-bay/tu-chon.md`, `chan_doan.py`), khung chủ thể (`khung_chu_the.py`), bảng ghi chú chạy (`GHI_CHU`), mục Nhịp làm; sửa chuẩn âm, khoá render, soát cảnh chặn kiểu lỗi khung ngang + màn trống đầu cảnh.
 - 2026-11-11 · David: "mục tiêu cuối cùng của tôi luôn là đưa tài nguyên vào và chờ kết quả là xong". Bỏ "hỏi một lần ở đầu"; khung xuất chỉ đổi khi David nói rõ khung (Claude đã tự đổi ngang → dọc vì "tập trung vào khu vực điện thoại").
 - 2026-11-09 · David chốt: motion graphic kể chuyện, tự do sáng tạo (luật 1 mới, khối 07); thêm cảnh tự vẽ `ve` + thư mục `motion/src/rieng/` + mạch hình `lib/mach.js`; chuyển động dùng chung `lib/chuyen-dong.js`.
 - 2026-11-08 · chuẩn hoá (`dang-lam/chuan-hoa-skill.md` bước 3): hỏi một lần đầu thay "chạy một mạch không hỏi" (N1); bỏ con số cố định (N6), thẻ tít mặc định (N2), chữ "2 trạng thái" (C3), ví dụ cũ hướng sức khoẻ; màn chốt nguyên văn, không tự đặt câu kêu gọi (N4); đọc trước 3 file, luật chung trỏ `luat-chung`; đánh dấu bước nhẹ 1·2·5; rút mô tả; thêm "Xong khi"; video mẫu chỉ có link → được tải 720p chỉ để học, học xong xoá (khớp `trinh-bay`). Chi tiết các quyết định trước: `references/changelog.md`.

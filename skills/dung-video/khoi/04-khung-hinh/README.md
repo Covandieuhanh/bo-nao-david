@@ -49,6 +49,20 @@ Mặt nằm thấp (tâm > ~900 px hoặc cằm lọt dải phụ đề) → đ�
 hở là chính hình đó làm mờ. Toàn bảng 0 → "không cần nâng", bỏ qua. Xem 1–2 khung sau khi nung (mặt không chạm đỉnh vùng an
 toàn). Chạy lại sau khi sửa cuts → tự tính từ bản chưa nâng. Phải chạy TRƯỚC bước hiểu video (khối 01) và `face_place.sh` (mặt dò lại trên bản đã nâng).
 
+## Khung chủ thể (tập trung một vùng, bỏ rác — David chốt 11/11/2026)
+
+Chủ thể cần xem (màn hình điện thoại / laptop, bảng, vật, người nhỏ giữa khung rộng) chiếm phần nhỏ khung hoặc quanh có rác → tách
+chủ thể thành **khung bo góc viền cam trên nền kênh**; phần khung còn lại cho phụ đề, bảng ghi chú chạy, cảnh cạnh chủ thể. Khung xuất
+giữ nguyên. Chạy sau làm sạch, trước `face_place.sh`:
+```bash
+python3 -I $SKILL/scripts/khung_chu_the.py "$P" luoi [giây …]   # → check/khung/luoi.jpg (lưới 10 %) — đọc toạ độ chủ thể
+# ghi check/khung.json: {"phia": "trai", "vung": [{"tu": 0, "x": 312, "y": 45, "w": 700, "h": 990}, {"tu": 271.8, "x": 442, "y": 45}]}
+python3 -I $SKILL/scripts/khung_chu_the.py "$P" apply           # → video_goc.mp4 mới (bản trước: video_goc_truoc_khung.mp4) + motion/src/khung.js
+```
+Máy quay dịch → thêm vùng theo mốc giây (cùng w, h). `nhan_place.py` đọc `khung.js`: "người" = khung chủ thể (không cần Vision dò mặt
+trong màn hình). **Không cắt-phóng cả khung để bỏ rác** (lỗi 11/11/2026: rác vẫn còn quanh chủ thể). Không tạo liên kết cứng giữa bản
+nguồn và `video_goc.mp4` (ffmpeg ghi đè chính nguồn — script đã chặn).
+
 ## Khung xuất
 
 | Nguồn | Xuất mặc định |

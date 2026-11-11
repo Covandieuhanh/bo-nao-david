@@ -45,6 +45,13 @@ Cột "Code": **có** = viết được ngay trong `scenes.js` · **chưa** = m�
 | Trước / sau hai khung cạnh nhau | so sánh kết quả | cả hai | chưa (gần `card` `vs`) |
 | Người làm mờ phía sau, chữ / vật nổi giữa khung (không cắt sang nền tối) | câu chốt giữa đoạn nói | cả hai | = `phong: 'nguoi-mo'` cho cảnh toàn màn hình |
 
+## Nền và lớp thông tin (11/11/2026 — chọn theo `tu-chon.md`)
+
+| Kiểu | Hợp khi | Ngang / dọc | Code |
+|---|---|---|---|
+| **Khung chủ thể** (`khung_chu_the.py`): chủ thể tách thành khung bo góc trên nền kênh | quay màn hình điện thoại / laptop, vật, người nhỏ giữa nhiều rác | ngang (dọc: chưa thử) | có |
+| **Bảng ghi chú chạy** (`GHI_CHU` trong scenes.js): tên phần + ý nguyên văn cộng dồn, luôn hiện ở phần khung trống, cảnh hiện thì nhường | video dày thông tin, cuộc gọi, bài giảng, người nói không nhìn camera | ngang (dọc: chưa thử) | có |
+
 ## Cách nối giữa bố cục
 
 | Cách | Hợp khi | Code |

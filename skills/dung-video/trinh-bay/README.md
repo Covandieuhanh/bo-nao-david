@@ -50,7 +50,8 @@ Bước nhẹ (1–3): tới đó nhắc một dòng để David tự đổi mô
    **Chờ David "ok" rồi mới sửa skill.**
 6. **Ghi vào kho** (kho là thực đơn, không phải luật). Điều học được làm **đổi luật** → sửa thẳng câu luật đó, lý do vào sổ (thoi-quen mục 4), không thêm câu chồng.
    **Cách ghi kho:** một file `nguon-hoc/<ten-nguon>-<ngay>.md` kể học gì từ đâu. Mỗi cách mới thêm một dòng ở `bo-cuc.md` hoặc `am-thanh.md`,
-   ghi rõ "đã có code" hay "chưa có code". Không xoá, không sửa nghĩa dòng cũ.
+   ghi rõ "đã có code" hay "chưa có code", **và thêm dòng "dấu hiệu nhận ra → kiểu" vào `tu-chon.md`** (không có dòng ở đó thì không
+   bao giờ được chọn). Không xoá, không sửa nghĩa dòng cũ.
 7. **Làm code khi cần:** thêm `kieu` mới trong `video-style-edit/assets/remotion-template/src/components/BoCuc.jsx` (màu nhấn và
    font lấy từ `C`, `HEAD`, `BODY`; hình động dùng `ease`, `pop`, `Illus`, `Diagram`, `Icon` hoặc `thu-vien-hinh/chuyen-dong.js`). Vị trí lấy từ hằng số chung (`SAFE`, `BRAND_TOP`/`BRAND_BOT`,
    `PF`, `CAP_H`), **không viết số vị trí riêng**.
@@ -65,7 +66,7 @@ Bước nhẹ (1–3): tới đó nhắc một dòng để David tự đổi mô
 
 ## 5. Dùng khi dựng
 
-- Khi lên kịch bản cảnh (khối 07), đọc `bo-cuc.md` và chọn kiểu theo 4 câu hỏi ở mục 2. Ghi lý do một dòng cho mỗi cảnh vào
+- Trước kịch bản cảnh: chẩn đoán + tự chọn theo **`tu-chon.md`** (`chan_doan.py`). Rồi đọc `bo-cuc.md` và chọn kiểu theo 4 câu hỏi ở mục 2. Ghi lý do một dòng cho mỗi cảnh vào
   `ke-hoach-canh.md` của dự án.
 - Danh mục là **kho để chọn**, không phải công thức. Một video có thể chỉ dùng hai kiểu, cũng có thể dùng năm kiểu, tuỳ nội dung.
 
@@ -73,6 +74,7 @@ Bước nhẹ (1–3): tới đó nhắc một dòng để David tự đổi mô
 
 | File | Nội dung |
 |---|---|
+| [tu-chon.md](tu-chon.md) | **cách tự chọn**: dấu hiệu hình gốc / nội dung / câu nói → bố cục nền, lớp thông tin, kiểu cảnh |
 | [bo-cuc.md](bo-cuc.md) | danh mục bố cục: dùng khi nào, viết thế nào, có code chưa |
 | [am-thanh.md](am-thanh.md) | cách đặt tiếng hiệu ứng / nhạc theo bố cục |
 | [nguon-hoc/](nguon-hoc/) | mỗi nguồn đã học một file: học gì, ở phút nào |

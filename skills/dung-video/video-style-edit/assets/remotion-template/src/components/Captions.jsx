@@ -17,6 +17,9 @@ import {SUB, ShortLine, highlight} from '../lib/subStyle';
 import HS from '../hoso.json';   // hồ sơ tham số (chép lúc tạo dự án — khoi/hoso.py)
 const PD = HS.phu_de || {};
 import {holdEnds} from '../lib/giu';
+import * as SC from '../scenes';
+import KHUNG from '../khung.js';   // khung chủ thể (khung_chu_the.py) → phụ đề + bảng ghi chú ở phần khung còn lại
+import {BangGhiChu, bangO} from './BangGhiChu';
 // MỖI LÚC MỘT CHỖ CHỮ (David chốt 2026-11-08, thay luật 02/11 chỉ ẩn khi thẻ có quote): cảnh motion graphic nào đang hiện (chữ to,
 // thẻ, nhãn, sơ đồ, màn hành động…) thì phụ đề nhường — chữ trên hình là lời nguyên văn của đúng lúc đó. Phần còn lại của dòng hiện
 // tiếp đúng cụm đang nói. Cảnh không có chữ: props.giuPhuDe = true để giữ phụ đề. Áp cho mọi khung (dọc, ngang, podcast).
@@ -52,14 +55,22 @@ export const Captions = () => {
   // Highlight (highlight.js) ở video người nói: thanh tập gốc chiếm đáy vùng an toàn → phụ đề lên ngay trên nó như podcast
   // podcast dọc: canh theo vùng an toàn (lề phải chừa cột nút nền tảng) — canh giữa khung 1080 làm phụ đề lấn vùng đỏ bên phải
   // (AI bắt ở chụp thử podcast 10/11/2026). Ngang giữ canh giữa.
-  const box = POD ? {left: LAND ? (PF.W - PF.capW) / 2 : PF.left, width: PF.capW, bottom: PF.capBottom, size: PF.capSize}
+  let box = POD ? {left: LAND ? (PF.W - PF.capW) / 2 : PF.left, width: PF.capW, bottom: PF.capBottom, size: PF.capSize}
     : {left: SAFE.left, width: SAFE_W, bottom: TL_ON ? PF.capBottom : SAFE.bottom - SUB.bottomGap, size: SUB.size};   // luôn ở đáy vùng an toàn (người dùng chốt)
+  // Bảng ghi chú chạy + khung chủ thể (11/11/2026): phụ đề vào cột cạnh khung, bảng ngay trên phụ đề; cảnh đang hiện → bảng nhường
+  const GC = !POD && SC.GHI_CHU && SC.GHI_CHU.length ? SC.GHI_CHU : null;
+  const capTop = box.bottom - box.size * 3.4;
+  const bo = (GC || KHUNG) && !POD ? bangO(KHUNG, SC.GHI_CHU_O, capTop) : null;
+  if (bo && KHUNG && !POD) { box.left = bo.x; box.width = bo.w; }
+  const gan = LOP.reduce((m, s) => Math.min(m, f < fr(s.start) ? fr(s.start) - f : f >= fr(s.end) ? f - fr(s.end) + 1 : 0), Infinity);
+  const vis = Math.max(0, Math.min(1, gan / 8));
   const a = cap ? ease(f, fr(cap.start), fr(cap.start) + 3) : 0;
   // màn chốt khung ngang: ô video to chiếm nửa trên → ẩn dấu góc (lỗi 08/11/2026: dấu góc đè lên ô video)
   const ctaNgang = project.width > project.height && SCENES.some((s) => s.type === 'cta' && f >= fr(s.start) && f < fr(s.end));
   return (
     <AbsoluteFill>
       {CHU && <ChuChinh cap={cap} f={f} />}
+      {GC && bo && <BangGhiChu data={GC} o={bo} vis={vis} />}
       {cap && !CHU && <div style={{position: 'absolute', left: box.left, width: box.width, top: box.bottom, transform: 'translateY(-100%)',
         display: 'flex', justifyContent: 'center', opacity: a}}>
         {SHORT

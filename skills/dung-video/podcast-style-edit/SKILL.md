@@ -18,6 +18,9 @@ Luật nội dung của skill gốc vẫn áp dụng. Lệnh > 2 phút chạy n�
 theo khối; chụp thử mọi cảnh mới để Claude tự soát (khối 17) rồi chạy một mạch tới bản cuối; giữa chừng chỉ dừng khi gặp tín hiệu nặng
 (`hoi-chuyen-gia`). Báo cáo cuối liệt kê "đã chọn X vì Y" để David sửa ở bản cuối.
 
+
+**Tự chọn cách trình bày:** trước kịch bản cảnh, chẩn đoán + chọn theo `../trinh-bay/tu-chon.md` (`video-style-edit/scripts/chan_doan.py`): lớp thông tin, kiểu cảnh theo dạng câu nói; ghi "đã chọn X vì Y" vào kế hoạch cảnh.
+
 ## Luật riêng (kiểm lại trước khi giao)
 
 Luật chung video ở `../luat-chung.md` (chữ nguyên văn, không cắt video dài, hình, nhận diện, phát hành, số liệu). Luật RIÊNG podcast:

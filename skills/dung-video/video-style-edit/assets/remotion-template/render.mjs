@@ -9,6 +9,9 @@ import output from './src/output.js';
 const out = path.resolve('../davinci/media');
 fs.mkdirSync(out, {recursive: true});
 const only = new Set(process.argv.slice(2));
+// KHOÁ RENDER (11/11/2026: ghép bản cuối lúc the_cuoi còn đang render → video mất màn kết 20 s): render_preview.py thấy khoá thì dừng
+const KHOA = path.join(out, '.dang-render'); fs.writeFileSync(KHOA, String(process.pid));
+process.on('exit', () => fs.rmSync(KHOA, {force: true}));
 // Video gốc cho cảnh cần chiếu lại hình (màn chốt `cta`): public/goc.mp4 → davinci/media/<source>
 import project from './src/project.js';
 { const lnk = path.resolve('public/goc.mp4'); fs.rmSync(lnk, {force: true});

@@ -7,6 +7,13 @@ from _common import load, node_env
 P = os.path.expanduser(sys.argv[1])
 d = load(P); pr, scenes, out_ = d["project"], d["scenes"], d["out"]
 M = os.path.join(P, "davinci/media")
+# Render chưa xong (render.mjs giữ khoá .dang-render) hoặc thiếu lớp → dừng, không ghép thiếu (11/11/2026: mất màn kết YouTube)
+if os.path.exists(os.path.join(M, ".dang-render")):
+    _pid = open(os.path.join(M, ".dang-render")).read().strip()
+    try: os.kill(int(_pid), 0); sys.exit("render.mjs đang chạy — chờ xong rồi ghép")
+    except (OSError, ValueError): os.remove(os.path.join(M, ".dang-render"))
+_thieu = [s["id"] for s in scenes if not os.path.exists(os.path.join(M, s["id"] + ".mov"))]
+if _thieu: sys.exit("thiếu lớp chưa render: " + ", ".join(_thieu))
 FPS = f'{pr["fpsNum"]}/{pr["fpsDen"]}'
 fr = lambda s: round(s * pr["fpsNum"] / pr["fpsDen"])
 credits = os.path.join(M, "nguon_anh.png")

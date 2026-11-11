@@ -1,5 +1,7 @@
 #!/bin/bash
 # In ra mọi việc Claude đang có trên Mac, cho bot Sổ nhớ trả lời "đang chạy gì?".
+# --gon: in sẵn câu trả lời tiếng Việt gọn để bot gửi nguyên văn (chỉ các phiên).
+[ "$1" = "--gon" ] && export GON=1
 # Nguồn: tiến trình Claude đang sống (app Claude, terminal, việc giao qua Telegram) + tiến trình con (render, ffmpeg…)
 #        + dữ liệu phiên của app Claude (tên, tóm tắt lượt cuối) + đoạn Claude viết gần nhất trong phiên.
 DATA="$HOME/Documents/2-ca-nhan/so-nho"
@@ -71,6 +73,7 @@ for pid, (pp, et, cmd) in P.items():
     if " -p" in cmd.split(" --remote-control")[0] and "Telegram #" not in cmd: continue  # phiên phụ (viết diễn giải…)
     con_chau = hau_due(pid)
     viec = [v for v in (ve_viec(P[k][2]) for k in con_chau) if v]
+    du_an = sorted({m2.group(1) for k in con_chau for m2 in [re.search(r"/Users/[^/]+/Movies/([A-Za-z0-9._-]+)", P[k][2])] if m2})
     chay_lenh = [k for k in con_chau if re.search(r"zsh -c|bash -c", P[k][2])]
     hsid = env.get("CLAUDE_CODE_HOST_SESSION_ID", "")
     m = meta.get(hsid, {})
@@ -94,12 +97,26 @@ for pid, (pp, et, cmd) in P.items():
             trang += f" · lệnh đã chạy {P[chay_lenh[0]][1]}"
     else:
         trang = "chờ / nghỉ" + (f" · hoạt động cuối {time.strftime('%H:%M', time.localtime(hd))}" if hd else "")
-    s = f"- {ten} · {trang}"
+    s = f"- {ten} · {trang}" + (f" · dự án {', '.join(du_an)}" if du_an else "")
     if tom: s += f"\n  Tình trạng: {tom}"
     if can: s += f"\n  Cần anh: {can}"
     if loi: s += f"\n  Claude vừa viết: {loi}"
     dong_ra.append((0 if trang.startswith("ĐANG") else 1, -hd, s))
 
+GON = os.environ.get("GON") == "1"
+dang = [x for x in sorted(dong_ra) if x[0] == 0]; nghi = [x for x in sorted(dong_ra) if x[0] == 1]
+if GON:
+    print(f"Claude trên Mac đang làm {len(dang)} việc:" if dang else "Hiện không có phiên Claude nào đang làm việc.")
+    for i, (_, _, s) in enumerate(dang, 1):
+        dong = s[2:].split("\n")
+        print(f"{i}. " + dong[0])
+        for d in dong[1:]:
+            d = d.strip()
+            if d.startswith("Claude vừa viết:"): d = "Vừa nói: " + d[16:].strip()[:220]
+            print("   " + d)
+    if nghi:
+        print("\nĐang mở nhưng nghỉ: " + "; ".join(s[2:].split(" · ")[0] for *_, s in nghi))
+    sys.exit(0)
 print("## Các phiên Claude đang mở trên Mac")
 print("\n".join(s for *_, s in sorted(dong_ra)) or "Không có phiên nào đang mở")
 
@@ -108,6 +125,7 @@ dang_giao = sorted(re.findall(r"\.viec-(\d+)\s", man), key=int)
 print("\n## Việc giao qua Telegram đang chạy")
 print(", ".join("#" + s for s in dang_giao) if dang_giao else "Không có")
 PY
+[ "$GON" = 1 ] && exit 0
 echo; echo "## Sức khoẻ bot"
 TT="$DATA/.trang-thai"; read -r LUC PH TG < "$TT/nhip" 2>/dev/null
 echo "Kiểm lần cuối: $( [ -n "$LUC" ] && echo "$(( ($(date +%s) - LUC) )) giây trước · $PH · $TG" || echo "chưa có")"

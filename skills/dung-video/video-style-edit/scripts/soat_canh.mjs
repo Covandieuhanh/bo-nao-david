@@ -14,10 +14,10 @@ if (!process.argv[2] || !fs.existsSync(SRC)) { console.error('cách dùng: soat_
 const imp = (f) => import(pathToFileURL(path.join(SRC, f)).href);
 const read = (f) => { try { return fs.readFileSync(path.join(SRC, f), 'utf8'); } catch { return ''; } };
 
-let list = [], duration = 0;
+let list = [], duration = 0, NGANG = false;
 if (fs.existsSync(path.join(SRC, 'scenes.js'))) {
   list = (await imp('scenes.js')).SCENES || [];
-  duration = (await imp('project.js')).default.duration || 0;
+  const pj = (await imp('project.js')).default; duration = pj.duration || 0; NGANG = pj.width > pj.height && !pj.podcast;
 } else if (fs.existsSync(path.join(SRC, 'edl.js'))) {   // ghép vlog, highlight người nói: lớp phủ phẳng, không có props
   const e = await imp('edl.js');
   list = (e.OVERLAYS || []).map((o, i) => ({id: o.id || `${o.type}-${i + 1}`, ...o}));
@@ -52,6 +52,15 @@ for (const raw of list) {
     if (it.icon && icons.size && !icons.has(it.icon)) bao('P0', it.at ?? s.start, s.id, `không có biểu tượng "${it.icon}"`, 'đổi tên hoặc vẽ thêm ở Icons.jsx');
     if (it.at != null && (it.at < s.start - 0.01 || it.at >= last)) bao('P0', it.at, s.id, `"${it.label || it.icon || 'phần tử'}" hiện ngoài cảnh (${fmt(s.start)}–${fmt(last)})`, 'dời mốc at hoặc kéo dài cảnh');
   }
+  // màn trống đầu cảnh (11/11/2026: illus flow 63,4 s mà phần tử đầu 67,6 s → 4 s nền tối che người, không chữ)
+  const dau = Math.min(...items.map((x) => x.at ?? s.start), s.num ? s.num.at ?? s.start : Infinity);
+  if ((s.type === 'illus' || s.type === 'diagram') && items.length && dau - s.start > 1.2)
+    bao('P0', s.start, s.id, `màn trống ${fmt(dau - s.start)} s đầu cảnh (phần tử đầu hiện lúc ${fmt(dau)})`, `dời start về ~${fmt(dau - 0.5)}`);
+  // kiểu chưa chạy đúng ở khung ngang (11/11/2026, video cuộc gọi): kinetic không hiện, action đẩy câu trích xuống đáy
+  if (NGANG && (s.type === 'kinetic' || s.type === 'action'))
+    bao('P0', s.start, s.id, `kiểu "${s.type}" lỗi ở khung ngang`, 'dùng bocuc the-canh / o-nguoi hoặc illus');
+  if (NGANG && s.type === 'card' && (s.steps || s.items || []).length > 4)
+    bao('P1', s.start, s.id, `thẻ ${(s.steps || s.items).length} dòng tràn ở khung ngang`, 'dùng bocuc the-canh / muc-luc');
   if (s.num && typeof s.num.to !== 'number') bao('P0', s.start, s.id, 'con số không phải dạng số', 'ghi num.to là số');
 
   // đủ thời gian đọc: mỗi chữ tính từ lúc hiện tới lúc bị thay / cảnh mờ

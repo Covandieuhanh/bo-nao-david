@@ -48,7 +48,8 @@ Viết **trước** bảng cảnh, vì cảm xúc chọn kiểu cảnh chứ kh�
 - Mỗi cảnh trong bảng cảnh ghi thêm cột "cảm xúc", lấy từ đường này.
 
 ## 3. Bố cục tự cân
-Không con số bắt buộc. Mỗi đoạn chọn bố cục từ **`../../trinh-bay/bo-cuc.md`** theo 4 câu hỏi ở `../../trinh-bay/README.md` mục 2
+**Trước hết tự chọn theo `../../trinh-bay/tu-chon.md`** (chẩn đoán → bố cục nền, lớp thông tin như bảng ghi chú chạy `GHI_CHU`,
+kiểu cảnh theo dạng câu nói — đi hết kho, không dừng ở vài kiểu quen). Không con số bắt buộc. Mỗi đoạn chọn bố cục từ **`../../trinh-bay/bo-cuc.md`** theo 4 câu hỏi ở `../../trinh-bay/README.md` mục 2
 (cần thấy người hay thấy ý · ý dài hay ngắn · khung còn chỗ không · trước / sau là gì). Ngang tự do; dọc mỗi lúc ít thứ. Ghi lý do
 một dòng mỗi cảnh vào `ke-hoach-canh.md`. Bố cục mới học được → thêm vào `trinh-bay/` + `BoCuc.jsx`, giữ chữ ký nhận diện.
 Bố cục đã có code: người + phụ đề · `nhan` (mục 4) · **`bocuc`** (`the-canh` thẻ cạnh mặt · `o-nguoi` người vào ô bo góc + `illus` /
