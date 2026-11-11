@@ -68,15 +68,22 @@ for pid, (pp, et, cmd) in P.items():
     if not re.search(r"(/|^)claude( |$)", cmd.split(" --")[0]) or "disclaimer" in cmd: continue
     env = moi_truong(pid)
     if "TELEGRAM_STATE_DIR" in env: continue                    # chính bot
-    if " -p" in cmd and "--name" not in cmd and "Telegram #" not in cmd: continue  # phiên phụ (viết diễn giải…)
+    if " -p" in cmd.split(" --remote-control")[0] and "Telegram #" not in cmd: continue  # phiên phụ (viết diễn giải…)
     con_chau = hau_due(pid)
     viec = [v for v in (ve_viec(P[k][2]) for k in con_chau) if v]
     chay_lenh = [k for k in con_chau if re.search(r"zsh -c|bash -c", P[k][2])]
     hsid = env.get("CLAUDE_CODE_HOST_SESSION_ID", "")
     m = meta.get(hsid, {})
     if m.get("isArchived"): continue
-    ten = m.get("title") or (re.search(r"--name '?([^']+)", cmd).group(1) if "--name" in cmd else "phiên terminal")
+    rc = re.search(r"--remote-control=(.+?)( --|$)", cmd)
+    ten = m.get("title") or (rc.group(1) if rc else (re.search(r"--name '?([^']+)", cmd).group(1) if "--name" in cmd else "phiên terminal"))
+    if rc: ten += " (xem trong app Claude: điện thoại, claude.ai/code)"
     cwd = m.get("cwd") or ""
+    if not m:
+        sm = re.search(r"--(?:session-id|resume) (\S+)", cmd)
+        try: cwd = os.readlink(f"/proc/{pid}/cwd")
+        except Exception: cwd = os.path.expanduser("~/Documents/David.Claude")
+        if sm: m = {"cliSessionId": sm.group(1), "cwd": cwd}
     tom = (m.get("postTurnSummary") or {}).get("status_detail", "")
     can = (m.get("postTurnSummary") or {}).get("needs_action", "")
     loi, tuoi = loi_cuoi(m.get("cliSessionId", ""), cwd) if m else ("", None)
