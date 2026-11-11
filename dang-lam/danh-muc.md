@@ -27,7 +27,7 @@ Trạng thái: lọc · dựng · chờ đăng · đã đăng · kho · bỏ. D�
 | 2026-11-10 | Video su-tap-trung-video-ngan-da-khien-chung-t (app dựng, `~/Movies/tap-su-tap-trung-video-ngan-da-khien-chung-t`) | ✂️ Trích ngắn từ gốc | — |  |  | — | highlight David duyệt (app) · chờ đăng |
 | 2026-11-10 | Video quay trong xe "thói quen phơi nắng" (D9BF90F2, 1:29 → 1:16, dọc, `~/Movies/tap-thoi-quen-nho`) | ✅ Phù hợp | 8 | gốc (làm chủ bản thân) | Shorts + Reels + TikTok, T6 13/11 20:00 (⚠️ trùng lịch clip Đi trainer — chờ David chọn) | Gợi mở | dựng (render 10/11) · chờ cổng 2 |
 | 2026-11-10 | Video vòng đồng xu cổ (E230CDE7, 0:46 → 0:45, dọc, `~/Movies/tap-vong-dong-xu`) | ⛔ Không làm (lằn ranh tâm linh) · David chọn dựng BẢN RIÊNG | 2 | — | Không lên kênh (bản riêng) | — | dựng (render 10/11) · chờ David xem |
-| 2026-11-11 | Cuộc gọi hợp tác môi giới giao dịch hàng hoá (dji_mimo_20261110, 12:46, quay màn hình điện thoại, gốc `Video-goc/tap-cuoc-goi-hop-tac`) | ⛔ Không đăng (đề xuất): kinh doanh/tài chính, phần lớn lời người khác, cuộc gọi riêng có tên người · đề xuất bản lưu riêng | 2 | — | Không lên kênh | — | lọc xong (bản lưu riêng) · David dừng dựng 11/11, chưa làm (bản Codex 10/11 ở `Sao-luu-mac/Movies/edit-cong-viec-dien-thoai-chuan-skill`) |
+| 2026-11-11 | Cuộc gọi hợp tác môi giới giao dịch hàng hoá (dji_mimo_20261110, 12:46, quay màn hình điện thoại, gốc `Video-goc/tap-cuoc-goi-hop-tac`) | ⛔ Không đăng (đề xuất): kinh doanh/tài chính, phần lớn lời người khác, cuộc gọi riêng có tên người · đề xuất bản lưu riêng | 2 | — | Không lên kênh | — | dựng (11/11, David yêu cầu làm trọn theo skill để xem kết quả: cắt 4 đoạn ngoài công việc, dọc bám điện thoại, `~/Movies/tap-cuoc-goi-hop-tac`) · không đăng |
 
 ## Phiếu lọc (chấm thử 05/11/2026)
 
