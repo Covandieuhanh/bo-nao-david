@@ -205,6 +205,8 @@ function closeJob(book: Book) {
 // ---------- video: gộp mọi skill video, một phiên = một video ----------
 
 /** Loại việc tính là làm video. */
+/** Làm video dưới 3 phút (chỉ chạm skill rồi thôi) không tính là một video. */
+const MIN_VIDEO_MS = 3 * 60 * 1000
 const VIDEO = new Set(['video-style-edit', 'podcast-style-edit', 'cat-highlight-video', 'dang-da-kenh', 'hoc-video-mau'])
 
 /** Giới hạn 7 ngày của tài khoản đang đăng nhập (như trang usage). */
@@ -253,7 +255,7 @@ function videoView(books: Book[], mine: string, now: number, accounts: Account[]
   const done = [...bySid.entries()]
     .filter(([, list]) => !list.some(isVideoNow) && !foreign.some(f => list[0]?.sid === f.sid))
     .map(([, list]) => ({ ...videoOf(list), pct: pctOf(videoOf(list).tokens, acctOf(list)) }))
-    .filter(v => v.ms > 0)
+    .filter(v => v.ms >= MIN_VIDEO_MS)
   const withPct = done.filter(v => v.pct !== null)
   const avg = done.length
     ? {
