@@ -452,8 +452,22 @@ async function refresh($: $T) {
     const from = Date.parse(resetsAt) - 7 * 86400000
     const live = books.filter(b => b.running !== null && (!b.account || b.account === who.id)).reduce((a, b) => a + (b.liveTokens ?? 0), 0)
     const tokens = weekTokensOf(books, who.id, who.id, from) + live + foreign.reduce((a, f) => a + f.tokens, 0)
-    const acct: Account = { id: who.id, label: who.label, used: seven.percentUsed, resetsAt, perPct: seven.percentUsed >= 0.5 ? tokens / seven.percentUsed : null, at: now }
-    await $.fs.write(`${dir}/tai-khoan/${who.id}.json`, JSON.stringify(acct))
+    // Mỗi khung chỉ biết hạn mức sau lượt gần nhất của chính nó: khung đang nghỉ giữ số cũ.
+    // Trong cùng một tuần hạn mức chỉ tăng, nên giữ số cao nhất các khung đọc được; số của tuần cũ thì bỏ.
+    const file = `${dir}/tai-khoan/${who.id}.json`
+    let old: Account | null = null
+    try {
+      if (await $.fs.exists(file)) old = JSON.parse(await $.fs.read(file)) as Account
+    } catch {
+      old = null
+    }
+    const gap = old ? Date.parse(resetsAt) - Date.parse(old.resetsAt) : Infinity
+    const isOldWeek = gap < -3 * 3600000
+    if (!isOldWeek) {
+      const used = old && Math.abs(gap) <= 3 * 3600000 ? Math.max(old.used, seven.percentUsed) : seven.percentUsed
+      const acct: Account = { id: who.id, label: who.label, used, resetsAt, perPct: used >= 0.5 ? tokens / used : null, at: now }
+      await $.fs.write(file, JSON.stringify(acct))
+    }
   }
   const v = bigView(books, book.sid, now, await readAccounts($, dir), who.id, foreign)
   await update($, view, () => v)
@@ -620,6 +634,13 @@ export const register: Register = on => {
     await save($)
 
     await refresh($)
+    return result
+  })
+
+  // Claude Code báo ngay khi hạn mức tăng thêm một điểm: cập nhật bảng liền, không đợi nhịp 15 giây.
+  on('session.measure', async ($, e, next) => {
+    const result = await next(e)
+    if (e.changed.includes('rateLimits')) void refresh($)
     return result
   })
 

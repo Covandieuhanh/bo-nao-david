@@ -127,3 +127,38 @@ test('mỗi khung đang chạy ghi đúng việc lớn', { timeoutMs: 30000 }, a
   expect(r.text).not.toContain('Làm mod (khung này)')
   expect(r.text).toContain('- Xây bộ não (skill, luật, mod): chưa rõ hạn mức tuần, 9 phút')
 })
+
+test('khung đang nghỉ không kéo hạn mức tuần tụt xuống', { timeoutMs: 30000 }, async ($, on) => {
+  const now = new Date(2026, 10, 11, 9).getTime()
+  const resetsAt = new Date(now + 3 * 86400000).toISOString()
+  const files = new Map<string, string>()
+  files.set('/h/.claude.json', JSON.stringify({ oauthAccount: { accountUuid: 'aaaaaaaa-1', emailAddress: 'david.mot@example.com' } }))
+  // Khung đang chạy vừa ghi 81%; khung này còn giữ số cũ 80% từ lượt trước của nó.
+  files.set('/h/.claude/so-viec/tai-khoan/aaaaaaaa.json', JSON.stringify({ id: 'aaaaaaaa', label: 'david.mot', used: 81, resetsAt, perPct: 1, at: now }))
+  on('command.register', () => ({ value: { command: 'x' } }))
+  on('ui.open', () => ({ value: { isPlaced: true } }))
+  on('ui.status', () => ({ value: undefined }))
+  on('session.start', (_, e) => ({ cwd: e.cwd }))
+  on('clock.now', () => ({ value: now }))
+  on('clock.every', () => ({ value: {} }))
+  on('store.delete', () => ({ value: undefined }))
+  on('env.get', () => ({ value: '/h' }))
+  on('session.id', () => ({ value: 'phien-nay' }))
+  on('session.cwd', () => ({ value: '/x' }))
+  on('session.usage', () => ({ value: { startedAt: now, context: {}, rateLimits: [{ kind: 'seven_day', percentUsed: 80, resetsAt }] } }))
+  on('fs.exists', (_, e) => {
+    const p = (e as { path: string }).path
+    return { value: files.has(p) || [...files.keys()].some(k => k.startsWith(p + '/')) }
+  })
+  on('fs.read', (_, e) => ({ value: files.get((e as { path: string }).path) ?? '' }))
+  on('fs.write', (_, e) => { const a = e as { path: string; text: string }; files.set(a.path, a.text); return { value: undefined } })
+  on('fs.list', (_, e) => {
+    const p = (e as { path: string }).path + '/'
+    return { value: [...files.keys()].filter(k => k.startsWith(p) && !k.slice(p.length).includes('/'))
+      .map(k => ({ name: k.slice(p.length), kind: 'file', size: 1, mtimeMs: 0, isLink: false })) }
+  })
+  await $.session.start({ cwd: '/', surface: 'desktop', isInteractive: true } as never)
+  const r = await $.command.run({ command: 'bao-cao', args: '' } as never)
+  expect(r.text).toContain('- david.mot (đang đăng nhập): đã dùng 81%')
+  expect(JSON.parse(files.get('/h/.claude/so-viec/tai-khoan/aaaaaaaa.json')!).used).toBe(81)
+})

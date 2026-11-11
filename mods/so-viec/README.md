@@ -20,6 +20,8 @@ Lượt không gọi skill: model nhỏ chỉ chọn giữa xây bộ não, bot 
 
 **Nhiều tài khoản:** mod gắn với máy nên đổi tài khoản vẫn chạy. Mỗi tài khoản có sổ hạn mức riêng (`~/.claude/so-viec/tai-khoan/<mã>.json`, ghi khi tài khoản đó đang đăng nhập): phần trăm đã dùng, ngày làm mới, và **1% hạn mức tuần ≈ bao nhiêu token** (tổng token tài khoản đó dùng từ đầu tuần chia phần trăm đã dùng). Mỗi lượt ghi kèm 8 ký tự đầu mã tài khoản; tên hiện trên bảng là phần trước @ của email. Mỗi việc đổi ra phần trăm theo đúng tài khoản đã làm nó. Tài khoản chưa đo được thì dùng mức trung bình của các tài khoản khác. Đây là ước tính.
 
+**Hạn mức tuần cập nhật thế nào:** mỗi khung chỉ biết phần trăm sau lượt gần nhất của chính nó, nên mod giữ **số cao nhất** các khung đọc được trong cùng một tuần (khung đang nghỉ không kéo số tụt xuống), và cập nhật ngay khi Claude Code báo hạn mức tăng thêm một điểm. Con số đi theo khung vừa chạy gần nhất: lệch trang usage tối đa khoảng 1 điểm cho tới lượt kế tiếp.
+
 `/bao-cao` in bản chữ vào khung chat, `/so-viec` mở lại bảng.
 
 Mod vẫn ghi ngầm mọi việc (loại việc theo skill, việc khác do model nhỏ gán nhãn), chỉ không hiện.
