@@ -45,6 +45,7 @@ cat > "$PLIST" <<EOF
 <plist version="1.0"><dict>
   <key>Label</key><string>$NHAN</string>
   <key>ProgramArguments</key><array><string>/usr/bin/screen</string><string>-DmS</string><string>so-nho-canh</string><string>/bin/bash</string><string>$GOC/canh-bot.sh</string></array>
+  <key>ProcessType</key><string>Interactive</string>
   <key>RunAtLoad</key><true/>
   <key>KeepAlive</key><true/>
   <key>StandardErrorPath</key><string>$DATA/.trang-thai/launchd.err</string>

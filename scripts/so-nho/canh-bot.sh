@@ -20,6 +20,9 @@ CU=$(cat "$TT/canh.pid" 2>/dev/null)
 if [ -n "$CU" ] && [ "$CU" != "$$" ] && kill -0 "$CU" 2>/dev/null; then kill "$CU"; sleep 1; fi
 echo $$ > "$TT/canh.pid"
 
+# launchd xếp tiến trình nền vào hàng ưu tiên thấp (đọc/sửa file chậm 10 giây mỗi lần): gỡ ra cho bot chạy như app thường.
+taskpolicy -B -p $$ 2>/dev/null; taskpolicy -t 0 -l 0 -p $$ 2>/dev/null
+
 # Giữ Mac không ngủ (khi cắm điện) chừng nào script còn chạy.
 caffeinate -is -w $$ &
 
@@ -32,7 +35,7 @@ tat_bot() { # tắt mọi phiên bot (kể cả phiên thừa)
   screen -ls 2>/dev/null | awk -v t=".$TEN" '$1 ~ t"$" {print $1}' | while read -r id; do screen -S "$id" -X quit; done
   sleep 3; }
 mo_bot() {
-  screen -dmS "$TEN" -h 2000 bash -c "cd '$DATA' && TELEGRAM_STATE_DIR=$HOME/.claude/channels/so-nho MCP_TIMEOUT=120000 exec claude --channels plugin:telegram@claude-plugins-official --permission-mode dontAsk --model sonnet --effort low"
+  screen -dmS "$TEN" -h 2000 bash -c "cd '$DATA' && TELEGRAM_STATE_DIR=$HOME/.claude/channels/so-nho MCP_TIMEOUT=120000 ENABLE_TOOL_SEARCH=false exec claude --channels plugin:telegram@claude-plugins-official --permission-mode dontAsk --model sonnet --effort low"
   date +%F > "$TT/mo-ngay"; echo "$TK" > "$TT/tai-khoan"
   ghi "mo phien bot"
   sleep 25; gui "[KHOI-DONG] Phiên mới. Đọc lướt nhom.md, không gửi gì."
