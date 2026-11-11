@@ -33,8 +33,8 @@ SKILL_TYPES = {
     "plugin-authoring": "lam-mod",
     "scroll-craft": "lam-trang-web",
 }
-LABELS = ["sua-bo-nao", "viet-bai", "nghien-cuu", "lap-ke-hoach", "lam-mod", "video-style-edit",
-          "podcast-style-edit", "cat-highlight-video", "dang-da-kenh", "hoi-dap", "khac"]
+# Không có nhãn video: video chỉ tính khi skill video được gọi (giống mod).
+LABELS = ["sua-bo-nao", "viet-bai", "nghien-cuu", "lap-ke-hoach", "lam-mod", "hoi-dap", "khac"]
 
 
 def ms(ts):

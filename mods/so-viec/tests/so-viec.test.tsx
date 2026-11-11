@@ -78,15 +78,53 @@ test('video gộp mọi tài khoản, chữ viết đầy đủ', { timeoutMs: 3
   expect(r.text).toContain('- david.mot (đang đăng nhập): đã dùng 30%')
   expect(r.text).toContain('- tai-khoan-hai: đã dùng 40%')
   expect(r.text).toContain('còn đủ khoảng 22 video nữa')
-  expect(r.text).toContain('**Video đang làm ở khung này**: 20 phút')
+  expect(r.text).toContain('**Video đang làm trên Claude**')
+  expect(r.text).toContain('- **dựng video thói quen nhỏ theo skill nhé** (khung này): 20 phút')
   expect(r.text).not.toMatch(/\bTB\b|\d+p\b|\dM\b/)
 
   for (const surface of ['terminal', 'desktop'] as const) {
     const ui = await $.ui.mount({ ...PANE, surface } as never)
-    expect((await ui.find({ type: 'Text', text: /Video đang làm ở khung này/ }))?.text).toBeTruthy()
+    expect((await ui.find({ type: 'Text', text: /Video đang làm trên Claude/ }))?.text).toBeTruthy()
+    expect((await ui.find({ type: 'Text', text: /dựng video thói quen/ }))?.text).toContain('(khung này)')
     expect((await ui.find({ type: 'Text', text: /đã dùng 30%/ }))?.text).toMatch(/^[█░]+ đã dùng 30%$/)
     expect((await ui.find({ type: 'Text', text: /đã dùng 40%/ }))?.text).toBeTruthy()
     expect((await ui.find({ type: 'Text', text: /^Thời gian: 47 phút$/ }))?.text).toBeTruthy()
     await ui.unmount()
   }
+})
+
+test('khung không làm video thì không hiện, dù có nhãn cũ', { timeoutMs: 30000 }, async ($, on) => {
+  const now = new Date(2026, 10, 11, 9).getTime()
+  const files = new Map<string, string>()
+  // Khung này đang chạy việc làm mod; khung kia đang chạy, việc đang mở là video.
+  files.set('/h/.claude/so-viec/phien/phien-nay.json', JSON.stringify({ v: 1, sid: 'phien-nay', title: 'Làm mod', cwd: '/x', trackedSince: now, updatedAt: now,
+    running: now - 60000, runningType: 'lam-mod', open: { id: 'm', type: 'lam-mod', startedAt: now, lastAt: now, activeMs: 9 * 60000, turns: 3, tokens: { input: 0, output: 0, cacheRead: 1, cacheWrite: 0 } }, jobs: [], turns: [] }))
+  files.set('/h/.claude/so-viec/phien/khac.json', JSON.stringify({ v: 1, sid: 'khac', title: 'Dựng video thói quen', cwd: '/x', trackedSince: now, updatedAt: now,
+    running: now - 120000, runningType: null, open: { id: 'v', type: 'video-style-edit', startedAt: now, lastAt: now, activeMs: 30 * 60000, turns: 3, tokens: { input: 0, output: 0, cacheRead: 1, cacheWrite: 0 } }, jobs: [], turns: [] }))
+  on('command.register', () => ({ value: { command: 'x' } }))
+  on('ui.open', () => ({ value: { isPlaced: true } }))
+  on('ui.status', () => ({ value: undefined }))
+  on('session.start', (_, e) => ({ cwd: e.cwd }))
+  on('clock.now', () => ({ value: now }))
+  on('clock.every', () => ({ value: {} }))
+  on('store.delete', () => ({ value: undefined }))
+  on('env.get', () => ({ value: '/h' }))
+  on('session.id', () => ({ value: 'phien-nay' }))
+  on('session.cwd', () => ({ value: '/x' }))
+  on('session.usage', () => ({ value: { startedAt: now, context: {}, rateLimits: [] } }))
+  on('fs.exists', (_, e) => {
+    const p = (e as { path: string }).path
+    return { value: files.has(p) || [...files.keys()].some(k => k.startsWith(p + '/')) }
+  })
+  on('fs.read', (_, e) => ({ value: files.get((e as { path: string }).path) ?? '' }))
+  on('fs.write', (_, e) => { const a = e as { path: string; text: string }; files.set(a.path, a.text); return { value: undefined } })
+  on('fs.list', (_, e) => {
+    const p = (e as { path: string }).path + '/'
+    return { value: [...files.keys()].filter(k => k.startsWith(p) && !k.slice(p.length).includes('/'))
+      .map(k => ({ name: k.slice(p.length), kind: 'file', size: 1, mtimeMs: 0, isLink: false })) }
+  })
+  await $.session.start({ cwd: '/', surface: 'desktop', isInteractive: true } as never)
+  const r = await $.command.run({ command: 'bao-cao', args: '' } as never)
+  expect(r.text).toContain('- **Dựng video thói quen**: 32 phút')
+  expect(r.text).not.toContain('Làm mod')
 })

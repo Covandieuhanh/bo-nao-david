@@ -31,17 +31,13 @@ const SKILL_TYPES: Record<string, string> = {
   'scroll-craft': 'lam-trang-web',
 }
 
-// Nhãn cho việc không gọi skill (scripts/nhap-lich-su.py dùng cùng bộ này).
+// Nhãn cho việc không gọi skill (scripts/nhap-lich-su.py dùng cùng bộ này). Không có nhãn video: video chỉ tính khi skill video được gọi.
 const LABELS = [
   'sua-bo-nao',
   'viet-bai',
   'nghien-cuu',
   'lap-ke-hoach',
   'lam-mod',
-  'video-style-edit',
-  'podcast-style-edit',
-  'cat-highlight-video',
-  'dang-da-kenh',
   'hoi-dap',
   'khac',
 ] as const
@@ -236,7 +232,9 @@ function weekTokensOf(books: Book[], acct: string, current: string, from: number
 function videoView(books: Book[], mine: string, now: number, accounts: Account[], current: string, foreign: Foreign[] = []): VideoView {
   const runs = (b: Book) => b.running !== null && (b.sid === mine || now - b.updatedAt < LIVE_MS)
   const typeNow = (b: Book) => (b.runningType !== undefined ? b.runningType : (b.open?.type ?? null))
-  const isVideoNow = (b: Book) => runs(b) && VIDEO.has(typeNow(b) ?? '')
+  // Đang làm video: khung đang chạy, và lượt này gọi skill video, hoặc lượt chưa rõ loại mà việc đang mở là video.
+  const isVideoNow = (b: Book) =>
+    runs(b) && (VIDEO.has(typeNow(b) ?? '') || (!b.runningType && VIDEO.has(b.open?.type ?? '')))
 
   // Mỗi tài khoản: 1% tuần ≈ bao nhiêu token. Tài khoản chưa đo được thì dùng trung bình các tài khoản khác.
   const known = accounts.filter(a => a.perPct)
@@ -268,7 +266,7 @@ function videoView(books: Book[], mine: string, now: number, accounts: Account[]
 
   // Video đang làm: mọi phiên đang chạy việc video (cả phiên chưa có mod).
   const live: VideoNow[] = [...bySid.entries()]
-    .filter(([sid, list]) => list.some(isVideoNow) || (sid === mine && videoOf(list).ms > 0))
+    .filter(([, list]) => list.some(isVideoNow))
     .map(([sid, list]) => {
       const v = videoOf(list)
       const b = list.find(isVideoNow)
@@ -281,7 +279,6 @@ function videoView(books: Book[], mine: string, now: number, accounts: Account[]
         .filter(f => f.type && VIDEO.has(f.type))
         .map(f => ({ sid: f.sid, title: f.title, isMine: false, isRunning: true, isNoMod: true, ms: now - f.start, tokens: f.tokens, pct: pctOf(f.tokens, current) })),
     )
-    .sort((a, b) => Number(b.isMine) - Number(a.isMine))
 
   // Tuần này, từng tài khoản: đã qua ngày reset thì về 0%.
   const weeks = accounts
@@ -298,10 +295,10 @@ const dayText = (iso: string) => {
 }
 
 function report(v: VideoView) {
-  const lines = ['## Sổ việc: video', '']
+  const lines = ['## Sổ việc: video', '', v.live.length ? '**Video đang làm trên Claude**' : '**Video đang làm trên Claude:** không có khung nào đang làm video.']
   for (const l of v.live)
     lines.push(
-      `- **${l.isMine ? 'Video đang làm ở khung này' : `Video đang làm: ${l.title}`}**${l.isNoMod ? ' (khung mở trước khi cài mod)' : ''}: ` +
+      `- **${l.title}**${l.isMine ? ' (khung này)' : ''}${l.isNoMod ? ' (khung mở trước khi cài mod)' : ''}: ` +
         `${hm(l.ms)}, ${pctText(l.pct)} hạn mức tuần` +
         (v.avg ? ` (trung bình một video: ${hm(v.avg.ms)}, ${pctText(v.avg.pct)})` : ''),
     )
@@ -423,14 +420,14 @@ async function refresh($: $T) {
 
   const w = v.weeks.find(x => x.isCurrent)
   const wk = w ? `hạn mức tuần đã dùng ${pctText(w.used)}` : ''
-  const cur = v.live.find(l => l.isMine)
+  const cur = v.live[0]
   if (!cur) {
     $.ui.status(`Sổ việc · ${wk}`)
     return
   }
   const t = v.avg ? `${hm(cur.ms)} / trung bình ${hm(v.avg.ms)}` : hm(cur.ms)
   const p = v.avg ? `${pctText(cur.pct)} / trung bình ${pctText(v.avg.pct)}` : pctText(cur.pct)
-  $.ui.status(`Video: ${t} · ${p} hạn mức tuần · ${wk}`)
+  $.ui.status(`Video "${cur.title}": ${t} · ${p} hạn mức tuần · ${wk}`)
 }
 
 // ---------- móc vào sự kiện ----------
@@ -597,11 +594,17 @@ export const register: Register = on => {
 
     return (
       <Box flexDirection="column">
+        <Text bold>🎬 Video đang làm trên Claude</Text>
+        {v.live.length === 0 && <Text dimColor>Không có khung nào đang làm video.</Text>}
+        {v.live.length === 0 && <Text> </Text>}
         {v.live.map(l => (
           <Box flexDirection="column" key={l.sid}>
-            <Text bold>
-              🎬 {l.isMine ? 'Video đang làm ở khung này' : `Video đang làm: ${l.title}`}
-              {l.isNoMod ? <Text dimColor> (khung mở trước khi cài mod)</Text> : ''}
+            <Text>
+              {l.title}
+              <Text dimColor>
+                {l.isMine ? ' (khung này)' : ''}
+                {l.isNoMod ? ' (khung mở trước khi cài mod)' : ''}
+              </Text>
             </Text>
             <Text dimColor>Thời gian:</Text>
             <Text color={v.avg ? over(l.ms / v.avg.ms) : undefined}>
