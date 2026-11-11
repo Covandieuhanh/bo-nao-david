@@ -59,7 +59,7 @@ thời gian, không thẻ cuối, màn chốt trên hình, kết ở chữ cuố
 11. **Không thẻ cuối, không thanh thời gian** (video dọc ngắn, `nhan-dien-chung.md` mục 1). `hl_edl.py` vẫn ghi `ENDCARD` từ
     `"endcard"` trong phuong-an.json (tên tập gốc, người nói) nhưng khuôn tự bỏ ở video dọc ngắn; ghi đủ để dùng khi David cần bản dọc dài.
     Không có tên tập gốc → hỏi David.
-12. **Tự chọn, không hỏi** (ngoại lệ trong `thoi-quen-lam-viec.md` mục 2): nhận yêu cầu cắt là tự chọn ý, tít, câu màn chốt rồi dựng trọn
+12. **Tự chọn, không hỏi** (`thoi-quen-lam-viec.md` mục 2): nhận yêu cầu cắt là tự chọn ý, tít, câu màn chốt rồi dựng trọn
     một mạch. Chỉ dừng hỏi khi không ý nào đạt 4 câu hoặc câu chủ chốt dính lằn ranh. Luôn ghi rõ đã chọn gì trong báo cáo để David sửa ở bản cuối.
 13. **Học từ 20 highlight Việt** (`references/hoc-tu-20-highlight-vn.md`):
     - **Tít ghim** (mặc định tắt, hồ sơ `tit_ghim: false`, vì dọc mỗi lúc ít thứ): ghi `"tit"` vào từng option của phuong-an.json

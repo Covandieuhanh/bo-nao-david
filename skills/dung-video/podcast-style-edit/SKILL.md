@@ -14,9 +14,9 @@ là đồ hoạ chuyển động theo lời. Không có hình người → **sâ
 Dùng chung template Remotion và gần hết script của skill gốc — `$BASE=~/.claude/skills/video-style-edit`, `$SKILL` = thư mục này.
 Luật nội dung của skill gốc vẫn áp dụng. Lệnh > 2 phút chạy nền. Giữ task list theo các bước.
 
-**Hỏi một lần + cổng chụp thử** (`hoi-chuyen-gia`): sau khi chép lời, hỏi một lần gộp mọi điểm cần chọn — chữ
-thumbnail, tên các phần (TOPICS), nền lắng hay lưới tối — mỗi điểm 2–3 gợi ý. Trước khi render, chụp thử mọi cảnh mới cho David chốt.
-Sau đó chạy một mạch tới bản cuối; giữa chừng chỉ dừng khi gặp một trong 6 tín hiệu.
+**Không hỏi** (`../../thoi-quen-lam-viec.md` mục 2): chữ thumbnail, tên các phần (TOPICS), nền lắng hay lưới tối Claude tự chọn
+theo khối; chụp thử mọi cảnh mới để Claude tự soát (khối 17) rồi chạy một mạch tới bản cuối; giữa chừng chỉ dừng khi gặp tín hiệu nặng
+(`hoi-chuyen-gia`). Báo cáo cuối liệt kê "đã chọn X vì Y" để David sửa ở bản cuối.
 
 ## Luật riêng (kiểm lại trước khi giao)
 

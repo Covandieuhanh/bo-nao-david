@@ -7,12 +7,12 @@
 **Sửa khối này → chạy lại:** không có code; đổi luật kênh → sửa `ho-so/kenh.json`.
 
 ## Nguyên tắc
-- **David chỉ đưa tài nguyên.** Claude tự phân tích, đề xuất làm gì · làm thế nào · đăng kênh nào · lúc nào, rồi HỎI LẠI (skill
-  `hoi-chuyen-gia`, một vòng, câu nào cũng có đề xuất "đồng ý" được). David nói tự do, bộc phát — không đòi David theo khuôn.
+- **David chỉ đưa tài nguyên.** Claude tự phân tích, tự chọn làm gì · làm thế nào · đăng kênh nào · lúc nào (`thoi-quen-lam-viec.md`
+  mục 2), ghi vào phiếu lọc để báo rồi làm luôn, không chờ. David nói tự do, bộc phát — không đòi David theo khuôn.
 - **Không làm gì không có mục tiêu**: mỗi bài phải kéo tương tác trên đúng nền tảng đó → chuyển hoá → nhắn "gỡ". Nội dung "cho vui"
   chỉ được làm khi nó xây nhân hiệu trainer.
 - **Không khung thời lượng cố định**: dạng + độ dài theo chính nội dung; có khi giữ nguyên bản gốc.
-- Claude chấm và ghi lý do; **David chốt cuối**.
+- Claude chấm, ghi lý do và tự chốt; David sửa ở bản cuối nếu muốn.
 
 ## 1. Câu hỏi gốc
 > Nội dung này có giúp **người lần đầu dẫn người** (quản lý trẻ, quản lý mới) **làm chủ bản thân** — hoặc **áp dụng việc làm chủ
@@ -50,7 +50,7 @@ cảm được giọng và sức nặng câu chuyện, nên không quyết đo�
 ## 3. Lằn ranh = CẢNH BÁO, David quyết (hồ sơ 4.7 + 7)
 Huyền học / số học / từ trường số / tâm linh dạng huyền học · chữ "chữa lành" · tư vấn thuế, pháp lý · trị liệu, chẩn đoán tâm lý ·
 chuyện người khác không ẩn danh · nhắc vai coach trên kênh công khai · kinh doanh, mô hình kinh doanh, hứa thu nhập · nói giá.
-Chạm → **luôn cảnh báo trong phiếu**: mốc giây, lời chạm, rủi ro, câu hỏi "cắt hay giữ?". Không tự cắt. David có thể giữ vì đã tự cân đối khi kể. Giữ → ghi "đã cảnh báo, David giữ" vào sổ; chữ đồ hoạ, tiêu đề, thumbnail, mô tả, clip ngắn vẫn không lấy nội dung đó.
+Chạm → **luôn cảnh báo trong phiếu và báo cáo**: mốc giây, lời chạm, rủi ro. Mặc định **giữ lời, không tự cắt** (David có thể đã tự cân đối khi kể); David muốn cắt thì nói ở bản cuối. Ghi "đã cảnh báo" vào sổ; chữ đồ hoạ, tiêu đề, thumbnail, mô tả, clip ngắn vẫn không lấy nội dung đó.
 
 ## 4. Bảy kết luận
 | Nhãn | Khi | Làm |
@@ -72,13 +72,13 @@ Facebook cá nhân = đời thường, hành trình, chia sẻ lại bài trang.
 ```
 📥 <tên file> · <độ dài> · <loại dựng: làm video / ghép vlog / podcast / highlight>
 Kết luận: <nhãn> · <điểm>/10   (Gốc x · Tệp x · Hành động x · Tương tác x · Nhân hiệu x)
-Lý do: <1–2 dòng>  · Lằn ranh: <không / ⚠️ chạm ở mm:ss, lý do, rủi ro → hỏi cắt hay giữ>
+Lý do: <1–2 dòng>  · Lằn ranh: <không / ⚠️ chạm ở mm:ss, lý do, rủi ro → mặc định giữ lời, không làm đồ hoạ>
 Nhánh: <gốc / công việc / quan hệ / nhân hiệu> · Trùng sổ 30 ngày: <… / không>
 Kho 100: <ý số … "nỗi đau" · dẫn dắt theo kho / ⚠️ không khớp ý nào / ⚠️ giai đoạn 3 không làm> · Ý kế tiếp nên quay: <số + nỗi đau>
 Đề xuất: <sản phẩm → kênh → ngày giờ> (vd. YouTube bản biên tập ~9 phút T3 20:00 · 2 highlight Reels+TikTok T6 · bài viết trang)
 3 phần: Vấn đề <mm:ss> · Giải pháp <mm:ss> · Thực thi <mm:ss / THIẾU>
 Câu mở: "<trích lời>" · Bình luận: "Vấn đề" / "Kết quả" · Dẫn dắt: <Không / Gợi mở / Mời>
-❓ <câu hỏi chỉ David quyết được, mỗi câu có ➡️ đề xuất>
+Đã chọn: <mỗi lựa chọn Claude tự chốt + lý do một dòng — David sửa ở bản cuối nếu muốn>
 ```
 
 ## 7. Sổ danh mục `~/Movies/_so-danh-muc/danh-muc.md`

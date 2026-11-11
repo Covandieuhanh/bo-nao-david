@@ -80,9 +80,9 @@ Bạn trả lời "đồng ý" hoặc sửa câu nào nhé.
 
 1. Vòng 1 mở bằng một dòng tên chuyên gia có thật; vòng sau không lặp.
 2. Mỗi vòng ≤ 5 câu, câu nào cũng có 2–3 gợi ý, đề xuất đứng đầu.
-3. Không câu nào hỏi điều đã có trong file, bộ nhớ hoặc tra được.
+3. Không câu nào hỏi điều đã có trong file, bộ nhớ, đã được skill định, hoặc tra được.
 4. Có diễn giải 3–6 dòng, nói rõ cả điều **không** làm, kèm Mục tiêu và Xong khi.
-5. Không file nào bị tạo/sửa trước khi David "ok".
+5. Việc phải hỏi: không file nào bị tạo/sửa trước khi David "ok". Sản phẩm từ tài nguyên: không hỏi gì ngoài tín hiệu nặng, báo cáo cuối có đủ "đã chọn X vì Y".
 6. Giữa chừng gặp tín hiệu thì dừng đúng bước, không tự đoán.
 7. Sau "ok" làm một mạch, không phải làm lại vì hiểu sai.
 
