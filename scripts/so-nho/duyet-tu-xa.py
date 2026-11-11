@@ -111,24 +111,10 @@ def gui(tin):
     return r.returncode == 0
 
 
-def main():
-    try:
-        v = json.load(sys.stdin)
-    except Exception:
-        ra()
-    cwd = v.get("cwd", "")
-    if cwd.rstrip("/").endswith("so-nho"):
-        ra()  # chính bot: không hỏi vòng
-    if not os.path.exists(os.path.expanduser("~/.claude/channels/so-nho/.env")):
-        ra()
-    try:
-        bao_vang = open(os.path.join(TT, "vang")).read().strip() == "1"
-    except Exception:
-        bao_vang = False
-    vang = os.environ.get("DUYET_THU") == "1" or bao_vang or ranh_roi() >= VANG_SAU
-    if not vang:
-        ra()
 
+def hoi_david(v, ly_do="", het_gio_ve_may=True):
+    """Gửi David yêu cầu (xin phép hoặc câu hỏi) qua Telegram, chờ trả lời. Trả về chữ David trả lời, hoặc None."""
+    cwd = v.get("cwd", "")
     cong_cu = v.get("tool_name", "?")
     vao = v.get("tool_input") or {}
     ma = "".join(random.choice("ABCDEFGHJKMNPQRSTUVWXYZ23456789") for _ in range(4))
@@ -160,6 +146,8 @@ def main():
         else:
             chi_tiet = json.dumps(vao, ensure_ascii=False)
         giai_thich = dien_giai(cong_cu, vao, chi_tiet, boi_canh, phien)
+        if ly_do:
+            giai_thich += f"\nVì sao phải hỏi: {ly_do}"
         tin = (f"🔐 Claude cần anh cho phép (phiên: {phien})\n\n{giai_thich}\n\n"
                f"Chi tiết kỹ thuật: {cong_cu} · {chi_tiet[:300]}\n\n"
                f"Anh trả lời \"đồng ý\" hoặc \"không\" (kèm lý do nếu muốn).\n(Mã yêu cầu: {ma}, chỉ cần ghi khi có nhiều yêu cầu cùng lúc)")
@@ -168,7 +156,7 @@ def main():
               open(os.path.join(HANG, ma + ".json"), "w"), ensure_ascii=False)
     if not gui(tin):
         os.remove(os.path.join(HANG, ma + ".json"))
-        ra()
+        return None
     bao_bot(f"[CHO-DUYET] Máy vừa gửi David yêu cầu {ma} ({'câu hỏi' if cong_cu == 'AskUserQuestion' else 'xin phép'}, phiên: {phien}). "
             f"Tin tiếp theo của David nhiều khả năng là câu trả lời: làm theo mục Duyệt từ xa. Không gửi gì cho David lúc này.")
 
@@ -180,23 +168,53 @@ def main():
             tra = open(tra_file).read().strip()
             for f in glob.glob(os.path.join(HANG, ma + ".*")):
                 os.remove(f)
-            if cong_cu == "AskUserQuestion" and vao.get("questions"):
-                cau = vao["questions"]; phan = [p.strip() for p in tra.split(",")] if len(cau) > 1 else [tra]
-                tl = {}
-                for i, q in enumerate(cau):
-                    p = phan[i] if i < len(phan) else phan[-1]
-                    opts = q.get("options", [])
-                    tl[q.get("question", "")] = opts[int(p) - 1]["label"] if p.isdigit() and 0 < int(p) <= len(opts) else p
-                gui("Đã chuyển câu trả lời của anh cho Claude.")
-                ra("allow", dau_vao={**vao, "answers": tl})
-            if tra.lower() in ("ok", "duyet", "duyệt", "yes", "y", "co", "có"):
-                ra("allow")
-            ra("deny", thong_bao=f"David từ chối qua Telegram{': ' + tra if tra.lower() not in ('khong', 'không', 'no', 'n') else ''}")
+            return tra
         time.sleep(2)
     for f in glob.glob(os.path.join(HANG, ma + ".*")):
         os.remove(f)
-    gui(f"⌛ Hết 30 phút anh chưa trả lời yêu cầu {ma}, câu hỏi chuyển về màn hình Mac, Claude chờ ở đó.")
-    ra()
+    gui(f"⌛ Hết 30 phút anh chưa trả lời yêu cầu {ma}." + (" Câu hỏi chuyển về màn hình Mac, Claude chờ ở đó." if het_gio_ve_may else " Claude không làm bước đó."))
+    return None
 
 
-main()
+def dong_y(tra):
+    return (tra or "").strip().lower() in ("ok", "duyet", "duyệt", "yes", "y", "co", "có", "đồng ý", "dong y", "được", "duoc")
+
+
+def main():
+    try:
+        v = json.load(sys.stdin)
+    except Exception:
+        ra()
+    cwd = v.get("cwd", "")
+    if cwd.rstrip("/").endswith("so-nho"):
+        ra()  # chính bot: không hỏi vòng
+    if not os.path.exists(os.path.expanduser("~/.claude/channels/so-nho/.env")):
+        ra()
+    try:
+        bao_vang = open(os.path.join(TT, "vang")).read().strip() == "1"
+    except Exception:
+        bao_vang = False
+    vang = os.environ.get("DUYET_THU") == "1" or bao_vang or ranh_roi() >= VANG_SAU
+    if not vang:
+        ra()
+
+    cong_cu = v.get("tool_name", "?")
+    vao = v.get("tool_input") or {}
+    tra = hoi_david(v)
+    if tra is None:
+        ra()
+    if cong_cu == "AskUserQuestion" and vao.get("questions"):
+        cau = vao["questions"]; phan = [p.strip() for p in tra.split(",")] if len(cau) > 1 else [tra]
+        tl = {}
+        for i, q in enumerate(cau):
+            p = phan[i] if i < len(phan) else phan[-1]
+            opts = q.get("options", [])
+            tl[q.get("question", "")] = opts[int(p) - 1]["label"] if p.isdigit() and 0 < int(p) <= len(opts) else p
+        gui("Đã chuyển câu trả lời của anh cho Claude.")
+        ra("allow", dau_vao={**vao, "answers": tl})
+    if dong_y(tra):
+        ra("allow")
+    ra("deny", thong_bao=f"David từ chối qua Telegram{': ' + tra if tra.lower() not in ('khong', 'không', 'no', 'n') else ''}")
+
+if __name__ == "__main__":
+    main()

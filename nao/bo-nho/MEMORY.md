@@ -34,6 +34,7 @@ David · `nao-` bộ não và GitHub · `video-` dựng và đăng video · `may
 - [Clip ngắn đứng độc lập](video-clip-ngan-dung-doc-lap.md) — bốn câu bối cảnh, ý trọn, mang về, chừa lại; không số cố định (06/11, 07/11)
 - [Video dài không cắt](video-dai-khong-cat.md) — để nguyên cả lặng và ờ ừm; cắt chỉ khi trích video ngắn (05/11)
 - [Khuôn podcast dọc đồ hoạ](video-doc-khuon-chu-chinh.md) — chữ chính thay phụ đề, không màn hình cuối; 3 clip Đi trainer là mẫu (06/11, sửa 10/11)
+- [Tự chọn theo nội dung](video-tu-chon-theo-noi-dung.md) — chẩn đoán → khung chủ thể, bảng ghi chú chạy, kiểu cảnh theo dạng câu; ~1 giờ/video (11/11)
 - [Hiểu hơn cầu kì](video-hieu-hon-cau-ki.md) — kho hiệu ứng để chọn, mỗi video ít kiểu; bỏ chữ sau người / bóng người (10/11)
 - [Không cài HyperFrames](video-khong-cai-hyperframes.md) — giữ Remotion, chỉ học ý rồi tự viết lại (06/11)
 - [Không ghi chú kỹ thuật trên video](video-khong-nhan-ky-thuat.md) — bỏ nhãn ×1,6 / ×0,5 / slow-mo; chữ chỉ cho nội dung
