@@ -10,7 +10,7 @@ File này là chi tiết của **khối 11** (`../../khoi/11-ghep-canh`). Thứ 
 | 2–2d | Hiểu từng clip · bản đồ + liên kết · giữ/bỏ · khung mở đầu–chào–hành trình–kết | 11 · 01 · 06 (mở đầu) |
 | 3–6 | Cấu trúc · điểm nhấn (bố cục tự cân, khối 07) · phong cách · edl.js / plan.json | 07 · 10 · 11 · 03 |
 | 6b | Nâng khung → tránh che người: `lift.py` → `overlay_guard.py` | 04 · 05 |
-| 7–8 | Ảnh tĩnh → **DỪNG cho David duyệt kế hoạch** → render | 17 · 09 |
+| 7–8 | Ảnh tĩnh → Claude tự soát kế hoạch → render | 17 · 09 |
 | 9 | Phát hành: màn kết (`ytEnd`), chương, thumbnail (ngang), tách phần, số liệu | 08 · 15 · 14 · 16 |
 
 Sửa → chạy lại: plan.json → vlog_edl.py → lift.py → overlay_guard.py → stills → render-show.mjs · edl.js sửa tay → overlay_guard.py → stills → render.
@@ -73,9 +73,8 @@ tới thứ gì mà clip khác có hình thì hình đó phải xuất hiện Đ
    cd "$P/motion" && node stills.mjs <vài mốc lớp phủ>          # như bước 7
    python3 -I $SKILL/scripts/link_sheet.py "$P"                  # → check/links.jpg: [người nói | khung trích dẫn]
    ```
-6. **DỪNG, gửi David duyệt TRƯỚC KHI RENDER** (ngoại lệ duy nhất của "chạy một mạch" — để tránh render lại):
-   gửi `ke-hoach-ghep.md` + `check/links.jpg` (SendUserFile), hỏi duyệt/sửa. Có góp ý → sửa edl.js, chạy lại
-   link_sheet, hỏi lại. Duyệt xong mới sang bước 8.
+6. **Tự soát kế hoạch rồi render, không chờ** (`../../../thoi-quen-lam-viec.md` mục 2): soát `ke-hoach-ghep.md` + `check/links.jpg`
+   theo tiêu chí của mục này, sửa edl.js tới khi đạt rồi sang bước 8. Gửi kèm bản cuối để David góp ý.
 
 Mẫu `ke-hoach-ghep.md`:
 ```markdown
@@ -256,7 +255,7 @@ cd "$P/motion" && node stills.mjs <giây timeline> ...     # → check/stills/<g
 Chụp mỗi lớp phủ ở lúc "đầy nhất", ghép sheet xem: chữ tràn/xuống dòng lẻ, dấu bị cắt, chồng lớp, chú thích lệch vật,
 chữ khó đọc trên nền sáng, **người/vật chính bị phụ đề che hoặc nằm dưới nửa khung** (→ nâng khung). Sửa tới khi sạch.
 
-### 8. Render + kiểm tra cuối (chỉ sau khi người dùng duyệt kế hoạch ở 2b)
+### 8. Render + kiểm tra cuối (sau khi tự soát kế hoạch ở 2b)
 ```bash
 cd "$P/motion" && node render-show.mjs        # chạy nền, ~3–9 phút/phút video; tự loudnorm → video-final.mp4
 ```

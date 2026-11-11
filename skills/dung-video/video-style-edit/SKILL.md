@@ -50,7 +50,7 @@ bộ nhận diện, phát hành. Dưới đây chỉ là luật RIÊNG của ski
 | Đầu vào | Chế độ | Làm theo |
 |---|---|---|
 | **1 video gốc** có người nói trước camera | Phủ đồ hoạ lên video gốc (giữ nguyên hình) | Công thức "Làm video" bên dưới |
-| **Từ 2 video gốc trở lên**, hoặc clip sự kiện/vlog không nói trước camera | **Ghép nhiều clip**: tự sắp mạch, clip minh hoạ trích đúng câu nói liên quan; **duyệt kế hoạch trước khi render** | `references/multi-clip.md` (khối 11, hồ sơ `ghep-vlog`) |
+| **Từ 2 video gốc trở lên**, hoặc clip sự kiện/vlog không nói trước camera | **Ghép nhiều clip**: tự sắp mạch, clip minh hoạ trích đúng câu nói liên quan; tự soát kế hoạch rồi render | `references/multi-clip.md` (khối 11, hồ sơ `ghep-vlog`) |
 
 Video mẫu không tính vào số video gốc. Gửi cả thư mục → mọi video trong đó là video gốc theo thứ tự tên file (chế độ ghép); chỉ hỏi
 khi không rõ file nào là mẫu. "Giống video trước" → lấy token phong cách từ `~/Movies/tap-<tên>/2-ban-dai/motion/src` của dự án đó.

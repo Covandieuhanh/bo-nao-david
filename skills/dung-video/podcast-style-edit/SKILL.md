@@ -151,7 +151,7 @@ cảnh + TOPICS theo mốc, `nguon-anh.txt` nếu có ảnh, đã kiểm gì / c
 ```
 
 ## Xong khi
-1. Đã hỏi một lần ở đầu; có chụp thử cho David chốt trước khi render.
+1. Không hỏi giữa chừng trừ tín hiệu nặng; có chụp thử để Claude tự soát trước khi render; báo cáo có "đã chọn X vì Y".
 2. Chỉ nội dung gốc, giữ trọn tập; chữ trên video nguyên văn; không thẻ tít, số tập, ngày tháng.
 3. Sân khấu, sóng âm, thanh thời gian chạy suốt video; màu sóng âm đúng người nói.
 4. Hình phủ khoảng 30% thời lượng, dày ở đoạn khó, không trống lâu ở đầu.

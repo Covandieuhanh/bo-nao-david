@@ -6,7 +6,7 @@ David · `nao-` bộ não và GitHub · `video-` dựng và đăng video · `may
 ## Luật làm việc với David
 
 - [Công cụ cài thì đưa vào skill](luat-cong-cu-cai-dua-vao-skill.md) — công cụ David cài (pyannote…) giúp việc tốt hơn thì tích hợp, giữ cách cũ dự phòng (07/11)
-- [Gợi ý để David chọn](luat-goi-y-de-david-chon.md) — "làm đi" không chốt lựa chọn; ngoại lệ cắt highlight, làm lại video cũ (06/11)
+- [Tài nguyên vào, kết quả ra](luat-goi-y-de-david-chon.md) — sản phẩm từ tài nguyên không hỏi, theo mặc định skill + đề xuất, báo lựa chọn (11/11)
 - [Học là bổ sung](luat-hoc-la-bo-sung.md) — học mẫu chỉ thêm, giữ chặn cũ; khung mới chụp đủ lớp trước render (08/11)
 - [Kết quả hơn tốc độ](luat-ket-qua-hon-toc-do.md) — bước cần kết quả render thì chờ; muốn rút ngắn thì trao đổi (05/11)
 - [Không tự chạy việc của David](luat-khong-tu-chay-viec-cua-david.md) — không tự Chạy tiếp/Duyệt/Làm lại việc David tạo; việc thử tên `thu-…` (08/11)
@@ -44,7 +44,7 @@ David · `nao-` bộ não và GitHub · `video-` dựng và đăng video · `may
 - [Nhạc theo tuyến, chuẩn âm chung](video-nhac-theo-tuyen.md) — tự chọn nhạc theo tuyến, cân từng bài; ~23 dB dưới giọng, −14 LUFS (05–08/11)
 - [Mỗi lúc một chỗ chữ](video-phu-de-mot-cho-chu.md) — phụ đề dọc cụm 5–8 chữ cỡ 58; chữ motion graphic hiện thì phụ đề nhường (08/11)
 - [Bìa podcast không mặt](video-podcast-bia-khong-mat.md) — podcast chỉ tiếng thì bìa không mặt người, khớp nội dung (06/11)
-- [Podcast phủ hình 30%](video-podcast-phu-hinh-30.md) — motion graphic ~30% thời lượng, cân theo nội dung; chụp thử cho David chốt (06/11)
+- [Podcast phủ hình 30%](video-podcast-phu-hinh-30.md) — motion graphic ~30% thời lượng, cân theo nội dung; chụp thử để Claude tự soát (06/11, sửa 11/11)
 - [Thẩm mỹ chỉ giữ nhận diện](video-tham-my-chi-giu-nhan-dien.md) — chỉ giữ chữ ký nhận diện (cam, 2 font, bộ nhận diện); còn lại tự do (10/11)
 
 ## Chỉ máy Mac chính (file không lên GitHub)
