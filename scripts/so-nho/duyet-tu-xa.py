@@ -94,6 +94,18 @@ Lời Claude vừa nói trong phiên: {boi_canh[-1000:]}"""
     return du_phong
 
 
+def bao_bot(chu):
+    """Gõ một dòng vào phiên bot (screen so-nho) để bot biết đang có yêu cầu chờ."""
+    try:
+        man = subprocess.run(["screen", "-ls"], capture_output=True, text=True, timeout=5).stdout
+        sid = next((w for w in man.split() if w.endswith(".so-nho")), None)
+        if sid:
+            subprocess.run(["screen", "-S", sid, "-p", "0", "-X", "stuff", chu], timeout=5); time.sleep(1)
+            subprocess.run(["screen", "-S", sid, "-p", "0", "-X", "stuff", "\r"], timeout=5)
+    except Exception:
+        pass
+
+
 def gui(tin):
     r = subprocess.run(["bash", os.path.join(GOC, "bao-cao.sh"), "--chi-gui", tin], capture_output=True, text=True, timeout=40)
     return r.returncode == 0
@@ -157,6 +169,8 @@ def main():
     if not gui(tin):
         os.remove(os.path.join(HANG, ma + ".json"))
         ra()
+    bao_bot(f"[CHO-DUYET] Máy vừa gửi David yêu cầu {ma} ({'câu hỏi' if cong_cu == 'AskUserQuestion' else 'xin phép'}, phiên: {phien}). "
+            f"Tin tiếp theo của David nhiều khả năng là câu trả lời: làm theo mục Duyệt từ xa. Không gửi gì cho David lúc này.")
 
     tra_file = os.path.join(HANG, ma + ".tra")
     het = time.time() + CHO_TOI_DA
