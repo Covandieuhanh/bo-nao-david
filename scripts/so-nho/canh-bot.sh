@@ -3,7 +3,7 @@
 # Tự sửa: phiên chết · thừa phiên · máy chủ Telegram chết hoặc mất kết nối mạng · phiên treo · hộp thoại chặn · đổi tài khoản ·
 #         làm mới ngữ cảnh 4h sáng. Việc theo giờ: tóm tắt 7h, nhắc đúng giờ (gửi thẳng, không cần Claude), sao lưu Drive 3h.
 # Báo David qua Telegram (gửi thẳng) khi: chưa đăng nhập Claude · hết hạn mức · mở lại liên tục · mất mạng lâu.
-export PATH="$HOME/.bun/bin:$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
+export PATH="$HOME/.bun/bin:$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
 
 GOC="$(cd "$(dirname "$0")" && pwd)"
