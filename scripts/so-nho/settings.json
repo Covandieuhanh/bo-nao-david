@@ -1,20 +1,25 @@
 {
   "enabledPlugins": {
-    "telegram@claude-plugins-official": true
+    "collision-guard@nateherk-mods": false,
+    "goal-meter@nateherk-mods": false,
+    "savvy-progress@claude-kit": false,
+    "so-viec@david-claude": false
   },
   "permissions": {
     "allow": [
       "Read(~/Documents/2-ca-nhan/so-nho/**)",
       "Edit(~/Documents/2-ca-nhan/so-nho/**)",
       "Write(~/Documents/2-ca-nhan/so-nho/**)",
-      "Read(~/.claude/channels/telegram/inbox/**)",
-      "Read(~/.claude/channels/telegram/access.json)",
+      "Read(~/.claude/channels/so-nho/inbox/**)",
+      "Read(~/.claude/channels/so-nho/access.json)",
       "Glob",
       "Grep",
       "Bash(date:*)",
       "Bash(ls:*)",
       "Bash(mkdir -p:*)",
-      "mcp__plugin_telegram_telegram"
+      "mcp__plugin_telegram_telegram",
+      "Bash(cat:*)",
+      "Bash(date *)"
     ],
     "deny": [
       "Bash(rm:*)",
@@ -22,8 +27,7 @@
       "Bash(curl:*)",
       "Bash(git:*)",
       "WebFetch",
-      "Edit(~/.claude/**)",
-      "Write(~/.claude/**)"
+      "Edit(~/.claude/**)"
     ]
   }
 }

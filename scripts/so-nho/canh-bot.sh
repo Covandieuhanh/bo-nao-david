@@ -9,7 +9,7 @@ export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
 DATA="$HOME/Documents/2-ca-nhan/so-nho"
 TT="$DATA/.trang-thai"
 TEN="so-nho"
-TOKEN_FILE="$HOME/.claude/channels/telegram/.env"
+TOKEN_FILE="$HOME/.claude/channels/so-nho/.env"  # thư mục riêng: phiên Claude khác không thấy token nên không giành bot
 DRIVE="$HOME/Library/CloudStorage/GoogleDrive-covandieuhanh@gmail.com/Drive của tôi/Sao-luu-mac/So-nho"
 mkdir -p "$TT"
 LOG="$TT/canh-bot.log"
@@ -32,7 +32,7 @@ tat_bot() { # tắt mọi phiên bot (kể cả phiên thừa)
   screen -ls 2>/dev/null | awk -v t=".$TEN" '$1 ~ t"$" {print $1}' | while read -r id; do screen -S "$id" -X quit; done
   sleep 3; }
 mo_bot() {
-  screen -dmS "$TEN" -h 2000 bash -c "cd '$DATA' && MCP_TIMEOUT=120000 exec claude --channels plugin:telegram@claude-plugins-official --permission-mode dontAsk"
+  screen -dmS "$TEN" -h 2000 bash -c "cd '$DATA' && TELEGRAM_STATE_DIR=$HOME/.claude/channels/so-nho MCP_TIMEOUT=120000 exec claude --channels plugin:telegram@claude-plugins-official --permission-mode dontAsk"
   date +%F > "$TT/mo-ngay"; echo "$TK" > "$TT/tai-khoan"
   ghi "mo phien bot"
   sleep 25; gui "[KHOI-DONG] Phiên mới. Đọc lướt nhom.md, không gửi gì."
