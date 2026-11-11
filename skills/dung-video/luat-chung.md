@@ -25,7 +25,7 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
   `"endcard": {"schedule"}` (highlight). Không tự đặt lịch.
 - **Lằn ranh** (loại khỏi mọi chữ/clip): huyền học, thần số học, phong thuỷ, lá số · "chữa lành", công dụng sức khoẻ của sản phẩm ·
   tư vấn thuế/pháp lý · tên thật/nơi làm/chi tiết lộ danh tính khách, học viên, nhân viên · giá, tên gói dịch vụ. Câu chủ chốt dính
-  lằn ranh → báo David, không tự sửa lời. Ở video dài: cảnh báo trong phiếu lọc, David quyết (khối 00 mục 3).
+  lằn ranh → báo David, không tự sửa lời. Ở video dài: cảnh báo trong phiếu lọc và báo cáo, mặc định giữ lời, David quyết ở bản cuối (khối 00 mục 3).
 - Whisper bịa câu ở đoạn không lời ("Hãy subscribe cho kênh…", "Cảm ơn các bạn đã xem") → bỏ.
 
 ## 2. Nhịp

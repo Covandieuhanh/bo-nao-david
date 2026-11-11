@@ -16,6 +16,8 @@ Tự đo từng việc Claude làm ở **mọi phiên Claude Code trên máy**, 
 `~/.claude/so-viec/nhap/<phiên>.json` phiên cũ nhập ngược bằng `python3 -I mods/so-viec/scripts/nhap-lich-su.py`
 (chạy lại bao nhiêu lần cũng được; phiên cũ: bước im quá 5 phút trong một lượt coi là chờ David, không tính).
 
-**Cài trên máy** (Mac chính đã cài): `~/.claude/settings.json` có
-`"env": { "CLAUDE_CODE_PLUGIN_DIRS": "/Users/moon/Documents/David.Claude/mods/so-viec" }`, rồi mở phiên mới.
+**Đang chạy cũng hiện:** phiên mở trước khi cài mod vẫn hiện trên bảng ("chưa có mod"): mod đọc đuôi lịch sử phiên đó đang ghi (thời gian lượt, token, skill gần nhất).
+**Token trực tiếp:** cộng sau mỗi lần gọi model, nên lượt dài (render) thanh token cũng chạy.
+
+**Cài:** `bash scripts/install.sh` (hoặc `claude plugin marketplace add <repo>` rồi `claude plugin install so-viec@david-claude --scope user`), mở phiên mới. Xem [mods/README.md](../README.md).
 Kiểm tra: `claude plugin validate mods/so-viec`, `claude plugin test mods/so-viec`.

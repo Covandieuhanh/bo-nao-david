@@ -1,0 +1,33 @@
+# Mod của Claude Code
+
+Mod là plugin chạy trong Claude Code (tab Code của app, terminal): vẽ bảng, dòng trên ô nhập, lệnh `/...`, chặn hay theo dõi việc Claude làm.
+Cài ở cấp người dùng Mac nên **mọi phiên, mọi tài khoản Claude** trên máy đều có. Mod chỉ nạp khi phiên mở: cài xong phải mở phiên mới.
+Không chạy trên chat claude.ai và app điện thoại.
+
+`bash scripts/install.sh` cài đủ cả bốn trên máy mới.
+
+| Mod | Của ai | Làm gì | Lệnh |
+|---|---|---|---|
+| [so-viec](so-viec/README.md) | David (repo này) | Thời gian và token từng việc ở mọi phiên, dự kiến theo trung bình việc cùng loại, thanh tiến độ, X/4h hôm nay | `/so-viec`, `/bao-cao` |
+| savvy-progress | johnnyvizz/claude-kit | Bảng các trợ lý con đang chạy: model, tiến độ, token, chi phí ước tính | `/agents-info` |
+| collision-guard | nateherkai/claude-code-mods | Trước khi sửa file mà khung khác vừa sửa trong 30 phút: hỏi sửa tiếp / chuyển sang worktree / huỷ | `/guard` |
+| goal-meter | nateherkai/claude-code-mods | Thanh tiến độ và giờ dự kiến xong khi chạy `/goal` | `/goals` |
+
+## Cài
+
+- `so-viec`: repo này là chợ plugin `david-claude` (`.claude-plugin/marketplace.json`), cài `so-viec@david-claude`. Plugin đọc thẳng từ `mods/so-viec`: sửa code trong repo rồi mở phiên mới là có bản mới, không cài lại.
+- Mod cộng đồng: `claude plugin marketplace add <chủ>/<repo>` rồi `claude plugin install <mod>@<chợ> --scope user`. Bản cài là bản chép, chỉ đổi khi chạy `claude plugin update`.
+
+## Luật với mod cộng đồng
+
+Đọc hết mã nguồn trước khi cài và trước mỗi lần cập nhật. Chỉ cài khi không truy cập mạng, không gửi dữ liệu đi, không chạy lệnh lạ.
+
+Lần đọc 11/11/2026 (savvy-progress `c871c15`, collision-guard và goal-meter `33a936f`):
+- Không gọi mạng, không gửi dữ liệu đi. Dữ liệu ở `~/.claude/mods-data/` và kho riêng của mod.
+- Lệnh chạy trên máy: `git ls-files` (collision-guard: file có trong git không), `tail` (goal-meter: đọc vài dòng cuối lịch sử phiên).
+- savvy-progress thêm một dòng vào lời giao việc cho trợ lý con tên `savvy-*`; goal-meter chèn lời nhắc ẩn cho Claude khi chạy `/goal`.
+- Giấy phép MIT.
+
+## Gỡ
+
+`claude plugin uninstall <mod>@<chợ>`.

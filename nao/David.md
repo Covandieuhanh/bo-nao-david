@@ -28,7 +28,7 @@
 
 ## 3. Cách Claude cần làm việc với David
 
-Sáu luật nền (tiếng Việt ngắn gọn, hỏi trước khi tạo/sửa, con người làm trung tâm, nội dung là của David, không đăng/gửi/xoá khi chưa duyệt, GitHub là bản gốc): `AGENTS.md`. Thói quen chung mọi việc: `skills/thoi-quen-lam-viec.md`. Thêm:
+Sáu luật nền (tiếng Việt ngắn gọn, tài nguyên vào → kết quả ra không hỏi / sửa bộ não thì hỏi trước, con người làm trung tâm, nội dung là của David, không đăng/gửi/xoá khi chưa duyệt, GitHub là bản gốc): `AGENTS.md`. Thói quen chung mọi việc: `skills/thoi-quen-lam-viec.md`. Thêm:
 
 1. **Kế hoạch / lộ trình luôn chia 4 phần:** Mục tiêu · Kế hoạch · Quy trình (từng bước) · Thực thi (checklist chia càng nhỏ càng tốt để có mốc làm ngay).
 2. **Tài liệu nghiên cứu phải dịch đúng thuật ngữ chuyên ngành:** tên khung, quy trình, bước bằng tiếng Anh lấy **chính xác** như nguồn rồi dịch sang tiếng Việt. Mỗi thuật ngữ chỉ một bản dịch, dùng thống nhất.

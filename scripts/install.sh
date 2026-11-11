@@ -48,6 +48,18 @@ lien_ket "$REPO/dang-lam/danh-muc.md" "$HOME/Movies/_so-danh-muc/danh-muc.md"
 # Hook đồng bộ 2 chiều: đầu phiên kéo về, cuối phiên đẩy lên
 python3 -I "$REPO/scripts/cai-hook.py" "$REPO"
 
+# Mod (plugin của Claude Code), cài cho mọi phiên trên máy, mọi tài khoản Claude:
+# Sổ việc của David (đọc thẳng từ repo) + 3 mod cộng đồng đã đọc mã nguồn 11/11/2026 (mods/README.md).
+if command -v claude >/dev/null 2>&1; then
+  claude plugin marketplace add "$REPO" >/dev/null 2>&1 || true
+  claude plugin marketplace add johnnyvizz/claude-kit >/dev/null 2>&1 || true
+  claude plugin marketplace add nateherkai/claude-code-mods >/dev/null 2>&1 || true
+  for p in so-viec@david-claude savvy-progress@claude-kit collision-guard@nateherk-mods goal-meter@nateherk-mods; do
+    claude plugin install "$p" --scope user >/dev/null 2>&1 && echo "Mod: $p" || echo "⚠ Chưa cài được mod $p"
+  done
+  [ -d "$HOME/.claude/so-viec/nhap" ] || python3 -I "$REPO/mods/so-viec/scripts/nhap-lich-su.py" || true
+fi
+
 echo "Xong. Bản cũ (nếu có): $SAO_LUU"
 echo "Bộ nhớ gắn với dự án: $DU_AN"
 echo "Kiểm tra công cụ dựng video: zsh \"$CL/skills/dung-video/video-style-edit/scripts/check_env.sh\""
