@@ -169,23 +169,42 @@ function overview(books: Book[], mine: string, now: number): Overview {
   const avgs = averages(closed)
   const avgOf = (type: string) => avgs.find(a => a.type === type && a.count >= MIN_SAMPLES) ?? null
   // Lượt đang chạy tính tới bây giờ, để giờ hôm nay chạy theo.
-  const turns = books.flatMap(b =>
-    b.running !== null && now - b.updatedAt < LIVE_MS ? [...b.turns, [b.running, now, 0] as Turn] : b.turns,
-  )
+  // Phiên này biết chắc mình đang chạy; phiên khác phải báo nhịp trong 2 phút.
+  const runs = (b: Book) => b.running !== null && (b.sid === mine || now - b.updatedAt < LIVE_MS)
+  const turns = books.flatMap(b => (runs(b) ? [...b.turns, [b.running ?? now, now, 0] as Turn] : b.turns))
   const withOpen = [...closed, ...books.flatMap(b => (b.open ? [b.open] : []))]
 
+  // Chưa đủ lần cùng loại: so với trung bình mọi việc, để vẫn có thanh.
+  const overall: Avg | null =
+    closed.length >= MIN_SAMPLES
+      ? {
+          type: 'chung',
+          count: closed.length,
+          activeMs: closed.reduce((a, j) => a + j.activeMs, 0) / closed.length,
+          tokens: closed.reduce((a, j) => a + total(j.tokens), 0) / closed.length,
+        }
+      : null
+
   const live: Live[] = books
-    .filter(b => b.sid === mine || (b.running !== null && now - b.updatedAt < LIVE_MS))
-    .map(b => {
-      const run = b.running !== null && now - b.updatedAt < LIVE_MS ? now - b.running : 0
+    .filter(b => b.sid === mine || runs(b))
+    .map((b): Live => {
+      const isRun = runs(b)
+      const run = isRun ? now - (b.running ?? now) : 0
+      // Đang chạy: loại việc của lượt này (skill vừa gọi, hoặc tiếp nối việc đang mở).
+      const type =
+        isRun && b.runningType !== undefined ? b.runningType : (b.open?.type ?? null)
+      const isSame = !isRun || (type !== null && type === b.open?.type)
+      const own = type ? avgOf(type) : null
       return {
         sid: b.sid,
         title: b.title || b.sid.slice(0, 8),
         isMine: b.sid === mine,
-        type: b.open?.type ?? null,
-        ms: (b.open?.activeMs ?? 0) + run,
-        tokens: b.open ? total(b.open.tokens) : 0,
-        avg: b.open ? avgOf(b.open.type) : null,
+        isRunning: isRun,
+        type: type ?? (isRun ? 'đang xác định loại việc' : null),
+        ms: (isSame ? (b.open?.activeMs ?? 0) : 0) + run,
+        tokens: isSame && b.open ? total(b.open.tokens) : 0,
+        avg: own ?? overall,
+        basis: own ? 'loai' : overall ? 'chung' : null,
       }
     })
     .sort((a, b) => Number(b.isMine) - Number(a.isMine))
@@ -261,7 +280,7 @@ async function mine($: $T): Promise<Book> {
   if (!me) {
     me = {
       v: 1, sid, title: '', cwd: await $.session.cwd(), trackedSince: now,
-      updatedAt: now, running: null, open: null, jobs: [], turns: [],
+      updatedAt: now, running: null, runningType: null, open: null, jobs: [], turns: [],
     }
     // Bản 0.1 lưu trong kho của mod; phần trước lúc này do scripts/nhap-lich-su.py nhập ngược.
     for (const k of ['jobs', 'open', 'day']) await $.store.delete(k)
@@ -318,6 +337,7 @@ export const register: Register = on => {
     const now = await $.clock.now()
     if (book.open && now - book.open.lastAt > IDLE_CLOSE_MS) closeJob(book)
     book.running = null
+    book.runningType = null
     await save($)
     await $.command.register({ name: 'bao-cao', description: 'Sổ việc: tổng quan mọi phiên, trung bình theo loại việc' })
     await $.command.register({ name: 'so-viec', description: 'Mở bảng Sổ việc cạnh khung chat' })
@@ -352,12 +372,15 @@ export const register: Register = on => {
     book.running = now
 
     const text = e.text.trim()
+    const open = book.open
+    const isFresh = open !== null && now - open.lastAt < IDLE_CLOSE_MS
+    book.runningType = text === '' && isFresh ? open.type : null
     if (text !== '') {
       if (!book.title) book.title = text.replace(/\s+/g, ' ').slice(0, 40)
-      const open = book.open
       // Trả lời ngắn khi đang có việc ("ok", "làm đi"): vẫn là việc đó.
-      const isFollowUp = open !== null && text.length < 40 && now - open.lastAt < IDLE_CLOSE_MS
-      if (!isFollowUp) {
+      const isFollowUp = isFresh && text.length < 40
+      if (isFollowUp) book.runningType = open.type
+      else {
         const hint = open ? `Việc đang làm: ${open.type}. ` : ''
         pending.set(
           e.turnId,
@@ -372,7 +395,14 @@ export const register: Register = on => {
 
   on('skill.prompt', async ($, e, next) => {
     const type = SKILL_TYPES[e.skill]
-    if (type && currentTurn) skillOfTurn.set(currentTurn, type)
+    if (type && currentTurn) {
+      skillOfTurn.set(currentTurn, type)
+      // Báo ngay loại việc, để bảng có thanh khi lượt dài (render) còn đang chạy.
+      const book = await mine($)
+      book.runningType = type
+      await save($)
+      void refresh($)
+    }
     return next(e)
   })
 
@@ -418,6 +448,7 @@ export const register: Register = on => {
     if (currentTurn === e.turnId) {
       currentTurn = null
       book.running = null
+      book.runningType = null
     }
     await save($)
 
@@ -456,13 +487,14 @@ export const register: Register = on => {
             <Box flexDirection="column" key={l.sid}>
               <Text>
                 {l.isMine ? '▶ Khung này' : `▷ ${l.title}`} · {l.type}
+                {l.isRunning ? <Text dimColor> · đang chạy</Text> : ''}
               </Text>
               {l.avg ? (
                 <Text color={over(l.ms / l.avg.activeMs)}>
                   {bar(l.ms / l.avg.activeMs, w)} {hm(l.ms)}/{hm(l.avg.activeMs)}
                 </Text>
               ) : (
-                <Text dimColor>{hm(l.ms)} · chưa đủ {MIN_SAMPLES} lần để dự kiến</Text>
+                <Text dimColor>{hm(l.ms)}</Text>
               )}
               {l.avg ? (
                 <Text color={over(l.tokens / l.avg.tokens)}>
@@ -471,6 +503,14 @@ export const register: Register = on => {
               ) : (
                 <Text dimColor>{kt(l.tokens)} token</Text>
               )}
+              <Text dimColor>
+                {l.basis === 'loai'
+                  ? `so với TB ${l.avg?.count} lần cùng loại`
+                  : l.basis === 'chung'
+                    ? `chưa đủ ${MIN_SAMPLES} lần cùng loại: so với TB mọi việc`
+                    : 'chưa có dữ liệu để so'}
+                {l.isRunning ? ' · token cộng khi lượt xong' : ''}
+              </Text>
             </Box>
           ))}
         <Text> </Text>

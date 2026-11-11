@@ -22,6 +22,8 @@ export type Book = {
   trackedSince: number
   updatedAt: number
   running: number | null
+  /** Loại việc của lượt đang chạy, khi đã biết (skill vừa gọi, tiếp nối). */
+  runningType?: string | null
   open: Job | null
   jobs: Job[]
   turns: Turn[]
@@ -33,10 +35,12 @@ export type Live = {
   sid: string
   title: string
   isMine: boolean
+  isRunning: boolean
   type: string | null
   ms: number
   tokens: number
   avg: Avg | null
+  basis: 'loai' | 'chung' | null
 }
 
 export type Period = { ms: number; tokens: number; jobs: number }

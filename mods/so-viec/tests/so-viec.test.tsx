@@ -63,6 +63,22 @@ test('tổng quan gộp phiên này với phiên khác, có thanh tiến độ',
   expect(r.text).toContain('Phiên dựng video: cat-highlight-video')
   expect(r.text).toContain('2 phiên')
 
+  // Lượt render dài vừa bắt đầu ở khung này, việc mới chưa đủ 3 lần: vẫn có thanh ngay.
+  await $.turn.start({ text: 'cắt highlight cho video podcast hôm qua nhé', turnId: 't7' })
+  await $.skill.prompt({ skill: 'cat-highlight-video', text: 'x', frontmatter: {}, source: 'userSettings' } as never)
+  now += 120000
+  files.set('/h/.claude/so-viec/phien/khac-1.json', JSON.stringify({ ...other, updatedAt: now }))
+  const r2 = await $.command.run({ command: 'bao-cao', args: '' } as never)
+  expect(r2.text).toContain('**Khung này**: cat-highlight-video · 2p')
+
+  for (const surface of ['terminal', 'desktop'] as const) {
+    const ui = await $.ui.mount({ ...PANE, surface } as never)
+    expect((await ui.find({ type: 'Text', text: /Khung này/ }))?.text).toContain('cat-highlight-video')
+    expect((await ui.find({ type: 'Text', text: /TB mọi việc/ }))?.text).toContain('chưa đủ 3 lần')
+    expect((await ui.find({ type: 'Text', text: /[█░]/ }))?.text).toMatch(/^[█░]+ [23]p\/3p$/)
+    await ui.unmount()
+  }
+
   for (const surface of ['terminal', 'desktop'] as const) {
     const ui = await $.ui.mount({ ...PANE, surface } as never)
     expect((await ui.find({ type: 'Text', text: /Phiên dựng video/ }))?.text).toContain('cat-highlight-video')
