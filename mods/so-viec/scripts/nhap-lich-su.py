@@ -31,10 +31,16 @@ SKILL_TYPES = {
     "tai-ban": "tai-ban",
     "playwright-cli": "dieu-khien-trinh-duyet",
     "plugin-authoring": "lam-mod",
+    "skill-creator": "bo-nao:skill-creator",
+    "update-config": "bo-nao:update-config",
+    "consolidate-memory": "bo-nao:consolidate-memory",
     "scroll-craft": "lam-trang-web",
 }
 # Không có nhãn video: video chỉ tính khi skill video được gọi (giống mod).
-LABELS = ["sua-bo-nao", "viet-bai", "nghien-cuu", "lap-ke-hoach", "lam-mod", "hoi-dap", "khac"]
+# Model nhỏ chỉ chọn giữa các việc lớn (giống mod); việc nhỏ tự quy về việc lớn trong mod (groupOf).
+LABELS = ["xay-bo-nao", "bot-telegram", "tro-chuyen"]
+LABEL_HINT = ("xay-bo-nao = sửa skill, luật, ghi nhớ, bộ não, cấu hình Claude, làm mod hay plugin; "
+              "bot-telegram = làm hay dùng bot Telegram; tro-chuyen = mọi việc còn lại (hỏi đáp, viết, nghiên cứu, lên kế hoạch).")
 
 
 def ms(ts):
@@ -114,16 +120,16 @@ def classify(texts):
     items = "\n".join(f"{i}\t{t[:300]}" for i, t in enumerate(texts))
     ask = (
         "Gán cho mỗi tin nhắn dưới đây đúng một nhãn loại việc trong danh sách: " + ", ".join(LABELS) +
-        ". Mỗi dòng: số thứ tự, tab, tin nhắn. Chỉ trả về một mảng JSON các nhãn theo đúng thứ tự, không giải thích.\n\n"
+        ". " + LABEL_HINT + " Mỗi dòng: số thứ tự, tab, tin nhắn. Chỉ trả về một mảng JSON các nhãn theo đúng thứ tự, không giải thích.\n\n"
         + items
     )
     try:
         out = subprocess.run(["claude", "-p", "--model", "haiku", "--no-session-persistence"], input=ask,
                              capture_output=True, text=True, timeout=600).stdout
         arr = json.loads(out[out.index("["): out.rindex("]") + 1])
-        return {i: (a if a in LABELS else "khac") for i, a in enumerate(arr)}
+        return {i: (a if a in LABELS else "tro-chuyen") for i, a in enumerate(arr)}
     except Exception as e:  # noqa: BLE001
-        print("⚠ Không gán nhãn được bằng model, dùng 'khac':", e)
+        print("⚠ Không gán nhãn được bằng model, dùng 'tro-chuyen':", e)
         return {}
 
 
@@ -183,7 +189,7 @@ def main():
             if open_ and t["start"] - open_["lastAt"] > IDLE_CLOSE_MS:
                 jobs.append(open_)
                 open_ = None
-            typ = t["skill"] or label or (open_["type"] if open_ else ("khac" if "need" in t else None)) or "khac"
+            typ = t["skill"] or label or (open_["type"] if open_ else ("tro-chuyen" if "need" in t else None)) or "tro-chuyen"
             if not open_ or open_["type"] != typ:
                 if open_:
                     jobs.append(open_)
@@ -198,7 +204,8 @@ def main():
             out_turns.append([t["start"], t["start"] + t["active"], sum(t["tok"])])
         if open_:
             jobs.append(open_)
-        book = {"v": 1, "sid": s["sid"], "title": s["title"], "cwd": s["cwd"],
+        is_tg = "telegram" in (s["title"] + " " + " ".join(t["text"][:300] for t in s["turns"])).lower()
+        book = {"v": 1, "sid": s["sid"], "title": s["title"], "cwd": s["cwd"], "isTelegram": is_tg,
                 "trackedSince": s["turns"][0]["start"], "updatedAt": s["turns"][-1]["end"],
                 "running": None, "open": None, "jobs": jobs, "turns": out_turns}
         with open(os.path.join(DATA, "nhap", s["sid"] + ".json"), "w", encoding="utf-8") as fh:

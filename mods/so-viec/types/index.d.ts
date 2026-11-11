@@ -28,22 +28,11 @@ export type Book = {
   runningType?: string | null
   /** Token đã dùng trong lượt đang chạy (cộng từng bước). */
   liveTokens?: number
+  /** Khung dùng bot Telegram (tên khung hoặc tin nhắn từ Telegram): mọi việc không phải video tính vào bot Telegram. */
+  isTelegram?: boolean
   open: Job | null
   jobs: Job[]
   turns: Turn[]
-}
-
-export type VideoNow = {
-  sid: string
-  title: string
-  isMine: boolean
-  isRunning: boolean
-  /** Phiên mở trước khi cài mod: số liệu đọc từ lịch sử phiên. */
-  isNoMod?: boolean
-  ms: number
-  tokens: number
-  /** % giới hạn tuần, ước tính từ token; null khi chưa đọc được giới hạn tuần. */
-  pct: number | null
 }
 
 /** Sổ hạn mức của một tài khoản Claude: tai-khoan/<mã>.json, cập nhật khi tài khoản đó đang đăng nhập. */
@@ -58,17 +47,42 @@ export type Account = {
   at: number
 }
 
-export type VideoView = {
+/** Một khung đang chạy. */
+export type LiveRow = {
+  sid: string
+  title: string
+  isMine: boolean
+  isNoMod?: boolean
+  /** Tên việc lớn đang làm. */
+  group: string
+  ms: number
+}
+
+/** Một việc lớn: tuần này tốn bao nhiêu, từ đầu chiếm bao nhiêu. */
+export type GroupRow = {
+  id: string
+  name: string
+  weekMs: number
+  /** Phần trăm hạn mức tuần, ước tính; null khi chưa đo được tài khoản nào. */
+  weekPct: number | null
+  weekTokens: number
+  allMs: number
+  /** Phần trăm trong tổng token từ đầu. */
+  allShare: number
+}
+
+export type BigView = {
   at: number
-  live: VideoNow[]
+  live: LiveRow[]
   weeks: { id: string; label: string; isCurrent: boolean; used: number; resetsAt: string }[]
-  avg: { count: number; ms: number; tokens: number; pct: number | null } | null
-  /** Gộp mọi tài khoản: còn đủ khoảng bao nhiêu video. */
-  left: number | null
+  groups: GroupRow[]
+  video: { count: number; ms: number; pct: number | null } | null
+  since: number
+  allMs: number
 }
 
 declare module 'claude-code' {
   interface PluginState {
-    'so-viec': { view: Shaped<VideoView | null> }
+    'so-viec': { view: Shaped<BigView | null> }
   }
 }
