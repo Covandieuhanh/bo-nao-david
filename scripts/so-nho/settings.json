@@ -1,0 +1,29 @@
+{
+  "enabledPlugins": {
+    "telegram@claude-plugins-official": true
+  },
+  "permissions": {
+    "allow": [
+      "Read(~/Documents/2-ca-nhan/so-nho/**)",
+      "Edit(~/Documents/2-ca-nhan/so-nho/**)",
+      "Write(~/Documents/2-ca-nhan/so-nho/**)",
+      "Read(~/.claude/channels/telegram/inbox/**)",
+      "Read(~/.claude/channels/telegram/access.json)",
+      "Glob",
+      "Grep",
+      "Bash(date:*)",
+      "Bash(ls:*)",
+      "Bash(mkdir -p:*)",
+      "mcp__plugin_telegram_telegram"
+    ],
+    "deny": [
+      "Bash(rm:*)",
+      "Bash(mv:*)",
+      "Bash(curl:*)",
+      "Bash(git:*)",
+      "WebFetch",
+      "Edit(~/.claude/**)",
+      "Write(~/.claude/**)"
+    ]
+  }
+}
