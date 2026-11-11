@@ -129,10 +129,11 @@ while true; do
   fi
 
   # Nhắc đúng giờ: dòng "- YYYY-MM-DD HH:MM · nội dung" trong nhac-viec.md. Gửi thẳng qua Telegram nên bot hỏng vẫn nhắc được.
-  BAY_GIO=$(date "+%Y-%m-%d %H:%M")
-  grep -E '^- [0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2} · ' "$DATA/nhac-viec.md" 2>/dev/null | while IFS= read -r dong; do
+  # Chỉ nhắc mục tới giờ trong 60 phút qua (Mac ngủ dậy vẫn kịp), bỏ dòng đã dời/xong/bỏ; mỗi giờ hẹn chỉ nhắc một lần dù dòng bị sửa chữ.
+  BAY_GIO=$(date "+%Y-%m-%d %H:%M"); TU=$(date -v-60M "+%Y-%m-%d %H:%M")
+  grep -E '^- [0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2} · ' "$DATA/nhac-viec.md" 2>/dev/null | grep -vE '· \((đã|da) ' | while IFS= read -r dong; do
     LUC="${dong:2:16}"
-    if [[ ! "$LUC" > "$BAY_GIO" ]] && ! grep -qxF -- "$dong" "$TT/da-nhac" 2>/dev/null; then
+    if [[ ! "$LUC" > "$BAY_GIO" ]] && [[ ! "$LUC" < "$TU" ]] && ! grep -qF -- "- $LUC · " "$TT/da-nhac" 2>/dev/null; then
       gui_thang "⏰ Nhắc: ${dong:21}" && echo "$dong" >> "$TT/da-nhac" && ghi "nhac $LUC"
     fi
   done
@@ -140,6 +141,12 @@ while true; do
   if [ "$GIO" -ge 3 ] && [ -d "$(dirname "$DRIVE")" ] && [ "$(cat "$TT/sao-luu" 2>/dev/null)" != "$NGAY" ]; then
     mkdir -p "$DRIVE" && rsync -a --exclude ".trang-thai" --exclude ".claude" "$DATA/" "$DRIVE/" \
       && echo "$NGAY" > "$TT/sao-luu" && ghi "sao luu Drive"
+  fi
+
+  # Múi giờ của Mac cho bot (CLAUDE.md nhập file này). Đổi múi (David chỉnh đồng hồ Mac) thì mở lại bot để nhận.
+  MG="Múi giờ của Mac hiện là $(date +%Z) (UTC$(date +%z | sed 's/\(..\)$/:\1/')). Mọi giờ trong sổ nhớ và nhac-viec.md theo múi này."
+  if [ "$MG" != "$(cat "$TT/mui-gio.md" 2>/dev/null)" ]; then
+    echo "$MG" > "$TT/mui-gio.md"; ghi "mui gio: $MG"; dang_chay && { tat_bot; mo_bot "doi mui gio"; }
   fi
 
   # Nhịp sống cho lệnh kiểm tra sức khoẻ.

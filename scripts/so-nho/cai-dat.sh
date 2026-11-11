@@ -16,7 +16,7 @@ tao lich-hen.md "# Lịch/hẹn"
 tao y-tuong.md "# Ý tưởng"
 tao nguoi.md "# Người"
 tao kien-thuc.md "# Kiến thức"
-tao nhac-viec.md "# Nhắc đúng giờ (giờ Đức)"
+tao nhac-viec.md "# Nhắc đúng giờ (múi giờ của Mac)"
 tao nhom.md "# Các nhóm của Sổ nhớ
 
 | File | Nhóm |
