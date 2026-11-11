@@ -34,7 +34,7 @@ David nhắn Telegram những gì nhớ, biết, cần làm. Phiên Claude Code 
 | Hỏng | Tự sửa |
 |---|---|
 | Phiên bot chết, thừa phiên | Mở lại đúng một phiên |
-| Máy chủ Telegram chết / kết nối hỏng lúc mở / bị giành (409) | Không thấy `bun server.ts` sau 2 phút → mở lại |
+| Máy chủ Telegram chết / Claude bỏ qua bước bật lúc mở phiên / bị giành (409) | Không thấy `bun server.ts` sau 40 giây → gõ `/mcp reconnect plugin:telegram:telegram` (tối đa 3 lần), không được thì mở lại phiên |
 | Còn máy chủ nhưng không giữ kết nối Telegram (sau khi Mac thức dậy, đổi Wi-Fi) | Có mạng mà mất kết nối >3 phút → mở lại; không có mạng >30 phút → báo David |
 | Phiên treo (đang làm >10 phút) / hộp thoại chặn | Bấm Esc; >15 phút → mở lại |
 | Hết hạn mức gói, chưa đăng nhập / hết hạn đăng nhập | Báo David (3 giờ / 6 giờ một lần) |
@@ -43,6 +43,7 @@ David nhắn Telegram những gì nhớ, biết, cần làm. Phiên Claude Code 
 
 - Tin David gửi lúc bot hỏng **không mất**: Telegram giữ tới 24 giờ, bot nối lại thì nhận.
 - Nhắc đúng giờ và cảnh báo gửi thẳng qua Telegram (`bao-cao.sh --chi-gui`), không cần Claude chạy. Tóm tắt sáng chỉ đánh dấu khi gửi được, thử lại tới 12h.
+- Nhắc chỉ gửi mục tới giờ trong 60 phút qua, mỗi giờ hẹn một lần (bot sửa chữ dòng cũ không gửi lại), bỏ dòng `· (đã …)`. Giờ theo múi của Mac, canh-bot ghi `.trang-thai/mui-gio.md` (CLAUDE.md của bot nhập file này); đổi múi thì mở lại bot.
 - Gọi phiên bot bằng mã đủ (`12345.so-nho`): tên `so-nho` là đầu của `so-nho-canh` nên `screen -S so-nho` bị nhầm.
 - PATH có `/usr/sbin` (lsof, taskpolicy). Không chạy `claude mcp list` với `TELEGRAM_STATE_DIR` của bot: nó giành kết nối.
 - Không tự sửa được: Mac gập máy hoặc rút điện (ngủ), Mac khởi động lại mà chưa đăng nhập macOS.
