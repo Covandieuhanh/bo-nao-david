@@ -12,6 +12,8 @@ Drive `covandieuhanh@gmail.com` › `Drive của tôi`. Mac chỉ giữ dữ li�
 | `Sao-luu-mac/Movies/<tập>/` | Cả dự án dựng: `1-goc/` (gốc), video-final (mọi bản, đạt hay không), kịch bản, phụ đề, kế hoạch cắt, `phat-hanh/`. File tạm (check, davinci, public, node_modules) đã bỏ: dựng lại được từ gốc + kịch bản |
 | `Sao-luu-mac/Downloads/` | File tải về chưa thuộc tập nào |
 | `Sao-luu-mac/Documents/` | `1-nghe-trainer`, `2-ca-nhan`, `9-luu-tru` (gồm sổ xếp file 07/11), `Obsidian` |
+| `Sao-luu-mac/Ung-dung/` | Dữ liệu app đã gỡ: `ZaloData` (tin nhắn, ảnh Zalo PC cũ), `.congviec` (nền tảng "công việc"/App notion cũ: Postgres + bản sao lưu) |
+| `Sao-luu-mac/Desktop/`, `Music/`, `Pictures/` | File từng nằm ở Desktop, nhạc nghe riêng, thư viện Music, ảnh tải về. `~/Music/nhac-nen` (nhạc kênh) vẫn ở Mac |
 | `Sao-luu-mac/Bo-nao/` | `David.Claude` (repo bộ não, cả `.git`) + `bo-nho-claude-tam/` (ghi nhớ Claude theo từng thư mục dự án). Bản gốc bộ não vẫn là GitHub |
 
 Không tải lên: mật khẩu, lịch sử chat thô, bộ nhớ đệm.

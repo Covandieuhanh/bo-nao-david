@@ -10,7 +10,9 @@ metadata:
 
 **Mac chỉ giữ dữ liệu của việc đang làm.** Mọi thứ khác (gốc, thành phẩm đạt hay không, kịch bản, tài liệu, bản sao bộ não) nằm trên Drive,
 xếp theo [kho-drive.md](../../dang-lam/kho-drive.md); cần thì tải về. Xong một tập: tải dự án (bỏ file tạm) lên `Sao-luu-mac/Movies/<tập>/`,
-kiểm đã lên mây, rồi xoá trên Mac, ghi loại vào `kho-drive.md`.
+kiểm đã lên mây, rồi xoá trên Mac, ghi loại vào `kho-drive.md`. **Xoá bất cứ thứ gì có dữ liệu của David (kể cả khi David bảo "xoá hết"):
+chép lên Drive trước, kiểm đã lên mây rồi mới xoá**; chỉ xoá thẳng app, bộ nhớ đệm, file tạm dựng lại được.
+Sổ 11/11/2026: xoá thẳng dữ liệu Codex theo lời "codex xoá hết", sau đó David cần lại các tệp đang làm mà không khôi phục được.
 Sổ 11/11/2026, David: "máy mac này chỉ còn đóng mỗi vai trò là khi đang thực thi cái gì thì có dữ liệu và tài nguyên của cái đó thôi.
 đạt hay không đạt cũng đưa hết lên drive và phân loại vào ghi chú bộ não". Lý do: Mac 228 GB đầy, Drive 400 GB.
 
