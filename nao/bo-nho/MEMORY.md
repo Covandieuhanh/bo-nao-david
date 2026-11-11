@@ -30,7 +30,7 @@ David · `nao-` bộ não và GitHub · `video-` dựng và đăng video · `may
 - [Bộ nhận diện chung](video-nhan-dien-chung.md) — mọi video cùng dấu góc, thanh, thẻ cuối không logo; dọc ngắn bỏ thanh + thẻ cuối (08/11, 10/11)
 - [Chỉ hình của chính video](video-chi-hinh-cua-chinh-video.md) — thumbnail/ảnh bìa chỉ lấy từ chính video đó (05/11)
 - [Chữ trên màn hình nguyên văn](video-chu-nguyen-van.md) — không tít tự rút, màn chốt lời David, không số chạy (07/11)
-- [Chuyển video qua Drive](video-chuyen-qua-drive.md) — Drive covandieuhanh là kho chính (Video-goc/xong, Sao-luu-mac); Mac chỉ giữ việc đang làm (08/11, 11/11)
+- [Chuyển video qua Drive](video-chuyen-qua-drive.md) — Drive chỉ giữ bộ não, video gốc, thành quả video; Mac chỉ giữ việc đang làm; xoá đồ khác thì hỏi trước (08/11, 11/11)
 - [Clip ngắn đứng độc lập](video-clip-ngan-dung-doc-lap.md) — bốn câu bối cảnh, ý trọn, mang về, chừa lại; không số cố định (06/11, 07/11)
 - [Video dài không cắt](video-dai-khong-cat.md) — để nguyên cả lặng và ờ ừm; cắt chỉ khi trích video ngắn (05/11)
 - [Khuôn podcast dọc đồ hoạ](video-doc-khuon-chu-chinh.md) — chữ chính thay phụ đề, không màn hình cuối; 3 clip Đi trainer là mẫu (06/11, sửa 10/11)
