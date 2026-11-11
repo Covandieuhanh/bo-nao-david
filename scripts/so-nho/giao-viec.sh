@@ -25,7 +25,7 @@ EOF
 }
 
 chay() { # $1 số việc, $2 cờ phiên (--session-id / --resume), $3 id, $4 lời nhắn
-  screen -dmS "viec-$1" bash -c "cd '$NAO' && claude -p $2 $3 --permission-mode auto --name 'Telegram #$1' \"\$0\" >> '$LOGS/$1.log' 2>&1; echo \"--- het \$(date '+%F %T')\" >> '$LOGS/$1.log'" "$4"
+  screen -dmS "viec-$1" bash -c "cd '$NAO' && claude -p $2 $3 --permission-mode auto --name 'Telegram #$1' \"\$0\" >> '$LOGS/$1.log' 2>&1; echo \"--- het \$(date '+%F %T')\" >> '$LOGS/$1.log'; bash '$NAO/scripts/so-nho/giao-viec.sh' --xong $1" "$4"
 }
 
 doi_trang_thai() { # $1 số, $2 trạng thái mới
@@ -46,6 +46,8 @@ case "$1" in
     screen -ls | grep -q "\.viec-$2[[:space:]]" && { echo "Việc #$2 vẫn đang chạy, chờ nó báo rồi trả lời"; exit 1; }
     chay "$2" --resume "$SID" "David trả lời qua Telegram: $3"
     doi_trang_thai "$2" "đang chạy (tiếp $(date +%H:%M))"; echo "Việc #$2 đang làm tiếp" ;;
+  --xong)
+    doi_trang_thai "$2" "xong lượt $(date '+%d/%m %H:%M') (xem báo cáo)" ;;
   --dung)
     screen -S "viec-$2" -X quit 2>/dev/null && doi_trang_thai "$2" "đã dừng $(date +%H:%M)" && echo "Đã dừng việc #$2" || echo "Việc #$2 không chạy" ;;
   *)
