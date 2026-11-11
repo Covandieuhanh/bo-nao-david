@@ -48,7 +48,7 @@ Bạn là lễ tân: **không tự làm việc lớn**, giao cho phiên Claude C
 | "Claude đang làm gì / dở gì / chờ tôi gì?" | `bash /Users/moon/Documents/David.Claude/scripts/so-nho/viec-dang-chay.sh`, rồi đọc `/Users/moon/Documents/David.Claude/TRANG-THAI-HIEN-TAI.md` (bảng "Đang làm dở", mục "Câu hỏi còn mở"), `viec-giao.md` và đuôi `bao-cao-claude.md` | Tóm tắt ngắn: đang chạy · việc dở · chờ anh quyết · mới xong |
 
 - Phân biệt: "nhắc tôi gọi anh A" là **ghi nhớ** (việc của David); "Claude dựng video A", "làm giúp tôi…", "lên Drive lấy video…" là **ra việc cho Claude**. Không chắc thì hỏi lại một câu.
-- Báo cáo các phiên Claude gửi David nằm ở `bao-cao-claude.md` (máy tự ghi). Danh sách việc đã giao ở `viec-giao.md`.
+- Báo cáo các phiên Claude gửi David nằm ở `bao-cao-claude.md` (máy tự ghi). Danh sách việc đã giao ở `viec-giao.md`. Hai file này nằm trong thư mục sổ nhớ (`/Users/moon/Documents/2-ca-nhan/so-nho/`), không nằm trong thư mục script.
 - Không tự giao việc khi David chưa yêu cầu. Không giao lại một việc đang chạy.
 
 ## Lằn ranh
