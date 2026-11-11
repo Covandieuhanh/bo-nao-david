@@ -144,8 +144,9 @@ while true; do
     fi
   done
   # Nhắc lặp: "- mỗi ngày / mỗi thứ 2, thứ 5 / mỗi ngày 15 HH:MM · nội dung" (nhac-lap.py tính lần tới giờ).
-  python3 -I "$GOC/nhac-lap.py" "$DATA/nhac-viec.md" "$TT/da-nhac-lap" 2>>"$LOG" | while IFS=$'\t' read -r khoa nd; do
-    gui_thang "⏰ Nhắc: $nd" && echo "$khoa" >> "$TT/da-nhac-lap" && ghi "nhac lap ${khoa:0:16}"
+  # Dòng kết bằng "+ việc chưa xong" thì tin kèm việc [ ] trong viec-can-lam.md (kể cả việc không hạn).
+  python3 -I "$GOC/nhac-lap.py" "$DATA/nhac-viec.md" "$TT/da-nhac-lap" "$DATA/viec-can-lam.md" 2>>"$LOG" | while IFS=$'\t' read -r khoa nd; do
+    gui_thang "⏰ Nhắc: ${nd//$'\x1f'/$'\n'}" && echo "$khoa" >> "$TT/da-nhac-lap" && ghi "nhac lap ${khoa:0:16}"
   done
   [ -f "$TT/da-nhac-lap" ] && tail -500 "$TT/da-nhac-lap" > "$TT/da-nhac-lap.tmp" && mv "$TT/da-nhac-lap.tmp" "$TT/da-nhac-lap"
 

@@ -2,9 +2,10 @@
 """Nhắc lặp cho canh-bot.sh: đọc nhac-viec.md, in các lần nhắc lặp tới giờ trong 60 phút qua chưa gửi.
 Dạng dòng: "- mỗi ngày 06:00 · …" · "- mỗi thứ 2, thứ 5 07:00 · …" · "- mỗi chủ nhật 18:00 · …" · "- mỗi ngày 15 09:00 · …" (hằng tháng).
 "hằng"/"hàng" thay "mỗi" cũng được. Dừng: "(đã dừng)" ngay sau "· ".
-In mỗi lần nhắc một dòng: "<khoá>\t<nội dung>"; canh-bot gửi xong thì ghi khoá vào .trang-thai/da-nhac-lap.
-Dùng: python3 -I nhac-lap.py <nhac-viec.md> <da-nhac-lap>"""
-import datetime as dt, re, sys
+Dòng kết bằng "+ việc chưa xong": tin nhắc kèm danh sách việc "[ ]" trong viec-can-lam.md (việc không hạn cũng có), bỏ mục "Thói quen…".
+In mỗi lần nhắc một dòng: "<khoá>\t<nội dung>" (xuống dòng trong nội dung thay bằng \x1f); canh-bot gửi xong thì ghi khoá vào .trang-thai/da-nhac-lap.
+Dùng: python3 -I nhac-lap.py <nhac-viec.md> <da-nhac-lap> [viec-can-lam.md]"""
+import datetime as dt, os, re, sys
 
 DONG = re.compile(r"^- (?:mỗi|hằng|hàng) (.+?) (\d{1,2}):(\d{2}) · (.+)$")
 THU = {"2": 0, "3": 1, "4": 2, "5": 3, "6": 4, "7": 5, "hai": 0, "ba": 1, "tư": 2, "năm": 3, "sáu": 4, "bảy": 5}
@@ -33,8 +34,39 @@ def khop(spec, ngay):
     return ngay.weekday() in thu
 
 
+KEM = "+ việc chưa xong"
+
+
+def viec_chua_xong(tep, hom_nay):
+    """Danh sách việc "[ ]": quá hạn trước, rồi có hạn, rồi không hạn."""
+    try:
+        dong = open(tep, encoding="utf-8").read().splitlines()
+    except (OSError, TypeError):
+        return []
+    nhom = ([], [], [])
+    for d in dong:
+        m = re.match(r"^- \[ \] (.+)$", d.strip())
+        if not m:
+            continue
+        phan = [x.strip() for x in m.group(1).split(" · ")]
+        ten = phan[0]
+        if ten.lower().startswith("thói quen"):
+            continue  # thói quen đã có ba khung hỏi thăm riêng
+        han = next((x[4:].strip() for x in phan[1:] if x.startswith("hạn ")), "")
+        ngay = re.match(r"\d{4}-\d{2}-\d{2}(?: \d{1,2}:\d{2})?", han)
+        han = ngay.group() if ngay else han.split(" (")[0]
+        if ngay and ngay.group()[:10] < f"{hom_nay:%Y-%m-%d}":
+            nhom[0].append(f"• {ten} (quá hạn {han})")
+        elif han:
+            nhom[1].append(f"• {ten} (hạn {han})")
+        else:
+            nhom[2].append(f"• {ten} (chưa có hạn)")
+    return nhom[0] + nhom[1] + nhom[2]
+
+
 def main():
     tep, da = sys.argv[1], sys.argv[2]
+    tep_viec = sys.argv[3] if len(sys.argv) > 3 else os.path.join(os.path.dirname(tep), "viec-can-lam.md")
     try:
         dong = open(tep, encoding="utf-8").read().splitlines()
     except OSError:
@@ -56,7 +88,12 @@ def main():
                 continue
             khoa = f"{luc:%Y-%m-%d %H:%M} | {nd}"
             if khoa not in da_gui:
-                print(f"{khoa}\t{nd}")
+                tin = nd
+                if nd.endswith(KEM):
+                    ds = viec_chua_xong(tep_viec, bay.date())
+                    tin = nd[: -len(KEM)].rstrip(" ·.") + "\n\n" + (
+                        "Việc chưa xong:\n" + "\n".join(ds) if ds else "Không còn việc nào chưa xong.")
+                print(f"{khoa}\t{tin.replace(chr(10), chr(31))}")
 
 
 if __name__ == "__main__":
