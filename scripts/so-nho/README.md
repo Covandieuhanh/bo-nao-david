@@ -27,4 +27,23 @@ David nhắn Telegram những gì nhớ, biết, cần làm. Phiên Claude Code 
 - `ProcessType` = `Interactive` trong plist: không có thì launchd hạ ưu tiên tiến trình nền, mỗi lần đọc/sửa file chậm 6–18 giây, một tin mất ~2 phút. `ENABLE_TOOL_SEARCH=false` nạp sẵn công cụ, bớt một vòng. `ackReaction` 👀 báo đã nhận tin ngay.
 - Chế độ `dontAsk`: không có ai bấm duyệt, việc ngoài quyền tự bị từ chối thay vì treo. Model Haiku cho nhanh nhất (đo 11/11: một lượt đọc 3 file + sửa 1 file mất 6 giây), tắt kết nối claude.ai và bộ nhớ tự động trong phiên bot. Bot không dùng Bash (lệnh shell treo hơn 1 phút trong phiên nền), lấy giờ từ `ts` của tin; nhắc đúng giờ do canh-bot.sh đọc `nhac-viec.md`, không dùng CronCreate (mất khi phiên mở lại).
 
+**Canh 24/7** (`canh-bot.sh`, mỗi phút; thử 11/11: tắt máy chủ Telegram → Claude tự bật lại tức thì; tắt phiên → mở lại sau 50 giây):
+
+| Hỏng | Tự sửa |
+|---|---|
+| Phiên bot chết, thừa phiên | Mở lại đúng một phiên |
+| Máy chủ Telegram chết / kết nối hỏng lúc mở / bị giành (409) | Không thấy `bun server.ts` sau 2 phút → mở lại |
+| Còn máy chủ nhưng không giữ kết nối Telegram (sau khi Mac thức dậy, đổi Wi-Fi) | Có mạng mà mất kết nối >3 phút → mở lại; không có mạng >30 phút → báo David |
+| Phiên treo (đang làm >10 phút) / hộp thoại chặn | Bấm Esc; >15 phút → mở lại |
+| Hết hạn mức gói, chưa đăng nhập / hết hạn đăng nhập | Báo David (3 giờ / 6 giờ một lần) |
+| Mở lại >4 lần trong 30 phút | Báo David cần xem |
+| Đổi tài khoản Claude, ngữ cảnh đầy | Mở lại khi đổi; làm mới 4h sáng |
+
+- Tin David gửi lúc bot hỏng **không mất**: Telegram giữ tới 24 giờ, bot nối lại thì nhận.
+- Nhắc đúng giờ và cảnh báo gửi thẳng qua Telegram (`bao-cao.sh --chi-gui`), không cần Claude chạy. Tóm tắt sáng chỉ đánh dấu khi gửi được, thử lại tới 12h.
+- Gọi phiên bot bằng mã đủ (`12345.so-nho`): tên `so-nho` là đầu của `so-nho-canh` nên `screen -S so-nho` bị nhầm.
+- PATH có `/usr/sbin` (lsof, taskpolicy). Không chạy `claude mcp list` với `TELEGRAM_STATE_DIR` của bot: nó giành kết nối.
+- Không tự sửa được: Mac gập máy hoặc rút điện (ngủ), Mac khởi động lại mà chưa đăng nhập macOS.
+- Sức khoẻ: `bash scripts/so-nho/viec-dang-chay.sh` (mục "Sức khoẻ bot"), hoặc hỏi bot "bot có ổn không".
+
 Xem phiên bot: `screen -r so-nho` (thoát: Ctrl-A rồi D). Nhật ký canh: `~/Documents/2-ca-nhan/so-nho/.trang-thai/canh-bot.log`.
