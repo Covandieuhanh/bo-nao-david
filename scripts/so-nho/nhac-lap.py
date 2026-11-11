@@ -2,6 +2,7 @@
 """Nhắc lặp cho canh-bot.sh: đọc nhac-viec.md, in các lần nhắc lặp tới giờ trong 60 phút qua chưa gửi.
 Dạng dòng: "- mỗi ngày 06:00 · …" · "- mỗi thứ 2, thứ 5 07:00 · …" · "- mỗi chủ nhật 18:00 · …" · "- mỗi ngày 15 09:00 · …" (hằng tháng).
 "hằng"/"hàng" thay "mỗi" cũng được. Dừng: "(đã dừng)" ngay sau "· ".
+Nội dung bắt đầu bằng thẻ máy "[THE] …" (vd [HOI-THOI-QUEN]): in trên một dòng, canh-bot gõ vào phiên bot thay vì gửi thẳng.
 Dòng kết bằng "+ việc chưa xong": tin nhắc kèm danh sách việc "[ ]" trong viec-can-lam.md (việc không hạn cũng có), bỏ mục "Thói quen…".
 In mỗi lần nhắc một dòng: "<khoá>\t<nội dung>" (xuống dòng trong nội dung thay bằng \x1f); canh-bot gửi xong thì ghi khoá vào .trang-thai/da-nhac-lap.
 Dùng: python3 -I nhac-lap.py <nhac-viec.md> <da-nhac-lap> [viec-can-lam.md]"""
@@ -93,6 +94,8 @@ def main():
                     ds = viec_chua_xong(tep_viec, bay.date())
                     tin = nd[: -len(KEM)].rstrip(" ·.") + "\n\n" + (
                         "Việc chưa xong:\n" + "\n".join(ds) if ds else "Không còn việc nào chưa xong.")
+                if tin.startswith("["):  # thẻ máy: canh-bot gõ vào phiên bot, phải nằm trên một dòng
+                    tin = re.sub(r"\s*\n+\s*", " / ", tin)
                 print(f"{khoa}\t{tin.replace(chr(10), chr(31))}")
 
 
