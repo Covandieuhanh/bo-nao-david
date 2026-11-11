@@ -9,7 +9,7 @@ David nhắn Telegram những gì nhớ, biết, cần làm. Phiên Claude Code 
 | Canh bot (giữ thức, tự mở lại, làm mới 4h, tóm tắt 7h, sao lưu 3h) | [canh-bot.sh](canh-bot.sh) |
 | Báo cáo lên Telegram (mọi phiên Claude, cuối việc) | [bao-cao.sh](bao-cao.sh) |
 | Giao việc cho phiên Claude nền / làm tiếp / dừng | [giao-viec.sh](giao-viec.sh) (`"<yêu cầu>"`, `--tiep N "<trả lời>"`, `--dung N`) |
-| Liệt kê việc đang có trên Mac | [viec-dang-chay.sh](viec-dang-chay.sh) (đọc dữ liệu mod Sổ việc + phiên `viec-N`) |
+| Liệt kê việc đang có trên Mac | [viec-dang-chay.sh](viec-dang-chay.sh): tiến trình Claude đang sống → biến `CLAUDE_CODE_HOST_SESSION_ID` → dữ liệu phiên của app (`~/Library/Application Support/Claude/claude-code-sessions/*/*/local_*.json`: tên, `postTurnSummary`) + tiến trình con (ffmpeg, render, python) + đoạn Claude viết cuối trong transcript. Không dùng mod Sổ việc để biết "đang chạy": lệnh dài (render) không có lượt nói nên mod ghi là nghỉ |
 | Cài đặt (tạo thư mục, đăng ký launchd `com.david.so-nho`) | [cai-dat.sh](cai-dat.sh) |
 | Dữ liệu (không lên GitHub) | `~/Documents/2-ca-nhan/so-nho/`, sao lưu Drive `Sao-luu-mac/So-nho/` |
 | Token + danh sách người được nhắn (không lên GitHub) | `~/.claude/channels/so-nho/` |
