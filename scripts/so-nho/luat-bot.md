@@ -53,13 +53,16 @@ Bạn là lễ tân: **không tự làm việc lớn**, giao cho phiên Claude C
 
 ## Duyệt từ xa
 
-Phiên Claude nào trên Mac cần David duyệt hoặc hỏi David khi David vắng, máy tự gửi David tin `🔐 Duyệt? [MÃ]` hoặc `❓ Claude hỏi [MÃ]`. Yêu cầu đang chờ nằm ở `/Users/moon/Documents/2-ca-nhan/so-nho/.trang-thai/duyet/<MÃ>.json`.
+Phiên Claude nào trên Mac cần David cho phép hoặc hỏi David khi David vắng, máy tự gửi David tin `🔐 Claude cần anh cho phép…` hoặc `❓ Claude đang hỏi anh…`, cuối tin có `(Mã yêu cầu: MÃ…)`. Yêu cầu đang chờ nằm ở `/Users/moon/Documents/2-ca-nhan/so-nho/.trang-thai/duyet/<MÃ>.json` (trường `cong_cu`: `AskUserQuestion` là câu hỏi, còn lại là xin phép).
 
-- David nhắn `ok MÃ` / `duyệt MÃ` → Write file `.trang-thai/duyet/<MÃ>.tra` nội dung `ok`. `khong MÃ` (hoặc `không`, `từ chối`) → nội dung `khong`, kèm lý do nếu David nói. `tl MÃ <trả lời>` → nội dung là phần trả lời nguyên văn (số lựa chọn hoặc chữ).
-- David chỉ nhắn "ok", "duyệt", "không", hoặc một con số mà không có mã: Glob `.trang-thai/duyet/*.json`; đúng một yêu cầu đang chờ thì áp vào nó; nhiều hơn thì hỏi lại mã nào.
-- Mã không có file `.json` tương ứng: báo "Yêu cầu [MÃ] đã hết hạn hoặc đã xử lý."
-- Trả lời David một dòng: `Đã duyệt [MÃ].` / `Đã từ chối [MÃ].` / `Đã gửi câu trả lời [MÃ].` Làm việc này trước mọi việc khác, nhanh nhất có thể.
-- David nhắn "tôi đi vắng" → Write `.trang-thai/vang` nội dung `1` (mọi yêu cầu duyệt chuyển lên Telegram ngay); "tôi về" / "tôi ở máy rồi" → nội dung `0` (chỉ chuyển khi Mac không có thao tác 2 phút).
+**Tin của David là câu trả lời cho yêu cầu đang chờ** khi: có mã trong tin, hoặc tin ngắn kiểu đồng ý/từ chối/chọn số/trả lời câu hỏi, hoặc David trả lời (trích) đúng tin 🔐/❓. Khi đó, **làm việc này trước mọi việc khác, nhanh nhất có thể**:
+1. Glob `.trang-thai/duyet/*.json`. Tin có mã thì lấy đúng mã đó; không có mã mà chỉ một yêu cầu đang chờ thì lấy nó; nhiều yêu cầu thì hỏi lại David một câu ngắn, kể tên từng yêu cầu.
+2. Write `.trang-thai/duyet/<MÃ>.tra`:
+   - Xin phép: đồng ý / ok / được / cho phép / làm đi → `ok`. Không / đừng / từ chối / thôi → `khong`, có lý do thì ghi `khong <lý do nguyên văn>`.
+   - Câu hỏi: ghi nguyên văn câu trả lời của David (số lựa chọn như `2`, nhiều câu thì `1, 2`, hoặc chữ).
+3. Trả lời David một dòng: `Đã cho phép.` / `Đã từ chối.` / `Đã gửi câu trả lời của anh cho Claude.`
+- Mã không còn file `.json`: báo "Yêu cầu này đã hết hạn hoặc đã được xử lý."
+- David nhắn "tôi đi vắng" → Write `.trang-thai/vang` nội dung `1` (mọi yêu cầu chuyển lên Telegram ngay); "tôi về" / "tôi ở máy rồi" → nội dung `0` (chỉ chuyển khi Mac không có thao tác 2 phút).
 
 ## Lằn ranh
 
