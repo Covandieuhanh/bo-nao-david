@@ -19,6 +19,6 @@ David nhắn Telegram những gì nhớ, biết, cần làm. Phiên Claude Code 
 - Mod cấp người dùng (collision-guard, so-viec, goal-meter, savvy-progress) làm kẹt lệnh trong phiên bot, nên tắt riêng ở `settings.json`.
 - `MCP_TIMEOUT=120000`: lần đầu Bun cài thư viện lâu hơn 30 giây.
 - `ProcessType` = `Interactive` trong plist: không có thì launchd hạ ưu tiên tiến trình nền, mỗi lần đọc/sửa file chậm 6–18 giây, một tin mất ~2 phút. `ENABLE_TOOL_SEARCH=false` nạp sẵn công cụ, bớt một vòng. `ackReaction` 👀 báo đã nhận tin ngay.
-- Chế độ `dontAsk`: không có ai bấm duyệt, việc ngoài quyền tự bị từ chối thay vì treo. Model Sonnet cho nhanh và đỡ hạn mức. Bot không dùng Bash (lệnh shell treo hơn 1 phút trong phiên nền), lấy giờ từ `ts` của tin; nhắc đúng giờ do canh-bot.sh đọc `nhac-viec.md`, không dùng CronCreate (mất khi phiên mở lại).
+- Chế độ `dontAsk`: không có ai bấm duyệt, việc ngoài quyền tự bị từ chối thay vì treo. Model Haiku cho nhanh nhất (đo 11/11: một lượt đọc 3 file + sửa 1 file mất 6 giây), tắt kết nối claude.ai và bộ nhớ tự động trong phiên bot. Bot không dùng Bash (lệnh shell treo hơn 1 phút trong phiên nền), lấy giờ từ `ts` của tin; nhắc đúng giờ do canh-bot.sh đọc `nhac-viec.md`, không dùng CronCreate (mất khi phiên mở lại).
 
 Xem phiên bot: `screen -r so-nho` (thoát: Ctrl-A rồi D). Nhật ký canh: `~/Documents/2-ca-nhan/so-nho/.trang-thai/canh-bot.log`.
