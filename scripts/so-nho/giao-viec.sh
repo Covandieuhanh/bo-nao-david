@@ -26,7 +26,8 @@ EOF
 }
 
 sid_cua() { grep "^| $1 |" "$SO" | awk -F'|' '{gsub(/ /,"",$5); print $5}'; }
-ten_cua() { echo "Telegram #$1 · $(grep "^| $1 |" "$SO" | awk -F'|' '{print $4}' | sed 's/^ *//' | cut -c1-40)"; }
+ten_cua() { # cắt theo chữ (không theo byte) để không hỏng chữ có dấu
+  echo "Telegram #$1 · $(grep "^| $1 |" "$SO" | awk -F'|' '{print $4}' | python3 -I -c 'import sys;print(sys.stdin.read().strip()[:40])')"; }
 man_hinh_cua() { screen -ls 2>/dev/null | awk -v t=".viec-$1" '$1 ~ t"$" {print $1; exit}'; }
 
 chay() { # $1 số việc, $2 tên hiện trong app, $3 cờ phiên (--session-id / --resume) $4 id, $5 lời nhắn
@@ -69,7 +70,7 @@ case "$1" in
     [ -z "$1" ] && { echo "Thiếu yêu cầu"; exit 1; }
     N=$(( $(cat "$TT/so-viec-giao" 2>/dev/null || echo 0) + 1 )); echo $N > "$TT/so-viec-giao"
     SID=$(uuidgen | tr 'A-Z' 'a-z')
-    printf '| %s | %s | %s | %s | đang làm |\n' "$N" "$(date '+%Y-%m-%d %H:%M')" "$(echo "$*" | tr '|\n' '/ ' | cut -c1-120)" "$SID" >> "$SO"
+    printf '| %s | %s | %s | %s | đang làm |\n' "$N" "$(date '+%Y-%m-%d %H:%M')" "$(echo "$*" | tr '|\n' '/ ' | python3 -I -c 'import sys;print(sys.stdin.read().strip()[:120])')" "$SID" >> "$SO"
     chay "$N" "$(ten_cua "$N")" --session-id "$SID" "$(LOI_DAN $N)
 
 Yêu cầu nguyên văn của David: $*"
