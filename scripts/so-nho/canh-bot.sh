@@ -35,7 +35,7 @@ tat_bot() { # tắt mọi phiên bot (kể cả phiên thừa)
   screen -ls 2>/dev/null | awk -v t=".$TEN" '$1 ~ t"$" {print $1}' | while read -r id; do screen -S "$id" -X quit; done
   sleep 3; }
 mo_bot() {
-  screen -dmS "$TEN" -h 2000 bash -c "cd '$DATA' && TELEGRAM_STATE_DIR=$HOME/.claude/channels/so-nho MCP_TIMEOUT=120000 ENABLE_TOOL_SEARCH=false ENABLE_CLAUDEAI_MCP_SERVERS=false CLAUDE_CODE_DISABLE_AUTO_MEMORY=1 exec claude --channels plugin:telegram@claude-plugins-official --permission-mode dontAsk --model haiku"
+  screen -dmS "$TEN" -h 2000 bash -c "cd '$DATA' && TELEGRAM_STATE_DIR=$HOME/.claude/channels/so-nho MCP_TIMEOUT=120000 ENABLE_TOOL_SEARCH=false ENABLE_CLAUDEAI_MCP_SERVERS=false CLAUDE_CODE_DISABLE_AUTO_MEMORY=1 exec claude --channels plugin:telegram@claude-plugins-official --permission-mode dontAsk --model haiku --debug-file $TT/debug.log"
   date +%F > "$TT/mo-ngay"; echo "$TK" > "$TT/tai-khoan"
   ghi "mo phien bot"
   sleep 25; gui "[KHOI-DONG] Phiên mới. Đọc lướt nhom.md, không gửi gì."
