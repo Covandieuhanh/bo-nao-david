@@ -79,7 +79,8 @@ Công cụ: {cong_cu}
 Chi tiết: {chi_tiet[:1500]}
 Mô tả Claude ghi kèm: {mo_ta}
 Lời Claude vừa nói trong phiên: {boi_canh[-1000:]}"""
-    env = {k: val for k, val in os.environ.items() if not k.startswith("CLAUDE_CODE_") and k not in ("TELEGRAM_STATE_DIR",)}
+    # Bỏ dấu "đang ở trong phiên Claude" để gọi được một phiên Haiku riêng.
+    env = {k: val for k, val in os.environ.items() if not k.startswith("CLAUDE") and k not in ("TELEGRAM_STATE_DIR",)}
     env.update({"CLAUDE_CODE_DISABLE_AUTO_MEMORY": "1", "ENABLE_CLAUDEAI_MCP_SERVERS": "false"})
     try:
         r = subprocess.run([os.path.expanduser("~/.local/bin/claude"), "-p", "--model", "haiku", "--setting-sources", "project",
@@ -87,8 +88,9 @@ Lời Claude vừa nói trong phiên: {boi_canh[-1000:]}"""
         kq = r.stdout.strip()
         if r.returncode == 0 and "Việc muốn làm" in kq:
             return kq
-    except Exception:
-        pass
+        open(os.path.join(TT, "dien-giai.log"), "a").write(f"{time.strftime('%F %T')} rc={r.returncode} {r.stderr[-300:]} {kq[:200]}\n")
+    except Exception as e:
+        open(os.path.join(TT, "dien-giai.log"), "a").write(f"{time.strftime('%F %T')} loi {e}\n")
     return du_phong
 
 
