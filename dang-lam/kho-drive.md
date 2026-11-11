@@ -14,7 +14,7 @@ Drive `covandieuhanh@gmail.com` › `Drive của tôi`. Mac chỉ giữ dữ li�
 | `Sao-luu-mac/Documents/` | `1-nghe-trainer`, `2-ca-nhan`, `9-luu-tru` (gồm sổ xếp file 07/11), `Obsidian` |
 | `Sao-luu-mac/Bo-nao/` | `David.Claude` (repo bộ não, cả `.git`) + `bo-nho-claude-tam/` (ghi nhớ Claude theo từng thư mục dự án). Bản gốc bộ não vẫn là GitHub |
 
-Không tải lên: `mk.csv` (mật khẩu), lịch sử chat thô, bộ nhớ đệm.
+Không tải lên: mật khẩu, lịch sử chat thô, bộ nhớ đệm.
 
 ## Phân loại từng tập (`Sao-luu-mac/Movies/`)
 
