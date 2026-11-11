@@ -14,10 +14,12 @@
       "Read(~/.claude/channels/so-nho/access.json)",
       "Glob",
       "Grep",
-      "mcp__plugin_telegram_telegram"
+      "mcp__plugin_telegram_telegram",
+      "Bash(bash /Users/moon/Documents/David.Claude/scripts/so-nho/giao-viec.sh:*)",
+      "Bash(bash /Users/moon/Documents/David.Claude/scripts/so-nho/viec-dang-chay.sh)",
+      "Read(~/Documents/David.Claude/**)"
     ],
     "deny": [
-      "Bash",
       "WebFetch",
       "Edit(~/.claude/**)",
       "CronCreate",

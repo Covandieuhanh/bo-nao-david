@@ -54,6 +54,9 @@ Mục tiêu của David: **đưa tài nguyên vào, nhận kết quả**. Các l
 
 ## 4. Cuối việc
 - **Báo cáo ngắn, tiếng Việt:** đã làm gì · đã kiểm gì · chưa kiểm gì · điều cần David xác nhận.
+- **Báo lên Telegram** khi xong một việc trọn vẹn (render xong, đăng xong, sửa bộ não xong…) hoặc khi kẹt cần David quyết, không báo
+  sau mỗi lượt: `bash scripts/so-nho/bao-cao.sh "✅ Xong: … · Ở đâu: … · Còn lại: …"` hoặc `"❓ Chờ anh: …"`, tối đa 5 dòng. Việc giao
+  qua Telegram thì mở đầu bằng số việc `#N`. Máy chưa cài bot thì lệnh chỉ ghi sổ. Chi tiết: [scripts/so-nho/README.md](../scripts/so-nho/README.md).
 - **Góp ý của David ghi đúng một chỗ:** sửa skill hoặc khối bị ảnh hưởng + một dòng nhật ký (`changelog` của skill, hoặc mục "Nhật ký").
   Chỉ luật dùng chung cho nhiều skill mới vào `nao/bo-nho/`; đã có ghi nhớ gần giống thì sửa ghi nhớ đó, không tạo cái mới.
 - **Sửa thẳng, không chồng câu:** đổi một luật (góp ý, học mẫu, quyết định mới) thì **viết lại chính câu luật đó** thành trạng thái mới
