@@ -4,6 +4,7 @@ thành một khung bo góc đặt trên nền kênh — mọi rác xung quanh (b
 chạy (Captions.jsx `GHI_CHU`), phụ đề và cảnh minh hoạ. Khác "cắt khung rồi phóng" (vẫn còn rác quanh chủ thể).
 
   khung_chu_the.py <dự án> luoi [giây …]   → check/khung/luoi.jpg: khung gốc có lưới 10 % (vạch dày ở 50 %) để đọc toạ độ chủ thể
+  khung_chu_the.py <dự án> apply --thu <giây> → chỉ một khung check/khung/thu.jpg (soát trước khi dựng ~10 phút)
   khung_chu_the.py <dự án> apply           → đọc check/khung.json, dựng lại davinci/media/video_goc.mp4 (bản trước: video_goc_truoc_khung.mp4,
                                               mỗi lần apply luôn dựng từ bản này) + ghi motion/src/khung.js (vị trí khung trên hình xuất)
 
@@ -47,7 +48,7 @@ for v in V:   # mọi vùng cùng cỡ (crop không đổi cỡ theo thời gian
 pw_expr = lambda k: "".join(f"if(lt(t,{v2['tu']:.3f}),{v1[k]}," for v1, v2 in zip(V, V[1:])) + str(V[-1][k]) + ")" * (len(V) - 1)
 
 # Vị trí khung trên hình xuất: dưới dấu góc, trên thanh thời gian; lề trái/phải = lề an toàn 5 %
-TOP, BOT, LE = round(H * 0.11), round(H * 0.90), round(W * 0.05)
+TOP, BOT, LE = round(H * 0.11), round(H * 0.80), round(W * 0.05)   # đáy 0,80: trên thanh thời gian (~0,82 H; 11/11/2026 thanh đè đáy khung)
 PH = BOT - TOP; PW = round(PH * cw / ch / 2) * 2
 if PW > W * 0.56: PW = round(W * 0.56 / 2) * 2; PH = round(PW * ch / cw / 2) * 2   # chủ thể bè ngang (laptop, bảng)
 PY = TOP + (BOT - TOP - PH) // 2
@@ -67,6 +68,14 @@ run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", f"color=black:s={W}x{H}
 run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", f"color=black:s={PW}x{PH}:d=1", "-vf",
      f"format=gray,geq=lum='255*{rr(PW, PH, R)}'", "-frames:v", "1", mask])
 
+THU = "--thu" in sys.argv   # --thu <giây>: chỉ ra check/khung/thu.jpg một khung để soát vị trí (vài giây), không dựng video
+if THU:
+    t0 = float(sys.argv[sys.argv.index("--thu") + 1]); v0 = [v for v in V if v.get("tu", 0) <= t0][-1]
+    run(["ffmpeg", "-v", "error", "-y", "-ss", f"{t0:.2f}", "-i", src, "-frames:v", "1", f"{CK}/thu-goc.png"])   # tách khung trước: ảnh tĩnh ghép ảnh tĩnh
+    run(["ffmpeg", "-v", "error", "-y", "-i", bg, "-i", mask, "-i", f"{CK}/thu-goc.png", "-filter_complex",
+         f"[2:v]crop={cw}:{ch}:{v0['x']}:{v0['y']},scale={PW}:{PH}:flags=lanczos,format=yuva420p[c];[1:v]format=gray[m];[c][m]alphamerge[p];"
+         f"[0:v][p]overlay={PX}:{PY}", "-frames:v", "1", f"{CK}/thu.jpg"])
+    print(f"{CK}/thu.jpg"); sys.exit(0)
 if not os.path.exists(goc): os.rename(os.path.join(M, pr["source"]), goc); src = goc
 out = os.path.join(M, pr["source"])
 if os.path.exists(out) and os.path.samefile(out, src): os.remove(out)   # cùng một file (liên kết cứng) → ffmpeg ghi đè chính nguồn (11/11/2026 mất bản sạch)
@@ -74,7 +83,8 @@ run(["ffmpeg", "-y", "-v", "error", "-stats", "-loop", "1", "-framerate", FPS, "
      "-i", src, "-filter_complex",
      f"[2:v]crop={cw}:{ch}:'{pw_expr('x')}':'{pw_expr('y')}',scale={PW}:{PH}:flags=lanczos,format=yuva420p[c];"
      f"[1:v]format=gray[m];[c][m]alphamerge[p];[0:v][p]overlay={PX}:{PY}:shortest=1,format=yuv420p,setsar=1[v]",
-     "-map", "[v]", "-map", "2:a", "-r", FPS, "-c:v", "h264_videotoolbox", "-b:v", "16M", "-c:a", "copy",
+     "-map", "[v]", "-map", "2:a", "-t", f"{dur:.3f}", "-r", FPS,   # -t bắt buộc: nền + mặt nạ lặp vô hạn → không có -t thì chạy mãi (11/11/2026 ra 7 GB)
+     "-c:v", "h264_videotoolbox", "-b:v", "16M", "-c:a", "copy",
      "-movflags", "+faststart", out])
 k = {"x": PX / W, "y": PY / H, "w": PW / W, "h": PH / H, "phia": cfg.get("phia", "trai")}
 open(os.path.join(P, "motion/src/khung.js"), "w", encoding="utf-8").write(

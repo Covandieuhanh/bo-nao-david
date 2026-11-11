@@ -26,7 +26,7 @@ export const BangGhiChu = ({data, o, vis}) => {
   const pi = data.reduce((k, p, i) => (f >= fr(p.at) ? i : k), -1);
   if (pi < 0 || vis <= 0.01) return null;
   const p = data[pi], ph = ease(f, fr(p.at), fr(p.at) + 12);
-  const co = Math.max(26, Math.min(36, o.w / 22));   // cỡ chữ theo bề rộng bảng
+  const co = Math.max(30, Math.min(50, o.w / 21));   // cỡ chữ theo bề rộng bảng (11/11/2026: 36 quá nhỏ, bảng trống nửa dưới)
   const MAX = Math.max(3, Math.floor((o.h - co * 4.6) / (co * 2.9)));   // số ý vừa bảng (ý dài 2 dòng)
   const shown = (p.y || []).filter((y) => f >= fr(y.at));
   const ds = shown.slice(-MAX), moi = shown.length - 1;

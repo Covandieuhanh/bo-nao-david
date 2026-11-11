@@ -1,6 +1,9 @@
 # Sổ thay đổi — video-style-edit (quyết định của người dùng + lý do)
 
 
+## 11/11/2026: tự chọn theo nội dung + khung chủ thể + bảng ghi chú chạy
+- David: "cái quan trọng nhất là học rất nhiều, tôi cần các skill phải tự động chọn ra được cách nào phù hợp với nội dung của video"; video cuộc gọi mất 4–5 giờ, "tập trung vào điện thoại" mà vẫn còn rác, video nhiều nội dung cần hiện nhiều thông tin hơn. Thêm `trinh-bay/tu-chon.md` + `chan_doan.py` (bước 6b), `khung_chu_the.py` (+ `--thu`), `BangGhiChu.jsx` (`GHI_CHU`), `khung.js`; sửa `chuan_am.py`, khoá render, `soat_canh.mjs`, `preview.mjs`, `nhan_place.py`; mục Nhịp làm; bảng lỗi ở gotchas.
+
 ## 11/11/2026: xong tập thì lên Drive, xoá trên Mac
 - David: "máy mac này chỉ còn đóng mỗi vai trò là khi đang thực thi cái gì thì có dữ liệu và tài nguyên của cái đó thôi"; "nhớ lưu lại để lần sau tự động làm việc cho gọn và nhẹ máy mac". Lý do: Mac 228 GB đầy. `don_tap.py --xoa` xoá hẳn file tạm (bỏ Thùng rác), rồi `luu_drive.sh` (mới, kèm `drive_upcheck.swift`, `drive_evict.swift`) đưa tập lên Drive `Sao-luu-mac/Movies`, chờ lên mây, so khớp, giải phóng cache Drive, xoá trên Mac. Sửa SKILL bước 12 + Xong khi 8, khối 17, luat-chung 8, cat-highlight, podcast, GIOI-THIEU.
 ## Tái bản 2 — 10/11/2026: bản luật viết lại từ bảng dang-lam/tai-ban-2-video.md

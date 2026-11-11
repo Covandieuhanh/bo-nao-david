@@ -206,3 +206,21 @@ người nói chưa từng chạy với dấu góc. Không do bài học video m
 - Khung ngang: `lower` (thẻ tên dưới) không hiện chữ, `action` đẩy câu trích ra ngoài vùng an toàn → dùng `nhan` (thẻ tên) và
   `bocuc` `o-nguoi` + `the` (câu hành động) cho tới khi hai cảnh đó được làm lại cho khung ngang.
 - teaser.py: mỗi đoạn một đầu vào riêng; dùng chung một đầu vào cho nhiều nhánh → ffmpeg giữ cả video trong bộ nhớ, video 14 phút bị SIGKILL.
+
+## Video cuộc gọi hợp tác 11/11/2026 (mất 4–5 giờ thay vì ~1 giờ) — đã chặn
+| Lỗi | Hậu quả | Chặn ở đâu |
+|---|---|---|
+| Tự đổi khung sang dọc khi David chỉ nói "tập trung vào điện thoại" | làm lại từ đầu (~2 giờ) | SKILL "Đầu vào": khung chỉ đổi khi David nói rõ khung |
+| "Tập trung vào một vùng" làm bằng cắt-phóng cả khung | rác (bàn, sổ, tường) vẫn còn quanh điện thoại | `tu-chon.md` bước 2 → khung chủ thể `khung_chu_the.py` |
+| Chỉ dùng vài kiểu cảnh quen, video dày ý mà giữa các cảnh chỉ còn phụ đề | người xem khó theo dõi | `tu-chon.md` + `chan_doan.py` → bảng ghi chú chạy `GHI_CHU` |
+| Thử kiểu cảnh bằng chụp/render: `kinetic`, `action`, `card` > 4 dòng lỗi ở khung ngang | ~45 phút đổi kiểu nhiều vòng | `soat_canh.mjs` P0/P1 theo khung |
+| Cảnh `illus` bắt đầu 4 s trước phần tử đầu | 4 s nền tối che người, không chữ (lọt tới bản cuối) | `soat_canh.mjs` P0 "màn trống đầu cảnh" |
+| Vision không dò mặt trong màn hình điện thoại → đặt hình sai phía | chỉnh tay mat.js | `nhan_place.py` đọc `khung.js` |
+| Ghép bản cuối khi `render.mjs` còn render thẻ cuối | bản cuối mất màn kết YouTube 20 s, ghép lại 30 phút | khoá `.dang-render` + `render_preview.py` kiểm đủ lớp |
+| `chuan_am.py` chặn đỉnh −2,0 dB mà AAC đẩy lên −1,0 | 3 lượt không đạt; mổ xẻ giữa chừng ~40 phút | hạ ngưỡng theo phần vượt, tối đa 6 lượt; SKILL "Nhịp làm": lỗi skill ghi `check/loi-skill.md`, làm tiếp |
+| `renderStill` màn chốt quá hạn 28 s (đọc khung từ video gốc 1,6 GB) | chụp thử hỏng | `preview.mjs` timeout 240 s |
+| Tạo liên kết cứng giữa bản nguồn và `video_goc.mp4` rồi ffmpeg ghi ra `video_goc.mp4` | ffmpeg cắt rỗng chính nguồn, mất bản sạch (dựng lại từ bản thô) | `khung_chu_the.py` xoá đích trùng nguồn; **không bao giờ `ln` file nguồn vào tên file đích** |
+| Ảnh tĩnh `-loop 1` làm đầu vào mà không `-t` | ffmpeg chạy mãi, file 7 GB, mất 1 giờ | `khung_chu_the.py` có `-t`; mọi lệnh có `-loop 1` phải có `-t` hoặc `shortest` ở MỌI nhánh |
+| Theo dõi việc nền bằng cỡ file thay vì thời gian dự kiến | không thấy lệnh chạy quá lâu | quá 1,5 lần dự kiến → kiểm ngay (SKILL "Nhịp làm") |
+| `loi_ao.py` báo nhầm câu chen 0,4 s không có trong words.srt | phải chạy tay phần sau của clean_analyze | **chưa sửa** — gặp lại thì bỏ dòng đó, ghi `check/loi-skill.md` |
+
