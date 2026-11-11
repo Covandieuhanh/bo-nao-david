@@ -1,6 +1,6 @@
 {
   "name": "so-viec",
-  "version": "0.3.0",
-  "description": "Sổ việc: tự đo thời gian Claude làm và token từng việc ở mọi phiên trên máy, bảng tổng quan có thanh tiến độ, dự kiến theo trung bình việc cùng loại, /bao-cao.",
+  "version": "0.4.0",
+  "description": "Sổ việc: video đang làm, % giới hạn tuần, trung bình 1 video mất bao lâu và tốn bao nhiêu % tuần.",
   "types": "./types/index.d.ts"
 }

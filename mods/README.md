@@ -8,7 +8,7 @@ Không chạy trên chat claude.ai và app điện thoại.
 
 | Mod | Của ai | Làm gì | Lệnh |
 |---|---|---|---|
-| [so-viec](so-viec/README.md) | David (repo này) | Thời gian và token từng việc ở mọi phiên, dự kiến theo trung bình việc cùng loại, thanh tiến độ, X/4h hôm nay | `/so-viec`, `/bao-cao` |
+| [so-viec](so-viec/README.md) | David (repo này) | Video đang làm, % giới hạn tuần đã dùng, trung bình 1 video mất bao lâu và tốn bao nhiêu % tuần | `/so-viec`, `/bao-cao` |
 | savvy-progress | johnnyvizz/claude-kit | Bảng các trợ lý con đang chạy: model, tiến độ, token, chi phí ước tính. Tự mở khi có trợ lý con chạy (`autoOpen: any` trong `pluginConfigs` của `~/.claude/settings.json`) | `/agents-info` |
 | collision-guard | nateherkai/claude-code-mods | Trước khi sửa file mà khung khác vừa sửa trong 30 phút: hỏi sửa tiếp / chuyển sang worktree / huỷ | `/guard` |
 | goal-meter | nateherkai/claude-code-mods | Thanh tiến độ và giờ dự kiến xong trên ô nhập. Tự hiện ở mọi việc từ 3 bước vì Claude lập kế hoạch bằng công cụ của nó (`skills/thoi-quen-lam-viec.md` mục 3), không cần `/goal` | `/goals` |

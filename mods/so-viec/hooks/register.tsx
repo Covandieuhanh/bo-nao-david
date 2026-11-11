@@ -7,17 +7,14 @@
 import { atom, read, update } from 'claude-code'
 import type { EngineInterface, Register, TurnUsage } from 'claude-code'
 
-import type { Avg, Book, Job, Live, Overview, Period, Tokens, Turn } from '../types'
+import type { Book, Tokens, VideoNow, VideoView } from '../types'
 
 type $T = EngineInterface
 
 const PANE = 'so-viec'
 const TITLE = 'Sổ việc'
 const IDLE_CLOSE_MS = 60 * 60 * 1000 // im lặng quá 60 phút: việc cũ coi như xong
-const BRAIN_GAP_MS = 15 * 60 * 1000 // khoảng nghỉ ≤15 phút giữa hai lượt vẫn tính là đang làm
-const BRAIN_DAY_MS = 4 * 60 * 60 * 1000 // luật 4 tiếng việc trí óc mỗi ngày
 const LIVE_MS = 2 * 60 * 1000 // phiên đang chạy phải báo nhịp trong 2 phút
-const MIN_SAMPLES = 3 // đủ 3 lần cùng loại mới đưa dự kiến
 const MAX_JOBS = 3000
 const MAX_TURNS = 8000
 
@@ -49,7 +46,7 @@ const LABELS = [
   'khac',
 ] as const
 
-const view = atom({ plugin: 'so-viec', key: 'view' } as const, null, { shape: 'view-2' })
+const view = atom({ plugin: 'so-viec', key: 'view' } as const, null, { shape: 'view-3' })
 
 // ---------- số và chữ ----------
 
@@ -207,147 +204,89 @@ function closeJob(book: Book) {
   book.open = null
 }
 
-function averages(jobs: Job[]): Avg[] {
-  const by = new Map<string, Job[]>()
-  for (const j of jobs) by.set(j.type, [...(by.get(j.type) ?? []), j])
-  return [...by.entries()]
-    .map(([type, list]) => ({
-      type,
-      count: list.length,
-      activeMs: list.reduce((a, j) => a + j.activeMs, 0) / list.length,
-      tokens: list.reduce((a, j) => a + total(j.tokens), 0) / list.length,
-    }))
-    .sort((a, b) => b.count - a.count)
-}
+// ---------- video: gộp mọi skill video, một phiên = một video ----------
 
-/** Giờ làm việc trí óc trong [from, to): gộp lượt của mọi phiên, nối khoảng nghỉ ≤15 phút. */
-function brainMs(turns: Turn[], from: number, to: number) {
-  const spans = turns
-    .filter(t => t[1] > from && t[0] < to)
-    .map(t => [Math.max(t[0], from), Math.min(t[1], to)] as [number, number])
-    .sort((a, b) => a[0] - b[0])
+/** Loại việc tính là làm video. */
+const VIDEO = new Set(['video-style-edit', 'podcast-style-edit', 'cat-highlight-video', 'dang-da-kenh', 'hoc-video-mau'])
+
+/** Giới hạn 7 ngày của tài khoản (như trang usage). */
+type Week = { used: number; resetsAt: string } | null
+
+/** Phút và token video của một phiên (gộp sổ mod ghi và sổ nhập ngược cùng phiên). */
+function videoOf(list: Book[]) {
   let ms = 0
-  let cur: [number, number] | null = null
-  for (const s of spans) {
-    if (cur && s[0] - cur[1] <= BRAIN_GAP_MS) cur[1] = Math.max(cur[1], s[1])
-    else {
-      if (cur) ms += cur[1] - cur[0]
-      cur = [s[0], s[1]]
-    }
-  }
-  if (cur) ms += cur[1] - cur[0]
-  return ms
-}
-
-function period(turns: Turn[], jobs: Job[], from: number, to: number): Period {
-  return {
-    ms: brainMs(turns, from, to),
-    tokens: turns.filter(t => t[0] >= from && t[0] < to).reduce((a, t) => a + t[2], 0),
-    jobs: jobs.filter(j => j.lastAt >= from && j.lastAt < to).length,
-  }
-}
-
-function overview(books: Book[], mine: string, now: number, foreign: Foreign[] = []): Overview {
-  const closed = books.flatMap(b => b.jobs)
-  const avgs = averages(closed)
-  const avgOf = (type: string) => avgs.find(a => a.type === type && a.count >= MIN_SAMPLES) ?? null
-  // Lượt đang chạy tính tới bây giờ, để giờ hôm nay chạy theo.
-  // Phiên này biết chắc mình đang chạy; phiên khác phải báo nhịp trong 2 phút.
-  const runs = (b: Book) => b.running !== null && (b.sid === mine || now - b.updatedAt < LIVE_MS)
-  const turns = books.flatMap(b => (runs(b) ? [...b.turns, [b.running ?? now, now, 0] as Turn] : b.turns))
-  const withOpen = [...closed, ...books.flatMap(b => (b.open ? [b.open] : []))]
-
-  // Chưa đủ lần cùng loại: so với trung bình mọi việc, để vẫn có thanh.
-  const overall: Avg | null =
-    closed.length >= MIN_SAMPLES
-      ? {
-          type: 'chung',
-          count: closed.length,
-          activeMs: closed.reduce((a, j) => a + j.activeMs, 0) / closed.length,
-          tokens: closed.reduce((a, j) => a + total(j.tokens), 0) / closed.length,
-        }
-      : null
-
-  const live: Live[] = books
-    .filter(b => b.sid === mine || runs(b))
-    .map((b): Live => {
-      const isRun = runs(b)
-      const run = isRun ? now - (b.running ?? now) : 0
-      // Đang chạy: loại việc của lượt này (skill vừa gọi, hoặc tiếp nối việc đang mở).
-      const type =
-        isRun && b.runningType !== undefined ? b.runningType : (b.open?.type ?? null)
-      const isSame = !isRun || (type !== null && type === b.open?.type)
-      const own = type ? avgOf(type) : null
-      return {
-        sid: b.sid,
-        title: b.title || b.sid.slice(0, 8),
-        isMine: b.sid === mine,
-        isRunning: isRun,
-        type: type ?? (isRun ? 'đang xác định loại việc' : null),
-        ms: (isSame ? (b.open?.activeMs ?? 0) : 0) + run,
-        tokens: (isSame && b.open ? total(b.open.tokens) : 0) + (isRun ? (b.liveTokens ?? 0) : 0),
-        avg: own ?? overall,
-        basis: own ? 'loai' : overall ? 'chung' : null,
+  let tokens = 0
+  for (const b of list)
+    for (const j of [...b.jobs, ...(b.open ? [b.open] : [])])
+      if (VIDEO.has(j.type)) {
+        ms += j.activeMs
+        tokens += total(j.tokens)
       }
+  return { ms, tokens }
+}
+
+function videoView(books: Book[], mine: string, now: number, week: Week, foreign: Foreign[] = []): VideoView {
+  const runs = (b: Book) => b.running !== null && (b.sid === mine || now - b.updatedAt < LIVE_MS)
+  const typeNow = (b: Book) => (b.runningType !== undefined ? b.runningType : (b.open?.type ?? null))
+  const isVideoNow = (b: Book) => runs(b) && VIDEO.has(typeNow(b) ?? '')
+
+  // Gộp theo phiên.
+  const bySid = new Map<string, Book[]>()
+  for (const b of books) bySid.set(b.sid, [...(bySid.get(b.sid) ?? []), b])
+
+  // Tuần: tổng token mọi phiên từ đầu cửa sổ 7 ngày, chia % đã dùng = token cho 1%.
+  const from = week ? Date.parse(week.resetsAt) - 7 * 86400000 : now - 7 * 86400000
+  const liveTok = books.filter(runs).reduce((a, b) => a + (b.liveTokens ?? 0), 0) + foreign.reduce((a, f) => a + f.tokens, 0)
+  const weekTokens = books.flatMap(b => b.turns).filter(t => t[0] >= from).reduce((a, t) => a + t[2], 0) + liveTok
+  const perPct = week && week.used >= 0.5 ? weekTokens / week.used : null
+  const pct = (tok: number) => (perPct ? tok / perPct : null)
+
+  // Video đã xong: mỗi phiên có việc video và không còn đang làm video.
+  const done = [...bySid.entries()]
+    .filter(([, list]) => !list.some(isVideoNow) && !foreign.some(f => list[0]?.sid === f.sid))
+    .map(([, list]) => videoOf(list))
+    .filter(v => v.ms > 0)
+  const avg = done.length
+    ? {
+        count: done.length,
+        ms: done.reduce((a, v) => a + v.ms, 0) / done.length,
+        tokens: done.reduce((a, v) => a + v.tokens, 0) / done.length,
+        pct: pct(done.reduce((a, v) => a + v.tokens, 0) / done.length),
+      }
+    : null
+
+  // Video đang làm: phiên nào đang chạy việc video (cả phiên chưa có mod).
+  const live: VideoNow[] = [...bySid.entries()]
+    .filter(([sid, list]) => list.some(isVideoNow) || (sid === mine && videoOf(list).ms > 0))
+    .map(([sid, list]) => {
+      const v = videoOf(list)
+      const b = list.find(isVideoNow)
+      const run = b && b.running !== null ? now - b.running : 0
+      const tokens = v.tokens + (b?.liveTokens ?? 0)
+      return { sid, title: list.find(x => x.title)?.title ?? sid.slice(0, 8), isMine: sid === mine, isRunning: !!b, ms: v.ms + run, tokens, pct: pct(tokens) }
     })
     .concat(
-      foreign.map((f): Live => {
-        const own = f.type ? avgOf(f.type) : null
-        return {
-          sid: f.sid, title: f.title, isMine: false, isRunning: true, isNoMod: true,
-          type: f.type ?? 'chưa rõ loại việc', ms: now - f.start, tokens: f.tokens,
-          avg: own ?? overall, basis: own ? 'loai' : overall ? 'chung' : null,
-        }
-      }),
+      foreign
+        .filter(f => f.type && VIDEO.has(f.type))
+        .map(f => ({ sid: f.sid, title: f.title, isMine: false, isRunning: true, isNoMod: true, ms: now - f.start, tokens: f.tokens, pct: pct(f.tokens) })),
     )
     .sort((a, b) => Number(b.isMine) - Number(a.isMine))
 
-  const allTurns = books.flatMap(b => b.turns)
-  return {
-    at: now,
-    live,
-    today: period(turns, withOpen, dayStart(now), now + 1),
-    week: period(turns, withOpen, weekStart(now), now + 1),
-    total: {
-      ms: brainMs(turns, 0, now + 1),
-      tokens: allTurns.reduce((a, t) => a + t[2], 0),
-      jobs: closed.length,
-      sessions: books.length,
-      since: Math.min(now, ...allTurns.map(t => t[0])),
-    },
-    avgs,
-    recent: [...closed].sort((a, b) => b.lastAt - a.lastAt).slice(0, 10),
-  }
+  const left = week && avg?.pct ? Math.max(0, Math.floor((100 - week.used) / avg.pct)) : null
+  return { at: now, live, week: week ? { used: week.used, resetsAt: week.resetsAt } : null, weekTokens, avg, left }
 }
 
-// ---------- báo cáo ----------
+const pctText = (p: number | null) => (p === null ? '?' : p < 1 ? `${p.toFixed(1)}%` : `${Math.round(p)}%`)
 
-function report(o: Overview) {
-  const max = Math.max(1, ...o.avgs.map(a => a.tokens))
-  const rows = o.avgs.map(
-    a =>
-      `| ${a.type} | ${a.count} | ${hm(a.activeMs)} | ${kt(a.tokens)} | \`${bar(a.tokens / max, 12)}\` |`,
-  )
-  const live = o.live
-    .filter(l => l.type)
-    .map(l => {
-      const t = l.avg ? ` (${pct(l.ms / l.avg.activeMs)} dự kiến)` : ''
-      return `- ${l.isMine ? '**Khung này**' : l.title}: ${l.type} · ${hm(l.ms)}${t} · ${kt(l.tokens)} token`
-    })
-  return [
-    '## Sổ việc: tổng quan mọi phiên Claude Code trên máy',
-    '',
-    live.length ? '**Đang làm**\n' + live.join('\n') + '\n' : '',
-    `**Hôm nay:** ${hm(o.today.ms)}/4h \`${bar(o.today.ms / BRAIN_DAY_MS, 16)}\` ${pct(o.today.ms / BRAIN_DAY_MS)} · ${kt(o.today.tokens)} token · ${o.today.jobs} việc`,
-    `**Tuần này:** ${hm(o.week.ms)} · ${kt(o.week.tokens)} token · ${o.week.jobs} việc`,
-    `**Từ ${ddmm(o.total.since)}:** ${o.total.sessions} phiên · ${o.total.jobs} việc xong · ${hm(o.total.ms)} · ${kt(o.total.tokens)} token`,
-    '',
-    '| Loại việc | Số lần | Thời gian TB | Token TB | So token |',
-    '|---|---|---|---|---|',
-    ...rows,
-    '',
-    `Dự kiến chỉ đưa khi loại việc có từ ${MIN_SAMPLES} lần. Thời gian = lúc Claude thật sự làm; giờ trong ngày gộp mọi phiên, nối khoảng nghỉ ≤15 phút.`,
-  ].join('\n')
+function report(v: VideoView) {
+  const lines = ['## Sổ việc: video', '']
+  for (const l of v.live)
+    lines.push(`- **${l.isMine ? 'Khung này' : l.title}**${l.isNoMod ? ' (chưa có mod)' : ''}: ${hm(l.ms)} · ${pctText(l.pct)} tuần${v.avg ? ` (TB ${hm(v.avg.ms)} · ${pctText(v.avg.pct)})` : ''}`)
+  if (v.live.length) lines.push('')
+  lines.push(v.week ? `**Tuần này:** ${pctText(v.week.used)} đã dùng${v.left !== null ? ` · còn đủ ~${v.left} video` : ''}` : `**Tuần này:** ${kt(v.weekTokens)} token`)
+  lines.push(v.avg ? `**TB 1 video:** ${hm(v.avg.ms)} · ${pctText(v.avg.pct)} token tuần (từ ${v.avg.count} video)` : '**TB 1 video:** chưa có video nào xong.')
+  lines.push('', 'Một video = mọi việc video trong một phiên (dựng, cắt highlight, đăng). % tuần là ước tính từ token.')
+  return lines.join('\n')
 }
 
 // ---------- sổ của phiên này (biến của module, nạp lại sau mỗi lần tải lại) ----------
@@ -405,20 +344,22 @@ async function refresh($: $T) {
   const books = await readBooks($, dir)
   const home = dir.replace(/\/\.claude\/so-viec$/, '')
   const foreign = await scanForeign($, home, new Set(books.map(b => b.sid)), now).catch(() => [])
-  const o = overview(books, book.sid, now, foreign)
-  await update($, view, () => o)
+  const usage = await $.session.usage().catch(() => null)
+  const seven = usage?.rateLimits.find(r => r.kind === 'seven_day')
+  const week: Week = seven ? { used: seven.percentUsed, resetsAt: seven.resetsAt ?? new Date(now + 7 * 86400000).toISOString() } : null
+  const v = videoView(books, book.sid, now, week, foreign)
+  await update($, view, () => v)
 
-  const brain = `hôm nay ${hm(o.today.ms)}/4h`
-  const cur = o.live.find(l => l.isMine)
-  if (!cur?.type) {
-    $.ui.status(`Sổ việc · ${brain}`)
+  const wk = v.week ? `tuần ${pctText(v.week.used)}` : ''
+  const cur = v.live.find(l => l.isMine)
+  if (!cur) {
+    $.ui.status(`Sổ việc · ${wk}`)
     return
   }
-  const time = cur.avg ? `${mins(cur.ms)}/${mins(cur.avg.activeMs)}p` : `${mins(cur.ms)}p`
-  const tok = cur.avg ? `${kt(cur.tokens)}/${kt(cur.avg.tokens)} token` : `${kt(cur.tokens)} token`
-  $.ui.status(`${cur.type} · ${time} · ${tok} · ${brain}`)
+  const t = v.avg ? `${mins(cur.ms)}/${mins(v.avg.ms)}p` : `${mins(cur.ms)}p`
+  const p = v.avg ? `${pctText(cur.pct)}/${pctText(v.avg.pct)}` : pctText(cur.pct)
+  $.ui.status(`Video ${t} · ${p} tuần · ${wk}`)
 }
-
 
 // ---------- móc vào sự kiện ----------
 
@@ -435,7 +376,7 @@ export const register: Register = on => {
     book.running = null
     book.runningType = null
     await save($)
-    await $.command.register({ name: 'bao-cao', description: 'Sổ việc: tổng quan mọi phiên, trung bình theo loại việc' })
+    await $.command.register({ name: 'bao-cao', description: 'Sổ việc: video đang làm, % tuần, trung bình 1 video' })
     await $.command.register({ name: 'so-viec', description: 'Mở bảng Sổ việc cạnh khung chat' })
     void $.ui.open({ id: PANE, title: TITLE })
     // Nhịp 15 giây: báo phiên này còn chạy, đọc lại sổ mọi phiên.
@@ -561,11 +502,7 @@ export const register: Register = on => {
     }
     await save($)
 
-    const before = view ? await read($, view) : null
     await refresh($)
-    const after = await read($, view)
-    if (before && after && before.today.ms < BRAIN_DAY_MS && after.today.ms >= BRAIN_DAY_MS)
-      $.ui.toast('Sổ việc: hôm nay đã đủ 4 tiếng việc trí óc.')
     return result
   })
 
@@ -580,87 +517,48 @@ export const register: Register = on => {
 
   on('ui.render', { component: 'Pane', requestId: PANE }, async ($, e) => {
     const { Box, Text } = $.ui.resolve(e)
-    const o = await read($, view)
-    if (!o) return <Text dimColor>Đang tải…</Text>
-    const w = Math.max(8, Math.min(24, (e.props.bodyColumns ?? 40) - 16))
-    const max = Math.max(1, ...o.avgs.map(a => a.tokens))
+    const v = await read($, view)
+    if (!v) return <Text dimColor>Đang tải…</Text>
+    const w = Math.max(8, Math.min(24, (e.props.bodyColumns ?? 40) - 18))
     const over = (f: number) => (f > 1 ? 'warning' : undefined)
 
     return (
       <Box flexDirection="column">
-        <Text bold>Đang làm</Text>
-        {o.live.every(l => !l.type) && <Text dimColor>Chưa có việc nào đang mở.</Text>}
-        {o.live
-          .filter(l => l.type)
-          .map(l => (
-            <Box flexDirection="column" key={l.sid}>
-              <Text>
-                {l.isMine ? '▶ Khung này' : `▷ ${l.title}`} · {l.type}
-                {l.isNoMod ? <Text dimColor> (chưa có mod)</Text> : ''}
-                {l.isRunning ? <Text dimColor> · đang chạy</Text> : ''}
-              </Text>
-              {l.avg ? (
-                <Text color={over(l.ms / l.avg.activeMs)}>
-                  {bar(l.ms / l.avg.activeMs, w)} {hm(l.ms)}/{hm(l.avg.activeMs)}
-                </Text>
-              ) : (
-                <Text dimColor>{hm(l.ms)}</Text>
-              )}
-              {l.avg ? (
-                <Text color={over(l.tokens / l.avg.tokens)}>
-                  {bar(l.tokens / l.avg.tokens, w)} {kt(l.tokens)}/{kt(l.avg.tokens)}
-                </Text>
-              ) : (
-                <Text dimColor>{kt(l.tokens)} token</Text>
-              )}
-              <Text dimColor>
-                {l.basis === 'loai'
-                  ? `so với TB ${l.avg?.count} lần cùng loại`
-                  : l.basis === 'chung'
-                    ? `chưa đủ ${MIN_SAMPLES} lần cùng loại: so với TB mọi việc`
-                    : 'chưa có dữ liệu để so'}
-                {l.isNoMod ? ' · đọc từ lịch sử phiên' : ''}
-              </Text>
-            </Box>
-          ))}
-        <Text> </Text>
-        <Text bold>Hôm nay</Text>
-        <Text color={over(o.today.ms / BRAIN_DAY_MS)}>
-          {bar(o.today.ms / BRAIN_DAY_MS, w)} {hm(o.today.ms)}/4h
-        </Text>
-        <Text dimColor>
-          {kt(o.today.tokens)} token · {o.today.jobs} việc
-        </Text>
-        <Text bold>Tuần này</Text>
-        <Text dimColor>
-          {hm(o.week.ms)} · {kt(o.week.tokens)} token · {o.week.jobs} việc
-        </Text>
-        <Text bold>Từ {ddmm(o.total.since)}</Text>
-        <Text dimColor>
-          {o.total.sessions} phiên · {o.total.jobs} việc · {hm(o.total.ms)} · {kt(o.total.tokens)} token
-        </Text>
-        <Text> </Text>
-        <Text bold>Theo loại việc (token TB)</Text>
-        {o.avgs.length === 0 && <Text dimColor>Chưa có việc nào xong.</Text>}
-        {o.avgs.slice(0, 10).map(a => (
-          <Box flexDirection="column" key={a.type}>
-            <Text>
-              {a.type} <Text dimColor>×{a.count} · {hm(a.activeMs)}</Text>
+        {v.live.map(l => (
+          <Box flexDirection="column" key={l.sid}>
+            <Text bold>
+              🎬 {l.isMine ? 'Video đang làm' : l.title}
+              {l.isNoMod ? <Text dimColor> (chưa có mod)</Text> : ''}
             </Text>
-            <Text dimColor={a.count < MIN_SAMPLES}>
-              {bar(a.tokens / max, w)} {kt(a.tokens)}
+            <Text color={v.avg ? over(l.ms / v.avg.ms) : undefined}>
+              {bar(v.avg ? l.ms / v.avg.ms : 0, w)} {hm(l.ms)}
+              {v.avg ? ` / TB ${hm(v.avg.ms)}` : ''}
             </Text>
+            <Text color={v.avg?.pct && l.pct !== null ? over(l.pct / v.avg.pct) : undefined}>
+              {bar(v.avg?.pct && l.pct !== null ? l.pct / v.avg.pct : 0, w)} {pctText(l.pct)}
+              {v.avg ? ` / TB ${pctText(v.avg.pct)}` : ''} tuần
+            </Text>
+            <Text> </Text>
           </Box>
         ))}
-        <Text> </Text>
-        <Text bold>10 việc gần nhất</Text>
-        {o.recent.map(j => (
-          <Text dimColor>
-            {ddmm(j.lastAt)} {j.type} · {hm(j.activeMs)} · {kt(total(j.tokens))}
+        <Text bold>Tuần này</Text>
+        {v.week ? (
+          <Text color={v.week.used >= 80 ? 'warning' : undefined}>
+            {bar(v.week.used / 100, w)} {pctText(v.week.used)} đã dùng
           </Text>
-        ))}
+        ) : (
+          <Text dimColor>{kt(v.weekTokens)} token</Text>
+        )}
+        {v.left !== null && <Text dimColor>còn đủ ~{v.left} video</Text>}
         <Text> </Text>
-        <Text dimColor>/bao-cao: bản đầy đủ trong khung chat</Text>
+        <Text bold>TB 1 video</Text>
+        {v.avg ? (
+          <Text>
+            {hm(v.avg.ms)} · {pctText(v.avg.pct)} token tuần <Text dimColor>(từ {v.avg.count} video)</Text>
+          </Text>
+        ) : (
+          <Text dimColor>Chưa có video nào xong.</Text>
+        )}
       </Box>
     )
   })

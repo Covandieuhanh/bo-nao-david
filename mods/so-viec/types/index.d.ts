@@ -31,36 +31,31 @@ export type Book = {
   turns: Turn[]
 }
 
-export type Avg = { type: string; count: number; activeMs: number; tokens: number }
-
-export type Live = {
+export type VideoNow = {
   sid: string
   title: string
   isMine: boolean
   isRunning: boolean
   /** Phiên mở trước khi cài mod: số liệu đọc từ lịch sử phiên. */
   isNoMod?: boolean
-  type: string | null
   ms: number
   tokens: number
-  avg: Avg | null
-  basis: 'loai' | 'chung' | null
+  /** % giới hạn tuần, ước tính từ token; null khi chưa đọc được giới hạn tuần. */
+  pct: number | null
 }
 
-export type Period = { ms: number; tokens: number; jobs: number }
-
-export type Overview = {
+export type VideoView = {
   at: number
-  live: Live[]
-  today: Period
-  week: Period
-  total: Period & { sessions: number; since: number }
-  avgs: Avg[]
-  recent: Job[]
+  live: VideoNow[]
+  week: { used: number; resetsAt: string } | null
+  weekTokens: number
+  avg: { count: number; ms: number; tokens: number; pct: number | null } | null
+  /** Còn đủ khoảng bao nhiêu video trong tuần. */
+  left: number | null
 }
 
 declare module 'claude-code' {
   interface PluginState {
-    'so-viec': { view: Shaped<Overview | null> }
+    'so-viec': { view: Shaped<VideoView | null> }
   }
 }
