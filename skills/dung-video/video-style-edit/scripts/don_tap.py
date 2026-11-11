@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Dọn file tạm của một tập sau khi David chốt bản cuối (David chốt 08/11/2026; sửa 08/11: chốt là dọn luôn, không hỏi lại).
+"""Dọn file tạm của một tập sau khi David chốt bản cuối (chốt là dọn luôn, không hỏi lại), rồi đưa tập lên Drive bằng luu_drive.sh.
 
   python3 -I don_tap.py --xoa <dự án> [...]    David chốt bản cuối → Claude chạy thẳng, KHÔNG gửi danh sách hỏi duyệt
   python3 -I don_tap.py <dự án> [...]          chỉ LIỆT KÊ (xem trước khi cần), không đụng gì
@@ -14,7 +14,8 @@ Giữ:  1-goc/ · video-final*.mp4 ở gốc mỗi dự án (2-ban-dai/, clip-X/
       (kịch bản, phụ đề, kế hoạch cắt, bài đăng, số liệu, scenes.js…).
 Bỏ:   node_modules, .remotion, .cache → xoá hẳn (cài lại được).
       Mọi file hình / tiếng / video còn lại (davinci/media, motion/public, nguon.mp4, src/, cat/, check/, bản cũ…)
-      → Thùng rác (~/.Trash/don-<tập>-<ngày>/), David tự đổ.
+      → xoá hẳn (file tạm, dựng lại được từ gốc + kịch bản).
+Xong mà không có phần ⏸ → chạy nền: zsh luu_drive.sh <dự án> (lên Drive Sao-luu-mac/Movies, kiểm khớp, xoá trên Mac).
 """
 import os, shutil, subprocess, sys, time
 
@@ -132,20 +133,20 @@ def main():
             k = os.sep.join(k[:3])
             n = nhom.setdefault(k, [0, 0]); n[0] += 1; n[1] += os.lstat(p).st_size
         for k, (n, s) in sorted(nhom.items(), key=lambda x: -x[1][1]):
-            print(f'   thùng rác {co(s):>9}  {k}/ ({n} file)')
+            print(f'   xoá tạm  {co(s):>9}  {k}/ ({n} file)')
         if thuc:
             for p in xoa_han: shutil.rmtree(p, ignore_errors=True)
-            D = os.path.expanduser(f'~/.Trash/don-{ten}-{time.strftime("%Y%m%d-%H%M")}')
             for p in rac:
-                q = os.path.join(D, os.path.relpath(p, T)); os.makedirs(os.path.dirname(q), exist_ok=True)
-                shutil.move(p, q)
+                try: os.remove(p)
+                except OSError: pass
             for r, ds, fs in os.walk(T, topdown=False):   # bỏ thư mục rỗng
                 if r != T and not os.listdir(r):
                     try: os.rmdir(r)
                     except OSError: pass
-            if xoa_han or rac: print(f'   ✓ đã dọn' + (f' — file tạm ở Thùng rác: {D}' if rac else ''))
+            if xoa_han or rac: print('   ✓ đã dọn file tạm')
+            if not bo_qua: print(f'   → tiếp: zsh {os.path.dirname(os.path.abspath(__file__))}/luu_drive.sh "{T}"   (chạy nền)')
     print(f'\nTổng giải phóng ~{co(tong)}' + ('' if thuc else ' (CHƯA làm gì — chỉ liệt kê)')
-          + ('\nĐổ Thùng rác để lấy lại chỗ.' if thuc else ''))
+          )
 
 
 main()
