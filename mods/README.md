@@ -1,7 +1,7 @@
 # Mod của Claude Code
 
 Mod là plugin chạy trong Claude Code (tab Code của app, terminal): vẽ bảng, dòng trên ô nhập, lệnh `/...`, chặn hay theo dõi việc Claude làm.
-Cài ở cấp người dùng Mac nên **mọi phiên, mọi tài khoản Claude** trên máy đều có. Mod chỉ nạp khi phiên mở: cài xong phải mở phiên mới.
+Cài ở cấp người dùng Mac nên **mọi phiên, mọi tài khoản Claude** trên máy đều có. Mod chỉ nạp khi phiên mở: cài xong phải mở phiên mới. Mod nào cũng phải **tự chạy khi cần**, lệnh chỉ để xem chi tiết (ghi nhớ `luat-mod-tu-chay`).
 Không chạy trên chat claude.ai và app điện thoại.
 
 `bash scripts/install.sh` cài đủ cả bốn trên máy mới.
@@ -9,9 +9,9 @@ Không chạy trên chat claude.ai và app điện thoại.
 | Mod | Của ai | Làm gì | Lệnh |
 |---|---|---|---|
 | [so-viec](so-viec/README.md) | David (repo này) | Thời gian và token từng việc ở mọi phiên, dự kiến theo trung bình việc cùng loại, thanh tiến độ, X/4h hôm nay | `/so-viec`, `/bao-cao` |
-| savvy-progress | johnnyvizz/claude-kit | Bảng các trợ lý con đang chạy: model, tiến độ, token, chi phí ước tính | `/agents-info` |
+| savvy-progress | johnnyvizz/claude-kit | Bảng các trợ lý con đang chạy: model, tiến độ, token, chi phí ước tính. Tự mở khi có trợ lý con chạy (`autoOpen: any` trong `pluginConfigs` của `~/.claude/settings.json`) | `/agents-info` |
 | collision-guard | nateherkai/claude-code-mods | Trước khi sửa file mà khung khác vừa sửa trong 30 phút: hỏi sửa tiếp / chuyển sang worktree / huỷ | `/guard` |
-| goal-meter | nateherkai/claude-code-mods | Thanh tiến độ và giờ dự kiến xong khi chạy `/goal` | `/goals` |
+| goal-meter | nateherkai/claude-code-mods | Thanh tiến độ và giờ dự kiến xong trên ô nhập. Tự hiện ở mọi việc từ 3 bước vì Claude lập kế hoạch bằng công cụ của nó (`skills/thoi-quen-lam-viec.md` mục 3), không cần `/goal` | `/goals` |
 
 ## Cài
 

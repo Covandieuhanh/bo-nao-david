@@ -6,6 +6,7 @@ David · `nao-` bộ não và GitHub · `video-` dựng và đăng video · `may
 ## Luật làm việc với David
 
 - [Công cụ cài thì đưa vào skill](luat-cong-cu-cai-dua-vao-skill.md) — công cụ David cài (pyannote…) giúp việc tốt hơn thì tích hợp, giữ cách cũ dự phòng (07/11)
+- [Mod phải tự chạy](luat-mod-tu-chay.md) — mod/plugin thêm vào tự hoạt động khi cần, không đợi lệnh; việc ≥3 bước lập kế hoạch bằng goal-meter (11/11)
 - [Tài nguyên vào, kết quả ra](luat-goi-y-de-david-chon.md) — sản phẩm từ tài nguyên không hỏi, theo mặc định skill + đề xuất, báo lựa chọn (11/11)
 - [Học là bổ sung](luat-hoc-la-bo-sung.md) — học mẫu chỉ thêm, giữ chặn cũ; khung mới chụp đủ lớp trước render (08/11)
 - [Kết quả hơn tốc độ](luat-ket-qua-hon-toc-do.md) — bước cần kết quả render thì chờ; muốn rút ngắn thì trao đổi (05/11)

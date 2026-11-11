@@ -57,6 +57,14 @@ if command -v claude >/dev/null 2>&1; then
   for p in so-viec@david-claude savvy-progress@claude-kit collision-guard@nateherk-mods goal-meter@nateherk-mods; do
     claude plugin install "$p" --scope user >/dev/null 2>&1 && echo "Mod: $p" || echo "⚠ Chưa cài được mod $p"
   done
+  # Mod phải tự chạy (ghi nhớ luat-mod-tu-chay): savvy-progress tự mở bảng khi có bất kỳ trợ lý con nào
+  python3 -I - "$HOME/.claude/settings.json" <<'PY'
+import json, os, sys
+p = sys.argv[1]
+s = json.load(open(p)) if os.path.exists(p) else {}
+s.setdefault("pluginConfigs", {}).setdefault("savvy-progress@claude-kit", {}).setdefault("options", {})["autoOpen"] = "any"
+json.dump(s, open(p, "w"), ensure_ascii=False, indent=2)
+PY
   [ -d "$HOME/.claude/so-viec/nhap" ] || python3 -I "$REPO/mods/so-viec/scripts/nhap-lich-su.py" || true
 fi
 

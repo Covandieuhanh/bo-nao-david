@@ -44,6 +44,12 @@ Mục tiêu của David: **đưa tài nguyên vào, nhận kết quả**. Các l
   hoặc phiên khác đang chạy không; có thì hỏi trước.
 - **Công cụ David đã cài là để nâng skill:** thấy công cụ trên máy giúp việc tốt hơn mà skill chưa dùng thì đề xuất tích hợp (diễn giải
   ngắn trước khi sửa skill), giữ cách cũ làm dự phòng khi công cụ lỗi.
+- **Mod phải tự chạy khi cần:** mod, plugin cài thêm phải tự hoạt động đúng lúc, không đợi David gõ lệnh; lệnh `/...` chỉ để xem
+  chi tiết. Cài mod mới thì kiểm phần nào cần gọi mới chạy và chỉnh cho tự chạy (tuỳ chọn của mod, luật ở đây), không được thì báo
+  David. Danh sách mod: `mods/README.md`.
+- **Việc từ 3 bước trở lên: lập kế hoạch bằng goal-meter** (`mcp__goal-meter__tasks`) để thanh tiến độ tự hiện trên ô nhập:
+  `plan` đủ các bước, mỗi bước cỡ S/M/L, `start` khi bắt đầu một bước, `done` khi xong, `add`/`drop` khi kế hoạch đổi. Không cần
+  David gõ `/goal`. Giữ đúng thực tế: thanh và giờ dự kiến chỉ lấy từ danh sách này.
 - Đăng, gửi, xoá, mật khẩu: `AGENTS.md` luật 5.
 
 ## 4. Cuối việc
