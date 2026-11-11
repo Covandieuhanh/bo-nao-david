@@ -1,20 +1,25 @@
-// Sổ việc: tự đo mỗi việc Claude làm (thời gian Claude chạy, token),
-// dự kiến theo trung bình các việc cùng loại, báo cáo bằng /bao-cao.
+// Sổ việc: tự đo mỗi việc Claude làm (thời gian Claude chạy, token) ở MỌI phiên trên máy,
+// dự kiến theo trung bình việc cùng loại, bảng tổng quan có thanh tiến độ, /bao-cao.
 // Không hỏi David gì: loại việc lấy từ skill được gọi, hoặc model nhỏ tự gán nhãn.
+//
+// Dữ liệu: ~/.claude/so-viec/phien/<sid>.json (mỗi phiên tự ghi sổ của mình, không đè nhau)
+//          ~/.claude/so-viec/nhap/<sid>.json  (nhập ngược phiên cũ, scripts/nhap-lich-su.py)
 import { atom, read, update } from 'claude-code'
 import type { EngineInterface, Register, TurnUsage } from 'claude-code'
 
-import type { Avg, Job, Tokens, View } from '../types'
+import type { Avg, Book, Job, Live, Overview, Period, Tokens, Turn } from '../types'
 
 type $T = EngineInterface
 
 const PANE = 'so-viec'
 const TITLE = 'Sổ việc'
 const IDLE_CLOSE_MS = 60 * 60 * 1000 // im lặng quá 60 phút: việc cũ coi như xong
-const BRAIN_GAP_MS = 15 * 60 * 1000 // khoảng nghỉ giữa hai lượt ≤15 phút vẫn tính là đang làm
+const BRAIN_GAP_MS = 15 * 60 * 1000 // khoảng nghỉ ≤15 phút giữa hai lượt vẫn tính là đang làm
 const BRAIN_DAY_MS = 4 * 60 * 60 * 1000 // luật 4 tiếng việc trí óc mỗi ngày
+const LIVE_MS = 2 * 60 * 1000 // phiên đang chạy phải báo nhịp trong 2 phút
 const MIN_SAMPLES = 3 // đủ 3 lần cùng loại mới đưa dự kiến
 const MAX_JOBS = 3000
+const MAX_TURNS = 8000
 
 // Skill nào tính là một việc, và tên loại việc của nó.
 const SKILL_TYPES: Record<string, string> = {
@@ -29,7 +34,7 @@ const SKILL_TYPES: Record<string, string> = {
   'scroll-craft': 'lam-trang-web',
 }
 
-// Nhãn cho việc không gọi skill.
+// Nhãn cho việc không gọi skill (scripts/nhap-lich-su.py dùng cùng bộ này).
 const LABELS = [
   'sua-bo-nao',
   'viet-bai',
@@ -44,146 +49,295 @@ const LABELS = [
   'khac',
 ] as const
 
-const view = atom({ plugin: 'so-viec', key: 'view' } as const, null, { shape: 'view-1' })
+const view = atom({ plugin: 'so-viec', key: 'view' } as const, null, { shape: 'view-2' })
 
-// ---------- lưu trữ qua nhiều phiên ----------
-
-type Day = { date: string; ms: number; lastEndAt: number }
+// ---------- số và chữ ----------
 
 const zero = (): Tokens => ({ input: 0, output: 0, cacheRead: 0, cacheWrite: 0 })
 const total = (t: Tokens) => t.input + t.output + t.cacheRead + t.cacheWrite
+const sumUsage = (u: TurnUsage) =>
+  u.input_tokens + u.output_tokens + u.cache_read_input_tokens + u.cache_creation_input_tokens
 
-const getOpen = async ($: $T) => ((await $.store.get('open')) as Job | undefined) ?? null
-const setOpen = async ($: $T, job: Job | null) =>
-  job ? $.store.set('open', job) : $.store.delete('open')
-const getJobs = async ($: $T) => ((await $.store.get('jobs')) as Job[] | undefined) ?? []
-
-const dateOf = (ms: number) => {
-  const d = new Date(ms)
-  const p = (n: number) => String(n).padStart(2, '0')
-  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`
+function add(t: Tokens, u: TurnUsage) {
+  t.input += u.input_tokens
+  t.output += u.output_tokens
+  t.cacheRead += u.cache_read_input_tokens
+  t.cacheWrite += u.cache_creation_input_tokens
 }
-
-const getDay = async ($: $T, now: number): Promise<Day> => {
-  const day = (await $.store.get('day')) as Day | undefined
-  return day && day.date === dateOf(now) ? day : { date: dateOf(now), ms: 0, lastEndAt: 0 }
-}
-
-async function closeJob($: $T, job: Job) {
-  if (job.turns === 0) return
-  const jobs = await getJobs($)
-  jobs.push(job)
-  await $.store.set('jobs', jobs.slice(-MAX_JOBS))
-}
-
-function averageOf(jobs: Job[], type: string): Avg | null {
-  const same = jobs.filter(j => j.type === type)
-  if (same.length < MIN_SAMPLES) return null
-  const sum = same.reduce(
-    (a, j) => ({ ms: a.ms + j.activeMs, tok: a.tok + total(j.tokens) }),
-    { ms: 0, tok: 0 },
-  )
-  return { count: same.length, activeMs: sum.ms / same.length, tokens: sum.tok / same.length }
-}
-
-// ---------- hiển thị ----------
 
 const mins = (ms: number) => Math.max(0, Math.round(ms / 60000))
 const hm = (ms: number) => {
   const m = mins(ms)
   return m >= 60 ? `${Math.floor(m / 60)}h${String(m % 60).padStart(2, '0')}` : `${m}p`
 }
-const kt = (n: number) => (n >= 1e6 ? `${(n / 1e6).toFixed(1)}M` : `${Math.round(n / 1000)}k`)
+const kt = (n: number) =>
+  n >= 1e9 ? `${(n / 1e9).toFixed(1)}B` : n >= 1e6 ? `${(n / 1e6).toFixed(1)}M` : `${Math.round(n / 1000)}k`
 
-async function refresh($: $T, runningSince: number | null) {
-  const now = await $.clock.now()
-  const current = await getOpen($)
-  const jobs = await getJobs($)
-  const day = await getDay($, now)
-  const live = runningSince ? now - runningSince : 0
-  const v: View = {
-    current,
-    runningSince,
-    avg: current ? averageOf(jobs, current.type) : null,
-    todayMs: day.ms + live,
-    recent: jobs.slice(-5).reverse(),
-  }
-  await update($, view, () => v)
+/** Thanh tiến độ bằng chữ: chạy trên mọi giao diện. */
+const bar = (frac: number, width: number) => {
+  const f = Math.max(0, Math.min(width, Math.round(Math.min(frac, 1) * width)))
+  return '█'.repeat(f) + '░'.repeat(width - f)
+}
+const pct = (frac: number) => `${Math.round(frac * 100)}%`
 
-  const brain = `hôm nay ${hm(v.todayMs)}/4h`
-  if (!current) {
-    $.ui.status(`Sổ việc · ${brain}`)
-    return
+const dayStart = (ms: number) => {
+  const d = new Date(ms)
+  d.setHours(0, 0, 0, 0)
+  return d.getTime()
+}
+const weekStart = (ms: number) => {
+  const d = new Date(dayStart(ms))
+  const back = (d.getDay() + 6) % 7 // tuần bắt đầu thứ Hai
+  return d.getTime() - back * 86400000
+}
+const ddmm = (ms: number) => {
+  const d = new Date(ms)
+  return `${String(d.getDate()).padStart(2, '0')}/${String(d.getMonth() + 1).padStart(2, '0')}`
+}
+
+// ---------- sổ của từng phiên ----------
+
+async function dataDir($: $T) {
+  return `${(await $.env.get('HOME')) ?? '~'}/.claude/so-viec`
+}
+
+async function readBooks($: $T, dir: string): Promise<Book[]> {
+  const out: Book[] = []
+  for (const sub of ['phien', 'nhap']) {
+    const path = `${dir}/${sub}`
+    if (!(await $.fs.exists(path))) continue
+    for (const f of await $.fs.list(path)) {
+      if (f.kind !== 'file' || !f.name.endsWith('.json')) continue
+      try {
+        out.push(JSON.parse(await $.fs.read(`${path}/${f.name}`)) as Book)
+      } catch {
+        // file đang ghi dở hoặc hỏng: bỏ qua lần này
+      }
+    }
   }
-  const ms = current.activeMs + live
-  const tok = total(current.tokens)
-  const time = v.avg ? `${mins(ms)}/${mins(v.avg.activeMs)}p` : `${mins(ms)}p`
-  const tokens = v.avg ? `${kt(tok)}/${kt(v.avg.tokens)} token` : `${kt(tok)} token`
-  $.ui.status(`${current.type} · ${time} · ${tokens} · ${brain}`)
+  return out
+}
+
+function closeJob(book: Book) {
+  if (book.open && book.open.turns > 0) book.jobs.push(book.open)
+  book.jobs = book.jobs.slice(-MAX_JOBS)
+  book.open = null
+}
+
+function averages(jobs: Job[]): Avg[] {
+  const by = new Map<string, Job[]>()
+  for (const j of jobs) by.set(j.type, [...(by.get(j.type) ?? []), j])
+  return [...by.entries()]
+    .map(([type, list]) => ({
+      type,
+      count: list.length,
+      activeMs: list.reduce((a, j) => a + j.activeMs, 0) / list.length,
+      tokens: list.reduce((a, j) => a + total(j.tokens), 0) / list.length,
+    }))
+    .sort((a, b) => b.count - a.count)
+}
+
+/** Giờ làm việc trí óc trong [from, to): gộp lượt của mọi phiên, nối khoảng nghỉ ≤15 phút. */
+function brainMs(turns: Turn[], from: number, to: number) {
+  const spans = turns
+    .filter(t => t[1] > from && t[0] < to)
+    .map(t => [Math.max(t[0], from), Math.min(t[1], to)] as [number, number])
+    .sort((a, b) => a[0] - b[0])
+  let ms = 0
+  let cur: [number, number] | null = null
+  for (const s of spans) {
+    if (cur && s[0] - cur[1] <= BRAIN_GAP_MS) cur[1] = Math.max(cur[1], s[1])
+    else {
+      if (cur) ms += cur[1] - cur[0]
+      cur = [s[0], s[1]]
+    }
+  }
+  if (cur) ms += cur[1] - cur[0]
+  return ms
+}
+
+function period(turns: Turn[], jobs: Job[], from: number, to: number): Period {
+  return {
+    ms: brainMs(turns, from, to),
+    tokens: turns.filter(t => t[0] >= from && t[0] < to).reduce((a, t) => a + t[2], 0),
+    jobs: jobs.filter(j => j.lastAt >= from && j.lastAt < to).length,
+  }
+}
+
+function overview(books: Book[], mine: string, now: number): Overview {
+  const closed = books.flatMap(b => b.jobs)
+  const avgs = averages(closed)
+  const avgOf = (type: string) => avgs.find(a => a.type === type && a.count >= MIN_SAMPLES) ?? null
+  // Lượt đang chạy tính tới bây giờ, để giờ hôm nay chạy theo.
+  const turns = books.flatMap(b =>
+    b.running !== null && now - b.updatedAt < LIVE_MS ? [...b.turns, [b.running, now, 0] as Turn] : b.turns,
+  )
+  const withOpen = [...closed, ...books.flatMap(b => (b.open ? [b.open] : []))]
+
+  const live: Live[] = books
+    .filter(b => b.sid === mine || (b.running !== null && now - b.updatedAt < LIVE_MS))
+    .map(b => {
+      const run = b.running !== null && now - b.updatedAt < LIVE_MS ? now - b.running : 0
+      return {
+        sid: b.sid,
+        title: b.title || b.sid.slice(0, 8),
+        isMine: b.sid === mine,
+        type: b.open?.type ?? null,
+        ms: (b.open?.activeMs ?? 0) + run,
+        tokens: b.open ? total(b.open.tokens) : 0,
+        avg: b.open ? avgOf(b.open.type) : null,
+      }
+    })
+    .sort((a, b) => Number(b.isMine) - Number(a.isMine))
+
+  const allTurns = books.flatMap(b => b.turns)
+  return {
+    at: now,
+    live,
+    today: period(turns, withOpen, dayStart(now), now + 1),
+    week: period(turns, withOpen, weekStart(now), now + 1),
+    total: {
+      ms: brainMs(turns, 0, now + 1),
+      tokens: allTurns.reduce((a, t) => a + t[2], 0),
+      jobs: closed.length,
+      sessions: books.length,
+      since: Math.min(now, ...allTurns.map(t => t[0])),
+    },
+    avgs,
+    recent: [...closed].sort((a, b) => b.lastAt - a.lastAt).slice(0, 10),
+  }
 }
 
 // ---------- báo cáo ----------
 
-async function report($: $T) {
-  const jobs = await getJobs($)
-  if (jobs.length === 0) return 'Sổ việc chưa có việc nào xong.'
-  const types = [...new Set(jobs.map(j => j.type))]
-  const rows = types
-    .map(type => {
-      const same = jobs.filter(j => j.type === type)
-      const ms = same.map(j => j.activeMs)
-      const tok = same.map(j => total(j.tokens))
-      const avg = (xs: number[]) => xs.reduce((a, b) => a + b, 0) / xs.length
-      return {
-        type,
-        n: same.length,
-        line:
-          `| ${type} | ${same.length} | ${hm(avg(ms))} | ${kt(avg(tok))} | ` +
-          `${hm(Math.min(...ms))} – ${hm(Math.max(...ms))} | ${kt(Math.min(...tok))} – ${kt(Math.max(...tok))} |`,
-      }
-    })
-    .sort((a, b) => b.n - a.n)
-  const note = rows.some(r => r.n < MIN_SAMPLES)
-    ? `\n\nLoại có dưới ${MIN_SAMPLES} lần: chưa đưa dự kiến.`
-    : ''
-  return (
-    '## Sổ việc: trung bình theo loại việc\n\n' +
-    '| Loại việc | Số lần | Thời gian TB | Token TB | Nhanh – chậm | Ít – nhiều token |\n' +
-    '|---|---|---|---|---|---|\n' +
-    rows.map(r => r.line).join('\n') +
-    note +
-    '\n\nThời gian = lúc Claude thật sự làm, không tính lúc chờ duyệt.'
+function report(o: Overview) {
+  const max = Math.max(1, ...o.avgs.map(a => a.tokens))
+  const rows = o.avgs.map(
+    a =>
+      `| ${a.type} | ${a.count} | ${hm(a.activeMs)} | ${kt(a.tokens)} | \`${bar(a.tokens / max, 12)}\` |`,
   )
+  const live = o.live
+    .filter(l => l.type)
+    .map(l => {
+      const t = l.avg ? ` (${pct(l.ms / l.avg.activeMs)} dự kiến)` : ''
+      return `- ${l.isMine ? '**Khung này**' : l.title}: ${l.type} · ${hm(l.ms)}${t} · ${kt(l.tokens)} token`
+    })
+  return [
+    '## Sổ việc: tổng quan mọi phiên Claude Code trên máy',
+    '',
+    live.length ? '**Đang làm**\n' + live.join('\n') + '\n' : '',
+    `**Hôm nay:** ${hm(o.today.ms)}/4h \`${bar(o.today.ms / BRAIN_DAY_MS, 16)}\` ${pct(o.today.ms / BRAIN_DAY_MS)} · ${kt(o.today.tokens)} token · ${o.today.jobs} việc`,
+    `**Tuần này:** ${hm(o.week.ms)} · ${kt(o.week.tokens)} token · ${o.week.jobs} việc`,
+    `**Từ ${ddmm(o.total.since)}:** ${o.total.sessions} phiên · ${o.total.jobs} việc xong · ${hm(o.total.ms)} · ${kt(o.total.tokens)} token`,
+    '',
+    '| Loại việc | Số lần | Thời gian TB | Token TB | So token |',
+    '|---|---|---|---|---|',
+    ...rows,
+    '',
+    `Dự kiến chỉ đưa khi loại việc có từ ${MIN_SAMPLES} lần. Thời gian = lúc Claude thật sự làm; giờ trong ngày gộp mọi phiên, nối khoảng nghỉ ≤15 phút.`,
+  ].join('\n')
 }
+
+// ---------- sổ của phiên này (biến của module, nạp lại sau mỗi lần tải lại) ----------
+
+let me: Book | null = null
+let path = ''
+let dir = ''
+
+// Sổ của phiên này: nạp lại sau mỗi lần mod tải lại.
+async function mine($: $T): Promise<Book> {
+  if (me) return me
+  dir = await dataDir($)
+  const sid = await $.session.id()
+  path = `${dir}/phien/${sid}.json`
+  const now = await $.clock.now()
+  if (await $.fs.exists(path)) {
+    try {
+      me = JSON.parse(await $.fs.read(path)) as Book
+    } catch {
+      me = null
+    }
+  }
+  if (!me) {
+    me = {
+      v: 1, sid, title: '', cwd: await $.session.cwd(), trackedSince: now,
+      updatedAt: now, running: null, open: null, jobs: [], turns: [],
+    }
+    // Bản 0.1 lưu trong kho của mod; phần trước lúc này do scripts/nhap-lich-su.py nhập ngược.
+    for (const k of ['jobs', 'open', 'day']) await $.store.delete(k)
+  }
+  return me
+}
+
+async function save($: $T) {
+  if (!me) return
+  me.updatedAt = await $.clock.now()
+  me.turns = me.turns.slice(-MAX_TURNS)
+  // Tên khung chat app đặt (nếu có) thay cho câu nhắn đầu.
+  const proj = me.cwd.replace(/[^A-Za-z0-9]/g, '-')
+  const tfile = `${dir.replace(/\/so-viec$/, '')}/projects/${proj}/${me.sid}/custom-title.json`
+  try {
+    if (await $.fs.exists(tfile)) {
+      const t = (JSON.parse(await $.fs.read(tfile)) as { customTitle?: string }).customTitle
+      if (t) me.title = t.slice(0, 40)
+    }
+  } catch {
+    // không có tên thì giữ câu nhắn đầu
+  }
+  await $.fs.write(path, JSON.stringify(me))
+}
+
+async function refresh($: $T) {
+  const book = await mine($)
+  const now = await $.clock.now()
+  const o = overview(await readBooks($, dir), book.sid, now)
+  await update($, view, () => o)
+
+  const brain = `hôm nay ${hm(o.today.ms)}/4h`
+  const cur = o.live.find(l => l.isMine)
+  if (!cur?.type) {
+    $.ui.status(`Sổ việc · ${brain}`)
+    return
+  }
+  const time = cur.avg ? `${mins(cur.ms)}/${mins(cur.avg.activeMs)}p` : `${mins(cur.ms)}p`
+  const tok = cur.avg ? `${kt(cur.tokens)}/${kt(cur.avg.tokens)} token` : `${kt(cur.tokens)} token`
+  $.ui.status(`${cur.type} · ${time} · ${tok} · ${brain}`)
+}
+
 
 // ---------- móc vào sự kiện ----------
 
 export const register: Register = on => {
-  // Mỗi lượt của luồng chính: loại việc đang chờ gán và skill gọi trong lượt.
+  let lastTurnStart: number | null = null
   const pending = new Map<string, string>()
   const skillOfTurn = new Map<string, string>()
   let currentTurn: string | null = null
-  let runningSince: number | null = null
-  let lastTurnStart: number | null = null
 
   on('session.start', async ($, e, next) => {
+    const book = await mine($)
     const now = await $.clock.now()
-    const open = await getOpen($)
-    if (open && now - open.lastAt > IDLE_CLOSE_MS) {
-      await closeJob($, open)
-      await setOpen($, null)
-    }
-    await $.command.register({ name: 'bao-cao', description: 'Sổ việc: trung bình thời gian và token theo loại việc' })
+    if (book.open && now - book.open.lastAt > IDLE_CLOSE_MS) closeJob(book)
+    book.running = null
+    await save($)
+    await $.command.register({ name: 'bao-cao', description: 'Sổ việc: tổng quan mọi phiên, trung bình theo loại việc' })
     await $.command.register({ name: 'so-viec', description: 'Mở bảng Sổ việc cạnh khung chat' })
     void $.ui.open({ id: PANE, title: TITLE })
+    // Nhịp 15 giây: báo phiên này còn chạy, đọc lại sổ mọi phiên.
     $.clock.every(15000, () => {
-      if (runningSince !== null) void refresh($, runningSince)
+      void (async () => {
+        if (me?.running != null) await save($)
+        await refresh($)
+      })()
     })
-    await refresh($, null)
+    await refresh($)
     return next(e)
   })
 
-  on('command.run', { command: 'bao-cao' }, async $ => ({ text: await report($) }))
+  on('command.run', { command: 'bao-cao' }, async $ => {
+    await refresh($)
+    const o = await read($, view)
+    return { text: o ? report(o) : 'Sổ việc chưa có dữ liệu.' }
+  })
   on('command.run', { command: 'so-viec' }, async $ => {
     await $.ui.open({ id: PANE, title: TITLE })
     return { text: 'Đã mở bảng Sổ việc.' }
@@ -191,14 +345,16 @@ export const register: Register = on => {
 
   on('turn.start', async ($, e, next) => {
     if (e.agentId !== undefined) return next(e)
+    const book = await mine($)
     const now = await $.clock.now()
     currentTurn = e.turnId
-    runningSince = now
     lastTurnStart = now
+    book.running = now
 
     const text = e.text.trim()
     if (text !== '') {
-      const open = await getOpen($)
+      if (!book.title) book.title = text.replace(/\s+/g, ' ').slice(0, 40)
+      const open = book.open
       // Trả lời ngắn khi đang có việc ("ok", "làm đi"): vẫn là việc đó.
       const isFollowUp = open !== null && text.length < 40 && now - open.lastAt < IDLE_CLOSE_MS
       if (!isFollowUp) {
@@ -209,7 +365,8 @@ export const register: Register = on => {
         )
       }
     }
-    void refresh($, runningSince)
+    await save($)
+    void refresh($)
     return next(e)
   })
 
@@ -223,120 +380,138 @@ export const register: Register = on => {
     const result = await next(e)
     const usage: TurnUsage | undefined = e.usage
     const now = await $.clock.now()
+    const book = await mine($)
 
     // Token của trợ lý con cộng vào việc đang mở; thời gian thì không (chạy song song).
     if (e.agentId !== undefined) {
-      const open = await getOpen($)
-      if (open && usage) {
-        add(open.tokens, usage)
-        await setOpen($, open)
+      if (book.open && usage) {
+        add(book.open.tokens, usage)
+        const last = book.turns[book.turns.length - 1]
+        if (last) last[2] += sumUsage(usage)
+        await save($)
       }
       return result
     }
 
-    const skill = skillOfTurn.get(e.turnId)
     // Lượt đã trả lời xong (next ở trên), giờ mới gán nhãn: không làm chậm câu trả lời.
+    const skill = skillOfTurn.get(e.turnId)
     const ask = skill ? undefined : pending.get(e.turnId)
     const label = ask ? await $.model.classify(ask, LABELS).catch(() => undefined) : undefined
     pending.delete(e.turnId)
     skillOfTurn.delete(e.turnId)
 
-    let open = await getOpen($)
-    if (open && now - open.lastAt - e.durationMs > IDLE_CLOSE_MS) {
-      await closeJob($, open)
-      open = null
-    }
-    const type = skill ?? label ?? open?.type ?? 'khac'
-    if (!open || open.type !== type) {
-      if (open) await closeJob($, open)
-      open = {
-        id: e.turnId,
-        type,
-        startedAt: now - e.durationMs,
-        lastAt: now,
-        activeMs: 0,
-        turns: 0,
-        tokens: zero(),
+    if (book.open && now - book.open.lastAt - e.durationMs > IDLE_CLOSE_MS) closeJob(book)
+    const type = skill ?? label ?? book.open?.type ?? 'khac'
+    if (!book.open || book.open.type !== type) {
+      closeJob(book)
+      book.open = {
+        id: e.turnId, type, startedAt: now - e.durationMs, lastAt: now,
+        activeMs: 0, turns: 0, tokens: zero(),
       }
     }
-    open.activeMs += e.durationMs
-    open.turns += 1
-    open.lastAt = now
-    if (usage) add(open.tokens, usage)
-    await setOpen($, open)
-
-    // Giờ làm việc trí óc hôm nay: thời lượng lượt + khoảng nghỉ ngắn trước nó.
-    const day = await getDay($, now)
-    const startedAt = lastTurnStart ?? now - e.durationMs
-    const gap = day.lastEndAt ? startedAt - day.lastEndAt : 0
-    day.ms += e.durationMs + (gap > 0 && gap <= BRAIN_GAP_MS ? gap : 0)
-    const wasUnder = day.ms - e.durationMs < BRAIN_DAY_MS
-    day.lastEndAt = now
-    await $.store.set('day', day)
-    if (wasUnder && day.ms >= BRAIN_DAY_MS) $.ui.toast('Sổ việc: hôm nay đã đủ 4 tiếng việc trí óc.')
-
+    const job = book.open
+    job.activeMs += e.durationMs
+    job.turns += 1
+    job.lastAt = now
+    if (usage) add(job.tokens, usage)
+    book.turns.push([lastTurnStart ?? now - e.durationMs, now, usage ? sumUsage(usage) : 0])
     if (currentTurn === e.turnId) {
       currentTurn = null
-      runningSince = null
+      book.running = null
     }
-    await refresh($, runningSince)
+    await save($)
+
+    const before = view ? await read($, view) : null
+    await refresh($)
+    const after = await read($, view)
+    if (before && after && before.today.ms < BRAIN_DAY_MS && after.today.ms >= BRAIN_DAY_MS)
+      $.ui.toast('Sổ việc: hôm nay đã đủ 4 tiếng việc trí óc.')
     return result
   })
 
   on('session.end', async ($, e, next) => {
-    // Phiên đóng chưa chắc việc xong (có thể mở lại); để mở, 60 phút im lặng thì tự đóng.
+    // Phiên đóng chưa chắc việc xong (có thể mở lại); 60 phút im lặng thì tự đóng.
+    if (me) {
+      me.running = null
+      await save($)
+    }
     return next(e)
   })
 
   on('ui.render', { component: 'Pane', requestId: PANE }, async ($, e) => {
     const { Box, Text } = $.ui.resolve(e)
-    const v = await read($, view)
-    const now = await $.clock.now()
-    if (!v) return <Text dimColor>Đang tải…</Text>
-    const live = v.runningSince ? now - v.runningSince : 0
-    const cur = v.current
+    const o = await read($, view)
+    if (!o) return <Text dimColor>Đang tải…</Text>
+    const w = Math.max(8, Math.min(24, (e.props.bodyColumns ?? 40) - 16))
+    const max = Math.max(1, ...o.avgs.map(a => a.tokens))
+    const over = (f: number) => (f > 1 ? 'warning' : undefined)
 
     return (
       <Box flexDirection="column">
-        <Text bold>Việc đang làm</Text>
-        {!cur && <Text dimColor>Chưa có việc nào.</Text>}
-        {cur && <Text>{cur.type}{v.runningSince ? ' · đang chạy' : ''}</Text>}
-        {cur && (
-          <Text>
-            Thời gian: {hm(cur.activeMs + live)}
-            {v.avg ? ` / dự kiến ${hm(v.avg.activeMs)}` : ' (chưa đủ dữ liệu)'}
-          </Text>
-        )}
-        {cur && (
-          <Text>
-            Token: {kt(total(cur.tokens))}
-            {v.avg ? ` / trung bình ${kt(v.avg.tokens)}` : ''}
-          </Text>
-        )}
-        {cur && v.avg && <Text dimColor>Dựa trên {v.avg.count} lần trước cùng loại</Text>}
+        <Text bold>Đang làm</Text>
+        {o.live.every(l => !l.type) && <Text dimColor>Chưa có việc nào đang mở.</Text>}
+        {o.live
+          .filter(l => l.type)
+          .map(l => (
+            <Box flexDirection="column" key={l.sid}>
+              <Text>
+                {l.isMine ? '▶ Khung này' : `▷ ${l.title}`} · {l.type}
+              </Text>
+              {l.avg ? (
+                <Text color={over(l.ms / l.avg.activeMs)}>
+                  {bar(l.ms / l.avg.activeMs, w)} {hm(l.ms)}/{hm(l.avg.activeMs)}
+                </Text>
+              ) : (
+                <Text dimColor>{hm(l.ms)} · chưa đủ {MIN_SAMPLES} lần để dự kiến</Text>
+              )}
+              {l.avg ? (
+                <Text color={over(l.tokens / l.avg.tokens)}>
+                  {bar(l.tokens / l.avg.tokens, w)} {kt(l.tokens)}/{kt(l.avg.tokens)}
+                </Text>
+              ) : (
+                <Text dimColor>{kt(l.tokens)} token</Text>
+              )}
+            </Box>
+          ))}
         <Text> </Text>
         <Text bold>Hôm nay</Text>
-        <Text color={v.todayMs >= BRAIN_DAY_MS ? 'warning' : undefined}>
-          Việc trí óc: {hm(v.todayMs)} / 4h
+        <Text color={over(o.today.ms / BRAIN_DAY_MS)}>
+          {bar(o.today.ms / BRAIN_DAY_MS, w)} {hm(o.today.ms)}/4h
+        </Text>
+        <Text dimColor>
+          {kt(o.today.tokens)} token · {o.today.jobs} việc
+        </Text>
+        <Text bold>Tuần này</Text>
+        <Text dimColor>
+          {hm(o.week.ms)} · {kt(o.week.tokens)} token · {o.week.jobs} việc
+        </Text>
+        <Text bold>Từ {ddmm(o.total.since)}</Text>
+        <Text dimColor>
+          {o.total.sessions} phiên · {o.total.jobs} việc · {hm(o.total.ms)} · {kt(o.total.tokens)} token
         </Text>
         <Text> </Text>
-        <Text bold>Việc xong gần đây</Text>
-        {v.recent.length === 0 && <Text dimColor>Chưa có.</Text>}
-        {v.recent.map(j => (
+        <Text bold>Theo loại việc (token TB)</Text>
+        {o.avgs.length === 0 && <Text dimColor>Chưa có việc nào xong.</Text>}
+        {o.avgs.slice(0, 10).map(a => (
+          <Box flexDirection="column" key={a.type}>
+            <Text>
+              {a.type} <Text dimColor>×{a.count} · {hm(a.activeMs)}</Text>
+            </Text>
+            <Text dimColor={a.count < MIN_SAMPLES}>
+              {bar(a.tokens / max, w)} {kt(a.tokens)}
+            </Text>
+          </Box>
+        ))}
+        <Text> </Text>
+        <Text bold>10 việc gần nhất</Text>
+        {o.recent.map(j => (
           <Text dimColor>
-            {dateOf(j.startedAt).slice(5)} {j.type} · {hm(j.activeMs)} · {kt(total(j.tokens))}
+            {ddmm(j.lastAt)} {j.type} · {hm(j.activeMs)} · {kt(total(j.tokens))}
           </Text>
         ))}
         <Text> </Text>
-        <Text dimColor>/bao-cao để xem trung bình theo loại việc</Text>
+        <Text dimColor>/bao-cao: bản đầy đủ trong khung chat</Text>
       </Box>
     )
   })
-}
-
-function add(t: Tokens, u: TurnUsage) {
-  t.input += u.input_tokens
-  t.output += u.output_tokens
-  t.cacheRead += u.cache_read_input_tokens
-  t.cacheWrite += u.cache_creation_input_tokens
 }

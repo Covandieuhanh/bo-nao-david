@@ -10,18 +10,49 @@ export type Job = {
   tokens: Tokens
 }
 
-export type Avg = { count: number; activeMs: number; tokens: number }
+/** Một lượt: [bắt đầu, kết thúc, tổng token]. */
+export type Turn = [number, number, number]
 
-export type View = {
-  current: Job | null
-  runningSince: number | null
+/** Sổ của một phiên: phien/<sid>.json (mod ghi) hoặc nhap/<sid>.json (nhập ngược). */
+export type Book = {
+  v: 1
+  sid: string
+  title: string
+  cwd: string
+  trackedSince: number
+  updatedAt: number
+  running: number | null
+  open: Job | null
+  jobs: Job[]
+  turns: Turn[]
+}
+
+export type Avg = { type: string; count: number; activeMs: number; tokens: number }
+
+export type Live = {
+  sid: string
+  title: string
+  isMine: boolean
+  type: string | null
+  ms: number
+  tokens: number
   avg: Avg | null
-  todayMs: number
+}
+
+export type Period = { ms: number; tokens: number; jobs: number }
+
+export type Overview = {
+  at: number
+  live: Live[]
+  today: Period
+  week: Period
+  total: Period & { sessions: number; since: number }
+  avgs: Avg[]
   recent: Job[]
 }
 
 declare module 'claude-code' {
   interface PluginState {
-    'so-viec': { view: Shaped<View | null> }
+    'so-viec': { view: Shaped<Overview | null> }
   }
 }

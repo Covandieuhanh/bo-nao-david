@@ -1,6 +1,6 @@
 {
   "name": "so-viec",
-  "version": "0.1.0",
-  "description": "Sổ việc: tự đo thời gian Claude làm và token của từng việc, dự kiến theo trung bình việc cùng loại, báo cáo /bao-cao.",
+  "version": "0.2.0",
+  "description": "Sổ việc: tự đo thời gian Claude làm và token từng việc ở mọi phiên trên máy, bảng tổng quan có thanh tiến độ, dự kiến theo trung bình việc cùng loại, /bao-cao.",
   "types": "./types/index.d.ts"
 }
