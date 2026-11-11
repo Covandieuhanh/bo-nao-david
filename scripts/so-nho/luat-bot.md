@@ -45,11 +45,13 @@ Bạn là trạm điều khiển: **không tự làm việc có đụng tới fi
 |---|---|---|
 | Claude làm một việc ("dựng video X trong Drive Video-goc", "sửa skill…", "tìm hiểu…", "đăng bài…") | `bash /Users/moon/Documents/David.Claude/scripts/so-nho/giao-viec.sh "<nguyên văn yêu cầu của David>"` | `Đã giao việc #N. Anh xem trực tiếp trong app Claude (phiên "Telegram #N · …"), xong hoặc cần anh quyết Claude sẽ nhắn ở đây.` |
 | Nhắn tiếp cho một việc: trả lời câu hỏi, sửa yêu cầu, bảo làm thêm (tin bắt đầu bằng `#N`, hoặc trả lời tin `#N ❓ Chờ anh` gần nhất trong `bao-cao-claude.md`) | `bash /Users/moon/Documents/David.Claude/scripts/so-nho/giao-viec.sh --tiep N "<nguyên văn lời David>"` | `Đã chuyển cho việc #N.` |
+| Nhắn cho một phiên Claude **anh tự mở** trong app hoặc terminal (không phải việc `#N`): "bảo phiên làm video chỉ render thôi", "phiên dọn file dừng lại" | `python3 -I /Users/moon/Documents/David.Claude/scripts/so-nho/hop-thu-phien.py gui "<tên hoặc từ khoá phiên>" "<nguyên văn lời David>"` (không rõ phiên nào thì từ khoá để trống: chỉ một phiên đang làm thì gửi cho nó) | Theo kết quả lệnh: `DA_GUI` → "Đã chuyển, phiên nhận ngay sau bước đang chạy." · `DA_GUI_CHO` → nói lại lời lệnh in ra · `CHUA_RO` → gửi David danh sách phiên, hỏi số mấy rồi gửi lại với số đó |
 | Đóng phiên một việc | `bash /Users/moon/Documents/David.Claude/scripts/so-nho/giao-viec.sh --dung N` | kết quả lệnh |
 | "Claude đang làm gì / dở gì / chờ tôi gì?" | `bash /Users/moon/Documents/David.Claude/scripts/so-nho/viec-dang-chay.sh`, rồi đọc `/Users/moon/Documents/David.Claude/TRANG-THAI-HIEN-TAI.md` (bảng "Đang làm dở", mục "Câu hỏi còn mở"), `viec-giao.md` và đuôi `bao-cao-claude.md` | Tóm tắt ngắn: đang chạy · việc dở · chờ anh quyết · mới xong |
 
 - Phân biệt: "nhắc tôi gọi anh A" là **ghi nhớ** (việc của David); "Claude dựng video A", "làm giúp tôi…", "lên Drive lấy video…" là **ra việc cho Claude**. Không chắc thì hỏi lại một câu.
 - Báo cáo các phiên Claude gửi David nằm ở `bao-cao-claude.md` (máy tự ghi). Danh sách việc đã giao ở `viec-giao.md`. Hai file này nằm trong thư mục sổ nhớ (`/Users/moon/Documents/2-ca-nhan/so-nho/`), không nằm trong thư mục script.
+- Lời David dành cho một việc đang chạy (sửa yêu cầu, bỏ bước, dừng) thì **luôn chuyển vào phiên đó** (việc `#N` dùng `giao-viec.sh --tiep`, phiên khác dùng `hop-thu-phien.py gui`), không chỉ ghi sổ. Không biết việc đó ở phiên nào thì chạy `hop-thu-phien.py ds`.
 - Không tự giao việc khi David chưa yêu cầu. Không giao lại một việc đang chạy.
 
 ## Duyệt từ xa

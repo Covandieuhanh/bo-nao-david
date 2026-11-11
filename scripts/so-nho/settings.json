@@ -17,7 +17,8 @@
       "mcp__plugin_telegram_telegram",
       "Bash(bash /Users/moon/Documents/David.Claude/scripts/so-nho/giao-viec.sh:*)",
       "Bash(bash /Users/moon/Documents/David.Claude/scripts/so-nho/viec-dang-chay.sh)",
-      "Read(~/Documents/David.Claude/**)"
+      "Read(~/Documents/David.Claude/**)",
+      "Bash(python3 -I /Users/moon/Documents/David.Claude/scripts/so-nho/hop-thu-phien.py:*)"
     ],
     "deny": [
       "WebFetch",
