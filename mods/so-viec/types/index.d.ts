@@ -11,7 +11,7 @@ export type Job = {
 }
 
 /** Một lượt: [bắt đầu, kết thúc, tổng token]. */
-export type Turn = [number, number, number]
+export type Turn = [number, number, number, string?]
 
 /** Sổ của một phiên: phien/<sid>.json (mod ghi) hoặc nhap/<sid>.json (nhập ngược). */
 export type Book = {
@@ -22,6 +22,8 @@ export type Book = {
   trackedSince: number
   updatedAt: number
   running: number | null
+  /** Tài khoản Claude của lượt gần nhất (8 ký tự đầu mã tài khoản). */
+  account?: string
   /** Loại việc của lượt đang chạy, khi đã biết (skill vừa gọi, tiếp nối). */
   runningType?: string | null
   /** Token đã dùng trong lượt đang chạy (cộng từng bước). */

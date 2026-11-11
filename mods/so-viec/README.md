@@ -8,6 +8,7 @@ Bảng cạnh khung chat, chỉ 3 phần, tự chạy ở mọi phiên Claude Co
 
 **Video** gộp mọi skill video: `video-style-edit`, `podcast-style-edit`, `cat-highlight-video`, `dang-da-kenh`, `hoc-video-mau`. **Một video = mọi việc video trong cùng một phiên** (dựng, cắt highlight, đăng). Thời gian là lúc Claude chạy.
 **% tuần** là ước tính: tổng token mọi phiên từ đầu cửa sổ 7 ngày chia % đã dùng ra "1% ≈ bao nhiêu token", rồi đổi token mỗi video ra %.
+**Đổi tài khoản Claude:** mod gắn với máy nên vẫn chạy. Mỗi lượt ghi kèm 8 ký tự đầu mã tài khoản (từ `~/.claude.json`, không lưu email); % tuần chỉ tính token của tài khoản đang đăng nhập. Thời gian và token trung bình 1 video gộp mọi tài khoản.
 Dòng trạng thái: `Video 24p/40p · 3%/8% tuần · tuần 62%`. `/bao-cao` in bản chữ, `/so-viec` mở lại bảng.
 
 Mod vẫn ghi ngầm mọi việc (loại việc theo skill, việc khác do model nhỏ gán nhãn), chỉ không hiện.

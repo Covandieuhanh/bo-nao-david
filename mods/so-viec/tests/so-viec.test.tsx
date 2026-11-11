@@ -22,6 +22,12 @@ test('chỉ còn video: đang làm, % tuần, TB 1 video', { timeoutMs: 30000 },
     { id: 'd', type: 'sua-bo-nao', startedAt: 0, lastAt: 0, activeMs: 99 * 60000, turns: 5, tokens: tok(9_000_000) },
   ], [[now - 9000000, now - 8000000, 9_000_000]])))
 
+  // Tài khoản khác cũng dùng máy này trong tuần: không được tính vào % tuần của tài khoản đang đăng nhập.
+  files.set('/h/.claude/so-viec/nhap/k2.json', JSON.stringify(book('k2', [
+    { id: 'e', type: 'sua-bo-nao', startedAt: 0, lastAt: 0, activeMs: 60000, turns: 1, tokens: tok(30_000_000) },
+  ], [[now - 5000000, now - 4900000, 30_000_000, 'bbbbbbbb']])))
+  files.set('/h/.claude.json', JSON.stringify({ oauthAccount: { accountUuid: 'aaaaaaaa-1111-2222-3333-444444444444' } }))
+
   on('command.register', () => ({ value: { command: 'x' } }))
   on('ui.open', () => ({ value: { isPlaced: true } }))
   on('ui.status', () => ({ value: undefined }))

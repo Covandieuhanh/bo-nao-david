@@ -225,7 +225,7 @@ function videoOf(list: Book[]) {
   return { ms, tokens }
 }
 
-function videoView(books: Book[], mine: string, now: number, week: Week, foreign: Foreign[] = []): VideoView {
+function videoView(books: Book[], mine: string, now: number, week: Week, foreign: Foreign[] = [], account = ''): VideoView {
   const runs = (b: Book) => b.running !== null && (b.sid === mine || now - b.updatedAt < LIVE_MS)
   const typeNow = (b: Book) => (b.runningType !== undefined ? b.runningType : (b.open?.type ?? null))
   const isVideoNow = (b: Book) => runs(b) && VIDEO.has(typeNow(b) ?? '')
@@ -236,8 +236,13 @@ function videoView(books: Book[], mine: string, now: number, week: Week, foreign
 
   // Tuần: tổng token mọi phiên từ đầu cửa sổ 7 ngày, chia % đã dùng = token cho 1%.
   const from = week ? Date.parse(week.resetsAt) - 7 * 86400000 : now - 7 * 86400000
-  const liveTok = books.filter(runs).reduce((a, b) => a + (b.liveTokens ?? 0), 0) + foreign.reduce((a, f) => a + f.tokens, 0)
-  const weekTokens = books.flatMap(b => b.turns).filter(t => t[0] >= from).reduce((a, t) => a + t[2], 0) + liveTok
+  // Chỉ token của tài khoản đang đăng nhập (% tuần là của tài khoản này). Lượt cũ chưa ghi tài khoản: coi là tài khoản này.
+  const same = (a: string | undefined) => !account || !a || a === account
+  const liveTok =
+    books.filter(b => runs(b) && same(b.account)).reduce((a, b) => a + (b.liveTokens ?? 0), 0) +
+    foreign.reduce((a, f) => a + f.tokens, 0)
+  const weekTokens =
+    books.flatMap(b => b.turns).filter(t => t[0] >= from && same(t[3])).reduce((a, t) => a + t[2], 0) + liveTok
   const perPct = week && week.used >= 0.5 ? weekTokens / week.used : null
   const pct = (tok: number) => (perPct ? tok / perPct : null)
 
@@ -296,6 +301,17 @@ let path = ''
 let dir = ''
 
 // Sổ của phiên này: nạp lại sau mỗi lần mod tải lại.
+/** Tài khoản Claude đang đăng nhập: 8 ký tự đầu mã tài khoản trong ~/.claude.json (không lưu email). */
+async function accountOf($: $T): Promise<string> {
+  try {
+    const home = (await $.env.get('HOME')) ?? ''
+    const cfg = JSON.parse(await $.fs.read(`${home}/.claude.json`)) as { oauthAccount?: { accountUuid?: string } }
+    return (cfg.oauthAccount?.accountUuid ?? '').slice(0, 8)
+  } catch {
+    return ''
+  }
+}
+
 async function mine($: $T): Promise<Book> {
   if (me) return me
   dir = await dataDir($)
@@ -347,7 +363,7 @@ async function refresh($: $T) {
   const usage = await $.session.usage().catch(() => null)
   const seven = usage?.rateLimits.find(r => r.kind === 'seven_day')
   const week: Week = seven ? { used: seven.percentUsed, resetsAt: seven.resetsAt ?? new Date(now + 7 * 86400000).toISOString() } : null
-  const v = videoView(books, book.sid, now, week, foreign)
+  const v = videoView(books, book.sid, now, week, foreign, await accountOf($))
   await update($, view, () => v)
 
   const wk = v.week ? `tuần ${pctText(v.week.used)}` : ''
@@ -493,7 +509,8 @@ export const register: Register = on => {
     job.turns += 1
     job.lastAt = now
     if (usage) add(job.tokens, usage)
-    book.turns.push([lastTurnStart ?? now - e.durationMs, now, usage ? sumUsage(usage) : 0])
+    book.account = await accountOf($)
+    book.turns.push([lastTurnStart ?? now - e.durationMs, now, usage ? sumUsage(usage) : 0, book.account])
     if (currentTurn === e.turnId) {
       currentTurn = null
       book.running = null
