@@ -15,6 +15,11 @@ mkdir -p "$TT"
 LOG="$TT/canh-bot.log"
 ghi() { echo "$(date '+%F %T') $*" >> "$LOG"; }
 
+# Chỉ một bản canh chạy: bản mới tắt bản cũ còn sót.
+CU=$(cat "$TT/canh.pid" 2>/dev/null)
+if [ -n "$CU" ] && [ "$CU" != "$$" ] && kill -0 "$CU" 2>/dev/null; then kill "$CU"; sleep 1; fi
+echo $$ > "$TT/canh.pid"
+
 # Giữ Mac không ngủ (khi cắm điện) chừng nào script còn chạy.
 caffeinate -is -w $$ &
 
@@ -27,7 +32,7 @@ tat_bot() { # tắt mọi phiên bot (kể cả phiên thừa)
   screen -ls 2>/dev/null | awk -v t=".$TEN" '$1 ~ t"$" {print $1}' | while read -r id; do screen -S "$id" -X quit; done
   sleep 3; }
 mo_bot() {
-  screen -dmS "$TEN" -h 2000 bash -c "cd '$DATA' && exec claude --channels plugin:telegram@claude-plugins-official --permission-mode dontAsk"
+  screen -dmS "$TEN" -h 2000 bash -c "cd '$DATA' && MCP_TIMEOUT=120000 exec claude --channels plugin:telegram@claude-plugins-official --permission-mode dontAsk"
   date +%F > "$TT/mo-ngay"; echo "$TK" > "$TT/tai-khoan"
   ghi "mo phien bot"
   sleep 25; gui "[KHOI-DONG] Phiên mới. Đọc lướt nhom.md, không gửi gì."
