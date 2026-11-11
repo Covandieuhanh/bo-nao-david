@@ -32,7 +32,7 @@ tat_bot() { # tắt mọi phiên bot (kể cả phiên thừa)
   screen -ls 2>/dev/null | awk -v t=".$TEN" '$1 ~ t"$" {print $1}' | while read -r id; do screen -S "$id" -X quit; done
   sleep 3; }
 mo_bot() {
-  screen -dmS "$TEN" -h 2000 bash -c "cd '$DATA' && TELEGRAM_STATE_DIR=$HOME/.claude/channels/so-nho MCP_TIMEOUT=120000 exec claude --channels plugin:telegram@claude-plugins-official --permission-mode dontAsk --model sonnet"
+  screen -dmS "$TEN" -h 2000 bash -c "cd '$DATA' && TELEGRAM_STATE_DIR=$HOME/.claude/channels/so-nho MCP_TIMEOUT=120000 exec claude --channels plugin:telegram@claude-plugins-official --permission-mode dontAsk --model sonnet --effort low"
   date +%F > "$TT/mo-ngay"; echo "$TK" > "$TT/tai-khoan"
   ghi "mo phien bot"
   sleep 25; gui "[KHOI-DONG] Phiên mới. Đọc lướt nhom.md, không gửi gì."
