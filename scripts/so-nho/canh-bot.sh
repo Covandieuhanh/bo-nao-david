@@ -49,7 +49,7 @@ tat_bot() { # tắt mọi phiên bot (kể cả phiên thừa) và máy chủ Te
   sleep 3; pkill -f "^claude --channels" 2>/dev/null; sleep 1; }
 mo_bot() { # $1 lý do
   echo "$(date +%s)" >> "$TT/lan-mo"
-  screen -dmS "$TEN" -h 2000 bash -c "cd '$DATA' && TELEGRAM_STATE_DIR=$KENH MCP_TIMEOUT=120000 ENABLE_TOOL_SEARCH=false ENABLE_CLAUDEAI_MCP_SERVERS=false CLAUDE_CODE_DISABLE_AUTO_MEMORY=1 exec claude --channels plugin:telegram@claude-plugins-official --permission-mode dontAsk --model haiku"
+  screen -dmS "$TEN" -h 2000 bash -c "cd '$DATA' && TELEGRAM_STATE_DIR=$KENH MCP_TIMEOUT=120000 ENABLE_TOOL_SEARCH=false ENABLE_CLAUDEAI_MCP_SERVERS=false CLAUDE_CODE_DISABLE_AUTO_MEMORY=1 exec claude --channels plugin:telegram@claude-plugins-official --permission-mode dontAsk --model opus"
   date +%F > "$TT/mo-ngay"; echo "$TK" > "$TT/tai-khoan"; date +%s > "$TT/mo-luc"; rm -f "$TT/ban-tu" "$TT/mat-mang-tu" "$TT/noi-lai"
   ghi "mo phien bot ($1)"
   # Mở lại liên tục (>4 lần trong 30 phút) là có lỗi không tự sửa được.
@@ -143,6 +143,11 @@ while true; do
       gui_thang "⏰ Nhắc: ${dong:21}" && echo "$dong" >> "$TT/da-nhac" && ghi "nhac $LUC"
     fi
   done
+  # Nhắc lặp: "- mỗi ngày / mỗi thứ 2, thứ 5 / mỗi ngày 15 HH:MM · nội dung" (nhac-lap.py tính lần tới giờ).
+  python3 -I "$GOC/nhac-lap.py" "$DATA/nhac-viec.md" "$TT/da-nhac-lap" 2>>"$LOG" | while IFS=$'\t' read -r khoa nd; do
+    gui_thang "⏰ Nhắc: $nd" && echo "$khoa" >> "$TT/da-nhac-lap" && ghi "nhac lap ${khoa:0:16}"
+  done
+  [ -f "$TT/da-nhac-lap" ] && tail -500 "$TT/da-nhac-lap" > "$TT/da-nhac-lap.tmp" && mv "$TT/da-nhac-lap.tmp" "$TT/da-nhac-lap"
 
   if [ "$GIO" -ge 3 ] && [ -d "$(dirname "$DRIVE")" ] && [ "$(cat "$TT/sao-luu" 2>/dev/null)" != "$NGAY" ]; then
     mkdir -p "$DRIVE" && rsync -a --exclude ".trang-thai" --exclude ".claude" "$DATA/" "$DRIVE/" \
