@@ -5,7 +5,7 @@ const PANE = { plugin: 'so-viec', component: 'Pane', requestId: 'so-viec',
   props: { title: 'Sổ việc', isFocused: false, bodyColumns: 44, placement: 'dock', scroll: { offset: 0, bodyRows: 40 }, view: {} } } as const
 const tok = (n: number) => ({ input: 0, output: 0, cacheRead: n, cacheWrite: 0 })
 
-test('chỉ còn video: đang làm, % tuần, TB 1 video', { timeoutMs: 30000 }, async ($, on) => {
+test('video gộp mọi tài khoản, chữ viết đầy đủ', { timeoutMs: 30000 }, async ($, on) => {
   let now = new Date(2026, 10, 11, 9).getTime()
   const files = new Map<string, string>()
   const book = (sid: string, jobs: object[], turns: number[][]) => ({ v: 1, sid, title: sid, cwd: '/x', trackedSince: now - 86400000,
@@ -26,7 +26,13 @@ test('chỉ còn video: đang làm, % tuần, TB 1 video', { timeoutMs: 30000 },
   files.set('/h/.claude/so-viec/nhap/k2.json', JSON.stringify(book('k2', [
     { id: 'e', type: 'sua-bo-nao', startedAt: 0, lastAt: 0, activeMs: 60000, turns: 1, tokens: tok(30_000_000) },
   ], [[now - 5000000, now - 4900000, 30_000_000, 'bbbbbbbb']])))
-  files.set('/h/.claude.json', JSON.stringify({ oauthAccount: { accountUuid: 'aaaaaaaa-1111-2222-3333-444444444444' } }))
+  // Video làm bằng tài khoản kia: 60 phút, 5 triệu token; tài khoản kia 1% ≈ 1 triệu token → 5%.
+  files.set('/h/.claude/so-viec/nhap/v3.json', JSON.stringify({ ...book('v3', [
+    { id: 'f', type: 'podcast-style-edit', startedAt: 0, lastAt: 0, activeMs: 60 * 60000, turns: 2, tokens: tok(5_000_000) },
+  ], [[now - 6000000, now - 5500000, 5_000_000, 'bbbbbbbb']]), account: 'bbbbbbbb' }))
+  files.set('/h/.claude/so-viec/tai-khoan/bbbbbbbb.json', JSON.stringify({ id: 'bbbbbbbb', label: 'tai-khoan-hai', used: 40,
+    resetsAt: new Date(now + 2 * 86400000).toISOString(), perPct: 1_000_000, at: now }))
+  files.set('/h/.claude.json', JSON.stringify({ oauthAccount: { accountUuid: 'aaaaaaaa-1111-2222-3333-444444444444', emailAddress: 'david.mot@example.com' } }))
 
   on('command.register', () => ({ value: { command: 'x' } }))
   on('ui.open', () => ({ value: { isPlaced: true } }))
@@ -66,17 +72,21 @@ test('chỉ còn video: đang làm, % tuần, TB 1 video', { timeoutMs: 30000 },
 
   const r = await $.command.run({ command: 'bao-cao', args: '' } as never)
   console.log(r.text)
-  expect(r.text).toContain('**TB 1 video:** 40p')
-  expect(r.text).toContain('(từ 2 video)')
-  expect(r.text).toContain('**Tuần này:** 30% đã dùng')
-  expect(r.text).toContain('**Khung này**: 20p')
-  expect(r.text).not.toContain('4h')
+  // Trung bình 3 video, mỗi video theo tài khoản của nó: (30+50+60)/3 phút; (4% + 8% + 5%)/3.
+  expect(r.text).toContain('**Trung bình một video:** 47 phút, tốn 6% hạn mức tuần')
+  expect(r.text).toContain('tính từ 3 video của mọi tài khoản')
+  expect(r.text).toContain('- david.mot (đang đăng nhập): đã dùng 30%')
+  expect(r.text).toContain('- tai-khoan-hai: đã dùng 40%')
+  expect(r.text).toContain('còn đủ khoảng 22 video nữa')
+  expect(r.text).toContain('**Video đang làm ở khung này**: 20 phút')
+  expect(r.text).not.toMatch(/\bTB\b|\d+p\b|\dM\b/)
 
   for (const surface of ['terminal', 'desktop'] as const) {
     const ui = await $.ui.mount({ ...PANE, surface } as never)
-    expect((await ui.find({ type: 'Text', text: /Video đang làm/ }))?.text).toBeTruthy()
-    expect((await ui.find({ type: 'Text', text: /đã dùng/ }))?.text).toMatch(/^[█░]+ 30% đã dùng$/)
-    expect((await ui.find({ type: 'Text', text: /từ 2 video/ }))?.text).toBeTruthy()
+    expect((await ui.find({ type: 'Text', text: /Video đang làm ở khung này/ }))?.text).toBeTruthy()
+    expect((await ui.find({ type: 'Text', text: /đã dùng 30%/ }))?.text).toMatch(/^[█░]+ đã dùng 30%$/)
+    expect((await ui.find({ type: 'Text', text: /đã dùng 40%/ }))?.text).toBeTruthy()
+    expect((await ui.find({ type: 'Text', text: /^Thời gian: 47 phút$/ }))?.text).toBeTruthy()
     await ui.unmount()
   }
 })

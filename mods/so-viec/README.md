@@ -1,15 +1,16 @@
 # Sổ việc (mod của Claude Code)
 
-Bảng cạnh khung chat, chỉ 3 phần, tự chạy ở mọi phiên Claude Code trên máy:
+Bảng cạnh khung chat, chỉ 3 phần, chữ viết đầy đủ, tự chạy ở mọi khung Claude Code trên máy:
 
-- **🎬 Video đang làm** (mọi khung đang làm video, cả phiên mở trước khi cài mod): thời gian và % tuần so với trung bình một video, có thanh.
-- **Tuần này:** % giới hạn 7 ngày của tài khoản đã dùng (như trang usage), còn đủ khoảng bao nhiêu video.
-- **TB 1 video:** trung bình một video mất bao nhiêu phút và tốn bao nhiêu % token tuần.
+- **🎬 Video đang làm** (mọi khung đang làm video, cả khung mở trước khi cài mod): thời gian và phần trăm hạn mức tuần đã tốn, mỗi thứ một thanh so với trung bình một video.
+- **Hạn mức tuần này:** từng tài khoản Claude đã đăng nhập trên máy một dòng có thanh (đã dùng bao nhiêu phần trăm, ngày làm mới), và gộp mọi tài khoản còn đủ khoảng bao nhiêu video.
+- **Trung bình một video:** mất bao nhiêu phút, tốn bao nhiêu phần trăm hạn mức tuần, **gộp mọi tài khoản**.
 
-**Video** gộp mọi skill video: `video-style-edit`, `podcast-style-edit`, `cat-highlight-video`, `dang-da-kenh`, `hoc-video-mau`. **Một video = mọi việc video trong cùng một phiên** (dựng, cắt highlight, đăng). Thời gian là lúc Claude chạy.
-**% tuần** là ước tính: tổng token mọi phiên từ đầu cửa sổ 7 ngày chia % đã dùng ra "1% ≈ bao nhiêu token", rồi đổi token mỗi video ra %.
-**Đổi tài khoản Claude:** mod gắn với máy nên vẫn chạy. Mỗi lượt ghi kèm 8 ký tự đầu mã tài khoản (từ `~/.claude.json`, không lưu email); % tuần chỉ tính token của tài khoản đang đăng nhập. Thời gian và token trung bình 1 video gộp mọi tài khoản.
-Dòng trạng thái: `Video 24p/40p · 3%/8% tuần · tuần 62%`. `/bao-cao` in bản chữ, `/so-viec` mở lại bảng.
+**Video** gộp mọi skill video: `video-style-edit`, `podcast-style-edit`, `cat-highlight-video`, `dang-da-kenh`, `hoc-video-mau`. **Một video = mọi việc video trong cùng một khung chat** (dựng, cắt highlight, đăng bài). Thời gian là lúc Claude chạy.
+
+**Nhiều tài khoản:** mod gắn với máy nên đổi tài khoản vẫn chạy. Mỗi tài khoản có sổ hạn mức riêng (`~/.claude/so-viec/tai-khoan/<mã>.json`, ghi khi tài khoản đó đang đăng nhập): phần trăm đã dùng, ngày làm mới, và **1% hạn mức tuần ≈ bao nhiêu token** (tổng token tài khoản đó dùng từ đầu tuần chia phần trăm đã dùng). Mỗi lượt ghi kèm 8 ký tự đầu mã tài khoản; tên hiện trên bảng là phần trước @ của email. Mỗi video đổi ra phần trăm theo đúng tài khoản đã làm nó, rồi lấy trung bình. Tài khoản chưa đo được thì dùng mức trung bình của các tài khoản khác. Đây là ước tính.
+
+`/bao-cao` in bản chữ vào khung chat, `/so-viec` mở lại bảng.
 
 Mod vẫn ghi ngầm mọi việc (loại việc theo skill, việc khác do model nhỏ gán nhãn), chỉ không hiện.
 

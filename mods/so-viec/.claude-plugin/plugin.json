@@ -1,6 +1,6 @@
 {
   "name": "so-viec",
-  "version": "0.4.1",
-  "description": "Sổ việc: video đang làm, % giới hạn tuần, trung bình 1 video mất bao lâu và tốn bao nhiêu % tuần.",
+  "version": "0.5.0",
+  "description": "Sổ việc: video đang làm, hạn mức tuần của từng tài khoản Claude trên máy, trung bình một video mất bao lâu và tốn bao nhiêu phần trăm hạn mức tuần (gộp mọi tài khoản).",
   "types": "./types/index.d.ts"
 }

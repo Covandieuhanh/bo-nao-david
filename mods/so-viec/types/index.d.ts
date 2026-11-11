@@ -46,13 +46,24 @@ export type VideoNow = {
   pct: number | null
 }
 
+/** Sổ hạn mức của một tài khoản Claude: tai-khoan/<mã>.json, cập nhật khi tài khoản đó đang đăng nhập. */
+export type Account = {
+  id: string
+  /** Phần trước @ của email đăng nhập. */
+  label: string
+  used: number
+  resetsAt: string
+  /** 1% hạn mức tuần ≈ bao nhiêu token. */
+  perPct: number | null
+  at: number
+}
+
 export type VideoView = {
   at: number
   live: VideoNow[]
-  week: { used: number; resetsAt: string } | null
-  weekTokens: number
+  weeks: { id: string; label: string; isCurrent: boolean; used: number; resetsAt: string }[]
   avg: { count: number; ms: number; tokens: number; pct: number | null } | null
-  /** Còn đủ khoảng bao nhiêu video trong tuần. */
+  /** Gộp mọi tài khoản: còn đủ khoảng bao nhiêu video. */
   left: number | null
 }
 
