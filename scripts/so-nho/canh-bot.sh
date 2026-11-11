@@ -50,13 +50,17 @@ tat_bot() { # tắt mọi phiên bot (kể cả phiên thừa) và máy chủ Te
 mo_bot() { # $1 lý do
   echo "$(date +%s)" >> "$TT/lan-mo"
   screen -dmS "$TEN" -h 2000 bash -c "cd '$DATA' && TELEGRAM_STATE_DIR=$KENH MCP_TIMEOUT=120000 ENABLE_TOOL_SEARCH=false ENABLE_CLAUDEAI_MCP_SERVERS=false CLAUDE_CODE_DISABLE_AUTO_MEMORY=1 exec claude --channels plugin:telegram@claude-plugins-official --permission-mode dontAsk --model haiku"
-  date +%F > "$TT/mo-ngay"; echo "$TK" > "$TT/tai-khoan"; date +%s > "$TT/mo-luc"; rm -f "$TT/ban-tu" "$TT/mat-mang-tu"
+  date +%F > "$TT/mo-ngay"; echo "$TK" > "$TT/tai-khoan"; date +%s > "$TT/mo-luc"; rm -f "$TT/ban-tu" "$TT/mat-mang-tu" "$TT/noi-lai"
   ghi "mo phien bot ($1)"
   # Mở lại liên tục (>4 lần trong 30 phút) là có lỗi không tự sửa được.
   local gan=$(awk -v t=$(( $(date +%s) - 1800 )) '$1>t' "$TT/lan-mo" | wc -l | tr -d ' ')
   [ "$gan" -gt 4 ] && canh_bao mo-lai 3600 "đã tự mở lại $gan lần trong 30 phút (lý do cuối: $1). Cần xem lại: screen -r so-nho, nhật ký $LOG."
-  sleep 25; gui "[KHOI-DONG] Phiên mới. Đọc lướt nhom.md, không gửi gì."
+  sleep 25; [ -z "$(may_chu)" ] && { ghi "mo phien chua co may chu, noi lai"; noi_lai; sleep 10; }
+  gui "[KHOI-DONG] Phiên mới. Đọc lướt nhom.md, không gửi gì."
 }
+noi_lai() { # nối lại máy chủ Telegram trong phiên (Claude đôi khi bỏ qua bước bật máy chủ lúc mở phiên)
+  screen -S "$(sid)" -p 0 -X stuff "/mcp reconnect plugin:telegram:telegram"; sleep 1
+  screen -S "$(sid)" -p 0 -X stuff $'\033'; sleep 0.5; screen -S "$(sid)" -p 0 -X stuff $'\r'; }
 co_mang() { curl -s -m 8 -o /dev/null https://api.telegram.org; }
 noi_telegram() { lsof -nP -a -p "$1" -iTCP -sTCP:ESTABLISHED 2>/dev/null | grep -q ':443'; }
 
@@ -83,12 +87,14 @@ while true; do
     tat_bot; mo_bot "doi tai khoan"
   elif [ "$GIO" -ge 4 ] && [ "$(cat "$TT/mo-ngay" 2>/dev/null)" != "$NGAY" ]; then
     tat_bot; mo_bot "lam moi hang ngay"
-  elif [ "$(tuoi_phien)" -gt 120 ]; then
+  elif [ "$(tuoi_phien)" -gt 40 ]; then
     MC=$(may_chu)
     MH=$(man_hinh)
     if [ -z "$MC" ]; then
-      # 2. Máy chủ Telegram chết (hỏng lúc mở, bị phiên khác giành, 409 kéo dài).
-      tat_bot; mo_bot "khong co may chu Telegram"
+      # 2. Máy chủ Telegram không chạy (Claude bỏ qua lúc mở phiên, bị giành, 409 kéo dài): gõ /mcp reconnect, 3 lần không được thì mở lại phiên.
+      LAN=$(( $(cat "$TT/noi-lai" 2>/dev/null || echo 0) + 1 ))
+      if [ "$LAN" -le 3 ]; then echo "$LAN" > "$TT/noi-lai"; ghi "noi lai Telegram lan $LAN"; noi_lai
+      else rm -f "$TT/noi-lai"; tat_bot; mo_bot "khong co may chu Telegram"; fi
     elif ! noi_telegram "$MC"; then
       # 3. Máy chủ còn nhưng không giữ kết nối tới Telegram.
       [ -f "$TT/mat-mang-tu" ] || echo "$BAY" > "$TT/mat-mang-tu"
@@ -100,7 +106,7 @@ while true; do
         [ "$MAT" -gt 1800 ] && canh_bao mat-mang 7200 "Mac mất mạng hơn 30 phút. Có mạng lại bot tự nối, tin nhắn trong lúc mất mạng vẫn được nhận sau."
       fi
     else
-      rm -f "$TT/mat-mang-tu"
+      rm -f "$TT/mat-mang-tu" "$TT/noi-lai"
       # 4. Hết hạn mức gói Claude: báo David một lần mỗi 3 giờ.
       if echo "$MH" | grep -qiE "usage limit|limit reached|hit your limit|reached your|out of (extra )?usage"; then
         canh_bao han-muc 10800 "gói Claude đã hết hạn mức, bot tạm không trả lời được. Hạn mức mở lại theo giờ ghi trên màn hình Claude; tin nhắn vẫn được giữ."
