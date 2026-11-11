@@ -30,7 +30,7 @@ caffeinate -is -w $$ &
 # Tên "so-nho" là đầu của "so-nho-canh" nên screen -S "so-nho" bị nhầm: luôn gọi phiên bot bằng mã đủ (12345.so-nho).
 sid() { screen -ls 2>/dev/null | awk -v t=".$TEN" '$1 ~ t"$" {print $1; exit}'; }
 dang_chay() { [ -n "$(sid)" ]; }
-may_chu() { pgrep -f "bun server.ts" | head -1; }
+may_chu() { pgrep -fx ".*/bun server\.ts" | head -1; }  # khớp đúng tiến trình, không khớp lệnh khác có chữ "bun server.ts"
 tai_khoan() { claude auth status 2>/dev/null | python3 -c "import json,sys;d=json.load(sys.stdin);print(d.get('email','') if d.get('loggedIn') else '')" 2>/dev/null; }
 tuoi_phien() { echo $(( $(date +%s) - $(cat "$TT/mo-luc" 2>/dev/null || echo 0) )); }
 gui() { # gõ một tin vào phiên bot; lỗi nếu bot chưa sẵn sàng

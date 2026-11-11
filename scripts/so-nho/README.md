@@ -27,7 +27,7 @@ David nhắn Telegram những gì nhớ, biết, cần làm. Phiên Claude Code 
 - `ProcessType` = `Interactive` trong plist: không có thì launchd hạ ưu tiên tiến trình nền, mỗi lần đọc/sửa file chậm 6–18 giây, một tin mất ~2 phút. `ENABLE_TOOL_SEARCH=false` nạp sẵn công cụ, bớt một vòng. `ackReaction` 👀 báo đã nhận tin ngay.
 - Chế độ `dontAsk`: không có ai bấm duyệt, việc ngoài quyền tự bị từ chối thay vì treo. Model Haiku cho nhanh nhất (đo 11/11: một lượt đọc 3 file + sửa 1 file mất 6 giây), tắt kết nối claude.ai và bộ nhớ tự động trong phiên bot. Bot không dùng Bash (lệnh shell treo hơn 1 phút trong phiên nền), lấy giờ từ `ts` của tin; nhắc đúng giờ do canh-bot.sh đọc `nhac-viec.md`, không dùng CronCreate (mất khi phiên mở lại).
 
-**Duyệt từ xa** ([duyet-tu-xa.py](duyet-tu-xa.py), hook `PermissionRequest` cho mọi phiên, cài bằng `scripts/cai-hook.py`): David vắng (Mac không có thao tác ≥2 phút, hoặc nhắn bot "tôi đi vắng") thì yêu cầu duyệt `🔐 [MÃ]` và câu hỏi nhiều lựa chọn `❓ [MÃ]` lên Telegram; David nhắn `ok MÃ` / `khong MÃ` / `tl MÃ 2`, bot ghi `.trang-thai/duyet/MÃ.tra`, hook trả quyết định cho phiên. 30 phút không trả lời → hộp thoại về màn hình Mac. Thử 11/11 bằng phiên CLI: duyệt Bash, trả lời câu hỏi, duyệt Write đều đạt.
+**Duyệt từ xa** ([duyet-tu-xa.py](duyet-tu-xa.py), hook `PermissionRequest` cho mọi phiên, cài bằng `scripts/cai-hook.py`): David vắng (Mac không có thao tác ≥2 phút, hoặc nhắn bot "tôi đi vắng") thì yêu cầu duyệt và câu hỏi lên Telegram **bằng tiếng Việt dễ hiểu**: xin phép thì Haiku (`claude -p`, bỏ biến môi trường `CLAUDE*` để không bị coi là phiên lồng) viết 3 dòng Việc muốn làm · Để làm gì · Rủi ro từ lời Claude vừa nói trong phiên; câu hỏi thì hiện đủ câu, lựa chọn và mô tả. David trả lời tự nhiên ("đồng ý", "không vì…", "2"), mã chỉ cần khi nhiều yêu cầu cùng lúc. Hook gõ `[CHO-DUYET]` vào phiên bot để bot biết; bot ghi `.trang-thai/duyet/MÃ.tra`, hook trả quyết định cho phiên. 30 phút không trả lời → hộp thoại về màn hình Mac. Thử 11/11 bằng phiên CLI: duyệt Bash, trả lời câu hỏi, duyệt Write đạt; "đồng ý" tới lúc lệnh chạy 8 giây.
 
 **Canh 24/7** (`canh-bot.sh`, mỗi phút; thử 11/11: tắt máy chủ Telegram → Claude tự bật lại tức thì; tắt phiên → mở lại sau 50 giây):
 
@@ -45,6 +45,7 @@ David nhắn Telegram những gì nhớ, biết, cần làm. Phiên Claude Code 
 - Nhắc đúng giờ và cảnh báo gửi thẳng qua Telegram (`bao-cao.sh --chi-gui`), không cần Claude chạy. Tóm tắt sáng chỉ đánh dấu khi gửi được, thử lại tới 12h.
 - Nhắc chỉ gửi mục tới giờ trong 60 phút qua, mỗi giờ hẹn một lần (bot sửa chữ dòng cũ không gửi lại), bỏ dòng `· (đã …)`. Giờ theo múi của Mac, canh-bot ghi `.trang-thai/mui-gio.md` (CLAUDE.md của bot nhập file này); đổi múi thì mở lại bot.
 - Gọi phiên bot bằng mã đủ (`12345.so-nho`): tên `so-nho` là đầu của `so-nho-canh` nên `screen -S so-nho` bị nhầm.
+- Nhận máy chủ Telegram bằng `pgrep -fx ".*/bun server\.ts"` (khớp trọn): `pgrep -f` khớp cả lệnh khác có chữ đó và báo nhầm.
 - PATH có `/usr/sbin` (lsof, taskpolicy). Không chạy `claude mcp list` với `TELEGRAM_STATE_DIR` của bot: nó giành kết nối.
 - Không tự sửa được: Mac gập máy hoặc rút điện (ngủ), Mac khởi động lại mà chưa đăng nhập macOS.
 - Sức khoẻ: `bash scripts/so-nho/viec-dang-chay.sh` (mục "Sức khoẻ bot"), hoặc hỏi bot "bot có ổn không".
