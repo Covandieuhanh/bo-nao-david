@@ -112,4 +112,4 @@ Ghi `<dự án>/phat-hanh/phat-hanh.md`:
   vào thư mục thử riêng `tap-thu-…`, chạy theo skill, cho David xem bản cuối, xong thì dọn. Đoạn ngắn trọn ý ra tốt thì video dài cũng tốt.
 - **Dựng ngay trong phiên Claude** theo skill (`dang-da-kenh` → skill dựng). Không đề xuất dựng app hay công cụ tự động dựng video
   trừ khi David yêu cầu, vì chạy app tốn token hơn.
-- Video đã chốt hoặc đã đăng: dọn file tạm theo khối 17 (`don_tap.py --xoa`, không hỏi lại; chỉ hỏi phần ⏸ đang dở).
+- Video đã chốt hoặc đã đăng: dọn file tạm rồi đưa tập lên Drive, xoá trên Mac theo khối 17 (`don_tap.py --xoa` → `luu_drive.sh`, không hỏi lại; chỉ hỏi phần ⏸ đang dở). Mac chỉ giữ việc đang làm: ghi nhớ `video-chuyen-qua-drive`.

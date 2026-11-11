@@ -83,7 +83,7 @@ khi không rõ file nào là mẫu. "Giống video trước" → lấy token pho
 | 9 | Tránh che người | [05](../khoi/05-tranh-che-nguoi/README.md) | `face_place.sh` |
 | 10 | Chụp thử → render → kiểm bản cuối (+ âm thanh) | [17](../khoi/17-dung-kiem-tra/README.md) · [09](../khoi/09-am-thanh/README.md) | `preview.mjs` → `render.mjs` → `render_preview.py` → `check_frames.sh` |
 | 11 | Phát hành: tiêu đề, khung bìa, màn kết/chương/teaser (YouTube video dài), thumbnail (ngang), số liệu | [15](../khoi/15-phat-hanh/README.md) · [08](../khoi/08-ket-thuc/README.md) · [14](../khoi/14-thumbnail/README.md) · [16](../khoi/16-so-lieu/README.md) | `teaser.py` · `chapters.py` · `thumbnail.sh` |
-| 12 | David chốt bản cuối → dọn file tạm luôn (`--xoa`, không hỏi; chỉ hỏi phần ⏸ đang dở) | [17](../khoi/17-dung-kiem-tra/README.md) | `don_tap.py` |
+| 12 | David chốt bản cuối → dọn file tạm luôn (`--xoa`, không hỏi; chỉ hỏi phần ⏸ đang dở) → đưa tập lên Drive, xoá trên Mac | [17](../khoi/17-dung-kiem-tra/README.md) | `don_tap.py` → `luu_drive.sh` (nền) |
 
 Bước đánh dấu *(bước nhẹ)*: nhắc đổi mô hình rẻ hơn theo `thoi-quen-lam-viec.md` mục 3.
 
@@ -144,7 +144,7 @@ Ghi góp ý đúng một chỗ: khối/skill bị ảnh hưởng + một dòng `
 5. Phụ đề đúng chữ, đủ dấu, không bị đè; âm lượng đạt chuẩn chung.
 6. Đã chụp kiểm đúng các mốc dễ lỗi trước khi giao.
 7. Đủ gói phát hành (tiêu đề, khung bìa, thumbnail nếu ngang, mẫu số liệu); David không phải sửa lại vì trái luật đã chốt.
-8. Sau khi David chốt: đã chạy `don_tap.py --xoa`, file tạm đã vào Thùng rác; phần ⏸ (đang dở) đã hỏi David.
+8. Sau khi David chốt: đã chạy `don_tap.py --xoa` rồi `luu_drive.sh`; tập đã lên Drive `Sao-luu-mac/Movies`, đã xoá trên Mac, đã ghi loại vào `dang-lam/kho-drive.md`; phần ⏸ (đang dở) đã hỏi David.
 
 ## Tài liệu kèm (chỉ đọc khi bước cần, cân nhắc đổi luật hoặc gỡ lỗi)
 

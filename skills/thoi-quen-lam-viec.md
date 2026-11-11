@@ -63,6 +63,8 @@ Mục tiêu của David: **đưa tài nguyên vào, nhận kết quả**. Các l
 - **Đo chồng chéo** sau mỗi việc có sửa bản luật: `python3 -I skills/tai-ban/do_chong_cheo.py`. Báo "NÊN TÁI BẢN TOÀN BỘ" → nhắc
   David một dòng; David đồng ý thì tái bản cả bộ não một đợt (skill `tai-ban`).
 - **Cập nhật file theo dõi** (`dang-lam/…`, `TRANG-THAI-HIEN-TAI.md`) khi xong một đợt việc.
+- **Giữ Mac nhẹ:** Mac chỉ giữ việc đang làm. Xong việc thì đưa việc của David (video gốc, thành quả video) lên Drive rồi xoá trên Mac
+  (video: `don_tap.py --xoa` → `luu_drive.sh`); file tải về, dữ liệu app, đồ cá nhân không đồng bộ, muốn xoá thì hỏi trước. Ghi nhớ `video-chuyen-qua-drive`.
 - **Đẩy GitHub ngay** khi có thay đổi về skill hoặc não: `bash scripts/sync.sh --push` (`AGENTS.md` luật 6).
 
 ## 5. Luôn đi tới mục tiêu, giữ phiên gọn

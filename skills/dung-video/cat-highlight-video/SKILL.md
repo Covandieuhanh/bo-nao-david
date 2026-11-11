@@ -193,7 +193,7 @@ $SKILL/assets/music/               # soi-*.mp3 · lang-*.mp3 — kho nhạc kên
 5. Phụ đề cụm ~5–8 chữ (tối đa theo hồ sơ `phu_de.ngan_max_chu`) không chồng chữ motion graphic; không thanh thời gian, không thẻ cuối.
 6. Nhạc từ kho kênh, thấp hơn giọng ~23 dB.
 7. Có dang-bai.md (lịch đăng, mốc bìa, mô tả, bình luận ghim) + so-lieu.md; David không phải sửa lại vì trái luật đã chốt.
-8. David chốt cả tập → dọn file tạm luôn bằng `don_tap.py --xoa` (khối 17), không hỏi lại; chỉ hỏi phần ⏸ đang dở.
+8. David chốt cả tập → dọn file tạm luôn bằng `don_tap.py --xoa` rồi `luu_drive.sh` lên Drive (khối 17), không hỏi lại; chỉ hỏi phần ⏸ đang dở.
 
 ## Tài liệu kèm (chỉ đọc khi bước cần, cân nhắc đổi luật hoặc gỡ lỗi)
 - `references/changelog.md` — quyết định theo ngày + lý do.

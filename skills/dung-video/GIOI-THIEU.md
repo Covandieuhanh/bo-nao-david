@@ -17,7 +17,7 @@ Mọi thứ của một tập nằm chung `~/Movies/tap-<tên>/` (xem `video-sty
 `2-ban-dai/video-final.mp4`, highlight: chọn câu ở `3-highlight/`, bản cuối mỗi clip ở `3-highlight/clip-A/`, `clip-B/`…; vlog ở
 `~/Movies/vlog/<tên>/`. Bản dài và highlight của cùng tập phải dùng **cùng một `<tên>`**. Tiêu đề + thumbnail ở `phat-hanh/` của dự
 án. Muốn thêm thì nói kèm: "xuất ngang/dọc", "không dùng ảnh", "thêm ảnh", "giữ ngập ngừng". Không làm bản cho CapCut/DaVinci; David
-chốt bản cuối thì dọn file tạm (`don_tap.py`, khối 17).
+chốt bản cuối thì dọn file tạm rồi đưa tập lên Drive, xoá trên Mac (`don_tap.py` → `luu_drive.sh`, khối 17).
 
 ## Kiến trúc — sửa đúng một chỗ, không viết lại khung
 

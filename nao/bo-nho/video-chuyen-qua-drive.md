@@ -10,7 +10,7 @@ metadata:
 
 **Drive chỉ giữ việc của David:** bộ não (luật, ghi nhớ, skill, làm việc với Claude), video gốc của từng video đang làm, thành quả
 video (bản cuối đạt hay không, kịch bản, phụ đề, bài đăng). File tải về, dữ liệu app, đồ cá nhân không đồng bộ lên Drive.
-**Mac chỉ giữ việc đang làm:** bắt đầu một video thì chép gốc lên `Video-goc/<tập>/`; xong tập thì tải dự án (bỏ file tạm) lên
+**Mac chỉ giữ việc đang làm:** bắt đầu một video thì chép gốc lên `Video-goc/<tập>/` (nếu David gửi qua chat/Downloads); xong tập thì `don_tap.py --xoa` → `luu_drive.sh` tải dự án (bỏ file tạm, bỏ gốc đã có) lên
 `Sao-luu-mac/Movies/<tập>/`, kiểm đã lên mây, xoá trên Mac, ghi loại vào [kho-drive.md](../../dang-lam/kho-drive.md).
 **Xoá:** việc của David thì chép lên Drive và kiểm đã lên mây trước; thứ khác (app, dữ liệu app, file tải về, đồ cá nhân) thì liệt kê
 và hỏi David trước khi xoá hẳn; chỉ xoá thẳng bộ nhớ đệm và file tạm dựng lại được.

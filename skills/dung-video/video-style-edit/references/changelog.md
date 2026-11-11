@@ -1,5 +1,8 @@
 # Sổ thay đổi — video-style-edit (quyết định của người dùng + lý do)
 
+
+## 11/11/2026: xong tập thì lên Drive, xoá trên Mac
+- David: "máy mac này chỉ còn đóng mỗi vai trò là khi đang thực thi cái gì thì có dữ liệu và tài nguyên của cái đó thôi"; "nhớ lưu lại để lần sau tự động làm việc cho gọn và nhẹ máy mac". Lý do: Mac 228 GB đầy. `don_tap.py --xoa` xoá hẳn file tạm (bỏ Thùng rác), rồi `luu_drive.sh` (mới, kèm `drive_upcheck.swift`, `drive_evict.swift`) đưa tập lên Drive `Sao-luu-mac/Movies`, chờ lên mây, so khớp, giải phóng cache Drive, xoá trên Mac. Sửa SKILL bước 12 + Xong khi 8, khối 17, luat-chung 8, cat-highlight, podcast, GIOI-THIEU.
 ## Tái bản 2 — 10/11/2026: bản luật viết lại từ bảng dang-lam/tai-ban-2-video.md
 - Nhà luật bỏ phóng xen kẽ ở mối cắt là luat-chung mục 2 (kèm lý do); khối 02, ho-so/highlight.md, cat-highlight luật 8 trỏ về đó. luat-chung mục 8 trỏ thói quen chung (hỏi, lệnh nền, mật khẩu, báo cáo), chỉ giữ phần riêng video. Bỏ câu chép ở gotchas, dang-da-kenh; sửa đường trỏ "hình của chính video" về khối 14. Viết lại 6 câu máy đo bắt nhầm ("thay cho", "THAY", tên file có ngày).
 

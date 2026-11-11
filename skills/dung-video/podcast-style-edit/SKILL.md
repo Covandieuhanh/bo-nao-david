@@ -34,7 +34,7 @@ Luật chung video ở `../luat-chung.md` (chữ nguyên văn, không cắt vide
 - **Thanh thời gian** ở đáy vùng an toàn (đã chạy · "còn m:ss") suốt video, trên mọi cảnh — trừ podcast dọc trích ngắn: không thanh, không thẻ cuối (`thu-vien-hinh/nhan-dien-chung.md` mục 1).
 - **Màn chốt** `cta` cuối video: ô câu chốt giữa sân khấu = **nguyên văn câu David nói cuối tập** (luat-chung 1). "Vấn đề / Kết quả"
   chỉ ở bài đăng; "gỡ" chỉ lên video khi David nói trong tập.
-- Không làm bản cho app chỉnh sửa (CapCut/DaVinci); dọn file tạm sau khi David chốt (`don_tap.py`, khối 17).
+- Không làm bản cho app chỉnh sửa (CapCut/DaVinci); dọn file tạm rồi đưa tập lên Drive sau khi David chốt (`don_tap.py` → `luu_drive.sh`, khối 17).
 - **Học nhịp từ 50 video Hieu Nguyen** (`references/hoc-tu-hieu-nguyen-50.md` — học nhịp & cách trình bày; lời là của David, không
   thêm/khuôn lời):
   - **Mật độ hình:** hình phủ **khoảng 30% thời lượng** (`phu_hinh_muc_tieu`), không cố định: đoạn khó hiểu hoặc quan trọng dày

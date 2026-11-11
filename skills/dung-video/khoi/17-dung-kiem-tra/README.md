@@ -7,7 +7,7 @@
 **Sửa khối này → chạy lại:** —
 
 **File thật (code, một bản duy nhất):**
-- `video-style-edit/scripts/{safe_guide.py,composite_stills.sh,check_frames.sh,render_preview.py,don_tap.py}`
+- `video-style-edit/scripts/{safe_guide.py,composite_stills.sh,check_frames.sh,render_preview.py,don_tap.py,luu_drive.sh}`
 - `…/remotion-template/{preview.mjs,render.mjs}`
 - `…/montage-template/{stills.mjs,render-show.mjs}`
 - `video-style-edit/references/gotchas.md`
@@ -71,17 +71,19 @@ Claude tự làm, hai lần: sau bước chụp thử và sau bản cuối. Khô
    đỉnh có phải chỗ đổi hình lớn nhất không · đoạn trước đỉnh có lặng hơn không · màn cuối có khép lại (không tắt dần) không.
 4. Báo cáo David chỉ thêm một dòng: "Cảm nhận: khớp N/M đoạn; đã sửa <đoạn>".
 
-## Dọn file tạm khi David chốt bản cuối
+## Dọn file tạm và đưa tập lên Drive khi David chốt bản cuối
 
 Không dọn ngay lúc render xong, mà dọn khi David nói "chốt" hoặc khi video đã đăng, không hỏi lại David. Nếu tập còn cắt highlight thì dọn sau khi đã có clip, vì dọn xong thì không còn `davinci/media/video_goc.mp4` để cắt.
 ```bash
 python3 -I $SKILL/scripts/don_tap.py --xoa <dự án>    # David chốt → chạy thẳng, KHÔNG gửi danh sách hỏi lại
 python3 -I $SKILL/scripts/don_tap.py <dự án>          # chỉ liệt kê, khi cần xem trước
+zsh $SKILL/scripts/luu_drive.sh <dự án>               # chạy nền: lên Drive Sao-luu-mac/Movies/<tập>, kiểm khớp, xoá trên Mac
 ```
 `<dự án>` = `~/Movies/tap-<tên>` hoặc `~/Movies/vlog/<tên>`. Chỉ hỏi David khi script báo **⏸** — việc đang dở: tiến trình đang chạy
 trong dự án (thường là phiên khác), file kịch bản sửa sau bản cuối mà chưa render lại, hoặc chưa có `video-final.mp4`. Phần ⏸ để
-nguyên, phần còn lại vẫn dọn. Báo David một dòng: đã giải phóng bao nhiêu, Thùng rác ở đâu, phần nào bỏ qua và vì sao.
-- **Giữ:** `1-goc/` · `video-final*.mp4` ở gốc mỗi dự án · `phat-hanh/` · mọi file chữ.
-- **Xoá hẳn:** `node_modules` · `.remotion` · `.cache`.
-- **Đưa vào Thùng rác** (David tự đổ): mọi file hình, tiếng, video còn lại.
+nguyên, phần còn lại vẫn dọn; tập có ⏸ chưa đưa lên Drive. Báo David một dòng: đã giải phóng bao nhiêu, đã lên Drive chưa, phần nào bỏ qua và vì sao.
+- **Giữ (và đưa lên Drive):** `1-goc/` · `video-final*.mp4` ở gốc mỗi dự án · `phat-hanh/` · mọi file chữ.
+- **Xoá hẳn:** `node_modules` · `.remotion` · `.cache` · mọi file hình, tiếng, video tạm còn lại (dựng lại được từ gốc + kịch bản).
+- `luu_drive.sh` chỉ xoá tập trên Mac khi mọi file đã lên mây và khớp; lỗi thì giữ bản Mac. Xong thì ghi loại tập (đạt · chờ duyệt ·
+  không đạt · thử) vào `dang-lam/kho-drive.md`.
 - Dự án chưa có bản cuối thì script tự bỏ qua. Không có bản cho app chỉnh sửa (CapCut/DaVinci).
