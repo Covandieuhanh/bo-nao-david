@@ -14,20 +14,14 @@
       "Read(~/.claude/channels/so-nho/access.json)",
       "Glob",
       "Grep",
-      "Bash(date:*)",
-      "Bash(ls:*)",
-      "Bash(mkdir -p:*)",
-      "mcp__plugin_telegram_telegram",
-      "Bash(cat:*)",
-      "Bash(date *)"
+      "mcp__plugin_telegram_telegram"
     ],
     "deny": [
-      "Bash(rm:*)",
-      "Bash(mv:*)",
-      "Bash(curl:*)",
-      "Bash(git:*)",
+      "Bash",
       "WebFetch",
-      "Edit(~/.claude/**)"
+      "Edit(~/.claude/**)",
+      "CronCreate",
+      "ScheduleWakeup"
     ]
   }
 }

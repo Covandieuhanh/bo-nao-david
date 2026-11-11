@@ -16,6 +16,7 @@ tao lich-hen.md "# Lịch/hẹn"
 tao y-tuong.md "# Ý tưởng"
 tao nguoi.md "# Người"
 tao kien-thuc.md "# Kiến thức"
+tao nhac-viec.md "# Nhắc đúng giờ (giờ Đức)"
 tao nhom.md "# Các nhóm của Sổ nhớ
 
 | File | Nhóm |
@@ -26,6 +27,7 @@ tao nhom.md "# Các nhóm của Sổ nhớ
 | nguoi.md | Người |
 | kien-thuc.md | Kiến thức |
 | nhat-ky/<YYYY-MM>.md | Nhật ký |
+| nhac-viec.md | Nhắc đúng giờ |
 | hop-thu/<YYYY-MM>.md | Nguyên văn mọi tin |"
 
 # Tin thư mục để phiên bot không hỏi lúc mở.

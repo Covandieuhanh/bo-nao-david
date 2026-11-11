@@ -60,6 +60,15 @@ while true; do
     gui "[TOM-TAT-SANG] Gửi David tóm tắt hôm nay $NGAY."; echo "$NGAY" > "$TT/tom-tat"; ghi "gui tom tat"
   fi
 
+  # Nhắc đúng giờ: dòng "- YYYY-MM-DD HH:MM · nội dung" trong nhac-viec.md, tới giờ thì gửi một lần.
+  BAY_GIO=$(date "+%Y-%m-%d %H:%M")
+  grep -E '^- [0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2} · ' "$DATA/nhac-viec.md" 2>/dev/null | while IFS= read -r dong; do
+    LUC="${dong:2:16}"
+    if [[ ! "$LUC" > "$BAY_GIO" ]] && ! grep -qxF -- "$dong" "$TT/da-nhac" 2>/dev/null; then
+      echo "$dong" >> "$TT/da-nhac"; gui "[NHAC-VIEC] ${dong:21}"; ghi "nhac $LUC"; sleep 5
+    fi
+  done
+
   if [ "$GIO" -ge 3 ] && [ -d "$(dirname "$DRIVE")" ] && [ "$(cat "$TT/sao-luu" 2>/dev/null)" != "$NGAY" ]; then
     mkdir -p "$DRIVE" && rsync -a --exclude ".trang-thai" --exclude ".claude" "$DATA/" "$DRIVE/" \
       && echo "$NGAY" > "$TT/sao-luu" && ghi "sao luu Drive"
