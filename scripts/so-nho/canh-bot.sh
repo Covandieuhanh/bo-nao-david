@@ -42,7 +42,7 @@ gui_thang() { bash "$GOC/bao-cao.sh" --chi-gui "$1" >/dev/null 2>&1; } # gửi D
 canh_bao() { # $1 khoá, $2 số giây giữa hai lần báo, $3 nội dung
   local f="$TT/bao-$1"
   [ $(( $(date +%s) - $(cat "$f" 2>/dev/null || echo 0) )) -lt "$2" ] && return
-  gui_thang "⚠️ Bot Sổ nhớ: $3" && date +%s > "$f" && ghi "canh bao $1"
+  gui_thang "⚠️ Máy Mac: $3" && date +%s > "$f" && ghi "canh bao $1"
 }
 tat_bot() { # tắt mọi phiên bot (kể cả phiên thừa) và máy chủ Telegram còn sót
   screen -ls 2>/dev/null | awk -v t=".$TEN" '$1 ~ t"$" {print $1}' | while read -r id; do screen -S "$id" -X quit; done
@@ -70,6 +70,12 @@ while true; do
   [ "$(wc -l < "$LOG" 2>/dev/null || echo 0)" -gt 3000 ] && tail -1500 "$LOG" > "$LOG.tmp" && mv "$LOG.tmp" "$LOG"
   [ -f "$TT/lan-mo" ] && tail -50 "$TT/lan-mo" > "$TT/lan-mo.tmp" && mv "$TT/lan-mo.tmp" "$TT/lan-mo"
 
+  # Bot chính là Hermes (.trang-thai/bot-chinh ghi "hermes"): không giữ phiên bot Sổ nhớ nữa, chỉ còn nhắc giờ, sao lưu, đóng phiên việc.
+  # Tóm tắt sáng và nhắc có thẻ máy ([HOI-THOI-QUEN]…) là việc của lịch Hermes. Quay về bot cũ: xoá file bot-chinh.
+  HERMES=0; [ "$(cat "$TT/bot-chinh" 2>/dev/null)" = "hermes" ] && HERMES=1
+  if [ "$HERMES" = 1 ]; then
+    dang_chay && { tat_bot; ghi "bot chinh la Hermes: tat phien bot So nho"; }
+  else
   if [ ! -s "$TOKEN_FILE" ]; then ghi "chua co token"; sleep 300; continue; fi
   TK=$(tai_khoan)
   if [ -z "$TK" ]; then
@@ -126,9 +132,10 @@ while true; do
       fi
     fi
   fi
+  fi  # hết phần giữ phiên bot Sổ nhớ
 
   # Tóm tắt sáng: chỉ đánh dấu đã gửi khi gửi được (bot chưa sẵn sàng thì thử lại phút sau, tới 12h).
-  if [ "$GIO" -ge 7 ] && [ "$GIO" -lt 12 ] && [ "$(cat "$TT/tom-tat" 2>/dev/null)" != "$NGAY" ]; then
+  if [ "$HERMES" != 1 ] && [ "$GIO" -ge 7 ] && [ "$GIO" -lt 12 ] && [ "$(cat "$TT/tom-tat" 2>/dev/null)" != "$NGAY" ]; then
     HOM_QUA=$(grep -c "^$(date -v-1d +%F).*mo phien bot" "$LOG")
     gui "[TOM-TAT-SANG] Gửi David tóm tắt hôm nay $NGAY. Cuối tin thêm một dòng: bot tự mở lại $HOM_QUA lần hôm qua." \
       && echo "$NGAY" > "$TT/tom-tat" && ghi "gui tom tat"
@@ -146,6 +153,10 @@ while true; do
   # Nhắc lặp: "- mỗi ngày / mỗi thứ 2, thứ 5 / mỗi ngày 15 HH:MM · nội dung" (nhac-lap.py tính lần tới giờ).
   # Dòng kết bằng "+ việc chưa xong" thì tin kèm việc [ ] trong viec-can-lam.md (kể cả việc không hạn).
   python3 -I "$GOC/nhac-lap.py" "$DATA/nhac-viec.md" "$TT/da-nhac-lap" "$DATA/viec-can-lam.md" 2>>"$LOG" | while IFS=$'\t' read -r khoa nd; do
+    if [[ "$nd" == \[* ]] && [ "$HERMES" = 1 ]; then
+      # Bot chính là Hermes: nhắc có thẻ máy do lịch Hermes tự soạn và gửi, ở đây chỉ đánh dấu để không gửi trùng.
+      echo "$khoa" >> "$TT/da-nhac-lap"; continue
+    fi
     if [[ "$nd" == \[* ]]; then
       # Nội dung bắt đầu bằng thẻ máy (vd [HOI-THOI-QUEN]): gõ vào phiên bot để bot đọc sổ rồi tự soạn tin.
       # Bot chưa sẵn sàng thì gửi thẳng chữ cố định (bỏ thẻ) để David vẫn được nhắc.

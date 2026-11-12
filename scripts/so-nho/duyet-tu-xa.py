@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Hook PermissionRequest cho mọi phiên Claude Code trên Mac: David vắng thì gửi yêu cầu duyệt (hoặc câu hỏi nhiều lựa chọn)
-lên Telegram qua bot Sổ nhớ, chờ David trả lời qua bot, rồi trả quyết định cho phiên.
+lên Telegram qua bot chính (Hermes hoặc Sổ nhớ, theo .trang-thai/bot-chinh), chờ David trả lời qua bot, rồi trả quyết định cho phiên.
 - David "vắng" khi: .trang-thai/vang ghi "1" (David nhắn bot "tôi đi vắng"; "tôi về" thì bot ghi "0"), hoặc Mac không có thao tác chuột/phím ≥ 120 giây.
 - David đang ngồi máy, hoặc không trả lời trong 30 phút: không quyết, hộp thoại hiện trên máy như thường.
 - Bot ghi câu trả lời vào .trang-thai/duyet/<mã>.tra: "ok" · "khong" · hoặc chữ trả lời câu hỏi.
@@ -94,8 +94,18 @@ Lời Claude vừa nói trong phiên: {boi_canh[-1000:]}"""
     return du_phong
 
 
+def bot_chinh():
+    """"hermes" khi .trang-thai/bot-chinh ghi vậy (Hermes nhận trả lời: đọc duyet/<mã>.json, ghi <mã>.tra); không thì "so-nho"."""
+    try:
+        return open(os.path.join(TT, "bot-chinh")).read().strip() or "so-nho"
+    except Exception:
+        return "so-nho"
+
+
 def bao_bot(chu):
-    """Gõ một dòng vào phiên bot (screen so-nho) để bot biết đang có yêu cầu chờ."""
+    """Gõ một dòng vào phiên bot (screen so-nho) để bot biết đang có yêu cầu chờ. Hermes tự xem thư mục duyet/ nên không cần."""
+    if bot_chinh() == "hermes":
+        return
     try:
         man = subprocess.run(["screen", "-ls"], capture_output=True, text=True, timeout=5).stdout
         sid = next((w for w in man.split() if w.endswith(".so-nho")), None)
