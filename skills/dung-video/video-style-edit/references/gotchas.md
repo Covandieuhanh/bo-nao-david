@@ -224,3 +224,15 @@ người nói chưa từng chạy với dấu góc. Không do bài học video m
 | Theo dõi việc nền bằng cỡ file thay vì thời gian dự kiến | không thấy lệnh chạy quá lâu | quá 1,5 lần dự kiến → kiểm ngay (SKILL "Nhịp làm") |
 | `loi_ao.py` báo nhầm câu chen 0,4 s không có trong words.srt | phải chạy tay phần sau của clean_analyze | **chưa sửa** — gặp lại thì bỏ dòng đó, ghi `check/loi-skill.md` |
 
+
+## Khung chủ thể (khung.js) + cảnh có sẵn
+- `nhan` có chữ / biểu tượng: Nhan.jsx đặt cạnh mặt trong khung gốc → với khung chủ thể chữ rơi vào khe giữa khung và cột, bị cắt
+  (tap-ban-ca-ngay). `bocuc the-canh` không có chỗ → tự chuyển `o-nguoi` với thẻ trống. Dùng cảnh tự vẽ đặt vào cột trống: chữ nhấn
+  `rieng/ChuCot.jsx`, ảnh thật `rieng/AnhCanh.jsx` (cùng công thức bangO) — mẫu ở `~/Movies/tap-ban-ca-ngay/2-ban-dai/motion/src/rieng/`.
+- `montage` khung ngang (MontageL) tràn ảnh xuống vùng phụ đề / vùng đỏ, mất nhãn → không dùng; nhiều ảnh nối nhau dùng `AnhCanh` (items).
+- Máy soát báo P2 "cùng kiểu ve liền nhau" cả khi hai component khác nhau (ảnh / chữ) — ghi lý do ở ke-hoach-canh.md.
+
+## Ảnh khi Openverse sập
+- Wikimedia tìm theo tên file: từ khoá đời thường dài ("man working on computer late at night") hay rỗng / 429; dùng cụm ngắn kiểu tên
+  file ("alarm clock", "stack of books", "wall calendar", "brain anatomy model") và chạy lại riêng các key lỗi.
+- Soát lại tên ảnh trong credits.tsv sau khi tải (vd. "office dog…" — ảnh tối có con chó) và logo hãng ở chính giữa (vô-lăng Mercedes) → đổi.
