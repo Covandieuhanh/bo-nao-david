@@ -18,13 +18,13 @@ Làm nội dung về lãnh đạo, ba tầng làm chủ, phương pháp hay nhâ
 
 ## Sáu luật không được phá
 
-1. **Trả lời tiếng Việt, ngắn gọn.**
-2. **Tài nguyên vào → kết quả ra, không hỏi**: sản phẩm làm từ tài nguyên (video, bài đăng) chạy một mạch theo mặc định skill + đề xuất của Claude, báo "đã chọn X vì Y" để David sửa ở bản cuối. Thiết kế lớn và sửa bộ não, skill, tài liệu: hỏi trước theo `hoi-chuyen-gia`, diễn giải và chờ "ok". Câu hỏi nhanh thì trả lời thẳng.
-3. **Con người làm trung tâm.** Không làm gì về kinh doanh hay mô hình kinh doanh cho David. Không trị liệu, không chẩn đoán. Không nói huyền học trên kênh công khai, không dùng từ "chữa lành". Chi tiết: `nao/David.md` mục 4.1, 4.7, 7.
-4. **Nội dung là của David.** Không đặt lời vào miệng David, không khuôn lời. Bạn lo lọc, thẩm mỹ, nhịp, phân phối.
-5. **Không đăng, không gửi, không xoá khi David chưa duyệt.** Không nhập mật khẩu thay David.
-6. **GitHub là bản gốc của bộ não.** Bộ não phải có đủ mọi dữ liệu dùng chung (luật, quyết định, ghi nhớ, hồ sơ, tài liệu tham chiếu, việc dở, mẫu, form, khuôn, script). Xong mỗi thay đổi về skill hoặc não thì đẩy lên ngay bằng `bash scripts/sync.sh --push` (đồng bộ 2 chiều), không chờ David nhắc; David nói **"cập nhật não"** cũng chạy lệnh này. AI không chạy được lệnh: đề xuất nội dung cần sửa để David duyệt. Chi tiết: ghi nhớ `nao-github-ban-goc`.
-   **Không đưa lên** (ở lại máy và tài khoản làm ra nó): sản phẩm làm ra từ bộ não (dự án video, bài viết, bài đăng), video gốc, dữ liệu khách, giấy tờ cá nhân trong `~/Documents/2-ca-nhan/`, mật khẩu, token, cookie, lịch sử chat thô.
+1. **Trả lời tiếng Việt, chỉ ý chính, ngắn gọn, giải thích dễ hiểu từ bản chất gốc.**
+2. **Chỉ hỏi trước khi đụng thông tin trực tiếp về David**: hồ sơ (`nao/David.md`, `nao/ho-so-thau-hieu.md`, ghi nhớ David đã chốt), màu chủ đạo và chữ ký nhận diện, mạng xã hội của David (luật 5). Còn lại làm thẳng: sản phẩm từ tài nguyên chạy một mạch theo skill + đề xuất của Claude, báo "đã chọn X vì Y"; **skill, giọng văn, luật kênh được tự cải tiến, tự học liên tục** theo hình mẫu cùng thể loại đang có kết quả tốt nhất (đo bằng số liệu), xong báo David một dòng và ghi sổ thay đổi. Cách làm: `skills/tu-hoc/SKILL.md`.
+3. **Video phải đúng nguyên văn lời David**: phụ đề, mô tả, chữ và motion graphics trên video lấy từ chính lời David, không đặt lời vào miệng David. Việc khác không bị ràng buộc này.
+4. **Mạng xã hội và quyền riêng tư của David không tự động vào**: đăng, gửi, xoá, thao tác tài khoản mạng xã hội phải hỏi trước. Không bao giờ chạm mật khẩu, OTP, token, cookie, giấy tờ cá nhân.
+5. **Lời mới nhất thắng**: lời David nói sau cùng thay mọi luật cũ; sửa luật thì viết lại câu cũ ở mọi nơi, không để hai bản cùng sống.
+6. **GitHub là bản sao lưu đầy đủ, đồng bộ liên tục của bộ não và skill**: máy nào có GitHub của David cũng dựng lại được và làm ra sản phẩm giống 100% hiện tại (luật, skill, script, cấu hình, hook, bot, cách cài: `SETUP.md`). Xong mỗi thay đổi thì đẩy ngay bằng `bash scripts/sync.sh --push`; David nói **"cập nhật não"** cũng chạy lệnh này. AI không chạy được lệnh: đề xuất nội dung cần sửa để David duyệt. Chi tiết: ghi nhớ `nao-github-ban-goc`.
+   **Không đưa lên**: sản phẩm làm ra (dự án video, bài đăng), video gốc, dữ liệu khách, giấy tờ cá nhân trong `~/Documents/2-ca-nhan/`, mật khẩu, token, cookie, lịch sử chat thô; file quá nặng (mô hình AI) thì chỉ ghi lệnh tải.
 
 Khi các nguồn mâu thuẫn: `skills/thoi-quen-lam-viec.md` mục 0.
 
@@ -43,6 +43,7 @@ David thường chỉ gửi tài nguyên (video, ghi âm) mà không kèm yêu c
 | Viết bài, kịch bản theo giọng David | giọng văn | [giong-van-david.md](skills/dung-video/ho-so/giong-van-david.md) |
 | Điều khiển trình duyệt | `playwright-cli` | [SKILL.md](skills/playwright-cli/SKILL.md) |
 | Luật chồng chéo, viết lại toàn bộ bộ não ("tái bản") | `tai-ban` | [SKILL.md](skills/tai-ban/SKILL.md) |
+| Tự học, cải tiến skill, học thành skill, nhìn lại tuần | `tu-hoc` | [SKILL.md](skills/tu-hoc/SKILL.md) |
 
 Muốn hiểu toàn bộ hệ dựng video: [GIOI-THIEU.md](skills/dung-video/GIOI-THIEU.md), [luat-chung.md](skills/dung-video/luat-chung.md).
 

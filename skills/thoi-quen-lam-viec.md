@@ -6,7 +6,7 @@ File này giữ các thói quen **dùng chung cho mọi skill**. Luật riêng c
 
 ## 0. Khi hai điều ngược nhau
 1. **Chất lượng thắng tiết kiệm** ("kết quả hơn tốc độ"). Chỉ tiết kiệm ở chỗ không đổi kết quả.
-2. **Khi các nguồn mâu thuẫn: lời David vừa nói > bản luật (`nao/David.md`, skill) > ghi nhớ `nao/bo-nho/`.** Hai bản luật lệch
+2. **Khi các nguồn mâu thuẫn: lời David mới nhất > bản luật (`nao/David.md`, skill) > ghi nhớ `nao/bo-nho/`.** Hai bản luật lệch
    nhau thì bên có ngày chốt mới hơn (theo sổ: changelog, git) thắng. Chỗ lệch thường do một chỗ chưa được cập nhật, không phải ý David.
 3. Luật còn mơ hồ → xem **sản phẩm mới nhất David đã duyệt** làm chứng cứ, rồi hỏi nếu vẫn chưa rõ.
 
@@ -29,8 +29,9 @@ Mục tiêu của David: **đưa tài nguyên vào, nhận kết quả**. Các l
   để David sửa ở bản cuối.
 - **Yêu cầu của David làm được trong mặc định → giữ mặc định**, không đổi thứ khác để đáp ứng (vd. "tập trung vào điện thoại" ≠ đổi khung).
 - **Câu David không trả lời, "làm đi", "theo skill"** = theo mặc định của skill, phần chưa định thì theo đề xuất của Claude.
-- **Chỉ dừng hỏi khi:** đăng / gửi / xoá / mật khẩu (`AGENTS.md` luật 5) · tín hiệu nặng của `hoi-chuyen-gia` (mâu thuẫn luật, khó đảo
-  ngược, thiếu file / nguồn hỏng, hiểu được nhiều cách làm đổi hẳn kết quả) · thiết kế lớn và sửa bộ não, skill (vẫn diễn giải + chờ "ok").
+- **Chỉ dừng hỏi khi:** đăng / gửi / xoá trên mạng xã hội / mật khẩu (`AGENTS.md` luật 4) · tín hiệu nặng của `hoi-chuyen-gia` (mâu thuẫn luật, khó đảo
+  ngược, thiếu file / nguồn hỏng, hiểu được nhiều cách làm đổi hẳn kết quả) · sửa thông tin trực tiếp về David, màu chủ đạo, chữ ký
+  nhận diện (diễn giải + chờ "ok"). Skill, giọng văn, luật kênh: tự cải tiến theo `skills/tu-hoc`, báo một dòng.
 - Phần cứng của video: `dung-video/luat-chung.md` mục 8.
 
 ## 3. Trong lúc làm

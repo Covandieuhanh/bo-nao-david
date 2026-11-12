@@ -37,7 +37,7 @@ Nguồn phụ: bài viết chữ trên Facebook cá nhân. Fanpage chưa có bà
 4. **Giữ 1–2 cụm đặc trưng** của David mỗi bài ("thật sự là", "cứ vững tin", "đúng không?") — không nhồi.
 5. **Kết theo kiểu dẫn dắt của bài** (khối 08 / `kenh.json`): Không / Gợi mở → hỏi bình luận "**Vấn đề**" hoặc "**Kết quả**";
    Mời → "nhắn mình một chữ **'gỡ'**". Không nói giá, không gói, không hứa kết quả.
-6. **Lằn ranh** như khối 00 (không "chữa lành", huyền học, thuế/pháp lý, chẩn đoán, chuyện không ẩn danh, kinh doanh).
+6. **Lằn ranh** của kênh đang đăng, như khối 00 (không "chữa lành", huyền học, thuế/pháp lý, chẩn đoán, chuyện không ẩn danh, kinh doanh).
 7. **Emoji** tối đa 1–2 / bài, chỉ khi David dùng trong lời (vd. 🇻🇳). **Hashtag** 2–3 cụ thể, tiếng Việt không dấu (#lamchubanthan #quanlymoi).
 8. **Facebook cá nhân**: giọng đời thường hơn, có thể chỉ 1–2 câu + chia sẻ lại bài trang.
 

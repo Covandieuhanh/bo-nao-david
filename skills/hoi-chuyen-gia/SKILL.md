@@ -1,6 +1,6 @@
 ---
 name: hoi-chuyen-gia
-description: Luật hỏi của David — sản phẩm làm từ tài nguyên (video, bài đăng) thì KHÔNG hỏi, làm theo mặc định skill + đề xuất của Claude rồi báo lựa chọn; thiết kế lớn và sửa bộ não / skill / tài liệu thì Claude dừng lại, hỏi theo vòng từ góc nhìn chuyên gia thực chiến (nêu tên ngắn), mỗi câu 2–3 gợi ý có đề xuất đứng đầu; sự thật tự tra, quyết định David chốt; diễn giải lại ý hiểu và CHỜ David "ok" mới làm. Tự nhận diện lúc cần hỏi (6 tín hiệu), cả lúc bắt đầu lẫn giữa chừng. Dùng ở đầu mọi yêu cầu tạo/sửa, khi David nói "hỏi kỹ", "hỏi chuyên gia", "grill me", "/hoi-chuyen-gia", kể cả khi không nhắc. Không dùng cho câu hỏi nhanh, tra cứu, việc 1–2 bước.
+description: Luật hỏi của David — chỉ hỏi trước khi đụng thông tin trực tiếp về David (hồ sơ, màu chủ đạo + chữ ký nhận diện, mạng xã hội, quyền riêng tư) hoặc gặp tín hiệu nặng; còn lại (sản phẩm từ tài nguyên, sửa và cải tiến skill, giọng văn, luật kênh) làm thẳng rồi báo. Khi hỏi thì hỏi theo vòng từ góc nhìn chuyên gia thực chiến, mỗi câu 2–3 gợi ý có đề xuất đứng đầu; sự thật tự tra, quyết định David chốt; diễn giải lại và CHỜ David "ok". Tự nhận diện lúc cần hỏi (6 tín hiệu), cả lúc bắt đầu lẫn giữa chừng. Dùng khi sắp sửa hồ sơ David, khi David nói "hỏi kỹ", "hỏi chuyên gia", "grill me", "/hoi-chuyen-gia". Không dùng cho câu hỏi nhanh, tra cứu, việc 1–2 bước.
 ---
 
 # Hỏi chuyên gia trước khi làm
@@ -11,8 +11,9 @@ description: Luật hỏi của David — sản phẩm làm từ tài nguyên (v
 
 ## Khi nào áp dụng
 
-- **Áp (hỏi theo vòng, diễn giải, chờ "ok"):** thiết kế lớn (kế hoạch, chiến lược, skill hay quy trình mới) và sửa bộ não, skill,
-  tài liệu, code.
+- **Áp (hỏi theo vòng, diễn giải, chờ "ok"):** sửa thông tin trực tiếp về David (hồ sơ, định hướng, ghi nhớ David chốt), màu chủ đạo
+  và chữ ký nhận diện, việc trên mạng xã hội của David; thiết kế lớn đổi hướng đi của David (kế hoạch nghề, kênh mới).
+- **Không hỏi — tự cải tiến rồi báo một dòng:** skill, quy trình, giọng văn, luật kênh, script, code (`skills/tu-hoc`).
 - **Không hỏi — làm thẳng tới kết quả:** sản phẩm làm từ tài nguyên David đưa (video, highlight, podcast, bài đăng, bài viết). Điểm skill
   đã định thì theo skill; điểm chưa định Claude tự chọn; báo "đã chọn X vì Y" ở báo cáo cuối để David sửa ở bản cuối
   (`thoi-quen-lam-viec.md` mục 2). Giữa chừng chỉ dừng khi gặp tín hiệu nặng (dưới).

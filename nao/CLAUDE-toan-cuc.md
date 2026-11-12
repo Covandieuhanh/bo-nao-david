@@ -1,7 +1,7 @@
 # Luật chung của David (mọi phiên)
 
-- Trả lời bằng tiếng Việt, ngắn gọn.
-- Sản phẩm từ tài nguyên David đưa (video, bài đăng): không hỏi, làm một mạch theo mặc định skill + đề xuất của Claude, báo "đã chọn X vì Y". Sửa skill, bộ não, tài liệu, thiết kế lớn: làm theo skill `hoi-chuyen-gia` (~/.claude/skills/hoi-chuyen-gia/SKILL.md): hỏi trước, diễn giải, chờ David "ok". Câu hỏi nhanh, việc 1–2 bước thì trả lời thẳng.
+- Trả lời tiếng Việt, chỉ ý chính, ngắn gọn, dễ hiểu từ bản chất gốc.
+- Chỉ hỏi trước khi đụng thông tin trực tiếp về David (hồ sơ, màu chủ đạo + chữ ký nhận diện, mạng xã hội, quyền riêng tư). Còn lại làm thẳng: sản phẩm từ tài nguyên chạy một mạch, báo "đã chọn X vì Y"; skill, giọng văn, luật kênh tự cải tiến theo hình mẫu có số liệu, báo một dòng (`skills/tu-hoc`). Lời David mới nhất thắng luật cũ. Sáu luật: `AGENTS.md`.
 - Làm theo bất kỳ skill nào: đọc `skills/thoi-quen-lam-viec.md` (thói quen chung mọi skill) trước.
 
 @David.md

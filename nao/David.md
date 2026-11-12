@@ -11,7 +11,7 @@
 - **Tên:** Trần Đức Cường, dùng tên nghề **David Trần**. Nam, sinh 00:20 ngày 05/09/1995 tại Hưng Yên, Việt Nam.
 - **Vai trò:** "Nhà đào tạo thực hành": giúp người đi từ **làm giỏi** đến **dẫn đội làm được**.
   - Công khai là **trainer**; **coach** chỉ trong buổi riêng 1:1.
-  - **Lấy con người làm trung tâm.** Không làm gì liên quan đến kinh doanh hay mô hình kinh doanh.
+  - Từ 12/11/2026 làm **nhiều kênh, đa dạng nội dung** (David sẽ nói rõ từng kênh sau).
   - Đích xa: **truyền nghề**.
 - **Kinh nghiệm:** MC, hướng dẫn viên, spa/wellness/dịch vụ, công nghệ, đứng lớp.
 - **Thế mạnh tự nhận:** mạnh nhất về con người, lấy cá nhân làm trung tâm, định hướng cách họ tương tác với người khác và với công việc. Không mạnh kinh doanh.
@@ -28,7 +28,7 @@
 
 ## 3. Cách Claude cần làm việc với David
 
-Sáu luật nền (tiếng Việt ngắn gọn, tài nguyên vào → kết quả ra không hỏi / sửa bộ não thì hỏi trước, con người làm trung tâm, nội dung là của David, không đăng/gửi/xoá khi chưa duyệt, GitHub là bản gốc): `AGENTS.md`. Thói quen chung mọi việc: `skills/thoi-quen-lam-viec.md`. Thêm:
+Sáu luật nền (chỉ ý chính dễ hiểu · chỉ hỏi khi đụng thông tin về David, skill tự cải tiến · video đúng nguyên văn lời David · mạng xã hội và quyền riêng tư không tự động vào · lời mới nhất thắng · GitHub dựng lại được 100%): `AGENTS.md`. Thói quen chung mọi việc: `skills/thoi-quen-lam-viec.md`. Thêm:
 
 1. **Kế hoạch / lộ trình luôn chia 4 phần:** Mục tiêu · Kế hoạch · Quy trình (từng bước) · Thực thi (checklist chia càng nhỏ càng tốt để có mốc làm ngay).
 2. **Tài liệu nghiên cứu phải dịch đúng thuật ngữ chuyên ngành:** tên khung, quy trình, bước bằng tiếng Anh lấy **chính xác** như nguồn rồi dịch sang tiếng Việt. Mỗi thuật ngữ chỉ một bản dịch, dùng thống nhất.
@@ -39,8 +39,8 @@ Sáu luật nền (tiếng Việt ngắn gọn, tài nguyên vào → kết qu�
 ## 4. Định hướng nghề
 
 ### 4.1. Định hướng gốc
-- **Chỉ thiên về con người, lấy con người làm trung tâm.** Không còn làm gì liên quan đến kinh doanh hay mô hình kinh doanh: không "cơ sở vắng chủ", không gói doanh nghiệp, không mở sang L&D hay hợp đồng doanh nghiệp.
-- **Tệp chính:** **"người lần đầu dẫn người"** (quản lý trẻ, quản lý mới).
+- **Nhiều kênh, đa dạng nội dung** (David chốt 12/11/2026, bỏ giới hạn "chỉ con người, không kinh doanh"). Mỗi kênh có hồ sơ và lằn ranh riêng, David nói rõ từng kênh sau.
+- **Kênh trainer — tệp chính:** **"người lần đầu dẫn người"** (quản lý trẻ, quản lý mới).
 
 ### 4.2. Khung phương pháp: ba tầng làm chủ
 | Tầng | Nội dung |
@@ -76,7 +76,7 @@ Tìm hiểu → mời → phiếu đầu vào → thống nhất → làm trên 
 - Cần tìm: người giữ nhịp kênh video; về sau một người đồng giữ bức tranh tổng. Đã có người lập trình dựng hạ tầng online.
 - Để sau: tên kênh và câu giới thiệu.
 
-### 4.7. Lằn ranh nghề
+### 4.7. Lằn ranh nghề (kênh trainer)
 - Công khai là trainer, coach chỉ trong buổi riêng.
 - Không trị liệu, không chẩn đoán; chuyển người khủng hoảng tâm lý tới chuyên môn có cấp phép.
 - Video chỉ kể chuyện thật, ẩn danh; không nói huyền học; không dùng từ "chữa lành"; không tư vấn thuế/pháp lý.

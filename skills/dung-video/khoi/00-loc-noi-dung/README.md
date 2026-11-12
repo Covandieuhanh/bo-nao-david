@@ -47,7 +47,7 @@ Thực thi) → không bịa, báo "thiếu phần X" để David quyết nói b
 huống để đoạn đắt có giá trị. Video dài là bản gốc và để nguyên (luat-chung mục 2); video ngắn chỉ trích từ đó. Claude chỉ đọc lời chép, không
 cảm được giọng và sức nặng câu chuyện, nên không quyết đoạn nào "ít giá trị".
 
-## 3. Lằn ranh = CẢNH BÁO, David quyết (hồ sơ 4.7 + 7)
+## 3. Lằn ranh = CẢNH BÁO, David quyết (kênh trainer: hồ sơ 4.7 + 7; kênh khác theo hồ sơ kênh đó)
 Huyền học / số học / từ trường số / tâm linh dạng huyền học · chữ "chữa lành" · tư vấn thuế, pháp lý · trị liệu, chẩn đoán tâm lý ·
 chuyện người khác không ẩn danh · nhắc vai coach trên kênh công khai · kinh doanh, mô hình kinh doanh, hứa thu nhập · nói giá.
 Chạm → **luôn cảnh báo trong phiếu và báo cáo**: mốc giây, lời chạm, rủi ro. Mặc định **giữ lời, không tự cắt** (David có thể đã tự cân đối khi kể); David muốn cắt thì nói ở bản cuối. Ghi "đã cảnh báo" vào sổ; chữ đồ hoạ, tiêu đề, thumbnail, mô tả, clip ngắn vẫn không lấy nội dung đó.
