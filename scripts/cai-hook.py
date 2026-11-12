@@ -3,6 +3,7 @@
 - SessionEnd: đẩy thay đổi lên (hook-sync.sh, chạy nền)
 - PostToolUse + Stop: hộp thư phiên, lời David qua Telegram vào đúng phiên (scripts/so-nho/hop-thu-phien.py)
 - PreToolUse: cổng duyệt việc rủi ro cho phiên việc toàn quyền (scripts/so-nho/cong-duyet.py)
+- SessionEnd (thứ hai): ghi tín hiệu tự học (scripts/tu-hoc/ghi-tin-hieu.py)
 - PermissionRequest: duyệt từ xa qua Telegram khi David vắng (scripts/so-nho/duyet-tu-xa.py)
 Chạy lại nhiều lần không bị trùng. Dùng: python3 -I scripts/cai-hook.py <đường dẫn repo>"""
 import json, os, sys
@@ -21,8 +22,11 @@ can["PostToolUse"] = (f'python3 -I "{repo}/scripts/so-nho/hop-thu-phien.py"', '/
 can["Stop"] = (f'python3 -I "{repo}/scripts/so-nho/hop-thu-phien.py"', '/scripts/so-nho/hop-thu-phien.py"')
 # Cổng duyệt cho phiên việc toàn quyền giao qua Telegram (chỉ bật khi TELEGRAM_VIEC=1): việc rủi ro hỏi David qua Telegram.
 can["PreToolUse"] = (f'python3 -I "{repo}/scripts/so-nho/cong-duyet.py"', '/scripts/so-nho/cong-duyet.py"')
+# Tự học: cuối phiên ghi tín hiệu (lời David sửa, skill dùng, lỗi) cho skill tu-hoc, không gọi AI.
+can["SessionEnd#tu-hoc"] = (f'python3 -I "{repo}/scripts/tu-hoc/ghi-tin-hieu.py"', '/scripts/tu-hoc/ghi-tin-hieu.py"')
 cho = {"PermissionRequest": 1800, "PreToolUse": 1800}
-for su_kien, (cmd, dau) in can.items():
+for khoa, (cmd, dau) in can.items():
+    su_kien = khoa.split("#")[0]
     ds = hooks.setdefault(su_kien, [])
     if not any(dau in h.get("command", "") for g in ds for h in g.get("hooks", [])):
         g = {"hooks": [{"type": "command", "command": cmd, "timeout": cho.get(su_kien, 30)}]}

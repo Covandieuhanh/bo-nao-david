@@ -129,6 +129,15 @@ while true; do
         elif [ "$BAN" -gt 600 ] && [ ! -f "$TT/da-ngat" ]; then ghi "ban ${BAN}s, ngat"; screen -S "$(sid)" -p 0 -X stuff $'\033'; touch "$TT/da-ngat"; fi
       else
         rm -f "$TT/ban-tu" "$TT/da-ngat"
+        # 7. Gọn ngữ cảnh (đỡ token): bot nghỉ quá 30 phút thì /clear, tin sau bắt đầu sạch (mọi thứ đã nằm trong file).
+        NHAT=$(ls -t "$HOME/.claude/projects/-Users-moon-Documents-2-ca-nhan-so-nho/"*.jsonl 2>/dev/null | head -1)
+        if [ -n "$NHAT" ]; then
+          DAU="$NHAT $(stat -f %m "$NHAT")"
+          if [ $(( BAY - $(stat -f %m "$NHAT") )) -gt 1800 ] && [ "$DAU" != "$(cat "$TT/da-gon" 2>/dev/null)" ]; then
+            screen -S "$(sid)" -p 0 -X stuff "/clear"; sleep 1; screen -S "$(sid)" -p 0 -X stuff $'\r'
+            echo "$DAU" > "$TT/da-gon"; ghi "nghi 30 phut, /clear"
+          fi
+        fi
       fi
     fi
   fi

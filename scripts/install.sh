@@ -25,7 +25,7 @@ lien_ket() {
 echo "Lối tắt vào repo:"
 lien_ket "$REPO/nao/CLAUDE-toan-cuc.md" "$CL/CLAUDE.md"
 lien_ket "$REPO/nao/David.md" "$CL/David.md"
-for s in dung-video hoi-chuyen-gia playwright-cli scroll-craft tai-ban; do
+for s in dung-video hoi-chuyen-gia playwright-cli scroll-craft tai-ban tu-hoc; do
   lien_ket "$REPO/skills/$s" "$CL/skills/$s"
 done
 # Lối tắt để Claude nhận lệnh /<tên skill>
@@ -54,7 +54,7 @@ if command -v claude >/dev/null 2>&1; then
   claude plugin marketplace add "$REPO" >/dev/null 2>&1 || true
   claude plugin marketplace add johnnyvizz/claude-kit >/dev/null 2>&1 || true
   claude plugin marketplace add nateherkai/claude-code-mods >/dev/null 2>&1 || true
-  for p in so-viec@david-claude savvy-progress@claude-kit collision-guard@nateherk-mods goal-meter@nateherk-mods; do
+  for p in telegram@claude-plugins-official so-viec@david-claude savvy-progress@claude-kit collision-guard@nateherk-mods goal-meter@nateherk-mods; do
     claude plugin install "$p" --scope user >/dev/null 2>&1 && echo "Mod: $p" || echo "⚠ Chưa cài được mod $p"
   done
   # Mod phải tự chạy (ghi nhớ luat-mod-tu-chay): savvy-progress tự mở bảng khi có bất kỳ trợ lý con nào

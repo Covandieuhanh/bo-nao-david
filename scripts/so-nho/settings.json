@@ -19,7 +19,9 @@
       "Bash(bash /Users/moon/Documents/David.Claude/scripts/so-nho/viec-dang-chay.sh)",
       "Read(~/Documents/David.Claude/**)",
       "Bash(python3 -I /Users/moon/Documents/David.Claude/scripts/so-nho/hop-thu-phien.py:*)",
-      "Bash(bash /Users/moon/Documents/David.Claude/scripts/so-nho/viec-dang-chay.sh --gon)"
+      "Bash(bash /Users/moon/Documents/David.Claude/scripts/so-nho/viec-dang-chay.sh --gon)",
+      "Bash(bash /Users/moon/Documents/David.Claude/scripts/so-nho/nghe-thoai.sh:*)",
+      "Bash(python3 -I /Users/moon/Documents/David.Claude/scripts/tim-phien.py:*)"
     ],
     "deny": [
       "WebFetch",
