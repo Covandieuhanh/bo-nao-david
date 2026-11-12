@@ -28,6 +28,7 @@ Trạng thái: lọc · dựng · chờ đăng · đã đăng · kho · bỏ. D�
 | 2026-11-10 | Video quay trong xe "thói quen phơi nắng" (D9BF90F2, 1:29 → 1:16, dọc, `~/Movies/tap-thoi-quen-nho`) | ✅ Phù hợp | 8 | gốc (làm chủ bản thân) | Shorts + Reels + TikTok, T6 13/11 20:00 (⚠️ trùng lịch clip Đi trainer — chờ David chọn) | Gợi mở | dựng (render 10/11) · chờ cổng 2 |
 | 2026-11-10 | Video vòng đồng xu cổ (E230CDE7, 0:46 → 0:45, dọc, `~/Movies/tap-vong-dong-xu`) | ⛔ Không làm (lằn ranh tâm linh) · David chọn dựng BẢN RIÊNG | 2 | — | Không lên kênh (bản riêng) | — | dựng (render 10/11) · chờ David xem |
 | 2026-11-11 | Cuộc gọi hợp tác môi giới giao dịch hàng hoá (dji_mimo_20261110, 12:46, quay màn hình điện thoại, gốc `Video-goc/tap-cuoc-goi-hop-tac`) | ⛔ Không đăng (đề xuất): kinh doanh/tài chính, phần lớn lời người khác, cuộc gọi riêng có tên người · đề xuất bản lưu riêng | 2 | — | Không lên kênh | — | xong bản dài ngang 11:18 (11/11, làm lại từ gốc, tập trung điện thoại; bỏ teaser/chương/thumbnail theo lời David), chờ David góp ý |
+| 2026-11-12 | Video "Hành trình giao dịch hàng hoá từ số 0" (dji_mimo_20261111_204848, 6:48, ngang, kênh riêng David Trần Official, `~/Movies/tap-giao-dich-hang-hoa`) | ⛔ với kênh trainer · ⚠️ đã cảnh báo lằn ranh tài chính/giao dịch · David giao dựng (việc #6 Telegram) | 1 | — | Kênh tài chính David Trần Official (David chọn lịch) | — | dựng (render 12/11) · chờ cổng 2 · chờ ảnh Sở Giao dịch Hàng hoá Việt Nam |
 
 ## Phiếu lọc (chấm thử 05/11/2026)
 
