@@ -90,7 +90,7 @@ bash /Users/moon/Documents/David.Claude/scripts/so-nho/giao-viec.sh "<yêu cầu
 
 **Cách viết yêu cầu:** giữ nguyên lời David, thêm đường dẫn tài nguyên. Không tự thêm lựa chọn sáng tạo (tít, nhạc, độ dài, kênh đăng): Claude tự chọn theo skill rồi báo lý do.
 
-**Cổng duyệt:** phiên việc chạy toàn quyền. Việc rủi ro (đăng, gửi, xoá vĩnh viễn, đẩy đè GitHub, sửa cấu hình, cài/gỡ phần mềm, tốn tiền, bấm trên web) **máy tự hỏi David qua Telegram** trước khi chạy. Hermes **không trả lời duyệt thay David**: chỉ ghi lại đúng lời David (mục 7). Ra cổng duyệt cuối (bản cuối + bài đăng), Hermes chỉ chuyển lời, David tự quyết.
+**Cổng duyệt:** phiên việc chạy toàn quyền, tự làm tới kết quả (xoá file, cài/gỡ phần mềm, sửa cấu hình: tự chạy + ghi sổ). Chỉ đăng, gửi, bấm trên web, tốn tiền, đẩy đè GitHub, xoá ổ đĩa **máy mới hỏi David qua Telegram** trước khi chạy. Hermes **không trả lời duyệt thay David**: chỉ ghi lại đúng lời David (mục 7). Ra cổng duyệt cuối (bản cuối + bài đăng), Hermes chỉ chuyển lời, David tự quyết.
 
 **Đừng:**
 - Đừng gọi `claude -p` hay tự mở phiên Claude theo cách khác cho việc video: như vậy là mất cổng duyệt và David không xem được.

@@ -17,8 +17,9 @@ LOI_DAN() { cat <<EOF
 Đây là việc David giao qua Telegram (việc #$1). Phiên này là phiên Claude Code bình thường ở chế độ Remote Control:
 David có thể xem và gõ vào đây từ app Claude trên điện thoại hoặc claude.ai/code, hoặc nhắn qua bot Telegram (lời sẽ được gõ vào phiên này).
 Làm theo AGENTS.md và skill đúng với việc, như mọi phiên khác.
-Phiên chạy toàn quyền. Việc rủi ro (đăng/gửi ra ngoài, xoá vĩnh viễn, đẩy đè GitHub, sửa cấu hình máy hoặc Claude, cài/gỡ phần mềm, tốn tiền)
-máy tự hỏi David qua Telegram trước khi chạy; bị từ chối thì đừng thử lại cách khác để lách, hỏi David.
+Phiên chạy toàn quyền, tự làm tới kết quả, không xin phép từng bước (David chốt 12/11: chỉ quan tâm kết quả).
+Xoá file, cài/gỡ phần mềm, sửa cấu hình máy hoặc Claude: máy tự cho chạy và ghi sổ; kể lại các bước đó trong tin báo cáo cuối.
+Máy chỉ còn hỏi David khi đăng/gửi ra ngoài, tốn tiền, đẩy đè GitHub, xoá ổ đĩa; bị từ chối thì đừng lách, hỏi David.
 Mỗi khi XONG, hoặc khi CẦN DAVID QUYẾT, chạy:
   bash scripts/so-nho/bao-cao.sh "#$1 ✅ Xong: … · Ở đâu: … · Còn lại: …"   hoặc   "#$1 ❓ Chờ anh: <câu hỏi rõ ràng bằng tiếng Việt, có gợi ý trả lời>"
 rồi dừng lượt chờ David. Tin báo cáo ngắn, tiếng Việt, không quá 5 dòng.
@@ -32,7 +33,7 @@ man_hinh_cua() { screen -ls 2>/dev/null | awk -v t=".viec-$1" '$1 ~ t"$" {print 
 
 chay() { # $1 số việc, $2 tên hiện trong app, $3 cờ phiên (--session-id / --resume) $4 id, $5 lời nhắn
   # Bỏ mọi biến môi trường CLAUDE* (phiên gọi có thể là phiên khác) và thư mục token của bot (phiên việc không được giành bot).
-  # Toàn quyền (bypassPermissions) như David ngồi máy; TELEGRAM_VIEC=1 bật cổng duyệt (cong-duyet.py): việc rủi ro hỏi David qua Telegram.
+  # Toàn quyền (bypassPermissions) như David ngồi máy; TELEGRAM_VIEC=1 bật cổng duyệt (cong-duyet.py): đa số tự chạy + ghi sổ, chỉ gửi/đăng/tốn tiền/đẩy đè mới hỏi David.
   screen -dmS "viec-$1" -h 3000 bash -c "cd '$NAO' && for v in \$(env | grep -o '^CLAUDE[A-Z_]*'); do unset \$v; done; unset TELEGRAM_STATE_DIR ENABLE_TOOL_SEARCH ENABLE_CLAUDEAI_MCP_SERVERS CLAUDE_CODE_DISABLE_AUTO_MEMORY; export TELEGRAM_VIEC=1; exec claude $3 $4 --remote-control=\"\$1\" --permission-mode bypassPermissions \"\$0\"" "$5" "$2"
 }
 

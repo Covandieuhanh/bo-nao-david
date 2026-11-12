@@ -8,6 +8,7 @@ David · `nao-` bộ não và GitHub · `video-` dựng và đăng video · `may
 - [Công cụ cài thì đưa vào skill](luat-cong-cu-cai-dua-vao-skill.md) — công cụ David cài (pyannote…) giúp việc tốt hơn thì tích hợp, giữ cách cũ dự phòng (07/11)
 - [Mod phải tự chạy](luat-mod-tu-chay.md) — mod/plugin thêm vào tự hoạt động khi cần, không đợi lệnh; việc ≥3 bước lập kế hoạch bằng goal-meter (11/11)
 - [Skill tự cải tiến, sáu luật mới](luat-skill-tu-cai-tien.md) — chỉ hỏi khi đụng thông tin David; skill/giọng văn/luật kênh tự học theo số liệu; lời mới nhất thắng (12/11)
+- [Phiên Telegram tự chạy](luat-phien-telegram-tu-chay.md) — tự làm tới kết quả, ghi sổ; chỉ hỏi khi đăng/gửi, tốn tiền, đẩy đè GitHub (12/11)
 - [Tài nguyên vào, kết quả ra](luat-goi-y-de-david-chon.md) — sản phẩm từ tài nguyên không hỏi, theo mặc định skill + đề xuất, báo lựa chọn (11/11)
 - [Học là bổ sung](luat-hoc-la-bo-sung.md) — học mẫu chỉ thêm, giữ chặn cũ; khung mới chụp đủ lớp trước render (08/11)
 - [Kết quả hơn tốc độ](luat-ket-qua-hon-toc-do.md) — bước cần kết quả render thì chờ; muốn rút ngắn thì trao đổi (05/11)
