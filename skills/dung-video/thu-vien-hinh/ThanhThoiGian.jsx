@@ -8,7 +8,7 @@ export const ThanhThoiGian = ({t, T, k, nen = true, truoc = null, opacity = 1}) 
   const label = {fontFamily: BODY, fontWeight: 600, fontSize: 24, color: nen ? C.text : C.muted, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap'};
   return (
     <div style={{position: 'absolute', left: k.tl.left, width: k.tl.right - k.tl.left, top: k.tl.y, height: k.tl.h, display: 'flex', alignItems: 'center',
-      gap: 18, opacity, ...(nen ? {background: 'rgba(0,0,0,0.5)', borderRadius: k.tl.h, padding: '0 16px', boxSizing: 'border-box'} : {})}}>
+      gap: 18, opacity, ...(nen ? {background: C.nen, borderRadius: k.tl.h, padding: '0 16px', boxSizing: 'border-box'} : {})}}>
       {truoc}
       <div style={label}>{mmss(t)}</div>
       <div style={{position: 'relative', flex: 1, height: 8, borderRadius: 4, background: 'rgba(255,255,255,0.18)'}}>

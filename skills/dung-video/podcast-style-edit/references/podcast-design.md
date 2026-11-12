@@ -1,7 +1,7 @@
 # Thiết kế video podcast
 
 Hình học hai khung ở `motion/src/podframe.js` (PF). Dọc 1080×1920: vùng an toàn x 70–900, y 210–1420.
-Ngang 1920×1080: x 96–1824, y 54–918 — **thiết kế toàn khung**, không chia cột.
+Ngang 1920×1080: x 96–1824, y 54–1026 — **thiết kế toàn khung**, không chia cột.
 
 ## Sân khấu nền (`Stage.jsx`, composition `nen`) — luôn chạy
 
@@ -13,7 +13,7 @@ Ngang 1920×1080: x 96–1824, y 54–918 — **thiết kế toàn khung**, khô
 | Tên người nói (chỉ khi biết tên) | 1020– | dưới vòng micro | `STAGE.speakers` |
 | Sóng âm — màu theo người đang nói (cam 0, xanh 1), lặng thì xám | 1135–1255 | y 680–810, 96 cột | `envelope.js`, `speakers.js` |
 | Phụ đề | đáy 1374 | đáy 870 | `captions.js` (lớp phu-de) |
-| **Thanh thời gian**: đã chạy · thanh · "còn m:ss" | 1386–1416 | 884–914 | tự tính (lớp phu-de) |
+| **Thanh thời gian**: đã chạy · thanh · "còn m:ss" | 1386–1416 | 996–1026 | tự tính (lớp phu-de) |
 
 Phụ đề + thanh thời gian ở lớp trên cùng → không cảnh nào che được. Nền: tối + quầng sáng cam trôi chậm + lưới trôi rất chậm.
 

@@ -2,7 +2,7 @@
 // đọc lại từ đây. Đổi màu/font của kênh → sửa ở đây (khối 10).
 import {Easing, interpolate} from 'remotion';
 export const C = {
-  bg: '#0D0D10', card: 'rgba(24, 24, 28, 0.88)', line: 'rgba(255, 255, 255, 0.09)',
+  bg: '#0D0D10', card: '#18181C', nen: '#141418', line: 'rgba(255, 255, 255, 0.09)',
   text: '#F4F4F5', muted: '#A1A1AA', dim: '#52525B', accent: '#FF7A45', accentSoft: 'rgba(255, 122, 69, 0.16)',
 };
 export const HEAD = '"Barlow Condensed", sans-serif';

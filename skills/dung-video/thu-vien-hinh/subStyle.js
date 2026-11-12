@@ -6,7 +6,7 @@ import React from 'react';
 export const SUB = {
   size: 42,                 // dọc 1080×1920 (podcast tự đổi cỡ qua podframe)
   bottomGap: 6,             // đáy hộp cách đáy vùng an toàn
-  box: {padding: '10px 22px 13px', borderRadius: 16, background: 'rgba(0,0,0,0.58)'},
+  box: {padding: '10px 22px 13px', borderRadius: 16, background: '#141418'},
   text: {fontWeight: 700, lineHeight: 1.28, textAlign: 'center', textWrap: 'balance',   // dòng dài chia đều, không rơi 1 chữ
     textShadow: '0 2px 8px rgba(0,0,0,0.5)'},
 };

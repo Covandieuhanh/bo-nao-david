@@ -33,7 +33,7 @@ export const Timeline = () => {
     const bar = (a, w, op) => <div style={{position: 'absolute', left: `${a / T * 100}%`, width: `${w / T * 100}%`, top: 0, bottom: 0,
       borderRadius: 4, background: C.accent, opacity: op}} />;
     // video người nói: nền hình sáng (trời, tường) làm thanh + mốc khó đọc → dải nền tối mờ phía sau
-    const plate = POD ? {} : {background: 'rgba(0,0,0,0.5)', borderRadius: PF.tl.h, padding: '0 16px', boxSizing: 'border-box'};
+    const plate = POD ? {} : {background: '#141418', borderRadius: PF.tl.h, padding: '0 16px', boxSizing: 'border-box'};
     return (
       <div style={{...box, ...plate}}>
         <div style={{...label, color: C.text}}>{mmss(now)}</div>

@@ -11,18 +11,18 @@ export const BODY = _B;     // chữ thường trong thẻ
 
 // ===== Vùng an toàn =====
 // Dọc (Reels/TikTok/Shorts): tránh thanh trên, cột nút bên phải, tiêu đề/mô tả phía dưới.
-// Ngang (YouTube): chừa lề 5% (title safe) + thanh điều khiển phía dưới.
+// Ngang (YouTube): lề 5% mọi phía (title safe SMPTE 90%); thanh thời gian + phụ đề nằm sát đáy, nội dung dùng tới ~82%.
 // overlayTop: nơi bắt đầu dải lớp phủ, ngay dưới mặt người nói — chỉnh theo khung hình video gốc.
 const V = project.height > project.width || !!project.podcast;   // podcast ngang: lớp phủ vẫn vẽ trên dải dọc, Place phóng ra giữa khung
 import {khung} from './lib/nhan-dien';
 export const SAFE = V
   ? {left: 70, right: 180, top: 210, bottom: 1420, overlayTop: 985}         // khung dọc 1080×1920 (= khung thiết kế)
   : {left: Math.round(project.width * 0.05), right: Math.round(project.width * 0.05),
-    top: Math.round(project.height * 0.05), bottom: Math.round(project.height * 0.85), overlayTop: Math.round(project.height * 0.55)};
+    top: Math.round(project.height * 0.05), bottom: Math.round(project.height * 0.95), overlayTop: Math.round(project.height * 0.55)};
 // DẤU GÓC KÊNH ● DAVID │ chủ đề (Captions.jsx): khung dọc 228 px (dưới thanh trạng thái Reels/TikTok); khung NGANG sát mép trên vùng an toàn
 // (lỗi 08/11/2026: dùng số 228 của khung dọc cho khung ngang → dấu góc thấp, đè thẻ). Mọi lớp phủ góc trên trái phải nằm dưới BRAND_BOT.
 export const BRAND_TOP = khung(project.width, project.height).brand.top;   // một nguồn: thu-vien-hinh/nhan-dien.js
-export const BRAND_BOT = BRAND_TOP + 56;   // chữ 38 px + bóng
+export const BRAND_BOT = BRAND_TOP + 64;   // ô nền sẫm: chữ 38 px + đệm
 export const SAFE_W = (V ? 1080 : project.width) - SAFE.left - SAFE.right;
 
 // Đổi mốc thời gian tuyệt đối (giây trong video gốc) sang khung tính từ đầu cảnh

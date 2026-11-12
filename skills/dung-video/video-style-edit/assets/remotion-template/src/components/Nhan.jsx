@@ -64,7 +64,7 @@ export const Nhan = ({sceneId, start, text, icon, at, zoom = 1, toi = false, bam
       {(text || icon) && (
         <div style={{position: 'absolute', display: 'flex', flexDirection: 'column', gap: size * 0.18, ...box,
           padding: `${size * 0.28}px ${size * 0.4}px`, borderRadius: size * 0.22,
-          background: 'rgba(13,13,16,0.55)', backdropFilter: 'blur(6px)',
+          background: C.nen,
           opacity: Math.min(1, p * 1.4), transform: `${cxT}translateX(${dx}px) scale(${0.85 + 0.15 * p})`,
           transformOrigin: side === 'right' ? 'left center' : under ? 'center top' : 'right center'}}>
           {icon && <div style={{filter: 'drop-shadow(0 0 18px rgba(255,122,69,0.55)) drop-shadow(0 4px 14px rgba(0,0,0,0.6))'}}>

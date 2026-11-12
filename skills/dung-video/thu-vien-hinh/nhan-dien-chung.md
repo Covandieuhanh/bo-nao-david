@@ -22,10 +22,10 @@ tròn, phấn vẽ tay, ảnh), bố cục, chuyển động. Thử: che dấu g
 
 | Thành phần | Khung dọc 1080×1920 | Khung ngang 1920×1080 | Code |
 |---|---|---|---|
-| Vùng an toàn | x 70–900, y 210–1420 (chừa nút, chữ của Reels/TikTok) | lề 5 % mỗi bên, trên 5 %, dưới 15 % | `khung().safe` |
-| Dấu góc ● DAVID │ chủ đề | góc trên trái, top 228 | góc trên trái, top 54 (sát mép vùng an toàn) | `DauGoc.jsx`, `khung().brand` |
-| Thanh thời gian (đã chạy · thanh · còn m:ss) | y 1386, cao 30 — chỉ video dọc dài | y 884, cao 30 | `ThanhThoiGian.jsx`, `khung().tl` |
-| Phụ đề | luôn chạy, đáy ngay trên thanh thời gian (y 1374) | như dọc (y 870) | `subStyle.js`, `khung().capBottom` |
+| Vùng an toàn | x 70–900, y 210–1420 (chừa nút, chữ của Reels/TikTok) | lề 5 % mọi phía (title safe SMPTE 90 %) | `khung().safe` |
+| Dấu góc ● DAVID │ chủ đề (ô nền sẫm đặc `C.nen`) | góc trên trái, top 228 | góc trên trái, top 54 (sát mép vùng an toàn) | `DauGoc.jsx`, `khung().brand` |
+| Thanh thời gian (đã chạy · thanh · còn m:ss) | y 1386, cao 30 — chỉ video dọc dài | y 996, cao 30 (sát đáy, 92–95 % chiều cao) | `ThanhThoiGian.jsx`, `khung().tl` |
+| Phụ đề | luôn chạy, đáy ngay trên thanh thời gian (y 1374) | như dọc (y 982) | `subStyle.js`, `khung().capBottom` |
 | Màn chốt (`cta`) | câu nguyên văn ≤ 55 ký tự, tick + "ting" | như dọc, ô video 50 % bề ngang, ẩn dấu góc | `cta.js`, `Action.jsx` / `Show.jsx` |
 | Thẻ cuối | chỉ video dọc dài: nhận diện / dẫn bản đầy đủ | nhận diện (chủ đề + DAVID) | `EndCardBody.jsx` |
 | Màn kết YouTube (video dài) | — | 15–20 s, khung chừa 2 video + nút đăng ký | `YtEnd.jsx` |

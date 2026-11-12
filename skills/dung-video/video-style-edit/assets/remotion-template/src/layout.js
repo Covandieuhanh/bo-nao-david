@@ -79,11 +79,9 @@ export const Place = ({type, id, place, children}) => {
       );
     }
     const sc = pl.scale || OV_SCALE, top = pl.top ?? OV_TOP;
-    // Nền tối nhẹ sau chữ: đậm ở dải lớp phủ, mờ dần ra hai phía (không phủ lên mặt)
-    const a = (top / project.height) * 100, b = ((top + BAND_H * sc) / project.height) * 100;
+    // Không nền đen mờ sau lớp phủ: thẻ tự có nền sẫm đặc (C.card)
     return (
       <AbsoluteFill>
-        <AbsoluteFill style={{background: `linear-gradient(transparent ${Math.max(0, a - 6)}%, rgba(0,0,0,0.45) ${a + 4}%, rgba(0,0,0,0.5) ${b - 4}%, ${b > 75 ? 'rgba(0,0,0,0.55)' : 'transparent'} ${Math.min(100, b + 6)}%)`}} />
         <Clip h={OV_BOTTOM}><Scaled x={SAFE.left * (1 - sc)} y={top - SAFE.overlayTop * sc} s={sc}>{children}</Scaled></Clip>
       </AbsoluteFill>
     );

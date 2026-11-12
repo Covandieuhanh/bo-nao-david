@@ -47,7 +47,7 @@ const NOI = {illus: Illus, diagram: Diagram, ve: ({ve, ...p}) => { const V = VE[
 // '\n' trong chữ = chỗ xuống dòng theo cụm nghĩa do kịch bản đặt.
 const The = ({start, tieu_de, dong = [], w, f, fs, kc = 'mo'}) => (
   <div style={{width: w, padding: fs * 0.9, borderRadius: fs * 0.7, background: C.card, border: `2px solid ${C.line}`,
-    boxShadow: '0 30px 90px rgba(0,0,0,0.5)', backdropFilter: 'blur(14px)', display: 'flex', flexDirection: 'column', gap: fs * 0.35}}>
+    boxShadow: '0 30px 90px rgba(0,0,0,0.5)', display: 'flex', flexDirection: 'column', gap: fs * 0.35}}>
     {tieu_de && <div style={{fontFamily: BODY, fontWeight: 700, fontSize: fs * 0.42, letterSpacing: 3, color: C.accent, textTransform: 'uppercase',
       opacity: ease(f, 2, 10), textWrap: 'balance'}}>{tieu_de}</div>}
     {dong.map((d, i) => {

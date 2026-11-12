@@ -6,11 +6,11 @@ import project from './project.js';
 export const POD = !!project.podcast;
 export const LAND = project.width > project.height;
 export const PF = LAND ? {
-  W: 1920, H: 1080, left: 96, right: 1824, top: 54, bottom: 918,      // vùng an toàn ngang: lề 5%, chừa 15% dưới
-  tl: {y: 884, h: 30},                                                 // thanh thời gian = đáy vùng an toàn
-  capBottom: 870, capSize: 36, capW: 1240,                              // phụ đề ngay trên thanh thời gian
+  W: 1920, H: 1080, left: 96, right: 1824, top: 54, bottom: 1026,     // vùng an toàn ngang: lề 5% mọi phía (title safe 90%)
+  tl: {y: 996, h: 30},                                                 // thanh thời gian = đáy vùng an toàn (= nhan-dien.js)
+  capBottom: 982, capSize: 36, capW: 1240,                              // phụ đề ngay trên thanh thời gian
   ov: {scale: 1.08, top: 175},                                         // dải lớp phủ 830×435 → 896×470, canh trái (x 96–992)
-  contentBottom: 790,                                                  // cảnh toàn màn hình: nội dung kết thúc trước dải phụ đề
+  contentBottom: 900,                                                  // cảnh toàn màn hình: nội dung kết thúc trước dải phụ đề
 } : {
   W: 1080, H: 1920, left: 70, right: 900, top: 210, bottom: 1420,
   tl: {y: 1386, h: 30},

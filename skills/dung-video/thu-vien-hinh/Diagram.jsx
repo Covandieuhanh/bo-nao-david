@@ -13,7 +13,7 @@
 //   'chuyen-giao' việc đi từ bên này sang bên kia: items[0] = bên giao, items[cuối] = bên nhận {label, icon}; giữa = các việc được chuyển {icon, label, at}
 //   'anh'     ảnh thật trong khung bo góc: {photo: 'x.jpg' (motion/public/photos/), label, sub?, credit: 'Tác giả · CC BY-SA', ratio?: 3/4, pos?: '50% 30%'}
 //             — chỉ ảnh giấy phép mở dùng thương mại (Wikimedia/Openverse) hoặc ảnh David gửi; ghi nguồn vào mô tả (nguon-anh.txt)
-// Vùng vẽ như Illus: dọc 10–56% chiều cao · ngang 7–71% (chừa phụ đề + thanh thời gian).
+// Vùng vẽ như Illus: dọc 10–56% chiều cao · ngang 12–80% (chừa phụ đề + thanh thời gian).
 import React from 'react';
 import {AbsoluteFill, Easing, Img, interpolate, interpolateColors, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {BODY, C, HEAD, ease} from './tokens';
@@ -32,7 +32,7 @@ export const Diagram = ({mode = 'tang', items = [], label = '', total = 0, start
   const rel = (t) => Math.round(((t ?? start) - start) * fps);
   const sp = (a) => spring({frame: f - a, fps, config: {damping: 15, stiffness: 140, mass: 0.7}});
   const out = interpolate(f, [Lf - 5, Lf], [1, 0], cl);   // ra ngắn hơn vào ~40%
-  const area = {left: W * 0.07, width: W * 0.86, top: H * (land ? 0.07 : 0.1), height: H * (land ? 0.64 : 0.46)};
+  const area = {left: W * 0.07, width: W * 0.86, top: H * (land ? 0.12 : 0.1), height: H * (land ? 0.68 : 0.46)};
   const AW = area.width, AH = area.height;
   const head = label ? M * (land ? 0.06 : 0.07) : 0;
   const bodyH = AH - (label ? head * 1.9 : 0);

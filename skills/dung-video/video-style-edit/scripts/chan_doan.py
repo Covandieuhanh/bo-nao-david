@@ -62,6 +62,7 @@ out = [f"# Chẩn đoán — {os.path.basename(os.path.dirname(P)) or P}",
        "", "## Gợi ý lớp thông tin (tu-chon.md bước 3)", *[f"- {g}" for g in goi_y],
        "", "## Claude xem check/chan-doan.jpg rồi ghi (tu-chon.md bước 1–2)",
        "1. Mặt người nói: rõ / nhỏ / không thấy · 2. Chủ thể: … · 3. Rác quanh chủ thể: có / không · 4. Máy quay: đứng yên / dịch",
-       "→ bố cục nền: giữ khung gốc / khung chủ thể (khung_chu_the.py) / pillar …"]
+       "→ bố cục nền: giữ khung gốc / khung chủ thể (khung_chu_the.py) / pillar …",
+       "⚠️ Người chiếm < ~50 % khung (ngồi xa, hai bên tường trống) + nội dung kiến thức / DÀY THÔNG TIN → KHUNG CHỦ THỂ quanh người + bảng `GHI_CHU`, không giữ khung gốc"]
 open(os.path.join(P, "check/chan-doan.md"), "w", encoding="utf-8").write("\n".join(out) + "\n")
 print("\n".join(out)); print(jpg)

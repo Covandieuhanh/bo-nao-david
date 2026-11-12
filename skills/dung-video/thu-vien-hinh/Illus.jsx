@@ -6,7 +6,7 @@
 //   label: nhãn chung ≤ 3 chữ (tên riêng / con số / cụm đắt — TRÍCH lời), hiện dưới hình; bỏ trống được
 //   num  : {to: 15, from?: 0, at, unit?: 'PHÚT', dur?: 1.2}  (mode 'count' — đúng con số người nói)
 //   start: giây bắt đầu cảnh (cùng hệ giây với items[].at) — khung dựng truyền sẵn
-// Vùng vẽ: dọc 10%–56% chiều cao (chừa đáy cho phụ đề + nút nền tảng) · ngang 7%–71%; tự cân theo khung dọc / ngang.
+// Vùng vẽ: dọc 10%–56% chiều cao (chừa đáy cho phụ đề + nút nền tảng) · ngang 12%–80% (dưới dấu góc, trên phụ đề); tự cân theo khung dọc / ngang.
 import React from 'react';
 import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import {BODY, C, HEAD, ease} from './tokens';
@@ -91,7 +91,7 @@ export const Illus = ({mode = 'single', items = [], label = '', num = null, star
       {nen && phong && <NenPhong />}
       {nen && !phong && <AbsoluteFill style={{background: C.bg}} />}
       {nen && !phong && <AbsoluteFill style={{background: `radial-gradient(circle at 50% ${land ? 42 : 38}%, rgba(255,122,69,0.2), transparent 60%)`}} />}
-      <div style={{position: 'absolute', left: W * 0.06, right: W * 0.06, top: compact ? H * 0.115 : H * (land ? 0.07 : 0.1), height: compact ? H * 0.235 : H * (land ? 0.64 : 0.46), display: 'flex', flexDirection: 'column',
+      <div style={{position: 'absolute', left: W * 0.06, right: W * 0.06, top: compact ? H * 0.115 : H * (land ? 0.12 : 0.1), height: compact ? H * 0.235 : H * (land ? 0.68 : 0.46), display: 'flex', flexDirection: 'column',
         alignItems: 'center', justifyContent: 'center', gap: M * 0.05}}>
         {numEl}
         <div style={{display: 'flex', flexDirection: row ? 'row' : 'column', flexWrap: mode === 'list' ? 'wrap' : 'nowrap', alignItems: 'center',

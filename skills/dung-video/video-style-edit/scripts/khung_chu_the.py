@@ -48,7 +48,7 @@ for v in V:   # mọi vùng cùng cỡ (crop không đổi cỡ theo thời gian
 pw_expr = lambda k: "".join(f"if(lt(t,{v2['tu']:.3f}),{v1[k]}," for v1, v2 in zip(V, V[1:])) + str(V[-1][k]) + ")" * (len(V) - 1)
 
 # Vị trí khung trên hình xuất: dưới dấu góc, trên thanh thời gian; lề trái/phải = lề an toàn 5 %
-TOP, BOT, LE = round(H * 0.11), round(H * 0.80), round(W * 0.05)   # đáy 0,80: trên thanh thời gian (~0,82 H; 11/11/2026 thanh đè đáy khung)
+TOP, BOT, LE = round(H * 0.12), round(H * 0.95) - 44, round(W * 0.05)   # dưới dấu góc; đáy ngay trên thanh thời gian (nhan-dien.js: thanh 92–95 % H)
 PH = BOT - TOP; PW = round(PH * cw / ch / 2) * 2
 if PW > W * 0.56: PW = round(W * 0.56 / 2) * 2; PH = round(PW * ch / cw / 2) * 2   # chủ thể bè ngang (laptop, bảng)
 PY = TOP + (BOT - TOP - PH) // 2
