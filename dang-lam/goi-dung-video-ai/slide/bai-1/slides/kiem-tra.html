@@ -1,0 +1,25 @@
+<section id="kiem-tra">
+<p class="eyebrow">Cài và kiểm tra</p>
+<h2>Kiểm tra cài xong, sửa lỗi hay gặp</h2>
+<div class="split even">
+<div class="win">
+<div class="bar"><x-shape kind="ellipse" class="dot" style="background:#E8742A"></x-shape><x-shape kind="ellipse" class="dot" style="background:#F2C14E"></x-shape><x-shape kind="ellipse" class="dot" style="background:#8FD3A6"></x-shape><p class="ttl">Kết quả đạt (chạy thật)</p></div>
+<div class="term">
+<p class="cmd">$ ffmpeg -version</p>
+<p class="ln">ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers</p>
+<p class="cmd" style="padding-top:10px">$ whisper-cli --help</p>
+<p class="ln">usage: whisper-cli [options] file0 file1 ...</p>
+<p class="ok" style="padding-top:10px">✓ Hai lệnh in ra chữ, không báo lỗi → đạt</p>
+</div>
+</div>
+<table class="data" style="font-size:26px">
+<tr><th style="width:40%">Bạn thấy</th><th style="width:60%">Cách sửa</th></tr>
+<tr><td>command not found</td><td>Đóng mở lại cửa sổ lệnh; vẫn lỗi thì dán lỗi cho AI sửa</td></tr>
+<tr><td>Whisper chạy rất lâu</td><td>Thử bằng mô hình small, làm thật dùng medium trở lên</td></tr>
+<tr><td>No space left on device</td><td>Hết ổ: mỗi tập chỉ giữ gốc và bản cuối</td></tr>
+<tr><td>Permission denied</td><td>Không tự cấp quyền; hỏi AI vì sao cần quyền</td></tr>
+</table>
+</div>
+<p class="foot">Dựng video bằng AI trên máy tính · Bài 1 · Biểu mẫu 01</p>
+<aside>Có hai bản Whisper: whisper-cli (bản whisper.cpp) hoặc whisper (bản Python). Máy cài bản nào thì kiểm bằng lệnh đó. Gặp lỗi, không sửa thay: hướng dẫn học viên dán lỗi cho AI và đọc cách nó sửa.</aside>
+</section>

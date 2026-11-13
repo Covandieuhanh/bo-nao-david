@@ -2,16 +2,16 @@
 
 Mỗi bài: **Mục tiêu · Nội dung · Thực hành · Bài tập · Xong khi**. Học viên làm trên tư liệu thật của mình. Biểu mẫu dùng trong bài: [bo-bieu-mau/](bo-bieu-mau/README.md).
 
-| Bài | Tên | Buổi | Biểu mẫu |
-|---|---|---|---|
-| 1 | Cài máy và trợ lý AI | 1 | 01 |
-| 2 | Giao việc dựng cho AI | 1 | 02, 03 |
-| 3 | Nạp và hiểu tư liệu | 2 | 03 |
-| 4 | Dựng thô và làm sạch | 2 | 03 |
-| 5 | Phụ đề và chữ | 3 | 03 |
-| 6 | Đồ hoạ, hình minh hoạ, nhạc | 3 | 03 |
-| 7 | Xuất nhiều khung, clip ngắn, ảnh bìa | 4 | 03 |
-| 8 | Chạy một mạch và tự sửa SOP | 4 | 02, 04 |
+| Bài | Tên | Buổi | Biểu mẫu | Slide |
+|---|---|---|---|---|
+| 1 | Cài máy và trợ lý AI | 1 | 01 | [mở](https://claude.ai/artifact/J3Ms717XmQaVLkct7ALy5S) |
+| 2 | Giao việc dựng cho AI | 1 | 02, 03 | [mở](https://claude.ai/artifact/RSwNZtbg9GK5L7ggiE8xyT) |
+| 3 | Nạp và hiểu tư liệu | 2 | 03 | [mở](https://claude.ai/artifact/R2jWhU5ZVEQ5BuBrajxUy6) |
+| 4 | Dựng thô và làm sạch | 2 | 03 | [mở](https://claude.ai/artifact/CBS19PZsp15nk9kEUuQC5j) |
+| 5 | Phụ đề và chữ | 3 | 03 | [mở](https://claude.ai/artifact/3JkFmyR2t9Nrxa5sLStxYp) |
+| 6 | Đồ hoạ, hình minh hoạ, nhạc | 3 | 03 | [mở](https://claude.ai/artifact/3MAMPHC6g57VmXR96KjzHL) |
+| 7 | Xuất nhiều khung, clip ngắn, ảnh bìa | 4 | 03 | [mở](https://claude.ai/artifact/E2RDkK8zJazG9c3ihTptY3) |
+| 8 | Chạy một mạch và tự sửa SOP | 4 | 02, 04 | [mở](https://claude.ai/artifact/Luevn8uyBp7AgeoxbAg1yL) |
 
 ---
 

@@ -1,0 +1,25 @@
+<section id="do">
+<p class="eyebrow">Việc 1 · Đo</p>
+<h2>Đo từng file trước khi làm gì khác</h2>
+<div class="split">
+<div class="side">
+<p class="pt"><b>Khung</b> 1920x1080 → video ngang 16:9.</p>
+<p class="pt"><b>30 hình/giây</b> → chuẩn, không phải đổi.</p>
+<p class="pt"><b>21,07 giây</b> → video ngắn, dựng nhanh.</p>
+<p class="pt"><b>Âm lượng</b> −18 LUFS → nhỏ hơn chuẩn mạng xã hội (khoảng −14), sẽ nâng ở bước âm thanh.</p>
+</div>
+<div class="win">
+<div class="bar"><x-shape kind="ellipse" class="dot" style="background:#E8742A"></x-shape><x-shape kind="ellipse" class="dot" style="background:#F2C14E"></x-shape><x-shape kind="ellipse" class="dot" style="background:#8FD3A6"></x-shape><p class="ttl">AI đo clip-01.mp4 · kết quả thật</p></div>
+<div class="term">
+<p class="cmd">$ ffprobe -show_entries stream=width,height,r_frame_rate:format=duration clip-01.mp4</p>
+<p class="ln">width=1920 height=1080 r_frame_rate=30/1</p>
+<p class="ln">duration=21.066667</p>
+<p class="cmd" style="padding-top:10px">$ ffmpeg -i clip-01.mp4 -af loudnorm=print_format=summary -f null -</p>
+<p class="ln">Input Integrated:  -18.0 LUFS</p>
+<p class="ln">Input True Peak:    -0.6 dBTP</p>
+</div>
+</div>
+</div>
+<p class="foot">Dựng video bằng AI trên máy tính · Bài 3 · Lệnh rút gọn cho dễ đọc</p>
+<aside>Học viên không cần nhớ lệnh. Cần đọc được AI báo gì: khung, số hình mỗi giây, độ dài, âm lượng. LUFS là đơn vị đo độ to cảm nhận; số càng gần 0 càng to.</aside>
+</section>

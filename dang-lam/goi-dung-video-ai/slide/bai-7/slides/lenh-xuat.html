@@ -1,0 +1,18 @@
+<section id="lenh-xuat">
+<p class="eyebrow">AI xuất file thế nào</p>
+<h2>Đọc được AI đang làm gì khi xuất</h2>
+<div class="win">
+<div class="bar"><x-shape kind="ellipse" class="dot" style="background:#E8742A"></x-shape><x-shape kind="ellipse" class="dot" style="background:#F2C14E"></x-shape><x-shape kind="ellipse" class="dot" style="background:#8FD3A6"></x-shape><p class="ttl">Lệnh AI chạy (rút gọn)</p></div>
+<div class="term">
+<p class="dim"># Bản dọc: cắt khung 608x1080 bắt đầu từ điểm x=1120, rồi phóng lên 1080x1920</p>
+<p class="cmd">$ ffmpeg -i ban-ngang.mp4 -vf "crop=608:1080:1120:0,scale=1080:1920" ban-doc.mp4</p>
+<p class="dim" style="padding-top:10px"># Bản vuông: cắt khung 1080x1080 quanh người</p>
+<p class="cmd">$ ffmpeg -i ban-ngang.mp4 -vf "crop=1080:1080:700:0" ban-vuong.mp4</p>
+<p class="dim" style="padding-top:10px"># Ảnh bìa: lấy 1 khung hình ở giây 5,9</p>
+<p class="cmd">$ ffmpeg -ss 5.9 -i ban-ngang.mp4 -frames:v 1 anh-bia.jpg</p>
+</div>
+</div>
+<p class="pt">Bạn không cần gõ lệnh. Chỉ cần đọc: <b>crop</b> là cắt khung, <b>scale</b> là đổi cỡ, <b>-ss</b> là giây lấy ảnh.</p>
+<p class="foot">Dựng video bằng AI trên máy tính · Bài 7 · Toạ độ x là ví dụ, AI tính theo vị trí người trong video</p>
+<aside>Giải thích một lần để học viên đọc được báo cáo của AI và phát hiện khi AI cắt sai vị trí (ví dụ x quá nhỏ làm mất người).</aside>
+</section>

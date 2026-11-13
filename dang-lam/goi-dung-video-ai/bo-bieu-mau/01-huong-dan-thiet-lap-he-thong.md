@@ -66,6 +66,10 @@ ffmpeg -version
 ```bash
 whisper --help
 ```
+Cài bản whisper.cpp thì lệnh kiểm là:
+```bash
+whisper-cli --help
+```
 Cả hai in ra chữ, không báo lỗi → đạt. Rồi chép biểu mẫu 02 vào thư mục `lam-video` (Bài 2).
 
 ## Lỗi hay gặp

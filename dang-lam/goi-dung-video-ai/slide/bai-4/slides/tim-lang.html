@@ -1,0 +1,19 @@
+<section id="tim-lang">
+<p class="eyebrow">Dựng thô · việc 1</p>
+<h2>Tìm khoảng lặng bằng số đo, không bằng mắt</h2>
+<div class="win">
+<div class="bar"><x-shape kind="ellipse" class="dot" style="background:#E8742A"></x-shape><x-shape kind="ellipse" class="dot" style="background:#F2C14E"></x-shape><x-shape kind="ellipse" class="dot" style="background:#8FD3A6"></x-shape><p class="ttl">AI đo lặng · kết quả thật (rút gọn)</p></div>
+<div class="term">
+<p class="cmd">$ ffmpeg -i clip-01.mp4 -af silencedetect=noise=-35dB:d=0.5 -f null -</p>
+<p class="ln">silence_start: 4.10   silence_end: 6.31   silence_duration: 2.21</p>
+<p class="ln">silence_start: 11.25  silence_end: 11.87  silence_duration: 0.62</p>
+</div>
+</div>
+<div class="tl">
+<div class="track"><div class="seg blue" style="width:196px">nói</div><div class="seg cut" style="width:106px">lặng 2,2s</div><div class="seg blue" style="width:237px">nói</div><div class="seg cut" style="width:30px"></div><div class="seg blue" style="width:330px">nói</div><div class="seg cut" style="width:100px">lặng</div></div>
+<div class="ruler" style="width:1023px"><p>0s</p><p>4,1</p><p>6,3</p><p>11,3</p><p>11,9</p><p>21,1s</p></div>
+</div>
+<p class="pt">Lặng dài 2,2 giây sau lời chào: cắt. Lặng ngắn 0,62 giây nằm giữa câu nói hỏng và câu nói lại: sẽ bị cắt cùng câu hỏng ở việc 2.</p>
+<p class="foot">Dựng video bằng AI trên máy tính · Bài 4</p>
+<aside>noise=-35dB: tiếng nhỏ hơn mức này coi là lặng; d=0.5: lặng từ nửa giây trở lên mới tính. Học viên chỉ cần đọc ba con số: bắt đầu, kết thúc, kéo dài bao lâu.</aside>
+</section>
