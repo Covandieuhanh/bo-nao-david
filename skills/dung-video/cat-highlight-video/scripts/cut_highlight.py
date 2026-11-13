@@ -101,7 +101,7 @@ for opt in plan["options"]:
         fc.append(f"[{i}:a:0]asetpts=PTS-STARTPTS,aresample=48000,aformat=sample_fmts=fltp:channel_layouts=stereo,"
                   f"afade=t=in:d=0.015,afade=t=out:st={max(0, d - 0.03):.4f}:d=0.03{ap}[a{i}]")
     fc.append("".join(f"[v{i}][a{i}]" for i in range(len(segs))) + f"concat=n={len(segs)}:v=1:a=1[v][a]")
-    out = os.path.join(P, "cat", f"{opt['id']}.mp4")
+    out = os.path.join(P, "cat", f"{opt['id']}.mp4"); os.makedirs(os.path.dirname(out), exist_ok=True)
     args += ["-filter_complex", ";".join(fc), "-map", "[v]", "-map", "[a]",
              "-c:v", "h264_videotoolbox", "-b:v", "20M", "-c:a", "aac", "-b:a", "256k", "-movflags", "+faststart", out]
     subprocess.run(args, check=True, env=env)

@@ -262,7 +262,7 @@ export const Diagram = ({mode = 'tang', items = [], label = '', total = 0, start
   } else if (mode === 'anh') {   // ẢNH THẬT trong khung bo góc + nhãn + nguồn
     const it = items[0] || {}, p = sp(rel(it.at));
     const ph = bodyH * (it.label ? 0.8 : 0.95), pw = Math.min(AW * 0.9, ph * (it.ratio || (land ? 16 / 9 : 4 / 3))), x = (AW - pw) / 2;   // it.ratio: 3/4 cho chân dung
-    const kb = 1.04 + Math.min(0.06, (f / fps) * 0.012);
+    const kb = 1;   // không zoom ảnh (13/11/2026 — David: bỏ zoom vào / ra)
     body = (
       <>
         <div style={{position: 'absolute', left: x, top: 0, width: pw, height: ph, borderRadius: M * 0.035, overflow: 'hidden',
