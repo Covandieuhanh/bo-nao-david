@@ -2,6 +2,8 @@
 
 Mỗi bài: **Mục tiêu · Nội dung · Thực hành · Bài tập · Xong khi**. Học viên làm trên tư liệu thật của mình. Biểu mẫu dùng trong bài: [bo-bieu-mau/](bo-bieu-mau/README.md).
 
+Link slide thuộc tài khoản Claude cũ (13/11/2026). Bản xem trên máy, đủ ảnh và ghi chú trainer: `~/Documents/1-nghe-trainer/goi-dung-video-ai/slide-ban-xem/` (mở `bai-1.html` … `bai-8.html`). Đổi tài khoản thì dựng lại slide từ mã trong `slide/` và ảnh trong thư mục bản xem.
+
 | Bài | Tên | Buổi | Biểu mẫu | Slide |
 |---|---|---|---|---|
 | 1 | Cài máy và trợ lý AI | 1 | 01 | [mở](https://claude.ai/artifact/J3Ms717XmQaVLkct7ALy5S) |
