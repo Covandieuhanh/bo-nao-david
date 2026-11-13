@@ -1,17 +1,17 @@
-# Gói 1: Trainer edit video bằng AI
+# Gói 1: Trainer dựng video bằng AI trên máy tính
 
 Gói công nghệ đầu tiên của hướng 3 (`nao/David.md` 4.1), chốt 13/11/2026. Quy trình bán: `../ban-goi-cong-nghe.md`.
 
-**Luật của gói:** bộ trainer dạy **edit video nói chung**, ai học xong cũng tự edit được video bằng **AI và thiết bị của chính họ** (chỉ điện thoại, máy tính + app, hay máy tính + AI tự làm). Nội dung giáo trình **không chứa chi tiết riêng của David** (kênh, skill, luật, file của David). Hệ của David chỉ dùng làm **kết quả mẫu**: cho học viên thấy xong một bước thì trông thế nào.
+**Luật của gói:** chỉ dạy **kỹ năng dựng video bất kì bằng AI trên máy tính của học viên**, dùng AI họ đang có. Không dạy tư duy kênh, chọn ý, đăng, đo (đã tách sang `../goi-noi-dung-kenh/` để làm gói khác). Không chứa chi tiết riêng của David; hệ của David chỉ là kết quả mẫu để demo.
 
-**Hứa với khách:** quay một lần → dùng AI ra bản dài có phụ đề và hình minh hoạ, clip dọc, ảnh bìa, chữ đăng bài. Trainer kèm 1:1 tới khi khách **tự làm 1 video không cần trainer và đã đăng ≥ 4 video**.
+**Hứa với khách:** đưa tư liệu thô → AI dựng ra video hoàn chỉnh (cắt ghép, phụ đề, chữ, đồ hoạ, nhạc, đủ khung, clip ngắn, ảnh bìa). Trainer kèm 1:1 tới khi khách **tự dựng 1 video không cần trainer và đã dựng ≥ 4 video**.
 
 | File | Nội dung |
 |---|---|
-| [1-quy-trinh.md](1-quy-trinh.md) | 3 tuyến theo thiết bị, 9 bước một video, luật giữ chất lượng |
-| [2-lo-trinh.md](2-lo-trinh.md) | 4 chặng, 6 buổi, quy trình một học viên, việc trainer chuẩn bị |
-| [3-giao-trinh.md](3-giao-trinh.md) | 12 bài, mỗi bài có cách làm theo từng tuyến |
-| [4-phieu-va-nghiem-thu.md](4-phieu-va-nghiem-thu.md) | Phiếu đầu vào, điểm trước/sau, nghiệm thu |
-| [bo-mau/](bo-mau/README.md) | 8 mẫu trao học viên: kênh, phiếu lọc, hồ sơ cho AI, lời dặn 9 bước, danh sách kiểm, sổ, cài đặt + file dặn AI tuyến C |
+| [1-quy-trinh.md](1-quy-trinh.md) | bộ công cụ, 8 bước dựng, luật dựng, đòi hỏi máy |
+| [2-lo-trinh.md](2-lo-trinh.md) | 4 buổi, quy trình một học viên, việc trainer chuẩn bị |
+| [3-giao-trinh.md](3-giao-trinh.md) | 8 bài |
+| [4-phieu-va-nghiem-thu.md](4-phieu-va-nghiem-thu.md) | phiếu đầu vào, trước/sau, nghiệm thu |
+| [bo-mau/](bo-mau/README.md) | 4 mẫu: cài đặt, file dặn dựng, lời dặn từng bước, danh sách kiểm |
 
 **Chờ David chốt:** giá gói · kèm tiếp tối đa bao lâu.

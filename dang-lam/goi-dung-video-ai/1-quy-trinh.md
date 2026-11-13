@@ -1,39 +1,37 @@
-# 1. Quy trình chung: edit video bằng AI, trên thiết bị của chính mình
+# 1. Quy trình: dựng video bất kì bằng AI trên máy tính
 
-Quy trình này dùng cho **mọi người, mọi loại video nói** (bán hàng, chia sẻ kiến thức, vlog, podcast). Không gắn với một AI hay một thiết bị nào: học viên dùng **AI mình đang có** và **máy mình đang có**.
+Dùng cho **mọi loại video** (nói trước camera, vlog nhiều cảnh, sản phẩm, sự kiện, quay màn hình, ghi âm). Học viên dùng **trợ lý AI chạy lệnh trên máy tính của mình** (Claude Code, Codex CLI, Gemini CLI… chọn cái đang có). AI điều khiển các công cụ dựng miễn phí; người chỉ đưa tư liệu, nói muốn gì, xem và góp ý.
 
 ## Mục tiêu
-Học viên quay một lần → dùng AI làm ra **bản dài có phụ đề và hình minh hoạ, clip dọc ngắn, ảnh bìa, chữ đăng bài**, rồi tự sửa và tự nâng cấp được quy trình của mình.
+Từ tư liệu thô → AI dựng ra video hoàn chỉnh: cắt ghép, phụ đề, chữ, đồ hoạ, nhạc, âm lượng chuẩn, đủ các khung cần đăng.
 
-## Kế hoạch: chọn tuyến theo thiết bị
-Cùng 9 bước, khác công cụ. Học viên bắt đầu ở tuyến hợp máy mình, lên tuyến cao hơn khi muốn tự động hơn.
+## Kế hoạch: bộ công cụ
+| Công cụ | Việc |
+|---|---|
+| **Trợ lý AI chạy lệnh** | đọc file dặn dựng, chạy các công cụ dưới, tự kiểm kết quả |
+| **ffmpeg** | cắt, ghép, xoay, đổi khung, gắn phụ đề, lọc tiếng, chuẩn âm lượng, xuất file |
+| **Whisper** | chép lời có mốc thời gian (để AI "nghe" được video) |
+| **Remotion** (khi cần đồ hoạ) | chữ chuyển động, hình minh hoạ, khung trình bày bằng code |
+| **File dặn dựng** | phong cách, luật, cách làm: AI đọc mỗi lần, sửa dần cho đúng ý |
 
-| Tuyến | Thiết bị | AI dùng để | Công cụ dựng (ví dụ, chọn cái học viên có) | Mức tự động |
-|---|---|---|---|---|
-| **A. Điện thoại** | chỉ điện thoại | trò chuyện: chép lời, chọn đoạn, viết tiêu đề, chữ đăng bài | app dựng có phụ đề tự động (CapCut, VN…) | AI nghĩ, người bấm |
-| **B. Máy tính + app** | Mac hoặc Windows bình thường | như A + soạn danh sách cắt, chữ trên hình | app dựng có AI trên máy tính (CapCut, Descript…) | AI nghĩ, app làm phần lớn |
-| **C. Máy tính + AI tự làm** | máy đủ mạnh | trợ lý AI chạy lệnh trên máy (Claude Code, Codex, Gemini CLI…) | công cụ miễn phí AI tự điều khiển: ffmpeg, Whisper, Remotion | AI làm từ đầu tới cuối, người xem và góp ý |
+## Quy trình: 8 bước dựng một video
+| # | Bước | AI làm | Đạt khi |
+|---|---|---|---|
+| 1 | **Nạp tư liệu** | xếp file vào thư mục tập, đo độ dài, khung, chất lượng | biết có gì trong tay |
+| 2 | **Hiểu tư liệu** | chép lời (nếu có tiếng nói), chụp khung hình rải đều để "xem" cảnh | có lời chép + danh sách cảnh |
+| 3 | **Kế hoạch dựng** | viết dòng thời gian: đoạn giữ, thứ tự cảnh, chỗ chữ, hình, nhạc | người duyệt được kế hoạch trong 2 phút |
+| 4 | **Dựng thô** | cắt, ghép theo kế hoạch; bỏ lặng, câu hỏng | mạch xem trơn |
+| 5 | **Làm sạch** | xoay, cắt khung, chỉnh sáng màu nhẹ, giảm ồn | hình rõ, tiếng rõ |
+| 6 | **Phụ đề, chữ, đồ hoạ** | phụ đề 5–8 chữ mỗi lần; chữ nhấn, hình minh hoạ không che chủ thể | đọc kịp, không rối |
+| 7 | **Nhạc, âm thanh** | nhạc thấp dưới giọng, hiệu ứng tiếng nhẹ, chuẩn âm khoảng −14 LUFS | nghe dễ chịu, đều tiếng |
+| 8 | **Xuất + tự kiểm** | xuất các khung cần (ngang 16:9, dọc 9:16, vuông), clip ngắn, ảnh bìa từ khung hình; chụp khung kiểm lỗi | file đúng khung, không lỗi |
 
-## Quy trình: 9 bước của một video (mọi tuyến)
-| # | Bước | Đạt khi |
-|---|---|---|
-| 0 | **Chuẩn bị**: ghi 3 dòng (vấn đề người xem gặp · cách giải · việc họ làm được ngay) | 3 dòng rõ |
-| 1 | **Quay** bằng điện thoại theo chuẩn quay | rõ mặt, rõ tiếng, đủ khoảng trống cho chữ |
-| 2 | **Chép lời** bằng AI, có mốc thời gian | lời chép đúng, sửa xong tên riêng |
-| 3 | **Lọc**: video này đáng làm không, cho ai, đăng ở đâu, dẫn người xem làm gì tiếp | 1 phiếu lọc |
-| 4 | **Dựng bản dài**: làm sạch, phụ đề, khung hình, hình minh hoạ, chữ nhấn, nhạc, âm lượng chuẩn | xem trọn không vấp |
-| 5 | **Cắt clip dọc**: mỗi clip một ý trọn, đứng độc lập | người lạ xem vẫn hiểu |
-| 6 | **Phát hành**: tiêu đề, mô tả, ảnh bìa, chữ đăng từng nền tảng | đủ chữ cho mọi kênh |
-| 7 | **Xem + góp ý**: người làm góp ý, AI sửa | bản mình chịu đăng |
-| 8 | **Đăng + đo**: đăng, đọc số sau 24 giờ / 7 ngày, chọn một điều sửa cho video sau | sổ số liệu có dòng mới |
+**Góp ý** ở bất kì bước nào → AI sửa video **và sửa đúng một câu trong file dặn dựng** để lần sau tự đúng.
 
-## Luật giữ chất lượng (mọi tuyến)
-- **Chữ trên video lấy đúng lời người nói**; AI chỉ chọn và trình bày, không bịa lời.
-- **Dễ hiểu hơn cầu kì**: mỗi video ít kiểu hiệu ứng.
-- **Góp ý thì sửa vào "bộ lệnh"** (lời dặn AI, mẫu dựng) để lần sau tự đúng, không sửa tay mãi từng video.
-- **An toàn**: không đưa mật khẩu, mã OTP cho AI; AI hỏi trước khi xoá, đăng, tốn tiền.
+## Luật dựng
+- Chữ trên video lấy **đúng lời trong video** (khi video có người nói); AI không bịa lời.
+- Dễ hiểu hơn cầu kì: mỗi video ít kiểu hiệu ứng.
+- Không sửa, không xoá file gốc. AI hỏi trước khi xoá hay tốn tiền; không đưa mật khẩu cho AI.
 
-## Đòi hỏi tối thiểu
-- Tuyến A: điện thoại quay 1080p, một app AI trò chuyện (bản miễn phí dùng được).
-- Tuyến B: thêm máy tính và app dựng.
-- Tuyến C: máy RAM ≥ 16 GB, trống ≥ 50 GB, tài khoản AI trả phí có trợ lý chạy lệnh. Remotion miễn phí cho cá nhân và công ty ≤ 3 người, lớn hơn cần giấy phép: kiểm lại điều khoản lúc dạy.
+## Đòi hỏi máy
+Mac hoặc Windows, RAM ≥ 16 GB, ổ trống ≥ 50 GB; tài khoản AI có trợ lý chạy lệnh. Remotion miễn phí cho cá nhân và công ty ≤ 3 người, lớn hơn cần giấy phép (kiểm lại điều khoản lúc dạy).

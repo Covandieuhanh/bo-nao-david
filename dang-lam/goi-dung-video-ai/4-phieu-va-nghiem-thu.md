@@ -1,23 +1,19 @@
 # 4. Phiếu đầu vào và nghiệm thu
 
-Điền lúc nhận học viên; điền lại phần B ở buổi nghiệm thu để so trước/sau.
+## A. Đầu vào
+1. **Máy:** Mac / Windows · RAM · ổ trống
+2. **AI:** đang dùng AI nào, bản trả phí có trợ lý chạy lệnh chưa?
+3. **Video hay làm:** nói trước camera · vlog · sản phẩm · sự kiện · quay màn hình · ghi âm · khác
+4. **Hiện dựng bằng gì:** app nào, mất bao lâu một video?
 
-## A. Hiểu học viên (Tiền · Thị trường · Con người)
-1. **Tiền:** video sẽ dẫn tới sản phẩm / dịch vụ nào? Hiện mỗi tháng có bao nhiêu khách từ mạng?
-2. **Thị trường:** người xem là ai? Nỗi đau lớn nhất của họ? Đang đăng ở nền tảng nào?
-3. **Con người:** ai quay, ai đăng? Mỗi tuần có mấy giờ cho video? Đã từng dùng AI chưa?
-4. **Thiết bị và AI:** chỉ điện thoại hay có máy tính (loại, RAM, ổ trống)? Đang dùng AI nào, bản miễn phí hay trả phí? → chọn tuyến A / B / C.
-
-## B. Điểm đầu (điền lại khi nghiệm thu)
+## B. Trước / sau (điền lại khi nghiệm thu)
 | Chỉ số | Trước | Sau |
 |---|---|---|
-| Số video đăng / tháng | | |
 | Thời gian công cho 1 video (giờ) | | |
-| Tin nhắn / khách từ video mỗi tháng | | |
-| Tự tin tự làm video (1–10) | | |
+| Số video dựng được / tháng | | |
+| Tự tin tự dựng (1–10) | | |
 
-## C. Nghiệm thu (đủ cả 4 mới xong gói)
-- [ ] Tự làm 1 video từ quay tới chữ đăng bài, trainer chỉ ngồi xem
-- [ ] ≥ 4 video đã đăng bằng quy trình này (link)
-- [ ] 1 bản nhìn lại tuần: Kết quả / Vấn đề / điều sửa
+## C. Nghiệm thu (đủ cả 3 mới xong gói)
+- [ ] Tự dựng 1 video từ tư liệu mới, trainer chỉ ngồi xem
+- [ ] ≥ 4 video đã dựng xong bằng cách này
 - [ ] Lời chứng (ẩn danh nếu muốn) + số trước/sau
