@@ -25,7 +25,7 @@ David nhắn Telegram những gì nhớ, biết, cần làm. Phiên Claude Code 
 **Vì sao làm vậy (bài học 11/11/2026):**
 - Token để ở `channels/so-nho/` (đặt `TELEGRAM_STATE_DIR`), không ở `channels/telegram/`: plugin cho phiên mở sau tắt bot của phiên trước, nên mọi phiên Claude khác không được thấy token.
 - launchd chạy qua `screen` vì macOS chặn tiến trình nền đọc Documents; chỉ cấp quyền cho `screen`.
-- Mod cấp người dùng (collision-guard, so-viec, goal-meter, savvy-progress) làm kẹt lệnh trong phiên bot, nên tắt riêng ở `settings.json`.
+- Mod giao diện đã gỡ hết 13/11/2026; `settings.json` của bot vẫn tắt chúng phòng khi có máy còn cài.
 - Kết nối Telegram đôi khi hỏng lúc mở phiên mà không báo (`/mcp` ghi failed, không có tiến trình `bun server.ts`): canh-bot.sh thấy vậy sau 2 phút thì mở lại phiên.
 - `MCP_TIMEOUT=120000`: lần đầu Bun cài thư viện lâu hơn 30 giây.
 - `ProcessType` = `Interactive` trong plist: không có thì launchd hạ ưu tiên tiến trình nền, mỗi lần đọc/sửa file chậm 6–18 giây, một tin mất ~2 phút. `ENABLE_TOOL_SEARCH=false` nạp sẵn công cụ, bớt một vòng. `ackReaction` 👀 báo đã nhận tin ngay.

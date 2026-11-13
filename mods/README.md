@@ -1,10 +1,12 @@
 # Mod của Claude Code
 
+> **Đã gỡ hết 13/11/2026** theo lời David (ghi nhớ `luat-mod-tu-chay`): không cài mod nào, `scripts/install.sh` chỉ cài Telegram. Phần dưới giữ làm lưu trữ; mã Sổ việc còn ở `so-viec/`.
+
 Mod là plugin chạy trong Claude Code (tab Code của app, terminal): vẽ bảng, dòng trên ô nhập, lệnh `/...`, chặn hay theo dõi việc Claude làm.
-Cài ở cấp người dùng Mac nên **mọi phiên, mọi tài khoản Claude** trên máy đều có. Mod chỉ nạp khi phiên mở: cài xong phải mở phiên mới. Mod nào cũng phải **tự chạy khi cần**, lệnh chỉ để xem chi tiết (ghi nhớ `luat-mod-tu-chay`).
+Cài ở cấp người dùng Mac nên **mọi phiên, mọi tài khoản Claude** trên máy đều có. Mod chỉ nạp khi phiên mở: cài xong phải mở phiên mới.
 Không chạy trên chat claude.ai và app điện thoại.
 
-`bash scripts/install.sh` cài đủ cả bốn trên máy mới.
+
 
 | Mod | Của ai | Làm gì | Lệnh |
 |---|---|---|---|
