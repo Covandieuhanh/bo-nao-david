@@ -202,13 +202,16 @@ def sort_txt(lst):
     order = list(NHAN_TXT)
     return sorted(lst, key=lambda x: order.index(os.path.basename(x[1])) if os.path.basename(x[1]) in order else 99)
 
+FOLDER = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 6.5A1.5 1.5 0 0 1 4.5 5h4l2 2.5h9A1.5 1.5 0 0 1 21 9v9.5a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 18.5z"/></svg><span>Finder</span>'
+def fp(x): return f"{x[0]}/{q(x[1])}"
+
 def media_vid(root, rel, nhan, doc=False):
     return (f'<figure class="m{" doc" if doc else ""}"><video controls playsinline preload=none poster="/poster/{root}/{q(rel)}" src="{url(root, rel)}"></video>'
-            f'<figcaption>{esc(nhan)}</figcaption></figure>')
+            f'<figcaption>{esc(nhan)}</figcaption><button class=fd onclick="finder(\'{root}/{q(rel)}\',event)" title="Mở trong Finder">{FOLDER}</button></figure>')
 
 def media_img(root, rel, nhan):
     return (f'<figure class=m><img loading=lazy src="{url(root, rel)}" onclick="anh(this.src)" alt="">'
-            f'<figcaption>{esc(nhan)}</figcaption></figure>')
+            f'<figcaption>{esc(nhan)}</figcaption><button class=fd onclick="finder(\'{root}/{q(rel)}\',event)" title="Mở trong Finder">{FOLDER}</button></figure>')
 
 def nut(nhan, onclick, tat=False):
     return f'<button class=f{" tat" if tat else ""} onclick="{esc(onclick)}"{" disabled" if tat else ""}>{esc(nhan)}</button>'
@@ -238,20 +241,22 @@ def section(t):
         da.add(f)
         nhan = NHAN_TXT.get(f, f)
         if f == "so-lieu.md" and trong(txt): files.append(nut(f"{nhan}: chưa có", "", True)); continue
-        files.append(nut(nhan, f"xem('/doc/{x[0]}/{q(x[1])}','{esc(ten(t))} · {nhan}')"))
+        files.append(nut(nhan, f"xem('/doc/{x[0]}/{q(x[1])}','{esc(ten(t))} · {nhan}','{fp(x)}')"))
     for c in sorted(t.clips):
-        for x in t.clips[c]["txt"]: files.append(nut(f"Lời clip {c}", f"xem('/doc/{x[0]}/{q(x[1])}','{esc(ten(t))} · Lời clip {c}')"))
+        for x in t.clips[c]["txt"]: files.append(nut(f"Lời clip {c}", f"xem('/doc/{x[0]}/{q(x[1])}','{esc(ten(t))} · Lời clip {c}','{fp(x)}')"))
     for x in t.dai_vid:
-        if x not in dai: files.append(nut(nhan_vid(x[1]), f"phat('{url(*x)}')"))
+        if x not in dai: files.append(nut(nhan_vid(x[1]), f"phat('{url(*x)}','{fp(x)}')"))
     for i, x in enumerate(thumbs):
-        if x not in bia: files.append(nut(f"Bìa phương án {i}", f"anh('{url(*x)}')"))
+        if x not in bia: files.append(nut(f"Bìa phương án {i}", f"anh('{url(*x)}','{fp(x)}')"))
     if t.danh_muc: files.insert(0, nut("Lọc & trạng thái", f"xemTpl('st-{k}','{esc(ten(t))} · Lọc & trạng thái')"))
     tt = t.danh_muc[-1].get("Trạng thái", "") if t.danh_muc else ""
+    goc = (dai + [v for c in t.clips.values() for v in c["vid"]] + t.thumbs + t.dai_txt + t.hl_txt)[:1]
+    thu_muc = (f'<button class="more fdir" onclick="finder(\'{goc[0][0]}/{q(goc[0][1].split("/")[0])}\',event)" title="Mở thư mục tập trong Finder">{FOLDER}</button>' if goc else "")
     chip = f'<span class=chip title="{esc(re.sub(r"[`*]", "", tt))}">{esc(re.sub(r"[`*]", "", tt))}</span>' if tt else ""
     so = len([f for f in files if "disabled" not in f])
     return (f'<section class=tap id="tap-{esc(k)}" data-thu="{1 if nhom(k) else 0}" data-q="{esc((ten(t) + " " + k + " " + tt).lower())}">'
             f'<div class=hd><h2>{esc(ten(t))}</h2>{chip}'
-            f'{f"<button class=more onclick=mo(this)>Tài liệu · {so}</button>" if files else ""}</div>'
+            f'{f"<button class=more onclick=mo(this)>Tài liệu · {so}</button>" if files else ""}{thu_muc}</div>'
             f'<div class=strip>{strip or "<div class=trong>Chưa có video</div>"}</div>'
             f'<div class=files hidden>{"".join(files)}</div>'
             f'{f"<template id=st-{esc(k)}>{status_html(t)}</template>" if t.danh_muc else ""}</section>')
@@ -262,7 +267,7 @@ def page_home(taps):
             f'<input id=q type=search placeholder="Tìm…" oninput="loc()">'
             f'{f"<label class=thu><input type=checkbox id=thu onchange=loc()> Bản thử ({m})</label>" if m else ""}</header>'
             + "".join(section(t) for t in taps)
-            + '<dialog id=dlg><div class=dh><b id=dt></b><button id=cp onclick="chep()">Chép</button><button onclick="dlg.close()" aria-label="Đóng">✕</button></div><div id=db></div></dialog>')
+            + '<dialog id=dlg><div class=dh><b id=dt></b><button id=dfd onclick="finder(fpHien,event)">Mở trong Finder</button><button id=cp onclick="chep()">Chép</button><button onclick="dlg.close()" aria-label="Đóng">✕</button></div><div id=db></div></dialog>')
 
 CSS = """
 :root{--bg:#121216;--card:#1c1c22;--card2:#26262e;--tx:#ececf1;--dim:#8d8d99;--ac:#ff7a2f;--bd:#2c2c36;--h:230px}
@@ -283,6 +288,9 @@ h2{margin:0;font-size:17px;white-space:nowrap;overflow:hidden;text-overflow:elli
 .m video,.m img{display:block;height:var(--h);width:auto;max-width:min(86vw,520px);aspect-ratio:16/9;object-fit:cover;border-radius:10px;background:#000;cursor:pointer}
 .m.doc video{aspect-ratio:9/16} .m img{object-fit:contain;background:#000}
 .m figcaption{position:absolute;left:8px;top:8px;background:rgba(0,0,0,.6);color:#fff;font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:6px;pointer-events:none}
+.fd{position:absolute;right:8px;top:8px;display:flex;gap:4px;align-items:center;background:rgba(0,0,0,.6);color:#fff;border:0;border-radius:6px;padding:3px 8px;font-size:11.5px;font-weight:600;cursor:pointer}
+.fd:hover,.fdir:hover{background:var(--ac);color:#fff} .fd.ok,.fdir.ok{background:#2e9e5b;color:#fff}
+.fdir{display:flex;align-items:center;gap:4px;padding:5px 10px} .m.doc .fd span{display:none}
 .m video:not([data-play]) + figcaption{opacity:1} .m video[data-play] + figcaption{opacity:0}
 .cho div{height:var(--h);aspect-ratio:9/16;border:1px dashed var(--bd);border-radius:10px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--dim);font-size:14px}
 .trong{color:var(--dim);font-size:13px;padding:10px 0}
@@ -304,11 +312,13 @@ td,th{border:1px solid var(--bd);padding:4px 8px;text-align:left;vertical-align:
 JS = r"""
 const dlg=document.getElementById('dlg'),dt=document.getElementById('dt'),db=document.getElementById('db'),cpb=document.getElementById('cp');
 function mo(b){const f=b.closest('.tap').querySelector('.files');f.hidden=!f.hidden;b.classList.toggle('on',!f.hidden)}
-function hien(t,html,chep){dt.textContent=t;db.innerHTML=html;cpb.hidden=!chep;dlg.showModal();db.scrollTop=0}
-async function xem(u,t){hien(t,'<p style="color:var(--dim)">Đang mở…</p>',true);db.innerHTML=await (await fetch(u)).text()}
+let fpHien='';const dfd=document.getElementById('dfd');
+function hien(t,html,chep,fp){dt.textContent=t;db.innerHTML=html;cpb.hidden=!chep;fpHien=fp||'';dfd.hidden=!fp;dlg.showModal();db.scrollTop=0}
+async function xem(u,t,fp){hien(t,'<p style="color:var(--dim)">Đang mở…</p>',true,fp);db.innerHTML=await (await fetch(u)).text()}
+function finder(p,e){e&&(e.preventDefault(),e.stopPropagation());const b=e&&e.currentTarget;fetch('/finder/'+p,{method:'POST'}).then(r=>{if(b){const o=b.innerHTML;b.classList.add('ok');setTimeout(()=>b.classList.remove('ok'),1200)}})}
 function xemTpl(id,t){hien(t,document.getElementById(id).innerHTML,true)}
-function anh(u){hien('Ảnh bìa','<img src="'+u+'">',false)}
-function phat(u){hien('Video','<video controls autoplay playsinline src="'+u+'"></video>',false)}
+function anh(u,fp){hien('Ảnh bìa','<img src="'+u+'">',false,fp)}
+function phat(u,fp){hien('Video','<video controls autoplay playsinline src="'+u+'"></video>',false,fp)}
 function chep(){navigator.clipboard.writeText(db.innerText).then(()=>{cpb.textContent='Đã chép';setTimeout(()=>cpb.textContent='Chép',1500)})}
 dlg.addEventListener('close',()=>{db.querySelectorAll('video').forEach(v=>v.pause())});
 dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
@@ -365,6 +375,15 @@ class H(http.server.SimpleHTTPRequestHandler):
         except Exception as e: b = f"<pre>Lỗi đọc kết quả: {esc(e)}</pre>".encode()
         self.send_response(200); self.send_header("Content-Type", "text/html; charset=utf-8"); self.send_header("Content-Length", len(b)); self.end_headers()
         self.wfile.write(b)
+    def do_POST(self):   # nút "Finder": hiện file trong Finder (máy chủ chỉ nghe 127.0.0.1)
+        u = urllib.parse.urlparse(self.path)
+        if not u.path.startswith("/finder/"): return self.send_error(404)
+        rid, _, rel = u.path[8:].partition("/")
+        if rid not in ROOTS: return self.send_error(404)
+        base = os.path.realpath(ROOTS[rid][0]); p = os.path.realpath(os.path.join(base, urllib.parse.unquote(rel)))
+        if not p.startswith(base + os.sep) or not os.path.exists(p): return self.send_error(404)
+        import subprocess; subprocess.run(["open", "-R", p])
+        self.send_response(204); self.end_headers()
     def send_file(self, p):   # có Range để tua video (Safari bắt buộc)
         size = os.path.getsize(p); a, b = 0, size - 1
         m = re.match(r"bytes=(\d*)-(\d*)", self.headers.get("Range", ""))
