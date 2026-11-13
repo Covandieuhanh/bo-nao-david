@@ -16,6 +16,7 @@ David · `nao-` bộ não và GitHub · `video-` dựng và đăng video · `may
 - [Nội dung của David, người xem trung tâm](luat-noi-dung-cua-david.md) — không khuôn lời; học kênh lớn ở nhịp, trình bày (05/11, gộp 10/11)
 - [Sửa thẳng, tái bản toàn bộ](luat-sua-thang-tai-ban.md) — đổi luật thì viết lại câu cũ; máy đo báo thì tái bản cả bộ não một đợt (10/11)
 - [Thử bằng đoạn ngắn](luat-thu-bang-doan-ngan.md) — thử skill video bằng một đoạn trọn một ý, cho David xem bản cuối (09/11)
+- [Gói trainer dạy cách chung](luat-goi-trainer-chung.md) — gói công nghệ dùng được với mọi AI, mọi thiết bị; chi tiết của David chỉ là kết quả mẫu (13/11)
 - [David.md chỉ điều cố định](luat-david-md-chi-dieu-co-dinh.md) — ý tưởng đang cân nhắc ghi dang-lam/y-tuong-nghe.md, không vào hồ sơ (12/11)
 - [Tự hỏi khi mơ hồ](luat-tu-hoi-khi-mo-ho.md) — 6 tín hiệu tự dừng hỏi, kể cả giữa chừng (05/11)
 

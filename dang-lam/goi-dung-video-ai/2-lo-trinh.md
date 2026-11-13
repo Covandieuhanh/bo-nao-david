@@ -1,37 +1,37 @@
-# 2. Lộ trình trainer: dẫn một học viên tới khi tự chạy được hệ
+# 2. Lộ trình trainer: dẫn một học viên tới khi tự edit được video bằng AI
 
-Khung theo mô hình của David (`nao/mo-hinh-kinh-doanh.md`): bốn chặng = **Mục tiêu → Kế hoạch → Quy trình → Thực thi**; mỗi buổi kết thúc bằng **Kết quả** hoặc **Vấn đề**. Cách dẫn theo quy trình một ca (`nao/David.md` 4.5): tìm hiểu → thống nhất → làm trên việc thật → rút ra dần → nhật ký ca.
+Khung bốn chặng: **Mục tiêu → Kế hoạch → Quy trình → Thực thi**; mỗi buổi kết thúc bằng **Kết quả** hoặc **Vấn đề**. Học viên học trên **video thật của mình**, bằng **AI và thiết bị của mình**.
 
 ## Mục tiêu (cam kết của gói)
-Học viên **tự làm ra 1 video từ đầu tới bài đăng mà không cần David**, và **đã đăng ≥ 4 video thật** trên kênh của mình bằng hệ này. Chưa đạt thì David kèm tiếp, chưa xong gói.
+Học viên **tự làm 1 video từ lúc quay tới chữ đăng bài mà không cần trainer**, và **đã đăng ≥ 4 video** làm bằng quy trình này. Chưa đạt thì trainer kèm tiếp, chưa xong gói.
 
-## Kế hoạch: 4 chặng, 6 buổi 1:1 online (90 phút) trong ~6 tuần
+## Kế hoạch: 4 chặng, 6 buổi 1:1 online (90 phút), khoảng 6 tuần
 | Chặng | Buổi | Bài | Kết quả của chặng |
 |---|---|---|---|
-| **0. Trước khi vào** | — | phiếu đầu vào, kiểm máy | biết học viên là ai, máy chạy được không |
-| **1. Mục tiêu**: kênh để làm gì | 1 | 1, 2 | 1 trang "kênh của tôi" + 12 ý video đầu |
-| **2. Kế hoạch**: dựng hệ trên máy học viên | 2 | 3, 4 | máy chạy được, bộ não của học viên có đủ |
-| | 3 | 5, 6 | video đầu tiên có phụ đề, đã làm sạch |
-| **3. Quy trình**: dựng từng loại | 4 | 7, 8 | bản dài có motion graphics + clip dọc |
-| | 5 | 9, 10 | bài đăng, thumbnail; (tuỳ chọn) podcast |
-| **4. Thực thi**: chạy một mạch, đo, tự cải tiến | 6 | 11, 12 + nghiệm thu | học viên tự làm 1 video trước mặt David |
+| **0. Trước khi vào** | — | phiếu đầu vào, chọn tuyến A / B / C | biết học viên là ai, máy gì, AI gì |
+| **1. Mục tiêu**: video để làm gì | 1 | 1, 2 | 1 trang "Kênh của tôi" + 12 ý video đầu |
+| **2. Kế hoạch**: dựng bộ công cụ của học viên | 2 | 3, 4 | công cụ chạy được, AI hiểu học viên |
+| | 3 | 5, 6 | video đầu có phụ đề, đã làm sạch |
+| **3. Quy trình**: dựng từng phần | 4 | 7, 8 | bản dài có hình minh hoạ + clip dọc |
+| | 5 | 9, 10 | chữ đăng bài, ảnh bìa; (tuỳ chọn) ghi âm thành video |
+| **4. Thực thi**: chạy một mạch, đo, tự cải tiến | 6 | 11, 12 + nghiệm thu | học viên tự làm 1 video trước mặt trainer |
 | **Kèm tới khi đạt** | nhắn tin + buổi thêm | — | đủ 4 video đã đăng |
 
-Giữa hai buổi: học viên làm **bài tập trên video thật của mình** (không làm bài mẫu), gửi kết quả qua nhắn tin; David góp ý trong 24 giờ.
+Giữa hai buổi: học viên làm bài tập trên video của mình, gửi kết quả; trainer góp ý trong 24 giờ.
 
-## Quy trình một học viên (David làm)
-1. **Tìm hiểu** (trò chuyện 20 phút, miễn phí): mục tiêu, nỗi đau với video, soi bằng **Tiền · Thị trường · Con người**: video giúp bán gì · cho ai · ai quay, ai đăng, có bao nhiêu giờ mỗi tuần.
-2. **Kiểm có hợp không**: có máy đủ mạnh (`1-quy-trinh.md` mục đòi hỏi), chịu trả tài khoản Claude, quay được ≥ 1 video/tuần. Không hợp thì nói thẳng, không bán.
+## Quy trình một học viên
+1. **Tìm hiểu** (trò chuyện 20 phút): video để bán gì, cho ai, ai quay, mỗi tuần có mấy giờ.
+2. **Chọn tuyến** theo máy và AI học viên đang có (`1-quy-trinh.md`). Không bắt mua thêm gì để bắt đầu; lên tuyến cao hơn khi học viên muốn.
 3. **Phiếu đầu vào** (`4-phieu-va-nghiem-thu.md`): ghi điểm đầu để so trước/sau.
-4. **Thống nhất**: kết quả cam kết, lịch 6 buổi, việc học viên tự làm, cách nhắn hỏi.
-5. **6 buổi** theo giáo trình (`3-giao-trinh.md`), mỗi buổi ghi **nhật ký ca**: đã làm gì · Kết quả · Vấn đề · bài tập.
-6. **Nghiệm thu**: học viên tự làm 1 video, David chỉ ngồi xem; điền lại phiếu đầu vào để so.
-7. **Sau gói**: xin lời chứng (ẩn danh nếu muốn), số liệu trước/sau; mời gói nâng cao nếu có.
+4. **Thống nhất**: kết quả cam kết, lịch 6 buổi, việc học viên tự làm.
+5. **6 buổi** theo giáo trình (`3-giao-trinh.md`), mỗi buổi ghi nhật ký: đã làm gì · Kết quả · Vấn đề · bài tập.
+6. **Nghiệm thu**: học viên tự làm 1 video, trainer chỉ xem; điền lại phiếu để so.
+7. **Sau gói**: lời chứng (ẩn danh nếu muốn) + số trước/sau.
 
-## Thực thi: David cần chuẩn bị trước khi bán khách đầu tiên
-- [ ] **Bộ khởi đầu cho học viên**: bản rút gọn của `skills/dung-video/` bỏ luật riêng của David, thêm file hồ sơ trống để học viên tự điền (việc lớn nhất, Claude làm được).
-- [ ] Kịch bản cài đặt một lệnh cho Mac (và kiểm thử trên một máy sạch).
-- [ ] 1 video mẫu "trước / sau" từ chính kênh David làm bằng chứng.
-- [ ] Phiếu đầu vào + phiếu nghiệm thu (đã có bản nháp: `4-phieu-va-nghiem-thu.md`).
-- [ ] Chốt giá + chính sách "chưa ra kết quả thì kèm tiếp" tối đa bao lâu.
-- [ ] Học viên thử đầu tiên (bán thử, `../ban-goi-cong-nghe.md` giai đoạn 2).
+## Thực thi: trainer chuẩn bị trước khi dạy khách đầu tiên
+- [ ] **Bộ mẫu dùng chung** cho học viên: mẫu "Kênh của tôi", mẫu phiếu lọc, bộ lời dặn AI (prompt) cho từng bước, mẫu sổ số liệu. Không chứa nội dung riêng của trainer.
+- [ ] Hướng dẫn cài cho tuyến C trên Mac và Windows, thử trên một máy sạch.
+- [ ] Thử đủ 9 bước trên tuyến A (chỉ điện thoại) để chắc học viên không có máy tính vẫn đạt.
+- [ ] **Kết quả mẫu để demo**: video, phiếu lọc, bộ lời dặn mà chính trainer đã làm ra ở từng bước. Chỉ dùng để học viên thấy "xong bước này trông thế nào", không dạy theo chi tiết riêng đó.
+- [ ] Chốt giá + "chưa ra kết quả thì kèm tiếp" tối đa bao lâu.
+- [ ] Học viên thử đầu tiên (`../ban-goi-cong-nghe.md` giai đoạn 2).

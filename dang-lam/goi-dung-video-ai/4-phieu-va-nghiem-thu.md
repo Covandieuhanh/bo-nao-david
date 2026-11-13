@@ -6,7 +6,7 @@
 1. **Tiền:** video sẽ dẫn tới sản phẩm / dịch vụ nào? Hiện mỗi tháng có bao nhiêu khách từ mạng?
 2. **Thị trường:** người xem là ai? Nỗi đau lớn nhất của họ? Đang đăng ở nền tảng nào?
 3. **Con người:** ai quay, ai đăng? Mỗi tuần có mấy giờ cho video? Đã từng dùng AI chưa?
-4. **Máy:** loại máy, RAM, ổ trống; có tài khoản Claude trả phí chưa?
+4. **Thiết bị và AI:** chỉ điện thoại hay có máy tính (loại, RAM, ổ trống)? Đang dùng AI nào, bản miễn phí hay trả phí? → chọn tuyến A / B / C.
 
 ## B. Điểm đầu (điền lại khi nghiệm thu)
 | Chỉ số | Trước | Sau |
@@ -17,7 +17,7 @@
 | Tự tin tự làm video (1–10) | | |
 
 ## C. Nghiệm thu (đủ cả 4 mới xong gói)
-- [ ] Tự làm 1 video từ đầu tới `phat-hanh.md`, David chỉ ngồi xem
-- [ ] ≥ 4 video đã đăng bằng hệ này (link)
+- [ ] Tự làm 1 video từ quay tới chữ đăng bài, trainer chỉ ngồi xem
+- [ ] ≥ 4 video đã đăng bằng quy trình này (link)
 - [ ] 1 bản nhìn lại tuần: Kết quả / Vấn đề / điều sửa
 - [ ] Lời chứng (ẩn danh nếu muốn) + số trước/sau

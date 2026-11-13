@@ -13,7 +13,7 @@ Có **khoản thu đầu tiên từ một gói công nghệ**, khách **ra đư�
 | **2. Bán thử** | Đóng gói bản 0 của **một** gói, làm với 1–3 khách (miễn phí hoặc giá thử) đổi lấy lời chứng và số liệu | ≥ 1 khách ra kết quả của gói, có lời chứng |
 | **3. Bán thật** | Chốt giá, trang giới thiệu gói, quy trình bàn giao; bán đều | có khoản thu đầu tiên, khách ra kết quả |
 
-**Gói 1 (David chốt 13/11/2026): trainer tự động hoá dựng video bằng AI**: quy trình, lộ trình, giáo trình 12 bài, phiếu ở [goi-dung-video-ai/](goi-dung-video-ai/README.md).
+**Gói 1 (David chốt 13/11/2026): trainer edit video bằng AI**, dạy cách chung cho mọi người, bằng AI và thiết bị của họ: quy trình, lộ trình, giáo trình 12 bài, phiếu ở [goi-dung-video-ai/](goi-dung-video-ai/README.md).
 
 ## Quy trình (mỗi gói đi đủ 7 bước)
 1. **Chọn nỗi đau** từ tin nhắn, bình luận ("Vấn đề") — soi bằng Tiền · Thị trường · Con người: mất tiền gì, khách là ai / quy mô nào, người nào đang làm và kẹt ở đâu.
@@ -27,7 +27,7 @@ Có **khoản thu đầu tiên từ một gói công nghệ**, khách **ra đư�
 ## Thực thi (checklist)
 - [x] David chọn gói đầu tiên: tự động hoá dựng video bằng AI (13/11)
 - [x] Gói bản 0: quy trình, lộ trình 6 buổi, giáo trình 12 bài (13/11)
-- [ ] Bộ khởi đầu cho học viên + kịch bản cài (`goi-dung-video-ai/2-lo-trinh.md` mục Thực thi)
+- [ ] Bộ mẫu dùng chung cho học viên + hướng dẫn cài tuyến C (`goi-dung-video-ai/2-lo-trinh.md` mục Thực thi)
 - [ ] Chốt giá gói
 - [ ] Claude soạn 3 bài phễu cho Facebook cá nhân từ quy trình dựng video thật của David (David duyệt trước khi đăng)
 - [ ] Chọn từ khoá nhắn tin của hướng 3 (khác "gỡ" của trainer)
