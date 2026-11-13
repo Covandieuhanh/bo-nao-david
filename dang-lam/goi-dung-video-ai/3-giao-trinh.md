@@ -2,7 +2,7 @@
 
 Mỗi bài: **Mục tiêu · Nội dung · Thực hành · Bài tập · Xong khi**. Học viên làm trên tư liệu thật của mình. Biểu mẫu dùng trong bài: [bo-bieu-mau/](bo-bieu-mau/README.md).
 
-Link slide thuộc tài khoản Claude cũ (13/11/2026). Bản xem trên máy, đủ ảnh và ghi chú trainer: `~/Documents/1-nghe-trainer/goi-dung-video-ai/slide-ban-xem/` (mở `bai-1.html` … `bai-8.html`). Bản PowerPoint (8 file `.pptx`, ghi chú trainer nằm ở phần ghi chú từng slide, mở được bằng app Mở Tài Liệu hay Keynote): `~/Documents/1-nghe-trainer/goi-dung-video-ai/slide-pptx/`; slide là ảnh chụp nên muốn sửa thì sửa mã trong `slide/` rồi xuất lại. Đổi tài khoản thì dựng lại slide từ mã trong `slide/` và ảnh trong thư mục bản xem.
+Link slide thuộc tài khoản Claude cũ (13/11/2026). Bản xem trên máy, đủ ảnh và ghi chú trainer: `~/Documents/1-nghe-trainer/goi-dung-video-ai/slide-ban-xem/` (mở `bai-1.html` … `bai-8.html`). Bản PowerPoint (8 file `.pptx`, ghi chú trainer để riêng ở `ghi-chu-trainer-8-bai.docx` vì ghi chú trong pptx làm Quick Look treo; mở được bằng app Mở Tài Liệu hay Keynote): `~/Documents/1-nghe-trainer/goi-dung-video-ai/slide-pptx/`; slide là ảnh chụp nên muốn sửa thì sửa mã trong `slide/` rồi xuất lại. Đổi tài khoản thì dựng lại slide từ mã trong `slide/` và ảnh trong thư mục bản xem.
 
 | Bài | Tên | Buổi | Biểu mẫu | Slide |
 |---|---|---|---|---|
