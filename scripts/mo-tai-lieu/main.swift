@@ -66,6 +66,11 @@ struct FileItem: Identifiable, Hashable {
     let m = SlideModel(url: u); slideModels[u] = m; return m
   }
 
+  func startShow(fromStart: Bool) {
+    guard let u = selected, slideExts.contains(u.pathExtension.lowercased()) else { NSSound.beep(); return }
+    slideModel(u).startShow(fromStart: fromStart)
+  }
+
   func pickFile() {
     let p = NSOpenPanel()
     p.allowsMultipleSelection = false; p.canChooseDirectories = false
@@ -143,6 +148,10 @@ struct ContentView: View {
         ToolbarItemGroup {
           Button { s.pickFile() } label: { Label("Chọn file", systemImage: "folder") }
           Button { s.scan() } label: { Label("Làm mới", systemImage: "arrow.clockwise") }
+          if let u = s.selected, slideExts.contains(u.pathExtension.lowercased()) {
+            Button { s.startShow(fromStart: false) } label: { Label("Trình chiếu", systemImage: "play.fill") }
+              .help("Trình chiếu toàn màn hình (⌘↩)")
+          }
           if let u = s.selected {
             Button { NSWorkspace.shared.activateFileViewerSelecting([u]) } label: { Label("Hiện trong Finder", systemImage: "magnifyingglass") }
             Button { NSWorkspace.shared.open(u) } label: { Label("Mở bằng app gốc", systemImage: "arrow.up.forward.app") }
@@ -178,6 +187,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
       .commands {
         CommandGroup(replacing: .newItem) {
           Button("Mở file…") { Store.shared.pickFile() }.keyboardShortcut("o")
+        }
+        CommandMenu("Trình chiếu") {
+          Button("Trình chiếu từ slide đang xem") { Store.shared.startShow(fromStart: false) }
+            .keyboardShortcut(.return, modifiers: .command)
+          Button("Trình chiếu từ slide đầu") { Store.shared.startShow(fromStart: true) }
+            .keyboardShortcut(.return, modifiers: [.command, .shift])
         }
       }
   }

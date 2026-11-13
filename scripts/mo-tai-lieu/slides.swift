@@ -14,7 +14,6 @@ let slideExts: Set<String> = ["ppt", "pptx", "pps", "ppsx", "pot", "potx", "key"
   @Published var status: Status = .loading
   @Published var cur = 0
   @Published var n = 0
-  @Published var present = false
   var html: URL?
   var root: URL?
   weak var web: WKWebView?
@@ -58,8 +57,11 @@ let slideExts: Set<String> = ["ppt", "pptx", "pps", "ppsx", "pot", "potx", "key"
 
   nonisolated func userContentController(_ c: WKUserContentController, didReceive m: WKScriptMessage) {
     guard let d = m.body as? [String: Any] else { return }
-    let cur = d["cur"] as? Int ?? 0, n = d["n"] as? Int ?? 0, pres = d["present"] as? Bool ?? false
-    Task { @MainActor in self.cur = cur; self.n = n; self.present = pres }
+    let cur = d["cur"] as? Int ?? 0, n = d["n"] as? Int ?? 0, action = d["action"] as? String
+    Task { @MainActor in
+      if action == "show" { self.cur = cur; self.startShow() }
+      else { self.cur = cur; if n > 0 { self.n = n } }
+    }
   }
 
   func js(_ s: String) { web?.evaluateJavaScript(s, completionHandler: nil) }
@@ -67,60 +69,87 @@ let slideExts: Set<String> = ["ppt", "pptx", "pps", "ppsx", "pot", "potx", "key"
   func prev() { js("window.__nav&&__nav.prev()") }
   func first() { js("window.__nav&&__nav.go(0)") }
   func last() { js("window.__nav&&__nav.go(1e9)") }
-  func togglePresent() { js("window.__nav&&__nav.setPresent(\(!present))") }
+  func startShow(fromStart: Bool = false) {
+    guard status == .ready else { return }
+    Slideshow.start(self, from: fromStart ? 0 : cur)
+  }
+  /// Trình chiếu xong: đưa bản xem cuộn về đúng slide đang chiếu
+  func showEnded(at i: Int) { cur = i; js("window.__nav&&__nav.go(\(i))"); web?.window?.makeKeyAndOrderFront(nil) }
 }
 
 let navJS = #"""
 (function(){
   const slides=[...document.querySelectorAll('div.slide')];
   const post=(o)=>{try{webkit.messageHandlers.nav.postMessage(o)}catch(e){}};
-  if(!slides.length){post({cur:0,n:0,present:false});return;}
+  const SHOW=!!window.__show;            // true: cửa sổ trình chiếu toàn màn hình
+  if(!slides.length){post({cur:0,n:0});return;}
   const W=slides[0].offsetWidth||959, H=slides[0].offsetHeight||540;
-  let cur=0, present=false;
+  let cur=Math.max(0,Math.min(slides.length-1,window.__start||0)), black=false;
   const st=document.createElement('style'); document.head.appendChild(st);
+  let hud=null, hudT=0, curT=0;
+  if(SHOW){
+    hud=document.createElement('div');
+    hud.style.cssText='position:fixed;right:28px;bottom:22px;padding:8px 16px;border-radius:999px;background:rgba(0,0,0,.55);color:#fff;font:600 18px -apple-system,Arial;z-index:99;transition:opacity .4s;opacity:0;pointer-events:none';
+    document.body.appendChild(hud);
+  }
+  function flash(){ if(!hud) return; hud.textContent=(cur+1)+' / '+slides.length; hud.style.opacity=1; clearTimeout(hudT); hudT=setTimeout(()=>hud.style.opacity=0,1500); }
   function layout(){
     const vw=innerWidth, vh=innerHeight;
-    if(!present){
+    if(!SHOW){
       const z=Math.min((vw-56)/W, 3);
       st.textContent=`body{background:#2b2f36!important;margin:0;padding:24px 0 90px}
         div.slide{zoom:${z};margin:0 auto 22px!important;box-shadow:0 6px 24px rgba(0,0,0,.4)!important}`;
-      slides.forEach(s=>s.style.display='');
     } else {
-      const z=Math.min((vw-24)/W,(vh-80)/H);
+      const z=Math.min(vw/W, vh/H);
       st.textContent=`html,body{height:100%;overflow:hidden}
-        body{background:#0b0d10!important;margin:0;display:flex;align-items:center;justify-content:center;padding-bottom:56px;box-sizing:border-box}
+        body{background:#000!important;margin:0;display:flex;align-items:center;justify-content:center}
         div.slide{zoom:${z};margin:0!important;box-shadow:none!important}`;
-      slides.forEach((s,i)=>s.style.display=(i===cur?'':'none'));
+      slides.forEach((s,i)=>s.style.display=(i===cur&&!black?'':'none'));
     }
   }
-  function report(){post({cur:cur,n:slides.length,present:present});}
+  function report(){post({cur:cur,n:slides.length});}
   function go(i){
-    cur=Math.max(0,Math.min(slides.length-1,i));
-    if(present){layout();} else {slides[cur].scrollIntoView({behavior:'smooth',block:'start'});}
+    const n=Math.max(0,Math.min(slides.length-1,i));
+    if(SHOW && i>=slides.length && cur===slides.length-1){ post({action:'exit',cur:cur}); return; }  // qua slide cuối: kết thúc
+    cur=n; black=false;
+    if(SHOW){layout(); flash();} else {slides[cur].scrollIntoView({behavior:'smooth',block:'start'});}
     report();
   }
   function onScroll(){
-    if(present) return;
+    if(SHOW) return;
     const mid=innerHeight*0.35; let best=slides.length-1;
-    // slide đầu tiên còn chiếm phần trên màn hình
     for(let i=0;i<slides.length;i++){const r=slides[i].getBoundingClientRect(); if(r.bottom>mid){best=i;break;}}
     if(best!==cur){cur=best;report();}
   }
-  function setPresent(v){present=!!v; layout(); if(!present) slides[cur].scrollIntoView({block:'start'}); report();}
-  addEventListener('resize',()=>{layout(); if(!present) slides[cur].scrollIntoView({block:'start'});});
+  addEventListener('resize',()=>{layout(); if(!SHOW) slides[cur].scrollIntoView({block:'start'});});
   addEventListener('scroll',onScroll,{passive:true});
   addEventListener('keydown',e=>{
     const k=e.key;
-    if(k==='ArrowRight'||k==='PageDown'||(present&&(k==='ArrowDown'||k===' '||k==='Enter'))){go(cur+1);e.preventDefault();}
-    else if(k==='ArrowLeft'||k==='PageUp'||(present&&k==='ArrowUp')){go(cur-1);e.preventDefault();}
+    if(SHOW){
+      if(['ArrowRight','ArrowDown','PageDown',' ','Enter','n'].includes(k)){go(cur+1);}
+      else if(['ArrowLeft','ArrowUp','PageUp','Backspace','p'].includes(k)){go(cur-1);}
+      else if(k==='Home'){go(0);} else if(k==='End'){go(slides.length-1);}
+      else if(k==='Escape'||k==='q'){post({action:'exit',cur:cur});}
+      else if(k==='b'||k==='.'){black=!black;layout();}
+      else if(/^[0-9]$/.test(k)){ window.__num=(window.__num||'')+k; clearTimeout(window.__numT); window.__numT=setTimeout(()=>{window.__num='';},1200); }
+      else return;
+      if(k==='Enter'&&window.__num){ go(parseInt(window.__num)-1); window.__num=''; }
+      e.preventDefault(); return;
+    }
+    if(k==='ArrowRight'||k==='PageDown'){go(cur+1);e.preventDefault();}
+    else if(k==='ArrowLeft'||k==='PageUp'){go(cur-1);e.preventDefault();}
     else if(k==='Home'){go(0);e.preventDefault();}
     else if(k==='End'){go(slides.length-1);e.preventDefault();}
-    else if(k==='Escape'&&present){setPresent(false);}
-    else if(k==='f'||k==='F5'){setPresent(!present);e.preventDefault();}
+    else if(k==='f'||k==='F5'||(k==='Enter'&&(e.metaKey))){post({action:'show',cur:cur});e.preventDefault();}
   });
-  addEventListener('click',e=>{ if(present){ (e.clientX<innerWidth/3)?go(cur-1):go(cur+1); } });
-  window.__nav={go:go,next:()=>go(cur+1),prev:()=>go(cur-1),setPresent:setPresent};
-  layout(); report();
+  if(SHOW){
+    addEventListener('click',e=>{ (e.clientX<innerWidth/3)?go(cur-1):go(cur+1); });
+    addEventListener('contextmenu',e=>{e.preventDefault();go(cur-1);});
+    addEventListener('mousemove',()=>{ document.body.style.cursor='default'; clearTimeout(curT); curT=setTimeout(()=>document.body.style.cursor='none',1500); });
+    document.body.style.cursor='none';
+  }
+  window.__nav={go:go,next:()=>go(cur+1),prev:()=>go(cur-1)};
+  layout(); if(!SHOW) slides[cur].scrollIntoView({block:'start'}); else flash(); report();
 })();
 """#
 
@@ -168,15 +197,80 @@ struct SlideViewer: View {
       Button { m.next() } label: { Image(systemName: "chevron.right") }.help("Slide sau (→)")
       Button { m.last() } label: { Image(systemName: "forward.end.fill") }.help("Slide cuối (End)")
       Divider().frame(height: 18)
-      Button { m.togglePresent() } label: {
-        Label(m.present ? "Xem cuộn" : "Trình chiếu", systemImage: m.present ? "list.bullet.rectangle" : "play.rectangle.fill")
-      }.help("Bật/tắt trình chiếu (phím F, Esc để thoát)")
-      Button { NSApp.keyWindow?.toggleFullScreen(nil) } label: { Image(systemName: "arrow.up.left.and.arrow.down.right") }
-        .help("Toàn màn hình")
+      Button { m.startShow() } label: {
+        Label("Trình chiếu", systemImage: "play.fill").font(.body.weight(.semibold))
+      }.help("Trình chiếu toàn màn hình từ slide này (⌘↩ hoặc F). Esc để thoát")
+      Button { m.startShow(fromStart: true) } label: { Image(systemName: "play.rectangle") }
+        .help("Trình chiếu từ slide đầu (⇧⌘↩)")
     }
     .buttonStyle(.borderless)
     .padding(.horizontal, 14).padding(.vertical, 8)
     .background(.regularMaterial, in: Capsule())
     .shadow(radius: 6, y: 2)
   }
+}
+
+
+// Cửa sổ trình chiếu: không viền, phủ kín màn hình, nền đen; Esc / qua slide cuối thì đóng.
+final class ShowWindow: NSWindow {
+  override var canBecomeKey: Bool { true }
+  override var canBecomeMain: Bool { true }
+}
+
+@MainActor final class Slideshow: NSObject, WKScriptMessageHandler, NSWindowDelegate {
+  static var current: Slideshow?
+  let model: SlideModel
+  let win: ShowWindow
+  var cur: Int
+  var prevOptions: NSApplication.PresentationOptions = []
+
+  static func start(_ m: SlideModel, from i: Int) {
+    current?.close()
+    current = Slideshow(m, from: i)
+  }
+
+  init(_ m: SlideModel, from i: Int) {
+    model = m; cur = i
+    let screen = m.web?.window?.screen ?? NSScreen.main ?? NSScreen.screens[0]
+    win = ShowWindow(contentRect: screen.frame, styleMask: [.borderless], backing: .buffered, defer: false, screen: screen)
+    super.init()
+    win.setFrame(screen.frame, display: true)
+    win.backgroundColor = .black
+    win.isReleasedWhenClosed = false
+    win.level = .normal
+    win.collectionBehavior = [.fullScreenAuxiliary, .canJoinAllSpaces]
+    win.delegate = self
+    let cfg = WKWebViewConfiguration()
+    cfg.userContentController.add(self, name: "nav")
+    cfg.userContentController.addUserScript(WKUserScript(source: "window.__show=true;window.__start=\(i);", injectionTime: .atDocumentStart, forMainFrameOnly: true))
+    cfg.userContentController.addUserScript(WKUserScript(source: navJS, injectionTime: .atDocumentEnd, forMainFrameOnly: true))
+    let w = WKWebView(frame: screen.frame, configuration: cfg)
+    w.setValue(false, forKey: "drawsBackground")
+    win.contentView = w
+    if let h = m.html, let r = m.root { w.loadFileURL(h, allowingReadAccessTo: r) }
+    prevOptions = NSApp.presentationOptions
+    NSApp.presentationOptions = [.hideDock, .hideMenuBar]
+    win.makeKeyAndOrderFront(nil)
+    NSApp.activate(ignoringOtherApps: true)
+    win.makeFirstResponder(w)
+  }
+
+  nonisolated func userContentController(_ c: WKUserContentController, didReceive msg: WKScriptMessage) {
+    guard let d = msg.body as? [String: Any] else { return }
+    let i = d["cur"] as? Int ?? 0, action = d["action"] as? String
+    Task { @MainActor in
+      self.cur = i
+      if action == "exit" { self.close() }
+    }
+  }
+
+  func close() {
+    NSApp.presentationOptions = prevOptions
+    (win.contentView as? WKWebView)?.configuration.userContentController.removeScriptMessageHandler(forName: "nav")
+    win.orderOut(nil)
+    model.showEnded(at: cur)
+    if Slideshow.current === self { Slideshow.current = nil }
+  }
+
+  func windowDidResignKey(_ n: Notification) {}
 }
