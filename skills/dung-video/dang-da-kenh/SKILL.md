@@ -12,7 +12,8 @@ phân phối, đăng và đo. Mọi bài có mục tiêu: kéo tương tác đú
 
 ## Mục tiêu
 Một tài nguyên vào → Claude làm một mạch tới **kết quả xem được**: bản dài + clip ngắn + thumbnail + bài đăng, nằm sẵn trên trang
-xem kết quả (`python3 scripts/xem-ket-qua.py` → localhost:8765). Không cổng duyệt nào trước khi xong (David 13/11/2026: "không cần duyệt
+xem kết quả (`python3 scripts/xem-ket-qua.py` → localhost:8765; trang tự gom `~/Movies/tap-*`, Drive `Sao-luu-mac/Movies`,
+Drive `Video-xong` và sổ danh mục — giữ đúng tên `2-ban-dai/phat-hanh/`, `3-highlight/clip-X/`, `cat/X.md`, `dang-bai.md` là hiện đủ). Không cổng duyệt nào trước khi xong (David 13/11/2026: "không cần duyệt
 cổng 1, cổng 2 nữa, cứ thế làm thôi; không ưng thì góp ý rồi render lại toàn bộ"). Chỉ việc **đăng lên mạng xã hội** chờ David nói "đăng" (AGENTS luật 4).
 
 ## Quy trình (một mạch, không dừng chờ)
