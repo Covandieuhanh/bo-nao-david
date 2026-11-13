@@ -14,20 +14,34 @@
 - **Không khung thời lượng cố định**: dạng + độ dài theo chính nội dung; có khi giữ nguyên bản gốc.
 - Claude chấm, ghi lý do và tự chốt; David sửa ở bản cuối nếu muốn.
 
-## 1. Câu hỏi gốc
-> Nội dung này có giúp **người lần đầu dẫn người** (quản lý trẻ, quản lý mới) **làm chủ bản thân** — hoặc **áp dụng việc làm chủ
-> bản thân vào chính công việc của họ** — thêm một bước không?
+## 0. Phân hướng (làm đầu tiên — hồ sơ David mục 4.1)
+| Hướng | Nhận ra khi | Nơi đăng | Bán gì |
+|---|---|---|---|
+| **1. Tài chính** | giao dịch hàng hoá, thị trường, đầu tư, hành trình làm tài chính | YouTube David Trần Official (+ clip ngắn kênh đó) | hợp tác môi giới / mở tài khoản hợp pháp |
+| **2. Trainer** | làm chủ bản thân, công việc, mối quan hệ; dẫn người | YouTube trainer + highlight | gói trainer (hồ sơ 4.4) |
+| **3. Gói công nghệ** | mọi thứ khác: đời thường, hành trình, công nghệ / AI thực chiến | Facebook cá nhân, fanpage, TikTok | gói công nghệ + đào tạo tới khi ra kết quả |
 
-**Cây nội dung** (hồ sơ David mục 4.2): **Gốc** = làm chủ bản thân · **Nhánh chính** = áp dụng vào công việc của chính họ (môi trường
-để tự phát huy thế mạnh) · **Nhánh phụ** = mối quan hệ, chỉ khi bắt nguồn từ bản thân · **Nhân hiệu** = đời thường / hành trình của
-David, chỉ khi giúp người xem tin David là trainer. Không có nhánh kinh doanh / mô hình kinh doanh.
+Một tài nguyên chạm nhiều hướng → chọn hướng chính, phần còn lại trích thành bài cho hướng kia. Cách soi mục tiêu / nỗi đau: ba
+phạm trù **Tiền · Thị trường · Con người** (`nao/mo-hinh-kinh-doanh.md`).
 
-## 1b. Đối chiếu kho 100 video (bắt buộc mọi tài nguyên)
+## 1. Câu hỏi gốc (theo hướng)
+- **Tài chính:** có giúp người xem hiểu giao dịch hàng hoá hợp pháp thêm một bước, và tin David trong lĩnh vực này không?
+- **Trainer:** có giúp người xem **tự làm chủ bản thân** (tiền, thị trường, con người của chính họ; lõi là người lần đầu dẫn người)
+  hoặc **áp dụng vào chính công việc của họ** thêm một bước không?
+- **Gói công nghệ:** có chạm một **mục tiêu / nỗi đau / vấn đề** mà một gói công nghệ giải được, hoặc cho thấy David làm được thật không?
+
+**Cây nội dung kênh trainer** (hồ sơ David mục 4.2): **Gốc** = làm chủ bản thân · **Nhánh chính** = áp dụng vào công việc của chính
+họ · **Nhánh phụ** = mối quan hệ, chỉ khi bắt nguồn từ bản thân · **Nhân hiệu** = đời thường / hành trình của David, chỉ khi giúp người
+xem tin David là trainer.
+
+**Bán được gì (bắt buộc mọi phiếu):** mục tiêu / nỗi đau → gói nào → bước phễu tiếp theo (`dang-lam/ban-goi-cong-nghe.md`).
+
+## 1b. Đối chiếu kho 100 video (bắt buộc với hướng trainer)
 Kho `dang-lam/kho-100-video.md` là **kế hoạch nội dung** của kênh: dần dần mọi video phải đi theo kho, tránh làm video lệch mục tiêu.
 Đọc phần "Luật đối chiếu" ở đầu kho, rồi tìm (`grep` nỗi đau / cách làm / từ khoá của lời chép) ý khớp nhất:
 - **Khớp** → ghi `Kho 100: ý <số> "<nỗi đau>"` + kiểu dẫn dắt của ý đó (kho thắng tỉ lệ tự đếm, trừ khi David chọn khác).
 - **Không khớp ý nào** → ⚠️ cảnh báo trong phiếu, David chọn: thêm làm ý mới (cuối giai đoạn hợp) · cất kho · bỏ. Không tự dựng.
-- **Khớp giai đoạn 3** (cơ sở chạy khi vắng chủ — hướng kinh doanh David không làm) → ⚠️ cảnh báo rõ.
+- **Khớp giai đoạn 3** (cơ sở chạy khi vắng chủ) → không thuộc kênh trainer; hợp gói công nghệ thì chuyển hướng 3.
 - Luôn gợi ý **ý kế tiếp nên quay**: ý "Ý tưởng" số nhỏ nhất (bỏ giai đoạn 3) — nhắc David quay theo kế hoạch.
 - Sau khi dựng / đăng: đổi cột Trạng thái của ý trong kho (Đã dựng <ngày> · `tap-<tên>` → Đã đăng <ngày> + link), đẩy GitHub.
 
@@ -47,9 +61,15 @@ Thực thi) → không bịa, báo "thiếu phần X" để David quyết nói b
 huống để đoạn đắt có giá trị. Video dài là bản gốc và để nguyên (luat-chung mục 2); video ngắn chỉ trích từ đó. Claude chỉ đọc lời chép, không
 cảm được giọng và sức nặng câu chuyện, nên không quyết đoạn nào "ít giá trị".
 
-## 3. Lằn ranh = CẢNH BÁO, David quyết (kênh trainer: hồ sơ 4.7 + 7; kênh khác theo hồ sơ kênh đó)
-Huyền học / số học / từ trường số / tâm linh dạng huyền học · chữ "chữa lành" · tư vấn thuế, pháp lý · trị liệu, chẩn đoán tâm lý ·
-chuyện người khác không ẩn danh · nhắc vai coach trên kênh công khai · kinh doanh, mô hình kinh doanh, hứa thu nhập · nói giá.
+Chấm 5 tiêu chí trên dùng cho hướng trainer. Hướng khác đổi nghĩa tiêu chí 1–2 theo câu hỏi gốc của hướng (mục 1); tiêu chí 5 =
+tin David trong hướng đó.
+
+## 3. Lằn ranh = CẢNH BÁO, David quyết (hồ sơ 4.7 + 7, theo từng hướng)
+**Mọi hướng:** phạm pháp hay mập mờ pháp lý (quan trọng nhất) · huyền học / số học / từ trường số / tâm linh dạng huyền học · chữ
+"chữa lành" · tư vấn thuế, pháp lý · chuyện người khác không ẩn danh · hứa thu nhập.
+**Tài chính:** cam kết lợi nhuận · gọi lệnh mua/bán cụ thể · thiếu cảnh báo rủi ro · nhắc đơn vị không được cấp phép.
+**Trainer:** trị liệu, chẩn đoán tâm lý · nhắc vai coach trên kênh công khai · nói giá trên video.
+**Gói công nghệ:** hứa kết quả gói chưa làm ra thật.
 Chạm → **luôn cảnh báo trong phiếu và báo cáo**: mốc giây, lời chạm, rủi ro. Mặc định **giữ lời, không tự cắt** (David có thể đã tự cân đối khi kể); David muốn cắt thì nói ở bản cuối. Ghi "đã cảnh báo" vào sổ; chữ đồ hoạ, tiêu đề, thumbnail, mô tả, clip ngắn vẫn không lấy nội dung đó.
 
 ## 4. Bảy kết luận
@@ -64,13 +84,15 @@ Chạm → **luôn cảnh báo trong phiếu và báo cáo**: mốc giây, lời
 | ⛔ **Không làm** | không liên quan, hoặc David chọn không làm sau cảnh báo lằn ranh | không dựng, không tốn thời gian |
 
 ## 5. Phân phối kênh (`ho-so/kenh.json`)
-YouTube (chính) = bản gốc hoặc biên tập · Trang Facebook = Reels + bài viết + mời nhắn "gỡ" · TikTok cá nhân = clip ngắn ·
-Facebook cá nhân = đời thường, hành trình, chia sẻ lại bài trang. Lịch thứ Ba + thứ Sáu 20:00 giờ Việt Nam. Kiểu dẫn dắt mỗi bài:
+Theo hướng (mục 0): **YouTube David Trần Official** = hướng tài chính · **YouTube trainer** = bản gốc hoặc biên tập hướng trainer ·
+**Facebook cá nhân, fanpage, TikTok** = chia sẻ không giới hạn chủ đề, cũng nhận highlight của hai kênh YouTube, nhưng mỗi bài phải
+dẫn về gói (thường là gói công nghệ) theo phễu `dang-lam/ban-goi-cong-nghe.md`. Lịch thứ Ba + thứ Sáu 20:00 giờ Việt Nam. Kiểu dẫn dắt mỗi bài:
 **Không · Gợi mở · Mời** theo tỉ lệ 4 · 4 · 2 (bài thứ 5 và 10 mỗi chục là Mời).
 
 ## 6. Phiếu lọc (gửi David — một màn hình)
 ```
 📥 <tên file> · <độ dài> · <loại dựng: làm video / ghép vlog / podcast / highlight>
+Hướng: <1 tài chính / 2 trainer / 3 gói công nghệ> · Bán được gì: <nỗi đau → gói → bước phễu tiếp>
 Kết luận: <nhãn> · <điểm>/10   (Gốc x · Tệp x · Hành động x · Tương tác x · Nhân hiệu x)
 Lý do: <1–2 dòng>  · Lằn ranh: <không / ⚠️ chạm ở mm:ss, lý do, rủi ro → mặc định giữ lời, không làm đồ hoạ>
 Nhánh: <gốc / công việc / quan hệ / nhân hiệu> · Trùng sổ 30 ngày: <… / không>

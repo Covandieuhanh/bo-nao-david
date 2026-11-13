@@ -2,7 +2,7 @@
 
 > File này giúp Claude (Claude Code, Claude chat) hiểu David là ai và làm việc với David đúng cách.
 > Đặt file vào thư mục hay mở Claude Code, hoặc nhập vào `CLAUDE.md` bằng dòng `@David.md`.
-> Cập nhật lần cuối: 10/11/2026.
+> Cập nhật lần cuối: 13/11/2026.
 
 ---
 
@@ -11,7 +11,7 @@
 - **Tên:** Trần Đức Cường, dùng tên nghề **David Trần**. Nam, sinh 00:20 ngày 05/09/1995 tại Hưng Yên, Việt Nam.
 - **Vai trò:** "Nhà đào tạo thực hành": giúp người đi từ **làm giỏi** đến **dẫn đội làm được**.
   - Công khai là **trainer**; **coach** chỉ trong buổi riêng 1:1.
-  - Từ 12/11/2026 làm **nhiều kênh, đa dạng nội dung** (David sẽ nói rõ từng kênh sau).
+  - Từ 13/11/2026 làm **ba hướng**: tài chính (giao dịch hàng hoá) · trainer phát triển bản thân · gói công nghệ kèm đào tạo (mục 4.1).
   - Đích xa: **truyền nghề**.
 - **Kinh nghiệm:** MC, hướng dẫn viên, spa/wellness/dịch vụ, công nghệ, đứng lớp.
 - **Thế mạnh tự nhận:** mạnh nhất về con người, lấy cá nhân làm trung tâm, định hướng cách họ tương tác với người khác và với công việc. Không mạnh kinh doanh.
@@ -38,9 +38,16 @@ Sáu luật nền (chỉ ý chính dễ hiểu · chỉ hỏi khi đụng thông
 
 ## 4. Định hướng nghề
 
-### 4.1. Định hướng gốc
-- **Nhiều kênh, đa dạng nội dung** (David chốt 12/11/2026, bỏ giới hạn "chỉ con người, không kinh doanh"). Mỗi kênh có hồ sơ và lằn ranh riêng, David nói rõ từng kênh sau.
-- **Kênh trainer — tệp chính:** **"người lần đầu dẫn người"** (quản lý trẻ, quản lý mới).
+### 4.1. Ba hướng nghề (David chốt 13/11/2026)
+Mục tiêu chung: **ra tiền**. Mọi nội dung được lọc xem thuộc hướng nào và **bán được gì**. Gốc tư duy cả ba hướng: mô hình kinh doanh của David (**Tiền · Thị trường · Con người**, 9 vai trò, 4 bước): `nao/mo-hinh-kinh-doanh.md`.
+
+| Hướng | Nơi đăng | Nội dung | Tệp | Bán gì |
+|---|---|---|---|---|
+| **1. Tài chính** | YouTube **David Trần Official** | giao dịch hàng hoá tại Việt Nam (hành trình, kiến thức) | người quan tâm giao dịch hàng hoá | hợp tác môi giới / mở tài khoản hợp pháp (chi tiết David nói sau) |
+| **2. Trainer** | YouTube **"David Trần - Trainer định hướng"** (giữ tên, giữ kênh) | phát triển bản thân, xây thương hiệu trainer định hướng từng cá nhân | người muốn **tự làm chủ bản thân**: làm chủ tiền, thị trường, con người của chính mình; lõi là người lần đầu dẫn người (quản lý trẻ, quản lý mới) | gói trainer (4.4) |
+| **3. Gói công nghệ** | **mọi trang khác** (Facebook cá nhân, fanpage, TikTok…): chia sẻ không giới hạn chủ đề | đời thường, hành trình, công nghệ / AI ứng dụng thực chiến (như hệ tự động dựng video David đang dùng) | người có mục tiêu, nỗi đau, vấn đề mà công nghệ giải được | **gói công nghệ đóng gói + đào tạo, trainer hướng dẫn từng bước tới khi khách ra kết quả của gói mới xong** |
+
+Quy trình bán gói công nghệ (phễu → bán thử → bán thật): `dang-lam/ban-goi-cong-nghe.md`.
 
 ### 4.2. Khung phương pháp: ba tầng làm chủ
 | Tầng | Nội dung |
@@ -59,7 +66,7 @@ Muốn lên tầng sau phải qua tầng trước. Khung của **CCL (Center for
 | 2 | Chuẩn hoá phương pháp | Bắt đầu thu phí, học coach chuẩn ICF |
 | Sau đó | Truyền nghề | |
 
-Chặng 1 là ưu tiên số một. Video và hạ tầng online chạy song song, tạm dừng khi thiếu năng lượng.
+**Ưu tiên là ra tiền** (13/11/2026). Ba hướng chạy song song, thứ tự khi phải chọn: **(1) gói công nghệ** (đã có sản phẩm chạy thật, ra tiền nhanh nhất) → **(2) Chặng 1 trainer** (ca thật cũng là bán thử gói trainer) → **(3) kênh tài chính** theo nhịp video sẵn có. Hết năng lượng thì giữ (1), tạm dừng phần còn lại.
 
 ### 4.4. Chương trình và bảng giá (rà lại khi có ICF)
 - Chương trình đầu: **"Dẫn đội, không làm thay"** cho người lần đầu dẫn người, đi theo ba tầng, bắt đầu từ bản thân.
@@ -74,12 +81,16 @@ Tìm hiểu → mời → phiếu đầu vào → thống nhất → làm trên 
 - Học coach chuẩn ICF online, hướng tới ACC.
 - Sang Đức: trước khoản thu đầu tiên sẽ hỏi cơ quan ngoại kiều về làm tự do song song và hỏi tư vấn thuế ở Đức; chưa lập pháp nhân.
 - Cần tìm: người giữ nhịp kênh video; về sau một người đồng giữ bức tranh tổng. Đã có người lập trình dựng hạ tầng online.
-- Để sau: tên kênh và câu giới thiệu.
+- Tên kênh: trainer giữ "David Trần - Trainer định hướng"; tài chính là "David Trần Official".
 
-### 4.7. Lằn ranh nghề (kênh trainer)
-- Công khai là trainer, coach chỉ trong buổi riêng.
-- Không trị liệu, không chẩn đoán; chuyển người khủng hoảng tâm lý tới chuyên môn có cấp phép.
-- Video chỉ kể chuyện thật, ẩn danh; không nói huyền học; không dùng từ "chữa lành"; không tư vấn thuế/pháp lý.
+### 4.7. Lằn ranh nghề
+**Chung mọi hướng:** hợp pháp là quan trọng nhất · chỉ kể chuyện thật, chuyện người khác thì ẩn danh · không nói huyền học trên kênh công khai · không dùng từ "chữa lành" · không tư vấn thuế/pháp lý.
+
+**Hướng 1, tài chính (David Trần Official):** không cam kết lợi nhuận · không gọi lệnh mua/bán cụ thể · luôn nói rủi ro · chỉ chia sẻ kiến thức và hành trình thật · chỉ nhắc đơn vị, sản phẩm được cấp phép hợp pháp tại Việt Nam.
+
+**Hướng 2, trainer:** công khai là trainer, coach chỉ trong buổi riêng · không trị liệu, không chẩn đoán; chuyển người khủng hoảng tâm lý tới chuyên môn có cấp phép.
+
+**Hướng 3, gói công nghệ:** chỉ hứa kết quả mà gói làm ra được thật (đã chạy trên chính David hoặc khách thử) · nói rõ khách cần làm gì, mất bao lâu.
 
 ## 5. Kênh video
 
@@ -87,7 +98,7 @@ Tìm hiểu → mời → phiếu đầu vào → thống nhất → làm trên 
 - Mỗi video 3 phần: **Vấn đề · Giải pháp · Thực thi**; luôn kích thích tương tác; David tự kể câu chuyện thật của mình.
 - Trước khi quay ghi 3 dòng: khoảnh khắc chạm nỗi đau; chỗ kẹt và cách đã gỡ; câu hỏi người xem mang về.
 - Lịch đăng, dẫn dắt, từ khoá bình luận, cách đo, số video quay sẵn: `skills/dung-video/ho-so/kenh.json` (nhà duy nhất của luật kênh). Quay theo đợt (2 tuần chọn 4 ý); tuần khó đăng tối thiểu 1.
-- **Kho 100 video** = kế hoạch nội dung của kênh, bảng ở `dang-lam/kho-100-video.md` (PDF gốc ở máy). Mọi video mới đối chiếu kho ở phiếu lọc (khối 00 mục 1b): khớp ý số mấy, lệch kho thì cảnh báo, gợi ý ý kế tiếp nên quay. Bỏ qua giai đoạn 3 "Cơ sở chạy khi vắng chủ" của kho (lệch định hướng 4.1). **Kho cần làm lại theo ba tầng: bản thân → công việc → mối quan hệ** (phiên riêng).
+- **Kho 100 video** = kế hoạch nội dung của kênh, bảng ở `dang-lam/kho-100-video.md` (PDF gốc ở máy). Mọi video mới đối chiếu kho ở phiếu lọc (khối 00 mục 1b): khớp ý số mấy, lệch kho thì cảnh báo, gợi ý ý kế tiếp nên quay. Giai đoạn 3 "Cơ sở chạy khi vắng chủ" của kho không thuộc kênh trainer; ý nào hợp gói công nghệ thì chuyển sang hướng 3 (4.1). **Kho cần làm lại theo ba tầng: bản thân → công việc → mối quan hệ** (phiên riêng).
 
 ## 6. Nghiên cứu CCL
 
@@ -107,8 +118,13 @@ Tìm hiểu → mời → phiếu đầu vào → thống nhất → làm trên 
 
 ## 8. Bộ lọc nội dung
 
-- **Câu hỏi gốc:** nội dung có giúp người lần đầu dẫn người **làm chủ bản thân**, hoặc **áp dụng việc làm chủ bản thân vào chính công việc của họ**, thêm một bước không?
-- **Cây nội dung:** Gốc = làm chủ bản thân · Nhánh chính = áp dụng vào công việc của chính họ · Nhánh phụ = mối quan hệ (khi bắt nguồn từ bản thân) · Nhân hiệu = đời thường/hành trình chỉ khi giúp tin trainer.
+- **Bước 1, phân hướng:** nội dung thuộc hướng nào (4.1): tài chính → David Trần Official · phát triển bản thân → kênh trainer · còn lại → trang khác, hướng về gói công nghệ.
+- **Bước 2, câu hỏi gốc theo hướng:**
+  - Tài chính: có giúp người xem hiểu giao dịch hàng hoá hợp pháp thêm một bước, và tin David trong lĩnh vực này không?
+  - Trainer: có giúp người xem **tự làm chủ bản thân** (tiền, thị trường, con người của chính họ) hoặc áp dụng vào công việc của họ thêm một bước không?
+  - Gói công nghệ: có chạm một mục tiêu / nỗi đau / vấn đề mà một gói công nghệ giải được không?
+- **Bước 3, bán được gì:** mọi phiếu lọc ghi một dòng mục tiêu hay nỗi đau → gói nào (công nghệ / trainer / hợp tác tài chính) → bước tiếp theo trong phễu.
+- **Cây nội dung kênh trainer:** Gốc = làm chủ bản thân · Nhánh chính = áp dụng vào công việc của chính họ · Nhánh phụ = mối quan hệ (khi bắt nguồn từ bản thân) · Nhân hiệu = đời thường/hành trình chỉ khi giúp tin trainer.
 - **David chỉ đưa tài nguyên**; Claude tự phân tích theo bộ lọc, đề xuất làm gì / ở đâu / lúc nào, rồi hỏi lại. Không khung thời lượng cố định. Chi tiết: `~/.claude/skills/dung-video/khoi/00-loc-noi-dung/README.md`.
 
 ## 9. Dữ liệu nền huyền học (thông tin nền, tách khỏi nghề)

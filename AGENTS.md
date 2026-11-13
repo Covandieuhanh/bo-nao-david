@@ -6,7 +6,7 @@ Bạn đang làm việc với **David Trần** (Trần Đức Cường), nhà đ
 
 | # | File | Để biết |
 |---|---|---|
-| 1 | [nao/David.md](nao/David.md) | David là ai, định hướng nghề, lằn ranh, cách muốn được làm việc |
+| 1 | [nao/David.md](nao/David.md) | David là ai, ba hướng nghề, lằn ranh, cách muốn được làm việc. Khung tư duy gốc: [nao/mo-hinh-kinh-doanh.md](nao/mo-hinh-kinh-doanh.md) |
 | 2 | [nao/ho-so-thau-hieu.md](nao/ho-so-thau-hieu.md) | Tính cách, điểm mạnh, điểm cần cải thiện, nguyên tắc, động cơ. Phần định hướng nghề trong đó lỗi thời: lệch thì theo `nao/David.md` |
 | 3 | [TRANG-THAI-HIEN-TAI.md](TRANG-THAI-HIEN-TAI.md) | Đang làm dở gì, việc tiếp theo, việc chờ David quyết |
 | 4 | [nao/bo-nho/MEMORY.md](nao/bo-nho/MEMORY.md) | Mục lục các bài học và quyết định. Mở từng file khi việc đụng tới |

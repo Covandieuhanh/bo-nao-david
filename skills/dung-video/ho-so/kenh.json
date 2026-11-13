@@ -1,14 +1,20 @@
 {
- "_": "Hồ sơ KÊNH của David (David chốt 05/11/2026 — nguồn: ~/.claude/David.md mục 5 + trao đổi với Claude Code). Khối 00 (lọc), 08 (màn chốt), 15 (phát hành), 16 (số liệu) đọc file này.",
+ "_": "Hồ sơ KÊNH của David (chốt 05/11/2026, đổi theo ba hướng 13/11/2026 — nguồn: nao/David.md mục 4.1 + 5). Khối 00 (lọc), 08 (màn chốt), 15 (phát hành), 16 (số liệu) đọc file này.",
  "kenh": {
+  "youtube_official": {
+   "vai_tro": "hướng tài chính — video giao dịch hàng hoá + Shorts",
+   "ten": "David Trần Official",
+   "link": "chưa có — hỏi David",
+   "ghi_chu": "13/11/2026: David chốt kênh tài chính. Lịch đăng do David chọn từng video."
+  },
   "youtube": {
-   "vai_tro": "chính — bản gốc hoặc bản biên tập (dài theo nội dung) + Shorts",
+   "vai_tro": "hướng trainer — bản gốc hoặc bản biên tập (dài theo nội dung) + Shorts",
    "link": "https://www.youtube.com/channel/UCfcu5vNUxUkIp4s73FSCYng",
    "ten": "David Trần - Trainer định hướng",
    "tai_khoan": "trainer.davidtran@gmail.com"
   },
   "fanpage": {
-   "vai_tro": "Reels + bài viết theo giọng David + mời nhắn 'gỡ' (Messenger trang)",
+   "vai_tro": "hướng gói công nghệ — Reels + bài viết theo giọng David, mỗi bài dẫn về gói; nhận cả highlight hai kênh YouTube",
    "link": "https://www.facebook.com/davidsuckhoe",
    "link_nhan_tin": "https://m.me/davidsuckhoe",
    "ten": "David Sức khoẻ",
@@ -17,13 +23,13 @@
    "ten_muc_tieu": "David Trần - Trainer định hướng"
   },
   "tiktok": {
-   "vai_tro": "clip dọc ngắn (highlight)",
+   "vai_tro": "hướng gói công nghệ — clip dọc ngắn, chia sẻ không giới hạn, dẫn về gói",
    "link": "https://www.tiktok.com/@davidsuckhoe",
    "ten": "David Trần Trainer định hướng",
    "ghi_chu": "05/11/2026: tên + bio mới (khoá đổi tên tới 12/11/2026). Link ahasale chỉ sửa được trên app — David tự gỡ. Video cũ chạm lằn ranh (luân xa, diện chẩn, spa) — chờ David quyết ẩn hay giữ."
   },
   "facebook_ca_nhan": {
-   "vai_tro": "đời thường, hành trình, chia sẻ lại bài trang — David tự bấm chia sẻ",
+   "vai_tro": "hướng gói công nghệ — đời thường, hành trình, công nghệ thực chiến; dẫn về gói",
    "link": "https://www.facebook.com/davidsuckhoe108",
    "ten": "David Trần (Trainer)",
    "ghi_chu": "05/11/2026: link ahasale thay bằng kênh YouTube."
@@ -76,5 +82,30 @@
   "ngày ghi âm",
   "thông tin phát hành"
  ],
- "trinh_duyet": "Trình duyệt riêng trong app Claude (mcp Claude_Browser) — David đã đăng nhập 3 nền tảng ở đây (05/11/2026)"
+ "trinh_duyet": "Trình duyệt riêng trong app Claude (mcp Claude_Browser) — David đã đăng nhập 3 nền tảng ở đây (05/11/2026)",
+ "huong": {
+  "tai_chinh": {
+   "kenh": [
+    "youtube_official"
+   ],
+   "noi_dung": "giao dịch hàng hoá tại Việt Nam",
+   "ban": "hợp tác môi giới / mở tài khoản hợp pháp"
+  },
+  "trainer": {
+   "kenh": [
+    "youtube"
+   ],
+   "noi_dung": "phát triển bản thân, trainer định hướng từng cá nhân",
+   "ban": "gói trainer (David.md 4.4)"
+  },
+  "goi_cong_nghe": {
+   "kenh": [
+    "fanpage",
+    "tiktok",
+    "facebook_ca_nhan"
+   ],
+   "noi_dung": "không giới hạn, mỗi bài dẫn về gói",
+   "ban": "gói công nghệ + đào tạo tới khi ra kết quả (dang-lam/ban-goi-cong-nghe.md)"
+  }
+ }
 }

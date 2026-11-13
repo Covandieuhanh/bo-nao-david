@@ -23,7 +23,7 @@ David · `nao-` bộ não và GitHub · `video-` dựng và đăng video · `may
 
 - [Đặt tên không dấu](nao-dat-ten-khong-dau.md) — tiếng Việt không dấu, chữ thường, gạch nối, đồng nhất mọi nơi (07/11)
 - [GitHub là bản gốc bộ não](nao-github-ban-goc.md) — bắt buộc đẩy ngay; repo, "cập nhật não" = sync.sh --push; Mac ↔ GitHub 2 chiều (07/11)
-- [Hồ sơ David + bộ lọc nội dung](nao-ho-so-va-bo-loc.md) — đường dẫn hồ sơ, khối 00, kenh.json, sổ danh mục, đăng mạng xã hội
+- [Hồ sơ David + bộ lọc nội dung](nao-ho-so-va-bo-loc.md) — ba hướng nghề (13/11), mô hình kinh doanh, khối 00 phân hướng + bán được gì, kenh.json, sổ danh mục
 
 ## Video
 

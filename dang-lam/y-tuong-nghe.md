@@ -6,8 +6,8 @@ Sổ gốc ghi lời nguyên văn: `~/Documents/2-ca-nhan/so-nho/y-tuong.md` và
 
 | # | Ý tưởng | Nguồn | Ngày | Trạng thái |
 |---|---|---|---|---|
-| 1 | Company OS: automation cho DN nhỏ, phễu dẫn vào gói training | Anh Phú Ông góp ý | 12/11/2026 | Đang cân nhắc |
-| 2 | Talkshow/podcast online thứ 5 hằng tuần, hai đầu Việt – Đức | Anh Phú Ông rủ | 12/11/2026 | Đang cân nhắc |
+| 1 | Company OS: automation cho DN nhỏ, phễu dẫn vào gói training | Anh Phú Ông góp ý | 12/11/2026 | ✅ Gộp vào hướng 3 gói công nghệ (13/11): `ban-goi-cong-nghe.md` |
+| 2 | Talkshow/podcast online thứ 5 hằng tuần, hai đầu Việt – Đức | Anh Phú Ông rủ | 12/11/2026 | Đang cân nhắc · gợi ý đặt ở David Trần Official |
 
 ---
 
