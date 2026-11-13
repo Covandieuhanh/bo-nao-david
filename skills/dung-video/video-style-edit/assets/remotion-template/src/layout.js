@@ -16,7 +16,7 @@ import HS from './hoso.json';
 import {TL_ON} from './thanh';
 // 2 TRẠNG THÁI (hồ sơ hai_trang_thai, David chốt 2026-11-04): A = người + phụ đề, B = cảnh toàn màn hình + phụ đề. Lớp chữ không
 // toàn màn hình (kinetic, lower, listItem…) KHÔNG được đè lên người → tự vẽ toàn màn hình. Ngoại lệ: thẻ tít mở đầu (hook) và
-// ĐIỂM NHẤN TRÊN NGƯỜI 'nhan' (07/11/2026: zoom dồn, làm tối viền, chữ / biểu tượng cạnh mặt — Nhan.jsx tự tránh mặt, vẽ cả khung).
+// ĐIỂM NHẤN TRÊN NGƯỜI 'nhan' (07/11/2026: làm tối viền, chữ / biểu tượng cạnh mặt — Nhan.jsx tự tránh mặt, vẽ cả khung).
 export const TWO = !!HS.hai_trang_thai && !project.podcast;
 export const TWO_KEEP = new Set(['hook', 'nhan', 'bocuc']);   // 'bocuc' tự sắp người + nội dung (BoCuc.jsx)
 //   // 'nhan' = điểm nhấn trên người (David chốt 2026-11-07): được đè lên người, không che mặt

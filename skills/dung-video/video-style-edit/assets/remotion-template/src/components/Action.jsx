@@ -17,6 +17,7 @@ import {Icon} from '../lib/Icons';
 import {Quote} from './CardFull';
 import CTA, {CTA_ICONS, CTA_TICK} from '../lib/cta.js';
 import project from '../project.js';
+import KHUNG from '../khung.js';
 import {fr} from '../scenes';
 
 const Tick = ({p, size}) => (
@@ -125,14 +126,23 @@ export const Cta = ({start, text, kind}) => {
   const k = ease(f, 0, 14);
   // khung ngang (07/11/2026 — bản dọc làm video co thành ô dọc lệch trái, câu chốt rơi khỏi khung): ô 16:9 rộng 56% giữa trên, câu chốt bên dưới
   const LAND_ = project.width > project.height, W_ = project.width, H_ = project.height;
-  const w0 = W_, h0 = H_, w1 = LAND_ ? Math.round(W_ * 0.5) : 400, h1 = LAND_ ? Math.round(W_ * 0.5 * 9 / 16) : Math.round(400 * 16 / 9),
-    x1 = (W_ - w1) / 2, y1 = LAND_ ? Math.round(H_ * 0.07) : 240;   // ngang: ô 50% bề ngang để thẻ kết thúc trên thanh thời gian (08/11/2026)
-  const w = w0 + (w1 - w0) * k, h = h0 + (h1 - h0) * k, x = x1 * k, y = y1 * k;
+  // Có khung chủ thể (khung.js — người đã nằm trong ô riêng trên goc.mp4): ô màn chốt chỉ cắt đúng ô người, cùng tỉ lệ ô người,
+  // không chiếu cả khung hình (13/11/2026 — David: "ảnh vuông mà khung lại chữ nhật bị thừa ra ngoài").
+  const ins = 0.006, sv1 = KHUNG ? {x: KHUNG.x + ins, y: KHUNG.y + ins * W_ / H_, w: KHUNG.w - 2 * ins, h: KHUNG.h - 2 * ins * W_ / H_} : {x: 0, y: 0, w: 1, h: 1};
+  // có khung chủ thể: ô người trượt nguyên tỉ lệ từ chỗ cũ vào giữa (không lộ nền tối quanh ô khi đang co)
+  const sv = KHUNG ? sv1 : {x: 0, y: 0, w: 1, h: 1};   // phần goc.mp4 đang thấy
+  const a1 = sv1.w * W_ / (sv1.h * H_);                                                        // tỉ lệ ô cuối = tỉ lệ phần cắt
+  const h1 = LAND_ ? Math.round(W_ * 0.5 * 9 / 16) : Math.round(400 * 16 / 9), w1 = Math.round(KHUNG ? h1 * a1 : LAND_ ? W_ * 0.5 : 400),
+    x1 = (W_ - w1) / 2, y1 = LAND_ ? Math.round(H_ * 0.07) : 240;   // ngang: ô cao 28% bề ngang để thẻ kết thúc trên thanh thời gian (08/11/2026)
+  const s1 = h1 / (sv1.h * H_), sc = 1 + (s1 - 1) * k;                                          // co đều, không méo hình khi đang co
+  const w = sv.w * W_ * sc, h = sv.h * H_ * sc, x = sv.x * W_ + (x1 - sv.x * W_) * k, y = sv.y * H_ + (y1 - sv.y * H_) * k;
+  const vw = w / sv.w, vh = h / sv.h;
   return (
     <FullShell hold>
       <div style={{position: 'absolute', left: x, top: y, width: w, height: h, borderRadius: 36 * k, overflow: 'hidden',
         border: k > 0.5 ? `3px solid ${C.accent}` : 'none', boxShadow: '0 30px 90px rgba(0,0,0,0.6)'}}>
-        <OffthreadVideo src={staticFile('goc.mp4')} trimBefore={fr(start)} muted style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+        <OffthreadVideo src={staticFile('goc.mp4')} trimBefore={fr(start)} muted
+          style={{position: 'absolute', left: -sv.x * vw, top: -sv.y * vh, width: vw, height: vh, objectFit: 'fill'}} />
       </div>
       <CtaBox text={text} kind={kind} top={y1 + h1 + (LAND_ ? 24 : 30)} f={f - 8} tickF={fr(start + CTA_TICK) - fr(start) - 8}
         {...(LAND_ ? {left: Math.round(W_ * 0.16), width: Math.round(W_ * 0.68)} : {})} />

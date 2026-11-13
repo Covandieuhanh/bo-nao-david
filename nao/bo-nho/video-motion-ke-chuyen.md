@@ -7,7 +7,7 @@ metadata:
 
 **Luôn có motion graphics** (07/11/2026): "dựng nhẹ" không có nghĩa chỉ phụ đề + nhạc. Motion graphics hiểu rộng là **điểm nhấn kéo mắt
 người xem vào ý đang nói**, nhiều loại: hình vẽ / biểu tượng bật ra minh hoạ ý; chữ giải thích, chữ nhấn cụm đắt; làm nổi người đang
-nói (zoom dồn, làm tối nền, khoanh / viền sáng…); cảnh minh hoạ toàn màn hình chỉ là một loại. Điểm nhấn trên người được phép nếu không
+nói (làm tối nền, khoanh / viền sáng…; không zoom vào / ra — David 13/11/2026); cảnh minh hoạ toàn màn hình chỉ là một loại. Điểm nhấn trên người được phép nếu không
 che mặt. Đoạn chạm lằn ranh không làm đồ hoạ.
 
 **Motion kể chuyện** (09/11/2026): motion graphic là để **diễn tả lại câu chuyện**, không phải "đưa hình vào cho có", không dập khuôn.

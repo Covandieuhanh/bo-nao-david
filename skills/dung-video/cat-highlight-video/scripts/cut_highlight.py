@@ -91,7 +91,7 @@ for opt in plan["options"]:
     for i, s in enumerate(segs):
         d = s["b"] - s["a"]
         args += ["-ss", f"{s['a']:.3f}", "-t", f"{d:.3f}", "-i", src]   # tua trước -i: nhanh với video dài, vẫn chính xác khi mã hoá lại
-        zf = (f"scale=w='trunc(iw*(1+{ZOOM}*t/{d:.3f})/2)*2':h=-2:eval=frame,crop={VW}:{VH}," if s["zoom"] else "")   # dồn vào giữa
+        zf = (f"scale=w='trunc(iw*(1+{ZOOM}*t/{d:.3f})/2)*2':h=-2:eval=frame,crop={VW}:{VH}," if False else "")   # không zoom (13/11/2026 — David: không thẩm mỹ)
         h0, h1 = s["h0"], s["h1"]
         tail = s["pad"] + h1
         vp = (f",tpad=start_mode=clone:start_duration={h0}" if h0 else "") + (f",tpad=stop_mode=clone:stop_duration={tail}" if tail else "")

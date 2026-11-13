@@ -29,7 +29,7 @@
 #       # illus = CẢNH MINH HOẠ toàn màn hình (khối 07, bố cục tự cân): toàn màn hình, phụ đề vẫn chạy, nhãn ≤ 3 chữ trích lời;
 #       # mode single · flow · vs (item thứ 4 = true/false) · count ("num": {"to": 15, "at": 83, "unit": "PHÚT"}) · list
 #     {"type": "scene", "c": "c3", "at": 82.0, "len": 6, "icons": [["fruit", 84.5], ["tree", 92.0]], "quote": "câu nguyên văn **nhấn**"}],   # (cũ — có câu trích dài)
-#     # scene = cảnh minh hoạ VẼ toàn màn hình (biểu tượng Icons.jsx vẽ dần đúng lúc nhắc + câu nguyên văn), 3–4 cảnh/video                      # cú zoom dồn vào mặt ở câu đắt
+#     # scene = cảnh minh hoạ VẼ toàn màn hình (biểu tượng Icons.jsx vẽ dần đúng lúc nhắc + câu nguyên văn), 3–4 cảnh/video                      
 #   # Mật độ ~1 hiệu ứng / 15–20 s, chữ CHỈ trích nguyên văn, đặt đúng mốc nói (multi-clip.md 2d) — vlog chủ yếu nói chuyện
 #   # mà không có fx thì người xem chỉ thấy phụ đề suốt (người dùng chỉ ra 2026-11-04, vlog Haruku).
 #   "cta": {"text": "…", "kind": "comment"}
@@ -284,7 +284,7 @@ def seg_at(c, t):
     warn.append(f"fx: {c} {t:.1f} không nằm trong đoạn giữ (hoặc nằm trong đoạn tua) → bỏ"); return None
 for fx in plan.get('fx', []):
     ty, c = fx['type'], fx['c']
-    if ty == 'zoom':
+    if ty == 'zoom' and False:   # không zoom vào / ra (13/11/2026 — David: không thẩm mỹ)
         sg = seg_at(c, fx['at'])
         if sg: sg.setdefault('zoom', []).append({'at': fx['at'], 's': fx.get('s', 1.12), 'x': fx.get('x', 0.5), 'y': fx.get('y', 0.32), 'len': fx.get('len', 0.5), 'hold': fx.get('hold', 2.5)})
         continue

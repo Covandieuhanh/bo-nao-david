@@ -68,14 +68,13 @@ Cách viết + khi nào dùng từng kiểu: `bo-cuc.md`.
 Điểm nhấn kéo mắt vào người đang nói, đè lên người nhưng không che mặt.
 | Kiểu | props | Khi |
 |---|---|---|
-| Zoom dồn vào mặt | `zoom: 1.15` (1,12–1,2) | cú chốt, câu đắt, lúc cảm xúc lên |
 | Làm tối viền | `toi: true` | câu tâm tình / câu muốn người xem lặng lại nghe |
 | Chữ nhấn cạnh mặt | `text: 'DÒNG 1\nDÒNG 2'` ≤ 4 chữ, trích lời, dòng cuối màu nhấn; `at` = giây bật | cụm đắt người nói vừa thốt ra |
 | Biểu tượng nhỏ cạnh mặt | `icon: '<tên>'`, `at` | vật / việc cụ thể, không cần cả màn minh hoạ |
-Ví dụ: `{id: 'n1', type: 'nhan', start: 37.4, end: 42.1, props: {zoom: 1.15, text: 'NHẤC CHÂN LÊN', at: 39.9}}` — 2–5 s, không chồng cảnh khác.
+Ví dụ: `{id: 'n1', type: 'nhan', start: 37.4, end: 42.1, props: {text: 'NHẤC CHÂN LÊN', at: 39.9}}` — 2–5 s, không chồng cảnh khác.
 Không che ai: `nhan_place.py` (face_place.sh) ghi mọi người + người đang nói vào `mat.js`; Nhan.jsx đặt chữ / biểu tượng vào khoảng
-trống sát người đang nói (`bam` để bám người khác, vd thẻ tên khách), co cỡ theo chỗ, khung dọc hẹp → dưới cằm; render_preview.py
-zoom dồn vào **người đang nói**. Đoạn chạm lằn ranh: không dùng. Vlog / highlight (khung ghép): dùng `zoom` + `pow` có sẵn, `keep: true`.
+trống sát người đang nói (`bam` để bám người khác, vd thẻ tên khách), co cỡ theo chỗ, khung dọc hẹp → dưới cằm.
+**Không zoom vào / zoom ra** ở mọi loại video (David 13/11/2026: không thẩm mỹ; `zoom` trong scenes cũ bị bỏ qua). Đoạn chạm lằn ranh: không dùng.
 
 ## 5. Cảnh minh hoạ `illus` (`thu-vien-hinh/Illus.jsx`, một bản cho mọi khung dựng)
 Hình động minh hoạ ĐÚNG Ý đang nói + **nhãn ngắn** (tên riêng / con số / cụm đắt — trích lời), dài và dày theo nội dung. Phụ đề vẫn chạy.

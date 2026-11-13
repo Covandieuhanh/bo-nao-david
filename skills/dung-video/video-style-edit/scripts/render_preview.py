@@ -23,9 +23,9 @@ ov = scenes + ([{"id": "phu_de", "start": 0}] if os.path.exists(os.path.join(M, 
 for s in ov: args += ["-i", os.path.join(M, s["id"] + ".mov")]
 n = len(ov)
 fl, prev = ["[0:v:0]setpts=PTS-STARTPTS[b0]"], "b0"
-# ZOOM DỒN (cảnh 'nhan' có props.zoom — David chốt 2026-11-07): phóng video gốc vào mặt người nói (mat.js, nhan_place.py),
+# KHÔNG ZOOM (13/11/2026 — David: "bỏ hiệu ứng zoom ra zoom vào, không thẩm mỹ"): props.zoom của cảnh 'nhan' bị bỏ qua, khối dưới không chạy. Trước đây: ZOOM DỒN (David chốt 2026-11-07): phóng video gốc vào mặt người nói (mat.js, nhan_place.py),
 # vào nhanh 0,22 s, ra 0,18 s. Khung zoom canh giữa mặt, kẹp trong khung hình (cùng công thức với Nhan.jsx `zoomed`). Không áp cho pillar.
-_zs = [s for s in scenes if s.get("type") == "nhan" and float((s.get("props") or {}).get("zoom") or 1) > 1.001]
+_zs = []   # không zoom (13/11/2026)
 if _zs and not out_.get("layout"):
     import json as _zj, re as _zr
     _mf = os.path.join(P, "motion/src/mat.js")

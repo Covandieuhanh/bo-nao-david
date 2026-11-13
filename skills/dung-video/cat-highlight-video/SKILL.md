@@ -109,7 +109,7 @@ Claude chỉnh tiếp trong edl.js:
 - **Phụ đề**: sửa chính tả, tô `hl` từ khoá (từ trong `hl` hiện màu cam khi tới nhịp của nó).
 - **OVERLAYS** (mốc bằng `TS(<giây trong words.srt>)`; mọi chữ nguyên văn): `pow` cụm đắt đúng lúc nói (cú chốt, ≤ 14 ký tự/dòng) · `action` khi câu HANHDONG
   (`quote` nguyên văn) · `chips` khi người nói đếm/liệt kê. Mật độ theo nội dung: dày hơn ở `soi`, thưa hơn ở `lang`.
-- **Hình**: cú chốt `zoomIn` (hl_edl tự đặt khi `zoom: true`); phản ứng mạnh → `zoom` dồn nhanh; có thể `replay` khoảnh khắc đắt.
+- **Hình**: không zoom vào / ra (David 13/11/2026: không thẩm mỹ); có thể `replay` khoảnh khắc đắt.
 - `CTA.kind` theo việc được kêu gọi (lưu → `save`, bình luận → `comment`…); không có câu kêu gọi → không đặt `CTA` (luật 4).
 - **Thẻ tít mở** (luật 7): `{type: 'pow', start: 0, end: 2.5, text: '<TÍT nguyên văn>', y: 300}` — nửa trên khung, tách khỏi phụ đề.
   `ENDCARD` do `hl_edl.py` ghi (luật 11), khuôn tự bỏ ở video dọc ngắn.

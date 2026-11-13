@@ -47,11 +47,13 @@ chỉ dựng khi David đồng ý ở cổng 2, đăng sau video dài.
 2. Không hỏi trước khi dựng: mọi lựa chọn theo mặc định skill + đề xuất của Claude, ghi trong phiếu và báo cáo.
 3. Bài đăng soạn trong lúc render chạy nền.
 4. Bài đủ kênh theo kết luận, đúng giọng David, kiểu dẫn dắt khớp tỉ lệ.
-5. Không gì được đăng trước cổng 2; mỗi lần hẹn giờ có ảnh chụp xác nhận.
-6. Sổ danh mục và cột Trạng thái trong kho 100 video đúng ở từng bước.
-7. Sau 24 giờ và 7 ngày có báo cáo hộp thư / số liệu + 1–3 đề xuất.
+5. **Báo cổng 2 luôn có mục "Clip ngắn đề xuất"**: ý trọn đắt nhất (mốc, độ dài, bốn câu) hoặc lý do không có clip — kể cả video lệch kênh, kể cả lần gửi lại sau render lại (13/11/2026 — David: "theo quy trình còn đề xuất video highlight mà sao không thấy").
+6. Không gì được đăng trước cổng 2; mỗi lần hẹn giờ có ảnh chụp xác nhận.
+7. Sổ danh mục và cột Trạng thái trong kho 100 video đúng ở từng bước.
+8. Sau 24 giờ và 7 ngày có báo cáo hộp thư / số liệu + 1–3 đề xuất.
 
 ## Nhật ký
+- 2026-11-13 · Thiếu đề xuất clip ngắn khi gửi bản cuối → "Xong khi" 5: báo cổng 2 luôn có mục clip ngắn đề xuất.
 - 2026-11-11 · David: "mục tiêu cuối cùng của tôi luôn là đưa tài nguyên vào và chờ kết quả là xong". Bỏ cổng 1: phiếu lọc chỉ để báo, Claude tự chọn theo mặc định + đề xuất rồi dựng luôn; giữ cổng duyệt trước khi đăng (AGENTS luật 5).
 - 2026-11-10 · David chốt: mọi tài nguyên đối chiếu kho 100 video ở phiếu lọc (khớp ý / ⚠️ lệch kho / ý kế tiếp nên quay), dựng / đăng xong đổi trạng thái ý trong kho — để kênh dần đi đúng kế hoạch nội dung.
 - 2026-11-05 · vai trò Claude; làm song song khi render.

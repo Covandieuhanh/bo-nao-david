@@ -134,7 +134,7 @@ for i, p in enumerate(pieces):
             continue
         x, y = part
         sid = f"p{i + 1}" + ('' if k == 0 else 'bcdefghijklmnopqrstuvwxyz'[k - 1])
-        if p.get('zoom'): z = ", zoomIn: [1, 1.12, 0.5, 0.38]"
+        if p.get('zoom'): z = ''   # không zoom vào / ra (13/11/2026); 'zoom' chỉ còn nghĩa giữ nguyên câu không tách lặng
         else: z = f", zoomIn: [{PUNCH}, {PUNCH}, 0.5, 0.38]" if PUNCH > 1 and nseg % 2 else ''
         nseg += 1
         extra = (", grade: 'lang'" if p.get('tone') == 'lang' else '') + z

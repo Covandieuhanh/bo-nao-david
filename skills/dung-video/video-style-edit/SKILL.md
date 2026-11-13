@@ -1,6 +1,6 @@
 ---
 name: video-style-edit
-description: Dựng video tự quay thành bản đăng được ngay (Reels/TikTok/Shorts/YouTube) theo phong cách video mẫu hoặc dự án cũ. Hai chế độ tự chọn — (1) MỘT video nói trước camera → làm sạch (video ngắn: cắt thừa, câu nói lại, khoảng lặng; sửa video lộn ngược, nằm ngang, lật gương) rồi phủ motion graphics: điểm nhấn trên người, cảnh minh hoạ toàn màn hình bằng biểu tượng vẽ, thẻ, màn chốt bằng nguyên văn lời người nói; đổi khung khi cần (dọc → ngang, ngang → dọc bám người nói); (2) NHIỀU video gốc / cảnh vlog → chọn cảnh, ghép thành vlog kiểu chương trình có teaser, chia vòng, zoom dồn, phụ đề, âm thanh. Kết bằng bước phát hành: tiêu đề, khung bìa, thumbnail khi video ngang, mẫu số liệu. Không làm bản cho app chỉnh sửa (DaVinci/CapCut). Dùng khi người dùng đưa một hay nhiều video gốc (kèm hoặc không kèm mẫu) và muốn edit, dựng, ghép, làm vlog, thêm hiệu ứng, chữ, ảnh minh hoạ, "giống video này", "theo style này", "edit như mẫu", "ghép mấy video này", "/video-style-edit" — kể cả khi chỉ gửi file mà không nói rõ.
+description: Dựng video tự quay thành bản đăng được ngay (Reels/TikTok/Shorts/YouTube) theo phong cách video mẫu hoặc dự án cũ. Hai chế độ tự chọn — (1) MỘT video nói trước camera → làm sạch (video ngắn: cắt thừa, câu nói lại, khoảng lặng; sửa video lộn ngược, nằm ngang, lật gương) rồi phủ motion graphics: điểm nhấn trên người, cảnh minh hoạ toàn màn hình bằng biểu tượng vẽ, thẻ, màn chốt bằng nguyên văn lời người nói; đổi khung khi cần (dọc → ngang, ngang → dọc bám người nói); (2) NHIỀU video gốc / cảnh vlog → chọn cảnh, ghép thành vlog kiểu chương trình có teaser, chia vòng, phụ đề, âm thanh. Kết bằng bước phát hành: tiêu đề, khung bìa, thumbnail khi video ngang, mẫu số liệu. Không làm bản cho app chỉnh sửa (DaVinci/CapCut). Dùng khi người dùng đưa một hay nhiều video gốc (kèm hoặc không kèm mẫu) và muốn edit, dựng, ghép, làm vlog, thêm hiệu ứng, chữ, ảnh minh hoạ, "giống video này", "theo style này", "edit như mẫu", "ghép mấy video này", "/video-style-edit" — kể cả khi chỉ gửi file mà không nói rõ.
 ---
 # Dựng video theo phong cách mẫu
 
@@ -38,8 +38,8 @@ bộ nhận diện, phát hành. Dưới đây chỉ là luật RIÊNG của ski
    `topic: '<CHỦ ĐỀ>'` (≤ 3 chữ, trích lời) cho dấu góc + thẻ cuối.
 3. **Bố cục tự chọn theo nội dung** (`../trinh-bay/tu-chon.md` → khối 07 + `../trinh-bay/bo-cuc.md`): danh mục có sẵn (dùng khi hợp, không bắt buộc — cần hình riêng thì viết cảnh tự vẽ `ve`) — người + phụ đề, `nhan`,
    `bocuc` (`the-canh` thẻ cạnh mặt · `o-nguoi` người vào ô bo góc + nội dung · `chuong` màn chương), `illus` / `diagram` toàn màn hình.
-   Hợp nội dung, người xem dễ nhận; dọc mỗi lúc ít thứ. **Điểm nhấn trên người** (`nhan`): zoom dồn / làm tối viền / chữ nhấn hay biểu
-   tượng cạnh mặt ở câu đắt, không che mặt. Mọi video đều có điểm nhấn — "dựng nhẹ" vẫn có — nhưng chỉ vài kiểu hợp nội dung nhất.
+   Hợp nội dung, người xem dễ nhận; dọc mỗi lúc ít thứ. **Điểm nhấn trên người** (`nhan`): làm tối viền / chữ nhấn hay biểu
+   tượng cạnh mặt ở câu đắt, không che mặt; không zoom vào / ra. Mọi video đều có điểm nhấn — "dựng nhẹ" vẫn có — nhưng chỉ vài kiểu hợp nội dung nhất.
 4. **Màn hành động** (`action`: biểu tượng + tick + `label` cụm việc nguyên văn) đúng lúc người nói giao việc cụ thể.
    **Màn chốt** (`cta`, cuối mọi video): video lùi vào khung bo góc, chữ = **nguyên văn câu David nói cuối video** (luat-chung 1).
    "Vấn đề / Kết quả" và "gỡ" chỉ lên video khi David tự nói trong video; không thì chỉ ở bài đăng. Không tự đặt câu hỏi kêu gọi,

@@ -1,8 +1,8 @@
 // ĐIỂM NHẤN TRÊN NGƯỜI (type 'nhan' — David chốt 2026-11-07): làm nổi người đang nói ở câu đắt, KHÔNG che mặt.
 // props: text ('CHỮ NHẤN', '\n' xuống dòng, ≤ 4 chữ, trích lời) · icon (tên trong lib/Icons) · at (giây tuyệt đối lúc bật)
-//        zoom (vd 1.15 — zoom dồn vào mặt, render_preview.py làm trên video gốc) · toi (true = làm tối viền quanh người)
+//        zoom: BỎ (13/11/2026 — David: "bỏ hiệu ứng zoom ra zoom vào, không thẩm mỹ") — có trong scenes cũ cũng không zoom · toi (true = làm tối viền quanh người)
 // bam ('trai' | 'phai' | số thứ tự — graphic nói về một người cụ thể, vd thẻ tên khách; mặc định người đang nói)
-// Vị trí: mat.js (scripts/nhan_place.py — mọi người trong khung + người đang nói). Zoom dồn vào người đang nói; chữ / biểu tượng vào
+// Vị trí: mat.js (scripts/nhan_place.py — mọi người trong khung + người đang nói). Chữ / biểu tượng vào
 // khoảng trống sát người đó (lib/cho.js), co cỡ theo khoảng trống, KHÔNG đè ai; khung dọc hẹp → dưới cằm. Không con số vị trí cố định.
 import React from 'react';
 import {AbsoluteFill, Easing, useCurrentFrame, useVideoConfig} from 'remotion';
@@ -31,7 +31,7 @@ export const Nhan = ({sceneId, start, text, icon, at, zoom = 1, toi = false, bam
   const p = pop(f, a);
   const V = H > W;
   // Mọi người trong khung (sau zoom) — chữ đặt vào khoảng trống sát NGƯỜI ĐANG NÓI (hoặc người được bám), không đè ai
-  const ps = nguoi(MAT[sceneId] || {cx: 0.5, cy: 0.42, w: 0.18, h: 0.3}, zoom || 1);
+  const ps = nguoi(MAT[sceneId] || {cx: 0.5, cy: 0.42, w: 0.18, h: 0.3}, 1);   // không zoom (13/11/2026)
   const t = nguoiBam(ps, bam);
   const fy = t.cy * H;
   const lines = (text || '').split('\n');

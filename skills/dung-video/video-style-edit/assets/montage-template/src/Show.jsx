@@ -73,7 +73,8 @@ const zoomAt = (f, seg) => {
   // f: khung trong đoạn → giây trong clip
   const src = seg.from + (f / FPS) * seg.rate;
   let s = 1, x = 0.5, y = 0.5;
-  for (const z of seg.zoom || []) {
+  // KHÔNG ZOOM VÀO / RA (13/11/2026 — David: "bỏ hiệu ứng zoom ra zoom vào, không thẩm mỹ"): bỏ qua seg.zoom và zoomIn đổi cỡ; chỉ giữ cỡ tĩnh (zoomIn [a, a, …])
+  for (const z of []) {
     const d = src - z.at;
     if (d < 0) continue;
     const k = d < z.len ? spring({frame: d * FPS / seg.rate, fps: FPS, config: {damping: 14, stiffness: 200}}) : 1;
@@ -82,7 +83,7 @@ const zoomAt = (f, seg) => {
     if (back <= 0) continue;
     s = 1 + (z.s - 1) * k * back; x = z.x; y = z.y;
   }
-  if (seg.zoomIn) { const [a, b, zx, zy] = seg.zoomIn; s = interpolate(f, [0, fr(seg.dur)], [a, b], clamp); x = zx; y = zy; }
+  if (seg.zoomIn && seg.zoomIn[0] === seg.zoomIn[1]) { const [a, b, zx, zy] = seg.zoomIn; s = interpolate(f, [0, fr(seg.dur)], [a, b], clamp); x = zx; y = zy; }
   return {transform: `scale(${s})`, transformOrigin: `${x * 100}% ${y * 100}%`};
 };
 const gradeFilter = {lang: 'saturate(0.72) brightness(0.94) contrast(1.03)', replay: 'saturate(0.55) sepia(0.35) contrast(1.05)', dark: 'brightness(0.55) saturate(1.1)', title: 'blur(18px) brightness(0.45) saturate(1.3)'};
