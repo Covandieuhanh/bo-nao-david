@@ -20,7 +20,7 @@ PORT = int(os.environ.get("PORT", 8765))
 VID, IMG = (".mp4", ".mov", ".m4v"), (".jpg", ".jpeg", ".png", ".webp")
 ALIAS = {"dung-mua-nhung-thu-ma-ban-thich": "dung-mua-thu-ban-thich"}   # cùng một tập, hai tên thư mục
 TEN = {  # tên hiển thị gọn
-    "ban-ca-ngay": "Bận cả ngày mà không ra kết quả", "cuoc-goi-hop-tac": "Cuộc gọi hợp tác", "giao-dich-hang-hoa": "Hành trình giao dịch hàng hoá",
+    "ban-ca-ngay": "Bận cả ngày mà không ra kết quả", "cuoc-goi-hop-tac": "Cuộc gọi hợp tác", "giao-dich-hang-hoa": "Lý do chọn giao dịch hàng hoá",
     "di-trainer": "Trainer cho người làm trainer", "muc-tieu-su-menh": "Mục tiêu và sứ mệnh", "thi-lai-dai-hoc": "Thi lại 4 lần đại học",
     "su-tap-trung": "Sự tập trung", "cuoc-song-giau-co": "Cuộc sống giàu có", "dung-mua-thu-ban-thich": "Đừng mua những thứ bạn thích",
     "5-nguyen-tac-tien": "5 nguyên tắc quản lý tiền", "di-bo-hang-ngay": "Đi bộ hằng ngày", "thoi-quen-nho": "Thói quen nhỏ (phơi nắng)",
