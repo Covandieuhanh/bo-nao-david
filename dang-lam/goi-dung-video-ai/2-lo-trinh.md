@@ -12,18 +12,18 @@ Học viên **tự dựng 1 video bất kì bằng AI trên máy mình mà khôn
 | 4 | 7, 8 + nghiệm thu | xuất đủ khung; học viên tự dựng 1 video trước mặt trainer |
 | Kèm tới khi đạt | nhắn tin | đủ 4 video |
 
-Giữa hai buổi: học viên dựng tư liệu thật của mình, gửi kết quả; trainer góp ý trong 24 giờ.
+Giữa hai buổi: học viên dựng tư liệu thật của mình, gửi kết quả; trainer phản hồi trong 24 giờ.
 
 ## Quy trình một học viên
 1. **Kiểm máy** (15 phút): máy, RAM, ổ trống, AI đang dùng. Không đủ thì nói thẳng, không nhận.
-2. **Phiếu đầu vào** (`4-phieu-va-nghiem-thu.md`).
+2. **Phiếu khảo sát đầu vào** (`4-phieu-khao-sat-va-nghiem-thu.md`).
 3. **4 buổi** theo `3-giao-trinh.md`, mỗi buổi ghi: đã làm gì · Kết quả · Vấn đề · bài tập.
 4. **Nghiệm thu**: học viên tự dựng 1 video, trainer chỉ xem.
 5. **Sau gói**: lời chứng + số trước/sau.
 
 ## Thực thi: trainer chuẩn bị trước khách đầu tiên
-- [x] Bộ mẫu ([bo-mau/](bo-mau/README.md)): cài đặt, file dặn dựng, lời dặn từng bước, danh sách kiểm.
-- [ ] Thử cài + file dặn dựng trên một máy Mac sạch và một máy Windows.
+- [x] Bộ biểu mẫu ([bo-bieu-mau/](bo-bieu-mau/README.md)): hướng dẫn thiết lập hệ thống, SOP, hướng dẫn công việc, danh sách kiểm soát chất lượng.
+- [ ] Thử hướng dẫn thiết lập + SOP trên một máy Mac sạch và một máy Windows.
 - [ ] Bộ tư liệu thử (vài clip ngắn đủ loại: nói, vlog, quay màn hình) cho buổi 1.
 - [ ] Kết quả mẫu để demo: video trainer đã dựng ở từng bước (chỉ để xem, không dạy theo).
 - [ ] Chốt giá + kèm tiếp tối đa bao lâu.

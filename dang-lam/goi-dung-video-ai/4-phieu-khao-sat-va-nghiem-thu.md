@@ -1,6 +1,6 @@
-# 4. Phiếu đầu vào và nghiệm thu
+# 4. Phiếu khảo sát đầu vào và nghiệm thu
 
-## A. Đầu vào
+## A. Khảo sát đầu vào
 1. **Máy:** Mac / Windows · RAM · ổ trống
 2. **AI:** đang dùng AI nào, bản trả phí có trợ lý chạy lệnh chưa?
 3. **Video hay làm:** nói trước camera · vlog · sản phẩm · sự kiện · quay màn hình · ghi âm · khác

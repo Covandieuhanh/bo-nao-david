@@ -1,10 +1,10 @@
-# Mẫu 02 · File dặn dựng (Bài 2, 8)
+# Biểu mẫu 02 · Quy trình vận hành chuẩn (SOP) dựng video (Bài 2, 8)
 
-> Chép phần dưới đường kẻ vào file `AGENTS.md` ở thư mục `lam-video` (Claude Code đọc `CLAUDE.md`, Gemini CLI đọc `GEMINI.md`: tạo file đó với một dòng "Đọc AGENTS.md"). Điền mục 1. Giao việc chỉ cần nói: **"Dựng tap-ten-video"**, kèm muốn gì nếu khác mặc định.
+> **Cách lưu:** chép phần dưới đường kẻ vào thư mục `lam-video`, đặt tên file theo trợ lý AI đang dùng để nó tự tìm đọc: Codex đọc `AGENTS.md`, Claude Code đọc `CLAUDE.md`, Gemini CLI đọc `GEMINI.md`. Điền mục 1. Giao việc chỉ cần nói: **"Dựng tap-ten-video"**, kèm muốn gì nếu khác mặc định.
 
 ---
 
-# Hướng dẫn dựng video
+# Quy trình vận hành chuẩn (SOP) dựng video
 
 ## 1. Phong cách (học viên điền, sửa dần)
 - Màu chính: …… · màu phụ: ……
@@ -17,7 +17,7 @@
 ## 2. Thư mục
 ```
 lam-video/
-├── AGENTS.md          file này
+├── AGENTS.md          SOP này
 ├── nhac/              nhạc nền miễn phí bản quyền
 └── tap-<ten-video>/
     ├── 1-goc/         tư liệu gốc (không sửa, không xoá)
@@ -41,4 +41,4 @@ Xong báo ngắn: file ở đâu, đã chọn gì vì sao, chỗ cần tôi xác
 - Chữ trên video lấy **đúng lời trong video**; không bịa lời.
 - Dễ hiểu hơn cầu kì: mỗi video ít kiểu hiệu ứng.
 - Không sửa, không xoá `1-goc/`. Hỏi tôi trước khi xoá file khác hay làm gì tốn tiền. Không hỏi, không lưu mật khẩu.
-- Tôi góp ý → sửa video, **rồi sửa đúng một câu trong file này** để lần sau tự đúng, báo tôi câu đã sửa.
+- Tôi phản hồi → sửa video, **rồi sửa đúng một câu trong SOP này** để lần sau tự đúng, báo tôi câu đã sửa.

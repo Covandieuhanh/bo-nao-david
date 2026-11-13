@@ -1,8 +1,8 @@
 # 3. Giáo trình: 8 bài dựng video bằng AI trên máy tính
 
-Mỗi bài: **Mục tiêu · Nội dung · Thực hành · Bài tập · Xong khi**. Học viên làm trên tư liệu thật của mình. Mẫu dùng trong bài: [bo-mau/](bo-mau/README.md).
+Mỗi bài: **Mục tiêu · Nội dung · Thực hành · Bài tập · Xong khi**. Học viên làm trên tư liệu thật của mình. Biểu mẫu dùng trong bài: [bo-bieu-mau/](bo-bieu-mau/README.md).
 
-| Bài | Tên | Buổi | Mẫu |
+| Bài | Tên | Buổi | Biểu mẫu |
 |---|---|---|---|
 | 1 | Cài máy và trợ lý AI | 1 | 01 |
 | 2 | Giao việc dựng cho AI | 1 | 02, 03 |
@@ -11,23 +11,23 @@ Mỗi bài: **Mục tiêu · Nội dung · Thực hành · Bài tập · Xong kh
 | 5 | Phụ đề và chữ | 3 | 03 |
 | 6 | Đồ hoạ, hình minh hoạ, nhạc | 3 | 03 |
 | 7 | Xuất nhiều khung, clip ngắn, ảnh bìa | 4 | 03 |
-| 8 | Chạy một mạch và tự sửa file dặn | 4 | 02, 04 |
+| 8 | Chạy một mạch và tự sửa SOP | 4 | 02, 04 |
 
 ---
 
 ## Bài 1 · Cài máy và trợ lý AI
 - **Mục tiêu:** máy học viên có đủ công cụ, AI chạy được lệnh.
 - **Nội dung:** trợ lý AI chạy lệnh khác AI trò chuyện thế nào; vai trò ffmpeg, Whisper, Remotion; để AI tự cài và giải thích từng lệnh; an toàn: AI hỏi trước khi xoá, không đưa mật khẩu.
-- **Thực hành:** cài theo mẫu 01, chạy kiểm tra.
+- **Thực hành:** cài theo biểu mẫu 01, chạy kiểm tra.
 - **Bài tập:** tự mở lại AI, cho chép lời một file 10 giây.
 - **Xong khi:** ffmpeg, Whisper chạy được; AI chép lời được.
 
 ## Bài 2 · Giao việc dựng cho AI
 - **Mục tiêu:** học viên biết nói với AI để ra đúng ý.
-- **Nội dung:** thư mục làm việc và cách đặt tên tập; file dặn dựng (mẫu 02): phong cách, luật, 8 bước; câu giao việc rõ: tư liệu gì · ra gì · khung nào · dài bao nhiêu; xem kết quả, góp ý từng điểm.
-- **Thực hành:** chép mẫu 02 vào thư mục, điền phong cách, cho AI dựng video thử 30 giây từ bộ tư liệu thử.
+- **Nội dung:** thư mục làm việc và cách đặt tên tập; quy trình vận hành chuẩn (SOP, biểu mẫu 02): phong cách, luật, 8 bước; câu giao việc rõ: tư liệu gì · ra gì · khung nào · dài bao nhiêu; xem kết quả, phản hồi từng điểm.
+- **Thực hành:** chép biểu mẫu 02 vào thư mục, điền phong cách, cho AI dựng video thử 30 giây từ bộ tư liệu thử.
 - **Bài tập:** đổi một dòng phong cách (màu chữ, cỡ phụ đề), dựng lại, so hai bản.
-- **Xong khi:** đổi file dặn → video đổi đúng.
+- **Xong khi:** đổi SOP → video đổi đúng.
 
 ## Bài 3 · Nạp và hiểu tư liệu
 - **Mục tiêu:** AI "nghe" và "xem" được tư liệu trước khi cắt.
@@ -38,7 +38,7 @@ Mỗi bài: **Mục tiêu · Nội dung · Thực hành · Bài tập · Xong kh
 
 ## Bài 4 · Dựng thô và làm sạch
 - **Mục tiêu:** từ tư liệu ra bản dựng thô xem trơn, hình tiếng sạch.
-- **Nội dung:** kế hoạch dựng (dòng thời gian) và cách duyệt nhanh; cắt lặng, câu hỏng; ghép nhiều cảnh, chuyển cảnh đơn giản; xoay, cắt khung, sáng màu nhẹ; giảm ồn.
+- **Nội dung:** kế hoạch sản xuất (dòng thời gian) và cách duyệt nhanh; cắt lặng, câu hỏng; ghép nhiều cảnh, chuyển cảnh đơn giản; xoay, cắt khung, sáng màu nhẹ; giảm ồn.
 - **Thực hành:** AI viết kế hoạch, học viên duyệt, AI dựng thô.
 - **Bài tập:** dựng thô video thứ hai.
 - **Xong khi:** 2 bản dựng thô học viên thấy xem trơn.
@@ -64,9 +64,9 @@ Mỗi bài: **Mục tiêu · Nội dung · Thực hành · Bài tập · Xong kh
 - **Bài tập:** làm cho video 2.
 - **Xong khi:** đủ bộ file đúng khung, không lỗi.
 
-## Bài 8 · Chạy một mạch và tự sửa file dặn
+## Bài 8 · Chạy một mạch và tự sửa SOP
 - **Mục tiêu:** giao một câu, AI dựng trọn; hệ tốt lên sau mỗi video.
-- **Nội dung:** một câu giao việc chạy đủ 8 bước; góp ý → AI sửa video + sửa đúng một câu trong file dặn; dọn máy (giữ gốc + bản cuối).
+- **Nội dung:** một câu giao việc chạy đủ 8 bước; phản hồi → AI sửa video + sửa đúng một câu trong SOP; dọn máy (giữ gốc + bản cuối).
 - **Thực hành (nghiệm thu):** học viên tự dựng 1 video từ tư liệu mới, trainer chỉ xem.
 - **Bài tập:** dựng video số 3, số 4.
 - **Xong khi:** 1 video tự dựng không cần trainer + **4 video đã dựng** → xong gói.

@@ -1,4 +1,4 @@
-# Mẫu 03 · Lời dặn AI từng bước (Bài 3–7)
+# Biểu mẫu 03 · Hướng dẫn công việc (Work Instruction) từng bước (Bài 3–7)
 
 > Dùng khi muốn làm từng bước thay vì một mạch, hoặc khi một bước ra chưa đúng ý. Thay phần trong `[ ]`.
 
@@ -8,10 +8,10 @@
 liệt kê chữ không chắc. Chụp khung hình mỗi [10] giây, mô tả từng cảnh một dòng.
 ```
 
-### Kế hoạch dựng
+### Kế hoạch sản xuất
 ```
 Tôi muốn ra: [video gì, dài khoảng bao nhiêu, khung nào, không khí gì].
-Viết kế hoạch dựng dạng bảng: giây bắt đầu – giây kết thúc – cảnh / lời – chữ – hình – nhạc.
+Viết kế hoạch sản xuất dạng bảng: giây bắt đầu – giây kết thúc – cảnh / lời – chữ – hình – nhạc.
 Chưa dựng, cho tôi xem trước.
 ```
 
@@ -47,8 +47,8 @@ Cắt [1–3] clip ngắn 30–90 giây, mỗi clip một ý trọn, người l�
 Chụp khung kiểm lỗi trước khi báo xong.
 ```
 
-### Sửa theo góp ý
+### Sửa theo phản hồi
 ```
-Tôi góp ý: [góp ý]. Sửa video, rồi sửa đúng một câu trong AGENTS.md để lần sau tự đúng.
+Phản hồi của tôi: [phản hồi]. Sửa video, rồi sửa đúng một câu trong SOP để lần sau tự đúng.
 Cho tôi xem câu đã sửa.
 ```

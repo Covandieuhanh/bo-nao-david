@@ -1,11 +1,11 @@
-# Mẫu 01 · Cài đặt (Bài 1)
+# Biểu mẫu 01 · Hướng dẫn thiết lập hệ thống (System Setup Guide) (Bài 1)
 
 > Lệnh và tên gói đổi theo thời gian: **trainer kiểm lại trang chính thức của từng công cụ trước mỗi khoá**.
 
 ## Cần những gì, để làm gì
 | Công cụ | Việc | Giá |
 |---|---|---|
-| **Trợ lý AI chạy lệnh**: chọn 1 (Claude Code · Codex CLI · Gemini CLI…) | đọc file dặn dựng, chạy các công cụ dưới, làm trọn 8 bước | theo gói AI học viên đang trả |
+| **Trợ lý AI chạy lệnh**: chọn 1 (Claude Code · Codex CLI · Gemini CLI…) | đọc quy trình vận hành chuẩn (SOP), chạy các công cụ dưới, làm trọn 8 bước | theo gói AI học viên đang trả |
 | **ffmpeg** | cắt, ghép, đổi khung, gắn phụ đề, chuẩn âm lượng | miễn phí |
 | **Whisper** | chép lời có mốc thời gian (chạy trên máy) | miễn phí |
 | **Node.js** | chạy trợ lý AI và Remotion | miễn phí |
@@ -66,7 +66,7 @@ ffmpeg -version
 ```bash
 whisper --help
 ```
-Cả hai in ra chữ, không báo lỗi → đạt. Rồi chép mẫu 02 vào thư mục `lam-video` (Bài 2).
+Cả hai in ra chữ, không báo lỗi → đạt. Rồi chép biểu mẫu 02 vào thư mục `lam-video` (Bài 2).
 
 ## Lỗi hay gặp
 - **"command not found"**: đóng mở lại Terminal / PowerShell; vẫn lỗi thì nhờ trợ lý AI sửa đường dẫn.

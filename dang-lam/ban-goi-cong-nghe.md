@@ -27,8 +27,8 @@ Có **khoản thu đầu tiên từ một gói công nghệ**, khách **ra đư�
 ## Thực thi (checklist)
 - [x] David chọn gói đầu tiên: tự động hoá dựng video bằng AI (13/11)
 - [x] Gói bản 0: quy trình, 4 buổi, giáo trình 8 bài, 4 mẫu (13/11)
-- [x] Bộ 4 mẫu cho học viên: cài đặt, file dặn dựng, lời dặn từng bước, danh sách kiểm (13/11)
-- [ ] Thử cài + file dặn AI trên máy sạch (`goi-dung-video-ai/2-lo-trinh.md` mục Thực thi)
+- [x] Bộ 4 biểu mẫu cho học viên: hướng dẫn thiết lập hệ thống, quy trình vận hành chuẩn (SOP), hướng dẫn công việc, danh sách kiểm soát chất lượng (13/11)
+- [ ] Thử cài + SOP AI trên máy sạch (`goi-dung-video-ai/2-lo-trinh.md` mục Thực thi)
 - [ ] Chốt giá gói
 - [ ] Claude soạn 3 bài phễu cho Facebook cá nhân từ quy trình dựng video thật của David (David duyệt trước khi đăng)
 - [ ] Chọn từ khoá nhắn tin của hướng 3 (khác "gỡ" của trainer)
