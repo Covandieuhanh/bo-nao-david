@@ -38,6 +38,8 @@ def search(project, qfile):
     res = json.load(open(cpath)) if os.path.exists(cpath) else {}
     ov_down = False
     for q in json.load(open(qfile)):
+        # ẢNH CHỈ TẠI VIỆT NAM, NGƯỜI VIỆT (David 13/11/2026): từ khoá chưa có Việt Nam thì tự thêm "Vietnam"
+        if not re.search(r"viet ?nam|việt nam|hanoi|hà nội|saigon|sài gòn|ho chi minh", q["q"], re.I): q["q"] += " Vietnam"
         params = urllib.parse.urlencode({"q": q["q"], "license_type": "commercial", "page_size": 8, "mature": "false", "size": "large"})
         items = None
         for attempt in range(0 if ov_down else 2):   # Openverse đã hỏng ở từ khoá trước → khỏi chờ lại

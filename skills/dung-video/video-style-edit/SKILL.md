@@ -16,7 +16,7 @@ mốc lời Whisper, render clip nền trong suốt rồi ghép lên video gốc
 **Không hỏi** (`../../thoi-quen-lam-viec.md` mục 2): chạy một mạch từ video gốc tới bản cuối. Khung xuất = khung gốc (bảng "Khung xuất");
 video > 3 phút làm đủ gói YouTube (màn kết, chương, teaser, thumbnail khi ngang); chữ bìa, cảnh minh hoạ chính, tuyến nhạc Claude tự chọn
 theo khối. Giữa chừng chỉ dừng khi gặp tín hiệu nặng (`hoi-chuyen-gia`). Báo cáo cuối liệt kê "đã chọn X vì Y" để David sửa ở bản
-cuối; nhận góp ý thì sửa đúng cảnh được nêu (không tự render lại — `luat-chung.md` mục 8).
+cuối; nhận góp ý thì sửa đúng chỗ được nêu rồi render lại toàn bộ luôn (`luat-chung.md` mục 8).
 
 ## Nhịp làm (mục tiêu: video 10 phút xong trong ~1 giờ)
 

@@ -32,6 +32,7 @@ David · `nao-` bộ não và GitHub · `video-` dựng và đăng video · `may
 - [Bố cục tự cân](video-bo-cuc-tu-can.md) — bỏ số cố định; graphic tránh mọi người, bám người đang nói; khung gốc `trinh-bay/` (07/11, 08/11)
 - [Bộ nhận diện chung](video-nhan-dien-chung.md) — mọi video cùng dấu góc, thanh, thẻ cuối không logo; dọc ngắn bỏ thanh + thẻ cuối (08/11, 10/11)
 - [Chỉ hình của chính video](video-chi-hinh-cua-chinh-video.md) — thumbnail/ảnh bìa chỉ lấy từ chính video đó (05/11)
+- [Ảnh minh hoạ chỉ Việt Nam](video-anh-viet-nam.md) — nhiều ảnh thật hơn, chỉ chụp tại Việt Nam, người Việt; không có thì biểu tượng vẽ (13/11)
 - [Chữ trên màn hình nguyên văn](video-chu-nguyen-van.md) — không tít tự rút, màn chốt lời David, không số chạy (07/11)
 - [Chuyển video qua Drive](video-chuyen-qua-drive.md) — Drive chỉ giữ bộ não, video gốc, thành quả video; Mac chỉ giữ việc đang làm; xoá đồ khác thì hỏi trước (08/11, 11/11)
 - [Clip ngắn đứng độc lập](video-clip-ngan-dung-doc-lap.md) — bốn câu bối cảnh, ý trọn, mang về, chừa lại; không số cố định (06/11, 07/11)
@@ -41,7 +42,7 @@ David · `nao-` bộ não và GitHub · `video-` dựng và đăng video · `may
 - [Hiểu hơn cầu kì](video-hieu-hon-cau-ki.md) — kho hiệu ứng để chọn, mỗi video ít kiểu; bỏ chữ sau người / bóng người (10/11)
 - [Không cài HyperFrames](video-khong-cai-hyperframes.md) — giữ Remotion, chỉ học ý rồi tự viết lại (06/11)
 - [Không ghi chú kỹ thuật trên video](video-khong-nhan-ky-thuat.md) — bỏ nhãn ×1,6 / ×0,5 / slow-mo; chữ chỉ cho nội dung
-- [Không tự render lại](video-khong-tu-render.md) — góp ý thì sửa skill/kịch bản; render khi David yêu cầu (05/11)
+- [Làm một mạch, góp ý thì render lại](video-khong-tu-render.md) — bỏ cổng 1, cổng 2; góp ý → sửa + render lại toàn bộ luôn; đăng chờ "đăng" (13/11)
 - [Kiến trúc skill video](video-kien-truc-skill.md) — hồ sơ tham số + 20 khối + thư viện hình + mẫu chuẩn; sửa đúng một chỗ (04/11)
 - [Làm lại video cũ](video-lam-lai-video-cu.md) — bỏ lời chào/kênh cũ, tít cũ, chữ/viền in trong hình; mỗi video một bản (08/11)
 - [Motion graphics kể chuyện](video-motion-ke-chuyen.md) — mọi video có điểm nhấn nhiều loại; kể chuyện, vẽ tiếp; AI sáng tạo trong khung (07/11, 09/11)

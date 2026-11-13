@@ -4,7 +4,7 @@ Sửa một cách làm → sửa đúng một khối (README + code của nó). 
 
 | Khối | Việc | Dùng trong |
 |---|---|---|
-| [00-loc-noi-dung](00-loc-noi-dung/README.md) | **Bộ lọc nội dung + phân phối kênh** (làm TRƯỚC): chấm theo hồ sơ David, 7 kết luận, phiếu lọc = cổng duyệt 1, sổ danh mục | mọi tài nguyên |
+| [00-loc-noi-dung](00-loc-noi-dung/README.md) | **Bộ lọc nội dung + phân phối kênh** (làm TRƯỚC): chấm theo hồ sơ David, 7 kết luận, phiếu lọc (không chờ duyệt), sổ danh mục | mọi tài nguyên |
 | [01-chep-loi](01-chep-loi/README.md) | Chép lời (Whisper) + hiểu video | cả 4 |
 | [02-lam-sach](02-lam-sach/README.md) | Làm sạch: cắt thừa đầu/cuối, câu nói lại, khoảng lặng + tiếng đệm, sửa chiều hình | làm video, highlight (cắt lặng trong câu) |
 | [03-phu-de](03-phu-de/README.md) | Phụ đề: dài = hộp tối đầy câu; ngắn = cụm 5–8 chữ cỡ bằng chữ thẻ, mỗi lúc một chỗ chữ | cả 4 |
@@ -22,7 +22,7 @@ Sửa một cách làm → sửa đúng một khối (README + code của nó). 
 | [15-phat-hanh](15-phat-hanh/README.md) | Phát hành: 3 tiêu đề, mô tả, mốc khung bìa, chương YouTube, teaser, bình luận ghim | cả 4 |
 | [16-so-lieu](16-so-lieu/README.md) | Số liệu sau đăng (báo lỗi, không quyết định): ảnh chụp số liệu 7 ngày → so-lieu.md | cả 4 |
 | [17-dung-kiem-tra](17-dung-kiem-tra/README.md) | Dựng + kiểm tra: chụp thử từng cảnh, render, ghép bản cuối, soát khung / âm lượng / tiếng rè | cả 4 |
-| [19-dang-bai](19-dang-bai/README.md) | Đăng / hẹn giờ YouTube, trang Facebook, TikTok qua trình duyệt (sau cổng 2); Facebook cá nhân David tự chia sẻ | dang-da-kenh |
+| [19-dang-bai](19-dang-bai/README.md) | Đăng / hẹn giờ YouTube, trang Facebook, TikTok qua trình duyệt (khi David nói "đăng"); Facebook cá nhân David tự chia sẻ | dang-da-kenh |
 | [20-hop-thu-so-lieu](20-hop-thu-so-lieu/README.md) | Gom bình luận + tin nhắn (đếm "gỡ"), số liệu 24 giờ / 7 ngày — chỉ đọc | dang-da-kenh |
 
 Đọc kèm: `../nguyen-tac.md` (7 điểm chung), `../luat-chung.md` (luật nền), `../ho-so/` (tham số), `hoso.py` (đọc tham số).

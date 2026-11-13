@@ -1,12 +1,12 @@
 # Khối 19-dang-bai: Đăng / hẹn giờ lên YouTube, trang Facebook, TikTok qua trình duyệt
 
-**Dùng trong:** skill `dang-da-kenh` bước 6 · **Đầu vào:** bản cuối + bài đăng đã qua CỔNG DUYỆT 2 · `ho-so/kenh.json` · `ho-so/giong-van-david.md`
+**Dùng trong:** skill `dang-da-kenh` bước 6 · **Đầu vào:** bản cuối + bài đăng trên trang xem kết quả, David đã nói "đăng" · `ho-so/kenh.json` · `ho-so/giong-van-david.md`
 **Đầu ra:** bài đã hẹn giờ (hoặc đăng) + ảnh chụp xác nhận · dòng "chờ đăng / đã đăng" trong sổ danh mục
 **Trạng thái:** các bước dưới lấy từ giao diện thật lúc đọc trang, chưa kiểm bằng một lần bấm đăng. Lần đăng thật đầu tiên ở mỗi
 nền tảng: đi chậm, chụp từng bước, sửa README này theo giao diện thật.
 
 ## Luật an toàn (không ngoại lệ)
-- **Chỉ đăng bài David đã duyệt ở cổng 2**, đúng nội dung đã duyệt (video, chữ, kênh, giờ). Đổi bất cứ gì sau duyệt → hỏi lại.
+- **Chỉ đăng khi David nói "đăng"**, đúng bản trên trang xem kết quả (video, chữ, kênh, giờ). Đổi bất cứ gì sau duyệt → hỏi lại.
 - **Không bao giờ nhập mật khẩu**, không đổi cài đặt tài khoản (tên, ảnh, bio, quyền) khi David chưa duyệt riêng việc đó.
 - **Ưu tiên hẹn giờ** (thứ Ba / thứ Sáu 20:00 giờ VN) bằng chức năng có sẵn → David huỷ được trước giờ lên; máy không cần bật lúc bài lên.
 - **Facebook cá nhân:** Claude soạn câu, **David tự bấm chia sẻ** (tự động hoá tài khoản cá nhân dễ bị khoá).

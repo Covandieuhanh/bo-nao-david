@@ -9,6 +9,6 @@ metadata:
 - **Bộ lọc:** `~/.claude/skills/dung-video/khoi/00-loc-noi-dung/README.md`. David chỉ đưa tài nguyên, không kèm yêu cầu. Em chấm 5 tiêu chí, ra một trong 7 kết luận, gửi phiếu lọc rồi hỏi lại.
 - **Luật kênh:** `skills/dung-video/ho-so/kenh.json` (lịch, tỉ lệ dẫn dắt, "Vấn đề / Kết quả", đo bằng "gỡ") — nhà duy nhất, không chép số ra chỗ khác.
 - **Sổ danh mục:** `~/Movies/_so-danh-muc/danh-muc.md`.
-- **Đăng mạng xã hội:** skill `dang-da-kenh` (bước 0–8, 2 cổng duyệt) + khối 19 (đăng / hẹn giờ) + khối 20 (hộp thư, số liệu — chỉ đọc), làm 05/11/2026. David đã đăng nhập YouTube, Facebook (trang "David Sức khoẻ"), TikTok @davidsuckhoe trong trình duyệt riêng của app. Tải video lên phải dùng Playwright + Chrome hồ sơ riêng `~/.cache/david-mxh-chrome`, vì trình duyệt app không chọn được file và Claude in Chrome chỉ nhận ≤ 10 MB.
+- **Đăng mạng xã hội:** skill `dang-da-kenh` (bước 0–8, không cổng duyệt; đăng khi David nói "đăng") + khối 19 (đăng / hẹn giờ) + khối 20 (hộp thư, số liệu — chỉ đọc), làm 05/11/2026. David đã đăng nhập YouTube, Facebook (trang "David Sức khoẻ"), TikTok @davidsuckhoe trong trình duyệt riêng của app. Tải video lên phải dùng Playwright + Chrome hồ sơ riêng `~/.cache/david-mxh-chrome`, vì trình duyệt app không chọn được file và Claude in Chrome chỉ nhận ≤ 10 MB.
 
 Liên quan [[luat-noi-dung-cua-david]], [[luat-tu-hoi-khi-mo-ho]].

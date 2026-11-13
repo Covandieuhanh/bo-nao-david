@@ -2,7 +2,7 @@
 
 **Dùng trong:** cả 4 loại, và mọi tài nguyên David đưa (video, file ghi âm, bài viết).
 **Đầu vào:** tài nguyên David đưa — thường KHÔNG kèm yêu cầu · hồ sơ `~/.claude/David.md` · hồ sơ kênh `../../ho-so/kenh.json` · sổ `~/Movies/_so-danh-muc/danh-muc.md` · **kho 100 video `dang-lam/kho-100-video.md`** (kế hoạch nội dung, repo bộ não)
-**Đầu ra:** phiếu lọc (gửi David = cổng duyệt 1) · một dòng trong sổ danh mục
+**Đầu ra:** phiếu lọc (ghi vào dự án, báo kèm kết quả cuối, không chờ duyệt) · một dòng trong sổ danh mục
 **Hình mẫu:** Hieu Nguyen (2 mảng lặp lại 50/50 tập), Alex Hormozi ("được biết đến vì một điều"), Justin Welsh (content pillars), Gary Vaynerchuk (một lần nói → nhiều bài).
 **Sửa khối này → chạy lại:** không có code; đổi luật kênh → sửa `ho-so/kenh.json`.
 
@@ -29,7 +29,7 @@ Kho `dang-lam/kho-100-video.md` là **kế hoạch nội dung** của kênh: d�
 - **Không khớp ý nào** → ⚠️ cảnh báo trong phiếu, David chọn: thêm làm ý mới (cuối giai đoạn hợp) · cất kho · bỏ. Không tự dựng.
 - **Khớp giai đoạn 3** (cơ sở chạy khi vắng chủ — hướng kinh doanh David không làm) → ⚠️ cảnh báo rõ.
 - Luôn gợi ý **ý kế tiếp nên quay**: ý "Ý tưởng" số nhỏ nhất (bỏ giai đoạn 3) — nhắc David quay theo kế hoạch.
-- Sau cổng 1 / dựng / đăng: đổi cột Trạng thái của ý trong kho (Đã dựng <ngày> · `tap-<tên>` → Đã đăng <ngày> + link), đẩy GitHub.
+- Sau khi dựng / đăng: đổi cột Trạng thái của ý trong kho (Đã dựng <ngày> · `tap-<tên>` → Đã đăng <ngày> + link), đẩy GitHub.
 
 ## 2. Chấm 5 tiêu chí (0–2 mỗi tiêu chí)
 | # | Tiêu chí | 2 | 1 | 0 |

@@ -68,7 +68,9 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
   zoom, chuyển cảnh, ô thu nhỏ bám đúng người đang nói. Thu người vào ô bo góc không tính là che. Che mặt / thân trên → tự toàn màn
   hình: khối 05.
 - Chữ tiếng Việt đủ dấu, không chồng dòng (`VN`, chừa 0,5 em trên / 0,32 em dưới).
-- Minh hoạ mặc định = biểu tượng vẽ (`Icons.jsx`); ảnh thật chỉ cho địa danh, nhân vật có thật, tư liệu, minh chứng, sản phẩm cụ thể.
+- **Nhiều ảnh thật minh hoạ** (David 13/11/2026): mỗi khi lời nhắc một nơi, người, vật, việc cụ thể thì ưu tiên ảnh thật, biểu tượng vẽ
+  cho ý trừu tượng. **Ảnh chỉ được chụp tại Việt Nam, liên quan người Việt Nam** (đọc mô tả / danh mục ảnh để chắc; tìm kèm
+  "Vietnam" / tên tiếng Việt). Không có ảnh Việt Nam hợp giấy phép → biểu tượng vẽ, không dùng ảnh nước ngoài. Nguồn ghi `nguon-anh.txt`.
   Số liệu luôn bằng hiệu ứng, đúng con số người nói. Kết quả/con số mà clip gốc có bằng chứng thật (ảnh giá, hoá đơn) → ưu tiên chiếu.
 - Không ghi chú kỹ thuật trên video (×1,6, slow-mo…). Không màn nguồn ảnh cuối video → `nguon-anh.txt`.
 - Khung xuất = khung gốc trừ khi David yêu cầu (highlight luôn dọc 9:16).
@@ -105,7 +107,8 @@ Ghi `<dự án>/phat-hanh/phat-hanh.md`:
 - Không tải video từ YouTube/TikTok để dựng (nhờ David gửi file); tải để học mẫu: `trinh-bay/README.md` mục 4.
 - Chụp thử (stills) trước khi render; kiểm bản cuối theo khối 17 + 09. **Chụp có giới hạn:** chụp đúng mốc dễ lỗi (khung mới lần
   đầu, chỗ chồng lớp, mối cắt, màn chốt, thẻ cuối, chỗ David góp ý), không chụp từng cảnh; xem bố cục thì dùng ảnh thu nhỏ.
-- **Không tự render lại** sau góp ý: chỉ sửa skill, kịch bản; render khi David nói "render". Render nối tiếp, không song song.
+- **Góp ý → sửa rồi render lại toàn bộ luôn** (David 13/11/2026), không chờ chữ "render"; giao lại như lần đầu (Drive + trang xem
+  kết quả). Render nối tiếp, không song song. Không cổng duyệt nào trước khi xong; chỉ việc đăng mạng xã hội chờ David nói "đăng".
 - **Phần cứng không hỏi, không đổi** (`../thoi-quen-lam-viec.md` mục 2): nhận diện, dấu góc, màn chốt, thẻ cuối, nhạc theo tuyến, mức
   motion graphics, phụ đề, chuẩn âm lượng, nơi giao file; tên riêng chưa chắc → dùng cách Whisper nghe và nêu ở báo cáo.
 - **Thử skill bằng đoạn ngắn trọn một ý:** cắt từ đầu tới cuối một ý của video nguồn (không cố định số giây, không chạy cả video dài)

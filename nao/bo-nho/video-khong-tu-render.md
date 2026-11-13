@@ -1,12 +1,15 @@
 ---
 name: video-khong-tu-render
-description: Sửa skill / góp ý nhỏ thì chỉ sửa skill hoặc file kịch bản, KHÔNG tự render lại video — chỉ render khi David yêu cầu
+description: 13/11/2026 bỏ luật "không tự render lại": góp ý thì sửa rồi render lại toàn bộ luôn; bỏ cổng 1, cổng 2, làm một mạch tới kết quả
 metadata:
   type: feedback
 ---
 
-Góp ý xong chỉ sửa skill / kịch bản, **không tự render lại**; render khi David nói "render". Nhà chính: `skills/thoi-quen-lam-viec.md` mục 3.
+Lịch sử: 05/11/2026 David chốt "góp ý chỉ sửa skill, render khi David yêu cầu". **Thay ngày 13/11/2026**, David: "tôi thấy bạn đã hiểu
+cách làm của tôi nên không cần phải duyệt cổng 1, cổng 2 nữa, mà cứ thế làm thôi, nếu tôi không ưng thì sẽ góp ý rồi render lại toàn bộ video".
 
-**Why:** 05/11/2026 em tự render lại chỉ để bỏ ngày ghi âm. David: "nếu bao giờ tôi có yêu cầu render thì mới render".
+**Why:** David muốn đưa tài nguyên vào là có kết quả; duyệt giữa chừng làm chậm.
 
-**How to apply:** báo đã sửa ở đâu, áp cho video sau; muốn bản hiện tại đổi theo thì hỏi trước. Liên quan [[luat-hoc-la-bo-sung]].
+**How to apply:** làm một mạch tới bản dài + clip ngắn + bài đăng trên Drive và trang xem kết quả (`scripts/xem-ket-qua.py`); góp ý → sửa
+rồi render lại toàn bộ luôn. Đăng mạng xã hội vẫn chờ David nói "đăng" (AGENTS luật 4). Nhà của luật: `skills/dung-video/dang-da-kenh/SKILL.md`,
+`skills/dung-video/luat-chung.md` mục 8. Liên quan [[luat-goi-y-de-david-chon]], [[video-anh-viet-nam]].
