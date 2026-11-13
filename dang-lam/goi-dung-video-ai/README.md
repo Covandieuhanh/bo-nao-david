@@ -12,7 +12,7 @@ Gói công nghệ đầu tiên của hướng 3 (`nao/David.md` 4.1), chốt 13/
 | [2-lo-trinh.md](2-lo-trinh.md) | 4 buổi, quy trình một học viên, việc trainer chuẩn bị |
 | [3-giao-trinh.md](3-giao-trinh.md) | 8 bài |
 | [4-phieu-khao-sat-va-nghiem-thu.md](4-phieu-khao-sat-va-nghiem-thu.md) | phiếu khảo sát đầu vào, trước/sau, nghiệm thu |
-| [slide/](slide/) | Mã nguồn 8 bộ slide (mỗi bài một bộ, link xem ở bảng trong `3-giao-trinh.md`), dùng chung `slide/deck.css` |
+| [slide/](slide/) | Mã nguồn 8 bộ slide (mỗi bài một bộ, link xem ở bảng trong `3-giao-trinh.md`), dùng chung `slide/deck.css`. Hình minh hoạ là khung thật từ tập “Lý do chọn giao dịch hàng hoá” (13/11/2026), lưu trong từng slide, không lưu ở repo |
 | [bo-bieu-mau/](bo-bieu-mau/README.md) | 4 biểu mẫu: hướng dẫn thiết lập hệ thống, quy trình vận hành chuẩn (SOP), hướng dẫn công việc, danh sách kiểm soát chất lượng |
 
 ## Thuật ngữ dùng thống nhất trong gói
