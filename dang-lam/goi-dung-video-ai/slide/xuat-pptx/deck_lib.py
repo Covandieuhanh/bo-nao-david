@@ -1,3 +1,4 @@
+import os, subprocess
 from pptx import Presentation
 from pptx.util import Inches, Pt, Emu
 from pptx.dml.color import RGBColor
@@ -113,14 +114,43 @@ def box(s, x, y, w, h, fill, line=None, radius=0.08):
     _border(c, line)
     return gt
 
-def card(s, x, y, w, h, t, d, hl=False, dsize=15):
+def card(s, x, y, w, h, t, d, hl=False, dsize=15, icon=None):
     dark = s._theme == "dark"
     if hl: fill, line, tc, dc = C["ink"], None, C["soft"], C["dtext"]
     elif dark: fill, line, tc, dc = C["dcard"], C["dline"], C["soft"], C["dtext"]
     else: fill, line, tc, dc = C["card"], C["line"], C["rust"], C["grey"]
     box(s, x, y, w, h, fill, line)
-    tx(s, x + 0.25, y + 0.22, w - 0.5, 0.4, t, 13 if len(t) > 18 else 14, tc, True, HEAD)
-    tx(s, x + 0.25, y + 0.62, w - 0.5, h - 0.8, d, dsize, dc)
+    dx = 0
+    if icon: pic(s, icon, x + 0.25, y + 0.18, 0.42, tc); dx = 0.58
+    tx(s, x + 0.25 + dx, y + 0.24, w - 0.5 - dx, 0.4, t, 13 if len(t) > 18 else 14, tc, True, HEAD)
+    tx(s, x + 0.25, y + 0.72 if icon else y + 0.62, w - 0.5, h - 0.9, d, dsize, dc)
+
+ICON_DIR = os.path.expanduser("~/Library/Caches/slide-icons")
+def pic(s, name, x, y, size, color):
+    # Biểu tượng Lucide thành ảnh PNG (icons.mjs), lưu sẵn để lần sau khỏi vẽ lại
+    os.makedirs(ICON_DIR, exist_ok=True)
+    f = f"{ICON_DIR}/{name}-{color}.png"
+    if not os.path.exists(f):
+        subprocess.run(["node", os.path.join(os.path.dirname(os.path.abspath(__file__)), "icons.mjs"), ICON_DIR, f"{name}:{color}"], check=True)
+    return s.shapes.add_picture(f, Inches(x), Inches(y), Inches(size), Inches(size))
+
+def tile(s, x, y, w, h, icon, t, d, dark_tile=False, tsize=17, dsize=14):
+    # Ô có biểu tượng lớn ở trên: dùng cho hình tổng quan, từ mới
+    fill, line = (C["ink"], None) if dark_tile else (C["card"], C["line"])
+    ic, tc, dc = (C["soft"], C["paper"], C["dtext"]) if dark_tile else (C["rust"], C["ink"], C["grey"])
+    box(s, x, y, w, h, fill, line)
+    pic(s, icon, x + 0.3, y + 0.28, 0.62, ic)
+    tx(s, x + 0.3, y + 1.05, w - 0.6, 0.5, t, tsize, tc, True, HEAD)
+    if d: tx(s, x + 0.3, y + 1.05 + tsize / 40, w - 0.6, h - 1.2 - tsize / 40, d, dsize, dc)
+
+def gloss(s, x, y, items, colw=5.6, rowh=1.25, cols=2):
+    # Từ mới: biểu tượng + thuật ngữ + nghĩa đời thường
+    for i, (ic, k, v) in enumerate(items):
+        cx, cy = x + (i % cols) * (colw + 0.35), y + (i // cols) * rowh
+        box(s, cx, cy + 0.02, 0.72, 0.72, C["ink"])
+        pic(s, ic, cx + 0.13, cy + 0.15, 0.46, C["soft"])
+        tx(s, cx + 0.95, cy, colw - 0.95, 0.4, k, 17, C["ink"], True, HEAD)
+        tx(s, cx + 0.95, cy + 0.42, colw - 0.95, rowh - 0.45, v, 14, C["grey"])
 
 def code(s, x, y, w, h, text, size=12, label=None):
     box(s, x, y, w, h, C["code"], None, 0.04)

@@ -19,15 +19,57 @@ card(s, 6.8, 4.6, 5.6, 1.6, "Chưa đạt thì sao", "Trainer kèm tiếp tới 
 foot(s, "Tổng quan")
 
 s = d.slide()
+eyebrow(s, "Cả khoá trong một hình"); title(s, "Bạn đưa video, AI dựng, bạn nhận đủ file")
+flow = [("Smartphone", "1 · Bạn đưa", "Video quay bằng điện thoại, ghi âm, ảnh. Chưa cần sửa gì."),
+        ("Bot", "2 · Trợ lý AI làm", "Đọc sổ tay cách làm (SOP), tự chạy 8 bước ngay trên máy bạn."),
+        ("MonitorSmartphone", "3 · Bạn nhận", "Bản ngang cho YouTube, bản dọc cho TikTok, clip ngắn, ảnh bìa.")]
+for i, (ic, t_, d_) in enumerate(flow):
+    tile(s, 0.9 + i * 4.0, 2.2, 3.55, 2.8, ic, t_, d_, dark_tile=(i == 1), tsize=20, dsize=16)
+    if i < 2: pic(s, "ArrowRight", 4.47 + i * 4.0, 3.3, 0.4, C["orange"])
+tx(s, 0.9, 5.25, 11.5, 0.4, "VIỆC CỦA BẠN CHỈ CÓ BA", 13, C["rust"], True, HEAD)
+for i, (ic, t_) in enumerate([("MessageCircle", "Nói muốn gì"), ("Eye", "Xem bản AI làm"), ("PencilLine", "Nói chỗ chưa ưng")]):
+    pic(s, ic, 0.9 + i * 4.0, 5.75, 0.45, C["orange"])
+    tx(s, 1.5 + i * 4.0, 5.8, 3.2, 0.5, t_, 19, C["ink"], True, HEAD)
+foot(s, "Tổng quan · không cần biết lập trình, không cần biết dựng video")
+
+s = d.slide()
+eyebrow(s, "Hiểu bằng chuyện đời thường"); title(s, "Trợ lý AI giống thợ phụ ngồi tại máy bạn")
+ana = [("House", "Thợ đến tận nhà, tự cầm đồ nghề làm", "Bot", "Trợ lý AI chạy lệnh: tự làm trên máy, xin phép trước"),
+       ("BookOpen", "Công thức nấu ăn dán trên tủ lạnh", "FileText", "SOP: sổ tay cách làm, AI đọc mỗi lần dựng"),
+       ("Wrench", "Hộp đồ nghề: kéo, băng dính, sổ ghi", "Scissors", "Công cụ miễn phí: ffmpeg cắt ghép, Whisper chép lời"),
+       ("NotebookPen", "Khách chê mặn, đầu bếp sửa luôn công thức", "RefreshCw", "Phản hồi: AI sửa video và sửa một câu SOP")]
+tx(s, 0.9, 2.05, 5.4, 0.3, "TRONG ĐỜI THƯỜNG", 12, C["lgrey"], True, HEAD)
+tx(s, 7.0, 2.05, 5.4, 0.3, "KHI DỰNG VIDEO BẰNG AI", 12, C["lgrey"], True, HEAD)
+for i, (li, lt, mi, mt) in enumerate(ana):
+    y = 2.45 + i * 1.05
+    box(s, 0.9, y, 5.4, 0.88, C["card"], C["line"]); pic(s, li, 1.1, y + 0.2, 0.48, C["rust"])
+    tx(s, 1.8, y, 4.35, 0.88, lt, 16, C["ink"], anchor=MSO_ANCHOR.MIDDLE)
+    pic(s, "ArrowRight", 6.45, y + 0.26, 0.36, C["orange"])
+    box(s, 7.0, y, 5.4, 0.88, C["ink"]); pic(s, mi, 7.2, y + 0.2, 0.48, C["soft"])
+    tx(s, 7.9, y, 4.35, 0.88, mt, 16, C["paper"], anchor=MSO_ANCHOR.MIDDLE)
+foot(s, "Tổng quan")
+
+s = d.slide()
 eyebrow(s, "Kế hoạch · bộ công cụ"); title(s, "Năm thứ AI dùng để dựng, bốn thứ miễn phí")
 items = [("Trợ lý AI chạy lệnh", "Đọc SOP, chạy các công cụ dưới, tự kiểm kết quả. Claude Code, Codex CLI, Gemini CLI: chọn cái đang có."),
          ("ffmpeg", "Cắt, ghép, xoay, đổi khung, gắn phụ đề, lọc tiếng, chuẩn âm lượng, xuất file."),
          ("Whisper", "Chép lời có mốc thời gian để AI “nghe” được video."),
          ("Remotion", "Khi cần đồ hoạ: chữ chuyển động, hình minh hoạ, khung trình bày bằng code."),
          ("SOP", "Quy trình vận hành chuẩn: phong cách, luật, cách làm. AI đọc mỗi lần, sửa dần cho đúng ý.")]
-for i, (t, dd) in enumerate(items[:3]): card(s, 0.9 + i * 3.9, 2.25, 3.65, 2.0, t, dd, hl=(i == 0))
-for i, (t, dd) in enumerate(items[3:]): card(s, 0.9 + i * 3.9, 4.5, 3.65, 2.0, t, dd, hl=(i == 1))
+ics = ["Bot", "Scissors", "Mic", "Shapes", "FileText"]
+for i, (t, dd) in enumerate(items[:3]): card(s, 0.9 + i * 3.9, 2.25, 3.65, 2.0, t, dd, hl=(i == 0), icon=ics[i])
+for i, (t, dd) in enumerate(items[3:]): card(s, 0.9 + i * 3.9, 4.5, 3.65, 2.0, t, dd, hl=(i == 1), icon=ics[3 + i])
 foot(s, "Quy trình")
+
+s = d.slide()
+eyebrow(s, "Quy trình · nhìn nhanh"); title(s, "8 bước dựng một video, AI làm cả 8")
+eight = [("FolderInput", "1 · Nạp", "Xếp file, đo video"), ("Ear", "2 · Hiểu", "Chép lời, xem cảnh"),
+         ("ListOrdered", "3 · Kế hoạch", "Giữ đoạn nào, thứ tự nào"), ("Scissors", "4 · Dựng thô", "Cắt lặng, bỏ câu vấp"),
+         ("Sparkles", "5 · Làm sạch", "Đúng chiều, đủ sáng, bớt ồn"), ("Captions", "6 · Chữ, hình", "Phụ đề, chữ nhấn, minh hoạ"),
+         ("Music", "7 · Âm thanh", "Nhạc nền, chuẩn độ to"), ("MonitorSmartphone", "8 · Xuất", "Ngang, dọc, clip, ảnh bìa")]
+for i, (ic, t_, d_) in enumerate(eight):
+    tile(s, 0.9 + (i % 4) * 2.92, 2.2 + (i // 4) * 2.25, 2.7, 2.05, ic, t_, d_, dark_tile=(i == 7), tsize=17, dsize=14)
+foot(s, "Quy trình · chi tiết từng bước ở hai slide sau")
 
 for part, rows in [("1–4", [["#", "Bước", "AI làm", "Đạt khi"],
         ["1", "Nạp tư liệu", "Xếp file vào thư mục tập, đo độ dài, khung, chất lượng", "Biết có gì trong tay"],
@@ -47,9 +89,9 @@ for part, rows in [("1–4", [["#", "Bước", "AI làm", "Đạt khi"],
 s = d.slide("dark")
 eyebrow(s, "Phản hồi và luật dựng"); title(s, "Mỗi phản hồi: sửa video, sửa một câu SOP")
 tx(s, 0.9, 2.2, 11.5, 0.9, "Phản hồi ở bất kì bước nào → AI sửa video, rồi sửa đúng một câu trong SOP để lần sau tự đúng.", 20)
-card(s, 0.9, 3.6, 3.65, 2.4, "Lời thật", "Chữ trên video lấy đúng lời trong video. AI không bịa lời.")
-card(s, 4.8, 3.6, 3.65, 2.4, "Dễ hiểu hơn cầu kì", "Mỗi video ít kiểu hiệu ứng.")
-card(s, 8.7, 3.6, 3.65, 2.4, "An toàn", "Không sửa, không xoá file gốc. AI hỏi trước khi xoá hay tốn tiền. Không đưa mật khẩu cho AI.")
+card(s, 0.9, 3.6, 3.65, 2.4, "Lời thật", "Chữ trên video lấy đúng lời trong video. AI không bịa lời.", icon="Quote")
+card(s, 4.8, 3.6, 3.65, 2.4, "Dễ hiểu hơn cầu kì", "Mỗi video ít kiểu hiệu ứng.", icon="Eye")
+card(s, 8.7, 3.6, 3.65, 2.4, "An toàn", "Không sửa, không xoá file gốc. AI hỏi trước khi xoá hay tốn tiền. Không đưa mật khẩu cho AI.", icon="ShieldCheck")
 foot(s, "Quy trình")
 
 s = d.slide()
@@ -105,6 +147,18 @@ checks(s, 0.9, 2.5, 11.5, ["Tự dựng 1 video từ tư liệu mới, trainer c
 foot(s, "Phiếu khảo sát và nghiệm thu")
 
 s = d.slide()
+eyebrow(s, "Từ điển nhỏ của cả khoá"); title(s, "Gặp những từ này, hiểu đơn giản là")
+gloss(s, 0.9, 2.15, [("SquareTerminal", "Cửa sổ lệnh", "Ô để gõ chữ ra lệnh cho máy. Mac: Terminal, Windows: PowerShell."),
+    ("Bot", "Trợ lý AI chạy lệnh", "Claude Code, Codex, Gemini CLI. Nghe bạn nói, tự làm trên máy."),
+    ("FileText", "SOP", "Sổ tay cách làm. AI đọc nó trước mỗi lần dựng."),
+    ("FolderOpen", "Thư mục tập", "Mỗi video một thư mục, ba ngăn: gốc · đang làm · thành phẩm."),
+    ("Captions", "Phụ đề · chữ nhấn", "Chữ chạy theo lời nói · vài chữ lớn ở chỗ quan trọng."),
+    ("Volume2", "LUFS", "Đơn vị đo độ to. Video trên mạng to khoảng −14."),
+    ("RectangleVertical", "Ngang 16:9 · dọc 9:16", "Khung nằm cho YouTube · khung đứng cho TikTok, Reels."),
+    ("ImagePlay", "Ảnh bìa (thumbnail)", "Ảnh hiện trước khi người xem bấm vào video.")], rowh=1.08)
+foot(s, "Tổng quan · không cần thuộc, AI lo phần kỹ thuật")
+
+s = d.slide()
 eyebrow(s, "Việc trainer chuẩn bị"); title(s, "Trước khách đầu tiên")
 items = ["Bộ biểu mẫu: thiết lập hệ thống, SOP, hướng dẫn công việc, danh sách kiểm soát chất lượng",
          "Thử hướng dẫn thiết lập + SOP trên một máy Mac sạch và một máy Windows",
@@ -126,7 +180,8 @@ rows = [("01 · Hướng dẫn thiết lập hệ thống", "Bài 1", "Cài tr�
         ("03 · Hướng dẫn công việc", "Bài 3–7", "Câu giao việc khi làm hoặc sửa từng bước"),
         ("04 · Danh sách kiểm soát chất lượng", "Bài 8", "Kiểm bản AI bàn giao trước khi dùng")]
 for i, (t, b, dd) in enumerate(rows):
-    card(s, 0.9 + (i % 2) * 5.85, 2.75 + (i // 2) * 1.95, 5.6, 1.75, f"{t} · {b}", dd, dsize=17)
+    card(s, 0.9 + (i % 2) * 5.85, 2.75 + (i // 2) * 1.95, 5.6, 1.75, f"{t} · {b}", dd, dsize=17,
+         icon=["Wrench", "FileText", "MessageSquareText", "ListChecks"][i])
 foot(s, "Bộ biểu mẫu")
 
 s = d.slide()

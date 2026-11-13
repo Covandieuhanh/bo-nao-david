@@ -118,3 +118,45 @@ section.dark .data { color:#F7F5F0; }
 section.dark .foot { color:#8D9CAB; }
 section.accent .foot { color:#15202B; }
 @keyframes rise { from { opacity:0; transform:translateY(24px); } }
+
+/* Bảng: kẻ dòng rõ, chữ thẳng cột */
+table.data { border-collapse:collapse; width:100%; }
+table.data th { text-align:left; font-weight:700; font-size:0.9em; color:#F7F5F0; background:#15202B; padding:14px 18px; }
+table.data td { text-align:left; vertical-align:top; padding:12px 18px; line-height:1.4; border-bottom:2px solid #E4DED2; color:#4A5560; }
+table.data td:first-child { color:#15202B; font-weight:700; }
+table.data tr:nth-child(even) td { background:#FFFDF9; }
+section.dark table.data th { background:#2C3E4F; }
+section.dark table.data td { color:#C9D3DC; border-color:#2C3E4F; }
+section.dark table.data td:first-child { color:#F7F5F0; }
+section.dark table.data tr:nth-child(even) td { background:#1F2D3A; }
+
+/* So sánh đời thường: mỗi dòng = chuyện đời thường → việc trên máy */
+.ana { display:grid; grid-template-columns:1fr 60px 1fr; gap:24px 24px; flex:1; align-content:center; align-items:center; }
+.ana .hd { font-size:24px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#6B737C; }
+.ana .c { display:flex; align-items:center; gap:26px; background:#FFFDF9; border:2px solid #E4DED2; border-radius:20px; padding:20px 28px; min-height:132px; box-sizing:border-box; }
+.ana .c.m { background:#15202B; border-color:#15202B; }
+.ana .c p { font-size:32px; line-height:1.35; color:#15202B; }
+.ana .c.m p { color:#F7F5F0; }
+.ana .c b { color:#B04A12; }
+.ana .c.m b { color:#F2A26B; }
+.ana .ico { width:88px; height:88px; border-radius:50%; background:#FCE1C8; color:#B04A12; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.ana .c.m .ico { background:#E8742A; color:#15202B; }
+.ana .ico x-icon { width:48px; height:48px; }
+.ana .to { color:#E8742A; width:48px; height:48px; }
+
+/* Từ mới: thuật ngữ + nghĩa đời thường */
+.gloss { display:grid; grid-template-columns:1fr 1fr; gap:48px 64px; flex:1; align-content:center; }
+.gloss .g { display:flex; gap:24px; align-items:flex-start; }
+.gloss .ico { width:96px; height:96px; border-radius:18px; background:#15202B; color:#F2A26B; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.gloss .ico x-icon { width:52px; height:52px; }
+.gloss .k { font-size:36px; font-weight:700; color:#15202B; line-height:1.25; }
+.gloss .v { font-size:30px; line-height:1.4; color:#4A5560; padding-top:4px; }
+
+/* Phím bấm */
+.key { display:inline-block; white-space:nowrap; font-size:30px; font-weight:700; color:#15202B; background:#FFFDF9; border:2px solid #C9C2B4; border-bottom-width:6px; border-radius:12px; padding:6px 20px; }
+.howto { display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+.howto .os { display:flex; flex-direction:column; gap:22px; background:#FFFDF9; border:2px solid #E4DED2; border-radius:24px; padding:32px; }
+.howto .os h3 { display:flex; gap:16px; align-items:center; }
+.howto .os h3 x-icon { width:44px; height:44px; color:#B04A12; }
+.howto .st { display:flex; gap:16px; align-items:center; font-size:30px; color:#15202B; }
+.howto .n { width:48px; height:48px; border-radius:50%; background:#E8742A; color:#15202B; font-weight:800; font-size:26px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
