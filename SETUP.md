@@ -22,6 +22,8 @@ Trên Mac chính, skill, hồ sơ, luật và bộ nhớ trong `~/.claude` là l
 | Trang và tài liệu trên claude.ai | Toàn bộ ở Drive `Sao-luu-Claude-2026-11-07/tai-lieu-claude-ai` (không còn trong repo). Bản PDF đọc được nhưng không còn sửa trực tiếp như trên claude.ai |
 | Lịch sử trò chuyện | Danh sách phiên trong ứng dụng không theo sang. Bản thô vẫn ở `~/.claude/projects` trên máy, không đưa lên mạng. Những gì cần cho việc tiếp theo đã ghi vào `TRANG-THAI-HIEN-TAI.md` và `nao/bo-nho/` |
 
+**App xem tài liệu (Mở Tài Liệu):** `bash scripts/mo-tai-lieu/build.sh` (xem `scripts/mo-tai-lieu/README.md`).
+
 **Phòng khi máy này hỏng:** repo này giữ não và skill; Drive `Video-xong` giữ thành phẩm; Drive `Sao-luu-Claude-2026-11-07/du-an-video` giữ âm thanh gốc và kịch bản từng dự án (bỏ `node_modules` và file render, dựng lại được). Giải nén vào `~/Movies`, chạy `npm install` trong `motion/`, rồi render lại. File `.env` của App notion, `~/Documents/mk.csv`, hồ sơ đăng nhập Chrome và lịch sử chat chỉ có trên máy này, cố ý không đưa lên mạng.
 
 ## 2. Claude Code trên máy mới (Mac)
