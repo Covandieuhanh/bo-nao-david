@@ -1,26 +1,25 @@
 <section id="nhac">
 <p class="eyebrow">Nhạc và âm lượng</p>
-<h2>Nhạc thấp dưới giọng, cả video đạt khoảng −14 LUFS</h2>
+<h2>Nhạc nhỏ hơn giọng, cả video to vừa đúng chuẩn</h2>
 <div class="split even">
 <div class="stack">
-<p class="name" style="font-size:24px;font-weight:700;color:#4A5560">Độ to đo thật (càng dài càng to)</p>
-<div class="row" style="gap:16px"><p class="pt" style="width:200px">Tư liệu gốc</p><div style="width:200px;height:44px;background:#9CC3E6;border-radius:8px"></div><p class="pt">−22,6 LUFS</p></div>
-<div class="row" style="gap:16px"><p class="pt" style="width:200px">Bản dài 7:10</p><div style="width:340px;height:44px;background:#E8742A;border-radius:8px"></div><p class="pt">−14,1 LUFS</p></div>
-<div class="row" style="gap:16px"><p class="pt" style="width:200px">Clip dọc 61 giây</p><div style="width:344px;height:44px;background:#E8742A;border-radius:8px"></div><p class="pt">−13,9 LUFS</p></div>
-<p class="cap">Nhạc tuyến “kiến thức”: giọng trung tính, nhạc nghe khi giọng ngừng, không lấn khi giọng nói.</p>
+<p class="name" style="font-size:24px;font-weight:700;color:#4A5560">Độ to đo thật (thanh càng dài càng to)</p>
+<div class="row" style="gap:16px"><p class="pt" style="width:220px">Tư liệu gốc</p><div style="width:200px;height:44px;background:#9CC3E6;border-radius:8px"></div><p class="pt">nhỏ (−22,6)</p></div>
+<div class="row" style="gap:16px"><p class="pt" style="width:220px">Bản dài 7:10</p><div style="width:340px;height:44px;background:#E8742A;border-radius:8px"></div><p class="pt">chuẩn (−14,1)</p></div>
+<div class="row" style="gap:16px"><p class="pt" style="width:220px">Clip dọc 61 giây</p><div style="width:344px;height:44px;background:#E8742A;border-radius:8px"></div><p class="pt">chuẩn (−13,9)</p></div>
+<p class="cap">Như nhạc quán cà phê: nghe rõ khi người nói ngừng, nhỏ lại khi người nói.</p>
 </div>
 <div class="win">
-<div class="bar"><x-shape kind="ellipse" class="dot" style="background:#E8742A"></x-shape><x-shape kind="ellipse" class="dot" style="background:#F2C14E"></x-shape><x-shape kind="ellipse" class="dot" style="background:#8FD3A6"></x-shape><p class="ttl">Đo lại sau khi dựng · kết quả thật</p></div>
+<div class="bar"><x-shape kind="ellipse" class="dot" style="background:#E8742A"></x-shape><x-shape kind="ellipse" class="dot" style="background:#F2C14E"></x-shape><x-shape kind="ellipse" class="dot" style="background:#8FD3A6"></x-shape><p class="ttl">AI báo sau khi chỉnh tiếng</p></div>
 <div class="term">
-<p class="cmd">$ ffmpeg -i 1-goc/…MP4 -af loudnorm=print_format=summary …</p>
-<p class="ln">Input Integrated:  -22.6 LUFS</p>
-<p class="cmd" style="padding-top:8px">$ ffmpeg -i video-final.mp4 -af loudnorm=print_format=summary …</p>
-<p class="ln">Input Integrated:  -14.1 LUFS</p>
-<p class="ln">Input True Peak:    -1.8 dBTP</p>
-<p class="ok">✓ Đạt chuẩn, không méo tiếng</p>
+<p class="say">Tiếng gốc <b>nhỏ</b> (−22,6). Tôi đã nâng lên.</p>
+<p class="say">Bản cuối to <b>−14,1</b>: đúng mức YouTube, TikTok dùng.</p>
+<p class="say">Nhạc nền đặt thấp dưới giọng nói.</p>
+<p class="ok">✓ Đạt chuẩn, tiếng không bị rè, không bị vỡ</p>
+<p class="mean">đọc một con số: gần −14 là đạt</p>
 </div>
 </div>
 </div>
-<p class="foot">Dựng video bằng AI trên máy tính · Bài 6 · −14 LUFS là mức phổ biến của YouTube, Spotify</p>
-<aside>Số đo thật: gốc nhỏ −22,6, bản dài sau dựng −14,1, clip −13,9. Luôn yêu cầu AI đo lại bản cuối và báo con số.</aside>
+<p class="foot">Dựng video bằng AI trên máy tính · Bài 6 · Đơn vị đo độ to gọi là LUFS; −14 là mức chung của YouTube, Spotify</p>
+<aside>Số đo thật: gốc nhỏ −22,6, bản dài sau dựng −14,1, clip −13,9. Luôn yêu cầu AI đo lại bản cuối và báo con số. Giải thích bằng chuyện đổi kênh TV: kênh to kênh nhỏ thì khó chịu.</aside>
 </section>

@@ -1,26 +1,24 @@
 <section id="do">
 <p class="eyebrow">Việc 1 · Đo</p>
 <h2>Đo tư liệu gốc trước khi làm gì khác</h2>
-<div class="split">
-<div class="side">
-<p class="pt"><b>1920x1080</b> → ngang 16:9.</p>
-<p class="pt"><b>59,94 hình/giây</b> → điện thoại quay 60 hình/giây.</p>
-<p class="pt"><b>408 giây = 6:48</b>, nặng 516 MB.</p>
-<p class="pt"><b>−22,6 LUFS</b> → nhỏ hơn chuẩn khoảng −14 tới 8,6 đơn vị: phải nâng ở bước âm thanh.</p>
+<div class="split even">
+<div class="facts">
+<div class="fact" style="--i:0"><div class="ico"><x-icon name="RectangleHorizontal"></x-icon></div><div><p class="k">Khung ngang</p><p class="v">Quay điện thoại nằm ngang, nét cao (1920x1080).</p></div></div>
+<div class="fact" style="--i:1"><div class="ico"><x-icon name="Film"></x-icon></div><div><p class="k">Rất mượt</p><p class="v">60 ảnh mỗi giây, như mọi điện thoại đời mới.</p></div></div>
+<div class="fact" style="--i:2"><div class="ico"><x-icon name="Timer"></x-icon></div><div><p class="k">Dài 6 phút 48 giây</p><p class="v">Nặng 516 MB, cỡ 100 bức ảnh chụp điện thoại.</p></div></div>
+<div class="fact warn" style="--i:3"><div class="ico"><x-icon name="Volume1"></x-icon></div><div><p class="k">Tiếng hơi nhỏ</p><p class="v">Nhỏ hơn mức chuẩn trên mạng: phải nâng ở bước âm thanh.</p></div></div>
 </div>
 <div class="win">
-<div class="bar"><x-shape kind="ellipse" class="dot" style="background:#E8742A"></x-shape><x-shape kind="ellipse" class="dot" style="background:#F2C14E"></x-shape><x-shape kind="ellipse" class="dot" style="background:#8FD3A6"></x-shape><p class="ttl">Đo tư liệu gốc · kết quả thật</p></div>
+<div class="bar"><x-shape kind="ellipse" class="dot" style="background:#E8742A"></x-shape><x-shape kind="ellipse" class="dot" style="background:#F2C14E"></x-shape><x-shape kind="ellipse" class="dot" style="background:#8FD3A6"></x-shape><p class="ttl">AI báo kết quả đo · bằng lời thường</p></div>
 <div class="term">
-<p class="cmd">$ ffprobe dji_mimo_20261111_204848_video.MP4</p>
-<p class="ln">width=1920 height=1080</p>
-<p class="ln">r_frame_rate=60000/1001</p>
-<p class="ln">duration=408.09  size=541085012</p>
-<p class="cmd" style="padding-top:10px">$ ffmpeg -i … -af loudnorm=print_format=summary -f null -</p>
-<p class="ln">Input Integrated:  -22.6 LUFS</p>
-<p class="ln">Input True Peak:    -3.4 dBTP</p>
+<p class="ask">Đo giúp tôi video trong tap-thu/1-goc</p>
+<p class="say">Video của bạn: <b>ngang</b>, nét, <b>60 hình/giây</b>, dài <b>6:48</b>.</p>
+<p class="say">Âm lượng <b>−22,6</b>, nhỏ hơn mức chuẩn <b>−14</b>. Tôi sẽ nâng lên ở bước âm thanh.</p>
+<p class="mean">số âm lượng càng gần 0 càng to; −14 là mức YouTube, TikTok dùng</p>
+<p class="cmd sm">công cụ AI đã dùng: ffprobe, ffmpeg (bạn không cần gõ)</p>
 </div>
 </div>
 </div>
-<p class="foot">Dựng video bằng AI trên máy tính · Bài 3 · Tên file rút gọn</p>
-<aside>Đây là số đo thật của file quay bằng máy DJI (tên file bắt đầu dji_mimo). Thành phẩm cuối được nâng lên −14,1 LUFS, xem ở bài 6.</aside>
+<p class="foot">Dựng video bằng AI trên máy tính · Bài 3 · Số đo thật của tư liệu gốc</p>
+<aside>Đây là số đo thật của file quay bằng máy DJI. Thành phẩm cuối được nâng lên −14,1, xem ở bài 6. Giải thích: âm lượng đo bằng số âm, gần 0 là to.</aside>
 </section>

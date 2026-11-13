@@ -9,7 +9,7 @@
 | `bai-0-tong-quan-goi.pptx` | `1-quy-trinh.md`, `2-lo-trinh.md`, `4-phieu-khao-sat-va-nghiem-thu.md` (`build_extra.py`) | có |
 | `bo-bieu-mau.pptx` | `bo-bieu-mau/01…04` (`build_extra.py`) | có |
 
-**Cho người chưa biết gì về công nghệ** (David chốt 13/11/2026): mỗi bài có slide "Hiểu bằng chuyện đời thường" (chuyện quen thuộc → việc trên máy) và "Từ mới của bài" (thuật ngữ + nghĩa một câu), ngay sau slide mục tiêu; bài 1 có thêm "Mở cửa sổ lệnh". Nội dung ở `them_slide.py`; bài 0 có hình tổng quan, 8 bước bằng hình, từ điển nhỏ (`build_extra.py`). Biểu tượng Lucide; trong pptx sửa được, biểu tượng là ảnh PNG do `icons.mjs` vẽ (`pic()` trong `deck_lib.py`).
+**Cho người chưa biết gì về công nghệ** (David chốt 13/11/2026): mỗi bài có slide "Hiểu bằng chuyện đời thường" (chuyện quen thuộc → việc trên máy) và "Từ mới của bài" (thuật ngữ + nghĩa một câu), ngay sau slide mục tiêu; bài 1 có thêm "Mở cửa sổ lệnh". Nội dung ở `them_slide.py`. Slide nào có lệnh máy thì mỗi dòng lệnh kèm dòng "→ nghĩa là" hoặc thay bằng lời AI báo lại, chữ tiếng Anh dịch nghĩa (`viet_lai_de_hieu.py`, kiểu `.mean`, `.say`, `.fact` trong `deck.css`); bài 0 có hình tổng quan, 8 bước bằng hình, từ điển nhỏ (`build_extra.py`). Biểu tượng Lucide; trong pptx sửa được, biểu tượng là ảnh PNG do `icons.mjs` vẽ (`pic()` trong `deck_lib.py`).
 
 **Luật để Quick Look của macOS mở được** (đã thử 13/11/2026):
 - Không ghi chú (notes) trong pptx: Quick Look treo. Ghi chú để file docx riêng.

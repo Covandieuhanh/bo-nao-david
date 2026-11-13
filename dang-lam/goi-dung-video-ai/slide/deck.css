@@ -160,3 +160,19 @@ section.dark table.data tr:nth-child(even) td { background:#1F2D3A; }
 .howto .os h3 x-icon { width:44px; height:44px; color:#B04A12; }
 .howto .st { display:flex; gap:16px; align-items:center; font-size:30px; color:#15202B; }
 .howto .n { width:48px; height:48px; border-radius:50%; background:#E8742A; color:#15202B; font-weight:800; font-size:26px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+
+/* Lời thường dưới dòng lệnh: "nghĩa là…" */
+.term .mean { font-family:'Be Vietnam Pro', Arial, sans-serif; font-size:25px; line-height:1.4; color:#F7F5F0; padding:2px 0 12px 30px; position:relative; }
+.term .mean::before { content:"→"; position:absolute; left:0; color:#F2C14E; }
+.term .cmd.sm, .term .ln.sm { font-size:20px; opacity:0.75; }
+.term .say { font-family:'Be Vietnam Pro', Arial, sans-serif; font-size:27px; line-height:1.45; color:#F7F5F0; padding:4px 0; }
+.term .say b { color:#F2C14E; }
+/* Ô thông tin: biểu tượng + tên + nghĩa */
+.facts { display:flex; flex-direction:column; gap:18px; }
+.fact { display:flex; gap:22px; align-items:center; background:#FFFDF9; border:2px solid #E4DED2; border-radius:20px; padding:18px 24px; }
+.fact .ico { width:72px; height:72px; border-radius:50%; background:#FCE1C8; color:#B04A12; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.fact .ico x-icon { width:40px; height:40px; }
+.fact .k { font-size:30px; font-weight:700; color:#15202B; }
+.fact .v { font-size:26px; line-height:1.35; color:#4A5560; }
+.fact.warn { border-color:#E8742A; }
+.fact.warn .ico { background:#E8742A; color:#15202B; }
