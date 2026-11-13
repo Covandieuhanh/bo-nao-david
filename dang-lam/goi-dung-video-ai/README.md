@@ -12,5 +12,6 @@ Gói công nghệ đầu tiên của hướng 3 (`nao/David.md` 4.1), chốt 13/
 | [2-lo-trinh.md](2-lo-trinh.md) | 4 chặng, 6 buổi, quy trình một học viên, việc trainer chuẩn bị |
 | [3-giao-trinh.md](3-giao-trinh.md) | 12 bài, mỗi bài có cách làm theo từng tuyến |
 | [4-phieu-va-nghiem-thu.md](4-phieu-va-nghiem-thu.md) | Phiếu đầu vào, điểm trước/sau, nghiệm thu |
+| [bo-mau/](bo-mau/README.md) | 8 mẫu trao học viên: kênh, phiếu lọc, hồ sơ cho AI, lời dặn 9 bước, danh sách kiểm, sổ, cài đặt + file dặn AI tuyến C |
 
 **Chờ David chốt:** giá gói · kèm tiếp tối đa bao lâu.

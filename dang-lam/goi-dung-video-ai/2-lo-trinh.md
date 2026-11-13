@@ -29,8 +29,8 @@ Giữa hai buổi: học viên làm bài tập trên video của mình, gửi k�
 7. **Sau gói**: lời chứng (ẩn danh nếu muốn) + số trước/sau.
 
 ## Thực thi: trainer chuẩn bị trước khi dạy khách đầu tiên
-- [ ] **Bộ mẫu dùng chung** cho học viên: mẫu "Kênh của tôi", mẫu phiếu lọc, bộ lời dặn AI (prompt) cho từng bước, mẫu sổ số liệu. Không chứa nội dung riêng của trainer.
-- [ ] Hướng dẫn cài cho tuyến C trên Mac và Windows, thử trên một máy sạch.
+- [x] **Bộ mẫu dùng chung** cho học viên ([bo-mau/](bo-mau/README.md), 13/11): 8 mẫu, gồm hướng dẫn cài và file dặn AI tuyến C.
+- [ ] Thử mẫu 07 (cài) và mẫu 08 (file dặn AI) trên một máy Mac sạch và một máy Windows.
 - [ ] Thử đủ 9 bước trên tuyến A (chỉ điện thoại) để chắc học viên không có máy tính vẫn đạt.
 - [ ] **Kết quả mẫu để demo**: video, phiếu lọc, bộ lời dặn mà chính trainer đã làm ra ở từng bước. Chỉ dùng để học viên thấy "xong bước này trông thế nào", không dạy theo chi tiết riêng đó.
 - [ ] Chốt giá + "chưa ra kết quả thì kèm tiếp" tối đa bao lâu.
