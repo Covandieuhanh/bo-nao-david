@@ -5,7 +5,8 @@
 #   3. Drive Video-xong/                  — thành quả video giao David
 #   4. ~/Movies/_so-danh-muc/danh-muc.md  — kết luận lọc, điểm, kênh, lịch, trạng thái
 #   python3 scripts/xem-ket-qua.py            → http://localhost:8765 (mở luôn trình duyệt; --khong-mo để không mở)
-# Mỗi tập: bản dài (video, thumbnail, bài phát hành, chương), clip ngắn (video, lời clip, bài đăng), kế hoạch, số liệu.
+# Giao diện (David 13/11/2026: "xem được video và ảnh bìa ngay khi mở, giảm thao tác, file ấn mới xem"): mỗi tập một hàng
+# bìa · bản dài · clip phát ngay tại chỗ; bài đăng, kế hoạch, lời clip, số liệu ẩn sau nút "Tài liệu", bấm mở khung xem có nút chép.
 import html, http.server, os, re, socketserver, sys, time, urllib.parse, webbrowser
 
 H0 = os.path.expanduser("~")
@@ -174,7 +175,20 @@ def md(s):
 def url(root, rel): return f"/f/{root}/" + urllib.parse.quote(rel)
 def esc(s): return html.escape(str(s))
 def ten(t): return TEN.get(t.key, t.key.replace("-", " ").capitalize())
-def nguon(root, rel): return f'<span class=src title="{esc(ROOTS[root][0] + "/" + rel)}">{esc(ROOTS[root][1])}</span>'
+
+def nhan_vid(n):
+    n = n.lower()
+    if "xem" in n or "dien-thoai" in n: return "Bản nhẹ điện thoại"
+    if "khong-teaser" in n: return "Bản không teaser"
+    return "Bản dài"
+
+def chinh(n): return nhan_vid(n) == "Bản dài"
+def la_chon(x): return os.path.basename(x[1]).lower().startswith("thumbnail")
+def q(rel): return urllib.parse.quote(rel)
+
+NHAN_TXT = {"phat-hanh.md": "Bài phát hành", "dang-bai.md": "Bài đăng clip", "chuong.txt": "Chương YouTube",
+            "ke-hoach-dang.md": "Kế hoạch đăng", "ke-hoach-canh.md": "Kế hoạch cảnh", "ke-hoach-cat.md": "Kế hoạch cắt",
+            "ke-hoach-ghep.md": "Kế hoạch ghép", "so-lieu.md": "Số liệu"}
 
 def read(root, rel):
     try: return open(os.path.join(ROOTS[root][0], rel), encoding="utf-8").read()
@@ -184,123 +198,138 @@ def trong(txt):
     """Mẫu số liệu chưa điền?"""
     return "<tên video>" in txt or not re.search(r"\|[^|\n]*\|\s*[^|\s][^|\n]*\|", txt.split("## Sau 7 ngày")[-1].split("\n", 3)[-1])
 
-def nhan_vid(n):
-    n = n.lower()
-    if "xem" in n or "dien-thoai" in n: return "Bản nhẹ xem điện thoại"
-    if "khong-teaser" in n: return "Bản không teaser"
-    return "Bản cuối"
-
-def fig_vid(root, rel):
-    p = os.path.join(ROOTS[root][0], rel); n = os.path.basename(rel); sz = os.path.getsize(p) / 1e6
-    ngay = time.strftime("%d/%m %H:%M", time.localtime(os.path.getmtime(p)))
-    return (f'<figure><video controls preload=none poster="/poster/{root}/{urllib.parse.quote(rel)}" src="{url(root, rel)}"></video>'
-            f'<figcaption><b>{nhan_vid(n)}</b> · {esc(n)} · {sz:.0f} MB · {ngay} · {nguon(root, rel)} · <a href="{url(root, rel)}" download>tải</a></figcaption></figure>')
-
-def fig_img(root, rel):
-    n = os.path.basename(rel); chon = n.lower().startswith("thumbnail")
-    return (f'<figure class="{"chon" if chon else ""}"><a href="{url(root, rel)}" target=_blank><img loading=lazy src="{url(root, rel)}"></a>'
-            f'<figcaption>{"<b>David đã chọn</b> · " if chon else ""}{esc(n)} · {nguon(root, rel)}</figcaption></figure>')
-
-NHAN_TXT = {"phat-hanh.md": "Bài phát hành (tiêu đề, mô tả, chương, bình luận ghim)", "chuong.txt": "Chương YouTube", "dang-bai.md": "Bài đăng clip ngắn",
-            "ke-hoach-dang.md": "Kế hoạch đăng", "ke-hoach-canh.md": "Kế hoạch cảnh", "ke-hoach-cat.md": "Kế hoạch cắt clip", "ke-hoach-ghep.md": "Kế hoạch ghép",
-            "so-lieu.md": "Số liệu sau khi đăng"}
-
-def doc(root, rel, mo=False):
-    f = os.path.basename(rel); txt = read(root, rel)
-    if not txt.strip(): return ""
-    nhan = NHAN_TXT.get(f, f)
-    if f == "so-lieu.md" and trong(txt): return f'<div class=note>{nhan}: chưa điền (điền sau 7 ngày từ ảnh số liệu).</div>'
-    nd = f"<pre>{esc(txt)}</pre>" if f.endswith(".txt") else f"<div class=md>{md(txt)}</div>"
-    return (f'<details{" open" if mo else ""}><summary>{esc(nhan)} <small>{esc(f)} · {nguon(root, rel)}</small>'
-            f'<button class=copy onclick="cp(event,this)">chép</button></summary>{nd}</details>')
-
 def sort_txt(lst):
     order = list(NHAN_TXT)
     return sorted(lst, key=lambda x: order.index(os.path.basename(x[1])) if os.path.basename(x[1]) in order else 99)
 
-def status_card(t):
-    if not t.danh_muc: return '<div class=note>Chưa có dòng trong sổ danh mục.</div>'
+def media_vid(root, rel, nhan, doc=False):
+    return (f'<figure class="m{" doc" if doc else ""}"><video controls playsinline preload=none poster="/poster/{root}/{q(rel)}" src="{url(root, rel)}"></video>'
+            f'<figcaption>{esc(nhan)}</figcaption></figure>')
+
+def media_img(root, rel, nhan):
+    return (f'<figure class=m><img loading=lazy src="{url(root, rel)}" onclick="anh(this.src)" alt="">'
+            f'<figcaption>{esc(nhan)}</figcaption></figure>')
+
+def nut(nhan, onclick, tat=False):
+    return f'<button class=f{" tat" if tat else ""} onclick="{esc(onclick)}"{" disabled" if tat else ""}>{esc(nhan)}</button>'
+
+def status_html(t):
     out = ""
     for r in t.danh_muc:
-        cells = "".join(f"<div><span>{esc(k)}</span>{inline(esc(v))}</div>" for k, v in r.items() if v and k not in ("Tài nguyên",))
-        out += f'<div class=status><div class=res>{inline(esc(r.get("Tài nguyên", "")))}</div><div class=kv>{cells}</div></div>'
+        cells = "".join(f"<div><span>{esc(k)}</span>{inline(esc(v))}</div>" for k, v in r.items() if v and k != "Tài nguyên")
+        out += f'<div class=res>{inline(esc(r.get("Tài nguyên", "")))}</div><div class=kv>{cells}</div>'
     return out
 
-def page_tap(t):
-    b = f'<a class=back href="/">← Tất cả video</a><h1>{esc(ten(t))}</h1><div class=meta>tap-{esc(t.key)} · nguồn: {esc(" · ".join(dict.fromkeys(t.src)))}</div>'
-    b += "<h2>Trạng thái</h2>" + status_card(t)
-    if t.dai_vid or t.thumbs or t.dai_txt:
-        b += "<h2>Bản dài</h2>"
-        if t.dai_vid: b += '<div class=grid>' + "".join(fig_vid(*v) for v in t.dai_vid) + "</div>"
-        if t.thumbs: b += '<h3>Thumbnail</h3><div class="grid sm">' + "".join(fig_img(*v) for v in sorted(t.thumbs, key=lambda x: not os.path.basename(x[1]).startswith("thumbnail"))) + "</div>"
-        for x in sort_txt(t.dai_txt): b += doc(*x, mo=os.path.basename(x[1]) == "phat-hanh.md")
-    if t.clips or t.hl_txt:
-        b += f"<h2>Clip ngắn <small>{len(t.clips)} clip</small></h2>"
-        for x in sort_txt(t.hl_txt): b += doc(*x, mo=os.path.basename(x[1]) == "dang-bai.md")
-        b += '<div class=clips>'
-        for k in sorted(t.clips):
-            c = t.clips[k]
-            b += f'<section class=clip><h3>Clip {k}</h3>'
-            b += "".join(fig_vid(*v) for v in c["vid"]) or '<div class=note>Chưa có video cuối (đang dựng).</div>'
-            for x in c["txt"]: b += doc(*x).replace(f">{esc(os.path.basename(x[1]))}<", ">Lời clip, bốn câu chọn ý<", 1)
-            b += "</section>"
-        b += "</div>"
-    return b
-
-def card(t):
-    th = sorted(t.thumbs, key=lambda x: not os.path.basename(x[1]).startswith("thumbnail"))[0] if t.thumbs else None
-    v = (t.dai_vid + [x for k in sorted(t.clips) for x in t.clips[k]["vid"]])[:1]
-    img = (f'<img loading=lazy src="{url(*th)}">' if th else f'<img loading=lazy src="/poster/{v[0][0]}/{urllib.parse.quote(v[0][1])}">' if v
-           else f'<div class=ph>{esc(ten(t)[:1])}</div>')
+def section(t):
+    k = t.key
+    thumbs = sorted(t.thumbs, key=lambda x: not la_chon(x))
+    bia = [x for x in thumbs if la_chon(x)][:1] or thumbs          # đã chọn → chỉ hiện ảnh chọn; chưa chọn → hiện mọi phương án
+    dai = [x for x in t.dai_vid if chinh(x[1])] or t.dai_vid[:1]
+    strip = "".join(media_vid(*x, "Bản dài") for x in dai)
+    for c in sorted(t.clips):
+        v = t.clips[c]["vid"]
+        strip += media_vid(*v[-1], f"Clip {c}", doc=True) if v else f'<figure class="m doc cho"><div>Clip {c}<br><small>đang dựng</small></div><figcaption>Clip {c}</figcaption></figure>'
+    strip += "".join(media_img(*x, "Bìa đã chọn" if la_chon(x) else f"Bìa {i + 1}" if len(bia) > 1 else "Bìa") for i, x in enumerate(bia))
+    # Tài liệu: ẩn sau một nút
+    files, da = [], set()
+    for x in sort_txt(t.dai_txt + t.hl_txt):
+        f = os.path.basename(x[1]); txt = read(*x)
+        if not txt.strip() or f in da: continue   # cùng tên ở hai nguồn (dự án + Video-xong) → giữ bản đọc trước
+        da.add(f)
+        nhan = NHAN_TXT.get(f, f)
+        if f == "so-lieu.md" and trong(txt): files.append(nut(f"{nhan}: chưa có", "", True)); continue
+        files.append(nut(nhan, f"xem('/doc/{x[0]}/{q(x[1])}','{esc(ten(t))} · {nhan}')"))
+    for c in sorted(t.clips):
+        for x in t.clips[c]["txt"]: files.append(nut(f"Lời clip {c}", f"xem('/doc/{x[0]}/{q(x[1])}','{esc(ten(t))} · Lời clip {c}')"))
+    for x in t.dai_vid:
+        if x not in dai: files.append(nut(nhan_vid(x[1]), f"phat('{url(*x)}')"))
+    for i, x in enumerate(thumbs):
+        if x not in bia: files.append(nut(f"Bìa phương án {i}", f"anh('{url(*x)}')"))
+    if t.danh_muc: files.insert(0, nut("Lọc & trạng thái", f"xemTpl('st-{k}','{esc(ten(t))} · Lọc & trạng thái')"))
     tt = t.danh_muc[-1].get("Trạng thái", "") if t.danh_muc else ""
-    kl = t.danh_muc[-1].get("Kết luận", "") if t.danh_muc else ""
-    n = f'{len(t.dai_vid)} bản dài · {len(t.clips)} clip · {len(t.thumbs)} ảnh · {"có" if any(os.path.basename(x[1]) in ("phat-hanh.md", "dang-bai.md") for x in t.dai_txt + t.hl_txt) else "chưa có"} bài đăng'
-    return (f'<a class=card href="/?tap={urllib.parse.quote(t.key)}">{img}<div class=ci><b>{esc(ten(t))}</b><small>{esc(n)}</small>'
-            f'{f"<em>{inline(esc(kl))}</em>" if kl else ""}{f"<span>{inline(esc(tt))}</span>" if tt else ""}</div></a>')
+    chip = f'<span class=chip title="{esc(re.sub(r"[`*]", "", tt))}">{esc(re.sub(r"[`*]", "", tt))}</span>' if tt else ""
+    so = len([f for f in files if "disabled" not in f])
+    return (f'<section class=tap id="tap-{esc(k)}" data-thu="{1 if nhom(k) else 0}" data-q="{esc((ten(t) + " " + k + " " + tt).lower())}">'
+            f'<div class=hd><h2>{esc(ten(t))}</h2>{chip}'
+            f'{f"<button class=more onclick=mo(this)>Tài liệu · {so}</button>" if files else ""}</div>'
+            f'<div class=strip>{strip or "<div class=trong>Chưa có video</div>"}</div>'
+            f'<div class=files hidden>{"".join(files)}</div>'
+            f'{f"<template id=st-{esc(k)}>{status_html(t)}</template>" if t.danh_muc else ""}</section>')
 
 def page_home(taps):
-    b = "<h1>Kết quả video</h1><div class=meta>Gom từ Mac (đang làm), Drive dự án, Drive Video-xong và sổ danh mục. Bấm một video để xem đủ: bản dài, thumbnail, bài đăng, từng clip.</div>"
-    b += '<input id=q placeholder="Tìm video…" oninput="loc(this.value)">'
-    for g in ("", "Bản thử"):
-        ts = [t for t in taps if nhom(t.key) == g]
-        if ts: b += f'<h2>{g or "Video"} <small>{len(ts)}</small></h2><div class=cards>' + "".join(card(t) for t in ts) + "</div>"
-    return b
+    n = sum(1 for t in taps if not nhom(t.key)); m = len(taps) - n
+    return (f'<header><h1>Kết quả video</h1><span class=dem>{n} video</span>'
+            f'<input id=q type=search placeholder="Tìm…" oninput="loc()">'
+            f'{f"<label class=thu><input type=checkbox id=thu onchange=loc()> Bản thử ({m})</label>" if m else ""}</header>'
+            + "".join(section(t) for t in taps)
+            + '<dialog id=dlg><div class=dh><b id=dt></b><button id=cp onclick="chep()">Chép</button><button onclick="dlg.close()" aria-label="Đóng">✕</button></div><div id=db></div></dialog>')
 
 CSS = """
-:root{--bg:#141418;--card:#1e1e24;--card2:#26262e;--tx:#eee;--dim:#9a9aa5;--ac:#ff7a2f;--bd:#2e2e38}
-*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.6 -apple-system,system-ui,sans-serif}
-main{max-width:1200px;margin:0 auto;padding:22px 16px 60px} a{color:var(--ac)} h1{margin:0 0 4px;font-size:26px}
-h2{color:var(--ac);font-size:18px;margin:30px 0 12px;border-bottom:1px solid var(--bd);padding-bottom:6px} h2 small,summary small{color:var(--dim);font-weight:400;font-size:13px}
-h3{font-size:15px;margin:16px 0 8px} .meta{color:var(--dim);font-size:13px} .back{display:inline-block;margin-bottom:10px;text-decoration:none}
-#q{width:100%;max-width:360px;margin-top:14px;padding:9px 12px;border-radius:8px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font-size:15px}
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
-.card{background:var(--card);border-radius:12px;overflow:hidden;text-decoration:none;color:var(--tx);display:flex;flex-direction:column;border:1px solid transparent}
-.card:hover{border-color:var(--ac)} .card img,.ph{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#000}
-.ph{display:flex;align-items:center;justify-content:center;font-size:48px;color:var(--ac);background:var(--card2)}
-.ci{padding:10px 12px;display:flex;flex-direction:column;gap:3px} .ci small{color:var(--dim);font-size:12px} .ci em{font-style:normal;font-size:13px} .ci span{color:var(--dim);font-size:12px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px} .grid.sm{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
-figure{margin:0;background:var(--card);border-radius:10px;overflow:hidden} video,figure img{width:100%;display:block;max-height:560px;background:#000;object-fit:contain}
-figcaption{padding:7px 10px;color:var(--dim);font-size:12px;word-break:break-all} .src{color:var(--dim);border:1px solid var(--bd);border-radius:4px;padding:0 4px}
-details{background:var(--card);border-radius:10px;padding:10px 16px;margin-top:12px} summary{cursor:pointer;color:var(--ac);display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
-.copy{margin-left:auto;background:var(--card2);color:var(--tx);border:1px solid var(--bd);border-radius:6px;padding:2px 10px;cursor:pointer;font-size:12px}
-.md p{margin:6px 0} .md .li{margin:2px 0 2px 8px} code{color:var(--ac)} pre{white-space:pre-wrap;font:13px/1.6 ui-monospace,monospace;margin:8px 0}
-.tw{overflow-x:auto} table{border-collapse:collapse;margin:8px 0;font-size:13px} td,th{border:1px solid var(--bd);padding:4px 8px;text-align:left;vertical-align:top}
-.note{color:var(--dim);font-size:13px;background:var(--card);border-radius:8px;padding:8px 12px;margin-top:10px}
-.status{background:var(--card);border-radius:10px;padding:12px 16px;margin-bottom:10px} .res{font-weight:600;margin-bottom:8px}
-.kv{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px 16px;font-size:14px} .kv span{display:block;color:var(--dim);font-size:12px}
-.clips{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px} .clip{background:var(--card2);border-radius:12px;padding:4px 12px 12px}
-.clip video{max-height:620px} figure.chon{outline:2px solid var(--ac)} .clip details{background:var(--card)}
+:root{--bg:#121216;--card:#1c1c22;--card2:#26262e;--tx:#ececf1;--dim:#8d8d99;--ac:#ff7a2f;--bd:#2c2c36;--h:230px}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.55 -apple-system,system-ui,sans-serif}
+main{max-width:1400px;margin:0 auto;padding:0 20px 80px}
+header{position:sticky;top:0;z-index:5;background:rgba(18,18,22,.92);backdrop-filter:blur(10px);display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:14px 0;margin-bottom:6px;border-bottom:1px solid var(--bd)}
+h1{margin:0;font-size:20px;letter-spacing:.01em} .dem{color:var(--dim);font-size:13px}
+#q{margin-left:auto;width:220px;padding:7px 12px;border-radius:8px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font-size:14px}
+.thu{color:var(--dim);font-size:13px;display:flex;gap:6px;align-items:center;cursor:pointer}
+.tap{padding:22px 0 8px;border-bottom:1px solid var(--bd)} .tap[hidden]{display:none}
+.hd{display:flex;align-items:center;gap:10px;margin-bottom:12px;min-width:0}
+h2{margin:0;font-size:17px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:none;max-width:60%}
+.chip{color:var(--dim);font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex:1}
+.more{flex:none;margin-left:auto;background:var(--card2);color:var(--tx);border:1px solid var(--bd);border-radius:999px;padding:5px 14px;font-size:13px;cursor:pointer}
+.more:hover,.more.on{border-color:var(--ac);color:var(--ac)}
+.strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:8px;scrollbar-width:thin}
+.m{margin:0;flex:none;scroll-snap-align:start;position:relative}
+.m video,.m img{display:block;height:var(--h);width:auto;max-width:min(86vw,520px);aspect-ratio:16/9;object-fit:cover;border-radius:10px;background:#000;cursor:pointer}
+.m.doc video{aspect-ratio:9/16} .m img{object-fit:contain;background:#000}
+.m figcaption{position:absolute;left:8px;top:8px;background:rgba(0,0,0,.6);color:#fff;font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:6px;pointer-events:none}
+.m video:not([data-play]) + figcaption{opacity:1} .m video[data-play] + figcaption{opacity:0}
+.cho div{height:var(--h);aspect-ratio:9/16;border:1px dashed var(--bd);border-radius:10px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--dim);font-size:14px}
+.trong{color:var(--dim);font-size:13px;padding:10px 0}
+.files[hidden]{display:none} .files{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 10px}
+.f{background:var(--card);color:var(--tx);border:1px solid var(--bd);border-radius:8px;padding:6px 12px;font-size:13px;cursor:pointer}
+.f:hover{border-color:var(--ac)} .f.tat{color:var(--dim);cursor:default;border-style:dashed}
+dialog{width:min(860px,94vw);max-height:88vh;padding:0;border:1px solid var(--bd);border-radius:14px;background:var(--card);color:var(--tx)}
+dialog::backdrop{background:rgba(0,0,0,.7)}
+.dh{position:sticky;top:0;display:flex;gap:10px;align-items:center;padding:12px 16px;background:var(--card);border-bottom:1px solid var(--bd)}
+.dh b{flex:1;font-size:14px} .dh button{background:var(--card2);color:var(--tx);border:1px solid var(--bd);border-radius:8px;padding:4px 12px;cursor:pointer;font-size:13px}
+#db{padding:6px 20px 20px;overflow:auto} #db img,#db video{max-width:100%;max-height:78vh;display:block;margin:10px auto;border-radius:8px}
+#db h3,#db h4,#db h5{color:var(--ac);margin:18px 0 6px} #db p{margin:6px 0} #db .li{margin:2px 0 2px 8px} code{color:var(--ac)}
+pre{white-space:pre-wrap;font:13px/1.6 ui-monospace,monospace} .tw{overflow-x:auto} table{border-collapse:collapse;margin:8px 0;font-size:13px}
+td,th{border:1px solid var(--bd);padding:4px 8px;text-align:left;vertical-align:top}
+.res{font-weight:600;margin:14px 0 8px} .kv{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px 16px;font-size:14px}
+.kv span{display:block;color:var(--dim);font-size:12px}
+@media(max-width:700px){:root{--h:190px} main{padding:0 16px 60px} #q{width:100%;margin-left:0;order:3} h2{max-width:100%;white-space:normal} .hd{flex-wrap:wrap} .chip{flex-basis:100%;order:3}}
 """
-JS = """function cp(e,b){e.preventDefault();e.stopPropagation();const t=b.closest('details').querySelector('.md,pre').innerText;
-navigator.clipboard.writeText(t).then(()=>{b.textContent='đã chép';setTimeout(()=>b.textContent='chép',1500)})}
-function loc(q){q=q.toLowerCase();document.querySelectorAll('.card').forEach(c=>c.style.display=c.innerText.toLowerCase().includes(q)?'':'none')}"""
+JS = r"""
+const dlg=document.getElementById('dlg'),dt=document.getElementById('dt'),db=document.getElementById('db'),cpb=document.getElementById('cp');
+function mo(b){const f=b.closest('.tap').querySelector('.files');f.hidden=!f.hidden;b.classList.toggle('on',!f.hidden)}
+function hien(t,html,chep){dt.textContent=t;db.innerHTML=html;cpb.hidden=!chep;dlg.showModal();db.scrollTop=0}
+async function xem(u,t){hien(t,'<p style="color:var(--dim)">Đang mở…</p>',true);db.innerHTML=await (await fetch(u)).text()}
+function xemTpl(id,t){hien(t,document.getElementById(id).innerHTML,true)}
+function anh(u){hien('Ảnh bìa','<img src="'+u+'">',false)}
+function phat(u){hien('Video','<video controls autoplay playsinline src="'+u+'"></video>',false)}
+function chep(){navigator.clipboard.writeText(db.innerText).then(()=>{cpb.textContent='Đã chép';setTimeout(()=>cpb.textContent='Chép',1500)})}
+dlg.addEventListener('close',()=>{db.querySelectorAll('video').forEach(v=>v.pause())});
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+document.addEventListener('play',e=>{document.querySelectorAll('video').forEach(v=>{if(v!==e.target)v.pause()});e.target.dataset.play=1},true);
+// khung đúng tỉ lệ thật của video (ngang/dọc) theo ảnh đại diện
+document.querySelectorAll('.m video').forEach(v=>{const i=new Image();i.onload=()=>{v.style.aspectRatio=i.naturalWidth+'/'+i.naturalHeight};i.src=v.poster});
+document.querySelectorAll('.m img').forEach(i=>{const f=()=>{i.style.aspectRatio=i.naturalWidth+'/'+i.naturalHeight};i.complete?f():i.onload=f});
+function loc(){const s=document.getElementById('q').value.toLowerCase().trim(),c=document.getElementById('thu'),thu=c&&c.checked;
+ document.querySelectorAll('.tap').forEach(t=>{t.hidden=(t.dataset.thu==='1'&&!thu)||(s&&!t.dataset.q.includes(s))})}
+loc();
+if(location.hash){const e=document.querySelector(location.hash);e&&e.scrollIntoView()}
+"""
+
+def doc_html(root, rel):
+    txt = read(root, rel)
+    return f"<pre>{esc(txt)}</pre>" if rel.endswith(".txt") else md(txt)
 
 def page(sel):
-    taps = tap_all(); t = next((x for x in taps if x.key == sel), None)
-    body = page_tap(t) if t else page_home(taps)
-    title = f"{ten(t)} · Kết quả video" if t else "Kết quả video"
+    taps = tap_all()
     return (f'<!doctype html><html lang=vi><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">'
-            f"<title>{esc(title)}</title><style>{CSS}</style><main>{body}</main><script>{JS}</script></html>")
+            f"<title>Kết quả video</title><style>{CSS}</style><main>{page_home(taps)}</main><script>{JS}</script></html>")
 
 # ---------- máy chủ ----------
 CACHE = os.path.join(H0, "Library/Caches/xem-ket-qua")
@@ -319,11 +348,18 @@ class H(http.server.SimpleHTTPRequestHandler):
     def log_message(self, *a): pass
     def do_GET(self):
         u = urllib.parse.urlparse(self.path)
-        if u.path.startswith(("/f/", "/poster/")):
+        if u.path.startswith("/?") or (u.path == "/" and "tap=" in u.query):   # link cũ ?tap=x → neo #tap-x
+            t = urllib.parse.parse_qs(u.query).get("tap", [""])[0]
+            self.send_response(302); self.send_header("Location", f"/#tap-{urllib.parse.quote(t)}"); self.end_headers(); return
+        if u.path.startswith(("/f/", "/poster/", "/doc/")):
             kind, rid, rel = u.path[1:].split("/", 2) if u.path.count("/") > 2 else ("", "", "")
             if rid not in ROOTS: return self.send_error(404)
             base = os.path.realpath(ROOTS[rid][0]); p = os.path.realpath(os.path.join(base, urllib.parse.unquote(rel)))
             if not p.startswith(base + os.sep) or not os.path.isfile(p): return self.send_error(404)
+            if kind == "doc":
+                b = doc_html(rid, os.path.relpath(p, base)).encode()
+                self.send_response(200); self.send_header("Content-Type", "text/html; charset=utf-8"); self.send_header("Content-Length", len(b)); self.end_headers()
+                return self.wfile.write(b)
             return self.send_file(poster(p) if kind == "poster" else p)
         try: b = page(urllib.parse.parse_qs(u.query).get("tap", [""])[0]).encode()
         except Exception as e: b = f"<pre>Lỗi đọc kết quả: {esc(e)}</pre>".encode()
