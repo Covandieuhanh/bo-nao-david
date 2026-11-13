@@ -37,10 +37,27 @@ class Deck:
                 c = el.find('.//{http://schemas.openxmlformats.org/presentationml/2006/main}cNvPr')
                 if c is not None:
                     c.set('id', str(k)); c.set('name', f's{si}-shape{k}')
+            vi_fonts(sl._element)
         self.p.save(path)
 
+def vi_fonts(root):
+    # Quick Look coi chữ có dấu (ắ, ụ, ề…) là chữ hệ khác, lấy font ea/cs; trống thì nhảy sang Times.
+    # Khai cùng một font cho latin, ea, cs, sym + lang vi-VN thì dấu tiếng Việt hiện đúng.
+    from pptx.oxml.ns import qn
+    from lxml import etree
+    for rPr in root.iter(qn('a:rPr'), qn('a:endParaRPr'), qn('a:defRPr')):
+        rPr.set('lang', 'vi-VN')
+        lat = rPr.find(qn('a:latin'))
+        if lat is None: continue
+        f = lat.get('typeface')
+        for tag in ('a:ea', 'a:cs', 'a:sym'):
+            e = rPr.find(qn(tag))
+            if e is None:
+                e = etree.Element(qn(tag)); lat.addnext(e) if tag == 'a:ea' else rPr.find(qn('a:ea' if tag == 'a:cs' else 'a:cs')).addnext(e)
+            e.set('typeface', f)
+
 def tx(s, x, y, w, h, text, size=20, color=None, bold=False, font=BODY, align=PP_ALIGN.LEFT,
-       anchor=MSO_ANCHOR.TOP, spacing=1.15):
+       anchor=MSO_ANCHOR.TOP, spacing=1.3):
     dark = s._theme == "dark"
     color = color or (C["dtext"] if dark else C["grey"])
     tb = s.shapes.add_textbox(Inches(x), Inches(y), Inches(w), Inches(h))
@@ -50,6 +67,7 @@ def tx(s, x, y, w, h, text, size=20, color=None, bold=False, font=BODY, align=PP
     for i, ln in enumerate(lines):
         para = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
         para.alignment = align; para.line_spacing = spacing
+        if i > 0 and font != MONO: para.space_before = Pt(round(size * 0.35))
         runs = ln if isinstance(ln, list) else [(ln, {})]
         for r in runs:
             if isinstance(r, str): r = (r, {})
@@ -65,7 +83,7 @@ def eyebrow(s, text, y=0.75):
 
 def title(s, text, y=1.15, size=34, w=11.5):
     c = C["paper"] if s._theme == "dark" else C["ink"]
-    tx(s, 0.9, y, w, 1.2, text, size, c, True, HEAD, spacing=1.05)
+    tx(s, 0.9, y, w, 1.2, text, size, c, True, HEAD, spacing=1.15)
 
 def foot(s, extra=""):
     c = {"dark": C["lgrey"], "accent": C["ink"]}.get(s._theme, C["lgrey"])
@@ -109,7 +127,7 @@ def code(s, x, y, w, h, text, size=12, label=None):
     yy = y + 0.18
     if label:
         tx(s, x + 0.25, yy, w - 0.5, 0.3, label, 11, C["lgrey"], True, MONO); yy += 0.35
-    tx(s, x + 0.25, yy, w - 0.5, h - (yy - y) - 0.1, text.split("\n"), size, C["soft"], font=MONO, spacing=1.2)
+    tx(s, x + 0.25, yy, w - 0.5, h - (yy - y) - 0.1, text.split("\n"), size, C["soft"], font=MONO, spacing=1.35)
 
 def table(s, x, y, w, rows, colw, size=13, rowh=0.42, head=True):
     n, m = len(rows), len(rows[0])
@@ -124,7 +142,7 @@ def table(s, x, y, w, rows, colw, size=13, rowh=0.42, head=True):
             cell.margin_left = cell.margin_right = Inches(0.12); cell.margin_top = cell.margin_bottom = Inches(0.06)
             cell.vertical_anchor = MSO_ANCHOR.MIDDLE
             tf = cell.text_frame; tf.word_wrap = True
-            para = tf.paragraphs[0]; para.text = ""
+            para = tf.paragraphs[0]; para.text = ""; para.line_spacing = 1.2
             run = para.add_run(); run.text = str(val)
             run.font.size = Pt(size); run.font.name = HEAD if ishead else BODY
             run.font.bold = ishead or (j == 0 and not ishead and m > 2)

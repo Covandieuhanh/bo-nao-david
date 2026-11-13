@@ -12,6 +12,8 @@
 **Luật để Quick Look của macOS mở được** (đã thử 13/11/2026):
 - Không ghi chú (notes) trong pptx: Quick Look treo. Ghi chú để file docx riêng.
 - Không dùng hình vẽ (ô bo góc, chấm tròn) lặp giữa các slide: Quick Look lẫn hình của slide trước. Ô nền dùng bảng 1 ô (`box()` trong `deck_lib.py`).
+- Chữ có dấu (ắ, ụ, ề…) phải khai cùng một font cho latin + ea + cs + sym, lang vi-VN (`vi_fonts()` trong `deck_lib.py`, tự chạy khi lưu). Thiếu thì Quick Look nhảy sang Times, dấu lệch.
+- Dãn dòng: chữ thường 1,3 + cách đoạn 0,35 cỡ chữ; tít 1,15; mã 1,35; ô bảng 1,2.
 
 **Chạy lại** (cần Chrome, Node có `@playwright/cli`, Python):
 ```bash

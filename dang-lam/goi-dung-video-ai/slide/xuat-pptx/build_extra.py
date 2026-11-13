@@ -45,7 +45,7 @@ for part, rows in [("1–4", [["#", "Bước", "AI làm", "Đạt khi"],
     foot(s, "Quy trình")
 
 s = d.slide("dark")
-eyebrow(s, "Phản hồi và luật dựng"); title(s, "Mỗi phản hồi sửa video và sửa một câu trong SOP")
+eyebrow(s, "Phản hồi và luật dựng"); title(s, "Mỗi phản hồi: sửa video, sửa một câu SOP")
 tx(s, 0.9, 2.2, 11.5, 0.9, "Phản hồi ở bất kì bước nào → AI sửa video, rồi sửa đúng một câu trong SOP để lần sau tự đúng.", 20)
 card(s, 0.9, 3.6, 3.65, 2.4, "Lời thật", "Chữ trên video lấy đúng lời trong video. AI không bịa lời.")
 card(s, 4.8, 3.6, 3.65, 2.4, "Dễ hiểu hơn cầu kì", "Mỗi video ít kiểu hiệu ứng.")
