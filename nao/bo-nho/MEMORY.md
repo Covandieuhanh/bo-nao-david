@@ -41,6 +41,7 @@ David · `nao-` bộ não và GitHub · `video-` dựng và đăng video · `may
 - [Tự chọn theo nội dung](video-tu-chon-theo-noi-dung.md) — chẩn đoán → khung chủ thể, bảng ghi chú chạy, kiểu cảnh theo dạng câu; ~1 giờ/video (11/11)
 - [Hiểu hơn cầu kì](video-hieu-hon-cau-ki.md) — kho hiệu ứng để chọn, mỗi video ít kiểu; bỏ chữ sau người / bóng người (10/11)
 - [Không cài HyperFrames](video-khong-cai-hyperframes.md) — giữ Remotion, chỉ học ý rồi tự viết lại (06/11)
+- [Chữ nhấn kiểu nhãn dán](video-chu-nhan-nhan-dan.md) — chữ nhấn không chạm mặt, không nền đen mờ; nhãn đặc màu ở ngực (13/11)
 - [Không ghi chú kỹ thuật trên video](video-khong-nhan-ky-thuat.md) — bỏ nhãn ×1,6 / ×0,5 / slow-mo; chữ chỉ cho nội dung
 - [Làm một mạch, góp ý thì render lại](video-khong-tu-render.md) — bỏ cổng 1, cổng 2; góp ý → sửa + render lại toàn bộ luôn; đăng chờ "đăng" (13/11)
 - [Kiến trúc skill video](video-kien-truc-skill.md) — hồ sơ tham số + 20 khối + thư viện hình + mẫu chuẩn; sửa đúng một chỗ (04/11)

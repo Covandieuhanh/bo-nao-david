@@ -50,6 +50,10 @@ Luật kèm theo:
 Bố cục và hiệu ứng trong lòng video (thẻ, chữ to, minh hoạ, sơ đồ, người vào ô, màn chương, điểm nhấn trên người…) chọn theo nội dung,
 theo danh mục `../trinh-bay/bo-cuc.md`. Tự do về **cái gì, lúc nào**; không tự do về **vị trí các thành phần cố định** ở mục 1.
 
+**Chữ nhấn trên người nói** (`pow`, kể cả thẻ tít mở): không chạm mặt, không nền tối mờ phủ hình (David 13/11/2026: "chữ dính vào mặt,
+nền đen mờ, rất mất thẩm mỹ"). Kiểu chuẩn là **nhãn dán**: mỗi dòng một nhãn đặc màu (dòng trước trắng chữ sẫm, dòng cuối cam chữ
+trắng), canh đáy vào đáy dải phụ đề (phụ đề nhường lúc này), khối chữ nằm ngực/bụng xa cằm. Code: `Pow` trong khuôn ghép `Show.jsx`.
+
 ## 3. Sửa bộ nhận diện
 
 1. Sửa đúng một chỗ trong thư mục này (không viết số vị trí riêng trong khuôn dựng).
@@ -63,4 +67,3 @@ theo danh mục `../trinh-bay/bo-cuc.md`. Tự do về **cái gì, lúc nào**; 
 - **Vlog ghép clip khung ngang:** khuôn ghép đã lấy vùng an toàn, dấu góc, thanh thời gian theo `khung()`, nhưng nhiều thành phần
   bên trong (thẻ địa điểm, thẻ tên, màn chốt, thẻ cuối) vẫn đặt số theo khung dọc. Chưa có dự án vlog ngang để kiểm → làm vlog ngang
   đầu tiên thì chụp kiểm kỹ và sửa các thành phần đó theo `khung()`.
-- Màn `pow` toàn khung của khuôn ghép: lề trái lệch (~18 px), dải tối khác màu ở đỉnh — chưa sửa (xem `cat-highlight-video/references/changelog.md`).

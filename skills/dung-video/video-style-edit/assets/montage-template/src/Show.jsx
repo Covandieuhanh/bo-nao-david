@@ -220,28 +220,32 @@ const Caption = ({text, hl, len, who, off = 0}) => {
   );
 };
 
-// ===== Chữ to nhấn mạnh (kinetic như mẫu) =====
+// ===== Chữ nhấn kiểu NHÃN DÁN (David 13/11/2026: chữ dính mặt + nền đen mờ là mất thẩm mỹ) =====
+// Mỗi dòng một nhãn đặc màu (dòng trước trắng chữ sẫm, dòng cuối cam chữ trắng), không nền mờ phủ hình. Canh ĐÁY vào đáy dải phụ đề
+// (phụ đề nhường đúng lúc này) nên khối chữ nằm ngực/bụng, xa cằm. '\n' = chỗ xuống dòng theo cụm nghĩa.
 const Pow = ({text, y, len, start = 0}) => {
   const f = useCurrentFrame(); const giua = useGiua();
-  const soft = toneAt(start) === 'lang';   // tông lắng: chữ hiện chậm, không nảy, không gạch
+  const soft = toneAt(start) === 'lang';   // tông lắng: hiện chậm, không nghiêng, không nảy
   const o = soft ? inOut(f, len, 12, 12) : inOut(f, len, 4, 6);
-  // '\n' = chỗ xuống dòng theo cụm nghĩa (kịch bản đặt); cỡ chữ tự co theo DÒNG dài nhất để không tràn khung (lỗi 09/11/2026)
   const dongs = text.split('\n').map((d) => d.trim()).filter(Boolean);
-  const words = dongs.flatMap((d, k) => d.split(' ').map((w, j) => ({w, br: k > 0 && j === 0})));
   const dai = Math.max(...dongs.map((d) => d.length));
-  const size = Math.max(84, Math.min(150, Math.floor(SAFE_W / (0.5 * Math.max(dai, 6)))));
-  const done = 4 + words.length * 3;
+  const size = Math.max(64, Math.min(104, Math.floor((SAFE_W - 80) / (0.52 * Math.max(dai, 6)))));
+  const day = CAP_TOP + CAP_H;   // đáy khối = đáy dải phụ đề
   return (
     <AbsoluteFill style={{opacity: o}}>
-      {!giua && <Scrim from={y != null && y < 900 ? 'top' : 'bottom'} o={0.8} />}
-      {/* y bỏ trống (vlog_edl.py fx): canh ĐÁY vào LOW_Y — chữ nằm ngực/dưới, không che mặt, không chạm phụ đề */}
-      <div style={giua ? {position: 'absolute', ...KHOI_GIUA} : {position: 'absolute', left: SAFE.left, width: SAFE_W, ...(y == null ? {top: LOW_Y, transform: 'translateY(-100%)'} : {top: y})}}>
-        <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: giua ? 'center' : 'flex-start', gap: `${size * 0.24}px 24px`}}>   {/* khe dòng 0,24 em cho dấu tiếng Việt */}
-          {words.map(({w, br}, i) => [br && <div key={'br' + i} style={{flexBasis: '100%', height: 0}} />,
-            <Rise key={i} p={soft ? ease(f, 2 + i * 6, 16 + i * 6) : pop(f, 1 + i * 3, {damping: 18, stiffness: 170, mass: 0.6})}
-              style={{fontFamily: HEAD, fontWeight: soft ? 600 : 800, fontSize: size, lineHeight: 1.14, color: C.text, textShadow: SHADOW}}>{w}</Rise>])}
-        </div>
-        {!soft && <Bar w={`${ease(f, done, done + 12) * 70}%`} style={{marginTop: 26}} />}
+      <div style={giua ? {position: 'absolute', ...KHOI_GIUA} : {position: 'absolute', left: SAFE.left, width: SAFE_W,
+        ...(y != null && y < 700 ? {top: y} : {top: day, transform: 'translateY(-100%)'}), display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+        {dongs.map((d, i) => {
+          const cuoi = i === dongs.length - 1 && dongs.length > 1;
+          const p = soft ? ease(f, 2 + i * 6, 16 + i * 6) : pop(f, 1 + i * 4, {damping: 15, stiffness: 190, mass: 0.6});
+          return (
+            <div key={i} style={{marginTop: i ? 14 : 0, padding: `${size * 0.16}px ${size * 0.34}px ${size * 0.1}px`, borderRadius: 14,
+              background: cuoi || dongs.length === 1 ? C.accent : '#fff', color: cuoi || dongs.length === 1 ? '#fff' : '#141418',
+              fontFamily: HEAD, fontWeight: soft ? 700 : 800, fontSize: size, lineHeight: 1.18, whiteSpace: 'nowrap',
+              boxShadow: '0 10px 28px rgba(0,0,0,0.28)', opacity: Math.min(1, p * 1.4),
+              transform: `translateY(${(1 - p) * 40}px) scale(${0.85 + 0.15 * p}) rotate(${soft ? 0 : i % 2 ? 1.5 : -2}deg)`}}>{d}</div>
+          );
+        })}
       </div>
     </AbsoluteFill>
   );
@@ -848,7 +852,7 @@ export const Show = () => {
         const len = fr(o.end) - fr(o.start);
         // CHẶN CỨNG (người dùng chỉ ra nhiều lần: thẻ / chữ đè phụ đề): mọi lớp không toàn màn hình bị cắt ở mép trên dải phụ đề —
         // lưới an toàn như layout.js của chế độ 1 video; component vẫn phải tự neo đáy LOW_Y (cắt chữ = lỗi bố cục, chụp soát phải thấy)
-        const guard = !FULLSCREEN.has(o.type) && o.type !== 'illus' && o.type !== 'diagram' && !(o.type === 'title' && !o.over);
+        const guard = !FULLSCREEN.has(o.type) && o.type !== 'pow' && o.type !== 'illus' && o.type !== 'diagram' && !(o.type === 'title' && !o.over);
         return (
           <Sequence key={i} from={fr(o.start)} durationInFrames={len} name={o.type} layout="none">
             {guard
