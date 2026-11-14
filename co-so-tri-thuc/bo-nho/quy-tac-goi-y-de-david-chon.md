@@ -13,3 +13,5 @@ Sản phẩm làm từ tài nguyên David đưa (video, highlight, podcast, bài
 **Why:** 11/11/2026, video cuộc gọi hợp tác: Claude đưa khung hình vào câu hỏi dù skill đã định khung = gốc (ngang), đề xuất đầu là dọc, David không trả lời câu đó → Claude lấy đề xuất của mình, làm sai skill. David: "Hạn chế hỏi những thứ theo tiêu chí nhất có thể… mục tiêu cuối cùng của tôi luôn là đưa tài nguyên vào và chờ kết quả là xong, toàn bộ quá trình làm việc nhiều lần là để chỉnh các phần ở giữa trong khi làm thực tế trên nhiều video thôi." Luật cũ (06/11): "làm đi không chốt lựa chọn, câu chưa trả lời vẫn phải hỏi" — đã bỏ.
 
 **How to apply:** đề xuất không bao giờ trái mặc định skill; yêu cầu làm được trong mặc định thì giữ mặc định (vd. "tập trung vào điện thoại" ≠ đổi khung). Liên quan [[quy-tac-tu-hoi-khi-mo-ho]], [[video-clip-ngan-dung-doc-lap]].
+
+**14/11/2026 (việc #22):** trước khi làm vẫn trình 4 phần gọn (theo mặc định skill + đề xuất "chọn X vì Y") và chờ David "duyệt"; duyệt rồi mới chạy một mạch như trên: [[quy-tac-duyet-ke-hoach-4-phan]].

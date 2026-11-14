@@ -37,7 +37,7 @@ Trong 4 phần, cách chọn từng điểm:
 - **Câu David không trả lời, "làm đi", "theo skill"** = theo mặc định của skill, phần chưa định thì theo đề xuất của Claude.
 - **Sau khi duyệt, chỉ dừng hỏi khi:** đăng / gửi / xoá trên mạng xã hội / mật khẩu (`AGENTS.md` luật 4) · tín hiệu nặng của `thu-thap-yeu-cau` (mâu thuẫn luật, khó đảo
   ngược, thiếu file / nguồn hỏng, hiểu được nhiều cách làm đổi hẳn kết quả) · sửa thông tin trực tiếp về David, màu chủ đạo, chữ ký
-  nhận diện (diễn giải + chờ "ok"). Skill, giọng văn, luật kênh: tự cải tiến theo `ky-nang/hoc-lien-tuc`, báo một dòng.
+  nhận diện (diễn giải + chờ "ok"). Skill, giọng văn, luật kênh: `ky-nang/hoc-lien-tuc` tự phân tích, phần sửa trình 4 phần.
 - Phần cứng của video: `san-xuat-video/quy-tac-chung.md` mục 8.
 
 ## 3. Trong lúc làm
@@ -63,7 +63,7 @@ Trong 4 phần, cách chọn từng điểm:
   sau mỗi lượt: `bash tu-dong-hoa/so-tay/bao-cao.sh "✅ Xong: … · Ở đâu: … · Còn lại: …"` hoặc `"❓ Chờ anh: …"`, tối đa 5 dòng. Việc giao
   qua Telegram thì mở đầu bằng số việc `#N`. Máy chưa cài bot thì lệnh chỉ ghi sổ. Chi tiết: [tu-dong-hoa/so-tay/README.md](../tu-dong-hoa/so-tay/README.md).
 - **Nhắc lần hai thì thành luật ngay:** David phải nhắc lại một điều lần thứ hai → sửa ngay đúng nhà của luật đó, không đợi lượt nhìn lại tuần
-  (skill, giọng văn, luật kênh: tự sửa rồi báo một dòng; thông tin về David: đề xuất câu, chờ "ok").
+  (skill, giọng văn, luật kênh, thông tin về David: đề xuất trong 4 phần, chờ "duyệt").
 - **Góp ý của David ghi đúng một chỗ:** sửa skill hoặc khối bị ảnh hưởng + một dòng nhật ký (`changelog` của skill, hoặc mục "Nhật ký").
   Chỉ luật dùng chung cho nhiều skill mới vào `co-so-tri-thuc/bo-nho/`; đã có ghi nhớ gần giống thì sửa ghi nhớ đó, không tạo cái mới.
 - **Sửa thẳng, không chồng câu:** đổi một luật (góp ý, học mẫu, quyết định mới) thì **viết lại chính câu luật đó** thành trạng thái mới

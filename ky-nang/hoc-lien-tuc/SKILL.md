@@ -1,19 +1,21 @@
 ---
 name: hoc-lien-tuc
-description: Tự học và cải tiến liên tục bộ skill của David (học từ cách Hermes tự học, nhưng một nhà, có số liệu, ít token). Ba việc — (1) NHÌN LẠI TUẦN từ tín hiệu máy ghi cuối mỗi phiên (lời David sửa, skill dùng, lỗi) để sửa skill đúng chỗ, cập nhật giọng văn, dọn ghi nhớ và skill thừa; (2) HỌC TỪ HÌNH MẪU cùng thể loại đang có kết quả tốt nhất, đo bằng số liệu, rồi nâng cấp skill và luật kênh; (3) HỌC THÀNH SKILL từ một nguồn hay quy trình vừa làm. Skill, giọng văn, luật kênh được sửa tự do rồi báo một dòng; chỉ hỏi khi đụng thông tin về David. Dùng khi máy gửi [TU-HOC], khi David nói "nhìn lại tuần", "tự học", "cải tiến skill", "học thành skill", "học từ kênh X", "học cái này thành quy trình", "/hoc-lien-tuc".
+description: Tự học và cải tiến liên tục bộ skill của David (học từ cách Hermes tự học, nhưng một nhà, có số liệu, ít token). Ba việc — (1) NHÌN LẠI TUẦN từ tín hiệu máy ghi cuối mỗi phiên (lời David sửa, skill dùng, lỗi) để sửa skill đúng chỗ, cập nhật giọng văn, dọn ghi nhớ và skill thừa; (2) HỌC TỪ HÌNH MẪU cùng thể loại đang có kết quả tốt nhất, đo bằng số liệu, rồi nâng cấp skill và luật kênh; (3) HỌC THÀNH SKILL từ một nguồn hay quy trình vừa làm. Phân tích tự chạy; phần sửa skill, giọng văn, luật kênh trình 4 phần cho David duyệt rồi mới sửa. Dùng khi máy gửi [TU-HOC], khi David nói "nhìn lại tuần", "tự học", "cải tiến skill", "học thành skill", "học từ kênh X", "học cái này thành quy trình", "/hoc-lien-tuc".
 ---
 
 # Tự học, cải tiến skill
 
-Đọc trước: `ky-nang/chuan-muc-lam-viec.md`. Luật nền: `AGENTS.md` luật 2 (skill tự cải tiến, chỉ hỏi khi đụng thông tin David).
+Đọc trước: `ky-nang/chuan-muc-lam-viec.md`. Luật nền: `AGENTS.md` luật 2 (việc gì cũng duyệt 4 phần trước; tự học tự phân tích, phần sửa trình 4 phần).
 
 **Mục tiêu:** mỗi tuần bộ skill làm ra kết quả tốt hơn tuần trước (đo bằng số liệu kênh và số lần David phải sửa), tốn ít token nhất.
 
-## Được sửa tự do / phải hỏi
+## Duyệt 4 phần rồi mới sửa
 
-- **Tự do, không hỏi:** mọi `SKILL.md`, khối, script, `references/`; giọng văn (`ky-nang/san-xuat-video/ho-so-thuong-hieu/giong-thuong-hieu-david.md`);
+Phần phân tích (đếm skill, đọc tín hiệu, so số liệu) tự chạy, không hỏi. **Phần sửa** gom thành **một bộ 4 phần** (Mục tiêu · Kế hoạch: từng chỗ sửa + lý do có số liệu ·
+Quy trình · Thực thi), gửi David `bao-cao.sh "#N ❓ Chờ anh duyệt 4 phần tự học tuần: …"` rồi dừng; duyệt rồi sửa một mạch, ghi sổ thay đổi (`chuan-muc-lam-viec.md` mục 2, David 14/11/2026).
+- **Phạm vi được đề xuất sửa:** mọi `SKILL.md`, khối, script, `references/`; giọng văn (`ky-nang/san-xuat-video/ho-so-thuong-hieu/giong-thuong-hieu-david.md`);
   luật kênh (`ky-nang/san-xuat-video/ho-so-thuong-hieu/kenh.json`: lịch đăng, dẫn dắt, từ khoá bình luận, cách đo); hiệu ứng, motion graphics.
-- **Hỏi trước (diễn giải, chờ "ok"):** `co-so-tri-thuc/david.md`, `co-so-tri-thuc/ho-so-ca-nhan.md`, ghi nhớ David đã chốt; **màu chủ đạo** và **chữ ký
+- **Diễn giải kỹ trong 4 phần (đụng thông tin về David):** `co-so-tri-thuc/david.md`, `co-so-tri-thuc/ho-so-ca-nhan.md`, ghi nhớ David đã chốt; **màu chủ đạo** và **chữ ký
   nhận diện**; mọi thao tác trên mạng xã hội của David.
 - **Không bao giờ phá:** chữ trên video là nguyên văn lời David (phụ đề, mô tả, motion graphics); quyền riêng tư (mật khẩu, OTP, token).
 
@@ -29,13 +31,13 @@ Máy đã ghi sẵn tín hiệu cuối mỗi phiên (hook `tu-dong-hoa/hoc-lien-
 2. Đọc các dòng 7 ngày qua trong `tin-hieu.jsonl` (chỉ trường `david_sua`, `skill`, `loi_cong_cu`). Gom **điều lặp ≥ 2 lần**: cùng một
    lỗi, cùng một câu David phải nhắc, cùng một việc David làm tay. Cần thêm ngữ cảnh thì `python3 -I tu-dong-hoa/tim-phien.py "<từ khoá>"`,
    không mở cả phiên.
-3. Mỗi điều lặp → sửa skill (mục trên). Việc tay lặp ≥ 3 lần → viết thành script hoặc bước trong skill (Việc 3).
+3. Mỗi điều lặp → một chỗ sửa trong bộ 4 phần (mục trên). Việc tay lặp ≥ 3 lần → viết thành script hoặc bước trong skill (Việc 3).
 4. **Giọng văn:** đọc lời David trong tuần (tin nhắn, lời nói trong video đã duyệt). Thấy cách nói mới, từ hay dùng, từ David sửa
    lại → cập nhật `giong-thuong-hieu-david.md` (ví dụ nguyên văn ngắn + ngày).
 5. **Dọn:** skill 30 ngày không dùng → đề xuất gộp hoặc cất vào `luu-tru/` (không xoá). Ghi nhớ trùng / quá dài trong `co-so-tri-thuc/bo-nho/` →
    gộp chữ (giữ nguyên ý David chốt), cập nhật `MEMORY.md`.
-6. Ghi phiếu tuần `du-an/hoc-lien-tuc/<YYYY-MM-DD>.md` (không chép lời chat thô): điều lặp · đã sửa gì · số liệu kênh tuần · việc tuần sau.
-   Gửi David bản ngắn qua `bash tu-dong-hoa/so-tay/bao-cao.sh "📈 Tự học tuần: …"`.
+6. Ghi phiếu tuần `du-an/hoc-lien-tuc/<YYYY-MM-DD>.md` (không chép lời chat thô): điều lặp · đề xuất sửa (4 phần) · số liệu kênh tuần · việc tuần sau.
+   Gửi David 4 phần chờ duyệt; duyệt rồi sửa, ghi "đã sửa gì" vào phiếu, báo `📈 Tự học tuần: …`.
 
 ## Việc 2 — Học từ hình mẫu có số liệu
 1. **Số liệu của David trước:** đọc số liệu kênh (bước đo của `phan-phoi-da-kenh`, `kenh.json` mục đo). Video nào tốt / kém nhất tuần, khác nhau ở đâu.

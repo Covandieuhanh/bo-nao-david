@@ -16,4 +16,6 @@ David chốt 12/11/2026 (sau khi so Hermes với Claude Code): sáu luật trong
 
 **Why:** David muốn "khai thác tối đa Claude với ít token nhất" và "liên tục cải tiến, học hỏi từ hình mẫu có kết quả tốt nhất"; luật cũ bắt hỏi trước mọi sửa skill làm chậm việc học.
 
-**How to apply:** sửa skill không chờ "ok", ghi changelog của skill (sửa gì, theo số liệu/hình mẫu nào) rồi báo một dòng. Cách học: `ky-nang/hoc-lien-tuc/SKILL.md`. Thay [[quy-tac-goi-y-de-david-chon]] ở phần "sửa skill phải hỏi". Liên quan [[quy-tac-sua-thang-tai-ban]], [[co-so-tri-thuc-github-ban-goc]].
+**How to apply:** (từ 14/11: phần sửa trình 4 phần chờ duyệt, xem cuối file) sau khi duyệt thì ghi changelog của skill (sửa gì, theo số liệu/hình mẫu nào) rồi báo một dòng. Cách học: `ky-nang/hoc-lien-tuc/SKILL.md`. Thay [[quy-tac-goi-y-de-david-chon]] ở phần "sửa skill phải hỏi". Liên quan [[quy-tac-sua-thang-tai-ban]], [[co-so-tri-thuc-github-ban-goc]].
+
+**14/11/2026 (việc #22):** bỏ "chỉ hỏi khi đụng thông tin về David". Mọi việc, kể cả sửa skill, trình 4 phần chờ David duyệt; tự học vẫn tự phân tích, phần sửa gom vào 4 phần: [[quy-tac-duyet-ke-hoach-4-phan]].

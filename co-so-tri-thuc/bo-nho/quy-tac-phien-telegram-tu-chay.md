@@ -12,3 +12,5 @@ Phiên việc giao qua Telegram: xoá file, cài/gỡ phần mềm, sửa cấu 
 **How to apply:** việc mới bị hỏi mà David hay đồng ý → chuyển mẫu đó sang mức tự chạy. Liên quan [[quy-tac-goi-y-de-david-chon]], [[quy-tac-skill-tu-cai-tien]].
 
 **14/11/2026 (việc #14):** "từ giờ có mở phiên hãy mở công khai để trên app cũng thấy nhé, tôi còn tiện theo dõi. Và cập nhật thêm là các phiên cứ xong hoàn chỉnh rồi, hỏi xác nhận tôi nếu xong rồi thì có thể đóng phiên cho đỡ nhiều. vì cái gì cũng lưu vào file ở máy rồi nên không lo" → mọi phiên tự bật Remote Control (`remoteControlAtStartup`, `cai-hook.py`); xong hoàn chỉnh thì hỏi "Đóng phiên nhé?", David đồng ý thì đóng (`chuan-muc-lam-viec.md` mục 5, `giao-viec.sh`, `quy-tac-bot.md`).
+
+**14/11/2026 (việc #22):** phiên việc trình đủ 4 phần trước, gửi qua `bao-cao.sh "#N ❓ Chờ anh duyệt 4 phần: …"`; duyệt rồi mới tự chạy như trên: [[quy-tac-duyet-ke-hoach-4-phan]].
