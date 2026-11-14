@@ -1,6 +1,6 @@
 # Lưu trữ
 
-Bản cũ, đã thay thế hoặc đã bỏ. Giữ để tra lại, **không làm theo**. Khi lệch thì theo `nao/David.md`.
+Bản cũ, đã thay thế hoặc đã bỏ. Giữ để tra lại, **không làm theo**. Khi lệch thì theo `co-so-tri-thuc/David.md`.
 
 | File / thư mục | Là gì |
 |---|---|

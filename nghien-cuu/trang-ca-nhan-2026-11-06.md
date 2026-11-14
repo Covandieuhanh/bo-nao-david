@@ -72,7 +72,7 @@ Khoảng 100 đến 2,7 nghìn lượt xem. Đây là nhóm gần tệp mới nh
 
 - Mục "Đáng chú ý" vẫn là bài "David sức khoẻ và nhân duyên với nghề Marketing Affiliate" (19/08/2026), nên người mới vào thấy hướng cũ ngay dưới phần giới thiệu mới.
 - Tên vẫn là "David Sức khoẻ", kèm nhãn "Giới thiệu khách hàng". Phần giới thiệu đã đúng hướng và có lời mời nhắn "gỡ".
-- Danh sách từng bài xem [ra-soat-video-cu.md](ra-soat-video-cu.md).
+- Danh sách từng bài xem [danh-gia-video-cu.md](danh-gia-video-cu.md).
 
 ## Facebook cá nhân
 
@@ -86,12 +86,12 @@ Khoảng 100 đến 2,7 nghìn lượt xem. Đây là nhóm gần tệp mới nh
 |---|---|---|
 | Tên kênh YouTube | "Trainer David Trần - Việt Nam" | `kenh.json` ghi "David Trần - Trainer định hướng" |
 | Phần giới thiệu | Ba nền tảng ba câu khác nhau; câu YouTube nói "hoàn thành mục tiêu bằng việc Trainer thông qua các câu chuyện" | `kenh.json` chưa có câu chuẩn; `David.md` để sau |
-| Link TikTok | Vẫn là `ahasale.vn/...` | `TRANG-THAI-HIEN-TAI.md` đã ghi David tự gỡ trên app |
+| Link TikTok | Vẫn là `ahasale.vn/...` | `BAO-CAO-TRANG-THAI.md` đã ghi David tự gỡ trên app |
 | Rà soát video cũ | Lần trước đọc được 88 video; lưới giờ hiện 161 mục | Xem danh sách bổ sung dưới đây |
 
 ## Bổ sung cho rà soát video cũ
 
-Các video này không có trong [ra-soat-video-cu.md](ra-soat-video-cu.md) và chạm lằn ranh hiện tại. **Mình chưa ẩn gì; chờ David quyết.** Mình chỉ đọc chú thích, chưa xem nội dung từng video.
+Các video này không có trong [danh-gia-video-cu.md](danh-gia-video-cu.md) và chạm lằn ranh hiện tại. **Mình chưa ẩn gì; chờ David quyết.** Mình chỉ đọc chú thích, chưa xem nội dung từng video.
 
 - **Dùng từ "chữa lành":** Cập nhật ngày đau mắt đầu tiên trước khi chữa lành (05/11/2025); Ngày thứ 2 chữa lành đôi mắt viêm virus (28/10/2025); liên quan: Ngày đầu tiên trấn an đôi mắt đang bị viêm (27/10/2025).
 - **Huyền học, tâm linh:** Biết thần số học để làm gì (15/01/2024); Lên bà Đen Tây Ninh thì để cầu gì (29/04/2025); Chiêm bái xá lợi Phật (16/05/2025); Tiệc mở Phủ trình hầu Đồng (26/03/2024); Gia đình có thành viên "sở hữu" di sản văn hoá phi vật thể (27/03/2024).

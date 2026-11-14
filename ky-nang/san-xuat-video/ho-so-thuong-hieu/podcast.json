@@ -1,0 +1,23 @@
+{
+ "_": "Podcast toàn đồ hoạ — hình mẫu chính: Hieu Nguyen (HIEU TV), VOV Kể chuyện đêm khuya; podcast quay người sau này: Have A Sip. Xem podcast.md.",
+ "topics_doi_s": [
+  40,
+  90
+ ],
+ "thua_canh_khi_dai_hon_s": 1200,
+ "thua_canh_s": [
+  40,
+  60
+ ],
+ "the_chuong": true,
+ "it_ma_sau_khi_dai_hon_s": 300,
+ "so_do_moi_s": [
+  60,
+  120
+ ],
+ "ban_do_chuong": true,
+ "tom_tat_truoc_chot_s": 5.5,
+ "chot": "theo ho-so-thuong-hieu/kenh.json (khối 08)",
+ "phu_hinh_muc_tieu": 0.3,
+ "_phu_hinh": "David chốt 2026-11-06: hình phủ khoảng 30% thời lượng, không cố định; đoạn khó hiểu thì dày hơn. Thay luật ít mà sâu 60–120 s."
+}

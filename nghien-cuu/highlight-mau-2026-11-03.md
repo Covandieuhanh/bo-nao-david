@@ -1,4 +1,4 @@
-# Học từ 10 video highlight dọc lượt xem cao — cho skill `cat-highlight-video` và `video-style-edit`
+# Học từ 10 video highlight dọc lượt xem cao — cho skill `cat-doan-noi-bat` và `dung-video-theo-phong-cach`
 
 *Ngày 2026-11-03. Lượt xem lấy trên YouTube (mục Shorts, xếp "Phổ biến"), hôm nay. Nhịp cắt đo bằng ffmpeg (dò đổi cảnh), lời chép bằng Whisper. Đây là top chọn được từ các kênh tiêu biểu, không phải top tuyệt đối toàn YouTube.*
 
@@ -62,7 +62,7 @@
 
 ## 4. Đề xuất sửa skill (chờ anh duyệt)
 
-**`cat-highlight-video`**
+**`cat-doan-noi-bat`**
 - **A. Thẻ tiêu đề mở đầu 2–3 s:** chữ to trích nguyên văn câu chạm (kiểu DOAC, Mel), đặt ở nửa trên khung, tách khỏi phụ đề. Skill đang có `pow` ở mở đầu; đề xuất chuẩn hoá thành thẻ cố định cho mọi highlight.
 - **B. Thêm 2 kiểu câu mở vào thang chấm ở bước 3:** "kết quả trước, quá khứ sau" và "câu đố cho người xem", đặt ngang hạng "bất ngờ / kết quả lớn".
 - **C. Lời kêu gọi nới định nghĩa:** chấp nhận **câu mệnh lệnh nguyên văn trong nội dung** ("Hãy chọn…", "thử làm…") làm lời kêu gọi chính. Câu mời bình luận chỉ dùng khi người nói có nói, nằm ở bình luận ghim như hiện nay. Không đổi luật "chỉ nguyên văn".
@@ -70,7 +70,7 @@
 - **E. Vòng lặp:** với clip ≤ 35 s, ưu tiên chọn câu cuối nối được về câu đầu. Kiểu này đã có trong bảng bố trí; đề xuất nâng lên mặc định khi có cặp câu như vậy.
 - **F. Độ dài:** giữ 30–60 s; cho phép tới 90–120 s **chỉ khi** là câu chuyện có hồi hộp và đáp án ở cuối (kiểu DOAC). Hiện skill cho tối đa 90 s.
 
-**`video-style-edit` (chế độ ghép clip / game show)**
+**`dung-video-theo-phong-cach` (chế độ ghép clip / game show)**
 - **G. Cảnh phản ứng:** khi có người thứ hai (khán giả, người dẫn, bạn đồng hành) thì chèn 0,8–1,5 s mặt họ ngay sau câu đắt nhất, kiểu Jay, Rap Việt.
 - **H. Ô chữ theo người nói:** mỗi người một màu ô (kiểu GaryVee) cho cảnh hội thoại trong vlog.
 - **I. Nhịp ghép mục tiêu 2,2–2,7 s/cảnh** cho đoạn `soi`; đoạn `lang` 4–6 s.

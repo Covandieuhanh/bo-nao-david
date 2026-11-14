@@ -1,0 +1,79 @@
+{
+  "_ghi_chu": "Mỗi bộ: ban_luat = file AI đọc khi làm việc (chỉ chứa luật hiện hành) · so = sổ quyết định (ngày, lời David, lý do; AI không đọc khi làm) · kho = thực đơn để chọn, không phải luật (không đo) · bo_qua = loại khỏi ban_luat. Đường dẫn tính từ gốc repo, ** = mọi tầng. nguong = mức máy đo nhắc tái bản (chỉnh sau mỗi lần tái bản cho sát). chuan-muc-lam-viec.md đo chung với bộ nao (luật dùng chung mọi skill). Ghi nhớ co-so-tri-thuc/bo-nho/ không đo ở đây: đó là sổ, dọn bằng consolidate-memory.",
+  "video": {
+    "ban_luat": [
+      "ky-nang/san-xuat-video/**/*.md"
+    ],
+    "bo_qua": [
+      "**/nhat-ky-thay-doi.md",
+      "**/hoc-tu-*",
+      "**/nguon-tham-khao/**",
+      "**/node_modules/**",
+      "**/mau-chuan/**",
+      "**/app/**",
+      "ky-nang/san-xuat-video/thiet-ke-bo-cuc/bo-cuc.md",
+      "ky-nang/san-xuat-video/thiet-ke-bo-cuc/am-thanh.md",
+      "ky-nang/san-xuat-video/thiet-ke-bo-cuc/phieu-hoc-mau.md",
+      "ky-nang/san-xuat-video/mo-dun/19-dang-bai/mau-ke-hoach-dang.md",
+      "**/assets/**"
+    ],
+    "so": [
+      "ky-nang/san-xuat-video/*/references/nhat-ky-thay-doi.md"
+    ],
+    "kho": [
+      "ky-nang/san-xuat-video/thiet-ke-bo-cuc/bo-cuc.md",
+      "ky-nang/san-xuat-video/thiet-ke-bo-cuc/am-thanh.md",
+      "ky-nang/san-xuat-video/thiet-ke-bo-cuc/nguon-tham-khao/",
+      "ky-nang/san-xuat-video/*/references/hoc-tu-*",
+      "ky-nang/san-xuat-video/mo-dun/19-dang-bai/mau-ke-hoach-dang.md"
+    ],
+    "nguong": {
+      "dau_ngay": 30,
+      "ghi_de": 15,
+      "trung": 8,
+      "sua": 40,
+      "dong": 4000
+    }
+  },
+  "hoi": {
+    "ban_luat": [
+      "ky-nang/thu-thap-yeu-cau/SKILL.md"
+    ],
+    "bo_qua": [],
+    "so": [
+      "mục \"Nhật ký\" cuối mỗi SKILL.md"
+    ],
+    "kho": [],
+    "nguong": {
+      "dau_ngay": 8,
+      "ghi_de": 4,
+      "trung": 3,
+      "sua": 15,
+      "dong": 300
+    }
+  },
+  "nao": {
+    "ban_luat": [
+      "AGENTS.md",
+      "CLAUDE.md",
+      "co-so-tri-thuc/chi-dan-toan-cuc.md",
+      "co-so-tri-thuc/David.md",
+      "ky-nang/chuan-muc-lam-viec.md"
+    ],
+    "bo_qua": [],
+    "so": [
+      "lịch sử git",
+      "co-so-tri-thuc/bo-nho/ (ghi nhớ là sổ: được ghi ngày + lời David; dọn bằng skill consolidate-memory)"
+    ],
+    "kho": [
+      "tai-lieu-tham-khao/"
+    ],
+    "nguong": {
+      "dau_ngay": 15,
+      "ghi_de": 6,
+      "trung": 4,
+      "sua": 25,
+      "dong": 600
+    }
+  }
+}

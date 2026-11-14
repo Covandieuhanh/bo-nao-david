@@ -14,21 +14,21 @@ Repo riêng tư. AI nào, tài khoản nào đọc xong cũng nhận đúng vai,
 
 | Muốn tìm | Mở |
 |---|---|
-| David là ai, định hướng nghề, lằn ranh | [nao/David.md](nao/David.md) |
-| Tính cách, điểm mạnh, động cơ | [nao/ho-so-thau-hieu.md](nao/ho-so-thau-hieu.md) |
-| Luật chung cho mọi phiên Claude | [nao/CLAUDE-toan-cuc.md](nao/CLAUDE-toan-cuc.md) |
-| Các quyết định, bài học đã chốt | [nao/bo-nho/MEMORY.md](nao/bo-nho/MEMORY.md) (chia nhóm: luật, não, video) |
-| Đang làm dở gì, câu hỏi còn mở | [TRANG-THAI-HIEN-TAI.md](TRANG-THAI-HIEN-TAI.md) |
-| Trạng thái từng video, tài nguyên | [dang-lam/danh-muc.md](dang-lam/danh-muc.md) |
-| Hỏi trước khi làm | [skills/hoi-chuyen-gia/SKILL.md](skills/hoi-chuyen-gia/SKILL.md) |
-| Toàn bộ hệ dựng video | [skills/dung-video/GIOI-THIEU.md](skills/dung-video/GIOI-THIEU.md), [luat-chung.md](skills/dung-video/luat-chung.md) |
-| Lọc nội dung có đáng làm không | [skills/dung-video/khoi/00-loc-noi-dung/](skills/dung-video/khoi/00-loc-noi-dung/) |
-| Giọng văn David | [skills/dung-video/ho-so/giong-van-david.md](skills/dung-video/ho-so/giong-van-david.md) |
-| Thông số từng loại video (hồ sơ tham số) | [skills/dung-video/ho-so/](skills/dung-video/ho-so/) |
-| Video mẫu chuẩn đã chốt | [skills/dung-video/mau-chuan/](skills/dung-video/mau-chuan/) |
-| Form kế hoạch đăng bài | [skills/dung-video/khoi/19-dang-bai/](skills/dung-video/khoi/19-dang-bai/) |
-| Form ghi số liệu sau đăng | [skills/dung-video/khoi/16-so-lieu/mau-so-lieu.md](skills/dung-video/khoi/16-so-lieu/mau-so-lieu.md) |
-| Hồ sơ CCL, hình mẫu chuẩn (kèm bảng thuật ngữ Anh – Việt) | [tham-chieu/ccl/ho-so-ccl-ban-tieng-viet.md](tham-chieu/ccl/ho-so-ccl-ban-tieng-viet.md) |
+| David là ai, định hướng nghề, lằn ranh | [co-so-tri-thuc/David.md](co-so-tri-thuc/David.md) |
+| Tính cách, điểm mạnh, động cơ | [co-so-tri-thuc/ho-so-ca-nhan.md](co-so-tri-thuc/ho-so-ca-nhan.md) |
+| Luật chung cho mọi phiên Claude | [co-so-tri-thuc/chi-dan-toan-cuc.md](co-so-tri-thuc/chi-dan-toan-cuc.md) |
+| Các quyết định, bài học đã chốt | [co-so-tri-thuc/bo-nho/MEMORY.md](co-so-tri-thuc/bo-nho/MEMORY.md) (chia nhóm: luật, não, video) |
+| Đang làm dở gì, câu hỏi còn mở | [BAO-CAO-TRANG-THAI.md](BAO-CAO-TRANG-THAI.md) |
+| Trạng thái từng video, tài nguyên | [du-an/danh-muc-noi-dung.md](du-an/danh-muc-noi-dung.md) |
+| Hỏi trước khi làm | [ky-nang/thu-thap-yeu-cau/SKILL.md](ky-nang/thu-thap-yeu-cau/SKILL.md) |
+| Toàn bộ hệ dựng video | [ky-nang/san-xuat-video/TONG-QUAN.md](ky-nang/san-xuat-video/TONG-QUAN.md), [quy-tac-chung.md](ky-nang/san-xuat-video/quy-tac-chung.md) |
+| Lọc nội dung có đáng làm không | [ky-nang/san-xuat-video/mo-dun/00-sang-loc-noi-dung/](ky-nang/san-xuat-video/mo-dun/00-sang-loc-noi-dung/) |
+| Giọng văn David | [ky-nang/san-xuat-video/ho-so-thuong-hieu/giong-thuong-hieu-david.md](ky-nang/san-xuat-video/ho-so-thuong-hieu/giong-thuong-hieu-david.md) |
+| Thông số từng loại video (hồ sơ tham số) | [ky-nang/san-xuat-video/ho-so-thuong-hieu/](ky-nang/san-xuat-video/ho-so-thuong-hieu/) |
+| Video mẫu chuẩn đã chốt | [ky-nang/san-xuat-video/mau-chuan/](ky-nang/san-xuat-video/mau-chuan/) |
+| Form kế hoạch đăng bài | [ky-nang/san-xuat-video/mo-dun/19-dang-bai/](ky-nang/san-xuat-video/mo-dun/19-dang-bai/) |
+| Form ghi số liệu sau đăng | [ky-nang/san-xuat-video/mo-dun/16-phan-tich-so-lieu/mau-so-lieu.md](ky-nang/san-xuat-video/mo-dun/16-phan-tich-so-lieu/mau-so-lieu.md) |
+| Hồ sơ CCL, hình mẫu chuẩn (kèm bảng thuật ngữ Anh – Việt) | [tai-lieu-tham-khao/ccl/ho-so-ccl-ban-tieng-viet.md](tai-lieu-tham-khao/ccl/ho-so-ccl-ban-tieng-viet.md) |
 | Nghiên cứu kênh, video mẫu | [nghien-cuu/](nghien-cuu/) |
 | Bản cũ đã thay, đã bỏ (không làm theo) | [luu-tru/](luu-tru/) |
 | Cài máy mới, đổi tài khoản | [SETUP.md](SETUP.md) |
@@ -39,19 +39,19 @@ Repo riêng tư. AI nào, tài khoản nào đọc xong cũng nhận đúng vai,
 |---|---|
 | `AGENTS.md` | Điểm vào cho mọi AI |
 | `CLAUDE.md` | Điểm vào cho Claude Code khi mở repo này |
-| `TRANG-THAI-HIEN-TAI.md` | Đang làm gì, việc tiếp theo |
-| `nao/` | Hồ sơ David, luật toàn cục, bộ nhớ (`bo-nho/`) |
-| `skills/` | Toàn bộ skill: dựng video, đăng đa kênh, hỏi chuyên gia, trình duyệt; mẫu và form nằm trong skill |
-| `dang-lam/` | Việc đang dở: sổ danh mục, kho 100 video, rà soát video cũ |
-| `tham-chieu/` | Tài liệu gốc làm hình mẫu chuẩn lâu dài (hồ sơ CCL) |
+| `BAO-CAO-TRANG-THAI.md` | Đang làm gì, việc tiếp theo |
+| `co-so-tri-thuc/` | Hồ sơ David, luật toàn cục, bộ nhớ (`bo-nho/`) |
+| `ky-nang/` | Toàn bộ skill: dựng video, đăng đa kênh, hỏi chuyên gia, trình duyệt; mẫu và form nằm trong skill |
+| `du-an/` | Việc đang dở: sổ danh mục, kho 100 video, rà soát video cũ |
+| `tai-lieu-tham-khao/` | Tài liệu gốc làm hình mẫu chuẩn lâu dài (hồ sơ CCL) |
 | `nghien-cuu/` | Nguyên liệu đã tra cứu, có ngày ở tên file |
 | `luu-tru/` | Bản cũ, đã bỏ |
 | `scripts/` | Cài vào máy, đồng bộ 2 chiều, hook, quét bí mật |
 
 ## Đồng bộ
 
-Trên Mac đã chạy `scripts/install.sh`, các file não trong `~/.claude` là lối tắt vào repo này, nên máy và repo là một bản. Hook tự kéo về đầu phiên, đẩy lên cuối phiên. Đồng bộ tay (nói với Claude Code **"cập nhật não"**, hoặc tự chạy):
+Trên Mac đã chạy `tu-dong-hoa/install.sh`, các file não trong `~/.claude` là lối tắt vào repo này, nên máy và repo là một bản. Hook tự kéo về đầu phiên, đẩy lên cuối phiên. Đồng bộ tay (nói với Claude Code **"cập nhật não"**, hoặc tự chạy):
 
 ```bash
-bash scripts/sync.sh
+bash tu-dong-hoa/sync.sh
 ```

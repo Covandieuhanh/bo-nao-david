@@ -22,19 +22,19 @@
 ## 3. David là ai (tóm tắt, chi tiết đọc file gốc)
 
 - **Trần Đức Cường**, tên nghề **David Trần**. Là nhà đào tạo thực hành: giúp người đi từ **làm giỏi** đến **dẫn đội làm được**. Công khai là **trainer**, chỉ làm **coach** trong buổi riêng 1:1.
-- **Ba hướng nghề, mục tiêu ra tiền** (`nao/David.md` 4.1): tài chính · trainer · gói công nghệ kèm đào tạo. Kênh trainer: tệp muốn tự làm chủ bản thân, lõi là **người lần đầu dẫn người**. Khung phương pháp: **ba tầng làm chủ** (bản thân → công việc → mối quan hệ), gốc nghiên cứu từ CCL.
+- **Ba hướng nghề, mục tiêu ra tiền** (`co-so-tri-thuc/David.md` 4.1): tài chính · trainer · gói công nghệ kèm đào tạo. Kênh trainer: tệp muốn tự làm chủ bản thân, lõi là **người lần đầu dẫn người**. Khung phương pháp: **ba tầng làm chủ** (bản thân → công việc → mối quan hệ), gốc nghiên cứu từ CCL.
 - Sống ở Đức từ tháng 11/2026. Khách là người Việt ở Việt Nam, làm online. Giờ làm với khách: trưa giờ Việt Nam và cuối tuần.
 - Làm theo **đợt năng lượng**, việc trí óc tối đa 4 tiếng/ngày. Quyết định lớn chờ vài ngày mới chốt. Giữ buổi nhìn lại cuối tuần.
 - Ưu tiên hiện nay: **ra tiền**; thứ tự khi phải chọn: gói công nghệ → ca trainer thật → kênh tài chính. Video và hạ tầng chạy song song, tạm dừng khi David thiếu năng lượng.
 - Kênh video: bản gốc 10 phút lên YouTube, cắt highlight dọc cho Reels/TikTok. Mỗi video có 3 phần Vấn đề · Giải pháp · Thực thi. Chỉ kể chuyện thật, ẩn danh.
 
-Đọc đủ: `nao/David.md` (hồ sơ), `nao/ho-so-thau-hieu.md` (tính cách, động cơ; phần định hướng nghề trong đó đã cũ, lệch thì theo `David.md`).
+Đọc đủ: `co-so-tri-thuc/David.md` (hồ sơ), `co-so-tri-thuc/ho-so-ca-nhan.md` (tính cách, động cơ; phần định hướng nghề trong đó đã cũ, lệch thì theo `David.md`).
 
 ## 4. Luật bắt buộc (viết thẳng ở đây, không được phá)
 
 1. **Trả lời tiếng Việt, ngắn gọn.** Phân biệt rõ cái đã làm, đã kiểm, giả định và đề xuất. Chưa có bằng chứng thì không nói "đã xong".
 2. **Tài nguyên vào → kết quả ra, không hỏi.** David gửi video hay ghi âm (thường không kèm lời) thì giao Claude làm trọn theo skill, báo lại "đã chọn X vì Y". **Thiết kế lớn, sửa luật, sửa skill, sửa bộ não: hỏi David trước**, diễn giải lại ý hiểu, chờ David "ok". Câu hỏi nhanh thì trả lời thẳng.
-3. **Ba hướng nghề, mục tiêu ra tiền** (13/11/2026): tài chính (YouTube David Trần Official) · trainer (YouTube trainer) · gói công nghệ kèm đào tạo (mọi trang khác). Mô hình kinh doanh của David (Tiền · Thị trường · Con người, 9 vai trò, 4 bước) là gốc: `nao/mo-hinh-kinh-doanh.md`. Không trị liệu, không chẩn đoán; gặp người khủng hoảng tâm lý thì chuyển tới chuyên môn có cấp phép. Kênh tài chính: không cam kết lợi nhuận, không gọi lệnh, luôn nói rủi ro, chỉ đơn vị hợp pháp.
+3. **Ba hướng nghề, mục tiêu ra tiền** (13/11/2026): tài chính (YouTube David Trần Official) · trainer (YouTube trainer) · gói công nghệ kèm đào tạo (mọi trang khác). Mô hình kinh doanh của David (Tiền · Thị trường · Con người, 9 vai trò, 4 bước) là gốc: `co-so-tri-thuc/mo-hinh-kinh-doanh.md`. Không trị liệu, không chẩn đoán; gặp người khủng hoảng tâm lý thì chuyển tới chuyên môn có cấp phép. Kênh tài chính: không cam kết lợi nhuận, không gọi lệnh, luôn nói rủi ro, chỉ đơn vị hợp pháp.
 4. **Nội dung là của David.** Không đặt lời vào miệng David, không bịa chuyện, không khuôn lời.
 5. **Không đăng, không gửi ra ngoài, không xoá, không tiêu tiền khi David chưa duyệt.** Không nhập mật khẩu thay David. Bị từ chối thì không tìm cách lách.
 6. **Kênh công khai:** không nói huyền học, không dùng từ "chữa lành", không tư vấn thuế hay pháp lý.
@@ -51,11 +51,11 @@
 | File | Để biết |
 |---|---|
 | `AGENTS.md` | Cửa vào: thứ tự đọc, 6 luật, bảng chọn skill |
-| `nao/David.md` | David là ai, định hướng nghề, lằn ranh |
-| `TRANG-THAI-HIEN-TAI.md` | Đang làm dở gì, chờ David quyết gì |
-| `dang-lam/danh-muc.md` | Sổ video: tập nào đang ở bước nào (tin sổ này hơn trạng thái) |
-| `nao/bo-nho/MEMORY.md` | Mục lục bài học và quyết định |
-| `skills/dung-video/dang-da-kenh/SKILL.md` | Quy trình video trọn gói (để hiểu Claude sẽ làm gì) |
+| `co-so-tri-thuc/David.md` | David là ai, định hướng nghề, lằn ranh |
+| `BAO-CAO-TRANG-THAI.md` | Đang làm dở gì, chờ David quyết gì |
+| `du-an/danh-muc-noi-dung.md` | Sổ video: tập nào đang ở bước nào (tin sổ này hơn trạng thái) |
+| `co-so-tri-thuc/bo-nho/MEMORY.md` | Mục lục bài học và quyết định |
+| `ky-nang/san-xuat-video/phan-phoi-da-kenh/SKILL.md` | Quy trình video trọn gói (để hiểu Claude sẽ làm gì) |
 
 **Luật chống chồng chéo:**
 - **Hermes không sửa file trong repo `David.Claude`.** Cần sửa luật, ghi quyết định, cập nhật trạng thái thì giao Claude làm (mục 6). Claude tự đẩy lên GitHub.
@@ -71,7 +71,7 @@ Riêng phần này phải làm **đúng như viết**. Phía Claude đã có c�
 **Lệnh** (thư mục bất kỳ, đường dẫn đầy đủ):
 
 ```bash
-bash /Users/moon/Documents/David.Claude/scripts/so-nho/giao-viec.sh "<yêu cầu nguyên văn của David, kèm đường dẫn file nếu có>"
+bash /Users/moon/Documents/David.Claude/tu-dong-hoa/so-tay/giao-viec.sh "<yêu cầu nguyên văn của David, kèm đường dẫn file nếu có>"
 ```
 → in ra **số việc N**. Script mở một **phiên Claude Code thật** (Remote Control) tên `Telegram #N · …` trong thư mục bộ não. David xem và gõ tiếp được trên app Claude ở điện thoại hoặc trên claude.ai/code.
 
@@ -79,13 +79,13 @@ bash /Users/moon/Documents/David.Claude/scripts/so-nho/giao-viec.sh "<yêu cầu
 |---|---|
 | Chuyển lời David vào phiên việc N | `bash …/giao-viec.sh --tiep N "<lời David>"` (phiên đã đóng thì tự mở lại) |
 | Đóng phiên việc N | `bash …/giao-viec.sh --dung N` (chỉ khi David bảo) |
-| Xem việc nào đang chạy trên máy | `bash /Users/moon/Documents/David.Claude/scripts/so-nho/viec-dang-chay.sh` |
+| Xem việc nào đang chạy trên máy | `bash /Users/moon/Documents/David.Claude/tu-dong-hoa/so-tay/viec-dang-chay.sh` |
 
-| Chuyển lời David vào một phiên Claude **David tự mở** (app, terminal; không phải việc `#N`) | `python3 -I /Users/moon/Documents/David.Claude/scripts/so-nho/hop-thu-phien.py gui "<tên hoặc từ khoá phiên>" "<lời David>"`; không rõ phiên nào thì `… hop-thu-phien.py ds` để liệt kê rồi hỏi David |
+| Chuyển lời David vào một phiên Claude **David tự mở** (app, terminal; không phải việc `#N`) | `python3 -I /Users/moon/Documents/David.Claude/tu-dong-hoa/so-tay/hop-thu-phien.py gui "<tên hoặc từ khoá phiên>" "<lời David>"`; không rõ phiên nào thì `… hop-thu-phien.py ds` để liệt kê rồi hỏi David |
 
 **Báo cáo của Claude:** phiên Claude gửi tin `#N ✅ Xong: …` hoặc `#N ❓ Chờ anh: …` thẳng vào khung chat của David với **bot Hermes** (máy gửi, không qua Hermes, nên Hermes không thấy tin đó trong cuộc trò chuyện). Muốn biết thì đọc:
-- `/Users/moon/Documents/2-ca-nhan/so-nho/viec-giao.md`: bảng các việc giao, cột trạng thái (`đang làm`, `xong …`, `chờ anh …`).
-- `/Users/moon/Documents/2-ca-nhan/so-nho/bao-cao-claude.md`: mọi tin báo cáo của Claude.
+- `/Users/moon/Documents/2-ca-nhan/so-tay/viec-giao.md`: bảng các việc giao, cột trạng thái (`đang làm`, `xong …`, `chờ anh …`).
+- `/Users/moon/Documents/2-ca-nhan/so-tay/bao-cao-claude.md`: mọi tin báo cáo của Claude.
 - David trả lời một tin `#N ❓` (trích tin đó, hoặc nói "việc 3…") → chuyển bằng `giao-viec.sh --tiep N`.
 
 **Cách viết yêu cầu:** giữ nguyên lời David, thêm đường dẫn tài nguyên. Không tự thêm lựa chọn sáng tạo (tít, nhạc, độ dài, kênh đăng): Claude tự chọn theo skill rồi báo lý do.
@@ -94,30 +94,30 @@ bash /Users/moon/Documents/David.Claude/scripts/so-nho/giao-viec.sh "<yêu cầu
 
 **Đừng:**
 - Đừng gọi `claude -p` hay tự mở phiên Claude theo cách khác cho việc video: như vậy là mất cổng duyệt và David không xem được.
-- Đừng sửa các script trong `scripts/so-nho/`. Cần đổi thì giao Claude làm.
+- Đừng sửa các script trong `tu-dong-hoa/so-tay/`. Cần đổi thì giao Claude làm.
 - Đừng đọc hay chép token trong `~/.claude/channels/`.
 
 ## 7. Hermes thay hẳn bot Sổ nhớ (một khung chat duy nhất)
 
-David chốt 12/11/2026: **mọi thứ gom về Hermes**. Bot Sổ nhớ cũ (bot Telegram khác, chạy bằng một phiên Claude, launchd `com.david.so-nho`) sẽ nghỉ. Phần máy (script) vẫn chạy: nhắc đúng giờ, sao lưu Drive, đóng phiên việc nghỉ lâu, gửi báo cáo và yêu cầu duyệt của Claude. Hermes nhận **phần trò chuyện và phần cần suy nghĩ** của bot cũ.
+David chốt 12/11/2026: **mọi thứ gom về Hermes**. Bot Sổ nhớ cũ (bot Telegram khác, chạy bằng một phiên Claude, launchd `com.david.so-tay`) sẽ nghỉ. Phần máy (script) vẫn chạy: nhắc đúng giờ, sao lưu Drive, đóng phiên việc nghỉ lâu, gửi báo cáo và yêu cầu duyệt của Claude. Hermes nhận **phần trò chuyện và phần cần suy nghĩ** của bot cũ.
 
-**Công tắc:** file `/Users/moon/Documents/2-ca-nhan/so-nho/.trang-thai/bot-chinh`.
+**Công tắc:** file `/Users/moon/Documents/2-ca-nhan/so-tay/.trang-thai/bot-chinh`.
 - Ghi `hermes`: máy gửi mọi tin (báo cáo Claude, xin duyệt, nhắc giờ, cảnh báo) qua **bot Hermes**, và tắt phiên bot cũ.
 - Không có file: như cũ, mọi thứ về bot Sổ nhớ.
 - **Hermes không tự bật công tắc.** Claude bật sau khi thử một vòng với David (mục 8). Trước khi công tắc ghi `hermes`, Hermes **không ghi vào sổ nhớ** (bot cũ đang ghi, tránh hai bên cùng ghi một file).
 
-**Luật sổ nhớ: một nhà duy nhất** là `/Users/moon/Documents/David.Claude/scripts/so-nho/luat-bot.md` (bản chạy chép ở `2-ca-nhan/so-nho/CLAUDE.md`). Hermes làm theo đúng file này cho: ghi nguyên văn vào hộp thư, phân loại vào các nhóm, trả lời một dòng, câu hỏi, sửa, nhắc đúng giờ và nhắc lặp, tóm tắt sáng, hỏi thăm thói quen, điều khiển Claude, duyệt từ xa, lằn ranh. Đừng chép luật đó vào Hermes; cần đổi luật thì giao Claude sửa `luat-bot.md`.
+**Luật sổ nhớ: một nhà duy nhất** là `/Users/moon/Documents/David.Claude/tu-dong-hoa/so-tay/luat-bot.md` (bản chạy chép ở `2-ca-nhan/so-tay/CLAUDE.md`). Hermes làm theo đúng file này cho: ghi nguyên văn vào hộp thư, phân loại vào các nhóm, trả lời một dòng, câu hỏi, sửa, nhắc đúng giờ và nhắc lặp, tóm tắt sáng, hỏi thăm thói quen, điều khiển Claude, duyệt từ xa, lằn ranh. Đừng chép luật đó vào Hermes; cần đổi luật thì giao Claude sửa `luat-bot.md`.
 
 File đó viết cho bot cũ, nên đọc theo bảng đổi này:
 
 | Trong `luat-bot.md` | Với Hermes |
 |---|---|
-| "thư mục này" | `/Users/moon/Documents/2-ca-nhan/so-nho/` |
+| "thư mục này" | `/Users/moon/Documents/2-ca-nhan/so-tay/` |
 | Công cụ `reply`, "gửi qua Telegram tới `allowFrom`" | Hermes trả lời David trong khung chat của mình |
 | "Bash chỉ dùng cho bốn lệnh điều khiển" | Hermes dùng công cụ của mình; lệnh điều khiển Claude giữ đúng như mục 6 |
 | Giờ lấy từ `ts` của tin, múi giờ ở `.trang-thai/mui-gio.md` | Giờ của tin David theo múi giờ ghi trong `mui-gio.md` (múi của Mac) |
 | Tin máy `[TOM-TAT-SANG]` (7h) | **Lịch của Hermes** chạy 7:00 mỗi ngày, làm đúng mục "Tóm tắt sáng" |
-| Tin máy `[HOI-THOI-QUEN]` | **Lịch của Hermes** theo các dòng `mỗi ngày HH:MM · [HOI-THOI-QUEN] …` trong `nhac-viec.md` (hiện 11:00, 16:00, 20:30), làm đúng mục "Hỏi thăm thói quen"; danh sách thói quen và "+ việc chưa xong" đọc từ chính dòng đó và `viec-can-lam.md`. Máy không gửi các dòng có thẻ này khi công tắc là `hermes`. David thêm, đổi hay dừng dòng có thẻ thì cập nhật lịch Hermes theo |
+| Tin máy `[HOI-THOI-QUEN]` | **Lịch của Hermes** theo các dòng `mỗi ngày HH:MM · [HOI-THOI-QUEN] …` trong `nhac-viec.md` (hiện 11:00, 16:00, 20:30), làm đúng mục "Hỏi thăm thói quen"; danh sách thói quen và "+ việc chưa xong" đọc từ chính dòng đó và `danh-sach-viec.md`. Máy không gửi các dòng có thẻ này khi công tắc là `hermes`. David thêm, đổi hay dừng dòng có thẻ thì cập nhật lịch Hermes theo |
 | Tin máy `[KHOI-DONG]`, `[CHO-DUYET]` | Không còn. Thay bằng: **mỗi tin David nhắn, trước tiên xem `.trang-thai/duyet/*.json`** |
 | Nhắc đúng giờ, nhắc lặp không thẻ | Máy tự gửi. Hermes chỉ ghi dòng vào `nhac-viec.md` đúng dạng, **không tạo lịch riêng cho chúng** (sẽ gửi trùng) |
 | Ảnh, file trong `~/.claude/channels/so-nho/inbox/` | Ảnh, file David gửi Hermes: ghi đường dẫn Hermes lưu |
@@ -125,7 +125,7 @@ File đó viết cho bot cũ, nên đọc theo bảng đổi này:
 
 **Duyệt từ xa (phải nhanh, làm trước mọi việc khác):** máy gửi David tin `🔐 Claude cần anh cho phép…` hoặc `❓ Claude đang hỏi anh…` có `(Mã yêu cầu: MÃ)`, và để yêu cầu ở `.trang-thai/duyet/<MÃ>.json`. Hermes không thấy tin máy gửi, nên **mỗi tin David nhắn đều xem thư mục này trước**. Có yêu cầu đang chờ mà tin giống câu trả lời → ghi `.trang-thai/duyet/<MÃ>.tra` đúng như mục "Duyệt từ xa" của `luat-bot.md` (`ok` · `khong <lý do>` · nguyên văn câu trả lời), rồi đáp David một dòng. Máy chờ tối đa 30 phút. "tôi đi vắng" / "tôi về" → ghi `.trang-thai/vang` là `1` / `0`.
 
-**Không đụng:** script trong `scripts/so-nho/`, launchd, token trong `~/.claude/channels/`, file `.trang-thai/` khác ngoài `duyet/*.tra`, `vang`, `bo-qua.md`. Cần đổi thì giao Claude.
+**Không đụng:** script trong `tu-dong-hoa/so-tay/`, launchd, token trong `~/.claude/channels/`, file `.trang-thai/` khác ngoài `duyet/*.tra`, `vang`, `bo-qua.md`. Cần đổi thì giao Claude.
 
 ## 8. Việc nhận bàn giao (Hermes tự làm)
 
@@ -134,7 +134,7 @@ File đó viết cho bot cũ, nên đọc theo bảng đổi này:
 **Kế hoạch:** cất phần cũ → tự cài hồ sơ mới theo cách của Hermes → cài lịch → tự kiểm → báo David → thử một vòng với David và Claude → Claude bật công tắc.
 
 **Quy trình:**
-1. **Cất phần cũ, không xoá:** bộ nhớ và skill đang trỏ kho ChatGPT `Bo-nho-cong-viec` (khung Tiền–Thị trường–Con người, skill `bo-khung-cong-viec`), và 3 profile `van-hanh`, `doi-tac`, `marketing`. (13/11/2026: David chốt dùng lại khung này làm gốc, bản trong bộ não: `nao/mo-hinh-kinh-doanh.md`.) Hermes tự chọn cách cất (lưu trữ, tắt, tách profile) sao cho **profile chính không còn nạp chúng**. Ghi lại đã cất ở đâu. Không đụng thư mục kho ChatGPT.
+1. **Cất phần cũ, không xoá:** bộ nhớ và skill đang trỏ kho ChatGPT `Bo-nho-cong-viec` (khung Tiền–Thị trường–Con người, skill `bo-khung-cong-viec`), và 3 profile `van-hanh`, `doi-tac`, `marketing`. (13/11/2026: David chốt dùng lại khung này làm gốc, bản trong bộ não: `co-so-tri-thuc/mo-hinh-kinh-doanh.md`.) Hermes tự chọn cách cất (lưu trữ, tắt, tách profile) sao cho **profile chính không còn nạp chúng**. Ghi lại đã cất ở đâu. Không đụng thư mục kho ChatGPT.
 2. **Tự cài hồ sơ mới** theo cách của Hermes: tính cách (SOUL), hồ sơ người dùng, ghi chú môi trường, skill. Theo mục 2–7. Nhớ luật chống chồng chéo ở mục 5: chỉ giữ con trỏ và luật bắt buộc, không chép cả bộ não hay `luat-bot.md`.
 3. **Cài lịch** (để tắt, chưa chạy khi công tắc chưa là `hermes`, hoặc tự kiểm công tắc mỗi lần chạy): tóm tắt sáng 7:00; hỏi thăm thói quen theo các dòng có thẻ trong `nhac-viec.md`.
 4. **Tự kiểm** trong một phiên mới (`/new`), trả lời được không cần tra lại file này:
@@ -148,7 +148,7 @@ File đó viết cho bot cũ, nên đọc theo bảng đổi này:
 
 **Thực thi (checklist):**
 - [ ] Đọc trọn file này
-- [ ] Đọc `AGENTS.md`, `nao/David.md`, `scripts/so-nho/luat-bot.md`
+- [ ] Đọc `AGENTS.md`, `co-so-tri-thuc/David.md`, `tu-dong-hoa/so-tay/luat-bot.md`
 - [ ] Cất bộ nhớ, skill, profile cũ (không xoá), ghi nơi cất
 - [ ] Cài tính cách và hồ sơ David mới
 - [ ] Cài ghi chú môi trường: đường dẫn repo, sổ nhớ, file theo dõi, công tắc, lệnh giao việc
@@ -165,10 +165,10 @@ File đó viết cho bot cũ, nên đọc theo bảng đổi này:
 |---|---|
 | Bộ não (chỉ đọc) | `/Users/moon/Documents/David.Claude` |
 | Dự án video đang dựng | `/Users/moon/Movies/<tập>` |
-| Sổ video | `/Users/moon/Documents/David.Claude/dang-lam/danh-muc.md` |
-| Sổ nhớ (Hermes ghi từ khi công tắc bật) | `/Users/moon/Documents/2-ca-nhan/so-nho/` |
-| Công tắc bot chính | `/Users/moon/Documents/2-ca-nhan/so-nho/.trang-thai/bot-chinh` |
-| Video gốc và thành quả | Google Drive `Video-goc`, `Video-xong` (danh sách ở `dang-lam/kho-drive.md`) |
-| Giấy tờ cá nhân (không đọc, không chép) | `/Users/moon/Documents/2-ca-nhan/` ngoài thư mục `so-nho` |
+| Sổ video | `/Users/moon/Documents/David.Claude/du-an/danh-muc-noi-dung.md` |
+| Sổ nhớ (Hermes ghi từ khi công tắc bật) | `/Users/moon/Documents/2-ca-nhan/so-tay/` |
+| Công tắc bot chính | `/Users/moon/Documents/2-ca-nhan/so-tay/.trang-thai/bot-chinh` |
+| Video gốc và thành quả | Google Drive `Tu-lieu-goc`, `Thanh-pham` (danh sách ở `du-an/kho-drive.md`) |
+| Giấy tờ cá nhân (không đọc, không chép) | `/Users/moon/Documents/2-ca-nhan/` ngoài thư mục `so-tay` |
 
 Mac phải cắm điện, không gập máy thì phiên Claude mới chạy tiếp được.

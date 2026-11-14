@@ -1,0 +1,112 @@
+{
+ "_": "THAM SỐ CHUNG cả 4 loại video — học từ 80 video Việt + kênh quốc tế (xem ../nguyen-tac.md). Mỗi file loại (lam-video, ghep-vlog, podcast, highlight) GHI ĐÈ khoá trùng tên. Script đọc qua mo-dun/hoso.py; khung dựng đọc motion/src/hoso.json (chép lúc tạo dự án). Đổi giá trị → ghi lý do + hình mẫu vào file .md cùng tên.",
+ "_bo_cuc": "Bố cục KHÔNG có con số bắt buộc (David chốt 2026-11-07): độ dài cảnh, tỷ lệ mặt / đồ hoạ, số cảnh, số chữ nhãn do Claude tự cân theo nội dung từng video — xem ../thiet-ke-bo-cuc/README.md. Con số còn lại ở đây là thẩm mỹ (nhịp hiện / ẩn, cỡ phụ đề) và kỹ thuật (âm lượng, nền tảng).",
+ "hai_trang_thai": false,
+ "phu_de": {
+  "ngan_max_s": 90,
+  "ngan_co": 58,
+  "ngan_max_chu": 10,
+  "ngan_max_ky_tu": 52,
+  "dai_co": 42
+ },
+ "canh_minh_hoa": {
+  "giu_sau_s": 1.2,
+  "giu_moi_chu_s": 0.3,
+  "hien_vao_s": 0.5,
+  "mo_ra_s": 0.3
+ },
+ "youtube": {
+  "video_dai_s": 180,
+  "man_ket_s": 20,
+  "teaser_khi_dai_hon_s": 600,
+  "teaser_s": [
+   15,
+   25
+  ]
+ },
+ "thumbnail": {
+  "max_chu": 8,
+  "max_tang": 3
+ },
+ "nhac": {
+  "_": "Nhạc nền theo TUYẾN NỘI DUNG (David chốt 2026-11-05) — project.tuyen / plan.json tuyen BẮT BUỘC, không ghi thì render_preview dừng",
+  "tuyen": {
+   "vui": {
+    "bai": [
+     "soi-1",
+     "soi-2"
+    ],
+    "khi": "vui, nhận quà / thành quả, năng lượng cao, sự kiện sôi động"
+   },
+   "du_lich": {
+    "bai": [
+     "du-lich-1",
+     "du-lich-2"
+    ],
+    "khi": "vlog du lịch, tham quan, đi chơi cùng bạn bè / đoàn (du-lich-1 mở nhẹ ~18 s rồi lên; du-lich-2 đều nhịp ngay từ đầu)"
+   },
+   "kham_pha": {
+    "bai": [
+     "kham-pha-1",
+     "kham-pha-2"
+    ],
+    "khi": "phiêu lưu, leo núi, hành trình có cao trào (kham-pha-1 điện ảnh; kham-pha-2 kiểu phim tài liệu tươi)"
+   },
+   "ngam_canh": {
+    "bai": [
+     "ngam-canh-1"
+    ],
+    "khi": "ngắm cảnh chậm, thư thái, du lịch một mình (piano)"
+   },
+   "tam_su": {
+    "bai": [
+     "lang-1"
+    ],
+    "khi": "tâm sự, chia sẻ quan điểm, mục tiêu, sứ mệnh, tầm nhìn, truyền cảm hứng, biết ơn"
+   },
+   "mat_mat": {
+    "bai": [
+     "lang-2"
+    ],
+    "khi": "mất mát, chia ly, kỷ niệm buồn, hoài niệm"
+   },
+   "y_nghia": {
+    "bai": [
+     "intro-lang"
+    ],
+    "khi": "hành hương, tâm linh, từ thiện, hành trình ý nghĩa (lực tăng dần)"
+   },
+   "kien_thuc": {
+    "bai": [],
+    "tam": "lang-1",
+    "khi": "kiến thức, hướng dẫn, giải thích, mẹo (trung tính, tập trung) — CHỜ David tải bài ambient/lo-fi"
+   }
+  },
+  "khoang_trong_duoi_giong_LU": 14,
+  "nen_nguong_duoi_giong_dB": 14,
+  "nen_ty_le": 3,
+  "nen_nha_ms": 400,
+  "khi_noi_duoi_giong_LU_dat": [
+   22,
+   24
+  ],
+  "do_to_cuoi_LUFS": -14,
+  "sai_so_LU": 0.5,
+  "dinh_dB": -1.5,
+  "_chuan_am": "CHUẨN CHUNG MỌI ĐẦU RA, David chốt 2026-11-06 theo 3 clip Đi trainer: nhạc thấp hơn giọng khoảng 23 dB lúc nói, cả bài −14 LUFS. Giọng nhỏ thì kéo lên, nhạc to thì hạ xuống theo mức này.",
+  "muc": {
+   "_": "Hệ số cân từng bài về ~−15 LUFS — MỘT NGUỒN cho mọi script (vlog_edl, render_preview, hl_edl, hl_apply). Thêm bài: đo ebur128 I rồi gain = 10^((−15 − I)/20)",
+   "soi-1": 0.55,
+   "soi-2": 0.5,
+   "lang-1": 1.0,
+   "lang-2": 1.6,
+   "intro-soi": 0.51,
+   "intro-lang": 1.12,
+   "du-lich-1": 0.55,
+   "du-lich-2": 0.51,
+   "kham-pha-1": 0.68,
+   "kham-pha-2": 0.72,
+   "ngam-canh-1": 1.1
+  }
+ }
+}
