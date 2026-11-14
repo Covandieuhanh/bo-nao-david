@@ -44,6 +44,7 @@ David thường chỉ gửi tài nguyên (video, ghi âm) mà không kèm yêu c
 | Điều khiển trình duyệt | `playwright-cli` | [SKILL.md](skills/playwright-cli/SKILL.md) |
 | Luật chồng chéo, viết lại toàn bộ bộ não ("tái bản") | `tai-ban` | [SKILL.md](skills/tai-ban/SKILL.md) |
 | Tự học, cải tiến skill, học thành skill, nhìn lại tuần | `tu-hoc` | [SKILL.md](skills/tu-hoc/SKILL.md) |
+| Tổng hợp tin nhắn Zalo, Messenger, Telegram (7:30 mỗi sáng gửi bot) | `tong-hop-tin-nhan` | [SKILL.md](skills/tong-hop-tin-nhan/SKILL.md) |
 
 Muốn hiểu toàn bộ hệ dựng video: [GIOI-THIEU.md](skills/dung-video/GIOI-THIEU.md), [luat-chung.md](skills/dung-video/luat-chung.md).
 
