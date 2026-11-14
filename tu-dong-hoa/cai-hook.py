@@ -33,4 +33,7 @@ for khoa, (cmd, dau) in can.items():
         if su_kien in ("PermissionRequest", "PostToolUse", "PreToolUse"): g["matcher"] = "*"
         ds.append(g)
     print(f"Hook {su_kien}: {cmd}")
+# Tự tóm tắt hội thoại sớm hơn (60 % cửa sổ): hội thoại càng dài Claude càng dễ sót (bài học "1000 giờ Claude", 14/11/2026)
+cfg.setdefault("env", {})["CLAUDE_AUTOCOMPACT_PCT_OVERRIDE"] = "60"
+print("Tự tóm tắt hội thoại ở 60 % cửa sổ")
 json.dump(cfg, open(p, "w"), ensure_ascii=False, indent=2)

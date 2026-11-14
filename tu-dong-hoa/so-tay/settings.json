@@ -29,5 +29,8 @@
       "CronCreate",
       "ScheduleWakeup"
     ]
+  },
+  "env": {
+    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "60"
   }
 }

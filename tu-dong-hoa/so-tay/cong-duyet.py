@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Cổng duyệt (hook PreToolUse) cho phiên việc giao qua Telegram, chạy toàn quyền (bypassPermissions).
+"""Cổng duyệt (hook PreToolUse) cho phiên việc giao qua Telegram, chạy chế độ Auto.
 Chỉ bật trong phiên có biến TELEGRAM_VIEC=1 (giao-viec.sh đặt). Thao tác thường chạy luôn; thao tác RỦI RO thì hỏi David
 qua Telegram bằng tiếng Việt và chờ: David "đồng ý" thì cho chạy, như David bấm cho phép trên Mac; "không" hoặc 30 phút
 không trả lời thì chặn, Claude nhận lý do và làm cách khác hoặc hỏi lại.

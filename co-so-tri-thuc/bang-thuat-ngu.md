@@ -63,6 +63,9 @@ tiếng Anh chuẩn → dùng đúng cột "Tên dùng"; chưa có thì thêm m�
 | Device | Thiết bị | `thiet-bi` |
 | Career | Nghề nghiệp | `nghe-nghiep` |
 | Career Roadmap | Lộ trình sự nghiệp | `lo-trinh-su-nghiep` |
+| Career Strategy | Chiến lược nghề nghiệp | `chien-luoc-nghe-nghiep` |
+| Content Strategy | Chiến lược nội dung | `chien-luoc-noi-dung` |
+| Background Data | Dữ liệu nền | `du-lieu-nen` |
 | Intake Assessment | Phiếu đánh giá đầu vào | `phieu-danh-gia-dau-vao` |
 | Backup | Sao lưu | `sao-luu` |
 | Audit / Review | Đánh giá | `danh-gia` |

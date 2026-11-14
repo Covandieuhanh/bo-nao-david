@@ -33,8 +33,8 @@ man_hinh_cua() { screen -ls 2>/dev/null | awk -v t=".viec-$1" '$1 ~ t"$" {print 
 
 chay() { # $1 số việc, $2 tên hiện trong app, $3 cờ phiên (--session-id / --resume) $4 id, $5 lời nhắn
   # Bỏ mọi biến môi trường CLAUDE* (phiên gọi có thể là phiên khác) và thư mục token của bot (phiên việc không được giành bot).
-  # Toàn quyền (bypassPermissions) như David ngồi máy; TELEGRAM_VIEC=1 bật cổng duyệt (cong-duyet.py): đa số tự chạy + ghi sổ, chỉ gửi/đăng/tốn tiền/đẩy đè mới hỏi David.
-  screen -dmS "viec-$1" -h 3000 bash -c "cd '$NAO' && for v in \$(env | grep -o '^CLAUDE[A-Z_]*'); do unset \$v; done; unset TELEGRAM_STATE_DIR ENABLE_TOOL_SEARCH ENABLE_CLAUDEAI_MCP_SERVERS CLAUDE_CODE_DISABLE_AUTO_MEMORY; export TELEGRAM_VIEC=1; exec claude $3 $4 --remote-control=\"\$1\" --permission-mode bypassPermissions \"\$0\"" "$5" "$2"
+  # Chế độ Auto: Claude tự làm, bộ phân loại an toàn tự chặn việc trông nguy hiểm; TELEGRAM_VIEC=1 bật thêm cổng duyệt (cong-duyet.py): đa số tự chạy + ghi sổ, chỉ gửi/đăng/tốn tiền/đẩy đè mới hỏi David.
+  screen -dmS "viec-$1" -h 3000 bash -c "cd '$NAO' && for v in \$(env | grep -o '^CLAUDE[A-Z_]*'); do unset \$v; done; unset TELEGRAM_STATE_DIR ENABLE_TOOL_SEARCH ENABLE_CLAUDEAI_MCP_SERVERS CLAUDE_CODE_DISABLE_AUTO_MEMORY; export TELEGRAM_VIEC=1; exec claude $3 $4 --remote-control=\"\$1\" --permission-mode auto \"\$0\"" "$5" "$2"
 }
 
 go_vao() { # gõ một tin vào phiên đang mở
