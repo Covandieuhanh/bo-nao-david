@@ -45,7 +45,7 @@ David thường chỉ gửi tài nguyên (video, ghi âm) mà không kèm yêu c
 | Luật chồng chéo, viết lại toàn bộ bộ não ("tái bản") | `tai-cau-truc` | [SKILL.md](ky-nang/tai-cau-truc/SKILL.md) |
 | Tự học, cải tiến skill, học thành skill, nhìn lại tuần | `hoc-lien-tuc` | [SKILL.md](ky-nang/hoc-lien-tuc/SKILL.md) |
 | Gom mọi thứ hằng ngày, phân loại theo hướng nghề, đóng thành sản phẩm bán được | `san-pham-hoa` | [SKILL.md](ky-nang/san-pham-hoa/SKILL.md) |
-| Tổng hợp tin nhắn Zalo, Messenger, Telegram (7:30 mỗi sáng gửi bot) | `tong-hop-tin-nhan` | [SKILL.md](ky-nang/tong-hop-tin-nhan/SKILL.md) |
+| Tổng hợp tin nhắn Zalo, Messenger, Telegram (7:00 mỗi sáng gửi bot) | `tong-hop-tin-nhan` | [SKILL.md](ky-nang/tong-hop-tin-nhan/SKILL.md) |
 
 Muốn hiểu toàn bộ hệ dựng video: [tong-quan.md](ky-nang/san-xuat-video/tong-quan.md), [quy-tac-chung.md](ky-nang/san-xuat-video/quy-tac-chung.md).
 

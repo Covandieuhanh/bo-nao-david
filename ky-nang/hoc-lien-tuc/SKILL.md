@@ -23,7 +23,7 @@ description: Tự học và cải tiến liên tục bộ skill của David (h�
 3. Đẩy GitHub (`bash tu-dong-hoa/dong-bo.sh --push`). Báo David **một dòng mỗi thay đổi**: `Đã sửa <skill>: <điều đổi> (vì <bằng chứng>).`
 4. Chạy máy đo chồng chéo của `tai-cau-truc` khi sửa từ 5 chỗ trở lên trong tuần; báo "NÊN TÁI BẢN" thì nói David.
 
-## Việc 1 — Nhìn lại tuần (máy gửi `[TU-HOC]` tối chủ nhật, hoặc David gọi)
+## Việc 1 — Nhìn lại tuần (máy gửi `[TU-HOC]` 07:00 sáng thứ 6 — ngày tổng kết tuần, hoặc David gọi)
 Máy đã ghi sẵn tín hiệu cuối mỗi phiên (hook `tu-dong-hoa/hoc-lien-tuc/ghi-tin-hieu.py` → `~/.claude/hoc-lien-tuc/tin-hieu.jsonl`), không tốn token.
 1. `python3 -I tu-dong-hoa/hoc-lien-tuc/dem-ky-nang.py 7` → skill dùng nhiều, skill bị sửa nhiều, skill không dùng.
 2. Đọc các dòng 7 ngày qua trong `tin-hieu.jsonl` (chỉ trường `david_sua`, `skill`, `loi_cong_cu`). Gom **điều lặp ≥ 2 lần**: cùng một

@@ -60,4 +60,4 @@ David nhắn Telegram những gì nhớ, biết, cần làm. Phiên Claude Code 
 
 Xem phiên bot: `screen -r so-tay` (thoát: Ctrl-A rồi D). Nhật ký canh: `~/Documents/2-ca-nhan/so-tay/.trang-thai/canh-bot.log`.
 
-**Học từ Hermes** (12/11): tin thoại → `nghe-thoai.sh` (ffmpeg + whisper-cli, mô hình `~/whisper-models/ggml-large-v3-turbo.bin`, ~5 giây, 0 token) · bot nghỉ 30 phút thì canh-bot gõ `/clear` (mục 7, nhớ dấu ở `.trang-thai/da-gon`) · `tu-dong-hoa/tim-phien.py` tìm lại cuộc trò chuyện cũ · `[TU-HOC]` tối chủ nhật 20:00 trong `nhac-viec.md` → bot giao phiên chạy skill `hoc-lien-tuc`.
+**Học từ Hermes** (12/11): tin thoại → `nghe-thoai.sh` (ffmpeg + whisper-cli, mô hình `~/whisper-models/ggml-large-v3-turbo.bin`, ~5 giây, 0 token) · bot nghỉ 30 phút thì canh-bot gõ `/clear` (mục 7, nhớ dấu ở `.trang-thai/da-gon`) · `tu-dong-hoa/tim-phien.py` tìm lại cuộc trò chuyện cũ · `[TU-HOC]` 07:00 sáng thứ 6 trong `nhac-viec.md` → bot giao phiên chạy skill `hoc-lien-tuc`.

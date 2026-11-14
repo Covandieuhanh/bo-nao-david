@@ -11,7 +11,7 @@ các bước để trainer lại**.
 | Nhịp | Làm gì | Ra gì |
 |---|---|---|
 | **Mỗi đêm 23:00** | Script gom phần mới (không tốn token) → Claude phân loại | `kho-du-lieu/ngay/<ngày>.md`, thêm dòng vào `nguyen-lieu.md`, cộng `noi-dau.md` |
-| **Tối chủ nhật 19:00** (trước buổi nhìn lại) | Claude đóng gói từ nguyên liệu tuần | bổ sung gói đang chạy, bài phễu nháp, đề xuất gói mới khi ≥ 5 người cùng gặp một nỗi đau, phiếu tuần, tin Telegram |
+| **Tối chủ nhật 19:00** | Claude đóng gói từ nguyên liệu tuần | bổ sung gói đang chạy, bài phễu nháp, đề xuất gói mới khi ≥ 5 người cùng gặp một nỗi đau, phiếu tuần, tin Telegram |
 
 David chốt 14/11/2026: nhịp đêm + tuần; gói đang chạy tự bổ sung, gói mới chỉ đề xuất khi ≥ 5 người cùng gặp một nỗi đau (khớp mốc phễu); kho thô chỉ ở máy.
 

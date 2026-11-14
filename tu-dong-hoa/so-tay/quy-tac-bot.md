@@ -19,7 +19,7 @@ Tin là **ra việc cho Claude** hoặc **hỏi việc của Claude**: theo mụ
 |---|---|---|
 | `danh-sach-viec.md` | Việc cần làm | `- [ ] việc · hạn <ngày nếu có> · ghi <ngày>`. Xong thì đổi thành `[x]`, thêm `· xong <ngày>`. |
 | `lich-hen.md` | Lịch/hẹn | `- <ngày giờ> · việc · với ai/ở đâu`, xếp theo ngày |
-| `y-tuong.md` | Ý tưởng | `- <ngày> · ý tưởng`. Ý tưởng hay thông tin mới về nghề/hướng đi (của David hoặc người khác góp ý) **ngoài những gì bộ não David đang có**: luôn ghi vào đây, thêm ` · [chờ lọc]` cuối dòng (David 12/11/2026 22:29). Lọc chung trong buổi tổng kết thứ 6 hằng tuần (nhắc 18:00). David nói "lọc ý tưởng" thì liệt kê các dòng `[chờ lọc]`, David chọn giữ → đổi thành `[giữ]` và giao Claude đưa vào bộ não; bỏ → `[bỏ <ngày>]` |
+| `y-tuong.md` | Ý tưởng | `- <ngày> · ý tưởng`. Ý tưởng hay thông tin mới về nghề/hướng đi (của David hoặc người khác góp ý) **ngoài những gì bộ não David đang có**: luôn ghi vào đây, thêm ` · [chờ lọc]` cuối dòng (David 12/11/2026 22:29). Lọc chung trong buổi tổng kết sáng thứ 6 hằng tuần (nhắc 07:30). David nói "lọc ý tưởng" thì liệt kê các dòng `[chờ lọc]`, David chọn giữ → đổi thành `[giữ]` và giao Claude đưa vào bộ não; bỏ → `[bỏ <ngày>]` |
 | `danh-ba.md` | Người | `## Tên người` rồi các dòng `- <ngày> · điều cần nhớ`. Mỗi sáng máy (skill `tong-hop-tin-nhan`) tự thêm điều mới từ tin nhắn, dạng `- <ngày> · điều cần nhớ · (từ tin Zalo/Messenger/Telegram)`; David chỉ cần kể điều không có trong tin. Trước khi ghi lời David, xem mục người đó: đã có cùng ý (kể cả dòng `(từ tin …)`) thì không ghi lại, trả lời `Đã có trong danh bạ (<nguồn> <ngày>), không ghi lại.`; chỉ khác chi tiết thì ghi dòng mới nói rõ chỗ khác. |
 | `kien-thuc.md` | Kiến thức | `## Chủ đề` rồi các dòng `- <ngày> · điều đã biết · nguồn nếu có` |
 | `nhat-ky/<YYYY-MM>.md` | Nhật ký | `- <ngày> · chuyện đã xảy ra, cảm nhận` |
@@ -35,7 +35,7 @@ Khi nhận tin bắt đầu bằng `[TOM-TAT-SANG]` (do máy gửi, không phả
 
 Nhắc đúng giờ do máy gửi thẳng cho David, bạn không phải gửi. David hỏi "bot có ổn không" thì chạy lệnh viec-dang-chay.sh và đọc mục "Sức khoẻ bot".
 
-Khi nhận tin bắt đầu bằng `[TU-HOC]` (máy gửi tối chủ nhật): chạy `bash /Users/moon/Documents/bo-nao-david/tu-dong-hoa/so-tay/giao-viec.sh "Chạy skill hoc-lien-tuc: nhìn lại tuần, sửa skill theo tín hiệu, gửi David bản tóm tắt."`, không gửi gì thêm cho David.
+Khi nhận tin bắt đầu bằng `[TU-HOC]` (máy gửi 07:00 sáng thứ 6): chạy `bash /Users/moon/Documents/bo-nao-david/tu-dong-hoa/so-tay/giao-viec.sh "Chạy skill hoc-lien-tuc: nhìn lại tuần, sửa skill theo tín hiệu, gửi David bản tóm tắt."`, không gửi gì thêm cho David.
 
 David hỏi **chuyện đã bàn với Claude** ("hôm trước mình nói gì về X", "Claude đã làm gì với video Y"): chạy `python3 -I /Users/moon/Documents/bo-nao-david/tu-dong-hoa/tim-phien.py "<từ khoá>" ["<từ khoá 2>"]`, trả lời ngắn từ các đoạn tìm được (giờ in ra là UTC, đổi sang giờ Mac).
 
@@ -64,8 +64,9 @@ Khi nhận tin bắt đầu bằng `[HOI-THOI-QUEN]` (máy gửi ở khung 11:00
 1. Một dòng ghi nhận ngắn những gì David đã báo hôm nay (không kể lại chi tiết).
 2. **Chỉ hỏi những thói quen chưa báo** trong danh sách khung đó. Đã báo đủ thì nói "Khung này anh đã báo đủ rồi." và không hỏi gì thêm.
 3. Khung **20:30**: thêm 1–2 câu lời khuyên lối sống về cafe/thuốc lá David đã dùng hôm nay theo nhật ký (số ly, số điếu, giờ dùng; ví dụ cafe sau 14h ảnh hưởng giấc ngủ, thuốc lá trước giờ ngủ, uống nước, so với hôm trước nếu có). Chưa ghi gì về cafe/thuốc thì hỏi. Lời khuyên viết **kiểu cảnh báo cho nhớ**, nhắc phản ứng riêng của David trong `kien-thuc.md` mục "Cơ thể David với chất kích thích" (nôn nao, ra mồ hôi tay chân). Chỉ là lời khuyên lối sống, không chẩn đoán, không doạ, không giảng dài. Kèm nhắc đi ngủ 21–22h.
-4. Khung **11:00** và **16:00**: thêm 1 dòng "🥗 Bữa tới nên thêm: …" (1–2 món cụ thể, dễ mua ở chỗ David), chọn theo nhóm còn thiếu nhiều nhất của tuần này (từ thứ 2) so với "Đĩa tuần" trong `kien-thuc.md` mục "Dinh dưỡng cân đối". Hôm trước có bia rượu thì ưu tiên rau xanh, hạt, chuối, nước.
-5. Phần "Việc chưa xong: …" trong tin máy (các mục cách nhau bằng ` / `): chép lại xuống cuối tin, mỗi việc một dòng.
+4. **Bữa ăn** (gộp từ nhắc ăn riêng, David 14/11/2026 22:19: hỏi bớt lại): xem lần ăn gần nhất David báo hôm nay. Chưa có bữa của khung (bữa sáng ở khung 11:00, bữa trưa ở 16:00, bữa tối ở 20:30) hoặc đã quá 5 tiếng chưa ăn → thêm 1 dòng "🍽 Lần ăn gần nhất anh báo: <món, giờ> (hoặc: hôm nay chưa báo bữa nào)", kiểu quan tâm, không trách. Đã ăn đủ thì không nhắc.
+5. Khung **11:00** và **16:00**: thêm 1 dòng "🥗 Bữa tới nên thêm: …" (1–2 món cụ thể, dễ mua ở chỗ David), chọn theo nhóm còn thiếu nhiều nhất của tuần này (từ thứ 2) so với "Đĩa tuần" trong `kien-thuc.md` mục "Dinh dưỡng cân đối". Hôm trước có bia rượu thì ưu tiên rau xanh, hạt, chuối, nước.
+6. Phần "Việc chưa xong: …" trong tin máy (các mục cách nhau bằng ` / `): chép lại xuống cuối tin, mỗi việc một dòng.
 Tin ngắn, tiếng Việt, gửi qua Telegram tới chat của David (`allowFrom` trong `~/.claude/channels/so-tay/access.json`). David trả lời thì ghi vào nhật ký như thường.
 
 ## David báo đã ăn gì
@@ -74,14 +75,7 @@ David báo món đã ăn (David 14/11/2026 21:16: "tôi ăn gì sẽ báo bạn"
 
 ## Đo thể trạng
 
-David nhắn "cân X kg, bụng Y cm" (nhắc 07:30 chủ nhật): ghi `kien-thuc.md` mục "Dinh dưỡng cân đối" dòng `- <ngày> · Đo thể trạng: X kg, bụng Y cm · nguồn: David`, rồi trả lời một dòng so với lần đo trước và mốc 14/11 (65 kg, 80 cm). Vòng bụng đứng yên 3 tuần liền thì gợi ý giảm ~150 kcal/ngày hoặc thêm 1 buổi tập.
-
-## Nhắc khi lâu chưa ăn
-
-Khi nhận tin bắt đầu bằng `[NHAC-AN]` (máy gửi 10:00, 14:00, 19:30, không phải David; David 14/11/2026: "có gì nhắc nhở tôi nếu thấy lâu chưa ăn"): đọc nhật ký **hôm nay** tìm lần ăn gần nhất (giờ báo).
-- Đã ăn trong vòng 4 tiếng → **im lặng, không gửi gì**.
-- Chưa có bữa của khung đó (sáng trước 10:00, trưa trước 14:00, tối trước 19:30) hoặc đã quá 5 tiếng chưa ăn → gửi **một tin 2 dòng**: "🍽 Anh ăn gì chưa? Lần ăn gần nhất anh báo: <món, giờ> (hoặc: hôm nay chưa báo bữa nào)." + "Gợi ý: <1–2 món bù nhóm còn thiếu của Đĩa ngày>". Đã ăn mà chưa báo thì David nhắn lại, ghi nhật ký như thường.
-- Nhắc kiểu quan tâm, không trách, không lặp nếu David đã trả lời trong 1 tiếng trước.
+David nhắn "cân X kg, bụng Y cm" (nhắc 07:30 sáng thứ 6, cùng tin tổng kết tuần): ghi `kien-thuc.md` mục "Dinh dưỡng cân đối" dòng `- <ngày> · Đo thể trạng: X kg, bụng Y cm · nguồn: David`, rồi trả lời một dòng so với lần đo trước và mốc 14/11 (65 kg, 80 cm). Vòng bụng đứng yên 3 tuần liền thì gợi ý giảm ~150 kcal/ngày hoặc thêm 1 buổi tập.
 
 ## Điều khiển Claude
 

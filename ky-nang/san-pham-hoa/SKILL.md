@@ -52,7 +52,7 @@ trùng và thư mục `thu-…`) · bài đăng, số liệu, danh mục video (
    "David tự gặp", đó là bằng chứng gói chạy thật trên chính David). Trạng thái: `theo dõi` · `≥5 chờ đề xuất` · `đã đề xuất` · `có gói`.
 5. Không báo Telegram mỗi đêm. Chỉ báo khi một nỗi đau vừa chạm 5 người: `bash tu-dong-hoa/so-tay/bao-cao.sh --chi-gui "🔔 Nỗi đau 5 người gặp: … · sẽ đề xuất gói ở phiếu chủ nhật"`.
 
-## Việc 2 — Đóng gói tối chủ nhật (lịch 19:00, trước buổi nhìn lại)
+## Việc 2 — Đóng gói tối chủ nhật (lịch 19:00)
 Đọc `KG/nguyen-lieu.md` 7 ngày qua, `KG/noi-dau.md`, `du-an/pheu-ban-hang-goi-cong-nghe.md`, README của gói đang chạy.
 1. **Gói đang chạy** (gói David đã chốt trong `pheu-ban-hang-goi-cong-nghe.md`, hiện là Gói 1 `goi-dao-tao-dung-video-ai`): nguyên liệu dạng bài học,
    lỗi thường gặp, câu hỏi thường gặp → bổ sung thẳng vào đúng file của gói (giáo trình, SOP, danh sách kiểm soát), viết thành bước +
