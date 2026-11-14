@@ -13,8 +13,8 @@ Trên Mac chính, skill, hồ sơ, luật và bộ nhớ trong `~/.claude` là l
 
 > Đọc ~/Documents/bo-nao-david/AGENTS.md rồi đọc tiếp theo đúng thứ tự trong đó. Xong thì tóm tắt 3 dòng: tôi là ai, bạn sẽ làm việc với tôi thế nào, việc đang dở là gì. Sau đó hỏi tôi các câu còn mở trong bao-cao-trang-thai.md.
 
-3. Máy tự làm khi thấy app đổi tài khoản: mở Terminal chạy `claude auth login` (anh chọn đúng tài khoản mới, bấm cho phép; bot, giao việc, lịch gom/đóng gói dùng đăng nhập này) và cài lại lịch tổng hợp tin vào tài khoản mới. Kiểm tra: `bash tu-dong-hoa/kiem-tra-tai-khoan.sh`.
-4. Bật lại trong ứng dụng: tiện ích Claude in Chrome đăng nhập đúng tài khoản mới (tổng hợp tin đọc Zalo qua đây), trình duyệt Claude đăng nhập lại Messenger + Telegram Web nếu bị đăng xuất, kết nối Claude Docs nếu cần viết tài liệu. Đăng nhập YouTube, Facebook, TikTok nằm ở hồ sơ Chrome trên máy, không gắn với tài khoản Claude.
+3. Máy tự làm khi thấy app đổi tài khoản: mở Terminal chạy `claude auth login` (anh chọn đúng tài khoản mới, bấm cho phép; bot, giao việc, lịch gom/đóng gói dùng đăng nhập này) (lịch tự chạy dùng chính đăng nhập này, không phải cài lại). Kiểm tra: `bash tu-dong-hoa/kiem-tra-tai-khoan.sh`.
+4. Bật lại trong ứng dụng: tiện ích Claude in Chrome đăng nhập đúng tài khoản mới (tổng hợp tin đọc Zalo, Messenger, Telegram qua đây), kết nối Claude Docs nếu cần viết tài liệu. Đăng nhập YouTube, Facebook, TikTok nằm ở hồ sơ Chrome trên máy, không gắn với tài khoản Claude.
 
 **Không đi theo sang tài khoản mới, và đã sao lưu ở đâu (07/11/2026):**
 
@@ -65,7 +65,7 @@ bash ~/Documents/bo-nao-david/tu-dong-hoa/dong-bo.sh
 | Mô hình Whisper (1,5 GB) | Lệnh tải do `kiem-moi-truong.sh` in ra, lưu ở `~/whisper-models` |
 | `~/.cache/dung-video-theo-phong-cach` (font, dò mặt, môi trường Python, 92 MB) | Các script dựng dùng thư mục này. Chép từ máy cũ cho chắc, hoặc để script báo thiếu rồi cài lại |
 | Bot Telegram Sổ nhớ (chạy 24/7) | Cài plugin Telegram (cai-dat-bo-nao.sh đã cài), dán token bot vào `~/.claude/channels/so-tay/.env` (David giữ token, không lên GitHub), rồi `bash tu-dong-hoa/so-tay/cai-dat.sh`: chép luật + quyền bot, cài launchd `com.david.so-tay`. Nghe tin thoại dùng chung mô hình Whisper ở dòng trên |
-| Lịch tự chạy (gom 23:00, đóng gói thứ 6 06:30, tổng hợp tin nhắn 7:00) | Theo repo, ở `tu-dong-hoa/lich/`. Gom và đóng gói do máy canh bot gọi Claude trong Terminal (cài bot là có). Tổng hợp tin cần trình duyệt của app nên chạy trong app: `cai-dat-bo-nao.sh` cài vào tài khoản app đang mở, đổi tài khoản thì máy canh bot tự cài lại. Kho gom `~/Documents/2-ca-nhan/so-tay/kho-du-lieu/` chỉ ở máy, sao lưu Drive cùng sổ nhớ |
+| Lịch tự chạy (tổng hợp tin 7:00, gom 23:00, đóng gói thứ 6 06:30) | Theo repo: `tu-dong-hoa/lich/lich-chay.md`. Tới giờ máy canh bot mở một phiên hiện trong app Claude (Remote Control, có Claude in Chrome), cài bot là có. Không dùng Scheduled tasks của app (app chỉ đọc lịch lúc khởi động, gắn theo tài khoản). Lần đầu trên máy: chạy `claude --chrome` trong Terminal, bấm Enter ở màn giới thiệu Claude in Chrome rồi `/exit`. Zalo, Messenger, Telegram Web đăng nhập trong Chrome. Kho gom `~/Documents/2-ca-nhan/so-tay/kho-du-lieu/` chỉ ở máy, sao lưu Drive cùng sổ nhớ |
 | Tín hiệu tự học (`~/.claude/hoc-lien-tuc/`) | Có lời chat nên ở lại máy; máy mới tự ghi lại từ đầu (hook do cai-dat-bo-nao.sh cài) |
 | `playwright-cli` | Cài qua npm toàn cục, kiểm tra bằng `playwright-cli --help` |
 | Đăng nhập YouTube, Facebook, TikTok | David tự đăng nhập lại. Hồ sơ Chrome đăng bài ở `~/.cache/david-mxh-chrome` |

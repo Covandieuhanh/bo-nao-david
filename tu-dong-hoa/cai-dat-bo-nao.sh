@@ -51,9 +51,6 @@ lien_ket "$REPO/du-an/danh-muc-noi-dung.md" "$HOME/Movies/_danh-muc-noi-dung/dan
 # Hook đồng bộ 2 chiều: đầu phiên kéo về, cuối phiên đẩy lên
 python3 -I "$REPO/tu-dong-hoa/cai-hook.py" "$REPO"
 
-# Lịch tổng hợp tin nhắn vào app Claude (tài khoản đang mở); lịch khác chạy bằng máy canh bot (tu-dong-hoa/lich/).
-python3 -I "$REPO/tu-dong-hoa/lich/cai-lich-app.py" || true
-
 # Plugin của Claude Code: chỉ Telegram. Mod giao diện đã gỡ hết 13/11/2026 (ghi nhớ quy-tac-mod-tu-chay).
 if command -v claude >/dev/null 2>&1; then
   claude plugin install telegram@claude-plugins-official --scope user >/dev/null 2>&1 && echo "Plugin: telegram" || echo "⚠ Chưa cài được telegram"

@@ -70,4 +70,4 @@ trùng và thư mục `thu-…`) · bài đăng, số liệu, danh mục video (
 7. Cuối việc theo `chuan-muc-lam-viec.md` mục 4 (đẩy GitHub phiếu tuần và phần sửa gói: `bash tu-dong-hoa/dong-bo.sh --push`).
 
 ## Lịch
-Nằm trong repo, không gắn tài khoản: `tu-dong-hoa/lich/lich-chay.md` (gom 23:00 mỗi đêm, đóng gói 06:30 thứ 6), lời giao ở `tu-dong-hoa/lich/loi-giao/`. Máy canh bot gọi Claude trong Terminal tới giờ, không cần mở app; đổi giờ thì sửa đúng file đó.
+Nằm trong repo, không gắn tài khoản: `tu-dong-hoa/lich/lich-chay.md` (gom 23:00 mỗi đêm, đóng gói 06:30 thứ 6), lời giao ở `tu-dong-hoa/lich/loi-giao/`. Tới giờ máy canh bot mở phiên "Lịch · <tên>" hiện trong app Claude; đổi giờ thì sửa đúng file đó.
