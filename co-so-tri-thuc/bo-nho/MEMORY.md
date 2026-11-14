@@ -58,4 +58,4 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 ## Chỉ máy Mac chính (file không lên GitHub)
 
 - [Bố cục thư mục máy này](thiet-bi-bo-cuc-thu-muc.md) — 1-nghe-nghiep, 2-ca-nhan, 9-luu-tru, video-goc, sổ xếp file (07/11)
-- [Dọn Documents 07/11](thiet-bi-don-documents-2026-11-07.md) — App notion đã bỏ; mở phiên ở ~/Documents/David.Claude (07/11)
+- [Dọn Documents 07/11](thiet-bi-don-documents-2026-11-07.md) — App notion đã bỏ; mở phiên ở ~/Documents/bo-nao-david (07/11)

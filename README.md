@@ -1,4 +1,4 @@
-# David.Claude — bộ não dùng chung của David Trần
+# bo-nao-david — bộ não dùng chung của David Trần
 
 Repo riêng tư. AI nào, tài khoản nào đọc xong cũng nhận đúng vai, đúng cách làm việc với David và biết việc đang dở.
 
@@ -8,7 +8,7 @@ Repo riêng tư. AI nào, tài khoản nào đọc xong cũng nhận đúng vai,
 
 ## Câu mở đầu dán cho AI mới
 
-> Đọc file AGENTS.md trong repo Covandieuhanh/David.Claude rồi đọc tiếp theo đúng thứ tự trong đó. Xong thì tóm tắt 3 dòng: tôi là ai, bạn sẽ làm việc với tôi thế nào, việc đang dở là gì.
+> Đọc file AGENTS.md trong repo Covandieuhanh/bo-nao-david rồi đọc tiếp theo đúng thứ tự trong đó. Xong thì tóm tắt 3 dòng: tôi là ai, bạn sẽ làm việc với tôi thế nào, việc đang dở là gì.
 
 ## Muốn tìm… → mở…
 

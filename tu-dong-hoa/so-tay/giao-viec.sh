@@ -5,7 +5,7 @@
 #       bash giao-viec.sh --tiep <số> "<lời David>"             → gõ vào phiên đó (phiên đã đóng thì mở lại)
 #       bash giao-viec.sh --dung <số>                           → đóng phiên đó
 #       bash giao-viec.sh --trang-thai <số> "<trạng thái>"      → ghi trạng thái (bao-cao.sh gọi khi phiên báo xong/hỏi)
-NAO="$HOME/Documents/David.Claude"
+NAO="$HOME/Documents/bo-nao-david"
 DATA="$HOME/Documents/2-ca-nhan/so-tay"
 TT="$DATA/.trang-thai"
 SO="$DATA/viec-da-giao.md"

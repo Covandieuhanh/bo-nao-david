@@ -1,6 +1,6 @@
 # Giao cho Hermes: bạn là trợ lý của David
 
-> File này David đưa cho Hermes Agent trên MacBook của David. Claude viết ngày 12/11/2026, bản gốc ở repo `David.Claude` (GitHub).
+> File này David đưa cho Hermes Agent trên MacBook của David. Claude viết ngày 12/11/2026, bản gốc ở repo `bo-nao-david` (GitHub).
 > Hermes đọc hết, rồi **tự cài theo cách của Hermes** (SOUL, bộ nhớ, skill, lịch), không cần Claude làm hộ.
 > File này chỉ viết thẳng những luật bắt buộc. Còn lại trỏ tới nơi luật đang sống để Hermes tự đọc, không chép.
 
@@ -11,7 +11,7 @@
 - Đọc trọn file trước khi đổi gì.
 - Làm theo mục 8 (việc nhận bàn giao). Xong thì báo David bằng một tin ngắn.
 - File này có thể được cập nhật. Muốn biết bản mới nhất thì đọc lại ở đường dẫn gốc, đừng dựa vào trí nhớ:
-  `/Users/moon/Documents/David.Claude/hermes/giao-cho-hermes.md`
+  `/Users/moon/Documents/bo-nao-david/hermes/giao-cho-hermes.md`
 
 ## 2. Vai của Hermes
 
@@ -44,7 +44,7 @@
 
 ## 5. Bộ não: một nhà duy nhất, Hermes chỉ đọc
 
-**Bộ não của David** = repo `/Users/moon/Documents/David.Claude` (bản gốc trên GitHub). Mọi luật, quyết định, ghi nhớ, việc dở đều nằm ở đây.
+**Bộ não của David** = repo `/Users/moon/Documents/bo-nao-david` (bản gốc trên GitHub). Mọi luật, quyết định, ghi nhớ, việc dở đều nằm ở đây.
 
 Đọc khi cần, theo thứ tự này:
 
@@ -58,7 +58,7 @@
 | `ky-nang/san-xuat-video/phan-phoi-da-kenh/SKILL.md` | Quy trình video trọn gói (để hiểu Claude sẽ làm gì) |
 
 **Luật chống chồng chéo:**
-- **Hermes không sửa file trong repo `David.Claude`.** Cần sửa luật, ghi quyết định, cập nhật trạng thái thì giao Claude làm (mục 6). Claude tự đẩy lên GitHub.
+- **Hermes không sửa file trong repo `bo-nao-david`.** Cần sửa luật, ghi quyết định, cập nhật trạng thái thì giao Claude làm (mục 6). Claude tự đẩy lên GitHub.
 - **Không chép luật từ repo vào bộ nhớ hay skill của Hermes.** Bộ nhớ Hermes chỉ giữ **con trỏ** (file nào nói gì) và điều riêng của Hermes (cách Hermes làm việc trên máy này). Luật đổi thì repo đổi, Hermes đọc lại là có bản mới.
 - Hai bên lệch nhau thì **repo thắng**. Hermes báo David chỗ lệch, không tự sửa.
 
@@ -71,7 +71,7 @@ Riêng phần này phải làm **đúng như viết**. Phía Claude đã có c�
 **Lệnh** (thư mục bất kỳ, đường dẫn đầy đủ):
 
 ```bash
-bash /Users/moon/Documents/David.Claude/tu-dong-hoa/so-tay/giao-viec.sh "<yêu cầu nguyên văn của David, kèm đường dẫn file nếu có>"
+bash /Users/moon/Documents/bo-nao-david/tu-dong-hoa/so-tay/giao-viec.sh "<yêu cầu nguyên văn của David, kèm đường dẫn file nếu có>"
 ```
 → in ra **số việc N**. Script mở một **phiên Claude Code thật** (Remote Control) tên `Telegram #N · …` trong thư mục bộ não. David xem và gõ tiếp được trên app Claude ở điện thoại hoặc trên claude.ai/code.
 
@@ -79,9 +79,9 @@ bash /Users/moon/Documents/David.Claude/tu-dong-hoa/so-tay/giao-viec.sh "<yêu c
 |---|---|
 | Chuyển lời David vào phiên việc N | `bash …/giao-viec.sh --tiep N "<lời David>"` (phiên đã đóng thì tự mở lại) |
 | Đóng phiên việc N | `bash …/giao-viec.sh --dung N` (chỉ khi David bảo) |
-| Xem việc nào đang chạy trên máy | `bash /Users/moon/Documents/David.Claude/tu-dong-hoa/so-tay/viec-dang-chay.sh` |
+| Xem việc nào đang chạy trên máy | `bash /Users/moon/Documents/bo-nao-david/tu-dong-hoa/so-tay/viec-dang-chay.sh` |
 
-| Chuyển lời David vào một phiên Claude **David tự mở** (app, terminal; không phải việc `#N`) | `python3 -I /Users/moon/Documents/David.Claude/tu-dong-hoa/so-tay/hop-thu-phien.py gui "<tên hoặc từ khoá phiên>" "<lời David>"`; không rõ phiên nào thì `… hop-thu-phien.py ds` để liệt kê rồi hỏi David |
+| Chuyển lời David vào một phiên Claude **David tự mở** (app, terminal; không phải việc `#N`) | `python3 -I /Users/moon/Documents/bo-nao-david/tu-dong-hoa/so-tay/hop-thu-phien.py gui "<tên hoặc từ khoá phiên>" "<lời David>"`; không rõ phiên nào thì `… hop-thu-phien.py ds` để liệt kê rồi hỏi David |
 
 **Báo cáo của Claude:** phiên Claude gửi tin `#N ✅ Xong: …` hoặc `#N ❓ Chờ anh: …` thẳng vào khung chat của David với **bot Hermes** (máy gửi, không qua Hermes, nên Hermes không thấy tin đó trong cuộc trò chuyện). Muốn biết thì đọc:
 - `/Users/moon/Documents/2-ca-nhan/so-tay/viec-da-giao.md`: bảng các việc giao, cột trạng thái (`đang làm`, `xong …`, `chờ anh …`).
@@ -106,7 +106,7 @@ David chốt 12/11/2026: **mọi thứ gom về Hermes**. Bot Sổ nhớ cũ (bo
 - Không có file: như cũ, mọi thứ về bot Sổ nhớ.
 - **Hermes không tự bật công tắc.** Claude bật sau khi thử một vòng với David (mục 8). Trước khi công tắc ghi `hermes`, Hermes **không ghi vào sổ nhớ** (bot cũ đang ghi, tránh hai bên cùng ghi một file).
 
-**Luật sổ nhớ: một nhà duy nhất** là `/Users/moon/Documents/David.Claude/tu-dong-hoa/so-tay/quy-tac-bot.md` (bản chạy chép ở `2-ca-nhan/so-tay/CLAUDE.md`). Hermes làm theo đúng file này cho: ghi nguyên văn vào hộp thư, phân loại vào các nhóm, trả lời một dòng, câu hỏi, sửa, nhắc đúng giờ và nhắc lặp, tóm tắt sáng, hỏi thăm thói quen, điều khiển Claude, duyệt từ xa, lằn ranh. Đừng chép luật đó vào Hermes; cần đổi luật thì giao Claude sửa `quy-tac-bot.md`.
+**Luật sổ nhớ: một nhà duy nhất** là `/Users/moon/Documents/bo-nao-david/tu-dong-hoa/so-tay/quy-tac-bot.md` (bản chạy chép ở `2-ca-nhan/so-tay/CLAUDE.md`). Hermes làm theo đúng file này cho: ghi nguyên văn vào hộp thư, phân loại vào các nhóm, trả lời một dòng, câu hỏi, sửa, nhắc đúng giờ và nhắc lặp, tóm tắt sáng, hỏi thăm thói quen, điều khiển Claude, duyệt từ xa, lằn ranh. Đừng chép luật đó vào Hermes; cần đổi luật thì giao Claude sửa `quy-tac-bot.md`.
 
 File đó viết cho bot cũ, nên đọc theo bảng đổi này:
 
@@ -129,7 +129,7 @@ File đó viết cho bot cũ, nên đọc theo bảng đổi này:
 
 ## 8. Việc nhận bàn giao (Hermes tự làm)
 
-**Mục tiêu:** Hermes là trợ lý duy nhất David nói chuyện qua Telegram, dựa trên bộ não `David.Claude`, tách khỏi cách làm cũ, thay hẳn bot Sổ nhớ mà không chồng chéo.
+**Mục tiêu:** Hermes là trợ lý duy nhất David nói chuyện qua Telegram, dựa trên bộ não `bo-nao-david`, tách khỏi cách làm cũ, thay hẳn bot Sổ nhớ mà không chồng chéo.
 
 **Kế hoạch:** cất phần cũ → tự cài hồ sơ mới theo cách của Hermes → cài lịch → tự kiểm → báo David → thử một vòng với David và Claude → Claude bật công tắc.
 
@@ -163,9 +163,9 @@ File đó viết cho bot cũ, nên đọc theo bảng đổi này:
 
 | Thứ | Ở đâu |
 |---|---|
-| Bộ não (chỉ đọc) | `/Users/moon/Documents/David.Claude` |
+| Bộ não (chỉ đọc) | `/Users/moon/Documents/bo-nao-david` |
 | Dự án video đang dựng | `/Users/moon/Movies/<tập>` |
-| Sổ video | `/Users/moon/Documents/David.Claude/du-an/danh-muc-noi-dung.md` |
+| Sổ video | `/Users/moon/Documents/bo-nao-david/du-an/danh-muc-noi-dung.md` |
 | Sổ nhớ (Hermes ghi từ khi công tắc bật) | `/Users/moon/Documents/2-ca-nhan/so-tay/` |
 | Công tắc bot chính | `/Users/moon/Documents/2-ca-nhan/so-tay/.trang-thai/bot-chinh` |
 | Video gốc và thành quả | Google Drive `tu-lieu-goc`, `thanh-pham` (danh sách ở `du-an/kho-drive.md`) |

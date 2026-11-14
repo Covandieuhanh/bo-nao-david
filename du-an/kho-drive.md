@@ -12,7 +12,7 @@ Drive `covandieuhanh@gmail.com` › `Drive của tôi`. Mac chỉ giữ dữ li�
 | `sao-luu-mac/video/<tập>/` | Cả dự án dựng: `1-goc/` (gốc), video-final (mọi bản, đạt hay không), kịch bản, phụ đề, kế hoạch cắt, `phat-hanh/`. File tạm (check, davinci, public, node_modules) đã bỏ: dựng lại được từ gốc + kịch bản |
 | `sao-luu-mac/tai-ve/` | File tải về chưa thuộc tập nào |
 | `sao-luu-mac/tai-lieu/` | `1-nghe-nghiep`, `2-ca-nhan`, `9-luu-tru` (gồm sổ xếp file 07/11), `Obsidian` |
-| `sao-luu-mac/bo-nao/` | `David.Claude` (repo bộ não, cả `.git`) + `bo-nho-claude-tam/` (ghi nhớ Claude theo từng thư mục dự án). Bản gốc bộ não vẫn là GitHub |
+| `sao-luu-mac/bo-nao/` | `bo-nao-david` (repo bộ não, cả `.git`) + `bo-nho-claude-tam/` (ghi nhớ Claude theo từng thư mục dự án). Bản gốc bộ não vẫn là GitHub |
 
 Từ 11/11 chỉ đồng bộ bộ não, video gốc, thành quả video. `sao-luu-mac/tai-ve` và `Documents` là đợt chuyển một lần ngày 11/11, không cập nhật tiếp. Không tải lên: mật khẩu, lịch sử chat thô, bộ nhớ đệm, dữ liệu app, đồ cá nhân.
 

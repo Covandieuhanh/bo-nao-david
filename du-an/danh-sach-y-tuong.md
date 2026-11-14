@@ -17,7 +17,7 @@ Sổ gốc ghi lời nguyên văn: `~/Documents/2-ca-nhan/so-tay/y-tuong.md` và
 
 **Đối chiếu định hướng:**
 - Khớp: david.md 4.1 (12/11) đã mở nhiều kênh, bỏ giới hạn "không kinh doanh". Lõi vẫn là training — đúng thế mạnh "con người" của David; công cụ chỉ là cửa vào.
-- Có sẵn nguyên liệu: chính bộ não David.Claude (skill, bot Telegram, sổ nhớ, tự học) là một "OS cá nhân" chạy thật — có thể là bản mẫu đầu tiên. David đã có người lập trình dựng hạ tầng.
+- Có sẵn nguyên liệu: chính bộ não bo-nao-david (skill, bot Telegram, sổ nhớ, tự học) là một "OS cá nhân" chạy thật — có thể là bản mẫu đầu tiên. David đã có người lập trình dựng hạ tầng.
 - Lệch / rủi ro: David tự nhận không mạnh kinh doanh; Chặng 1 (1–3 ca thật) vẫn là ưu tiên số một; sản phẩm phần mềm cần bảo trì, hỗ trợ khách — tốn năng lượng (luật 4 tiếng/ngày).
 
 **Câu cần chốt:**

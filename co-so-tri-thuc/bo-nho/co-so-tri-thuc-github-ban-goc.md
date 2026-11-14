@@ -1,6 +1,6 @@
 ---
 name: co-so-tri-thuc-github-ban-goc
-description: "GitHub David.Claude là bản gốc của bộ não — có gì mới cho skill/não thì ĐẨY NGAY (bắt buộc); chỉ giữ mẫu, form, luật, hồ sơ; sản phẩm ở lại máy/tài khoản làm ra nó"
+description: "GitHub bo-nao-david là bản gốc của bộ não — có gì mới cho skill/não thì ĐẨY NGAY (bắt buộc); chỉ giữ mẫu, form, luật, hồ sơ; sản phẩm ở lại máy/tài khoản làm ra nó"
 metadata:
   node_type: memory
   type: feedback
@@ -17,4 +17,4 @@ David chốt 07/11/2026: GitHub là bộ não để dùng với bất kỳ tài 
 **Why:** máy nào gắn với thư mục máy đó; GitHub là nơi duy nhất mọi tài khoản cùng đọc, nên não phải luôn mới nhất ở đó.
 **How to apply:** sửa skill/não xong là sync --push trong cùng lượt. Muốn đưa gì lên repo thì hỏi "đây là dữ liệu dùng chung hay sản phẩm?"; dùng chung thì đưa lên. Sản phẩm để `~/Movies` và Drive; trong TRANG-THAI chỉ ghi đường dẫn trên máy. Sửa hồ sơ ở đâu cũng được: `~/.claude/david.md` và `co-so-tri-thuc/david.md` là cùng một file. Liên quan [[co-so-tri-thuc-quy-uoc-dat-ten]].
 
-**Repo và lệnh (gộp từ ghi nhớ `co-so-tri-thuc-repo-david-claude`, 08/11/2026):** https://github.com/Covandieuhanh/David.Claude (Private), bản trên máy `~/Documents/David.Claude`, lập 05/11/2026. David nói **"cập nhật não"** → sửa `bao-cao-trang-thai.md` nếu trạng thái đổi, rồi `bash tu-dong-hoa/dong-bo.sh --push` (quét bí mật, commit, kéo về rồi đẩy lên). Hồ sơ thấu hiểu `co-so-tri-thuc/ho-so-ca-nhan.md` là bản bỏ số nợ và khoản chi; bản có số chỉ ở Drive `sao-luu-claude-2026-11-07/`. Đổi tài khoản Claude: `huong-dan-cai-dat.md` mục 1. **Không đưa lên:** lịch sử chat thô, cookie, `.claude.json`, `~/Documents/mk.csv`, video.
+**Repo và lệnh (gộp từ ghi nhớ `co-so-tri-thuc-repo-david-claude`, 08/11/2026):** https://github.com/Covandieuhanh/bo-nao-david (Private), bản trên máy `~/Documents/bo-nao-david`, lập 05/11/2026. David nói **"cập nhật não"** → sửa `bao-cao-trang-thai.md` nếu trạng thái đổi, rồi `bash tu-dong-hoa/dong-bo.sh --push` (quét bí mật, commit, kéo về rồi đẩy lên). Hồ sơ thấu hiểu `co-so-tri-thuc/ho-so-ca-nhan.md` là bản bỏ số nợ và khoản chi; bản có số chỉ ở Drive `sao-luu-claude-2026-11-07/`. Đổi tài khoản Claude: `huong-dan-cai-dat.md` mục 1. **Không đưa lên:** lịch sử chat thô, cookie, `.claude.json`, `~/Documents/mk.csv`, video.

@@ -8,10 +8,10 @@ Trên Mac chính, skill, hồ sơ, luật và bộ nhớ trong `~/.claude` là l
 
 **Các bước sau khi đăng nhập tài khoản mới:**
 
-1. Trong ứng dụng Claude, mở đúng thư mục `~/Documents/David.Claude` để Claude Code nhận bộ nhớ (bộ nhớ gắn theo đường dẫn thư mục).
+1. Trong ứng dụng Claude, mở đúng thư mục `~/Documents/bo-nao-david` để Claude Code nhận bộ nhớ (bộ nhớ gắn theo đường dẫn thư mục).
 2. Dán câu này vào phiên đầu tiên:
 
-> Đọc ~/Documents/David.Claude/AGENTS.md rồi đọc tiếp theo đúng thứ tự trong đó. Xong thì tóm tắt 3 dòng: tôi là ai, bạn sẽ làm việc với tôi thế nào, việc đang dở là gì. Sau đó hỏi tôi các câu còn mở trong bao-cao-trang-thai.md.
+> Đọc ~/Documents/bo-nao-david/AGENTS.md rồi đọc tiếp theo đúng thứ tự trong đó. Xong thì tóm tắt 3 dòng: tôi là ai, bạn sẽ làm việc với tôi thế nào, việc đang dở là gì. Sau đó hỏi tôi các câu còn mở trong bao-cao-trang-thai.md.
 
 3. Bật lại trong ứng dụng: trình duyệt Claude in Chrome nếu dùng, kết nối Claude Docs nếu cần viết tài liệu. Đăng nhập YouTube, Facebook, TikTok nằm ở hồ sơ Chrome trên máy, không gắn với tài khoản Claude.
 
@@ -33,11 +33,11 @@ brew install gh && gh auth login
 ```
 
 ```bash
-gh repo clone Covandieuhanh/David.Claude ~/Documents/David.Claude
+gh repo clone Covandieuhanh/bo-nao-david ~/Documents/bo-nao-david
 ```
 
 ```bash
-bash ~/Documents/David.Claude/tu-dong-hoa/cai-dat-bo-nao.sh ~/Documents/David.Claude
+bash ~/Documents/bo-nao-david/tu-dong-hoa/cai-dat-bo-nao.sh ~/Documents/bo-nao-david
 ```
 
 `cai-dat-bo-nao.sh` thay `~/.claude/david.md`, `CLAUDE.md`, các skill, thư mục bộ nhớ và sổ danh mục bằng **lối tắt trỏ vào repo** (bản cũ sao lưu vào `~/.claude/backups/`), rồi cài hook đồng bộ 2 chiều: đầu phiên kéo từ GitHub về, cuối phiên đẩy lên. Từ đó máy và GitHub luôn là một bộ não.
@@ -47,12 +47,12 @@ Bộ nhớ của Claude Code gắn theo thư mục dự án. Tham số cuối l�
 Đồng bộ tay bất cứ lúc nào:
 
 ```bash
-bash ~/Documents/David.Claude/tu-dong-hoa/dong-bo.sh
+bash ~/Documents/bo-nao-david/tu-dong-hoa/dong-bo.sh
 ```
 
 ## 3. AI khác hoặc Claude bản web
 
-- Có kết nối GitHub: cấp quyền cho repo `Covandieuhanh/David.Claude`, rồi dán câu mở đầu trong `README.md`.
+- Có kết nối GitHub: cấp quyền cho repo `Covandieuhanh/bo-nao-david`, rồi dán câu mở đầu trong `README.md`.
 - Không có kết nối GitHub: tải ZIP của repo, hoặc tải riêng `AGENTS.md`, `co-so-tri-thuc/david.md`, `bao-cao-trang-thai.md`, `ky-nang/thu-thap-yeu-cau/SKILL.md`.
 - AI bản web không chạy được lệnh trên máy: làm được phần lọc, kế hoạch, viết bài; không dựng được video.
 

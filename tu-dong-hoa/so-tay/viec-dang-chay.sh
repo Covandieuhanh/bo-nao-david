@@ -85,7 +85,7 @@ for pid, (pp, et, cmd) in P.items():
     if not m:
         sm = re.search(r"--(?:session-id|resume) (\S+)", cmd)
         try: cwd = os.readlink(f"/proc/{pid}/cwd")
-        except Exception: cwd = os.path.expanduser("~/Documents/David.Claude")
+        except Exception: cwd = os.path.expanduser("~/Documents/bo-nao-david")
         if sm: m = {"cliSessionId": sm.group(1), "cwd": cwd}
     tom = (m.get("postTurnSummary") or {}).get("status_detail", "")
     can = (m.get("postTurnSummary") or {}).get("needs_action", "")

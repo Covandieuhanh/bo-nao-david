@@ -190,7 +190,7 @@ while true; do
   # Phiên việc giao qua Telegram nghỉ quá 12 giờ thì đóng cho nhẹ máy (lịch sử vẫn còn trong app Claude; nhắn tiếp thì tự mở lại).
   screen -ls 2>/dev/null | grep -oE '\.viec-[0-9]+' | tr -d '.' | sed 's/viec-//' | while read -r N; do
     SIDV=$(grep "^| $N |" "$DATA/viec-da-giao.md" 2>/dev/null | awk -F'|' '{gsub(/ /,"",$5); print $5}')
-    F="$HOME/.claude/projects/-Users-moon-Documents-David-Claude/$SIDV.jsonl"
+    F="$HOME/.claude/projects/-Users-moon-Documents-bo-nao-david/$SIDV.jsonl"
     if [ -n "$SIDV" ] && [ -f "$F" ] && [ $(( BAY - $(stat -f %m "$F") )) -gt 43200 ]; then
       bash "$GOC/giao-viec.sh" --dung "$N" >/dev/null; bash "$GOC/giao-viec.sh" --trang-thai "$N" "đã đóng (nghỉ 12 giờ)"; ghi "dong viec $N"
     fi

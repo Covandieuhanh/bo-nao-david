@@ -48,7 +48,7 @@ video); video dài xem kỹ 60 s đầu + ảnh thumbnail. Ngoài 20 video có m
 9. **Màn kết YouTube 15–20 s** có 2 video đề xuất + nút đăng ký (T2, T10, T16, T17, T20) — 5/10 video dài.
 10. **Thẻ chương** cho từng mẹo/bước trong video dài (T11 "BETTER SLEEP").
 
-## 3. Đề xuất sửa skill (chờ duyệt — số khớp `luu-tru/de-xuat-skill-video-2026-11-04.md` (repo David.Claude, đã áp xong))
+## 3. Đề xuất sửa skill (chờ duyệt — số khớp `luu-tru/de-xuat-skill-video-2026-11-04.md` (repo bo-nao-david, đã áp xong))
 
 - **TH-1 Video dài (> 3 phút) chỉ cắt khoảng lặng ≥ 1,2 s** (giữ nhịp trò chuyện như Wynn Tran, Vương Phạm, Tuấn Thầy Thuốc);
   video ngắn giữ mức 0,45 s. *Điều chỉnh luật jump cut vừa áp hôm nay theo số liệu Việt.*

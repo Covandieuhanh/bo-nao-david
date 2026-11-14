@@ -15,13 +15,13 @@
       "Glob",
       "Grep",
       "mcp__plugin_telegram_telegram",
-      "Bash(bash /Users/moon/Documents/David.Claude/tu-dong-hoa/so-tay/giao-viec.sh:*)",
-      "Bash(bash /Users/moon/Documents/David.Claude/tu-dong-hoa/so-tay/viec-dang-chay.sh)",
-      "Read(~/Documents/David.Claude/**)",
-      "Bash(python3 -I /Users/moon/Documents/David.Claude/tu-dong-hoa/so-tay/hop-thu-phien.py:*)",
-      "Bash(bash /Users/moon/Documents/David.Claude/tu-dong-hoa/so-tay/viec-dang-chay.sh --gon)",
-      "Bash(bash /Users/moon/Documents/David.Claude/tu-dong-hoa/so-tay/nghe-thoai.sh:*)",
-      "Bash(python3 -I /Users/moon/Documents/David.Claude/tu-dong-hoa/tim-phien.py:*)"
+      "Bash(bash /Users/moon/Documents/bo-nao-david/tu-dong-hoa/so-tay/giao-viec.sh:*)",
+      "Bash(bash /Users/moon/Documents/bo-nao-david/tu-dong-hoa/so-tay/viec-dang-chay.sh)",
+      "Read(~/Documents/bo-nao-david/**)",
+      "Bash(python3 -I /Users/moon/Documents/bo-nao-david/tu-dong-hoa/so-tay/hop-thu-phien.py:*)",
+      "Bash(bash /Users/moon/Documents/bo-nao-david/tu-dong-hoa/so-tay/viec-dang-chay.sh --gon)",
+      "Bash(bash /Users/moon/Documents/bo-nao-david/tu-dong-hoa/so-tay/nghe-thoai.sh:*)",
+      "Bash(python3 -I /Users/moon/Documents/bo-nao-david/tu-dong-hoa/tim-phien.py:*)"
     ],
     "deny": [
       "WebFetch",

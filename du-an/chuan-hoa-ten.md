@@ -158,7 +158,7 @@ giữ ý, sửa từ nào lệch thuật ngữ (ví dụ `co-so-tri-thuc-github-
 
 ## 7. Không đổi (lý do kỹ thuật hoặc riêng tư)
 
-- `~/Documents/David.Claude` (thư mục bộ não): đổi tên làm mất liên kết bộ nhớ tự động và lịch sử phiên của app Claude.
+- `~/Documents/bo-nao-david` (thư mục bộ não): đổi tên làm mất liên kết bộ nhớ tự động và lịch sử phiên của app Claude.
 - Tên chuẩn bắt buộc của công cụ: `SKILL.md`, `README.md`, `CLAUDE.md`, `AGENTS.md`, `MEMORY.md`, `huong-dan-cai-dat.md`, `package.json`, `settings.json`, `.gitignore`, và thư mục con `scripts/ references/ assets/ src/` trong mỗi skill (Claude và Node tìm đúng tên này).
 - Mã nguồn (`.py .sh .js .jsx .mjs .swift`): tên file là tên lệnh trong code ❓. Đề xuất **giữ**, vì đổi là phải sửa mọi lệnh gọi mà không giúp người mở file. David muốn đổi luôn thì mình đổi theo bảng.
 - Skill bên ngoài cài vào: `playwright-cli`, `thiet-ke-trang-cuon` (đổi thì lần cập nhật sau bị lệch).

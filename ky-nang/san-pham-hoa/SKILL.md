@@ -71,5 +71,5 @@ trùng và thư mục `thu-…`) · bài đăng, số liệu, danh mục video (
 
 ## Lịch (cài lại trên máy mới)
 Hai lịch trong app Claude (Scheduled tasks), chạy khi app đang mở; app tắt lúc tới giờ thì chạy lúc mở lại:
-- `gom-phan-loai-dem`: `0 23 * * *` · lời giao: "Làm việc trong thư mục /Users/moon/Documents/David.Claude. Chạy skill san-pham-hoa, Việc 1 (phân loại mỗi đêm)."
-- `dong-goi-tuan`: `0 19 * * 0` · lời giao: "Làm việc trong thư mục /Users/moon/Documents/David.Claude. Chạy skill san-pham-hoa, Việc 2 (đóng gói tối chủ nhật)."
+- `gom-phan-loai-dem`: `0 23 * * *` · lời giao: "Làm việc trong thư mục /Users/moon/Documents/bo-nao-david. Chạy skill san-pham-hoa, Việc 1 (phân loại mỗi đêm)."
+- `dong-goi-tuan`: `0 19 * * 0` · lời giao: "Làm việc trong thư mục /Users/moon/Documents/bo-nao-david. Chạy skill san-pham-hoa, Việc 2 (đóng gói tối chủ nhật)."
