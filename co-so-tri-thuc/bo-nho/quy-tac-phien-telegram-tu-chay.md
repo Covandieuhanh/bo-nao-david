@@ -10,3 +10,5 @@ Phiên việc giao qua Telegram: xoá file, cài/gỡ phần mềm, sửa cấu 
 **Why:** 12/11/2026 David vừa đồng ý 3 yêu cầu xin phép GA36, V52X, FNDA: "tôi thấy mấy yêu cầu này cần phải tự động vì đa phần tôi đều đồng ý với các đề xuất rồi, nên không cần phải hỏi như thế này cho các trường hợp tương tự sau nữa nhé. tôi chỉ quan tâm kết quả thôi". Bản 11/11 (mọi việc rủi ro đều hỏi) đã bỏ.
 
 **How to apply:** việc mới bị hỏi mà David hay đồng ý → chuyển mẫu đó sang mức tự chạy. Liên quan [[quy-tac-goi-y-de-david-chon]], [[quy-tac-skill-tu-cai-tien]].
+
+**14/11/2026 (việc #14):** "từ giờ có mở phiên hãy mở công khai để trên app cũng thấy nhé, tôi còn tiện theo dõi. Và cập nhật thêm là các phiên cứ xong hoàn chỉnh rồi, hỏi xác nhận tôi nếu xong rồi thì có thể đóng phiên cho đỡ nhiều. vì cái gì cũng lưu vào file ở máy rồi nên không lo" → mọi phiên tự bật Remote Control (`remoteControlAtStartup`, `cai-hook.py`); xong hoàn chỉnh thì hỏi "Đóng phiên nhé?", David đồng ý thì đóng (`chuan-muc-lam-viec.md` mục 5, `giao-viec.sh`, `quy-tac-bot.md`).

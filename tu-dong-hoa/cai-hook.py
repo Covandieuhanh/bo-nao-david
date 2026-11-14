@@ -36,4 +36,7 @@ for khoa, (cmd, dau) in can.items():
 # Tự tóm tắt hội thoại sớm hơn (60 % cửa sổ): hội thoại càng dài Claude càng dễ sót (bài học "1000 giờ Claude", 14/11/2026)
 cfg.setdefault("env", {})["CLAUDE_AUTOCOMPACT_PCT_OVERRIDE"] = "60"
 print("Tự tóm tắt hội thoại ở 60 % cửa sổ")
+# Mọi phiên mở ra đều bật Remote Control để hiện trong app Claude (điện thoại, claude.ai/code) cho David theo dõi (David 14/11/2026)
+cfg["remoteControlAtStartup"] = True
+print("Mọi phiên tự bật Remote Control (hiện trong app)")
 json.dump(cfg, open(p, "w"), ensure_ascii=False, indent=2)

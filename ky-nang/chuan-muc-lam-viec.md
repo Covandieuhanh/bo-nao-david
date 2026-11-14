@@ -85,7 +85,7 @@ Mục tiêu của David: **đưa tài nguyên vào, nhận kết quả**. Các l
 |---|---|
 | Việc tiếp theo lớn, hoặc David đưa việc mới khác hẳn việc đang làm | Đề nghị mở phiên mới, ghi sẵn bước tiếp ở file theo dõi |
 | Phiên đã dài, hoặc đã tự tóm tắt mà việc chưa xong | Viết lời bàn giao trong một khung để dán vào phiên mới: đã xong · còn lại theo thứ tự · file ở đâu · đã chốt kèm lý do |
-| Việc chính của phiên đã xong, hoặc phiên đã tự tóm tắt hội thoại | Nhắc "cập nhật não" rồi đóng phiên |
+| Việc chính của phiên đã xong hoàn chỉnh (đã lưu file, đã đẩy GitHub) | Hỏi David một dòng "Xong rồi, đóng phiên này nhé?"; David đồng ý thì đóng (việc `#N`: `giao-viec.sh --dung N`). Phiên đã tự tóm tắt mà việc chưa xong: dòng bàn giao ở trên |
 | David quay lại phiên cũ sau nhiều giờ để làm việc mới | Đề nghị phiên mới, vì phiên cũ nạp lại tốn hơn |
 | Tin nhắn thiếu một trong ba điều: việc gì, file nào, muốn ra cái gì | Tự suy từ tài nguyên và skill (mục 2); chỉ hỏi khi không đoán được việc gì |
 | David dán log hoặc văn bản dài | Vẫn làm; cuối việc nhắc lần sau chỉ cần đưa đường dẫn file |

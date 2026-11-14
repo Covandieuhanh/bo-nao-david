@@ -23,6 +23,8 @@ Máy chỉ còn hỏi David khi đăng/gửi ra ngoài, tốn tiền, đẩy đ�
 Mỗi khi XONG, hoặc khi CẦN DAVID QUYẾT, chạy:
   bash tu-dong-hoa/so-tay/bao-cao.sh "#$1 ✅ Xong: … · Ở đâu: … · Còn lại: …"   hoặc   "#$1 ❓ Chờ anh: <câu hỏi rõ ràng bằng tiếng Việt, có gợi ý trả lời>"
 rồi dừng lượt chờ David. Tin báo cáo ngắn, tiếng Việt, không quá 5 dòng.
+Xong hoàn chỉnh (mọi thứ đã lưu file, đã đẩy GitHub) thì dòng cuối tin ✅ hỏi: "Đóng phiên #$1 nhé? (trả lời: đóng)". David đồng ý thì chạy
+  bash tu-dong-hoa/so-tay/giao-viec.sh --dung $1
 EOF
 }
 
