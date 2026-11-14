@@ -16,7 +16,7 @@
 |---|---|---|---|
 | **Tự quay có người nói** (talking-head, ngang hoặc dọc) | thấy người trong hình; chưa có chữ/phụ đề đốt sẵn | hình người nói, khung dọc bám người nói, phủ hiệu ứng như skill gốc | bước 7A — `dung-video-theo-phong-cach` |
 | **Podcast / video toàn đồ hoạ** (sân khấu, sóng âm, thẻ — vd. bản dựng của `dung-podcast`) | không có người; đồ hoạ, phụ đề, thanh thời gian đốt sẵn | podcast đồ hoạ **dọc** dựng lại từ tiếng gốc, cùng phong cách + tên tập (`STAGE`) + người nói của bản gốc | bước 7B — `dung-podcast` |
-| **Video đã dựng có người nói** (bản `dung-video-theo-phong-cach` đã phủ chữ/phụ đề) | có người + chữ/phụ đề đốt sẵn | như hàng 1, nhưng dựng từ **bản sạch** `davinci/media/video_goc.mp4` của dự án gốc (không chồng 2 lớp chữ) | bước 7A |
+| **Video đã dựng có người nói** (bản `dung-video-theo-phong-cach` đã phủ chữ/phụ đề) | có người + chữ/phụ đề đốt sẵn | như hàng 1, nhưng dựng từ **bản sạch** `tu-lieu/video-goc.mp4` của dự án gốc (không chồng 2 lớp chữ) | bước 7A |
 | Không rõ / đã đốt chữ mà không tìm được dự án gốc | — | **hỏi David** bản thô hoặc thư mục dự án; không phủ thêm phụ đề lên phụ đề | — |
 
 Cắt thẳng hình đồ hoạ ngang rồi đặt vào khung dọc là **không đạt** (chữ nhỏ, bố cục ngang vỡ, thanh thời gian hiện thời lượng
@@ -27,14 +27,14 @@ bản dài) — luôn dựng lại.
 zsh $BASE/scripts/kiem-moi-truong.sh
 zsh $SKILL/scripts/tao-doan-noi-bat.sh "<thư mục dự án gốc | video dài>" <tên-ngắn> ["<phụ đề .srt/.vtt>"]   # chạy nền; dòng cuối = $P
 ```
-→ `~/Movies/tap-<tên>/3-doan-noi-bat/`: `nguon.<ext>`, `loai.txt` (podcast · tu-quay · chua-ro), `check/goc/`: `transcript.srt`, `words.srt`,
-`loud05.txt` (độ lớn tiếng mỗi 0,05 s), `contact.jpg`; từ dự án gốc thêm `captions-goc.js` (lời đã sửa chính tả — nguồn chữ chính),
+→ `~/Movies/tap-<tên>/3-doan-noi-bat/`: `nguon.<ext>`, `loai.txt` (podcast · tu-quay · chua-ro), `kiem-tra/goc/`: `ban-chep-loi.srt`, `moc-tung-tu.srt`,
+`am-luong-05.txt` (độ lớn tiếng mỗi 0,05 s), `bang-khung-hinh.jpg`; từ dự án gốc thêm `captions-goc.js` (lời đã sửa chính tả — nguồn chữ chính),
 `scenes-goc.js` (tên tập, người nói, kịch bản gốc), `du-an-goc.txt`. Đưa file video → chép lời bằng whisper.cpp + `large-v3-turbo`
-(không dùng faster-whisper/pip); `loai.txt = chua-ro` → xem `contact.jpg` rồi quyết theo bảng bước 0.
+(không dùng faster-whisper/pip); `loai.txt = chua-ro` → xem `bang-khung-hinh.jpg` rồi quyết theo bảng bước 0.
 Whisper bịa câu ở đoạn không lời ("Hãy subscribe cho kênh…") — bỏ, không dùng làm câu chọn.
 
 ### 2. Bản đồ cả video (bắt buộc, trước khi chọn câu)
-Đọc HẾT lời (ưu tiên `captions-goc.js`, không có thì transcript; sửa chính tả bằng `youtube.srt`), ghép thành câu hoàn chỉnh,
+Đọc HẾT lời (ưu tiên `captions-goc.js`, không có thì transcript; sửa chính tả bằng `phu-de-youtube.srt`), ghép thành câu hoàn chỉnh,
 rồi ghi đầu `$P/ke-hoach-cat.md`:
 - **Nỗi đau** video giải quyết và **lời hứa cốt lõi** — mỗi thứ một câu nguyên văn kèm mốc.
 - **Lời kêu gọi**: liệt kê MỌI câu kêu gọi kèm mốc, xếp theo độ mạnh; đánh dấu **lời kêu gọi chính** (việc người nói muốn người xem
@@ -100,7 +100,7 @@ Clip không có câu HANHDONG hoặc KEUGOI dùng được → không dừng: k�
 (`cat-doan-noi-bat` luật 4); không thêm chữ, không ghép câu kêu gọi từ chỗ khác.
 
 ### 6. Cắt ghép + tự kiểm
-Viết `$P/phuong-an.json` — mỗi clip một mục trong `options` (A, B, C…), câu **theo thứ tự phát trong clip**; mốc `start`/`end` = chữ đầu / chữ cuối của câu (tra `check/goc/words.srt`),
+Viết `$P/phuong-an.json` — mỗi clip một mục trong `options` (A, B, C…), câu **theo thứ tự phát trong clip**; mốc `start`/`end` = chữ đầu / chữ cuối của câu (tra `kiem-tra/goc/moc-tung-tu.srt`),
 `text` = nguyên văn câu (từ captions-goc.js nếu có):
 ```json
 {"options": [

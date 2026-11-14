@@ -58,9 +58,9 @@
   chép lại với tiếng đã lọc (`highpass=f=120,dynaudnorm`); còn ảo thì thêm `-mc 0` (tắt ngữ cảnh) và chép riêng đoạn đầu rồi ghép.
 - Chỉ cắt vài đoạn (lời chào) ở video dài → **không chép lại** bản sạch: `doi-moc-loi.py "$P"` dời lời bản thô sang mốc bản sạch.
   Đặt mốc cắt ở khoảng lặng thật (đo RMS 50 ms), không theo mốc từ của Whisper (lệch ~0,3–0,5 s → lẹm chữ "Đò").
-- Bản thô đổi tên thành `video_goc_raw.<ext>` TRƯỚC khi ghi `video_goc.mp4` — macOS coi `video_goc.MP4` và
-  `video_goc.mp4` là một file, ghi thẳng sẽ đè mất bản gốc đang đọc.
-- Mốc trong `cuts.json` luôn là mốc **bản thô**; mốc trong canh.js là mốc **bản sạch** — quy đổi qua `segments.json`.
+- Bản thô đổi tên thành `video-goc-tho.<ext>` TRƯỚC khi ghi `video-goc.mp4` — macOS coi `video-goc.MP4` và
+  `video-goc.mp4` là một file, ghi thẳng sẽ đè mất bản gốc đang đọc.
+- Mốc trong `diem-cat.json` luôn là mốc **bản thô**; mốc trong canh.js là mốc **bản sạch** — quy đổi qua `cac-doan.json`.
 - Whisper kéo dài mốc cuối từ vào khoảng lặng → tìm khoảng lặng bằng `silencedetect` (ngưỡng = nền ồn + 12 dB),
   không bằng khoảng cách giữa các từ.
 - Mỗi đoạn có fade âm 15–30 ms ở hai đầu, không thì mối cắt kêu "tách".
@@ -72,10 +72,10 @@
 - Component luôn vẽ trên toạ độ khung dọc 1080×1920; khung ngang chỉ do `bo-cuc.js` (Place) thu/đặt lại → đừng sửa
   toạ độ trong component cho khung ngang. Loại cảnh toàn màn hình mới phải thêm vào `FULL` trong bo-cuc.js.
 - Pillar: `Scrim` tự tắt (nền hai bên đã tối); `hai-ben` render H.264 đặc (không alpha) ~1,3× thời lượng video.
-- Dò mặt: Vision (`nhan-dien-khuon-mat.swift`) — biên dịch lần đầu ~2 phút, lưu ở `~/.cache/dung-video-theo-phong-cach/faces`.
+- Dò mặt: Vision (`nhan-dien-khuon-mat.swift`) — biên dịch lần đầu ~2 phút, lưu ở `~/.cache/dung-video-theo-phong-cach/khuon-mat`.
 - Khung cắt dọc đổi vị trí bằng `sendcmd` + `crop@rf x` (crop nhận lệnh x); đường dẫn file lệnh không được có dấu `:`.
 - Người nói đoán theo độ cử động miệng (độ lệch chuẩn của độ mở môi trong câu) — hai người cùng cười/nói chen nhau
-  dễ sai → shot `?` trong plan.md phải đọc câu nói để quyết.
+  dễ sai → shot `?` trong ke-hoach.md phải đọc câu nói để quyết.
 - `kiem-khung-hinh.sh` với mốc vượt thời lượng video → lỗi "Could not open encoder" và giữ sheet CŨ; mốc phải < thời lượng.
 
 ## Nội dung chữ
@@ -121,7 +121,7 @@
 
 ## Phụ đề
 - Lần chạy Whisper theo từ (`-ml 1`) và theo câu cho kết quả khác nhau; cả hai đều có thể đè câu bịa lên câu thật cuối
-  video ("Hãy subscribe cho kênh Ghiền Mì Gõ…" ở chỗ David nói "Xin chào") → đối chiếu lần chạy ở `check/clean/`.
+  video ("Hãy subscribe cho kênh Ghiền Mì Gõ…" ở chỗ David nói "Xin chào") → đối chiếu lần chạy ở `kiem-tra/lam-sach/`.
 - Khung chữ phụ đề rộng ~37 ký tự ở cỡ 42 px; dòng dài hơn thì `textWrap: 'balance'` chia đều 2 dòng, tránh rơi 1 chữ.
 
 ## Giao tiếp
@@ -131,9 +131,9 @@
 ## Chế độ ghép nhiều clip
 - **macOS không phân biệt hoa/thường tên file**: `chuong-trinh.jsx` và `show.js` là MỘT file → import nhầm, lỗi
   "A value of `undefined` was passed to the `component` prop". Đặt tên khác hẳn (chuong-trinh.jsx + danh-sach-cat.js).
-- **Whisper bịa câu khi không có lời** ("Hãy subscribe cho kênh Ghiền Mì Gõ…" lặp cả clip) → so với `loud.txt`,
+- **Whisper bịa câu khi không có lời** ("Hãy subscribe cho kênh Ghiền Mì Gõ…" lặp cả clip) → so với `am-luong.txt`,
   cắt đoạn có tiếng rồi chạy lại với `-mc 0`.
-- Clip iPhone có metadata xoay (−90°): ffmpeg tự áp khi chuẩn hoá (tao-dung-ghep.sh) → luôn dùng `public/clips/cN.mp4`,
+- Clip iPhone có metadata xoay (−90°): ffmpeg tự áp khi chuẩn hoá (tao-dung-ghep.sh) → luôn dùng `public/doan-video/cN.mp4`,
   không đưa .MOV gốc vào Remotion.
 - Đoạn máy cầm ngang: xoay riêng bằng `transpose=2` (mặt đất bên trái → xuống dưới) hoặc `transpose=1`, kiểm bằng 1 khung.
 - Remotion 4.0.5xx: `startFrom` đã đổi tên thành `trimBefore` (OffthreadVideo, Audio).
@@ -156,7 +156,7 @@
 - `cite` có `{label: undefined}` → JSON thành `{}`: kiểm `'cite' in s`, đừng `s.get('cite')`.
 
 ## Highlight (dùng chung template với cat-doan-noi-bat)
-- `motion/src/doan-noi-bat.js` = null ở mọi dự án thường; có dữ liệu (ap-dung-doan-noi-bat.py) thì phụ đề hiện thanh tập gốc + hiệu ứng tua
+- `chuyen-dong/src/doan-noi-bat.js` = null ở mọi dự án thường; có dữ liệu (ap-dung-doan-noi-bat.py) thì phụ đề hiện thanh tập gốc + hiệu ứng tua
   (tua.jsx, chỉ khi bật `--tua`) và xem-truoc-ban-dung.py trộn `assets/hieu-ung-am-thanh/tua.wav`. Sửa Captions/Timeline → chụp thử cả dự án thường lẫn highlight.
 - xem-truoc-ban-dung.py: chỉ số đầu vào của màn nguồn ảnh phải đếm sau mọi tiếng hiệu ứng (trước đây cố định n + 1 → sai khi có ting).
 - Highlight ở video người nói: phụ đề lên 40 px nhường thanh tập gốc → dải lớp phủ phải dừng sớm 40 px (CAP_H = 180 trong bo-cuc.js
@@ -169,7 +169,7 @@
 - tao-dung-ghep.sh: lưới khung mỗi 13 s — phần dư cuối < 0,6 s (clip 13,17 s) không ra khung nào → ffmpeg lỗi, cả dự án dừng (gặp ở vlog leo núi 48 clip) → bỏ phần dư đó.
 - Montage: lớp chữ toạ độ cố định (thẻ địa điểm top 1060…) đè phụ đề 2 dòng → canh đáy vào `LOW_Y`.
 - Hình lật ngang/lộn ngược lúc rút máy khỏi túi có độ sáng/độ tương phản/YDIF như cảnh đi bộ thường → không dò bằng signalstats;
-  chỉ bắt được bằng mắt trên `check/segs/` (c13 vlog leo núi).
+  chỉ bắt được bằng mắt trên `kiem-tra/cac-doan/` (c13 vlog leo núi).
 - Remotion `bundle()` chép CẢ `public/` (clip gốc) vào thư mục tạm mỗi lần chạy, không tự xoá → vlog 48 clip: 205 bản sót, đầy ổ,
   render kẹt/ENOSPC. Mọi script render/stills giờ `fs.rmSync(serveUrl)` ở cuối; script tự viết thêm cũng phải dọn.
 - Chữ đè phụ đề lặp nhiều lần (thẻ địa điểm, danh sách `chips`): nguyên nhân chung = đặt vị trí bằng ƯỚC
@@ -177,13 +177,13 @@
   vào LOW_Y (translateY(-100%)) để khối mọc lên; chữ một dòng thì tự thu cỡ theo mục dài nhất; chuong-trinh.jsx chặn cứng mọi lớp không
   toàn màn hình ở mép trên dải phụ đề (lưới an toàn, như bo-cuc.js chế độ 1 video / PF.contentBottom podcast). Chụp soát ở CUỐI mỗi
   lớp (danh-sach-cat-vlog.py in sẵn mốc), không chụp lúc mới hiện.
-- Sửa `thu-vien-tai-nguyen/` khi dự án ĐÃ tạo: dự án giữ bản chép thật (`cp -RL`) → chép file vừa sửa vào `<dự án>/motion/src/lib/` rồi mới chụp/render (đã gặp: Illus lưới 2 cột chưa vào dự án VF3).
+- Sửa `thu-vien-tai-nguyen/` khi dự án ĐÃ tạo: dự án giữ bản chép thật (`cp -RL`) → chép file vừa sửa vào `<dự án>/chuyen-dong/src/thu-vien/` rồi mới chụp/render (đã gặp: Illus lưới 2 cột chưa vào dự án VF3).
 
 ## Điểm nhấn trên người `nhan`
 - Selfie vừa đi vừa quay: mặt xê dịch 30–40% chiều ngang trong một cảnh → đặt chữ theo trung vị mặt sẽ đè mặt. `vi-tri-nhan.py` ghi
   khoảng mặt (`l`, `r` = phân vị 10/90 suốt cảnh), nhan.jsx đặt chữ ngoài khoảng đó + chừa 0,3 bề rộng mặt.
 - Khung ngang KHÔNG đặt chữ dưới cằm (đè miệng + phụ đề). Hết chỗ → chữ tự thu cỡ cho vừa; chữ dài thì ngắt 2 dòng (≤ 9 ký tự / dòng) để giữ cỡ to.
-- Chụp thử `nhan` bằng xem-truoc.mjs không thấy zoom (zoom làm ở xem-truoc-ban-dung.py) → soát trên video-final.mp4 ở vài mốc trong cảnh.
+- Chụp thử `nhan` bằng xem-truoc.mjs không thấy zoom (zoom làm ở xem-truoc-ban-dung.py) → soát trên video-hoan-chinh.mp4 ở vài mốc trong cảnh.
 
 - **Bố cục "người thu vào ô" (khung ngang): thẻ chữ canh giữa vùng trống bị đẩy lên đè dấu góc kênh** (BrandMark ở top 228 px) khi thẻ cao. Vùng nội dung giờ bắt đầu từ `max(SAFE.top, 320)`. Soát bằng ảnh rải đều cả video, không chỉ ảnh giữa cảnh.
 
@@ -198,7 +198,7 @@ người nói chưa từng chạy với dấu góc. Không do bài học video m
 
 ## Video nhiều người / phỏng vấn (video "5 nguyên tắc", 2 người ngồi bàn)
 - Bản cũ chỉ giữ MẶT LỚN NHẤT → không biết có người thứ hai: thẻ `the-canh` đè mặt khách, ô `o-nguoi` (ô đứng, tâm theo mặt chủ) cắt
-  nửa mặt khách. Nay `vi-tri-nhan.py` ghi mọi người + người đang nói; graphic đi qua `lib/cho.js`.
+  nửa mặt khách. Nay `vi-tri-nhan.py` ghi mọi người + người đang nói; graphic đi qua `thu-vien/cho.js`.
 - Người quay nghiêng: Vision hay mất mặt → `vi-tri-nhan.py` lấy chỗ ngồi quen của người đó (`uoc: true`). Máy quay di chuyển nhiều
   (vlog đi bộ 2 người) thì cách gom chỗ ngồi theo bề ngang không còn đúng — soát kỹ khung.
 - Ghép giọng với người: so cử động miệng của mỗi người với MỨC THƯỜNG của chính họ (mặt nghiêng có số đo miệng nhỏ hơn hẳn).
@@ -217,22 +217,22 @@ người nói chưa từng chạy với dấu góc. Không do bài học video m
 | Cảnh `illus` bắt đầu 4 s trước phần tử đầu | 4 s nền tối che người, không chữ (lọt tới bản cuối) | `soat-canh.mjs` P0 "màn trống đầu cảnh" |
 | Vision không dò mặt trong màn hình điện thoại → đặt hình sai phía | chỉnh tay mat.js | `vi-tri-nhan.py` đọc `khung.js` |
 | Ghép bản cuối khi `xuat-video.mjs` còn render thẻ cuối | bản cuối mất màn kết YouTube 20 s, ghép lại 30 phút | khoá `.dang-render` + `xem-truoc-ban-dung.py` kiểm đủ lớp |
-| `chuan-am.py` chặn đỉnh −2,0 dB mà AAC đẩy lên −1,0 | 3 lượt không đạt; mổ xẻ giữa chừng ~40 phút | hạ ngưỡng theo phần vượt, tối đa 6 lượt; SKILL "Nhịp làm": lỗi skill ghi `check/loi-skill.md`, làm tiếp |
+| `chuan-am.py` chặn đỉnh −2,0 dB mà AAC đẩy lên −1,0 | 3 lượt không đạt; mổ xẻ giữa chừng ~40 phút | hạ ngưỡng theo phần vượt, tối đa 6 lượt; SKILL "Nhịp làm": lỗi skill ghi `kiem-tra/loi-ky-nang.md`, làm tiếp |
 | `renderStill` màn chốt quá hạn 28 s (đọc khung từ video gốc 1,6 GB) | chụp thử hỏng | `xem-truoc.mjs` timeout 240 s |
-| Tạo liên kết cứng giữa bản nguồn và `video_goc.mp4` rồi ffmpeg ghi ra `video_goc.mp4` | ffmpeg cắt rỗng chính nguồn, mất bản sạch (dựng lại từ bản thô) | `khung-chu-the.py` xoá đích trùng nguồn; **không bao giờ `ln` file nguồn vào tên file đích** |
+| Tạo liên kết cứng giữa bản nguồn và `video-goc.mp4` rồi ffmpeg ghi ra `video-goc.mp4` | ffmpeg cắt rỗng chính nguồn, mất bản sạch (dựng lại từ bản thô) | `khung-chu-the.py` xoá đích trùng nguồn; **không bao giờ `ln` file nguồn vào tên file đích** |
 | Ảnh tĩnh `-loop 1` làm đầu vào mà không `-t` | ffmpeg chạy mãi, file 7 GB, mất 1 giờ | `khung-chu-the.py` có `-t`; mọi lệnh có `-loop 1` phải có `-t` hoặc `shortest` ở MỌI nhánh |
 | Theo dõi việc nền bằng cỡ file thay vì thời gian dự kiến | không thấy lệnh chạy quá lâu | quá 1,5 lần dự kiến → kiểm ngay (SKILL "Nhịp làm") |
-| `loi-ao.py` báo nhầm câu chen 0,4 s không có trong words.srt | phải chạy tay phần sau của clean_analyze | **chưa sửa** — gặp lại thì bỏ dòng đó, ghi `check/loi-skill.md` |
+| `loi-ao.py` báo nhầm câu chen 0,4 s không có trong moc-tung-tu.srt | phải chạy tay phần sau của clean_analyze | **chưa sửa** — gặp lại thì bỏ dòng đó, ghi `kiem-tra/loi-ky-nang.md` |
 
 
 ## Khung chủ thể (khung.js) + cảnh có sẵn
 - `nhan` có chữ / biểu tượng: nhan.jsx đặt cạnh mặt trong khung gốc → với khung chủ thể chữ rơi vào khe giữa khung và cột, bị cắt
   (tap-ban-ca-ngay). `bocuc the-canh` không có chỗ → tự chuyển `o-nguoi` với thẻ trống. Dùng cảnh tự vẽ đặt vào cột trống: chữ nhấn
-  `rieng/chu-cot.jsx`, ảnh thật `rieng/anh-canh.jsx` (cùng công thức bangO) — mẫu ở `~/Movies/tap-ban-ca-ngay/2-ban-day-du/motion/src/rieng/`.
+  `rieng/chu-cot.jsx`, ảnh thật `rieng/anh-canh.jsx` (cùng công thức bangO) — mẫu ở `~/Movies/tap-ban-ca-ngay/2-ban-day-du/chuyen-dong/src/rieng/`.
 - `montage` khung ngang (MontageL) tràn ảnh xuống vùng phụ đề / vùng đỏ, mất nhãn → không dùng; nhiều ảnh nối nhau dùng `AnhCanh` (items).
 - Máy soát báo P2 "cùng kiểu ve liền nhau" cả khi hai component khác nhau (ảnh / chữ) — ghi lý do ở ke-hoach-canh.md.
 
 ## Ảnh khi Openverse sập
 - Wikimedia tìm theo tên file: từ khoá đời thường dài ("man working on computer late at night") hay rỗng / 429; dùng cụm ngắn kiểu tên
   file ("alarm clock", "stack of books", "wall calendar", "brain anatomy model") và chạy lại riêng các key lỗi.
-- Soát lại tên ảnh trong credits.tsv sau khi tải (vd. "office dog…" — ảnh tối có con chó) và logo hãng ở chính giữa (vô-lăng Mercedes) → đổi.
+- Soát lại tên ảnh trong ghi-cong.tsv sau khi tải (vd. "office dog…" — ảnh tối có con chó) và logo hãng ở chính giữa (vô-lăng Mercedes) → đổi.

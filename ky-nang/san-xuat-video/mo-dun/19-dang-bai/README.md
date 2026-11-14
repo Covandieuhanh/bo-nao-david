@@ -27,7 +27,7 @@ nền tảng: đi chậm, chụp từng bước, sửa README này theo giao di�
   ```bash
   playwright-cli -s=mxh open <url> --browser=chrome --headed --persistent --profile="$HOME/.cache/david-mxh-chrome"
   playwright-cli -s=mxh snapshot            # lấy ref của ô chọn file / nút
-  playwright-cli -s=mxh upload "<đường dẫn video-final.mp4>"
+  playwright-cli -s=mxh upload "<đường dẫn video-hoan-chinh.mp4>"
   ```
   David đã đăng nhập cả 3 nền tảng trong hồ sơ này (`~/.cache/david-mxh-chrome`). Hết phiên → nhờ David đăng nhập lại, không tự nhập.
 
@@ -35,7 +35,7 @@ nền tảng: đi chậm, chụp từng bước, sửa README này theo giao di�
 **Ảnh bìa tuỳ chỉnh cần kênh đã xác minh số điện thoại** (chưa xác minh thì Studio hiện hộp thoại "Xác minh"). David tự xác minh, Claude không làm thay.
 1. `https://studio.youtube.com/channel/<id>/videos/upload?d=ud` → ô chọn file → `upload` video.
 2. **Chi tiết:** Tiêu đề (≤ 100 ký tự, theo phat-hanh.md) · Mô tả (tóm ý + "Vấn đề"/"Kết quả" + chương + link nhắn tin trang nếu bài Mời) ·
-   Hình thu nhỏ (thumb-1.jpg; chỉ video ngang) · "Không, nội dung này không dành cho trẻ em" · Thẻ / ngôn ngữ: Tiếng Việt.
+   Hình thu nhỏ (anh-thu-nho-1.jpg; chỉ video ngang) · "Không, nội dung này không dành cho trẻ em" · Thẻ / ngôn ngữ: Tiếng Việt.
 3. **Thành phần video:** màn hình kết thúc (nếu có `ytEnd`: 2 video + nút đăng ký) · thẻ.
 4. **Chế độ hiển thị → Lên lịch** → ngày + giờ (múi giờ Việt Nam, 20:00) → **Lên lịch** (cú bấm cuối).
 5. Sau khi hẹn: ghim bình luận "Vấn đề / Kết quả" (Studio → Bình luận) khi video đã lên — hoặc nhắc David.

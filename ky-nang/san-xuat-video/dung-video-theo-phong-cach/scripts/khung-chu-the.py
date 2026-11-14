@@ -3,12 +3,12 @@
 thành một khung bo góc đặt trên nền kênh — mọi rác xung quanh (bàn, tường, sổ…) biến mất; phần khung còn lại dành cho bảng ghi chú
 chạy (phu-de.jsx `GHI_CHU`), phụ đề và cảnh minh hoạ. Khác "cắt khung rồi phóng" (vẫn còn rác quanh chủ thể).
 
-  khung-chu-the.py <dự án> luoi [giây …]   → check/khung/luoi.jpg: khung gốc có lưới 10 % (vạch dày ở 50 %) để đọc toạ độ chủ thể
-  khung-chu-the.py <dự án> apply --thu <giây> → chỉ một khung check/khung/thu.jpg (soát trước khi dựng ~10 phút)
-  khung-chu-the.py <dự án> apply           → đọc check/khung.json, dựng lại davinci/media/video_goc.mp4 (bản trước: video_goc_truoc_khung.mp4,
-                                              mỗi lần apply luôn dựng từ bản này) + ghi motion/src/khung.js (vị trí khung trên hình xuất)
+  khung-chu-the.py <dự án> luoi [giây …]   → kiem-tra/khung/luoi.jpg: khung gốc có lưới 10 % (vạch dày ở 50 %) để đọc toạ độ chủ thể
+  khung-chu-the.py <dự án> apply --thu <giây> → chỉ một khung kiem-tra/khung/thu.jpg (soát trước khi dựng ~10 phút)
+  khung-chu-the.py <dự án> apply           → đọc kiem-tra/khung.json, dựng lại tu-lieu/video-goc.mp4 (bản trước: video-goc-truoc-khung.mp4,
+                                              mỗi lần apply luôn dựng từ bản này) + ghi chuyen-dong/src/khung.js (vị trí khung trên hình xuất)
 
-check/khung.json — toạ độ theo PIXEL video gốc; máy quay dịch thì thêm vùng theo mốc giây (mọi vùng cùng w, h):
+kiem-tra/khung.json — toạ độ theo PIXEL video gốc; máy quay dịch thì thêm vùng theo mốc giây (mọi vùng cùng w, h):
   {"phia": "trai", "vung": [{"tu": 0, "den": 271.8, "x": 410, "y": 60, "w": 520, "h": 960}, {"tu": 271.8, "x": 380, "y": 40}]}
   phia: "trai" | "phai" — khung chủ thể nằm phía nào (bên kia là bảng ghi chú, phụ đề, cảnh).
 Chạy SAU làm sạch (bản sạch), TRƯỚC chép lại phụ đề / vi-tri-khuon-mat.sh. vi-tri-khuon-mat.sh đọc khung.js: "người" = khung chủ thể (không dò mặt).
@@ -18,9 +18,9 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from _chung import load, node_env
 
 P = os.path.expanduser(sys.argv[1]); MODE = sys.argv[2] if len(sys.argv) > 2 else "luoi"
-M = os.path.join(P, "davinci/media"); CK = os.path.join(P, "check/khung"); os.makedirs(CK, exist_ok=True)
+M = os.path.join(P, "tu-lieu"); CK = os.path.join(P, "kiem-tra/khung"); os.makedirs(CK, exist_ok=True)
 pr = load(P)["project"]; W, H = pr["width"], pr["height"]; FPS = f'{pr["fpsNum"]}/{pr["fpsDen"]}'
-goc = os.path.join(M, "video_goc_truoc_khung.mp4")
+goc = os.path.join(M, "video-goc-truoc-khung.mp4")
 src = goc if os.path.exists(goc) else os.path.join(M, pr["source"])
 run = lambda a: subprocess.run(a, check=True, env=node_env())
 dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", src],
@@ -39,7 +39,7 @@ if MODE == "luoi":
     print(f"{CK}/luoi.jpg  (lưới 10 %, vạch cam = giữa khung; khung gốc {W}×{H}; mốc: {', '.join(f'{t:.1f}' for t in ts)})")
     sys.exit(0)
 
-cfg = json.load(open(os.path.join(P, "check/khung.json"), encoding="utf-8"))
+cfg = json.load(open(os.path.join(P, "kiem-tra/khung.json"), encoding="utf-8"))
 V = sorted(cfg["vung"], key=lambda v: v.get("tu", 0)); cw, ch = V[0]["w"], V[0]["h"]
 for v in V:   # mọi vùng cùng cỡ (crop không đổi cỡ theo thời gian) — vùng khác cỡ thì giữ tâm, lấy cỡ vùng đầu
     if (v.get("w", cw), v.get("h", ch)) != (cw, ch):
@@ -68,7 +68,7 @@ run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", f"color=black:s={W}x{H}
 run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", f"color=black:s={PW}x{PH}:d=1", "-vf",
      f"format=gray,geq=lum='255*{rr(PW, PH, R)}'", "-frames:v", "1", mask])
 
-THU = "--thu" in sys.argv   # --thu <giây>: chỉ ra check/khung/thu.jpg một khung để soát vị trí (vài giây), không dựng video
+THU = "--thu" in sys.argv   # --thu <giây>: chỉ ra kiem-tra/khung/thu.jpg một khung để soát vị trí (vài giây), không dựng video
 if THU:
     t0 = float(sys.argv[sys.argv.index("--thu") + 1]); v0 = [v for v in V if v.get("tu", 0) <= t0][-1]
     run(["ffmpeg", "-v", "error", "-y", "-ss", f"{t0:.2f}", "-i", src, "-frames:v", "1", f"{CK}/thu-goc.png"])   # tách khung trước: ảnh tĩnh ghép ảnh tĩnh
@@ -87,7 +87,7 @@ run(["ffmpeg", "-y", "-v", "error", "-stats", "-loop", "1", "-framerate", FPS, "
      "-c:v", "h264_videotoolbox", "-b:v", "16M", "-c:a", "copy",
      "-movflags", "+faststart", out])
 k = {"x": PX / W, "y": PY / H, "w": PW / W, "h": PH / H, "phia": cfg.get("phia", "trai")}
-open(os.path.join(P, "motion/src/khung.js"), "w", encoding="utf-8").write(
+open(os.path.join(P, "chuyen-dong/src/khung.js"), "w", encoding="utf-8").write(
     "// Khung chủ thể trên hình xuất (0–1) — scripts/khung-chu-the.py tự ghi; null = không dùng bố cục khung chủ thể\n"
     "export default " + json.dumps(k) + ";\n")
 print(out, "· khung", k)

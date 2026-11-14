@@ -12,7 +12,7 @@ import {POD, PF} from './khung-podcast';
 import CAPTIONS from './phu-de.js';
 import PLACEMENT from './vi-tri.js';
 import HL from './doan-noi-bat.js';
-import HS from './hoso.json';
+import HS from './ho-so.json';
 import {TL_ON} from './thanh';
 // 2 TRẠNG THÁI (hồ sơ hai_trang_thai, David chốt 2026-11-04): A = người + phụ đề, B = cảnh toàn màn hình + phụ đề. Lớp chữ không
 // toàn màn hình (kinetic, lower, listItem…) KHÔNG được đè lên người → tự vẽ toàn màn hình. Ngoại lệ: thẻ tít mở đầu (hook) và

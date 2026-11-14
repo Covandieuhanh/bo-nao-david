@@ -14,4 +14,4 @@ Báo cáo: `dung-video-theo-phong-cach/references/hoc-tu-20-vlog-vn.md`.
 | `nhac_duoi_giong_LU` | nhạc thấp hơn giọng bao nhiêu LU khi có lời |
 
 ## Nhật ký
-- 2026-11-04 · tạo từ luật multi-clip.md 2c–2d + học 20 vlog Việt.
+- 2026-11-04 · tạo từ luật nhieu-doan-video.md 2c–2d + học 20 vlog Việt.

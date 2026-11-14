@@ -2,9 +2,9 @@
 """NÂNG KHUNG (người dùng chốt): nhân vật/vật chính nằm thấp (nửa dưới khung dọc) → đẩy hình lên để người nằm trong vùng an toàn,
 không bị phụ đề/thanh nút nền tảng che. Đáy hở lấp bằng chính hình đó làm mờ.
 
-  nang-lop.py <dự án ghép>            → motion/src/nang-lop.js  {idĐoạn: {y, s}} + check/faces/lift.md   (chế độ ghép; chuong-trinh.jsx tự đọc)
-  nang-lop.py <dự án 1 video> apply   → nung vào davinci/media/video_goc.mp4 (giữ bản trước là video_goc_truoc_nang.mp4)
-                                     + check/faces/lift.md; chạy sau 3a/3b, TRƯỚC 3c và vi-tri-khuon-mat.sh
+  nang-lop.py <dự án ghép>            → chuyen-dong/src/nang-lop.js  {idĐoạn: {y, s}} + kiem-tra/khuon-mat/lift.md   (chế độ ghép; chuong-trinh.jsx tự đọc)
+  nang-lop.py <dự án 1 video> apply   → nung vào tu-lieu/video-goc.mp4 (giữ bản trước là video-goc-truoc-nang.mp4)
+                                     + kiem-tra/khuon-mat/lift.md; chạy sau 3a/3b, TRƯỚC 3c và vi-tri-khuon-mat.sh
   nang-lop.py <dự án 1 video>         → chỉ in kế hoạch (không nung)
 
 Luật tính (khung 1080×1920): tâm mặt nên ở ~800 px, cằm không xuống quá 1240 (trên dải phụ đề 1280), đỉnh đầu không lên quá 230.
@@ -19,7 +19,7 @@ MODE = sys.argv[2] if len(sys.argv) > 2 else 'plan'
 W, H = 1080, 1920
 TARGET, CHIN_MAX, TOP_MIN, MAX_Y, MAX_S = 800, 1240, 230, 400, 1.25
 SKILL = Path(__file__).resolve().parent.parent
-BIN = Path.home() / '.cache/dung-video-theo-phong-cach/faces'
+BIN = Path.home() / '.cache/dung-video-theo-phong-cach/khuon-mat'
 ENV = {**os.environ, 'PATH': '/opt/homebrew/bin:' + os.environ.get('PATH', '')}
 
 
@@ -65,7 +65,7 @@ def need(frames):
 
 
 def montage():
-    edl = P / 'motion/src/danh-sach-cat.js'
+    edl = P / 'chuyen-dong/src/danh-sach-cat.js'
     js = f"import('file://{edl}').then(m => console.log(JSON.stringify(m.SEGS)))"
     segs = json.loads(subprocess.run(['node', '--input-type=module', '-e', js], capture_output=True, text=True,
                                      check=True, env=ENV).stdout)
@@ -82,8 +82,8 @@ def montage():
             why = f"đặt tay y {s['lift'].get('y', 0)} · s {s['lift'].get('s', 1)}"
         if why:
             rows.append((s['id'], '—', why)); continue
-        clip = P / f"motion/public/clips/{s['clip']}.mp4"
-        fr = detect(clip, P / f"check/faces/{s['clip']}.json")
+        clip = P / f"chuyen-dong/public/doan-video/{s['clip']}.mp4"
+        fr = detect(clip, P / f"kiem-tra/khuon-mat/{s['clip']}.json")
         a, b = s['from'], s['from'] + (0 if s.get('freeze') else s['dur'] * s['rate'])
         sub = [fr[i] for i in range(len(fr)) if a - 0.25 <= i / 2 <= b + 0.25] or fr[int(a * 2):int(a * 2) + 1]
         r = need(sub)
@@ -93,21 +93,21 @@ def montage():
         if y or sc > 1:
             out[s['id']] = {'y': y, **({'s': sc} if sc > 1 else {})}
         rows.append((s['id'], f'{y}' + (f' · ×{sc}' if sc > 1 else ''), note))
-    (P / 'motion/src/nang-lop.js').write_text(
+    (P / 'chuyen-dong/src/nang-lop.js').write_text(
         '// Nâng khung từng đoạn {idĐoạn: {y: px đẩy lên, s: phóng}} — tự sinh bởi scripts/nang-lop.py; đặt tay: `lift` trong danh-sach-cat.js\n'
         f'export default {json.dumps(out, ensure_ascii=False)};\n')
     report(rows)
 
 
 def single():
-    v = P / 'davinci/media/video_goc.mp4'
-    src = P / 'davinci/media/video_goc_truoc_nang.mp4'
+    v = P / 'tu-lieu/video-goc.mp4'
+    src = P / 'tu-lieu/video-goc-truoc-nang.mp4'
     base = src if src.exists() else v                       # chạy lại → tính từ bản chưa nâng
     w, h = map(int, subprocess.run(['ffprobe', '-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height',
                                     '-of', 'csv=p=0', str(base)], capture_output=True, text=True, env=ENV).stdout.strip().split(','))
     if (w, h) != (W, H):
         sys.exit(f'chỉ nâng khung dọc {W}×{H} (video {w}×{h})')
-    fr = detect(base, P / 'check/faces/lift_faces.json')
+    fr = detect(base, P / 'kiem-tra/khuon-mat/lift_faces.json')
     # Cửa sổ 4 s: một mức nâng mỗi cửa sổ (bậc 100 px) → gộp cửa sổ cùng mức; đổi mức trượt 0,6 s (không giật)
     win, levels = 8, []
     for i in range(0, len(fr), win):
@@ -146,11 +146,11 @@ def single():
 
 
 def report(rows):
-    md = P / 'check/faces/lift.md'
+    md = P / 'kiem-tra/khuon-mat/lift.md'
     md.parent.mkdir(parents=True, exist_ok=True)
     md.write_text('# Nâng khung\n\n| Đoạn / mốc | Nâng (px) | Ghi chú |\n|---|---|---|\n'
                   + ''.join(f'| {a} | {b} | {c} |\n' for a, b, c in rows))
     print(md.read_text())
 
 
-(montage if (P / 'motion/src/danh-sach-cat.js').exists() else single)()
+(montage if (P / 'chuyen-dong/src/danh-sach-cat.js').exists() else single)()

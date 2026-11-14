@@ -1,7 +1,7 @@
 # Học từ 20 vlog Việt Nam lượt xem cao — cho `dung-video-theo-phong-cach` (chế độ ghép nhiều clip)
 
 *Ngày 2026-11-04. Chỉ kênh Việt. Xem trong trình duyệt, không tải video; xem kỹ 30–60 s đầu + ảnh thumbnail + màn kết. Bổ sung cho
-chuẩn Jessie Luong đã chốt (multi-clip.md 2d) — Jessie Luong có trong bảng (V10).*
+chuẩn Jessie Luong đã chốt (nhieu-doan-video.md 2d) — Jessie Luong có trong bảng (V10).*
 
 ## 1. Bảng 20 vlog
 

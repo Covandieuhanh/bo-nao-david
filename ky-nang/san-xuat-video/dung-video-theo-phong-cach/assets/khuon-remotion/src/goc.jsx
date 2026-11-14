@@ -21,13 +21,13 @@ import {BoCuc} from './thanh-phan/bo-cuc';   // lớp trình bày: người vào
 import CAPTIONS from './phu-de.js';
 import PLACEMENT from './vi-tri.js';
 import {ENDCARD_ON} from './man-ket.js';
-import BRAND from './lib/brand.json';
-import {Illus} from './lib/minh-hoa';
+import BRAND from './thu-vien/thuong-hieu.json';
+import {Illus} from './thu-vien/minh-hoa';
 import {VE} from './rieng/diem-vao';
-import {PhongCtx} from './lib/phong';   // cảnh tự vẽ riêng của video (type 've', khối 07 — 2026-11-09)
-import {Diagram} from './lib/so-do';   // sơ đồ nói thay lời + ảnh khung bo góc (khối 07, 2026-11-05)   // cảnh minh hoạ toàn màn hình — 2 trạng thái (khối 07)
-import HS from './hoso.json';
-import {holdEnds} from './lib/giu';   // giữ cảnh ≥ 1,2 s sau chữ cuối (khối 07)
+import {PhongCtx} from './thu-vien/phong';   // cảnh tự vẽ riêng của video (type 've', khối 07 — 2026-11-09)
+import {Diagram} from './thu-vien/so-do';   // sơ đồ nói thay lời + ảnh khung bo góc (khối 07, 2026-11-05)   // cảnh minh hoạ toàn màn hình — 2 trạng thái (khối 07)
+import HS from './ho-so.json';
+import {holdEnds} from './thu-vien/giu';   // giữ cảnh ≥ 1,2 s sau chữ cuối (khối 07)
 const _cta = SCENES.find((s) => s.type === 'cta');
 const HELD = Object.fromEntries(holdEnds(SCENES, _cta ? _cta.start : project.duration, HS).map((s) => [s.id, s]));
 import {TWO, TWO_KEEP} from './bo-cuc';

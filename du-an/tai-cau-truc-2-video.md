@@ -5,8 +5,8 @@ câu máy đo còn bắt, và chỗ bộ video chép / lệch với `chuan-muc-l
 Không đổi code.
 
 **Máy đo bộ video:** trước `dau_ngay 1 · ghi_de 5 · trung 0 · dong 3081` → sau `dau_ngay 0 · ghi_de 0 · trung 0 · dong 3079`.
-**kiem-mau.py:** 5/5 ✓ (SSIM 0,982–0,990). 5 dự án mẫu thiếu `motion/node_modules` → như lần 1: nối tạm (symlink)
-`~/Movies/tap-5-nguyen-tac-tien/2-ban-day-du/motion/node_modules` vào `motion/node_modules` của từng dự án, chạy, rồi gỡ ngay.
+**kiem-mau.py:** 5/5 ✓ (SSIM 0,982–0,990). 5 dự án mẫu thiếu `chuyen-dong/node_modules` → như lần 1: nối tạm (symlink)
+`~/Movies/tap-5-nguyen-tac-tien/2-ban-day-du/chuyen-dong/node_modules` vào `chuyen-dong/node_modules` của từng dự án, chạy, rồi gỡ ngay.
 
 ## Bảng luật đang sống (chỉ dòng đổi / mới)
 
@@ -14,7 +14,7 @@ Trạng thái: sống · trùng · ngược · cũ. Cột "Đã làm" = viết l
 
 | # | Luật | Nhà | Nguồn trước | Ngày | Trạng thái | Đã làm |
 |---|---|---|---|---|---|---|
-| V1 | Cắt cứng ở mối cắt, **không phóng xen kẽ** (zoom giật ra giật vào khó chịu); zoom dồn chậm vào mặt ở câu đắt vẫn dùng; `"alt"` / `phong_xen_ke > 1` chỉ khi David yêu cầu | quy-tac-chung §2 | quy-tac-chung §2, khối 02, cat-highlight luật 8 + bước 7A, ho-so-thuong-hieu/highlight.md | 10/11 | trùng (lý do chép 3 chỗ) | lý do chỉ ở quy-tac-chung §2; khối 02, highlight.md, luật 8 trỏ về. Thay dòng A-nhịp "phóng xen kẽ 1,08×" của bảng lần 1 |
+| V1 | Cắt cứng ở mối cắt, **không phóng xen kẽ** (zoom giật ra giật vào khó chịu); zoom dồn chậm vào mặt ở câu đắt vẫn dùng; `"alt"` / `phong_xen_ke > 1` chỉ khi David yêu cầu | quy-tac-chung §2 | quy-tac-chung §2, khối 02, cat-highlight luật 8 + bước 7A, ho-so-thuong-hieu/doan-noi-bat.md | 10/11 | trùng (lý do chép 3 chỗ) | lý do chỉ ở quy-tac-chung §2; khối 02, doan-noi-bat.md, luật 8 trỏ về. Thay dòng A-nhịp "phóng xen kẽ 1,08×" của bảng lần 1 |
 | V2 | Hỏi một lần, "ok" chạy một mạch, phần đã định không hỏi | thoi-quen §2 | quy-tac-chung §8 (chép lại), thoi-quen §2 | 08/11 | trùng chéo bộ | quy-tac-chung §8 thành dòng trỏ; giữ điểm dừng riêng video (multi-clip 2b) |
 | V3 | Lệnh > 2 phút chạy nền, không thăm dò; không nhập mật khẩu | thoi-quen §3 (mật khẩu: AGENTS luật 5, theo phiên nao) | quy-tac-chung §8, gotchas "Giao tiếp", thoi-quen §3 | 04/11 | trùng chéo bộ (A63 lần 1 để nhà ở quy-tac-chung) | quy-tac-chung §8 trỏ thoi-quen + AGENTS luật 5; gotchas trỏ quy-tac-chung §8 |
 | V4 | Không tải video YouTube/TikTok để dựng (học mẫu thì được) | quy-tac-chung §8 | quy-tac-chung §8, gotchas | 04/11 | trùng | gotchas trỏ |

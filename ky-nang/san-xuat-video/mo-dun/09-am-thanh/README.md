@@ -3,7 +3,7 @@
 **Dùng trong:** cả 4
 **Đầu vào:** tiếng gốc
 **Đầu ra:** trộn trong xem-truoc-ban-dung.py / xuat-chuong-trinh.mjs
-**Tham số hồ sơ:** chung: `nhac.*` (một nguồn mức nhạc), ghep-vlog: nhac_duoi_giong_LU, brand.json: musicGapLU, highlight: nhac_chu_chinh
+**Tham số hồ sơ:** chung: `nhac.*` (một nguồn mức nhạc), ghep-vlog: nhac_duoi_giong_LU, thuong-hieu.json: musicGapLU, highlight: nhac_chu_chinh
 **Sửa khối này → chạy lại:** 17
 
 **File thật (code, một bản duy nhất):**
@@ -33,7 +33,7 @@ Mức nằm ở một chỗ: hồ sơ chung `nhac`.
 
 ## Nhạc theo tuyến nội dung
 1. Sau khi chép lời, Claude đọc toàn bộ lời → chọn MỘT tuyến trong bảng hồ sơ chung `nhac.tuyen` (vui · tam_su · mat_mat · y_nghia ·
-   kien_thuc), ghi `tuyen: '<tuyến>'` vào `motion/src/du-an.js` (1 video: ghi SAU clean_apply — nó viết đè du-an.js) + lý do 1 dòng
+   kien_thuc), ghi `tuyen: '<tuyến>'` vào `chuyen-dong/src/du-an.js` (1 video: ghi SAU clean_apply — nó viết đè du-an.js) + lý do 1 dòng
    vào ke-hoach-canh.md. Không ghi → `xem-truoc-ban-dung.py` DỪNG (không có bài mặc định, để không gắn nhạc sôi động cho bài tâm sự).
    Cách chọn: tuyến = cảm xúc chủ đạo người xem cần (hình mẫu: Hieu Nguyen / Have A Sip tâm sự → piano ấm; Khoai Lang Thang du lịch →
    upbeat; video kiến thức → ambient trung tính). Ép tay bài: `music: '<bài>'`; tắt: `music: ''`.

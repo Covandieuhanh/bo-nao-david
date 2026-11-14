@@ -4,29 +4,29 @@ import {AbsoluteFill, Audio, Easing, Freeze, OffthreadVideo, Sequence, continueR
 import {FONT_CHECKS} from './phong-chu';
 import * as EDL from './danh-sach-cat';
 import {CTA, FPS, H, MUSIC, OVERLAYS, SEGS, SFX, SUBS, TOTAL, W, fr} from './danh-sach-cat';
-import {SUB, ShortLine, highlight} from './lib/kieu-phu-de';
+import {SUB, ShortLine, highlight} from './thu-vien/kieu-phu-de';
 import LIFT from './nang-lop.js';
 import GUARD from './bao-ve.js';
-import HS from './hoso.json';
-import {Illus} from './lib/minh-hoa';
-import {Diagram} from './lib/so-do';   // sơ đồ nói thay lời + ảnh khung bo góc (khối 07)   // cảnh minh hoạ toàn màn hình — 2 trạng thái (khối 07, thư viện dùng chung)
-import {holdEnds} from './lib/giu';   // giữ cảnh ≥ 1,2 s sau chữ cuối (khối 07, hồ sơ chung canh_minh_hoa.giu_sau_s)
+import HS from './ho-so.json';
+import {Illus} from './thu-vien/minh-hoa';
+import {Diagram} from './thu-vien/so-do';   // sơ đồ nói thay lời + ảnh khung bo góc (khối 07)   // cảnh minh hoạ toàn màn hình — 2 trạng thái (khối 07, thư viện dùng chung)
+import {holdEnds} from './thu-vien/giu';   // giữ cảnh ≥ 1,2 s sau chữ cuối (khối 07, hồ sơ chung canh_minh_hoa.giu_sau_s)
 // 2 TRẠNG THÁI (hồ sơ hai_trang_thai): lớp chữ đè người (pow, chips, location, nameCard, replay, pointer, callout) tự vẽ toàn màn hình
 // ≤ toan_man_max_s; ngoại lệ: thẻ tít mở đầu (pow bắt đầu < 0,5 s) và `keep: true`. Tít ghim tắt.
 const TWO = !!HS.hai_trang_thai;
 const CONV = new Set(['pow', 'chips', 'nameCard', 'replay', 'pointer', 'callout']);   // hồ sơ tham số (tao-dung-ghep.sh / danh-sach-cat-doan-noi-bat.py chép vào)
 const PD = HS.phu_de || {};   // lớp phủ tự chuyển toàn màn hình khi che người (bao-ve-lop-phu.py)
-import CTA_DEF, {CTA_ICONS, CTA_TICK} from './lib/keu-goi-hanh-dong.js';
-import {Icon} from './lib/bieu-tuong';
-import BRAND from './lib/brand.json';
-import {YtEnd} from './lib/man-ket-youtube';
-import {EndCardBody} from './lib/than-man-ket';
-import {khung, nganDoc} from './lib/nhan-dien-thuong-hieu';   // bộ nhận diện chung: vùng an toàn, dấu góc, thanh thời gian (David chốt 08/11/2026)
-import {DauGoc} from './lib/dau-goc';
-import {ThanhThoiGian} from './lib/thanh-thoi-gian';   // ruột thẻ cuối dùng chung (khối 08)   // màn kết YouTube 15–20 s (chép từ remotion-template, một nguồn)   // bộ nhận diện David (một nguồn với chế độ 1 video, podcast, highlight)   // biểu tượng nét vẽ dần — chép từ remotion-template (một nguồn với chế độ 1 video)   // câu màn chốt — chép từ remotion-template (một nguồn với chế độ 1 video)
+import CTA_DEF, {CTA_ICONS, CTA_TICK} from './thu-vien/keu-goi-hanh-dong.js';
+import {Icon} from './thu-vien/bieu-tuong';
+import BRAND from './thu-vien/thuong-hieu.json';
+import {YtEnd} from './thu-vien/man-ket-youtube';
+import {EndCardBody} from './thu-vien/than-man-ket';
+import {khung, nganDoc} from './thu-vien/nhan-dien-thuong-hieu';   // bộ nhận diện chung: vùng an toàn, dấu góc, thanh thời gian (David chốt 08/11/2026)
+import {DauGoc} from './thu-vien/dau-goc';
+import {ThanhThoiGian} from './thu-vien/thanh-thoi-gian';   // ruột thẻ cuối dùng chung (khối 08)   // màn kết YouTube 15–20 s (chép từ remotion-template, một nguồn)   // bộ nhận diện David (một nguồn với chế độ 1 video, podcast, highlight)   // biểu tượng nét vẽ dần — chép từ remotion-template (một nguồn với chế độ 1 video)   // câu màn chốt — chép từ remotion-template (một nguồn với chế độ 1 video)
 
 // ===== Phong cách (token) — mặc định: thẻ tối, nhấn cam, chữ cô đặc in hoa trồi lên (bộ nhận diện đã duyệt).
-// Có video mẫu/dự án cũ → đổi C, HEAD, BODY (+ phong-chu.js) theo style.md; component giữ nguyên ngôn ngữ chuyển động. =====
+// Có video mẫu/dự án cũ → đổi C, HEAD, BODY (+ phong-chu.js) theo phong-cach.md; component giữ nguyên ngôn ngữ chuyển động. =====
 import {C} from './thuong-hieu';   // màu nhận diện chung (thuong-hieu.js) — biểu tượng vẽ (bieu-tuong.jsx) cùng đọc
 const HEAD = '"Barlow Condensed", sans-serif';
 const BODY = '"Be Vietnam Pro", sans-serif';
@@ -113,14 +113,14 @@ const Cite = ({seg, src, common}) => {
           : <OffthreadVideo src={src} {...common} muted style={{width: '100%', height: '100%', objectFit: seg.cite.fit || 'cover',
             transform: `scale(${1.06 - ease(f, 0, len) * 0.04})`}} />}
       </div>
-      {seg.audio && <Audio src={staticFile(`clips/${seg.audio.clip}.mp4`)} trimBefore={fr(seg.audio.from)} volume={seg.audio.vol} />}
+      {seg.audio && <Audio src={staticFile(`doan-video/${seg.audio.clip}.mp4`)} trimBefore={fr(seg.audio.from)} volume={seg.audio.vol} />}
     </AbsoluteFill>
   );
 };
 
 const Clip = ({seg}) => {
   const f = useCurrentFrame();
-  const src = staticFile(`clips/${seg.clip}.mp4`);
+  const src = staticFile(`doan-video/${seg.clip}.mp4`);
   const common = {trimBefore: fr(seg.from), playbackRate: seg.rate, pauseWhenBuffering: false};
   if (seg.cite) return <Cite seg={seg} src={src} common={common} />;
   const vol = seg.audio ? 0 : seg.vol ?? 1;
@@ -161,7 +161,7 @@ const Clip = ({seg}) => {
   return (
     <AbsoluteFill style={{backgroundColor: '#000', overflow: 'hidden'}}>
       <AbsoluteFill style={{...zoomAt(f, seg), filter: gradeFilter[seg.grade] || 'none'}}>{video}</AbsoluteFill>
-      {seg.audio && <Audio src={staticFile(`clips/${seg.audio.clip}.mp4`)} trimBefore={fr(seg.audio.from)} volume={seg.audio.vol} />}
+      {seg.audio && <Audio src={staticFile(`doan-video/${seg.audio.clip}.mp4`)} trimBefore={fr(seg.audio.from)} volume={seg.audio.vol} />}
     </AbsoluteFill>
   );
 };
@@ -614,7 +614,7 @@ const CtaEnd = ({text, kind}) => {
 const ENDCARD = (EDL.THE_CUOI ?? !NGAN_DOC) ? (EDL.ENDCARD || null) : null;   // dọc ngắn: không thẻ cuối (10/11/2026)
 const EndCard = ({title, speaker, clip, at, play = true, yt = 0, schedule = ''}) => {   // schedule: lịch phát David đưa (PO-6)   // play: nhãn "Bản đầy đủ trên kênh …"; false = thẻ nhận diện (vlog)
   const f = useCurrentFrame();
-  // yt (giây, plan.json "ytEnd"): sau thẻ nhận diện là MÀN KẾT YOUTUBE (khung chừa 2 video + nút đăng ký), có nhạc kênh nhỏ
+  // yt (giây, ke-hoach.json "ytEnd"): sau thẻ nhận diện là MÀN KẾT YOUTUBE (khung chừa 2 video + nút đăng ký), có nhạc kênh nhỏ
   if (yt > 5 && f >= fr(BRAND.endcardLen)) return (
     <AbsoluteFill><YtEnd name={BRAND.name} topic={title} schedule={schedule} start={fr(BRAND.endcardLen)} />
       {MUSIC.tracks?.[0] && <Audio src={staticFile(`hieu-ung-am-thanh/${MUSIC.tracks[0].f}.mp3`)} loop
@@ -623,7 +623,7 @@ const EndCard = ({title, speaker, clip, at, play = true, yt = 0, schedule = ''})
   const pb = pop(f, 8, {damping: 10, stiffness: 220, mass: 0.6});
   return (
     <AbsoluteFill style={{backgroundColor: C.bg, opacity: ease(f, 0, 6)}}>
-      {clip && <Freeze frame={0}><OffthreadVideo src={staticFile(`clips/${clip}.mp4`)} trimBefore={fr(at || 0)} muted
+      {clip && <Freeze frame={0}><OffthreadVideo src={staticFile(`doan-video/${clip}.mp4`)} trimBefore={fr(at || 0)} muted
         style={{width: '100%', height: '100%', objectFit: 'cover', filter: 'brightness(0.42) saturate(1.1)', transform: `scale(${1.06 + f * 0.0012})`}} /></Freeze>}
       <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(13,13,16,0.1) 30%, rgba(13,13,16,0.92) 78%)'}} />
       <div style={{position: 'absolute', left: SAFE.left, width: SAFE_W, top: 1000, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 34,
@@ -792,7 +792,7 @@ const musicVol = (f) => {
   if (MUSIC.loudRanges.some(([a, b]) => t >= a && t < b)) v = MUSIC.loud;
   return v * fadeIn * fadeOut;
 };
-// MUSIC.tracks = [{f: 'soi-1', a, b, gain}] (highlight): mỗi bài một khoảng timeline, chồng mờ 0,8 s ở mối; không có → music.wav
+// MUSIC.tracks = [{f: 'soi-1', a, b, gain}] (highlight): mỗi bài một khoảng timeline, chồng mờ 0,8 s ở mối; không có → nhac.wav
 const XF = 0.8;
 // gain không ghi → mức cân của bài ở hồ sơ chung nhac.muc (một nguồn), rồi mới tới 1
 const Track = ({tr}) => {
@@ -886,7 +886,7 @@ export const Show = () => {
         </Sequence>
       ))}
       {MUSIC.tracks ? MUSIC.tracks.map((tr, i) => <Track key={`m${i}`} tr={tr} />)
-        : <Audio src={staticFile('hieu-ung-am-thanh/music.wav')} volume={musicVol} />}
+        : <Audio src={staticFile('hieu-ung-am-thanh/nhac.wav')} volume={musicVol} />}
     </AbsoluteFill>
   );
 };

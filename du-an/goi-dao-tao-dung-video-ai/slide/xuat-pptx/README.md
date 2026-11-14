@@ -37,5 +37,5 @@ venv/bin/python xuat-docx.py png ~/Documents/1-nghe-nghiep/goi-dao-tao-dung-vide
 venv/bin/python dung-phan-them.py ~/Documents/1-nghe-nghiep/goi-dao-tao-dung-video-ai/slide-pptx
 ```
 Kiểm hiển thị từng slide như Quick Look thấy: `bash kiem-tra.sh <file.pptx> <thư mục ra>` rồi xem `sheet-*.png`.
-Sửa slide 8 bài: sửa `../bai-N/trang-trinh-chieu/*.html` (thứ tự ở `deck.json`, kiểu ở `../giao-dien-slide.css`), ảnh thật ánh xạ ở `anh-blob.json`.
+Sửa slide 8 bài: sửa `../bai-N/trang-trinh-chieu/*.html` (thứ tự ở `bo-slide.json`, kiểu ở `../giao-dien-slide.css`), ảnh thật ánh xạ ở `anh-blob.json`.
 Sửa nội dung `1-quy-trinh.md`, `2-lo-trinh.md`, phiếu hay biểu mẫu thì sửa cả `dung-phan-them.py` cho khớp rồi xuất lại.

@@ -10,7 +10,7 @@ import '@fontsource/be-vietnam-pro/vietnamese-700.css';
 import '@fontsource/be-vietnam-pro/500.css';
 import '@fontsource/be-vietnam-pro/600.css';
 import '@fontsource/be-vietnam-pro/700.css';
-import './lib/font-nhan.css';   // font phụ: một từ nhấn (bien-thiet-ke.js NHAN) — file font nằm trong thư viện hình, không cần cài gói
+import './thu-vien/phong-chu-nhan.css';   // font phụ: một từ nhấn (bien-thiet-ke.js NHAN) — file font nằm trong thư viện hình, không cần cài gói
 
 export const FONT_CHECKS = [
   '800 100px "Barlow Condensed"', '700 100px "Barlow Condensed"',

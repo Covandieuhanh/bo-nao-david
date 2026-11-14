@@ -147,7 +147,7 @@ for p in sorted(glob.glob(f"{SN}/tin-nhan/tong-hop-*.md")):
 
 # 4. Video: lời nói (chép lời bản gốc), bài đăng, số liệu. Bỏ bản trùng nội dung (bản sạch, clip con).
 da_thay = set(moc.get("bam_loi", []))
-for p in sorted(glob.glob(f"{HOME}/Movies/**/check/goc/transcript.srt", recursive=True)):
+for p in sorted(glob.glob(f"{HOME}/Movies/**/kiem-tra/goc/ban-chep-loi.srt", recursive=True)):
     if "/thu-" in p or not doi(p):
         continue
     chu = " ".join(l.strip() for l in doc(p).splitlines()

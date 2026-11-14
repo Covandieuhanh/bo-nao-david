@@ -1,14 +1,14 @@
 // Cảnh toàn màn hình (thay hẳn hình người nói, tiếng vẫn chạy).
 // Mọi nội dung nằm trong vùng an toàn x 70–900, y 210–1420; phần ngoài chỉ có nền.
 import React from 'react';
-import {vaoRa, tien, EASE} from '../lib/chuyen-dong';
+import {vaoRa, tien, EASE} from '../thu-vien/chuyen-dong';
 import {AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {BODY, C, HEAD, SAFE, SAFE_W, ease, inOut, pop, rel} from '../chu-de';
 import {Eyebrow} from './lop-phu';
-import {Pictogram} from '../lib/bieu-tuong';
+import {Pictogram} from '../thu-vien/bieu-tuong';
 import CAPTIONS from '../phu-de.js';
 import {FULL_ORIGIN, FULL_SCALE, POD, VN, aboveGap} from '../khung-podcast';
-import {NenPhong, usePhong} from '../lib/phong';
+import {NenPhong, usePhong} from '../thu-vien/phong';
 
 export const FullShell = ({children, hold}) => {   // hold: không mờ ra ở cuối (màn chốt kết thúc video)
   const f = useCurrentFrame();
@@ -66,7 +66,7 @@ export const Montage = ({start, eyebrow, items, total = Math.max(...items.map((i
               opacity: Math.min(1, p * 1.5) * (1 - leaving),
               transform: `translateX(${(1 - p) * 260 - leaving * 160}px) rotate(${(1 - p) * 4}deg) scale(${0.92 + 0.08 * p})`}}>
               {it.icon ? <Pictogram name={it.icon} w={SAFE_W} h={570} at={at[i]} />   // không ảnh: biểu tượng vẽ dần
-                : <Img src={staticFile(`photos/${it.photo}`)} style={{width: '100%', height: '100%', objectFit: 'cover',
+                : <Img src={staticFile(`anh/${it.photo}`)} style={{width: '100%', height: '100%', objectFit: 'cover',
                 transform: `scale(${1.15 - ease(lf, 0, 90) * 0.1})`}} />}
               <AbsoluteFill style={{background: 'linear-gradient(transparent 55%, rgba(0,0,0,0.55))'}} />
             </div>

@@ -5,8 +5,8 @@ Whisper chạy cả file dài đôi khi kẹt vòng: một đoạn 30 s (hoặc 
 "Hãy subscribe cho kênh … để không bỏ lỡ những video hấp dẫn". Lỗi không cố định — chép lại
 riêng đoạn đó thường ra đúng lời.
 
-  loi-ao.py kiem <transcript.srt>                 → in các đoạn ảo; mã thoát 1 nếu còn ảo
-  loi-ao.py sua <audio16k.wav> <thư mục> [ngôn ngữ] → chép lại riêng từng đoạn ảo (transcript + words)
+  loi-ao.py kiem <ban-chep-loi.srt>                 → in các đoạn ảo; mã thoát 1 nếu còn ảo
+  loi-ao.py sua <am-thanh-16k.wav> <thư mục> [ngôn ngữ] → chép lại riêng từng đoạn ảo (transcript + words)
 """
 import os, re, subprocess, sys, tempfile
 
@@ -78,7 +78,7 @@ def chep(wav, a, b, lang, words):
 
 
 def gom(words):
-    """Gộp từ thành câu ~ mỗi 8 s để dò ảo trên words.srt."""
+    """Gộp từ thành câu ~ mỗi 8 s để dò ảo trên moc-tung-tu.srt."""
     out = []
     for a, b, t in words:
         if out and a - out[-1][0] < 8: out[-1][1] = b; out[-1][2] += " " + t
@@ -87,7 +87,7 @@ def gom(words):
 
 
 def lech(segs, words):
-    """Khoảng mà words.srt không khớp transcript (words ảo riêng)."""
+    """Khoảng mà moc-tung-tu.srt không khớp transcript (words ảo riêng)."""
     import difflib
     bad = []
     for a, b, t in segs:
@@ -100,7 +100,7 @@ def lech(segs, words):
 
 
 def sua(wav, O, lang="vi"):
-    tp, wp = os.path.join(O, "transcript.srt"), os.path.join(O, "words.srt")
+    tp, wp = os.path.join(O, "ban-chep-loi.srt"), os.path.join(O, "moc-tung-tu.srt")
     segs, words = doc(tp), doc(wp)
     dur = float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration",
                                          "-of", "csv=p=0", wav], env=ENV))

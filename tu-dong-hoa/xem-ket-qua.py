@@ -28,7 +28,7 @@ TEN = {  # tên hiển thị gọn
     "vong-dong-xu": "Vòng đồng xu cổ", "nang-luc": "Năng lực (thumbnail)", "vlog-the-view-vung-tau": "Vlog The View Vũng Tàu",
     "vlog-nhan-xe-vf3": "Vlog nhận xe VF3", "vlog-mieu-ba-cam": "Vlog Miếu Bà Cam",
 }
-BO = {"check", "motion", "images", "src", "node_modules", "ref", "davinci", "1-goc", "9-luu-cu", "sheets", "thumbs", "public"}
+BO = {"kiem-tra", "chuyen-dong", "hinh-anh", "src", "node_modules", "tai-lieu-tham-khao", "tu-lieu", "1-goc", "9-luu-cu", "bang-anh", "anh-nho", "public"}
 
 # ---------- đọc ----------
 def ls(p):
@@ -40,7 +40,7 @@ def isf(p): return os.path.isfile(p)
 class Tap:
     def __init__(s, key):
         s.key, s.src, s.mtime = key, [], 0
-        s.dai_vid, s.thumbs, s.dai_txt = [], [], []        # (root, rel)
+        s.dai_vid, s.anh_nho, s.dai_txt = [], [], []        # (root, rel)
         s.clips = {}                                       # chữ cái → {"vid": [...], "txt": [...]}
         s.hl_txt, s.khac = [], []
         s.danh_muc = []
@@ -67,13 +67,13 @@ def scan_project(t, root, rel):
         for f in ls(b):
             r = os.path.join(sub, f); fl = f.lower()
             if fl.endswith(VID) and ("final" in fl or sub != rel): t.add(t.dai_vid, root, r)
-            elif fl.endswith(IMG) and "@160" not in fl and sub != rel: t.add(t.thumbs, root, r)
-            elif fl.endswith((".md", ".txt")) and fl not in ("nguon-anh.txt", "loai.txt", "style.md", "quy-trinh.md"): t.add(t.dai_txt, root, r)
+            elif fl.endswith(IMG) and "@160" not in fl and sub != rel: t.add(t.anh_nho, root, r)
+            elif fl.endswith((".md", ".txt")) and fl not in ("nguon-anh.txt", "loai.txt", "phong-cach.md", "quy-trinh.md"): t.add(t.dai_txt, root, r)
         ph = os.path.join(b, "phat-hanh")
         for f in ls(ph):
             r = os.path.join(sub, "phat-hanh", f); fl = f.lower()
             if fl.endswith(VID): t.add(t.dai_vid, root, r)
-            elif fl.endswith(IMG) and "@160" not in fl: t.add(t.thumbs, root, r)
+            elif fl.endswith(IMG) and "@160" not in fl: t.add(t.anh_nho, root, r)
             elif fl.endswith((".md", ".txt")): t.add(t.dai_txt, root, r)
     hl = os.path.join(rel, "3-doan-noi-bat"); hb = os.path.join(ROOTS[root][0], hl)
     for f in ls(hb):
@@ -94,7 +94,7 @@ def scan_xong(t, rel):
             r = os.path.join(rel, d, f); fl = f.lower(); m = re.match(r"clip-([a-z])\.", fl)
             if d == "highlight" and m and fl.endswith(VID): t.add(t.clip(m.group(1))["vid"], "xong", r)
             elif fl.endswith(VID): t.add(t.dai_vid, "xong", r)
-            elif fl.endswith(IMG) and "@160" not in fl: t.add(t.thumbs, "xong", r)
+            elif fl.endswith(IMG) and "@160" not in fl: t.add(t.anh_nho, "xong", r)
             elif fl.endswith((".md", ".txt")): t.add(t.dai_txt, "xong", r)
 
 def danh_muc():
@@ -131,7 +131,7 @@ def tap_all():
             elif d == "edit-cong-viec-dien-thoai-chuan-skill": scan_project(get(d), root, d)
         for v in ls(os.path.join(R, "vlog")):
             p = os.path.join(R, "vlog", v)
-            if os.path.isdir(p) and not v.startswith("_") and re.fullmatch(r"[a-z0-9-]+", v) and (isf(os.path.join(p, "video-final.mp4")) or os.path.isdir(os.path.join(p, "phat-hanh"))):
+            if os.path.isdir(p) and not v.startswith("_") and re.fullmatch(r"[a-z0-9-]+", v) and (isf(os.path.join(p, "video-hoan-chinh.mp4")) or os.path.isdir(os.path.join(p, "phat-hanh"))):
                 scan_project(get("vlog-" + v), root, os.path.join("vlog", v))
     X = ROOTS["xong"][0]
     for d in ls(X):
@@ -142,7 +142,7 @@ def tap_all():
     for row, keys in danh_muc():
         for k in keys:
             if k in taps: taps[k].danh_muc.append(row)
-    out = [t for t in taps.values() if t.dai_vid or t.thumbs or t.dai_txt or any(c["vid"] or c["txt"] for c in t.clips.values())]
+    out = [t for t in taps.values() if t.dai_vid or t.anh_nho or t.dai_txt or any(c["vid"] or c["txt"] for c in t.clips.values())]
     return sorted(out, key=lambda t: -t.mtime)
 
 # ---------- hiển thị ----------
@@ -225,7 +225,7 @@ def status_html(t):
 
 def section(t):
     k = t.key
-    thumbs = sorted(t.thumbs, key=lambda x: not la_chon(x))
+    thumbs = sorted(t.anh_nho, key=lambda x: not la_chon(x))
     bia = [x for x in thumbs if la_chon(x)][:1] or thumbs          # đã chọn → chỉ hiện ảnh chọn; chưa chọn → hiện mọi phương án
     dai = [x for x in t.dai_vid if chinh(x[1])] or t.dai_vid[:1]
     strip = "".join(media_vid(*x, "Bản dài") for x in dai)
@@ -250,7 +250,7 @@ def section(t):
         if x not in bia: files.append(nut(f"Bìa phương án {i}", f"anh('{url(*x)}','{fp(x)}')"))
     if t.danh_muc: files.insert(0, nut("Lọc & trạng thái", f"xemTpl('st-{k}','{esc(ten(t))} · Lọc & trạng thái')"))
     tt = t.danh_muc[-1].get("Trạng thái", "") if t.danh_muc else ""
-    goc = (dai + [v for c in t.clips.values() for v in c["vid"]] + t.thumbs + t.dai_txt + t.hl_txt)[:1]
+    goc = (dai + [v for c in t.clips.values() for v in c["vid"]] + t.anh_nho + t.dai_txt + t.hl_txt)[:1]
     thu_muc = (f'<button class="more fdir" onclick="finder(\'{goc[0][0]}/{q(goc[0][1].split("/")[0])}\',event)" title="Mở thư mục tập trong Finder">{FOLDER}</button>' if goc else "")
     chip = f'<span class=chip title="{esc(re.sub(r"[`*]", "", tt))}">{esc(re.sub(r"[`*]", "", tt))}</span>' if tt else ""
     so = len([f for f in files if "disabled" not in f])

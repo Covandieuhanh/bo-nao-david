@@ -1,4 +1,4 @@
-// Biểu tượng nét có chuyển động — minh hoạ thay ảnh (mặc định: không tải ảnh, xem scene-design.md "Ảnh minh hoạ").
+// Biểu tượng nét có chuyển động — minh hoạ thay ảnh (mặc định: không tải ảnh, xem thiet-ke-canh.md "Ảnh minh hoạ").
 // Mỗi hình vẽ trên lưới 64×64, nét tròn đầu; xuất hiện bằng cách vẽ dần từng nét (stroke-dashoffset), rồi đứng yên.
 // Dùng: <Pictogram name="mic" size={420} at={0} /> trong montage (item.icon) và card job (icon). Thêm hình: thêm vào ICONS.
 import React from 'react';

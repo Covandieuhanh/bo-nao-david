@@ -9,7 +9,7 @@ Drive `covandieuhanh@gmail.com` › `Drive của tôi`. Mac chỉ giữ dữ li�
 |---|---|
 | `tu-lieu-goc/` | Video, ghi âm gốc David gửi lên. Gốc của video đang làm: `tu-lieu-goc/<tập>/` |
 | `thanh-pham/<tập>/ban-dai`, `highlight/` | Thành phẩm để David lấy về điện thoại, đăng |
-| `sao-luu-mac/video/<tập>/` | Cả dự án dựng: `1-goc/` (gốc), video-final (mọi bản, đạt hay không), kịch bản, phụ đề, kế hoạch cắt, `phat-hanh/`. File tạm (check, davinci, public, node_modules) đã bỏ: dựng lại được từ gốc + kịch bản |
+| `sao-luu-mac/video/<tập>/` | Cả dự án dựng: `1-goc/` (gốc), video-hoan-chinh (mọi bản, đạt hay không), kịch bản, phụ đề, kế hoạch cắt, `phat-hanh/`. File tạm (check, davinci, public, node_modules) đã bỏ: dựng lại được từ gốc + kịch bản |
 | `sao-luu-mac/tai-ve/` | File tải về chưa thuộc tập nào |
 | `sao-luu-mac/tai-lieu/` | `1-nghe-nghiep`, `2-ca-nhan`, `9-luu-tru` (gồm sổ xếp file 07/11), `Obsidian` |
 | `sao-luu-mac/bo-nao/` | `bo-nao-david` (repo bộ não, cả `.git`) + `bo-nho-claude-tam/` (ghi nhớ Claude theo từng thư mục dự án). Bản gốc bộ não vẫn là GitHub |

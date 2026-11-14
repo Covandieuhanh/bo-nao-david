@@ -15,7 +15,7 @@ export const fr = (s) => Math.round(s * FPS);
 //
 // cite({id, clip, from, over: [clipChính, a, b], label}) — chèn hình clip minh hoạ `clip` (từ giây `from`) đúng lúc người
 // nói ở clipChính nói câu [a, b]: hình nằm trong khung bo góc, tắt tiếng; tiếng clipChính chạy tiếp. Đoạn clip chính
-// trước/sau tách ở đúng a và b (mốc từ words.srt). Minh hoạ ngắn hơn câu nói → rate < 1 (≥ 0,6) hoặc freeze.
+// trước/sau tách ở đúng a và b (mốc từ moc-tung-tu.srt). Minh hoạ ngắn hơn câu nói → rate < 1 (≥ 0,6) hoặc freeze.
 // label: chữ nhỏ trên khung, TRÍCH từ câu nói (vd. 'MỖI NGÀY 15 PHÚT ĐỂ VIẾT'); bỏ trống nếu không cần.
 const cite = ({id, clip, from, over: [main, a, b], label, rate = 1, fit}) =>
   ({id, clip, from, to: from + (b - a) * rate, rate, audio: {clip: main, from: a, vol: 1}, cite: {label, fit}});

@@ -7,11 +7,11 @@ import project from './src/du-an.js';
 
 const FPS = project.fpsNum / project.fpsDen;
 const fr = (s) => Math.round(s * FPS);
-const out = path.resolve('../check/motion');
+const out = path.resolve('../kiem-tra/chuyen-dong');
 fs.mkdirSync(out, {recursive: true});
-// Video gốc cho cảnh cần chiếu lại hình (màn chốt `cta`): public/goc.mp4 → davinci/media/<source>
+// Video gốc cho cảnh cần chiếu lại hình (màn chốt `cta`): public/goc.mp4 → tu-lieu/<source>
 { const lnk = path.resolve('public/goc.mp4'); fs.rmSync(lnk, {force: true});
-  const src = path.resolve('../davinci/media', project.source || 'video_goc.mp4');   // liên kết cứng (bundler không chép symlink)
+  const src = path.resolve('../tu-lieu', project.source || 'video-goc.mp4');   // liên kết cứng (bundler không chép symlink)
   if (!project.podcast && fs.existsSync(src)) { try { fs.linkSync(fs.realpathSync(src), lnk); } catch { fs.copyFileSync(src, lnk); } } }
 const serveUrl = await bundle({entryPoint: path.resolve('src/diem-vao.jsx')});
 for (const arg of process.argv.slice(2)) {

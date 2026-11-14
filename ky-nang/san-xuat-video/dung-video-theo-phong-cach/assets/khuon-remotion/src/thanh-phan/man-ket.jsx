@@ -7,10 +7,10 @@ import {BODY, C, HEAD, ease, pop} from '../chu-de';
 import {STAGE} from '../canh';
 import HL from '../doan-noi-bat.js';
 import project from '../du-an.js';
-import BRAND from '../lib/brand.json';
+import BRAND from '../thu-vien/thuong-hieu.json';
 import {LAND, PF, PF_W} from '../khung-podcast';
-import {YtEnd} from '../lib/man-ket-youtube';
-import {EndCardBody} from '../lib/than-man-ket';   // ruột thẻ cuối dùng chung (khối 08)
+import {YtEnd} from '../thu-vien/man-ket-youtube';
+import {EndCardBody} from '../thu-vien/than-man-ket';   // ruột thẻ cuối dùng chung (khối 08)
 import {fr} from '../canh';
 
 export const EndCard = () => {

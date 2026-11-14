@@ -1,7 +1,7 @@
 # Khối 12-san-khau-podcast: Sân khấu podcast: tên tập, ý đang bàn (TOPICS + PHẦN n), sóng âm theo người nói, nền lắng
 
 **Dùng trong:** podcast, highlight từ podcast
-**Đầu vào:** audio.wav, phu-de.js
+**Đầu vào:** am-thanh.wav, phu-de.js
 **Đầu ra:** nguoi-noi.js, duong-bao-am.js, STAGE/TOPICS trong canh.js → nen.mp4
 **Tham số hồ sơ:** podcast: *
 **Sửa khối này → chạy lại:** 17 (render lại nen → podcast_base → render_preview)
@@ -9,23 +9,23 @@
 **File thật (code, một bản duy nhất):**
 - `dung-podcast/scripts/{nguoi-noi.py,tach-nguoi-noi.py (pyannote),duong-bao-am.py,nen-podcast.py,anh-tinh-podcast.sh}`
 - `dung-video-theo-phong-cach/assets/khuon-remotion/src/thanh-phan/san-khau.jsx`
-- `dung-podcast/references/podcast-design.md`
+- `dung-podcast/references/thiet-ke-podcast.md`
 
 ## Cách làm
 
 ### Ai đang nói
 ```bash
 PY=$(zsh $SKILL/scripts/cai-python.sh)                     # lần đầu cài numpy vào venv dùng chung
-$PY $SKILL/scripts/nguoi-noi.py "$P"                      # pyannote tự đếm người (ghi số nếu biết chắc) → motion/src/nguoi-noi.js + check/speakers.md
-$PY $SKILL/scripts/duong-bao-am.py "$P"                      # sóng âm → motion/src/duong-bao-am.js
+$PY $SKILL/scripts/nguoi-noi.py "$P"                      # pyannote tự đếm người (ghi số nếu biết chắc) → chuyen-dong/src/nguoi-noi.js + kiem-tra/nguoi-noi.md
+$PY $SKILL/scripts/duong-bao-am.py "$P"                      # sóng âm → chuyen-dong/src/duong-bao-am.js
 ```
-Đọc `check/speakers.md`: đoạn `?` hoặc đoạn mà lời không hợp người (câu hỏi ↔ câu trả lời) → sửa `spk` trong `nguoi-noi.js`.
+Đọc `kiem-tra/nguoi-noi.md`: đoạn `?` hoặc đoạn mà lời không hợp người (câu hỏi ↔ câu trả lời) → sửa `spk` trong `nguoi-noi.js`.
 Ranh giới đổi người đã được dời vào khoảng lặng thật. Sóng âm đổi màu theo người đang nói (cam = người 0, xanh = người 1).
 Tên người nói: chỉ khi có trong lời ("mình là…", "chào anh X") hoặc David đưa — **không tự đặt nhãn**; không có tên thì
 `STAGE.speakers = []` (không hiện tên, chỉ màu sóng âm) và hỏi tên trong báo cáo.
 
 ### Kịch bản: sân khấu + cảnh
-Viết trong `motion/src/canh.js` theo `references/podcast-design.md`:
+Viết trong `chuyen-dong/src/canh.js` theo `references/thiet-ke-podcast.md`:
 - `STAGE` = `{show, title, speakers: [{name, role}]}` — `show`: tên chương trình David đưa (không có → bỏ trống, không hiện);
   `title`: ý chính của tập, trích lời; `speakers`: chỉ tên thật (mục trên), theo thứ tự người 0, 1 trong `nguoi-noi.js`.
 - `TOPICS` = ý đang bàn ở giữa sân khấu, **phủ kín cả tập** (đổi thưa, mỗi 40–90 s theo ý lớn, mốc = lúc bắt đầu ý), 2 dòng (`'DÒNG 1\nDÒNG 2'`),

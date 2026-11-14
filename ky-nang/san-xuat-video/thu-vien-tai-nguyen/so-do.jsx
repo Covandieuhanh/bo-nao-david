@@ -11,7 +11,7 @@
 //   'xay-tang' xây từ GỐC lên (khối 07, 2026-11-06) — items từ DƯỚI lên: {label, sub?}; ô trống hiện sẵn, mỗi tầng chỉ sáng đúng lúc nhắc (tầng sau xây trên tầng trước)
 //   'doi-trang-thai' MỘT vật giữ nguyên, trạng thái đổi: items[0] = trước (xám), items[1] = sau (cam); {label, sub?, icon?} — bỏ icon ở items[1] = giữ hình cũ
 //   'chuyen-giao' việc đi từ bên này sang bên kia: items[0] = bên giao, items[cuối] = bên nhận {label, icon}; giữa = các việc được chuyển {icon, label, at}
-//   'anh'     ảnh thật trong khung bo góc: {photo: 'x.jpg' (motion/public/photos/), label, sub?, credit: 'Tác giả · CC BY-SA', ratio?: 3/4, pos?: '50% 30%'}
+//   'anh'     ảnh thật trong khung bo góc: {photo: 'x.jpg' (chuyen-dong/public/anh/), label, sub?, credit: 'Tác giả · CC BY-SA', ratio?: 3/4, pos?: '50% 30%'}
 //             — chỉ ảnh giấy phép mở dùng thương mại (Wikimedia/Openverse) hoặc ảnh David gửi; ghi nguồn vào mô tả (nguon-anh.txt)
 // Vùng vẽ như Illus: dọc 10–56% chiều cao · ngang 12–80% (chừa phụ đề + thanh thời gian).
 import React from 'react';
@@ -267,7 +267,7 @@ export const Diagram = ({mode = 'tang', items = [], label = '', total = 0, start
       <>
         <div style={{position: 'absolute', left: x, top: 0, width: pw, height: ph, borderRadius: M * 0.035, overflow: 'hidden',
           boxShadow: `0 30px 80px rgba(0,0,0,0.55), 0 0 0 3px ${C.accent}55`, opacity: Math.min(1, p * 1.3), transform: `scale(${0.92 + 0.08 * p})`}}>
-          {it.photo && <Img src={staticFile(`photos/${it.photo}`)} style={{width: '100%', height: '100%', objectFit: 'cover', objectPosition: it.pos || '50% 35%', transform: `scale(${kb})`}} />}
+          {it.photo && <Img src={staticFile(`anh/${it.photo}`)} style={{width: '100%', height: '100%', objectFit: 'cover', objectPosition: it.pos || '50% 35%', transform: `scale(${kb})`}} />}
           {it.credit && <div style={{position: 'absolute', right: 12, bottom: 10, fontFamily: BODY, fontSize: M * 0.016, color: 'rgba(255,255,255,0.75)',
             textShadow: '0 1px 4px rgba(0,0,0,0.8)'}}>{it.credit}</div>}
         </div>

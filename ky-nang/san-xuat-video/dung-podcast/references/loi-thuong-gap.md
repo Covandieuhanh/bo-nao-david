@@ -7,9 +7,9 @@
 - Whisper nghe nhầm như skill gốc ("con nhà" → "căn nhà", "cái đá" → "cái đã", "Cô đang" → "Còn đang") — đối chiếu 2 lần chạy.
 
 ## Người nói
-- **nguoi-noi.py dùng pyannote** (`tach-nguoi-noi.py`, venv `~/.venvs/pyannote`, mô hình speaker-diarization-3.1 đã tải, chạy offline trên MPS): tự đếm số người, độ chắc = tỉ lệ thời gian trùng. Thử: podcast 1 người 9 phút → 1 người (~3 phút chạy); họp Zoom 4 phút → tách 2 người. torch ≥ 2.6 chặn nạp mô hình → tach-nguoi-noi.py cho phép đúng 4 lớp siêu dữ liệu (TorchVersion, Specifications, Problem, Resolution), không tắt kiểm tra. Vẫn đọc `check/speakers.md` theo nội dung.
+- **nguoi-noi.py dùng pyannote** (`tach-nguoi-noi.py`, venv `~/.venvs/pyannote`, mô hình speaker-diarization-3.1 đã tải, chạy offline trên MPS): tự đếm số người, độ chắc = tỉ lệ thời gian trùng. Thử: podcast 1 người 9 phút → 1 người (~3 phút chạy); họp Zoom 4 phút → tách 2 người. torch ≥ 2.6 chặn nạp mô hình → tach-nguoi-noi.py cho phép đúng 4 lớp siêu dữ liệu (TorchVersion, Specifications, Problem, Resolution), không tắt kiểm tra. Vẫn đọc `kiem-tra/nguoi-noi.md` theo nội dung.
 - Dự phòng (pyannote lỗi / không có venv): ước đoán theo giọng (cao độ + phổ mel + kênh trái/phải), k-means, mặc định 2 nhóm. Giọng nam/nữ tách tốt (thử nghiệm:
-  thử với giọng nam thật + giọng nữ đọc máy: đúng 8/8 đoạn, độ chắc 0,6–0,9 — chưa thử 2 người thật). Hai giọng cùng giới, cùng âm sắc dễ lẫn → luôn đọc `check/speakers.md` theo nội dung.
+  thử với giọng nam thật + giọng nữ đọc máy: đúng 8/8 đoạn, độ chắc 0,6–0,9 — chưa thử 2 người thật). Hai giọng cùng giới, cùng âm sắc dễ lẫn → luôn đọc `kiem-tra/nguoi-noi.md` theo nội dung.
 - Thu stereo mỗi người một kênh → kênh trái/phải được dùng làm dấu hiệu mạnh (tự bật khi lệch kênh > 1,5 log-năng lượng).
 - Cần numpy → `cai-python.sh` cài vào `~/.cache/dung-video-theo-phong-cach/podcast-venv` (python hệ thống không có numpy).
 

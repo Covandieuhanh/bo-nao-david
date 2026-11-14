@@ -1,7 +1,7 @@
 # Hồ sơ: Highlight
 
 **Hình mẫu chính:** clip Have A Sip (cắt qua lại khách–người dẫn 2–3 s, chip show + lịch, thẻ "nghe bản full") + Sao Việt 24H (khung 0
-= ảnh bìa, phụ đề nhịp chữ, tư liệu); quốc tế DOAC / Jay Shetty (thẻ tít tiền cược). Báo cáo: `cat-doan-noi-bat/references/hoc-tu-20-highlight-vn.md`.
+= ảnh bìa, phụ đề nhịp chữ, tư liệu); quốc tế DOAC / Jay Shetty (thẻ tít tiền cược). Báo cáo: `cat-doan-noi-bat/references/hoc-tu-20-doan-noi-bat-vn.md`.
 
 | Khoá | Ý nghĩa |
 |---|---|

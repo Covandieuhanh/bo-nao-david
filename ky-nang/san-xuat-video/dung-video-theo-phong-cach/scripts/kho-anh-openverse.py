@@ -1,8 +1,8 @@
 # Tìm & tải ảnh giấy phép mở từ Openverse (không cần key).
-#   search <dự án> <queries.json>   queries.json = [{"key": "02", "q": "waiter restaurant"}, ...]
-#       → images/candidates.json + images/thumbs/<key>_<i>.jpg + images/sheets/<key>.jpg (8 ảnh/hàng, đánh số 0–7 từ trái)
-#   fetch <dự án> <picks.json>       picks.json = {"02": 5, "05": 0, ...}  (key → số thứ tự ảnh trong hàng)
-#       → motion/public/photos/<key>.jpg + images/credits.tsv
+#   search <dự án> <tu-khoa-tim.json>   tu-khoa-tim.json = [{"key": "02", "q": "waiter restaurant"}, ...]
+#       → hinh-anh/ung-vien.json + hinh-anh/anh-nho/<key>_<i>.jpg + hinh-anh/bang-anh/<key>.jpg (8 ảnh/hàng, đánh số 0–7 từ trái)
+#   fetch <dự án> <anh-chon.json>       anh-chon.json = {"02": 5, "05": 0, ...}  (key → số thứ tự ảnh trong hàng)
+#       → chuyen-dong/public/anh/<key>.jpg + hinh-anh/ghi-cong.tsv
 # Openverse chậm (10–30 s/lượt) nên chạy tuần tự; lượt lỗi tự thử lại. Openverse không trả lời (đã gặp: quá giờ cả
 # loạt) → tự chuyển sang tìm thẳng trên Wikimedia Commons (chỉ giữ CC0 / PD / CC BY / CC BY-SA — dùng thương mại được).
 import json, os, re, subprocess, sys, time, urllib.parse, urllib.request
@@ -31,10 +31,10 @@ def wikimedia(q):
     return items
 
 def search(project, qfile):
-    img = os.path.join(project, "images")
-    os.makedirs(os.path.join(img, "thumbs"), exist_ok=True)
-    os.makedirs(os.path.join(img, "sheets"), exist_ok=True)
-    cpath = os.path.join(img, "candidates.json")
+    img = os.path.join(project, "hinh-anh")
+    os.makedirs(os.path.join(img, "anh-nho"), exist_ok=True)
+    os.makedirs(os.path.join(img, "bang-anh"), exist_ok=True)
+    cpath = os.path.join(img, "ung-vien.json")
     res = json.load(open(cpath)) if os.path.exists(cpath) else {}
     ov_down = False
     for q in json.load(open(qfile)):
@@ -45,7 +45,7 @@ def search(project, qfile):
         for attempt in range(0 if ov_down else 2):   # Openverse đã hỏng ở từ khoá trước → khỏi chờ lại
             try:
                 data = json.load(urllib.request.urlopen(urllib.request.Request(
-                    "https://api.openverse.org/v1/images/?" + params, headers={"User-Agent": UA}), timeout=90))
+                    "https://api.openverse.org/v1/hinh-anh/?" + params, headers={"User-Agent": UA}), timeout=90))
                 items = [{k: r.get(k) for k in ("id", "title", "url", "creator", "license", "license_version",
                                                 "foreign_landing_url", "width", "height", "source")} for r in data.get("results", [])]
                 break
@@ -61,7 +61,7 @@ def search(project, qfile):
         json.dump(res, open(cpath, "w"), ensure_ascii=False, indent=1)
         args, filt = [], ""
         for i in range(8):
-            dst = os.path.join(img, "thumbs", f"{q['key']}_{i}.jpg")
+            dst = os.path.join(img, "anh-nho", f"{q['key']}_{i}.jpg")
             if os.path.exists(dst): os.remove(dst)
             if i < len(items):
                 curl(wiki_thumb(items[i]["url"], 500), dst, 60); time.sleep(0.4)
@@ -70,15 +70,15 @@ def search(project, qfile):
             filt += f"[{i}:v]scale=240:180:force_original_aspect_ratio=decrease,pad=240:180:(ow-iw)/2:(oh-ih)/2:color=white,setsar=1[v{i}];"
         subprocess.run(["ffmpeg", "-v", "error", "-y", *args, "-filter_complex",
                         filt + "".join(f"[v{i}]" for i in range(8)) + "hstack=inputs=8", "-frames:v", "1",
-                        os.path.join(img, "sheets", f"{q['key']}.jpg")], env=node_env())
+                        os.path.join(img, "bang-anh", f"{q['key']}.jpg")], env=node_env())
         print(q["key"], q["q"], len(items), "ảnh")
 
 def fetch(project, pfile):
-    img = os.path.join(project, "images")
-    res = json.load(open(os.path.join(img, "candidates.json")))
-    photos = os.path.join(project, "motion/public/photos")
+    img = os.path.join(project, "hinh-anh")
+    res = json.load(open(os.path.join(img, "ung-vien.json")))
+    photos = os.path.join(project, "chuyen-dong/public/anh")
     os.makedirs(photos, exist_ok=True)
-    cpath = os.path.join(img, "credits.tsv")
+    cpath = os.path.join(img, "ghi-cong.tsv")
     credits = {}
     if os.path.exists(cpath):
         for l in open(cpath).read().splitlines():

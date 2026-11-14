@@ -1,4 +1,4 @@
-// Sân khấu nền cho video PODCAST (không có hình gốc) — chạy suốt video, nền đặc, render một lần thành video_goc.mp4.
+// Sân khấu nền cho video PODCAST (không có hình gốc) — chạy suốt video, nền đặc, render một lần thành video-goc.mp4.
 // Dọc 1080×1920 hoặc NGANG 1920×1080 thiết kế toàn khung (khung-podcast.js). Thanh thời gian + phụ đề ở lớp phu-de (trên cùng).
 // Trên: tên chương trình (nếu người dùng đưa) + tên tập (trích lời). Giữa: ý đang bàn (TOPICS, trích lời) — tự ẩn khi có lớp phủ.
 // Dưới: sóng âm theo giọng thật (duong-bao-am.js), màu theo người đang nói; tên người nói CHỈ hiện khi biết tên (lời nói/người dùng

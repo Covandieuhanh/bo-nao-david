@@ -1,5 +1,5 @@
 # them-slide.py: thêm slide cho người mới (so sánh đời thường, từ mới, mở cửa sổ lệnh) vào 8 bài.
-# Chạy lại được nhiều lần: ghi đè file slide, chỉ chèn id vào deck.json nếu chưa có.
+# Chạy lại được nhiều lần: ghi đè file slide, chỉ chèn id vào bo-slide.json nếu chưa có.
 import json, os, html
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 FOOT = "Dựng video bằng AI trên máy tính"
@@ -193,7 +193,7 @@ for n, d in D.items():
     if n == 1: files["mo-cua-so-lenh"] = MO_LENH
     for k, v in files.items():
         open(os.path.join(sd, k + ".html"), "w").write(v)
-    dj = os.path.join(ROOT, f"bai-{n}", "deck.json"); deck = json.load(open(dj))
+    dj = os.path.join(ROOT, f"bai-{n}", "bo-slide.json"); deck = json.load(open(dj))
     o = deck["order"]
     for k in ("tu-moi", "hieu-de"):  # chèn ngược để ra thứ tự: mục tiêu → hiểu dễ → từ mới
         if k not in o: o.insert(o.index(d["after"]) + 1, k)

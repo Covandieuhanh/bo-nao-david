@@ -1,7 +1,7 @@
 # Khối 07-canh-minh-hoa: Bố cục tự cân + motion graphic kể chuyện + điểm nhấn trên người + minh hoạ, sơ đồ, chuyển động
 
 **Dùng trong:** cả 4
-**Đầu vào:** lời (mốc từ words.srt)
+**Đầu vào:** lời (mốc từ moc-tung-tu.srt)
 **Đầu ra:** cảnh `nhan` / `bocuc` / `illus` / `diagram` / `ve` / card… trong canh.js · `illus` trong OVERLAYS · `ke-hoach-canh.md`
 **Tham số hồ sơ:** chung: `canh_minh_hoa.*`, `hai_trang_thai`
 **Sửa khối này → chạy lại:** 05, 17
@@ -10,7 +10,7 @@
 - `thu-vien-tai-nguyen/{chuyen-dong.js,chu-hien.jsx,mach.js,minh-hoa.jsx,so-do.jsx,bieu-tuong.jsx,giu.js}` · cảnh tự vẽ: `khuon-remotion/src/rieng/` (mẫu `mau-mach.jsx`)
 - `dung-video-theo-phong-cach/assets/khuon-remotion/src/thanh-phan/{CardFull,FullScreen,Action,BoCuc,Nhan}.jsx`
 - `dung-video-theo-phong-cach/scripts/kho-anh-openverse.py`
-- `dung-video-theo-phong-cach/references/scene-design.md` (bảng loại cảnh + props)
+- `dung-video-theo-phong-cach/references/thiet-ke-canh.md` (bảng loại cảnh + props)
 
 ## 1. Motion graphic kể chuyện — tự do sáng tạo (mục này đứng trên mọi mục dưới)
 Motion graphic là để **diễn tả lại câu chuyện**, không phải đưa hình vào cho có. AI sáng tạo theo từng video, không dập khuôn.
@@ -19,12 +19,12 @@ Motion graphic là để **diễn tả lại câu chuyện**, không phải đư
 - **Mọi video đều có điểm nhấn, nhưng chỉ vài kiểu hợp nội dung nhất** (quy-tac-chung mục 0, 4) — "dựng nhẹ" vẫn có điểm nhấn. Kiểu mạnh
   nhất để cho câu đắt nhất. Danh mục kiểu cảnh dưới đây (`nhan`, `bocuc`, `illus`, `diagram`, `card`…) chỉ là công cụ có sẵn — dùng
   khi hợp, không bắt buộc.
-- Cần hình riêng → **cảnh tự vẽ** (`type: 've'`): component React riêng của video trong `motion/src/rieng/` (đăng ký ở
-  `rieng/diem-vao.js`, xem mẫu `mau-mach.jsx`), dùng `lib/chuyen-dong.js`, `lib/chu-hien.jsx`, `lib/cho.js` (tránh người).
+- Cần hình riêng → **cảnh tự vẽ** (`type: 've'`): component React riêng của video trong `chuyen-dong/src/rieng/` (đăng ký ở
+  `rieng/diem-vao.js`, xem mẫu `mau-mach.jsx`), dùng `thu-vien/chuyen-dong.js`, `thu-vien/chu-hien.jsx`, `thu-vien/cho.js` (tránh người).
 - **Một hình diễn tả 1–2 ý, hoặc cả video:** không phải mỗi câu một hình. Trước khi viết cảnh, đọc cả lời và vẽ **mạch hình** — hình
   chính của câu chuyện lớn dần theo video.
 - **Ý quay lại → vẽ tiếp:** người nói nhắc lại hay đi tiếp ý trước thì cảnh sau **vẽ tiếp lên hình đã có** (thêm nét, đổi trạng thái,
-  đi tiếp con đường), không vẽ hình mới rời rạc. Dùng `lib/mach.js`: cùng component, `buoc` tăng dần, `tu_buoc` = bước đã vẽ ở cảnh trước.
+  đi tiếp con đường), không vẽ hình mới rời rạc. Dùng `thu-vien/mach.js`: cùng component, `buoc` tăng dần, `tu_buoc` = bước đã vẽ ở cảnh trước.
 - **Vẫn giữ:** chữ trên màn hình nguyên văn lời người nói (được rút gọn, đặt ở khoá `text`/`label`/`lines`/`quote`/`title` để máy
   soát); không che mặt khi vẽ cạnh người; câu cảm xúc, chuyện riêng thì để thấy mặt; luật chuyển động (mục 8). Đoạn chạm lằn ranh
   không làm đồ hoạ.
@@ -88,7 +88,7 @@ Hình động minh hoạ ĐÚNG Ý đang nói + **nhãn ngắn** (tên riêng / 
 
 Viết ở đâu:
 - 1 video / podcast (canh.js): `{id: 'm1', type: 'illus', start: 33.1, end: 37.0, props: {mode: 'count', items: [{icon: 'clock', at: 33.4}], num: {to: 15, at: 33.6, unit: 'PHÚT'}, label: 'MỖI NGÀY'}}`
-- Vlog (plan.json fx): `{"type": "illus", "c": "c3", "at": 82.0, "len": 4, "mode": "flow", "items": [["footsteps", 82.5, "ĐI BỘ"], ["heart", 84.0, "SỐNG THỌ"]]}`
+- Vlog (ke-hoach.json fx): `{"type": "illus", "c": "c3", "at": 82.0, "len": 4, "mode": "flow", "items": [["footsteps", 82.5, "ĐI BỘ"], ["heart", 84.0, "SỐNG THỌ"]]}`
 - Highlight / danh-sach-cat.js (OVERLAYS, giây timeline): `{type: 'illus', start: TS(140.2), end: TS(144), mode: 'single', items: [{icon: 'brain', at: TS(140.5)}], label: 'BỘ NÃO'}`
 Biểu tượng: `thu-vien-tai-nguyen/bieu-tuong.jsx` (thiếu thì vẽ thêm lưới 64×64 cùng kiểu nét — thêm ở thư viện là cả 4 loại có).
 
@@ -110,12 +110,12 @@ Khi câu nói có CẤU TRÚC, vẽ chính cấu trúc đó (mọi chữ trích 
 | một thứ giữ nguyên nhưng đổi trạng thái (nhấn vào sự đổi, không so sánh hai bên) | `doi-trang-thai` (2 items; bỏ `icon` ở item sau = giữ hình) | "từ làm thay … thành dẫn đội" |
 | việc đi từ người này sang người kia | `chuyen-giao` (items[0] bên giao, giữa = các việc `{icon, label, at}`, cuối = bên nhận) | "báo cáo tuần … xếp lịch … giao lại cho đội" |
 | người / nơi / tổ chức có thật | `anh` (ảnh giấy phép mở hoặc ảnh David gửi, khung bo góc + nhãn + nguồn) | "CCL", "Singapore", "Bác Hồ" |
-Ảnh: `kho-anh-openverse.py search/fetch` (CC0 / PD / CC BY / CC BY-SA, dùng thương mại) → `motion/public/photos/`, ghi `credit` trên ảnh +
+Ảnh: `kho-anh-openverse.py search/fetch` (CC0 / PD / CC BY / CC BY-SA, dùng thương mại) → `chuyen-dong/public/anh/`, ghi `credit` trên ảnh +
 `nguon-anh.txt` cho mô tả. Không có ảnh đúng (logo thương hiệu, ảnh mơ hồ) → dùng sơ đồ, không ép ảnh. Podcast dài: ưu tiên `diagram`
-hơn `illus`. Vlog (`plan.json` fx): `{"type": "diagram", "c", "at", "len", "mode", "label", "items": [{"at": giây clip, …}]}`.
+hơn `illus`. Vlog (`ke-hoach.json` fx): `{"type": "diagram", "c", "at", "len", "mode", "label", "items": [{"at": giây clip, …}]}`.
 
 ## 7. Lên kịch bản cảnh (canh.js)
-1. Viết mạch hình + đường cảm xúc (mục 1–2), rồi `motion/src/canh.js` từ transcript theo `../../dung-video-theo-phong-cach/references/scene-design.md`
+1. Viết mạch hình + đường cảm xúc (mục 1–2), rồi `chuyen-dong/src/canh.js` từ transcript theo `../../dung-video-theo-phong-cach/references/thiet-ke-canh.md`
    (loại cảnh cho loại câu nói, props). `references/vi-du-canh.js` là một kịch bản thật đã duyệt — đọc để lấy cảm giác nhịp và
    cách gắn mốc. Ghi `$P/ke-hoach-canh.md`: bảng cảnh (thời gian, loại, nội dung, minh hoạ, cảm xúc, lý do bố cục).
 2. Không làm cảnh `hook` mở đầu trừ khi David yêu cầu (khối 06).
@@ -124,7 +124,7 @@ hơn `illus`. Vlog (`plan.json` fx): `{"type": "diagram", "c", "at", "len", "mod
 4. **Cảnh cuối luôn là màn chốt** (khối 08): `{id: 'chot', type: 'cta', start: <thời lượng − 4>, end: <thời lượng>, props: {text, kind}}`
    — `text` = nguyên văn câu David nói cuối video (thời lượng = `duration` trong du-an.js; cảnh trước đó phải kết thúc trước mốc này).
 5. Sau khi viết (và mỗi lần sửa mốc) canh.js: `zsh $SKILL/scripts/vi-tri-khuon-mat.sh "$P"` (khối 05; lần đầu dò mặt ~1 phút / 5 phút
-   video). Đọc `check/faces/placement.md`: cảnh không có chỗ tránh được **mặt + đầu + vai + ngực** → script tự chuyển toàn màn hình.
+   video). Đọc `kiem-tra/khuon-mat/placement.md`: cảnh không có chỗ tránh được **mặt + đầu + vai + ngực** → script tự chuyển toàn màn hình.
    Muốn giữ lớp phủ: `place: {top: <px>, scale: 0.6}` hoặc `place: {full: false}` trong cảnh (thứ tự khoá: `id, type, start, end, place,
    props`). Cảnh toàn màn hình (`FULL`, gồm cả thẻ toàn cảnh) che hết hình nên không cần tránh. Ngang pillar: lớp phủ ở cột trái.
 6. *Khung ngang từ gốc dọc* — viết thêm `SIDES` (mẫu trong canh.js): `title` = chủ đề video ngắn gọn, `speaker`, `keywords` = từ
@@ -134,17 +134,17 @@ hơn `illus`. Vlog (`plan.json` fx): `{"type": "diagram", "c", "at", "len", "mod
 **Minh hoạ: biểu tượng vẽ (mặc định) hoặc ảnh** (luật ở `../../quy-tac-chung.md` mục 4). Biểu tượng: `icon: '<tên>'` thay `photo` trong
 `montage` và `card job`. Không dùng ảnh kho vì hay lệch ngữ cảnh, lạc tông nền, phải ghi nguồn, có thể lộ mặt người lạ. Không có ảnh
 tốt → biểu tượng + tên gọi đúng, không ảnh tạm. David nói "không dùng ảnh" → không ảnh nào; "thêm ảnh" → tìm ảnh cho mọi thứ cụ thể.
-Khi cần ảnh: viết `$P/images/queries.json` (từ khoá tiếng Anh) rồi:
+Khi cần ảnh: viết `$P/hinh-anh/tu-khoa-tim.json` (từ khoá tiếng Anh) rồi:
 ```bash
-python3 -I $SKILL/scripts/kho-anh-openverse.py search "$P" "$P/images/queries.json"     # chạy nền, ~20 s/từ khoá
+python3 -I $SKILL/scripts/kho-anh-openverse.py search "$P" "$P/hinh-anh/tu-khoa-tim.json"     # chạy nền, ~20 s/từ khoá
 ```
-Xem từng `images/sheets/<key>.jpg` (8 ảnh, số 0–7 từ trái) và chọn. Loại bỏ: người nổi tiếng/người dễ nhận ra ở bối cảnh nhạy cảm,
+Xem từng `hinh-anh/bang-anh/<key>.jpg` (8 ảnh, số 0–7 từ trái) và chọn. Loại bỏ: người nổi tiếng/người dễ nhận ra ở bối cảnh nhạy cảm,
 logo thương hiệu nổi bật, hình vẽ clip-art lạc tông với ảnh chụp, ảnh mờ/chữ đè, ảnh không khớp nghĩa. Không có ảnh ổn → thêm từ khoá
-khác vào queries.json và search lại (chỉ các key đó). Rồi:
+khác vào tu-khoa-tim.json và search lại (chỉ các key đó). Rồi:
 ```bash
-python3 -I $SKILL/scripts/kho-anh-openverse.py fetch "$P" "$P/images/picks.json"
+python3 -I $SKILL/scripts/kho-anh-openverse.py fetch "$P" "$P/hinh-anh/anh-chon.json"
 ```
-Ảnh vào `motion/public/photos/<key>.jpg`; dùng trong canh.js qua `photo: '<key>.jpg'`.
+Ảnh vào `chuyen-dong/public/anh/<key>.jpg`; dùng trong canh.js qua `photo: '<key>.jpg'`.
 
 **Giữ cảnh sau chữ cuối:** hình / chữ chạy theo lời không tắt ngay khi chữ cuối vừa hiện: hết cảnh ≥ mốc phần tử cuối + 0,5 s hiện
 vào + `giu_sau_s` (hồ sơ chung) + 0,3 s mờ ra (+`giu_moi_chu_s` mỗi chữ nhãn vượt 3), tối đa 6 s từ đầu cảnh, không lấn lớp kế tiếp /

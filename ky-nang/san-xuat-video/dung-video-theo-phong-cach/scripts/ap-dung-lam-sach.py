@@ -1,6 +1,6 @@
 # Áp cắt + sửa chiều hình: ap-dung-lam-sach.py <dự án>
-# Đọc check/clean/cuts.json (chỉ các cut ok=true) → davinci/media/video_goc.mp4 (bản sạch), giữ bản thô là
-# video_goc_raw.<ext>, cập nhật motion/src/du-an.js, ghi segments.json (mốc thô ↔ mốc sạch) + bảng vào cuts.md.
+# Đọc kiem-tra/lam-sach/diem-cat.json (chỉ các cut ok=true) → tu-lieu/video-goc.mp4 (bản sạch), giữ bản thô là
+# video-goc-tho.<ext>, cập nhật chuyen-dong/src/du-an.js, ghi cac-doan.json (mốc thô ↔ mốc sạch) + bảng vào diem-cat.md.
 #   orient: danh sách trong "180", "cw" (xoay phải 90°), "ccw" (xoay trái 90°), "mirror" (lật gương)
 #   zoom:   "none" (mặc định) = không phóng; "alt" = đoạn xen kẽ phóng 1,08× ở mối cắt (chỉ khi David yêu cầu)
 import glob, json, os, re, subprocess, sys
@@ -8,16 +8,16 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from _chung import node_env
 
 P = os.path.expanduser(sys.argv[1])
-MEDIA, O = os.path.join(P, "davinci", "media"), os.path.join(P, "check", "clean")
+MEDIA, O = os.path.join(P, "tu-lieu"), os.path.join(P, "kiem-tra", "lam-sach")
 ENV = node_env()
-cfg = json.load(open(os.path.join(O, "cuts.json"), encoding="utf-8"))
+cfg = json.load(open(os.path.join(O, "diem-cat.json"), encoding="utf-8"))
 
-raw = glob.glob(os.path.join(MEDIA, "video_goc_raw.*"))
+raw = glob.glob(os.path.join(MEDIA, "video-goc-tho.*"))
 if raw:
     raw = raw[0]
 else:   # lần đầu: đổi tên bản thô (macOS không phân biệt hoa/thường: .MP4 và .mp4 là MỘT file)
-    src = glob.glob(os.path.join(MEDIA, "video_goc.*"))[0]
-    raw = os.path.join(MEDIA, "video_goc_raw" + os.path.splitext(src)[1])
+    src = glob.glob(os.path.join(MEDIA, "video-goc.*"))[0]
+    raw = os.path.join(MEDIA, "video-goc-tho" + os.path.splitext(src)[1])
     os.rename(src, raw)
 
 probe = lambda *a: subprocess.check_output(["ffprobe", "-v", "error", *a, raw], env=ENV).decode().strip()
@@ -63,8 +63,8 @@ for i, (a, b) in enumerate(keep):
     cat += f"[v{i}][a{i}]"
 fc.append(f"{cat}concat=n={len(keep)}:v=1:a=1[v][a]")
 
-out = os.path.join(MEDIA, "video_goc.mp4")
-script = os.path.join(O, "filter.txt")
+out = os.path.join(MEDIA, "video-goc.mp4")
+script = os.path.join(O, "bo-loc.txt")
 open(script, "w").write(";\n".join(fc))
 subprocess.run(["ffmpeg", "-y", "-v", "error", "-stats", "-i", raw, "-/filter_complex", script,
                 "-map", "[v]", "-map", "[a]", "-r", FR, "-fps_mode", "cfr",
@@ -72,17 +72,17 @@ subprocess.run(["ffmpeg", "-y", "-v", "error", "-stats", "-i", raw, "-/filter_co
                 "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", out], check=True, env=ENV)
 
 new_dur = float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", out], env=ENV))
-open(os.path.join(P, "motion", "src", "du-an.js"), "w").write(
+open(os.path.join(P, "chuyen-dong", "src", "du-an.js"), "w").write(
     "// Thông số video gốc (bản đã làm sạch) — tự điền bởi ap-dung-lam-sach.py\n"
-    f"export default {{fpsNum: {fn}, fpsDen: {fd}, width: {OW}, height: {OH}, duration: {new_dur:.3f}, source: 'video_goc.mp4'}};\n")
+    f"export default {{fpsNum: {fn}, fpsDen: {fd}, width: {OW}, height: {OH}, duration: {new_dur:.3f}, source: 'video-goc.mp4'}};\n")
 
 # Bảng quy đổi mốc thô → mốc sạch (dùng khi đổi cắt sau khi đã có canh.js)
 seg, c = [], 0.0
 for a, b in keep:
     seg.append(dict(raw_start=a, raw_end=b, clean_start=round(c, 3))); c += b - a
-json.dump(seg, open(os.path.join(O, "segments.json"), "w"), indent=1)
+json.dump(seg, open(os.path.join(O, "cac-doan.json"), "w"), indent=1)
 mmss = lambda t: f"{int(t // 60)}:{t % 60:04.1f}"
-with open(os.path.join(O, "cuts.md"), "a", encoding="utf-8") as f:
+with open(os.path.join(O, "diem-cat.md"), "a", encoding="utf-8") as f:
     f.write(f"\n## Đã áp ({len(cuts)} cắt, xoay/lật: {cfg.get('orient') or 'không'}, zoom: {cfg.get('zoom', 'none')})\n"
             f"Thô {DUR:.1f}s → sạch {new_dur:.1f}s (−{DUR - new_dur:.1f}s). Mối nối trong bản sạch: "
             + ", ".join(mmss(s["clean_start"]) for s in seg[1:]) + "\n")

@@ -24,7 +24,7 @@ Trên Mac chính, skill, hồ sơ, luật và bộ nhớ trong `~/.claude` là l
 
 **App xem tài liệu (Mở Tài Liệu):** `bash tu-dong-hoa/trinh-xem-tai-lieu/dung.sh` (xem `tu-dong-hoa/trinh-xem-tai-lieu/README.md`).
 
-**Phòng khi máy này hỏng:** repo này giữ não và skill; Drive `thanh-pham` giữ thành phẩm; Drive `sao-luu-claude-2026-11-07/du-an-video` giữ âm thanh gốc và kịch bản từng dự án (bỏ `node_modules` và file render, dựng lại được). Giải nén vào `~/Movies`, chạy `npm install` trong `motion/`, rồi render lại. File `.env` của App notion, `~/Documents/mk.csv`, hồ sơ đăng nhập Chrome và lịch sử chat chỉ có trên máy này, cố ý không đưa lên mạng.
+**Phòng khi máy này hỏng:** repo này giữ não và skill; Drive `thanh-pham` giữ thành phẩm; Drive `sao-luu-claude-2026-11-07/du-an-video` giữ âm thanh gốc và kịch bản từng dự án (bỏ `node_modules` và file render, dựng lại được). Giải nén vào `~/Movies`, chạy `npm install` trong `chuyen-dong/`, rồi render lại. File `.env` của App notion, `~/Documents/mk.csv`, hồ sơ đăng nhập Chrome và lịch sử chat chỉ có trên máy này, cố ý không đưa lên mạng.
 
 ## 2. Claude Code trên máy mới (Mac)
 

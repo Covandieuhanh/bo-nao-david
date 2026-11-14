@@ -2,7 +2,7 @@
 // Nền sẫm đặc (C.nen) như phụ đề: chữ trắng / cam đọc được trên mọi nền sáng; không nền đen mờ.
 import React from 'react';
 import {C, HEAD} from './bien-thiet-ke';
-import BRAND from './brand.json';
+import BRAND from './thuong-hieu.json';
 const SHADOW = '0 6px 30px rgba(0,0,0,0.45)';
 export const DauGoc = ({topic = '', style}) => (
   <div style={{display: 'flex', alignItems: 'center', gap: 14, background: C.nen, borderRadius: 14, padding: '6px 18px 8px 16px', ...style}}>

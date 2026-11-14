@@ -1,21 +1,21 @@
 # Viết kịch bản dựng VLOG DÀI nhiều clip từ bảng giữ/bỏ: danh-sach-cat-vlog.py <dự án>
-# Đầu vào <P>/plan.json (Claude viết sau khi xem lời + hình từng clip, multi-clip.md 2c):
+# Đầu vào <P>/ke-hoach.json (Claude viết sau khi xem lời + hình từng clip, nhieu-doan-video.md 2c):
 # {
 #   "show": {"name": "NÚI ÔNG KÉT", "tag": "HÀNH HƯƠNG"},                       # dòng góc trên (hud)
 #   "teaser": {"clip": "c15", "from": 0.0, "to": 3.5, "text": "câu nói"},     # khoảnh khắc đắt nhất mở đầu (bỏ trống = không có)
 #   "title": {"clip": "c12", "from": 0, "eyebrow": "…", "l1": "…", "l2": "…", "sub": "…"},
 #   "fix": {"núi Kép": "núi Két", …},                                          # sửa chính tả phụ đề (regex, không phân biệt hoa thường)
 #   "drop_sub": ["cụm chữ", …],                                                # dòng phụ đề chứa cụm này = nghe không rõ → bỏ
-#   "clips": [{"c": "c1", "from": 0.3, "to": 34.0, "drop": [[a, b]], "tone": "soi" | "lang",
+#   "doan-video": [{"c": "c1", "from": 0.3, "to": 34.0, "drop": [[a, b]], "tone": "soi" | "lang",
 #              "place": {"eyebrow": "…", "place": "…", "sub": "…"},          # thẻ địa điểm khi tới nơi mới (tuỳ chọn)
 #              "mute_sub": [[a, b]], "fast": false, "skip": true, "vol": 0, "note": "…"}, …],   # vol: nhân âm lượng clip (0 = tắt — clip có nhạc sẵn, vd. flycam TikTok)  # bỏ phụ đề đoạn nghe không rõ · fast=false: không tua
 #                                                                               # skip: bỏ cả clip · note: lý do (vào báo cáo)
 #   "intro": {"kind": 1 | 2, "shots": [{"c": "c23", "at": 16.9, "len": 1.2, "voice": "câu nguyên văn"}, …]},
-#            # MỞ ĐẦU kiểu vlog gần đây của kênh mẫu (multi-clip.md 2d): đoạn GHÉP cảnh đắt nhất cả chuyến (số cảnh theo chất liệu —
+#            # MỞ ĐẦU kiểu vlog gần đây của kênh mẫu (nhieu-doan-video.md 2d): đoạn GHÉP cảnh đắt nhất cả chuyến (số cảnh theo chất liệu —
 #            # chỉ cảnh thật sự khác nhau, không cố định độ dài) trên nhạc
 #            # sôi động, thẻ tiêu đề nằm ngay trên đoạn ghép. voice = giữ tiếng thật + phụ đề (1–2 cảnh, nguyên văn), còn lại câm.
 #            # kind 1: ghép TRƯỚC rồi tới lời chào (mặc định, đoạn ghép đứng đầu video).
-#            # kind 2: lời chào TRƯỚC — tách clip chào làm hai mục trong "clips" và đặt {"montage": true} giữa hai mục, ngay sau câu
+#            # kind 2: lời chào TRƯỚC — tách clip chào làm hai mục trong "doan-video" và đặt {"montage": true} giữa hai mục, ngay sau câu
 #            #         chốt kiểu "Let's go / xin được bắt đầu".
 #            # "nhac": "intro-soi" (mặc định) | "intro-lang" — Claude chọn theo nội dung chuyến. Cảnh câm không ghi len = 2 phách
 #            # của bài (≈ 1,06 s) và nhạc được canh để mọi mối cắt cảnh câm rơi đúng phách.
@@ -30,22 +30,22 @@
 #       # mode single · flow · vs (item thứ 4 = true/false) · count ("num": {"to": 15, "at": 83, "unit": "PHÚT"}) · list
 #     {"type": "scene", "c": "c3", "at": 82.0, "len": 6, "icons": [["fruit", 84.5], ["tree", 92.0]], "quote": "câu nguyên văn **nhấn**"}],   # (cũ — có câu trích dài)
 #     # scene = cảnh minh hoạ VẼ toàn màn hình (biểu tượng bieu-tuong.jsx vẽ dần đúng lúc nhắc + câu nguyên văn), 3–4 cảnh/video                      
-#   # Mật độ ~1 hiệu ứng / 15–20 s, chữ CHỈ trích nguyên văn, đặt đúng mốc nói (multi-clip.md 2d) — vlog chủ yếu nói chuyện
+#   # Mật độ ~1 hiệu ứng / 15–20 s, chữ CHỈ trích nguyên văn, đặt đúng mốc nói (nhieu-doan-video.md 2d) — vlog chủ yếu nói chuyện
 #   # mà không có fx thì người xem chỉ thấy phụ đề suốt (người dùng chỉ ra 2026-11-04, vlog Haruku).
 #   "cta": {"text": "…", "kind": "comment"}
 # }
-# Tự làm: cắt theo from/to trừ drop · đoạn KHÔNG LỜI ≥ 4 s (theo words.srt) tua 1,8× tiếng nhỏ — giữ cảm giác hành trình mà vẫn có
-# nhịp · phụ đề từ words.srt (≤ 9 chữ/dòng, ngắt ở dấu câu/khoảng lặng), bỏ câu Whisper bịa ("Hãy subscribe…") · thẻ địa điểm 3 s ·
-# TONE + MUSIC.tracks theo tông từng clip (nhạc cố định của kênh) · tiếng whoosh ở chuyển chặng. Ghi <P>/motion/src/danh-sach-cat.js +
-# <P>/check/vlog-cut.md (nguồn → video, đoạn bỏ, đoạn tua).
+# Tự làm: cắt theo from/to trừ drop · đoạn KHÔNG LỜI ≥ 4 s (theo moc-tung-tu.srt) tua 1,8× tiếng nhỏ — giữ cảm giác hành trình mà vẫn có
+# nhịp · phụ đề từ moc-tung-tu.srt (≤ 9 chữ/dòng, ngắt ở dấu câu/khoảng lặng), bỏ câu Whisper bịa ("Hãy subscribe…") · thẻ địa điểm 3 s ·
+# TONE + MUSIC.tracks theo tông từng clip (nhạc cố định của kênh) · tiếng whoosh ở chuyển chặng. Ghi <P>/chuyen-dong/src/danh-sach-cat.js +
+# <P>/kiem-tra/cat-vlog.md (nguồn → video, đoạn bỏ, đoạn tua).
 # SOÁT HÌNH (người dùng chỉ ra 2026-11-04: giữ 18 s cuối c13 vì có lời hỏi đường — hình vẫn trong túi rồi lật ngang/lộn ngược):
-#   ⚠ in cảnh báo khi đoạn giữ chạm đoạn hỏng của khung-loi.py (check/cN/bad.txt) — hình hỏng thì BỎ kể cả có lời;
-#   ghi check/segs/<cN>_<k>.jpg = 1 khung/giây của từng đoạn giữ → Claude XEM HẾT trước khi render (bắt hình lật/xoay/quay loạn,
-#   thứ không dò được bằng độ sáng), sửa plan.json rồi chạy lại.
+#   ⚠ in cảnh báo khi đoạn giữ chạm đoạn hỏng của khung-loi.py (kiem-tra/cN/khung-loi.txt) — hình hỏng thì BỎ kể cả có lời;
+#   ghi kiem-tra/cac-doan/<cN>_<k>.jpg = 1 khung/giây của từng đoạn giữ → Claude XEM HẾT trước khi render (bắt hình lật/xoay/quay loạn,
+#   thứ không dò được bằng độ sáng), sửa ke-hoach.json rồi chạy lại.
 import difflib, json, math, os, re, shutil, subprocess, sys
 
 P = os.path.expanduser(sys.argv[1])
-plan = json.load(open(os.path.join(P, 'plan.json'), encoding='utf-8'))
+plan = json.load(open(os.path.join(P, 'ke-hoach.json'), encoding='utf-8'))
 FAST_GAP, FAST_RATE, FAST_VOL, EDGE = 4.0, 1.8, 0.35, 0.6
 FPS = 30
 fr = lambda s: round(s * FPS) / FPS
@@ -54,12 +54,12 @@ GAIN = json.load(open(os.path.join(os.path.dirname(os.path.realpath(__file__)), 
 # Bài cho đoạn ghép mở đầu (assets/music, chọn 2026-11-04 theo chất intro vlog kênh mẫu): (nhịp s, pha phách đầu s) đo bằng onset
 #   intro-soi = Upbeat (alex-morgan) — chuyến vui, du lịch · intro-lang = Inspiring Documentary (AtlasAudio) — hành hương, từ thiện, ý nghĩa
 BEAT = {'intro-soi': (0.530, 0.015), 'intro-lang': (0.530, 0.040)}
-BRAND = json.load(open(os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../thu-vien-tai-nguyen/brand.json'), encoding='utf-8'))
+BRAND = json.load(open(os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../thu-vien-tai-nguyen/thuong-hieu.json'), encoding='utf-8'))
 SFXDIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../assets/hieu-ung-am-thanh')
 MUSDIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../cat-doan-noi-bat/assets/nhac')
 intro_mus = None
 MUS = {'soi': 'soi-1', 'lang': 'lang-1'}
-# plan.json "tuyen" (hồ sơ chung nhac.tuyen, David chốt 08/11: chọn nhạc theo nội dung từ cả kho) → bài đầu của tuyến cho đoạn sôi;
+# ke-hoach.json "tuyen" (hồ sơ chung nhac.tuyen, David chốt 08/11: chọn nhạc theo nội dung từ cả kho) → bài đầu của tuyến cho đoạn sôi;
 # "nhac": {"soi": "<bài>", "lang": "<bài>"} ép tay
 _TY = json.load(open(os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../ho-so-thuong-hieu/chung.json'), encoding='utf-8'))['nhac']['tuyen']
 if plan.get('tuyen') in _TY and _TY[plan['tuyen']]['bai']:
@@ -135,7 +135,7 @@ def emit_montage():
                         f"l1: {json.dumps(tt['l1'], ensure_ascii=False)}, l2: {json.dumps(tt['l2'], ensure_ascii=False)}, sub: {json.dumps(tt.get('sub', ''), ensure_ascii=False)}}},")
         sfx.append(f"  {{f: '{BRAND['sting'][:-4]}', at: {q[0]:.2f}, v: {BRAND['stingVol']}}},")   # tiếng ký hiệu kênh ở tiêu đề (cả 4 loại)
     return acc
-if INTRO and INTRO.get('kind', 1) == 1 and not any(k.get('montage') for k in plan['clips']):
+if INTRO and INTRO.get('kind', 1) == 1 and not any(k.get('montage') for k in plan['doan-video']):
     hud_from = emit_montage()
 elif tt and not INTRO:
     add({'id': 'title', 'clip': tt['clip'], 'from': tt.get('from', 0), 'to': tt.get('from', 0) + 2.8, 'vol': 0, 'grade': 'title'}, 'soi')
@@ -147,9 +147,9 @@ if not INTRO: hud_from = acc
 
 src_total = kept_total = 0.0
 LOWER, PROPER, PAIR = set(), set(), {}                             # từ thường · tên riêng (viết hoa ở GIỮA dòng: Nhật Bản, Haruku…)
-for k in plan['clips']:
+for k in plan['doan-video']:
     if k.get('montage'): continue
-    for _, _, t in srt(os.path.join(P, 'check', k['c'], 'transcript.srt')):
+    for _, _, t in srt(os.path.join(P, 'kiem-tra', k['c'], 'ban-chep-loi.srt')):
         ws = re.findall(r'\w+', t)
         LOWER |= {w for w in ws if w.islower()}
         PROPER |= {w for w in ws[1:] if w[:1].isupper()}
@@ -160,7 +160,7 @@ COMPOUND = {k for k, v in PAIR.items() if v >= 2 and not (k[0] in END_BAD and k[
 for v in plan.get('fix', {}).values():                  # chữ đã sửa tay (phạm trù, bộ môn…) cũng là từ ghép
     vw = [norm(w) for w in v.split()]; COMPOUND |= {(vw[i], vw[i + 1]) for i in range(len(vw) - 1)}
 warn, sheets, seen, cnt = [], [], set(), {}
-for k in plan['clips']:
+for k in plan['doan-video']:
     if k.get('montage'):                                   # kind 2: đoạn ghép chen sau câu chào
         hud_from = emit_montage(); continue
     c, tone = k['c'], k.get('tone', 'soi')
@@ -168,11 +168,11 @@ for k in plan['clips']:
     if c not in seen: src_total += D; seen.add(c)         # một clip tách làm hai mục (kind 2) chỉ tính nguồn một lần
     a, b = max(0.0, k.get('from', 0.3)), min(D, k.get('to', D - 0.3))
     keep = [] if k.get('skip') else minus(a, b, k.get('drop', []))      # skip: bỏ cả clip (trùng / hỏng) — vẫn tính vào tổng nguồn
-    words = [w for w in srt(os.path.join(P, 'check', c, 'words.srt'))]
-    bad = [(x, y) for x, y, t in srt(os.path.join(P, 'check', c, 'transcript.srt')) if BAD.search(t)]
+    words = [w for w in srt(os.path.join(P, 'kiem-tra', c, 'moc-tung-tu.srt'))]
+    bad = [(x, y) for x, y, t in srt(os.path.join(P, 'kiem-tra', c, 'ban-chep-loi.srt')) if BAD.search(t)]
     mute = k.get('mute_sub', [])
     words = [w for w in words if not any(x - 0.2 <= w[0] <= y + 0.2 for x, y in bad + [tuple(m) for m in mute])]
-    raw_lines = [(la, lb, t) for la, lb, t in srt(os.path.join(P, 'check', c, 'transcript.srt'))
+    raw_lines = [(la, lb, t) for la, lb, t in srt(os.path.join(P, 'kiem-tra', c, 'ban-chep-loi.srt'))
                  if not BAD.search(t) and not any(la < y and lb > x for x, y in [tuple(m) for m in mute])]
     # Whisper ngắt dòng giữa câu ("…bây giờ sẽ là quá / Trình hành hương…") → nối các dòng chưa có dấu kết câu thành một câu,
     # chữ đầu dòng nối hạ chữ thường nếu nó là từ thường (có xuất hiện viết thường ở đâu đó trong lời)
@@ -188,7 +188,7 @@ for k in plan['clips']:
             lines[-1] = (lines[-1][0], lb, (lines[-1][2] + sep + w0 + (' ' + rest if rest else '')).strip())
         else: lines.append((la, lb, t))
     try: badr = [tuple(float(v) for v in l.split()[0].split('-')) + (l.split()[1],)
-                 for l in open(os.path.join(P, 'check', c, 'bad.txt'), encoding='utf-8') if l.strip()]
+                 for l in open(os.path.join(P, 'kiem-tra', c, 'khung-loi.txt'), encoding='utf-8') if l.strip()]
     except FileNotFoundError: badr = []
     for p0, p1 in keep:
         for x, y, why in badr:
@@ -226,12 +226,12 @@ for k in plan['clips']:
                 if tone == 'soi': sfx.append(f"  {{f: 'whoosh', at: segStart('{sid}') + 0.1, v: 0.5}},")
             first = False
             if fast: continue
-            # phụ đề: theo CÂU của transcript.srt (có dấu câu), câu dài chia thành dòng ≤ 9 chữ cân nhau, ngắt sau dấu câu / trước
+            # phụ đề: theo CÂU của ban-chep-loi.srt (có dấu câu), câu dài chia thành dòng ≤ 9 chữ cân nhau, ngắt sau dấu câu / trước
             # từ nối; mốc chia theo số ký tự trong câu (mốc từng chữ Whisper không có dấu câu → ngắt lủng củng "…này bây / Giờ sẽ…")
             for la, lb, text in lines:
                 if lb <= x or la >= y: continue
                 toks = fixtxt(text, cap=False).split()            # sửa chính tả TRƯỚC khi chia (tên riêng không bị tách đôi)
-                # mốc TỪNG CHỮ: khớp chữ của câu với words.srt (difflib), chữ không khớp nội suy. Chữ rơi ngoài đoạn giữ thì bỏ —
+                # mốc TỪNG CHỮ: khớp chữ của câu với moc-tung-tu.srt (difflib), chữ không khớp nội suy. Chữ rơi ngoài đoạn giữ thì bỏ —
                 # trước 2026-11-04 cả câu được giữ theo tỉ lệ ký tự nên lọt chữ của đoạn đã cắt ("…tốt lành thật ra", "David xin chào…")
                 ww = [w for w in words if la - 0.6 <= w[0] <= lb + 0.3]
                 sm = difflib.SequenceMatcher(None, [norm(t) for t in toks], [norm(w[2]) for w in ww], autojunk=False)
@@ -330,11 +330,11 @@ cta = plan.get('cta', {'text': '', 'kind': 'comment'})
 # duck 0,08 → nhạc chỉ dưới giọng ~5 dB, lấn lời). Bài đã cân gain về ~−15,5 LUFS → duck = nhạc thấp hơn giọng SPEECH_GAP LU.
 SPEECH_GAP = BRAND['musicGapVlogLU']
 def lufs(c):
-    out = subprocess.run(['ffmpeg', '-nostats', '-i', os.path.join(P, 'motion/public/clips', c + '.mp4'), '-af', 'ebur128', '-f', 'null', '-'],
+    out = subprocess.run(['ffmpeg', '-nostats', '-i', os.path.join(P, 'chuyen-dong/public/doan-video', c + '.mp4'), '-af', 'ebur128', '-f', 'null', '-'],
                          capture_output=True, text=True).stderr
     m = re.findall(r'I:\s+(-?[\d.]+) LUFS', out)
     return float(m[-1]) if m else -23.0
-used = [(k['c'], k.get('to', dur_of(k['c'])) - k.get('from', 0)) for k in plan['clips'] if k.get('c') and not k.get('skip')]
+used = [(k['c'], k.get('to', dur_of(k['c'])) - k.get('from', 0)) for k in plan['doan-video'] if k.get('c') and not k.get('skip')]
 speech = 10 * math.log10(sum(d * 10 ** (lufs(c) / 10) for c, d in used) / max(1e-6, sum(d for _, d in used)))
 duck = round(min(0.08, 10 ** ((speech - SPEECH_GAP + 15.5) / 20)), 3)
 base = round(min(0.2, duck * 1.6), 3)                     # chỗ ngừng nói: nhạc nhích lên nhẹ (×2,5 nghe dập dình)
@@ -345,22 +345,22 @@ for x, y, k in tr:
 last = next((s_ for s_ in reversed(raw) if not s_['id'].startswith('m')), raw[-1])
 endcard = {'title': plan.get('show', {}).get('name', ''), 'speaker': BRAND['name'], 'clip': last['clip'], 'at': round(max(last['from'], last['to'] - 1.0), 2),
            'len': BRAND['endcardLen'] + (plan.get('ytEnd') or 0), 'play': False, 'yt': plan.get('ytEnd') or 0, 'schedule': plan.get('schedule', '')}   # ytEnd: màn kết YouTube 15–20 s
-st_dst = os.path.join(P, 'motion/public/hieu-ung-am-thanh', BRAND['sting'])
+st_dst = os.path.join(P, 'chuyen-dong/public/hieu-ung-am-thanh', BRAND['sting'])
 if not os.path.exists(st_dst): shutil.copy(os.path.join(SFXDIR, BRAND['sting']), st_dst)
 for f in {t['f'] for t in tracks}:                       # chép bài cần dùng vào dự án (nhạc cố định của kênh)
-    dst = os.path.join(P, 'motion/public/hieu-ung-am-thanh', f + '.mp3')
+    dst = os.path.join(P, 'chuyen-dong/public/hieu-ung-am-thanh', f + '.mp3')
     if not os.path.exists(dst): shutil.copy(os.path.join(MUSDIR, f + '.mp3'), dst)
-tpl = open(os.path.join(P, 'motion/src/danh-sach-cat.js'), encoding='utf-8').read()
+tpl = open(os.path.join(P, 'chuyen-dong/src/danh-sach-cat.js'), encoding='utf-8').read()
 head = tpl[:tpl.index('const RAW = [')]
 mid = tpl[tpl.index('let acc = 0;'):tpl.index('// ===== Phụ đề')]
 rawjs = ',\n'.join('  ' + json.dumps({k: v for k, v in s.items() if not k.startswith('_')}, ensure_ascii=False) for s in raw)
 show = plan.get('show', {})
-src = f"""{head}// Viết bởi dung-video-theo-phong-cach/scripts/danh-sach-cat-vlog.py từ plan.json — sửa plan.json rồi chạy lại (không sửa tay file này).
+src = f"""{head}// Viết bởi dung-video-theo-phong-cach/scripts/danh-sach-cat-vlog.py từ ke-hoach.json — sửa ke-hoach.json rồi chạy lại (không sửa tay file này).
 const RAW = [
 {rawjs}
 ];
 
-{mid}// ===== Phụ đề (words.srt, đã sửa chính tả theo plan.fix) =====
+{mid}// ===== Phụ đề (moc-tung-tu.srt, đã sửa chính tả theo plan.fix) =====
 const SUB = [
 {chr(10).join(subs)}
 ];
@@ -386,21 +386,21 @@ export const HL = null;
 // Thẻ cuối nhận diện (cả 4 loại video): chủ đề + tên kênh, sau màn chốt CTA
 export const ENDCARD = {json.dumps(endcard, ensure_ascii=False)};
 """
-open(os.path.join(P, 'motion/src/danh-sach-cat.js'), 'w', encoding='utf-8').write(src)
+open(os.path.join(P, 'chuyen-dong/src/danh-sach-cat.js'), 'w', encoding='utf-8').write(src)
 md = [f"# Cắt vlog — nguồn {src_total / 60:.1f} phút → video {acc / 60:.1f} phút ({acc / src_total:.0%})", "",
       "| Clip | Dài (s) | Giữ | Bỏ | Tông | Ghi chú |", "|---|---|---|---|---|---|"] + report
 if warn: md += ["", "## ⚠ Đoạn giữ chạm hình hỏng (khung-loi.py) — bỏ, hoặc xem tờ soát và ghi lý do giữ vào note", ""] + [f"- {w}" for w in warn]
-open(os.path.join(P, 'check', 'vlog-cut.md'), 'w', encoding='utf-8').write('\n'.join(md) + '\n')
-SD = os.path.join(P, 'check', 'segs'); os.makedirs(SD, exist_ok=True)
+open(os.path.join(P, 'kiem-tra', 'cat-vlog.md'), 'w', encoding='utf-8').write('\n'.join(md) + '\n')
+SD = os.path.join(P, 'kiem-tra', 'cac-doan'); os.makedirs(SD, exist_ok=True)
 for f in os.listdir(SD): os.remove(os.path.join(SD, f))
 for i, (c, p0, p1) in enumerate(sheets):
     n = max(1, int(p1 - p0))
-    subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', f'{p0:.2f}', '-to', f'{p1:.2f}', '-i', os.path.join(P, 'motion/public/clips', c + '.mp4'),
+    subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', f'{p0:.2f}', '-to', f'{p1:.2f}', '-i', os.path.join(P, 'chuyen-dong/public/doan-video', c + '.mp4'),
                     '-vf', f'fps=1,scale=120:-2,tile=10x{(n + 9) // 10}', '-frames:v', '1', os.path.join(SD, f'{i:03d}_{c}_{p0:.0f}-{p1:.0f}.jpg')])
 for w in warn: print('⚠', w)
 # MỐC CHỤP SOÁT: cuối mỗi lớp chữ (lúc mọi mục đã hiện — danh sách dài nhất ở cuối, 2026-11-04 chụp đầu chips nên sót lỗi đè)
 _t = subprocess.run(['node', '-e', "import('./src/danh-sach-cat.js').then(m=>console.log(m.OVERLAYS.filter(o=>o.type!=='hud').map(o=>(o.end-0.25).toFixed(2)).join(' ')))"],
-                    cwd=os.path.join(P, 'motion'), capture_output=True, text=True).stdout.strip()
-if _t: print(f"chụp soát (BẮT BUỘC trước render, xem hết): cd {P}/motion && node anh-tinh.mjs {_t}")
+                    cwd=os.path.join(P, 'chuyen-dong'), capture_output=True, text=True).stdout.strip()
+if _t: print(f"chụp soát (BẮT BUỘC trước render, xem hết): cd {P}/chuyen-dong && node anh-tinh.mjs {_t}")
 print(f"nhạc: giọng {speech:.1f} LUFS → duck {duck} · base {base}")
 print(f"danh-sach-cat.js: {len(raw)} đoạn ({sum(1 for s in raw if s.get('rate', 1) > 1)} đoạn tua), {len(subs)} dòng phụ đề · nguồn {src_total:.0f} s → {acc:.0f} s ({acc / src_total:.0%}) · tông {len(tr)} khoảng")

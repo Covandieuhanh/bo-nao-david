@@ -2,7 +2,7 @@
 
 **Mọi loại video có cùng tiêu chuẩn** (vị trí, thành phần cố định, ngôn ngữ thiết kế). Chỉ **motion graphics** là tự do chọn theo loại
 video và theo từng cảnh. Một nguồn code: `nhan-dien-thuong-hieu.js` (`khung(W, H)`), `dau-goc.jsx`, `thanh-thoi-gian.jsx`, `than-man-ket.jsx`,
-`bien-thiet-ke.js`, `brand.json`, `kieu-phu-de.js`, `keu-goi-hanh-dong.js`, `bieu-tuong.jsx`. Khuôn 1 video, podcast, ghép vlog, highlight đều đọc ở đây.
+`bien-thiet-ke.js`, `thuong-hieu.json`, `kieu-phu-de.js`, `keu-goi-hanh-dong.js`, `bieu-tuong.jsx`. Khuôn 1 video, podcast, ghép vlog, highlight đều đọc ở đây.
 
 ## 0. Chữ ký nhận diện — thứ duy nhất thẩm mỹ phải giữ
 
@@ -16,7 +16,7 @@ Giữ ở MỌI video, mọi cảnh có chữ:
 
 Ngoài ba điều trên là **tự do sáng tạo theo nội dung**: nền tối / sáng / giấy / người mờ, kết cấu, ánh sáng, kiểu hình (biểu tượng nét
 tròn, phấn vẽ tay, ảnh), bố cục, chuyển động. Thử: che dấu góc đi, người xem quen kênh vẫn đoán được là video của David nhờ cam + chữ
-+ phụ đề → đạt. Màu nhấn, hai font chính, nhạc kênh (`bien-thiet-ke.js`, `brand.json`) không đổi khi học video mẫu.
++ phụ đề → đạt. Màu nhấn, hai font chính, nhạc kênh (`bien-thiet-ke.js`, `thuong-hieu.json`) không đổi khi học video mẫu.
 
 ## 1. Thành phần cố định (có ở mọi video)
 

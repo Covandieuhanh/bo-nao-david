@@ -116,3 +116,22 @@ tiếng Anh chuẩn → dùng đúng cột "Tên dùng"; chưa có thì thêm m�
 | License | `giay-phep` |
 | Setup Guide | `huong-dan-cai-dat` |
 | Entry Point | `diem-vao` |
+
+## Cấu trúc một dự án video (`~/Movies/tap-<tên>/`)
+
+| Tiếng Anh | Tên dùng |
+|---|---|
+| Raw Footage | `1-goc/` |
+| Full Version / Highlights | `2-ban-day-du/` · `3-doan-noi-bat/` |
+| Editing Media | `tu-lieu/` (`video-goc.mp4`, `video-goc-tho.*`, `<cảnh>.mov`, `phu-de.mov`, `the-cuoi.mp4`) |
+| Motion Graphics project (Remotion) | `chuyen-dong/` (`src/canh.js`, `src/thanh-phan/`, `src/thu-vien/`, `public/anh/`, `public/doan-video/`) |
+| QA / Checks | `kiem-tra/` (`goc/`, `lam-sach/`, `khuon-mat/`, `doi-khung/`, `anh-tinh/`, `bang-anh.jpg`) |
+| Images | `hinh-anh/` (`anh-nho/`, `bang-anh/`, `anh-chon.json`, `ghi-cong.tsv`) |
+| References | `tai-lieu-tham-khao/` |
+| Publishing | `phat-hanh/` (`anh-thu-nho-1.jpg`, `phat-hanh.md`) |
+| Final Cut | `video-hoan-chinh.mp4` |
+| Transcript / Word Timestamps | `ban-chep-loi.srt` / `moc-tung-tu.srt` |
+| Contact Sheet / Frame | `bang-khung-hinh.jpg` / `khung-01.jpg` |
+| Cut List / Segments | `diem-cat.json` / `cac-doan.json` |
+
+Viết code: tên file ghép từ biến (ví dụ `drive_$t.swift`, `{id}.mov`) phải khớp đúng tên trong bảng; đổi tên thì tìm cả dạng ghép, rồi dựng thử trọn một video.

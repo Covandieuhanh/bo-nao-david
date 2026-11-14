@@ -27,28 +27,28 @@ def sheet(imgs, out, w=360):
 res = []
 for m in json.load(open(os.path.join(HERE, "mau.json"), encoding="utf-8")):
     if args and m["ten"] not in args: continue
-    P = os.path.expanduser(m["du_an"]); W = tempfile.mkdtemp(prefix=f"mau-{m['ten']}-"); M = os.path.join(W, "motion")
+    P = os.path.expanduser(m["du_an"]); W = tempfile.mkdtemp(prefix=f"mau-{m['ten']}-"); M = os.path.join(W, "chuyen-dong")
     shutil.copytree(TPL[m["khung"]], M, symlinks=False)          # bản thật thư viện hình (src/lib)
     for f in DATA[m["khung"]]:
-        s = os.path.join(P, "motion/src", f)
+        s = os.path.join(P, "chuyen-dong/src", f)
         if os.path.exists(s): shutil.copy2(s, os.path.join(M, "src", f))
-    hoso.dump(m["loai"], os.path.join(M, "src/hoso.json"))
-    os.symlink(os.path.join(P, "motion/node_modules"), os.path.join(M, "node_modules"))
-    if os.path.isdir(os.path.join(P, "motion/public")): link_tree(os.path.join(P, "motion/public"), os.path.join(M, "public"))
+    hoso.dump(m["loai"], os.path.join(M, "src/ho-so.json"))
+    os.symlink(os.path.join(P, "chuyen-dong/node_modules"), os.path.join(M, "node_modules"))
+    if os.path.isdir(os.path.join(P, "chuyen-dong/public")): link_tree(os.path.join(P, "chuyen-dong/public"), os.path.join(M, "public"))
     for extra in m.get("them_canh", []):
         p = os.path.join(M, "src/canh.js"); s = open(p, encoding="utf-8").read()
         s = s.replace("export const SCENES = [\n", "export const SCENES = [\n  " + extra + ",\n", 1); open(p, "w", encoding="utf-8").write(s)
     imgs = []
     if m["khung"] == "remotion":
-        os.makedirs(os.path.join(W, "davinci"), exist_ok=True); os.symlink(os.path.join(P, "davinci/media"), os.path.join(W, "davinci/media"))
+        os.makedirs(os.path.join(W, "tu-lieu"), exist_ok=True); os.symlink(os.path.join(P, "tu-lieu"), os.path.join(W, "tu-lieu"))
         shots = [f"{i}@{t}" for i, t in m["chup"]] + [f"phu-de@{t}" for _, t in m["chup"]]
         run("node", "xem-truoc.mjs", *shots, cwd=M, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         pod = "podcast: true" in open(os.path.join(M, "src/du-an.js")).read()
-        base_v = os.path.join(P, "davinci/media/video_goc.mp4")
+        base_v = os.path.join(P, "tu-lieu/video-goc.mp4")
         for i, t in m["chup"]:
-            o = os.path.join(W, f"{i}@{t}.jpg"); ov = os.path.join(W, "check/motion", f"{i}@{t}.png"); pd = os.path.join(W, "check/motion", f"phu-de@{t}.png")
+            o = os.path.join(W, f"{i}@{t}.jpg"); ov = os.path.join(W, "kiem-tra/chuyen-dong", f"{i}@{t}.png"); pd = os.path.join(W, "kiem-tra/chuyen-dong", f"phu-de@{t}.png")
             if pod or not os.path.exists(base_v):
-                bg = os.path.join(W, "check/motion", f"nen@{t}.png")
+                bg = os.path.join(W, "kiem-tra/chuyen-dong", f"nen@{t}.png")
                 if not os.path.exists(bg): run("node", "xem-truoc.mjs", f"nen@{t}", cwd=M, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
                 run("ffmpeg", "-v", "error", "-y", "-i", bg, "-i", ov, "-i", pd, "-filter_complex", "[0][1]overlay[a];[a][2]overlay", "-frames:v", "1", o)
             else:
@@ -57,7 +57,7 @@ for m in json.load(open(os.path.join(HERE, "mau.json"), encoding="utf-8")):
             imgs.append(o)
     else:
         run("node", "anh-tinh.mjs", *map(str, m["chup_s"]), cwd=M, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        imgs = [os.path.join(W, "check/stills", f"{t}.jpg") for t in m["chup_s"]]
+        imgs = [os.path.join(W, "kiem-tra/anh-tinh", f"{t}.jpg") for t in m["chup_s"]]
     d = os.path.join(HERE, m["ten"]); os.makedirs(d, exist_ok=True)
     moi, chuan = os.path.join(d, "moi.jpg"), os.path.join(d, "chuan.jpg"); sheet(imgs, moi)
     if CHOT or not os.path.exists(chuan):

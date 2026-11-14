@@ -1,7 +1,7 @@
 // ẢNH THUMBNAIL YOUTUBE 1280×720 (David chốt 2026-11-04: bước phát hành — "sao chép chuẩn kênh lớn"). Theo chuẩn MrBeast /
 // Paddy Galloway / Ali Abdaal: MỘT khuôn mặt to có cảm xúc, ≤ 4 chữ cực to tương phản cao, một ý duy nhất, không lặp tiêu đề,
 // đọc được ở cỡ điện thoại (~160 px). Nhận diện David: chữ cô đặc in hoa, dòng nhấn cam, chấm cam + DAVID góc trên.
-// props: {bg: 'bg-1.jpg' (thumb/public), pos: '60% 30%' (object-position — đặt mặt về phía đối diện chữ), side: 'left'|'right'
+// props: {bg: 'nen-1.jpg' (anh-thu-nho/public), pos: '60% 30%' (object-position — đặt mặt về phía đối diện chữ), side: 'left'|'right'
 //         (phía đặt chữ), l1: 'DÒNG TRẮNG', l2: 'DÒNG CAM', zoom: 1.0–1.4, panel: true khi nguồn quay dọc (anh-thu-nho.sh tự đặt),
 //         l3: 'DÒNG 3 TRẮNG' (tuỳ chọn), num: '5' (con số khổng lồ riêng 1 khối, cam), badge: 'HAVE A SIP · TẬP 12' (nhãn series)}
 // KIỂU VIỆT (học 10/10 video dài Việt, 2026-11-04): 3 tầng chữ, tới ~8 chữ, con số khổng lồ, từ khoá (dòng cam) to nhất.
@@ -10,7 +10,7 @@ import {AbsoluteFill, Img, continueRender, delayRender, staticFile} from 'remoti
 import '@fontsource/barlow-condensed/vietnamese-800.css';
 import '@fontsource/barlow-condensed/800.css';
 import {HinhPodcast} from './hinh-podcast';   // ảnh bìa podcast không mặt (khối 14)
-import BRAND from './brand.json';   // anh-thu-nho.sh chép từ remotion-template (một nguồn)
+import BRAND from './thuong-hieu.json';   // anh-thu-nho.sh chép từ remotion-template (một nguồn)
 
 const C = {bg: '#0D0D10', text: '#F4F4F5', accent: '#FF7A45'};
 const HEAD = '"Barlow Condensed", sans-serif';

@@ -25,7 +25,7 @@ description: Tổng hợp tin nhắn hằng ngày của David từ Zalo, Messeng
 
 Trình duyệt Claude: dùng tab đang mở trang đó (`tabs_context`), không có thì `preview_start` với url. Chrome: `tabs_context_mcp`, dùng tab chat.zalo.me nếu có, không có thì tạo tab mới. Chrome chưa kết nối → ghi cảnh báo, bỏ Zalo lần này.
 
-**Zalo** — `get_page_text` ra danh sách (tên · thời gian · dòng cuối). Mở cuộc: `find` tên → `computer left_click` theo `ref` (click bằng JS không mở được) → chờ 2 giây → `get_page_text` (ra khung `<article>` của cuộc đó). Danh sách cuộn ảo, `ref` đổi sau mỗi lần mở: `find` lại, hoặc gõ tên vào ô "Tìm kiếm" rồi bấm kết quả đầu. Zalo Web không phân biệt tin của David trong chữ: đoán theo ngữ cảnh, dòng xem trước có "Bạn:" là của David.
+**Zalo** — `get_page_text` ra danh sách (tên · thời gian · dòng cuối). Mở cuộc: `find` tên → `computer left_click` theo `tai-lieu-tham-khao` (click bằng JS không mở được) → chờ 2 giây → `get_page_text` (ra khung `<article>` của cuộc đó). Danh sách cuộn ảo, `tai-lieu-tham-khao` đổi sau mỗi lần mở: `find` lại, hoặc gõ tên vào ô "Tìm kiếm" rồi bấm kết quả đầu. Zalo Web không phân biệt tin của David trong chữ: đoán theo ngữ cảnh, dòng xem trước có "Bạn:" là của David.
 
 **Messenger** — danh sách: `javascript_tool` → `[...document.querySelectorAll('[role=row]')].map(r=>r.innerText)`; đường dẫn từng cuộc: `[role=row] a[href]`. Mở cuộc: `navigate` tới `https://www.messenger.com` + href → chờ 3 giây → `get_page_text` (có sẵn "Tin nhắn do Bạn/Tên gửi lúc …").
 

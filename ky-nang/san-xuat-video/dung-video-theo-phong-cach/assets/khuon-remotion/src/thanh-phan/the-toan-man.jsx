@@ -35,7 +35,7 @@ export const Quote = ({text, start, at}) => {
   );
 };
 
-import HS from '../hoso.json';
+import HS from '../ho-so.json';
 // 2 trạng thái: bỏ câu trích dài (phụ đề đã chạy bên dưới) — thẻ chỉ còn hình động + nhãn ngắn
 export const CardFull = ({start, quote: q0, quoteAt, ...p}) => { const quote = HS.hai_trang_thai ? null : q0; return (
   <FullShell>

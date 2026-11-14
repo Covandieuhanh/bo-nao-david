@@ -80,7 +80,7 @@ Cột "Code": **có** = viết được ngay trong `canh.js` · **chưa** = mớ
   khi muốn ô chứa mọi người). `the-canh`: thẻ vào khoảng trống sát người đang nói, co theo khoảng trống, hết chỗ thì tự thành `o-nguoi`.
   `bam: 'trai'|'phai'` khi graphic nói về một người cụ thể (thẻ tên khách). `o: {x, y, w, h}` chỉ khi thật cần ép tay.
 - Vị trí người lấy từ `mat.js`, do `vi-tri-khuon-mat.sh` → `vi-tri-nhan.py` tự ghi cho mọi cảnh `nhan` và `bocuc`: **mọi người** trong khung
-  (kể cả người quay nghiêng máy không thấy rõ mặt) + **người đang nói** (pyannote + cử động miệng). Graphic đặt qua `src/lib/cho.js`:
+  (kể cả người quay nghiêng máy không thấy rõ mặt) + **người đang nói** (pyannote + cử động miệng). Graphic đặt qua `src/thu-vien/cho.js`:
   không đè, không làm mờ bất kỳ ai.
 - Ô người dùng video gốc (`public/goc.mp4`, xuat-video.mjs tự nối), nên cảnh `o-nguoi` / `chuong` là lớp đặc, ghép đè được như cảnh toàn màn hình.
 - Chưa làm cho podcast (không có mặt) và vlog ghép (`khuon-dung-ghep`). Khi cần thì thêm cùng kiểu.

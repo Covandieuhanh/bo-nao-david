@@ -6,7 +6,7 @@ import {AbsoluteFill, Img, staticFile, useCurrentFrame} from 'remotion';
 import {BODY, C, HEAD, ease, pop, rel} from '../chu-de';
 import {Eyebrow} from './lop-phu';
 import {FullShell} from './toan-man-hinh';
-import {Pictogram} from '../lib/bieu-tuong';
+import {Pictogram} from '../thu-vien/bieu-tuong';
 import {PF, VN, aboveGap} from '../khung-podcast';
 
 const fit = (text, w, max) => Math.min(max, Math.floor(w / (Math.max(1, text.length) * 0.46)));
@@ -32,7 +32,7 @@ export const MontageL = ({start, eyebrow, items, total = Math.max(...items.map((
               boxShadow: '0 40px 100px rgba(0,0,0,0.6)', border: `2px solid ${C.line}`, opacity: Math.min(1, p * 1.5) * (1 - leaving),
               transform: `translateY(${(1 - p) * 120 - leaving * 80}px) rotate(${(1 - p) * -3}deg) scale(${0.92 + 0.08 * p})`}}>
               {it.icon ? <Pictogram name={it.icon} w={1020} h={640} at={at[i]} />   // không ảnh: biểu tượng vẽ dần
-                : <Img src={staticFile(`photos/${it.photo}`)} style={{width: '100%', height: '100%', objectFit: 'cover',
+                : <Img src={staticFile(`anh/${it.photo}`)} style={{width: '100%', height: '100%', objectFit: 'cover',
                 transform: `scale(${1.15 - ease(lf, 0, 90) * 0.1})`}} />}
             </div>
             <div style={{position: 'absolute', left: RX, width: RW, top: 170, opacity: 1 - leaving}}>

@@ -2,8 +2,8 @@ import {Easing, interpolate, spring} from 'remotion';
 import project from './du-an.js';
 import {FPS, fr} from './canh';
 
-// ===== Phong cách — Claude điền từ style.md (phân tích video mẫu) =====
-import {C as _C, HEAD as _H, BODY as _B, NHAN as _N} from './lib/bien-thiet-ke';   // màu/font: MỘT NGUỒN thư viện hình (khối 10)
+// ===== Phong cách — Claude điền từ phong-cach.md (phân tích video mẫu) =====
+import {C as _C, HEAD as _H, BODY as _B, NHAN as _N} from './thu-vien/bien-thiet-ke';   // màu/font: MỘT NGUỒN thư viện hình (khối 10)
 export const C = {..._C};
 export const HEAD = _H;   // chữ to, tiêu đề
 export const NHAN = _N;   // một từ nhấn (chữ có chân, nghiêng) — `*từ*` trong chữ
@@ -14,7 +14,7 @@ export const BODY = _B;     // chữ thường trong thẻ
 // Ngang (YouTube): lề 5% mọi phía (title safe SMPTE 90%); thanh thời gian + phụ đề nằm sát đáy, nội dung dùng tới ~82%.
 // overlayTop: nơi bắt đầu dải lớp phủ, ngay dưới mặt người nói — chỉnh theo khung hình video gốc.
 const V = project.height > project.width || !!project.podcast;   // podcast ngang: lớp phủ vẫn vẽ trên dải dọc, Place phóng ra giữa khung
-import {khung} from './lib/nhan-dien-thuong-hieu';
+import {khung} from './thu-vien/nhan-dien-thuong-hieu';
 export const SAFE = V
   ? {left: 70, right: 180, top: 210, bottom: 1420, overlayTop: 985}         // khung dọc 1080×1920 (= khung thiết kế)
   : {left: Math.round(project.width * 0.05), right: Math.round(project.width * 0.05),

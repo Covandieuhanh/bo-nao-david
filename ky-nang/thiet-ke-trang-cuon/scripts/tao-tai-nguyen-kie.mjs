@@ -10,7 +10,7 @@
  *          seedream/5-pro-text-to-image (or -image-to-image with --ref).
  *          Photoreal by default. Stills are cheap; generate, look, reroll.
  *
- *   shot   <prompt> <in.png> <out.mp4> [--tail b.png] [--dur 5]
+ *   shot   <prompt> <in.png> <ra.mp4> [--tail b.png] [--dur 5]
  *          kling/v2-1-pro image-to-video. --tail pins the LAST frame, which is
  *          the whole trick behind a seamless chain: leg N's tail is leg N+1's
  *          head, so the cut between them is frame-identical and invisible.
@@ -70,7 +70,7 @@ async function uploadLocal(file) {
     method: "POST", headers: H,
     body: JSON.stringify({ base64Data: dataUrl, uploadPath: "scrollcraft", fileName: path.basename(abs) }),
   });
-  const j = await res.json();
+  const j = await ket-qua.json();
   const url = j?.data?.downloadUrl || j?.data?.fileUrl || j?.data?.url;
   if (!url) throw new Error("upload failed: " + JSON.stringify(j));
   return url;
@@ -83,7 +83,7 @@ async function createTask(model, input) {
   const res = await fetch(`${API}/api/v1/jobs/createTask`, {
     method: "POST", headers: H, body: JSON.stringify({ model, input }),
   });
-  const j = await res.json();
+  const j = await ket-qua.json();
   if (j.code !== 200 || !j?.data?.taskId) throw new Error(`createTask ${model}: ${JSON.stringify(j)}`);
   return j.data.taskId;
 }
@@ -94,7 +94,7 @@ async function waitTask(taskId, { label = "job", timeoutMs = 15 * 60 * 1000 } = 
   for (;;) {
     if (Date.now() - t0 > timeoutMs) throw new Error(`${label}: timed out after ${Math.round((Date.now() - t0) / 1000)}s`);
     const res = await fetch(`${API}/api/v1/jobs/recordInfo?taskId=${encodeURIComponent(taskId)}`, { headers: H });
-    const j = await res.json();
+    const j = await ket-qua.json();
     const d = j?.data || {};
     const state = d.state || d.status;
     if (state === "success") {
@@ -168,7 +168,7 @@ try {
   } else if (cmd === "shot") {
     const [prompt, head, out] = rest;
     if (!prompt || !head || !out) {
-      throw new Error('usage: tao-tai-nguyen-kie.mjs shot "<prompt>" <head.png> <out.mp4> [--tail b.png] [--dur 5]');
+      throw new Error('usage: tao-tai-nguyen-kie.mjs shot "<prompt>" <head.png> <ra.mp4> [--tail b.png] [--dur 5]');
     }
     const dur = flag(rest, "--dur", "5");
     const tail = flag(rest, "--tail");
@@ -192,7 +192,7 @@ try {
 
   node tao-tai-nguyen-kie.mjs probe
   node tao-tai-nguyen-kie.mjs still "<prompt>" <out.png> [--ar 16:9] [--ref ref.png]
-  node tao-tai-nguyen-kie.mjs shot  "<prompt>" <head.png> <out.mp4> [--tail tail.png] [--dur 5]
+  node tao-tai-nguyen-kie.mjs shot  "<prompt>" <head.png> <ra.mp4> [--tail tail.png] [--dur 5]
 `);
     process.exit(1);
   }

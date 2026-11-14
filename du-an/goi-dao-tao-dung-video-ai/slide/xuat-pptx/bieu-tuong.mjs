@@ -1,6 +1,6 @@
 // bieu-tuong.mjs <thư mục ra> <Tên:màu> …  → <thư mục ra>/<Tên>-<màu>.png (256px, nền trong, nét Lucide)
 import { createRequire } from 'module';
-const require = createRequire('/Users/moon/.nvm/versions/node/v24.18.0/lib/node_modules/@playwright/cli/');
+const require = createRequire('/Users/moon/.nvm/versions/node/v24.18.0/thu-vien/node_modules/@playwright/cli/');
 const { chromium } = require('playwright-core');
 const [out, ...items] = process.argv.slice(2);
 const b = await chromium.launch({ channel: 'chrome' });

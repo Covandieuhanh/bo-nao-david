@@ -1,7 +1,7 @@
 # Nguyên tắc cốt lõi — điểm chung của các hình mẫu thành công (80 video Việt + kênh quốc tế)
 
 Đây là tầng HIẾM ĐỔI nhất của bộ skill. Mọi hồ sơ, khối, công thức phải phục vụ 7 điều này. Nguồn: `*/references/hoc-tu-20-*-vn.md`
-(80 video Việt) + `cat-doan-noi-bat/references/hoc-tu-top-video.md` (10 Shorts quốc tế). Kim chỉ nam và mục tiêu mỗi video:
+(80 video Việt) + `cat-doan-noi-bat/references/hoc-tu-video-dan-dau.md` (10 Shorts quốc tế). Kim chỉ nam và mục tiêu mỗi video:
 `quy-tac-chung.md` mục 0.
 
 1. **3 giây đầu nói ngay "đang đặt cược gì"** — lời thật của David (làm video), thẻ tít nguyên văn (clip ngắn), đoạn ghép cảnh đắt

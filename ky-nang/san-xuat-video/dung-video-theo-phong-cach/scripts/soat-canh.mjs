@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 // SOÁT CẢNH TRƯỚC KHI RENDER (khối 17, 2026-11-06): đọc kịch bản, báo lỗi đo được — không sửa gì, không render.
-//   node soat-canh.mjs <dự án>     → in ra + ghi check/soat.md · mã thoát 1 nếu có P0
+//   node soat-canh.mjs <dự án>     → in ra + ghi kiem-tra/soat.md · mã thoát 1 nếu có P0
 // Mỗi lỗi một dòng: t=… · cảnh · vấn đề → cách sửa.
 //   P0 hỏng hình / sai nội dung — phải sửa · P1 làm yếu video — nên sửa · P2 tinh chỉnh, giữ có chủ đích được
-// Không thay việc xem bằng mắt (check/stills.jpg, check/sheet.jpg): chỉ bắt trước những lỗi đo được.
+// Không thay việc xem bằng mắt (kiem-tra/anh-tinh.jpg, kiem-tra/bang-anh.jpg): chỉ bắt trước những lỗi đo được.
 import fs from 'node:fs';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
 
 const P = path.resolve((process.argv[2] || '').replace(/^~/, process.env.HOME));
-const SRC = path.join(P, 'motion/src');
+const SRC = path.join(P, 'chuyen-dong/src');
 if (!process.argv[2] || !fs.existsSync(SRC)) { console.error('cách dùng: soat-canh.mjs <dự án>'); process.exit(2); }
 const imp = (f) => import(pathToFileURL(path.join(SRC, f)).href);
 const read = (f) => { try { return fs.readFileSync(path.join(SRC, f), 'utf8'); } catch { return ''; } };
@@ -24,13 +24,13 @@ if (fs.existsSync(path.join(SRC, 'canh.js'))) {
   duration = e.TOTAL ? e.TOTAL / (e.FPS || 30) : 0;
 }
 let HS = {};
-try { HS = JSON.parse(read('hoso.json')); } catch {}
-const {holdEnds} = await imp('lib/giu.js');
+try { HS = JSON.parse(read('ho-so.json')); } catch {}
+const {holdEnds} = await imp('thu-vien/giu.js');
 const K = HS.canh_minh_hoa || {}, MO_RA = K.mo_ra_s ?? 0.3, NHAN = K.nhan_max_chu ?? Infinity;   // không trần cứng (2026-11-07)
 
-const icons = new Set([...read('lib/bieu-tuong.jsx').matchAll(/^\s*'?([a-zA-Z-]+)'?:\s*[\[(<'`]/gm)].map((m) => m[1]));
+const icons = new Set([...read('thu-vien/bieu-tuong.jsx').matchAll(/^\s*'?([a-zA-Z-]+)'?:\s*[\[(<'`]/gm)].map((m) => m[1]));
 const modes = (f) => new Set([...read(f).matchAll(/mode === '([a-z-]+)'/g)].map((m) => m[1]));
-const MODES = {illus: new Set(['single', 'flow', 'vs', 'count', 'list']), diagram: modes('lib/so-do.jsx')};
+const MODES = {illus: new Set(['single', 'flow', 'vs', 'count', 'list']), diagram: modes('thu-vien/so-do.jsx')};
 const FULL = new Set(['illus', 'diagram', 'action', 'cta', 'card', 'montage', 'recap', 'converge', 'master', 'gens', 'build']);
 
 const words = (t) => String(t ?? '').replace(/\*/g, '').trim().split(/\s+/).filter(Boolean).length;
@@ -113,8 +113,8 @@ if (false && list.length && !list.map(flat).some((s) => s.start <= 0.5 && ['hook
 const tong = lines.P0.length + lines.P1.length + lines.P2.length;
 const out = [`# Soát cảnh — ${list.length} cảnh · P0 ${lines.P0.length} · P1 ${lines.P1.length} · P2 ${lines.P2.length}`];
 for (const m of ['P0', 'P1', 'P2']) if (lines[m].length) out.push(`\n## ${m}`, ...lines[m].map((x) => `- ${x}`));
-if (!tong) out.push('Không thấy lỗi đo được. Vẫn cần xem check/stills.jpg bằng mắt.');
-fs.mkdirSync(path.join(P, 'check'), {recursive: true});
-fs.writeFileSync(path.join(P, 'check/soat.md'), out.join('\n') + '\n');
+if (!tong) out.push('Không thấy lỗi đo được. Vẫn cần xem kiem-tra/anh-tinh.jpg bằng mắt.');
+fs.mkdirSync(path.join(P, 'kiem-tra'), {recursive: true});
+fs.writeFileSync(path.join(P, 'kiem-tra/soat.md'), out.join('\n') + '\n');
 console.log(out.join('\n'));
 process.exitCode = lines.P0.length ? 1 : 0;

@@ -12,11 +12,11 @@ import {POD, PF, LAND} from '../khung-podcast';
 import {Timeline} from './dong-thoi-gian';
 import {Tua} from './tua';
 import HL from '../doan-noi-bat.js';
-import {DauGoc} from '../lib/dau-goc';   // dấu góc chung (thu-vien-tai-nguyen)
-import {SUB, ShortLine, highlight} from '../lib/kieu-phu-de';
-import HS from '../hoso.json';   // hồ sơ tham số (chép lúc tạo dự án — mo-dun/ho_so.py)
+import {DauGoc} from '../thu-vien/dau-goc';   // dấu góc chung (thu-vien-tai-nguyen)
+import {SUB, ShortLine, highlight} from '../thu-vien/kieu-phu-de';
+import HS from '../ho-so.json';   // hồ sơ tham số (chép lúc tạo dự án — mo-dun/ho_so.py)
 const PD = HS.phu_de || {};
-import {holdEnds} from '../lib/giu';
+import {holdEnds} from '../thu-vien/giu';
 import * as SC from '../canh';
 import KHUNG from '../khung.js';   // khung chủ thể (khung-chu-the.py) → phụ đề + bảng ghi chú ở phần khung còn lại
 import {BangGhiChu, bangO} from './bang-ghi-chu';

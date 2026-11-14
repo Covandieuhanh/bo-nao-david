@@ -1,7 +1,7 @@
 # Cắt + ghép các câu đã chọn thành clip highlight: cat-doan-noi-bat.py <dự án> [mã phương án, mặc định tất cả]
 # Đọc <dự án>/phuong-an.json:
 #   {"options": [{"id": "A", "chon_y": {"boi_canh": "...", "y_tron": "...", "mang_ve": "...", "chua_lai": "..."}, "pieces": [{"start": 812.4, "end": 817.9, "role": "CHAM", "text": "...", "zoom": false}, ...]}, ...]}
-# pieces theo THỨ TỰ PHÁT trong clip; start/end = mốc chữ đầu / chữ cuối trong video nguồn (lấy từ words.srt). Script tự:
+# pieces theo THỨ TỰ PHÁT trong clip; start/end = mốc chữ đầu / chữ cuối trong video nguồn (lấy từ moc-tung-tu.srt). Script tự:
 #   - lùi 0,15 s trước chữ đầu, thêm 0,25 s sau chữ cuối (không mất âm)
 #   - thêm 1 s lặng sau câu KEUGOI kết bằng "?" và sau câu cuối clip nếu là KEUGOI (người xem kịp nghĩ) — lặng chèn vào
 #     (giữ khung cuối + tiếng câm), không lấy tiếng nguồn phía sau vì câu kế tiếp có thể nói liền
@@ -19,7 +19,7 @@
 import difflib, json, os, re, subprocess, sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../mo-dun")); import ho_so as hoso   # tham số: ho-so-thuong-hieu/highlight
-_H = hoso.load('highlight')
+_H = hoso.load('doan-noi-bat')
 PRE, POST, ZOOM = 0.15, hoso.get(_H, 'cat_lang.bien_cau_s', 0.25), 0.12
 JOIN, TAIL = hoso.get(_H, 'cat_lang.gop_cau_lien_s', 0.6), hoso.get(_H, 'cat_lang.lang_sau_cau_hoi_s', 1.0)
 HALF = 0.2 if "--tua" in sys.argv else 0.0   # nửa khoảng chuyển cảnh kiểu cũ (0,4 s mỗi mối nhảy)

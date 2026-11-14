@@ -1,9 +1,9 @@
-// Chụp khung kiểm tra: node anh-tinh.mjs <giây> ... → ../check/stills/<giây>.jpg + sheet
+// Chụp khung kiểm tra: node anh-tinh.mjs <giây> ... → ../kiem-tra/anh-tinh/<giây>.jpg + sheet
 import fs from 'node:fs';
 import path from 'node:path';
 import {bundle} from '@remotion/bundler';
 import {renderStill, selectComposition} from '@remotion/renderer';
-const out = path.resolve('../check/anh-tinh'); fs.mkdirSync(out, {recursive: true});
+const out = path.resolve('../kiem-tra/anh-tinh'); fs.mkdirSync(out, {recursive: true});
 const serveUrl = await bundle({entryPoint: path.resolve('src/diem-vao.jsx')});
 const composition = await selectComposition({serveUrl, id: 'show'});
 for (const t of process.argv.slice(2)) {

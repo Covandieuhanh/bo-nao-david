@@ -1,5 +1,5 @@
 // Có thẻ cuối hay không (goc.jsx + xuat-video.mjs cùng đọc): highlight podcast → thẻ dẫn về bản đầy đủ (doan-noi-bat.js endcard);
-// mọi video khác → thẻ cuối NHẬN DIỆN (chủ đề + tên kênh brand.json), cần project.topic hoặc STAGE.title (người dùng chốt 2026-11-04)
+// mọi video khác → thẻ cuối NHẬN DIỆN (chủ đề + tên kênh thuong-hieu.json), cần project.topic hoặc STAGE.title (người dùng chốt 2026-11-04)
 import project from './du-an.js';
 import HL from './doan-noi-bat.js';
 import {STAGE} from './canh.js';

@@ -7,12 +7,12 @@
 import React from 'react';
 import {AbsoluteFill, Easing, useCurrentFrame, useVideoConfig} from 'remotion';
 import {BODY, C, HEAD, SAFE, BRAND_BOT, ease, pop, rel} from '../chu-de';
-import {Icon} from '../lib/bieu-tuong';
+import {Icon} from '../thu-vien/bieu-tuong';
 import project from '../du-an.js';
 import MAT from '../mat.js';
-import {nguoi, chonCho, nguoiBam} from '../lib/cho';
-import {ChuHien} from '../lib/chu-hien';
-import {kieuChu, k as khung} from '../lib/chuyen-dong';
+import {nguoi, chonCho, nguoiBam} from '../thu-vien/cho';
+import {ChuHien} from '../thu-vien/chu-hien';
+import {kieuChu, k as khung} from '../thu-vien/chuyen-dong';
 
 const W = project.width, H = project.height;
 // Vị trí mặt SAU zoom (cùng công thức với xem-truoc-ban-dung.py: khung zoom canh giữa mặt, kẹp trong khung hình)

@@ -4,9 +4,9 @@ import React, {createContext, useContext} from 'react';
 import {AbsoluteFill, Easing, Img, interpolate, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {BODY, C, HEAD, SAFE, SAFE_W, ease, inOut, pop, rel} from '../chu-de';
 import {VN, aboveGap} from '../khung-podcast';
-import BRAND from '../lib/brand.json';
-import {DauGoc} from '../lib/dau-goc';
-import {Pictogram} from '../lib/bieu-tuong';
+import BRAND from '../thu-vien/thuong-hieu.json';
+import {DauGoc} from '../thu-vien/dau-goc';
+import {Pictogram} from '../thu-vien/bieu-tuong';
 
 const Arrow = ({size = 30, color = C.accent}) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2.4"
@@ -24,7 +24,7 @@ export const Eyebrow = ({children, style}) => (
 const Scrim = () => null;
 
 // ---------- DẤU KÊNH (người dùng chốt 2026-11-04): ● DAVID │ chủ đề — CÙNG kiểu ở cả 4 loại video (Hud của chế độ ghép) ----------
-// brand.json = một nguồn tên kênh. Video 1 người: phu-de.jsx đặt ở góc trên vùng an toàn; podcast: đầu sân khấu (san-khau.jsx).
+// thuong-hieu.json = một nguồn tên kênh. Video 1 người: phu-de.jsx đặt ở góc trên vùng an toàn; podcast: đầu sân khấu (san-khau.jsx).
 export const BrandMark = ({topic, style}) => <DauGoc topic={topic} style={style} />;   // một bản: thu-vien-tai-nguyen/dau-goc.jsx
 
 // ---------- Tên người nói ----------
@@ -208,7 +208,7 @@ export const Card = ({start, ...p}) => {
       <div style={{display: 'flex', gap: 32, alignItems: 'center'}}>
         <div style={{width: 300, height: 300, borderRadius: 24, overflow: 'hidden', flexShrink: 0}}>
           {p.icon ? <Pictogram name={p.icon} w={300} h={300} at={4} />   // không ảnh: biểu tượng vẽ dần
-            : <Img src={staticFile(`photos/${p.photo}`)} style={{width: '100%', height: '100%', objectFit: 'cover',
+            : <Img src={staticFile(`anh/${p.photo}`)} style={{width: '100%', height: '100%', objectFit: 'cover',
             transform: `scale(${1.12 - ease(f, 0, 120) * 0.08})`}} />}
         </div>
         <div>

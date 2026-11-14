@@ -14,7 +14,7 @@ máy khác chỉ cần chép cả thư mục `san-xuat-video/`. Ở `~/.claude/s
 | `phan-phoi-da-kenh/` — **trọn gói** | Gửi tài nguyên mới (thường không kèm yêu cầu) | Lọc → dựng → bài đăng → hẹn giờ → số liệu |
 
 Mọi thứ của một tập nằm chung `~/Movies/tap-<tên>/` (xem `dung-video-theo-phong-cach/scripts/noi-luu.sh`): gốc ở `1-goc/`, bản dài ở
-`2-ban-day-du/video-final.mp4`, highlight: chọn câu ở `3-doan-noi-bat/`, bản cuối mỗi clip ở `3-doan-noi-bat/clip-A/`, `clip-B/`…; vlog ở
+`2-ban-day-du/video-hoan-chinh.mp4`, highlight: chọn câu ở `3-doan-noi-bat/`, bản cuối mỗi clip ở `3-doan-noi-bat/clip-A/`, `clip-B/`…; vlog ở
 `~/Movies/vlog/<tên>/`. Bản dài và highlight của cùng tập phải dùng **cùng một `<tên>`**. Tiêu đề + thumbnail ở `phat-hanh/` của dự
 án. Muốn thêm thì nói kèm: "xuất ngang/dọc", "không dùng ảnh", "thêm ảnh", "giữ ngập ngừng". Không làm bản cho CapCut/DaVinci; David
 chốt bản cuối thì dọn file tạm rồi đưa tập lên Drive, xoá trên Mac (`don-tap.py` → `luu-drive.sh`, khối 17).
@@ -31,7 +31,7 @@ san-xuat-video/
 ├── thu-vien-tai-nguyen/     MỘT bộ thành phần hình cho cả 4 loại + bộ nhận diện chung (nhan-dien-chung.md)
 ├── thiet-ke-bo-cuc/         khung gốc để học video mẫu + kho bố cục, âm thanh, nguồn học
 ├── mau-chuan/         dự án mẫu + `kiem-mau.py` — chạy sau mỗi lần sửa để chắc không vỡ chỗ khác
-├── dung-video-theo-phong-cach/  công thức Làm video + Ghép vlog (references/multi-clip.md) — thứ tự khối + tiêu chí đạt
+├── dung-video-theo-phong-cach/  công thức Làm video + Ghép vlog (references/nhieu-doan-video.md) — thứ tự khối + tiêu chí đạt
 ├── dung-podcast/  công thức Podcast
 ├── cat-doan-noi-bat/ công thức Highlight
 ├── phan-tich-video-mau/     cửa vào học video mẫu
@@ -53,7 +53,7 @@ Luật áp dụng mọi video: **[`quy-tac-chung.md`](quy-tac-chung.md)**. Bộ 
 - `SKILL.md`: quy trình từng bước + luật riêng của skill.
 - `references/nhat-ky-thay-doi.md`: sổ quyết định của David theo ngày, kèm lý do (không đọc lúc làm việc).
 - `references/loi-thuong-gap.md`: các lỗi đã gặp và cách tránh.
-- `references/scene-design.md`, `multi-clip.md`, `podcast-design.md`: các loại cảnh, cách ghép, cách thiết kế podcast.
+- `references/thiet-ke-canh.md`, `nhieu-doan-video.md`, `thiet-ke-podcast.md`: các loại cảnh, cách ghép, cách thiết kế podcast.
 - `references/hoc-tu-*`: báo cáo học hình mẫu (kho, không phải luật).
 - Highlight: `cat-doan-noi-bat/scripts/` (`tao-doan-noi-bat.sh`, `kiem-am-luong.py`, `cat-doan-noi-bat.py`, `danh-sach-cat-doan-noi-bat.py`, `ap-dung-doan-noi-bat.py`) —
   chọn, soát, cắt câu, viết kịch bản dựng; dựng qua 2 skill kia. `cat-doan-noi-bat/assets/nhac/` — kho nhạc kênh (README trong đó).

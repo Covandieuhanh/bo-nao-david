@@ -16,7 +16,7 @@ def node_eval(project, expr):
     """Đọc dữ liệu JS của dự án (du-an.js / canh.js) qua node."""
     code = (f"Promise.all([import('./src/du-an.js'), import('./src/canh.js'), import('./src/dau-ra.js').catch(() => ({{}}))])"
             f".then(([p, s, o]) => console.log(JSON.stringify({expr})))")
-    out = subprocess.check_output(["node", "-e", code], cwd=os.path.join(project, "motion"), env=node_env(), stderr=subprocess.DEVNULL)
+    out = subprocess.check_output(["node", "-e", code], cwd=os.path.join(project, "chuyen-dong"), env=node_env(), stderr=subprocess.DEVNULL)
     return json.loads(out)
 
 def load(project):
@@ -34,10 +34,10 @@ def nframes(path):
 
 def wiki_thumb(url, width):
     """Wikimedia chỉ cho phép một số độ rộng ảnh thu nhỏ chuẩn (500, 960, 1280...)."""
-    if "upload.wikimedia.org" not in url or url.lower().endswith((".svg", ".tif", ".tiff")) or "/thumb/" in url:
+    if "upload.wikimedia.org" not in url or url.lower().endswith((".svg", ".tif", ".tiff")) or "/anh-thu-nho/" in url:
         return url
     parts = urllib.parse.urlparse(url).path.split("/")
-    return "https://upload.wikimedia.org" + "/".join(parts[:3]) + "/thumb/" + "/".join(parts[3:]) + f"/{width}px-{parts[-1]}"
+    return "https://upload.wikimedia.org" + "/".join(parts[:3]) + "/anh-thu-nho/" + "/".join(parts[3:]) + f"/{width}px-{parts[-1]}"
 
 def curl(url, dst, timeout=90):
     """Tải bằng curl (Wikimedia chặn urllib của Python với lỗi 429)."""

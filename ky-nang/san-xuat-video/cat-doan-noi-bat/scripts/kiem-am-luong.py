@@ -1,6 +1,6 @@
 # Soát điểm cắt bằng độ lớn tiếng thật: kiem-am-luong.py <dự án> [mã phương án]
 # Mốc từ của Whisper hay lệch ở chỗ ngắt câu (chữ đầu bị kéo sớm vào khoảng lặng, chữ cuối kéo dài) → cắt theo đó dễ lọt đuôi
-# chữ câu trước hoặc mất đầu chữ. Script đọc check/goc/loud05.txt (tao-doan-noi-bat.sh tạo, 0,05 s/dòng) và phuong-an.json,
+# chữ câu trước hoặc mất đầu chữ. Script đọc kiem-tra/goc/am-luong-05.txt (tao-doan-noi-bat.sh tạo, 0,05 s/dòng) và phuong-an.json,
 # với mỗi câu in dải độ lớn quanh start/end (█ có tiếng · ▁ lặng) + mốc đề xuất:
 #   start → chỗ tiếng bắt đầu sau khoảng lặng chứa/đứng trước mốc Whisper (lặng bắt đầu ≤ start + 0,3 s, dứt ≤ start + 1,8 s)
 #   end   → chỗ tiếng dứt ở khoảng lặng ĐẦU TIÊN bắt đầu sau chữ cuối (≥ end − 0,15 s, trong 1 s) — không lấy chỗ ngập
@@ -11,7 +11,7 @@
 import json, os, sys
 
 P = os.path.expanduser(sys.argv[1]); only = sys.argv[2] if len(sys.argv) > 2 else None
-L = [tuple(map(float, l.split())) for l in open(os.path.join(P, "check/goc/loud05.txt")) if l.strip()]
+L = [tuple(map(float, l.split())) for l in open(os.path.join(P, "kiem-tra/goc/am-luong-05.txt")) if l.strip()]
 lv = sorted(v for _, v in L)
 p10, p50 = lv[len(lv) // 10], lv[len(lv) // 2]
 THR = p10 + 0.35 * (p50 - p10)   # nền ồn → lời nói: ngưỡng gần phía nền (thu ngoài trời/podcast có nhạc vẫn bắt được)

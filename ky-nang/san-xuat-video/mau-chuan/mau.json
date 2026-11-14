@@ -1,7 +1,7 @@
 [
- {"ten": "podcast-doc-clip-1", "loai": "highlight", "khung": "remotion", "du_an": "~/Movies/tap-di-trainer/3-doan-noi-bat/clip-A", "chup": [["mo", 1.5], ["cua-sau", 4.8], ["nhat-het", 7.7], ["nen", 6.3]]},
- {"ten": "podcast-doc-clip-2", "loai": "highlight", "khung": "remotion", "du_an": "~/Movies/tap-di-trainer/3-doan-noi-bat/clip-B", "chup": [["mo", 1.5], ["moi-nguoi", 5.2], ["manh-ghep", 14.8], ["nen", 7.6]]},
- {"ten": "podcast-doc-clip-3", "loai": "highlight", "khung": "remotion", "du_an": "~/Movies/tap-di-trainer/3-doan-noi-bat/clip-C", "chup": [["mo", 1.5], ["nguoi-ban", 3.3], ["xa-hoi", 8.7], ["nen", 4.3]]},
+ {"ten": "podcast-doc-clip-1", "loai": "doan-noi-bat", "khung": "remotion", "du_an": "~/Movies/tap-di-trainer/3-doan-noi-bat/clip-A", "chup": [["mo", 1.5], ["cua-sau", 4.8], ["nhat-het", 7.7], ["nen", 6.3]]},
+ {"ten": "podcast-doc-clip-2", "loai": "doan-noi-bat", "khung": "remotion", "du_an": "~/Movies/tap-di-trainer/3-doan-noi-bat/clip-B", "chup": [["mo", 1.5], ["moi-nguoi", 5.2], ["manh-ghep", 14.8], ["nen", 7.6]]},
+ {"ten": "podcast-doc-clip-3", "loai": "doan-noi-bat", "khung": "remotion", "du_an": "~/Movies/tap-di-trainer/3-doan-noi-bat/clip-C", "chup": [["mo", 1.5], ["nguoi-ban", 3.3], ["xa-hoi", 8.7], ["nen", 4.3]]},
  {"ten": "podcast-dai-trainer", "loai": "podcast", "khung": "remotion", "du_an": "~/Movies/tap-di-trainer/2-ban-day-du", "chup": [["mo", 1.5], ["con-may-nguoi", 237], ["manh-ghep", 303], ["nen", 200]]},
  {"ten": "podcast-dai-muc-tieu", "loai": "podcast", "khung": "remotion", "du_an": "~/Movies/tap-muc-tieu-su-menh/2-ban-day-du", "chup": [["hook", 1.5], ["lang", 46], ["muoi-nghin", 157], ["nen", 100]]}
 ]

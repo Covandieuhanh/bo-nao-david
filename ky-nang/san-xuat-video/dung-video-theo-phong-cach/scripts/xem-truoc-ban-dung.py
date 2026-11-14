@@ -1,12 +1,12 @@
 # Xuất bản cuối MP4 (đăng được ngay): xem-truoc-ban-dung.py <dự án>
-# Video gốc + mọi cảnh motion (đè theo thứ tự trong canh.js) + 5 giây nguồn ảnh (nếu có). Ra <dự án>/video-final.mp4
+# Video gốc + mọi cảnh motion (đè theo thứ tự trong canh.js) + 5 giây nguồn ảnh (nếu có). Ra <dự án>/video-hoan-chinh.mp4
 import os, subprocess, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from _chung import load, node_env
 
 P = os.path.expanduser(sys.argv[1])
 d = load(P); pr, scenes, out_ = d["project"], d["scenes"], d["out"]
-M = os.path.join(P, "davinci/media")
+M = os.path.join(P, "tu-lieu")
 # Render chưa xong (xuat-video.mjs giữ khoá .dang-render) hoặc thiếu lớp → dừng, không ghép thiếu (11/11/2026: mất màn kết YouTube)
 if os.path.exists(os.path.join(M, ".dang-render")):
     _pid = open(os.path.join(M, ".dang-render")).read().strip()
@@ -16,10 +16,10 @@ _thieu = [s["id"] for s in scenes if not os.path.exists(os.path.join(M, s["id"] 
 if _thieu: sys.exit("thiếu lớp chưa render: " + ", ".join(_thieu))
 FPS = f'{pr["fpsNum"]}/{pr["fpsDen"]}'
 fr = lambda s: round(s * pr["fpsNum"] / pr["fpsDen"])
-credits = os.path.join(M, "nguon_anh.png")
-args = ["ffmpeg", "-y", "-v", "error", "-stats", "-i", os.path.join(M, out_["base"])]   # nền: video gốc, hoặc nen_ngang.mp4 (pillar)
+credits = os.path.join(M, "nguon-anh.png")
+args = ["ffmpeg", "-y", "-v", "error", "-stats", "-i", os.path.join(M, out_["base"])]   # nền: video gốc, hoặc nen-ngang.mp4 (pillar)
 # Phụ đề (nếu có) đè trên cùng, chạy từ đầu video
-ov = scenes + ([{"id": "phu_de", "start": 0}] if os.path.exists(os.path.join(M, "phu_de.mov")) else [])
+ov = scenes + ([{"id": "phu-de", "start": 0}] if os.path.exists(os.path.join(M, "phu-de.mov")) else [])
 for s in ov: args += ["-i", os.path.join(M, s["id"] + ".mov")]
 n = len(ov)
 fl, prev = ["[0:v:0]setpts=PTS-STARTPTS[b0]"], "b0"
@@ -28,7 +28,7 @@ fl, prev = ["[0:v:0]setpts=PTS-STARTPTS[b0]"], "b0"
 _zs = []   # không zoom (13/11/2026)
 if _zs and not out_.get("layout"):
     import json as _zj, re as _zr
-    _mf = os.path.join(P, "motion/src/mat.js")
+    _mf = os.path.join(P, "chuyen-dong/src/mat.js")
     MAT = _zj.loads(_zr.search(r"export default (\{.*\});", open(_mf, encoding="utf-8").read(), _zr.S).group(1)) if os.path.exists(_mf) else {}
     env = lambda s: f"min(1,max(0,(it-{s['start']:.3f})/0.22))*min(1,max(0,({s['end']:.3f}-it)/0.18))"
     z = "1+" + "+".join(f"{float(s['props']['zoom']) - 1:.3f}*{env(s)}" for s in _zs)
@@ -42,20 +42,20 @@ for i, s in enumerate(ov):
     fl.append(f"[{i + 1}:v]setpts=PTS-STARTPTS+{st:.6f}/TB[m{i}];[{prev}][m{i}]overlay=eof_action=pass[b{i + 1}]")
     prev = f"b{i + 1}"
 # Màn chốt (cta): tiếng "ting" đúng lúc dấu tick nhỏ bật lên (CTA_TICK giây sau đầu cảnh — keu-goi-hanh-dong.js)
-TICK = float(__import__("re").search(r"CTA_TICK = ([\d.]+)", open(next(p for p in (os.path.join(P, "motion/src/lib/keu-goi-hanh-dong.js"), os.path.join(P, "motion/src/keu-goi-hanh-dong.js")) if os.path.exists(p))).read()).group(1))     if any(os.path.exists(os.path.join(P, q)) for q in ("motion/src/lib/keu-goi-hanh-dong.js", "motion/src/keu-goi-hanh-dong.js")) else 1.6
+TICK = float(__import__("re").search(r"CTA_TICK = ([\d.]+)", open(next(p for p in (os.path.join(P, "chuyen-dong/src/thu-vien/keu-goi-hanh-dong.js"), os.path.join(P, "chuyen-dong/src/keu-goi-hanh-dong.js")) if os.path.exists(p))).read()).group(1))     if any(os.path.exists(os.path.join(P, q)) for q in ("chuyen-dong/src/thu-vien/keu-goi-hanh-dong.js", "chuyen-dong/src/keu-goi-hanh-dong.js")) else 1.6
 SFXDIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../assets/hieu-ung-am-thanh")
 sfx = [(s["start"] + TICK, "ting.wav", 0.55) for s in scenes if s.get("type") == "cta"]
-# NHẬN DIỆN chung (brand.json, người dùng chốt 2026-11-04): tiếng ký hiệu kênh đúng lúc hiện tiêu đề mở đầu (cảnh hook đầu tiên;
+# NHẬN DIỆN chung (thuong-hieu.json, người dùng chốt 2026-11-04): tiếng ký hiệu kênh đúng lúc hiện tiêu đề mở đầu (cảnh hook đầu tiên;
 # podcast không có hook → đầu video)
 import json as _bj
-BRAND = _bj.load(open(os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../thu-vien-tai-nguyen/brand.json"), encoding="utf-8"))
+BRAND = _bj.load(open(os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../thu-vien-tai-nguyen/thuong-hieu.json"), encoding="utf-8"))
 _hook = next((s for s in scenes if s.get("type") == "hook"), None)
 # project.sting = false: bỏ tiếng ký hiệu đầu video khi lời vào ngay giây đầu (David, 2026-11-06)
-if "sting: false" not in open(os.path.join(P, "motion/src/du-an.js"), encoding="utf-8").read():
+if "sting: false" not in open(os.path.join(P, "chuyen-dong/src/du-an.js"), encoding="utf-8").read():
     sfx.append(((_hook["start"] if _hook else 0.0), BRAND["sting"], BRAND["stingVol"]))
-# Highlight (skill cat-doan-noi-bat, motion/src/doan-noi-bat.js): tiếng "vút tua" ở mỗi mối nhảy đoạn — đặt giữa khoảng chuyển
+# Highlight (skill cat-doan-noi-bat, chuyen-dong/src/doan-noi-bat.js): tiếng "vút tua" ở mỗi mối nhảy đoạn — đặt giữa khoảng chuyển
 # (khoảng chuyển là lặng do cat-doan-noi-bat.py chèn, nên không đè lời nói)
-hlf = os.path.join(P, "motion/src/doan-noi-bat.js")
+hlf = os.path.join(P, "chuyen-dong/src/doan-noi-bat.js")
 if os.path.exists(hlf):
     _t = open(hlf, encoding="utf-8").read().split("export default", 1)[1].strip().rstrip(";")
     if _t != "null":
@@ -79,7 +79,7 @@ def _pick_music():
     if "nhac" in pr: return pr["nhac"] or None
     t = pr.get("tuyen")
     if not t:
-        sys.exit("⛔ Thiếu project.tuyen (tuyến nội dung → nhạc nền). Ghi vào motion/src/du-an.js một trong: "
+        sys.exit("⛔ Thiếu project.tuyen (tuyến nội dung → nhạc nền). Ghi vào chuyen-dong/src/du-an.js một trong: "
                  + ", ".join(f"{k} ({v['khi']})" for k, v in NH.get("tuyen", {}).items()) + " — khối 09.")
     row = NH["tuyen"].get(t) or sys.exit(f"⛔ project.tuyen = '{t}' không có trong bảng hồ sơ chung nhac.tuyen")
     if row["bai"]: return row["bai"][0]
@@ -151,8 +151,8 @@ if os.path.exists(credits):
     fl.append(f"{A0},aresample=48000,{AF}[am];[{kc + 1}:a]{AF}[an];[vm][am][vc][an]concat=n=2:v=1:a=1[v][a]")
 else:
     fl.append(f"[{prev}]format=yuv420p,setsar=1[v];{A0}[a]")
-# Thẻ cuối highlight podcast (the_cuoi.mp4, ~1,8 s — cat-doan-noi-bat luật 13) ghép SAU video, tiếng câm float 48 kHz.
-endc = os.path.join(M, "the_cuoi.mp4")
+# Thẻ cuối highlight podcast (the-cuoi.mp4, ~1,8 s — cat-doan-noi-bat luật 13) ghép SAU video, tiếng câm float 48 kHz.
+endc = os.path.join(M, "the-cuoi.mp4")
 if os.path.exists(endc):
     k = len([a for a in args if a == "-i"])
     ln = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", endc],
@@ -181,7 +181,7 @@ if os.path.exists(bia):
     fl[-1] = fl[-1].replace("[v]", "[vmain]").replace("[a]", "[amain]")
     fl.append(f"[{k}:v]format=yuv420p,setsar=1,fps={FPS}[vb];[{k + 1}:a]{AF}[ab];[amain]{AF}[am2];"
               f"[vb][ab][vmain][am2]concat=n=2:v=1:a=1[v][a]")
-out = os.path.join(P, "video-final.mp4")
+out = os.path.join(P, "video-hoan-chinh.mp4")
 # Độ to đăng mạng xã hội chung cho cả 4 loại: −14 LUFS, đỉnh −1,5 dB (như xuat-chuong-trinh.mjs của chế độ ghép)
 fl.append("[a]loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[aout]")
 args += ["-filter_complex", ";".join(fl), "-map", "[v]", "-map", "[aout]", "-r", FPS, "-c:v", "libx264", "-preset", "medium",

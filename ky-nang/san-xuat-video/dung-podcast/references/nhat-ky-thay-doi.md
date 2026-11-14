@@ -1,7 +1,7 @@
 # Sổ thay đổi — dung-podcast (quyết định của người dùng + lý do)
 
 ## Tái bản 2 — 10/11/2026: bản luật viết lại từ bảng du-an/tai-cau-truc-2-video.md
-- Nhà luật bỏ phóng xen kẽ ở mối cắt là quy-tac-chung mục 2 (kèm lý do); khối 02, ho-so-thuong-hieu/highlight.md, cat-highlight luật 8 trỏ về đó. quy-tac-chung mục 8 trỏ thói quen chung (hỏi, lệnh nền, mật khẩu, báo cáo), chỉ giữ phần riêng video. Bỏ câu chép ở gotchas, phan-phoi-da-kenh; sửa đường trỏ "hình của chính video" về khối 14. Viết lại 6 câu máy đo bắt nhầm ("thay cho", "THAY", tên file có ngày).
+- Nhà luật bỏ phóng xen kẽ ở mối cắt là quy-tac-chung mục 2 (kèm lý do); khối 02, ho-so-thuong-hieu/doan-noi-bat.md, cat-highlight luật 8 trỏ về đó. quy-tac-chung mục 8 trỏ thói quen chung (hỏi, lệnh nền, mật khẩu, báo cáo), chỉ giữ phần riêng video. Bỏ câu chép ở gotchas, phan-phoi-da-kenh; sửa đường trỏ "hình của chính video" về khối 14. Viết lại 6 câu máy đo bắt nhầm ("thay cho", "THAY", tên file có ngày).
 
 ## Tái bản 1 — 10/11/2026: bản luật viết lại từ bảng du-an/tai-cau-truc-video-1.md
 - Bỏ khỏi bản luật: `hook` đầu tiên, "~1 cảnh / 15–20 s", câu chốt tự sáng tạo (khối 12, podcast-design); hình phủ ~30 % là luật nhịp duy nhất. Phụ đề podcast dọc mọi độ dài = cụm 5–8 chữ (theo code phu-de.jsx).

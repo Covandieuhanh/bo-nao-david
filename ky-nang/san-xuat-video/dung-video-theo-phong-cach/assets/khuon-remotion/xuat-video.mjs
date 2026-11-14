@@ -6,16 +6,16 @@ import {renderMedia, selectComposition} from '@remotion/renderer';
 import {SCENES} from './src/canh.js';
 import output from './src/dau-ra.js';
 
-const out = path.resolve('../davinci/media');
+const out = path.resolve('../tu-lieu');
 fs.mkdirSync(out, {recursive: true});
 const only = new Set(process.argv.slice(2));
 // KHOÁ RENDER (11/11/2026: ghép bản cuối lúc the_cuoi còn đang render → video mất màn kết 20 s): xem-truoc-ban-dung.py thấy khoá thì dừng
 const KHOA = path.join(out, '.dang-render'); fs.writeFileSync(KHOA, String(process.pid));
 process.on('exit', () => fs.rmSync(KHOA, {force: true}));
-// Video gốc cho cảnh cần chiếu lại hình (màn chốt `cta`): public/goc.mp4 → davinci/media/<source>
+// Video gốc cho cảnh cần chiếu lại hình (màn chốt `cta`): public/goc.mp4 → tu-lieu/<source>
 import project from './src/du-an.js';
 { const lnk = path.resolve('public/goc.mp4'); fs.rmSync(lnk, {force: true});
-  const src = path.resolve('../davinci/media', project.source || 'video_goc.mp4');   // liên kết cứng (bundler không chép symlink)
+  const src = path.resolve('../tu-lieu', project.source || 'video-goc.mp4');   // liên kết cứng (bundler không chép symlink)
   if (!project.podcast && fs.existsSync(src)) { try { fs.linkSync(fs.realpathSync(src), lnk); } catch { fs.copyFileSync(src, lnk); } } }
 const serveUrl = await bundle({entryPoint: path.resolve('src/diem-vao.jsx')});
 for (const s of SCENES) {
@@ -30,13 +30,13 @@ for (const s of SCENES) {
     imageFormat: 'png', concurrency: vid ? 2 : 4, timeoutInMilliseconds: 240000, muted: true, outputLocation: path.join(out, `${s.id}.mov`)});
   console.log(`${s.id} ${composition.durationInFrames} khung ${((Date.now() - t0) / 1000).toFixed(0)}s`);
 }
-// Phụ đề chạy suốt video, nền trong suốt → phu_de.mov (render_preview đè lên trên cùng)
+// Phụ đề chạy suốt video, nền trong suốt → phu-de.mov (render_preview đè lên trên cùng)
 const caps = (await import('./src/phu-de.js')).default;
 if (caps.length && (!only.size || only.has('phu-de'))) {
   const composition = await selectComposition({serveUrl, id: 'phu-de'});
   const t0 = Date.now();
   await renderMedia({serveUrl, composition, codec: 'prores', proResProfile: '4444', pixelFormat: 'yuva444p10le',
-    imageFormat: 'png', concurrency: 4, timeoutInMilliseconds: 240000, muted: true, outputLocation: path.join(out, 'phu_de.mov')});
+    imageFormat: 'png', concurrency: 4, timeoutInMilliseconds: 240000, muted: true, outputLocation: path.join(out, 'phu-de.mov')});
   console.log(`phu-de ${composition.durationInFrames} khung ${((Date.now() - t0) / 1000).toFixed(0)}s`);
 }
 // Màn hình bìa (COVER) 1 s, nền đặc → bia.mp4; xem-truoc-ban-dung.py ghép trước video
@@ -46,16 +46,16 @@ if (COVER && (!only.size || only.has('bia'))) {
   await renderMedia({serveUrl, composition, codec: 'h264', crf: 14, concurrency: 4, timeoutInMilliseconds: 240000, muted: true, outputLocation: path.join(out, 'bia.mp4')});
   console.log(`bia ${composition.durationInFrames} khung`);
 }
-// Highlight podcast: thẻ cuối (doan-noi-bat.js → endcard), nền đặc → the_cuoi.mp4; xem-truoc-ban-dung.py ghép SAU video
+// Highlight podcast: thẻ cuối (doan-noi-bat.js → endcard), nền đặc → the-cuoi.mp4; xem-truoc-ban-dung.py ghép SAU video
 const HLD = (await import('./src/doan-noi-bat.js')).default;
 const {ENDCARD_ON} = await import('./src/man-ket.js');   // highlight podcast hoặc thẻ cuối nhận diện (mọi video có chủ đề)
-{ const f = path.join(out, 'the_cuoi.mp4'); if (!ENDCARD_ON) fs.rmSync(f, {force: true});
+{ const f = path.join(out, 'the-cuoi.mp4'); if (!ENDCARD_ON) fs.rmSync(f, {force: true});
   else if (!only.size || only.has('the-cuoi')) {
     const composition = await selectComposition({serveUrl, id: 'the-cuoi'});
     await renderMedia({serveUrl, composition, codec: 'h264', crf: 14, concurrency: 4, timeoutInMilliseconds: 240000, muted: true, outputLocation: f});
     console.log(`the-cuoi ${composition.durationInFrames} khung`);
   } }
-// Podcast: sân khấu nền chạy suốt video, nền đặc → H.264 (nen-podcast.py ghép tiếng → video_goc.mp4)
+// Podcast: sân khấu nền chạy suốt video, nền đặc → H.264 (nen-podcast.py ghép tiếng → video-goc.mp4)
 // (project đã import ở đầu file)
 if (project.podcast && (!only.size || only.has('nen'))) {
   const composition = await selectComposition({serveUrl, id: 'nen'});
@@ -69,7 +69,7 @@ if (output?.layout === 'pillar' && (!only.size || only.has('hai-ben'))) {
   const composition = await selectComposition({serveUrl, id: 'hai-ben'});
   const t0 = Date.now();
   await renderMedia({serveUrl, composition, codec: 'h264', crf: 16, concurrency: 4, timeoutInMilliseconds: 240000, muted: true,
-    outputLocation: path.join(out, 'hai_ben.mp4')});
+    outputLocation: path.join(out, 'hai-ben.mp4')});
   console.log(`hai-ben ${composition.durationInFrames} khung ${((Date.now() - t0) / 1000).toFixed(0)}s`);
 }
 

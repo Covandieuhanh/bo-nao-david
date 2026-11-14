@@ -10,8 +10,8 @@ Mốc trước: tag `tai-ban-video-1-truoc` (commit 8fb5b77).
 ```
 ## Bộ video — 50 file bản luật · mốc tái bản gần nhất: chưa có
   dau_ngay 165/30 · ghi_de 81/15 · trung 5/8 · sua 42/40 · dong 3292/4000
-  Chồng nhiều nhất: quy-tac-chung.md (28 dấu ngày · 8 ghi đè) · khối 07 (13 · 9) · loi-thuong-gap.md (12 · 4) · scene-design.md (6 · 6)
-  · multi-clip.md (7 · 4) · cat-highlight SKILL (5 · 4) · ho-so-thuong-hieu/chung.md (8 · 3) · giong-van (6 · 3) · khối 09 (5 · 3) · khối 13 (2 · 4) …
+  Chồng nhiều nhất: quy-tac-chung.md (28 dấu ngày · 8 ghi đè) · khối 07 (13 · 9) · loi-thuong-gap.md (12 · 4) · thiet-ke-canh.md (6 · 6)
+  · nhieu-doan-video.md (7 · 4) · cat-highlight SKILL (5 · 4) · ho-so-thuong-hieu/chung.md (8 · 3) · giong-van (6 · 3) · khối 09 (5 · 3) · khối 13 (2 · 4) …
   Câu trùng (5): "bước nhẹ…" ở 4 SKILL.md · 4 câu "video dọc ngắn…" ở cả quy-tac-chung §5 và nhan-dien-chung §1
   ⇒ NÊN TÁI BẢN: dau_ngay 165 > 30; ghi_de 81 > 15; sua 42 > 40
 ```
@@ -33,7 +33,7 @@ Phân xử theo `chuan-muc-lam-viec.md` mục 0: lời David > ngày chốt gầ
 | A7 | Câu Claude viết chỉ ở bài đăng (tiêu đề, thumbnail, mô tả, ghim) | quy-tac-chung §1 | quy-tac-chung §1 | 07/11 | sống |
 | A8 | Ngoại lệ (a) câu màn chốt Claude tự viết ≤ 55 ký tự | — | quy-tac-chung §1, khối 07, khối 12, scene-design, multi-clip 4b | 04/11 | **cũ** (07/11: màn chốt nguyên văn) |
 | A9 | Ngoại lệ (b) thẻ tít highlight viết như tít báo | — | quy-tac-chung §1 | 04/11 | **cũ** (08/11: tít = cụm nguyên văn) |
-| A10 | Nhãn cố định của khung: lịch phát David đưa (`project.schedule`, `STAGE.schedule`, plan.json, endcard) — không tự đặt lịch | quy-tac-chung §1 | quy-tac-chung §1, khối 08 | 04/11 | trùng → quy-tac-chung; khối 08 trỏ |
+| A10 | Nhãn cố định của khung: lịch phát David đưa (`project.schedule`, `STAGE.schedule`, ke-hoach.json, endcard) — không tự đặt lịch | quy-tac-chung §1 | quy-tac-chung §1, khối 08 | 04/11 | trùng → quy-tac-chung; khối 08 trỏ |
 | A11 | Lằn ranh nội dung (danh sách) — loại khỏi mọi chữ/clip; câu chủ chốt dính → báo David | quy-tac-chung §1 | quy-tac-chung §1, khối 00 §3, khối 13 | 04–05/11 | trùng |
 | A12 | Whisper bịa câu ở đoạn không lời → bỏ | quy-tac-chung §1 | quy-tac-chung, khối 03, 13, gotchas, multi-clip | 04/11 | trùng |
 | A13 | Tên riêng chưa chắc → dùng cách Whisper nghe, hỏi ở báo cáo; không thay bằng cụm chung | khối 01 (quy-tac-chung §1 trỏ) | quy-tac-chung, khối 01, gotchas | 04/11 | trùng |
@@ -66,7 +66,7 @@ Phân xử theo `chuan-muc-lam-viec.md` mục 0: lời David > ngày chốt gầ
 | A40 | Minh hoạ mặc định biểu tượng vẽ; ảnh thật chỉ cho cái thật; số liệu bằng hiệu ứng đúng số; bằng chứng thật trong clip → ưu tiên chiếu | quy-tac-chung §4 | quy-tac-chung §4, khối 07, scene-design, podcast SKILL | 04/11 | trùng |
 | A41 | Không ghi chú kỹ thuật trên video; không màn nguồn ảnh cuối → `nguon-anh.txt` | quy-tac-chung §4 | quy-tac-chung §4, multi-clip §3, handoff | 04/11 | trùng |
 | A42 | Khung xuất = khung gốc trừ khi David yêu cầu; highlight luôn dọc | quy-tac-chung §4 | quy-tac-chung §4, khối 04, highlight luật 1 | 04/11 | trùng |
-| A43 | Bộ nhận diện một nguồn (brand.json, tokens/theme, subStyle, cta, Icons); sửa thì đồng bộ 4 loại | nhan-dien-chung (quy-tac-chung §5 trỏ) | quy-tac-chung §5, tong-quan, khối 10 | 04/11 | trùng |
+| A43 | Bộ nhận diện một nguồn (thuong-hieu.json, tokens/theme, subStyle, cta, Icons); sửa thì đồng bộ 4 loại | nhan-dien-chung (quy-tac-chung §5 trỏ) | quy-tac-chung §5, tong-quan, khối 10 | 04/11 | trùng |
 | A44 | Thành phần cố định cùng vị trí mọi loại (dấu góc, thanh, phụ đề, màn chốt, thẻ cuối) | nhan-dien-chung §1 | quy-tac-chung §5, nhan-dien-chung | 08/11 | trùng |
 | A45 | Dấu góc: dọc 228, ngang sát mép trên; lớp phủ góc trên dưới `BRAND_BOT`; màn chốt ngang ẩn dấu góc | nhan-dien-chung §1 | quy-tac-chung §5, nhan-dien-chung, gotchas | 08/11 | trùng |
 | A46 | Thanh thời gian: video ngang + dọc dài | nhan-dien-chung §1 | quy-tac-chung §5, nhan-dien-chung, podcast SKILL | 08/11 | trùng |
@@ -79,7 +79,7 @@ Phân xử theo `chuan-muc-lam-viec.md` mục 0: lời David > ngày chốt gầ
 | A53 | Thumbnail chỉ khi ngang + YouTube; hỏi "có đăng YouTube không?" | khối 14 (quy-tac-chung §7 trỏ) | quy-tac-chung §7, khối 14, khối 15, tong-quan, nhan-dien-thuong-hieu.md | 04/11 | trùng |
 | A54 | Chỉ hình của chính video (thumbnail, bìa); không hỏi "lấy ảnh video cũ" | khối 14 | quy-tac-chung §7, khối 14 | 05/11 | trùng |
 | A55 | Podcast không mặt: bìa = nền hoạ tiết + hình vẽ theo ý + tiêu đề ngắn + "DAVID · PODCAST", không lộ bước | khối 14 | quy-tac-chung §7, khối 14, podcast SKILL | 06/11 | trùng |
-| A56 | Bìa podcast = khung cảnh minh hoạ của chính video-final | — | khối 14 luật | 06/11 (sớm hơn mẫu) | **cũ** (mẫu bìa không mặt cùng ngày, sau) |
+| A56 | Bìa podcast = khung cảnh minh hoạ của chính video-hoan-chinh | — | khối 14 luật | 06/11 (sớm hơn mẫu) | **cũ** (mẫu bìa không mặt cùng ngày, sau) |
 | A57 | Video dọc: không ghép bìa trước video; ghi mốc khung bìa đề xuất | quy-tac-chung §7 | quy-tac-chung §7, khối 14, podcast SKILL | 04/11 | trùng |
 | A58 | Thumbnail kiểu Việt: mặt + 2–3 tầng chữ, `THUMB_NUM/BADGE/L3` | khối 14 | quy-tac-chung §7, khối 14 | 04/11 | trùng |
 | A59 | Video > 3 phút đăng YouTube: màn kết 15–20 s (`ytEnd`), chương (`chuong.py`), teaser 15–25 s khi > 10 phút (chạy trước chapters) | quy-tac-chung §7 (lệnh ở khối 15, 08) | quy-tac-chung §7, khối 08, 15, 3 SKILL | 04/11 | trùng |
@@ -144,7 +144,7 @@ Phân xử theo `chuan-muc-lam-viec.md` mục 0: lời David > ngày chốt gầ
 | B46 | Nhạc 20 LU (vlog) / 22 LU / 30–33 LU; "highlight giữ mức cũ" | — | tong-quan, khối 09 §3, multi-clip 3b, ho-so-thuong-hieu/chung.md | 04–05/11 | **cũ** (06/11 chuẩn chung mọi đầu ra) |
 | B47 | Tuyến nội dung bắt buộc (`project.tuyen`, ghi sau clean_apply; thiếu → dừng); ép bài `nhac` | khối 09 | khối 09, 3 SKILL | 05/11 | sống |
 | B48 | Không so dB thô với nguồn khi kiểm | khối 09 | khối 09, 17, podcast SKILL | 10/11 | trùng |
-| B49 | Rút phong cách từ video mẫu → style.md; mẫu ngang mà gốc dọc thì giữ tinh thần | khối 10 | khối 10, style-analysis | 04/11 | sống, nhưng **ngược** phần "áp màu, font vào chu-de.js" với A2 → thắng A2: màu nhấn cam + 2 font không đổi |
+| B49 | Rút phong cách từ video mẫu → phong-cach.md; mẫu ngang mà gốc dọc thì giữ tinh thần | khối 10 | khối 10, style-analysis | 04/11 | sống, nhưng **ngược** phần "áp màu, font vào chu-de.js" với A2 → thắng A2: màu nhấn cam + 2 font không đổi |
 | B50 | Ghép cảnh: chi tiết ở multi-clip | khối 11 | khối 11 | 04/11 | sống |
 | B51 | Sân khấu podcast: speakers (pyannote), sóng âm, tên người nói chỉ khi có; STAGE, TOPICS phủ kín, đổi thưa | khối 12 | khối 12, podcast-design | 04/11, 07/11 | sống |
 | B52 | Podcast: SCENES "hook đầu tiên"; "~1 cảnh / 15–20 s, mỗi cảnh ≤ 15 s"; cta "Claude tự sáng tạo" | — | khối 12 | 04/11 | **cũ** (07/11 không hook; 06/11 phủ ~30 %; 07/11 cta nguyên văn) |
@@ -232,11 +232,11 @@ Thêm "## Tái bản 1" vào đầu 3 changelog (dung-video-theo-phong-cach, cat
   "Câu ghi đè" 81 → 33, nhưng **cả 33 là chữ "thay" thường** ("chữ chính thay phụ đề", "nói thay lời"): regex `\bTHAY\b` trong
   `do-chong-cheo.py` chạy với `re.I` nên bắt mọi chữ "thay". Câu ghi đè thật = 0. Cần sửa máy đo (ngoài phạm vi tái bản bộ video).
 - **Mẫu chuẩn:** `kiem-mau.py` 5/5 ✓ giữ nguyên (SSIM 0,982–0,990); node_modules nối tạm từ tap-5-nguyen-tac-tien rồi đã gỡ.
-- **Việc thật:** David đồng ý → dựng `~/Movies/tap-thu-tai-ban-video-1/2-ban-day-du/video-final.mp4` (43,3 s, ngang) từ bản sạch
+- **Việc thật:** David đồng ý → dựng `~/Movies/tap-thu-tai-ban-video-1/2-ban-day-du/video-hoan-chinh.mp4` (43,3 s, ngang) từ bản sạch
   `tap-5-nguyen-tac-tien` 4:10–4:56 theo bản luật mới: không thẻ tít, 3 kiểu (nhan · diagram tu-thanh ở đỉnh · cta nguyên văn), đường
   cảm xúc trong `ke-hoach-canh.md`. Soát cảnh P0/P1/P2 = 0; âm −14,2 LUFS, đỉnh −1,9 dB, rè +0,3 dB. **Chờ David chấm.**
   Gặp 2 lỗi code có sẵn (không do tái bản): (a) `xuat-video.mjs` dừng ở bước thẻ cuối trên Node 24 vì `man-ket.js → thanh.js` import
-  `hoso.json` không có `with {type: 'json'}` — đã render tạm thẻ cuối bằng script riêng trong dự án thử; (b) `chuan-am.py` tự chạy
+  `ho-so.json` không có `with {type: 'json'}` — đã render tạm thẻ cuối bằng script riêng trong dự án thử; (b) `chuan-am.py` tự chạy
   trong render_preview ra −14,8 LUFS, phải chạy lại lần 2 mới đạt.
 
 ## Bước 6 — Đóng mốc

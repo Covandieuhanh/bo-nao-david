@@ -2,8 +2,8 @@
 """Ai đang nói: nguoi-noi.py <dự án> [số người; bỏ trống hoặc 0 = tự đếm]
 CÁCH CHÍNH (07/11/2026): pyannote speaker-diarization-3.1 (tach-nguoi-noi.py, venv ~/.venvs/pyannote) — tách người theo dấu vân giọng,
 tự đếm số người; mỗi đoạn lời nhận người có thời gian trùng nhiều nhất, độ chắc = tỉ lệ trùng. Thiếu venv / mô hình / lỗi → cách dự phòng dưới.
-DỰ PHÒNG: chia lời thành từng đoạn theo chỗ ngắt (words.srt, nghỉ ≥ 0,35 s), đo đặc trưng giọng mỗi đoạn (cao độ, phổ mel, kênh trái/phải
-nếu thu stereo tách người) → gom 2 nhóm (k-means) → motion/src/nguoi-noi.js {count, turns:[{start,end,spk}]} + check/speakers.md
+DỰ PHÒNG: chia lời thành từng đoạn theo chỗ ngắt (moc-tung-tu.srt, nghỉ ≥ 0,35 s), đo đặc trưng giọng mỗi đoạn (cao độ, phổ mel, kênh trái/phải
+nếu thu stereo tách người) → gom 2 nhóm (k-means) → chuyen-dong/src/nguoi-noi.js {count, turns:[{start,end,spk}]} + kiem-tra/nguoi-noi.md
 (mỗi đoạn: người, độ chắc, lời). Người nói đầu tiên = 0. Đoạn '?' (độ chắc thấp) → đọc lời để quyết, sửa nguoi-noi.js.
 Đây là ước đoán theo giọng: hai giọng cùng giới, cùng âm sắc dễ lẫn — luôn đọc lại bảng."""
 import json, os, re, subprocess, sys
@@ -20,7 +20,7 @@ def srt(path):
             out.append((g[0] * 3600 + g[1] * 60 + g[2] + g[3] / 1000, g[4] * 3600 + g[5] * 60 + g[6] + g[7] / 1000, m.group(9).strip()))
     return out
 
-words = [w for w in srt(os.path.join(P, "check/goc/words.srt")) if w[2]]
+words = [w for w in srt(os.path.join(P, "kiem-tra/goc/moc-tung-tu.srt")) if w[2]]
 chunks, cur = [], []
 for w in words:
     if cur and (w[0] - cur[-1][1] >= 0.35 or cur[-1][1] - cur[0][0] >= 8):
@@ -30,7 +30,7 @@ if cur: chunks.append(cur)
 segs = [(c[0][0], c[-1][1], " ".join(x[2] for x in c)) for c in chunks if c[-1][1] - c[0][0] >= 0.15]
 
 def load(ch):
-    raw = subprocess.run(["/opt/homebrew/bin/ffmpeg", "-v", "error", "-i", os.path.join(P, "davinci/media/audio.wav"), "-ac", str(ch),
+    raw = subprocess.run(["/opt/homebrew/bin/ffmpeg", "-v", "error", "-i", os.path.join(P, "tu-lieu/am-thanh.wav"), "-ac", str(ch),
                           "-ar", str(SR), "-f", "f32le", "-"], capture_output=True, check=True).stdout
     return np.frombuffer(raw, np.float32).reshape(-1, ch)
 st = load(2); mono = st.mean(1)
@@ -71,9 +71,9 @@ w = np.array([b - a for a, b, _ in segs])
 def pyannote():
     py = os.path.expanduser("~/.venvs/pyannote/bin/python")
     if not os.path.exists(py): return None
-    src = os.path.join(P, "check/goc/audio16k.wav")
-    if not os.path.exists(src): src = os.path.join(P, "davinci/media/audio.wav")
-    out = os.path.join(P, "check/pyannote.json")
+    src = os.path.join(P, "kiem-tra/goc/am-thanh-16k.wav")
+    if not os.path.exists(src): src = os.path.join(P, "tu-lieu/am-thanh.wav")
+    out = os.path.join(P, "kiem-tra/pyannote.json")
     r = subprocess.run([py, "-I", os.path.join(os.path.dirname(os.path.abspath(__file__)), "tach-nguoi-noi.py"), src, out, str(N)],
                        capture_output=True, text=True)
     if r.returncode or not os.path.exists(out):
@@ -138,11 +138,11 @@ for t0, t1 in zip(turns, turns[1:]):
         t0["end"] = round(min(t0["end"], m) if m < t0["end"] else m - 0.05, 2)
         t1["start"] = round(m + 0.05, 2)
         t0["end"] = round(min(t0["end"], t1["start"] - 0.05), 2)
-open(os.path.join(P, "motion/src/nguoi-noi.js"), "w").write(
+open(os.path.join(P, "chuyen-dong/src/nguoi-noi.js"), "w").write(
     "// Lượt nói (podcast) — tự sinh bởi dung-podcast/scripts/nguoi-noi.py, Claude sửa lại theo nội dung\n"
     f"export default {{count: {N}, turns: [\n" + ",\n".join(f"  {json.dumps(t)}" for t in turns) + "\n]};\n")
 fmt = lambda s: f"{int(s // 60)}:{s % 60:04.1f}"
 rows = [f"| {fmt(a)}–{fmt(b)} | {s}{'' if c >= 0.25 or N <= 1 else ' ?'} | {c:.2f} | {t[:90]} |" for (a, b, t), s, c in zip(segs, lab, conf)]
-open(os.path.join(P, "check/speakers.md"), "w").write("| Thời gian | Người | Độ chắc | Lời |\n|---|---|---|---|\n" + "\n".join(rows) + "\n")
+open(os.path.join(P, "kiem-tra/nguoi-noi.md"), "w").write("| Thời gian | Người | Độ chắc | Lời |\n|---|---|---|---|\n" + "\n".join(rows) + "\n")
 share = [round(float(w[lab == j].sum() / w.sum() * 100)) for j in range(N)]
 print(f"{len(segs)} đoạn · {len(turns)} lượt · tỉ lệ nói {share}% · không chắc: {int((conf < 0.25).sum()) if N > 1 else 0}")

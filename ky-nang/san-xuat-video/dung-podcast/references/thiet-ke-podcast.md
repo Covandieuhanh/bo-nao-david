@@ -1,6 +1,6 @@
 # Thiết kế video podcast
 
-Hình học hai khung ở `motion/src/khung-podcast.js` (PF). Dọc 1080×1920: vùng an toàn x 70–900, y 210–1420.
+Hình học hai khung ở `chuyen-dong/src/khung-podcast.js` (PF). Dọc 1080×1920: vùng an toàn x 70–900, y 210–1420.
 Ngang 1920×1080: x 96–1824, y 54–1026 — **thiết kế toàn khung**, không chia cột.
 
 ## Sân khấu nền (`san-khau.jsx`, composition `nen`) — luôn chạy
@@ -25,7 +25,7 @@ Phụ đề + thanh thời gian ở lớp trên cùng → không cảnh nào che
 - Nội dung cảnh toàn màn hình kết thúc trên dải phụ đề: dọc y < 1240, ngang y < 790.
 
 ## Chọn cảnh cho lời nói
-Ưu tiên như `$BASE/references/scene-design.md`, thêm:
+Ưu tiên như `$BASE/references/thiet-ke-canh.md`, thêm:
 1. Đổi chủ đề / câu hỏi mở ra đoạn mới → `TOPICS` đổi ngay mốc đó (trích phần chính), hoặc `card quote`.
 2. Câu có cấu trúc (tầng bậc, mốc, so sánh, trước → sau) → `diagram` (khối 07); nhắc người / nơi / tổ chức có thật → `diagram` `anh`.
 3. Con số / mốc / tên riêng → `card` (`ages`, `year`, `years4`, `daily`, `vs`…) hoặc `illus` `count`.

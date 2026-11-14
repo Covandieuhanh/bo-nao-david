@@ -163,7 +163,14 @@ file viết hoa (`bao-cao-trang-thai.md`, `huong-dan-cai-dat.md`, `tong-quan.md`
 17 tên giấy tờ cá nhân, tên file sổ tay (`danh-ba`, `viec-da-giao`, `quy-tac-phien-chinh`, `quy-tac-bot`), thư mục Drive về chữ thường,
 thư mục bộ não + repo GitHub thành `bo-nao-david`. Chỉ giữ tên bắt buộc của công cụ: bảng cuối `co-so-tri-thuc/bang-thuat-ngu.md`.
 
-## 8. Cách đổi (sau khi David duyệt)
+## 8. Đợt 3 (14/11): bên trong dự án video
+
+Đổi cấu trúc và tên file do script tạo trong dự án (`check` → `kiem-tra`, `motion` → `chuyen-dong`, `davinci/media` → `tu-lieu`,
+`video-final.mp4` → `video-hoan-chinh.mp4`, `transcript.srt` → `ban-chep-loi.srt`…) trong mọi script, khuôn và 4 dự án cũ. Dựng thử trọn một video
+(tạo dự án → làm sạch → chép lời → phụ đề → chẩn đoán → chụp thử → render → ghép bản cuối → ảnh bìa → dọn tập) + khởi tạo đoạn nổi bật + podcast:
+bắt và sửa 4 lỗi tên ghép (`drive_$t.swift`, `-of transcript`, `{ref,check,images}`, id `phu_de`). Máy đo chồng chéo: chưa cần tái bản.
+
+## 9. Cách đổi (sau khi David duyệt)
 1. Gắn mốc GitHub `truoc-chuan-hoa-ten`.
 2. Tạm dừng bot và lịch; kiểm không có render hay việc Telegram đang chạy.
 3. Đổi tên theo bảng; sửa mọi chỗ trỏ tới tên cũ (file, script, hook, launchd, lối tắt `~/.claude`, lịch app, ghi nhớ).

@@ -1,7 +1,7 @@
 # Tài liệu: podcast QUAY NGƯỜI (cho sau này — chưa có skill)
 
 *Rút từ 7 podcast có người quay lượt xem cao ở Việt Nam (xem `hoc-tu-20-podcast-vn.md` mục A1–A7) + bài học 20 highlight
-(`../../cat-doan-noi-bat/references/hoc-tu-20-highlight-vn.md`). Dùng khi David bắt đầu quay podcast có người: đọc file này trước khi
+(`../../cat-doan-noi-bat/references/hoc-tu-20-doan-noi-bat-vn.md`). Dùng khi David bắt đầu quay podcast có người: đọc file này trước khi
 lên kế hoạch quay, rồi viết skill dựng riêng (hoặc mở rộng `dung-video-theo-phong-cach` chế độ ghép nhiều góc máy).*
 
 ## 1. Quay (bối cảnh + máy)

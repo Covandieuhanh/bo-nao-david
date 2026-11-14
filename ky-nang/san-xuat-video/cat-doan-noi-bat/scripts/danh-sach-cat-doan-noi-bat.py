@@ -1,16 +1,16 @@
 # Viết sẵn kịch bản dựng game show cho highlight NGƯỜI NÓI: danh-sach-cat-doan-noi-bat.py <dự án highlight> <dự án montage> [mã phương án]
-# Đầu vào: <H>/phuong-an.json (câu nguyên văn + mốc nguồn đã soát bằng loud_check), <H>/check/goc/words.srt (mốc từ),
-# <E>/motion/public/clips/c1.mp4 = video gốc (tao-dung-ghep.sh <tên> <H>/nguon.*). Mỗi câu có thể có:
+# Đầu vào: <H>/phuong-an.json (câu nguyên văn + mốc nguồn đã soát bằng loud_check), <H>/kiem-tra/goc/moc-tung-tu.srt (mốc từ),
+# <E>/chuyen-dong/public/doan-video/c1.mp4 = video gốc (tao-dung-ghep.sh <tên> <H>/nguon.*). Mỗi câu có thể có:
 #   "tone": "lang" | "soi" (mặc định soi) · "zoom": true (dồn khung chậm suốt câu — cú chốt) · "cta": true (câu dùng cho màn chốt)
-# Ghi <E>/motion/src/danh-sach-cat.js: RAW = các câu CẮT CỨNG (David chốt 2026-11-04, chuẩn kênh lớn), khoảng lặng trong câu rút còn
+# Ghi <E>/chuyen-dong/src/danh-sach-cat.js: RAW = các câu CẮT CỨNG (David chốt 2026-11-04, chuẩn kênh lớn), khoảng lặng trong câu rút còn
 # 0,24 s (khoang-lang.py), không phóng xen kẽ (phong_xen_ke = 1.0); --tua = kiểu cũ có đoạn `jump` 0,4 s chip ⏩ + thanh tập gốc.
 # SUBS = phụ đề (giây timeline) theo đúng chữ
-# của câu (chia dòng ≤ 7 chữ, ngắt ở dấu phẩy; mốc lấy từ words.srt đã bù độ lệch Whisper), TONE + MUSIC.tracks theo tông,
+# của câu (chia dòng ≤ 7 chữ, ngắt ở dấu phẩy; mốc lấy từ moc-tung-tu.srt đã bù độ lệch Whisper), TONE + MUSIC.tracks theo tông,
 # CTA = câu kêu gọi cuối (nguyên văn), HL = {src_duration}, ENDCARD = thẻ cuối dẫn về bản đầy đủ khi phuong-an.json có
 # "endcard": {"title": "<tên tập gốc>", "speaker": "<tên người nói gốc>"} (chữ của bản gốc). OVERLAYS để trống cho Claude thêm (pow, action…).
 import difflib, json, os, re, subprocess, sys, unicodedata
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../mo-dun")); import ho_so as hoso   # tham số: san-xuat-video/ho-so
-_HS = hoso.load('highlight')
+_HS = hoso.load('doan-noi-bat')
 PUNCH = hoso.get(_HS, 'phong_xen_ke', 1.0)   # 1.0 = không phóng xen kẽ ở mối cắt
 
 _a = [x for x in sys.argv[1:] if not x.startswith('--')]
@@ -42,7 +42,7 @@ def muc_nhac(clip, pieces):
 plan = json.load(open(os.path.join(H, 'phuong-an.json'), encoding='utf-8'))
 opt = next(o for o in plan['options'] if OID is None or o['id'] == OID)
 pieces = opt['pieces']
-clip = os.path.join(E, 'motion/public/clips/c1.mp4')
+clip = os.path.join(E, 'chuyen-dong/public/doan-video/c1.mp4')
 dur = float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', clip],
                            capture_output=True, text=True).stdout)
 M_DUCK, M_BASE = muc_nhac(clip, pieces)
@@ -50,7 +50,7 @@ M_DUCK, M_BASE = muc_nhac(clip, pieces)
 def ts(x):
     h, m, s = x.replace(',', '.').split(':'); return int(h) * 3600 + int(m) * 60 + float(s)
 words = []
-for blk in open(os.path.join(H, 'check/goc/words.srt'), encoding='utf-8').read().split('\n\n'):
+for blk in open(os.path.join(H, 'kiem-tra/goc/moc-tung-tu.srt'), encoding='utf-8').read().split('\n\n'):
     l = blk.strip().split('\n')
     if len(l) >= 3 and l[2].strip():
         a, b = l[1].split(' --> '); words.append((ts(a), ts(b), l[2].strip()))
@@ -169,8 +169,8 @@ tit_lines = ''
 if tit:
     tit_lines = (f"  {{type: 'pow', start: 0, end: 2.5, text: {json.dumps(tit.upper(), ensure_ascii=False)}, keep: true}},   // thẻ tít mở, neo vùng ngực ngay trên phụ đề để không che mặt (08/11/2026) · khung 0,3 s = ảnh bìa đề xuất\n"
                  + (f"  {{type: 'pinTitle', start: 2.5, end: TOTAL - 4, text: {json.dumps(tit, ensure_ascii=False)}}},   // tít ghim\n" if opt.get('pin', hoso.get(_HS, 'tit_ghim', False)) else ''))
-hoso.dump('highlight', os.path.join(E, 'motion/src/hoso.json'))   # khung dựng đọc hồ sơ highlight (cỡ phụ đề nhịp chữ…)
-tpl = open(os.path.join(E, 'motion/src/danh-sach-cat.js'), encoding='utf-8').read()
+hoso.dump('doan-noi-bat', os.path.join(E, 'chuyen-dong/src/ho-so.json'))   # khung dựng đọc hồ sơ highlight (cỡ phụ đề nhịp chữ…)
+tpl = open(os.path.join(E, 'chuyen-dong/src/danh-sach-cat.js'), encoding='utf-8').read()
 head = tpl[:tpl.index('const RAW = [')]
 _endmid = tpl.index('// TS(src)') if '// TS(src)' in tpl else tpl.index('// ===== Phụ đề')   # chạy lại nhiều lần không nhân đôi khối TS
 mid = tpl[tpl.index('let acc = 0;'):_endmid]
@@ -179,7 +179,7 @@ const RAW = [
 {chr(10).join(raw)}
 ];
 
-{mid}// TS(src): giây trong video gốc → giây timeline (lớp phủ đặt theo lời: TS(<mốc từ trong words.srt>)) — rơi vào khoảng lặng đã cắt → đầu đoạn kế
+{mid}// TS(src): giây trong video gốc → giây timeline (lớp phủ đặt theo lời: TS(<mốc từ trong moc-tung-tu.srt>)) — rơi vào khoảng lặng đã cắt → đầu đoạn kế
 const PIECES = SEGS.filter((s) => !s.freeze);
 export const TS = (src) => {{
   for (const s of PIECES) if (src <= s.to) return s.start + Math.max(0, src - s.from);
@@ -214,6 +214,6 @@ export const HL = {{src_duration: {dur:.2f}, bar: {'true' if TUA else 'false'}}}
 // Thẻ cuối ~1,8 s sau màn chốt: "Bản đầy đủ trên kênh …" + tên tập gốc + người nói gốc — không nút phát, không chữ tự viết
 export const ENDCARD = {endcard};
 """
-open(os.path.join(E, 'motion/src/danh-sach-cat.js'), 'w', encoding='utf-8').write(src)
+open(os.path.join(E, 'chuyen-dong/src/danh-sach-cat.js'), 'w', encoding='utf-8').write(src)
 print(f"danh-sach-cat.js: {len(pieces)} câu → {nseg} đoạn (cắt cứng{' + tua' if TUA else ''}), ~{acc:.1f} s · tông {tr}"
       + (" · thẻ cuối +1,8 s" if ec.get('title') else " · ⚠ chưa có thẻ cuối: thêm \"endcard\": {\"title\": <tên tập gốc>} vào phuong-an.json"))

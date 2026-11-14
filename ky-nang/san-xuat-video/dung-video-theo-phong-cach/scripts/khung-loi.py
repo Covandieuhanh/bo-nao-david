@@ -6,13 +6,13 @@
 #   TỐI      YAVG < 28
 #   (Không dò RUNG theo YDIF: selfie vừa đi vừa quay thì 2 khung cách 0,5 s luôn khác nhau → gắn nhầm ~90% clip — vlog leo núi
 #   2026-11-03. Rung/nhoè soát bằng mắt trên half_XX.jpg.)
-# Ghi check/cN/bad.txt (từng khoảng ≥ 1 s + lý do) và in bảng tổng. Chỉ là gợi ý: đoạn có lời/cảm xúc vẫn giữ (multi-clip.md 2c) —
-# đối chiếu loud.txt + transcript + half_XX.jpg trước khi bỏ. KHÔNG dò được hình lật ngang/lộn ngược/quay loạn (vừa rút máy khỏi
-# túi) → tờ soát check/segs/ của danh-sach-cat-vlog.py. Hình hỏng thì bỏ kể cả có lời.
+# Ghi kiem-tra/cN/khung-loi.txt (từng khoảng ≥ 1 s + lý do) và in bảng tổng. Chỉ là gợi ý: đoạn có lời/cảm xúc vẫn giữ (nhieu-doan-video.md 2c) —
+# đối chiếu am-luong.txt + transcript + half_XX.jpg trước khi bỏ. KHÔNG dò được hình lật ngang/lộn ngược/quay loạn (vừa rút máy khỏi
+# túi) → tờ soát kiem-tra/cac-doan/ của danh-sach-cat-vlog.py. Hình hỏng thì bỏ kể cả có lời.
 import os, re, subprocess, sys
 
 P = os.path.expanduser(sys.argv[1])
-ids = sys.argv[2:] or sorted((d for d in os.listdir(os.path.join(P, 'check')) if re.fullmatch(r'c\d+', d)), key=lambda x: int(x[1:]))
+ids = sys.argv[2:] or sorted((d for d in os.listdir(os.path.join(P, 'kiem-tra')) if re.fullmatch(r'c\d+', d)), key=lambda x: int(x[1:]))
 STEP = 0.5
 
 def stats(clip):
@@ -36,7 +36,7 @@ def tag(r):
 total_bad = 0.0
 print(f"{'clip':5} {'dài':>6}  đoạn hỏng (≥ 1 s)")
 for cid in ids:
-    clip = os.path.join(P, 'motion/public/clips', cid + '.mp4')
+    clip = os.path.join(P, 'chuyen-dong/public/doan-video', cid + '.mp4')
     rows = stats(clip)
     tags = [tag(r) for r in rows]
     runs, i = [], 0
@@ -57,7 +57,7 @@ for cid in ids:
     runs = merged
     dur = len(rows) * STEP
     bad = sum(b - a for a, b, _ in runs); total_bad += bad
-    with open(os.path.join(P, 'check', cid, 'bad.txt'), 'w') as f:
+    with open(os.path.join(P, 'kiem-tra', cid, 'khung-loi.txt'), 'w') as f:
         for a, b, w in runs: f.write(f'{a:.1f}-{b:.1f} {w}\n')
     s = ' · '.join(f'{a:.1f}–{b:.1f} {w}' for a, b, w in runs) or '—'
     print(f'{cid:5} {dur:6.1f}  {s}' + (f'   ({bad / dur:.0%})' if runs else ''))

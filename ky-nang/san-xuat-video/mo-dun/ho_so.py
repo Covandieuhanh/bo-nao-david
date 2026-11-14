@@ -7,7 +7,9 @@ def _merge(a, b):
     for k, v in b.items():
         out[k] = _merge(out[k], v) if isinstance(v, dict) and isinstance(out.get(k), dict) else v
     return out
+TEN_CU = {"highlight": "doan-noi-bat"}   # tên loại cũ trong dự án làm trước 14/11/2026
 def load(loai):
+    loai = TEN_CU.get(loai, loai)
     c = json.load(open(os.path.join(D, "chung.json"), encoding="utf-8"))
     p = os.path.join(D, loai + ".json")
     return _merge(c, json.load(open(p, encoding="utf-8"))) if os.path.exists(p) else c
@@ -17,7 +19,7 @@ def get(cfg, path, default=None):
         cfg = cfg[k]
     return cfg
 def dump(loai, dst):
-    """Chép hồ sơ đã gộp vào dự án (motion/src/hoso.json) cho khung dựng đọc."""
+    """Chép hồ sơ đã gộp vào dự án (chuyen-dong/src/ho-so.json) cho khung dựng đọc."""
     json.dump(load(loai), open(dst, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 if __name__ == "__main__":
     import sys

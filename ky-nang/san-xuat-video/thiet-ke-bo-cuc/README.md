@@ -7,7 +7,7 @@ vẫn nhận ra video của David.
 
 | Lớp | Gồm | Ở đâu | Khi học video mẫu |
 |---|---|---|---|
-| **Chữ ký nhận diện** | màu nhấn cam, hai font chính, thành phần cố định (dấu góc, phụ đề, thanh thời gian, màn chốt, thẻ cuối), nhạc kênh | `thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0, `bien-thiet-ke.js`, `brand.json` | **Không đổi** |
+| **Chữ ký nhận diện** | màu nhấn cam, hai font chính, thành phần cố định (dấu góc, phụ đề, thanh thời gian, màn chốt, thẻ cuối), nhạc kênh | `thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0, `bien-thiet-ke.js`, `thuong-hieu.json` | **Không đổi** |
 | **Phần sáng tạo** (học được) | bố cục, thứ tự thông tin hiện ra, cách nối cảnh, nhịp, chỗ đặt hiệu ứng âm thanh, nền, kết cấu, kiểu hình, chữ nhấn phụ, chuyển động | thư mục này + `bo-cuc.jsx`, `thu-vien-tai-nguyen/` | **Chỉ thêm.** Mỗi điều học được là một mục mới trong kho |
 
 Học càng nhiều càng có nhiều tài nguyên để chọn; khi dựng thì chỉ chọn vài kiểu hợp nội dung (`quy-tac-chung.md` mục 0, hiểu hơn cầu kì).
@@ -30,7 +30,7 @@ Học càng nhiều càng có nhiều tài nguyên để chọn; khi dựng thì
 - Chữ trên màn hình là **nguyên văn lời David** (`quy-tac-chung.md` mục 1): không tự rút tít, không bỏ chữ làm đổi nghĩa.
 - Phụ đề luôn chạy. Không ghi chú kỹ thuật trên hình.
 - Chuẩn âm lượng chung (khối 09).
-- Mấy video đầu dùng bố cục mới: chụp vài khung cho David xem trước khi render (`check/stills.jpg`).
+- Mấy video đầu dùng bố cục mới: chụp vài khung cho David xem trước khi render (`kiem-tra/anh-tinh.jpg`).
 
 ## 4. Quy trình học một video mẫu mới
 

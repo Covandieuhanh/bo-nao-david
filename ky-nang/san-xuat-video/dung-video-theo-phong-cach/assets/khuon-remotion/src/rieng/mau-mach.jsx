@@ -4,10 +4,10 @@
 //            {id:'m2', type:'ve', start, end, props:{ve:'MauMach', buoc:2, tu_buoc:1, moc_buoc:[giây], label:['…','…']}}
 import React from 'react';
 import {AbsoluteFill, useCurrentFrame, useVideoConfig} from 'remotion';
-import {C, HEAD} from '../lib/bien-thiet-ke';
-import {mach, net} from '../lib/mach';
-import {vaoRa} from '../lib/chuyen-dong';
-import {ChuHien} from '../lib/chu-hien';
+import {C, HEAD} from '../thu-vien/bien-thiet-ke';
+import {mach, net} from '../thu-vien/mach';
+import {vaoRa} from '../thu-vien/chuyen-dong';
+import {ChuHien} from '../thu-vien/chu-hien';
 
 export const MauMach = ({start, buoc, tu_buoc, moc_buoc, label = []}) => {
   const f = useCurrentFrame(); const {fps, width: W, height: H, durationInFrames: d} = useVideoConfig();

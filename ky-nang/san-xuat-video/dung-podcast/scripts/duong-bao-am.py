@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Sóng âm: duong-bao-am.py <dự án> → motion/src/duong-bao-am.js {fps, v: [0–1 mỗi khung]} (độ lớn tiếng theo khung video, đã làm mượt)."""
+"""Sóng âm: duong-bao-am.py <dự án> → chuyen-dong/src/duong-bao-am.js {fps, v: [0–1 mỗi khung]} (độ lớn tiếng theo khung video, đã làm mượt)."""
 import json, os, subprocess, sys
 import numpy as np
 P = os.path.expanduser(sys.argv[1]); FPS = 30; SR = 48000
-raw = subprocess.run(["/opt/homebrew/bin/ffmpeg", "-v", "error", "-i", os.path.join(P, "davinci/media/audio.wav"), "-ac", "1", "-ar", str(SR),
+raw = subprocess.run(["/opt/homebrew/bin/ffmpeg", "-v", "error", "-i", os.path.join(P, "tu-lieu/am-thanh.wav"), "-ac", "1", "-ar", str(SR),
                       "-f", "f32le", "-"], capture_output=True, check=True).stdout
 x = np.frombuffer(raw, np.float32); n = SR // FPS
 k = len(x) // n
@@ -15,7 +15,7 @@ out = np.zeros_like(v); a = 0.0
 for i, t in enumerate(v):            # lên nhanh, xuống chậm — sóng không giật
     a = t if t > a else a * 0.82 + t * 0.18
     out[i] = a
-open(os.path.join(P, "motion/src/duong-bao-am.js"), "w").write(
+open(os.path.join(P, "chuyen-dong/src/duong-bao-am.js"), "w").write(
     "// Độ lớn tiếng theo khung (podcast, sóng âm) — tự sinh bởi dung-podcast/scripts/duong-bao-am.py\n"
     f"export default {{fps: {FPS}, v: {json.dumps([round(float(t), 2) for t in out], separators=(',', ':'))}}};\n")
 print(f"duong-bao-am.js {len(out)} khung")

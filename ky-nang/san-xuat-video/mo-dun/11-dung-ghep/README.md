@@ -2,11 +2,11 @@
 
 **Dùng trong:** ghép vlog, highlight người nói
 **Đầu vào:** nhiều clip
-**Đầu ra:** danh-sach-cat.js / plan.json + ke-hoach-ghep.md + links.jpg
+**Đầu ra:** danh-sach-cat.js / ke-hoach.json + ke-hoach-ghep.md + lien-ket.jpg
 **Tham số hồ sơ:** ghep-vlog: *
 **Sửa khối này → chạy lại:** 04 (nang-lop.py), 05 (bao-ve-lop-phu.py), 17
 
 **File thật (code, một bản duy nhất):**
-- `dung-video-theo-phong-cach/references/multi-clip.md (chi tiết)`
+- `dung-video-theo-phong-cach/references/nhieu-doan-video.md (chi tiết)`
 - `dung-video-theo-phong-cach/scripts/{tao-dung-ghep.sh,danh-sach-cat-vlog.py,khung-loi.py,bang-lien-ket.py}`
 - `dung-video-theo-phong-cach/assets/khuon-dung-ghep/`

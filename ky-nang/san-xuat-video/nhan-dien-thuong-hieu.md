@@ -7,7 +7,7 @@ Kết luận ⛔ / 👤 / 🗂 thì KHÔNG dựng video (tiết kiệm thời gi
 | Đầu vào David đưa | Loại | Công thức (skill) | Hồ sơ |
 |---|---|---|---|
 | 1 video có người nói trước camera | **Làm video** | `dung-video-theo-phong-cach` (chế độ 1 video) | `ho-so-thuong-hieu/lam-video` |
-| ≥ 2 clip, hoặc 1 clip sự kiện / đi lại (không phải nói trước camera) | **Ghép vlog** | `dung-video-theo-phong-cach` (chế độ ghép — `references/multi-clip.md`) | `ho-so-thuong-hieu/ghep-vlog` |
+| ≥ 2 clip, hoặc 1 clip sự kiện / đi lại (không phải nói trước camera) | **Ghép vlog** | `dung-video-theo-phong-cach` (chế độ ghép — `references/nhieu-doan-video.md`) | `ho-so-thuong-hieu/ghep-vlog` |
 | File tiếng, hoặc video podcast David không muốn dùng hình | **Podcast** | `dung-podcast` | `ho-so-thuong-hieu/podcast` |
 | 1 video dài / thư mục dự án cũ + "cắt highlight / clip ngắn / Reels" | **Highlight** | `cat-doan-noi-bat` | `ho-so-thuong-hieu/highlight` |
 

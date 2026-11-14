@@ -1,5 +1,5 @@
 # Ảnh khung an toàn (vùng đỏ = bị giao diện nền tảng che): vung-an-toan.py <dự án>
-# Ra davinci/media/khung_an_toan.png — dùng để kiểm tra khung hình (check_frames, chụp thử).
+# Ra tu-lieu/khung-an-toan.png — dùng để kiểm tra khung hình (check_frames, chụp thử).
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from _chung import load, safe_zone
@@ -20,4 +20,4 @@ for y in range(T, B, 30):
 f = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial Bold.ttf", round(W * 0.032))
 d.text((W // 2, (B + H) // 2), "Tiêu đề, mô tả, nút của nền tảng", font=f, fill=(255, 255, 255, 230), anchor="mm")
 if H > W: d.text(((R + W) // 2, H * 0.43), "Nút\nthích\nbình\nluận", font=f, fill=(255, 255, 255, 230), anchor="mm", align="center")
-out = os.path.join(P, "davinci/media/khung_an_toan.png"); img.save(out); print(out)
+out = os.path.join(P, "tu-lieu/khung-an-toan.png"); img.save(out); print(out)

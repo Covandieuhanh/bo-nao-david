@@ -21,7 +21,7 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
 - **Câu Claude tự viết chỉ ở bài đăng**: tiêu đề, thumbnail, mô tả, bình luận ghim — viết đúng ý người nói, không thêm thông tin hay
   lời hứa ngoài video, không giật tít sai sự thật.
 - **Nhãn cố định của khung** (không phải lời): "Bản đầy đủ trên kênh …" ở thẻ cuối dẫn bản đầy đủ, và **lịch phát do David đưa**
-  ("Tập mới mỗi thứ 6") — `project.schedule` (1 video), `STAGE.schedule` (podcast), plan.json `"schedule"` (vlog),
+  ("Tập mới mỗi thứ 6") — `project.schedule` (1 video), `STAGE.schedule` (podcast), ke-hoach.json `"schedule"` (vlog),
   `"endcard": {"schedule"}` (highlight). Không tự đặt lịch.
 - **Lằn ranh kênh trainer** (kênh khác theo hồ sơ kênh đó; loại khỏi mọi chữ/clip): huyền học, thần số học, phong thuỷ, lá số · "chữa lành", công dụng sức khoẻ của sản phẩm ·
   tư vấn thuế/pháp lý · tên thật/nơi làm/chi tiết lộ danh tính khách, học viên, nhân viên · giá, tên gói dịch vụ. Câu chủ chốt dính
@@ -93,7 +93,7 @@ Ghi `<dự án>/phat-hanh/phat-hanh.md`:
   dành cho câu mở); ghi **mốc khung bìa đề xuất** (giây) để David chọn khi đăng.
 - **Video > 3 phút đăng YouTube** (hỏi "có đăng YouTube không?" lúc đầu với mọi video > 3 phút, ngang hay dọc):
   - **Màn kết YouTube 15–20 s**: 1 video/podcast `project.ytEnd = 20` (ghi sau bước làm sạch — clean_apply viết lại du-an.js);
-    vlog ghép `"ytEnd": 20` trong plan.json. Ghi vào phat-hanh.md: "gắn màn kết trong YouTube Studio: 2 video (trái/phải hoặc
+    vlog ghép `"ytEnd": 20` trong ke-hoach.json. Ghi vào phat-hanh.md: "gắn màn kết trong YouTube Studio: 2 video (trái/phải hoặc
     trên/dưới) + nút đăng ký (tròn giữa dưới)".
   - **Chương YouTube**: `python3 -I dung-video-theo-phong-cach/scripts/chuong.py <dự án>` → `phat-hanh/chuong.txt` dán vào mô tả.
   - **Teaser 15–25 s** cho video > 10 phút (podcast, nói trước camera, vlog nói chuyện): sau render, chọn 2–3 câu đắt nhất (trọn câu,

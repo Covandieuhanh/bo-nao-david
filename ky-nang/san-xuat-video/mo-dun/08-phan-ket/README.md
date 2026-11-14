@@ -29,6 +29,6 @@
   David tự nói câu mời / câu hỏi trong video → màn chốt dùng đúng câu đó. Bài Facebook cá nhân (đời thường) không cần dẫn dắt kiểu kênh.
 - **Thẻ cuối** (video ngang / dọc dài): nhận diện (chủ đề + DAVID, ~1,6 s) mọi video có chủ đề; dẫn bản đầy đủ = "Bản đầy đủ trên kênh
   …" + tên tập gốc + người nói (`the_cuoi_s`). Không nút phát, không logo nền tảng, không câu gợi tò mò tự viết.
-- **Màn kết YouTube** (video > 3 phút đăng YouTube): `project.ytEnd = 20` (1 video/podcast, ghi sau làm sạch) · plan.json `"ytEnd": 20`
+- **Màn kết YouTube** (video > 3 phút đăng YouTube): `project.ytEnd = 20` (1 video/podcast, ghi sau làm sạch) · ke-hoach.json `"ytEnd": 20`
   (vlog) — khung chừa 2 ô video + nút đăng ký, nhạc kênh nhỏ; David gắn phần tử trong YouTube Studio.
-- **Lịch phát** David đưa: `project.schedule` / `STAGE.schedule` / plan.json `"schedule"` / `"endcard": {"schedule"}` — không tự đặt.
+- **Lịch phát** David đưa: `project.schedule` / `STAGE.schedule` / ke-hoach.json `"schedule"` / `"endcard": {"schedule"}` — không tự đặt.

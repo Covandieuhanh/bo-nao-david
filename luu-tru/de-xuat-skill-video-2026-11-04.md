@@ -2,7 +2,7 @@
 
 **Trạng thái:** ĐÃ ÁP TOÀN BỘ (David duyệt 2026-11-04: ưu tiên 1 + 2, rồi cả 3 mục ⚠ TH-1, HL-5, PO-6).
 
-Nguồn: `cat-doan-noi-bat/references/hoc-tu-20-highlight-vn.md` · `dung-video-theo-phong-cach/references/hoc-tu-20-video-noi-truoc-camera-vn.md`
+Nguồn: `cat-doan-noi-bat/references/hoc-tu-20-doan-noi-bat-vn.md` · `dung-video-theo-phong-cach/references/hoc-tu-20-video-noi-truoc-camera-vn.md`
 · `dung-podcast/references/hoc-tu-20-podcast-vn.md` (+ `podcast-quay-nguoi.md`) · `dung-video-theo-phong-cach/references/hoc-tu-20-vlog-vn.md`.
 Cột "Bằng chứng" = số video trong 20 có đặc điểm đó. ⚠ = đụng luật đã chốt, cần David quyết riêng.
 

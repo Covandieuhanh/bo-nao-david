@@ -1,23 +1,23 @@
 #!/usr/bin/env python3
 """CHẨN ĐOÁN VIDEO (thiet-ke-bo-cuc/tu-chon.md, David chốt 11/11/2026): chan-doan.py <dự án>
 Đo những gì máy đo được để Claude tự chọn bố cục nền, lớp thông tin, kiểu cảnh — không hỏi David.
-→ check/chan-doan.md (số đo + gợi ý theo tu-chon.md) + check/chan-doan.jpg (6 khung gốc để Claude xem: mặt, chủ thể, rác).
-Lời lấy từ motion/src/phu-de.js, không có thì check/goc/transcript.srt / words.srt."""
+→ kiem-tra/chan-doan.md (số đo + gợi ý theo tu-chon.md) + kiem-tra/chan-doan.jpg (6 khung gốc để Claude xem: mặt, chủ thể, rác).
+Lời lấy từ chuyen-dong/src/phu-de.js, không có thì kiem-tra/goc/ban-chep-loi.srt / moc-tung-tu.srt."""
 import glob, json, os, re, subprocess, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from _chung import load, node_env
 
-P = os.path.expanduser(sys.argv[1]); M = os.path.join(P, "davinci/media")
+P = os.path.expanduser(sys.argv[1]); M = os.path.join(P, "tu-lieu")
 pr = load(P)["project"]; W, H, D = pr["width"], pr["height"], float(pr.get("duration") or 0)
 
 # 1. Lời: [(start, end, text)]
 cap = []
-cj = os.path.join(P, "motion/src/phu-de.js")
+cj = os.path.join(P, "chuyen-dong/src/phu-de.js")
 if os.path.exists(cj):
     t = open(cj, encoding="utf-8").read()
     cap = [(float(a), float(b), x) for a, b, x in re.findall(r"start:\s*([\d.]+),\s*end:\s*([\d.]+),\s*text:\s*[\"'](.*?)[\"']\s*[,}]", t)]
 if not cap:
-    srt = next((f for f in [os.path.join(P, "check/goc/transcript.srt"), *glob.glob(os.path.join(P, "check/**/*.srt"), recursive=True)] if os.path.exists(f)), None)
+    srt = next((f for f in [os.path.join(P, "kiem-tra/goc/ban-chep-loi.srt"), *glob.glob(os.path.join(P, "kiem-tra/**/*.srt"), recursive=True)] if os.path.exists(f)), None)
     if srt:
         ts = lambda s: sum(float(x) * m for x, m in zip(s.replace(",", ".").split(":"), (3600, 60, 1)))
         for blk in open(srt, encoding="utf-8").read().split("\n\n"):
@@ -45,10 +45,10 @@ if len(so) >= 3: goi_y.append(f"{len(so)} câu có con số → illus count / di
 if not goi_y: goi_y.append("ít ý, nhịp kể → người + phụ đề + điểm nhấn `nhan`, vài cảnh minh hoạ ở ý chính")
 
 # 3. Tờ 6 khung gốc (bản chưa khung chủ thể nếu có)
-src = next((os.path.join(M, f) for f in ("video_goc_truoc_khung.mp4", "video_goc_truoc_cat_khung.mp4", pr["source"]) if os.path.exists(os.path.join(M, f))), None)
-jpg = os.path.join(P, "check/chan-doan.jpg")
+src = next((os.path.join(M, f) for f in ("video-goc-truoc-khung.mp4", "video-goc-truoc-cat-khung.mp4", pr["source"]) if os.path.exists(os.path.join(M, f))), None)
+jpg = os.path.join(P, "kiem-tra/chan-doan.jpg")
 if src and D:
-    tmp = os.path.join(P, "check/chan-doan-tmp"); os.makedirs(tmp, exist_ok=True)
+    tmp = os.path.join(P, "kiem-tra/chan-doan-tam"); os.makedirs(tmp, exist_ok=True)
     for i in range(6):
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{D * (i + 0.5) / 6:.2f}", "-i", src, "-frames:v", "1", "-vf", "scale=480:-2",
                         f"{tmp}/{i}.jpg"], env=node_env())
@@ -60,9 +60,9 @@ if src and D:
 out = [f"# Chẩn đoán — {os.path.basename(os.path.dirname(P)) or P}",
        f"Khung {W}×{H} · dài {fmt(D)} · lời {words} chữ, {mat_do:.0f} chữ/phút · có lời {noi / D * 100 if D else 0:.0f} % thời lượng · {len(hoi)} câu hỏi",
        "", "## Gợi ý lớp thông tin (tu-chon.md bước 3)", *[f"- {g}" for g in goi_y],
-       "", "## Claude xem check/chan-doan.jpg rồi ghi (tu-chon.md bước 1–2)",
+       "", "## Claude xem kiem-tra/chan-doan.jpg rồi ghi (tu-chon.md bước 1–2)",
        "1. Mặt người nói: rõ / nhỏ / không thấy · 2. Chủ thể: … · 3. Rác quanh chủ thể: có / không · 4. Máy quay: đứng yên / dịch",
        "→ bố cục nền: giữ khung gốc / khung chủ thể (khung-chu-the.py) / pillar …",
        "⚠️ Người chiếm < ~50 % khung (ngồi xa, hai bên tường trống) + nội dung kiến thức / DÀY THÔNG TIN → KHUNG CHỦ THỂ quanh người + bảng `GHI_CHU`, không giữ khung gốc"]
-open(os.path.join(P, "check/chan-doan.md"), "w", encoding="utf-8").write("\n".join(out) + "\n")
+open(os.path.join(P, "kiem-tra/chan-doan.md"), "w", encoding="utf-8").write("\n".join(out) + "\n")
 print("\n".join(out)); print(jpg)

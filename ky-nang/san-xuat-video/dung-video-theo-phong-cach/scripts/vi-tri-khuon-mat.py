@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Đặt lớp phủ (hook, tên, chữ to, thẻ) tránh mặt người nói: vi-tri-khuon-mat.py <dự án>
-Đọc check/faces/faces.json (vi-tri-khuon-mat.sh) + motion/src/canh.js → motion/src/vi-tri.js + check/faces/placement.md.
+Đọc kiem-tra/khuon-mat/khuon-mat.json (vi-tri-khuon-mat.sh) + chuyen-dong/src/canh.js → chuyen-dong/src/vi-tri.js + kiem-tra/khuon-mat/placement.md.
 Mỗi cảnh không toàn màn hình: lấy vùng mặt người nói trong suốt cảnh (đầu + cổ = vùng CẤM che; thân = vùng nên tránh),
 thử mọi vị trí dọc của dải lớp phủ trong vùng an toàn (trên dải phụ đề), cỡ 78% → 68% → 60% → 55%; chọn vị trí không chạm vùng cấm,
 ít che thân nhất, gần chỗ mặc định (đáy) nhất.
@@ -12,7 +12,7 @@ import json, os, re, sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../mo-dun")); import ho_so as hoso   # tham số: san-xuat-video/ho-so
 
 P = os.path.expanduser(sys.argv[1])
-SRC = os.path.join(P, "motion/src")
+SRC = os.path.join(P, "chuyen-dong/src")
 read = lambda f: open(os.path.join(SRC, f)).read()
 
 proj = read("du-an.js")
@@ -31,13 +31,13 @@ lay = read("bo-cuc.js")
 OV_SCALE = float(re.search(r"OV_SCALE = ([\d.]+)", lay).group(1))
 FULL = set(re.findall(r"'(\w+)'", re.search(r"export const FULL = .*", lay).group(0)))   # cả nhánh điều kiện ('card' = thẻ toàn cảnh)
 if re.search(r"podcast: true", proj): FULL.discard('card'); FULL.discard('cta')
-HL = os.path.exists(os.path.join(P, "motion/src/doan-noi-bat.js")) and not re.search(r"export default null", read("doan-noi-bat.js")) \
+HL = os.path.exists(os.path.join(P, "chuyen-dong/src/doan-noi-bat.js")) and not re.search(r"export default null", read("doan-noi-bat.js")) \
      and not re.search(r'"bar": false', read("doan-noi-bat.js"))   # thanh tập gốc tắt (mặc định 2026-11-04) → không đẩy phụ đề
 CAP_H = (140 + (40 if HL and not re.search(r"podcast: true", proj) else 0)) if re.search(r"start:", read("phu-de.js")) else 0   # = bo-cuc.js
 BAND_H, SAFE_W = S_BOTTOM - ov_top, W - S_LEFT - S_RIGHT
 OV_BOTTOM = S_BOTTOM - CAP_H
 
-frames = json.load(open(os.path.join(P, "check/faces/faces.json")))
+frames = json.load(open(os.path.join(P, "kiem-tra/khuon-mat/khuon-mat.json")))
 STEP = 0.5                                                             # vi-tri-khuon-mat.sh dò 2 khung/giây
 FULL_MAX = hoso.get(hoso.load('lam-video'), 'toan_man_max_s') or float('inf')   # không trần cứng (2026-11-07)    # cảnh tự chuyển toàn màn hình dài tối đa (giây) — hồ sơ
 
@@ -112,6 +112,6 @@ tot = float(re.search(r"duration: ([\d.]+)", proj).group(1))
 fulls = sum(v["end"] - float(re.search(rf"id: '{k}', type: '\w+', start: ([\d.]+)", body).group(1)) for k, v in res.items() if v.get("full"))
 rows.append(f"\nTự chuyển toàn màn hình: {sum(1 for v in res.values() if v.get('full'))} cảnh, {fulls:.1f} s"
             + (f" — cộng cảnh toàn màn hình sẵn có, tự cân tỷ lệ mặt / đồ hoạ theo nội dung ({tot:.0f} s)" if tot else ""))
-md = os.path.join(P, "check/faces/placement.md")
+md = os.path.join(P, "kiem-tra/khuon-mat/placement.md")
 open(md, "w").write("| Cảnh | Giây | Mặt (y px, cấm che) | Lớp phủ | Cỡ | Ghi chú |\n|---|---|---|---|---|---|\n" + "\n".join(rows) + "\n")
 print("\n".join(rows)); print(os.path.join(SRC, "vi-tri.js"))

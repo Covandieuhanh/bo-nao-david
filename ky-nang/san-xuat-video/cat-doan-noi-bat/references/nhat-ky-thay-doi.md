@@ -1,10 +1,10 @@
 # Sổ thay đổi — cat-doan-noi-bat (quyết định của người dùng + lý do)
 
 ## Tái bản 2 — 10/11/2026: bản luật viết lại từ bảng du-an/tai-cau-truc-2-video.md
-- Nhà luật bỏ phóng xen kẽ ở mối cắt là quy-tac-chung mục 2 (kèm lý do); khối 02, ho-so-thuong-hieu/highlight.md, cat-highlight luật 8 trỏ về đó. quy-tac-chung mục 8 trỏ thói quen chung (hỏi, lệnh nền, mật khẩu, báo cáo), chỉ giữ phần riêng video. Bỏ câu chép ở gotchas, phan-phoi-da-kenh; sửa đường trỏ "hình của chính video" về khối 14. Viết lại 6 câu máy đo bắt nhầm ("thay cho", "THAY", tên file có ngày).
+- Nhà luật bỏ phóng xen kẽ ở mối cắt là quy-tac-chung mục 2 (kèm lý do); khối 02, ho-so-thuong-hieu/doan-noi-bat.md, cat-highlight luật 8 trỏ về đó. quy-tac-chung mục 8 trỏ thói quen chung (hỏi, lệnh nền, mật khẩu, báo cáo), chỉ giữ phần riêng video. Bỏ câu chép ở gotchas, phan-phoi-da-kenh; sửa đường trỏ "hình của chính video" về khối 14. Viết lại 6 câu máy đo bắt nhầm ("thay cho", "THAY", tên file có ngày).
 
 ## 10/11/2026 — Bỏ phóng xen kẽ 1,08× ở mối cắt
-- David xem đoạn thử tap-thu-tai-ban-video-1: "tôi không thích mấy đoạn zoom giật ra giật vào" → "bỏ 1 giữ 2": bỏ mặc định phóng xen kẽ 1,08× ở mỗi mối cắt (mọi loại video), giữ zoom dồn chậm vào mặt ở câu đắt (`nhan` zoom, câu `"zoom": true`). Sửa: luật 8, bước 7A, `ho-so-thuong-hieu/highlight.json` `phong_xen_ke: 1.0`, `danh-sach-cat-doan-noi-bat.py` chỉ phóng khi > 1.
+- David xem đoạn thử tap-thu-tai-ban-video-1: "tôi không thích mấy đoạn zoom giật ra giật vào" → "bỏ 1 giữ 2": bỏ mặc định phóng xen kẽ 1,08× ở mỗi mối cắt (mọi loại video), giữ zoom dồn chậm vào mặt ở câu đắt (`nhan` zoom, câu `"zoom": true`). Sửa: luật 8, bước 7A, `ho-so-thuong-hieu/doan-noi-bat.json` `phong_xen_ke: 1.0`, `danh-sach-cat-doan-noi-bat.py` chỉ phóng khi > 1.
 
 ## Tái bản 1 — 10/11/2026: bản luật viết lại từ bảng du-an/tai-cau-truc-video-1.md
 - Luật 11 chỉ còn "không thẻ cuối, không thanh thời gian"; tít ghim mặc định tắt (`tit_ghim: false`, bật `"pin": true`); không có câu kêu gọi thì không dừng (khối 13 sửa theo luật 4); ghim theo kiểu dẫn dắt + link bản đầy đủ.
@@ -62,18 +62,18 @@
   bắt đầu (104,85 / 105,08 / 105,25 / 105,35) tới khi sạch — cách soát khi "⚠ nói liền".
 
 ## 2026-11-03 (học từ 10 Shorts top lượt xem)
-- Phân tích 10 Shorts lượt xem cao (7 quốc tế, 3 VN; 1,4–41 Tr) → `references/hoc-tu-top-video.md`. Người dùng đồng ý A–J,
+- Phân tích 10 Shorts lượt xem cao (7 quốc tế, 3 VN; 1,4–41 Tr) → `references/hoc-tu-video-dan-dau.md`. Người dùng đồng ý A–J,
   **bỏ K** ("giữ nguyên vị trí phụ đề") — phụ đề vẫn ở đáy vùng an toàn theo `kieu-phu-de.js`, dù 7/10 video mẫu đặt giữa khung.
 - Luật 12 **thẻ tiêu đề mở 2–3 s** (nguyên văn cụm đắt của câu chạm, nửa trên khung). Luật 13 **thẻ cuối dẫn về bản đầy đủ**
   ~1,8 s (kiểu Have A Sip): chỉ tên tập gốc + người nói gốc + nút phát — người dùng cho phép thay cho luật "không nhãn BẢN ĐẦY
   ĐỦ" vì không có chữ tự viết. Code: montage-template `EndCard` + `ENDCARD` (Root cộng thời lượng), `danh-sach-cat-doan-noi-bat.py` đọc
   `"endcard"` trong phuong-an.json. Nhánh podcast (7B): `man-ket.jsx` + composition `the-cuoi` (remotion-template),
-  `xuat-video.mjs` → `the_cuoi.mp4`, `xem-truoc-ban-dung.py` ghép sau video (như bìa ghép trước); `bo-cuc.js` coi `endcard` là toàn khung.
+  `xuat-video.mjs` → `the-cuoi.mp4`, `xem-truoc-ban-dung.py` ghép sau video (như bìa ghép trước); `bo-cuc.js` coi `endcard` là toàn khung.
   Thử trên bản sao podcast-hl-nang-luc-A: 42,1 → 43,9 s, tiếng phần chính giữ nguyên (−19,2 dB), thẻ câm.
 - Lời kêu gọi = câu mệnh lệnh/giao việc nguyên văn (top video gần như không có "hãy bình luận"); thang câu mở thêm "tiền cược",
   "kết quả trước, quá khứ sau", "câu đố cho người xem", "con số danh sách". Vòng lặp thành mặc định khi clip ≤ 35 s có cặp câu.
   Độ dài cho tới 120 s chỉ với câu chuyện hồi hộp có đáp án cuối.
-- dung-video-theo-phong-cach (multi-clip.md): nhịp cắt mục tiêu `soi` 2,2–2,7 s / `lang` 4–6 s; cảnh phản ứng 0,8–1,5 s sau câu đắt;
+- dung-video-theo-phong-cach (nhieu-doan-video.md): nhịp cắt mục tiêu `soi` 2,2–2,7 s / `lang` 4–6 s; cảnh phản ứng 0,8–1,5 s sau câu đắt;
   `who: 1|2` viền ô phụ đề theo người nói (chuong-trinh.jsx `Caption`); ưu tiên bằng chứng thật khi nêu kết quả/con số.
 
 ## 2026-11-04

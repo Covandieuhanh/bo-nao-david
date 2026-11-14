@@ -332,7 +332,7 @@ for (let i = 0; i < positions.length; i++) {
   });
 
   // Flat NN.png so ffmpeg can read the set as a numbered sequence for the
-  // contact sheet. The scroll offset lives in report.json, not the filename.
+  // contact sheet. The scroll offset lives in bao-cao.json, not the filename.
   const name = `${String(i).padStart(2, "0")}.png`;
   await page.screenshot({ path: path.join(OUT, name) });
 
@@ -462,7 +462,7 @@ for (let i = 0; i < positions.length; i++) {
   }
 }
 
-fs.writeFileSync(path.join(OUT, "report.json"), JSON.stringify({ doc, report, consoleErrors, failed }, null, 2));
+fs.writeFileSync(path.join(OUT, "bao-cao.json"), JSON.stringify({ doc, report, consoleErrors, failed }, null, 2));
 
 if (consoleErrors.length) console.log("\nCONSOLE ERRORS:\n  " + consoleErrors.join("\n  "));
 if (failed.length) console.log("\nFAILED REQUESTS:\n  " + failed.join("\n  "));
@@ -654,4 +654,4 @@ if (FFMPEG) {
   else console.log("contact sheet skipped (needs a full ffmpeg build; scale/tile are missing from stripped ones)");
 }
 
-console.log(`\nshots + report.json in ${OUT}`);
+console.log(`\nshots + bao-cao.json in ${OUT}`);

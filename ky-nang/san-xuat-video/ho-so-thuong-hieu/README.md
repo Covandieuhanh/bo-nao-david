@@ -1,6 +1,6 @@
 # Hồ sơ tham số — nơi chứa những gì SAO CHÉP TỪ HÌNH MẪU (lớp đổi nhiều nhất)
 
-- `chung.json` — tham số cả 4 loại; `<loai>.json` ghi đè. Script đọc qua `mo-dun/ho_so.py`; khung dựng đọc `motion/src/hoso.json`
+- `chung.json` — tham số cả 4 loại; `<loai>.json` ghi đè. Script đọc qua `mo-dun/ho_so.py`; khung dựng đọc `chuyen-dong/src/ho-so.json`
   (chép lúc tạo dự án — dự án cũ giữ hồ sơ lúc tạo).
 - Mỗi `<loai>.md`: hình mẫu chính của loại, ý nghĩa từng khoá, **nhật ký đổi giá trị** (ngày · giá trị cũ → mới · hình mẫu / lý do).
 - **Đổi một con số → chỉ sửa ở đây** (+ 1 dòng nhật ký). Không sửa code, không sửa skill.

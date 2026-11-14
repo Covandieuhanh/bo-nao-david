@@ -8,12 +8,12 @@ File này là chi tiết của **khối 11** (`../../mo-dun/11-dung-ghep`). Th�
 |---|---|---|
 | 1 | Môi trường + `tao-dung-ghep.sh` (cân giọng −20 LUFS) | 01 · 09 |
 | 2–2d | Hiểu từng clip · bản đồ + liên kết · giữ/bỏ · khung mở đầu–chào–hành trình–kết | 11 · 01 · 06 (mở đầu) |
-| 3–6 | Cấu trúc · điểm nhấn (bố cục tự cân, khối 07) · phong cách · danh-sach-cat.js / plan.json | 07 · 10 · 11 · 03 |
+| 3–6 | Cấu trúc · điểm nhấn (bố cục tự cân, khối 07) · phong cách · danh-sach-cat.js / ke-hoach.json | 07 · 10 · 11 · 03 |
 | 6b | Nâng khung → tránh che người: `nang-lop.py` → `bao-ve-lop-phu.py` | 04 · 05 |
 | 7–8 | Ảnh tĩnh → Claude tự soát kế hoạch → render | 17 · 09 |
 | 9 | Phát hành: màn kết (`ytEnd`), chương, thumbnail (ngang), tách phần, số liệu | 08 · 15 · 14 · 16 |
 
-Sửa → chạy lại: plan.json → danh-sach-cat-vlog.py → nang-lop.py → bao-ve-lop-phu.py → stills → xuat-chuong-trinh.mjs · danh-sach-cat.js sửa tay → bao-ve-lop-phu.py → stills → render.
+Sửa → chạy lại: ke-hoach.json → danh-sach-cat-vlog.py → nang-lop.py → bao-ve-lop-phu.py → stills → xuat-chuong-trinh.mjs · danh-sach-cat.js sửa tay → bao-ve-lop-phu.py → stills → render.
 
 Dùng khi người dùng đưa **từ 2 video gốc trở lên** (hoặc 1 clip không phải nói trước camera mà là cảnh quay sự kiện)
 và muốn ghép thành một video hoàn chỉnh có điểm nhấn. Khác chế độ 1 video ở chỗ: **hình gốc bị cắt, sắp lại, đổi tốc độ**,
@@ -33,13 +33,13 @@ Clip được đặt tên `c1, c2, …` theo **thứ tự người dùng đưa**
 (`public/hieu-ung-am-thanh/`: whoosh, boom, pop, ding1–4, shutter, rewind, sting, tada, music) — tự tổng hợp nên không vướng bản quyền.
 
 ### 2. Hiểu từng clip (quan trọng nhất — quyết định chất lượng)
-Với mỗi `check/cN/`:
-- `loud.txt` trước: chỗ nào có tiếng thật (> −25 dB thường là có người nói/cười). **Whisper bịa câu khi không có lời**
+Với mỗi `kiem-tra/cN/`:
+- `am-luong.txt` trước: chỗ nào có tiếng thật (> −25 dB thường là có người nói/cười). **Whisper bịa câu khi không có lời**
   — dấu hiệu: "Hãy subscribe cho kênh…", "Cảm ơn các bạn đã xem", một câu lặp suốt clip. Gặp thì cắt đoạn ồn ra và
   chạy lại với `-mc 0` (`whisper-cli … -mc 0 -ml 1 -sow`), cộng lại độ lệch thời gian.
-- `words.srt`: mốc từng từ để cắt đúng giữa hai từ và gắn hiệu ứng đúng lúc từ khoá được nói.
+- `moc-tung-tu.srt`: mốc từng từ để cắt đúng giữa hai từ và gắn hiệu ứng đúng lúc từ khoá được nói.
 - Cảnh chọn nhanh hơn: dải 1 khung/giây cho một khoảng `ffmpeg -ss <t> -t <n> -i cN.mp4 -vf "fps=1,scale=150:-2,tile=<n>x1" -frames:v 1 x.jpg`.
-- `python3 -I $SKILL/scripts/khung-loi.py "$P"` → `check/cN/bad.txt`: đoạn TÚI/CHE (khung một màu) và TỐI — gợi ý bỏ, đối chiếu lời trước.
+- `python3 -I $SKILL/scripts/khung-loi.py "$P"` → `kiem-tra/cN/khung-loi.txt`: đoạn TÚI/CHE (khung một màu) và TỐI — gợi ý bỏ, đối chiếu lời trước.
   **Hình hỏng thì bỏ kể cả có lời** (trong túi, che ống kính, vừa rút máy ra → hình lật ngang/lộn ngược/quay loạn): người xem
   không theo được, lời hay cũng không cứu được (David chỉ ra ở c13 vlog leo núi).
 - `half_XX.jpg` (khung mỗi 0,5 s, 13 khung/hàng, khung thứ k của ảnh XX ở giây `XX*13 + k*0,5`): tìm
@@ -59,10 +59,10 @@ tới thứ gì mà clip khác có hình thì hình đó phải xuất hiện Đ
    - **Clip chính**: có người nói / diễn biến, được ghép nối tiếp thành video dài, giữ tiếng.
    - **Clip minh hoạ**: quay vật, thao tác, nơi chốn (ví dụ quay cuốn sổ) để minh hoạ một ý ở clip chính → luôn
      **tắt tiếng**, chèn dạng **trích dẫn** (khung bo góc trên nền theo phong cách, không toàn khung).
-   Dấu hiệu clip minh hoạ: ít/không lời (`loud.txt`, transcript rỗng hoặc toàn câu bịa), quay cận vật, ngắn.
+   Dấu hiệu clip minh hoạ: ít/không lời (`am-luong.txt`, transcript rỗng hoặc toàn câu bịa), quay cận vật, ngắn.
    Không chắc → ghi rõ trong kế hoạch để David chọn.
 2. **Bản đồ**: mỗi clip chính — các chỗ nhắc tới thứ NHÌN THẤY ĐƯỢC (vật, việc, nơi, người; "như hôm trước…") kèm
-   mốc từ `words.srt`; mỗi clip minh hoạ — đoạn nào quay gì (`half_XX.jpg`), đoạn đẹp nhất.
+   mốc từ `moc-tung-tu.srt`; mỗi clip minh hoạ — đoạn nào quay gì (`half_XX.jpg`), đoạn đẹp nhất.
 3. **Ghép cặp**: mỗi clip minh hoạ gắn vào câu nói khớp nghĩa nhất (vd. "hàng ngày mình dành khoảng 15 phút để viết"
    ↔ clip quay sổ, tay viết). Đoạn trích dài đúng câu đó (thường 2–6 s; ý kéo dài thì tới 8–10 s), lấy đoạn hình đẹp
    nhất; clip minh hoạ dài có thể chia cho nhiều câu liên quan. Chỉ nối khi khớp nghĩa thật, không bịa liên hệ.
@@ -70,10 +70,10 @@ tới thứ gì mà clip khác có hình thì hình đó phải xuất hiện Đ
    theo thứ tự tên file; vlog sự kiện thì theo thời gian thật.
 5. Viết `ke-hoach-ghep.md` (mẫu dưới) + `danh-sach-cat.js` đầy đủ (đoạn trích viết bằng `cite()`), chạy:
    ```bash
-   cd "$P/motion" && node anh-tinh.mjs <vài mốc lớp phủ>          # như bước 7
-   python3 -I $SKILL/scripts/bang-lien-ket.py "$P"                  # → check/links.jpg: [người nói | khung trích dẫn]
+   cd "$P/chuyen-dong" && node anh-tinh.mjs <vài mốc lớp phủ>          # như bước 7
+   python3 -I $SKILL/scripts/bang-lien-ket.py "$P"                  # → kiem-tra/lien-ket.jpg: [người nói | khung trích dẫn]
    ```
-6. **Tự soát kế hoạch rồi render, không chờ** (`../../../chuan-muc-lam-viec.md` mục 2): soát `ke-hoach-ghep.md` + `check/links.jpg`
+6. **Tự soát kế hoạch rồi render, không chờ** (`../../../chuan-muc-lam-viec.md` mục 2): soát `ke-hoach-ghep.md` + `kiem-tra/lien-ket.jpg`
    theo tiêu chí của mục này, sửa danh-sach-cat.js tới khi đạt rồi sang bước 8. Gửi kèm bản cuối để David góp ý.
 
 Mẫu `ke-hoach-ghep.md`:
@@ -87,7 +87,7 @@ Mẫu `ke-hoach-ghep.md`:
 | c2 | IMG_0502.MOV | Minh hoạ | Cận cuốn sổ, tay viết |
 ## Thứ tự trong video
 1. c3 (0:00–0:42) mở đầu: … · 2. c1 (…) … — lý do sắp như vậy
-## Liên kết trích dẫn (số khớp check/links.jpg)
+## Liên kết trích dẫn (số khớp kiem-tra/lien-ket.jpg)
 | # | Mốc video | Câu nói (clip, giây) | Chèn hình (clip, giây) | Lý do |
 |---|---|---|---|---|
 | 1 | 0:52–0:57 | c1 0:12 "hàng ngày mình dành khoảng 15 phút để viết" | c2 0:03–0:08 cận sổ, tay viết | nói về viết ↔ cảnh viết |
@@ -120,7 +120,7 @@ hơn cảnh đẹp mà trống.
 - Đoạn **trầm quá** (đi bộ không lời, chờ, lặp cảnh) → **tua 1,5–2×** kèm nhạc, mỗi lần còn ~3–6 s — giữ cảm giác hành trình thay vì
   cắt hẳn; đoạn có lời/cảm xúc thì phát thường.
 - Không để quá 20–30 s trôi qua không đổi gì (cảnh mới, nơi mới, điểm nhấn, thẻ chặng).
-- **Nhịp cắt mục tiêu** (đo trên 10 Shorts top xem, `cat-doan-noi-bat/references/hoc-tu-top-video.md`): đoạn `soi` có lời
+- **Nhịp cắt mục tiêu** (đo trên 10 Shorts top xem, `cat-doan-noi-bat/references/hoc-tu-video-dan-dau.md`): đoạn `soi` có lời
   ~2,2–2,7 s/cảnh (vlog GaryVee 2,3 · tin Dat Bike 2,2 · Hormozi 2,7); đoạn `lang` 4–6 s/cảnh. Một người nói liền thì không cần
   cắt dày — nhịp đến từ phụ đề + điểm nhấn.
 - Video ≥ 5 phút chia **chặng theo nơi chốn** (thẻ `round` hoặc `location`, chữ lấy từ lời/tên nơi thật).
@@ -134,7 +134,7 @@ Kế hoạch ghép ghi rõ: tổng nguồn → tổng video, bảng đoạn bỏ
 ### 2d. Khung vlog: mở đầu · chào · hành trình · kết
 Chuẩn tham khảo: kênh Jessie Luong (youtube.com/@jessieluongchannel), học từ 13 vlog, theo các video **gần đây nhất**
 (2023–2026: không có thẻ nhận diện kênh, đoạn ghép ngắn, nhanh). Chỉ học cấu trúc và nhịp — không chép hình, nhạc, thẻ của kênh.
-1. **Mở đầu = đoạn GHÉP** (`plan.json` → `intro`): cảnh đắt nhất **cả chuyến**, mỗi cảnh câm 2 phách nhạc.
+1. **Mở đầu = đoạn GHÉP** (`ke-hoach.json` → `intro`): cảnh đắt nhất **cả chuyến**, mỗi cảnh câm 2 phách nhạc.
    **Độ dài KHÔNG cố định — do chất liệu và cảm xúc quyết định** (intro Haruku 16,7 s toàn cảnh selfie giống nhau là ví dụ sai): chỉ nhận cảnh THẬT SỰ khác (khác nơi / người / hành động); cảnh gần giống cảnh đã có thì bỏ dù intro rất
    ngắn. Câu nói là xương sống: 1 câu đắt nhất, câu thứ 2 chỉ khi nó tăng cảm xúc. Thước đo: bỏ cảnh nào mà intro không yếu
    đi → bỏ. Gợi ý: chất liệu chủ yếu tự quay mặt nói → 1 câu + tiêu đề trên 1–2 cảnh ≈ 5–8 s; vlog nhiều nơi, nhiều người ≈ 10–20 s.
@@ -146,7 +146,7 @@ Chuẩn tham khảo: kênh Jessie Luong (youtube.com/@jessieluongchannel), học
    - kiểu 2: lời chào có câu chốt rõ ("Let's go", "vlog xin được bắt đầu") → chào TRƯỚC, đoạn ghép chen ngay sau câu chốt.
    **Đa dạng là bắt buộc:** cảnh nơi chốn / toàn cảnh, người trong đoàn, hành động cao trào, biểu tượng của nơi đến (tượng, rồng,
    bảng tên điện), cảm xúc — KHÔNG quá 2 cảnh mặt người quay cận (vlog tự quay toàn selfie dễ ra 9 cảnh giống nhau). Chọn từ
-   `check/segs/` hoặc tờ 1 khung/giây của clip; mỗi cảnh vẫn xuất hiện lại ở đúng chỗ trong video. Chụp `anh-tinh.mjs` từng cảnh để soát.
+   `kiem-tra/cac-doan/` hoặc tờ 1 khung/giây của clip; mỗi cảnh vẫn xuất hiện lại ở đúng chỗ trong video. Chụp `anh-tinh.mjs` từng cảnh để soát.
    - kiểu 3 (7 trên 20 vlog Việt đã học — Lâm Vlog, Bắp Sam, SAM, Thương Lê): video có câu nêu NHIỆM VỤ / THỬ THÁCH / LỜI HỨA ("hôm nay
      mình sẽ…", "24 giờ…", luật + phần thưởng) → câu đó lên đầu (0–5 s) + `pow` tiền cược nguyên văn (thời gian, số lượng, giải), rồi mới hành trình.
    Cảnh câm đoạn ghép: 2 phách bài intro ≈ 1,06 s — đúng nhịp 1,0–1,9 s của vlog Việt top (Khoai Lang Thang, Quang Linh, Kẻ Du Mục).
@@ -160,7 +160,7 @@ Chuẩn tham khảo: kênh Jessie Luong (youtube.com/@jessieluongchannel), học
    kiểu hợp nhất; chữ không che mặt, không đè phụ đề (tự canh LOW_Y). Chụp `anh-tinh.mjs` từng hiệu ứng trước render.
    **Âm lượng:** giọng mỗi clip đã cân về −20 LUFS lúc tạo dự án; nhạc theo chuẩn âm lượng chung (khối 09) — không chỉnh tay.
 4. **Kết bằng lời của chính người quay** (20–40 s): tổng kết chuyến → cảm xúc / lời khuyên → hẹn lần sau → chào; cảnh toàn đẹp
-   nhất của nơi đến ở cuối, rồi mới tới màn chốt CTA. Xếp clip có câu tổng kết xuống cuối `clips` (theo thời gian nếu nó ở cuối);
+   nhất của nơi đến ở cuối, rồi mới tới màn chốt CTA. Xếp clip có câu tổng kết xuống cuối `doan-video` (theo thời gian nếu nó ở cuối);
    không có thì kết bằng cảnh toàn đẹp nhất — không viết lời tổng kết thay.
 
 ### 3. Cấu trúc chương trình
@@ -214,63 +214,63 @@ Mật độ theo nội dung, vài kiểu hợp nhất (quy-tac-chung mục 0); k
 - **Nâng khung**: đoạn có người/vật chính nằm nửa dưới → đẩy hình lên, đáy lấp hình mờ, mép chuyển mềm
   (`chuong-trinh.jsx` → `Clip`). Sau khi viết danh-sach-cat.js chạy `python3 -I $SKILL/scripts/nang-lop.py "$P"` → `src/nang-lop.js`, rồi **`python3 -I $SKILL/scripts/bao-ve-lop-phu.py "$P"`**
   → `src/bao-ve.js` (lớp chữ che mặt/thân trên tự thành toàn màn hình, dài theo nội dung; tít ghim che đầu tự ẩn — khối 05; chạy lại sau mỗi lần sửa danh-sach-cat.js) (tự tính theo mặt, đọc
-  bảng `check/faces/lift.md`). Đoạn không có mặt (quay đồ vật, cầu thang, khay đồ uống…) mà vật chính thấp → đặt tay
+  bảng `kiem-tra/khuon-mat/lift.md`). Đoạn không có mặt (quay đồ vật, cầu thang, khay đồ uống…) mà vật chính thấp → đặt tay
   `lift: {y: 150–250}` trong đoạn ở danh-sach-cat.js (đặt tay thắng tự tính). Không nâng: đoạn tiêu đề, `fit: 'blur'`, trích dẫn.
 
 ### 5. Phong cách
 - Chữ ký nhận diện (nhấn cam #FF7A45, Barlow Condensed + Be Vietnam Pro, thành phần cố định) giữ ở mọi vlog.
-- Có `--style-from <dự án cũ>`: đọc `motion/src/chu-de.js` (+ fonts, components) của dự án đó → chép phần ngoài chữ ký (nền, màu phụ,
+- Có `--style-from <dự án cũ>`: đọc `chuyen-dong/src/chu-de.js` (+ fonts, components) của dự án đó → chép phần ngoài chữ ký (nền, màu phụ,
   kiểu chuyển động) vào `C` trong `chuong-trinh.jsx` và `phong-chu.js`, để các video "cùng một nhà sản xuất".
-- Có `--ref <video mẫu>`: phân tích như `style-analysis.md` rồi áp vào cùng chỗ.
+- Có `--ref <video mẫu>`: phân tích như `phan-tich-phong-cach.md` rồi áp vào cùng chỗ.
 - Không có gì: giữ mặc định của template (thẻ tối).
   Phong cách game show sặc sỡ (vàng/hồng, chữ viền đen, emoji) đã thử và bị thay bằng bộ mặc định cho đồng bộ.
 - Không dùng emoji trong chữ khi phong cách mẫu không dùng.
 
-### 6. Viết `motion/src/danh-sach-cat.js`
-**Vlog dài nhiều clip (≳ 15 clip / ≳ 5 phút)**: đừng viết tay — viết `plan.json` (giữ/bỏ từng clip, tông, thẻ địa điểm, sửa chính
+### 6. Viết `chuyen-dong/src/danh-sach-cat.js`
+**Vlog dài nhiều clip (≳ 15 clip / ≳ 5 phút)**: đừng viết tay — viết `ke-hoach.json` (giữ/bỏ từng clip, tông, thẻ địa điểm, sửa chính
 tả `fix`, bỏ dòng nghe không rõ `drop_sub`, mở đầu, tiêu đề, CTA; mẫu ở đầu script) rồi
-`python3 -I $SKILL/scripts/danh-sach-cat-vlog.py "$P"` → danh-sach-cat.js (tự tua đoạn không lời ≥ 4 s, phụ đề theo câu, TONE + nhạc) + `check/vlog-cut.md`.
-Sửa theo góp ý = sửa plan.json rồi chạy lại.
+`python3 -I $SKILL/scripts/danh-sach-cat-vlog.py "$P"` → danh-sach-cat.js (tự tua đoạn không lời ≥ 4 s, phụ đề theo câu, TONE + nhạc) + `kiem-tra/cat-vlog.md`.
+Sửa theo góp ý = sửa ke-hoach.json rồi chạy lại.
 Soát hết phụ đề trước khi render: in `SUBS` ra, câu Whisper nghe sai rõ → `fix`; câu không rõ → `drop_sub` (không đoán).
-**Soát hình trước khi render (bắt buộc):** danh-sach-cat-vlog.py in ⚠ khi đoạn giữ chạm đoạn hỏng trong bad.txt, và ghi `check/segs/*.jpg`
-(1 khung/giây mỗi đoạn giữ) → xem HẾT, bắt hình lật/xoay/quay loạn (độ sáng không dò được), sửa plan.json (`from`/`to`/`drop`/`skip`).
+**Soát hình trước khi render (bắt buộc):** danh-sach-cat-vlog.py in ⚠ khi đoạn giữ chạm đoạn hỏng trong khung-loi.txt, và ghi `kiem-tra/cac-doan/*.jpg`
+(1 khung/giây mỗi đoạn giữ) → xem HẾT, bắt hình lật/xoay/quay loạn (độ sáng không dò được), sửa ke-hoach.json (`from`/`to`/`drop`/`skip`).
 **Lớp chữ không đè phụ đề (chặn cứng ở chuong-trinh.jsx, nhưng cắt chữ = lỗi):** không đặt `top` ước lượng — neo đáy; chụp ở CUỐI mỗi lớp theo lệnh danh-sach-cat-vlog.py in ra. Đáy mọi lớp chữ ≤ `LOW_Y` (chuong-trinh.jsx: đỉnh dải phụ đề 2 dòng − 20 px). Thẻ địa điểm/tên/replay tự canh
 đáy vào đó; `pow` (`y`), `pointer`, `chips` (`top`) đặt tay thì tự giữ luật này — chụp `anh-tinh.mjs` đúng lúc thẻ + phụ đề cùng hiện.
 
 Ba phần: `RAW` (đoạn hình), `SUB` (phụ đề), `OVERLAYS` + `SFX` + `MUSIC`. Mọi mốc là **giây trong clip gốc**, quy
 đổi bằng `T(id, src)`, `segStart/segEnd` — sửa một đoạn thì mọi thứ phía sau tự dời theo. Cắt đúng ranh giới từ
-(lấy từ words.srt). Kiểm nhanh timeline:
+(lấy từ moc-tung-tu.srt). Kiểm nhanh timeline:
 ```bash
-cd "$P/motion" && node -e "import('./src/danh-sach-cat.js').then(m=>{console.log(m.TOTAL);m.SEGS.forEach(s=>console.log(s.id,s.start.toFixed(2),s.dur.toFixed(2)))})"
+cd "$P/chuyen-dong" && node -e "import('./src/danh-sach-cat.js').then(m=>{console.log(m.TOTAL);m.SEGS.forEach(s=>console.log(s.id,s.start.toFixed(2),s.dur.toFixed(2)))})"
 ```
 Loại lớp phủ có sẵn (chuong-trinh.jsx): `teaserTag, title, hud, round, pow, pointer, nameCard, chips, callout, replay, location, outro`.
 Chữ truyền qua props: `title {eyebrow, l1, l2, sub}` · `hud {name, tag}` · `round {n, of, text}` · `chips {items, top}` (dòng bắt đầu bằng số → số viền cam; 4–5 dòng tự thu nhỏ) · `replay {eyebrow, text}` · `location {eyebrow, place, sub}` · `outro {eyebrow, lines[], cta}`.
-Ví dụ thứ hai: `~/Movies/edit-vlog-0693/motion/src/danh-sach-cat.js` (4 clip quán cà phê → 117 s, có thẻ địa điểm, danh sách 5 nước).
+Ví dụ thứ hai: `~/Movies/edit-vlog-0693/chuyen-dong/src/danh-sach-cat.js` (4 clip quán cà phê → 117 s, có thẻ địa điểm, danh sách 5 nước).
 Cần loại mới → viết component cùng ngôn ngữ thiết kế rồi đăng ký vào `TYPES`.
 
 ### 7. Kiểm tra bằng ảnh tĩnh (rẻ nhất)
 ```bash
-cd "$P/motion" && node anh-tinh.mjs <giây timeline> ...     # → check/stills/<giây>.jpg
+cd "$P/chuyen-dong" && node anh-tinh.mjs <giây timeline> ...     # → kiem-tra/anh-tinh/<giây>.jpg
 ```
 Chụp mỗi lớp phủ ở lúc "đầy nhất", ghép sheet xem: chữ tràn/xuống dòng lẻ, dấu bị cắt, chồng lớp, chú thích lệch vật,
 chữ khó đọc trên nền sáng, **người/vật chính bị phụ đề che hoặc nằm dưới nửa khung** (→ nâng khung). Sửa tới khi sạch.
 
 ### 8. Render + kiểm tra cuối (sau khi tự soát kế hoạch ở 2b)
 ```bash
-cd "$P/motion" && node xuat-chuong-trinh.mjs        # chạy nền, ~3–9 phút/phút video; tự loudnorm → video-final.mp4
+cd "$P/chuyen-dong" && node xuat-chuong-trinh.mjs        # chạy nền, ~3–9 phút/phút video; tự loudnorm → video-hoan-chinh.mp4
 ```
-Sau đó: cắt 12–15 khung trải đều thành dải xem lại; `ffmpeg -i video-final.mp4 -af ebur128=peak=true -vn -f null -`
-(I ≈ −14…−15 LUFS, đỉnh ≤ −1,4 dB). Nhạc lấy từ kho nhạc kênh theo tuyến nội dung (khối 09: plan.json/edl `tuyen`, bài + mức cân ở hồ sơ chung `nhac`) — Claude tự chọn,
+Sau đó: cắt 12–15 khung trải đều thành dải xem lại; `ffmpeg -i video-hoan-chinh.mp4 -af ebur128=peak=true -vn -f null -`
+(I ≈ −14…−15 LUFS, đỉnh ≤ −1,4 dB). Nhạc lấy từ kho nhạc kênh theo tuyến nội dung (khối 09: ke-hoach.json/edl `tuyen`, bài + mức cân ở hồ sơ chung `nhac`) — Claude tự chọn,
 không hỏi David; mức nhạc theo khối 09.
 
 ### 9. Phát hành, giao + sửa theo góp ý
-Vlog đăng YouTube > 3 phút: `"ytEnd": 20` trong plan.json (màn kết YouTube 15–20 s sau thẻ nhận diện) + `chuong.py` (chương theo
+Vlog đăng YouTube > 3 phút: `"ytEnd": 20` trong ke-hoach.json (màn kết YouTube 15–20 s sau thẻ nhận diện) + `chuong.py` (chương theo
 nhãn địa điểm). Chuyến > 25 phút: đề xuất tách phần P1/P2 (mỗi phần một video, thẻ kết "Hết phần 1" bằng `outro` ngắn — chữ là
 tên phần, không tự viết lời) — hỏi David trong kế hoạch ghép.
 Phát hành theo `../../quy-tac-chung.md` mục 7: `phat-hanh/phat-hanh.md` (3 tiêu đề, mô tả, mốc khung bìa) + vlog xuất **ngang** VÀ đăng YouTube (hỏi lúc đầu) → 2 thumbnail
 `zsh $SKILL/scripts/anh-thu-nho.sh "$P" c<N>@<giây> "<DÒNG 1>" "<DÒNG 2>" 1|2` (khung cảm xúc mạnh nhất cả chuyến, mặt rõ — thường
 là cảnh đắt nhất của đoạn ghép mở đầu); chép `san-xuat-video/mo-dun/16-phan-tich-so-lieu/mau-so-lieu.md` → `$P/so-lieu.md`.
-Gửi `video-final.mp4` (+ thumbnail nếu có) (SendUserFile), bảng mạch chương trình theo mốc thời gian, các đoạn bỏ và lý do, chỗ tiếng bị
+Gửi `video-hoan-chinh.mp4` (+ thumbnail nếu có) (SendUserFile), bảng mạch chương trình theo mốc thời gian, các đoạn bỏ và lý do, chỗ tiếng bị
 ghép từ nơi khác. Góp ý kiểu "bỏ đoạn 0:13–0:16" → tra mốc timeline ra `id` đoạn trong `SEGS`, xoá đoạn đó cùng
 phụ đề/lớp phủ/SFX gắn với nó, render lại.
 
@@ -283,7 +283,7 @@ Một clip duy nhất `c1` = video gốc dài; `cat-doan-noi-bat/scripts/danh-sa
 - `TONE = [[từ, đến, 'lang'|'soi']]`: `lang` → không chớp trắng, `pow` hiện chậm nét mảnh không gạch, chuyển cảnh tối dần
   chip viền cam; đoạn hình `grade: 'lang'` (màu dịu). `soi` = như vlog game show.
 - `MUSIC.tracks = [{f, a, b, gain, from?}]`: mỗi bài (`public/hieu-ung-am-thanh/<f>.mp3`, lặp nếu ngắn) chạy một khoảng, chồng mờ 0,8 s ở mối,
-  vẫn hạ khi có phụ đề theo `base/duck/loud`. Không có `tracks` → `music.wav` như cũ.
+  vẫn hạ khi có phụ đề theo `base/duck/loud`. Không có `tracks` → `nhac.wav` như cũ.
 - `CTA.text` = câu kêu gọi NGUYÊN VĂN (luật highlight).
 - `ENDCARD = {title, speaker, clip, at, len}` → `EndCard`: ~1,8 s **nối thêm sau** `TOTAL` (Root cộng vào thời lượng): ảnh đứng
   hình người nói (giây `at` của `clip`) làm tối + "Bản đầy đủ trên kênh …" + tên tập gốc + tên người nói; không nút phát. Khuôn tự

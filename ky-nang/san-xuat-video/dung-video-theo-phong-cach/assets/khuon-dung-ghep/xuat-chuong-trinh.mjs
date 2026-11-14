@@ -1,4 +1,4 @@
-// Render bản cuối có tiếng rồi chuẩn hoá âm lượng mạng xã hội: node xuat-chuong-trinh.mjs → ../video-final.mp4
+// Render bản cuối có tiếng rồi chuẩn hoá âm lượng mạng xã hội: node xuat-chuong-trinh.mjs → ../video-hoan-chinh.mp4
 // Một đoạn (xem thử intro…): node xuat-chuong-trinh.mjs <từ giây> <đến giây> <tên.mp4> → ../<tên.mp4>
 import {execFileSync, spawnSync} from 'node:child_process';
 import fs from 'node:fs';
@@ -7,8 +7,8 @@ import {bundle} from '@remotion/bundler';
 import {renderMedia, selectComposition} from '@remotion/renderer';
 
 const [a, b, name] = process.argv.slice(2);
-const raw = path.resolve(name ? `../check/raw-${name}` : '../check/raw-render.mp4');
-const out = path.resolve(`../${name || 'video-final.mp4'}`);
+const raw = path.resolve(name ? `../kiem-tra/ban-xuat-tho-${name}` : '../kiem-tra/ban-xuat-tho.mp4');
+const out = path.resolve(`../${name || 'video-hoan-chinh.mp4'}`);
 fs.mkdirSync(path.dirname(raw), {recursive: true});
 const serveUrl = await bundle({entryPoint: path.resolve('src/diem-vao.jsx')});
 const composition = await selectComposition({serveUrl, id: 'show'});

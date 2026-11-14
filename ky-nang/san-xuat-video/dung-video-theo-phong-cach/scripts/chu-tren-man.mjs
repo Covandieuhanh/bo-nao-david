@@ -2,10 +2,10 @@
 // BẢNG TỰ SỬA CHỮ (khối 03 + 07, 2026-11-06): David sửa chữ / số trên màn hình và phụ đề trong một file chữ, không cần Claude.
 //   node chu-tren-man.mjs xuat <dự án>            → <dự án>/chu-tren-man.txt (kèm bản gốc .chu-tren-man.json để nhận biết thay đổi)
 //   node chu-tren-man.mjs ap <dự án> [--render]   → ghi phần đã sửa vào canh.js / phu-de.js, báo cảnh cần render lại
-//                                                   --render: render lại đúng các cảnh đó + xuất lại video-final.mp4
-// An toàn: sao lưu vào check/truoc-sua-chu/ trước khi ghi · chữ vừa bị sửa ở cả bảng lẫn kịch bản → KHÔNG ghi, liệt kê để hỏi ·
+//                                                   --render: render lại đúng các cảnh đó + xuất lại video-hoan-chinh.mp4
+// An toàn: sao lưu vào kiem-tra/truoc-sua-chu/ trước khi ghi · chữ vừa bị sửa ở cả bảng lẫn kịch bản → KHÔNG ghi, liệt kê để hỏi ·
 // ghi xong đọc thử lại kịch bản, lỗi thì trả bản cũ · không đoán khi không xác định được chỗ cần sửa.
-// Chưa làm: dự án ghép (danh-sach-cat.js / plan.json) — sửa qua Claude.
+// Chưa làm: dự án ghép (danh-sach-cat.js / ke-hoach.json) — sửa qua Claude.
 import fs from 'node:fs';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
@@ -13,10 +13,10 @@ import {fileURLToPath, pathToFileURL} from 'node:url';
 
 const [cmd, arg] = process.argv.slice(2);
 const P = path.resolve((arg || '').replace(/^~/, process.env.HOME));
-const SRC = path.join(P, 'motion/src');
+const SRC = path.join(P, 'chuyen-dong/src');
 const F = {scenes: path.join(SRC, 'canh.js'), caps: path.join(SRC, 'phu-de.js'), sheet: path.join(P, 'chu-tren-man.txt'), base: path.join(P, '.chu-tren-man.json'), cho: path.join(P, '.chu-tren-man.cho.json')};
 if (!['xuat', 'ap'].includes(cmd) || !arg || !fs.existsSync(F.scenes)) {
-  console.error('cách dùng: chu-tren-man.mjs xuat|ap <dự án> [--render] (dự án có motion/src/canh.js)');
+  console.error('cách dùng: chu-tren-man.mjs xuat|ap <dự án> [--render] (dự án có chuyen-dong/src/canh.js)');
   process.exit(2);
 }
 const fresh = async (f) => import(pathToFileURL(f).href + '?t=' + Date.now());
@@ -102,12 +102,12 @@ const pending = () => { try { return JSON.parse(fs.readFileSync(F.cho, 'utf8'));
 // Render các cảnh đang chờ (kể cả từ lần "ap" trước chưa render) rồi xuất lại bản cuối
 const renderNow = (ids) => {
   const env = {...process.env, PATH: `/opt/homebrew/bin:${path.dirname(process.execPath)}:${process.env.PATH}`};
-  const r = spawnSync(process.execPath, ['xuat-video.mjs', ...ids], {cwd: path.join(P, 'motion'), stdio: 'inherit', env});
+  const r = spawnSync(process.execPath, ['xuat-video.mjs', ...ids], {cwd: path.join(P, 'chuyen-dong'), stdio: 'inherit', env});
   if (r.status) process.exit(r.status);
   const q = spawnSync('python3', ['-I', path.join(HERE, 'xem-truoc-ban-dung.py'), P], {stdio: 'inherit', env});
   if (q.status) process.exit(q.status);
   fs.rmSync(F.cho, {force: true});
-  console.log(`Xong: ${path.join(P, 'video-final.mp4')}`);
+  console.log(`Xong: ${path.join(P, 'video-hoan-chinh.mp4')}`);
 };
 if (!edits.length) {
   const cho = pending();
@@ -189,7 +189,7 @@ if (fail.length) {
 const patch = (src, ops) => [...ops].sort((a, b) => b.i - a.i).reduce((s, o) => s.slice(0, o.i) + o.text + s.slice(o.i + o.len), src);
 
 // Sao lưu → ghi → đọc thử
-const bak = path.join(P, 'check/truoc-sua-chu');
+const bak = path.join(P, 'kiem-tra/truoc-sua-chu');
 fs.mkdirSync(bak, {recursive: true});
 fs.copyFileSync(F.scenes, path.join(bak, 'canh.js'));
 if (capsSrc) fs.copyFileSync(F.caps, path.join(bak, 'phu-de.js'));

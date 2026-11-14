@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
 """VỊ TRÍ NGƯỜI cho mọi cảnh 'nhan' và 'bocuc' (David chốt 2026-11-07, nâng 08/11: nhiều người + ai đang nói): vi-tri-nhan.py <dự án>
-Đọc check/faces/faces.json (vi-tri-khuon-mat.sh: mọi mặt, 2 khung/giây, có độ mở miệng m) + canh.js
-→ motion/src/mat.js, mỗi cảnh:
+Đọc kiem-tra/khuon-mat/khuon-mat.json (vi-tri-khuon-mat.sh: mọi mặt, 2 khung/giây, có độ mở miệng m) + canh.js
+→ chuyen-dong/src/mat.js, mỗi cảnh:
    cx, cy, w, h, l, r  = mặt NGƯỜI ĐANG NÓI (hoặc người props.bam) — xem-truoc-ban-dung.py zoom dồn vào người này
    nguoi: [{cx, cy, w, h, l, r, t, b, noi, uoc?}]  = MỌI người trong khung, trái → phải (uoc = máy không thấy rõ mặt
           trong cảnh, vd quay nghiêng → lấy chỗ ngồi quen của người đó; người vẫn ở đó, graphic vẫn phải tránh)
    vung: {l, r, t, b}  = vùng chứa mọi mặt
 Số người = số mặt hay gặp trong một khung (≥ 30% khung); gom chỗ ngồi bằng k-means theo bề ngang (máy quay đứng yên).
-Có từ 2 người: tự chạy pyannote (dung-podcast/scripts/tach-nguoi-noi.py, venv ~/.venvs/pyannote) → check/ai_noi.json, rồi
+Có từ 2 người: tự chạy pyannote (dung-podcast/scripts/tach-nguoi-noi.py, venv ~/.venvs/pyannote) → kiem-tra/ai-noi.json, rồi
 ghép giọng với người: trong mỗi lượt nói, người có miệng cử động nhiều nhất (so với mức thường của chính người đó) được phiếu.
 Thiếu pyannote → người nói = mặt lớn nhất (như cũ). Cảnh không thấy mặt → giữa khung hơi cao.
-Graphic đọc file này qua src/lib/cho.js — không đè, không làm mờ bất kỳ ai; không con số vị trí cố định."""
+Graphic đọc file này qua src/thu-vien/cho.js — không đè, không làm mờ bất kỳ ai; không con số vị trí cố định."""
 import json, os, subprocess, sys, statistics as st
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from _chung import load
 
 P = os.path.expanduser(sys.argv[1])
-fj = f'{P}/check/faces/faces.json'
+fj = f'{P}/kiem-tra/khuon-mat/khuon-mat.json'
 F = json.load(open(fj)) if os.path.exists(fj) else []
 STEP = 0.5
 med = lambda v: sorted(v)[len(v) // 2]
@@ -47,12 +47,12 @@ GLOBAL = {i: box(b) for i, b in _all.items()}
 
 # 2. Giọng → người (pyannote + cử động miệng)
 spk2p = {}
-aj = f'{P}/check/ai_noi.json'
-V = f'{P}/davinci/media/video_goc.mp4'
+aj = f'{P}/kiem-tra/ai-noi.json'
+V = f'{P}/tu-lieu/video-goc.mp4'
 DIA = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../dung-podcast/scripts/tach-nguoi-noi.py')
 PY = os.path.expanduser('~/.venvs/pyannote/bin/python')
 if len(centers) > 1 and os.path.exists(V) and os.path.exists(PY) and (not os.path.exists(aj) or os.path.getmtime(V) > os.path.getmtime(aj)):
-    wav = f'{P}/check/tieng16k.wav'
+    wav = f'{P}/kiem-tra/tieng16k.wav'
     try:
         subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', V, '-ac', '1', '-ar', '16000', wav], check=True,
                        env=dict(os.environ, PATH='/opt/homebrew/bin:' + os.environ.get('PATH', '')))
@@ -121,7 +121,7 @@ for s in scenes:
 # KHUNG CHỦ THỂ (khung-chu-the.py, 11/11/2026): "người" = khung chủ thể trên hình xuất — Vision không dò được mặt trong màn hình
 # điện thoại / laptop (11/11/2026 phải chỉnh tay mat.js); graphic tránh đúng khung đó, bám phía còn lại.
 import re as _re
-_kf = f'{P}/motion/src/khung.js'
+_kf = f'{P}/chuyen-dong/src/khung.js'
 _kt = _re.search(r"export default (\{.*\});", open(_kf, encoding="utf-8").read(), _re.S) if os.path.exists(_kf) else None
 if _kt:
     K = json.loads(_kt.group(1))
@@ -129,7 +129,7 @@ if _kt:
           't': K['y'], 'b': K['y'] + K['h']}
     res = {s['id']: {**{k: _b[k] for k in ('cx', 'cy', 'w', 'h', 'l', 'r')}, 'nguoi': [{**_b, 'noi': True, 'uoc': True}],
                      'vung': {k: _b[k] for k in ('l', 'r', 't', 'b')}, 'khung': True} for s in scenes}
-open(f'{P}/motion/src/mat.js', 'w').write(
+open(f'{P}/chuyen-dong/src/mat.js', 'w').write(
     "// Mọi người trong từng cảnh + người đang nói — tự sinh bởi scripts/vi-tri-nhan.py, toạ độ 0–1\n"
     "export default " + json.dumps(res, ensure_ascii=False, indent=1) + ";\n")
 for k, v in res.items():

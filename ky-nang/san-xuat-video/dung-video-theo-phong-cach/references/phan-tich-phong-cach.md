@@ -9,8 +9,8 @@ font phụ cho một từ nhấn.
 
 ## Nhìn gì trong video mẫu
 
-Xem `ref/contact.jpg` (24 khung trải đều) để nắm nhịp, rồi các `frame_XX.jpg` để đọc chi tiết.
-Cần thì cắt thêm khung ở mốc cụ thể: `ffmpeg -ss <giây> -i ref/mau.* -frames:v 1 ref/x.jpg`.
+Xem `tai-lieu-tham-khao/bang-khung-hinh.jpg` (24 khung trải đều) để nắm nhịp, rồi các `khung-XX.jpg` để đọc chi tiết.
+Cần thì cắt thêm khung ở mốc cụ thể: `ffmpeg -ss <giây> -i tai-lieu-tham-khao/mau.* -frames:v 1 tai-lieu-tham-khao/x.jpg`.
 
 | Hạng mục | Câu hỏi | Ghi vào |
 |---|---|---|
@@ -23,9 +23,9 @@ Cần thì cắt thêm khung ở mốc cụ thể: `ffmpeg -ss <giây> -i ref/ma
 | Mật độ | Trung bình bao nhiêu giây có một hiệu ứng? Bao nhiêu % thời lượng là toàn màn hình? | nhịp trong canh.js |
 | Âm thanh/nhịp cắt | Có nhạc nền, tiếng "whoosh"? Đặt ở đâu? | `thiet-ke-bo-cuc/am-thanh.md` (nhạc vẫn lấy kho kênh, khối 09) |
 
-Transcript của mẫu (`ref/transcript.srt`) giúp thấy hiệu ứng được gắn vào loại câu nào (con số, khẳng định, liệt kê).
+Transcript của mẫu (`tai-lieu-tham-khao/ban-chep-loi.srt`) giúp thấy hiệu ứng được gắn vào loại câu nào (con số, khẳng định, liệt kê).
 
-## Viết `style.md`
+## Viết `phong-cach.md`
 
 Ngắn, cụ thể, đủ để người khác dựng lại:
 ```

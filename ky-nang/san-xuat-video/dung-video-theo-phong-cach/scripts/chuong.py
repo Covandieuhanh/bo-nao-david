@@ -1,10 +1,10 @@
 # CHƯƠNG YOUTUBE cho mô tả video (David duyệt 2026-11-04 — học VOV, Trí Tuệ Sáng Suốt, Trinh Pham): chuong.py <dự án>
-# Nguồn (theo thứ tự): motion/src/canh.js CHAPTERS → TOPICS (podcast) → cảnh `card`/`listItem` có eyebrow/text (1 video)
-# → danh-sach-cat.js OVERLAYS `location`/`round` (vlog ghép). Cộng độ dài teaser nếu có (phat-hanh/teaser.json do doan-gioi-thieu.py ghi).
+# Nguồn (theo thứ tự): chuyen-dong/src/canh.js CHAPTERS → TOPICS (podcast) → cảnh `card`/`listItem` có eyebrow/text (1 video)
+# → danh-sach-cat.js OVERLAYS `location`/`round` (vlog ghép). Cộng độ dài teaser nếu có (phat-hanh/doan-gioi-thieu.json do doan-gioi-thieu.py ghi).
 # Luật YouTube: chương đầu 0:00, ≥ 3 chương, mỗi chương ≥ 10 s. Tên chương = trích lời / tên nơi thật (không bịa).
 # Ra phat-hanh/chuong.txt (dán vào mô tả) + in ra màn hình.
 import json, os, subprocess, sys
-P = os.path.expanduser(sys.argv[1]); M = os.path.join(P, "motion")
+P = os.path.expanduser(sys.argv[1]); M = os.path.join(P, "chuyen-dong")
 mont = os.path.exists(os.path.join(M, "src/danh-sach-cat.js")) and not os.path.exists(os.path.join(M, "src/canh.js"))
 js = ("import('./src/danh-sach-cat.js').then(m=>console.log(JSON.stringify({o:m.OVERLAYS||[],total:m.TOTAL})))" if mont else
       "import('./src/canh.js').then(m=>console.log(JSON.stringify({c:m.CHAPTERS||[],t:m.TOPICS||[],s:m.SCENES||[]})))")
@@ -22,7 +22,7 @@ else:
             if s_.get("type") in ("card", "listItem") and (pr.get("eyebrow") or pr.get("text")):
                 ch.append((s_["start"], pr.get("eyebrow") or pr.get("text")))
 off = 0.0
-tj = os.path.join(P, "phat-hanh/teaser.json")
+tj = os.path.join(P, "phat-hanh/doan-gioi-thieu.json")
 if os.path.exists(tj): off = json.load(open(tj))["len"]
 nice = lambda x: " ".join(w[:1] + w[1:].lower() for w in x.split()) if x.isupper() else x[:1].upper() + x[1:]   # IN HOA → Hoa Đầu Từ (giữ tên riêng)
 ch = sorted((t + off, nice(x.strip())) for t, x in ch if x)

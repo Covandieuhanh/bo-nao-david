@@ -1,8 +1,8 @@
 # Khối 15-xuat-ban: Phát hành: 3 tiêu đề, mô tả, mốc khung bìa, chương YouTube, teaser, bình luận ghim
 
 **Dùng trong:** cả 4
-**Đầu vào:** video-final.mp4 + kịch bản
-**Đầu ra:** phat-hanh/{phat-hanh.md, chuong.txt, teaser.json} · dang-bai.md (highlight)
+**Đầu vào:** video-hoan-chinh.mp4 + kịch bản
+**Đầu ra:** phat-hanh/{phat-hanh.md, chuong.txt, doan-gioi-thieu.json} · dang-bai.md (highlight)
 **Tham số hồ sơ:** chung: youtube.*
 **Sửa khối này → chạy lại:** doan-gioi-thieu.py → chạy lại chuong.py
 
@@ -26,12 +26,12 @@ Ghi `phat-hanh/phat-hanh.md` (3 tiêu đề, mô tả, hashtag) + mốc khung b�
 lúc đầu): 2 thumbnail (`zsh $SKILL/scripts/anh-thu-nho.sh "$P" <giây> "<DÒNG 1>" "<DÒNG 2>" 1|2 …`, xem bản @160, khối 14). Video dọc:
 không thumbnail. Video > 3 phút đăng YouTube: `project.ytEnd = 20` trước render (màn kết), `doan-gioi-thieu.py` (> 10 phút) rồi `chuong.py`.
 Chép `san-xuat-video/mo-dun/16-phan-tich-so-lieu/mau-so-lieu.md` → `$P/so-lieu.md` (điền phần đầu).
-Gửi `video-final.mp4` (+ thumbnail nếu có) (SendUserFile). Báo ngắn gọn bằng tiếng Việt: danh sách cảnh theo mốc thời gian, nếu có ảnh
+Gửi `video-hoan-chinh.mp4` (+ thumbnail nếu có) (SendUserFile). Báo ngắn gọn bằng tiếng Việt: danh sách cảnh theo mốc thời gian, nếu có ảnh
 thì kèm nội dung `nguon-anh.txt` (dán vào mô tả bài đăng), tên riêng/chữ chưa chắc chính tả, đã kiểm tra gì, chưa kiểm tra gì (ví dụ
 chưa đăng thử thật). Mẫu báo cáo: `dung-video-theo-phong-cach/references/ban-giao.md`.
 
 ## Cách làm — highlight
-Gửi `video-final.mp4` của từng clip (SendUserFile). Ghi `$P/dang-bai.md` và báo cáo tiếng Việt, **cho từng clip**:
+Gửi `video-hoan-chinh.mp4` của từng clip (SendUserFile). Ghi `$P/dang-bai.md` và báo cáo tiếng Việt, **cho từng clip**:
 0. **Lịch đăng**: thứ tự clip (A mạnh nhất trước), cách nhau 1–2 ngày, đăng sau video dài; mỗi clip: thẻ tít (nguyên văn), **mốc khung
    bìa đề xuất** (0,3 s, không ghép bìa), độ dài. Chép `san-xuat-video/mo-dun/16-phan-tich-so-lieu/mau-so-lieu.md` → `$P/so-lieu.md`, một bảng cho mỗi clip.
 1. **Loại video gốc → loại highlight**, **ý chính + lời kêu gọi chính của cả video**, **kiểu bố trí** + lý do, **tông** từng đoạn,

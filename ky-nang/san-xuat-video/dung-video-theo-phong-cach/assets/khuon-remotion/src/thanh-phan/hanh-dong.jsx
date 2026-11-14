@@ -13,9 +13,9 @@ import {AbsoluteFill, OffthreadVideo, staticFile, useCurrentFrame, useVideoConfi
 import {BODY, C, SAFE, SAFE_W, ease, inOut, pop, rel} from '../chu-de';
 import {Eyebrow} from './lop-phu';
 import {FullShell} from './toan-man-hinh';
-import {Icon} from '../lib/bieu-tuong';
+import {Icon} from '../thu-vien/bieu-tuong';
 import {Quote} from './the-toan-man';
-import CTA, {CTA_ICONS, CTA_TICK} from '../lib/keu-goi-hanh-dong.js';
+import CTA, {CTA_ICONS, CTA_TICK} from '../thu-vien/keu-goi-hanh-dong.js';
 import project from '../du-an.js';
 import KHUNG from '../khung.js';
 import {fr} from '../canh';
@@ -30,10 +30,10 @@ const Tick = ({p, size}) => (
   </div>
 );
 
-import HS from '../hoso.json';
+import HS from '../ho-so.json';
 import {NGAN_DOC} from '../thanh.js';   // video dọc ngắn → màn chốt trên hình (10/11/2026)
 // 2 trạng thái: không câu trích dài — chỉ biểu tượng + tick + nhãn ngắn `label` (≤ 4 chữ, cụm việc nguyên văn); phụ đề vẫn chạy
-export const Action = ({start, icon = 'check', quote: q0, quoteAt, doneAt, eyebrow, label}) => {
+export const Action = ({start, icon = 'kiem-tra', quote: q0, quoteAt, doneAt, eyebrow, label}) => {
   // 2 trạng thái: nhãn = `label`, không có thì lấy cụm **nhấn** trong câu (cụm việc nguyên văn), tối đa 5 chữ
   const auto = q0 && (q0.match(/\*\*([^*]+)\*\*/) || [])[1];
   const quote = HS.hai_trang_thai ? (label || (auto ? `**${auto.split(/\s+/).slice(0, 5).join(' ')}**` : null)) : q0;

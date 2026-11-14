@@ -20,7 +20,7 @@ David đã chốt 06/11: YouTube chỉ đăng video dài, không đăng Shorts. 
 
 ### Cần David chốt (đề xuất của mình ở đầu mỗi dòng)
 1. **TikTok không ghi link.** Link trong mô tả TikTok không bấm được, nên đổi thành câu "Bản đầy đủ mình để trên YouTube, kênh Trainer David Trần."
-2. **Giữ nguyên chữ** ở mục "Chữ từng bài" bên dưới, gồm tiêu đề YouTube số 1 và thumb-1.
+2. **Giữ nguyên chữ** ở mục "Chữ từng bài" bên dưới, gồm tiêu đề YouTube số 1 và anh-thu-nho-1.
 
 ### Bạn nên biết trước khi đăng
 - **TikTok chỉ cho hẹn tối đa 10 ngày.** Hôm nay hẹn được clip 1. Clip 2 và 3 mình đặt việc tự làm ngày 11/11, hôm đó **máy cần bật và ứng dụng Claude cần mở**. Nếu lỡ, mình báo để làm bù.
@@ -38,7 +38,7 @@ David đã chốt 06/11: YouTube chỉ đăng video dài, không đăng Shorts. 
 ## 4. Thực thi
 
 ### Hôm David duyệt
-- [ ] YouTube: hẹn video dài T3 10/11, thumb-1, chương, màn kết
+- [ ] YouTube: hẹn video dài T3 10/11, anh-thu-nho-1, chương, màn kết
 - [ ] Lấy link YouTube, điền vào `[link YouTube]`
 - [ ] Trang Facebook: hẹn bài viết T3 10/11
 - [ ] Trang Facebook: hẹn Reels 13/11, 17/11, 20/11, ảnh bìa giây 0,3

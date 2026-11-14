@@ -7,13 +7,13 @@
 
 VIỆC ĐANG DỞ → tự bỏ qua, báo ⏸ để Claude hỏi David riêng phần đó (chỉ lúc này mới hỏi):
   · có tiến trình (render, node, ffmpeg…) đang chạy trong dự án — thường là phiên khác đang làm;
-  · có file kịch bản (danh-sach-cat.js, canh.js, phu-de.js, du-an.js, plan.json, cuts.json) sửa SAU video-final.mp4 (chưa render lại = đang làm lại);
-  · chưa có video-final.mp4.
+  · có file kịch bản (danh-sach-cat.js, canh.js, phu-de.js, du-an.js, ke-hoach.json, diem-cat.json) sửa SAU video-hoan-chinh.mp4 (chưa render lại = đang làm lại);
+  · chưa có video-hoan-chinh.mp4.
 
-Giữ:  1-goc/ · video-final*.mp4 ở gốc mỗi dự án (2-ban-day-du/, clip-X/; trừ bản -khong-teaser) · mọi thứ trong phat-hanh/ · mọi file chữ
+Giữ:  1-goc/ · video-hoan-chinh*.mp4 ở gốc mỗi dự án (2-ban-day-du/, clip-X/; trừ bản -khong-teaser) · mọi thứ trong phat-hanh/ · mọi file chữ
       (kịch bản, phụ đề, kế hoạch cắt, bài đăng, số liệu, canh.js…).
 Bỏ:   node_modules, .remotion, .cache → xoá hẳn (cài lại được).
-      Mọi file hình / tiếng / video còn lại (davinci/media, motion/public, nguon.mp4, src/, cat/, check/, bản cũ…)
+      Mọi file hình / tiếng / video còn lại (tu-lieu, chuyen-dong/public, nguon.mp4, src/, cat/, kiem-tra/, bản cũ…)
       → xoá hẳn (file tạm, dựng lại được từ gốc + kịch bản).
 Xong mà không có phần ⏸ → chạy nền: zsh luu-drive.sh <dự án> (lên Drive sao-luu-mac/video, kiểm khớp, xoá trên Mac).
 """
@@ -24,7 +24,7 @@ MEDIA = {'.mp4', '.mov', '.m4a', '.wav', '.aac', '.mp3', '.mkv', '.webm', '.mxf'
 XOA_HAN = {'node_modules', '.remotion', '.cache'}
 MOVIES = os.path.realpath(os.path.expanduser('~/Movies'))
 VLOG = os.path.join(MOVIES, 'vlog')
-KICH_BAN = {'danh-sach-cat.js', 'canh.js', 'phu-de.js', 'du-an.js', 'plan.json', 'cuts.json'}   # sửa sau bản cuối mà chưa render = đang làm lại
+KICH_BAN = {'danh-sach-cat.js', 'canh.js', 'phu-de.js', 'du-an.js', 'ke-hoach.json', 'diem-cat.json'}   # sửa sau bản cuối mà chưa render = đang làm lại
 GOC_VLOG = set()   # gốc các dự án vlog ghép (bản cuối nằm ngay ở gốc)
 
 
@@ -62,13 +62,13 @@ def quet(T):
     # dự án chưa có bản cuối → bỏ qua cả thư mục (3-doan-noi-bat: một clip thiếu thì giữ nguồn chung)
     for r, ds, fs in os.walk(T):
         ds[:] = [d for d in ds if d not in XOA_HAN]
-        if la_du_an(r) and 'video-final.mp4' not in fs:
+        if la_du_an(r) and 'video-hoan-chinh.mp4' not in fs:
             bo_qua.append(r)
     # việc đang dở: tiến trình đang chạy trong dự án, hoặc file chữ sửa sau bản cuối (bỏ qua phat-hanh/, so-lieu: sửa sau là bình thường)
     for r, ds, fs in os.walk(T):
         ds[:] = [d for d in ds if d not in XOA_HAN]
-        if la_du_an(r) and 'video-final.mp4' in fs and r not in bo_qua:
-            mf = os.path.getmtime(os.path.join(r, 'video-final.mp4'))
+        if la_du_an(r) and 'video-hoan-chinh.mp4' in fs and r not in bo_qua:
+            mf = os.path.getmtime(os.path.join(r, 'video-hoan-chinh.mp4'))
             moi = []
             for r2, ds2, fs2 in os.walk(r):
                 ds2[:] = [d for d in ds2 if d not in XOA_HAN and d != 'phat-hanh']
@@ -93,7 +93,7 @@ def quet(T):
             continue
         for f in fs:
             p = os.path.join(r, f)
-            if la_du_an(r) and f.startswith('video-final') and f.endswith('.mp4') and 'khong-teaser' not in f:   # vd. video-final-dien-thoai.mp4
+            if la_du_an(r) and f.startswith('video-hoan-chinh') and f.endswith('.mp4') and 'khong-teaser' not in f:   # vd. video-hoan-chinh-dien-thoai.mp4
                 continue
             if os.path.splitext(f)[1].lower() in MEDIA or f.endswith('_tmp'):
                 rac.append(p)
@@ -124,7 +124,7 @@ def main():
         tong += s_han + s_that
         print(f'\n== {ten}: {co(du(T))} → giải phóng ~{co(s_han + s_that)}')
         for b in bo_qua:
-            print(f'   ⏸ bỏ qua {os.path.relpath(b, T) if b != T else "cả dự án"}/ ({DO.get(b, "chưa có video-final.mp4")}) → hỏi David')
+            print(f'   ⏸ bỏ qua {os.path.relpath(b, T) if b != T else "cả dự án"}/ ({DO.get(b, "chưa có video-hoan-chinh.mp4")}) → hỏi David')
         if xoa_han:
             print(f'   xoá hẳn  {co(s_han):>9}  node_modules / .remotion / .cache ({len(xoa_han)} thư mục)')
         nhom = {}

@@ -1,5 +1,5 @@
 import { createRequire } from 'module';
-const require = createRequire('/Users/moon/.nvm/versions/node/v24.18.0/lib/node_modules/@playwright/cli/');
+const require = createRequire('/Users/moon/.nvm/versions/node/v24.18.0/thu-vien/node_modules/@playwright/cli/');
 const { chromium } = require('playwright-core');
 import fs from 'fs';
 const SRC = process.argv[2], OUT = process.argv[3];

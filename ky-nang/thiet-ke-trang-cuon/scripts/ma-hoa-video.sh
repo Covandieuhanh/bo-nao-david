@@ -7,15 +7,15 @@
 # perfectly. Dense keyframes cost file size and buy responsiveness. That trade
 # is the entire point of this script.
 #
-#   ./ma-hoa-video.sh in.mp4 out.mp4            desktop master  (1080p, -g 8, crf 20)
-#   ./ma-hoa-video.sh in.mp4 out-m.mp4 mobile   phone variant   (720p,  -g 4, crf 24)
+#   ./ma-hoa-video.sh vao.mp4 ra.mp4            desktop master  (1080p, -g 8, crf 20)
+#   ./ma-hoa-video.sh vao.mp4 out-m.mp4 mobile   phone variant   (720p,  -g 4, crf 24)
 #
 # CRF override, for the grain-heavy worlds tai-nguyen.md warns about (marine snow,
 # bioluminescence, smoke, film grain). A dense GOP doubles the cost of grain, so
 # a world like that wants 22-23 rather than the default 20:
 #
-#   ./ma-hoa-video.sh in.mp4 out.mp4 desktop 23        fourth positional argument
-#   SCROLLCRAFT_CRF=23 ./ma-hoa-video.sh in.mp4 out.mp4    or the env var
+#   ./ma-hoa-video.sh vao.mp4 ra.mp4 desktop 23        fourth positional argument
+#   SCROLLCRAFT_CRF=23 ./ma-hoa-video.sh vao.mp4 ra.mp4    or the env var
 #
 # The positional argument wins over the env var; with neither, the defaults
 # below are unchanged.

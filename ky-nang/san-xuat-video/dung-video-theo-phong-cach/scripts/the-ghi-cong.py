@@ -1,6 +1,6 @@
 # Ghi nguồn ảnh (bắt buộc với ảnh CC BY / BY-SA), chỉ ảnh thực sự dùng trong canh.js: the-ghi-cong.py <dự án> [--card]
 #   mặc định: <dự án>/nguon-anh.txt để dán vào MÔ TẢ bài đăng — video KHÔNG có màn hình nguồn ảnh ở cuối (người dùng chốt)
-#   --card:   thêm màn hình 5 s davinci/media/nguon_anh.png ở cuối video (chỉ khi người dùng yêu cầu; cần Pillow → không -I)
+#   --card:   thêm màn hình 5 s tu-lieu/nguon-anh.png ở cuối video (chỉ khi người dùng yêu cầu; cần Pillow → không -I)
 import json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from _chung import load, safe_zone
@@ -8,9 +8,9 @@ from _chung import load, safe_zone
 P = os.path.expanduser(sys.argv[1])
 d_ = load(P); W, H = d_["out"]["width"], d_["out"]["height"]   # khung xuất
 used = set(re.findall(r'"photo":\s*"([^"]+)\.jpg"', json.dumps(d_["scenes"])))
-rows = [l.split("\t", 1)[1] for l in open(os.path.join(P, "images/credits.tsv")).read().splitlines()
+rows = [l.split("\t", 1)[1] for l in open(os.path.join(P, "hinh-anh/ghi-cong.tsv")).read().splitlines()
         if l.strip() and l.split("\t")[0] in used]
-out = os.path.join(P, "davinci/media/nguon_anh.png")
+out = os.path.join(P, "tu-lieu/nguon-anh.png")
 txt = os.path.join(P, "nguon-anh.txt")
 for f in (out, txt):
     if os.path.exists(f): os.remove(f)

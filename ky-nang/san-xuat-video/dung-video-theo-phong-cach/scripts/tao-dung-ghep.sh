@@ -1,8 +1,8 @@
 #!/bin/zsh
 # Dự án GHÉP NHIỀU CLIP: tao-dung-ghep.sh <tên-ngắn> <clip1> <clip2> ... [--ref <video mẫu>] [--style-from <dự án cũ>]
-# - Chuẩn hoá mỗi clip → motion/public/clips/c1.mp4, c2.mp4… (áp xoay iPhone, 30 fps CFR, AAC 48 kHz stereo; clip câm thì thêm tiếng lặng)
-# - Phân tích từng clip vào check/cN/: transcript.srt, words.srt (mốc từng từ), loud.txt (độ lớn mỗi 0,5 s),
-#   contact.jpg, half.jpg (lưới khung mỗi 0,5 s, 13 khung/hàng)
+# - Chuẩn hoá mỗi clip → chuyen-dong/public/doan-video/c1.mp4, c2.mp4… (áp xoay iPhone, 30 fps CFR, AAC 48 kHz stereo; clip câm thì thêm tiếng lặng)
+# - Phân tích từng clip vào kiem-tra/cN/: ban-chep-loi.srt, moc-tung-tu.srt (mốc từng từ), am-luong.txt (độ lớn mỗi 0,5 s),
+#   bang-khung-hinh.jpg, half.jpg (lưới khung mỗi 0,5 s, 13 khung/hàng)
 # - Chép template Remotion dựng cả video, tạo hiệu ứng âm thanh + nhạc nền, cài npm
 # Dòng cuối in đường dẫn dự án.
 set -e
@@ -23,19 +23,19 @@ done
 source "$SKILL/scripts/noi-luu.sh"; P=$(noi_luu "$NAME")   # hl-<tên>-<id> → tap-<tên>/3-doan-noi-bat/clip-<id>; vlog-<tên> → vlog/<tên>
 [ -e "$P" ] && { echo "Đã có $P — chọn tên khác"; exit 1; }
 mkdir -p "${P:h}"
-mkdir -p "$P"/{src,check,ref}
-cp -RL "$SKILL/assets/khuon-dung-ghep" "$P/motion"   # -L: chép BẢN THẬT thư viện hình (src/lib — phụ đề, nhận diện, màn chốt, biểu tượng, màn kết, minh hoạ)
-python3 -I "$SKILL/../mo-dun/ho_so.py" ghep-vlog "$P/motion/src/hoso.json" >/dev/null   # hồ sơ tham số (highlight: danh-sach-cat-doan-noi-bat.py ghi đè)
-echo 'export default {};' > "$P/motion/src/bao-ve.js"   # lớp phủ tự chuyển toàn màn hình — bao-ve-lop-phu.py ghi đè
-mkdir -p "$P/motion/public/hieu-ung-am-thanh"; cp "$SKILL/assets/hieu-ung-am-thanh/ting.wav" "$SKILL/assets/hieu-ung-am-thanh/tua.wav" "$P/motion/public/hieu-ung-am-thanh/"   # ting màn chốt · vút chuyển cảnh highlight
-C="$P/motion/public/clips"; mkdir -p "$C" "$P/motion/public/hieu-ung-am-thanh"
-[ -n "$REF" ] && cp "$REF" "$P/ref/mau.${REF:e}"
-[ -n "$STYLE_FROM" ] && echo "$STYLE_FROM" > "$P/ref/style-from.txt"
+mkdir -p "$P"/{src,kiem-tra,tai-lieu-tham-khao}
+cp -RL "$SKILL/assets/khuon-dung-ghep" "$P/chuyen-dong"   # -L: chép BẢN THẬT thư viện hình (src/lib — phụ đề, nhận diện, màn chốt, biểu tượng, màn kết, minh hoạ)
+python3 -I "$SKILL/../mo-dun/ho_so.py" ghep-vlog "$P/chuyen-dong/src/ho-so.json" >/dev/null   # hồ sơ tham số (highlight: danh-sach-cat-doan-noi-bat.py ghi đè)
+echo 'export default {};' > "$P/chuyen-dong/src/bao-ve.js"   # lớp phủ tự chuyển toàn màn hình — bao-ve-lop-phu.py ghi đè
+mkdir -p "$P/chuyen-dong/public/hieu-ung-am-thanh"; cp "$SKILL/assets/hieu-ung-am-thanh/ting.wav" "$SKILL/assets/hieu-ung-am-thanh/tua.wav" "$P/chuyen-dong/public/hieu-ung-am-thanh/"   # ting màn chốt · vút chuyển cảnh highlight
+C="$P/chuyen-dong/public/doan-video"; mkdir -p "$C" "$P/chuyen-dong/public/hieu-ung-am-thanh"
+[ -n "$REF" ] && cp "$REF" "$P/tai-lieu-tham-khao/mau.${REF:e}"
+[ -n "$STYLE_FROM" ] && echo "$STYLE_FROM" > "$P/tai-lieu-tham-khao/style-from.txt"
 
 : > "$P/clips.tsv"
 i=0
 for f in "${CLIPS[@]}"; do
-  i=$((i+1)); id=c$i; O="$P/check/$id"; mkdir -p "$O"
+  i=$((i+1)); id=c$i; O="$P/kiem-tra/$id"; mkdir -p "$O"
   cp "$f" "$P/src/"
   ENC=(-c:v libx264 -preset fast -crf 17 -g 10 -pix_fmt yuv420p -r 30 -movflags +faststart)
   if ffprobe -v error -select_streams a -show_entries stream=index -of csv=p=0 "$f" | grep -q .; then
@@ -49,26 +49,26 @@ for f in "${CLIPS[@]}"; do
   WH=$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0:s=x "$C/$id.mp4")
   DUR=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$C/$id.mp4")
   printf "%s\t%s\t%s\t%.2fs\n" $id "${f:t}" $WH $DUR >> "$P/clips.tsv"
-  # Lời nói: đoạn câu + mốc từng từ. Whisper hay BỊA câu ("Hãy subscribe cho kênh…") khi không có lời → đối chiếu loud.txt
+  # Lời nói: đoạn câu + mốc từng từ. Whisper hay BỊA câu ("Hãy subscribe cho kênh…") khi không có lời → đối chiếu am-luong.txt
   ffmpeg -v error -y -i "$C/$id.mp4" -vn -ac 1 -ar 16000 "$O/a.wav"
   # Quay ngoài trời (gió, bước chân, đám đông) → Whisper bịa "Hãy subscribe…" cả clip. Lọc ồn + cân tiếng RIÊNG cho bản chép lời
-  # (a.wav giữ nguyên cho loud.txt) và -mc 0 (không mang ngữ cảnh câu bịa sang đoạn sau) — vlog leo núi 2026-11-03: 10/48 clip hết bịa.
+  # (a.wav giữ nguyên cho am-luong.txt) và -mc 0 (không mang ngữ cảnh câu bịa sang đoạn sau) — vlog leo núi 2026-11-03: 10/48 clip hết bịa.
   ffmpeg -v error -y -i "$O/a.wav" -af "highpass=f=120,lowpass=f=6000,afftdn=nf=-25,dynaudnorm" "$O/w.wav"
-  # LOI_SAN=<thư mục có words.srt + transcript.srt CỦA CHÍNH FILE NÀY> (highlight: clip c1 = video nguồn đã chép lời ở check/goc)
+  # LOI_SAN=<thư mục có moc-tung-tu.srt + ban-chep-loi.srt CỦA CHÍNH FILE NÀY> (highlight: clip c1 = video nguồn đã chép lời ở kiem-tra/goc)
   # → dùng lại, không cho Whisper chép lại cả video dài cho từng clip (10/11/2026: tập 14 phút mất ~30 phút mỗi clip).
-  if [[ -n "$LOI_SAN" && "$id" == c1 && -s "$LOI_SAN/words.srt" && -s "$LOI_SAN/transcript.srt" ]]; then
-    cp "$LOI_SAN/words.srt" "$O/words.srt"; cp "$LOI_SAN/transcript.srt" "$O/transcript.srt"
+  if [[ -n "$LOI_SAN" && "$id" == c1 && -s "$LOI_SAN/moc-tung-tu.srt" && -s "$LOI_SAN/ban-chep-loi.srt" ]]; then
+    cp "$LOI_SAN/moc-tung-tu.srt" "$O/moc-tung-tu.srt"; cp "$LOI_SAN/ban-chep-loi.srt" "$O/ban-chep-loi.srt"
   else
-  whisper-cli -m $MODEL -l vi -f "$O/w.wav" -mc 0 -osrt -of "$O/transcript" -np >/dev/null 2>&1 || true
-  whisper-cli -m $MODEL -l vi -f "$O/w.wav" -mc 0 -ml 1 -sow -osrt -of "$O/words" -np >/dev/null 2>&1 || true
+  whisper-cli -m $MODEL -l vi -f "$O/w.wav" -mc 0 -osrt -of "$O/ban-chep-loi" -np >/dev/null 2>&1 || true
+  whisper-cli -m $MODEL -l vi -f "$O/w.wav" -mc 0 -ml 1 -sow -osrt -of "$O/moc-tung-tu" -np >/dev/null 2>&1 || true
   fi
   rm -f "$O/w.wav"
   ffmpeg -v error -i "$O/a.wav" -af "asetnsamples=8000,astats=metadata=1:reset=1,ametadata=print:key=lavfi.astats.Overall.RMS_level:file=-" -f null - \
-    | grep RMS | awk -F= '{printf "%.1fs %d dB\n", (NR-1)*0.5, $2}' > "$O/loud.txt"
+    | grep RMS | awk -F= '{printf "%.1fs %d dB\n", (NR-1)*0.5, $2}' > "$O/am-luong.txt"
   rm -f "$O/a.wav"
   # Hình: 24 khung trải đều + lưới mỗi 0,5 s (mỗi ảnh tối đa 26 khung = 13 s)
   STEP=$(python3 -c "print(max(0.5, $DUR / 24))")
-  ffmpeg -v error -y -i "$C/$id.mp4" -vf "fps=1/$STEP,scale=270:-2,tile=6x4:padding=4:color=white" -frames:v 1 "$O/contact.jpg"
+  ffmpeg -v error -y -i "$C/$id.mp4" -vf "fps=1/$STEP,scale=270:-2,tile=6x4:padding=4:color=white" -frames:v 1 "$O/bang-khung-hinh.jpg"
   k=0; t=0
   while python3 -c "exit(0 if $t < $DUR - 0.6 or $t == 0 else 1)"; do   # phần dư < 0,6 s không ra khung nào → ffmpeg lỗi, bỏ
     ffmpeg -v error -y -ss $t -t 13 -i "$C/$id.mp4" -vf "fps=2,scale=180:-2,tile=13x2:padding=2" -frames:v 1 "$O/half_$(printf %02d $k).jpg"
@@ -76,7 +76,7 @@ for f in "${CLIPS[@]}"; do
   done
 done
 
-( cd "$P/motion" && npm install --no-fund --no-audit >/dev/null 2>&1 && npm approve-scripts esbuild >/dev/null 2>&1 || true
+( cd "$P/chuyen-dong" && npm install --no-fund --no-audit >/dev/null 2>&1 && npm approve-scripts esbuild >/dev/null 2>&1 || true
   node tao-am-thanh.mjs >/dev/null )
 echo "Clip (id · file gốc · kích thước · thời lượng):"; cat "$P/clips.tsv"
 echo "$P"

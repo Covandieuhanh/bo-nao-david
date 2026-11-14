@@ -52,7 +52,7 @@ Luật chung video ở `../quy-tac-chung.md` (chữ nguyên văn, không cắt v
   - **Teaser** cho tập > 10 phút: sau render, `doan-gioi-thieu.py` với 2–3 câu đắt nhất (trọn câu, nguyên văn); độ dài theo hồ sơ.
   - **Thumbnail khuôn cố định** mọi tập, không số tập, không mặt — mẫu ở khối 14.
   - **Nền "lắng"** cho tập tâm sự/thiền: `STAGE.bg = [{at: 0, src: 'nen-1.jpg'}, …]` (ảnh/tranh David đưa hoặc có giấy phép, trong
-    `motion/public/`) — chuyển động rất chậm, phủ tối; không có thì lưới tối mặc định.
+    `chuyen-dong/public/`) — chuyển động rất chậm, phủ tối; không có thì lưới tối mặc định.
   - Tập rất dài được thưa cảnh hơn trong mức 30%: sân khấu + thẻ chương + TOPICS đủ.
   - Tài liệu podcast QUAY NGƯỜI cho sau này: `references/podcast-quay-nguoi.md`.
 
@@ -75,15 +75,15 @@ Bước đánh dấu *(bước nhẹ)*: nhắc đổi mô hình rẻ hơn theo `
 zsh $BASE/scripts/kiem-moi-truong.sh
 zsh $SKILL/scripts/tao-podcast.sh "<file tiếng hoặc video>" <tên-ngắn> [doc|ngang]   # → ~/Movies/tap-<tên>/2-ban-day-du (gốc vào tap-<tên>/1-goc), dòng cuối = $P
 ```
-Lấy tiếng (bỏ hình), giữ nguyên toàn bộ (`cat-thua` ở tham số 4 mới cắt lặng đầu/cuối, chỉ cho clip highlight; ghi `check/trim.txt`),
-`davinci/media/audio.wav` + `audio.m4a`, chép template skill gốc, `du-an.js` có `podcast: true`, khung theo nguồn (hoặc tham số 3).
+Lấy tiếng (bỏ hình), giữ nguyên toàn bộ (`cat-thua` ở tham số 4 mới cắt lặng đầu/cuối, chỉ cho clip highlight; ghi `kiem-tra/cat-goc.txt`),
+`tu-lieu/am-thanh.wav` + `audio.m4a`, chép template skill gốc, `du-an.js` có `podcast: true`, khung theo nguồn (hoặc tham số 3).
 
 ### 2. Lời nói + phụ đề
 ```bash
 zsh $SKILL/scripts/phien-am.sh "$P"                    # chạy nền; ~1 phút / 5 phút tiếng
-python3 -I $BASE/scripts/phu-de.py "$P"               # → motion/src/phu-de.js (nháp)
+python3 -I $BASE/scripts/phu-de.py "$P"               # → chuyen-dong/src/phu-de.js (nháp)
 ```
-Sửa TỪNG dòng theo khối 03: chính tả, câu bịa ("Hãy subscribe…" — đối chiếu `transcript.srt` với `words.srt`), chỗ ngắt dòng.
+Sửa TỪNG dòng theo khối 03: chính tả, câu bịa ("Hãy subscribe…" — đối chiếu `ban-chep-loi.srt` với `moc-tung-tu.srt`), chỗ ngắt dòng.
 **Riêng podcast**: ở chỗ đổi người nói, mốc từ Whisper hay trôi 1–2 s → dòng phụ đề có thể bắt đầu trong lượt người kia. Đối chiếu
 `nguoi-noi.js` (bước 3) và dời mốc.
 
@@ -91,13 +91,13 @@ Sửa TỪNG dòng theo khối 03: chính tả, câu bịa ("Hãy subscribe…" 
 Không có mẫu → phong cách mặc định của template. Có video/ảnh mẫu → khối 10.
 
 ### 6. Minh hoạ
-Theo khối 07: **mặc định biểu tượng vẽ** hoặc sơ đồ (`icon` trong `montage`/`card job`, xem `$BASE/references/scene-design.md`); ảnh chỉ khi hình
+Theo khối 07: **mặc định biểu tượng vẽ** hoặc sơ đồ (`icon` trong `montage`/`card job`, xem `$BASE/references/thiet-ke-canh.md`); ảnh chỉ khi hình
 vẽ không thay được cái thật (địa danh, nhân vật có thật, tư liệu, minh chứng, sản phẩm cụ thể) và tìm được ảnh tốt
 (`$BASE/scripts/kho-anh-openverse.py`). Số liệu bằng hiệu ứng, đúng con số người nói. David nói "không dùng ảnh" / "thêm ảnh" thì theo đó.
 
 ### 7. Chụp thử (trước khi render — gửi David chốt)
 ```bash
-zsh $SKILL/scripts/anh-tinh-podcast.sh "$P" nen@<giây> <id>@<giây> ...     # sân khấu + cảnh + phụ đề cùng mốc → check/stills.jpg
+zsh $SKILL/scripts/anh-tinh-podcast.sh "$P" nen@<giây> <id>@<giây> ...     # sân khấu + cảnh + phụ đề cùng mốc → kiem-tra/anh-tinh.jpg
 ```
 Chụp mỗi cảnh ở khoảnh khắc đầy nhất + vài mốc chỉ có sân khấu (`nen@…`) ở các TOPICS và lúc đổi người nói. Kiểm: chữ tràn, dấu bị
 cắt, hai dòng chữ chồng nhau hoặc chạm khung ảnh/biểu tượng (chữ to sau dòng khác chừa `aboveGap`), màu sóng âm đúng người nói, ý
@@ -106,23 +106,23 @@ Sửa tới khi sạch rồi gửi David chốt.
 
 ### 8. Render + xuất
 ```bash
-cd "$P/motion" && node xuat-video.mjs                          # chạy nền: cảnh + phụ đề + sân khấu (~1,5× thời lượng)
-python3 $SKILL/scripts/nen-podcast.py "$P"                # sân khấu + tiếng → davinci/media/video_goc.mp4
+cd "$P/chuyen-dong" && node xuat-video.mjs                          # chạy nền: cảnh + phụ đề + sân khấu (~1,5× thời lượng)
+python3 $SKILL/scripts/nen-podcast.py "$P"                # sân khấu + tiếng → tu-lieu/video-goc.mp4
 python3 -I $BASE/scripts/the-ghi-cong.py "$P"              # chỉ khi có ảnh → nguon-anh.txt
-python3 -I $BASE/scripts/xem-truoc-ban-dung.py "$P"            # chạy nền → video-final.mp4
+python3 -I $BASE/scripts/xem-truoc-ban-dung.py "$P"            # chạy nền → video-hoan-chinh.mp4
 ```
 Podcast 15 phút: sân khấu ~25 phút, phụ đề ~10 phút, ghép cuối ~10 phút — báo trước thời gian chờ.
 
 ### 9. Kiểm tra bản cuối
-`zsh $BASE/scripts/kiem-khung-hinh.sh "$P" "$P/video-final.mp4" <mốc giữa & cuối mỗi cảnh, vài mốc chỉ sân khấu>` → xem `check/sheet.jpg`.
-Âm thanh theo khối 09 (cả bài −14 LUFS ±0,5 (hồ sơ `nhac.do_to_cuoi_LUFS`), đỉnh ≤ −1,5 dB, tiếng rè (highpass 12 kHz) **so với giọng** tăng ≤ 1 dB; không so dB thô với `audio.wav` vì giọng nhỏ được kéo lên),
-thời lượng = `audio.wav` (+ thẻ cuối nếu có).
+`zsh $BASE/scripts/kiem-khung-hinh.sh "$P" "$P/video-hoan-chinh.mp4" <mốc giữa & cuối mỗi cảnh, vài mốc chỉ sân khấu>` → xem `kiem-tra/bang-anh.jpg`.
+Âm thanh theo khối 09 (cả bài −14 LUFS ±0,5 (hồ sơ `nhac.do_to_cuoi_LUFS`), đỉnh ≤ −1,5 dB, tiếng rè (highpass 12 kHz) **so với giọng** tăng ≤ 1 dB; không so dB thô với `am-thanh.wav` vì giọng nhỏ được kéo lên),
+thời lượng = `am-thanh.wav` (+ thẻ cuối nếu có).
 
 ### 10. Phát hành + giao
 Phát hành theo `../quy-tac-chung.md` mục 7: `phat-hanh/phat-hanh.md` (3 tiêu đề, mô tả, mốc khung bìa); xuất ngang VÀ đăng YouTube → 2 thumbnail
 `THUMB_HINH=<hình> THUMB_TAG=PODCAST zsh $BASE/scripts/anh-thu-nho.sh "$P" - "<DÒNG 1>" "<DÒNG 2>" 1|2` (khối 14, chữ đã chốt ở lần hỏi đầu).
 Chép `san-xuat-video/mo-dun/16-phan-tich-so-lieu/mau-so-lieu.md` → `$P/so-lieu.md`.
-Gửi `video-final.mp4` (+ thumbnail nếu có) (SendUserFile). Báo cáo tiếng Việt: người nói (tên/vai, tỉ lệ, chỗ không chắc), danh sách
+Gửi `video-hoan-chinh.mp4` (+ thumbnail nếu có) (SendUserFile). Báo cáo tiếng Việt: người nói (tên/vai, tỉ lệ, chỗ không chắc), danh sách
 cảnh + TOPICS theo mốc, `nguon-anh.txt` nếu có ảnh, đã kiểm gì / chưa kiểm gì, tên riêng cần xác nhận chính tả.
 
 ## Bảng phụ thuộc (sửa X → chạy lại Y)
@@ -132,7 +132,7 @@ cảnh + TOPICS theo mốc, `nguon-anh.txt` nếu có ảnh, đã kiểm gì / c
 | STAGE / TOPICS / speakers / envelope | `node xuat-video.mjs nen` → nen-podcast.py → xem-truoc-ban-dung.py |
 | một cảnh (canh.js) | `node xuat-video.mjs <id>` → xem-truoc-ban-dung.py |
 | thêm / bớt / dời cảnh (canh.js): sân khấu tự ẩn chữ chủ đề theo danh sách cảnh | `node xuat-video.mjs <các id> nen` → nen-podcast.py → xem-truoc-ban-dung.py. Bỏ `nen` sẽ lộ chữ sau thẻ; ảnh chụp thử KHÔNG thấy lỗi này, phải soi bản cuối |
-| video-final (teaser) | chuong.py |
+| video-hoan-chinh (teaser) | chuong.py |
 
 ## Sửa theo góp ý
 - Một cảnh → sửa `canh.js` → `node xuat-video.mjs <id>` → `xem-truoc-ban-dung.py`.
@@ -144,13 +144,13 @@ cảnh + TOPICS theo mốc, `nguon-anh.txt` nếu có ảnh, đã kiểm gì / c
 ## Cấu trúc dự án
 ```
 ~/Movies/tap-<tên>/2-ban-day-du/
-├── davinci/media/   nguon.* (file gốc) · audio.wav/.m4a (tiếng giữ nguyên) · nen.mp4 (sân khấu) · video_goc.mp4 (sân khấu + tiếng)
-│                    <id>.mov (cảnh, nền trong suốt) · phu_de.mov (phụ đề + thanh thời gian)
-├── motion/src/      canh.js (STAGE, TOPICS, SCENES) · phu-de.js · nguoi-noi.js · duong-bao-am.js · khung-podcast.js · chu-de.js
-├── check/           trim.txt (chỉ khi cat-thua) · goc/ (transcript, words) · speakers.md · stills.jpg · sheet.jpg
-├── phat-hanh/  phat-hanh.md · thumb-1.jpg · thumb-2.jpg
-├── images/ · ke-hoach-canh.md · nguon-anh.txt · so-lieu.md
-└── video-final.mp4
+├── tu-lieu/   nguon.* (file gốc) · am-thanh.wav/.m4a (tiếng giữ nguyên) · nen.mp4 (sân khấu) · video-goc.mp4 (sân khấu + tiếng)
+│                    <id>.mov (cảnh, nền trong suốt) · phu-de.mov (phụ đề + thanh thời gian)
+├── chuyen-dong/src/      canh.js (STAGE, TOPICS, SCENES) · phu-de.js · nguoi-noi.js · duong-bao-am.js · khung-podcast.js · chu-de.js
+├── kiem-tra/           cat-goc.txt (chỉ khi cat-thua) · goc/ (transcript, words) · nguoi-noi.md · anh-tinh.jpg · bang-anh.jpg
+├── phat-hanh/  phat-hanh.md · anh-thu-nho-1.jpg · anh-thu-nho-2.jpg
+├── hinh-anh/ · ke-hoach-canh.md · nguon-anh.txt · so-lieu.md
+└── video-hoan-chinh.mp4
 ```
 
 ## Xong khi
@@ -163,10 +163,10 @@ cảnh + TOPICS theo mốc, `nguon-anh.txt` nếu có ảnh, đã kiểm gì / c
 7. Đủ gói phát hành (tiêu đề, chương, teaser nếu > 10 phút, thumbnail không mặt nếu ngang, mẫu số liệu).
 
 ## Tài liệu kèm (chỉ đọc khi bước cần, cân nhắc đổi luật hoặc gỡ lỗi)
-- `references/podcast-design.md` — giải phẫu sân khấu, chọn cảnh cho lời hội thoại, vùng giữa.
+- `references/thiet-ke-podcast.md` — giải phẫu sân khấu, chọn cảnh cho lời hội thoại, vùng giữa.
 - `references/nhat-ky-thay-doi.md` — sổ quyết định theo ngày + lý do.
 - `references/loi-thuong-gap.md` — lỗi riêng podcast (mốc Whisper ở chỗ đổi người, nhận giọng, thời gian render).
-- `$BASE/references/scene-design.md` — mọi loại cảnh có sẵn + props (dùng chung).
+- `$BASE/references/thiet-ke-canh.md` — mọi loại cảnh có sẵn + props (dùng chung).
 - `san-xuat-video/mo-dun/16-phan-tich-so-lieu/mau-so-lieu.md` — mẫu số liệu sau đăng.
 
 ## Nhật ký

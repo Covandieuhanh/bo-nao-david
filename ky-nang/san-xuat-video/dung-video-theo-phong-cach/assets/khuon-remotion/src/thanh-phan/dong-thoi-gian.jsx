@@ -7,7 +7,7 @@ import HL from '../doan-noi-bat.js';
 import {BODY, C} from '../chu-de';
 import {POD, PF, PF_W} from '../khung-podcast';
 import {STAGE} from '../canh';
-import {ThanhThoiGian} from '../lib/thanh-thoi-gian';
+import {ThanhThoiGian} from '../thu-vien/thanh-thoi-gian';
 
 const mmss = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
 

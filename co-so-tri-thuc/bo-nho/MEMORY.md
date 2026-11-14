@@ -5,9 +5,9 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 
 ## Luật làm việc với David
 
-- [Công cụ cài thì đưa vào skill](quy-tac-cong-cu-cai-dua-vao-skill.md) — công cụ David cài (pyannote…) giúp việc tốt hơn thì tích hợp, giữ cách cũ dự phòng (07/11)
+- [Công cụ cài thì đưa vào skill](quy-tac-cong-cu-cai-dua-vao-ky-nang.md) — công cụ David cài (pyannote…) giúp việc tốt hơn thì tích hợp, giữ cách cũ dự phòng (07/11)
 - [Không dùng mod giao diện](quy-tac-mod-tu-chay.md) — đã gỡ hết savvy-progress, collision-guard, goal-meter, Sổ việc; chỉ giữ Telegram (13/11)
-- [Skill tự cải tiến, sáu luật mới](quy-tac-skill-tu-cai-tien.md) — chỉ hỏi khi đụng thông tin David; skill/giọng văn/luật kênh tự học theo số liệu; lời mới nhất thắng (12/11)
+- [Skill tự cải tiến, sáu luật mới](quy-tac-ky-nang-tu-cai-tien.md) — chỉ hỏi khi đụng thông tin David; skill/giọng văn/luật kênh tự học theo số liệu; lời mới nhất thắng (12/11)
 - [Phiên Telegram tự chạy](quy-tac-phien-telegram-tu-chay.md) — tự làm tới kết quả, ghi sổ; chỉ hỏi khi đăng/gửi, tốn tiền, đẩy đè GitHub (12/11)
 - [Tài nguyên vào, kết quả ra](quy-tac-goi-y-de-david-chon.md) — sản phẩm từ tài nguyên không hỏi, theo mặc định skill + đề xuất, báo lựa chọn (11/11)
 - [Học là bổ sung](quy-tac-hoc-la-bo-sung.md) — học mẫu chỉ thêm, giữ chặn cũ; khung mới chụp đủ lớp trước render (08/11)
@@ -29,7 +29,7 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 ## Video
 
 - [Bản chuẩn video](video-ban-chuan-2026-11-06.md) — 5 video chuẩn: 3 clip Đi trainer + 2 video dài; `mau.json` 5 mẫu (06/11)
-- [Bỏ app dựng video](video-bo-app.md) — bỏ app localhost:8765 vì tốn token hơn; dựng trực tiếp trong phiên theo skill (10/11)
+- [Bỏ app dựng video](video-bo-ung-dung.md) — bỏ app localhost:8765 vì tốn token hơn; dựng trực tiếp trong phiên theo skill (10/11)
 - [Bố cục tự cân](video-bo-cuc-tu-can.md) — bỏ số cố định; graphic tránh mọi người, bám người đang nói; khung gốc `thiet-ke-bo-cuc/` (07/11, 08/11)
 - [Bộ nhận diện chung](video-nhan-dien-chung.md) — mọi video cùng dấu góc, thanh, thẻ cuối không logo; dọc ngắn bỏ thanh + thẻ cuối (08/11, 10/11)
 - [Chỉ hình của chính video](video-chi-hinh-cua-chinh-video.md) — thumbnail/ảnh bìa chỉ lấy từ chính video đó (05/11)
@@ -44,11 +44,11 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 - [Không cài HyperFrames](video-khong-cai-hyperframes.md) — giữ Remotion, chỉ học ý rồi tự viết lại (06/11)
 - [Chữ nhấn kiểu nhãn dán](video-chu-nhan-nhan-dan.md) — chữ nhấn không chạm mặt, không nền đen mờ; nhãn đặc màu ở ngực (13/11)
 - [Không ghi chú kỹ thuật trên video](video-khong-nhan-ky-thuat.md) — bỏ nhãn ×1,6 / ×0,5 / slow-mo; chữ chỉ cho nội dung
-- [Làm một mạch, góp ý thì render lại](video-khong-tu-render.md) — bỏ cổng 1, cổng 2; góp ý → sửa + render lại toàn bộ luôn; đăng chờ "đăng" (13/11)
-- [Kiến trúc skill video](video-kien-truc-skill.md) — hồ sơ tham số + 20 khối + thư viện hình + mẫu chuẩn; sửa đúng một chỗ (04/11)
+- [Làm một mạch, góp ý thì render lại](video-khong-tu-xuat.md) — bỏ cổng 1, cổng 2; góp ý → sửa + render lại toàn bộ luôn; đăng chờ "đăng" (13/11)
+- [Kiến trúc skill video](video-kien-truc-ky-nang.md) — hồ sơ tham số + 20 khối + thư viện hình + mẫu chuẩn; sửa đúng một chỗ (04/11)
 - [Làm lại video cũ](video-lam-lai-video-cu.md) — bỏ lời chào/kênh cũ, tít cũ, chữ/viền in trong hình; mỗi video một bản (08/11)
-- [Motion graphics kể chuyện](video-motion-ke-chuyen.md) — mọi video có điểm nhấn nhiều loại; kể chuyện, vẽ tiếp; AI sáng tạo trong khung (07/11, 09/11)
-- [Movies xếp theo tập](video-movies-xep-theo-tap.md) — gốc / bản dài / highlight chung `tap-<tên>` (07/11)
+- [Motion graphics kể chuyện](video-do-hoa-ke-chuyen.md) — mọi video có điểm nhấn nhiều loại; kể chuyện, vẽ tiếp; AI sáng tạo trong khung (07/11, 09/11)
+- [Movies xếp theo tập](video-thu-muc-xep-theo-tap.md) — gốc / bản dài / highlight chung `tap-<tên>` (07/11)
 - [Nhạc theo tuyến, chuẩn âm chung](video-nhac-theo-tuyen.md) — tự chọn nhạc theo tuyến, cân từng bài; ~23 dB dưới giọng, −14 LUFS (05–08/11)
 - [Mỗi lúc một chỗ chữ](video-phu-de-mot-cho-chu.md) — phụ đề dọc cụm 5–8 chữ cỡ 58; chữ motion graphic hiện thì phụ đề nhường (08/11)
 - [Bìa podcast không mặt](video-podcast-bia-khong-mat.md) — podcast chỉ tiếng thì bìa không mặt người, khớp nội dung (06/11)

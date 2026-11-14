@@ -1,8 +1,8 @@
 # Khối 05-tranh-che-chu-the: Tránh che người: lớp phủ không chạm mặt + đầu + vai + ngực; không có chỗ → tự toàn màn hình (dài theo nội dung)
 
 **Dùng trong:** làm video, ghép vlog, highlight người nói
-**Đầu vào:** check/faces/*.json + canh.js / danh-sach-cat.js
-**Đầu ra:** vi-tri.js (1 video) · bao-ve.js (ghép) + check/faces/{placement,guard}.md
+**Đầu vào:** kiem-tra/khuon-mat/*.json + canh.js / danh-sach-cat.js
+**Đầu ra:** vi-tri.js (1 video) · bao-ve.js (ghép) + kiem-tra/khuon-mat/{placement,guard}.md
 **Tham số hồ sơ:** chung: `hai_trang_thai` (false = bố cục tự cân). Không trần giây, không tỷ lệ mặt
 **Sửa khối này → chạy lại:** 17 (render lại cảnh đổi chỗ)
 
@@ -21,6 +21,6 @@
 - Tít ghim (highlight) che đầu → tự ẩn.
 - Giữ lớp phủ cho một cảnh: `place: {full: false}` (1 video) · `keep: true` (OVERLAYS, ghép).
 - Lệnh: 1 video `zsh dung-video-theo-phong-cach/scripts/vi-tri-khuon-mat.sh "$P"` sau mỗi lần sửa canh.js; ghép `python3 -I dung-video-theo-phong-cach/scripts/nang-lop.py "$P"`
-  rồi `python3 -I dung-video-theo-phong-cach/scripts/bao-ve-lop-phu.py "$P"` sau mỗi lần sửa danh-sach-cat.js. Đọc bảng `check/faces/placement.md` / `guard.md`.
+  rồi `python3 -I dung-video-theo-phong-cach/scripts/bao-ve-lop-phu.py "$P"` sau mỗi lần sửa danh-sach-cat.js. Đọc bảng `kiem-tra/khuon-mat/placement.md` / `guard.md`.
 - Bố cục do khối 07 chọn; khối này lo thẻ tít mở (highlight) và các lớp đặt tay `place`.
-- Cảnh `nhan` và `bocuc` không qua vi-tri-khuon-mat.py: `vi-tri-nhan.py` (gọi trong vi-tri-khuon-mat.sh) ghi **mọi người** trong khung + **người đang nói** vào `motion/src/mat.js`; `src/lib/cho.js` tìm khoảng trống quanh mọi người, nhan.jsx / bo-cuc.jsx đặt graphic sát người đang nói, co theo chỗ, không đè ai. Khung dọc hẹp thì dưới cằm; khung ngang không đặt dưới cằm.
+- Cảnh `nhan` và `bocuc` không qua vi-tri-khuon-mat.py: `vi-tri-nhan.py` (gọi trong vi-tri-khuon-mat.sh) ghi **mọi người** trong khung + **người đang nói** vào `chuyen-dong/src/mat.js`; `src/thu-vien/cho.js` tìm khoảng trống quanh mọi người, nhan.jsx / bo-cuc.jsx đặt graphic sát người đang nói, co theo chỗ, không đè ai. Khung dọc hẹp thì dưới cằm; khung ngang không đặt dưới cằm.
