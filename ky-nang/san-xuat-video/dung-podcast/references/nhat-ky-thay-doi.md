@@ -4,6 +4,10 @@ description: "Sổ thay đổi skill dựng podcast: quyết định của David
 
 # Sổ thay đổi — dung-podcast (quyết định của người dùng + lý do)
 
+## Tái bản 3 — 14/11/2026: bản luật viết lại từ bảng du-an/tai-ban-3-video.md
+- Bỏ dấu ngày, lời kể, chỗ ngược luật khỏi bản luật; mục "Nhật ký" cuối SKILL.md chuyển về đây:
+- 2026-11-08 · chuẩn hoá (`du-an/chuan-hoa-ky-nang.md` bước 3): hỏi một lần đầu + giữ cổng chụp thử trước render (06/11) thay "chạy một mạch không hỏi"; bỏ thẻ tên tập mở đầu (N2); màn chốt nguyên văn (N4); bỏ con số nhịp 60–120 s, 40–60 s (N6), giữ cỡ chữ đã chốt; phụ đề dọc cụm 5–8 chữ cỡ 58 (08/11); "bố cục tự cân" thay "2 trạng thái" (C3); sửa chữ "đã cắt"; đọc trước 3 file; bước nhẹ 1·2; rút mô tả; thêm "Xong khi". Chi tiết các quyết định trước: `references/nhat-ky-thay-doi.md`.
+
 ## Tái bản 2 — 10/11/2026: bản luật viết lại từ bảng du-an/tai-cau-truc-2-video.md
 - Nhà luật bỏ phóng xen kẽ ở mối cắt là quy-tac-chung mục 2 (kèm lý do); khối 02, ho-so-thuong-hieu/doan-noi-bat.md, cat-highlight luật 8 trỏ về đó. quy-tac-chung mục 8 trỏ thói quen chung (hỏi, lệnh nền, mật khẩu, báo cáo), chỉ giữ phần riêng video. Bỏ câu chép ở gotchas, phan-phoi-da-kenh; sửa đường trỏ "hình của chính video" về khối 14. Viết lại 6 câu máy đo bắt nhầm ("thay cho", "THAY", tên file có ngày).
 

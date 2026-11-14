@@ -54,8 +54,8 @@ Luật kèm theo:
 Bố cục và hiệu ứng trong lòng video (thẻ, chữ to, minh hoạ, sơ đồ, người vào ô, màn chương, điểm nhấn trên người…) chọn theo nội dung,
 theo danh mục `../thiet-ke-bo-cuc/bo-cuc.md`. Tự do về **cái gì, lúc nào**; không tự do về **vị trí các thành phần cố định** ở mục 1.
 
-**Chữ nhấn trên người nói** (`pow`, kể cả thẻ tít mở): không chạm mặt, không nền tối mờ phủ hình (David 13/11/2026: "chữ dính vào mặt,
-nền đen mờ, rất mất thẩm mỹ"). Kiểu chuẩn là **nhãn dán**: mỗi dòng một nhãn đặc màu (dòng trước trắng chữ sẫm, dòng cuối cam chữ
+**Chữ nhấn trên người nói** (`pow`, kể cả thẻ tít mở): không chạm mặt, không nền tối mờ phủ hình, vì chữ dính vào mặt và nền
+đen mờ làm mất thẩm mỹ. Kiểu chuẩn là **nhãn dán**: mỗi dòng một nhãn đặc màu (dòng trước trắng chữ sẫm, dòng cuối cam chữ
 trắng), canh đáy vào đáy dải phụ đề (phụ đề nhường lúc này), khối chữ nằm ngực/bụng xa cằm. Code: `Pow` trong khuôn ghép `chuong-trinh.jsx`.
 
 ## 3. Sửa bộ nhận diện

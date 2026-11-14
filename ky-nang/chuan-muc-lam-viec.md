@@ -18,6 +18,9 @@ File này giữ các thói quen **dùng chung cho mọi skill**. Luật riêng c
 thì sáng tạo cho hợp nội dung đang làm, không dập khuôn, không lặp cách cũ. Danh mục có sẵn là công cụ, không phải khuôn.
 Luật nội dung (nguyên văn lời David, giọng David, lằn ranh) không phải khuôn — vẫn giữ.
 
+**Nội dung là của David:** David tự xây nội dung, nói tự do và có cảm xúc. AI không viết khuôn lời, không đặt kịch bản thu âm, không đề xuất
+đổi lời David; AI lo phần hình và cách trình bày (thẩm mỹ, nhịp), lấy người xem làm trung tâm. Chi tiết cho video: `san-xuat-video/quy-tac-chung.md` mục 0–1.
+
 ## 1. Đầu việc: đọc đúng phần cần
 - Đặt **Mục tiêu** và **Xong khi** cho việc (mục 5).
 - Đi theo đường: bảng chọn skill trong `AGENTS.md` → `SKILL.md` → chỉ những khối, hồ sơ mà bước đang làm cần.
@@ -26,7 +29,7 @@ Luật nội dung (nguyên văn lời David, giọng David, lằn ranh) không p
 - File dài: tìm (`grep`) rồi đọc đúng đoạn. Đã đọc trong phiên thì không đọc lại.
 
 ## 2. Duyệt 4 phần trước, duyệt rồi tự làm trọn
-**Mọi việc** (kể cả khi David chỉ gửi video/ghi âm không kèm lời, sửa skill, sửa bộ não, dựng hệ thống): trước khi tạo/sửa bất kỳ file nào, trình đủ
+**Mọi việc** (kể cả khi David chỉ gửi video/ghi âm không kèm lời, sửa skill, sửa bộ não, dựng hệ thống, thông tin trực tiếp về David: hồ sơ, màu chủ đạo, chữ ký nhận diện, mạng xã hội): trước khi tạo/sửa bất kỳ file nào, trình đủ
 **4 phần** — **Mục tiêu** (kết quả, đo bằng gì) · **Kế hoạch** (làm gì, ở đâu, chọn gì vì sao) · **Quy trình** (từng bước) · **Thực thi** (checklist nhỏ nhất,
 có mốc làm ngay) — kèm các điểm cần chốt (mỗi điểm có đề xuất đứng đầu), rồi **dừng chờ David "duyệt"**. Duyệt (hoặc sửa phần nào thì trình lại phần đó) →
 **tự làm trọn một mạch**, tự thử thật tới khi chắc dùng được, không xin phép từng bước, không dừng giữa chừng trừ tín hiệu nặng; xong báo kết quả. Phiên giao
@@ -43,7 +46,9 @@ Trong 4 phần, cách chọn từng điểm:
 - **Câu David không trả lời, "làm đi", "theo skill"** = theo mặc định của skill, phần chưa định thì theo đề xuất của Claude.
 - **Sau khi duyệt, chỉ dừng hỏi khi:** đăng / gửi / xoá trên mạng xã hội / mật khẩu (`AGENTS.md` luật 4) · tín hiệu nặng của `thu-thap-yeu-cau` (mâu thuẫn luật, khó đảo
   ngược, thiếu file / nguồn hỏng, hiểu được nhiều cách làm đổi hẳn kết quả) · sửa thông tin trực tiếp về David, màu chủ đạo, chữ ký
-  nhận diện (diễn giải + chờ "ok"). Tự học skill, giọng văn, luật kênh: `AGENTS.md` luật 2.
+  nhận diện (trình lại, chờ "duyệt").
+- **Tự học:** skill, giọng văn, luật kênh tự học liên tục theo hình mẫu có số liệu (`ky-nang/hoc-lien-tuc/SKILL.md`); phân tích tự chạy, phần sửa
+  đề xuất trong 4 phần của buổi nhìn lại tuần.
 - Phần cứng của video: `san-xuat-video/quy-tac-chung.md` mục 8.
 
 ## 3. Trong lúc làm
@@ -72,6 +77,8 @@ Trong 4 phần, cách chọn từng điểm:
   (skill, giọng văn, luật kênh, thông tin về David: đề xuất trong 4 phần, chờ "duyệt").
 - **Góp ý của David ghi đúng một chỗ:** sửa skill hoặc khối bị ảnh hưởng + một dòng nhật ký (`changelog` của skill, hoặc mục "Nhật ký").
   Chỉ luật dùng chung cho nhiều skill mới vào `co-so-tri-thuc/bo-nho/`; đã có ghi nhớ gần giống thì sửa ghi nhớ đó, không tạo cái mới.
+  `co-so-tri-thuc/david.md` chỉ ghi điều cố định đã chốt, vì mọi AI đọc nó như định hướng; ý tưởng, góp ý đang cân nhắc ghi
+  `du-an/danh-sach-y-tuong.md` (hoặc file `du-an/` phù hợp), David chốt rồi mới đưa vào `david.md` qua 4 phần.
 - **Sửa thẳng, không chồng câu:** đổi một luật (góp ý, học mẫu, quyết định mới) thì **viết lại chính câu luật đó** thành trạng thái mới
   và xoá câu cũ. Trong bản luật không ghi ngày, không "(David chốt …)", không lời kể đã thay hay thêm câu nào, không "ngoại lệ mới"; ngày, lời
   David nguyên văn và lý do ghi vào sổ quyết định (changelog / Nhật ký). Luật mới đụng luật ở nơi khác → sửa luôn nơi đó, không để hai

@@ -78,7 +78,7 @@ Cách viết + khi nào dùng từng kiểu: `bo-cuc.md`.
 Ví dụ: `{id: 'n1', type: 'nhan', start: 37.4, end: 42.1, props: {text: 'NHẤC CHÂN LÊN', at: 39.9}}` — 2–5 s, không chồng cảnh khác.
 Không che ai: `vi-tri-nhan.py` (vi-tri-khuon-mat.sh) ghi mọi người + người đang nói vào `mat.js`; nhan.jsx đặt chữ / biểu tượng vào khoảng
 trống sát người đang nói (`bam` để bám người khác, vd thẻ tên khách), co cỡ theo chỗ, khung dọc hẹp → dưới cằm.
-**Không zoom vào / zoom ra** ở mọi loại video (David 13/11/2026: không thẩm mỹ; `zoom` trong scenes cũ bị bỏ qua). Đoạn chạm lằn ranh: không dùng.
+**Không zoom vào / zoom ra trên hình quay** (`quy-tac-chung.md` mục 2; `zoom` trong scenes cũ bị bỏ qua). Đoạn chạm lằn ranh: không dùng.
 
 ## 5. Cảnh minh hoạ `illus` (`thu-vien-tai-nguyen/minh-hoa.jsx`, một bản cho mọi khung dựng)
 Hình động minh hoạ ĐÚNG Ý đang nói + **nhãn ngắn** (tên riêng / con số / cụm đắt — trích lời), dài và dày theo nội dung. Phụ đề vẫn chạy.
@@ -113,8 +113,8 @@ Khi câu nói có CẤU TRÚC, vẽ chính cấu trúc đó (mọi chữ trích 
 | xây dần từ gốc, tầng sau cần tầng trước ("bản thân → công việc → mối quan hệ") | `xay-tang` (items từ DƯỚI lên) | "muốn lên tầng sau phải qua tầng trước" |
 | một thứ giữ nguyên nhưng đổi trạng thái (nhấn vào sự đổi, không so sánh hai bên) | `doi-trang-thai` (2 items; bỏ `icon` ở item sau = giữ hình) | "từ làm thay … thành dẫn đội" |
 | việc đi từ người này sang người kia | `chuyen-giao` (items[0] bên giao, giữa = các việc `{icon, label, at}`, cuối = bên nhận) | "báo cáo tuần … xếp lịch … giao lại cho đội" |
-| người / nơi / tổ chức có thật | `anh` (ảnh giấy phép mở hoặc ảnh David gửi, khung bo góc + nhãn + nguồn) | "CCL", "Singapore", "Bác Hồ" |
-Ảnh: `kho-anh-openverse.py search/fetch` (CC0 / PD / CC BY / CC BY-SA, dùng thương mại) → `chuyen-dong/public/anh/`, ghi `credit` trên ảnh +
+| người / nơi / tổ chức có thật | `anh` (ảnh giấy phép mở hoặc ảnh David gửi, khung bo góc + nhãn + nguồn) | "CCL", "Hưng Yên", "Bác Hồ" |
+Ảnh (chỉ ảnh Việt Nam, `quy-tac-chung.md` mục 4): `kho-anh-openverse.py search/fetch` (CC0 / PD / CC BY / CC BY-SA, dùng thương mại) → `chuyen-dong/public/anh/`, ghi `credit` trên ảnh +
 `nguon-anh.txt` cho mô tả. Không có ảnh đúng (logo thương hiệu, ảnh mơ hồ) → dùng sơ đồ, không ép ảnh. Podcast dài: ưu tiên `diagram`
 hơn `illus`. Vlog (`ke-hoach.json` fx): `{"type": "diagram", "c", "at", "len", "mode", "label", "items": [{"at": giây clip, …}]}`.
 

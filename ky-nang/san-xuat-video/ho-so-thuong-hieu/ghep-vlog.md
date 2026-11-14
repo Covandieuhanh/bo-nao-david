@@ -16,6 +16,3 @@ Báo cáo: `dung-video-theo-phong-cach/references/hoc-tu-20-vlog-vn.md`.
 | `the_vong` | `chi_thu_thach` = thẻ vòng chỉ cho vlog thử thách |
 | `tach_phan_khi_dai_hon_s` | chuyến dài hơn → đề xuất tách P1/P2 |
 | `nhac_duoi_giong_LU` | nhạc thấp hơn giọng bao nhiêu LU khi có lời |
-
-## Nhật ký
-- 2026-11-04 · tạo từ luật nhieu-doan-video.md 2c–2d + học 20 vlog Việt.

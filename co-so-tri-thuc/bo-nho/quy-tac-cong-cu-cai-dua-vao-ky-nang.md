@@ -1,5 +1,5 @@
 ---
-name: quy-tac-cong-cu-cai-dua-vao-skill
+name: quy-tac-cong-cu-cai-dua-vao-ky-nang
 description: "Công cụ David đã tải/cài (vd. pyannote) là để nâng skill — giúp việc tốt hơn thì đưa thẳng vào skill dựng video, không để nằm không (2026-11-07)"
 metadata:
   node_type: memory

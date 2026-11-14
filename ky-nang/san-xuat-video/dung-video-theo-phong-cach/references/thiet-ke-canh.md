@@ -95,15 +95,15 @@ quote: 'Ngày trước là đi **xe xăng** thì … chuyển sang đi **VF6, VF
 Thẻ/chữ to tóm ý chính (trích lời) là kiểu David thích. Đã thử bỏ hết chữ, chỉ còn hình động (biểu tượng + mũi tên + ✓/✗) — David
 thấy kém đẹp hơn. Biểu tượng vẽ thay ẢNH bên trong thẻ/montage, không bỏ hết chữ nhấn.
 
-## Minh hoạ: biểu tượng vẽ (mặc định) hoặc ảnh
+## Minh hoạ: ảnh thật hoặc biểu tượng vẽ (luật ở `../../quy-tac-chung.md` mục 4)
 
-- **Mặc định: biểu tượng nét vẽ dần** (`bieu-tuong.jsx`, `<Pictogram>`): `montage` items `{icon: 'mic', label, at}`, `card job` `{icon: 'sneaker'}`.
+- **Ý trừu tượng, hoặc không có ảnh Việt Nam hợp giấy phép: biểu tượng nét vẽ dần** (`bieu-tuong.jsx`, `<Pictogram>`): `montage` items `{icon: 'mic', label, at}`, `card job` `{icon: 'sneaker'}`.
   Hình có sẵn: sneaker, tray, bricks, welding, hammer, mower, golf, megaphone, guideflag, mic, tv, briefcase, laptop, chart,
   person, people, meditate, heart, bulb, target, chat, book, write (viết ra giấy), check, star, house, building, clock, calendar, money, coins, phone,
   car, globe, pin, mountain, road, stairs, chip, gear, leaf, sun, moon. Đặt tên theo VẬT; chọn hình gần nghĩa nhất, thiếu thì
   vẽ thêm (64×64, 2–5 nét, nét tròn) rồi chụp thử.
-- **Ảnh** chỉ khi hình vẽ không thay được cái thật: địa danh/công trình cụ thể, nhân vật có thật (ảnh tư liệu có giấy phép),
-  sự kiện/tư liệu quá khứ, minh chứng xác thực, sản phẩm cụ thể — và tìm được ảnh tốt (khối 07 mục 7).
+- **Ảnh thật** (ưu tiên) khi lời nhắc một nơi, người, vật, việc cụ thể: địa danh/công trình, nhân vật có thật, sự kiện/tư liệu,
+  minh chứng, sản phẩm — chỉ ảnh chụp tại Việt Nam, có giấy phép (khối 07 mục 6).
 - Số liệu → hiệu ứng (số chạy, biểu đồ, tỉ lệ), chỉ con số người nói đưa ra.
-  Ảnh đặt trong khung bo góc; luôn có zoom chậm nhẹ (Ken Burns).
+  Ảnh đặt trong khung bo góc; luôn có zoom chậm nhẹ (Ken Burns — được, luật không zoom chỉ áp cho hình quay, `../../quy-tac-chung.md` mục 2).
 - Ý trừu tượng → sơ đồ/chữ, không ảnh stock sáo rỗng.

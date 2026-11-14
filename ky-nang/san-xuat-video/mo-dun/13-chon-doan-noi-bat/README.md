@@ -90,8 +90,8 @@ Bất kể kiểu nào:
 - **Câu kêu gọi chính có thể xuất hiện 2 lần** — lời nói một lần ở vị trí đã chọn, và **chữ nguyên văn** của nó ở màn chốt 4 s
   cuối. Không lặp lời nói hai lần trừ khi chính người nói đã nhắc lại trong video.
 - **Cú chốt cảm xúc** ở câu mạnh nhất (bằng dựng, không bằng chữ thêm): chữ to đúng cụm đắt nhất **đúng lúc nói cụm đó**
-  (ngắn để chữ đạt cỡ lớn — ≤ ~14 ký tự/dòng, vd. "MÃI MÃI / KHÔNG THỂ HIỂU"); nguồn có người nói thêm khung dồn chậm vào mặt
-  (`zoom: true`, bước 6); 1 s lặng sau câu hỏi để người xem kịp nghĩ.
+  (ngắn để chữ đạt cỡ lớn — ≤ ~14 ký tự/dòng, vd. "MÃI MÃI / KHÔNG THỂ HIỂU"); câu cú chốt đánh `zoom: true` để giữ nguyên câu, không
+  rút lặng (khung không dồn — `quy-tac-chung.md` mục 2); 1 s lặng sau câu hỏi để người xem kịp nghĩ.
 - Kiểu nào cũng phải đạt bước 5 (tự đứng được) — đổi chỗ mà câu mất nghĩa thì chọn kiểu khác.
 
 ### 5. Kiểm clip tự đứng được + lằn ranh nội dung
@@ -129,7 +129,7 @@ python3 -I $SKILL/scripts/cat-doan-noi-bat.py "$P"          # cắt bản kiểm
 → `cat/<id>.mp4` (khung như nguồn) + `cat/<id>.md` (4 câu, lời đọc nối, mốc đoạn ghép, bảng cắt, tổng thời lượng, **kiểm lời**) + `cat/<id>-map.json`
 + `cat/<id>-kiem.txt`. Thiếu `chon_y` thì script dừng. Script tự: lùi 0,15 s / thêm 0,25 s · gộp câu liền nhau (≤ 0,6 s) · cắt lặng > 0,6 s giữa câu · **chèn** 1 s lặng
 (giữ khung cuối) sau KEUGOI kết bằng "?" và sau KEUGOI cuối clip — không lấy tiếng nguồn phía sau vì câu kế có thể nói liền ·
-`zoom: true` dồn 1,0 → 1,12× · **cắt cứng** ở mỗi mối nhảy + **rút khoảng lặng ≥ 0,45 s trong câu** (`khoang-lang.py`, trừ câu
+`zoom: true` giữ nguyên câu, không dồn khung · **cắt cứng** ở mỗi mối nhảy + **rút khoảng lặng ≥ 0,45 s trong câu** (`khoang-lang.py`, trừ câu
 `zoom`) · fade âm ở mối · tiếng fltp 48 kHz stereo · **chép lời lại bản cắt** và so với `text`.
 **Kiểm lời phải khớp**: chữ thừa ở mối = lọt đuôi câu bên cạnh → thu mốc; chữ thiếu = bị cụt → nới mốc; lệch kiểu "nhé/nhá" là
 Whisper nghe khác (bỏ qua). Cắt lại tới khi sạch.

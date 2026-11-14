@@ -19,6 +19,7 @@ Skill này chỉ là **cửa vào**; không ghi luật riêng ở đây để ch
 - `../thiet-ke-bo-cuc/bo-cuc.md`, `../thiet-ke-bo-cuc/am-thanh.md`: kho đã có, để biết điều mới có trùng cái cũ không.
 - `../quy-tac-chung.md`, `../dung-video-theo-phong-cach/references/loi-thuong-gap.md`: các chặn cũ phải giữ.
 - `../thiet-ke-bo-cuc/nguon-tham-khao/`: các nguồn đã học, mỗi nguồn một file.
+- [references/nhat-ky-thay-doi.md](references/nhat-ky-thay-doi.md): sổ quyết định theo ngày + lý do (không đọc lúc làm việc).
 
 ## Xong khi
 1. Phiếu học đã được David duyệt và nằm trong `nguon-tham-khao/`.
@@ -27,6 +28,3 @@ Skill này chỉ là **cửa vào**; không ghi luật riêng ở đây để ch
 4. Ảnh kiểm ngang + dọc đã xem; phần cũ y nguyên so với ảnh trước khi thêm.
 5. File mẫu đã tải (nếu có) đã xoá khỏi thư mục tạm.
 6. Đã đẩy GitHub (`bash tu-dong-hoa/dong-bo.sh --push`) và báo David: thêm gì, đã kiểm gì, chưa kiểm gì.
-
-## Nhật ký
-- 2026-11-08 · chuẩn hoá (`du-an/chuan-hoa-ky-nang.md` bước 3): đọc trước `chuan-muc-lam-viec.md`; phiếu học là cổng hỏi duy nhất, gộp điểm cần chọn; được tải bản 720p chỉ để học, học xong xoá; "Xong khi" 6 dòng.

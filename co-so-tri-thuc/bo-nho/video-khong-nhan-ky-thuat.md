@@ -11,4 +11,4 @@ metadata:
 Không hiện nhãn tốc độ hay ghi chú kỹ thuật trên video (×1,6, ×0,5, "tua nhanh", "slow-mo", "xem chậm"). Hiệu ứng tua nhanh/phát chậm vẫn dùng, chỉ không chú thích.
 
 **Why:** người dùng thấy các ghi chú kỹ thuật thừa, chữ trên màn hình chỉ nên phục vụ nội dung.
-**How to apply:** đã ghi vào skill dung-video-theo-phong-cach (SKILL.md + nhieu-doan-video.md, template bỏ `speed`); áp cho mọi video, cả khi tự viết component mới. 
+**How to apply:** nhà của luật `ky-nang/san-xuat-video/quy-tac-chung.md` mục 4 (Hình); cách làm ở `dung-video-theo-phong-cach/references/nhieu-doan-video.md`, template bỏ `speed`. Áp cho mọi video, cả khi tự viết component mới.

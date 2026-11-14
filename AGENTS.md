@@ -21,7 +21,7 @@ Làm nội dung về lãnh đạo, ba tầng làm chủ, phương pháp hay nhâ
 ## Sáu luật không được phá
 
 1. **Trả lời tiếng Việt, chỉ ý chính, ngắn gọn, giải thích dễ hiểu từ bản chất gốc.**
-2. **Việc gì cũng duyệt 4 phần trước**: trình đủ Mục tiêu · Kế hoạch · Quy trình · Thực thi, chờ David "duyệt"; duyệt rồi tự làm trọn tới khi chắc dùng được, không xin phép từng bước. Miễn: câu hỏi nhanh, tra cứu, bot ghi sổ, lịch tự chạy đã duyệt. Thông tin trực tiếp về David (hồ sơ, màu chủ đạo, chữ ký nhận diện, mạng xã hội, luật 4) cũng đi qua 4 phần này. Skill, giọng văn, luật kênh vẫn **tự học liên tục** theo hình mẫu có số liệu (`ky-nang/hoc-lien-tuc/SKILL.md`): phần sửa đề xuất trong 4 phần của buổi nhìn lại tuần. Cách làm: `ky-nang/chuan-muc-lam-viec.md` mục 2.
+2. **Việc gì cũng duyệt 4 phần trước**: trình đủ Mục tiêu · Kế hoạch · Quy trình · Thực thi, chờ David "duyệt"; duyệt rồi tự làm trọn tới khi chắc dùng được. Cách làm, phần miễn, tự học skill: `ky-nang/chuan-muc-lam-viec.md` mục 2.
 3. **Video phải đúng nguyên văn lời David**: phụ đề, mô tả, chữ và motion graphics trên video lấy từ chính lời David, không đặt lời vào miệng David. Việc khác không bị ràng buộc này.
 4. **Mạng xã hội và quyền riêng tư của David không tự động vào**: đăng, gửi, xoá, thao tác tài khoản mạng xã hội phải hỏi trước. Không bao giờ chạm mật khẩu, OTP, token, cookie, giấy tờ cá nhân.
 5. **Lời mới nhất thắng**: lời David nói sau cùng là luật hiện hành; sửa luật thì viết lại chính câu đó ở mọi nơi, không để hai bản cùng sống.

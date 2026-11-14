@@ -24,7 +24,9 @@ PRE, POST, ZOOM = 0.15, hoso.get(_H, 'cat_lang.bien_cau_s', 0.25), 0.12
 JOIN, TAIL = hoso.get(_H, 'cat_lang.gop_cau_lien_s', 0.6), hoso.get(_H, 'cat_lang.lang_sau_cau_hoi_s', 1.0)
 HALF = 0.2 if "--tua" in sys.argv else 0.0   # nửa khoảng chuyển cảnh kiểu cũ (0,4 s mỗi mối nhảy)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import pauses
+import importlib.util as _iu
+_spec = _iu.spec_from_file_location("pauses", os.path.join(os.path.dirname(os.path.abspath(__file__)), "khoang-lang.py"))  # file tên có gạch nối (chuẩn hoá tên 14/11) nên nạp theo đường dẫn
+pauses = _iu.module_from_spec(_spec); _spec.loader.exec_module(pauses)
 args = [a for a in sys.argv[1:] if not a.startswith("--")]
 P = os.path.expanduser(args[0]); only = args[1] if len(args) > 1 else None
 CHECK = "--khong-kiem" not in sys.argv

@@ -50,7 +50,7 @@ Với mỗi `kiem-tra/cN/`:
   **khoảnh khắc đắt** (cười to, quay sang camera, lần đầu thấy thứ quan trọng, cử chỉ chỉ trỏ) và **đoạn hỏng**
   (rung nhoè, quay vào túi/sàn/tay, máy cầm ngang, che ống kính) → bỏ. Đoạn quay ngang nhưng đẹp: xoay lại
   (`transpose=2` = ngược chiều kim đồng hồ khi mặt đất nằm bên trái khung) và dùng `fit: 'blur'`.
-- Cần toạ độ để zoom/đặt chú thích: cắt khung có lưới
+- Cần toạ độ để đặt chú thích: cắt khung có lưới
   `ffmpeg -ss <t> -i c2.mp4 -frames:v 1 -vf "scale=360:640,drawgrid=w=36:h=64:t=1:c=yellow@0.6" x.png`
   (mỗi ô = 10% khung) → nhân ra px trên 1080×1920. Camera cầm tay luôn trôi → lấy 3–4 mốc và cho điểm neo
   **bám theo** (`track` của callout).
@@ -64,7 +64,7 @@ tới thứ gì mà clip khác có hình thì hình đó phải xuất hiện Đ
    - **Clip minh hoạ**: quay vật, thao tác, nơi chốn (ví dụ quay cuốn sổ) để minh hoạ một ý ở clip chính → luôn
      **tắt tiếng**, chèn dạng **trích dẫn** (khung bo góc trên nền theo phong cách, không toàn khung).
    Dấu hiệu clip minh hoạ: ít/không lời (`am-luong.txt`, transcript rỗng hoặc toàn câu bịa), quay cận vật, ngắn.
-   Không chắc → ghi rõ trong kế hoạch để David chọn.
+   Không chắc → Claude tự chọn, ghi "đã chọn X vì Y" trong kế hoạch và báo cáo cuối.
 2. **Bản đồ**: mỗi clip chính — các chỗ nhắc tới thứ NHÌN THẤY ĐƯỢC (vật, việc, nơi, người; "như hôm trước…") kèm
    mốc từ `moc-tung-tu.srt`; mỗi clip minh hoạ — đoạn nào quay gì (`half_XX.jpg`), đoạn đẹp nhất.
 3. **Ghép cặp**: mỗi clip minh hoạ gắn vào câu nói khớp nghĩa nhất (vd. "hàng ngày mình dành khoảng 15 phút để viết"
@@ -106,7 +106,7 @@ Ghi `ke-hoach-dung.md` (hoặc gộp vào ke-hoach-ghep.md): câu chuyện 1 dò
 hơn cảnh đẹp mà trống.
 
 **Giữ:**
-- **Có cảm xúc là giữ** — cười, ngạc nhiên, lần đầu thấy, thở dốc, xúc động; kể cả rung/nhoè nhẹ (cắt khung, `zoomIn` nhẹ cho đỡ rung).
+- **Có cảm xúc là giữ** — cười, ngạc nhiên, lần đầu thấy, thở dốc, xúc động; kể cả rung/nhoè nhẹ (cắt khung, phóng cỡ tĩnh nhẹ `zoomIn: [a, a, …]` cho đỡ rung).
 - **Mốc câu chuyện**: xuất phát, chặng khó, điểm đến, phần thưởng — thiếu một mốc là hẫng.
 - Lời có ý/cảm xúc — trọn câu, không cắt giữa câu.
 - Cảnh mở mỗi nơi mới 2–4 s (không lời cũng giữ) để người xem biết đang ở đâu.
@@ -160,7 +160,7 @@ Chuẩn tham khảo: kênh Jessie Luong (youtube.com/@jessieluongchannel), học
 3. **Hành trình theo thời gian:** mỗi điểm = tới nơi → gọi tên (lời + thẻ địa điểm) → xem/thử → phản ứng; đoạn đi đường không lời
    tua thành đoạn chuyển chạy nhạc (danh-sach-cat-vlog.py tự làm); giữ đoạn đùa với người trong đoàn.
 3b. **Hiệu ứng theo lời (`fx`, bắt buộc với vlog nói chuyện nhiều):** chữ to `pow` trích nguyên văn cụm đắt (≤ 4–5 chữ), `chips`
-   khi lời liệt kê, `zoom` dồn ở câu đắt / bật mí, một `action` ở câu kêu gọi làm theo. Mật độ theo nội dung (bố cục tự cân), vài
+   khi lời liệt kê, một `action` ở câu kêu gọi làm theo. Mật độ theo nội dung (bố cục tự cân), vài
    kiểu hợp nhất; chữ không che mặt, không đè phụ đề (tự canh LOW_Y). Chụp `anh-tinh.mjs` từng hiệu ứng trước render.
    **Âm lượng:** giọng mỗi clip đã cân về −20 LUFS lúc tạo dự án; nhạc theo chuẩn âm lượng chung (khối 09) — không chỉnh tay.
 4. **Kết bằng lời của chính người quay** (20–40 s): tổng kết chuyến → cảm xúc / lời khuyên → hẹn lần sau → chào; cảnh toàn đẹp
@@ -191,14 +191,14 @@ chữ trên màn hình chỉ dành cho nội dung (lời nói, cảm xúc, tên,
 ### 4. Điểm nhấn — "hộp đồ nghề" và khi nào dùng
 | Khoảnh khắc | Hiệu ứng (EDL / OVERLAYS / SFX) |
 |---|---|
-| Cười to, phản ứng mạnh | `zoom` dồn 1,15–1,22× vào mặt + `pow` chữ nhấn + pop/ding |
+| Cười to, phản ứng mạnh | `pow` chữ nhấn + pop/ding (không zoom — quy-tac-chung mục 2) |
 | **Câu đắt nhất khi có người thứ hai** (bạn đồng hành, khán giả, người dẫn, người bán…) | **cảnh phản ứng 0,8–1,5 s**: cắt sang mặt người nghe ngay SAU câu đắt (cười, gật, sững) — tiếng người nói vẫn chạy (`audio` của clip chính) — chất keo cảm xúc của Jay Shetty, Rap Việt, Have A Sip. Không có cảnh phản ứng thật thì bỏ, không lấy mặt người khác ngữ cảnh |
 | **Hội thoại 2 người** (mặc cả, phỏng vấn) | `who: 1 \| 2` ở dòng `SUB` → viền ô phụ đề theo người nói (cam / xanh, kiểu GaryVee); vị trí + cỡ phụ đề giữ chuẩn |
 | **Người nói nêu kết quả, con số, giá** | ưu tiên **bằng chứng thật** có trong clip gốc (ảnh chụp màn hình giá, hoá đơn, giấy chứng nhận, cảnh vật thật) đúng lúc nói — `cite` khung bo góc; không có thì `chips`/số chạy với đúng con số người nói |
 | **Người nói nêu giá, độ cao, số lượng** ("1,7 tỷ", "100 m", "500 bao") | `pointer`/`chips` với ĐÚNG con số người nói (học Ngô Đức Duy, Sang Vlog) |
 | Giới thiệu nhân vật | đoạn `freeze` 1,8–2 s (khung đẹp nhất, có thể lấy khung trước đó) + `nameCard` + shutter |
 | Đếm/liệt kê theo lời ("1 năm, 2 năm, 3 năm") | `chips` — mỗi dòng hiện đúng mốc từ, ding cao dần (ding1→3) |
-| Câu chốt cảm xúc | `pow` + boom, có thể kèm `zoom` |
+| Câu chốt cảm xúc | `pow` + boom |
 | Lần đầu thấy vật quan trọng | `pointer` (nhãn + mũi tên) |
 | Soi chi tiết | `callout` bám theo vật (`track` 3–4 mốc) |
 | Mọi lời nói nghe rõ | phụ đề `SUB`, từ khoá tô màu nhấn (cụm nhiều chữ được); đúng chính tả; câu không nghe rõ thì **bỏ**, không đoán. **Kiểu phụ đề = chuẩn chung `kieu-phu-de.js`** (giống hệt chế độ 1 video: hộp nền tối, đáy vùng an toàn, giãn dòng 1,28) — không tự viết kiểu riêng |
@@ -270,8 +270,8 @@ không hỏi David; mức nhạc theo khối 09.
 ### 9. Phát hành, giao + sửa theo góp ý
 Vlog đăng YouTube > 3 phút: `"ytEnd": 20` trong ke-hoach.json (màn kết YouTube 15–20 s sau thẻ nhận diện) + `chuong.py` (chương theo
 nhãn địa điểm). Chuyến > 25 phút: đề xuất tách phần P1/P2 (mỗi phần một video, thẻ kết "Hết phần 1" bằng `outro` ngắn — chữ là
-tên phần, không tự viết lời) — hỏi David trong kế hoạch ghép.
-Phát hành theo `../../quy-tac-chung.md` mục 7: `phat-hanh/phat-hanh.md` (3 tiêu đề, mô tả, mốc khung bìa) + vlog xuất **ngang** VÀ đăng YouTube (hỏi lúc đầu) → 2 thumbnail
+tên phần, không tự viết lời) — nêu trong 4 phần lúc đầu.
+Phát hành theo `../../quy-tac-chung.md` mục 7: `phat-hanh/phat-hanh.md` (3 tiêu đề, mô tả, mốc khung bìa) + vlog xuất **ngang** VÀ đăng YouTube (điểm chốt trong 4 phần) → 2 thumbnail
 `zsh $SKILL/scripts/anh-thu-nho.sh "$P" c<N>@<giây> "<DÒNG 1>" "<DÒNG 2>" 1|2` (khung cảm xúc mạnh nhất cả chuyến, mặt rõ — thường
 là cảnh đắt nhất của đoạn ghép mở đầu); chép `san-xuat-video/mo-dun/16-phan-tich-so-lieu/mau-so-lieu.md` → `$P/so-lieu.md`.
 Gửi `video-hoan-chinh.mp4` (+ thumbnail nếu có) (SendUserFile), bảng mạch chương trình theo mốc thời gian, các đoạn bỏ và lý do, chỗ tiếng bị

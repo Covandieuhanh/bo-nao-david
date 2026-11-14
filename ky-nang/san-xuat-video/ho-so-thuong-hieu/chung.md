@@ -14,8 +14,3 @@ description: "Hồ sơ tham số chung cả 4 loại video: khoá, ý nghĩa, ng
 | `thumbnail.*` | ≤ 8 chữ, ≤ 3 tầng | 10/10 video dài Việt |
 
 Các khoá trần cứng về bố cục (`toan_man_max_s`, `mat_hien_min`, `mat_do_canh_s`) không dùng: code thiếu khoá = không chặn.
-
-## Nhật ký
-- 2026-11-04 · tạo hồ sơ từ giá trị đang dùng sau đợt học 80 video.
-- 2026-11-05 · thêm `canh_minh_hoa.giu_sau_s` 1,2 s (+0,3 s/chữ vượt 3, tối đa 6 s): David thấy hình tắt ngay khi dứt lời, không kịp đọc.
-- 2026-11-05 · thêm `nhac` (tuyến → bài, mức nhạc khi nói): David thấy nhạc to + sai tông ở podcast tâm sự.

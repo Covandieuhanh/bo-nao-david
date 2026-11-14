@@ -6,7 +6,7 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 ## Luật làm việc với David
 
 - [Công cụ cài thì đưa vào skill](quy-tac-cong-cu-cai-dua-vao-ky-nang.md) — công cụ David cài (pyannote…) giúp việc tốt hơn thì tích hợp, giữ cách cũ dự phòng (07/11)
-- [Không dùng mod giao diện](quy-tac-mod-tu-chay.md) — đã gỡ hết savvy-progress, collision-guard, goal-meter, Sổ việc; chỉ giữ Telegram (13/11)
+- [Không dùng mod giao diện](quy-tac-khong-dung-mod-giao-dien.md) — đã gỡ hết savvy-progress, collision-guard, goal-meter, Sổ việc; chỉ giữ Telegram (13/11)
 - [Skill tự cải tiến, sáu luật mới](quy-tac-ky-nang-tu-cai-tien.md) — skill/giọng văn/luật kênh tự học theo số liệu, phần sửa duyệt 4 phần (sửa 14/11); lời mới nhất thắng (12/11)
 - [Phiên Telegram tự chạy](quy-tac-phien-telegram-tu-chay.md) — trình 4 phần chờ duyệt, duyệt rồi tự làm tới kết quả, ghi sổ; chỉ hỏi khi đăng/gửi, tốn tiền, đẩy đè GitHub; mọi phiên bật Remote Control, xong thì hỏi đóng (12/11, 14/11)
 - [Việc gì cũng duyệt 4 phần trước](quy-tac-duyet-ke-hoach-4-phan.md) — Mục tiêu · Kế hoạch · Quy trình · Thực thi, duyệt rồi tự làm trọn; việc tự chạy hiện thành phiên trong app, không chạy ngầm (14/11)
@@ -46,7 +46,7 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 - [Không cài HyperFrames](video-khong-cai-hyperframes.md) — giữ Remotion, chỉ học ý rồi tự viết lại (06/11)
 - [Chữ nhấn kiểu nhãn dán](video-chu-nhan-nhan-dan.md) — chữ nhấn không chạm mặt, không nền đen mờ; nhãn đặc màu ở ngực (13/11)
 - [Không ghi chú kỹ thuật trên video](video-khong-nhan-ky-thuat.md) — bỏ nhãn ×1,6 / ×0,5 / slow-mo; chữ chỉ cho nội dung
-- [Làm một mạch, góp ý thì render lại](video-khong-tu-xuat.md) — bỏ cổng 1, cổng 2; góp ý → sửa + render lại toàn bộ luôn; đăng chờ "đăng" (13/11)
+- [Làm một mạch, góp ý thì render lại](video-gop-y-render-lai.md) — bỏ cổng 1, cổng 2; góp ý → sửa + render lại toàn bộ luôn; đăng chờ "đăng" (13/11)
 - [Kiến trúc skill video](video-kien-truc-ky-nang.md) — hồ sơ tham số + 20 khối + thư viện hình + mẫu chuẩn; sửa đúng một chỗ (04/11)
 - [Làm lại video cũ](video-lam-lai-video-cu.md) — bỏ lời chào/kênh cũ, tít cũ, chữ/viền in trong hình; mỗi video một bản (08/11)
 - [Motion graphics kể chuyện](video-do-hoa-ke-chuyen.md) — mọi video có điểm nhấn nhiều loại; kể chuyện, vẽ tiếp; AI sáng tạo trong khung (07/11, 09/11)
@@ -59,6 +59,5 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 
 ## Chỉ máy Mac chính (file không lên GitHub)
 
-- [Bố cục thư mục máy này](thiet-bi-bo-cuc-thu-muc.md) — 1-nghe-nghiep, 2-ca-nhan, 9-luu-tru, video-goc, sổ xếp file (07/11)
+- [Bố cục thư mục máy này](thiet-bi-bo-cuc-thu-muc.md) — bo-nao-david (lối tắt David.Claude), 1-nghe-nghiep, 2-ca-nhan; Mac chỉ giữ việc đang làm; dọn 07/11 bỏ App notion (07/11, 11/11; gộp 14/11)
 - [Văn Phòng Shop là mẫu cho công ty](thiet-bi-van-phong-shop.md) — tách khỏi bộ não, ở ~/Documents/van-phong-shop, git riêng (14/11)
-- [Dọn Documents 07/11](thiet-bi-don-documents-2026-11-07.md) — App notion đã bỏ; mở phiên ở ~/Documents/bo-nao-david (07/11)

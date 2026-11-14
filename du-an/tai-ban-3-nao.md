@@ -75,4 +75,10 @@ Máy đo sau viết lại: `dau_ngay 3/15 · ghi_de 0/6 · trung 0/4 · sua 30/2
 - `co-so-tri-thuc/chi-dan-toan-cuc.md`: dòng 4 bỏ chữ ghi đè; giữ `@david.md`.
 - `CLAUDE.md`: sạch, không đổi (giữ `@AGENTS.md`).
 - `co-so-tri-thuc/david.md`: không sửa (David chốt).
+- **Đợt 2 (việc chéo bộ phiên điều phối giao):**
+  - T mục 0: thêm luật "Nội dung là của David" (nhà mới, nghĩa từ ghi nhớ `quy-tac-noi-dung-cua-david`; chi tiết video vẫn ở `quy-tac-chung.md` mục 0–1). `hermes/giao-cho-hermes.md` để nguyên.
+  - T mục 2: "diễn giải + chờ ok" → "trình lại, chờ duyệt"; câu tự học skill chuyển về T (gạch "Tự học"); "Mọi việc" thêm thông tin trực tiếp về David (trước nằm ở A luật 2).
+  - T mục 4: thêm luật `david.md` chỉ ghi điều cố định đã chốt, ý tưởng đang cân nhắc vào `du-an/danh-sach-y-tuong.md` (từ ghi nhớ `quy-tac-david-md-chi-dieu-co-dinh`, nay có nhà: ghi nhớ đó sửa dòng "Nhà của luật" trỏ T mục 4).
+  - A luật 2: rút còn một câu tóm + trỏ T mục 2 (phần miễn, tự học, thông tin về David chỉ ở T).
+  - **G (`chi-dan-toan-cuc.md`) chưa sửa đợt này:** file là `~/.claude/CLAUDE.md` nạp mọi phiên, phiên con không tự sửa cấu hình toàn cục theo lời phiên khác. Đề xuất để phiên điều phối / David áp: thay dòng 4 bằng `- Việc gì cũng trình đủ 4 phần (Mục tiêu · Kế hoạch · Quy trình · Thực thi), chờ David "duyệt" rồi mới làm; duyệt rồi tự làm trọn tới khi chắc dùng được. Lời David nói sau cùng là luật hiện hành. Cách làm, phần miễn: \`ky-nang/chuan-muc-lam-viec.md\` mục 2; sáu luật: \`AGENTS.md\`.` (bỏ danh sách miễn ở G, nên không cần bổ sung "bot ghi sổ").
 - Đóng sổ: bộ nao không có file sổ riêng (sổ = git + ghi nhớ), nên dòng "Tái bản 3" ghi ở đây và ở mục Sổ trên; ghi nhớ do phiên ghi-nho xử lý.

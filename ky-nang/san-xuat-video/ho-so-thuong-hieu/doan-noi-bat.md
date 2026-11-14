@@ -15,8 +15,3 @@ description: "Hồ sơ tham số loại highlight: hình mẫu chính, nhịp c�
 | `the_cuoi_s` · `man_cuoi_s` · `man_cuoi_kenh` | thẻ cuối dẫn về bản đầy đủ — chỉ dùng khi xuất dọc dài; video dọc ngắn không thẻ cuối |
 | `nhac_chu_chinh` | mức nhạc khuôn podcast đồ hoạ dọc (thấp hơn giọng ~23 dB) |
 | `phan_ung_s` | cảnh phản ứng người nghe |
-
-## Nhật ký
-- 2026-11-06 · thêm `man_cuoi_kenh`: màn hình cuối clip dọc ghi tên kênh, không logo nền tảng.
-- 2026-11-06 · thêm `nhac_chu_chinh`, `man_cuoi_s` (khuôn podcast đồ hoạ dọc, David chọn bản nhạc thấp hơn giọng khoảng 23 dB).
-- 2026-11-04 · `tit_ghim` true → false (David chốt 2 trạng thái: người + phụ đề / minh hoạ toàn màn hình).

@@ -1,5 +1,5 @@
 ---
-name: video-bo-app
+name: video-bo-ung-dung
 description: "10/11/2026 David bỏ app dựng video (localhost:8765): tốn token hơn làm trực tiếp; mọi video dựng ngay trong phiên Claude theo skill"
 metadata:
   type: project

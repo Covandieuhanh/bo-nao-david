@@ -14,6 +14,3 @@ description: "Hồ sơ tham số loại podcast: hình mẫu chính (đồ hoạ
 | `phu_hinh_muc_tieu` | hình phủ khoảng 30 % thời lượng, cân theo nội dung (podcast SKILL) |
 | `thua_canh_khi_dai_hon_s` / `thua_canh_s` | tập dài hơn → thưa cảnh hơn trong mức 30 % |
 | `the_chuong` | hiện "PHẦN n" 3 s đầu mỗi ý lớn |
-
-## Nhật ký
-- 2026-11-04 · tạo từ học 20 podcast Việt (PO-1…PO-6).

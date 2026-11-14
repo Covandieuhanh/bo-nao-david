@@ -39,10 +39,10 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
   nằm trong cả câu chuyện dẫn tới nó. Không rút video dài thành đoạn hay.
   Riêng **làm lại video cũ**: cắt màn tít + lời chào / giới thiệu kênh cũ (tên kênh cũ, nghề cũ, kinh doanh) và chữ/viền kênh cũ in
   trong hình — chỉ đúng các đoạn đó (khối 02). Lằn ranh David chọn cắt thì chỉ cắt đúng đoạn đó.
-- **Cắt chỉ cho video ≤ 3 phút và highlight**: lặng ≥ 0,45 s còn ~0,24 s + tiếng đệm "ờ/ừm" đứng riêng (cắt cứng); **không dùng hiệu ứng zoom vào / zoom ra** ở bất kỳ video nào
-  (David: không thẩm mỹ); giữ 1 s lặng sau câu hỏi kêu gọi. Clip ngắn luôn trích từ bản gốc, ưu tiên kéo người xem về video dài trên YouTube; không
+- **Cắt chỉ cho video ≤ 3 phút và highlight**: lặng ≥ 0,45 s còn ~0,24 s + tiếng đệm "ờ/ừm" đứng riêng (cắt cứng); **không dùng hiệu ứng zoom vào / zoom ra trên hình quay** (video người nói, clip gốc) ở bất kỳ video nào
+  (không thẩm mỹ) — ảnh minh hoạ trôi chậm (Ken Burns) và chuyển động bên trong motion graphic (đẩy khung) vẫn được; giữ 1 s lặng sau câu hỏi kêu gọi. Clip ngắn luôn trích từ bản gốc, ưu tiên kéo người xem về video dài trên YouTube; không
   về thì vẫn cần tương tác / nhắn tin trên Facebook, TikTok. **Vlog ghép** giữ nhịp tự nhiên.
-- Video ngắn đổi gì đó mỗi 1–3 s (nhịp chữ phụ đề, phóng, chữ to, cắt), không để 5–8 s trôi qua không đổi gì. Video dài thưa, nhịp
+- Video ngắn đổi gì đó mỗi 1–3 s (nhịp chữ phụ đề, chữ to, cảnh, cắt), không để 5–8 s trôi qua không đổi gì. Video dài thưa, nhịp
   từ nội dung.
 - Một màn = một ý, một hình, một câu. Không chồng 2 lớp phủ.
 - **Đường cảm xúc + một đỉnh** (mọi loại video): trước khi lên cảnh, viết cảm xúc từng đoạn (cảm xúc → cái gì trên màn hình gây ra
@@ -68,11 +68,13 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
   dung nhất (mục 0). Cách chọn: khối 07.
 - **Bố cục tự cân**: không con số bắt buộc về độ dài cảnh, tỷ lệ mặt / đồ hoạ, số cảnh; chọn từ `thiet-ke-bo-cuc/bo-cuc.md` theo 4 câu hỏi
   ở `thiet-ke-bo-cuc/README.md` mục 2. Ngang tự do; dọc mỗi lúc ít thứ.
+- **Tự chọn trước kế hoạch cảnh** (cả 3 skill dựng): chẩn đoán rồi chọn bố cục nền, lớp thông tin, kiểu cảnh theo
+  `thiet-ke-bo-cuc/tu-chon.md` (`chan-doan.py`); ghi "đã chọn X vì Y" vào `ke-hoach-canh.md`.
 - **Không che người nói, không đè phụ đề** (chặn cứng ở mọi template). Khung có nhiều người: graphic không đè hay làm mờ bất kỳ ai;
-  zoom, chuyển cảnh, ô thu nhỏ bám đúng người đang nói. Thu người vào ô bo góc không tính là che. Che mặt / thân trên → tự toàn màn
+  khung cắt, chuyển cảnh, ô thu nhỏ bám đúng người đang nói. Thu người vào ô bo góc không tính là che. Che mặt / thân trên → tự toàn màn
   hình: khối 05.
 - Chữ tiếng Việt đủ dấu, không chồng dòng (`VN`, chừa 0,5 em trên / 0,32 em dưới).
-- **Nhiều ảnh thật minh hoạ** (David 13/11/2026): mỗi khi lời nhắc một nơi, người, vật, việc cụ thể thì ưu tiên ảnh thật, biểu tượng vẽ
+- **Nhiều ảnh thật minh hoạ**: mỗi khi lời nhắc một nơi, người, vật, việc cụ thể thì ưu tiên ảnh thật, biểu tượng vẽ
   cho ý trừu tượng. **Ảnh chỉ được chụp tại Việt Nam, liên quan người Việt Nam** (đọc mô tả / danh mục ảnh để chắc; tìm kèm
   "Vietnam" / tên tiếng Việt). Không có ảnh Việt Nam hợp giấy phép → biểu tượng vẽ, không dùng ảnh nước ngoài. Nguồn ghi `nguon-anh.txt`.
   Số liệu luôn bằng hiệu ứng, đúng con số người nói. Kết quả/con số mà clip gốc có bằng chứng thật (ảnh giá, hoá đơn) → ưu tiên chiếu.
@@ -95,7 +97,7 @@ Ghi `<dự án>/phat-hanh/phat-hanh.md`:
 - **3 tiêu đề** (≤ 60 ký tự, một ý, gây tò mò nhưng đúng ý video) xếp theo độ mạnh; tiêu đề và thumbnail **bổ sung**, không lặp chữ.
 - **Thumbnail** chỉ khi video xuất ngang VÀ đăng YouTube; luật và mẫu ở khối 14. **Video dọc**: không ghép bìa trước video (giây đầu
   dành cho câu mở); ghi **mốc khung bìa đề xuất** (giây) để David chọn khi đăng.
-- **Video > 3 phút đăng YouTube** (hỏi "có đăng YouTube không?" lúc đầu với mọi video > 3 phút, ngang hay dọc):
+- **Video > 3 phút đăng YouTube** ("có đăng YouTube không?" là điểm cần chốt trong 4 phần lúc đầu, với mọi video > 3 phút, ngang hay dọc):
   - **Màn kết YouTube 15–20 s**: 1 video/podcast `project.ytEnd = 20` (ghi sau bước làm sạch — clean_apply viết lại du-an.js);
     vlog ghép `"ytEnd": 20` trong ke-hoach.json. Ghi vào phat-hanh.md: "gắn màn kết trong YouTube Studio: 2 video (trái/phải hoặc
     trên/dưới) + nút đăng ký (tròn giữa dưới)".
@@ -109,9 +111,9 @@ Ghi `<dự án>/phat-hanh/phat-hanh.md`:
 - Hỏi, chạy một mạch, lệnh nền, báo cáo cuối: `../chuan-muc-lam-viec.md` mục 2–4; mật khẩu: `AGENTS.md` luật 5. Riêng video: duyệt 4 phần ở đầu việc, sau đó không có điểm dừng duyệt
   giữa chừng (kể cả kế hoạch ghép vlog); báo cáo cuối thêm "đã chọn X vì Y" và tên riêng cần xác nhận.
 - Không tải video từ YouTube/TikTok để dựng (nhờ David gửi file); tải để học mẫu: `thiet-ke-bo-cuc/README.md` mục 4.
-- Chụp thử (stills) trước khi render; kiểm bản cuối theo khối 17 + 09. **Chụp có giới hạn:** chụp đúng mốc dễ lỗi (khung mới lần
+- Chụp thử (stills) trước khi render để Claude tự soát, không gửi David chốt; kiểm bản cuối theo khối 17 + 09. **Chụp có giới hạn:** chụp đúng mốc dễ lỗi (khung mới lần
   đầu, chỗ chồng lớp, mối cắt, màn chốt, thẻ cuối, chỗ David góp ý), không chụp từng cảnh; xem bố cục thì dùng ảnh thu nhỏ.
-- **Góp ý → sửa rồi render lại toàn bộ luôn** (David 13/11/2026), không chờ chữ "render"; giao lại như lần đầu (Drive + trang xem
+- **Góp ý → sửa rồi render lại toàn bộ luôn**, không chờ chữ "render"; giao lại như lần đầu (Drive + trang xem
   kết quả). Render nối tiếp, không song song. Không cổng duyệt nào trước khi xong; chỉ việc đăng mạng xã hội chờ David nói "đăng".
 - **Phần cứng không hỏi, không đổi** (`../chuan-muc-lam-viec.md` mục 2): nhận diện, dấu góc, màn chốt, thẻ cuối, nhạc theo tuyến, mức
   motion graphics, phụ đề, chuẩn âm lượng, nơi giao file; tên riêng chưa chắc → dùng cách Whisper nghe và nêu ở báo cáo.

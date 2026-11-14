@@ -15,10 +15,10 @@ description: "Khối 14 thumbnail YouTube 1280×720 cho video ngang, chỉ hình
 - `dung-video-theo-phong-cach/assets/khuon-anh-thu-nho/`
 
 ## Luật
-- Chỉ khi video xuất **ngang** VÀ đăng YouTube (hỏi lúc đầu). Video dọc: chỉ ghi mốc khung bìa đề xuất.
+- Chỉ khi video xuất **ngang** VÀ đăng YouTube (điểm chốt trong 4 phần lúc đầu). Video dọc: chỉ ghi mốc khung bìa đề xuất.
 - Mặt có cảm xúc rõ + 2–3 tầng chữ (≤ `thumbnail.max_chu`), dòng cam = từ khoá to nhất; `THUMB_NUM` số khổng lồ; `THUMB_BADGE` nhãn series/số tập; `THUMB_L3` dòng 3.
 - Chuẩn: một khuôn mặt có cảm xúc rõ (mắt mở, miệng/biểu cảm), ≤ 4 chữ, một ý. Chọn khung: xem `bang-khung-hinh.jpg`/`half_XX.jpg`, lấy
-  khoảnh khắc cảm xúc mạnh nhất. Video ngang → hỏi David một câu lúc đầu (cùng lượt `thu-thap-yeu-cau`): "Video này có đăng YouTube
+  khoảnh khắc cảm xúc mạnh nhất. Video ngang → điểm cần chốt trong 4 phần lúc đầu (`thu-thap-yeu-cau`): "Video này có đăng YouTube
   không?" — có thì làm 2 thumbnail, không thì bỏ.
 - Tiêu đề và thumbnail bổ sung, không lặp chữ. Soát bản @160 (cỡ điện thoại) — không đọc được chữ thì rút chữ.
 - **Chỉ hình của chính video đang làm:** thumbnail / ảnh bìa / khung bìa lấy từ khung của chính video này (hoặc ảnh David gửi RIÊNG

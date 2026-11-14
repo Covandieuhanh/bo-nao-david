@@ -20,3 +20,5 @@ Giữ nguyên: lời David, nhạc kênh, chữ ký nhận diện ([[video-tham-
 
 **How to apply:** chữ trên video nguyên văn ([[video-chu-nguyen-van]]). Mỗi video ghi `so-lieu.md` để kiểm bằng số thật.
 Cách học từ kênh mẫu: [[quy-tac-hoc-la-bo-sung]].
+
+Nhà của luật: `ky-nang/san-xuat-video/quy-tac-chung.md` mục 0 (Kim chỉ nam) và mục 1 (Nội dung). Ghi nhớ này giữ ngày, lời David, lý do.

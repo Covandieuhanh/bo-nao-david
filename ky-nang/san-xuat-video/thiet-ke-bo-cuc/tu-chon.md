@@ -4,7 +4,7 @@ description: "Tự chọn cách trình bày: chẩn đoán video rồi chọn b�
 
 # Tự chọn cách trình bày — chẩn đoán video rồi chọn trong kho
 
-David chốt 11/11/2026: "học rất nhiều" thì phải **dùng được**. Kho (`bo-cuc.md`, khối 07, `thu-vien-tai-nguyen/`) là thực đơn. File này là
+Học nhiều thì phải **dùng được**. Kho (`bo-cuc.md`, khối 07, `thu-vien-tai-nguyen/`) là thực đơn. File này là
 **cách gọi món**: từ dấu hiệu của video ra bố cục, lớp thông tin, kiểu cảnh. Claude tự chọn, không hỏi, ghi "đã chọn X vì Y" vào
 `ke-hoach-canh.md` (mục **Chẩn đoán**) để David sửa ở bản cuối.
 
@@ -33,7 +33,7 @@ màn hình điện thoại / laptop, bảng, sản phẩm, cảnh); (3) quanh ch
 | Gốc ngang, xuất dọc (chỉ khi David nói rõ) | reframe bám người nói | khối 04 |
 | Chỉ có tiếng | sân khấu podcast | `dung-podcast` |
 
-**Không dùng "cắt khung 16:9 rồi phóng" để bỏ rác** — rác vẫn còn quanh chủ thể (lỗi 11/11/2026). Cắt-phóng chỉ để nắn mép khung.
+**Không dùng "cắt khung 16:9 rồi phóng" để bỏ rác** — rác vẫn còn quanh chủ thể (khối 04). Cắt-phóng chỉ để nắn mép khung.
 
 ## Bước 3 — Chọn lớp thông tin (nội dung → người xem theo dõi bằng gì)
 
@@ -68,7 +68,7 @@ con số, `at` = lúc nói. Mỗi phút ~2–4 ý. **Lằn ranh** (số tiền, 
 | việc đi từ người này sang người kia | `diagram chuyen-giao` | toàn màn hình |
 | người / nơi / tổ chức có thật | `diagram anh` | cạnh hoặc toàn |
 | đổi ý ("không phải A, mà là B") | `the-canh` có gạch chữ | cạnh chủ thể |
-| câu đắt, cú chốt, đỉnh cảm xúc | `nhan` zoom / làm tối / chữ cạnh mặt · `the-canh` chữ to | trên người / cạnh |
+| câu đắt, cú chốt, đỉnh cảm xúc | `nhan` làm tối / chữ cạnh mặt · `the-canh` chữ to | trên người / cạnh |
 | giải thích dài vẫn cần thấy người | `o-nguoi` (người vào ô) | — |
 | ý riêng không kiểu nào khớp | cảnh tự vẽ `ve` (khối 07 mục 1) | tuỳ |
 

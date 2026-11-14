@@ -103,7 +103,9 @@ def sub_lines(p):
 
 TUA = '--tua' in sys.argv                            # kiểu cũ: đoạn jump 0,4 s có chip ⏩ + thanh tập gốc
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import pauses
+import importlib.util as _iu
+_spec = _iu.spec_from_file_location("pauses", os.path.join(os.path.dirname(os.path.abspath(__file__)), "khoang-lang.py"))  # file tên có gạch nối (chuẩn hoá tên 14/11) nên nạp theo đường dẫn
+pauses = _iu.module_from_spec(_spec); _spec.loader.exec_module(pauses)
 raw, subs, tones, acc, nseg = [], [], [], 0.0, 0
 fr = lambda s: round(s * 30) / 30
 for i, p in enumerate(pieces):

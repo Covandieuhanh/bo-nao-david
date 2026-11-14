@@ -34,7 +34,7 @@ Học càng nhiều càng có nhiều tài nguyên để chọn; khi dựng thì
 - Chữ trên màn hình là **nguyên văn lời David** (`quy-tac-chung.md` mục 1): không tự rút tít, không bỏ chữ làm đổi nghĩa.
 - Phụ đề luôn chạy. Không ghi chú kỹ thuật trên hình.
 - Chuẩn âm lượng chung (khối 09).
-- Mấy video đầu dùng bố cục mới: chụp vài khung cho David xem trước khi render (`kiem-tra/anh-tinh.jpg`).
+- Mấy video đầu dùng bố cục mới: chụp đủ lớp để Claude tự soát kỹ trước khi render (`kiem-tra/anh-tinh.jpg`).
 
 ## 4. Quy trình học một video mẫu mới
 

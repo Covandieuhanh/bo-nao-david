@@ -6,13 +6,13 @@ description: "Khối 00 bộ lọc nội dung: lọc tài nguyên theo hồ sơ 
 
 **Dùng trong:** cả 4 loại, và mọi tài nguyên David đưa (video, file ghi âm, bài viết).
 **Đầu vào:** tài nguyên David đưa — thường KHÔNG kèm yêu cầu · hồ sơ `~/.claude/david.md` · hồ sơ kênh `../../ho-so-thuong-hieu/kenh.json` · sổ `~/Movies/_danh-muc-noi-dung/danh-muc-noi-dung.md` · **kho 100 video `du-an/ke-hoach-noi-dung-100-video.md`** (kế hoạch nội dung, repo bộ não)
-**Đầu ra:** phiếu lọc (ghi vào dự án, báo kèm kết quả cuối, không chờ duyệt) · một dòng trong sổ danh mục
+**Đầu ra:** phiếu lọc (ghi vào dự án; là nguồn của 4 phần gọn David duyệt, không có cổng duyệt riêng) · một dòng trong sổ danh mục
 **Hình mẫu:** Hieu Nguyen (2 mảng lặp lại 50/50 tập), Alex Hormozi ("được biết đến vì một điều"), Justin Welsh (content pillars), Gary Vaynerchuk (một lần nói → nhiều bài).
 **Sửa khối này → chạy lại:** không có code; đổi luật kênh → sửa `ho-so-thuong-hieu/kenh.json`.
 
 ## Nguyên tắc
 - **David chỉ đưa tài nguyên.** Claude tự phân tích, tự chọn làm gì · làm thế nào · đăng kênh nào · lúc nào (`chuan-muc-lam-viec.md`
-  mục 2), ghi vào phiếu lọc để báo rồi làm luôn, không chờ. David nói tự do, bộc phát — không đòi David theo khuôn.
+  mục 2), ghi vào phiếu lọc; 4 phần gọn lấy từ phiếu (`phan-phoi-da-kenh` bước 0), David duyệt rồi làm một mạch. David nói tự do, bộc phát — không đòi David theo khuôn.
 - **Không làm gì không có mục tiêu**: mỗi bài phải kéo tương tác trên đúng nền tảng đó → chuyển hoá → nhắn "gỡ". Nội dung "cho vui"
   chỉ được làm khi nó xây nhân hiệu trainer.
 - **Không khung thời lượng cố định**: dạng + độ dài theo chính nội dung; có khi giữ nguyên bản gốc.

@@ -17,3 +17,5 @@ Lời kết chung chung không nhắc tên kênh ("hẹn gặp lại các bạn�
 **Why:** kênh hiện tại là "David Trần - Trainer định hướng"; mọi dấu vết kênh cũ và hướng kinh doanh phải biến mất khỏi video.
 
 **How to apply:** đây là ngoại lệ của luật "video dài không cắt" ([[video-dai-khong-cat]]): chỉ cắt đúng các đoạn kể trên. Cách làm ghi trong `mo-dun/02-lam-sach` và `dung-video-theo-phong-cach/references/loi-thuong-gap.md`. Dự án nằm ở `~/Movies/tap-{thi-lai-dai-hoc, su-tap-trung, cuoc-song-giau-co, dung-mua-thu-ban-thich}`. Liên quan [[video-bo-cuc-tu-can]].
+
+Nhà của luật: `ky-nang/san-xuat-video/mo-dun/02-lam-sach/README.md` ("Làm lại video cũ"). Ghi nhớ này giữ ngày, lời David, lý do.

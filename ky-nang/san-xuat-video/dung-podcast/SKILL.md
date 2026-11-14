@@ -15,11 +15,9 @@ Dùng chung template Remotion và gần hết script của skill gốc — `$BAS
 Luật nội dung của skill gốc vẫn áp dụng. Lệnh > 2 phút chạy nền. Giữ task list theo các bước.
 
 **Không hỏi** (`../../chuan-muc-lam-viec.md` mục 2): chữ thumbnail, tên các phần (TOPICS), nền lắng hay lưới tối Claude tự chọn
-theo khối; chụp thử mọi cảnh mới để Claude tự soát (khối 17) rồi (sau khi David duyệt 4 phần, `../../chuan-muc-lam-viec.md` mục 2) chạy một mạch tới bản cuối; giữa chừng chỉ dừng khi gặp tín hiệu nặng
-(`thu-thap-yeu-cau`). Báo cáo cuối liệt kê "đã chọn X vì Y" để David sửa ở bản cuối.
+theo khối. Sau khi David duyệt 4 phần, chạy một mạch tới bản cuối: chụp thử mọi cảnh mới để Claude
+tự soát (khối 17) rồi render, không chờ David chốt; giữa chừng chỉ dừng khi gặp tín hiệu nặng (`thu-thap-yeu-cau`). Báo cáo cuối liệt kê "đã chọn X vì Y" để David sửa ở bản cuối.
 
-
-**Tự chọn cách trình bày:** trước kịch bản cảnh, chẩn đoán + chọn theo `../thiet-ke-bo-cuc/tu-chon.md` (`dung-video-theo-phong-cach/scripts/chan-doan.py`): lớp thông tin, kiểu cảnh theo dạng câu nói; ghi "đã chọn X vì Y" vào kế hoạch cảnh.
 
 ## Luật riêng (kiểm lại trước khi giao)
 
@@ -60,12 +58,12 @@ Luật chung video ở `../quy-tac-chung.md` (chữ nguyên văn, không cắt v
 | # | Bước | Khối |
 |---|---|---|
 | 1 | Môi trường + dự án (mục dưới) · khung xuất *(bước nhẹ)* | [01](../mo-dun/01-phien-am/README.md) · [04](../mo-dun/04-khung-hinh/README.md) |
-| 2 | Chép lời + phụ đề *(chép lời là bước nhẹ)* → **hỏi một lần** | [01](../mo-dun/01-phien-am/README.md) · [03](../mo-dun/03-phu-de/README.md) |
+| 2 | Chép lời + phụ đề *(chép lời là bước nhẹ)* | [01](../mo-dun/01-phien-am/README.md) · [03](../mo-dun/03-phu-de/README.md) |
 | 2b | Thumbnail (ngang + YouTube): mẫu không mặt = nền hoạ tiết + một hình theo ý của tập + tiêu đề ngắn + "DAVID · PODCAST", không lộ các bước giải pháp | [14](../mo-dun/14-anh-thu-nho/README.md) |
 | 3 | Ai đang nói · sóng âm · sân khấu, TOPICS, PHẦN n, nền lắng | [12](../mo-dun/12-san-khau-podcast/README.md) |
 | 4 | Phong cách · **tuyến nội dung → nhạc nền** (`project.tuyen`, bắt buộc) | [10](../mo-dun/10-nhan-dien-thuong-hieu/README.md) · [09](../mo-dun/09-am-thanh/README.md) |
-| 5–6 | Cảnh minh hoạ (bố cục tự cân) · màn chốt nguyên văn | [07](../mo-dun/07-canh-minh-hoa/README.md) · [08](../mo-dun/08-phan-ket/README.md) |
-| 7–9 | Chụp thử → **David chốt** → render → kiểm (mục dưới) | [17](../mo-dun/17-kiem-soat-chat-luong/README.md) · [09](../mo-dun/09-am-thanh/README.md) |
+| 5–6 | Chẩn đoán → tự chọn lớp thông tin, kiểu cảnh ([tu-chon](../thiet-ke-bo-cuc/tu-chon.md)) · cảnh minh hoạ (bố cục tự cân) · màn chốt nguyên văn | [07](../mo-dun/07-canh-minh-hoa/README.md) · [08](../mo-dun/08-phan-ket/README.md) |
+| 7–9 | Chụp thử → Claude tự soát → render → kiểm (mục dưới) | [17](../mo-dun/17-kiem-soat-chat-luong/README.md) · [09](../mo-dun/09-am-thanh/README.md) |
 | 10 | Phát hành: teaser > 10 phút, chương, màn kết, số liệu | [15](../mo-dun/15-xuat-ban/README.md) · [16](../mo-dun/16-phan-tich-so-lieu/README.md) |
 
 Bước đánh dấu *(bước nhẹ)*: nhắc đổi mô hình rẻ hơn theo `chuan-muc-lam-viec.md` mục 3.
@@ -91,18 +89,17 @@ Sửa TỪNG dòng theo khối 03: chính tả, câu bịa ("Hãy subscribe…" 
 Không có mẫu → phong cách mặc định của template. Có video/ảnh mẫu → khối 10.
 
 ### 6. Minh hoạ
-Theo khối 07: **mặc định biểu tượng vẽ** hoặc sơ đồ (`icon` trong `montage`/`card job`, xem `$BASE/references/thiet-ke-canh.md`); ảnh chỉ khi hình
-vẽ không thay được cái thật (địa danh, nhân vật có thật, tư liệu, minh chứng, sản phẩm cụ thể) và tìm được ảnh tốt
-(`$BASE/scripts/kho-anh-openverse.py`). Số liệu bằng hiệu ứng, đúng con số người nói. David nói "không dùng ảnh" / "thêm ảnh" thì theo đó.
+Theo khối 07 + `../quy-tac-chung.md` mục 4: lời nhắc nơi, người, vật, việc cụ thể → **ảnh thật** (chỉ ảnh Việt Nam, `$BASE/scripts/kho-anh-openverse.py`);
+ý trừu tượng → **biểu tượng vẽ** hoặc sơ đồ (`icon` trong `montage`/`card job`, xem `$BASE/references/thiet-ke-canh.md`). Số liệu bằng hiệu ứng, đúng con số người nói. David nói "không dùng ảnh" / "thêm ảnh" thì theo đó.
 
-### 7. Chụp thử (trước khi render — gửi David chốt)
+### 7. Chụp thử (trước khi render — Claude tự soát)
 ```bash
 zsh $SKILL/scripts/anh-tinh-podcast.sh "$P" nen@<giây> <id>@<giây> ...     # sân khấu + cảnh + phụ đề cùng mốc → kiem-tra/anh-tinh.jpg
 ```
 Chụp mỗi cảnh ở khoảnh khắc đầy nhất + vài mốc chỉ có sân khấu (`nen@…`) ở các TOPICS và lúc đổi người nói. Kiểm: chữ tràn, dấu bị
 cắt, hai dòng chữ chồng nhau hoặc chạm khung ảnh/biểu tượng (chữ to sau dòng khác chừa `aboveGap`), màu sóng âm đúng người nói, ý
 đang bàn khớp lời, lớp phủ không chạm sóng âm/vòng micro (ngang), thanh thời gian và phụ đề không bị che, không gì lọt vùng đỏ.
-Sửa tới khi sạch rồi gửi David chốt.
+Sửa tới khi sạch rồi render luôn.
 
 ### 8. Render + xuất
 ```bash
@@ -120,7 +117,7 @@ thời lượng = `am-thanh.wav` (+ thẻ cuối nếu có).
 
 ### 10. Phát hành + giao
 Phát hành theo `../quy-tac-chung.md` mục 7: `phat-hanh/phat-hanh.md` (3 tiêu đề, mô tả, mốc khung bìa); xuất ngang VÀ đăng YouTube → 2 thumbnail
-`THUMB_HINH=<hình> THUMB_TAG=PODCAST zsh $BASE/scripts/anh-thu-nho.sh "$P" - "<DÒNG 1>" "<DÒNG 2>" 1|2` (khối 14, chữ đã chốt ở lần hỏi đầu).
+`THUMB_HINH=<hình> THUMB_TAG=PODCAST zsh $BASE/scripts/anh-thu-nho.sh "$P" - "<DÒNG 1>" "<DÒNG 2>" 1|2` (khối 14, chữ Claude tự chọn).
 Chép `san-xuat-video/mo-dun/16-phan-tich-so-lieu/mau-so-lieu.md` → `$P/so-lieu.md`.
 Gửi `video-hoan-chinh.mp4` (+ thumbnail nếu có) (SendUserFile). Báo cáo tiếng Việt: người nói (tên/vai, tỉ lệ, chỗ không chắc), danh sách
 cảnh + TOPICS theo mốc, `nguon-anh.txt` nếu có ảnh, đã kiểm gì / chưa kiểm gì, tên riêng cần xác nhận chính tả.
@@ -168,6 +165,3 @@ cảnh + TOPICS theo mốc, `nguon-anh.txt` nếu có ảnh, đã kiểm gì / c
 - `references/loi-thuong-gap.md` — lỗi riêng podcast (mốc Whisper ở chỗ đổi người, nhận giọng, thời gian render).
 - `$BASE/references/thiet-ke-canh.md` — mọi loại cảnh có sẵn + props (dùng chung).
 - `san-xuat-video/mo-dun/16-phan-tich-so-lieu/mau-so-lieu.md` — mẫu số liệu sau đăng.
-
-## Nhật ký
-- 2026-11-08 · chuẩn hoá (`du-an/chuan-hoa-ky-nang.md` bước 3): hỏi một lần đầu + giữ cổng chụp thử trước render (06/11) thay "chạy một mạch không hỏi"; bỏ thẻ tên tập mở đầu (N2); màn chốt nguyên văn (N4); bỏ con số nhịp 60–120 s, 40–60 s (N6), giữ cỡ chữ đã chốt; phụ đề dọc cụm 5–8 chữ cỡ 58 (08/11); "bố cục tự cân" thay "2 trạng thái" (C3); sửa chữ "đã cắt"; đọc trước 3 file; bước nhẹ 1·2; rút mô tả; thêm "Xong khi". Chi tiết các quyết định trước: `references/nhat-ky-thay-doi.md`.

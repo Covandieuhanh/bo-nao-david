@@ -11,7 +11,7 @@ máy khác chỉ cần chép cả thư mục `san-xuat-video/`. Ở `~/.claude/s
 | Skill | Dùng khi | Ra gì |
 |---|---|---|
 | `dung-video-theo-phong-cach/` — **1 video** | Gửi 1 video nói trước camera, nói "làm video này" | Giữ nguyên hình, phủ hiệu ứng + phụ đề |
-| `dung-video-theo-phong-cach/` — **ghép nhiều video** | Gửi từ 2 clip trở lên, nói "ghép thành 1 video" | Tự sắp mạch, trích dẫn clip minh hoạ; **duyệt kế hoạch trước khi render** |
+| `dung-video-theo-phong-cach/` — **ghép nhiều video** | Gửi từ 2 clip trở lên, nói "ghép thành 1 video" | Tự sắp mạch, trích dẫn clip minh hoạ; tự soát kế hoạch rồi render |
 | `dung-podcast/` — **podcast** | Gửi file tiếng/video và nói "podcast" | Toàn bộ khung là đồ hoạ chuyển động, thanh thời gian |
 | `cat-doan-noi-bat/` — **cắt highlight** | Gửi 1 video dài (YouTube, podcast đã dựng, hoặc thư mục dự án của nó), nói "cắt highlight" hoặc `/cat-doan-noi-bat` | Các clip **dọc 9:16** tự chọn ý, mỗi clip một ý trọn, **cùng loại với video gốc**; thẻ tít nguyên văn, phụ đề cụm 5–8 chữ, cắt cứng; kèm lịch đăng, mô tả + bình luận ghim |
 | `phan-tich-video-mau/` — **học mẫu** | Gửi video mẫu, nói "học cái này" | Phiếu học để duyệt, rồi thêm vào kho trình bày |
@@ -30,7 +30,7 @@ san-xuat-video/
 ├── nguyen-tac.md      7 điểm chung của 80 video thành công (hiếm đổi)
 ├── nhan-dien-thuong-hieu.md       đầu vào → chọn loại video (1 chỗ duy nhất)
 ├── quy-tac-chung.md      luật nền: kim chỉ nam, nội dung, nhịp, phụ đề, hình, lời kêu gọi, phát hành
-├── ho-so-thuong-hieu/             HÌNH MẪU → THAM SỐ cho từng loại (.json đọc bằng máy + .md giải thích + nhật ký)  ← đổi nhiều nhất
+├── ho-so-thuong-hieu/             HÌNH MẪU → THAM SỐ cho từng loại (.json đọc bằng máy + .md giải thích; sổ `nhat-ky-thay-doi.md`)  ← đổi nhiều nhất
 ├── mo-dun/              các khối 00–20: mỗi khối = README (luật, đầu vào/ra, sửa thì chạy lại gì) + code của nó
 ├── thu-vien-tai-nguyen/     MỘT bộ thành phần hình cho cả 4 loại + bộ nhận diện chung (nhan-dien-chung.md)
 ├── thiet-ke-bo-cuc/         khung gốc để học video mẫu + kho bố cục, âm thanh, nguồn học
@@ -44,7 +44,7 @@ san-xuat-video/
 
 | Anh muốn | Sửa ở đâu |
 |---|---|
-| Học thêm hình mẫu → đổi một con số / một lựa chọn | `ho-so-thuong-hieu/<loai>.json` (+ 1 dòng nhật ký trong `.md`) |
+| Học thêm hình mẫu → đổi một con số / một lựa chọn | `ho-so-thuong-hieu/<loai>.json` (+ 1 dòng sổ `ho-so-thuong-hieu/nhat-ky-thay-doi.md`) |
 | Đổi / thêm cách làm (kiểu phụ đề, kiểu cảnh minh hoạ, màn kết…) | đúng 1 khối (`mo-dun/NN-…`) — phần hình nằm ở `thu-vien-tai-nguyen/`, cả 4 loại tự dùng |
 | Đổi luật dùng chung | `quy-tac-chung.md` (một luật một nhà, sửa thẳng câu cũ) |
 | Thêm loại video mới | 1 công thức (skill) + 1 hồ sơ, nhặt lại khối có sẵn |

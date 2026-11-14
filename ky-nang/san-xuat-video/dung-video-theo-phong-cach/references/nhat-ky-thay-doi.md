@@ -4,6 +4,16 @@ description: "Sổ thay đổi skill dựng video theo phong cách: quyết đ�
 
 # Sổ thay đổi — dung-video-theo-phong-cach (quyết định của người dùng + lý do)
 
+## 14/11/2026: phạm vi luật không zoom
+- David trả lời câu hỏi tái bản 3, chọn đề xuất "Chỉ cấm hình quay": luật "không zoom vào / zoom ra" chỉ áp cho hình quay (video người nói); ảnh minh hoạ (Ken Burns trôi chậm) và chuyển động bên trong motion graphic (đẩy khung) vẫn được. Lý do: luật 13/11 nhắm hiệu ứng zoom trên người nói, không nhắm đồ hoạ. Nhà luật: quy-tac-chung mục 2; khối 07 mục 4, thiet-ke-canh trỏ về. Xoá dòng gotchas "chụp thử nhan không thấy zoom" (nhan.jsx đã bỏ zoom).
+
+## Tái bản 3 — 14/11/2026: bản luật viết lại từ bảng du-an/tai-ban-3-video.md
+- Bỏ dấu ngày, lời kể, chỗ ngược luật khỏi bản luật; mục "Nhật ký" cuối SKILL.md chuyển về đây:
+- 2026-11-11 · David: "học rất nhiều… các skill phải tự động chọn ra được cách nào phù hợp với nội dung"; video cuộc gọi mất 4–5 giờ, "tập trung vào điện thoại" mà vẫn còn rác. Thêm bước 6b chẩn đoán → tự chọn (`thiet-ke-bo-cuc/tu-chon.md`, `chan-doan.py`), khung chủ thể (`khung-chu-the.py`), bảng ghi chú chạy (`GHI_CHU`), mục Nhịp làm; sửa chuẩn âm, khoá render, soát cảnh chặn kiểu lỗi khung ngang + màn trống đầu cảnh.
+- 2026-11-11 · David: "mục tiêu cuối cùng của tôi luôn là đưa tài nguyên vào và chờ kết quả là xong". Bỏ "hỏi một lần ở đầu"; khung xuất chỉ đổi khi David nói rõ khung (Claude đã tự đổi ngang → dọc vì "tập trung vào khu vực điện thoại").
+- 2026-11-09 · David chốt: motion graphic kể chuyện, tự do sáng tạo (luật 1 mới, khối 07); thêm cảnh tự vẽ `ve` + thư mục `chuyen-dong/src/rieng/` + mạch hình `thu-vien/mach.js`; chuyển động dùng chung `thu-vien/chuyen-dong.js`.
+- 2026-11-08 · chuẩn hoá (`du-an/chuan-hoa-ky-nang.md` bước 3): hỏi một lần đầu thay "chạy một mạch không hỏi" (N1); bỏ con số cố định (N6), thẻ tít mặc định (N2), chữ "2 trạng thái" (C3), ví dụ cũ hướng sức khoẻ; màn chốt nguyên văn, không tự đặt câu kêu gọi (N4); đọc trước 3 file, luật chung trỏ `quy-tac-chung`; đánh dấu bước nhẹ 1·2·5; rút mô tả; thêm "Xong khi"; video mẫu chỉ có link → được tải 720p chỉ để học, học xong xoá (khớp `thiet-ke-bo-cuc`). Chi tiết các quyết định trước: `references/nhat-ky-thay-doi.md`.
+
 
 ## 11/11/2026: tự chọn theo nội dung + khung chủ thể + bảng ghi chú chạy
 - David: "cái quan trọng nhất là học rất nhiều, tôi cần các skill phải tự động chọn ra được cách nào phù hợp với nội dung của video"; video cuộc gọi mất 4–5 giờ, "tập trung vào điện thoại" mà vẫn còn rác, video nhiều nội dung cần hiện nhiều thông tin hơn. Thêm `thiet-ke-bo-cuc/tu-chon.md` + `chan-doan.py` (bước 6b), `khung-chu-the.py` (+ `--thu`), `bang-ghi-chu.jsx` (`GHI_CHU`), `khung.js`; sửa `chuan-am.py`, khoá render, `soat-canh.mjs`, `xem-truoc.mjs`, `vi-tri-nhan.py`; mục Nhịp làm; bảng lỗi ở gotchas.

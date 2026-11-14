@@ -53,7 +53,7 @@ Mặt nằm thấp (tâm > ~900 px hoặc cằm lọt dải phụ đề) → đ�
 hở là chính hình đó làm mờ. Toàn bảng 0 → "không cần nâng", bỏ qua. Xem 1–2 khung sau khi nung (mặt không chạm đỉnh vùng an
 toàn). Chạy lại sau khi sửa cuts → tự tính từ bản chưa nâng. Phải chạy TRƯỚC bước hiểu video (khối 01) và `vi-tri-khuon-mat.sh` (mặt dò lại trên bản đã nâng).
 
-## Khung chủ thể (tập trung một vùng, bỏ rác — David chốt 11/11/2026)
+## Khung chủ thể (tập trung một vùng, bỏ rác)
 
 Chủ thể cần xem (màn hình điện thoại / laptop, bảng, vật, người nhỏ giữa khung rộng) chiếm phần nhỏ khung hoặc quanh có rác → tách
 chủ thể thành **khung bo góc viền cam trên nền kênh**; phần khung còn lại cho phụ đề, bảng ghi chú chạy, cảnh cạnh chủ thể. Khung xuất
@@ -64,7 +64,7 @@ python3 -I $SKILL/scripts/khung-chu-the.py "$P" luoi [giây …]   # → kiem-tr
 python3 -I $SKILL/scripts/khung-chu-the.py "$P" apply           # → video-goc.mp4 mới (bản trước: video-goc-truoc-khung.mp4) + chuyen-dong/src/khung.js
 ```
 Máy quay dịch → thêm vùng theo mốc giây (cùng w, h). `vi-tri-nhan.py` đọc `khung.js`: "người" = khung chủ thể (không cần Vision dò mặt
-trong màn hình). **Không cắt-phóng cả khung để bỏ rác** (lỗi 11/11/2026: rác vẫn còn quanh chủ thể). Không tạo liên kết cứng giữa bản
+trong màn hình). **Không cắt-phóng cả khung để bỏ rác** vì rác vẫn còn quanh chủ thể. Không tạo liên kết cứng giữa bản
 nguồn và `video-goc.mp4` (ffmpeg ghi đè chính nguồn — script đã chặn).
 
 ## Khung xuất
