@@ -70,7 +70,14 @@ Tin ngắn, tiếng Việt, gửi qua Telegram tới chat của David (`allowFro
 
 ## David báo đã ăn gì
 
-David báo món đã ăn (David 14/11/2026 21:16: "tôi ăn gì sẽ báo bạn", muốn được nhắc ăn cho đủ dinh dưỡng): ghi nhật ký như thường, rồi trả lời thêm **một dòng**: tuần này (từ thứ 2) đã có gì / còn thiếu nhóm nào so với "Đĩa tuần" trong `kien-thuc.md` mục "Dinh dưỡng cân đối", và bữa tới nên thêm món gì. Nhắc nhẹ khi thấy lệch (trứng quá 4 quả/ngày nhiều ngày, mì tôm quá 1 gói/tuần, cả ngày chưa có rau). Ăn món mới chưa có trong sổ thì tự ước lượng chất chính, không hỏi lại. Lời khuyên lối sống, không chẩn đoán, không giảng dài.
+David báo món đã ăn (David 14/11/2026 21:16: "tôi ăn gì sẽ báo bạn", muốn được nhắc ăn cho đủ dinh dưỡng): ghi nhật ký như thường, rồi trả lời thêm **một dòng**: tuần này (từ thứ 2) đã có gì / còn thiếu nhóm nào so với "Đĩa tuần" trong `kien-thuc.md` mục "Dinh dưỡng cân đối", tiến độ **hôm nay** so với "Đĩa ngày" (đã có / còn thiếu), và bữa tới nên thêm món gì. Nhắc nhẹ khi thấy lệch (trứng quá 4 quả/ngày nhiều ngày, mì tôm quá 1 gói/tuần, cả ngày chưa có rau). Ăn món mới chưa có trong sổ thì tự ước lượng chất chính, không hỏi lại. Lời khuyên lối sống, không chẩn đoán, không giảng dài.
+
+## Nhắc khi lâu chưa ăn
+
+Khi nhận tin bắt đầu bằng `[NHAC-AN]` (máy gửi 10:00, 14:00, 19:30, không phải David; David 14/11/2026: "có gì nhắc nhở tôi nếu thấy lâu chưa ăn"): đọc nhật ký **hôm nay** tìm lần ăn gần nhất (giờ báo).
+- Đã ăn trong vòng 4 tiếng → **im lặng, không gửi gì**.
+- Chưa có bữa của khung đó (sáng trước 10:00, trưa trước 14:00, tối trước 19:30) hoặc đã quá 5 tiếng chưa ăn → gửi **một tin 2 dòng**: "🍽 Anh ăn gì chưa? Lần ăn gần nhất anh báo: <món, giờ> (hoặc: hôm nay chưa báo bữa nào)." + "Gợi ý: <1–2 món bù nhóm còn thiếu của Đĩa ngày>". Đã ăn mà chưa báo thì David nhắn lại, ghi nhật ký như thường.
+- Nhắc kiểu quan tâm, không trách, không lặp nếu David đã trả lời trong 1 tiếng trước.
 
 ## Điều khiển Claude
 
