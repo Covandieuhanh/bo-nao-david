@@ -1,6 +1,6 @@
 #!/bin/bash
 # Canh bot Sổ nhớ: launchd chạy script này suốt (KeepAlive), mỗi phút kiểm một vòng.
-# Tự sửa: phiên chết · thừa phiên · máy chủ Telegram chết hoặc mất kết nối mạng · phiên treo · hộp thoại chặn · đổi tài khoản ·
+# Tự sửa: phiên chết · thừa phiên · máy chủ Telegram chết hoặc mất kết nối mạng · phiên treo · hộp thoại chặn · đổi tài khoản (cả đổi trên app: mở sẵn đăng nhập Terminal) ·
 #         làm mới ngữ cảnh 4h sáng. Việc theo giờ: tóm tắt 7h, nhắc đúng giờ (gửi thẳng, không cần Claude), sao lưu Drive 3h.
 # Báo David qua Telegram (gửi thẳng) khi: chưa đăng nhập Claude · hết hạn mức · mở lại liên tục · mất mạng lâu.
 export PATH="$HOME/.bun/bin:$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
@@ -32,6 +32,8 @@ sid() { screen -ls 2>/dev/null | awk -v t=".$TEN" '$1 ~ t"$" {print $1; exit}'; 
 dang_chay() { [ -n "$(sid)" ]; }
 may_chu() { pgrep -fx ".*/bun server\.ts" | head -1; }  # khớp đúng tiến trình, không khớp lệnh khác có chữ "bun server.ts"
 tai_khoan() { claude auth status 2>/dev/null | python3 -c "import json,sys;d=json.load(sys.stdin);print(d.get('email','') if d.get('loggedIn') else '')" 2>/dev/null; }
+tai_khoan_app() { # tài khoản app Claude trên Mac đang dùng = thư mục phiên app vừa được ghi gần nhất (chỉ đọc tên thư mục, không đụng mã đăng nhập)
+  ls -td "$HOME/Library/Application Support/Claude/claude-code-sessions"/*/*/ 2>/dev/null | head -1 | awk -F/ '{print $(NF-2)}'; }
 tuoi_phien() { echo $(( $(date +%s) - $(cat "$TT/mo-luc" 2>/dev/null || echo 0) )); }
 gui() { # gõ một tin vào phiên bot; lỗi nếu bot chưa sẵn sàng
   dang_chay && [ -n "$(may_chu)" ] || return 1
@@ -195,6 +197,18 @@ while true; do
       bash "$GOC/giao-viec.sh" --dung "$N" >/dev/null; bash "$GOC/giao-viec.sh" --trang-thai "$N" "đã đóng (nghỉ 12 giờ)"; ghi "dong viec $N"
     fi
   done
+
+  # Đổi tài khoản trên app Claude: Claude trong Terminal giữ đăng nhập riêng, không tự đổi theo (phiên việc chạy nhưng không hiện trên app, gặp 14/11/2026).
+  # Máy mở sẵn Terminal chạy "claude auth login" và nhắn David bấm cho phép trên trình duyệt. Không tự đăng nhập thay David.
+  TKA=$(tai_khoan_app)
+  if [ -n "$TKA" ] && [ "$TKA" != "$(cat "$TT/tai-khoan-app" 2>/dev/null)" ]; then
+    if [ -s "$TT/tai-khoan-app" ]; then
+      ghi "app doi tai khoan -> mo dang nhap Terminal"
+      osascript -e 'tell application "Terminal" to activate' -e 'tell application "Terminal" to do script "claude auth logout; claude auth login"' >/dev/null 2>&1
+      gui_thang "🔑 Anh vừa đổi tài khoản trên app Claude. Em đã mở Terminal để đăng nhập lại Claude trong Terminal: trên trình duyệt anh chọn đúng tài khoản mới rồi bấm cho phép. Xong bước này phiên việc mới hiện trên app."
+    fi
+    echo "$TKA" > "$TT/tai-khoan-app"
+  fi
 
   # Nhịp sống cho lệnh kiểm tra sức khoẻ.
   echo "$BAY $(dang_chay && echo phien-ok || echo phien-tat) $([ -n "$(may_chu)" ] && echo telegram-ok || echo telegram-tat)" > "$TT/nhip"
