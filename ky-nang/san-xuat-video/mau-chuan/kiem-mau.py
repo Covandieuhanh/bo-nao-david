@@ -40,7 +40,7 @@ for m in json.load(open(os.path.join(HERE, "mau.json"), encoding="utf-8")):
         s = s.replace("export const SCENES = [\n", "export const SCENES = [\n  " + extra + ",\n", 1); open(p, "w", encoding="utf-8").write(s)
     imgs = []
     if m["khung"] == "remotion":
-        os.makedirs(os.path.join(W, "tu-lieu"), exist_ok=True); os.symlink(os.path.join(P, "tu-lieu"), os.path.join(W, "tu-lieu"))
+        os.symlink(os.path.join(P, "tu-lieu"), os.path.join(W, "tu-lieu"))   # xem-truoc.mjs đọc ../tu-lieu/<source>
         shots = [f"{i}@{t}" for i, t in m["chup"]] + [f"phu-de@{t}" for _, t in m["chup"]]
         run("node", "xem-truoc.mjs", *shots, cwd=M, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         pod = "podcast: true" in open(os.path.join(M, "src/du-an.js")).read()
