@@ -18,7 +18,7 @@ khỏi phần "làm thế nào", chuyển lịch sử ngắn vào **Why**. Ghi n
 | quy-tac-sua-thang-tai-ban | Sửa thẳng câu luật; tái bản toàn bộ một đợt khi máy đo báo | giữ |
 | quy-tac-thu-bang-doan-ngan | Thử skill video bằng một đoạn trọn một ý | giữ (xem Chéo bộ 3) |
 | quy-tac-tu-hoi-khi-mo-ho | 6 tín hiệu tự dừng hỏi | giữ |
-| co-so-tri-thuc-dat-ten-khong-dau | Tên tiếng Việt không dấu, chữ thường, gạch nối | giữ |
+| co-so-tri-thuc-quy-uoc-dat-ten | Tên tiếng Việt không dấu, chữ thường, gạch nối | giữ |
 | co-so-tri-thuc-github-ban-goc | GitHub là bản gốc; sync 2 chiều; repo, lệnh "cập nhật não" | giữ |
 | co-so-tri-thuc-ho-so-va-bo-loc | Đường dẫn hồ sơ, bộ lọc, kenh.json, sổ danh mục, đăng MXH | giữ |
 | thiet-bi-bo-cuc-thu-muc | Bố cục thư mục Mac chính | giữ nguyên (may-) |

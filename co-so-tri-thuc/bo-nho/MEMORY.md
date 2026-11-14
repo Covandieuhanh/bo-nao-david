@@ -1,7 +1,7 @@
 # Mục lục bộ nhớ
 
-Ghi nhớ là sổ (ngày + lời David + lý do); luật hiện hành nằm ở bản luật mỗi ghi nhớ trỏ tới. Nhóm theo tên: `luat-` cách làm việc với
-David · `nao-` bộ não và GitHub · `video-` dựng và đăng video · `may-` chỉ máy Mac chính (không lên GitHub). Đã bỏ / đã gộp: `luu-tru/`.
+Ghi nhớ là sổ (ngày + lời David + lý do); luật hiện hành nằm ở bản luật mỗi ghi nhớ trỏ tới. Nhóm theo tên: `quy-tac-` cách làm việc với
+David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng video · `thiet-bi-` chỉ máy Mac chính (không lên GitHub). Đã bỏ / đã gộp: `luu-tru/`.
 
 ## Luật làm việc với David
 
@@ -22,7 +22,7 @@ David · `nao-` bộ não và GitHub · `video-` dựng và đăng video · `may
 
 ## Bộ não và GitHub
 
-- [Đặt tên không dấu](co-so-tri-thuc-dat-ten-khong-dau.md) — tiếng Việt không dấu, chữ thường, gạch nối, đồng nhất mọi nơi (07/11)
+- [Quy ước đặt tên](co-so-tri-thuc-quy-uoc-dat-ten.md) — từ thuật ngữ kinh doanh tiếng Anh chuẩn, dịch đúng nghĩa sang tiếng Việt không dấu, tra bảng thuật ngữ (14/11)
 - [GitHub là bản gốc bộ não](co-so-tri-thuc-github-ban-goc.md) — bắt buộc đẩy ngay; repo, "cập nhật não" = sync.sh --push; Mac ↔ GitHub 2 chiều (07/11)
 - [Hồ sơ David + bộ lọc nội dung](co-so-tri-thuc-ho-so-va-bo-loc.md) — ba hướng nghề (13/11), mô hình kinh doanh, khối 00 phân hướng + bán được gì, kenh.json, sổ danh mục
 

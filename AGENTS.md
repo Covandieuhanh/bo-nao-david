@@ -59,4 +59,4 @@ Muốn hiểu toàn bộ hệ dựng video: [TONG-QUAN.md](ky-nang/san-xuat-vide
 ## Giữ bộ não luôn mới
 
 - Cuối mỗi việc làm theo `ky-nang/chuan-muc-lam-viec.md` mục 4: ghi góp ý đúng một chỗ, cập nhật `BAO-CAO-TRANG-THAI.md` / file `du-an/`, đẩy GitHub (luật 6).
-- Mọi tên file, thư mục, ghi nhớ đặt bằng tiếng Việt không dấu, chữ thường, gạch nối (ví dụ `video-goc`), đồng nhất ở mọi nơi. Ghi nhớ chỉ đúng cho một máy đặt tên bắt đầu `may-`, không đưa lên repo.
+- Mọi tên file, thư mục, skill, ghi nhớ đi từ **thuật ngữ kinh doanh tiếng Anh chuẩn**, dịch đúng nghĩa sang tiếng Việt không dấu, chữ thường, gạch nối (ví dụ Projects → `du-an`). Tra và bổ sung ở [co-so-tri-thuc/bang-thuat-ngu.md](co-so-tri-thuc/bang-thuat-ngu.md), mỗi thuật ngữ một bản dịch. Ghi nhớ chỉ đúng cho một máy đặt tên bắt đầu `thiet-bi-`, không đưa lên repo.
