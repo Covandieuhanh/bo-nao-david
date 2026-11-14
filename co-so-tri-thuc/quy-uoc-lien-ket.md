@@ -33,8 +33,12 @@ David chốt 14/11/2026: bộ não là **mạng lưới file nối với nhau**,
 
 Kiến thức đáng giữ từ trao đổi với David (kể cả phần Claude giải thích, công cụ, khái niệm) ghi vào [kien-thuc/](kien-thuc/README.md), **mỗi khái niệm một file nhỏ**, có mô tả, có mục "Liên quan" nối tới ý tưởng / dự án / skill dùng tới nó, và một dòng trong trang bản đồ `kien-thuc`. Đã có file đúng chủ đề thì bổ sung, không tạo file trùng. Ý tưởng chưa chốt vẫn ở [du-an/danh-sach-y-tuong.md](../du-an/danh-sach-y-tuong.md); luật vẫn ở nhà của luật. Khi nào ghi: [ky-nang/chuan-muc-lam-viec.md](../ky-nang/chuan-muc-lam-viec.md) mục 4.
 
+## Sổ tay riêng (chỉ trên máy)
+
+`~/Documents/2-ca-nhan/so-tay/` (danh bạ, việc, nhắc, tài chính, tin nhắn, kho gom) theo cùng quy ước nhưng **không lên GitHub**, sao lưu Drive. Bot Sổ nhớ ghi các sổ, nên không thêm khối mô tả vào file của bot: mô tả nằm ở dòng của file đó trong `so-tay/ban-do.md` (chữ sau " — "); link tới thư mục (sổ theo tháng, theo ngày) tính là nối tới mọi file trong đó. Chỉ mục `so-tay/chi-muc.md` máy sinh. Bộ não không nối link vào sổ tay (máy khác không có), chỉ ghi đường dẫn trong dấu `` ` ``. Tra: `grep -i "<từ khoá>" ~/Documents/2-ca-nhan/so-tay/chi-muc.md`.
+
 ## Máy kiểm
 
 - `python3 tu-dong-hoa/lien-ket/kiem-tra-lien-ket.py`: báo link gãy, file mồ côi, file thiếu mô tả; sinh lại `chi-muc.md`. Link gãy thì trả lỗi.
-- Chạy tự động trong `tu-dong-hoa/dong-bo.sh` trước khi đẩy GitHub: link gãy thì không đẩy.
+- Chạy tự động trong `tu-dong-hoa/dong-bo.sh` trước khi đẩy GitHub: link gãy trong bộ não thì không đẩy; sổ tay riêng (`--goc ~/Documents/2-ca-nhan/so-tay`) chỉ kiểm và sinh chỉ mục, không chặn.
 - `python3 tu-dong-hoa/lien-ket/do-truy-xuat.py`: đo 10 câu hỏi thử (`cau-hoi-thu.json`), so cách tìm toàn văn với tìm qua chỉ mục. Chạy lại khi kho lớn thêm nhiều để biết lúc nào cần tìm theo nghĩa.

@@ -1,10 +1,10 @@
 ---
-description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòng (đường dẫn, mô tả, số file nối tới); Claude grep file này trước khi tìm toàn repo.
+description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòng (đường dẫn, mô tả, số file nối tới); Claude grep file này trước khi tìm toàn bộ.
 ---
 
 # Chỉ mục bộ não
 
-> Máy tự sinh (`tu-dong-hoa/lien-ket/kiem-tra-lien-ket.py`), **không sửa tay**: sửa mô tả ở đầu từng file. Cách dùng: `grep -i "<từ khoá>" co-so-tri-thuc/chi-muc.md`. Luật: [quy-uoc-lien-ket.md](quy-uoc-lien-ket.md).
+> Máy tự sinh (`tu-dong-hoa/lien-ket/kiem-tra-lien-ket.py`), **không sửa tay**. Cách dùng: `grep -i "<từ khoá>" co-so-tri-thuc/chi-muc.md`. Luật: [quy-uoc-lien-ket.md](quy-uoc-lien-ket.md).
 
 ## (gốc)
 
@@ -31,7 +31,7 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [co-so-tri-thuc/bo-nho/co-so-tri-thuc-ho-so-va-bo-loc.md](bo-nho/co-so-tri-thuc-ho-so-va-bo-loc.md) — Hồ sơ David ở ~/.claude/david.md (ba hướng nghề, mô hình kinh doanh); mọi tài nguyên phải qua bộ lọc khối 00 trước khi dựng; luật kênh ở ho-so-thuong-hieu/kenh.json · ←7
 - [co-so-tri-thuc/bo-nho/co-so-tri-thuc-lien-ket-tri-thuc.md](bo-nho/co-so-tri-thuc-lien-ket-tri-thuc.md) — Bộ não là mạng lưới file nối nhau (mô tả, chỉ mục tự sinh, bản đồ, ghi chú kiến thức, máy kiểm link), không dùng app Obsidian (14/11) · ←1
 - [co-so-tri-thuc/bo-nho/co-so-tri-thuc-quy-uoc-dat-ten.md](bo-nho/co-so-tri-thuc-quy-uoc-dat-ten.md) — Mọi tên file, thư mục, skill, ghi nhớ đi từ thuật ngữ kinh doanh tiếng Anh chuẩn, dịch đúng nghĩa sang tiếng Việt không dấu; tra bảng thuật ngữ · ←5
-- [co-so-tri-thuc/bo-nho/luu-tru/co-so-tri-thuc-kho-bo-nao.md](bo-nho/luu-tru/co-so-tri-thuc-kho-bo-nao.md) — Repo riêng tư Covandieuhanh/bo-nao-david là bộ não dùng chung cho mọi AI; bản trên máy ở ~/Documents/bo-nao-david; \"cập nhật não\" = chạy tu-dong-hoa/dong-bo.sh --push · ←1
+- [co-so-tri-thuc/bo-nho/luu-tru/co-so-tri-thuc-kho-bo-nao.md](bo-nho/luu-tru/co-so-tri-thuc-kho-bo-nao.md) — Repo riêng tư Covandieuhanh/bo-nao-david là bộ não dùng chung cho mọi AI; bản trên máy ở ~/Documents/bo-nao-david; "cập nhật não" = chạy tu-dong-hoa/dong-bo.sh --push · ←1
 - [co-so-tri-thuc/bo-nho/luu-tru/video-chuan-am-luong.md](bo-nho/luu-tru/video-chuan-am-luong.md) — Chuẩn âm lượng chung David chốt cho mọi video: nhạc thấp hơn giọng khoảng 23 dB lúc nói, cả bài -14 LUFS; giọng nhỏ kéo lên, nhạc to hạ xuống (2026-11-06) · ←1
 - [co-so-tri-thuc/bo-nho/luu-tru/video-doc-ngan-khong-thanh.md](bo-nho/luu-tru/video-doc-ngan-khong-thanh.md) — Video dọc ngắn (Reels/TikTok/Shorts) bỏ thanh thời gian và thẻ cuối; màn chốt hiện chữ trên khung hình, kết ở chữ cuối để tự lặp (2026-11-10) · ←1
 - [co-so-tri-thuc/bo-nho/luu-tru/video-luon-co-do-hoa-chuyen-dong.md](bo-nho/luu-tru/video-luon-co-do-hoa-chuyen-dong.md) — Mọi video phải có motion graphics = điểm nhấn kéo mắt người xem, NHIỀU LOẠI (không chỉ cảnh toàn màn hình): hình vẽ, chữ giải thích, biểu tượng, làm nổi người đang nói (David chốt 2026-11-07) · ←1
@@ -41,7 +41,7 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [co-so-tri-thuc/bo-nho/quy-tac-david-md-chi-dieu-co-dinh.md](bo-nho/quy-tac-david-md-chi-dieu-co-dinh.md) — co-so-tri-thuc/david.md chỉ ghi điều cố định đã chốt; ý tưởng, góp ý đang cân nhắc ghi ở du-an/danh-sach-y-tuong.md · ←2
 - [co-so-tri-thuc/bo-nho/quy-tac-duyet-ke-hoach-4-phan.md](bo-nho/quy-tac-duyet-ke-hoach-4-phan.md) — Việc gì cũng trình đủ 4 phần (Mục tiêu · Kế hoạch · Quy trình · Thực thi), David duyệt rồi mới làm; duyệt rồi tự làm trọn tới khi chắc dùng được; việc tự chạy hiện thành phiên trong app, không chạy ngầm (14/11/2026) · ←5
 - [co-so-tri-thuc/bo-nho/quy-tac-goi-trainer-chung.md](bo-nho/quy-tac-goi-trainer-chung.md) — Gói trainer công nghệ chỉ dạy một kỹ năng thuần, cách làm chung bằng AI và máy của học viên; không tư duy, không chi tiết riêng của David · ←3
-- [co-so-tri-thuc/bo-nho/quy-tac-goi-y-de-david-chon.md](bo-nho/quy-tac-goi-y-de-david-chon.md) — Tài nguyên vào → kết quả ra: sản phẩm từ tài nguyên Claude làm một mạch theo mặc định skill + đề xuất của mình, không hỏi, báo \"đã chọn X vì Y\" để David sửa ở bản cuối (2026-11-11, thay luật 06/11 \"làm đi không chốt lựa chọn\") · ←11
+- [co-so-tri-thuc/bo-nho/quy-tac-goi-y-de-david-chon.md](bo-nho/quy-tac-goi-y-de-david-chon.md) — Tài nguyên vào → kết quả ra: sản phẩm từ tài nguyên Claude làm một mạch theo mặc định skill + đề xuất của mình, không hỏi, báo "đã chọn X vì Y" để David sửa ở bản cuối (2026-11-11, thay luật 06/11 "làm đi không chốt lựa chọn") · ←11
 - [co-so-tri-thuc/bo-nho/quy-tac-hoc-la-bo-sung.md](bo-nho/quy-tac-hoc-la-bo-sung.md) — Học video mẫu mới là BỔ SUNG vào skill, không thay thế những gì David đã sửa; lỗi cũ đã sửa không được quay lại; số của khung dọc không dùng cho khung ngang (2026-11-08) · ←8
 - [co-so-tri-thuc/bo-nho/quy-tac-ket-qua-hon-toc-do.md](bo-nho/quy-tac-ket-qua-hon-toc-do.md) — David ưu tiên làm đúng quy trình và có kết quả hơn làm nhanh; bước nào cần kết quả render thì chờ, chỗ chưa rõ thì trao đổi (2026-11-05) · ←3
 - [co-so-tri-thuc/bo-nho/quy-tac-khong-tu-chay-viec-cua-david.md](bo-nho/quy-tac-khong-tu-chay-viec-cua-david.md) — Không tự chạy, chạy tiếp, dừng hay làm lại việc David tạo (render, việc dựng…) khi David chưa ra lệnh — kể cả khi chính Claude làm ngắt việc đó · ←4
@@ -49,14 +49,14 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [co-so-tri-thuc/bo-nho/quy-tac-mod-tu-chay.md](bo-nho/quy-tac-mod-tu-chay.md) — Không dùng mod giao diện: David gỡ hết savvy-progress, collision-guard, goal-meter, Sổ việc (13/11/2026) · ←2
 - [co-so-tri-thuc/bo-nho/quy-tac-noi-dung-cua-david.md](bo-nho/quy-tac-noi-dung-cua-david.md) — Vai trò chia rõ — David tự xây nội dung, nói tự do có cảm xúc; skill lo hình. Người xem làm trung tâm; học kênh lớn ở nhịp và cách trình bày (2026-11-05, gộp 10/11) · ←8
 - [co-so-tri-thuc/bo-nho/quy-tac-phien-telegram-tu-chay.md](bo-nho/quy-tac-phien-telegram-tu-chay.md) — Phiên việc giao qua Telegram tự làm tới kết quả, không xin phép từng bước; chỉ hỏi khi đăng/gửi, tốn tiền, đẩy đè GitHub, xoá ổ đĩa (12/11/2026) · ←3
-- [co-so-tri-thuc/bo-nho/quy-tac-sua-thang-tai-ban.md](bo-nho/quy-tac-sua-thang-tai-ban.md) — Đổi luật thì sửa thẳng câu cũ (không chồng câu \"bổ sung/thay luật\", không ngày trong bản luật); định kỳ tái bản TOÀN BỘ bộ não một đợt khi máy đo chồng chéo báo (2026-11-10) · ←3
+- [co-so-tri-thuc/bo-nho/quy-tac-sua-thang-tai-ban.md](bo-nho/quy-tac-sua-thang-tai-ban.md) — Đổi luật thì sửa thẳng câu cũ (không chồng câu "bổ sung/thay luật", không ngày trong bản luật); định kỳ tái bản TOÀN BỘ bộ não một đợt khi máy đo chồng chéo báo (2026-11-10) · ←3
 - [co-so-tri-thuc/bo-nho/quy-tac-thu-bang-doan-ngan.md](bo-nho/quy-tac-thu-bang-doan-ngan.md) — Thử skill dựng video thì chỉ dùng một đoạn ngắn TRỌN VẸN MỘT Ý (không cố định số giây), không chạy cả video dài · ←3
 - [co-so-tri-thuc/bo-nho/quy-tac-tu-hoi-khi-mo-ho.md](bo-nho/quy-tac-tu-hoi-khi-mo-ho.md) — Tự nhận diện lúc cần hỏi David (câu mơ hồ / đọc chính tả lệch, mâu thuẫn luật, việc tốn kém khó đảo ngược…) — không tự đoán rồi làm · ←6
 - [co-so-tri-thuc/bo-nho/thiet-bi-bo-cuc-thu-muc.md](bo-nho/thiet-bi-bo-cuc-thu-muc.md) — Bố cục thư mục trên MacBook của David sau đợt dọn 11/11/2026 — Mac chỉ giữ việc đang làm, còn lại ở Drive Sao-luu-mac (chỉ máy này, không lên GitHub) · ←2
 - [co-so-tri-thuc/bo-nho/thiet-bi-don-documents-2026-11-07.md](bo-nho/thiet-bi-don-documents-2026-11-07.md) — Ngày 07/11/2026 dọn ~/Documents, chỉ còn David.Claude + Obsidian + mk.csv; App notion đã bỏ, mở phiên ở ~/Documents/David.Claude · ←2
 - [co-so-tri-thuc/bo-nho/thiet-bi-van-phong-shop.md](bo-nho/thiet-bi-van-phong-shop.md) — Văn Phòng Shop là sản phẩm mẫu David làm cho công ty, tách hẳn khỏi bộ não, ở ~/Documents/van-phong-shop (git riêng, không lên GitHub bộ não) · ←2
 - [co-so-tri-thuc/bo-nho/video-anh-viet-nam.md](bo-nho/video-anh-viet-nam.md) — 13/11/2026 David muốn video có nhiều ảnh minh hoạ hơn, nhưng ảnh chỉ chụp tại Việt Nam, liên quan người Việt Nam · ←3
-- [co-so-tri-thuc/bo-nho/video-ban-chuan-2026-11-06.md](bo-nho/video-ban-chuan-2026-11-06.md) — Bản chuẩn video David chốt 06/11/2026: 3 clip \"Đi trainer\" + 2 video dài (Mục tiêu sứ mệnh v2, Trainer cho trainer); các dự án cũ đã bỏ vào Thùng rác · ←4
+- [co-so-tri-thuc/bo-nho/video-ban-chuan-2026-11-06.md](bo-nho/video-ban-chuan-2026-11-06.md) — Bản chuẩn video David chốt 06/11/2026: 3 clip "Đi trainer" + 2 video dài (Mục tiêu sứ mệnh v2, Trainer cho trainer); các dự án cũ đã bỏ vào Thùng rác · ←4
 - [co-so-tri-thuc/bo-nho/video-bo-cuc-tu-can.md](bo-nho/video-bo-cuc-tu-can.md) — Bố cục video tự cân theo nội dung, bỏ mọi con số cố định; graphic tránh mọi người, bám người đang nói; khung gốc học mọi loại video ở ky-nang/san-xuat-video/thiet-ke-bo-cuc (2026-11-07, 08/11) · ←12
 - [co-so-tri-thuc/bo-nho/video-bo-ung-dung.md](bo-nho/video-bo-ung-dung.md) — 10/11/2026 David bỏ app dựng video (localhost:8765): tốn token hơn làm trực tiếp; mọi video dựng ngay trong phiên Claude theo skill · ←3
 - [co-so-tri-thuc/bo-nho/video-chi-hinh-cua-chinh-video.md](bo-nho/video-chi-hinh-cua-chinh-video.md) — Thumbnail/ảnh bìa/khung hình của mỗi video chỉ lấy từ chính video đó — không mượn hình từ video/dự án khác · ←4
@@ -214,8 +214,8 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [ky-nang/san-xuat-video/thiet-ke-bo-cuc/README.md](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/README.md) — Lớp trình bày video: tiêu chí gốc để học mọi loại video mới, giữ chữ ký nhận diện. · ←1
 - [ky-nang/san-xuat-video/thiet-ke-bo-cuc/am-thanh.md](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/am-thanh.md) — Âm thanh theo bố cục: chỗ đặt tiếng ký hiệu, ting, vút theo cảnh. · ←2
 - [ky-nang/san-xuat-video/thiet-ke-bo-cuc/bo-cuc.md](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/bo-cuc.md) — Danh mục bố cục video để chọn (không phải công thức). · ←2
-- [ky-nang/san-xuat-video/thiet-ke-bo-cuc/nguon-tham-khao/ali-joseph-2026-11-10.md](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/nguon-tham-khao/ali-joseph-2026-11-10.md) — Nguồn học Ali Abdaal + Joseph Video Editing (10/11): kiểu trình bày, hiệu ứng. · ←1
-- [ky-nang/san-xuat-video/thiet-ke-bo-cuc/nguon-tham-khao/sang-huynh-claude-do-hoa-2026-11-07.md](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/nguon-tham-khao/sang-huynh-claude-do-hoa-2026-11-07.md) — Nguồn học Sang Huỳnh: Claude làm motion graphics trong video (07/11). · ←1
+- [ky-nang/san-xuat-video/thiet-ke-bo-cuc/nguon-tham-khao/ali-joseph-2026-11-10.md](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/nguon-tham-khao/ali-joseph-2026-11-10.md) — Nguồn học Ali Abdaal + Joseph Video Editing (10/11): kiểu trình bày, hiệu ứng. · ←2
+- [ky-nang/san-xuat-video/thiet-ke-bo-cuc/nguon-tham-khao/sang-huynh-claude-do-hoa-2026-11-07.md](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/nguon-tham-khao/sang-huynh-claude-do-hoa-2026-11-07.md) — Nguồn học Sang Huỳnh: Claude làm motion graphics trong video (07/11). · ←2
 - [ky-nang/san-xuat-video/thiet-ke-bo-cuc/phieu-hoc-mau.md](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/phieu-hoc-mau.md) — Mẫu phiếu học video mẫu: Claude điền, David duyệt trước khi sửa skill. · ←2
 - [ky-nang/san-xuat-video/thiet-ke-bo-cuc/tu-chon.md](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/tu-chon.md) — Tự chọn cách trình bày: chẩn đoán video rồi chọn bố cục, hiệu ứng trong kho. · ←3
 - [ky-nang/san-xuat-video/thu-vien-tai-nguyen/README.md](../ky-nang/san-xuat-video/thu-vien-tai-nguyen/README.md) — Thư viện hình dùng chung cho cả 4 loại video: file, việc, khối dùng. · ←1
@@ -246,7 +246,7 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [luu-tru/bo-nho-app-notion/notion-feature-status.md](../luu-tru/bo-nho-app-notion/notion-feature-status.md) — Trạng thái tính năng App notion — ĐÃ PIVOT sang V2 (3 trục); model cũ đã xoá sạch. Nguồn sự thật: notion-v2-spec-plan · ←3
 - [luu-tru/bo-nho-app-notion/notion-lean-north-star.md](../luu-tru/bo-nho-app-notion/notion-lean-north-star.md) — Kim chỉ nam thường trực cho App notion — luôn giữ nền tảng tinh gọn/đơn giản nhất cho việc quản trị · ←2
 - [luu-tru/bo-nho-app-notion/notion-local-dev-environment.md](../luu-tru/bo-nho-app-notion/notion-local-dev-environment.md) — How to run the App notion tiers locally on this macOS machine (nvm, embedded-postgres, npm allow-scripts) · ←3
-- [luu-tru/bo-nho-app-notion/notion-v2-spec-plan.md](../luu-tru/bo-nho-app-notion/notion-v2-spec-plan.md) — App notion đang pivot sang \"V2 — 3 trục Người/Thị trường/Tiền\" theo spec file; các quyết định đã chốt + lộ trình pha · ←3
+- [luu-tru/bo-nho-app-notion/notion-v2-spec-plan.md](../luu-tru/bo-nho-app-notion/notion-v2-spec-plan.md) — App notion đang pivot sang "V2 — 3 trục Người/Thị trường/Tiền" theo spec file; các quyết định đã chốt + lộ trình pha · ←3
 - [luu-tru/de-xuat-skill-video-2026-11-04.md](../luu-tru/de-xuat-skill-video-2026-11-04.md) — Lưu trữ: đề xuất sửa skill video sau khi học 80 video Việt (04/11), đã áp toàn bộ. · ←1
 - [luu-tru/kho-noi-dung-video-2026-10-31.md](../luu-tru/kho-noi-dung-video-2026-10-31.md) — Lưu trữ: kho nội dung video bản cũ (31/10), đã thay bằng kế hoạch 100 video. · ←1
 - [luu-tru/mod-giao-dien/README.md](../luu-tru/mod-giao-dien/README.md) — Lưu trữ: các mod giao diện Claude Code đã gỡ hết 13/11. · ←2
@@ -261,12 +261,12 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 
 ## tac-tu
 
-- [tac-tu/nghien-cuu.md](../tac-tu/nghien-cuu.md) — Đọc tài liệu dài, tìm thông tin trong file hay trên web, tóm tắt ngắn gọn bằng tiếng Việt. Dùng cho việc cần đọc hoặc tìm nhiều mà không cần ra quyết định; trả kết quả cho phiên chính. · ←1
+- [tac-tu/nghien-cuu.md](../tac-tu/nghien-cuu.md) — Đọc tài liệu dài, tìm thông tin trong file hay trên web, tóm tắt ngắn gọn bằng tiếng Việt. Dùng cho việc cần đọc hoặc tìm nhiều mà không cần ra quyết định; trả kết quả cho phiên chính. · ←2
 
 ## tai-lieu-tham-khao
 
 - [tai-lieu-tham-khao/README.md](../tai-lieu-tham-khao/README.md) — Tài liệu tham khảo chuẩn David dùng làm hình mẫu lâu dài (CCL) cho phương pháp ba tầng làm chủ và nhân hiệu trainer. · ←1
-- [tai-lieu-tham-khao/ccl/ho-so-ccl-ban-tieng-viet.md](../tai-lieu-tham-khao/ccl/ho-so-ccl-ban-tieng-viet.md) — Hồ sơ CCL (Center for Creative Leadership) bản tiếng Việt: khung, chương trình, thuật ngữ lãnh đạo dịch chuẩn. · ←2
+- [tai-lieu-tham-khao/ccl/ho-so-ccl-ban-tieng-viet.md](../tai-lieu-tham-khao/ccl/ho-so-ccl-ban-tieng-viet.md) — Hồ sơ CCL (Center for Creative Leadership) bản tiếng Việt: khung, chương trình, thuật ngữ lãnh đạo dịch chuẩn. · ←3
 
 ## tu-dong-hoa
 

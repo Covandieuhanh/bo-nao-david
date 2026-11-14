@@ -1,20 +1,28 @@
 #!/usr/bin/env python3
-"""Máy kiểm liên kết của bộ não (luật: co-so-tri-thuc/quy-uoc-lien-ket.md).
+"""Máy kiểm liên kết (luật: co-so-tri-thuc/quy-uoc-lien-ket.md).
 
 - Báo link gãy (link tương đối tới file không có, [[ghi-nho]] không có) → trả mã lỗi 1.
 - Báo file mồ côi (không file nào nối tới, chỉ mục không tính) và file thiếu mô tả → chỉ cảnh báo.
-- Sinh lại co-so-tri-thuc/chi-muc.md: mỗi file một dòng (đường dẫn, mô tả, số nối tới).
+- Sinh lại chỉ mục: mỗi file một dòng (đường dẫn, mô tả, số nối tới).
+
+Hai kho:
+  - bộ não (mặc định): chỉ mục co-so-tri-thuc/chi-muc.md, bản đồ ở ban-do/.
+  - kho khác (--goc <thư mục>, ví dụ sổ tay riêng chỉ trên máy): chỉ mục chi-muc.md và bản đồ ban-do.md ở gốc kho.
+
+Mô tả một file lấy theo thứ tự: khối `description:` đầu file → bảng MIEN_MO_TA (chỉ bộ não) → chữ sau " — " ở dòng
+bản đồ nối tới file đó (hoặc tới thư mục chứa nó) → tiêu đề đầu tiên (tính là thiếu mô tả).
+Link tới một thư mục tính là nối tới mọi file .md nằm thẳng trong thư mục đó (dùng cho sổ theo tháng, theo ngày).
 
 Dùng:
-  python3 tu-dong-hoa/lien-ket/kiem-tra-lien-ket.py           kiểm + sinh chỉ mục
-  python3 tu-dong-hoa/lien-ket/kiem-tra-lien-ket.py --chi-tiet  liệt kê đủ từng file mồ côi / thiếu mô tả
+  python3 tu-dong-hoa/lien-ket/kiem-tra-lien-ket.py                      kiểm bộ não + sinh chỉ mục
+  python3 tu-dong-hoa/lien-ket/kiem-tra-lien-ket.py --goc ~/Documents/2-ca-nhan/so-tay
+  thêm --chi-tiet để liệt kê từng file mồ côi / thiếu mô tả
 """
 import os, re, sys, glob
 
-GOC = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-CHI_MUC = "co-so-tri-thuc/chi-muc.md"
+NAO = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 
-# File nạp mỗi phiên, hồ sơ David, trang GitHub, file bị chép thành lời nhắc: không thêm khối mô tả vào file, mô tả ghi ở đây.
+# Bộ não — file nạp mỗi phiên, hồ sơ David, trang GitHub, file bị chép thành lời nhắc: không thêm khối mô tả, mô tả ghi ở đây.
 MIEN_MO_TA = {
     "AGENTS.md": "Cửa vào cho mọi AI: thứ tự đọc, sáu luật không được phá, bảng chọn skill theo việc.",
     "CLAUDE.md": "Cấu hình Claude Code của repo: nạp AGENTS.md.",
@@ -25,115 +33,137 @@ MIEN_MO_TA = {
     "tu-dong-hoa/so-tay/quy-tac-bot.md": "Luật bot Sổ nhớ Telegram (chép thành CLAUDE.md của bot): ghi gì, trả lời thế nào, tin nhắn tổng hợp.",
     "co-so-tri-thuc/bo-nho/MEMORY.md": "Mục lục bộ nhớ Claude Code: mỗi ghi nhớ một dòng, nhóm quy tắc / bộ não / video / thiết bị.",
 }
-# Cửa vào: không cần ai nối tới.
-GOC_VAO = {"AGENTS.md", "CLAUDE.md", "README.md", CHI_MUC}
-BO_QUA_THU_MUC = ("/.git/", "/node_modules/", "/.obsidian/", "/assets/")
+BO_QUA = ("/node_modules/", "/assets/")
+# Dữ liệu thô chép lại từ nơi khác (kho gom theo ngày): không kiểm link bên trong.
+THO = ("kho-du-lieu/ngay/",)
 
 LINK = re.compile(r"(?<!!)\[[^\]]*\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)")
 WIKI = re.compile(r"\[\[([^\]|#]+)(?:#[^\]|]*)?(?:\|[^\]]*)?\]\]")
 CODE = re.compile(r"```.*?```|`[^`\n]*`", re.S)
 
 
-def ds_file():
+def cau_hinh():
+    if "--goc" in sys.argv:
+        goc = os.path.abspath(os.path.expanduser(sys.argv[sys.argv.index("--goc") + 1]))
+        la_nao = goc == NAO
+    else:
+        goc, la_nao = NAO, True
+    if la_nao:
+        return goc, "co-so-tri-thuc/chi-muc.md", lambda f: f.startswith("ban-do/"), MIEN_MO_TA, {"AGENTS.md", "CLAUDE.md", "README.md"}
+    return goc, "chi-muc.md", lambda f: f == "ban-do.md", {}, {"CLAUDE.md", "ban-do.md"}
+
+
+def ds_file(goc):
     out = []
-    for f in glob.glob(f"{GOC}/**/*.md", recursive=True):
-        if any(b in f for b in BO_QUA_THU_MUC) or os.path.islink(f):
+    for f in glob.glob(f"{goc}/**/*.md", recursive=True):
+        rel = os.path.relpath(f, goc)
+        if any(p.startswith(".") for p in rel.split(os.sep)) or any(b in f for b in BO_QUA) or os.path.islink(f):
             continue
-        out.append(os.path.relpath(f, GOC))
+        out.append(rel)
     return sorted(out)
 
 
-def mo_ta(rel, text):
-    if rel in MIEN_MO_TA:
-        return MIEN_MO_TA[rel], True
+def mo_ta_dau_file(text):
     if text.startswith("---\n"):
         end = text.find("\n---", 4)
         m = re.search(r"^description:\s*(.+)$", text[4:end], re.M)
         if m:
-            return m.group(1).strip().strip('"').strip("'"), True
-    for l in text.splitlines():  # dự phòng: tiêu đề đầu tiên
+            return m.group(1).strip().strip('"').strip("'").replace('\\"', '"')
+    return None
+
+
+def tieu_de(text):
+    for l in text.splitlines():
         if l.startswith("# "):
-            return l[2:].strip(), False
-    return "", False
+            return l[2:].strip()
+    return ""
 
 
 def main():
+    goc, chi_muc, la_ban_do, mien, goc_vao = cau_hinh()
+    goc_vao = goc_vao | {chi_muc}
     chi_tiet = "--chi-tiet" in sys.argv
-    files = ds_file()
+    files = [f for f in ds_file(goc) if f != chi_muc]
     fset = set(files)
     stem = {}
     for f in files:
         stem.setdefault(os.path.splitext(os.path.basename(f))[0], []).append(f)
     toi = {f: set() for f in files}
+    mo_ta_ban_do = {}
     gay = []
-    desc = {}
+    text = {f: open(os.path.join(goc, f), encoding="utf-8", errors="ignore").read() for f in files}
+
+    def noi(nguon, dich, dong=None):
+        if dich in toi and dich != nguon:
+            toi[dich].add(nguon)
+            if dong and la_ban_do(nguon) and " — " in dong and dich not in mo_ta_ban_do:
+                mo_ta_ban_do[dich] = dong.split(" — ", 1)[1].strip()
+
     for f in files:
-        text = open(os.path.join(GOC, f), encoding="utf-8", errors="ignore").read()
-        desc[f] = mo_ta(f, text)
-        body = CODE.sub("", text)
-        for m in LINK.finditer(body):
-            t = m.group(1).split("#")[0].split("?")[0]
-            if not t or re.match(r"^[a-z]+:", t) or t.startswith(("~", "/", "<", "$")):
-                continue
-            dich = os.path.normpath(os.path.join(os.path.dirname(f), t))
-            if os.path.exists(os.path.join(GOC, dich)):
-                if os.path.isdir(os.path.join(GOC, dich)):
+        if f.startswith(THO):
+            continue
+        for dong in CODE.sub("", text[f]).splitlines():
+            for m in LINK.finditer(dong):
+                t = m.group(1).split("#")[0].split("?")[0]
+                if not t or re.match(r"^[a-z]+:", t) or t.startswith(("~", "/", "<", "$")):
+                    continue
+                dich = os.path.normpath(os.path.join(os.path.dirname(f), t))
+                duong = os.path.join(goc, dich)
+                if not os.path.exists(duong):
+                    gay.append((f, t))
+                elif os.path.isdir(duong):
+                    con = [c for c in fset if os.path.dirname(c) == dich]
                     for cand in ("README.md", "SKILL.md"):
                         if os.path.join(dich, cand) in fset:
-                            dich = os.path.join(dich, cand)
+                            con = [os.path.join(dich, cand)]
                             break
-                if dich in toi and dich != f:
-                    toi[dich].add(f)
-            else:
-                gay.append((f, t))
-        for m in WIKI.finditer(body):
-            ten = m.group(1).strip()
-            ten = os.path.splitext(ten)[0] if ten.endswith(".md") else ten
-            ung = stem.get(os.path.basename(ten))
-            if not ung:
-                gay.append((f, f"[[{ten}]]"))
-                continue
-            for d in ung:
-                if d != f:
-                    toi[d].add(f)
+                    for c in con:
+                        noi(f, c, dong)
+                else:
+                    noi(f, dich, dong)
+            for m in WIKI.finditer(dong):
+                ten = m.group(1).strip()
+                ten = ten[:-3] if ten.endswith(".md") else ten
+                ung = stem.get(os.path.basename(ten))
+                if not ung:
+                    gay.append((f, f"[[{ten}]]"))
+                for d in ung or []:
+                    noi(f, d)
 
-    # Chỉ mục không tính là nối tới.
-    for f in toi:
-        toi[f].discard(CHI_MUC)
-    mo_coi = [f for f in files if not toi[f] and f not in GOC_VAO]
-    thieu = [f for f in files if not desc[f][1] and f != CHI_MUC]
+    desc = {}
+    for f in files:
+        d = mo_ta_dau_file(text[f]) or mien.get(f) or mo_ta_ban_do.get(f)
+        desc[f] = (d, True) if d else (tieu_de(text[f]), False)
+    mo_coi = [f for f in files if not toi[f] and f not in goc_vao]
+    thieu = [f for f in files if not desc[f][1]]
 
-    # Sinh chỉ mục.
     nhom = {}
     for f in files:
-        if f == CHI_MUC:
-            continue
         nhom.setdefault(f.split("/")[0] if "/" in f else "(gốc)", []).append(f)
+    ten_kho = "bộ não" if goc == NAO else os.path.basename(goc)
+    luat = "[quy-uoc-lien-ket.md](quy-uoc-lien-ket.md)" if goc == NAO else "`co-so-tri-thuc/quy-uoc-lien-ket.md` trong bộ não"
     dong = [
         "---",
-        "description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòng (đường dẫn, mô tả, số file nối tới); Claude grep file này trước khi tìm toàn repo.",
+        f"description: Chỉ mục tự sinh của {ten_kho} — mỗi file .md một dòng (đường dẫn, mô tả, số file nối tới); Claude grep file này trước khi tìm toàn bộ.",
         "---",
         "",
-        "# Chỉ mục bộ não",
+        f"# Chỉ mục {ten_kho}",
         "",
-        "> Máy tự sinh (`tu-dong-hoa/lien-ket/kiem-tra-lien-ket.py`), **không sửa tay**: sửa mô tả ở đầu từng file. Cách dùng: `grep -i \"<từ khoá>\" co-so-tri-thuc/chi-muc.md`. Luật: [quy-uoc-lien-ket.md](quy-uoc-lien-ket.md).",
+        f"> Máy tự sinh (`tu-dong-hoa/lien-ket/kiem-tra-lien-ket.py`), **không sửa tay**. Cách dùng: `grep -i \"<từ khoá>\" {chi_muc}`. Luật: {luat}.",
         "",
     ]
     for g in sorted(nhom):
-        dong.append(f"## {g}")
-        dong.append("")
+        dong += [f"## {g}", ""]
         for f in nhom[g]:
-            rel = os.path.relpath(f, os.path.dirname(CHI_MUC))
-            d = desc[f][0].replace("\n", " ")
-            dong.append(f"- [{f}]({rel}) — {d} · ←{len(toi[f])}")
+            rel = os.path.relpath(f, os.path.dirname(chi_muc) or ".")
+            dong.append(f"- [{f}]({rel}) — {desc[f][0]} · ←{len(toi[f])}")
         dong.append("")
     noi_dung = "\n".join(dong)
-    p = os.path.join(GOC, CHI_MUC)
-    cu = open(p, encoding="utf-8").read() if os.path.exists(p) else ""
-    if cu != noi_dung:
+    p = os.path.join(goc, chi_muc)
+    if not os.path.exists(p) or open(p, encoding="utf-8").read() != noi_dung:
         open(p, "w", encoding="utf-8").write(noi_dung)
 
-    print(f"Liên kết: {len(files)} file · link gãy {len(gay)} · mồ côi {len(mo_coi)} · thiếu mô tả {len(thieu)}")
+    print(f"Liên kết {ten_kho}: {len(files) + 1} file · link gãy {len(gay)} · mồ côi {len(mo_coi)} · thiếu mô tả {len(thieu)}")
     for f, t in gay:
         print(f"  ✗ gãy: {f} → {t}")
     if chi_tiet:

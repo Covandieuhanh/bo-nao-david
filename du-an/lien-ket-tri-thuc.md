@@ -40,6 +40,6 @@ description: "Dự án liên kết tri thức (14/11): biến bộ não thành m
 
 ## 4. Còn lại
 
-- [ ] **David chốt**: sổ tay riêng `~/Documents/2-ca-nhan/so-tay/` (danh bạ, tin nhắn, kho dữ liệu) có nối theo cùng quy ước không, chỉ trên máy, không lên GitHub. Đề xuất: có, vì phần này sẽ lớn nhanh nhất.
+- [x] Sổ tay riêng `~/Documents/2-ca-nhan/so-tay/` đã nối (David: "nối sổ tay đi", 14/11): `ban-do.md` mang mô tả từng sổ, `chi-muc.md` tự sinh, 21 file · gãy 0 · mồ côi 0; bot thêm dòng bản đồ khi tạo nhóm mới; không lên GitHub.
 - [ ] Câu 4 (luật bot Sổ nhớ) vẫn trượt vì nhiều file cùng nói về bot: theo dõi, không chỉnh mô tả để "ăn" bài đo.
 - [ ] Đo lại khi kho lớn thêm nhiều; khoảng 1.000 ghi chú hoặc trúng dưới 8/10 thì cân nhắc tìm theo nghĩa (script chỉ mục theo nghĩa chạy thẳng trên file).
