@@ -7,5 +7,5 @@ const p = await b.newPage({ viewport: { width: 1400, height: 900 } });
 await p.goto('file://' + html); await p.waitForTimeout(1500);
 const els = await p.$$('.slide');
 for (let i = 0; i < els.length; i++) await els[i].screenshot({ path: `${out}-${String(i + 1).padStart(2, '0')}.png` });
-console.log('slides', els.length);
+console.log('trang-trinh-chieu', els.length);
 await b.close();

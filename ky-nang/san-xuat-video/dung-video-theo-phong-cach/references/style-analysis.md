@@ -59,7 +59,7 @@ thêm dòng vào `FONT_CHECKS`; dùng cho từ nhấn, không đổi `HEAD`/`BOD
 ## Khi mẫu khác hẳn template
 
 Template chỉ là điểm xuất phát. Nếu mẫu dùng thứ template không có (ví dụ phụ đề chạy theo từng chữ, khung ảnh polaroid,
-nhãn dán emoji, hiệu ứng zoom vào mặt, chia đôi màn hình), viết component mới trong `components/` (hoặc cảnh tự vẽ `ve`, khối 07), đăng ký trong
+nhãn dán emoji, hiệu ứng zoom vào mặt, chia đôi màn hình), viết component mới trong `thanh-phan/` (hoặc cảnh tự vẽ `ve`, khối 07), đăng ký trong
 `goc.jsx` (TYPES).
 Hiệu ứng tác động lên chính video gốc (zoom mặt, cắt nhịp, đổi màu) không làm bằng clip phủ được — làm trong
 `xem-truoc-ban-dung.py` bằng filter ffmpeg (ví dụ `zoompan`/`crop` theo đoạn).

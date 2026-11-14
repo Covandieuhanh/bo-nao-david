@@ -42,7 +42,7 @@ for s in hl["segs"]:
     if mus and mus[-1]["k"] == s["tone"]: mus[-1]["b"] = s["clip_end"]
     else: mus.append(dict(k=s["tone"], a=0.0 if not mus else mus[-1]["b"], b=s["clip_end"]))
 GAIN = json.load(open(os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../ho-so-thuong-hieu/chung.json'), encoding='utf-8'))['nhac']['muc']   # mức cân từng bài: MỘT nguồn ở hồ sơ chung
-hl["music"] = [dict(f=MUS[x["k"]], a=x["a"], b=x["b"], gain=GAIN[MUS[x["k"]]]) for x in mus]
+hl["nhac"] = [dict(f=MUS[x["k"]], a=x["a"], b=x["b"], gain=GAIN[MUS[x["k"]]]) for x in mus]
 # Thẻ cuối dẫn về bản đầy đủ (luật 13): phuong-an.json "endcard": {"title"?, "speaker"?} — trống thì man-ket.jsx lấy STAGE
 # (tên tập + người nói gốc). Không có khoá "endcard" (vd. kiểu vòng lặp) → không thẻ cuối.
 _plan = json.load(open(os.path.join(P, "phuong-an.json"), encoding="utf-8"))

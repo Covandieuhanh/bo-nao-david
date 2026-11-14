@@ -8,7 +8,7 @@
 
 **File thật (code, một bản duy nhất):**
 - `dung-podcast/scripts/{nguoi-noi.py,tach-nguoi-noi.py (pyannote),duong-bao-am.py,nen-podcast.py,anh-tinh-podcast.sh}`
-- `dung-video-theo-phong-cach/assets/remotion-template/src/components/san-khau.jsx`
+- `dung-video-theo-phong-cach/assets/khuon-remotion/src/thanh-phan/san-khau.jsx`
 - `dung-podcast/references/podcast-design.md`
 
 ## Cách làm

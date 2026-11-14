@@ -46,7 +46,7 @@ fi
 ffmpeg -v error -y -i "$M/audio.wav" -c:a aac -b:a 256k "$M/audio.m4a"
 D2=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$M/audio.wav")
 echo "Cắt thừa: đầu ${A}s, cuối từ ${B}s / ${DUR}s (ngưỡng ${TH} dB)" > "$P/check/trim.txt"
-cp -RL "$BASE/assets/remotion-template" "$P/motion"   # -L: bản thật thư viện hình
+cp -RL "$BASE/assets/khuon-remotion" "$P/motion"   # -L: bản thật thư viện hình
 python3 -I "$BASE/../mo-dun/ho_so.py" podcast "$P/motion/src/hoso.json" >/dev/null
 mkdir -p "$P/motion/public/photos"
 cat > "$P/motion/src/du-an.js" <<JS

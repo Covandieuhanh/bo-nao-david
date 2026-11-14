@@ -37,7 +37,7 @@
   giác đây đúng là highlight trích từ một video dài, không phải video bình thường"). Người dùng chọn: tua nhanh ngắn (không chớp
   sáng, không cắt cứng), thanh thời gian của cả tập gốc + mốc (thay thanh "còn m:ss"), tiếng vút nhỏ, áp cho cả hai nhánh.
   Code: `cat-doan-noi-bat.py` chèn 0,4 s/mối nhảy + `jumps` trong map · `ap-dung-doan-noi-bat.py` → `doan-noi-bat.js` · template `tua.jsx`,
-  `dong-thoi-gian.jsx` (chế độ highlight), `phu-de.jsx` (ẩn phụ đề lúc tua, phụ đề lên trên thanh) · `assets/sfx/tua.wav` (tự tổng hợp)
+  `dong-thoi-gian.jsx` (chế độ highlight), `phu-de.jsx` (ẩn phụ đề lúc tua, phụ đề lên trên thanh) · `assets/hieu-ung-am-thanh/tua.wav` (tự tổng hợp)
   · `xem-truoc-ban-dung.py` trộn tiếng tua (và sửa lỗi chỉ số đầu vào màn nguồn ảnh khi có tiếng hiệu ứng). Không render lại bản cũ.
 - Video thứ hai (IMG_3196, người nói, ngoài trời): chip chuyển cảnh thêm "⏪" khi nhảy lùi trong tập gốc (đoạn 3:53 → 2:22 hiện ⏩ là sai
   nghĩa); thanh tập gốc trên video người nói có nền tối mờ (nền trời sáng làm mốc khó đọc); cú chốt đổi sang thẻ toàn cảnh `ages`
@@ -52,10 +52,10 @@
   ý cho bản đầy đủ** + chấm điểm câu mở (bất ngờ/kết quả lớn > câu hỏi day dứt > nỗi đau > lời than). Không thêm nhãn "BẢN ĐẦY ĐỦ".
 - **Nhịp game show, MỘT skill hai tông** (`soi` sôi động / `lang` lắng; đổi tông giữa chừng được — "1 video có thể vừa có lúc
   truyền tải thông tin tích cực, vừa có tâm sự"). Video mẫu "Ngày nhận xe" chỉ là mẫu về nhịp, giữ mọi luật cũ; không cần tên vòng.
-  Highlight người nói chuyển sang khung ghép clip của dung-video-theo-phong-cach (`montage-template`: thêm `HL` thanh tập gốc, đoạn `jump`
+  Highlight người nói chuyển sang khung ghép clip của dung-video-theo-phong-cach (`khuon-dung-ghep`: thêm `HL` thanh tập gốc, đoạn `jump`
   có chip tua, `TONE`, `MUSIC.tracks`) — script `danh-sach-cat-doan-noi-bat.py` viết sẵn danh-sach-cat.js từ phuong-an.json. Podcast: `ap-dung-doan-noi-bat.py` ghi tông +
   nhạc vào doan-noi-bat.js, `xem-truoc-ban-dung.py` trộn nhạc (sidechain hạ khi có lời), `tua.jsx` có kiểu lắng.
-- **Nhạc nền cố định vài bài** (`assets/music/soi-*.mp3`, `lang-*.mp3`) — người dùng không muốn nhiều lựa chọn làm loạn bản sắc
+- **Nhạc nền cố định vài bài** (`assets/nhac/soi-*.mp3`, `lang-*.mp3`) — người dùng không muốn nhiều lựa chọn làm loạn bản sắc
   kênh. Nguồn: Pixabay (giấy phép Pixabay Content License, không cần ghi nguồn). Pixabay chặn tải tự động (403) → người dùng tự tải.
 - Bản Haruku dựng lại: thêm câu mở "họ sống thọ…" (1:12) + câu hỏi "tại sao… không phải thuốc thang" (1:45); để dành ví dụ cái
   cây + nghĩa "Haruku" cho bản đầy đủ. Mốc từ Whisper ở 1:44 lệch ~0,4 s ("bởi vì" lọt khi cắt ở 104,96) → chép thử từng mốc
@@ -83,7 +83,7 @@
 ## 2026-11-04 — NGƯỜI XEM LÀ TRUNG TÂM (David: "các kênh lớn là hình mẫu thành công đã đạt được điều này rồi thì sao chép luôn")
 Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trước camera, highlight, vlog, podcast), David duyệt kế hoạch 5 pha:
 - `quy-tac-chung.md` (thư mục san-xuat-video) — một nguồn luật chung; SKILL.md chỉ giữ luật riêng. `so-lieu-mau.md` — vòng số liệu sau 7 ngày.
-- **Phát hành** mọi video: 3 tiêu đề + 2 thumbnail 1280×720 (`scripts/anh-thu-nho.sh`, `assets/thumb-template/` — mặt có cảm xúc, ≤ 4
+- **Phát hành** mọi video: 3 tiêu đề + 2 thumbnail 1280×720 (`scripts/anh-thu-nho.sh`, `assets/khuon-anh-thu-nho/` — mặt có cảm xúc, ≤ 4
   chữ, nhận diện David; nguồn quay dọc tự thành khung một bên). Video ngắn không ghép bìa trước video.
 - **Phụ đề video ngắn** 1–3 chữ to mỗi nhịp ngang ngực (`kieu-phu-de.js` `ShortLine`, chuẩn Hormozi/DOAC) — thay quyết định cũ "giữ
   phụ đề đáy" (bỏ đề xuất K ngày 03/11) vì David đổi kim chỉ nam. Video dài / vlog / podcast giữ hộp tối.

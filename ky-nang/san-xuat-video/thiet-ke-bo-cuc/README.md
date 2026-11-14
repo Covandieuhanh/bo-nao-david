@@ -52,7 +52,7 @@ Bước nhẹ (1–3): tới đó nhắc một dòng để David tự đổi mô
    **Cách ghi kho:** một file `nguon-tham-khao/<ten-nguon>-<ngay>.md` kể học gì từ đâu. Mỗi cách mới thêm một dòng ở `bo-cuc.md` hoặc `am-thanh.md`,
    ghi rõ "đã có code" hay "chưa có code", **và thêm dòng "dấu hiệu nhận ra → kiểu" vào `tu-chon.md`** (không có dòng ở đó thì không
    bao giờ được chọn). Không xoá, không sửa nghĩa dòng cũ.
-7. **Làm code khi cần:** thêm `kieu` mới trong `dung-video-theo-phong-cach/assets/remotion-template/src/components/bo-cuc.jsx` (màu nhấn và
+7. **Làm code khi cần:** thêm `kieu` mới trong `dung-video-theo-phong-cach/assets/khuon-remotion/src/thanh-phan/bo-cuc.jsx` (màu nhấn và
    font lấy từ `C`, `HEAD`, `BODY`; hình động dùng `ease`, `pop`, `Illus`, `Diagram`, `Icon` hoặc `thu-vien-tai-nguyen/chuyen-dong.js`). Vị trí lấy từ hằng số chung (`SAFE`, `BRAND_TOP`/`BRAND_BOT`,
    `PF`, `CAP_H`), **không viết số vị trí riêng**.
 8. **Kiểm không phá** (bắt buộc trước khi dùng vào video thật):

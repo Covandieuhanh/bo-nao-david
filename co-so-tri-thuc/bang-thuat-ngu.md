@@ -96,4 +96,23 @@ tiếng Anh chuẩn → dùng đúng cột "Tên dùng"; chưa có thì thêm m�
 | `settings.json`, `.gitignore`, `.env` | Claude Code / Git đọc đúng tên này | Cài đặt / danh sách bỏ qua / biến môi trường | — |
 | `~/Documents`, `~/Movies`, `~/Downloads`, `~/Desktop` | Thư mục hệ thống macOS | Tài liệu / video / tải về / màn hình chính | `~/tai-lieu`, `~/video`, `~/tai-ve`, `~/man-hinh-chinh` |
 | Thư mục app: ChatGPT, Codex, Obsidian, Zoom, DaVinci Resolve, TV | App tự tạo, đổi thì app tạo lại hoặc lỗi | — | — |
-| Lệnh `playwright-cli`, gói npm, tên module Python có gạch dưới | Tên chương trình / Python cấm gạch nối trong tên module | — | — |
+| Lệnh `playwright-cli` và thư mục `.playwright-cli/` nó tự tạo, tên gói npm | Tên chương trình do nhà phát triển đặt | — | — |
+| Module Python được import (`_chung.py`, `ho_so.py`, `thu_vien_slide.py`) | Python cấm gạch nối trong tên module, dùng gạch dưới | — | — |
+| `.claude-plugin/`, `hooks/` trong mod đã lưu trữ | Định dạng plugin của Claude | Khai báo plugin / móc lệnh | — |
+| `~/.claude/` và các thư mục bên trong (`skills`, `projects`, `channels`, `backups`) | Claude Code đọc đúng tên này | Cấu hình Claude | — |
+| Tên sản phẩm: Google Drive, Hermes, Remotion, Telegram… | Tên riêng | — | — |
+| `~/Documents/David.Claude` | Lối tắt cũ trỏ tới `bo-nao-david`, để phiên cũ trong app và lịch app vẫn mở được | — | xoá khi không còn phiên cũ cần mở |
+
+## Cấu trúc thư mục bộ não (`~/Documents/bo-nao-david`)
+
+| Tiếng Anh | Tên dùng |
+|---|---|
+| Second Brain (repo) | `bo-nao-david` |
+| Templates | `khuon-...` (`khuon-remotion`, `khuon-dung-ghep`, `khuon-anh-thu-nho`) |
+| Components | `thanh-phan` |
+| Fonts | `phong-chu` |
+| Music / Sound Effects | `nhac` / `hieu-ung-am-thanh` |
+| Engine | `bo-may` |
+| License | `giay-phep` |
+| Setup Guide | `huong-dan-cai-dat` |
+| Entry Point | `diem-vao` |

@@ -10,7 +10,7 @@
 - `dung-video-theo-phong-cach/scripts/vi-tri-khuon-mat.sh`
 - `dung-video-theo-phong-cach/scripts/vi-tri-khuon-mat.py`
 - `dung-video-theo-phong-cach/scripts/bao-ve-lop-phu.py`
-- `dung-video-theo-phong-cach/assets/remotion-template/src/bo-cuc.js (Place)`
+- `dung-video-theo-phong-cach/assets/khuon-remotion/src/bo-cuc.js (Place)`
 
 ## Luật
 - Lớp phủ (không toàn màn hình) **không chạm mặt + đầu + vai + ngực** người nói; chỉ chạm tay / bụng / nền thì được.

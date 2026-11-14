@@ -8,7 +8,7 @@ metadata:
   modified: 2026-08-12T07:41:50.434Z
 ---
 
-⚠️ **App đã pivot hoàn toàn sang V2 "3 trục" (2026-08-12).** Toàn bộ model cũ (projects/tasks/sections/subtasks/contacts/transactions/obligations/finance_profiles + CRM/Kanban/Analytics/Tài chính-cũ + mọi route `/tasks //contacts //finance //projects //overview`…) **đã bị gỡ code + drop bảng** trong đợt "dọn luôn". Đừng tham chiếu bảng/route/file cũ — chúng không còn tồn tại. **Nguồn sự thật hiện tại là [[notion-v2-spec-plan]]** (mô tả đầy đủ 9 bảng V2, backend `routes/v2.ts`, frontend `components/v2/*`, Telegram V2, và trạng thái từng pha kể cả Pha 4b dọn kho đã xong).
+⚠️ **App đã pivot hoàn toàn sang V2 "3 trục" (2026-08-12).** Toàn bộ model cũ (projects/tasks/sections/subtasks/contacts/transactions/obligations/finance_profiles + CRM/Kanban/Analytics/Tài chính-cũ + mọi route `/tasks //contacts //finance //projects //overview`…) **đã bị gỡ code + drop bảng** trong đợt "dọn luôn". Đừng tham chiếu bảng/route/file cũ — chúng không còn tồn tại. **Nguồn sự thật hiện tại là [[notion-v2-spec-plan]]** (mô tả đầy đủ 9 bảng V2, backend `routes/v2.ts`, frontend `thanh-phan/v2/*`, Telegram V2, và trạng thái từng pha kể cả Pha 4b dọn kho đã xong).
 
 **Hiện trạng V2 tóm tắt:**
 - **9 bảng:** users, settings, notes, people, market_items, money_entries, goals, actions, links (backbone liên kết đa hình). Xem chi tiết trong [[notion-v2-spec-plan]].

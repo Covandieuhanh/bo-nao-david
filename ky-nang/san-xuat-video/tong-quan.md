@@ -56,7 +56,7 @@ Luật áp dụng mọi video: **[`quy-tac-chung.md`](quy-tac-chung.md)**. Bộ 
 - `references/scene-design.md`, `multi-clip.md`, `podcast-design.md`: các loại cảnh, cách ghép, cách thiết kế podcast.
 - `references/hoc-tu-*`: báo cáo học hình mẫu (kho, không phải luật).
 - Highlight: `cat-doan-noi-bat/scripts/` (`tao-doan-noi-bat.sh`, `kiem-am-luong.py`, `cat-doan-noi-bat.py`, `danh-sach-cat-doan-noi-bat.py`, `ap-dung-doan-noi-bat.py`) —
-  chọn, soát, cắt câu, viết kịch bản dựng; dựng qua 2 skill kia. `cat-doan-noi-bat/assets/music/` — kho nhạc kênh (README trong đó).
+  chọn, soát, cắt câu, viết kịch bản dựng; dựng qua 2 skill kia. `cat-doan-noi-bat/assets/nhac/` — kho nhạc kênh (README trong đó).
 - `scripts/`: công cụ (làm sạch, dò mặt, nâng khung, phụ đề, render, `anh-thu-nho.sh`…).
 - `assets/`: mẫu Remotion cho video đơn, video ghép (cũng là khung của highlight người nói) và podcast, cộng tiếng "ting", "vút tua".
 

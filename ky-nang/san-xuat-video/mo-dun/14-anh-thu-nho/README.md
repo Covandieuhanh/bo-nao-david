@@ -8,7 +8,7 @@
 
 **File thật (code, một bản duy nhất):**
 - `dung-video-theo-phong-cach/scripts/anh-thu-nho.sh`
-- `dung-video-theo-phong-cach/assets/thumb-template/`
+- `dung-video-theo-phong-cach/assets/khuon-anh-thu-nho/`
 
 ## Luật
 - Chỉ khi video xuất **ngang** VÀ đăng YouTube (hỏi lúc đầu). Video dọc: chỉ ghi mốc khung bìa đề xuất.
@@ -23,7 +23,7 @@
   theo nội dung là ngoại lệ duy nhất của luật lấy khung từ video).
 - Lệnh: `zsh dung-video-theo-phong-cach/scripts/anh-thu-nho.sh "$P" <giây | cN@giây | ảnh> "<DÒNG 1>" "<DÒNG 2>" <số> [left|right] [vị trí] [phóng]`.
 
-## Mẫu ảnh bìa podcast không mặt (mẫu: `mau-chuan/thumb-podcast/chuan.jpg`)
+## Mẫu ảnh bìa podcast không mặt (mẫu: `mau-chuan/anh-thu-nho-podcast/chuan.jpg`)
 Video chỉ có tiếng thì bìa **không có mặt người**, kể cả ảnh chụp riêng: bìa phải khớp thứ có trong video. Luật mặt người ở trên chỉ dùng cho video quay hình.
 
 **Công thức:** nền hoạ tiết + một hình đại diện cho ý + tiêu đề ngắn + góc "DAVID · PODCAST".
@@ -37,6 +37,6 @@ Video chỉ có tiếng thì bìa **không có mặt người**, kể cả ảnh
 ```bash
 THUMB_HINH=danh-sach THUMB_TAG=PODCAST zsh dung-video-theo-phong-cach/scripts/anh-thu-nho.sh "$P" - "MÌNH GIỎI" "CÁI GÌ?" 1
 ```
-`THUMB_HINH` = `danh-sach` hoặc tên trong `ICONS` của `thu-vien-tai-nguyen/bieu-tuong.jsx` (puzzle, target, people, tree...). Thiếu hình phù hợp thì vẽ thêm vào `ICONS`. Nền và hình nằm ở `assets/thumb-template/hinh-podcast.jsx`.
+`THUMB_HINH` = `danh-sach` hoặc tên trong `ICONS` của `thu-vien-tai-nguyen/bieu-tuong.jsx` (puzzle, target, people, tree...). Thiếu hình phù hợp thì vẽ thêm vào `ICONS`. Nền và hình nằm ở `assets/khuon-anh-thu-nho/hinh-podcast.jsx`.
 
 **Căn cứ:** 5 kênh podcast không mặt có lượt xem cao (Better Version, Tri Kỷ Cảm Xúc, Hieu Nguyen, Vì sao thế nhỉ!, Tư Duy Và Sách) đều dùng hình theo nội dung cộng câu ngắn. Chỉ là mẫu nhỏ, có thể thử thêm bằng Test & Compare của YouTube.

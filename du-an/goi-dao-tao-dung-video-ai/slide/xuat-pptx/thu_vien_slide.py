@@ -74,7 +74,7 @@ def tx(s, x, y, w, h, text, size=20, color=None, bold=False, font=BODY, align=PP
             if isinstance(r, str): r = (r, {})
             t, o = r
             run = para.add_run(); run.text = t
-            ft = run.font; ft.name = o.get("font", font); ft.size = Pt(o.get("size", size))
+            ft = run.font; ft.name = o.get("phong-chu", font); ft.size = Pt(o.get("size", size))
             ft.bold = o.get("bold", bold); ft.color.rgb = rgb(o.get("color", color))
     return tb
 
@@ -186,7 +186,7 @@ def checks(s, x, y, w, items, size=17, gap=0.55, done=None):
         mark = "☑" if ok else "☐"
         mc = C["green"] if ok else (C["soft"] if dark else C["orange"])
         tc = C["paper"] if dark else C["ink"]
-        tx(s, x, y + i * gap, w, gap, [[(mark + "  ", {"color": mc, "size": size + 2, "font": BODY}), (it, {"color": tc})]], size)
+        tx(s, x, y + i * gap, w, gap, [[(mark + "  ", {"color": mc, "size": size + 2, "phong-chu": BODY}), (it, {"color": tc})]], size)
 
 def steps(s, x, y, w, items, size=17, gap=0.78, start=1):
     dark = s._theme == "dark"
@@ -194,4 +194,4 @@ def steps(s, x, y, w, items, size=17, gap=0.78, start=1):
         yy = y + i * gap
         tx(s, x, yy - 0.04, 0.6, 0.6, f"{start + i:02d}", size + 4, C["orange"], True, HEAD)
         tc = C["paper"] if dark else C["ink"]; dc = C["dtext"] if dark else C["grey"]
-        tx(s, x + 0.75, yy + 0.02, w - 0.75, gap, [[(t, {"bold": True, "color": tc, "font": HEAD}), ("  " + d if d else "", {"color": dc})]], size)
+        tx(s, x + 0.75, yy + 0.02, w - 0.75, gap, [[(t, {"bold": True, "color": tc, "phong-chu": HEAD}), ("  " + d if d else "", {"color": dc})]], size)

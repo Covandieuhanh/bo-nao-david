@@ -8,8 +8,8 @@
 
 **File thật (code, một bản duy nhất):**
 - `dung-video-theo-phong-cach/scripts/{vung-an-toan.py,ghep-anh-tinh.sh,kiem-khung-hinh.sh,xem-truoc-ban-dung.py,don-tap.py,luu-drive.sh}`
-- `…/remotion-template/{xem-truoc.mjs,xuat-video.mjs}`
-- `…/montage-template/{anh-tinh.mjs,xuat-chuong-trinh.mjs}`
+- `…/khuon-remotion/{xem-truoc.mjs,xuat-video.mjs}`
+- `…/khuon-dung-ghep/{anh-tinh.mjs,xuat-chuong-trinh.mjs}`
 - `dung-video-theo-phong-cach/references/loi-thuong-gap.md`
 
 ## Cách làm

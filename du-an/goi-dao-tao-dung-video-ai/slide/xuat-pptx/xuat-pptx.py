@@ -18,7 +18,7 @@ for n, m in meta.items():
     prs.core_properties.title = m["title"]
     prs.core_properties.author = "David Trần"
     blank = prs.slide_layouts[6]
-    for i, s in enumerate(m["slides"], 1):
+    for i, s in enumerate(m["trang-trinh-chieu"], 1):
         sl = prs.slides.add_slide(blank)
         sl.shapes.add_picture(str(png / f"bai-{n}-{i:02d}.png"), 0, 0, prs.slide_width, prs.slide_height)
         continue  # khong ghi chu: Quick Look treo khi co notes
@@ -28,4 +28,4 @@ for n, m in meta.items():
     name = slug(m["title"].replace("·", " "))
     f = out / f"{name}.pptx"
     prs.save(f)
-    print(f.name, len(m["slides"]), "slide")
+    print(f.name, len(m["trang-trinh-chieu"]), "slide")

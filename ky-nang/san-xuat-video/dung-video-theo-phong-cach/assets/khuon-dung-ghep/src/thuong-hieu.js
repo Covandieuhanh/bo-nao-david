@@ -1,5 +1,5 @@
 // Màu nhận diện của chế độ ghép — chuong-trinh.jsx và bieu-tuong.jsx (chép từ remotion-template lúc tạo dự án) cùng đọc ở đây.
-// Giữ TRÙNG với remotion-template/src/chu-de.js (C) — cùng một bộ nhận diện cho mọi loại video.
+// Giữ TRÙNG với khuon-remotion/src/chu-de.js (C) — cùng một bộ nhận diện cho mọi loại video.
 import {Easing, interpolate} from 'remotion';
 
 export {C} from './lib/bien-thiet-ke';   // MỘT NGUỒN thư viện hình (khối 10)

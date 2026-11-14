@@ -5,7 +5,7 @@
 - David: "cái quan trọng nhất là học rất nhiều, tôi cần các skill phải tự động chọn ra được cách nào phù hợp với nội dung của video"; video cuộc gọi mất 4–5 giờ, "tập trung vào điện thoại" mà vẫn còn rác, video nhiều nội dung cần hiện nhiều thông tin hơn. Thêm `thiet-ke-bo-cuc/tu-chon.md` + `chan-doan.py` (bước 6b), `khung-chu-the.py` (+ `--thu`), `bang-ghi-chu.jsx` (`GHI_CHU`), `khung.js`; sửa `chuan-am.py`, khoá render, `soat-canh.mjs`, `xem-truoc.mjs`, `vi-tri-nhan.py`; mục Nhịp làm; bảng lỗi ở gotchas.
 
 ## 11/11/2026: xong tập thì lên Drive, xoá trên Mac
-- David: "máy mac này chỉ còn đóng mỗi vai trò là khi đang thực thi cái gì thì có dữ liệu và tài nguyên của cái đó thôi"; "nhớ lưu lại để lần sau tự động làm việc cho gọn và nhẹ máy mac". Lý do: Mac 228 GB đầy. `don-tap.py --xoa` xoá hẳn file tạm (bỏ Thùng rác), rồi `luu-drive.sh` (mới, kèm `kiem-tai-len-drive.swift`, `giai-phong-drive.swift`) đưa tập lên Drive `sao-luu-mac/video`, chờ lên mây, so khớp, giải phóng cache Drive, xoá trên Mac. Sửa SKILL bước 12 + Xong khi 8, khối 17, quy-tac-chung 8, cat-highlight, podcast, GIOI-THIEU.
+- David: "máy mac này chỉ còn đóng mỗi vai trò là khi đang thực thi cái gì thì có dữ liệu và tài nguyên của cái đó thôi"; "nhớ lưu lại để lần sau tự động làm việc cho gọn và nhẹ máy mac". Lý do: Mac 228 GB đầy. `don-tap.py --xoa` xoá hẳn file tạm (bỏ Thùng rác), rồi `luu-drive.sh` (mới, kèm `kiem-tai-len-drive.swift`, `giai-phong-drive.swift`) đưa tập lên Drive `sao-luu-mac/video`, chờ lên mây, so khớp, giải phóng cache Drive, xoá trên Mac. Sửa SKILL bước 12 + Xong khi 8, khối 17, quy-tac-chung 8, cat-highlight, podcast, tong-quan.
 ## Tái bản 2 — 10/11/2026: bản luật viết lại từ bảng du-an/tai-cau-truc-2-video.md
 - Nhà luật bỏ phóng xen kẽ ở mối cắt là quy-tac-chung mục 2 (kèm lý do); khối 02, ho-so-thuong-hieu/highlight.md, cat-highlight luật 8 trỏ về đó. quy-tac-chung mục 8 trỏ thói quen chung (hỏi, lệnh nền, mật khẩu, báo cáo), chỉ giữ phần riêng video. Bỏ câu chép ở gotchas, phan-phoi-da-kenh; sửa đường trỏ "hình của chính video" về khối 14. Viết lại 6 câu máy đo bắt nhầm ("thay cho", "THAY", tên file có ngày).
 
@@ -62,7 +62,7 @@
   văn câu); MỌI video kết bằng màn chốt `cta` ~4 s ("David rất mong có được sự góp ý của bạn tại phần bình luận!", keu-goi-hanh-dong.js) — hình
   lùi vào khung để vẫn thấy vẫy tay/like. Lý do: đánh giá cho thấy video giúp hiểu nhưng chưa thúc người xem hành động.
 - **Câu màn chốt không cố định** (người dùng chốt): Claude tự sáng tạo câu chốt hợp từng video sau khi nắm nội dung — một hành động (bình luận/lưu/theo dõi/chia sẻ, biểu tượng theo kiểu), giọng David, không bịa; câu cố định trong keu-goi-hanh-dong.js chỉ còn là dự phòng.
-- **Tick + "ting" ở màn chốt** (người dùng yêu cầu): câu chốt hiện xong → dấu tick nhỏ bật nảy ở góc biểu tượng + tiếng chuông ting (assets/sfx/ting.wav, tự tổng hợp, không bản quyền) để kích thích người xem hành động.
+- **Tick + "ting" ở màn chốt** (người dùng yêu cầu): câu chốt hiện xong → dấu tick nhỏ bật nảy ở góc biểu tượng + tiếng chuông ting (assets/hieu-ung-am-thanh/ting.wav, tự tổng hợp, không bản quyền) để kích thích người xem hành động.
 
 ## 2026-11-03 — ghép nhiều clip: thời lượng theo nội dung
 - Người dùng chốt: thời lượng video ghép **tự cân theo nội dung**, không cắt theo tỉ lệ/con số mặc định — có khi chỉ giữ 50%
@@ -110,7 +110,7 @@
   đáy LOW_Y), chips (danh sách hiện theo lời), action (thẻ câu hành động), zoom (dồn rồi tự nhả sau `hold` 2,5 s); ~1 / 20–30 s.
 
 ## 2026-11-04 — BỘ NHẬN DIỆN DAVID (người dùng chốt: "xem bất kỳ thể loại nào cũng nhận ra cùng một người làm")
-- brand.json (remotion-template/src, một nguồn; tao-dung-ghep.sh chép sang dự án ghép). Dấu góc ● DAVID │ chủ đề: BrandMark
+- brand.json (khuon-remotion/src, một nguồn; tao-dung-ghep.sh chép sang dự án ghép). Dấu góc ● DAVID │ chủ đề: BrandMark
   (lop-phu.jsx → Captions 1 video, Stage podcast) + Hud (chế độ ghép, highlight người nói). Hook đổi sang khuôn tiêu đề chung (dòng
   nhỏ cam + gạch cam + chữ trắng/cam, bỏ ô nền màu). Tiếng ký hiệu sting.wav ở tiêu đề mở đầu (xem-truoc-ban-dung.py · danh-sach-cat-vlog.py · danh-sach-cat-doan-noi-bat.py).
 - Video 1 người / podcast: nhạc kênh rất nhỏ (thấp hơn giọng 22 LU, `project.music` đổi bài / '' tắt) + loudnorm −14 LUFS bản cuối.
@@ -123,7 +123,7 @@
 ## 2026-11-04 — NGƯỜI XEM LÀ TRUNG TÂM (David: "các kênh lớn là hình mẫu thành công đã đạt được điều này rồi thì sao chép luôn")
 Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trước camera, highlight, vlog, podcast), David duyệt kế hoạch 5 pha:
 - `quy-tac-chung.md` (thư mục san-xuat-video) — một nguồn luật chung; SKILL.md chỉ giữ luật riêng. `so-lieu-mau.md` — vòng số liệu sau 7 ngày.
-- **Phát hành** mọi video: 3 tiêu đề + 2 thumbnail 1280×720 (`scripts/anh-thu-nho.sh`, `assets/thumb-template/` — mặt có cảm xúc, ≤ 4
+- **Phát hành** mọi video: 3 tiêu đề + 2 thumbnail 1280×720 (`scripts/anh-thu-nho.sh`, `assets/khuon-anh-thu-nho/` — mặt có cảm xúc, ≤ 4
   chữ, nhận diện David; nguồn quay dọc tự thành khung một bên). Video ngắn không ghép bìa trước video.
 - **Phụ đề video ngắn** 1–3 chữ to mỗi nhịp ngang ngực (`kieu-phu-de.js` `ShortLine`, chuẩn Hormozi/DOAC) — thay quyết định cũ "giữ
   phụ đề đáy" (bỏ đề xuất K ngày 03/11) vì David đổi kim chỉ nam. Video dài / vlog / podcast giữ hộp tối.
@@ -155,7 +155,7 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
 - **Học từ HyperFrames + Motion Studio, không cài** (David duyệt): bỏ lơ lửng, vòng xoay, quầng nhấp nháy; ra ngắn hơn vào; kiểu vào theo ý câu (khối 07). Thêm sơ đồ `xay-tang`, `doi-trang-thai`, `chuyen-giao`. Thêm `scripts/soat-canh.mjs` (khối 17) và `scripts/chu-tren-man.mjs` (khối 03). Bản trước: `~/.claude/skills/san-xuat-video.bak-2026-11-06-hoc-motion`.
 
 ## 2026-11-07
-- **Điểm nhấn trên người** (David: "mọi video đều phải có motion graphics, nhiều loại, không chỉ toàn màn hình"): cảnh `nhan` (components/nhan.jsx) — zoom dồn vào mặt (xem-truoc-ban-dung.py, zoompan theo `mat.js`), làm tối viền, chữ nhấn / biểu tượng cạnh mặt. `vi-tri-nhan.py` tính vị trí mặt (chạy trong vi-tri-khuon-mat.sh, cả khung ngang). Nới luật 2 trạng thái: `nhan` thuộc TWO_KEEP. soat_canh kiểm cảnh `nhan`. Vlog / highlight: dùng `zoom` + `pow` sẵn có của khung ghép (đặt `keep: true` để không bị đổi toàn màn hình).
+- **Điểm nhấn trên người** (David: "mọi video đều phải có motion graphics, nhiều loại, không chỉ toàn màn hình"): cảnh `nhan` (thanh-phan/nhan.jsx) — zoom dồn vào mặt (xem-truoc-ban-dung.py, zoompan theo `mat.js`), làm tối viền, chữ nhấn / biểu tượng cạnh mặt. `vi-tri-nhan.py` tính vị trí mặt (chạy trong vi-tri-khuon-mat.sh, cả khung ngang). Nới luật 2 trạng thái: `nhan` thuộc TWO_KEEP. soat_canh kiểm cảnh `nhan`. Vlog / highlight: dùng `zoom` + `pow` sẵn có của khung ghép (đặt `keep: true` để không bị đổi toàn màn hình).
 - `ap-dung-lam-sach.py`: file DJI có luồng phụ làm ffprobe in thêm dòng → lấy dòng đầu.
 - Màn chốt `cta` có bản khung ngang (hanh-dong.jsx): ô video 16:9 rộng 56% giữa trên + câu chốt bên dưới (bản dọc làm câu chốt rơi khỏi khung ngang).
 - **Chữ trên video = nguyên văn lời David** (David: "không được sáng tạo sai lời chính xác của tôi"): bỏ thẻ tít mặc định, màn chốt dùng câu David nói cuối video, không số chạy, không bỏ chữ đổi nghĩa. quy-tac-chung 1, khối 06, 08.
@@ -181,21 +181,21 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
 
 ## 2026-11-09 · thẻ cạnh mặt xuống dòng cân (app dựng video, bản thử "Sự tập trung")
 - Lỗi: chữ trong thẻ `bocuc` (the-canh / ô người + thẻ) tự ngắt ở chỗ vô nghĩa, để một chữ đứng lẻ ("LUYỆN TẬP LẠI THÓI / QUEN").
-- Sửa `components/bo-cuc.jsx`: `textWrap: 'balance'` (dòng đều nhau) + `whiteSpace: 'pre-line'` (kịch bản đặt `\n` theo cụm nghĩa).
+- Sửa `thanh-phan/bo-cuc.jsx`: `textWrap: 'balance'` (dòng đều nhau) + `whiteSpace: 'pre-line'` (kịch bản đặt `\n` theo cụm nghĩa).
   Dự án cũ muốn theo: bấm "Cập nhật khung dựng" trong app (hoặc chép lại bo-cuc.jsx) rồi render lại cảnh bocuc.
 
 ## 2026-11-09 · khung ghép clip (highlight người nói, vlog) — lớp phủ toàn màn hình căn giữa, màn chốt theo luật 4
 - Lỗi (app dựng video, thử 2 đoạn ngắn; Claude tự duyệt hình chỉ ra): lớp phủ bị overlay_guard đổi sang toàn màn hình chỉ bị đẩy lên +
   phóng 1,12 → chữ/biểu tượng dính mép trái, chữ dài tràn khung; pow chia theo từ, không theo cụm; dấu góc highlight lấy tên tập dài
   ("…ĐẾN MỨC KHÔN…"); danh-sach-cat-doan-noi-bat.py luôn lấy câu cuối làm màn chốt (trái luật 4).
-- Sửa: `montage-template/src/chuong-trinh.jsx` thêm CHẾ ĐỘ GIỮA (GiuaCtx) cho pow · chips · nameCard · location khi toàn màn hình — căn giữa trong
+- Sửa: `khuon-dung-ghep/src/chuong-trinh.jsx` thêm CHẾ ĐỘ GIỮA (GiuaCtx) cho pow · chips · nameCard · location khi toàn màn hình — căn giữa trong
   vùng an toàn, không phóng; pow nhận `\n` theo cụm nghĩa + cỡ chữ tự co theo dòng dài nhất; location tự co + textWrap balance.
   `danh-sach-cat-doan-noi-bat.py`: màn chốt chỉ khi có câu `cta` / KEUGOI nguyên văn (không có → CTA = null, kết ở câu chốt ý + thẻ cuối); dấu góc dùng
   `topic` ngắn của phương án (≤ 3 chữ) trước tên tập.
 
 ## 2026-11-10 · Chữ nhấn dưới cằm đè miệng khi mặt nằm thấp
 - Lỗi: video vòng đồng xu (mặt thấp, khung dọc hẹp) — `nhan.jsx` kẹp ô "dưới cằm" lên trên dải phụ đề → ô chữ đè miệng/cằm.
-- Sửa: `remotion-template/src/components/nhan.jsx` — khi ô dưới cằm bị kẹp lên quá cằm, đưa ô lên **trên đầu** (dưới dấu góc);
+- Sửa: `khuon-remotion/src/thanh-phan/nhan.jsx` — khi ô dưới cằm bị kẹp lên quá cằm, đưa ô lên **trên đầu** (dưới dấu góc);
   không đủ chỗ trên đầu thì giữ cách cũ.
 - 2026-11-10 · David chốt: video dọc ngắn bỏ thanh thời gian + thẻ cuối, màn chốt trên hình (quy-tac-chung 5); thêm `nganDoc()` (nhan-dien-thuong-hieu.js), `NGAN_DOC` (thanh.js), Cta dọc ngắn trong hanh-dong.jsx / chuong-trinh.jsx.
 

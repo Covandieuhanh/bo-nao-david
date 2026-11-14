@@ -17,7 +17,7 @@
 #            # kind 1: ghép TRƯỚC rồi tới lời chào (mặc định, đoạn ghép đứng đầu video).
 #            # kind 2: lời chào TRƯỚC — tách clip chào làm hai mục trong "clips" và đặt {"montage": true} giữa hai mục, ngay sau câu
 #            #         chốt kiểu "Let's go / xin được bắt đầu".
-#            # "music": "intro-soi" (mặc định) | "intro-lang" — Claude chọn theo nội dung chuyến. Cảnh câm không ghi len = 2 phách
+#            # "nhac": "intro-soi" (mặc định) | "intro-lang" — Claude chọn theo nội dung chuyến. Cảnh câm không ghi len = 2 phách
 #            # của bài (≈ 1,06 s) và nhạc được canh để mọi mối cắt cảnh câm rơi đúng phách.
 #            # Có intro thì "teaser" bỏ qua (câu đắt đặt thành cảnh voice đầu tiên) và "title" không còn đứng riêng.
 #   "fx": [                                                                     # HIỆU ỨNG theo lời (mốc = giây trong clip gốc)
@@ -55,8 +55,8 @@ GAIN = json.load(open(os.path.join(os.path.dirname(os.path.realpath(__file__)), 
 #   intro-soi = Upbeat (alex-morgan) — chuyến vui, du lịch · intro-lang = Inspiring Documentary (AtlasAudio) — hành hương, từ thiện, ý nghĩa
 BEAT = {'intro-soi': (0.530, 0.015), 'intro-lang': (0.530, 0.040)}
 BRAND = json.load(open(os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../thu-vien-tai-nguyen/brand.json'), encoding='utf-8'))
-SFXDIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../assets/sfx')
-MUSDIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../cat-doan-noi-bat/assets/music')
+SFXDIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../assets/hieu-ung-am-thanh')
+MUSDIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../cat-doan-noi-bat/assets/nhac')
 intro_mus = None
 MUS = {'soi': 'soi-1', 'lang': 'lang-1'}
 # plan.json "tuyen" (hồ sơ chung nhac.tuyen, David chốt 08/11: chọn nhạc theo nội dung từ cả kho) → bài đầu của tuyến cho đoạn sôi;
@@ -116,7 +116,7 @@ def emit_montage():
     # đoạn ghép mở đầu: cảnh câm chạy trên nhạc intro, cảnh `voice` giữ tiếng thật; tiêu đề nằm trên dải cảnh câm (không chồng phụ đề)
     global intro_mus
     m0 = acc; quiet = []
-    mus = INTRO.get('music', 'intro-soi'); beat, phase = BEAT[mus]
+    mus = INTRO.get('nhac', 'intro-soi'); beat, phase = BEAT[mus]
     for i, s in enumerate(INTRO['shots']):
         sid = f'm{i + 1}'; ln = s.get('len', 1.2 if s.get('voice') else round(2 * beat, 3))
         if not s.get('voice'):
@@ -345,10 +345,10 @@ for x, y, k in tr:
 last = next((s_ for s_ in reversed(raw) if not s_['id'].startswith('m')), raw[-1])
 endcard = {'title': plan.get('show', {}).get('name', ''), 'speaker': BRAND['name'], 'clip': last['clip'], 'at': round(max(last['from'], last['to'] - 1.0), 2),
            'len': BRAND['endcardLen'] + (plan.get('ytEnd') or 0), 'play': False, 'yt': plan.get('ytEnd') or 0, 'schedule': plan.get('schedule', '')}   # ytEnd: màn kết YouTube 15–20 s
-st_dst = os.path.join(P, 'motion/public/sfx', BRAND['sting'])
+st_dst = os.path.join(P, 'motion/public/hieu-ung-am-thanh', BRAND['sting'])
 if not os.path.exists(st_dst): shutil.copy(os.path.join(SFXDIR, BRAND['sting']), st_dst)
 for f in {t['f'] for t in tracks}:                       # chép bài cần dùng vào dự án (nhạc cố định của kênh)
-    dst = os.path.join(P, 'motion/public/sfx', f + '.mp3')
+    dst = os.path.join(P, 'motion/public/hieu-ung-am-thanh', f + '.mp3')
     if not os.path.exists(dst): shutil.copy(os.path.join(MUSDIR, f + '.mp3'), dst)
 tpl = open(os.path.join(P, 'motion/src/danh-sach-cat.js'), encoding='utf-8').read()
 head = tpl[:tpl.index('const RAW = [')]

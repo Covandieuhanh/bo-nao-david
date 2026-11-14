@@ -27,11 +27,11 @@ Lượt không gọi skill: model nhỏ chỉ chọn giữa xây bộ não, bot 
 Mod vẫn ghi ngầm mọi việc (loại việc theo skill, việc khác do model nhỏ gán nhãn), chỉ không hiện.
 
 **Dữ liệu** (trên máy, không lên GitHub): `~/.claude/so-viec/phien/<phiên>.json` mỗi phiên tự ghi sổ của mình;
-`~/.claude/so-viec/nhap/<phiên>.json` phiên cũ nhập ngược bằng `python3 -I luu-tru/mods/so-viec/scripts/nhap-lich-su.py`
+`~/.claude/so-viec/nhap/<phiên>.json` phiên cũ nhập ngược bằng `python3 -I luu-tru/mod-giao-dien/so-viec/scripts/nhap-lich-su.py`
 (chạy lại bao nhiêu lần cũng được; phiên cũ: bước im quá 5 phút trong một lượt coi là chờ David, không tính).
 
 **Đang chạy cũng hiện:** phiên mở trước khi cài mod vẫn hiện trên bảng ("chưa có mod"): mod đọc đuôi lịch sử phiên đó đang ghi (thời gian lượt, token, skill gần nhất).
 **Token trực tiếp:** cộng sau mỗi lần gọi model, nên lượt dài (render) thanh token cũng chạy.
 
-**Cài:** `bash tu-dong-hoa/install.sh` (hoặc `claude plugin marketplace add <repo>` rồi `claude plugin install so-viec@david-claude --scope user`), mở phiên mới. Xem [luu-tru/mods/README.md](../README.md).
-Kiểm tra: `claude plugin validate luu-tru/mods/so-viec`, `claude plugin test luu-tru/mods/so-viec`.
+**Cài:** `bash tu-dong-hoa/install.sh` (hoặc `claude plugin marketplace add <repo>` rồi `claude plugin install so-viec@david-claude --scope user`), mở phiên mới. Xem [luu-tru/mod-giao-dien/README.md](../README.md).
+Kiểm tra: `claude plugin validate luu-tru/mod-giao-dien/so-viec`, `claude plugin test luu-tru/mod-giao-dien/so-viec`.

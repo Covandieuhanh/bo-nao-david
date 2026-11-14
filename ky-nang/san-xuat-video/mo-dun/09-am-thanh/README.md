@@ -7,14 +7,14 @@
 **Sửa khối này → chạy lại:** 17
 
 **File thật (code, một bản duy nhất):**
-- `cat-doan-noi-bat/assets/music/`
-- `dung-video-theo-phong-cach/assets/sfx/`
+- `cat-doan-noi-bat/assets/nhac/`
+- `dung-video-theo-phong-cach/assets/hieu-ung-am-thanh/`
 - `dung-video-theo-phong-cach/scripts/xem-truoc-ban-dung.py` · `scripts/chuan-am.py`
-- `dung-video-theo-phong-cach/assets/montage-template/xuat-chuong-trinh.mjs`
+- `dung-video-theo-phong-cach/assets/khuon-dung-ghep/xuat-chuong-trinh.mjs`
 
 ## Luật
 - **Âm thanh nhận diện:** tiếng ký hiệu `sting.wav` lúc hiện tiêu đề mở đầu; "ting" ở màn chốt; "vút" chỉ khi bật kiểu tua cũ.
-- **Kho nhạc kênh** `cat-doan-noi-bat/assets/music` (README liệt kê bài + nguồn). Claude TỰ chọn bài theo tuyến nội dung, không hỏi
+- **Kho nhạc kênh** `cat-doan-noi-bat/assets/nhac` (README liệt kê bài + nguồn). Claude TỰ chọn bài theo tuyến nội dung, không hỏi
   David (David đã tải nhiều nhạc cho từng loại nội dung). Bài mới David tải về `~/Music/nhac-nen` → đặt tên theo tuyến, chép vào kho,
   đo `ebur128` và ghi mức cân vào hồ sơ chung `nhac.muc` (gain = 10^((−15 − I)/20)), thêm vào `nhac.tuyen`.
 - **Mức cân từng bài: một nguồn** `ho-so-thuong-hieu/chung.json` → `nhac.muc` (vlog_edl, render_preview, hl_edl, hl_apply, chuong-trinh.jsx ghép đều đọc

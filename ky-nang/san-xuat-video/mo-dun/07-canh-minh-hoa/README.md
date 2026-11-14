@@ -7,8 +7,8 @@
 **Sửa khối này → chạy lại:** 05, 17
 
 **File thật (code, một bản duy nhất):**
-- `thu-vien-tai-nguyen/{chuyen-dong.js,chu-hien.jsx,mach.js,minh-hoa.jsx,so-do.jsx,bieu-tuong.jsx,giu.js}` · cảnh tự vẽ: `remotion-template/src/rieng/` (mẫu `mau-mach.jsx`)
-- `dung-video-theo-phong-cach/assets/remotion-template/src/components/{CardFull,FullScreen,Action,BoCuc,Nhan}.jsx`
+- `thu-vien-tai-nguyen/{chuyen-dong.js,chu-hien.jsx,mach.js,minh-hoa.jsx,so-do.jsx,bieu-tuong.jsx,giu.js}` · cảnh tự vẽ: `khuon-remotion/src/rieng/` (mẫu `mau-mach.jsx`)
+- `dung-video-theo-phong-cach/assets/khuon-remotion/src/thanh-phan/{CardFull,FullScreen,Action,BoCuc,Nhan}.jsx`
 - `dung-video-theo-phong-cach/scripts/kho-anh-openverse.py`
 - `dung-video-theo-phong-cach/references/scene-design.md` (bảng loại cảnh + props)
 
@@ -54,7 +54,7 @@ kiểu cảnh theo dạng câu nói — đi hết kho, không dừng ở vài ki
 một dòng mỗi cảnh vào `ke-hoach-canh.md`. Bố cục mới học được → thêm vào `thiet-ke-bo-cuc/` + `bo-cuc.jsx`, giữ chữ ký nhận diện.
 Bố cục đã có code: người + phụ đề · `nhan` (mục 4) · **`bocuc`** (`the-canh` thẻ cạnh mặt · `o-nguoi` người vào ô bo góc + `illus` /
 `diagram` / thẻ chữ · `chuong` màn chương · `muc-luc` mục lục tích luỹ · `tien-trinh` thanh tiến trình ý · `canh-nguoi` mạch hình vẽ
-cạnh người, không thẻ — `components/bo-cuc.jsx`) · `illus` / `diagram` toàn màn hình. Chữ trong thẻ: nguyên văn.
+cạnh người, không thẻ — `thanh-phan/bo-cuc.jsx`) · `illus` / `diagram` toàn màn hình. Chữ trong thẻ: nguyên văn.
 Cách viết + khi nào dùng từng kiểu: `bo-cuc.md`.
 - **`phong: 'nguoi-mo' | 'hat'`** ở cảnh toàn màn hình: nền là người nói làm mờ / nền hạt, ngoài nền tối mặc định.
 - **`*từ*`** trong mọi chữ: một từ nhấn font phụ nghiêng màu cam; tối đa một chỗ mỗi cụm.

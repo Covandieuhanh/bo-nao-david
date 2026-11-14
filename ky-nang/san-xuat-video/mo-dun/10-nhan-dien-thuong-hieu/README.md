@@ -7,8 +7,8 @@
 **Sửa khối này → chạy lại:** mọi khối hình (06, 07, 08, 12, 14) → 17
 
 **File thật (code, một bản duy nhất):**
-- `dung-video-theo-phong-cach/assets/remotion-template/src/{brand.json,chu-de.js,phong-chu.js}`
-- `dung-video-theo-phong-cach/assets/montage-template/src/thuong-hieu.js`
+- `dung-video-theo-phong-cach/assets/khuon-remotion/src/{brand.json,chu-de.js,phong-chu.js}`
+- `dung-video-theo-phong-cach/assets/khuon-dung-ghep/src/thuong-hieu.js`
 - `dung-video-theo-phong-cach/references/style-analysis.md`
 
 ## Luật

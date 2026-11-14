@@ -7,10 +7,10 @@
 **Sửa khối này → chạy lại:** 17
 
 **File thật (code, một bản duy nhất):**
-- `dung-video-theo-phong-cach/assets/remotion-template/src/keu-goi-hanh-dong.js`
-- `…/components/hanh-dong.jsx (Cta)`
-- `…/components/man-ket.jsx`
-- `…/components/man-ket-youtube.jsx`
+- `dung-video-theo-phong-cach/assets/khuon-remotion/src/keu-goi-hanh-dong.js`
+- `…/thanh-phan/hanh-dong.jsx (Cta)`
+- `…/thanh-phan/man-ket.jsx`
+- `…/thanh-phan/man-ket-youtube.jsx`
 - `montage chuong-trinh.jsx (CtaEnd, EndCard)`
 
 ## Luật

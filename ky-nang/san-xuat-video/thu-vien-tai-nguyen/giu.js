@@ -4,7 +4,7 @@
 // Luật: hết = max(hết cũ, mốc phần tử cuối + hiện vào + giữ + mờ ra (+ thêm mỗi chữ vượt 3 chữ)), nhưng không quá `dai_max_s` kể từ
 // đầu cảnh, không lấn sang lớp giữ-được kế tiếp, không lấn màn chốt / cuối video (`limit`).
 // Tham số: ho-so-thuong-hieu/chung.json → canh_minh_hoa.{giu_sau_s, giu_moi_chu_s, hien_vao_s, mo_ra_s, dai_max_s}. Một bản cho mọi khung dựng:
-//   montage-template/chuong-trinh.jsx (OVERLAYS) · remotion-template/goc.jsx (SCENES, props nằm trong s.props).
+//   khuon-dung-ghep/chuong-trinh.jsx (OVERLAYS) · khuon-remotion/goc.jsx (SCENES, props nằm trong s.props).
 const HOLD = new Set(['illus', 'diagram', 'action', 'chips', 'pow', 'listItem', 'kinetic', 'scene']);
 const words = (t) => (t || '').replace(/\*\*/g, '').trim().split(/\s+/).filter(Boolean).length;
 

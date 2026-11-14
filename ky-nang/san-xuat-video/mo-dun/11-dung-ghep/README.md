@@ -9,4 +9,4 @@
 **File thật (code, một bản duy nhất):**
 - `dung-video-theo-phong-cach/references/multi-clip.md (chi tiết)`
 - `dung-video-theo-phong-cach/scripts/{tao-dung-ghep.sh,danh-sach-cat-vlog.py,khung-loi.py,bang-lien-ket.py}`
-- `dung-video-theo-phong-cach/assets/montage-template/`
+- `dung-video-theo-phong-cach/assets/khuon-dung-ghep/`

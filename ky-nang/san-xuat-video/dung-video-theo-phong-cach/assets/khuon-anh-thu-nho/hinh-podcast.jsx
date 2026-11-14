@@ -1,4 +1,4 @@
-// NỀN + HÌNH ẢNH BÌA PODCAST KHÔNG MẶT (khối 14, David duyệt 2026-11-06, mẫu: mau-chuan/thumb-podcast/chuan.jpg).
+// NỀN + HÌNH ẢNH BÌA PODCAST KHÔNG MẶT (khối 14, David duyệt 2026-11-06, mẫu: mau-chuan/anh-thu-nho-podcast/chuan.jpg).
 // Nền hoạ tiết: lưới chấm mờ + quầng cam + sóng âm mờ ở đáy. Một hình đại diện cho ý của tập, KHÔNG chữ, không lộ các bước giải pháp.
 // hinh: 'danh-sach' (hình riêng) hoặc tên bất kỳ trong ICONS của thư viện hình (puzzle, target, people, tree, mountain, ...).
 import React from 'react';

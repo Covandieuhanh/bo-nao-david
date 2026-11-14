@@ -56,7 +56,7 @@ thời gian, không thẻ cuối, màn chốt trên hình, kết ở chữ cuố
    | Nhạc | bài vui `soi-*` | bài trầm `lang-*` (piano/dây) |
    | Chữ to | bật nảy, gạch cam | hiện chậm, nét mảnh, không gạch |
    | Hình | dồn khung | màu dịu |
-   Nhạc lấy từ **kho nhạc kênh** (`$SKILL/assets/music/`), Claude tự chọn theo tuyến nội dung (khối 09). Mức nhạc
+   Nhạc lấy từ **kho nhạc kênh** (`$SKILL/assets/nhac/`), Claude tự chọn theo tuyến nội dung (khối 09). Mức nhạc
    theo chuẩn âm lượng chung (thấp hơn giọng ~23 dB). Không nhãn kỹ thuật, không thẻ "TẬP NÀY CÓ GÌ?"/tên vòng.
 10. **Chừa cho bản đầy đủ đúng chỗ**: chừa một chuyện khác hoặc ý mở rộng; ý trong clip phải đi đến hết. Câu mở ưu tiên bất ngờ / kết quả lớn / tiền cược hơn lời than chung chung.
 11. **Không thẻ cuối, không thanh thời gian** (video dọc ngắn, `nhan-dien-chung.md` mục 1). `danh-sach-cat-doan-noi-bat.py` vẫn ghi `ENDCARD` từ
@@ -100,7 +100,7 @@ Làm lần lượt cho từng clip `<id>` (A, B…). `cat/<id>.mp4` của bướ
 ```bash
 LOI_SAN="$P/check/goc" zsh $BASE/scripts/tao-dung-ghep.sh hl-<tên>-<id> "$P/nguon.<ext>"   # chạy nền → ~/Movies/tap-<tên>/3-doan-noi-bat/clip-<id> = $E (c1 = video gốc; LOI_SAN = dùng lại lời đã chép, không chép lại cả video cho mỗi clip)
 python3 -I $SKILL/scripts/danh-sach-cat-doan-noi-bat.py "$P" "$E" <id>                   # → $E/motion/src/danh-sach-cat.js viết sẵn
-cp $SKILL/assets/music/*.mp3 "$E/motion/public/sfx/"                 # kho nhạc kênh (soi-*, lang-*)
+cp $SKILL/assets/nhac/*.mp3 "$E/motion/public/hieu-ung-am-thanh/"                 # kho nhạc kênh (soi-*, lang-*)
 ```
 `danh-sach-cat-doan-noi-bat.py` viết: các câu `p1…pN` **cắt cứng**, khoảng lặng trong câu đã rút (đoạn con `p2b`, `p2c`…), không phóng xen kẽ;
 `SUBS` (giây timeline, chữ đúng câu nguyên văn — hiện cụm 5–8 chữ nhờ `SHORT = true`); `TS(src)` đổi giây video gốc → giây
@@ -133,7 +133,7 @@ PY=$(zsh $POD/scripts/cai-python.sh); $PY $POD/scripts/nguoi-noi.py "$E"; $PY $P
 - **Không bìa** (`COVER = null`) trừ khi David muốn — video ngắn vào thẳng câu chạm.
 - `"endcard": {}` trong phuong-an.json là đủ (trống = lấy `STAGE.title` + người nói của `STAGE`); khuôn tự bỏ thẻ cuối ở video dọc ngắn.
 - `TOPICS` 2–3 mục cho cả clip (mốc = lúc bắt đầu ý), chữ trích lời, không lặp chữ của cảnh đang hiện.
-- **Tông + nhạc**: ghi `tone` cho từng câu như 7A; `ap-dung-doan-noi-bat.py` chép vào `doan-noi-bat.js` (`music`) → `xem-truoc-ban-dung.py` trộn nhạc
+- **Tông + nhạc**: ghi `tone` cho từng câu như 7A; `ap-dung-doan-noi-bat.py` chép vào `doan-noi-bat.js` (`nhac`) → `xem-truoc-ban-dung.py` trộn nhạc
   kho kênh dưới tiếng nói (`ho-so-thuong-hieu/highlight.json` → `nhac_chu_chinh`), không tiếng ký hiệu đầu clip; chuyển cảnh `lang` không tiếng vút.
 - `anh-tinh-podcast.sh` chụp thử (mỗi cảnh lúc đầy nhất + vài mốc `nen@`) → `node xuat-video.mjs` → `nen-podcast.py` → `xem-truoc-ban-dung.py`
   → `kiem-khung-hinh.sh` như bước 7–9 của `$POD/SKILL.md`.
@@ -185,7 +185,7 @@ Mẫu: `~/Movies/tap-di-trainer/3-doan-noi-bat/clip-{A,B,C}`, thành phẩm ở 
 ├── cat/<id>.mp4 · <id>.md · <id>-map.json · <id>-kiem.txt
 ├── ke-hoach-cat.md · dang-bai.md · so-lieu.md
 ~/Movies/tap-<tên>/3-doan-noi-bat/clip-<id>/   → video-final.mp4 (BẢN CUỐI mỗi clip, 1080×1920)
-$SKILL/assets/music/               # soi-*.mp3 · lang-*.mp3 — kho nhạc kênh
+$SKILL/assets/nhac/               # soi-*.mp3 · lang-*.mp3 — kho nhạc kênh
 ```
 
 ## Xong khi

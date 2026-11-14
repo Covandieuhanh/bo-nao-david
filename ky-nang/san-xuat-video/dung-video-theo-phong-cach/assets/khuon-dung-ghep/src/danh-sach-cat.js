@@ -79,7 +79,7 @@ export const CTA = {text: 'David rất mong có được sự góp ý của bạ
 
 // HIGHLIGHT (skill cat-doan-noi-bat — scripts/danh-sach-cat-doan-noi-bat.py viết sẵn cả file): vlog thường để null / [].
 // HL = {src_duration}: bật thanh của CẢ tập gốc ở đáy + chip tua ở đoạn `jump` ({id, clip, from, freeze: 0.4, vol: 0, jump: {from, to}}).
-// TONE = [[từ, đến, 'lang' | 'soi']] giây timeline. MUSIC.tracks = [{f, a, b, gain}] — f là file public/sfx/<f>.mp3.
+// TONE = [[từ, đến, 'lang' | 'soi']] giây timeline. MUSIC.tracks = [{f, a, b, gain}] — f là file public/hieu-ung-am-thanh/<f>.mp3.
 export const HL = null;
 export const TONE = [];
 // Thẻ cuối dẫn về bản đầy đủ (highlight): {title: '<tên tập gốc>', speaker: '<tên người nói gốc>', clip: 'c1', at: <giây>, len: 1.8} — null = không có

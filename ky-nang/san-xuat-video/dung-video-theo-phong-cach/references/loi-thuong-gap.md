@@ -157,7 +157,7 @@
 
 ## Highlight (dùng chung template với cat-doan-noi-bat)
 - `motion/src/doan-noi-bat.js` = null ở mọi dự án thường; có dữ liệu (ap-dung-doan-noi-bat.py) thì phụ đề hiện thanh tập gốc + hiệu ứng tua
-  (tua.jsx, chỉ khi bật `--tua`) và xem-truoc-ban-dung.py trộn `assets/sfx/tua.wav`. Sửa Captions/Timeline → chụp thử cả dự án thường lẫn highlight.
+  (tua.jsx, chỉ khi bật `--tua`) và xem-truoc-ban-dung.py trộn `assets/hieu-ung-am-thanh/tua.wav`. Sửa Captions/Timeline → chụp thử cả dự án thường lẫn highlight.
 - xem-truoc-ban-dung.py: chỉ số đầu vào của màn nguồn ảnh phải đếm sau mọi tiếng hiệu ứng (trước đây cố định n + 1 → sai khi có ting).
 - Highlight ở video người nói: phụ đề lên 40 px nhường thanh tập gốc → dải lớp phủ phải dừng sớm 40 px (CAP_H = 180 trong bo-cuc.js
   + vi-tri-khuon-mat.py khi doan-noi-bat.js có dữ liệu), không thì ô chữ (hook) chạm phụ đề 2 dòng (gặp ở IMG_3196). Sửa CAP_H ở một nơi → sửa cả hai.

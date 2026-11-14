@@ -617,7 +617,7 @@ const EndCard = ({title, speaker, clip, at, play = true, yt = 0, schedule = ''})
   // yt (giây, plan.json "ytEnd"): sau thẻ nhận diện là MÀN KẾT YOUTUBE (khung chừa 2 video + nút đăng ký), có nhạc kênh nhỏ
   if (yt > 5 && f >= fr(BRAND.endcardLen)) return (
     <AbsoluteFill><YtEnd name={BRAND.name} topic={title} schedule={schedule} start={fr(BRAND.endcardLen)} />
-      {MUSIC.tracks?.[0] && <Audio src={staticFile(`sfx/${MUSIC.tracks[0].f}.mp3`)} loop
+      {MUSIC.tracks?.[0] && <Audio src={staticFile(`hieu-ung-am-thanh/${MUSIC.tracks[0].f}.mp3`)} loop
         volume={(k) => 0.16 * Math.min(1, k / 20) * Math.min(1, Math.max(0, (fr(yt) - k) / 40))} />}</AbsoluteFill>);
   const p = pop(f, 0, {damping: 15, stiffness: 160, mass: 0.7});
   const pb = pop(f, 8, {damping: 10, stiffness: 220, mass: 0.6});
@@ -801,7 +801,7 @@ const Track = ({tr}) => {
   const fadeOut = (t) => tr.b >= TOTAL ? 1 : interpolate(t, [tr.b - XF, tr.b + XF], [1, 0], clamp);
   return (
     <Sequence from={fr(a0)} durationInFrames={fr(Math.min(TOTAL, tr.b + XF) - a0)} name={`nhac ${tr.f}`} layout="none">
-      <Audio src={staticFile(`sfx/${tr.f}.mp3`)} trimBefore={fr(tr.from || 0)} loop
+      <Audio src={staticFile(`hieu-ung-am-thanh/${tr.f}.mp3`)} trimBefore={fr(tr.from || 0)} loop
         volume={(k) => { const t = a0 + k / FPS; return musicVol(fr(t)) * (tr.gain ?? HS.nhac?.muc?.[tr.f] ?? 1) * fadeIn(t) * fadeOut(t); }} />
     </Sequence>
   );
@@ -829,7 +829,7 @@ export const Show = () => {
         <Sequence from={fr(TOTAL - CTA_LEN)} name="chot" layout="none"><AbsoluteFill><CtaEnd text={CTA.text} kind={CTA.kind} /></AbsoluteFill></Sequence>
       )}
       {CTA && (
-        <Sequence from={fr(TOTAL - CTA_LEN + CTA_TICK)} name="ting" layout="none"><Audio src={staticFile('sfx/ting.wav')} volume={0.55} /></Sequence>
+        <Sequence from={fr(TOTAL - CTA_LEN + CTA_TICK)} name="ting" layout="none"><Audio src={staticFile('hieu-ung-am-thanh/ting.wav')} volume={0.55} /></Sequence>
       )}
       {OVS.map((o, i) => {
         const Comp = TYPES[o.type];
@@ -877,16 +877,16 @@ export const Show = () => {
       )}
       {SEGS.filter((s) => s.jump && toneAt(s.start) !== 'lang').map((s) => (
         <Sequence key={`tua${s.id}`} from={Math.max(0, fr(s.start + s.dur / 2 - 0.21))} name="tua" layout="none">
-          <Audio src={staticFile('sfx/tua.wav')} volume={0.32} />
+          <Audio src={staticFile('hieu-ung-am-thanh/tua.wav')} volume={0.32} />
         </Sequence>
       ))}
       {SFX.map((s, i) => (
         <Sequence key={`x${i}`} from={Math.max(0, fr(s.at))} name={s.f} layout="none">
-          <Audio src={staticFile(`sfx/${s.f}.wav`)} volume={s.v} />
+          <Audio src={staticFile(`hieu-ung-am-thanh/${s.f}.wav`)} volume={s.v} />
         </Sequence>
       ))}
       {MUSIC.tracks ? MUSIC.tracks.map((tr, i) => <Track key={`m${i}`} tr={tr} />)
-        : <Audio src={staticFile('sfx/music.wav')} volume={musicVol} />}
+        : <Audio src={staticFile('hieu-ung-am-thanh/music.wav')} volume={musicVol} />}
     </AbsoluteFill>
   );
 };

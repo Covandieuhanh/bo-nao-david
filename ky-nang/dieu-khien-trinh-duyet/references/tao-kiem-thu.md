@@ -166,7 +166,7 @@ A **seed test** is a minimal test that lands the page in the state every scenari
 Minimum viable seed:
 
 ```ts
-// tests/seed.spec.ts
+// kiem-thu/seed.spec.ts
 import { test } from '@playwright/test';
 
 test('seed', async ({ page }) => {
@@ -177,7 +177,7 @@ test('seed', async ({ page }) => {
 Preferred — push navigation into a fixture so scenario tests reuse it:
 
 ```ts
-// tests/fixtures.ts
+// kiem-thu/fixtures.ts
 import { test as baseTest } from '@playwright/test';
 export { expect } from '@playwright/test';
 
@@ -190,7 +190,7 @@ export const test = baseTest.extend({
 ```
 
 ```ts
-// tests/seed.spec.ts
+// kiem-thu/seed.spec.ts
 import { test } from './fixtures';
 
 test('seed', async ({ page }) => {
@@ -205,7 +205,7 @@ If no seed exists, create one that at least navigates to the app.
 Launch the app via the seed in the background and attach:
 
 ```bash
-PLAYWRIGHT_HTML_OPEN=never npx playwright test tests/seed.spec.ts --debug=cli
+PLAYWRIGHT_HTML_OPEN=never npx playwright test kiem-thu/seed.spec.ts --debug=cli
 # wait for "Debugging Instructions" and the session name tw-XXXX
 playwright-cli attach tw-XXXX
 ```
@@ -246,11 +246,11 @@ Save under `specs/<feature>.plan.md`. Use this structure:
 
 ### 1. <Group Name>
 
-**Seed:** `tests/seed.spec.ts`
+**Seed:** `kiem-thu/seed.spec.ts`
 
 #### 1.1. <kebab-case-scenario-name>
 
-**File:** `tests/<group>/<kebab-case-scenario-name>.spec.ts`
+**File:** `kiem-thu/<group>/<kebab-case-scenario-name>.spec.ts`
 
 **Steps:**
   1. <Concrete user step>
@@ -264,7 +264,7 @@ Save under `specs/<feature>.plan.md`. Use this structure:
 
 ### 2. <Next Group>
 
-**Seed:** `tests/seed.spec.ts`
+**Seed:** `kiem-thu/seed.spec.ts`
 ...
 ```
 
@@ -317,7 +317,7 @@ Collect the generated code and write the test file at the path given in the spec
 
 ```ts
 // spec: specs/basic-operations.plan.md
-// seed: tests/seed.spec.ts
+// seed: kiem-thu/seed.spec.ts
 import { test, expect } from './fixtures';   // or '@playwright/test' if no fixtures file
 
 test.describe('Signing in and out', () => {
@@ -356,7 +356,7 @@ Loop 2.2 over the targeted scenarios one at a time, restarting the seed between 
 After generation, run the new tests once:
 
 ```bash
-PLAYWRIGHT_HTML_OPEN=never npx playwright test tests/<group>/<scenario>.spec.ts
+PLAYWRIGHT_HTML_OPEN=never npx playwright test kiem-thu/<group>/<scenario>.spec.ts
 ```
 
 Any failure goes to Section 3.
@@ -380,7 +380,7 @@ Record the list of failing `<file>:<line>` entries and process them one at a tim
 Run the single failing test in debug mode in the background, then attach:
 
 ```bash
-PLAYWRIGHT_HTML_OPEN=never npx playwright test tests/<group>/<scenario>.spec.ts:<line> --debug=cli
+PLAYWRIGHT_HTML_OPEN=never npx playwright test kiem-thu/<group>/<scenario>.spec.ts:<line> --debug=cli
 # wait for "Debugging Instructions" and the tw-XXXX session name
 playwright-cli attach tw-XXXX
 ```

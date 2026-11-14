@@ -4,7 +4,7 @@
 // kind: 'comment' (bình luận — có ba chấm đang gõ) · 'save' (lưu lại) · 'follow' (theo dõi) · 'share' (gửi cho người khác)
 // · 'moi' (MỜI nhắn "gỡ" — kiểu dẫn dắt Mời của kênh David, ho-so-thuong-hieu/kenh.json; không nói giá)
 export default {text: 'David rất mong có được sự góp ý của bạn **tại phần bình luận**!', kind: 'comment'};
-// Dấu tick nhỏ bật lên trên biểu tượng + tiếng "ting" (assets/sfx/ting.wav — xem-truoc-ban-dung.py / chuong-trinh.jsx tự trộn) ở giây
+// Dấu tick nhỏ bật lên trên biểu tượng + tiếng "ting" (assets/hieu-ung-am-thanh/ting.wav — xem-truoc-ban-dung.py / chuong-trinh.jsx tự trộn) ở giây
 // thứ CTA_TICK tính từ đầu màn chốt, ngay sau khi câu chốt hiện xong → báo người xem "đến lượt bạn".
 export const CTA_TICK = 1.6;
 export const CTA_ICONS = {

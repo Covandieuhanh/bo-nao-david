@@ -24,11 +24,11 @@ source "$SKILL/scripts/noi-luu.sh"; P=$(noi_luu "$NAME")   # hl-<tên>-<id> → 
 [ -e "$P" ] && { echo "Đã có $P — chọn tên khác"; exit 1; }
 mkdir -p "${P:h}"
 mkdir -p "$P"/{src,check,ref}
-cp -RL "$SKILL/assets/montage-template" "$P/motion"   # -L: chép BẢN THẬT thư viện hình (src/lib — phụ đề, nhận diện, màn chốt, biểu tượng, màn kết, minh hoạ)
+cp -RL "$SKILL/assets/khuon-dung-ghep" "$P/motion"   # -L: chép BẢN THẬT thư viện hình (src/lib — phụ đề, nhận diện, màn chốt, biểu tượng, màn kết, minh hoạ)
 python3 -I "$SKILL/../mo-dun/ho_so.py" ghep-vlog "$P/motion/src/hoso.json" >/dev/null   # hồ sơ tham số (highlight: danh-sach-cat-doan-noi-bat.py ghi đè)
 echo 'export default {};' > "$P/motion/src/bao-ve.js"   # lớp phủ tự chuyển toàn màn hình — bao-ve-lop-phu.py ghi đè
-mkdir -p "$P/motion/public/sfx"; cp "$SKILL/assets/sfx/ting.wav" "$SKILL/assets/sfx/tua.wav" "$P/motion/public/sfx/"   # ting màn chốt · vút chuyển cảnh highlight
-C="$P/motion/public/clips"; mkdir -p "$C" "$P/motion/public/sfx"
+mkdir -p "$P/motion/public/hieu-ung-am-thanh"; cp "$SKILL/assets/hieu-ung-am-thanh/ting.wav" "$SKILL/assets/hieu-ung-am-thanh/tua.wav" "$P/motion/public/hieu-ung-am-thanh/"   # ting màn chốt · vút chuyển cảnh highlight
+C="$P/motion/public/clips"; mkdir -p "$C" "$P/motion/public/hieu-ung-am-thanh"
 [ -n "$REF" ] && cp "$REF" "$P/ref/mau.${REF:e}"
 [ -n "$STYLE_FROM" ] && echo "$STYLE_FROM" > "$P/ref/style-from.txt"
 

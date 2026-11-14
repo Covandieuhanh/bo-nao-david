@@ -71,7 +71,7 @@ sang **tiếng Việt không dấu**, chữ thường, gạch nối. Mỗi thu�
 | `luu-tru/` | Archive | giữ |
 | `scripts/` | Automation | `tu-dong-hoa/` |
 | `ky-nang/` | Skills | `ky-nang/` |
-| `luu-tru/mods/` (mod đã gỡ 13/11) | Archive | chuyển vào `luu-tru/luu-tru/mods/` |
+| `luu-tru/mod-giao-dien/` (mod đã gỡ 13/11) | Archive | chuyển vào `luu-tru/luu-tru/mod-giao-dien/` |
 | `hermes/` | (tên sản phẩm) | giữ |
 | `bao-cao-trang-thai.md` | Status Report | `bao-cao-trang-thai.md` |
 
@@ -156,14 +156,12 @@ giữ ý, sửa từ nào lệch thuật ngữ (ví dụ `co-so-tri-thuc-github-
 | Drive `tu-lieu-goc` / `thanh-pham` | Raw Footage / Final Deliverables | `tu-lieu-goc` / `thanh-pham` |
 | Bot Telegram "Sổ nhớ" | Notebook | tên hiển thị giữ, thư mục đổi `so-tay` ❓ (đổi cả tên bot thì David tự đổi ở BotFather) |
 
-## 7. Không đổi (lý do kỹ thuật hoặc riêng tư)
+## 7. Đợt 2 (14/11, David: "không có bất kì ngoại lệ nào")
 
-- `~/Documents/bo-nao-david` (thư mục bộ não): đổi tên làm mất liên kết bộ nhớ tự động và lịch sử phiên của app Claude.
-- Tên chuẩn bắt buộc của công cụ: `SKILL.md`, `README.md`, `CLAUDE.md`, `AGENTS.md`, `MEMORY.md`, `huong-dan-cai-dat.md`, `package.json`, `settings.json`, `.gitignore`, và thư mục con `scripts/ references/ assets/ src/` trong mỗi skill (Claude và Node tìm đúng tên này).
-- Mã nguồn (`.py .sh .js .jsx .mjs .swift`): tên file là tên lệnh trong code ❓. Đề xuất **giữ**, vì đổi là phải sửa mọi lệnh gọi mà không giúp người mở file. David muốn đổi luôn thì mình đổi theo bảng.
-- Skill bên ngoài cài vào: `playwright-cli`, `thiet-ke-trang-cuon` (đổi thì lần cập nhật sau bị lệch).
-- Giấy tờ cá nhân trong `~/Documents/2-ca-nhan/` (đất, vay, huyền học, tài khoản): luật 4 không chạm giấy tờ cá nhân.
-- Thư mục của app: ChatGPT, Codex, Obsidian, Zoom, DaVinci Resolve, TV.
+Đã đổi thêm: 142 file mã nguồn (kể cả trong các dự án video ở `~/Movies`), 2 skill ngoài (`dieu-khien-trinh-duyet`, `thiet-ke-trang-cuon`),
+file viết hoa (`bao-cao-trang-thai.md`, `huong-dan-cai-dat.md`, `tong-quan.md`, `david.md`), thư mục tiếng Anh (`thanh-phan`, `phong-chu`, `khuon-remotion`…),
+17 tên giấy tờ cá nhân, tên file sổ tay (`danh-ba`, `viec-da-giao`, `quy-tac-phien-chinh`, `quy-tac-bot`), thư mục Drive về chữ thường,
+thư mục bộ não + repo GitHub thành `bo-nao-david`. Chỉ giữ tên bắt buộc của công cụ: bảng cuối `co-so-tri-thuc/bang-thuat-ngu.md`.
 
 ## 8. Cách đổi (sau khi David duyệt)
 1. Gắn mốc GitHub `truoc-chuan-hoa-ten`.

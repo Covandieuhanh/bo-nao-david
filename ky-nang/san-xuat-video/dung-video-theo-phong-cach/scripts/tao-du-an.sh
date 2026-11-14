@@ -13,7 +13,7 @@ mkdir -p "$P"/{ref,check,images,davinci/media}
 EXT=${SRC:e}
 cp "$SRC" "$P/davinci/media/video_goc.$EXT"
 [ -n "$REF" ] && cp "$REF" "$P/ref/mau.${REF:e}"
-cp -RL "$SKILL/assets/remotion-template" "$P/motion"   # -L: chép BẢN THẬT thư viện hình (src/lib)
+cp -RL "$SKILL/assets/khuon-remotion" "$P/motion"   # -L: chép BẢN THẬT thư viện hình (src/lib)
 python3 -I "$SKILL/../mo-dun/ho_so.py" lam-video "$P/motion/src/hoso.json" >/dev/null   # hồ sơ tham số cho khung dựng
 mkdir -p "$P/motion/public/photos"
 # Thông số video gốc (dùng kích thước hiển thị, tính cả xoay)

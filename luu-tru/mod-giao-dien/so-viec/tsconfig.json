@@ -1,0 +1,3 @@
+{
+  "extends": "./.claude-plugin/kieu-du-lieu/tsconfig.json"
+}

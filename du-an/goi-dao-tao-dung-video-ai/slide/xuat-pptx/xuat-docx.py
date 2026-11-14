@@ -11,7 +11,7 @@ d.add_heading("Ghi chú trainer · Dựng video bằng AI trên máy tính", 0)
 d.add_paragraph("Đi kèm 8 file slide .pptx cùng thư mục. Mỗi mục: số slide · tiêu đề · ghi chú trainer.")
 for n, m in meta.items():
     d.add_heading(m["title"], 1)
-    for i, s in enumerate(m["slides"], 1):
+    for i, s in enumerate(m["trang-trinh-chieu"], 1):
         first = s["text"].split("\n")
         head = " · ".join(x for x in first[:2] if x.strip())
         p = d.add_paragraph()

@@ -57,7 +57,7 @@ A successful build or transform unit test alone does not prove the visual effect
 
 On September 4, 2026, the original single-image hero was judged premium but lacking layers and wow factor. The approved revision has separate mountains, rear clouds, woman and red dress, volcanic ground, and foreground mist; different depth rates; a shared foot anchor; typography behind the subject; a second scroll beat; and a gallery-frame transition.
 
-Local implementation, when available: `OtherWorlds/sonder-studio/` in the author’s optional example workspace. See `components/SceneHero.tsx`, `lib/scene-motion.ts`, and `VERIFICATION.md` for the worked example. The principles above are self-contained; this path is optional reference material.
+Local implementation, when available: `OtherWorlds/sonder-studio/` in the author’s optional example workspace. See `thanh-phan/SceneHero.tsx`, `lib/scene-motion.ts`, and `VERIFICATION.md` for the worked example. The principles above are self-contained; this path is optional reference material.
 
 
 ## Further approved examples

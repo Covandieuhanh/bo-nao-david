@@ -18,6 +18,6 @@
 | `chu-hien.jsx` | một dòng chữ hiện từng từ theo kiểu của `chuyen-dong.js`, không dịch chỗ | 07 |
 | `mach.js` | **mạch hình**: một hình kể chuyện vẽ tiếp qua nhiều cảnh tự vẽ (`buoc`, `tu_buoc`, `moc_buoc`) + nét vẽ dần `net()` | 07 |
 
-Cách nối: `remotion-template/src/lib` và `montage-template/src/lib` là **lối tắt** trỏ về thư mục này; lúc tạo dự án, `tao-du-an.sh` /
+Cách nối: `khuon-remotion/src/lib` và `khuon-dung-ghep/src/lib` là **lối tắt** trỏ về thư mục này; lúc tạo dự án, `tao-du-an.sh` /
 `tao-podcast.sh` / `tao-dung-ghep.sh` chép **bản thật** (`cp -RL`) vào `motion/src/lib/` — dự án cũ giữ nguyên bản lúc tạo, dự án mới
 luôn có bản mới nhất. Sửa ở đây → mọi dự án tạo sau đều đổi. Thành phần mới dùng chung → đặt ở đây, chỉ import `react`, `remotion`, `./bien-thiet-ke`.

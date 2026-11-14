@@ -138,7 +138,7 @@ Ghi góp ý đúng một chỗ: khối/skill bị ảnh hưởng + một dòng `
 ```
 ~/Movies/tap-<tên>/2-ban-day-du/
 ├── davinci/media/           # tên lịch sử (file tạm): video_goc.mp4 (bản sạch), video_goc_raw.*, <id>.mov (ProRes 4444 alpha), khung_an_toan.png
-├── motion/                  # dự án Remotion (src/canh.js, chu-de.js, phong-chu.js, components/, public/photos/)
+├── motion/                  # dự án Remotion (src/canh.js, chu-de.js, phong-chu.js, thanh-phan/, public/photos/)
 ├── images/                  # queries.json, candidates.json, thumbs/, sheets/, picks.json, credits.tsv
 ├── ref/                     # video mẫu + phân tích
 ├── check/                   # khung kiểm tra; reframe/ = plan.json, shots.jpg; clean/ = cuts.json, cuts.md, segments.json
@@ -169,7 +169,7 @@ Ghi góp ý đúng một chỗ: khối/skill bị ảnh hưởng + một dòng `
 - `../mo-dun/16-phan-tich-so-lieu/mau-so-lieu.md` — mẫu số liệu sau đăng.
 - Template Remotion dùng chung với **dung-podcast**: `san-khau.jsx`, composition `nen`, `nguoi-noi.js`, `duong-bao-am.js`, nhánh
   `project.podcast` trong bo-cuc.js — chỉ bật khi `project.podcast`; sửa template thì giữ chúng.
-- `assets/montage-template/` + `scripts/tao-dung-ghep.sh` — template dựng cả video có tiếng cho chế độ ghép.
+- `assets/khuon-dung-ghep/` + `scripts/tao-dung-ghep.sh` — template dựng cả video có tiếng cho chế độ ghép.
 
 ## Nhật ký
 - 2026-11-11 · David: "học rất nhiều… các skill phải tự động chọn ra được cách nào phù hợp với nội dung"; video cuộc gọi mất 4–5 giờ, "tập trung vào điện thoại" mà vẫn còn rác. Thêm bước 6b chẩn đoán → tự chọn (`thiet-ke-bo-cuc/tu-chon.md`, `chan-doan.py`), khung chủ thể (`khung-chu-the.py`), bảng ghi chú chạy (`GHI_CHU`), mục Nhịp làm; sửa chuẩn âm, khoá render, soát cảnh chặn kiểu lỗi khung ngang + màn trống đầu cảnh.

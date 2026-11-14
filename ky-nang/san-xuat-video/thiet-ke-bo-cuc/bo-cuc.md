@@ -83,7 +83,7 @@ Cột "Code": **có** = viết được ngay trong `canh.js` · **chưa** = mớ
   (kể cả người quay nghiêng máy không thấy rõ mặt) + **người đang nói** (pyannote + cử động miệng). Graphic đặt qua `src/lib/cho.js`:
   không đè, không làm mờ bất kỳ ai.
 - Ô người dùng video gốc (`public/goc.mp4`, xuat-video.mjs tự nối), nên cảnh `o-nguoi` / `chuong` là lớp đặc, ghép đè được như cảnh toàn màn hình.
-- Chưa làm cho podcast (không có mặt) và vlog ghép (`montage-template`). Khi cần thì thêm cùng kiểu.
+- Chưa làm cho podcast (không có mặt) và vlog ghép (`khuon-dung-ghep`). Khi cần thì thêm cùng kiểu.
 
 ```js
 // mục lục tích luỹ · thanh tiến trình ý · mạch hình cạnh người

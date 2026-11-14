@@ -29,7 +29,7 @@
   văn câu); MỌI video kết bằng màn chốt `cta` ~4 s ("David rất mong có được sự góp ý của bạn tại phần bình luận!", keu-goi-hanh-dong.js) — hình
   lùi vào khung để vẫn thấy vẫy tay/like. Lý do: đánh giá cho thấy video giúp hiểu nhưng chưa thúc người xem hành động.
 - **Câu màn chốt không cố định** (người dùng chốt): Claude tự sáng tạo câu chốt hợp từng video sau khi nắm nội dung — một hành động (bình luận/lưu/theo dõi/chia sẻ, biểu tượng theo kiểu), giọng David, không bịa; câu cố định trong keu-goi-hanh-dong.js chỉ còn là dự phòng.
-- **Tick + "ting" ở màn chốt** (người dùng yêu cầu): câu chốt hiện xong → dấu tick nhỏ bật nảy ở góc biểu tượng + tiếng chuông ting (assets/sfx/ting.wav, tự tổng hợp, không bản quyền) để kích thích người xem hành động.
+- **Tick + "ting" ở màn chốt** (người dùng yêu cầu): câu chốt hiện xong → dấu tick nhỏ bật nảy ở góc biểu tượng + tiếng chuông ting (assets/hieu-ung-am-thanh/ting.wav, tự tổng hợp, không bản quyền) để kích thích người xem hành động.
 
 ## 2026-11-04
 - Bộ nhận diện David chung 4 loại video (xem san-xuat-video/tong-quan.md): đầu sân khấu thành dấu ● DAVID │ tên chương trình; tiếng
@@ -38,7 +38,7 @@
 ## 2026-11-04 — NGƯỜI XEM LÀ TRUNG TÂM (David: "các kênh lớn là hình mẫu thành công đã đạt được điều này rồi thì sao chép luôn")
 Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trước camera, highlight, vlog, podcast), David duyệt kế hoạch 5 pha:
 - `quy-tac-chung.md` (thư mục san-xuat-video) — một nguồn luật chung; SKILL.md chỉ giữ luật riêng. `so-lieu-mau.md` — vòng số liệu sau 7 ngày.
-- **Phát hành** mọi video: 3 tiêu đề + 2 thumbnail 1280×720 (`scripts/anh-thu-nho.sh`, `assets/thumb-template/` — mặt có cảm xúc, ≤ 4
+- **Phát hành** mọi video: 3 tiêu đề + 2 thumbnail 1280×720 (`scripts/anh-thu-nho.sh`, `assets/khuon-anh-thu-nho/` — mặt có cảm xúc, ≤ 4
   chữ, nhận diện David; nguồn quay dọc tự thành khung một bên). Video ngắn không ghép bìa trước video.
 - **Phụ đề video ngắn** 1–3 chữ to mỗi nhịp ngang ngực (`kieu-phu-de.js` `ShortLine`, chuẩn Hormozi/DOAC) — thay quyết định cũ "giữ
   phụ đề đáy" (bỏ đề xuất K ngày 03/11) vì David đổi kim chỉ nam. Video dài / vlog / podcast giữ hộp tối.

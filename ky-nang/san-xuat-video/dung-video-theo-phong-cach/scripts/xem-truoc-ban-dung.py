@@ -43,7 +43,7 @@ for i, s in enumerate(ov):
     prev = f"b{i + 1}"
 # Màn chốt (cta): tiếng "ting" đúng lúc dấu tick nhỏ bật lên (CTA_TICK giây sau đầu cảnh — keu-goi-hanh-dong.js)
 TICK = float(__import__("re").search(r"CTA_TICK = ([\d.]+)", open(next(p for p in (os.path.join(P, "motion/src/lib/keu-goi-hanh-dong.js"), os.path.join(P, "motion/src/keu-goi-hanh-dong.js")) if os.path.exists(p))).read()).group(1))     if any(os.path.exists(os.path.join(P, q)) for q in ("motion/src/lib/keu-goi-hanh-dong.js", "motion/src/keu-goi-hanh-dong.js")) else 1.6
-SFXDIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../assets/sfx")
+SFXDIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../assets/hieu-ung-am-thanh")
 sfx = [(s["start"] + TICK, "ting.wav", 0.55) for s in scenes if s.get("type") == "cta"]
 # NHẬN DIỆN chung (brand.json, người dùng chốt 2026-11-04): tiếng ký hiệu kênh đúng lúc hiện tiêu đề mở đầu (cảnh hook đầu tiên;
 # podcast không có hook → đầu video)
@@ -63,12 +63,12 @@ if os.path.exists(hlf):
         _hl = _json.loads(_t)
         sfx += [(max(0, j["at"] + j["dur"] / 2 - 0.21), "tua.wav", 0.32) for j in _hl["jumps"] if j.get("tone") != "lang"]
         # Clip ngắn vào lời ngay giây 0 → bỏ tiếng ký hiệu, không đè những từ đầu (David chốt 2026-11-06)
-        if _hl.get("music"): sfx = [s for s in sfx if s[1] != BRAND["sting"]]
+        if _hl.get("nhac"): sfx = [s for s in sfx if s[1] != BRAND["sting"]]
 A0 = "[0:a]asetpts=PTS-STARTPTS"
 # Nhạc nền highlight (doan-noi-bat.js → music: [{f, a, b, gain}], bài cố định của kênh ở cat-doan-noi-bat/assets/music):
 # mỗi bài một khoảng, chồng mờ 0,8 s ở mối, tự hạ khi có lời (sidechaincompress theo tiếng nói) — mức nền ~ −24 dB dưới lời
-MUSDIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../cat-doan-noi-bat/assets/music")   # cùng bộ san-xuat-video
-_mus = [m for m in (locals().get("_hl") or {}).get("music", []) if os.path.exists(os.path.join(MUSDIR, m["f"] + ".mp3"))]
+MUSDIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../cat-doan-noi-bat/assets/nhac")   # cùng bộ san-xuat-video
+_mus = [m for m in (locals().get("_hl") or {}).get("nhac", []) if os.path.exists(os.path.join(MUSDIR, m["f"] + ".mp3"))]
 _mv = None; _th = None
 # NHẠC THEO TUYẾN NỘI DUNG (David chốt 2026-11-05 — khối 09, hồ sơ chung `nhac`): project.tuyen = vui | tam_su | mat_mat | y_nghia |
 # kien_thuc → bài trong bảng. Không ghi tuyến (và không ghi project.music) → DỪNG: không còn mặc định "Upbeat Vlog" cho mọi video
@@ -76,7 +76,7 @@ _mv = None; _th = None
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../mo-dun")); import ho_so as _hoso
 NH = _hoso.load("chung").get("nhac", {})
 def _pick_music():
-    if "music" in pr: return pr["music"] or None
+    if "nhac" in pr: return pr["nhac"] or None
     t = pr.get("tuyen")
     if not t:
         sys.exit("⛔ Thiếu project.tuyen (tuyến nội dung → nhạc nền). Ghi vào motion/src/du-an.js một trong: "

@@ -2,7 +2,7 @@
 import fs from 'node:fs';
 
 const SR = 48000;
-const out = 'public/sfx';
+const out = 'public/hieu-ung-am-thanh';
 fs.mkdirSync(out, {recursive: true});
 
 const wav = (name, L, R = L) => {
@@ -105,6 +105,6 @@ const hp = (a, fc) => { const b = Float32Array.from(a); lp(b, fc); for (let i = 
   lp(L, 9000); lp(R, 9000);
   let m = 0; for (let i = 0; i < L.length; i++) m = Math.max(m, Math.abs(L[i]), Math.abs(R[i]));
   for (let i = 0; i < L.length; i++) { L[i] = Math.tanh(L[i] / m * 1.2) * 0.8; R[i] = Math.tanh(R[i] / m * 1.2) * 0.8; }
-  wav('music', L, R); }
+  wav('nhac', L, R); }
 
 console.log('ok', fs.readdirSync(out).join(' '));

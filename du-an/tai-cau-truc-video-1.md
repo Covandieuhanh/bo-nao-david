@@ -24,7 +24,7 @@ Phân xử theo `chuan-muc-lam-viec.md` mục 0: lời David > ngày chốt gầ
 ### A. Nền chung (quy-tac-chung, nguyen-tac, nhan-dien)
 | # | Luật | Nhà mới | Nguồn hiện tại | Ngày | Trạng thái |
 |---|---|---|---|---|---|
-| A1 | Người xem là trung tâm; học kênh lớn ở nhịp + cách trình bày; mục tiêu ở lại → hiểu → làm theo | quy-tac-chung §0 | quy-tac-chung §0, nguyen-tac, GIOI-THIEU | 04/11, 08/11 | trùng → quy-tac-chung; nguyen-tac/GIOI-THIEU trỏ |
+| A1 | Người xem là trung tâm; học kênh lớn ở nhịp + cách trình bày; mục tiêu ở lại → hiểu → làm theo | quy-tac-chung §0 | quy-tac-chung §0, nguyen-tac, tong-quan | 04/11, 08/11 | trùng → quy-tac-chung; nguyen-tac/tong-quan trỏ |
 | A2 | Thẩm mỹ chỉ giữ chữ ký nhận diện; ngoài chữ ký sáng tạo tự do | nhan-dien-chung §0 (quy-tac-chung §0 trỏ) | quy-tac-chung §0, nhan-dien-chung §0, khối 07, phan-tich-video-mau | 10/11 | sống |
 | A3 | Học mẫu chỉ thêm, không thay chặn cũ | thiet-ke-bo-cuc/README §4 (quy-tac-chung §0 trỏ) | quy-tac-chung §0, thiet-ke-bo-cuc, phan-tich-video-mau | 08/11 | trùng |
 | A4 | Hiểu hơn cầu kì: mỗi video vài kiểu hợp nội dung; rối → bớt | quy-tac-chung §0 | quy-tac-chung §0, khối 07, khối 17 | 10/11 | sống (xem câu hỏi 1) |
@@ -51,7 +51,7 @@ Phân xử theo `chuan-muc-lam-viec.md` mục 0: lời David > ngày chốt gầ
 | A25 | Đường cảm xúc + một đỉnh (mọi loại); vlog: hai đoạn liền cùng cảm xúc thì bỏ/đổi một | quy-tac-chung §2 (cách làm khối 07, kiểm khối 17) | quy-tac-chung §2, khối 07, khối 17 | 10/11 | sống |
 | A26 | Phụ đề một nguồn `kieu-phu-de.js` | quy-tac-chung §3 | quy-tac-chung §3, khối 03, multi-clip 4b | 04/11 | trùng |
 | A27 | Video ngắn (highlight, podcast dọc mọi độ dài, video 1 người dọc ≤ 90 s): cụm 5–8 chữ, cỡ 58, ngay trên thanh/đáy; ép tay `project.short` / `SHORT` | quy-tac-chung §3 | quy-tac-chung §3, khối 03, podcast SKILL, highlight luật 8, ho-so-thuong-hieu/chung.md, code phu-de.jsx | 08/11 | sống (thêm "podcast dọc mọi độ dài" theo code) |
-| A28 | Phụ đề 1–3 chữ to mỗi nhịp | — | GIOI-THIEU | 04/11 | **cũ** |
+| A28 | Phụ đề 1–3 chữ to mỗi nhịp | — | tong-quan | 04/11 | **cũ** |
 | A29 | Mỗi lúc một chỗ chữ: lớp có chữ hiện thì phụ đề nhường; `giuPhuDe` | quy-tac-chung §3 | quy-tac-chung §3, khối 03, memory | 08/11 | sống |
 | A30 | Video dài, vlog, podcast ngang: hộp tối đầy câu ở đáy | quy-tac-chung §3 | quy-tac-chung §3, khối 03 | 04/11 | sống (podcast dọc theo A27) |
 | A31 | Podcast đồ hoạ dọc trích ngắn: chữ chính thay phụ đề | quy-tac-chung §3 (cách làm highlight 7B) | quy-tac-chung §3, highlight 7B | 06/11 | trùng |
@@ -66,17 +66,17 @@ Phân xử theo `chuan-muc-lam-viec.md` mục 0: lời David > ngày chốt gầ
 | A40 | Minh hoạ mặc định biểu tượng vẽ; ảnh thật chỉ cho cái thật; số liệu bằng hiệu ứng đúng số; bằng chứng thật trong clip → ưu tiên chiếu | quy-tac-chung §4 | quy-tac-chung §4, khối 07, scene-design, podcast SKILL | 04/11 | trùng |
 | A41 | Không ghi chú kỹ thuật trên video; không màn nguồn ảnh cuối → `nguon-anh.txt` | quy-tac-chung §4 | quy-tac-chung §4, multi-clip §3, handoff | 04/11 | trùng |
 | A42 | Khung xuất = khung gốc trừ khi David yêu cầu; highlight luôn dọc | quy-tac-chung §4 | quy-tac-chung §4, khối 04, highlight luật 1 | 04/11 | trùng |
-| A43 | Bộ nhận diện một nguồn (brand.json, tokens/theme, subStyle, cta, Icons); sửa thì đồng bộ 4 loại | nhan-dien-chung (quy-tac-chung §5 trỏ) | quy-tac-chung §5, GIOI-THIEU, khối 10 | 04/11 | trùng |
+| A43 | Bộ nhận diện một nguồn (brand.json, tokens/theme, subStyle, cta, Icons); sửa thì đồng bộ 4 loại | nhan-dien-chung (quy-tac-chung §5 trỏ) | quy-tac-chung §5, tong-quan, khối 10 | 04/11 | trùng |
 | A44 | Thành phần cố định cùng vị trí mọi loại (dấu góc, thanh, phụ đề, màn chốt, thẻ cuối) | nhan-dien-chung §1 | quy-tac-chung §5, nhan-dien-chung | 08/11 | trùng |
 | A45 | Dấu góc: dọc 228, ngang sát mép trên; lớp phủ góc trên dưới `BRAND_BOT`; màn chốt ngang ẩn dấu góc | nhan-dien-chung §1 | quy-tac-chung §5, nhan-dien-chung, gotchas | 08/11 | trùng |
 | A46 | Thanh thời gian: video ngang + dọc dài | nhan-dien-chung §1 | quy-tac-chung §5, nhan-dien-chung, podcast SKILL | 08/11 | trùng |
 | A47 | Video dọc ngắn: không thanh, không thẻ cuối, màn chốt trên hình, tự lặp; ép tay `thanh`/`theCuoi`/`THANH`/`THE_CUOI` | nhan-dien-chung §1 | quy-tac-chung §5 + nhan-dien-chung (4 câu trùng), khối 08, highlight, podcast | 10/11 | trùng → chỉ còn nhan-dien-chung |
 | A48 | Clip ngắn cũng có thanh thời gian | — | cat-highlight SKILL | 08/11 | **cũ** (10/11) |
-| A49 | Âm thanh nhận diện: `sting.wav` lúc tiêu đề, "ting" ở màn chốt, giọng −20 LUFS, bản cuối −14 LUFS | khối 09 (quy-tac-chung §5 trỏ) | quy-tac-chung §5, GIOI-THIEU, khối 09 | 04/11 | trùng |
+| A49 | Âm thanh nhận diện: `sting.wav` lúc tiêu đề, "ting" ở màn chốt, giọng −20 LUFS, bản cuối −14 LUFS | khối 09 (quy-tac-chung §5 trỏ) | quy-tac-chung §5, tong-quan, khối 09 | 04/11 | trùng |
 | A50 | Ưu tiên câu mệnh lệnh nằm sẵn trong lời; màn hành động 1–2 lần/video đúng lúc giao việc | quy-tac-chung §6 | quy-tac-chung §6, dung-video-theo-phong-cach luật 4 | 04/11 | trùng |
 | A51 | Màn chốt ~4 s cuối mọi video = nguyên văn; mời bình luận/"gỡ" ở mô tả + ghim, không lên video (trừ khi David tự nói) | quy-tac-chung §6 (chi tiết khối 08) | quy-tac-chung §6, khối 08, 3 SKILL | 07–08/11 | trùng |
 | A52 | Phát hành ghi `phat-hanh/phat-hanh.md`: 3 tiêu đề ≤ 60 ký tự, bổ sung thumbnail | quy-tac-chung §7 | quy-tac-chung §7, khối 15 | 04/11 | trùng |
-| A53 | Thumbnail chỉ khi ngang + YouTube; hỏi "có đăng YouTube không?" | khối 14 (quy-tac-chung §7 trỏ) | quy-tac-chung §7, khối 14, khối 15, GIOI-THIEU, nhan-dien-thuong-hieu.md | 04/11 | trùng |
+| A53 | Thumbnail chỉ khi ngang + YouTube; hỏi "có đăng YouTube không?" | khối 14 (quy-tac-chung §7 trỏ) | quy-tac-chung §7, khối 14, khối 15, tong-quan, nhan-dien-thuong-hieu.md | 04/11 | trùng |
 | A54 | Chỉ hình của chính video (thumbnail, bìa); không hỏi "lấy ảnh video cũ" | khối 14 | quy-tac-chung §7, khối 14 | 05/11 | trùng |
 | A55 | Podcast không mặt: bìa = nền hoạ tiết + hình vẽ theo ý + tiêu đề ngắn + "DAVID · PODCAST", không lộ bước | khối 14 | quy-tac-chung §7, khối 14, podcast SKILL | 06/11 | trùng |
 | A56 | Bìa podcast = khung cảnh minh hoạ của chính video-final | — | khối 14 luật | 06/11 (sớm hơn mẫu) | **cũ** (mẫu bìa không mặt cùng ngày, sau) |
@@ -138,11 +138,11 @@ Phân xử theo `chuan-muc-lam-viec.md` mục 0: lời David > ngày chốt gầ
 | B40 | Podcast dọc trích ngắn: màn chốt/kết theo luật highlight | khối 08 | khối 08 | 08/11 | sống |
 | B41 | Dẫn dắt theo luật kênh (4·4·2): Không / Gợi mở / Mời → mô tả + ghim; David tự nói thì màn chốt dùng câu đó | khối 08 | khối 08, khối 15, giong-van | 05/11, 08/11 | sống |
 | B42 | Màn chốt: video lùi vào khung bo góc + câu + biểu tượng + tick + "ting"; `kind` theo ý câu | khối 08 | khối 08, scene-design | 07/11 | sống |
-| B43 | Thẻ cuối: nhận diện (chủ đề + DAVID) cho video ngang / dọc dài; không nút phát, không logo nền tảng | nhan-dien-chung §1 + khối 08 | khối 08, nhan-dien-chung, GIOI-THIEU, multi-clip §10 | 06/11, 10/11 | sống; "nút phát đỏ" (multi-clip, GIOI-THIEU) **cũ** |
+| B43 | Thẻ cuối: nhận diện (chủ đề + DAVID) cho video ngang / dọc dài; không nút phát, không logo nền tảng | nhan-dien-chung §1 + khối 08 | khối 08, nhan-dien-chung, tong-quan, multi-clip §10 | 06/11, 10/11 | sống; "nút phát đỏ" (multi-clip, tong-quan) **cũ** |
 | B44 | Kho nhạc kênh, Claude tự chọn theo tuyến, không hỏi; bài mới → đặt tên, đo, ghi `nhac.muc` | khối 09 | khối 09, multi-clip §8 | 08/11 | sống |
 | B45 | Chuẩn âm lượng chung: nhạc ~23 dB dưới giọng, cả bài −14 LUFS ±0,5, đỉnh −1,5, `chuan-am.py` | khối 09 | khối 09, thiet-ke-bo-cuc, highlight luật 9 | 06/11 | sống |
-| B46 | Nhạc 20 LU (vlog) / 22 LU / 30–33 LU; "highlight giữ mức cũ" | — | GIOI-THIEU, khối 09 §3, multi-clip 3b, ho-so-thuong-hieu/chung.md | 04–05/11 | **cũ** (06/11 chuẩn chung mọi đầu ra) |
-| B47 | Tuyến nội dung bắt buộc (`project.tuyen`, ghi sau clean_apply; thiếu → dừng); ép bài `music` | khối 09 | khối 09, 3 SKILL | 05/11 | sống |
+| B46 | Nhạc 20 LU (vlog) / 22 LU / 30–33 LU; "highlight giữ mức cũ" | — | tong-quan, khối 09 §3, multi-clip 3b, ho-so-thuong-hieu/chung.md | 04–05/11 | **cũ** (06/11 chuẩn chung mọi đầu ra) |
+| B47 | Tuyến nội dung bắt buộc (`project.tuyen`, ghi sau clean_apply; thiếu → dừng); ép bài `nhac` | khối 09 | khối 09, 3 SKILL | 05/11 | sống |
 | B48 | Không so dB thô với nguồn khi kiểm | khối 09 | khối 09, 17, podcast SKILL | 10/11 | trùng |
 | B49 | Rút phong cách từ video mẫu → style.md; mẫu ngang mà gốc dọc thì giữ tinh thần | khối 10 | khối 10, style-analysis | 04/11 | sống, nhưng **ngược** phần "áp màu, font vào chu-de.js" với A2 → thắng A2: màu nhấn cam + 2 font không đổi |
 | B50 | Ghép cảnh: chi tiết ở multi-clip | khối 11 | khối 11 | 04/11 | sống |
@@ -180,10 +180,10 @@ Phân xử theo `chuan-muc-lam-viec.md` mục 0: lời David > ngày chốt gầ
 | C12 | phan-tich-video-mau: cửa vào, 3 điều, Xong khi 6 dòng | phan-tich-video-mau | phan-tich-video-mau | 08/11 | sống; Xong khi #2 "màu, font, nét vẽ, chuyển động, nhạc không đổi" **ngược** với A2 → câu hỏi 4 |
 | C13 | thiet-ke-bo-cuc §1 "Thẩm mỹ không đổi, không chép màu, font, chuyển động" | thiet-ke-bo-cuc | thiet-ke-bo-cuc §1 | 07/11 | **cũ** (10/11 chỉ giữ chữ ký) |
 | C14 | phan-phoi-da-kenh: vai trò, 8 bước 2 cổng, làm song song, luật riêng, Xong khi | phan-phoi-da-kenh | phan-phoi-da-kenh | 05–10/11 | sống |
-| C15 | Hồ sơ: đổi số → sửa hồ sơ + nhật ký; hai hình mẫu mâu thuẫn → hình mẫu chính | ho-so-thuong-hieu/README | ho-so-thuong-hieu/README, GIOI-THIEU | 04/11 | sống |
+| C15 | Hồ sơ: đổi số → sửa hồ sơ + nhật ký; hai hình mẫu mâu thuẫn → hình mẫu chính | ho-so-thuong-hieu/README | ho-so-thuong-hieu/README, tong-quan | 04/11 | sống |
 | C16 | ho-so-thuong-hieu/chung.md: khoá đã bỏ (gạch), `nhac.*` mức 30–33 LU | ho-so-thuong-hieu/chung.md | ho-so-thuong-hieu/chung.md | 05–07/11 | **cũ** phần mức nhạc (06/11) và dòng khoá đã bỏ |
 | C17 | Giọng văn David: quan sát, giữ/bỏ, nâng cấp giọng, 8 luật khi viết, ví dụ | ho-so-thuong-hieu/giong-thuong-hieu-david.md | giong-van | 05–06/11 | sống (bỏ ngày đọc) |
-| C18 | Kiến trúc bộ: sửa đúng một chỗ; bảng "muốn → sửa ở đâu"; nơi lưu tập; công cụ phụ đừng xoá | GIOI-THIEU | GIOI-THIEU | 04–07/11 | sống; phần "Luật đã chốt" + "Bộ nhận diện" chép lại luật → **trùng**, đổi thành trỏ |
+| C18 | Kiến trúc bộ: sửa đúng một chỗ; bảng "muốn → sửa ở đâu"; nơi lưu tập; công cụ phụ đừng xoá | tong-quan | tong-quan | 04–07/11 | sống; phần "Luật đã chốt" + "Bộ nhận diện" chép lại luật → **trùng**, đổi thành trỏ |
 | C19 | Thư viện hình dùng chung + cách nối (lối tắt, `cp -RL`) | thu-vien-tai-nguyen/README | thu-vien-tai-nguyen/README, gotchas | 04/11 | sống |
 | C20 | Nhận diện chung: sửa đúng một chỗ, chụp kiểm ngang + dọc; còn thiếu (vlog ngang, pow lề) | nhan-dien-chung §3–4 | nhan-dien-chung | 08/11 | sống |
 | C21 | multi-clip: quy trình 1–10, bản đồ + liên kết, giữ/bỏ (Murch), khung vlog, hộp đồ nghề, danh-sach-cat.js, ảnh tĩnh, render, phát hành, dùng cho highlight | multi-clip | multi-clip | 03–08/11 | sống; con số mật độ (3–5 s, 15–20 s, 20–30 s) **cũ**; "nhạc 20 LU" **cũ**; cta "tự sáng tạo" **cũ**; "chép màu, font từ dự án cũ / mẫu" → chỉ ngoài chữ ký; ENDCARD nút phát **cũ** |
@@ -221,7 +221,7 @@ A8, A9, A15, A20, A23, A28, A48, A56, A60 (hashtag 2–3), B16, B21, B26, B32, B
   references scene-design, multi-clip, style-analysis, gotchas (2 skill), podcast-design.
 - Không đổi code. `bo.json`: `mau-ke-hoach-dang.md` chuyển sang kho (mẫu của một đợt đăng, không phải luật).
 - Gộp nhà: 4 câu "video dọc ngắn" chỉ còn ở nhan-dien-chung; câu "bước nhẹ" của 4 SKILL trỏ về thoi-quen mục 3; quy-tac-chung §5, §9
-  thành dòng trỏ (nhận diện → nhan-dien-chung, số liệu → khối 16); GIOI-THIEU bỏ phần chép lại luật.
+  thành dòng trỏ (nhận diện → nhan-dien-chung, số liệu → khối 16); tong-quan bỏ phần chép lại luật.
 
 ## Bước 4 — Đóng sổ
 Thêm "## Tái bản 1" vào đầu 3 changelog (dung-video-theo-phong-cach, cat-doan-noi-bat, dung-podcast). Cả 3 < 400 dòng, không cần lưu trữ.

@@ -187,7 +187,7 @@ D = {
 }
 
 for n, d in D.items():
-    sd = os.path.join(ROOT, f"bai-{n}", "slides")
+    sd = os.path.join(ROOT, f"bai-{n}", "trang-trinh-chieu")
     files = {"hieu-de": ana_slide(n, d["title"], d["rows"], d["note"]),
              "tu-moi": gloss_slide(n, d["gloss"], d["gnote"])}
     if n == 1: files["mo-cua-so-lenh"] = MO_LENH

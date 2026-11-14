@@ -30,7 +30,7 @@ zsh $SKILL/scripts/kiem-moi-truong.sh
 zsh $SKILL/scripts/tao-dung-ghep.sh <tên-ngắn> <clip1> <clip2> ... [--ref <video mẫu>] [--style-from <dự án cũ>]   # chạy nền
 ```
 Clip được đặt tên `c1, c2, …` theo **thứ tự người dùng đưa** (xem `clips.tsv`). Template đã có sẵn file âm thanh
-(`public/sfx/`: whoosh, boom, pop, ding1–4, shutter, rewind, sting, tada, music) — tự tổng hợp nên không vướng bản quyền.
+(`public/hieu-ung-am-thanh/`: whoosh, boom, pop, ding1–4, shutter, rewind, sting, tada, music) — tự tổng hợp nên không vướng bản quyền.
 
 ### 2. Hiểu từng clip (quan trọng nhất — quyết định chất lượng)
 Với mỗi `check/cN/`:
@@ -282,7 +282,7 @@ Một clip duy nhất `c1` = video gốc dài; `cat-doan-noi-bat/scripts/danh-sa
 - `HL = {src_duration}` → `SrcBar`: thanh của CẢ tập gốc ngay trên đáy vùng an toàn (nền tối mờ), phụ đề nhích lên 56 px.
 - `TONE = [[từ, đến, 'lang'|'soi']]`: `lang` → không chớp trắng, `pow` hiện chậm nét mảnh không gạch, chuyển cảnh tối dần
   chip viền cam; đoạn hình `grade: 'lang'` (màu dịu). `soi` = như vlog game show.
-- `MUSIC.tracks = [{f, a, b, gain, from?}]`: mỗi bài (`public/sfx/<f>.mp3`, lặp nếu ngắn) chạy một khoảng, chồng mờ 0,8 s ở mối,
+- `MUSIC.tracks = [{f, a, b, gain, from?}]`: mỗi bài (`public/hieu-ung-am-thanh/<f>.mp3`, lặp nếu ngắn) chạy một khoảng, chồng mờ 0,8 s ở mối,
   vẫn hạ khi có phụ đề theo `base/duck/loud`. Không có `tracks` → `music.wav` như cũ.
 - `CTA.text` = câu kêu gọi NGUYÊN VĂN (luật highlight).
 - `ENDCARD = {title, speaker, clip, at, len}` → `EndCard`: ~1,8 s **nối thêm sau** `TOTAL` (Root cộng vào thời lượng): ảnh đứng

@@ -1,6 +1,6 @@
 # dung-ban-xem.py <thư mục slide-ban-xem>
 # Dựng lại bai-1…8.html (bản xem trên máy, nguồn để chụp ra pptx) từ mã gốc trong repo:
-# giao-dien-slide.css + bai-N/deck.json (thứ tự) + bai-N/slides/*.html. Ảnh /_blob/… đổi sang anh/… theo anh-blob.json.
+# giao-dien-slide.css + bai-N/deck.json (thứ tự) + bai-N/trang-trinh-chieu/*.html. Ảnh /_blob/… đổi sang anh/… theo anh-blob.json.
 # Lần đầu (chưa có anh-blob.json) thì dò ánh xạ từ bản xem cũ.
 import json, os, re, sys
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.join(HERE, "..")
@@ -10,7 +10,7 @@ SRC = re.compile(r'src="([^"]+)"')
 
 def repo_slides(n):
     deck = json.load(open(f"{ROOT}/bai-{n}/deck.json"))
-    return deck, [(sid, open(f"{ROOT}/bai-{n}/slides/{sid}.html").read()) for sid in deck["order"]]
+    return deck, [(sid, open(f"{ROOT}/bai-{n}/trang-trinh-chieu/{sid}.html").read()) for sid in deck["order"]]
 
 if os.path.exists(MAPF):
     amap = json.load(open(MAPF))

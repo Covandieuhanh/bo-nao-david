@@ -6,8 +6,8 @@
 im lặng quá 60 phút thì việc cũ xong), ghi ~/.claude/so-viec/nhap/<sid>.json.
 Phiên nào mod đã ghi sổ (phien/<sid>.json) thì chỉ nhập phần trước lúc mod bắt đầu ghi.
 
-Dùng:  python3 -I luu-tru/mods/so-viec/scripts/nhap-lich-su.py          (chạy lại bao nhiêu lần cũng được)
-       python3 -I luu-tru/mods/so-viec/scripts/nhap-lich-su.py --khong-gan-nhan   (không gọi model, nhãn = khac)
+Dùng:  python3 -I luu-tru/mod-giao-dien/so-viec/scripts/nhap-lich-su.py          (chạy lại bao nhiêu lần cũng được)
+       python3 -I luu-tru/mod-giao-dien/so-viec/scripts/nhap-lich-su.py --khong-gan-nhan   (không gọi model, nhãn = khac)
 """
 import json
 import os

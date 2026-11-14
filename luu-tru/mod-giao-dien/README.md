@@ -17,7 +17,7 @@ Không chạy trên chat claude.ai và app điện thoại.
 
 ## Cài
 
-- `so-viec`: repo này là chợ plugin `david-claude` (`.claude-plugin/marketplace.json`), cài `so-viec@david-claude`. Plugin đọc thẳng từ `luu-tru/mods/so-viec`: sửa code trong repo rồi mở phiên mới là có bản mới, không cài lại.
+- `so-viec`: repo này là chợ plugin `david-claude` (`.claude-plugin/marketplace.json`), cài `so-viec@david-claude`. Plugin đọc thẳng từ `luu-tru/mod-giao-dien/so-viec`: sửa code trong repo rồi mở phiên mới là có bản mới, không cài lại.
 - Mod cộng đồng: `claude plugin marketplace add <chủ>/<repo>` rồi `claude plugin install <mod>@<chợ> --scope user`. Bản cài là bản chép, chỉ đổi khi chạy `claude plugin update`.
 
 ## Luật với mod cộng đồng

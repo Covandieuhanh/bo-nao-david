@@ -16,7 +16,7 @@ const C = {bg: '#0D0D10', text: '#F4F4F5', accent: '#FF7A45'};
 const HEAD = '"Barlow Condensed", sans-serif';
 
 export const Thumb = ({bg, pos = '50% 35%', side = 'left', l1 = '', l2 = '', l3 = '', num = '', badge = '', zoom = 1.1, panel = false, hinh = '', tag = ''}) => {
-  const [h] = useState(() => delayRender('font'));
+  const [h] = useState(() => delayRender('phong-chu'));
   useEffect(() => { document.fonts.load(`800 100px ${HEAD}`, 'ĐẾN ĐÂU Ầ Ễ').then(() => continueRender(h)); }, [h]);
   const W0 = num ? 560 : 720;   // bề ngang cho chữ (chừa khối số)
   const fit = (t, cap) => Math.min(cap, Math.round(W0 / Math.max(t.length, 1) * 1.9));   // cỡ theo độ dài từng dòng

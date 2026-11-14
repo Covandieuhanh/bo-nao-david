@@ -6,6 +6,6 @@ khung dựng + thư viện hình + hồ sơ HIỆN TẠI, chụp khung cố đ�
 - Chỉ đọc dự án gốc (dữ liệu lời, kịch bản, mốc); làm trong thư mục tạm. Thêm mẫu: thêm một mục vào `mau.json`.
 
 
-Mẫu ảnh bìa podcast không mặt David duyệt 2026-11-06: `thumb-podcast/chuan.jpg`. `kiem-mau.py` chưa kiểm ảnh bìa; sửa khuôn ảnh bìa thì dựng lại bằng lệnh ở khối 14 và so với file này.
+Mẫu ảnh bìa podcast không mặt David duyệt 2026-11-06: `anh-thu-nho-podcast/chuan.jpg`. `kiem-mau.py` chưa kiểm ảnh bìa; sửa khuôn ảnh bìa thì dựng lại bằng lệnh ở khối 14 và so với file này.
 
 Từ 2026-11-06 không còn mẫu đang chạy cho loại làm video có người nói, ghép vlog và highlight có người nói: dự án gốc đã dọn theo yêu cầu của David. Tờ `chuan.jpg` cũ của các loại đó vẫn giữ để tham khảo. Khi có video mới loại đó được duyệt, thêm lại vào `mau.json`.

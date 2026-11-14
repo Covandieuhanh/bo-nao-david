@@ -1,5 +1,5 @@
 # viet-lai-de-hieu.py: viết lại các slide nặng lệnh máy và số kỹ thuật thành lời thường cho người mới.
-# Ghi đè đúng file slide trong ../bai-N/slides/. Giữ nguyên ảnh thật và số đo thật.
+# Ghi đè đúng file slide trong ../bai-N/trang-trinh-chieu/. Giữ nguyên ảnh thật và số đo thật.
 import os
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 F = "Dựng video bằng AI trên máy tính"
@@ -14,7 +14,7 @@ def fact(icon, k, v, warn=False, i=0):
 
 S = {}
 
-S["bai-hoc-1/slides/hai-loai-ai.html"] = f'''<section id="hai-loai-ai">
+S["bai-hoc-1/trang-trinh-chieu/hai-loai-ai.html"] = f'''<section id="hai-loai-ai">
 <p class="eyebrow">Hiểu bộ công cụ</p>
 <h2>Hai loại AI: chỉ nói, và tự làm</h2>
 <div class="split even">
@@ -37,7 +37,7 @@ S["bai-hoc-1/slides/hai-loai-ai.html"] = f'''<section id="hai-loai-ai">
 </section>
 '''
 
-S["bai-hoc-1/slides/bo-cong-cu.html"] = f'''<section id="bo-cong-cu">
+S["bai-hoc-1/trang-trinh-chieu/bo-cong-cu.html"] = f'''<section id="bo-cong-cu">
 <p class="eyebrow">Hiểu bộ công cụ</p>
 <h2>Bốn công cụ miễn phí, AI điều khiển giúp bạn</h2>
 <div class="cards two">
@@ -55,7 +55,7 @@ S["bai-hoc-1/slides/bo-cong-cu.html"] = f'''<section id="bo-cong-cu">
 </section>
 '''
 
-S["bai-hoc-1/slides/cach-cai.html"] = f'''<section id="cach-cai">
+S["bai-hoc-1/trang-trinh-chieu/cach-cai.html"] = f'''<section id="cach-cai">
 <p class="eyebrow">Cài và kiểm tra</p>
 <h2>Cách cài khuyên dùng: để AI tự cài</h2>
 <div class="split">
@@ -80,7 +80,7 @@ S["bai-hoc-1/slides/cach-cai.html"] = f'''<section id="cach-cai">
 </section>
 '''
 
-S["bai-hoc-1/slides/kiem-tra.html"] = f'''<section id="kiem-tra">
+S["bai-hoc-1/trang-trinh-chieu/kiem-tra.html"] = f'''<section id="kiem-tra">
 <p class="eyebrow">Cài và kiểm tra</p>
 <h2>Kiểm tra cài xong, sửa lỗi hay gặp</h2>
 <div class="split even">
@@ -102,7 +102,7 @@ S["bai-hoc-1/slides/kiem-tra.html"] = f'''<section id="kiem-tra">
 </section>
 '''
 
-S["bai-hoc-3/slides/do.html"] = f'''<section id="do">
+S["bai-hoc-3/trang-trinh-chieu/do.html"] = f'''<section id="do">
 <p class="eyebrow">Việc 1 · Đo</p>
 <h2>Đo tư liệu gốc trước khi làm gì khác</h2>
 <div class="split even">
@@ -123,7 +123,7 @@ S["bai-hoc-3/slides/do.html"] = f'''<section id="do">
 </section>
 '''
 
-S["bai-hoc-4/slides/tim-lang.html"] = f'''<section id="tim-lang">
+S["bai-hoc-4/trang-trinh-chieu/tim-lang.html"] = f'''<section id="tim-lang">
 <p class="eyebrow">Dựng thô · việc 1</p>
 <h2>Tìm chỗ im lặng: AI nghe từng giây, không đoán bằng mắt</h2>
 {win("AI báo chỗ im lặng · video thử 21 giây", '''<p class="say">Tôi tìm thấy <b>2 chỗ im lặng</b>:</p>
@@ -139,7 +139,7 @@ S["bai-hoc-4/slides/tim-lang.html"] = f'''<section id="tim-lang">
 </section>
 '''
 
-S["bai-hoc-4/slides/dung-tho.html"] = f'''<section id="dung-tho">
+S["bai-hoc-4/trang-trinh-chieu/dung-tho.html"] = f'''<section id="dung-tho">
 <p class="eyebrow">Dựng thô · ví dụ thật</p>
 <h2>Cắt clip 61 giây từ tư liệu 6:48</h2>
 <div class="split" style="grid-template-columns:1fr 340px">
@@ -164,7 +164,7 @@ S["bai-hoc-4/slides/dung-tho.html"] = f'''<section id="dung-tho">
 </section>
 '''
 
-S["bai-hoc-6/slides/nhac.html"] = f'''<section id="nhac">
+S["bai-hoc-6/trang-trinh-chieu/nhac.html"] = f'''<section id="nhac">
 <p class="eyebrow">Nhạc và âm lượng</p>
 <h2>Nhạc nhỏ hơn giọng, cả video to vừa đúng chuẩn</h2>
 <div class="split even">
@@ -186,7 +186,7 @@ S["bai-hoc-6/slides/nhac.html"] = f'''<section id="nhac">
 </section>
 '''
 
-S["bai-hoc-7/slides/lenh-xuat.html"] = f'''<section id="lenh-xuat">
+S["bai-hoc-7/trang-trinh-chieu/lenh-xuat.html"] = f'''<section id="lenh-xuat">
 <p class="eyebrow">AI xuất file thế nào</p>
 <h2>Đọc báo cáo xuất file của AI trong một phút</h2>
 <div class="split even">

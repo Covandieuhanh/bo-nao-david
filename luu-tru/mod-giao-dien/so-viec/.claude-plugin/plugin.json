@@ -2,5 +2,5 @@
   "name": "so-viec",
   "version": "0.6.1",
   "description": "Sổ việc: tổng hợp theo 4 việc lớn (làm video, bot Telegram, xây bộ não, trò chuyện): tuần này tốn bao nhiêu phần trăm hạn mức, từ đầu chiếm bao nhiêu; mọi khung, mọi tài khoản trên máy.",
-  "types": "./types/index.d.ts"
+  "kieu-du-lieu": "./kieu-du-lieu/index.d.ts"
 }

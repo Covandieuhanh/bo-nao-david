@@ -8,7 +8,7 @@ import json, os, re, shutil, subprocess, sys, tempfile
 HERE = os.path.dirname(os.path.realpath(__file__)); D = os.path.dirname(HERE)
 sys.path.insert(0, os.path.join(D, "mo-dun")); import ho_so as hoso
 ENV = dict(os.environ, PATH="/opt/homebrew/bin:" + os.environ.get("PATH", ""))
-TPL = {"remotion": os.path.join(D, "dung-video-theo-phong-cach/assets/remotion-template"), "montage": os.path.join(D, "dung-video-theo-phong-cach/assets/montage-template")}
+TPL = {"remotion": os.path.join(D, "dung-video-theo-phong-cach/assets/khuon-remotion"), "montage": os.path.join(D, "dung-video-theo-phong-cach/assets/khuon-dung-ghep")}
 DATA = {"remotion": ["phu-de.js", "canh.js", "du-an.js", "vi-tri.js", "nguoi-noi.js", "duong-bao-am.js", "doan-noi-bat.js", "dau-ra.js"],
         "montage": ["danh-sach-cat.js", "nang-lop.js"]}
 args = [a for a in sys.argv[1:] if not a.startswith("--")]; CHOT = "--chot" in sys.argv

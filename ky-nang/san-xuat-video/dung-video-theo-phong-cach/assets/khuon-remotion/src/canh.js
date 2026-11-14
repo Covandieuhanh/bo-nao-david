@@ -12,7 +12,7 @@ export const SCENES = [
   // {id: 's01-gioi-thieu', type: 'lower', start: 0.3, end: 5.6, props: {name: 'TÊN', role: 'Chủ đề video'}},
 ];
 
-// Chỉ dùng cho PODCAST (project.podcast — skill dung-podcast): sân khấu nền chạy suốt video (components/san-khau.jsx).
+// Chỉ dùng cho PODCAST (project.podcast — skill dung-podcast): sân khấu nền chạy suốt video (thanh-phan/san-khau.jsx).
 // show: tên chương trình; title: tên tập; speakers: [{name, role}] theo thứ tự người nói 0, 1 trong nguoi-noi.js
 // TOPICS: ý đang bàn ở giữa khung (trích lời, ≤ 5 từ/dòng, '\n' tách 2 dòng; mốc = lúc bắt đầu ý) — tự ẩn khi có lớp phủ
 // COVER: màn hình bìa ~1 s ghép TRƯỚC video (ảnh bìa cho mạng xã hội). title = tiêu đề NGƯỜI DÙNG đưa (mỗi video hỏi lại),
