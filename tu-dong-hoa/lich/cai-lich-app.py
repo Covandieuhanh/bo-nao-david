@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Cài lịch app Claude từ repo vào tài khoản app đang mở (thư mục phiên app ghi gần nhất).
+"""Cài mọi lịch tự chạy vào app Claude (hiện trong Scheduled tasks) từ repo vào tài khoản app đang mở (thư mục phiên app ghi gần nhất).
 Mỗi việc trong lich-app.json: lời giao lấy ở loi-giao/<id>.md (nối tắt vào ~/.claude/scheduled-tasks/<id>/SKILL.md), giờ theo cronExpression.
 Id trong 'bo' thì gỡ khỏi app. Chạy lại bao nhiêu lần cũng được. Dùng: python3 -I cai-lich-app.py [--tat-ca]
 --tat-ca: cài vào mọi tài khoản app trên máy (mặc định chỉ tài khoản đang mở)."""
@@ -18,7 +18,7 @@ if "--tat-ca" not in sys.argv:
 
 for v in cfg["viec"]:
     d = os.path.join(H, ".claude/scheduled-tasks", v["id"]); os.makedirs(d, exist_ok=True)
-    dich, nguon = os.path.join(d, "SKILL.md"), os.path.join(GOC, "loi-giao", v["id"] + ".md")
+    dich, nguon = os.path.join(d, "SKILL.md"), os.path.join(GOC, "loi-giao", v.get("loiGiao", v["id"]) + ".md")
     if os.path.islink(dich) or os.path.exists(dich):
         if os.path.realpath(dich) != os.path.realpath(nguon):
             os.remove(dich)
@@ -41,5 +41,13 @@ for tm in thu_muc:
         t.update(displayName=v["displayName"], cronExpression=v["cronExpression"], cwd=NAO,
                  filePath=os.path.join(H, ".claude/scheduled-tasks", v["id"], "SKILL.md"))
     d["scheduledTasks"] = ds
-    json.dump(d, open(p, "w", encoding="utf-8"), indent=2, ensure_ascii=False)
+    moi = json.dumps(d, indent=2, ensure_ascii=False)
+    try:
+        cu = open(p, encoding="utf-8").read()
+    except OSError:
+        cu = ""
+    if json.loads(moi).get("scheduledTasks") != (json.loads(cu).get("scheduledTasks") if cu else None):
+        open(p, "w", encoding="utf-8").write(moi)
+        # App chỉ đọc lịch lúc khởi động: đánh dấu để máy canh bot mở lại app lúc rảnh.
+        open(os.path.join(H, "Documents/2-ca-nhan/so-tay/.trang-thai/can-mo-lai-app"), "w").write(time.strftime("%F %T"))
     print("Đã cài lịch app:", ", ".join(t["id"] + " " + t["cronExpression"] for t in ds), "→", tm.split("claude-code-sessions/")[1])

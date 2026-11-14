@@ -1,6 +1,6 @@
 #!/bin/bash
 # Canh bot Sổ nhớ: launchd chạy script này suốt (KeepAlive), mỗi phút kiểm một vòng.
-# Việc theo lịch trong repo: tu-dong-hoa/lich/ (chạy bằng Claude trong Terminal; lịch app tự cài lại khi đổi tài khoản).
+# Lịch tự chạy nằm trong app Claude (tu-dong-hoa/lich/): đổi tài khoản thì cài lại, mở lại app lúc rảnh để app nạp lịch.
 # Tự sửa: phiên chết · thừa phiên · máy chủ Telegram chết hoặc mất kết nối mạng · phiên treo · hộp thoại chặn · đổi tài khoản (cả đổi trên app: mở sẵn đăng nhập Terminal) ·
 #         làm mới ngữ cảnh 4h sáng. Việc theo giờ: tóm tắt 7h, nhắc đúng giờ (gửi thẳng, không cần Claude), sao lưu Drive 3h.
 # Báo David qua Telegram (gửi thẳng) khi: chưa đăng nhập Claude · hết hạn mức · mở lại liên tục · mất mạng lâu.
@@ -235,13 +235,15 @@ while true; do
     python3 -I "$GOC/../lich/cai-lich-app.py" >> "$LOG" 2>&1 && ghi "cai lich app cho $TKA"
   fi
 
-  # Việc tự chạy theo lịch trong repo (tu-dong-hoa/lich/lich-chay.md): gọi Claude trong Terminal, không cần app, tài khoản nào cũng được.
-  python3 -I "$GOC/nhac-lap.py" "$GOC/../lich/lich-chay.md" "$TT/da-lich-chay" /dev/null 2>>"$LOG" | while IFS=$'\t' read -r khoa nd; do
-    ID="${nd%% *}"
-    if screen -ls 2>/dev/null | grep -qE "\.lich-$ID[[:space:]]"; then ghi "lich $ID dang chay, bo lan nay"
-    else screen -dmS "lich-$ID" bash "$GOC/../lich/chay-lich.sh" "$ID" && ghi "chay lich $ID"; fi
-    echo "$khoa" >> "$TT/da-lich-chay"
-  done
+  # Nạp lịch app: mọi lịch tự chạy nằm trong app Claude (tu-dong-hoa/lich/lich-app.json), app chỉ đọc lịch lúc khởi động.
+  # Có dấu can-mo-lai-app (cai-lich-app.py đặt khi lịch đổi) thì mở lại app lúc 3–5 giờ sáng, khi không phiên app nào hoạt động trong 30 phút.
+  if [ -f "$TT/can-mo-lai-app" ] && [ "$GIO" -ge 3 ] && [ "$GIO" -lt 5 ] && [ "$(python3 -I "$GOC/../lich/app-ranh.py" 30)" = ranh ]; then
+    ghi "mo lai app Claude de nap lich"
+    osascript -e 'quit app "Claude"' >/dev/null 2>&1
+    for _ in 1 2 3 4 5 6; do pgrep -x Claude >/dev/null || break; sleep 5; done
+    pgrep -x Claude >/dev/null && pkill -x Claude && sleep 5
+    open -a Claude && rm -f "$TT/can-mo-lai-app" && ghi "da mo lai app, lich moi da nap"
+  fi
 
   # Nhịp sống cho lệnh kiểm tra sức khoẻ.
   echo "$BAY $(dang_chay && echo phien-ok || echo phien-tat) $([ -n "$(may_chu)" ] && echo telegram-ok || echo telegram-tat)" > "$TT/nhip"
