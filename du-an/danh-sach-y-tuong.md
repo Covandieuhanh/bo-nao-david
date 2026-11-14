@@ -8,7 +8,7 @@ Sổ gốc ghi lời nguyên văn: `~/Documents/2-ca-nhan/so-tay/y-tuong.md` và
 |---|---|---|---|---|
 | 1 | Company OS: automation cho DN nhỏ, phễu dẫn vào gói training | Anh Phú Ông góp ý | 12/11/2026 | ✅ Gộp vào hướng 3 gói công nghệ (13/11): `pheu-ban-hang-goi-cong-nghe.md` |
 | 2 | Talkshow/podcast online thứ 5 hằng tuần, hai đầu Việt – Đức | Anh Phú Ông rủ | 12/11/2026 | Đang cân nhắc · gợi ý đặt ở David Trần Official |
-| 3 | Telegram làm nhà cho thành viên, bot thay mặt David trong nhóm học | David nói trong phiên Claude | 14/11/2026 | Đang cân nhắc · chờ bot hiện tại ổn định |
+| 3 | Telegram làm nhà cho thành viên, bot thay mặt David trong nhóm học | David nói trong phiên Claude | 14/11/2026 | Chỉ là ý tưởng, chưa làm · chờ bot đạt điều kiện ở mục 3 |
 
 ---
 
@@ -66,8 +66,8 @@ Sổ gốc ghi lời nguyên văn: `~/Documents/2-ca-nhan/so-tay/y-tuong.md` và
 - Lưu ý: bot nói trong nhóm là nói thay David → cần lằn ranh (bot làm gì, việc gì phải chuyển David); không đụng dữ liệu riêng của học viên ngoài nhóm.
 
 **Câu cần chốt:**
-1. Bot "ổn định" đo bằng gì (bao nhiêu ngày chạy không lỗi)?
+1. Điều kiện David đặt (14/11): chưa làm ngay; chỉ bắt đầu khi David thấy bot phản hồi **thấu hiểu, rõ ràng** và đã **học cải tiến qua nhiều đợt**. Đo cụ thể bằng gì thì David chốt sau.
 2. Bot được làm gì trong nhóm: chỉ nhắc + điểm danh, hay trả lời câu hỏi chuyên môn?
 3. Nhóm đầu tiên là nhóm nào (học viên thật hay nhóm thử)?
 
-**Bước nhỏ nhất:** dựng Mini App check-in học viên bản 0 trên bot hiện có, thử với một nhóm nhỏ.
+**Bước nhỏ nhất (khi đủ điều kiện):** dựng Mini App check-in học viên bản 0 trên bot hiện có, thử với một nhóm nhỏ.
