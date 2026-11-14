@@ -1,6 +1,6 @@
 #!/bin/bash
 # Bot Sổ nhớ giao một việc cho phiên Claude Code thật, chạy trên Mac ở chế độ Remote Control:
-# David theo dõi và gõ tiếp qua bot Telegram (phiên mở từ Terminal không hiện trên claude.ai / app điện thoại, kiểm 14/11/2026).
+# phiên hiện như khung chat bình thường trong app Claude (Mac, điện thoại) và claude.ai/code, David xem và gõ tiếp được.
 # Dùng: bash giao-viec.sh "<yêu cầu nguyên văn của David>"     → in ra số việc
 #       bash giao-viec.sh --tiep <số> "<lời David>"             → gõ vào phiên đó (phiên đã đóng thì mở lại)
 #       bash giao-viec.sh --dung <số>                           → đóng phiên đó
@@ -15,7 +15,7 @@ export PATH="$HOME/.bun/bin:$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:/u
 
 LOI_DAN() { cat <<EOF
 Đây là việc David giao qua Telegram (việc #$1). Phiên này là phiên Claude Code bình thường ở chế độ Remote Control:
-David theo dõi qua bot Telegram và nhắn lại ở đó (lời sẽ được gõ vào phiên này).
+David có thể xem và gõ vào đây từ app Claude (Mac, điện thoại) hoặc claude.ai/code, hoặc nhắn qua bot Telegram (lời sẽ được gõ vào phiên này).
 Làm theo AGENTS.md và skill đúng với việc, như mọi phiên khác.
 Phiên chạy chế độ Auto, tự làm tới kết quả, không xin phép từng bước (David chốt 12/11: chỉ quan tâm kết quả).
 Xoá file, cài/gỡ phần mềm, sửa cấu hình máy hoặc Claude: máy tự cho chạy và ghi sổ; kể lại các bước đó trong tin báo cáo cuối.
@@ -77,5 +77,5 @@ case "$1" in
     chay "$N" "$(ten_cua "$N")" --session-id "$SID" "$(LOI_DAN $N)
 
 Yêu cầu nguyên văn của David: $*"
-    echo "Đã giao việc #$N. Xong hoặc cần anh quyết Claude sẽ nhắn ở đây; anh trả lời tại đây là lời được gõ vào phiên." ;;
+    echo "Đã giao việc #$N. Anh xem trực tiếp trong app Claude (phiên \"$(ten_cua "$N")\"), xong hoặc cần anh quyết Claude sẽ nhắn ở đây." ;;
 esac
