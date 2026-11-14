@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Nhắc lặp cho canh-bot.sh: đọc nhac-viec.md, in các lần nhắc lặp tới giờ trong 60 phút qua chưa gửi.
-Dạng dòng: "- mỗi ngày 06:00 · …" · "- mỗi thứ 2, thứ 5 07:00 · …" · "- mỗi chủ nhật 18:00 · …" · "- mỗi ngày 15 09:00 · …" (hằng tháng).
+Dạng dòng: "- mỗi ngày 06:00 · …" · "- mỗi thứ 2, thứ 5 07:00 · …" · "- mỗi chủ nhật 18:00 · …" · "- mỗi ngày 15 09:00 · …" (hằng tháng) · "- chỉ ngày 2026-11-15 07:00 · …" (một lần, dùng cho nhắc có thẻ máy).
 "hằng"/"hàng" thay "mỗi" cũng được. Dừng: "(đã dừng)" ngay sau "· ".
 Nội dung bắt đầu bằng thẻ máy "[THE] …" (vd [HOI-THOI-QUEN]): in trên một dòng, canh-bot gõ vào phiên bot thay vì gửi thẳng.
 Dòng kết bằng "+ việc chưa xong": tin nhắc kèm danh sách việc "[ ]" trong danh-sach-viec.md (việc không hạn cũng có), bỏ mục "Thói quen…".
@@ -8,7 +8,7 @@ In mỗi lần nhắc một dòng: "<khoá>\t<nội dung>" (xuống dòng trong 
 Dùng: python3 -I nhac-lap.py <nhac-viec.md> <da-nhac-lap> [danh-sach-viec.md]"""
 import datetime as dt, os, re, sys
 
-DONG = re.compile(r"^- (?:mỗi|hằng|hàng) (.+?) (\d{1,2}):(\d{2}) · (.+)$")
+DONG = re.compile(r"^- (?:mỗi|hằng|hàng|chỉ) (.+?) (\d{1,2}):(\d{2}) · (.+)$")
 THU = {"2": 0, "3": 1, "4": 2, "5": 3, "6": 4, "7": 5, "hai": 0, "ba": 1, "tư": 2, "năm": 3, "sáu": 4, "bảy": 5}
 
 
@@ -16,6 +16,9 @@ def khop(spec, ngay):
     s = spec.strip().lower()
     if s in ("ngày", "sáng", "tối", "chiều", "trưa", "đêm"):
         return True
+    m = re.fullmatch(r"ngày (\d{4})-(\d{2})-(\d{2})", s)
+    if m:
+        return ngay == dt.date(*map(int, m.groups()))
     m = re.fullmatch(r"ngày (\d{1,2})", s)
     if m:
         return ngay.day == int(m.group(1))
