@@ -37,7 +37,10 @@ tai_khoan_app() { # tài khoản app Claude trên Mac đang dùng = thư mục p
 tuoi_phien() { echo $(( $(date +%s) - $(cat "$TT/mo-luc" 2>/dev/null || echo 0) )); }
 gui() { # gõ một tin vào phiên bot; lỗi nếu bot chưa sẵn sàng
   dang_chay && [ -n "$(may_chu)" ] || return 1
-  screen -S "$(sid)" -p 0 -X stuff "$1"; sleep 1; screen -S "$(sid)" -p 0 -X stuff $'\r'
+  # Dán qua bộ đệm của screen: "stuff" bỏ im lặng chuỗi dài hơn ~1024 byte (tin hỏi thói quen kèm việc chưa xong ~1900 byte bị mất, gặp 14/11).
+  printf '%s' "$1" > "$TT/tin-go.txt"
+  screen -S "$(sid)" -p 0 -X readbuf -e utf8 "$TT/tin-go.txt" && screen -S "$(sid)" -p 0 -X paste . || return 1
+  sleep 2; screen -S "$(sid)" -p 0 -X stuff $'\r'
 }
 LS_BOT="$HOME/.claude/projects/-Users-moon-Documents-2-ca-nhan-so-tay"
 da_nhan() { # $1 nội dung, $2 khoá: tin thẻ máy đã vào lịch sử phiên bot chưa (dòng có đầu tin + giờ khung ở cuối)

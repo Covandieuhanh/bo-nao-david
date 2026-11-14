@@ -20,10 +20,10 @@ Tin là **ra việc cho Claude** hoặc **hỏi việc của Claude**: theo mụ
 | `danh-sach-viec.md` | Việc cần làm | `- [ ] việc · hạn <ngày nếu có> · ghi <ngày>`. Xong thì đổi thành `[x]`, thêm `· xong <ngày>`. |
 | `lich-hen.md` | Lịch/hẹn | `- <ngày giờ> · việc · với ai/ở đâu`, xếp theo ngày |
 | `y-tuong.md` | Ý tưởng | `- <ngày> · ý tưởng`. Ý tưởng hay thông tin mới về nghề/hướng đi (của David hoặc người khác góp ý) **ngoài những gì bộ não David đang có**: luôn ghi vào đây, thêm ` · [chờ lọc]` cuối dòng (David 12/11/2026 22:29). Lọc chung trong buổi tổng kết thứ 6 hằng tuần (nhắc 18:00). David nói "lọc ý tưởng" thì liệt kê các dòng `[chờ lọc]`, David chọn giữ → đổi thành `[giữ]` và giao Claude đưa vào bộ não; bỏ → `[bỏ <ngày>]` |
-| `danh-ba.md` | Người | `## Tên người` rồi các dòng `- <ngày> · điều cần nhớ` |
+| `danh-ba.md` | Người | `## Tên người` rồi các dòng `- <ngày> · điều cần nhớ`. Mỗi sáng máy (skill `tong-hop-tin-nhan`) tự thêm điều mới từ tin nhắn, dạng `- <ngày> · điều cần nhớ · (từ tin Zalo/Messenger/Telegram)`; David chỉ cần kể điều không có trong tin. Trước khi ghi lời David, xem mục người đó: đã có cùng ý (kể cả dòng `(từ tin …)`) thì không ghi lại, trả lời `Đã có trong danh bạ (<nguồn> <ngày>), không ghi lại.`; chỉ khác chi tiết thì ghi dòng mới nói rõ chỗ khác. |
 | `kien-thuc.md` | Kiến thức | `## Chủ đề` rồi các dòng `- <ngày> · điều đã biết · nguồn nếu có` |
 | `nhat-ky/<YYYY-MM>.md` | Nhật ký | `- <ngày> · chuyện đã xảy ra, cảm nhận` |
-| `nhac-viec.md` | Nhắc đúng giờ | `- <YYYY-MM-DD HH:MM> · nội dung nhắc` (múi giờ của Mac). Ghi khi David nói "báo tôi lúc…", "nhắc tôi…". Máy tự gửi đúng giờ, bạn không phải canh (không dùng CronCreate). Dời nhắc: sửa giờ ngay trên dòng đó, hoặc thêm `(đã dời) ` ngay sau `· ` rồi ghi dòng mới với giờ mới. **Nhắc lặp** ("mỗi sáng", "hằng tuần", "định kỳ"): `- mỗi ngày HH:MM · nội dung`, `- mỗi thứ 2, thứ 5 HH:MM · …`, `- mỗi chủ nhật HH:MM · …`, `- mỗi ngày 15 HH:MM · …` (hằng tháng). Dừng nhắc lặp: thêm `(đã dừng) ` ngay sau `· `. Nhắc kèm **việc chưa xong** (David muốn được nhắc cả việc không hạn): thêm ` · + việc chưa xong` cuối dòng nhắc lặp, máy tự gắn danh sách việc `[ ]` trong `danh-sach-viec.md` (quá hạn → có hạn → chưa có hạn; bỏ mục "Thói quen…"). Nội dung bắt đầu bằng thẻ máy (`[HOI-THOI-QUEN] …`) thì máy gõ vào bot thay vì gửi thẳng (bot hỏng thì gửi thẳng chữ cố định). Ba khung hỏi thăm 11:00, 16:00, 20:30 dùng cả hai cách này |
+| `nhac-viec.md` | Nhắc đúng giờ | `- <YYYY-MM-DD HH:MM> · nội dung nhắc` (múi giờ của Mac). Ghi khi David nói "báo tôi lúc…", "nhắc tôi…". Máy tự gửi đúng giờ, bạn không phải canh (không dùng CronCreate). Dời nhắc: sửa giờ ngay trên dòng đó, hoặc thêm `(đã dời) ` ngay sau `· ` rồi ghi dòng mới với giờ mới. **Nhắc lặp** ("mỗi sáng", "hằng tuần", "định kỳ"): `- mỗi ngày HH:MM · nội dung`, `- mỗi thứ 2, thứ 5 HH:MM · …`, `- mỗi chủ nhật HH:MM · …`, `- mỗi ngày 15 HH:MM · …` (hằng tháng). Dừng nhắc lặp: thêm `(đã dừng) ` ngay sau `· `. Nhắc kèm **việc chưa xong** (David muốn được nhắc cả việc không hạn): thêm ` · + việc chưa xong` cuối dòng nhắc lặp, máy tự gắn danh sách việc `[ ]` trong `danh-sach-viec.md` (quá hạn → có hạn → chưa có hạn; bỏ mục "Thói quen…"). Nội dung bắt đầu bằng thẻ máy (`[HOI-THOI-QUEN] …`) thì máy gõ vào bot thay vì gửi thẳng (máy chờ tới khi tin vào được phiên bot, gõ lại tối đa 3 lần; bot hỏng quá 30 phút thì gửi thẳng chữ cố định). Ba khung hỏi thăm 11:00, 16:00, 20:30 dùng cả hai cách này |
 
 - Không chắc một ý thuộc nhóm nào thì chọn nhóm gần nhất và nói rõ trong câu trả lời ("lưu vào Ý tưởng, sai thì nhắn lại").
 - Thấy cần **nhóm mới** thì hỏi David qua Telegram trước, David đồng ý mới tạo file và thêm vào bảng trong `nhom.md`.
@@ -43,7 +43,7 @@ Khi nhận tin bắt đầu bằng `[KHOI-DONG]` (máy gửi lúc mở phiên m�
 
 ## Tin nhắn tổng hợp (Zalo · Messenger · Telegram)
 
-Mỗi sáng máy gửi David tin bắt đầu bằng `📬 Tin nhắn dd/mm`, các việc đánh số. Bản đủ ở `tin-nhan/tong-hop-YYYY-MM-DD.md`. Tin David nói về **người hay việc trong bản tổng hợp** (trả lời/trích tin 📬, hoặc nhắc "tin nhắn", "bản tổng hợp", tên cuộc trò chuyện) thì xử lý ở đây, vẫn ghi hộp thư trước:
+Mỗi sáng máy gửi David tin bắt đầu bằng `📬 Tin nhắn dd/mm`, các việc đánh số, kèm dòng `📇 Danh bạ` (điều đã tự ghi vào `danh-ba.md` và điều trùng với ghi của David). Bản đủ ở `tin-nhan/tong-hop-YYYY-MM-DD.md`. Tin David nói về **người hay việc trong bản tổng hợp** (trả lời/trích tin 📬, hoặc nhắc "tin nhắn", "bản tổng hợp", tên cuộc trò chuyện) thì xử lý ở đây, vẫn ghi hộp thư trước:
 
 | David nói | Ghi vào | Trả lời |
 |---|---|---|
@@ -54,6 +54,8 @@ Mỗi sáng máy gửi David tin bắt đầu bằng `📬 Tin nhắn dd/mm`, c�
 | "chú ý chị Lê hơn", "người này quan trọng" | `ghi-chu.md` mục "Ưu tiên" | `Đã ưu tiên X.` |
 | Hỏi "Lê 89 nói gì?", "hôm qua ai nhắn về tiền?" | không ghi; Grep `tin-nhan/` + `danh-ba.md` rồi trả lời ngắn | — |
 | "đọc lại tin nhắn ngay", "tổng hợp tin bây giờ", "xem kỹ cuộc với X" | `giao-viec.sh "Chạy skill tong-hop-tin-nhan<, chỉ cuộc với X>"` | như mục Điều khiển Claude |
+| "danh bạ A ghi sai: …", "bỏ dòng máy ghi về A" (dòng `(từ tin …)`) | `danh-ba.md`: sửa dòng đó tại chỗ, hoặc xoá nếu David bảo bỏ | `Đã sửa danh bạ <tên>.` |
+| "A là người mới đúng rồi" (mục máy tạo `chờ David xác nhận`) | `danh-ba.md`: đổi `(máy ghi …, chờ David xác nhận)` thành `(David xác nhận <ngày>)` | `Đã xác nhận <tên>.` |
 | "trả lời Lê là…", "nhắn cho Long…" | **Không gửi.** Ghi vào `danh-sach-viec.md` việc "Trả lời <người>: <nội dung>" | `Bot chỉ đọc tin, không nhắn thay anh. Đã ghi vào Việc cần làm.` |
 
 ## Hỏi thăm thói quen
