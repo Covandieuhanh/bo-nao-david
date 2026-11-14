@@ -47,7 +47,7 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [co-so-tri-thuc/bo-nho/quy-tac-khong-tu-chay-viec-cua-david.md](bo-nho/quy-tac-khong-tu-chay-viec-cua-david.md) — Không tự chạy, chạy tiếp, dừng hay làm lại việc David tạo (render, việc dựng…) khi David chưa ra lệnh — kể cả khi chính Claude làm ngắt việc đó · ←4
 - [co-so-tri-thuc/bo-nho/quy-tac-ky-nang-tu-cai-tien.md](bo-nho/quy-tac-ky-nang-tu-cai-tien.md) — Sáu luật mới 12/11/2026: chỉ hỏi khi đụng thông tin về David; skill, giọng văn, luật kênh tự cải tiến theo hình mẫu có số liệu; bỏ luật 'con người làm trung tâm'; lời mới nhất thắng; GitHub dựng lại 100% · ←3
 - [co-so-tri-thuc/bo-nho/quy-tac-mod-tu-chay.md](bo-nho/quy-tac-mod-tu-chay.md) — Không dùng mod giao diện: David gỡ hết savvy-progress, collision-guard, goal-meter, Sổ việc (13/11/2026) · ←2
-- [co-so-tri-thuc/bo-nho/quy-tac-noi-dung-cua-david.md](bo-nho/quy-tac-noi-dung-cua-david.md) — Vai trò chia rõ — David tự xây nội dung, nói tự do có cảm xúc; skill lo hình. Người xem làm trung tâm; học kênh lớn ở nhịp và cách trình bày (2026-11-05, gộp 10/11) · ←8
+- [co-so-tri-thuc/bo-nho/quy-tac-noi-dung-cua-david.md](bo-nho/quy-tac-noi-dung-cua-david.md) — Vai trò chia rõ — David tự xây nội dung, nói tự do có cảm xúc; skill lo hình. Người xem làm trung tâm; học kênh lớn ở nhịp và cách trình bày (2026-11-05, gộp 10/11) · ←9
 - [co-so-tri-thuc/bo-nho/quy-tac-phien-telegram-tu-chay.md](bo-nho/quy-tac-phien-telegram-tu-chay.md) — Phiên việc giao qua Telegram tự làm tới kết quả, không xin phép từng bước; chỉ hỏi khi đăng/gửi, tốn tiền, đẩy đè GitHub, xoá ổ đĩa (12/11/2026) · ←3
 - [co-so-tri-thuc/bo-nho/quy-tac-sua-thang-tai-ban.md](bo-nho/quy-tac-sua-thang-tai-ban.md) — Đổi luật thì sửa thẳng câu cũ (không chồng câu "bổ sung/thay luật", không ngày trong bản luật); định kỳ tái bản TOÀN BỘ bộ não một đợt khi máy đo chồng chéo báo (2026-11-10) · ←3
 - [co-so-tri-thuc/bo-nho/quy-tac-thu-bang-doan-ngan.md](bo-nho/quy-tac-thu-bang-doan-ngan.md) — Thử skill dựng video thì chỉ dùng một đoạn ngắn TRỌN VẸN MỘT Ý (không cố định số giây), không chạy cả video dài · ←3
@@ -134,8 +134,8 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [du-an/tai-ban-3-video.md](../du-an/tai-ban-3-video.md) — Tái bản 3 (14/11), phiên con bộ video: bảng luật đang sống, chéo bộ, hỏi David. · ←1
 - [du-an/tai-ban-3.md](../du-an/tai-ban-3.md) — Tái bản 3 toàn bộ bộ não (mở 14/11): file theo dõi chung của phiên điều phối — máy đo lúc mở, file từng phiên con, chéo bộ, hỏi David, kiểm chung. · ←5
 - [du-an/tai-cau-truc-2-ghi-nho.md](../du-an/tai-cau-truc-2-ghi-nho.md) — Tái bản 2 (10/11), phần dọn ghi nhớ bo-nho: gộp, bỏ, chuyển lưu trữ. · ←1
-- [du-an/tai-cau-truc-2-hoi.md](../du-an/tai-cau-truc-2-hoi.md) — Tái bản 2 (10/11), phần bộ hỏi skill thu-thap-yeu-cau. · ←1
-- [du-an/tai-cau-truc-2-nao.md](../du-an/tai-cau-truc-2-nao.md) — Tái bản 2 (10/11), phần bộ não: AGENTS.md, CLAUDE.md, david.md, chuan-muc-lam-viec. · ←1
+- [du-an/tai-cau-truc-2-hoi.md](../du-an/tai-cau-truc-2-hoi.md) — Tái bản 2 (10/11), phần bộ hỏi skill thu-thap-yeu-cau. · ←2
+- [du-an/tai-cau-truc-2-nao.md](../du-an/tai-cau-truc-2-nao.md) — Tái bản 2 (10/11), phần bộ não: AGENTS.md, CLAUDE.md, david.md, chuan-muc-lam-viec. · ←2
 - [du-an/tai-cau-truc-2-video.md](../du-an/tai-cau-truc-2-video.md) — Tái bản 2 (10/11), phần bộ skill video: luật đổi so với lần 1. · ←1
 - [du-an/tai-cau-truc-2.md](../du-an/tai-cau-truc-2.md) — Tái bản lần 2 toàn bộ bộ não (10/11): điều phối các phiên con, mốc, kết quả. · ←2
 - [du-an/tai-cau-truc-video-1.md](../du-an/tai-cau-truc-video-1.md) — Tái bản bộ skill video lần 1 (10/11): bảng 164 luật, mỗi luật một nhà. · ←1
@@ -146,7 +146,7 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 
 ## ky-nang
 
-- [ky-nang/chuan-muc-lam-viec.md](../ky-nang/chuan-muc-lam-viec.md) — Thói quen làm việc chung mọi skill đọc trước: khi hai điều ngược nhau, đọc đúng phần, khi nào hỏi, trong lúc làm, cuối việc, giữ phiên gọn. · ←3
+- [ky-nang/chuan-muc-lam-viec.md](../ky-nang/chuan-muc-lam-viec.md) — Thói quen làm việc chung mọi skill đọc trước: khi hai điều ngược nhau, đọc đúng phần, khi nào hỏi, trong lúc làm, cuối việc, giữ phiên gọn. · ←4
 - [ky-nang/dieu-khien-trinh-duyet/SKILL.md](../ky-nang/dieu-khien-trinh-duyet/SKILL.md) — Automate browser interactions, test web pages and work with Playwright tests. · ←2
 - [ky-nang/dieu-khien-trinh-duyet/references/chay-ma.md](../ky-nang/dieu-khien-trinh-duyet/references/chay-ma.md) — Điều khiển trình duyệt: chạy mã Playwright tuỳ ý (run-code). · ←2
 - [ky-nang/dieu-khien-trinh-duyet/references/dinh-kem-pr.md](../ky-nang/dieu-khien-trinh-duyet/references/dinh-kem-pr.md) — Điều khiển trình duyệt: đính kèm ảnh chụp, video vào pull request bằng gh. · ←3
@@ -241,7 +241,7 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [ky-nang/thiet-ke-trang-cuon/references/the-gioi.md](../ky-nang/thiet-ke-trang-cuon/references/the-gioi.md) — Thiết kế trang cuộn: chọn thế giới (định hướng nghệ thuật) của trang. · ←3
 - [ky-nang/thiet-ke-trang-cuon/references/thiet-bi.md](../ky-nang/thiet-ke-trang-cuon/references/thiet-bi.md) — Thiết kế trang cuộn: 9 cách cuộn làm đổi trang (bộ thiết bị). · ←4
 - [ky-nang/thiet-ke-trang-cuon/references/tinh-doc-ban.md](../ky-nang/thiet-ke-trang-cuon/references/tinh-doc-ban.md) — Thiết kế trang cuộn: trục cấu trúc, bài học từ 4 trang đã làm. · ←3
-- [ky-nang/thu-thap-yeu-cau/SKILL.md](../ky-nang/thu-thap-yeu-cau/SKILL.md) — Cách hỏi của David khi trình 4 phần (Mục tiêu · Kế hoạch · Quy trình · Thực thi) trước mọi việc — hỏi theo vòng từ góc nhìn chuyên gia thực chiến, mỗi điểm cần chốt 2–3 gợi ý có đề xuất đứng đầu; sự thật tự tra, quyết định David chốt; chờ David "duyệt" rồi mới tạo/sửa file; duyệt rồi làm trọn một mạch. Tự nhận diện 6 tín hiệu phải dừng hỏi, cả lúc bắt đầu lẫn giữa chừng. Dùng khi trình 4 phần cho một việc, khi David nói "hỏi kỹ", "hỏi chuyên gia", "grill me", "/thu-thap-yeu-cau". Không dùng cho câu hỏi nhanh, tra cứu. · ←3
+- [ky-nang/thu-thap-yeu-cau/SKILL.md](../ky-nang/thu-thap-yeu-cau/SKILL.md) — Cách hỏi của David khi trình 4 phần (Mục tiêu · Kế hoạch · Quy trình · Thực thi) trước mọi việc — hỏi theo vòng từ góc nhìn chuyên gia thực chiến, mỗi điểm cần chốt 2–3 gợi ý có đề xuất đứng đầu; sự thật tự tra, quyết định David chốt; chờ David "duyệt" rồi mới tạo/sửa file; duyệt rồi làm trọn một mạch. Tự nhận diện 6 tín hiệu phải dừng hỏi, cả lúc bắt đầu lẫn giữa chừng. Dùng khi trình 4 phần cho một việc, khi David nói "hỏi kỹ", "hỏi chuyên gia", "grill me", "/thu-thap-yeu-cau". Không dùng cho câu hỏi nhanh, tra cứu. · ←4
 - [ky-nang/tong-hop-tin-nhan/SKILL.md](../ky-nang/tong-hop-tin-nhan/SKILL.md) — Tổng hợp tin nhắn hằng ngày của David từ Zalo, Messenger, Telegram — chỉ đọc, ra bảng việc cần làm / thoả thuận / đời thường, lưu trong sổ nhớ (~/Documents/2-ca-nhan/so-tay/tin-nhan/, không lên GitHub), tự ghi điều mới của từng người / đối tác vào danh-ba.md (trùng điều David đã ghi thì chỉ đánh dấu trùng) và gửi bản gọn về bot Telegram Sổ nhớ; David trả lời bot để gộp người, đánh dấu xong, bỏ qua. Dùng khi lịch hằng ngày chạy, khi David nói "tổng hợp tin", "tổng hợp tin nhắn", "hôm nay ai nhắn gì", "/tong-hop-tin-nhan". · ←3
 
 ## luu-tru

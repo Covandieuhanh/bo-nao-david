@@ -30,9 +30,11 @@ Luật nội dung (nguyên văn lời David, giọng David, lằn ranh) không p
 **4 phần** — **Mục tiêu** (kết quả, đo bằng gì) · **Kế hoạch** (làm gì, ở đâu, chọn gì vì sao) · **Quy trình** (từng bước) · **Thực thi** (checklist nhỏ nhất,
 có mốc làm ngay) — kèm các điểm cần chốt (mỗi điểm có đề xuất đứng đầu), rồi **dừng chờ David "duyệt"**. Duyệt (hoặc sửa phần nào thì trình lại phần đó) →
 **tự làm trọn một mạch**, tự thử thật tới khi chắc dùng được, không xin phép từng bước, không dừng giữa chừng trừ tín hiệu nặng; xong báo kết quả. Phiên giao
-qua Telegram gửi 4 phần bằng `bao-cao.sh "#N ❓ Chờ anh duyệt 4 phần: …"`. (David 14/11/2026, việc #22.)
+qua Telegram gửi 4 phần bằng `bao-cao.sh "#N ❓ Chờ anh duyệt 4 phần: …"`.
 **Miễn 4 phần:** câu hỏi nhanh, tra cứu, giải thích (trả lời thẳng) · bot Sổ nhớ ghi nhớ, tra sổ · lịch tự chạy David đã duyệt (`tu-dong-hoa/lich/lich-chay.md`,
 `[TU-HOC]`): chạy theo lời giao đã duyệt, không trình lại mỗi lần.
+**Việc tự chạy phải nhìn thấy được:** lịch và việc giao qua Telegram mở thành phiên hiện trong app Claude (Remote Control) để David xem, kiểm và gõ tiếp,
+không chạy ngầm; cách làm: `tu-dong-hoa/lich/lich-chay.md`, `tu-dong-hoa/so-tay/README.md`.
 Trong 4 phần, cách chọn từng điểm:
 - **Skill / hồ sơ đã định → làm đúng như vậy**, không đề xuất khác. Đề xuất của Claude không bao giờ trái mặc định của
   skill; thấy cần khác mặc định thì đó là tín hiệu 2 (mâu thuẫn) — dừng hỏi, không tự đổi.
@@ -41,7 +43,7 @@ Trong 4 phần, cách chọn từng điểm:
 - **Câu David không trả lời, "làm đi", "theo skill"** = theo mặc định của skill, phần chưa định thì theo đề xuất của Claude.
 - **Sau khi duyệt, chỉ dừng hỏi khi:** đăng / gửi / xoá trên mạng xã hội / mật khẩu (`AGENTS.md` luật 4) · tín hiệu nặng của `thu-thap-yeu-cau` (mâu thuẫn luật, khó đảo
   ngược, thiếu file / nguồn hỏng, hiểu được nhiều cách làm đổi hẳn kết quả) · sửa thông tin trực tiếp về David, màu chủ đạo, chữ ký
-  nhận diện (diễn giải + chờ "ok"). Skill, giọng văn, luật kênh: `ky-nang/hoc-lien-tuc` tự phân tích, phần sửa trình 4 phần.
+  nhận diện (diễn giải + chờ "ok"). Tự học skill, giọng văn, luật kênh: `AGENTS.md` luật 2.
 - Phần cứng của video: `san-xuat-video/quy-tac-chung.md` mục 8.
 
 ## 3. Trong lúc làm
@@ -55,8 +57,8 @@ Trong 4 phần, cách chọn từng điểm:
   hoặc phiên khác đang chạy không; có thì hỏi trước.
 - **Công cụ David đã cài là để nâng skill:** thấy công cụ trên máy giúp việc tốt hơn mà skill chưa dùng thì đề xuất tích hợp (diễn giải
   ngắn trước khi sửa skill), giữ cách cũ làm dự phòng khi công cụ lỗi.
-- **Không dùng mod giao diện:** David gỡ hết 13/11/2026; không tự cài lại mod, plugin vẽ bảng hay thanh tiến độ.
-- Đăng, gửi, xoá, mật khẩu: `AGENTS.md` luật 5.
+- **Không dùng mod giao diện:** không cài mod, plugin vẽ bảng hay thanh tiến độ, dòng trên ô nhập; chỉ giữ plugin Telegram. Muốn mod mới thì hỏi David trước.
+- Đăng, gửi, xoá, mật khẩu: `AGENTS.md` luật 4.
 
 ## 4. Cuối việc
 - **Tự soát trước khi báo xong:** (1) kiểm theo "Xong khi" và tiêu chí của skill; (2) tự hỏi "đã xong hết chưa?" rồi quét lại một lượt
