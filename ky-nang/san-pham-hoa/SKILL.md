@@ -1,6 +1,6 @@
 ---
 name: san-pham-hoa
-description: Máy gom và đóng gói của David — mỗi đêm gom phần mới ở mọi nguồn (lời David trong phiên Claude, sổ nhớ bot Telegram, tổng hợp tin nhắn, lời trong video, bài đăng, số liệu) rồi phân loại theo ba hướng nghề, mục tiêu / nỗi đau, bán được gì; mỗi tối chủ nhật đóng nguyên liệu thành sản phẩm bán được (bổ sung gói đang chạy, bài phễu nháp, đề xuất gói mới khi ≥ 5 người cùng gặp một nỗi đau) và gói có các bước để trainer lại. Dùng khi lịch đêm / tuần chạy, khi David nói "gom", "phân loại", "đóng gói", "tuần này có gì bán được", "nỗi đau nào đang lặp", "/san-pham-hoa".
+description: Máy gom và đóng gói của David — mỗi đêm gom phần mới ở mọi nguồn (lời David trong phiên Claude, sổ nhớ bot Telegram, tổng hợp tin nhắn, lời trong video, bài đăng, số liệu) rồi phân loại theo ba hướng nghề, mục tiêu / nỗi đau, bán được gì; mỗi sáng thứ 6 (ngày tổng kết tuần) đóng nguyên liệu thành sản phẩm bán được (bổ sung gói đang chạy, bài phễu nháp, đề xuất gói mới khi ≥ 5 người cùng gặp một nỗi đau) và gói có các bước để trainer lại. Dùng khi lịch đêm / tuần chạy, khi David nói "gom", "phân loại", "đóng gói", "tuần này có gì bán được", "nỗi đau nào đang lặp", "/san-pham-hoa".
 ---
 
 # Gom và đóng gói
@@ -17,7 +17,7 @@ description: Máy gom và đóng gói của David — mỗi đêm gom phần m�
 | Nguyên liệu đã phân loại | `…/kho-du-lieu/nguyen-lieu.md` | không |
 | Sổ nỗi đau (đếm lặp) | `…/kho-du-lieu/noi-dau.md` | không |
 | Bài phễu nháp (sản phẩm) | `…/kho-du-lieu/bai-pheu/<ngày>-<ten>.md` | không |
-| Phiếu tuần (đã ẩn danh) | `du-an/dong-goi/<ngày chủ nhật>.md` | có |
+| Phiếu tuần (đã ẩn danh) | `du-an/dong-goi/<ngày thứ 6>.md` | có |
 | Bổ sung gói đang chạy | thư mục gói, ví dụ `du-an/goi-dao-tao-dung-video-ai/` | có |
 
 Gọi tắt `KG/` = `~/Documents/2-ca-nhan/so-tay/kho-du-lieu/`.
@@ -50,9 +50,9 @@ trùng và thư mục `thu-…`) · bài đăng, số liệu, danh mục video (
 4. Cộng `KG/noi-dau.md`: bảng `| nỗi đau | hướng | số người | ai (ẩn danh) | nguồn gần nhất | gói khớp | trạng thái |`. Cùng nghĩa thì gộp một dòng,
    **số người** = số người khác nhau gặp nỗi đau đó (một người nói nhiều lần, nhiều ngày vẫn tính một; David tự gặp tính một và ghi
    "David tự gặp", đó là bằng chứng gói chạy thật trên chính David). Trạng thái: `theo dõi` · `≥5 chờ đề xuất` · `đã đề xuất` · `có gói`.
-5. Không báo Telegram mỗi đêm. Chỉ báo khi một nỗi đau vừa chạm 5 người: `bash tu-dong-hoa/so-tay/bao-cao.sh --chi-gui "🔔 Nỗi đau 5 người gặp: … · sẽ đề xuất gói ở phiếu chủ nhật"`.
+5. Không báo Telegram mỗi đêm. Chỉ báo khi một nỗi đau vừa chạm 5 người: `bash tu-dong-hoa/so-tay/bao-cao.sh --chi-gui "🔔 Nỗi đau 5 người gặp: … · sẽ đề xuất gói ở phiếu sáng thứ 6"`.
 
-## Việc 2 — Đóng gói tối chủ nhật (lịch 19:00)
+## Việc 2 — Đóng gói sáng thứ 6 (lịch 06:30, trước tin tổng kết tuần 07:30)
 Đọc `KG/nguyen-lieu.md` 7 ngày qua, `KG/noi-dau.md`, `du-an/pheu-ban-hang-goi-cong-nghe.md`, README của gói đang chạy.
 1. **Gói đang chạy** (gói David đã chốt trong `pheu-ban-hang-goi-cong-nghe.md`, hiện là Gói 1 `goi-dao-tao-dung-video-ai`): nguyên liệu dạng bài học,
    lỗi thường gặp, câu hỏi thường gặp → bổ sung thẳng vào đúng file của gói (giáo trình, SOP, danh sách kiểm soát), viết thành bước +
@@ -72,4 +72,4 @@ trùng và thư mục `thu-…`) · bài đăng, số liệu, danh mục video (
 ## Lịch (cài lại trên máy mới)
 Hai lịch trong app Claude (Scheduled tasks), chạy khi app đang mở; app tắt lúc tới giờ thì chạy lúc mở lại:
 - `gom-phan-loai-dem`: `0 23 * * *` · lời giao: "Làm việc trong thư mục /Users/moon/Documents/bo-nao-david. Chạy skill san-pham-hoa, Việc 1 (phân loại mỗi đêm)."
-- `dong-goi-tuan`: `0 19 * * 0` · lời giao: "Làm việc trong thư mục /Users/moon/Documents/bo-nao-david. Chạy skill san-pham-hoa, Việc 2 (đóng gói tối chủ nhật)."
+- `dong-goi-tuan`: `30 6 * * 5` · lời giao: "Làm việc trong thư mục /Users/moon/Documents/bo-nao-david. Chạy skill san-pham-hoa, Việc 2 (đóng gói sáng thứ 6)."

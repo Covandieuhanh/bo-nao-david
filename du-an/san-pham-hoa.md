@@ -11,7 +11,7 @@ các bước để trainer lại**.
 | Nhịp | Làm gì | Ra gì |
 |---|---|---|
 | **Mỗi đêm 23:00** | Script gom phần mới (không tốn token) → Claude phân loại | `kho-du-lieu/ngay/<ngày>.md`, thêm dòng vào `nguyen-lieu.md`, cộng `noi-dau.md` |
-| **Tối chủ nhật 19:00** | Claude đóng gói từ nguyên liệu tuần | bổ sung gói đang chạy, bài phễu nháp, đề xuất gói mới khi ≥ 5 người cùng gặp một nỗi đau, phiếu tuần, tin Telegram |
+| **Sáng thứ 6 06:30** (ngày tổng kết tuần) | Claude đóng gói từ nguyên liệu tuần | bổ sung gói đang chạy, bài phễu nháp, đề xuất gói mới khi ≥ 5 người cùng gặp một nỗi đau, phiếu tuần, tin Telegram |
 
 David chốt 14/11/2026: nhịp đêm + tuần; gói đang chạy tự bổ sung, gói mới chỉ đề xuất khi ≥ 5 người cùng gặp một nỗi đau (khớp mốc phễu); kho thô chỉ ở máy.
 
@@ -26,5 +26,5 @@ David chốt 14/11/2026: nhịp đêm + tuần; gói đang chạy tự bổ sung
 - [x] David duyệt thiết kế (14/11)
 - [x] Script gom + skill + lịch đêm và tuần (14/11)
 - [x] Chạy thử lượt đầu (14/11)
-- [ ] Lượt đóng gói tuần đầu tiên (chủ nhật 15/11 19:00)
+- [ ] Lượt đóng gói tuần đầu tiên (thứ 6 20/11 06:30)
 - [ ] Sau 2 tuần: rà xem phân loại có đúng hướng không, nỗi đau nào lên ngưỡng, sửa skill theo `hoc-lien-tuc`

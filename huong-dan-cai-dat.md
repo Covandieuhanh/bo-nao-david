@@ -64,7 +64,7 @@ bash ~/Documents/bo-nao-david/tu-dong-hoa/dong-bo.sh
 | Mô hình Whisper (1,5 GB) | Lệnh tải do `kiem-moi-truong.sh` in ra, lưu ở `~/whisper-models` |
 | `~/.cache/dung-video-theo-phong-cach` (font, dò mặt, môi trường Python, 92 MB) | Các script dựng dùng thư mục này. Chép từ máy cũ cho chắc, hoặc để script báo thiếu rồi cài lại |
 | Bot Telegram Sổ nhớ (chạy 24/7) | Cài plugin Telegram (cai-dat-bo-nao.sh đã cài), dán token bot vào `~/.claude/channels/so-tay/.env` (David giữ token, không lên GitHub), rồi `bash tu-dong-hoa/so-tay/cai-dat.sh`: chép luật + quyền bot, cài launchd `com.david.so-tay`. Nghe tin thoại dùng chung mô hình Whisper ở dòng trên |
-| Lịch app Claude (tổng hợp tin nhắn 7:00, gom phân loại 23:00, đóng gói chủ nhật 19:00) | Không theo repo: tạo lại trong app Claude (Scheduled tasks) đúng giờ và lời giao ghi ở cuối `ky-nang/tong-hop-tin-nhan/SKILL.md` và `ky-nang/san-pham-hoa/SKILL.md`. Kho gom `~/Documents/2-ca-nhan/so-tay/kho-du-lieu/` chỉ ở máy, sao lưu Drive cùng sổ nhớ |
+| Lịch app Claude (tổng hợp tin nhắn 7:00, gom phân loại 23:00, đóng gói thứ 6 06:30) | Không theo repo: tạo lại trong app Claude (Scheduled tasks) đúng giờ và lời giao ghi ở cuối `ky-nang/tong-hop-tin-nhan/SKILL.md` và `ky-nang/san-pham-hoa/SKILL.md`. Kho gom `~/Documents/2-ca-nhan/so-tay/kho-du-lieu/` chỉ ở máy, sao lưu Drive cùng sổ nhớ |
 | Tín hiệu tự học (`~/.claude/hoc-lien-tuc/`) | Có lời chat nên ở lại máy; máy mới tự ghi lại từ đầu (hook do cai-dat-bo-nao.sh cài) |
 | `playwright-cli` | Cài qua npm toàn cục, kiểm tra bằng `playwright-cli --help` |
 | Đăng nhập YouTube, Facebook, TikTok | David tự đăng nhập lại. Hồ sơ Chrome đăng bài ở `~/.cache/david-mxh-chrome` |
