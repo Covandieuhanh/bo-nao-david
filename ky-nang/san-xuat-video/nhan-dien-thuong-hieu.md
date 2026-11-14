@@ -1,3 +1,7 @@
+---
+description: "Bộ định tuyến loại video: bước lọc, nhận diện loại (nói trước camera, vlog, podcast, highlight) → skill nào."
+---
+
 # Nhận diện loại video (bộ định tuyến — một chỗ duy nhất)
 
 **Bước 0: BỘ LỌC NỘI DUNG** — `mo-dun/00-sang-loc-noi-dung`. David chỉ đưa tài nguyên, không kèm yêu cầu: chép lời → chấm theo hồ sơ

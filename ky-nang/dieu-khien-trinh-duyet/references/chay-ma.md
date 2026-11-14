@@ -1,3 +1,7 @@
+---
+description: "Điều khiển trình duyệt: chạy mã Playwright tuỳ ý (run-code)."
+---
+
 # Running Custom Playwright Code
 
 Use `run-code` to execute arbitrary Playwright code for advanced scenarios not covered by CLI commands.

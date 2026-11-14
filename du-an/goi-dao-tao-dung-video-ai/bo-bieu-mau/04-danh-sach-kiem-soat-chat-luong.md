@@ -1,3 +1,7 @@
+---
+description: "Biểu mẫu 04 cho học viên: danh sách kiểm soát chất lượng (QC checklist) một video."
+---
+
 # Biểu mẫu 04 · Danh sách kiểm soát chất lượng (QC Checklist) một video (Bài 8)
 
 ## Trước khi giao AI

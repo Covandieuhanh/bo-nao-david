@@ -1,3 +1,7 @@
+---
+description: "Gói 1 trainer dựng video bằng AI trên máy tính (hướng 3 gói công nghệ): tổng quan, cấu trúc, file con."
+---
+
 # Gói 1: Trainer dựng video bằng AI trên máy tính
 
 Gói công nghệ đầu tiên của hướng 3 (`co-so-tri-thuc/david.md` 4.1), chốt 13/11/2026. Quy trình bán: `../pheu-ban-hang-goi-cong-nghe.md`.

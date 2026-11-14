@@ -1,3 +1,7 @@
+---
+description: "Khối 10 bộ nhận diện David trên video: dấu góc, thanh thời gian, màu, font."
+---
+
 # Khối 10-nhan-dien-thuong-hieu: Bộ nhận diện David + phong cách; rút phong cách từ video mẫu
 
 **Dùng trong:** cả 4

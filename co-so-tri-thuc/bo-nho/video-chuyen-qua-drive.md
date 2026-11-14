@@ -24,4 +24,4 @@ David điều khiển Mac từ điện thoại bằng Remote Control; không dù
 Video gốc David gửi lên: `~/Library/CloudStorage/GoogleDrive-covandieuhanh@gmail.com/Drive của tôi/tu-lieu-goc/`
 Thành phẩm trả về: `.../Drive của tôi/thanh-pham/`, **mỗi tập một thư mục, trùng tên với `~/Movies`** (David chốt 08/11/2026): `tap-<ten>/ban-dai/<ten>.mp4` và `tap-<ten>/highlight/clip-a.mp4`, `clip-b.mp4`…; tập chỉ có bản dài vẫn tạo `ban-dai/`. Vlog vào `vlog/<ten>.mp4`, video tự quay vào `video-tu-quay/<ten>.mp4`. Clip ngắn có thể gửi thẳng vào chat bằng SendUserFile.
 Kho dự án và bộ não: `.../Drive của tôi/sao-luu-mac/` (Movies, Downloads, Documents, bo-nao). Sao lưu đợt chuyển tài khoản: `.../Drive của tôi/sao-luu-claude-2026-11-07/` gồm `tai-lieu-claude-ai` và `du-an-video` (âm thanh gốc, kịch bản, bỏ file render).
-Liên quan [[video-movies-xep-theo-tap]], [[co-so-tri-thuc-github-ban-goc]].
+Liên quan [[video-thu-muc-xep-theo-tap]], [[co-so-tri-thuc-github-ban-goc]].

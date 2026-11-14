@@ -1,3 +1,7 @@
+---
+description: "Thiết kế trang cuộn: sổ dấu hiệu nhận dạng mỗi trang đã làm để không lặp."
+---
+
 # Fingerprints
 
 Every site you build with **scroll-craft** gets one row here, appended after it

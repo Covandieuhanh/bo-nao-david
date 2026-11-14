@@ -1,3 +1,7 @@
+---
+description: "Gói 1 dựng video bằng AI, phần 1 quy trình: dựng video bất kì bằng AI trên máy tính, từng bước."
+---
+
 # 1. Quy trình: dựng video bất kì bằng AI trên máy tính
 
 Dùng cho **mọi loại video** (nói trước camera, vlog nhiều cảnh, sản phẩm, sự kiện, quay màn hình, ghi âm). Học viên dùng **trợ lý AI chạy lệnh trên máy tính của mình** (Claude Code, Codex CLI, Gemini CLI… chọn cái đang có). AI điều khiển các công cụ dựng miễn phí; người chỉ đưa tư liệu, nói muốn gì, xem và phản hồi.

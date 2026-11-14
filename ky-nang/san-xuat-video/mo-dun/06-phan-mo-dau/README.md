@@ -1,3 +1,7 @@
+---
+description: "Khối 06 mở đầu 0–3 giây: câu chạm, thẻ tít nguyên văn."
+---
+
 # Khối 06-phan-mo-dau: Mở đầu 0–3 s: câu chạm, thẻ tít nguyên văn (highlight), đoạn ghép mở vlog, teaser podcast dài
 
 **Dùng trong:** cả 4

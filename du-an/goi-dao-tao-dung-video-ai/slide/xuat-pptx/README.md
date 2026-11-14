@@ -1,3 +1,7 @@
+---
+description: "Cách xuất slide gói dựng video bằng AI ra PowerPoint (pptx)."
+---
+
 # Xuất slide ra PowerPoint (mở được bằng app Mở Tài Liệu, Keynote, PowerPoint)
 
 Đầu ra: `~/Documents/1-nghe-nghiep/goi-dao-tao-dung-video-ai/slide-pptx/` (không lên GitHub).

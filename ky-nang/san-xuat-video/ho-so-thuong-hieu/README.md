@@ -1,3 +1,7 @@
+---
+description: "Hồ sơ tham số video: những gì sao chép từ hình mẫu (lớp đổi nhiều), json chung và theo loại."
+---
+
 # Hồ sơ tham số — nơi chứa những gì SAO CHÉP TỪ HÌNH MẪU (lớp đổi nhiều nhất)
 
 - `chung.json` — tham số cả 4 loại; `<loai>.json` ghi đè. Script đọc qua `mo-dun/ho_so.py`; khung dựng đọc `chuyen-dong/src/ho-so.json`

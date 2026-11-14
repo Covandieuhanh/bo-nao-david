@@ -1,3 +1,7 @@
+---
+description: "Hồ sơ CCL (Center for Creative Leadership) bản tiếng Việt: khung, chương trình, thuật ngữ lãnh đạo dịch chuẩn."
+---
+
 > **Bản chữ** của [ho-so-ccl-ban-tieng-viet.pdf](ho-so-ccl-ban-tieng-viet.pdf) (42 trang, 04/11/2026), chuyển nguyên văn ngày 07/11/2026 để AI đọc và tìm nhanh. Lệch nhau thì tin bản PDF.
 
 # Hồ sơ CCL – Center for Creative Leadership (bản tiếng Việt)

@@ -1,3 +1,7 @@
+---
+description: "Phần tư duy kênh tách khỏi gói dựng video (13/11), để làm gói nội dung kênh sau này."
+---
+
 # Phần tách ra từ gói dựng video (để làm gói khác)
 
 Tách 13/11/2026 theo lời David: gói dựng video chỉ dạy **dựng video bất kì bằng AI trên máy tính**; phần tư duy kênh, chọn ý, đăng, đo không thuộc gói đó. Để đây làm nguyên liệu cho một gói riêng sau (ví dụ "làm kênh video ra khách"), chưa phải sản phẩm.

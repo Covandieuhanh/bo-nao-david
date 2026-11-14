@@ -1,3 +1,7 @@
+---
+description: "Thiết kế trang cuộn: trục cấu trúc, bài học từ 4 trang đã làm."
+---
+
 # The structure axis
 
 ## 1. The template trap

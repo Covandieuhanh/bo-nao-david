@@ -1,3 +1,7 @@
+---
+description: "Khối 09 âm thanh: nhạc nền theo tuyến, hiệu ứng tiếng, cân âm −14 LUFS."
+---
+
 # Khối 09-am-thanh: Âm thanh: nhạc kênh, tiếng ký hiệu, ting, vút; cân giọng −20 LUFS, bản cuối −14 LUFS
 
 **Dùng trong:** cả 4

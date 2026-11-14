@@ -1,3 +1,7 @@
+---
+description: "Bàn giao video đã dựng: đường dẫn bản cuối, thời lượng, phát hành, thông báo David."
+---
+
 # Bàn giao
 
 ## Báo cáo cho người dùng (tiếng Việt, ngắn)

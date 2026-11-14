@@ -1,3 +1,7 @@
+---
+description: "Mẫu phiếu học video mẫu: Claude điền, David duyệt trước khi sửa skill."
+---
+
 # Phiếu học video mẫu — <tên nguồn> (<ngày>)
 
 > Claude điền, David duyệt. Chưa có "ok" thì chưa sửa skill.

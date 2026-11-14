@@ -12,4 +12,4 @@ metadata:
 
 **Why:** 2026-11-05 thumbnail podcast "Mục tiêu và sứ mệnh" lấy mặt David từ vlog Miếu Bà Cam → David: "đang bị lẫn lộn… không được phép liên quan đến các video khác".
 
-**How to apply:** khi hỏi nguồn ảnh, đừng đưa "lấy từ video cũ" làm lựa chọn. Đã ghi vào quy-tac-chung 7 + khối 14 của bộ [[video-kien-truc-skill]].
+**How to apply:** khi hỏi nguồn ảnh, đừng đưa "lấy từ video cũ" làm lựa chọn. Đã ghi vào quy-tac-chung 7 + khối 14 của bộ [[video-kien-truc-ky-nang]].

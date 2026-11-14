@@ -1,3 +1,7 @@
+---
+description: "Lưu trữ: đề xuất sửa skill video sau khi học 80 video Việt (04/11), đã áp toàn bộ."
+---
+
 # Đề xuất sửa bộ skill sau khi học 80 video Việt (2026-11-04)
 
 **Trạng thái:** ĐÃ ÁP TOÀN BỘ (David duyệt 2026-11-04: ưu tiên 1 + 2, rồi cả 3 mục ⚠ TH-1, HL-5, PO-6).

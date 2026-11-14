@@ -1,3 +1,7 @@
+---
+description: "Luật chung bộ skill dựng video (một nguồn cho cả 3 skill), đọc trước mọi skill video."
+---
+
 # Luật chung — bộ skill dựng video của David (một nguồn cho cả 3 skill, 4 loại video)
 
 Đọc file này trước mọi skill dựng video. Mỗi SKILL.md chỉ ghi luật RIÊNG của nó; trùng ý thì file này thắng, trừ khi SKILL.md

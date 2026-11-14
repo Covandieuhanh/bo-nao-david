@@ -1,3 +1,7 @@
+---
+description: "Biểu mẫu 01 cho học viên: hướng dẫn thiết lập hệ thống (cài công cụ dựng video AI trên máy)."
+---
+
 # Biểu mẫu 01 · Hướng dẫn thiết lập hệ thống (System Setup Guide) (Bài 1)
 
 > Lệnh và tên gói đổi theo thời gian: **trainer kiểm lại trang chính thức của từng công cụ trước mỗi khoá**.

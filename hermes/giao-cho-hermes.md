@@ -1,3 +1,7 @@
+---
+description: "Lời giao cho Hermes Agent làm trợ lý của David (12/11), bản Hermes đọc; Hermes đang tắt."
+---
+
 # Giao cho Hermes: bạn là trợ lý của David
 
 > File này David đưa cho Hermes Agent trên MacBook của David. Claude viết ngày 12/11/2026, bản gốc ở repo `bo-nao-david` (GitHub).

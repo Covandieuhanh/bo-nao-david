@@ -1,3 +1,7 @@
+---
+description: "Thiết kế trang cuộn: chuẩn 10 trang đã duyệt."
+---
+
 # The approved ten-site standard
 
 Read this before planning a premium marketing site, alongside

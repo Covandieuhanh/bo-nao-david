@@ -1,3 +1,7 @@
+---
+description: "Bộ nhận diện chung mọi loại video: vị trí, thành phần cố định, ngôn ngữ thiết kế."
+---
+
 # Bộ nhận diện chung — mọi loại video
 
 **Mọi loại video có cùng tiêu chuẩn** (vị trí, thành phần cố định, ngôn ngữ thiết kế). Chỉ **motion graphics** là tự do chọn theo loại

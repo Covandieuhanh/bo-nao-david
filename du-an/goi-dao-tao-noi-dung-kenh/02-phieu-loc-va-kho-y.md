@@ -1,3 +1,7 @@
+---
+description: "Mẫu 02 gói nội dung kênh: phiếu lọc ý tưởng video (chấm 0–2) và kho ý."
+---
+
 # Mẫu 02 · Phiếu lọc và kho ý (Bài 2)
 
 ## Phiếu lọc: chấm một ý hoặc một video đã quay

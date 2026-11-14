@@ -1,3 +1,7 @@
+---
+description: "Khối 20 hộp thư và số liệu: gom bình luận, tin nhắn, đọc số liệu 24 giờ sau đăng."
+---
+
 # Khối 20-hop-thu-so-lieu: Gom bình luận + tin nhắn · đọc số liệu 24 giờ / 7 ngày (CHỈ ĐỌC)
 
 **Dùng trong:** skill `phan-phoi-da-kenh` bước 7–8 · **Trình duyệt:** trình duyệt riêng trong app (đã đăng nhập) · **Đầu ra:** `hop-thu-<ngày>.md`,

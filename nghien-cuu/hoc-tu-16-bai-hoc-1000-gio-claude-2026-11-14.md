@@ -1,3 +1,7 @@
+---
+description: "Nghiên cứu bài 16 bài học sau 1000 giờ dùng Claude (Nhật Anh AI, 14/11): ý áp dụng cho bộ não."
+---
+
 # Học từ "16 bài học sau 1000 giờ dùng Claude" (Nhật Anh AI) — 14/11/2026
 
 Nguồn: https://nhatanh.ai/1000-gio/ (bài viết đi kèm video YouTube kênh Nhật Anh AI). Ghi tóm tắt ý, không chép nguyên văn.

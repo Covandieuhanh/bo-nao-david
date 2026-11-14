@@ -12,6 +12,6 @@ David tải ứng dụng, mô hình về máy là để gia tăng skill của m�
 
 **Why:** 07/11/2026 Claude phát hiện pyannote đã cài ở `~/.venvs/pyannote` nhưng `nguoi-noi.py` vẫn tự đoán giọng bằng k-means; David nói "đương nhiên đưa hết vào skill".
 
-**How to apply:** khi thấy công cụ đã cài mà skill chưa dùng, đề xuất tích hợp luôn (vẫn diễn giải ngắn trước khi sửa skill), giữ cách cũ làm dự phòng khi công cụ lỗi. Liên quan [[video-kien-truc-skill]].
+**How to apply:** khi thấy công cụ đã cài mà skill chưa dùng, đề xuất tích hợp luôn (vẫn diễn giải ngắn trước khi sửa skill), giữ cách cũ làm dự phòng khi công cụ lỗi. Liên quan [[video-kien-truc-ky-nang]].
 
 Nhà của luật: `ky-nang/chuan-muc-lam-viec.md` mục 3 ("Công cụ David đã cài là để nâng skill"). Ghi nhớ này giữ ngày, lời David, lý do.

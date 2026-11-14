@@ -15,5 +15,5 @@ Mỗi video chỉ dùng vài kiểu hiệu ứng hợp nội dung nhất, tự c
 **How to apply:**
 - Luật ở `ky-nang/san-xuat-video/quy-tac-chung.md` §0 "Hiểu hơn cầu kì"; soát ở khối 17 ("video có rối không").
 - **Chữ sau người và bóng người (tách người khỏi nền): David không dùng.** Đã gỡ code; học mẫu sau không thêm lại.
-- Học mẫu vẫn lấy nhiều ([[video-tham-my-chi-giu-nhan-dien]]), nhưng khi dựng chọn ít. Luật không lặp kiểu ([[video-motion-ke-chuyen]], khối 07) chỉ để đỡ nhàm, không phải để thêm kiểu.
+- Học mẫu vẫn lấy nhiều ([[video-tham-my-chi-giu-nhan-dien]]), nhưng khi dựng chọn ít. Luật không lặp kiểu ([[video-do-hoa-ke-chuyen]], khối 07) chỉ để đỡ nhàm, không phải để thêm kiểu.
 - Đưa ảnh thử cho David: chỉ gửi khi đã sạch lỗi, đừng gửi ảnh còn lỗi hình.

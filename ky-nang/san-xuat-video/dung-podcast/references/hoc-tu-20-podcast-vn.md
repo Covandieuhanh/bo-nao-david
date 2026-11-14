@@ -1,3 +1,7 @@
+---
+description: "Nghiên cứu 20 podcast Việt Nam lượt xem cao (04/11) cho skill dựng podcast."
+---
+
 # Học từ 20 podcast Việt Nam lượt xem cao — cho `dung-podcast`
 
 *Ngày 2026-11-04. Chỉ kênh Việt. 7 podcast CÓ NGƯỜI QUAY (A) + 13 podcast CHỈ TIẾNG / ĐỒ HOẠ (B — gồm 6 mẫu gặp khi xem nhóm nói

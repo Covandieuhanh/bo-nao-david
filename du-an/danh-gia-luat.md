@@ -1,3 +1,7 @@
+---
+description: "Rà soát luật bộ skill video (08/11), bước 1 của chuẩn hoá skill: luật trùng, lệch, cần gộp."
+---
+
 # Rà soát luật — bước 1 của chuẩn hoá skill
 
 Ngày 08/11/2026. Phạm vi: 5 skill video + `thu-thap-yeu-cau` + khối dùng chung (`quy-tac-chung`, `nguyen-tac`, `nhan-dien`, khối, hồ sơ) + `david.md`, `AGENTS.md`, bộ nhớ.

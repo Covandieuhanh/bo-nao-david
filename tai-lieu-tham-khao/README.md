@@ -1,3 +1,7 @@
+---
+description: "Tài liệu tham khảo chuẩn David dùng làm hình mẫu lâu dài (CCL) cho phương pháp ba tầng làm chủ và nhân hiệu trainer."
+---
+
 # Tham chiếu chuẩn
 
 Tài liệu gốc David dùng làm **hình mẫu chuẩn** lâu dài: để xây phương pháp ba tầng làm chủ và nhân hiệu trainer, rồi nâng cấp dần. Khác `nghien-cuu/` (nguyên liệu nhất thời, chóng cũ).

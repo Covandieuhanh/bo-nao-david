@@ -1,3 +1,7 @@
+---
+description: "Gói 1 dựng video bằng AI, phần 2 lộ trình trainer: 4 buổi, đích học viên tự dựng ≥ 4 video không cần trainer."
+---
+
 # 2. Lộ trình trainer
 
 ## Mục tiêu (cam kết của gói)

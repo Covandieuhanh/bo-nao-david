@@ -1,3 +1,7 @@
+---
+description: "Khối 14 thumbnail YouTube 1280×720 cho video ngang, chỉ hình của chính video."
+---
+
 # Khối 14-anh-thu-nho: Thumbnail YouTube 1280×720 (chỉ video ngang đăng YouTube): quay hình = mặt + ≤ 3 tầng chữ; podcast = nền hoạ tiết + hình + tiêu đề
 
 **Dùng trong:** làm video, ghép vlog, podcast

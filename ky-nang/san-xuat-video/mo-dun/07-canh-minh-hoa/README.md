@@ -1,3 +1,7 @@
+---
+description: "Khối 07 cảnh minh hoạ: bố cục tự cân, motion graphics kể chuyện, ảnh thật Việt Nam."
+---
+
 # Khối 07-canh-minh-hoa: Bố cục tự cân + motion graphic kể chuyện + điểm nhấn trên người + minh hoạ, sơ đồ, chuyển động
 
 **Dùng trong:** cả 4

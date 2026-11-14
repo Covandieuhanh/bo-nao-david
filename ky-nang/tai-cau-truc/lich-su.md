@@ -1,3 +1,7 @@
+---
+description: "Lịch sử tái bản: mỗi lần tái bản một bộ một dòng, mốc cho máy đo chồng chéo."
+---
+
 # Lịch sử tái bản
 
 Mỗi lần tái bản một bộ: một dòng. Máy đo (`do-chong-cheo.py`) lấy tag cuối của bộ ở đây làm mốc đếm "số lần sửa".

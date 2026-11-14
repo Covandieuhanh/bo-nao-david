@@ -1,3 +1,7 @@
+---
+description: "Chiến lược nghề nghiệp (david.md mục 4): ba hướng nghề tài chính, trainer, gói công nghệ; ba tầng làm chủ, các chặng, bảng giá, quy trình một ca, lằn ranh nghề."
+---
+
 # Chiến lược nghề nghiệp của David
 
 > Tách nguyên văn từ `david.md` (mục 4) ngày 14/11/2026 để hồ sơ nạp mỗi phiên ngắn lại. Mục lục: [david.md](david.md).

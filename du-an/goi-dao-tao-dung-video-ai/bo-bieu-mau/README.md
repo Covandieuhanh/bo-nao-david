@@ -1,3 +1,7 @@
+---
+description: "Bộ biểu mẫu cho học viên gói dựng video bằng AI: biểu mẫu nào dùng ở bài nào, để làm gì."
+---
+
 # Bộ biểu mẫu cho học viên
 
 | Biểu mẫu | Bài | Để làm gì |

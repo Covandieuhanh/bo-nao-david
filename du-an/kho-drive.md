@@ -1,3 +1,7 @@
+---
+description: "Kho Google Drive: bộ não, video gốc (tu-lieu-goc), thành phẩm video; Mac chỉ giữ việc đang làm."
+---
+
 # Kho Drive: bộ não, video gốc, thành quả video
 
 Drive `covandieuhanh@gmail.com` › `Drive của tôi`. Mac chỉ giữ dữ liệu của việc **đang làm**; xong việc thì tải lên đây rồi xoá trên Mac

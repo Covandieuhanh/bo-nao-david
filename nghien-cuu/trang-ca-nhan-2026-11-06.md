@@ -1,3 +1,7 @@
+---
+description: "Nghiên cứu các trang mạng xã hội của David (06/11): số liệu, video cũ, đề xuất."
+---
+
 # Nghiên cứu các trang của David
 
 Đọc ngày 06/11/2026 trong trình duyệt đã đăng nhập, chỉ xem, không đăng hay sửa gì. Số liệu chóng cũ; cần số mới thì đọc lại. Tên người bình luận và số điện thoại không ghi ở đây.

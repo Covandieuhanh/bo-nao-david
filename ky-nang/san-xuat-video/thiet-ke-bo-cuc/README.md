@@ -1,3 +1,7 @@
+---
+description: "Lớp trình bày video: tiêu chí gốc để học mọi loại video mới, giữ chữ ký nhận diện."
+---
+
 # Lớp trình bày — khung gốc để học mọi loại video mới
 
 File này là **tiêu chí gốc**: dù học thêm loại video nào, mọi thứ học được đều đi qua đây, để kiến thức ngày càng dày mà người xem

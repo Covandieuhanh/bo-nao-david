@@ -1,3 +1,7 @@
+---
+description: "Chế độ ghép nhiều clip thành vlog kiểu chương trình (teaser, chia vòng, phụ đề)."
+---
+
 # Chế độ GHÉP NHIỀU CLIP — vlog kiểu game show / chương trình thực tế
 
 *Luật chung cả bộ: `../../quy-tac-chung.md` (đọc trước). Vlog giữ nhịp tự nhiên + phụ đề hộp tối (không cắt khoảng lặng kiểu jump cut).*

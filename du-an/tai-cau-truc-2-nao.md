@@ -1,3 +1,7 @@
+---
+description: "Tái bản 2 (10/11), phần bộ não: AGENTS.md, CLAUDE.md, david.md, chuan-muc-lam-viec."
+---
+
 # Tái bản 2 — bộ nao
 
 Bộ: `AGENTS.md` · `CLAUDE.md` · `co-so-tri-thuc/david.md` · `ky-nang/chuan-muc-lam-viec.md`. Sổ: lịch sử git + `co-so-tri-thuc/bo-nho/`.

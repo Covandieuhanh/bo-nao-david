@@ -1,3 +1,7 @@
+---
+description: "Hồ sơ tham số loại ghép vlog: hình mẫu chính, mở ghép, chương, màn kết."
+---
+
 # Hồ sơ: Ghép vlog
 
 **Hình mẫu chính:** Khoai Lang Thang (mở ghép 1–1,7 s/cảnh, flycam, chương theo nơi, màn kết 2 video) + Jessie Luong (khung mở

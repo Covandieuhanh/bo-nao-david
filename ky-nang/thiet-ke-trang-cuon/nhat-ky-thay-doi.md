@@ -1,3 +1,7 @@
+---
+description: "Sổ thay đổi skill thiết kế trang cuộn."
+---
+
 # thiet-ke-trang-cuon changelog
 
 Dated notes on what changed in the skill and which build's finding drove it.

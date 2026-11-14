@@ -1,3 +1,7 @@
+---
+description: "Lưu trữ: bản cũ đã thay hoặc bỏ, giữ để tra, không làm theo."
+---
+
 # Lưu trữ
 
 Bản cũ, đã thay thế hoặc đã bỏ. Giữ để tra lại, **không làm theo**. Khi lệch thì theo `co-so-tri-thuc/david.md`.

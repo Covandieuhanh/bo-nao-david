@@ -1,3 +1,7 @@
+---
+description: "Kho khối dựng video: mỗi khối một việc, viết một lần, 4 công thức nhặt dùng; danh sách khối."
+---
+
 # Kho khối — mỗi khối một việc, viết MỘT lần, 4 công thức nhặt dùng
 
 Sửa một cách làm → sửa đúng một khối (README + code của nó). Đổi con số → sửa `../ho-so-thuong-hieu/`, không sửa khối.

@@ -1,3 +1,7 @@
+---
+description: "Khối 12 sân khấu podcast: tên tập, ý đang bàn, sóng âm theo người nói."
+---
+
 # Khối 12-san-khau-podcast: Sân khấu podcast: tên tập, ý đang bàn (TOPICS + PHẦN n), sóng âm theo người nói, nền lắng
 
 **Dùng trong:** podcast, highlight từ podcast

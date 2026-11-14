@@ -1,3 +1,7 @@
+---
+description: "Hồ sơ tham số loại highlight: hình mẫu chính, nhịp cắt, thẻ."
+---
+
 # Hồ sơ: Highlight
 
 **Hình mẫu chính:** clip Have A Sip (cắt qua lại khách–người dẫn 2–3 s, chip show + lịch, thẻ "nghe bản full") + Sao Việt 24H (khung 0

@@ -1,3 +1,7 @@
+---
+description: "Khối 08 phần kết: màn chốt nguyên văn, thẻ cuối, dẫn bản đầy đủ."
+---
+
 # Khối 08-phan-ket: Kết: màn chốt (cta) · thẻ cuối (nhận diện / dẫn bản đầy đủ) · màn kết YouTube 15–20 s · lịch phát
 
 **Dùng trong:** cả 4

@@ -1,3 +1,7 @@
+---
+description: "Bộ lời dặn AI cũ cho 9 bước làm video, giữ làm nguyên liệu gói nội dung kênh."
+---
+
 # Mẫu 04 · Bộ lời dặn AI cho từng bước
 
 > Chép nguyên lời dặn, thay phần trong `[ ]`. Dùng được với mọi AI trò chuyện (tuyến A, B). Tuyến C dùng cùng lời dặn, nhưng AI tự làm luôn bằng công cụ trên máy (mẫu 08).

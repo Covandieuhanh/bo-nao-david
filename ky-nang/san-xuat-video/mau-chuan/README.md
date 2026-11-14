@@ -1,3 +1,7 @@
+---
+description: "Bộ mẫu chuẩn video: dựng lại 5 dự án mẫu bằng kiem-mau.py để kiểm sau mỗi lần sửa skill."
+---
+
 # Bộ mẫu chuẩn (kiểm sau mỗi lần sửa)
 
 `python3 -I kiem-mau.py` — dựng lại 5 dự án mẫu (`mau.json`: 3 clip podcast đồ hoạ dọc `podcast-doc-clip-1/2/3` và 2 video dài `podcast-dai-trainer`, `podcast-dai-muc-tieu`, David chốt làm bản chuẩn 2026-11-06) bằng

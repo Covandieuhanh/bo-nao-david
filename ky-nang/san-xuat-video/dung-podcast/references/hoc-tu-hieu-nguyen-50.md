@@ -1,3 +1,7 @@
+---
+description: "Nghiên cứu 50 video nổi bật kênh Hieu Nguyen (podcast tài chính) cho skill dựng podcast."
+---
+
 # Học từ 50 video nổi bật nhất kênh Hieu Nguyen (@hieu-tv) — 2026-11-05
 
 Kênh: 844 N đăng ký · 184 video · "Tài chính cá nhân & kinh nghiệm sống". 50 video xếp theo **Phổ biến** (445 N → 2,1 Tr lượt xem).

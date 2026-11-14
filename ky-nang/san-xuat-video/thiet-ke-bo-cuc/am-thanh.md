@@ -1,3 +1,7 @@
+---
+description: "Âm thanh theo bố cục: chỗ đặt tiếng ký hiệu, ting, vút theo cảnh."
+---
+
 # Âm thanh theo bố cục
 
 Chỉ ghi **chỗ đặt** tiếng. Tiếng dùng là bộ của kênh (`dung-video-theo-phong-cach/assets/hieu-ung-am-thanh`: `ting`, `tua`, `sting`, nhạc theo tuyến ở khối 09).

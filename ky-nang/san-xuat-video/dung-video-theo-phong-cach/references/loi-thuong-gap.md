@@ -1,3 +1,7 @@
+---
+description: "Lỗi thường gặp khi dựng video (ffmpeg, Remotion, Whisper…) và cách tránh."
+---
+
 # Lỗi đã gặp và cách tránh
 
 ## Công cụ

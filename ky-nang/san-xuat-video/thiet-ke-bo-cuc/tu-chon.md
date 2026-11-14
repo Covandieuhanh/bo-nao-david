@@ -1,3 +1,7 @@
+---
+description: "Tự chọn cách trình bày: chẩn đoán video rồi chọn bố cục, hiệu ứng trong kho."
+---
+
 # Tự chọn cách trình bày — chẩn đoán video rồi chọn trong kho
 
 David chốt 11/11/2026: "học rất nhiều" thì phải **dùng được**. Kho (`bo-cuc.md`, khối 07, `thu-vien-tai-nguyen/`) là thực đơn. File này là

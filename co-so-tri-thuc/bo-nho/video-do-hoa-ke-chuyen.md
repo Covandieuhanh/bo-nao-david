@@ -16,7 +16,7 @@ nhận diện ([[video-tham-my-chi-giu-nhan-dien]]); còn lại sáng tạo theo
 
 **Mọi bước AI làm** (09/11/2026, David): "phần nào cố định thì làm app, phần nào AI thì gọi AI, và AI phải thể hiện sức mạnh nhiều nhất
 bằng cách sáng tạo — chỉ dựa trên bộ khung và tiêu chí, bên trong hoàn toàn sáng tạo cho hợp nội dung video. Đó là cốt lõi."
-Nhà của luật: `ky-nang/chuan-muc-lam-viec.md` (đầu file). App đã bỏ 10/11/2026, mọi bước làm trong phiên Claude ([[video-bo-app]]).
+Nhà của luật: `ky-nang/chuan-muc-lam-viec.md` (đầu file). App đã bỏ 10/11/2026, mọi bước làm trong phiên Claude ([[video-bo-ung-dung]]).
 
 **Why:**
 - 07/11/2026 video "Đi bộ hằng ngày" ra bản chỉ phụ đề + nhạc; David hỏi sao không có motion graphics, giải thích có nhiều loại.

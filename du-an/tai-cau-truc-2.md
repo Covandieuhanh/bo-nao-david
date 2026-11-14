@@ -1,3 +1,7 @@
+---
+description: "Tái bản lần 2 toàn bộ bộ não (10/11): điều phối các phiên con, mốc, kết quả."
+---
+
 # Tái bản lần 2 — toàn bộ bộ não (mở 10/11/2026)
 
 Mốc trước: `tai-ban-2-truoc`. Phiên điều phối: phiên gốc của David. Mỗi phiên con chỉ ghi vào mục của mình; luật đụng bộ khác ghi vào "Chéo bộ".

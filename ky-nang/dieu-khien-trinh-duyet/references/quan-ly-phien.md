@@ -1,3 +1,7 @@
+---
+description: "Điều khiển trình duyệt: nhiều phiên trình duyệt tách biệt, giữ trạng thái."
+---
+
 # Browser Session Management
 
 Run multiple isolated browser sessions concurrently with state persistence.

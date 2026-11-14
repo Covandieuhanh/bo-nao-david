@@ -1,3 +1,7 @@
+---
+description: "Lịch việc tự chạy trên Mac: giờ chạy, tên việc, lời giao; máy canh bot đọc mỗi phút."
+---
+
 # Lịch việc tự chạy (giờ Mac)
 
 Máy canh bot (`tu-dong-hoa/so-tay/canh-bot.sh`) đọc file này mỗi phút. Tới giờ thì chạy `tu-dong-hoa/lich/chay-lich.sh <tên>`: mở **một phiên Claude Code hiện trong app Claude**

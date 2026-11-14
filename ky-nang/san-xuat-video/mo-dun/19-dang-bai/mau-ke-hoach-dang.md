@@ -1,3 +1,7 @@
+---
+description: "Mẫu kế hoạch đăng video (ví dụ chuỗi Đi trainer, 06/11)."
+---
+
 # Kế hoạch đăng — "Đi trainer cho người làm trainer"
 
 Ghi ngày 06/11/2026. **Chờ David duyệt. Chưa hẹn giờ, chưa đăng bài nào.**

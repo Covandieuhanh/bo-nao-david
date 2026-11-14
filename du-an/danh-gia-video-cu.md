@@ -1,3 +1,7 @@
+---
+description: "Rà soát video cũ trên TikTok và fanpage (05/11): danh sách đề xuất ẩn (riêng tư), không xoá."
+---
+
 # Rà soát video cũ — 05/11/2026
 
 Ẩn = để **riêng tư** (TikTok: "Chỉ mình tôi"; fanpage: chuyển vào kho lưu trữ). Không xoá, mở lại được bất cứ lúc nào.

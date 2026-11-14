@@ -1,3 +1,7 @@
+---
+description: "Danh mục bố cục video để chọn (không phải công thức)."
+---
+
 # Danh mục bố cục
 
 Đây là kho để chọn, không phải công thức. Giữ chữ ký nhận diện (`thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0); ngoài đó tự do (10/11/2026). Chữ trong thẻ là nguyên văn lời người nói.

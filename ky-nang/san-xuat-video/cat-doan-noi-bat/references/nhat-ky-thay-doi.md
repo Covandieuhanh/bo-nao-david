@@ -1,3 +1,7 @@
+---
+description: "Sổ thay đổi skill cắt đoạn nổi bật: quyết định của David và lý do."
+---
+
 # Sổ thay đổi — cat-doan-noi-bat (quyết định của người dùng + lý do)
 
 ## Tái bản 2 — 10/11/2026: bản luật viết lại từ bảng du-an/tai-cau-truc-2-video.md

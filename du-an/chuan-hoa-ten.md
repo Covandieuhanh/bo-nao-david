@@ -1,3 +1,7 @@
+---
+description: "Bản đồ chuẩn hoá tên toàn bộ (14/11, đã xong): tên cũ → tên mới theo thuật ngữ kinh doanh tiếng Anh dịch sang tiếng Việt."
+---
+
 # Bản đồ chuẩn hoá tên (David duyệt 14/11/2026, đã đổi xong)
 
 **Luật mới (David, 14/11/2026):** mọi tên file, thư mục, skill, ghi nhớ đi từ **thuật ngữ kinh doanh tiếng Anh chuẩn** → dịch đúng nghĩa

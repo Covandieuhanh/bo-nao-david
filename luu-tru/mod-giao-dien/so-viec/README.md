@@ -1,3 +1,7 @@
+---
+description: "Lưu trữ: mod Sổ việc (báo cáo việc lớn) đã gỡ."
+---
+
 # Sổ việc (mod của Claude Code)
 
 Báo cáo tổng hợp theo **việc lớn**, chữ viết đầy đủ, tự chạy ở mọi khung Claude Code trên máy, gộp mọi tài khoản. Bảng cạnh khung chat có 4 phần:

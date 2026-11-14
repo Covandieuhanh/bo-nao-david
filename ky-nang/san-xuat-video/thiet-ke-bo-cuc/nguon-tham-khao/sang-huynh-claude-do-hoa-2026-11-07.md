@@ -1,3 +1,7 @@
+---
+description: "Nguồn học Sang Huỳnh: Claude làm motion graphics trong video (07/11)."
+---
+
 # Sang Huỳnh — "Claude Làm Hết Motion Graphics Trong Video Này" (học 07/11/2026)
 
 - Nguồn: https://www.youtube.com/watch?v=zmnjXAlCPEU · 18:56 · ngang 16:9 · làm bằng HyperFrames (không cài, chỉ học ý).

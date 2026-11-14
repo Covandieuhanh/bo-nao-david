@@ -1,3 +1,7 @@
+---
+description: "Thiết kế kịch bản cảnh motion graphics: chọn bố cục, cảnh minh hoạ theo lời."
+---
+
 # Thiết kế kịch bản cảnh
 
 > Chọn bố cục theo `../../thiet-ke-bo-cuc/` và khối 07 (bố cục tự cân, không con số bắt buộc). File này là bảng loại cảnh + props + cách

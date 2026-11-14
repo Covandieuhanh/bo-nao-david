@@ -1,3 +1,7 @@
+---
+description: "Lỗi thường gặp riêng khi dựng podcast và cách tránh."
+---
+
 # Lỗi đã gặp (riêng podcast) — đọc cùng `$BASE/references/loi-thuong-gap.md`
 
 ## Lời nói

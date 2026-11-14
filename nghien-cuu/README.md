@@ -1,3 +1,7 @@
+---
+description: "Thư mục nghiên cứu: nguyên liệu đã tra để ra quyết định hoặc nâng skill, số liệu chóng cũ."
+---
+
 # Nghiên cứu
 
 Nguyên liệu đã tra cứu, dùng để ra quyết định hoặc nâng skill. Số liệu chóng cũ, xem ngày ở tên file.

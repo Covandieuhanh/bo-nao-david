@@ -1,3 +1,7 @@
+---
+description: "Mẫu 03 gói nội dung kênh: hồ sơ cho AI để AI hiểu kênh của học viên."
+---
+
 # Mẫu 03 · Hồ sơ cho AI (Bài 4)
 
 > Điền xong thì lưu ở nơi AI đọc mỗi lần:

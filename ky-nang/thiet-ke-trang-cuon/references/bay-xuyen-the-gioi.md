@@ -1,3 +1,7 @@
+---
+description: "Thiết kế trang cuộn: chế độ bay xuyên một thế giới liên tục (worldflight)."
+---
+
 # Worldflight: the continuous-world page mode
 
 Act mode cuts the page into pinned blocks. That is the right shape for a page of

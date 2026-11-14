@@ -1,3 +1,7 @@
+---
+description: "Điều khiển trình duyệt: xem thuộc tính phần tử DOM (id, class, data-*)."
+---
+
 # Inspecting Element Attributes
 
 When the snapshot doesn't show an element's `id`, `class`, `data-*` attributes, or other DOM properties, use `eval` to inspect them.

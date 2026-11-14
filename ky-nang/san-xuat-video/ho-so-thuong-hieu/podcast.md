@@ -1,3 +1,7 @@
+---
+description: "Hồ sơ tham số loại podcast: hình mẫu chính (đồ hoạ), sân khấu, thanh tiến trình."
+---
+
 # Hồ sơ: Podcast
 
 **Hình mẫu chính (đồ hoạ):** Hieu Nguyen / HIEU TV (màn tối tối giản, tên series, thanh tiến trình — 1,7 Tr), VOV Kể chuyện đêm khuya

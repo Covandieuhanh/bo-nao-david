@@ -1,3 +1,7 @@
+---
+description: "Thói quen làm việc chung mọi skill đọc trước: khi hai điều ngược nhau, đọc đúng phần, khi nào hỏi, trong lúc làm, cuối việc, giữ phiên gọn."
+---
+
 # Thói quen làm việc chung — mọi skill đọc file này trước
 
 Mục tiêu: làm đúng quy trình, ra đúng ý ngay lần đầu, không tốn token vô ích.
@@ -73,6 +77,10 @@ Trong 4 phần, cách chọn từng điểm:
 - **Đo chồng chéo** sau mỗi việc có sửa bản luật: `python3 -I ky-nang/tai-cau-truc/do-chong-cheo.py`. Báo "NÊN TÁI BẢN TOÀN BỘ" → nhắc
   David một dòng; David đồng ý thì tái bản cả bộ não một đợt (skill `tai-cau-truc`).
 - **Cập nhật file theo dõi** (`du-an/…`, `bao-cao-trang-thai.md`) khi xong một đợt việc.
+- **Giữ mạng lưới liên kết** ([co-so-tri-thuc/quy-uoc-lien-ket.md](../co-so-tri-thuc/quy-uoc-lien-ket.md)): file mới có mô tả đầu file và
+  một dòng ở trang [ban-do/](../ban-do/README.md) đúng chủ đề; đổi tên, gộp, xoá file thì sửa mọi nối tới nó. Trao đổi có **kiến thức đáng giữ**
+  (công cụ, khái niệm, phần Claude giải thích mà David thấy hay) thì ghi hoặc bổ sung ghi chú trong `co-so-tri-thuc/kien-thuc/`, nối tới
+  ý tưởng / dự án / skill liên quan. Máy kiểm tự chạy khi đồng bộ.
 - **Giữ Mac nhẹ:** Mac chỉ giữ việc đang làm. Xong việc thì đưa việc của David (video gốc, thành quả video) lên Drive rồi xoá trên Mac
   (video: `don-tap.py --xoa` → `luu-drive.sh`); file tải về, dữ liệu app, đồ cá nhân không đồng bộ, muốn xoá thì hỏi trước. Ghi nhớ `video-chuyen-qua-drive`.
 - **Đẩy GitHub ngay** khi có thay đổi về skill hoặc não: `bash tu-dong-hoa/dong-bo.sh --push` (`AGENTS.md` luật 6).

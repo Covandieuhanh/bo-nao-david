@@ -1,3 +1,7 @@
+---
+description: "Mẫu 01 gói nội dung kênh (tách ra, chưa thành gói): phiếu Kênh của tôi một trang."
+---
+
 # Mẫu 01 · Kênh của tôi (Bài 1)
 
 > Điền 1 trang. Không biết thì để trống, hỏi AI: "Dựa trên những gì tôi đã điền, gợi ý 3 cách điền ô này".

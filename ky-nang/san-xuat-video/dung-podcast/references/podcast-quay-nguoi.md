@@ -1,3 +1,7 @@
+---
+description: "Tài liệu podcast có quay người (chưa có skill), rút từ 7 podcast Việt lượt xem cao."
+---
+
 # Tài liệu: podcast QUAY NGƯỜI (cho sau này — chưa có skill)
 
 *Rút từ 7 podcast có người quay lượt xem cao ở Việt Nam (xem `hoc-tu-20-podcast-vn.md` mục A1–A7) + bài học 20 highlight

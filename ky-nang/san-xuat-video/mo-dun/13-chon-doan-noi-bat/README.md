@@ -1,3 +1,7 @@
+---
+description: "Khối 13 chọn khoảnh khắc highlight: bản đồ cả video, bốn câu chọn ý."
+---
+
 # Khối 13-chon-doan-noi-bat: Chọn khoảnh khắc highlight: bản đồ cả video, tự chọn ý theo 4 câu, chọn câu, bố trí lời kêu gọi, cắt + kiểm lời
 
 **Dùng trong:** highlight

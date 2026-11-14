@@ -1,3 +1,7 @@
+---
+description: "Thiết kế trang cuộn: chọn thế giới (định hướng nghệ thuật) của trang."
+---
+
 # Worlds
 
 The art direction the whole page lives inside. Pick one, write it as a **style

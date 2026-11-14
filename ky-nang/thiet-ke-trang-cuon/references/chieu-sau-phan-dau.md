@@ -1,3 +1,7 @@
+---
+description: "Thiết kế trang cuộn: chiều sâu nhiều lớp cho phần đầu trang (hero)."
+---
+
 # Premium hero depth
 
 ## Standing preference

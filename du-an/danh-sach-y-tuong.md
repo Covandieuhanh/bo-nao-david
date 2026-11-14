@@ -1,3 +1,7 @@
+---
+description: "Danh sách ý tưởng nghề đang cân nhắc (chưa chốt): Company OS, talkshow hai đầu Việt – Đức, Telegram cho thành viên; mỗi ý có câu cần chốt và bước nhỏ nhất."
+---
+
 # Ý tưởng nghề đang cân nhắc
 
 Nơi giữ ý tưởng, góp ý về nghề mà David muốn làm tiếp với Claude. Mỗi ý: nguồn, nội dung gốc, đối chiếu định hướng, câu cần chốt, bước nhỏ nhất. Chưa ý nào là quyết định: chốt rồi thì chuyển vào `co-so-tri-thuc/david.md` (hỏi David trước) và đánh dấu ✅ ở đây.

@@ -1,3 +1,7 @@
+---
+description: "Khối 04 khung hình: đổi khung ngang ↔ dọc, bám người nói, nâng khung."
+---
+
 # Khối 04-khung-hinh: Khung hình: đổi khung (ngang↔dọc), nâng khung khi người nằm thấp
 
 **Dùng trong:** làm video, ghép vlog, highlight người nói (podcast: khung xuất riêng)

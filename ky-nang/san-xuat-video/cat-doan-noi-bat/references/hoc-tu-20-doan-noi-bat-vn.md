@@ -1,3 +1,7 @@
+---
+description: "Nghiên cứu 20 clip highlight Việt Nam lượt xem cao (04/11) cho skill cắt đoạn nổi bật."
+---
+
 # Học từ 20 clip highlight Việt Nam lượt xem cao — cho `cat-doan-noi-bat`
 
 *Ngày 2026-11-04. Chỉ kênh Việt. Lượt xem đọc trên YouTube hôm nay. Xem trong trình duyệt (không tải video): đếm cắt cảnh theo độ

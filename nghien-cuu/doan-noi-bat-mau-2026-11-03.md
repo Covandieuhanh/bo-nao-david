@@ -1,3 +1,7 @@
+---
+description: "Nghiên cứu 10 video highlight dọc lượt xem cao (03/11)."
+---
+
 # Học từ 10 video highlight dọc lượt xem cao — cho skill `cat-doan-noi-bat` và `dung-video-theo-phong-cach`
 
 *Ngày 2026-11-03. Lượt xem lấy trên YouTube (mục Shorts, xếp "Phổ biến"), hôm nay. Nhịp cắt đo bằng ffmpeg (dò đổi cảnh), lời chép bằng Whisper. Đây là top chọn được từ các kênh tiêu biểu, không phải top tuyệt đối toàn YouTube.*

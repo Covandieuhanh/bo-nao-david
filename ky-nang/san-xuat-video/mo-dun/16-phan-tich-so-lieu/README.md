@@ -1,3 +1,7 @@
+---
+description: "Khối 16 số liệu sau đăng: đọc số, báo lỗi, không tự quyết định."
+---
+
 # Khối 16-phan-tich-so-lieu: Số liệu sau đăng (báo lỗi, không quyết định): ảnh chụp số liệu 7 ngày → so-lieu.md
 
 **Dùng trong:** cả 4

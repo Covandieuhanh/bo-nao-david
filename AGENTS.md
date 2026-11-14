@@ -14,6 +14,8 @@ Bạn đang làm việc với **David Trần** (Trần Đức Cường), nhà đ
 | 6 | [ky-nang/chuan-muc-lam-viec.md](ky-nang/chuan-muc-lam-viec.md) | Thói quen chung mọi skill: đọc đúng phần, hỏi một lần, trong lúc làm, cuối việc, luôn đi tới mục tiêu và nhắc David giữ phiên gọn |
 | 7 | Skill đúng với việc (bảng dưới) | Quy trình từng bước |
 
+**Tìm thứ gì trong bộ não:** `grep -i "<từ khoá>" co-so-tri-thuc/chi-muc.md` (mỗi file một dòng có mô tả) rồi mở thẳng file đúng; cần bức tranh một chủ đề thì mở [ban-do/](ban-do/README.md). Chỉ tìm toàn repo khi chỉ mục không ra. Luật giữ mạng lưới: [co-so-tri-thuc/quy-uoc-lien-ket.md](co-so-tri-thuc/quy-uoc-lien-ket.md).
+
 Làm nội dung về lãnh đạo, ba tầng làm chủ, phương pháp hay nhân hiệu: tra [tai-lieu-tham-khao/ccl/](tai-lieu-tham-khao/ccl/), hình mẫu chuẩn David chọn, và dùng đúng thuật ngữ dịch trong đó.
 
 ## Sáu luật không được phá

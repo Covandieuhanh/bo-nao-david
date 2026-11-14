@@ -1,3 +1,7 @@
+---
+description: "Hồ sơ tham số loại một người nói trước camera: hình mẫu chính, nhịp, bố cục."
+---
+
 # Hồ sơ: Làm video (1 người nói trước camera)
 
 **Hình mẫu chính:** video dài — Dr. Wynn Tran, Nguyễn Hữu Trí (nói thẳng vào máy, gần như không phủ chữ, uy tín bối cảnh,

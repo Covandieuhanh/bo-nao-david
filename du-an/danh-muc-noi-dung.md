@@ -1,3 +1,7 @@
+---
+description: "Sổ danh mục nội dung: mọi video/tài nguyên đã lọc, điểm, hướng nghề, trạng thái, lịch đăng."
+---
+
 # Sổ danh mục nội dung — David Trần
 
 Luật: `~/.claude/skills/san-xuat-video/mo-dun/00-sang-loc-noi-dung/README.md` · hồ sơ `~/.claude/david.md` · kênh `~/.claude/skills/san-xuat-video/ho-so-thuong-hieu/kenh.json`.

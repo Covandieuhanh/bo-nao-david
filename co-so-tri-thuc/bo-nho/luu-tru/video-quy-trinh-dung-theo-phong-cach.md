@@ -25,7 +25,7 @@ Bố cục chốt: phụ đề ở đáy vùng an toàn (từ 2026-11-04 video n
 
 CapCut (2026-11-02): khi họ yêu cầu thì tạo thẳng dự án CapCut (`build_capcut.py`), phụ đề là chữ CapCut cùng font Be Vietnam Pro (họ thích font mặc định này). CapCut Mac đọc `draft_info.json` — đã mở được.
 
-Podcast (2026-11-02): skill riêng `dung-podcast` — file tiếng/video podcast → video toàn motion graphics cùng phong cách, dùng chung template; khung xuất theo nguồn (ngang→ngang, dọc/chỉ tiếng→dọc) trừ khi họ yêu cầu; tập tối đa ~15 phút, 1–2 người nói. [[video-quy-trinh-style-edit]]
+Podcast (2026-11-02): skill riêng `dung-podcast` — file tiếng/video podcast → video toàn motion graphics cùng phong cách, dùng chung template; khung xuất theo nguồn (ngang→ngang, dọc/chỉ tiếng→dọc) trừ khi họ yêu cầu; tập tối đa ~15 phút, 1–2 người nói. [[video-quy-trinh-dung-theo-phong-cach]]
 
 Minh hoạ (2026-11-02, họ đồng ý đề xuất): mặc định biểu tượng nét vẽ dần thay ảnh; ảnh chỉ khi nhắc địa danh/công trình/sản phẩm có thật và có ảnh tốt; họ nói "không dùng ảnh"/"thêm ảnh" thì theo. Chữ to tiếng Việt phải đủ dấu, không chồng dòng; podcast cỡ chữ/hiệu ứng vừa phải (họ bảo thu nhỏ).
 So sánh 2026-11-02: họ chọn bản KHÔNG ẢNH (biểu tượng vẽ) cho podcast DJI — xác nhận mặc định không ảnh.

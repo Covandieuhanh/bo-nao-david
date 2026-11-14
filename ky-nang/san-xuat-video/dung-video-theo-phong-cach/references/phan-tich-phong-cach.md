@@ -1,3 +1,7 @@
+---
+description: "Đọc video mẫu thành token phong cách (ngôn ngữ trình bày), không sao chép khung hình."
+---
+
 # Đọc video mẫu thành token phong cách
 
 Mục tiêu không phải sao chép từng khung hình của mẫu, mà rút ra **ngôn ngữ thiết kế** của nó để áp lên nội dung

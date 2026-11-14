@@ -1,3 +1,7 @@
+---
+description: "Tái bản 2 (10/11), phần bộ hỏi skill thu-thap-yeu-cau."
+---
+
 # Tái bản 2 — bộ hoi (`ky-nang/thu-thap-yeu-cau/SKILL.md`)
 
 Máy đo lúc mở: dau_ngay 1/8 · ghi_de 0/4 · trung 0/3 · sua 3/15 · dong 82/300 (chưa tái bản lần nào).

@@ -1,3 +1,7 @@
+---
+description: "Gói 1 dựng video bằng AI, phần 4: phiếu khảo sát đầu vào (máy, kinh nghiệm) và phiếu nghiệm thu cuối khoá."
+---
+
 # 4. Phiếu khảo sát đầu vào và nghiệm thu
 
 ## A. Khảo sát đầu vào

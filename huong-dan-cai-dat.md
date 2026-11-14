@@ -1,3 +1,7 @@
+---
+description: "Hướng dẫn cài đặt bộ não lên máy mới / nơi khác từ GitHub: lệnh cài, lối tắt, bot, lịch, cái gì không lên GitHub."
+---
+
 # Dùng bộ não ở nơi khác
 
 **Nguyên tắc:** GitHub chỉ giữ **bộ não**: hồ sơ, luật, bộ nhớ, skill, việc đang dở, và file mẫu (nằm trong skill, ví dụ `ky-nang/san-xuat-video/mau-chuan/`). Thành quả và thư mục sản phẩm (dự án video, bài đăng, tài liệu đã làm xong) ở lại máy nào giữ máy đó, cộng Drive. Máy mới chỉ cần não; thư mục làm việc tự tạo theo máy.

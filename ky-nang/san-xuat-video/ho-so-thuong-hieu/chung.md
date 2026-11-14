@@ -1,3 +1,7 @@
+---
+description: "Hồ sơ tham số chung cả 4 loại video: khoá, ý nghĩa, nguồn."
+---
+
 # Hồ sơ chung (cả 4 loại)
 
 | Khoá | Ý nghĩa | Nguồn |

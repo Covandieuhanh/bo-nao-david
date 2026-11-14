@@ -1,3 +1,7 @@
+---
+description: "Điều khiển trình duyệt: chặn, giả lập, sửa yêu cầu mạng (request mocking)."
+---
+
 # Request Mocking
 
 Intercept, mock, modify, and block network requests.

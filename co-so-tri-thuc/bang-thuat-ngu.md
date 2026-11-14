@@ -1,3 +1,7 @@
+---
+description: "Bảng thuật ngữ đặt tên: thuật ngữ kinh doanh tiếng Anh → tiếng Việt → tên file/thư mục dùng; tên bắt buộc của công cụ; cấu trúc thư mục."
+---
+
 # Bảng thuật ngữ đặt tên
 
 Nhà duy nhất của tên dùng trong bộ não, trên máy và Drive (quy ước: ghi nhớ `co-so-tri-thuc-quy-uoc-dat-ten`). Đặt tên mới: tìm thuật ngữ
@@ -18,6 +22,14 @@ tiếng Anh chuẩn → dùng đúng cột "Tên dùng"; chưa có thì thêm m�
 | Status Report | Báo cáo trạng thái | `bao-cao-trang-thai` |
 | Content Inventory | Danh mục nội dung | `danh-muc-noi-dung` |
 | Content Plan | Kế hoạch nội dung | `ke-hoach-noi-dung` |
+| Map of Content | Bản đồ nội dung | `ban-do` |
+| Index | Chỉ mục | `chi-muc` |
+| Knowledge Note | Ghi chú kiến thức | `kien-thuc` |
+| Linking Conventions | Quy ước liên kết | `quy-uoc-lien-ket` |
+| Links | Liên kết | `lien-ket` |
+| Link Check | Kiểm tra liên kết | `kiem-tra-lien-ket` |
+| Retrieval Benchmark | Đo truy xuất | `do-truy-xuat` |
+| Test Questions | Câu hỏi thử | `cau-hoi-thu` |
 | Sales Funnel | Phễu bán hàng | `pheu-ban-hang` |
 | Idea Backlog | Danh sách ý tưởng chờ | `danh-sach-y-tuong` |
 | Personal Profile | Hồ sơ cá nhân | `ho-so-ca-nhan` |
@@ -108,6 +120,7 @@ tiếng Anh chuẩn → dùng đúng cột "Tên dùng"; chưa có thì thêm m�
 | `.claude-plugin/`, `hooks/` trong mod đã lưu trữ | Định dạng plugin của Claude | Khai báo plugin / móc lệnh | — |
 | `~/.claude/` và các thư mục bên trong (`skills`, `projects`, `channels`, `backups`) | Claude Code đọc đúng tên này | Cấu hình Claude | — |
 | Tên sản phẩm: Google Drive, Hermes, Remotion, Telegram… | Tên riêng | — | — |
+| Khoá `description:` ở đầu file `.md` | Claude Code đọc đúng tên này (ghi nhớ, skill); mọi ghi chú dùng chung một khoá cho một kiểu | Mô tả | — |
 | `~/Documents/David.Claude` | Lối tắt cũ trỏ tới `bo-nao-david`, để phiên cũ trong app và lịch app vẫn mở được | — | xoá khi không còn phiên cũ cần mở |
 
 ## Cấu trúc thư mục bộ não (`~/Documents/bo-nao-david`)

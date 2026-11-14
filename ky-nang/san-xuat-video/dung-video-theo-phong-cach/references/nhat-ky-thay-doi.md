@@ -1,3 +1,7 @@
+---
+description: "Sổ thay đổi skill dựng video theo phong cách: quyết định của David và lý do."
+---
+
 # Sổ thay đổi — dung-video-theo-phong-cach (quyết định của người dùng + lý do)
 
 

@@ -1,3 +1,7 @@
+---
+description: "Nghiên cứu 20 vlog Việt Nam lượt xem cao (04/11) cho chế độ ghép vlog."
+---
+
 # Học từ 20 vlog Việt Nam lượt xem cao — cho `dung-video-theo-phong-cach` (chế độ ghép nhiều clip)
 
 *Ngày 2026-11-04. Chỉ kênh Việt. Xem trong trình duyệt, không tải video; xem kỹ 30–60 s đầu + ảnh thumbnail + màn kết. Bổ sung cho

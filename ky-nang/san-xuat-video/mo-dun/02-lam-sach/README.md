@@ -1,3 +1,7 @@
+---
+description: "Khối 02 làm sạch video: cắt thừa đầu cuối, câu nói lại, khoảng lặng."
+---
+
 # Khối 02-lam-sach: Làm sạch: cắt thừa đầu/cuối, câu nói lại, khoảng lặng + tiếng đệm, sửa chiều hình
 
 **Dùng trong:** làm video, highlight (cắt lặng trong câu)

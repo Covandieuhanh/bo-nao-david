@@ -1,3 +1,7 @@
+---
+description: "Tái bản 2 (10/11), phần dọn ghi nhớ bo-nho: gộp, bỏ, chuyển lưu trữ."
+---
+
 # Tái bản 2 — dọn ghi nhớ `co-so-tri-thuc/bo-nho/` (10/11/2026)
 
 Phiên con "ghi nhớ" của đợt tái bản 2. Chỉ sửa `co-so-tri-thuc/bo-nho/`. Ghi nhớ là sổ: giữ ngày + lời David; bỏ câu đã hết hiệu lực

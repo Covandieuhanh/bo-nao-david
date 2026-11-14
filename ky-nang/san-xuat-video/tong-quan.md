@@ -1,3 +1,7 @@
+---
+description: "Tổng quan bộ skill dựng video của David: 3 skill, mẫu dựng, nhạc, hiệu ứng tiếng, script."
+---
+
 # Bộ skill dựng video của David
 
 Thư mục này chứa **toàn bộ bộ skill dựng video** — 3 skill, mẫu dựng, nhạc nền, hiệu ứng tiếng, script. Sao lưu hoặc chép sang

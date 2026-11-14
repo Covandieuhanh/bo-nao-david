@@ -1,3 +1,7 @@
+---
+description: "Thiết kế trang cuộn: sàn gu thẩm mỹ, đọc trước khi viết mã."
+---
+
 # The taste floor
 
 Read this before writing markup, not after. Build without announcing the

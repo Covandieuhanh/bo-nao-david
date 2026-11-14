@@ -1,3 +1,7 @@
+---
+description: "Dự án chuẩn hoá bộ skill theo thói quen làm việc chung (08/11): các bước, mốc commit, việc còn lại."
+---
+
 # Chuẩn hoá bộ skill theo thói quen làm việc chung
 
 Bắt đầu: 08/11/2026. Mốc trước khi sửa: commit `1810b8c`.

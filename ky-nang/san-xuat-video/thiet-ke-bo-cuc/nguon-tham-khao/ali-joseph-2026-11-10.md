@@ -1,3 +1,7 @@
+---
+description: "Nguồn học Ali Abdaal + Joseph Video Editing (10/11): kiểu trình bày, hiệu ứng."
+---
+
 # Ali Abdaal + Joseph Video Editing (học 10/11/2026)
 
 David duyệt: "ok học đầy đủ đi, càng nhiều tài nguyên để tuỳ ý sáng tạo càng tốt". Từ lần này thẩm mỹ chỉ giữ **chữ ký nhận diện**

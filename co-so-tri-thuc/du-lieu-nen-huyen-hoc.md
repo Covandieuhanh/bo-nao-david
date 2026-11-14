@@ -1,3 +1,7 @@
+---
+description: "Dữ liệu nền huyền học (david.md mục 7, 9): công cụ số học chỉ dùng trong buổi riêng, nhịp làm việc của David."
+---
+
 # Dữ liệu nền huyền học (tách khỏi nghề)
 
 > Tách nguyên văn từ `david.md` (mục 7, 9) ngày 14/11/2026 để hồ sơ nạp mỗi phiên ngắn lại. Mục lục: [david.md](david.md).

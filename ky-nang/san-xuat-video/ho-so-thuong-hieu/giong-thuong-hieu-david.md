@@ -1,3 +1,7 @@
+---
+description: "Giọng văn David khi viết caption, bài viết, mô tả, bình luận ghim, kịch bản: từ lời nói thật của David."
+---
+
 # Giọng văn David — viết caption, bài viết, mô tả, bình luận ghim
 
 Nguồn chính: lời nói thật của David trong podcast "Mục tiêu và sứ mệnh" (8:19), vlog Miếu Bà Cam, vlog VF3 → học từ cách David NÓI.

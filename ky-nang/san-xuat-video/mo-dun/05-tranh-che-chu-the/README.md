@@ -1,3 +1,7 @@
+---
+description: "Khối 05 tránh che người: lớp phủ không chạm mặt, vùng an toàn."
+---
+
 # Khối 05-tranh-che-chu-the: Tránh che người: lớp phủ không chạm mặt + đầu + vai + ngực; không có chỗ → tự toàn màn hình (dài theo nội dung)
 
 **Dùng trong:** làm video, ghép vlog, highlight người nói

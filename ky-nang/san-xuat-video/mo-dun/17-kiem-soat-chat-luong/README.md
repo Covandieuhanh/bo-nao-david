@@ -1,3 +1,7 @@
+---
+description: "Khối 17 dựng và kiểm tra chất lượng: chụp thử từng cảnh, render, soát lỗi."
+---
+
 # Khối 17-kiem-soat-chat-luong: Dựng + kiểm tra: chụp thử từng cảnh, render, ghép bản cuối, soát khung / âm lượng / tiếng rè
 
 **Dùng trong:** cả 4

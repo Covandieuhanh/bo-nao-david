@@ -1,3 +1,7 @@
+---
+description: "Thiết kế khung video podcast: hình học hai khung, vùng an toàn, sân khấu, sóng âm."
+---
+
 # Thiết kế video podcast
 
 Hình học hai khung ở `chuyen-dong/src/khung-podcast.js` (PF). Dọc 1080×1920: vùng an toàn x 70–900, y 210–1420.

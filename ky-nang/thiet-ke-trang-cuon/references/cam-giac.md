@@ -1,3 +1,7 @@
+---
+description: "Thiết kế trang cuộn: trục cảm xúc người xem đi qua trang."
+---
+
 # The emotion axis
 
 A page is not sections. It is a sequence of states a person passes through with

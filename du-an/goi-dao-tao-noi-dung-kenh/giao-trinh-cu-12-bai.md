@@ -1,3 +1,7 @@
+---
+description: "Giáo trình cũ 12 bài edit video bằng AI (trước khi tách gói), giữ làm nguyên liệu gói nội dung kênh."
+---
+
 # 3. Giáo trình: 12 bài edit video bằng AI
 
 Mỗi bài có **Mục tiêu · Nội dung · Cách làm theo tuyến · Thực hành · Bài tập · Xong khi**. Học viên làm trên video thật của mình, bằng AI và máy của mình (tuyến A điện thoại · B máy tính + app · C máy tính + AI tự làm, xem `1-quy-trinh.md`). Bài chưa "xong khi" thì chưa sang bài sau. Mẫu dùng trong bài: [bo-mau/](../goi-dao-tao-dung-video-ai/bo-bieu-mau/README.md).

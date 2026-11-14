@@ -1,3 +1,7 @@
+---
+description: "Lưu trữ: kho nội dung video bản cũ (31/10), đã thay bằng kế hoạch 100 video."
+---
+
 # Kho nội dung video — David Trần
 
 Oct 31, 2026 · @Công nghệ AHA

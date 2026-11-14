@@ -1,3 +1,7 @@
+---
+description: "Gói 1 dựng video bằng AI, phần 3 giáo trình 8 bài: mục tiêu, nội dung, thực hành, bài tập, xong khi."
+---
+
 # 3. Giáo trình: 8 bài dựng video bằng AI trên máy tính
 
 Mỗi bài: **Mục tiêu · Nội dung · Thực hành · Bài tập · Xong khi**. Học viên làm trên tư liệu thật của mình. Biểu mẫu dùng trong bài: [bo-bieu-mau/](bo-bieu-mau/README.md).

@@ -1,3 +1,7 @@
+---
+description: "Mẫu chờ học: kênh và video David gửi để học phong cách dựng sau (skill phan-tich-video-mau)."
+---
+
 # Mẫu chờ học
 
 Kênh/video David gửi để học phong cách sau. Khi David nói "học", chạy skill `phan-tich-video-mau` (chỉ học trình bày, nhịp; giữ thẩm mỹ của David). Học xong thì chuyển dòng sang cột "Đã học".

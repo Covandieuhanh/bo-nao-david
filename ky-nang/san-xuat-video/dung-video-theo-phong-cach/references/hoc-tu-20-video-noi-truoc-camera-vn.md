@@ -1,3 +1,7 @@
+---
+description: "Nghiên cứu 20 video nói trước camera Việt Nam lượt xem cao (04/11) cho skill dựng video."
+---
+
 # Học từ 20 video nói trước camera Việt Nam lượt xem cao — cho `dung-video-theo-phong-cach` (chế độ 1 video)
 
 *Ngày 2026-11-04. Chỉ kênh Việt: 10 video dài (8–36 phút) + 10 video ngắn. Cách xem như báo cáo highlight (trình duyệt, không tải

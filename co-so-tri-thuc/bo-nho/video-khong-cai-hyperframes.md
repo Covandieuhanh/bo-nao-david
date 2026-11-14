@@ -12,4 +12,4 @@ David chốt 2026-11-06: **không cài** HyperFrames + Motion Studio, bộ skill
 
 **Why:** cùng cách render (Chrome chạy ngầm + FFmpeg), tốc độ gần bằng nhau; bộ hiện tại đã mạnh hơn ở dấu tiếng Việt, tránh che mặt và trọn quy trình. Motion Studio tự kích hoạt khi nhắn làm video nên đụng skill hiện có, còn thêm hook vào cài đặt Claude Code và khóa HyperFrames ở bản cũ.
 
-**How to apply:** không đề xuất đổi công cụ dựng trừ khi David thấy hình còn thiếu rõ ràng; kiểu chuyển động mới vẽ vào `thu-vien-tai-nguyen/`. Liên quan [[video-kien-truc-skill]].
+**How to apply:** không đề xuất đổi công cụ dựng trừ khi David thấy hình còn thiếu rõ ràng; kiểu chuyển động mới vẽ vào `thu-vien-tai-nguyen/`. Liên quan [[video-kien-truc-ky-nang]].

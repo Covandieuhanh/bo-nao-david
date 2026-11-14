@@ -1,3 +1,7 @@
+---
+description: "Mô hình kinh doanh David tự đặt: khung tư duy gốc (tiền, khách, sản phẩm) dùng để quyết định nghề và gói bán."
+---
+
 # Mô hình kinh doanh của David
 
 > Khung David tự đặt, dạy cho bot qua Codex ngày 12/11/2026 (bản đầy đủ: `~/Documents/ChatGPT/Trainer David/Hermes/Bo-nho-cong-viec/QUY-TAC.md`, chỉ trên máy). David chốt 13/11/2026 dùng làm gốc cho cả ba hướng nghề (`co-so-tri-thuc/david.md` mục 4). File này là nhà duy nhất của khung trong bộ não.

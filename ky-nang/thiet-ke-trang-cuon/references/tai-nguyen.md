@@ -1,3 +1,7 @@
+---
+description: "Thiết kế trang cuộn: tạo ảnh, video bằng kie.ai và mã hoá để cuộn."
+---
+
 # Assets
 
 Generation through kie.ai, then encoding for scrubbing. All of it via

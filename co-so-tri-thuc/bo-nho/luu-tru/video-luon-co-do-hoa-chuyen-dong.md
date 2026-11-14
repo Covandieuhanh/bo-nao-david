@@ -18,4 +18,4 @@ metadata:
 
 **Why:** 07/11/2026 video "Đi bộ hằng ngày" ra bản chỉ phụ đề + nhạc; David hỏi sao không có motion graphics, rồi giải thích rõ là có rất nhiều loại, không riêng toàn màn hình.
 
-**How to apply:** mỗi video trộn nhiều loại điểm nhấn, đúng lúc người nói muốn người xem chú ý. Điều này nới luật "2 trạng thái" (04/11) — điểm nhấn trên người được phép nếu không che mặt; luật chi tiết trong skill phải hỏi David trước khi sửa. Đoạn chạm lằn ranh vẫn không làm đồ hoạ. Liên quan [[video-kien-truc-skill]], [[video-podcast-phu-hinh-30]].
+**How to apply:** mỗi video trộn nhiều loại điểm nhấn, đúng lúc người nói muốn người xem chú ý. Điều này nới luật "2 trạng thái" (04/11) — điểm nhấn trên người được phép nếu không che mặt; luật chi tiết trong skill phải hỏi David trước khi sửa. Đoạn chạm lằn ranh vẫn không làm đồ hoạ. Liên quan [[video-kien-truc-ky-nang]], [[video-podcast-phu-hinh-30]].

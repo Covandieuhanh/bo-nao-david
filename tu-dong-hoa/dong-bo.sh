@@ -34,6 +34,7 @@ case "$CHE_DO" in
   --push|--day|*)
     kiem_loi_tat
     python3 -I "$REPO/tu-dong-hoa/quet-bi-mat.py" "$REPO" || { echo "⛔ Quét thấy bí mật, không đẩy."; exit 1; }
+    python3 -I "$REPO/tu-dong-hoa/lien-ket/kiem-tra-lien-ket.py" || { echo "⛔ Có link gãy (co-so-tri-thuc/quy-uoc-lien-ket.md), sửa rồi đẩy lại."; exit 1; }
     git add -A
     if ! git diff --cached --quiet; then
       git status --short | tail -30

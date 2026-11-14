@@ -1,3 +1,7 @@
+---
+description: "Tái bản bộ skill video lần 1 (10/11): bảng 164 luật, mỗi luật một nhà."
+---
+
 # Tái bản bộ video — lần 1 (10/11/2026)
 
 **Mục tiêu:** bộ skill video chỉ còn một bản luật hiện hành: mỗi luật một nhà, không ngày, không "thay luật cũ", không câu tự mâu thuẫn.

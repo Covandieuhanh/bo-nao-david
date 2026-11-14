@@ -1,3 +1,7 @@
+---
+description: "Khối 19 đăng bài / hẹn giờ lên YouTube, trang Facebook, TikTok qua trình duyệt."
+---
+
 # Khối 19-dang-bai: Đăng / hẹn giờ lên YouTube, trang Facebook, TikTok qua trình duyệt
 
 **Dùng trong:** skill `phan-phoi-da-kenh` bước 6 · **Đầu vào:** bản cuối + bài đăng trên trang xem kết quả, David đã nói "đăng" · `ho-so-thuong-hieu/kenh.json` · `ho-so-thuong-hieu/giong-thuong-hieu-david.md`

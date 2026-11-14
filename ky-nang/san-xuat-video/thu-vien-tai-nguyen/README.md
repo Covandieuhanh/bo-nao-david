@@ -1,3 +1,7 @@
+---
+description: "Thư viện hình dùng chung cho cả 4 loại video: file, việc, khối dùng."
+---
+
 # Thư viện hình dùng chung (một bản duy nhất cho cả 4 loại video)
 
 | File | Việc | Khối |

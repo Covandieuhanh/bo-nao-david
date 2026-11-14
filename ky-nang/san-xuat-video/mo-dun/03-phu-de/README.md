@@ -1,3 +1,7 @@
+---
+description: "Khối 03 phụ đề: video dài hộp đầy câu, video dọc cụm 5–8 chữ cỡ 58."
+---
+
 # Khối 03-phu-de: Phụ đề: dài = hộp tối đầy câu; ngắn = cụm 5–8 chữ cỡ bằng chữ thẻ, màu theo nghĩa; mỗi lúc một chỗ chữ
 
 **Dùng trong:** cả 4

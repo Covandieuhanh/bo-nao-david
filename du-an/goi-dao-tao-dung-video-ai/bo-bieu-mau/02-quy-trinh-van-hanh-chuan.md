@@ -1,3 +1,7 @@
+---
+description: "Biểu mẫu 02 cho học viên: quy trình vận hành chuẩn (SOP) dựng video bằng AI."
+---
+
 # Biểu mẫu 02 · Quy trình vận hành chuẩn (SOP) dựng video (Bài 2, 8)
 
 > **Cách lưu:** chép phần dưới đường kẻ vào thư mục `lam-video`, đặt tên file theo trợ lý AI đang dùng để nó tự tìm đọc: Codex đọc `AGENTS.md`, Claude Code đọc `CLAUDE.md`, Gemini CLI đọc `GEMINI.md`. Điền mục 1. Giao việc chỉ cần nói: **"Dựng tap-ten-video"**, kèm muốn gì nếu khác mặc định.

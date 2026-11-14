@@ -1,3 +1,7 @@
+---
+description: "Mẫu 06 gói nội dung kênh: sổ video và sổ số liệu mỗi video một dòng."
+---
+
 # Mẫu 06 · Sổ video và sổ số liệu (Bài 11, 12)
 
 > Dùng bảng tính (Google Sheets, Excel, Numbers) hoặc ghi chú. Mỗi video một dòng. Tuyến C: để AI tự ghi vào file `so-video.md` trong thư mục làm video.

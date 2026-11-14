@@ -1,3 +1,7 @@
+---
+description: "Khối 01 chép lời bằng Whisper và hiểu video."
+---
+
 # Khối 01-phien-am: Chép lời (Whisper) + hiểu video
 
 **Dùng trong:** cả 4

@@ -1,3 +1,7 @@
+---
+description: "Kế hoạch nội dung: kho 100 video của kênh, mọi video mới đối chiếu ở phiếu lọc."
+---
+
 # Kho 100 video — David Trần
 
 > **Kế hoạch nội dung của kênh.** Mọi video mới đều đối chiếu với kho này ở phiếu lọc (khối 00, skill `phan-phoi-da-kenh`).

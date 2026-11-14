@@ -1,3 +1,7 @@
+---
+description: "Nghiên cứu CCL (david.md mục 6): tài liệu chuẩn Center for Creative Leadership, sách tự mua, cách dịch thuật ngữ lãnh đạo."
+---
+
 # Nghiên cứu CCL
 
 > Tách nguyên văn từ `david.md` (mục 6) ngày 14/11/2026 để hồ sơ nạp mỗi phiên ngắn lại. Mục lục: [david.md](david.md).

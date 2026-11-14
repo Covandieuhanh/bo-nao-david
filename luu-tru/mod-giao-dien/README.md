@@ -1,3 +1,7 @@
+---
+description: "Lưu trữ: các mod giao diện Claude Code đã gỡ hết 13/11."
+---
+
 # Mod của Claude Code
 
 > **Đã gỡ hết 13/11/2026** theo lời David (ghi nhớ `quy-tac-mod-tu-chay`): không cài mod nào, `tu-dong-hoa/cai-dat-bo-nao.sh` chỉ cài Telegram. Phần dưới giữ làm lưu trữ; mã Sổ việc còn ở `so-viec/`.

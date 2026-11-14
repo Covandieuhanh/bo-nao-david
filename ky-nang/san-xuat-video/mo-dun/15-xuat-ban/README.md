@@ -1,3 +1,7 @@
+---
+description: "Khối 15 phát hành: 3 tiêu đề, mô tả, khung bìa, chương, bài đăng."
+---
+
 # Khối 15-xuat-ban: Phát hành: 3 tiêu đề, mô tả, mốc khung bìa, chương YouTube, teaser, bình luận ghim
 
 **Dùng trong:** cả 4

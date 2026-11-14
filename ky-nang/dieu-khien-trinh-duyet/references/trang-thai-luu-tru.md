@@ -1,3 +1,7 @@
+---
+description: "Điều khiển trình duyệt: quản lý cookie, localStorage, trạng thái lưu trữ."
+---
+
 # Storage Management
 
 Manage cookies, localStorage, sessionStorage, and browser storage state.

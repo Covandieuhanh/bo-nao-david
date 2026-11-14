@@ -1,3 +1,7 @@
+---
+description: "Báo cáo trạng thái: việc đang làm dở, việc chờ David quyết, câu hỏi còn mở, cảnh báo, việc phải nhớ."
+---
+
 # Trạng thái hiện tại
 
 Ghi ngày 08/11/2026. File này chóng cũ. Với video, tin sổ [du-an/danh-muc-noi-dung.md](du-an/danh-muc-noi-dung.md) hơn. Có máy thì kiểm tra lại trên máy trước khi báo David.
@@ -33,7 +37,7 @@ Ra tiền (David chốt 13/11/2026), ba hướng chạy song song (`co-so-tri-th
 | Máy gom và đóng gói (14/11, skill `san-pham-hoa`, kế hoạch [san-pham-hoa.md](du-an/san-pham-hoa.md)) | `tu-dong-hoa/thu-thap-du-lieu/gom.py` gom phần mới mọi nguồn (lời David trong phiên, sổ nhớ, tin nhắn, lời video, bài đăng, số liệu) vào `~/Documents/2-ca-nhan/so-tay/kho-du-lieu/` (chỉ ở máy). Lịch (repo `tu-dong-hoa/lich/lich-chay.md`, máy canh bot mở phiên hiện trong app, tài khoản nào cũng được): phân loại 23:00 mỗi đêm, đóng gói sáng thứ 6 06:30 (thứ 6 là ngày tổng kết + cải tiến). Lượt thử 14/11: 18 ý, 11 nỗi đau; chưa nỗi đau nào đủ 5 người (cao nhất "tin nhắn nhiều nền tảng, sót việc": 2 người) | Xem phiếu đóng gói đầu tiên tối 15/11 ở `du-an/dong-goi/`; sau 2 tuần rà độ đúng phân loại |
 | Chuẩn hoá tên toàn bộ (14/11, [chuan-hoa-ten.md](du-an/chuan-hoa-ten.md), [bang-thuat-ngu.md](co-so-tri-thuc/bang-thuat-ngu.md)) | Đã đổi xong: repo (540 file), skill + lệnh gọi mới, ghi nhớ, `~/Documents/1-nghe-nghiep`, `2-ca-nhan/so-tay` (bot `com.david.so-tay`), `~/Movies` (`2-ban-day-du`, `3-doan-noi-bat`, `_danh-muc-noi-dung`), Drive `tu-lieu-goc` / `thanh-pham` / `sao-luu-mac/so-tay`, cache `~/.cache/dung-video-theo-phong-cach`, lịch app. Mốc quay lại: tag `truoc-chuan-hoa-ten`. Đợt 2 (không ngoại lệ): mã nguồn, skill ngoài, giấy tờ cá nhân, thư mục bộ não + repo `bo-nao-david`. Còn: thư mục token `~/.claude/channels/so-tay` chờ David tự đổi; Hermes (`~/.hermes`, đang tắt) | Hermes bật lại thì sửa đường dẫn trong `~/.hermes`; các dự án mẫu của `kiem-mau.py` đã nằm trên Drive, cần kéo về khi chạy kiểm mẫu |
 | Làm lại kho 100 video | Kho đã thành bảng `du-an/ke-hoach-noi-dung-100-video.md` và nối vào phiếu lọc (10/11); giai đoạn 3 đánh dấu đã bỏ | Làm lại theo ba tầng: bản thân → công việc → mối quan hệ |
-| Kế hoạch Obsidian: bộ nhớ có liên kết cho Claude (14/11, [ke-hoach-obsidian.md](du-an/ke-hoach-obsidian.md)) | Đã lập đủ 4 phần, chưa làm gì. Vault = thư mục bo-nao-david; chỉ mục tự sinh + bản đồ nội dung + thẻ + đường nối; máy kiểm link gắn vào dong-bo.sh | **Chờ David duyệt từng phần** (bắt đầu từ Mục tiêu) + chốt 2 câu: vault riêng sổ tay, cài app |
+| Liên kết tri thức (14/11, [lien-ket-tri-thuc.md](du-an/lien-ket-tri-thuc.md), luật [quy-uoc-lien-ket.md](co-so-tri-thuc/quy-uoc-lien-ket.md)) | Đã triển khai, không dùng app Obsidian: mọi file có mô tả, chỉ mục tự sinh `co-so-tri-thuc/chi-muc.md`, 6 trang `ban-do/`, ghi chú `co-so-tri-thuc/kien-thuc/`, máy kiểm link chạy trong `dong-bo.sh` (link gãy thì không đẩy) | Còn chờ David: sổ tay riêng (`2-ca-nhan/so-tay`) có nối theo cùng quy ước (chỉ trên máy, không lên GitHub) không. Đo lại `do-truy-xuat.py` khi kho lớn thêm nhiều |
 
 ## Câu hỏi còn mở với David
 

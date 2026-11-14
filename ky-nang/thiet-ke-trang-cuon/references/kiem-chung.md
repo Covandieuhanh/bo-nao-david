@@ -1,3 +1,7 @@
+---
+description: "Thiết kế trang cuộn: kiểm chứng desktop, điện thoại, giảm chuyển động."
+---
+
 # Verify
 
 For the approved collection’s functional, fallback, and deployment acceptance

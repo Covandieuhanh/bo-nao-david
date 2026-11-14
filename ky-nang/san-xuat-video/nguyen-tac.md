@@ -1,3 +1,7 @@
+---
+description: "Nguyên tắc cốt lõi bộ skill video: điểm chung của 80 video hình mẫu thành công, tầng hiếm đổi nhất."
+---
+
 # Nguyên tắc cốt lõi — điểm chung của các hình mẫu thành công (80 video Việt + kênh quốc tế)
 
 Đây là tầng HIẾM ĐỔI nhất của bộ skill. Mọi hồ sơ, khối, công thức phải phục vụ 7 điều này. Nguồn: `*/references/hoc-tu-20-*-vn.md`

@@ -1,3 +1,7 @@
+---
+description: "Phễu bán hàng gói công nghệ (hướng 3): phễu → bán thử → bán thật, khách, giá, kênh."
+---
+
 # Bán gói công nghệ: phễu → bán thử → bán thật
 
 Hướng 3 trong `co-so-tri-thuc/david.md` mục 4.1. Khung tư duy: `co-so-tri-thuc/mo-hinh-kinh-doanh.md` (Tiền · Thị trường · Con người; Kết quả / Vấn đề).

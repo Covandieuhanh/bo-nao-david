@@ -1,3 +1,7 @@
+---
+description: "Chiến lược nội dung (david.md mục 5, 8): kênh video, bản gốc 10 phút 3 phần, kho 100 video, bộ lọc nội dung phân hướng → câu hỏi gốc → bán được gì."
+---
+
 # Chiến lược nội dung: kênh video và bộ lọc
 
 > Tách nguyên văn từ `david.md` (mục 5, 8) ngày 14/11/2026 để hồ sơ nạp mỗi phiên ngắn lại. Mục lục: [david.md](david.md).

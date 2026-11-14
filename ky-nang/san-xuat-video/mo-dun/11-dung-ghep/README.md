@@ -1,3 +1,7 @@
+---
+description: "Khối 11 dựng ghép nhiều clip: hiểu clip, giữ / bỏ, bản đồ cảnh."
+---
+
 # Khối 11-dung-ghep: Ghép cảnh từ nhiều clip: hiểu clip, giữ/bỏ, bản đồ liên kết, khung vlog, danh-sach-cat.js
 
 **Dùng trong:** ghép vlog, highlight người nói

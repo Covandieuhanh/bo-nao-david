@@ -1,3 +1,7 @@
+---
+description: "App Mở Tài Liệu trên macOS: xem docx, xlsx, pptx, pdf… không cần Office."
+---
+
 # App Mở Tài Liệu (macOS)
 
 Xem mọi tài liệu trên Mac không cần Office: docx, xlsx, pptx, pdf, pages, numbers, key, csv, txt…

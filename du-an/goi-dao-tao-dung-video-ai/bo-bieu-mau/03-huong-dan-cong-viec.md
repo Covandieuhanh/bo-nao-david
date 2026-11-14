@@ -1,3 +1,7 @@
+---
+description: "Biểu mẫu 03 cho học viên: hướng dẫn công việc (work instruction) dựng video từng bước."
+---
+
 # Biểu mẫu 03 · Hướng dẫn công việc (Work Instruction) từng bước (Bài 3–7)
 
 > Dùng khi muốn làm từng bước thay vì một mạch, hoặc khi một bước ra chưa đúng ý. Thay phần trong `[ ]`.
