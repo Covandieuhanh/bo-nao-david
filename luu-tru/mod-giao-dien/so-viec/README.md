@@ -33,5 +33,5 @@ Mod vẫn ghi ngầm mọi việc (loại việc theo skill, việc khác do mod
 **Đang chạy cũng hiện:** phiên mở trước khi cài mod vẫn hiện trên bảng ("chưa có mod"): mod đọc đuôi lịch sử phiên đó đang ghi (thời gian lượt, token, skill gần nhất).
 **Token trực tiếp:** cộng sau mỗi lần gọi model, nên lượt dài (render) thanh token cũng chạy.
 
-**Cài:** `bash tu-dong-hoa/install.sh` (hoặc `claude plugin marketplace add <repo>` rồi `claude plugin install so-viec@david-claude --scope user`), mở phiên mới. Xem [luu-tru/mod-giao-dien/README.md](../README.md).
+**Cài:** `bash tu-dong-hoa/cai-dat-bo-nao.sh` (hoặc `claude plugin marketplace add <repo>` rồi `claude plugin install so-viec@david-claude --scope user`), mở phiên mới. Xem [luu-tru/mod-giao-dien/README.md](../README.md).
 Kiểm tra: `claude plugin validate luu-tru/mod-giao-dien/so-viec`, `claude plugin test luu-tru/mod-giao-dien/so-viec`.

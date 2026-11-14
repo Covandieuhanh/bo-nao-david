@@ -228,7 +228,7 @@ người nói chưa từng chạy với dấu góc. Không do bài học video m
 ## Khung chủ thể (khung.js) + cảnh có sẵn
 - `nhan` có chữ / biểu tượng: nhan.jsx đặt cạnh mặt trong khung gốc → với khung chủ thể chữ rơi vào khe giữa khung và cột, bị cắt
   (tap-ban-ca-ngay). `bocuc the-canh` không có chỗ → tự chuyển `o-nguoi` với thẻ trống. Dùng cảnh tự vẽ đặt vào cột trống: chữ nhấn
-  `rieng/ChuCot.jsx`, ảnh thật `rieng/AnhCanh.jsx` (cùng công thức bangO) — mẫu ở `~/Movies/tap-ban-ca-ngay/2-ban-day-du/motion/src/rieng/`.
+  `rieng/chu-cot.jsx`, ảnh thật `rieng/anh-canh.jsx` (cùng công thức bangO) — mẫu ở `~/Movies/tap-ban-ca-ngay/2-ban-day-du/motion/src/rieng/`.
 - `montage` khung ngang (MontageL) tràn ảnh xuống vùng phụ đề / vùng đỏ, mất nhãn → không dùng; nhiều ảnh nối nhau dùng `AnhCanh` (items).
 - Máy soát báo P2 "cùng kiểu ve liền nhau" cả khi hai component khác nhau (ảnh / chữ) — ghi lý do ở ke-hoach-canh.md.
 
