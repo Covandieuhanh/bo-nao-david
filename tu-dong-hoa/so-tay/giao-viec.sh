@@ -8,7 +8,7 @@
 NAO="$HOME/Documents/David.Claude"
 DATA="$HOME/Documents/2-ca-nhan/so-tay"
 TT="$DATA/.trang-thai"
-SO="$DATA/viec-giao.md"
+SO="$DATA/viec-da-giao.md"
 mkdir -p "$TT"
 [ -e "$SO" ] || printf '# Việc giao cho Claude qua Telegram\n\n| # | Giao lúc | Việc | Phiên | Trạng thái |\n|---|---|---|---|---|\n' > "$SO"
 export PATH="$HOME/.bun/bin:$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"

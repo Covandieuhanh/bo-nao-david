@@ -126,7 +126,7 @@ if phien_txt:
     muc.append(("Lời David trong các phiên Claude", cat("\n\n".join(phien_txt), 40000)))
 
 # 2. Sổ nhớ (bot Telegram ghi): phần mới thêm.
-for ten in ["danh-sach-viec.md", "y-tuong.md", "kien-thuc.md", "lich-hen.md", "nhom.md", "viec-giao.md", "bao-cao-claude.md"]:
+for ten in ["danh-sach-viec.md", "y-tuong.md", "kien-thuc.md", "lich-hen.md", "nhom.md", "viec-da-giao.md", "bao-cao-claude.md"]:
     p = f"{SN}/{ten}"
     if doi(p):
         t = dong_them(p)

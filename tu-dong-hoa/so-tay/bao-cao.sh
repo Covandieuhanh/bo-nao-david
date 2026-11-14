@@ -15,7 +15,7 @@ if [ "$GHI" = 1 ]; then
   printf -- '- %s · %s\n' "$LUC" "$(echo "$TIN" | tr '\n' ' ')" >> "$SO"
 fi
 
-# Báo cáo của việc giao qua Telegram ("#N ✅…" / "#N ❓…") thì ghi trạng thái vào viec-giao.md.
+# Báo cáo của việc giao qua Telegram ("#N ✅…" / "#N ❓…") thì ghi trạng thái vào viec-da-giao.md.
 if [[ "$TIN" =~ ^#([0-9]+)[[:space:]]*(✅|❓) ]]; then
   N="${BASH_REMATCH[1]}"; [ "${BASH_REMATCH[2]}" = "✅" ] && TT_MOI="xong $(date '+%d/%m %H:%M')" || TT_MOI="chờ anh $(date '+%d/%m %H:%M')"
   bash "$(dirname "$0")/giao-viec.sh" --trang-thai "$N" "$TT_MOI" 2>/dev/null

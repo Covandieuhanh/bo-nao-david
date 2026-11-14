@@ -38,7 +38,7 @@ Trình duyệt Claude: dùng tab đang mở trang đó (`tabs_context`), không 
 1. Đọc trước:
    - bản tổng hợp gần nhất trong `TN/` → mốc lần trước, việc còn tồn;
    - `TN/ghi-chu.md` → việc David đã báo xong/bỏ (không nhắc lại), cuộc bị bỏ qua, người ưu tiên;
-   - các dòng `tên trên mạng` trong `~/Documents/2-ca-nhan/so-tay/nguoi.md` → gộp mọi tên trên Zalo/Messenger/Telegram của cùng một người thành **một dòng, ghi tên trong sổ** (ví dụ "Long Phạm (Zalo + Telegram)"). Mục `## <người>` trong `nguoi.md` cho thêm bối cảnh để xếp việc đúng; không chép chi tiết riêng tư từ đó vào bản tổng hợp.
+   - các dòng `tên trên mạng` trong `~/Documents/2-ca-nhan/so-tay/danh-ba.md` → gộp mọi tên trên Zalo/Messenger/Telegram của cùng một người thành **một dòng, ghi tên trong sổ** (ví dụ "Long Phạm (Zalo + Telegram)"). Mục `## <người>` trong `danh-ba.md` cho thêm bối cảnh để xếp việc đúng; không chép chi tiết riêng tư từ đó vào bản tổng hợp.
 2. Đọc danh sách 3 nền tảng, lọc cuộc có tin mới sau mốc đó (lần đầu: 24 giờ qua).
 3. Mở các cuộc đã lọc, đọc phần mới.
 4. Viết `TN/tong-hop-YYYY-MM-DD.md` theo khuôn dưới. Việc tồn hôm trước chưa thấy xong (và không có trong `ghi-chu.md`) thì chép sang, ghi "(từ dd/mm)". Hai tên giống nhau rõ ràng mà chưa gộp (Rex (2)54 / Rex (2)) thì gộp và thêm dòng "❓ Gộp: … — sai thì nhắn bot" cuối tin.

@@ -2,7 +2,7 @@
 
 Nơi giữ ý tưởng, góp ý về nghề mà David muốn làm tiếp với Claude. Mỗi ý: nguồn, nội dung gốc, đối chiếu định hướng, câu cần chốt, bước nhỏ nhất. Chưa ý nào là quyết định: chốt rồi thì chuyển vào `co-so-tri-thuc/david.md` (hỏi David trước) và đánh dấu ✅ ở đây.
 
-Sổ gốc ghi lời nguyên văn: `~/Documents/2-ca-nhan/so-tay/y-tuong.md` và `nguoi.md` (mục anh Phú Ông), chỉ trên máy.
+Sổ gốc ghi lời nguyên văn: `~/Documents/2-ca-nhan/so-tay/y-tuong.md` và `danh-ba.md` (mục anh Phú Ông), chỉ trên máy.
 
 | # | Ý tưởng | Nguồn | Ngày | Trạng thái |
 |---|---|---|---|---|

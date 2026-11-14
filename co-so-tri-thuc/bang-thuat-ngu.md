@@ -78,3 +78,22 @@ tiếng Anh chuẩn → dùng đúng cột "Tên dùng"; chưa có thì thêm m�
 | Publishing | Xuất bản | `xuat-ban` |
 | Analytics | Phân tích số liệu | `phan-tich-so-lieu` |
 | Quality Control | Kiểm soát chất lượng | `kiem-soat-chat-luong` |
+
+## Tên bắt buộc của công cụ (giữ tên gốc, có lối tắt tên chuẩn)
+
+Đổi những tên này thì công cụ ngừng chạy. Tìm bằng tên chuẩn qua lối tắt.
+
+| Tên gốc | Vì sao bắt buộc | Nghĩa | Lối tắt |
+|---|---|---|---|
+| `README.md` | GitHub hiện file này ở trang repo | Giới thiệu | `gioi-thieu.md` |
+| `AGENTS.md` | AI khác (Codex…) đọc đúng tên này | Hướng dẫn cho AI | `huong-dan-cho-ai.md` |
+| `CLAUDE.md` | Claude Code tự nạp đúng tên này | Chỉ dẫn cho Claude | `chi-dan-claude.md` |
+| `MEMORY.md` | Bộ nhớ tự động của Claude đọc đúng tên này | Mục lục bộ nhớ | `co-so-tri-thuc/bo-nho/muc-luc.md` |
+| `SKILL.md` | Claude chỉ nhận skill có file này | Hướng dẫn kỹ năng | (mỗi kỹ năng một file, tra theo tên thư mục) |
+| `scripts/`, `references/`, `assets/` trong kỹ năng | Định dạng skill của Claude | Lệnh / tài liệu tham khảo / tài nguyên | — |
+| `package.json`, `node_modules/`, `src/`, `public/` | Node và Remotion tìm đúng tên này | Cấu hình gói / thư viện / mã nguồn / tài nguyên công khai | — |
+| `main.swift` | Swift chỉ chạy lệnh cấp cao trong file tên này | Chương trình chính | — |
+| `settings.json`, `.gitignore`, `.env` | Claude Code / Git đọc đúng tên này | Cài đặt / danh sách bỏ qua / biến môi trường | — |
+| `~/Documents`, `~/Movies`, `~/Downloads`, `~/Desktop` | Thư mục hệ thống macOS | Tài liệu / video / tải về / màn hình chính | `~/tai-lieu`, `~/video`, `~/tai-ve`, `~/man-hinh-chinh` |
+| Thư mục app: ChatGPT, Codex, Obsidian, Zoom, DaVinci Resolve, TV | App tự tạo, đổi thì app tạo lại hoặc lỗi | — | — |
+| Lệnh `playwright-cli`, gói npm, tên module Python có gạch dưới | Tên chương trình / Python cấm gạch nối trong tên module | — | — |

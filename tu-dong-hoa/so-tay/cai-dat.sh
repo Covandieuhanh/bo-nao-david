@@ -7,14 +7,14 @@ NHAN="com.david.so-tay"
 PLIST="$HOME/Library/LaunchAgents/$NHAN.plist"
 
 mkdir -p "$DATA/hop-thu" "$DATA/nhat-ky" "$DATA/.claude" "$DATA/.trang-thai" "$HOME/.claude/channels/so-nho"
-cp "$GOC/luat-bot.md" "$DATA/CLAUDE.md"
+cp "$GOC/quy-tac-bot.md" "$DATA/CLAUDE.md"
 cp "$GOC/settings.json" "$DATA/.claude/settings.json"
 
 tao() { [ -e "$DATA/$1" ] || printf '%s\n\n' "$2" > "$DATA/$1"; }
 tao danh-sach-viec.md "# Việc cần làm"
 tao lich-hen.md "# Lịch/hẹn"
 tao y-tuong.md "# Ý tưởng"
-tao nguoi.md "# Người"
+tao danh-ba.md "# Người"
 tao kien-thuc.md "# Kiến thức"
 tao nhac-viec.md "# Nhắc đúng giờ (múi giờ của Mac)"
 tao nhom.md "# Các nhóm của Sổ nhớ
@@ -24,7 +24,7 @@ tao nhom.md "# Các nhóm của Sổ nhớ
 | danh-sach-viec.md | Việc cần làm |
 | lich-hen.md | Lịch/hẹn |
 | y-tuong.md | Ý tưởng |
-| nguoi.md | Người |
+| danh-ba.md | Người |
 | kien-thuc.md | Kiến thức |
 | nhat-ky/<YYYY-MM>.md | Nhật ký |
 | nhac-viec.md | Nhắc đúng giờ |
