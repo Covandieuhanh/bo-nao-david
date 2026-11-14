@@ -79,4 +79,5 @@ Cả hai in ra chữ, không báo lỗi → đạt. Rồi chép biểu mẫu 02 
 ## Lỗi hay gặp
 - **"command not found"**: đóng mở lại Terminal / PowerShell; vẫn lỗi thì nhờ trợ lý AI sửa đường dẫn.
 - **Whisper chậm**: dùng mô hình nhỏ hơn (`--model small`) khi thử, `medium` khi làm thật.
+- **Không tìm thấy file vừa làm, không biết đường dẫn**: kéo thả file hay thư mục vào cửa sổ Terminal / PowerShell là hiện đường dẫn; hoặc nói với trợ lý AI "mở thư mục 3-xuat của tap-…" (Mac: `open`, Windows: `explorer`). Đặt tên thư mục theo nghĩa rõ, không dấu, gạch nối để AI và người cùng tìm ra.
 - **Hết ổ đĩa**: mỗi tập xong chỉ giữ bản gốc + bản cuối.

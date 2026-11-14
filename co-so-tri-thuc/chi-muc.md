@@ -104,6 +104,7 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [du-an/danh-gia-video-cu.md](../du-an/danh-gia-video-cu.md) — Rà soát video cũ trên TikTok và fanpage (05/11): danh sách đề xuất ẩn (riêng tư), không xoá. · ←4
 - [du-an/danh-muc-noi-dung.md](../du-an/danh-muc-noi-dung.md) — Sổ danh mục nội dung: mọi video/tài nguyên đã lọc, điểm, hướng nghề, trạng thái, lịch đăng. · ←4
 - [du-an/danh-sach-y-tuong.md](../du-an/danh-sach-y-tuong.md) — Danh sách ý tưởng nghề đang cân nhắc (chưa chốt): Company OS, talkshow hai đầu Việt – Đức, Telegram cho thành viên; mỗi ý có câu cần chốt và bước nhỏ nhất. · ←4
+- [du-an/dong-goi/2026-11-15.md](../du-an/dong-goi/2026-11-15.md) — Phiếu đóng gói tuần 15/11/2026 (đã ẩn danh): top nỗi đau, bổ sung Gói 1, bài phễu nháp, ý video mới, việc chờ David. · ←2
 - [du-an/goi-dao-tao-dung-video-ai/1-quy-trinh.md](../du-an/goi-dao-tao-dung-video-ai/1-quy-trinh.md) — Gói 1 dựng video bằng AI, phần 1 quy trình: dựng video bất kì bằng AI trên máy tính, từng bước. · ←2
 - [du-an/goi-dao-tao-dung-video-ai/2-lo-trinh.md](../du-an/goi-dao-tao-dung-video-ai/2-lo-trinh.md) — Gói 1 dựng video bằng AI, phần 2 lộ trình trainer: 4 buổi, đích học viên tự dựng ≥ 4 video không cần trainer. · ←2
 - [du-an/goi-dao-tao-dung-video-ai/3-giao-trinh.md](../du-an/goi-dao-tao-dung-video-ai/3-giao-trinh.md) — Gói 1 dựng video bằng AI, phần 3 giáo trình 8 bài: mục tiêu, nội dung, thực hành, bài tập, xong khi. · ←2

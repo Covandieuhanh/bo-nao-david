@@ -13,7 +13,9 @@ description: "Biểu mẫu 04 cho học viên: danh sách kiểm soát chất l�
 - [ ] Mạch xem trơn, không giật, không mất đoạn quan trọng
 - [ ] Hình đúng chiều, đủ sáng, không lệch khung
 - [ ] Tiếng rõ, đều, nhạc không lấn giọng
-- [ ] Phụ đề đúng chữ, đọc kịp, không che chủ thể
+- [ ] Phụ đề, chữ nhấn đúng từng chữ người nói (dò 3 chỗ bất kỳ với tiếng); đoạn lặng hoặc chỉ có nhạc không hiện chữ (AI chép lời hay bịa chữ ở đó)
+- [ ] Chữ, đồ hoạ không che mặt người nói; ô thu nhỏ, khung cắt không cắt vào mặt
+- [ ] Chữ đọc rõ trên mọi nền (nền đặc màu, tương phản; không nền đen mờ); zoom ít và mượt; thanh, khung phụ không lấn chỗ nội dung
 - [ ] Chữ nhấn, đồ hoạ đúng lúc, không rối
 - [ ] Bản dọc vẫn thấy rõ chủ thể
 - [ ] Clip ngắn đứng riêng vẫn hiểu
