@@ -31,6 +31,11 @@ EOF
 sid_cua() { grep "^| $1 |" "$SO" | awk -F'|' '{gsub(/ /,"",$5); print $5}'; }
 ten_cua() { # cắt theo chữ (không theo byte) để không hỏng chữ có dấu
   echo "Telegram #$1 · $(grep "^| $1 |" "$SO" | awk -F'|' '{print $4}' | python3 -I -c 'import sys;print(sys.stdin.read().strip()[:40])')"; }
+link_cua() { # link mở thẳng phiên trong app Claude (phiên mở từ Terminal không hiện trong danh sách của app, 14/11/2026); chờ tối đa 40 giây
+  local J="$HOME/.claude/projects/-Users-moon-Documents-bo-nao-david/$(sid_cua "$1").jsonl" i
+  for i in $(seq 1 20); do
+    [ -f "$J" ] && grep -o '"url": *"https://claude.ai/code/session_[A-Za-z0-9]*"' "$J" | tail -1 | grep -o 'https[^"]*' && return
+    sleep 2; done; }
 man_hinh_cua() { screen -ls 2>/dev/null | awk -v t=".viec-$1" '$1 ~ t"$" {print $1; exit}'; }
 
 chay() { # $1 số việc, $2 tên hiện trong app, $3 cờ phiên (--session-id / --resume) $4 id, $5 lời nhắn
@@ -63,7 +68,7 @@ case "$1" in
       doi_trang_thai "$2" "đang làm (tiếp $(date +%H:%M))"; echo "Đã gõ vào phiên việc #$2"
     else
       chay "$2" "$(ten_cua "$2")" --resume "$SID" "David nhắn qua Telegram: $3"
-      doi_trang_thai "$2" "đang làm (mở lại $(date +%H:%M))"; echo "Phiên việc #$2 đã đóng, đã mở lại và chuyển lời"
+      doi_trang_thai "$2" "đang làm (mở lại $(date +%H:%M))"; echo "Phiên việc #$2 đã đóng, đã mở lại và chuyển lời. Link: $(link_cua "$2")"
     fi ;;
   --dung)
     S=$(man_hinh_cua "$2"); [ -n "$S" ] && screen -S "$S" -X quit && doi_trang_thai "$2" "đã đóng $(date '+%d/%m %H:%M')" && echo "Đã đóng phiên việc #$2" || echo "Việc #$2 không mở" ;;
@@ -77,5 +82,6 @@ case "$1" in
     chay "$N" "$(ten_cua "$N")" --session-id "$SID" "$(LOI_DAN $N)
 
 Yêu cầu nguyên văn của David: $*"
-    echo "Đã giao việc #$N. Phiên tên \"$(ten_cua "$N")\" hiện trong app Claude (điện thoại, claude.ai/code)." ;;
+    L=$(link_cua "$N")
+    echo "Đã giao việc #$N. Bấm link để xem và gõ tiếp trong app Claude: ${L:-(chưa có link, xem claude.ai/code)}" ;;
 esac
