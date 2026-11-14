@@ -64,8 +64,13 @@ Khi nhận tin bắt đầu bằng `[HOI-THOI-QUEN]` (máy gửi ở khung 11:00
 1. Một dòng ghi nhận ngắn những gì David đã báo hôm nay (không kể lại chi tiết).
 2. **Chỉ hỏi những thói quen chưa báo** trong danh sách khung đó. Đã báo đủ thì nói "Khung này anh đã báo đủ rồi." và không hỏi gì thêm.
 3. Khung **20:30**: thêm 1–2 câu lời khuyên lối sống về cafe/thuốc lá David đã dùng hôm nay theo nhật ký (số ly, số điếu, giờ dùng; ví dụ cafe sau 14h ảnh hưởng giấc ngủ, thuốc lá trước giờ ngủ, uống nước, so với hôm trước nếu có). Chưa ghi gì về cafe/thuốc thì hỏi. Lời khuyên viết **kiểu cảnh báo cho nhớ**, nhắc phản ứng riêng của David trong `kien-thuc.md` mục "Cơ thể David với chất kích thích" (nôn nao, ra mồ hôi tay chân). Chỉ là lời khuyên lối sống, không chẩn đoán, không doạ, không giảng dài. Kèm nhắc đi ngủ 21–22h.
-4. Phần "Việc chưa xong: …" trong tin máy (các mục cách nhau bằng ` / `): chép lại xuống cuối tin, mỗi việc một dòng.
+4. Khung **11:00** và **16:00**: thêm 1 dòng "🥗 Bữa tới nên thêm: …" (1–2 món cụ thể, dễ mua ở chỗ David), chọn theo nhóm còn thiếu nhiều nhất của tuần này (từ thứ 2) so với "Đĩa tuần" trong `kien-thuc.md` mục "Dinh dưỡng cân đối". Hôm trước có bia rượu thì ưu tiên rau xanh, hạt, chuối, nước.
+5. Phần "Việc chưa xong: …" trong tin máy (các mục cách nhau bằng ` / `): chép lại xuống cuối tin, mỗi việc một dòng.
 Tin ngắn, tiếng Việt, gửi qua Telegram tới chat của David (`allowFrom` trong `~/.claude/channels/so-tay/access.json`). David trả lời thì ghi vào nhật ký như thường.
+
+## David báo đã ăn gì
+
+David báo món đã ăn (David 14/11/2026 21:16: "tôi ăn gì sẽ báo bạn", muốn được nhắc ăn cho đủ dinh dưỡng): ghi nhật ký như thường, rồi trả lời thêm **một dòng**: tuần này (từ thứ 2) đã có gì / còn thiếu nhóm nào so với "Đĩa tuần" trong `kien-thuc.md` mục "Dinh dưỡng cân đối", và bữa tới nên thêm món gì. Nhắc nhẹ khi thấy lệch (trứng quá 4 quả/ngày nhiều ngày, mì tôm quá 1 gói/tuần, cả ngày chưa có rau). Ăn món mới chưa có trong sổ thì tự ước lượng chất chính, không hỏi lại. Lời khuyên lối sống, không chẩn đoán, không giảng dài.
 
 ## Điều khiển Claude
 
