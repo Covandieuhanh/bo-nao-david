@@ -17,7 +17,7 @@ LOI_DAN() { cat <<EOF
 Đây là việc David giao qua Telegram (việc #$1). Phiên này là phiên Claude Code bình thường ở chế độ Remote Control:
 David có thể xem và gõ vào đây từ app Claude trên điện thoại hoặc claude.ai/code, hoặc nhắn qua bot Telegram (lời sẽ được gõ vào phiên này).
 Làm theo AGENTS.md và skill đúng với việc, như mọi phiên khác.
-Phiên chạy toàn quyền, tự làm tới kết quả, không xin phép từng bước (David chốt 12/11: chỉ quan tâm kết quả).
+Phiên chạy chế độ Auto, tự làm tới kết quả, không xin phép từng bước (David chốt 12/11: chỉ quan tâm kết quả).
 Xoá file, cài/gỡ phần mềm, sửa cấu hình máy hoặc Claude: máy tự cho chạy và ghi sổ; kể lại các bước đó trong tin báo cáo cuối.
 Máy chỉ còn hỏi David khi đăng/gửi ra ngoài, tốn tiền, đẩy đè GitHub, xoá ổ đĩa; bị từ chối thì đừng lách, hỏi David.
 Mỗi khi XONG, hoặc khi CẦN DAVID QUYẾT, chạy:
