@@ -36,7 +36,7 @@ Mục tiêu của David: **đưa tài nguyên vào, nhận kết quả**. Các l
 
 ## 3. Trong lúc làm
 - **Lệnh theo lô:** các lệnh không phụ thuộc nhau gộp vào một lần gọi. Lệnh > 2 phút chạy nền, không thăm dò.
-- **Agent phụ** chỉ khi David cho phép.
+- **Agent phụ** chỉ khi David cho phép. Việc chỉ đọc, tìm, tóm tắt nhiều thì dùng agent `nghien-cuu` (mô hình nhỏ Haiku, `tac-tu/nghien-cuu.md`): nhanh, tốn ít hạn mức; phần suy nghĩ và quyết định giữ ở phiên chính.
 - **Bước nhẹ:** skill ghi rõ bước nào nhẹ (chép, đổi tên, chạy lệnh có sẵn). Tới đó nhắc một dòng "bước này nhẹ, bạn có thể đổi
   mô hình rẻ hơn" — không tự đổi.
 - **Việc của David là của David:** việc David tự tạo hoặc tự bấm (một việc dựng, render đang chạy) thì không tự bấm Chạy tiếp, Duyệt,
@@ -49,10 +49,15 @@ Mục tiêu của David: **đưa tài nguyên vào, nhận kết quả**. Các l
 - Đăng, gửi, xoá, mật khẩu: `AGENTS.md` luật 5.
 
 ## 4. Cuối việc
+- **Tự soát trước khi báo xong:** (1) kiểm theo "Xong khi" và tiêu chí của skill; (2) tự hỏi "đã xong hết chưa?" rồi quét lại một lượt
+  tìm chỗ sót; (3) đổi tên, đổi cấu trúc, đổi luồng thì chạy thử trọn một quy trình thật trước khi báo, vì lỗi hay nằm ở chỗ ghép nối;
+  (4) việc phức tạp, rủi ro cao: đề nghị một agent chưa tham gia việc soát lại, chỉ bắt lỗi làm sai yêu cầu (cần David cho phép, mục 3).
 - **Báo cáo ngắn, tiếng Việt:** đã làm gì · đã kiểm gì · chưa kiểm gì · điều cần David xác nhận.
 - **Báo lên Telegram** khi xong một việc trọn vẹn (render xong, đăng xong, sửa bộ não xong…) hoặc khi kẹt cần David quyết, không báo
   sau mỗi lượt: `bash tu-dong-hoa/so-tay/bao-cao.sh "✅ Xong: … · Ở đâu: … · Còn lại: …"` hoặc `"❓ Chờ anh: …"`, tối đa 5 dòng. Việc giao
   qua Telegram thì mở đầu bằng số việc `#N`. Máy chưa cài bot thì lệnh chỉ ghi sổ. Chi tiết: [tu-dong-hoa/so-tay/README.md](../tu-dong-hoa/so-tay/README.md).
+- **Nhắc lần hai thì thành luật ngay:** David phải nhắc lại một điều lần thứ hai → sửa ngay đúng nhà của luật đó, không đợi lượt nhìn lại tuần
+  (skill, giọng văn, luật kênh: tự sửa rồi báo một dòng; thông tin về David: đề xuất câu, chờ "ok").
 - **Góp ý của David ghi đúng một chỗ:** sửa skill hoặc khối bị ảnh hưởng + một dòng nhật ký (`changelog` của skill, hoặc mục "Nhật ký").
   Chỉ luật dùng chung cho nhiều skill mới vào `co-so-tri-thuc/bo-nho/`; đã có ghi nhớ gần giống thì sửa ghi nhớ đó, không tạo cái mới.
 - **Sửa thẳng, không chồng câu:** đổi một luật (góp ý, học mẫu, quyết định mới) thì **viết lại chính câu luật đó** thành trạng thái mới
@@ -79,6 +84,7 @@ Mục tiêu của David: **đưa tài nguyên vào, nhận kết quả**. Các l
 | Khi | Claude làm |
 |---|---|
 | Việc tiếp theo lớn, hoặc David đưa việc mới khác hẳn việc đang làm | Đề nghị mở phiên mới, ghi sẵn bước tiếp ở file theo dõi |
+| Phiên đã dài, hoặc đã tự tóm tắt mà việc chưa xong | Viết lời bàn giao trong một khung để dán vào phiên mới: đã xong · còn lại theo thứ tự · file ở đâu · đã chốt kèm lý do |
 | Việc chính của phiên đã xong, hoặc phiên đã tự tóm tắt hội thoại | Nhắc "cập nhật não" rồi đóng phiên |
 | David quay lại phiên cũ sau nhiều giờ để làm việc mới | Đề nghị phiên mới, vì phiên cũ nạp lại tốn hơn |
 | Tin nhắn thiếu một trong ba điều: việc gì, file nào, muốn ra cái gì | Tự suy từ tài nguyên và skill (mục 2); chỉ hỏi khi không đoán được việc gì |

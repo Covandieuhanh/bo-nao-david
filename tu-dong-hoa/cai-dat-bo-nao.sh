@@ -33,6 +33,9 @@ for s in cat-doan-noi-bat phan-phoi-da-kenh phan-tich-video-mau dung-podcast dun
   lien_ket "$REPO/ky-nang/san-xuat-video/$s" "$CL/skills/$s"
 done
 
+# Agent dùng chung (mô hình nhỏ cho việc đọc, tìm, tóm tắt)
+for a in "$REPO"/tac-tu/*.md; do lien_ket "$a" "$CL/agents/$(basename "$a")"; done
+
 # Bộ nhớ gắn theo đường dẫn dự án (Claude Code đổi mọi ký tự không phải chữ/số thành dấu -)
 MA="$(printf '%s' "$DU_AN" | sed 's#[^A-Za-z0-9]#-#g')"
 MEM="$CL/projects/$MA/memory"

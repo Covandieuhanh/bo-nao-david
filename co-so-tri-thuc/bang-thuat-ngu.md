@@ -58,6 +58,8 @@ tiếng Anh chuẩn → dùng đúng cột "Tên dùng"; chưa có thì thêm m�
 | Global Instructions | Chỉ dẫn toàn cục | `chi-dan-toan-cuc` |
 | Naming Convention | Quy ước đặt tên | `quy-uoc-dat-ten` |
 | Glossary | Bảng thuật ngữ | `bang-thuat-ngu` |
+| Agents (sub-agent) | Tác tử | `tac-tu` |
+| Interview | Phỏng vấn | `phong-van` |
 | Device | Thiết bị | `thiet-bi` |
 | Career | Nghề nghiệp | `nghe-nghiep` |
 | Career Roadmap | Lộ trình sự nghiệp | `lo-trinh-su-nghiep` |
