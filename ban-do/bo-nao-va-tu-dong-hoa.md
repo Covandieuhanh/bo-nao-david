@@ -22,6 +22,7 @@ Gốc: [bản đồ bộ não](README.md).
 - [chuan-hoa-ten](../du-an/chuan-hoa-ten.md) — Bản đồ chuẩn hoá tên toàn bộ (14/11, đã xong): tên cũ → tên mới theo thuật ngữ kinh doanh tiếng Anh dịch sang tiếng Việt.
 - [chuan-hoa-ky-nang](../du-an/chuan-hoa-ky-nang.md) — Dự án chuẩn hoá bộ skill theo thói quen làm việc chung (08/11): các bước, mốc commit, việc còn lại.
 - [danh-gia-luat](../du-an/danh-gia-luat.md) — Rà soát luật bộ skill video (08/11), bước 1 của chuẩn hoá skill: luật trùng, lệch, cần gộp.
+- [tai-ban-3](../du-an/tai-ban-3.md) — Tái bản 3 toàn bộ bộ não (mở 14/11): theo dõi chung, file từng phiên con.
 - [tai-cau-truc-2](../du-an/tai-cau-truc-2.md) — Tái bản lần 2 toàn bộ bộ não (10/11): điều phối các phiên con, mốc, kết quả.
 - [tai-cau-truc-2-nao](../du-an/tai-cau-truc-2-nao.md) — Tái bản 2 (10/11), phần bộ não: AGENTS.md, CLAUDE.md, david.md, chuan-muc-lam-viec.
 - [tai-cau-truc-2-hoi](../du-an/tai-cau-truc-2-hoi.md) — Tái bản 2 (10/11), phần bộ hỏi skill thu-thap-yeu-cau.

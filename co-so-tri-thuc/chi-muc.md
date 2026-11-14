@@ -93,7 +93,7 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [co-so-tri-thuc/kien-thuc/telegram-mini-app.md](kien-thuc/telegram-mini-app.md) — Telegram Mini App — trang web HTML/JS mở ngay trong Telegram như app thật, biết người dùng là ai; cách làm (telegram-web-app.js, HTTPS miễn phí, BotFather /newapp, kiểm initData), làm được gì, gợi ý cho trainer. · ←2
 - [co-so-tri-thuc/mo-hinh-kinh-doanh.md](mo-hinh-kinh-doanh.md) — Mô hình kinh doanh David tự đặt: khung tư duy gốc (tiền, khách, sản phẩm) dùng để quyết định nghề và gói bán. · ←3
 - [co-so-tri-thuc/nghien-cuu-ccl.md](nghien-cuu-ccl.md) — Nghiên cứu CCL (david.md mục 6): tài liệu chuẩn Center for Creative Leadership, sách tự mua, cách dịch thuật ngữ lãnh đạo. · ←2
-- [co-so-tri-thuc/quy-uoc-lien-ket.md](quy-uoc-lien-ket.md) — Bộ quy tắc liên kết của bộ não — mô tả đầu file, đường nối, bản đồ nội dung, chỉ mục tự sinh, ghi chú kiến thức, máy kiểm; để Claude tra nhanh, ít token, không sót. · ←9
+- [co-so-tri-thuc/quy-uoc-lien-ket.md](quy-uoc-lien-ket.md) — Bộ quy tắc liên kết của bộ não — mô tả đầu file, đường nối, bản đồ nội dung, chỉ mục tự sinh, ghi chú kiến thức, máy kiểm; để Claude tra nhanh, ít token, không sót. · ←10
 
 ## du-an
 
@@ -128,11 +128,16 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [du-an/mau-cho-hoc.md](../du-an/mau-cho-hoc.md) — Mẫu chờ học: kênh và video David gửi để học phong cách dựng sau (skill phan-tich-video-mau). · ←1
 - [du-an/pheu-ban-hang-goi-cong-nghe.md](../du-an/pheu-ban-hang-goi-cong-nghe.md) — Phễu bán hàng gói công nghệ (hướng 3): phễu → bán thử → bán thật, khách, giá, kênh. · ←2
 - [du-an/san-pham-hoa.md](../du-an/san-pham-hoa.md) — Dự án máy gom và đóng gói: mọi nguồn hằng ngày → phân loại theo hướng nghề → sản phẩm bán được; kế hoạch và lịch chạy. · ←2
+- [du-an/tai-ban-3-ghi-nho.md](../du-an/tai-ban-3-ghi-nho.md) — Tái bản 3 (14/11), phiên con bộ ghi-nho: bảng luật đang sống, chéo bộ, hỏi David. · ←1
+- [du-an/tai-ban-3-hoi.md](../du-an/tai-ban-3-hoi.md) — Tái bản 3 (14/11), phiên con bộ hoi: bảng luật đang sống, chéo bộ, hỏi David. · ←1
+- [du-an/tai-ban-3-nao.md](../du-an/tai-ban-3-nao.md) — Tái bản 3 (14/11), phiên con bộ nao: bảng luật đang sống, chéo bộ, hỏi David. · ←1
+- [du-an/tai-ban-3-video.md](../du-an/tai-ban-3-video.md) — Tái bản 3 (14/11), phiên con bộ video: bảng luật đang sống, chéo bộ, hỏi David. · ←1
+- [du-an/tai-ban-3.md](../du-an/tai-ban-3.md) — Tái bản 3 toàn bộ bộ não (mở 14/11): file theo dõi chung của phiên điều phối — máy đo lúc mở, file từng phiên con, chéo bộ, hỏi David, kiểm chung. · ←5
 - [du-an/tai-cau-truc-2-ghi-nho.md](../du-an/tai-cau-truc-2-ghi-nho.md) — Tái bản 2 (10/11), phần dọn ghi nhớ bo-nho: gộp, bỏ, chuyển lưu trữ. · ←1
 - [du-an/tai-cau-truc-2-hoi.md](../du-an/tai-cau-truc-2-hoi.md) — Tái bản 2 (10/11), phần bộ hỏi skill thu-thap-yeu-cau. · ←1
 - [du-an/tai-cau-truc-2-nao.md](../du-an/tai-cau-truc-2-nao.md) — Tái bản 2 (10/11), phần bộ não: AGENTS.md, CLAUDE.md, david.md, chuan-muc-lam-viec. · ←1
 - [du-an/tai-cau-truc-2-video.md](../du-an/tai-cau-truc-2-video.md) — Tái bản 2 (10/11), phần bộ skill video: luật đổi so với lần 1. · ←1
-- [du-an/tai-cau-truc-2.md](../du-an/tai-cau-truc-2.md) — Tái bản lần 2 toàn bộ bộ não (10/11): điều phối các phiên con, mốc, kết quả. · ←1
+- [du-an/tai-cau-truc-2.md](../du-an/tai-cau-truc-2.md) — Tái bản lần 2 toàn bộ bộ não (10/11): điều phối các phiên con, mốc, kết quả. · ←2
 - [du-an/tai-cau-truc-video-1.md](../du-an/tai-cau-truc-video-1.md) — Tái bản bộ skill video lần 1 (10/11): bảng 164 luật, mỗi luật một nhà. · ←1
 
 ## hermes
@@ -221,7 +226,7 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [ky-nang/san-xuat-video/thu-vien-tai-nguyen/README.md](../ky-nang/san-xuat-video/thu-vien-tai-nguyen/README.md) — Thư viện hình dùng chung cho cả 4 loại video: file, việc, khối dùng. · ←1
 - [ky-nang/san-xuat-video/thu-vien-tai-nguyen/nhan-dien-chung.md](../ky-nang/san-xuat-video/thu-vien-tai-nguyen/nhan-dien-chung.md) — Bộ nhận diện chung mọi loại video: vị trí, thành phần cố định, ngôn ngữ thiết kế. · ←2
 - [ky-nang/san-xuat-video/tong-quan.md](../ky-nang/san-xuat-video/tong-quan.md) — Tổng quan bộ skill dựng video của David: 3 skill, mẫu dựng, nhạc, hiệu ứng tiếng, script. · ←3
-- [ky-nang/tai-cau-truc/SKILL.md](../ky-nang/tai-cau-truc/SKILL.md) — Tái bản bộ skill — khi luật đã chồng nhiều lớp (học mẫu lớp 1, lớp 2, lớp 3, sửa góp ý…), gom toàn bộ luật đang sống của CẢ BỘ NÃO (mọi bộ skill + ghi nhớ, một đợt) rồi VIẾT LẠI thành một bản sạch: mỗi luật một nhà, không ngày, không "thay luật cũ", không câu tự mâu thuẫn; lịch sử chuyển về sổ quyết định. Có máy đo chồng chéo (do-chong-cheo.py) để biết khi nào nên tái bản. Dùng khi David nói "tái bản", "viết lại skill", "viết lại toàn bộ luật", "gom luật", "luật bị chồng chéo", "/tai-cau-truc", hoặc khi máy đo báo "NÊN TÁI BẢN" và David đồng ý. · ←2
+- [ky-nang/tai-cau-truc/SKILL.md](../ky-nang/tai-cau-truc/SKILL.md) — Tái bản bộ skill — khi luật đã chồng nhiều lớp (học mẫu lớp 1, lớp 2, lớp 3, sửa góp ý…), gom toàn bộ luật đang sống của CẢ BỘ NÃO (mọi bộ skill + ghi nhớ, một đợt) rồi VIẾT LẠI thành một bản sạch: mỗi luật một nhà, không ngày, không "thay luật cũ", không câu tự mâu thuẫn; lịch sử chuyển về sổ quyết định. Có máy đo chồng chéo (do-chong-cheo.py) để biết khi nào nên tái bản. Dùng khi David nói "tái bản", "viết lại skill", "viết lại toàn bộ luật", "gom luật", "luật bị chồng chéo", "/tai-cau-truc", hoặc khi máy đo báo "NÊN TÁI BẢN" và David đồng ý. · ←3
 - [ky-nang/tai-cau-truc/lich-su.md](../ky-nang/tai-cau-truc/lich-su.md) — Lịch sử tái bản: mỗi lần tái bản một bộ một dòng, mốc cho máy đo chồng chéo. · ←1
 - [ky-nang/thiet-ke-trang-cuon/SKILL.md](../ky-nang/thiet-ke-trang-cuon/SKILL.md) — > · ←1
 - [ky-nang/thiet-ke-trang-cuon/khuon-mau/dau-hieu-nhan-dang.md](../ky-nang/thiet-ke-trang-cuon/khuon-mau/dau-hieu-nhan-dang.md) — Thiết kế trang cuộn: sổ dấu hiệu nhận dạng mỗi trang đã làm để không lặp. · ←1
