@@ -1,5 +1,6 @@
 #!/bin/bash
 # Canh bot Sổ nhớ: launchd chạy script này suốt (KeepAlive), mỗi phút kiểm một vòng.
+# Việc theo lịch trong repo: tu-dong-hoa/lich/ (chạy bằng Claude trong Terminal; lịch app tự cài lại khi đổi tài khoản).
 # Tự sửa: phiên chết · thừa phiên · máy chủ Telegram chết hoặc mất kết nối mạng · phiên treo · hộp thoại chặn · đổi tài khoản (cả đổi trên app: mở sẵn đăng nhập Terminal) ·
 #         làm mới ngữ cảnh 4h sáng. Việc theo giờ: tóm tắt 7h, nhắc đúng giờ (gửi thẳng, không cần Claude), sao lưu Drive 3h.
 # Báo David qua Telegram (gửi thẳng) khi: chưa đăng nhập Claude · hết hạn mức · mở lại liên tục · mất mạng lâu.
@@ -230,7 +231,17 @@ while true; do
       gui_thang "🔑 Anh vừa đổi tài khoản trên app Claude. Em đã mở Terminal để đăng nhập lại Claude trong Terminal: trên trình duyệt anh chọn đúng tài khoản mới rồi bấm cho phép. Xong bước này phiên việc mới hiện trên app."
     fi
     echo "$TKA" > "$TT/tai-khoan-app"
+    # Lịch app (tổng hợp tin nhắn) nằm trong thư mục riêng của từng tài khoản: cài lại từ repo cho tài khoản này.
+    python3 -I "$GOC/../lich/cai-lich-app.py" >> "$LOG" 2>&1 && ghi "cai lich app cho $TKA"
   fi
+
+  # Việc tự chạy theo lịch trong repo (tu-dong-hoa/lich/lich-chay.md): gọi Claude trong Terminal, không cần app, tài khoản nào cũng được.
+  python3 -I "$GOC/nhac-lap.py" "$GOC/../lich/lich-chay.md" "$TT/da-lich-chay" /dev/null 2>>"$LOG" | while IFS=$'\t' read -r khoa nd; do
+    ID="${nd%% *}"
+    if screen -ls 2>/dev/null | grep -qE "\.lich-$ID[[:space:]]"; then ghi "lich $ID dang chay, bo lan nay"
+    else screen -dmS "lich-$ID" bash "$GOC/../lich/chay-lich.sh" "$ID" && ghi "chay lich $ID"; fi
+    echo "$khoa" >> "$TT/da-lich-chay"
+  done
 
   # Nhịp sống cho lệnh kiểm tra sức khoẻ.
   echo "$BAY $(dang_chay && echo phien-ok || echo phien-tat) $([ -n "$(may_chu)" ] && echo telegram-ok || echo telegram-tat)" > "$TT/nhip"

@@ -1,0 +1,7 @@
+{
+  "_ghi_chu": "Việc lịch chạy trong app Claude (cần trình duyệt Claude). cai-lich-app.py cài vào tài khoản app đang mở; id nào trong danh sách 'bo' thì gỡ khỏi app.",
+  "viec": [
+    {"id": "tong-hop-tin-nhan", "displayName": "Tổng hợp tin nhắn mỗi sáng", "cronExpression": "0 7 * * *"}
+  ],
+  "bo": ["gom-phan-loai-dem", "dong-goi-tuan", "dong-goi-thu"]
+}
