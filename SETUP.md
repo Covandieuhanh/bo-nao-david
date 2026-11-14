@@ -64,6 +64,7 @@ bash ~/Documents/David.Claude/scripts/sync.sh
 | Mô hình Whisper (1,5 GB) | Lệnh tải do `check_env.sh` in ra, lưu ở `~/whisper-models` |
 | `~/.cache/video-style-edit` (font, dò mặt, môi trường Python, 92 MB) | Các script dựng dùng thư mục này. Chép từ máy cũ cho chắc, hoặc để script báo thiếu rồi cài lại |
 | Bot Telegram Sổ nhớ (chạy 24/7) | Cài plugin Telegram (install.sh đã cài), dán token bot vào `~/.claude/channels/so-nho/.env` (David giữ token, không lên GitHub), rồi `bash scripts/so-nho/cai-dat.sh`: chép luật + quyền bot, cài launchd `com.david.so-nho`. Nghe tin thoại dùng chung mô hình Whisper ở dòng trên |
+| Lịch app Claude (tổng hợp tin nhắn 7:30, gom phân loại 23:00, đóng gói chủ nhật 19:00) | Không theo repo: tạo lại trong app Claude (Scheduled tasks) đúng giờ và lời giao ghi ở cuối `skills/tong-hop-tin-nhan/SKILL.md` và `skills/gom-dong-goi/SKILL.md`. Kho gom `~/Documents/2-ca-nhan/so-nho/kho-gom/` chỉ ở máy, sao lưu Drive cùng sổ nhớ |
 | Tín hiệu tự học (`~/.claude/tu-hoc/`) | Có lời chat nên ở lại máy; máy mới tự ghi lại từ đầu (hook do install.sh cài) |
 | `playwright-cli` | Cài qua npm toàn cục, kiểm tra bằng `playwright-cli --help` |
 | Đăng nhập YouTube, Facebook, TikTok | David tự đăng nhập lại. Hồ sơ Chrome đăng bài ở `~/.cache/david-mxh-chrome` |
