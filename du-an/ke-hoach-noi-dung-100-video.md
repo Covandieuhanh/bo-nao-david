@@ -17,7 +17,7 @@
 - **Không khớp ý nào** → ⚠️ cảnh báo, David chọn: thêm làm ý mới (cuối giai đoạn hợp) · cất kho · bỏ.
 - **Khớp giai đoạn 3** (đã bỏ) → ⚠️ cảnh báo rõ: hướng kinh doanh đã bỏ ngày 05/11/2026.
 - Phiếu lọc luôn gợi ý **ý kế tiếp nên quay** (ý "Ý tưởng" có số nhỏ nhất, bỏ qua giai đoạn 3), để kênh dần đi đúng kế hoạch.
-- Kho còn là bản cũ 5 giai đoạn; việc làm lại theo ba tầng (bản thân → công việc → mối quan hệ) chờ phiên riêng (`BAO-CAO-TRANG-THAI.md`).
+- Kho còn là bản cũ 5 giai đoạn; việc làm lại theo ba tầng (bản thân → công việc → mối quan hệ) chờ phiên riêng (`bao-cao-trang-thai.md`).
 
 ## Năm giai đoạn
 | Giai đoạn | Video | Chủ đề | Nói với ai | Người xem nhận ra |

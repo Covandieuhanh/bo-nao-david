@@ -34,7 +34,7 @@ SKILL_TYPES = {
     "skill-creator": "bo-nao:skill-creator",
     "update-config": "bo-nao:update-config",
     "consolidate-memory": "bo-nao:consolidate-memory",
-    "scroll-craft": "lam-trang-web",
+    "thiet-ke-trang-cuon": "lam-trang-web",
 }
 # Không có nhãn video: video chỉ tính khi skill video được gọi (giống mod).
 # Model nhỏ chỉ chọn giữa các việc lớn (giống mod); việc nhỏ tự quy về việc lớn trong mod (groupOf).

@@ -9,4 +9,4 @@ Chỉ giữ file theo dõi việc dở. Dự án video, bài đăng, thành ph�
 | `danh-gia-video-cu.md` | Đề xuất ẩn video cũ chạm lằn ranh, ngày 05/11/2026 | Chờ David quyết. Danh sách bổ sung ở `../nghien-cuu/trang-ca-nhan-2026-11-06.md` |
 | `mau-cho-hoc.md` | Kênh/video mẫu David lưu để học phong cách sau | Học bằng skill `phan-tich-video-mau` khi David bảo |
 | `thiet-ke-app-dung-video.md` | Bản thiết kế app dựng video trên máy (cố định bấm nút, Claude chỉ làm phần phán đoán), 08/11/2026 | Chờ David duyệt mục 5 |
-| `danh-sach-y-tuong.md` | Ý tưởng, góp ý về nghề đang cân nhắc (Company OS, talkshow hai đầu…), mỗi ý có câu cần chốt và bước nhỏ nhất | Chốt ý nào thì chuyển vào `co-so-tri-thuc/David.md` (hỏi David trước) |
+| `danh-sach-y-tuong.md` | Ý tưởng, góp ý về nghề đang cân nhắc (Company OS, talkshow hai đầu…), mỗi ý có câu cần chốt và bước nhỏ nhất | Chốt ý nào thì chuyển vào `co-so-tri-thuc/david.md` (hỏi David trước) |

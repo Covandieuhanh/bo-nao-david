@@ -4,11 +4,11 @@
 **Đầu vào:** video-final.mp4 + kịch bản
 **Đầu ra:** phat-hanh/{phat-hanh.md, chuong.txt, teaser.json} · dang-bai.md (highlight)
 **Tham số hồ sơ:** chung: youtube.*
-**Sửa khối này → chạy lại:** teaser.py → chạy lại chapters.py
+**Sửa khối này → chạy lại:** doan-gioi-thieu.py → chạy lại chuong.py
 
 **File thật (code, một bản duy nhất):**
-- `dung-video-theo-phong-cach/scripts/chapters.py`
-- `dung-video-theo-phong-cach/scripts/teaser.py`
+- `dung-video-theo-phong-cach/scripts/chuong.py`
+- `dung-video-theo-phong-cach/scripts/doan-gioi-thieu.py`
 
 Luật phát hành chung (3 tiêu đề, thumbnail, khung bìa, màn kết, chương, teaser): `../../quy-tac-chung.md` mục 7.
 
@@ -23,8 +23,8 @@ Luật phát hành chung (3 tiêu đề, thumbnail, khung bìa, màn kết, chư
 
 ## Cách làm — video thường (làm video, podcast, vlog)
 Ghi `phat-hanh/phat-hanh.md` (3 tiêu đề, mô tả, hashtag) + mốc khung bìa đề xuất · **video xuất ngang VÀ David đăng YouTube** (đã hỏi
-lúc đầu): 2 thumbnail (`zsh $SKILL/scripts/thumbnail.sh "$P" <giây> "<DÒNG 1>" "<DÒNG 2>" 1|2 …`, xem bản @160, khối 14). Video dọc:
-không thumbnail. Video > 3 phút đăng YouTube: `project.ytEnd = 20` trước render (màn kết), `teaser.py` (> 10 phút) rồi `chapters.py`.
+lúc đầu): 2 thumbnail (`zsh $SKILL/scripts/anh-thu-nho.sh "$P" <giây> "<DÒNG 1>" "<DÒNG 2>" 1|2 …`, xem bản @160, khối 14). Video dọc:
+không thumbnail. Video > 3 phút đăng YouTube: `project.ytEnd = 20` trước render (màn kết), `doan-gioi-thieu.py` (> 10 phút) rồi `chuong.py`.
 Chép `san-xuat-video/mo-dun/16-phan-tich-so-lieu/mau-so-lieu.md` → `$P/so-lieu.md` (điền phần đầu).
 Gửi `video-final.mp4` (+ thumbnail nếu có) (SendUserFile). Báo ngắn gọn bằng tiếng Việt: danh sách cảnh theo mốc thời gian, nếu có ảnh
 thì kèm nội dung `nguon-anh.txt` (dán vào mô tả bài đăng), tên riêng/chữ chưa chắc chính tả, đã kiểm tra gì, chưa kiểm tra gì (ví dụ

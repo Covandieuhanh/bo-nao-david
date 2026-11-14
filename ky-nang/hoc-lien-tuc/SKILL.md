@@ -13,19 +13,19 @@ description: Tự học và cải tiến liên tục bộ skill của David (h�
 
 - **Tự do, không hỏi:** mọi `SKILL.md`, khối, script, `references/`; giọng văn (`ky-nang/san-xuat-video/ho-so-thuong-hieu/giong-thuong-hieu-david.md`);
   luật kênh (`ky-nang/san-xuat-video/ho-so-thuong-hieu/kenh.json`: lịch đăng, dẫn dắt, từ khoá bình luận, cách đo); hiệu ứng, motion graphics.
-- **Hỏi trước (diễn giải, chờ "ok"):** `co-so-tri-thuc/David.md`, `co-so-tri-thuc/ho-so-ca-nhan.md`, ghi nhớ David đã chốt; **màu chủ đạo** và **chữ ký
+- **Hỏi trước (diễn giải, chờ "ok"):** `co-so-tri-thuc/david.md`, `co-so-tri-thuc/ho-so-ca-nhan.md`, ghi nhớ David đã chốt; **màu chủ đạo** và **chữ ký
   nhận diện**; mọi thao tác trên mạng xã hội của David.
 - **Không bao giờ phá:** chữ trên video là nguyên văn lời David (phụ đề, mô tả, motion graphics); quyền riêng tư (mật khẩu, OTP, token).
 
 ## Cách sửa một skill (mọi việc dưới đây dùng chung)
 1. Tìm **đúng một nhà** của luật (mỗi luật một chỗ, `chuan-muc-lam-viec.md`); sửa thẳng câu cũ, không chồng lớp ("lời mới nhất thắng").
 2. Ghi changelog của skill đó (`references/nhat-ky-thay-doi.md`, chưa có thì tạo): ngày · sửa gì · **vì sao** (tín hiệu nào / hình mẫu + số liệu nào).
-3. Đẩy GitHub (`bash tu-dong-hoa/sync.sh --push`). Báo David **một dòng mỗi thay đổi**: `Đã sửa <skill>: <điều đổi> (vì <bằng chứng>).`
+3. Đẩy GitHub (`bash tu-dong-hoa/dong-bo.sh --push`). Báo David **một dòng mỗi thay đổi**: `Đã sửa <skill>: <điều đổi> (vì <bằng chứng>).`
 4. Chạy máy đo chồng chéo của `tai-cau-truc` khi sửa từ 5 chỗ trở lên trong tuần; báo "NÊN TÁI BẢN" thì nói David.
 
 ## Việc 1 — Nhìn lại tuần (máy gửi `[TU-HOC]` tối chủ nhật, hoặc David gọi)
 Máy đã ghi sẵn tín hiệu cuối mỗi phiên (hook `tu-dong-hoa/hoc-lien-tuc/ghi-tin-hieu.py` → `~/.claude/hoc-lien-tuc/tin-hieu.jsonl`), không tốn token.
-1. `python3 -I tu-dong-hoa/hoc-lien-tuc/dem-skill.py 7` → skill dùng nhiều, skill bị sửa nhiều, skill không dùng.
+1. `python3 -I tu-dong-hoa/hoc-lien-tuc/dem-ky-nang.py 7` → skill dùng nhiều, skill bị sửa nhiều, skill không dùng.
 2. Đọc các dòng 7 ngày qua trong `tin-hieu.jsonl` (chỉ trường `david_sua`, `skill`, `loi_cong_cu`). Gom **điều lặp ≥ 2 lần**: cùng một
    lỗi, cùng một câu David phải nhắc, cùng một việc David làm tay. Cần thêm ngữ cảnh thì `python3 -I tu-dong-hoa/tim-phien.py "<từ khoá>"`,
    không mở cả phiên.
@@ -50,7 +50,7 @@ Máy đã ghi sẵn tín hiệu cuối mỗi phiên (hook `tu-dong-hoa/hoc-lien-
 Nguồn: tài liệu, link, thư mục, hoặc "quy trình vừa làm trong phiên này".
 1. Có skill gần đúng việc này → **bổ sung vào skill đó** (ưu tiên). Chỉ tạo skill mới khi việc lặp ≥ 3 lần hoặc David yêu cầu.
 2. Tạo mới: theo `skill-creator`; thư mục `ky-nang/<ten-khong-dau>/SKILL.md`; mô tả nói rõ khi nào dùng (câu David hay nói);
-   thêm một dòng vào bảng chọn skill trong `AGENTS.md`; chạy `bash tu-dong-hoa/install.sh` nếu skill cần liên kết vào `~/.claude/skills`.
+   thêm một dòng vào bảng chọn skill trong `AGENTS.md`; chạy `bash tu-dong-hoa/cai-dat-bo-nao.sh` nếu skill cần liên kết vào `~/.claude/skills`.
 3. Thử một lần trên việc thật hoặc đoạn ngắn (`quy-tac-thu-bang-doan-ngan`), rồi báo David một dòng.
 
 ## Tiết kiệm token

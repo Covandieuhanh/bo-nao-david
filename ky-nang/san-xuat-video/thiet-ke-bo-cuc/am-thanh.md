@@ -10,5 +10,5 @@ Mức âm theo chuẩn chung (khối 09). Học thêm thì thêm dòng, ghi ngu�
 | Nối bố cục (người co vào ô, thẻ bay) | tiếng lướt nhẹ ngắn (kiểu `tua`), nhỏ hơn tiếng thẻ | Sang Huỳnh 07/11 | chưa (highlight có `tua`) |
 | Suốt video kiến thức | nhạc nền rất nhỏ, đều, không nhịp mạnh; lời là chính | Sang Huỳnh 07/11 | có (tuyến `kien_thuc`, khối 09) |
 
-Khi làm code: thêm vào danh sách `sfx` trong `dung-video-theo-phong-cach/scripts/render_preview.py` theo `type: 'bocuc'` (mốc `start` của cảnh, mốc
+Khi làm code: thêm vào danh sách `sfx` trong `dung-video-theo-phong-cach/scripts/xem-truoc-ban-dung.py` theo `type: 'bocuc'` (mốc `start` của cảnh, mốc
 `at` của dòng có `to: true`). Thêm tiếng mới thì để ở `assets/sfx/` và ghi nguồn, giấy phép.

@@ -10,7 +10,7 @@ trước kế hoạch cảnh**.
 ## Bước 1 — Đo (máy) + nhìn (Claude)
 
 ```bash
-python3 -I $SKILL/scripts/chan_doan.py "$P"    # → check/chan-doan.md (số đo + gợi ý) + check/chan-doan.jpg (6 khung gốc)
+python3 -I $SKILL/scripts/chan-doan.py "$P"    # → check/chan-doan.md (số đo + gợi ý) + check/chan-doan.jpg (6 khung gốc)
 ```
 Script đo: khung, độ dài, **mật độ lời** (chữ/phút), **số chỗ liệt kê / bước / con số**, số câu hỏi, tỉ lệ lặng. Claude **xem
 `chan-doan.jpg`** và trả lời 4 câu: (1) có thấy rõ mặt người nói không, mặt chiếm bao nhiêu khung; (2) chủ thể cần xem là gì (người,
@@ -22,10 +22,10 @@ màn hình điện thoại / laptop, bảng, sản phẩm, cảnh); (3) quanh ch
 | Dấu hiệu hình gốc | Bố cục nền | Cách làm |
 |---|---|---|
 | Người nói trước camera, người **chiếm phần lớn khung** (selfie dọc, cận mặt), hoặc kể chuyện / cảm xúc | **giữ khung gốc** | — |
-| **Video chia sẻ kiến thức, thông tin** (lời có lý do, liệt kê, khái niệm) mà người **chiếm < ~50 % khung** (ngồi xa máy, hai bên là tường / phòng trống) | **khung chủ thể quanh người** + phần còn lại cho **bảng thông tin** (`GHI_CHU`) và cảnh, ảnh cạnh người | `khung_chu_the.py` (vùng = người, gồm tay khi múa tay) |
-| Chủ thể là **màn hình** (điện thoại, laptop, máy tính bảng), **vật**, **bảng** — chiếm < ~60 % khung, hoặc quanh có rác | **khung chủ thể**: tách chủ thể thành khung bo góc trên nền kênh; phần còn lại cho bảng ghi chú, phụ đề, cảnh | `khung_chu_the.py luoi` → đọc toạ độ → `check/khung.json` → `apply` (khối 04) |
+| **Video chia sẻ kiến thức, thông tin** (lời có lý do, liệt kê, khái niệm) mà người **chiếm < ~50 % khung** (ngồi xa máy, hai bên là tường / phòng trống) | **khung chủ thể quanh người** + phần còn lại cho **bảng thông tin** (`GHI_CHU`) và cảnh, ảnh cạnh người | `khung-chu-the.py` (vùng = người, gồm tay khi múa tay) |
+| Chủ thể là **màn hình** (điện thoại, laptop, máy tính bảng), **vật**, **bảng** — chiếm < ~60 % khung, hoặc quanh có rác | **khung chủ thể**: tách chủ thể thành khung bo góc trên nền kênh; phần còn lại cho bảng ghi chú, phụ đề, cảnh | `khung-chu-the.py luoi` → đọc toạ độ → `check/khung.json` → `apply` (khối 04) |
 | Người nhỏ trong khung rộng, nền rác, nhưng cần thấy người | khung chủ thể quanh người (ô dọc hoặc ngang) | như trên, vùng = người |
-| Gốc dọc, xuất ngang | pillar (`set_output.py pillar`) + `SIDES` | khối 04 |
+| Gốc dọc, xuất ngang | pillar (`dat-dau-ra.py pillar`) + `SIDES` | khối 04 |
 | Gốc ngang, xuất dọc (chỉ khi David nói rõ) | reframe bám người nói | khối 04 |
 | Chỉ có tiếng | sân khấu podcast | `dung-podcast` |
 
@@ -35,7 +35,7 @@ màn hình điện thoại / laptop, bảng, sản phẩm, cảnh); (3) quanh ch
 
 | Dấu hiệu nội dung (chan-doan.md) | Lớp thông tin | Code |
 |---|---|---|
-| **Dày thông tin**: ≥ 3 phút và (mật độ ≥ 140 chữ/phút **hoặc** ≥ 6 chỗ liệt kê / bước / con số), hoặc người nói chính không nhìn camera (cuộc gọi, quay màn hình, bài giảng), hoặc video chia sẻ kiến thức đã chọn khung chủ thể quanh người. Máy báo DÀY THÔNG TIN thì dùng bảng, không tự bỏ vì "nghe như kể chuyện" | **Bảng ghi chú chạy**: tên phần + ý chính nguyên văn cộng dồn, luôn hiện ở phần khung trống | `GHI_CHU` trong scenes.js (Captions.jsx) |
+| **Dày thông tin**: ≥ 3 phút và (mật độ ≥ 140 chữ/phút **hoặc** ≥ 6 chỗ liệt kê / bước / con số), hoặc người nói chính không nhìn camera (cuộc gọi, quay màn hình, bài giảng), hoặc video chia sẻ kiến thức đã chọn khung chủ thể quanh người. Máy báo DÀY THÔNG TIN thì dùng bảng, không tự bỏ vì "nghe như kể chuyện" | **Bảng ghi chú chạy**: tên phần + ý chính nguyên văn cộng dồn, luôn hiện ở phần khung trống | `GHI_CHU` trong canh.js (phu-de.jsx) |
 | Video dài > 6 phút, có các phần rõ | Chương: `CHAPTERS` + màn chương (`bocuc chuong`) hoặc thanh tiến trình ý (`bocuc tien-trinh`) khi video theo danh sách | có |
 | Mở đầu nói "trong video này…" / nhắc lại các ý đã qua | mục lục tích luỹ (`bocuc muc-luc`) | có |
 | Kể chuyện, cảm xúc, ít ý | không thêm lớp — người + phụ đề + điểm nhấn | có |
@@ -74,7 +74,7 @@ cho đỉnh và ý cần nhìn rõ. **Không có kiểu nào trong bảng mà l�
 
 ## Bước 5 — Kiểu nào lỗi ở khung nào (máy soát chặn trước)
 
-`soat_canh.mjs` báo P0: `kinetic`, `action` ở khung ngang · cảnh minh hoạ trống > 1,2 s đầu cảnh · phần tử ngoài cảnh. P1: thẻ > 4 dòng
+`soat-canh.mjs` báo P0: `kinetic`, `action` ở khung ngang · cảnh minh hoạ trống > 1,2 s đầu cảnh · phần tử ngoài cảnh. P1: thẻ > 4 dòng
 ở khung ngang. Gặp P0 → đổi kiểu theo bảng bước 4, không thử render.
 
 ## Ghi vào ke-hoach-canh.md

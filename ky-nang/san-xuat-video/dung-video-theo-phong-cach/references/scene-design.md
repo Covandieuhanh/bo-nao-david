@@ -72,15 +72,15 @@ Dọc 1080×1920 (Reels/TikTok/Shorts): nội dung trong x 70–900, y 210–142
 Component thiết kế trong một dải 435 px (y 985–1420 trong toạ độ component) nên thẻ phải gọn: tối đa ~4 dòng nội dung.
 Khi xuất, dải này được thu nhỏ còn 78% và **đặt từng cảnh theo chỗ trống, KHÔNG che mặt/người nói**:
 mặc định ngay trên dải phụ đề (y ~941–1280; phụ đề 1280–1420); mặt nằm thấp → dời lên đỉnh vùng an toàn (y 210–549);
-không vừa → thu nhỏ 68% / 60%. `face_place.sh` dò mặt và ghi `placement.js`; đặt tay bằng `place: {top, scale}` trong cảnh.
+không vừa → thu nhỏ 68% / 60%. `vi-tri-khuon-mat.sh` dò mặt và ghi `vi-tri.js`; đặt tay bằng `place: {top, scale}` trong cảnh.
 Vùng cấm = đầu (cả tóc) + cằm/cổ; thân người nên tránh khi còn chỗ. Cảnh toàn màn hình không bị ràng buộc này.
 Thiết kế component mới không giả định vị trí cố định (vd. "luôn dưới mặt") — chỉ vẽ trong dải, Place lo vị trí.
 Ngang 16:9: lề 5% mỗi bên, chừa 15% dưới cho thanh điều khiển/phụ đề.
-Kiểm tra bằng `safe_guide.py` + `composite_stills.sh` — đừng tin vào ước lượng bằng mắt.
+Kiểm tra bằng `vung-an-toan.py` + `ghep-anh-tinh.sh` — đừng tin vào ước lượng bằng mắt.
 
 ## Thẻ = màn hình toàn cảnh
-Mọi `card` (trừ podcast) render bằng `CardFull.jsx`: nền toàn cảnh, khung thẻ (hình động của variant: số chạy, danh sách tick, đồng
-hồ, biểu đồ, biểu tượng vẽ…) ở giữa. `quote` (nếu dùng) = **NGUYÊN VĂN câu người nói** ở đoạn đó (lấy từ captions.js, đúng từng chữ —
+Mọi `card` (trừ podcast) render bằng `the-toan-man.jsx`: nền toàn cảnh, khung thẻ (hình động của variant: số chạy, danh sách tick, đồng
+hồ, biểu đồ, biểu tượng vẽ…) ở giữa. `quote` (nếu dùng) = **NGUYÊN VĂN câu người nói** ở đoạn đó (lấy từ phu-de.js, đúng từng chữ —
 chỉ sửa chính tả Whisper; không tóm tắt, không diễn đạt lại); câu trích dài thì khung dựng tự bỏ, chỉ giữ hình + nhãn. `**cụm**` = tô
 màu nhấn (từ khoá, con số). `quoteAt` = mốc bắt đầu câu. Chữ trong khung thẻ (eyebrow/title/footer) giữ ngắn. Độ dài theo ý chính,
 không kéo cả đoạn dài.
@@ -93,7 +93,7 @@ thấy kém đẹp hơn. Biểu tượng vẽ thay ẢNH bên trong thẻ/montag
 
 ## Minh hoạ: biểu tượng vẽ (mặc định) hoặc ảnh
 
-- **Mặc định: biểu tượng nét vẽ dần** (`Icons.jsx`, `<Pictogram>`): `montage` items `{icon: 'mic', label, at}`, `card job` `{icon: 'sneaker'}`.
+- **Mặc định: biểu tượng nét vẽ dần** (`bieu-tuong.jsx`, `<Pictogram>`): `montage` items `{icon: 'mic', label, at}`, `card job` `{icon: 'sneaker'}`.
   Hình có sẵn: sneaker, tray, bricks, welding, hammer, mower, golf, megaphone, guideflag, mic, tv, briefcase, laptop, chart,
   person, people, meditate, heart, bulb, target, chat, book, write (viết ra giấy), check, star, house, building, clock, calendar, money, coins, phone,
   car, globe, pin, mountain, road, stairs, chip, gear, leaf, sun, moon. Đặt tên theo VẬT; chọn hình gần nghĩa nhất, thiếu thì

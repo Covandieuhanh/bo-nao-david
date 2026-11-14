@@ -1,7 +1,7 @@
 # Khối 00-sang-loc-noi-dung: Bộ lọc nội dung + phân phối kênh (làm TRƯỚC mọi việc dựng)
 
 **Dùng trong:** cả 4 loại, và mọi tài nguyên David đưa (video, file ghi âm, bài viết).
-**Đầu vào:** tài nguyên David đưa — thường KHÔNG kèm yêu cầu · hồ sơ `~/.claude/David.md` · hồ sơ kênh `../../ho-so-thuong-hieu/kenh.json` · sổ `~/Movies/_danh-muc-noi-dung/danh-muc-noi-dung.md` · **kho 100 video `du-an/ke-hoach-noi-dung-100-video.md`** (kế hoạch nội dung, repo bộ não)
+**Đầu vào:** tài nguyên David đưa — thường KHÔNG kèm yêu cầu · hồ sơ `~/.claude/david.md` · hồ sơ kênh `../../ho-so-thuong-hieu/kenh.json` · sổ `~/Movies/_danh-muc-noi-dung/danh-muc-noi-dung.md` · **kho 100 video `du-an/ke-hoach-noi-dung-100-video.md`** (kế hoạch nội dung, repo bộ não)
 **Đầu ra:** phiếu lọc (ghi vào dự án, báo kèm kết quả cuối, không chờ duyệt) · một dòng trong sổ danh mục
 **Hình mẫu:** Hieu Nguyen (2 mảng lặp lại 50/50 tập), Alex Hormozi ("được biết đến vì một điều"), Justin Welsh (content pillars), Gary Vaynerchuk (một lần nói → nhiều bài).
 **Sửa khối này → chạy lại:** không có code; đổi luật kênh → sửa `ho-so-thuong-hieu/kenh.json`.

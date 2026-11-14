@@ -1,7 +1,7 @@
 # Tái bản 2 — bộ video (10/11/2026)
 
 Gốc: bảng 164 luật của lần 1 (`du-an/tai-cau-truc-video-1.md`, David chấm đạt). File này chỉ ghi phần đổi từ sau tag `tai-ban-video-1`,
-câu máy đo còn bắt, và chỗ bộ video chép / lệch với `chuan-muc-lam-viec.md`, `co-so-tri-thuc/David.md`, `AGENTS.md`, ghi nhớ `co-so-tri-thuc/bo-nho/video-*.md`.
+câu máy đo còn bắt, và chỗ bộ video chép / lệch với `chuan-muc-lam-viec.md`, `co-so-tri-thuc/david.md`, `AGENTS.md`, ghi nhớ `co-so-tri-thuc/bo-nho/video-*.md`.
 Không đổi code.
 
 **Máy đo bộ video:** trước `dau_ngay 1 · ghi_de 5 · trung 0 · dong 3081` → sau `dau_ngay 0 · ghi_de 0 · trung 0 · dong 3079`.
@@ -32,7 +32,7 @@ Mọi dòng còn lại của bảng lần 1 giữ nguyên nhà, không đổi.
 ## Chéo bộ
 
 Bộ `nao` (`ky-nang/chuan-muc-lam-viec.md`):
-1. **§4 "Video đã chốt hoặc đã đăng: dọn file tạm bằng `don_tap.py --xoa`…"** là luật riêng video, nhà ở khối 17 (B64 lần 1). Đề xuất: thoi-quen §4 rút còn một dòng trỏ "dọn file tạm video: khối 17", bỏ "(chốt 08/11/2026)".
+1. **§4 "Video đã chốt hoặc đã đăng: dọn file tạm bằng `don-tap.py --xoa`…"** là luật riêng video, nhà ở khối 17 (B64 lần 1). Đề xuất: thoi-quen §4 rút còn một dòng trỏ "dọn file tạm video: khối 17", bỏ "(chốt 08/11/2026)".
 2. §3 và §2 là nhà của "lệnh nền / mật khẩu / hỏi một lần / báo cáo" — bộ video nay trỏ về đó (V2, V3, V5). Phiên `nao` đừng đổi số mục 2–4 mà không báo, vì quy-tac-chung §8 trỏ theo số mục.
 
 Ghi nhớ (`co-so-tri-thuc/bo-nho/`, phiên ghi-nho):
@@ -47,7 +47,7 @@ Ghi nhớ (`co-so-tri-thuc/bo-nho/`, phiên ghi-nho):
 11. Không cần ghi nhớ mới cho "bỏ phóng xen kẽ" (luật nằm trong quy-tac-chung §2, một bộ).
 
 Skill `tai-cau-truc` (không thuộc bộ nào trong `bo.json`):
-12. `do_chong_cheo.py`: mẫu `thay cho` trong `GHI_DE` bắt nhầm cách nói thường ("ghi tên kênh thay cho link"). Đợt này đã viết lại câu để về 0, nhưng nên bỏ `thay cho` khỏi regex hoặc chỉ bắt "thay cho luật".
+12. `do-chong-cheo.py`: mẫu `thay cho` trong `GHI_DE` bắt nhầm cách nói thường ("ghi tên kênh thay cho link"). Đợt này đã viết lại câu để về 0, nhưng nên bỏ `thay cho` khỏi regex hoặc chỉ bắt "thay cho luật".
 
 ## Hỏi David
 

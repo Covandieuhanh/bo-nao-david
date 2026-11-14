@@ -11,4 +11,4 @@ David chốt ngày 08/11/2026:
 
 **Why:** David thấy 3–4 chữ một lần quá ngắn, chữ quá to; người xem không đọc được cả chữ hình lẫn phụ đề cùng lúc (đã nói một lần trước, luật 02/11 chỉ ẩn khi thẻ toàn cảnh có câu trích).
 
-**How to apply:** tham số ở `ho-so-thuong-hieu/chung.json` → `phu_de`; code ở `thu-vien-tai-nguyen/subStyle.js`, `Captions.jsx` (`LOP`), montage `Show.jsx` (`nhuong`); luật ở `quy-tac-chung.md` mục 3. Cảnh không có chữ muốn giữ phụ đề: `props.giuPhuDe = true`. Liên quan [[video-chu-nguyen-van]], [[video-nhan-dien-chung]].
+**How to apply:** tham số ở `ho-so-thuong-hieu/chung.json` → `phu_de`; code ở `thu-vien-tai-nguyen/kieu-phu-de.js`, `phu-de.jsx` (`LOP`), montage `chuong-trinh.jsx` (`nhuong`); luật ở `quy-tac-chung.md` mục 3. Cảnh không có chữ muốn giữ phụ đề: `props.giuPhuDe = true`. Liên quan [[video-chu-nguyen-van]], [[video-nhan-dien-chung]].

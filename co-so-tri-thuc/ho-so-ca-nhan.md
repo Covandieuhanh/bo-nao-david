@@ -2,7 +2,7 @@
 
 Ghi ngày 17/10/2026.
 
-> **Đọc file này để hiểu con người David: tính cách, điểm mạnh, điểm cần cải thiện, nguyên tắc, động cơ.** Phần định hướng nghề theo doanh nghiệp, spa và chuyển giao quy trình là hướng cũ đã bỏ. Khi lệch thì theo [David.md](David.md). Bản này đã bỏ số nợ và các khoản chi hằng tháng theo quyết định của David.
+> **Đọc file này để hiểu con người David: tính cách, điểm mạnh, điểm cần cải thiện, nguyên tắc, động cơ.** Phần định hướng nghề theo doanh nghiệp, spa và chuyển giao quy trình là hướng cũ đã bỏ. Khi lệch thì theo [david.md](david.md). Bản này đã bỏ số nợ và các khoản chi hằng tháng theo quyết định của David.
 
 ## Khung nghiên cứu: 6 câu hỏi
 

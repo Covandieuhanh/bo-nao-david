@@ -85,8 +85,8 @@ Khoảng 100 đến 2,7 nghìn lượt xem. Đây là nhóm gần tệp mới nh
 | Việc | Hiện trạng | Nguồn đang ghi |
 |---|---|---|
 | Tên kênh YouTube | "Trainer David Trần - Việt Nam" | `kenh.json` ghi "David Trần - Trainer định hướng" |
-| Phần giới thiệu | Ba nền tảng ba câu khác nhau; câu YouTube nói "hoàn thành mục tiêu bằng việc Trainer thông qua các câu chuyện" | `kenh.json` chưa có câu chuẩn; `David.md` để sau |
-| Link TikTok | Vẫn là `ahasale.vn/...` | `BAO-CAO-TRANG-THAI.md` đã ghi David tự gỡ trên app |
+| Phần giới thiệu | Ba nền tảng ba câu khác nhau; câu YouTube nói "hoàn thành mục tiêu bằng việc Trainer thông qua các câu chuyện" | `kenh.json` chưa có câu chuẩn; `david.md` để sau |
+| Link TikTok | Vẫn là `ahasale.vn/...` | `bao-cao-trang-thai.md` đã ghi David tự gỡ trên app |
 | Rà soát video cũ | Lần trước đọc được 88 video; lưới giờ hiện 161 mục | Xem danh sách bổ sung dưới đây |
 
 ## Bổ sung cho rà soát video cũ

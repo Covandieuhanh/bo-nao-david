@@ -7,16 +7,16 @@ Drive `covandieuhanh@gmail.com` › `Drive của tôi`. Mac chỉ giữ dữ li�
 
 | Thư mục | Chứa |
 |---|---|
-| `Tu-lieu-goc/` | Video, ghi âm gốc David gửi lên. Gốc của video đang làm: `Tu-lieu-goc/<tập>/` |
-| `Thanh-pham/<tập>/ban-dai`, `highlight/` | Thành phẩm để David lấy về điện thoại, đăng |
-| `Sao-luu-mac/Movies/<tập>/` | Cả dự án dựng: `1-goc/` (gốc), video-final (mọi bản, đạt hay không), kịch bản, phụ đề, kế hoạch cắt, `phat-hanh/`. File tạm (check, davinci, public, node_modules) đã bỏ: dựng lại được từ gốc + kịch bản |
-| `Sao-luu-mac/Downloads/` | File tải về chưa thuộc tập nào |
-| `Sao-luu-mac/Documents/` | `1-nghe-nghiep`, `2-ca-nhan`, `9-luu-tru` (gồm sổ xếp file 07/11), `Obsidian` |
-| `Sao-luu-mac/Bo-nao/` | `David.Claude` (repo bộ não, cả `.git`) + `bo-nho-claude-tam/` (ghi nhớ Claude theo từng thư mục dự án). Bản gốc bộ não vẫn là GitHub |
+| `tu-lieu-goc/` | Video, ghi âm gốc David gửi lên. Gốc của video đang làm: `tu-lieu-goc/<tập>/` |
+| `thanh-pham/<tập>/ban-dai`, `highlight/` | Thành phẩm để David lấy về điện thoại, đăng |
+| `sao-luu-mac/video/<tập>/` | Cả dự án dựng: `1-goc/` (gốc), video-final (mọi bản, đạt hay không), kịch bản, phụ đề, kế hoạch cắt, `phat-hanh/`. File tạm (check, davinci, public, node_modules) đã bỏ: dựng lại được từ gốc + kịch bản |
+| `sao-luu-mac/tai-ve/` | File tải về chưa thuộc tập nào |
+| `sao-luu-mac/tai-lieu/` | `1-nghe-nghiep`, `2-ca-nhan`, `9-luu-tru` (gồm sổ xếp file 07/11), `Obsidian` |
+| `sao-luu-mac/bo-nao/` | `David.Claude` (repo bộ não, cả `.git`) + `bo-nho-claude-tam/` (ghi nhớ Claude theo từng thư mục dự án). Bản gốc bộ não vẫn là GitHub |
 
-Từ 11/11 chỉ đồng bộ bộ não, video gốc, thành quả video. `Sao-luu-mac/Downloads` và `Documents` là đợt chuyển một lần ngày 11/11, không cập nhật tiếp. Không tải lên: mật khẩu, lịch sử chat thô, bộ nhớ đệm, dữ liệu app, đồ cá nhân.
+Từ 11/11 chỉ đồng bộ bộ não, video gốc, thành quả video. `sao-luu-mac/tai-ve` và `Documents` là đợt chuyển một lần ngày 11/11, không cập nhật tiếp. Không tải lên: mật khẩu, lịch sử chat thô, bộ nhớ đệm, dữ liệu app, đồ cá nhân.
 
-## Phân loại từng tập (`Sao-luu-mac/Movies/`)
+## Phân loại từng tập (`sao-luu-mac/video/`)
 
 Trạng thái chi tiết, lịch đăng: sổ [danh-muc-noi-dung.md](danh-muc-noi-dung.md).
 
@@ -33,4 +33,4 @@ Trạng thái chi tiết, lịch đăng: sổ [danh-muc-noi-dung.md](danh-muc-no
 
 | Tập | Gốc trên Drive | Trên Mac |
 |---|---|---|
-| Cuộc gọi hợp tác (dji_mimo_20261110, 12:46) | `Tu-lieu-goc/tap-cuoc-goi-hop-tac/` | `~/Downloads/dji_mimo_20261110_…MP4`, chờ David chốt phiếu lọc |
+| Cuộc gọi hợp tác (dji_mimo_20261110, 12:46) | `tu-lieu-goc/tap-cuoc-goi-hop-tac/` | `~/Downloads/dji_mimo_20261110_…MP4`, chờ David chốt phiếu lọc |

@@ -130,4 +130,4 @@ echo; echo "## Sức khoẻ bot"
 TT="$DATA/.trang-thai"; read -r LUC PH TG < "$TT/nhip" 2>/dev/null
 echo "Kiểm lần cuối: $( [ -n "$LUC" ] && echo "$(( ($(date +%s) - LUC) )) giây trước · $PH · $TG" || echo "chưa có")"
 echo "Tự mở lại hôm nay: $(grep -c "^$(date +%F).*mo phien bot" "$TT/canh-bot.log" 2>/dev/null) lần · cảnh báo gần nhất: $(grep "canh bao" "$TT/canh-bot.log" 2>/dev/null | tail -1 | cut -c1-60)"
-echo; echo "## Việc dở và chờ David quyết: đọc BAO-CAO-TRANG-THAI.md (bảng 'Đang làm dở', mục 'Câu hỏi còn mở')"
+echo; echo "## Việc dở và chờ David quyết: đọc bao-cao-trang-thai.md (bảng 'Đang làm dở', mục 'Câu hỏi còn mở')"

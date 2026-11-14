@@ -1,6 +1,6 @@
 # Bán gói công nghệ: phễu → bán thử → bán thật
 
-Hướng 3 trong `co-so-tri-thuc/David.md` mục 4.1. Khung tư duy: `co-so-tri-thuc/mo-hinh-kinh-doanh.md` (Tiền · Thị trường · Con người; Kết quả / Vấn đề).
+Hướng 3 trong `co-so-tri-thuc/david.md` mục 4.1. Khung tư duy: `co-so-tri-thuc/mo-hinh-kinh-doanh.md` (Tiền · Thị trường · Con người; Kết quả / Vấn đề).
 Ý tưởng "Company OS" của anh Phú Ông (`danh-sach-y-tuong.md` #1) gộp vào đây.
 
 ## Mục tiêu
@@ -34,4 +34,4 @@ Có **khoản thu đầu tiên từ một gói công nghệ**, khách **ra đư�
 - [ ] Chọn từ khoá nhắn tin của hướng 3 (khác "gỡ" của trainer)
 - [ ] Liệt kê 5 người quen có nỗi đau này, nhắn hỏi thử
 - [ ] Bán thử khách đầu tiên, ghi nhật ký ca
-- [ ] Trước khoản thu đầu tiên: hỏi cơ quan ngoại kiều + tư vấn thuế ở Đức (`David.md` 4.6)
+- [ ] Trước khoản thu đầu tiên: hỏi cơ quan ngoại kiều + tư vấn thuế ở Đức (`david.md` 4.6)

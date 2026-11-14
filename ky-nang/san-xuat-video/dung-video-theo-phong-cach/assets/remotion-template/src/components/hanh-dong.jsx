@@ -1,0 +1,151 @@
+// MÀN HÀNH ĐỘNG + MÀN CHỐT (người dùng chốt 2026-11-02): mục tiêu video = người xem HIỂU ý chính rồi LÀM theo.
+//
+// action — người nói nêu một việc người xem có thể làm ("ra tắm nắng một tí", "tìm hiểu thêm về Haruku và áp dụng") →
+//   màn toàn cảnh: biểu tượng của việc đó vẽ dần trong vòng tròn, ô tick bật lên lúc `doneAt` (= "làm được"), bên dưới NGUYÊN VĂN
+//   câu nói (`quote`, `**từ**` tô nhấn). Phụ đề tạm ẩn (câu to = phụ đề). props: {icon, quote, quoteAt?, doneAt?, eyebrow?}
+//   eyebrow chỉ khi trích được từ lời (vd. 'MỖI NGÀY'); không có thì bỏ.
+// cta — MÀN CHỐT ở ~4 s cuối mọi video: câu chốt Claude TỰ SÁNG TẠO theo nội dung từng video (props {text, kind}; kind chọn
+//   biểu tượng: comment | save | follow | share — keu-goi-hanh-dong.js). Thiếu props → câu dự phòng trong keu-goi-hanh-dong.js. Màn toàn cảnh: video gốc vẫn chạy trong khung bo góc
+//   phía trên (vẫn thấy vẫy tay/like chào — public/goc.mp4, xuat-video.mjs tự nối), câu chốt to bên dưới, phụ đề vẫn chạy ở đáy.
+//   Podcast (không có hình): chỉ ô câu chốt, Place đặt giữa sân khấu. props: {text?} ghi đè câu mặc định cho riêng video đó.
+import React from 'react';
+import {AbsoluteFill, OffthreadVideo, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {BODY, C, SAFE, SAFE_W, ease, inOut, pop, rel} from '../chu-de';
+import {Eyebrow} from './lop-phu';
+import {FullShell} from './toan-man-hinh';
+import {Icon} from '../lib/bieu-tuong';
+import {Quote} from './the-toan-man';
+import CTA, {CTA_ICONS, CTA_TICK} from '../lib/keu-goi-hanh-dong.js';
+import project from '../du-an.js';
+import KHUNG from '../khung.js';
+import {fr} from '../canh';
+
+const Tick = ({p, size}) => (
+  <div style={{position: 'absolute', right: -size * 0.02, bottom: -size * 0.02, width: size * 0.34, height: size * 0.34, borderRadius: '50%',
+    background: '#30A46C', boxShadow: '0 8px 30px rgba(48,164,108,0.55)', display: 'flex', alignItems: 'center', justifyContent: 'center',
+    transform: `scale(${p})`}}>
+    <svg width={size * 0.2} height={size * 0.2} viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3.6" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M5 12.5l4.5 4.5L19 7.5" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - Math.min(1, p)} />
+    </svg>
+  </div>
+);
+
+import HS from '../hoso.json';
+import {NGAN_DOC} from '../thanh.js';   // video dọc ngắn → màn chốt trên hình (10/11/2026)
+// 2 trạng thái: không câu trích dài — chỉ biểu tượng + tick + nhãn ngắn `label` (≤ 4 chữ, cụm việc nguyên văn); phụ đề vẫn chạy
+export const Action = ({start, icon = 'check', quote: q0, quoteAt, doneAt, eyebrow, label}) => {
+  // 2 trạng thái: nhãn = `label`, không có thì lấy cụm **nhấn** trong câu (cụm việc nguyên văn), tối đa 5 chữ
+  const auto = q0 && (q0.match(/\*\*([^*]+)\*\*/) || [])[1];
+  const quote = HS.hai_trang_thai ? (label || (auto ? `**${auto.split(/\s+/).slice(0, 5).join(' ')}**` : null)) : q0;
+  const f = useCurrentFrame();
+  const {durationInFrames: d} = useVideoConfig();
+  const size = 300;
+  const done = pop(f, doneAt != null ? rel(doneAt, start) : Math.round(d * 0.55));
+  return (
+    <FullShell>
+      <div style={{position: 'absolute', left: SAFE.left, width: SAFE_W, top: 250, height: 1000, display: 'flex', flexDirection: 'column',
+        justifyContent: 'center', alignItems: 'flex-start', gap: 56}}>
+        <div style={{position: 'relative', width: size, height: size, borderRadius: '50%', border: `3px solid ${C.accent}`,
+          background: C.accentSoft, display: 'flex', alignItems: 'center', justifyContent: 'center',
+          transform: `scale(${0.85 + 0.15 * pop(f, 2)})`, boxShadow: '0 0 50px rgba(255,122,69,0.25)'}}>
+          <Icon name={icon} size={size * 0.62} at={4} stroke={2.8} />
+          <Tick p={done} size={size} />
+        </div>
+        {eyebrow && <Eyebrow style={{marginBottom: -30}}>{eyebrow}</Eyebrow>}
+        {quote && <Quote text={quote} start={start} at={quoteAt} />}
+      </div>
+    </FullShell>
+  );
+};
+
+// Dấu tick nhỏ ở góc biểu tượng (bật nảy đúng lúc tiếng "ting")
+const MiniTick = ({p}) => (
+  <div style={{position: 'absolute', right: -6, top: -6, width: 54, height: 54, borderRadius: '50%', background: '#30A46C',
+    border: `4px solid ${C.bg}`, display: 'flex', alignItems: 'center', justifyContent: 'center', transform: `scale(${p})`,
+    boxShadow: `0 0 ${24 * Math.min(1, p)}px rgba(48,164,108,0.8)`}}>
+    <svg width={28} height={28} viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M5 12.5l4.5 4.5L19 7.5" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - Math.min(1, p)} />
+    </svg>
+  </div>
+);
+
+// Ô câu chốt: bong bóng bình luận + ba chấm "đang gõ" → câu hiện từng từ (`**…**` tô nhấn)
+const CtaBox = ({text, kind, top, f, tickF, left = SAFE.left, width = SAFE_W}) => {
+  const t = text || CTA.text;
+  const kd = kind || (text ? 'comment' : CTA.kind);
+  const parts = t.split(/(\*\*[^*]+\*\*)/).filter(Boolean);
+  const n = t.replace(/\*\*/g, '').length, size = n <= 45 ? 50 : n <= 60 ? 46 : 42;   // ≤ 3 dòng, đáy ô trên dải phụ đề
+  let k = 0;
+  return (
+    <div style={{position: 'absolute', left, top, width, padding: '30px 34px', boxSizing: 'border-box',
+      borderRadius: 36, background: C.card, border: `2px solid ${C.line}`, boxShadow: '0 30px 80px rgba(0,0,0,0.45)',
+      display: 'flex', alignItems: 'center', gap: 30, transform: `translateY(${(1 - pop(f, 4)) * 40}px)`, opacity: ease(f, 2, 10)}}>
+      <div style={{position: 'relative', flexShrink: 0, width: 140, height: 140, borderRadius: '50%', background: C.accent,
+        display: 'flex', alignItems: 'center', justifyContent: 'center', transform: `scale(${1 + 0.04 * Math.sin(f / 6)})`,
+        boxShadow: '0 0 60px rgba(255,122,69,0.45)'}}>
+        <svg width={82} height={82} viewBox="0 0 24 24" fill="none" stroke={C.bg} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          {(CTA_ICONS[kd] || CTA_ICONS.comment).map((d, i) => <path key={i} d={d} />)}
+        </svg>
+        {kd === 'comment' && <div style={{position: 'absolute', top: 55, display: 'flex', gap: 9}}>
+          {[0, 1, 2].map((i) => (
+            <div key={i} style={{width: 10, height: 10, borderRadius: '50%', background: C.bg,
+              opacity: 0.35 + 0.65 * Math.max(0, Math.sin((f - i * 5) / 5))}} />
+          ))}
+        </div>}
+        <MiniTick p={pop(f, tickF, {damping: 9, stiffness: 220, mass: 0.6})} />
+      </div>
+      <div style={{fontFamily: BODY, fontWeight: 700, fontSize: size, lineHeight: 1.3, color: C.text, textWrap: 'balance'}}>
+        {parts.map((part, i) => {
+          const hi = part.startsWith('**');
+          const ws = part.replace(/\*\*/g, '').split(/(\s+)/).map((w, j) => {
+            if (/^\s+$/.test(w)) return w;
+            const a = 10 + (k++) * 2;
+            return <span key={`${i}-${j}`} style={{opacity: 0.12 + 0.88 * ease(f, a, a + 6), color: hi ? C.accent : C.text}}>{w}</span>;
+          });
+          return hi && part.length <= 30 ? <span key={i} style={{whiteSpace: 'nowrap'}}>{ws}</span> : ws;
+        })}
+      </div>
+    </div>
+  );
+};
+
+export const Cta = ({start, text, kind}) => {
+  const f = useCurrentFrame();
+  const {durationInFrames: d} = useVideoConfig();
+  // VIDEO DỌC NGẮN (David chốt 10/11/2026): không thu nhỏ video — câu chốt hiện ngay trên khung hình, đáy vùng an toàn, video kết ở chữ cuối
+  if (NGAN_DOC && !project.podcast) {
+    return <AbsoluteFill style={{opacity: ease(f, 0, 8)}}>
+      <AbsoluteFill style={{background: 'linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0) 45%)'}} />
+      <CtaBox text={text} kind={kind} top={SAFE.bottom - 330} f={f} tickF={fr(start + CTA_TICK) - fr(start)} />
+    </AbsoluteFill>;
+  }
+  if (project.podcast) {
+    return <AbsoluteFill style={{opacity: inOut(f, d, 10, 10)}}><CtaBox text={text} kind={kind} top={SAFE.overlayTop + 10} f={f} tickF={fr(start + CTA_TICK) - fr(start)} /></AbsoluteFill>;
+  }
+  // khung video: 9:16 thu nhỏ, co dần từ toàn khung vào chỗ (người xem thấy "video lùi lại nhường chỗ cho lời chốt")
+  const k = ease(f, 0, 14);
+  // khung ngang (07/11/2026 — bản dọc làm video co thành ô dọc lệch trái, câu chốt rơi khỏi khung): ô 16:9 rộng 56% giữa trên, câu chốt bên dưới
+  const LAND_ = project.width > project.height, W_ = project.width, H_ = project.height;
+  // Có khung chủ thể (khung.js — người đã nằm trong ô riêng trên goc.mp4): ô màn chốt chỉ cắt đúng ô người, cùng tỉ lệ ô người,
+  // không chiếu cả khung hình (13/11/2026 — David: "ảnh vuông mà khung lại chữ nhật bị thừa ra ngoài").
+  const ins = 0.006, sv1 = KHUNG ? {x: KHUNG.x + ins, y: KHUNG.y + ins * W_ / H_, w: KHUNG.w - 2 * ins, h: KHUNG.h - 2 * ins * W_ / H_} : {x: 0, y: 0, w: 1, h: 1};
+  // có khung chủ thể: ô người trượt nguyên tỉ lệ từ chỗ cũ vào giữa (không lộ nền tối quanh ô khi đang co)
+  const sv = KHUNG ? sv1 : {x: 0, y: 0, w: 1, h: 1};   // phần goc.mp4 đang thấy
+  const a1 = sv1.w * W_ / (sv1.h * H_);                                                        // tỉ lệ ô cuối = tỉ lệ phần cắt
+  const h1 = LAND_ ? Math.round(W_ * 0.5 * 9 / 16) : Math.round(400 * 16 / 9), w1 = Math.round(KHUNG ? h1 * a1 : LAND_ ? W_ * 0.5 : 400),
+    x1 = (W_ - w1) / 2, y1 = LAND_ ? Math.round(H_ * 0.07) : 240;   // ngang: ô cao 28% bề ngang để thẻ kết thúc trên thanh thời gian (08/11/2026)
+  const s1 = h1 / (sv1.h * H_), sc = 1 + (s1 - 1) * k;                                          // co đều, không méo hình khi đang co
+  const w = sv.w * W_ * sc, h = sv.h * H_ * sc, x = sv.x * W_ + (x1 - sv.x * W_) * k, y = sv.y * H_ + (y1 - sv.y * H_) * k;
+  const vw = w / sv.w, vh = h / sv.h;
+  return (
+    <FullShell hold>
+      <div style={{position: 'absolute', left: x, top: y, width: w, height: h, borderRadius: 36 * k, overflow: 'hidden',
+        border: k > 0.5 ? `3px solid ${C.accent}` : 'none', boxShadow: '0 30px 90px rgba(0,0,0,0.6)'}}>
+        <OffthreadVideo src={staticFile('goc.mp4')} trimBefore={fr(start)} muted
+          style={{position: 'absolute', left: -sv.x * vw, top: -sv.y * vh, width: vw, height: vh, objectFit: 'fill'}} />
+      </div>
+      <CtaBox text={text} kind={kind} top={y1 + h1 + (LAND_ ? 24 : 30)} f={f - 8} tickF={fr(start + CTA_TICK) - fr(start) - 8}
+        {...(LAND_ ? {left: Math.round(W_ * 0.16), width: Math.round(W_ * 0.68)} : {})} />
+    </FullShell>
+  );
+};

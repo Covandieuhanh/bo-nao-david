@@ -1,7 +1,7 @@
 # Nhận diện loại video (bộ định tuyến — một chỗ duy nhất)
 
 **Bước 0: BỘ LỌC NỘI DUNG** — `mo-dun/00-sang-loc-noi-dung`. David chỉ đưa tài nguyên, không kèm yêu cầu: chép lời → chấm theo hồ sơ
-`~/.claude/David.md` → phiếu lọc (kết luận, kênh, dạng, độ dài, câu hỏi) → David duyệt → mới chọn loại dựng dưới đây.
+`~/.claude/david.md` → phiếu lọc (kết luận, kênh, dạng, độ dài, câu hỏi) → David duyệt → mới chọn loại dựng dưới đây.
 Kết luận ⛔ / 👤 / 🗂 thì KHÔNG dựng video (tiết kiệm thời gian — điều David kiêng nhất).
 
 | Đầu vào David đưa | Loại | Công thức (skill) | Hồ sơ |

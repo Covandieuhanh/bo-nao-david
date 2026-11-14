@@ -10,7 +10,7 @@ thấp hơn giọng khoảng 23 dB ([[video-nhac-theo-tuyen]]); không ghép câ
 thời gian ([[video-nhan-dien-chung]], dọc ngắn). Câu hỏi "Vấn đề" / "Kết quả" và lời dẫn về bản đầy đủ để ở mô tả và bình luận ghim.
 
 **Mẫu David duyệt 06/11/2026:** cả 3 clip "Đi trainer" (`~/Movies/tap-di-trainer/3-doan-noi-bat/clip-A|B|C`, Drive
-`Thanh-pham/tap-di-trainer/highlight/clip-a|b|c.mp4`). Dựng video dọc sau này phải giống 3 clip này (trừ màn hình cuối đã bỏ).
+`thanh-pham/tap-di-trainer/highlight/clip-a|b|c.mp4`). Dựng video dọc sau này phải giống 3 clip này (trừ màn hình cuối đã bỏ).
 
 **Why:** David thấy phụ đề chồng đồ hoạ bị rối trên màn dọc; nhạc phải nghe được để dẫn cảm xúc nhưng không che lời (mức 30 dB thì mất
 hẳn, mức gần giọng thì che từ); câu kêu gọi ghép vào thì ép buộc, mất trọn vẹn. Bản 06/11 có màn hình cuối 3 giây "Bản đầy đủ trên kênh

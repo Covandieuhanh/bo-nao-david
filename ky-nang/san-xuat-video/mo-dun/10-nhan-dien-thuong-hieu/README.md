@@ -1,14 +1,14 @@
 # Khối 10-nhan-dien-thuong-hieu: Bộ nhận diện David + phong cách; rút phong cách từ video mẫu
 
 **Dùng trong:** cả 4
-**Đầu vào:** brand.json, theme.js / brand.js, video mẫu (nếu có)
+**Đầu vào:** brand.json, chu-de.js / thuong-hieu.js, video mẫu (nếu có)
 **Đầu ra:** token phong cách trong dự án
 **Tham số hồ sơ:** —
 **Sửa khối này → chạy lại:** mọi khối hình (06, 07, 08, 12, 14) → 17
 
 **File thật (code, một bản duy nhất):**
-- `dung-video-theo-phong-cach/assets/remotion-template/src/{brand.json,theme.js,fonts.js}`
-- `dung-video-theo-phong-cach/assets/montage-template/src/brand.js`
+- `dung-video-theo-phong-cach/assets/remotion-template/src/{brand.json,chu-de.js,phong-chu.js}`
+- `dung-video-theo-phong-cach/assets/montage-template/src/thuong-hieu.js`
 - `dung-video-theo-phong-cach/references/style-analysis.md`
 
 ## Luật
@@ -18,9 +18,9 @@
 
 ## Cách làm — rút phong cách từ video mẫu
 ```bash
-zsh $SKILL/scripts/analyze_video.sh "$P/ref/mau.<ext>" "$P/ref"
+zsh $SKILL/scripts/phan-tich-video.sh "$P/ref/mau.<ext>" "$P/ref"
 ```
 Xem kỹ contact sheet + các khung lớn của mẫu (nếu chỉ có ảnh chụp thì xem ảnh). Làm theo `references/style-analysis.md` để viết
-`$P/style.md`: nền, màu phụ (mã hex), hình dạng thẻ, kiểu chuyển động, các loại cảnh xuất hiện, mật độ. Rồi áp vào code: `theme.js`
+`$P/style.md`: nền, màu phụ (mã hex), hình dạng thẻ, kiểu chuyển động, các loại cảnh xuất hiện, mật độ. Rồi áp vào code: `chu-de.js`
 (màu ngoài màu nhấn), và chỉnh/viết thêm component khi mẫu có kiểu cảnh mà template chưa có. Font chữ nhấn phụ có tiếng Việt:
-`fonts.js` (cài `@fontsource/<font>`). Mẫu ngang 16:9 mà video gốc dọc: giữ tinh thần (nền, nhịp), bố cục theo khung dọc.
+`phong-chu.js` (cài `@fontsource/<font>`). Mẫu ngang 16:9 mà video gốc dọc: giữ tinh thần (nền, nhịp), bố cục theo khung dọc.

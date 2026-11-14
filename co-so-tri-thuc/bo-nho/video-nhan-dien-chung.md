@@ -21,7 +21,7 @@ caption + bình luận ghim. Video ngang và dọc dài giữ thanh, thẻ cuố
   lệ xem hết, giây rời).
 - Gộp ghi nhớ `video-doc-ngan-khong-thanh` vào đây ở tái bản 2 (10/11/2026).
 
-**How to apply:** vị trí chỉ lấy từ `ky-nang/san-xuat-video/thu-vien-tai-nguyen/nhan-dien.js` (`khung(W, H)`), thành phần `DauGoc.jsx`,
-`ThanhThoiGian.jsx`, `EndCardBody.jsx`; bảng ở `thu-vien-tai-nguyen/nhan-dien-chung.md`; nhà luật dọc ngắn `quy-tac-chung.md` mục 5, máy tự nhận
+**How to apply:** vị trí chỉ lấy từ `ky-nang/san-xuat-video/thu-vien-tai-nguyen/nhan-dien-thuong-hieu.js` (`khung(W, H)`), thành phần `dau-goc.jsx`,
+`thanh-thoi-gian.jsx`, `than-man-ket.jsx`; bảng ở `thu-vien-tai-nguyen/nhan-dien-chung.md`; nhà luật dọc ngắn `quy-tac-chung.md` mục 5, máy tự nhận
 `nganDoc()` / `NGAN_DOC` (`thanh.js`). Không viết số vị trí riêng trong khuôn dựng. Sửa nhận diện → chụp kiểm cả ngang lẫn dọc trên dự
 án đã duyệt. Liên quan [[quy-tac-hoc-la-bo-sung]], [[video-bo-cuc-tu-can]], [[video-doc-khuon-chu-chinh]], [[video-tham-my-chi-giu-nhan-dien]].

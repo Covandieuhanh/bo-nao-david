@@ -25,7 +25,7 @@ chép lời một file mẫu 10 giây và báo kết quả.
 ## Cách 2: tự cài bằng lệnh
 **Mac** (mở Terminal):
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/cai-dat-bo-nao.sh)"
 ```
 ```bash
 brew install ffmpeg node python pipx

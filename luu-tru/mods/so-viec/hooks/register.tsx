@@ -32,7 +32,7 @@ const SKILL_TYPES: Record<string, string> = {
   'tai-cau-truc': 'tai-cau-truc',
   'plugin-authoring': 'lam-mod',
   'playwright-cli': 'dieu-khien-trinh-duyet',
-  'scroll-craft': 'lam-trang-web',
+  'thiet-ke-trang-cuon': 'lam-trang-web',
 }
 
 // Nhãn cho lượt không gọi skill: model nhỏ chỉ chọn giữa các việc lớn (scripts/nhap-lich-su.py dùng cùng bộ này).

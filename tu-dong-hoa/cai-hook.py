@@ -1,6 +1,6 @@
 """Ghi hook vào ~/.claude/settings.json để đồng bộ 2 chiều bộ não với GitHub:
-- SessionStart: kéo bản mới từ GitHub về (sync.sh --keo)
-- SessionEnd: đẩy thay đổi lên (hook-sync.sh, chạy nền)
+- SessionStart: kéo bản mới từ GitHub về (dong-bo.sh --keo)
+- SessionEnd: đẩy thay đổi lên (dong-bo-hook.sh, chạy nền)
 - PostToolUse + Stop: hộp thư phiên, lời David qua Telegram vào đúng phiên (tu-dong-hoa/so-tay/hop-thu-phien.py)
 - PreToolUse: cổng duyệt việc rủi ro cho phiên việc toàn quyền (tu-dong-hoa/so-tay/cong-duyet.py)
 - SessionEnd (thứ hai): ghi tín hiệu tự học (tu-dong-hoa/hoc-lien-tuc/ghi-tin-hieu.py)
@@ -12,8 +12,8 @@ p = os.path.expanduser("~/.claude/settings.json")
 cfg = json.load(open(p)) if os.path.exists(p) else {}
 hooks = cfg.setdefault("hooks", {})
 can = {
-    "SessionStart": (f'bash "{repo}/tu-dong-hoa/sync.sh" --keo >/dev/null 2>&1 || true', '/tu-dong-hoa/sync.sh" --keo'),
-    "SessionEnd": (f'bash "{repo}/tu-dong-hoa/hook-sync.sh"', '/tu-dong-hoa/hook-sync.sh"'),
+    "SessionStart": (f'bash "{repo}/tu-dong-hoa/dong-bo.sh" --keo >/dev/null 2>&1 || true', '/tu-dong-hoa/dong-bo.sh" --keo'),
+    "SessionEnd": (f'bash "{repo}/tu-dong-hoa/dong-bo-hook.sh"', '/tu-dong-hoa/dong-bo-hook.sh"'),
 }
 # Duyệt từ xa qua Telegram (bot Sổ nhớ): David vắng thì yêu cầu duyệt và câu hỏi chuyển lên Telegram, chờ tối đa 30 phút.
 can["PermissionRequest"] = (f'python3 -I "{repo}/tu-dong-hoa/so-tay/duyet-tu-xa.py"', '/tu-dong-hoa/so-tay/duyet-tu-xa.py"')

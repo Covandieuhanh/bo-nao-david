@@ -1,6 +1,6 @@
 # Ý tưởng nghề đang cân nhắc
 
-Nơi giữ ý tưởng, góp ý về nghề mà David muốn làm tiếp với Claude. Mỗi ý: nguồn, nội dung gốc, đối chiếu định hướng, câu cần chốt, bước nhỏ nhất. Chưa ý nào là quyết định: chốt rồi thì chuyển vào `co-so-tri-thuc/David.md` (hỏi David trước) và đánh dấu ✅ ở đây.
+Nơi giữ ý tưởng, góp ý về nghề mà David muốn làm tiếp với Claude. Mỗi ý: nguồn, nội dung gốc, đối chiếu định hướng, câu cần chốt, bước nhỏ nhất. Chưa ý nào là quyết định: chốt rồi thì chuyển vào `co-so-tri-thuc/david.md` (hỏi David trước) và đánh dấu ✅ ở đây.
 
 Sổ gốc ghi lời nguyên văn: `~/Documents/2-ca-nhan/so-tay/y-tuong.md` và `nguoi.md` (mục anh Phú Ông), chỉ trên máy.
 
@@ -16,7 +16,7 @@ Sổ gốc ghi lời nguyên văn: `~/Documents/2-ca-nhan/so-tay/y-tuong.md` và
 **Lời góp ý (tóm đúng ý):** trainer doanh nghiệp thuần đang đi xuống vì AI. Nên làm sản phẩm automation "tải về là cài" cho hộ kinh doanh cá thể → DN siêu nhỏ → DN trung. Company OS chỉ là **phễu**; giá trị lớn nhất là **gói training**: máy móc chỉ là công cụ, khách mua về dùng không ra hồn → bán gói training, mở rộng, đi vào chi tiết sản phẩm, gói bán thêm gói.
 
 **Đối chiếu định hướng:**
-- Khớp: David.md 4.1 (12/11) đã mở nhiều kênh, bỏ giới hạn "không kinh doanh". Lõi vẫn là training — đúng thế mạnh "con người" của David; công cụ chỉ là cửa vào.
+- Khớp: david.md 4.1 (12/11) đã mở nhiều kênh, bỏ giới hạn "không kinh doanh". Lõi vẫn là training — đúng thế mạnh "con người" của David; công cụ chỉ là cửa vào.
 - Có sẵn nguyên liệu: chính bộ não David.Claude (skill, bot Telegram, sổ nhớ, tự học) là một "OS cá nhân" chạy thật — có thể là bản mẫu đầu tiên. David đã có người lập trình dựng hạ tầng.
 - Lệch / rủi ro: David tự nhận không mạnh kinh doanh; Chặng 1 (1–3 ca thật) vẫn là ưu tiên số một; sản phẩm phần mềm cần bảo trì, hỗ trợ khách — tốn năng lượng (luật 4 tiếng/ngày).
 

@@ -16,4 +16,4 @@ Motion graphics dùng loại nào cũng được, nhưng **không được sáng
 
 **Why:** 07/11/2026 video "Đi bộ hằng ngày": thẻ tít bị cắt dòng ở khung ngang và David thấy tít có thể lệch ý; soát lại còn 4 chỗ chữ lệch lời.
 
-**How to apply:** soát từng chữ đồ hoạ với captions.js cùng mốc trước khi render. Câu hỏi "Vấn đề / Kết quả" tự viết chỉ để ở bài đăng, bình luận ghim — không lên video. Liên quan [[quy-tac-noi-dung-cua-david]], [[video-motion-ke-chuyen]].
+**How to apply:** soát từng chữ đồ hoạ với phu-de.js cùng mốc trước khi render. Câu hỏi "Vấn đề / Kết quả" tự viết chỉ để ở bài đăng, bình luận ghim — không lên video. Liên quan [[quy-tac-noi-dung-cua-david]], [[video-motion-ke-chuyen]].

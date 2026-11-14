@@ -1,5 +1,5 @@
 {
- "_": "THAM SỐ CHUNG cả 4 loại video — học từ 80 video Việt + kênh quốc tế (xem ../nguyen-tac.md). Mỗi file loại (lam-video, ghep-vlog, podcast, highlight) GHI ĐÈ khoá trùng tên. Script đọc qua mo-dun/hoso.py; khung dựng đọc motion/src/hoso.json (chép lúc tạo dự án). Đổi giá trị → ghi lý do + hình mẫu vào file .md cùng tên.",
+ "_": "THAM SỐ CHUNG cả 4 loại video — học từ 80 video Việt + kênh quốc tế (xem ../nguyen-tac.md). Mỗi file loại (lam-video, ghep-vlog, podcast, highlight) GHI ĐÈ khoá trùng tên. Script đọc qua mo-dun/ho_so.py; khung dựng đọc motion/src/hoso.json (chép lúc tạo dự án). Đổi giá trị → ghi lý do + hình mẫu vào file .md cùng tên.",
  "_bo_cuc": "Bố cục KHÔNG có con số bắt buộc (David chốt 2026-11-07): độ dài cảnh, tỷ lệ mặt / đồ hoạ, số cảnh, số chữ nhãn do Claude tự cân theo nội dung từng video — xem ../thiet-ke-bo-cuc/README.md. Con số còn lại ở đây là thẩm mỹ (nhịp hiện / ẩn, cỡ phụ đề) và kỹ thuật (âm lượng, nền tảng).",
  "hai_trang_thai": false,
  "phu_de": {

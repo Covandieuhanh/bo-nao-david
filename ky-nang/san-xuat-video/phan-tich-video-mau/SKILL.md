@@ -26,7 +26,7 @@ Skill này chỉ là **cửa vào**; không ghi luật riêng ở đây để ch
 3. `bo-cuc.md` / `am-thanh.md` có dòng mới, ghi rõ "đã có code" hay "chưa có code".
 4. Ảnh kiểm ngang + dọc đã xem; phần cũ y nguyên so với ảnh trước khi thêm.
 5. File mẫu đã tải (nếu có) đã xoá khỏi thư mục tạm.
-6. Đã đẩy GitHub (`bash tu-dong-hoa/sync.sh --push`) và báo David: thêm gì, đã kiểm gì, chưa kiểm gì.
+6. Đã đẩy GitHub (`bash tu-dong-hoa/dong-bo.sh --push`) và báo David: thêm gì, đã kiểm gì, chưa kiểm gì.
 
 ## Nhật ký
 - 2026-11-08 · chuẩn hoá (`du-an/chuan-hoa-ky-nang.md` bước 3): đọc trước `chuan-muc-lam-viec.md`; phiếu học là cổng hỏi duy nhất, gộp điểm cần chọn; được tải bản 720p chỉ để học, học xong xoá; "Xong khi" 6 dòng.

@@ -22,13 +22,13 @@
 ## 3. David là ai (tóm tắt, chi tiết đọc file gốc)
 
 - **Trần Đức Cường**, tên nghề **David Trần**. Là nhà đào tạo thực hành: giúp người đi từ **làm giỏi** đến **dẫn đội làm được**. Công khai là **trainer**, chỉ làm **coach** trong buổi riêng 1:1.
-- **Ba hướng nghề, mục tiêu ra tiền** (`co-so-tri-thuc/David.md` 4.1): tài chính · trainer · gói công nghệ kèm đào tạo. Kênh trainer: tệp muốn tự làm chủ bản thân, lõi là **người lần đầu dẫn người**. Khung phương pháp: **ba tầng làm chủ** (bản thân → công việc → mối quan hệ), gốc nghiên cứu từ CCL.
+- **Ba hướng nghề, mục tiêu ra tiền** (`co-so-tri-thuc/david.md` 4.1): tài chính · trainer · gói công nghệ kèm đào tạo. Kênh trainer: tệp muốn tự làm chủ bản thân, lõi là **người lần đầu dẫn người**. Khung phương pháp: **ba tầng làm chủ** (bản thân → công việc → mối quan hệ), gốc nghiên cứu từ CCL.
 - Sống ở Đức từ tháng 11/2026. Khách là người Việt ở Việt Nam, làm online. Giờ làm với khách: trưa giờ Việt Nam và cuối tuần.
 - Làm theo **đợt năng lượng**, việc trí óc tối đa 4 tiếng/ngày. Quyết định lớn chờ vài ngày mới chốt. Giữ buổi nhìn lại cuối tuần.
 - Ưu tiên hiện nay: **ra tiền**; thứ tự khi phải chọn: gói công nghệ → ca trainer thật → kênh tài chính. Video và hạ tầng chạy song song, tạm dừng khi David thiếu năng lượng.
 - Kênh video: bản gốc 10 phút lên YouTube, cắt highlight dọc cho Reels/TikTok. Mỗi video có 3 phần Vấn đề · Giải pháp · Thực thi. Chỉ kể chuyện thật, ẩn danh.
 
-Đọc đủ: `co-so-tri-thuc/David.md` (hồ sơ), `co-so-tri-thuc/ho-so-ca-nhan.md` (tính cách, động cơ; phần định hướng nghề trong đó đã cũ, lệch thì theo `David.md`).
+Đọc đủ: `co-so-tri-thuc/david.md` (hồ sơ), `co-so-tri-thuc/ho-so-ca-nhan.md` (tính cách, động cơ; phần định hướng nghề trong đó đã cũ, lệch thì theo `david.md`).
 
 ## 4. Luật bắt buộc (viết thẳng ở đây, không được phá)
 
@@ -51,8 +51,8 @@
 | File | Để biết |
 |---|---|
 | `AGENTS.md` | Cửa vào: thứ tự đọc, 6 luật, bảng chọn skill |
-| `co-so-tri-thuc/David.md` | David là ai, định hướng nghề, lằn ranh |
-| `BAO-CAO-TRANG-THAI.md` | Đang làm dở gì, chờ David quyết gì |
+| `co-so-tri-thuc/david.md` | David là ai, định hướng nghề, lằn ranh |
+| `bao-cao-trang-thai.md` | Đang làm dở gì, chờ David quyết gì |
 | `du-an/danh-muc-noi-dung.md` | Sổ video: tập nào đang ở bước nào (tin sổ này hơn trạng thái) |
 | `co-so-tri-thuc/bo-nho/MEMORY.md` | Mục lục bài học và quyết định |
 | `ky-nang/san-xuat-video/phan-phoi-da-kenh/SKILL.md` | Quy trình video trọn gói (để hiểu Claude sẽ làm gì) |
@@ -148,7 +148,7 @@ File đó viết cho bot cũ, nên đọc theo bảng đổi này:
 
 **Thực thi (checklist):**
 - [ ] Đọc trọn file này
-- [ ] Đọc `AGENTS.md`, `co-so-tri-thuc/David.md`, `tu-dong-hoa/so-tay/luat-bot.md`
+- [ ] Đọc `AGENTS.md`, `co-so-tri-thuc/david.md`, `tu-dong-hoa/so-tay/luat-bot.md`
 - [ ] Cất bộ nhớ, skill, profile cũ (không xoá), ghi nơi cất
 - [ ] Cài tính cách và hồ sơ David mới
 - [ ] Cài ghi chú môi trường: đường dẫn repo, sổ nhớ, file theo dõi, công tắc, lệnh giao việc
@@ -168,7 +168,7 @@ File đó viết cho bot cũ, nên đọc theo bảng đổi này:
 | Sổ video | `/Users/moon/Documents/David.Claude/du-an/danh-muc-noi-dung.md` |
 | Sổ nhớ (Hermes ghi từ khi công tắc bật) | `/Users/moon/Documents/2-ca-nhan/so-tay/` |
 | Công tắc bot chính | `/Users/moon/Documents/2-ca-nhan/so-tay/.trang-thai/bot-chinh` |
-| Video gốc và thành quả | Google Drive `Tu-lieu-goc`, `Thanh-pham` (danh sách ở `du-an/kho-drive.md`) |
+| Video gốc và thành quả | Google Drive `tu-lieu-goc`, `thanh-pham` (danh sách ở `du-an/kho-drive.md`) |
 | Giấy tờ cá nhân (không đọc, không chép) | `/Users/moon/Documents/2-ca-nhan/` ngoài thư mục `so-tay` |
 
 Mac phải cắm điện, không gập máy thì phiên Claude mới chạy tiếp được.

@@ -73,7 +73,7 @@ sang **tiếng Việt không dấu**, chữ thường, gạch nối. Mỗi thu�
 | `ky-nang/` | Skills | `ky-nang/` |
 | `luu-tru/mods/` (mod đã gỡ 13/11) | Archive | chuyển vào `luu-tru/luu-tru/mods/` |
 | `hermes/` | (tên sản phẩm) | giữ |
-| `BAO-CAO-TRANG-THAI.md` | Status Report | `BAO-CAO-TRANG-THAI.md` |
+| `bao-cao-trang-thai.md` | Status Report | `bao-cao-trang-thai.md` |
 
 ## 3. Kỹ năng (skill): đổi cả lệnh gọi `/tên`
 
@@ -93,7 +93,7 @@ sang **tiếng Việt không dấu**, chữ thường, gạch nối. Mỗi thu�
 | `chuan-muc-lam-viec.md` | Working Norms | `chuan-muc-lam-viec.md` |
 
 Trong `san-xuat-video/`: `mo-dun/` → `mo-dun/` · `ho-so-thuong-hieu/` → `ho-so-thuong-hieu/` · `thu-vien-tai-nguyen/` → `thu-vien-tai-nguyen/` ·
-`thiet-ke-bo-cuc/` → `thiet-ke-bo-cuc/` (`nguon-tham-khao/` → `nguon-tham-khao/`) · `mau-chuan/` giữ · `TONG-QUAN.md` → `TONG-QUAN.md` ·
+`thiet-ke-bo-cuc/` → `thiet-ke-bo-cuc/` (`nguon-tham-khao/` → `nguon-tham-khao/`) · `mau-chuan/` giữ · `tong-quan.md` → `tong-quan.md` ·
 `quy-tac-chung.md` → `quy-tac-chung.md` · `nhan-dien-thuong-hieu.md` → `nhan-dien-thuong-hieu.md` · `giong-thuong-hieu-david.md` → `giong-thuong-hieu-david.md` ·
 `loi-thuong-gap.md` → `loi-thuong-gap.md` · `nhat-ky-thay-doi.md` → `nhat-ky-thay-doi.md` · `ban-giao.md` → `ban-giao.md`.
 
@@ -153,15 +153,15 @@ giữ ý, sửa từ nào lệch thuật ngữ (ví dụ `co-so-tri-thuc-github-
 | `~/Documents/2-ca-nhan/so-tay/` | Notebook | `~/Documents/2-ca-nhan/so-tay/` (`danh-sach-viec.md` → `danh-sach-viec.md`, `kho-du-lieu/` → `kho-du-lieu/`, `tin-nhan/` giữ) |
 | `~/Movies/_danh-muc-noi-dung/` | Content Inventory | `~/Movies/_danh-muc-noi-dung/` |
 | `~/Movies/tap-*` | Episode | giữ `tap-`; trong tập: `2-ban-day-du` → `2-ban-day-du`, `3-doan-noi-bat` → `3-doan-noi-bat` |
-| Drive `Tu-lieu-goc` / `Thanh-pham` | Raw Footage / Final Deliverables | `Tu-lieu-goc` / `Thanh-pham` |
+| Drive `tu-lieu-goc` / `thanh-pham` | Raw Footage / Final Deliverables | `tu-lieu-goc` / `thanh-pham` |
 | Bot Telegram "Sổ nhớ" | Notebook | tên hiển thị giữ, thư mục đổi `so-tay` ❓ (đổi cả tên bot thì David tự đổi ở BotFather) |
 
 ## 7. Không đổi (lý do kỹ thuật hoặc riêng tư)
 
 - `~/Documents/David.Claude` (thư mục bộ não): đổi tên làm mất liên kết bộ nhớ tự động và lịch sử phiên của app Claude.
-- Tên chuẩn bắt buộc của công cụ: `SKILL.md`, `README.md`, `CLAUDE.md`, `AGENTS.md`, `MEMORY.md`, `SETUP.md`, `package.json`, `settings.json`, `.gitignore`, và thư mục con `scripts/ references/ assets/ src/` trong mỗi skill (Claude và Node tìm đúng tên này).
+- Tên chuẩn bắt buộc của công cụ: `SKILL.md`, `README.md`, `CLAUDE.md`, `AGENTS.md`, `MEMORY.md`, `huong-dan-cai-dat.md`, `package.json`, `settings.json`, `.gitignore`, và thư mục con `scripts/ references/ assets/ src/` trong mỗi skill (Claude và Node tìm đúng tên này).
 - Mã nguồn (`.py .sh .js .jsx .mjs .swift`): tên file là tên lệnh trong code ❓. Đề xuất **giữ**, vì đổi là phải sửa mọi lệnh gọi mà không giúp người mở file. David muốn đổi luôn thì mình đổi theo bảng.
-- Skill bên ngoài cài vào: `playwright-cli`, `scroll-craft` (đổi thì lần cập nhật sau bị lệch).
+- Skill bên ngoài cài vào: `playwright-cli`, `thiet-ke-trang-cuon` (đổi thì lần cập nhật sau bị lệch).
 - Giấy tờ cá nhân trong `~/Documents/2-ca-nhan/` (đất, vay, huyền học, tài khoản): luật 4 không chạm giấy tờ cá nhân.
 - Thư mục của app: ChatGPT, Codex, Obsidian, Zoom, DaVinci Resolve, TV.
 

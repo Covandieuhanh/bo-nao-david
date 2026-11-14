@@ -29,7 +29,7 @@ khỏi phần "làm thế nào", chuyển lịch sử ngắn vào **Why**. Ghi n
 | video-chi-hinh-cua-chinh-video | Hình bìa chỉ từ chính video đó | giữ |
 | video-chu-nguyen-van | Chữ trên video nguyên văn; không tít tự rút, không số chạy | sửa liên kết (luon-co → motion-ke-chuyen) |
 | video-chuan-am-luong | Nhạc ~23 dB dưới giọng, −14 LUFS | gộp vào video-nhac-theo-tuyen |
-| video-chuyen-qua-drive | Drive covandieuhanh, Tu-lieu-goc / Thanh-pham theo tập | sửa: dòng "Liên quan:" trống → thêm liên kết |
+| video-chuyen-qua-drive | Drive covandieuhanh, tu-lieu-goc / thanh-pham theo tập | sửa: dòng "Liên quan:" trống → thêm liên kết |
 | video-clip-ngan-dung-doc-lap | Clip ngắn đứng độc lập, bốn câu | giữ |
 | video-dai-khong-cat | Video dài không cắt | giữ |
 | video-doc-khuon-chu-chinh | Khuôn podcast dọc: chữ chính thay phụ đề, 3 clip Đi trainer là mẫu | sửa: bỏ "màn hình cuối 3 giây" khỏi phần hiện hành (đã bỏ 10/11), giữ lịch sử ngắn; link → nhan-dien-chung |
@@ -60,13 +60,13 @@ khỏi phần "làm thế nào", chuyển lịch sử ngắn vào **Why**. Ghi n
 1. **nao** — `quy-tac-cong-cu-cai-dua-vao-skill`: luật "công cụ David đã cài mà skill chưa dùng → đề xuất tích hợp, giữ cách cũ dự phòng" không có trong bản luật nào. Đề xuất nhà: `ky-nang/chuan-muc-lam-viec.md` mục 3.
 2. **nao** — `quy-tac-khong-tu-chay-viec-cua-david`: luật "không tự chạy/chạy tiếp/làm lại việc David tạo; việc thử của Claude đặt tên `thu-…`; trước khi tắt/chạy lại thứ dùng chung thì kiểm việc của David/phiên khác" không có trong bản luật (thoi-quen mục 4 chỉ có ⏸ khi dọn). Đề xuất nhà: `chuan-muc-lam-viec.md` mục 3.
 3. **video** — `quy-tac-thu-bang-doan-ngan`: "thử skill video bằng một đoạn trọn một ý, thư mục `tap-thu-…`, xong dọn" không có trong bản luật (khối 17 chỉ có chụp thử). Đề xuất nhà: `ky-nang/san-xuat-video/quy-tac-chung.md` (mục kiểm) hoặc khối 17.
-4. **co-so-tri-thuc/video** — `video-bo-app`: "dựng video trực tiếp trong phiên Claude, không đề xuất dựng lại app/công cụ tự động trừ khi David yêu cầu" không có trong bản luật. Đề xuất nhà: `ky-nang/san-xuat-video/quy-tac-chung.md` hoặc `TONG-QUAN.md`. Kèm: thư mục `ky-nang/san-xuat-video/app/` vẫn còn trên máy (chỉ `__pycache__`, không trong git) → phiên video/điều phối xoá vào Thùng rác.
-5. **video** — `ho-so-thuong-hieu/chung.json` tuyến `kien_thuc` còn ghi "CHỜ David tải bài ambient/lo-fi" (ghi nhớ nhạc cũng ghi). Không phải luật, là việc dở → nên có dòng trong `BAO-CAO-TRANG-THAI.md` nếu chưa có.
+4. **co-so-tri-thuc/video** — `video-bo-app`: "dựng video trực tiếp trong phiên Claude, không đề xuất dựng lại app/công cụ tự động trừ khi David yêu cầu" không có trong bản luật. Đề xuất nhà: `ky-nang/san-xuat-video/quy-tac-chung.md` hoặc `tong-quan.md`. Kèm: thư mục `ky-nang/san-xuat-video/app/` vẫn còn trên máy (chỉ `__pycache__`, không trong git) → phiên video/điều phối xoá vào Thùng rác.
+5. **video** — `ho-so-thuong-hieu/chung.json` tuyến `kien_thuc` còn ghi "CHỜ David tải bài ambient/lo-fi" (ghi nhớ nhạc cũng ghi). Không phải luật, là việc dở → nên có dòng trong `bao-cao-trang-thai.md` nếu chưa có.
 6. **chung** — `du-an/danh-gia-luat.md` còn nhắc tên ghi nhớ đã gộp (`video-chuan-am-luong`, `video-nguoi-xem-trung-tam`). Là biên bản cũ, để nguyên được; nếu điều phối muốn sạch thì thêm ghi chú "đã gộp ở tái bản 2".
 
 Ghi nhớ còn lại đều có luật tương ứng trong bản luật (đã dò: nguyên văn, phụ đề 5–8 chữ, mỗi lúc một chỗ chữ, 23 dB, tuyến nhạc, 30% podcast, bìa không mặt, chỉ hình của chính video, kênh cũ, không nhãn kỹ thuật, hiểu hơn cầu kì, vẽ tiếp, HyperFrames, không tự render, ngoại lệ tự chọn, không dấu). Không thấy ghi nhớ nào ngược bản luật hiện hành sau khi sửa.
 
 ## Hỏi David
 
-1. **Ghi nhớ thuần đường dẫn máy** (`video-movies-xep-theo-tap`, `video-chuyen-qua-drive` phần đường dẫn): nội dung chỉ đúng máy Mac chính nhưng tên không bắt đầu `may-` nên vẫn lên GitHub. **Đề xuất:** giữ như cũ — Drive và cách xếp tập là quy ước dùng chung (skill `noi_luu.sh`, `phan-phoi-da-kenh` đều dùng), không đổi tên.
+1. **Ghi nhớ thuần đường dẫn máy** (`video-movies-xep-theo-tap`, `video-chuyen-qua-drive` phần đường dẫn): nội dung chỉ đúng máy Mac chính nhưng tên không bắt đầu `may-` nên vẫn lên GitHub. **Đề xuất:** giữ như cũ — Drive và cách xếp tập là quy ước dùng chung (skill `noi-luu.sh`, `phan-phoi-da-kenh` đều dùng), không đổi tên.
 2. **`video-ban-chuan-2026-11-06` và `video-lam-lai-video-cu`** là ghi nhớ việc đã xong (dạng project). **Đề xuất:** giữ, vì bộ mẫu chuẩn và luật "bỏ dấu vết kênh cũ" còn dùng cho video sau; chuyển `luu-tru/` khi David có bộ mẫu mới.

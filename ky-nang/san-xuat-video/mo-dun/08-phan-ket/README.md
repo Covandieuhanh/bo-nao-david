@@ -2,16 +2,16 @@
 
 **Dùng trong:** cả 4
 **Đầu vào:** câu chốt, tên chủ đề/tập, lịch David đưa
-**Đầu ra:** cảnh cta · composition the-cuoi · ENDCARD (edl.js)
+**Đầu ra:** cảnh cta · composition the-cuoi · ENDCARD (danh-sach-cat.js)
 **Tham số hồ sơ:** chung: youtube.man_ket_s, highlight: the_cuoi_s
 **Sửa khối này → chạy lại:** 17
 
 **File thật (code, một bản duy nhất):**
-- `dung-video-theo-phong-cach/assets/remotion-template/src/cta.js`
-- `…/components/Action.jsx (Cta)`
-- `…/components/EndCard.jsx`
-- `…/components/YtEnd.jsx`
-- `montage Show.jsx (CtaEnd, EndCard)`
+- `dung-video-theo-phong-cach/assets/remotion-template/src/keu-goi-hanh-dong.js`
+- `…/components/hanh-dong.jsx (Cta)`
+- `…/components/man-ket.jsx`
+- `…/components/man-ket-youtube.jsx`
+- `montage chuong-trinh.jsx (CtaEnd, EndCard)`
 
 ## Luật
 - **Màn chốt** (`cta`, ~4 s cuối mọi video): video lùi vào khung bo góc, một câu + biểu tượng + tick + "ting".

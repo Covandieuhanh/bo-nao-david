@@ -7,7 +7,7 @@
 **Sửa khối này → chạy lại:** —
 
 **File thật (code, một bản duy nhất):**
-- `dung-video-theo-phong-cach/scripts/thumbnail.sh`
+- `dung-video-theo-phong-cach/scripts/anh-thu-nho.sh`
 - `dung-video-theo-phong-cach/assets/thumb-template/`
 
 ## Luật
@@ -21,7 +21,7 @@
   cho video này) — không bao giờ lấy mặt, cảnh, ảnh từ video / dự án khác, kể cả khi "đẹp hơn" hay tiện tay (thumbnail podcast từng
   lấy mặt từ vlog Miếu Bà Cam → sai). Không hỏi "lấy ảnh từ video cũ" như một lựa chọn. Podcast không mặt: theo mẫu dưới (hình vẽ
   theo nội dung là ngoại lệ duy nhất của luật lấy khung từ video).
-- Lệnh: `zsh dung-video-theo-phong-cach/scripts/thumbnail.sh "$P" <giây | cN@giây | ảnh> "<DÒNG 1>" "<DÒNG 2>" <số> [left|right] [vị trí] [phóng]`.
+- Lệnh: `zsh dung-video-theo-phong-cach/scripts/anh-thu-nho.sh "$P" <giây | cN@giây | ảnh> "<DÒNG 1>" "<DÒNG 2>" <số> [left|right] [vị trí] [phóng]`.
 
 ## Mẫu ảnh bìa podcast không mặt (mẫu: `mau-chuan/thumb-podcast/chuan.jpg`)
 Video chỉ có tiếng thì bìa **không có mặt người**, kể cả ảnh chụp riêng: bìa phải khớp thứ có trong video. Luật mặt người ở trên chỉ dùng cho video quay hình.
@@ -35,8 +35,8 @@ Video chỉ có tiếng thì bìa **không có mặt người**, kể cả ảnh
 - Soát bản @160: đọc được tiêu đề và nhận ra hình.
 
 ```bash
-THUMB_HINH=danh-sach THUMB_TAG=PODCAST zsh dung-video-theo-phong-cach/scripts/thumbnail.sh "$P" - "MÌNH GIỎI" "CÁI GÌ?" 1
+THUMB_HINH=danh-sach THUMB_TAG=PODCAST zsh dung-video-theo-phong-cach/scripts/anh-thu-nho.sh "$P" - "MÌNH GIỎI" "CÁI GÌ?" 1
 ```
-`THUMB_HINH` = `danh-sach` hoặc tên trong `ICONS` của `thu-vien-tai-nguyen/Icons.jsx` (puzzle, target, people, tree...). Thiếu hình phù hợp thì vẽ thêm vào `ICONS`. Nền và hình nằm ở `assets/thumb-template/HinhPodcast.jsx`.
+`THUMB_HINH` = `danh-sach` hoặc tên trong `ICONS` của `thu-vien-tai-nguyen/bieu-tuong.jsx` (puzzle, target, people, tree...). Thiếu hình phù hợp thì vẽ thêm vào `ICONS`. Nền và hình nằm ở `assets/thumb-template/hinh-podcast.jsx`.
 
 **Căn cứ:** 5 kênh podcast không mặt có lượt xem cao (Better Version, Tri Kỷ Cảm Xúc, Hieu Nguyen, Vì sao thế nhỉ!, Tư Duy Và Sách) đều dùng hình theo nội dung cộng câu ngắn. Chỉ là mẫu nhỏ, có thể thử thêm bằng Test & Compare của YouTube.

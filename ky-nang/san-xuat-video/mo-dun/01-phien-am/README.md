@@ -7,23 +7,23 @@
 **Sửa khối này → chạy lại:** 02 (làm sạch đổi mốc → chép lại trên bản sạch), 03, 13
 
 **File thật (code, một bản duy nhất):**
-- `dung-video-theo-phong-cach/scripts/check_env.sh`
-- `dung-video-theo-phong-cach/scripts/analyze_video.sh`
-- `dung-podcast/scripts/transcribe.sh`
+- `dung-video-theo-phong-cach/scripts/kiem-moi-truong.sh`
+- `dung-video-theo-phong-cach/scripts/phan-tich-video.sh`
+- `dung-podcast/scripts/phien-am.sh`
 
 ## Cách làm
 
 ### Kiểm tra môi trường
 
 ```bash
-zsh $SKILL/scripts/check_env.sh
+zsh $SKILL/scripts/kiem-moi-truong.sh
 ```
 Thiếu gì thì xử lý theo lệnh nó in ra. Homebrew cần mật khẩu máy → đưa lệnh cho người dùng tự chạy (không bao giờ
 tự nhập mật khẩu dù được cho). Mô hình Whisper 1,5 GB: hỏi trước khi tải lần đầu.
 
 ### Hiểu video (bản sạch, đã đổi khung nếu có)
 ```bash
-zsh $SKILL/scripts/analyze_video.sh "$P/davinci/media/video_goc.mp4" "$P/check/goc"
+zsh $SKILL/scripts/phan-tich-video.sh "$P/davinci/media/video_goc.mp4" "$P/check/goc"
 ```
 Đọc `transcript.srt` (Whisper hay nghe nhầm tên riêng, thuật ngữ — tự sửa khi dùng làm chữ trên màn hình). Whisper bịa câu ở đoạn
 không lời → bỏ (quy-tac-chung mục 1).
@@ -32,5 +32,5 @@ không chắc chính tả thì dùng cách Whisper nghe được (khớp mọi l
 không đổi thành cụm chung chung hay câu tự nghĩ ra ("Haruku" thành "ĐI BỘ MỖI NGÀY" → minh hoạ sai ý).
 Xem `contact.jpg` và vài `frame_XX.jpg` để biết:
 mặt người nói nằm ở đâu, khoảng trống nào còn dùng được, nền sáng hay tối (ảnh hưởng độ dễ đọc của chữ).
-Vị trí lớp phủ không cố định: khối 05 tự đặt từng cảnh tránh mặt (`face_place.sh`), không cần chỉnh `SAFE.overlayTop`.
+Vị trí lớp phủ không cố định: khối 05 tự đặt từng cảnh tránh mặt (`vi-tri-khuon-mat.sh`), không cần chỉnh `SAFE.overlayTop`.
 

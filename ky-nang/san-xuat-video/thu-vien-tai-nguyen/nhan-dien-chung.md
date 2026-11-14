@@ -1,8 +1,8 @@
 # Bộ nhận diện chung — mọi loại video
 
 **Mọi loại video có cùng tiêu chuẩn** (vị trí, thành phần cố định, ngôn ngữ thiết kế). Chỉ **motion graphics** là tự do chọn theo loại
-video và theo từng cảnh. Một nguồn code: `nhan-dien.js` (`khung(W, H)`), `DauGoc.jsx`, `ThanhThoiGian.jsx`, `EndCardBody.jsx`,
-`tokens.js`, `brand.json`, `subStyle.js`, `cta.js`, `Icons.jsx`. Khuôn 1 video, podcast, ghép vlog, highlight đều đọc ở đây.
+video và theo từng cảnh. Một nguồn code: `nhan-dien-thuong-hieu.js` (`khung(W, H)`), `dau-goc.jsx`, `thanh-thoi-gian.jsx`, `than-man-ket.jsx`,
+`bien-thiet-ke.js`, `brand.json`, `kieu-phu-de.js`, `keu-goi-hanh-dong.js`, `bieu-tuong.jsx`. Khuôn 1 video, podcast, ghép vlog, highlight đều đọc ở đây.
 
 ## 0. Chữ ký nhận diện — thứ duy nhất thẩm mỹ phải giữ
 
@@ -16,19 +16,19 @@ Giữ ở MỌI video, mọi cảnh có chữ:
 
 Ngoài ba điều trên là **tự do sáng tạo theo nội dung**: nền tối / sáng / giấy / người mờ, kết cấu, ánh sáng, kiểu hình (biểu tượng nét
 tròn, phấn vẽ tay, ảnh), bố cục, chuyển động. Thử: che dấu góc đi, người xem quen kênh vẫn đoán được là video của David nhờ cam + chữ
-+ phụ đề → đạt. Màu nhấn, hai font chính, nhạc kênh (`tokens.js`, `brand.json`) không đổi khi học video mẫu.
++ phụ đề → đạt. Màu nhấn, hai font chính, nhạc kênh (`bien-thiet-ke.js`, `brand.json`) không đổi khi học video mẫu.
 
 ## 1. Thành phần cố định (có ở mọi video)
 
 | Thành phần | Khung dọc 1080×1920 | Khung ngang 1920×1080 | Code |
 |---|---|---|---|
 | Vùng an toàn | x 70–900, y 210–1420 (chừa nút, chữ của Reels/TikTok) | lề 5 % mọi phía (title safe SMPTE 90 %) | `khung().safe` |
-| Dấu góc ● DAVID │ chủ đề (ô nền sẫm đặc `C.nen`) | góc trên trái, top 228 | góc trên trái, top 54 (sát mép vùng an toàn) | `DauGoc.jsx`, `khung().brand` |
-| Thanh thời gian (đã chạy · thanh · còn m:ss) | y 1386, cao 30 — chỉ video dọc dài | y 996, cao 30 (sát đáy, 92–95 % chiều cao) | `ThanhThoiGian.jsx`, `khung().tl` |
-| Phụ đề | luôn chạy, đáy ngay trên thanh thời gian (y 1374) | như dọc (y 982) | `subStyle.js`, `khung().capBottom` |
-| Màn chốt (`cta`) | câu nguyên văn ≤ 55 ký tự, tick + "ting" | như dọc, ô video 50 % bề ngang, ẩn dấu góc | `cta.js`, `Action.jsx` / `Show.jsx` |
-| Thẻ cuối | chỉ video dọc dài: nhận diện / dẫn bản đầy đủ | nhận diện (chủ đề + DAVID) | `EndCardBody.jsx` |
-| Màn kết YouTube (video dài) | — | 15–20 s, khung chừa 2 video + nút đăng ký | `YtEnd.jsx` |
+| Dấu góc ● DAVID │ chủ đề (ô nền sẫm đặc `C.nen`) | góc trên trái, top 228 | góc trên trái, top 54 (sát mép vùng an toàn) | `dau-goc.jsx`, `khung().brand` |
+| Thanh thời gian (đã chạy · thanh · còn m:ss) | y 1386, cao 30 — chỉ video dọc dài | y 996, cao 30 (sát đáy, 92–95 % chiều cao) | `thanh-thoi-gian.jsx`, `khung().tl` |
+| Phụ đề | luôn chạy, đáy ngay trên thanh thời gian (y 1374) | như dọc (y 982) | `kieu-phu-de.js`, `khung().capBottom` |
+| Màn chốt (`cta`) | câu nguyên văn ≤ 55 ký tự, tick + "ting" | như dọc, ô video 50 % bề ngang, ẩn dấu góc | `keu-goi-hanh-dong.js`, `hanh-dong.jsx` / `chuong-trinh.jsx` |
+| Thẻ cuối | chỉ video dọc dài: nhận diện / dẫn bản đầy đủ | nhận diện (chủ đề + DAVID) | `than-man-ket.jsx` |
+| Màn kết YouTube (video dài) | — | 15–20 s, khung chừa 2 video + nút đăng ký | `man-ket-youtube.jsx` |
 
 Chủ đề ở dấu góc: `project.topic` (1 video), `show.name` (vlog), tên chương trình (podcast), tên tập gốc (highlight).
 Khuôn tiêu đề: dòng nhỏ cam → gạch cam → chữ cô đặc in hoa trắng, dòng nhấn cam.
@@ -40,9 +40,9 @@ Luật kèm theo:
 - **Video dọc ngắn** (Reels/TikTok/Shorts — dọc ≤ 90 s, mọi highlight, podcast dọc trích ngắn): **không thanh thời gian, không thẻ
   cuối**; màn chốt hiện câu nguyên văn ngay trên khung hình (không thu nhỏ video), video kết ở chữ cuối để tự lặp. Lý do: nền tảng đã
   có thanh riêng, "còn 0:20" và màn "hết rồi" khiến người xem lướt đi, thẻ cuối làm đứt vòng lặp. Dẫn về bản đầy đủ / mời bình luận
-  để ở caption + bình luận ghim. Máy tự nhận (`nganDoc()` trong `nhan-dien.js`, `NGAN_DOC` trong `thanh.js`).
+  để ở caption + bình luận ghim. Máy tự nhận (`nganDoc()` trong `nhan-dien-thuong-hieu.js`, `NGAN_DOC` trong `thanh.js`).
 - Ép tay: thanh thời gian `project.thanh` / thẻ cuối `project.theCuoi` (khuôn 1 video, podcast) · `export const THANH` /
-  `THE_CUOI` (edl.js khuôn ghép).
+  `THE_CUOI` (danh-sach-cat.js khuôn ghép).
 - Highlight có thanh của cả tập gốc (`HL.bar`) thì thanh đó thay thanh thường, cùng vị trí.
 
 ## 2. Phần tự do (motion graphics)
@@ -52,7 +52,7 @@ theo danh mục `../thiet-ke-bo-cuc/bo-cuc.md`. Tự do về **cái gì, lúc n�
 
 **Chữ nhấn trên người nói** (`pow`, kể cả thẻ tít mở): không chạm mặt, không nền tối mờ phủ hình (David 13/11/2026: "chữ dính vào mặt,
 nền đen mờ, rất mất thẩm mỹ"). Kiểu chuẩn là **nhãn dán**: mỗi dòng một nhãn đặc màu (dòng trước trắng chữ sẫm, dòng cuối cam chữ
-trắng), canh đáy vào đáy dải phụ đề (phụ đề nhường lúc này), khối chữ nằm ngực/bụng xa cằm. Code: `Pow` trong khuôn ghép `Show.jsx`.
+trắng), canh đáy vào đáy dải phụ đề (phụ đề nhường lúc này), khối chữ nằm ngực/bụng xa cằm. Code: `Pow` trong khuôn ghép `chuong-trinh.jsx`.
 
 ## 3. Sửa bộ nhận diện
 

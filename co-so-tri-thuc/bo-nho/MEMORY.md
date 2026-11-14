@@ -17,13 +17,13 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 - [Sửa thẳng, tái bản toàn bộ](quy-tac-sua-thang-tai-ban.md) — đổi luật thì viết lại câu cũ; máy đo báo thì tái bản cả bộ não một đợt (10/11)
 - [Thử bằng đoạn ngắn](quy-tac-thu-bang-doan-ngan.md) — thử skill video bằng một đoạn trọn một ý, cho David xem bản cuối (09/11)
 - [Gói trainer dạy cách chung](quy-tac-goi-trainer-chung.md) — mỗi gói một kỹ năng thuần, mọi AI, máy của học viên; không tư duy, chi tiết David chỉ là kết quả mẫu (13/11)
-- [David.md chỉ điều cố định](quy-tac-david-md-chi-dieu-co-dinh.md) — ý tưởng đang cân nhắc ghi du-an/danh-sach-y-tuong.md, không vào hồ sơ (12/11)
+- [david.md chỉ điều cố định](quy-tac-david-md-chi-dieu-co-dinh.md) — ý tưởng đang cân nhắc ghi du-an/danh-sach-y-tuong.md, không vào hồ sơ (12/11)
 - [Tự hỏi khi mơ hồ](quy-tac-tu-hoi-khi-mo-ho.md) — 6 tín hiệu tự dừng hỏi, kể cả giữa chừng (05/11)
 
 ## Bộ não và GitHub
 
 - [Quy ước đặt tên](co-so-tri-thuc-quy-uoc-dat-ten.md) — từ thuật ngữ kinh doanh tiếng Anh chuẩn, dịch đúng nghĩa sang tiếng Việt không dấu, tra bảng thuật ngữ (14/11)
-- [GitHub là bản gốc bộ não](co-so-tri-thuc-github-ban-goc.md) — bắt buộc đẩy ngay; repo, "cập nhật não" = sync.sh --push; Mac ↔ GitHub 2 chiều (07/11)
+- [GitHub là bản gốc bộ não](co-so-tri-thuc-github-ban-goc.md) — bắt buộc đẩy ngay; repo, "cập nhật não" = dong-bo.sh --push; Mac ↔ GitHub 2 chiều (07/11)
 - [Hồ sơ David + bộ lọc nội dung](co-so-tri-thuc-ho-so-va-bo-loc.md) — ba hướng nghề (13/11), mô hình kinh doanh, khối 00 phân hướng + bán được gì, kenh.json, sổ danh mục
 
 ## Video

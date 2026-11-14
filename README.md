@@ -4,7 +4,7 @@ Repo riêng tư. AI nào, tài khoản nào đọc xong cũng nhận đúng vai,
 
 **GitHub là bản gốc của bộ não.** Có gì mới cho skill hoặc não thì đẩy lên ngay. Bộ não có đủ mọi dữ liệu dùng chung: hồ sơ, luật, bộ nhớ, skill, mẫu, form, tài liệu tham chiếu, việc dở. Chỉ **sản phẩm** (video, bài viết, bài đăng… làm ra từ bộ não) ở lại máy và tài khoản làm ra nó.
 
-**AI đọc [AGENTS.md](AGENTS.md) trước.** Cài trên máy mới: xem [SETUP.md](SETUP.md).
+**AI đọc [AGENTS.md](AGENTS.md) trước.** Cài trên máy mới: xem [huong-dan-cai-dat.md](huong-dan-cai-dat.md).
 
 ## Câu mở đầu dán cho AI mới
 
@@ -14,14 +14,14 @@ Repo riêng tư. AI nào, tài khoản nào đọc xong cũng nhận đúng vai,
 
 | Muốn tìm | Mở |
 |---|---|
-| David là ai, định hướng nghề, lằn ranh | [co-so-tri-thuc/David.md](co-so-tri-thuc/David.md) |
+| David là ai, định hướng nghề, lằn ranh | [co-so-tri-thuc/david.md](co-so-tri-thuc/david.md) |
 | Tính cách, điểm mạnh, động cơ | [co-so-tri-thuc/ho-so-ca-nhan.md](co-so-tri-thuc/ho-so-ca-nhan.md) |
 | Luật chung cho mọi phiên Claude | [co-so-tri-thuc/chi-dan-toan-cuc.md](co-so-tri-thuc/chi-dan-toan-cuc.md) |
 | Các quyết định, bài học đã chốt | [co-so-tri-thuc/bo-nho/MEMORY.md](co-so-tri-thuc/bo-nho/MEMORY.md) (chia nhóm: luật, não, video) |
-| Đang làm dở gì, câu hỏi còn mở | [BAO-CAO-TRANG-THAI.md](BAO-CAO-TRANG-THAI.md) |
+| Đang làm dở gì, câu hỏi còn mở | [bao-cao-trang-thai.md](bao-cao-trang-thai.md) |
 | Trạng thái từng video, tài nguyên | [du-an/danh-muc-noi-dung.md](du-an/danh-muc-noi-dung.md) |
 | Hỏi trước khi làm | [ky-nang/thu-thap-yeu-cau/SKILL.md](ky-nang/thu-thap-yeu-cau/SKILL.md) |
-| Toàn bộ hệ dựng video | [ky-nang/san-xuat-video/TONG-QUAN.md](ky-nang/san-xuat-video/TONG-QUAN.md), [quy-tac-chung.md](ky-nang/san-xuat-video/quy-tac-chung.md) |
+| Toàn bộ hệ dựng video | [ky-nang/san-xuat-video/tong-quan.md](ky-nang/san-xuat-video/tong-quan.md), [quy-tac-chung.md](ky-nang/san-xuat-video/quy-tac-chung.md) |
 | Lọc nội dung có đáng làm không | [ky-nang/san-xuat-video/mo-dun/00-sang-loc-noi-dung/](ky-nang/san-xuat-video/mo-dun/00-sang-loc-noi-dung/) |
 | Giọng văn David | [ky-nang/san-xuat-video/ho-so-thuong-hieu/giong-thuong-hieu-david.md](ky-nang/san-xuat-video/ho-so-thuong-hieu/giong-thuong-hieu-david.md) |
 | Thông số từng loại video (hồ sơ tham số) | [ky-nang/san-xuat-video/ho-so-thuong-hieu/](ky-nang/san-xuat-video/ho-so-thuong-hieu/) |
@@ -31,7 +31,7 @@ Repo riêng tư. AI nào, tài khoản nào đọc xong cũng nhận đúng vai,
 | Hồ sơ CCL, hình mẫu chuẩn (kèm bảng thuật ngữ Anh – Việt) | [tai-lieu-tham-khao/ccl/ho-so-ccl-ban-tieng-viet.md](tai-lieu-tham-khao/ccl/ho-so-ccl-ban-tieng-viet.md) |
 | Nghiên cứu kênh, video mẫu | [nghien-cuu/](nghien-cuu/) |
 | Bản cũ đã thay, đã bỏ (không làm theo) | [luu-tru/](luu-tru/) |
-| Cài máy mới, đổi tài khoản | [SETUP.md](SETUP.md) |
+| Cài máy mới, đổi tài khoản | [huong-dan-cai-dat.md](huong-dan-cai-dat.md) |
 
 ## Cấu trúc
 
@@ -39,7 +39,7 @@ Repo riêng tư. AI nào, tài khoản nào đọc xong cũng nhận đúng vai,
 |---|---|
 | `AGENTS.md` | Điểm vào cho mọi AI |
 | `CLAUDE.md` | Điểm vào cho Claude Code khi mở repo này |
-| `BAO-CAO-TRANG-THAI.md` | Đang làm gì, việc tiếp theo |
+| `bao-cao-trang-thai.md` | Đang làm gì, việc tiếp theo |
 | `co-so-tri-thuc/` | Hồ sơ David, luật toàn cục, bộ nhớ (`bo-nho/`) |
 | `ky-nang/` | Toàn bộ skill: dựng video, đăng đa kênh, hỏi chuyên gia, trình duyệt; mẫu và form nằm trong skill |
 | `du-an/` | Việc đang dở: sổ danh mục, kho 100 video, rà soát video cũ |
@@ -50,8 +50,8 @@ Repo riêng tư. AI nào, tài khoản nào đọc xong cũng nhận đúng vai,
 
 ## Đồng bộ
 
-Trên Mac đã chạy `tu-dong-hoa/install.sh`, các file não trong `~/.claude` là lối tắt vào repo này, nên máy và repo là một bản. Hook tự kéo về đầu phiên, đẩy lên cuối phiên. Đồng bộ tay (nói với Claude Code **"cập nhật não"**, hoặc tự chạy):
+Trên Mac đã chạy `tu-dong-hoa/cai-dat-bo-nao.sh`, các file não trong `~/.claude` là lối tắt vào repo này, nên máy và repo là một bản. Hook tự kéo về đầu phiên, đẩy lên cuối phiên. Đồng bộ tay (nói với Claude Code **"cập nhật não"**, hoặc tự chạy):
 
 ```bash
-bash tu-dong-hoa/sync.sh
+bash tu-dong-hoa/dong-bo.sh
 ```

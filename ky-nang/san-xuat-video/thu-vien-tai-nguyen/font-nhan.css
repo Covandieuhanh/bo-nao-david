@@ -1,4 +1,4 @@
-/* FONT PHỤ — một từ nhấn (`*từ*`, tokens.js NHAN). Playfair Display 700 nghiêng (SIL OFL 1.1, font/LICENSE-playfair-display.txt).
+/* FONT PHỤ — một từ nhấn (`*từ*`, bien-thiet-ke.js NHAN). Playfair Display 700 nghiêng (SIL OFL 1.1, font/LICENSE-playfair-display.txt).
    Để file font ngay trong thư viện hình: dự án cũ / bộ mẫu chuẩn không cần cài thêm gói (10/11/2026). */
 @font-face {
   font-family: 'Playfair Display'; font-style: italic; font-weight: 700; font-display: block;

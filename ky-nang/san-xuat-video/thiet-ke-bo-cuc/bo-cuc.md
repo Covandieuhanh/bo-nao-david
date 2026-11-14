@@ -1,7 +1,7 @@
 # Danh mục bố cục
 
 Đây là kho để chọn, không phải công thức. Giữ chữ ký nhận diện (`thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0); ngoài đó tự do (10/11/2026). Chữ trong thẻ là nguyên văn lời người nói.
-Cột "Code": **có** = viết được ngay trong `scenes.js` · **chưa** = mới học ý, cần làm code khi có video cần.
+Cột "Code": **có** = viết được ngay trong `canh.js` · **chưa** = mới học ý, cần làm code khi có video cần.
 
 ## Người là chính
 
@@ -49,8 +49,8 @@ Cột "Code": **có** = viết được ngay trong `scenes.js` · **chưa** = m�
 
 | Kiểu | Hợp khi | Ngang / dọc | Code |
 |---|---|---|---|
-| **Khung chủ thể** (`khung_chu_the.py`): chủ thể tách thành khung bo góc trên nền kênh | quay màn hình điện thoại / laptop, vật, người nhỏ giữa nhiều rác | ngang (dọc: chưa thử) | có |
-| **Bảng ghi chú chạy** (`GHI_CHU` trong scenes.js): tên phần + ý nguyên văn cộng dồn, luôn hiện ở phần khung trống, cảnh hiện thì nhường | video dày thông tin, cuộc gọi, bài giảng, người nói không nhìn camera | ngang (dọc: chưa thử) | có |
+| **Khung chủ thể** (`khung-chu-the.py`): chủ thể tách thành khung bo góc trên nền kênh | quay màn hình điện thoại / laptop, vật, người nhỏ giữa nhiều rác | ngang (dọc: chưa thử) | có |
+| **Bảng ghi chú chạy** (`GHI_CHU` trong canh.js): tên phần + ý nguyên văn cộng dồn, luôn hiện ở phần khung trống, cảnh hiện thì nhường | video dày thông tin, cuộc gọi, bài giảng, người nói không nhìn camera | ngang (dọc: chưa thử) | có |
 
 ## Cách nối giữa bố cục
 
@@ -60,7 +60,7 @@ Cột "Code": **có** = viết được ngay trong `scenes.js` · **chưa** = m�
 | Thẻ trượt vào từ phía trống | vào `the-canh` | có |
 | Video thu nhỏ bay vào thẻ / thẻ phóng ra thành toàn khung | từ màn chương sang người, từ tổng quan sang chi tiết | chưa |
 
-## Viết trong `scenes.js` (video 1 người)
+## Viết trong `canh.js` (video 1 người)
 
 ```js
 // thẻ cạnh mặt
@@ -79,10 +79,10 @@ Cột "Code": **có** = viết được ngay trong `scenes.js` · **chưa** = m�
   `o-nguoi`: tỉ lệ ô tự do theo khung cắt quanh người đang nói, ô nằm đúng phía người đó ngồi, không cắt ngang mặt ai (`khung: 'ca-hai'`
   khi muốn ô chứa mọi người). `the-canh`: thẻ vào khoảng trống sát người đang nói, co theo khoảng trống, hết chỗ thì tự thành `o-nguoi`.
   `bam: 'trai'|'phai'` khi graphic nói về một người cụ thể (thẻ tên khách). `o: {x, y, w, h}` chỉ khi thật cần ép tay.
-- Vị trí người lấy từ `mat.js`, do `face_place.sh` → `nhan_place.py` tự ghi cho mọi cảnh `nhan` và `bocuc`: **mọi người** trong khung
+- Vị trí người lấy từ `mat.js`, do `vi-tri-khuon-mat.sh` → `vi-tri-nhan.py` tự ghi cho mọi cảnh `nhan` và `bocuc`: **mọi người** trong khung
   (kể cả người quay nghiêng máy không thấy rõ mặt) + **người đang nói** (pyannote + cử động miệng). Graphic đặt qua `src/lib/cho.js`:
   không đè, không làm mờ bất kỳ ai.
-- Ô người dùng video gốc (`public/goc.mp4`, render.mjs tự nối), nên cảnh `o-nguoi` / `chuong` là lớp đặc, ghép đè được như cảnh toàn màn hình.
+- Ô người dùng video gốc (`public/goc.mp4`, xuat-video.mjs tự nối), nên cảnh `o-nguoi` / `chuong` là lớp đặc, ghép đè được như cảnh toàn màn hình.
 - Chưa làm cho podcast (không có mặt) và vlog ghép (`montage-template`). Khi cần thì thêm cùng kiểu.
 
 ```js

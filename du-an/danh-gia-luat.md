@@ -1,6 +1,6 @@
 # Rà soát luật — bước 1 của chuẩn hoá skill
 
-Ngày 08/11/2026. Phạm vi: 5 skill video + `thu-thap-yeu-cau` + khối dùng chung (`quy-tac-chung`, `nguyen-tac`, `nhan-dien`, khối, hồ sơ) + `David.md`, `AGENTS.md`, bộ nhớ.
+Ngày 08/11/2026. Phạm vi: 5 skill video + `thu-thap-yeu-cau` + khối dùng chung (`quy-tac-chung`, `nguyen-tac`, `nhan-dien`, khối, hồ sơ) + `david.md`, `AGENTS.md`, bộ nhớ.
 Cách đọc: mỗi dòng có **đề xuất**. David trả lời "đồng ý hết" hoặc sửa theo số (vd. "N4 chọn khác: …"). Chưa sửa file nào; sửa ở bước 2–3.
 Nguyên tắc khi lệch: lời David mới nhất thắng (theo ngày chốt).
 
@@ -35,9 +35,9 @@ Nguyên tắc khi lệch: lời David mới nhất thắng (theo ngày chốt).
 
 | # | Luật | Đang nằm ở | Nhà đề xuất |
 |---|---|---|---|
-| T1 | Hỏi trước khi làm | `~/.claude/CLAUDE.md`, `David.md` 3.1, `AGENTS.md` luật 2, `thu-thap-yeu-cau`, ghi nhớ `quy-tac-tu-hoi-khi-mo-ho` + `quy-tac-goi-y-de-david-chon`, `quy-tac-chung` 8, `phan-phoi-da-kenh` | `thu-thap-yeu-cau` (cách hỏi) + file thói quen chung (khi nào hỏi) |
-| T2 | Đẩy GitHub / sync | `David.md` 3.8, `AGENTS.md` (2 chỗ), ghi nhớ `co-so-tri-thuc-github-ban-goc` + `co-so-tri-thuc-repo-david-claude`, `phan-tich-video-mau` | Ghi nhớ `co-so-tri-thuc-github-ban-goc` (gộp `co-so-tri-thuc-repo-david-claude` vào) + file thói quen chung (cuối việc) |
-| T3 | Luật kênh (lịch, 4·4·2, "Vấn đề / Kết quả", "gỡ") | `David.md` mục 5, `ho-so-thuong-hieu/kenh.json`, ghi nhớ `co-so-tri-thuc-ho-so-va-bo-loc` | `kenh.json`; `David.md` giữ định hướng, bỏ chi tiết lặp |
+| T1 | Hỏi trước khi làm | `~/.claude/CLAUDE.md`, `david.md` 3.1, `AGENTS.md` luật 2, `thu-thap-yeu-cau`, ghi nhớ `quy-tac-tu-hoi-khi-mo-ho` + `quy-tac-goi-y-de-david-chon`, `quy-tac-chung` 8, `phan-phoi-da-kenh` | `thu-thap-yeu-cau` (cách hỏi) + file thói quen chung (khi nào hỏi) |
+| T2 | Đẩy GitHub / sync | `david.md` 3.8, `AGENTS.md` (2 chỗ), ghi nhớ `co-so-tri-thuc-github-ban-goc` + `co-so-tri-thuc-repo-david-claude`, `phan-tich-video-mau` | Ghi nhớ `co-so-tri-thuc-github-ban-goc` (gộp `co-so-tri-thuc-repo-david-claude` vào) + file thói quen chung (cuối việc) |
+| T3 | Luật kênh (lịch, 4·4·2, "Vấn đề / Kết quả", "gỡ") | `david.md` mục 5, `ho-so-thuong-hieu/kenh.json`, ghi nhớ `co-so-tri-thuc-ho-so-va-bo-loc` | `kenh.json`; `david.md` giữ định hướng, bỏ chi tiết lặp |
 | T4 | Video dài không cắt | `quy-tac-chung` 2, ghi nhớ, podcast, `dung-video-theo-phong-cach` luật 5 + bước 3, `phan-phoi-da-kenh` | `quy-tac-chung` 2 |
 | T5 | Chữ nguyên văn | `quy-tac-chung` 1, ghi nhớ `video-chu-nguyen-van`, `cat-highlight` 3/7, `dung-video-theo-phong-cach` 4 | `quy-tac-chung` 1 |
 | T6 | Chỉ hình của chính video | `quy-tac-chung` 7, ghi nhớ, `phan-phoi-da-kenh`, khối 14 | `quy-tac-chung` 7 |
@@ -53,13 +53,13 @@ Nguyên tắc khi lệch: lời David mới nhất thắng (theo ngày chốt).
 | # | Ở đâu | Cũ | Đề xuất |
 |---|---|---|---|
 | C1 | `thu-thap-yeu-cau` dòng 8, 37 | "Khách của David = người thuê David làm nội dung"; "quyết định kinh doanh" | Khách = người lần đầu dẫn người + người xem video; bỏ "kinh doanh" |
-| C2 | `TONG-QUAN.md`, ghi nhớ `video-kien-truc-skill` | "18 khối", "mo-dun/01…18", "4 dự án mẫu", "4 skill", "2 trạng thái là mặc định" | 21 khối (00–20), 5 video chuẩn, bỏ "2 trạng thái" |
-| C3 | `dung-video-theo-phong-cach` bước 8, `multi-clip.md` dòng 11, `scene-design.md` dòng 13 ("MẶC ĐỊNH"), `mo-dun/README` dòng 14, khối 06 dòng 17, `ho-so-thuong-hieu/highlight.md`, `thu-vien-tai-nguyen/README`, chú thích trong `Illus.jsx` | Còn ghi "2 trạng thái" (code đã tắt qua `hai_trang_thai: false`) | Sửa chữ thành "bố cục tự cân" |
+| C2 | `tong-quan.md`, ghi nhớ `video-kien-truc-skill` | "18 khối", "mo-dun/01…18", "4 dự án mẫu", "4 skill", "2 trạng thái là mặc định" | 21 khối (00–20), 5 video chuẩn, bỏ "2 trạng thái" |
+| C3 | `dung-video-theo-phong-cach` bước 8, `multi-clip.md` dòng 11, `scene-design.md` dòng 13 ("MẶC ĐỊNH"), `mo-dun/README` dòng 14, khối 06 dòng 17, `ho-so-thuong-hieu/highlight.md`, `thu-vien-tai-nguyen/README`, chú thích trong `minh-hoa.jsx` | Còn ghi "2 trạng thái" (code đã tắt qua `hai_trang_thai: false`) | Sửa chữ thành "bố cục tự cân" |
 | C4 | Ghi nhớ `video-ban-chuan`, `video-doc-khuon-chu-chinh`, `video-podcast-phu-hinh-30` | Đường dẫn `~/Movies/podcast-hl-di-trainer-A|B|C`, `podcast-dji-20261105`, `podcast-muc-tieu-su-menh-v2` (không còn trên máy) | Đổi sang `~/Movies/tap-…` theo sổ chuyển file 07/11 |
 | C5 | Ghi nhớ `video-quy-trinh-style-edit` | Trỏ `~/Movies/QUY-TRINH-DUNG-VIDEO.md` (không còn); gọi David là "người dùng / họ" | Xử lý cùng T12 |
 | C6 | `ho-so-thuong-hieu/kenh.json`, ghi nhớ `co-so-tri-thuc-ho-so-va-bo-loc` | Trang "David Sức khoẻ", `@davidsuckhoe` (hướng sức khoẻ đã bỏ); ghi nhớ `video-lam-lai-video-cu` ghi kênh "David Trần - Trainer định hướng" | **David xác nhận** tên và link trang, TikTok hiện tại |
-| C7 | Ghi nhớ `co-so-tri-thuc-ho-so-va-bo-loc` | "Hồ sơ gốc bản 05/11" | Bỏ ngày, chỉ trỏ `David.md` |
-| C8 | `David.md` 3.1 | "Hỏi 3–5 câu, mỗi câu 2–3 gợi ý" (skill hiện: mỗi câu một đề xuất "đồng ý" được, việc lớn nhiều vòng) | `David.md` một dòng trỏ `thu-thap-yeu-cau` (gộp vào T1) |
+| C7 | Ghi nhớ `co-so-tri-thuc-ho-so-va-bo-loc` | "Hồ sơ gốc bản 05/11" | Bỏ ngày, chỉ trỏ `david.md` |
+| C8 | `david.md` 3.1 | "Hỏi 3–5 câu, mỗi câu 2–3 gợi ý" (skill hiện: mỗi câu một đề xuất "đồng ý" được, việc lớn nhiều vòng) | `david.md` một dòng trỏ `thu-thap-yeu-cau` (gộp vào T1) |
 
 ## Ba câu chỉ David trả lời được
 1. **N4** — lời mời "nhắn mình một chữ 'gỡ'": lên màn chốt chỉ khi David nói trong video? ➡️ Đề xuất: đúng vậy, không thì để ở bài đăng.

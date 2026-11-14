@@ -13,4 +13,4 @@ Ngày 07/11/2026 David chốt: video và tài liệu cùng nội dung phải n�
 Sổ chuyển file: `~/Movies/_danh-muc-noi-dung/so-chuyen-file-2026-11-07.tsv`.
 
 **Why:** trước đó gốc, bản dài, clip highlight của cùng một tập nằm ở 4–5 thư mục, David không tìm được.
-**How to apply:** khi dựng, bản dài và highlight của một tập dùng CÙNG một `<tên>`; các script new_*.sh lấy chỗ lưu từ `~/.claude/skills/san-xuat-video/dung-video-theo-phong-cach/scripts/noi_luu.sh`. Còn `~/Movies/vlog/_cho-xac-nhan/` chờ David nói từng file thuộc vlog nào.
+**How to apply:** khi dựng, bản dài và highlight của một tập dùng CÙNG một `<tên>`; các script new_*.sh lấy chỗ lưu từ `~/.claude/skills/san-xuat-video/dung-video-theo-phong-cach/scripts/noi-luu.sh`. Còn `~/Movies/vlog/_cho-xac-nhan/` chờ David nói từng file thuộc vlog nào.

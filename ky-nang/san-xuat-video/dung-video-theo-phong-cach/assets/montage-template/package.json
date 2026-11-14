@@ -2,9 +2,9 @@
   "name": "video-style-edit-montage",
   "private": true,
   "scripts": {
-    "studio": "remotion studio src/index.jsx",
-    "audio": "node make-audio.mjs",
-    "render": "node render-show.mjs"
+    "studio": "remotion studio src/diem-vao.jsx",
+    "audio": "node tao-am-thanh.mjs",
+    "render": "node xuat-chuong-trinh.mjs"
   },
   "dependencies": {
     "@fontsource/barlow-condensed": "^5.3.0",

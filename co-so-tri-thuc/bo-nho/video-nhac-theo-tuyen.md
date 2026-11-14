@@ -24,5 +24,5 @@ Luôn cân mức từng bài.
 - Gộp ghi nhớ `video-chuan-am-luong` vào đây ở tái bản 2 (10/11/2026).
 
 **How to apply:** đọc lời → chọn tuyến → ghi project.tuyen + lý do. Mức ở `ho-so-thuong-hieu/chung.json` mục `nhac`, cách làm ở khối 09,
-`chuan_am.py` tự chạy khi xuất. Tuyến kiến thức còn chờ David tải 1 bài ambient/lo-fi (ghi ở `chung.json`). Liên quan
+`chuan-am.py` tự chạy khi xuất. Tuyến kiến thức còn chờ David tải 1 bài ambient/lo-fi (ghi ở `chung.json`). Liên quan
 [[video-kien-truc-skill]], [[video-doc-khuon-chu-chinh]].

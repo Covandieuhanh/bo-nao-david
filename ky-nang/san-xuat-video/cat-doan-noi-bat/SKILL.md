@@ -18,7 +18,7 @@ Mục tiêu: từ một video gốc, **tự chọn ý** rồi ra các clip ngắ
 Clip đẹp mà xem xong không hiểu gì, hoặc hiểu mà không mang về được gì, là clip hỏng.
 
 
-**Tự chọn cách trình bày:** trước kịch bản cảnh, chẩn đoán + chọn theo `../thiet-ke-bo-cuc/tu-chon.md` (`dung-video-theo-phong-cach/scripts/chan_doan.py`): lớp thông tin, kiểu cảnh theo dạng câu nói; ghi "đã chọn X vì Y" vào kế hoạch cảnh.
+**Tự chọn cách trình bày:** trước kịch bản cảnh, chẩn đoán + chọn theo `../thiet-ke-bo-cuc/tu-chon.md` (`dung-video-theo-phong-cach/scripts/chan-doan.py`): lớp thông tin, kiểu cảnh theo dạng câu nói; ghi "đã chọn X vì Y" vào kế hoạch cảnh.
 
 ## Bốn câu chọn ý (luật gốc của skill, đứng trên mọi luật khác của skill khi trái nhau)
 Claude **tự chọn ý, không hỏi David chọn đoạn**. Đọc nối lời như người lạ chưa xem bản dài, trả lời đủ 4 câu cho từng clip và ghi vào `chon_y` trong `phuong-an.json`. Thiếu một câu thì chọn lại ý, không nộp.
@@ -49,7 +49,7 @@ thời gian, không thẻ cuối, màn chốt trên hình, kết ở chữ cuố
 7. **Thẻ tít mở đầu** (chuẩn DOAC/Mel Robbins): **cụm nguyên văn đắt nhất của clip**, Claude tự chọn, ngắn, 2 dòng, nửa trên khung; nêu
    tiền cược / kết quả / mâu thuẫn của clip nếu lời có. Câu chạm vẫn là lời thật ngay giây 0. Ghi tít + mốc câu gốc vào ke-hoach-cat.md.
 8. **Nhịp kênh lớn**: **cắt cứng** giữa các câu, không phóng xen kẽ ở mối cắt (quy-tac-chung mục 2); khoảng lặng ≥ 0,45 s **trong** câu và
-   > 0,6 s **giữa** câu rút còn ~0,24 s; phụ đề **cụm trọn ý 5–8 chữ, cỡ bằng chữ thẻ, ẩn khi lớp chữ motion graphic hiện** (quy-tac-chung mục 3). Giữ 1 s lặng sau câu hỏi kêu gọi. Kiểu cũ có chip tua chỉ khi David yêu cầu: `--tua` cho `cut_highlight.py` + `hl_edl.py`.
+   > 0,6 s **giữa** câu rút còn ~0,24 s; phụ đề **cụm trọn ý 5–8 chữ, cỡ bằng chữ thẻ, ẩn khi lớp chữ motion graphic hiện** (quy-tac-chung mục 3). Giữ 1 s lặng sau câu hỏi kêu gọi. Kiểu cũ có chip tua chỉ khi David yêu cầu: `--tua` cho `cat-doan-noi-bat.py` + `danh-sach-cat-doan-noi-bat.py`.
 9. **Hai tông** theo cảm xúc lời nói, đổi giữa chừng được (cú đổi tông là cú cảm xúc):
    | | **Sôi động** `soi` (mẹo, tin vui, kết quả, lời mời) | **Lắng** `lang` (tâm sự, nỗi đau, mất mát, câu hỏi day dứt) |
    |---|---|---|
@@ -59,14 +59,14 @@ thời gian, không thẻ cuối, màn chốt trên hình, kết ở chữ cuố
    Nhạc lấy từ **kho nhạc kênh** (`$SKILL/assets/music/`), Claude tự chọn theo tuyến nội dung (khối 09). Mức nhạc
    theo chuẩn âm lượng chung (thấp hơn giọng ~23 dB). Không nhãn kỹ thuật, không thẻ "TẬP NÀY CÓ GÌ?"/tên vòng.
 10. **Chừa cho bản đầy đủ đúng chỗ**: chừa một chuyện khác hoặc ý mở rộng; ý trong clip phải đi đến hết. Câu mở ưu tiên bất ngờ / kết quả lớn / tiền cược hơn lời than chung chung.
-11. **Không thẻ cuối, không thanh thời gian** (video dọc ngắn, `nhan-dien-chung.md` mục 1). `hl_edl.py` vẫn ghi `ENDCARD` từ
+11. **Không thẻ cuối, không thanh thời gian** (video dọc ngắn, `nhan-dien-chung.md` mục 1). `danh-sach-cat-doan-noi-bat.py` vẫn ghi `ENDCARD` từ
     `"endcard"` trong phuong-an.json (tên tập gốc, người nói) nhưng khuôn tự bỏ ở video dọc ngắn; ghi đủ để dùng khi David cần bản dọc dài.
     Không có tên tập gốc → hỏi David.
 12. **Tự chọn, không hỏi** (`chuan-muc-lam-viec.md` mục 2): nhận yêu cầu cắt là tự chọn ý, tít, câu màn chốt rồi dựng trọn
     một mạch. Chỉ dừng hỏi khi không ý nào đạt 4 câu hoặc câu chủ chốt dính lằn ranh. Luôn ghi rõ đã chọn gì trong báo cáo để David sửa ở bản cuối.
 13. **Học từ 20 highlight Việt** (`references/hoc-tu-20-highlight-vn.md`):
     - **Tít ghim** (mặc định tắt, hồ sơ `tit_ghim: false`, vì dọc mỗi lúc ít thứ): ghi `"tit"` vào từng option của phuong-an.json
-      (`hl_edl.py` tự viết `pow` mở đầu); `"pin": true` để tít thu nhỏ thành dải dưới dấu kênh suốt clip tới màn chốt (`pinTitle`).
+      (`danh-sach-cat-doan-noi-bat.py` tự viết `pow` mở đầu); `"pin": true` để tít thu nhỏ thành dải dưới dấu kênh suốt clip tới màn chốt (`pinTitle`).
       Nhánh podcast: `STAGE.title` = tít.
     - **Khung bìa = 0,3 s** (thẻ tít + mặt người nói rõ) — ghi mốc này vào dang-bai.md.
     - **Cảnh phản ứng**: nguồn có khán giả / người dẫn → piece thêm `"react": {"at": <giây nguồn ngay sau cụm đắt>, "from": <giây
@@ -87,7 +87,7 @@ Chỉ có phụ đề, không có video → làm bước 2–5, trả bảng c�
 | # | Bước | Khối |
 |---|---|---|
 | 0–1 | Nhận loại nguồn · tạo dự án *(bước nhẹ)* | [13](../mo-dun/13-chon-doan-noi-bat/README.md) · [01](../mo-dun/01-phien-am/README.md) |
-| 2–6 | Bản đồ cả video · tự chọn ý theo 4 câu · chọn câu · bố trí lời kêu gọi · kiểm tự đứng được + lằn ranh · cắt + kiểm lời | [13](../mo-dun/13-chon-doan-noi-bat/README.md) (chi tiết từng bước) · [02](../mo-dun/02-lam-sach/README.md) (pauses.py) · [01](../mo-dun/01-phien-am/README.md) |
+| 2–6 | Bản đồ cả video · tự chọn ý theo 4 câu · chọn câu · bố trí lời kêu gọi · kiểm tự đứng được + lằn ranh · cắt + kiểm lời | [13](../mo-dun/13-chon-doan-noi-bat/README.md) (chi tiết từng bước) · [02](../mo-dun/02-lam-sach/README.md) (khoang-lang.py) · [01](../mo-dun/01-phien-am/README.md) |
 | 7A | Dựng nguồn có người nói (mục dưới) | [11](../mo-dun/11-dung-ghep/README.md) · [04](../mo-dun/04-khung-hinh/README.md) · [05](../mo-dun/05-tranh-che-chu-the/README.md) · [06](../mo-dun/06-phan-mo-dau/README.md) · [07](../mo-dun/07-canh-minh-hoa/README.md) · [08](../mo-dun/08-phan-ket/README.md) · [03](../mo-dun/03-phu-de/README.md) · [09](../mo-dun/09-am-thanh/README.md) · [17](../mo-dun/17-kiem-soat-chat-luong/README.md) |
 | 7B | Dựng nguồn podcast / đồ hoạ (mục dưới) | [12](../mo-dun/12-san-khau-podcast/README.md) · [07](../mo-dun/07-canh-minh-hoa/README.md) · [08](../mo-dun/08-phan-ket/README.md) · [17](../mo-dun/17-kiem-soat-chat-luong/README.md) |
 | 8 | Phát hành: lịch đăng, khung bìa, mô tả, bình luận ghim, số liệu | [15](../mo-dun/15-xuat-ban/README.md) · [16](../mo-dun/16-phan-tich-so-lieu/README.md) |
@@ -98,71 +98,71 @@ Bước đánh dấu *(bước nhẹ)*: nhắc đổi mô hình rẻ hơn theo `
 Làm lần lượt cho từng clip `<id>` (A, B…). `cat/<id>.mp4` của bước 6 chỉ để **kiểm lời**; bản dựng đọc thẳng video gốc theo mốc trong phuong-an.json (mỗi câu thêm
 `"tone": "lang"|"soi"`, câu dùng cho màn chốt thêm `"cta": true`):
 ```bash
-LOI_SAN="$P/check/goc" zsh $BASE/scripts/new_montage.sh hl-<tên>-<id> "$P/nguon.<ext>"   # chạy nền → ~/Movies/tap-<tên>/3-doan-noi-bat/clip-<id> = $E (c1 = video gốc; LOI_SAN = dùng lại lời đã chép, không chép lại cả video cho mỗi clip)
-python3 -I $SKILL/scripts/hl_edl.py "$P" "$E" <id>                   # → $E/motion/src/edl.js viết sẵn
+LOI_SAN="$P/check/goc" zsh $BASE/scripts/tao-dung-ghep.sh hl-<tên>-<id> "$P/nguon.<ext>"   # chạy nền → ~/Movies/tap-<tên>/3-doan-noi-bat/clip-<id> = $E (c1 = video gốc; LOI_SAN = dùng lại lời đã chép, không chép lại cả video cho mỗi clip)
+python3 -I $SKILL/scripts/danh-sach-cat-doan-noi-bat.py "$P" "$E" <id>                   # → $E/motion/src/danh-sach-cat.js viết sẵn
 cp $SKILL/assets/music/*.mp3 "$E/motion/public/sfx/"                 # kho nhạc kênh (soi-*, lang-*)
 ```
-`hl_edl.py` viết: các câu `p1…pN` **cắt cứng**, khoảng lặng trong câu đã rút (đoạn con `p2b`, `p2c`…), không phóng xen kẽ;
+`danh-sach-cat-doan-noi-bat.py` viết: các câu `p1…pN` **cắt cứng**, khoảng lặng trong câu đã rút (đoạn con `p2b`, `p2c`…), không phóng xen kẽ;
 `SUBS` (giây timeline, chữ đúng câu nguyên văn — hiện cụm 5–8 chữ nhờ `SHORT = true`); `TS(src)` đổi giây video gốc → giây
 timeline cho lớp phủ; `TONE` + `MUSIC.tracks`; `CTA` = câu kêu gọi nguyên văn (nếu có); `HL = {…, bar: false}` (không thanh tập gốc).
-Claude chỉnh tiếp trong edl.js:
+Claude chỉnh tiếp trong danh-sach-cat.js:
 - **Phụ đề**: sửa chính tả, tô `hl` từ khoá (từ trong `hl` hiện màu cam khi tới nhịp của nó).
 - **OVERLAYS** (mốc bằng `TS(<giây trong words.srt>)`; mọi chữ nguyên văn): `pow` cụm đắt đúng lúc nói (cú chốt, ≤ 14 ký tự/dòng) · `action` khi câu HANHDONG
   (`quote` nguyên văn) · `chips` khi người nói đếm/liệt kê. Mật độ theo nội dung: dày hơn ở `soi`, thưa hơn ở `lang`.
 - **Hình**: không zoom vào / ra (David 13/11/2026: không thẩm mỹ); có thể `replay` khoảnh khắc đắt.
 - `CTA.kind` theo việc được kêu gọi (lưu → `save`, bình luận → `comment`…); không có câu kêu gọi → không đặt `CTA` (luật 4).
 - **Thẻ tít mở** (luật 7): `{type: 'pow', start: 0, end: 2.5, text: '<TÍT nguyên văn>', y: 300}` — nửa trên khung, tách khỏi phụ đề.
-  `ENDCARD` do `hl_edl.py` ghi (luật 11), khuôn tự bỏ ở video dọc ngắn.
-Rồi như multi-clip.md: `python3 -I $BASE/scripts/lift.py "$E"` → `python3 -I $BASE/scripts/overlay_guard.py "$E"` (che mặt/thân trên →
-toàn màn hình; tít ghim che đầu → ẩn) → `node stills.mjs <mốc>` (chụp: thẻ tít, mỗi pow/action lúc đầy nhất, 2–3 mốc thấy phụ đề,
-ngay sau 1–2 mối cắt, cuối clip thấy màn chốt) → sửa tới sạch → `node render-show.mjs` (nền; render các clip nối tiếp,
+  `ENDCARD` do `danh-sach-cat-doan-noi-bat.py` ghi (luật 11), khuôn tự bỏ ở video dọc ngắn.
+Rồi như multi-clip.md: `python3 -I $BASE/scripts/nang-lop.py "$E"` → `python3 -I $BASE/scripts/bao-ve-lop-phu.py "$E"` (che mặt/thân trên →
+toàn màn hình; tít ghim che đầu → ẩn) → `node anh-tinh.mjs <mốc>` (chụp: thẻ tít, mỗi pow/action lúc đầy nhất, 2–3 mốc thấy phụ đề,
+ngay sau 1–2 mối cắt, cuối clip thấy màn chốt) → sửa tới sạch → `node xuat-chuong-trinh.mjs` (nền; render các clip nối tiếp,
 không song song — tốn RAM). Không có bước duyệt kế hoạch ghép của multi-clip (luật 12).
 
 ### 7B. Dựng — nguồn podcast / toàn đồ hoạ (`dung-podcast`, khung dọc)
 ```bash
-zsh $POD/scripts/new_podcast.sh "$P/cat/<id>.mp4" hl-<tên>-<id> doc cat-thua   # mỗi clip → ~/Movies/tap-<tên>/3-doan-noi-bat/clip-<id> = $E (chỉ lấy tiếng)
-zsh $POD/scripts/transcribe.sh "$E"
-python3 -I $BASE/scripts/captions.py "$E"                         # rồi sửa chữ theo captions-goc.js của $P (đã sửa chính tả)
-PY=$(zsh $POD/scripts/py_setup.sh); $PY $POD/scripts/speakers.py "$E"; $PY $POD/scripts/envelope.py "$E"
+zsh $POD/scripts/tao-podcast.sh "$P/cat/<id>.mp4" hl-<tên>-<id> doc cat-thua   # mỗi clip → ~/Movies/tap-<tên>/3-doan-noi-bat/clip-<id> = $E (chỉ lấy tiếng)
+zsh $POD/scripts/phien-am.sh "$E"
+python3 -I $BASE/scripts/phu-de.py "$E"                         # rồi sửa chữ theo captions-goc.js của $P (đã sửa chính tả)
+PY=$(zsh $POD/scripts/cai-python.sh); $PY $POD/scripts/nguoi-noi.py "$E"; $PY $POD/scripts/duong-bao-am.py "$E"
 ```
-- `new_podcast.sh … cat-thua` còn 0,4 s lặng cuối → đệm đủ 1 s lặng, cập nhật `project.duration`, chạy lại `envelope.py`.
-- **Tông, nhạc, thẻ cuối**: `python3 -I $SKILL/scripts/hl_apply.py "$P" <id> "$E"` → `motion/src/highlight.js` (cắt cứng: `bar: false`,
+- `tao-podcast.sh … cat-thua` còn 0,4 s lặng cuối → đệm đủ 1 s lặng, cập nhật `project.duration`, chạy lại `duong-bao-am.py`.
+- **Tông, nhạc, thẻ cuối**: `python3 -I $SKILL/scripts/ap-dung-doan-noi-bat.py "$P" <id> "$E"` → `motion/src/doan-noi-bat.js` (cắt cứng: `bar: false`,
   không chip tua; tự trừ phần cắt đầu trong `check/trim.txt`).
 - Số người nói (1|2) và `STAGE` lấy từ `scenes-goc.js`: `title` = tên tập gốc, `speakers` = tên người nói gốc, `show` như gốc.
-  `theme.js`/`fonts.js` khác mặc định → chép sang. Biểu tượng vẽ thêm trong dự án gốc → chép `Icons.jsx` nếu cảnh cần.
+  `chu-de.js`/`phong-chu.js` khác mặc định → chép sang. Biểu tượng vẽ thêm trong dự án gốc → chép `bieu-tuong.jsx` nếu cảnh cần.
 - **Không bìa** (`COVER = null`) trừ khi David muốn — video ngắn vào thẳng câu chạm.
 - `"endcard": {}` trong phuong-an.json là đủ (trống = lấy `STAGE.title` + người nói của `STAGE`); khuôn tự bỏ thẻ cuối ở video dọc ngắn.
 - `TOPICS` 2–3 mục cho cả clip (mốc = lúc bắt đầu ý), chữ trích lời, không lặp chữ của cảnh đang hiện.
-- **Tông + nhạc**: ghi `tone` cho từng câu như 7A; `hl_apply.py` chép vào `highlight.js` (`music`) → `render_preview.py` trộn nhạc
+- **Tông + nhạc**: ghi `tone` cho từng câu như 7A; `ap-dung-doan-noi-bat.py` chép vào `doan-noi-bat.js` (`music`) → `xem-truoc-ban-dung.py` trộn nhạc
   kho kênh dưới tiếng nói (`ho-so-thuong-hieu/highlight.json` → `nhac_chu_chinh`), không tiếng ký hiệu đầu clip; chuyển cảnh `lang` không tiếng vút.
-- `pod_stills.sh` chụp thử (mỗi cảnh lúc đầy nhất + vài mốc `nen@`) → `node render.mjs` → `podcast_base.py` → `render_preview.py`
-  → `check_frames.sh` như bước 7–9 của `$POD/SKILL.md`.
+- `anh-tinh-podcast.sh` chụp thử (mỗi cảnh lúc đầy nhất + vài mốc `nen@`) → `node xuat-video.mjs` → `nen-podcast.py` → `xem-truoc-ban-dung.py`
+  → `kiem-khung-hinh.sh` như bước 7–9 của `$POD/SKILL.md`.
 
 ### Kịch bản highlight podcast (7B) — mẫu chuẩn 3 clip "Đi trainer", MỌI chữ nguyên văn lời trong clip
-Mẫu: `~/Movies/tap-di-trainer/3-doan-noi-bat/clip-{A,B,C}`, thành phẩm ở Drive `Thanh-pham/tap-di-trainer/highlight/clip-a|b|c.mp4`, lời và kịch bản ở `du-an/video-di-trainer/`.
-- **Chữ chính thay phụ đề** (`hl_apply.py` tự bật `chu_chinh`): không dải phụ đề, không dòng chủ đề, không `kinetic`; mỗi dòng `captions.js` là một câu trọn ý (≤ 3 dòng, ~55 ký tự), có `hl` từ khoá. Cảnh đồ hoạ dùng `illus` `single` `compact: true`, không `label`, để chỉ có một lớp chữ.
+Mẫu: `~/Movies/tap-di-trainer/3-doan-noi-bat/clip-{A,B,C}`, thành phẩm ở Drive `thanh-pham/tap-di-trainer/highlight/clip-a|b|c.mp4`, lời và kịch bản ở `du-an/video-di-trainer/`.
+- **Chữ chính thay phụ đề** (`ap-dung-doan-noi-bat.py` tự bật `chu_chinh`): không dải phụ đề, không dòng chủ đề, không `kinetic`; mỗi dòng `phu-de.js` là một câu trọn ý (≤ 3 dòng, ~55 ký tự), có `hl` từ khoá. Cảnh đồ hoạ dùng `illus` `single` `compact: true`, không `label`, để chỉ có một lớp chữ.
 - **Hoàn cảnh:** thiếu thì đưa câu nguyên văn nêu hoàn cảnh lên đầu clip.
 - `hook` mở đầu: **thẻ tít** nguyên văn (luật 7), `eyebrow` trích lời hoặc bỏ trống.
 - **Hình theo ý cần hiểu**, không lấp từng cụm lời: thêm `montage`/`card` biểu tượng (biểu tượng vẽ + nhãn trích lời) chỉ ở đoạn mà hình
   giúp người xem hiểu nhanh hơn (quy-tac-chung mục 0). 3 clip "Đi trainer" là mẫu về khuôn (chữ chính, nhạc, màn chốt).
 - `action` đúng lúc câu HANHDONG (`icon` — thiếu thì vẽ thêm: `write` = viết ra giấy; `quote` nguyên văn, `quoteAt`, `doneAt`).
 - Cú chốt cảm xúc: cụm ngắn nhất, đắt nhất, `start` = lúc bắt đầu nói cụm đó (mốc từ `words.srt` của `$E`). Nguồn người nói mà
-  `face_place.sh` báo "⚠ vẫn che mặt" → đổi cú chốt thành `card` toàn cảnh (vd. `ages` cho con số: số chạy đúng lúc nói + `quote`
+  `vi-tri-khuon-mat.sh` báo "⚠ vẫn che mặt" → đổi cú chốt thành `card` toàn cảnh (vd. `ages` cho con số: số chạy đúng lúc nói + `quote`
   nguyên văn; `ages` cần `pillAt` kể cả khi nhãn tự ẩn, thiếu thì lỗi "Frame NaN"), đặt sau phần dồn khung.
 - Tối đa một `card` nếu ý chính có con số, so sánh, danh sách — không thì bỏ.
 - **Màn chốt** theo luật 4: có câu kêu gọi nguyên văn → `cta` `text` = câu đó (≤ 55 ký tự; dài hơn → chọn vế trọn ý; `**cụm**` tô nhấn),
   `kind` theo việc được kêu gọi; báo cáo ghi mốc của câu. Không có → kết ở câu chốt ý.
 - Kiểm thêm khi chụp thử: chữ to có đủ lớn không (dòng dài làm chữ co nhỏ → mất lực, rút cụm); vài mốc thấy chữ chính đọc rõ, không chạm
-  sóng âm. `phu-de@…` không có trong `composite_stills.sh` khi đứng riêng → tự ghép lên `video_goc.mp4` cùng mốc.
+  sóng âm. `phu-de@…` không có trong `ghep-anh-tinh.sh` khi đứng riêng → tự ghép lên `video_goc.mp4` cùng mốc.
 - Bản cuối: 1080×1920, thời lượng theo ý, âm lượng/tiếng rè bằng nguồn.
 
 ## Bảng phụ thuộc (sửa X → chạy lại Y)
 | Sửa | Chạy lại |
 |---|---|
-| phuong-an.json (câu, mốc, tit, react, tone) | cut_highlight.py (kiểm lời) → hl_edl.py → lift.py → overlay_guard.py → stills → render |
-| edl.js sửa tay (OVERLAYS, SUBS) | overlay_guard.py → stills → render-show.mjs |
-| 7B: cat/<id>.mp4 | new_podcast.sh … → hl_apply.py → render.mjs → podcast_base.py → render_preview.py |
-| hồ sơ highlight | hl_edl.py / cut_highlight.py chạy lại |
+| phuong-an.json (câu, mốc, tit, react, tone) | cat-doan-noi-bat.py (kiểm lời) → danh-sach-cat-doan-noi-bat.py → nang-lop.py → bao-ve-lop-phu.py → stills → render |
+| danh-sach-cat.js sửa tay (OVERLAYS, SUBS) | bao-ve-lop-phu.py → stills → xuat-chuong-trinh.mjs |
+| 7B: cat/<id>.mp4 | tao-podcast.sh … → ap-dung-doan-noi-bat.py → xuat-video.mjs → nen-podcast.py → xem-truoc-ban-dung.py |
+| hồ sơ highlight | danh-sach-cat-doan-noi-bat.py / cat-doan-noi-bat.py chạy lại |
 
 ## Tiêu chí đạt
 - Mỗi clip đạt đủ bốn câu chọn ý (`chon_y`), báo cáo ghi 4 câu + lời đọc nối + mốc đoạn ghép
@@ -174,7 +174,7 @@ Mẫu: `~/Movies/tap-di-trainer/3-doan-noi-bat/clip-{A,B,C}`, thành phẩm ở 
 - Không đổi loại video (podcast không thành người nói, người nói không thành toàn đồ hoạ); không cắt thẳng hình đồ hoạ ngang vào khung dọc.
 - Không giọng đọc AI thay người nói; không đưa giá, gói dịch vụ, lời bán hàng vào clip.
 - Không đốt phụ đề bằng ffmpeg (`subtitles=`/`drawtext` — ffmpeg Homebrew không có libass/freetype); phụ đề luôn qua Remotion
-  theo chuẩn chung `subStyle.js`; không phủ phụ đề lên video đã có phụ đề đốt sẵn.
+  theo chuẩn chung `kieu-phu-de.js`; không phủ phụ đề lên video đã có phụ đề đốt sẵn.
 
 ## Cấu trúc
 ```
@@ -196,7 +196,7 @@ $SKILL/assets/music/               # soi-*.mp3 · lang-*.mp3 — kho nhạc kên
 5. Phụ đề cụm ~5–8 chữ (tối đa theo hồ sơ `phu_de.ngan_max_chu`) không chồng chữ motion graphic; không thanh thời gian, không thẻ cuối.
 6. Nhạc từ kho kênh, thấp hơn giọng ~23 dB.
 7. Có dang-bai.md (lịch đăng, mốc bìa, mô tả, bình luận ghim) + so-lieu.md; David không phải sửa lại vì trái luật đã chốt.
-8. David chốt cả tập → dọn file tạm luôn bằng `don_tap.py --xoa` rồi `luu_drive.sh` lên Drive (khối 17), không hỏi lại; chỉ hỏi phần ⏸ đang dở.
+8. David chốt cả tập → dọn file tạm luôn bằng `don-tap.py --xoa` rồi `luu-drive.sh` lên Drive (khối 17), không hỏi lại; chỉ hỏi phần ⏸ đang dở.
 
 ## Tài liệu kèm (chỉ đọc khi bước cần, cân nhắc đổi luật hoặc gỡ lỗi)
 - `references/nhat-ky-thay-doi.md` — quyết định theo ngày + lý do.
@@ -204,5 +204,5 @@ $SKILL/assets/music/               # soi-*.mp3 · lang-*.mp3 — kho nhạc kên
 - Ví dụ thật (bản chuẩn): `~/Movies/tap-di-trainer/3-doan-noi-bat/clip-A|B|C`. Nguồn có người nói chưa có ví dụ đang giữ trên máy.
 
 ## Nhật ký
-- 2026-11-10 · David chốt: clip dọc bỏ thanh thời gian và thẻ cuối, màn chốt trên hình (quy-tac-chung 5); `hl_edl.py` vẫn ghi ENDCARD nhưng khuôn tự bỏ (`nganDoc`).
+- 2026-11-10 · David chốt: clip dọc bỏ thanh thời gian và thẻ cuối, màn chốt trên hình (quy-tac-chung 5); `danh-sach-cat-doan-noi-bat.py` vẫn ghi ENDCARD nhưng khuôn tự bỏ (`nganDoc`).
 - 2026-11-08 · chuẩn hoá (`du-an/chuan-hoa-ky-nang.md` bước 3): mọi chữ nguyên văn, tít = cụm đắt nhất, bỏ "tít báo" (N3); màn chốt một luật cả hai nhánh, không có câu kêu gọi thì không dừng (N13); thẻ cuối "Bản đầy đủ trên kênh …", không nút phát, bỏ câu gợi tò mò Claude viết (N14); phụ đề cụm 5–8 chữ (N5); bỏ số nhịp/mật độ (N6); "kho nhạc kênh" (N7); gộp khuôn podcast dọc vào kịch bản 7B; đọc trước 3 file; bước nhẹ 0–1; sửa link tài liệu; rút mô tả; thêm "Xong khi". Chi tiết các quyết định trước: `references/nhat-ky-thay-doi.md`.

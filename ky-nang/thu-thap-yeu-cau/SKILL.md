@@ -7,7 +7,7 @@ description: Luật hỏi của David — chỉ hỏi trước khi đụng thôn
 
 Đọc trước: `ky-nang/chuan-muc-lam-viec.md`. File này là nhà của **cách hỏi và khi nào hỏi**; thoi-quen mục 2 giữ những gì không hỏi.
 
-**Mục tiêu:** hỏi đúng câu trước khi làm để ra đúng ý ngay lần đầu, cho khách và người xem của David ở cả ba hướng nghề (`co-so-tri-thuc/David.md` 4.1).
+**Mục tiêu:** hỏi đúng câu trước khi làm để ra đúng ý ngay lần đầu, cho khách và người xem của David ở cả ba hướng nghề (`co-so-tri-thuc/david.md` 4.1).
 
 ## Khi nào áp dụng
 

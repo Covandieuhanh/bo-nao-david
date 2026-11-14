@@ -6,7 +6,7 @@ Bắt đầu: 08/11/2026. Mốc trước khi sửa: commit `1810b8c`.
 Mọi skill tự làm việc theo một bộ thói quen chung: đúng quy trình, tiết kiệm token, ra đúng ý ngay lần đầu. Mỗi luật chỉ nằm một chỗ.
 
 ## Đã chốt (vòng 1, 08/11/2026)
-1. Phạm vi: 5 skill video + `thu-thap-yeu-cau` + các khối dùng chung + `David.md`, `AGENTS.md`, `MEMORY.md`. Bỏ qua `playwright-cli`.
+1. Phạm vi: 5 skill video + `thu-thap-yeu-cau` + các khối dùng chung + `david.md`, `AGENTS.md`, `MEMORY.md`. Bỏ qua `playwright-cli`.
 2. Một file thói quen chung, mọi skill đọc trước; trong skill chỉ thêm "cổng kiểm" ngắn ở bước dễ sai.
 3. Rà soát trước (trùng, ngược, cũ), David quyết từng chỗ rồi mới sửa.
 4. Mỗi skill có danh sách "Xong khi" 5–8 dòng do David duyệt; chạy một việc thật đạt đủ mà không phải sửa lại.
@@ -35,10 +35,10 @@ Mọi skill tự làm việc theo một bộ thói quen chung: đúng quy trình
   - [x] dung-podcast (08/11: hỏi một lần + giữ cổng chụp thử, bỏ thẻ tên tập/số nhịp/2 trạng thái, màn chốt nguyên văn, phụ đề dọc cỡ 58, "Xong khi" 7 dòng)
   - [x] cat-doan-noi-bat (08/11: mọi chữ nguyên văn, màn chốt một luật, thẻ cuối không nút phát/không câu Claude viết, bỏ số nhịp, "Xong khi" 7 dòng)
   - [x] phan-tich-video-mau (08/11: đọc trước thói quen chung, phiếu học là cổng hỏi duy nhất, tải 720p chỉ để học rồi xoá, bước nhẹ 1–3 ở thiet-ke-bo-cuc, "Xong khi" 6 dòng)
-  - [x] 3 file não (08/11: David.md 3.1/3.8/5 trỏ nhà chính; AGENTS thêm thoi-quen vào bảng đọc, rút mục giữ não; chi-dan-toan-cuc trỏ thoi-quen; 2 ghi nhớ vào luu-tru, 3 ghi nhớ rút ngắn, 9 ghi nhớ sửa theo N8/N9/C2/C4/C7/T3/T8; MEMORY khớp 33 file)
+  - [x] 3 file não (08/11: david.md 3.1/3.8/5 trỏ nhà chính; AGENTS thêm thoi-quen vào bảng đọc, rút mục giữ não; chi-dan-toan-cuc trỏ thoi-quen; 2 ghi nhớ vào luu-tru, 3 ghi nhớ rút ngắn, 9 ghi nhớ sửa theo N8/N9/C2/C4/C7/T3/T8; MEMORY khớp 33 file)
 - [x] Phiên A (08/11): gọt khối 05, 06, 07, 08, 13, 15, 17, 19, `mo-dun/README`, `quy-tac-chung` mục 0 (N9); bỏ chữ "2 trạng thái là mặc định" ở scene-design, thu-vien-tai-nguyen, Illus, vlog_edl, highlight.md; code: thẻ cuối luôn "Bản đầy đủ trên kênh …" (bỏ "XEM BẢN ĐẦY ĐỦ" và `tease`), phụ đề podcast dọc cụm 5–8 chữ mọi độ dài
   - [x] David đồng ý 08/11: câu mời bình luận / câu hỏi tự soi / "gỡ" theo luật kênh nằm ở mô tả + bình luận ghim, không lên video (khối 08, quy-tac-chung)
-- [x] Dọn file tạm (08/11): `dung-video-theo-phong-cach/scripts/don_tap.py`, gắn vào khối 17, thoi-quen mục 4, 3 skill; bỏ khối 18 cùng mọi phần xuất CapCut/DaVinci (David không dùng)
+- [x] Dọn file tạm (08/11): `dung-video-theo-phong-cach/scripts/don-tap.py`, gắn vào khối 17, thoi-quen mục 4, 3 skill; bỏ khối 18 cùng mọi phần xuất CapCut/DaVinci (David không dùng)
   - [x] David duyệt 08/11 → đã dọn 8 tập (~62 GB; 16 bản cuối còn đủ); tap-zoom-trainer chưa có bản cuối nên giữ nguyên
 - [ ] Bước 4: chạy thử một việc thật, David chấm, sửa đúng một chỗ (chưa render thử thẻ cuối và phụ đề podcast dọc sau phiên A)
 

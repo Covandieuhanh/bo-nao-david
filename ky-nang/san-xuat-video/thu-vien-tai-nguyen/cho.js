@@ -1,13 +1,13 @@
 // CHỖ TRỐNG QUANH NGƯỜI (David chốt 08/11/2026: graphic KHÔNG được đè hay làm mờ bất kỳ nhân vật nào; bám người đang nói)
 // Đọc một mục mat.js (nguoi_place.py): nguoi[] = mọi người trong khung, noi = người đang nói.
 // Trả về các khoảng ngang trống ở độ cao mặt, sau zoom nếu có. Mỗi người chiếm [l − đệm, r + đệm] (đệm = tai, tóc, tay, khoảng thở).
-import project from '../project.js';
-import {SAFE} from '../theme';
+import project from '../du-an.js';
+import {SAFE} from '../chu-de';
 
 const W = project.width, H = project.height;
 const DEM = 0.55;   // đệm mỗi bên = 0,55 × bề rộng mặt (gồm tai, tóc, tay khua)
 
-// toạ độ sau zoom (cùng công thức render_preview.py: khung zoom canh giữa người đang nói, kẹp trong khung)
+// toạ độ sau zoom (cùng công thức xem-truoc-ban-dung.py: khung zoom canh giữa người đang nói, kẹp trong khung)
 export const zoomBox = (m, Z = 1) => {
   if (!Z || Z <= 1.001) return (p) => p;
   const x0 = Math.max(0, Math.min(1 - 1 / Z, m.cx - 0.5 / Z)), y0 = Math.max(0, Math.min(1 - 1 / Z, m.cy - 0.5 / Z));

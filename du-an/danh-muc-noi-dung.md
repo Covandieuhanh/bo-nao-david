@@ -1,7 +1,7 @@
 # Sổ danh mục nội dung — David Trần
 
-Luật: `~/.claude/skills/san-xuat-video/mo-dun/00-sang-loc-noi-dung/README.md` · hồ sơ `~/.claude/David.md` · kênh `~/.claude/skills/san-xuat-video/ho-so-thuong-hieu/kenh.json`.
-Dự án đã xong nằm trên Drive `Sao-luu-mac/Movies/<tập>` (đường dẫn `~/Movies/…` dưới đây là chỗ cũ), phân loại ở [kho-drive.md](kho-drive.md).
+Luật: `~/.claude/skills/san-xuat-video/mo-dun/00-sang-loc-noi-dung/README.md` · hồ sơ `~/.claude/david.md` · kênh `~/.claude/skills/san-xuat-video/ho-so-thuong-hieu/kenh.json`.
+Dự án đã xong nằm trên Drive `sao-luu-mac/video/<tập>` (đường dẫn `~/Movies/…` dưới đây là chỗ cũ), phân loại ở [kho-drive.md](kho-drive.md).
 Trạng thái: lọc · dựng · chờ đăng · đã đăng · kho · bỏ. Dẫn dắt: Không / Gợi mở / Mời (tỉ lệ 4 · 4 · 2).
 
 | Ngày | Tài nguyên | Kết luận | Điểm | Nhánh | Kênh đề xuất | Dẫn dắt | Trạng thái |
@@ -27,8 +27,8 @@ Trạng thái: lọc · dựng · chờ đăng · đã đăng · kho · bỏ. D�
 | 2026-11-10 | Video su-tap-trung-video-ngan-da-khien-chung-t (app dựng, `~/Movies/tap-su-tap-trung-video-ngan-da-khien-chung-t`) | ✂️ Trích ngắn từ gốc | — |  |  | — | highlight David duyệt (app) · chờ đăng |
 | 2026-11-10 | Video quay trong xe "thói quen phơi nắng" (D9BF90F2, 1:29 → 1:16, dọc, `~/Movies/tap-thoi-quen-nho`) | ✅ Phù hợp | 8 | gốc (làm chủ bản thân) | Shorts + Reels + TikTok, T6 13/11 20:00 (⚠️ trùng lịch clip Đi trainer — chờ David chọn) | Gợi mở | dựng (render 10/11) · chờ cổng 2 |
 | 2026-11-10 | Video vòng đồng xu cổ (E230CDE7, 0:46 → 0:45, dọc, `~/Movies/tap-vong-dong-xu`) | ⛔ Không làm (lằn ranh tâm linh) · David chọn dựng BẢN RIÊNG | 2 | — | Không lên kênh (bản riêng) | — | dựng (render 10/11) · chờ David xem |
-| 2026-11-11 | Cuộc gọi hợp tác môi giới giao dịch hàng hoá (dji_mimo_20261110, 12:46, quay màn hình điện thoại, gốc `Tu-lieu-goc/tap-cuoc-goi-hop-tac`) | ⛔ Không đăng (đề xuất): kinh doanh/tài chính, phần lớn lời người khác, cuộc gọi riêng có tên người · đề xuất bản lưu riêng | 2 | — | Không lên kênh | — | xong bản dài ngang 11:18 (11/11, làm lại từ gốc, tập trung điện thoại; bỏ teaser/chương/thumbnail theo lời David), chờ David góp ý |
-| 2026-11-12 | Video "Lý do chọn giao dịch hàng hoá" (dji_mimo_20261111_204848, 6:48, ngang, kênh riêng David Trần Official, `~/Movies/tap-giao-dich-hang-hoa`) | ⛔ với kênh trainer · ⚠️ đã cảnh báo lằn ranh tài chính/giao dịch · David giao dựng (việc #6 Telegram) | 1 | — | Kênh tài chính David Trần Official (David chọn lịch) | — | xong 13/11 (quy trình mới, không cổng): bản dài 7:10 + clip A "Quy chuẩn, hợp pháp" 61 s (render lại 13/11 11:18, chữ nhấn kiểu nhãn dán) + 2 thumbnail + bài đăng, Drive `Thanh-pham/tap-giao-dich-hang-hoa/` · chờ "đăng" |
+| 2026-11-11 | Cuộc gọi hợp tác môi giới giao dịch hàng hoá (dji_mimo_20261110, 12:46, quay màn hình điện thoại, gốc `tu-lieu-goc/tap-cuoc-goi-hop-tac`) | ⛔ Không đăng (đề xuất): kinh doanh/tài chính, phần lớn lời người khác, cuộc gọi riêng có tên người · đề xuất bản lưu riêng | 2 | — | Không lên kênh | — | xong bản dài ngang 11:18 (11/11, làm lại từ gốc, tập trung điện thoại; bỏ teaser/chương/thumbnail theo lời David), chờ David góp ý |
+| 2026-11-12 | Video "Lý do chọn giao dịch hàng hoá" (dji_mimo_20261111_204848, 6:48, ngang, kênh riêng David Trần Official, `~/Movies/tap-giao-dich-hang-hoa`) | ⛔ với kênh trainer · ⚠️ đã cảnh báo lằn ranh tài chính/giao dịch · David giao dựng (việc #6 Telegram) | 1 | — | Kênh tài chính David Trần Official (David chọn lịch) | — | xong 13/11 (quy trình mới, không cổng): bản dài 7:10 + clip A "Quy chuẩn, hợp pháp" 61 s (render lại 13/11 11:18, chữ nhấn kiểu nhãn dán) + 2 thumbnail + bài đăng, Drive `thanh-pham/tap-giao-dich-hang-hoa/` · chờ "đăng" |
 | 2026-11-12 | Nói trước camera "Bận cả ngày mà không ra kết quả" (DJI_0015, 7:41, ngang, giữ nguyên không cắt) · `~/Movies/tap-ban-ca-ngay` | ✅ Phù hợp · ⚠️ lằn ranh nhẹ 2:41 ("sản phẩm là thuốc", giữ lời, không đồ hoạ) | 8 | gốc | YouTube ngang T3 17/11 20:00 + bài trang; clip A/B chờ duyệt | Không (kho ý 3) | đang dựng (khung chủ thể + 17 ảnh thật) |
 
 ## Phiếu lọc (chấm thử 05/11/2026)

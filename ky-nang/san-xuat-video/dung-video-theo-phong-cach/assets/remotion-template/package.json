@@ -2,8 +2,8 @@
   "name": "video-style-edit-motion",
   "private": true,
   "scripts": {
-    "studio": "remotion studio src/index.jsx",
-    "render-all": "node render.mjs"
+    "studio": "remotion studio src/diem-vao.jsx",
+    "render-all": "node xuat-video.mjs"
   },
   "dependencies": {
     "@fontsource/barlow-condensed": "^5.3.0",

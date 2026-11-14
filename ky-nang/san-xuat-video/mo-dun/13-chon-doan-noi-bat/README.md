@@ -4,10 +4,10 @@
 **Đầu vào:** video dài / dự án gốc
 **Đầu ra:** phuong-an.json, cat/<id>.mp4 + map + kiểm lời, ke-hoach-cat.md
 **Tham số hồ sơ:** highlight: *
-**Sửa khối này → chạy lại:** 11 (hl_edl.py viết lại edl.js) → 05 → 17
+**Sửa khối này → chạy lại:** 11 (danh-sach-cat-doan-noi-bat.py viết lại danh-sach-cat.js) → 05 → 17
 
 **File thật (code, một bản duy nhất):**
-- `cat-doan-noi-bat/scripts/{new_highlight.sh,loud_check.py,cut_highlight.py,pauses.py,hl_edl.py,hl_apply.py}`
+- `cat-doan-noi-bat/scripts/{tao-doan-noi-bat.sh,kiem-am-luong.py,cat-doan-noi-bat.py,khoang-lang.py,danh-sach-cat-doan-noi-bat.py,ap-dung-doan-noi-bat.py}`
 
 ## Cách làm
 
@@ -24,8 +24,8 @@ bản dài) — luôn dựng lại.
 
 ### 1. Môi trường + dự án
 ```bash
-zsh $BASE/scripts/check_env.sh
-zsh $SKILL/scripts/new_highlight.sh "<thư mục dự án gốc | video dài>" <tên-ngắn> ["<phụ đề .srt/.vtt>"]   # chạy nền; dòng cuối = $P
+zsh $BASE/scripts/kiem-moi-truong.sh
+zsh $SKILL/scripts/tao-doan-noi-bat.sh "<thư mục dự án gốc | video dài>" <tên-ngắn> ["<phụ đề .srt/.vtt>"]   # chạy nền; dòng cuối = $P
 ```
 → `~/Movies/tap-<tên>/3-doan-noi-bat/`: `nguon.<ext>`, `loai.txt` (podcast · tu-quay · chua-ro), `check/goc/`: `transcript.srt`, `words.srt`,
 `loud05.txt` (độ lớn tiếng mỗi 0,05 s), `contact.jpg`; từ dự án gốc thêm `captions-goc.js` (lời đã sửa chính tả — nguồn chữ chính),
@@ -115,17 +115,17 @@ Viết `$P/phuong-an.json` — mỗi clip một mục trong `options` (A, B, C�
 **Soát mốc theo độ lớn tiếng** (mốc từ Whisper hay lệch 0,5–1,6 s ở chỗ ngắt câu: chữ đầu bị kéo sớm vào khoảng lặng — cắt theo
 đó lọt đuôi chữ câu trước; chữ cuối kéo dài vào câu sau):
 ```bash
-python3 -I $SKILL/scripts/loud_check.py "$P"           # dải █/▁ quanh từng mốc + mốc đề xuất
+python3 -I $SKILL/scripts/kiem-am-luong.py "$P"           # dải █/▁ quanh từng mốc + mốc đề xuất
 ```
 Theo mốc đề xuất (sửa phuong-an.json). "⚠ lệch > 1 s" → nhìn dải xác nhận; "⚠ nói liền" → giữ mốc Whisper, hoặc lấy luôn chữ
 nối ("Nhưng…") nếu câu vẫn đúng nghĩa, rồi để bước kiểm lời quyết. Rồi:
 ```bash
-python3 -I $SKILL/scripts/cut_highlight.py "$P"          # cắt bản kiểm lời cat/A.mp4, cat/B.mp4… (chạy nền)
+python3 -I $SKILL/scripts/cat-doan-noi-bat.py "$P"          # cắt bản kiểm lời cat/A.mp4, cat/B.mp4… (chạy nền)
 ```
 → `cat/<id>.mp4` (khung như nguồn) + `cat/<id>.md` (4 câu, lời đọc nối, mốc đoạn ghép, bảng cắt, tổng thời lượng, **kiểm lời**) + `cat/<id>-map.json`
 + `cat/<id>-kiem.txt`. Thiếu `chon_y` thì script dừng. Script tự: lùi 0,15 s / thêm 0,25 s · gộp câu liền nhau (≤ 0,6 s) · cắt lặng > 0,6 s giữa câu · **chèn** 1 s lặng
 (giữ khung cuối) sau KEUGOI kết bằng "?" và sau KEUGOI cuối clip — không lấy tiếng nguồn phía sau vì câu kế có thể nói liền ·
-`zoom: true` dồn 1,0 → 1,12× · **cắt cứng** ở mỗi mối nhảy + **rút khoảng lặng ≥ 0,45 s trong câu** (`pauses.py`, trừ câu
+`zoom: true` dồn 1,0 → 1,12× · **cắt cứng** ở mỗi mối nhảy + **rút khoảng lặng ≥ 0,45 s trong câu** (`khoang-lang.py`, trừ câu
 `zoom`) · fade âm ở mối · tiếng fltp 48 kHz stereo · **chép lời lại bản cắt** và so với `text`.
 **Kiểm lời phải khớp**: chữ thừa ở mối = lọt đuôi câu bên cạnh → thu mốc; chữ thiếu = bị cụt → nới mốc; lệch kiểu "nhé/nhá" là
 Whisper nghe khác (bỏ qua). Cắt lại tới khi sạch.

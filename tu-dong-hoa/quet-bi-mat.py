@@ -20,8 +20,8 @@ MAU = {
 }
 MAU = {k: re.compile(v) for k, v in MAU.items()}
 TEN_CAM = re.compile(r"(?i)^(\.env(\..*)?|mk\.csv|\.claude\.json.*|cookies?.*|.*\.(pem|key|p12|jsonl|sqlite|mp4|mov))$")
-# Tài liệu mẫu của playwright-cli có mật khẩu ví dụ, không phải bí mật thật.
-BO_QUA = (os.path.join("ky-nang", "playwright-cli") + os.sep,)
+# Tài liệu mẫu của skill dieu-khien-trinh-duyet có mật khẩu ví dụ, không phải bí mật thật.
+BO_QUA = (os.path.join("ky-nang", "dieu-khien-trinh-duyet") + os.sep,)
 THU_MUC_BO_QUA = {".git", "node_modules"}
 
 

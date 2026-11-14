@@ -1,8 +1,8 @@
 # Trang xem kết quả (David 13/11/2026: "xem được đầy đủ mọi kết quả của từng video làm ra").
 # Chỉ ĐỌC, không dựng, không tốn token. Gom mỗi tập từ bốn nguồn rồi trả một trang web:
 #   1. ~/Movies/tap-*                     — đang làm trên Mac (mới nhất)
-#   2. Drive Sao-luu-mac/Movies/tap-*, vlog/* — dự án đã xong: thumbnail, phat-hanh.md, dang-bai.md, lời từng clip, số liệu
-#   3. Drive Thanh-pham/                  — thành quả video giao David
+#   2. Drive sao-luu-mac/video/tap-*, vlog/* — dự án đã xong: thumbnail, phat-hanh.md, dang-bai.md, lời từng clip, số liệu
+#   3. Drive thanh-pham/                  — thành quả video giao David
 #   4. ~/Movies/_danh-muc-noi-dung/danh-muc-noi-dung.md  — kết luận lọc, điểm, kênh, lịch, trạng thái
 #   python3 tu-dong-hoa/xem-ket-qua.py            → http://localhost:8765 (mở luôn trình duyệt; --khong-mo để không mở)
 # Giao diện (David 13/11/2026: "xem được video và ảnh bìa ngay khi mở, giảm thao tác, file ấn mới xem"): mỗi tập một hàng
@@ -13,8 +13,8 @@ H0 = os.path.expanduser("~")
 DRIVE = os.path.join(H0, "Library/CloudStorage/GoogleDrive-covandieuhanh@gmail.com/Drive của tôi")
 ROOTS = {  # id → (thư mục, nhãn)
     "mac": (os.path.join(H0, "Movies"), "Mac · đang làm"),
-    "luu": (os.path.join(DRIVE, "Sao-luu-mac/Movies"), "Drive · dự án"),
-    "xong": (os.path.join(DRIVE, "Thanh-pham"), "Drive · Thanh-pham"),
+    "luu": (os.path.join(DRIVE, "sao-luu-mac/video"), "Drive · dự án"),
+    "xong": (os.path.join(DRIVE, "thanh-pham"), "Drive · thanh-pham"),
 }
 DANH_MUC = os.path.join(H0, "Movies/_danh-muc-noi-dung/danh-muc-noi-dung.md")
 PORT = int(os.environ.get("PORT", 8765))
@@ -237,7 +237,7 @@ def section(t):
     files, da = [], set()
     for x in sort_txt(t.dai_txt + t.hl_txt):
         f = os.path.basename(x[1]); txt = read(*x)
-        if not txt.strip() or f in da: continue   # cùng tên ở hai nguồn (dự án + Thanh-pham) → giữ bản đọc trước
+        if not txt.strip() or f in da: continue   # cùng tên ở hai nguồn (dự án + thanh-pham) → giữ bản đọc trước
         da.add(f)
         nhan = NHAN_TXT.get(f, f)
         if f == "so-lieu.md" and trong(txt): files.append(nut(f"{nhan}: chưa có", "", True)); continue

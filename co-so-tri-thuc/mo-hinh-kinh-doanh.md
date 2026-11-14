@@ -1,6 +1,6 @@
 # Mô hình kinh doanh của David
 
-> Khung David tự đặt, dạy cho bot qua Codex ngày 12/11/2026 (bản đầy đủ: `~/Documents/ChatGPT/Trainer David/Hermes/Bo-nho-cong-viec/QUY-TAC.md`, chỉ trên máy). David chốt 13/11/2026 dùng làm gốc cho cả ba hướng nghề (`co-so-tri-thuc/David.md` mục 4). File này là nhà duy nhất của khung trong bộ não.
+> Khung David tự đặt, dạy cho bot qua Codex ngày 12/11/2026 (bản đầy đủ: `~/Documents/ChatGPT/Trainer David/Hermes/Bo-nho-cong-viec/QUY-TAC.md`, chỉ trên máy). David chốt 13/11/2026 dùng làm gốc cho cả ba hướng nghề (`co-so-tri-thuc/david.md` mục 4). File này là nhà duy nhất của khung trong bộ não.
 
 ## 1. Ba phạm trù gốc: Tiền · Thị trường · Con người
 
@@ -35,6 +35,6 @@ Có mục tiêu: chọn vai trò (trong chín) → bóc tách bằng Tiền · T
 
 ## 6. Dùng trong nghề của David
 
-- **Làm chủ bản thân** (kênh trainer) = làm chủ **tiền, thị trường, con người** của chính mình. Ba tầng làm chủ (bản thân → công việc → mối quan hệ, `David.md` 4.2) là thứ tự đi; ba phạm trù là lăng kính bóc tách ở mỗi tầng.
+- **Làm chủ bản thân** (kênh trainer) = làm chủ **tiền, thị trường, con người** của chính mình. Ba tầng làm chủ (bản thân → công việc → mối quan hệ, `david.md` 4.2) là thứ tự đi; ba phạm trù là lăng kính bóc tách ở mỗi tầng.
 - **Gói công nghệ** (hướng 3): mục tiêu / nỗi đau của khách bóc bằng ba phạm trù → chọn gói → đào tạo theo bốn bước tới khi ra kết quả.
 - **Bộ lọc nội dung** dùng hai từ khoá bình luận "Vấn đề" / "Kết quả" chính là hai đánh giá ở mục 5.

@@ -7,8 +7,8 @@ vẫn nhận ra video của David.
 
 | Lớp | Gồm | Ở đâu | Khi học video mẫu |
 |---|---|---|---|
-| **Chữ ký nhận diện** | màu nhấn cam, hai font chính, thành phần cố định (dấu góc, phụ đề, thanh thời gian, màn chốt, thẻ cuối), nhạc kênh | `thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0, `tokens.js`, `brand.json` | **Không đổi** |
-| **Phần sáng tạo** (học được) | bố cục, thứ tự thông tin hiện ra, cách nối cảnh, nhịp, chỗ đặt hiệu ứng âm thanh, nền, kết cấu, kiểu hình, chữ nhấn phụ, chuyển động | thư mục này + `BoCuc.jsx`, `thu-vien-tai-nguyen/` | **Chỉ thêm.** Mỗi điều học được là một mục mới trong kho |
+| **Chữ ký nhận diện** | màu nhấn cam, hai font chính, thành phần cố định (dấu góc, phụ đề, thanh thời gian, màn chốt, thẻ cuối), nhạc kênh | `thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0, `bien-thiet-ke.js`, `brand.json` | **Không đổi** |
+| **Phần sáng tạo** (học được) | bố cục, thứ tự thông tin hiện ra, cách nối cảnh, nhịp, chỗ đặt hiệu ứng âm thanh, nền, kết cấu, kiểu hình, chữ nhấn phụ, chuyển động | thư mục này + `bo-cuc.jsx`, `thu-vien-tai-nguyen/` | **Chỉ thêm.** Mỗi điều học được là một mục mới trong kho |
 
 Học càng nhiều càng có nhiều tài nguyên để chọn; khi dựng thì chỉ chọn vài kiểu hợp nội dung (`quy-tac-chung.md` mục 0, hiểu hơn cầu kì).
 
@@ -52,7 +52,7 @@ Bước nhẹ (1–3): tới đó nhắc một dòng để David tự đổi mô
    **Cách ghi kho:** một file `nguon-tham-khao/<ten-nguon>-<ngay>.md` kể học gì từ đâu. Mỗi cách mới thêm một dòng ở `bo-cuc.md` hoặc `am-thanh.md`,
    ghi rõ "đã có code" hay "chưa có code", **và thêm dòng "dấu hiệu nhận ra → kiểu" vào `tu-chon.md`** (không có dòng ở đó thì không
    bao giờ được chọn). Không xoá, không sửa nghĩa dòng cũ.
-7. **Làm code khi cần:** thêm `kieu` mới trong `dung-video-theo-phong-cach/assets/remotion-template/src/components/BoCuc.jsx` (màu nhấn và
+7. **Làm code khi cần:** thêm `kieu` mới trong `dung-video-theo-phong-cach/assets/remotion-template/src/components/bo-cuc.jsx` (màu nhấn và
    font lấy từ `C`, `HEAD`, `BODY`; hình động dùng `ease`, `pop`, `Illus`, `Diagram`, `Icon` hoặc `thu-vien-tai-nguyen/chuyen-dong.js`). Vị trí lấy từ hằng số chung (`SAFE`, `BRAND_TOP`/`BRAND_BOT`,
    `PF`, `CAP_H`), **không viết số vị trí riêng**.
 8. **Kiểm không phá** (bắt buộc trước khi dùng vào video thật):
@@ -60,13 +60,13 @@ Bước nhẹ (1–3): tới đó nhắc một dòng để David tự đổi mô
      toàn · chữ tiếng Việt đủ dấu, không chồng dòng · chữ nguyên văn.
    - Chụp thử **đủ lớp** (cảnh + `phu-de@<giây>` có dấu góc, phụ đề, thanh thời gian) ở **cả khung ngang lẫn dọc**, trên ít nhất
      một dự án cũ đã duyệt. So với ảnh trước khi thêm: phần cũ phải y nguyên.
-   - Chạy `soat_canh.mjs` và `python3 -I ../mau-chuan/kiem-mau.py` (mẫu chuẩn); có lệch thì sửa thành phần mới, không sửa cái cũ cho vừa.
+   - Chạy `soat-canh.mjs` và `python3 -I ../mau-chuan/kiem-mau.py` (mẫu chuẩn); có lệch thì sửa thành phần mới, không sửa cái cũ cho vừa.
 9. **Xoá file mẫu đã tải**, **đẩy GitHub** và báo David: thêm gì, đã kiểm gì, chưa kiểm gì.
 10. **Không chép công cụ của nguồn** (HyperFrames…): giữ Remotion, chỉ học ý (`video-khong-cai-hyperframes`).
 
 ## 5. Dùng khi dựng
 
-- Trước kịch bản cảnh: chẩn đoán + tự chọn theo **`tu-chon.md`** (`chan_doan.py`). Rồi đọc `bo-cuc.md` và chọn kiểu theo 4 câu hỏi ở mục 2. Ghi lý do một dòng cho mỗi cảnh vào
+- Trước kịch bản cảnh: chẩn đoán + tự chọn theo **`tu-chon.md`** (`chan-doan.py`). Rồi đọc `bo-cuc.md` và chọn kiểu theo 4 câu hỏi ở mục 2. Ghi lý do một dòng cho mỗi cảnh vào
   `ke-hoach-canh.md` của dự án.
 - Danh mục là **kho để chọn**, không phải công thức. Một video có thể chỉ dùng hai kiểu, cũng có thể dùng năm kiểu, tuỳ nội dung.
 

@@ -1,6 +1,6 @@
 ---
 name: phan-phoi-da-kenh
-description: Quy trình trọn gói của David — từ MỘT tài nguyên (video quay, ghi âm, bài nói bộc phát; thường không kèm yêu cầu) Claude tự lọc theo hồ sơ David, quyết định có đáng làm và làm thành gì, rồi làm một mạch không cổng duyệt: dựng bản dài + clip ngắn, soạn bài theo giọng David cho từng kênh, giao lên Drive và trang xem kết quả (localhost:8765); góp ý thì render lại toàn bộ; khi David nói "đăng" thì hẹn giờ YouTube, trang Facebook, TikTok qua trình duyệt đã đăng nhập, rồi gom bình luận và đọc số liệu. Dùng khi David gửi video/ghi âm mới, bỏ file vào Drive Tu-lieu-goc, nói "có video mới", "đăng giúp", "đăng lên các kênh", "làm bài đăng", "lọc nội dung này", "/phan-phoi-da-kenh" — kể cả khi chỉ gửi file mà không nói gì.
+description: Quy trình trọn gói của David — từ MỘT tài nguyên (video quay, ghi âm, bài nói bộc phát; thường không kèm yêu cầu) Claude tự lọc theo hồ sơ David, quyết định có đáng làm và làm thành gì, rồi làm một mạch không cổng duyệt: dựng bản dài + clip ngắn, soạn bài theo giọng David cho từng kênh, giao lên Drive và trang xem kết quả (localhost:8765); góp ý thì render lại toàn bộ; khi David nói "đăng" thì hẹn giờ YouTube, trang Facebook, TikTok qua trình duyệt đã đăng nhập, rồi gom bình luận và đọc số liệu. Dùng khi David gửi video/ghi âm mới, bỏ file vào Drive tu-lieu-goc, nói "có video mới", "đăng giúp", "đăng lên các kênh", "làm bài đăng", "lọc nội dung này", "/phan-phoi-da-kenh" — kể cả khi chỉ gửi file mà không nói gì.
 ---
 
 # Đăng đa kênh — một lần nói → đủ bài cho mọi kênh
@@ -12,19 +12,19 @@ phân phối, đăng và đo. Mọi bài có mục tiêu: kéo tương tác đú
 
 ## Mục tiêu
 Một tài nguyên vào → Claude làm một mạch tới **kết quả xem được**: bản dài + clip ngắn + thumbnail + bài đăng, nằm sẵn trên trang
-xem kết quả (`python3 tu-dong-hoa/xem-ket-qua.py` → localhost:8765; trang tự gom `~/Movies/tap-*`, Drive `Sao-luu-mac/Movies`,
-Drive `Thanh-pham` và sổ danh mục — giữ đúng tên `2-ban-day-du/phat-hanh/`, `3-doan-noi-bat/clip-X/`, `cat/X.md`, `dang-bai.md` là hiện đủ). Không cổng duyệt nào trước khi xong (David 13/11/2026: "không cần duyệt
+xem kết quả (`python3 tu-dong-hoa/xem-ket-qua.py` → localhost:8765; trang tự gom `~/Movies/tap-*`, Drive `sao-luu-mac/video`,
+Drive `thanh-pham` và sổ danh mục — giữ đúng tên `2-ban-day-du/phat-hanh/`, `3-doan-noi-bat/clip-X/`, `cat/X.md`, `dang-bai.md` là hiện đủ). Không cổng duyệt nào trước khi xong (David 13/11/2026: "không cần duyệt
 cổng 1, cổng 2 nữa, cứ thế làm thôi; không ưng thì góp ý rồi render lại toàn bộ"). Chỉ việc **đăng lên mạng xã hội** chờ David nói "đăng" (AGENTS luật 4).
 
 ## Quy trình (một mạch, không dừng chờ)
 | # | Bước | Đọc / dùng |
 |---|---|---|
-| 0 | **Nhận tài nguyên**: Drive `Tu-lieu-goc` hoặc file gửi vào chat → `~/Movies/tap-<ten>/1-goc/`. Chép lời, đo độ dài, khung, chất lượng | khối 01 |
+| 0 | **Nhận tài nguyên**: Drive `tu-lieu-goc` hoặc file gửi vào chat → `~/Movies/tap-<ten>/1-goc/`. Chép lời, đo độ dài, khung, chất lượng | khối 01 |
 | 1 | **Lọc** (ghi phiếu vào dự án, không chờ): đối chiếu kho 100 video, 5 tiêu chí, lằn ranh, kết luận, kênh, giờ, loại dựng. ⛔ / 👤 / 🗂 → không dựng, chỉ ghi sổ, báo một dòng; lằn ranh → không lấy đoạn đó làm chữ đồ hoạ, tiêu đề, mô tả | khối 00 · `du-an/ke-hoach-noi-dung-100-video.md` · `../ho-so-thuong-hieu/kenh.json` · sổ `~/Movies/_danh-muc-noi-dung/danh-muc-noi-dung.md` |
 | 2 | **Dựng bản dài** theo loại (`dung-video-theo-phong-cach` / `dung-podcast`). Trong lúc render chạy nền: soạn bài đăng (bước 3) và chọn ý clip ngắn | skill dựng |
 | 3 | **Bài đăng** từng kênh vào `phat-hanh/phat-hanh.md`: YouTube (3 tiêu đề, mô tả, chương, thumbnail nếu ngang) · Reels / bài trang · TikTok caption · câu chia sẻ Facebook cá nhân · bình luận ghim · bài Mời "gỡ" theo tỉ lệ | khối 15 · `../ho-so-thuong-hieu/giong-thuong-hieu-david.md` |
 | 4 | **Clip ngắn**: chọn ý trọn đắt nhất theo bốn câu (luôn có, hoặc ghi lý do không có) và **dựng luôn** sau khi bản dài render xong (render nối tiếp, không song song) | `cat-doan-noi-bat` |
-| 5 | **Kiểm + giao**: khung hình, âm lượng (khối 17, 09); chép bản dài, clip, thumbnail, `phat-hanh.md` vào Drive `Thanh-pham/tap-<ten>/ban-dai|highlight/` (trang xem kết quả đọc từ đây); gửi bản xem < 30 MB; ghi sổ; báo Telegram một lần | khối 17 · ghi nhớ `video-chuyen-qua-drive` |
+| 5 | **Kiểm + giao**: khung hình, âm lượng (khối 17, 09); chép bản dài, clip, thumbnail, `phat-hanh.md` vào Drive `thanh-pham/tap-<ten>/ban-dai|highlight/` (trang xem kết quả đọc từ đây); gửi bản xem < 30 MB; ghi sổ; báo Telegram một lần | khối 17 · ghi nhớ `video-chuyen-qua-drive` |
 | 6 | **Góp ý của David** → sửa skill / kịch bản đúng chỗ rồi **render lại toàn bộ luôn**, giao lại như bước 5 (không chờ chữ "render") | `../quy-tac-chung.md` mục 8 |
 | 7 | **Đăng** (chỉ khi David nói "đăng"): hẹn giờ đúng bản trên trang xem kết quả qua trình duyệt, chụp xác nhận; Facebook cá nhân David tự bấm | khối 19 |
 | 8 | **Sau 24 giờ / 7 ngày** *(bước nhẹ)*: hộp thư, số "gỡ", số liệu → `so-lieu.md` + sổ → 1–3 đề xuất | khối 20, 16 |
@@ -38,7 +38,7 @@ Bước đánh dấu *(bước nhẹ)*: nhắc đổi mô hình rẻ hơn theo `
 - Báo cuối gọn: ở đâu (trang xem kết quả + Drive), đã chọn X vì Y, tên riêng cần xác nhận, cảnh báo (lệch nhánh, thiếu bài Mời, kho < 4 video, lịch trống).
 
 ## Xong khi
-1. Bản dài + clip ngắn + thumbnail (khi ngang) + `phat-hanh.md` đều có trên Drive `Thanh-pham/tap-<ten>/` và hiện trên trang xem kết quả.
+1. Bản dài + clip ngắn + thumbnail (khi ngang) + `phat-hanh.md` đều có trên Drive `thanh-pham/tap-<ten>/` và hiện trên trang xem kết quả.
 2. Không dừng hỏi giữa chừng; mọi lựa chọn ghi "đã chọn X vì Y" trong báo cáo cuối.
 3. Bài đủ kênh theo kết luận, đúng giọng David, kiểu dẫn dắt khớp tỉ lệ.
 4. Góp ý → đã render lại toàn bộ và giao lại, không chờ nhắc.

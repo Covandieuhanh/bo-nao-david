@@ -46,10 +46,10 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
   cắt: đường cảm xúc chỉ để đặt motion graphic. Vlog ghép: hai đoạn liền nhau cùng cảm xúc thì bỏ hoặc đổi một. Highlight vẫn chọn
   theo 4 câu (khối 13). Cách làm: khối 07; kiểm cảm nhận: khối 17.
 
-## 3. Phụ đề (một nguồn: `thu-vien-tai-nguyen/subStyle.js`; cách làm: khối 03)
+## 3. Phụ đề (một nguồn: `thu-vien-tai-nguyen/kieu-phu-de.js`; cách làm: khối 03)
 - **Video ngắn** — highlight, podcast dọc (mọi độ dài), video 1 người dọc ≤ 90 s: mỗi lần hiện **một cụm trọn ý ~5–8 chữ** (tối đa
   2 dòng), **cỡ bằng chữ trong thẻ motion graphic** (`ngan_co` 58), chữ thường, viền đen mảnh, không hộp nền, từ khoá cam, ngay trên
-  thanh thời gian (`ShortLine`). Tự bật; ép tay `project.short = true|false` (1 video) hoặc `SHORT` trong edl.js (ghép).
+  thanh thời gian (`ShortLine`). Tự bật; ép tay `project.short = true|false` (1 video) hoặc `SHORT` trong danh-sach-cat.js (ghép).
 - **Video dài, vlog, podcast ngang**: hộp tối, đầy đủ câu, đáy vùng an toàn (`SUB`).
 - **Podcast đồ hoạ dọc trích ngắn**: không dải phụ đề; cả câu đang nói hiện to giữa khung làm đồ hoạ (`chu_chinh`).
 - **Mỗi lúc một chỗ chữ** (mọi loại, mọi khung): lớp motion graphic có chữ (chữ to, thẻ, nhãn, ô liệt kê, sơ đồ, màn hành động, thẻ
@@ -92,12 +92,12 @@ Ghi `<dự án>/phat-hanh/phat-hanh.md`:
 - **Thumbnail** chỉ khi video xuất ngang VÀ đăng YouTube; luật và mẫu ở khối 14. **Video dọc**: không ghép bìa trước video (giây đầu
   dành cho câu mở); ghi **mốc khung bìa đề xuất** (giây) để David chọn khi đăng.
 - **Video > 3 phút đăng YouTube** (hỏi "có đăng YouTube không?" lúc đầu với mọi video > 3 phút, ngang hay dọc):
-  - **Màn kết YouTube 15–20 s**: 1 video/podcast `project.ytEnd = 20` (ghi sau bước làm sạch — clean_apply viết lại project.js);
+  - **Màn kết YouTube 15–20 s**: 1 video/podcast `project.ytEnd = 20` (ghi sau bước làm sạch — clean_apply viết lại du-an.js);
     vlog ghép `"ytEnd": 20` trong plan.json. Ghi vào phat-hanh.md: "gắn màn kết trong YouTube Studio: 2 video (trái/phải hoặc
     trên/dưới) + nút đăng ký (tròn giữa dưới)".
-  - **Chương YouTube**: `python3 -I dung-video-theo-phong-cach/scripts/chapters.py <dự án>` → `phat-hanh/chuong.txt` dán vào mô tả.
+  - **Chương YouTube**: `python3 -I dung-video-theo-phong-cach/scripts/chuong.py <dự án>` → `phat-hanh/chuong.txt` dán vào mô tả.
   - **Teaser 15–25 s** cho video > 10 phút (podcast, nói trước camera, vlog nói chuyện): sau render, chọn 2–3 câu đắt nhất (trọn câu,
-    nguyên văn) → `python3 -I dung-video-theo-phong-cach/scripts/teaser.py <dự án> <từ-đến> …` (chạy TRƯỚC chapters.py).
+    nguyên văn) → `python3 -I dung-video-theo-phong-cach/scripts/doan-gioi-thieu.py <dự án> <từ-đến> …` (chạy TRƯỚC chuong.py).
 - Mô tả bài đăng + bình luận ghim theo luật kênh (khối 15), hashtag theo `ho-so-thuong-hieu/giong-thuong-hieu-david.md`.
 - Gửi David: video + thumbnail (SendUserFile) + tiêu đề.
 
@@ -115,4 +115,4 @@ Ghi `<dự án>/phat-hanh/phat-hanh.md`:
   vào thư mục thử riêng `tap-thu-…`, chạy theo skill, cho David xem bản cuối, xong thì dọn. Đoạn ngắn trọn ý ra tốt thì video dài cũng tốt.
 - **Dựng ngay trong phiên Claude** theo skill (`phan-phoi-da-kenh` → skill dựng). Không đề xuất dựng app hay công cụ tự động dựng video
   trừ khi David yêu cầu, vì chạy app tốn token hơn.
-- Video đã chốt hoặc đã đăng: dọn file tạm rồi đưa tập lên Drive, xoá trên Mac theo khối 17 (`don_tap.py --xoa` → `luu_drive.sh`, không hỏi lại; chỉ hỏi phần ⏸ đang dở). Mac chỉ giữ việc đang làm: ghi nhớ `video-chuyen-qua-drive`.
+- Video đã chốt hoặc đã đăng: dọn file tạm rồi đưa tập lên Drive, xoá trên Mac theo khối 17 (`don-tap.py --xoa` → `luu-drive.sh`, không hỏi lại; chỉ hỏi phần ⏸ đang dở). Mac chỉ giữ việc đang làm: ghi nhớ `video-chuyen-qua-drive`.

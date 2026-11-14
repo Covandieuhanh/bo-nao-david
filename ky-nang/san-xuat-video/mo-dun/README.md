@@ -15,7 +15,7 @@ Sửa một cách làm → sửa đúng một khối (README + code của nó). 
 | [08-phan-ket](08-phan-ket/README.md) | Kết: màn chốt (cta) · thẻ cuối (nhận diện / dẫn bản đầy đủ) · màn kết YouTube 15–20 s · lịch phát | cả 4 |
 | [09-am-thanh](09-am-thanh/README.md) | Âm thanh: nhạc kênh cố định, tiếng ký hiệu, ting, vút; cân giọng −20 LUFS, bản cuối −14 LUFS | cả 4 |
 | [10-nhan-dien-thuong-hieu](10-nhan-dien-thuong-hieu/README.md) | Bộ nhận diện David + phong cách (màu, font, dấu kênh, khuôn tiêu đề); rút phong cách từ video mẫu | cả 4 |
-| [11-dung-ghep](11-dung-ghep/README.md) | Ghép cảnh từ nhiều clip: hiểu clip, giữ/bỏ, bản đồ liên kết, khung vlog, edl.js | ghép vlog, highlight người nói |
+| [11-dung-ghep](11-dung-ghep/README.md) | Ghép cảnh từ nhiều clip: hiểu clip, giữ/bỏ, bản đồ liên kết, khung vlog, danh-sach-cat.js | ghép vlog, highlight người nói |
 | [12-san-khau-podcast](12-san-khau-podcast/README.md) | Sân khấu podcast: tên tập, ý đang bàn (TOPICS + PHẦN n), sóng âm theo người nói, nền lắng | podcast, highlight từ podcast |
 | [13-chon-doan-noi-bat](13-chon-doan-noi-bat/README.md) | Chọn khoảnh khắc highlight: bản đồ cả video, tự chọn ý theo 4 câu, chọn câu, bố trí lời kêu gọi, cắt + kiểm lời | highlight |
 | [14-anh-thu-nho](14-anh-thu-nho/README.md) | Thumbnail YouTube 1280×720 (chỉ video ngang đăng YouTube): quay hình = mặt + ≤ 3 tầng chữ; podcast = bìa không mặt | làm video, ghép vlog, podcast |
@@ -25,6 +25,6 @@ Sửa một cách làm → sửa đúng một khối (README + code của nó). 
 | [19-dang-bai](19-dang-bai/README.md) | Đăng / hẹn giờ YouTube, trang Facebook, TikTok qua trình duyệt (khi David nói "đăng"); Facebook cá nhân David tự chia sẻ | phan-phoi-da-kenh |
 | [20-hop-thu-so-lieu](20-hop-thu-so-lieu/README.md) | Gom bình luận + tin nhắn (đếm "gỡ"), số liệu 24 giờ / 7 ngày — chỉ đọc | phan-phoi-da-kenh |
 
-Đọc kèm: `../nguyen-tac.md` (7 điểm chung), `../quy-tac-chung.md` (luật nền), `../ho-so-thuong-hieu/` (tham số), `hoso.py` (đọc tham số).
+Đọc kèm: `../nguyen-tac.md` (7 điểm chung), `../quy-tac-chung.md` (luật nền), `../ho-so-thuong-hieu/` (tham số), `ho_so.py` (đọc tham số).
 
 Thành phần hình dùng chung: `../thu-vien-tai-nguyen/` (một bản). Kiểm sau khi sửa: `python3 -I ../mau-chuan/kiem-mau.py`.

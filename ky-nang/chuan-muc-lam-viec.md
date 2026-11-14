@@ -6,7 +6,7 @@ File này giữ các thói quen **dùng chung cho mọi skill**. Luật riêng c
 
 ## 0. Khi hai điều ngược nhau
 1. **Chất lượng thắng tiết kiệm** ("kết quả hơn tốc độ"). Chỉ tiết kiệm ở chỗ không đổi kết quả.
-2. **Khi các nguồn mâu thuẫn: lời David mới nhất > bản luật (`co-so-tri-thuc/David.md`, skill) > ghi nhớ `co-so-tri-thuc/bo-nho/`.** Hai bản luật lệch
+2. **Khi các nguồn mâu thuẫn: lời David mới nhất > bản luật (`co-so-tri-thuc/david.md`, skill) > ghi nhớ `co-so-tri-thuc/bo-nho/`.** Hai bản luật lệch
    nhau thì bên có ngày chốt mới hơn (theo sổ: changelog, git) thắng. Chỗ lệch thường do một chỗ chưa được cập nhật, không phải ý David.
 3. Luật còn mơ hồ → xem **sản phẩm mới nhất David đã duyệt** làm chứng cứ, rồi hỏi nếu vẫn chưa rõ.
 
@@ -59,12 +59,12 @@ Mục tiêu của David: **đưa tài nguyên vào, nhận kết quả**. Các l
   và xoá câu cũ. Trong bản luật không ghi ngày, không "(David chốt …)", không lời kể đã thay hay thêm câu nào, không "ngoại lệ mới"; ngày, lời
   David nguyên văn và lý do ghi vào sổ quyết định (changelog / Nhật ký). Luật mới đụng luật ở nơi khác → sửa luôn nơi đó, không để hai
   câu cãi nhau. Ba loại file (bản luật · sổ · kho) và định nghĩa từng bộ: skill `tai-cau-truc`.
-- **Đo chồng chéo** sau mỗi việc có sửa bản luật: `python3 -I ky-nang/tai-cau-truc/do_chong_cheo.py`. Báo "NÊN TÁI BẢN TOÀN BỘ" → nhắc
+- **Đo chồng chéo** sau mỗi việc có sửa bản luật: `python3 -I ky-nang/tai-cau-truc/do-chong-cheo.py`. Báo "NÊN TÁI BẢN TOÀN BỘ" → nhắc
   David một dòng; David đồng ý thì tái bản cả bộ não một đợt (skill `tai-cau-truc`).
-- **Cập nhật file theo dõi** (`du-an/…`, `BAO-CAO-TRANG-THAI.md`) khi xong một đợt việc.
+- **Cập nhật file theo dõi** (`du-an/…`, `bao-cao-trang-thai.md`) khi xong một đợt việc.
 - **Giữ Mac nhẹ:** Mac chỉ giữ việc đang làm. Xong việc thì đưa việc của David (video gốc, thành quả video) lên Drive rồi xoá trên Mac
-  (video: `don_tap.py --xoa` → `luu_drive.sh`); file tải về, dữ liệu app, đồ cá nhân không đồng bộ, muốn xoá thì hỏi trước. Ghi nhớ `video-chuyen-qua-drive`.
-- **Đẩy GitHub ngay** khi có thay đổi về skill hoặc não: `bash tu-dong-hoa/sync.sh --push` (`AGENTS.md` luật 6).
+  (video: `don-tap.py --xoa` → `luu-drive.sh`); file tải về, dữ liệu app, đồ cá nhân không đồng bộ, muốn xoá thì hỏi trước. Ghi nhớ `video-chuyen-qua-drive`.
+- **Đẩy GitHub ngay** khi có thay đổi về skill hoặc não: `bash tu-dong-hoa/dong-bo.sh --push` (`AGENTS.md` luật 6).
 
 ## 5. Luôn đi tới mục tiêu, giữ phiên gọn
 **Mục tiêu và "Xong khi":** mọi việc, trừ câu hỏi nhanh.

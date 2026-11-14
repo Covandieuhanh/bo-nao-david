@@ -1,11 +1,11 @@
 # Tái bản 2 — bộ nao
 
-Bộ: `AGENTS.md` · `CLAUDE.md` · `co-so-tri-thuc/David.md` · `ky-nang/chuan-muc-lam-viec.md`. Sổ: lịch sử git + `co-so-tri-thuc/bo-nho/`.
+Bộ: `AGENTS.md` · `CLAUDE.md` · `co-so-tri-thuc/david.md` · `ky-nang/chuan-muc-lam-viec.md`. Sổ: lịch sử git + `co-so-tri-thuc/bo-nho/`.
 
 Máy đo lúc mở: `dau_ngay 17/15 · ghi_de 2/6 · trung 0/4 · sua 19/25 · dong 276/600` → vượt ngưỡng dấu ngày.
 Máy đo sau viết lại: `dau_ngay 3/15 · ghi_de 0/6 · trung 0/4 · sua 19/25 · dong 274/600` → dưới ngưỡng. 3 dấu ngày còn lại là dữ kiện: ngày cập nhật hồ sơ, ngày của hồ sơ CCL, tên file PDF huyền học. `sua 19` là số commit git, chỉ hạ khi có mốc `tai-ban-2`.
 
-Nhà: **A** = `AGENTS.md` (cửa vào: thứ tự đọc, sáu luật, chọn skill, giữ não mới) · **D** = `co-so-tri-thuc/David.md` (hồ sơ + định hướng + cách làm với David) · **T** = `ky-nang/chuan-muc-lam-viec.md` (thói quen chung mọi skill) · **C** = `CLAUDE.md`.
+Nhà: **A** = `AGENTS.md` (cửa vào: thứ tự đọc, sáu luật, chọn skill, giữ não mới) · **D** = `co-so-tri-thuc/david.md` (hồ sơ + định hướng + cách làm với David) · **T** = `ky-nang/chuan-muc-lam-viec.md` (thói quen chung mọi skill) · **C** = `CLAUDE.md`.
 
 ## Bảng luật đang sống
 
@@ -19,7 +19,7 @@ Nhà: **A** = `AGENTS.md` (cửa vào: thứ tự đọc, sáu luật, chọn sk
 | 6 | Con người làm trung tâm, không kinh doanh; không trị liệu/chẩn đoán; không huyền học công khai; không "chữa lành" | D 4.1, 4.7 (chi tiết) · A luật 3 (tóm tắt + trỏ) | A:23, D:4.1, 4.7, 7 | 05/11 | sống, A trỏ D |
 | 7 | Nội dung là của David, không khuôn lời | A luật 4 | A:24 | 05/11 | sống |
 | 8 | Không đăng/gửi/xoá khi chưa duyệt; không nhập mật khẩu | A luật 5 | A:25, T:44 | — | trùng → T trỏ |
-| 9 | GitHub là bản gốc; đẩy ngay `sync.sh --push`; "cập nhật não" = lệnh này; chỉ sản phẩm, dữ liệu khách, giấy tờ cá nhân ở lại máy; danh sách không đưa lên | A luật 6 | A:26, A:47, A:50, D:3.8, T:59 | 07/11 | trùng → gộp vào A luật 6; D, T trỏ |
+| 9 | GitHub là bản gốc; đẩy ngay `dong-bo.sh --push`; "cập nhật não" = lệnh này; chỉ sản phẩm, dữ liệu khách, giấy tờ cá nhân ở lại máy; danh sách không đưa lên | A luật 6 | A:26, A:47, A:50, D:3.8, T:59 | 07/11 | trùng → gộp vào A luật 6; D, T trỏ |
 | 10 | Thứ tự khi nguồn mâu thuẫn: lời David vừa nói > D > ghi nhớ mới > ghi nhớ cũ | T mục 0 | A:28 | — | sống, A trỏ (xem Hỏi David 1) |
 | 11 | Ngược nhau: chất lượng thắng tiết kiệm; lời David vừa nói > ngày chốt gần nhất > cũ; mơ hồ → xem sản phẩm duyệt mới nhất rồi hỏi | T mục 0 | T:8–11 | 08/11 | sống (bỏ câu lịch sử "trước 08/11") |
 | 12 | AI sáng tạo bên trong khung; luật nội dung không phải khuôn | T mục 0 | T:13–15 | 09/11 | sống (bỏ ngày) |
@@ -27,7 +27,7 @@ Nhà: **A** = `AGENTS.md` (cửa vào: thứ tự đọc, sáu luật, chọn sk
 | 14 | Không phải Claude Code: skill là tài liệu quy trình, map đường dẫn, nói rõ phần không làm được, chỉ tin repo + lời David | A | A:46–51 | — | sống |
 | 15 | Cuối việc theo T mục 4 | A trỏ | A:56 | — | sống |
 | 16 | Tên không dấu, chữ thường, gạch nối; ghi nhớ một máy đặt `may-`, không lên repo | A | A:58 | 07/11 | sống |
-| 17 | C: nạp `@AGENTS.md`; thiếu `~/.claude/David.md` → đề nghị `install.sh` | C | C:1–3 | — | sống |
+| 17 | C: nạp `@AGENTS.md`; thiếu `~/.claude/david.md` → đề nghị `cai-dat-bo-nao.sh` | C | C:1–3 | — | sống |
 | 18 | Hồ sơ David (tên, vai trò, kinh nghiệm, nơi ở, thước đo) | D 1 | D:9–20 | 05/11 | sống |
 | 19 | Luật cá nhân: đợt năng lượng, 4 tiếng, chờ vài ngày, nhìn lại cuối tuần, mất nhịp 3 tuần | D 2 | D:22–28 | — | sống |
 | 20 | Kế hoạch 4 phần | D 3 | D:3.2 | — | sống |
@@ -59,7 +59,7 @@ Nhà: **A** = `AGENTS.md` (cửa vào: thứ tự đọc, sáu luật, chọn sk
 | 46 | Góp ý ghi đúng một chỗ; chỉ luật dùng chung nhiều skill mới vào `co-so-tri-thuc/bo-nho/`, có ghi nhớ gần giống thì sửa | T 4 | T:48, T:55 | — | sống (dời câu bộ nhớ về đúng gạch) |
 | 47 | Sửa thẳng, không chồng câu; ba loại file ở `tai-cau-truc` | T 4 | T:49–52 | 10/11 | sống |
 | 48 | Đo chồng chéo sau mỗi việc sửa bản luật; báo → nhắc một dòng, David quyết | T 4 | T:53–54, T:81 | 10/11 | trùng → bảng mục 5 trỏ mục 4 |
-| 49 | Video đã chốt/đăng: dọn bằng `don_tap.py --xoa`, chỉ hỏi khi ⏸, vào Thùng rác | T 4 | T:56–57 | 08/11 | sống (bỏ ngày; xem Chéo bộ 2) |
+| 49 | Video đã chốt/đăng: dọn bằng `don-tap.py --xoa`, chỉ hỏi khi ⏸, vào Thùng rác | T 4 | T:56–57 | 08/11 | sống (bỏ ngày; xem Chéo bộ 2) |
 | 50 | Cập nhật file theo dõi khi xong đợt | T 4 | T:58 | — | sống |
 | 51 | Việc tiếp theo lớn → đề nghị phiên mới, ghi bước tiếp | T 5 (bảng) | T:60, T:74 | 08/11 | trùng → gộp vào hàng bảng |
 | 52 | Mục tiêu + Xong khi: đầu, giữa, cuối việc | T 5 | T:63–68 | 08/11 | sống (bỏ ngày ở tiêu đề) |
@@ -67,18 +67,18 @@ Nhà: **A** = `AGENTS.md` (cửa vào: thứ tự đọc, sáu luật, chọn sk
 | 54 | Thói quen của David để nhắc | T 5 | T:84–86 | 08/11 | sống |
 | 55 | Ngày cập nhật hồ sơ D (dữ kiện) | D đầu | D:5 | 08/11 | giữ ngày, bỏ lời kể "chuẩn hoá…" |
 
-55 luật sống · 7 luật trùng đã gộp về một nhà (dòng 3, 4, 5, 8, 9, 48, 51) · 0 luật bỏ · không đổi nghĩa luật nào. Số mục `chuan-muc-lam-viec.md` giữ 0–5 để đường trỏ "mục N" ở skill khác vẫn khớp; `co-so-tri-thuc/David.md` mục 3 đánh số lại 1–5 (không file nào trỏ số con mục 3).
+55 luật sống · 7 luật trùng đã gộp về một nhà (dòng 3, 4, 5, 8, 9, 48, 51) · 0 luật bỏ · không đổi nghĩa luật nào. Số mục `chuan-muc-lam-viec.md` giữ 0–5 để đường trỏ "mục N" ở skill khác vẫn khớp; `co-so-tri-thuc/david.md` mục 3 đánh số lại 1–5 (không file nào trỏ số con mục 3).
 
 ## Sổ (đã gỡ khỏi bản luật, giữ để không mất)
 
 - `AGENTS.md` dòng hồ sơ thấu hiểu: "Ghi 17/10/2026" — ngày ghi chú phần định hướng nghề đã cũ.
-- `co-so-tri-thuc/David.md` đầu file: "Cập nhật lần cuối: 08/11/2026 (chuẩn hoá: mục 3.1, 3.8, 5 trỏ về nhà chính của luật)". Nay: cập nhật 10/11/2026 (tái bản 2).
-- `co-so-tri-thuc/David.md` 3.8: GitHub là bản gốc, bắt buộc 07/11/2026 → nhà ở `AGENTS.md` luật 6, chi tiết ghi nhớ `co-so-tri-thuc-github-ban-goc`.
-- `co-so-tri-thuc/David.md` 4.1: định hướng gốc 05/11/2026; tệp chính quyết định 04/11/2026.
-- `co-so-tri-thuc/David.md` 5: đối chiếu kho 100 video ở phiếu lọc, David chốt 10/11/2026. Giai đoạn 3 "Cơ sở chạy khi vắng chủ" bỏ (cùng định hướng 05/11 không kinh doanh).
-- `co-so-tri-thuc/David.md` 6: hồ sơ CCL 10 phần là tham chiếu chính, David chốt 07/11/2026. Link claude.ai cũ (bản ghi "13 phần") không còn mở được, bỏ.
-- `co-so-tri-thuc/David.md` 8: bộ lọc nội dung David chốt 05/11/2026 với Claude Code.
-- `co-so-tri-thuc/David.md` 9: PDF huyền học bản gộp làm từ bản PDF 31/10/2026 và hai file .md cũ (07/11/2026).
+- `co-so-tri-thuc/david.md` đầu file: "Cập nhật lần cuối: 08/11/2026 (chuẩn hoá: mục 3.1, 3.8, 5 trỏ về nhà chính của luật)". Nay: cập nhật 10/11/2026 (tái bản 2).
+- `co-so-tri-thuc/david.md` 3.8: GitHub là bản gốc, bắt buộc 07/11/2026 → nhà ở `AGENTS.md` luật 6, chi tiết ghi nhớ `co-so-tri-thuc-github-ban-goc`.
+- `co-so-tri-thuc/david.md` 4.1: định hướng gốc 05/11/2026; tệp chính quyết định 04/11/2026.
+- `co-so-tri-thuc/david.md` 5: đối chiếu kho 100 video ở phiếu lọc, David chốt 10/11/2026. Giai đoạn 3 "Cơ sở chạy khi vắng chủ" bỏ (cùng định hướng 05/11 không kinh doanh).
+- `co-so-tri-thuc/david.md` 6: hồ sơ CCL 10 phần là tham chiếu chính, David chốt 07/11/2026. Link claude.ai cũ (bản ghi "13 phần") không còn mở được, bỏ.
+- `co-so-tri-thuc/david.md` 8: bộ lọc nội dung David chốt 05/11/2026 với Claude Code.
+- `co-so-tri-thuc/david.md` 9: PDF huyền học bản gộp làm từ bản PDF 31/10/2026 và hai file .md cũ (07/11/2026).
 - `chuan-muc-lam-viec.md` đầu: "Chốt 08/11/2026 (`du-an/chuan-hoa-ky-nang.md`, vòng 2)".
 - `chuan-muc-lam-viec.md` mục 0: "Trước 08/11/2026 các skill không nối với nhau, nên chỗ lệch là do chỗ đó chưa được cập nhật, không phải ý David." Viết lại không ngày: chỗ lệch giữa các file thường do một chỗ chưa được cập nhật.
 - `chuan-muc-lam-viec.md` mục 0: AI sáng tạo bên trong khung, David chốt 09/11/2026 (ghi nhớ `video-motion-ke-chuyen`).
@@ -88,13 +88,13 @@ Nhà: **A** = `AGENTS.md` (cửa vào: thứ tự đọc, sáu luật, chọn sk
 
 ## Chéo bộ
 
-1. **Luật kênh trùng `kenh.json`** (bộ video): `co-so-tri-thuc/David.md` mục 5 vẫn ghi "Vấn đề / Kết quả", "đo bằng gỡ", 3 phần mỗi video; ghi nhớ `co-so-tri-thuc-ho-so-va-bo-loc` nói `kenh.json` là nhà duy nhất của luật kênh (rà soát T3: "David.md giữ định hướng, bỏ chi tiết lặp"). Tái bản này giữ nguyên mục 5 (không đổi luật). Đề xuất: phiên điều phối đối chiếu với `ky-nang/san-xuat-video/ho-so-thuong-hieu/kenh.json`; chi tiết nào đã có ở đó thì `David.md` mục 5 chỉ còn một dòng trỏ.
-2. **Luật riêng video nằm trong thói quen chung** (bộ video): `chuan-muc-lam-viec.md` mục 3 "Không tự render lại", mục 4 "dọn file tạm bằng `don_tap.py --xoa` (khối 17)", mục 3 "render nối tiếp", mục 2 danh sách "phần cứng" (dấu góc, thẻ cuối, nhạc…). Đây là luật chỉ của video. Đề xuất: nhà ở `ky-nang/san-xuat-video/quy-tac-chung.md`, thói quen chung chỉ giữ một dòng trỏ. Tái bản này chưa dời (cần bộ video nhận).
+1. **Luật kênh trùng `kenh.json`** (bộ video): `co-so-tri-thuc/david.md` mục 5 vẫn ghi "Vấn đề / Kết quả", "đo bằng gỡ", 3 phần mỗi video; ghi nhớ `co-so-tri-thuc-ho-so-va-bo-loc` nói `kenh.json` là nhà duy nhất của luật kênh (rà soát T3: "david.md giữ định hướng, bỏ chi tiết lặp"). Tái bản này giữ nguyên mục 5 (không đổi luật). Đề xuất: phiên điều phối đối chiếu với `ky-nang/san-xuat-video/ho-so-thuong-hieu/kenh.json`; chi tiết nào đã có ở đó thì `david.md` mục 5 chỉ còn một dòng trỏ.
+2. **Luật riêng video nằm trong thói quen chung** (bộ video): `chuan-muc-lam-viec.md` mục 3 "Không tự render lại", mục 4 "dọn file tạm bằng `don-tap.py --xoa` (khối 17)", mục 3 "render nối tiếp", mục 2 danh sách "phần cứng" (dấu góc, thẻ cuối, nhạc…). Đây là luật chỉ của video. Đề xuất: nhà ở `ky-nang/san-xuat-video/quy-tac-chung.md`, thói quen chung chỉ giữ một dòng trỏ. Tái bản này chưa dời (cần bộ video nhận).
 3. **Ghi nhớ trùng bản luật** (bộ ghi-nho): `co-so-tri-thuc-github-ban-goc` lặp lại luật 6 của `AGENTS.md`; `quy-tac-goi-y-de-david-chon`, `quy-tac-ket-qua-hon-toc-do`, `quy-tac-tu-hoi-khi-mo-ho`, `quy-tac-sua-thang-tai-ban` lặp `chuan-muc-lam-viec.md` mục 0, 2, 4. Đề xuất: ghi nhớ giữ ngày + lời David + lý do (sổ), câu luật trỏ về nhà.
 4. **`~/.claude/CLAUDE.md`** (ngoài repo hoặc lối tắt, phiên điều phối kiểm): có hai dòng "trả lời tiếng Việt" và "hỏi trước theo thu-thap-yeu-cau" trùng `AGENTS.md` luật 1–2; đề xuất giữ vì nó nạp ở mọi dự án ngoài repo, nhưng ghi là trỏ.
 5. **`thu-thap-yeu-cau/SKILL.md:17`** trỏ "ngoại lệ được tự chọn" về `chuan-muc-lam-viec.md` mục 2 — vẫn đúng, số mục giữ nguyên (0–5) nên mọi đường trỏ "mục N" ở các skill khác vẫn khớp.
 
 ## Hỏi David
 
-1. **Thứ tự khi nguồn mâu thuẫn có hai cách nói:** `AGENTS.md` cũ: "lời David vừa nói > `co-so-tri-thuc/David.md` > bộ nhớ ngày mới hơn > bộ nhớ cũ"; `chuan-muc-lam-viec.md` mục 0: "lời David vừa nói > bên có ngày chốt gần nhất > bên cũ hơn". Lệch khi một ghi nhớ mới hơn `David.md`. Bản mới đặt cả hai ở mục 0 cạnh nhau, chưa đổi nghĩa. **Đề xuất:** gộp thành một câu "Lời David vừa nói > bản luật (`co-so-tri-thuc/David.md`, skill) > ghi nhớ; hai bản luật lệch nhau thì theo ngày ở sổ (git, changelog), mới hơn thắng" — hợp với thiết kế tái bản (ghi nhớ là sổ, không chứa luật mà bản luật không có).
+1. **Thứ tự khi nguồn mâu thuẫn có hai cách nói:** `AGENTS.md` cũ: "lời David vừa nói > `co-so-tri-thuc/david.md` > bộ nhớ ngày mới hơn > bộ nhớ cũ"; `chuan-muc-lam-viec.md` mục 0: "lời David vừa nói > bên có ngày chốt gần nhất > bên cũ hơn". Lệch khi một ghi nhớ mới hơn `david.md`. Bản mới đặt cả hai ở mục 0 cạnh nhau, chưa đổi nghĩa. **Đề xuất:** gộp thành một câu "Lời David vừa nói > bản luật (`co-so-tri-thuc/david.md`, skill) > ghi nhớ; hai bản luật lệch nhau thì theo ngày ở sổ (git, changelog), mới hơn thắng" — hợp với thiết kế tái bản (ghi nhớ là sổ, không chứa luật mà bản luật không có).
 2. **Dời luật riêng video khỏi thói quen chung** (Chéo bộ 2): đồng ý dời về `quy-tac-chung.md`? Đề xuất: đồng ý.

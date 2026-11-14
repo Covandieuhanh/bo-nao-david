@@ -1,6 +1,6 @@
 # Lịch sử tái bản
 
-Mỗi lần tái bản một bộ: một dòng. Máy đo (`do_chong_cheo.py`) lấy tag cuối của bộ ở đây làm mốc đếm "số lần sửa".
+Mỗi lần tái bản một bộ: một dòng. Máy đo (`do-chong-cheo.py`) lấy tag cuối của bộ ở đây làm mốc đếm "số lần sửa".
 
 | Bộ | Lần | Ngày | Tag | Ghi chú |
 |---|---|---|---|---|

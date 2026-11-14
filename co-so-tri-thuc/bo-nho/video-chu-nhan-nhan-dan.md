@@ -12,4 +12,4 @@ metadata:
 
 **Why:** chữ to cũ (`pow`) canh đáy trên dải phụ đề nên hai dòng chữ cỡ 150 lên tới cằm, kèm dải tối mờ (Scrim) phủ nửa khung.
 
-**How to apply:** luật ở `ky-nang/san-xuat-video/thu-vien-tai-nguyen/nhan-dien-chung.md` mục 2. Kiểu chuẩn là nhãn dán: mỗi dòng một nhãn đặc (trắng chữ sẫm, dòng cuối cam chữ trắng), canh đáy vào đáy dải phụ đề (phụ đề nhường), không Scrim; `pow` không bị lưới chặn dải phụ đề cắt. Code: `Pow` trong `dung-video-theo-phong-cach/assets/montage-template/src/Show.jsx`. Chụp thử luôn soát khoảng cách chữ ↔ cằm. Liên quan [[video-phu-de-mot-cho-chu]], [[video-bo-cuc-tu-can]].
+**How to apply:** luật ở `ky-nang/san-xuat-video/thu-vien-tai-nguyen/nhan-dien-chung.md` mục 2. Kiểu chuẩn là nhãn dán: mỗi dòng một nhãn đặc (trắng chữ sẫm, dòng cuối cam chữ trắng), canh đáy vào đáy dải phụ đề (phụ đề nhường), không Scrim; `pow` không bị lưới chặn dải phụ đề cắt. Code: `Pow` trong `dung-video-theo-phong-cach/assets/montage-template/src/chuong-trinh.jsx`. Chụp thử luôn soát khoảng cách chữ ↔ cằm. Liên quan [[video-phu-de-mot-cho-chu]], [[video-bo-cuc-tu-can]].

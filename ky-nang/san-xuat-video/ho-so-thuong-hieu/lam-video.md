@@ -8,7 +8,7 @@ Báo cáo: `dung-video-theo-phong-cach/references/hoc-tu-20-video-noi-truoc-came
 |---|---|
 | `cat_lang.nguong_dai_s` | > giá trị này là video dài |
 | `cat_lang.ngan` | cắt khoảng lặng ≥ `min_s`, chừa `giu_s` mỗi bên; `cat_tieng_dem` = cắt "ờ/ừm" đứng riêng |
-| `cat_lang.dai` | chỉ để liệt kê: video dài không cắt (quy-tac-chung mục 2), `clean_suggest.py` để mọi cut `ok: false` |
+| `cat_lang.dai` | chỉ để liệt kê: video dài không cắt (quy-tac-chung mục 2), `de-xuat-lam-sach.py` để mọi cut `ok: false` |
 | `the_tit_mo_s` | độ dài thẻ tít mở đầu khi David yêu cầu (khối 06) |
 
 ## Nhật ký

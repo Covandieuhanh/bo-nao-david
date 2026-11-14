@@ -1,6 +1,6 @@
 ---
 name: tai-cau-truc
-description: Tái bản bộ skill — khi luật đã chồng nhiều lớp (học mẫu lớp 1, lớp 2, lớp 3, sửa góp ý…), gom toàn bộ luật đang sống của CẢ BỘ NÃO (mọi bộ skill + ghi nhớ, một đợt) rồi VIẾT LẠI thành một bản sạch: mỗi luật một nhà, không ngày, không "thay luật cũ", không câu tự mâu thuẫn; lịch sử chuyển về sổ quyết định. Có máy đo chồng chéo (do_chong_cheo.py) để biết khi nào nên tái bản. Dùng khi David nói "tái bản", "viết lại skill", "viết lại toàn bộ luật", "gom luật", "luật bị chồng chéo", "/tai-cau-truc", hoặc khi máy đo báo "NÊN TÁI BẢN" và David đồng ý.
+description: Tái bản bộ skill — khi luật đã chồng nhiều lớp (học mẫu lớp 1, lớp 2, lớp 3, sửa góp ý…), gom toàn bộ luật đang sống của CẢ BỘ NÃO (mọi bộ skill + ghi nhớ, một đợt) rồi VIẾT LẠI thành một bản sạch: mỗi luật một nhà, không ngày, không "thay luật cũ", không câu tự mâu thuẫn; lịch sử chuyển về sổ quyết định. Có máy đo chồng chéo (do-chong-cheo.py) để biết khi nào nên tái bản. Dùng khi David nói "tái bản", "viết lại skill", "viết lại toàn bộ luật", "gom luật", "luật bị chồng chéo", "/tai-cau-truc", hoặc khi máy đo báo "NÊN TÁI BẢN" và David đồng ý.
 ---
 
 # Tái bản bộ skill
@@ -17,7 +17,7 @@ description: Tái bản bộ skill — khi luật đã chồng nhiều lớp (h�
 | **Sổ quyết định** | ngày · lời David nguyên văn · lý do · luật nào bị thay | không đọc (chỉ khi cân nhắc đổi luật, gỡ lỗi) |
 | **Kho** | thực đơn để chọn (bố cục, nguồn học, hình mẫu) — không phải luật | chỉ khi cần chọn |
 
-Bộ: `video` (ky-nang/san-xuat-video) · `hoi` (thu-thap-yeu-cau) · `nao` (AGENTS, CLAUDE, chi-dan-toan-cuc, David.md, chuan-muc-lam-viec). Ghi nhớ `co-so-tri-thuc/bo-nho/`
+Bộ: `video` (ky-nang/san-xuat-video) · `hoi` (thu-thap-yeu-cau) · `nao` (AGENTS, CLAUDE, chi-dan-toan-cuc, david.md, chuan-muc-lam-viec). Ghi nhớ `co-so-tri-thuc/bo-nho/`
 là sổ, không đo ở đây, nhưng **dọn cùng đợt** bằng skill `consolidate-memory`.
 
 ## Tái bản là tái bản toàn bộ
@@ -28,16 +28,16 @@ theo bỏ hoặc đổi luật ở nhiều bộ cùng lúc; tái bản lẻ mộ
 - Máy đo: **một bộ bất kỳ vượt ngưỡng** → báo "NÊN TÁI BẢN TOÀN BỘ" một dòng → Claude nhắc David **một dòng**, David quyết.
   Chạy máy đo cuối mỗi việc có sửa bản luật (thoi-quen mục 4):
   ```bash
-  python3 -I ky-nang/tai-cau-truc/do_chong_cheo.py [--chi-tiet]
+  python3 -I ky-nang/tai-cau-truc/do-chong-cheo.py [--chi-tiet]
   ```
 - Hoặc David gọi "tái bản".
 
 ## Quy trình (mỗi đợt)
-1. **Mốc** *(bước nhẹ)*: `bash tu-dong-hoa/sync.sh --push`, rồi `git tag tai-ban-<n>-truoc`. Chạy máy đo, lưu kết quả vào
+1. **Mốc** *(bước nhẹ)*: `bash tu-dong-hoa/dong-bo.sh --push`, rồi `git tag tai-ban-<n>-truoc`. Chạy máy đo, lưu kết quả vào
    `du-an/tai-ban-<n>.md` (file theo dõi chung của đợt). Mỗi phiên con ghi file riêng `du-an/tai-ban-<n>-<bộ>.md`
    (video · hoi · nao · ghi-nho) để không ghi đè nhau.
 2. **Chia phiên:** phiên điều phối mở một phiên con cho mỗi bộ (video · hoi · nao) và một phiên dọn ghi nhớ, chạy cùng lúc.
-   Mỗi phiên chỉ sửa file của bộ mình, không commit, không chạy `sync.sh` — phiên điều phối đẩy một lần khi đóng mốc.
+   Mỗi phiên chỉ sửa file của bộ mình, không commit, không chạy `dong-bo.sh` — phiên điều phối đẩy một lần khi đóng mốc.
    Bộ vừa sạch (máy đo gần 0) vẫn làm bước 3 để tìm luật lệch với bộ khác, viết lại chỗ lệch.
 3. **Bảng luật đang sống** (file của bộ): đọc toàn bộ bản luật + sổ quyết định + ghi nhớ liên quan, mỗi luật một dòng:
    `luật · nhà nên ở · nguồn hiện tại (file:dòng, có thể nhiều) · ngày chốt gần nhất · trạng thái (sống / trùng / ngược / cũ)`.

@@ -52,7 +52,7 @@ quay người sau này ở `podcast-quay-nguoi.md`.*
 - **PO-1 Thẻ chương theo TOPICS**: mỗi lần `TOPICS` đổi ý lớn → thẻ chương 2–3 s (số + tên ý, trích lời) + ghi chương YouTube
   (mốc + tên) vào `phat-hanh.md` để dán mô tả.
 - **PO-2 Teaser 15–25 s cho tập > 10 phút**: ghép 2–3 câu đắt nhất (nguyên văn, cắt cứng) trước `hook`/tiêu đề tập.
-- **PO-3 Khuôn thumbnail series podcast**: thêm biến thể "podcast" cho `thumbnail.sh` — nhãn series + "TẬP n", tít câu hỏi/câu
+- **PO-3 Khuôn thumbnail series podcast**: thêm biến thể "podcast" cho `anh-thu-nho.sh` — nhãn series + "TẬP n", tít câu hỏi/câu
   trích, ảnh người nói; khuôn giữ nguyên cho mọi tập (chỉ đổi chữ/ảnh).
 - **PO-4 Nền "lắng" cho tập tâm sự/thiền**: tuỳ chọn sân khấu nền là ảnh/tranh tĩnh chuyển động rất chậm (Ken Burns) thay lưới
   tối, cho tông lắng (B1, B2, B6).

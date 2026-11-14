@@ -16,4 +16,4 @@ Nguồn Pixabay — Pixabay Content License (dùng miễn phí, cả thương m�
 YouTube Content ID có thể nhận nhầm → kháng nghị kèm giấy phép Pixabay.
 Mức cân từng bài (về ~−15 LUFS): MỘT nguồn ở `ho-so-thuong-hieu/chung.json` → `nhac.muc`. Bản gốc David tải: `~/Music/nhac-nen`.
 2 bài intro: David tải 2026-11-04 (7 bài ứng viên cùng chất intro vlog kênh Jessie Luong); Claude chọn theo độ rõ nhịp + lực mở bài.
-Nhịp/pha (vlog_edl.py BEAT) đo bằng onset — thay bài thì đo lại.
+Nhịp/pha (danh-sach-cat-vlog.py BEAT) đo bằng onset — thay bài thì đo lại.

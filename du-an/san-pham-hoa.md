@@ -4,7 +4,7 @@ Skill: [ky-nang/san-pham-hoa/SKILL.md](../ky-nang/san-pham-hoa/SKILL.md). Script
 
 ## Mục tiêu
 Không ý nào, nỗi đau nào, bài học nào bị trôi mất. Mọi thứ phát sinh mỗi ngày (phiên Claude, tin nhắn, việc qua bot, lời trong video,
-bài đăng, số liệu) tự được gom, phân loại theo ba hướng nghề (`co-so-tri-thuc/David.md` 4.1) và đổ dần vào **sản phẩm bán được** và **gói có
+bài đăng, số liệu) tự được gom, phân loại theo ba hướng nghề (`co-so-tri-thuc/david.md` 4.1) và đổ dần vào **sản phẩm bán được** và **gói có
 các bước để trainer lại**.
 
 ## Kế hoạch
