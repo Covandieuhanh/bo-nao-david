@@ -39,6 +39,10 @@ gui() { # gõ một tin vào phiên bot; lỗi nếu bot chưa sẵn sàng
   dang_chay && [ -n "$(may_chu)" ] || return 1
   screen -S "$(sid)" -p 0 -X stuff "$1"; sleep 1; screen -S "$(sid)" -p 0 -X stuff $'\r'
 }
+LS_BOT="$HOME/.claude/projects/-Users-moon-Documents-2-ca-nhan-so-tay"
+da_nhan() { # $1 nội dung, $2 khoá: tin thẻ máy đã vào lịch sử phiên bot chưa (dòng có đầu tin + giờ khung ở cuối)
+  find "$LS_BOT" -name '*.jsonl' -mmin -120 -print0 2>/dev/null | xargs -0 grep -hF -- "${1:0:24}" 2>/dev/null | grep -qF -- " ${2:0:16}\""; }
+xoa_cho() { [ -f "$TT/cho-bot" ] && { grep -vF -- "$1" "$TT/cho-bot" > "$TT/cho-bot.tmp"; mv "$TT/cho-bot.tmp" "$TT/cho-bot"; }; }
 man_hinh() { rm -f "$TT/man-hinh.txt"; screen -S "$(sid)" -p 0 -X hardcopy "$TT/man-hinh.txt" 2>/dev/null; sleep 1; tr -d '\000' < "$TT/man-hinh.txt" 2>/dev/null; }
 gui_thang() { bash "$GOC/bao-cao.sh" --chi-gui "$1" >/dev/null 2>&1; } # gửi David, không qua Claude
 canh_bao() { # $1 khoá, $2 số giây giữa hai lần báo, $3 nội dung
@@ -170,8 +174,23 @@ while true; do
     fi
     if [[ "$nd" == \[* ]]; then
       # Nội dung bắt đầu bằng thẻ máy (vd [HOI-THOI-QUEN]): gõ vào phiên bot để bot đọc sổ rồi tự soạn tin.
-      # Bot chưa sẵn sàng thì gửi thẳng chữ cố định (bỏ thẻ) để David vẫn được nhắc.
-      if gui "$nd ${khoa:0:16}"; then echo "$khoa" >> "$TT/da-nhac-lap"; ghi "nhac lap qua bot ${khoa:0:16}"; continue; fi
+      # Gõ xong chưa tính là đã gửi: chỉ đánh dấu khi tin hiện trong lịch sử phiên bot (gặp 14/11 16:00: gõ vào phiên sắp tắt, tin mất).
+      # Chưa thấy sau 5 phút thì gõ lại (tối đa 3 lần); bot đang mở lại thì chờ; quá 3 lần hoặc trễ quá 30 phút thì gửi thẳng chữ cố định (bỏ thẻ).
+      if da_nhan "$nd" "$khoa"; then
+        echo "$khoa" >> "$TT/da-nhac-lap"; xoa_cho "$khoa"; ghi "nhac lap qua bot ${khoa:0:16} (bot da nhan)"; continue
+      fi
+      CHO=$(awk -F'\t' -v k="$khoa" '$1==k {print $2" "$3}' "$TT/cho-bot" 2>/dev/null | tail -1)
+      GO_LUC=${CHO% *}; LAN=${CHO#* }; [ -z "$CHO" ] && { GO_LUC=0; LAN=0; }
+      TRE=$(( BAY - $(date -j -f "%Y-%m-%d %H:%M" "${khoa:0:16}" +%s 2>/dev/null || echo "$BAY") ))
+      if [ "$LAN" -lt 3 ] && [ "$TRE" -lt 1800 ]; then
+        [ $(( BAY - GO_LUC )) -lt 300 ] && continue          # vừa gõ, chờ bot nhận (bot bận thì tin xếp hàng)
+        [ "$(tuoi_phien)" -lt 90 ] && continue                # phiên vừa mở, còn đang khởi động
+        if gui "$nd ${khoa:0:16}"; then
+          printf '%s\t%s\t%s\n' "$khoa" "$BAY" "$(( LAN + 1 ))" >> "$TT/cho-bot"; ghi "go nhac lap vao bot ${khoa:0:16} lan $(( LAN + 1 ))"
+        fi
+        continue                                              # bot chưa sẵn sàng: phút sau thử lại
+      fi
+      ghi "bot khong nhan nhac lap ${khoa:0:16} (lan $LAN, tre ${TRE}s), gui thang"; xoa_cho "$khoa"
       nd="${nd#*] }"
     fi
     gui_thang "⏰ Nhắc: ${nd//$'\x1f'/$'\n'}" && echo "$khoa" >> "$TT/da-nhac-lap" && ghi "nhac lap ${khoa:0:16}"
