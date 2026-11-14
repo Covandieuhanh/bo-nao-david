@@ -9,6 +9,7 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 - [Không dùng mod giao diện](quy-tac-mod-tu-chay.md) — đã gỡ hết savvy-progress, collision-guard, goal-meter, Sổ việc; chỉ giữ Telegram (13/11)
 - [Skill tự cải tiến, sáu luật mới](quy-tac-ky-nang-tu-cai-tien.md) — chỉ hỏi khi đụng thông tin David; skill/giọng văn/luật kênh tự học theo số liệu; lời mới nhất thắng (12/11)
 - [Phiên Telegram tự chạy](quy-tac-phien-telegram-tu-chay.md) — tự làm tới kết quả, ghi sổ; chỉ hỏi khi đăng/gửi, tốn tiền, đẩy đè GitHub; mọi phiên bật Remote Control, xong thì hỏi đóng (12/11, 14/11)
+- [Làm kế hoạch thì dừng chờ duyệt](quy-tac-duyet-ke-hoach-4-phan.md) — đủ 4 phần, David duyệt từng phần rồi mới làm tiếp, từng bước một (14/11)
 - [Tài nguyên vào, kết quả ra](quy-tac-goi-y-de-david-chon.md) — sản phẩm từ tài nguyên không hỏi, theo mặc định skill + đề xuất, báo lựa chọn (11/11)
 - [Học là bổ sung](quy-tac-hoc-la-bo-sung.md) — học mẫu chỉ thêm, giữ chặn cũ; khung mới chụp đủ lớp trước render (08/11)
 - [Kết quả hơn tốc độ](quy-tac-ket-qua-hon-toc-do.md) — bước cần kết quả render thì chờ; muốn rút ngắn thì trao đổi (05/11)
@@ -58,4 +59,5 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 ## Chỉ máy Mac chính (file không lên GitHub)
 
 - [Bố cục thư mục máy này](thiet-bi-bo-cuc-thu-muc.md) — 1-nghe-nghiep, 2-ca-nhan, 9-luu-tru, video-goc, sổ xếp file (07/11)
+- [Văn Phòng Shop là mẫu cho công ty](thiet-bi-van-phong-shop.md) — tách khỏi bộ não, ở ~/Documents/van-phong-shop, git riêng (14/11)
 - [Dọn Documents 07/11](thiet-bi-don-documents-2026-11-07.md) — App notion đã bỏ; mở phiên ở ~/Documents/bo-nao-david (07/11)
