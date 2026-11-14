@@ -23,3 +23,6 @@ cookies*
 
 # Ghi nhớ chỉ đúng cho một máy
 nao/bo-nho/may-*
+
+# Tổng hợp tin nhắn (dữ liệu người khác, chỉ ở máy)
+tin-nhan/
