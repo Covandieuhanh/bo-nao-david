@@ -102,7 +102,7 @@ Ghi `<dự án>/phat-hanh/phat-hanh.md`:
 - Gửi David: video + thumbnail (SendUserFile) + tiêu đề.
 
 ## 8. Quy trình chung
-- Hỏi, chạy một mạch, lệnh nền, báo cáo cuối: `../chuan-muc-lam-viec.md` mục 2–4; mật khẩu: `AGENTS.md` luật 5. Riêng video: không có điểm dừng duyệt
+- Hỏi, chạy một mạch, lệnh nền, báo cáo cuối: `../chuan-muc-lam-viec.md` mục 2–4; mật khẩu: `AGENTS.md` luật 5. Riêng video: duyệt 4 phần ở đầu việc, sau đó không có điểm dừng duyệt
   giữa chừng (kể cả kế hoạch ghép vlog); báo cáo cuối thêm "đã chọn X vì Y" và tên riêng cần xác nhận.
 - Không tải video từ YouTube/TikTok để dựng (nhờ David gửi file); tải để học mẫu: `thiet-ke-bo-cuc/README.md` mục 4.
 - Chụp thử (stills) trước khi render; kiểm bản cuối theo khối 17 + 09. **Chụp có giới hạn:** chụp đúng mốc dễ lỗi (khung mới lần

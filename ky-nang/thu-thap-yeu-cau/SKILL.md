@@ -1,6 +1,6 @@
 ---
 name: thu-thap-yeu-cau
-description: Luật hỏi của David — chỉ hỏi trước khi đụng thông tin trực tiếp về David (hồ sơ, màu chủ đạo + chữ ký nhận diện, mạng xã hội, quyền riêng tư) hoặc gặp tín hiệu nặng; còn lại (sản phẩm từ tài nguyên, sửa và cải tiến skill, giọng văn, luật kênh) làm thẳng rồi báo. Khi hỏi thì hỏi theo vòng từ góc nhìn chuyên gia thực chiến, mỗi câu 2–3 gợi ý có đề xuất đứng đầu; sự thật tự tra, quyết định David chốt; diễn giải lại và CHỜ David "ok". Tự nhận diện lúc cần hỏi (6 tín hiệu), cả lúc bắt đầu lẫn giữa chừng. Dùng khi sắp sửa hồ sơ David, khi David nói "hỏi kỹ", "hỏi chuyên gia", "grill me", "/thu-thap-yeu-cau". Không dùng cho câu hỏi nhanh, tra cứu, việc 1–2 bước.
+description: Cách hỏi của David khi trình 4 phần (Mục tiêu · Kế hoạch · Quy trình · Thực thi) trước mọi việc — hỏi theo vòng từ góc nhìn chuyên gia thực chiến, mỗi điểm cần chốt 2–3 gợi ý có đề xuất đứng đầu; sự thật tự tra, quyết định David chốt; chờ David "duyệt" rồi mới tạo/sửa file; duyệt rồi làm trọn một mạch. Tự nhận diện 6 tín hiệu phải dừng hỏi, cả lúc bắt đầu lẫn giữa chừng. Dùng khi trình 4 phần cho một việc, khi David nói "hỏi kỹ", "hỏi chuyên gia", "grill me", "/thu-thap-yeu-cau". Không dùng cho câu hỏi nhanh, tra cứu.
 ---
 
 # Hỏi chuyên gia trước khi làm
@@ -11,20 +11,15 @@ description: Luật hỏi của David — chỉ hỏi trước khi đụng thôn
 
 ## Khi nào áp dụng
 
-- **Áp (hỏi theo vòng, diễn giải, chờ "ok"):** sửa thông tin trực tiếp về David (hồ sơ, định hướng, ghi nhớ David chốt), màu chủ đạo
-  và chữ ký nhận diện, việc trên mạng xã hội của David; thiết kế lớn đổi hướng đi của David (kế hoạch nghề, kênh mới).
-- **Không hỏi — tự cải tiến rồi báo một dòng:** skill, quy trình, giọng văn, luật kênh, script, code (`ky-nang/hoc-lien-tuc`).
-- **Không hỏi — làm thẳng tới kết quả:** sản phẩm làm từ tài nguyên David đưa (video, highlight, podcast, bài đăng, bài viết). Điểm skill
-  đã định thì theo skill; điểm chưa định Claude tự chọn; báo "đã chọn X vì Y" ở báo cáo cuối để David sửa ở bản cuối
-  (`chuan-muc-lam-viec.md` mục 2). Giữa chừng chỉ dừng khi gặp tín hiệu nặng (dưới).
-- **Không áp:** câu hỏi nhanh, tra cứu, giải thích, việc 1–2 bước → trả lời thẳng.
-- **"Làm đi", "theo skill", câu không được trả lời** = chốt theo mặc định của skill, phần chưa định theo đề xuất của Claude. Đề xuất
-  đứng đầu luôn là mặc định của skill khi skill đã định.
-- **Không có David để trả lời** (việc tự động, lịch chạy): làm theo giả định hợp lý nhất, ghi rõ giả định ở đầu báo cáo.
+- **Mọi việc** (`chuan-muc-lam-viec.md` mục 2): trình đủ 4 phần, các điểm cần chốt hỏi theo file này, chờ David "duyệt" rồi mới tạo/sửa file. Duyệt rồi làm trọn một mạch, không hỏi lại từng bước.
+- Sản phẩm từ tài nguyên (video, highlight, podcast, bài đăng): 4 phần gọn (định làm thành gì, khung, số clip, kênh) theo mặc định skill; điểm skill đã định thì ghi luôn, không hỏi lại; điểm chưa định Claude đề xuất "chọn X vì Y".
+- Skill, quy trình, giọng văn, luật kênh: buổi nhìn lại tuần (`ky-nang/hoc-lien-tuc`) gom phần đề xuất sửa vào 4 phần để David duyệt.
+- **Không áp:** câu hỏi nhanh, tra cứu, giải thích → trả lời thẳng. Lịch tự chạy David đã duyệt → làm theo lời giao, ghi giả định ở đầu báo cáo.
+- **"Làm đi", "theo skill", "duyệt"** = chốt theo đề xuất đứng đầu (mặc định của skill khi skill đã định).
 
 ## Sáu tín hiệu phải tự dừng hỏi
 
-Lúc bắt đầu và cả giữa chừng, không đợi David yêu cầu. Với sản phẩm từ tài nguyên chỉ các tín hiệu **nặng** (1 khi làm đổi hẳn kết quả, 2, 3 khi đăng / xoá / khó đảo ngược, 5) mới dừng; tín hiệu 4 và 6 thì tự chọn theo mặc định + đề xuất và ghi vào báo cáo:
+Lúc trình 4 phần: mọi tín hiệu gom vào điểm cần chốt. Sau khi duyệt, giữa chừng chỉ các tín hiệu **nặng** (1 khi làm đổi hẳn kết quả, 2, 3 khi đăng / xoá / khó đảo ngược, 5) mới dừng; tín hiệu 4 và 6 thì tự chọn theo mặc định + đề xuất và ghi vào báo cáo:
 1. **Hiểu được nhiều cách**: câu mơ hồ, nhất là chữ đọc chính tả lệch làm đổi nghĩa — không tự đoán rồi làm.
 2. **Mâu thuẫn** với luật, bộ nhớ, skill hoặc quyết định David đã chốt.
 3. **Tốn thời gian / tiền / khó đảo ngược**: render > 10 phút, xoá, đăng, gửi tin, dịch vụ trả phí, sửa hàng loạt.
@@ -41,8 +36,8 @@ Claude tự xếp loại việc, David không cần nói "grill me":
 
 | Loại việc | Cách hỏi |
 |---|---|
-| **Sản phẩm từ tài nguyên** (video, highlight, podcast, bài đăng) | **Không hỏi**: chạy một mạch tới kết quả, báo các lựa chọn đã làm |
-| **Sửa một file / tài liệu / skill** | **Một vòng gộp** mọi điểm cần chọn; "ok" xong chạy một mạch |
+| **Sản phẩm từ tài nguyên** (video, highlight, podcast, bài đăng) | **4 phần gọn**, chỉ hỏi điểm skill chưa định; duyệt xong chạy một mạch tới kết quả |
+| **Sửa một file / tài liệu / skill** | **4 phần + một vòng gộp** mọi điểm cần chọn; "duyệt" xong chạy một mạch |
 | **Thiết kế lớn** (kế hoạch, chiến lược, skill hoặc quy trình mới) | **Nhiều vòng** tới khi hết điểm mờ |
 | David nói **"grill me" / "hỏi kỹ"** | Nhiều vòng, kể cả việc nhỏ |
 
@@ -85,9 +80,9 @@ Bạn trả lời "đồng ý" hoặc sửa câu nào nhé.
 2. Mỗi vòng ≤ 5 câu, câu nào cũng có 2–3 gợi ý, đề xuất đứng đầu.
 3. Không câu nào hỏi điều đã có trong file, bộ nhớ, đã được skill định, hoặc tra được.
 4. Có diễn giải 3–6 dòng, nói rõ cả điều **không** làm, kèm Mục tiêu và Xong khi.
-5. Việc phải hỏi: không file nào bị tạo/sửa trước khi David "ok". Sản phẩm từ tài nguyên: không hỏi gì ngoài tín hiệu nặng, báo cáo cuối có đủ "đã chọn X vì Y".
+5. Không file nào bị tạo/sửa trước khi David "duyệt" 4 phần. Sau duyệt: không hỏi gì ngoài tín hiệu nặng, báo cáo cuối có đủ "đã chọn X vì Y".
 6. Giữa chừng gặp tín hiệu thì dừng đúng bước, không tự đoán.
-7. Sau "ok" làm một mạch, không phải làm lại vì hiểu sai.
+7. Sau "duyệt" làm một mạch, không phải làm lại vì hiểu sai.
 8. Thiết kế lớn: mọi câu đã chốt nằm trong file phỏng vấn, có phần tóm tắt cuối buổi.
 
 ## Nhật ký

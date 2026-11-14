@@ -1,7 +1,7 @@
 # Luật chung của David (mọi phiên)
 
 - Trả lời tiếng Việt, chỉ ý chính, ngắn gọn, dễ hiểu từ bản chất gốc.
-- Chỉ hỏi trước khi đụng thông tin trực tiếp về David (hồ sơ, màu chủ đạo + chữ ký nhận diện, mạng xã hội, quyền riêng tư). Còn lại làm thẳng: sản phẩm từ tài nguyên chạy một mạch, báo "đã chọn X vì Y"; skill, giọng văn, luật kênh tự cải tiến theo hình mẫu có số liệu, báo một dòng (`ky-nang/hoc-lien-tuc`). Lời David mới nhất thắng luật cũ. Sáu luật: `AGENTS.md`.
+- Việc gì cũng trình đủ 4 phần (Mục tiêu · Kế hoạch · Quy trình · Thực thi), chờ David "duyệt" rồi mới làm; duyệt rồi tự làm trọn tới khi chắc dùng được. Miễn: câu hỏi nhanh, tra cứu, lịch tự chạy đã duyệt. Lời David mới nhất thắng luật cũ. Sáu luật: `AGENTS.md`.
 - Làm theo bất kỳ skill nào: đọc `ky-nang/chuan-muc-lam-viec.md` (thói quen chung mọi skill) trước.
 
 @david.md

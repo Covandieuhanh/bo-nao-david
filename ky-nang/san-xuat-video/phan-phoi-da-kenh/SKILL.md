@@ -1,6 +1,6 @@
 ---
 name: phan-phoi-da-kenh
-description: Quy trình trọn gói của David — từ MỘT tài nguyên (video quay, ghi âm, bài nói bộc phát; thường không kèm yêu cầu) Claude tự lọc theo hồ sơ David, quyết định có đáng làm và làm thành gì, rồi làm một mạch không cổng duyệt: dựng bản dài + clip ngắn, soạn bài theo giọng David cho từng kênh, giao lên Drive và trang xem kết quả (localhost:8765); góp ý thì render lại toàn bộ; khi David nói "đăng" thì hẹn giờ YouTube, trang Facebook, TikTok qua trình duyệt đã đăng nhập, rồi gom bình luận và đọc số liệu. Dùng khi David gửi video/ghi âm mới, bỏ file vào Drive tu-lieu-goc, nói "có video mới", "đăng giúp", "đăng lên các kênh", "làm bài đăng", "lọc nội dung này", "/phan-phoi-da-kenh" — kể cả khi chỉ gửi file mà không nói gì.
+description: Quy trình trọn gói của David — từ MỘT tài nguyên (video quay, ghi âm, bài nói bộc phát; thường không kèm yêu cầu) Claude tự lọc theo hồ sơ David, quyết định có đáng làm và làm thành gì, trình 4 phần chờ David duyệt, rồi làm một mạch không cổng duyệt: dựng bản dài + clip ngắn, soạn bài theo giọng David cho từng kênh, giao lên Drive và trang xem kết quả (localhost:8765); góp ý thì render lại toàn bộ; khi David nói "đăng" thì hẹn giờ YouTube, trang Facebook, TikTok qua trình duyệt đã đăng nhập, rồi gom bình luận và đọc số liệu. Dùng khi David gửi video/ghi âm mới, bỏ file vào Drive tu-lieu-goc, nói "có video mới", "đăng giúp", "đăng lên các kênh", "làm bài đăng", "lọc nội dung này", "/phan-phoi-da-kenh" — kể cả khi chỉ gửi file mà không nói gì.
 ---
 
 # Đăng đa kênh — một lần nói → đủ bài cho mọi kênh
@@ -16,7 +16,9 @@ xem kết quả (`python3 tu-dong-hoa/xem-ket-qua.py` → localhost:8765; trang 
 Drive `thanh-pham` và sổ danh mục — giữ đúng tên `2-ban-day-du/phat-hanh/`, `3-doan-noi-bat/clip-X/`, `cat/X.md`, `dang-bai.md` là hiện đủ). Không cổng duyệt nào trước khi xong (David 13/11/2026: "không cần duyệt
 cổng 1, cổng 2 nữa, cứ thế làm thôi; không ưng thì góp ý rồi render lại toàn bộ"). Chỉ việc **đăng lên mạng xã hội** chờ David nói "đăng" (AGENTS luật 4).
 
-## Quy trình (một mạch, không dừng chờ)
+**Bước 0 — duyệt 4 phần** (`chuan-muc-lam-viec.md` mục 2): trước khi dựng, trình 4 phần gọn (làm thành gì, khung, số clip, kênh; điểm skill đã định ghi luôn) và chờ David "duyệt". Duyệt rồi mới chạy một mạch như dưới.
+
+## Quy trình (sau khi duyệt 4 phần: một mạch, không dừng chờ)
 | # | Bước | Đọc / dùng |
 |---|---|---|
 | 0 | **Nhận tài nguyên**: Drive `tu-lieu-goc` hoặc file gửi vào chat → `~/Movies/tap-<ten>/1-goc/`. Chép lời, đo độ dài, khung, chất lượng | khối 01 |

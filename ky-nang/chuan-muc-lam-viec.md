@@ -21,15 +21,21 @@ Luật nội dung (nguyên văn lời David, giọng David, lằn ranh) không p
   `loi-thuong-gap.md` của skill đọc một lần ở đầu phiên.
 - File dài: tìm (`grep`) rồi đọc đúng đoạn. Đã đọc trong phiên thì không đọc lại.
 
-## 2. Mặc định là tự làm, hỏi là ngoại lệ
-Mục tiêu của David: **đưa tài nguyên vào, nhận kết quả**. Các lần làm thật là để chỉnh phần giữa, không phải để trả lời câu hỏi.
-- **Skill / hồ sơ đã định → làm đúng như vậy**, không hỏi, không đề xuất khác. Đề xuất của Claude không bao giờ trái mặc định của
+## 2. Duyệt 4 phần trước, duyệt rồi tự làm trọn
+**Mọi việc** (kể cả khi David chỉ gửi video/ghi âm không kèm lời, sửa skill, sửa bộ não, dựng hệ thống): trước khi tạo/sửa bất kỳ file nào, trình đủ
+**4 phần** — **Mục tiêu** (kết quả, đo bằng gì) · **Kế hoạch** (làm gì, ở đâu, chọn gì vì sao) · **Quy trình** (từng bước) · **Thực thi** (checklist nhỏ nhất,
+có mốc làm ngay) — kèm các điểm cần chốt (mỗi điểm có đề xuất đứng đầu), rồi **dừng chờ David "duyệt"**. Duyệt (hoặc sửa phần nào thì trình lại phần đó) →
+**tự làm trọn một mạch**, tự thử thật tới khi chắc dùng được, không xin phép từng bước, không dừng giữa chừng trừ tín hiệu nặng; xong báo kết quả. Phiên giao
+qua Telegram gửi 4 phần bằng `bao-cao.sh "#N ❓ Chờ anh duyệt 4 phần: …"`. (David 14/11/2026, việc #22.)
+**Miễn 4 phần:** câu hỏi nhanh, tra cứu, giải thích (trả lời thẳng) · bot Sổ nhớ ghi nhớ, tra sổ · lịch tự chạy David đã duyệt (`tu-dong-hoa/lich/lich-chay.md`,
+`[TU-HOC]`): chạy theo lời giao đã duyệt, không trình lại mỗi lần.
+Trong 4 phần, cách chọn từng điểm:
+- **Skill / hồ sơ đã định → làm đúng như vậy**, không đề xuất khác. Đề xuất của Claude không bao giờ trái mặc định của
   skill; thấy cần khác mặc định thì đó là tín hiệu 2 (mâu thuẫn) — dừng hỏi, không tự đổi.
-- **Skill chưa định → Claude tự chọn** phương án tốt nhất theo tiêu chí của skill, làm luôn, ghi "đã chọn X vì Y" trong báo cáo cuối
-  để David sửa ở bản cuối.
+- **Skill chưa định → Claude tự chọn** phương án tốt nhất theo tiêu chí của skill, ghi "chọn X vì Y" ngay trong phần Kế hoạch để David duyệt.
 - **Yêu cầu của David làm được trong mặc định → giữ mặc định**, không đổi thứ khác để đáp ứng (vd. "tập trung vào điện thoại" ≠ đổi khung).
 - **Câu David không trả lời, "làm đi", "theo skill"** = theo mặc định của skill, phần chưa định thì theo đề xuất của Claude.
-- **Chỉ dừng hỏi khi:** đăng / gửi / xoá trên mạng xã hội / mật khẩu (`AGENTS.md` luật 4) · tín hiệu nặng của `thu-thap-yeu-cau` (mâu thuẫn luật, khó đảo
+- **Sau khi duyệt, chỉ dừng hỏi khi:** đăng / gửi / xoá trên mạng xã hội / mật khẩu (`AGENTS.md` luật 4) · tín hiệu nặng của `thu-thap-yeu-cau` (mâu thuẫn luật, khó đảo
   ngược, thiếu file / nguồn hỏng, hiểu được nhiều cách làm đổi hẳn kết quả) · sửa thông tin trực tiếp về David, màu chủ đạo, chữ ký
   nhận diện (diễn giải + chờ "ok"). Skill, giọng văn, luật kênh: tự cải tiến theo `ky-nang/hoc-lien-tuc`, báo một dòng.
 - Phần cứng của video: `san-xuat-video/quy-tac-chung.md` mục 8.

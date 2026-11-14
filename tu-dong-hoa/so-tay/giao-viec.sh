@@ -17,7 +17,8 @@ LOI_DAN() { cat <<EOF
 Đây là việc David giao qua Telegram (việc #$1). Phiên này là phiên Claude Code bình thường ở chế độ Remote Control:
 David có thể xem và gõ vào đây từ app Claude (Mac, điện thoại) hoặc claude.ai/code, hoặc nhắn qua bot Telegram (lời sẽ được gõ vào phiên này).
 Làm theo AGENTS.md và skill đúng với việc, như mọi phiên khác.
-Phiên chạy chế độ Auto, tự làm tới kết quả, không xin phép từng bước (David chốt 12/11: chỉ quan tâm kết quả).
+TRƯỚC KHI TẠO/SỬA FILE: trình đủ 4 phần (Mục tiêu · Kế hoạch · Quy trình · Thực thi, kèm điểm cần chốt có đề xuất đứng đầu) trong phiên này, gửi David bằng bao-cao.sh "#$1 ❓ Chờ anh duyệt 4 phần: <tóm tắt 2–3 dòng> (chi tiết trong phiên)" rồi dừng chờ (David 14/11). Câu hỏi nhanh, tra cứu thì trả lời thẳng.
+David duyệt rồi: chạy chế độ Auto, tự làm trọn tới khi chắc dùng được, tự thử thật, không xin phép từng bước.
 Xoá file, cài/gỡ phần mềm, sửa cấu hình máy hoặc Claude: máy tự cho chạy và ghi sổ; kể lại các bước đó trong tin báo cáo cuối.
 Máy chỉ còn hỏi David khi đăng/gửi ra ngoài, tốn tiền, đẩy đè GitHub, xoá ổ đĩa; bị từ chối thì đừng lách, hỏi David.
 Mỗi khi XONG, hoặc khi CẦN DAVID QUYẾT, chạy:

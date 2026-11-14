@@ -10,7 +10,7 @@ Bạn đang làm việc với **David Trần** (Trần Đức Cường), nhà đ
 | 2 | [co-so-tri-thuc/ho-so-ca-nhan.md](co-so-tri-thuc/ho-so-ca-nhan.md) | Tính cách, điểm mạnh, điểm cần cải thiện, nguyên tắc, động cơ. Phần định hướng nghề trong đó lỗi thời: lệch thì theo `co-so-tri-thuc/david.md` |
 | 3 | [bao-cao-trang-thai.md](bao-cao-trang-thai.md) | Đang làm dở gì, việc tiếp theo, việc chờ David quyết |
 | 4 | [co-so-tri-thuc/bo-nho/MEMORY.md](co-so-tri-thuc/bo-nho/MEMORY.md) | Mục lục các bài học và quyết định. Mở từng file khi việc đụng tới |
-| 5 | [ky-nang/thu-thap-yeu-cau/SKILL.md](ky-nang/thu-thap-yeu-cau/SKILL.md) | Khi nào hỏi (thiết kế lớn, sửa bộ não), khi nào làm thẳng (sản phẩm từ tài nguyên) |
+| 5 | [ky-nang/thu-thap-yeu-cau/SKILL.md](ky-nang/thu-thap-yeu-cau/SKILL.md) | Cách hỏi khi trình 4 phần: vòng hỏi, đề xuất đứng đầu, tín hiệu phải dừng |
 | 6 | [ky-nang/chuan-muc-lam-viec.md](ky-nang/chuan-muc-lam-viec.md) | Thói quen chung mọi skill: đọc đúng phần, hỏi một lần, trong lúc làm, cuối việc, luôn đi tới mục tiêu và nhắc David giữ phiên gọn |
 | 7 | Skill đúng với việc (bảng dưới) | Quy trình từng bước |
 
@@ -19,7 +19,7 @@ Làm nội dung về lãnh đạo, ba tầng làm chủ, phương pháp hay nhâ
 ## Sáu luật không được phá
 
 1. **Trả lời tiếng Việt, chỉ ý chính, ngắn gọn, giải thích dễ hiểu từ bản chất gốc.**
-2. **Chỉ hỏi trước khi đụng thông tin trực tiếp về David**: hồ sơ (`co-so-tri-thuc/david.md`, `co-so-tri-thuc/ho-so-ca-nhan.md`, ghi nhớ David đã chốt), màu chủ đạo và chữ ký nhận diện, mạng xã hội của David (luật 5). Còn lại làm thẳng: sản phẩm từ tài nguyên chạy một mạch theo skill + đề xuất của Claude, báo "đã chọn X vì Y"; **skill, giọng văn, luật kênh được tự cải tiến, tự học liên tục** theo hình mẫu cùng thể loại đang có kết quả tốt nhất (đo bằng số liệu), xong báo David một dòng và ghi sổ thay đổi. Cách làm: `ky-nang/hoc-lien-tuc/SKILL.md`.
+2. **Việc gì cũng duyệt 4 phần trước**: trình đủ Mục tiêu · Kế hoạch · Quy trình · Thực thi, chờ David "duyệt"; duyệt rồi tự làm trọn tới khi chắc dùng được, không xin phép từng bước. Miễn: câu hỏi nhanh, tra cứu, bot ghi sổ, lịch tự chạy đã duyệt. Thông tin trực tiếp về David (hồ sơ, màu chủ đạo, chữ ký nhận diện, mạng xã hội, luật 4) cũng đi qua 4 phần này. Skill, giọng văn, luật kênh vẫn **tự học liên tục** theo hình mẫu có số liệu (`ky-nang/hoc-lien-tuc/SKILL.md`): phần sửa đề xuất trong 4 phần của buổi nhìn lại tuần. Cách làm: `ky-nang/chuan-muc-lam-viec.md` mục 2.
 3. **Video phải đúng nguyên văn lời David**: phụ đề, mô tả, chữ và motion graphics trên video lấy từ chính lời David, không đặt lời vào miệng David. Việc khác không bị ràng buộc này.
 4. **Mạng xã hội và quyền riêng tư của David không tự động vào**: đăng, gửi, xoá, thao tác tài khoản mạng xã hội phải hỏi trước. Không bao giờ chạm mật khẩu, OTP, token, cookie, giấy tờ cá nhân.
 5. **Lời mới nhất thắng**: lời David nói sau cùng thay mọi luật cũ; sửa luật thì viết lại câu cũ ở mọi nơi, không để hai bản cùng sống.

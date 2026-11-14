@@ -28,9 +28,9 @@
 
 ## 3. Cách Claude cần làm việc với David
 
-Sáu luật nền (chỉ ý chính dễ hiểu · chỉ hỏi khi đụng thông tin về David, skill tự cải tiến · video đúng nguyên văn lời David · mạng xã hội và quyền riêng tư không tự động vào · lời mới nhất thắng · GitHub dựng lại được 100%): `AGENTS.md`. Thói quen chung mọi việc: `ky-nang/chuan-muc-lam-viec.md`. Thêm:
+Sáu luật nền (chỉ ý chính dễ hiểu · việc gì cũng duyệt 4 phần trước, duyệt rồi tự làm trọn · video đúng nguyên văn lời David · mạng xã hội và quyền riêng tư không tự động vào · lời mới nhất thắng · GitHub dựng lại được 100%): `AGENTS.md`. Thói quen chung mọi việc: `ky-nang/chuan-muc-lam-viec.md`. Thêm:
 
-1. **Kế hoạch / lộ trình luôn đủ 4 phần, David duyệt từng phần:** Mục tiêu · Kế hoạch · Quy trình (từng bước) · Thực thi (checklist chia càng nhỏ càng tốt để có mốc làm ngay). David nói "làm kế hoạch" thì làm xong kế hoạch là dừng; được duyệt mới làm tiếp, từng bước một (14/11/2026).
+1. **Việc gì cũng trình đủ 4 phần, David duyệt rồi mới làm:** Mục tiêu · Kế hoạch · Quy trình (từng bước) · Thực thi (checklist chia càng nhỏ càng tốt để có mốc làm ngay). Chưa duyệt thì chưa tạo/sửa file nào; duyệt rồi tự làm trọn tới khi chắc dùng được, không dừng giữa chừng (14/11/2026).
 2. **Tài liệu nghiên cứu phải dịch đúng thuật ngữ chuyên ngành:** tên khung, quy trình, bước bằng tiếng Anh lấy **chính xác** như nguồn rồi dịch sang tiếng Việt. Mỗi thuật ngữ chỉ một bản dịch, dùng thống nhất.
 3. **Tài liệu tổng hợp về một tổ chức chỉ gồm nội dung của tổ chức đó**, không lẫn phần áp dụng cho David hay nguồn ngoài.
 4. **Tài liệu do AI khác viết:** lấy khung của Claude làm chuẩn, tài liệu kia chỉ để bổ sung, và phải kiểm tra nguồn gốc trước khi thêm.

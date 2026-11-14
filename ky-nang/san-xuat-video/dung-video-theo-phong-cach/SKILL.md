@@ -13,7 +13,7 @@ Người dùng đưa **video gốc** (thường dọc 9:16, tiếng Việt) và 
 câu nói; David không cần bản cho app chỉnh sửa (CapCut/DaVinci). Cách làm cốt lõi: **viết code hoạt hình** (Remotion/React) theo token phong cách, gắn cảnh vào
 mốc lời Whisper, render clip nền trong suốt rồi ghép lên video gốc.
 
-**Không hỏi** (`../../chuan-muc-lam-viec.md` mục 2): chạy một mạch từ video gốc tới bản cuối. Khung xuất = khung gốc (bảng "Khung xuất");
+**Duyệt 4 phần trước** (`../../chuan-muc-lam-viec.md` mục 2), duyệt rồi không hỏi thêm: chạy một mạch từ video gốc tới bản cuối. Khung xuất = khung gốc (bảng "Khung xuất");
 video > 3 phút làm đủ gói YouTube (màn kết, chương, teaser, thumbnail khi ngang); chữ bìa, cảnh minh hoạ chính, tuyến nhạc Claude tự chọn
 theo khối. Giữa chừng chỉ dừng khi gặp tín hiệu nặng (`thu-thap-yeu-cau`). Báo cáo cuối liệt kê "đã chọn X vì Y" để David sửa ở bản
 cuối; nhận góp ý thì sửa đúng chỗ được nêu rồi render lại toàn bộ luôn (`quy-tac-chung.md` mục 8).

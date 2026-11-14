@@ -15,7 +15,7 @@ Dùng chung template Remotion và gần hết script của skill gốc — `$BAS
 Luật nội dung của skill gốc vẫn áp dụng. Lệnh > 2 phút chạy nền. Giữ task list theo các bước.
 
 **Không hỏi** (`../../chuan-muc-lam-viec.md` mục 2): chữ thumbnail, tên các phần (TOPICS), nền lắng hay lưới tối Claude tự chọn
-theo khối; chụp thử mọi cảnh mới để Claude tự soát (khối 17) rồi chạy một mạch tới bản cuối; giữa chừng chỉ dừng khi gặp tín hiệu nặng
+theo khối; chụp thử mọi cảnh mới để Claude tự soát (khối 17) rồi (sau khi David duyệt 4 phần, `../../chuan-muc-lam-viec.md` mục 2) chạy một mạch tới bản cuối; giữa chừng chỉ dừng khi gặp tín hiệu nặng
 (`thu-thap-yeu-cau`). Báo cáo cuối liệt kê "đã chọn X vì Y" để David sửa ở bản cuối.
 
 

@@ -59,7 +59,7 @@ Cấu hình vault `.obsidian/` (plugin, cài đặt) lên GitHub để dựng l�
 ### Câu David cần chốt
 
 1. Sổ tay riêng (`2-ca-nhan/so-tay`) có làm vault thứ hai chỉ trên máy không? Đề xuất: **có**, vì danh bạ, tin nhắn, ý tưởng là phần sẽ lớn nhanh nhất.
-2. Có cài app Obsidian để thỉnh thoảng xem bản đồ không? Đề xuất: **có, nhưng làm sau cùng**, vì Claude không cần app.
+2. ~~Có cài app Obsidian không?~~ David đã rõ (14/11): liên kết và bộ quy tắc liên kết nằm trong file, **không cần app**; app chỉ để mở xem bản đồ cho vui, cài hay không tuỳ lúc David muốn.
 
 ---
 
