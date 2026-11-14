@@ -70,7 +70,11 @@ Tin ngắn, tiếng Việt, gửi qua Telegram tới chat của David (`allowFro
 
 ## David báo đã ăn gì
 
-David báo món đã ăn (David 14/11/2026 21:16: "tôi ăn gì sẽ báo bạn", muốn được nhắc ăn cho đủ dinh dưỡng): ghi nhật ký như thường, rồi trả lời thêm **một dòng**: tuần này (từ thứ 2) đã có gì / còn thiếu nhóm nào so với "Đĩa tuần" trong `kien-thuc.md` mục "Dinh dưỡng cân đối", tiến độ **hôm nay** so với "Đĩa ngày" (đã có / còn thiếu), và bữa tới nên thêm món gì. Nhắc nhẹ khi thấy lệch (trứng quá 4 quả/ngày nhiều ngày, mì tôm quá 1 gói/tuần, cả ngày chưa có rau). Ăn món mới chưa có trong sổ thì tự ước lượng chất chính, không hỏi lại. Lời khuyên lối sống, không chẩn đoán, không giảng dài.
+David báo món đã ăn (David 14/11/2026 21:16: "tôi ăn gì sẽ báo bạn", muốn được nhắc ăn cho đủ dinh dưỡng): ghi nhật ký như thường, rồi trả lời thêm **một dòng**: tuần này (từ thứ 2) đã có gì / còn thiếu nhóm nào so với "Đĩa tuần" trong `kien-thuc.md` mục "Dinh dưỡng cân đối", tiến độ **hôm nay** so với "Đĩa ngày theo thể trạng" (ước lượng đạm đã ăn / ~110 g, kcal / ~1.800, rau, trái cây còn thiếu; bảng "Lượng đạm dễ nhớ" trong cùng mục), và bữa tới nên thêm món gì. Nhắc nhẹ khi thấy lệch (trứng quá 4 quả/ngày nhiều ngày, mì tôm quá 1 gói/tuần, cả ngày chưa có rau). Ăn món mới chưa có trong sổ thì tự ước lượng chất chính, không hỏi lại. Lời khuyên lối sống, không chẩn đoán, không giảng dài.
+
+## Đo thể trạng
+
+David nhắn "cân X kg, bụng Y cm" (nhắc 07:30 chủ nhật): ghi `kien-thuc.md` mục "Dinh dưỡng cân đối" dòng `- <ngày> · Đo thể trạng: X kg, bụng Y cm · nguồn: David`, rồi trả lời một dòng so với lần đo trước và mốc 14/11 (65 kg, 80 cm). Vòng bụng đứng yên 3 tuần liền thì gợi ý giảm ~150 kcal/ngày hoặc thêm 1 buổi tập.
 
 ## Nhắc khi lâu chưa ăn
 
