@@ -8,6 +8,7 @@ Sổ gốc ghi lời nguyên văn: `~/Documents/2-ca-nhan/so-tay/y-tuong.md` và
 |---|---|---|---|---|
 | 1 | Company OS: automation cho DN nhỏ, phễu dẫn vào gói training | Anh Phú Ông góp ý | 12/11/2026 | ✅ Gộp vào hướng 3 gói công nghệ (13/11): `pheu-ban-hang-goi-cong-nghe.md` |
 | 2 | Talkshow/podcast online thứ 5 hằng tuần, hai đầu Việt – Đức | Anh Phú Ông rủ | 12/11/2026 | Đang cân nhắc · gợi ý đặt ở David Trần Official |
+| 3 | Telegram làm nhà cho thành viên, bot thay mặt David trong nhóm học | David nói trong phiên Claude | 14/11/2026 | Đang cân nhắc · chờ bot hiện tại ổn định |
 
 ---
 
@@ -44,3 +45,29 @@ Sổ gốc ghi lời nguyên văn: `~/Documents/2-ca-nhan/so-tay/y-tuong.md` và
 3. Ai giữ nhịp (lịch, khách mời, đăng)?
 
 **Bước nhỏ nhất:** ghi thử 1 số 20–30 phút qua cuộc gọi (chủ đề "sức khoẻ doanh nghiệp nhìn từ hai đầu"), gửi file cho Claude dựng bằng `dung-podcast` để hai anh em xem có muốn làm tiếp không.
+
+---
+
+## 3. Telegram làm nhà cho thành viên — bot thay mặt David trong nhóm học
+
+**Lời David (tóm đúng ý):** dùng Telegram cho thành viên là khá phù hợp và tối ưu chi phí. Khi bot Telegram của David ổn định thì hoàn toàn có thể thay mặt David làm việc trên các nhóm học.
+
+**Telegram có sẵn gì (Claude giải thích 14/11):**
+- **Bot:** điều khiển từ xa miễn phí. Đẩy tin tới, nhận lệnh (chữ, giọng nói, file), nút bấm một chạm. API mở, không cần xin duyệt (Zalo, Messenger khoá chặt).
+- **Group có Topics:** mỗi topic một bài/khoá; bot chào người mới, nhắc bài tập, điểm danh.
+- **Channel:** phát nội dung một chiều, bot đăng theo lịch.
+- **Kênh trả phí bằng Stars:** gói thành viên tháng, Telegram tự thu tiền, tự đá người hết hạn.
+- **Poll / Quiz:** kiểm tra sau buổi học, khảo sát nỗi đau.
+- **Telegram Business (Premium):** nối bot vào tài khoản cá nhân trả lời khách khi bận (lời chào, trả lời mẫu, giờ làm việc).
+- **Mini App:** trang web (HTML/JS + `telegram-web-app.js`) mở ngay trong Telegram, đưa lên HTTPS miễn phí (GitHub Pages / Vercel / Cloudflare Pages), gắn qua BotFather `/newapp` hoặc nút Menu. Biết người dùng là ai (kiểm `initData` bằng token bot), theo giao diện Telegram, nút chính, lưu cloud, thanh toán Stars, toàn màn hình. Gợi ý: đặt lịch 1:1, check-in học viên hằng ngày, trang gói học + thanh toán, bảng duyệt việc của David.
+
+**Đối chiếu định hướng:**
+- Khớp: thước đo thành công "người được đồng hành tự đứng được, không cần David xuất hiện"; luật 4 tiếng/ngày (bot gánh việc lặp); khách người Việt online; gói công nghệ kèm đào tạo (chính hệ này là bản mẫu bán được).
+- Lưu ý: bot nói trong nhóm là nói thay David → cần lằn ranh (bot làm gì, việc gì phải chuyển David); không đụng dữ liệu riêng của học viên ngoài nhóm.
+
+**Câu cần chốt:**
+1. Bot "ổn định" đo bằng gì (bao nhiêu ngày chạy không lỗi)?
+2. Bot được làm gì trong nhóm: chỉ nhắc + điểm danh, hay trả lời câu hỏi chuyên môn?
+3. Nhóm đầu tiên là nhóm nào (học viên thật hay nhóm thử)?
+
+**Bước nhỏ nhất:** dựng Mini App check-in học viên bản 0 trên bot hiện có, thử với một nhóm nhỏ.
