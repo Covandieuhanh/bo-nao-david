@@ -8,6 +8,7 @@ Sổ gốc ghi lời nguyên văn: `~/Documents/2-ca-nhan/so-tay/y-tuong.md` và
 |---|---|---|---|---|
 | 1 | Company OS: automation cho DN nhỏ, phễu dẫn vào gói training | Anh Phú Ông góp ý | 12/11/2026 | ✅ Gộp vào hướng 3 gói công nghệ (13/11): `pheu-ban-hang-goi-cong-nghe.md` |
 | 2 | Talkshow/podcast online thứ 5 hằng tuần, hai đầu Việt – Đức | Anh Phú Ông rủ | 12/11/2026 | Đang cân nhắc · gợi ý đặt ở David Trần Official |
+| 3 | Văn Phòng Shop: đội AI chat từng ô cho người bán hàng online (gói công nghệ 2) | David giao, mẫu kênh Phan Nho MMO | 14/11/2026 | Đang cân nhắc · kế hoạch + bản mẫu: `doi-tac-tu-ban-hang/` |
 
 ---
 
@@ -44,3 +45,16 @@ Sổ gốc ghi lời nguyên văn: `~/Documents/2-ca-nhan/so-tay/y-tuong.md` và
 3. Ai giữ nhịp (lịch, khách mời, đăng)?
 
 **Bước nhỏ nhất:** ghi thử 1 số 20–30 phút qua cuộc gọi (chủ đề "sức khoẻ doanh nghiệp nhìn từ hai đầu"), gửi file cho Claude dựng bằng `dung-podcast` để hai anh em xem có muốn làm tiếp không.
+
+---
+
+## 3. Văn Phòng Shop: đội AI cho người bán hàng online
+
+**Lời David (14/11):** lấy mô hình kênh Phan Nho MMO làm tham khảo, lên kế hoạch thiết kế một trang gồm các AI cho tệp khách bán hàng online, kiểu nói chuyện với từng AI như các ô chat khác nhau.
+
+**Đối chiếu định hướng:** khớp hướng 3 (gói công nghệ + đào tạo tới khi ra kết quả); khớp ý Company OS (#1). Gói 1 (dựng video) chưa bán thử xong, nên gói này đứng sau.
+
+**Câu cần chốt:** làm song song gói 1 hay chờ gói 1 có khách đầu tiên? Shop quen nào để thử?
+
+**Bước nhỏ nhất:** David mở `doi-tac-tu-ban-hang/ban-mau.html`, nhắn thử 3 AI. Chi tiết: `doi-tac-tu-ban-hang/README.md`.
+

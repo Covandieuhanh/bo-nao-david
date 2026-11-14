@@ -59,6 +59,9 @@ tiếng Anh chuẩn → dùng đúng cột "Tên dùng"; chưa có thì thêm m�
 | Naming Convention | Quy ước đặt tên | `quy-uoc-dat-ten` |
 | Glossary | Bảng thuật ngữ | `bang-thuat-ngu` |
 | Agents (sub-agent) | Tác tử | `tac-tu` |
+| Sales Agent Team | Đội tác tử bán hàng | `doi-tac-tu-ban-hang` |
+| Prototype | Bản mẫu | `ban-mau` |
+| Competitor Research | Nghiên cứu đối thủ | `nghien-cuu-<tên>` |
 | Interview | Phỏng vấn | `phong-van` |
 | Device | Thiết bị | `thiet-bi` |
 | Career | Nghề nghiệp | `nghe-nghiep` |
