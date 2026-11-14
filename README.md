@@ -17,6 +17,8 @@ Repo riêng tư. AI nào, tài khoản nào đọc xong cũng nhận đúng vai,
 | David là ai, định hướng nghề, lằn ranh | [co-so-tri-thuc/david.md](co-so-tri-thuc/david.md) |
 | Tính cách, điểm mạnh, động cơ | [co-so-tri-thuc/ho-so-ca-nhan.md](co-so-tri-thuc/ho-so-ca-nhan.md) |
 | Luật chung cho mọi phiên Claude | [co-so-tri-thuc/chi-dan-toan-cuc.md](co-so-tri-thuc/chi-dan-toan-cuc.md) |
+| Agent dùng chung (mô hình nhỏ cho đọc, tìm, tóm tắt) | [tac-tu/](tac-tu/) |
+| Tên chuẩn của file, thư mục | [co-so-tri-thuc/bang-thuat-ngu.md](co-so-tri-thuc/bang-thuat-ngu.md) |
 | Các quyết định, bài học đã chốt | [co-so-tri-thuc/bo-nho/MEMORY.md](co-so-tri-thuc/bo-nho/MEMORY.md) (chia nhóm: luật, não, video) |
 | Đang làm dở gì, câu hỏi còn mở | [bao-cao-trang-thai.md](bao-cao-trang-thai.md) |
 | Trạng thái từng video, tài nguyên | [du-an/danh-muc-noi-dung.md](du-an/danh-muc-noi-dung.md) |
