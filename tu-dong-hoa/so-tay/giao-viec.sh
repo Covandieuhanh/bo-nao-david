@@ -1,6 +1,6 @@
 #!/bin/bash
 # Bot Sổ nhớ giao một việc cho phiên Claude Code thật, chạy trên Mac ở chế độ Remote Control:
-# phiên hiện như khung chat bình thường trong app Claude trên điện thoại và claude.ai/code, David xem và gõ tiếp được.
+# David theo dõi và gõ tiếp qua bot Telegram (phiên mở từ Terminal không hiện trên claude.ai / app điện thoại, kiểm 14/11/2026).
 # Dùng: bash giao-viec.sh "<yêu cầu nguyên văn của David>"     → in ra số việc
 #       bash giao-viec.sh --tiep <số> "<lời David>"             → gõ vào phiên đó (phiên đã đóng thì mở lại)
 #       bash giao-viec.sh --dung <số>                           → đóng phiên đó
@@ -15,7 +15,7 @@ export PATH="$HOME/.bun/bin:$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:/u
 
 LOI_DAN() { cat <<EOF
 Đây là việc David giao qua Telegram (việc #$1). Phiên này là phiên Claude Code bình thường ở chế độ Remote Control:
-David có thể xem và gõ vào đây từ app Claude trên điện thoại hoặc claude.ai/code, hoặc nhắn qua bot Telegram (lời sẽ được gõ vào phiên này).
+David theo dõi qua bot Telegram và nhắn lại ở đó (lời sẽ được gõ vào phiên này).
 Làm theo AGENTS.md và skill đúng với việc, như mọi phiên khác.
 Phiên chạy chế độ Auto, tự làm tới kết quả, không xin phép từng bước (David chốt 12/11: chỉ quan tâm kết quả).
 Xoá file, cài/gỡ phần mềm, sửa cấu hình máy hoặc Claude: máy tự cho chạy và ghi sổ; kể lại các bước đó trong tin báo cáo cuối.
@@ -31,11 +31,6 @@ EOF
 sid_cua() { grep "^| $1 |" "$SO" | awk -F'|' '{gsub(/ /,"",$5); print $5}'; }
 ten_cua() { # cắt theo chữ (không theo byte) để không hỏng chữ có dấu
   echo "Telegram #$1 · $(grep "^| $1 |" "$SO" | awk -F'|' '{print $4}' | python3 -I -c 'import sys;print(sys.stdin.read().strip()[:40])')"; }
-link_cua() { # link mở thẳng phiên trong app Claude (phiên mở từ Terminal không hiện trong danh sách của app, 14/11/2026); chờ tối đa 40 giây
-  local J="$HOME/.claude/projects/-Users-moon-Documents-bo-nao-david/$(sid_cua "$1").jsonl" i
-  for i in $(seq 1 20); do
-    [ -f "$J" ] && grep -o '"url": *"https://claude.ai/code/session_[A-Za-z0-9]*"' "$J" | tail -1 | grep -o 'https[^"]*' && return
-    sleep 2; done; }
 man_hinh_cua() { screen -ls 2>/dev/null | awk -v t=".viec-$1" '$1 ~ t"$" {print $1; exit}'; }
 
 chay() { # $1 số việc, $2 tên hiện trong app, $3 cờ phiên (--session-id / --resume) $4 id, $5 lời nhắn
@@ -68,7 +63,7 @@ case "$1" in
       doi_trang_thai "$2" "đang làm (tiếp $(date +%H:%M))"; echo "Đã gõ vào phiên việc #$2"
     else
       chay "$2" "$(ten_cua "$2")" --resume "$SID" "David nhắn qua Telegram: $3"
-      doi_trang_thai "$2" "đang làm (mở lại $(date +%H:%M))"; echo "Phiên việc #$2 đã đóng, đã mở lại và chuyển lời. Link: $(link_cua "$2")"
+      doi_trang_thai "$2" "đang làm (mở lại $(date +%H:%M))"; echo "Phiên việc #$2 đã đóng, đã mở lại và chuyển lời."
     fi ;;
   --dung)
     S=$(man_hinh_cua "$2"); [ -n "$S" ] && screen -S "$S" -X quit && doi_trang_thai "$2" "đã đóng $(date '+%d/%m %H:%M')" && echo "Đã đóng phiên việc #$2" || echo "Việc #$2 không mở" ;;
@@ -82,6 +77,5 @@ case "$1" in
     chay "$N" "$(ten_cua "$N")" --session-id "$SID" "$(LOI_DAN $N)
 
 Yêu cầu nguyên văn của David: $*"
-    L=$(link_cua "$N")
-    echo "Đã giao việc #$N. Bấm link để xem và gõ tiếp trong app Claude: ${L:-(chưa có link, xem claude.ai/code)}" ;;
+    echo "Đã giao việc #$N. Xong hoặc cần anh quyết Claude sẽ nhắn ở đây; anh trả lời tại đây là lời được gõ vào phiên." ;;
 esac
