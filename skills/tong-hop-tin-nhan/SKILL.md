@@ -1,6 +1,6 @@
 ---
 name: tong-hop-tin-nhan
-description: Tổng hợp tin nhắn hằng ngày của David từ Zalo, Messenger, Telegram — chỉ đọc, ra bảng việc cần làm / thoả thuận / đời thường, lưu ở máy (tin-nhan/, không lên GitHub) và gửi bản gọn về bot Telegram Sổ nhớ. Dùng khi lịch hằng ngày chạy, khi David nói "tổng hợp tin", "tổng hợp tin nhắn", "hôm nay ai nhắn gì", "/tong-hop-tin-nhan".
+description: Tổng hợp tin nhắn hằng ngày của David từ Zalo, Messenger, Telegram — chỉ đọc, ra bảng việc cần làm / thoả thuận / đời thường, lưu trong sổ nhớ (~/Documents/2-ca-nhan/so-nho/tin-nhan/, không lên GitHub) và gửi bản gọn về bot Telegram Sổ nhớ; David trả lời bot để gộp người, đánh dấu xong, bỏ qua. Dùng khi lịch hằng ngày chạy, khi David nói "tổng hợp tin", "tổng hợp tin nhắn", "hôm nay ai nhắn gì", "/tong-hop-tin-nhan".
 ---
 
 # Tổng hợp tin nhắn
@@ -12,7 +12,7 @@ description: Tổng hợp tin nhắn hằng ngày của David từ Zalo, Messeng
 - **Chỉ đọc.** Không gõ vào ô soạn tin, không bấm gửi, không thả cảm xúc, không gọi, không xoá, không rời nhóm.
 - Không đăng nhập thay David. Trang đòi đăng nhập → ghi "⚠️ <nền tảng> cần David đăng nhập lại" vào tin gửi bot rồi làm tiếp nền tảng khác.
 - Không chép số điện thoại, số tài khoản, địa chỉ nhà, mã OTP vào file hay tin Telegram.
-- File chỉ ở `tin-nhan/` (đã chặn trong `.gitignore`). Không đưa nội dung tin vào bộ não, ghi nhớ hay GitHub.
+- File chỉ ở `~/Documents/2-ca-nhan/so-nho/tin-nhan/` (gọi tắt `TN/`; sổ nhớ, không lên GitHub, sao lưu Drive). Không đưa nội dung tin vào bộ não, ghi nhớ hay GitHub.
 - Mở cuộc trò chuyện làm tin hiện "đã xem" → chỉ mở cuộc **có hoạt động mới kể từ lần trước và có thể có việc**; còn lại đọc dòng xem trước trong danh sách là đủ.
 
 ## Nguồn và cách đọc
@@ -35,10 +35,13 @@ Trình duyệt Claude: dùng tab đang mở trang đó (`tabs_context`), không 
 
 ## Quy trình
 
-1. Mở bản tổng hợp gần nhất trong `tin-nhan/` (nếu có) để biết mốc lần trước và việc còn tồn.
+1. Đọc trước:
+   - bản tổng hợp gần nhất trong `TN/` → mốc lần trước, việc còn tồn;
+   - `TN/ghi-chu.md` → việc David đã báo xong/bỏ (không nhắc lại), cuộc bị bỏ qua, người ưu tiên;
+   - các dòng `tên trên mạng` trong `~/Documents/2-ca-nhan/so-nho/nguoi.md` → gộp mọi tên trên Zalo/Messenger/Telegram của cùng một người thành **một dòng, ghi tên trong sổ** (ví dụ "Long Phạm (Zalo + Telegram)"). Mục `## <người>` trong `nguoi.md` cho thêm bối cảnh để xếp việc đúng; không chép chi tiết riêng tư từ đó vào bản tổng hợp.
 2. Đọc danh sách 3 nền tảng, lọc cuộc có tin mới sau mốc đó (lần đầu: 24 giờ qua).
 3. Mở các cuộc đã lọc, đọc phần mới.
-4. Viết `tin-nhan/tong-hop-YYYY-MM-DD.md` theo khuôn dưới. Việc tồn hôm trước chưa thấy xong thì chép sang, ghi "(từ dd/mm)".
+4. Viết `TN/tong-hop-YYYY-MM-DD.md` theo khuôn dưới. Việc tồn hôm trước chưa thấy xong (và không có trong `ghi-chu.md`) thì chép sang, ghi "(từ dd/mm)". Hai tên giống nhau rõ ràng mà chưa gộp (Rex (2)54 / Rex (2)) thì gộp và thêm dòng "❓ Gộp: … — sai thì nhắn bot" cuối tin.
 5. Gửi bản gọn về bot: `bash scripts/so-nho/bao-cao.sh --chi-gui "<tin>"` (chạy ở thư mục bộ não). Tin ≤ 3.500 ký tự, chữ thường không markdown.
 6. Báo cuối phiên một dòng: số cuộc đã đọc, số việc, gửi bot được hay lỗi.
 
@@ -73,6 +76,9 @@ Xếp "Gấp": có hạn chót gần hoặc người nhắn lại nhiều lần 
 ⚠️ <cảnh báo nếu có>
 
 Bản đủ: tin-nhan/tong-hop-YYYY-MM-DD.md
+Trả lời bot: "1 xong" · "A và B là một người" · "bỏ qua X" · "thêm 2 vào việc cần làm"
 ```
+
+Số thứ tự đánh liên tục trong cả tin (Cần làm 1–n, Đang chờ tiếp n+1…) để David trả lời theo số.
 
 Không có gì mới → gửi một dòng "📬 dd/mm: không có tin mới cần xử lý."

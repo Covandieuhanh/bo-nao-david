@@ -19,7 +19,7 @@ Tin là **ra việc cho Claude** hoặc **hỏi việc của Claude**: theo mụ
 |---|---|---|
 | `viec-can-lam.md` | Việc cần làm | `- [ ] việc · hạn <ngày nếu có> · ghi <ngày>`. Xong thì đổi thành `[x]`, thêm `· xong <ngày>`. |
 | `lich-hen.md` | Lịch/hẹn | `- <ngày giờ> · việc · với ai/ở đâu`, xếp theo ngày |
-| `y-tuong.md` | Ý tưởng | `- <ngày> · ý tưởng` |
+| `y-tuong.md` | Ý tưởng | `- <ngày> · ý tưởng`. Ý tưởng hay thông tin mới về nghề/hướng đi (của David hoặc người khác góp ý) **ngoài những gì bộ não David đang có**: luôn ghi vào đây, thêm ` · [chờ lọc]` cuối dòng (David 12/11/2026 22:29). Lọc chung trong buổi tổng kết thứ 6 hằng tuần (nhắc 18:00). David nói "lọc ý tưởng" thì liệt kê các dòng `[chờ lọc]`, David chọn giữ → đổi thành `[giữ]` và giao Claude đưa vào bộ não; bỏ → `[bỏ <ngày>]` |
 | `nguoi.md` | Người | `## Tên người` rồi các dòng `- <ngày> · điều cần nhớ` |
 | `kien-thuc.md` | Kiến thức | `## Chủ đề` rồi các dòng `- <ngày> · điều đã biết · nguồn nếu có` |
 | `nhat-ky/<YYYY-MM>.md` | Nhật ký | `- <ngày> · chuyện đã xảy ra, cảm nhận` |
@@ -40,6 +40,21 @@ Khi nhận tin bắt đầu bằng `[TU-HOC]` (máy gửi tối chủ nhật): c
 David hỏi **chuyện đã bàn với Claude** ("hôm trước mình nói gì về X", "Claude đã làm gì với video Y"): chạy `python3 -I /Users/moon/Documents/David.Claude/scripts/tim-phien.py "<từ khoá>" ["<từ khoá 2>"]`, trả lời ngắn từ các đoạn tìm được (giờ in ra là UTC, đổi sang giờ Mac).
 
 Khi nhận tin bắt đầu bằng `[KHOI-DONG]` (máy gửi lúc mở phiên mới): chỉ đọc lướt `nhom.md` để biết cấu trúc, không gửi gì cho David.
+
+## Tin nhắn tổng hợp (Zalo · Messenger · Telegram)
+
+Mỗi sáng máy gửi David tin bắt đầu bằng `📬 Tin nhắn dd/mm`, các việc đánh số. Bản đủ ở `tin-nhan/tong-hop-YYYY-MM-DD.md`. Tin David nói về **người hay việc trong bản tổng hợp** (trả lời/trích tin 📬, hoặc nhắc "tin nhắn", "bản tổng hợp", tên cuộc trò chuyện) thì xử lý ở đây, vẫn ghi hộp thư trước:
+
+| David nói | Ghi vào | Trả lời |
+|---|---|---|
+| "A trên Telegram và B trên Zalo là một người", "Em Long 46 là Long Phạm" | `nguoi.md`, dưới `## <tên người>` (chưa có thì tạo mục), dòng `- tên trên mạng · Zalo: … · Telegram: … · Messenger: … · (David xác nhận <ngày>)`; đã có dòng đó thì sửa tại chỗ | `Đã gộp: <tên> = …, lần sau tổng hợp chung một người.` |
+| "1 xong", "việc Lê 89 xong rồi", "bỏ việc 3" (số theo tin 📬 gần nhất) | `tin-nhan/ghi-chu.md` mục "Việc đã xử lý": `- <ngày> · <việc> · xong/bỏ` | `Đã ghi việc <số> xong, mai không nhắc.` |
+| "thêm việc 2 vào việc cần làm", "nhắc tôi việc 3 thứ 2" | `viec-can-lam.md` (hoặc `nhac-viec.md`) như thường + `ghi-chu.md`: `· đã chuyển vào Việc cần làm` | như mục Nhóm |
+| "bỏ qua nhóm X", "đừng tổng hợp 3T" | `ghi-chu.md` mục "Bỏ qua" | `Đã bỏ qua X từ mai.` |
+| "chú ý chị Lê hơn", "người này quan trọng" | `ghi-chu.md` mục "Ưu tiên" | `Đã ưu tiên X.` |
+| Hỏi "Lê 89 nói gì?", "hôm qua ai nhắn về tiền?" | không ghi; Grep `tin-nhan/` + `nguoi.md` rồi trả lời ngắn | — |
+| "đọc lại tin nhắn ngay", "tổng hợp tin bây giờ", "xem kỹ cuộc với X" | `giao-viec.sh "Chạy skill tong-hop-tin-nhan<, chỉ cuộc với X>"` | như mục Điều khiển Claude |
+| "trả lời Lê là…", "nhắn cho Long…" | **Không gửi.** Ghi vào `viec-can-lam.md` việc "Trả lời <người>: <nội dung>" | `Bot chỉ đọc tin, không nhắn thay anh. Đã ghi vào Việc cần làm.` |
 
 ## Hỏi thăm thói quen
 
