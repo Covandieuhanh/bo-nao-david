@@ -1,6 +1,6 @@
 #!/bin/bash
 # Canh bot Sổ nhớ: launchd chạy script này suốt (KeepAlive), mỗi phút kiểm một vòng.
-# Lịch tự chạy nằm trong app Claude (tu-dong-hoa/lich/): đổi tài khoản thì cài lại, mở lại app lúc rảnh để app nạp lịch.
+# Lịch tự chạy: tu-dong-hoa/lich/lich-chay.md, tới giờ mở phiên hiện trong app Claude (Remote Control), tài khoản nào cũng được.
 # Tự sửa: phiên chết · thừa phiên · máy chủ Telegram chết hoặc mất kết nối mạng · phiên treo · hộp thoại chặn · đổi tài khoản (cả đổi trên app: mở sẵn đăng nhập Terminal) ·
 #         làm mới ngữ cảnh 4h sáng. Việc theo giờ: tóm tắt 7h, nhắc đúng giờ (gửi thẳng, không cần Claude), sao lưu Drive 3h.
 # Báo David qua Telegram (gửi thẳng) khi: chưa đăng nhập Claude · hết hạn mức · mở lại liên tục · mất mạng lâu.
@@ -231,19 +231,14 @@ while true; do
       gui_thang "🔑 Anh vừa đổi tài khoản trên app Claude. Em đã mở Terminal để đăng nhập lại Claude trong Terminal: trên trình duyệt anh chọn đúng tài khoản mới rồi bấm cho phép. Xong bước này phiên việc mới hiện trên app."
     fi
     echo "$TKA" > "$TT/tai-khoan-app"
-    # Lịch app (tổng hợp tin nhắn) nằm trong thư mục riêng của từng tài khoản: cài lại từ repo cho tài khoản này.
-    python3 -I "$GOC/../lich/cai-lich-app.py" >> "$LOG" 2>&1 && ghi "cai lich app cho $TKA"
   fi
 
-  # Nạp lịch app: mọi lịch tự chạy nằm trong app Claude (tu-dong-hoa/lich/lich-app.json), app chỉ đọc lịch lúc khởi động.
-  # Có dấu can-mo-lai-app (cai-lich-app.py đặt khi lịch đổi) thì mở lại app lúc 3–5 giờ sáng, khi không phiên app nào hoạt động trong 30 phút.
-  if [ -f "$TT/can-mo-lai-app" ] && [ "$GIO" -ge 3 ] && [ "$GIO" -lt 5 ] && [ "$(python3 -I "$GOC/../lich/app-ranh.py" 30)" = ranh ]; then
-    ghi "mo lai app Claude de nap lich"
-    osascript -e 'quit app "Claude"' >/dev/null 2>&1
-    for _ in 1 2 3 4 5 6; do pgrep -x Claude >/dev/null || break; sleep 5; done
-    pgrep -x Claude >/dev/null && pkill -x Claude && sleep 5
-    open -a Claude && rm -f "$TT/can-mo-lai-app" && ghi "da mo lai app, lich moi da nap"
-  fi
+  # Lịch tự chạy (tu-dong-hoa/lich/lich-chay.md): tới giờ mở một phiên hiện trong app Claude, tài khoản nào cũng được.
+  python3 -I "$GOC/nhac-lap.py" "$GOC/../lich/lich-chay.md" "$TT/da-lich-chay" /dev/null 2>>"$LOG" | while IFS=$'\t' read -r khoa nd; do
+    ID="${nd%% *}"
+    bash "$GOC/../lich/chay-lich.sh" "$ID" >/dev/null 2>>"$LOG" && ghi "chay lich $ID (phien hien trong app)"
+    echo "$khoa" >> "$TT/da-lich-chay"
+  done
 
   # Nhịp sống cho lệnh kiểm tra sức khoẻ.
   echo "$BAY $(dang_chay && echo phien-ok || echo phien-tat) $([ -n "$(may_chu)" ] && echo telegram-ok || echo telegram-tat)" > "$TT/nhip"

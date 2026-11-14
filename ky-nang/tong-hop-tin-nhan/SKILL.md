@@ -20,10 +20,10 @@ description: Tổng hợp tin nhắn hằng ngày của David từ Zalo, Messeng
 | Nền tảng | Trình duyệt | Trang |
 |---|---|---|
 | Zalo | **Claude in Chrome** (Zalo Web không chạy trong trình duyệt Claude: thiếu kho lưu trữ bảo mật, tải lại liên tục) | chat.zalo.me |
-| Messenger | Trình duyệt Claude (`mcp__Claude_Browser__*`) | www.messenger.com |
-| Telegram | Trình duyệt Claude | web.telegram.org/a/ |
+| Messenger | **Claude in Chrome** (David đăng nhập trong Chrome 14/11) | www.messenger.com |
+| Telegram | **Claude in Chrome** | web.telegram.org/a/ |
 
-Trình duyệt Claude: dùng tab đang mở trang đó (`tabs_context`), không có thì `preview_start` với url. Chrome: `tabs_context_mcp`, dùng tab chat.zalo.me nếu có, không có thì tạo tab mới. Chrome chưa kết nối → ghi cảnh báo, bỏ Zalo lần này.
+Cả ba qua Claude in Chrome (lịch mở phiên bằng `claude --chrome`, không cần trình duyệt riêng của app): `tabs_context_mcp`, dùng tab của trang đó nếu có, không có thì tạo tab mới. Zalo báo "đang mở ở tab khác" → bấm đúng nút "Kích hoạt" (không phải gửi tin). Chrome chưa kết nối → ghi cảnh báo, bỏ lần này.
 
 **Zalo** — `get_page_text` ra danh sách (tên · thời gian · dòng cuối). Mở cuộc: `find` tên → `computer left_click` theo `tai-lieu-tham-khao` (click bằng JS không mở được) → chờ 2 giây → `get_page_text` (ra khung `<article>` của cuộc đó). Danh sách cuộn ảo, `tai-lieu-tham-khao` đổi sau mỗi lần mở: `find` lại, hoặc gõ tên vào ô "Tìm kiếm" rồi bấm kết quả đầu. Zalo Web không phân biệt tin của David trong chữ: đoán theo ngữ cảnh, dòng xem trước có "Bạn:" là của David.
 
