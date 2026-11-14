@@ -26,5 +26,5 @@ David chốt 14/11/2026: nhịp đêm + tuần; gói đang chạy tự bổ sung
 - [x] David duyệt thiết kế (14/11)
 - [x] Script gom + skill + lịch đêm và tuần (14/11)
 - [x] Chạy thử lượt đầu (14/11)
-- [ ] Chạy thử đóng gói lần 1 (CN 15/11 06:30, lịch app `dong-goi-thu`, tự gỡ sau khi chạy); lần 2 thứ 6 20/11 06:30
+- [ ] Chạy thử đóng gói lần 1 (CN 15/11 06:30, dòng `chỉ ngày` trong `tu-dong-hoa/lich/lich-chay.md`); lần 2 thứ 6 20/11 06:30
 - [ ] Sau 2 tuần: rà xem phân loại có đúng hướng không, nỗi đau nào lên ngưỡng, sửa skill theo `hoc-lien-tuc`

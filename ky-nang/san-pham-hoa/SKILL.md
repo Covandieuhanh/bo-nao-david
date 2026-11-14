@@ -69,7 +69,5 @@ trùng và thư mục `thu-…`) · bài đăng, số liệu, danh mục video (
 6. Báo bot (≤ 8 dòng): `bash tu-dong-hoa/so-tay/bao-cao.sh "📦 Đóng gói tuần: … · Bài phễu: N nháp ở kho-du-lieu/bai-pheu · Chờ anh: …"`.
 7. Cuối việc theo `chuan-muc-lam-viec.md` mục 4 (đẩy GitHub phiếu tuần và phần sửa gói: `bash tu-dong-hoa/dong-bo.sh --push`).
 
-## Lịch (cài lại trên máy mới)
-Hai lịch trong app Claude (Scheduled tasks), chạy khi app đang mở; app tắt lúc tới giờ thì chạy lúc mở lại:
-- `gom-phan-loai-dem`: `0 23 * * *` · lời giao: "Làm việc trong thư mục /Users/moon/Documents/bo-nao-david. Chạy skill san-pham-hoa, Việc 1 (phân loại mỗi đêm)."
-- `dong-goi-tuan`: `30 6 * * 5` · lời giao: "Làm việc trong thư mục /Users/moon/Documents/bo-nao-david. Chạy skill san-pham-hoa, Việc 2 (đóng gói sáng thứ 6)."
+## Lịch
+Nằm trong repo, không gắn tài khoản: `tu-dong-hoa/lich/lich-chay.md` (gom 23:00 mỗi đêm, đóng gói 06:30 thứ 6), lời giao ở `tu-dong-hoa/lich/loi-giao/`. Máy canh bot gọi Claude trong Terminal tới giờ, không cần mở app; đổi giờ thì sửa đúng file đó.

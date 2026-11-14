@@ -61,3 +61,5 @@ David nhắn Telegram những gì nhớ, biết, cần làm. Phiên Claude Code 
 Xem phiên bot: `screen -r so-tay` (thoát: Ctrl-A rồi D). Nhật ký canh: `~/Documents/2-ca-nhan/so-tay/.trang-thai/canh-bot.log`.
 
 **Học từ Hermes** (12/11): tin thoại → `nghe-thoai.sh` (ffmpeg + whisper-cli, mô hình `~/whisper-models/ggml-large-v3-turbo.bin`, ~5 giây, 0 token) · bot nghỉ 30 phút thì canh-bot gõ `/clear` (mục 7, nhớ dấu ở `.trang-thai/da-gon`) · `tu-dong-hoa/tim-phien.py` tìm lại cuộc trò chuyện cũ · `[TU-HOC]` 07:00 sáng thứ 6 trong `nhac-viec.md` → bot giao phiên chạy skill `hoc-lien-tuc`.
+
+**Không gắn tài khoản** (14/11): lịch gom 23:00 + đóng gói thứ 6 06:30 ở `tu-dong-hoa/lich/lich-chay.md`, canh-bot gọi `lich/chay-lich.sh` (Claude trong Terminal, không cần app). Tổng hợp tin 7:00 cần trình duyệt app nên ở `lich/lich-app.json`, canh-bot thấy app đổi tài khoản thì chạy `lich/cai-lich-app.py` cài lại. Nhắc có thẻ máy chạy một lần: `- chỉ ngày YYYY-MM-DD HH:MM · [THẺ] …`. Kiểm tra sau khi đổi tài khoản: `bash tu-dong-hoa/kiem-tra-tai-khoan.sh`.
