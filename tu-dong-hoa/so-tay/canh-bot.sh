@@ -10,7 +10,7 @@ GOC="$(cd "$(dirname "$0")" && pwd)"
 DATA="$HOME/Documents/2-ca-nhan/so-tay"
 TT="$DATA/.trang-thai"
 TEN="so-tay"
-KENH="$HOME/.claude/channels/so-nho"   # thư mục riêng: phiên Claude khác không thấy token nên không giành bot
+KENH="$HOME/.claude/channels/so-tay"   # thư mục riêng: phiên Claude khác không thấy token nên không giành bot
 TOKEN_FILE="$KENH/.env"
 DRIVE="$HOME/Library/CloudStorage/GoogleDrive-covandieuhanh@gmail.com/Drive của tôi/sao-luu-mac/so-tay"
 mkdir -p "$TT"

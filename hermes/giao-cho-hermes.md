@@ -120,7 +120,7 @@ File đó viết cho bot cũ, nên đọc theo bảng đổi này:
 | Tin máy `[HOI-THOI-QUEN]` | **Lịch của Hermes** theo các dòng `mỗi ngày HH:MM · [HOI-THOI-QUEN] …` trong `nhac-viec.md` (hiện 11:00, 16:00, 20:30), làm đúng mục "Hỏi thăm thói quen"; danh sách thói quen và "+ việc chưa xong" đọc từ chính dòng đó và `danh-sach-viec.md`. Máy không gửi các dòng có thẻ này khi công tắc là `hermes`. David thêm, đổi hay dừng dòng có thẻ thì cập nhật lịch Hermes theo |
 | Tin máy `[KHOI-DONG]`, `[CHO-DUYET]` | Không còn. Thay bằng: **mỗi tin David nhắn, trước tiên xem `.trang-thai/duyet/*.json`** |
 | Nhắc đúng giờ, nhắc lặp không thẻ | Máy tự gửi. Hermes chỉ ghi dòng vào `nhac-viec.md` đúng dạng, **không tạo lịch riêng cho chúng** (sẽ gửi trùng) |
-| Ảnh, file trong `~/.claude/channels/so-nho/inbox/` | Ảnh, file David gửi Hermes: ghi đường dẫn Hermes lưu |
+| Ảnh, file trong `~/.claude/channels/so-tay/inbox/` | Ảnh, file David gửi Hermes: ghi đường dẫn Hermes lưu |
 | "bot có ổn không" | `bash …/viec-dang-chay.sh` (mục "Sức khoẻ bot" nói về máy canh và phiên việc) |
 
 **Duyệt từ xa (phải nhanh, làm trước mọi việc khác):** máy gửi David tin `🔐 Claude cần anh cho phép…` hoặc `❓ Claude đang hỏi anh…` có `(Mã yêu cầu: MÃ)`, và để yêu cầu ở `.trang-thai/duyet/<MÃ>.json`. Hermes không thấy tin máy gửi, nên **mỗi tin David nhắn đều xem thư mục này trước**. Có yêu cầu đang chờ mà tin giống câu trả lời → ghi `.trang-thai/duyet/<MÃ>.tra` đúng như mục "Duyệt từ xa" của `quy-tac-bot.md` (`ok` · `khong <lý do>` · nguyên văn câu trả lời), rồi đáp David một dòng. Máy chờ tối đa 30 phút. "tôi đi vắng" / "tôi về" → ghi `.trang-thai/vang` là `1` / `0`.

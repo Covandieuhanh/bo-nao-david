@@ -6,7 +6,7 @@
 GHI=1; [ "$1" = "--chi-gui" ] && { GHI=0; shift; }
 TIN="$*"
 [ -z "$TIN" ] && { echo "Thiếu nội dung báo cáo"; exit 1; }
-KENH="$HOME/.claude/channels/so-nho"
+KENH="$HOME/.claude/channels/so-tay"
 SO="$HOME/Documents/2-ca-nhan/so-tay/bao-cao-claude.md"
 LUC=$(date "+%Y-%m-%d %H:%M")
 

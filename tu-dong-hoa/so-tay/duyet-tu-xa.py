@@ -198,7 +198,7 @@ def main():
     cwd = v.get("cwd", "")
     if cwd.rstrip("/").endswith("so-tay"):
         ra()  # chính bot: không hỏi vòng
-    if not os.path.exists(os.path.expanduser("~/.claude/channels/so-nho/.env")):
+    if not os.path.exists(os.path.expanduser("~/.claude/channels/so-tay/.env")):
         ra()
     try:
         bao_vang = open(os.path.join(TT, "vang")).read().strip() == "1"

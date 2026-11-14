@@ -6,7 +6,7 @@ DATA="$HOME/Documents/2-ca-nhan/so-tay"
 NHAN="com.david.so-tay"
 PLIST="$HOME/Library/LaunchAgents/$NHAN.plist"
 
-mkdir -p "$DATA/hop-thu" "$DATA/nhat-ky" "$DATA/.claude" "$DATA/.trang-thai" "$HOME/.claude/channels/so-nho"
+mkdir -p "$DATA/hop-thu" "$DATA/nhat-ky" "$DATA/.claude" "$DATA/.trang-thai" "$HOME/.claude/channels/so-tay"
 cp "$GOC/quy-tac-bot.md" "$DATA/CLAUDE.md"
 cp "$GOC/settings.json" "$DATA/.claude/settings.json"
 
