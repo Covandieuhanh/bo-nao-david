@@ -52,5 +52,5 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 
 ## Chỉ máy Mac chính (file không lên GitHub)
 
-- [Bố cục thư mục máy này](thiet-bi-bo-cuc-thu-muc.md) — bo-nao-david (lối tắt David.Claude), 1-nghe-nghiep, 2-ca-nhan; Mac chỉ giữ việc đang làm; dọn 07/11 bỏ App notion (07/11, 11/11; gộp 14/11)
+- [Bố cục thư mục máy này](thiet-bi-bo-cuc-thu-muc.md) — bo-nao-david (lối tắt David.Claude), 1-nghe-nghiep, 2-ca-nhan; hợp đồng/giấy tờ ở 2-ca-nhan/phap-ly (15/11); Mac chỉ giữ việc đang làm; dọn 07/11 bỏ App notion (07/11, 11/11; gộp 14/11)
 - [Văn Phòng Shop là mẫu cho công ty](thiet-bi-van-phong-shop.md) — tách khỏi bộ não, ở ~/Documents/van-phong-shop, git riêng (14/11)

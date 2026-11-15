@@ -33,6 +33,7 @@ tiếng Anh chuẩn → dùng đúng cột "Tên dùng"; chưa có thì thêm m�
 | Sales Funnel | Phễu bán hàng | `pheu-ban-hang` |
 | Idea Backlog | Danh sách ý tưởng chờ | `danh-sach-y-tuong` |
 | Personal Profile | Hồ sơ cá nhân | `ho-so-ca-nhan` |
+| Legal (Legal Documents) | Pháp lý (hợp đồng, văn bản, giấy tờ) | `phap-ly` |
 | Business Model | Mô hình kinh doanh | `mo-hinh-kinh-doanh` |
 | Brand Identity | Nhận diện thương hiệu | `nhan-dien-thuong-hieu` |
 | Brand Voice | Giọng thương hiệu | `giong-thuong-hieu` |
