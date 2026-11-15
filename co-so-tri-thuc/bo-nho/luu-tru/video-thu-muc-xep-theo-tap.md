@@ -8,6 +8,8 @@ metadata:
   modified: 2026-11-07T03:11:43.928Z
 ---
 
+> Đã gộp vào `video-chuyen-qua-drive` ở tự học tuần 15/11/2026. Bản dưới là lịch sử.
+
 Ngày 07/11/2026 David chốt: video và tài liệu cùng nội dung phải nằm gần nhau. ~/Movies xếp theo tập:
 `tap-<tên>/1-goc`, `2-ban-day-du`, `3-doan-noi-bat/` (kế hoạch cắt) + `3-doan-noi-bat/clip-<id>/`, `9-luu-cu`; vlog ở `~/Movies/vlog/<tên>/`; video tự quay cũ ở `video-tu-quay/`.
 Sổ chuyển file: `~/Movies/_danh-muc-noi-dung/so-chuyen-file-2026-11-07.tsv`.

@@ -12,7 +12,7 @@ che mặt. Đoạn chạm lằn ranh không làm đồ hoạ.
 
 **Motion kể chuyện** (09/11/2026): motion graphic là để **diễn tả lại câu chuyện**, không phải "đưa hình vào cho có", không dập khuôn.
 Một hình có thể diễn tả 1–2 ý hoặc chạy từ đầu tới cuối; ý nào nhắc lại ý trước thì hình **vẽ tiếp** lên cái đã có. Chỉ giữ cứng chữ ký
-nhận diện ([[video-tham-my-chi-giu-nhan-dien]]); còn lại sáng tạo theo từng video, nhưng chọn ít kiểu ([[video-hieu-hon-cau-ki]]).
+nhận diện ([[video-tham-my-chi-giu-nhan-dien]]); còn lại sáng tạo theo từng video, nhưng chọn ít kiểu ([[video-tham-my-chi-giu-nhan-dien]]).
 
 **Mọi bước AI làm** (09/11/2026, David): "phần nào cố định thì làm app, phần nào AI thì gọi AI, và AI phải thể hiện sức mạnh nhiều nhất
 bằng cách sáng tạo — chỉ dựa trên bộ khung và tiêu chí, bên trong hoàn toàn sáng tạo cho hợp nội dung video. Đó là cốt lõi."

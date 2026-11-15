@@ -8,6 +8,8 @@ metadata:
   modified: 2026-11-13T04:03:46.885Z
 ---
 
+> Đã gộp vào `video-nhan-dien-chung` ở tự học tuần 15/11/2026. Bản dưới là lịch sử.
+
 13/11/2026, clip A "Quy chuẩn, hợp pháp" (tap-giao-dich-hang-hoa): David: "không thích phần chữ mô tả bị dính vào mặt của nhân vật và lại còn có nền đen mờ, rất mất thẩm mỹ, chuyển hẳn sang kiểu khác".
 
 **Why:** chữ to cũ (`pow`) canh đáy trên dải phụ đề nên hai dòng chữ cỡ 150 lên tới cằm, kèm dải tối mờ (Scrim) phủ nửa khung.

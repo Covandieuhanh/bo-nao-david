@@ -1,5 +1,5 @@
 // CHUYỂN ĐỘNG DÙNG CHUNG (khối 07 · học 09/11/2026 từ luật chuyển động của HyperFrames `references/motion.md` — học ý, tự viết lại,
-// không cài HyperFrames: ghi nhớ video-khong-cai-hyperframes). Mọi thành phần lấy easing / kiểu chữ hiện / thoát ở đây, để cả
+// không cài HyperFrames: ghi nhớ video-bo-ung-dung). Mọi thành phần lấy easing / kiểu chữ hiện / thoát ở đây, để cả
 // 4 loại video cùng một "tay nghề". Không đổi màu, font, bố cục — chỉ cách VÀO, ĐỨNG, RA.
 //
 // Luật (giá trị mặc định; cảnh nào cố ý làm khác thì ghi lý do trong ke-hoach-canh.md):

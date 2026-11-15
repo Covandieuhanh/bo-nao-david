@@ -1,6 +1,6 @@
 ---
 name: video-chuyen-qua-drive
-description: Drive covandieuhanh chỉ giữ bộ não, video gốc và thành quả video (tu-lieu-goc / thanh-pham / sao-luu-mac); Mac chỉ giữ việc đang làm; đồ khác không đồng bộ (2026-11-08, 11/11)
+description: "~/Movies xếp theo tập; Drive covandieuhanh chỉ giữ bộ não, video gốc, thành quả video; Mac chỉ giữ việc đang làm (07/11, 08/11, 11/11; gộp 15/11)"
 metadata:
   node_type: memory
   type: reference
@@ -24,6 +24,15 @@ David điều khiển Mac từ điện thoại bằng Remote Control; không dù
 Video gốc David gửi lên: `~/Library/CloudStorage/GoogleDrive-covandieuhanh@gmail.com/Drive của tôi/tu-lieu-goc/`
 Thành phẩm trả về: `.../Drive của tôi/thanh-pham/`, **mỗi tập một thư mục, trùng tên với `~/Movies`** (David chốt 08/11/2026): `tap-<ten>/ban-dai/<ten>.mp4` và `tap-<ten>/highlight/clip-a.mp4`, `clip-b.mp4`…; tập chỉ có bản dài vẫn tạo `ban-dai/`. Vlog vào `vlog/<ten>.mp4`, video tự quay vào `video-tu-quay/<ten>.mp4`. Clip ngắn có thể gửi thẳng vào chat bằng SendUserFile.
 Kho dự án và bộ não: `.../Drive của tôi/sao-luu-mac/` (Movies, Downloads, Documents, bo-nao). Sao lưu đợt chuyển tài khoản: `.../Drive của tôi/sao-luu-claude-2026-11-07/` gồm `tai-lieu-claude-ai` và `du-an-video` (âm thanh gốc, kịch bản, bỏ file render).
-Liên quan [[video-thu-muc-xep-theo-tap]], [[co-so-tri-thuc-github-ban-goc]].
+Liên quan (mục gộp dưới), [[co-so-tri-thuc-github-ban-goc]].
 
 Nhà của luật: `ky-nang/chuan-muc-lam-viec.md` mục 4 ("Giữ Mac nhẹ") và [kho-drive.md](../../du-an/kho-drive.md). Ghi nhớ này giữ ngày, lời David, lý do.
+
+## Gộp từ `video-chuyen-qua-drive` (15/11/2026, tự học tuần: giảm ghi nhớ về 40)
+
+Ngày 07/11/2026 David chốt: video và tài liệu cùng nội dung phải nằm gần nhau. ~/Movies xếp theo tập:
+`tap-<tên>/1-goc`, `2-ban-day-du`, `3-doan-noi-bat/` (kế hoạch cắt) + `3-doan-noi-bat/clip-<id>/`, `9-luu-cu`; vlog ở `~/Movies/vlog/<tên>/`; video tự quay cũ ở `video-tu-quay/`.
+Sổ chuyển file: `~/Movies/_danh-muc-noi-dung/so-chuyen-file-2026-11-07.tsv`.
+
+**Why:** trước đó gốc, bản dài, clip highlight của cùng một tập nằm ở 4–5 thư mục, David không tìm được.
+**How to apply:** khi dựng, bản dài và highlight của một tập dùng CÙNG một `<tên>`; các script new_*.sh lấy chỗ lưu từ `ky-nang/san-xuat-video/dung-video-theo-phong-cach/scripts/noi-luu.sh`. Còn `~/Movies/vlog/_cho-xac-nhan/` chờ David nói từng file thuộc vlog nào.

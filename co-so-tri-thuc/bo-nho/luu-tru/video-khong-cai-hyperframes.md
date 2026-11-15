@@ -8,6 +8,8 @@ metadata:
   modified: 2026-11-06T06:23:59.402Z
 ---
 
+> Đã gộp vào `video-bo-ung-dung` ở tự học tuần 15/11/2026. Bản dưới là lịch sử.
+
 David chốt 2026-11-06: **không cài** HyperFrames + Motion Studio, bộ skill video vẫn dùng Remotion. Đã học ý và tự viết lại, không chép code: luật chuyển động "đã vào là đứng yên" (khối 07), 3 sơ đồ `xay-tang`, `doi-trang-thai`, `chuyen-giao`, `soat-canh.mjs` (khối 17), `chu-tren-man.mjs` (khối 03).
 
 **Why:** cùng cách render (Chrome chạy ngầm + FFmpeg), tốc độ gần bằng nhau; bộ hiện tại đã mạnh hơn ở dấu tiếng Việt, tránh che mặt và trọn quy trình. Motion Studio tự kích hoạt khi nhắn làm video nên đụng skill hiện có, còn thêm hook vào cài đặt Claude Code và khóa HyperFrames ở bản cũ.

@@ -8,13 +8,15 @@ metadata:
   modified: 2026-11-06T07:19:48.311Z
 ---
 
+> Đã gộp vào `video-kien-truc-ky-nang` ở tự học tuần 15/11/2026. Bản dưới là lịch sử.
+
 David chốt 06/11/2026: bản chuẩn gồm đúng 5 video, dựng bằng skill sau khi thêm luật chuyển động. Video ngắn và video dài sau này làm theo các bản này.
 
 - 3 clip: `~/Movies/tap-di-trainer/3-doan-noi-bat/clip-A|B|C`, kế hoạch ở `~/Movies/tap-di-trainer/3-doan-noi-bat`.
 - Video dài "Đi trainer cho người làm trainer": `~/Movies/tap-di-trainer/2-ban-day-du`.
 - Video dài "Mục tiêu và sứ mệnh": `~/Movies/tap-muc-tieu-su-menh/2-ban-day-du`.
 
-Các dự án cũ (vlog, highlight Haruku, podcast năng lực, Miếu Bà Cam, VF3...) đã chuyển vào Thùng rác cùng ngày; bản xong của Miếu Bà Cam và VF3 còn ở Drive `thanh-pham/vlog/`, chữ bài đăng cũ đã bỏ khỏi repo 07/11/2026 (repo chỉ giữ não), bản sao ở Drive `sao-luu-mac/` (tra [kho-drive.md](../../du-an/kho-drive.md)).
+Các dự án cũ (vlog, highlight Haruku, podcast năng lực, Miếu Bà Cam, VF3...) đã chuyển vào Thùng rác cùng ngày; bản xong của Miếu Bà Cam và VF3 còn ở Drive `thanh-pham/vlog/`, chữ bài đăng cũ đã bỏ khỏi repo 07/11/2026 (repo chỉ giữ não), bản sao ở Drive `sao-luu-mac/` (tra [kho-drive.md](../../../du-an/kho-drive.md)).
 
 **Why:** David muốn máy chỉ giữ bản mới nhất. Máy còn dưới 5 GB trống trước khi dọn.
 

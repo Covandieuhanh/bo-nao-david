@@ -67,6 +67,8 @@ Gốc: [bản đồ bộ não](README.md).
 ## Skill công cụ
 - [thu-thap-yeu-cau](../ky-nang/thu-thap-yeu-cau/SKILL.md) — Cách hỏi của David khi trình 4 phần (Mục tiêu · Kế hoạch · Quy trình · Thực thi) trước mọi việc — hỏi theo vòng từ góc nhìn chuyên gia thực chiến, mỗi điểm cần chốt…
 - [hoc-lien-tuc](../ky-nang/hoc-lien-tuc/SKILL.md) — Tự học và cải tiến liên tục bộ skill của David (học từ cách Hermes tự học, nhưng một nhà, có số liệu, ít token). Ba việc — (1) NHÌN LẠI TUẦN từ tín hiệu máy ghi…
+- [nhat-ky-thay-doi hoc-lien-tuc](../ky-nang/hoc-lien-tuc/references/nhat-ky-thay-doi.md) — Nhật ký thay đổi skill hoc-lien-tuc và máy đếm / ghi tín hiệu.
+- [hoc-lien-tuc 2026-11-15](../du-an/hoc-lien-tuc/2026-11-15.md) — Phiếu tự học tuần 15/11: điều lặp, đã sửa, gộp ghi nhớ 47→40, việc tuần sau.
 - [tai-cau-truc](../ky-nang/tai-cau-truc/SKILL.md) — Tái bản bộ skill — khi luật đã chồng nhiều lớp (học mẫu lớp 1, lớp 2, lớp 3, sửa góp ý…), gom toàn bộ luật đang sống của CẢ BỘ NÃO (mọi bộ skill + ghi nhớ, một đợt)…
 - [tong-hop-tin-nhan](../ky-nang/tong-hop-tin-nhan/SKILL.md) — Tổng hợp tin nhắn hằng ngày của David từ Zalo, Messenger, Telegram — chỉ đọc, ra bảng việc cần làm / thoả thuận / đời thường, lưu trong sổ nhớ…
 - [dieu-khien-trinh-duyet](../ky-nang/dieu-khien-trinh-duyet/SKILL.md) — Automate browser interactions, test web pages and work with Playwright tests.
@@ -120,3 +122,10 @@ Gốc: [bản đồ bộ não](README.md).
 - [video-nguoi-xem-trung-tam](../co-so-tri-thuc/bo-nho/luu-tru/video-nguoi-xem-trung-tam.md) — Kim chỉ nam bộ skill video — người xem làm trung tâm; học kênh lớn ở nhịp và cách trình bày, giữ thẩm mỹ của David (04/11, sửa 08/11)
 - [video-quy-trinh-dung-theo-phong-cach](../co-so-tri-thuc/bo-nho/luu-tru/video-quy-trinh-dung-theo-phong-cach.md) — Người dùng dựng video talking-head dọc theo phong cách mẫu bằng skill ~/.claude/skills/dung-video-theo-phong-cach; muốn đưa 2 video là xong, nhận MP4 đăng ngay
 - [thiet-bi-don-documents-2026-11-07](../co-so-tri-thuc/bo-nho/luu-tru/thiet-bi-don-documents-2026-11-07.md) — Ngày 07/11/2026 dọn ~/Documents, chỉ còn David.Claude + Obsidian + mk.csv; App notion đã bỏ, mở phiên ở ~/Documents/David.Claude
+- [video-podcast-bia-khong-mat](../co-so-tri-thuc/bo-nho/luu-tru/video-podcast-bia-khong-mat.md) — Lưu trữ: đã gộp vào video-chi-hinh-cua-chinh-video.
+- [video-khong-nhan-ky-thuat](../co-so-tri-thuc/bo-nho/luu-tru/video-khong-nhan-ky-thuat.md) — Lưu trữ: đã gộp vào video-chu-nguyen-van.
+- [video-hieu-hon-cau-ki](../co-so-tri-thuc/bo-nho/luu-tru/video-hieu-hon-cau-ki.md) — Lưu trữ: đã gộp vào video-tham-my-chi-giu-nhan-dien.
+- [video-khong-cai-hyperframes](../co-so-tri-thuc/bo-nho/luu-tru/video-khong-cai-hyperframes.md) — Lưu trữ: đã gộp vào video-bo-ung-dung.
+- [video-ban-chuan-2026-11-06](../co-so-tri-thuc/bo-nho/luu-tru/video-ban-chuan-2026-11-06.md) — Lưu trữ: đã gộp vào video-kien-truc-ky-nang.
+- [video-thu-muc-xep-theo-tap](../co-so-tri-thuc/bo-nho/luu-tru/video-thu-muc-xep-theo-tap.md) — Lưu trữ: đã gộp vào video-chuyen-qua-drive.
+- [video-chu-nhan-nhan-dan](../co-so-tri-thuc/bo-nho/luu-tru/video-chu-nhan-nhan-dan.md) — Lưu trữ: đã gộp vào video-nhan-dien-chung.

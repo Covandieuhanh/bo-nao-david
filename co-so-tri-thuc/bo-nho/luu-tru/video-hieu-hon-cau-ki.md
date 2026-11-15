@@ -8,6 +8,8 @@ metadata:
   modified: 2026-11-10T12:02:01.856Z
 ---
 
+> Đã gộp vào `video-tham-my-chi-giu-nhan-dien` ở tự học tuần 15/11/2026. Bản dưới là lịch sử.
+
 Mỗi video chỉ dùng vài kiểu hiệu ứng hợp nội dung nhất, tự cân đối. Thước đo là người xem hiểu nhanh hơn, không phải video trông cầu kì. Rối hoặc lỗi hình thì bớt đi, không thêm.
 
 **Why:** 10/11/2026 David xem ảnh thử các thành phần mới học từ Ali Abdaal / Joseph: "hiệu ứng chữ sau người là không cần đâu, nhiều hiệu ứng quá là bị rối, nhìn ảnh toàn lỗi" và "học nhiều là để ứng dụng cho phù hợp với tuỳ mỗi loại nội dung chứ không cần phải nhét hết tất cả vào cùng 1 video… quan trọng nhất là truyền tải cho người xem hiểu chứ không phải là cầu kì".
@@ -15,5 +17,5 @@ Mỗi video chỉ dùng vài kiểu hiệu ứng hợp nội dung nhất, tự c
 **How to apply:**
 - Luật ở `ky-nang/san-xuat-video/quy-tac-chung.md` §0 "Hiểu hơn cầu kì"; soát ở khối 17 ("video có rối không").
 - **Chữ sau người và bóng người (tách người khỏi nền): David không dùng.** Đã gỡ code; học mẫu sau không thêm lại.
-- Học mẫu vẫn lấy nhiều ([[video-tham-my-chi-giu-nhan-dien]]), nhưng khi dựng chọn ít. Luật không lặp kiểu ([[video-do-hoa-ke-chuyen]], khối 07) chỉ để đỡ nhàm, không phải để thêm kiểu.
+- Học mẫu vẫn lấy nhiều (`video-tham-my-chi-giu-nhan-dien`), nhưng khi dựng chọn ít. Luật không lặp kiểu ([[video-do-hoa-ke-chuyen]], khối 07) chỉ để đỡ nhàm, không phải để thêm kiểu.
 - Đưa ảnh thử cho David: chỉ gửi khi đã sạch lỗi, đừng gửi ảnh còn lỗi hình.

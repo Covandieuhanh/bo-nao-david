@@ -8,6 +8,8 @@ metadata:
   modified: 2026-11-01T11:57:33.998Z
 ---
 
+> Đã gộp vào `video-chu-nguyen-van` ở tự học tuần 15/11/2026. Bản dưới là lịch sử.
+
 Không hiện nhãn tốc độ hay ghi chú kỹ thuật trên video (×1,6, ×0,5, "tua nhanh", "slow-mo", "xem chậm"). Hiệu ứng tua nhanh/phát chậm vẫn dùng, chỉ không chú thích.
 
 **Why:** người dùng thấy các ghi chú kỹ thuật thừa, chữ trên màn hình chỉ nên phục vụ nội dung.

@@ -19,4 +19,4 @@ video tự lặp.
 
 **How to apply:** cách làm ở `cat-doan-noi-bat/SKILL.md` mục "Kịch bản highlight podcast (7B)", mức nhạc ở `ho-so-thuong-hieu/doan-noi-bat.json`.
 Chỉ áp dụng cho video dọc đồ hoạ; video ngang và video có người nói không đổi. Mẫu có trong `mau-chuan/mau.json`, `kiem-mau.py` báo nếu
-khuôn bị đổi. Liên quan [[video-clip-ngan-dung-doc-lap]], [[video-ban-chuan-2026-11-06]].
+khuôn bị đổi. Liên quan [[video-clip-ngan-dung-doc-lap]], [[video-kien-truc-ky-nang]].

@@ -1,6 +1,6 @@
 ---
 name: video-nhan-dien-chung
-description: Mọi loại video cùng một bộ nhận diện (vùng an toàn, dấu góc, thanh thời gian, phụ đề, màn chốt, thẻ cuối không logo); video dọc ngắn bỏ thanh và thẻ cuối; chỉ motion graphics tự do (2026-11-08, gộp 10/11)
+description: "Mọi loại video cùng một bộ nhận diện; video dọc ngắn bỏ thanh và thẻ cuối; chữ nhấn kiểu nhãn dán đặc màu ở ngực, không chạm mặt, không nền đen mờ (08/11, 10/11, 13/11; gộp 15/11)"
 metadata:
   type: feedback
 ---
@@ -25,3 +25,11 @@ caption + bình luận ghim. Video ngang và dọc dài giữ thanh, thẻ cuố
 `thanh-thoi-gian.jsx`, `than-man-ket.jsx`; bảng ở `thu-vien-tai-nguyen/nhan-dien-chung.md`; nhà luật dọc ngắn `quy-tac-chung.md` mục 5, máy tự nhận
 `nganDoc()` / `NGAN_DOC` (`thanh.js`). Không viết số vị trí riêng trong khuôn dựng. Sửa nhận diện → chụp kiểm cả ngang lẫn dọc trên dự
 án đã duyệt. Liên quan [[quy-tac-hoc-la-bo-sung]], [[video-bo-cuc-tu-can]], [[video-doc-khuon-chu-chinh]], [[video-tham-my-chi-giu-nhan-dien]].
+
+## Gộp từ `video-nhan-dien-chung` (15/11/2026, tự học tuần: giảm ghi nhớ về 40)
+
+13/11/2026, clip A "Quy chuẩn, hợp pháp" (tap-giao-dich-hang-hoa): David: "không thích phần chữ mô tả bị dính vào mặt của nhân vật và lại còn có nền đen mờ, rất mất thẩm mỹ, chuyển hẳn sang kiểu khác".
+
+**Why:** chữ to cũ (`pow`) canh đáy trên dải phụ đề nên hai dòng chữ cỡ 150 lên tới cằm, kèm dải tối mờ (Scrim) phủ nửa khung.
+
+**How to apply:** luật ở `ky-nang/san-xuat-video/thu-vien-tai-nguyen/nhan-dien-chung.md` mục 2. Kiểu chuẩn là nhãn dán: mỗi dòng một nhãn đặc (trắng chữ sẫm, dòng cuối cam chữ trắng), canh đáy vào đáy dải phụ đề (phụ đề nhường), không Scrim; `pow` không bị lưới chặn dải phụ đề cắt. Code: `Pow` trong `dung-video-theo-phong-cach/assets/khuon-dung-ghep/src/chuong-trinh.jsx`. Chụp thử luôn soát khoảng cách chữ ↔ cằm. Liên quan [[video-phu-de-mot-cho-chu]], [[video-bo-cuc-tu-can]].

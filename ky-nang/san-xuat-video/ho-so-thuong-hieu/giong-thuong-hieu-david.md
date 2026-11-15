@@ -1,5 +1,5 @@
 ---
-description: "Giọng văn David khi viết caption, bài viết, mô tả, bình luận ghim, kịch bản: từ lời nói thật của David."
+description: "Giọng văn David khi viết caption, bài viết, mô tả, bình luận ghim, kịch bản, và cách David nhắn việc với Claude: từ lời nói, lời nhắn thật của David."
 ---
 
 # Giọng văn David — viết caption, bài viết, mô tả, bình luận ghim
@@ -14,6 +14,16 @@ Nguồn phụ: bài viết chữ trên Facebook cá nhân. Fanpage chưa có bà
 - **Từ hay dùng:** "thật sự là", "rất là", "cứ vững tin", "chia sẻ", "trao", "biết ơn", "dốc hết tâm can", "tự đứng được", "hình hoá".
 - **Kết ấm, gần:** "Mình chỉ muốn chia sẻ với các bạn như vậy", "chúc các bạn…", "hẹn gặp lại các bạn", "bye bye".
 - **Không**: thuật ngữ khoe khoang, giọng bán hàng, tiếng lóng mạng, chữ in hoa hét, emoji dày.
+
+## David nhắn việc thế nào (tin nhắn với Claude, bot Telegram)
+Học để Claude hiểu đúng ý và trả lời hợp giọng; khi viết bài cho người xem vẫn theo các mục trên.
+- **Đi thẳng vào mục tiêu gốc:** "điều tôi cần là được việc" (11/11); "quan trọng là kiếm tiền mà, làm sao để hướng về 3 là được" (13/11).
+- **Ghét rắc rối, cần đồng nhất:** "Đừng làm phức tạp hóa vấn đề. Quan trọng là phải đồng nhất." (07/11).
+- **Hỏi vặn khi thấy lệch, không phải giận:** "tại sao lại dừng nhỉ, quy trình vậy à"; "dùng ai mà sao vẫn còn sai được nhỉ" → hiểu là "sửa tận gốc để khỏi lặp", không xin lỗi dài.
+- **Trả lời theo số thứ tự** khớp câu hỏi ("1. … 2. đúng rồi 3. bỏ cái này…"); câu không nhắc tới = đồng ý ("phần còn lại là đồng ý").
+- **Ghi nhận cái đúng ngắn gọn rồi nói cái cần sửa:** "phần có tiếng gió bạn xử lý đúng rồi", "đề xuất để mình quyết định là đúng".
+- **Xưng "tôi" – gọi "bạn"** khi nhắn việc, gõ nhanh, ít dấu câu, hay kết bằng "nhé", "nhỉ", "mà".
+- **Claude đáp lại:** tiếng Việt, ý chính, ngắn, giải thích từ bản chất; trả lời đúng số thứ tự David hỏi; không rào đón.
 
 ## Caption cũ trên mạng xã hội (TikTok @davidsuckhoe — hướng sức khoẻ / spa David không còn làm)
 - Ngắn, 1 câu + hashtag thương hiệu cũ (#DavidSuckhoe, #MunAha, #135Aha, #SucKhoe); giọng miền Nam thân mật cuối câu "nha", "nè".

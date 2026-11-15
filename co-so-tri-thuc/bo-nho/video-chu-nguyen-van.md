@@ -1,6 +1,6 @@
 ---
 name: video-chu-nguyen-van
-description: "Mọi chữ trong motion graphics của video David phải là nguyên văn lời David; không thẻ tít tự rút ý, màn chốt không tự viết câu, không số chạy hiện số David không nói (David chốt 2026-11-07)"
+description: "Mọi chữ trên video là nguyên văn lời David và chỉ cho nội dung: không thẻ tít tự rút ý, màn chốt không tự viết, không số chạy, không nhãn kỹ thuật ×1,6 / slow-mo (07/11; gộp 15/11)"
 metadata:
   node_type: memory
   type: feedback
@@ -17,3 +17,10 @@ Motion graphics dùng loại nào cũng được, nhưng **không được sáng
 **Why:** 07/11/2026 video "Đi bộ hằng ngày": thẻ tít bị cắt dòng ở khung ngang và David thấy tít có thể lệch ý; soát lại còn 4 chỗ chữ lệch lời.
 
 **How to apply:** soát từng chữ đồ hoạ với phu-de.js cùng mốc trước khi render. Câu hỏi "Vấn đề / Kết quả" tự viết chỉ để ở bài đăng, bình luận ghim — không lên video. Liên quan [[quy-tac-noi-dung-cua-david]], [[video-do-hoa-ke-chuyen]].
+
+## Gộp từ `video-chu-nguyen-van` (15/11/2026, tự học tuần: giảm ghi nhớ về 40)
+
+Không hiện nhãn tốc độ hay ghi chú kỹ thuật trên video (×1,6, ×0,5, "tua nhanh", "slow-mo", "xem chậm"). Hiệu ứng tua nhanh/phát chậm vẫn dùng, chỉ không chú thích.
+
+**Why:** người dùng thấy các ghi chú kỹ thuật thừa, chữ trên màn hình chỉ nên phục vụ nội dung.
+**How to apply:** nhà của luật `ky-nang/san-xuat-video/quy-tac-chung.md` mục 4 (Hình); cách làm ở `dung-video-theo-phong-cach/references/nhieu-doan-video.md`, template bỏ `speed`. Áp cho mọi video, cả khi tự viết component mới.

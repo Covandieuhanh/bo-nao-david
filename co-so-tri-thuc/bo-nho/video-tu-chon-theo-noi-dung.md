@@ -17,4 +17,4 @@ lỗi skill giữa chừng làm chậm.
 
 **How to apply:** luật ở `ky-nang/san-xuat-video/thiet-ke-bo-cuc/tu-chon.md` (chẩn đoán `chan-doan.py` → khung chủ thể `khung-chu-the.py`,
 bảng ghi chú chạy `GHI_CHU`, kiểu cảnh theo dạng câu) và mục "Nhịp làm" của `dung-video-theo-phong-cach/SKILL.md`. Học mẫu mới phải thêm dòng
-dấu hiệu vào tu-chon.md. Liên quan [[quy-tac-goi-y-de-david-chon]], [[video-hieu-hon-cau-ki]].
+dấu hiệu vào tu-chon.md. Liên quan [[quy-tac-goi-y-de-david-chon]], [[video-tham-my-chi-giu-nhan-dien]].

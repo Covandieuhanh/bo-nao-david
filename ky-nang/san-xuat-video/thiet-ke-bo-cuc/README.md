@@ -66,7 +66,7 @@ Bước nhẹ (1–3): tới đó nhắc một dòng để David tự đổi mô
      một dự án cũ đã duyệt. So với ảnh trước khi thêm: phần cũ phải y nguyên.
    - Chạy `soat-canh.mjs` và `python3 -I ../mau-chuan/kiem-mau.py` (mẫu chuẩn); có lệch thì sửa thành phần mới, không sửa cái cũ cho vừa.
 9. **Xoá file mẫu đã tải**, **đẩy GitHub** và báo David: thêm gì, đã kiểm gì, chưa kiểm gì.
-10. **Không chép công cụ của nguồn** (HyperFrames…): giữ Remotion, chỉ học ý (`video-khong-cai-hyperframes`).
+10. **Không chép công cụ của nguồn** (HyperFrames…): giữ Remotion, chỉ học ý (`video-bo-ung-dung`).
 
 ## 5. Dùng khi dựng
 
