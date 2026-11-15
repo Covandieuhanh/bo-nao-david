@@ -5,7 +5,7 @@ description: "App Mở Tài Liệu trên macOS: xem docx, xlsx, pptx, pdf… kh�
 # App Mở Tài Liệu (macOS)
 
 Xem mọi tài liệu trên Mac không cần Office: docx, xlsx, pptx, pdf, pages, numbers, key, csv, txt…
-Tự liệt kê tài liệu ở Desktop, Documents, Downloads; lọc Word / Excel / Slide / PDF; tìm theo tên; kéo thả; Open With.
+Tự liệt kê tài liệu ở Desktop, Documents, Downloads; lọc theo nhóm, mỗi đuôi tệp đúng một nhóm: Word (doc, docx, pages, rtf, odt) · Excel (xls, xlsx, numbers, ods, csv) · Slide (ppt, pptx, pps, ppsx, key, odp) · PDF · Ghi chú (md, txt) · Khác (html, epub, json, xml; không tính vào "Tất cả"), mỗi nhóm biểu tượng và màu riêng; tìm theo tên; kéo thả; Open With.
 
 - `main.swift`: danh sách file, xem bằng Quick Look (`QLPreviewView`).
 - `trinh-chieu.swift`: trình xem slide riêng cho pptx/ppt/key/odp, vì Quick Look không chuyển slide được.

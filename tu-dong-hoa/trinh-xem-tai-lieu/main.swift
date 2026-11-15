@@ -3,17 +3,24 @@ import AppKit
 import Quartz
 import UniformTypeIdentifiers
 
-let docExts: Set<String> = ["doc","docx","pages","rtf","txt","md","odt",
-  "xls","xlsx","csv","numbers","ods","ppt","pptx","pps","ppsx","key","odp","pdf","html","htm","epub","json","xml"]
+// Nhóm loại tệp: mỗi đuôi thuộc đúng một nhóm. "Tất cả" gồm mọi nhóm trừ "Khác".
+struct FileGroup { let name: String; let exts: Set<String>; let icon: String; let color: Color; let inAll: Bool }
+
+let fileGroups: [FileGroup] = [
+  FileGroup(name: "Word", exts: ["doc","docx","pages","rtf","odt"], icon: "doc.text.fill", color: .blue, inAll: true),
+  FileGroup(name: "Excel", exts: ["xls","xlsx","numbers","ods","csv"], icon: "tablecells.fill", color: .green, inAll: true),
+  FileGroup(name: "Slide", exts: ["ppt","pptx","pps","ppsx","key","odp"], icon: "rectangle.on.rectangle.angled.fill", color: .orange, inAll: true),
+  FileGroup(name: "PDF", exts: ["pdf"], icon: "doc.richtext.fill", color: .red, inAll: true),
+  FileGroup(name: "Ghi chú", exts: ["md","txt"], icon: "note.text", color: .purple, inAll: true),
+  FileGroup(name: "Khác", exts: ["html","htm","epub","json","xml"], icon: "chevron.left.forwardslash.chevron.right", color: .gray, inAll: false),
+]
+
+let docExts: Set<String> = fileGroups.reduce(into: Set<String>()) { $0.formUnion($1.exts) }
+let allExts: Set<String> = fileGroups.filter { $0.inAll }.reduce(into: Set<String>()) { $0.formUnion($1.exts) }
 
 func kind(_ ext: String) -> (String, Color) {
-  switch ext {
-  case "doc","docx","pages","rtf","odt","txt","md": return ("doc.text.fill", .blue)
-  case "xls","xlsx","csv","numbers","ods": return ("tablecells.fill", .green)
-  case "ppt","pptx","key","odp": return ("rectangle.on.rectangle.angled.fill", .orange)
-  case "pdf": return ("doc.richtext.fill", .red)
-  default: return ("doc.fill", .gray)
-  }
+  if let g = fileGroups.first(where: { $0.exts.contains(ext) }) { return (g.icon, g.color) }
+  return ("doc.fill", .gray)
 }
 
 struct FileItem: Identifiable, Hashable {
@@ -92,15 +99,10 @@ struct QLView: NSViewRepresentable {
 struct ContentView: View {
   @ObservedObject var s = Store.shared
 
-  let groups: [(String, Set<String>)] = [
-    ("Tất cả", docExts),
-    ("Word", ["doc","docx","pages","rtf","odt","txt","md"]),
-    ("Excel", ["xls","xlsx","csv","numbers","ods"]),
-    ("Slide", ["ppt","pptx","key","odp"]),
-    ("PDF", ["pdf"])]
+  let groups: [(String, Set<String>)] = [("Tất cả", allExts)] + fileGroups.map { ($0.name, $0.exts) }
 
   var shown: [FileItem] {
-    let exts = groups.first { $0.0 == s.filter }?.1 ?? docExts
+    let exts = groups.first { $0.0 == s.filter }?.1 ?? allExts
     return s.files.filter { f in
       exts.contains(f.url.pathExtension.lowercased()) &&
       (s.q.isEmpty || f.url.lastPathComponent.localizedCaseInsensitiveContains(s.q))
