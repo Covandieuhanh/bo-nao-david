@@ -287,4 +287,4 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [tu-dong-hoa/lich/loi-giao/tong-hop-tin-nhan.md](../tu-dong-hoa/lich/loi-giao/tong-hop-tin-nhan.md) — Đọc Zalo, Messenger, Telegram của David, tổng hợp việc cần làm và gửi về bot Telegram Sổ nhớ. · ←1
 - [tu-dong-hoa/so-tay/README.md](../tu-dong-hoa/so-tay/README.md) — Bot Sổ nhớ trên Telegram: David nhắn điều cần nhớ, phiên Claude trên Mac ghi vào sổ tay; cài đặt, cách chạy. · ←4
 - [tu-dong-hoa/so-tay/quy-tac-bot.md](../tu-dong-hoa/so-tay/quy-tac-bot.md) — Luật bot Sổ nhớ Telegram (chép thành CLAUDE.md của bot): ghi gì, trả lời thế nào, tin nhắn tổng hợp. · ←2
-- [tu-dong-hoa/trinh-xem-tai-lieu/README.md](../tu-dong-hoa/trinh-xem-tai-lieu/README.md) — App Mở Tài Liệu trên macOS: xem docx, xlsx, pptx, pdf… không cần Office. · ←1
+- [tu-dong-hoa/trinh-xem-tai-lieu/README.md](../tu-dong-hoa/trinh-xem-tai-lieu/README.md) — App Mở Tài Liệu trên macOS: xem, xem bản in (từng trang như khi in), sửa trực tiếp docx, md, txt, csv; không cần Office. · ←1

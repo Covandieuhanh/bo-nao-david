@@ -35,6 +35,35 @@ struct FileItem: Identifiable, Hashable {
   @Published var loading = false
   @Published var filter = "Tất cả"
   @Published var q = ""
+  // Mở thẳng vào một chế độ: open -a "Mở Tài Liệu" --args -cheDo "Bản in"
+  @Published var mode: ViewMode = ViewMode(rawValue: UserDefaults.standard.string(forKey: "cheDo") ?? "") ?? .xem
+
+  private var printModels: [URL: PrintModel] = [:]
+  func printModel(_ u: URL) -> PrintModel {
+    if let m = printModels[u] { return m }
+    let m = PrintModel(url: u); printModels[u] = m; return m
+  }
+  private var editModels: [URL: EditModel] = [:]
+  func editModel(_ u: URL) -> EditModel? {
+    if let m = editModels[u] { return m }
+    guard let m = EditModel(url: u) else { return nil }
+    editModels[u] = m; return m
+  }
+  func didSave(_ u: URL) { printModels[u] = nil; slideModels[u] = nil }
+  func saveCurrent() { if let u = selected { editModels[u]?.save() } }
+
+  // Đang sửa dở mà rời tệp / đổi chế độ / thoát app: hỏi lưu.
+  func canLeave() -> Bool {
+    guard let u = selected, let m = editModels[u], m.dirty else { return true }
+    let a = NSAlert()
+    a.messageText = "Lưu thay đổi của \(u.lastPathComponent)?"
+    a.addButton(withTitle: "Lưu"); a.addButton(withTitle: "Không lưu"); a.addButton(withTitle: "Huỷ")
+    switch a.runModal() {
+    case .alertFirstButtonReturn: return m.save()
+    case .alertSecondButtonReturn: editModels[u] = nil; return true
+    default: return false
+    }
+  }
 
   func scan() {
     loading = true
@@ -56,11 +85,17 @@ struct FileItem: Identifiable, Hashable {
         }
       }
       out.sort { $0.date > $1.date }; let result = out
-      await MainActor.run { self.files = result; self.loading = false }
+      await MainActor.run {
+        // Giữ các tệp mở từ ngoài (Open With, kéo thả) không nằm trong ba thư mục quét.
+        let found = Set(result.map(\.url))
+        let extra = self.files.filter { !found.contains($0.url) && !$0.url.path.hasPrefix(NSHomeDirectory() + "/Desktop") && !$0.url.path.hasPrefix(NSHomeDirectory() + "/Documents") && !$0.url.path.hasPrefix(NSHomeDirectory() + "/Downloads") }
+        self.files = extra + result; self.loading = false
+      }
     }
   }
 
   func open(_ url: URL) {
+    guard canLeave() else { return }
     if !files.contains(where: { $0.url == url }) {
       files.insert(FileItem(url: url, date: Date()), at: 0)
     }
@@ -115,7 +150,7 @@ struct ContentView: View {
         Picker("", selection: $s.filter) {
           ForEach(groups, id: \.0) { Text($0.0).tag($0.0) }
         }.pickerStyle(.segmented).labelsHidden().padding(.horizontal, 8)
-        List(shown, selection: $s.selected) { f in
+        List(shown, selection: Binding(get: { s.selected }, set: { n in if n != s.selected, s.canLeave() { s.selected = n } })) { f in
           let k = kind(f.url.pathExtension.lowercased())
           HStack {
             Image(systemName: k.0).foregroundStyle(k.1).frame(width: 20)
@@ -133,10 +168,17 @@ struct ContentView: View {
     } detail: {
       Group {
         if let u = s.selected {
-          if slideExts.contains(u.pathExtension.lowercased()) {
-            SlideViewer(m: s.slideModel(u)).id(u)
-          } else {
-            QLView(url: u)
+          switch s.mode {
+          case .xem:
+            if slideExts.contains(u.pathExtension.lowercased()) {
+              SlideViewer(m: s.slideModel(u)).id(u)
+            } else {
+              QLView(url: u)
+            }
+          case .banIn:
+            PrintViewer(m: s.printModel(u)).id(u)
+          case .sua:
+            if let em = s.editModel(u) { EditorView(m: em).id(u) } else { ExternalEditPanel(url: u).id(u) }
           }
         } else {
           VStack(spacing: 12) {
@@ -147,10 +189,16 @@ struct ContentView: View {
         }
       }
       .toolbar {
+        ToolbarItem(placement: .principal) {
+          Picker("Chế độ", selection: Binding(get: { s.mode }, set: { n in if n != s.mode, s.canLeave() { s.mode = n } })) {
+            ForEach(ViewMode.allCases, id: \.self) { Text($0.rawValue).tag($0) }
+          }.pickerStyle(.segmented).labelsHidden().frame(width: 280)
+          .help("Xem nhanh · Bản in (từng trang như khi in) · Sửa trực tiếp")
+        }
         ToolbarItemGroup {
           Button { s.pickFile() } label: { Label("Chọn file", systemImage: "folder") }
           Button { s.scan() } label: { Label("Làm mới", systemImage: "arrow.clockwise") }
-          if let u = s.selected, slideExts.contains(u.pathExtension.lowercased()) {
+          if s.mode == .xem, let u = s.selected, slideExts.contains(u.pathExtension.lowercased()) {
             Button { s.startShow(fromStart: false) } label: { Label("Trình chiếu", systemImage: "play.fill") }
               .help("Trình chiếu toàn màn hình (⌘↩)")
           }
@@ -179,6 +227,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
   func application(_ app: NSApplication, open urls: [URL]) {
     if let u = urls.first { Task { @MainActor in Store.shared.open(u) } }
   }
+  func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
+    MainActor.assumeIsolated { Store.shared.canLeave() } ? .terminateNow : .terminateCancel
+  }
   func applicationShouldTerminateAfterLastWindowClosed(_ s: NSApplication) -> Bool { true }
 }
 
@@ -189,6 +240,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
       .commands {
         CommandGroup(replacing: .newItem) {
           Button("Mở file…") { Store.shared.pickFile() }.keyboardShortcut("o")
+        }
+        CommandGroup(replacing: .saveItem) {
+          Button("Lưu") { Store.shared.saveCurrent() }.keyboardShortcut("s")
+        }
+        CommandMenu("Chế độ") {
+          Button("Xem nhanh") { if Store.shared.canLeave() { Store.shared.mode = .xem } }.keyboardShortcut("1")
+          Button("Bản in") { if Store.shared.canLeave() { Store.shared.mode = .banIn } }.keyboardShortcut("2")
+          Button("Sửa") { if Store.shared.canLeave() { Store.shared.mode = .sua } }.keyboardShortcut("3")
         }
         CommandMenu("Trình chiếu") {
           Button("Trình chiếu từ slide đang xem") { Store.shared.startShow(fromStart: false) }
