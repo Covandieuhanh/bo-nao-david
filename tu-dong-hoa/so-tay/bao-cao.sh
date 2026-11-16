@@ -3,6 +3,8 @@
 # Dùng: bash tu-dong-hoa/so-tay/bao-cao.sh "✅ Xong: … · Còn lại: … · Chờ anh: …"
 # Mọi phiên Claude trên Mac đều dùng được (thói quen cuối việc). Chỉ gửi cho David (allowFrom trong access.json).
 # --chi-gui: chỉ gửi, không ghi sổ báo cáo (canh-bot dùng cho nhắc giờ và cảnh báo).
+# Gửi hỏng (mất mạng…) sau 3 lần thử: tin vào hàng chờ .trang-thai/hang-cho-gui/, canh-bot gửi lại khi có mạng (kèm giờ gốc).
+# BAO_CAO_KHONG_CHO=1: không đưa vào hàng chờ (canh-bot tự thử lại nhắc giờ, và khi gửi lại từ hàng chờ).
 GHI=1; [ "$1" = "--chi-gui" ] && { GHI=0; shift; }
 TIN="$*"
 [ -z "$TIN" ] && { echo "Thiếu nội dung báo cáo"; exit 1; }
@@ -32,6 +34,15 @@ else
 fi
 if [ -z "$TOKEN" ] || [ -z "$CHAT" ]; then echo "Chưa cài bot gửi tin: chỉ ghi vào sổ"; exit 0; fi
 
-KQ=$(curl -s -m 20 "https://api.telegram.org/bot$TOKEN/sendMessage" \
-  --data-urlencode "chat_id=$CHAT" --data-urlencode "text=$TIN")
-echo "$KQ" | grep -q '"ok":true' && echo "Đã báo David qua Telegram" || { echo "Gửi Telegram lỗi (đã ghi sổ)"; exit 1; }
+for LAN in 1 2 3; do
+  KQ=$(curl -s -m 20 "https://api.telegram.org/bot$TOKEN/sendMessage" \
+    --data-urlencode "chat_id=$CHAT" --data-urlencode "text=$TIN")
+  echo "$KQ" | grep -q '"ok":true' && { echo "Đã báo David qua Telegram"; exit 0; }
+  [ "$LAN" -lt 3 ] && sleep 5
+done
+if [ "${BAO_CAO_KHONG_CHO:-0}" != 1 ]; then
+  CHO="$HOME/Documents/2-ca-nhan/so-tay/.trang-thai/hang-cho-gui"; mkdir -p "$CHO"
+  printf '%s\n%s' "$LUC" "$TIN" > "$CHO/$(date +%s)-$$.txt"
+  echo "Gửi Telegram lỗi: đã vào hàng chờ, có mạng máy tự gửi lại"; exit 1
+fi
+echo "Gửi Telegram lỗi"; exit 1

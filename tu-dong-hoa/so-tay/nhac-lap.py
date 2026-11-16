@@ -5,7 +5,9 @@ Dạng dòng: "- mỗi ngày 06:00 · …" · "- mỗi thứ 2, thứ 5 07:00 ·
 Nội dung bắt đầu bằng thẻ máy "[THE] …" (vd [HOI-THOI-QUEN]): in trên một dòng, canh-bot gõ vào phiên bot thay vì gửi thẳng.
 Dòng kết bằng "+ việc chưa xong": tin nhắc kèm danh sách việc "[ ]" trong danh-sach-viec.md (việc không hạn cũng có), bỏ mục "Thói quen…".
 In mỗi lần nhắc một dòng: "<khoá>\t<nội dung>" (xuống dòng trong nội dung thay bằng \x1f); canh-bot gửi xong thì ghi khoá vào .trang-thai/da-nhac-lap.
-Dùng: python3 -I nhac-lap.py <nhac-viec.md> <da-nhac-lap> [danh-sach-viec.md]"""
+Chạy bù (Mac ngủ / mất mạng thì lỡ giờ): mặc định chỉ in lần tới giờ trong 60 phút qua; "--bu <phút>" nới cho cả file;
+dòng kết bằng " · bù <N>h" thì lần lỡ còn được in tới N giờ sau giờ hẹn (đuôi này không nằm trong khoá và nội dung).
+Dùng: python3 -I nhac-lap.py [--bu <phút>] <nhac-viec.md> <da-nhac-lap> [danh-sach-viec.md]"""
 import datetime as dt, os, re, sys
 
 DONG = re.compile(r"^- (?:mỗi|hằng|hàng|chỉ) (.+?) (\d{1,2}):(\d{2}) · (.+)$")
@@ -69,8 +71,12 @@ def viec_chua_xong(tep, hom_nay):
 
 
 def main():
-    tep, da = sys.argv[1], sys.argv[2]
-    tep_viec = sys.argv[3] if len(sys.argv) > 3 else os.path.join(os.path.dirname(tep), "danh-sach-viec.md")
+    arg = sys.argv[1:]
+    bu_mac_dinh = 60
+    if arg[:1] == ["--bu"]:
+        bu_mac_dinh, arg = int(arg[1]), arg[2:]
+    tep, da = arg[0], arg[1]
+    tep_viec = arg[2] if len(arg) > 2 else os.path.join(os.path.dirname(tep), "danh-sach-viec.md")
     try:
         dong = open(tep, encoding="utf-8").read().splitlines()
     except OSError:
@@ -85,10 +91,14 @@ def main():
         if not m or m.group(4).startswith("(đã "):
             continue
         spec, h, p, nd = m.group(1), int(m.group(2)), int(m.group(3)), m.group(4)
-        for lui in (0, 1):  # hôm nay và hôm qua (khoảng 60 phút vắt qua nửa đêm)
+        bu = bu_mac_dinh
+        mb = re.search(r"\s*·\s*bù (\d+)\s*h$", nd)
+        if mb:
+            bu, nd = int(mb.group(1)) * 60, nd[: mb.start()]
+        for lui in range(bu // 1440 + 2):  # hôm nay và các ngày trước còn trong hạn bù
             ngay = bay.date() - dt.timedelta(days=lui)
             luc = dt.datetime.combine(ngay, dt.time(h % 24, p % 60))
-            if not (bay - dt.timedelta(minutes=60) <= luc <= bay) or not khop(spec, ngay):
+            if not (bay - dt.timedelta(minutes=bu) <= luc <= bay) or not khop(spec, ngay):
                 continue
             khoa = f"{luc:%Y-%m-%d %H:%M} | {nd}"
             if khoa not in da_gui:
