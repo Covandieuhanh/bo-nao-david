@@ -4,6 +4,9 @@
 # Tự sửa: phiên chết · thừa phiên · máy chủ Telegram chết hoặc mất kết nối mạng · phiên treo · hộp thoại chặn · đổi tài khoản (cả đổi trên app: mở sẵn đăng nhập Terminal) ·
 #         làm mới ngữ cảnh 4h sáng. Việc theo giờ: tóm tắt 7h, nhắc đúng giờ (gửi thẳng, không cần Claude), sao lưu Drive 3h.
 # Báo David qua Telegram (gửi thẳng) khi: chưa đăng nhập Claude · hết hạn mức · mở lại liên tục · mất mạng lâu.
+# Mac ngủ / mất mạng (gặp 15–16/11: gập máy chạy pin, ngủ 15 giờ, lịch 7h bị bỏ): khi có mạng và Mac thức hẳn (hai vòng liền nhau)
+#   thì chạy bù lịch lỡ (đuôi "· bù Nh"), nhắc giờ lỡ dưới 12 giờ (ghi "trễ"), gửi lại tin trong hàng chờ, gõ [SAU-MAT-MANG] vào bot, nhắn David 📶.
+#   Lúc Mac chỉ tỉnh vài giây (DarkWake) thì không mở/làm mới phiên nào: phiên mở ra sẽ đông cứng khi máy ngủ lại.
 export PATH="$HOME/.bun/bin:$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
 
@@ -48,7 +51,11 @@ da_nhan() { # $1 nội dung, $2 khoá: tin thẻ máy đã vào lịch sử phi�
   find "$LS_BOT" -name '*.jsonl' -mmin -120 -print0 2>/dev/null | xargs -0 grep -hF -- "${1:0:24}" 2>/dev/null | grep -qF -- " ${2:0:16}\""; }
 xoa_cho() { [ -f "$TT/cho-bot" ] && { grep -vF -- "$1" "$TT/cho-bot" > "$TT/cho-bot.tmp"; mv "$TT/cho-bot.tmp" "$TT/cho-bot"; }; }
 man_hinh() { rm -f "$TT/man-hinh.txt"; screen -S "$(sid)" -p 0 -X hardcopy "$TT/man-hinh.txt" 2>/dev/null; sleep 1; tr -d '\000' < "$TT/man-hinh.txt" 2>/dev/null; }
-gui_thang() { bash "$GOC/bao-cao.sh" --chi-gui "$1" >/dev/null 2>&1; } # gửi David, không qua Claude
+gui_thang() { BAO_CAO_KHONG_CHO=1 bash "$GOC/bao-cao.sh" --chi-gui "$1" >/dev/null 2>&1; } # gửi David, không qua Claude (lỗi thì vòng sau tự thử lại, không vào hàng chờ)
+tre_nhan() { # $1 "YYYY-MM-DD HH:MM" giờ hẹn: trễ quá 60 phút thì in nhãn trễ
+  local t=$(date -j -f "%Y-%m-%d %H:%M" "$1" +%s 2>/dev/null || echo "$BAY")
+  [ $(( BAY - t )) -gt 3600 ] && echo " (trễ, hẹn ${1:11:5} ${1:8:2}/${1:5:2} — Mac ngủ hoặc mất mạng)"; }
+bot_nghi_giay() { local f=$(ls -t "$LS_BOT"/*.jsonl 2>/dev/null | head -1); [ -n "$f" ] && echo $(( $(date +%s) - $(stat -f %m "$f") )) || echo 99999; }
 canh_bao() { # $1 khoá, $2 số giây giữa hai lần báo, $3 nội dung
   local f="$TT/bao-$1"
   [ $(( $(date +%s) - $(cat "$f" 2>/dev/null || echo 0) )) -lt "$2" ] && return
@@ -76,6 +83,18 @@ noi_telegram() { lsof -nP -a -p "$1" -iTCP -sTCP:ESTABLISHED 2>/dev/null | grep 
 
 while true; do
   NGAY=$(date +%F); GIO=$(date +%H); BAY=$(date +%s)
+  # Mac thức hẳn và có mạng chưa: vòng trước cách quá 3 phút là máy vừa ngủ (hoặc chỉ tỉnh chốc lát).
+  CUOI=$(cat "$TT/vong-cuoi" 2>/dev/null || echo "$BAY"); KHOANG=$(( BAY - CUOI ))
+  ON_DINH=0; [ "$KHOANG" -lt 180 ] && ON_DINH=1
+  MANG=0; co_mang && MANG=1
+  if [ "$MANG" = 0 ] || [ "$ON_DINH" = 0 ]; then
+    [ -f "$TT/gian-doan-tu" ] || { echo "$CUOI" > "$TT/gian-doan-tu"; ghi "gian doan (mang=$MANG, cach vong truoc ${KHOANG}s)"; }
+  elif [ -f "$TT/gian-doan-tu" ]; then
+    GD_TU=$(cat "$TT/gian-doan-tu"); GD=$(( BAY - GD_TU )); rm -f "$TT/gian-doan-tu"
+    ghi "co mang va Mac thuc lai sau ${GD}s"
+    [ "$GD" -ge 600 ] && { echo "$GD_TU $GD" > "$TT/vua-noi-lai"; : > "$TT/bu-lan-nay"; date +%s > "$TT/vua-noi-lai-luc"; }
+  fi
+  SAN_SANG=0; [ "$MANG" = 1 ] && [ "$ON_DINH" = 1 ] && SAN_SANG=1
   # Giữ nhật ký gọn.
   [ "$(wc -l < "$LOG" 2>/dev/null || echo 0)" -gt 3000 ] && tail -1500 "$LOG" > "$LOG.tmp" && mv "$LOG.tmp" "$LOG"
   [ -f "$TT/lan-mo" ] && tail -50 "$TT/lan-mo" > "$TT/lan-mo.tmp" && mv "$TT/lan-mo.tmp" "$TT/lan-mo"
@@ -97,11 +116,14 @@ while true; do
   # 1. Đúng một phiên bot đang chạy.
   SO=$(screen -ls 2>/dev/null | awk -v t=".$TEN" '$1 ~ t"$"' | wc -l | tr -d ' ')
   if [ "$SO" -gt 1 ]; then ghi "co $SO phien, tat bot thua"; tat_bot; fi
-  if ! dang_chay; then
+  if [ "$SAN_SANG" = 0 ]; then
+    :  # Mac chỉ tỉnh chốc lát hoặc chưa có mạng: giữ nguyên phiên bot, chờ thức hẳn
+  elif ! dang_chay; then
     tat_bot; mo_bot "phien khong chay"
   elif [ "$TK" != "$(cat "$TT/tai-khoan" 2>/dev/null)" ]; then
     tat_bot; mo_bot "doi tai khoan"
-  elif [ "$GIO" -ge 4 ] && [ "$(cat "$TT/mo-ngay" 2>/dev/null)" != "$NGAY" ]; then
+  elif [ "$GIO" -ge 4 ] && [ "$(cat "$TT/mo-ngay" 2>/dev/null)" != "$NGAY" ] && [ "$(bot_nghi_giay)" -gt 300 ]; then
+    # làm mới chỉ khi bot nghỉ ≥ 5 phút: đang xử lý tin (vd tin dồn sau mất mạng) mà tắt thì tin mất
     tat_bot; mo_bot "lam moi hang ngay"
   elif [ "$(tuoi_phien)" -gt 40 ]; then
     MC=$(may_chu)
@@ -162,16 +184,17 @@ while true; do
 
   # Nhắc đúng giờ: dòng "- YYYY-MM-DD HH:MM · nội dung" trong nhac-viec.md. Gửi thẳng qua Telegram nên bot hỏng vẫn nhắc được.
   # Chỉ nhắc mục tới giờ trong 60 phút qua (Mac ngủ dậy vẫn kịp), bỏ dòng đã dời/xong/bỏ; mỗi giờ hẹn chỉ nhắc một lần dù dòng bị sửa chữ.
-  BAY_GIO=$(date "+%Y-%m-%d %H:%M"); TU=$(date -v-60M "+%Y-%m-%d %H:%M")
+  # Lỡ giờ (Mac ngủ, mất mạng) thì còn nhắc trong 12 giờ, tin ghi "trễ".
+  BAY_GIO=$(date "+%Y-%m-%d %H:%M"); TU=$(date -v-12H "+%Y-%m-%d %H:%M")
   grep -E '^- [0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2} · ' "$DATA/nhac-viec.md" 2>/dev/null | grep -vE '· \((đã|da) ' | while IFS= read -r dong; do
     LUC="${dong:2:16}"
     if [[ ! "$LUC" > "$BAY_GIO" ]] && [[ ! "$LUC" < "$TU" ]] && ! grep -qF -- "- $LUC · " "$TT/da-nhac" 2>/dev/null; then
-      gui_thang "⏰ Nhắc: ${dong:21}" && echo "$dong" >> "$TT/da-nhac" && ghi "nhac $LUC"
+      gui_thang "⏰ Nhắc: ${dong:21}$(tre_nhan "$LUC")" && echo "$dong" >> "$TT/da-nhac" && ghi "nhac $LUC"
     fi
   done
   # Nhắc lặp: "- mỗi ngày / mỗi thứ 2, thứ 5 / mỗi ngày 15 HH:MM · nội dung" (nhac-lap.py tính lần tới giờ).
   # Dòng kết bằng "+ việc chưa xong" thì tin kèm việc [ ] trong danh-sach-viec.md (kể cả việc không hạn).
-  python3 -I "$GOC/nhac-lap.py" "$DATA/nhac-viec.md" "$TT/da-nhac-lap" "$DATA/danh-sach-viec.md" 2>>"$LOG" | while IFS=$'\t' read -r khoa nd; do
+  python3 -I "$GOC/nhac-lap.py" --bu 720 "$DATA/nhac-viec.md" "$TT/da-nhac-lap" "$DATA/danh-sach-viec.md" 2>>"$LOG" | while IFS=$'\t' read -r khoa nd; do
     if [[ "$nd" == \[* ]] && [ "$HERMES" = 1 ]; then
       # Bot chính là Hermes: nhắc có thẻ máy do lịch Hermes tự soạn và gửi, ở đây chỉ đánh dấu để không gửi trùng.
       echo "$khoa" >> "$TT/da-nhac-lap"; continue
@@ -197,7 +220,7 @@ while true; do
       ghi "bot khong nhan nhac lap ${khoa:0:16} (lan $LAN, tre ${TRE}s), gui thang"; xoa_cho "$khoa"
       nd="${nd#*] }"
     fi
-    gui_thang "⏰ Nhắc: ${nd//$'\x1f'/$'\n'}" && echo "$khoa" >> "$TT/da-nhac-lap" && ghi "nhac lap ${khoa:0:16}"
+    gui_thang "⏰ Nhắc: ${nd//$'\x1f'/$'\n'}$(tre_nhan "${khoa:0:16}")" && echo "$khoa" >> "$TT/da-nhac-lap" && ghi "nhac lap ${khoa:0:16}"
   done
   [ -f "$TT/da-nhac-lap" ] && tail -500 "$TT/da-nhac-lap" > "$TT/da-nhac-lap.tmp" && mv "$TT/da-nhac-lap.tmp" "$TT/da-nhac-lap"
 
@@ -234,13 +257,47 @@ while true; do
   fi
 
   # Lịch tự chạy (tu-dong-hoa/lich/lich-chay.md): tới giờ mở một phiên hiện trong app Claude, tài khoản nào cũng được.
-  python3 -I "$GOC/nhac-lap.py" "$GOC/../lich/lich-chay.md" "$TT/da-lich-chay" /dev/null 2>>"$LOG" | while IFS=$'\t' read -r khoa nd; do
-    ID="${nd%% *}"
-    bash "$GOC/../lich/chay-lich.sh" "$ID" >/dev/null 2>>"$LOG" && ghi "chay lich $ID (phien hien trong app)"
+  # Chỉ chạy khi có mạng và Mac thức hẳn; chưa thì để đó (không đánh dấu), lần lỡ được chạy bù trong hạn "· bù Nh".
+  [ "$SAN_SANG" = 1 ] && python3 -I "$GOC/nhac-lap.py" "$GOC/../lich/lich-chay.md" "$TT/da-lich-chay" /dev/null 2>>"$LOG" | while IFS=$'\t' read -r khoa nd; do
+    ID="${nd%% *}"; GOC_LUC="${khoa:0:16}"
+    if [ -n "$(tre_nhan "$GOC_LUC")" ]; then
+      bash "$GOC/../lich/chay-lich.sh" "$ID" "$GOC_LUC" >/dev/null 2>>"$LOG" && { ghi "chay bu lich $ID (goc $GOC_LUC)"; echo "$ID (lịch ${GOC_LUC:11:5} ${GOC_LUC:8:2}/${GOC_LUC:5:2})" >> "$TT/bu-lan-nay"; }
+    else
+      bash "$GOC/../lich/chay-lich.sh" "$ID" >/dev/null 2>>"$LOG" && ghi "chay lich $ID (phien hien trong app)"
+    fi
     echo "$khoa" >> "$TT/da-lich-chay"
   done
 
+  # Hàng chờ gửi lại: tin bao-cao.sh gửi hỏng (mất mạng) được gửi lại khi có mạng, kèm giờ gốc.
+  if [ "$MANG" = 1 ]; then
+    for f in $(ls "$TT/hang-cho-gui/"*.txt 2>/dev/null | sort); do
+      LUC0=$(head -1 "$f"); NOI=$(tail -n +2 "$f")
+      if BAO_CAO_KHONG_CHO=1 bash "$GOC/bao-cao.sh" --chi-gui "↻ Gửi lại tin lúc ${LUC0:11:5} ${LUC0:8:2}/${LUC0:5:2} (lúc đó mất mạng):
+$NOI" >/dev/null 2>&1; then
+        rm -f "$f"; ghi "gui lai tin $LUC0"; echo "$LUC0" >> "$TT/gui-lai-lan-nay"
+      else break; fi
+    done
+  fi
+
+  # Vừa có mạng lại sau ≥ 10 phút: gõ [SAU-MAT-MANG] vào bot (rà tin dồn), rồi nhắn David một tin 📶. Chờ 3 phút cho lịch bù và hàng chờ chạy xong.
+  if [ -f "$TT/vua-noi-lai" ] && [ "$SAN_SANG" = 1 ] && [ $(( BAY - $(cat "$TT/vua-noi-lai-luc") )) -ge 180 ]; then
+    read -r TU_LUC GD < "$TT/vua-noi-lai"
+    GD_CHU="$(( GD / 3600 )) giờ $(( GD % 3600 / 60 )) phút"
+    if [ "$HERMES" != 1 ] && [ ! -f "$TT/da-go-sau-mat-mang" ]; then
+      gui "[SAU-MAT-MANG] Mac vừa có mạng lại sau $GD_CHU (từ $(date -r "$TU_LUC" '+%H:%M %d/%m')). Rà tin David nhắn trong lúc đó còn chưa xử lý thì xử lý ngay." && touch "$TT/da-go-sau-mat-mang"
+    fi
+    BU=$(paste -sd ',' "$TT/bu-lan-nay" 2>/dev/null | sed 's/,/, /g'); GL=$(wc -l < "$TT/gui-lai-lan-nay" 2>/dev/null | tr -d ' ')
+    TIN="📶 Mac có mạng lại sau $GD_CHU (ngủ hoặc mất mạng từ $(date -r "$TU_LUC" '+%H:%M %d/%m')).
+Chạy bù: ${BU:-không có việc lịch nào lỡ}.
+Gửi lại: ${GL:-0} tin gửi hỏng.
+Anh nhắn gì trong lúc đó mà chưa thấy em trả lời thì nhắn lại giúp em."
+    if gui_thang "$TIN"; then
+      ghi "bao David co mang lai (bu: ${BU:-0}; gui lai: ${GL:-0})"; rm -f "$TT/vua-noi-lai" "$TT/vua-noi-lai-luc" "$TT/bu-lan-nay" "$TT/gui-lai-lan-nay" "$TT/da-go-sau-mat-mang"
+    fi
+  fi
+
   # Nhịp sống cho lệnh kiểm tra sức khoẻ.
   echo "$BAY $(dang_chay && echo phien-ok || echo phien-tat) $([ -n "$(may_chu)" ] && echo telegram-ok || echo telegram-tat)" > "$TT/nhip"
+  date +%s > "$TT/vong-cuoi"
   sleep 60
 done

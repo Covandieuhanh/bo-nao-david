@@ -59,7 +59,7 @@ David nhắn Telegram những gì nhớ, biết, cần làm. Phiên Claude Code 
 - Gọi phiên bot bằng mã đủ (`12345.so-tay`): tên `so-tay` là đầu của `so-tay-canh` nên `screen -S so-tay` bị nhầm.
 - Nhận máy chủ Telegram bằng `pgrep -fx ".*/bun server\.ts"` (khớp trọn): `pgrep -f` khớp cả lệnh khác có chữ đó và báo nhầm.
 - PATH có `/usr/sbin` (lsof, taskpolicy). Không chạy `claude mcp list` với `TELEGRAM_STATE_DIR` của bot: nó giành kết nối.
-- Không tự sửa được: Mac gập máy hoặc rút điện (ngủ), Mac khởi động lại mà chưa đăng nhập macOS.
+- Mac gập máy hoặc rút điện (ngủ), mất mạng: không giữ Mac thức (David chốt 16/11), máy **chạy bù khi thức lại** (gặp 15–16/11: gập máy chạy pin ngủ 15 giờ, lịch 7h bị bỏ). Vòng kiểm cách vòng trước > 3 phút hoặc không có mạng = gián đoạn: không mở, không làm mới phiên nào (lúc DarkWake phiên mở ra sẽ đông cứng). Có mạng và hai vòng liền nhau = thức hẳn: chạy bù lịch lỡ (đuôi `· bù Nh` ở `lich/lich-chay.md`, phiên bù nhận giờ gốc), nhắc giờ lỡ dưới 12 giờ (ghi "trễ"), gửi lại tin trong `.trang-thai/hang-cho-gui/` (`bao-cao.sh` thử 3 lần, hỏng thì cất vào đó), gõ `[SAU-MAT-MANG]` vào bot, và nếu gián đoạn ≥ 10 phút thì nhắn David một tin 📶 (việc đã bù, số tin gửi lại). Làm mới phiên bot hằng ngày chỉ khi bot nghỉ ≥ 5 phút (đang xử lý tin dồn thì không tắt). Không tự sửa được: Mac khởi động lại mà chưa đăng nhập macOS.
 - Sức khoẻ: `bash tu-dong-hoa/so-tay/viec-dang-chay.sh` (mục "Sức khoẻ bot"), hoặc hỏi bot "bot có ổn không".
 
 Xem phiên bot: `screen -r so-tay` (thoát: Ctrl-A rồi D). Nhật ký canh: `~/Documents/2-ca-nhan/so-tay/.trang-thai/canh-bot.log`.

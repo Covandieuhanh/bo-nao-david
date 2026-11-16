@@ -41,6 +41,8 @@ David hỏi **chuyện đã bàn với Claude** ("hôm trước mình nói gì v
 
 Khi nhận tin bắt đầu bằng `[KHOI-DONG]` (máy gửi lúc mở phiên mới): chỉ đọc lướt `nhom.md` để biết cấu trúc, không gửi gì cho David.
 
+Khi nhận tin bắt đầu bằng `[SAU-MAT-MANG]` (máy gửi khi Mac vừa thức hoặc có mạng lại sau ≥ 10 phút): xem trong phiên còn tin David nào chưa trả lời thì xử lý và trả lời ngay như tin thường. Không có thì không gửi gì (máy đã tự nhắn David tin 📶).
+
 ## Tin nhắn tổng hợp (Zalo · Messenger · Telegram)
 
 Mỗi sáng máy gửi David tin bắt đầu bằng `📬 Tin nhắn dd/mm`, các việc đánh số, kèm dòng `📇 Danh bạ` (điều đã tự ghi vào `danh-ba.md` và điều trùng với ghi của David). Bản đủ ở `tin-nhan/tong-hop-YYYY-MM-DD.md`. Tin David nói về **người hay việc trong bản tổng hợp** (trả lời/trích tin 📬, hoặc nhắc "tin nhắn", "bản tổng hợp", tên cuộc trò chuyện) thì xử lý ở đây, vẫn ghi hộp thư trước:
