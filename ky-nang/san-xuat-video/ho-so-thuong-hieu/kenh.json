@@ -49,7 +49,7 @@
    "Fri": "video sẵn có (Reels / clip trích) — trụ theo video",
    "Sun": "bài viết — trụ 2 con người, dẫn đội (tuần lẻ) / trụ 3 đời thường, hành trình (tuần chẵn)",
    "gio_vn": "20:00",
-   "ghi_chu": "Lịch 4 tuần cụ thể và 4 trụ: du-an/hinh-anh-facebook-ca-nhan.md. Không đủ video thì thay bằng bài viết cùng trụ; tuần khó tối thiểu 2 bài."
+   "ghi_chu": "Luôn sẵn 2 tuần bài trên trang localhost:8765/bai-dang (du-an/lich-dang-bai.md); 4 trụ: du-an/hinh-anh-facebook-ca-nhan.md. Không đủ video thì thay bằng bài viết cùng trụ; tuần khó tối thiểu 2 bài."
   }
  },
  "dan_dat": {

@@ -15,6 +15,7 @@ ROOTS = {  # id → (thư mục, nhãn)
     "mac": (os.path.join(H0, "Movies"), "Mac · đang làm"),
     "luu": (os.path.join(DRIVE, "sao-luu-mac/video"), "Drive · dự án"),
     "xong": (os.path.join(DRIVE, "thanh-pham"), "Drive · thanh-pham"),
+    "bai": (os.path.join(H0, "Documents/1-nghe-nghiep/bai-dang"), "Bài đăng Facebook cá nhân"),
 }
 DANH_MUC = os.path.join(H0, "Movies/_danh-muc-noi-dung/danh-muc-noi-dung.md")
 PORT = int(os.environ.get("PORT", 8765))
@@ -263,7 +264,7 @@ def section(t):
 
 def page_home(taps):
     n = sum(1 for t in taps if not nhom(t.key)); m = len(taps) - n
-    return (f'<header><h1>Kết quả video</h1><span class=dem>{n} video</span>'
+    return (f'<header><h1>Kết quả video</h1><a class=nav href=/bai-dang>Bài đăng →</a><span class=dem>{n} video</span>'
             f'<input id=q type=search placeholder="Tìm…" oninput="loc()">'
             f'{f"<label class=thu><input type=checkbox id=thu onchange=loc()> Bản thử ({m})</label>" if m else ""}</header>'
             + "".join(section(t) for t in taps)
@@ -274,7 +275,7 @@ CSS = """
 *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.55 -apple-system,system-ui,sans-serif}
 main{max-width:1400px;margin:0 auto;padding:0 20px 80px}
 header{position:sticky;top:0;z-index:5;background:rgba(18,18,22,.92);backdrop-filter:blur(10px);display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:14px 0;margin-bottom:6px;border-bottom:1px solid var(--bd)}
-h1{margin:0;font-size:20px;letter-spacing:.01em} .dem{color:var(--dim);font-size:13px}
+h1{margin:0;font-size:20px;letter-spacing:.01em} .nav{color:var(--ac);text-decoration:none;font-size:14px;border:1px solid var(--bd);border-radius:999px;padding:4px 12px} .nav:hover{border-color:var(--ac)} .dem{color:var(--dim);font-size:13px}
 #q{margin-left:auto;width:220px;padding:7px 12px;border-radius:8px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font-size:14px}
 .thu{color:var(--dim);font-size:13px;display:flex;gap:6px;align-items:center;cursor:pointer}
 .tap{padding:22px 0 8px;border-bottom:1px solid var(--bd)} .tap[hidden]{display:none}
@@ -341,6 +342,79 @@ def page(sel):
     return (f'<!doctype html><html lang=vi><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">'
             f"<title>Kết quả video</title><style>{CSS}</style><main>{page_home(taps)}</main><script>{JS}</script></html>")
 
+# ---------- trang bài đăng (David 17/11/2026: "tạo riêng 1 trang … với đầy đủ mọi thứ trong 1 bài đăng để tôi lên copy nội dung và tự tải ảnh") ----------
+# Đọc ~/Documents/1-nghe-nghiep/bai-dang/YYYY-MM-DD/bai.md (đầu file: "# tiêu đề", các dòng ghi chú, "Tệp: <đường dẫn video>" nếu có; sau "---" là chữ đăng)
+# + anh.png. Nút Đã đăng ghi file .da-dang trong thư mục ngày. Hệ thống lịch: du-an/lich-dang-bai.md.
+THU = ["Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy", "Chủ nhật"]
+
+def bai_doc(ngay):
+    d = os.path.join(ROOTS["bai"][0], ngay); txt = read("bai", f"{ngay}/bai.md")
+    dau, _, than = txt.partition("\n---\n")
+    dong = dau.strip().splitlines(); tieu = dong[0].lstrip("# ").strip() if dong else ngay
+    ghi = [l for l in dong[1:] if l.strip() and not l.startswith("Tệp:")]
+    tep = next((os.path.expanduser(l[4:].strip()) for l in dong if l.startswith("Tệp:")), "")
+    return {"ngay": ngay, "tieu": tieu, "ghi": ghi, "than": than.strip(), "anh": isf(os.path.join(d, "anh.png")),
+            "video": tep if isf(tep) else "", "video_thieu": bool(tep) and not isf(tep), "da": isf(os.path.join(d, ".da-dang"))}
+
+def bai_the(b):
+    import datetime
+    dt = datetime.date.fromisoformat(b["ngay"]); n = b["ngay"]
+    tt = '<span class="tt da">Đã đăng</span>' if b["da"] else '<span class=tt>Chờ đăng · 20:00</span>'
+    media = ""
+    if b["video"]:
+        media = (f'<div class=bm><video controls preload=metadata playsinline src="/bv/{n}"></video>'
+                 f'<a class=f href="/bv/{n}" download="video-{n}.mp4">Tải video</a></div>')
+    elif b["anh"]:
+        media = (f'<div class=bm><img src="/f/bai/{n}/anh.png" alt="Ảnh bài {n}" onclick="anh(this.src)">'
+                 f'<a class=f href="/f/bai/{n}/anh.png" download="anh-{n}.png">Tải ảnh</a></div>')
+    else:
+        media = f'<div class="bm cho"><div>{"Không thấy tệp video" if b["video_thieu"] else "Chưa có ảnh"}</div></div>'
+    ghi = "".join(f"<div>{esc(g)}</div>" for g in b["ghi"])
+    return (f'<section class="bai{" xong" if b["da"] else ""}" id="b-{n}"><div class=bh><h2>{THU[dt.weekday()]} {dt:%d/%m}</h2>{tt}'
+            f'<button class=more onclick="daDang(\'{n}\',this)">{"Bỏ đánh dấu" if b["da"] else "Đã đăng"}</button></div>'
+            f'<div class=bt>{esc(b["tieu"])}</div><div class=bb>{media}<div class=bc>'
+            f'<pre class=noi id="n-{n}">{esc(b["than"])}</pre><button class=chepb onclick="chepBai(\'{n}\',this)">Chép bài</button>'
+            f'{f"<details><summary>Ghi chú soạn</summary>{ghi}</details>" if ghi else ""}</div></div></section>')
+
+def page_bai():
+    goc = ROOTS["bai"][0]
+    ngay = [d for d in ls(goc) if re.fullmatch(r"\d{4}-\d{2}-\d{2}", d) and isf(os.path.join(goc, d, "bai.md"))]
+    bai = [bai_doc(d) for d in ngay]; cho = [b for b in bai if not b["da"]]; xong = [b for b in bai if b["da"]][::-1]
+    kho = [f for f in ls(os.path.join(goc, "kho-bai-nen")) if f.endswith(".md")]
+    than = (f'<header><h1>Bài đăng Facebook cá nhân</h1><a class=nav href=/>← Kết quả video</a>'
+            f'<span class=dem>{len(cho)} bài chờ đăng · kho bài nền {len(kho)}</span></header>'
+            '<p class=huong>Mỗi bài: bấm <b>Chép bài</b> → dán vào Facebook · <b>Tải ảnh</b> (hay video) → đính kèm · đăng xong bấm <b>Đã đăng</b>.</p>'
+            + ("".join(bai_the(b) for b in cho) or "<div class=trong>Chưa có bài chờ đăng.</div>")
+            + (f'<h3 class=nhom>Đã đăng ({len(xong)})</h3>' + "".join(bai_the(b) for b in xong) if xong else "")
+            + '<dialog id=dlg><div class=dh><b id=dt></b><button id=dfd hidden></button><button id=cp hidden></button><button onclick="dlg.close()" aria-label="Đóng">✕</button></div><div id=db></div></dialog>')
+    return (f'<!doctype html><html lang=vi><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">'
+            f"<title>Bài đăng</title><style>{CSS}{CSS_BAI}</style><main>{than}</main><script>{JS_BAI}</script></html>")
+
+CSS_BAI = """
+.huong{color:var(--dim);font-size:13.5px;margin:10px 0 0}
+.bai{padding:22px 0;border-bottom:1px solid var(--bd)} .bai.xong{opacity:.55}
+.bh{display:flex;align-items:center;gap:12px;flex-wrap:wrap} .bh h2{max-width:none}
+.tt{font-size:12.5px;color:var(--ac);border:1px solid var(--ac);border-radius:999px;padding:2px 10px} .tt.da{color:#2e9e5b;border-color:#2e9e5b}
+.bt{color:var(--dim);font-size:13px;margin:6px 0 14px}
+.bb{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap}
+.bm{flex:none;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.bm img,.bm video{width:300px;max-width:86vw;border-radius:10px;background:#000;display:block;cursor:zoom-in}
+.bm.cho div{width:300px;height:200px} .bm .f{text-decoration:none}
+.bc{flex:1;min-width:260px} .noi{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:14px 16px;margin:0 0 10px;font:15px/1.6 -apple-system,system-ui,sans-serif;max-height:460px;overflow:auto}
+.chepb{background:var(--ac);color:#fff;border:0;border-radius:8px;padding:8px 18px;font-size:14px;font-weight:600;cursor:pointer} .chepb.ok{background:#2e9e5b}
+details{margin-top:10px;color:var(--dim);font-size:12.5px} summary{cursor:pointer}
+.nhom{color:var(--dim);margin:30px 0 0;font-size:15px}
+"""
+JS_BAI = r"""
+const dlg=document.getElementById('dlg'),dt=document.getElementById('dt'),db=document.getElementById('db');
+function anh(u){dt.textContent='Ảnh';db.innerHTML='<img src="'+u+'">';dlg.showModal()}
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+function chepBai(n,b){const t=document.getElementById('n-'+n).innerText;
+ const ok=()=>{b.textContent='Đã chép';b.classList.add('ok');setTimeout(()=>{b.textContent='Chép bài';b.classList.remove('ok')},1500)};
+ if(navigator.clipboard)navigator.clipboard.writeText(t).then(ok);else{const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();document.execCommand('copy');a.remove();ok()}}
+function daDang(n,b){fetch('/da-dang/'+n,{method:'POST'}).then(r=>{if(r.ok)location.reload()})}
+"""
+
 # ---------- máy chủ ----------
 CACHE = os.path.join(H0, "Library/Caches/xem-ket-qua")
 
@@ -361,6 +435,16 @@ class H(http.server.SimpleHTTPRequestHandler):
         if u.path.startswith("/?") or (u.path == "/" and "tap=" in u.query):   # link cũ ?tap=x → neo #tap-x
             t = urllib.parse.parse_qs(u.query).get("tap", [""])[0]
             self.send_response(302); self.send_header("Location", f"/#tap-{urllib.parse.quote(t)}"); self.end_headers(); return
+        if u.path.rstrip("/") == "/bai-dang":
+            try: b = page_bai().encode()
+            except Exception as e: b = f"<pre>Lỗi đọc bài đăng: {esc(e)}</pre>".encode()
+            self.send_response(200); self.send_header("Content-Type", "text/html; charset=utf-8"); self.send_header("Content-Length", len(b)); self.end_headers()
+            return self.wfile.write(b)
+        if u.path.startswith("/bv/"):   # video của bài: đường dẫn lấy từ dòng "Tệp:" trong bai.md, không nhận đường dẫn từ ngoài
+            n = u.path[4:]
+            if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", n): return self.send_error(404)
+            v = bai_doc(n)["video"]
+            return self.send_file(v) if v else self.send_error(404)
         if u.path.startswith(("/f/", "/poster/", "/doc/")):
             kind, rid, rel = u.path[1:].split("/", 2) if u.path.count("/") > 2 else ("", "", "")
             if rid not in ROOTS: return self.send_error(404)
@@ -377,6 +461,13 @@ class H(http.server.SimpleHTTPRequestHandler):
         self.wfile.write(b)
     def do_POST(self):   # nút "Finder": hiện file trong Finder (máy chủ chỉ nghe 127.0.0.1)
         u = urllib.parse.urlparse(self.path)
+        if u.path.startswith("/da-dang/"):   # bật / tắt dấu đã đăng của một bài
+            n = u.path[9:]; d = os.path.join(ROOTS["bai"][0], n)
+            if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", n) or not os.path.isdir(d): return self.send_error(404)
+            m = os.path.join(d, ".da-dang")
+            if isf(m): os.remove(m)
+            else: open(m, "w").write(time.strftime("%Y-%m-%d %H:%M\n"))
+            self.send_response(204); self.end_headers(); return
         if not u.path.startswith("/finder/"): return self.send_error(404)
         rid, _, rel = u.path[8:].partition("/")
         if rid not in ROOTS: return self.send_error(404)
