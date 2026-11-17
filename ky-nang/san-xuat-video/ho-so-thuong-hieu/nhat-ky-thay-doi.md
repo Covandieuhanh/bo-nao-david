@@ -25,3 +25,6 @@ description: "Sổ đổi giá trị hồ sơ tham số video (chung và từng 
 - 2026-11-06 · thêm `man_cuoi_kenh`: màn hình cuối clip dọc ghi tên kênh, không logo nền tảng.
 - 2026-11-06 · thêm `nhac_chu_chinh`, `man_cuoi_s` (khuôn podcast đồ hoạ dọc, David chọn bản nhạc thấp hơn giọng khoảng 23 dB).
 - 2026-11-04 · `tit_ghim` true → false (David chốt 2 trạng thái: người + phụ đề / minh hoạ toàn màn hình).
+
+## giong-thuong-hieu-david.md
+- 2026-11-17 · David tự sửa bài Facebook 19/11 ("Mình từng như vậy khá lâu. Rồi mình để máy làm phần gom." → "Mình từng như vậy một thời gian rất dài, cho đến khi tìm ra được giải pháp để xử lý dứt điểm vấn đề này. Giờ…") → thêm luật không lộ cách làm ở bài kể chuyện, bước ngoặt rõ và chắc, "giải pháp" dùng được khi trỏ đúng vấn đề.

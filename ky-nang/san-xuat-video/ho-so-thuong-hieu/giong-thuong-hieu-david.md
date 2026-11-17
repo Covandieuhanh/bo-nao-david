@@ -34,7 +34,7 @@ Học để Claude hiểu đúng ý và trả lời hợp giọng; khi viết b�
 ## Bài viết chữ trên Facebook cá nhân (phần lớn còn hướng cũ)
 - Trang trọng hơn lúc nói: tự gọi "David"; câu dài, một đoạn liền; từ hay gặp "nhân duyên", "phụng sự", "thấu hiểu", "biết ơn", "xứng đáng", "chiêm nghiệm".
 - **Giữ:** câu có hình ảnh của nghề, như "văn vẫn phải ôn, võ vẫn phải luyện"; tự nhìn lại bản thân, như "nhận biết và thấu hiểu chính mình ở hiện tại"; lòng biết ơn khi nó gắn với một việc cụ thể.
-- **Bỏ cho thương hiệu trainer:** "hệ sinh thái", "doanh chủ"; "giải pháp", "đối tác" đứng trống không kèm việc cụ thể (bài công nghệ được dùng khi nói rõ giải việc gì, cho ai, ra kết quả gì); lời chào mừng trang trọng kiểu sự kiện; "nhân duyên", "phụng sự" dùng dày vì dễ nghe xa người đọc mới.
+- **Bỏ cho thương hiệu trainer:** "hệ sinh thái", "doanh chủ"; "giải pháp", "đối tác" đứng trống không kèm việc cụ thể ("giải pháp" dùng được khi trỏ đúng vấn đề vừa kể, vd. "giải pháp để xử lý dứt điểm vấn đề này"; bài công nghệ được dùng khi nói rõ giải việc gì, cho ai, ra kết quả gì); lời chào mừng trang trọng kiểu sự kiện; "nhân duyên", "phụng sự" dùng dày vì dễ nghe xa người đọc mới.
 - Khi bài viết và lời nói lệch nhau, theo cách David nói.
 
 ## Nâng cấp giọng cho thương hiệu trainer (hướng David duyệt)
@@ -43,6 +43,8 @@ Học để Claude hiểu đúng ý và trả lời hợp giọng; khi viết b�
 - **Cụ thể hơn cảm hứng**: một việc làm được ngay (Thực thi) quan trọng hơn câu truyền động lực chung chung.
 - Giữ ấm áp của David: "các bạn", "mình", thỉnh thoảng "nha" ở câu kết — tối đa 1 lần / bài.
 - Hashtag thương hiệu mới (2–3 / bài): #DavidTran + bài con người #TrainerDinhHuong + 1 chủ đề (#lamchubanthan #quanlymoi #danguoi); bài công nghệ #AIthucchien + 1 chủ đề (#sohoa #tudonghoa).
+- **Bài kể chuyện đồng cảm: không lộ cách làm bên trong.** Bước ngoặt kể là "tìm ra được giải pháp", không nói "máy", "AI", "tự động" làm; người đọc thấy kết quả trước, tò mò cách làm thì tự hỏi. Bài công nghệ AI vẫn nói thẳng việc cụ thể (dòng dưới).
+- **Bước ngoặt rõ và chắc:** kể cái kẹt kéo dài ("một thời gian rất dài") rồi chốt dứt khoát ("cho đến khi tìm ra được giải pháp để xử lý dứt điểm vấn đề này. Giờ…"), không nối nhẹ kiểu "khá lâu… Rồi…".
 - **Bài công nghệ AI**: nói bằng việc cụ thể và kết quả đo được ("trước mất 3 tiếng, giờ 20 phút"), không thuật ngữ khoe; người đọc là chủ doanh nghiệp nhỏ, không phải dân kỹ thuật.
 
 ## Luật khi viết (chuyển lời nói → chữ)
