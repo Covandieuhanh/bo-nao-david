@@ -64,7 +64,8 @@
   ],
   "cau_moi": "nhắn mình một chữ 'gỡ'",
   "khong_noi_gia": true,
-  "cau_moi_cong_nghe": "nhắn mình hai chữ 'số hoá'"
+  "cau_moi_cong_nghe": "nhắn mình hai chữ 'số hoá'",
+  "facebook_ca_nhan_bai_viet": "bài viết kèm ảnh không theo tỉ lệ trên: kể chuyện đồng cảm, luôn kết bằng câu hỏi mở mời kể, không lời mời từ khoá (du-an/hinh-anh-facebook-ca-nhan.md mục 4); tỉ lệ trên áp cho video"
  },
  "binh_luan": {
   "tu_khoa": [

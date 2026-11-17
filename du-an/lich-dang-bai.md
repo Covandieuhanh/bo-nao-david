@@ -8,7 +8,7 @@ Hồ sơ hình ảnh (định vị, 4 trụ, 5 kiểu bài nền, luật ảnh):
 **Bài và ảnh** (sản phẩm, không lên GitHub): `~/Documents/1-nghe-nghiep/bai-dang/` — mỗi ngày đăng một thư mục `YYYY-MM-DD/` (`bai.md`, `anh.png`), kho ở `kho-bai-nen/`, bản tóm tuần `tuan-YYYY-MM-DD.md`.
 
 ## Mục tiêu
-Không tuần nào trống: **4 bài/tuần** (T3 video · T5 bài viết công nghệ · T6 video · CN bài viết con người / đời thường, 20:00 giờ Việt Nam). Đo bằng: số tuần đủ bài, số người nhắn "số hoá" / "gỡ".
+Không tuần nào trống: **4 bài/tuần** (T3 video · T5 bài viết công nghệ · T6 video · CN bài viết con người / đời thường, 20:00 giờ Việt Nam). Đo bằng: số tuần đủ bài, số người kể chuyện của họ (bình luận, tin nhắn).
 
 ## Cách chạy
 | Khi | Ai | Làm gì |
@@ -17,7 +17,7 @@ Không tuần nào trống: **4 bài/tuần** (T3 video · T5 bài viết công 
 | Thứ 6 trong ngày | David | trả lời bot: "duyệt tuần" hoặc "sửa bài <ngày>: …" |
 | **19:45 ngày đăng** | bot Sổ nhớ (`nhac-viec.md`) | nhắc David đăng, trỏ tới tin bài + ảnh đã gửi sáng thứ 6 |
 | 20:00 | David | tự bấm đăng trên Facebook cá nhân (trang cá nhân không hẹn giờ được) |
-| Đóng gói tuần | skill `san-pham-hoa` | đếm người nhắn "số hoá" / "gỡ", ghi kiểu bài nào kéo được tin nhắn |
+| Đóng gói tuần | skill `san-pham-hoa` | đếm người bình luận kể chuyện, nhắn riêng; ghi câu chuyện nào kéo được người kể |
 
 **Chọn bài cho từng ô:**
 - **Ô video (T3, T6):** video David đã duyệt trong `du-an/danh-muc-noi-dung.md` chưa lên Facebook cá nhân; chữ lấy nguyên văn lời David (luật 3). Không có → bài nền từ kho.
