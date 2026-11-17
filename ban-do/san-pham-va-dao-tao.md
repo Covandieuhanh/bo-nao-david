@@ -8,7 +8,8 @@ Gốc: [bản đồ bộ não](README.md). Định hướng: [chien-luoc-nghe-ng
 
 ## Bán
 - [pheu-ban-hang-goi-cong-nghe.md](../du-an/pheu-ban-hang-goi-cong-nghe.md) — phễu → bán thử → bán thật cho hướng 3.
-- [hinh-anh-facebook-ca-nhan.md](../du-an/hinh-anh-facebook-ca-nhan.md) — Facebook cá nhân: trainer hai lĩnh vực (con người · công nghệ AI), 4 trụ, lịch 4 tuần, bài nháp; nơi phễu hướng 3 chạy.
+- [hinh-anh-facebook-ca-nhan.md](../du-an/hinh-anh-facebook-ca-nhan.md) — Facebook cá nhân: trainer hai lĩnh vực (con người · công nghệ AI), 4 trụ, 5 kiểu bài nền, luật ảnh; nơi phễu hướng 3 chạy.
+- [lich-dang-bai.md](../du-an/lich-dang-bai.md) — hệ thống lịch đăng 4 bài/tuần kể cả không có video: kho bài nền, lịch thứ 6, ảnh ChatGPT, nhắc 19:45, sổ lịch.
 
 ## Gói 1: dựng video bằng AI trên máy tính
 - [README](../du-an/goi-dao-tao-dung-video-ai/README.md) — tổng quan gói.

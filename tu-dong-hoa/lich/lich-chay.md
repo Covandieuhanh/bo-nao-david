@@ -21,4 +21,5 @@ Dạng dòng giống `nhac-viec.md`: `- mỗi ngày HH:MM · <tên>` · `- mỗi
 - mỗi ngày 07:00 · tong-hop-tin-nhan · bù 16h
 - mỗi ngày 23:00 · gom-phan-loai-dem · bù 13h
 - mỗi thứ 6 06:30 · dong-goi-tuan · bù 48h
+- mỗi thứ 6 07:30 · lich-dang-tuan · bù 36h
 - chỉ ngày 2026-11-15 06:30 · dong-goi-tuan

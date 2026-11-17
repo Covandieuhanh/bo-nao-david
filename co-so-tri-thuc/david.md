@@ -13,7 +13,7 @@
   - Công khai là **trainer**; **coach** chỉ trong buổi riêng 1:1.
   - Làm **ba hướng**: tài chính (giao dịch hàng hoá) · trainer con người (phát triển bản thân) · giải pháp công nghệ AI kèm đào tạo cho cá nhân và doanh nghiệp (mục 4.1).
   - Hình ảnh công khai: **một trainer, hai lĩnh vực** — con người và công nghệ AI.
-  - **Tổng điều hành** một đội đối tác làm giải pháp công nghệ, số hoá cho tổ chức theo từng vấn đề cụ thể (từ 18/11/2026).
+  - Nội bộ (không công bố): **tổng điều hành** một đội đối tác làm giải pháp công nghệ, số hoá cho tổ chức theo từng vấn đề cụ thể (từ 18/11/2026). Bên ngoài David là người có năng lực giải quyết vấn đề trong các lĩnh vực mình định hướng; phía sau tự điều phối.
   - Đích xa: **truyền nghề**.
 - **Kinh nghiệm:** MC, hướng dẫn viên, spa/wellness/dịch vụ, công nghệ, đứng lớp.
 - **Thế mạnh tự nhận:** mạnh nhất về con người, lấy cá nhân làm trung tâm, định hướng cách họ tương tác với người khác và với công việc. Không mạnh kinh doanh.

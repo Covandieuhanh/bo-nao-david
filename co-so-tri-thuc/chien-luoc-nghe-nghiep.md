@@ -21,7 +21,9 @@ Mục tiêu chung: **ra tiền**. Mọi nội dung được lọc xem thuộc h�
 
 Quy trình bán gói công nghệ (phễu → bán thử → bán thật): `du-an/pheu-ban-hang-goi-cong-nghe.md`.
 
-**Đội đối tác giải pháp công nghệ:** David hợp tác chính thức và giữ vai **tổng điều hành** toàn bộ một đội đang sản xuất giải pháp công nghệ, số hoá cho đơn vị, tổ chức, đội nhóm theo từng vấn đề cụ thể của họ (bắt đầu làm 18/11/2026). Đây là nền cho mảng giải pháp AI cho doanh nghiệp: đội làm giải pháp, David điều hành và đào tạo để khách dùng ra kết quả. Tên đội, sản phẩm, thành quả đăng được: David cập nhật sau.
+**Đội đối tác giải pháp công nghệ (nội bộ, không công bố):** David hợp tác chính thức và giữ vai **tổng điều hành** toàn bộ một đội đang sản xuất giải pháp công nghệ, số hoá cho đơn vị, tổ chức, đội nhóm theo từng vấn đề cụ thể của họ (bắt đầu làm 18/11/2026). Đây là nền cho mảng giải pháp AI cho doanh nghiệp: đội làm giải pháp, David điều hành và đào tạo để khách dùng ra kết quả. Tên đội, sản phẩm, thành quả: David cập nhật sau.
+
+**Bên ngoài chỉ thấy David:** người có năng lực giải quyết vấn đề trong các lĩnh vực mình định hướng. Không công bố vai tổng điều hành, không nêu tên đội hay đơn vị phía sau; việc giao cho đơn vị nào xử lý là David tự điều phối nội bộ. Thành quả làm cho khách kể là "giải pháp mình làm cho khách".
 
 **Luật soạn gói đào tạo hướng 3** (mọi gói `du-an/goi-*/`):
 - Mỗi gói dạy đúng **một kỹ năng thuần** (gói 1: dựng video bất kỳ bằng AI trên máy tính); không lẫn tư duy, chiến lược nội dung (tư duy kênh, chọn ý, đăng, đo là gói riêng `du-an/goi-dao-tao-noi-dung-kenh/`).
@@ -70,4 +72,4 @@ Tìm hiểu → mời → phiếu đầu vào → thống nhất → làm trên 
 
 **Hướng 2, trainer:** công khai là trainer, coach chỉ trong buổi riêng · không trị liệu, không chẩn đoán; chuyển người khủng hoảng tâm lý tới chuyên môn có cấp phép.
 
-**Hướng 3, giải pháp công nghệ AI:** chỉ hứa kết quả mà gói, giải pháp làm ra được thật (đã chạy trên chính David, khách thử, hoặc khách của đội đối tác) · nói rõ khách cần làm gì, mất bao lâu · thành quả của đội đối tác chỉ đăng khi David đưa chi tiết và đội đồng ý; tên khách doanh nghiệp ẩn đi trừ khi khách đồng ý nêu tên.
+**Hướng 3, giải pháp công nghệ AI:** chỉ hứa kết quả mà gói, giải pháp làm ra được thật (đã chạy trên chính David hoặc cho khách thật) · nói rõ khách cần làm gì, mất bao lâu · ca khách chỉ đăng khi David đưa chi tiết; tên khách doanh nghiệp ẩn đi trừ khi khách đồng ý nêu tên · không nêu đơn vị phía sau.

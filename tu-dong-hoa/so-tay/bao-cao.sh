@@ -5,7 +5,15 @@
 # --chi-gui: chỉ gửi, không ghi sổ báo cáo (canh-bot dùng cho nhắc giờ và cảnh báo).
 # Gửi hỏng (mất mạng…) sau 3 lần thử: tin vào hàng chờ .trang-thai/hang-cho-gui/, canh-bot gửi lại khi có mạng (kèm giờ gốc).
 # BAO_CAO_KHONG_CHO=1: không đưa vào hàng chờ (canh-bot tự thử lại nhắc giờ, và khi gửi lại từ hàng chờ).
-GHI=1; [ "$1" = "--chi-gui" ] && { GHI=0; shift; }
+# --anh <file>: gửi kèm một ảnh (gửi ảnh trước, tin chữ ngay sau) — lịch đăng bài dùng để David chép bài + ảnh đi đăng.
+GHI=1; ANH=""
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --chi-gui) GHI=0; shift ;;
+    --anh) ANH="$2"; shift 2 ;;
+    *) break ;;
+  esac
+done
 TIN="$*"
 [ -z "$TIN" ] && { echo "Thiếu nội dung báo cáo"; exit 1; }
 KENH="$HOME/.claude/channels/so-tay"
@@ -34,6 +42,12 @@ else
 fi
 if [ -z "$TOKEN" ] || [ -z "$CHAT" ]; then echo "Chưa cài bot gửi tin: chỉ ghi vào sổ"; exit 0; fi
 
+if [ -n "$ANH" ]; then
+  if [ -f "$ANH" ]; then
+    curl -s -m 60 "https://api.telegram.org/bot$TOKEN/sendPhoto" -F "chat_id=$CHAT" -F "photo=@$ANH" | grep -q '"ok":true' \
+      || echo "Gửi ảnh lỗi: $ANH"
+  else echo "Không thấy ảnh: $ANH"; fi
+fi
 for LAN in 1 2 3; do
   KQ=$(curl -s -m 20 "https://api.telegram.org/bot$TOKEN/sendMessage" \
     --data-urlencode "chat_id=$CHAT" --data-urlencode "text=$TIN")
