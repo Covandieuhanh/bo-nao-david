@@ -5,7 +5,7 @@ description: "Hệ thống lịch đăng bài Facebook cá nhân: tuần nào c�
 # Hệ thống lịch đăng bài — Facebook cá nhân
 
 Hồ sơ hình ảnh (định vị, 4 trụ, 5 kiểu bài nền, luật ảnh): [hinh-anh-facebook-ca-nhan.md](hinh-anh-facebook-ca-nhan.md) · khung lịch: `kenh.json` → `lich.facebook_ca_nhan`.
-**Trang đăng bài: http://localhost:8765/bai-dang** (cùng máy chủ trang Kết quả video `tu-dong-hoa/xem-ket-qua.py`; máy chủ tắt thì chạy `python3 tu-dong-hoa/xem-ket-qua.py`): mỗi bài một thẻ có giờ đăng, chữ đăng + nút **Chép bài**, ảnh hay video + nút **Tải**, nút **Đã đăng** (ghi `.da-dang` trong thư mục ngày).
+**Trang đăng bài: http://localhost:8765/bai-dang** (cùng máy chủ trang Kết quả video `tu-dong-hoa/xem-ket-qua.py`; tự bật khi mở máy bằng launchd `com.david.xem-ket-qua`, cài bằng `bash tu-dong-hoa/cai-trang-xem.sh`): mỗi bài một thẻ có giờ đăng, chữ đăng + nút **Chép bài**, ảnh hay video + nút **Tải**, nút **Đã đăng** (ghi `.da-dang` trong thư mục ngày).
 **Bài và ảnh** (sản phẩm, không lên GitHub): `~/Documents/1-nghe-nghiep/bai-dang/` — mỗi ngày đăng một thư mục `YYYY-MM-DD/` (`bai.md`, `anh.png`), kho ở `kho-bai-nen/`, bản tóm tuần `tuan-YYYY-MM-DD.md`.
 
 ## Mục tiêu
