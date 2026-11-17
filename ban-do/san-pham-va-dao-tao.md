@@ -4,7 +4,7 @@ description: Bản đồ sản phẩm và đào tạo — gói 1 dựng video b�
 
 # Sản phẩm và đào tạo
 
-Gốc: [bản đồ bộ não](README.md). Định hướng: [chien-luoc-nghe-nghiep.md](../co-so-tri-thuc/chien-luoc-nghe-nghiep.md). Luật gói: [quy-tac-goi-trainer-chung.md](../co-so-tri-thuc/bo-nho/quy-tac-goi-trainer-chung.md) (mỗi gói một kỹ năng thuần, mọi AI, máy học viên).
+Gốc: [bản đồ bộ não](README.md). Định hướng: [chien-luoc-nghe-nghiep.md](../co-so-tri-thuc/chien-luoc-nghe-nghiep.md). Luật gói: [chien-luoc-nghe-nghiep.md](../co-so-tri-thuc/chien-luoc-nghe-nghiep.md) mục 4.1 "Luật soạn gói hướng 3" (lý do, lời David: [quy-tac-goi-trainer-chung.md](../co-so-tri-thuc/bo-nho/quy-tac-goi-trainer-chung.md)) (mỗi gói một kỹ năng thuần, mọi AI, máy học viên).
 
 ## Bán
 - [pheu-ban-hang-goi-cong-nghe.md](../du-an/pheu-ban-hang-goi-cong-nghe.md) — phễu → bán thử → bán thật cho hướng 3.

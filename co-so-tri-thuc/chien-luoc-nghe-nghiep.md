@@ -19,6 +19,12 @@ Mục tiêu chung: **ra tiền**. Mọi nội dung được lọc xem thuộc h�
 
 Quy trình bán gói công nghệ (phễu → bán thử → bán thật): `du-an/pheu-ban-hang-goi-cong-nghe.md`.
 
+**Luật soạn gói hướng 3** (David chốt 13/11/2026; mọi gói `du-an/goi-*/`):
+- Mỗi gói dạy đúng **một kỹ năng thuần** (gói 1: dựng video bất kỳ bằng AI trên máy tính); không lẫn tư duy, chiến lược nội dung (tư duy kênh, chọn ý, đăng, đo là gói riêng `du-an/goi-dao-tao-noi-dung-kenh/`).
+- Dạy **cách làm chung**: học viên dùng AI nào, máy nào cũng tự làm được; không trỏ tới skill, file, kênh, luật của David.
+- Hệ của David chỉ là **kết quả mẫu để demo**, đặt ở phần chuẩn bị của trainer.
+- Viết theo từng bước, mỗi bước có chuẩn đạt.
+
 ### 4.2. Khung phương pháp: ba tầng làm chủ
 | Tầng | Nội dung |
 | --- | --- |
