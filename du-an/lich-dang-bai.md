@@ -26,22 +26,33 @@ Không tuần nào trống: **4 bài/tuần** (T3 video · T5 bài viết công 
 - **Kho bài nền:** luôn **8 bài đã soạn**, đủ 5 kiểu (hồ sơ mục 4); lấy ra bao nhiêu soạn bù bấy nhiêu. Bài nền dùng rồi chuyển sang thư mục ngày đăng.
 - **Ảnh:** theo hồ sơ mục 5 (ảnh của David trước, ChatGPT trên Chrome khi không có gì).
 
+**Lọc trùng với bài David tự đăng** (chạy đầu lịch thứ 6, và khi David nhắn "lọc lại"):
+- Chỉ đọc trang https://www.facebook.com/davidsuckhoe108 trên Chrome David đã đăng nhập: cuộn, bấm "Xem thêm" để đọc trọn bài, đọc bài 30 ngày gần nhất. Không thích, bình luận, chia sẻ, sửa, đăng; chưa đăng nhập thì báo David, không đăng nhập thay.
+- So mỗi bài chưa đăng trong `bai-dang/` (và kho bài nền):
+  - **Trùng hẳn** (cùng video, hoặc cùng câu chuyện / cảnh mở bài): bài video → ghi `.da-dang` nội dung "David tự đăng <ngày>"; bài viết → trả về chỗ cũ không được, nên bỏ thư mục ngày đó và lấy bài khác cùng trụ từ kho vào thay (kho soạn bù).
+  - **Trùng ý** (cùng nỗi đau, khác cách kể): viết lại theo góc khác, hoặc dời xa bài David đã đăng ít nhất 2 tuần.
+  - **Không trùng:** giữ.
+- Ghi kết quả vào `bai-dang/loc-trung.md` (lần lọc, bài David đã đăng: ngày · tóm một dòng · trùng với bài nào · đã xử lý gì) và vào dòng `Lọc:` đầu `bai.md` của bài liên quan; trang đăng bài hiện nhãn lọc. Bài David tự đăng ghi vào Sổ lịch (nguồn "David tự đăng") và là nguyên liệu cho bài sau.
+- Giới hạn: so bằng chữ trong bài và nội dung chính video, không so từng khung hình.
+
 ## Sổ lịch
 Trạng thái: nháp · đã gửi duyệt · duyệt · đã đăng · thay (ghi lý do).
 
 | Ngày | Ô | Trụ | Bài | Nguồn | Trạng thái |
 |---|---|---|---|---|---|
+| CN 08/11 | video | 3 | "Đi bộ hằng ngày" bản đầy đủ | David tự đăng | đã đăng (thấy khi lọc 17/11) |
 | T5 19/11 | bài viết | 1 | 10 giờ tối vẫn trả tin nhắn khách → gom về một bảng mỗi sáng | bài nền #1 | sẵn trên trang |
 | T6 20/11 | video | 2 | "Bận cả ngày mà không ra kết quả" (bản đầy đủ) · video chưa duyệt kịp thì bài nền #7 | `~/Movies/tap-ban-ca-ngay` | sẵn trên trang · chờ duyệt video |
 | CN 22/11 | bài viết | 2 | Tháng đầu lên quản lý: làm thay cả đội | soạn mới | sẵn trên trang |
 | T3 24/11 | video | 2 | Clip 76 s "Mục tiêu và sứ mệnh" | David ok 07/11 | sẵn trên trang |
-| T5 26/11 | bài viết | 4 | Thư mục video quay rồi mà chưa đăng → mình chỉ quay và nói ý | bài nền #2 | sẵn trên trang |
-| T6 27/11 | video | 3 | "Đi bộ hằng ngày" bản đầy đủ | David duyệt 07/11 | sẵn trên trang |
+| T5 26/11 | bài viết | 4 | Bận cả tuần không rõ đi tới đâu → báo cáo tuần tự gom | bài nền #9 (lọc 17/11: thay #2) | sẵn trên trang |
+| T6 27/11 | video | 2 | Clip "Người thân quen kéo hết nhân sự" (Đi trainer A) | David duyệt 06/11 (lọc 17/11: thay Đi bộ) | sẵn trên trang |
 | CN 29/11 | bài viết | 3 | Ngồi lâu mới là chăm → làm theo đợt năng lượng | bài nền #6 | sẵn trên trang |
 | T3 01/12 | video | 2 | Clip "Không phải sai, mà là chưa phù hợp" (Đi trainer B) | David duyệt 06/11 | sẵn trên trang |
 | T5 03/12 | bài viết | 1 | Phần mềm mua về nằm im → kèm đào tạo tới khi đội dùng được | bài nền #5 | sẵn trên trang |
 | T6 04/12 | video | 3 | Vlog The View Vũng Tàu | David chốt 08/11 | sẵn trên trang |
 | CN 06/12 | bài viết | 2 | Cả ngày trả lời câu hỏi của đội → trao quyền | bài nền #4 | sẵn trên trang |
+| T5 10/12 | bài viết | 4 | Thư mục video quay rồi mà chưa đăng → mình chỉ quay và nói ý | bài nền #2 (lọc 17/11: dời từ 26/11) | sẵn trên trang |
 
 ## Kho bài nền (8)
 | # | Kiểu | Trụ | Bài |
@@ -49,12 +60,13 @@ Trạng thái: nháp · đã gửi duyệt · duyệt · đã đăng · thay (gh
 | 3 | Cách mình làm việc | 1 | Họp xong không ai rõ làm gì → bốn bước trước mọi việc |
 | 7 | Bài học dẫn người | 2 | "Làm sao để đội nghe mình?" → ba tầng làm chủ |
 | 8 | Vấn đề → cách giải | 1 | Một trợ lý trên Telegram nhắc việc, ghi nhớ thay mình |
-| 9 | Kết quả thật | 4 | Cuối tuần, báo cáo tự gom về: tuần này có gì, nỗi đau nào lặp lại |
 | 10 | Câu hỏi cho người xem | 1 | Những việc nhỏ lặp lại ăn mất một buổi mỗi tuần |
 | 11 | Kết quả thật | 4 | "Hôm nay đăng gì?" → bài soạn sẵn hai tuần, tối chỉ chép và đăng |
 | 12 | Bài học dẫn người | 2 | "Sao em này làm mãi không được?" → mảnh ghép đặt chưa đúng chỗ |
 | 13 | Cách mình làm việc | 3 | Các tuần trôi qua không đọng lại gì → buổi nhìn lại cuối tuần |
+| 14 | Kết quả thật | 4 | Nói hay mà ngại lên hình → podcast chỉ giọng thành video |
 
 ## Nhật ký
 - 17/11/2026: David duyệt hệ thống (kho 8 bài nền, lịch thứ 6 07:30, duyệt cả tuần qua Telegram, nhắc 19:45, David tự bấm, làm Facebook cá nhân trước) và giao dùng ChatGPT trên Chrome tạo ảnh khi không có nội dung David chuẩn bị.
 - 17/11/2026: David: "tạo riêng 1 trang trên localhost:8765 đang có với đầy đủ mọi thứ trong 1 bài đăng để tôi lên copy nội dung và tự tải ảnh khi cần… chuẩn bị sẵn 1 số lượng đủ cho hàng tuần luôn" → trang `/bai-dang`, luôn sẵn 2 tuần (David duyệt đề xuất 2 tuần); Telegram chỉ còn tin ngắn kèm link. Cùng ngày David không chọn để Claude tự đăng Facebook.
+- 17/11/2026: David: "cần chức năng tự lên trang facebook cá nhân của tôi để đọc và lọc lại các nội dung… nội dung nào trùng thì bỏ qua khỏi bài đăng chuẩn bị hoặc chỉnh lại" → thêm bước lọc trùng chỉ đọc, chạy mỗi thứ 6 và khi David nhắn "lọc lại" (David duyệt đề xuất).

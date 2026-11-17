@@ -351,15 +351,18 @@ def bai_doc(ngay):
     d = os.path.join(ROOTS["bai"][0], ngay); txt = read("bai", f"{ngay}/bai.md")
     dau, _, than = txt.partition("\n---\n")
     dong = dau.strip().splitlines(); tieu = dong[0].lstrip("# ").strip() if dong else ngay
-    ghi = [l for l in dong[1:] if l.strip() and not l.startswith("Tệp:")]
+    ghi = [l for l in dong[1:] if l.strip() and not l.startswith(("Tệp:", "Lọc:"))]
+    loc = next((l[4:].strip() for l in dong if l.startswith("Lọc:")), "")   # dòng lọc trùng do lịch thứ 6 ghi
+    da = os.path.join(d, ".da-dang"); da_txt = open(da, encoding="utf-8").read().strip() if isf(da) else ""
     tep = next((os.path.expanduser(l[4:].strip()) for l in dong if l.startswith("Tệp:")), "")
     return {"ngay": ngay, "tieu": tieu, "ghi": ghi, "than": than.strip(), "anh": isf(os.path.join(d, "anh.png")),
-            "video": tep if isf(tep) else "", "video_thieu": bool(tep) and not isf(tep), "da": isf(os.path.join(d, ".da-dang"))}
+            "video": tep if isf(tep) else "", "video_thieu": bool(tep) and not isf(tep), "da": isf(da), "tu_dang": "tự đăng" in da_txt, "loc": loc}
 
 def bai_the(b):
     import datetime
     dt = datetime.date.fromisoformat(b["ngay"]); n = b["ngay"]
-    tt = '<span class="tt da">Đã đăng</span>' if b["da"] else '<span class=tt>Chờ đăng · 20:00</span>'
+    tt = (f'<span class="tt da">{"David tự đăng" if b["tu_dang"] else "Đã đăng"}</span>' if b["da"] else '<span class=tt>Chờ đăng · 20:00</span>')
+    tt += f'<span class=loc title="{esc(b["loc"])}">Lọc: {esc(b["loc"][:70])}</span>' if b["loc"] else '<span class="loc chua">Chưa lọc trùng</span>'
     media = ""
     if b["video"]:
         media = (f'<div class=bm><video controls preload=metadata playsinline src="/bv/{n}"></video>'
@@ -395,6 +398,7 @@ CSS_BAI = """
 .bai{padding:22px 0;border-bottom:1px solid var(--bd)} .bai.xong{opacity:.55}
 .bh{display:flex;align-items:center;gap:12px;flex-wrap:wrap} .bh h2{max-width:none}
 .tt{font-size:12.5px;color:var(--ac);border:1px solid var(--ac);border-radius:999px;padding:2px 10px} .tt.da{color:#2e9e5b;border-color:#2e9e5b}
+.loc{font-size:12px;color:#7fc8a9;border:1px solid #2f5f4c;border-radius:999px;padding:2px 10px;max-width:52ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap} .loc.chua{color:var(--dim);border-color:var(--bd)}
 .bt{color:var(--dim);font-size:13px;margin:6px 0 14px}
 .bb{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap}
 .bm{flex:none;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
