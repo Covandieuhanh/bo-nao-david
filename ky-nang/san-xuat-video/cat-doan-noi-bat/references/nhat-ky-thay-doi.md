@@ -4,6 +4,10 @@ description: "Sổ thay đổi skill cắt đoạn nổi bật: quyết định 
 
 # Sổ thay đổi — cat-doan-noi-bat (quyết định của người dùng + lý do)
 
+## 17/11/2026 — Highlight ngang có intro ghép
+- David: "từ 2 video này, tạo ra 1 video highlight trọn 1 ý đặc sắc nhất, có intro ở đầu được ghép từ các cảnh trong 2 video gốc này. video highlight ngang nhé" → luật 1 thành "mặc định dọc, ngang khi David yêu cầu"; thêm mục "Highlight ngang" (khung, intro, nguồn nhiều video dài). Khuôn ghép: màn chốt ngang (ô 50 %), `pow.x`.
+- Sửa lỗi `TS()` trong `danh-sach-cat-doan-noi-bat.py`: câu đặt khác thứ tự nguồn làm mọi lớp phủ dồn về câu đầu → tìm đúng đoạn chứa mốc.
+
 ## Tái bản 3 — 14/11/2026: bản luật viết lại từ bảng du-an/tai-ban-3-video.md
 - Bỏ dấu ngày, lời kể, chỗ ngược luật khỏi bản luật; mục "Nhật ký" cuối SKILL.md chuyển về đây:
 - 2026-11-10 · David chốt: clip dọc bỏ thanh thời gian và thẻ cuối, màn chốt trên hình (quy-tac-chung 5); `danh-sach-cat-doan-noi-bat.py` vẫn ghi ENDCARD nhưng khuôn tự bỏ (`nganDoc`).

@@ -79,7 +79,7 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
   "Vietnam" / tên tiếng Việt). Không có ảnh Việt Nam hợp giấy phép → biểu tượng vẽ, không dùng ảnh nước ngoài. Nguồn ghi `nguon-anh.txt`.
   Số liệu luôn bằng hiệu ứng, đúng con số người nói. Kết quả/con số mà clip gốc có bằng chứng thật (ảnh giá, hoá đơn) → ưu tiên chiếu.
 - Không ghi chú kỹ thuật trên video (×1,6, slow-mo…). Không màn nguồn ảnh cuối video → `nguon-anh.txt`.
-- Khung xuất = khung gốc trừ khi David yêu cầu (highlight luôn dọc 9:16).
+- Khung xuất = khung gốc trừ khi David yêu cầu (highlight mặc định dọc 9:16, ngang khi David yêu cầu).
 
 ## 5. Bộ nhận diện
 Một nguồn: `thu-vien-tai-nguyen/nhan-dien-chung.md` — chữ ký nhận diện, vị trí và luật của thành phần cố định (vùng an toàn, dấu góc, thanh

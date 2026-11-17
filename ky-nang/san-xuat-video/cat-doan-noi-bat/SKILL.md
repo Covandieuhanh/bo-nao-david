@@ -35,7 +35,7 @@ Vị trí và thành phần cố định theo bộ nhận diện chung `../thu-v
 thời gian, không thẻ cuối, màn chốt trên hình, kết ở chữ cuối để tự lặp; dẫn về bản đầy đủ nằm ở caption + bình luận ghim (khối 15).
 
 1. **Cùng loại với video gốc**: người nói ↔ người nói, đồ hoạ ↔ đồ hoạ; giữ phong cách + tên tập/tên người nói của bản gốc (khối 13, bước 0).
-   Luôn **dọc 9:16, 1080×1920**. Không cắt thẳng hình đồ hoạ ngang vào khung dọc — dựng lại.
+   Mặc định **dọc 9:16, 1080×1920**; David yêu cầu ngang thì ra **ngang 1920×1080** (mục "Highlight ngang" dưới bước 7A). Không cắt thẳng hình đồ hoạ ngang vào khung dọc — dựng lại.
 2. **Số clip theo số ý đạt 4 câu**: mỗi clip một ý KHÁC NHAU, không trùng câu chính; không độn. David yêu cầu một số clip cụ thể thì chọn các ý mạnh nhất đủ số đó. Clip A = mạnh nhất (đăng đầu).
 3. **Mọi chữ = nguyên văn** (thẻ tít, phụ đề, chữ to, màn hành động, ý đang bàn, màn chốt) — quy-tac-chung mục 1: chỉ chọn câu,
    bỏ bớt chữ ở đầu/cuối câu, sửa chính tả Whisper. Không có ngoại lệ. Mô tả bài đăng theo giọng David (khối 15).
@@ -116,6 +116,16 @@ toàn màn hình; tít ghim che đầu → ẩn) → `node anh-tinh.mjs <mốc>`
 ngay sau 1–2 mối cắt, cuối clip thấy màn chốt) → sửa tới sạch → `node xuat-chuong-trinh.mjs` (nền; render các clip nối tiếp,
 không song song — tốn RAM). Không có bước duyệt kế hoạch ghép của multi-clip (luật 12).
 
+### Highlight ngang (khi David yêu cầu) — nguồn người nói, khuôn ghép
+- `danh-sach-cat.js`: `W = 1920`, `H = 1080`; `THE_CUOI = false` (kết ở màn chốt); thanh thời gian tự có (khung ngang). Bỏ `nang-lop.py` và
+  `bao-ve-lop-phu.py` (chỉ tính cho khung dọc) — tự soát bằng ảnh chụp thử: `pow` đặt `x` (tâm khối chữ, px) vào vùng trống cạnh người nói.
+- Nguồn nhiều video dài (ổ không đủ chép bản gốc): chép lời trên bản xem nhẹ ghép các video, chọn ý, rồi cắt các cửa sổ cần dùng từ file gốc
+  (1920×1080, 30 fps) ghép thành `nguon.mp4` mới và chép lời lại — mốc trong `phuong-an.json` theo nguồn mới.
+- **Đoạn ghép mở đầu (intro)** khi David yêu cầu: thêm đầu `RAW` các đoạn `m1…` (câu đắt nhất giữ tiếng ≈ 3 s, rồi cảnh câm thật sự khác nhau
+  2 phách bài `intro-soi`/`intro-lang`), `D = segStart('p1')`; phụ đề phần chính cộng `D`, `TS()` bỏ qua đoạn `m`; thẻ `title` `over` trên dải
+  cảnh câm, chữ nguyên văn; nhạc `tracks` intro + bài phần chính, `loudRanges` = dải cảnh câm. Luật chọn cảnh: `nhieu-doan-video.md` mục 2d.1.
+  Mẫu: `~/Movies/tap-marketing-noi-dau-nhu-cau/3-doan-noi-bat/clip-A`.
+
 ### 7B. Dựng — nguồn podcast / toàn đồ hoạ (`dung-podcast`, khung dọc)
 ```bash
 zsh $POD/scripts/tao-podcast.sh "$P/cat/<id>.mp4" hl-<tên>-<id> doc cat-thua   # mỗi clip → ~/Movies/tap-<tên>/3-doan-noi-bat/clip-<id> = $E (chỉ lấy tiếng)
@@ -188,7 +198,7 @@ $SKILL/assets/nhac/               # soi-*.mp3 · lang-*.mp3 — kho nhạc kênh
 
 ## Xong khi
 1. Mỗi clip đạt đủ bốn câu chọn ý; báo cáo ghi 4 câu + lời đọc nối.
-2. Clip cùng loại video gốc, dọc 1080×1920.
+2. Clip cùng loại video gốc, dọc 1080×1920 (ngang 1920×1080 khi David yêu cầu).
 3. Mọi chữ trên clip nguyên văn (cả tít, màn chốt).
 4. Không cắt vào giữa ý; lời bản cắt đã chép lại đối chiếu khớp.
 5. Phụ đề cụm ~5–8 chữ (tối đa theo hồ sơ `phu_de.ngan_max_chu`) không chồng chữ motion graphic; không thanh thời gian, không thẻ cuối.

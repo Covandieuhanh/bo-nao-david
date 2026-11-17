@@ -68,6 +68,6 @@ trắng), canh đáy vào đáy dải phụ đề (phụ đề nhường lúc n�
 
 ## 4. Còn thiếu (ghi để không quên)
 
-- **Vlog ghép clip khung ngang:** khuôn ghép đã lấy vùng an toàn, dấu góc, thanh thời gian theo `khung()`, nhưng nhiều thành phần
-  bên trong (thẻ địa điểm, thẻ tên, màn chốt, thẻ cuối) vẫn đặt số theo khung dọc. Chưa có dự án vlog ngang để kiểm → làm vlog ngang
-  đầu tiên thì chụp kiểm kỹ và sửa các thành phần đó theo `khung()`.
+- **Khuôn ghép khung ngang:** vùng an toàn, dấu góc, thanh thời gian, phụ đề, màn chốt (ô video 50 % bề ngang), `pow` (`x`) và thẻ `title`
+  `over` đã kiểm ở highlight ngang `tap-marketing-noi-dau-nhu-cau`. Thẻ địa điểm, thẻ tên, thẻ cuối vẫn đặt số theo khung dọc, chưa kiểm
+  → làm vlog ngang đầu tiên thì chụp kiểm kỹ và sửa các thành phần đó theo `khung()`.

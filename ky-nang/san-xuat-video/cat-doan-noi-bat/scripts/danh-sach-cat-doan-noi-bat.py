@@ -183,9 +183,10 @@ const RAW = [
 
 {mid}// TS(src): giây trong video gốc → giây timeline (lớp phủ đặt theo lời: TS(<mốc từ trong moc-tung-tu.srt>)) — rơi vào khoảng lặng đã cắt → đầu đoạn kế
 const PIECES = SEGS.filter((s) => !s.freeze);
-export const TS = (src) => {{
-  for (const s of PIECES) if (src <= s.to) return s.start + Math.max(0, src - s.from);
-  const s = PIECES[PIECES.length - 1]; return s.start + s.dur;
+export const TS = (src) => {{   // câu có thể không theo thứ tự nguồn → tìm đúng đoạn chứa mốc, không có thì đoạn gần nhất
+  const s = PIECES.find((p) => src >= p.from - 0.05 && src <= p.to + 0.05)
+    || PIECES.reduce((m, p) => (Math.min(Math.abs(src - p.from), Math.abs(src - p.to)) < Math.min(Math.abs(src - m.from), Math.abs(src - m.to)) ? p : m));
+  return s.start + Math.min(s.dur, Math.max(0, src - s.from));
 }};
 
 // ===== Phụ đề (giây timeline) — chữ đúng câu nguyên văn trong phuong-an.json; hl = từ khoá tô cam =====

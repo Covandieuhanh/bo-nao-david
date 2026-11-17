@@ -223,7 +223,8 @@ const Caption = ({text, hl, len, who, off = 0}) => {
 // ===== Chữ nhấn kiểu NHÃN DÁN (David 13/11/2026: chữ dính mặt + nền đen mờ là mất thẩm mỹ) =====
 // Mỗi dòng một nhãn đặc màu (dòng trước trắng chữ sẫm, dòng cuối cam chữ trắng), không nền mờ phủ hình. Canh ĐÁY vào đáy dải phụ đề
 // (phụ đề nhường đúng lúc này) nên khối chữ nằm ngực/bụng, xa cằm. '\n' = chỗ xuống dòng theo cụm nghĩa.
-const Pow = ({text, y, len, start = 0}) => {
+// x (khung ngang): tâm khối chữ theo bề ngang — đặt vào vùng trống cạnh người nói, không đè người
+const Pow = ({text, y, x, len, start = 0}) => {
   const f = useCurrentFrame(); const giua = useGiua();
   const soft = toneAt(start) === 'lang';   // tông lắng: hiện chậm, không nghiêng, không nảy
   const o = soft ? inOut(f, len, 12, 12) : inOut(f, len, 4, 6);
@@ -233,7 +234,7 @@ const Pow = ({text, y, len, start = 0}) => {
   const day = CAP_TOP + CAP_H;   // đáy khối = đáy dải phụ đề
   return (
     <AbsoluteFill style={{opacity: o}}>
-      <div style={giua ? {position: 'absolute', ...KHOI_GIUA} : {position: 'absolute', left: SAFE.left, width: SAFE_W,
+      <div style={giua ? {position: 'absolute', ...KHOI_GIUA} : {position: 'absolute', ...(x != null ? {left: x - 450, width: 900} : {left: SAFE.left, width: SAFE_W}),
         ...(y != null && y < 700 ? {top: y} : {top: day, transform: 'translateY(-100%)'}), display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
         {dongs.map((d, i) => {
           const cuoi = i === dongs.length - 1 && dongs.length > 1;
@@ -577,7 +578,9 @@ const Action = ({len, quote, doneAt, start}) => {
 const CTA_LEN = 4;
 const OVS = holdEnds(OVERLAYS, CTA ? TOTAL - CTA_LEN : TOTAL, HS);   // lớp phủ đã kéo dài theo luật giữ (giu.js)
 const ctaK = (f) => !CTA || NGAN_DOC ? 0 : ease(f, fr(TOTAL - CTA_LEN), fr(TOTAL - CTA_LEN) + 14);
-const WIN = {w: 400, h: Math.round(400 * 16 / 9), y: 240};
+// Khung ngang (nhan-dien-chung: «ô video 50 % bề ngang»): hình lùi vào ô 50 % bề ngang ngay dưới dấu góc, câu chốt ở dưới
+const WIN = K.V ? {w: 400, h: Math.round(400 * 16 / 9), y: 240} : {w: Math.round(W * 0.5), h: Math.round(W * 0.5 * 9 / 16), y: K.brand.bottom + 16};
+const CTA_BOX = K.V ? {left: SAFE.left, width: SAFE_W} : {left: Math.round((W - W * 0.62) / 2), width: Math.round(W * 0.62)};
 const ctaFrame = (k) => k <= 0 ? {} : {transform: `translate(${(W - WIN.w) / 2 * k}px, ${WIN.y * k}px) scale(${1 + (WIN.w / W - 1) * k})`,
   transformOrigin: '0 0', borderRadius: 36 / (WIN.w / W) * k, overflow: 'hidden', border: k > 0.5 ? `${3 / (WIN.w / W)}px solid ${C.accent}` : 'none'};
 const CtaEnd = ({text, kind}) => {
@@ -586,7 +589,7 @@ const CtaEnd = ({text, kind}) => {
   const kd = kind || (text ? 'comment' : CTA_DEF.kind);
   const tk = pop(f, fr(CTA_TICK), {damping: 9, stiffness: 220, mass: 0.6});   // tick nhỏ + tiếng ting (Audio trong Show)
   return (
-    <div style={{position: 'absolute', left: SAFE.left, top: NGAN_DOC ? SAFE.bottom - 330 : WIN.y + WIN.h + 30, width: SAFE_W, padding: '30px 34px', boxSizing: 'border-box',
+    <div style={{position: 'absolute', left: CTA_BOX.left, top: NGAN_DOC ? SAFE.bottom - 330 : WIN.y + WIN.h + 30, width: CTA_BOX.width, padding: '30px 34px', boxSizing: 'border-box',
       borderRadius: 36, background: C.card, border: `2px solid ${C.line}`, boxShadow: '0 30px 80px rgba(0,0,0,0.45)', display: 'flex',
       alignItems: 'center', gap: 30, opacity: ease(f, 10, 18), transform: `translateY(${(1 - pop(f, 12)) * 40}px)`}}>
       <div style={{position: 'relative', flexShrink: 0, width: 140, height: 140, borderRadius: '50%', background: C.accent, display: 'flex',
