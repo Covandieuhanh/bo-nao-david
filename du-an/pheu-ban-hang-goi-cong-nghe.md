@@ -6,7 +6,7 @@ description: "Phễu bán hàng gói công nghệ (hướng 3): phễu → bán 
 
 Hướng 3 trong `co-so-tri-thuc/david.md` mục 4.1. Khung tư duy: `co-so-tri-thuc/mo-hinh-kinh-doanh.md` (Tiền · Thị trường · Con người; Kết quả / Vấn đề).
 Ý tưởng "Company OS" của anh Phú Ông (`danh-sach-y-tuong.md` #1) gộp vào đây.
-Hai dòng sản phẩm: **gói công nghệ cho cá nhân** (gói 1 dựng video) và **giải pháp số hoá kết hợp AI cho tổ chức** do đội đối tác làm, David tổng điều hành và đào tạo (`co-so-tri-thuc/chien-luoc-nghe-nghiep.md` mục 4.1). Phễu chạy trên Facebook cá nhân theo [hinh-anh-facebook-ca-nhan.md](hinh-anh-facebook-ca-nhan.md).
+Hai dòng sản phẩm: **gói công nghệ cho cá nhân** (gói 1 dựng video) và **giải pháp số hoá kết hợp AI cho tổ chức** do đội đối tác làm, David tổng điều hành và đào tạo — nội bộ, bên ngoài không công bố (`co-so-tri-thuc/chien-luoc-nghe-nghiep.md` mục 4.1). Phễu chạy trên Facebook cá nhân theo [hinh-anh-facebook-ca-nhan.md](hinh-anh-facebook-ca-nhan.md) và [lich-dang-bai.md](lich-dang-bai.md).
 
 ## Mục tiêu
 Có **khoản thu đầu tiên từ một gói công nghệ**, khách **ra được kết quả của gói**. Gói = công cụ (tự động hoá, AI) + đào tạo, trainer hướng dẫn từng bước; khách chưa ra kết quả thì chưa xong.

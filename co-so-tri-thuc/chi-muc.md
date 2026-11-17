@@ -127,7 +127,7 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [du-an/hoc-lien-tuc/2026-11-15.md](../du-an/hoc-lien-tuc/2026-11-15.md) — Phiếu tự học tuần 15/11/2026 (việc #24): tín hiệu 12–14/11, điều lặp, đã sửa (máy đếm, máy ghi tín hiệu, giọng nhắn việc, gộp ghi nhớ 47→40), việc tuần sau. · ←3
 - [du-an/ke-hoach-noi-dung-100-video.md](../du-an/ke-hoach-noi-dung-100-video.md) — Kế hoạch nội dung: kho 100 video của kênh, mọi video mới đối chiếu ở phiếu lọc. · ←1
 - [du-an/kho-drive.md](../du-an/kho-drive.md) — Kho Google Drive: bộ não, video gốc (tu-lieu-goc), thành phẩm video; Mac chỉ giữ việc đang làm. · ←6
-- [du-an/lich-dang-bai.md](../du-an/lich-dang-bai.md) — Hệ thống lịch đăng bài Facebook cá nhân: tuần nào cũng 4 bài kể cả không có video — kho 8 bài nền, lịch tự soạn sáng thứ 6, ảnh ChatGPT, duyệt cả tuần qua Telegram, nhắc 19:45, David tự bấm; kèm sổ lịch. · ←3
+- [du-an/lich-dang-bai.md](../du-an/lich-dang-bai.md) — Hệ thống lịch đăng bài Facebook cá nhân: tuần nào cũng 4 bài kể cả không có video — kho 8 bài nền, lịch tự soạn sáng thứ 6, ảnh ChatGPT, duyệt cả tuần qua Telegram, nhắc 19:45, David tự bấm; kèm sổ lịch. · ←4
 - [du-an/lien-ket-tri-thuc.md](../du-an/lien-ket-tri-thuc.md) — Dự án liên kết tri thức (14/11): biến bộ não thành mạng lưới file nối nhau để Claude tra nhanh, ít token; mục tiêu, thiết kế, việc đã làm, số đo trước / sau, việc còn lại. · ←4
 - [du-an/mau-cho-hoc.md](../du-an/mau-cho-hoc.md) — Mẫu chờ học: kênh và video David gửi để học phong cách dựng sau (skill phan-tich-video-mau). · ←1
 - [du-an/pheu-ban-hang-goi-cong-nghe.md](../du-an/pheu-ban-hang-goi-cong-nghe.md) — Phễu bán hàng gói công nghệ (hướng 3): phễu → bán thử → bán thật, khách, giá, kênh. · ←2
