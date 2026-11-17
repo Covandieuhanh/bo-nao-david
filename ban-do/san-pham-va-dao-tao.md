@@ -8,6 +8,7 @@ Gốc: [bản đồ bộ não](README.md). Định hướng: [chien-luoc-nghe-ng
 
 ## Bán
 - [pheu-ban-hang-goi-cong-nghe.md](../du-an/pheu-ban-hang-goi-cong-nghe.md) — phễu → bán thử → bán thật cho hướng 3.
+- [hinh-anh-facebook-ca-nhan.md](../du-an/hinh-anh-facebook-ca-nhan.md) — Facebook cá nhân: trainer hai lĩnh vực (con người · công nghệ AI), 4 trụ, lịch 4 tuần, bài nháp; nơi phễu hướng 3 chạy.
 
 ## Gói 1: dựng video bằng AI trên máy tính
 - [README](../du-an/goi-dao-tao-dung-video-ai/README.md) — tổng quan gói.

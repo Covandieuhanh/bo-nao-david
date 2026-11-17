@@ -2,7 +2,7 @@
 
 > File này giúp Claude (Claude Code, Claude chat) hiểu David là ai và làm việc với David đúng cách.
 > Đặt file vào thư mục hay mở Claude Code, hoặc nhập vào `CLAUDE.md` bằng dòng `@david.md`.
-> Cập nhật lần cuối: 14/11/2026. Bản này là **mục lục**: mục 1–3 luôn cần nên giữ ở đây; mục 4–9 nằm ở file riêng trong `~/Documents/bo-nao-david/co-so-tri-thuc/`, đọc khi việc cần.
+> Cập nhật lần cuối: 17/11/2026. Bản này là **mục lục**: mục 1–3 luôn cần nên giữ ở đây; mục 4–9 nằm ở file riêng trong `~/Documents/bo-nao-david/co-so-tri-thuc/`, đọc khi việc cần.
 
 ---
 
@@ -11,7 +11,9 @@
 - **Tên:** Trần Đức Cường, dùng tên nghề **David Trần**. Nam, sinh 00:20 ngày 05/09/1995 tại Hưng Yên, Việt Nam.
 - **Vai trò:** "Nhà đào tạo thực hành": giúp người đi từ **làm giỏi** đến **dẫn đội làm được**.
   - Công khai là **trainer**; **coach** chỉ trong buổi riêng 1:1.
-  - Từ 13/11/2026 làm **ba hướng**: tài chính (giao dịch hàng hoá) · trainer phát triển bản thân · gói công nghệ kèm đào tạo (mục 4.1).
+  - Làm **ba hướng**: tài chính (giao dịch hàng hoá) · trainer con người (phát triển bản thân) · giải pháp công nghệ AI kèm đào tạo cho cá nhân và doanh nghiệp (mục 4.1).
+  - Hình ảnh công khai: **một trainer, hai lĩnh vực** — con người và công nghệ AI.
+  - **Tổng điều hành** một đội đối tác làm giải pháp công nghệ, số hoá cho tổ chức theo từng vấn đề cụ thể (từ 18/11/2026).
   - Đích xa: **truyền nghề**.
 - **Kinh nghiệm:** MC, hướng dẫn viên, spa/wellness/dịch vụ, công nghệ, đứng lớp.
 - **Thế mạnh tự nhận:** mạnh nhất về con người, lấy cá nhân làm trung tâm, định hướng cách họ tương tác với người khác và với công việc. Không mạnh kinh doanh.
@@ -42,7 +44,7 @@ Số mục giữ như cũ, nên chỗ khác ghi "`david.md` mục 4.1" vẫn tra
 
 | Mục | Nội dung | Mở khi | File |
 |---|---|---|---|
-| 4 (4.1–4.7) | Ba hướng nghề (tài chính · trainer · gói công nghệ, mục tiêu chung **ra tiền**), ba tầng làm chủ, các chặng, bảng giá, quy trình một ca, quyết định đã chốt, **lằn ranh nghề** | việc dính tới nghề, sản phẩm, giá, khách, hay nội dung công khai | [chien-luoc-nghe-nghiep.md](chien-luoc-nghe-nghiep.md) |
+| 4 (4.1–4.7) | Ba hướng nghề (tài chính · trainer con người · giải pháp công nghệ AI, mục tiêu chung **ra tiền**), hình ảnh trainer hai lĩnh vực, đội đối tác công nghệ, ba tầng làm chủ, các chặng, bảng giá, quy trình một ca, quyết định đã chốt, **lằn ranh nghề** | việc dính tới nghề, sản phẩm, giá, khách, hay nội dung công khai | [chien-luoc-nghe-nghiep.md](chien-luoc-nghe-nghiep.md) |
 | 5, 8 | Kênh video (bản gốc 10 phút, 3 phần, kho 100 video) và bộ lọc nội dung (phân hướng → câu hỏi gốc → bán được gì) | lọc, dựng, đăng nội dung | [chien-luoc-noi-dung.md](chien-luoc-noi-dung.md) |
 | 6 | Nghiên cứu CCL: tài liệu chuẩn, sách tự mua | xây phương pháp, dịch thuật ngữ CCL | [nghien-cuu-ccl.md](nghien-cuu-ccl.md) |
 | 7, 9 | Công cụ số học (chỉ buổi riêng) và dữ liệu nền huyền học | buổi riêng có dùng số học; hiểu nhịp làm việc của David | [du-lieu-nen-huyen-hoc.md](du-lieu-nen-huyen-hoc.md) |

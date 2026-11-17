@@ -22,8 +22,8 @@ description: "Khối 00 bộ lọc nội dung: lọc tài nguyên theo hồ sơ 
 | Hướng | Nhận ra khi | Nơi đăng | Bán gì |
 |---|---|---|---|
 | **1. Tài chính** | giao dịch hàng hoá, thị trường, đầu tư, hành trình làm tài chính | YouTube David Trần Official (+ clip ngắn kênh đó) | hợp tác môi giới / mở tài khoản hợp pháp |
-| **2. Trainer** | làm chủ bản thân, công việc, mối quan hệ; dẫn người | YouTube trainer + highlight | gói trainer (hồ sơ 4.4) |
-| **3. Gói công nghệ** | mọi thứ khác: đời thường, hành trình, công nghệ / AI thực chiến | Facebook cá nhân, fanpage, TikTok | gói công nghệ + đào tạo tới khi ra kết quả |
+| **2. Trainer con người** | làm chủ bản thân, công việc, mối quan hệ; dẫn người | YouTube trainer + highlight, Facebook cá nhân | gói trainer (hồ sơ 4.4) |
+| **3. Giải pháp công nghệ AI** | mọi thứ khác: công nghệ / AI thực chiến, số hoá cho tổ chức, đời thường, hành trình | Facebook cá nhân, fanpage, TikTok | gói công nghệ cá nhân, giải pháp số hoá cho tổ chức + đào tạo tới khi ra kết quả |
 
 Một tài nguyên chạm nhiều hướng → chọn hướng chính, phần còn lại trích thành bài cho hướng kia. Cách soi mục tiêu / nỗi đau: ba
 phạm trù **Tiền · Thị trường · Con người** (`co-so-tri-thuc/mo-hinh-kinh-doanh.md`).
@@ -32,7 +32,7 @@ phạm trù **Tiền · Thị trường · Con người** (`co-so-tri-thuc/mo-hi
 - **Tài chính:** có giúp người xem hiểu giao dịch hàng hoá hợp pháp thêm một bước, và tin David trong lĩnh vực này không?
 - **Trainer:** có giúp người xem **tự làm chủ bản thân** (tiền, thị trường, con người của chính họ; lõi là người lần đầu dẫn người)
   hoặc **áp dụng vào chính công việc của họ** thêm một bước không?
-- **Gói công nghệ:** có chạm một **mục tiêu / nỗi đau / vấn đề** mà một gói công nghệ giải được, hoặc cho thấy David làm được thật không?
+- **Giải pháp công nghệ AI:** có chạm một **mục tiêu / nỗi đau / vấn đề** mà một gói hay giải pháp công nghệ giải được, hoặc cho thấy David làm được thật không?
 
 **Cây nội dung kênh trainer** (hồ sơ David mục 4.2): **Gốc** = làm chủ bản thân · **Nhánh chính** = áp dụng vào công việc của chính
 họ · **Nhánh phụ** = mối quan hệ, chỉ khi bắt nguồn từ bản thân · **Nhân hiệu** = đời thường / hành trình của David, chỉ khi giúp người
@@ -96,7 +96,7 @@ dẫn về gói (thường là gói công nghệ) theo phễu `du-an/pheu-ban-ha
 ## 6. Phiếu lọc (gửi David — một màn hình)
 ```
 📥 <tên file> · <độ dài> · <loại dựng: làm video / ghép vlog / podcast / highlight>
-Hướng: <1 tài chính / 2 trainer / 3 gói công nghệ> · Bán được gì: <nỗi đau → gói → bước phễu tiếp>
+Hướng: <1 tài chính / 2 trainer con người / 3 giải pháp công nghệ AI> · Bán được gì: <nỗi đau → gói → bước phễu tiếp>
 Kết luận: <nhãn> · <điểm>/10   (Gốc x · Tệp x · Hành động x · Tương tác x · Nhân hiệu x)
 Lý do: <1–2 dòng>  · Lằn ranh: <không / ⚠️ chạm ở mm:ss, lý do, rủi ro → mặc định giữ lời, không làm đồ hoạ>
 Nhánh: <gốc / công việc / quan hệ / nhân hiệu> · Trùng sổ 30 ngày: <… / không>

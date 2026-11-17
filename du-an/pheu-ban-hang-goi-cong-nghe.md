@@ -6,6 +6,7 @@ description: "Phễu bán hàng gói công nghệ (hướng 3): phễu → bán 
 
 Hướng 3 trong `co-so-tri-thuc/david.md` mục 4.1. Khung tư duy: `co-so-tri-thuc/mo-hinh-kinh-doanh.md` (Tiền · Thị trường · Con người; Kết quả / Vấn đề).
 Ý tưởng "Company OS" của anh Phú Ông (`danh-sach-y-tuong.md` #1) gộp vào đây.
+Hai dòng sản phẩm: **gói công nghệ cho cá nhân** (gói 1 dựng video) và **giải pháp số hoá kết hợp AI cho tổ chức** do đội đối tác làm, David tổng điều hành và đào tạo (`co-so-tri-thuc/chien-luoc-nghe-nghiep.md` mục 4.1). Phễu chạy trên Facebook cá nhân theo [hinh-anh-facebook-ca-nhan.md](hinh-anh-facebook-ca-nhan.md).
 
 ## Mục tiêu
 Có **khoản thu đầu tiên từ một gói công nghệ**, khách **ra được kết quả của gói**. Gói = công cụ (tự động hoá, AI) + đào tạo, trainer hướng dẫn từng bước; khách chưa ra kết quả thì chưa xong.
@@ -34,8 +35,10 @@ Có **khoản thu đầu tiên từ một gói công nghệ**, khách **ra đư�
 - [x] Bộ 4 biểu mẫu cho học viên: hướng dẫn thiết lập hệ thống, quy trình vận hành chuẩn (SOP), hướng dẫn công việc, danh sách kiểm soát chất lượng (13/11)
 - [ ] Thử cài + SOP AI trên máy sạch (`goi-dao-tao-dung-video-ai/2-lo-trinh.md` mục Thực thi)
 - [ ] Chốt giá gói
-- [ ] Claude soạn 3 bài phễu cho Facebook cá nhân từ quy trình dựng video thật của David (David duyệt trước khi đăng)
-- [ ] Chọn từ khoá nhắn tin của hướng 3 (khác "gỡ" của trainer)
+- [x] Hồ sơ hình ảnh Facebook cá nhân, lịch 4 tuần, 4 bài nháp tuần 1 (17/11) — [hinh-anh-facebook-ca-nhan.md](hinh-anh-facebook-ca-nhan.md)
+- [ ] Claude soạn bài kết quả thật từ quy trình dựng video của David (T5 26/11, David duyệt trước khi đăng)
+- [ ] David cập nhật tên đội đối tác, sản phẩm, thành quả đăng được → bài trụ 1, trụ 4
+- [x] Từ khoá nhắn tin hướng 3: "số hoá" (17/11, `kenh.json`)
 - [ ] Liệt kê 5 người quen có nỗi đau này, nhắn hỏi thử
 - [ ] Bán thử khách đầu tiên, ghi nhật ký ca
 - [ ] Trước khoản thu đầu tiên: hỏi cơ quan ngoại kiều + tư vấn thuế ở Đức (`david.md` 4.6)

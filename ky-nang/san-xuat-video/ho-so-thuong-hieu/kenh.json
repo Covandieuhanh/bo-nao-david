@@ -1,5 +1,5 @@
 {
- "_": "Hồ sơ KÊNH của David (chốt 05/11/2026, đổi theo ba hướng 13/11/2026 — nguồn: co-so-tri-thuc/david.md mục 4.1 + 5). Khối 00 (lọc), 08 (màn chốt), 15 (phát hành), 16 (số liệu) đọc file này.",
+ "_": "Hồ sơ KÊNH của David (nguồn: co-so-tri-thuc/david.md mục 4.1 + 5; Facebook cá nhân: du-an/hinh-anh-facebook-ca-nhan.md). Khối 00 (lọc), 08 (màn chốt), 15 (phát hành), 16 (số liệu) đọc file này.",
  "kenh": {
   "youtube_official": {
    "vai_tro": "hướng tài chính — video giao dịch hàng hoá + Shorts",
@@ -14,7 +14,7 @@
    "tai_khoan": "trainer.davidtran@gmail.com"
   },
   "fanpage": {
-   "vai_tro": "hướng gói công nghệ — Reels + bài viết theo giọng David, mỗi bài dẫn về gói; nhận cả highlight hai kênh YouTube",
+   "vai_tro": "hướng giải pháp công nghệ AI — Reels + bài viết theo giọng David, mỗi bài dẫn về gói; nhận cả highlight kênh YouTube trainer",
    "link": "https://www.facebook.com/davidsuckhoe",
    "link_nhan_tin": "https://m.me/davidsuckhoe",
    "ten": "David Sức khoẻ",
@@ -23,13 +23,13 @@
    "ten_muc_tieu": "David Trần - Trainer định hướng"
   },
   "tiktok": {
-   "vai_tro": "hướng gói công nghệ — clip dọc ngắn, chia sẻ không giới hạn, dẫn về gói",
+   "vai_tro": "hướng giải pháp công nghệ AI — clip dọc ngắn, chia sẻ không giới hạn, dẫn về gói",
    "link": "https://www.tiktok.com/@davidsuckhoe",
    "ten": "David Trần Trainer định hướng",
    "ghi_chu": "05/11/2026: tên + bio mới (khoá đổi tên tới 12/11/2026). Link ahasale chỉ sửa được trên app — David tự gỡ. Video cũ chạm lằn ranh (luân xa, diện chẩn, spa) — chờ David quyết ẩn hay giữ."
   },
   "facebook_ca_nhan": {
-   "vai_tro": "hướng gói công nghệ — đời thường, hành trình, công nghệ thực chiến; dẫn về gói",
+   "vai_tro": "hình ảnh trainer hai lĩnh vực — giải pháp công nghệ AI (hướng 3) + con người, dẫn đội (hướng 2) + đời thường, hành trình ở Đức; không đăng tài chính",
    "link": "https://www.facebook.com/davidsuckhoe108",
    "ten": "David Trần (Trainer)",
    "ghi_chu": "05/11/2026: link ahasale thay bằng kênh YouTube."
@@ -42,7 +42,16 @@
   ],
   "gio_vn": "20:00",
   "mui_gio": "Asia/Ho_Chi_Minh",
-  "ghi_chu": "David ở Đức — 20:00 VN = 14:00 Đức (mùa đông) / 15:00 (mùa hè)"
+  "ghi_chu": "David ở Đức — 20:00 VN = 14:00 Đức (mùa đông) / 15:00 (mùa hè)",
+  "facebook_ca_nhan": {
+   "moi_tuan": 4,
+   "Tue": "video sẵn có (Reels / clip trích) — trụ theo video",
+   "Thu": "bài viết — trụ 1 AI cho doanh nghiệp (tuần lẻ) / trụ 4 kết quả thật (tuần chẵn)",
+   "Fri": "video sẵn có (Reels / clip trích) — trụ theo video",
+   "Sun": "bài viết — trụ 2 con người, dẫn đội (tuần lẻ) / trụ 3 hành trình ở Đức (tuần chẵn)",
+   "gio_vn": "20:00",
+   "ghi_chu": "Lịch 4 tuần cụ thể và 4 trụ: du-an/hinh-anh-facebook-ca-nhan.md. Không đủ video thì thay bằng bài viết cùng trụ; tuần khó tối thiểu 2 bài."
+  }
  },
  "dan_dat": {
   "ty_le": {
@@ -55,7 +64,8 @@
    10
   ],
   "cau_moi": "nhắn mình một chữ 'gỡ'",
-  "khong_noi_gia": true
+  "khong_noi_gia": true,
+  "cau_moi_cong_nghe": "nhắn mình hai chữ 'số hoá'"
  },
  "binh_luan": {
   "tu_khoa": [
@@ -69,7 +79,8 @@
  },
  "do_luong": {
   "chinh": "số người nhắn 'gỡ'",
-  "khong_dung": "lượt xem làm thước đo chính"
+  "khong_dung": "lượt xem làm thước đo chính",
+  "chinh_cong_nghe": "số người nhắn 'số hoá'"
  },
  "kho": {
   "quay_san_toi_thieu": 4,
@@ -93,19 +104,20 @@
   },
   "trainer": {
    "kenh": [
-    "youtube"
+    "youtube",
+    "facebook_ca_nhan"
    ],
    "noi_dung": "phát triển bản thân, trainer định hướng từng cá nhân",
    "ban": "gói trainer (david.md 4.4)"
   },
-  "goi_cong_nghe": {
+  "giai_phap_cong_nghe_ai": {
    "kenh": [
     "fanpage",
     "tiktok",
     "facebook_ca_nhan"
    ],
-   "noi_dung": "không giới hạn, mỗi bài dẫn về gói",
-   "ban": "gói công nghệ + đào tạo tới khi ra kết quả (du-an/pheu-ban-hang-goi-cong-nghe.md)"
+   "noi_dung": "công nghệ / AI ứng dụng thực chiến cho cá nhân và doanh nghiệp, mỗi bài dẫn về gói",
+   "ban": "gói công nghệ cá nhân + giải pháp số hoá kết hợp AI cho tổ chức (đội đối tác), kèm đào tạo tới khi ra kết quả (du-an/pheu-ban-hang-goi-cong-nghe.md)"
   }
  }
 }

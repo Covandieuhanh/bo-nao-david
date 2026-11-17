@@ -5,7 +5,7 @@ metadata:
   type: reference
 ---
 
-- **Hồ sơ gốc:** `~/.claude/david.md` (= `co-so-tri-thuc/david.md`). Đã nạp qua dòng `@david.md` trong `~/.claude/CLAUDE.md`. Ba hướng nghề (13/11/2026), mục tiêu ra tiền: tài chính (David Trần Official) · trainer · gói công nghệ kèm đào tạo (mục 4.1). Mô hình kinh doanh gốc Tiền · Thị trường · Con người: `co-so-tri-thuc/mo-hinh-kinh-doanh.md`. Quy trình bán gói: `du-an/pheu-ban-hang-goi-cong-nghe.md`.
+- **Hồ sơ gốc:** `~/.claude/david.md` (= `co-so-tri-thuc/david.md`). Đã nạp qua dòng `@david.md` trong `~/.claude/CLAUDE.md`. Ba hướng nghề (13/11/2026), mục tiêu ra tiền: tài chính (David Trần Official) · trainer con người · giải pháp công nghệ AI kèm đào tạo cho cá nhân và tổ chức (mục 4.1). Hình ảnh công khai: một trainer hai lĩnh vực, con người và công nghệ AI; Facebook cá nhân mang cả hai, không đăng tài chính: `du-an/hinh-anh-facebook-ca-nhan.md` (17/11/2026, David: "trainer phát triển con người cũng bao gồm cả trainer về công nghệ… giải pháp công nghệ kết hợp AI cho các doanh nghiệp"). David tổng điều hành một đội đối tác làm giải pháp số hoá cho tổ chức theo từng vấn đề, từ 18/11/2026. Mô hình kinh doanh gốc Tiền · Thị trường · Con người: `co-so-tri-thuc/mo-hinh-kinh-doanh.md`. Quy trình bán gói: `du-an/pheu-ban-hang-goi-cong-nghe.md`.
 - **Bộ lọc:** `ky-nang/san-xuat-video/mo-dun/00-sang-loc-noi-dung/README.md`. David chỉ đưa tài nguyên, không kèm yêu cầu. Phân hướng trước, chấm 5 tiêu chí theo hướng, ghi "Bán được gì", ra một trong 7 kết luận.
 - **Luật kênh:** `ky-nang/san-xuat-video/ho-so-thuong-hieu/kenh.json` (lịch, tỉ lệ dẫn dắt, "Vấn đề / Kết quả", đo bằng "gỡ") — nhà duy nhất, không chép số ra chỗ khác.
 - **Sổ danh mục:** `~/Movies/_danh-muc-noi-dung/danh-muc-noi-dung.md`.

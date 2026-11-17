@@ -8,12 +8,13 @@ Ghi ngày 08/11/2026. File này chóng cũ. Với video, tin sổ [du-an/danh-mu
 
 ## Ưu tiên
 
-Ra tiền (David chốt 13/11/2026), ba hướng chạy song song (`co-so-tri-thuc/david.md` 4.1, 4.3). Thứ tự khi phải chọn: gói công nghệ ([pheu-ban-hang-goi-cong-nghe.md](du-an/pheu-ban-hang-goi-cong-nghe.md)) → Chặng 1 trainer (1–3 ca thật) → kênh tài chính David Trần Official.
+Ra tiền (David chốt 13/11/2026), ba hướng chạy song song (`co-so-tri-thuc/david.md` 4.1, 4.3). Thứ tự khi phải chọn: giải pháp công nghệ AI — gói cá nhân + giải pháp cho tổ chức qua đội đối tác David tổng điều hành từ 18/11 ([pheu-ban-hang-goi-cong-nghe.md](du-an/pheu-ban-hang-goi-cong-nghe.md)) → Chặng 1 trainer (1–3 ca thật) → kênh tài chính David Trần Official.
 
 ## Đang làm dở
 
 | Việc | Tình trạng | Bước tiếp |
 |---|---|---|
+| Hình ảnh Facebook cá nhân: trainer hai lĩnh vực (17/11, [hinh-anh-facebook-ca-nhan.md](du-an/hinh-anh-facebook-ca-nhan.md)) | Xong: định vị, giới thiệu, 4 trụ, lịch 4 tuần (T3 video · T5 công nghệ · T6 video · CN con người/đời thường), 4 bài nháp tuần 1; luật ba hướng, `kenh.json`, giọng văn đã sửa theo | **Chờ David:** duyệt 4 bài tuần 1 (bài đầu T5 19/11), xác nhận được nói công khai vai tổng điều hành + có nêu tên đội không, sửa giới thiệu/ảnh bìa trên trang; cập nhật thành quả đội đối tác trước T5 3/12 |
 | Podcast "Đi trainer cho người làm trainer" (9:19, giữ nguyên không cắt) | David đã duyệt video. Chưa hẹn giờ. Video: `~/Movies/podcast-dji-20261105`, Drive `thanh-pham/Di-trainer-cho-nguoi-lam-trainer.mp4`. Bài đăng: `~/Movies/podcast-dji-20261105/phat-hanh/phat-hanh.md` | David chốt 2 điểm trong `~/Movies/podcast-dji-20261105/ke-hoach-dang.md`, rồi hẹn YouTube T3 10/11 20:00 |
 | 3 clip dọc từ podcast trên | Bản chuẩn David chốt 06/11. Chưa hẹn giờ. Video: Drive `thanh-pham/Di-trainer-clip-1|2|3.mp4` | **Chờ David quyết có cắt lại Clip 1 và 2 không** (xem dưới). Lịch dự kiến T6 13/11, T3 17/11, T6 20/11 20:00. Điền `[link YouTube]` sau khi video dài lên |
 | Video dọc "thói quen nhỏ" (quay trong xe, 1:16) | Lọc ✅ 8/10, David ok phiếu 10/11. Render xong 10/11, Drive `thanh-pham/tap-thoi-quen-nho/ban-dai/`, bài đăng `~/Movies/tap-thoi-quen-nho/2-ban-day-du/phat-hanh/phat-hanh.md` | **Chờ David duyệt cổng 2** + chọn lịch (T6 13/11 trùng clip Đi trainer). Chờ duyệt đưa bản sửa Illus (co hàng 3 hình khung dọc) vào thư viện |

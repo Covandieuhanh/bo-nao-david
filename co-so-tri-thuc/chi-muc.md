@@ -82,7 +82,7 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [co-so-tri-thuc/bo-nho/video-tham-my-chi-giu-nhan-dien.md](bo-nho/video-tham-my-chi-giu-nhan-dien.md) — Thẩm mỹ chỉ giữ chữ ký nhận diện, ngoài đó sáng tạo tự do; hiểu hơn cầu kì: kho hiệu ứng để chọn, mỗi video ít kiểu, bỏ chữ sau người / bóng người (10/11; gộp 15/11) · ←10
 - [co-so-tri-thuc/bo-nho/video-tu-chon-theo-noi-dung.md](bo-nho/video-tu-chon-theo-noi-dung.md) — Skill dựng phải tự chẩn đoán video rồi chọn bố cục / lớp thông tin / kiểu cảnh trong kho; video 10 phút ~1 giờ · ←2
 - [co-so-tri-thuc/chi-dan-toan-cuc.md](chi-dan-toan-cuc.md) — Luật chung của David cho mọi phiên Claude (bản gốc của ~/.claude/CLAUDE.md), nạp hồ sơ david.md. · ←2
-- [co-so-tri-thuc/chien-luoc-nghe-nghiep.md](chien-luoc-nghe-nghiep.md) — Chiến lược nghề nghiệp (david.md mục 4): ba hướng nghề tài chính, trainer, gói công nghệ; ba tầng làm chủ, các chặng, bảng giá, quy trình một ca, lằn ranh nghề. · ←3
+- [co-so-tri-thuc/chien-luoc-nghe-nghiep.md](chien-luoc-nghe-nghiep.md) — Chiến lược nghề nghiệp (david.md mục 4): ba hướng nghề tài chính, trainer con người, giải pháp công nghệ AI; hình ảnh trainer hai lĩnh vực; ba tầng làm chủ, các chặng, bảng giá, quy trình một ca, lằn ranh nghề. · ←3
 - [co-so-tri-thuc/chien-luoc-noi-dung.md](chien-luoc-noi-dung.md) — Chiến lược nội dung (david.md mục 5, 8): kênh video, bản gốc 10 phút 3 phần, kho 100 video, bộ lọc nội dung phân hướng → câu hỏi gốc → bán được gì. · ←3
 - [co-so-tri-thuc/david.md](david.md) — Hồ sơ David Trần cho Claude: là ai, cách làm việc, luật cá nhân, bảng tra mục 4–9 (nghề, nội dung, CCL, huyền học). · ←8
 - [co-so-tri-thuc/du-lieu-nen-huyen-hoc.md](du-lieu-nen-huyen-hoc.md) — Dữ liệu nền huyền học (david.md mục 7, 9): công cụ số học chỉ dùng trong buổi riêng, nhịp làm việc của David. · ←2
@@ -123,6 +123,7 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [du-an/goi-dao-tao-noi-dung-kenh/README.md](../du-an/goi-dao-tao-noi-dung-kenh/README.md) — Phần tư duy kênh tách khỏi gói dựng video (13/11), để làm gói nội dung kênh sau này. · ←1
 - [du-an/goi-dao-tao-noi-dung-kenh/giao-trinh-cu-12-bai.md](../du-an/goi-dao-tao-noi-dung-kenh/giao-trinh-cu-12-bai.md) — Giáo trình cũ 12 bài edit video bằng AI (trước khi tách gói), giữ làm nguyên liệu gói nội dung kênh. · ←1
 - [du-an/goi-dao-tao-noi-dung-kenh/loi-dan-cu-9-buoc.md](../du-an/goi-dao-tao-noi-dung-kenh/loi-dan-cu-9-buoc.md) — Bộ lời dặn AI cũ cho 9 bước làm video, giữ làm nguyên liệu gói nội dung kênh. · ←1
+- [du-an/hinh-anh-facebook-ca-nhan.md](../du-an/hinh-anh-facebook-ca-nhan.md) — Hồ sơ hình ảnh Facebook cá nhân của David: câu định vị trainer hai lĩnh vực (con người · công nghệ AI), giới thiệu, 4 trụ nội dung, lịch đăng 4 tuần, bài nháp tuần 1. · ←3
 - [du-an/hoc-lien-tuc/2026-11-15.md](../du-an/hoc-lien-tuc/2026-11-15.md) — Phiếu tự học tuần 15/11/2026 (việc #24): tín hiệu 12–14/11, điều lặp, đã sửa (máy đếm, máy ghi tín hiệu, giọng nhắn việc, gộp ghi nhớ 47→40), việc tuần sau. · ←3
 - [du-an/ke-hoach-noi-dung-100-video.md](../du-an/ke-hoach-noi-dung-100-video.md) — Kế hoạch nội dung: kho 100 video của kênh, mọi video mới đối chiếu ở phiếu lọc. · ←1
 - [du-an/kho-drive.md](../du-an/kho-drive.md) — Kho Google Drive: bộ não, video gốc (tu-lieu-goc), thành phẩm video; Mac chỉ giữ việc đang làm. · ←6

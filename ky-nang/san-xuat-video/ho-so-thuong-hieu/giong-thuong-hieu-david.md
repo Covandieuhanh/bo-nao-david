@@ -34,7 +34,7 @@ Học để Claude hiểu đúng ý và trả lời hợp giọng; khi viết b�
 ## Bài viết chữ trên Facebook cá nhân (phần lớn còn hướng cũ)
 - Trang trọng hơn lúc nói: tự gọi "David"; câu dài, một đoạn liền; từ hay gặp "nhân duyên", "phụng sự", "thấu hiểu", "biết ơn", "xứng đáng", "chiêm nghiệm".
 - **Giữ:** câu có hình ảnh của nghề, như "văn vẫn phải ôn, võ vẫn phải luyện"; tự nhìn lại bản thân, như "nhận biết và thấu hiểu chính mình ở hiện tại"; lòng biết ơn khi nó gắn với một việc cụ thể.
-- **Bỏ cho thương hiệu trainer:** "hệ sinh thái", "đối tác", "giải pháp", "doanh chủ"; lời chào mừng trang trọng kiểu sự kiện; "nhân duyên", "phụng sự" dùng dày vì dễ nghe xa người đọc mới.
+- **Bỏ cho thương hiệu trainer:** "hệ sinh thái", "doanh chủ"; "giải pháp", "đối tác" đứng trống không kèm việc cụ thể (bài công nghệ được dùng khi nói rõ giải việc gì, cho ai, ra kết quả gì); lời chào mừng trang trọng kiểu sự kiện; "nhân duyên", "phụng sự" dùng dày vì dễ nghe xa người đọc mới.
 - Khi bài viết và lời nói lệch nhau, theo cách David nói.
 
 ## Nâng cấp giọng cho thương hiệu trainer (hướng David duyệt)
@@ -42,7 +42,8 @@ Học để Claude hiểu đúng ý và trả lời hợp giọng; khi viết b�
 - **Người thầy đứng cạnh, không đứng trên**: kể "mình từng kẹt ở…", không ra lệnh, không dạy đời; câu hỏi tự soi thay vì khẳng định.
 - **Cụ thể hơn cảm hứng**: một việc làm được ngay (Thực thi) quan trọng hơn câu truyền động lực chung chung.
 - Giữ ấm áp của David: "các bạn", "mình", thỉnh thoảng "nha" ở câu kết — tối đa 1 lần / bài.
-- Hashtag thương hiệu mới (2–3 / bài): #DavidTran #TrainerDinhHuong + 1 chủ đề (#lamchubanthan #quanlymoi #danguoi).
+- Hashtag thương hiệu mới (2–3 / bài): #DavidTran + bài con người #TrainerDinhHuong + 1 chủ đề (#lamchubanthan #quanlymoi #danguoi); bài công nghệ #AIthucchien + 1 chủ đề (#sohoa #tudonghoa).
+- **Bài công nghệ AI**: nói bằng việc cụ thể và kết quả đo được ("trước mất 3 tiếng, giờ 20 phút"), không thuật ngữ khoe; người đọc là chủ doanh nghiệp nhỏ, không phải dân kỹ thuật.
 
 ## Luật khi viết (chuyển lời nói → chữ)
 1. **Ý và chữ của David**: lấy ý từ chính tài nguyên; được rút gọn, bỏ từ đệm, sắp lại câu — không thêm ý, ví dụ, con số David không nói.
@@ -50,7 +51,7 @@ Học để Claude hiểu đúng ý và trả lời hợp giọng; khi viết b�
 3. **Mở bằng chỗ kẹt / khoảnh khắc thật** (Vấn đề) — câu đầu là câu người xem thấy mình trong đó.
 4. **Giữ 1–2 cụm đặc trưng** của David mỗi bài ("thật sự là", "cứ vững tin", "đúng không?") — không nhồi.
 5. **Kết theo kiểu dẫn dắt của bài** (khối 08 / `kenh.json`): Không / Gợi mở → hỏi bình luận "**Vấn đề**" hoặc "**Kết quả**";
-   Mời → "nhắn mình một chữ **'gỡ'**". Không nói giá, không gói, không hứa kết quả.
+   Mời → bài con người "nhắn mình một chữ **'gỡ'**", bài công nghệ "nhắn mình hai chữ **'số hoá'**". Không nói giá, không gói, không hứa kết quả.
 6. **Lằn ranh** của kênh đang đăng, như khối 00 (không "chữa lành", huyền học, thuế/pháp lý, chẩn đoán, chuyện không ẩn danh, kinh doanh).
 7. **Emoji** tối đa 1–2 / bài, chỉ khi David dùng trong lời (vd. 🇻🇳). **Hashtag** 2–3 cụ thể, tiếng Việt không dấu (#lamchubanthan #quanlymoi).
 8. **Facebook cá nhân**: giọng đời thường hơn, có thể chỉ 1–2 câu + chia sẻ lại bài trang.
