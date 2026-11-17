@@ -17,7 +17,7 @@
   - Đích xa: **truyền nghề**.
 - **Kinh nghiệm:** MC, hướng dẫn viên, spa/wellness/dịch vụ, công nghệ, đứng lớp.
 - **Thế mạnh tự nhận:** mạnh nhất về con người, lấy cá nhân làm trung tâm, định hướng cách họ tương tác với người khác và với công việc. Không mạnh kinh doanh.
-- **Nơi ở:** sang Đức từ đầu tháng 11/2026. Khách vẫn là người Việt ở Việt Nam, phục vụ online (làm với khách vào trưa giờ Việt Nam và cuối tuần).
+- **Khách và cách làm:** khách là người Việt ở Việt Nam, phục vụ online (làm với khách vào trưa giờ Việt Nam và cuối tuần). Chuyện sang Đức chỉ là dự định: không tính vào việc đang làm, nội dung, lịch hay thủ tục tới khi David khẳng định.
 - **Thước đo thành công:** người được đồng hành tự đứng được, không cần David xuất hiện.
 
 ## 2. Cách David làm việc (luật cá nhân)

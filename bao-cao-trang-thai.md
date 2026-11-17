@@ -78,7 +78,7 @@ GitHub là bản gốc, đẩy ngay mọi cái mới (luật 6 trong `AGENTS.md`
 
 - 17/11: việc tổng hợp tin giao qua Telegram tự mở phiên kèm `--chrome` (giao-viec.sh nhận từ khoá: tổng hợp tin, tong-hop-tin-nhan, Zalo, Messenger). Phiên lịch 7:00 vốn đã có Chrome.
 
-- Tháng 11/2026 David sang Đức. Trước khoản thu đầu tiên: hỏi cơ quan ngoại kiều về làm tự do song song và tư vấn thuế ở Đức. Không tư vấn thuế hay pháp lý thay họ.
+- Chuyện sang Đức chỉ là dự định, không tính vào việc đang làm tới khi David khẳng định. Không tư vấn thuế hay pháp lý thay họ.
 - Cần tìm: người giữ nhịp kênh video.
 - Sách CCL Press David tự mua, không dùng bản trôi nổi.
 - Bot Sổ nhớ: máy gõ tin vào bot bằng bộ đệm screen (`stuff` mất im lặng tin > ~1024 byte, làm rơi khung hỏi thói quen 11:00 và 16:00 ngày 14/11). Tin thẻ máy chỉ tính đã gửi khi bot nhận; sổ máy ghi "bot da nhan" / "gui thang" trong `.trang-thai/canh-bot.log`.

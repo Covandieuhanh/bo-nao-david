@@ -7,7 +7,7 @@ description: "Mẫu kế hoạch đăng video (ví dụ chuỗi Đi trainer, 06/
 Ghi ngày 06/11/2026. **Chờ David duyệt. Chưa hẹn giờ, chưa đăng bài nào.**
 
 ## 1. Mục tiêu
-- Video dài và 3 clip lên đúng lịch, thứ Ba và thứ Sáu 20:00 giờ VN (14:00 giờ Đức).
+- Video dài và 3 clip lên đúng lịch, thứ Ba và thứ Sáu 20:00 giờ VN.
 - Bài đã hẹn giờ trên nền tảng sẽ tự lên, kể cả khi máy tắt.
 - Đo bằng số bình luận "Vấn đề" / "Kết quả" và số người nhắn "gỡ", không đo bằng lượt xem.
 

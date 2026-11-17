@@ -39,7 +39,7 @@ Sổ gốc ghi lời nguyên văn: `~/Documents/2-ca-nhan/so-tay/y-tuong.md` và
 **Lời rủ (tóm đúng ý):** hai anh em ở hai đầu (Việt Nam – Đức) chia sẻ góc nhìn doanh nghiệp, mỗi tuần 1 số: dòng tiền, sức khoẻ doanh nghiệp, văn hoá hai đầu. Anh Phú Ông bảo David nghiên cứu làm podcast thứ 5 hằng tuần.
 
 **Đối chiếu định hướng:**
-- Khớp: nhiều kênh (4.1); hợp kinh nghiệm MC của David; "hai đầu" là góc riêng nhờ David đã sang Đức. Chi phí gần bằng 0 (quay điện thoại, gọi online).
+- Khớp: nhiều kênh (4.1); hợp kinh nghiệm MC của David; "hai đầu" chỉ thành góc riêng nếu David sang Đức (hiện là dự định, chưa chốt). Chi phí gần bằng 0 (quay điện thoại, gọi online).
 - Có sẵn công cụ: skill `dung-podcast` dựng podcast 2 người (sóng âm đổi màu theo người nói), `cat-doan-noi-bat` cắt clip dọc.
 - Lưu ý: chủ đề dòng tiền, tài chính DN nằm ngoài kênh trainer → kênh riêng, có hồ sơ và lằn ranh riêng (không tư vấn thuế/pháp lý). Giờ lệch Việt – Đức: tối thứ 5 giờ VN = trưa/chiều Đức. Nhịp hằng tuần cần đối chiếu luật năng lượng (tuần khó vẫn giữ được không?).
 

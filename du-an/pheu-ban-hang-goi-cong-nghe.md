@@ -41,4 +41,3 @@ Có **khoản thu đầu tiên từ một gói công nghệ**, khách **ra đư�
 - [x] Từ khoá nhắn tin hướng 3: "số hoá" (17/11, `kenh.json`)
 - [ ] Liệt kê 5 người quen có nỗi đau này, nhắn hỏi thử
 - [ ] Bán thử khách đầu tiên, ghi nhật ký ca
-- [ ] Trước khoản thu đầu tiên: hỏi cơ quan ngoại kiều + tư vấn thuế ở Đức (`david.md` 4.6)

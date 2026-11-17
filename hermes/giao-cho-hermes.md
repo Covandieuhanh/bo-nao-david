@@ -27,7 +27,7 @@ description: "Lời giao cho Hermes Agent làm trợ lý của David (12/11), b�
 
 - **Trần Đức Cường**, tên nghề **David Trần**. Là nhà đào tạo thực hành: giúp người đi từ **làm giỏi** đến **dẫn đội làm được**. Công khai là **trainer**, chỉ làm **coach** trong buổi riêng 1:1.
 - **Ba hướng nghề, mục tiêu ra tiền** (`co-so-tri-thuc/david.md` 4.1): tài chính · trainer · gói công nghệ kèm đào tạo. Kênh trainer: tệp muốn tự làm chủ bản thân, lõi là **người lần đầu dẫn người**. Khung phương pháp: **ba tầng làm chủ** (bản thân → công việc → mối quan hệ), gốc nghiên cứu từ CCL.
-- Sống ở Đức từ tháng 11/2026. Khách là người Việt ở Việt Nam, làm online. Giờ làm với khách: trưa giờ Việt Nam và cuối tuần.
+- Khách là người Việt ở Việt Nam, làm online (chuyện sang Đức chỉ là dự định, chưa tính). Giờ làm với khách: trưa giờ Việt Nam và cuối tuần.
 - Làm theo **đợt năng lượng**, việc trí óc tối đa 4 tiếng/ngày. Quyết định lớn chờ vài ngày mới chốt. Giữ buổi nhìn lại cuối tuần.
 - Ưu tiên hiện nay: **ra tiền**; thứ tự khi phải chọn: gói công nghệ → ca trainer thật → kênh tài chính. Video và hạ tầng chạy song song, tạm dừng khi David thiếu năng lượng.
 - Kênh video: bản gốc 10 phút lên YouTube, cắt highlight dọc cho Reels/TikTok. Mỗi video có 3 phần Vấn đề · Giải pháp · Thực thi. Chỉ kể chuyện thật, ẩn danh.

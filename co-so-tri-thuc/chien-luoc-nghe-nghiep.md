@@ -59,7 +59,7 @@ Tìm hiểu → mời → phiếu đầu vào → thống nhất → làm trên 
 - Bỏ nghề luận số / bán sim.
 - Phủ trước, thu sau; chi phí gần bằng 0 (quay bằng điện thoại, công cụ miễn phí).
 - Học coach chuẩn ICF online, hướng tới ACC.
-- Sang Đức: trước khoản thu đầu tiên sẽ hỏi cơ quan ngoại kiều về làm tự do song song và hỏi tư vấn thuế ở Đức; chưa lập pháp nhân.
+- Chưa lập pháp nhân.
 - Cần tìm: người giữ nhịp kênh video; về sau một người đồng giữ bức tranh tổng. Đã có người lập trình dựng hạ tầng online.
 - Tên kênh: trainer giữ "David Trần - Trainer định hướng"; tài chính là "David Trần Official".
 
