@@ -79,6 +79,12 @@ noi_lai() { # nối lại máy chủ Telegram trong phiên (Claude đôi khi b�
   screen -S "$(sid)" -p 0 -X stuff "/mcp reconnect plugin:telegram:telegram"; sleep 1
   screen -S "$(sid)" -p 0 -X stuff $'\033'; sleep 0.5; screen -S "$(sid)" -p 0 -X stuff $'\r'; }
 co_mang() { curl -s -m 8 -o /dev/null https://api.telegram.org; }
+fm() { awk -v k="$2" 'NR==1&&/^---$/{f=1;next} f&&/^---$/{exit} f&&index($0,k":")==1{sub("^[^:]*:[ ]*","");print;exit}' "$1" 2>/dev/null; } # khung đầu lời giao lịch
+chrome_noi() { pgrep -f "chrome-native-host chrome-extension://" >/dev/null; } # tiện ích Claude in Chrome đang nối với máy
+danh_thuc_chrome() { pgrep -x "Google Chrome" >/dev/null || open -ga "Google Chrome"; } # Chrome tắt thì mở ngầm; tiện ích tự nối khi Chrome chạy
+het_bu() { # $1 tên việc, $2 "YYYY-MM-DD HH:MM" giờ gốc: giờ (epoch) hết hạn chạy bù theo lich-chay.md
+  local h=$(grep -E "· $1( ·|$)" "$GOC/../lich/lich-chay.md" | grep -oE 'bù [0-9]+h' | head -1 | tr -dc 0-9)
+  echo $(( $(date -j -f "%Y-%m-%d %H:%M" "$2" +%s 2>/dev/null || echo "$BAY") + ${h:-1} * 3600 )); }
 noi_telegram() { lsof -nP -a -p "$1" -iTCP -sTCP:ESTABLISHED 2>/dev/null | grep -q ':443'; }
 
 while true; do
@@ -259,14 +265,50 @@ while true; do
   # Lịch tự chạy (tu-dong-hoa/lich/lich-chay.md): tới giờ mở một phiên hiện trong app Claude, tài khoản nào cũng được.
   # Chỉ chạy khi có mạng và Mac thức hẳn; chưa thì để đó (không đánh dấu), lần lỡ được chạy bù trong hạn "· bù Nh".
   [ "$SAN_SANG" = 1 ] && python3 -I "$GOC/nhac-lap.py" "$GOC/../lich/lich-chay.md" "$TT/da-lich-chay" /dev/null 2>>"$LOG" | while IFS=$'\t' read -r khoa nd; do
-    ID="${nd%% *}"; GOC_LUC="${khoa:0:16}"
+    ID="${nd%% *}"; GOC_LUC="${khoa:0:16}"; LG="$GOC/../lich/loi-giao/$ID.md"
+    # Việc cần Chrome ("chrome: bat-buoc"): chờ tiện ích Claude in Chrome nối xong mới mở phiên (17/11: Mac thức 06:56, lịch 07:00 chạy khi Chrome chưa nối, ra bản trống).
+    # Chờ 10 phút chưa nối thì nhắn David; còn dưới 15 phút hạn bù thì chạy luôn (phiên tự chờ thêm và ghi cảnh báo).
+    CHO_F="$TT/cho-chrome-$ID"
+    if [ "$(fm "$LG" chrome)" = "bat-buoc" ] && ! chrome_noi; then
+      [ -f "$CHO_F" ] || { echo "$BAY" > "$CHO_F"; ghi "lich $ID cho Chrome noi"; }
+      danh_thuc_chrome
+      [ $(( BAY - $(cat "$CHO_F") )) -ge 600 ] && canh_bao "chrome-$ID" 21600 "việc lịch $ID đang chờ Chrome: tiện ích Claude in Chrome chưa nối. Anh mở Chrome, bấm biểu tượng Claude trên thanh tiện ích là máy tự chạy tiếp."
+      [ $(( $(het_bu "$ID" "$GOC_LUC") - BAY )) -gt 900 ] && continue
+      ghi "lich $ID het cho Chrome, chay luon"
+    fi
+    [ -f "$CHO_F" ] && { ghi "lich $ID: Chrome da noi sau $(( BAY - $(cat "$CHO_F") ))s"; rm -f "$CHO_F"; }
     if [ -n "$(tre_nhan "$GOC_LUC")" ]; then
       bash "$GOC/../lich/chay-lich.sh" "$ID" "$GOC_LUC" >/dev/null 2>>"$LOG" && { ghi "chay bu lich $ID (goc $GOC_LUC)"; echo "$ID (lịch ${GOC_LUC:11:5} ${GOC_LUC:8:2}/${GOC_LUC:5:2})" >> "$TT/bu-lan-nay"; }
     else
       bash "$GOC/../lich/chay-lich.sh" "$ID" >/dev/null 2>>"$LOG" && ghi "chay lich $ID (phien hien trong app)"
     fi
     echo "$khoa" >> "$TT/da-lich-chay"
+    [ -n "$(fm "$LG" kiem)" ] && echo "$BAY|$ID|$GOC_LUC|1" >> "$TT/kiem-lich"
   done
+
+  # Kiểm kết quả lịch ("kiem: <file>", {ngay} = ngày của lịch): 90 phút sau khi mở phiên mà file chưa có / chưa mới / còn dòng CHUA-DOC-DUOC
+  # (Chrome chưa nối, hết hạn mức, phiên treo) thì tự chạy lại một lần; lần 2 vẫn chưa được thì nhắn David.
+  if [ "$SAN_SANG" = 1 ] && [ -s "$TT/kiem-lich" ]; then
+    : > "$TT/kiem-lich.tmp"
+    while IFS='|' read -r LUC KID KGOC LAN; do
+      [ -z "$KID" ] && continue
+      if [ $(( BAY - LUC )) -lt 5400 ]; then echo "$LUC|$KID|$KGOC|$LAN" >> "$TT/kiem-lich.tmp"; continue; fi
+      KLG="$GOC/../lich/loi-giao/$KID.md"; KF="$(fm "$KLG" kiem)"; KF="${KF//\{ngay\}/${KGOC:0:10}}"; KF="${KF/#\~/$HOME}"
+      if [ -f "$KF" ] && [ "$(stat -f %m "$KF")" -ge "$LUC" ] && ! grep -q "CHUA-DOC-DUOC" "$KF"; then
+        ghi "kiem lich $KID ($KGOC): dat"
+      elif [ "$(fm "$KLG" chrome)" = "bat-buoc" ] && ! chrome_noi && [ "$(het_bu "$KID" "$KGOC")" -gt "$BAY" ]; then
+        danh_thuc_chrome; echo "$LUC|$KID|$KGOC|$LAN" >> "$TT/kiem-lich.tmp"  # chờ Chrome nối rồi mới chạy lại
+        canh_bao "chrome-$KID" 21600 "việc lịch $KID chưa đọc được vì Chrome chưa nối. Anh mở Chrome, bấm biểu tượng Claude trên thanh tiện ích là máy tự chạy lại."
+      elif [ "$LAN" -lt 2 ] && [ "$(het_bu "$KID" "$KGOC")" -gt "$BAY" ]; then
+        bash "$GOC/../lich/chay-lich.sh" "$KID" "$KGOC" >/dev/null 2>>"$LOG" && ghi "kiem lich $KID ($KGOC): chua dat, chay lai"
+        echo "$BAY|$KID|$KGOC|$(( LAN + 1 ))" >> "$TT/kiem-lich.tmp"
+      else
+        gui_thang "⚠️ Việc lịch $KID (${KGOC:11:5} ${KGOC:8:2}/${KGOC:5:2}) chạy $LAN lần vẫn chưa ra kết quả đủ. Anh mở phiên \"Lịch · $KID\" trong app Claude xem giúp (có thể Chrome chưa nối, trang đòi đăng nhập, hoặc hết hạn mức Claude)." \
+          && ghi "kiem lich $KID ($KGOC): that bai, bao David" || echo "$LUC|$KID|$KGOC|$LAN" >> "$TT/kiem-lich.tmp"
+      fi
+    done < "$TT/kiem-lich"
+    mv "$TT/kiem-lich.tmp" "$TT/kiem-lich"
+  fi
 
   # Hàng chờ gửi lại: tin bao-cao.sh gửi hỏng (mất mạng) được gửi lại khi có mạng, kèm giờ gốc.
   if [ "$MANG" = 1 ]; then

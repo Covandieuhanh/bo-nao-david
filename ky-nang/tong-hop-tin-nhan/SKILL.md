@@ -23,13 +23,21 @@ description: Tổng hợp tin nhắn hằng ngày của David từ Zalo, Messeng
 | Messenger | **Claude in Chrome** (David đăng nhập trong Chrome 14/11) | www.messenger.com |
 | Telegram | **Claude in Chrome** | web.telegram.org/a/ |
 
-Cả ba qua Claude in Chrome (lịch mở phiên bằng `claude --chrome`, không cần trình duyệt riêng của app): `tabs_context_mcp`, dùng tab của trang đó nếu có, không có thì tạo tab mới. Zalo báo "đang mở ở tab khác" → bấm đúng nút "Kích hoạt" (không phải gửi tin). Chrome chưa kết nối → ghi cảnh báo, bỏ lần này.
+Cả ba qua Claude in Chrome (lịch mở phiên bằng `claude --chrome`, không cần trình duyệt riêng của app): `tabs_context_mcp`, dùng tab của trang đó nếu có, không có thì tạo tab mới. Zalo báo "đang mở ở tab khác" → bấm đúng nút "Kích hoạt" (không phải gửi tin). Chrome chưa kết nối → chờ 60 giây gọi lại `tabs_context_mcp`, tối đa 5 lần; vẫn chưa thì ghi cảnh báo và dòng `CHUA-DOC-DUOC`. Máy canh bot đã chờ Chrome nối trước khi mở phiên lịch, và tự chạy lại khi bản đủ còn dòng đó. Cuối việc đóng các tab mình mở.
 
-**Zalo** — `get_page_text` ra danh sách (tên · thời gian · dòng cuối). Mở cuộc: `find` tên → `computer left_click` theo `tai-lieu-tham-khao` (click bằng JS không mở được) → chờ 2 giây → `get_page_text` (ra khung `<article>` của cuộc đó). Danh sách cuộn ảo, `tai-lieu-tham-khao` đổi sau mỗi lần mở: `find` lại, hoặc gõ tên vào ô "Tìm kiếm" rồi bấm kết quả đầu. Zalo Web không phân biệt tin của David trong chữ: đoán theo ngữ cảnh, dòng xem trước có "Bạn:" là của David.
+**Zalo** — `get_page_text` ra danh sách (tên · thời gian · dòng cuối). Mở cuộc: chụp màn hình nhỏ (`scale 0.5`) rồi `computer left_click` theo **toạ độ** dòng trong danh sách (bấm theo `ref` của `find` có lúc trúng chữ, không mở cuộc; cuộn danh sách bằng `scroll` khi cần) → đọc bằng `javascript_tool`:
+`await new Promise(r=>setTimeout(r,2000)); (document.querySelector('article')?.innerText||'NO').replace(/\/-strong\n\/-heart\n:>\n:o\n:-\(\(\n:-h\n/g,'').slice(-1500)` (bỏ hàng nút cảm xúc; kết quả dài bị cắt thì giảm số). Cuộc dài: tìm `lastIndexOf('Hôm qua')` rồi cắt từ đó. Trong khung có trích dẫn, tên đứng trên khối trích là **người bị trích**, lời ngay dưới là của người kia. Zalo Web không phân biệt tin của David trong chữ: đoán theo ngữ cảnh, dòng xem trước có "Bạn:" là của David.
 
 **Messenger** — danh sách: `javascript_tool` → `[...document.querySelectorAll('[role=row]')].map(r=>r.innerText)`; đường dẫn từng cuộc: `[role=row] a[href]`. Mở cuộc: `navigate` tới `https://www.messenger.com` + href → chờ 3 giây → `get_page_text` (có sẵn "Tin nhắn do Bạn/Tên gửi lúc …").
 
-**Telegram** — `get_page_text` ra danh sách. Mở cuộc bằng JS: `a[href="#<id>"]` → `dispatchEvent(new MouseEvent('mousedown',{bubbles:true}))` + `click()` → chờ 2,5 giây → đọc `.MessageList` (lấy ~2.000 ký tự cuối). `navigate` tới `#id` không mở được cuộc. Bỏ qua: bot của David (Trợ lý David, Sổ nhớ, BotFather, Hermes), Saved Messages, kênh sưu tầm (Tri thức huyền học, Câu chuyện hay, Học về …) trừ khi có người khác nhắn.
+**Telegram** — `get_page_text` ra danh sách; mã từng cuộc: `[...document.querySelectorAll('a[href^="#"]')].map(a=>a.getAttribute('href')+' '+a.innerText.split('\n')[0])`. Cuộc mở ra đứng ở chỗ đọc lần trước, danh sách tin cuộn ảo (chỉ ~20 tin trong trang): dùng **một** lệnh JS mở cuộc, cuộn xuống cuối tới khi có nhãn "Today", rồi cuộn ngược gom tin theo ngày tới khi gặp ngày trước mốc:
+```js
+const id='<mã>'; const a=document.querySelector(`a[href="#${id}"]`); a.dispatchEvent(new MouseEvent('mousedown',{bubbles:true})); a.click(); await new Promise(r=>setTimeout(r,2500));
+const L=document.querySelector('.MessageList'); for(let i=0;i<20;i++){L.scrollTop=L.scrollHeight; await new Promise(r=>setTimeout(r,700)); if([...document.querySelectorAll('.MessageList .sticky-date')].some(d=>d.innerText==='Today')) break;}
+const seen=new Map(); for(let i=0;i<15;i++){ document.querySelectorAll('.MessageList .message-date-group').forEach(g=>{const d=g.querySelector('.sticky-date')?.innerText; let who='?'; g.querySelectorAll('.Message').forEach(m=>{const n=m.querySelector('.message-title-name, .sender-title')?.innerText; if(n) who=n; const k=m.getAttribute('data-message-id')||m.id; if(!seen.has(k)) seen.set(k,{d,who:m.classList.contains('own')?'David':who,t:(m.querySelector('.text-content')?.innerText||'[ảnh]').replace(/\n/g,' ').slice(0,200)});});}); if([...seen.values()].some(v=>v.d==='<ngày trước mốc, vd Sunday>')) break; L.scrollTop=Math.max(0,L.scrollTop-500); await new Promise(r=>setTimeout(r,900)); }
+[...seen.entries()].sort((x,y)=>parseInt(x[0].replace(/\D/g,''))-parseInt(y[0].replace(/\D/g,''))).filter(([k,v])=>v.d==='Yesterday'||v.d==='Today').map(([k,v])=>v.d[0]+' '+v.who+': '+v.t).join('\n')
+```
+Kết quả bị cắt thì in theo từng đoạn (`.slice(20)`…). `navigate` tới `#id` không mở được cuộc. Bỏ qua: bot của David (Trợ lý David, Sổ nhớ, BotFather, Hermes), Saved Messages, kênh sưu tầm (Tri thức huyền học, Câu chuyện hay, Học về …) trừ khi có người khác nhắn.
 
 **Bỏ qua mọi nơi:** quảng cáo, trang tự trả lời, kênh thông báo, sticker/cuộc gọi không kèm chữ (chỉ ghi "gọi nhỡ" nếu người đó gọi ≥2 lần hoặc kèm lời trách).
 
@@ -68,6 +76,7 @@ Nguồn · mốc từ … tới … · chỉ đọc.
 ### Trùng với điều David đã ghi (không ghi lại)
 - <Người>: <điều> — đã có dòng dd/mm
 ## Cảnh báo (đăng nhập hết hạn, không đọc được…)
+CHUA-DOC-DUOC: <nền tảng>   ← chỉ khi có nền tảng không đọc được; máy canh bot thấy dòng này thì tự chạy lại một lần
 ```
 
 Xếp "Gấp": có hạn chót gần hoặc người nhắn lại nhiều lần = Cao · đang chờ David trả lời = Vừa · David đang chờ người khác = Chờ.
