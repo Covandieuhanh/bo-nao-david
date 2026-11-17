@@ -33,7 +33,7 @@ Người lướt qua trang hiểu ngay trong 5 giây: **David là trainer, giúp
 | **3. Đời thường, hành trình** | đời thường | cuộc sống, nhịp làm việc theo đợt năng lượng, hành trình nghề | câu hỏi nhẹ hoặc không |
 | **4. Kết quả thật** | công nghệ (chính) | trước / sau: hệ tự động của chính David, ca khách ẩn danh, lời chứng | câu hỏi mở mời kể |
 
-- **Tỉ lệ:** công nghệ (trụ 1 + 4) ~50% · con người ~30% · đời thường ~20%. Video trainer sẵn có tính vào trụ 2.
+- **Tỉ lệ:** công nghệ (trụ 1 + 4) ~50% · con người ~30% · đời thường ~20%. Tỉ lệ tính trên 4 bài viết kèm ảnh mỗi tuần; video không tính vào lịch (mục Video sẵn, `lich-dang-bai.md`).
 - **Dẫn dắt:** bài viết kèm ảnh luôn kết bằng gợi mở chia sẻ (mục 4), không lời mời từ khoá; bài video theo tỉ lệ Không · Gợi mở · Mời 4 · 4 · 2 (`kenh.json`). Không nói giá, không hứa kết quả chưa làm ra.
 - **Không đăng ở đây:** tài chính, giao dịch hàng hoá (chỉ YouTube David Trần Official).
 - **Lằn ranh:** ca khách chỉ đăng khi David đưa chi tiết; tên khách ẩn trừ khi khách đồng ý; không nêu đơn vị phía sau.

@@ -44,12 +44,12 @@
   "mui_gio": "Asia/Ho_Chi_Minh",
   "facebook_ca_nhan": {
    "moi_tuan": 4,
-   "Tue": "video sẵn có (Reels / clip trích) — trụ theo video",
+   "Tue": "bài viết kèm ảnh — trụ 1 AI cho doanh nghiệp / trụ 4 kết quả thật",
    "Thu": "bài viết — trụ 1 AI cho doanh nghiệp (tuần lẻ) / trụ 4 kết quả thật (tuần chẵn)",
-   "Fri": "video sẵn có (Reels / clip trích) — trụ theo video",
+   "Fri": "bài viết kèm ảnh — trụ 2 con người, dẫn đội / trụ 3 đời thường",
    "Sun": "bài viết — trụ 2 con người, dẫn đội (tuần lẻ) / trụ 3 đời thường, hành trình (tuần chẵn)",
    "gio_vn": "20:00",
-   "ghi_chu": "Luôn sẵn 2 tuần bài trên trang localhost:8765/bai-dang (du-an/lich-dang-bai.md); 4 trụ: du-an/hinh-anh-facebook-ca-nhan.md. Không đủ video thì thay bằng bài viết cùng trụ; tuần khó tối thiểu 2 bài."
+   "ghi_chu": "4 ô đều là bài viết kèm ảnh, luôn sẵn 30 ngày trên trang localhost:8765/bai-dang (du-an/lich-dang-bai.md); video không chiếm ô, để ở mục Video sẵn, David đăng thêm khi muốn; 4 trụ: du-an/hinh-anh-facebook-ca-nhan.md; tuần khó tối thiểu 2 bài."
   }
  },
  "dan_dat": {

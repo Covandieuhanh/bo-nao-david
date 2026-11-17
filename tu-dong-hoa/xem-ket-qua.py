@@ -345,6 +345,7 @@ def page(sel):
 # ---------- trang bài đăng (David 17/11/2026: "tạo riêng 1 trang … với đầy đủ mọi thứ trong 1 bài đăng để tôi lên copy nội dung và tự tải ảnh") ----------
 # Đọc ~/Documents/1-nghe-nghiep/bai-dang/YYYY-MM-DD/bai.md (đầu file: "# tiêu đề", các dòng ghi chú, "Tệp: <đường dẫn video>" nếu có; sau "---" là chữ đăng)
 # + anh.png. Nút Đã đăng ghi file .da-dang trong thư mục ngày. Hệ thống lịch: du-an/lich-dang-bai.md.
+MA_BAI = r"(\d{4}-\d{2}-\d{2}|video-san/[a-z0-9-]+)"   # bài theo ngày, hoặc video sẵn (không thuộc lịch)
 THU = ["Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy", "Chủ nhật"]
 
 def bai_doc(ngay):
@@ -360,35 +361,38 @@ def bai_doc(ngay):
 
 def bai_the(b):
     import datetime
-    dt = datetime.date.fromisoformat(b["ngay"]); n = b["ngay"]
-    tt = (f'<span class="tt da">{"David tự đăng" if b["tu_dang"] else "Đã đăng"}</span>' if b["da"] else '<span class=tt>Chờ đăng · 20:00</span>')
+    n = b["ngay"]; k = n.replace("/", "-")
+    h2 = f'{THU[datetime.date.fromisoformat(n).weekday()]} {datetime.date.fromisoformat(n):%d/%m}' if n[:1].isdigit() else esc(b["tieu"].split(" · ")[0])
+    tt = (f'<span class="tt da">{"David tự đăng" if b["tu_dang"] else "Đã đăng"}</span>' if b["da"] else ('<span class=tt>Chờ đăng · 20:00</span>' if n[:1].isdigit() else '<span class=tt>Đăng thêm khi muốn</span>'))
     tt += f'<span class=loc title="{esc(b["loc"])}">Lọc: {esc(b["loc"][:70])}</span>' if b["loc"] else '<span class="loc chua">Chưa lọc trùng</span>'
     media = ""
     if b["video"]:
         media = (f'<div class=bm><video controls preload=metadata playsinline src="/bv/{n}"></video>'
-                 f'<a class=f href="/bv/{n}" download="video-{n}.mp4">Tải video</a></div>')
+                 f'<a class=f href="/bv/{n}" download="video-{k}.mp4">Tải video</a></div>')
     elif b["anh"]:
         media = (f'<div class=bm><img src="/f/bai/{n}/anh.png" alt="Ảnh bài {n}" onclick="anh(this.src)">'
-                 f'<a class=f href="/f/bai/{n}/anh.png" download="anh-{n}.png">Tải ảnh</a></div>')
+                 f'<a class=f href="/f/bai/{n}/anh.png" download="anh-{k}.png">Tải ảnh</a></div>')
     else:
         media = f'<div class="bm cho"><div>{"Không thấy tệp video" if b["video_thieu"] else "Chưa có ảnh"}</div></div>'
     ghi = "".join(f"<div>{esc(g)}</div>" for g in b["ghi"])
-    return (f'<section class="bai{" xong" if b["da"] else ""}" id="b-{n}"><div class=bh><h2>{THU[dt.weekday()]} {dt:%d/%m}</h2>{tt}'
+    return (f'<section class="bai{" xong" if b["da"] else ""}" id="b-{k}"><div class=bh><h2>{h2}</h2>{tt}'
             f'<button class=more onclick="daDang(\'{n}\',this)">{"Bỏ đánh dấu" if b["da"] else "Đã đăng"}</button></div>'
             f'<div class=bt>{esc(b["tieu"])}</div><div class=bb>{media}<div class=bc>'
-            f'<pre class=noi id="n-{n}">{esc(b["than"])}</pre><button class=chepb onclick="chepBai(\'{n}\',this)">Chép bài</button>'
+            f'<pre class=noi id="n-{k}">{esc(b["than"])}</pre><button class=chepb onclick="chepBai(\'{k}\',this)">Chép bài</button>'
             f'{f"<details><summary>Ghi chú soạn</summary>{ghi}</details>" if ghi else ""}</div></div></section>')
 
 def page_bai():
     goc = ROOTS["bai"][0]
     ngay = [d for d in ls(goc) if re.fullmatch(r"\d{4}-\d{2}-\d{2}", d) and isf(os.path.join(goc, d, "bai.md"))]
-    bai = [bai_doc(d) for d in ngay]; cho = [b for b in bai if not b["da"]]; xong = [b for b in bai if b["da"]][::-1]
+    bai = [bai_doc(d) for d in ngay]; cho = [b for b in bai if not b["da"]]; xong = [b for b in bai if b["da"]]   # đã đăng: ẩn, chỉ đếm (David 17/11)
+    vs = [bai_doc("video-san/" + d) for d in ls(os.path.join(goc, "video-san")) if isf(os.path.join(goc, "video-san", d, "bai.md"))]
+    vs = [b for b in vs if not b["da"]]
     kho = [f for f in ls(os.path.join(goc, "kho-bai-nen")) if f.endswith(".md")]
     than = (f'<header><h1>Bài đăng Facebook cá nhân</h1><a class=nav href=/>← Kết quả video</a>'
-            f'<span class=dem>{len(cho)} bài chờ đăng · kho bài nền {len(kho)}</span></header>'
+            f'<span class=dem>{len(cho)} bài chờ đăng · đã đăng {len(xong)} (ẩn) · kho bài nền {len(kho)}</span></header>'
             '<p class=huong>Mỗi bài: bấm <b>Chép bài</b> → dán vào Facebook · <b>Tải ảnh</b> (hay video) → đính kèm · đăng xong bấm <b>Đã đăng</b>.</p>'
             + ("".join(bai_the(b) for b in cho) or "<div class=trong>Chưa có bài chờ đăng.</div>")
-            + (f'<h3 class=nhom>Đã đăng ({len(xong)})</h3>' + "".join(bai_the(b) for b in xong) if xong else "")
+            + (f'<h3 class=nhom>Video sẵn ({len(vs)}) · không thuộc lịch 4 bài/tuần, đăng thêm khi muốn</h3>' + "".join(bai_the(b) for b in vs) if vs else "")
             + '<dialog id=dlg><div class=dh><b id=dt></b><button id=dfd hidden></button><button id=cp hidden></button><button onclick="dlg.close()" aria-label="Đóng">✕</button></div><div id=db></div></dialog>')
     return (f'<!doctype html><html lang=vi><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">'
             f"<title>Bài đăng</title><style>{CSS}{CSS_BAI}</style><main>{than}</main><script>{JS_BAI}</script></html>")
@@ -444,9 +448,9 @@ class H(http.server.SimpleHTTPRequestHandler):
             except Exception as e: b = f"<pre>Lỗi đọc bài đăng: {esc(e)}</pre>".encode()
             self.send_response(200); self.send_header("Content-Type", "text/html; charset=utf-8"); self.send_header("Content-Length", len(b)); self.end_headers()
             return self.wfile.write(b)
-        if u.path.startswith("/bv/"):   # video của bài: đường dẫn lấy từ dòng "Tệp:" trong bai.md, không nhận đường dẫn từ ngoài
-            n = u.path[4:]
-            if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", n): return self.send_error(404)
+        if u.path.startswith("/bv/"):   # /bv/<ngày> hoặc /bv/video-san/<tên>   # video của bài: đường dẫn lấy từ dòng "Tệp:" trong bai.md, không nhận đường dẫn từ ngoài
+            n = urllib.parse.unquote(u.path[4:])
+            if not re.fullmatch(MA_BAI, n): return self.send_error(404)
             v = bai_doc(n)["video"]
             return self.send_file(v) if v else self.send_error(404)
         if u.path.startswith(("/f/", "/poster/", "/doc/")):
@@ -466,8 +470,8 @@ class H(http.server.SimpleHTTPRequestHandler):
     def do_POST(self):   # nút "Finder": hiện file trong Finder (máy chủ chỉ nghe 127.0.0.1)
         u = urllib.parse.urlparse(self.path)
         if u.path.startswith("/da-dang/"):   # bật / tắt dấu đã đăng của một bài
-            n = u.path[9:]; d = os.path.join(ROOTS["bai"][0], n)
-            if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", n) or not os.path.isdir(d): return self.send_error(404)
+            n = urllib.parse.unquote(u.path[9:]); d = os.path.join(ROOTS["bai"][0], n)
+            if not re.fullmatch(MA_BAI, n) or not os.path.isdir(d): return self.send_error(404)
             m = os.path.join(d, ".da-dang")
             if isf(m): os.remove(m)
             else: open(m, "w").write(time.strftime("%Y-%m-%d %H:%M\n"))
