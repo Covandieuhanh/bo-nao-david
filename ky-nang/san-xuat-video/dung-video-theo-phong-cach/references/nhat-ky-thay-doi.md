@@ -4,6 +4,11 @@ description: "Sổ thay đổi skill dựng video theo phong cách: quyết đ�
 
 # Sổ thay đổi — dung-video-theo-phong-cach (quyết định của người dùng + lý do)
 
+## 18/11/2026: bản dài từ nhiều file của một buổi, cắt theo ý
+- David: "làm 1 video dài từ 2 video gốc, cắt đi những ý liên quan đến công thức, ở phần gần cuối nếu là ý chưa trọn vẹn thì cũng cắt đi, để trở thành 1 cuộc nói chuyện giữa 2 người nhé. Cũng có làm intro cho video dài này" → `references/nhieu-doan-video.md` mục 11 (chọn đoạn theo ý, một nguồn ghép, phụ đề từ bản lời theo câu + soát hết, nhạc luân phiên, màn kết YouTube).
+- Khuôn ghép: `bundle-nhe.mjs` (không chép video vào thư mục tạm — bundle chép 4,7 GB làm đầy ổ); thẻ nhận diện cuối đặt đúng ở khung ngang (`top` theo K.V).
+- `loi-ao.py`: chép lại khúc ảo thử thêm cửa sổ lùi 4 s / 12 s (5 khúc chép từ đúng đầu khúc vẫn ảo).
+
 ## 14/11/2026: phạm vi luật không zoom
 - David trả lời câu hỏi tái bản 3, chọn đề xuất "Chỉ cấm hình quay": luật "không zoom vào / zoom ra" chỉ áp cho hình quay (video người nói); ảnh minh hoạ (Ken Burns trôi chậm) và chuyển động bên trong motion graphic (đẩy khung) vẫn được. Lý do: luật 13/11 nhắm hiệu ứng zoom trên người nói, không nhắm đồ hoạ. Nhà luật: quy-tac-chung mục 2; khối 07 mục 4, thiet-ke-canh trỏ về. Xoá dòng gotchas "chụp thử nhan không thấy zoom" (nhan.jsx đã bỏ zoom).
 

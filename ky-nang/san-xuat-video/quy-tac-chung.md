@@ -37,6 +37,8 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
 - **Video dài (> 3 phút) không cắt gì**: podcast, tâm sự, thực tế, nói trước camera là BẢN GỐC, để nguyên cả khoảng lặng, "ờ/ừm",
   ngập ngừng, nói lại, đoạn dẫn dắt, phần đầu/cuối. Những chỗ kỹ thuật coi là lỗi là nét tự nhiên của người kể; giá trị của đoạn hay
   nằm trong cả câu chuyện dẫn tới nó. Không rút video dài thành đoạn hay.
+  Riêng khi **David yêu cầu bỏ ý** cụ thể ("cắt ý X", "ý chưa trọn thì cắt"): bỏ trọn các đoạn nói ý đó, phần còn lại giữ theo thứ tự buổi nói
+  và vẫn để nguyên trong từng đoạn (`dung-video-theo-phong-cach/references/nhieu-doan-video.md` mục 11).
   Riêng **làm lại video cũ**: cắt màn tít + lời chào / giới thiệu kênh cũ (tên kênh cũ, nghề cũ, kinh doanh) và chữ/viền kênh cũ in
   trong hình — chỉ đúng các đoạn đó (khối 02). Lằn ranh David chọn cắt thì chỉ cắt đúng đoạn đó.
 - **Cắt chỉ cho video ≤ 3 phút và highlight**: lặng ≥ 0,45 s còn ~0,24 s + tiếng đệm "ờ/ừm" đứng riêng (cắt cứng); **không dùng hiệu ứng zoom vào / zoom ra trên hình quay** (video người nói, clip gốc) ở bất kỳ video nào

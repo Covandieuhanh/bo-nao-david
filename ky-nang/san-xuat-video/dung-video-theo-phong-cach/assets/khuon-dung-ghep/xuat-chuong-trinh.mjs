@@ -3,14 +3,14 @@
 import {execFileSync, spawnSync} from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
-import {bundle} from '@remotion/bundler';
+import {bundleNhe} from './bundle-nhe.mjs';
 import {renderMedia, selectComposition} from '@remotion/renderer';
 
 const [a, b, name] = process.argv.slice(2);
 const raw = path.resolve(name ? `../kiem-tra/ban-xuat-tho-${name}` : '../kiem-tra/ban-xuat-tho.mp4');
 const out = path.resolve(`../${name || 'video-hoan-chinh.mp4'}`);
 fs.mkdirSync(path.dirname(raw), {recursive: true});
-const serveUrl = await bundle({entryPoint: path.resolve('src/diem-vao.jsx')});
+const serveUrl = await bundleNhe('src/diem-vao.jsx');   // không chép video vào thư mục tạm (bundle-nhe.mjs)
 const composition = await selectComposition({serveUrl, id: 'show'});
 const t0 = Date.now();
 let last = -1;

@@ -629,7 +629,7 @@ const EndCard = ({title, speaker, clip, at, play = true, yt = 0, schedule = ''})
       {clip && <Freeze frame={0}><OffthreadVideo src={staticFile(`doan-video/${clip}.mp4`)} trimBefore={fr(at || 0)} muted
         style={{width: '100%', height: '100%', objectFit: 'cover', filter: 'brightness(0.42) saturate(1.1)', transform: `scale(${1.06 + f * 0.0012})`}} /></Freeze>}
       <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(13,13,16,0.1) 30%, rgba(13,13,16,0.92) 78%)'}} />
-      <div style={{position: 'absolute', left: SAFE.left, width: SAFE_W, top: 1000, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 34,
+      <div style={{position: 'absolute', left: SAFE.left, width: SAFE_W, top: K.V ? 1000 : Math.round(H * 0.42), display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 34,
         transform: `translateY(${(1 - p) * 60}px)`}}>
         <EndCardBody title={title} speaker={speaker} play={play} schedule={schedule} kenh={HS.man_cuoi_kenh || ''} big={96} gap={34} shadow={SHADOW} />
       </div>

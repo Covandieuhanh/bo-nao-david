@@ -294,3 +294,23 @@ Một clip duy nhất `c1` = video gốc dài; `cat-doan-noi-bat/scripts/danh-sa
   bỏ ở video dọc ngắn (`THE_CUOI`, nhan-dien-chung mục 1). `null` (vlog thường) → không có.
 - Không dùng `teaserTag`, `title`, `round`, `hud`, `outro` (chữ tự viết) trong highlight.
 
+
+### 11. Bản dài từ nhiều file của MỘT buổi nói chuyện (máy quay tách file)
+Khi các file gốc là một buổi liền (máy quay tự tách file, cùng góc máy) và David muốn bản dài **bỏ một số ý** ("cắt ý X", "ý chưa trọn thì cắt"):
+- **Chọn đoạn theo ý, không theo câu đắt**: đọc lời cả buổi (trục ghép các file), đánh dấu ý phải bỏ theo yêu cầu + lằn ranh kênh, giữ phần còn lại
+  theo thứ tự buổi nói. Trong mỗi đoạn giữ nguyên — không cắt lặng, "ờ/ừm" (quy-tac-chung 2). Mối cắt bắt vào chỗ lặng gần nhất (±0,6 s).
+- Lời cả buổi chép trên bản xem nhẹ có **câu ảo che lời thật** ("Hãy subscribe…" = mất 30 s lời, không phải chỗ lặng) → chép lại riêng khúc đó
+  (`loi-ao.py`) trước khi quyết cắt/giữ khúc ấy.
+- Cắt các đoạn từ file gốc ghép thành **một nguồn** `nguon-dai.mp4` (ffmpeg `-hwaccel videotoolbox`, 1080p30, 10 Mbps, fade tiếng 40 ms ở mỗi mối)
+  → `c1`; chép lời lại trên nguồn mới (`phan-tich-video.sh`). Cảnh câm cho intro lấy từ nguồn khác (`c2`) nếu nằm ở phần đã cắt.
+- `RAW`: intro (câu chạm giữ tiếng + đáp lời người kia nếu có, rồi cảnh câm 2 phách) + **một đoạn `p1` = cả `c1`**; `TS(src) = D + src`.
+- **Phụ đề**: chữ lấy từ `ban-chep-loi.srt` (bản theo câu, đúng thứ tự chữ hơn), tách cụm ≤ 10 chữ / 52 ký tự theo dấu câu, mốc bám
+  `moc-tung-tu.srt`; `SHORT = false` (hộp tối). Soát HẾT phụ đề: sửa chữ Whisper nghe sai rõ, bỏ câu không rõ (không đoán); ghi bảng sửa theo
+  chỉ số dòng và in đối chiếu "gốc => sửa" để bắt lệch dòng. Gộp dòng dài < 0,35 s vào dòng kế (Sequence 0 khung làm render dừng).
+- Nhận người nói bằng giọng (`dung-podcast/scripts/nguoi-noi.py`, pyannote) hay lẫn giữa câu ở quán ồn → không tô viền phụ đề theo người khi chưa
+  nghe lại được.
+- Nhạc: bài intro ở intro; phần chính luân phiên 2 bài cùng tuyến (`MUSIC.tracks` nối tiếp theo độ dài bài) — không lặp một bài cả tiếng.
+- Video dài YouTube: `THE_CUOI = true`, `ENDCARD = {…, play: false, yt: 21.6, len: 21.6}` (thẻ nhận diện 1,6 s + màn kết YouTube 20 s).
+- Render tốn ổ: khuôn dùng `bundle-nhe.mjs` (video > 50 MB nối cứng vào bản bundle, không chép). Bản thô + bản cuối ≈ 2 × (9 Mbps × thời lượng)
+  — đo trước bằng render thử 40 s (`node xuat-chuong-trinh.mjs 0 40 thu.mp4`), thiếu chỗ thì nén thêm (crf 20). M1 8 GB: ~3,3× thời lượng.
+- Mẫu: `~/Movies/tap-marketing-noi-dau-nhu-cau/2-ban-day-du` (`ke-hoach-cat.md`, `kiem-tra/dung-phu-de.py`).

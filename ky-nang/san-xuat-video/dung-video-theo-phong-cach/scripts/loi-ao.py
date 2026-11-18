@@ -63,15 +63,19 @@ def chep(wav, a, b, lang, words):
     k = max(1, math.ceil((b - a) / 30 - 1e-6))
     with tempfile.TemporaryDirectory() as d:
         w = os.path.join(d, "a.wav")
-        for loc in ([], ["-af", "highpass=f=120,dynaudnorm"]):
+        # pre: bắt đầu sớm hơn đầu khúc ảo vài giây để Whisper có ngữ cảnh (18/11/2026 — bản dài 54 phút: 5 khúc 30 s
+        # chép lại từ đúng đầu khúc vẫn ảo, lùi 4 s hoặc 12 s thì ra lời thật)
+        for pre in (0, 4, 12):
+          s0 = max(0.0, a - pre)
+          for loc in ([], ["-af", "highpass=f=120,dynaudnorm"]):
             for n in (k, k + 1, k + 2):
-                subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(a), "-t", str(30 * n), "-i", wav, *loc, w],
+                subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(s0), "-t", str(30 * n), "-i", wav, *loc, w],
                                check=True, env=ENV)
                 cmd = ["whisper-cli", "-m", MODEL, "-l", lang, "-f", w, "-mc", "0", "-np", "-osrt", "-of", os.path.join(d, "o")]
                 if words: cmd[-4:-4] = ["-ml", "1", "-sow"]
                 subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, env=ENV)
-                ra = [[x + a, y + a, t] for x, y, t in doc(os.path.join(d, "o.srt"))
-                      if t and a - 0.05 <= (x + y) / 2 + a <= b + 0.05]
+                ra = [[x + s0, y + s0, t] for x, y, t in doc(os.path.join(d, "o.srt"))
+                      if t and a - 0.05 <= (x + y) / 2 + s0 <= b + 0.05]
                 if ra and not doan_ao([[x - a, y - a, t] for x, y, t in ra] if not words else gom(ra)):
                     return ra
     return None
