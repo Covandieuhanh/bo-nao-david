@@ -49,7 +49,7 @@ Gốc: [bản đồ bộ não](README.md).
 - [co-so-tri-thuc-ho-so-va-bo-loc](../co-so-tri-thuc/bo-nho/co-so-tri-thuc-ho-so-va-bo-loc.md) — Hồ sơ David ở ~/.claude/david.md (ba hướng nghề, mô hình kinh doanh); mọi tài nguyên phải qua bộ lọc khối 00 trước khi dựng; luật kênh ở ho-so-thuong-hieu/kenh.json
 - [co-so-tri-thuc-quy-uoc-dat-ten](../co-so-tri-thuc/bo-nho/co-so-tri-thuc-quy-uoc-dat-ten.md) — Mọi tên file, thư mục, skill, ghi nhớ đi từ thuật ngữ kinh doanh tiếng Anh chuẩn, dịch đúng nghĩa sang tiếng Việt không dấu; tra bảng thuật ngữ
 - [thiet-bi-bo-cuc-thu-muc](../co-so-tri-thuc/bo-nho/thiet-bi-bo-cuc-thu-muc.md) — Bố cục thư mục trên MacBook của David (dọn 07/11 và 11/11/2026, đổi tên 14/11) — Mac chỉ giữ việc đang làm, còn lại ở Drive; App notion đã bỏ (chỉ máy này, khôn…
-- [thiet-bi-van-phong-shop](../co-so-tri-thuc/bo-nho/thiet-bi-van-phong-shop.md) — Văn Phòng Shop là sản phẩm mẫu David làm cho công ty, tách hẳn khỏi bộ não, ở ~/Documents/van-phong-shop (git riêng, không lên GitHub bộ não)
+- [co-so-tri-thuc-bo-nao-cong-ty](../co-so-tri-thuc/bo-nho/co-so-tri-thuc-bo-nao-cong-ty.md) — việc công ty Veltrix làm ở bộ não riêng ~/Documents/bo-nao-veltrix (kho private veltrix), Văn Phòng Shop đã chuyển vào
 
 ## Cài đặt, đồng bộ, GitHub
 - [](../README.md) — Trang đầu repo trên GitHub.

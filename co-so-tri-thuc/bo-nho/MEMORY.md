@@ -25,6 +25,7 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 
 - [Quy ước đặt tên](co-so-tri-thuc-quy-uoc-dat-ten.md) — từ thuật ngữ kinh doanh tiếng Anh chuẩn, dịch đúng nghĩa sang tiếng Việt không dấu, tra bảng thuật ngữ (14/11)
 - [Liên kết tri thức](co-so-tri-thuc-lien-ket-tri-thuc.md) — bộ não là mạng lưới file nối nhau: mô tả đầu file, chỉ mục tự sinh, ban-do/, kien-thuc/, máy kiểm link; không dùng app Obsidian (14/11)
+- [Bộ não công ty riêng](co-so-tri-thuc-bo-nao-cong-ty.md) — việc Veltrix làm ở ~/Documents/bo-nao-veltrix (kho private veltrix), không ghi vào bộ não cá nhân; Văn Phòng Shop đã chuyển vào (18/11)
 - [GitHub là bản gốc bộ não](co-so-tri-thuc-github-ban-goc.md) — bắt buộc đẩy ngay; repo, "cập nhật não" = dong-bo.sh --push; Mac ↔ GitHub 2 chiều (07/11)
 - [Hồ sơ David + bộ lọc nội dung](co-so-tri-thuc-ho-so-va-bo-loc.md) — ba hướng nghề (13/11), trainer hai lĩnh vực + đội đối tác công nghệ (17/11), mô hình kinh doanh, khối 00 phân hướng + bán được gì, kenh.json, sổ danh mục
 
@@ -53,4 +54,3 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 ## Chỉ máy Mac chính (file không lên GitHub)
 
 - [Bố cục thư mục máy này](thiet-bi-bo-cuc-thu-muc.md) — bo-nao-david (lối tắt David.Claude), 1-nghe-nghiep, 2-ca-nhan; hợp đồng/giấy tờ ở 2-ca-nhan/phap-ly (15/11); Mac chỉ giữ việc đang làm; dọn 07/11 bỏ App notion (07/11, 11/11; gộp 14/11)
-- [Văn Phòng Shop là mẫu cho công ty](thiet-bi-van-phong-shop.md) — tách khỏi bộ não, ở ~/Documents/van-phong-shop, git riêng (14/11)

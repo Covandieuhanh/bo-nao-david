@@ -21,7 +21,7 @@ Mục tiêu chung: **ra tiền**. Mọi nội dung được lọc xem thuộc h�
 
 Quy trình bán gói công nghệ (phễu → bán thử → bán thật): `du-an/pheu-ban-hang-goi-cong-nghe.md`.
 
-**Đội đối tác giải pháp công nghệ (nội bộ, không công bố):** David hợp tác chính thức và giữ vai **tổng điều hành** toàn bộ một đội đang sản xuất giải pháp công nghệ, số hoá cho đơn vị, tổ chức, đội nhóm theo từng vấn đề cụ thể của họ (bắt đầu làm 18/11/2026). Đây là nền cho mảng giải pháp AI cho doanh nghiệp: đội làm giải pháp, David điều hành và đào tạo để khách dùng ra kết quả. Tên đội, sản phẩm, thành quả: David cập nhật sau.
+**Đội đối tác giải pháp công nghệ (nội bộ, không công bố):** David hợp tác chính thức và giữ vai **tổng điều hành** toàn bộ một đội đang sản xuất giải pháp công nghệ, số hoá cho đơn vị, tổ chức, đội nhóm theo từng vấn đề cụ thể của họ (bắt đầu làm 18/11/2026). Đây là nền cho mảng giải pháp AI cho doanh nghiệp: đội làm giải pháp, David điều hành và đào tạo để khách dùng ra kết quả. Mọi thứ của công ty (đội, khách, giải pháp, tiền, quyết định, nhật ký điều hành) ở **bộ não công ty riêng** `~/Documents/bo-nao-veltrix` (kho private `Covandieuhanh/veltrix`), không ghi vào bộ não này.
 
 **Bên ngoài chỉ thấy David:** người có năng lực giải quyết vấn đề trong các lĩnh vực mình định hướng. Không công bố vai tổng điều hành, không nêu tên đội hay đơn vị phía sau; việc giao cho đơn vị nào xử lý là David tự điều phối nội bộ. Thành quả làm cho khách kể là "giải pháp mình làm cho khách".
 

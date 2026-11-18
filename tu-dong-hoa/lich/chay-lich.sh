@@ -13,7 +13,9 @@ if [ -n "$2" ]; then # chạy bù: báo phiên giờ gốc để làm cho đúng
   LOI="(Chạy bù: lịch gốc lúc $2, máy lỡ vì Mac ngủ hoặc mất mạng. \"Hôm nay\" trong lời giao là ngày ${2:0:10} của lịch gốc; tên file, tiêu đề tin theo ngày đó; vẫn đọc đủ dữ liệu tới bây giờ.)
 $LOI"; TEN="Lịch · $ID · $(date -j -f %F "${2:0:10}" +%d/%m 2>/dev/null || date +%d/%m) (bù)"
 fi
+# Bộ não công ty (Veltrix): cho phiên lịch ghi được vào đó (mục 🏢 của tổng hợp tin).
+THEM=""; [ -d "$HOME/Documents/bo-nao-veltrix" ] && THEM="--add-dir $HOME/Documents/bo-nao-veltrix"
 # Đóng phiên lần trước của cùng việc (đã xong, lịch sử vẫn còn trong app).
 for s in $(screen -ls 2>/dev/null | awk -v t=".lich-$ID" '$1 ~ t"$" {print $1}'); do screen -S "$s" -X quit; done
-screen -dmS "lich-$ID" -h 3000 bash -c "cd '$NAO' && for v in \$(env | grep -o '^CLAUDE[A-Z_]*'); do unset \$v; done; unset TELEGRAM_STATE_DIR ENABLE_TOOL_SEARCH ENABLE_CLAUDEAI_MCP_SERVERS CLAUDE_CODE_DISABLE_AUTO_MEMORY TELEGRAM_VIEC; exec env $GON claude --chrome --remote-control=\"\$1\" --permission-mode auto \"\$0\"" "$LOI" "$TEN"
+screen -dmS "lich-$ID" -h 3000 bash -c "cd '$NAO' && for v in \$(env | grep -o '^CLAUDE[A-Z_]*'); do unset \$v; done; unset TELEGRAM_STATE_DIR ENABLE_TOOL_SEARCH ENABLE_CLAUDEAI_MCP_SERVERS CLAUDE_CODE_DISABLE_AUTO_MEMORY TELEGRAM_VIEC; exec env $GON claude $THEM --chrome --remote-control=\"\$1\" --permission-mode auto \"\$0\"" "$LOI" "$TEN"
 echo "Đã mở phiên \"$TEN\" (xem trong app Claude)."
