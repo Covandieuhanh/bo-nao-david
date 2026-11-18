@@ -125,6 +125,12 @@ không song song — tốn RAM). Không có bước duyệt kế hoạch ghép c
   2 phách bài `intro-soi`/`intro-lang`), `D = segStart('p1')`; phụ đề phần chính cộng `D`, `TS()` bỏ qua đoạn `m`; thẻ `title` `over` trên dải
   cảnh câm, chữ nguyên văn; nhạc `tracks` intro + bài phần chính, `loudRanges` = dải cảnh câm. Luật chọn cảnh: `nhieu-doan-video.md` mục 2d.1.
   Mẫu: `~/Movies/tap-marketing-noi-dau-nhu-cau/3-doan-noi-bat/clip-A`.
+- **Cùng ý, thêm bản dọc từ nguồn ngang**: không cắt thẳng — đổi khung `nguon.mp4` bám người nói (`phan-tich-doi-khung.sh` + `ke-hoach-doi-khung.py`
+  trong dự án phụ `clip-<id>-doc/rekhung`, `tu-lieu/video-goc.mp4` = nối cứng tới c1; mọi câu bám người đang nói, cảnh intro đặt `cx` riêng,
+  cảnh có người đi ngang / thấy cả quán → `wide`) → chép `chuyen-dong` của bản ngang, c1 = bản dọc (cùng thời lượng nên giữ nguyên mốc),
+  `W = 1080`, `H = 1920`, bỏ `pow.x`; người ngồi cả thân lấp giữa khung → `pow` đặt `y` vào dải trống trên đầu (đỉnh đầu ~650 px → `y: 300`);
+  thẻ `title` trên intro thêm `keep: true` để không thành toàn màn hình che hết cảnh câm. Rồi `nang-lop.py` → `bao-ve-lop-phu.py` → chụp thử như 7A.
+  Mẫu: `~/Movies/tap-marketing-noi-dau-nhu-cau/3-doan-noi-bat/clip-B-doc`.
 
 ### 7B. Dựng — nguồn podcast / toàn đồ hoạ (`dung-podcast`, khung dọc)
 ```bash

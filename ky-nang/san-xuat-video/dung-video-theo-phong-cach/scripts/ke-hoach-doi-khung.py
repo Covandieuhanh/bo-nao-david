@@ -21,8 +21,8 @@ def src():
 
 def probe(v):
     w, h, fr = subprocess.check_output(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries",
-        "stream=width,height,r_frame_rate", "-of", "csv=p=0", v], env=ENV).decode().strip().split(",")[:3]
-    dur = float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", v], env=ENV))
+        "stream=width,height,r_frame_rate", "-of", "csv=p=0", v], env=ENV).decode().split()[0].split(",")[:3]   # file DJI in thêm dòng chương trình → lấy dòng đầu
+    dur = float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", v], env=ENV).split()[0])
     return int(w), int(h), fr, dur
 
 def srt(path):
