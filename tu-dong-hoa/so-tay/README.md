@@ -49,7 +49,7 @@ David nhắn Telegram những gì nhớ, biết, cần làm. Phiên Claude Code 
 | Máy chủ Telegram chết / Claude bỏ qua bước bật lúc mở phiên / bị giành (409) | Không thấy `bun server.ts` sau 40 giây → gõ `/mcp reconnect plugin:telegram:telegram` (tối đa 3 lần), không được thì mở lại phiên |
 | Còn máy chủ nhưng không giữ kết nối Telegram (sau khi Mac thức dậy, đổi Wi-Fi) | Có mạng mà mất kết nối >3 phút → mở lại; không có mạng >30 phút → báo David |
 | Phiên treo (đang làm >10 phút) / hộp thoại chặn | Bấm Esc; >15 phút → mở lại |
-| Hết hạn mức gói, chưa đăng nhập / hết hạn đăng nhập | Báo David (3 giờ / 6 giờ một lần) |
+| Hết hạn mức gói, chưa đăng nhập / hết hạn đăng nhập | Báo David (3 giờ / 6 giờ một lần); mất đăng nhập Terminal thì tự mở Terminal chạy `claude auth login` một lần, David chỉ bấm cho phép trên trình duyệt |
 | Mở lại >4 lần trong 30 phút | Báo David cần xem |
 | Đổi tài khoản Claude, ngữ cảnh đầy | Mở lại khi đổi; làm mới 4h sáng |
 
@@ -67,3 +67,13 @@ Xem phiên bot: `screen -r so-tay` (thoát: Ctrl-A rồi D). Nhật ký canh: `~
 **Học từ Hermes** (12/11): tin thoại → `nghe-thoai.sh` (ffmpeg + whisper-cli, mô hình `~/whisper-models/ggml-large-v3-turbo.bin`, ~5 giây, 0 token) · bot nghỉ 30 phút thì canh-bot gõ `/clear` (mục 7, nhớ dấu ở `.trang-thai/da-gon`) · `tu-dong-hoa/tim-phien.py` tìm lại cuộc trò chuyện cũ · `[TU-HOC]` 07:00 sáng thứ 6 trong `nhac-viec.md` → bot giao phiên chạy skill `hoc-lien-tuc`.
 
 **Không gắn tài khoản** (14/11): mọi lịch tự chạy (tổng hợp tin 7:00, gom 23:00, đóng gói thứ 6 06:30) ở `tu-dong-hoa/lich/lich-chay.md`; tới giờ canh-bot chạy `lich/chay-lich.sh` mở phiên "Lịch · <tên> · dd/mm" hiện trong app (Remote Control + Claude in Chrome), tài khoản nào đăng nhập cũng chạy. Không dùng Scheduled tasks của app. Nhắc có thẻ máy chạy một lần: `- chỉ ngày YYYY-MM-DD HH:MM · [THẺ] …`. Kiểm tra sau khi đổi tài khoản: `bash tu-dong-hoa/kiem-tra-tai-khoan.sh`.
+
+## Mã đăng nhập dài hạn
+
+Bot chạy bằng Claude trong Terminal, đăng nhập riêng với app Claude. Đăng nhập thường có lúc mất khi Mac ngủ và mất mạng lâu (gặp 17/11 19:44, bot tắt tới khi David đăng nhập lại). Cách gỡ gốc: bot dùng mã dài hạn (~1 năm). David tự làm một lần, AI không chạm vào mã:
+
+1. Terminal: `claude setup-token`, bấm cho phép trên trình duyệt, Terminal in ra mã.
+2. `pbpaste > ~/.claude/channels/so-tay/claude-token && chmod 600 ~/.claude/channels/so-tay/claude-token` (chép mã trước). File này không lên GitHub.
+3. Máy canh tự nhận trong 1 phút, mở lại bot bằng mã. Kiểm: `bash tu-dong-hoa/kiem-tra-tai-khoan.sh`.
+
+Mã chỉ dùng cho bot. Phiên lịch và phiên việc hiện trong app (Remote Control) vẫn cần đăng nhập thường; mất thì máy tự mở Terminal đăng nhập và nhắn David. Mã hết hạn (~1 năm) thì làm lại 3 bước trên.

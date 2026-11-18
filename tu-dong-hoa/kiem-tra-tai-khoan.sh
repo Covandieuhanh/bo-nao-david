@@ -6,7 +6,8 @@ NAO="$(cd "$(dirname "$0")/.." && pwd)"; TT="$HOME/Documents/2-ca-nhan/so-tay/.t
 ok() { echo "✅ $1"; }; hong() { echo "❌ $1 → $2"; LOI=1; }
 
 TK=$(claude auth status 2>/dev/null | python3 -c "import json,sys;d=json.load(sys.stdin);print(d.get('email','') if d.get('loggedIn') else '')" 2>/dev/null)
-[ -n "$TK" ] && ok "Claude trong Terminal đã đăng nhập (bot, giao việc, phiên lịch dùng đăng nhập này)" || hong "Claude trong Terminal chưa đăng nhập" "chạy: claude auth login"
+[ -n "$TK" ] && ok "Claude trong Terminal đã đăng nhập (phiên lịch, giao việc dùng đăng nhập này)" || hong "Claude trong Terminal chưa đăng nhập" "chạy: claude auth login"
+[ -s "$HOME/.claude/channels/so-tay/claude-token" ] && ok "Bot có mã đăng nhập dài hạn (không chết khi Terminal bị đăng xuất)" || echo "⚪ Bot chưa có mã dài hạn → nên tạo: xem tu-dong-hoa/so-tay/README.md mục Mã đăng nhập dài hạn"
 
 [ -s "$NAO/tu-dong-hoa/lich/lich-chay.md" ] && ok "Lịch tự chạy có trong repo (tu-dong-hoa/lich/lich-chay.md, mở phiên hiện trong app)" || hong "Thiếu lịch tự chạy" "bash $NAO/tu-dong-hoa/dong-bo.sh --keo"
 launchctl list 2>/dev/null | grep -q com.david.so-tay && ok "Máy canh bot đang chạy (nhắc giờ, tóm tắt sáng, mở phiên lịch)" || hong "Máy canh bot không chạy" "bash $NAO/tu-dong-hoa/so-tay/cai-dat.sh"

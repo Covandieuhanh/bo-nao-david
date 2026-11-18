@@ -39,6 +39,8 @@ const seen=new Map(); for(let i=0;i<15;i++){ document.querySelectorAll('.Message
 ```
 Kết quả bị cắt thì in theo từng đoạn (`.slice(20)`…). `navigate` tới `#id` không mở được cuộc. Bỏ qua: bot của David (Trợ lý David, Sổ nhớ, BotFather, Hermes), Saved Messages, kênh sưu tầm (Tri thức huyền học, Câu chuyện hay, Học về …) trừ khi có người khác nhắn.
 
+**Nhóm công ty** (David tổng điều hành đội đối tác công nghệ, nội bộ không công bố): dòng có đuôi `· công ty` trong mục "Ưu tiên" của `TN/ghi-chu.md` (tên nhóm chỉ ghi ở đó, không ghi vào skill hay GitHub). Có tin mới là **luôn mở đọc hết phần mới**, không lọc bằng dòng xem trước. Gom thành mục 🏢 riêng: việc giao (ai · việc · hạn), ai hứa gì, vấn đề / vướng, việc chờ David quyết. Câu nào nhắc David hoặc hỏi thẳng David thì đưa lên 🔴 Cần làm.
+
 **Bỏ qua mọi nơi:** quảng cáo, trang tự trả lời, kênh thông báo, sticker/cuộc gọi không kèm chữ (chỉ ghi "gọi nhỡ" nếu người đó gọi ≥2 lần hoặc kèm lời trách).
 
 ## Quy trình
@@ -68,6 +70,9 @@ Nguồn · mốc từ … tới … · chỉ đọc.
 ## 1. Việc David cần làm
 | # | Người | Nền tảng | Việc | Gấp (Cao/Vừa/Thấp/Chờ) |
 
+## 1b. Công ty (nhóm `· công ty` trong ghi-chu.md)
+| Loại (Giao/Hứa/Vướng/Chờ David quyết) | Ai | Việc | Hạn |
+
 ## 2. Quyết định / thoả thuận mới
 ## 3. Gia đình, đời thường
 ## 4. Bỏ qua được
@@ -90,6 +95,7 @@ Xếp "Gấp": có hạn chót gần hoặc người nhắn lại nhiều lần 
 1. <Người> (<nền tảng>): <việc, ≤1 dòng>
 …
 ⏳ Đang chờ người khác: <Người>: <việc>; …
+🏢 Công ty: Giao: <ai · việc · hạn>; … · Hứa: … · Vướng: … · Chờ anh quyết: <số>. <việc>
 🤝 Thoả thuận mới: …
 🏠 Đời thường: …
 📇 Danh bạ: ghi <n> điều cho <Người A>, <Người B>… · trùng điều anh đã ghi: <Người>: <điều> (dd/mm); …

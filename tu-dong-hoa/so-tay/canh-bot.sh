@@ -16,6 +16,10 @@ TT="$DATA/.trang-thai"
 TEN="so-tay"
 KENH="$HOME/.claude/channels/so-tay"   # thư mục riêng: phiên Claude khác không thấy token nên không giành bot
 TOKEN_FILE="$KENH/.env"
+# Mã đăng nhập dài hạn của Claude (~1 năm, David tự tạo bằng "claude setup-token", không lên GitHub): có thì bot dùng mã này,
+# không phụ thuộc đăng nhập Terminal (đăng nhập thường có lúc mất khi Mac ngủ + mất mạng lâu, gặp 17/11 19:44).
+# Phiên lịch / phiên việc hiện trong app (Remote Control) vẫn cần đăng nhập thường.
+MA_FILE="$KENH/claude-token"
 DRIVE="$HOME/Library/CloudStorage/GoogleDrive-covandieuhanh@gmail.com/Drive của tôi/sao-luu-mac/so-tay"
 mkdir -p "$TT"
 LOG="$TT/canh-bot.log"
@@ -35,7 +39,9 @@ caffeinate -is -w $$ &
 sid() { screen -ls 2>/dev/null | awk -v t=".$TEN" '$1 ~ t"$" {print $1; exit}'; }
 dang_chay() { [ -n "$(sid)" ]; }
 may_chu() { pgrep -fx ".*/bun server\.ts" | head -1; }  # khớp đúng tiến trình, không khớp lệnh khác có chữ "bun server.ts"
-tai_khoan() { claude auth status 2>/dev/null | python3 -c "import json,sys;d=json.load(sys.stdin);print(d.get('email','') if d.get('loggedIn') else '')" 2>/dev/null; }
+co_ma() { [ -s "$MA_FILE" ]; }
+tai_khoan_bot() { co_ma && echo "ma-dai-han" || tai_khoan; } # bot dùng mã dài hạn nếu có, không thì đăng nhập thường
+tai_khoan() { env -u CLAUDE_CODE_OAUTH_TOKEN claude auth status 2>/dev/null | python3 -c "import json,sys;d=json.load(sys.stdin);print(d.get('email','') if d.get('loggedIn') else '')" 2>/dev/null; }
 tai_khoan_app() { # tài khoản app Claude trên Mac đang dùng = thư mục phiên app vừa được ghi gần nhất (chỉ đọc tên thư mục, không đụng mã đăng nhập)
   ls -td "$HOME/Library/Application Support/Claude/claude-code-sessions"/*/*/ 2>/dev/null | head -1 | awk -F/ '{print $(NF-2)}'; }
 tuoi_phien() { echo $(( $(date +%s) - $(cat "$TT/mo-luc" 2>/dev/null || echo 0) )); }
@@ -66,7 +72,7 @@ tat_bot() { # tắt mọi phiên bot (kể cả phiên thừa) và máy chủ Te
   sleep 3; pkill -f "^claude --channels" 2>/dev/null; sleep 1; }
 mo_bot() { # $1 lý do
   echo "$(date +%s)" >> "$TT/lan-mo"
-  screen -dmS "$TEN" -h 2000 bash -c "cd '$DATA' && TELEGRAM_STATE_DIR=$KENH MCP_TIMEOUT=120000 ENABLE_TOOL_SEARCH=false ENABLE_CLAUDEAI_MCP_SERVERS=false CLAUDE_CODE_DISABLE_AUTO_MEMORY=1 exec claude --channels plugin:telegram@claude-plugins-official --permission-mode dontAsk --model opus"
+  screen -dmS "$TEN" -h 2000 bash -c "cd '$DATA' && { [ -s '$MA_FILE' ] && export CLAUDE_CODE_OAUTH_TOKEN=\$(cat '$MA_FILE'); }; TELEGRAM_STATE_DIR=$KENH MCP_TIMEOUT=120000 ENABLE_TOOL_SEARCH=false ENABLE_CLAUDEAI_MCP_SERVERS=false CLAUDE_CODE_DISABLE_AUTO_MEMORY=1 exec claude --channels plugin:telegram@claude-plugins-official --permission-mode dontAsk --model opus"
   date +%F > "$TT/mo-ngay"; echo "$TK" > "$TT/tai-khoan"; date +%s > "$TT/mo-luc"; rm -f "$TT/ban-tu" "$TT/mat-mang-tu" "$TT/noi-lai"
   ghi "mo phien bot ($1)"
   # Mở lại liên tục (>4 lần trong 30 phút) là có lỗi không tự sửa được.
@@ -85,6 +91,10 @@ danh_thuc_chrome() { pgrep -x "Google Chrome" >/dev/null || open -ga "Google Chr
 het_bu() { # $1 tên việc, $2 "YYYY-MM-DD HH:MM" giờ gốc: giờ (epoch) hết hạn chạy bù theo lich-chay.md
   local h=$(grep -E "· $1( ·|$)" "$GOC/../lich/lich-chay.md" | grep -oE 'bù [0-9]+h' | head -1 | tr -dc 0-9)
   echo $(( $(date -j -f "%Y-%m-%d %H:%M" "$2" +%s 2>/dev/null || echo "$BAY") + ${h:-1} * 3600 )); }
+mo_dang_nhap() { # mất đăng nhập thường: mở Terminal "claude auth login" một lần mỗi lần mất (David bấm cho phép; không đăng nhập thay)
+  [ -f "$TT/da-mo-dang-nhap" ] && return
+  osascript -e 'tell application "Terminal" to activate' -e 'tell application "Terminal" to do script "claude auth login"' >/dev/null 2>&1
+  touch "$TT/da-mo-dang-nhap"; ghi "mo Terminal dang nhap"; }
 noi_telegram() { lsof -nP -a -p "$1" -iTCP -sTCP:ESTABLISHED 2>/dev/null | grep -q ':443'; }
 
 while true; do
@@ -112,13 +122,19 @@ while true; do
     dang_chay && { tat_bot; ghi "bot chinh la Hermes: tat phien bot So nho"; }
   else
   if [ ! -s "$TOKEN_FILE" ]; then ghi "chua co token"; sleep 300; continue; fi
-  TK=$(tai_khoan)
+  TK=$(tai_khoan_bot)
   if [ -z "$TK" ]; then
     ghi "chua dang nhap Claude"; dang_chay && tat_bot
-    canh_bao dang-nhap 21600 "Claude trên Mac chưa đăng nhập (hoặc hết hạn), bot đang tắt. Mở Claude trên Mac đăng nhập lại, bot tự chạy lại sau 5 phút."
-    sleep 300; continue
+    if [ "$SAN_SANG" = 1 ]; then mo_dang_nhap; canh_bao dang-nhap 21600 "Claude trong Terminal bị đăng xuất (app Claude không liên quan), bot đang tắt. Em đã mở Terminal đăng nhập: trên trình duyệt anh chọn tài khoản rồi bấm cho phép, bot tự chạy lại sau 1 phút. Muốn hết hẳn lỗi này: tạo mã dài hạn (claude setup-token, xem tu-dong-hoa/so-tay/README.md)."; fi
+    sleep 60; continue
   fi
 
+  if co_ma && [ "$SAN_SANG" = 1 ]; then
+    if [ -z "$(tai_khoan)" ]; then
+      mo_dang_nhap; canh_bao dang-nhap-lich 21600 "Claude trong Terminal bị đăng xuất. Bot vẫn chạy (mã dài hạn), nhưng phiên lịch 7:00 và việc giao cần đăng nhập: em đã mở Terminal, anh bấm cho phép trên trình duyệt."
+    else rm -f "$TT/da-mo-dang-nhap"; fi
+  fi
+  co_ma || rm -f "$TT/da-mo-dang-nhap"
   # 1. Đúng một phiên bot đang chạy.
   SO=$(screen -ls 2>/dev/null | awk -v t=".$TEN" '$1 ~ t"$"' | wc -l | tr -d ' ')
   if [ "$SO" -gt 1 ]; then ghi "co $SO phien, tat bot thua"; tat_bot; fi
