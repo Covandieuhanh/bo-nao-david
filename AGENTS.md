@@ -60,5 +60,6 @@ Muốn hiểu toàn bộ hệ dựng video: [tong-quan.md](ky-nang/san-xuat-vide
 
 ## Giữ bộ não luôn mới
 
+- **Hai bộ não, tự xếp đúng nhà:** nội dung về công ty Veltrix (đội, thành viên, khách của công ty, giải pháp như Văn Phòng Shop, tiền, hợp đồng, quyết định điều hành) → ghi vào bộ não công ty `~/Documents/bo-nao-veltrix` theo `AGENTS.md` ở đó, đẩy bằng `bash ~/Documents/bo-nao-veltrix/dong-bo.sh`. Chuyện của David (nghề, nội dung, kênh, khách cá nhân, đời tư, skill) → bộ não này. Một nội dung có cả hai phần thì tách ra ghi hai nơi; không rõ thuộc bên nào thì hỏi David một câu. Không chép dữ liệu công ty vào đây, không chép hồ sơ David sang bên kia. Máy chưa có thư mục đó: `git clone https://github.com/Covandieuhanh/veltrix.git ~/Documents/bo-nao-veltrix`.
 - Cuối mỗi việc làm theo `ky-nang/chuan-muc-lam-viec.md` mục 4: ghi góp ý đúng một chỗ, cập nhật `bao-cao-trang-thai.md` / file `du-an/`, đẩy GitHub (luật 6).
 - Mọi tên file, thư mục, skill, ghi nhớ đi từ **thuật ngữ kinh doanh tiếng Anh chuẩn**, dịch đúng nghĩa sang tiếng Việt không dấu, chữ thường, gạch nối (ví dụ Projects → `du-an`). Tra và bổ sung ở [co-so-tri-thuc/bang-thuat-ngu.md](co-so-tri-thuc/bang-thuat-ngu.md), mỗi thuật ngữ một bản dịch. Ghi nhớ chỉ đúng cho một máy đặt tên bắt đầu `thiet-bi-`, không đưa lên repo.

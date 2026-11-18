@@ -43,4 +43,10 @@ print("Tắt tự cập nhật Claude Code (cập nhật thứ 6 trong lịch do
 # Mọi phiên mở ra đều bật Remote Control để hiện trong app Claude (điện thoại, claude.ai/code) cho David theo dõi (David 14/11/2026)
 cfg["remoteControlAtStartup"] = True
 print("Mọi phiên tự bật Remote Control (hiện trong app)")
+# Bộ não công ty (Veltrix, kho private riêng): mọi phiên đọc/ghi được, để tự xếp nội dung công ty sang đó (David 18/11/2026)
+cty = os.path.expanduser("~/Documents/bo-nao-veltrix")
+if os.path.isdir(cty):
+    ad = cfg.setdefault("permissions", {}).setdefault("additionalDirectories", [])
+    if cty not in ad: ad.append(cty)
+    print(f"Mọi phiên ghi được bộ não công ty: {cty}")
 json.dump(cfg, open(p, "w"), ensure_ascii=False, indent=2)
