@@ -312,7 +312,7 @@ while true; do
       [ $(( BAY - MLUC )) -lt 180 ] && { echo "$MLUC|$MID|$MLAN" >> "$TT/mo-lich.tmp"; continue; }
       MS=$(screen -ls 2>/dev/null | awk -v t=".lich-$MID" '$1 ~ t"$" {print $1; exit}'); [ -z "$MS" ] && continue
       rm -f "$TT/man-lich.txt"; screen -S "$MS" -p 0 -X hardcopy "$TT/man-lich.txt" 2>/dev/null; sleep 1
-      MH=$(LC_ALL=C tr -d '\000' < "$TT/man-lich.txt" 2>/dev/null | grep -v '^[[:space:]]*$'); rm -f "$TT/man-lich.txt"
+      MH=$(LC_ALL=C tr -d '\000' < "$TT/man-lich.txt" 2>/dev/null | grep -av '^[[:space:]]*$'); rm -f "$TT/man-lich.txt"
       echo "$MH" | grep -qE "Enter to confirm|Esc to cancel|Do you trust|\(y/n\)" || continue   # phiên đang chạy bình thường
       if [ "$MLAN" -lt 2 ] && echo "$MH" | grep -qE "trust|tin cậy" && echo "$MH" | grep -qE "Documents/bo-nao-(david|veltrix)"; then
         screen -S "$MS" -X stuff $'\033[B'; sleep 0.5; screen -S "$MS" -X stuff $'\r'

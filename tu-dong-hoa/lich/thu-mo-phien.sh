@@ -9,9 +9,9 @@ for i in $(seq 1 36); do
   sleep 5; S=$(screen -ls 2>/dev/null | awk '$1 ~ /\.lich-thu-mo-phien$/ {print $1; exit}')
   [ -z "$S" ] && { echo "phiên thử tự tắt trước khi trả lời"; break; }
   rm -f "$MH"; screen -S "$S" -p 0 -X hardcopy "$MH" 2>/dev/null; sleep 0.5
-  if LC_ALL=C tr -d '\000' < "$MH" 2>/dev/null | grep -v "Chỉ trả lời" | grep -q "THU-MO-PHIEN-OK"; then KQ=0; break; fi
-  LC_ALL=C tr -d '\000' < "$MH" 2>/dev/null | grep -qE "Enter to confirm|Esc to cancel|Do you trust|\(y/n\)" && [ $i -ge 4 ] && break
+  if LC_ALL=C tr -d '\000' < "$MH" 2>/dev/null | grep -av "Chỉ trả lời" | grep -aq "THU-MO-PHIEN-OK"; then KQ=0; break; fi
+  LC_ALL=C tr -d '\000' < "$MH" 2>/dev/null | grep -aqE "Enter to confirm|Esc to cancel|Do you trust|\(y/n\)" && [ $i -ge 4 ] && break
 done
-[ $KQ = 0 ] && echo "đạt: phiên lịch mở và trả lời bình thường" || { echo "hỏng, màn hình phiên thử:"; LC_ALL=C tr -d '\000' < "$MH" 2>/dev/null | grep -v '^[[:space:]]*$' | head -20; }
+[ $KQ = 0 ] && echo "đạt: phiên lịch mở và trả lời bình thường" || { echo "hỏng, màn hình phiên thử:"; LC_ALL=C tr -d '\000' < "$MH" 2>/dev/null | grep -av "^[[:space:]]*$" | head -20; }
 for s in $(screen -ls 2>/dev/null | awk '$1 ~ /\.lich-thu-mo-phien$/ {print $1}'); do screen -S "$s" -X quit; done
 rm -f "$MH"; exit $KQ
