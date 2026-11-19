@@ -98,7 +98,7 @@ tin David trong hướng đó.
 "chữa lành" · tư vấn thuế, pháp lý · chuyện người khác không ẩn danh · hứa thu nhập.
 **Tài chính:** cam kết lợi nhuận · gọi lệnh mua/bán cụ thể · thiếu cảnh báo rủi ro · nhắc đơn vị không được cấp phép.
 **Trainer:** trị liệu, chẩn đoán tâm lý · nhắc vai coach trên kênh công khai · nói giá trên video.
-**Gói công nghệ:** hứa kết quả gói chưa làm ra thật.
+**Gói công nghệ:** hứa kết quả gói chưa làm ra thật. Giá sản phẩm công nghệ của David được công bố (tự quảng bá), không phải lằn ranh.
 Chạm → **luôn cảnh báo trong phiếu và báo cáo**: mốc giây, lời chạm, rủi ro. Mặc định **giữ lời, không tự cắt** (David có thể đã tự cân đối khi kể); David muốn cắt thì nói ở bản cuối. Ghi "đã cảnh báo" vào sổ; chữ đồ hoạ, tiêu đề, thumbnail, mô tả, clip ngắn vẫn không lấy nội dung đó.
 
 ## 4. Bảy kết luận

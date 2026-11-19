@@ -19,7 +19,7 @@ Luật phát hành chung (3 tiêu đề, thumbnail, khung bìa, màn kết, chư
 ## Luật kênh David (`ho-so-thuong-hieu/kenh.json`, áp cho mọi bài lên kênh thương hiệu)
 - **Lịch:** thứ Ba + thứ Sáu 20:00 giờ Việt Nam (hẹn giờ bằng chức năng có sẵn của nền tảng).
 - **Mô tả / caption:** tóm ý theo lời David + câu hỏi "Vấn đề" / "Kết quả"; bài **Mời** thêm "nhắn mình một chữ 'gỡ'" + link nhắn tin trang
-  (`kenh.fanpage.link_nhan_tin`); không nói giá. YouTube thêm chương nếu > 3 phút. Giọng văn + hashtag: `ho-so-thuong-hieu/giong-thuong-hieu-david.md`.
+  (`kenh.fanpage.link_nhan_tin`); bài con người không nói giá, bài công nghệ được nói giá sản phẩm công nghệ. YouTube thêm chương nếu > 3 phút. Giọng văn + hashtag: `ho-so-thuong-hieu/giong-thuong-hieu-david.md`.
 - **Bình luận ghim (mọi kênh)** theo kiểu dẫn dắt của bài (khối 08): Không → "Bạn đang ở đâu? Bình luận **Vấn đề** (vì sao chưa làm
   được) hoặc **Kết quả** (làm được thì kết quả là gì)." · Gợi mở → một câu hỏi tự soi gắn với bài + mời bình luận "Vấn đề" / "Kết
   quả" · Mời → "nhắn mình một chữ 'gỡ'". Clip ngắn thêm cuối: "Bản đầy đủ: [link YouTube]". Mẫu đã duyệt: `../19-dang-bai/mau-ke-hoach-dang.md`.

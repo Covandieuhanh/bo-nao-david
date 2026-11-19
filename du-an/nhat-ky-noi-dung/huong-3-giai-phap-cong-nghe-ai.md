@@ -26,3 +26,22 @@ Mốc: giây trên `nguon-dai.mp4` của tập (đã bỏ phần số học).
 | Vai David: phát hiện và gọi tên nỗi đau | "Em bóc tách được và đặt tên được những cái nỗi đau của mọi người" | 2017–2030 (33:37) | khách không gọi tên được vấn đề | buổi chẩn đoán | câu định vị |
 | Muốn hợp tác: khách viết ra nỗi đau, nhu cầu, định nghĩa "ok" bằng số (50 khách, 4,5 sao) | "chị viết ra các nỗi đau của chị, nhu cầu của chị trước… ok là ở đây nó phải có 50 khách" | 2024–2070 (33:44) | mục tiêu mơ hồ | phiếu đầu vào giải pháp | bước đầu phễu: phiếu nỗi đau + mục tiêu đo được |
 | Câu mở dùng lại từ hướng 2: phép thử nỗi đau | "không giải quyết được bất kỳ nỗi đau và nhu cầu nào thì đấy không phải marketing" | 2798 (46:38) | — | — | câu mở tư vấn |
+
+## 19/11/2026 · tap-may-do-giai-phap-ai · tối ngồi ghế đá với một anh đàn anh làm doanh nghiệp
+Bản theo hướng: bản dài ngang ~15 phút (Facebook cá nhân, fanpage) + 3 clip dọc A, B, C · Trạng thái: chờ dựng
+| Ý | Lời gốc | Mốc | Nỗi đau / mục tiêu | Bán được gì | Dùng cho việc |
+|---|---|---|---|---|---|
+| May đo giải pháp như may bộ vét: cùng làm video, nhu cầu mỗi người khác | "Giống như kiểu may đo cái giải pháp công nghệ đấy cho chính xác cái người đấy" | 570–607 (9:30) | công cụ chung không vừa việc mình | giải pháp may đo | câu định vị |
+| Khoá học AI trên mạng: ai cũng học, ít người làm ra; cái khó là đặt mục tiêu cho AI theo đúng sản phẩm | "về bản chất AI thì ai cũng có thể triển được nhưng mà quan trọng nhất đó là dùng nó như thế nào" | 628–702 (10:28) | học AI không ra kết quả | gói công nghệ kèm đào tạo | câu chạm nỗi đau |
+| Mỗi quán trà chanh một tệp, một địa điểm → sản phẩm phải theo định hình của chủ | "quán này thì bán ở khu dân cư, quán này bán tại công viên nó lại hoàn toàn khác nhau luôn" | 727–766 (12:07) | — | — | ví dụ |
+| Thu phí tư vấn chứ không thu phí sản phẩm; phải có bản dùng thử (lời anh đối diện) | "mình kiếm được tiền ở cái giá trị mình tư vấn… chứ không phải là thu phí sản phẩm" | 845–891 (14:05) | — | mô hình thu tiền | soát phễu |
+| Vai David: xin nỗi đau → tự bỏ chi phí làm demo → buổi hai mới may đo, báo giá | "anh ơi, anh có nỗi đau thì anh chia sẻ với em" | 902–975 (15:02) | khách chưa hình dung giải pháp | bước đầu phễu: demo theo nỗi đau | kịch bản buổi một |
+| Số hoá tác vụ lặp lại vài trăm lần thành một cú bấm | "nó số hóa cho mình thành một cái click thôi" | 1250–1264 (20:50) | việc lặp tốn người | số hoá việc lặp | — |
+| AI là bỏ tiền mua thời gian; muốn vậy phải huấn luyện con AI ít nhất một tuần | "mình bỏ một khoản tiền thì mình mua cái thời gian thôi" | 1696–1734 (28:16) | tưởng mua AI là chạy ngay | gói kèm huấn luyện | giải thích giá |
+| Một app chỉ giải một nỗi đau, không nhét nhiều tính năng | "thà là mình đâm vào đúng một mũi nhọn" | 1803–1829 (30:03) | app loạn, chậm | giải pháp một mũi nhọn | nguyên tắc thiết kế |
+| Đào tạo con AI từ ngu thành thông minh trong một lĩnh vực: bên làm lo 80%, khách đưa 20% sản phẩm thật | "80% là của chúng tôi… thì 20% là bạn phải nhét sản phẩm của bạn vào" | 1831–1880 (30:31) | không biết phần nào mình phải làm | gói AI đã huấn luyện | nói rõ khách cần làm gì (lằn ranh hướng 3) |
+| Hai tầng giá: con dùng chung trên máy chủ 3 triệu / con may riêng theo giọng văn 8 triệu | "3 triệu một cái con đấy cho một người… customize riêng… thì là 8 triệu mang về" | 1956–1982 (32:36) | so giá rẻ | bảng giá gói video AI | câu báo giá |
+| Ca khách bất động sản (ẩn danh): dùng con AI cho cả vài chục người trái thoả thuận → video ra một khuôn, lượt xem từ vài nghìn xuống vài trăm | "thành ra là đang view từ 5–6.000 view, 7–8.000 view thành có vài trăm view" | 1990–2041 (33:10) | dùng chung một khuôn | lý do chọn bản may riêng | câu chuyện khi báo giá |
+| Thuật toán nền tảng là AI nên nhận ra khuôn chung; bản may riêng có đặc tính riêng | "con 8 triệu thì nó đã có một cái đặc tính riêng" | 2105–2143 (35:05) | lượt xem tụt | — | giải thích kỹ thuật dễ hiểu |
+| Muốn giá trị chất lượng thì phải bỏ tiền nhiều hơn | "Ông muốn tạo ra giá trị chất lượng thì ông phải bỏ tiền nhiều hơn" | 2180–2189 (36:20) | — | — | câu chốt |
+

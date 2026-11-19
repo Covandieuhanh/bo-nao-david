@@ -72,4 +72,4 @@ Tìm hiểu → mời → phiếu đầu vào → thống nhất → làm trên 
 
 **Hướng 2, trainer:** công khai là trainer, coach chỉ trong buổi riêng · không trị liệu, không chẩn đoán; chuyển người khủng hoảng tâm lý tới chuyên môn có cấp phép.
 
-**Hướng 3, giải pháp công nghệ AI:** chỉ hứa kết quả mà gói, giải pháp làm ra được thật (đã chạy trên chính David hoặc cho khách thật) · nói rõ khách cần làm gì, mất bao lâu · ca khách chỉ đăng khi David đưa chi tiết; tên khách doanh nghiệp ẩn đi trừ khi khách đồng ý nêu tên · không nêu tên đơn vị phía sau (nói "đội của mình", "đội công nghệ" thì được).
+**Hướng 3, giải pháp công nghệ AI:** chỉ hứa kết quả mà gói, giải pháp làm ra được thật (đã chạy trên chính David hoặc cho khách thật) · nói rõ khách cần làm gì, mất bao lâu · ca khách chỉ đăng khi David đưa chi tiết; tên khách doanh nghiệp ẩn đi trừ khi khách đồng ý nêu tên · không nêu tên đơn vị phía sau (nói "đội của mình", "đội công nghệ" thì được) · được công bố giá sản phẩm công nghệ để tự quảng bá.

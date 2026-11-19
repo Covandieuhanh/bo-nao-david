@@ -29,7 +29,7 @@ description: "Khối 08 phần kết: màn chốt nguyên văn, thẻ cuối, d�
   bài do phiếu lọc (khối 00) gán theo tỉ lệ **4 Không · 4 Gợi mở · 2 Mời** (bài thứ 5 và 10 mỗi chục là Mời):
   - **Không** → mô tả + ghim mời bình luận đúng một trong hai từ: "**Vấn đề**" (đang kẹt) / "**Kết quả**" (làm được).
   - **Gợi mở** → mô tả + ghim: một câu hỏi tự soi gắn với bài + mời bình luận "Vấn đề" / "Kết quả".
-  - **Mời** → mô tả + ghim: "Nhắn mình một chữ **'gỡ'**…" — KHÔNG nói giá, không nói gói, không hứa kết quả.
+  - **Mời** → mô tả + ghim: "Nhắn mình một chữ **'gỡ'**…" — không hứa kết quả; bài con người không nói giá, không nói gói; bài công nghệ (hướng 3) được nói giá sản phẩm công nghệ.
   David tự nói câu mời / câu hỏi trong video → màn chốt dùng đúng câu đó. Bài Facebook cá nhân (đời thường) không cần dẫn dắt kiểu kênh.
 - **Thẻ cuối** (video ngang / dọc dài): nhận diện (chủ đề + DAVID, ~1,6 s) mọi video có chủ đề; dẫn bản đầy đủ = "Bản đầy đủ trên kênh
   …" + tên tập gốc + người nói (`the_cuoi_s`). Không nút phát, không logo nền tảng, không câu gợi tò mò tự viết.
