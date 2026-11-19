@@ -186,7 +186,7 @@ Mẫu: `~/Movies/tap-di-trainer/3-doan-noi-bat/clip-{A,B,C}`, thành phẩm ở 
 ## Điều không làm
 - Không viết thêm, không đổi chữ của người nói trên clip; không ghép câu tạo ra ý người nói không nói.
 - Không đổi loại video (podcast không thành người nói, người nói không thành toàn đồ hoạ); không cắt thẳng hình đồ hoạ ngang vào khung dọc.
-- Không giọng đọc AI thay người nói; không đưa giá, gói dịch vụ, lời bán hàng vào clip.
+- Không giọng đọc AI thay người nói; không thêm lời bán hàng vào clip; giá chỉ hiện khi chính người nói nêu và là sản phẩm công nghệ (hướng 3), bài con người không nói giá, không gói.
 - Không đốt phụ đề bằng ffmpeg (`subtitles=`/`drawtext` — ffmpeg Homebrew không có libass/freetype); phụ đề luôn qua Remotion
   theo chuẩn chung `kieu-phu-de.js`; không phủ phụ đề lên video đã có phụ đề đốt sẵn.
 
