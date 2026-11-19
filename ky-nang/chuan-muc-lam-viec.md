@@ -63,6 +63,7 @@ Trong 4 phần, cách chọn từng điểm:
 - **Công cụ David đã cài là để nâng skill:** thấy công cụ trên máy giúp việc tốt hơn mà skill chưa dùng thì đề xuất tích hợp (diễn giải
   ngắn trước khi sửa skill), giữ cách cũ làm dự phòng khi công cụ lỗi.
 - **Không dùng mod giao diện:** không cài mod, plugin vẽ bảng hay thanh tiến độ, dòng trên ô nhập; chỉ giữ plugin Telegram. Muốn mod mới thì hỏi David trước.
+- **Thêm việc không phá việc cũ:** bổ sung việc, tính năng mới thì việc cũ phải chạy y như trước. Chỉ đổi phần cũ khi 4 phần đã duyệt ghi rõ. Sửa thứ dùng chung (script lịch, máy canh, hook) thì tự thử lại việc cũ trước khi báo xong. Mọi thứ phải tự động, không trông vào David bấm tay (ghi nhớ `quy-tac-them-viec-khong-pha-viec-cu`).
 - Đăng, gửi, xoá, mật khẩu: `AGENTS.md` luật 4.
 
 ## 4. Cuối việc

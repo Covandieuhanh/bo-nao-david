@@ -19,6 +19,7 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 - [Thử bằng đoạn ngắn](quy-tac-thu-bang-doan-ngan.md) — thử skill video bằng một đoạn trọn một ý, cho David xem bản cuối (09/11)
 - [Gói trainer dạy cách chung](quy-tac-goi-trainer-chung.md) — mỗi gói một kỹ năng thuần, mọi AI, máy của học viên; không tư duy, chi tiết David chỉ là kết quả mẫu (13/11)
 - [david.md chỉ điều cố định](quy-tac-david-md-chi-dieu-co-dinh.md) — ý tưởng, dự định chưa khẳng định (sang Đức) không tính vào việc đang làm, ghi du-an/danh-sach-y-tuong.md (12/11, 17/11)
+- [Thêm việc không phá việc cũ](quy-tac-them-viec-khong-pha-viec-cu.md) — việc mới không làm hỏng việc cũ, chỉ sửa phần cũ khi 4 phần đã duyệt ghi rõ; sửa xong tự thử việc cũ; mọi thứ tự động (19/11)
 - [Tự hỏi khi mơ hồ](quy-tac-tu-hoi-khi-mo-ho.md) — 6 tín hiệu tự dừng hỏi, kể cả giữa chừng (05/11)
 
 ## Bộ não và GitHub
