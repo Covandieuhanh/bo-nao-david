@@ -19,7 +19,7 @@ Về sau chỉ cần mở một file là thấy toàn bộ ý của hướng đ�
 - **Chỉ thêm, không sửa mục cũ**; mục mới nhất ở cuối file. Một tập chạm nhiều hướng → một mục ở mỗi file hướng đó.
 - **Đủ ý, không bịa**: mỗi ý một dòng, có lời gốc ngắn (nguyên văn, ≤ 1 câu) và mốc để tìm lại trong tập.
 - **Ẩn danh**: khách, người được nhắc tên viết theo vai ("chủ quán", "bạn hướng dẫn viên"). Không ghi giá khách trả, số điện thoại,
-  chuyện riêng. Không nêu đơn vị phía sau (hồ sơ 4.7, hướng 3).
+  chuyện riêng. Không nêu tên đơn vị phía sau; "đội của mình", "đội công nghệ" thì ghi được (hồ sơ 4.7, hướng 3).
 - Ý thuộc **đội đối tác công nghệ** (khách của công ty, giải pháp cụ thể đang làm) ghi bên bộ não Veltrix; ở đây chỉ ghi ý của David.
 - Máy gom `san-pham-hoa` đọc các file này làm nguồn "lời trong video" (không phân loại lại).
 

@@ -4,7 +4,7 @@ description: "Nhật ký nội dung hướng 3 giải pháp công nghệ AI (s�
 
 # Nhật ký nội dung — Hướng 3: Giải pháp công nghệ AI
 
-Luật ghi và khung mục: [README.md](README.md). Lằn ranh hướng này: chỉ hứa kết quả làm ra được thật, không nêu đơn vị phía sau,
+Luật ghi và khung mục: [README.md](README.md). Lằn ranh hướng này: chỉ hứa kết quả làm ra được thật, không nêu tên đơn vị phía sau ("đội của mình" thì được),
 tên khách doanh nghiệp ẩn trừ khi khách đồng ý.
 
 ## 19/11/2026 · tap-marketing-noi-dau-nhu-cau · buổi 1:1 ở quán cà phê với một chị đang vận hành quán

@@ -12,7 +12,7 @@ Người lướt qua trang hiểu ngay trong 5 giây: **David là trainer, giúp
 
 ## 1. Định vị
 - **Câu định vị:** *Trainer giúp người và doanh nghiệp làm chủ, bằng con người và công nghệ AI.*
-- **Bên ngoài chỉ thấy David:** người có năng lực giải quyết vấn đề trong các lĩnh vực mình định hướng. Không nhắc vai điều hành, không nêu đơn vị phía sau; giải pháp làm cho khách kể là "giải pháp mình làm cho khách".
+- **Bên ngoài chỉ thấy David:** người có năng lực giải quyết vấn đề trong các lĩnh vực mình định hướng. Không nhắc vai điều hành, không nêu tên đơn vị phía sau (nói "đội của mình", "đội công nghệ" thì được); giải pháp làm cho khách kể là "giải pháp mình làm cho khách".
 - **Hai lĩnh vực, một cách làm:** đứng cạnh, dẫn từng bước, tới khi người học tự làm được.
   - **Con người:** người lần đầu dẫn người, muốn làm chủ bản thân → công việc → các mối quan hệ (ba tầng làm chủ).
   - **Công nghệ AI:** hộ kinh doanh, doanh nghiệp nhỏ dưới 20 người, chủ tự làm, kẹt việc lặp lại → số hoá đúng vấn đề, kèm đào tạo tới khi đội dùng ra kết quả.
@@ -36,7 +36,7 @@ Người lướt qua trang hiểu ngay trong 5 giây: **David là trainer, giúp
 - **Tỉ lệ:** công nghệ (trụ 1 + 4) ~50% · con người ~30% · đời thường ~20%. Tỉ lệ tính trên 4 bài viết kèm ảnh mỗi tuần; video không tính vào lịch (mục Video sẵn, `lich-dang-bai.md`).
 - **Dẫn dắt:** bài viết kèm ảnh luôn kết bằng gợi mở chia sẻ (mục 4), không lời mời từ khoá; bài video theo tỉ lệ Không · Gợi mở · Mời 4 · 4 · 2 (`kenh.json`). Không nói giá, không hứa kết quả chưa làm ra.
 - **Không đăng ở đây:** tài chính, giao dịch hàng hoá (chỉ YouTube David Trần Official).
-- **Lằn ranh:** ca khách chỉ đăng khi David đưa chi tiết; tên khách ẩn trừ khi khách đồng ý; không nêu đơn vị phía sau.
+- **Lằn ranh:** ca khách chỉ đăng khi David đưa chi tiết; tên khách ẩn trừ khi khách đồng ý; không nêu tên đơn vị phía sau.
 
 ## 4. Năm kiểu bài nền (không cần video)
 Dùng khi tuần không có video hoặc không có nguyên liệu mới; mọi ý lấy từ việc thật David đang làm, không bịa ca, không bịa số. Kiểu bài là **ý**; cách viết luôn theo **khung kể chuyện** dưới.
