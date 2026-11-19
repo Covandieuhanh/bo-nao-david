@@ -8,7 +8,7 @@ Luật ghi và khung mục: [README.md](README.md). Lằn ranh hướng này: ch
 tên khách doanh nghiệp ẩn trừ khi khách đồng ý.
 
 ## 19/11/2026 · tap-marketing-noi-dau-nhu-cau · buổi 1:1 ở quán cà phê với một chị đang vận hành quán
-Bản theo hướng: bản vừa ~13 phút (S4, S7–S9) + clip dọc · Trạng thái: chờ dựng
+Bản theo hướng: bản vừa 11:45 (S4, S7–S9) + clip dọc · Trạng thái: đã dựng 19/11 (`4-ban-huong-3/video-huong-3.mp4`), clip dọc chưa làm, chưa đăng
 Mốc: giây trên `nguon-dai.mp4` của tập (đã bỏ phần số học).
 
 | Ý | Lời gốc | Mốc | Nỗi đau / mục tiêu | Bán được gì | Dùng cho việc |
