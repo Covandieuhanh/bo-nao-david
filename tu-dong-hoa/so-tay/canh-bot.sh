@@ -56,7 +56,7 @@ LS_BOT="$HOME/.claude/projects/-Users-moon-Documents-2-ca-nhan-so-tay"
 da_nhan() { # $1 nội dung, $2 khoá: tin thẻ máy đã vào lịch sử phiên bot chưa (dòng có đầu tin + giờ khung ở cuối)
   find "$LS_BOT" -name '*.jsonl' -mmin -120 -print0 2>/dev/null | xargs -0 grep -hF -- "${1:0:24}" 2>/dev/null | grep -qF -- " ${2:0:16}\""; }
 xoa_cho() { [ -f "$TT/cho-bot" ] && { grep -vF -- "$1" "$TT/cho-bot" > "$TT/cho-bot.tmp"; mv "$TT/cho-bot.tmp" "$TT/cho-bot"; }; }
-man_hinh() { rm -f "$TT/man-hinh.txt"; screen -S "$(sid)" -p 0 -X hardcopy "$TT/man-hinh.txt" 2>/dev/null; sleep 1; tr -d '\000' < "$TT/man-hinh.txt" 2>/dev/null; }
+man_hinh() { rm -f "$TT/man-hinh.txt"; screen -S "$(sid)" -p 0 -X hardcopy "$TT/man-hinh.txt" 2>/dev/null; sleep 1; LC_ALL=C tr -d '\000' < "$TT/man-hinh.txt" 2>/dev/null; }
 gui_thang() { BAO_CAO_KHONG_CHO=1 bash "$GOC/bao-cao.sh" --chi-gui "$1" >/dev/null 2>&1; } # gửi David, không qua Claude (lỗi thì vòng sau tự thử lại, không vào hàng chờ)
 tre_nhan() { # $1 "YYYY-MM-DD HH:MM" giờ hẹn: trễ quá 60 phút thì in nhãn trễ
   local t=$(date -j -f "%Y-%m-%d %H:%M" "$1" +%s 2>/dev/null || echo "$BAY")
@@ -312,7 +312,7 @@ while true; do
       [ $(( BAY - MLUC )) -lt 180 ] && { echo "$MLUC|$MID|$MLAN" >> "$TT/mo-lich.tmp"; continue; }
       MS=$(screen -ls 2>/dev/null | awk -v t=".lich-$MID" '$1 ~ t"$" {print $1; exit}'); [ -z "$MS" ] && continue
       rm -f "$TT/man-lich.txt"; screen -S "$MS" -p 0 -X hardcopy "$TT/man-lich.txt" 2>/dev/null; sleep 1
-      MH=$(tr -d '\000' < "$TT/man-lich.txt" 2>/dev/null | grep -v '^[[:space:]]*$'); rm -f "$TT/man-lich.txt"
+      MH=$(LC_ALL=C tr -d '\000' < "$TT/man-lich.txt" 2>/dev/null | grep -v '^[[:space:]]*$'); rm -f "$TT/man-lich.txt"
       echo "$MH" | grep -qE "Enter to confirm|Esc to cancel|Do you trust|\(y/n\)" || continue   # phiên đang chạy bình thường
       if [ "$MLAN" -lt 2 ] && echo "$MH" | grep -qE "trust|tin cậy" && echo "$MH" | grep -qE "Documents/bo-nao-(david|veltrix)"; then
         screen -S "$MS" -X stuff $'\033[B'; sleep 0.5; screen -S "$MS" -X stuff $'\r'
