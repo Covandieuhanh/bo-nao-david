@@ -25,5 +25,5 @@ Gốc: [bản đồ bộ não](README.md). Định hướng: [chien-luoc-nghe-ng
 ## Máy gom và đóng gói
 - [skill san-pham-hoa](../ky-nang/san-pham-hoa/SKILL.md) — quy trình gom đêm, đóng gói thứ 6.
 - [du-an/san-pham-hoa.md](../du-an/san-pham-hoa.md) — kế hoạch, lịch chạy, kết quả lượt thử.
-- [du-an/dong-goi/](../du-an/dong-goi/2026-11-15.md) — phiếu đóng gói tuần (ẩn danh): nỗi đau, bổ sung gói, bài phễu nháp, ý video.
+- [du-an/dong-goi/](../du-an/dong-goi/2026-11-20.md) — phiếu đóng gói tuần (ẩn danh, mới nhất 20/11, tuần trước [15/11](../du-an/dong-goi/2026-11-15.md)): nỗi đau, bổ sung gói, bài phễu nháp, ý video.
 - Lời giao lịch: [gom-phan-loai-dem](../tu-dong-hoa/lich/loi-giao/gom-phan-loai-dem.md) · [dong-goi-tuan](../tu-dong-hoa/lich/loi-giao/dong-goi-tuan.md)
