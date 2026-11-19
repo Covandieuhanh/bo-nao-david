@@ -28,7 +28,7 @@ Mốc: giây trên `nguon-dai.mp4` của tập (đã bỏ phần số học).
 | Câu mở dùng lại từ hướng 2: phép thử nỗi đau | "không giải quyết được bất kỳ nỗi đau và nhu cầu nào thì đấy không phải marketing" | 2798 (46:38) | — | — | câu mở tư vấn |
 
 ## 19/11/2026 · tap-may-do-giai-phap-ai · tối ngồi ghế đá với một anh đàn anh làm doanh nghiệp
-Bản theo hướng: bản dài ngang ~15 phút (Facebook cá nhân, fanpage) + 3 clip dọc A, B, C · Trạng thái: chờ dựng
+Bản theo hướng: bản dài ngang 15:24 (Facebook cá nhân, fanpage) + 3 clip dọc A, B, C · Trạng thái: đã dựng 19/11, chờ đăng
 | Ý | Lời gốc | Mốc | Nỗi đau / mục tiêu | Bán được gì | Dùng cho việc |
 |---|---|---|---|---|---|
 | May đo giải pháp như may bộ vét: cùng làm video, nhu cầu mỗi người khác | "Giống như kiểu may đo cái giải pháp công nghệ đấy cho chính xác cái người đấy" | 570–607 (9:30) | công cụ chung không vừa việc mình | giải pháp may đo | câu định vị |
