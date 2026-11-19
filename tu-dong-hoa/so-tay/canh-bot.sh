@@ -315,7 +315,7 @@ while true; do
       MH=$(LC_ALL=C tr -d '\000' < "$TT/man-lich.txt" 2>/dev/null | LC_ALL=C grep -av '^[[:space:]]*$'); rm -f "$TT/man-lich.txt"
       echo "$MH" | LC_ALL=C grep -aqE "Enter to confirm|Esc to cancel|Do you trust|\(y/n\)" || continue   # phiên đang chạy bình thường
       if [ "$MLAN" -lt 2 ] && echo "$MH" | LC_ALL=C grep -aqE "trust" && echo "$MH" | LC_ALL=C grep -aqE "Documents/bo-nao-(david|veltrix)"; then
-        screen -S "$MS" -X stuff $'\033[B'; sleep 0.5; screen -S "$MS" -X stuff $'\r'
+        screen -S "$MS" -p 0 -X stuff $'\033[B'; sleep 1; screen -S "$MS" -p 0 -X stuff $'\r'
         ghi "canh som lich $MID: hop hoi tin cay thu muc bo nao, tu chon Yes"; echo "$BAY|$MID|$(( MLAN + 1 ))" >> "$TT/mo-lich.tmp"
       else
         gui_thang "⚠️ Phiên lịch $MID đang kẹt ở một câu hỏi trên màn hình (máy không tự trả lời được):
