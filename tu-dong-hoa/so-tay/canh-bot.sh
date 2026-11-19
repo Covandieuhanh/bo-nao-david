@@ -299,8 +299,42 @@ while true; do
       bash "$GOC/../lich/chay-lich.sh" "$ID" >/dev/null 2>>"$LOG" && ghi "chay lich $ID (phien hien trong app)"
     fi
     echo "$khoa" >> "$TT/da-lich-chay"
+    echo "$BAY|$ID|0" >> "$TT/mo-lich"
     [ -n "$(fm "$LG" kiem)" ] && echo "$BAY|$ID|$GOC_LUC|1" >> "$TT/kiem-lich"
   done
+
+  # Canh sớm (19/11: phiên lịch kẹt ở hộp hỏi "tin cậy thư mục" suốt 3 tiếng): 3 phút sau khi mở phiên lịch, chụp màn hình.
+  # Hộp hỏi tin cậy thư mục của chính bộ não (bo-nao-david, bo-nao-veltrix) thì tự chọn "Yes"; hộp lạ thì nhắn David ngay kèm màn hình.
+  if [ -s "$TT/mo-lich" ]; then
+    : > "$TT/mo-lich.tmp"
+    while IFS='|' read -r MLUC MID MLAN; do
+      [ -z "$MID" ] && continue
+      [ $(( BAY - MLUC )) -lt 180 ] && { echo "$MLUC|$MID|$MLAN" >> "$TT/mo-lich.tmp"; continue; }
+      MS=$(screen -ls 2>/dev/null | awk -v t=".lich-$MID" '$1 ~ t"$" {print $1; exit}'); [ -z "$MS" ] && continue
+      rm -f "$TT/man-lich.txt"; screen -S "$MS" -p 0 -X hardcopy "$TT/man-lich.txt" 2>/dev/null; sleep 1
+      MH=$(tr -d '\000' < "$TT/man-lich.txt" 2>/dev/null | grep -v '^[[:space:]]*$'); rm -f "$TT/man-lich.txt"
+      echo "$MH" | grep -qE "Enter to confirm|Esc to cancel|Do you trust|\(y/n\)" || continue   # phiên đang chạy bình thường
+      if [ "$MLAN" -lt 2 ] && echo "$MH" | grep -qE "trust|tin cậy" && echo "$MH" | grep -qE "Documents/bo-nao-(david|veltrix)"; then
+        screen -S "$MS" -X stuff $'\033[B'; sleep 0.5; screen -S "$MS" -X stuff $'\r'
+        ghi "canh som lich $MID: hop hoi tin cay thu muc bo nao, tu chon Yes"; echo "$BAY|$MID|$(( MLAN + 1 ))" >> "$TT/mo-lich.tmp"
+      else
+        gui_thang "⚠️ Phiên lịch $MID đang kẹt ở một câu hỏi trên màn hình (máy không tự trả lời được):
+$(echo "$MH" | head -15 | cut -c1-120)
+Anh mở phiên \"Lịch · $MID\" trong app Claude trả lời giúp." && ghi "canh som lich $MID: ket hop hoi la, bao David" || echo "$MLUC|$MID|$MLAN" >> "$TT/mo-lich.tmp"
+      fi
+    done < "$TT/mo-lich"
+    mv "$TT/mo-lich.tmp" "$TT/mo-lich"
+  fi
+
+  # Tự thử khi lệnh mở phiên lịch bị sửa (luật: thêm việc mới không được làm hỏng việc cũ): chay-lich.sh đổi thì mở thử một phiên y hệt,
+  # trả lời được thì ghi sổ; kẹt thì nhắn David ngay, khỏi đợi tới giờ lịch.
+  CL_SUM=$(md5 -q "$GOC/../lich/chay-lich.sh" 2>/dev/null)
+  if [ "$SAN_SANG" = 1 ] && [ -n "$CL_SUM" ] && [ "$CL_SUM" != "$(cat "$TT/chay-lich.md5" 2>/dev/null)" ]; then
+    echo "$CL_SUM" > "$TT/chay-lich.md5"
+    ( if KQ=$(bash "$GOC/../lich/thu-mo-phien.sh" 2>&1); then ghi "tu thu chay-lich.sh: dat"
+      else ghi "tu thu chay-lich.sh: hong"; gui_thang "⚠️ Lệnh mở phiên lịch vừa bị sửa và mở thử thì hỏng (lịch sáng mai sẽ kẹt):
+$(echo "$KQ" | tail -12 | cut -c1-120)"; fi ) &
+  fi
 
   # Kiểm kết quả lịch ("kiem: <file>", {ngay} = ngày của lịch): 90 phút sau khi mở phiên mà file chưa có / chưa mới / còn dòng CHUA-DOC-DUOC
   # (Chrome chưa nối, hết hạn mức, phiên treo) thì tự chạy lại một lần; lần 2 vẫn chưa được thì nhắn David.
@@ -316,7 +350,7 @@ while true; do
         danh_thuc_chrome; echo "$LUC|$KID|$KGOC|$LAN" >> "$TT/kiem-lich.tmp"  # chờ Chrome nối rồi mới chạy lại
         canh_bao "chrome-$KID" 21600 "việc lịch $KID chưa đọc được vì Chrome chưa nối. Anh mở Chrome, bấm biểu tượng Claude trên thanh tiện ích là máy tự chạy lại."
       elif [ "$LAN" -lt 2 ] && [ "$(het_bu "$KID" "$KGOC")" -gt "$BAY" ]; then
-        bash "$GOC/../lich/chay-lich.sh" "$KID" "$KGOC" >/dev/null 2>>"$LOG" && ghi "kiem lich $KID ($KGOC): chua dat, chay lai"
+        bash "$GOC/../lich/chay-lich.sh" "$KID" "$KGOC" >/dev/null 2>>"$LOG" && { ghi "kiem lich $KID ($KGOC): chua dat, chay lai"; echo "$BAY|$KID|0" >> "$TT/mo-lich"; }
         echo "$BAY|$KID|$KGOC|$(( LAN + 1 ))" >> "$TT/kiem-lich.tmp"
       else
         gui_thang "⚠️ Việc lịch $KID (${KGOC:11:5} ${KGOC:8:2}/${KGOC:5:2}) chạy $LAN lần vẫn chưa ra kết quả đủ. Anh mở phiên \"Lịch · $KID\" trong app Claude xem giúp (có thể Chrome chưa nối, trang đòi đăng nhập, hoặc hết hạn mức Claude)." \
