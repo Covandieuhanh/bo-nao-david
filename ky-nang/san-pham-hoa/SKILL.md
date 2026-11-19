@@ -32,7 +32,7 @@ Gọi tắt `KG/` = `~/Documents/2-ca-nhan/so-tay/kho-du-lieu/`.
 ## Nguồn (script `tu-dong-hoa/thu-thap-du-lieu/gom.py` lo, không tốn token)
 Lời David gõ trong mọi phiên Claude (bỏ phiên bot Sổ nhớ vì bot đã ghi vào sổ, bỏ lời ngắn kiểu "ok") · phần mới của sổ nhớ
 (việc, ý tưởng, kiến thức, lịch hẹn, nhật ký, báo cáo phiên) · tổng hợp tin nhắn mỗi sáng · lời trong video (chép lời bản gốc, bỏ bản
-trùng và thư mục `thu-…`) · bài đăng, số liệu, danh mục video (chỉ khi đã điền số). Mốc lần trước ở `KG/.moc.json`.
+trùng và thư mục `thu-…`; tập đã có mục trong nhật ký nội dung theo hướng `du-an/nhat-ky-noi-dung/` thì lấy ý từ đó, không phân loại lại) · bài đăng, số liệu, danh mục video (chỉ khi đã điền số). Mốc lần trước ở `KG/.moc.json`.
 
 ## Việc 1 — Phân loại mỗi đêm (lịch 23:00)
 1. `python3 -I tu-dong-hoa/thu-thap-du-lieu/gom.py` (ở thư mục bộ não). In "Không có gì mới" → dừng, không báo.

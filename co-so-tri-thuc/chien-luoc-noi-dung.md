@@ -16,7 +16,7 @@ description: "Chiến lược nội dung (david.md mục 5, 8): kênh video, b�
 
 ## 8. Bộ lọc nội dung
 
-- **Bước 1, phân hướng:** nội dung thuộc hướng nào (4.1): tài chính → David Trần Official · phát triển bản thân → kênh trainer · còn lại → trang khác, hướng về gói công nghệ.
+- **Bước 1, phân hướng:** chia tài nguyên thành đoạn theo ý, gán đủ ba hướng (4.1): tài chính → David Trần Official · phát triển bản thân → kênh trainer · giải pháp công nghệ AI → trang khác, hướng về gói công nghệ. Hướng nào có ý trọn ra một bản riêng; mọi ý ghi nhật ký nội dung theo hướng `du-an/nhat-ky-noi-dung/` (khối 00 mục 0b).
 - **Bước 2, câu hỏi gốc theo hướng:**
   - Tài chính: có giúp người xem hiểu giao dịch hàng hoá hợp pháp thêm một bước, và tin David trong lĩnh vực này không?
   - Trainer: có giúp người xem **tự làm chủ bản thân** (tiền, thị trường, con người của chính họ) hoặc áp dụng vào công việc của họ thêm một bước không?

@@ -37,7 +37,7 @@ David thường chỉ gửi tài nguyên (video, ghi âm) mà không kèm yêu c
 | Việc | Skill | Đường dẫn |
 |---|---|---|
 | Có video hoặc ghi âm mới, đăng bài, lọc nội dung | `phan-phoi-da-kenh` | [SKILL.md](ky-nang/san-xuat-video/phan-phoi-da-kenh/SKILL.md) |
-| Lọc nội dung có đáng làm không | khối 00 | [README.md](ky-nang/san-xuat-video/mo-dun/00-sang-loc-noi-dung/README.md) |
+| Lọc nội dung có đáng làm không, phân một video theo ba hướng nghề (mỗi hướng một bản), ghi nhật ký nội dung theo hướng | khối 00 mục 0b | [README.md](ky-nang/san-xuat-video/mo-dun/00-sang-loc-noi-dung/README.md) · [du-an/nhat-ky-noi-dung/](du-an/nhat-ky-noi-dung/README.md) |
 | Dựng video tự quay, ghép vlog | `dung-video-theo-phong-cach` | [SKILL.md](ky-nang/san-xuat-video/dung-video-theo-phong-cach/SKILL.md) |
 | Podcast thành video đồ hoạ | `dung-podcast` | [SKILL.md](ky-nang/san-xuat-video/dung-podcast/SKILL.md) |
 | Học cách trình bày từ video mẫu David gửi | `phan-tich-video-mau` | [SKILL.md](ky-nang/san-xuat-video/phan-tich-video-mau/SKILL.md) |

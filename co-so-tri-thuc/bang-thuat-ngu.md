@@ -59,6 +59,8 @@ tiếng Anh chuẩn → dùng đúng cột "Tên dùng"; chưa có thì thêm m�
 | Notebook (bot) | Sổ tay | `so-tay` |
 | Task List | Danh sách việc | `danh-sach-viec` |
 | Journal | Nhật ký | `nhat-ky` |
+| Content Journal | Nhật ký nội dung (theo hướng nghề) | `nhat-ky-noi-dung` |
+| Direction Mapping | Phân hướng (từng đoạn theo hướng nghề) | `phan-huong` |
 | Raw Footage | Tư liệu gốc | `tu-lieu-goc` |
 | Final Deliverables | Thành phẩm | `thanh-pham` |
 | Episode | Tập | `tap` |
