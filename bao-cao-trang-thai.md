@@ -45,6 +45,7 @@ Ra tiền (David chốt 13/11/2026), ba hướng chạy song song (`co-so-tri-th
 | Liên kết tri thức (14/11, [lien-ket-tri-thuc.md](du-an/lien-ket-tri-thuc.md), luật [quy-uoc-lien-ket.md](co-so-tri-thuc/quy-uoc-lien-ket.md)) | Đã triển khai, không dùng app Obsidian: mọi file có mô tả, chỉ mục tự sinh `co-so-tri-thuc/chi-muc.md`, 6 trang `ban-do/`, ghi chú `co-so-tri-thuc/kien-thuc/`, máy kiểm link chạy trong `dong-bo.sh` (link gãy thì không đẩy) | Sổ tay riêng đã nối 14/11 (chỉ trên máy). Đo lại `do-truy-xuat.py` khi kho lớn thêm nhiều |
 
 ## Câu hỏi còn mở với David
+- (19/11, #30) Lịch tự chạy đã sửa kẹt hộp hỏi tin cậy thư mục (canh sớm 3 phút, tự thử khi sửa `chay-lich.sh`). Còn chờ David gõ một lần `! sudo pmset repeat wakeorpoweron MTWRFSU 06:55:00` để Mac tự thức trước lịch 07:00.
 
 1. **Cắt lại Clip 1 và 2 của Đi trainer theo luật mới?** Chấm theo 4 câu của skill mới: Clip 1 không đạt (dừng ở cú sốc, chưa có lời giải, không có gì mang về); Clip 2 thiếu bối cảnh ("anh ấy" là ai); Clip 3 đạt, hơi vướng chữ "câu chuyện này". Hôm 07/11 David nói "mọi thứ ok" nhưng không trả lời riêng câu này, nên **chưa được cắt và chưa coi là giữ nguyên**: hỏi lại một câu. Nếu cắt lại thì chốt lại mẫu chuẩn và kế hoạch đăng.
 2. **"Bạn ấy" hay "bạn em" ở khoảng 5:12 video dài Mục tiêu?** Máy chép hai lần ra khác nhau. Clip dùng "bạn ấy", phụ đề video dài còn "bạn em". Nếu David xác nhận "bạn ấy" thì sửa phụ đề video dài và render lại phần phụ đề.
