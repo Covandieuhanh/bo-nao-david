@@ -26,6 +26,11 @@ python3 -I $SKILL/scripts/phu-de.py "$P"          # kiem-tra/goc/moc-tung-tu.srt
   diễn đạt lại, giữ cả "thì", "là", "cái".
 - **Câu bị mất / câu bịa**: script bỏ câu kiểu "Hãy subscribe cho kênh…"; nếu chỗ đó người nói có nói thật (vd. "Xin chào"
   cuối video) thì đối chiếu `kiem-tra/lam-sach/ban-chep-loi.srt` (lần chạy khác) + `am-luong.txt` và thêm tay.
+- **Khớp tiếng, không chỉ đúng chữ** (19/11/2026: phụ đề đã soát chữ của tập marketing lệch tới 14 s ở chỗ lời người kia chen vào không
+  có phụ đề, phát hiện sau render 54 phút): trước render đầy đủ chạy
+  `python3 -I $SKILL/scripts/soat-khop-tieng.py <video> <phu-de.json> [--tu --den] [--sua <ra.json>]` (≈ 45 s mỗi phút video, chạy nền).
+  Lệch > 3 s = P0, sửa bằng `--sua` (chỉ thay dòng lệch lớn); lệch 1,5–3 s dồn một chỗ → nghe lại. Cắt bản theo hướng / clip từ phụ đề
+  bản dài: chép lời lại chính đoạn ghép (không nhạc) rồi canh mốc theo đó.
 - **Chỗ ngắt dòng**: không tách đôi từ ghép ("chia | sẻ", "giải | trình"); ngắt trước từ nối (thì, là, nhưng, mà…).
 Lớp motion graphic có chữ đang hiện → phụ đề ẩn đúng khoảng đó (phu-de.jsx `LOP`, chuong-trinh.jsx `nhuong`). Highlight: `danh-sach-cat-doan-noi-bat.py` chia dòng bằng quy hoạch động — ngắt ở hết câu / dấu phẩy / trước từ nối, không ngắt sau "rất, của, là, những…".
 Phụ đề nằm trong dải 140 px ở **đáy vùng an toàn**; cảnh toàn màn hình chừa trống dải này (vị trí lớp phủ: khối 05). Render tự động

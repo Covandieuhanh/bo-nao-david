@@ -1,5 +1,6 @@
 // Render cảnh thành ProRes 4444 có kênh alpha (xem-truoc-ban-dung.py ghép lên video gốc): node xuat-video.mjs [id ...]  (id 'hai-ben' = hai bên khung ngang, 'phu-de' = phụ đề)
 import fs from 'node:fs';
+import {spawnSync} from 'node:child_process';
 import path from 'node:path';
 import {bundle} from '@remotion/bundler';
 import {renderMedia, selectComposition} from '@remotion/renderer';
@@ -9,6 +10,17 @@ import output from './src/dau-ra.js';
 const out = path.resolve('../tu-lieu');
 fs.mkdirSync(out, {recursive: true});
 const only = new Set(process.argv.slice(2));
+const FULL_RENDER = only.size === 0;
+// CỔNG TỰ CHỌN (19/11/2026, David: "mọi lựa chọn đều phải được tự động setup phù hợp với nội dung của tài nguyên nguồn"):
+// render đầy đủ chỉ chạy khi soát cảnh không còn P0 — gồm cả "chưa chẩn đoán" (ke-hoach-canh.md mục Chẩn đoán) và "cả video một kiểu lớp phủ".
+// BO_QUA_SOAT=1 chỉ khi David cho phép.
+{
+  const SOAT = path.join(process.env.HOME, '.claude/skills/dung-video-theo-phong-cach/scripts/soat-canh.mjs');
+  if (FULL_RENDER && !process.env.BO_QUA_SOAT && fs.existsSync(SOAT)) {
+    const r = spawnSync('node', [SOAT, path.resolve('..')], {stdio: 'inherit'});
+    if (r.status === 1) { console.error('DỪNG: soát cảnh còn P0 (../kiem-tra/soat.md). Sửa kịch bản rồi render lại.'); process.exit(1); }
+  }
+}
 // KHOÁ RENDER (11/11/2026: ghép bản cuối lúc the_cuoi còn đang render → video mất màn kết 20 s): xem-truoc-ban-dung.py thấy khoá thì dừng
 const KHOA = path.join(out, '.dang-render'); fs.writeFileSync(KHOA, String(process.pid));
 process.on('exit', () => fs.rmSync(KHOA, {force: true}));

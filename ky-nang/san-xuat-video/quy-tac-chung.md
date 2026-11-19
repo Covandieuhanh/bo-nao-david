@@ -14,6 +14,10 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
 - **Thẩm mỹ chỉ giữ chữ ký nhận diện** (`thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0): xem video nào cũng nhận ra cùng một người làm.
   Ngoài chữ ký là sáng tạo tự do theo nội dung; học được gì từ mẫu cũng dùng được, và học chỉ thêm vào kho, không thay cái đã có
   (`thiet-ke-bo-cuc/README.md` mục 4).
+- **Mọi lựa chọn tự setup theo nội dung nguồn** (David chốt 19/11/2026: *"mọi thứ cần phát huy tối đa được sức mạnh của AI, mọi lựa
+  chọn đều phải được tự động setup phù hợp với nội dung của tài nguyên nguồn"*): khuôn, bố cục, lớp thông tin, kiểu cảnh, thẩm mỹ,
+  nhạc, khung đều do Claude chọn theo dấu hiệu của chính tài nguyên (`thiet-ke-bo-cuc/tu-chon.md`), không chép từ tập trước, không chờ
+  David chỉ. Máy chặn render khi chưa chẩn đoán (`soat-canh.mjs`).
 - **Hiểu hơn cầu kì.** Kho học được là để chọn cho hợp từng loại nội dung, không nhét hết vào một video. Mỗi video chỉ dùng vài kiểu
   hợp nhất, tự cân; hiệu ứng nào không giúp người xem hiểu nhanh hơn thì bỏ. Rối hay lỗi hình → bớt, không thêm.
 

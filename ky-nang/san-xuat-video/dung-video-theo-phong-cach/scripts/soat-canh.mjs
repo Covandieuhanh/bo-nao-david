@@ -21,7 +21,7 @@ if (fs.existsSync(path.join(SRC, 'canh.js'))) {
 } else if (fs.existsSync(path.join(SRC, 'danh-sach-cat.js'))) {   // ghép vlog, highlight người nói: lớp phủ phẳng, không có props
   const e = await imp('danh-sach-cat.js');
   list = (e.OVERLAYS || []).map((o, i) => ({id: o.id || `${o.type}-${i + 1}`, ...o}));
-  duration = e.TOTAL ? e.TOTAL / (e.FPS || 30) : 0;
+  duration = e.TOTAL || 0;   // TOTAL của khuôn ghép đã là giây (19/11/2026: chia FPS lần nữa → độ dài sai, giữ cảnh tính sai)
 }
 let HS = {};
 try { HS = JSON.parse(read('ho-so.json')); } catch {}
@@ -105,6 +105,24 @@ for (let i = 1; i < chuoi.length; i++) {
   const a = chuoi[i - 1], b = chuoi[i];
   if (kieu(a) === kieu(b) && b.tu_buoc == null)
     bao('P2', b.start, b.id, `cùng kiểu "${kieu(b)}" với cảnh liền trước "${a.id}"`, 'đổi kiểu một cảnh, hoặc vẽ tiếp mạch (tu_buoc)');
+}
+// CỔNG TỰ CHỌN (tu-chon.md, 19/11/2026 — 6 tập dựng bằng khuôn ghép không có chẩn đoán, cả video chỉ chữ nhấn + tít):
+// (1) phải có ke-hoach-canh.md mục "## Chẩn đoán" ở thư mục dự án; (2) cả video một kiểu lớp phủ nội dung → P0, trừ khi
+// ke-hoach-canh.md ghi "Một kiểu có chủ đích: <lý do>". Lớp cố định (dấu kênh, tít, màn chốt…) không tính là kiểu.
+{
+  let kh = ''; try { kh = fs.readFileSync(path.join(P, 'ke-hoach-canh.md'), 'utf8'); } catch {}
+  if (!/^##\s*Chẩn đoán/m.test(kh))
+    bao('P0', 0, 'ke-hoach-canh.md', 'chưa chẩn đoán, chưa tự chọn theo nội dung', 'chạy chan-doan.py rồi ghi mục "## Chẩn đoán" theo thiet-ke-bo-cuc/tu-chon.md');
+  else if (!/Thẩm mỹ:/.test(kh))
+    bao('P1', 0, 'ke-hoach-canh.md', 'chẩn đoán chưa có dòng "Thẩm mỹ:" (nền, kiểu hình, chuyển cảnh, nhạc)', 'tu-chon.md bước 2b');
+  const CO_DINH = new Set(['hud', 'title', 'pinTitle', 'teaserTag', 'cta', 'hook', 'round', 'outro', 'location']);
+  const loai = new Set(list.map(flat).filter((x) => !CO_DINH.has(x.type)).map(kieu));
+  const coY = /Một kiểu có chủ đích:/.test(kh);
+  if (duration >= 45 && loai.size <= 1 && !coY)
+    bao('P0', 0, 'cả video', `chỉ ${loai.size ? `một kiểu lớp phủ (${[...loai][0]})` : 'không có lớp phủ nội dung'} suốt ${fmt(duration)} s`,
+      'đi lại tu-chon.md bước 4 cho từng ý (liệt kê, so sánh, bước, con số, câu đắt…), hoặc ghi "Một kiểu có chủ đích: …"');
+  else if (duration >= 300 && loai.size <= 2 && !coY)
+    bao('P1', 0, 'cả video', `video ${fmt(duration / 60)} phút chỉ ${loai.size} kiểu lớp phủ (${[...loai].join(', ')})`, 'xem lại tu-chon.md bước 4');
 }
 // mở đầu 3 giây
 if (false && list.length && !list.map(flat).some((s) => s.start <= 0.5 && ['hook', 'chips', 'pow', 'kinetic'].includes(s.type)))

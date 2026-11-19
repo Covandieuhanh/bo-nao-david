@@ -105,8 +105,13 @@ cp $SKILL/assets/nhac/*.mp3 "$E/chuyen-dong/public/hieu-ung-am-thanh/"          
 timeline cho lớp phủ; `TONE` + `MUSIC.tracks`; `CTA` = câu kêu gọi nguyên văn (nếu có); `HL = {…, bar: false}` (không thanh tập gốc).
 Claude chỉnh tiếp trong danh-sach-cat.js:
 - **Phụ đề**: sửa chính tả, tô `hl` từ khoá (từ trong `hl` hiện màu cam khi tới nhịp của nó).
-- **OVERLAYS** (mốc bằng `TS(<giây trong moc-tung-tu.srt>)`; mọi chữ nguyên văn): `pow` cụm đắt đúng lúc nói (cú chốt, ≤ 14 ký tự/dòng) · `action` khi câu HANHDONG
-  (`quote` nguyên văn) · `chips` khi người nói đếm/liệt kê. Mật độ theo nội dung: dày hơn ở `soi`, thưa hơn ở `lang`.
+- **Chẩn đoán trước** (bắt buộc, render bị chặn nếu thiếu): `python3 -I $BASE/scripts/chan-doan.py "$E"` + đọc `$E/kiem-tra/goi-y-kieu.md`
+  (máy dò dạng từng câu) → ghi `$E/ke-hoach-canh.md` mục `## Chẩn đoán` (khuôn, thẩm mỹ, bảng ý → kiểu) theo `../thiet-ke-bo-cuc/tu-chon.md`.
+  Không chép lớp phủ của clip / tập trước.
+- **OVERLAYS** theo bảng ý → kiểu (mốc bằng `TS(<giây>)`; mọi chữ nguyên văn): liệt kê / bước → `illus list` · `chips` · `diagram tang` ·
+  so sánh, đổi ý → `illus vs` · `diagram tu-thanh` · con số người nói → `illus count` · nhân quả → `illus flow` · `diagram chuyen-giao` ·
+  giao việc → `action` (`quote` nguyên văn) · câu hỏi đắt → `callout` · cú chốt → `pow` (≤ 14 ký tự/dòng). **pow không phải mặc định.**
+  Nền cảnh `phong: 'hat'` cho đoạn lắng. Mật độ theo nội dung: dày hơn ở `soi`, thưa hơn ở `lang`.
 - **Hình**: không zoom vào / ra (quy-tac-chung mục 2); có thể `replay` khoảnh khắc đắt.
 - `CTA.kind` theo việc được kêu gọi (lưu → `save`, bình luận → `comment`…); không có câu kêu gọi → không đặt `CTA` (luật 4).
 - **Thẻ tít mở** (luật 7): `{type: 'pow', start: 0, end: 2.5, text: '<TÍT nguyên văn>', y: 300}` — nửa trên khung, tách khỏi phụ đề.

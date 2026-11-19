@@ -9,6 +9,7 @@ import LIFT from './nang-lop.js';
 import GUARD from './bao-ve.js';
 import HS from './ho-so.json';
 import {Illus} from './thu-vien/minh-hoa';
+import {PhongCtx} from './thu-vien/phong';   // nền cảnh 'hat' (19/11/2026)
 import {Diagram} from './thu-vien/so-do';   // sơ đồ nói thay lời + ảnh khung bo góc (khối 07)   // cảnh minh hoạ toàn màn hình — 2 trạng thái (khối 07, thư viện dùng chung)
 import {holdEnds} from './thu-vien/giu';   // giữ cảnh ≥ 1,2 s sau chữ cuối (khối 07, hồ sơ chung canh_minh_hoa.giu_sau_s)
 // 2 TRẠNG THÁI (hồ sơ hai_trang_thai): lớp chữ đè người (pow, chips, location, nameCard, replay, pointer, callout) tự vẽ toàn màn hình
@@ -763,8 +764,10 @@ const FullOv = ({children}) => {
   );
 };
 
-const IllusOv = ({start, len, ...o}) => <Illus {...o} start={start} len={len} />;
-const DiagramOv = ({start, len, ...o}) => <Diagram {...o} start={start} len={len} />;
+// phong (nền cảnh, tu-chon.md bước 2b): 'hat' chạy ở khuôn ghép; 'nguoi-mo' cần public/goc.mp4 (khuôn 1 video) → ở đây về nền tối mặc định
+const NenOv = ({phong, children}) => <PhongCtx.Provider value={{phong: phong === 'hat' ? 'hat' : null, khungDau: 0}}>{children}</PhongCtx.Provider>;
+const IllusOv = ({start, len, phong, ...o}) => <NenOv phong={phong}><Illus {...o} start={start} len={len} /></NenOv>;
+const DiagramOv = ({start, len, phong, ...o}) => <NenOv phong={phong}><Diagram {...o} start={start} len={len} /></NenOv>;
 // MỖI LÚC MỘT CHỖ CHỮ (David chốt 2026-11-08): lớp motion graphic có chữ đang hiện → phụ đề nhường (ẩn đúng khoảng đó, phần
 // còn lại của dòng vẫn hiện). Không tính lớp chạy suốt clip (dấu góc, tít ghim, nhãn teaser).
 const KHONG_CHU = new Set(['pinTitle', 'hud', 'teaserTag']);

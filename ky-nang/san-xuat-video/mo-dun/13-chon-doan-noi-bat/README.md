@@ -121,7 +121,7 @@ Viết `$P/phuong-an.json` — mỗi clip một mục trong `options` (A, B, C�
 ```bash
 python3 -I $SKILL/scripts/kiem-am-luong.py "$P"           # dải █/▁ quanh từng mốc + mốc đề xuất
 ```
-Theo mốc đề xuất (sửa phuong-an.json). "⚠ lệch > 1 s" → nhìn dải xác nhận; "⚠ nói liền" → giữ mốc Whisper, hoặc lấy luôn chữ
+Mốc ngoài `phuong-an.json` (cắt bản theo hướng, nối đoạn): `diem-ngat.py <video> <giây>…` (khối 02). Theo mốc đề xuất (sửa phuong-an.json). "⚠ lệch > 1 s" → nhìn dải xác nhận; "⚠ nói liền" → giữ mốc Whisper, hoặc lấy luôn chữ
 nối ("Nhưng…") nếu câu vẫn đúng nghĩa, rồi để bước kiểm lời quyết. Rồi:
 ```bash
 python3 -I $SKILL/scripts/cat-doan-noi-bat.py "$P"          # cắt bản kiểm lời cat/A.mp4, cat/B.mp4… (chạy nền)

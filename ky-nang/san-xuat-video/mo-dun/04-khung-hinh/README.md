@@ -27,7 +27,9 @@ description: "Khối 04 khung hình: đổi khung ngang ↔ dọc, bám người
 zsh $SKILL/scripts/phan-tich-doi-khung.sh "$P"           # chạy nền; lần đầu biên dịch bộ dò mặt ~2 phút
 ```
 Dò mặt bằng Vision của macOS (không cài gì thêm), gom thành người A, B… (từ trái sang), đoán người nói từng câu
-theo độ cử động miệng. Xem `kiem-tra/doi-khung/vet-chu-the.jpg` (ô màu = ai là ai), `ke-hoach.md` (shot, người, ✓/?),
+theo độ cử động miệng. **Hai người ngồi xa máy (mặt < ~6 % khung, quán, buổi 1:1)**: đoán bằng miệng và bảng tách giọng pyannote (khúc
+8 s) đều sai nhiều (19/11/2026) → khung cố định người nói chính, `follow: true` để bám khi người đó dịch chỗ, chỉ chuyển sang người
+kia ở câu chắc chắn của họ (nghe lại); xem `canh-quay.jpg` trước `apply`. Xem `kiem-tra/doi-khung/vet-chu-the.jpg` (ô màu = ai là ai), `ke-hoach.md` (shot, người, ✓/?),
 `canh-quay.jpg` (khung vàng = phần giữ lại). Sửa `ke-hoach.json` khi cần: shot `?` → đọc câu nói để biết ai nói;
 người bị khung cắt nửa mặt → đặt `cx` (0–1); slide/cảnh rộng/vật cần thấy → `target: "wide"`; người đi lại → `follow: true`.
 Sau khi sửa: `python3 -I $SKILL/scripts/ke-hoach-doi-khung.py "$P" sheet` để xem lại. Rồi:

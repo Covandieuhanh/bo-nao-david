@@ -8,8 +8,27 @@ Học nhiều thì phải **dùng được**. Kho (`bo-cuc.md`, khối 07, `thu-
 **cách gọi món**: từ dấu hiệu của video ra bố cục, lớp thông tin, kiểu cảnh. Claude tự chọn, không hỏi, ghi "đã chọn X vì Y" vào
 `ke-hoach-canh.md` (mục **Chẩn đoán**) để David sửa ở bản cuối.
 
-Áp cho mọi skill dựng (`dung-video-theo-phong-cach`, `dung-podcast`, `cat-doan-noi-bat`). Bước này chạy **ngay sau chép lời + làm sạch,
+Áp cho mọi skill dựng (`dung-video-theo-phong-cach`, `dung-podcast`, `cat-doan-noi-bat`) và **mọi khuôn** (1 video, ghép, podcast). Bước này chạy **ngay sau chép lời + làm sạch,
 trước kế hoạch cảnh**.
+
+## Bước 0 — Nguyên tắc: mọi lựa chọn tự setup theo nội dung nguồn
+
+David chốt 19/11/2026: *"mọi thứ cần phát huy tối đa được sức mạnh của AI, mọi lựa chọn đều phải được tự động setup phù hợp với nội
+dung của tài nguyên nguồn"*. Vì vậy:
+- **Không chép kịch bản, kiểu trình bày của tập trước** làm điểm xuất phát. Mỗi tài nguyên đi lại từ bước 1. Chép được phần kỹ thuật
+  (khuôn, hàm, chữ ký nhận diện), không chép lựa chọn (kiểu cảnh, nền, nhịp, nhạc).
+- Mọi thứ trong kho (bố cục, motion graphics, thẩm mỹ, chuyển cảnh, nhạc) là ứng viên cho mọi video. Chọn theo **dấu hiệu** ở các bảng
+  dưới, ghi "đã chọn X vì Y".
+- **Máy chặn trước render** (`soat-canh.mjs`, chạy tự động trong `xuat-video.mjs` và `xuat-chuong-trinh.mjs`): thiếu mục
+  `## Chẩn đoán` trong `ke-hoach-canh.md` → P0, không render · cả video chỉ một kiểu lớp phủ nội dung → P0, trừ khi ghi
+  `Một kiểu có chủ đích: <lý do>` · thiếu dòng `Thẩm mỹ:` → P1.
+- **Khuôn nào có gì** (19/11/2026: tập dựng bằng khuôn ghép chỉ ra chữ nhấn + tít vì khuôn này thiếu nửa kho):
+
+| Khuôn | Dùng cho | Có sẵn |
+|---|---|---|
+| **1 video** (`khuon-remotion`) | mọi video người nói — **kể cả nhiều file của cùng một buổi nói / cùng cảnh** (nối file trước) · bản dài, bản theo hướng | đủ kho: `nhan`, `bocuc` (the-canh, canh-nguoi, o-nguoi, chuong, muc-luc, tien-trinh), `GHI_CHU`, `CHAPTERS`, `illus`, `diagram`, `ve`, `phong` |
+| **ghép** (`khuon-dung-ghep`) | vlog nhiều cảnh khác nhau, sự kiện · clip ngắn highlight người nói | `illus`, `diagram`, `chips`, `callout`, `action`, `pointer`, `pow`, `nameCard`, `location`, `scene`; nền `phong: 'hat'` |
+| **podcast** | chỉ có tiếng | sân khấu + kho cảnh của khuôn 1 video |
 
 ## Bước 1 — Đo (máy) + nhìn (Claude)
 
@@ -34,6 +53,22 @@ màn hình điện thoại / laptop, bảng, sản phẩm, cảnh); (3) quanh ch
 | Chỉ có tiếng | sân khấu podcast | `dung-podcast` |
 
 **Không dùng "cắt khung 16:9 rồi phóng" để bỏ rác** — rác vẫn còn quanh chủ thể (khối 04). Cắt-phóng chỉ để nắn mép khung.
+
+## Bước 2b — Chọn thẩm mỹ (nền, kiểu hình, chuyển cảnh, nhạc)
+
+Chữ ký nhận diện giữ nguyên (cam, hai font, dấu góc, phụ đề, màn chốt). Phần còn lại chọn theo nội dung, máy đo ở `chan-doan.md`
+mục "Tín hiệu thẩm mỹ", Claude quyết.
+
+| Dấu hiệu | Nền cảnh toàn màn hình | Kiểu hình | Chuyển cảnh | Nhạc (khối 09) |
+|---|---|---|---|---|
+| Kiến thức, giải thích, dày thông tin | tối mặc định (mặc định kênh) | sơ đồ, biểu tượng nét, bảng ghi chú | đổi trên cùng nền, vật lớn dần thành cảnh sau | `kien_thuc` |
+| Hướng 3 công nghệ, quy trình, hệ thống | tối + `phong: 'nguoi-mo'` khi cần giữ mạch người nói | `diagram` chuyen-giao / tu-thanh, `illus flow`, mạch vẽ tiếp (`mach.js`) | màu tràn nền ở đổi phần | `kien_thuc` |
+| Kể chuyện đời, cảm xúc, tâm sự (nhiều câu cảm xúc, nhịp chậm) | `phong: 'hat'` (giấy ảnh) hoặc người mờ | ít hình, chữ nhấn cạnh mặt, cảnh tự vẽ `ve` mềm | tối dần, không chớp trắng (`TONE 'lang'`) | `tam_su` / `y_nghia` |
+| Trò chuyện 1:1, hội thoại | giữ người là chính, nền tối khi cần thấy ý | `the-canh` cạnh người, `illus vs` khi hai góc nhìn | cắt cứng giấu mối + tối nhẹ | theo cảm xúc chủ đạo |
+| Vui, năng lượng, mẹo nhanh | tối + điểm sáng cam | `illus single/list`, `chips`, `pow` | chớp, đẩy nhanh (`TONE 'soi'`) | `vui` |
+| Video dọc ngắn | như dòng nội dung + mỗi lúc một điểm nhìn | hình to, ít chữ | ngắn, ít kiểu | như dòng nội dung |
+
+Ghi một dòng `Thẩm mỹ: nền … · kiểu hình … · chuyển cảnh … · nhạc … vì …` vào `ke-hoach-canh.md` (mục Chẩn đoán).
 
 ## Bước 3 — Chọn lớp thông tin (nội dung → người xem theo dõi bằng gì)
 
@@ -81,14 +116,18 @@ cho đỉnh và ý cần nhìn rõ. **Không có kiểu nào trong bảng mà l�
 `soat-canh.mjs` báo P0: `kinetic`, `action` ở khung ngang · cảnh minh hoạ trống > 1,2 s đầu cảnh · phần tử ngoài cảnh. P1: thẻ > 4 dòng
 ở khung ngang. Gặp P0 → đổi kiểu theo bảng bước 4, không thử render.
 
-## Ghi vào ke-hoach-canh.md
+## Ghi vào ke-hoach-canh.md (thư mục dự án, cạnh `chuyen-dong/`)
 
 ```
 ## Chẩn đoán (thiet-ke-bo-cuc/tu-chon.md)
+Khuôn: <1 video / ghép / podcast> vì <Y>
 Hình: <4 câu trả lời> → bố cục nền: <X> vì <Y>
 Nội dung: <số đo> → lớp thông tin: <X> vì <Y>
+Thẩm mỹ: nền … · kiểu hình … · chuyển cảnh … · nhạc … vì …
 Kiểu cảnh dùng: <danh sách> · kiểu hợp mà chưa code: <…> (đã ghi can-code.md)
 ```
+Bảng ý → kiểu (mỗi ý chính một dòng: mốc · câu nguyên văn · dạng câu · kiểu chọn) đi ngay dưới, là nguồn để viết `canh.js` /
+`danh-sach-cat.js`.
 
 ## Học thêm thì thêm dòng ở đây
 

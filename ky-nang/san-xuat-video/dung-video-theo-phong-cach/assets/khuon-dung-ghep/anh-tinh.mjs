@@ -5,10 +5,15 @@ import {bundleNhe} from './bundle-nhe.mjs';
 import {renderStill, selectComposition} from '@remotion/renderer';
 const out = path.resolve('../kiem-tra/anh-tinh'); fs.mkdirSync(out, {recursive: true});
 const serveUrl = await bundleNhe('src/diem-vao.jsx');   // không chép video vào thư mục tạm (bundle-nhe.mjs)
-const composition = await selectComposition({serveUrl, id: 'show'});
-for (const t of process.argv.slice(2)) {
-  await renderStill({serveUrl, composition, frame: Math.round(Number(t) * 30), output: path.join(out, `${t}.jpg`), imageFormat: 'jpeg', jpegQuality: 80, timeoutInMilliseconds: 120000});
+// Dọn bản bundle cả khi lỗi (19/11/2026: chụp mốc quá độ dài → ném lỗi, thư mục tạm ở lại). Mốc quá độ dài bị bỏ qua, có báo.
+try {
+  const composition = await selectComposition({serveUrl, id: 'show'});
+  const maxT = (composition.durationInFrames - 1) / composition.fps;
+  for (const t of process.argv.slice(2)) {
+    if (Number(t) > maxT) { console.warn(`bỏ mốc ${t} s: video dài ${maxT.toFixed(2)} s`); continue; }
+    await renderStill({serveUrl, composition, frame: Math.round(Number(t) * composition.fps), output: path.join(out, `${t}.jpg`), imageFormat: 'jpeg', jpegQuality: 80, timeoutInMilliseconds: 120000});
+  }
+  console.log('frames', composition.durationInFrames);
+} finally {
+  fs.rmSync(serveUrl, {recursive: true, force: true});
 }
-console.log('frames', composition.durationInFrames);
-// Bản bundle chép CẢ thư mục clip vào thư mục tạm (vlog 48 clip ≈ 4,4 GB/lần) — không dọn thì đầy ổ sau vài chục lần chạy (2026-11-04)
-fs.rmSync(serveUrl, {recursive: true, force: true});

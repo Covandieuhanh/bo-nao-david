@@ -147,6 +147,7 @@ for i, p in enumerate(pieces):
         for x, y, t0 in segmap:
             if src <= y: return t0 + max(0.0, src - x)
         x, y, t0 = segmap[-1]; return t0 + (y - x)
+    p['_tl'] = tl(p['start'])                            # giây timeline của câu (gợi ý kiểu cuối file)
     for x, y, txt in sub_lines(p):
         st, en = tl(x), tl(y)
         subs.append(f"  {{start: {st:.2f}, end: {max(st + 0.4, en):.2f}, text: {json.dumps(txt, ensure_ascii=False)}, hl: []}},")
@@ -196,7 +197,8 @@ export const SUBS = [
 // Video ngắn: phụ đề cụm 5–8 chữ, cỡ bằng chữ thẻ (kieu-phu-de.js ShortLine, David chốt 2026-11-08)
 export const SHORT = true;
 
-// ===== Lớp đồ hoạ (pow · action · pointer …) — Claude thêm theo nội dung; chữ CHỈ lấy nguyên văn từ lời nói =====
+// ===== Lớp đồ hoạ — Claude chọn theo kiem-tra/goi-y-kieu.md + thiet-ke-bo-cuc/tu-chon.md bước 4 (illus, diagram, chips, callout, action, pow…;
+// pow KHÔNG phải mặc định). Chữ CHỈ lấy nguyên văn từ lời nói =====
 export const OVERLAYS = [
   {{type: 'hud', start: 0, end: TOTAL - 4, name: {json.dumps((opt.get('topic') or plan.get('topic') or ec.get('title') or '').upper(), ensure_ascii=False)}}},   // dấu kênh ● DAVID │ chủ đề (nhận diện chung)
 {tit_lines}];
@@ -218,5 +220,22 @@ export const HL = {{src_duration: {dur:.2f}, bar: {'true' if TUA else 'false'}}}
 export const ENDCARD = {endcard};
 """
 open(os.path.join(E, 'chuyen-dong/src/danh-sach-cat.js'), 'w', encoding='utf-8').write(src)
+# GỢI Ý KIỂU THEO DẠNG CÂU (19/11/2026: clip ngắn trước đây chỉ có pow vì máy chỉ viết sẵn pow) → kiem-tra/goi-y-kieu.md.
+# Máy dò dạng câu, Claude chọn kiểu cuối cùng và ghi vào ke-hoach-canh.md mục "## Chẩn đoán" (render bị chặn tới khi có mục đó).
+import re as _re
+DANG = [(r"\b(thứ nhất|thứ hai|một là|hai là|ba là|bước \w+|đầu tiên|tiếp theo|cuối cùng)\b", 'liệt kê / các bước', "illus list · chips · diagram tang (tầng sau cần tầng trước)"),
+        (r"\b(không phải|mà là|thay vì|so với|khác với|trước đây)\b", 'so sánh / đổi ý', "illus vs · diagram tu-thanh"),
+        (r"\b\d+([.,]\d+)?\s*(%|phần trăm|triệu|nghìn|tỷ|ngày|tháng|năm|phút|lần|người|khách|sao)?\b", 'con số', "illus count (đúng số người nói) · diagram cot"),
+        (r"\b(nếu mà|nếu|bởi vì|tại vì|cho nên|dẫn đến|vì thế)\b", 'nhân quả / điều kiện', "illus flow · diagram chuyen-giao"),
+        (r"\?", 'câu hỏi', "callout · pow (câu hỏi đắt)"),
+        (r"\b(phải|hãy|nên|cần)\b.*\b(làm|viết|đo|ghi|thử|bắt đầu)\b", 'giao việc', "action (quote nguyên văn)")]
+rows = []
+for p in pieces:
+    found = [(d, k) for rx, d, k in DANG if _re.search(rx, p['text'], _re.I)]
+    rows.append(f"| {p['_tl']:.1f} | {p['text'][:90]} | {', '.join(d for d, _ in found) or 'câu thường / câu đắt'} | {' / '.join(k for _, k in found) or 'pow nếu là cú chốt, không thì để người + phụ đề'} |")
+os.makedirs(os.path.join(E, 'kiem-tra'), exist_ok=True)
+open(os.path.join(E, 'kiem-tra/goi-y-kieu.md'), 'w', encoding='utf-8').write(
+    "# Gợi ý kiểu theo dạng câu (máy dò — Claude chọn)\n\n| giây | câu | dạng | kiểu gợi ý |\n|---|---|---|---|\n" + "\n".join(rows) + "\n")
+print(f"→ {E}/kiem-tra/goi-y-kieu.md · chạy chan-doan.py \"{E}\" rồi ghi ke-hoach-canh.md mục ## Chẩn đoán trước khi render (soat-canh chặn)")
 print(f"danh-sach-cat.js: {len(pieces)} câu → {nseg} đoạn (cắt cứng{' + tua' if TUA else ''}), ~{acc:.1f} s · tông {tr}"
       + (" · thẻ cuối +1,8 s" if ec.get('title') else " · ⚠ chưa có thẻ cuối: thêm \"endcard\": {\"title\": <tên tập gốc>} vào phuong-an.json"))

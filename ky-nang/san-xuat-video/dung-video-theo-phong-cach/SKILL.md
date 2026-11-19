@@ -59,7 +59,11 @@ bộ nhận diện, phát hành. Dưới đây chỉ là luật RIÊNG của ski
 | Đầu vào | Chế độ | Làm theo |
 |---|---|---|
 | **1 video gốc** có người nói trước camera | Phủ đồ hoạ lên video gốc (giữ nguyên hình) | Công thức "Làm video" bên dưới |
-| **Từ 2 video gốc trở lên**, hoặc clip sự kiện/vlog không nói trước camera | **Ghép nhiều clip**: tự sắp mạch, clip minh hoạ trích đúng câu nói liên quan; tự soát kế hoạch rồi render | `references/nhieu-doan-video.md` (khối 11, hồ sơ `ghep-vlog`) |
+| **Nhiều file của cùng một buổi nói / cùng cảnh** (máy quay tách file, buổi 1:1, bài giảng), kể cả bản theo hướng cắt từ đó | **Nối file thành một video gốc** (`ffmpeg -f concat`, bỏ đoạn theo `phan-huong.md`) rồi làm như 1 video — khuôn này có đủ kho (19/11/2026) | Công thức "Làm video" |
+| **Nhiều cảnh khác nhau** (vlog, sự kiện, clip minh hoạ chen vào lời), hoặc clip không nói trước camera | **Ghép nhiều clip**: tự sắp mạch, clip minh hoạ trích đúng câu nói liên quan; tự soát kế hoạch rồi render | `references/nhieu-doan-video.md` (khối 11, hồ sơ `ghep-vlog`) |
+
+Mọi chế độ đều qua **chẩn đoán → tự chọn** (`../thiet-ke-bo-cuc/tu-chon.md`, bước 0: không chép kịch bản tập trước). Render đầy đủ bị
+chặn tới khi `ke-hoach-canh.md` có mục `## Chẩn đoán` và video không chỉ một kiểu lớp phủ (`soat-canh.mjs`).
 
 Video mẫu không tính vào số video gốc. Gửi cả thư mục → mọi video trong đó là video gốc theo thứ tự tên file (chế độ ghép); chỉ hỏi
 khi không rõ file nào là mẫu. "Giống video trước" → lấy token phong cách từ `~/Movies/tap-<tên>/2-ban-day-du/chuyen-dong/src` của dự án đó.

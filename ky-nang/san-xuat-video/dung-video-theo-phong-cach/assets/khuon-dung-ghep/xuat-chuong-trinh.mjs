@@ -10,6 +10,17 @@ const [a, b, name] = process.argv.slice(2);
 const raw = path.resolve(name ? `../kiem-tra/ban-xuat-tho-${name}` : '../kiem-tra/ban-xuat-tho.mp4');
 const out = path.resolve(`../${name || 'video-hoan-chinh.mp4'}`);
 fs.mkdirSync(path.dirname(raw), {recursive: true});
+const FULL_RENDER = a === undefined;
+// CỔNG TỰ CHỌN (19/11/2026, David: "mọi lựa chọn đều phải được tự động setup phù hợp với nội dung của tài nguyên nguồn"):
+// render đầy đủ chỉ chạy khi soát cảnh không còn P0 — gồm cả "chưa chẩn đoán" (ke-hoach-canh.md mục Chẩn đoán) và "cả video một kiểu lớp phủ".
+// BO_QUA_SOAT=1 chỉ khi David cho phép.
+{
+  const SOAT = path.join(process.env.HOME, '.claude/skills/dung-video-theo-phong-cach/scripts/soat-canh.mjs');
+  if (FULL_RENDER && !process.env.BO_QUA_SOAT && fs.existsSync(SOAT)) {
+    const r = spawnSync('node', [SOAT, path.resolve('..')], {stdio: 'inherit'});
+    if (r.status === 1) { console.error('DỪNG: soát cảnh còn P0 (../kiem-tra/soat.md). Sửa kịch bản rồi render lại.'); process.exit(1); }
+  }
+}
 const serveUrl = await bundleNhe('src/diem-vao.jsx');   // không chép video vào thư mục tạm (bundle-nhe.mjs)
 const composition = await selectComposition({serveUrl, id: 'show'});
 const t0 = Date.now();

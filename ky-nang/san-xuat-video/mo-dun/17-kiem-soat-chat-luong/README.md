@@ -44,6 +44,14 @@ python3 -I $SKILL/scripts/the-ghi-cong.py "$P"                     # chỉ khi c
 python3 -I $SKILL/scripts/xem-truoc-ban-dung.py "$P"                   # chạy nền → video-hoan-chinh.mp4
 ```
 
+**Thời gian render thật** (đo 18–19/11/2026, Mac này, 1080p, `concurrency: 3`; báo David theo bảng này, không đoán):
+| Khuôn / khung | Tốc độ | Ví dụ |
+|---|---|---|
+| ghép ngang 1920×1080 | ~4–5,7 × độ dài | 11:45 → 44–60 phút (chạy cùng render khác: 60) · 54:30 → 5,2 giờ |
+| ghép dọc 1080×1920 clip ngắn | ~6–7 × độ dài | 1:19 → ~8 phút |
+Ổ trống cần ≥ 2 × file ra + 5 GB (thư mục tạm `remotion-*` của Remotion); render dài làm SAU khi đã soát khớp tiếng (khối 03) và
+chụp thử đủ lớp, để không phải render lại.
+
 ### Kiểm tra bản cuối
 
 ```bash
@@ -60,7 +68,9 @@ Chạy **trước bước chụp thử** và sau mỗi lần sửa mốc / chữ
 node $SKILL/scripts/soat-canh.mjs "$P"     # in ra + ghi kiem-tra/soat.md; có P0 thì mã thoát 1. Không sửa gì, không render
 ```
 Đọc từ `canh.js` hoặc `danh-sach-cat.js`, báo mỗi lỗi một dòng `t=… · cảnh · vấn đề → cách sửa`:
-- **P0 (phải sửa):** kiểu cảnh / biểu tượng không tồn tại, phần tử hiện ngoài cảnh, mốc sai.
+- **P0 (phải sửa):** kiểu cảnh / biểu tượng không tồn tại, phần tử hiện ngoài cảnh, mốc sai · **chưa chẩn đoán** (thiếu
+  `ke-hoach-canh.md` mục `## Chẩn đoán`) · **cả video một kiểu lớp phủ nội dung** (trừ khi ghi `Một kiểu có chủ đích: …`). Render đầy
+  đủ (`xuat-video.mjs`, `xuat-chuong-trinh.mjs`) tự chạy soát này và dừng khi còn P0 (19/11/2026, `thiet-ke-bo-cuc/tu-chon.md` bước 0).
 - **P1 (nên sửa):** nhãn không đủ đọc (0,5 s + 0,3 s mỗi từ), nhãn `illus` quá số chữ hồ sơ, hai cảnh toàn màn hình chồng nhau.
 - **P2 (tinh chỉnh, giữ có chủ đích được):** hình đứng yên quá 3 s sau khi đọc xong, thẻ tít / màn chốt thiếu hẳn thời gian đọc, hai cảnh cùng kiểu liền nhau (trừ cảnh vẽ tiếp `tu_buoc`, khối 07).
 Giới hạn: chỉ bắt lỗi đo được. Chữ tràn, che mặt, xấu vẫn soi bằng `kiem-tra/anh-tinh.jpg`. **Xem tờ ảnh ở đúng cỡ (mỗi khung 240–270 px, nhỏ hơn màn điện thoại): chữ cần đọc mà không đọc được = P0.**
