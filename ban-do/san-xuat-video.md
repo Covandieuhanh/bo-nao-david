@@ -81,6 +81,8 @@ Gốc: [bản đồ bộ não](README.md). Chiến lược kênh: [chien-luoc-no
 ## Bố cục, nhận diện, thư viện hình
 - [thiet-ke-bo-cuc](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/README.md) — Lớp trình bày video: tiêu chí gốc để học mọi loại video mới, giữ chữ ký nhận diện.
 - [nguoi-xem-can-gi](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/nguoi-xem-can-gi.md) — Cửa vào tư duy dựng video: loại nội dung → cái khó của người xem → nguyên lý (Mayer + 4 ngoài Mayer) → cách thể hiện.
+- [giai-mau](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/giai-mau.md) — 19 ca giải từ 8 hình mẫu thành công cùng thể loại (Ali Abdaal, Jeff Su, DOAC, Nguyễn Hữu Trí, Huy Luong, Nhật Anh AI, Giang Ơi, Khánh Vy).
+- [bai-kiem](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/bai-kiem/README.md) — Bài kiểm suy luận 10 đoạn + máy chấm `cham.py`, chạy khi máy mới / đổi luật.
 - [tu-chon](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/tu-chon.md) — Tự chọn cách trình bày: yêu cầu người dùng → đo → loại nội dung → từng đoạn cái khó → nguyên lý → cách thể hiện.
 - [bo-cuc](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/bo-cuc.md) — Danh mục bố cục video để chọn (không phải công thức). Có ảnh mẫu từng kiểu (`anh-mau/`, chụp lại bằng `anh-mau/cong-cu/chup-anh-mau.sh`).
 - [am-thanh](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/am-thanh.md) — Âm thanh theo bố cục: chỗ đặt tiếng ký hiệu, ting, vút theo cảnh.
