@@ -24,6 +24,16 @@ Cách cài từng máy: [huong-dan-cai-dat.md](../../huong-dan-cai-dat.md) mục
   - ffmpeg trên Linux là bản dựng sẵn cùng nhánh 9.0.
 - **Chỉ Mac có**: tự kiểm Drive đã tải lên mây xong chưa. Máy khác vẫn chép lên Drive và so khớp từng file, nhưng không tự xoá bản trên máy.
 
+## Đã thử (20/11/2026)
+
+| Máy | Kết quả |
+|---|---|
+| Mac chính, so với bản chuẩn của chính nó | Đạt hết: chép lời 100%, mặt 100%, khung hình SSIM 1,0000 |
+| Ubuntu 24.04 chip ARM (máy ảo trên Mac) | Cài từ đầu không lỗi; **"MÁY NÀY DỰNG GIỐNG MAC CHÍNH"**: chép lời 97,6%, mặt 89% (độ trùng 0,79), khung hình SSIM 0,996–0,9998 |
+| Ubuntu 24.04 x86 như máy Windows (giả lập trên Mac) | Cài từ đầu không lỗi, có MediaPipe; dò mặt 89%. Whisper và Remotion chậm hoặc sập do giả lập chip, không phải do skill; máy Windows thật không chạy giả lập |
+
+Chưa thử: máy Windows thật qua WSL2. Lần đầu cài, chạy `kiem-may.sh` để xác nhận.
+
 ## Việc của Mac chính
 
 - **Nâng công cụ** (Remotion, ffmpeg…): cài bản mới, dựng thử, sửa `phien-ban.env` / `package.json` + `package-lock.json` của khuôn. Sau đó tạo lại bản chuẩn: `zsh tu-dong-hoa/may-khac/kiem-may.sh --tao-chuan <video người nói rõ mặt> <giây bắt đầu>`, rồi đẩy GitHub. Máy khác chạy lại `cai-cong-cu-video.sh` + `kiem-may.sh`.
