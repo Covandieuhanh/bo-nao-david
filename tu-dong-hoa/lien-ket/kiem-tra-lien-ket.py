@@ -95,7 +95,9 @@ def main():
     goc_vao = goc_vao | {chi_muc}
     chi_tiet = "--chi-tiet" in sys.argv
     RIENG = doc_rieng(goc) if goc == NAO else ()
-    la_rieng = lambda f: any(f == r.rstrip("/") or (r.endswith("/") and f.startswith(r)) for r in RIENG)
+    # phần riêng Mac + ghi nhớ riêng máy (thiet-bi-*, không lên GitHub): ngoài chỉ mục để chỉ mục ở mọi máy giống hệt nhau
+    la_rieng = lambda f: (goc == NAO and os.path.basename(f).startswith("thiet-bi-")) or \
+        any(f == r.rstrip("/") or (r.endswith("/") and f.startswith(r)) for r in RIENG)
     tat_ca = [f for f in ds_file(goc) if f != chi_muc]
     files = [f for f in tat_ca if not la_rieng(f)]          # phần chung: vào chỉ mục, đồ thị
     rieng = [f for f in tat_ca if la_rieng(f)]              # phần riêng (chỉ có trên Mac chính): chỉ kiểm link gãy
@@ -127,10 +129,10 @@ def main():
                     continue
                 dich = os.path.normpath(os.path.join(os.path.dirname(f), t))
                 duong = os.path.join(goc, dich)
-                if chung and (la_rieng(dich) or la_rieng(dich + "/")):
+                if os.path.basename(dich).startswith("thiet-bi-"):
+                    continue                                    # ghi nhớ riêng máy: máy khác không có là đúng, không tính
+                elif chung and (la_rieng(dich) or la_rieng(dich + "/")):
                     gay.append((f, t + "  (phần riêng Mac — ghi bằng chữ `…`, đừng link)"))
-                elif os.path.basename(dich).startswith("thiet-bi-") and not os.path.exists(duong):
-                    continue                                    # ghi nhớ riêng máy: máy khác không có là đúng
                 elif not os.path.exists(duong):
                     gay.append((f, t))
                 elif not chung:
