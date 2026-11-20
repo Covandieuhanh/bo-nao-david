@@ -29,7 +29,7 @@ Mọi tài nguyên đều **phân đủ theo cả ba hướng** (mục 0b): hư�
 bỏ. Cách soi mục tiêu / nỗi đau: ba phạm trù **Tiền · Thị trường · Con người** (`co-so-tri-thuc/mo-hinh-kinh-doanh.md`); marketing,
 khách, thị trường của chính người xem = "làm chủ thị trường" → hướng 2.
 
-## 0b. Phân hướng từng đoạn, ghép bản theo hướng (David chốt 19/11/2026)
+## 0b. Phân hướng từng đoạn, ghép bản theo hướng
 1. **Chia đoạn theo ý**: đọc cả bản lời, mỗi đoạn một ý: mốc vào–ra · ý một dòng · hướng (1 / 2 / 3) · hoặc **Bỏ** kèm lý do (không
    liên quan, chào hỏi, chuyện riêng, lằn ranh mục 3, ý chưa trọn). Một đoạn chạm hai hướng: gán hướng chính, ghi "dùng lại ở hướng X"
    (vd. phép thử nỗi đau thuộc hướng 2, hướng 3 dùng lại làm câu mở tư vấn).
@@ -94,9 +94,9 @@ Chấm 5 tiêu chí trên dùng cho hướng trainer. Hướng khác đổi ngh�
 tin David trong hướng đó.
 
 ## 3. Lằn ranh = CẢNH BÁO, David quyết (hồ sơ 4.7 + 7, theo từng hướng)
-**Mọi hướng:** phạm pháp hay mập mờ pháp lý (quan trọng nhất) · chữ "chữa lành" · tư vấn thuế, pháp lý · chuyện người khác không ẩn danh · hứa thu nhập.
+**Mọi hướng:** phạm pháp hay mập mờ pháp lý (quan trọng nhất) · chữ "chữa lành", công dụng sức khoẻ của sản phẩm · tư vấn thuế, pháp lý · chuyện người khác không ẩn danh (tên thật, nơi làm, chi tiết lộ danh tính khách, học viên, nhân viên) · hứa thu nhập.
 **Tài chính:** cam kết lợi nhuận · gọi lệnh mua/bán cụ thể · thiếu cảnh báo rủi ro · nhắc đơn vị không được cấp phép.
-**Trainer:** trị liệu, chẩn đoán tâm lý · nhắc vai coach trên kênh công khai · nói giá trên video · đọc số của người thật khi họ chưa đồng ý · hứa tiền hay kết quả nhờ con số · nghi thức cầu xin, phóng sinh. Còn nội dung từ trường số (kèm dẫn chứng thần số học, thiền, "nghiệp"…) thuộc hướng trainer, được nói công khai (hệ 135, hồ sơ 4.1).
+**Trainer:** trị liệu, chẩn đoán tâm lý · nhắc vai coach trên kênh công khai · nói giá, tên gói dịch vụ trên video · đọc số của người thật khi họ chưa đồng ý · hứa tiền hay kết quả nhờ con số · nghi thức cầu xin, phóng sinh. Còn nội dung từ trường số (kèm dẫn chứng thần số học, thiền, "nghiệp"…) thuộc hướng trainer, được nói công khai (hệ 135, hồ sơ 4.1).
 **Gói công nghệ:** hứa kết quả gói chưa làm ra thật. Giá sản phẩm công nghệ của David được công bố (tự quảng bá), không phải lằn ranh.
 Chạm → **luôn cảnh báo trong phiếu và báo cáo**: mốc giây, lời chạm, rủi ro. Mặc định **giữ lời, không tự cắt** (David có thể đã tự cân đối khi kể); David muốn cắt thì nói ở bản cuối. Ghi "đã cảnh báo" vào sổ; chữ đồ hoạ, tiêu đề, thumbnail, mô tả, clip ngắn vẫn không lấy nội dung đó.
 
@@ -114,8 +114,8 @@ Chạm → **luôn cảnh báo trong phiếu và báo cáo**: mốc giây, lời
 ## 5. Phân phối kênh (`ho-so-thuong-hieu/kenh.json`)
 Theo hướng (mục 0): **YouTube David Trần Official** = hướng tài chính · **YouTube trainer** = bản gốc hoặc biên tập hướng trainer ·
 **Facebook cá nhân, fanpage, TikTok** = chia sẻ không giới hạn chủ đề, cũng nhận highlight của hai kênh YouTube, nhưng mỗi bài phải
-dẫn về gói (thường là gói công nghệ) theo phễu `du-an/pheu-ban-hang-goi-cong-nghe.md`. Lịch thứ Ba + thứ Sáu 20:00 giờ Việt Nam. Kiểu dẫn dắt mỗi bài:
-**Không · Gợi mở · Mời** theo tỉ lệ 4 · 4 · 2 (bài thứ 5 và 10 mỗi chục là Mời).
+dẫn về gói (thường là gói công nghệ) theo phễu `du-an/pheu-ban-hang-goi-cong-nghe.md`. Lịch thứ Ba + thứ Sáu 20:00 giờ Việt Nam. Phiếu lọc gán kiểu dẫn dắt
+mỗi bài (**Không · Gợi mở · Mời**, tỉ lệ và cách viết: khối 08).
 
 ## 6. Phiếu lọc (gửi David — một màn hình)
 ```

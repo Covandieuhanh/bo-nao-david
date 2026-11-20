@@ -4,6 +4,14 @@ description: "Sổ thay đổi skill dựng video theo phong cách: quyết đ�
 
 # Sổ thay đổi — dung-video-theo-phong-cach (quyết định của người dùng + lý do)
 
+## Tái bản 4 — 20/11/2026: gom ý trùng giữa các file, bảng du-an/tai-ban-4.md
+- Ngày và lời David trong bản luật chuyển về đây (luật giữ nguyên nghĩa):
+  - 19/11/2026 · `quy-tac-chung.md` mục 0 "Mọi lựa chọn tự setup theo nội dung nguồn" — David: *"mọi thứ cần phát huy tối đa được sức mạnh của AI, mọi lựa chọn đều phải được tự động setup phù hợp với nội dung của tài nguyên nguồn"*.
+  - 19/11/2026 · công thức "Nhiều file của cùng một buổi nói → nối thành một video gốc" (khuôn 1 video có đủ kho).
+  - 19/11/2026 · khối 17: máy soát cảnh tự chạy trong `xuat-video.mjs`, `xuat-chuong-trinh.mjs`.
+  - 19/11/2026 · khối 01 (chép lại đoạn ở nơi ồn), khối 02 (điểm cắt theo chỗ ngắt tiếng), khối 03 (khớp tiếng: tập marketing lệch 14 s, phát hiện sau render 54 phút), khối 04 (hai người ngồi xa máy: đoán bằng miệng và pyannote đều sai nhiều).
+  - 19/11/2026 · khối 00 mục 0b phân hướng từng đoạn, ghép bản theo hướng.
+
 ## 18/11/2026: bản dài từ nhiều file của một buổi, cắt theo ý
 - David: "làm 1 video dài từ 2 video gốc, cắt đi những ý liên quan đến công thức, ở phần gần cuối nếu là ý chưa trọn vẹn thì cũng cắt đi, để trở thành 1 cuộc nói chuyện giữa 2 người nhé. Cũng có làm intro cho video dài này" → `references/nhieu-doan-video.md` mục 11 (chọn đoạn theo ý, một nguồn ghép, phụ đề từ bản lời theo câu + soát hết, nhạc luân phiên, màn kết YouTube).
 - Khuôn ghép: `bundle-nhe.mjs` (không chép video vào thư mục tạm — bundle chép 4,7 GB làm đầy ổ); thẻ nhận diện cuối đặt đúng ở khung ngang (`top` theo K.V).

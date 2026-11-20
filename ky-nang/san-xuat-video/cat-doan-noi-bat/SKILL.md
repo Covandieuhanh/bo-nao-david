@@ -4,9 +4,7 @@ description: Cắt một video dài (bản YouTube 5–60 phút) thành các cli
 ---
 # Cắt video highlight cho mọi mục video ngắn
 
-**Đọc trước:** `../../chuan-muc-lam-viec.md` · `../quy-tac-chung.md` · hồ sơ `../ho-so-thuong-hieu/doan-noi-bat.md` — **con số lấy ở hồ sơ, không ghi cứng**.
-`$BASE/references/loi-thuong-gap.md` (+ `$POD/references/loi-thuong-gap.md` khi nguồn là podcast) đọc một lần ở đầu phiên. File khác chỉ đọc ở
-đúng bước cần (cột "Khối"). Skill này là **CÔNG THỨC**: thứ tự khối + quyết định riêng của loại + tiêu chí đạt; sửa cách làm → sửa khối.
+**Đọc trước:** `../quy-tac-chung.md` (mục 8) · hồ sơ `../ho-so-thuong-hieu/doan-noi-bat.md`. Lỗi thường gặp: của `$BASE`, thêm `$POD` khi nguồn là podcast.
 
 `$BASE=~/.claude/skills/dung-video-theo-phong-cach`, `$POD=~/.claude/skills/dung-podcast`, `$SKILL` = thư mục này. Skill này lo **nhận loại
 video gốc, hiểu cả video, chọn khoảnh khắc, cắt câu, bố trí lời kêu gọi**; phần dựng dùng quy trình của skill tương ứng.
@@ -89,8 +87,6 @@ Chỉ có phụ đề, không có video → làm bước 2–5, trả bảng c�
 | 7A | Chẩn đoán → tự chọn ([tu-chon](../thiet-ke-bo-cuc/tu-chon.md)) · dựng nguồn có người nói (mục dưới) | [11](../mo-dun/11-dung-ghep/README.md) · [04](../mo-dun/04-khung-hinh/README.md) · [05](../mo-dun/05-tranh-che-chu-the/README.md) · [06](../mo-dun/06-phan-mo-dau/README.md) · [07](../mo-dun/07-canh-minh-hoa/README.md) · [08](../mo-dun/08-phan-ket/README.md) · [03](../mo-dun/03-phu-de/README.md) · [09](../mo-dun/09-am-thanh/README.md) · [17](../mo-dun/17-kiem-soat-chat-luong/README.md) |
 | 7B | Chẩn đoán → tự chọn · dựng nguồn podcast / đồ hoạ (mục dưới) | [12](../mo-dun/12-san-khau-podcast/README.md) · [07](../mo-dun/07-canh-minh-hoa/README.md) · [08](../mo-dun/08-phan-ket/README.md) · [17](../mo-dun/17-kiem-soat-chat-luong/README.md) |
 | 8 | Phát hành: lịch đăng, khung bìa, mô tả, bình luận ghim, số liệu | [15](../mo-dun/15-xuat-ban/README.md) · [16](../mo-dun/16-phan-tich-so-lieu/README.md) |
-
-Bước đánh dấu *(bước nhẹ)*: nhắc đổi mô hình rẻ hơn theo `chuan-muc-lam-viec.md` mục 3.
 
 ### 7A. Dựng — nguồn có người nói (`dung-video-theo-phong-cach` chế độ ghép clip, `references/nhieu-doan-video.md`)
 Làm lần lượt cho từng clip `<id>` (A, B…). `cat/<id>.mp4` của bước 6 chỉ để **kiểm lời**; bản dựng đọc thẳng video gốc theo mốc trong phuong-an.json (mỗi câu thêm

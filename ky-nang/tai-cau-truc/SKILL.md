@@ -7,7 +7,8 @@ description: Tái bản bộ skill — khi luật đã chồng nhiều lớp (h�
 
 **Đọc trước:** `../chuan-muc-lam-viec.md` (mục 4 có luật "sửa thẳng, không chồng câu" — tái bản là bước dọn định kỳ của luật đó).
 
-**Mục tiêu:** dù đã học, sửa bao nhiêu lớp, lúc làm việc AI chỉ đọc **một bản luật hiện hành**, đọc một lần là làm đúng, không phải tự
+**Mục tiêu:** tái bản là **gom các bản trùng, ý trùng viết theo nhiều cách về một nhà, gỡ chỗ rối** — không phải làm bộ não ngắn đi.
+Bộ não lớn lên vì học thêm là đúng. Dù đã học, sửa bao nhiêu lớp, lúc làm việc AI chỉ đọc **một bản luật hiện hành**, đọc một lần là làm đúng, không phải tự
 đoán câu nào còn hiệu lực. Kết quả làm ra phải **bằng hoặc tốt hơn** trước khi tái bản.
 
 ## Ba loại file (định nghĩa từng bộ ở `bo.json`)
@@ -25,7 +26,9 @@ Mỗi lần tái bản là **một đợt cho cả bộ não**: cả ba bộ + d
 theo bỏ hoặc đổi luật ở nhiều bộ cùng lúc; tái bản lẻ một bộ thì luật ở bộ khác vẫn giữ lớp cũ.
 
 ## Khi nào tái bản
-- Máy đo: **một bộ bất kỳ vượt ngưỡng** → báo "NÊN TÁI BẢN TOÀN BỘ" một dòng → Claude nhắc David **một dòng**, David quyết.
+- Máy đo chỉ kêu vì **trùng hoặc rối**: dấu ngày trong luật (`dau_ngay`), câu ghi đè (`ghi_de`), câu giống hệt ở hai file (`trung`),
+  dòng gần trùng ở hai file — cùng ý viết lại theo cách khác (`gan_trung`). Số dòng chỉ in ra để biết độ lớn; số lần sửa (`sua`) chỉ
+  nhắc nhẹ. **Một bộ bất kỳ vượt ngưỡng** → báo "NÊN TÁI BẢN TOÀN BỘ" một dòng → Claude nhắc David **một dòng**, David quyết.
   Chạy máy đo cuối mỗi việc có sửa bản luật (thoi-quen mục 4):
   ```bash
   python3 -I ky-nang/tai-cau-truc/do-chong-cheo.py [--chi-tiet]
@@ -55,13 +58,14 @@ theo bỏ hoặc đổi luật ở nhiều bộ cùng lúc; tái bản lẻ mộ
    Sổ quá dài (> 400 dòng) → chuyển phần cũ vào `luu-tru/` cạnh sổ.
 6. **Kiểm chung** (bắt buộc, đủ cả 4, khi mọi phiên con xong):
    - **Đủ luật:** đi từng dòng bảng mọi bộ — luật "sống" nào cũng có nhà trong bản mới. Thiếu = chưa xong.
-   - **Máy đo:** chạy lại; mọi bộ "Chưa cần"; dấu ngày và câu ghi đè gần 0, câu trùng 0.
+   - **Máy đo:** chạy lại; mọi bộ "Chưa cần"; dấu ngày và câu ghi đè gần 0, câu trùng 0; dòng gần trùng còn lại chỉ là dòng trỏ,
+    "Xong khi" của từng skill, bảng công thức, giải thích tham số hồ sơ (đúng thiết kế).
    - **Hình y nguyên** (bộ video): `python3 -I ky-nang/san-xuat-video/mau-chuan/kiem-mau.py` + soát cảnh một dự án cũ. Tái bản chỉ viết lại
      chữ, không đổi code; ảnh khác = có gì sai.
    - **Việc thật:** chạy một việc đi qua nhiều bộ (ví dụ một đoạn ngắn trọn một ý từ phiếu lọc tới bản dựng, `quy-tac-thu-bang-doan-ngan`),
      David chấm. Phải bằng hoặc tốt hơn.
-7. **Đóng mốc:** `git tag tai-ban-<n>`, thêm một dòng vào `lich-su.md`, chỉnh ngưỡng trong `bo.json` nếu thấy lệch (ví dụ ngưỡng
-   quá thấp làm nhắc liên tục), đẩy GitHub, báo David: đã gom bao nhiêu luật, bỏ / gộp gì, đã kiểm gì, chưa kiểm gì.
+7. **Đóng mốc:** `git tag tai-ban-<n>`, thêm một dòng vào `lich-su.md`, chỉnh ngưỡng trong `bo.json` theo mức sau tái bản cộng khoảng trống
+   (ngưỡng quá thấp làm nhắc liên tục), đẩy GitHub, báo David: đã gom bao nhiêu luật, bỏ / gộp gì, đã kiểm gì, chưa kiểm gì.
 
 ## Không làm
 - Không đổi luật, không thêm luật mới trong lúc tái bản — chỉ viết lại. Thấy luật nên đổi → ghi vào file theo dõi, hỏi David sau.
@@ -70,10 +74,11 @@ theo bỏ hoặc đổi luật ở nhiều bộ cùng lúc; tái bản lẻ mộ
 
 ## Xong khi
 1. Bảng luật đang sống của mọi bộ có đủ, mỗi dòng có nhà trong bản mới; ghi nhớ đã dọn.
-2. Máy đo mọi bộ: "Chưa cần tái bản"; dấu ngày, câu ghi đè gần 0; câu trùng 0.
+2. Máy đo mọi bộ: "Chưa cần tái bản"; dấu ngày, câu ghi đè gần 0; câu trùng 0; dòng gần trùng chỉ còn loại đúng thiết kế.
 3. Mẫu chuẩn y nguyên và một việc thật David chấm đạt.
 4. Có tag `tai-ban-<n>`, dòng trong `lich-su.md`, đã đẩy GitHub.
 
 ## Nhật ký
 - 10/11/2026 · tạo skill. David: "mỗi lần học hay bổ sung hay sửa thì không bị chồng chéo… cứ một thời gian… viết lại toàn bộ… học được lớp 1, lớp 2, lớp 3 thì lại phải tổng kết lại toàn bộ để viết lại thành một skill hoàn chỉnh bao gồm cả 3 lớp". Chốt 5 điểm: sửa thẳng mỗi lần + lý do vào sổ · máy đo nhắc, David quyết · từng bộ một · kiểm mẫu chuẩn + việc thật · skill riêng.
 - 10/11/2026 · đổi sang tái bản toàn bộ. David: "khi tái bản thì cứ tái bản hết toàn bộ mọi thứ để tối ưu nhất". Chốt: cả ba bộ + dọn ghi nhớ · một bộ vượt ngưỡng là tái bản cả đợt · một mốc chung `tai-ban-<n>`, mỗi bộ một phiên con chạy cùng lúc · đợt 2 chạy ngay. Thay luật "từng bộ một".
+- 20/11/2026 · máy đo đo trùng / rối, không đo độ lớn. Máy báo vượt ngưỡng số dòng (4005 > 4000) sau khi thêm tầng tư duy dựng video. David: "bộ não và các phần cần học chắc chắn sẽ ngày càng tăng lên, tái bản chỉ là gom các bản trùng hay ý trùng theo nhiều cách khác nhau về một hoặc là gỡ rối, chứ yêu cầu phải 4000 dòng thì tôi thấy sẽ bị hạn chế". Chốt: bỏ `dong` khỏi chuông · thêm `gan_trung` (cặp dòng ở hai file chung > 50 % số chữ, bỏ mô tả đầu file, khối lệnh, phần `code`) · `sua` chỉ nhắc nhẹ. Đo lần đầu: video 49 cặp gần trùng.

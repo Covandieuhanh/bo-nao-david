@@ -15,7 +15,7 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 - [Kết quả hơn tốc độ](quy-tac-ket-qua-hon-toc-do.md) — bước cần kết quả render thì chờ; muốn rút ngắn thì trao đổi (05/11)
 - [Không tự chạy việc của David](quy-tac-khong-tu-chay-viec-cua-david.md) — không tự Chạy tiếp/Duyệt/Làm lại việc David tạo; việc thử tên `thu-…` (08/11)
 - [Nội dung của David, người xem trung tâm](quy-tac-noi-dung-cua-david.md) — không khuôn lời; học kênh lớn ở nhịp, trình bày (05/11, gộp 10/11)
-- [Sửa thẳng, tái bản toàn bộ](quy-tac-sua-thang-tai-ban.md) — đổi luật thì viết lại câu cũ; máy đo báo thì tái bản cả bộ não một đợt (10/11)
+- [Sửa thẳng, tái bản toàn bộ](quy-tac-sua-thang-tai-ban.md) — đổi luật thì viết lại câu cũ; máy đo báo trùng / rối (không tính độ dài) thì tái bản cả bộ não một đợt
 - [Thử bằng đoạn ngắn](quy-tac-thu-bang-doan-ngan.md) — thử skill video bằng một đoạn trọn một ý, cho David xem bản cuối (09/11)
 - [Gói trainer dạy cách chung](quy-tac-goi-trainer-chung.md) — mỗi gói một kỹ năng thuần, mọi AI, máy của học viên; không tư duy, chi tiết David chỉ là kết quả mẫu (13/11)
 - [david.md chỉ điều cố định](quy-tac-david-md-chi-dieu-co-dinh.md) — ý tưởng, dự định chưa khẳng định (sang Đức) không tính vào việc đang làm, ghi du-an/danh-sach-y-tuong.md (12/11, 17/11)

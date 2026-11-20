@@ -4,9 +4,7 @@ description: Biến một podcast (file tiếng mp3/m4a/wav, hoặc video podcas
 ---
 # Podcast thành video toàn motion graphics
 
-**Đọc trước:** `../../chuan-muc-lam-viec.md` · `../quy-tac-chung.md` · hồ sơ `../ho-so-thuong-hieu/podcast.md` — **con số lấy ở hồ sơ, không ghi cứng**.
-`$BASE/references/loi-thuong-gap.md` + `references/loi-thuong-gap.md` đọc một lần ở đầu phiên. File khác chỉ đọc ở đúng bước cần (cột "Khối").
-Skill này là **CÔNG THỨC**: thứ tự khối + quyết định riêng của loại + tiêu chí đạt. Sửa cách làm → sửa khối, không sửa công thức.
+**Đọc trước:** `../quy-tac-chung.md` (mục 8) · hồ sơ `../ho-so-thuong-hieu/podcast.md`. Lỗi thường gặp: của `$BASE` và của skill này.
 
 David đưa **một tập podcast** (file tiếng, hoặc video không muốn dùng hình). Mục tiêu: video **đăng được ngay**, mọi khung hình
 là đồ hoạ chuyển động theo lời. Không có hình người → **sân khấu nền** (`san-khau.jsx`) chạy suốt video lấp khoảng trống, các cảnh đặt lên trên.
@@ -16,7 +14,7 @@ Luật nội dung của skill gốc vẫn áp dụng. Lệnh > 2 phút chạy n�
 
 **Không hỏi** (`../../chuan-muc-lam-viec.md` mục 2): chữ thumbnail, tên các phần (TOPICS), nền lắng hay lưới tối Claude tự chọn
 theo khối. Sau khi David duyệt 4 phần, chạy một mạch tới bản cuối: chụp thử mọi cảnh mới để Claude
-tự soát (khối 17) rồi render, không chờ David chốt; giữa chừng chỉ dừng khi gặp tín hiệu nặng (`thu-thap-yeu-cau`). Báo cáo cuối liệt kê "đã chọn X vì Y" để David sửa ở bản cuối.
+tự soát (khối 17) rồi render, không chờ David chốt. Dừng giữa chừng, báo cáo "đã chọn X vì Y": `../quy-tac-chung.md` mục 8.
 
 
 ## Luật riêng (kiểm lại trước khi giao)
@@ -66,8 +64,6 @@ Luật chung video ở `../quy-tac-chung.md` (chữ nguyên văn, không cắt v
 | 7–9 | Chụp thử → Claude tự soát → render → kiểm (mục dưới) | [17](../mo-dun/17-kiem-soat-chat-luong/README.md) · [09](../mo-dun/09-am-thanh/README.md) |
 | 10 | Phát hành: teaser > 10 phút, chương, màn kết, số liệu | [15](../mo-dun/15-xuat-ban/README.md) · [16](../mo-dun/16-phan-tich-so-lieu/README.md) |
 
-Bước đánh dấu *(bước nhẹ)*: nhắc đổi mô hình rẻ hơn theo `chuan-muc-lam-viec.md` mục 3.
-
 ### 1. Môi trường + dự án
 ```bash
 zsh $BASE/scripts/kiem-moi-truong.sh
@@ -112,11 +108,10 @@ Podcast 15 phút: sân khấu ~25 phút, phụ đề ~10 phút, ghép cuối ~10
 
 ### 9. Kiểm tra bản cuối
 `zsh $BASE/scripts/kiem-khung-hinh.sh "$P" "$P/video-hoan-chinh.mp4" <mốc giữa & cuối mỗi cảnh, vài mốc chỉ sân khấu>` → xem `kiem-tra/bang-anh.jpg`.
-Âm thanh theo khối 09 (cả bài −14 LUFS ±0,5 (hồ sơ `nhac.do_to_cuoi_LUFS`), đỉnh ≤ −1,5 dB, tiếng rè (highpass 12 kHz) **so với giọng** tăng ≤ 1 dB; không so dB thô với `am-thanh.wav` vì giọng nhỏ được kéo lên),
-thời lượng = `am-thanh.wav` (+ thẻ cuối nếu có).
+Âm thanh kiểm như khối 17 (chuẩn khối 09; nguồn để so tiếng rè là `am-thanh.wav`), thời lượng = `am-thanh.wav` (+ thẻ cuối nếu có).
 
 ### 10. Phát hành + giao
-Phát hành theo `../quy-tac-chung.md` mục 7: `phat-hanh/phat-hanh.md` (3 tiêu đề, mô tả, mốc khung bìa); xuất ngang VÀ đăng YouTube → 2 thumbnail
+Phát hành theo `../quy-tac-chung.md` mục 7. Thumbnail podcast (khi có):
 `THUMB_HINH=<hình> THUMB_TAG=PODCAST zsh $BASE/scripts/anh-thu-nho.sh "$P" - "<DÒNG 1>" "<DÒNG 2>" 1|2` (khối 14, chữ Claude tự chọn).
 Chép `san-xuat-video/mo-dun/16-phan-tich-so-lieu/mau-so-lieu.md` → `$P/so-lieu.md`.
 Gửi `video-hoan-chinh.mp4` (+ thumbnail nếu có) (SendUserFile). Báo cáo tiếng Việt: người nói (tên/vai, tỉ lệ, chỗ không chắc), danh sách
@@ -136,7 +131,6 @@ cảnh + TOPICS theo mốc, `nguon-anh.txt` nếu có ảnh, đã kiểm gì / c
 - TOPICS / STAGE / người nói / sóng âm → `node xuat-video.mjs nen` → `nen-podcast.py` → `xem-truoc-ban-dung.py`.
 - Phụ đề / thanh thời gian → `node xuat-video.mjs phu-de` → `xem-truoc-ban-dung.py`.
 - Thumbnail → chạy lại `anh-thu-nho.sh` với chữ/ảnh mới (không cần render video).
-- Ghi góp ý đúng một chỗ: khối/skill bị ảnh hưởng + một dòng `references/nhat-ky-thay-doi.md`.
 
 ## Cấu trúc dự án
 ```

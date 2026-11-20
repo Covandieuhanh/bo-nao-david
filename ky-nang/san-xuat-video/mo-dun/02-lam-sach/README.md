@@ -25,7 +25,7 @@ description: "Khối 02 làm sạch video: cắt thừa đầu cuối, câu nói
 
 ## Cách làm
 
-**Điểm cắt theo chỗ ngắt tiếng, không theo mốc từ** (19/11/2026): `python3 -I $SKILL/scripts/diem-ngat.py <video> <giây>…` → chỗ nhỏ tiếng
+**Điểm cắt theo chỗ ngắt tiếng, không theo mốc từ**: `python3 -I $SKILL/scripts/diem-ngat.py <video> <giây>…` → chỗ nhỏ tiếng
 gần nhất trước / sau mỗi mốc + vạch năng lượng. Cắt xong, chép lời lại đoạn đã ghép (không nhạc) và đọc chữ đầu / cuối từng mối.
 Cắt đoạn từ nguồn dài bằng `-ss <vào> -t <dài> -i nguồn` cho từng đoạn rồi `concat`, **không** dùng `trim=` trên cả file (giải mã từ đầu
 file: 8 phút mỗi clip ở nguồn 54 phút).

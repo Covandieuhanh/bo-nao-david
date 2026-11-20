@@ -10,7 +10,6 @@ description: "Lỗi thường gặp khi dựng video (ffmpeg, Remotion, Whisper�
 - **`python3 -I` tắt thư mục user-site** → Pillow (cài `--user`) không import được. Script cần Pillow
   (`the-ghi-cong.py --card`, `vung-an-toan.py`) chạy bằng `python3` thường; script khác chạy `-I` cho an toàn.
 - `timeout` không có trên macOS — đừng dùng.
-- **Cắt đoạn từ nguồn dài:** `-ss <vào> -t <dài> -i nguồn` cho từng đoạn rồi `concat`; `trim=` trên cả file giải mã từ đầu (8 phút/clip ở nguồn 54 phút).
 - **Whisper ở chỗ ồn** bịa "Hãy subscribe cho kênh…" và lặp câu hàng chục lần ở bản chép dài; mốc từng từ lệch 0,5–2 s → điểm cắt dùng
   `diem-ngat.py`, mốc phụ đề kiểm bằng `soat-khop-tieng.py` (khối 01–03).
 - **Chép kịch bản tập trước** = nhân bản kiểu trình bày → mỗi tài nguyên chẩn đoán lại (`thiet-ke-bo-cuc/tu-chon.md` bước 0); render bị chặn nếu thiếu.

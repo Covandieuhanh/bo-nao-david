@@ -35,7 +35,7 @@ zsh $SKILL/scripts/tao-doan-noi-bat.sh "<thư mục dự án gốc | video dài>
 `am-luong-05.txt` (độ lớn tiếng mỗi 0,05 s), `bang-khung-hinh.jpg`; từ dự án gốc thêm `captions-goc.js` (lời đã sửa chính tả — nguồn chữ chính),
 `scenes-goc.js` (tên tập, người nói, kịch bản gốc), `du-an-goc.txt`. Đưa file video → chép lời bằng whisper.cpp + `large-v3-turbo`
 (không dùng faster-whisper/pip); `loai.txt = chua-ro` → xem `bang-khung-hinh.jpg` rồi quyết theo bảng bước 0.
-Whisper bịa câu ở đoạn không lời ("Hãy subscribe cho kênh…") — bỏ, không dùng làm câu chọn.
+Câu Whisper bịa (`../../quy-tac-chung.md` mục 1) không dùng làm câu chọn.
 
 ### 2. Bản đồ cả video (bắt buộc, trước khi chọn câu)
 Đọc HẾT lời (ưu tiên `captions-goc.js`, không có thì transcript; sửa chính tả bằng `phu-de-youtube.srt`), ghép thành câu hoàn chỉnh,

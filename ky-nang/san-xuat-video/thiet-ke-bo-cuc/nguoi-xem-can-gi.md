@@ -141,8 +141,7 @@ nhưng ghi vào dòng `Vì:` nguyên lý nào bị bỏ và vì sao. Chỉ luậ
 
 ## 6. Học thêm
 
-Học nguồn mới (`README.md` mục 4): mỗi điều học được phải gắn vào **một nguyên lý / nhu cầu** ở đây (thêm vào dòng "Đã học" hoặc cột
-"Nguồn"), kèm cách thể hiện mới ở `tu-chon.md` bước 4. Không gắn được vào cái khó nào của người xem thì không học.
+Học nguồn mới theo `README.md` mục 4; điều học được ghi vào dòng "Đã học" (hoặc cột "Nguồn") của đúng nguyên lý ở đây.
 
 **Học qua ca thật:** [giai-mau.md](giai-mau.md) — 19 khoảnh khắc từ 8 hình mẫu thành công cùng thể loại, mỗi ca đủ Cần · Vì · Làm.
 **Tự kiểm:** [bai-kiem/](bai-kiem/README.md) — 10 đoạn, AI làm rồi chấm bằng `cham.py`, đạt ≥ 8/10.

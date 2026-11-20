@@ -4,10 +4,7 @@ description: Dựng video tự quay thành bản đăng được ngay (Reels/Tik
 ---
 # Dựng video theo phong cách mẫu
 
-**Đọc trước:** `../../chuan-muc-lam-viec.md` · `../quy-tac-chung.md` · hồ sơ `../ho-so-thuong-hieu/lam-video.md` (hoặc `ghep-vlog.md`) — **con số lấy ở hồ sơ, không ghi cứng**.
-File khác chỉ đọc ở đúng bước cần (cột "Khối" của công thức). `references/loi-thuong-gap.md` đọc một lần ở đầu phiên.
-Skill này là **CÔNG THỨC**: thứ tự khối + quyết định riêng của loại + tiêu chí đạt. Cách làm từng bước nằm trong README của khối;
-sửa cách làm → sửa khối, không sửa công thức.
+**Đọc trước:** `../quy-tac-chung.md` (mục 8) · hồ sơ `../ho-so-thuong-hieu/lam-video.md` (hoặc `ghep-vlog.md`).
 
 Người dùng đưa **video gốc** (thường dọc 9:16, tiếng Việt) và có thể kèm **video mẫu**. Mục tiêu: video **đăng được ngay**, khớp từng
 câu nói; David không cần bản cho app chỉnh sửa (CapCut/DaVinci). Cách làm cốt lõi: **viết code hoạt hình** (Remotion/React) theo token phong cách, gắn cảnh vào
@@ -15,8 +12,7 @@ mốc lời Whisper, render clip nền trong suốt rồi ghép lên video gốc
 
 **Duyệt 4 phần trước** (`../../chuan-muc-lam-viec.md` mục 2), duyệt rồi không hỏi thêm: chạy một mạch từ video gốc tới bản cuối. Khung xuất = khung gốc (bảng "Khung xuất");
 video > 3 phút làm đủ gói YouTube (màn kết, chương, teaser, thumbnail khi ngang); chữ bìa, cảnh minh hoạ chính, tuyến nhạc Claude tự chọn
-theo khối. Giữa chừng chỉ dừng khi gặp tín hiệu nặng (`thu-thap-yeu-cau`). Báo cáo cuối liệt kê "đã chọn X vì Y" để David sửa ở bản
-cuối; nhận góp ý thì sửa đúng chỗ được nêu rồi render lại toàn bộ luôn (`quy-tac-chung.md` mục 8).
+theo khối. Dừng giữa chừng, báo cáo "đã chọn X vì Y", góp ý → render lại toàn bộ: `quy-tac-chung.md` mục 8.
 
 ## Nhịp làm (mục tiêu: video 10 phút xong trong ~1 giờ)
 
@@ -60,7 +56,7 @@ bộ nhận diện, phát hành. Dưới đây chỉ là luật RIÊNG của ski
 | Đầu vào | Chế độ | Làm theo |
 |---|---|---|
 | **1 video gốc** có người nói trước camera | Phủ đồ hoạ lên video gốc (giữ nguyên hình) | Công thức "Làm video" bên dưới |
-| **Nhiều file của cùng một buổi nói / cùng cảnh** (máy quay tách file, buổi 1:1, bài giảng), kể cả bản theo hướng cắt từ đó | **Nối file thành một video gốc** (`ffmpeg -f concat`, bỏ đoạn theo `phan-huong.md`) rồi làm như 1 video — khuôn này có đủ kho (19/11/2026) | Công thức "Làm video" |
+| **Nhiều file của cùng một buổi nói / cùng cảnh** (máy quay tách file, buổi 1:1, bài giảng), kể cả bản theo hướng cắt từ đó | **Nối file thành một video gốc** (`ffmpeg -f concat`, bỏ đoạn theo `phan-huong.md`) rồi làm như 1 video — khuôn này có đủ kho | Công thức "Làm video" |
 | **Nhiều cảnh khác nhau** (vlog, sự kiện, clip minh hoạ chen vào lời), hoặc clip không nói trước camera | **Ghép nhiều clip**: tự sắp mạch, clip minh hoạ trích đúng câu nói liên quan; tự soát kế hoạch rồi render | `references/nhieu-doan-video.md` (khối 11, hồ sơ `ghep-vlog`) |
 
 Mọi chế độ đều qua **chẩn đoán → tự chọn** (`../thiet-ke-bo-cuc/tu-chon.md`, bước 0: không chép kịch bản tập trước). Render đầy đủ bị
@@ -76,7 +72,7 @@ khi không rõ file nào là mẫu. "Giống video trước" → lấy token pho
   xoá (`../thiet-ke-bo-cuc/README.md` mục 4); hoặc 4–8 ảnh chụp các cảnh tiêu biểu. Không có mẫu → phong cách mặc định của template. Học phong cách mẫu không đụng chữ ký nhận diện (khối 10).
 - Yêu cầu thêm của David (thông điệp chính, tên, chỗ muốn nhấn) luôn ưu tiên hơn suy luận.
 - **Khung xuất**: cùng khung video gốc; chỉ đổi khi David **nói rõ khung** ("làm dọc", "xuất ngang"). Yêu cầu khác làm trong khung gốc — **tập trung vào một vùng / bỏ rác quanh chủ thể** (màn hình điện thoại, laptop, vật) → **khung chủ thể**
-  (`khung-chu-the.py`, khối 04): chủ thể thành khung bo góc trên nền kênh, phần còn lại cho bảng ghi chú + cảnh — không cắt-phóng cả khung:
+  (khối 04), không cắt-phóng cả khung:
 
 | Gốc → xuất | Cách làm | Ở đâu |
 |---|---|---|
@@ -99,9 +95,7 @@ khi không rõ file nào là mẫu. "Giống video trước" → lấy token pho
 | 9 | Tránh che người | [05](../mo-dun/05-tranh-che-chu-the/README.md) | `vi-tri-khuon-mat.sh` |
 | 10 | Chụp thử → render → kiểm bản cuối (+ âm thanh) | [17](../mo-dun/17-kiem-soat-chat-luong/README.md) · [09](../mo-dun/09-am-thanh/README.md) | `xem-truoc.mjs` → `xuat-video.mjs` → `xem-truoc-ban-dung.py` → `kiem-khung-hinh.sh` |
 | 11 | Phát hành: tiêu đề, khung bìa, màn kết/chương/teaser (YouTube video dài), thumbnail (ngang), số liệu | [15](../mo-dun/15-xuat-ban/README.md) · [08](../mo-dun/08-phan-ket/README.md) · [14](../mo-dun/14-anh-thu-nho/README.md) · [16](../mo-dun/16-phan-tich-so-lieu/README.md) | `doan-gioi-thieu.py` · `chuong.py` · `anh-thu-nho.sh` |
-| 12 | David chốt bản cuối → bản cuối vào `~/Movies/cho-dang/<tập>/` + `cho-dang.sh gui` (Mac chỉ giữ bản cuối chưa đăng) → dọn file tạm luôn (`--xoa`, không hỏi; chỉ hỏi phần ⏸ đang dở) → đưa dự án lên Drive, xoá trên Mac | [17](../mo-dun/17-kiem-soat-chat-luong/README.md) | `cho-dang.sh` → `don-tap.py` → `luu-drive.sh` (nền) |
-
-Bước đánh dấu *(bước nhẹ)*: nhắc đổi mô hình rẻ hơn theo `chuan-muc-lam-viec.md` mục 3.
+| 12 | David chốt bản cuối → giao, dọn, đưa dự án lên Drive (`../quy-tac-chung.md` mục 8, dòng cuối) | [17](../mo-dun/17-kiem-soat-chat-luong/README.md) | `cho-dang.sh` → `don-tap.py` → `luu-drive.sh` (nền) |
 
 ### Tạo dự án
 
@@ -136,7 +130,6 @@ kiểm khung quanh mốc đó. Đổi phong cách toàn bộ → sửa `chu-de.j
 "Giữ lại đoạn bị cắt"/"cắt thêm đoạn X" → đổi mốc bản cuối sang mốc thô bằng `cac-doan.json`, sửa `diem-cat.json`, lưu bản `cac-doan.json`
 cũ, chạy `ap-dung-lam-sach.py`, dời mốc mọi cảnh (`start`, `end`, `at`…) theo bảng mới. Chỉ render lại cảnh có mối đổi nằm **bên trong**
 nó, rồi `xem-truoc-ban-dung.py`.
-Ghi góp ý đúng một chỗ: khối/skill bị ảnh hưởng + một dòng `references/nhat-ky-thay-doi.md`.
 
 ## Cấu trúc dự án
 

@@ -52,9 +52,8 @@ Học để Claude hiểu đúng ý và trả lời hợp giọng; khi viết b�
 2. **Câu ngắn**, mỗi dòng một ý; 3–6 dòng cho caption Reels/TikTok, 6–12 dòng cho bài viết fanpage. Xuống dòng thoáng.
 3. **Mở bằng chỗ kẹt / khoảnh khắc thật** (Vấn đề) — câu đầu là câu người xem thấy mình trong đó.
 4. **Giữ 1–2 cụm đặc trưng** của David mỗi bài ("thật sự là", "cứ vững tin", "đúng không?") — không nhồi.
-5. **Kết theo kiểu dẫn dắt của bài** (khối 08 / `kenh.json`): Không / Gợi mở → hỏi bình luận "**Vấn đề**" hoặc "**Kết quả**";
-   Mời → bài con người "nhắn mình một chữ **'gỡ'**", bài công nghệ "nhắn mình hai chữ **'số hoá'**". Không hứa kết quả; bài con người không nói giá, không gói; bài công nghệ được nói giá sản phẩm công nghệ.
-6. **Lằn ranh** của kênh đang đăng, như khối 00 (không "chữa lành", không đọc số người thật chưa đồng ý, không hứa kết quả nhờ con số, thuế/pháp lý, chẩn đoán, chuyện không ẩn danh, kinh doanh).
+5. **Kết theo kiểu dẫn dắt của bài** (Không · Gợi mở · Mời — câu kết và giá: khối 08).
+6. **Lằn ranh** của kênh đang đăng: khối 00 mục 3.
 7. **Emoji** tối đa 1–2 / bài, chỉ khi David dùng trong lời (vd. 🇻🇳). **Hashtag** 2–3 cụ thể, tiếng Việt không dấu (#lamchubanthan #quanlymoi).
 8. **Facebook cá nhân**: giọng đời thường hơn, có thể chỉ 1–2 câu + chia sẻ lại bài trang.
 

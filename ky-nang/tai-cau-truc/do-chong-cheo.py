@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
-"""MÁY ĐO CHỒNG CHÉO — skill tai-cau-truc (David chốt 10/11/2026).
+"""MÁY ĐO CHỒNG CHÉO — skill tai-cau-truc.
   python3 -I ky-nang/tai-cau-truc/do-chong-cheo.py [bộ …] [--chi-tiet]      (không ghi bộ = đo mọi bộ trong bo.json)
 Đo các "bản luật" (file AI đọc khi làm việc) của từng bộ, xem luật đã chồng nhiều lớp tới đâu:
   dau_ngay  dấu ngày / "chốt 08/11" nằm trong bản luật (ngày thuộc về sổ quyết định, không thuộc luật)
   ghi_de    câu kiểu "thay luật cũ", "ngoại lệ", "nới", "bổ sung 09/11", "chuyển nguyên văn từ SKILL.md cũ" — dấu luật vá lên luật
   trung     câu dài giống hệt nhau ở hai file (một luật hai nhà)
-  sua       số lần bản luật bị sửa kể từ lần tái bản gần nhất (git, mốc ở lich-su.md)
-  dong      tổng số dòng bản luật
-Một bộ bất kỳ vượt một ngưỡng (bo.json "nguong") → in một dòng "NÊN TÁI BẢN TOÀN BỘ" kèm lý do, mã thoát 1 (tái bản là cả đợt, mọi bộ). Không sửa file nào.
+  gan_trung cặp dòng ở hai file khác nhau giống nhau quá nửa số chữ (một ý viết lại theo cách khác ở nhà thứ hai)
+  sua       số lần bản luật bị sửa kể từ lần tái bản gần nhất (git, mốc ở lich-su.md) — chỉ nhắc nhẹ
+  dong      tổng số dòng bản luật — chỉ để biết độ lớn; bộ não lớn lên vì học thêm, dài không phải là rối
+Chuông chỉ kêu vì trùng / rối: một bộ bất kỳ vượt một ngưỡng ở bo.json "nguong" (dau_ngay, ghi_de, trung, gan_trung) → in một dòng
+"NÊN TÁI BẢN TOÀN BỘ" kèm lý do, mã thoát 1 (tái bản là cả đợt, mọi bộ). "nhac" (sua) vượt chỉ in một dòng nhắc, không kêu. Không sửa file nào.
 Phần "## Nhật ký" cuối file là sổ, không tính.
 """
 import fnmatch, glob, json, os, re, subprocess, sys
@@ -47,6 +49,40 @@ def cau(s):
         t = re.sub(r"[`*_>#|\-\[\]()]", " ", d.lower()); t = re.sub(r"\s+", " ", t).strip()
         if len(t) >= 70: yield t
 
+GT_CHU, GT_NGUONG = 12, 0.5   # dòng có ≥ 12 chữ; hai dòng chung > 50 % số chữ (Jaccard) là gần trùng
+
+def chu(dong):
+    """Chỉ phần chữ của dòng: bỏ tiêu đề (mục lục lặp tên khối là đúng thiết kế), bỏ `code`/đường dẫn và địa chỉ link."""
+    if dong.lstrip().startswith('#'): return set()
+    dong = re.sub(r"`[^`]*`", " ", dong); dong = re.sub(r"\]\([^)]*\)", "] ", dong)
+    return set(re.findall(r"\w+", dong.lower()))
+
+def dong_chu(s):
+    """Các dòng văn của file: bỏ phần mô tả đầu file (--- … ---, chỉ mục lặp lại là đúng thiết kế) và khối ``` lệnh / cây thư mục."""
+    ls = s.splitlines(); i = 0; code = False
+    if ls and ls[0].strip() == '---':
+        i = next((k for k in range(1, len(ls)) if ls[k].strip() == '---'), 0) + 1
+    for k in range(i, len(ls)):
+        if ls[k].lstrip().startswith('```'): code = not code; continue
+        if not code: yield k + 1, ls[k]
+
+def gan_trung(texts):
+    """texts: {file: nội dung}. Trả về {(file a, file b): [(dòng a, dòng b), …]} các cặp dòng gần trùng ở hai file khác nhau."""
+    dong = [(r, i, w) for r, s in texts.items() for i, l in dong_chu(s) if len(w := chu(l)) >= GT_CHU]
+    chi_muc = defaultdict(list)
+    for k, (r, i, w) in enumerate(dong):
+        for t in w: chi_muc[t].append(k)
+    df = {t: len(v) for t, v in chi_muc.items()}
+    out = defaultdict(list)
+    for k, (r, i, w) in enumerate(dong):
+        hiem = sorted(w, key=lambda t: df[t])[:4]          # ứng viên: dòng chung ít nhất một chữ hiếm
+        ung = {j for t in hiem for j in chi_muc[t] if j > k}
+        for j in ung:
+            r2, i2, w2 = dong[j]
+            if r2 != r and len(w & w2) / len(w | w2) > GT_NGUONG:
+                out[tuple(sorted([(r, i), (r2, i2)]))[0][0], tuple(sorted([(r, i), (r2, i2)]))[1][0]].append((i, i2))
+    return out
+
 def moc(bo):
     """Mốc gần nhất của bộ: tag chung tai-ban-<n> (tái bản toàn bộ) hoặc tag riêng cũ tai-ban-<bộ>-<n>, lấy tag mới nhất có thật trong git."""
     p = os.path.join(HERE, 'lich-su.md')
@@ -74,20 +110,23 @@ ket = 0; vuot_bo = []
 for bo in (args or [k for k in CFG if not k.startswith('_')]):
     if bo not in CFG: print(f'không có bộ "{bo}" trong bo.json'); continue
     files = ban_luat(bo)
-    per = {}; noi = defaultdict(set); tong = defaultdict(int)
+    per = {}; noi = defaultdict(set); tong = defaultdict(int); texts = {}
     for r in files:
-        s = doc(r)
+        s = doc(r); texts[r] = s
         d = {'dau_ngay': len(NGAY.findall(s)), 'ghi_de': len(GHI_DE.findall(s)) + len(THAY_HOA.findall(s)), 'dong': s.count('\n') + 1}
         per[r] = d
         for k, v in d.items(): tong[k] += v
         for c in set(cau(s)): noi[c].add(r)
     trung = {c: fs for c, fs in noi.items() if len(fs) > 1}
     tong['trung'] = len(trung)
+    gt = gan_trung(texts); tong['gan_trung'] = sum(len(v) for v in gt.values())
     tong['sua'], m = so_lan_sua(bo, files)
-    ng = CFG[bo]['nguong']
+    ng = CFG[bo]['nguong']; nh = CFG[bo].get('nhac', {})
     vuot = [f"{k} {tong[k]} > {ng[k]}" for k in ng if tong[k] > ng[k]]
     print(f"\n## Bộ {bo} — {len(files)} file bản luật · mốc tái bản gần nhất: {m or 'chưa có'}")
-    print('  ' + ' · '.join(f"{k} {tong[k]}/{ng[k]}" for k in ng))
+    print('  ' + ' · '.join(f"{k} {tong[k]}/{ng[k]}" for k in ng) + f"  (độ lớn: {tong['dong']} dòng · sửa {tong['sua']} lần)")
+    for k in nh:
+        if tong[k] > nh[k]: print(f"  · nhắc: {k} {tong[k]} > {nh[k]} — xem có ý trùng mới không (không kêu tái bản)")
     top = sorted(per.items(), key=lambda kv: -(kv[1]['dau_ngay'] + 3 * kv[1]['ghi_de']))[: (len(per) if CHI_TIET else 6)]
     print('  File chồng nhiều nhất:')
     for r, d in top:
@@ -96,6 +135,10 @@ for bo in (args or [k for k in CFG if not k.startswith('_')]):
         print(f'  Câu trùng ở nhiều file ({len(trung)}):' + ('' if CHI_TIET else ' (3 câu đầu, --chi-tiet để xem hết)'))
         for c, fs in list(trung.items())[: (len(trung) if CHI_TIET else 3)]:
             print(f"   - \"{c[:90]}…\" ở {', '.join(sorted(fs))}")
+    if gt:
+        print(f'  Cặp file có dòng gần trùng ({len(gt)}):' + ('' if CHI_TIET else ' (6 cặp nhiều nhất, --chi-tiet để xem hết)'))
+        for (a, b), v in sorted(gt.items(), key=lambda kv: -len(kv[1]))[: (len(gt) if CHI_TIET else 6)]:
+            print(f"   - {len(v)} · {a} ↔ {b} (dòng {', '.join(f'{x}↔{y}' for x, y in v[:4])})")
     if vuot:
         ket = 1; vuot_bo.append(f"{bo} ({'; '.join(vuot)})"); print(f"  ⇒ bộ {bo} vượt ngưỡng: " + '; '.join(vuot))
     else:

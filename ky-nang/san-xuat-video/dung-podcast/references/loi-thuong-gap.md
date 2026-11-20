@@ -30,9 +30,8 @@ description: "Lỗi thường gặp riêng khi dựng podcast và cách tránh."
 - Chụp thử cảnh có `start` sau mốc chụp → preview lấy khung 0 (trống) — mốc chụp phải nằm trong cảnh.
 
 ## Chữ tiếng Việt
-- Barlow Condensed in hoa với `lineHeight: 1` + khung `overflow: hidden` chừa cố định (34/30 px): ở cỡ 140–150 px dấu chồng của dòng
-  dưới chạm dòng trên ("NGẪU", "NHIỀU", "CỦA"), dấu nặng bị cắt ("BỊ" thành "BI"), dấu nặng của dòng nhấn lòi ra khỏi ô màu
-  ("LỰC"). Sửa: `VN` trong khung-podcast.js — giãn dòng + chừa chỗ theo tỉ lệ cỡ chữ. Luôn soi ảnh chụp phóng to các chữ Ầ Ễ Ỗ Ị Ự.
+- Dấu chồng, dấu bị cắt ở chữ to: `$BASE/references/loi-thuong-gap.md` mục "Chữ tiếng Việt". Riêng podcast còn gặp dấu nặng của dòng
+  nhấn lòi ra khỏi ô màu ("LỰC").
 - Ô màu của hook cao thêm khi chừa dấu → chạm sóng âm ở cỡ 150 → giới hạn cỡ chữ to podcast ≤ 118–120.
 
 ## Nội dung

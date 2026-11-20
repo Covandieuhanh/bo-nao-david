@@ -174,5 +174,4 @@ Bảng ý → cảnh (mốc · câu nguyên văn · dạng câu · cảnh) đi n
 
 ## Học thêm thì thêm ở đây
 
-Mỗi điều học mới (`phan-tich-video-mau`, `README.md` mục 4) phải gắn vào một nguyên lý ở `nguoi-xem-can-gi.md` **và** thêm một dòng
-"dạng câu / hình → cách thể hiện" vào bảng 4c dưới đúng nguyên lý. Không có dòng ở đây thì không bao giờ được chọn.
+Học thêm theo `README.md` mục 4: mỗi cách mới thêm một dòng vào bảng 4c dưới đúng nguyên lý. Không có dòng ở bảng 4c thì không bao giờ được chọn.

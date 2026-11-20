@@ -124,7 +124,7 @@ hơn `illus`. Vlog (`ke-hoach.json` fx): `{"type": "diagram", "c", "at", "len", 
 1. Viết mạch hình + đường cảm xúc (mục 1–2), rồi `chuyen-dong/src/canh.js` từ transcript theo `../../dung-video-theo-phong-cach/references/thiet-ke-canh.md`
    (loại cảnh cho loại câu nói, props). `references/vi-du-canh.js` là một kịch bản thật đã duyệt — đọc để lấy cảm giác nhịp và
    cách gắn mốc. Ghi `$P/ke-hoach-canh.md`: bảng cảnh (thời gian, loại, nội dung, minh hoạ, cảm xúc, lý do bố cục).
-2. Không làm cảnh `hook` mở đầu trừ khi David yêu cầu (khối 06).
+2. Thẻ tít `hook` mở đầu: khối 06.
 3. **Quét transcript tìm câu hành động** → cảnh `action` `{icon, quote, quoteAt, doneAt}` ngay lúc nói (doneAt = lúc nói xong cụm
    việc). Câu hành động rơi vào 4 s cuối → đặt màn hành động ngay trước màn chốt.
 4. **Cảnh cuối luôn là màn chốt** (khối 08): `{id: 'chot', type: 'cta', start: <thời lượng − 4>, end: <thời lượng>, props: {text, kind}}`

@@ -33,7 +33,7 @@ ngôn ngữ thiết kế (ví dụ `card` variant `quote`, `stat`, `compare`, `m
 Đổi tên prop cho hợp nội dung — `jobs` chỉ là tên lịch sử, nghĩa là "các mục".
 
 ## Mở đầu 3 giây
-0–3 s là lời thật của David nói ngay video về cái gì (khối 06). Khi David yêu cầu thẻ tít `hook`: `start: 0`, `end` ≈ 3 s (kết thúc ở
+Mở đầu: `../../quy-tac-chung.md` mục 2 + khối 06. Khi David yêu cầu thẻ tít `hook`: `start: 0`, `end` ≈ 3 s (kết thúc ở
 chỗ ngắt câu gần nhất); `lines` = cụm nguyên văn đắt nhất (2 dòng in hoa, ≤ 4 từ/dòng, dòng nhấn là ý "đắt" nhất), `eyebrow` trích lời
 hoặc bỏ trống; không câu kéo ("SỐC", "bí mật…"). Cảnh khác bắt đầu sau `end` của hook. Chế độ ghép nhiều clip: đoạn ghép mở đầu
 đóng vai trò này (multi-clip 2d).

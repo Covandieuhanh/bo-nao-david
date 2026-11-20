@@ -26,8 +26,8 @@ python3 -I $SKILL/scripts/phu-de.py "$P"          # kiem-tra/goc/moc-tung-tu.srt
   diễn đạt lại, giữ cả "thì", "là", "cái".
 - **Câu bị mất / câu bịa**: script bỏ câu kiểu "Hãy subscribe cho kênh…"; nếu chỗ đó người nói có nói thật (vd. "Xin chào"
   cuối video) thì đối chiếu `kiem-tra/lam-sach/ban-chep-loi.srt` (lần chạy khác) + `am-luong.txt` và thêm tay.
-- **Khớp tiếng, không chỉ đúng chữ** (19/11/2026: phụ đề đã soát chữ của tập marketing lệch tới 14 s ở chỗ lời người kia chen vào không
-  có phụ đề, phát hiện sau render 54 phút): trước render đầy đủ chạy
+- **Khớp tiếng, không chỉ đúng chữ** (phụ đề đúng chữ vẫn có thể lệch hàng chục giây ở chỗ lời người kia chen vào không có phụ đề,
+  và chỉ lộ ra sau render): trước render đầy đủ chạy
   `python3 -I $SKILL/scripts/soat-khop-tieng.py <video> <phu-de.json> [--tu --den] [--sua <ra.json>]` (≈ 45 s mỗi phút video, chạy nền).
   Lệch > 3 s = P0, sửa bằng `--sua` (chỉ thay dòng lệch lớn); lệch 1,5–3 s dồn một chỗ → nghe lại. Cắt bản theo hướng / clip từ phụ đề
   bản dài: chép lời lại chính đoạn ghép (không nhạc) rồi canh mốc theo đó.

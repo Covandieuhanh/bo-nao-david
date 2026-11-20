@@ -14,8 +14,7 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
 - **Thẩm mỹ chỉ giữ chữ ký nhận diện** (`thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0): xem video nào cũng nhận ra cùng một người làm.
   Ngoài chữ ký là sáng tạo tự do theo nội dung; học được gì từ mẫu cũng dùng được, và học chỉ thêm vào kho, không thay cái đã có
   (`thiet-ke-bo-cuc/README.md` mục 4).
-- **Mọi lựa chọn tự setup theo nội dung nguồn** (David chốt 19/11/2026: *"mọi thứ cần phát huy tối đa được sức mạnh của AI, mọi lựa
-  chọn đều phải được tự động setup phù hợp với nội dung của tài nguyên nguồn"*): khuôn, bố cục, lớp thông tin, kiểu cảnh, thẩm mỹ,
+- **Mọi lựa chọn tự setup theo nội dung nguồn**, để phát huy tối đa sức mạnh của AI: khuôn, bố cục, lớp thông tin, kiểu cảnh, thẩm mỹ,
   nhạc, khung đều do người dựng (AI nào cũng vậy) lập luận từ chính tài nguyên (`thiet-ke-bo-cuc/nguoi-xem-can-gi.md` → `tu-chon.md`), không chép từ tập trước, không chờ
   David chỉ. Máy chặn render khi chưa chẩn đoán (`soat-canh.mjs`).
 - **Hiểu hơn cầu kì.** Kho học được là để chọn cho hợp từng loại nội dung, không nhét hết vào một video. Mỗi video chỉ dùng vài kiểu
@@ -32,8 +31,7 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
 - **Nhãn cố định của khung** (không phải lời): "Bản đầy đủ trên kênh …" ở thẻ cuối dẫn bản đầy đủ, và **lịch phát do David đưa**
   ("Tập mới mỗi thứ 6") — `project.schedule` (1 video), `STAGE.schedule` (podcast), ke-hoach.json `"schedule"` (vlog),
   `"endcard": {"schedule"}` (highlight). Không tự đặt lịch.
-- **Lằn ranh kênh trainer** (kênh khác theo hồ sơ kênh đó; loại khỏi mọi chữ/clip): đọc số của người thật khi họ chưa đồng ý, hứa tiền hay kết quả nhờ con số, nghi thức cầu xin / phóng sinh (còn nội dung từ trường số (kèm dẫn chứng thần số học, thiền, "nghiệp"…) thuộc hướng trainer, được nói công khai, `chien-luoc-nghe-nghiep.md` 4.7) · "chữa lành", công dụng sức khoẻ của sản phẩm ·
-  tư vấn thuế/pháp lý · tên thật/nơi làm/chi tiết lộ danh tính khách, học viên, nhân viên · giá, tên gói dịch vụ. Câu chủ chốt dính
+- **Lằn ranh** (danh sách theo từng hướng: khối 00 mục 3; gốc `chien-luoc-nghe-nghiep.md` 4.7): loại khỏi mọi chữ / clip. Câu chủ chốt dính
   lằn ranh → báo David, không tự sửa lời. Ở video dài: cảnh báo trong phiếu lọc và báo cáo, mặc định giữ lời, David quyết ở bản cuối (khối 00 mục 3).
 - Whisper bịa câu ở đoạn không lời ("Hãy subscribe cho kênh…", "Cảm ơn các bạn đã xem") → bỏ.
 
@@ -74,8 +72,7 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
 - **Mọi video đều có điểm nhấn** (motion graphics hiểu rộng: thứ kéo mắt người xem vào ý đang nói) — "dựng nhẹ" vẫn có. Có nhiều
   loại: hình vẽ, chữ nhấn cụm đắt, làm nổi người đang nói (`nhan`), sơ đồ, cảnh toàn màn hình. Mỗi video chỉ dùng vài kiểu hợp nội
   dung nhất (mục 0). Cách chọn: khối 07.
-- **Bố cục tự cân**: không con số bắt buộc về độ dài cảnh, tỷ lệ mặt / đồ hoạ, số cảnh; chọn từ `thiet-ke-bo-cuc/bo-cuc.md` theo 4 câu hỏi
-  ở `thiet-ke-bo-cuc/README.md` mục 2. Ngang tự do; dọc mỗi lúc ít thứ.
+- **Bố cục tự cân** theo thước đo ở `thiet-ke-bo-cuc/README.md` mục 2, chọn từ `thiet-ke-bo-cuc/bo-cuc.md`.
 - **Tự chọn trước kế hoạch cảnh** (cả 3 skill dựng): yêu cầu người dùng → chẩn đoán → loại nội dung → bố cục nền, lớp thông tin → mỗi cảnh
   "Cần · Vì · Làm" theo `thiet-ke-bo-cuc/nguoi-xem-can-gi.md` + `tu-chon.md` (`chan-doan.py`); ghi vào `ke-hoach-canh.md`.
 - **Không che người nói, không đè phụ đề** (chặn cứng ở mọi template). Khung có nhiều người: graphic không đè hay làm mờ bất kỳ ai;
@@ -116,6 +113,13 @@ Ghi `<dự án>/phat-hanh/phat-hanh.md`:
 - Gửi David: video + thumbnail (SendUserFile) + tiêu đề.
 
 ## 8. Quy trình chung
+- **Cách chạy một công thức** (mọi skill dựng: `dung-video-theo-phong-cach`, `dung-podcast`, `cat-doan-noi-bat`):
+  - SKILL.md là **công thức**: thứ tự khối + quyết định riêng của loại + tiêu chí đạt. Cách làm từng bước ở README của khối; sửa cách
+    làm → sửa khối, không sửa công thức. Con số lấy ở hồ sơ `ho-so-thuong-hieu/`, không ghi cứng.
+  - Đọc trước: `../chuan-muc-lam-viec.md` · file này · hồ sơ của loại; `references/loi-thuong-gap.md` của skill (và của skill gốc khi
+    dùng chung template) đọc một lần ở đầu phiên. File khác chỉ đọc ở đúng bước cần (cột "Khối" của công thức).
+  - Bước đánh dấu *(bước nhẹ)*: nhắc đổi mô hình rẻ hơn theo `../chuan-muc-lam-viec.md` mục 3.
+  - Ghi góp ý đúng một chỗ: khối / skill bị ảnh hưởng + một dòng ở sổ `references/nhat-ky-thay-doi.md` của skill.
 - Hỏi, chạy một mạch, lệnh nền, báo cáo cuối: `../chuan-muc-lam-viec.md` mục 2–4; mật khẩu: `AGENTS.md` luật 5. Riêng video: duyệt 4 phần ở đầu việc, sau đó không có điểm dừng duyệt
   giữa chừng (kể cả kế hoạch ghép vlog); báo cáo cuối thêm "đã chọn X vì Y" và tên riêng cần xác nhận.
 - Không tải video từ YouTube/TikTok để dựng (nhờ David gửi file); tải để học mẫu: `thiet-ke-bo-cuc/README.md` mục 4.

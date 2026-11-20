@@ -26,7 +26,7 @@ Phụ đề + thanh thời gian ở lớp trên cùng → không cảnh nào che
   toàn theo `PF.ov` — dọc: 0,96× tại y 450; ngang: 1,25× tại y 150 (x 96–1134, tránh vòng micro). Ý đang bàn tự ẩn lúc đó.
 - Toàn màn hình: che sân khấu (trừ phụ đề + thanh thời gian). Dọc: mọi loại. Ngang: `montage`, `gens`, `build` có bản ngang
   (toan-man-hinh-ngang.jsx); `recap`, `converge`, `master` chưa có — không dùng ở khung ngang (cần thì viết bản ngang trước).
-- Nội dung cảnh toàn màn hình kết thúc trên dải phụ đề: dọc y < 1240, ngang y < 790.
+- Giới hạn đáy cảnh toàn màn hình: khối 12.
 
 ## Chọn cảnh cho lời nói
 Ưu tiên như `$BASE/references/thiet-ke-canh.md`, thêm:

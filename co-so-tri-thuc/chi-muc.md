@@ -143,6 +143,7 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [du-an/tai-ban-3-nao.md](../du-an/tai-ban-3-nao.md) — Tái bản 3 (14/11), phiên con bộ nao: bảng luật đang sống, chéo bộ, hỏi David. · ←1
 - [du-an/tai-ban-3-video.md](../du-an/tai-ban-3-video.md) — Tái bản 3 (14/11), phiên con bộ video: bảng luật đang sống, chéo bộ, hỏi David. · ←1
 - [du-an/tai-ban-3.md](../du-an/tai-ban-3.md) — Tái bản 3 toàn bộ bộ não (mở 14/11): file theo dõi chung của phiên điều phối — máy đo lúc mở, file từng phiên con, chéo bộ, hỏi David, kiểm chung. · ←5
+- [du-an/tai-ban-4.md](../du-an/tai-ban-4.md) — Tái bản 4 (20/11/2026): đổi máy đo sang đo trùng / rối (bỏ ngưỡng số dòng, thêm gan_trung) và gom ý trùng của bộ video về một nhà. · ←1
 - [du-an/tai-cau-truc-2-ghi-nho.md](../du-an/tai-cau-truc-2-ghi-nho.md) — Tái bản 2 (10/11), phần dọn ghi nhớ bo-nho: gộp, bỏ, chuyển lưu trữ. · ←2
 - [du-an/tai-cau-truc-2-hoi.md](../du-an/tai-cau-truc-2-hoi.md) — Tái bản 2 (10/11), phần bộ hỏi skill thu-thap-yeu-cau. · ←2
 - [du-an/tai-cau-truc-2-nao.md](../du-an/tai-cau-truc-2-nao.md) — Tái bản 2 (10/11), phần bộ não: AGENTS.md, CLAUDE.md, david.md, chuan-muc-lam-viec. · ←2
