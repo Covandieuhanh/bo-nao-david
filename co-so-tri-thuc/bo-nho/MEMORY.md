@@ -56,3 +56,4 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 ## Chỉ máy Mac chính (file không lên GitHub)
 
 - [Bố cục thư mục máy này](thiet-bi-bo-cuc-thu-muc.md) — bo-nao-david (lối tắt David.Claude), 1-nghe-nghiep, 2-ca-nhan; hợp đồng/giấy tờ ở 2-ca-nhan/phap-ly (15/11); Mac chỉ giữ việc đang làm; dọn 07/11 bỏ App notion (07/11, 11/11; gộp 14/11)
+- [Xoá phiên app Claude](thiet-bi-xoa-phien-app-claude.md) — thoát app, chuyển local_*.json đi sao lưu, ghi deleted_<id>, mở lại app (20/11)
