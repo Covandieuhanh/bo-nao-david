@@ -20,7 +20,8 @@ cuối; nhận góp ý thì sửa đúng chỗ được nêu rồi render lại 
 
 ## Nhịp làm (mục tiêu: video 10 phút xong trong ~1 giờ)
 
-- **Tự chọn trước, không thử bằng render** (`../thiet-ke-bo-cuc/tu-chon.md`): chẩn đoán → chọn bố cục nền, lớp thông tin, kiểu cảnh →
+- **Tự chọn trước, không thử bằng render** (`../thiet-ke-bo-cuc/nguoi-xem-can-gi.md` → `../thiet-ke-bo-cuc/tu-chon.md`): đọc `yeu-cau.md` + `them-anh/` → chẩn đoán →
+  loại nội dung → bố cục nền, lớp thông tin → mỗi cảnh lập luận "Cần · Vì · Làm" →
   `soat-canh.mjs` chặn kiểu lỗi theo khung → chụp thử đủ lớp → render một lần.
 - Render và ghép chạy nền; `xem-truoc-ban-dung.py` tự dừng khi render còn chạy hoặc thiếu lớp (không ghép thiếu).
 - **Lỗi skill giữa chừng không mổ xẻ tại chỗ**: ghi một dòng vào `kiem-tra/loi-ky-nang.md`, làm tiếp bằng cách đơn giản nhất cho đúng kết
@@ -92,7 +93,7 @@ khi không rõ file nào là mẫu. "Giống video trước" → lấy token pho
 | 4 | Đổi khung (nếu cần) + nâng khung | [04](../mo-dun/04-khung-hinh/README.md) | `rekhung-*` / `dat-dau-ra.py` · `nang-lop.py "$P" apply` |
 | 5 | Chép lời + hiểu video *(bước nhẹ)* | [01](../mo-dun/01-phien-am/README.md) | `phan-tich-video.sh` |
 | 6 | Phụ đề | [03](../mo-dun/03-phu-de/README.md) | `phu-de.py` → sửa từng dòng |
-| 6b | **Chẩn đoán → tự chọn**: bố cục nền (khung gốc / khung chủ thể / pillar), lớp thông tin (bảng ghi chú chạy `GHI_CHU`, chương), kiểu cảnh | [`tu-chon.md`](../thiet-ke-bo-cuc/tu-chon.md) · [04](../mo-dun/04-khung-hinh/README.md) | `chan-doan.py` → (`khung-chu-the.py luoi` → `apply`) |
+| 6b | **Chẩn đoán → tự chọn**: yêu cầu người dùng, loại nội dung, bố cục nền (khung gốc / khung chủ thể / pillar), lớp thông tin (bảng ghi chú chạy `GHI_CHU`, chương), mỗi cảnh Cần · Vì · Làm | [`nguoi-xem-can-gi.md`](../thiet-ke-bo-cuc/nguoi-xem-can-gi.md) · [`tu-chon.md`](../thiet-ke-bo-cuc/tu-chon.md) · [04](../mo-dun/04-khung-hinh/README.md) | `chan-doan.py` → (`khung-chu-the.py luoi` → `apply`) |
 | 7 | Phong cách (video mẫu / dự án cũ) · **tuyến nội dung → nhạc** (`project.tuyen`, bắt buộc, ghi sau clean_apply) | [10](../mo-dun/10-nhan-dien-thuong-hieu/README.md) · [09](../mo-dun/09-am-thanh/README.md) | phong-cach.md → chu-de.js |
 | 8 | Kịch bản: bố cục tự cân · điểm nhấn · màn chốt nguyên văn | [07](../mo-dun/07-canh-minh-hoa/README.md) · [08](../mo-dun/08-phan-ket/README.md) · ([06](../mo-dun/06-phan-mo-dau/README.md) chỉ khi được yêu cầu) | canh.js + ke-hoach-canh.md |
 | 9 | Tránh che người | [05](../mo-dun/05-tranh-che-chu-the/README.md) | `vi-tri-khuon-mat.sh` |

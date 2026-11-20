@@ -16,6 +16,7 @@ Gốc: [bản đồ bộ não](README.md). Sửa các file hồ sơ phải hỏi
 - [mo-hinh-kinh-doanh.md](../co-so-tri-thuc/mo-hinh-kinh-doanh.md) — khung tư duy gốc để quyết định nghề và gói bán.
 - [chien-luoc-noi-dung.md](../co-so-tri-thuc/chien-luoc-noi-dung.md) — kênh video và bộ lọc nội dung; chi tiết sản xuất ở [Sản xuất video](san-xuat-video.md).
 - [danh-sach-y-tuong.md](../du-an/danh-sach-y-tuong.md) — ý tưởng chưa chốt (Company OS, talkshow hai đầu, Telegram cho thành viên).
+- [phong-van/2026-11-20-tu-duy-dung-video.md](../du-an/phong-van/2026-11-20-tu-duy-dung-video.md) — phỏng vấn thiết kế: dạy tư duy dựng video thành file để AI nào ở máy nào cũng dựng được (đợt 1 xong, đợt 2 giải mẫu + bài kiểm).
 - [co-so-tri-thuc-ho-so-va-bo-loc.md](../co-so-tri-thuc/bo-nho/co-so-tri-thuc-ho-so-va-bo-loc.md) — sổ quyết định về hồ sơ và bộ lọc.
 
 ## Lãnh đạo, phương pháp (CCL)

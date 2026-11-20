@@ -31,4 +31,8 @@ Thiếu: tầng tư duy viết thành file, và đường để người dùng y
 | 10 | Cửa vào AI khác | **Mục "Dựng video ở máy khác" trong `huong-dan-cho-ai.md`**, thứ tự đọc nguoi-xem-can-gi → tu-chon → bo-cuc → skill dựng, nhắc chạy bài kiểm khi máy mới |
 
 ## Tóm tắt
-Hết điểm mờ. Còn bỏ ngỏ: danh sách 2–3 video cho đợt 2 (Claude trình khi bắt đầu đợt 2). Bước tiếp: trình 4 phần đợt 1, chờ "duyệt".
+Hết điểm mờ. David duyệt đợt 1 (thêm bước "loại nội dung cả video"; loại lấy từ những gì Claude đã biết qua Drive và các phiên, hiện dần qua video quay thêm).
+
+**Đợt 1 — xong 20/11/2026:** `thiet-ke-bo-cuc/nguoi-xem-can-gi.md` + `nguyen-ly.json` · `tu-chon.md` viết lại theo nguyên lý (bước 0b yêu cầu, 1b loại nội dung, 4c kho theo nguyên lý) · `soat-canh.mjs` (Loại, Cần · Vì · Làm, Yêu cầu, ảnh thiếu) · `yeu-cau.md` + `them-anh/` trong dự án mới · ảnh mẫu `bo-cuc.md` + `anh-mau/cong-cu/chup-anh-mau.sh` · mục "Dựng video ở máy khác" trong `huong-dan-cho-ai.md`.
+
+**Đợt 2 — chờ:** Claude trình danh sách 2–3 video David đã duyệt / đăng gần nhất → David gật → ví dụ giải mẫu + bài kiểm suy luận (~10 đoạn, đáp án chấp nhận, ≥ 8/10).

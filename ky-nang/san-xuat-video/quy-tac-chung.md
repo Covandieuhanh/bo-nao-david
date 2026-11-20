@@ -16,11 +16,11 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
   (`thiet-ke-bo-cuc/README.md` mục 4).
 - **Mọi lựa chọn tự setup theo nội dung nguồn** (David chốt 19/11/2026: *"mọi thứ cần phát huy tối đa được sức mạnh của AI, mọi lựa
   chọn đều phải được tự động setup phù hợp với nội dung của tài nguyên nguồn"*): khuôn, bố cục, lớp thông tin, kiểu cảnh, thẩm mỹ,
-  nhạc, khung đều do Claude chọn theo dấu hiệu của chính tài nguyên (`thiet-ke-bo-cuc/tu-chon.md`), không chép từ tập trước, không chờ
+  nhạc, khung đều do người dựng (AI nào cũng vậy) lập luận từ chính tài nguyên (`thiet-ke-bo-cuc/nguoi-xem-can-gi.md` → `tu-chon.md`), không chép từ tập trước, không chờ
   David chỉ. Máy chặn render khi chưa chẩn đoán (`soat-canh.mjs`).
 - **Hiểu hơn cầu kì.** Kho học được là để chọn cho hợp từng loại nội dung, không nhét hết vào một video. Mỗi video chỉ dùng vài kiểu
   hợp nhất, tự cân; hiệu ứng nào không giúp người xem hiểu nhanh hơn thì bỏ. Rối hay lỗi hình → bớt, không thêm.
-  Ý nào cần hình và năm nguyên lý cho hình dễ hiểu: `thiet-ke-bo-cuc/tu-chon.md` bước 4a.
+  Ý nào cần hình và mỗi hình phải đạt gì: `thiet-ke-bo-cuc/tu-chon.md` bước 4a–4b (nguyên lý: `nguoi-xem-can-gi.md`).
 
 ## 1. Nội dung
 - **Không bịa.** Phụ đề, chữ to, thẻ, màn hành động, màn chốt = **trích / bỏ bớt lời người nói**, không diễn đạt lại. Tên riêng, con
@@ -76,8 +76,8 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
   dung nhất (mục 0). Cách chọn: khối 07.
 - **Bố cục tự cân**: không con số bắt buộc về độ dài cảnh, tỷ lệ mặt / đồ hoạ, số cảnh; chọn từ `thiet-ke-bo-cuc/bo-cuc.md` theo 4 câu hỏi
   ở `thiet-ke-bo-cuc/README.md` mục 2. Ngang tự do; dọc mỗi lúc ít thứ.
-- **Tự chọn trước kế hoạch cảnh** (cả 3 skill dựng): chẩn đoán rồi chọn bố cục nền, lớp thông tin, kiểu cảnh theo
-  `thiet-ke-bo-cuc/tu-chon.md` (`chan-doan.py`); ghi "đã chọn X vì Y" vào `ke-hoach-canh.md`.
+- **Tự chọn trước kế hoạch cảnh** (cả 3 skill dựng): yêu cầu người dùng → chẩn đoán → loại nội dung → bố cục nền, lớp thông tin → mỗi cảnh
+  "Cần · Vì · Làm" theo `thiet-ke-bo-cuc/nguoi-xem-can-gi.md` + `tu-chon.md` (`chan-doan.py`); ghi vào `ke-hoach-canh.md`.
 - **Không che người nói, không đè phụ đề** (chặn cứng ở mọi template). Khung có nhiều người: graphic không đè hay làm mờ bất kỳ ai;
   khung cắt, chuyển cảnh, ô thu nhỏ bám đúng người đang nói. Thu người vào ô bo góc không tính là che. Che mặt / thân trên → tự toàn màn
   hình: khối 05.

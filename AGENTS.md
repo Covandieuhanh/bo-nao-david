@@ -57,6 +57,21 @@ David thường chỉ gửi tài nguyên (video, ghi âm) mà không kèm yêu c
 
 Muốn hiểu toàn bộ hệ dựng video: [tong-quan.md](ky-nang/san-xuat-video/tong-quan.md), [quy-tac-chung.md](ky-nang/san-xuat-video/quy-tac-chung.md).
 
+## Dựng video ở máy khác (Windows, Mac khác, AI khác)
+
+Máy chỉ có repo này là đủ để dựng video ra như Mac chính. Không cần nhớ gì từ các phiên trước: mọi cách nghĩ đã nằm trong file.
+
+1. **Cài + tự kiểm máy** (một lần): [huong-dan-cai-dat.md](huong-dan-cai-dat.md) mục 3, rồi `tu-dong-hoa/may-khac/kiem-may.sh` phải ra "giống Mac chính".
+2. **Đọc theo thứ tự, trước khi viết kịch bản cảnh:**
+   [nguoi-xem-can-gi.md](ky-nang/san-xuat-video/thiet-ke-bo-cuc/nguoi-xem-can-gi.md) (cách nghĩ: loại nội dung → cái khó của người xem → nguyên lý) →
+   [tu-chon.md](ky-nang/san-xuat-video/thiet-ke-bo-cuc/tu-chon.md) (các bước + kho cách thể hiện theo nguyên lý) →
+   [bo-cuc.md](ky-nang/san-xuat-video/thiet-ke-bo-cuc/bo-cuc.md) (kiểu có sẵn, ảnh mẫu từng kiểu, cách viết `canh.js`) → skill dựng ở bảng trên.
+3. **Yêu cầu của David** nằm trong thư mục dự án: `yeu-cau.md` (viết tự do) và `them-anh/` (ảnh `mau-*` = kiểu muốn bắt chước, ảnh khác = ảnh chèn).
+   Cách xử lý: `tu-chon.md` bước 0b.
+4. **Lập luận thành chữ** trong `ke-hoach-canh.md`: `Loại:` cho cả video, mỗi cảnh `Cần · Vì · Làm`. `soat-canh.mjs` chặn render khi thiếu —
+   đừng bỏ qua cổng này, nó là thứ giữ video đúng nội dung khi không có người kiểm.
+5. Bài kiểm suy luận cho máy mới và ví dụ giải mẫu: đang làm (đợt 2, `du-an/phong-van/2026-11-20-tu-duy-dung-video.md`).
+
 ## Nếu bạn không phải Claude Code
 
 - Skill là tài liệu quy trình: đọc `SKILL.md` khi việc khớp phần mô tả, rồi làm theo như luật của chính bạn. Chữ "Claude" trong skill và bộ nhớ nghĩa là bạn.

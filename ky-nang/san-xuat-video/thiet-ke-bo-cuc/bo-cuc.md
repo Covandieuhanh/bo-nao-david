@@ -84,6 +84,43 @@ Cột "Code": **có** = viết được ngay trong `canh.js` · **chưa** = mớ
 | Thẻ trượt vào từ phía trống | vào `the-canh` | có |
 | Video thu nhỏ bay vào thẻ / thẻ phóng ra thành toàn khung | từ màn chương sang người, từ tổng quan sang chi tiết | chưa |
 
+## Ảnh mẫu từng kiểu (`anh-mau/`)
+
+Chụp trên khuôn thử với người giả (không mặt thật), cả khung dọc lẫn ngang, để người dựng (AI hay người) nhìn trước khi chọn. Cột
+"Nguyên lý" = nguyên lý chính kiểu đó giải (`nguoi-xem-can-gi.md`). Kiểu mới có code: thêm một dòng ở
+`anh-mau/cong-cu/canh-mau.mjs` rồi chạy `zsh anh-mau/cong-cu/chup-anh-mau.sh <id>` (cần node, ffmpeg, Pillow), thêm một dòng vào bảng.
+
+| Kiểu | Nguyên lý | Dọc | Ngang |
+|---|---|---|---|
+| `bocuc · canh-nguoi` | Lời kèm hình | [dọc](anh-mau/bocuc-canh-nguoi-doc.jpg) | [ngang](anh-mau/bocuc-canh-nguoi-ngang.jpg) |
+| `bocuc · cau-hoi` | Báo hiệu | [dọc](anh-mau/bocuc-cau-hoi-doc.jpg) | [ngang](anh-mau/bocuc-cau-hoi-ngang.jpg) |
+| `bocuc · chuong` | Chia đoạn | [dọc](anh-mau/bocuc-chuong-doc.jpg) | [ngang](anh-mau/bocuc-chuong-ngang.jpg) |
+| `bocuc · dung-hay` | Chia đoạn | [dọc](anh-mau/bocuc-dung-hay-doc.jpg) | [ngang](anh-mau/bocuc-dung-hay-ngang.jpg) |
+| `bocuc · muc-luc` | Biết trước · Chia đoạn | [dọc](anh-mau/bocuc-muc-luc-doc.jpg) | [ngang](anh-mau/bocuc-muc-luc-ngang.jpg) |
+| `bocuc · o-nguoi` | Mặt người nói | [dọc](anh-mau/bocuc-o-nguoi-doc.jpg) | [ngang](anh-mau/bocuc-o-nguoi-ngang.jpg) |
+| `bocuc · o-nguoi-duoi` | Mặt người nói | [dọc](anh-mau/bocuc-o-nguoi-duoi-doc.jpg) | [ngang](anh-mau/bocuc-o-nguoi-duoi-ngang.jpg) |
+| `bocuc · o-tron` | Mặt người nói · Lời kèm hình | [dọc](anh-mau/bocuc-o-tron-doc.jpg) | [ngang](anh-mau/bocuc-o-tron-ngang.jpg) |
+| `bocuc · the-canh` | Báo hiệu | [dọc](anh-mau/bocuc-the-canh-doc.jpg) | [ngang](anh-mau/bocuc-the-canh-ngang.jpg) |
+| `bocuc · the-canh-so` | Báo hiệu | [dọc](anh-mau/bocuc-the-canh-so-doc.jpg) | [ngang](anh-mau/bocuc-the-canh-so-ngang.jpg) |
+| `bocuc · tien-trinh` | Chia đoạn · Báo hiệu | [dọc](anh-mau/bocuc-tien-trinh-doc.jpg) | [ngang](anh-mau/bocuc-tien-trinh-ngang.jpg) |
+| `bocuc · tren-duoi` | Gần chỗ | [dọc](anh-mau/bocuc-tren-duoi-doc.jpg) | [ngang](anh-mau/bocuc-tren-duoi-ngang.jpg) |
+| `diagram · chuoi` | Chia đoạn | [dọc](anh-mau/diagram-chuoi-doc.jpg) | [ngang](anh-mau/diagram-chuoi-ngang.jpg) |
+| `diagram · chuyen-giao` | Lời kèm hình | [dọc](anh-mau/diagram-chuyen-giao-doc.jpg) | [ngang](anh-mau/diagram-chuyen-giao-ngang.jpg) |
+| `diagram · cot` | Lời kèm hình | [dọc](anh-mau/diagram-cot-doc.jpg) | [ngang](anh-mau/diagram-cot-ngang.jpg) |
+| `diagram · doi-trang-thai` | Lời kèm hình | [dọc](anh-mau/diagram-doi-trang-thai-doc.jpg) | [ngang](anh-mau/diagram-doi-trang-thai-ngang.jpg) |
+| `diagram · luoi` | Lời kèm hình | [dọc](anh-mau/diagram-luoi-doc.jpg) | [ngang](anh-mau/diagram-luoi-ngang.jpg) |
+| `diagram · moc` | Lời kèm hình | [dọc](anh-mau/diagram-moc-doc.jpg) | [ngang](anh-mau/diagram-moc-ngang.jpg) |
+| `diagram · tang` | Lời kèm hình | [dọc](anh-mau/diagram-tang-doc.jpg) | [ngang](anh-mau/diagram-tang-ngang.jpg) |
+| `diagram · tu-thanh` | Lời kèm hình | [dọc](anh-mau/diagram-tu-thanh-doc.jpg) | [ngang](anh-mau/diagram-tu-thanh-ngang.jpg) |
+| `diagram · vong` | Lời kèm hình | [dọc](anh-mau/diagram-vong-doc.jpg) | [ngang](anh-mau/diagram-vong-ngang.jpg) |
+| `diagram · xay-tang` | Lời kèm hình | [dọc](anh-mau/diagram-xay-tang-doc.jpg) | [ngang](anh-mau/diagram-xay-tang-ngang.jpg) |
+| `illus · count` | Lời kèm hình | [dọc](anh-mau/illus-count-doc.jpg) | [ngang](anh-mau/illus-count-ngang.jpg) |
+| `illus · flow` | Lời kèm hình | [dọc](anh-mau/illus-flow-doc.jpg) | [ngang](anh-mau/illus-flow-ngang.jpg) |
+| `illus · list` | Chia đoạn | [dọc](anh-mau/illus-list-doc.jpg) | [ngang](anh-mau/illus-list-ngang.jpg) |
+| `illus · single` | Lời kèm hình | [dọc](anh-mau/illus-single-doc.jpg) | [ngang](anh-mau/illus-single-ngang.jpg) |
+| `illus · vs` | Gần chỗ | [dọc](anh-mau/illus-vs-doc.jpg) | [ngang](anh-mau/illus-vs-ngang.jpg) |
+| `phu-de-tu-khoa-to` | Báo hiệu | [dọc](anh-mau/phu-de-tu-khoa-to-doc.jpg) | — |
+
 ## Viết trong `canh.js` (video 1 người)
 
 ```js

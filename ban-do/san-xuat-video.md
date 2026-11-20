@@ -80,8 +80,9 @@ Gốc: [bản đồ bộ não](README.md). Chiến lược kênh: [chien-luoc-no
 
 ## Bố cục, nhận diện, thư viện hình
 - [thiet-ke-bo-cuc](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/README.md) — Lớp trình bày video: tiêu chí gốc để học mọi loại video mới, giữ chữ ký nhận diện.
-- [tu-chon](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/tu-chon.md) — Tự chọn cách trình bày: chẩn đoán video rồi chọn bố cục, hiệu ứng trong kho.
-- [bo-cuc](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/bo-cuc.md) — Danh mục bố cục video để chọn (không phải công thức).
+- [nguoi-xem-can-gi](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/nguoi-xem-can-gi.md) — Cửa vào tư duy dựng video: loại nội dung → cái khó của người xem → nguyên lý (Mayer + 4 ngoài Mayer) → cách thể hiện.
+- [tu-chon](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/tu-chon.md) — Tự chọn cách trình bày: yêu cầu người dùng → đo → loại nội dung → từng đoạn cái khó → nguyên lý → cách thể hiện.
+- [bo-cuc](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/bo-cuc.md) — Danh mục bố cục video để chọn (không phải công thức). Có ảnh mẫu từng kiểu (`anh-mau/`, chụp lại bằng `anh-mau/cong-cu/chup-anh-mau.sh`).
 - [am-thanh](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/am-thanh.md) — Âm thanh theo bố cục: chỗ đặt tiếng ký hiệu, ting, vút theo cảnh.
 - [phieu-hoc-mau](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/phieu-hoc-mau.md) — Mẫu phiếu học video mẫu: Claude điền, David duyệt trước khi sửa skill.
 - [ali-joseph-2026-11-10](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/nguon-tham-khao/ali-joseph-2026-11-10.md) — Nguồn học Ali Abdaal + Joseph Video Editing (10/11): kiểu trình bày, hiệu ứng.
