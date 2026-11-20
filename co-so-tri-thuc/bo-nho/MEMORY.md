@@ -5,6 +5,7 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 
 ## Luật làm việc với David
 
+- [Viết đủ từ, không viết tắt](quy-tac-viet-du-tu.md) — bộ não và mọi thứ gửi David viết đủ từ, đủ nghĩa; bất kỳ ai đọc cũng hiểu (20/11)
 - [Trục tri thức cố định](quy-tac-truc-tri-thuc.md) — mọi việc học, sửa, lưu đi qua `truc-tri-thuc.md` (bốn tầng, sáu câu, luật đi lên, lỗi → câu kiểm), không đổi cách mỗi lần học (20/11)
 - [Công cụ cài thì đưa vào skill](quy-tac-cong-cu-cai-dua-vao-ky-nang.md) — công cụ David cài (pyannote…) giúp việc tốt hơn thì tích hợp, giữ cách cũ dự phòng (07/11)
 - [Không dùng mod giao diện](quy-tac-khong-dung-mod-giao-dien.md) — đã gỡ hết savvy-progress, collision-guard, goal-meter, Sổ việc; chỉ giữ Telegram (13/11)
@@ -49,9 +50,9 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 - [Kiến trúc skill video](video-kien-truc-ky-nang.md) — Kiến trúc bộ skill video (hồ sơ tham số, 20 khối, thư viện hình, mẫu chuẩn; sửa đúng một chỗ) và bộ 5 video chuẩn 06/11 (04/11, 06/11; gộp 15/11)
 - [Làm lại video cũ](video-lam-lai-video-cu.md) — bỏ lời chào/kênh cũ, tít cũ, chữ/viền in trong hình; mỗi video một bản (08/11)
 - [Motion graphics kể chuyện](video-do-hoa-ke-chuyen.md) — mọi video có điểm nhấn nhiều loại; kể chuyện, vẽ tiếp; AI sáng tạo trong khung (07/11, 09/11)
-- [Nhạc theo tuyến, chuẩn âm chung](video-nhac-theo-tuyen.md) — tự chọn nhạc theo tuyến, cân từng bài; ~23 dB dưới giọng, −14 LUFS (05–08/11)
+- [Nhạc theo tuyến, chuẩn âm chung](video-nhac-theo-tuyen.md) — tự chọn nhạc theo tuyến, cân từng bài; khoảng 23 dB dưới giọng, −14 LUFS (05–08/11)
 - [Mỗi lúc một chỗ chữ](video-phu-de-mot-cho-chu.md) — phụ đề dọc cụm 5–8 chữ cỡ 58; chữ motion graphic hiện thì phụ đề nhường (08/11)
-- [Podcast phủ hình 30%](video-podcast-phu-hinh-30.md) — motion graphic ~30% thời lượng, cân theo nội dung; chụp thử để Claude tự soát (06/11, sửa 11/11)
+- [Podcast phủ hình 30%](video-podcast-phu-hinh-30.md) — motion graphic khoảng 30% thời lượng, cân theo nội dung; chụp thử để Claude tự soát (06/11, sửa 11/11)
 - [Thẩm mỹ chỉ giữ nhận diện](video-tham-my-chi-giu-nhan-dien.md) — Thẩm mỹ chỉ giữ chữ ký nhận diện, ngoài đó sáng tạo tự do; hiểu hơn cầu kì: kho hiệu ứng để chọn, mỗi video ít kiểu, bỏ chữ sau người / bóng người (10/11; gộp 15/11)
 
 ## Chỉ máy Mac chính (file không lên GitHub)

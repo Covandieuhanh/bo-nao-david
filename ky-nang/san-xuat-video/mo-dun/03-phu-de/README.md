@@ -24,7 +24,7 @@ python3 -I $SKILL/scripts/phu-de.py "$P"          # kiem-tra/goc/moc-tung-tu.srt
 Đọc lại TỪNG dòng trong `phu-de.js`, sửa tay:
 - **Chính tả** lỗi Whisper (tên riêng, từ nghe nhầm như "tư giãn" → "thư giãn"). Giữ nguyên lời: không rút gọn, không
   diễn đạt lại, giữ cả "thì", "là", "cái".
-- **Câu bị mất / câu bịa**: script bỏ câu kiểu "Hãy subscribe cho kênh…"; nếu chỗ đó người nói có nói thật (vd. "Xin chào"
+- **Câu bị mất / câu bịa**: script bỏ câu kiểu "Hãy subscribe cho kênh…"; nếu chỗ đó người nói có nói thật (ví dụ: "Xin chào"
   cuối video) thì đối chiếu `kiem-tra/lam-sach/ban-chep-loi.srt` (lần chạy khác) + `am-luong.txt` và thêm tay.
 - **Khớp tiếng, không chỉ đúng chữ** (phụ đề đúng chữ vẫn có thể lệch hàng chục giây ở chỗ lời người kia chen vào không có phụ đề,
   và chỉ lộ ra sau render): trước render đầy đủ chạy

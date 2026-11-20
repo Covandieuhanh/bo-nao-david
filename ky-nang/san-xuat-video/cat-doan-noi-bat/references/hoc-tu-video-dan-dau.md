@@ -71,7 +71,7 @@ description: "Nghiên cứu 10 video highlight dọc lượt xem cao (03/11) cho
 - **B. Thêm 2 kiểu câu mở vào thang chấm ở bước 3:** "kết quả trước, quá khứ sau" và "câu đố cho người xem", đặt ngang hạng "bất ngờ / kết quả lớn".
 - **C. Lời kêu gọi nới định nghĩa:** chấp nhận **câu mệnh lệnh nguyên văn trong nội dung** ("Hãy chọn…", "thử làm…") làm lời kêu gọi chính. Câu mời bình luận chỉ dùng khi người nói có nói, nằm ở bình luận ghim như hiện nay. Không đổi luật "chỉ nguyên văn".
 - **D. Thẻ cuối dẫn về bản đầy đủ** (kiểu Have A Sip): 1,5–2 s sau màn chốt, gồm tên tập + ảnh người nói + biểu tượng YouTube. Việc này **đụng luật cũ** "Không thêm nhãn BẢN ĐẦY ĐỦ tự viết", nên cần anh chốt: cho phép thẻ chỉ có **tên tập gốc + biểu tượng** (không chữ tự viết) hay không?
-- **E. Vòng lặp:** với clip ≤ 35 s, ưu tiên chọn câu cuối nối được về câu đầu. Kiểu này đã có trong bảng bố trí; đề xuất nâng lên mặc định khi có cặp câu như vậy.
+- **E. Vòng lặp:** với clip tối đa 35 s, ưu tiên chọn câu cuối nối được về câu đầu. Kiểu này đã có trong bảng bố trí; đề xuất nâng lên mặc định khi có cặp câu như vậy.
 - **F. Độ dài:** giữ 30–60 s; cho phép tới 90–120 s **chỉ khi** là câu chuyện có hồi hộp và đáp án ở cuối (kiểu DOAC). Hiện skill cho tối đa 90 s.
 
 **`dung-video-theo-phong-cach` (chế độ ghép clip / game show)**

@@ -18,7 +18,7 @@ description: "Khối 08 phần kết: màn chốt nguyên văn, thẻ cuối, d�
 - `montage chuong-trinh.jsx (CtaEnd, EndCard)`
 
 ## Luật
-- **Màn chốt** (`cta`, ~4 s cuối mọi video): video lùi vào khung bo góc, một câu + biểu tượng + tick + "ting".
+- **Màn chốt** (`cta`, khoảng 4 s cuối mọi video): video lùi vào khung bo góc, một câu + biểu tượng + tick + "ting".
   Câu = **NGUYÊN VĂN lời người nói**: video của David dùng câu David nói ở cuối (lời kêu gọi, lời chào…); highlight và podcast dọc
   trích ngắn theo `cat-doan-noi-bat` luật 4 (có câu kêu gọi nguyên văn → màn chốt bằng câu đó; không có → kết ở câu chốt ý). Không
   tự viết; `kind` theo ý câu (`comment` · `save` · `follow` · `share` · `moi`). Không hỏi David chọn câu chốt — quy trình đã định, nêu
@@ -31,7 +31,7 @@ description: "Khối 08 phần kết: màn chốt nguyên văn, thẻ cuối, d�
   - **Gợi mở** → mô tả + ghim: một câu hỏi tự soi gắn với bài + mời bình luận "Vấn đề" / "Kết quả".
   - **Mời** → mô tả + ghim: bài con người "Nhắn mình một chữ **'gỡ'**…", bài công nghệ "nhắn mình hai chữ **'số hoá'**" — không hứa kết quả; bài con người không nói giá, không nói gói; bài công nghệ (hướng 3) được nói giá sản phẩm công nghệ.
   David tự nói câu mời / câu hỏi trong video → màn chốt dùng đúng câu đó. Bài Facebook cá nhân (đời thường) không cần dẫn dắt kiểu kênh.
-- **Thẻ cuối** (video ngang / dọc dài): nhận diện (chủ đề + DAVID, ~1,6 s) mọi video có chủ đề; dẫn bản đầy đủ = "Bản đầy đủ trên kênh
+- **Thẻ cuối** (video ngang / dọc dài): nhận diện (chủ đề + DAVID, khoảng 1,6 s) mọi video có chủ đề; dẫn bản đầy đủ = "Bản đầy đủ trên kênh
   …" + tên tập gốc + người nói (`the_cuoi_s`). Không nút phát, không logo nền tảng, không câu gợi tò mò tự viết.
 - **Màn kết YouTube** (video > 3 phút đăng YouTube): `project.ytEnd = 20` (1 video/podcast, ghi sau làm sạch) · ke-hoach.json `"ytEnd": 20`
   (vlog) — khung chừa 2 ô video + nút đăng ký, nhạc kênh nhỏ; David gắn phần tử trong YouTube Studio.

@@ -31,7 +31,7 @@ có bị cắt, **hai dòng chữ có chồng nhau / chữ có chạm khung ản
 nhanh vẫn có thể lọt; thấy đè thì đặt tay `place`), chữ có đọc được trên nền, cảnh có khớp lời nói không. Sửa rồi chụp lại tới khi sạch.
 Chụp đúng mốc dễ lỗi (`quy-tac-chung.md` mục 8), không chụp thừa. Đây là bước tiết kiệm nhất — sửa ở đây rẻ hơn nhiều so với sau khi render.
 Khung ngang (pillar): trước khi chụp, dựng nền ngang một lần —
-`node xuat-video.mjs hai-ben` (~1 phút / phút video) rồi `python3 -I $SKILL/scripts/nen-cot.py "$P"` → `nen-ngang.mp4`;
+`node xuat-video.mjs hai-ben` (khoảng 1 phút / phút video) rồi `python3 -I $SKILL/scripts/nen-cot.py "$P"` → `nen-ngang.mp4`;
 composite_stills tự dùng nền này. Chụp thêm `hai-ben@<giây>` ở vài mốc để kiểm chữ hai bên (tràn, xuống dòng xấu).
 Đổi `SIDES` hoặc mốc cảnh → render lại `hai-ben` + `nen-cot.py`.
 
@@ -47,9 +47,9 @@ python3 -I $SKILL/scripts/xem-truoc-ban-dung.py "$P"                   # chạy 
 **Thời gian render thật** (đo 18–19/11/2026, Mac này, 1080p, `concurrency: 3`; báo David theo bảng này, không đoán):
 | Khuôn / khung | Tốc độ | Ví dụ |
 |---|---|---|
-| ghép ngang 1920×1080 | ~4–5,7 × độ dài | 11:45 → 44–60 phút (chạy cùng render khác: 60) · 54:30 → 5,2 giờ |
-| ghép dọc 1080×1920 clip ngắn | ~6–7 × độ dài | 1:19 → ~8 phút |
-Ổ trống cần ≥ 2 × file ra + 5 GB (thư mục tạm `remotion-*` của Remotion); render dài làm SAU khi đã soát khớp tiếng (khối 03) và
+| ghép ngang 1920×1080 | khoảng 4–5,7 × độ dài | 11:45 → 44–60 phút (chạy cùng render khác: 60) · 54:30 → 5,2 giờ |
+| ghép dọc 1080×1920 clip ngắn | khoảng 6–7 × độ dài | 1:19 → khoảng 8 phút |
+Ổ trống cần ít nhất 2 × file ra + 5 GB (thư mục tạm `remotion-*` của Remotion); render dài làm SAU khi đã soát khớp tiếng (khối 03) và
 chụp thử đủ lớp, để không phải render lại.
 
 ### Kiểm tra bản cuối
@@ -58,8 +58,8 @@ chụp thử đủ lớp, để không phải render lại.
 zsh $SKILL/scripts/kiem-khung-hinh.sh "$P" "$P/video-hoan-chinh.mp4" <các mốc giây: giữa & cuối mỗi cảnh, vài chỗ không có cảnh, màn hình nguồn>
 ```
 Xem `kiem-tra/bang-anh.jpg`: cảnh đúng chỗ, không gì lọt vùng an toàn, không lớp phủ nào che mặt, không nháy/đen. Âm thanh
-(cả bài −14 LUFS, đỉnh ≤ −1,5 dB — `ebur128=peak=true`; KHÔNG so dB thô với nguồn vì giọng nhỏ được kéo lên — khối 09) và tiếng rè so với giọng (`-af highpass=f=12000,astats` — mức RMS bản cuối
-chênh bản gốc ≤ 1 dB; cao hơn hẳn = âm thanh bị hạ bit ở đâu đó, xem gotchas) và thời lượng (= bản sạch; video KHÔNG có màn hình nguồn ảnh ở cuối).
+(cả bài −14 LUFS, đỉnh tối đa −1,5 dB — `ebur128=peak=true`; KHÔNG so dB thô với nguồn vì giọng nhỏ được kéo lên — khối 09) và tiếng rè so với giọng (`-af highpass=f=12000,astats` — mức RMS bản cuối
+chênh bản gốc tối đa 1 dB; cao hơn hẳn = âm thanh bị hạ bit ở đâu đó, xem gotchas) và thời lượng (= bản sạch; video KHÔNG có màn hình nguồn ảnh ở cuối).
 Lỗi thì sửa cảnh đó → `node xuat-video.mjs <id>` → render_preview lại.
 
 ## Soát cảnh tự động

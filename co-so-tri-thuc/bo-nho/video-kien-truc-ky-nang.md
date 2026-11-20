@@ -6,7 +6,7 @@ metadata:
 ---
 
 Bộ skill video (`ky-nang/san-xuat-video`, lối tắt `~/.claude/skills/san-xuat-video`) tái cấu trúc 2026-11-04 theo ý David: "tách nhỏ để sau này cải tiến chỉ sửa một phần, không viết lại khung".
-5 lớp: `nguyen-tac.md` (7 điểm chung 80 video) · `nhan-dien-thuong-hieu.md` (chọn loại) · `ho-so-thuong-hieu/<loai>.json+.md` (tham số sao chép từ hình mẫu — script đọc qua `mo-dun/ho_so.py`, khung dựng đọc `chuyen-dong/src/ho-so.json`) · `mo-dun/00…20` (README luật + đầu vào/ra + phụ thuộc) · `thu-vien-tai-nguyen/` (một bộ thành phần hình, template nối bằng lối tắt `src/thu-vien`, dự án chép bản thật `cp -RL`). 4 skill = công thức mỏng. Kiểm: `mau-chuan/kiem-mau.py` (5 mẫu ở `mau.json`, SSIM so chuẩn — (mục gộp dưới)).
+5 lớp: `nguyen-tac.md` (7 điểm chung 80 video) · `nhan-dien-thuong-hieu.md` (chọn loại) · `ho-so-thuong-hieu/<loai>.json+.md` (tham số sao chép từ hình mẫu — script đọc qua `ky-nang/san-xuat-video/mo-dun/ho_so.py`, khung dựng đọc `chuyen-dong/src/ho-so.json`) · `mo-dun/00…20` (README luật + đầu vào/ra + phụ thuộc) · `thu-vien-tai-nguyen/` (một bộ thành phần hình, template nối bằng lối tắt `src/thu-vien`, dự án chép bản thật `cp -RL`). 4 skill = công thức mỏng. Kiểm: `ky-nang/san-xuat-video/mau-chuan/kiem-mau.py` (5 mẫu ở `mau.json`, SSIM so chuẩn — (mục gộp dưới)).
 
 Lịch sử đổi giá trị hồ sơ tham số (ngày, cũ → mới, lý do) ở `ky-nang/san-xuat-video/ho-so-thuong-hieu/nhat-ky-thay-doi.md`, không ghi trong file hồ sơ.
 
@@ -27,4 +27,4 @@ Các dự án cũ (vlog, highlight Haruku, podcast năng lực, Miếu Bà Cam, 
 
 **Why:** David muốn máy chỉ giữ bản mới nhất. Máy còn dưới 5 GB trống trước khi dọn.
 
-**How to apply:** Bộ mẫu `mau-chuan/mau.json` nay chỉ có 5 video này, nên không còn kiểm tra tự động cho loại có người nói và ghép vlog. Khi có video mới loại đó được duyệt thì thêm lại. Liên quan [[video-doc-khuon-chu-chinh]], [[video-dai-khong-cat]].
+**How to apply:** Bộ mẫu `ky-nang/san-xuat-video/mau-chuan/mau.json` nay chỉ có 5 video này, nên không còn kiểm tra tự động cho loại có người nói và ghép vlog. Khi có video mới loại đó được duyệt thì thêm lại. Liên quan [[video-doc-khuon-chu-chinh]], [[video-dai-khong-cat]].

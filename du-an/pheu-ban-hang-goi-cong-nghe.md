@@ -14,8 +14,8 @@ Có **khoản thu đầu tiên từ một gói công nghệ**, khách **ra đư�
 ## Kế hoạch
 | Giai đoạn | Làm gì | Xong khi |
 |---|---|---|
-| **1. Phễu** | Đăng nội dung ở trang cá nhân cho thấy công nghệ David đang dùng làm ra kết quả thật; mỗi bài chạm một mục tiêu / nỗi đau, mời nhắn | có ≥ 5 người nhắn hỏi về cùng một nỗi đau |
-| **2. Bán thử** | Đóng gói bản 0 của **một** gói, làm với 1–3 khách (miễn phí hoặc giá thử) đổi lấy lời chứng và số liệu | ≥ 1 khách ra kết quả của gói, có lời chứng |
+| **1. Phễu** | Đăng nội dung ở trang cá nhân cho thấy công nghệ David đang dùng làm ra kết quả thật; mỗi bài chạm một mục tiêu / nỗi đau, mời nhắn | có ít nhất 5 người nhắn hỏi về cùng một nỗi đau |
+| **2. Bán thử** | Đóng gói bản 0 của **một** gói, làm với 1–3 khách (miễn phí hoặc giá thử) đổi lấy lời chứng và số liệu | ít nhất 1 khách ra kết quả của gói, có lời chứng |
 | **3. Bán thật** | Chốt giá, trang giới thiệu gói, quy trình bàn giao; bán đều | có khoản thu đầu tiên, khách ra kết quả |
 
 **Gói 1 (David chốt 13/11/2026): trainer dựng video bằng AI trên máy tính**, chỉ dạy kỹ năng dựng, bằng AI và máy của học viên: quy trình 8 bước, 4 buổi, giáo trình 8 bài, 4 mẫu ở [goi-dao-tao-dung-video-ai/](goi-dao-tao-dung-video-ai/README.md).

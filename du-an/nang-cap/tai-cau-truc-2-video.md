@@ -4,7 +4,7 @@ description: "Tái bản 2 (10/11), phần bộ skill video: luật đổi so v�
 
 # Tái bản 2 — bộ video (10/11/2026)
 
-Gốc: bảng 164 luật của lần 1 (`du-an/tai-cau-truc-video-1.md`, David chấm đạt). File này chỉ ghi phần đổi từ sau tag `tai-ban-video-1`,
+Gốc: bảng 164 luật của lần 1 (`du-an/nang-cap/tai-cau-truc-video-1.md`, David chấm đạt). File này chỉ ghi phần đổi từ sau tag `tai-ban-video-1`,
 câu máy đo còn bắt, và chỗ bộ video chép / lệch với `chuan-muc-lam-viec.md`, `co-so-tri-thuc/david.md`, `AGENTS.md`, ghi nhớ `co-so-tri-thuc/bo-nho/video-*.md`.
 Không đổi code.
 

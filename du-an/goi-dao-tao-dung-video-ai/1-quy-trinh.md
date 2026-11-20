@@ -38,4 +38,4 @@ Từ tư liệu thô → AI dựng ra video hoàn chỉnh: cắt ghép, phụ đ
 - Không sửa, không xoá file gốc. AI hỏi trước khi xoá hay tốn tiền; không đưa mật khẩu cho AI.
 
 ## Đòi hỏi máy
-Mac hoặc Windows, RAM ≥ 16 GB, ổ trống ≥ 50 GB; tài khoản AI có trợ lý chạy lệnh. Remotion miễn phí cho cá nhân và công ty ≤ 3 người, lớn hơn cần giấy phép (kiểm lại điều khoản lúc dạy).
+Mac hoặc Windows, RAM ít nhất 16 GB, ổ trống ít nhất 50 GB; tài khoản AI có trợ lý chạy lệnh. Remotion miễn phí cho cá nhân và công ty tối đa 3 người, lớn hơn cần giấy phép (kiểm lại điều khoản lúc dạy).

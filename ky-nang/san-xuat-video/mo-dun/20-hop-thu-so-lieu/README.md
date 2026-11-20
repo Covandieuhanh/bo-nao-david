@@ -20,10 +20,10 @@ Kiểm bài đã lên đúng (link, giờ, ảnh bìa, caption) ở 3 nền tả
 - **Trang Facebook:** `https://business.facebook.com/latest/inbox` (Messenger + bình luận) → đếm tin có chữ "gỡ", tóm các câu hỏi.
 - **YouTube:** Studio → Bình luận · **TikTok:** TikTok Studio → Bình luận.
 - Viết `hop-thu-<ngày>.md`: "Người xem đang hỏi gì" (nhóm theo chủ đề, ẩn danh) · số "gỡ" · số "Vấn đề" / "Kết quả" · nháp trả lời (nếu David muốn).
-  Câu hỏi lặp ≥ 3 lần → đề xuất thành ý video tiếp theo (đưa vào kho, gắn nhánh).
+  Câu hỏi lặp ít nhất 3 lần → đề xuất thành ý video tiếp theo (đưa vào kho, gắn nhánh).
 
 ## Số liệu 7 ngày (khối 16 + mau-so-lieu.md)
-- **YouTube:** Studio → Số liệu phân tích (lượt xem, thời lượng xem TB, tỉ lệ giữ chân, giây rời nhiều nhất).
+- **YouTube:** Studio → Số liệu phân tích (lượt xem, thời lượng xem trung bình, tỉ lệ giữ chân, giây rời nhiều nhất).
 - **Trang Facebook:** Business Suite → Thông tin chi tiết → Nội dung (lượt xem Reels, thời gian xem, tin nhắn bắt đầu).
-- **TikTok:** TikTok Studio → Số liệu phân tích → bài viết (lượt xem, thời gian xem TB, xem hết).
+- **TikTok:** TikTok Studio → Số liệu phân tích → bài viết (lượt xem, thời gian xem trung bình, xem hết).
 - Điền `so-lieu.md`; so theo kiểu dẫn dắt (Không / Gợi mở / Mời) và theo nhánh (gốc / công việc / quan hệ) → 1–3 đề xuất cho lần sau (báo lỗi, không tự đổi luật).

@@ -4,7 +4,7 @@ description: "Nghiên cứu 50 video nổi bật kênh Hieu Nguyen (podcast tài
 
 # Học từ 50 video nổi bật nhất kênh Hieu Nguyen (@hieu-tv) — 2026-11-05
 
-Kênh: 844 N đăng ký · 184 video · "Tài chính cá nhân & kinh nghiệm sống". 50 video xếp theo **Phổ biến** (445 N → 2,1 Tr lượt xem).
+Kênh: 844 N đăng ký · 184 video · "Tài chính cá nhân và kinh nghiệm sống". 50 video xếp theo **Phổ biến** (445 N → 2,1 Tr lượt xem).
 Mục đích: David thấy phong cách kênh hợp mình và tỉ lệ chuyển đổi cao → học nhịp điệu và cách làm podcast (luật "sao chép hình mẫu thành công").
 
 ## Cách đo (trên trình duyệt, không tải video)
@@ -16,11 +16,11 @@ Mỗi video: bỏ quảng cáo → đọc mô tả + chương → phát 6× ba �
 |---|---|
 | Thời lượng | 8–36 phút; nhóm triệu view 18–27 phút |
 | Cú cắt hình trong 150 s đo | **0–2** (đa số 0; cú duy nhất thường là lúc thẻ tên tập → màn chính) |
-| Tốc độ nói | 210–251 âm tiết/phút (trung bình ~235), đều, không cắt khoảng lặng |
+| Tốc độ nói | 210–251 âm tiết/phút (trung bình khoảng 235), đều, không cắt khoảng lặng |
 | Phụ đề in trên hình | **0/50** — dùng phụ đề tự động/CC của YouTube |
 | Nhạc | đầu video 34/50, cuối video 36/50 — **không nghe nhạc dưới lời** |
 | Chào mở đầu | 50/50 · giới thiệu website tài liệu miễn phí 38/50 · nối với tập trước 14/50 |
-| Vào đề | sau ~30 s nghi thức (≈ 500 ký tự lời) |
+| Vào đề | sau khoảng 30 s nghi thức (≈ 500 ký tự lời) |
 | Kết: nhờ chia sẻ cho bạn bè/người thân | 45/50 |
 | Kết: nhờ bấm like (kèm lý do: "giải thuật YouTube ưu tiên video nhiều like") | 37/50 |
 | Kết: lời chúc "buổi tối cuối tuần bình yên / vui vẻ bên gia đình" | 49/50 |
@@ -29,13 +29,13 @@ Mỗi video: bỏ quảng cáo → đọc mô tả + chương → phát 6× ba �
 
 ## Cách làm (rút ra)
 1. **Một màn hình, đổi rất ít.** Nền cố định suốt tập — 2021: nền xanh đậm vân giấy; 2022–23: bức tường xám + đèn rọi. Giữa
-   màn là tên tập / câu ý chính chữ in hoa đậm, giữ hàng phút. Đổi hình chỉ khi sang **ý lớn** (chương), ~2–4 phút/lần.
+   màn là tên tập / câu ý chính chữ in hoa đậm, giữ hàng phút. Đổi hình chỉ khi sang **ý lớn** (chương), khoảng 2–4 phút/lần.
 2. **Bản đồ chương tích luỹ.** Mỗi chương thêm MỘT thẻ (biểu tượng + nhãn 2–5 chữ) cạnh các thẻ trước → cuối tập màn hình là
    sơ đồ toàn bài (người xem thấy mình đang ở đâu, muốn chụp lại). Thỉnh thoảng chen biểu đồ / ảnh tư liệu khi nói số liệu, câu chuyện.
 3. **Đáy màn hình kiểu "đài phát thanh":** thanh tiến độ mảnh + sóng âm nhỏ + tên tập (trái) · "TẬP 57 • 27 FEB 2022 | HIEU.TV" (phải).
 4. **Không phụ đề in hình, không hiệu ứng chữ, không chuyển cảnh nhanh** — người xem *nghe* là chính, hình để định vị.
 5. **Nhạc chỉ ở intro/outro.** Lời nói hoàn toàn sạch.
-6. **Nghi thức mở (~30 s, gần như nguyên văn mỗi tập):** chào → "chào mừng đến Podcast Hiếu TV" → dành cho người mới: kênh chia
+6. **Nghi thức mở (khoảng 30 s, gần như nguyên văn mỗi tập):** chào → "chào mừng đến Podcast Hiếu TV" → dành cho người mới: kênh chia
    sẻ 2 mảng (tài chính cá nhân · kinh nghiệm sống), phát hành tối chủ nhật hàng tuần → tải tài liệu miễn phí ở hieu.tv → "một lần
    nữa xin chào, bây giờ chúng ta cùng bắt đầu chủ đề hôm nay" → vào đề bằng **nối tập trước / kể một câu chuyện / một biểu đồ /
    một câu hỏi**. Không có "hook" trích câu đắt.
@@ -50,8 +50,8 @@ Mỗi video: bỏ quảng cáo → đọc mô tả + chương → phát 6× ba �
 ## So với skill podcast hiện tại
 | | Skill hiện tại | Hieu Nguyen |
 |---|---|---|
-| Mở đầu | hook 0–3 s chữ to trích câu đắt | thẻ tên tập + nhạc → nghi thức chào ~30 s do người nói |
-| Mật độ hình | ~1 cảnh / 15–20 s (tập 8 phút: 27 cảnh) | ~1 thay đổi / 2–4 phút, bản đồ tích luỹ |
+| Mở đầu | hook 0–3 s chữ to trích câu đắt | thẻ tên tập + nhạc → nghi thức chào khoảng 30 s do người nói |
+| Mật độ hình | khoảng 1 cảnh / 15–20 s (tập 8 phút: 27 cảnh) | khoảng 1 thay đổi / 2–4 phút, bản đồ tích luỹ |
 | Phụ đề | in đầy đủ trên hình | không in — CC YouTube |
 | Nhạc | rất nhỏ dưới lời (−30…−38 LU) | chỉ intro/outro |
 | Thẻ "PHẦN n" | có | chương = thêm một thẻ vào bản đồ |
@@ -61,7 +61,7 @@ Mỗi video: bỏ quảng cáo → đọc mô tả + chương → phát 6× ba �
 ## Đề xuất cho skill (CHỜ DAVID DUYỆT)
 - **HN-1 · Kiểu "phát thanh" cho podcast dài (> 5 phút, tuyến tâm sự / kiến thức):** sân khấu nền tĩnh + **bản đồ chương tích
   luỹ** (mỗi TOPICS = 1 thẻ biểu tượng + nhãn trích lời, thêm dần; 5 s cuối hiện cả bản đồ làm tóm tắt). Cảnh minh hoạ toàn màn
-  hình chỉ khi có **con số / so sánh / danh sách** (10.800 · 1 triệu đô · 108…), tối đa ~1 cảnh / 1–2 phút. Podcast ngắn / bản dọc giữ kiểu hiện tại.
+  hình chỉ khi có **con số / so sánh / danh sách** (10.800 · 1 triệu đô · 108…), tối đa khoảng 1 cảnh / 1–2 phút. Podcast ngắn / bản dọc giữ kiểu hiện tại.
 - **HN-2 · Phụ đề podcast ngang YouTube:** không in lên hình; xuất `phu-de.srt` (đã sửa chính tả) để tải lên YouTube làm CC. Bản
   dọc / highlight vẫn in phụ đề (người xem lướt không bật tiếng).
 - **HN-3 · Nhạc podcast:** chỉ intro (mở 3–5 s) + outro + lướt nhẹ ở chỗ chuyển chương; tắt hẳn dưới lời (hồ sơ `nhac` thêm mức "tắt khi nói" cho podcast).

@@ -22,7 +22,7 @@ Vẫn giữ: chuẩn âm lượng ([[video-nhac-theo-tuyen]]), không che mặt 
 
 **How to apply:** học video mẫu theo [[quy-tac-hoc-la-bo-sung]]. Khung gốc ở `ky-nang/san-xuat-video/thiet-ke-bo-cuc/`. `README.md` có tiêu
 chí và quy trình học, `bo-cuc.md` là danh mục bố cục, `am-thanh.md` là chỗ đặt tiếng, `nguon-tham-khao/` ghi mỗi nguồn một file. Code bố cục
-nằm ở `bo-cuc.jsx`; người trong khung và người đang nói do `vi-tri-nhan.py` ghi vào `mat.js`, chỗ trống tính ở `src/thu-vien/cho.js` (type
+nằm ở `bo-cuc.jsx`; người trong khung và người đang nói do `vi-tri-nhan.py` ghi vào `mat.js`, chỗ trống tính ở `ky-nang/san-xuat-video/dung-video-theo-phong-cach/assets/khuon-remotion/src/thu-vien/cho.js` (type
 `bocuc`: `the-canh`, `o-nguoi`, `chuong`). Học nguồn mới thì chỉ thêm mục mới. Liên quan [[video-bo-ung-dung]],
 [[video-do-hoa-ke-chuyen]], [[video-kien-truc-ky-nang]].
 
@@ -30,7 +30,7 @@ Nhà của luật: `ky-nang/san-xuat-video/thiet-ke-bo-cuc/README.md` và `ky-na
 lời David, lý do.
 
 ## Sổ
-- 07/11/2026 David chốt điểm 1–3 và 5; bỏ luật 2 trạng thái, toàn màn hình ≤ 4 s, mặt hiện ≥ 60%, cảnh minh hoạ 3–5 s, nhãn ≤ 3 chữ, mật độ
+- 07/11/2026 David chốt điểm 1–3 và 5; bỏ luật 2 trạng thái, toàn màn hình tối đa 4 s, mặt hiện ít nhất 60%, cảnh minh hoạ 3–5 s, nhãn tối đa 3 chữ, mật độ
   cảnh. Bản này còn "thẩm mỹ của David là gốc, chỉ học trình bày, không chép màu/phông chữ" (vì chép thẩm mỹ thì xung đột với gốc). Nguồn
   đầu tiên đã học: Sang Huỳnh 07/11.
 - 08/11/2026 (video phỏng vấn 2 người): thêm điểm 4.

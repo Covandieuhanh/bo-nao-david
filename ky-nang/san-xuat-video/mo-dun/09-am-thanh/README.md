@@ -32,7 +32,7 @@ Mức nằm ở một chỗ: hồ sơ chung `nhac`.
 - **Giọng thu nhỏ thì kéo lên, nhạc to thì hạ xuống:** nhạc tính theo độ to giọng đo được của từng video, rồi cả bài được đưa về chuẩn,
   nên giọng nhỏ hay to đều ra cùng một mức.
 - `scripts/chuan-am.py <video>` tự chạy cuối mỗi lần xuất; thêm `--chi-do` để chỉ đo.
-- **Kiểm bản cuối:** cả bài −14 LUFS ±0,5, đỉnh ≤ −1,5 dB, tiếng rè (highpass 12 kHz) **so với giọng** tăng ≤ 1 dB, nhạc lúc nói thấp
+- **Kiểm bản cuối:** cả bài −14 LUFS ±0,5, đỉnh tối đa −1,5 dB, tiếng rè (highpass 12 kHz) **so với giọng** tăng tối đa 1 dB, nhạc lúc nói thấp
   hơn giọng 22–24 LU (khối 17). Không so âm lượng thô với nguồn: giọng nhỏ được kéo lên −14 LUFS nên chênh là đúng.
 
 ## Nhạc theo tuyến nội dung

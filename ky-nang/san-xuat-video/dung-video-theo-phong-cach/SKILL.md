@@ -14,7 +14,7 @@ mốc lời Whisper, render clip nền trong suốt rồi ghép lên video gốc
 video > 3 phút làm đủ gói YouTube (màn kết, chương, teaser, thumbnail khi ngang); chữ bìa, cảnh minh hoạ chính, tuyến nhạc Claude tự chọn
 theo khối. Dừng giữa chừng, báo cáo "đã chọn X vì Y", góp ý → render lại toàn bộ: `quy-tac-chung.md` mục 8.
 
-## Nhịp làm (mục tiêu: video 10 phút xong trong ~1 giờ)
+## Nhịp làm (mục tiêu: video 10 phút xong trong khoảng 1 giờ)
 
 - **Tự chọn trước, không thử bằng render** (`../thiet-ke-bo-cuc/nguoi-xem-can-gi.md` → `../thiet-ke-bo-cuc/tu-chon.md`): đọc `yeu-cau.md` + `them-anh/` → chẩn đoán →
   loại nội dung → bố cục nền, lớp thông tin → mỗi cảnh lập luận "Cần · Vì · Làm" →
@@ -32,7 +32,7 @@ bộ nhận diện, phát hành. Dưới đây chỉ là luật RIÊNG của ski
 1. **Motion graphic kể chuyện, tự do sáng tạo** (khối 07 mục 1): chỉ giữ chữ ký nhận diện; còn lại AI sáng tạo theo video — một hình có
    thể diễn tả 1–2 ý hoặc cả video, ý quay lại thì vẽ tiếp lên hình đã có (mạch hình, cảnh tự vẽ `ve`). Không con số cố định.
 2. **Mở đầu `hook`** — **không làm mặc định** (khối 06): chỉ khi David yêu cầu, chữ nguyên văn. `du-an.js` ghi
-   `topic: '<CHỦ ĐỀ>'` (≤ 3 chữ, trích lời) cho dấu góc + thẻ cuối.
+   `topic: '<CHỦ ĐỀ>'` (tối đa 3 chữ, trích lời) cho dấu góc + thẻ cuối.
 3. **Bố cục tự chọn theo nội dung** (`../thiet-ke-bo-cuc/tu-chon.md` → khối 07 + `../thiet-ke-bo-cuc/bo-cuc.md`): danh mục có sẵn (dùng khi hợp, không bắt buộc — cần hình riêng thì viết cảnh tự vẽ `ve`) — người + phụ đề, `nhan`,
    `bocuc` (`the-canh` thẻ cạnh mặt · `o-nguoi` người vào ô bo góc + nội dung · `chuong` màn chương), `illus` / `diagram` toàn màn hình.
    Hợp nội dung, người xem dễ nhận; dọc mỗi lúc ít thứ. **Điểm nhấn trên người** (`nhan`): làm tối viền / chữ nhấn hay biểu
@@ -47,7 +47,7 @@ bộ nhận diện, phát hành. Dưới đây chỉ là luật RIÊNG của ski
 7. Không làm bản cho app chỉnh sửa (DaVinci/CapCut…), không nhắc trong báo cáo — David chỉ dùng bản render cuối.
    Thư mục `tu-lieu/` chỉ là tên lịch sử, chứa video nguồn và clip trung gian; dọn sau khi David chốt (bước 12).
 8. **Học từ 20 video nói trước camera Việt** (`references/hoc-tu-20-video-noi-truoc-camera-vn.md`):
-   - **Nhãn số danh sách** (`listItem` {n, of?, text}): người nói đếm ≥ 3 ý → mỗi ý một nhãn đúng lúc nói, text nguyên văn cụm việc.
+   - **Nhãn số danh sách** (`listItem` {n, of?, text}): người nói đếm ít nhất 3 ý → mỗi ý một nhãn đúng lúc nói, text nguyên văn cụm việc.
    - **Thẻ tóm tắt để lưu**: video danh sách / hướng dẫn → `card` variant `steps` ngay trước màn chốt, liệt kê các ý nguyên văn (bỏ bớt chữ).
    - **Thẻ chương + chương YouTube** cho video dài có ý lớn: `CHAPTERS` trong canh.js (mốc + tên trích lời) → `chuong.py`.
 

@@ -4,9 +4,9 @@ description: "Tái bản 3 toàn bộ bộ não (mở 14/11): file theo dõi chu
 
 # Tái bản 3 — toàn bộ bộ não (mở 14/11/2026)
 
-David duyệt 4 phần 14/11: 4 phiên con chạy cùng lúc · `co-so-tri-thuc/david.md` để nguyên, chỉ ghi chỗ lệch · việc thật là đoạn ngắn `thu-tai-ban-3`. Mốc trước: `tai-ban-3-truoc`. Skill: [tai-cau-truc](../ky-nang/tai-cau-truc/SKILL.md). Đợt 2 ([tai-cau-truc-2.md](tai-cau-truc-2.md)) xong nội dung 10/11 nhưng chưa gắn tag: ghi bù vào lịch sử khi đóng đợt 3.
+David duyệt 4 phần 14/11: 4 phiên con chạy cùng lúc · `co-so-tri-thuc/david.md` để nguyên, chỉ ghi chỗ lệch · việc thật là đoạn ngắn `thu-tai-ban-3`. Mốc trước: `tai-ban-3-truoc`. Skill: [tai-cau-truc](../../ky-nang/tai-cau-truc/SKILL.md). Đợt 2 ([tai-cau-truc-2.md](tai-cau-truc-2.md)) xong nội dung 10/11 nhưng chưa gắn tag: ghi bù vào lịch sử khi đóng đợt 3.
 
-Luật thêm cho đợt này: mọi file viết lại giữ khối `description:` và link ([quy-uoc-lien-ket.md](../co-so-tri-thuc/quy-uoc-lien-ket.md)); phiên con không commit, không chạy `dong-bo.sh`.
+Luật thêm cho đợt này: mọi file viết lại giữ khối `description:` và link ([quy-uoc-lien-ket.md](../../co-so-tri-thuc/quy-uoc-lien-ket.md)); phiên con không commit, không chạy `dong-bo.sh`.
 
 ## File của từng phiên con
 - [tai-ban-3-video.md](tai-ban-3-video.md)

@@ -1,0 +1,146 @@
+[
+ {
+  "id": "c01",
+  "tinh_huong": "David gửi một video vừa quay, không kèm một lời nào.",
+  "lua_chon": {
+   "A": "Bắt đầu từ skill phan-phoi-da-kenh: tự lọc theo hồ sơ David, quyết định có đáng làm và làm thành gì, trình 4 phần rồi chờ David duyệt.",
+   "B": "Hỏi David muốn làm gì với video này rồi mới bắt đầu.",
+   "C": "Dựng ngay bản dài rồi gửi cho David xem."
+  }
+ },
+ {
+  "id": "c02",
+  "tinh_huong": "Đang dựng video, muốn đặt một dòng chữ lớn trên màn hình tóm ý của David cho hay hơn.",
+  "lua_chon": {
+   "A": "Rút gọn ý thành một câu mới hay hơn.",
+   "B": "Tự đặt một câu tít gây tò mò.",
+   "C": "Chỉ dùng cụm từ nguyên văn trong lời David nói, không diễn đạt lại."
+  }
+ },
+ {
+  "id": "c03",
+  "tinh_huong": "Render xong video. Có nên xuất thêm một bản dự án cho CapCut hoặc DaVinci để David chỉnh?",
+  "lua_chon": {
+   "A": "Có, để David tự chỉnh.",
+   "B": "Không. David chỉ dùng bản render cuối.",
+   "C": "Hỏi David lần nào cũng hỏi."
+  }
+ },
+ {
+  "id": "c04",
+  "tinh_huong": "Thư mục dự án video vừa làm xong (video gốc, bản dựng) có nên đẩy lên GitHub không?",
+  "lua_chon": {
+   "A": "Không. GitHub chỉ giữ phần dùng chung (luật, hồ sơ, skill, script, khuôn); sản phẩm làm ra ở lại máy và Drive.",
+   "B": "Đẩy hết lên để không mất.",
+   "C": "Đẩy lên repo riêng tư bo-nao-david-mac."
+  }
+ },
+ {
+  "id": "c05",
+  "tinh_huong": "Cần tạo một file mới về kế hoạch bán hàng. Đặt tên file thế nào?",
+  "lua_chon": {
+   "A": "kh-ban-hang.md",
+   "B": "SalesPlan.md",
+   "C": "ke-hoach-ban-hang.md — đi từ thuật ngữ kinh doanh chuẩn Sales Plan, tra và ghi vào bảng thuật ngữ."
+  }
+ },
+ {
+  "id": "c06",
+  "tinh_huong": "Viết một ghi chú vào bộ não. Cách viết nào đúng?",
+  "lua_chon": {
+   "A": "\"vd. dùng sl nhỏ, ko cần hỏi lại\"",
+   "B": "\"Ví dụ: dùng số lượng nhỏ, không cần hỏi lại\" — viết đủ từ, đủ nghĩa.",
+   "C": "Viết tắt cũng được vì AI vẫn hiểu."
+  }
+ },
+ {
+  "id": "c07",
+  "tinh_huong": "Lần đầu đọc được một mẹo trình bày video hay từ một kênh khác.",
+  "lua_chon": {
+   "A": "Sửa ngay nguyên lý chung để mọi video dùng.",
+   "B": "Ghi vào kho / nguồn tham khảo (tầng dữ liệu) trước, gắn vào một nguyên lý; chỉ lên quy trình khi lặp lại hoặc đo được là giúp.",
+   "C": "Bỏ qua vì chưa chắc."
+  }
+ },
+ {
+  "id": "c08",
+  "tinh_huong": "David nhắc lại cùng một điều lần thứ hai.",
+  "lua_chon": {
+   "A": "Sửa ngay đúng nhà của luật đó và thêm một câu kiểm, không đợi lượt nhìn lại tuần.",
+   "B": "Ghi lại để tuần sau xem.",
+   "C": "Xin lỗi rồi làm tiếp."
+  }
+ },
+ {
+  "id": "c09",
+  "tinh_huong": "Ở một đoạn im lặng, bản chép lời tự động ra câu \"Hãy subscribe cho kênh…\".",
+  "lua_chon": {
+   "A": "Giữ làm phụ đề.",
+   "B": "Hỏi David.",
+   "C": "Bỏ câu đó: máy chép lời bịa chữ ở đoạn không có tiếng."
+  }
+ },
+ {
+  "id": "c10",
+  "tinh_huong": "Video nói chuyện dài 25 phút, có nhiều chỗ \"ờ, ừm\", ngập ngừng, nói lại.",
+  "lua_chon": {
+   "A": "Cắt hết cho gọn.",
+   "B": "Không cắt gì: video dài là bản gốc; chỉ bỏ đoạn khi David yêu cầu bỏ ý hoặc khi tách bản theo hướng nghề.",
+   "C": "Cắt còn khoảng 10 phút đoạn hay nhất."
+  }
+ },
+ {
+  "id": "c11",
+  "tinh_huong": "Bài đăng đã soạn xong. Muốn đăng lên trang Facebook giúp David cho nhanh.",
+  "lua_chon": {
+   "A": "Hỏi trước; chỉ đăng khi David nói \"đăng\".",
+   "B": "Tự đăng luôn.",
+   "C": "Đăng ở chế độ riêng tư trước."
+  }
+ },
+ {
+  "id": "c12",
+  "tinh_huong": "Lên lịch nội dung tháng tới. Có tính tới chuyện David sang Đức không?",
+  "lua_chon": {
+   "A": "Có, chuẩn bị nội dung tiếng Đức.",
+   "B": "Hỏi David mỗi lần.",
+   "C": "Không: đó chỉ là dự định, chưa tính vào việc, nội dung hay lịch tới khi David khẳng định."
+  }
+ },
+ {
+  "id": "c13",
+  "tinh_huong": "Có thông tin về hợp đồng với một khách của công ty Veltrix.",
+  "lua_chon": {
+   "A": "Ghi vào bộ não David.",
+   "B": "Ghi vào bộ não công ty ~/Documents/bo-nao-veltrix.",
+   "C": "Ghi cả hai nơi cho chắc."
+  }
+ },
+ {
+  "id": "c14",
+  "tinh_huong": "Một luật chỉ áp cho nghề trainer của David nhưng đang nằm lẫn trong quy trình đóng gói tin tuần.",
+  "lua_chon": {
+   "A": "Để nguyên cho đỡ sửa.",
+   "B": "Chuyển về đúng nhà (chiến lược nghề nghiệp); quy trình kia chỉ còn một dòng trỏ.",
+   "C": "Chép sang cả hai nơi."
+  }
+ },
+ {
+  "id": "c15",
+  "tinh_huong": "Đang dựng video, phân vân nhạc nền nào hợp.",
+  "lua_chon": {
+   "A": "Hỏi David chọn nhạc.",
+   "B": "Để không nhạc cho an toàn.",
+   "C": "Tự chọn từ kho nhạc kênh theo tuyến nội dung, ghi \"đã chọn X vì Y\" trong báo cáo cuối."
+  }
+ },
+ {
+  "id": "c16",
+  "tinh_huong": "Trong video công khai, David tự nói \"tôi là coach\".",
+  "lua_chon": {
+   "A": "Tự sửa lời thành \"trainer\".",
+   "B": "Cắt đoạn đó đi.",
+   "C": "Giữ lời, cảnh báo trong phiếu lọc và báo cáo để David quyết; chữ trên hình, tiêu đề, mô tả không dùng chữ coach."
+  }
+ }
+]

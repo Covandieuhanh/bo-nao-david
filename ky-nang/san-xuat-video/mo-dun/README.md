@@ -22,7 +22,7 @@ Sửa một cách làm → sửa đúng một khối (README + code của nó). 
 | [11-dung-ghep](11-dung-ghep/README.md) | Ghép cảnh từ nhiều clip: hiểu clip, giữ/bỏ, bản đồ liên kết, khung vlog, danh-sach-cat.js | ghép vlog, highlight người nói |
 | [12-san-khau-podcast](12-san-khau-podcast/README.md) | Sân khấu podcast: tên tập, ý đang bàn (TOPICS + PHẦN n), sóng âm theo người nói, nền lắng | podcast, highlight từ podcast |
 | [13-chon-doan-noi-bat](13-chon-doan-noi-bat/README.md) | Chọn khoảnh khắc highlight: bản đồ cả video, tự chọn ý theo 4 câu, chọn câu, bố trí lời kêu gọi, cắt + kiểm lời | highlight |
-| [14-anh-thu-nho](14-anh-thu-nho/README.md) | Thumbnail YouTube 1280×720 (chỉ video ngang đăng YouTube): quay hình = mặt + ≤ 3 tầng chữ; podcast = bìa không mặt | làm video, ghép vlog, podcast |
+| [14-anh-thu-nho](14-anh-thu-nho/README.md) | Thumbnail YouTube 1280×720 (chỉ video ngang đăng YouTube): quay hình = mặt + tối đa 3 tầng chữ; podcast = bìa không mặt | làm video, ghép vlog, podcast |
 | [15-xuat-ban](15-xuat-ban/README.md) | Phát hành: 3 tiêu đề, mô tả, mốc khung bìa, chương YouTube, teaser, bình luận ghim | cả 4 |
 | [16-phan-tich-so-lieu](16-phan-tich-so-lieu/README.md) | Số liệu sau đăng (báo lỗi, không quyết định): ảnh chụp số liệu 7 ngày → so-lieu.md | cả 4 |
 | [17-kiem-soat-chat-luong](17-kiem-soat-chat-luong/README.md) | Dựng + kiểm tra: chụp thử từng cảnh, render, ghép bản cuối, soát khung / âm lượng / tiếng rè | cả 4 |

@@ -12,7 +12,8 @@ mà mọi thứ phục vụ: `david.md` mục 1–3 và sáu luật `AGENTS.md`.
 AI (Claude, Codex, Gemini…) mỗi phiên **bắt đầu từ số 0** về David; thứ nó biết chỉ là những gì đọc được từ file. Vì vậy:
 > **Thước không bao giờ đổi:** một AI mới tinh, đọc ít nhất, vẫn làm đúng như David muốn — và lần sau đúng hơn lần trước.
 
-Mọi quyết định lưu gì, lưu ở đâu, viết thế nào đều trả lời câu này.
+Mọi quyết định lưu gì, lưu ở đâu, viết thế nào đều trả lời câu này. "Người đọc lạnh" là **bất kỳ ai** — trí tuệ nhân tạo khác, học viên,
+người chưa biết gì về công nghệ — nên mọi file viết đủ từ, đủ nghĩa, không viết tắt (`AGENTS.md` luật 1).
 
 ## 1. Mô hình AI được làm ra thế nào → bộ não làm y vậy
 
@@ -38,6 +39,7 @@ Mọi quyết định lưu gì, lưu ở đâu, viết thế nào đều trả l
 | **3 · Dữ liệu** | ca thật, số liệu, nguồn học, sổ, ghi nhớ, kho | thêm hằng ngày; **chỉ thêm**, không sửa nghĩa cái cũ | `giai-mau.md`, `so-lieu.md`, `nhat-ky-thay-doi.md`, `bo-nho/`, `bo-cuc.md` |
 
 Trong tầng 1–2 mỗi ý chỉ **một nhà**; nơi khác một dòng trỏ. Tầng 3 được nhiều, vì là dữ liệu.
+Tầng của từng file: bảng [tang.json](tang.json) (mẫu đường dẫn → tầng; chỉ mục `chi-muc.md` hiện tầng). Bộ đánh giá toàn bộ não: [bai-kiem/](bai-kiem/README.md).
 
 ## 3. Đường đi cố định của mọi thông tin mới (6 câu, lần nào cũng vậy)
 1. **Là gì?** dữ kiện · quyết định của David · cách làm · ví dụ / số liệu → quyết định tầng và loại file.
@@ -48,7 +50,7 @@ Trong tầng 1–2 mỗi ý chỉ **một nhà**; nơi khác một dòng trỏ. 
 6. **Kiểm thế nào?** Câu kiểm, mẫu chuẩn, hay số liệu nào sẽ cho biết nó giúp? Chưa có → ghi giả thuyết "kỳ vọng Y, đo lại sau N lần".
 
 ## 4. Luật đi lên (như não ngủ để củng cố)
-- Thông tin mới **luôn vào tầng 3 trước**. Lên tầng 2 khi **lặp ≥ 2 lần** hoặc David chốt thành cách làm. Lên tầng 1 khi **≥ 3 ca cùng
+- Thông tin mới **luôn vào tầng 3 trước**. Lên tầng 2 khi **lặp ít nhất 2 lần** hoặc David chốt thành cách làm. Lên tầng 1 khi **ít nhất 3 ca cùng
   gốc** và đã có câu kiểm. Lên tầng 0 chỉ khi David chốt và chờ vài ngày (`david.md` mục 2).
 - **Lỗi nào David phải sửa cũng thành một câu kiểm** của bộ đó (video: `ky-nang/san-xuat-video/thiet-ke-bo-cuc/bai-kiem/de.json`), để
   bản sau không lặp lại. Bộ kiểm chỉ lớn lên, không bỏ câu khi chưa có lý do ghi sổ.
@@ -59,7 +61,7 @@ Trong tầng 1–2 mỗi ý chỉ **một nhà**; nơi khác một dòng trỏ. 
 |---|---|---|---|---|
 | **Mỗi việc** | phản hồi tức thì | xong một việc | David sửa gì → sửa thẳng đúng nhà + một dòng sổ; lỗi → câu kiểm | `chuan-muc-lam-viec.md` mục 4 |
 | **Mỗi tuần** | tinh chỉnh nhỏ | sáng thứ 6 | gom tín hiệu lặp, học hình mẫu có số liệu, sửa quy trình | `hoc-lien-tuc` Việc 1–3 |
-| **Nâng cấp** | một vòng huấn luyện + đánh giá + ra bản | máy đo báo trùng / rối, ≥ 10 video có số liệu mới, hoặc David gọi | đo trước → chưng cất → tỉa → dọn → đo sau → ra bản | `hoc-lien-tuc` Việc 4, dọn: `tai-cau-truc` |
+| **Nâng cấp** | một vòng huấn luyện + đánh giá + ra bản | máy đo báo trùng / rối, ít nhất 10 video có số liệu mới, hoặc David gọi | đo trước → chưng cất → tỉa → dọn → đo sau → ra bản | `hoc-lien-tuc` Việc 4, dọn: `tai-cau-truc` |
 
 ## 6. Bốn thước không đổi (chấm mọi bản)
 1. **Người đọc lạnh làm đúng** — bài kiểm của bộ đạt, không thấp hơn bản trước.

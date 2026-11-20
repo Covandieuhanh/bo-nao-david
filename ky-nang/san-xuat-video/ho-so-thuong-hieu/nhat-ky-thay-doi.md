@@ -4,7 +4,7 @@ description: "Sổ đổi giá trị hồ sơ tham số video (chung và từng 
 
 # Sổ đổi giá trị — hồ sơ tham số video
 
-## Tái bản 3 — 14/11/2026: bản luật viết lại từ bảng du-an/tai-ban-3-video.md
+## Tái bản 3 — 14/11/2026: bản luật viết lại từ bảng du-an/nang-cap/tai-ban-3-video.md
 - Nhật ký cuối mỗi `<loai>.md` chuyển về sổ này để bản hồ sơ chỉ còn khoá đang dùng.
 
 ## chung.md

@@ -12,10 +12,10 @@ Kết luận ⛔ / 👤 / 🗂 thì KHÔNG dựng video (tiết kiệm thời gi
 | Đầu vào David đưa | Loại | Công thức (skill) | Hồ sơ |
 |---|---|---|---|
 | 1 video có người nói trước camera | **Làm video** | `dung-video-theo-phong-cach` (chế độ 1 video) | `ho-so-thuong-hieu/lam-video` |
-| ≥ 2 clip, hoặc 1 clip sự kiện / đi lại (không phải nói trước camera) | **Ghép vlog** | `dung-video-theo-phong-cach` (chế độ ghép — `references/nhieu-doan-video.md`) | `ho-so-thuong-hieu/ghep-vlog` |
+| ít nhất 2 clip, hoặc 1 clip sự kiện / đi lại (không phải nói trước camera) | **Ghép vlog** | `dung-video-theo-phong-cach` (chế độ ghép — `references/nhieu-doan-video.md`) | `ho-so-thuong-hieu/ghep-vlog` |
 | File tiếng, hoặc video podcast David không muốn dùng hình | **Podcast** | `dung-podcast` | `ho-so-thuong-hieu/podcast` |
 | 1 video dài / thư mục dự án cũ + "cắt highlight / clip ngắn / Reels" | **Highlight** | `cat-doan-noi-bat` | `ho-so-thuong-hieu/doan-noi-bat` |
 
 Điểm cần chốt trong 4 phần (`thu-thap-yeu-cau`, chỉ cái thật sự thiếu, kèm đề xuất): video > 3 phút → "có đăng YouTube không?" (bật màn kết,
 chương, teaser, thumbnail nếu khung ngang) · podcast → tên chương trình / ảnh người nói · highlight → tên tập gốc nếu không có.
-Không rõ loại (vd. 1 clip vừa nói vừa đi) → chọn theo việc người xem thấy nhiều nhất: người nói vào máy → Làm video; cảnh đi lại → Ghép vlog.
+Không rõ loại (ví dụ: 1 clip vừa nói vừa đi) → chọn theo việc người xem thấy nhiều nhất: người nói vào máy → Làm video; cảnh đi lại → Ghép vlog.

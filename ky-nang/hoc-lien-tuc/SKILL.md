@@ -31,10 +31,10 @@ Quy trình · Thực thi), gửi David `bao-cao.sh "#N ❓ Chờ anh duyệt 4 p
 ## Việc 1 — Nhìn lại tuần (máy gửi `[TU-HOC]` 07:00 sáng thứ 6 — ngày tổng kết tuần, hoặc David gọi)
 Máy đã ghi sẵn tín hiệu cuối mỗi phiên (hook `tu-dong-hoa/hoc-lien-tuc/ghi-tin-hieu.py` → `~/.claude/hoc-lien-tuc/tin-hieu.jsonl`), không tốn token.
 1. `python3 -I tu-dong-hoa/hoc-lien-tuc/dem-ky-nang.py 7` → skill dùng nhiều, skill bị sửa nhiều, skill không dùng.
-2. Đọc các dòng 7 ngày qua trong `tin-hieu.jsonl` (chỉ trường `david_sua`, `skill`, `loi_cong_cu`). Gom **điều lặp ≥ 2 lần**: cùng một
+2. Đọc các dòng 7 ngày qua trong `tin-hieu.jsonl` (chỉ trường `david_sua`, `skill`, `loi_cong_cu`). Gom **điều lặp ít nhất 2 lần**: cùng một
    lỗi, cùng một câu David phải nhắc, cùng một việc David làm tay. Cần thêm ngữ cảnh thì `python3 -I tu-dong-hoa/tim-phien.py "<từ khoá>"`,
    không mở cả phiên.
-3. Mỗi điều lặp → một chỗ sửa trong bộ 4 phần (mục trên) **và một câu kiểm** vào bộ kiểm của bộ đó (trục mục 4), để bản sau không lặp lại. Việc tay lặp ≥ 3 lần → viết thành script hoặc bước trong skill (Việc 3).
+3. Mỗi điều lặp → một chỗ sửa trong bộ 4 phần (mục trên) **và một câu kiểm** vào bộ kiểm của bộ đó (trục mục 4), để bản sau không lặp lại. Việc tay lặp ít nhất 3 lần → viết thành script hoặc bước trong skill (Việc 3).
 4. **Giọng văn:** đọc lời David trong tuần (tin nhắn, lời nói trong video đã duyệt). Thấy cách nói mới, từ hay dùng, từ David sửa
    lại → cập nhật `giong-thuong-hieu-david.md` (ví dụ nguyên văn ngắn + ngày).
 5. **Dọn:** skill 30 ngày không dùng → đề xuất gộp hoặc cất vào `luu-tru/` (không xoá). Ghi nhớ trùng / quá dài trong `co-so-tri-thuc/bo-nho/` →
@@ -53,20 +53,20 @@ Máy đã ghi sẵn tín hiệu cuối mỗi phiên (hook `tu-dong-hoa/hoc-lien-
 
 ## Việc 3 — Học thành skill (giống `/learn` của Hermes)
 Nguồn: tài liệu, link, thư mục, hoặc "quy trình vừa làm trong phiên này".
-1. Có skill gần đúng việc này → **bổ sung vào skill đó** (ưu tiên). Chỉ tạo skill mới khi việc lặp ≥ 3 lần hoặc David yêu cầu.
+1. Có skill gần đúng việc này → **bổ sung vào skill đó** (ưu tiên). Chỉ tạo skill mới khi việc lặp ít nhất 3 lần hoặc David yêu cầu.
 2. Tạo mới: theo `skill-creator`; thư mục `ky-nang/<ten-khong-dau>/SKILL.md`; mô tả nói rõ khi nào dùng (câu David hay nói);
    thêm một dòng vào bảng chọn skill trong `AGENTS.md`; chạy `bash tu-dong-hoa/cai-dat-bo-nao.sh` nếu skill cần liên kết vào `~/.claude/skills`.
 3. Thử một lần trên việc thật hoặc đoạn ngắn (`quy-tac-thu-bang-doan-ngan`), rồi báo David một dòng.
 
 ## Việc 4 — Nâng cấp (định kỳ, cả bộ não một đợt)
-**Khi:** máy đo báo "NÊN NÂNG CẤP" (trùng / rối vượt ngưỡng), hoặc từ lần nâng cấp trước đã có **≥ 10 video có số liệu 7 ngày**, hoặc David
+**Khi:** máy đo báo "NÊN NÂNG CẤP" (trùng / rối vượt ngưỡng), hoặc từ lần nâng cấp trước đã có **ít nhất 10 video có số liệu 7 ngày**, hoặc David
 nói "nâng cấp" / "tái bản". Nhắc David một dòng; David quyết. Mỗi đợt một mốc chung `nang-cap-<n>`, một file theo dõi `du-an/nang-cap-<n>.md`.
 
 **Thước đo** (cùng một bảng, đo trước và sau; bản mới chỉ ra khi **bằng hoặc tốt hơn ở mọi dòng**):
 | # | Thước đo | Cách đo | Đạt |
 |---|---|---|---|
 | 1 | **Người xem thật** (thước đo chính) | trung vị 10 video gần nhất từ `so-lieu.md` các dự án (khối 16): số nhắn "gỡ" / bình luận "Vấn đề"·"Kết quả", % còn lại ở giây 3, tỉ lệ xem hết | không giảm; đổi luật nào thì ghi giả thuyết "kỳ vọng Y tăng, đo lại sau N video" |
-| 2 | **Suy luận** | AI làm thật `ky-nang/san-xuat-video/thiet-ke-bo-cuc/bai-kiem/` (không mở đáp án), chấm `cham.py` | ≥ 8/10 và không thấp hơn lần trước |
+| 2 | **Suy luận** | AI làm thật `ky-nang/san-xuat-video/thiet-ke-bo-cuc/bai-kiem/` (không mở đáp án), chấm `cham.py` | ít nhất 8/10 và không thấp hơn lần trước |
 | 3 | **Hình** | `python3 -I ky-nang/san-xuat-video/mau-chuan/kiem-mau.py` (dự án mẫu phải có trên máy; ở Drive thì kéo về trước) | y nguyên, trừ chỗ đổi có chủ đích |
 | 4 | **Số lần David phải sửa** | `tin-hieu.jsonl` (trường `david_sua`) theo video / việc | giảm hoặc không tăng |
 | 5 | **Trùng / rối** | máy đo chồng chéo | mọi bộ "Chưa cần" |
@@ -89,5 +89,5 @@ sau vài video: ra bản khi 2–5 đạt, ghi giả thuyết cho thước 1 và
 
 ## Tiết kiệm token
 - Script làm phần đếm, tìm; Claude chỉ đọc kết quả gọn. Không đọc cả nhật ký phiên.
-- Một lượt nhìn lại mỗi tuần; Việc 2 chỉ khi có số liệu mới (≥ 3 video từ lần học trước) hoặc David gọi.
+- Một lượt nhìn lại mỗi tuần; Việc 2 chỉ khi có số liệu mới (ít nhất 3 video từ lần học trước) hoặc David gọi.
 - Việc nặng chạy trong phiên Claude Code riêng (bot giao qua `giao-viec.sh`), không chạy trong bot Telegram.

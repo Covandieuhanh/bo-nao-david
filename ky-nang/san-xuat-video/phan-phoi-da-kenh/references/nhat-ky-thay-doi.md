@@ -4,10 +4,10 @@ description: "Sổ thay đổi skill phan-phoi-da-kenh: quyết định của Da
 
 # Sổ thay đổi — phan-phoi-da-kenh (quyết định của người dùng + lý do)
 
-## Tái bản 4 — 20/11/2026: gom ý trùng giữa các file, bảng du-an/tai-ban-4.md
+## Tái bản 4 — 20/11/2026: gom ý trùng giữa các file, bảng du-an/nang-cap/nang-cap-4.md
 - 20/11/2026 · luật "Máy chỉ dựng video" (`vai-may` = `chi-video`): ngày chuyển từ SKILL.md về đây.
 
-## Tái bản 3 — 14/11/2026: bản luật viết lại từ bảng du-an/tai-ban-3-video.md
+## Tái bản 3 — 14/11/2026: bản luật viết lại từ bảng du-an/nang-cap/tai-ban-3-video.md
 - Mục "Nhật ký" cuối SKILL.md chuyển về đây:
 - 2026-11-13 · David: "không cần duyệt cổng 1, cổng 2 nữa, cứ thế làm thôi, nếu tôi không ưng thì sẽ góp ý rồi render lại toàn bộ video" → bỏ cả hai cổng: làm một mạch tới bản dài + clip ngắn + bài đăng trên trang xem kết quả; góp ý thì render lại toàn bộ luôn; chỉ việc đăng chờ David nói "đăng".
 - 2026-11-13 · Thiếu đề xuất clip ngắn khi gửi bản cuối → "Xong khi" 5: báo cổng 2 luôn có mục clip ngắn đề xuất.

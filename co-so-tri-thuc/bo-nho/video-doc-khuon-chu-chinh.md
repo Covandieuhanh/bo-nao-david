@@ -17,6 +17,6 @@ hẳn, mức gần giọng thì che từ); câu kêu gọi ghép vào thì ép b
 Trainer David Trần" (không logo nền tảng, vì nút trên Reels/TikTok không bấm được và có thể bị hạn chế phân phối); 10/11/2026 bỏ hẳn để
 video tự lặp.
 
-**How to apply:** cách làm ở `cat-doan-noi-bat/SKILL.md` mục "Kịch bản highlight podcast (7B)", mức nhạc ở `ho-so-thuong-hieu/doan-noi-bat.json`.
-Chỉ áp dụng cho video dọc đồ hoạ; video ngang và video có người nói không đổi. Mẫu có trong `mau-chuan/mau.json`, `kiem-mau.py` báo nếu
+**How to apply:** cách làm ở `ky-nang/san-xuat-video/cat-doan-noi-bat/SKILL.md` mục "Kịch bản highlight podcast (7B)", mức nhạc ở `ky-nang/san-xuat-video/ho-so-thuong-hieu/doan-noi-bat.json`.
+Chỉ áp dụng cho video dọc đồ hoạ; video ngang và video có người nói không đổi. Mẫu có trong `ky-nang/san-xuat-video/mau-chuan/mau.json`, `kiem-mau.py` báo nếu
 khuôn bị đổi. Liên quan [[video-clip-ngan-dung-doc-lap]], [[video-kien-truc-ky-nang]].

@@ -35,7 +35,7 @@ video); video dài xem kỹ 60 s đầu + ảnh thumbnail. Ngoài 20 video có m
 
 ## 2. Quy tắc rút ra
 
-1. **Video dài nói trước camera Việt KHÔNG cắt dày.** 7/10 video dài gần như 1 cảnh liền hoặc 2 góc máy đổi ~6 s; không thấy
+1. **Video dài nói trước camera Việt KHÔNG cắt dày.** 7/10 video dài gần như 1 cảnh liền hoặc 2 góc máy đổi khoảng 6 s; không thấy
    jump cut cắt từng khoảng ngừng. Nhịp đến từ nội dung, uy tín người nói (blouse, phòng khám, kệ sách, hội trường đông), và chèn
    có chủ đích: B-roll thao tác, meme hài (T17), thẻ chữ toàn màn (T4), khán giả phản ứng (T2).
 2. **Video ngắn: thẻ tít 0–2 s là chuẩn** (T5, T6, T12, T14, T18 — 5/10): 2 dòng, câu hỏi/lời hứa ("Cách làm giàu duy nhất bạn
@@ -54,20 +54,20 @@ video); video dài xem kỹ 60 s đầu + ảnh thumbnail. Ngoài 20 video có m
 
 ## 3. Đề xuất sửa skill (chờ duyệt — số khớp `luu-tru/de-xuat-skill-video-2026-11-04.md` (repo bo-nao-david, đã áp xong))
 
-- **TH-1 Video dài (> 3 phút) chỉ cắt khoảng lặng ≥ 1,2 s** (giữ nhịp trò chuyện như Wynn Tran, Vương Phạm, Tuấn Thầy Thuốc);
+- **TH-1 Video dài (> 3 phút) chỉ cắt khoảng lặng ít nhất 1,2 s** (giữ nhịp trò chuyện như Wynn Tran, Vương Phạm, Tuấn Thầy Thuốc);
   video ngắn giữ mức 0,45 s. *Điều chỉnh luật jump cut vừa áp hôm nay theo số liệu Việt.*
-- **TH-2 Thumbnail kiểu Việt**: cho phép 3 tầng chữ, tới ~8 chữ, con số khổng lồ riêng 1 khối, từ khoá to nhất; thêm nhãn series/số tập.
+- **TH-2 Thumbnail kiểu Việt**: cho phép 3 tầng chữ, tới khoảng 8 chữ, con số khổng lồ riêng 1 khối, từ khoá to nhất; thêm nhãn series/số tập.
 - **TH-3 Màn kết YouTube 15–20 s** cho video ngang đăng YouTube: khung chừa 2 ô video + nút đăng ký (David gắn màn kết trong YouTube Studio).
-- **TH-4 Nhãn số danh sách** (`chips` lớn kiểu "3. …") tự bật khi người nói đếm ≥ 3 ý, mỗi ý một nhãn đúng lúc nói.
+- **TH-4 Nhãn số danh sách** (`chips` lớn kiểu "3. …") tự bật khi người nói đếm ít nhất 3 ý, mỗi ý một nhãn đúng lúc nói.
 - **TH-5 Màu theo nghĩa** ở phụ đề video ngắn: từ khoá "nên" xanh lá, "tránh" đỏ (ngoài cam nhận diện).
 - **TH-6 Thẻ tóm tắt để lưu** 3–4 s trước màn chốt cho video danh sách/hướng dẫn (liệt kê các ý nguyên văn), màn chốt `save`.
 - **TH-7 Thẻ chương** cho video dài có các bước/ý lớn (+ chương trong mô tả YouTube).
 
 ## 4. Ghi chép từng video
-T1 SZ90X1zNXLY Dr. Wynn Tran "#125. Uống dầu cá lợi và hại như thế nào?" 3,4Tr · 14 phút · ~1 cảnh liền (2 cắt) · thẻ chào kênh 4 s rồi bác sĩ nói thẳng vào máy ở phòng khám (áo blouse/thẻ tên, màn hình tên phòng khám = uy tín); gần như không đồ hoạ. Tiêu đề = câu hỏi người xem tự hỏi + số tập. Thumbnail: mặt bác sĩ + dải chữ vàng/trắng in hoa trên nền xanh ở đáy "#125. UỐNG DẦU CÁ LỢI VÀ HẠI NHƯ THẾ NÀO?".
+T1 SZ90X1zNXLY Dr. Wynn Tran "#125. Uống dầu cá lợi và hại như thế nào?" 3,4Tr · 14 phút · khoảng 1 cảnh liền (2 cắt) · thẻ chào kênh 4 s rồi bác sĩ nói thẳng vào máy ở phòng khám (áo blouse/thẻ tên, màn hình tên phòng khám = uy tín); gần như không đồ hoạ. Tiêu đề = câu hỏi người xem tự hỏi + số tập. Thumbnail: mặt bác sĩ + dải chữ vàng/trắng in hoa trên nền xanh ở đáy "#125. UỐNG DẦU CÁ LỢI VÀ HẠI NHƯ THẾ NÀO?".
 T2 yUt4JeiwGxQ Phạm Thành Long "Tiết lộ bí mật con đường làm giàu từ hai bàn tay trắng" 2,3Tr · 22,5 phút · hội thảo: 3,3s/cảnh 30 s đầu (diễn giả ↔ khán giả đông = bằng chứng xã hội), bảng viết tay; màn kết 20 s: "ĐĂNG KÝ KÊNH NGAY" + mũi tên vàng + 2 video đề xuất (phần 2, phần 3). Thumbnail: 2 biểu cảm của chính người nói (nghiêm + cười) + khung vàng + chữ 4 tầng trắng/vàng viền đen "CON ĐƯỜNG / LÀM GIÀU / TỪ TAY TRẮNG / CỦA PHẠM THÀNH LONG"; series nhiều phần.
 T3 2rQBYE5B8Es Vương Phạm "Lên tiếng chính thức về chuyện lùm xùm – 1 lần và duy nhất!" 6,6Tr · 36 phút · 1 cảnh liền webcam phòng ngủ, không đồ hoạ — lực = chủ đề nóng + chân thật. Thumbnail: mặt cận biểu cảm buồn + chữ 3 tầng vàng/trắng/đỏ + ô đỏ "1 LẦN VÀ DUY NHẤT".
-T4 SXZfVFmM898 Huỳnh Duy Khương "5 thói quen NGUY HIỂM hủy hoại bộ não" 823N · 26 phút · 2 góc máy (rộng/cận) ~6s/cảnh; THẺ CHỮ TOÀN MÀN (nền đen, chữ trắng in hoa trích câu) chen giữa; tên kênh chữ to góc trái dưới; tiêu đề số + từ in hoa cảm xúc. Thumbnail: mặt cận nhìn màn hình + số "5" khổng lồ vàng + "THÓI QUEN / HUỶ HOẠI / BỘ NÃO" (từ khoá vàng to nhất).
+T4 SXZfVFmM898 Huỳnh Duy Khương "5 thói quen NGUY HIỂM hủy hoại bộ não" 823N · 26 phút · 2 góc máy (rộng/cận) khoảng 6s/cảnh; THẺ CHỮ TOÀN MÀN (nền đen, chữ trắng in hoa trích câu) chen giữa; tên kênh chữ to góc trái dưới; tiêu đề số + từ in hoa cảm xúc. Thumbnail: mặt cận nhìn màn hình + số "5" khổng lồ vàng + "THÓI QUEN / HUỶ HOẠI / BỘ NÃO" (từ khoá vàng to nhất).
 T5 FsKhcxUDu4g Huỳnh Duy Khương "1 cách nhận biết ai đang nói dối bạn" (short) 576N · 38s · 1 cảnh liền selfie cận · chỉ 1 thẻ chữ xanh dương ở 0–2 s ("1 cách nhận biết người đối diện nói dối") rồi chỉ có người nói; không phụ đề; cử chỉ tay minh hoạ. → hook = lời hứa kỹ năng cụ thể "1 cách".
 T6 a129Etf-fyA Bác sĩ Tùng "Phận nữ 12 bến nước" (short) 1,7Tr · 94s · 2,9s/cảnh · đứng cầm mic trước phông trắng, jump cut liên tục + xen KHÁN GIẢ CƯỜI (phản ứng); tít đỏ-trắng viền ở 0–3 s "Phận nữ 12 bến nước"; chữ nhấn ngắn kiểu đếm "Ngày 1/5", "Ngày 15/7 âm lịch" đúng lúc nói (liệt kê hài); dài 94 s vẫn viral vì hài + liệt kê.
 T7 7hot1RsKKPI Vương Phạm "Vương Phạm kiếm $ từ nghề gì?" (short) 4Tr · 59s · 8,5s/cảnh · selfie ngoài công trường (bối cảnh = bằng chứng); phụ đề 1–3 chữ, từ khoá xanh lá (kiểu từng nhịp); chèn ảnh sản phẩm nhỏ + nhãn khi nhắc; tít = câu hỏi tò mò về tiền của người nổi tiếng.
@@ -80,7 +80,7 @@ T13 OA7XPxNPLaA Tuấn Thầy Thuốc "5 bộ phận có thể khám tại nhà"
 T14 GBAKcuNgBFs Thai Pham "Cách làm giàu duy nhất bạn nên biết" (short) 142N · 58s · 1 cảnh liền studio (mic, laptop, kệ sách); thẻ tít xanh lá–trắng ở 0–2 s "CÁCH LÀM GIÀU DUY NHẤT / BẠN CẦN BIẾT"; không phụ đề; năng lượng + cử chỉ.
 T15 EKoDB3QcObo Huỳnh Duy Khương "4 lý do khiến lời nói của bạn kém thu hút" (short) 310N · 56s · 1 cảnh selfie cận, tay đếm 1-2-3-4; CHỮ TO GIỮA KHUNG ngang ngực, đổi theo từng cụm: tít đỏ ở 0 s, "MỘT", "ỜMMM", "TỎ RÕ VÀ TRÔI CHẢY" (xanh lá), "NÓI VÒNG VO" (đỏ), "CÓ MỞ CÓ THÂN CÓ KẾT" (xanh); chữ nhỏ ở câu thường — kết bằng câu hỏi để người xem tự nghĩ. Đúng kiểu phụ đề nhịp chữ + màu theo nghĩa (xanh = nên, đỏ = tránh).
 T16 6yTLwvmTp98 Nguyễn Hữu Trí "Tuyệt chiêu GIAO TIẾP khi không biết nói gì!!! (áp dụng được ngay) | Lesson #9" 1,6Tr · 25 phút · nói trước máy trong studio; thẻ mạng xã hội/đăng ký nhỏ ở 2–4 s; xen cảnh minh hoạ. Tiêu đề: TỪ KHOÁ IN HOA + lời hứa "(áp dụng được ngay)" + series Lesson #. Thumbnail: mặt cười lớn + câu hỏi 2 tầng vàng-trắng "NÓI GÌ KHI / KHÔNG BIẾT NÓI GÌ?" + chữ "BLAH BLAH" + sticker meme (vịt Psyduck).
-T17 eTMAOdNBIAQ Nguyễn Hữu Trí "TRÌ HOÃN không phải vì bạn lười, mà là vì…(dô xem sẽ bất ngờ khi biết lí do)" 1,4Tr · 24 phút · ~6s/cảnh 30 s đầu; chèn CLIP MEME / tư liệu (người nổi tiếng) để minh hoạ hài; chữ bật kiểu "CỰC KÌ NGHIỆM NGẶP!" ô xanh; màn kết 2 video + avatar. Tiêu đề = phủ nhận niềm tin phổ biến + vòng mở "mà là vì…". Thumbnail: mặt nhìn điện thoại (đúng tình huống) + "Trì hoãn / không phải do / LƯỜI" chữ trắng viền xanh, từ phủ định to nhất.
+T17 eTMAOdNBIAQ Nguyễn Hữu Trí "TRÌ HOÃN không phải vì bạn lười, mà là vì…(dô xem sẽ bất ngờ khi biết lí do)" 1,4Tr · 24 phút · khoảng 6s/cảnh 30 s đầu; chèn CLIP MEME / tư liệu (người nổi tiếng) để minh hoạ hài; chữ bật kiểu "CỰC KÌ NGHIỆM NGẶP!" ô xanh; màn kết 2 video + avatar. Tiêu đề = phủ nhận niềm tin phổ biến + vòng mở "mà là vì…". Thumbnail: mặt nhìn điện thoại (đúng tình huống) + "Trì hoãn / không phải do / LƯỜI" chữ trắng viền xanh, từ phủ định to nhất.
 T18 levt4mQd0sw Thai Pham "Ôm nhiều bất động sản gồng đến bao giờ?" (short) 116N · 59s · 1 cảnh liền tại văn phòng; thẻ tít trắng–vàng ở 0–2 s "ÔM NHIỀU ĐẤT / GỒNG ĐẾN BAO GIỜ?" + chữ ký logo; phụ đề trắng nhỏ ngang ngực. Tít = câu hỏi trúng nỗi lo người xem.
 T19 mbFYgJJ4k_8 Changmakeup "[SWATCH + REVIEW] Maybelline…" 3,3Tr · 10 phút · cận cảnh THAO TÁC/SẢN PHẨM là chính (môi, son), nhãn tên mã màu ô trắng góc trái dưới khi đổi sản phẩm; nhãn [SWATCH + REVIEW] ở đầu tiêu đề. Thumbnail: cận kết quả + hàng sản phẩm + tên thương hiệu chữ to.
 T20 Qen5rCErA6I Hana Giang Anh "Giảm mỡ bụng dưới hiệu quả (Advanced) | Workout #78" 7,9Tr · 8 phút · 3 người tập cùng trước tường gạch (làm mẫu theo), đồng hồ/nhãn động tác; kết "Hẹn gặp lại…" + màn kết 2 video. Thumbnail tối giản: khối màu nâu + chữ trắng "GIẢM MỠ / BỤNG DƯỚI" + ảnh kết quả cơ thể. Tiêu đề = kết quả cụ thể + cấp độ + số tập series.

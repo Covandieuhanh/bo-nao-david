@@ -4,7 +4,7 @@ description: "Sổ thay đổi skill dựng video theo phong cách: quyết đ�
 
 # Sổ thay đổi — dung-video-theo-phong-cach (quyết định của người dùng + lý do)
 
-## Tái bản 4 — 20/11/2026: gom ý trùng giữa các file, bảng du-an/tai-ban-4.md
+## Tái bản 4 — 20/11/2026: gom ý trùng giữa các file, bảng du-an/nang-cap/nang-cap-4.md
 - Ngày và lời David trong bản luật chuyển về đây (luật giữ nguyên nghĩa):
   - 19/11/2026 · `quy-tac-chung.md` mục 0 "Mọi lựa chọn tự setup theo nội dung nguồn" — David: *"mọi thứ cần phát huy tối đa được sức mạnh của AI, mọi lựa chọn đều phải được tự động setup phù hợp với nội dung của tài nguyên nguồn"*.
   - 19/11/2026 · công thức "Nhiều file của cùng một buổi nói → nối thành một video gốc" (khuôn 1 video có đủ kho).
@@ -20,7 +20,7 @@ description: "Sổ thay đổi skill dựng video theo phong cách: quyết đ�
 ## 14/11/2026: phạm vi luật không zoom
 - David trả lời câu hỏi tái bản 3, chọn đề xuất "Chỉ cấm hình quay": luật "không zoom vào / zoom ra" chỉ áp cho hình quay (video người nói); ảnh minh hoạ (Ken Burns trôi chậm) và chuyển động bên trong motion graphic (đẩy khung) vẫn được. Lý do: luật 13/11 nhắm hiệu ứng zoom trên người nói, không nhắm đồ hoạ. Nhà luật: quy-tac-chung mục 2; khối 07 mục 4, thiet-ke-canh trỏ về. Xoá dòng gotchas "chụp thử nhan không thấy zoom" (nhan.jsx đã bỏ zoom).
 
-## Tái bản 3 — 14/11/2026: bản luật viết lại từ bảng du-an/tai-ban-3-video.md
+## Tái bản 3 — 14/11/2026: bản luật viết lại từ bảng du-an/nang-cap/tai-ban-3-video.md
 - Bỏ dấu ngày, lời kể, chỗ ngược luật khỏi bản luật; mục "Nhật ký" cuối SKILL.md chuyển về đây:
 - 2026-11-11 · David: "học rất nhiều… các skill phải tự động chọn ra được cách nào phù hợp với nội dung"; video cuộc gọi mất 4–5 giờ, "tập trung vào điện thoại" mà vẫn còn rác. Thêm bước 6b chẩn đoán → tự chọn (`thiet-ke-bo-cuc/tu-chon.md`, `chan-doan.py`), khung chủ thể (`khung-chu-the.py`), bảng ghi chú chạy (`GHI_CHU`), mục Nhịp làm; sửa chuẩn âm, khoá render, soát cảnh chặn kiểu lỗi khung ngang + màn trống đầu cảnh.
 - 2026-11-11 · David: "mục tiêu cuối cùng của tôi luôn là đưa tài nguyên vào và chờ kết quả là xong". Bỏ "hỏi một lần ở đầu"; khung xuất chỉ đổi khi David nói rõ khung (Claude đã tự đổi ngang → dọc vì "tập trung vào khu vực điện thoại").
@@ -33,15 +33,15 @@ description: "Sổ thay đổi skill dựng video theo phong cách: quyết đ�
 
 ## 11/11/2026: xong tập thì lên Drive, xoá trên Mac
 - David: "máy mac này chỉ còn đóng mỗi vai trò là khi đang thực thi cái gì thì có dữ liệu và tài nguyên của cái đó thôi"; "nhớ lưu lại để lần sau tự động làm việc cho gọn và nhẹ máy mac". Lý do: Mac 228 GB đầy. `don-tap.py --xoa` xoá hẳn file tạm (bỏ Thùng rác), rồi `luu-drive.sh` (mới, kèm `kiem-tai-len-drive.swift`, `giai-phong-drive.swift`) đưa tập lên Drive `sao-luu-mac/video`, chờ lên mây, so khớp, giải phóng cache Drive, xoá trên Mac. Sửa SKILL bước 12 + Xong khi 8, khối 17, quy-tac-chung 8, cat-highlight, podcast, tong-quan.
-## Tái bản 2 — 10/11/2026: bản luật viết lại từ bảng du-an/tai-cau-truc-2-video.md
+## Tái bản 2 — 10/11/2026: bản luật viết lại từ bảng du-an/nang-cap/tai-cau-truc-2-video.md
 - Nhà luật bỏ phóng xen kẽ ở mối cắt là quy-tac-chung mục 2 (kèm lý do); khối 02, ho-so-thuong-hieu/doan-noi-bat.md, cat-highlight luật 8 trỏ về đó. quy-tac-chung mục 8 trỏ thói quen chung (hỏi, lệnh nền, mật khẩu, báo cáo), chỉ giữ phần riêng video. Bỏ câu chép ở gotchas, phan-phoi-da-kenh; sửa đường trỏ "hình của chính video" về khối 14. Viết lại 6 câu máy đo bắt nhầm ("thay cho", "THAY", tên file có ngày).
 
 ## 10/11/2026 — Bỏ phóng xen kẽ 1,08× ở mối cắt
 - David xem đoạn thử tap-thu-tai-ban-video-1: "tôi không thích mấy đoạn zoom giật ra giật vào" → "bỏ 1 giữ 2": bỏ mặc định phóng xen kẽ 1,08× ở mỗi mối cắt (mọi loại video), giữ zoom dồn chậm vào mặt ở câu đắt (`nhan` zoom, câu `"zoom": true`). Sửa: quy-tac-chung §2, khối 02, `ap-dung-lam-sach.py` + `de-xuat-lam-sach.py` mặc định `zoom: "none"`.
 
-## Tái bản 1 — 10/11/2026: bản luật viết lại từ bảng du-an/tai-cau-truc-video-1.md
+## Tái bản 1 — 10/11/2026: bản luật viết lại từ bảng du-an/nang-cap/tai-cau-truc-video-1.md
 - Gom bản luật cả bộ video: mỗi luật một nhà, bỏ dấu ngày và câu "thay luật cũ"; luật cũ đã bị thay (hook mặc định, câu chốt tự viết, con số mật độ, nhạc 20/30 LU, chép màu/font từ mẫu, nút phát ở thẻ cuối) bỏ hẳn khỏi bản luật.
-- David trả lời 5 câu: "Đồng ý cả 5" → (1) mọi video có điểm nhấn nhưng chỉ vài kiểu hợp nội dung, bỏ "trộn nhiều loại" và ví dụ "~3 illus + ~4 nhan"; (3) vlog: thẻ tiêu đề chỉ tên chương trình / tên nơi / lời nguyên văn, bỏ "TẬP NÀY CÓ GÌ?" và lời mời tự viết ở kết; (4) phan-tich-video-mau "Xong khi" 2 = chữ ký nhận diện không đổi; (5) việc thật chấm bằng một đoạn ngắn từ tap-5-nguyen-tac-tien.
+- David trả lời 5 câu: "Đồng ý cả 5" → (1) mọi video có điểm nhấn nhưng chỉ vài kiểu hợp nội dung, bỏ "trộn nhiều loại" và ví dụ "khoảng 3 illus + khoảng 4 nhan"; (3) vlog: thẻ tiêu đề chỉ tên chương trình / tên nơi / lời nguyên văn, bỏ "TẬP NÀY CÓ GÌ?" và lời mời tự viết ở kết; (4) phan-tich-video-mau "Xong khi" 2 = chữ ký nhận diện không đổi; (5) việc thật chấm bằng một đoạn ngắn từ tap-5-nguyen-tac-tien.
 - Tự phân xử theo ngày / mẫu đã duyệt: hashtag 2–3; bình luận ghim theo kiểu dẫn dắt (bỏ mẫu "Làm thử trong 48 giờ"); không hỏi câu chốt ở lần hỏi đầu.
 
 ## 2026-11-01
@@ -59,7 +59,7 @@ description: "Sổ thay đổi skill dựng video theo phong cách: quyết đ�
 - Template thêm kiểu cảnh: card `vs`, `ages`, `quote`; `steps` có nhãn `n`; montage `kicker`; toàn màn hình `gens`, `build`.
 - Template dùng chung với skill mới **dung-podcast** (Stage, Timeline, podframe, FullScreenLand) — chỉ bật khi `project.podcast`.
 - **Chữ to tiếng Việt đủ dấu, không chồng dòng** (`VN` trong khung-podcast.js) bật cho cả skill gốc: giãn dòng 1,14, chừa chỗ dấu
-  theo cỡ chữ, chữ to ≤ 120 px, hook ≤ 118 px. Đã thử trên IMG_0499: vẫn gọn trong dải lớp phủ.
+  theo cỡ chữ, chữ to tối đa 120 px, hook tối đa 118 px. Đã thử trên IMG_0499: vẫn gọn trong dải lớp phủ.
 - `xem-truoc-ban-dung.py` ghép `bia.mp4` (nếu có) trước video — dùng cho bìa podcast (`COVER`, `anh-bia.jsx`).
 - **Chữ to sau một dòng khác chừa chỗ dấu** (`aboveGap` = 0,4 cỡ chữ) và chữ không đặt sát khung ảnh — người dùng chỉ ra
   "GỐC RỄ" đè dòng "Phải nuôi đến cả năm trời", dòng đó chạm ảnh. Áp cho montage (dọc + ngang), tên người nói, "BƯỚC n".
@@ -70,23 +70,23 @@ description: "Sổ thay đổi skill dựng video theo phong cách: quyết đ�
 - **Thẻ = màn hình toàn cảnh** (sau khi giữ ô chữ): người dùng muốn mọi ô thẻ thành một màn toàn cảnh có hình động (giống tinh
   thần cảnh "cái quả", không bắt chước y hệt) — chỉ ô thẻ; chữ to không nền, hook, tên người nói vẫn trên video. Chữ trên màn
   toàn cảnh = **nguyên văn đầy đủ** câu nói ("không được tự tóm tắt hay nói ý khác") vì toàn cảnh dễ đọc. Mỗi cảnh 4–8 s (người
-  dùng chọn rút ngắn để mặt vẫn hiện ~60%). Code: `the-toan-man.jsx` (dùng lại variant thẻ, `CardInline`), `card` trong `FULL`.
+  dùng chọn rút ngắn để mặt vẫn hiện khoảng 60%). Code: `the-toan-man.jsx` (dùng lại variant thẻ, `CardInline`), `card` trong `FULL`.
 - **Tinh gọn** (người dùng: "tối giản và tinh gọn nhất nhưng vẫn thể hiện được ý chính"): phụ đề ẩn khi thẻ toàn cảnh hiện câu
-  nguyên văn (không đọc 2 lần); khung thẻ có quote chỉ giữ hình động + nhãn; ~1 hiệu ứng / 15–20 s, chữ to ≤ 3–4 lần, nghỉ ≥ 5 s
+  nguyên văn (không đọc 2 lần); khung thẻ có quote chỉ giữ hình động + nhãn; khoảng 1 hiệu ứng / 15–20 s, chữ to tối đa 3–4 lần, nghỉ ít nhất 5 s
   giữa hai cảnh chữ; podcast: ý đang bàn đổi 40–90 s. Lý do: bản Haruku 22 cảnh / 4:28 + phụ đề + câu trích = quá nhiều chữ.
 - Khe giữa 2 dòng chữ to nới 0,1 → 0,24 cỡ chữ (dấu dòng trên/dưới chạm nhau ở "ý đang bàn" podcast); áp cho sân khấu, chữ to,
   bìa, nhãn tự xuống dòng; ô màu hook giữ khe nhỏ.
 - **Một chuẩn hiển thị cho mọi chế độ**: phụ đề chế độ ghép trước là chữ rời không nền, các dòng dính nhau → giờ đọc chung
   `kieu-phu-de.js` với chế độ 1 video/podcast (hộp nền tối, giãn 1,28, đáy vùng an toàn); chữ to ở chế độ ghép (Rise, chữ nổ,
   lời kết, tiêu đề) dùng cùng chuẩn chừa dấu/giãn dòng. Khung trích dẫn clip giữ nguyên (người dùng khen chuẩn).
-- **Minh hoạ mặc định = biểu tượng vẽ** (`bieu-tuong.jsx`, ~45 hình) thay ảnh; người dùng so sánh 2 bản DJI và chọn bản không ảnh. Ảnh
+- **Minh hoạ mặc định = biểu tượng vẽ** (`bieu-tuong.jsx`, khoảng 45 hình) thay ảnh; người dùng so sánh 2 bản DJI và chọn bản không ảnh. Ảnh
   thật chỉ cho: địa danh cụ thể, nhân vật có thật/lịch sử, tư liệu quá khứ, minh chứng xác thực, sản phẩm cụ thể. Số liệu
   luôn bằng hiệu ứng, đúng con số người nói.
 - **Nâng khung** (dự án ghép 9515): nhiều đoạn nhân vật tụt xuống nửa dưới, nửa trên trống, phụ đề/thanh nút che mất hình chính →
-  đẩy hình lên ≤ 400 px + đáy lấp hình mờ (phóng ≤ 1,25× khi cần hơn). `scripts/nang-lop.py` tự tính theo mặt; chế độ ghép → `nang-lop.js`
+  đẩy hình lên tối đa 400 px + đáy lấp hình mờ (phóng tối đa 1,25× khi cần hơn). `scripts/nang-lop.py` tự tính theo mặt; chế độ ghép → `nang-lop.js`
   (đặt tay `lift` trong danh-sach-cat.js cho đoạn đồ vật), chế độ 1 video → nung vào video-goc.mp4 sau bước làm sạch (3b').
 - **Mục tiêu video = hiểu + làm theo** (người dùng chốt): câu hành động trong lời → màn `action` tự sinh (biểu tượng + tick + nguyên
-  văn câu); MỌI video kết bằng màn chốt `cta` ~4 s ("David rất mong có được sự góp ý của bạn tại phần bình luận!", keu-goi-hanh-dong.js) — hình
+  văn câu); MỌI video kết bằng màn chốt `cta` khoảng 4 s ("David rất mong có được sự góp ý của bạn tại phần bình luận!", keu-goi-hanh-dong.js) — hình
   lùi vào khung để vẫn thấy vẫy tay/like. Lý do: đánh giá cho thấy video giúp hiểu nhưng chưa thúc người xem hành động.
 - **Câu màn chốt không cố định** (người dùng chốt): Claude tự sáng tạo câu chốt hợp từng video sau khi nắm nội dung — một hành động (bình luận/lưu/theo dõi/chia sẻ, biểu tượng theo kiểu), giọng David, không bịa; câu cố định trong keu-goi-hanh-dong.js chỉ còn là dự phòng.
 - **Tick + "ting" ở màn chốt** (người dùng yêu cầu): câu chốt hiện xong → dấu tick nhỏ bật nảy ở góc biểu tượng + tiếng chuông ting (assets/hieu-ung-am-thanh/ting.wav, tự tổng hợp, không bản quyền) để kích thích người xem hành động.
@@ -114,27 +114,27 @@ description: "Sổ thay đổi skill dựng video theo phong cách: quyết đ�
 - Học 13 vlog của kênh (2021 → 2026), theo kiểu GẦN ĐÂY: mở đầu = đoạn ghép 9–20 s cảnh đắt nhất cả chuyến + thẻ tiêu đề trên đoạn
   ghép, rồi chào + bối cảnh, hành trình theo thời gian, kết bằng lời tổng kết của người quay. Claude tự chọn kiểu 1/2 theo nội dung.
   nhieu-doan-video.md 2d; danh-sach-cat-vlog.py `intro` (cảnh m1…, `voice`, `{"montage": true}` cho kiểu 2), tiêu đề `over` (nền mỏng) tự nằm ở dải
-  cảnh câm. Luật: đoạn ghép đa dạng, ≤ 2 cảnh mặt cận (lần chạy thử đầu ra 6/9 cảnh selfie giống nhau).
+  cảnh câm. Luật: đoạn ghép đa dạng, tối đa 2 cảnh mặt cận (lần chạy thử đầu ra 6/9 cảnh selfie giống nhau).
 - danh-sach-cat-vlog.py: biến `n` (đếm đoạn) bị ghi đè khi chia dòng phụ đề → trùng id đoạn (c12_2, c20_3…) → phụ đề/thẻ của đoạn trùng có thể
   lệch giờ (bản vlog leo núi đã render dính lỗi này). Đổi tên `nl`; id đánh số liên tục theo clip (clip tách hai mục vẫn không trùng).
 - Nhạc đoạn ghép mở đầu vlog: 2 bài riêng `intro-soi` (Upbeat — alex-morgan) / `intro-lang` (Inspiring Documentary — AtlasAudio), Claude
   chọn theo nội dung (`intro.music`). Cảnh câm mặc định dài 2 phách, điểm vào bài canh cho mối cắt rơi đúng phách; nhạc to hơn ở dải
   cảnh câm (loudRanges). Không lấy nhạc của kênh mẫu (bản quyền / Content ID + luật không tải từ YouTube).
 - xuat-chuong-trinh.mjs: `node xuat-chuong-trinh.mjs <từ s> <đến s> <tên.mp4>` render riêng một đoạn để xem thử.
-- Tiêu đề trên đoạn ghép (`over`): một dòng gọn ≤ 130 px, canh đáy vào LOW_Y, bỏ nền lưới — chạy thử 3 video Haruku (toàn selfie,
+- Tiêu đề trên đoạn ghép (`over`): một dòng gọn tối đa 130 px, canh đáy vào LOW_Y, bỏ nền lưới — chạy thử 3 video Haruku (toàn selfie,
   mặt ở nửa trên khung) thì tiêu đề 2 dòng 250 px che mặt. Vlog toàn cảnh tự quay mặt: đa dạng bằng nền / trang phục / cử chỉ.
 - Độ dài intro không cố định (người dùng chốt): theo chất liệu + cảm xúc; chỉ cảnh thật sự khác nhau; video tự quay mặt nói ≈ 5–8 s
-  (1 câu đắt + tiêu đề trên 1–2 cảnh). Intro Haruku 16,7 s → ~7 s.
+  (1 câu đắt + tiêu đề trên 1–2 cảnh). Intro Haruku 16,7 s → khoảng 7 s.
 - danh-sach-cat-vlog.py phụ đề (vlog Haruku 2026-11-04): (1) mốc TỪNG CHỮ khớp moc-tung-tu.srt bằng difflib, chữ ngoài đoạn giữ bị bỏ — trước đó
   câu nối dài làm lọt chữ của đoạn đã cắt ("…tốt lành thật ra", "David xin chào…"); (2) nối dòng Whisper: chữ hoa không phải tên
   riêng (PROPER = chữ hoa giữa dòng) → câu mới ". "; (3) ngắt dòng ưu tiên khoảng ngừng giọng nói, cấm kết dòng bằng từ đệm/nối
-  (END_BAD) và cấm tách cặp chữ lặp ≥ 2 lần / chữ trong `fix` (COMPOUND: bí mật, đi bộ, phạm trù…). Từ ghép chỉ xuất hiện 1 lần vẫn
+  (END_BAD) và cấm tách cặp chữ lặp ít nhất 2 lần / chữ trong `fix` (COMPOUND: bí mật, đi bộ, phạm trù…). Từ ghép chỉ xuất hiện 1 lần vẫn
   có thể bị tách ("giải / trình") — soát bằng mắt.
 - Âm lượng vlog ghép (người dùng chỉ ra 2026-11-04, Haruku): (1) tao-dung-ghep.sh cân GIỌNG từng clip về −20 LUFS (gain tuyến
   tính + alimiter, tối đa +18 dB) — 3 clip gốc −17 / −34 / −23 LUFS nghe đoạn to đoạn nhỏ; (2) danh-sach-cat-vlog.py đo giọng thật rồi đặt
   mức nhạc khi có lời thấp hơn giọng 20 LU (duck), chỗ ngừng nói ×1,6 (×2,5 nghe dập dình). Intro giữ mức `loud` 0,3.
 - Hiệu ứng trong vlog ghép (người dùng chỉ ra: "không thấy hiệu ứng, animation"): ke-hoach.json `fx` — pow (chữ to trích lời, tự canh
-  đáy LOW_Y), chips (danh sách hiện theo lời), action (thẻ câu hành động), zoom (dồn rồi tự nhả sau `hold` 2,5 s); ~1 / 20–30 s.
+  đáy LOW_Y), chips (danh sách hiện theo lời), action (thẻ câu hành động), zoom (dồn rồi tự nhả sau `hold` 2,5 s); khoảng 1 / 20–30 s.
 
 ## 2026-11-04 — BỘ NHẬN DIỆN DAVID (người dùng chốt: "xem bất kỳ thể loại nào cũng nhận ra cùng một người làm")
 - thuong-hieu.json (khuon-remotion/src, một nguồn; tao-dung-ghep.sh chép sang dự án ghép). Dấu góc ● DAVID │ chủ đề: BrandMark
@@ -150,11 +150,11 @@ description: "Sổ thay đổi skill dựng video theo phong cách: quyết đ�
 ## 2026-11-04 — NGƯỜI XEM LÀ TRUNG TÂM (David: "các kênh lớn là hình mẫu thành công đã đạt được điều này rồi thì sao chép luôn")
 Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trước camera, highlight, vlog, podcast), David duyệt kế hoạch 5 pha:
 - `quy-tac-chung.md` (thư mục san-xuat-video) — một nguồn luật chung; SKILL.md chỉ giữ luật riêng. `so-lieu-mau.md` — vòng số liệu sau 7 ngày.
-- **Phát hành** mọi video: 3 tiêu đề + 2 thumbnail 1280×720 (`scripts/anh-thu-nho.sh`, `assets/khuon-anh-thu-nho/` — mặt có cảm xúc, ≤ 4
+- **Phát hành** mọi video: 3 tiêu đề + 2 thumbnail 1280×720 (`scripts/anh-thu-nho.sh`, `assets/khuon-anh-thu-nho/` — mặt có cảm xúc, tối đa 4
   chữ, nhận diện David; nguồn quay dọc tự thành khung một bên). Video ngắn không ghép bìa trước video.
 - **Phụ đề video ngắn** 1–3 chữ to mỗi nhịp ngang ngực (`kieu-phu-de.js` `ShortLine`, chuẩn Hormozi/DOAC) — thay quyết định cũ "giữ
   phụ đề đáy" (bỏ đề xuất K ngày 03/11) vì David đổi kim chỉ nam. Video dài / vlog / podcast giữ hộp tối.
-- **Làm sạch cắt khoảng lặng ≥ 0,45 s + tiếng đệm "ờ/ừm"** mặc định (`de-xuat-lam-sach.py`, `am-luong-05.txt` trong phan-tich-lam-sach.sh) —
+- **Làm sạch cắt khoảng lặng ít nhất 0,45 s + tiếng đệm "ờ/ừm"** mặc định (`de-xuat-lam-sach.py`, `am-luong-05.txt` trong phan-tich-lam-sach.sh) —
   thay luật cũ "không cắt ngập ngừng" (2026-11-01, "muốn video thực tế nhất"). Bản tự nhiên: `phan-tich-lam-sach.sh <dự án> tu-nhien`.
   Vlog ghép giữ nhịp tự nhiên. Thử trên IMG3196 (46,7 s): 8 khoảng lặng 0,5–0,8 s được cắt.
 - Montage (highlight): `SHORT` trong danh-sach-cat.js bật phụ đề nhịp chữ, bỏ chớp trắng ở mối cắt; `HL.bar = false` tắt thanh tập gốc.
@@ -162,13 +162,13 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
 
 ## 2026-11-04 (học 80 video Việt)
 - Học 20 video nói trước camera + 20 vlog Việt (David duyệt ưu tiên 1+2): màn kết YouTube 15–20 s (`man-ket-youtube.jsx`, `project.ytEnd`, ke-hoach.json `ytEnd`, nhạc kênh nhỏ trong xem-truoc-ban-dung.py / chuong-trinh.jsx); thumbnail kiểu Việt (`THUMB_L3`, `THUMB_NUM`, `THUMB_BADGE`); nhãn số `listItem`; màu theo nghĩa `+`/`-` trong hl (kieu-phu-de.js); thẻ tóm tắt để lưu; `CHAPTERS` + `chuong.py`; `doan-gioi-thieu.py`; vlog: kiểu mở 3 "nhiệm vụ", thẻ vòng chỉ cho vlog thử thách, flycam mở nơi mới, nhãn giá/con số, tách phần > 25 phút. Cảnh câm intro 2 phách ≈ 1,06 s đã đúng nhịp Việt — giữ. Chưa áp TH-1 (cắt lặng nhẹ hơn cho video dài) — chờ David.
-- TH-1 áp (David duyệt): video > 3 phút chỉ cắt lặng ≥ 1,2 s còn 0,5 s, giữ tiếng đệm (de-xuat-lam-sach.py); ≤ 3 phút giữ 0,45 s. PO-6: lịch phát `project.schedule` / ke-hoach.json `schedule` trên thẻ cuối + màn kết YouTube.
+- TH-1 áp (David duyệt): video > 3 phút chỉ cắt lặng ít nhất 1,2 s còn 0,5 s, giữ tiếng đệm (de-xuat-lam-sach.py); tối đa 3 phút giữ 0,45 s. PO-6: lịch phát `project.schedule` / ke-hoach.json `schedule` trên thẻ cuối + màn kết YouTube.
 - Sửa sau khi dựng tờ mẫu (2026-11-04): phụ đề nhịp chữ giữ liền cụm từ khoá trong `hl` (không tách "TỎ / RÕ"), không gộp nhịp quá 16 ký tự (hết rớt dòng).
-- **Che mặt / thân trên → toàn màn hình** (David chốt 2026-11-04): vi-tri-khuon-mat.py coi đầu + cổ + vai + ngực là vùng cấm; không chỗ trống → `full: true` + `end` ≤ 4 s trong vi-tri.js (bo-cuc.js Place vẽ nền + phóng giữa, goc.jsx rút thời lượng). Chế độ ghép: `bao-ve-lop-phu.py` → bao-ve.js (chuong-trinh.jsx `FullOv`), tít ghim che đầu thì ẩn. Thử Haruku: thẻ hook 1 video + thẻ tít highlight thành toàn màn hình, tít ghim ẩn (che đầu 86/95 mốc).
+- **Che mặt / thân trên → toàn màn hình** (David chốt 2026-11-04): vi-tri-khuon-mat.py coi đầu + cổ + vai + ngực là vùng cấm; không chỗ trống → `full: true` + `end` tối đa 4 s trong vi-tri.js (bo-cuc.js Place vẽ nền + phóng giữa, goc.jsx rút thời lượng). Chế độ ghép: `bao-ve-lop-phu.py` → bao-ve.js (chuong-trinh.jsx `FullOv`), tít ghim che đầu thì ẩn. Thử Haruku: thẻ hook 1 video + thẻ tít highlight thành toàn màn hình, tít ghim ẩn (che đầu 86/95 mốc).
 
 ## 2026-11-04 — TÁI CẤU TRÚC (David: "tách nhỏ để sửa một chỗ")
 - Kiến trúc 5 lớp: nguyen-tac · nhan-dien · ho-so (tham số từ hình mẫu, script + khung dựng đọc) · khoi (18 khối, nội dung SKILL.md cũ chuyển nguyên văn vào) · thu-vien-tai-nguyen (một bộ thành phần hình) + mau-chuan (kiem-mau.py). SKILL.md thành công thức mỏng (thứ tự khối, bảng phụ thuộc, tiêu chí đạt).
-- 2 TRẠNG THÁI: cảnh `illus` (single/flow/vs/count/list, nhãn ≤ 3 chữ) ở cả 2 khung dựng; lớp chữ đè người tự vẽ toàn màn hình ≤ 4 s; thẻ/hành động bỏ câu trích dài; tít ghim tắt (hồ sơ highlight `tit_ghim: false`). +11 biểu tượng. Sao lưu trước tái cấu trúc: `~/.claude/skills/san-xuat-video.bak-2026-11-04b`.
+- 2 TRẠNG THÁI: cảnh `illus` (single/flow/vs/count/list, nhãn tối đa 3 chữ) ở cả 2 khung dựng; lớp chữ đè người tự vẽ toàn màn hình tối đa 4 s; thẻ/hành động bỏ câu trích dài; tít ghim tắt (hồ sơ highlight `tit_ghim: false`). +11 biểu tượng. Sao lưu trước tái cấu trúc: `~/.claude/skills/san-xuat-video.bak-2026-11-04b`.
 
 ## 2026-11-05
 - **Thumbnail / ảnh bìa chỉ dùng hình của CHÍNH video đang làm** (David chỉ ra: thumbnail podcast "Mục tiêu và sứ mệnh" lấy mặt từ vlog Miếu Bà Cam → sai). Podcast không mặt → nền là khung đồ hoạ của chính podcast; ảnh người nói chỉ khi David gửi riêng cho tập đó. Không đưa "lấy ảnh từ video cũ" thành lựa chọn khi hỏi. Ghi ở quy-tac-chung 7, khối 14, podcast SKILL, anh-thu-nho.sh.
@@ -199,7 +199,7 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
 
 ## 2026-11-08 · nhiều người trong khung + người đang nói (David: "tất cả motion graphics không có gì cố định, bố trí tự động cho phù hợp nhất")
 - `vi-tri-nhan.py` viết lại: mọi người trong khung (k-means chỗ ngồi, người quay nghiêng vẫn được tính) + người đang nói (pyannote tự chạy
-  khi ≥ 2 người, ghép giọng với miệng). Khoá cũ cx/cy/w/h/l/r = người đang nói → zoom dồn đúng người nói.
+  khi ít nhất 2 người, ghép giọng với miệng). Khoá cũ cx/cy/w/h/l/r = người đang nói → zoom dồn đúng người nói.
 - `src/thu-vien/cho.js` (mới): khoảng trống quanh mọi người; chọn chỗ sát người đang nói, chữ nhỏ lại trước khi phải rời người đó.
 - nhan.jsx: bỏ chọn phía theo một mặt; thêm `bam`. bo-cuc.jsx: `o-nguoi` tỉ lệ tự do, không cắt ngang mặt, ô ở phía người ngồi;
   `the-canh` co theo khoảng trống, hết chỗ thì thành `o-nguoi`. doan-gioi-thieu.py hết tràn bộ nhớ.
@@ -218,7 +218,7 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
 - Sửa: `khuon-dung-ghep/src/chuong-trinh.jsx` thêm CHẾ ĐỘ GIỮA (GiuaCtx) cho pow · chips · nameCard · location khi toàn màn hình — căn giữa trong
   vùng an toàn, không phóng; pow nhận `\n` theo cụm nghĩa + cỡ chữ tự co theo dòng dài nhất; location tự co + textWrap balance.
   `danh-sach-cat-doan-noi-bat.py`: màn chốt chỉ khi có câu `cta` / KEUGOI nguyên văn (không có → CTA = null, kết ở câu chốt ý + thẻ cuối); dấu góc dùng
-  `topic` ngắn của phương án (≤ 3 chữ) trước tên tập.
+  `topic` ngắn của phương án (tối đa 3 chữ) trước tên tập.
 
 ## 2026-11-10 · Chữ nhấn dưới cằm đè miệng khi mặt nằm thấp
 - Lỗi: video vòng đồng xu (mặt thấp, khung dọc hẹp) — `nhan.jsx` kẹp ô "dưới cằm" lên trên dải phụ đề → ô chữ đè miệng/cằm.
@@ -232,7 +232,7 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
 - Khối 07: cách viết đường cảm xúc trong `ke-hoach-canh.md`; **không hai cảnh cùng kiểu liền nhau**, không con số tối thiểu, ngoại lệ vẽ tiếp `tu_buoc`.
 - Khối 17: **kiểm cảm nhận** (Claude tự làm, xem lạnh → so đường dự định → lệch thì sửa cảnh), ghi `kiem-tra/cam-nhan.md`.
 - `soat-canh.mjs`: thêm P2 "cùng kiểu với cảnh liền trước". Thử trên tap-5-nguyen-tac-tien (4), tap-di-trainer (16), vlog the-view-vung-tau (1) — báo đúng.
-- Không lấy: tạo ảnh AI, phỏng vấn 8 câu, con số "≥ 4 kiểu" (ngược "bố cục tự cân").
+- Không lấy: tạo ảnh AI, phỏng vấn 8 câu, con số "ít nhất 4 kiểu" (ngược "bố cục tự cân").
 
 ## 2026-11-10 · Thẩm mỹ chỉ giữ chữ ký nhận diện + học Ali Abdaal / Joseph Video Editing (David chốt)
 - David: thẩm mỹ chỉ cần người xem nhận ra mọi video là của cùng một người; sáng tạo theo nội dung thì thoải mái; học càng nhiều tài nguyên càng tốt.
@@ -254,11 +254,11 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
   Chỉ sửa `thanh.js` (file duy nhất Node chạm tới; các `.jsx` nạp json chỉ chạy trong bundle nên để nguyên). Đã thử: `with` chạy được cả Node lẫn webpack của Remotion.
 - `chuan-am.py` ra −14,8 LUFS khi render_preview tự gọi: bộ chặn đỉnh làm bài nhỏ đi sau khi kéo mức. Giờ đo lại bản ra, bù phần thiếu, xuất lại TỪ BẢN TRƯỚC KHI CHỈNH (không nén AAC chồng), tối đa 3 lượt.
 - Thử trên `tap-thu-tai-ban-video-1/2-ban-day-du`: xuat-video.mjs chạy trọn (có the-cuoi), bản cuối −17,2 → −14,2 LUFS, đỉnh −1,5 dBTP, 2 lượt, ngay lần đầu.
-- 2026-11-12 · David góp ý video giao dịch hàng hoá: "nhân vật chiếm rất ít không gian, đây là video chia sẻ thông tin kiến thức… nên đưa nhân vật vào khung và phần còn lại để bảng hiển thị nội dung thông tin và các hình ảnh"; "bạn vẫn chưa chọn được thể loại phù hợp với nội dung". Claude đã giữ khung gốc dù máy báo DÀY THÔNG TIN (215 chữ/phút). Sửa `thiet-ke-bo-cuc/tu-chon.md` bước 2–3 (video kiến thức + người < ~50 % khung → khung chủ thể quanh người + bảng; máy báo dày thì không tự bỏ bảng) + gợi ý trong `chan-doan.py`. Cùng lần: bỏ mọi nền đen mờ sau chữ (thẻ cạnh người, chữ nhấn `nhan`, phụ đề, thanh thời gian, dải tối sau lớp phủ) → nền sẫm đặc `C.card` / `C.nen`; dấu góc DAVID có ô nền sẫm đặc (David: "chữ trắng trên nền sáng thì đâu có thấy").
+- 2026-11-12 · David góp ý video giao dịch hàng hoá: "nhân vật chiếm rất ít không gian, đây là video chia sẻ thông tin kiến thức… nên đưa nhân vật vào khung và phần còn lại để bảng hiển thị nội dung thông tin và các hình ảnh"; "bạn vẫn chưa chọn được thể loại phù hợp với nội dung". Claude đã giữ khung gốc dù máy báo DÀY THÔNG TIN (215 chữ/phút). Sửa `thiet-ke-bo-cuc/tu-chon.md` bước 2–3 (video kiến thức + người < khoảng 50 % khung → khung chủ thể quanh người + bảng; máy báo dày thì không tự bỏ bảng) + gợi ý trong `chan-doan.py`. Cùng lần: bỏ mọi nền đen mờ sau chữ (thẻ cạnh người, chữ nhấn `nhan`, phụ đề, thanh thời gian, dải tối sau lớp phủ) → nền sẫm đặc `C.card` / `C.nen`; dấu góc DAVID có ô nền sẫm đặc (David: "chữ trắng trên nền sáng thì đâu có thấy").
 - 2026-11-13 · David xem bản render 2 tap-giao-dich-hang-hoa: "bỏ hiệu ứng zoom ra zoom vào, không thẩm mỹ" → bỏ zoom ở mọi loại video (xem-truoc-ban-dung.py, nhan.jsx, danh-sach-cat-vlog.py, montage chuong-trinh.jsx, danh-sach-cat-doan-noi-bat.py, cat-doan-noi-bat.py; tài liệu khối 07, scene-design, bo-cuc, quy-tac-chung, cat-highlight). "Ảnh vuông mà khung chữ nhật thừa ra ngoài" → màn chốt (Cta, hanh-dong.jsx) có khung chủ thể thì chỉ cắt đúng ô người, cùng tỉ lệ, ô trượt từ chỗ cũ vào giữa.
 - 2026-11-13 · David: "nhiều hình ảnh để mô tả hơn, chỉ lấy tại Việt Nam, liên quan người Việt Nam" → quy-tac-chung (ảnh thật nhiều hơn, chỉ ảnh Việt Nam, không có thì biểu tượng vẽ); `kho-anh-openverse.py` tự thêm "Vietnam" vào từ khoá; thêm biểu tượng `thoi` (thỏi kim loại); bỏ zoom chậm trên ảnh (Diagram `kb`). Bỏ cổng 1, cổng 2: làm một mạch, góp ý thì render lại toàn bộ; trang xem kết quả `tu-dong-hoa/xem-ket-qua.py` (localhost:8765, chỉ đọc Drive thanh-pham). `cat-doan-noi-bat.py` tự tạo thư mục `cat/`.
 - 2026-11-19 · David: video nào cũng một kiểu thẩm mỹ, bố cục; "mọi lựa chọn đều phải được tự động setup phù hợp với nội dung của tài nguyên nguồn" (duyệt đường A) → chọn khuôn theo nguồn (nhiều file cùng buổi nói → nối, khuôn 1 video); tu-chon.md bước 0 + 2b (thẩm mỹ); cổng chặn render trong xuat-video.mjs / xuat-chuong-trinh.mjs (soat-canh: chưa chẩn đoán, một kiểu = P0); chan-doan.py đọc khuôn ghép + tín hiệu so sánh, nhân quả, thẩm mỹ; danh-sach-cat-doan-noi-bat.py ghi goi-y-kieu.md; khuôn ghép có nền `phong: 'hat'`; sửa soat-canh tính sai độ dài khuôn ghép (chia FPS hai lần).
 - 2026-11-19 · Lỗi đợt marketing: phụ đề lệch tới 14 s → `soat-khop-tieng.py` trước render (khối 03, 17) · whisper ảo giác ở quán ồn → chép theo khúc, bản gốc trước (khối 01) · điểm cắt theo mốc từ cụt chữ → `diem-ngat.py` (khối 02, 13) · đoán người nói sai khi hai người ngồi xa → khung cố định + follow (khối 04) · `trim=` trên nguồn dài chậm → `-ss` từng đoạn (khối 02) · anh-tinh.mjs lỗi để lại thư mục tạm → try/finally, bỏ mốc quá độ dài · bảng thời gian render thật (khối 17).
 - 2026-11-20 · Học kênh MagentX (David duyệt "đồng ý hết"): `bocuc` thêm `dung-hay`, `tren-duoi`, `o-tron`, `cau-hoi`, `the-canh` `so`; phụ đề dọc ngắn `hl` "^" = từ khoá to; `soat-canh.mjs` báo P1 khi kiểu học mới thiếu dấu hiệu trong Chẩn đoán. Kiểm: phần cũ SSIM 1,000 (10/10) cả hai khung.
 - 2026-11-20 · David: học phải thành "tư duy logic về việc xây dựng video chứ không phải áp dụng code máy móc"; "khi không có claude mà chỉ cần dựa vào các file thì máy nào cũng có thể dùng bất kì ai nào để làm ra được video" (máy Windows chỉ có GitHub). Phỏng vấn `du-an/phong-van/2026-11-20-tu-duy-dung-video.md`, đợt 1: tầng `thiet-ke-bo-cuc/nguoi-xem-can-gi.md` (loại nội dung + 12 nguyên lý Mayer + 4 ngoài Mayer), `tu-chon.md` viết lại theo nguyên lý (bỏ các câu trích, ngày trong bản luật: lời 19/11 "mọi lựa chọn đều phải được tự động setup…" và 20/11 "motion graphics ngày càng thể hiện rõ… tinh gọn" ghi ở đây), `soat-canh.mjs` chặn khi thiếu `Loại:` / `Cần:` (dự án cũ không có `yeu-cau.md` chỉ nhắc), `yeu-cau.md` + `them-anh/` tạo sẵn trong dự án mới, ảnh mẫu từng kiểu.
-- 2026-11-20 · Đợt 2 tư duy dựng video. David: "không cần dựa trên những nội dung tôi nói, mà hãy dựa trên những hình mẫu đã rất thành công của cùng thể loại" → đo 23 kênh, David gật 8 hình mẫu → `thiet-ke-bo-cuc/giai-mau.md` (19 ca) + `thiet-ke-bo-cuc/bai-kiem/` (10 đoạn, `cham.py`, đạt ≥ 8/10).
+- 2026-11-20 · Đợt 2 tư duy dựng video. David: "không cần dựa trên những nội dung tôi nói, mà hãy dựa trên những hình mẫu đã rất thành công của cùng thể loại" → đo 23 kênh, David gật 8 hình mẫu → `thiet-ke-bo-cuc/giai-mau.md` (19 ca) + `thiet-ke-bo-cuc/bai-kiem/` (10 đoạn, `cham.py`, đạt ít nhất 8/10).

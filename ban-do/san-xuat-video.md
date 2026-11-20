@@ -103,8 +103,8 @@ Gốc: [bản đồ bộ não](README.md). Chiến lược kênh: [chien-luoc-no
 
 ## Nghiên cứu và lịch sử sửa skill video
 - [doan-noi-bat-mau-2026-11-03](../nghien-cuu/doan-noi-bat-mau-2026-11-03.md) — Nghiên cứu 10 video highlight dọc lượt xem cao (03/11).
-- [tai-cau-truc-video-1](../du-an/tai-cau-truc-video-1.md) — Tái bản bộ skill video lần 1 (10/11): bảng 164 luật, mỗi luật một nhà.
-- [tai-cau-truc-2-video](../du-an/tai-cau-truc-2-video.md) — Tái bản 2 (10/11), phần bộ skill video: luật đổi so với lần 1.
+- [tai-cau-truc-video-1](../du-an/nang-cap/tai-cau-truc-video-1.md) — Tái bản bộ skill video lần 1 (10/11): bảng 164 luật, mỗi luật một nhà.
+- [tai-cau-truc-2-video](../du-an/nang-cap/tai-cau-truc-2-video.md) — Tái bản 2 (10/11), phần bộ skill video: luật đổi so với lần 1.
 
 ## Ghi nhớ video (sổ quyết định: ngày, lời David, lý do)
 - [video-anh-viet-nam](../co-so-tri-thuc/bo-nho/video-anh-viet-nam.md) — 13/11/2026 David muốn video có nhiều ảnh minh hoạ hơn, nhưng ảnh chỉ chụp tại Việt Nam, liên quan người Việt Nam
@@ -116,16 +116,16 @@ Gốc: [bản đồ bộ não](README.md). Chiến lược kênh: [chien-luoc-no
 - [video-clip-ngan-dung-doc-lap](../co-so-tri-thuc/bo-nho/video-clip-ngan-dung-doc-lap.md) — Mỗi clip ngắn cắt từ video dài phải tự có hoàn cảnh và nội dung riêng cho người xem độc lập, và phải đạt trọng tâm làm chủ bản thân / công việc; không chỉ cảm xúc (2026-11-06)
 - [video-dai-khong-cat](../co-so-tri-thuc/bo-nho/video-dai-khong-cat.md) — Video dài (podcast, tâm sự, thực tế, vlog) để nguyên không cắt, kể cả khoảng lặng và tiếng ờ ừm; tính năng cắt chỉ dùng khi trích video ngắn từ video dài (David chốt 2026-11-05)
 - [video-do-hoa-ke-chuyen](../co-so-tri-thuc/bo-nho/video-do-hoa-ke-chuyen.md) — Mọi video có motion graphics nhiều loại để kể lại câu chuyện, không khuôn; mọi bước AI sáng tạo trong khung + tiêu chí + nhận diện (2026-11-07, 09/11, gộp 10/11)
-- [video-doc-khuon-chu-chinh](../co-so-tri-thuc/bo-nho/video-doc-khuon-chu-chinh.md) — Khuôn podcast đồ hoạ dọc David chốt — chữ chính thay phụ đề, nhạc ~23 dB dưới giọng vẫn nghe được, không ép hành động, kết ở câu đắt nhất, không màn hình cuối; 3 clip "Đi trainer" là mẫu (2026-11-06, sửa 10/11)
+- [video-doc-khuon-chu-chinh](../co-so-tri-thuc/bo-nho/video-doc-khuon-chu-chinh.md) — Khuôn podcast đồ hoạ dọc David chốt — chữ chính thay phụ đề, nhạc khoảng 23 dB dưới giọng vẫn nghe được, không ép hành động, kết ở câu đắt nhất, không màn hình cuối; 3 clip "Đi trainer" là mẫu (2026-11-06, sửa 10/11)
 - [video-gop-y-render-lai](../co-so-tri-thuc/bo-nho/video-gop-y-render-lai.md) — Video làm một mạch, không cổng 1, cổng 2: góp ý thì sửa rồi render lại toàn bộ luôn; đăng chờ David nói "đăng" (13/11/2026)
 - [video-kien-truc-ky-nang](../co-so-tri-thuc/bo-nho/video-kien-truc-ky-nang.md) — Kiến trúc bộ skill video (hồ sơ tham số, 20 khối, thư viện hình, mẫu chuẩn; sửa đúng một chỗ) và bộ 5 video chuẩn 06/11 (04/11, 06/11; gộp 15/11)
 - [video-lam-lai-video-cu](../co-so-tri-thuc/bo-nho/video-lam-lai-video-cu.md) — Làm lại video cũ kênh "Cường Kể Chuyện": bỏ lời chào, giới thiệu kênh cũ, chữ và viền in trong hình; mỗi video ra một bản riêng; làm trọn rồi David góp ý sau (2026-11-08)
-- [video-nhac-theo-tuyen](../co-so-tri-thuc/bo-nho/video-nhac-theo-tuyen.md) — Claude TỰ chọn nhạc theo tuyến nội dung từ kho nhạc kênh (không hỏi David), cân mức từng bài; chuẩn âm chung mọi video — nhạc ~23 dB dưới giọng, cả bài −14 LUFS (2026-11-05, 06/11, 08/11, gộp 10/11)
+- [video-nhac-theo-tuyen](../co-so-tri-thuc/bo-nho/video-nhac-theo-tuyen.md) — Claude TỰ chọn nhạc theo tuyến nội dung từ kho nhạc kênh (không hỏi David), cân mức từng bài; chuẩn âm chung mọi video — nhạc khoảng 23 dB dưới giọng, cả bài −14 LUFS (2026-11-05, 06/11, 08/11, gộp 10/11)
 - [video-nhan-dien-chung](../co-so-tri-thuc/bo-nho/video-nhan-dien-chung.md) — Mọi loại video cùng một bộ nhận diện; video dọc ngắn bỏ thanh và thẻ cuối; chữ nhấn kiểu nhãn dán đặc màu ở ngực, không chạm mặt, không nền đen mờ (08/11, 10/11, 13/11; gộp 15/11)
 - [video-phu-de-mot-cho-chu](../co-so-tri-thuc/bo-nho/video-phu-de-mot-cho-chu.md) — Phụ đề clip dọc là cụm 5–8 chữ, cỡ bằng chữ thẻ (58), chữ thường; lớp chữ motion graphic hiện thì phụ đề nhường, mỗi lúc một chỗ chữ (2026-11-08)
 - [video-podcast-phu-hinh-30](../co-so-tri-thuc/bo-nho/video-podcast-phu-hinh-30.md) — Podcast chỉ có tiếng: motion graphic phủ khoảng 30% thời lượng, không cố định, đoạn khó hiểu dày hơn; chụp thử mọi cảnh để Claude tự soát trước khi render (2026-11-06, sửa 11/11)
 - [video-tham-my-chi-giu-nhan-dien](../co-so-tri-thuc/bo-nho/video-tham-my-chi-giu-nhan-dien.md) — Thẩm mỹ chỉ giữ chữ ký nhận diện, ngoài đó sáng tạo tự do; hiểu hơn cầu kì: kho hiệu ứng để chọn, mỗi video ít kiểu, bỏ chữ sau người / bóng người (10/11; gộp 15/11)
-- [video-tu-chon-theo-noi-dung](../co-so-tri-thuc/bo-nho/video-tu-chon-theo-noi-dung.md) — Skill dựng phải tự chẩn đoán video rồi chọn bố cục / lớp thông tin / kiểu cảnh trong kho; video 10 phút ~1 giờ
+- [video-tu-chon-theo-noi-dung](../co-so-tri-thuc/bo-nho/video-tu-chon-theo-noi-dung.md) — Skill dựng phải tự chẩn đoán video rồi chọn bố cục / lớp thông tin / kiểu cảnh trong kho; video 10 phút khoảng 1 giờ
 
 ## Phần riêng Mac chính
 - Bot Telegram, lịch tự chạy, trang xem kết quả, công cụ chỉ Mac, lưu trữ cũ: bản đồ `rieng-mac/ban-do.md` (chỉ có trên Mac chính, repo riêng tư `bo-nao-david-mac`).

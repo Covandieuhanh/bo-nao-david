@@ -7,7 +7,7 @@ Bạn đang làm việc với **David Trần** (Trần Đức Cường), nhà đ
 | # | File | Để biết |
 |---|---|---|
 | 1 | [co-so-tri-thuc/david.md](co-so-tri-thuc/david.md) | David là ai, ba hướng nghề, lằn ranh, cách muốn được làm việc. Khung tư duy gốc: [co-so-tri-thuc/mo-hinh-kinh-doanh.md](co-so-tri-thuc/mo-hinh-kinh-doanh.md) |
-| 2 | [co-so-tri-thuc/ho-so-ca-nhan.md](co-so-tri-thuc/ho-so-ca-nhan.md) | Tính cách, điểm mạnh, điểm cần cải thiện, nguyên tắc, động cơ. Phần định hướng nghề trong đó lỗi thời: lệch thì theo `co-so-tri-thuc/david.md` |
+| 2 | [co-so-tri-thuc/ho-so-ca-nhan.md](co-so-tri-thuc/ho-so-ca-nhan.md) | Tính cách, điểm mạnh, điểm cần cải thiện, nguyên tắc, động cơ. Định hướng nghề hiện hành ở `co-so-tri-thuc/david.md`; bản cũ đã chuyển vào lưu trữ |
 | 3 | [bao-cao-trang-thai.md](bao-cao-trang-thai.md) | Đang làm dở gì, việc tiếp theo, việc chờ David quyết |
 | 4 | [co-so-tri-thuc/bo-nho/MEMORY.md](co-so-tri-thuc/bo-nho/MEMORY.md) | Mục lục các bài học và quyết định. Mở từng file khi việc đụng tới |
 | 5 | [ky-nang/thu-thap-yeu-cau/SKILL.md](ky-nang/thu-thap-yeu-cau/SKILL.md) | Cách hỏi khi trình 4 phần: vòng hỏi, đề xuất đứng đầu, tín hiệu phải dừng |
@@ -20,7 +20,7 @@ Làm nội dung về lãnh đạo, ba tầng làm chủ, phương pháp hay nhâ
 
 ## Sáu luật không được phá
 
-1. **Trả lời tiếng Việt, chỉ ý chính, ngắn gọn, giải thích dễ hiểu từ bản chất gốc.**
+1. **Trả lời tiếng Việt, chỉ ý chính, ngắn gọn, giải thích dễ hiểu từ bản chất gốc. Ngắn là bớt ý thừa, không phải bớt chữ: viết đủ từ, đủ nghĩa, không viết tắt** — vì file có thể đột ngột được bất kỳ ai (người hay trí tuệ nhân tạo) đọc, không lấy ai làm chuẩn để viết tắt hay viết ngắn lại. Không viết tắt chữ thường ngày ("vd.", "ko", "TB"); trong câu văn viết bằng chữ thay cho ký hiệu ("khoảng" thay cho "~", "ít nhất" thay cho "≥"). Tên riêng, mã code, đơn vị đo chuẩn giữ nguyên; thuật ngữ tiếng Anh có bản dịch trong [bảng thuật ngữ](co-so-tri-thuc/bang-thuat-ngu.md).
 2. **Việc gì cũng duyệt 4 phần trước**: trình đủ Mục tiêu · Kế hoạch · Quy trình · Thực thi, chờ David "duyệt"; duyệt rồi tự làm trọn tới khi chắc dùng được. Cách làm, phần miễn, tự học skill: `ky-nang/chuan-muc-lam-viec.md` mục 2.
 3. **Video phải đúng nguyên văn lời David**: phụ đề, mô tả, chữ và motion graphics trên video lấy từ chính lời David, không đặt lời vào miệng David. Việc khác không bị ràng buộc này.
 4. **Mạng xã hội và quyền riêng tư của David không tự động vào**: đăng, gửi, xoá, thao tác tài khoản mạng xã hội phải hỏi trước. Không bao giờ chạm mật khẩu, OTP, token, cookie, giấy tờ cá nhân.
@@ -73,7 +73,7 @@ Máy chỉ có repo này là đủ để dựng video ra như Mac chính. Không
 4. **Lập luận thành chữ** trong `ke-hoach-canh.md`: `Loại:` cho cả video, mỗi cảnh `Cần · Vì · Làm`. `soat-canh.mjs` chặn render khi thiếu —
    đừng bỏ qua cổng này, nó là thứ giữ video đúng nội dung khi không có người kiểm.
 5. **Máy mới: làm bài kiểm suy luận** [bai-kiem/](ky-nang/san-xuat-video/thiet-ke-bo-cuc/bai-kiem/README.md) (không mở đáp án), chấm bằng
-   `python3 -I cham.py bai-lam.json`; đạt ≥ 8/10 mới dựng video thật, chưa đạt thì gửi các đoạn ✗ cho David.
+   `python3 -I cham.py bai-lam.json`; đạt ít nhất 8/10 mới dựng video thật, chưa đạt thì gửi các đoạn ✗ cho David.
 
 ## Nếu bạn không phải Claude Code
 

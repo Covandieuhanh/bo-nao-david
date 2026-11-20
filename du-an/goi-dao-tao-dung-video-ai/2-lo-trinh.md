@@ -5,7 +5,7 @@ description: "Gói 1 dựng video bằng AI, phần 2 lộ trình trainer: 4 bu�
 # 2. Lộ trình trainer
 
 ## Mục tiêu (cam kết của gói)
-Học viên **tự dựng 1 video bất kì bằng AI trên máy mình mà không cần trainer**, và **đã dựng xong ≥ 4 video** bằng cách này. Chưa đạt thì trainer kèm tiếp.
+Học viên **tự dựng 1 video bất kì bằng AI trên máy mình mà không cần trainer**, và **đã dựng xong ít nhất 4 video** bằng cách này. Chưa đạt thì trainer kèm tiếp.
 
 ## Kế hoạch: 4 buổi 1:1 online (90 phút), khoảng 4 tuần
 | Buổi | Bài | Kết quả |

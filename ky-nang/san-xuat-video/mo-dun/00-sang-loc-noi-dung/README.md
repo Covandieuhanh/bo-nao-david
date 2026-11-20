@@ -32,14 +32,14 @@ khách, thị trường của chính người xem = "làm chủ thị trường"
 ## 0b. Phân hướng từng đoạn, ghép bản theo hướng
 1. **Chia đoạn theo ý**: đọc cả bản lời, mỗi đoạn một ý: mốc vào–ra · ý một dòng · hướng (1 / 2 / 3) · hoặc **Bỏ** kèm lý do (không
    liên quan, chào hỏi, chuyện riêng, lằn ranh mục 3, ý chưa trọn). Một đoạn chạm hai hướng: gán hướng chính, ghi "dùng lại ở hướng X"
-   (vd. phép thử nỗi đau thuộc hướng 2, hướng 3 dùng lại làm câu mở tư vấn).
+   (ví dụ: phép thử nỗi đau thuộc hướng 2, hướng 3 dùng lại làm câu mở tư vấn).
 2. **Mỗi hướng một bản** khi gom được bối cảnh + ít nhất một ý trọn (chấm 5 tiêu chí theo hướng, mục 2). Không đủ → không ép ra bản,
    chỉ ghi nhật ký. Dạng mặc định, độ dài vẫn theo nội dung:
    | Hướng | Bản | Nơi đăng |
    |---|---|---|
    | 1 Tài chính | bản YouTube + clip ngắn | David Trần Official |
    | 2 Trainer con người | bản dài + highlight | YouTube trainer, Facebook cá nhân |
-   | 3 Giải pháp công nghệ AI | bản vừa ~8–15 phút + clip dọc | Facebook cá nhân, fanpage, TikTok |
+   | 3 Giải pháp công nghệ AI | bản vừa khoảng 8–15 phút + clip dọc | Facebook cá nhân, fanpage, TikTok |
 3. **Ghép trọn ý** (cùng bốn câu của highlight, khối 13):
    - **Bối cảnh**: đoạn mở phải đủ để người xem hiểu ai đang nói gì; thiếu thì kéo thêm câu bối cảnh liền trước, không tự viết lời dẫn.
    - **Ý trọn**: vào / ra ở cuối câu, bắt chỗ lặng gần nhất; không cắt giữa lập luận. Trong mỗi đoạn để nguyên (quy-tac-chung mục 2).
@@ -108,7 +108,7 @@ Chạm → **luôn cảnh báo trong phiếu và báo cáo**: mốc giây, lời
 | ✂️ **Trích ngắn từ gốc** | bản dài đã duyệt có đoạn đắt cho video ngắn | bản dài vẫn để nguyên làm gốc; clip là phần thêm, không thay bản dài |
 | 🔁 **Trùng / dư** | đã có bài gần giống trong 30 ngày, hoặc nhánh đang quá tỉ lệ | gộp vào bài cũ / để sau |
 | 🗂 **Lưu kho** | có giá trị nhưng chưa đúng lúc / chưa đủ 3 phần | lưu lời chép + nhãn, chờ ghép series |
-| 👤 **Chỉ Facebook cá nhân** | ≤ 6, đời thường có ích cho nhân hiệu | câu chia sẻ ngắn, không dựng nặng |
+| 👤 **Chỉ Facebook cá nhân** | tối đa 6, đời thường có ích cho nhân hiệu | câu chia sẻ ngắn, không dựng nặng |
 | ⛔ **Không làm** | không liên quan, hoặc David chọn không làm sau cảnh báo lằn ranh | không dựng, không tốn thời gian |
 
 ## 5. Phân phối kênh (`ho-so-thuong-hieu/kenh.json`)
@@ -134,5 +134,5 @@ Câu mở: "<trích lời>" · Bình luận: "Vấn đề" / "Kết quả" · D�
 
 ## 7. Sổ danh mục `~/Movies/_danh-muc-noi-dung/danh-muc-noi-dung.md`
 Một dòng mỗi tài nguyên: ngày · file · nhãn · điểm · nhánh · kênh · dẫn dắt · trạng thái (lọc / dựng / chờ đăng / đã đăng / kho / bỏ).
-Mỗi lần lọc, Claude xem sổ và CẢNH BÁO trong phiếu: nhánh nào đang quá nhiều / thiếu (mục tiêu: gốc + công việc ≥ 70%), tuần chưa có
+Mỗi lần lọc, Claude xem sổ và CẢNH BÁO trong phiếu: nhánh nào đang quá nhiều / thiếu (mục tiêu: gốc + công việc ít nhất 70%), tuần chưa có
 bài Mời, kho quay sẵn < 4 video, lịch thứ Ba / thứ Sáu tới chưa có bài, chủ đề trùng trong 30 ngày.

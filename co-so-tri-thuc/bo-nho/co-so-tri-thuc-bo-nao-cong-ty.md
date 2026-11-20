@@ -10,3 +10,5 @@ metadata:
 **Why:** công ty và cá nhân là hai câu hỏi khác nhau (công ty vận hành thế nào / David là ai), người được xem khác nhau.
 
 **How to apply:** việc về công ty, đội, khách của công ty, giải pháp (Văn Phòng Shop…) → làm và ghi ở bộ não công ty, đẩy bằng `bash ~/Documents/bo-nao-veltrix/dong-bo.sh`; không ghi vào `bo-nao-david` (du-an, bao-cao-trang-thai, danh-sach-y-tuong). Khung tư duy (`mo-hinh-kinh-doanh.md`) và sáu luật chỉ có một bản ở bộ não cá nhân, bộ não công ty trỏ tới. Tổng hợp nhóm Telegram công ty ghi ở `bo-nao-veltrix/dieu-hanh/nhat-ky/`. Liên quan [[co-so-tri-thuc-ho-so-va-bo-loc]].
+
+Nhà của luật: `AGENTS.md` mục "Giữ bộ não luôn mới" (hai bộ não). Ghi nhớ này giữ ngày, lời David, lý do.

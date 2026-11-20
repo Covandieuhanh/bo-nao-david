@@ -15,7 +15,7 @@ hình mẫu ở [giai-mau.md](../giai-mau.md) (không trùng các ca đã giải
 1. Đọc `../nguoi-xem-can-gi.md`, `../tu-chon.md` (bảng 4c), `../giai-mau.md`. **Không mở `dap_an` trong de.json** khi làm bài.
 2. Với mỗi đoạn trong `de.json` (đọc `id`, `loai`, `khung`, `doan`), viết một dòng vào `bai-lam.json`:
    `{"id": "d01", "can": "<tên nguyên lý ở nguyen-ly.json>", "lam": "<cách làm: tên kiểu trong kho, hoặc 'giữ người' / 'cảnh thật' / 'cắt chờ'>", "vi": "<cái khó của người xem>"}`.
-3. Chấm: `python3 -I cham.py bai-lam.json` → mỗi đoạn ✓ / ✗ kèm lý do; **đạt ≥ 8/10** = máy này lập luận được.
+3. Chấm: `python3 -I cham.py bai-lam.json` → mỗi đoạn ✓ / ✗ kèm lý do; **đạt ít nhất 8/10** = máy này lập luận được.
 4. Chưa đạt → đọc lại `giai-mau.md` phần "Rút ra theo loại", làm lại một lần; vẫn chưa đạt → gửi các đoạn ✗ (kèm dòng `vi`) cho David chấm.
    David thấy đáp án sai → sửa `de.json` (đáp án là cách nghĩ, không phải chân lý).
 5. **Bộ kiểm lớn dần:** lỗi dựng nào David phải sửa (sai nguyên lý, sai cách thể hiện) → thêm một đoạn vào `de.json` từ chính ca đó

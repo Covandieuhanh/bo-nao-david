@@ -14,7 +14,7 @@ description: "Biểu mẫu 01 cho học viên: hướng dẫn thiết lập hệ
 | **Whisper** | chép lời có mốc thời gian (chạy trên máy) | miễn phí |
 | **Node.js** | chạy trợ lý AI và Remotion | miễn phí |
 | **Python** | các bước tự động nhỏ | miễn phí |
-| **Remotion** (khi cần đồ hoạ đẹp) | dựng chữ, hình minh hoạ bằng code | miễn phí cho cá nhân, công ty ≤ 3 người; lớn hơn cần giấy phép |
+| **Remotion** (khi cần đồ hoạ đẹp) | dựng chữ, hình minh hoạ bằng code | miễn phí cho cá nhân, công ty tối đa 3 người; lớn hơn cần giấy phép |
 
 ## Cách 1 (khuyên dùng): để AI tự cài
 1. Cài Node.js từ trang chính thức nodejs.org (bản LTS).

@@ -44,8 +44,8 @@ thời gian, không thẻ cuối, màn chốt trên hình, kết ở chữ cuố
 6. **Không thứ tự cố định**: vị trí lời kêu gọi tự bố trí theo mạch (khối 13, bước 4); đổi thứ tự không được làm sai nghĩa. Độ dài theo ý.
 7. **Thẻ tít mở đầu** (chuẩn DOAC/Mel Robbins): **cụm nguyên văn đắt nhất của clip**, Claude tự chọn, ngắn, 2 dòng, nửa trên khung; nêu
    tiền cược / kết quả / mâu thuẫn của clip nếu lời có. Câu chạm vẫn là lời thật ngay giây 0. Ghi tít + mốc câu gốc vào ke-hoach-cat.md.
-8. **Nhịp kênh lớn**: **cắt cứng** giữa các câu, không phóng xen kẽ ở mối cắt (quy-tac-chung mục 2); khoảng lặng ≥ 0,45 s **trong** câu và
-   > 0,6 s **giữa** câu rút còn ~0,24 s; phụ đề **cụm trọn ý 5–8 chữ, cỡ bằng chữ thẻ, ẩn khi lớp chữ motion graphic hiện** (quy-tac-chung mục 3). Giữ 1 s lặng sau câu hỏi kêu gọi. Kiểu cũ có chip tua chỉ khi David yêu cầu: `--tua` cho `cat-doan-noi-bat.py` + `danh-sach-cat-doan-noi-bat.py`.
+8. **Nhịp kênh lớn**: **cắt cứng** giữa các câu, không phóng xen kẽ ở mối cắt (quy-tac-chung mục 2); khoảng lặng ít nhất 0,45 s **trong** câu và
+   > 0,6 s **giữa** câu rút còn khoảng 0,24 s; phụ đề **cụm trọn ý 5–8 chữ, cỡ bằng chữ thẻ, ẩn khi lớp chữ motion graphic hiện** (quy-tac-chung mục 3). Giữ 1 s lặng sau câu hỏi kêu gọi. Kiểu cũ có chip tua chỉ khi David yêu cầu: `--tua` cho `cat-doan-noi-bat.py` + `danh-sach-cat-doan-noi-bat.py`.
 9. **Hai tông** theo cảm xúc lời nói, đổi giữa chừng được (cú đổi tông là cú cảm xúc):
    | | **Sôi động** `soi` (mẹo, tin vui, kết quả, lời mời) | **Lắng** `lang` (tâm sự, nỗi đau, mất mát, câu hỏi day dứt) |
    |---|---|---|
@@ -53,7 +53,7 @@ thời gian, không thẻ cuối, màn chốt trên hình, kết ở chữ cuố
    | Chữ to | bật nảy, gạch cam | hiện chậm, nét mảnh, không gạch |
    | Hình | dồn khung | màu dịu |
    Nhạc lấy từ **kho nhạc kênh** (`$SKILL/assets/nhac/`), Claude tự chọn theo tuyến nội dung (khối 09). Mức nhạc
-   theo chuẩn âm lượng chung (thấp hơn giọng ~23 dB). Không nhãn kỹ thuật, không thẻ "TẬP NÀY CÓ GÌ?"/tên vòng.
+   theo chuẩn âm lượng chung (thấp hơn giọng khoảng 23 dB). Không nhãn kỹ thuật, không thẻ "TẬP NÀY CÓ GÌ?"/tên vòng.
 10. **Chừa cho bản đầy đủ đúng chỗ**: chừa một chuyện khác hoặc ý mở rộng; ý trong clip phải đi đến hết. Câu mở ưu tiên bất ngờ / kết quả lớn / tiền cược hơn lời than chung chung.
 11. **Không thẻ cuối, không thanh thời gian** (video dọc ngắn, `nhan-dien-chung.md` mục 1). `danh-sach-cat-doan-noi-bat.py` vẫn ghi `ENDCARD` từ
     `"endcard"` trong phuong-an.json (tên tập gốc, người nói) nhưng khuôn tự bỏ ở video dọc ngắn; ghi đủ để dùng khi David cần bản dọc dài.
@@ -106,7 +106,7 @@ Claude chỉnh tiếp trong danh-sach-cat.js:
   Không chép lớp phủ của clip / tập trước.
 - **OVERLAYS** theo bảng ý → kiểu (mốc bằng `TS(<giây>)`; mọi chữ nguyên văn): liệt kê / bước → `illus list` · `chips` · `diagram tang` ·
   so sánh, đổi ý → `illus vs` · `diagram tu-thanh` · con số người nói → `illus count` · nhân quả → `illus flow` · `diagram chuyen-giao` ·
-  giao việc → `action` (`quote` nguyên văn) · câu hỏi đắt → `callout` · cú chốt → `pow` (≤ 14 ký tự/dòng). **pow không phải mặc định.**
+  giao việc → `action` (`quote` nguyên văn) · câu hỏi đắt → `callout` · cú chốt → `pow` (tối đa 14 ký tự/dòng). **pow không phải mặc định.**
   Nền cảnh `phong: 'hat'` cho đoạn lắng. Mật độ theo nội dung: dày hơn ở `soi`, thưa hơn ở `lang`.
 - **Hình**: không zoom vào / ra (quy-tac-chung mục 2); có thể `replay` khoảnh khắc đắt.
 - `CTA.kind` theo việc được kêu gọi (lưu → `save`, bình luận → `comment`…); không có câu kêu gọi → không đặt `CTA` (luật 4).
@@ -129,7 +129,7 @@ không song song — tốn RAM). Không có bước duyệt kế hoạch ghép c
 - **Cùng ý, thêm bản dọc từ nguồn ngang**: không cắt thẳng — đổi khung `nguon.mp4` bám người nói (`phan-tich-doi-khung.sh` + `ke-hoach-doi-khung.py`
   trong dự án phụ `clip-<id>-doc/rekhung`, `tu-lieu/video-goc.mp4` = nối cứng tới c1; mọi câu bám người đang nói, cảnh intro đặt `cx` riêng,
   cảnh có người đi ngang / thấy cả quán → `wide`) → chép `chuyen-dong` của bản ngang, c1 = bản dọc (cùng thời lượng nên giữ nguyên mốc),
-  `W = 1080`, `H = 1920`, bỏ `pow.x`; người ngồi cả thân lấp giữa khung → `pow` đặt `y` vào dải trống trên đầu (đỉnh đầu ~650 px → `y: 300`);
+  `W = 1080`, `H = 1920`, bỏ `pow.x`; người ngồi cả thân lấp giữa khung → `pow` đặt `y` vào dải trống trên đầu (đỉnh đầu khoảng 650 px → `y: 300`);
   thẻ `title` trên intro thêm `keep: true` để không thành toàn màn hình che hết cảnh câm. Rồi `nang-lop.py` → `bao-ve-lop-phu.py` → chụp thử như 7A.
   Mẫu: `~/Movies/tap-marketing-noi-dau-nhu-cau/3-doan-noi-bat/clip-B-doc`.
 
@@ -155,17 +155,17 @@ PY=$(zsh $POD/scripts/cai-python.sh); $PY $POD/scripts/nguoi-noi.py "$E"; $PY $P
 
 ### Kịch bản highlight podcast (7B) — mẫu chuẩn 3 clip "Đi trainer", MỌI chữ nguyên văn lời trong clip
 Mẫu: `~/Movies/tap-di-trainer/3-doan-noi-bat/clip-{A,B,C}`, thành phẩm ở Drive `thanh-pham/tap-di-trainer/highlight/clip-a|b|c.mp4`, lời và kịch bản ở `du-an/video-di-trainer/`.
-- **Chữ chính thay phụ đề** (`ap-dung-doan-noi-bat.py` tự bật `chu_chinh`): không dải phụ đề, không dòng chủ đề, không `kinetic`; mỗi dòng `phu-de.js` là một câu trọn ý (≤ 3 dòng, ~55 ký tự), có `hl` từ khoá. Cảnh đồ hoạ dùng `illus` `single` `compact: true`, không `label`, để chỉ có một lớp chữ.
+- **Chữ chính thay phụ đề** (`ap-dung-doan-noi-bat.py` tự bật `chu_chinh`): không dải phụ đề, không dòng chủ đề, không `kinetic`; mỗi dòng `phu-de.js` là một câu trọn ý (tối đa 3 dòng, khoảng 55 ký tự), có `hl` từ khoá. Cảnh đồ hoạ dùng `illus` `single` `compact: true`, không `label`, để chỉ có một lớp chữ.
 - **Hoàn cảnh:** thiếu thì đưa câu nguyên văn nêu hoàn cảnh lên đầu clip.
 - `hook` mở đầu: **thẻ tít** nguyên văn (luật 7), `eyebrow` trích lời hoặc bỏ trống.
 - **Hình theo ý cần hiểu**, không lấp từng cụm lời: thêm `montage`/`card` biểu tượng (biểu tượng vẽ + nhãn trích lời) chỉ ở đoạn mà hình
   giúp người xem hiểu nhanh hơn (quy-tac-chung mục 0). 3 clip "Đi trainer" là mẫu về khuôn (chữ chính, nhạc, màn chốt).
 - `action` đúng lúc câu HANHDONG (`icon` — thiếu thì vẽ thêm: `write` = viết ra giấy; `quote` nguyên văn, `quoteAt`, `doneAt`).
 - Cú chốt cảm xúc: cụm ngắn nhất, đắt nhất, `start` = lúc bắt đầu nói cụm đó (mốc từ `moc-tung-tu.srt` của `$E`). Nguồn người nói mà
-  `vi-tri-khuon-mat.sh` báo "⚠ vẫn che mặt" → đổi cú chốt thành `card` toàn cảnh (vd. `ages` cho con số: số chạy đúng lúc nói + `quote`
+  `vi-tri-khuon-mat.sh` báo "⚠ vẫn che mặt" → đổi cú chốt thành `card` toàn cảnh (ví dụ: `ages` cho con số: số chạy đúng lúc nói + `quote`
   nguyên văn; `ages` cần `pillAt` kể cả khi nhãn tự ẩn, thiếu thì lỗi "Frame NaN"), đặt sau phần dồn khung.
 - Tối đa một `card` nếu ý chính có con số, so sánh, danh sách — không thì bỏ.
-- **Màn chốt** theo luật 4: có câu kêu gọi nguyên văn → `cta` `text` = câu đó (≤ 55 ký tự; dài hơn → chọn vế trọn ý; `**cụm**` tô nhấn),
+- **Màn chốt** theo luật 4: có câu kêu gọi nguyên văn → `cta` `text` = câu đó (tối đa 55 ký tự; dài hơn → chọn vế trọn ý; `**cụm**` tô nhấn),
   `kind` theo việc được kêu gọi; báo cáo ghi mốc của câu. Không có → kết ở câu chốt ý.
 - Kiểm thêm khi chụp thử: chữ to có đủ lớn không (dòng dài làm chữ co nhỏ → mất lực, rút cụm); vài mốc thấy chữ chính đọc rõ, không chạm
   sóng âm. `phu-de@…` không có trong `ghep-anh-tinh.sh` khi đứng riêng → tự ghép lên `video-goc.mp4` cùng mốc.
@@ -208,8 +208,8 @@ $SKILL/assets/nhac/               # soi-*.mp3 · lang-*.mp3 — kho nhạc kênh
 2. Clip cùng loại video gốc, dọc 1080×1920 (ngang 1920×1080 khi David yêu cầu).
 3. Mọi chữ trên clip nguyên văn (cả tít, màn chốt).
 4. Không cắt vào giữa ý; lời bản cắt đã chép lại đối chiếu khớp.
-5. Phụ đề cụm ~5–8 chữ (tối đa theo hồ sơ `phu_de.ngan_max_chu`) không chồng chữ motion graphic; không thanh thời gian, không thẻ cuối.
-6. Nhạc từ kho kênh, thấp hơn giọng ~23 dB.
+5. Phụ đề cụm khoảng 5–8 chữ (tối đa theo hồ sơ `phu_de.ngan_max_chu`) không chồng chữ motion graphic; không thanh thời gian, không thẻ cuối.
+6. Nhạc từ kho kênh, thấp hơn giọng khoảng 23 dB.
 7. Có dang-bai.md (lịch đăng, mốc bìa, mô tả, bình luận ghim) + so-lieu.md; David không phải sửa lại vì trái luật đã chốt.
 8. David chốt cả tập → clip cuối vào `~/Movies/cho-dang/<tập>/highlight/` + `cho-dang.sh gui` → dọn file tạm luôn bằng `don-tap.py --xoa` rồi `luu-drive.sh` lên Drive (khối 17), không hỏi lại; chỉ hỏi phần ⏸ đang dở.
 

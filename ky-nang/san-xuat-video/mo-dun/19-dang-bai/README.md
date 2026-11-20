@@ -38,12 +38,12 @@ nền tảng: đi chậm, chụp từng bước, sửa README này theo giao di�
 ## YouTube (Studio) — bản dài + Shorts
 **Ảnh bìa tuỳ chỉnh cần kênh đã xác minh số điện thoại** (chưa xác minh thì Studio hiện hộp thoại "Xác minh"). David tự xác minh, Claude không làm thay.
 1. `https://studio.youtube.com/channel/<id>/videos/upload?d=ud` → ô chọn file → `upload` video.
-2. **Chi tiết:** Tiêu đề (≤ 100 ký tự, theo phat-hanh.md) · Mô tả (tóm ý + "Vấn đề"/"Kết quả" + chương + link nhắn tin trang nếu bài Mời) ·
+2. **Chi tiết:** Tiêu đề (tối đa 100 ký tự, theo phat-hanh.md) · Mô tả (tóm ý + "Vấn đề"/"Kết quả" + chương + link nhắn tin trang nếu bài Mời) ·
    Hình thu nhỏ (anh-thu-nho-1.jpg; chỉ video ngang) · "Không, nội dung này không dành cho trẻ em" · Thẻ / ngôn ngữ: Tiếng Việt.
 3. **Thành phần video:** màn hình kết thúc (nếu có `ytEnd`: 2 video + nút đăng ký) · thẻ.
 4. **Chế độ hiển thị → Lên lịch** → ngày + giờ (múi giờ Việt Nam, 20:00) → **Lên lịch** (cú bấm cuối).
 5. Sau khi hẹn: ghim bình luận "Vấn đề / Kết quả" (Studio → Bình luận) khi video đã lên — hoặc nhắc David.
-Shorts: video dọc ≤ 3 phút cùng luồng trên; tiêu đề ngắn + #Shorts không bắt buộc.
+Shorts: video dọc tối đa 3 phút cùng luồng trên; tiêu đề ngắn + #Shorts không bắt buộc.
 
 ## Trang Facebook (Meta Business Suite) — Reels + bài viết
 - **Reels:** `https://business.facebook.com/latest/reels_composer/?asset_id=<page_id>` → "Thêm video" → `upload` → **Mô tả** (caption
@@ -54,7 +54,7 @@ Shorts: video dọc ≤ 3 phút cùng luồng trên; tiêu đề ngắn + #Short
 ## TikTok (TikTok Studio) — clip dọc
 1. `https://www.tiktok.com/tiktokstudio/upload?from=upload` → "Chọn video" → `upload` (tối đa 30 GB / 60 phút).
 2. **Mô tả** (caption + hashtag) · **Ảnh bìa** (chọn khung theo mốc đề xuất) · Ai có thể xem: Mọi người · cho phép bình luận.
-3. **Thời điểm đăng → Lên lịch** (TikTok cho hẹn ≥ 15 phút, ≤ 10 ngày) → ngày giờ → **Lên lịch** (cú bấm cuối).
+3. **Thời điểm đăng → Lên lịch** (TikTok cho hẹn ít nhất 15 phút, tối đa 10 ngày) → ngày giờ → **Lên lịch** (cú bấm cuối).
 4. Lưu ý: TikTok chặn tự động khá gắt — nếu hiện kiểm tra bot / hạn chế → dừng, nhờ David bấm.
 
 ## Facebook cá nhân

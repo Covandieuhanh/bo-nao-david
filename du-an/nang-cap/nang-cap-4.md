@@ -14,7 +14,7 @@ khác nhau về một hoặc là gỡ rối, chứ yêu cầu phải 4000 dòng 
 
 ## 1. Máy đo mới (`ky-nang/tai-cau-truc/do-chong-cheo.py`, `bo.json`)
 - Chuông chỉ kêu vì trùng / rối: `dau_ngay` · `ghi_de` · `trung` · **`gan_trung`** (mới).
-- `gan_trung` = cặp dòng ở hai file khác nhau chung > 50 % số chữ (Jaccard), dòng ≥ 12 chữ; bỏ mô tả đầu file, khối ``` và phần `code` / địa chỉ link
+- `gan_trung` = cặp dòng ở hai file khác nhau chung > 50 % số chữ (Jaccard), dòng ít nhất 12 chữ; bỏ mô tả đầu file, khối ``` và phần `code` / địa chỉ link
   (mục lục lặp mô tả, đường dẫn code là đúng thiết kế).
 - `dong` chỉ in ra (độ lớn); `sua` chuyển sang `nhac` (in một dòng nhắc, không kêu).
 - Ngưỡng `gan_trung`: video 30 · hỏi 5 · não 6 (mức sau tái bản: 16 · 0 · 2, cộng khoảng trống cho học thêm).

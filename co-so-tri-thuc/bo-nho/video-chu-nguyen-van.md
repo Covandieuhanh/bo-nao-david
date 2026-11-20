@@ -10,7 +10,7 @@ metadata:
 
 Motion graphics dùng loại nào cũng được, nhưng **không được sáng tạo sai lời chính xác của David**:
 - Không làm thẻ tít mở đầu mặc định — tít tự rút ý có thể chưa đúng điều David muốn truyền tải.
-- Chữ trên màn hình = cụm nguyên văn liền mạch trong lời; được tách thành nhiều mảnh, không được bỏ chữ làm đổi nghĩa (vd. bỏ "muốn" trong "không muốn làm một mình").
+- Chữ trên màn hình = cụm nguyên văn liền mạch trong lời; được tách thành nhiều mảnh, không được bỏ chữ làm đổi nghĩa (ví dụ: bỏ "muốn" trong "không muốn làm một mình").
 - Màn chốt dùng câu David nói ở cuối video, không dùng câu Claude tự viết.
 - Không dùng số chạy (0→60) vì khung giữa hiện số David không nói; liệt kê đúng các con số David nói.
 
@@ -23,4 +23,4 @@ Motion graphics dùng loại nào cũng được, nhưng **không được sáng
 Không hiện nhãn tốc độ hay ghi chú kỹ thuật trên video (×1,6, ×0,5, "tua nhanh", "slow-mo", "xem chậm"). Hiệu ứng tua nhanh/phát chậm vẫn dùng, chỉ không chú thích.
 
 **Why:** người dùng thấy các ghi chú kỹ thuật thừa, chữ trên màn hình chỉ nên phục vụ nội dung.
-**How to apply:** nhà của luật `ky-nang/san-xuat-video/quy-tac-chung.md` mục 4 (Hình); cách làm ở `dung-video-theo-phong-cach/references/nhieu-doan-video.md`, template bỏ `speed`. Áp cho mọi video, cả khi tự viết component mới.
+**How to apply:** nhà của luật `ky-nang/san-xuat-video/quy-tac-chung.md` mục 4 (Hình); cách làm ở `ky-nang/san-xuat-video/dung-video-theo-phong-cach/references/nhieu-doan-video.md`, template bỏ `speed`. Áp cho mọi video, cả khi tự viết component mới.

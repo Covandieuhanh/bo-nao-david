@@ -88,11 +88,7 @@ Sáu hành động này biến câu trả lời ở trên thành việc làm nga
 
 ### Nghề nghiệp
 
-- Hướng tới: David Trần – Nhà đào tạo thực hành.
-- Cùng doanh nghiệp làm rõ cách làm; chuẩn hóa tài liệu, quy trình; hướng dẫn đội ngũ thực hiện và bàn giao để họ tự đào tạo người mới.
-- Bắt đầu từ dịch vụ, spa, sức khỏe và làm đẹp; mở rộng khi có kết quả kiểm chứng.
-- Kết quả cần chứng minh: nhân sự làm đúng, người quản lý đào tạo lại được, quy trình được sử dụng sau bàn giao.
-- Tony Robbins là hình mẫu học hỏi về truyền đạt, tạo động lực và ảnh hưởng tích cực.
+Định hướng nghề hiện hành: [david.md](david.md) mục 1 và [chien-luoc-nghe-nghiep.md](chien-luoc-nghe-nghiep.md). Bản định hướng nghề cũ của hồ sơ này: [luu-tru/ho-so-ca-nhan-dinh-huong-nghe-cu.md](luu-tru/ho-so-ca-nhan-dinh-huong-nghe-cu.md).
 
 ### Tài chính – cuộc sống
 
@@ -109,59 +105,17 @@ Xây "làng không biên giới": cộng đồng đoàn kết, hỗ trợ nhau t
 
 **Định hướng phát triển:** Đào tạo thực hành và chuyển giao quy trình để đội ngũ doanh nghiệp học được, làm được và truyền lại được.
 
-## Định hướng hình tượng cốt lõi
-
-**David Trần – Nhà đào tạo thực hành.** Đào tạo và chuyển giao quy trình cho đội ngũ doanh nghiệp.
-
-### 01. Nghề gốc
-
-Giúp người khác hiểu, làm được và hướng dẫn lại được. Lấy đào tạo thực hành làm năng lực trung tâm xuyên suốt sự nghiệp.
-
-### 02. Giá trị cho doanh nghiệp
-
-Cùng lãnh đạo làm rõ cách làm và văn hóa đã chọn; chuyển chúng thành hành vi, tài liệu, quy trình và chương trình đào tạo cho nhân sự. Phối hợp với chuyên gia ngành khi nội dung cần chuyên môn riêng.
-
-### 03. Cách David làm việc
-
-1. Tìm hiểu thực tế
-2. Đơn giản hóa
-3. Chuẩn hóa quy trình
-4. Hướng dẫn thực hành
-5. Bàn giao
-6. Theo dõi và điều chỉnh
-
-### 04. Môi trường ứng dụng
-
-Bắt đầu từ spa, dịch vụ, chăm sóc sức khỏe và làm đẹp – nơi David đã có trải nghiệm. Sau khi có kết quả được kiểm chứng, có thể mở rộng sang doanh nghiệp bảo hiểm và những tổ chức phát triển theo hệ thống.
-
-### 05. Kết quả cần chứng minh
-
-Nhân sự làm đúng; người mới học được; người quản lý đào tạo lại được; quy trình được sử dụng thường xuyên. Thành công được đo sau bàn giao, không chỉ bằng số buổi đứng lớp.
-
-### 06. Hình mẫu học hỏi
-
-- **Tony Robbins:** truyền đạt và tạo động lực.
-- **Giản Tư Trung / PACE:** xây chương trình đào tạo.
-- **Trần Việt Quân:** kết nối đào tạo con người với văn hóa đội ngũ.
-- Quan sát mô hình huấn luyện doanh nghiệp để học cách chuyển giao cách làm.
-
-### Tuyên ngôn định hướng
-
-> Biến kinh nghiệm thành cách làm rõ ràng, giúp đội ngũ tự học, tự làm và tiếp tục truyền lại.
-
-*Lưu ý: Đây là mục tiêu hình tượng và lộ trình phát triển; chưa khẳng định David đã hoàn thiện mọi năng lực nêu trên.*
-
 ## Đối chiếu hồ sơ với 6 câu hỏi
 
 Hồ sơ trả lời rõ nhất câu 4 (danh tính); câu 3 (hành vi hằng ngày) gần như trống, nên là chỗ cần điền trước. Cột Mức độ là đánh giá ban đầu — đổi lại khi bạn bổ sung.
 
 | Câu hỏi | Hồ sơ đã trả lời | Còn trống | Mức độ |
 | --- | --- | --- | --- |
-| 1. Môi trường & con người | Làm việc trong du lịch, dịch vụ, spa, sức khỏe, làm đẹp; phối hợp với chủ cơ sở, khách hàng, kỹ thuật viên; Rex (định hướng), Elin (quản trị, điều phối); gia đình có vợ và con | Đang sống ở đâu; những người gặp nhiều nhất mỗi tuần là ai, họ thuộc kiểu người nào trong hành động 2 | Một phần |
-| 2. Niềm tin & giá trị | 4 nguyên tắc (mục 06); ước mơ "làng không biên giới" trên nền niềm tin – biết ơn – biết đủ | Niềm tin về tiền, về thành công, về chính mình; điều sâu thẳm nhất mong muốn khi không ai nhìn thấy | Một phần |
+| 1. Môi trường và con người | Làm việc trong du lịch, dịch vụ, spa, sức khỏe, làm đẹp; phối hợp với chủ cơ sở, khách hàng, kỹ thuật viên; Rex (định hướng), Elin (quản trị, điều phối); gia đình có vợ và con | Đang sống ở đâu; những người gặp nhiều nhất mỗi tuần là ai, họ thuộc kiểu người nào trong hành động 2 | Một phần |
+| 2. Niềm tin và giá trị | 4 nguyên tắc (mục 06); ước mơ "làng không biên giới" trên nền niềm tin – biết ơn – biết đủ | Niềm tin về tiền, về thành công, về chính mình; điều sâu thẳm nhất mong muốn khi không ai nhìn thấy | Một phần |
 | 3. Hành vi hằng ngày | Chỉ có tín hiệu gián tiếp: ngủ chập chờn, chưa quen lập kế hoạch và ghi chép, chi tiêu thoải mái, vai trò thực thi | Toàn bộ khung giờ một ngày thật: giờ dậy, giờ làm, giờ học, giờ cho gia đình, giờ trên điện thoại, giờ ngủ | Còn trống |
 | 4. Danh tính | Hiện tại: giao tiếp – trình bày – truyền đạt – hướng dẫn theo quy trình – thực thi nhanh. Muốn trở thành: Nhà đào tạo thực hành | Mốc thời gian, và dấu hiệu cụ thể nào cho thấy mình đã "thành" | Đã rõ |
-| 5. Năng lực & tài nguyên | Ưu điểm, thế mạnh, tài nguyên, nền tảng (mục 01–04) và điểm cần cải thiện (mục 05) | Bằng chứng: số liệu mạng lưới, doanh thu, số dự án hay khóa đào tạo thành công, kết quả marketing | Một phần |
+| 5. Năng lực và tài nguyên | Ưu điểm, thế mạnh, tài nguyên, nền tảng (mục 01–04) và điểm cần cải thiện (mục 05) | Bằng chứng: số liệu mạng lưới, doanh thu, số dự án hay khóa đào tạo thành công, kết quả marketing | Một phần |
 | 6. Động cơ | Nuôi bản thân, vợ và con đến tuổi trưởng thành; trả nợ; mốc 50 tỷ đồng; làng không biên giới cho thế hệ sau | Vì sao chọn nghề đào tạo để đi tới các mục tiêu này; mốc 50 tỷ được tính từ đâu | Một phần |
 
 ## Những điểm cần tự soi kỹ

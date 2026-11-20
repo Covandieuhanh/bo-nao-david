@@ -58,11 +58,11 @@ Cột "Bản luật": **có** = trỏ đúng và luật có ở đó · **thêm*
 | video-khong-tu-xuat | 13/11: góp ý thì render lại toàn bộ, bỏ cổng 1, 2 (thay 05/11) | có: quy-tac-chung mục 8 + phan-phoi-da-kenh | goi-y (khác: 11/11 chung, 13/11 riêng video) | đúng (tên file ngược nội dung: Hỏi David 1) | `name:` theo tên file |
 | video-kien-truc-ky-nang | Kiến trúc bộ skill video: hồ sơ, 20 khối, mẫu chuẩn (04/11) | thêm: tong-quan.md | — | đúng | `name:` theo tên file; đường `ky-nang/…`; thêm dòng nhà |
 | video-lam-lai-video-cu | Làm lại video kênh cũ (08/11) | thêm: khối 02 "Làm lại video cũ" | — | đúng | thêm dòng nhà |
-| video-nhac-theo-tuyen | Tự chọn nhạc theo tuyến; ~23 dB, −14 LUFS (05–08/11) | có: khối 09 + chung.json | — | đúng | giữ |
+| video-nhac-theo-tuyen | Tự chọn nhạc theo tuyến; khoảng 23 dB, −14 LUFS (05–08/11) | có: khối 09 + chung.json | — | đúng | giữ |
 | video-nhan-dien-chung | Một bộ nhận diện; dọc ngắn bỏ thanh + thẻ cuối (08/11, 10/11) | có: nhan-dien-chung.md + quy-tac-chung mục 5 | doc-khuon (trỏ nhau) | đúng | giữ |
 | video-phu-de-mot-cho-chu | Phụ đề dọc 5–8 chữ; mỗi lúc một chỗ chữ (08/11) | có: quy-tac-chung mục 3 | — | đúng | giữ |
 | video-podcast-bia-khong-mat | Bìa podcast không mặt (06/11) | có: khối 14 | — | đúng | giữ |
-| video-podcast-phu-hinh-30 | Podcast phủ hình ~30% (06/11, 11/11) | thêm: dung-podcast/SKILL | — | đúng | thêm dòng nhà |
+| video-podcast-phu-hinh-30 | Podcast phủ hình khoảng 30% (06/11, 11/11) | thêm: dung-podcast/SKILL | — | đúng | thêm dòng nhà |
 | video-tham-my-chi-giu-nhan-dien | Thẩm mỹ chỉ giữ chữ ký nhận diện (10/11) | có: nhan-dien-chung mục 0 | — | đúng | giữ |
 | video-thu-muc-xep-theo-tap | ~/Movies xếp theo tập (07/11) | có: noi-luu.sh | — | đúng | `name:` theo tên file; đường `ky-nang/…` |
 | video-tu-chon-theo-noi-dung | Tự chẩn đoán rồi chọn trong kho (11/11) | có: thiet-ke-bo-cuc/tu-chon.md | — | đúng | giữ |

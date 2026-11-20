@@ -303,7 +303,7 @@ Mechanics ported from oso95/scroll-world.
 
 **Docs: `references/thiet-bi.md`**
 
-- §2 `pin`: minimum useful span is ~1.2. At span ≤ 1 a pinned act has one pixel
+- §2 `pin`: minimum useful span is khoảng 1.2. At span tối đa 1 a pinned act has one pixel
   of travel, so progress jumps 0 to 1 and every cue and reveal inside it snaps.
   (maison)
 - §4 `reveal`: `clip-path` is relative to the border box, so a reveal on type
@@ -423,7 +423,7 @@ requests, and every clip reports `poster` under reduced motion.
   stated as a per-shot requirement. (saas)
 - `gu-thiet-ke.md`: the positive case behind "no full-frame overlay" (corner, band,
   column, and masking the image away from the text), and stepping the hero
-  display size down below ~700px. (agency, nateherk, saas)
+  display size down below khoảng 700px. (agency, nateherk, saas)
 - `kiem-chung.md`: how the contrast pass now works, its four known limitations,
   checking that reduced motion did not delete content, and the fact that probe
   deltas cannot attribute credit spend when builds run in parallel.
@@ -524,7 +524,7 @@ Two faults hide under "not smooth", and the skill only had guidance for one.
   exceeding the guardrail is fine as long as the harness confirms no dead
   scroll. It did, at both viewport sizes.
 - **`data-sc-lerp` 0.18 is the wrong default for this mode.** 0.12 is now the
-  documented worldflight value, alongside a wider `data-sc-seam` (~0.16). The
+  documented worldflight value, alongside a wider `data-sc-seam` (khoảng 0.16). The
   damping is what removes wheel judder; the weights are what remove the surging.
 
 cam-giac.md §5 gained the exception it was missing: pacing variety is how an act

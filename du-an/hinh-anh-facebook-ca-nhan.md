@@ -19,7 +19,7 @@ Người lướt qua trang hiểu ngay trong 5 giây: **David là trainer, giúp
 - **Bằng chứng:** các hệ tự động David đang tự dùng hằng ngày (dựng video bằng AI, gom tin nhắn mỗi sáng, trợ lý nhắc việc trên Telegram, tự tổng kết tuần) · ca khách thật (ẩn danh).
 
 ## 2. Phần giới thiệu, ảnh bìa, mục nổi bật
-- **Giới thiệu (≤ 101 ký tự):** `Trainer · Con người & công nghệ AI · Giúp người và doanh nghiệp tự làm chủ, tự đứng được`
+- **Giới thiệu (tối đa 101 ký tự):** `Trainer · Con người & công nghệ AI · Giúp người và doanh nghiệp tự làm chủ, tự đứng được`
 - **Công việc:** Trainer tại David Trần - Trainer định hướng.
 - **Liên kết:** kênh YouTube trainer · (sau này) trang giới thiệu gói công nghệ.
 - **Ảnh bìa:** ảnh thật của David đang đứng lớp hoặc làm việc bên máy, chữ ngắn: *"Con người · Công nghệ AI — dẫn tới khi bạn tự đứng được"*. Không chữ kinh doanh cũ.
@@ -33,7 +33,7 @@ Người lướt qua trang hiểu ngay trong 5 giây: **David là trainer, giúp
 | **3. Đời thường, hành trình** | đời thường | cuộc sống, nhịp làm việc theo đợt năng lượng, hành trình nghề | câu hỏi nhẹ hoặc không |
 | **4. Kết quả thật** | công nghệ (chính) | trước / sau: hệ tự động của chính David, ca khách ẩn danh, lời chứng | câu hỏi mở mời kể |
 
-- **Tỉ lệ:** công nghệ (trụ 1 + 4) ~50% · con người ~30% · đời thường ~20%. Tỉ lệ tính trên 4 bài viết kèm ảnh mỗi tuần; video không tính vào lịch (mục Video sẵn, `lich-dang-bai.md`).
+- **Tỉ lệ:** công nghệ (trụ 1 + 4) khoảng 50% · con người khoảng 30% · đời thường khoảng 20%. Tỉ lệ tính trên 4 bài viết kèm ảnh mỗi tuần; video không tính vào lịch (mục Video sẵn, `lich-dang-bai.md`).
 - **Dẫn dắt:** bài viết kèm ảnh luôn kết bằng gợi mở chia sẻ (mục 4), không lời mời từ khoá; bài video theo tỉ lệ Không · Gợi mở · Mời 4 · 4 · 2 (`kenh.json`). Không nói giá, không hứa kết quả chưa làm ra.
 - **Không đăng ở đây:** tài chính, giao dịch hàng hoá (chỉ YouTube David Trần Official).
 - **Lằn ranh:** ca khách chỉ đăng khi David đưa chi tiết; tên khách ẩn trừ khi khách đồng ý; không nêu tên đơn vị phía sau.

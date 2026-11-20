@@ -36,9 +36,9 @@ Lấy từ các video kênh đã làm (`du-an/danh-muc-noi-dung.md`). Loại m�
 | `loi-chung` — lời chứng học viên, khách | một người kể kết quả với David / khoá học | **tin** (người thật, vai trò thật, kết quả thật) | Tin, Mặt người nói, Báo hiệu (tên · vai trò) | giữ người là chính; thẻ tên + vai trò; minh chứng (ảnh, trước/sau) nếu có | lời quảng cáo tự đặt; số liệu không do họ nói |
 | `vlog` — đời thường, sự kiện | nhiều cảnh, di chuyển, ít lời liền | **cảm không khí + theo được hành trình** | Cảm xúc, Chia đoạn (vòng, nơi chốn), Giữ chú ý | thẻ nơi chốn, tên vòng; nhạc theo không khí; khuôn ghép | thẻ kiến thức dày |
 | `huong-dan-man-hinh` — quay màn hình, thao tác, cuộc gọi | chủ thể là màn hình / người không nhìn camera | **thấy đúng chỗ đang thao tác + giữ được ý** | Gần chỗ, Báo hiệu, Chia đoạn | khung chủ thể + bảng ghi chú chạy; nhãn sát chỗ thao tác | che vùng thao tác; hình rời màn hình lâu |
-| `meo-ngan` — mẹo nhanh dọc, một ý | ≤ 90 s, dọc, một lời khuyên | **bắt được ý trong vài giây + nhớ** | Giữ chú ý, Báo hiệu (từ khoá to), Tinh gọn | mỗi lúc một điểm nhìn; hình to ít chữ; nhịp nhanh, nhạc `vui` hoặc theo cảm xúc | nhiều lớp cùng lúc |
+| `meo-ngan` — mẹo nhanh dọc, một ý | tối đa 90 s, dọc, một lời khuyên | **bắt được ý trong vài giây + nhớ** | Giữ chú ý, Báo hiệu (từ khoá to), Tinh gọn | mỗi lúc một điểm nhìn; hình to ít chữ; nhịp nhanh, nhạc `vui` hoặc theo cảm xúc | nhiều lớp cùng lúc |
 
-Một video có thể **pha** hai loại (vd. kể chuyện rồi rút bài học = `ke-chuyen` → `day-ky-nang`): ghi loại chính + đoạn đổi loại.
+Một video có thể **pha** hai loại (ví dụ: kể chuyện rồi rút bài học = `ke-chuyen` → `day-ky-nang`): ghi loại chính + đoạn đổi loại.
 Clip highlight lấy loại của đoạn gốc.
 
 ## 2. Mười hai nguyên lý (Richard Mayer, *Multimedia Learning*)
@@ -48,7 +48,7 @@ Tên tiếng Anh giữ đúng nguồn, mỗi tên **một** bản dịch (dùng 
 
 ### Tinh gọn — Coherence Principle
 - **Cái khó:** thứ không mang nghĩa (trang trí, nhạc to, hình cho vui) chiếm chỗ trong đầu, người xem hiểu ít hơn.
-- **Làm:** chỉ dựng hình cho ý khó hiểu nếu chỉ nghe; nền yên; mỗi lúc một điểm nhìn; hình phủ quá ~45 % thời lượng là thừa.
+- **Làm:** chỉ dựng hình cho ý khó hiểu nếu chỉ nghe; nền yên; mỗi lúc một điểm nhìn; hình phủ quá khoảng 45 % thời lượng là thừa.
 - **Phản tác dụng khi:** bỏ cả hình ở ý thật sự khó (quy trình, so sánh) chỉ để "gọn".
 - **Đã học:** Ali–Joseph (bỏ chữ sau người, "nhiều hiệu ứng quá bị rối"); Cường Mê AI (ít chữ, nền yên); MagentX (reel đồ hoạ dày nhất ít lượt xem nhất).
 
@@ -82,7 +82,10 @@ Tên tiếng Anh giữ đúng nguồn, mỗi tên **một** bản dịch (dùng 
 
 ### Biết trước — Pre-training Principle
 - **Cái khó:** gặp khái niệm lạ giữa lúc đang theo bước → vừa phải hiểu từ, vừa phải theo bước.
-- **Làm:** khi người nói báo trước ("trong video này có 3 điều", "trước hết hiểu X là gì") → mục lục, thẻ khái niệm hiện trước phần chi tiết.
+- **Làm:** khi người nói báo trước video / tập này nói về gì hoặc gồm những phần nào ("trong video này có 3 điều", "đây là tập cuối của
+  loạt bài Tết, chủ đề là…", "trước hết hiểu X là gì") → mục lục, màn chương mở đầu, thẻ khái niệm hiện trước phần chi tiết.
+- **Khác Báo hiệu:** Biết trước là cho người xem **bản đồ trước khi vào** (đầu video, đầu phần); Báo hiệu là đánh dấu **chỗ quan trọng
+  hoặc đang ở đâu** khi đã vào giữa nội dung. Cùng một màn chương: đặt ở lời giới thiệu mở tập là Biết trước, đặt ở chỗ đổi phần là Báo hiệu.
 - **Phản tác dụng khi:** tự thêm phần giới thiệu người nói không nói (trái luật nguyên văn).
 
 ### Nghe thay đọc — Modality Principle
@@ -144,4 +147,4 @@ nhưng ghi vào dòng `Vì:` nguyên lý nào bị bỏ và vì sao. Chỉ luậ
 Học nguồn mới theo `README.md` mục 4; điều học được ghi vào dòng "Đã học" (hoặc cột "Nguồn") của đúng nguyên lý ở đây.
 
 **Học qua ca thật:** [giai-mau.md](giai-mau.md) — 19 khoảnh khắc từ 8 hình mẫu thành công cùng thể loại, mỗi ca đủ Cần · Vì · Làm.
-**Tự kiểm:** [bai-kiem/](bai-kiem/README.md) — 10 đoạn, AI làm rồi chấm bằng `cham.py`, đạt ≥ 8/10.
+**Tự kiểm:** [bai-kiem/](bai-kiem/README.md) — 10 đoạn, AI làm rồi chấm bằng `cham.py`, đạt ít nhất 8/10.

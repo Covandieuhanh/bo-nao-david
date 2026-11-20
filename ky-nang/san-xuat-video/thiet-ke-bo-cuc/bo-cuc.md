@@ -38,7 +38,7 @@ Cột "Code": **có** = viết được ngay trong `canh.js` · **chưa** = mớ
 |---|---|---|---|
 | **Mục lục tích luỹ** (`bocuc` · `muc-luc`): người vào ô, danh sách đánh số hiện dần, mục đang nói sáng, mục cũ mờ | "trong video này", nhắc lại các ý đã qua | cả hai | có |
 | **Thanh tiến trình ý** (`bocuc` · `tien-trinh`): đường nối nút 1…n, chạy tới ý hiện tại, tên ý dưới nút | video theo danh sách (ý 1, 2, 3…), thay màn chương | cả hai | có |
-| **Mạch hình cạnh người** (`bocuc` · `canh-nguoi`): người giữ khung, hình vẽ thẳng vào khoảng trống sát người, không thẻ nền (như bảng phấn) | giải thích dài mà vẫn muốn thấy người; nhiều cảnh vẽ tiếp một mạch | ngang (cần khoảng trống ≥ 26 % bề ngang); thiếu chỗ tự thành `o-nguoi` | có |
+| **Mạch hình cạnh người** (`bocuc` · `canh-nguoi`): người giữ khung, hình vẽ thẳng vào khoảng trống sát người, không thẻ nền (như bảng phấn) | giải thích dài mà vẫn muốn thấy người; nhiều cảnh vẽ tiếp một mạch | ngang (cần khoảng trống ít nhất 26 % bề ngang); thiếu chỗ tự thành `o-nguoi` | có |
 | **Nền người mờ** (`phong: 'nguoi-mo'` ở cảnh toàn màn hình): nền = chính video người nói làm mờ + tối | cảnh toàn màn hình mà không muốn đứt khỏi người (giữa câu chuyện) | cả hai | có (FullShell, Illus, Diagram, BoCuc) |
 | **Nền hạt** (`phong: 'hat'`): nền tối + hạt nhiễu như giấy ảnh | cảnh trích câu, lắng | cả hai | có |
 | **Một từ nhấn kiểu khác** (`*từ*` trong chữ): font phụ có chân, nghiêng, màu cam | một từ mang nghĩa chính trong cụm; tối đa một chỗ mỗi cụm | cả hai | có (mọi chữ đi qua `ChuHien`) |
@@ -61,12 +61,12 @@ Cột "Code": **có** = viết được ngay trong `canh.js` · **chưa** = mớ
 
 | Kiểu | Hợp khi | Ngang / dọc | Code |
 |---|---|---|---|
-| **Cặp đừng / hãy lặp khuôn** (`bocuc` · `dung-hay`): nhãn mục + ô ✗ đỏ / ô ✓ xanh, mọi cặp vào cùng một chỗ; ô là ảnh, video hoặc chữ nguyên văn | lời có ≥ 2 cặp "đừng… hãy…", "sai… đúng…", "thay vì… thì…" | dọc: người nửa dưới, khung trên · ngang: cạnh người, chật thì ô người | có |
+| **Cặp đừng / hãy lặp khuôn** (`bocuc` · `dung-hay`): nhãn mục + ô ✗ đỏ / ô ✓ xanh, mọi cặp vào cùng một chỗ; ô là ảnh, video hoặc chữ nguyên văn | lời có ít nhất 2 cặp "đừng… hãy…", "sai… đúng…", "thay vì… thì…" | dọc: người nửa dưới, khung trên · ngang: cạnh người, chật thì ô người | có |
 | **Trên / dưới đối chiếu** (`bocuc` · `tren-duoi`): hai hình cùng chạy, nhãn nhỏ ở góc | có hai nguồn hình cùng lúc (trước/sau, gốc/kết quả) | dọc: trên/dưới · ngang: trái/phải | có |
 | **Hình toàn khung + người ô tròn** (`bocuc` · `o-tron`): `hinh` (ảnh, video) hoặc `noi_dung` (illus/diagram) toàn khung, người nói trong ô tròn | lời tả chi tiết một thứ cần nhìn kỹ, có hình cho thứ đó | dọc: giữa trên phụ đề · ngang: góc dưới phải | có |
 | **Thẻ câu hỏi** (`bocuc` · `cau-hoi`): câu người hỏi trong thẻ vạch cam, dưới mặt; tên + vai trò người trả lời dùng `lower` | phỏng vấn, lời chứng, có người hỏi | cả hai | có |
-| **Số thứ tự to** (`the-canh` · `so: 1`): số cam to đứng trước thẻ làm mốc danh sách | lời đếm ≥ 3 mục, mỗi mục nói ≥ ~5 s | cả hai | có |
-| **Từ khoá to trong phụ đề** (`hl: ['^5 lần']`): một chữ quyết định nghĩa to ~1,6 lần, màu nhấn; ghép được `^+` / `^-` | cụm có con số hoặc chữ đổi nghĩa; tối đa một chỗ mỗi dòng | chỉ phụ đề dọc ngắn | có |
+| **Số thứ tự to** (`the-canh` · `so: 1`): số cam to đứng trước thẻ làm mốc danh sách | lời đếm ít nhất 3 mục, mỗi mục nói ít nhất khoảng 5 s | cả hai | có |
+| **Từ khoá to trong phụ đề** (`hl: ['^5 lần']`): một chữ quyết định nghĩa to khoảng 1,6 lần, màu nhấn; ghép được `^+` / `^-` | cụm có con số hoặc chữ đổi nghĩa; tối đa một chỗ mỗi dòng | chỉ phụ đề dọc ngắn | có |
 | **Kết quả trước, cách làm sau**: mở bằng thành quả, rồi mới lộ bản gốc / quá trình | video khoe một thành quả có bản gốc đi kèm | cả hai | không cần code (thứ tự cảnh) |
 
 ## Nền và lớp thông tin (11/11/2026 — chọn theo `tu-chon.md`)

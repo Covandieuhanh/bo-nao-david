@@ -45,7 +45,7 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
   (`dung-video-theo-phong-cach/references/nhieu-doan-video.md` mục 11).
   Riêng **làm lại video cũ**: cắt màn tít + lời chào / giới thiệu kênh cũ (tên kênh cũ, nghề cũ, kinh doanh) và chữ/viền kênh cũ in
   trong hình — chỉ đúng các đoạn đó (khối 02). Lằn ranh David chọn cắt thì chỉ cắt đúng đoạn đó.
-- **Cắt chỉ cho video ≤ 3 phút và highlight**: lặng ≥ 0,45 s còn ~0,24 s + tiếng đệm "ờ/ừm" đứng riêng (cắt cứng); **không dùng hiệu ứng zoom vào / zoom ra trên hình quay** (video người nói, clip gốc) ở bất kỳ video nào
+- **Cắt chỉ cho video tối đa 3 phút và highlight**: lặng ít nhất 0,45 s còn khoảng 0,24 s + tiếng đệm "ờ/ừm" đứng riêng (cắt cứng); **không dùng hiệu ứng zoom vào / zoom ra trên hình quay** (video người nói, clip gốc) ở bất kỳ video nào
   (không thẩm mỹ) — ảnh minh hoạ trôi chậm (Ken Burns) và chuyển động bên trong motion graphic (đẩy khung) vẫn được; giữ 1 s lặng sau câu hỏi kêu gọi. Clip ngắn luôn trích từ bản gốc, ưu tiên kéo người xem về video dài trên YouTube; không
   về thì vẫn cần tương tác / nhắn tin trên Facebook, TikTok. **Vlog ghép** giữ nhịp tự nhiên.
 - Video ngắn đổi gì đó mỗi 1–3 s (nhịp chữ phụ đề, chữ to, cảnh, cắt), không để 5–8 s trôi qua không đổi gì. Video dài thưa, nhịp
@@ -57,7 +57,7 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
   theo 4 câu (khối 13). Cách làm: khối 07; kiểm cảm nhận: khối 17.
 
 ## 3. Phụ đề (một nguồn: `thu-vien-tai-nguyen/kieu-phu-de.js`; cách làm: khối 03)
-- **Video ngắn** — highlight, podcast dọc (mọi độ dài), video 1 người dọc ≤ 90 s: mỗi lần hiện **một cụm trọn ý ~5–8 chữ** (tối đa
+- **Video ngắn** — highlight, podcast dọc (mọi độ dài), video 1 người dọc tối đa 90 s: mỗi lần hiện **một cụm trọn ý khoảng 5–8 chữ** (tối đa
   2 dòng), **cỡ bằng chữ trong thẻ motion graphic** (`ngan_co` 58), chữ thường, viền đen mảnh, không hộp nền, từ khoá cam, ngay trên
   thanh thời gian (`ShortLine`). Tự bật; ép tay `project.short = true|false` (1 video) hoặc `SHORT` trong danh-sach-cat.js (ghép).
 - **Video dài, vlog, podcast ngang**: hộp tối, đầy đủ câu, đáy vùng an toàn (`SUB`).
@@ -94,12 +94,12 @@ khối 09. Sửa nhận diện → giữ đồng bộ cả 4 loại.
 ## 6. Lời kêu gọi
 - Ưu tiên **câu mệnh lệnh nằm sẵn trong lời** ("Hãy chọn…", "thử làm…") — top video gần như không có câu "hãy bình luận".
 - Màn hành động (`action`) đúng lúc người nói giao một việc làm được; 1–2 lần / video.
-- Màn chốt ~4 s cuối mọi video, câu = nguyên văn lời người nói (khối 08). Câu mời bình luận / "gỡ" theo luật kênh nằm ở mô tả + bình
+- Màn chốt khoảng 4 s cuối mọi video, câu = nguyên văn lời người nói (khối 08). Câu mời bình luận / "gỡ" theo luật kênh nằm ở mô tả + bình
   luận ghim, chỉ lên video khi David tự nói trong video.
 
 ## 7. Phát hành (bước cuối của MỌI skill — chuẩn MrBeast / Paddy Galloway; cách làm: khối 15)
 Ghi `<dự án>/phat-hanh/phat-hanh.md`:
-- **3 tiêu đề** (≤ 60 ký tự, một ý, gây tò mò nhưng đúng ý video) xếp theo độ mạnh; tiêu đề và thumbnail **bổ sung**, không lặp chữ.
+- **3 tiêu đề** (tối đa 60 ký tự, một ý, gây tò mò nhưng đúng ý video) xếp theo độ mạnh; tiêu đề và thumbnail **bổ sung**, không lặp chữ.
 - **Thumbnail** chỉ khi video xuất ngang VÀ đăng YouTube; luật và mẫu ở khối 14. **Video dọc**: không ghép bìa trước video (giây đầu
   dành cho câu mở); ghi **mốc khung bìa đề xuất** (giây) để David chọn khi đăng.
 - **Video > 3 phút đăng YouTube** ("có đăng YouTube không?" là điểm cần chốt trong 4 phần lúc đầu, với mọi video > 3 phút, ngang hay dọc):

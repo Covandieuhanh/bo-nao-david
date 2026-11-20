@@ -25,8 +25,8 @@ Luật chung video ở `../quy-tac-chung.md` (chữ nguyên văn, không cắt v
   người nói chỉ khi có trong lời hoặc David đưa; tên chương trình chỉ khi David đưa.
 - **Không cắt gì** (quy-tac-chung mục 2): giữ cả khoảng lặng, ngập ngừng, nói lại, đầu/cuối. Lằn ranh chỉ cảnh báo ở phiếu lọc, David
   quyết. Highlight podcast thì cắt sạch (skill cat-doan-noi-bat, `tao-podcast.sh … cat-thua`).
-- **Cỡ vừa phải** (đừng phóng to lại): lớp phủ 1,08× (ngang) / 0,88× (dọc), cảnh toàn màn hình 0,88×, chữ to ≤ 120 px,
-  ý đang bàn ≤ 118 (ngang) / 104 (dọc). **Phụ đề:** ngang 36 px; dọc cụm 5–8 chữ cỡ 58 (quy-tac-chung mục 3). Chữ to dùng `VN` (khung-podcast.js), đừng `lineHeight: 1`.
+- **Cỡ vừa phải** (đừng phóng to lại): lớp phủ 1,08× (ngang) / 0,88× (dọc), cảnh toàn màn hình 0,88×, chữ to tối đa 120 px,
+  ý đang bàn tối đa 118 (ngang) / 104 (dọc). **Phụ đề:** ngang 36 px; dọc cụm 5–8 chữ cỡ 58 (quy-tac-chung mục 3). Chữ to dùng `VN` (khung-podcast.js), đừng `lineHeight: 1`.
 - **Không thẻ tít mở đầu, không bìa ghép trước video**: thẻ tít chỉ khi David yêu cầu, chữ nguyên văn. Ảnh bìa = **thumbnail** ở bước
   phát hành, chỉ khi xuất ngang VÀ đăng YouTube; video dọc chọn khung bìa khi đăng. `COVER` chỉ bật khi David yêu cầu.
 - **Không ghi số tập, ngày ghi âm hay thông tin phát hành nào lên video** — không đặt `STAGE.episode`, không hỏi; dải đáy chỉ có thanh thời gian.
@@ -34,17 +34,17 @@ Luật chung video ở `../quy-tac-chung.md` (chữ nguyên văn, không cắt v
 - **Màn chốt** `cta` cuối video: ô câu chốt giữa sân khấu = **nguyên văn câu David nói cuối tập** (quy-tac-chung 1). "Vấn đề / Kết quả"
   chỉ ở bài đăng; "gỡ" chỉ lên video khi David nói trong tập.
 - Không làm bản cho app chỉnh sửa (CapCut/DaVinci); sau khi David chốt: bản cuối vào `~/Movies/cho-dang/<tập>/` + `cho-dang.sh gui`, dọn file tạm rồi đưa dự án lên Drive (`don-tap.py` → `luu-drive.sh`, khối 17).
-- **Học nhịp từ 50 video Hieu Nguyen** (`references/hoc-tu-hieu-nguyen-50.md` — học nhịp & cách trình bày; lời là của David, không
+- **Học nhịp từ 50 video Hieu Nguyen** (`references/hoc-tu-hieu-nguyen-50.md` — học nhịp và cách trình bày; lời là của David, không
   thêm/khuôn lời):
   - **Mật độ hình:** hình phủ **khoảng 30% thời lượng** (`phu_hinh_muc_tieu`), không cố định: đoạn khó hiểu hoặc quan trọng dày
     hơn, đoạn nhẹ thưa hơn; không để trống lâu ở đầu; không phủ kín. Đoạn chạm lằn ranh không vẽ hình.
   - **Loại cảnh:** ưu tiên **sơ đồ nói thay lời** (`diagram`, khối 07) cho câu có cấu trúc, hoặc **ảnh thật khung bo góc** (`diagram` mode
     `anh`) khi nhắc người / nơi / tổ chức có thật. `illus` cho câu ngắn không có cấu trúc. Giữa các cảnh: sân khấu + phụ đề.
-  - **Bản đồ chương tích luỹ** (tự bật khi ≥ 3 TOPICS và tập dài): mỗi phần thêm thẻ số + tên phần; trước màn chốt hiện cả bản đồ làm tóm tắt.
+  - **Bản đồ chương tích luỹ** (tự bật khi ít nhất 3 TOPICS và tập dài): mỗi phần thêm thẻ số + tên phần; trước màn chốt hiện cả bản đồ làm tóm tắt.
   - **Mô tả**: 2–3 đoạn tóm tắt (ý của David) + chương + liên kết tập liên quan + link tài nguyên David đưa.
   - **Mục tiêu cuối**: người xem *thấy hành động* → câu giao việc cụ thể nhất của tập có màn `action`.
 - **Học từ 20 podcast Việt** (`references/hoc-tu-20-podcast-vn.md`):
-  - **Thẻ chương**: sân khấu tự hiện "PHẦN n" đầu mỗi `TOPICS` (khi ≥ 2 TOPICS); `chuong.py` ghi chương YouTube từ TOPICS.
+  - **Thẻ chương**: sân khấu tự hiện "PHẦN n" đầu mỗi `TOPICS` (khi ít nhất 2 TOPICS); `chuong.py` ghi chương YouTube từ TOPICS.
   - **Teaser** cho tập > 10 phút: sau render, `doan-gioi-thieu.py` với 2–3 câu đắt nhất (trọn câu, nguyên văn); độ dài theo hồ sơ.
   - **Thumbnail khuôn cố định** mọi tập, không số tập, không mặt — mẫu ở khối 14.
   - **Nền "lắng"** cho tập tâm sự/thiền: `STAGE.bg = [{at: 0, src: 'nen-1.jpg'}, …]` (ảnh/tranh David đưa hoặc có giấy phép, trong
@@ -104,7 +104,7 @@ python3 $SKILL/scripts/nen-podcast.py "$P"                # sân khấu + tiến
 python3 -I $BASE/scripts/the-ghi-cong.py "$P"              # chỉ khi có ảnh → nguon-anh.txt
 python3 -I $BASE/scripts/xem-truoc-ban-dung.py "$P"            # chạy nền → video-hoan-chinh.mp4
 ```
-Podcast 15 phút: sân khấu ~25 phút, phụ đề ~10 phút, ghép cuối ~10 phút — báo trước thời gian chờ.
+Podcast 15 phút: sân khấu khoảng 25 phút, phụ đề khoảng 10 phút, ghép cuối khoảng 10 phút — báo trước thời gian chờ.
 
 ### 9. Kiểm tra bản cuối
 `zsh $BASE/scripts/kiem-khung-hinh.sh "$P" "$P/video-hoan-chinh.mp4" <mốc giữa & cuối mỗi cảnh, vài mốc chỉ sân khấu>` → xem `kiem-tra/bang-anh.jpg`.

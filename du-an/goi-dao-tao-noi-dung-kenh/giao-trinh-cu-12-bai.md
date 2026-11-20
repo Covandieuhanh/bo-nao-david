@@ -69,7 +69,7 @@ Mỗi bài có **Mục tiêu · Nội dung · Cách làm theo tuyến · Thực 
 - **Cách làm theo tuyến:** A, B: phụ đề tự động trong app, dán lời chép vào AI nhờ soát lỗi rồi sửa lại · C: AI chạy Whisper chép lời, ffmpeg cắt, tự tạo phụ đề.
 - **Thực hành:** làm trên ý số 1.
 - **Bài tập:** làm lại trên ý số 2.
-- **Xong khi:** 2 video có phụ đề đúng ≥ 98% chữ.
+- **Xong khi:** 2 video có phụ đề đúng ít nhất 98% chữ.
 
 ## Bài 7 · Hình minh hoạ và chữ nhấn kể chuyện
 - **Mục tiêu:** giữ người xem bằng hình, không rối mắt.

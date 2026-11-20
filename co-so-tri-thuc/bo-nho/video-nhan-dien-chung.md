@@ -9,7 +9,7 @@ Mọi loại video (1 video người nói, podcast, ghép vlog, highlight; ngang
 ● DAVID góc trên trái, thanh thời gian ở đáy, phụ đề trên thanh, màn chốt, thẻ cuối không nút phát, không logo nền tảng. Chỉ motion
 graphics là tự do chọn theo loại video, theo từng cảnh.
 
-**Video dọc ngắn** (dọc ≤ 90 s, mọi highlight, podcast dọc trích ngắn — 10/11/2026): **không thanh thời gian, không thẻ cuối**; màn chốt
+**Video dọc ngắn** (dọc tối đa 90 s, mọi highlight, podcast dọc trích ngắn — 10/11/2026): **không thanh thời gian, không thẻ cuối**; màn chốt
 là ô câu nguyên văn nằm trên khung hình (không thu nhỏ video), kết ở chữ cuối để video tự lặp. Dẫn về bản đầy đủ, mời bình luận để ở
 caption + bình luận ghim. Video ngang và dọc dài giữ thanh, thẻ cuối, màn kết YouTube.
 
@@ -22,7 +22,7 @@ caption + bình luận ghim. Video ngang và dọc dài giữ thanh, thẻ cuố
 - Gộp ghi nhớ `video-doc-ngan-khong-thanh` vào đây ở tái bản 2 (10/11/2026).
 
 **How to apply:** vị trí chỉ lấy từ `ky-nang/san-xuat-video/thu-vien-tai-nguyen/nhan-dien-thuong-hieu.js` (`khung(W, H)`), thành phần `dau-goc.jsx`,
-`thanh-thoi-gian.jsx`, `than-man-ket.jsx`; bảng ở `thu-vien-tai-nguyen/nhan-dien-chung.md`; nhà luật dọc ngắn `quy-tac-chung.md` mục 5, máy tự nhận
+`thanh-thoi-gian.jsx`, `than-man-ket.jsx`; bảng ở `ky-nang/san-xuat-video/thu-vien-tai-nguyen/nhan-dien-chung.md`; nhà luật dọc ngắn `quy-tac-chung.md` mục 5, máy tự nhận
 `nganDoc()` / `NGAN_DOC` (`thanh.js`). Không viết số vị trí riêng trong khuôn dựng. Sửa nhận diện → chụp kiểm cả ngang lẫn dọc trên dự
 án đã duyệt. Liên quan [[quy-tac-hoc-la-bo-sung]], [[video-bo-cuc-tu-can]], [[video-doc-khuon-chu-chinh]], [[video-tham-my-chi-giu-nhan-dien]].
 

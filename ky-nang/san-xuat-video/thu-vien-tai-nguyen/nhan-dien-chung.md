@@ -30,7 +30,7 @@ tròn, phấn vẽ tay, ảnh), bố cục, chuyển động. Thử: che dấu g
 | Dấu góc ● DAVID │ chủ đề (ô nền sẫm đặc `C.nen`) | góc trên trái, top 228 | góc trên trái, top 54 (sát mép vùng an toàn) | `dau-goc.jsx`, `khung().brand` |
 | Thanh thời gian (đã chạy · thanh · còn m:ss) | y 1386, cao 30 — chỉ video dọc dài | y 996, cao 30 (sát đáy, 92–95 % chiều cao) | `thanh-thoi-gian.jsx`, `khung().tl` |
 | Phụ đề | luôn chạy, đáy ngay trên thanh thời gian (y 1374) | như dọc (y 982) | `kieu-phu-de.js`, `khung().capBottom` |
-| Màn chốt (`cta`) | câu nguyên văn ≤ 55 ký tự, tick + "ting" | như dọc, ô video 50 % bề ngang, ẩn dấu góc | `keu-goi-hanh-dong.js`, `hanh-dong.jsx` / `chuong-trinh.jsx` |
+| Màn chốt (`cta`) | câu nguyên văn tối đa 55 ký tự, tick + "ting" | như dọc, ô video 50 % bề ngang, ẩn dấu góc | `keu-goi-hanh-dong.js`, `hanh-dong.jsx` / `chuong-trinh.jsx` |
 | Thẻ cuối | chỉ video dọc dài: nhận diện / dẫn bản đầy đủ | nhận diện (chủ đề + DAVID) | `than-man-ket.jsx` |
 | Màn kết YouTube (video dài) | — | 15–20 s, khung chừa 2 video + nút đăng ký | `man-ket-youtube.jsx` |
 
@@ -41,7 +41,7 @@ Luật kèm theo:
 - **Không logo nền tảng, không nút phát đỏ** ở bất kỳ thẻ nào.
 - Mọi lớp phủ góc trên nằm **dưới** `brand.bottom` (`BRAND_BOT`); mọi lớp phủ đáy nằm **trên** phụ đề và thanh thời gian. Không viết
   số vị trí của khung dọc vào khung ngang.
-- **Video dọc ngắn** (Reels/TikTok/Shorts — dọc ≤ 90 s, mọi highlight, podcast dọc trích ngắn): **không thanh thời gian, không thẻ
+- **Video dọc ngắn** (Reels/TikTok/Shorts — dọc tối đa 90 s, mọi highlight, podcast dọc trích ngắn): **không thanh thời gian, không thẻ
   cuối**; màn chốt hiện câu nguyên văn ngay trên khung hình (không thu nhỏ video), video kết ở chữ cuối để tự lặp. Lý do: nền tảng đã
   có thanh riêng, "còn 0:20" và màn "hết rồi" khiến người xem lướt đi, thẻ cuối làm đứt vòng lặp. Dẫn về bản đầy đủ / mời bình luận
   để ở caption + bình luận ghim. Máy tự nhận (`nganDoc()` trong `nhan-dien-thuong-hieu.js`, `NGAN_DOC` trong `thanh.js`).

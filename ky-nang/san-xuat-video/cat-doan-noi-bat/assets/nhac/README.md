@@ -8,7 +8,7 @@ Nguồn Pixabay — Pixabay Content License (dùng miễn phí, cả thương m�
 | intro-soi.mp3 | Upbeat — alex-morgan (pixabay.com/nhac/upbeat-upbeat-591314) | đoạn ghép MỞ ĐẦU vlog: chuyến vui, du lịch, đi chơi (113 BPM, vào mạnh ngay giây 1) |
 | intro-lang.mp3 | Inspiring Documentary — AtlasAudio (pixabay.com/nhac/orchestral-inspiring-documentary-613503) | đoạn ghép MỞ ĐẦU vlog: hành hương, từ thiện, chuyến ý nghĩa (113 BPM, lực tăng dần) |
 | lang-2.mp3 | Our Story In The Past (Sad Piano) — leberch (pixabay.com/nhac/modern-classical-our-story-in-the-past-sad-piano-615222) | lắng buồn hơn (chia ly, mất mát) |
-| du-lich-1.mp3 | Vlog Sunny Travel Diary — alex-morgan (pixabay 578504) | tuyến du_lich: vlog du lịch, mở nhẹ ~18 s rồi lên |
+| du-lich-1.mp3 | Vlog Sunny Travel Diary — alex-morgan (pixabay 578504) | tuyến du_lich: vlog du lịch, mở nhẹ khoảng 18 s rồi lên |
 | du-lich-2.mp3 | Travel Vlog — HitsLab (pixabay 624124) | tuyến du_lich: đều nhịp ngay từ đầu |
 | kham-pha-1.mp3 | Cinematic Adventure — AtlasAudio (pixabay 610029) | tuyến kham_pha: phiêu lưu, leo núi, cao trào |
 | kham-pha-2.mp3 | Upbeat Documentary — AtlasAudio (pixabay 621616) | tuyến kham_pha: hành trình kiểu phim tài liệu tươi |

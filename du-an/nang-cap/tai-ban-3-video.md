@@ -22,7 +22,7 @@ Trạng thái: **sống** = giữ, đã có nhà · **trùng** = gộp về mộ
 | Lằn ranh kênh trainer; video dài cảnh báo, mặc định giữ lời | quy-tac-chung 1 → khối 00 mục 3 | quy-tac-chung:30; khối 00:71 | 13/11 | sống |
 | Mở đầu 0–3 s nói ngay đặt cược gì | quy-tac-chung 2 → khối 06 | quy-tac-chung:36; nguyen-tac 1; khối 06 | 08/11 | sống |
 | Video dài > 3 phút không cắt gì; làm lại video cũ chỉ cắt lời chào/kênh cũ | quy-tac-chung 2 | quy-tac-chung:37-41; khối 02; ghi nhớ video-dai-khong-cat, video-lam-lai-video-cu | 08/11 | sống |
-| Cắt chỉ cho ≤ 3 phút và highlight; cắt cứng | quy-tac-chung 2 | quy-tac-chung:42; khối 02:49; cat-doan luật 8; hồ sơ doan-noi-bat `phong_xen_ke` | 10/11 | sống |
+| Cắt chỉ cho tối đa 3 phút và highlight; cắt cứng | quy-tac-chung 2 | quy-tac-chung:42; khối 02:49; cat-doan luật 8; hồ sơ doan-noi-bat `phong_xen_ke` | 10/11 | sống |
 | Không zoom vào / ra ở mọi video | quy-tac-chung 2 | quy-tac-chung:42; khối 07:81; cat-doan:112; dung-video luật 3; code `chuong-trinh.jsx`, `danh-sach-cat-doan-noi-bat.py` | 13/11 | trùng (khối 07, cat-doan trỏ về) |
 | ↳ "phóng" trong nhịp video ngắn; "zoom" bám người nói | quy-tac-chung 2, 4 | quy-tac-chung:45, :72 | 08/11 | ngược → viết lại (13/11 thắng) |
 | ↳ `nhan` zoom ở bảng kiểu cảnh | tu-chon bước 4 | tu-chon:71 | 11/11 | ngược → bỏ "zoom" |
@@ -80,9 +80,9 @@ Trạng thái: **sống** = giữ, đã có nhà · **trùng** = gộp về mộ
 | Luật | Nhà nên ở | Nguồn hiện tại | Ngày chốt gần nhất | Trạng thái |
 |---|---|---|---|---|
 | dung-video: 8 luật riêng (motion graphic kể chuyện, hook không mặc định, bố cục, màn hành động/chốt, làm sạch, không che mặt, không bản app, học 20 video) | dung-video SKILL | SKILL:35-55 | 11/11 | sống |
-| dung-video: nhịp làm ~1 giờ/video, lỗi skill ghi `loi-ky-nang.md` | dung-video SKILL | SKILL:21-28 | 11/11 | sống |
+| dung-video: nhịp làm khoảng 1 giờ/video, lỗi skill ghi `loi-ky-nang.md` | dung-video SKILL | SKILL:21-28 | 11/11 | sống |
 | dung-video: khung xuất, khung chủ thể thay cắt-phóng | dung-video "Đầu vào" → khối 04 | SKILL:73; khối 04:56-67; tu-chon:36 | 11/11 | sống (bỏ dấu ngày khối 04, tu-chon) |
-| dung-podcast: chỉ nội dung gốc, không cắt, cỡ vừa, không tít/số tập, thanh thời gian, màn chốt, phủ hình ~30 % | dung-podcast SKILL | SKILL:28-57 | 11/11 | sống |
+| dung-podcast: chỉ nội dung gốc, không cắt, cỡ vừa, không tít/số tập, thanh thời gian, màn chốt, phủ hình khoảng 30 % | dung-podcast SKILL | SKILL:28-57 | 11/11 | sống |
 | cat-doan: bốn câu chọn ý, không số cố định | cat-doan SKILL → khối 13 | SKILL:23-32; khối 13:56; ghi nhớ video-clip-ngan-dung-doc-lap | 07/11 | sống |
 | cat-doan: 13 luật riêng (cùng loại gốc, nguyên văn, màn chốt một luật, tít = cụm đắt, hai tông, không thẻ cuối/thanh…) | cat-doan SKILL | SKILL:36-74 | 10/11 | sống |
 | cat-doan: kịch bản 7B mẫu "Đi trainer" | cat-doan SKILL | SKILL:141-157; ghi nhớ video-ban-chuan, video-doc-khuon-chu-chinh | 10/11 | sống |
@@ -95,9 +95,9 @@ Trạng thái: **sống** = giữ, đã có nhà · **trùng** = gộp về mộ
 | Luật | Nhà nên ở | Nguồn hiện tại | Ngày chốt gần nhất | Trạng thái |
 |---|---|---|---|---|
 | Khối 00: phân hướng, câu hỏi gốc, kho 100 video, 5 tiêu chí, lằn ranh, 7 kết luận, kênh, sổ danh mục | khối 00 | khối 00:13-113; ghi nhớ co-so-tri-thuc-ho-so-va-bo-loc | 13/11 | sống |
-| Khối 01–03, 05, 09–12, 15–20: cách làm, lệnh, ngưỡng kỹ thuật | từng khối | README từng khối | ≤ 13/11 | sống (không đổi) |
+| Khối 01–03, 05, 09–12, 15–20: cách làm, lệnh, ngưỡng kỹ thuật | từng khối | README từng khối | tối đa 13/11 | sống (không đổi) |
 | Khối 08: màn chốt, dọc ngắn, dẫn dắt 4·4·2, thẻ cuối, màn kết YouTube | khối 08 | khối 08:20-38 | 10/11 | sống |
-| Khối 09: chuẩn âm −14 LUFS, nhạc ~23 dB dưới giọng, nhạc theo tuyến | khối 09 | khối 09; ghi nhớ video-nhac-theo-tuyen | 08/11 | sống |
+| Khối 09: chuẩn âm −14 LUFS, nhạc khoảng 23 dB dưới giọng, nhạc theo tuyến | khối 09 | khối 09; ghi nhớ video-nhac-theo-tuyen | 08/11 | sống |
 | Khối 14: thumbnail chỉ hình của chính video; bìa podcast không mặt | khối 14 | khối 14; ghi nhớ video-chi-hinh-cua-chinh-video, video-podcast-bia-khong-mat | 06/11 | sống |
 | Chữ nhấn kiểu nhãn dán, không chạm mặt, không nền tối mờ | nhan-dien-chung 2 | nhan-dien-chung:57; ghi nhớ video-chu-nhan-nhan-dan | 13/11 | sống (bỏ dấu ngày, giữ lý do) |
 | Thành phần cố định + video dọc ngắn không thanh/không thẻ cuối | nhan-dien-chung 1 | nhan-dien-chung:25-50 | 10/11 | sống |

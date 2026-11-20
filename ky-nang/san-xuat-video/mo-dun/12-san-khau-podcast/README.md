@@ -33,7 +33,7 @@ Viết trong `chuyen-dong/src/canh.js` theo `references/thiet-ke-podcast.md`:
 - `STAGE` = `{show, title, speakers: [{name, role}]}` — `show`: tên chương trình David đưa (không có → bỏ trống, không hiện);
   `title`: ý chính của tập, trích lời; `speakers`: chỉ tên thật (mục trên), theo thứ tự người 0, 1 trong `nguoi-noi.js`.
 - `TOPICS` = ý đang bàn ở giữa sân khấu, **phủ kín cả tập** (đổi thưa, mỗi 40–90 s theo ý lớn, mốc = lúc bắt đầu ý), 2 dòng (`'DÒNG 1\nDÒNG 2'`),
-  ≤ 5 từ/dòng, trích lời. Tự ẩn khi có thẻ/chữ to.
+  tối đa 5 từ/dòng, trích lời. Tự ẩn khi có thẻ/chữ to.
 - **Màn hành động + màn chốt:** câu người nói nêu việc người nghe làm được → `action` (khung dọc) hoặc `card` có icon (khung ngang —
   `action` chỉ có bản dọc); cảnh cuối luôn `{id: 'chot', type: 'cta', start: <thời lượng − 4>, end: <thời lượng>, props: {text, kind}}`
   (ô câu chốt giữa sân khấu; `text` = nguyên văn câu David nói cuối tập — khối 08).

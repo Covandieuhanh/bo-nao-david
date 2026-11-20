@@ -7,7 +7,7 @@ metadata:
 
 Học từ mẫu mới (bố cục, trình bày, âm thanh) chỉ được **thêm** vào skill. Không xoá, không thay những thứ David đã chốt hoặc đã sửa nhiều lần (dấu góc, không đè chữ, thanh thời gian, phụ đề…).
 
-**Why:** 08/11/2026 David xem 4 video cũ làm lại, thấy dấu góc đè hình, điểm nhấn chồng lên dấu góc, thiếu thanh thời gian, dấu góc thấp. David nói "học là bổ sung chứ không phải thay thế đi các thứ trong skill đã xây dựng". Tra lại thì gốc lỗi là template viết cho khung dọc, áp sang khung ngang người nói lần đầu (chi tiết ở `dung-video-theo-phong-cach/references/loi-thuong-gap.md`).
+**Why:** 08/11/2026 David xem 4 video cũ làm lại, thấy dấu góc đè hình, điểm nhấn chồng lên dấu góc, thiếu thanh thời gian, dấu góc thấp. David nói "học là bổ sung chứ không phải thay thế đi các thứ trong skill đã xây dựng". Tra lại thì gốc lỗi là template viết cho khung dọc, áp sang khung ngang người nói lần đầu (chi tiết ở `ky-nang/san-xuat-video/dung-video-theo-phong-cach/references/loi-thuong-gap.md`).
 
 "Bổ sung" gồm cả thẩm mỹ (nền, kết cấu, kiểu hình, chữ nhấn) — chỉ giữ chữ ký nhận diện: [[video-tham-my-chi-giu-nhan-dien]] (10/11/2026).
 
@@ -15,7 +15,7 @@ Học từ mẫu mới (bố cục, trình bày, âm thanh) chỉ được **th�
 chang… học để cải tiến trên chính những gì mình đang có… trong 1 video cũng không cần quá nhiều motion graphics… ngày càng thể hiện được
 rõ sự mô tả các nội dung đang được nói đến… nhưng vẫn phải đảm bảo sự tinh gọn và đơn giản chứ không cầu kỳ, loè loẹt gây phân tán sự chú ý"*.
 Lý do: phiếu học đầu tiên của video Cường Mê AI liệt kê 9 hiệu ứng mới; David muốn biết vì sao video đó dễ hiểu rồi nâng chính các thành phần đang có.
-Luật hiện hành: `thiet-ke-bo-cuc/tu-chon.md` bước 4a (ý nào cần hình, năm nguyên lý).
+Luật hiện hành: `ky-nang/san-xuat-video/thiet-ke-bo-cuc/tu-chon.md` bước 4a (ý nào cần hình, năm nguyên lý).
 
 **How to apply:**
 - Phiếu học trả lời trước: "vì sao mẫu này dễ hiểu" (nguyên lý) → mỗi nguyên lý nâng cấp thành phần nào đang có. Món chỉ để trang trí thì ghi vào "Không lấy".

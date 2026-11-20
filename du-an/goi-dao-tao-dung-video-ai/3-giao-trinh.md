@@ -54,7 +54,7 @@ Link slide thuộc tài khoản Claude cũ (13/11/2026). Bản xem trên máy, �
 - **Nội dung:** phụ đề 5–8 chữ mỗi lần, vị trí an toàn từng khung; chữ nhấn lấy đúng lời; kiểu chữ, màu, viền dễ đọc; sửa chữ sai nhanh.
 - **Thực hành:** thêm phụ đề + 3 chữ nhấn vào video 1.
 - **Bài tập:** làm cho video 2, tự soát chính tả.
-- **Xong khi:** phụ đề đúng ≥ 98% chữ, không che chủ thể.
+- **Xong khi:** phụ đề đúng ít nhất 98% chữ, không che chủ thể.
 
 ## Bài 6 · Đồ hoạ, hình minh hoạ, nhạc
 - **Mục tiêu:** video sinh động mà không rối.

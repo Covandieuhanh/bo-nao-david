@@ -5,10 +5,11 @@
   dau_ngay  dấu ngày / "chốt 08/11" nằm trong bản luật (ngày thuộc về sổ quyết định, không thuộc luật)
   ghi_de    câu kiểu "thay luật cũ", "ngoại lệ", "nới", "bổ sung 09/11", "chuyển nguyên văn từ SKILL.md cũ" — dấu luật vá lên luật
   trung     câu dài giống hệt nhau ở hai file (một luật hai nhà)
+  viet_tat  chữ viết tắt thường ngày ngoài phần code ("vd.", "ko", "TB", "đc", "sl", "tg", "cty") — file phải viết đủ từ (AGENTS.md luật 1)
   gan_trung cặp dòng ở hai file khác nhau giống nhau quá nửa số chữ (một ý viết lại theo cách khác ở nhà thứ hai)
   sua       số lần bản luật bị sửa kể từ lần tái bản gần nhất (git, mốc ở lich-su.md) — chỉ nhắc nhẹ
   dong      tổng số dòng bản luật — chỉ để biết độ lớn; bộ não lớn lên vì học thêm, dài không phải là rối
-Chuông chỉ kêu vì trùng / rối: một bộ bất kỳ vượt một ngưỡng ở bo.json "nguong" (dau_ngay, ghi_de, trung, gan_trung) → in một dòng
+Chuông chỉ kêu vì trùng / rối: một bộ bất kỳ vượt một ngưỡng ở bo.json "nguong" (dau_ngay, ghi_de, trung, gan_trung, viet_tat) → in một dòng
 "NÊN NÂNG CẤP" kèm lý do, mã thoát 1 (nâng cấp là cả bộ não một đợt: hoc-lien-tuc Việc 4, dọn bằng tai-cau-truc). "nhac" (sua) vượt chỉ in một dòng nhắc, không kêu. Không sửa file nào.
 Phần "## Nhật ký" cuối file là sổ, không tính.
 """
@@ -26,17 +27,30 @@ NGAY = re.compile(r"20\d\d-\d\d-\d\d|\b\d{1,2}/\d{1,2}/20\d\d\b|"
 GHI_DE = re.compile(r"thay luật|thay các|thay thế luật|thắng mọi|không còn áp|nới luật|nới\)|luật cũ|"
                     r"bổ sung 20\d\d|bổ sung \d{1,2}/\d{1,2}|chuyển nguyên văn từ SKILL\.md cũ|\(cũ[,)]|đã bỏ|bỏ từ \d|thay cho luật", re.I)   # "ngoại lệ" không tính: luật viết sạch vẫn có ngoại lệ thật
 
+VIET_TAT = re.compile(r"(?<!\w)(?:[Vv][Dd]\.|ko|TB|đc|sl|tg|cty)(?!\w)")
+CODE = re.compile(r"```.*?```|`[^`\n]*`|\"[^\"\n]*\"|“[^”\n]*”", re.S)   # bỏ code và chữ trong ngoặc kép (ví dụ được trích, không phải viết tắt)
 THAY_HOA = re.compile(r"\bTHAY\b")   # chỉ chữ in hoa kiểu "THAY các ngoại lệ"; chữ "thay" thường không phải dấu ghi đè
 
 def khop(path, mau):
     return any(fnmatch.fnmatch(path, m) for m in mau)
+
+def tang_cua(goc, f, _c={}):
+    """Tầng của file theo co-so-tri-thuc/tang.json (trục tri thức mục 2); không có bảng thì None."""
+    import fnmatch, json
+    if 'q' not in _c:
+        p = os.path.join(goc, "co-so-tri-thuc", "tang.json")
+        _c['q'] = json.load(open(p, encoding="utf-8"))["quy_tac"] if os.path.exists(p) else []
+    for mau, t in _c['q']:
+        if fnmatch.fnmatch(f, mau) or (mau.endswith("/**") and f.startswith(mau[:-2])) or (mau.startswith("**/") and fnmatch.fnmatch(os.path.basename(f), mau[3:])):
+            return t
+    return None
 
 def ban_luat(bo):
     c = CFG[bo]; out = set()
     for m in c['ban_luat']:
         for f in glob.glob(os.path.join(REPO, m), recursive=True):
             r = os.path.relpath(f, REPO)
-            if os.path.isfile(f) and not khop(r, c.get('bo_qua', [])): out.add(r)
+            if os.path.isfile(f) and not khop(r, c.get('bo_qua', [])) and tang_cua(REPO, r) != 3: out.add(r)   # tầng 3 là dữ liệu, không đo
     return sorted(out)
 
 def doc(r):
@@ -113,7 +127,8 @@ for bo in (args or [k for k in CFG if not k.startswith('_')]):
     per = {}; noi = defaultdict(set); tong = defaultdict(int); texts = {}
     for r in files:
         s = doc(r); texts[r] = s
-        d = {'dau_ngay': len(NGAY.findall(s)), 'ghi_de': len(GHI_DE.findall(s)) + len(THAY_HOA.findall(s)), 'dong': s.count('\n') + 1}
+        d = {'dau_ngay': len(NGAY.findall(s)), 'ghi_de': len(GHI_DE.findall(s)) + len(THAY_HOA.findall(s)), 'dong': s.count('\n') + 1,
+             'viet_tat': len(VIET_TAT.findall(CODE.sub(' ', s)))}
         per[r] = d
         for k, v in d.items(): tong[k] += v
         for c in set(cau(s)): noi[c].add(r)

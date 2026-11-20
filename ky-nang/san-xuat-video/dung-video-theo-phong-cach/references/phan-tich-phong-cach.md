@@ -21,7 +21,7 @@ Cần thì cắt thêm khung ở mốc cụ thể: `ffmpeg -ss <giây> -i tai-li
 | Màu | Nền thẻ/cảnh màu gì? Chữ trắng tinh hay ngà? Có gradient, phát sáng không? (màu nhấn giữ cam) | `C` trong chu-de.js (hex), trừ `accent` |
 | Chữ | Đậm cỡ nào? In hoa? Có gạch chân/khung/nền sau chữ? Có font phụ cho từ nhấn không? | component Kinetic; font phụ `NHAN` (font chính giữ `HEAD`/`BODY`) |
 | Thẻ | Bo góc nhiều/ít? Trong suốt, mờ kính, đặc? Có viền, bóng? Tiêu đề nhỏ màu nhấn (eyebrow) không? | CardShell |
-| Chuyển động | Bật nảy (spring) hay trượt mượt? Nhanh (≤8 khung) hay chậm? Chữ hiện từng từ, từng dòng hay cả khối? Có đường kẻ tự vẽ, số đếm chạy không? | `pop`, `ease`, thời lượng vào/ra |
+| Chuyển động | Bật nảy (spring) hay trượt mượt? Nhanh (tối đa 8 khung) hay chậm? Chữ hiện từng từ, từng dòng hay cả khối? Có đường kẻ tự vẽ, số đếm chạy không? | `pop`, `ease`, thời lượng vào/ra |
 | Loại cảnh | Có cảnh toàn màn hình không? Biểu đồ, sơ đồ, dòng thời gian, danh sách tick, so sánh 2 cột, ảnh dồn dập? | chọn loại cảnh / viết component mới |
 | Vị trí | Lớp phủ đặt cạnh mặt, dưới mặt hay giữa? (dù mẫu thế nào, KHÔNG che mặt người nói — `vi-tri-khuon-mat.sh` lo) | bố cục component; vị trí từng cảnh = vi-tri.js |
 | Mật độ | Trung bình bao nhiêu giây có một hiệu ứng? Bao nhiêu % thời lượng là toàn màn hình? | nhịp trong canh.js |

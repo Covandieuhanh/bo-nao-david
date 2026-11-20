@@ -1,0 +1,82 @@
+{
+ "c01": {
+  "dung": "A",
+  "nha": "AGENTS.md mục \"Chọn skill theo việc\"; ky-nang/san-xuat-video/phan-phoi-da-kenh/SKILL.md",
+  "nguon": "AGENTS.md: David thường chỉ gửi tài nguyên mà không kèm yêu cầu"
+ },
+ "c02": {
+  "dung": "C",
+  "nha": "AGENTS.md luật 3; ky-nang/san-xuat-video/quy-tac-chung.md mục 1",
+  "nguon": "12/11/2026: \"không được sáng tạo sai lời chính xác của tôi\""
+ },
+ "c03": {
+  "dung": "B",
+  "nha": "ky-nang/san-xuat-video/dung-video-theo-phong-cach/SKILL.md luật riêng 7",
+  "nguon": "12/11/2026: \"tôi không cần bản cho capcut hay davinci\""
+ },
+ "c04": {
+  "dung": "A",
+  "nha": "AGENTS.md luật 6",
+  "nguon": "12/11/2026 và 20/11/2026: \"trên github chỉ còn những cái có thể dùng chung\""
+ },
+ "c05": {
+  "dung": "C",
+  "nha": "AGENTS.md mục \"Giữ bộ não luôn mới\"; co-so-tri-thuc/bang-thuat-ngu.md",
+  "nguon": "13/11/2026: \"dùng toàn bộ thành thuật ngữ của kinh doanh đi nhé, đừng gọi tên file theo kiểu tắt như thế\""
+ },
+ "c06": {
+  "dung": "B",
+  "nha": "AGENTS.md luật 1; co-so-tri-thuc/truc-tri-thuc.md mục 0",
+  "nguon": "20/11/2026: \"không được phép lấy bất kì ai … làm tiêu chuẩn để viết tắt hay viết ngắn lại\""
+ },
+ "c07": {
+  "dung": "B",
+  "nha": "co-so-tri-thuc/truc-tri-thuc.md mục 3–4",
+  "nguon": "20/11/2026: cần một trục cố định để tiếp nhận mọi thứ"
+ },
+ "c08": {
+  "dung": "A",
+  "nha": "ky-nang/chuan-muc-lam-viec.md mục 4; co-so-tri-thuc/truc-tri-thuc.md mục 4",
+  "nguon": ""
+ },
+ "c09": {
+  "dung": "C",
+  "nha": "ky-nang/san-xuat-video/quy-tac-chung.md mục 1",
+  "nguon": "12/11/2026: \"Không nghe thấy tiếng mà lại bịa ra tiếng là sao?\""
+ },
+ "c10": {
+  "dung": "B",
+  "nha": "ky-nang/san-xuat-video/quy-tac-chung.md mục 2",
+  "nguon": ""
+ },
+ "c11": {
+  "dung": "A",
+  "nha": "AGENTS.md luật 4",
+  "nguon": ""
+ },
+ "c12": {
+  "dung": "C",
+  "nha": "co-so-tri-thuc/david.md mục 1",
+  "nguon": ""
+ },
+ "c13": {
+  "dung": "B",
+  "nha": "AGENTS.md mục \"Giữ bộ não luôn mới\" (hai bộ não)",
+  "nguon": ""
+ },
+ "c14": {
+  "dung": "B",
+  "nha": "co-so-tri-thuc/truc-tri-thuc.md mục 2 (mỗi ý một nhà)",
+  "nguon": "18/11/2026: \"cần tách rõ đúng nơi để tránh nhầm lẫn vào nhau\""
+ },
+ "c15": {
+  "dung": "C",
+  "nha": "ky-nang/san-xuat-video/quy-tac-chung.md mục 8; mo-dun/09-am-thanh",
+  "nguon": "12/11/2026: \"video này là bạn không tự đánh giá để tự ghép nhạc phù hợp hay sao mà lại hỏi tôi\""
+ },
+ "c16": {
+  "dung": "C",
+  "nha": "ky-nang/san-xuat-video/mo-dun/00-sang-loc-noi-dung/README.md mục 3; co-so-tri-thuc/david.md mục 1",
+  "nguon": ""
+ }
+}

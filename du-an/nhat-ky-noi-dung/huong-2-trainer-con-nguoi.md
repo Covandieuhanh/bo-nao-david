@@ -7,7 +7,7 @@ description: "Nhật ký nội dung hướng 2 trainer con người (làm chủ 
 Luật ghi và khung mục: [README.md](README.md). Lằn ranh hướng này: không trị liệu / chẩn đoán, không nhắc vai coach, không nói giá trên video.
 
 ## 19/11/2026 · tap-marketing-noi-dau-nhu-cau · buổi 1:1 ở quán cà phê với một chị đang vận hành quán
-Bản theo hướng: bản dài YouTube trainer ~38 phút (S1–S3, S5–S6, S10–S16) · Trạng thái: chờ dựng
+Bản theo hướng: bản dài YouTube trainer khoảng 38 phút (S1–S3, S5–S6, S10–S16) · Trạng thái: chờ dựng
 Mốc: giây trên `nguon-dai.mp4` của tập (đã bỏ phần số học).
 
 | Ý | Lời gốc | Mốc | Nỗi đau / mục tiêu | Bán được gì | Dùng cho việc |
@@ -34,14 +34,14 @@ Bản theo hướng: clip dọc D 64 s (50:29–51:41), không ra bản dài · 
 | Người nghe không nhớ nội dung, chỉ nhớ cảm xúc buổi đó | "anh em mình có thể không nhớ là đã nói chuyện gì đâu nhưng mà… nhớ được là hôm nay gặp nhau có vui không" | 3067–3081 (51:07) | đứng lớp, dẫn chương trình mà người nghe không đọng lại | gói trainer (ngôn ngữ khi dẫn người) | câu mở bài ngôn ngữ cảm xúc |
 | MC đọc như đọc đài, không dẫn cảm xúc khán giả | "mấy cái MC team building… cũng đọc như đọc đài ấy" | 3029–3036 (50:29) | trình bày đúng mà nhạt | — | ví dụ đứng lớp |
 | Nội dung dựa trên nỗi đau, mong muốn, lồng cảm xúc để tạo niềm tin và thuyết phục | "Nội dung mình muốn truyền đạt sẽ dựa lên nỗi đau của người ta, mong muốn người ta" | 3114–3135 (51:54) | thuyết phục không được | làm chủ thị trường | khung soạn bài nói |
-| Tệp đầu của trainer: sinh viên sắp tốt nghiệp, người mới đi làm, mới lên quản lý (~25–26 tuổi) mất phương hướng | "những cái người mà bị mất phương hướng ấy thì đúng là em đang định hướng như vậy" | 4560–4620 (76:00) | — | định vị tệp gói trainer | soát lại tệp trong hồ sơ |
+| Tệp đầu của trainer: sinh viên sắp tốt nghiệp, người mới đi làm, mới lên quản lý (khoảng 25–26 tuổi) mất phương hướng | "những cái người mà bị mất phương hướng ấy thì đúng là em đang định hướng như vậy" | 4560–4620 (76:00) | — | định vị tệp gói trainer | soát lại tệp trong hồ sơ |
 | Mỗi người tiếp nhận khác nhau (nghe / đọc / yên tĩnh / vui) → lọc trước rồi mới đưa nội dung | "Mỗi người người ta sẽ có một cách tiếp nhận thông tin khác nhau" | 4610–4740 (76:50) | nói nhiều mà người nghe chỉ nhận 3–5% | thiết kế buổi trainer | phiếu hỏi đầu buổi |
 | Góp ý của anh đối diện: workshop demo cho sinh viên, trao giá trị trước; người trả tiền có thể là phụ huynh | "người bố mẹ… sẽ trả cho trainer nhiều tiền hơn là trực tiếp sinh viên trả" | 4680–5000 (78:00) | chưa có người biết tới | gói cho phụ huynh / workshop sinh viên | ý tưởng chờ David cân nhắc |
 | Bán gói coaching qua hội doanh nghiệp khó: người tham gia chủ yếu tìm khách | "nhu cầu lớn nhất của họ… là đa phần của họ nhu cầu Hunter" | 4800–4870 (80:00) | — | bỏ kênh bán đó | bài học kênh bán |
 
 
 ## 20/11/2026 · tap-gan-ket-bang-cong-viec · chiều trò chuyện ở văn phòng một anh đàn anh làm giao dịch hàng hoá
-Bản theo hướng: bản dài ngang ~17 phút (S1, S3, S5, S7, S9, S11, S16) + clip A, B, C · Trạng thái: đang dựng
+Bản theo hướng: bản dài ngang khoảng 17 phút (S1, S3, S5, S7, S9, S11, S16) + clip A, B, C · Trạng thái: đang dựng
 | Ý | Lời gốc | Mốc | Nỗi đau / mục tiêu | Bán được gì | Dùng cho việc |
 |---|---|---|---|---|---|
 | Tình cảm lên xuống, người với người gắn kết bằng công việc | "Người với người quan hệ với nhau bằng công việc" | 140 (2:20) | quan hệ, cộng tác dễ vỡ | gói trainer (tầng mối quan hệ) | câu mở bài mối quan hệ |

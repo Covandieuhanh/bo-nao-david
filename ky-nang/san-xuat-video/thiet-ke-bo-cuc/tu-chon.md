@@ -59,8 +59,8 @@ mức dày hình, nhịp, nhạc cho bước 2b–4. Ghi `Loại: <tên> vì <d�
 | Dấu hiệu hình gốc | Bố cục nền | Cách làm |
 |---|---|---|
 | Người nói trước camera, người **chiếm phần lớn khung** (selfie dọc, cận mặt), hoặc kể chuyện / cảm xúc | **giữ khung gốc** | — |
-| **Video chia sẻ kiến thức, thông tin** (lời có lý do, liệt kê, khái niệm) mà người **chiếm < ~50 % khung** (ngồi xa máy, hai bên là tường / phòng trống) | **khung chủ thể quanh người** + phần còn lại cho **bảng thông tin** (`GHI_CHU`) và cảnh, ảnh cạnh người | `khung-chu-the.py` (vùng = người, gồm tay khi múa tay) |
-| Chủ thể là **màn hình** (điện thoại, laptop, máy tính bảng), **vật**, **bảng** — chiếm < ~60 % khung, hoặc quanh có rác | **khung chủ thể**: tách chủ thể thành khung bo góc trên nền kênh; phần còn lại cho bảng ghi chú, phụ đề, cảnh | `khung-chu-the.py luoi` → đọc toạ độ → `kiem-tra/khung.json` → `apply` (khối 04) |
+| **Video chia sẻ kiến thức, thông tin** (lời có lý do, liệt kê, khái niệm) mà người **chiếm < khoảng 50 % khung** (ngồi xa máy, hai bên là tường / phòng trống) | **khung chủ thể quanh người** + phần còn lại cho **bảng thông tin** (`GHI_CHU`) và cảnh, ảnh cạnh người | `khung-chu-the.py` (vùng = người, gồm tay khi múa tay) |
+| Chủ thể là **màn hình** (điện thoại, laptop, máy tính bảng), **vật**, **bảng** — chiếm < khoảng 60 % khung, hoặc quanh có rác | **khung chủ thể**: tách chủ thể thành khung bo góc trên nền kênh; phần còn lại cho bảng ghi chú, phụ đề, cảnh | `khung-chu-the.py luoi` → đọc toạ độ → `kiem-tra/khung.json` → `apply` (khối 04) |
 | Người nhỏ trong khung rộng, nền rác, nhưng cần thấy người | khung chủ thể quanh người (ô dọc hoặc ngang) | như trên, vùng = người |
 | Gốc dọc, xuất ngang | pillar (`dat-dau-ra.py pillar`) + `SIDES` | khối 04 |
 | Gốc ngang, xuất dọc (chỉ khi David nói rõ) | reframe bám người nói | khối 04 |
@@ -88,19 +88,19 @@ Ghi `Thẩm mỹ: nền … · kiểu hình … · chuyển cảnh … · nhạc
 
 | Dấu hiệu nội dung (chan-doan.md) | Lớp thông tin | Code |
 |---|---|---|
-| **Dày thông tin**: ≥ 3 phút và (mật độ ≥ 140 chữ/phút **hoặc** ≥ 6 chỗ liệt kê / bước / con số), hoặc người nói chính không nhìn camera (cuộc gọi, quay màn hình, bài giảng), hoặc video chia sẻ kiến thức đã chọn khung chủ thể quanh người. Máy báo DÀY THÔNG TIN thì dùng bảng, không tự bỏ vì "nghe như kể chuyện" | **Bảng ghi chú chạy**: tên phần + ý chính nguyên văn cộng dồn, luôn hiện ở phần khung trống | `GHI_CHU` trong canh.js (phu-de.jsx) |
+| **Dày thông tin**: ít nhất 3 phút và (mật độ ít nhất 140 chữ/phút **hoặc** ít nhất 6 chỗ liệt kê / bước / con số), hoặc người nói chính không nhìn camera (cuộc gọi, quay màn hình, bài giảng), hoặc video chia sẻ kiến thức đã chọn khung chủ thể quanh người. Máy báo DÀY THÔNG TIN thì dùng bảng, không tự bỏ vì "nghe như kể chuyện" | **Bảng ghi chú chạy**: tên phần + ý chính nguyên văn cộng dồn, luôn hiện ở phần khung trống | `GHI_CHU` trong canh.js (phu-de.jsx) |
 | Video dài > 6 phút, có các phần rõ | Chương: `CHAPTERS` + màn chương (`bocuc chuong`) hoặc thanh tiến trình ý (`bocuc tien-trinh`) khi video theo danh sách | có |
 | Mở đầu nói "trong video này…" / nhắc lại các ý đã qua | mục lục tích luỹ (`bocuc muc-luc`) | có |
 | Kể chuyện, cảm xúc, ít ý | không thêm lớp — người + phụ đề + điểm nhấn | có |
 
 Bảng ghi chú: mỗi phần = một mục `CHAPTERS` (tên phần nguyên văn); ý = cụm **nguyên văn** 3–10 chữ của câu chốt / câu liệt kê /
-con số, `at` = lúc nói. Mỗi phút ~2–4 ý. **Lằn ranh** (số tiền, chuyện người khác, pháp lý…) không đưa vào bảng.
+con số, `at` = lúc nói. Mỗi phút khoảng 2–4 ý. **Lằn ranh** (số tiền, chuyện người khác, pháp lý…) không đưa vào bảng.
 
 ## Bước 4 — Từng đoạn: cái khó → nguyên lý → cách thể hiện
 
 **4a. Đoạn nào cần hình (Tinh gọn):** chỉ dựng hình khi ý đó khó hiểu nếu chỉ nghe — quy trình nhiều bước, quan hệ (nhân quả, tầng bậc,
 từ → thành), so sánh, con số, danh sách cần nhớ. Ý dễ (kể chuyện, cảm xúc, lời mời, câu ngắn tự rõ) → người nói + phụ đề, nhiều lắm
-một điểm nhấn. Hình phủ (toàn màn hình + bố cục) quá ~45 % thời lượng là dựng thừa. Ghi `Tiết chế: <số> ý cần hình / <tổng ý> · bỏ hình ở … vì dễ hiểu khi nghe`.
+một điểm nhấn. Hình phủ (toàn màn hình + bố cục) quá khoảng 45 % thời lượng là dựng thừa. Ghi `Tiết chế: <số> ý cần hình / <tổng ý> · bỏ hình ở … vì dễ hiểu khi nghe`.
 
 **4b. Mỗi hình phải đạt:** Đúng lúc (`at` = lúc nói, không hiện hết một lúc) · Chia đoạn (ý nối nhau thì giữ một hình lớn dần: `chuoi`,
 `xay-tang`, `muc-luc`, `mach.js` `tu_buoc`) · Báo hiệu (một chỗ sáng cam, phần đã qua mờ; `tang`, `cot` bật `mot_diem: true`) · Lời kèm hình
@@ -124,8 +124,8 @@ quen. Ghi mỗi cảnh một dòng `- <id> · Cần: <nguyên lý> · Vì: <cái
 | Chia đoạn | quy trình 3–6 bước kể liền một mạch ("đầu tiên… rồi… cuối cùng") | `diagram chuoi` (bước hiện theo lời, dây có chấm chạy, bước đang nói sáng) | toàn màn hình; dọc giải thích dài → `o-nguoi` `nguoi_duoi` + `chuoi` |
 | Chia đoạn | quy trình nhiều bước, vẽ tiếp qua nhiều cảnh | `canh-nguoi` + `tu_buoc` / `mach.js` | cạnh chủ thể |
 | Chia đoạn | liệt kê 3–5 thứ | `illus list` · `the-canh` (giữ người) · thêm vào bảng ghi chú | cạnh chủ thể |
-| Chia đoạn | ≥ 2 cặp "đừng… hãy…" / "sai… đúng…" / "thay vì… thì…" nối nhau | `bocuc dung-hay` (một cặp lẻ → `illus vs`) | dọc: khung trên, người dưới · ngang: cạnh người |
-| Báo hiệu | lời đếm "thứ nhất / yếu tố 1…" ≥ 3 mục, mỗi mục ≥ ~5 s | `the-canh` + `so` (hoặc `tien-trinh`) | cạnh người |
+| Chia đoạn | ít nhất 2 cặp "đừng… hãy…" / "sai… đúng…" / "thay vì… thì…" nối nhau | `bocuc dung-hay` (một cặp lẻ → `illus vs`) | dọc: khung trên, người dưới · ngang: cạnh người |
+| Báo hiệu | lời đếm "thứ nhất / yếu tố 1…" ít nhất 3 mục, mỗi mục ít nhất khoảng 5 s | `the-canh` + `so` (hoặc `tien-trinh`) | cạnh người |
 | Báo hiệu | cụm phụ đề có con số / một chữ quyết định nghĩa (video dọc ngắn) | `hl: ['^từ']` — tối đa một chỗ mỗi dòng | phụ đề |
 | Báo hiệu | đổi ý ("không phải A, mà là B") | `the-canh` có gạch chữ | cạnh chủ thể |
 | Báo hiệu | phỏng vấn / lời chứng, có người hỏi | `bocuc cau-hoi` + `lower` tên · vai trò | dưới mặt |
@@ -133,7 +133,7 @@ quen. Ghi mỗi cảnh một dòng `- <id> · Cần: <nguyên lý> · Vì: <cái
 | Gần chỗ | so sánh nên / không nên, trước / sau | `illus vs` · trước/sau | toàn màn hình hoặc cạnh |
 | Gần chỗ | có hai nguồn hình cùng lúc (ảnh trước + video sau, bản gốc + kết quả) | `bocuc tren-duoi` (`giuPhuDe: true`) | toàn màn hình |
 | Mặt người nói | giải thích dài vẫn cần thấy người | `o-nguoi` (người vào ô); khung dọc: `nguoi_duoi: true` (hình nửa trên, người nửa dưới) | — |
-| Mặt người nói · Lời kèm hình | lời tả chi tiết một thứ cần nhìn kỹ (một bộ phận, sản phẩm, màn hình) ≥ ~4 s, có ảnh / hình vẽ đúng thứ đó | `bocuc o-tron` | toàn màn hình, người ô tròn |
+| Mặt người nói · Lời kèm hình | lời tả chi tiết một thứ cần nhìn kỹ (một bộ phận, sản phẩm, màn hình) ít nhất khoảng 4 s, có ảnh / hình vẽ đúng thứ đó | `bocuc o-tron` | toàn màn hình, người ô tròn |
 | Tin | người / nơi / tổ chức có thật | `diagram anh` | cạnh hoặc toàn |
 | Giữ chú ý | video khoe một thành quả có bản gốc / quá trình | **kết quả trước, cách làm sau**: cảnh thành quả lên đầu, lộ bản gốc sau | thứ tự cảnh |
 | bất kỳ | ý riêng không kiểu nào khớp | cảnh tự vẽ `ve` theo đúng nguyên lý (khối 07 mục 1) | tuỳ |

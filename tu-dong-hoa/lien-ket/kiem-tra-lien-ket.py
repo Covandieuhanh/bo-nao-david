@@ -90,6 +90,17 @@ def tieu_de(text):
     return ""
 
 
+def tang_cua(goc, f, _c={}):
+    """Tầng của file theo co-so-tri-thuc/tang.json (trục tri thức mục 2); không có bảng thì None."""
+    import fnmatch, json
+    if 'q' not in _c:
+        p = os.path.join(goc, "co-so-tri-thuc", "tang.json")
+        _c['q'] = json.load(open(p, encoding="utf-8"))["quy_tac"] if os.path.exists(p) else []
+    for mau, t in _c['q']:
+        if fnmatch.fnmatch(f, mau) or (mau.endswith("/**") and f.startswith(mau[:-2])) or (mau.startswith("**/") and fnmatch.fnmatch(os.path.basename(f), mau[3:])):
+            return t
+    return None
+
 def main():
     goc, chi_muc, la_ban_do, mien, goc_vao = cau_hinh()
     goc_vao = goc_vao | {chi_muc}
@@ -170,7 +181,7 @@ def main():
     luat = "[quy-uoc-lien-ket.md](quy-uoc-lien-ket.md)" if goc == NAO else "`co-so-tri-thuc/quy-uoc-lien-ket.md` trong bộ não"
     dong = [
         "---",
-        f"description: Chỉ mục tự sinh của {ten_kho} — mỗi file .md một dòng (đường dẫn, mô tả, số file nối tới); Claude grep file này trước khi tìm toàn bộ.",
+        f"description: Chỉ mục tự sinh của {ten_kho} — mỗi file .md một dòng (đường dẫn, tầng theo trục tri thức, mô tả, số file nối tới); Claude grep file này trước khi tìm toàn bộ.",
         "---",
         "",
         f"# Chỉ mục {ten_kho}",
@@ -182,7 +193,8 @@ def main():
         dong += [f"## {g}", ""]
         for f in nhom[g]:
             rel = os.path.relpath(f, os.path.dirname(chi_muc) or ".")
-            dong.append(f"- [{f}]({rel}) — {desc[f][0]} · ←{len(toi[f])}")
+            t = tang_cua(goc, f)
+            dong.append(f"- [{f}]({rel}) — " + (f"tầng {t} · " if t is not None else "") + f"{desc[f][0]} · ←{len(toi[f])}")
         dong.append("")
     noi_dung = "\n".join(dong)
     p = os.path.join(goc, chi_muc)

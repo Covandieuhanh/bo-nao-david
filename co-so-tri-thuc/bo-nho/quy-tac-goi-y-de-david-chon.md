@@ -13,7 +13,7 @@ Sản phẩm làm từ tài nguyên David đưa (video, highlight, podcast, bài
 định → Claude tự chọn; câu David không trả lời, "làm đi", "theo skill" = theo mặc định skill + đề xuất của Claude. Duyệt rồi làm một mạch,
 **không hỏi giữa chừng**; báo "đã chọn X vì Y" ở báo cáo cuối để David sửa ở bản cuối. Chỉ dừng khi đăng/gửi/xoá hoặc tín hiệu nặng.
 
-**How to apply:** đề xuất không bao giờ trái mặc định skill; yêu cầu làm được trong mặc định thì giữ mặc định (vd. "tập trung vào điện
+**How to apply:** đề xuất không bao giờ trái mặc định skill; yêu cầu làm được trong mặc định thì giữ mặc định (ví dụ: "tập trung vào điện
 thoại" ≠ đổi khung). Liên quan [[quy-tac-tu-hoi-khi-mo-ho]], [[video-clip-ngan-dung-doc-lap]].
 
 Nhà của luật: `ky-nang/chuan-muc-lam-viec.md` mục 2 + skill `thu-thap-yeu-cau`. Ghi nhớ này giữ ngày, lời David, lý do.

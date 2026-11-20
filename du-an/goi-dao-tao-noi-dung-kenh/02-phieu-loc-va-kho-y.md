@@ -15,7 +15,7 @@ Chấm 0–2 mỗi tiêu chí (2 = rõ, 1 = có nhưng mờ, 0 = không).
 | 4 | **Kéo bình luận** (có câu mở giữ người xem + chỗ hỏi tự nhiên) | | |
 | 5 | **Người nói đáng tin** (chuyện thật, trải nghiệm thật) | | |
 
-**Tổng ……/10** → 9–10 làm đủ bộ (bản dài + clip + bài viết) · 7–8 làm bản chính · 5–6 chỉ clip / bài ngắn · ≤ 4 cất kho hoặc bỏ.
+**Tổng ……/10** → 9–10 làm đủ bộ (bản dài + clip + bài viết) · 7–8 làm bản chính · 5–6 chỉ clip / bài ngắn · tối đa 4 cất kho hoặc bỏ.
 
 - **3 phần:** Vấn đề …… · Giải pháp …… · Thực thi …… (thiếu phần nào: ……)
 - **Ranh giới:** không chạm / chạm ở …… → xử lý: ……

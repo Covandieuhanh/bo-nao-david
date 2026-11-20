@@ -34,7 +34,7 @@ Học để Claude hiểu đúng ý và trả lời hợp giọng; khi viết b�
 ## Bài viết chữ trên Facebook cá nhân (phần lớn còn hướng cũ)
 - Trang trọng hơn lúc nói: tự gọi "David"; câu dài, một đoạn liền; từ hay gặp "nhân duyên", "phụng sự", "thấu hiểu", "biết ơn", "xứng đáng", "chiêm nghiệm".
 - **Giữ:** câu có hình ảnh của nghề, như "văn vẫn phải ôn, võ vẫn phải luyện"; tự nhìn lại bản thân, như "nhận biết và thấu hiểu chính mình ở hiện tại"; lòng biết ơn khi nó gắn với một việc cụ thể.
-- **Bỏ cho thương hiệu trainer:** "hệ sinh thái", "doanh chủ"; "giải pháp", "đối tác" đứng trống không kèm việc cụ thể ("giải pháp" dùng được khi trỏ đúng vấn đề vừa kể, vd. "giải pháp để xử lý dứt điểm vấn đề này"; bài công nghệ được dùng khi nói rõ giải việc gì, cho ai, ra kết quả gì); lời chào mừng trang trọng kiểu sự kiện; "nhân duyên", "phụng sự" dùng dày vì dễ nghe xa người đọc mới.
+- **Bỏ cho thương hiệu trainer:** "hệ sinh thái", "doanh chủ"; "giải pháp", "đối tác" đứng trống không kèm việc cụ thể ("giải pháp" dùng được khi trỏ đúng vấn đề vừa kể, ví dụ: "giải pháp để xử lý dứt điểm vấn đề này"; bài công nghệ được dùng khi nói rõ giải việc gì, cho ai, ra kết quả gì); lời chào mừng trang trọng kiểu sự kiện; "nhân duyên", "phụng sự" dùng dày vì dễ nghe xa người đọc mới.
 - Khi bài viết và lời nói lệch nhau, theo cách David nói.
 
 ## Nâng cấp giọng cho thương hiệu trainer (hướng David duyệt)
@@ -54,7 +54,7 @@ Học để Claude hiểu đúng ý và trả lời hợp giọng; khi viết b�
 4. **Giữ 1–2 cụm đặc trưng** của David mỗi bài ("thật sự là", "cứ vững tin", "đúng không?") — không nhồi.
 5. **Kết theo kiểu dẫn dắt của bài** (Không · Gợi mở · Mời — câu kết và giá: khối 08).
 6. **Lằn ranh** của kênh đang đăng: khối 00 mục 3.
-7. **Emoji** tối đa 1–2 / bài, chỉ khi David dùng trong lời (vd. 🇻🇳). **Hashtag** 2–3 cụ thể, tiếng Việt không dấu (#lamchubanthan #quanlymoi).
+7. **Emoji** tối đa 1–2 / bài, chỉ khi David dùng trong lời (ví dụ: 🇻🇳). **Hashtag** 2–3 cụ thể, tiếng Việt không dấu (#lamchubanthan #quanlymoi).
 8. **Facebook cá nhân**: giọng đời thường hơn, có thể chỉ 1–2 câu + chia sẻ lại bài trang.
 
 ## Ví dụ (từ lời podcast, đoạn 4:44–5:40)

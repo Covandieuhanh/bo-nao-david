@@ -73,7 +73,7 @@ Cách viết + khi nào dùng từng kiểu: `bo-cuc.md`.
 | Kiểu | props | Khi |
 |---|---|---|
 | Làm tối viền | `toi: true` | câu tâm tình / câu muốn người xem lặng lại nghe |
-| Chữ nhấn cạnh mặt | `text: 'DÒNG 1\nDÒNG 2'` ≤ 4 chữ, trích lời, dòng cuối màu nhấn; `at` = giây bật | cụm đắt người nói vừa thốt ra |
+| Chữ nhấn cạnh mặt | `text: 'DÒNG 1\nDÒNG 2'` tối đa 4 chữ, trích lời, dòng cuối màu nhấn; `at` = giây bật | cụm đắt người nói vừa thốt ra |
 | Biểu tượng nhỏ cạnh mặt | `icon: '<tên>'`, `at` | vật / việc cụ thể, không cần cả màn minh hoạ |
 Ví dụ: `{id: 'n1', type: 'nhan', start: 37.4, end: 42.1, props: {text: 'NHẤC CHÂN LÊN', at: 39.9}}` — 2–5 s, không chồng cảnh khác.
 Không che ai: `vi-tri-nhan.py` (vi-tri-khuon-mat.sh) ghi mọi người + người đang nói vào `mat.js`; nhan.jsx đặt chữ / biểu tượng vào khoảng
@@ -129,12 +129,12 @@ hơn `illus`. Vlog (`ke-hoach.json` fx): `{"type": "diagram", "c", "at", "len", 
    việc). Câu hành động rơi vào 4 s cuối → đặt màn hành động ngay trước màn chốt.
 4. **Cảnh cuối luôn là màn chốt** (khối 08): `{id: 'chot', type: 'cta', start: <thời lượng − 4>, end: <thời lượng>, props: {text, kind}}`
    — `text` = nguyên văn câu David nói cuối video (thời lượng = `duration` trong du-an.js; cảnh trước đó phải kết thúc trước mốc này).
-5. Sau khi viết (và mỗi lần sửa mốc) canh.js: `zsh $SKILL/scripts/vi-tri-khuon-mat.sh "$P"` (khối 05; lần đầu dò mặt ~1 phút / 5 phút
+5. Sau khi viết (và mỗi lần sửa mốc) canh.js: `zsh $SKILL/scripts/vi-tri-khuon-mat.sh "$P"` (khối 05; lần đầu dò mặt khoảng 1 phút / 5 phút
    video). Đọc `kiem-tra/khuon-mat/placement.md`: cảnh không có chỗ tránh được **mặt + đầu + vai + ngực** → script tự chuyển toàn màn hình.
    Muốn giữ lớp phủ: `place: {top: <px>, scale: 0.6}` hoặc `place: {full: false}` trong cảnh (thứ tự khoá: `id, type, start, end, place,
    props`). Cảnh toàn màn hình (`FULL`, gồm cả thẻ toàn cảnh) che hết hình nên không cần tránh. Ngang pillar: lớp phủ ở cột trái.
 6. *Khung ngang từ gốc dọc* — viết thêm `SIDES` (mẫu trong canh.js): `title` = chủ đề video ngắn gọn, `speaker`, `keywords` = từ
-   khoá ý đang nói (đổi theo từng đoạn ~15–40 s, ≤ 3 từ, mốc = lúc bắt đầu ý), `points` = 5–9 ý chính theo thứ tự nói (≤ 4 từ mỗi ý,
+   khoá ý đang nói (đổi theo từng đoạn khoảng 15–40 s, tối đa 3 từ, mốc = lúc bắt đầu ý), `points` = 5–9 ý chính theo thứ tự nói (tối đa 4 từ mỗi ý,
    mốc = lúc bắt đầu nói ý đó). Chữ lấy từ lời nói. Ô từ khoá tự ẩn khi thẻ/chữ to chiếm ô; không chồng hai lớp phủ.
 
 **Minh hoạ: biểu tượng vẽ (mặc định) hoặc ảnh** (luật ở `../../quy-tac-chung.md` mục 4). Biểu tượng: `icon: '<tên>'` thay `photo` trong
@@ -152,11 +152,11 @@ python3 -I $SKILL/scripts/kho-anh-openverse.py fetch "$P" "$P/hinh-anh/anh-chon.
 ```
 Ảnh vào `chuyen-dong/public/anh/<key>.jpg`; dùng trong canh.js qua `photo: '<key>.jpg'`.
 
-**Giữ cảnh sau chữ cuối:** hình / chữ chạy theo lời không tắt ngay khi chữ cuối vừa hiện: hết cảnh ≥ mốc phần tử cuối + 0,5 s hiện
+**Giữ cảnh sau chữ cuối:** hình / chữ chạy theo lời không tắt ngay khi chữ cuối vừa hiện: hết cảnh ít nhất mốc phần tử cuối + 0,5 s hiện
 vào + `giu_sau_s` (hồ sơ chung) + 0,3 s mờ ra (+`giu_moi_chu_s` mỗi chữ nhãn vượt 3), tối đa 6 s từ đầu cảnh, không lấn lớp kế tiếp /
 màn chốt. Khung dựng TỰ kéo dài khi render (`thu-vien-tai-nguyen/giu.js`, dùng ở montage `chuong-trinh.jsx` + remotion `goc.jsx`) — viết `len`
 như thường, không tính tay. `keepEnd: true` = tắt luật cho lớp đó. Áp cho: illus · action (tính từ `doneAt`) · chips · pow · listItem ·
-kinetic · scene. Bị chặn bởi trần 6 s (phần tử cuối hiện sau giây thứ ~4 của cảnh) → dời `start`/`at` của cảnh muộn hơn cho phần tử
+kinetic · scene. Bị chặn bởi trần 6 s (phần tử cuối hiện sau giây thứ khoảng 4 của cảnh) → dời `start`/`at` của cảnh muộn hơn cho phần tử
 đầu sát lúc nói.
 
 ## 8. Luật chuyển động (code: `thu-vien-tai-nguyen/chuyen-dong.js` + `chu-hien.jsx`)
@@ -168,14 +168,14 @@ Chuyển động phải dẫn mắt tới ý đang nói, không để trang trí
 - **Kiểu vào theo ý của câu**, không để mọi cảnh cùng trồi lên: 1 hình = phóng tại chỗ · nhân quả = đi theo hướng đọc · so sánh = hai
   phía tiến vào · danh sách = trồi lên lần lượt.
 - **Nối gối, so le:** phần sau bắt đầu khi phần trước xong 30–50 %; từ cách nhau 60–120 ms, mục danh sách 40–80 ms.
-- **Chữ hiện từng từ, không dịch chỗ** (`ChuHien`): `mo` (mờ 6 px → nét, 0,13 s, cách ~0,067 s) · `muc` (xám nhạt → màu chữ) · `dong`
+- **Chữ hiện từng từ, không dịch chỗ** (`ChuHien`): `mo` (mờ 6 px → nét, 0,13 s, cách khoảng 0,067 s) · `muc` (xám nhạt → màu chữ) · `dong`
   (cả dòng mờ → nét). Kiểu đổi theo cảnh (`kieuChu(id)`), không để mọi cảnh mờ + trượt lên.
 - **Chỉ vị trí và cỡ được nảy nhẹ** — lò xo theo ζ (`loXo(zeta)`): 0,7–0,85 sang, 0,4–0,6 vui. Độ mờ và màu không nảy. Phản hồi một
   lần thì được (bên nhận đón việc), lặp lại thì không.
 - **Thoát:** mờ nhoè + tan 0,13–0,25 s, ngắn hơn lúc vào; khung toàn màn hình vào bằng mờ nhoè → nét (`vaoRa`).
-- **Giữ đủ đọc:** 0,5 s + 0,3 s mỗi từ (`docDu`); câu cuối video ≥ 2 s.
+- **Giữ đủ đọc:** 0,5 s + 0,3 s mỗi từ (`docDu`); câu cuối video ít nhất 2 s.
 - **Vào cảnh qua một vật trên màn hình khi được** (việc bay sang bên nhận, màu tràn từ vật ra), không mờ chồng cả khung.
-- **Chuyển cảnh có nguyên do, 3–5 kiểu một video:** tối nhẹ ~40 % trong 3 khung trước cắt cứng · đổi trên cùng nền (mờ ra 8 px → mờ
+- **Chuyển cảnh có nguyên do, 3–5 kiểu một video:** tối nhẹ khoảng 40 % trong 3 khung trước cắt cứng · đổi trên cùng nền (mờ ra 8 px → mờ
   vào) · màu tràn nền · vật trên màn hình lớn dần thành cảnh sau. Tối đa một phần ba số mối nối là cắt cứng.
 - Không cắt theo nhịp nhạc (video của David đi theo lời).
 - **Soát kiểu "máy làm" khi xem chụp thử:** che chữ đi, hình còn kể được ý không; mọi cảnh có vào giống nhau không; có gì còn

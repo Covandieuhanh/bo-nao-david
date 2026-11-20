@@ -21,7 +21,7 @@ description: "Khối 02 làm sạch video: cắt thừa đầu cuối, câu nói
   hình khi cần; không đổi cut nào thành `true` trừ đoạn lằn ranh David đã chọn cắt.
 - **Làm lại video cũ:** cắt màn tít + lời chào / giới thiệu kênh cũ bằng cut tay `ok: true` (mọi cut tự động `ok: false`,
   `zoom: "none"`); chữ / viền kênh cũ in trong hình → cắt khung (gotchas). Sau `ap-dung-lam-sach.py` chạy `doi-moc-loi.py "$P"`, không chép lại.
-- Các luật cắt ở mục dưới chỉ cho video ≤ 3 phút.
+- Các luật cắt ở mục dưới chỉ cho video tối đa 3 phút.
 
 ## Cách làm
 
@@ -40,9 +40,9 @@ zsh $SKILL/scripts/phan-tich-lam-sach.sh "$P"          # chạy nền, ~2–4 ph
 - **Đầu/cuối** (ok sẵn): kiểm `head.jpg`/`tail.jpg` — đang đi về chỗ, chỉnh máy, "ok bắt đầu nhé", "vậy thôi"
   rồi với tay tắt máy → dời `start`/`end` của cut cho gọn hơn. Câu chào mở đầu thật thì giữ;
   cười/vẫy tay chào sau câu cuối là phần kết → giữ (dời `start` của cut thừa cuối ra sau, hoặc bỏ cut).
-- **Khoảng lặng: CẮT sẵn** (`ok: true`, quy-tac-chung mục 2): lặng ≥ 0,45 s + tiếng đệm "ờ/ừm".
+- **Khoảng lặng: CẮT sẵn** (`ok: true`, quy-tac-chung mục 2): lặng ít nhất 0,45 s + tiếng đệm "ờ/ừm".
   Soát `diem-cat.md`: lặng ngay sau câu hỏi tu từ / trước cú chốt cảm xúc mà khoảng ngừng là chủ ý → đổi `ok: false` để giữ.
-  David muốn bản tự nhiên → chạy `phan-tich-lam-sach.sh "$P" tu-nhien` (chỉ liệt kê lặng ≥ 3 s, không cắt).
+  David muốn bản tự nhiên → chạy `phan-tich-lam-sach.sh "$P" tu-nhien` (chỉ liệt kê lặng ít nhất 3 s, không cắt).
 - **Nói lại** (`ok: false`): đọc `moc-tung-tu.srt` quanh mốc; đúng là bỏ dở rồi nói lại → giữ **lần nói sau cùng**, đặt
   `start` = đầu lần nói hỏng, `end` = ngay trước lần nói giữ lại (cắt giữa hai từ), `ok: true`. Thêm cut tay cho
   lần nói lại mà script không bắt được (câu bỏ dở giữa chừng rồi nói lại khác chữ).

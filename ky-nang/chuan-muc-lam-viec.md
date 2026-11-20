@@ -42,7 +42,7 @@ Trong 4 phần, cách chọn từng điểm:
 - **Skill / hồ sơ đã định → làm đúng như vậy**, không đề xuất khác. Đề xuất của Claude không bao giờ trái mặc định của
   skill; thấy cần khác mặc định thì đó là tín hiệu 2 (mâu thuẫn) — dừng hỏi, không tự đổi.
 - **Skill chưa định → Claude tự chọn** phương án tốt nhất theo tiêu chí của skill, ghi "chọn X vì Y" ngay trong phần Kế hoạch để David duyệt.
-- **Yêu cầu của David làm được trong mặc định → giữ mặc định**, không đổi thứ khác để đáp ứng (vd. "tập trung vào điện thoại" ≠ đổi khung).
+- **Yêu cầu của David làm được trong mặc định → giữ mặc định**, không đổi thứ khác để đáp ứng (ví dụ: "tập trung vào điện thoại" ≠ đổi khung).
 - **Câu David không trả lời, "làm đi", "theo skill"** = theo mặc định của skill, phần chưa định thì theo đề xuất của Claude.
 - **Sau khi duyệt, chỉ dừng hỏi khi:** đăng / gửi / xoá trên mạng xã hội / mật khẩu (`AGENTS.md` luật 4) · tín hiệu nặng của `thu-thap-yeu-cau` (mâu thuẫn luật, khó đảo
   ngược, thiếu file / nguồn hỏng, hiểu được nhiều cách làm đổi hẳn kết quả) · sửa thông tin trực tiếp về David, màu chủ đạo, chữ ký
@@ -123,7 +123,7 @@ Ghi lại gì, ở đâu, đi lên tầng nào: trục `../co-so-tri-thuc/truc-t
 | David dán log hoặc văn bản dài | Vẫn làm; cuối việc nhắc lần sau chỉ cần đưa đường dẫn file |
 | Tới bước nhẹ | Nhắc đổi mô hình rẻ hơn (mục 3) |
 | Buổi nhìn lại cuối tuần, hoặc `co-so-tri-thuc/bo-nho/` quá 40 ghi nhớ | Đề nghị "dọn bộ nhớ" (skill `consolidate-memory`) |
-| Máy đo chồng chéo báo "NÊN NÂNG CẤP", hoặc đã có ≥ 10 video có số liệu từ lần nâng cấp trước | Nhắc một dòng (mục 4) |
+| Máy đo chồng chéo báo "NÊN NÂNG CẤP", hoặc đã có ít nhất 10 video có số liệu từ lần nâng cấp trước | Nhắc một dòng (mục 4) |
 | David hỏi phiên tốn vào đâu | Chạy "giải thích mức dùng" (skill `explain-usage`) |
 
 **Thói quen của David** (để Claude biết mà nhắc): mỗi việc một phiên · xong thì "cập nhật não" rồi đóng · làm liền một mạch ·

@@ -19,5 +19,5 @@ description: "Gói 1 dựng video bằng AI, phần 4: phiếu khảo sát đầ
 
 ## C. Nghiệm thu (đủ cả 3 mới xong gói)
 - [ ] Tự dựng 1 video từ tư liệu mới, trainer chỉ ngồi xem
-- [ ] ≥ 4 video đã dựng xong bằng cách này
+- [ ] ít nhất 4 video đã dựng xong bằng cách này
 - [ ] Lời chứng (ẩn danh nếu muốn) + số trước/sau

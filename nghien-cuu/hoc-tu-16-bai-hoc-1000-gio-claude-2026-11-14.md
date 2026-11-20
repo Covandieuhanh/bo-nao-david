@@ -15,7 +15,7 @@ Nguồn: https://nhatanh.ai/1000-gio/ (bài viết đi kèm video YouTube kênh 
 | 4 | Đưa ví dụ thật thay vì tính từ | Skill `phan-tich-video-mau` | — |
 | 5 | Phỏng vấn từng câu, ghi ngay vào file | `thu-thap-yeu-cau` hỏi theo vòng nhưng chưa ghi file | **Đã thêm** bước ghi `du-an/phong-van/` |
 | 6 | Nhắc lần 2 thì thành quy tắc | `hoc-lien-tuc` gom tín hiệu cuối tuần | **Đã thêm** "nhắc lần hai thì thành luật ngay" (chuan-muc mục 4) |
-| 7 | CLAUDE.md ngắn, dạng mục lục (≤ 50 dòng) | CLAUDE.md 3 dòng, AGENTS 62 dòng; `david.md` 137 dòng nạp ở mọi phiên | **Đã làm 14/11**: `david.md` còn 50 dòng (mục 1–3), mục 4–9 chuyển nguyên văn sang 4 file, bảng số mục giữ nguyên |
+| 7 | CLAUDE.md ngắn, dạng mục lục (tối đa 50 dòng) | CLAUDE.md 3 dòng, AGENTS 62 dòng; `david.md` 137 dòng nạp ở mọi phiên | **Đã làm 14/11**: `david.md` còn 50 dòng (mục 1–3), mục 4–9 chuyển nguyên văn sang 4 file, bảng số mục giữ nguyên |
 | 8 | 3 lớp trí nhớ: quy tắc · ghi chú · việc đang dở | AGENTS + `bo-nho/` + `bao-cao-trang-thai.md` | — |
 | 9 | Context dài thì dễ sót; tóm tắt sớm (`/autocompact`) | Bot tự `/clear` sau 30 phút nghỉ | **Đã làm 14/11**: `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE=60` (cai-hook.py + cài đặt bot) |
 | 10 | Bàn giao trước khi mở phiên mới | Có file theo dõi | **Đã thêm** dòng "viết lời bàn giao" (chuan-muc mục 5) |

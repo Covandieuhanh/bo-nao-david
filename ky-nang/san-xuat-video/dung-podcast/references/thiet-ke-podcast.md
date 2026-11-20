@@ -33,7 +33,7 @@ Phụ đề + thanh thời gian ở lớp trên cùng → không cảnh nào che
 1. Đổi chủ đề / câu hỏi mở ra đoạn mới → `TOPICS` đổi ngay mốc đó (trích phần chính), hoặc `card quote`.
 2. Câu có cấu trúc (tầng bậc, mốc, so sánh, trước → sau) → `diagram` (khối 07); nhắc người / nơi / tổ chức có thật → `diagram` `anh`.
 3. Con số / mốc / tên riêng → `card` (`ages`, `year`, `years4`, `daily`, `vs`…) hoặc `illus` `count`.
-4. Liệt kê, các bước → `card steps` (≤ 4 mục) hoặc `build` / `montage` (toàn màn hình).
+4. Liệt kê, các bước → `card steps` (tối đa 4 mục) hoặc `build` / `montage` (toàn màn hình).
 5. Người nói tự giới thiệu tên → `lower` (tên + vai) — chỉ khi có trong lời.
 6. Câu cuối → màn chốt `cta` nguyên văn (khối 08).
 

@@ -11,6 +11,7 @@ Gốc: [bản đồ bộ não](README.md).
 - [CLAUDE](../CLAUDE.md) — Cấu hình Claude Code của repo, nạp AGENTS.md.
 - [chi-dan-toan-cuc](../co-so-tri-thuc/chi-dan-toan-cuc.md) — Luật chung mọi phiên (bản gốc ~/.claude/CLAUDE.md).
 - [truc-tri-thuc](../co-so-tri-thuc/truc-tri-thuc.md) — **Trục tri thức (tầng 0)**: cách bộ não tiếp nhận, xử lý, học, nâng cấp mọi thông tin, dựng theo cách mô hình AI được làm ra (dữ liệu → chưng cất → phản hồi → đánh giá → ra bản).
+- [bai-kiem toàn bộ não](../co-so-tri-thuc/bai-kiem/README.md) — Bộ đánh giá của trục: 16 tình huống từ chính lời David đã sửa; một trí tuệ nhân tạo chưa đọc gì làm bài, đạt ít nhất 15/16.
 - [chuan-muc-lam-viec](../ky-nang/chuan-muc-lam-viec.md) — Thói quen làm việc chung mọi skill đọc trước: khi hai điều ngược nhau, đọc đúng phần, khi nào hỏi, trong lúc làm, cuối việc, giữ phiên gọn.
 - [quy-uoc-lien-ket](../co-so-tri-thuc/quy-uoc-lien-ket.md) — Bộ quy tắc liên kết của bộ não — mô tả đầu file, đường nối, bản đồ nội dung, chỉ mục tự sinh, ghi chú kiến thức, máy kiểm; để Claude tra nhanh, ít token, không sót.
 - [bang-thuat-ngu](../co-so-tri-thuc/bang-thuat-ngu.md) — Bảng thuật ngữ đặt tên: thuật ngữ kinh doanh tiếng Anh → tiếng Việt → tên file/thư mục dùng; tên bắt buộc của công cụ; cấu trúc thư mục.
@@ -23,15 +24,17 @@ Gốc: [bản đồ bộ não](README.md).
 - [chuan-hoa-ten](../du-an/chuan-hoa-ten.md) — Bản đồ chuẩn hoá tên toàn bộ (14/11, đã xong): tên cũ → tên mới theo thuật ngữ kinh doanh tiếng Anh dịch sang tiếng Việt.
 - [chuan-hoa-ky-nang](../du-an/chuan-hoa-ky-nang.md) — Dự án chuẩn hoá bộ skill theo thói quen làm việc chung (08/11): các bước, mốc commit, việc còn lại.
 - [danh-gia-luat](../du-an/danh-gia-luat.md) — Rà soát luật bộ skill video (08/11), bước 1 của chuẩn hoá skill: luật trùng, lệch, cần gộp.
-- [tai-ban-3](../du-an/tai-ban-3.md) — Tái bản 3 toàn bộ bộ não (mở 14/11): theo dõi chung, file từng phiên con.
-- [tai-cau-truc-2](../du-an/tai-cau-truc-2.md) — Tái bản lần 2 toàn bộ bộ não (10/11): điều phối các phiên con, mốc, kết quả.
-- [tai-cau-truc-2-nao](../du-an/tai-cau-truc-2-nao.md) — Tái bản 2 (10/11), phần bộ não: AGENTS.md, CLAUDE.md, david.md, chuan-muc-lam-viec.
-- [tai-cau-truc-2-hoi](../du-an/tai-cau-truc-2-hoi.md) — Tái bản 2 (10/11), phần bộ hỏi skill thu-thap-yeu-cau.
-- [tai-cau-truc-2-ghi-nho](../du-an/tai-cau-truc-2-ghi-nho.md) — Tái bản 2 (10/11), phần dọn ghi nhớ bo-nho: gộp, bỏ, chuyển lưu trữ.
+- [nang-cap-4](../du-an/nang-cap/nang-cap-4.md) — Nâng cấp 4 (20/11): máy đo đổi sang đo trùng / rối, video gần trùng 49 xuống 16.
+- [nang-cap-5](../du-an/nang-cap/nang-cap-5.md) — Nâng cấp 5 (20/11): trục tri thức, gắn tầng, bộ kiểm toàn não, luật viết đủ từ.
+- [tai-ban-3](../du-an/nang-cap/tai-ban-3.md) — Tái bản 3 toàn bộ bộ não (mở 14/11): theo dõi chung, file từng phiên con.
+- [tai-cau-truc-2](../du-an/nang-cap/tai-cau-truc-2.md) — Tái bản lần 2 toàn bộ bộ não (10/11): điều phối các phiên con, mốc, kết quả.
+- [tai-cau-truc-2-nao](../du-an/nang-cap/tai-cau-truc-2-nao.md) — Tái bản 2 (10/11), phần bộ não: AGENTS.md, CLAUDE.md, david.md, chuan-muc-lam-viec.
+- [tai-cau-truc-2-hoi](../du-an/nang-cap/tai-cau-truc-2-hoi.md) — Tái bản 2 (10/11), phần bộ hỏi skill thu-thap-yeu-cau.
+- [tai-cau-truc-2-ghi-nho](../du-an/nang-cap/tai-cau-truc-2-ghi-nho.md) — Tái bản 2 (10/11), phần dọn ghi nhớ bo-nho: gộp, bỏ, chuyển lưu trữ.
 
 ## Ghi nhớ quy tắc và bộ não (sổ quyết định)
 - [MEMORY](../co-so-tri-thuc/bo-nho/MEMORY.md) — Mục lục bộ nhớ: mỗi ghi nhớ một dòng.
-- [quy-tac-cong-cu-cai-dua-vao-ky-nang](../co-so-tri-thuc/bo-nho/quy-tac-cong-cu-cai-dua-vao-ky-nang.md) — Công cụ David đã tải/cài (vd. pyannote) là để nâng skill — giúp việc tốt hơn thì đưa thẳng vào skill dựng video, không để nằm không (2026-11-07)
+- [quy-tac-cong-cu-cai-dua-vao-ky-nang](../co-so-tri-thuc/bo-nho/quy-tac-cong-cu-cai-dua-vao-ky-nang.md) — Công cụ David đã tải/cài (ví dụ: pyannote) là để nâng skill — giúp việc tốt hơn thì đưa thẳng vào skill dựng video, không để nằm không (2026-11-07)
 - [quy-tac-david-md-chi-dieu-co-dinh](../co-so-tri-thuc/bo-nho/quy-tac-david-md-chi-dieu-co-dinh.md) — co-so-tri-thuc/david.md chỉ ghi điều cố định đã chốt; ý tưởng, góp ý đang cân nhắc ghi ở du-an/danh-sach-y-tuong.md
 - [quy-tac-duyet-ke-hoach-4-phan](../co-so-tri-thuc/bo-nho/quy-tac-duyet-ke-hoach-4-phan.md) — Việc gì cũng trình đủ 4 phần (Mục tiêu · Kế hoạch · Quy trình · Thực thi), David duyệt rồi mới làm; duyệt rồi tự làm trọn tới khi chắc dùng được; việc tự chạy hiện…
 - [quy-tac-goi-trainer-chung](../co-so-tri-thuc/bo-nho/quy-tac-goi-trainer-chung.md) — Gói trainer công nghệ chỉ dạy một kỹ năng thuần, cách làm chung bằng AI và máy của học viên; không tư duy, không chi tiết riêng của David

@@ -17,9 +17,9 @@ description: "Lỗi thường gặp khi dựng video (ffmpeg, Remotion, Whisper�
 - npm báo `allow-scripts` cho esbuild → `npm approve-scripts esbuild` (tao-du-an.sh đã làm).
 
 ## Video gốc lạ
-- iPhone đã cắt khung (vd. 770×1368) hoặc 720p: component vẽ theo 1080×1920 → `ap-dung-lam-sach.py` tự phóng về khung
+- iPhone đã cắt khung (ví dụ: 770×1368) hoặc 720p: component vẽ theo 1080×1920 → `ap-dung-lam-sach.py` tự phóng về khung
   chuẩn (tỉ lệ ≈ 9:16 thì đúng 1080×1920). Luôn chạy bước làm sạch, kể cả khi không cắt gì.
-- Quay ngoài trời / micro điện thoại: lời nói chỉ to hơn nền ồn ~8–10 dB → ngưỡng cố định "nền + 12 dB" coi cả video
+- Quay ngoài trời / micro điện thoại: lời nói chỉ to hơn nền ồn khoảng 8–10 dB → ngưỡng cố định "nền + 12 dB" coi cả video
   là im lặng ("Không thấy lời nói thật"). Ngưỡng giờ lấy min(nền + 12, điểm giữa nền và lời nói).
 
 ## Remotion
@@ -30,7 +30,7 @@ description: "Lỗi thường gặp khi dựng video (ffmpeg, Remotion, Whisper�
 - `defaultProps` phải là dữ liệu thuần (JSON) — truyền tên loại cảnh (`type`), không truyền component/hàm.
 - Chữ trong khung `overflow: hidden` (hiệu ứng trồi lên) **cắt mất dấu dưới** (ạ, ợ) → thêm `paddingBottom` + `marginBottom` âm.
 - Chờ font bằng `delayRender` + `document.fonts.load` (đã có trong goc.jsx); thiếu thì khung đầu dùng font dự phòng.
-- 8 GB RAM: `concurrency: 4`. Lần đầu chạy tải Chrome headless (~100 MB).
+- 8 GB RAM: `concurrency: 4`. Lần đầu chạy tải Chrome headless (khoảng 100 MB).
 - Chữ to (kinetic, hook) tự co cỡ theo dòng dài nhất (≈ 0,46 em/ký tự với Barlow Condensed in hoa có dấu) → không xuống
   hàng lẻ; đổi font thì đo lại hệ số.
 - Chữ dài tự xuống dòng → đè lên phần tử bên dưới. Component nên tự giảm cỡ chữ theo độ dài; luôn kiểm tra bằng ảnh chụp.
@@ -42,7 +42,7 @@ description: "Lỗi thường gặp khi dựng video (ffmpeg, Remotion, Whisper�
 - **Wikimedia trả 429 cho urllib của Python** và cho tải song song → dùng curl, tuần tự, nghỉ 0,4–0,5 s.
 - Wikimedia chỉ cho độ rộng thu nhỏ chuẩn (500, 960, 1280); độ rộng lạ trả 400.
 - Không đưa email/tên người dùng vào User-Agent.
-- Ảnh có người nổi tiếng dễ nhận ra (vd. vận động viên hút xì gà) → bỏ. Clip-art giữa ảnh chụp → lạc tông, bỏ.
+- Ảnh có người nổi tiếng dễ nhận ra (ví dụ: vận động viên hút xì gà) → bỏ. Clip-art giữa ảnh chụp → lạc tông, bỏ.
 - Ảnh CC BY / BY-SA bắt buộc ghi nguồn → `nguon-anh.txt` để dán vào mô tả bài đăng (video không có màn nguồn ảnh cuối).
   Cách ghi nguồn này hợp lệ khi video đăng kèm mô tả; nhắc người dùng dán vào mỗi lần đăng.
 
@@ -51,20 +51,20 @@ description: "Lỗi thường gặp khi dựng video (ffmpeg, Remotion, Whisper�
 - Clip ProRes 4444 alpha: `yuva444p10le`; overlay bằng `setpts=PTS-STARTPTS+<giây>/TB` + `eof_action=pass`.
 - Âm thanh gốc 44,1 kHz + đoạn câm 48 kHz → `aresample=48000` trước `concat`.
 - **`anullsrc` mặc định là u8 (8-bit)** → `concat` với tiếng gốc hạ CẢ bài xuống 8-bit + dither → tiếng rè/xì suốt video
-  (dải > 12 kHz tăng ~11 dB; rõ nhất ở bản thu nhỏ tiếng). Luôn `aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo`
+  (dải > 12 kHz tăng khoảng 11 dB; rõ nhất ở bản thu nhỏ tiếng). Luôn `aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo`
   cho MỌI nhánh audio trước `concat`/`amix`. Kiểm: năng lượng `highpass=f=12000` của bản cuối ≈ bản gốc (±1 dB).
 - Mốc thời gian luôn làm tròn về khung (`round(sec * fps)`) ở mọi nơi (scenes, timeline, preview) để khớp nhau.
 - 17 clip ProRes ≈ 2 GB — báo người dùng về dung lượng.
 
 ## Làm sạch video gốc (chế độ 1 video)
 - **Video cũ của kênh cũ**: hay có **chữ / viền in cứng vào hình** — dải tên tập + ngày + website ở đáy
-  (từ dòng ~902/1080), viền trắng bo góc sát mép (~40 px). Luôn xem 1 khung ở giữa video **cỡ lớn** trước khi dựng; có thì cắt
+  (từ dòng khoảng 902/1080), viền trắng bo góc sát mép (khoảng 40 px). Luôn xem 1 khung ở giữa video **cỡ lớn** trước khi dựng; có thì cắt
   khung 16:9 bên trong rồi phóng lại 1920×1080 (`crop=1592:896:200:0` cho dải đáy; `crop=1808:1017:56:31` cho viền), làm TRƯỚC face_place.
   Màn tít mở đầu cũ ("PODCAST TẬP 4…") + lời chào/giới thiệu kênh cũ → cắt (quy-tac-chung mục 2, làm lại video cũ).
 - **Whisper chép ảo** cả bài một câu ("Hãy subscribe cho kênh Ghiền Mì Gõ…") ở video có tiếng trầm/nhạc mở đầu → phan-tich-lam-sach.sh tự
   chép lại với tiếng đã lọc (`highpass=f=120,dynaudnorm`); còn ảo thì thêm `-mc 0` (tắt ngữ cảnh) và chép riêng đoạn đầu rồi ghép.
 - Chỉ cắt vài đoạn (lời chào) ở video dài → **không chép lại** bản sạch: `doi-moc-loi.py "$P"` dời lời bản thô sang mốc bản sạch.
-  Đặt mốc cắt ở khoảng lặng thật (đo RMS 50 ms), không theo mốc từ của Whisper (lệch ~0,3–0,5 s → lẹm chữ "Đò").
+  Đặt mốc cắt ở khoảng lặng thật (đo RMS 50 ms), không theo mốc từ của Whisper (lệch khoảng 0,3–0,5 s → lẹm chữ "Đò").
 - Bản thô đổi tên thành `video-goc-tho.<ext>` TRƯỚC khi ghi `video-goc.mp4` — macOS coi `video-goc.MP4` và
   `video-goc.mp4` là một file, ghi thẳng sẽ đè mất bản gốc đang đọc.
 - Mốc trong `diem-cat.json` luôn là mốc **bản thô**; mốc trong canh.js là mốc **bản sạch** — quy đổi qua `cac-doan.json`.
@@ -72,14 +72,14 @@ description: "Lỗi thường gặp khi dựng video (ffmpeg, Remotion, Whisper�
   không bằng khoảng cách giữa các từ.
 - Mỗi đoạn có fade âm 15–30 ms ở hai đầu, không thì mối cắt kêu "tách".
 - ffmpeg 8 bỏ `-filter_complex_script` → dùng `-/filter_complex <file>`.
-- libx264 1080×1920 trên máy 8 GB mất ~18 phút cho 3,5 phút video; `h264_videotoolbox -b:v 20M` chỉ ~1,5 phút.
+- libx264 1080×1920 trên máy 8 GB mất khoảng 18 phút cho 3,5 phút video; `h264_videotoolbox -b:v 20M` chỉ khoảng 1,5 phút.
 - Câu "giống câu trước" chưa chắc là nói lại: "master… → siêu cao thủ…" là người nói giải thích lại có chủ ý → giữ.
 
 ## Đổi khung (dọc ↔ ngang)
 - Component luôn vẽ trên toạ độ khung dọc 1080×1920; khung ngang chỉ do `bo-cuc.js` (Place) thu/đặt lại → đừng sửa
   toạ độ trong component cho khung ngang. Loại cảnh toàn màn hình mới phải thêm vào `FULL` trong bo-cuc.js.
-- Pillar: `Scrim` tự tắt (nền hai bên đã tối); `hai-ben` render H.264 đặc (không alpha) ~1,3× thời lượng video.
-- Dò mặt: Vision (`nhan-dien-khuon-mat.swift`) — biên dịch lần đầu ~2 phút, lưu ở `~/.cache/dung-video-theo-phong-cach/khuon-mat`.
+- Pillar: `Scrim` tự tắt (nền hai bên đã tối); `hai-ben` render H.264 đặc (không alpha) khoảng 1,3× thời lượng video.
+- Dò mặt: Vision (`nhan-dien-khuon-mat.swift`) — biên dịch lần đầu khoảng 2 phút, lưu ở `~/.cache/dung-video-theo-phong-cach/khuon-mat`.
 - Khung cắt dọc đổi vị trí bằng `sendcmd` + `crop@rf x` (crop nhận lệnh x); đường dẫn file lệnh không được có dấu `:`.
 - Người nói đoán theo độ cử động miệng (độ lệch chuẩn của độ mở môi trong câu) — hai người cùng cười/nói chen nhau
   dễ sai → shot `?` trong ke-hoach.md phải đọc câu nói để quyết.
@@ -90,12 +90,12 @@ description: "Lỗi thường gặp khi dựng video (ffmpeg, Remotion, Whisper�
   sai ý. Hiện đúng tên theo Whisper + hỏi chính tả trong báo cáo.
 
 ## Vị trí lớp phủ (không che người nói)
-- Dải lớp phủ cố định ở đáy che cằm/miệng khi quay selfie trong xe, cầm máy thấp (mặt nằm ở y ~860–1170 trên 1920) →
+- Dải lớp phủ cố định ở đáy che cằm/miệng khi quay selfie trong xe, cầm máy thấp (mặt nằm ở y khoảng 860–1170 trên 1920) →
   người dùng chốt: hiệu ứng không toàn màn hình **không được che nhân vật**, vị trí không cố định. `vi-tri-khuon-mat.sh` dò mặt
   (Vision, 2 khung/giây) → `vi-tri.js`; ưu tiên 2 điểm neo (đáy/đỉnh) để các cảnh không nhảy vị trí lung tung.
 - Vision cho khung mặt không gồm tóc/cổ → script nới lên 0,4 chiều cao mặt và xuống 0,25; lấy phân vị 5–95% của cả cảnh
   (đầu lắc qua lại). Đoạn không thấy mặt (quay màn hình xe, cảnh đường) → giữ vị trí mặc định.
-- Selfie vừa đi vừa quay (IMG_3196): mặt to (cao ~440 px) và nhún liên tục → đệm cổ 0,25 mặt + phân vị 95% làm mọi cảnh
+- Selfie vừa đi vừa quay (IMG_3196): mặt to (cao khoảng 440 px) và nhún liên tục → đệm cổ 0,25 mặt + phân vị 95% làm mọi cảnh
   báo "che mặt". Khung Vision kết thúc ≈ cằm → giờ đệm 0,06 mặt, phân vị 93%, cho thu tới 55%. Thẻ ở 55–60% chữ khá nhỏ —
   cảnh nhiều chữ nhỏ nên đổi sang chữ to/biểu tượng hoặc cảnh toàn màn hình.
 - `vi-tri-khuon-mat.py` đọc `FULL` trong bo-cuc.js: dòng FULL có nhánh điều kiện (`...(project.podcast ? [] : ['card'])`) → phải lấy
@@ -103,9 +103,9 @@ description: "Lỗi thường gặp khi dựng video (ffmpeg, Remotion, Whisper�
 - Đổi mốc cảnh mà quên chạy lại `vi-tri-khuon-mat.py` → cảnh mới không có trong vi-tri.js → về vị trí mặc định (có thể che mặt).
 
 ## Chữ tiếng Việt (chữ to)
-- Barlow Condensed in hoa, `lineHeight` ~1 + khung `overflow: hidden` chừa cố định 34/30 px → ở cỡ 140–150 px dấu chồng dòng dưới
+- Barlow Condensed in hoa, `lineHeight` khoảng 1 + khung `overflow: hidden` chừa cố định 34/30 px → ở cỡ 140–150 px dấu chồng dòng dưới
   chạm dòng trên ("NGẪU", "NHIỀU"), dấu nặng bị cắt ("BỊ" → "BI"). Đã sửa cho CẢ HAI skill bằng `VN` (khung-podcast.js: giãn 1,14, chừa
-  0,5 em trên / 0,32 em dưới; chữ to ≤ 120, hook ≤ 118). Component chữ to mới phải dùng `VN`. Luôn soi ảnh chụp phóng to Ầ Ễ Ỗ Ị Ự.
+  0,5 em trên / 0,32 em dưới; chữ to tối đa 120, hook tối đa 118). Component chữ to mới phải dùng `VN`. Luôn soi ảnh chụp phóng to Ầ Ễ Ỗ Ị Ự.
 
 - **Hai dòng chữ to xếp chồng** cần khe `VN.gap` = 0,24 cỡ chữ (trước 0,1): dấu nặng dòng trên + dấu chồng dòng dưới chạm nhau
   ("MỘT NGÀY" / "RẤT LÀ ĐẶC BIỆT" — dấu dưới Ộ chạm dấu Ấ, người dùng chỉ ra). Nhãn có thể tự xuống dòng dùng
@@ -113,7 +113,7 @@ description: "Lỗi thường gặp khi dựng video (ffmpeg, Remotion, Whisper�
 - **Chữ to đứng ngay sau một dòng/khối khác** (kicker, vạch màu, "BƯỚC n", khung ảnh) phải chừa phía trên `aboveGap(size)` =
   0,4 cỡ chữ cho dấu chồng — đã gặp (IMG_3196, cảnh "cái cây"): "GỐC RỄ" đè lên dòng "Phải nuôi đến cả năm trời", và dòng đó
   lại chạm mép dưới khung ảnh (chữ đặt sát mép ảnh). Montage dọc giờ: ảnh y 440–1010, chữ bắt đầu 1044 (cách ảnh 34 px), chữ to
-  ≤ 120. Viết component mới: không xếp chữ to ngay dưới chữ khác bằng margin cố định nhỏ; luôn chụp thử khung có Ố Ễ Ỗ.
+  tối đa 120. Viết component mới: không xếp chữ to ngay dưới chữ khác bằng margin cố định nhỏ; luôn chụp thử khung có Ố Ễ Ỗ.
 
 - **Lớp phủ tràn xuống dải phụ đề**: ô có nội dung cao hơn dải lớp phủ (435 px trong toạ độ component) → khi đặt sát trên phụ đề,
   phần thừa nằm dưới phụ đề (người dùng chỉ ra: "10 TRIỆU" bị phụ đề đè). `Place` giờ có mép chặn cứng (`Clip`) ở đỉnh dải phụ
@@ -122,14 +122,14 @@ description: "Lỗi thường gặp khi dựng video (ffmpeg, Remotion, Whisper�
 
 ## Template dùng chung với podcast
 - `khung-podcast.js`, `san-khau.jsx`, `dong-thoi-gian.jsx`, `toan-man-hinh-ngang.jsx`, `bieu-tuong.jsx`, composition `nen` thuộc skill dung-podcast;
-  mọi nhánh podcast chỉ bật khi `project.podcast`. Sửa template → chụp thử cả một dự án tự quay (vd. edit-img0499) lẫn một
+  mọi nhánh podcast chỉ bật khi `project.podcast`. Sửa template → chụp thử cả một dự án tự quay (ví dụ: edit-img0499) lẫn một
   dự án podcast (dọc + ngang) trước khi coi là xong.
 - `chu-de.js`: SAFE dọc cố định (bottom 1420, rộng 830) — đúng cho mọi dự án dọc 1080×1920 (clean_apply luôn đưa về khung này).
 
 ## Phụ đề
 - Lần chạy Whisper theo từ (`-ml 1`) và theo câu cho kết quả khác nhau; cả hai đều có thể đè câu bịa lên câu thật cuối
   video ("Hãy subscribe cho kênh Ghiền Mì Gõ…" ở chỗ David nói "Xin chào") → đối chiếu lần chạy ở `kiem-tra/lam-sach/`.
-- Khung chữ phụ đề rộng ~37 ký tự ở cỡ 42 px; dòng dài hơn thì `textWrap: 'balance'` chia đều 2 dòng, tránh rơi 1 chữ.
+- Khung chữ phụ đề rộng khoảng 37 ký tự ở cỡ 42 px; dòng dài hơn thì `textWrap: 'balance'` chia đều 2 dòng, tránh rơi 1 chữ.
 
 ## Giao tiếp
 - Người dùng không xem được video trong khung chat → gửi file bằng SendUserFile và mô tả cảnh theo mốc thời gian.
@@ -189,7 +189,7 @@ description: "Lỗi thường gặp khi dựng video (ffmpeg, Remotion, Whisper�
 ## Điểm nhấn trên người `nhan`
 - Selfie vừa đi vừa quay: mặt xê dịch 30–40% chiều ngang trong một cảnh → đặt chữ theo trung vị mặt sẽ đè mặt. `vi-tri-nhan.py` ghi
   khoảng mặt (`l`, `r` = phân vị 10/90 suốt cảnh), nhan.jsx đặt chữ ngoài khoảng đó + chừa 0,3 bề rộng mặt.
-- Khung ngang KHÔNG đặt chữ dưới cằm (đè miệng + phụ đề). Hết chỗ → chữ tự thu cỡ cho vừa; chữ dài thì ngắt 2 dòng (≤ 9 ký tự / dòng) để giữ cỡ to.
+- Khung ngang KHÔNG đặt chữ dưới cằm (đè miệng + phụ đề). Hết chỗ → chữ tự thu cỡ cho vừa; chữ dài thì ngắt 2 dòng (tối đa 9 ký tự / dòng) để giữ cỡ to.
 
 - **Bố cục "người thu vào ô" (khung ngang): thẻ chữ canh giữa vùng trống bị đẩy lên đè dấu góc kênh** (BrandMark ở top 228 px) khi thẻ cao. Vùng nội dung giờ bắt đầu từ `max(SAFE.top, 320)`. Soát bằng ảnh rải đều cả video, không chỉ ảnh giữa cảnh.
 
@@ -213,17 +213,17 @@ người nói chưa từng chạy với dấu góc. Không do bài học video m
   `bocuc` `o-nguoi` + `the` (câu hành động) cho tới khi hai cảnh đó được làm lại cho khung ngang.
 - doan-gioi-thieu.py: mỗi đoạn một đầu vào riêng; dùng chung một đầu vào cho nhiều nhánh → ffmpeg giữ cả video trong bộ nhớ, video 14 phút bị SIGKILL.
 
-## Video cuộc gọi hợp tác (mất 4–5 giờ thay vì ~1 giờ) — đã chặn
+## Video cuộc gọi hợp tác (mất 4–5 giờ thay vì khoảng 1 giờ) — đã chặn
 | Lỗi | Hậu quả | Chặn ở đâu |
 |---|---|---|
-| Tự đổi khung sang dọc khi David chỉ nói "tập trung vào điện thoại" | làm lại từ đầu (~2 giờ) | SKILL "Đầu vào": khung chỉ đổi khi David nói rõ khung |
+| Tự đổi khung sang dọc khi David chỉ nói "tập trung vào điện thoại" | làm lại từ đầu (khoảng 2 giờ) | SKILL "Đầu vào": khung chỉ đổi khi David nói rõ khung |
 | "Tập trung vào một vùng" làm bằng cắt-phóng cả khung | rác (bàn, sổ, tường) vẫn còn quanh điện thoại | `tu-chon.md` bước 2 → khung chủ thể `khung-chu-the.py` |
 | Chỉ dùng vài kiểu cảnh quen, video dày ý mà giữa các cảnh chỉ còn phụ đề | người xem khó theo dõi | `tu-chon.md` + `chan-doan.py` → bảng ghi chú chạy `GHI_CHU` |
-| Thử kiểu cảnh bằng chụp/render: `kinetic`, `action`, `card` > 4 dòng lỗi ở khung ngang | ~45 phút đổi kiểu nhiều vòng | `soat-canh.mjs` P0/P1 theo khung |
+| Thử kiểu cảnh bằng chụp/render: `kinetic`, `action`, `card` > 4 dòng lỗi ở khung ngang | khoảng 45 phút đổi kiểu nhiều vòng | `soat-canh.mjs` P0/P1 theo khung |
 | Cảnh `illus` bắt đầu 4 s trước phần tử đầu | 4 s nền tối che người, không chữ (lọt tới bản cuối) | `soat-canh.mjs` P0 "màn trống đầu cảnh" |
 | Vision không dò mặt trong màn hình điện thoại → đặt hình sai phía | chỉnh tay mat.js | `vi-tri-nhan.py` đọc `khung.js` |
 | Ghép bản cuối khi `xuat-video.mjs` còn render thẻ cuối | bản cuối mất màn kết YouTube 20 s, ghép lại 30 phút | khoá `.dang-render` + `xem-truoc-ban-dung.py` kiểm đủ lớp |
-| `chuan-am.py` chặn đỉnh −2,0 dB mà AAC đẩy lên −1,0 | 3 lượt không đạt; mổ xẻ giữa chừng ~40 phút | hạ ngưỡng theo phần vượt, tối đa 6 lượt; SKILL "Nhịp làm": lỗi skill ghi `kiem-tra/loi-ky-nang.md`, làm tiếp |
+| `chuan-am.py` chặn đỉnh −2,0 dB mà AAC đẩy lên −1,0 | 3 lượt không đạt; mổ xẻ giữa chừng khoảng 40 phút | hạ ngưỡng theo phần vượt, tối đa 6 lượt; SKILL "Nhịp làm": lỗi skill ghi `kiem-tra/loi-ky-nang.md`, làm tiếp |
 | `renderStill` màn chốt quá hạn 28 s (đọc khung từ video gốc 1,6 GB) | chụp thử hỏng | `xem-truoc.mjs` timeout 240 s |
 | Tạo liên kết cứng giữa bản nguồn và `video-goc.mp4` rồi ffmpeg ghi ra `video-goc.mp4` | ffmpeg cắt rỗng chính nguồn, mất bản sạch (dựng lại từ bản thô) | `khung-chu-the.py` xoá đích trùng nguồn; **không bao giờ `ln` file nguồn vào tên file đích** |
 | Ảnh tĩnh `-loop 1` làm đầu vào mà không `-t` | ffmpeg chạy mãi, file 7 GB, mất 1 giờ | `khung-chu-the.py` có `-t`; mọi lệnh có `-loop 1` phải có `-t` hoặc `shortest` ở MỌI nhánh |
@@ -241,4 +241,4 @@ người nói chưa từng chạy với dấu góc. Không do bài học video m
 ## Ảnh khi Openverse sập
 - Wikimedia tìm theo tên file: từ khoá đời thường dài ("man working on computer late at night") hay rỗng / 429; dùng cụm ngắn kiểu tên
   file ("alarm clock", "stack of books", "wall calendar", "brain anatomy model") và chạy lại riêng các key lỗi.
-- Soát lại tên ảnh trong ghi-cong.tsv sau khi tải (vd. "office dog…" — ảnh tối có con chó) và logo hãng ở chính giữa (vô-lăng Mercedes) → đổi.
+- Soát lại tên ảnh trong ghi-cong.tsv sau khi tải (ví dụ: "office dog…" — ảnh tối có con chó) và logo hãng ở chính giữa (vô-lăng Mercedes) → đổi.

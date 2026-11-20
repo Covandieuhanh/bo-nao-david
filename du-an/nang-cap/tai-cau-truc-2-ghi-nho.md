@@ -32,7 +32,7 @@ khỏi phần "làm thế nào", chuyển lịch sử ngắn vào **Why**. Ghi n
 | video-bo-cuc-tu-can | Bỏ số cố định; tránh mọi người, bám người nói; khung gốc `thiet-ke-bo-cuc/` | sửa: điểm 1 (chỉ học trình bày, không chép màu/font) đã lỗi thời từ 10/11 → viết lại theo hiện hành, lịch sử vào Why; link chuẩn âm → nhạc |
 | video-chi-hinh-cua-chinh-video | Hình bìa chỉ từ chính video đó | giữ |
 | video-chu-nguyen-van | Chữ trên video nguyên văn; không tít tự rút, không số chạy | sửa liên kết (luon-co → motion-ke-chuyen) |
-| video-chuan-am-luong | Nhạc ~23 dB dưới giọng, −14 LUFS | gộp vào video-nhac-theo-tuyen |
+| video-chuan-am-luong | Nhạc khoảng 23 dB dưới giọng, −14 LUFS | gộp vào video-nhac-theo-tuyen |
 | video-chuyen-qua-drive | Drive covandieuhanh, tu-lieu-goc / thanh-pham theo tập | sửa: dòng "Liên quan:" trống → thêm liên kết |
 | video-clip-ngan-dung-doc-lap | Clip ngắn đứng độc lập, bốn câu | giữ |
 | video-dai-khong-cat | Video dài không cắt | giữ |
@@ -52,7 +52,7 @@ khỏi phần "làm thế nào", chuyển lịch sử ngắn vào **Why**. Ghi n
 | video-nhan-dien-chung | Một bộ nhận diện cho mọi loại video | sửa: nhận phần gộp dọc ngắn không thanh |
 | video-phu-de-mot-cho-chu | Phụ đề dọc 5–8 chữ; mỗi lúc một chỗ chữ | giữ |
 | video-podcast-bia-khong-mat | Bìa podcast không mặt, công thức bìa | giữ |
-| video-podcast-phu-hinh-30 | Podcast phủ hình ~30% | sửa liên kết (chuan-am-luong → nhac-theo-tuyen) |
+| video-podcast-phu-hinh-30 | Podcast phủ hình khoảng 30% | sửa liên kết (chuan-am-luong → nhac-theo-tuyen) |
 | video-tham-my-chi-giu-nhan-dien | Thẩm mỹ chỉ giữ chữ ký nhận diện | sửa liên kết (nguoi-xem → luat-noi-dung) |
 | luu-tru/co-so-tri-thuc-repo-david-claude | (đã gộp 08/11) | giữ trong luu-tru |
 | luu-tru/video-quy-trinh-style-edit | (cũ) | giữ trong luu-tru |

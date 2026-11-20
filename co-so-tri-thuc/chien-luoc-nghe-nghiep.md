@@ -46,7 +46,7 @@ Muốn lên tầng sau phải qua tầng trước. Khung của **CCL (Center for
 | Chặng | Nội dung | Xong khi |
 | --- | --- | --- |
 | 0 | Chốt nền | 1 người trong tệp khách nhận lời |
-| 1 | Ca đầu tiên | 1–3 ca thật online, miễn phí đổi lời chứng ẩn danh, ≥1 ca tự đứng được |
+| 1 | Ca đầu tiên | 1–3 ca thật online, miễn phí đổi lời chứng ẩn danh, ít nhất 1 ca tự đứng được |
 | 2 | Chuẩn hoá phương pháp | Bắt đầu thu phí, học coach chuẩn ICF |
 | Sau đó | Truyền nghề | |
 

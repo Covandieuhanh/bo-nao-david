@@ -2,7 +2,7 @@
 description: "Khối 14 thumbnail YouTube 1280×720 cho video ngang, chỉ hình của chính video."
 ---
 
-# Khối 14-anh-thu-nho: Thumbnail YouTube 1280×720 (chỉ video ngang đăng YouTube): quay hình = mặt + ≤ 3 tầng chữ; podcast = nền hoạ tiết + hình + tiêu đề
+# Khối 14-anh-thu-nho: Thumbnail YouTube 1280×720 (chỉ video ngang đăng YouTube): quay hình = mặt + tối đa 3 tầng chữ; podcast = nền hoạ tiết + hình + tiêu đề
 
 **Dùng trong:** làm video, ghép vlog, podcast
 **Đầu vào:** quay hình: khung của CHÍNH video này / ảnh David gửi riêng cho video này · podcast không mặt: tiêu đề + tên hình
@@ -16,8 +16,8 @@ description: "Khối 14 thumbnail YouTube 1280×720 cho video ngang, chỉ hình
 
 ## Luật
 - Chỉ khi video xuất **ngang** VÀ đăng YouTube (điểm chốt trong 4 phần lúc đầu). Video dọc: chỉ ghi mốc khung bìa đề xuất.
-- Mặt có cảm xúc rõ + 2–3 tầng chữ (≤ `thumbnail.max_chu`), dòng cam = từ khoá to nhất; `THUMB_NUM` số khổng lồ; `THUMB_BADGE` nhãn series/số tập; `THUMB_L3` dòng 3.
-- Chuẩn: một khuôn mặt có cảm xúc rõ (mắt mở, miệng/biểu cảm), ≤ 4 chữ, một ý. Chọn khung: xem `bang-khung-hinh.jpg`/`half_XX.jpg`, lấy
+- Mặt có cảm xúc rõ + 2–3 tầng chữ (tối đa `thumbnail.max_chu`), dòng cam = từ khoá to nhất; `THUMB_NUM` số khổng lồ; `THUMB_BADGE` nhãn series/số tập; `THUMB_L3` dòng 3.
+- Chuẩn: một khuôn mặt có cảm xúc rõ (mắt mở, miệng/biểu cảm), tối đa 4 chữ, một ý. Chọn khung: xem `bang-khung-hinh.jpg`/`half_XX.jpg`, lấy
   khoảnh khắc cảm xúc mạnh nhất. Video ngang → điểm cần chốt trong 4 phần lúc đầu (`thu-thap-yeu-cau`): "Video này có đăng YouTube
   không?" — có thì làm 2 thumbnail, không thì bỏ.
 - Tiêu đề và thumbnail bổ sung, không lặp chữ. Soát bản @160 (cỡ điện thoại) — không đọc được chữ thì rút chữ.

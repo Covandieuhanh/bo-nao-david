@@ -68,7 +68,7 @@ description: "Rà soát video cũ trên TikTok và fanpage (05/11): danh sách �
 - Cơ sở Trảng Dài phụng sự sức khoẻ (B)
 - Reel chào trang: dịch vụ, sản phẩm, tuyển kỹ thuật viên (B)
 - Đối tác Massage khoẻ Hoàng Vũ (B)
-- Thêm 1 đối tác sức khoẻ & làm đẹp Tân Phong (B)
+- Thêm 1 đối tác sức khoẻ và làm đẹp Tân Phong (B)
 
 ### Giữ — 1
 - Bí mật về đi bộ - Phần 2 (3/11)

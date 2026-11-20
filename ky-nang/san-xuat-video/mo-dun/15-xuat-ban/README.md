@@ -40,7 +40,7 @@ Gửi `video-hoan-chinh.mp4` của từng clip (SendUserFile). Ghi `$P/dang-bai.
 1. **Loại video gốc → loại highlight**, **ý chính + lời kêu gọi chính của cả video**, **kiểu bố trí** + lý do, **tông** từng đoạn,
    **ý được chừa cho bản đầy đủ**, bốn câu chọn ý + lời đọc nối.
 2. **Bảng cắt** + **tổng độ dài** + kết quả kiểm lời; mọi chữ trên video kèm mốc gốc của nó.
-3. **Mô tả bài đăng** ≤ 150 ký tự — ghép từ lời nguyên văn trong clip (không thêm ý), kết bằng lời mời bình luận "Vấn đề" / "Kết quả"
+3. **Mô tả bài đăng** tối đa 150 ký tự — ghép từ lời nguyên văn trong clip (không thêm ý), kết bằng lời mời bình luận "Vấn đề" / "Kết quả"
    theo kiểu dẫn dắt, kèm hashtag (giọng văn David).
 4. **Bình luận ghim** theo luật kênh ở trên, có "Bản đầy đủ: [link YouTube]".
 5. Câu bị loại vì lằn ranh (nếu có), tên riêng chưa chắc chính tả, đã kiểm gì / chưa kiểm gì.

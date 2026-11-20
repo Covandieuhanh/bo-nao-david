@@ -272,7 +272,7 @@ Tìm kiếm mang lại trải nghiệm; lý giải và nội hoá biến nó th�
 
 **Lăng kính 2 – Bộ đo Learning Agility Assessment Inventory (29 câu, 5 yếu tố)**
 
-| Yếu tố | Loại | Nội dung | Điểm TB (thang 1–5, đọc từ biểu đồ, xấp xỉ) |
+| Yếu tố | Loại | Nội dung | Điểm trung bình (thang 1–5, đọc từ biểu đồ, xấp xỉ) |
 |---|---|---|---|
 | **Innovate** – Đổi mới | Thúc đẩy | Chất vấn chuẩn mực cũ, nhìn vấn đề từ nhiều góc | 3,25 |
 | **Act / Perform** – Hành động | Thúc đẩy | Tỉnh và dấn thân trong tình huống lạ, chịu được mơ hồ, thích ứng nhanh | 3,49 |
@@ -380,7 +380,7 @@ Số liệu bên ngoài CCL trích dẫn: khảo sát DDI cho thấy 1/4 tổ ch
 ### 5.2. Nghiên cứu gốc (2012–2014)
 
 - **Mẫu:** học viên chương trình Maximizing Your Leadership Potential (MLP), tháng 5/2012 – 12/2013, tại Greensboro, San Diego, Brussels. 664 quản lý, trong đó **297 người quản** **lý lần đầu**.
-- **Chân dung:** tuổi TB khoảng 36,6; 55% nam; 66% người Mỹ; hơn 80% có bằng đại học trở lên; chủ yếu khu vực tư nhân.
+- **Chân dung:** tuổi trung bình khoảng 36,6; 55% nam; 66% người Mỹ; hơn 80% có bằng đại học trở lên; chủ yếu khu vực tư nhân.
 - **Cách làm:**
 - Bài 360 trước chương trình 2–8 tuần, đo 13 năng lực.
 - Khảo sát động lực đầu chương trình.
@@ -431,7 +431,7 @@ Trong 13 năng lực đo bằng 360, bốn năng lực vừa **quan trọng cho 
 
 Cấp dưới chấm bốn năng lực này càng cao thì sếp chấm hiệu suất công việc càng cao. Điểm mạnh nổi bật của nhóm này: **thích ứng văn hoá**, được đồng nghiệp và cấp dưới chấm cao nhất.
 
-### 5.5. Tư duy cần đổi: “It’s not about me. It’s me & you.”
+### 5.5. Tư duy cần đổi: “It’s not about me. It’s me và you.”
 
 Bài nghiên cứu của William A. (Bill) Gentry (2014) lật câu chia tay quen thuộc “Không phải tại em, là tại anh” thành **“Không phải về tôi, mà là tôi và bạn”**.
 
@@ -765,7 +765,7 @@ CCL đóng gói các khung ở trên thành chương trình theo cấp, luôn c�
 |  | **Lead 4 Success®** | **Maximizing Your Leadership Potential (MLP)** | **Frontline Leader Impact (FLI)** | **Leadership Development Program (LDP)** |
 |---|---|---|---|---|
 | Cấp | Nhân viên chưa có cấp dưới, người sắp lên, quản lý mới 6– 12 tháng, lãnh đạo 3–5 năm | Quản lý cấp đầu, quản lý lần đầu, nhân sự tiềm năng | Quản lý tuyến đầu | Quản lý cấp trung – cao (“người dẫn quản lý”) |
-| Hình thức | Trực tuyến trực tiếp, có giảng viên | Trực tiếp, lớp TB 24 người | Trực tuyến có điều phối, tự học + nhóm nhỏ | Trực tiếp hoặc trực tuyến |
+| Hình thức | Trực tuyến trực tiếp, có giảng viên | Trực tiếp, lớp trung bình 24 người | Trực tuyến có điều phối, tự học + nhóm nhỏ | Trực tiếp hoặc trực tuyến |
 | Thời lượng | 16 giờ / 1 tuần | 2,5 ngày + trước và sau | 18 giờ / 6 tuần | 5 ngày tập trung trong hành trình 5 tháng |
 | Nội dung | 4 kỹ năng nền, mỗi kỹ năng một buổi 4 giờ | 4 kỹ năng nền + xung đột, xây quan hệ; vai trò quản lý, vai trò coach, “làm cho lãnh đạo xảy ra” | 6 năng lực: tự nhận thức, học linh hoạt, giao tiếp, nhạy bén quan hệ (political savvy), tạo động lực, gây ảnh hưởng | 5 chủ đề ngày (bên dưới) |
 | Trước | Định hướng 30 phút | Đánh giá + bài học ngắn | Đánh giá bắt buộc | Khoảng 2 tháng học trực tuyến bắt buộc, đánh giá, 360 |

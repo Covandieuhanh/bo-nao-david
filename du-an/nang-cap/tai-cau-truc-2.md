@@ -11,10 +11,10 @@ Mốc trước: `tai-ban-2-truoc`. Phiên điều phối: phiên gốc của Dav
 
 ## File của từng phiên con
 Mỗi phiên con ghi vào file riêng (tránh ghi đè nhau), trong đó có ba mục: Bảng luật đang sống · Chéo bộ · Hỏi David.
-- `du-an/tai-cau-truc-2-video.md`
-- `du-an/tai-cau-truc-2-hoi.md`
-- `du-an/tai-cau-truc-2-nao.md`
-- `du-an/tai-cau-truc-2-ghi-nho.md`
+- `du-an/nang-cap/tai-cau-truc-2-video.md`
+- `du-an/nang-cap/tai-cau-truc-2-hoi.md`
+- `du-an/nang-cap/tai-cau-truc-2-nao.md`
+- `du-an/nang-cap/tai-cau-truc-2-ghi-nho.md`
 
 ## Chéo bộ (phiên điều phối gom và chốt nhà)
 David "Ok cả 3" (10/11/2026) cho ba đề xuất; đã làm:

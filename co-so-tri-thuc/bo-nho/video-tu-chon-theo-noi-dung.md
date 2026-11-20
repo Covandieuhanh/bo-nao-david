@@ -16,7 +16,7 @@ video nhiều nội dung cần motion graphic hiện nhiều thông tin hơn đ�
 lỗi skill giữa chừng làm chậm.
 
 **How to apply:** luật ở `ky-nang/san-xuat-video/thiet-ke-bo-cuc/tu-chon.md` (chẩn đoán `chan-doan.py` → khung chủ thể `khung-chu-the.py`,
-bảng ghi chú chạy `GHI_CHU`, kiểu cảnh theo dạng câu) và mục "Nhịp làm" của `dung-video-theo-phong-cach/SKILL.md`. Học mẫu mới phải thêm dòng
+bảng ghi chú chạy `GHI_CHU`, kiểu cảnh theo dạng câu) và mục "Nhịp làm" của `ky-nang/san-xuat-video/dung-video-theo-phong-cach/SKILL.md`. Học mẫu mới phải thêm dòng
 dấu hiệu vào tu-chon.md. Liên quan [[quy-tac-goi-y-de-david-chon]], [[video-tham-my-chi-giu-nhan-dien]].
 
 19/11/2026, sau tập "Marketing là nỗi đau và nhu cầu": David thấy video ngắn đến dài, nội dung nào cũng một kiểu thẩm mỹ và bố cục —
