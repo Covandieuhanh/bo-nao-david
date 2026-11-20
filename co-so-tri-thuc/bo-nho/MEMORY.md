@@ -11,7 +11,7 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 - [Phiên Telegram tự chạy](quy-tac-phien-telegram-tu-chay.md) — trình 4 phần chờ duyệt, duyệt rồi tự làm tới kết quả, ghi sổ; chỉ hỏi khi đăng/gửi, tốn tiền, đẩy đè GitHub; mọi phiên bật Remote Control, xong thì hỏi đóng (12/11, 14/11)
 - [Việc gì cũng duyệt 4 phần trước](quy-tac-duyet-ke-hoach-4-phan.md) — Mục tiêu · Kế hoạch · Quy trình · Thực thi, duyệt rồi tự làm trọn; việc tự chạy hiện thành phiên trong app, không chạy ngầm (14/11)
 - [Tài nguyên vào, kết quả ra](quy-tac-goi-y-de-david-chon.md) — 4 phần gọn theo mặc định skill + đề xuất, duyệt rồi làm một mạch (11/11, sửa 14/11)
-- [Học là bổ sung](quy-tac-hoc-la-bo-sung.md) — học mẫu chỉ thêm, giữ chặn cũ; khung mới chụp đủ lớp trước render (08/11)
+- [Học là bổ sung](quy-tac-hoc-la-bo-sung.md) — học mẫu chỉ thêm, giữ chặn cũ; học nguyên lý để cải tiến cái đang có, không chép món (20/11); khung mới chụp đủ lớp trước render (08/11)
 - [Kết quả hơn tốc độ](quy-tac-ket-qua-hon-toc-do.md) — bước cần kết quả render thì chờ; muốn rút ngắn thì trao đổi (05/11)
 - [Không tự chạy việc của David](quy-tac-khong-tu-chay-viec-cua-david.md) — không tự Chạy tiếp/Duyệt/Làm lại việc David tạo; việc thử tên `thu-…` (08/11)
 - [Nội dung của David, người xem trung tâm](quy-tac-noi-dung-cua-david.md) — không khuôn lời; học kênh lớn ở nhịp, trình bày (05/11, gộp 10/11)

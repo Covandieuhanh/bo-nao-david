@@ -10,6 +10,10 @@ description: "Mẫu phiếu học video mẫu: Claude điền, David duyệt tr�
 - Video: <tên, kênh, link hoặc file David gửi> · loại: <người nói / podcast / vlog / highlight…> · khung: <ngang / dọc>
 - Đoạn đã xem kỹ: <mốc>
 
+## 2a. Vì sao mẫu này dễ hiểu (nguyên lý)
+| # | Nguyên lý | Thấy ở mốc | Nâng cấp thành phần đang có nào |
+|---|---|---|---|
+
 ## 2. Học được gì (chỉ phần trình bày)
 | # | Điều học được | Ở mốc | Loại (bố cục / thứ tự hiện / nối cảnh / nhịp / âm thanh) | Hợp với nội dung nào |
 |---|---|---|---|---|

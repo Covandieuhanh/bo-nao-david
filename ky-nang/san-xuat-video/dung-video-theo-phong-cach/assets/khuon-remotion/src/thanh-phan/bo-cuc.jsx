@@ -9,6 +9,8 @@
 //             một gương mặt — người bên cạnh hoặc vào trọn, hoặc ra hẳn; ô nằm đúng phía người đó ngồi, nội dung phía còn lại.
 //             props: noi_dung: {type: 'illus'|'diagram'|'the', props} · khung? 'ca-hai' (ô chứa mọi người) · bam? 'trai'|'phai'
 //             · o? {x, y, w, h} (0–1, chỉ khi thật cần ép tay)
+//             · nguoi_duoi? true (chỉ khung dọc; học Cường Mê AI 20/11/2026): người xuống nửa dưới sát dải phụ đề, hình/thẻ ở nửa trên —
+//               giải thích dài vẫn thấy người, mắt đọc hình trước rồi xuống người. Mặc định tắt (ô trên, nội dung dưới như cũ).
 //  'the-canh' người giữ nguyên khung, thẻ vào khoảng trống sát người đang nói (lib/cho.js), co theo khoảng trống, không đè ai;
 //             không khoảng nào đủ rộng → tự chuyển sang 'o-nguoi'. props: bam? · tieu_de? · dong: [{text, at, to?: true, gach?: <giây>}]
 //  'chuong'   màn chương toàn khung: số mờ to + nhãn nhỏ + tên phần (dòng cuối màu nhấn). props: so?, nhan?, ten
@@ -116,19 +118,20 @@ const khungCat = (m, khung, bam) => {
   return {...c, phia: t.cx < 0.5 ? 'trai' : 'phai'};
 };
 
-const ONguoi = ({sceneId, start, o, noi_dung, khung, bam}) => {
+const ONguoi = ({sceneId, start, o, noi_dung, khung, bam, nguoi_duoi = false}) => {
   const f = useCurrentFrame();
   const {durationInFrames: d} = useVideoConfig();
   const m = MAT[sceneId] || {cx: 0.5, cy: 0.42, w: 0.18, h: 0.3};
   const kc = khungCat(m, khung, bam);
   const cw = (kc.r - kc.l) * W, ch = (kc.b - kc.t) * H, ar = cw / ch;
   // cỡ ô: theo tỉ lệ khung cắt, vừa trong tối đa 46% bề ngang × 72% bề cao (ngang) — dọc: rộng hết, cao tối đa 40%
-  const maxW = LAND ? W * 0.46 : W * 0.88, maxH = LAND ? H * 0.72 : H * 0.4;
+  const duoi = !LAND && nguoi_duoi && !o;
+  const maxW = LAND ? W * 0.46 : W * 0.88, maxH = LAND ? H * 0.72 : duoi ? H * 0.3 : H * 0.4;
   const bw = Math.min(maxW, maxH * ar), bh = bw / ar;
   const aTop = Math.max(SAFE.top, BRAND_BOT + 40);   // dưới dấu góc kênh (chu-de.js)
   const b = o ? {x: o.x * W, y: o.y * H, w: o.w * W, h: o.h * H}
     : LAND ? {x: kc.phia === 'trai' ? SAFE.left : W - SAFE.right - bw, y: aTop + (SAFE.bottom - aTop - bh) / 2, w: bw, h: bh}
-      : {x: (W - bw) / 2, y: H * 0.07, w: bw, h: bh};
+      : {x: (W - bw) / 2, y: duoi ? SAFE.bottom - bh : H * 0.07, w: bw, h: bh};
   // co vào (14 khung) · nở lại toàn khung ở cuối (10 khung)
   const k = Math.min(ease(f, 0, 14), ease(f, d - 10, d, 1, 0, Easing.inOut(Easing.cubic)));
   const x = b.x * k, y = b.y * k, w = W + (b.w - W) * k, h = H + (b.h - H) * k;
@@ -138,7 +141,8 @@ const ONguoi = ({sceneId, start, o, noi_dung, khung, bam}) => {
   const area = LAND
     ? (kc.phia === 'trai' && !o ? {x: b.x + b.w + SAFE.left * 0.8, y: aTop, w: W - SAFE.right - (b.x + b.w + SAFE.left * 0.8), h: SAFE.bottom - aTop}
       : {x: SAFE.left, y: aTop, w: b.x - SAFE.left * 1.8, h: SAFE.bottom - aTop})
-    : {x: SAFE.left, y: b.y + b.h + 30, w: W - SAFE.left - SAFE.right * 0.4, h: SAFE.bottom - (b.y + b.h) - 60};
+    : duoi ? {x: SAFE.left, y: aTop, w: W - SAFE.left - SAFE.right * 0.4, h: b.y - aTop - 40}
+      : {x: SAFE.left, y: b.y + b.h + 30, w: W - SAFE.left - SAFE.right * 0.4, h: SAFE.bottom - (b.y + b.h) - 60};
   const show = ease(f, 8, 18) * ease(f, d - 12, d - 4, 1, 0);
   const Comp = noi_dung && NOI[noi_dung.type];
   const s = Math.min(1, area.w / (W * 0.6), area.h / (H * (LAND ? 0.64 : 0.46)));

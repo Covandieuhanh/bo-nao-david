@@ -47,8 +47,10 @@ Bước nhẹ (1–3): tới đó nhắc một dòng để David tự đổi mô
    lên repo, **học xong xoá**), đọc mô tả và danh sách chương (`yt-dlp --dump-json`).
 2. **Cắt khung** *(bước nhẹ)*: bảng khung theo nhịp 1,5–3 s (`ffmpeg … fps=1/2,scale=480:-1,tile=4x4`) ở đoạn mở đầu và đoạn đúng loại cần học.
 3. **Nghe** *(bước nhẹ)*: vẽ phổ âm (`showspectrumpic`) để thấy chỗ có tiếng hiệu ứng, nhạc nền, nốt chuyển chương.
-4. **Rút ra đủ:** bố cục · thứ tự hiện · cách nối · nhịp · âm thanh · nền, kết cấu, kiểu hình, chữ nhấn — càng nhiều tài nguyên
-   sáng tạo càng tốt. Chỉ không đụng chữ ký nhận diện (mục 1).
+4. **Rút ra nguyên lý trước, món sau:** trả lời "vì sao mẫu này dễ hiểu / giữ người xem" (nhịp hiện theo lời, một hình lớn dần,
+   một chỗ sáng, đúng loại ý, ít chữ…), rồi mỗi nguyên lý nâng cấp **thành phần đang có** nào. Chỉ thêm kiểu mới khi không thành phần
+   nào làm được. Món chỉ để trang trí (không giúp hiểu thêm) ghi vào "Không lấy". Không đụng chữ ký nhận diện (mục 1). David chốt 20/11/2026:
+   học để tự áp dụng và cải tiến cái đang có, motion graphics rõ nghĩa hơn nhưng tinh gọn (`tu-chon.md` bước 4a).
 5. **Phiếu học cho David duyệt** (mẫu ở `phieu-hoc-mau.md`): học được gì, dùng cho loại video nào, thêm thành phần nào, mỗi thành
    phần đối chiếu với các chặn cũ thế nào. Đây là **cổng hỏi duy nhất**: gộp mọi điểm cần chọn, mỗi điểm 2–3 gợi ý.
    **Chờ David "ok" rồi mới sửa skill.**

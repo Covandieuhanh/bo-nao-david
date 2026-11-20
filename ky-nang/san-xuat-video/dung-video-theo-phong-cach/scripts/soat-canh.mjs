@@ -81,6 +81,12 @@ for (const raw of list) {
   // bố cục (bo-cuc.jsx): chữ trong thẻ phải hiện trong cảnh; không giới hạn số dòng — tự cân theo khung (dọc: ít thứ cùng lúc)
   if (s.type === 'bocuc') for (const d of [...(s.dong || []), ...((s.noi_dung && s.noi_dung.props && s.noi_dung.props.dong) || [])])
     if (d.at != null && (d.at < s.start - 0.01 || d.at >= s.end)) bao('P0', d.at, s.id, `dòng "${d.text}" hiện ngoài cảnh`, 'dời mốc at hoặc kéo dài cảnh');
+  // ít chữ (tu-chon.md bước 4a, 20/11/2026): nhãn mỗi nút sơ đồ / minh hoạ 1–3 chữ nguyên văn
+  if (s.type === 'illus' || s.type === 'diagram') for (const it of items)
+    if (it.label && words(it.label) > 4) bao('P1', it.at ?? s.start, s.id, `nhãn "${it.label}" ${words(it.label)} chữ — hình nói thay lời thì ít chữ`, 'rút còn 1–3 chữ đắt nhất (nguyên văn)');
+  // một chỗ sáng: tầng / cột ≥ 3 mục mà không bật mot_diem → mục sáng cố định, không theo lời
+  if (s.type === 'diagram' && (s.mode === 'tang' || s.mode === 'cot') && items.length >= 3 && !s.mot_diem)
+    bao('P2', s.start, s.id, `"${s.mode}" ${items.length} mục, chỗ sáng không theo lời`, 'thêm mot_diem: true nếu các mục được nói lần lượt');
   if (s.type === 'illus' && s.label && words(s.label) > NHAN) bao('P1', s.start, s.id, `nhãn "${s.label}" ${words(s.label)} chữ (tối đa ${NHAN})`, 'rút còn cụm đắt nhất');
 
   // đứng yên quá lâu: phần tử cuối đã hiện + đã đủ đọc mà cảnh còn hơn 3 s
@@ -115,6 +121,16 @@ for (let i = 1; i < chuoi.length; i++) {
     bao('P0', 0, 'ke-hoach-canh.md', 'chưa chẩn đoán, chưa tự chọn theo nội dung', 'chạy chan-doan.py rồi ghi mục "## Chẩn đoán" theo thiet-ke-bo-cuc/tu-chon.md');
   else if (!/Thẩm mỹ:/.test(kh))
     bao('P1', 0, 'ke-hoach-canh.md', 'chẩn đoán chưa có dòng "Thẩm mỹ:" (nền, kiểu hình, chuyển cảnh, nhạc)', 'tu-chon.md bước 2b');
+  // tiết chế (tu-chon.md bước 4a, 20/11/2026): chỉ dựng hình cho ý khó hiểu nếu chỉ nghe
+  if (/^##\s*Chẩn đoán/m.test(kh) && !/Tiết chế:/.test(kh))
+    bao('P1', 0, 'ke-hoach-canh.md', 'chẩn đoán chưa có dòng "Tiết chế:" (ý nào cần hình, ý nào để người nói)', 'tu-chon.md bước 4a');
+  {
+    const PHU = list.map(flat).filter((x) => FULL.has(x.type) || x.type === 'bocuc' || x.type === 've').map((x) => [x.start, held[x.id]?.end ?? x.end]).sort((a, b) => a[0] - b[0]);
+    let phu = 0, den = -Infinity;
+    for (const [a, b] of PHU) { const a2 = Math.max(a, den); if (b > a2) { phu += b - a2; den = b; } }
+    if (duration >= 45 && phu / duration > 0.45)
+      bao('P1', 0, 'cả video', `hình phủ ${Math.round(100 * phu / duration)} % thời lượng — dễ rối, phân tán`, 'bỏ hình ở ý dễ hiểu khi nghe (kể chuyện, cảm xúc, câu ngắn tự rõ), giữ người nói + phụ đề');
+  }
   const CO_DINH = new Set(['hud', 'title', 'pinTitle', 'teaserTag', 'cta', 'hook', 'round', 'outro', 'location']);
   const loai = new Set(list.map(flat).filter((x) => !CO_DINH.has(x.type)).map(kieu));
   const coY = /Một kiểu có chủ đích:/.test(kh);

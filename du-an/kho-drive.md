@@ -27,7 +27,7 @@ Trạng thái chi tiết, lịch đăng: sổ [danh-muc-noi-dung.md](danh-muc-no
 | Loại | Tập |
 |---|---|
 | ✅ **Đạt, David đã duyệt** | `tap-di-trainer` (bản dài + 3 clip) · `tap-muc-tieu-su-menh` (bản dài + clip) · `tap-di-bo-hang-ngay` (bản 4) · `vlog/the-view-vung-tau` (bản 2) · `tap-img-2888` · `tap-su-tap-trung-video-ngan-da-khien-chung-t` (highlight) · `video-tu-quay/img3196`, `img3199` · `vlog/nhan-xe-vf3`, `vlog/mieu ba cam` (Facebook cá nhân) |
-| ⏳ **Dựng xong, chờ David xem/duyệt** | `tap-thoi-quen-nho` (cổng 2) · `tap-thi-lai-dai-hoc` · `tap-cuoc-song-giau-co` · `tap-dung-mua-nhung-thu-ma-ban-thich` (3 video cũ làm lại + clip) · `tap-vong-dong-xu` (bản riêng) |
+| ⏳ **Dựng xong, chờ David xem/duyệt** | `tap-may-do-giai-phap-ai` (bản dài H3 + 4 clip; **mất gốc DJI_0030** khi dọn Mac 20/11, xem dưới) · `tap-giao-dich-hang-hoa` (bản dài + clip A; gốc chưa có trên Drive, đang ở Thùng rác Mac) · `tap-marketing-noi-dau-nhu-cau` (highlight ngang + dọc, bản hướng 3, 3 clip dọc) · `tap-ban-ca-ngay` · `tap-cuoc-goi-hop-tac` (dừng 11/11, gốc ở `tu-lieu-goc/`) · `tap-thoi-quen-nho` (cổng 2) · `tap-thi-lai-dai-hoc` · `tap-cuoc-song-giau-co` · `tap-dung-mua-nhung-thu-ma-ban-thich` (3 video cũ làm lại + clip) · `tap-vong-dong-xu` (bản riêng) |
 | ⛔ **Không đạt / không đăng, giữ làm tư liệu** | `tap-5-nguyen-tac-tien` (bản thử phỏng vấn, 2/10, lằn ranh tiền bạc) · `tap-zoom-trainer` (họp riêng, chỉ giữ biên bản + tiếng gốc) · `tap-spa-thuy-moc-huong` (lằn ranh) · `edit-cong-viec-dien-thoai-chuan-skill` (bản Codex 10/11 của cuộc gọi hợp tác, chưa qua lọc) |
 | 🧪 **Bản thử skill** | `tap-thu-hl-moi` · `tap-thu-hl-nguon` · `tap-thu-pod-moi` · `tap-thu-skill` · `tap-thu-tai-ban-video-1` · `vlog/thu-vlog-moi` · `_thu-nguon` · `tap-mau-1` · `tap-goi-video-2026-11-10` · `mau-skill-video-2026-11-04` (ảnh mẫu chuẩn) |
 | 🎞 **Tư liệu gốc chưa dựng** | `vlog/_cho-xac-nhan` · `vlog/Vlog Nui ong Ket` · `vlog/Vlog phuc long Biên hoà` · `vlog/vlog tham quan singapore` · `vlog/Photos-1-001*` · `vlog/vlog sinh nhat Hue.zip` · `tap-nang-luc` (ghi âm "Phương pháp tìm năng lực" + thumbnail) · Downloads: `Photos-1-001`, `Vlog tham quan ba den tay ninh`, video kênh cũ "Sự tập trung", "Đừng mua những thứ mà bạn thích" |
@@ -38,3 +38,9 @@ Trạng thái chi tiết, lịch đăng: sổ [danh-muc-noi-dung.md](danh-muc-no
 | Tập | Gốc trên Drive | Trên Mac |
 |---|---|---|
 | Cuộc gọi hợp tác (dji_mimo_20261110, 12:46) | `tu-lieu-goc/tap-cuoc-goi-hop-tac/` | `~/Downloads/dji_mimo_20261110_…MP4`, chờ David chốt phiếu lọc |
+
+## Sổ dọn Mac
+
+- **20/11/2026:** đưa 5 tập (máy đo giải pháp AI, giao dịch hàng hoá, bận cả ngày, cuộc gọi hợp tác, marketing) lên `sao-luu-mac/video/` bằng `luu-drive.sh`, xoá ba thư mục thử (`tap-thu-tai-ban-3`, `thu-doi-goc`, `thu-tu-chon`). Mac từ 2 GB trống lên 52 GB.
+  Sự cố: lệnh `find … -delete` (trước `luu-drive.sh`) xoá luôn `1-goc/` của hai tập → **mất gốc DJI_0030** (tập máy đo giải pháp AI, không còn bản nào trên Mac, có thể còn trên máy quay / app DJI Mimo); gốc giao dịch hàng hoá (`dji_mimo_20261111_204848…`) còn trong Thùng rác. Luật mới ở `ky-nang/chuan-muc-lam-viec.md` mục 4.
+

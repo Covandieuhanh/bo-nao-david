@@ -49,6 +49,14 @@ Cột "Code": **có** = viết được ngay trong `canh.js` · **chưa** = mớ
 | Trước / sau hai khung cạnh nhau | so sánh kết quả | cả hai | chưa (gần `card` `vs`) |
 | Người làm mờ phía sau, chữ / vật nổi giữa khung (không cắt sang nền tối) | câu chốt giữa đoạn nói | cả hai | = `phong: 'nguoi-mo'` cho cảnh toàn màn hình |
 
+## Hình dễ hiểu, tinh gọn (học Cường Mê AI, 20/11/2026 — `nguon-tham-khao/cuong-me-ai-2026-11-20.md`; khi nào dùng: `tu-chon.md` bước 4a)
+
+| Kiểu | Hợp khi | Ngang / dọc | Code |
+|---|---|---|---|
+| **Chuỗi bước** (`diagram` · `chuoi`): bước hiện đúng lúc nói, dây chạy từ bước trước tới (chấm sáng chỉ hướng), bước đang nói viền cam, bước cũ mờ | quy trình 3–6 bước kể liền một mạch | cả hai (dọc: cột · ngang: hàng · lồng trong bố cục: cột) | có |
+| **Một chỗ sáng** (`mot_diem: true` cho `tang`, `cot`): chỉ mục đang nói sáng cam | các mục được nói lần lượt | cả hai | có |
+| **Người nửa dưới, hình nửa trên** (`o-nguoi` · `nguoi_duoi: true`) | khung dọc, giải thích dài vẫn cần thấy người | dọc | có |
+
 ## Nền và lớp thông tin (11/11/2026 — chọn theo `tu-chon.md`)
 
 | Kiểu | Hợp khi | Ngang / dọc | Code |

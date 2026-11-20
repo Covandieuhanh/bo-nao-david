@@ -82,15 +82,35 @@ Ghi một dòng `Thẩm mỹ: nền … · kiểu hình … · chuyển cảnh �
 Bảng ghi chú: mỗi phần = một mục `CHAPTERS` (tên phần nguyên văn); ý = cụm **nguyên văn** 3–10 chữ của câu chốt / câu liệt kê /
 con số, `at` = lúc nói. Mỗi phút ~2–4 ý. **Lằn ranh** (số tiền, chuyện người khác, pháp lý…) không đưa vào bảng.
 
-## Bước 4 — Chọn kiểu cảnh (từng ý → kiểu)
+## Bước 4a — Ý nào cần hình, hình thế nào cho dễ hiểu
 
-Đi hết kho cho từng ý, không dừng ở 3–4 kiểu quen. Mỗi dòng dưới = dấu hiệu trong lời → kiểu.
+David chốt 20/11/2026: *"motion graphics ngày càng thể hiện được rõ sự mô tả các nội dung đang được nói đến… giúp người xem dễ hiểu
+hơn nhưng vẫn tinh gọn, đơn giản, không cầu kỳ, loè loẹt gây phân tán sự chú ý"*. Một video không cần nhiều hình; cần hình đúng chỗ.
+
+**Chỉ dựng hình khi ý đó khó hiểu nếu chỉ nghe:** quy trình nhiều bước, quan hệ (nhân quả, tầng bậc, từ → thành), so sánh, con số,
+danh sách người xem cần nhớ. Ý dễ (kể chuyện, cảm xúc, lời mời, câu ngắn tự rõ) thì để người nói + phụ đề, nhiều lắm một điểm nhấn.
+Hình phủ (toàn màn hình + bố cục) quá ~45 % thời lượng là dấu hiệu dựng thừa: bỏ bớt hình ở ý dễ.
+
+**Năm nguyên lý mỗi hình phải đạt** (học Cường Mê AI, `nguon-tham-khao/cuong-me-ai-2026-11-20.md`):
+1. **Theo nhịp lời:** nói tới thứ gì thứ đó mới hiện (`at` = lúc nói), không hiện trước, không hiện hết một lúc.
+2. **Một hình lớn dần:** các ý nối nhau thì giữ một hình và thêm phần (`chuoi`, `xay-tang`, `muc-luc`, `mach.js` `tu_buoc`), không
+   đổi sang hình rời mỗi câu. Người xem giữ được "bản đồ".
+3. **Một chỗ sáng:** phần đang nói sáng cam, phần đã qua mờ (`chuoi`, `xay-tang`, `moc`, `muc-luc` sẵn có; `tang`, `cot` bật `mot_diem: true`).
+4. **Đúng loại ý:** bảng dưới (quy trình → `chuoi`, so sánh → `vs`/`tu-thanh`, liệt kê → `list`/`muc-luc`…).
+5. **Ít chữ, nền yên:** mỗi nút 1–3 chữ nguyên văn (máy báo khi > 4), nền tối đồng nhất, không thêm trang trí không mang nghĩa.
+
+Ghi vào mục Chẩn đoán một dòng `Tiết chế: <số> ý cần hình / <tổng ý> · bỏ hình ở … vì dễ hiểu khi nghe` (máy soát báo P1 khi thiếu).
+
+## Bước 4 — Chọn kiểu cảnh (từng ý cần hình → kiểu)
+
+Với các ý bước 4a chọn ra, đi hết kho để tìm kiểu diễn tả đúng nhất, không dừng ở 3–4 kiểu quen. Mỗi dòng dưới = dấu hiệu trong lời → kiểu.
 
 | Câu nói có dạng | Kiểu | Nơi (khi có khung chủ thể / bảng) |
 |---|---|---|
 | một vật / việc / khái niệm | `illus single` · chữ nhấn `nhan` | cạnh chủ thể (`canh-nguoi`) |
 | nhân quả, các bước 2–3 | `illus flow` | cạnh chủ thể (`canh-nguoi`) |
 | quy trình nhiều bước, vẽ tiếp qua nhiều cảnh | `canh-nguoi` + `tu_buoc` / `mach.js` | cạnh chủ thể |
+| quy trình 3–6 bước kể liền một mạch ("đầu tiên… rồi… cuối cùng") | `diagram chuoi` (bước hiện theo lời, dây có chấm chạy, bước đang nói sáng) | toàn màn hình; dọc giải thích dài → `o-nguoi` `nguoi_duoi` + `chuoi` |
 | so sánh nên / không nên, trước / sau | `illus vs` · trước/sau | toàn màn hình hoặc cạnh |
 | một con số người nói | `illus count` | toàn màn hình (ngắn) |
 | liệt kê 3–5 thứ | `illus list` · `the-canh` (giữ người) · thêm vào bảng ghi chú | cạnh chủ thể |
@@ -104,7 +124,7 @@ con số, `at` = lúc nói. Mỗi phút ~2–4 ý. **Lằn ranh** (số tiền, 
 | người / nơi / tổ chức có thật | `diagram anh` | cạnh hoặc toàn |
 | đổi ý ("không phải A, mà là B") | `the-canh` có gạch chữ | cạnh chủ thể |
 | câu đắt, cú chốt, đỉnh cảm xúc | `nhan` làm tối / chữ cạnh mặt · `the-canh` chữ to | trên người / cạnh |
-| giải thích dài vẫn cần thấy người | `o-nguoi` (người vào ô) | — |
+| giải thích dài vẫn cần thấy người | `o-nguoi` (người vào ô); khung dọc: `nguoi_duoi: true` (hình nửa trên, người nửa dưới) | — |
 | ý riêng không kiểu nào khớp | cảnh tự vẽ `ve` (khối 07 mục 1) | tuỳ |
 
 **Có khung chủ thể + bảng ghi chú:** ưu tiên cảnh **cạnh chủ thể** (thay chỗ bảng trong vài giây) để chủ thể luôn thấy; toàn màn hình chỉ
@@ -124,6 +144,7 @@ Khuôn: <1 video / ghép / podcast> vì <Y>
 Hình: <4 câu trả lời> → bố cục nền: <X> vì <Y>
 Nội dung: <số đo> → lớp thông tin: <X> vì <Y>
 Thẩm mỹ: nền … · kiểu hình … · chuyển cảnh … · nhạc … vì …
+Tiết chế: <số> ý cần hình / <tổng ý> · bỏ hình ở … vì dễ hiểu khi nghe
 Kiểu cảnh dùng: <danh sách> · kiểu hợp mà chưa code: <…> (đã ghi can-code.md)
 ```
 Bảng ý → kiểu (mỗi ý chính một dòng: mốc · câu nguyên văn · dạng câu · kiểu chọn) đi ngay dưới, là nguồn để viết `canh.js` /

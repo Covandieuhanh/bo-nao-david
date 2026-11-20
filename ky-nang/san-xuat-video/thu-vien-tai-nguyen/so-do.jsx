@@ -11,6 +11,10 @@
 //   'xay-tang' xây từ GỐC lên (khối 07, 2026-11-06) — items từ DƯỚI lên: {label, sub?}; ô trống hiện sẵn, mỗi tầng chỉ sáng đúng lúc nhắc (tầng sau xây trên tầng trước)
 //   'doi-trang-thai' MỘT vật giữ nguyên, trạng thái đổi: items[0] = trước (xám), items[1] = sau (cam); {label, sub?, icon?} — bỏ icon ở items[1] = giữ hình cũ
 //   'chuyen-giao' việc đi từ bên này sang bên kia: items[0] = bên giao, items[cuối] = bên nhận {label, icon}; giữa = các việc được chuyển {icon, label, at}
+//   'chuoi'   CHUỖI BƯỚC (học Cường Mê AI, 20/11/2026): quy trình 3–6 bước kể liền một mạch. Bước hiện đúng lúc nói, dây nối từ bước
+//             trước chạy tới (chấm sáng ở đầu dây chỉ hướng), bước đang nói viền cam, bước đã qua mờ. Dọc: cột trên → dưới · ngang: hàng
+//             trái → phải (lồng trong bố cục thì luôn cột dọc). items: [{at, label (1–3 chữ nguyên văn), icon?}]
+// mot_diem: true (tang, cot) — chỉ mục đang nói sáng cam, mục khác nhạt (nguyên lý "một chỗ sáng", tu-chon.md bước 4a). Mặc định tắt.
 //   'anh'     ảnh thật trong khung bo góc: {photo: 'x.jpg' (chuyen-dong/public/anh/), label, sub?, credit: 'Tác giả · CC BY-SA', ratio?: 3/4, pos?: '50% 30%'}
 //             — chỉ ảnh giấy phép mở dùng thương mại (Wikimedia/Openverse) hoặc ảnh David gửi; ghi nguồn vào mô tả (nguon-anh.txt)
 // Vùng vẽ như Illus: dọc 10–56% chiều cao · ngang 12–80% (chừa phụ đề + thanh thời gian).
@@ -24,7 +28,7 @@ const cl = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'};
 const UP = {textTransform: 'uppercase', fontFamily: HEAD, fontWeight: 800, lineHeight: 1.15, paddingTop: '0.12em'};
 const fit = (txt, width, max) => Math.min(max, width / (Math.max(4, (txt || '').length) * 0.46));   // Barlow Condensed in hoa có dấu ≈ 0,46 em/ký tự
 
-export const Diagram = ({mode = 'tang', items = [], label = '', total = 0, start = 0, len, nen = true}) => {   // nen=false: không vẽ nền (lồng trong bố cục BoCuc)
+export const Diagram = ({mode = 'tang', items = [], label = '', total = 0, start = 0, len, nen = true, mot_diem = false}) => {   // nen=false: không vẽ nền (lồng trong bố cục BoCuc)
   const f = useCurrentFrame();
   const {fps, width: W, height: H, durationInFrames} = useVideoConfig();
   const Lf = len || durationInFrames;
@@ -37,18 +41,19 @@ export const Diagram = ({mode = 'tang', items = [], label = '', total = 0, start
   const head = label ? M * (land ? 0.06 : 0.07) : 0;
   const bodyH = AH - (label ? head * 1.9 : 0);
   let body = null;
+  const curI = items.filter((it) => f >= rel(it.at)).length - 1;   // mục đang nói (mot_diem, chuoi)
 
   if (mode === 'tang') {   // kim tự tháp ngược: dòng trên hẹp (ít), dòng dưới rộng (nhiều)
     const n = Math.max(1, items.length), gap = bodyH * 0.05, rh = (bodyH - gap * (n - 1)) / n;
     body = items.map((it, i) => {
-      const p = sp(rel(it.at)), w = AW * (0.58 + 0.42 * (n === 1 ? 1 : i / (n - 1)));
+      const p = sp(rel(it.at)), w = AW * (0.58 + 0.42 * (n === 1 ? 1 : i / (n - 1))), hl = mot_diem ? i === curI : i === 0;
       return (
         <div key={i} style={{position: 'absolute', left: (AW - w) / 2, top: i * (rh + gap), width: w, height: rh, borderRadius: rh * 0.22,
-          background: i === 0 ? C.accent : `rgba(255,122,69,${0.1 + 0.1 * (n - 1 - i) / Math.max(1, n - 1)})`, border: `2px solid ${C.accent}`,
+          background: hl ? C.accent : `rgba(255,122,69,${0.1 + 0.1 * (n - 1 - i) / Math.max(1, n - 1)})`, border: `2px solid ${mot_diem && !hl ? 'rgba(255,122,69,0.4)' : C.accent}`,
           display: 'flex', alignItems: 'center', justifyContent: 'center', gap: rh * 0.35, opacity: Math.min(1, p * 1.4),
           transform: `scaleX(${0.6 + 0.4 * p})`}}>
-          {it.value && <div style={{...UP, fontSize: rh * 0.56, color: i === 0 ? C.bg : C.accent, fontVariantNumeric: 'tabular-nums'}}>{it.value}</div>}
-          <div style={{...UP, fontSize: Math.min(rh * 0.34, w * 0.6 / Math.max(4, (it.label || '').length * 0.5)), color: i === 0 ? C.bg : C.text, whiteSpace: 'nowrap'}}>{it.label}</div>
+          {it.value && <div style={{...UP, fontSize: rh * 0.56, color: hl ? C.bg : C.accent, fontVariantNumeric: 'tabular-nums'}}>{it.value}</div>}
+          <div style={{...UP, fontSize: Math.min(rh * 0.34, w * 0.6 / Math.max(4, (it.label || '').length * 0.5)), color: hl ? C.bg : mot_diem ? C.muted : C.text, whiteSpace: 'nowrap'}}>{it.label}</div>
         </div>
       );
     });
@@ -97,13 +102,13 @@ export const Diagram = ({mode = 'tang', items = [], label = '', total = 0, start
     const base = bodyH * 0.8, maxH = bodyH * 0.58;
     body = items.map((it, i) => {
       const a = rel(it.at), p = interpolate(f, [a, a + 18], [0, 1], {...cl, easing: (x) => 1 - Math.pow(1 - x, 3)});
-      const h = Math.max(10, maxH * Math.sqrt(Math.max(0, it.value || 0)) / mx) * p;
+      const h = Math.max(10, maxH * Math.sqrt(Math.max(0, it.value || 0)) / mx) * p, hl = mot_diem ? i === curI : i === n - 1;
       return (
         <React.Fragment key={i}>
           <div style={{position: 'absolute', left: x0 + i * (cw + gap), top: base - h, width: cw, height: h, borderRadius: `${cw * 0.12}px ${cw * 0.12}px 0 0`,
-            background: i === n - 1 ? C.accent : 'rgba(255,122,69,0.35)'}} />
+            background: hl ? C.accent : 'rgba(255,122,69,0.35)'}} />
           <div style={{position: 'absolute', left: x0 + i * (cw + gap) - gap / 2, width: cw + gap, top: base - h - M * 0.075, textAlign: 'center', ...UP,
-            fontSize: M * (land ? 0.055 : 0.06), color: i === n - 1 ? C.accent : C.text, opacity: ease(f, a + 10, a + 18)}}>{it.show ?? it.value}</div>
+            fontSize: M * (land ? 0.055 : 0.06), color: hl ? C.accent : mot_diem ? C.muted : C.text, opacity: ease(f, a + 10, a + 18)}}>{it.show ?? it.value}</div>
           <div style={{position: 'absolute', left: x0 + i * (cw + gap) - gap / 2, width: cw + gap, top: base + M * 0.015, textAlign: 'center', ...UP,
             fontSize: M * (land ? 0.032 : 0.036), color: C.muted, opacity: ease(f, a, a + 8)}}>{it.label}</div>
         </React.Fragment>
@@ -259,6 +264,44 @@ export const Diagram = ({mode = 'tang', items = [], label = '', total = 0, start
         })}
       </>
     );
+  } else if (mode === 'chuoi') {   // chuỗi bước: hiện theo lời, dây chạy từ bước trước tới, một chỗ sáng
+    const n = Math.max(1, items.length), doc = !land || !nen;   // lồng trong bố cục (cạnh người / ô người) → xếp dọc cho vừa cột
+    const gap = doc ? bodyH * 0.07 : AW * 0.05;
+    const bw = doc ? Math.min(AW * 0.78, bodyH * (land ? 0.9 : 2)) : (AW - gap * (n - 1)) / n, bh = doc ? Math.min((bodyH - gap * (n - 1)) / n, bodyH * 0.2) : Math.min(bodyH * 0.5, bw * 0.62);
+    const x0 = doc ? (AW - bw) / 2 : 0, y0 = doc ? (bodyH - (bh * n + gap * (n - 1))) / 2 : (bodyH - bh) / 2;
+    const at = (i) => doc ? [x0, y0 + i * (bh + gap)] : [x0 + i * (bw + gap), y0];
+    const RUN = 9;   // dây chạy ~0,3 s trước khi bước mới hiện
+    const lines = items.slice(1).map((it, j) => {
+      const i = j + 1, a = rel(it.at), t = interpolate(f, [a - RUN, a], [0, 1], {...cl, easing: Easing.inOut(Easing.cubic)});
+      const [px, py] = at(i - 1), [qx, qy] = at(i);
+      const A = doc ? [px + bw / 2, py + bh] : [px + bw, py + bh / 2], B = doc ? [qx + bw / 2, qy] : [qx, qy + bh / 2];
+      const hx = A[0] + (B[0] - A[0]) * t, hy = A[1] + (B[1] - A[1]) * t, dot = M * 0.012, on = f >= a - RUN;
+      return (
+        <React.Fragment key={'l' + i}>
+          <div style={{position: 'absolute', left: Math.min(A[0], B[0]) - (doc ? 2 : 0), top: Math.min(A[1], B[1]) - (doc ? 0 : 2),
+            width: doc ? 4 : Math.abs(B[0] - A[0]), height: doc ? Math.abs(B[1] - A[1]) : 4, borderRadius: 2, background: C.line, opacity: f >= rel(items[i - 1].at) ? 1 : 0}} />
+          <div style={{position: 'absolute', left: A[0] - (doc ? 2 : 0), top: A[1] - (doc ? 0 : 2), width: doc ? 4 : hx - A[0], height: doc ? hy - A[1] : 4,
+            borderRadius: 2, background: C.accent, opacity: on ? 1 : 0}} />
+          {on && t < 1 && <div style={{position: 'absolute', left: hx - dot, top: hy - dot, width: dot * 2, height: dot * 2, borderRadius: dot,
+            background: C.accent, boxShadow: `0 0 ${dot * 3}px ${C.accent}`}} />}
+        </React.Fragment>
+      );
+    });
+    const boxes = items.map((it, i) => {
+      const a = rel(it.at), p = sp(a), cur = i === curI, cu = i < curI, [x, y] = at(i);
+      const fsz = fit(it.label, bw * (it.icon ? 0.62 : 0.86), Math.min(bh * 0.36, M * (land ? 0.05 : 0.065)));
+      return (
+        <div key={i} style={{position: 'absolute', left: x, top: y, width: bw, height: bh, borderRadius: Math.min(bh, bw) * 0.18, boxSizing: 'border-box',
+          background: cur ? C.accentSoft : C.card, border: `${cur ? 3 : 2}px solid ${cur ? C.accent : C.line}`,
+          boxShadow: cur ? `0 0 ${M * 0.05}px rgba(255,122,69,0.28)` : '0 20px 60px rgba(0,0,0,0.45)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center', gap: bh * 0.18, padding: `0 ${bh * 0.2}px`,
+          opacity: Math.min(1, p * 1.4) * (cu ? 0.5 : 1), transform: `translateY(${(1 - p) * bh * 0.25}px) scale(${0.94 + 0.06 * p})`}}>
+          {it.icon && <div style={{flex: 'none'}}><Icon name={it.icon} size={bh * 0.48} at={a} stroke={3} /></div>}
+          <div style={{...UP, fontSize: fsz, color: cur ? C.text : cu ? C.muted : C.text, whiteSpace: 'nowrap'}}>{it.label}</div>
+        </div>
+      );
+    });
+    body = <>{lines}{boxes}</>;
   } else if (mode === 'anh') {   // ẢNH THẬT trong khung bo góc + nhãn + nguồn
     const it = items[0] || {}, p = sp(rel(it.at));
     const ph = bodyH * (it.label ? 0.8 : 0.95), pw = Math.min(AW * 0.9, ph * (it.ratio || (land ? 16 / 9 : 4 / 3))), x = (AW - pw) / 2;   // it.ratio: 3/4 cho chân dung

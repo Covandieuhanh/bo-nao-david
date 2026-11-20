@@ -112,8 +112,10 @@ Khi câu nói có CẤU TRÚC, vẽ chính cấu trúc đó (mọi chữ trích 
 | trước → sau, từ … thành … | `tu-thanh` | "cộng đồng → nâng cấp thành làng" |
 | xây dần từ gốc, tầng sau cần tầng trước ("bản thân → công việc → mối quan hệ") | `xay-tang` (items từ DƯỚI lên) | "muốn lên tầng sau phải qua tầng trước" |
 | một thứ giữ nguyên nhưng đổi trạng thái (nhấn vào sự đổi, không so sánh hai bên) | `doi-trang-thai` (2 items; bỏ `icon` ở item sau = giữ hình) | "từ làm thay … thành dẫn đội" |
+| quy trình 3–6 bước kể liền một mạch ("đầu tiên… rồi… cuối cùng") | `chuoi` (items `{at, label 1–3 chữ, icon?}`; bước đang nói sáng, bước cũ mờ) | "câu lệnh … viết code … chụp khung … ghép video" |
 | việc đi từ người này sang người kia | `chuyen-giao` (items[0] bên giao, giữa = các việc `{icon, label, at}`, cuối = bên nhận) | "báo cáo tuần … xếp lịch … giao lại cho đội" |
 | người / nơi / tổ chức có thật | `anh` (ảnh giấy phép mở hoặc ảnh David gửi, khung bo góc + nhãn + nguồn) | "CCL", "Hưng Yên", "Bác Hồ" |
+`tang`, `cot` thêm `mot_diem: true` khi các mục được nói lần lượt: chỉ mục đang nói sáng (nguyên lý "một chỗ sáng", `thiet-ke-bo-cuc/tu-chon.md` bước 4a).
 Ảnh (chỉ ảnh Việt Nam, `quy-tac-chung.md` mục 4): `kho-anh-openverse.py search/fetch` (CC0 / PD / CC BY / CC BY-SA, dùng thương mại) → `chuyen-dong/public/anh/`, ghi `credit` trên ảnh +
 `nguon-anh.txt` cho mô tả. Không có ảnh đúng (logo thương hiệu, ảnh mơ hồ) → dùng sơ đồ, không ép ảnh. Podcast dài: ưu tiên `diagram`
 hơn `illus`. Vlog (`ke-hoach.json` fx): `{"type": "diagram", "c", "at", "len", "mode", "label", "items": [{"at": giây clip, …}]}`.
