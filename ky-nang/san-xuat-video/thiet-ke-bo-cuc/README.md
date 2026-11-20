@@ -38,7 +38,7 @@ Học càng nhiều càng có nhiều tài nguyên để chọn; khi dựng thì
 
 ## 4. Quy trình học một video mẫu mới
 
-Học là **bổ sung** (`quy-tac-hoc-la-bo-sung`): không xoá, không sửa nghĩa cái đã có. Skill `phan-tich-video-mau` tự bật khi David gửi video
+Học là **bổ sung** (`quy-tac-hoc-la-bo-sung`; trục `co-so-tri-thuc/truc-tri-thuc.md`: nguồn mới vào kho / tầng 3 trước): không xoá, không sửa nghĩa cái đã có. Skill `phan-tich-video-mau` tự bật khi David gửi video
 và nói "học cái này"; skill đó chỉ trỏ về đây.
 
 Bước nhẹ (1–3): tới đó nhắc một dòng để David tự đổi mô hình rẻ hơn, không tự đổi.

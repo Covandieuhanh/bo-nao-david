@@ -5,7 +5,7 @@ description: Dọn luật — bước 4 của vòng NÂNG CẤP bộ não (hoc-l
 
 # Dọn luật (bước 4 của Nâng cấp)
 
-**Đọc trước:** `../chuan-muc-lam-viec.md` (mục 4 "sửa thẳng, không chồng câu" — dọn là bước định kỳ của luật đó) · vòng nâng cấp:
+**Đọc trước:** `../../co-so-tri-thuc/truc-tri-thuc.md` (mục 2: mỗi ý một nhà ở tầng 1–2) · `../chuan-muc-lam-viec.md` (mục 4 "sửa thẳng, không chồng câu" — dọn là bước định kỳ của luật đó) · vòng nâng cấp:
 `../hoc-lien-tuc/SKILL.md` Việc 4 (mốc, thước đo trước / sau, chưng cất, tỉa, ra bản nằm ở đó).
 
 **Mục tiêu:** gom các bản trùng, ý trùng viết theo nhiều cách về một nhà, gỡ chỗ rối — không phải làm bộ não ngắn đi. Dù đã học, sửa
@@ -18,7 +18,7 @@ bao nhiêu lớp, lúc làm việc AI chỉ đọc **một bản luật hiện h
 | **Sổ quyết định** | ngày · lời David nguyên văn · lý do · luật nào bị thay | không đọc (chỉ khi cân nhắc đổi luật, gỡ lỗi) |
 | **Kho** | thực đơn để chọn (bố cục, nguồn học, hình mẫu) — không phải luật | chỉ khi cần chọn |
 
-Bộ: `video` (ky-nang/san-xuat-video) · `hoi` (thu-thap-yeu-cau) · `nao` (AGENTS, CLAUDE, chi-dan-toan-cuc, david.md, chuan-muc-lam-viec). Ghi nhớ `co-so-tri-thuc/bo-nho/`
+Bộ: `video` (ky-nang/san-xuat-video) · `hoi` (thu-thap-yeu-cau) · `nao` (truc-tri-thuc, AGENTS, CLAUDE, chi-dan-toan-cuc, david.md, chuan-muc-lam-viec). Ghi nhớ `co-so-tri-thuc/bo-nho/`
 là sổ, không đo ở đây, nhưng **dọn cùng đợt** bằng skill `consolidate-memory`. Dọn luôn là **cả bộ não một đợt**: học tài nguyên mới thường
 kéo theo đổi luật ở nhiều bộ cùng lúc, dọn lẻ một bộ thì bộ khác vẫn giữ lớp cũ.
 

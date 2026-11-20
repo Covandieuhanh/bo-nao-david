@@ -58,6 +58,7 @@
   },
   "nao": {
     "ban_luat": [
+      "co-so-tri-thuc/truc-tri-thuc.md",
       "AGENTS.md",
       "CLAUDE.md",
       "co-so-tri-thuc/chi-dan-toan-cuc.md",

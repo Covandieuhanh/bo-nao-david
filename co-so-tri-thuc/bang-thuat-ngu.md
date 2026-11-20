@@ -53,6 +53,7 @@ tiếng Anh chuẩn → dùng đúng cột "Tên dùng"; chưa có thì thêm m�
 | Productization | Sản phẩm hoá | `san-pham-hoa` |
 | Requirements Elicitation | Thu thập yêu cầu | `thu-thap-yeu-cau` |
 | Refactoring | Tái cấu trúc (bước Dọn của Nâng cấp) | `tai-cau-truc` |
+| Knowledge Axis | Trục tri thức (tầng 0: cách tiếp nhận, xử lý, học mọi thông tin) | `truc-tri-thuc` |
 | Upgrade | Nâng cấp (vòng R&D định kỳ: đo trước / sau, chưng cất, tỉa, dọn) | `nang-cap` (mốc `nang-cap-<n>`) |
 | Continuous Learning | Học liên tục | `hoc-lien-tuc` |
 | Message Digest | Tổng hợp tin nhắn | `tong-hop-tin-nhan` |

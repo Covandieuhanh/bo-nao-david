@@ -10,6 +10,7 @@ Gốc: [bản đồ bộ não](README.md).
 - [AGENTS](../AGENTS.md) — Cửa vào cho mọi AI: thứ tự đọc, sáu luật, bảng chọn skill.
 - [CLAUDE](../CLAUDE.md) — Cấu hình Claude Code của repo, nạp AGENTS.md.
 - [chi-dan-toan-cuc](../co-so-tri-thuc/chi-dan-toan-cuc.md) — Luật chung mọi phiên (bản gốc ~/.claude/CLAUDE.md).
+- [truc-tri-thuc](../co-so-tri-thuc/truc-tri-thuc.md) — **Trục tri thức (tầng 0)**: cách bộ não tiếp nhận, xử lý, học, nâng cấp mọi thông tin, dựng theo cách mô hình AI được làm ra (dữ liệu → chưng cất → phản hồi → đánh giá → ra bản).
 - [chuan-muc-lam-viec](../ky-nang/chuan-muc-lam-viec.md) — Thói quen làm việc chung mọi skill đọc trước: khi hai điều ngược nhau, đọc đúng phần, khi nào hỏi, trong lúc làm, cuối việc, giữ phiên gọn.
 - [quy-uoc-lien-ket](../co-so-tri-thuc/quy-uoc-lien-ket.md) — Bộ quy tắc liên kết của bộ não — mô tả đầu file, đường nối, bản đồ nội dung, chỉ mục tự sinh, ghi chú kiến thức, máy kiểm; để Claude tra nhanh, ít token, không sót.
 - [bang-thuat-ngu](../co-so-tri-thuc/bang-thuat-ngu.md) — Bảng thuật ngữ đặt tên: thuật ngữ kinh doanh tiếng Anh → tiếng Việt → tên file/thư mục dùng; tên bắt buộc của công cụ; cấu trúc thư mục.
@@ -42,6 +43,7 @@ Gốc: [bản đồ bộ não](README.md).
 - [quy-tac-khong-dung-mod-giao-dien](../co-so-tri-thuc/bo-nho/quy-tac-khong-dung-mod-giao-dien.md) — Không dùng mod giao diện: David gỡ hết savvy-progress, collision-guard, goal-meter, Sổ việc (13/11/2026)
 - [quy-tac-noi-dung-cua-david](../co-so-tri-thuc/bo-nho/quy-tac-noi-dung-cua-david.md) — Vai trò chia rõ — David tự xây nội dung, nói tự do có cảm xúc; skill lo hình. Người xem làm trung tâm; học kênh lớn ở nhịp và cách trình bày (2026-11-05, gộp 10/11)
 - [quy-tac-phien-telegram-tu-chay](../co-so-tri-thuc/bo-nho/quy-tac-phien-telegram-tu-chay.md) — Phiên việc giao qua Telegram: trình 4 phần chờ duyệt, duyệt rồi tự làm tới kết quả, ghi sổ; chỉ hỏi khi đăng/gửi, tốn tiền, đẩy đè GitHub, xoá ổ đĩa; mọi phiên…
+- [quy-tac-truc-tri-thuc](../co-so-tri-thuc/bo-nho/quy-tac-truc-tri-thuc.md) — Lời David chốt trục tri thức cố định cho việc kaizen bộ não (20/11).
 - [quy-tac-sua-thang-tai-ban](../co-so-tri-thuc/bo-nho/quy-tac-sua-thang-tai-ban.md) — Đổi luật thì sửa thẳng câu cũ (không chồng câu "bổ sung/thay luật", không ngày trong bản luật); định kỳ tái bản TOÀN BỘ bộ não một đợt khi máy đo chồng chéo báo…
 - [quy-tac-thu-bang-doan-ngan](../co-so-tri-thuc/bo-nho/quy-tac-thu-bang-doan-ngan.md) — Thử skill dựng video thì chỉ dùng một đoạn ngắn TRỌN VẸN MỘT Ý (không cố định số giây), không chạy cả video dài
 - [quy-tac-tu-hoi-khi-mo-ho](../co-so-tri-thuc/bo-nho/quy-tac-tu-hoi-khi-mo-ho.md) — Tự nhận diện lúc cần hỏi David (câu mơ hồ / đọc chính tả lệch, mâu thuẫn luật, việc tốn kém khó đảo ngược…) — không tự đoán rồi làm

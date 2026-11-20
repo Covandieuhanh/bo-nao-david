@@ -5,17 +5,12 @@ description: Tự học và cải tiến liên tục bộ skill của David (h�
 
 # Tự học, cải tiến skill
 
-Đọc trước: `ky-nang/chuan-muc-lam-viec.md`. Luật nền: `AGENTS.md` luật 2 (việc gì cũng duyệt 4 phần trước; tự học tự phân tích, phần sửa trình 4 phần).
+Đọc trước: `co-so-tri-thuc/truc-tri-thuc.md` (trục: bốn tầng, luật đi lên, ba vòng học, bốn thước — skill này là vòng "mỗi tuần" và "Nâng cấp") · `ky-nang/chuan-muc-lam-viec.md`. Luật nền: `AGENTS.md` luật 2 (việc gì cũng duyệt 4 phần trước; tự học tự phân tích, phần sửa trình 4 phần).
 
 **Mục tiêu:** mỗi tuần bộ skill làm ra kết quả tốt hơn tuần trước (đo bằng số liệu kênh và số lần David phải sửa), tốn ít token nhất.
 Học càng nhiều thì bộ não càng lớn, và lớn là đúng; việc của skill này là giữ cho nó **càng lớn càng dễ hiểu, càng làm đúng**.
 
-**Ba nhịp, một chu trình** (giống R&D: thu dữ liệu → chưng cất → đo → ra bản):
-| Nhịp | Khi | Làm |
-|---|---|---|
-| Mỗi việc | xong một việc có sửa luật | sửa thẳng đúng câu luật, lý do vào sổ (`chuan-muc-lam-viec.md` mục 4) |
-| Mỗi tuần | sáng thứ 6 | Việc 1 (+ Việc 2 khi có số liệu mới) |
-| Định kỳ | máy đo báo, đủ dữ liệu mới, hoặc David gọi | Việc 4 — Nâng cấp |
+Ba vòng học (mỗi việc · mỗi tuần · Nâng cấp) và luật đi lên giữa các tầng: trục mục 4–5. Skill này làm vòng tuần (Việc 1–3) và Nâng cấp (Việc 4).
 
 ## Duyệt 4 phần rồi mới sửa
 
@@ -39,7 +34,7 @@ Máy đã ghi sẵn tín hiệu cuối mỗi phiên (hook `tu-dong-hoa/hoc-lien-
 2. Đọc các dòng 7 ngày qua trong `tin-hieu.jsonl` (chỉ trường `david_sua`, `skill`, `loi_cong_cu`). Gom **điều lặp ≥ 2 lần**: cùng một
    lỗi, cùng một câu David phải nhắc, cùng một việc David làm tay. Cần thêm ngữ cảnh thì `python3 -I tu-dong-hoa/tim-phien.py "<từ khoá>"`,
    không mở cả phiên.
-3. Mỗi điều lặp → một chỗ sửa trong bộ 4 phần (mục trên). Việc tay lặp ≥ 3 lần → viết thành script hoặc bước trong skill (Việc 3).
+3. Mỗi điều lặp → một chỗ sửa trong bộ 4 phần (mục trên) **và một câu kiểm** vào bộ kiểm của bộ đó (trục mục 4), để bản sau không lặp lại. Việc tay lặp ≥ 3 lần → viết thành script hoặc bước trong skill (Việc 3).
 4. **Giọng văn:** đọc lời David trong tuần (tin nhắn, lời nói trong video đã duyệt). Thấy cách nói mới, từ hay dùng, từ David sửa
    lại → cập nhật `giong-thuong-hieu-david.md` (ví dụ nguyên văn ngắn + ngày).
 5. **Dọn:** skill 30 ngày không dùng → đề xuất gộp hoặc cất vào `luu-tru/` (không xoá). Ghi nhớ trùng / quá dài trong `co-so-tri-thuc/bo-nho/` →

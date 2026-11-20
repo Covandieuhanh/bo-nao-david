@@ -67,6 +67,7 @@ Trong 4 phần, cách chọn từng điểm:
 - Đăng, gửi, xoá, mật khẩu: `AGENTS.md` luật 4.
 
 ## 4. Cuối việc
+Ghi lại gì, ở đâu, đi lên tầng nào: trục `../co-so-tri-thuc/truc-tri-thuc.md` (mục này là vòng học "mỗi việc" của trục).
 - **Tự soát trước khi báo xong:** (1) kiểm theo "Xong khi" và tiêu chí của skill; (2) tự hỏi "đã xong hết chưa?" rồi quét lại một lượt
   tìm chỗ sót; (3) đổi tên, đổi cấu trúc, đổi luồng thì chạy thử trọn một quy trình thật trước khi báo, vì lỗi hay nằm ở chỗ ghép nối;
   (4) việc phức tạp, rủi ro cao: đề nghị một agent chưa tham gia việc soát lại, chỉ bắt lỗi làm sai yêu cầu (cần David cho phép, mục 3).
@@ -76,7 +77,8 @@ Trong 4 phần, cách chọn từng điểm:
   qua Telegram thì mở đầu bằng số việc `#N`. Máy chưa cài bot thì lệnh chỉ ghi sổ. Chi tiết: `tu-dong-hoa/so-tay/README.md` (chỉ Mac chính).
 - **Nhắc lần hai thì thành luật ngay:** David phải nhắc lại một điều lần thứ hai → sửa ngay đúng nhà của luật đó, không đợi lượt nhìn lại tuần
   (skill, giọng văn, luật kênh, thông tin về David: đề xuất trong 4 phần, chờ "duyệt").
-- **Góp ý của David ghi đúng một chỗ:** sửa skill hoặc khối bị ảnh hưởng + một dòng nhật ký (`changelog` của skill, hoặc mục "Nhật ký").
+- **Góp ý của David ghi đúng một chỗ:** sửa skill hoặc khối bị ảnh hưởng + một dòng nhật ký (`changelog` của skill, hoặc mục "Nhật ký");
+  lỗi David phải sửa thì thêm một câu kiểm vào bộ kiểm của bộ đó (trục mục 4).
   Chỉ luật dùng chung cho nhiều skill mới vào `co-so-tri-thuc/bo-nho/`; đã có ghi nhớ gần giống thì sửa ghi nhớ đó, không tạo cái mới.
   `co-so-tri-thuc/david.md` chỉ ghi điều cố định đã chốt, vì mọi AI đọc nó như định hướng; ý tưởng, góp ý đang cân nhắc ghi
   `du-an/danh-sach-y-tuong.md` (hoặc file `du-an/` phù hợp), David chốt rồi mới đưa vào `david.md` qua 4 phần.

@@ -5,6 +5,7 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 
 ## Luật làm việc với David
 
+- [Trục tri thức cố định](quy-tac-truc-tri-thuc.md) — mọi việc học, sửa, lưu đi qua `truc-tri-thuc.md` (bốn tầng, sáu câu, luật đi lên, lỗi → câu kiểm), không đổi cách mỗi lần học (20/11)
 - [Công cụ cài thì đưa vào skill](quy-tac-cong-cu-cai-dua-vao-ky-nang.md) — công cụ David cài (pyannote…) giúp việc tốt hơn thì tích hợp, giữ cách cũ dự phòng (07/11)
 - [Không dùng mod giao diện](quy-tac-khong-dung-mod-giao-dien.md) — đã gỡ hết savvy-progress, collision-guard, goal-meter, Sổ việc; chỉ giữ Telegram (13/11)
 - [Skill tự cải tiến, sáu luật mới](quy-tac-ky-nang-tu-cai-tien.md) — skill/giọng văn/luật kênh tự học theo số liệu, phần sửa duyệt 4 phần (sửa 14/11); lời mới nhất thắng (12/11)

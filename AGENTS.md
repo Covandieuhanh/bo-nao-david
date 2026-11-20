@@ -11,7 +11,7 @@ Bạn đang làm việc với **David Trần** (Trần Đức Cường), nhà đ
 | 3 | [bao-cao-trang-thai.md](bao-cao-trang-thai.md) | Đang làm dở gì, việc tiếp theo, việc chờ David quyết |
 | 4 | [co-so-tri-thuc/bo-nho/MEMORY.md](co-so-tri-thuc/bo-nho/MEMORY.md) | Mục lục các bài học và quyết định. Mở từng file khi việc đụng tới |
 | 5 | [ky-nang/thu-thap-yeu-cau/SKILL.md](ky-nang/thu-thap-yeu-cau/SKILL.md) | Cách hỏi khi trình 4 phần: vòng hỏi, đề xuất đứng đầu, tín hiệu phải dừng |
-| 6 | [ky-nang/chuan-muc-lam-viec.md](ky-nang/chuan-muc-lam-viec.md) | Thói quen chung mọi skill: đọc đúng phần, hỏi một lần, trong lúc làm, cuối việc, luôn đi tới mục tiêu và nhắc David giữ phiên gọn |
+| 6 | [ky-nang/chuan-muc-lam-viec.md](ky-nang/chuan-muc-lam-viec.md) (việc học, sửa, lưu bộ não: [co-so-tri-thuc/truc-tri-thuc.md](co-so-tri-thuc/truc-tri-thuc.md)) | Thói quen chung mọi skill: đọc đúng phần, hỏi một lần, trong lúc làm, cuối việc, luôn đi tới mục tiêu và nhắc David giữ phiên gọn |
 | 7 | Skill đúng với việc (bảng dưới) | Quy trình từng bước |
 
 **Tìm thứ gì trong bộ não:** `grep -i "<từ khoá>" co-so-tri-thuc/chi-muc.md` (mỗi file một dòng có mô tả) rồi mở thẳng file đúng; cần bức tranh một chủ đề thì mở [ban-do/](ban-do/README.md). Chỉ tìm toàn repo khi chỉ mục không ra. Luật giữ mạng lưới: [co-so-tri-thuc/quy-uoc-lien-ket.md](co-so-tri-thuc/quy-uoc-lien-ket.md).
@@ -84,6 +84,8 @@ Máy chỉ có repo này là đủ để dựng video ra như Mac chính. Không
 
 ## Giữ bộ não luôn mới
 
+- **Mọi việc học, sửa, lưu đi qua một trục cố định:** [co-so-tri-thuc/truc-tri-thuc.md](co-so-tri-thuc/truc-tri-thuc.md) — bốn tầng (trục ·
+  nguyên lý · quy trình · dữ liệu), sáu câu cho mọi thông tin mới, luật đi lên, ba vòng học, bốn thước. Đọc trước khi học hay sửa bộ não.
 - **Hai bộ não, tự xếp đúng nhà:** nội dung về công ty Veltrix (đội, thành viên, khách của công ty, giải pháp như Văn Phòng Shop, tiền, hợp đồng, quyết định điều hành) → ghi vào bộ não công ty `~/Documents/bo-nao-veltrix` theo `AGENTS.md` ở đó, đẩy bằng `bash ~/Documents/bo-nao-veltrix/dong-bo.sh`. Chuyện của David (nghề, nội dung, kênh, khách cá nhân, đời tư, skill) → bộ não này. Một nội dung có cả hai phần thì tách ra ghi hai nơi; không rõ thuộc bên nào thì hỏi David một câu. Không chép dữ liệu công ty vào đây, không chép hồ sơ David sang bên kia. Máy chưa có thư mục đó: `git clone https://github.com/Covandieuhanh/veltrix.git ~/Documents/bo-nao-veltrix`.
 - Cuối mỗi việc làm theo `ky-nang/chuan-muc-lam-viec.md` mục 4: ghi góp ý đúng một chỗ, cập nhật `bao-cao-trang-thai.md` / file `du-an/`, đẩy GitHub (luật 6).
 - Mọi tên file, thư mục, skill, ghi nhớ đi từ **thuật ngữ kinh doanh tiếng Anh chuẩn**, dịch đúng nghĩa sang tiếng Việt không dấu, chữ thường, gạch nối (ví dụ Projects → `du-an`). Tra và bổ sung ở [co-so-tri-thuc/bang-thuat-ngu.md](co-so-tri-thuc/bang-thuat-ngu.md), mỗi thuật ngữ một bản dịch. Ghi nhớ chỉ đúng cho một máy đặt tên bắt đầu `thiet-bi-`, không đưa lên repo.
