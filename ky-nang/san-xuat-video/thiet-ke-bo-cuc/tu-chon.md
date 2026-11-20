@@ -125,6 +125,13 @@ Với các ý bước 4a chọn ra, đi hết kho để tìm kiểu diễn tả 
 | đổi ý ("không phải A, mà là B") | `the-canh` có gạch chữ | cạnh chủ thể |
 | câu đắt, cú chốt, đỉnh cảm xúc | `nhan` làm tối / chữ cạnh mặt · `the-canh` chữ to | trên người / cạnh |
 | giải thích dài vẫn cần thấy người | `o-nguoi` (người vào ô); khung dọc: `nguoi_duoi: true` (hình nửa trên, người nửa dưới) | — |
+| ≥ 2 cặp "đừng… hãy…" / "sai… đúng…" / "thay vì… thì…" nối nhau | `bocuc dung-hay` (một cặp lẻ → `illus vs`) | dọc: khung trên, người dưới · ngang: cạnh người |
+| có hai nguồn hình cùng lúc (ảnh trước + video sau, bản gốc + kết quả) | `bocuc tren-duoi` (`giuPhuDe: true`) | toàn màn hình |
+| lời tả chi tiết một thứ cần nhìn kỹ (một bộ phận, sản phẩm, màn hình) ≥ ~4 s, có ảnh / hình vẽ đúng thứ đó | `bocuc o-tron` | toàn màn hình, người ô tròn |
+| phỏng vấn / lời chứng, có người hỏi | `bocuc cau-hoi` + `lower` tên · vai trò | dưới mặt |
+| lời đếm "thứ nhất / yếu tố 1…" ≥ 3 mục, mỗi mục ≥ ~5 s | `the-canh` + `so` (hoặc `tien-trinh`) | cạnh người |
+| cụm phụ đề có con số / một chữ quyết định nghĩa (video dọc ngắn) | `hl: ['^từ']` — tối đa một chỗ mỗi dòng | phụ đề |
+| video khoe một thành quả có bản gốc / quá trình | **kết quả trước, cách làm sau**: cảnh thành quả lên đầu, lộ bản gốc sau | thứ tự cảnh |
 | ý riêng không kiểu nào khớp | cảnh tự vẽ `ve` (khối 07 mục 1) | tuỳ |
 
 **Có khung chủ thể + bảng ghi chú:** ưu tiên cảnh **cạnh chủ thể** (thay chỗ bảng trong vài giây) để chủ thể luôn thấy; toàn màn hình chỉ
@@ -135,6 +142,8 @@ cho đỉnh và ý cần nhìn rõ. **Không có kiểu nào trong bảng mà l�
 
 `soat-canh.mjs` báo P0: `kinetic`, `action` ở khung ngang · cảnh minh hoạ trống > 1,2 s đầu cảnh · phần tử ngoài cảnh. P1: thẻ > 4 dòng
 ở khung ngang. Gặp P0 → đổi kiểu theo bảng bước 4, không thử render.
+Kiểu học từ nguồn chỉ dùng khi có dấu hiệu ở bảng bước 4: mục Chẩn đoán ghi `<kiểu>: <dấu hiệu thấy ở lời / hình>`. Máy báo P1 khi
+`dung-hay`, `tren-duoi`, `o-tron`, `cau-hoi` thiếu dòng đó, `dung-hay` < 2 cặp, dòng phụ đề > 1 mục `^`; P2 khi `so` thiếu dòng `so:`.
 
 ## Ghi vào ke-hoach-canh.md (thư mục dự án, cạnh `chuyen-dong/`)
 

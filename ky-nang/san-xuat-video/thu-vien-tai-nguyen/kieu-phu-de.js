@@ -27,7 +27,7 @@ const norm = (w) => w.toLowerCase().replace(/[.,!?…:;"“”]/g, '');
 export const chunks = (text, len, hl = [], maxW = 10, maxC = 52) => {
   const w = text.split(/\s+/).filter(Boolean);
   const toks = [];   // mỗi token = 1 từ, hoặc cả cụm từ khoá
-  const phrases = hl.map((h) => h.replace(/^[+-]/, '').toLowerCase().split(/\s+/).filter(Boolean)).filter((p) => p.length > 1);
+  const phrases = hl.map((h) => h.replace(/^[+\-^]+/, '').toLowerCase().split(/\s+/).filter(Boolean)).filter((p) => p.length > 1);
   for (let i = 0; i < w.length;) {
     const ph = phrases.find((p) => p.every((x, k) => w[i + k] && norm(w[i + k]) === norm(x)));
     if (ph) { toks.push(w.slice(i, i + ph.length).join(' ')); i += ph.length; } else { toks.push(w[i]); i += 1; }
@@ -56,9 +56,14 @@ export const ShortLine = ({text, hl = [], f, len, font, color, accent, width, si
   // MÀU THEO NGHĨA (David duyệt 2026-11-04, học Huỳnh Duy Khương): mục hl bắt đầu "+" = nên làm (xanh lá), "-" = tránh (đỏ),
   // còn lại = cam nhận diện. Vd hl: ['+tỏ rõ', '-nói vòng vo', 'bộ não']
   const words = (arr) => new Set(arr.join(' ').toLowerCase().split(/\s+/).filter(Boolean));
-  const good = words(hl.filter((h) => h.startsWith('+')).map((h) => h.slice(1)));
-  const bad = words(hl.filter((h) => h.startsWith('-')).map((h) => h.slice(1)));
-  const hw = words(hl.filter((h) => !/^[+-]/.test(h)));
+  // TỪ KHOÁ TO (học MagentX 20/11/2026): mục hl bắt đầu "^" = chữ quyết định nghĩa của cụm (con số, "thấp", "2 lần") → to gấp ~1,6,
+  // màu nhấn; tối đa MỘT mục "^" mỗi dòng phụ đề. Chỉ ở phụ đề dọc ngắn (ShortLine); phụ đề hộp tối (highlight) coi "^" như từ khoá thường.
+  // "^" ghép được với "+"/"-" ("^+giữ nguyên"): to + màu nghĩa.
+  const bo = (h) => h.replace(/^[+\-^]+/, '');
+  const good = words(hl.filter((h) => /^\^?\+/.test(h)).map(bo));
+  const bad = words(hl.filter((h) => /^\^?-/.test(h)).map(bo));
+  const big = words(hl.filter((h) => h.startsWith('^')).map(bo));
+  const hw = words(hl.filter((h) => !/^\^?[+-]/.test(h)).map(bo));
   const colorOf = (w) => good.has(w) ? '#3DDC84' : bad.has(w) ? '#FF4D4D' : hw.has(w) ? accent : null;
   const pop = Math.min(1, (f - c.a + 1) / 4);   // hiện nhẹ mỗi cụm
   return (
@@ -66,14 +71,16 @@ export const ShortLine = ({text, hl = [], f, len, font, color, accent, width, si
       opacity: 0.4 + 0.6 * pop, transform: `translateY(${(1 - pop) * 6}px)`}}>
       {c.text.split(' ').map((x, i) => (
         <React.Fragment key={i}>{i > 0 && ' '}
-          <span style={colorOf(x.toLowerCase().replace(/[.,!?…:;]/g, '')) ? {color: colorOf(x.toLowerCase().replace(/[.,!?…:;]/g, ''))} : null}>{x}</span></React.Fragment>))}
+          {(() => { const k = x.toLowerCase().replace(/[.,!?…:;]/g, ''), cl = colorOf(k), to = big.has(k);
+            return <span style={cl || to ? {color: cl || undefined, fontSize: to ? '1.6em' : undefined, lineHeight: to ? 1.05 : undefined,
+              display: to ? 'inline-block' : undefined, verticalAlign: to ? 'baseline' : undefined} : null}>{x}</span>; })()}</React.Fragment>))}
     </div>
   );
 };
 
 // Tô màu nhấn các cụm trong `hl` (cụm nhiều chữ được) — trả về mảng phần tử React
 export const highlight = (text, hl0 = [], color) => {
-  const tone = Object.fromEntries(hl0.map((h) => [h.replace(/^[+-]/, ''), h[0] === '+' ? '#3DDC84' : h[0] === '-' ? '#FF4D4D' : color]));
+  const tone = Object.fromEntries(hl0.map((h) => { const s = h.replace(/^\^/, ''); return [s.replace(/^[+-]/, ''), s[0] === '+' ? '#3DDC84' : s[0] === '-' ? '#FF4D4D' : color]; }));
   const hl = Object.keys(tone);
   if (!hl.length) return text;
   const re = new RegExp(`(${hl.map((h) => h.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`, 'g');

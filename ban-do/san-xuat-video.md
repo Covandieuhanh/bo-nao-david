@@ -86,6 +86,7 @@ Gốc: [bản đồ bộ não](README.md). Chiến lược kênh: [chien-luoc-no
 - [phieu-hoc-mau](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/phieu-hoc-mau.md) — Mẫu phiếu học video mẫu: Claude điền, David duyệt trước khi sửa skill.
 - [ali-joseph-2026-11-10](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/nguon-tham-khao/ali-joseph-2026-11-10.md) — Nguồn học Ali Abdaal + Joseph Video Editing (10/11): kiểu trình bày, hiệu ứng.
 - [sang-huynh-claude-do-hoa-2026-11-07](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/nguon-tham-khao/sang-huynh-claude-do-hoa-2026-11-07.md) — Nguồn học Sang Huỳnh: Claude làm motion graphics trong video (07/11).
+- [magentx-2026-11-20](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/nguon-tham-khao/magentx-2026-11-20.md) — Nguồn học kênh MagentX (20/11): đừng/hãy, trên/dưới, ô tròn, thẻ câu hỏi, số to, từ khoá to — mỗi kiểu kèm dấu hiệu tự chọn.
 - [thu-vien-tai-nguyen](../ky-nang/san-xuat-video/thu-vien-tai-nguyen/README.md) — Thư viện hình dùng chung cho cả 4 loại video: file, việc, khối dùng.
 - [nhan-dien-chung](../ky-nang/san-xuat-video/thu-vien-tai-nguyen/nhan-dien-chung.md) — Bộ nhận diện chung mọi loại video: vị trí, thành phần cố định, ngôn ngữ thiết kế.
 - [mau-chuan](../ky-nang/san-xuat-video/mau-chuan/README.md) — Bộ mẫu chuẩn video: dựng lại 5 dự án mẫu bằng kiem-mau.py để kiểm sau mỗi lần sửa skill.

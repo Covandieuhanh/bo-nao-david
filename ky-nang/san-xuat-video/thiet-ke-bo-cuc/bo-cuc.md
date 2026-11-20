@@ -57,6 +57,18 @@ Cột "Code": **có** = viết được ngay trong `canh.js` · **chưa** = mớ
 | **Một chỗ sáng** (`mot_diem: true` cho `tang`, `cot`): chỉ mục đang nói sáng cam | các mục được nói lần lượt | cả hai | có |
 | **Người nửa dưới, hình nửa trên** (`o-nguoi` · `nguoi_duoi: true`) | khung dọc, giải thích dài vẫn cần thấy người | dọc | có |
 
+## Đối chiếu, mốc, minh chứng (học kênh MagentX — `nguon-tham-khao/magentx-2026-11-20.md`; chỉ chọn khi có dấu hiệu ở `tu-chon.md` bước 4)
+
+| Kiểu | Hợp khi | Ngang / dọc | Code |
+|---|---|---|---|
+| **Cặp đừng / hãy lặp khuôn** (`bocuc` · `dung-hay`): nhãn mục + ô ✗ đỏ / ô ✓ xanh, mọi cặp vào cùng một chỗ; ô là ảnh, video hoặc chữ nguyên văn | lời có ≥ 2 cặp "đừng… hãy…", "sai… đúng…", "thay vì… thì…" | dọc: người nửa dưới, khung trên · ngang: cạnh người, chật thì ô người | có |
+| **Trên / dưới đối chiếu** (`bocuc` · `tren-duoi`): hai hình cùng chạy, nhãn nhỏ ở góc | có hai nguồn hình cùng lúc (trước/sau, gốc/kết quả) | dọc: trên/dưới · ngang: trái/phải | có |
+| **Hình toàn khung + người ô tròn** (`bocuc` · `o-tron`): `hinh` (ảnh, video) hoặc `noi_dung` (illus/diagram) toàn khung, người nói trong ô tròn | lời tả chi tiết một thứ cần nhìn kỹ, có hình cho thứ đó | dọc: giữa trên phụ đề · ngang: góc dưới phải | có |
+| **Thẻ câu hỏi** (`bocuc` · `cau-hoi`): câu người hỏi trong thẻ vạch cam, dưới mặt; tên + vai trò người trả lời dùng `lower` | phỏng vấn, lời chứng, có người hỏi | cả hai | có |
+| **Số thứ tự to** (`the-canh` · `so: 1`): số cam to đứng trước thẻ làm mốc danh sách | lời đếm ≥ 3 mục, mỗi mục nói ≥ ~5 s | cả hai | có |
+| **Từ khoá to trong phụ đề** (`hl: ['^5 lần']`): một chữ quyết định nghĩa to ~1,6 lần, màu nhấn; ghép được `^+` / `^-` | cụm có con số hoặc chữ đổi nghĩa; tối đa một chỗ mỗi dòng | chỉ phụ đề dọc ngắn | có |
+| **Kết quả trước, cách làm sau**: mở bằng thành quả, rồi mới lộ bản gốc / quá trình | video khoe một thành quả có bản gốc đi kèm | cả hai | không cần code (thứ tự cảnh) |
+
 ## Nền và lớp thông tin (11/11/2026 — chọn theo `tu-chon.md`)
 
 | Kiểu | Hợp khi | Ngang / dọc | Code |
@@ -75,6 +87,16 @@ Cột "Code": **có** = viết được ngay trong `canh.js` · **chưa** = mớ
 ## Viết trong `canh.js` (video 1 người)
 
 ```js
+// cặp đừng / hãy (≥ 2 cặp) — ô: {photo} · {video: 'goc', tu} · {text}
+{id: 'b2', type: 'bocuc', start: 30, end: 42, props: {kieu: 'dung-hay', cap: [
+  {nhan: 'Character', at: 30.2, at_hay: 32, dung: {photo: 'selfie.jpg'}, hay: {photo: 'character-sheet.jpg'}},
+  {nhan: 'Prompt', at: 36, at_hay: 38.5, dung: {text: 'dán prompt trên mạng'}, hay: {text: 'nói chuyện với AI'}}]}},
+// trên / dưới đối chiếu · hình toàn khung + người ô tròn · thẻ câu hỏi · số thứ tự to
+{id: 'b3', type: 'bocuc', start: 50, end: 56, props: {kieu: 'tren-duoi', giuPhuDe: true, tren: {photo: 'ket-qua.jpg', nhan: 'AI video'}, duoi: {video: 'goc', tu: 50, nhan: 'Gốc'}}},
+{id: 'b4', type: 'bocuc', start: 60, end: 66, props: {kieu: 'o-tron', hinh: {photo: 'doi-mat.jpg'}}},
+{id: 'b5', type: 'bocuc', start: 70, end: 76, props: {kieu: 'cau-hoi', cau: 'Lý do nào khiến anh chọn khoá này?', at: 70.3}},
+{id: 'b6', type: 'bocuc', start: 80, end: 86, props: {kieu: 'the-canh', so: 1, tieu_de: 'yếu tố', dong: [{text: 'khuôn mặt', at: 80.5, to: true}]}},
+// phụ đề dọc ngắn (phu-de.js): {start, end, text, hl: ['^5 lần']}
 // thẻ cạnh mặt
 {id: 'b1', type: 'bocuc', start: 89.3, end: 101.0, props: {kieu: 'the-canh', tieu_de: 'Đi cùng những ai',
   dong: [{text: 'sức khỏe đang bị nền tảng kém', at: 94.2}, {text: 'MÌNH XUẤT HIỆN', at: 100.2, to: true}]}},

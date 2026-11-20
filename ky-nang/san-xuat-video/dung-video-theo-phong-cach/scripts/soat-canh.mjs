@@ -131,6 +131,22 @@ for (let i = 1; i < chuoi.length; i++) {
     if (duration >= 45 && phu / duration > 0.45)
       bao('P1', 0, 'cả video', `hình phủ ${Math.round(100 * phu / duration)} % thời lượng — dễ rối, phân tán`, 'bỏ hình ở ý dễ hiểu khi nghe (kể chuyện, cảm xúc, câu ngắn tự rõ), giữ người nói + phụ đề');
   }
+  // KIỂU HỌC MỚI CHỈ DÙNG KHI CÓ DẤU HIỆU (David 20/11/2026: "không phải video nào cũng dùng, phải hợp nội dung"):
+  // mỗi kiểu dưới đây phải được nêu tên trong mục Chẩn đoán kèm dấu hiệu đã thấy (tu-chon.md) — không thì P1.
+  {
+    const cd = (kh.split(/^##\s*Chẩn đoán/m)[1] || '').split(/^##\s/m)[0];
+    const HOC = {'dung-hay': '≥ 2 cặp "đừng… hãy…" / "sai… đúng…"', 'tren-duoi': 'hai nguồn hình cùng thời lượng',
+      'o-tron': 'lời tả chi tiết một thứ có hình', 'cau-hoi': 'video phỏng vấn, có người hỏi'};
+    for (const x of list.map(flat).filter((x) => x.type === 'bocuc' && HOC[x.kieu])) {
+      if (!cd.includes(x.kieu)) bao('P1', x.start, x.id, `dùng "${x.kieu}" mà Chẩn đoán chưa ghi dấu hiệu (${HOC[x.kieu]})`, `ghi "${x.kieu}: <dấu hiệu thấy ở lời / hình>" vào mục Chẩn đoán, hoặc bỏ kiểu này`);
+      if (x.kieu === 'dung-hay' && (x.cap || []).length < 2) bao('P1', x.start, x.id, `"dung-hay" chỉ ${(x.cap || []).length} cặp — khuôn lặp cần ≥ 2`, 'một cặp thì dùng illus vs');
+    }
+    for (const x of list.map(flat).filter((x) => x.type === 'bocuc' && x.kieu === 'the-canh' && x.so != null))
+      if (!/số thứ tự|so_to|\bso\b/.test(cd)) bao('P2', x.start, x.id, 'thẻ có số thứ tự to mà Chẩn đoán chưa ghi lời có đếm ≥ 3 mục', 'ghi "so: lời đếm N mục" vào Chẩn đoán');
+    let caps = []; try { caps = (await imp('phu-de.js')).default || []; } catch {}
+    for (const c of caps) if ((c.hl || []).filter((h) => h.startsWith('^')).length > 1)
+      bao('P1', c.start, 'phu-de', `dòng "${c.text.slice(0, 40)}…" có ${(c.hl || []).filter((h) => h.startsWith('^')).length} từ khoá to`, 'mỗi dòng tối đa một mục "^"');
+  }
   const CO_DINH = new Set(['hud', 'title', 'pinTitle', 'teaserTag', 'cta', 'hook', 'round', 'outro', 'location']);
   const loai = new Set(list.map(flat).filter((x) => !CO_DINH.has(x.type)).map(kieu));
   const coY = /Một kiểu có chủ đích:/.test(kh);

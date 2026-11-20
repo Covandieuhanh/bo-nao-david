@@ -1,5 +1,5 @@
 ---
-description: "Danh sách ý tưởng nghề đang cân nhắc (chưa chốt): Company OS, talkshow hai đầu Việt – Đức, Telegram cho thành viên; mỗi ý có câu cần chốt và bước nhỏ nhất."
+description: "Danh sách ý tưởng nghề đang cân nhắc (chưa chốt): Company OS, talkshow hai đầu Việt – Đức, Telegram cho thành viên, cách dẫn reel học từ MagentX; mỗi ý có câu cần chốt và bước nhỏ nhất."
 ---
 
 # Ý tưởng nghề đang cân nhắc
@@ -13,6 +13,7 @@ Sổ gốc ghi lời nguyên văn: `~/Documents/2-ca-nhan/so-tay/y-tuong.md` và
 | 1 | Company OS: automation cho DN nhỏ, phễu dẫn vào gói training | Anh Phú Ông góp ý | 12/11/2026 | ✅ Gộp vào hướng 3 gói công nghệ (13/11): `pheu-ban-hang-goi-cong-nghe.md` |
 | 2 | Talkshow/podcast online thứ 5 hằng tuần, hai đầu Việt – Đức | Anh Phú Ông rủ | 12/11/2026 | Đang cân nhắc · gợi ý đặt ở David Trần Official |
 | 3 | Telegram làm nhà cho thành viên, bot thay mặt David trong nhóm học | David nói trong phiên Claude | 14/11/2026 | Chỉ là ý tưởng, chưa làm · chờ bot đạt điều kiện ở mục 3 |
+| 4 | Cách dẫn nội dung reel học từ kênh MagentX (mở bằng nỗi đau dạng câu hỏi, mẹo → "chưa đủ" → gói, comment từ khoá, ẩn dụ, lời chứng có vai trò) | Claude học kênh MagentX, David duyệt ghi vào đây | 20/11/2026 | Chờ David cân nhắc · mục 4 |
 
 ---
 
@@ -75,3 +76,13 @@ Sổ gốc ghi lời nguyên văn: `~/Documents/2-ca-nhan/so-tay/y-tuong.md` và
 3. Nhóm đầu tiên là nhóm nào (học viên thật hay nhóm thử)?
 
 **Bước nhỏ nhất (khi đủ điều kiện):** dựng Mini App check-in học viên bản 0 trên bot hiện có, thử với một nhóm nhỏ.
+
+## 4. Cách dẫn nội dung reel — học từ kênh MagentX (20/11/2026)
+
+- **Nguồn:** 35 reel trang MagentX.ai (đào tạo AI hình ảnh/video, bán khoá AI Media Mastery). Phiếu học: `ky-nang/san-xuat-video/thiet-ke-bo-cuc/nguon-tham-khao/magentx-2026-11-20.md` mục 2b.
+- **Thấy gì:** (1) mở bằng nỗi đau cụ thể của người xem dạng câu hỏi ("tại sao gõ prompt mỏi tay mà nhân vật vẫn như tượng sáp?" — reel đứng đầu kênh);
+  (2) mẹo miễn phí → "mẹo này chưa đủ" → khoá học; (3) gọi bình luận bằng một từ khoá ("comment GO để nhận lộ trình") để đổi lượt xem thành người nhắn tin;
+  (4) ẩn dụ đời thường cho gói ("ai cũng nổ máy chạy, khoá học là tấm bản đồ"); (5) lời chứng nói rõ vai trò người nói (CEO doanh nghiệp bao bì, leader social content).
+- **Lưu ý:** lượt xem trang doanh nghiệp phần lớn do chạy quảng cáo — chỉ so tương đối. Nội dung là của David: đây là chất liệu để cân nhắc, không phải khuôn lời.
+- **Câu cần chốt:** có đưa (2)–(3) vào bộ lọc nội dung / phễu (`co-so-tri-thuc/chien-luoc-noi-dung.md`, `du-an/pheu-ban-hang-goi-cong-nghe.md`) không — qua 4 phần riêng.
+- **Bước nhỏ nhất:** thử (3) "comment từ khoá" ở một bài đăng tới, xem số người nhắn tin.

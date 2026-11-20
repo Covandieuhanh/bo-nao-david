@@ -26,9 +26,22 @@
 //             mà vẫn muốn thấy người; nhiều cảnh nối nhau vẽ tiếp một mạch (`buoc`, `tu_buoc` của lib/mach.js).
 //             props: noi_dung: {type: 'illus'|'diagram'|'ve', props} · bam? · toi? (false = không làm tối khoảng trống)
 //             Không khoảng nào đủ rộng → tự chuyển 'o-nguoi'.
+//  — thêm 20/11/2026 (học kênh MagentX; chỉ chọn khi có dấu hiệu ở thiet-ke-bo-cuc/tu-chon.md) —
+//  'dung-hay' CẶP ĐỪNG / HÃY LẶP KHUÔN: nhãn mục + hai ô ✗ (sai) / ✓ (đúng), cùng một chỗ cho mọi cặp — người xem học khuôn một
+//             lần, sau chỉ nhìn chỗ đổi. Dọc: ô trên đầu người nếu mặt đủ thấp, không thì người xuống nửa dưới (o-nguoi nguoi_duoi).
+//             Ngang: vào khoảng trống cạnh người, chật thì o-nguoi. props: cap: [{nhan?, at, dung: NGUON, hay: NGUON, at_hay?}]
+//             · chu_dung? ('ĐỪNG') · chu_hay? ('HÃY') — chữ nguyên văn lời người nói ("SAI"/"ĐÚNG", "THAY VÌ"/"HÃY"…)
+//  'tren-duoi' ĐỐI CHIẾU SONG SONG: hai hình cùng chạy — dọc xếp trên/dưới, ngang trái/phải; nhãn nhỏ ở góc mỗi hình.
+//             props: tren: NGUON & {nhan?} · duoi: NGUON & {nhan?}. Không có chữ lớn → nên để giuPhuDe: true.
+//  'o-tron'   HÌNH TOÀN KHUNG + NGƯỜI NÓI Ô TRÒN: lời đang tả chi tiết một thứ cần nhìn kỹ; người thu vào ô tròn (dọc: giữa, trên
+//             dải phụ đề; ngang: góc dưới phải) để mạch lời không đứt. props: hinh: NGUON  hoặc  noi_dung: {type: 'illus'|'diagram', props}
+//  'cau-hoi'  THẺ CÂU HỎI (phỏng vấn, lời chứng): câu người hỏi hiện thành thẻ có vạch màu nhấn dưới mặt người; câu trả lời sau
+//             đó người xem biết trả lời cho câu gì. Tên + vai trò người trả lời: dùng cảnh 'lower' có sẵn. props: cau, at?, nhan?
+//  'the-canh' thêm props so? — số thứ tự to làm mốc cạnh thẻ ("1 khuôn mặt", "4 đôi mắt"), khi lời đếm ≥ 3 mục.
+//  NGUON = {photo: 'ten.jpg'} (public/anh) · {video: 'goc', tu?: giây} (video gốc) · {video: 'ten.mp4', tu?} (public) · {text: '…'}
 // Chữ trong thẻ / chương là NGUYÊN VĂN lời người nói (luật chữ trên màn hình).
 import React from 'react';
-import {AbsoluteFill, Easing, OffthreadVideo, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Easing, Img, OffthreadVideo, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {BODY, C, HEAD, SAFE, BRAND_BOT, ease, pop, rel} from '../chu-de';
 import {FullShell} from './toan-man-hinh';
 import {Illus} from '../thu-vien/minh-hoa';
@@ -47,7 +60,15 @@ const NOI = {illus: Illus, diagram: Diagram, ve: ({ve, ...p}) => { const V = VE[
 // Thẻ chữ hiện dần (dùng cho 'the-canh' và nội dung 'the' trong 'o-nguoi')
 // Xuống dòng cân (textWrap balance): dòng đều nhau, không để một chữ đứng lẻ ("LUYỆN TẬP LẠI THÓI / QUEN" — lỗi 09/11/2026);
 // '\n' trong chữ = chỗ xuống dòng theo cụm nghĩa do kịch bản đặt.
-const The = ({start, tieu_de, dong = [], w, f, fs, kc = 'mo'}) => (
+// so (20/11/2026): số thứ tự to đứng trước thẻ làm mốc danh sách; không có so → thẻ y như cũ
+const The = ({so, ...p}) => so == null ? <TheGoc {...p} /> : (
+  <div style={{display: 'flex', alignItems: 'center', gap: p.fs * 0.4, width: p.w}}>
+    <div style={{flex: 'none', fontFamily: HEAD, fontWeight: 800, fontSize: p.fs * 2.6, lineHeight: 0.9, color: C.accent,
+      opacity: Math.min(1, pop(p.f, 0) * 1.3), transform: `translateY(${(1 - pop(p.f, 0)) * 30}px)`, textShadow: '0 8px 30px rgba(0,0,0,0.6)'}}>{so}</div>
+    <TheGoc {...p} w={p.w - p.fs * 2.2} />
+  </div>
+);
+const TheGoc = ({start, tieu_de, dong = [], w, f, fs, kc = 'mo'}) => (
   <div style={{width: w, padding: fs * 0.9, borderRadius: fs * 0.7, background: C.card, border: `2px solid ${C.line}`,
     boxShadow: '0 30px 90px rgba(0,0,0,0.5)', display: 'flex', flexDirection: 'column', gap: fs * 0.35}}>
     {tieu_de && <div style={{fontFamily: BODY, fontWeight: 700, fontSize: fs * 0.42, letterSpacing: 3, color: C.accent, textTransform: 'uppercase',
@@ -160,7 +181,9 @@ const ONguoi = ({sceneId, start, o, noi_dung, khung, bam, nguoi_duoi = false}) =
             transform: `scale(${s})`, transformOrigin: '0 0'}}><Comp start={start} sceneId={sceneId} nen={false} {...noi_dung.props} /></div>
           : <div style={{position: 'absolute', left: area.x, top: area.y, width: area.w, height: area.h, opacity: show,
             display: 'flex', alignItems: LAND ? 'center' : 'flex-start', justifyContent: 'center'}}>
-            {noi_dung.type === 'muc-luc'
+            {noi_dung.type === 'dung-hay'
+              ? <DungHayKhung start={start} f={f} w={area.w * 0.96} h={area.h} {...noi_dung.props} />
+              : noi_dung.type === 'muc-luc'
               ? <MucLuc start={start} f={f} w={area.w * 0.94} fs={Math.min(LAND ? H * 0.05 : W * 0.062,   // co cho đủ mọi mục trong vùng nội dung
                   area.h / ((noi_dung.props.muc || []).length * 2.15 + (noi_dung.props.tieu_de ? 1.4 : 0) + 0.6))} {...noi_dung.props} />
               : <The start={start} f={f} w={area.w * 0.92} fs={LAND ? H * 0.06 : W * 0.075} {...noi_dung.props} />}</div>
@@ -171,7 +194,7 @@ const ONguoi = ({sceneId, start, o, noi_dung, khung, bam, nguoi_duoi = false}) =
 
 // THẺ CẠNH NGƯỜI (David chốt 08/11): thẻ vào khoảng trống sát người đang nói (hoặc props.bam), co theo khoảng trống, không đè ai.
 // Không khoảng nào đủ rộng → chuyển sang ô người (người thu vào ô, thẻ ở phía còn lại).
-const TheCanh = ({sceneId, start, ben, bam, tieu_de, dong}) => {
+const TheCanh = ({sceneId, start, ben, bam, tieu_de, dong, so}) => {
   const f = useCurrentFrame();
   const {durationInFrames: d} = useVideoConfig();
   const m = MAT[sceneId] || {cx: 0.5, cy: 0.42, w: 0.18};
@@ -182,7 +205,7 @@ const TheCanh = ({sceneId, start, ben, bam, tieu_de, dong}) => {
     return (
       <AbsoluteFill style={{opacity: o, filter: mo}}>
         <div style={{position: 'absolute', left: SAFE.left, top: SAFE.overlayTop, transform: `translateY(${-slide}px)`}}>
-          <The start={start} f={f} w={W - SAFE.left - SAFE.right} fs={W * 0.07} tieu_de={tieu_de} dong={dong} kc={kieuChu(sceneId)} />
+          <The start={start} f={f} w={W - SAFE.left - SAFE.right} fs={W * 0.07} tieu_de={tieu_de} dong={dong} so={so} kc={kieuChu(sceneId)} />
         </div>
       </AbsoluteFill>
     );
@@ -191,7 +214,7 @@ const TheCanh = ({sceneId, start, ben, bam, tieu_de, dong}) => {
   const t = nguoiBam(ps, bam || ben);
   const MIN = W * 0.2;
   const k = chonCho(ps, MIN, t);
-  if (k.w < MIN) return <ONguoi sceneId={sceneId} start={start} bam={bam || ben} noi_dung={{type: 'the', props: {tieu_de, dong}}} />;
+  if (k.w < MIN) return <ONguoi sceneId={sceneId} start={start} bam={bam || ben} noi_dung={{type: 'the', props: {tieu_de, dong, so}}} />;
   const w = Math.min(W * 0.34, k.w);
   const left = k.ke === 'trai' ? k.x1 - w : k.x0;     // sát người được bám
   const slide = (1 - ease(f, 0, 14)) * 60 * (k.ke === 'phai' ? 1 : -1);
@@ -199,7 +222,7 @@ const TheCanh = ({sceneId, start, ben, bam, tieu_de, dong}) => {
   return (
     <AbsoluteFill style={{opacity: o, filter: mo}}>
       <div style={{position: 'absolute', left, top: Math.max(H * 0.17, BRAND_BOT + 40), transform: `translateX(${slide}px)`}}>
-        <The start={start} f={f} w={w} fs={fs} tieu_de={tieu_de} dong={dong} kc={kieuChu(sceneId)} />
+        <The start={start} f={f} w={w} fs={fs} tieu_de={tieu_de} dong={dong} so={so} kc={kieuChu(sceneId)} />
       </div>
     </AbsoluteFill>
   );
@@ -283,7 +306,144 @@ const Chuong = ({sceneId, start, so, nhan, ten = ''}) => {
   );
 };
 
+// ===== Thêm 20/11/2026 (học kênh MagentX) =====
+// Một nguồn hình: ảnh (public/anh), video gốc từ giây `tu`, video khác trong public, hoặc ô chữ
+const Hinh = ({nguon = {}, start, fit = 'cover', fs = 40}) => {
+  if (nguon.photo) return <Img src={staticFile(`anh/${nguon.photo}`)} style={{width: '100%', height: '100%', objectFit: fit, objectPosition: nguon.pos || '50% 50%'}} />;
+  if (nguon.video) return <OffthreadVideo src={staticFile(nguon.video === 'goc' ? 'goc.mp4' : nguon.video)} trimBefore={fr(nguon.tu ?? start)} muted
+    style={{width: '100%', height: '100%', objectFit: fit, objectPosition: nguon.pos || '50% 50%'}} />;
+  return <div style={{width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: fs * 0.5, boxSizing: 'border-box',
+    background: C.card, fontFamily: BODY, fontWeight: 700, fontSize: fs, lineHeight: 1.2, color: C.text, textAlign: 'center', textWrap: 'balance'}}>{nguon.text || ''}</div>;
+};
+const DO = '#FF4D4D', XANH = '#3DDC84';   // cùng màu nghĩa với phụ đề (+ nên / - tránh, kieu-phu-de.js)
+const Dau = ({ok, r}) => (
+  <div style={{position: 'absolute', left: -r * 0.35, bottom: -r * 0.35, width: r * 2, height: r * 2, borderRadius: '50%', background: ok ? XANH : DO,
+    display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 6px 20px rgba(0,0,0,0.5)'}}>
+    <svg width={r * 1.1} height={r * 1.1} viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round">
+      {ok ? <path d="M5 12.5l4.5 4.5L19 7.5" /> : <path d="M6 6l12 12M18 6L6 18" />}</svg>
+  </div>
+);
+// Khung đừng/hãy: cặp đang nói = cặp cuối đã tới; mỗi cặp mới vào lại cùng chỗ (khuôn lặp)
+const DungHayKhung = ({start, f, w, h = Infinity, cap = [], chu_dung = 'ĐỪNG', chu_hay = 'HÃY'}) => {
+  const toi = cap.filter((c) => rel(c.at ?? start, start) <= f);
+  const c = toi[toi.length - 1] || cap[0];
+  if (!c) return null;
+  const a = rel(c.at ?? start, start), b = rel(c.at_hay ?? c.at ?? start, start);
+  const col = (w - w * 0.06) / 2, th = Math.min(col * 0.75, (h - col * 0.42) * 0.8), fs = Math.min(col * 0.2, th * 0.3);
+  const o = (t) => Math.min(1, pop(f, t) * 1.3), y = (t) => (1 - pop(f, t)) * 26;
+  const Cot = ({ok, t, nguon}) => (
+    <div style={{width: col, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: fs * 0.3, opacity: o(t), transform: `translateY(${y(t)}px)`}}>
+      <div style={{fontFamily: HEAD, fontWeight: 800, fontSize: fs * 1.25, lineHeight: 1, color: ok ? XANH : DO, textTransform: 'uppercase',
+        textShadow: '0 4px 16px rgba(0,0,0,0.6)'}}>{ok ? chu_hay : chu_dung}</div>
+      <div style={{position: 'relative', width: col * 0.86, height: th}}>
+        <div style={{width: '100%', height: '100%', borderRadius: fs * 0.5, overflow: 'hidden', border: `3px solid ${ok ? XANH : DO}`,
+          boxShadow: '0 20px 60px rgba(0,0,0,0.5)', filter: ok ? undefined : 'saturate(0.7)'}}><Hinh nguon={nguon} start={start} fs={fs * 0.62} /></div>
+        <Dau ok={ok} r={fs * 0.62} />
+      </div>
+    </div>
+  );
+  return (
+    <div key={cap.indexOf(c)} style={{width: w, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: fs * 0.45}}>
+      {c.nhan && <div style={{fontFamily: BODY, fontWeight: 700, fontSize: fs * 0.62, letterSpacing: 3, color: C.text, textTransform: 'uppercase',
+        opacity: o(a), textShadow: '0 3px 12px rgba(0,0,0,0.7)'}}>{c.nhan}</div>}
+      <div style={{display: 'flex', justifyContent: 'space-between', width: '100%'}}>
+        <Cot ok={false} t={a} nguon={c.dung} />
+        {f >= b ? <Cot ok t={b} nguon={c.hay} /> : <div style={{width: col}} />}
+      </div>
+    </div>
+  );
+};
+const DungHay = ({sceneId, start, ...p}) => {
+  const f = useCurrentFrame();
+  const {durationInFrames: d} = useVideoConfig();
+  const m = MAT[sceneId] || {cx: 0.5, cy: 0.42, w: 0.18, h: 0.3};
+  const o = Math.min(ease(f, 0, 10), ease(f, d - 6, d, 1, 0, Easing.in(Easing.cubic)));
+  const aTop = Math.max(SAFE.top, BRAND_BOT + 40);
+  if (!LAND) {
+    const w = W - SAFE.left - SAFE.right, hNeed = w * 0.36 + w * 0.2;   // nhãn + chữ đừng/hãy + ô
+    const matTren = (m.cy - (m.h || 0.3) / 2) * H;
+    if (aTop + hNeed + 30 > matTren) return <ONguoi sceneId={sceneId} start={start} nguoi_duoi noi_dung={{type: 'dung-hay', props: p}} />;   // không che mặt
+    return <AbsoluteFill style={{opacity: o}}><div style={{position: 'absolute', left: SAFE.left, top: aTop}}>
+      <DungHayKhung start={start} f={f} w={w} h={matTren - aTop - 30} {...p} /></div></AbsoluteFill>;
+  }
+  const ps = nguoi(m), k = chonCho(ps, W * 0.3, nguoiBam(ps));
+  if (k.w < W * 0.3) return <ONguoi sceneId={sceneId} start={start} noi_dung={{type: 'dung-hay', props: p}} />;
+  const w = Math.min(W * 0.4, k.w);
+  return <AbsoluteFill style={{opacity: o}}><div style={{position: 'absolute', left: k.ke === 'trai' ? k.x1 - w : k.x0, top: aTop + H * 0.04}}>
+    <DungHayKhung start={start} f={f} w={w} h={SAFE.bottom - aTop - H * 0.2} {...p} /></div></AbsoluteFill>;
+};
+
+// Đối chiếu song song: dọc trên / dưới, ngang trái / phải
+const TrenDuoi = ({start, tren = {}, duoi = {}}) => {
+  const f = useCurrentFrame();
+  const aTop = Math.max(SAFE.top, BRAND_BOT + 40), bot = SAFE.bottom - (LAND ? 110 : 150);   // chừa dải phụ đề
+  const gap = 24, x0 = SAFE.left, x1 = W - SAFE.right;
+  const o1 = {x: x0, y: aTop, w: LAND ? (x1 - x0 - gap) / 2 : x1 - x0, h: LAND ? bot - aTop : (bot - aTop - gap) / 2};
+  const o2 = LAND ? {...o1, x: x0 + o1.w + gap} : {...o1, y: aTop + o1.h + gap};
+  const fs = LAND ? H * 0.026 : W * 0.032;
+  const O = ({b, nguon, t, tu}) => {
+    const p = ease(f, t, t + 14);
+    return (
+      <div style={{position: 'absolute', left: b.x, top: b.y, width: b.w, height: b.h, borderRadius: 28, overflow: 'hidden', border: `2px solid ${C.line}`,
+        boxShadow: '0 30px 80px rgba(0,0,0,0.55)', opacity: p, transform: LAND ? `translateX(${(1 - p) * 60 * tu}px)` : `translateY(${(1 - p) * 60 * tu}px)`}}>
+        <Hinh nguon={nguon} start={start} fs={fs * 1.6} />
+        {nguon.nhan && <div style={{position: 'absolute', left: 18, top: 16, padding: `${fs * 0.25}px ${fs * 0.6}px`, borderRadius: fs, background: 'rgba(14,14,18,0.82)',
+          fontFamily: BODY, fontWeight: 700, fontSize: fs, letterSpacing: 2, color: C.text, textTransform: 'uppercase'}}>{nguon.nhan}</div>}
+      </div>
+    );
+  };
+  return <FullShell><O b={o1} nguon={tren} t={2} tu={-1} /><O b={o2} nguon={duoi} t={8} tu={1} /></FullShell>;
+};
+
+// Hình toàn khung + người nói trong ô tròn
+const OTron = ({sceneId, start, hinh, noi_dung}) => {
+  const f = useCurrentFrame();
+  const {durationInFrames: d} = useVideoConfig();
+  const m = MAT[sceneId] || {cx: 0.5, cy: 0.42, w: 0.18, h: 0.3};
+  const D = LAND ? H * 0.3 : W * 0.34;
+  const cx = LAND ? W - SAFE.right - D / 2 : (SAFE.left + W - SAFE.right) / 2, cy = SAFE.bottom - (LAND ? 110 : 150) - D / 2;
+  const s = Math.max(m.h * H, m.w * W) * 2.3, sc = D / s;   // ô = mặt + tóc + vai
+  const k = pop(f, 6), ra = ease(f, d - 8, d, 1, 0);
+  const Comp = noi_dung && NOI[noi_dung.type];
+  return (
+    <FullShell>
+      <AbsoluteFill style={{opacity: ease(f, 0, 10)}}>
+        {hinh ? <Hinh nguon={hinh} start={start} /> : Comp ? <Comp start={start} sceneId={sceneId} nen={false} {...noi_dung.props} /> : null}
+      </AbsoluteFill>
+      {hinh && <AbsoluteFill style={{background: 'linear-gradient(transparent 55%, rgba(8,8,10,0.6))'}} />}
+      <div style={{position: 'absolute', left: cx - D / 2, top: cy - D / 2, width: D, height: D, borderRadius: '50%', overflow: 'hidden',
+        border: `4px solid ${C.accent}`, boxShadow: '0 20px 60px rgba(0,0,0,0.6)', transform: `scale(${k * ra})`}}>
+        <OffthreadVideo src={staticFile('goc.mp4')} trimBefore={fr(start)} muted
+          style={{position: 'absolute', left: D / 2 - m.cx * W * sc, top: D / 2 - m.cy * H * sc, width: W * sc, height: H * sc, maxWidth: 'none'}} />
+      </div>
+    </FullShell>
+  );
+};
+
+// Thẻ câu hỏi (phỏng vấn): dưới mặt người, vạch màu nhấn bên trái
+const CauHoi = ({start, cau = '', at, nhan}) => {
+  const f = useCurrentFrame();
+  const {durationInFrames: d} = useVideoConfig();
+  const a = rel(at ?? start, start), p = pop(f, a), o = Math.min(Math.min(1, p * 1.3), ease(f, d - 6, d, 1, 0));
+  const w = LAND ? W * 0.42 : W - SAFE.left - SAFE.right, fs = LAND ? H * 0.04 : W * 0.052;
+  return (
+    <AbsoluteFill style={{opacity: o}}>
+      <div style={{position: 'absolute', left: SAFE.left, top: SAFE.overlayTop, width: w, display: 'flex', gap: fs * 0.45,
+        transform: `translateX(${(1 - p) * -40}px)`}}>
+        <div style={{flex: 'none', width: Math.max(6, fs * 0.16), borderRadius: 4, background: C.accent}} />
+        <div style={{padding: `${fs * 0.4}px ${fs * 0.6}px`, borderRadius: fs * 0.4, background: 'rgba(14,14,18,0.86)'}}>
+          {nhan && <div style={{fontFamily: BODY, fontWeight: 700, fontSize: fs * 0.5, letterSpacing: 3, color: C.accent, textTransform: 'uppercase', marginBottom: fs * 0.2}}>{nhan}</div>}
+          <div style={{fontFamily: BODY, fontWeight: 700, fontSize: fs, lineHeight: 1.25, color: C.text, textWrap: 'balance'}}>
+            <ChuHien text={cau} a={a + 2} kieu="muc" /></div>
+        </div>
+      </div>
+    </AbsoluteFill>
+  );
+};
+
 export const BoCuc = ({kieu = 'o-nguoi', ...p}) =>
   kieu === 'the-canh' ? <TheCanh {...p} /> : kieu === 'chuong' ? <Chuong {...p} /> : kieu === 'tien-trinh' ? <TienTrinh {...p} />
+    : kieu === 'dung-hay' ? <DungHay {...p} /> : kieu === 'tren-duoi' ? <TrenDuoi {...p} /> : kieu === 'o-tron' ? <OTron {...p} />
+    : kieu === 'cau-hoi' ? <CauHoi {...p} />
     : kieu === 'canh-nguoi' ? <CanhNguoi {...p} />
       : kieu === 'muc-luc' ? <ONguoi {...p} noi_dung={{type: 'muc-luc', props: {tieu_de: p.tieu_de, muc: p.muc}}} /> : <ONguoi {...p} />;
