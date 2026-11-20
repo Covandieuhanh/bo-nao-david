@@ -4,6 +4,7 @@ description: "Nhật ký thay đổi skill hoc-lien-tuc và máy đi kèm (dem-k
 
 # Nhật ký thay đổi — hoc-lien-tuc
 
+- **21/11/2026** · Nâng cấp 5 chạy theo Việc 4 lần đầu: có bộ kiểm toàn bộ não (`co-so-tri-thuc/bai-kiem/`), đo trước / sau bằng trí tuệ nhân tạo chưa đọc gì. Kết quả ở `du-an/nang-cap/nang-cap-5.md`.
 - **20/11/2026** · thêm **Việc 4 — Nâng cấp** + bảng "ba nhịp, một chu trình"; skill `tai-cau-truc` thành bước Dọn bên trong.
   Vì: David — "nên sử dụng từ cải tiến hoặc nâng cấp thì đúng hơn. giống kiểu r&d trong kinh doanh"; "theo đề xuất triển khai luôn đi, vì
   quá trình học liên tục sẽ rất nhiều". Chốt: tên Nâng cấp · gộp một chu trình · thước đo chính = bài kiểm + số liệu người xem.

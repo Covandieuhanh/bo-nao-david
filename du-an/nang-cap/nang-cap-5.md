@@ -29,4 +29,20 @@ học liên tục, sản phẩm hoá, tái cấu trúc, thiết kế trang cuộ
 mà máy đếm không thấy, nên máy đếm đang đếm thiếu — cần sửa máy đếm trước khi dựa vào nó để tỉa.
 
 ## 2. Thước đo trước và sau
-Ghi ở mục 3 sau khi đo lại.
+Đo bằng trí tuệ nhân tạo con chưa đọc gì: lần 1 đọc bản chụp ở mốc `nang-cap-5-truoc`, lần 2 đọc bản sau khi sửa (đáp án đã gỡ khỏi bản chụp).
+
+| # | Thước | Trước | Sau |
+|---|---|---|---|
+| 1 | Người xem thật | chưa đo: trên máy chưa có `so-lieu.md` nào | chưa đo (giả thuyết: bộ não dễ hiểu hơn → David phải sửa ít hơn; đo lại sau 10 video có số liệu) |
+| 2a | Bài kiểm toàn bộ não (16 câu) | 16/16, nhưng 2 câu người làm bài phải tự suy vì file chưa nói rõ (c05 tên file, c06 viết tắt) | 16/16, không câu nào thiếu thông tin |
+| 2b | Bài kiểm dựng video (10 đoạn) | 9/10 (sai d04: lẫn "Biết trước" với "Báo hiệu") | 10/10 |
+| 3 | Hình mẫu chuẩn | không chạy được: 5 dự án mẫu không còn trên máy | không đổi dòng code dựng nào, nên hình không thể đổi; `kiem-mau.py` vẫn cần kéo dự án mẫu về |
+| 4 | David phải sửa | 31/94 phiên có lời sửa | đo ở lần nhìn lại tuần sau |
+| 5 | Trùng / rối (máy đo) | video 16/30, hỏi 0, não 2/6; chưa đo viết tắt | video 16/30, hỏi 0, não 1/6; viết tắt 0 ở cả ba bộ → "Chưa cần nâng cấp" |
+
+Bằng hoặc tốt hơn ở mọi thước đã đo được → ra bản `nang-cap-5`.
+
+## 3. Bài học cho đợt sau
+- Bài kiểm toàn bộ não đạt tối đa ngay từ lần đầu → câu còn dễ. Đợt sau thêm câu khó hơn từ chính lỗi David sửa (luật đi lên, trục mục 4).
+- Người làm bài lần 2 nhận xét luật "không làm bản cho CapCut / DaVinci" nằm ở skill dựng và tổng quan, chưa có trong luật chung — xem xét ở bước chưng cất đợt sau.
+- Ký hiệu "→" còn khoảng 1.300 chỗ, chưa thay vì nghĩa đổi theo ngữ cảnh (rồi tới, dẫn tới, đổi thành); chờ David chốt cách viết.
