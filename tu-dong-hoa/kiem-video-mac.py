@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 # KIỂM VIDEO TRÊN MAC (David 20/11/2026: "cần sắp xếp để tôi tự kiểm tra nhanh hơn cho những lần sau").
-# CHỈ ĐỌC, không xoá gì. Với mỗi tập trong ~/Movies (tap-*, vlog/*, video-tu-quay/*):
+# CHỈ ĐỌC, không xoá gì. Hai phần:
+#  1. CHỜ ĐĂNG (chính — David 20/11: "tôi chỉ quan tâm đến các kết quả cuối thôi"): mỗi tập trong ~/Movies/cho-dang/ — bản cuối trên Mac,
+#     đã có y hệt ở Drive thanh-pham/<tập>/ và đã lên mây chưa. Đăng xong: cho-dang.sh xong <tập>.
+#  2. Dự án dựng còn trên Mac — mỗi tập trong ~/Movies (tap-*, vlog/*, video-tu-quay/*):
 #   dung lượng · bản render đã nằm trên Drive và đã lên mây chưa · bản gốc (1-goc/) đã có trên Drive chưa · xoá được bao nhiêu.
 # "Có trên Drive" = cùng tên hoặc cùng cỡ (đúng từng byte) ở thanh-pham/<tập>/, sao-luu-mac/video/<tập>/, tu-lieu-goc/<tập>/;
 # "đã lên mây" = cả thư mục chứa file đó trên Drive đã tải lên xong (kiem-tai-len-drive, cùng công cụ luu-drive.sh dùng; mã
@@ -108,13 +111,38 @@ def kiem():
                                   else "🆕 chưa có bản render nào (đang làm?)" if not render and not goc
                                   else "❌ chưa an toàn — còn file chưa lên Drive"),
                      "xoa_duoc": size if het and (render or goc) else 0})
-    return {"drive": co_drive, "rows": rows}
+    return {"drive": co_drive, "rows": rows, "cho_dang": cho_dang() if co_drive else []}
+
+
+def cho_dang():
+    goc = os.path.join(MOV, "cho-dang"); rows = []
+    for t in sorted(os.listdir(goc)) if os.path.isdir(goc) else []:
+        b = os.path.join(goc, t)
+        if not os.path.isdir(b) or t.startswith("."): continue
+        vids, thieu = [], []
+        for r, _, fs in os.walk(b):
+            for f in fs:
+                if f.startswith(".") or f == "da-dang.txt": continue
+                p = os.path.join(r, f); rel = os.path.relpath(p, b); d = os.path.join(DRIVE, "thanh-pham", t, rel)
+                if f.lower().endswith(VID): vids.append(rel)
+                ok = os.path.isfile(d) and os.path.getsize(d) == os.path.getsize(p) and len_may(d)
+                if not ok: thieu.append(rel)
+        rows.append({"tap": t, "size": du(b), "video": sorted(vids), "thieu": thieu,
+                     "ket_luan": "✅ có trên Mac + Drive — sẵn sàng đăng" if not thieu else "⚠️ Drive chưa đủ — chạy cho-dang.sh gui"})
+    return rows
 
 
 def bang(k):
     if not k["drive"]: return "⚠️ Google Drive chưa mở: không kiểm được. Mở app Google Drive rồi chạy lại."
-    if not k["rows"]: return "~/Movies không còn tập video nào."
-    L = ["| Tập | Dung lượng | Bản render trên Drive | Bản gốc trên Drive | Kết luận |", "|---|---|---|---|---|"]
+    C = k.get("cho_dang") or []
+    L = ["## Chờ đăng (~/Movies/cho-dang)", ""]
+    if not C: L.append("Không có bản cuối nào chờ đăng.")
+    else:
+        L += ["| Tập | Video | Dung lượng | Kết luận |", "|---|---|---|---|"]
+        L += [f"| {r['tap']} | {len(r['video'])} | {gb(r['size'])} | {r['ket_luan']} |" for r in C]
+    L += ["", "## Dự án dựng còn trên Mac", ""]
+    if not k["rows"]: return "\n".join(L + ["Không còn — Mac chỉ giữ bản cuối."])
+    L += ["| Tập | Dung lượng | Bản render trên Drive | Bản gốc trên Drive | Kết luận |", "|---|---|---|---|---|"]
     for r in k["rows"]:
         L.append(f"| {r['tap']} | {gb(r['size'])} | {r['render_ok']}/{r['render']} | {r['goc_ok']}/{r['goc']} | {r['ket_luan']} |")
     tong = sum(r["xoa_duoc"] for r in k["rows"])

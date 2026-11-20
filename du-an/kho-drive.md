@@ -41,6 +41,7 @@ Trạng thái chi tiết, lịch đăng: sổ [danh-muc-noi-dung.md](danh-muc-no
 
 ## Sổ dọn Mac
 
+**Mac chỉ giữ bản cuối chưa đăng** ở `~/Movies/cho-dang/<tập>/` (y hệt `thanh-pham/<tập>/`, script `cho-dang.sh lay|gui|xong`); đăng xong thì Drive `thanh-pham/<tập>/da-dang.txt` ghi ngày.
 Kiểm trước khi dọn: `localhost:8765/mac` hoặc `python3 tu-dong-hoa/kiem-video-mac.py` (tập nào ✅ an toàn, thiếu file nào, xoá được bao nhiêu).
 
 - **20/11/2026:** đưa 5 tập (máy đo giải pháp AI, giao dịch hàng hoá, bận cả ngày, cuộc gọi hợp tác, marketing) lên `sao-luu-mac/video/` bằng `luu-drive.sh`, xoá ba thư mục thử (`tap-thu-tai-ban-3`, `thu-doi-goc`, `thu-tu-chon`). Mac từ 2 GB trống lên 52 GB.

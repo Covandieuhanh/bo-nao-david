@@ -26,9 +26,9 @@ không ưng thì góp ý rồi render lại toàn bộ. Chỉ việc **đăng l�
 | 2 | **Dựng bản dài** theo loại (`dung-video-theo-phong-cach` / `dung-podcast`); nhiều file cùng một buổi nói → nối file, dựng khuôn 1 video; mỗi bản theo hướng chẩn đoán riêng (`../thiet-ke-bo-cuc/tu-chon.md`, không chép kịch bản bản khác). Trong lúc render chạy nền: soạn bài đăng (bước 3) và chọn ý clip ngắn | skill dựng |
 | 3 | **Bài đăng** từng kênh vào `phat-hanh/phat-hanh.md`: YouTube (3 tiêu đề, mô tả, chương, thumbnail nếu ngang) · Reels / bài trang · TikTok caption · câu chia sẻ Facebook cá nhân · bình luận ghim · bài Mời "gỡ" theo tỉ lệ | khối 15 · `../ho-so-thuong-hieu/giong-thuong-hieu-david.md` |
 | 4 | **Clip ngắn**: chọn ý trọn đắt nhất theo bốn câu (luôn có, hoặc ghi lý do không có) và **dựng luôn** sau khi bản dài render xong (render nối tiếp, không song song) | `cat-doan-noi-bat` |
-| 5 | **Kiểm + giao**: khung hình, âm lượng (khối 17, 09); chép bản dài, clip, thumbnail, `phat-hanh.md` vào Drive `thanh-pham/tap-<ten>/ban-dai|highlight/` (trang xem kết quả đọc từ đây); gửi bản xem < 30 MB; ghi sổ; báo Telegram một lần | khối 17 · ghi nhớ `video-chuyen-qua-drive` |
+| 5 | **Kiểm + giao**: khung hình, âm lượng (khối 17, 09); chép bản cuối (bản dài, clip, thumbnail, `phat-hanh.md`, `dang-bai.md`) vào `~/Movies/cho-dang/tap-<ten>/ban-dai|highlight/` rồi `cho-dang.sh gui tap-<ten>` (lên Drive `thanh-pham/` y hệt, trang xem kết quả đọc từ đây); dự án dựng chuyển lên Drive bằng `luu-drive.sh` — **Mac chỉ giữ bản cuối chưa đăng**; gửi bản xem < 30 MB; ghi sổ; báo Telegram một lần | khối 17 · ghi nhớ `video-chuyen-qua-drive` · `../dung-video-theo-phong-cach/scripts/cho-dang.sh` |
 | 6 | **Góp ý của David** → sửa skill / kịch bản đúng chỗ rồi **render lại toàn bộ luôn**, giao lại như bước 5 (không chờ chữ "render") | `../quy-tac-chung.md` mục 8 |
-| 7 | **Đăng** (chỉ khi David nói "đăng"): hẹn giờ đúng bản trên trang xem kết quả qua trình duyệt, chụp xác nhận; Facebook cá nhân David tự bấm | khối 19 |
+| 7 | **Đăng** (chỉ khi David nói "đăng"): hẹn giờ đúng bản trong `~/Movies/cho-dang/tap-<ten>/` qua trình duyệt, chụp xác nhận; Facebook cá nhân David tự bấm. Đăng xong mọi kênh của tập (hoặc David nói "đã đăng <tập>") → `cho-dang.sh xong tap-<ten>` (kiểm Drive rồi mới xoá bản Mac) | khối 19 |
 | 8 | **Sau 24 giờ / 7 ngày** *(bước nhẹ)*: hộp thư, số "gỡ", số liệu → `so-lieu.md` + sổ → 1–3 đề xuất | khối 20, 16 |
 
 Bước đánh dấu *(bước nhẹ)*: nhắc đổi mô hình rẻ hơn theo `chuan-muc-lam-viec.md` mục 3.
@@ -40,7 +40,7 @@ Bước đánh dấu *(bước nhẹ)*: nhắc đổi mô hình rẻ hơn theo `
 - Báo cuối gọn: ở đâu (trang xem kết quả + Drive), đã chọn X vì Y, tên riêng cần xác nhận, cảnh báo (lệch nhánh, thiếu bài Mời, kho < 4 video, lịch trống).
 
 ## Xong khi
-1. Bản dài + clip ngắn + thumbnail (khi ngang) + `phat-hanh.md` đều có trên Drive `thanh-pham/tap-<ten>/` và hiện trên trang xem kết quả.
+1. Bản dài + clip ngắn + thumbnail (khi ngang) + `phat-hanh.md` đều có trên Drive `thanh-pham/tap-<ten>/` và ở `~/Movies/cho-dang/tap-<ten>/`, hiện trên trang xem kết quả và trang Chờ đăng (`localhost:8765/mac`, cột ✅).
 2. Không dừng hỏi giữa chừng; mọi lựa chọn ghi "đã chọn X vì Y" trong báo cáo cuối.
 3. Bài đủ kênh theo kết luận, đúng giọng David, kiểu dẫn dắt khớp tỉ lệ.
 4. Góp ý → đã render lại toàn bộ và giao lại, không chờ nhắc.

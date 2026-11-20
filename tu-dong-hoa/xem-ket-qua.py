@@ -264,7 +264,7 @@ def section(t):
 
 def page_home(taps):
     n = sum(1 for t in taps if not nhom(t.key)); m = len(taps) - n
-    return (f'<header><h1>Kết quả video</h1><a class=nav href=/bai-dang>Bài đăng →</a><a class=nav href=/mac>Video trên Mac →</a><span class=dem>{n} video</span>'
+    return (f'<header><h1>Kết quả video</h1><a class=nav href=/bai-dang>Bài đăng →</a><a class=nav href=/mac>Chờ đăng →</a><span class=dem>{n} video</span>'
             f'<input id=q type=search placeholder="Tìm…" oninput="loc()">'
             f'{f"<label class=thu><input type=checkbox id=thu onchange=loc()> Bản thử ({m})</label>" if m else ""}</header>'
             + "".join(section(t) for t in taps)
@@ -348,22 +348,37 @@ def page_mac():
     sp = importlib.util.spec_from_file_location("kiem_video_mac", os.path.join(os.path.dirname(os.path.realpath(__file__)), "kiem-video-mac.py"))
     km = importlib.util.module_from_spec(sp); sp.loader.exec_module(km)
     k = km.kiem()
-    head = ('<header><h1>Video trên Mac</h1><a class=nav href=/>← Kết quả video</a>'
-            '<span class=dem>chỉ đọc · xoá bằng luu-drive.sh</span></header>')
-    if not k["drive"]: body = "<p>⚠️ Google Drive chưa mở, không kiểm được. Mở app Google Drive rồi tải lại trang.</p>"
-    elif not k["rows"]: body = "<p>~/Movies không còn tập video nào. Mac đang nhẹ.</p>"
+    head = ('<header><h1>Chờ đăng</h1><a class=nav href=/>← Kết quả video</a>'
+            '<span class=dem>bản cuối chưa đăng trên Mac · chỉ đọc</span></header>')
+    tb = lambda cols, rows: ("<div style='overflow-x:auto'><table style='border-collapse:collapse;width:100%'><tr style='text-align:left;color:var(--dim)'>"
+                             + "".join(f"<th>{c}</th>" for c in cols) + "</tr>" + rows + "</table></div>")
+    if not k["drive"]: return _mac_html(head + "<p>⚠️ Google Drive chưa mở, không kiểm được. Mở app Google Drive rồi tải lại trang.</p>")
+    C = k["cho_dang"]
+    body = "<h2 style='margin:18px 0 8px'>Bản cuối chờ đăng</h2>"
+    if not C: body += "<p class=dem>Không có bản cuối nào chờ đăng.</p>"
     else:
-        tr = "".join(f"<tr><td>{esc(r['tap'])}</td><td>{km.gb(r['size'])}</td><td>{r['render_ok']}/{r['render']}</td>"
-                     f"<td>{r['goc_ok']}/{r['goc']}</td><td>{esc(r['ket_luan'])}"
-                     + "".join(f"<div class=dem>thiếu: {esc(x)}</div>" for x in (r['thieu_render'] + r['thieu_goc'])[:6]) + "</td></tr>" for r in k["rows"])
-        tong = sum(r["xoa_duoc"] for r in k["rows"])
-        body = (f"<p>Xoá được ngay: <b>{km.gb(tong)}</b> (nhắn Claude \"dọn Mac\" — chạy luu-drive.sh: chép lên Drive, kiểm, rồi mới xoá).</p>"
-                "<div style='overflow-x:auto'><table style='border-collapse:collapse;width:100%'><tr style='text-align:left;color:var(--dim)'>"
-                "<th>Tập</th><th>Dung lượng</th><th>Render trên Drive</th><th>Gốc trên Drive</th><th>Kết luận</th></tr>"
-                f"{tr}</table></div>")
+        body += ("<p class=dem>Mở trong Finder: <code>~/Movies/cho-dang/&lt;tập&gt;/</code> (ban-dai, highlight, bài đăng). Đăng xong nhắn Claude "
+                 "\"đã đăng &lt;tập&gt;\" — kiểm Drive rồi mới xoá bản Mac.</p>")
+        body += tb(["Tập", "Video", "Dung lượng", "Kết luận"], "".join(
+            f"<tr><td>{esc(ten(type('T', (), {'key': r['tap'].removeprefix('tap-')})))}<div class=dem>{esc(r['tap'])}</div></td>"
+            f"<td>{''.join(f'<div>{esc(v)}</div>' for v in r['video'])}</td><td>{km.gb(r['size'])}</td><td>{esc(r['ket_luan'])}"
+            + "".join(f"<div class=dem>thiếu trên Drive: {esc(x)}</div>" for x in r['thieu'][:6]) + "</td></tr>" for r in C))
+    R = k["rows"]
+    body += "<h2 style='margin:28px 0 8px'>Dự án dựng còn trên Mac</h2>"
+    if not R: body += "<p class=dem>Không còn — Mac chỉ giữ bản cuối.</p>"
+    else:
+        body += (f"<p class=dem>Dự án chỉ cần khi đang dựng. Xong thì chuyển lên Drive (luu-drive.sh). Xoá được ngay: "
+                 f"<b>{km.gb(sum(r['xoa_duoc'] for r in R))}</b>.</p>")
+        body += tb(["Tập", "Dung lượng", "Render trên Drive", "Gốc trên Drive", "Kết luận"], "".join(
+            f"<tr><td>{esc(r['tap'])}</td><td>{km.gb(r['size'])}</td><td>{r['render_ok']}/{r['render']}</td><td>{r['goc_ok']}/{r['goc']}</td>"
+            f"<td>{esc(r['ket_luan'])}" + "".join(f"<div class=dem>thiếu: {esc(x)}</div>" for x in (r['thieu_render'] + r['thieu_goc'])[:6]) + "</td></tr>" for r in R))
+    return _mac_html(head + body)
+
+
+def _mac_html(inner):
     return (f'<!doctype html><html lang=vi><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">'
-            f"<title>Video trên Mac</title><style>{CSS} td,th{{padding:10px 12px;border-bottom:1px solid var(--bd);vertical-align:top}}</style>"
-            f"<main>{head}{body}</main></html>")
+            f"<title>Chờ đăng</title><style>{CSS} td,th{{padding:10px 12px;border-bottom:1px solid var(--bd);vertical-align:top}} code{{color:var(--ac)}}</style>"
+            f"<main>{inner}</main></html>")
 
 # ---------- trang bài đăng (David 17/11/2026: "tạo riêng 1 trang … với đầy đủ mọi thứ trong 1 bài đăng để tôi lên copy nội dung và tự tải ảnh") ----------
 # Đọc ~/Documents/1-nghe-nghiep/bai-dang/YYYY-MM-DD/bai.md (đầu file: "# tiêu đề", các dòng ghi chú, "Tệp: <đường dẫn video>" nếu có; sau "---" là chữ đăng)

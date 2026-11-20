@@ -39,3 +39,21 @@ Bản theo hướng: clip dọc D 64 s (50:29–51:41), không ra bản dài · 
 | Góp ý của anh đối diện: workshop demo cho sinh viên, trao giá trị trước; người trả tiền có thể là phụ huynh | "người bố mẹ… sẽ trả cho trainer nhiều tiền hơn là trực tiếp sinh viên trả" | 4680–5000 (78:00) | chưa có người biết tới | gói cho phụ huynh / workshop sinh viên | ý tưởng chờ David cân nhắc |
 | Bán gói coaching qua hội doanh nghiệp khó: người tham gia chủ yếu tìm khách | "nhu cầu lớn nhất của họ… là đa phần của họ nhu cầu Hunter" | 4800–4870 (80:00) | — | bỏ kênh bán đó | bài học kênh bán |
 
+
+## 20/11/2026 · tap-gan-ket-bang-cong-viec · chiều trò chuyện ở văn phòng một anh đàn anh làm giao dịch hàng hoá
+Bản theo hướng: bản dài ngang ~17 phút (S1, S3, S5, S7, S9, S11, S16) + clip A, B, C · Trạng thái: đang dựng
+| Ý | Lời gốc | Mốc | Nỗi đau / mục tiêu | Bán được gì | Dùng cho việc |
+|---|---|---|---|---|---|
+| Tình cảm lên xuống, người với người gắn kết bằng công việc | "Người với người quan hệ với nhau bằng công việc" | 140 (2:20) | quan hệ, cộng tác dễ vỡ | gói trainer (tầng mối quan hệ) | câu mở bài mối quan hệ |
+| Lợi ích mỗi người, mỗi giai đoạn khác nhau: tiền, tình cảm, cảm xúc | "lợi ích của em với lợi ích của anh nó sẽ không giống nhau" | 268 (4:28) | không hiểu người cộng tác cần gì | gói trainer | bài tập hỏi "lợi ích của người này giai đoạn này là gì" |
+| Để giữ người thì đi hiểu kinh doanh, tìm mentor | "để giữ người với người thì em chỉ cần đi thấu hiểu kinh doanh" | 310 (5:10) | — | nhân hiệu | chuyện hành trình |
+| Người có lõi: đổi ngành vẫn là họ; người không lõi: ở một chỗ vẫn loạn | "Dù là họ có đổi bất kỳ ngành nghề nào thì nó vẫn là họ" | 868 (14:28) | loạn hướng | gói trainer (làm chủ bản thân) | phép thử nội lực |
+| Tự dắt mình đi hay bị xã hội dắt đi | "có một nhóm còn lại là họ sẽ bị xã hội… dắt vào đi" | 894 (14:54) | sống theo người khác | gói trainer | câu hỏi tự soi |
+| (anh đàn anh) cắm chân nhiều nhóm thì khó làm; chọn một chỗ, tập trung mới nở | "Em phải tập trung vào cái gì đấy, nó mới nở ra được" | 944–1010 (15:44) | nhảy nhóm | gói trainer | ví dụ tập trung |
+| Tâm sinh tướng: môi trường đổi nhân tướng | "Cái môi trường là thay đổi nhân tướng của một con người" | 1138 (18:58) | — | từ trường số / hệ 135 | dẫn chứng |
+| Đào kim cương 90% thì bỏ; không bỏ cuộc | "nó chỉ là không bỏ cuộc thôi" | 1240–1310 (20:40) | bỏ giữa chừng | gói trainer | câu chuyện kiên trì |
+| Mọi thứ trong đời quy ra số; từ trường số học từ một người thầy | "trong cuộc sống này thực ra cái gì cũng liên quan đến số" | 1362–1424 (22:42) | chưa rõ định hướng | hệ 135 | mở bài giới thiệu từ trường số |
+| Tên là ý niệm bố mẹ gieo; sống đúng tên thì được ủng hộ | "đều gieo ở đấy một cái ý niệm là con mình nó phải như thế" | 1581 (26:21) | — | hệ 135 | dẫn chứng tên |
+| "Nghiệp": không làm việc mình không tự tâm | "Tớ không làm được cái gì liên quan đến việc là mình không tự tâm mình ra" | 1735 (28:55) | làm việc trái lòng | gói trainer | chuyện thật của David |
+| Chạy theo việc của người khác thì mệt, chán | "em cứ chạy theo người ta em cứ cuốn vào cái việc của người ta" | 2463 (41:03) | bị cuốn | gói trainer | ví dụ |
+| (anh đàn anh) phễu: KOL/KOC đổ về, quy trình chuyển đổi; online nhân bản được, offline thì không | "offline thì nó mạnh nhưng nó bị một cái là anh không nhân bản được" | 2052–2449 (34:12) | làm chủ thị trường | — | ý tham khảo |

@@ -45,3 +45,11 @@ Bản theo hướng: bản dài ngang 15:24 (Facebook cá nhân, fanpage) + 3 cl
 | Thuật toán nền tảng là AI nên nhận ra khuôn chung; bản may riêng có đặc tính riêng | "con 8 triệu thì nó đã có một cái đặc tính riêng" | 2105–2143 (35:05) | lượt xem tụt | — | giải thích kỹ thuật dễ hiểu |
 | Muốn giá trị chất lượng thì phải bỏ tiền nhiều hơn | "Ông muốn tạo ra giá trị chất lượng thì ông phải bỏ tiền nhiều hơn" | 2180–2189 (36:20) | — | — | câu chốt |
 
+
+## 20/11/2026 · tap-gan-ket-bang-cong-viec · chiều trò chuyện ở văn phòng một anh đàn anh
+Bản theo hướng: clip dọc D (1940–2052) · Trạng thái: đang dựng (trùng chủ đề tap-may-do-giai-phap-ai, đăng sau bộ đó)
+| Ý | Lời gốc | Mốc | Nỗi đau / mục tiêu | Bán được gì | Dùng cho việc |
+|---|---|---|---|---|---|
+| AI chỉ xử lý việc lặp đi lặp lại, không thay việc của con người | "chỉ dùng công nghệ AI để xử lý những tác vụ lặp đi lặp lại thôi" | 1940 (32:20) | sợ AI thay người / dùng sai chỗ | gói công nghệ | câu mở tư vấn |
+| May đo, không sản xuất hàng loạt; khoá AI rẻ học xong không dùng | "bọn em thuộc dạng may đo, bọn em không thuộc dạng sản xuất số lượng lớn" | 1956–2050 (32:36) | học khoá rẻ không áp dụng được | giải pháp số hoá theo vấn đề | ví dụ áo may sẵn |
+| Mua công cụ về không biết dùng cũng không hơn gì; ngồi với người làm rồi thì nhàn | "mua dạy nhờ khi không biết sử dụng là nó cũng không có gì hơn" | 1889 (31:29) | tự mày mò | gói kèm đào tạo | lý do cần trainer |
