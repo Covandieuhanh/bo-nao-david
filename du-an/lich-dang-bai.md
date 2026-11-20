@@ -41,7 +41,9 @@ Trạng thái: nháp · đã gửi duyệt · duyệt · đã đăng · thay (gh
 | Ngày | Ô | Trụ | Bài | Nguồn | Trạng thái |
 |---|---|---|---|---|---|
 | CN 08/11 | video | 3 | "Đi bộ hằng ngày" bản đầy đủ | David tự đăng | đã đăng (thấy khi lọc 17/11) |
-| T5 19/11 | bài viết | 1 | 10 giờ tối vẫn trả tin nhắn khách → gom về một bảng mỗi sáng | bài nền #1 | sẵn trên trang |
+| T3 17/11 | bài viết | 1 | 8 giờ tối, tin nhắn ở nhiều nơi → gom về một bảng (bản David sửa của bài nền #1) | David tự đăng | đã đăng (thấy khi lọc 20/11) |
+| T4 18/11 | video | 1 | "Marketing là gì trên góc nhìn của David" (1:34) | David tự đăng | đã đăng (thấy khi lọc 20/11) |
+| T5 19/11 | bài viết | 1 | 10 giờ tối vẫn trả tin nhắn khách → gom về một bảng mỗi sáng | bài nền #1 | đã đăng (lọc 20/11: trùng hẳn bài David tự đăng 17/11) |
 | T6 20/11 | bài viết | 2 | "Làm sao để đội nghe mình?" → ba tầng làm chủ | bài nền #7 | sẵn trên trang |
 | CN 22/11 | bài viết | 2 | Tháng đầu lên quản lý: làm thay cả đội | soạn mới | sẵn trên trang |
 | T3 24/11 | bài viết | 1 | Những việc nhỏ lặp lại ăn mất một buổi mỗi tuần | bài nền #10 | sẵn trên trang |
@@ -58,8 +60,10 @@ Trạng thái: nháp · đã gửi duyệt · duyệt · đã đăng · thay (gh
 | CN 13/12 | bài viết | 3 | Mất nhịp ba tuần → nghỉ, gặp người thật, việc nhỏ nhất | bài nền #16 | sẵn trên trang |
 | T3 15/12 | bài viết | 4 | "Hôm nay đăng gì?" → bài soạn sẵn, tối chỉ chép và đăng | bài nền #11 | sẵn trên trang |
 | T5 17/12 | bài viết | 1 | Họp xong không ai rõ làm gì → bốn bước trước mọi việc | bài nền #3 | sẵn trên trang |
+| T6 18/12 | bài viết | 3 | Tìm hướng mới cả tháng không ra (Covid 2020) → đúng sai không bằng phù hợp | soạn mới (lời David, video "Bận cả ngày") | sẵn trên trang |
+| CN 20/12 | bài viết | 2 | Nhắc mãi một điều → đưa cảm quan của mình thành quy chuẩn | soạn mới (buổi 1:1 quán cà phê 18/11) | sẵn trên trang |
 
-Video sẵn (`bai-dang/video-san/`, không thuộc lịch): Bận cả ngày · Mục tiêu và sứ mệnh (clip 76 s) · Đi trainer clip A, B, C · vlog The View Vũng Tàu.
+Video sẵn (`bai-dang/video-san/`, không thuộc lịch): Bận cả ngày · Mục tiêu và sứ mệnh (clip 76 s) · Đi trainer clip A, B, C · vlog The View Vũng Tàu · May đo giải pháp AI (bản dài 15:24) · May đo clip D "Người nghe không nhớ bạn nói gì".
 
 ## Kho bài nền (8)
 | # | Kiểu | Trụ | Bài |
