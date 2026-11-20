@@ -32,7 +32,7 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
 - **Nhãn cố định của khung** (không phải lời): "Bản đầy đủ trên kênh …" ở thẻ cuối dẫn bản đầy đủ, và **lịch phát do David đưa**
   ("Tập mới mỗi thứ 6") — `project.schedule` (1 video), `STAGE.schedule` (podcast), ke-hoach.json `"schedule"` (vlog),
   `"endcard": {"schedule"}` (highlight). Không tự đặt lịch.
-- **Lằn ranh kênh trainer** (kênh khác theo hồ sơ kênh đó; loại khỏi mọi chữ/clip): huyền học, thần số học, phong thuỷ, lá số · "chữa lành", công dụng sức khoẻ của sản phẩm ·
+- **Lằn ranh kênh trainer** (kênh khác theo hồ sơ kênh đó; loại khỏi mọi chữ/clip): đọc số của người thật khi họ chưa đồng ý, hứa tiền hay kết quả nhờ con số, nghi thức cầu xin / phóng sinh (còn nội dung từ trường số (kèm dẫn chứng thần số học, thiền, "nghiệp"…) thuộc hướng trainer, được nói công khai, `chien-luoc-nghe-nghiep.md` 4.7) · "chữa lành", công dụng sức khoẻ của sản phẩm ·
   tư vấn thuế/pháp lý · tên thật/nơi làm/chi tiết lộ danh tính khách, học viên, nhân viên · giá, tên gói dịch vụ. Câu chủ chốt dính
   lằn ranh → báo David, không tự sửa lời. Ở video dài: cảnh báo trong phiếu lọc và báo cáo, mặc định giữ lời, David quyết ở bản cuối (khối 00 mục 3).
 - Whisper bịa câu ở đoạn không lời ("Hãy subscribe cho kênh…", "Cảm ơn các bạn đã xem") → bỏ.

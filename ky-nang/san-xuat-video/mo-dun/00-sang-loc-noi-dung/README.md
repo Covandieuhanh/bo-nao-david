@@ -22,7 +22,7 @@ description: "Khối 00 bộ lọc nội dung: lọc tài nguyên theo hồ sơ 
 | Hướng | Nhận ra khi | Nơi đăng | Bán gì |
 |---|---|---|---|
 | **1. Tài chính** | giao dịch hàng hoá, thị trường, đầu tư, hành trình làm tài chính | YouTube David Trần Official (+ clip ngắn kênh đó) | hợp tác môi giới / mở tài khoản hợp pháp |
-| **2. Trainer con người** | làm chủ bản thân, công việc, mối quan hệ; dẫn người | YouTube trainer + highlight, Facebook cá nhân | gói trainer (hồ sơ 4.4) |
+| **2. Trainer con người** | làm chủ bản thân, công việc, mối quan hệ; dẫn người; từ trường số và dẫn chứng (thần số học, thiền, "nghiệp"…), hệ 135 | YouTube trainer + highlight, Facebook cá nhân | gói trainer (hồ sơ 4.4) |
 | **3. Giải pháp công nghệ AI** | mọi thứ khác: công nghệ / AI thực chiến, số hoá cho tổ chức, đời thường, hành trình | Facebook cá nhân, fanpage, TikTok | gói công nghệ cá nhân, giải pháp số hoá cho tổ chức + đào tạo tới khi ra kết quả |
 
 Mọi tài nguyên đều **phân đủ theo cả ba hướng** (mục 0b): hướng nào có ý trọn thì ra một bản riêng, phần không thuộc hướng nào thì
@@ -94,10 +94,9 @@ Chấm 5 tiêu chí trên dùng cho hướng trainer. Hướng khác đổi ngh�
 tin David trong hướng đó.
 
 ## 3. Lằn ranh = CẢNH BÁO, David quyết (hồ sơ 4.7 + 7, theo từng hướng)
-**Mọi hướng:** phạm pháp hay mập mờ pháp lý (quan trọng nhất) · huyền học / số học / từ trường số / tâm linh dạng huyền học · chữ
-"chữa lành" · tư vấn thuế, pháp lý · chuyện người khác không ẩn danh · hứa thu nhập.
+**Mọi hướng:** phạm pháp hay mập mờ pháp lý (quan trọng nhất) · chữ "chữa lành" · tư vấn thuế, pháp lý · chuyện người khác không ẩn danh · hứa thu nhập.
 **Tài chính:** cam kết lợi nhuận · gọi lệnh mua/bán cụ thể · thiếu cảnh báo rủi ro · nhắc đơn vị không được cấp phép.
-**Trainer:** trị liệu, chẩn đoán tâm lý · nhắc vai coach trên kênh công khai · nói giá trên video.
+**Trainer:** trị liệu, chẩn đoán tâm lý · nhắc vai coach trên kênh công khai · nói giá trên video · đọc số của người thật khi họ chưa đồng ý · hứa tiền hay kết quả nhờ con số · nghi thức cầu xin, phóng sinh. Còn nội dung từ trường số (kèm dẫn chứng thần số học, thiền, "nghiệp"…) thuộc hướng trainer, được nói công khai (hệ 135, hồ sơ 4.1).
 **Gói công nghệ:** hứa kết quả gói chưa làm ra thật. Giá sản phẩm công nghệ của David được công bố (tự quảng bá), không phải lằn ranh.
 Chạm → **luôn cảnh báo trong phiếu và báo cáo**: mốc giây, lời chạm, rủi ro. Mặc định **giữ lời, không tự cắt** (David có thể đã tự cân đối khi kể); David muốn cắt thì nói ở bản cuối. Ghi "đã cảnh báo" vào sổ; chữ đồ hoạ, tiêu đề, thumbnail, mô tả, clip ngắn vẫn không lấy nội dung đó.
 

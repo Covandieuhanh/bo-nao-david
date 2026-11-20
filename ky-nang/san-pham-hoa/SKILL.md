@@ -25,7 +25,7 @@ Gọi tắt `KG/` = `~/Documents/2-ca-nhan/so-tay/kho-du-lieu/`.
 ## Luật cứng
 - **Ẩn danh khi ra khỏi `KG/`:** không tên khách, không người quen, không số điện thoại, số tài khoản, địa chỉ, sức khoẻ. Chỉ chuyện thật; chuyện người khác thì "một học viên", "một người bạn".
 - **Không đăng, không gửi tin cho ai** ngoài báo cáo về bot của David (`AGENTS.md` luật 4). Bài phễu là nháp chờ David duyệt.
-- **Lằn ranh nghề** (`co-so-tri-thuc/david.md` 4.7): không huyền học, không "chữa lành", tài chính không hứa lợi nhuận, không gọi lệnh; gói công nghệ chỉ hứa kết quả đã chạy thật.
+- **Lằn ranh nghề** (`co-so-tri-thuc/david.md` 4.7): từ trường số là nội dung hướng trainer (không đọc số người thật chưa đồng ý, không hứa kết quả nhờ con số), không "chữa lành", tài chính không hứa lợi nhuận, không gọi lệnh; gói công nghệ chỉ hứa kết quả đã chạy thật.
 - Soạn hay bổ sung gói hướng 3: theo **Luật soạn gói hướng 3** ở `co-so-tri-thuc/chien-luoc-nghe-nghiep.md` mục 4.1 (luật của nghề, không thuộc skill này).
 - Không đọc lại cả kho cũ: mỗi đêm chỉ đọc file ngày mới nhất; mỗi tuần đọc `nguyen-lieu.md` (7 ngày) + `noi-dau.md`.
 

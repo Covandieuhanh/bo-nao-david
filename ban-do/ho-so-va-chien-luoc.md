@@ -9,7 +9,7 @@ Gốc: [bản đồ bộ não](README.md). Sửa các file hồ sơ phải hỏi
 ## Hồ sơ David
 - [david.md](../co-so-tri-thuc/david.md) — hồ sơ gốc nạp mỗi phiên: là ai, luật cá nhân, cách làm việc với David, bảng tra mục 4–9.
 - [ho-so-ca-nhan.md](../co-so-tri-thuc/ho-so-ca-nhan.md) — tính cách, động cơ; phần định hướng nghề đã cũ, lệch thì theo david.md.
-- [du-lieu-nen-huyen-hoc.md](../co-so-tri-thuc/du-lieu-nen-huyen-hoc.md) — số học chỉ dùng buổi riêng, nhịp làm việc.
+- [du-lieu-nen-huyen-hoc.md](../co-so-tri-thuc/du-lieu-nen-huyen-hoc.md) — từ trường số là nội dung hướng trainer (xem số cá nhân chỉ buổi riêng), nhịp làm việc.
 
 ## Nghề và kinh doanh
 - [chien-luoc-nghe-nghiep.md](../co-so-tri-thuc/chien-luoc-nghe-nghiep.md) — ba hướng nghề, bảng giá, lằn ranh nghề: mở khi việc dính tới khách, giá, sản phẩm.

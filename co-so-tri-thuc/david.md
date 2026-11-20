@@ -2,7 +2,7 @@
 
 > File này giúp Claude (Claude Code, Claude chat) hiểu David là ai và làm việc với David đúng cách.
 > Đặt file vào thư mục hay mở Claude Code, hoặc nhập vào `CLAUDE.md` bằng dòng `@david.md`.
-> Cập nhật lần cuối: 17/11/2026. Bản này là **mục lục**: mục 1–3 luôn cần nên giữ ở đây; mục 4–9 nằm ở file riêng trong `~/Documents/bo-nao-david/co-so-tri-thuc/`, đọc khi việc cần.
+> Cập nhật lần cuối: 20/11/2026. Bản này là **mục lục**: mục 1–3 luôn cần nên giữ ở đây; mục 4–9 nằm ở file riêng trong `~/Documents/bo-nao-david/co-so-tri-thuc/`, đọc khi việc cần.
 
 ---
 
@@ -47,6 +47,6 @@ Số mục giữ như cũ, nên chỗ khác ghi "`david.md` mục 4.1" vẫn tra
 | 4 (4.1–4.7) | Ba hướng nghề (tài chính · trainer con người · giải pháp công nghệ AI, mục tiêu chung **ra tiền**), hình ảnh trainer hai lĩnh vực, đội đối tác công nghệ, ba tầng làm chủ, các chặng, bảng giá, quy trình một ca, quyết định đã chốt, **lằn ranh nghề** | việc dính tới nghề, sản phẩm, giá, khách, hay nội dung công khai | [chien-luoc-nghe-nghiep.md](chien-luoc-nghe-nghiep.md) |
 | 5, 8 | Kênh video (bản gốc 10 phút, 3 phần, kho 100 video) và bộ lọc nội dung (phân hướng → câu hỏi gốc → bán được gì) | lọc, dựng, đăng nội dung | [chien-luoc-noi-dung.md](chien-luoc-noi-dung.md) |
 | 6 | Nghiên cứu CCL: tài liệu chuẩn, sách tự mua | xây phương pháp, dịch thuật ngữ CCL | [nghien-cuu-ccl.md](nghien-cuu-ccl.md) |
-| 7, 9 | Công cụ số học (chỉ buổi riêng) và dữ liệu nền huyền học | buổi riêng có dùng số học; hiểu nhịp làm việc của David | [du-lieu-nen-huyen-hoc.md](du-lieu-nen-huyen-hoc.md) |
+| 7, 9 | Từ trường số (nội dung hướng trainer, xem số cá nhân chỉ buổi riêng) và dữ liệu nền huyền học | nội dung từ trường số, buổi riêng có dùng số học; hiểu nhịp làm việc của David | [du-lieu-nen-huyen-hoc.md](du-lieu-nen-huyen-hoc.md) |
 
 Hồ sơ thấu hiểu con người David (tính cách, động cơ): [ho-so-ca-nhan.md](ho-so-ca-nhan.md). Mô hình kinh doanh: [mo-hinh-kinh-doanh.md](mo-hinh-kinh-doanh.md).

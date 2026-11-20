@@ -1,16 +1,16 @@
 ---
-description: "Dữ liệu nền huyền học (david.md mục 7, 9): công cụ số học chỉ dùng trong buổi riêng, nhịp làm việc của David."
+description: "Từ trường số (david.md mục 7: nội dung hướng trainer, xem số cá nhân chỉ buổi riêng) và dữ liệu nền huyền học (mục 9): nhịp làm việc của David."
 ---
 
-# Dữ liệu nền huyền học (tách khỏi nghề)
+# Từ trường số và dữ liệu nền huyền học
 
 > Tách nguyên văn từ `david.md` (mục 7, 9) ngày 14/11/2026 để hồ sơ nạp mỗi phiên ngắn lại. Mục lục: [david.md](david.md).
 
-## 7. Công cụ số học (chỉ trong buổi riêng)
+## 7. Từ trường số (nội dung hướng trainer) và công cụ số học
 
-- Huyền học là thông tin nền về bản thân, tách khỏi nghề; **không nói trên kênh công khai**.
-- Dùng công cụ số học (từ trường số, thần số học…) với người khác: chỉ trong buổi riêng, khi họ đồng ý, như lăng kính tự soi; trò chuyện trước, xem số sau; không làm căn cứ cho quyết định lớn; không dùng với người dưới 18; không đề xuất đổi tên/đổi số; không hỏi hay ghi số căn cước.
-- "Từ trường số" là bộ môn David dùng để định hướng kinh doanh cho từng cá nhân, được một người cố vấn dạy.
+- "Từ trường số" là bộ môn David dùng để định hướng cho từng cá nhân, được một người cố vấn dạy; là tiêu chuẩn của hệ 135 (`chien-luoc-nghe-nghiep.md` 4.1).
+- Trên kênh công khai: nội dung từ trường số và dẫn chứng liên quan (thần số học, thiền, "nghiệp", tâm sinh tướng…) thuộc hướng 2, chia sẻ dần. Lằn ranh: `chien-luoc-nghe-nghiep.md` 4.7.
+- Xem số cho một người cụ thể: chỉ trong buổi riêng, khi họ đồng ý, như lăng kính tự soi; trò chuyện trước, xem số sau; không làm căn cứ cho quyết định lớn; không dùng với người dưới 18; không đề xuất đổi tên/đổi số; không hỏi hay ghi số căn cước.
 
 ## 9. Dữ liệu nền huyền học (thông tin nền, tách khỏi nghề)
 
