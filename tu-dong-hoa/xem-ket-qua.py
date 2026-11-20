@@ -264,7 +264,7 @@ def section(t):
 
 def page_home(taps):
     n = sum(1 for t in taps if not nhom(t.key)); m = len(taps) - n
-    return (f'<header><h1>Kết quả video</h1><a class=nav href=/bai-dang>Bài đăng →</a><span class=dem>{n} video</span>'
+    return (f'<header><h1>Kết quả video</h1><a class=nav href=/bai-dang>Bài đăng →</a><a class=nav href=/mac>Video trên Mac →</a><span class=dem>{n} video</span>'
             f'<input id=q type=search placeholder="Tìm…" oninput="loc()">'
             f'{f"<label class=thu><input type=checkbox id=thu onchange=loc()> Bản thử ({m})</label>" if m else ""}</header>'
             + "".join(section(t) for t in taps)
@@ -341,6 +341,29 @@ def page(sel):
     taps = tap_all()
     return (f'<!doctype html><html lang=vi><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">'
             f"<title>Kết quả video</title><style>{CSS}</style><main>{page_home(taps)}</main><script>{JS}</script></html>")
+
+# ---------- trang video trên Mac (David 20/11/2026: "sắp xếp để tôi tự kiểm tra nhanh hơn") — chỉ đọc, gọi kiem-video-mac.py ----------
+def page_mac():
+    import importlib.util
+    sp = importlib.util.spec_from_file_location("kiem_video_mac", os.path.join(os.path.dirname(os.path.realpath(__file__)), "kiem-video-mac.py"))
+    km = importlib.util.module_from_spec(sp); sp.loader.exec_module(km)
+    k = km.kiem()
+    head = ('<header><h1>Video trên Mac</h1><a class=nav href=/>← Kết quả video</a>'
+            '<span class=dem>chỉ đọc · xoá bằng luu-drive.sh</span></header>')
+    if not k["drive"]: body = "<p>⚠️ Google Drive chưa mở, không kiểm được. Mở app Google Drive rồi tải lại trang.</p>"
+    elif not k["rows"]: body = "<p>~/Movies không còn tập video nào. Mac đang nhẹ.</p>"
+    else:
+        tr = "".join(f"<tr><td>{esc(r['tap'])}</td><td>{km.gb(r['size'])}</td><td>{r['render_ok']}/{r['render']}</td>"
+                     f"<td>{r['goc_ok']}/{r['goc']}</td><td>{esc(r['ket_luan'])}"
+                     + "".join(f"<div class=dem>thiếu: {esc(x)}</div>" for x in (r['thieu_render'] + r['thieu_goc'])[:6]) + "</td></tr>" for r in k["rows"])
+        tong = sum(r["xoa_duoc"] for r in k["rows"])
+        body = (f"<p>Xoá được ngay: <b>{km.gb(tong)}</b> (nhắn Claude \"dọn Mac\" — chạy luu-drive.sh: chép lên Drive, kiểm, rồi mới xoá).</p>"
+                "<div style='overflow-x:auto'><table style='border-collapse:collapse;width:100%'><tr style='text-align:left;color:var(--dim)'>"
+                "<th>Tập</th><th>Dung lượng</th><th>Render trên Drive</th><th>Gốc trên Drive</th><th>Kết luận</th></tr>"
+                f"{tr}</table></div>")
+    return (f'<!doctype html><html lang=vi><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">'
+            f"<title>Video trên Mac</title><style>{CSS} td,th{{padding:10px 12px;border-bottom:1px solid var(--bd);vertical-align:top}}</style>"
+            f"<main>{head}{body}</main></html>")
 
 # ---------- trang bài đăng (David 17/11/2026: "tạo riêng 1 trang … với đầy đủ mọi thứ trong 1 bài đăng để tôi lên copy nội dung và tự tải ảnh") ----------
 # Đọc ~/Documents/1-nghe-nghiep/bai-dang/YYYY-MM-DD/bai.md (đầu file: "# tiêu đề", các dòng ghi chú, "Tệp: <đường dẫn video>" nếu có; sau "---" là chữ đăng)
@@ -443,6 +466,11 @@ class H(http.server.SimpleHTTPRequestHandler):
         if u.path.startswith("/?") or (u.path == "/" and "tap=" in u.query):   # link cũ ?tap=x → neo #tap-x
             t = urllib.parse.parse_qs(u.query).get("tap", [""])[0]
             self.send_response(302); self.send_header("Location", f"/#tap-{urllib.parse.quote(t)}"); self.end_headers(); return
+        if u.path.rstrip("/") == "/mac":
+            try: b = page_mac().encode()
+            except Exception as e: b = f"<pre>Lỗi kiểm video trên Mac: {esc(e)}</pre>".encode()
+            self.send_response(200); self.send_header("Content-Type", "text/html; charset=utf-8"); self.send_header("Content-Length", len(b)); self.end_headers()
+            return self.wfile.write(b)
         if u.path.rstrip("/") == "/bai-dang":
             try: b = page_bai().encode()
             except Exception as e: b = f"<pre>Lỗi đọc bài đăng: {esc(e)}</pre>".encode()

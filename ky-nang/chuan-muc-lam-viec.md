@@ -95,6 +95,8 @@ Trong 4 phần, cách chọn từng điểm:
   (video: `don-tap.py --xoa` → `luu-drive.sh`); file tải về, dữ liệu app, đồ cá nhân không đồng bộ, muốn xoá thì hỏi trước. Ghi nhớ `video-chuyen-qua-drive`.
   Xoá video trên Mac chỉ bằng `luu-drive.sh` (chép cả tập → lên mây → so khớp → mới xoá), không tự lọc file bằng `find … -delete`
   (`-delete` làm mất tác dụng `-prune`, ngày 20/11/2026 đã xoá mất gốc DJI_0030 của tập máy đo giải pháp AI).
+  Kiểm nhanh tập nào trên Mac đã an toàn (render + gốc đã lên Drive), xoá được bao nhiêu: trang `localhost:8765/mac` hoặc
+  `python3 tu-dong-hoa/kiem-video-mac.py` (chỉ đọc). David nói "kiểm video" → chạy lệnh này; "dọn Mac" → `luu-drive.sh` cho các tập ✅.
 - **Đẩy GitHub ngay** khi có thay đổi về skill hoặc não: `bash tu-dong-hoa/dong-bo.sh --push` (`AGENTS.md` luật 6).
 
 ## 5. Luôn đi tới mục tiêu, giữ phiên gọn

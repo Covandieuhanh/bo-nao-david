@@ -3,7 +3,8 @@
 # CHỈ ĐỌC, không xoá gì. Với mỗi tập trong ~/Movies (tap-*, vlog/*, video-tu-quay/*):
 #   dung lượng · bản render đã nằm trên Drive và đã lên mây chưa · bản gốc (1-goc/) đã có trên Drive chưa · xoá được bao nhiêu.
 # "Có trên Drive" = cùng tên hoặc cùng cỡ (đúng từng byte) ở thanh-pham/<tập>/, sao-luu-mac/video/<tập>/, tu-lieu-goc/<tập>/;
-# "đã lên mây" = file đó đã có mã của Google Drive (com.google.drivefs.item-id). Xoá vẫn chỉ bằng luu-drive.sh (luật "Giữ Mac nhẹ").
+# "đã lên mây" = cả thư mục chứa file đó trên Drive đã tải lên xong (kiem-tai-len-drive, cùng công cụ luu-drive.sh dùng; mã
+# com.google.drivefs.item-id trên file không ổn định nên không dùng). Xoá vẫn chỉ bằng luu-drive.sh (luật "Giữ Mac nhẹ").
 #   python3 tu-dong-hoa/kiem-video-mac.py         → in bảng
 #   trang http://localhost:8765/mac                → cùng bảng (xem-ket-qua.py gọi kiem())
 import os, subprocess, sys
@@ -29,9 +30,19 @@ def du(p):
 def gb(n): return f"{n / 1e9:.1f} GB" if n >= 1e8 else f"{n / 1e6:.0f} MB"
 
 
-def len_may(p):   # đã có mã Google Drive = đã lên mây
-    try: return b"com.google.drivefs.item-id" in subprocess.run(["xattr", p], capture_output=True).stdout
-    except OSError: return False
+BIN = os.path.join(H0, ".cache/dung-video-theo-phong-cach/drive/kiem-tai-len-drive")
+SWIFT = os.path.join(os.path.dirname(os.path.realpath(__file__)), "../ky-nang/san-xuat-video/dung-video-theo-phong-cach/scripts/kiem-tai-len-drive.swift")
+_da = {}
+
+
+def len_may(p):   # thư mục chứa file trên Drive không còn file nào chờ tải lên
+    d = os.path.dirname(p)
+    if d not in _da:
+        if not os.path.exists(BIN) and os.path.exists(SWIFT):
+            os.makedirs(os.path.dirname(BIN), exist_ok=True); subprocess.run(["swiftc", "-O", SWIFT, "-o", BIN], capture_output=True)
+        try: _da[d] = "chua_len=0 " in subprocess.run([BIN, d], capture_output=True, text=True, timeout=60).stdout
+        except (OSError, subprocess.TimeoutExpired): _da[d] = False
+    return _da[d]
 
 
 def chi_muc(rels):   # các file video trên Drive của một tập: {(tên), (cỡ)} → đường dẫn
