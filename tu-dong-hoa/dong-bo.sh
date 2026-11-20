@@ -87,7 +87,7 @@ case "$CHE_DO" in
     [ -d "$HOME/Documents/2-ca-nhan/so-tay" ] && { python3 -I "$REPO/tu-dong-hoa/lien-ket/kiem-tra-lien-ket.py" --goc "$HOME/Documents/2-ca-nhan/so-tay" || true; }
     gc add -A
     # Chốt chặn: phần riêng không bao giờ lên repo công khai (kể cả khi .git/info/exclude bị mất)
-    lot=$(gc diff --cached --name-only | grep -E "^($(printf '%s|' "${RIENG[@]}" | sed 's/|$//; s/\./\\./g'))(/|$)" || true)
+    lot=$(gc diff --cached --name-only --diff-filter=ACMRT | grep -E "^($(printf '%s|' "${RIENG[@]}" | sed 's/|$//; s/\./\\./g'))(/|$)" || true)
     if [ -n "$lot" ]; then gc reset -q -- $lot; echo "⚠ Đã chặn phần riêng Mac khỏi repo công khai: $(echo $lot | head -c 200)"; fi
     day gc bo-nao-david "Cập nhật bộ não"
     if [ $CO_RIENG = 1 ]; then

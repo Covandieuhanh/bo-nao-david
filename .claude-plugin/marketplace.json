@@ -1,7 +1,0 @@
-{
-  "name": "david-claude",
-  "owner": { "name": "David Trần" },
-  "plugins": [
-    { "name": "so-viec", "source": "./luu-tru/mod-giao-dien/so-viec", "description": "Sổ việc: thời gian và token từng việc ở mọi phiên, thanh tiến độ, /bao-cao" }
-  ]
-}

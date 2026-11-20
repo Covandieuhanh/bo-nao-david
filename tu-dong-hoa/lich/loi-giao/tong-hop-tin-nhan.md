@@ -1,9 +1,0 @@
----
-name: tong-hop-tin-nhan
-description: Đọc Zalo, Messenger, Telegram của David, tổng hợp việc cần làm và gửi về bot Telegram Sổ nhớ.
-chrome: bat-buoc
-kiem: ~/Documents/2-ca-nhan/so-tay/tin-nhan/tong-hop-{ngay}.md
-nap-gon: co
----
-
-Làm việc trong thư mục /Users/moon/Documents/bo-nao-david. Đọc và làm đúng theo skill ky-nang/tong-hop-tin-nhan/SKILL.md (cả Zalo, Messenger, Telegram đều đọc qua Claude in Chrome; dùng tab đang mở trang đó nếu có). Trước khi đọc tin: đọc ~/Documents/2-ca-nhan/so-tay/tin-nhan/ghi-chu.md và các dòng "tên trên mạng" trong ~/Documents/2-ca-nhan/so-tay/danh-ba.md để gộp người và bỏ việc David đã báo xong. Chỉ đọc: không gửi, không gõ vào ô soạn tin, không thả cảm xúc trên bất kỳ nền tảng nào. Lưu bản đủ vào ~/Documents/2-ca-nhan/so-tay/tin-nhan/tong-hop-<ngày hôm nay>.md, ghi điều mới của từng người / đối tác vào ~/Documents/2-ca-nhan/so-tay/danh-ba.md theo bước 5 của skill (dạng '- <ngày> · điều cần nhớ · (từ tin Zalo/Messenger/Telegram)'; trùng điều David đã ghi thì không ghi lại, đánh dấu trùng trong bản tổng hợp), rồi gửi bản gọn (việc đánh số) về bot Telegram bằng: bash tu-dong-hoa/so-tay/bao-cao.sh --chi-gui --so-nho "<tin>" (tin 📬 về bot Sổ nhớ). Trả lời bằng tiếng Việt, ngắn gọn. Chrome chưa kết nối (tabs_context_mcp báo lỗi): chờ 60 giây rồi gọi lại, tối đa 5 lần, mới coi là không kết nối. Nếu trang đòi đăng nhập hoặc Chrome vẫn chưa kết nối thì ghi cảnh báo vào tin gửi bot, không tự đăng nhập, và ghi thêm dòng "CHUA-DOC-DUOC: <nền tảng>" vào mục Cảnh báo của bản đủ (máy canh bot thấy dòng này sẽ tự chạy lại một lần). Cuối việc đóng các tab mình mở.
