@@ -32,7 +32,7 @@ Repo riêng tư. AI nào, tài khoản nào đọc xong cũng nhận đúng vai,
 | Form ghi số liệu sau đăng | [ky-nang/san-xuat-video/mo-dun/16-phan-tich-so-lieu/mau-so-lieu.md](ky-nang/san-xuat-video/mo-dun/16-phan-tich-so-lieu/mau-so-lieu.md) |
 | Hồ sơ CCL, hình mẫu chuẩn (kèm bảng thuật ngữ Anh – Việt) | [tai-lieu-tham-khao/ccl/ho-so-ccl-ban-tieng-viet.md](tai-lieu-tham-khao/ccl/ho-so-ccl-ban-tieng-viet.md) |
 | Nghiên cứu kênh, video mẫu | [nghien-cuu/](nghien-cuu/) |
-| Bản cũ đã thay, đã bỏ (không làm theo) | [luu-tru/](luu-tru/) |
+| Bản cũ đã thay, đã bỏ (không làm theo) | `luu-tru/`, chỉ ở repo riêng tư của Mac chính |
 | Cài máy mới, đổi tài khoản | [huong-dan-cai-dat.md](huong-dan-cai-dat.md) |
 
 ## Cấu trúc
@@ -47,7 +47,6 @@ Repo riêng tư. AI nào, tài khoản nào đọc xong cũng nhận đúng vai,
 | `du-an/` | Việc đang dở: sổ danh mục, kho 100 video, rà soát video cũ |
 | `tai-lieu-tham-khao/` | Tài liệu gốc làm hình mẫu chuẩn lâu dài (hồ sơ CCL) |
 | `nghien-cuu/` | Nguyên liệu đã tra cứu, có ngày ở tên file |
-| `luu-tru/` | Bản cũ, đã bỏ |
 | `scripts/` | Cài vào máy, đồng bộ 2 chiều, hook, quét bí mật |
 
 ## Đồng bộ

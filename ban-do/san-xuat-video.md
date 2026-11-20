@@ -101,7 +101,6 @@ Gốc: [bản đồ bộ não](README.md). Chiến lược kênh: [chien-luoc-no
 - [doan-noi-bat-mau-2026-11-03](../nghien-cuu/doan-noi-bat-mau-2026-11-03.md) — Nghiên cứu 10 video highlight dọc lượt xem cao (03/11).
 - [tai-cau-truc-video-1](../du-an/tai-cau-truc-video-1.md) — Tái bản bộ skill video lần 1 (10/11): bảng 164 luật, mỗi luật một nhà.
 - [tai-cau-truc-2-video](../du-an/tai-cau-truc-2-video.md) — Tái bản 2 (10/11), phần bộ skill video: luật đổi so với lần 1.
-- [de-xuat-skill-video-2026-11-04](../luu-tru/de-xuat-skill-video-2026-11-04.md) — Lưu trữ: đề xuất sửa skill video sau khi học 80 video Việt (04/11), đã áp toàn bộ.
 
 ## Ghi nhớ video (sổ quyết định: ngày, lời David, lý do)
 - [video-anh-viet-nam](../co-so-tri-thuc/bo-nho/video-anh-viet-nam.md) — 13/11/2026 David muốn video có nhiều ảnh minh hoạ hơn, nhưng ảnh chỉ chụp tại Việt Nam, liên quan người Việt Nam
@@ -123,3 +122,6 @@ Gốc: [bản đồ bộ não](README.md). Chiến lược kênh: [chien-luoc-no
 - [video-podcast-phu-hinh-30](../co-so-tri-thuc/bo-nho/video-podcast-phu-hinh-30.md) — Podcast chỉ có tiếng: motion graphic phủ khoảng 30% thời lượng, không cố định, đoạn khó hiểu dày hơn; chụp thử mọi cảnh để Claude tự soát trước khi render (2026-11-06, sửa 11/11)
 - [video-tham-my-chi-giu-nhan-dien](../co-so-tri-thuc/bo-nho/video-tham-my-chi-giu-nhan-dien.md) — Thẩm mỹ chỉ giữ chữ ký nhận diện, ngoài đó sáng tạo tự do; hiểu hơn cầu kì: kho hiệu ứng để chọn, mỗi video ít kiểu, bỏ chữ sau người / bóng người (10/11; gộp 15/11)
 - [video-tu-chon-theo-noi-dung](../co-so-tri-thuc/bo-nho/video-tu-chon-theo-noi-dung.md) — Skill dựng phải tự chẩn đoán video rồi chọn bố cục / lớp thông tin / kiểu cảnh trong kho; video 10 phút ~1 giờ
+
+## Phần riêng Mac chính
+- Bot Telegram, lịch tự chạy, trang xem kết quả, công cụ chỉ Mac, lưu trữ cũ: bản đồ `rieng-mac/ban-do.md` (chỉ có trên Mac chính, repo riêng tư `bo-nao-david-mac`).

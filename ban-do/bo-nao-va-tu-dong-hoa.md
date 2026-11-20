@@ -56,13 +56,6 @@ Gốc: [bản đồ bộ não](README.md).
 - [huong-dan-cai-dat](../huong-dan-cai-dat.md) — Hướng dẫn cài đặt bộ não lên máy mới / nơi khác từ GitHub: lệnh cài, lối tắt, bot, lịch, cái gì không lên GitHub.
 
 ## Bot, lịch, công cụ trên máy
-- [so-tay](../tu-dong-hoa/so-tay/README.md) — Bot Sổ nhớ trên Telegram: David nhắn điều cần nhớ, phiên Claude trên Mac ghi vào sổ tay; cài đặt, cách chạy.
-- [quy-tac-bot](../tu-dong-hoa/so-tay/quy-tac-bot.md) — Luật bot Sổ nhớ (chép thành CLAUDE.md của bot).
-- [dieu-hanh](../tu-dong-hoa/dieu-hanh/README.md) — Bot Điều hành trên Telegram: giao việc, nhắn tiếp #N, đóng phiên, duyệt 🔐 ❓ bằng nút, báo cáo và cảnh báo máy; script, không tốn token (tách khỏi Sổ nhớ 20/11).
-- [lich-chay](../tu-dong-hoa/lich/lich-chay.md) — Lịch việc tự chạy trên Mac: giờ chạy, tên việc, lời giao; máy canh bot đọc mỗi phút.
-- [tong-hop-tin-nhan](../tu-dong-hoa/lich/loi-giao/tong-hop-tin-nhan.md) — Đọc Zalo, Messenger, Telegram của David, tổng hợp việc cần làm và gửi về bot Telegram Sổ nhớ.
-- [trinh-xem-tai-lieu](../tu-dong-hoa/trinh-xem-tai-lieu/README.md) — App Mở Tài Liệu trên macOS: xem docx, xlsx, pptx, pdf… không cần Office.
-- [giao-cho-hermes](../hermes/giao-cho-hermes.md) — Lời giao cho Hermes Agent làm trợ lý của David (12/11), bản Hermes đọc; Hermes đang tắt.
 - [nghien-cuu](../tac-tu/nghien-cuu.md) — Đọc tài liệu dài, tìm thông tin trong file hay trên web, tóm tắt ngắn gọn bằng tiếng Việt. Dùng cho việc cần đọc hoặc tìm nhiều mà không cần ra quyết định; trả kết…
 
 ## Skill công cụ
@@ -71,7 +64,6 @@ Gốc: [bản đồ bộ não](README.md).
 - [nhat-ky-thay-doi hoc-lien-tuc](../ky-nang/hoc-lien-tuc/references/nhat-ky-thay-doi.md) — Nhật ký thay đổi skill hoc-lien-tuc và máy đếm / ghi tín hiệu.
 - [hoc-lien-tuc 2026-11-15](../du-an/hoc-lien-tuc/2026-11-15.md) — Phiếu tự học tuần 15/11: điều lặp, đã sửa, gộp ghi nhớ 47→40, việc tuần sau.
 - [tai-cau-truc](../ky-nang/tai-cau-truc/SKILL.md) — Tái bản bộ skill — khi luật đã chồng nhiều lớp (học mẫu lớp 1, lớp 2, lớp 3, sửa góp ý…), gom toàn bộ luật đang sống của CẢ BỘ NÃO (mọi bộ skill + ghi nhớ, một đợt)…
-- [tong-hop-tin-nhan](../ky-nang/tong-hop-tin-nhan/SKILL.md) — Tổng hợp tin nhắn hằng ngày của David từ Zalo, Messenger, Telegram — chỉ đọc, ra bảng việc cần làm / thoả thuận / đời thường, lưu trong sổ nhớ…
 - [dieu-khien-trinh-duyet](../ky-nang/dieu-khien-trinh-duyet/SKILL.md) — Automate browser interactions, test web pages and work with Playwright tests.
 - [thiet-ke-trang-cuon](../ky-nang/thiet-ke-trang-cuon/SKILL.md) — >
 - [lich-su](../ky-nang/tai-cau-truc/lich-su.md) — Lịch sử tái bản: mỗi lần tái bản một bộ một dòng, mốc cho máy đo chồng chéo.
@@ -107,15 +99,6 @@ Gốc: [bản đồ bộ não](README.md).
 - [hoc-tu-16-bai-hoc-1000-gio-claude-2026-11-14](../nghien-cuu/hoc-tu-16-bai-hoc-1000-gio-claude-2026-11-14.md) — Nghiên cứu bài 16 bài học sau 1000 giờ dùng Claude (Nhật Anh AI, 14/11): ý áp dụng cho bộ não.
 
 ## Lưu trữ (không làm theo)
-- [luu-tru](../luu-tru/README.md) — Lưu trữ: bản cũ đã thay hoặc bỏ, giữ để tra, không làm theo.
-- [kho-noi-dung-video-2026-10-31](../luu-tru/kho-noi-dung-video-2026-10-31.md) — Lưu trữ: kho nội dung video bản cũ (31/10), đã thay bằng kế hoạch 100 video.
-- [mod-giao-dien](../luu-tru/mod-giao-dien/README.md) — Lưu trữ: các mod giao diện Claude Code đã gỡ hết 13/11.
-- [so-viec](../luu-tru/mod-giao-dien/so-viec/README.md) — Lưu trữ: mod Sổ việc (báo cáo việc lớn) đã gỡ.
-- [notion-3tier-architecture](../luu-tru/bo-nho-app-notion/notion-3tier-architecture.md) — The App notion project is a 3-tier Notion-like task manager split into notion-db, notion-backend, notion-frontend
-- [notion-feature-status](../luu-tru/bo-nho-app-notion/notion-feature-status.md) — Trạng thái tính năng App notion — ĐÃ PIVOT sang V2 (3 trục); model cũ đã xoá sạch. Nguồn sự thật: notion-v2-spec-plan
-- [notion-lean-north-star](../luu-tru/bo-nho-app-notion/notion-lean-north-star.md) — Kim chỉ nam thường trực cho App notion — luôn giữ nền tảng tinh gọn/đơn giản nhất cho việc quản trị
-- [notion-local-dev-environment](../luu-tru/bo-nho-app-notion/notion-local-dev-environment.md) — How to run the App notion tiers locally on this macOS machine (nvm, embedded-postgres, npm allow-scripts)
-- [notion-v2-spec-plan](../luu-tru/bo-nho-app-notion/notion-v2-spec-plan.md) — App notion đang pivot sang "V2 — 3 trục Người/Thị trường/Tiền" theo spec file; các quyết định đã chốt + lộ trình pha
 - [co-so-tri-thuc-kho-bo-nao](../co-so-tri-thuc/bo-nho/luu-tru/co-so-tri-thuc-kho-bo-nao.md) — Repo riêng tư Covandieuhanh/bo-nao-david là bộ não dùng chung cho mọi AI; bản trên máy ở ~/Documents/bo-nao-david; "cập nhật não" = chạy tu-dong-hoa/dong-bo.sh --push
 - [video-chuan-am-luong](../co-so-tri-thuc/bo-nho/luu-tru/video-chuan-am-luong.md) — Chuẩn âm lượng chung David chốt cho mọi video: nhạc thấp hơn giọng khoảng 23 dB lúc nói, cả bài -14 LUFS; giọng nhỏ kéo lên, nhạc to hạ xuống (2026-11-06)
 - [video-doc-ngan-khong-thanh](../co-so-tri-thuc/bo-nho/luu-tru/video-doc-ngan-khong-thanh.md) — Video dọc ngắn (Reels/TikTok/Shorts) bỏ thanh thời gian và thẻ cuối; màn chốt hiện chữ trên khung hình, kết ở chữ cuối để tự lặp (2026-11-10)
@@ -130,3 +113,6 @@ Gốc: [bản đồ bộ não](README.md).
 - [video-ban-chuan-2026-11-06](../co-so-tri-thuc/bo-nho/luu-tru/video-ban-chuan-2026-11-06.md) — Lưu trữ: đã gộp vào video-kien-truc-ky-nang.
 - [video-thu-muc-xep-theo-tap](../co-so-tri-thuc/bo-nho/luu-tru/video-thu-muc-xep-theo-tap.md) — Lưu trữ: đã gộp vào video-chuyen-qua-drive.
 - [video-chu-nhan-nhan-dan](../co-so-tri-thuc/bo-nho/luu-tru/video-chu-nhan-nhan-dan.md) — Lưu trữ: đã gộp vào video-nhan-dien-chung.
+
+## Phần riêng Mac chính
+- Bot Telegram, lịch tự chạy, trang xem kết quả, công cụ chỉ Mac, lưu trữ cũ: bản đồ `rieng-mac/ban-do.md` (chỉ có trên Mac chính, repo riêng tư `bo-nao-david-mac`).

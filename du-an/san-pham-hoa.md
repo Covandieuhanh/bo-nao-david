@@ -4,7 +4,7 @@ description: "Dự án máy gom và đóng gói: mọi nguồn hằng ngày → 
 
 # Máy gom và đóng gói: mọi thứ hằng ngày thành sản phẩm bán được
 
-Skill: [ky-nang/san-pham-hoa/SKILL.md](../ky-nang/san-pham-hoa/SKILL.md). Script gom: [tu-dong-hoa/thu-thap-du-lieu/gom.py](../tu-dong-hoa/thu-thap-du-lieu/gom.py).
+Skill: `ky-nang/san-pham-hoa/SKILL.md` (chỉ Mac chính). Script gom: `tu-dong-hoa/thu-thap-du-lieu/gom.py` (chỉ Mac chính).
 
 ## Mục tiêu
 Không ý nào, nỗi đau nào, bài học nào bị trôi mất. Mọi thứ phát sinh mỗi ngày (phiên Claude, tin nhắn, việc qua bot, lời trong video,

@@ -8,6 +8,7 @@ metadata:
 David chốt 20/11/2026: dùng thêm nhiều máy, cả Windows lẫn Mac, để dựng video theo đúng skill. Máy khác cài qua GitHub phải làm được đủ quy trình và ra kết quả như Mac chính. Mac chính là nơi chủ yếu cập nhật bộ não và skill.
 
 - **Máy nào cũng ngang nhau về đồng bộ.** David nói: "không phải máy phụ, cũng là máy của tôi". Máy nào đăng nhập GitHub của David thì kéo về và đẩy lên được. Không chia máy chính / máy phụ.
+- **GitHub công khai chỉ giữ phần dùng chung** (20/11/2026): phần riêng Mac chính (bot, lịch, trang xem, lưu trữ) ở repo riêng tư `bo-nao-david-mac`, xem [[co-so-tri-thuc-github-ban-goc]].
 - **Máy khác chỉ làm video.** Bot Telegram, lịch tự chạy, trang xem kết quả, đăng bài chỉ chạy ở Mac chính. Lệnh `cai-dat-bo-nao.sh --chi-video`; máy không phải Mac tự bật chế độ này.
 - **Windows chạy qua WSL2** (Ubuntu trong Windows). David để Claude chọn cách tốt nhất; WSL2 chạy được nguyên script của Mac nên chỉ giữ một bộ skill.
 

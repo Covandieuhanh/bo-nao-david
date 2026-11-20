@@ -4,7 +4,7 @@ description: "Thư mục dự án: chỉ giữ file theo dõi việc dở; dự 
 
 # Việc đang làm
 
-Chỉ giữ file theo dõi việc dở. Dự án video, bài đăng, thành phẩm nằm ở máy (`~/Movies`) và Drive, không đưa lên đây. Nghiên cứu ở [`../nghien-cuu/`](../nghien-cuu/), bản cũ ở [`../luu-tru/`](../luu-tru/).
+Chỉ giữ file theo dõi việc dở. Dự án video, bài đăng, thành phẩm nằm ở máy (`~/Movies`) và Drive, không đưa lên đây. Nghiên cứu ở [`../nghien-cuu/`](../nghien-cuu/), bản cũ ở `../luu-tru/` (`luu-tru`, chỉ Mac chính).
 
 | File | Là gì | Lưu ý |
 |---|---|---|

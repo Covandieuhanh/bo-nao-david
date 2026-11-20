@@ -25,7 +25,13 @@ Làm nội dung về lãnh đạo, ba tầng làm chủ, phương pháp hay nhâ
 3. **Video phải đúng nguyên văn lời David**: phụ đề, mô tả, chữ và motion graphics trên video lấy từ chính lời David, không đặt lời vào miệng David. Việc khác không bị ràng buộc này.
 4. **Mạng xã hội và quyền riêng tư của David không tự động vào**: đăng, gửi, xoá, thao tác tài khoản mạng xã hội phải hỏi trước. Không bao giờ chạm mật khẩu, OTP, token, cookie, giấy tờ cá nhân.
 5. **Lời mới nhất thắng**: lời David nói sau cùng là luật hiện hành; sửa luật thì viết lại chính câu đó ở mọi nơi, không để hai bản cùng sống.
-6. **GitHub là bản sao lưu đầy đủ, đồng bộ liên tục của bộ não và skill**: máy nào có GitHub của David cũng dựng lại được và làm ra sản phẩm giống 100% hiện tại (luật, skill, script, cấu hình, hook, bot, cách cài: `huong-dan-cai-dat.md`). Xong mỗi thay đổi thì đẩy ngay bằng `bash tu-dong-hoa/dong-bo.sh --push`; David nói **"cập nhật não"** cũng chạy lệnh này. AI không chạy được lệnh: đề xuất nội dung cần sửa để David duyệt. Chi tiết: ghi nhớ `co-so-tri-thuc-github-ban-goc`.
+6. **GitHub là bản sao lưu đầy đủ, đồng bộ liên tục của bộ não và skill, chia hai repo**:
+   - Repo công khai `bo-nao-david` chỉ giữ phần **dùng chung**: luật, hồ sơ, skill, script, khuôn. Máy nào của David kéo về cũng làm ra sản phẩm giống hệt Mac chính, video thì máy tự kiểm bằng `tu-dong-hoa/may-khac/kiem-may.sh`.
+   - Repo riêng tư `bo-nao-david-mac` giữ phần **chỉ Mac chính**: bot Telegram, lịch tự chạy, trang xem kết quả, lưu trữ cũ. Danh sách phần riêng: `tu-dong-hoa/phan-rieng-mac.txt`. Hai repo dùng chung một thư mục trên Mac, nên Mac hỏng vẫn dựng lại được 100%.
+   - Cách cài: `huong-dan-cai-dat.md`.
+
+   Xong mỗi thay đổi thì đẩy ngay bằng `bash tu-dong-hoa/dong-bo.sh --push` (đẩy cả hai repo); David nói **"cập nhật não"** cũng chạy lệnh này. AI không chạy được lệnh: đề xuất nội dung cần sửa để David duyệt. Chi tiết: ghi nhớ `co-so-tri-thuc-github-ban-goc`.
+   File mới chỉ Mac chính dùng thì thêm đường dẫn vào `phan-rieng-mac.txt`; file dùng chung không link vào phần riêng (máy kiểm link chặn).
    **Không đưa lên**: sản phẩm làm ra (dự án video, bài đăng), video gốc, dữ liệu khách, giấy tờ cá nhân trong `~/Documents/2-ca-nhan/`, mật khẩu, token, cookie, lịch sử chat thô; file quá nặng (mô hình AI) thì chỉ ghi lệnh tải.
 
 Khi các nguồn mâu thuẫn: `ky-nang/chuan-muc-lam-viec.md` mục 0.
@@ -46,8 +52,8 @@ David thường chỉ gửi tài nguyên (video, ghi âm) mà không kèm yêu c
 | Điều khiển trình duyệt | `dieu-khien-trinh-duyet` | [SKILL.md](ky-nang/dieu-khien-trinh-duyet/SKILL.md) |
 | Luật chồng chéo, viết lại toàn bộ bộ não ("tái bản") | `tai-cau-truc` | [SKILL.md](ky-nang/tai-cau-truc/SKILL.md) |
 | Tự học, cải tiến skill, học thành skill, nhìn lại tuần | `hoc-lien-tuc` | [SKILL.md](ky-nang/hoc-lien-tuc/SKILL.md) |
-| Gom mọi thứ hằng ngày, phân loại theo hướng nghề, đóng thành sản phẩm bán được | `san-pham-hoa` | [SKILL.md](ky-nang/san-pham-hoa/SKILL.md) |
-| Tổng hợp tin nhắn Zalo, Messenger, Telegram (7:00 mỗi sáng gửi bot) | `tong-hop-tin-nhan` | [SKILL.md](ky-nang/tong-hop-tin-nhan/SKILL.md) |
+| Gom mọi thứ hằng ngày, phân loại theo hướng nghề, đóng thành sản phẩm bán được | `san-pham-hoa` | SKILL.md (`ky-nang/san-pham-hoa/SKILL.md`, chỉ Mac chính) |
+| Tổng hợp tin nhắn Zalo, Messenger, Telegram (7:00 mỗi sáng gửi bot) | `tong-hop-tin-nhan` | SKILL.md (`ky-nang/tong-hop-tin-nhan/SKILL.md`, chỉ Mac chính) |
 
 Muốn hiểu toàn bộ hệ dựng video: [tong-quan.md](ky-nang/san-xuat-video/tong-quan.md), [quy-tac-chung.md](ky-nang/san-xuat-video/quy-tac-chung.md).
 

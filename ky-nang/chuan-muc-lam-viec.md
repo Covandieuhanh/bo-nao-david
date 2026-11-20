@@ -73,7 +73,7 @@ Trong 4 phần, cách chọn từng điểm:
 - **Báo cáo ngắn, tiếng Việt:** đã làm gì · đã kiểm gì · chưa kiểm gì · điều cần David xác nhận.
 - **Báo lên Telegram** khi xong một việc trọn vẹn (render xong, đăng xong, sửa bộ não xong…) hoặc khi kẹt cần David quyết, không báo
   sau mỗi lượt: `bash tu-dong-hoa/so-tay/bao-cao.sh "✅ Xong: … · Ở đâu: … · Còn lại: …"` hoặc `"❓ Chờ anh: …"`, tối đa 5 dòng. Việc giao
-  qua Telegram thì mở đầu bằng số việc `#N`. Máy chưa cài bot thì lệnh chỉ ghi sổ. Chi tiết: [tu-dong-hoa/so-tay/README.md](../tu-dong-hoa/so-tay/README.md).
+  qua Telegram thì mở đầu bằng số việc `#N`. Máy chưa cài bot thì lệnh chỉ ghi sổ. Chi tiết: `tu-dong-hoa/so-tay/README.md` (chỉ Mac chính).
 - **Nhắc lần hai thì thành luật ngay:** David phải nhắc lại một điều lần thứ hai → sửa ngay đúng nhà của luật đó, không đợi lượt nhìn lại tuần
   (skill, giọng văn, luật kênh, thông tin về David: đề xuất trong 4 phần, chờ "duyệt").
 - **Góp ý của David ghi đúng một chỗ:** sửa skill hoặc khối bị ảnh hưởng + một dòng nhật ký (`changelog` của skill, hoặc mục "Nhật ký").

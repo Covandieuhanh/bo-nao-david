@@ -32,5 +32,5 @@ David thấy Telegram hợp và rẻ cho thành viên; khi bot đủ thấu hi�
 ## Liên quan
 - [telegram-mini-app.md](telegram-mini-app.md) — trang web chạy trong Telegram, bước tiếp theo của bot.
 - [danh-sach-y-tuong.md](../../du-an/danh-sach-y-tuong.md) mục 3 — ý tưởng Telegram cho thành viên và điều kiện bắt đầu.
-- [tu-dong-hoa/so-tay/README.md](../../tu-dong-hoa/so-tay/README.md) — bot Sổ nhớ đang chạy.
-- [skill tong-hop-tin-nhan](../../ky-nang/tong-hop-tin-nhan/SKILL.md) — gửi bản tổng hợp tin nhắn qua bot mỗi sáng.
+- `tu-dong-hoa/so-tay/README.md` (chỉ Mac chính) — bot Sổ nhớ đang chạy.
+- skill tong-hop-tin-nhan (`ky-nang/tong-hop-tin-nhan/SKILL.md`, chỉ Mac chính) — gửi bản tổng hợp tin nhắn qua bot mỗi sáng.

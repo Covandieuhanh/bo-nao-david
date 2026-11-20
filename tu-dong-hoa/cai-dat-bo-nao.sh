@@ -20,12 +20,27 @@ mkdir -p "$CL/skills" "$SAO_LUU"
 # Thay $2 (đường dẫn trên máy) bằng lối tắt tới $1 (trong repo); bản cũ chuyển vào sao lưu.
 lien_ket() {
   local dich="$1" cho="$2"
+  [ -e "$dich" ] || return 0          # phần riêng Mac chính (repo riêng tư) không có ở máy này → bỏ qua
   [ -L "$cho" ] && [ "$(readlink "$cho")" = "$dich" ] && return 0
   if [ -e "$cho" ] || [ -L "$cho" ]; then mv "$cho" "$SAO_LUU/$(basename "$cho")-$RANDOM"; fi
   mkdir -p "$(dirname "$cho")"
   ln -s "$dich" "$cho"
   echo "  $cho → $dich"
 }
+
+# Mac chính: kéo repo riêng tư bo-nao-david-mac (bot Telegram, lịch tự chạy, trang xem kết quả, lưu trữ) vào CÙNG thư mục.
+# Danh sách phần riêng: tu-dong-hoa/phan-rieng-mac.txt. Máy chỉ dựng video bỏ qua bước này.
+if [ $CHI_VIDEO = 0 ] && [ ! -d "$REPO/.git-mac" ]; then
+  if git clone -q --bare https://github.com/Covandieuhanh/bo-nao-david-mac.git "$REPO/.git-mac" 2>/dev/null; then
+    GR() { git --git-dir="$REPO/.git-mac" --work-tree="$REPO" "$@"; }
+    GR config core.bare false; GR config status.showUntrackedFiles no
+    GR config user.name "$(git -C "$REPO" config user.name)"; GR config user.email "$(git -C "$REPO" config user.email)"
+    GR checkout main 2>/dev/null && echo "Phần riêng Mac chính: đã kéo bo-nao-david-mac" \
+      || echo "⚠ Phần riêng Mac: có file trùng tên chưa ghi đè — xem: git --git-dir=$REPO/.git-mac --work-tree=$REPO status"
+  else
+    echo "⚠ Không kéo được repo riêng tư bo-nao-david-mac (chưa gh auth login đúng tài khoản?). Bot, lịch sẽ thiếu."
+  fi
+fi
 
 echo "Lối tắt vào repo:"
 lien_ket "$REPO/co-so-tri-thuc/chi-dan-toan-cuc.md" "$CL/CLAUDE.md"

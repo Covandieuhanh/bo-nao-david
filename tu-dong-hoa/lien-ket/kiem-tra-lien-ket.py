@@ -13,6 +13,10 @@ Mô tả một file lấy theo thứ tự: khối `description:` đầu file →
 bản đồ nối tới file đó (hoặc tới thư mục chứa nó) → tiêu đề đầu tiên (tính là thiếu mô tả).
 Link tới một thư mục tính là nối tới mọi file .md nằm thẳng trong thư mục đó (dùng cho sổ theo tháng, theo ngày).
 
+Phần riêng Mac chính (tu-dong-hoa/phan-rieng-mac.txt, repo riêng tư; David 20/11/2026): không vào chỉ mục, không tính vào đồ thị
+chung (để chỉ mục giống nhau ở mọi máy); file chung KHÔNG được link vào phần riêng (máy khác sẽ gãy) — ghi bằng chữ `đường/dẫn`.
+Link tới ghi nhớ riêng máy (thiet-bi-*, không lên GitHub) thiếu thì bỏ qua.
+
 Dùng:
   python3 tu-dong-hoa/lien-ket/kiem-tra-lien-ket.py                      kiểm bộ não + sinh chỉ mục
   python3 tu-dong-hoa/lien-ket/kiem-tra-lien-ket.py --goc ~/Documents/2-ca-nhan/so-tay
@@ -53,6 +57,13 @@ def cau_hinh():
     return goc, "chi-muc.md", lambda f: f == "ban-do.md", {}, {"CLAUDE.md", "ban-do.md"}
 
 
+def doc_rieng(goc):
+    p = os.path.join(goc, "tu-dong-hoa", "phan-rieng-mac.txt")
+    if not os.path.exists(p):
+        return ()
+    return tuple(l.strip() for l in open(p, encoding="utf-8") if l.strip() and not l.startswith("#"))
+
+
 def ds_file(goc):
     out = []
     for f in glob.glob(f"{goc}/**/*.md", recursive=True):
@@ -83,7 +94,11 @@ def main():
     goc, chi_muc, la_ban_do, mien, goc_vao = cau_hinh()
     goc_vao = goc_vao | {chi_muc}
     chi_tiet = "--chi-tiet" in sys.argv
-    files = [f for f in ds_file(goc) if f != chi_muc]
+    RIENG = doc_rieng(goc) if goc == NAO else ()
+    la_rieng = lambda f: any(f == r.rstrip("/") or (r.endswith("/") and f.startswith(r)) for r in RIENG)
+    tat_ca = [f for f in ds_file(goc) if f != chi_muc]
+    files = [f for f in tat_ca if not la_rieng(f)]          # phần chung: vào chỉ mục, đồ thị
+    rieng = [f for f in tat_ca if la_rieng(f)]              # phần riêng (chỉ có trên Mac chính): chỉ kiểm link gãy
     fset = set(files)
     stem = {}
     for f in files:
@@ -99,9 +114,12 @@ def main():
             if dong and la_ban_do(nguon) and " — " in dong and dich not in mo_ta_ban_do:
                 mo_ta_ban_do[dich] = dong.split(" — ", 1)[1].strip()
 
-    for f in files:
+    for f in rieng:
+        text[f] = open(os.path.join(goc, f), encoding="utf-8", errors="ignore").read()
+    for f in files + rieng:
         if f.startswith(THO):
             continue
+        chung = f not in rieng
         for dong in CODE.sub("", text[f]).splitlines():
             for m in LINK.finditer(dong):
                 t = m.group(1).split("#")[0].split("?")[0]
@@ -109,8 +127,14 @@ def main():
                     continue
                 dich = os.path.normpath(os.path.join(os.path.dirname(f), t))
                 duong = os.path.join(goc, dich)
-                if not os.path.exists(duong):
+                if chung and (la_rieng(dich) or la_rieng(dich + "/")):
+                    gay.append((f, t + "  (phần riêng Mac — ghi bằng chữ `…`, đừng link)"))
+                elif os.path.basename(dich).startswith("thiet-bi-") and not os.path.exists(duong):
+                    continue                                    # ghi nhớ riêng máy: máy khác không có là đúng
+                elif not os.path.exists(duong):
                     gay.append((f, t))
+                elif not chung:
+                    continue                                    # link từ phần riêng: chỉ cần không gãy
                 elif os.path.isdir(duong):
                     con = [c for c in fset if os.path.dirname(c) == dich]
                     for cand in ("README.md", "SKILL.md"):
@@ -121,7 +145,7 @@ def main():
                         noi(f, c, dong)
                 else:
                     noi(f, dich, dong)
-            for m in WIKI.finditer(dong):
+            for m in WIKI.finditer(dong) if chung else ():
                 ten = m.group(1).strip()
                 ten = ten[:-3] if ten.endswith(".md") else ten
                 ung = stem.get(os.path.basename(ten))

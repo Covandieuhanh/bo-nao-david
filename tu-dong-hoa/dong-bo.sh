@@ -3,6 +3,12 @@
 # Trên máy đã cài (cai-dat-bo-nao.sh), ~/.claude/david.md, CLAUDE.md, skills, bộ nhớ và sổ danh mục là LỐI TẮT trỏ vào repo này,
 # nên máy và repo là một bản. Lệnh này chỉ còn việc kéo bản mới từ GitHub về và đẩy thay đổi trên máy lên.
 #
+# HAI REPO, MỘT THƯ MỤC (David 20/11/2026: "trên github chỉ còn những cái có thể dùng chung"):
+#   - bo-nao-david (công khai, .git): phần dùng chung — mọi máy kéo / đẩy.
+#   - bo-nao-david-mac (riêng tư, .git-mac, chỉ Mac chính): đúng các đường dẫn trong tu-dong-hoa/phan-rieng-mac.txt
+#     (bot Telegram, lịch tự chạy, trang xem kết quả, lưu trữ…). File vẫn nằm đúng chỗ cũ, nên bot và lịch không phải cài lại.
+#   Máy không có .git-mac (máy chỉ dựng video) chỉ đồng bộ repo công khai.
+#
 # Dùng:
 #   bash tu-dong-hoa/dong-bo.sh          kéo về rồi đẩy lên (2 chiều) — mặc định
 #   bash tu-dong-hoa/dong-bo.sh --push   như trên (giữ tên cũ "cập nhật não")
@@ -11,6 +17,22 @@ set -uo pipefail
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$REPO"
 CHE_DO="${1:---push}"
+DS_RIENG="$REPO/tu-dong-hoa/phan-rieng-mac.txt"
+RIENG=(); while IFS= read -r l; do RIENG+=("$l"); done < <(grep -v '^#' "$DS_RIENG" 2>/dev/null | sed '/^[[:space:]]*$/d; s|/$||')   # bash 3 của Mac không có mapfile
+CO_RIENG=0; [ -d "$REPO/.git-mac" ] && CO_RIENG=1
+gr() { git --git-dir="$REPO/.git-mac" --work-tree="$REPO" "$@"; }   # lệnh git cho repo riêng
+gc() { git "$@"; }                                                   # lệnh git cho repo công khai
+
+# Repo công khai luôn bỏ qua phần riêng (ghi vào .git/info/exclude — chỉ trên máy, không lên GitHub)
+loai_tru_rieng() {
+  local ex="$REPO/.git/info/exclude" tam
+  mkdir -p "$(dirname "$ex")"; tam=$(mktemp)
+  sed '/# >>> phan-rieng-mac/,/# <<< phan-rieng-mac/d' "$ex" 2>/dev/null > "$tam"
+  { echo "# >>> phan-rieng-mac (tự sinh từ tu-dong-hoa/phan-rieng-mac.txt — không sửa tay)"
+    for p in "${RIENG[@]}"; do echo "/$p"; done
+    echo "# <<< phan-rieng-mac"; } >> "$tam"
+  mv "$tam" "$ex"
+}
 
 kiem_loi_tat() {
   local CL="$HOME/.claude" thieu=0
@@ -23,38 +45,55 @@ kiem_loi_tat() {
 # Nhiều máy cùng đẩy (Mac + các máy dựng video, 20/11/2026): kéo về trước, git tự gộp khi hai máy sửa khác chỗ.
 # Hai máy sửa trùng một dòng → huỷ lần gộp (repo về nguyên trạng, không mất bản nào), ghi sổ XUNG_DOT; đầu phiên sau Claude thấy và báo David.
 XUNG_DOT="$HOME/.claude/logs/xung-dot-nao.txt"
-keo() {
-  git fetch -q origin || { echo "⚠ Không kết nối được GitHub, bỏ qua bước kéo."; return 0; }
-  if ! git pull -q --rebase --autostash origin main; then
-    local tep; tep=$(git diff --name-only --diff-filter=U 2>/dev/null | tr '\n' ' ')
-    git rebase --abort >/dev/null 2>&1
+keo() {   # keo <gc|gr> <tên repo>
+  local G=$1 TEN=$2 tep
+  $G fetch -q origin || { echo "⚠ Không kết nối được GitHub ($TEN), bỏ qua bước kéo."; return 0; }
+  if ! $G pull -q --rebase --autostash origin main; then
+    tep=$($G diff --name-only --diff-filter=U 2>/dev/null | tr '\n' ' ')
+    $G rebase --abort >/dev/null 2>&1
     mkdir -p "$(dirname "$XUNG_DOT")"
-    echo "$(date '+%F %H:%M') máy $(hostname -s 2>/dev/null || hostname) và GitHub cùng sửa trùng chỗ: ${tep:-(không rõ file)}. Bản trên máy vẫn giữ nguyên, chưa đẩy." >> "$XUNG_DOT"
-    echo "⛔ Xung đột khi kéo về (hai máy sửa trùng chỗ): ${tep:-xem git status}. Đã huỷ gộp, repo giữ nguyên bản trên máy. Nhờ Claude gộp tay rồi chạy lại dong-bo.sh."
+    echo "$(date '+%F %H:%M') máy $(hostname -s 2>/dev/null || hostname) và GitHub ($TEN) cùng sửa trùng chỗ: ${tep:-(không rõ file)}. Bản trên máy vẫn giữ nguyên, chưa đẩy." >> "$XUNG_DOT"
+    echo "⛔ Xung đột khi kéo về $TEN (hai máy sửa trùng chỗ): ${tep:-xem git status}. Đã huỷ gộp, repo giữ nguyên bản trên máy. Nhờ Claude gộp tay rồi chạy lại dong-bo.sh."
     exit 1
   fi
-  rm -f "$XUNG_DOT"
 }
 
+day() {   # day <gc|gr> <tên repo> <thông điệp>
+  local G=$1 TEN=$2
+  if ! $G diff --cached --quiet; then
+    $G status --short | grep -v '^??' | tail -30
+    $G commit -q -m "$3 $(date '+%F %H:%M')"
+  fi
+  keo "$G" "$TEN"
+  if [ -n "$($G log origin/main..HEAD --oneline 2>/dev/null)" ]; then
+    $G push -q origin main && echo "Đã đẩy lên GitHub ($TEN)." || { echo "⚠ Đẩy lên GitHub thất bại ($TEN)."; exit 1; }
+  else
+    echo "Máy và GitHub đã giống nhau ($TEN)."
+  fi
+}
+
+loai_tru_rieng
 case "$CHE_DO" in
   --keo)
     [ -s "$XUNG_DOT" ] && { echo "⛔ Lần đồng bộ trước bị xung đột, bộ não máy này CHƯA lên GitHub:"; cat "$XUNG_DOT"; }
-    keo; kiem_loi_tat; echo "Đã kéo bản mới nhất từ GitHub." ;;
+    keo gc bo-nao-david
+    [ $CO_RIENG = 1 ] && keo gr bo-nao-david-mac
+    rm -f "$XUNG_DOT"; kiem_loi_tat; echo "Đã kéo bản mới nhất từ GitHub." ;;
   --push|--day|*)
     kiem_loi_tat
     python3 -I "$REPO/tu-dong-hoa/quet-bi-mat.py" "$REPO" || { echo "⛔ Quét thấy bí mật, không đẩy."; exit 1; }
     python3 -I "$REPO/tu-dong-hoa/lien-ket/kiem-tra-lien-ket.py" || { echo "⛔ Có link gãy (co-so-tri-thuc/quy-uoc-lien-ket.md), sửa rồi đẩy lại."; exit 1; }
     # Sổ tay riêng (chỉ trên máy, không lên GitHub): kiểm + sinh chỉ mục, không chặn đẩy.
     [ -d "$HOME/Documents/2-ca-nhan/so-tay" ] && { python3 -I "$REPO/tu-dong-hoa/lien-ket/kiem-tra-lien-ket.py" --goc "$HOME/Documents/2-ca-nhan/so-tay" || true; }
-    git add -A
-    if ! git diff --cached --quiet; then
-      git status --short | tail -30
-      git commit -q -m "Cập nhật bộ não $(date '+%F %H:%M')"
+    gc add -A
+    # Chốt chặn: phần riêng không bao giờ lên repo công khai (kể cả khi .git/info/exclude bị mất)
+    lot=$(gc diff --cached --name-only | grep -E "^($(printf '%s|' "${RIENG[@]}" | sed 's/|$//; s/\./\\./g'))(/|$)" || true)
+    if [ -n "$lot" ]; then gc reset -q -- $lot; echo "⚠ Đã chặn phần riêng Mac khỏi repo công khai: $(echo $lot | head -c 200)"; fi
+    day gc bo-nao-david "Cập nhật bộ não"
+    if [ $CO_RIENG = 1 ]; then
+      co=(); for p in "${RIENG[@]}"; do { [ -e "$p" ] || [ -n "$(gr ls-files -- "$p" | head -1)" ]; } && co+=("$p"); done
+      [ ${#co[@]} -gt 0 ] && gr add -A -- "${co[@]}"
+      day gr bo-nao-david-mac "Cập nhật phần riêng Mac"
     fi
-    keo
-    if [ -n "$(git log origin/main..HEAD --oneline 2>/dev/null)" ]; then
-      git push -q origin main && echo "Đã đẩy lên GitHub." || { echo "⚠ Đẩy lên GitHub thất bại."; exit 1; }
-    else
-      echo "Máy và GitHub đã giống nhau."
-    fi ;;
+    rm -f "$XUNG_DOT" ;;
 esac

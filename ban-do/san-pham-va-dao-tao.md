@@ -23,7 +23,9 @@ Gốc: [bản đồ bộ não](README.md). Định hướng: [chien-luoc-nghe-ng
 - Bản cũ: [giáo trình 12 bài](../du-an/goi-dao-tao-noi-dung-kenh/giao-trinh-cu-12-bai.md) · [lời dặn 9 bước](../du-an/goi-dao-tao-noi-dung-kenh/loi-dan-cu-9-buoc.md)
 
 ## Máy gom và đóng gói
-- [skill san-pham-hoa](../ky-nang/san-pham-hoa/SKILL.md) — quy trình gom đêm, đóng gói thứ 6.
 - [du-an/san-pham-hoa.md](../du-an/san-pham-hoa.md) — kế hoạch, lịch chạy, kết quả lượt thử.
 - [du-an/dong-goi/](../du-an/dong-goi/2026-11-20.md) — phiếu đóng gói tuần (ẩn danh, mới nhất 20/11, tuần trước [15/11](../du-an/dong-goi/2026-11-15.md)): nỗi đau, bổ sung gói, bài phễu nháp, ý video.
-- Lời giao lịch: [gom-phan-loai-dem](../tu-dong-hoa/lich/loi-giao/gom-phan-loai-dem.md) · [dong-goi-tuan](../tu-dong-hoa/lich/loi-giao/dong-goi-tuan.md)
+- Lời giao lịch: gom-phan-loai-dem (`tu-dong-hoa/lich/loi-giao/gom-phan-loai-dem.md`, chỉ Mac chính) · dong-goi-tuan (`tu-dong-hoa/lich/loi-giao/dong-goi-tuan.md`, chỉ Mac chính)
+
+## Phần riêng Mac chính
+- Bot Telegram, lịch tự chạy, trang xem kết quả, công cụ chỉ Mac, lưu trữ cũ: bản đồ `rieng-mac/ban-do.md` (chỉ có trên Mac chính, repo riêng tư `bo-nao-david-mac`).

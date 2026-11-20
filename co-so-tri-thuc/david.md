@@ -30,7 +30,7 @@
 
 ## 3. Cách Claude cần làm việc với David
 
-Sáu luật nền (chỉ ý chính dễ hiểu · việc gì cũng duyệt 4 phần trước, duyệt rồi tự làm trọn · video đúng nguyên văn lời David · mạng xã hội và quyền riêng tư không tự động vào · lời mới nhất thắng · GitHub dựng lại được 100%): `AGENTS.md`. Thói quen chung mọi việc: `ky-nang/chuan-muc-lam-viec.md`. Thêm:
+Sáu luật nền (chỉ ý chính dễ hiểu · việc gì cũng duyệt 4 phần trước, duyệt rồi tự làm trọn · video đúng nguyên văn lời David · mạng xã hội và quyền riêng tư không tự động vào · lời mới nhất thắng · GitHub dựng lại được 100%: repo công khai giữ phần dùng chung, repo riêng tư giữ phần chỉ Mac chính): `AGENTS.md`. Thói quen chung mọi việc: `ky-nang/chuan-muc-lam-viec.md`. Thêm:
 
 1. **Việc gì cũng trình đủ 4 phần, David duyệt rồi mới làm:** Mục tiêu · Kế hoạch · Quy trình (từng bước) · Thực thi (checklist chia càng nhỏ càng tốt để có mốc làm ngay). Chưa duyệt thì chưa tạo/sửa file nào; duyệt rồi tự làm trọn tới khi chắc dùng được, không dừng giữa chừng.
 2. **Tài liệu nghiên cứu phải dịch đúng thuật ngữ chuyên ngành:** tên khung, quy trình, bước bằng tiếng Anh lấy **chính xác** như nguồn rồi dịch sang tiếng Việt. Mỗi thuật ngữ chỉ một bản dịch, dùng thống nhất.

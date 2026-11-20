@@ -1,0 +1,19 @@
+# PHẦN RIÊNG CỦA MAC CHÍNH — chỉ lên repo riêng tư bo-nao-david-mac, KHÔNG lên repo công khai bo-nao-david (David 20/11/2026).
+# Máy khác (chỉ dựng video) không có các đường dẫn này. Mỗi dòng một đường dẫn tính từ gốc repo; thư mục kết thúc bằng /.
+# dong-bo.sh đọc file này: repo công khai bỏ qua các đường dẫn dưới, repo riêng chỉ theo dõi các đường dẫn dưới.
+tu-dong-hoa/so-tay/
+tu-dong-hoa/dieu-hanh/
+tu-dong-hoa/lich/
+tu-dong-hoa/thu-thap-du-lieu/
+tu-dong-hoa/trinh-xem-tai-lieu/
+tu-dong-hoa/xem-ket-qua.py
+tu-dong-hoa/cai-trang-xem.sh
+tu-dong-hoa/kiem-video-mac.py
+tu-dong-hoa/kiem-tra-tai-khoan.sh
+tu-dong-hoa/tim-phien.py
+ky-nang/tong-hop-tin-nhan/
+ky-nang/san-pham-hoa/
+hermes/
+luu-tru/
+rieng-mac/
+.claude-plugin/

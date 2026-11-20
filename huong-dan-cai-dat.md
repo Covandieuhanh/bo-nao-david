@@ -6,6 +6,12 @@ description: "Hướng dẫn cài đặt bộ não lên máy mới / nơi khác 
 
 **Nguyên tắc:** GitHub chỉ giữ **bộ não**: hồ sơ, luật, bộ nhớ, skill, việc đang dở, và file mẫu (nằm trong skill, ví dụ `ky-nang/san-xuat-video/mau-chuan/`). Thành quả và thư mục sản phẩm (dự án video, bài đăng, tài liệu đã làm xong) ở lại máy nào giữ máy đó, cộng Drive. Máy mới chỉ cần não; thư mục làm việc tự tạo theo máy.
 
+**Hai repo** (David chốt 20/11/2026):
+- `bo-nao-david` (công khai): phần dùng chung, mọi máy kéo về.
+- `bo-nao-david-mac` (riêng tư): phần chỉ Mac chính, gồm bot Telegram, lịch tự chạy, trang xem kết quả, app Mở Tài Liệu, lưu trữ cũ. Danh sách ở `tu-dong-hoa/phan-rieng-mac.txt`. Repo này nằm cùng thư mục với repo công khai, chỉ Mac chính có.
+
+Các dòng dưới đây nhắc tới bot, lịch, trang xem là việc của Mac chính.
+
 ## 1. Tài khoản Claude khác, cùng máy này
 
 Trên Mac chính, skill, hồ sơ, luật và bộ nhớ trong `~/.claude` là lối tắt trỏ vào repo này; lịch sử chat thô nằm trong `~/.claude/projects`, dự án dựng nằm trong `~/Movies`. Đổi tài khoản trên cùng máy vẫn còn, không cần cài gì. Lịch tự chạy, nhắc giờ, bot, hook đều là file và script trên máy (`tu-dong-hoa/lich/`, `tu-dong-hoa/so-tay/`), không gắn với tài khoản nào.
@@ -45,7 +51,7 @@ gh repo clone Covandieuhanh/bo-nao-david ~/Documents/bo-nao-david
 bash ~/Documents/bo-nao-david/tu-dong-hoa/cai-dat-bo-nao.sh ~/Documents/bo-nao-david
 ```
 
-`cai-dat-bo-nao.sh` thay `~/.claude/david.md`, `CLAUDE.md`, các skill, thư mục bộ nhớ và sổ danh mục bằng **lối tắt trỏ vào repo** (bản cũ sao lưu vào `~/.claude/backups/`), rồi cài hook đồng bộ 2 chiều: đầu phiên kéo từ GitHub về, cuối phiên đẩy lên. Từ đó máy và GitHub luôn là một bộ não.
+`cai-dat-bo-nao.sh` thay `~/.claude/david.md`, `CLAUDE.md`, các skill, thư mục bộ nhớ và sổ danh mục bằng **lối tắt trỏ vào repo** (bản cũ sao lưu vào `~/.claude/backups/`), rồi cài hook đồng bộ 2 chiều: đầu phiên kéo từ GitHub về, cuối phiên đẩy lên. Từ đó máy và GitHub luôn là một bộ não. Khi cài **Mac chính** (không có `--chi-video`), script tự kéo luôn repo riêng tư `bo-nao-david-mac` vào cùng thư mục, nên `gh auth login` phải đăng nhập đúng tài khoản David. Sau đó cài bot, lịch, trang xem theo mục 5.
 
 Bộ nhớ của Claude Code gắn theo thư mục dự án. Tham số cuối là thư mục bạn sẽ mở Claude Code (mặc định là chính repo). Muốn dùng ở thư mục khác thì chạy lại với thư mục đó.
 

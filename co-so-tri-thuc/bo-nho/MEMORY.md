@@ -27,7 +27,7 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 - [Quy ước đặt tên](co-so-tri-thuc-quy-uoc-dat-ten.md) — từ thuật ngữ kinh doanh tiếng Anh chuẩn, dịch đúng nghĩa sang tiếng Việt không dấu, tra bảng thuật ngữ (14/11)
 - [Liên kết tri thức](co-so-tri-thuc-lien-ket-tri-thuc.md) — bộ não là mạng lưới file nối nhau: mô tả đầu file, chỉ mục tự sinh, ban-do/, kien-thuc/, máy kiểm link; không dùng app Obsidian (14/11)
 - [Bộ não công ty riêng](co-so-tri-thuc-bo-nao-cong-ty.md) — việc Veltrix làm ở ~/Documents/bo-nao-veltrix (kho private veltrix), không ghi vào bộ não cá nhân; Văn Phòng Shop đã chuyển vào (18/11)
-- [GitHub là bản gốc bộ não](co-so-tri-thuc-github-ban-goc.md) — bắt buộc đẩy ngay; repo, "cập nhật não" = dong-bo.sh --push; Mac ↔ GitHub 2 chiều (07/11)
+- [GitHub là bản gốc bộ não](co-so-tri-thuc-github-ban-goc.md) — bắt buộc đẩy ngay; "cập nhật não" = dong-bo.sh --push; repo công khai = phần dùng chung, repo riêng tư bo-nao-david-mac = phần chỉ Mac chính (07/11, 20/11)
 - [Nhiều máy dựng video](co-so-tri-thuc-nhieu-may.md) — Mac + Windows (WSL2) cùng bộ não, máy nào cũng đẩy được, máy khác chỉ làm video; khoá phiên bản, kiem-may.sh so với Mac (20/11)
 - [Hồ sơ David + bộ lọc nội dung](co-so-tri-thuc-ho-so-va-bo-loc.md) — ba hướng nghề (13/11), trainer hai lĩnh vực + đội đối tác công nghệ (17/11), hệ 135 + từ trường số lên hướng trainer (20/11), mô hình kinh doanh, khối 00 phân hướng + bán được gì, kenh.json, sổ danh mục
 

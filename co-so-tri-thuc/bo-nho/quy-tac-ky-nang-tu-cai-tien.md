@@ -14,7 +14,7 @@ Sáu luật trong `AGENTS.md` (viết lại 12/11/2026 sau khi so Hermes với C
 - Nguyên văn lời David chỉ bắt buộc cho video (phụ đề, mô tả, motion graphics).
 - Không còn luật "con người làm trung tâm / không kinh doanh": David làm nhiều kênh đa dạng; lằn ranh cũ thành lằn ranh riêng kênh trainer.
 - Lời mới nhất thắng luật cũ.
-- GitHub = sao lưu đầy đủ: máy nào có GitHub cũng làm ra sản phẩm giống 100%.
+- GitHub = sao lưu đầy đủ: máy nào có GitHub cũng làm ra sản phẩm giống 100% (từ 20/11/2026 chia hai repo: công khai dùng chung, riêng tư cho Mac chính — [[co-so-tri-thuc-nhieu-may]]).
 
 **Why:** David muốn "khai thác tối đa Claude với ít token nhất" và "liên tục cải tiến, học hỏi từ hình mẫu có kết quả tốt nhất".
 

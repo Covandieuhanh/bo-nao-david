@@ -31,7 +31,7 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [co-so-tri-thuc/bo-nho/co-so-tri-thuc-github-ban-goc.md](bo-nho/co-so-tri-thuc-github-ban-goc.md) — GitHub bo-nao-david là bản gốc của bộ não — có gì mới cho skill/não thì ĐẨY NGAY (bắt buộc); chỉ giữ mẫu, form, luật, hồ sơ; sản phẩm ở lại máy/tài khoản làm ra nó · ←10
 - [co-so-tri-thuc/bo-nho/co-so-tri-thuc-ho-so-va-bo-loc.md](bo-nho/co-so-tri-thuc-ho-so-va-bo-loc.md) — Hồ sơ David ở ~/.claude/david.md (ba hướng nghề, mô hình kinh doanh, hệ 135 + từ trường số thuộc hướng trainer); mọi tài nguyên phải qua bộ lọc khối 00 trước khi dựng; luật kênh ở ho-so-thuong-hieu/kenh.json · ←8
 - [co-so-tri-thuc/bo-nho/co-so-tri-thuc-lien-ket-tri-thuc.md](bo-nho/co-so-tri-thuc-lien-ket-tri-thuc.md) — Bộ não là mạng lưới file nối nhau (mô tả, chỉ mục tự sinh, bản đồ, ghi chú kiến thức, máy kiểm link), không dùng app Obsidian (14/11) · ←1
-- [co-so-tri-thuc/bo-nho/co-so-tri-thuc-nhieu-may.md](bo-nho/co-so-tri-thuc-nhieu-may.md) — Nhiều máy của David (Mac + Windows) cùng dùng bộ não GitHub, dựng video ra như Mac chính; máy nào cũng đẩy được, máy khác chỉ làm video; khoá phiên bản + kiem-may.sh · ←1
+- [co-so-tri-thuc/bo-nho/co-so-tri-thuc-nhieu-may.md](bo-nho/co-so-tri-thuc-nhieu-may.md) — Nhiều máy của David (Mac + Windows) cùng dùng bộ não GitHub, dựng video ra như Mac chính; máy nào cũng đẩy được, máy khác chỉ làm video; khoá phiên bản + kiem-may.sh · ←3
 - [co-so-tri-thuc/bo-nho/co-so-tri-thuc-quy-uoc-dat-ten.md](bo-nho/co-so-tri-thuc-quy-uoc-dat-ten.md) — Mọi tên file, thư mục, skill, ghi nhớ đi từ thuật ngữ kinh doanh tiếng Anh chuẩn, dịch đúng nghĩa sang tiếng Việt không dấu; tra bảng thuật ngữ · ←5
 - [co-so-tri-thuc/bo-nho/luu-tru/co-so-tri-thuc-kho-bo-nao.md](bo-nho/luu-tru/co-so-tri-thuc-kho-bo-nao.md) — Repo riêng tư Covandieuhanh/bo-nao-david là bộ não dùng chung cho mọi AI; bản trên máy ở ~/Documents/bo-nao-david; "cập nhật não" = chạy tu-dong-hoa/dong-bo.sh --push · ←1
 - [co-so-tri-thuc/bo-nho/luu-tru/thiet-bi-don-documents-2026-11-07.md](bo-nho/luu-tru/thiet-bi-don-documents-2026-11-07.md) — Ngày 07/11/2026 dọn ~/Documents, chỉ còn David.Claude + Obsidian + mk.csv; App notion đã bỏ, mở phiên ở ~/Documents/David.Claude · ←1
@@ -151,10 +151,6 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [du-an/tai-cau-truc-2.md](../du-an/tai-cau-truc-2.md) — Tái bản lần 2 toàn bộ bộ não (10/11): điều phối các phiên con, mốc, kết quả. · ←2
 - [du-an/tai-cau-truc-video-1.md](../du-an/tai-cau-truc-video-1.md) — Tái bản bộ skill video lần 1 (10/11): bảng 164 luật, mỗi luật một nhà. · ←1
 
-## hermes
-
-- [hermes/giao-cho-hermes.md](../hermes/giao-cho-hermes.md) — Lời giao cho Hermes Agent làm trợ lý của David (12/11), bản Hermes đọc; Hermes đang tắt. · ←2
-
 ## ky-nang
 
 - [ky-nang/chuan-muc-lam-viec.md](../ky-nang/chuan-muc-lam-viec.md) — Thói quen làm việc chung mọi skill đọc trước: khi hai điều ngược nhau, đọc đúng phần, khi nào hỏi, trong lúc làm, cuối việc, giữ phiên gọn. · ←4
@@ -171,7 +167,6 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [ky-nang/dieu-khien-trinh-duyet/references/trang-thai-luu-tru.md](../ky-nang/dieu-khien-trinh-duyet/references/trang-thai-luu-tru.md) — Điều khiển trình duyệt: quản lý cookie, localStorage, trạng thái lưu trữ. · ←2
 - [ky-nang/hoc-lien-tuc/SKILL.md](../ky-nang/hoc-lien-tuc/SKILL.md) — Tự học và cải tiến liên tục bộ skill của David (học từ cách Hermes tự học, nhưng một nhà, có số liệu, ít token). Ba việc — (1) NHÌN LẠI TUẦN từ tín hiệu máy ghi cuối mỗi phiên (lời David sửa, skill dùng, lỗi) để sửa skill đúng chỗ, cập nhật giọng văn, dọn ghi nhớ và skill thừa; (2) HỌC TỪ HÌNH MẪU cùng thể loại đang có kết quả tốt nhất, đo bằng số liệu, rồi nâng cấp skill và luật kênh; (3) HỌC THÀNH SKILL từ một nguồn hay quy trình vừa làm. Phân tích tự chạy; phần sửa skill, giọng văn, luật kênh trình 4 phần cho David duyệt rồi mới sửa. Dùng khi máy gửi [TU-HOC], khi David nói "nhìn lại tuần", "tự học", "cải tiến skill", "học thành skill", "học từ kênh X", "học cái này thành quy trình", "/hoc-lien-tuc". · ←3
 - [ky-nang/hoc-lien-tuc/references/nhat-ky-thay-doi.md](../ky-nang/hoc-lien-tuc/references/nhat-ky-thay-doi.md) — Nhật ký thay đổi skill hoc-lien-tuc và máy đi kèm (dem-ky-nang.py, ghi-tin-hieu.py): ngày · sửa gì · vì sao. · ←1
-- [ky-nang/san-pham-hoa/SKILL.md](../ky-nang/san-pham-hoa/SKILL.md) — Máy gom và đóng gói của David — mỗi đêm gom phần mới ở mọi nguồn (lời David trong phiên Claude, sổ nhớ bot Telegram, tổng hợp tin nhắn, lời trong video, bài đăng, số liệu) rồi phân loại theo ba hướng nghề, mục tiêu / nỗi đau, bán được gì; mỗi sáng thứ 6 (ngày tổng kết tuần) đóng nguyên liệu thành sản phẩm bán được (bổ sung gói đang chạy, bài phễu nháp, đề xuất gói mới khi ≥ 5 người cùng gặp một nỗi đau) và gói có các bước để trainer lại. Dùng khi lịch đêm / tuần chạy, khi David nói "gom", "phân loại", "đóng gói", "tuần này có gì bán được", "nỗi đau nào đang lặp", "/san-pham-hoa". · ←3
 - [ky-nang/san-xuat-video/cat-doan-noi-bat/SKILL.md](../ky-nang/san-xuat-video/cat-doan-noi-bat/SKILL.md) — Cắt một video dài (bản YouTube 5–60 phút) thành các clip highlight DỌC 9:16 (1080×1920) cho Reels, TikTok, Shorts, Facebook Reels. Claude tự chọn ý theo bốn câu (bối cảnh, ý trọn, mang về, chừa lại): mỗi clip một ý trọn, tự đứng được, số clip và độ dài theo ý. Mọi chữ trên clip là nguyên văn lời người nói — kể cả thẻ tít (cụm đắt nhất) và màn chốt; phụ đề cụm 5–8 chữ; cắt cứng giấu mối, rút khoảng lặng; hai tông sôi động / lắng với nhạc từ kho kênh; không thanh thời gian, không thẻ cuối — dẫn về bản đầy đủ ở caption + bình luận ghim. Highlight ra ĐÚNG LOẠI video gốc — người nói → khung ghép của dung-video-theo-phong-cach; podcast/đồ hoạ → podcast đồ hoạ dọc (dung-podcast). Kèm lịch đăng, mô tả, bình luận ghim. Dùng khi người dùng nói "cắt highlight", "làm video highlight", "cắt clip ngắn từ video dài", "làm Reels/TikTok/Shorts từ video YouTube/podcast", "cắt đoạn hay", "/cat-doan-noi-bat", hoặc đưa một video dài (kể cả podcast đã dựng) muốn ra clip ngắn — kể cả khi chỉ gửi file mà không nói rõ. · ←2
 - [ky-nang/san-xuat-video/cat-doan-noi-bat/references/hoc-tu-20-doan-noi-bat-vn.md](../ky-nang/san-xuat-video/cat-doan-noi-bat/references/hoc-tu-20-doan-noi-bat-vn.md) — Nghiên cứu 20 clip highlight Việt Nam lượt xem cao (04/11) cho skill cắt đoạn nổi bật. · ←1
 - [ky-nang/san-xuat-video/cat-doan-noi-bat/references/hoc-tu-video-dan-dau.md](../ky-nang/san-xuat-video/cat-doan-noi-bat/references/hoc-tu-video-dan-dau.md) — Nghiên cứu 10 video highlight dọc lượt xem cao (03/11) cho skill cắt đoạn nổi bật. · ←1
@@ -259,20 +254,6 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [ky-nang/thiet-ke-trang-cuon/references/thiet-bi.md](../ky-nang/thiet-ke-trang-cuon/references/thiet-bi.md) — Thiết kế trang cuộn: 9 cách cuộn làm đổi trang (bộ thiết bị). · ←4
 - [ky-nang/thiet-ke-trang-cuon/references/tinh-doc-ban.md](../ky-nang/thiet-ke-trang-cuon/references/tinh-doc-ban.md) — Thiết kế trang cuộn: trục cấu trúc, bài học từ 4 trang đã làm. · ←3
 - [ky-nang/thu-thap-yeu-cau/SKILL.md](../ky-nang/thu-thap-yeu-cau/SKILL.md) — Cách hỏi của David khi trình 4 phần (Mục tiêu · Kế hoạch · Quy trình · Thực thi) trước mọi việc — hỏi theo vòng từ góc nhìn chuyên gia thực chiến, mỗi điểm cần chốt 2–3 gợi ý có đề xuất đứng đầu; sự thật tự tra, quyết định David chốt; chờ David "duyệt" rồi mới tạo/sửa file; duyệt rồi làm trọn một mạch. Tự nhận diện 6 tín hiệu phải dừng hỏi, cả lúc bắt đầu lẫn giữa chừng. Dùng khi trình 4 phần cho một việc, khi David nói "hỏi kỹ", "hỏi chuyên gia", "grill me", "/thu-thap-yeu-cau". Không dùng cho câu hỏi nhanh, tra cứu. · ←4
-- [ky-nang/tong-hop-tin-nhan/SKILL.md](../ky-nang/tong-hop-tin-nhan/SKILL.md) — Tổng hợp tin nhắn hằng ngày của David từ Zalo, Messenger, Telegram — chỉ đọc, ra bảng việc cần làm / thoả thuận / đời thường, lưu trong sổ nhớ (~/Documents/2-ca-nhan/so-tay/tin-nhan/, không lên GitHub), tự ghi điều mới của từng người / đối tác vào danh-ba.md (trùng điều David đã ghi thì chỉ đánh dấu trùng) và gửi bản gọn về bot Telegram Sổ nhớ; David trả lời bot để gộp người, đánh dấu xong, bỏ qua. Dùng khi lịch hằng ngày chạy, khi David nói "tổng hợp tin", "tổng hợp tin nhắn", "hôm nay ai nhắn gì", "/tong-hop-tin-nhan". · ←3
-
-## luu-tru
-
-- [luu-tru/README.md](../luu-tru/README.md) — Lưu trữ: bản cũ đã thay hoặc bỏ, giữ để tra, không làm theo. · ←3
-- [luu-tru/bo-nho-app-notion/notion-3tier-architecture.md](../luu-tru/bo-nho-app-notion/notion-3tier-architecture.md) — The App notion project is a 3-tier Notion-like task manager split into notion-db, notion-backend, notion-frontend · ←2
-- [luu-tru/bo-nho-app-notion/notion-feature-status.md](../luu-tru/bo-nho-app-notion/notion-feature-status.md) — Trạng thái tính năng App notion — ĐÃ PIVOT sang V2 (3 trục); model cũ đã xoá sạch. Nguồn sự thật: notion-v2-spec-plan · ←3
-- [luu-tru/bo-nho-app-notion/notion-lean-north-star.md](../luu-tru/bo-nho-app-notion/notion-lean-north-star.md) — Kim chỉ nam thường trực cho App notion — luôn giữ nền tảng tinh gọn/đơn giản nhất cho việc quản trị · ←2
-- [luu-tru/bo-nho-app-notion/notion-local-dev-environment.md](../luu-tru/bo-nho-app-notion/notion-local-dev-environment.md) — How to run the App notion tiers locally on this macOS machine (nvm, embedded-postgres, npm allow-scripts) · ←3
-- [luu-tru/bo-nho-app-notion/notion-v2-spec-plan.md](../luu-tru/bo-nho-app-notion/notion-v2-spec-plan.md) — App notion đang pivot sang "V2 — 3 trục Người/Thị trường/Tiền" theo spec file; các quyết định đã chốt + lộ trình pha · ←3
-- [luu-tru/de-xuat-skill-video-2026-11-04.md](../luu-tru/de-xuat-skill-video-2026-11-04.md) — Lưu trữ: đề xuất sửa skill video sau khi học 80 video Việt (04/11), đã áp toàn bộ. · ←1
-- [luu-tru/kho-noi-dung-video-2026-10-31.md](../luu-tru/kho-noi-dung-video-2026-10-31.md) — Lưu trữ: kho nội dung video bản cũ (31/10), đã thay bằng kế hoạch 100 video. · ←1
-- [luu-tru/mod-giao-dien/README.md](../luu-tru/mod-giao-dien/README.md) — Lưu trữ: các mod giao diện Claude Code đã gỡ hết 13/11. · ←2
-- [luu-tru/mod-giao-dien/so-viec/README.md](../luu-tru/mod-giao-dien/so-viec/README.md) — Lưu trữ: mod Sổ việc (báo cáo việc lớn) đã gỡ. · ←2
 
 ## nghien-cuu
 
@@ -292,14 +273,4 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 
 ## tu-dong-hoa
 
-- [tu-dong-hoa/dieu-hanh/README.md](../tu-dong-hoa/dieu-hanh/README.md) — Bot Điều hành trên Telegram: trạm điều khiển các phiên Claude trên Mac (giao việc, nhắn tiếp #N, đóng phiên, duyệt 🔐 ❓ bằng nút bấm, báo cáo, cảnh báo máy); chạy bằng script, không tốn token; cài đặt, cách dùng. · ←3
-- [tu-dong-hoa/lich/lich-chay.md](../tu-dong-hoa/lich/lich-chay.md) — Lịch việc tự chạy trên Mac: giờ chạy, tên việc, lời giao; máy canh bot đọc mỗi phút. · ←1
-- [tu-dong-hoa/lich/loi-giao/dong-goi-tuan.md](../tu-dong-hoa/lich/loi-giao/dong-goi-tuan.md) — Đóng nguyên liệu tuần thành sản phẩm bán được và gói đào tạo (skill san-pham-hoa, Việc 2). · ←1
-- [tu-dong-hoa/lich/loi-giao/gom-phan-loai-dem.md](../tu-dong-hoa/lich/loi-giao/gom-phan-loai-dem.md) — Gom phần mới ở mọi nguồn của David và phân loại theo ba hướng nghề (skill san-pham-hoa, Việc 1). · ←1
-- [tu-dong-hoa/lich/loi-giao/lich-dang-tuan.md](../tu-dong-hoa/lich/loi-giao/lich-dang-tuan.md) — Giữ luôn đủ 30 ngày bài viết Facebook cá nhân (4 bài/tuần: CN, T3, T5, T6) có ảnh trên trang localhost:8765/bai-dang, làm ảnh bằng ChatGPT khi không có ảnh của David, bù kho bài nền đủ 8, báo David một tin Telegram kèm link, đặt nhắc 19:45. · ←0
-- [tu-dong-hoa/lich/loi-giao/thu-mo-phien.md](../tu-dong-hoa/lich/loi-giao/thu-mo-phien.md) — Lời giao thử của thu-mo-phien.sh: mở một phiên lịch y hệt thật để chắc không kẹt hộp hỏi. Không nằm trong lịch. · ←0
-- [tu-dong-hoa/lich/loi-giao/tong-hop-tin-nhan.md](../tu-dong-hoa/lich/loi-giao/tong-hop-tin-nhan.md) — Đọc Zalo, Messenger, Telegram của David, tổng hợp việc cần làm và gửi về bot Telegram Sổ nhớ. · ←1
 - [tu-dong-hoa/may-khac/README.md](../tu-dong-hoa/may-khac/README.md) — Máy khác dựng video giống Mac chính (Windows qua WSL2, Mac khác): khoá phiên bản công cụ, cài một lệnh, máy tự kiểm so với bản chuẩn của Mac. · ←3
-- [tu-dong-hoa/so-tay/README.md](../tu-dong-hoa/so-tay/README.md) — Bot Sổ nhớ trên Telegram: David nhắn điều cần nhớ, phiên Claude trên Mac ghi vào sổ tay; cài đặt, cách chạy. · ←5
-- [tu-dong-hoa/so-tay/quy-tac-bot.md](../tu-dong-hoa/so-tay/quy-tac-bot.md) — Luật bot Sổ nhớ Telegram (chép thành CLAUDE.md của bot): ghi gì, trả lời thế nào, tin nhắn tổng hợp. · ←2
-- [tu-dong-hoa/trinh-xem-tai-lieu/README.md](../tu-dong-hoa/trinh-xem-tai-lieu/README.md) — App Mở Tài Liệu trên macOS: xem, xem bản in (từng trang như khi in), sửa trực tiếp docx, md, txt, csv; không cần Office. · ←1

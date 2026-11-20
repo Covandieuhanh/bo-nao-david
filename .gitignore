@@ -25,3 +25,6 @@ cookies*
 co-so-tri-thuc/bo-nho/thiet-bi-*
 co-so-tri-thuc/bo-nho/luu-tru/thiet-bi-*
 
+
+# Repo riêng của Mac chính (bo-nao-david-mac) nằm cùng thư mục; phần riêng liệt kê ở tu-dong-hoa/phan-rieng-mac.txt
+.git-mac/
