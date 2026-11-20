@@ -93,6 +93,8 @@ Trong 4 phần, cách chọn từng điểm:
   ý tưởng / dự án / skill liên quan. Máy kiểm tự chạy khi đồng bộ.
 - **Giữ Mac nhẹ:** Mac chỉ giữ việc đang làm. Xong việc thì đưa việc của David (video gốc, thành quả video) lên Drive rồi xoá trên Mac
   (video: `don-tap.py --xoa` → `luu-drive.sh`); file tải về, dữ liệu app, đồ cá nhân không đồng bộ, muốn xoá thì hỏi trước. Ghi nhớ `video-chuyen-qua-drive`.
+  Xoá video trên Mac chỉ bằng `luu-drive.sh` (chép cả tập → lên mây → so khớp → mới xoá), không tự lọc file bằng `find … -delete`
+  (`-delete` làm mất tác dụng `-prune`, ngày 20/11/2026 đã xoá mất gốc DJI_0030 của tập máy đo giải pháp AI).
 - **Đẩy GitHub ngay** khi có thay đổi về skill hoặc não: `bash tu-dong-hoa/dong-bo.sh --push` (`AGENTS.md` luật 6).
 
 ## 5. Luôn đi tới mục tiêu, giữ phiên gọn
