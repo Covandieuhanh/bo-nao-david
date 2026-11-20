@@ -84,8 +84,8 @@ Trong 4 phần, cách chọn từng điểm:
   và xoá câu cũ. Trong bản luật không ghi ngày, không "(David chốt …)", không lời kể đã thay hay thêm câu nào, không "ngoại lệ mới"; ngày, lời
   David nguyên văn và lý do ghi vào sổ quyết định (changelog / Nhật ký). Luật mới đụng luật ở nơi khác → sửa luôn nơi đó, không để hai
   câu cãi nhau. Ba loại file (bản luật · sổ · kho) và định nghĩa từng bộ: skill `tai-cau-truc`.
-- **Đo chồng chéo** sau mỗi việc có sửa bản luật: `python3 -I ky-nang/tai-cau-truc/do-chong-cheo.py`. Báo "NÊN TÁI BẢN TOÀN BỘ" → nhắc
-  David một dòng; David đồng ý thì tái bản cả bộ não một đợt (skill `tai-cau-truc`).
+- **Đo chồng chéo** sau mỗi việc có sửa bản luật: `python3 -I ky-nang/tai-cau-truc/do-chong-cheo.py`. Báo "NÊN NÂNG CẤP" → nhắc
+  David một dòng; David đồng ý thì nâng cấp cả bộ não một đợt (`hoc-lien-tuc` Việc 4).
 - **Cập nhật file theo dõi** (`du-an/…`, `bao-cao-trang-thai.md`) khi xong một đợt việc.
 - **Giữ mạng lưới liên kết** ([co-so-tri-thuc/quy-uoc-lien-ket.md](../co-so-tri-thuc/quy-uoc-lien-ket.md)): file mới có mô tả đầu file và
   một dòng ở trang [ban-do/](../ban-do/README.md) đúng chủ đề; đổi tên, gộp, xoá file thì sửa mọi nối tới nó. Trao đổi có **kiến thức đáng giữ**
@@ -121,7 +121,7 @@ Trong 4 phần, cách chọn từng điểm:
 | David dán log hoặc văn bản dài | Vẫn làm; cuối việc nhắc lần sau chỉ cần đưa đường dẫn file |
 | Tới bước nhẹ | Nhắc đổi mô hình rẻ hơn (mục 3) |
 | Buổi nhìn lại cuối tuần, hoặc `co-so-tri-thuc/bo-nho/` quá 40 ghi nhớ | Đề nghị "dọn bộ nhớ" (skill `consolidate-memory`) |
-| Máy đo chồng chéo báo "NÊN TÁI BẢN TOÀN BỘ" | Nhắc một dòng (mục 4) |
+| Máy đo chồng chéo báo "NÊN NÂNG CẤP", hoặc đã có ≥ 10 video có số liệu từ lần nâng cấp trước | Nhắc một dòng (mục 4) |
 | David hỏi phiên tốn vào đâu | Chạy "giải thích mức dùng" (skill `explain-usage`) |
 
 **Thói quen của David** (để Claude biết mà nhắc): mỗi việc một phiên · xong thì "cập nhật não" rồi đóng · làm liền một mạch ·

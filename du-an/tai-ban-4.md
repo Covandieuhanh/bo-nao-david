@@ -2,7 +2,10 @@
 description: "Tái bản 4 (20/11/2026): đổi máy đo sang đo trùng / rối (bỏ ngưỡng số dòng, thêm gan_trung) và gom ý trùng của bộ video về một nhà."
 ---
 
-# Tái bản 4 — 20/11/2026
+# Nâng cấp 4 (lúc mở gọi là "tái bản 4") — 20/11/2026
+
+> Cùng ngày David đổi "tái bản" thành vòng **Nâng cấp** (`ky-nang/hoc-lien-tuc/SKILL.md` Việc 4). Đợt này đã làm bước Dọn + máy đo;
+> tag đóng mốc là `nang-cap-4`, gắn sau khi David chấm việc thật.
 
 **Vì sao:** máy đo báo "NÊN TÁI BẢN TOÀN BỘ: vượt ngưỡng ở video (dong 4005 > 4000)" sau khi thêm tầng tư duy dựng video
 (`thiet-ke-bo-cuc/nguoi-xem-can-gi.md`, `nguyen-ly.json`, `tu-chon.md`, `giai-mau.md`, `bai-kiem/`, cổng `soat-canh.mjs`).

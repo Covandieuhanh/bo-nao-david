@@ -52,7 +52,8 @@ tiếng Anh chuẩn → dùng đúng cột "Tên dùng"; chưa có thì thêm m�
 | Reference Video Analysis | Phân tích video mẫu | `phan-tich-video-mau` |
 | Productization | Sản phẩm hoá | `san-pham-hoa` |
 | Requirements Elicitation | Thu thập yêu cầu | `thu-thap-yeu-cau` |
-| Refactoring | Tái cấu trúc | `tai-cau-truc` |
+| Refactoring | Tái cấu trúc (bước Dọn của Nâng cấp) | `tai-cau-truc` |
+| Upgrade | Nâng cấp (vòng R&D định kỳ: đo trước / sau, chưng cất, tỉa, dọn) | `nang-cap` (mốc `nang-cap-<n>`) |
 | Continuous Learning | Học liên tục | `hoc-lien-tuc` |
 | Message Digest | Tổng hợp tin nhắn | `tong-hop-tin-nhan` |
 | Data Collection | Thu thập dữ liệu | `thu-thap-du-lieu` |

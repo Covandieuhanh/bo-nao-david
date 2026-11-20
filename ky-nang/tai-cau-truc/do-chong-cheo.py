@@ -9,7 +9,7 @@
   sua       số lần bản luật bị sửa kể từ lần tái bản gần nhất (git, mốc ở lich-su.md) — chỉ nhắc nhẹ
   dong      tổng số dòng bản luật — chỉ để biết độ lớn; bộ não lớn lên vì học thêm, dài không phải là rối
 Chuông chỉ kêu vì trùng / rối: một bộ bất kỳ vượt một ngưỡng ở bo.json "nguong" (dau_ngay, ghi_de, trung, gan_trung) → in một dòng
-"NÊN TÁI BẢN TOÀN BỘ" kèm lý do, mã thoát 1 (tái bản là cả đợt, mọi bộ). "nhac" (sua) vượt chỉ in một dòng nhắc, không kêu. Không sửa file nào.
+"NÊN NÂNG CẤP" kèm lý do, mã thoát 1 (nâng cấp là cả bộ não một đợt: hoc-lien-tuc Việc 4, dọn bằng tai-cau-truc). "nhac" (sua) vượt chỉ in một dòng nhắc, không kêu. Không sửa file nào.
 Phần "## Nhật ký" cuối file là sổ, không tính.
 """
 import fnmatch, glob, json, os, re, subprocess, sys
@@ -84,12 +84,12 @@ def gan_trung(texts):
     return out
 
 def moc(bo):
-    """Mốc gần nhất của bộ: tag chung tai-ban-<n> (tái bản toàn bộ) hoặc tag riêng cũ tai-ban-<bộ>-<n>, lấy tag mới nhất có thật trong git."""
+    """Mốc gần nhất của bộ: tag chung nang-cap-<n> (hoặc tai-ban-<n> / tai-ban-<bộ>-<n> của các đợt cũ), lấy tag mới nhất có thật trong git."""
     p = os.path.join(HERE, 'lich-su.md')
     if not os.path.exists(p): return None
-    tags = set(re.findall(rf"`(tai-ban-(?:{bo}-)?\d+)`", open(p, encoding='utf-8').read()))
+    tags = set(re.findall(rf"`((?:tai-ban|nang-cap)-(?:{bo}-)?\d+)`", open(p, encoding='utf-8').read()))
     try:
-        out = subprocess.run(['git', '-C', REPO, 'for-each-ref', '--sort=creatordate', '--format=%(refname:short)', 'refs/tags/tai-ban-*'],
+        out = subprocess.run(['git', '-C', REPO, 'for-each-ref', '--sort=creatordate', '--format=%(refname:short)', 'refs/tags/tai-ban-*', 'refs/tags/nang-cap-*'],
                              capture_output=True, text=True, check=True).stdout.split()
     except Exception:
         out = []
@@ -123,7 +123,7 @@ for bo in (args or [k for k in CFG if not k.startswith('_')]):
     tong['sua'], m = so_lan_sua(bo, files)
     ng = CFG[bo]['nguong']; nh = CFG[bo].get('nhac', {})
     vuot = [f"{k} {tong[k]} > {ng[k]}" for k in ng if tong[k] > ng[k]]
-    print(f"\n## Bộ {bo} — {len(files)} file bản luật · mốc tái bản gần nhất: {m or 'chưa có'}")
+    print(f"\n## Bộ {bo} — {len(files)} file bản luật · mốc nâng cấp gần nhất: {m or 'chưa có'}")
     print('  ' + ' · '.join(f"{k} {tong[k]}/{ng[k]}" for k in ng) + f"  (độ lớn: {tong['dong']} dòng · sửa {tong['sua']} lần)")
     for k in nh:
         if tong[k] > nh[k]: print(f"  · nhắc: {k} {tong[k]} > {nh[k]} — xem có ý trùng mới không (không kêu tái bản)")
@@ -143,5 +143,5 @@ for bo in (args or [k for k in CFG if not k.startswith('_')]):
         ket = 1; vuot_bo.append(f"{bo} ({'; '.join(vuot)})"); print(f"  ⇒ bộ {bo} vượt ngưỡng: " + '; '.join(vuot))
     else:
         print(f"  ⇒ bộ {bo} dưới ngưỡng.")
-print('\n' + (f"⇒ NÊN TÁI BẢN TOÀN BỘ (skill tai-cau-truc): vượt ngưỡng ở {', '.join(vuot_bo)}" if vuot_bo else "⇒ Chưa cần tái bản."))
+print('\n' + (f"⇒ NÊN NÂNG CẤP (hoc-lien-tuc Việc 4, dọn bằng tai-cau-truc): vượt ngưỡng ở {', '.join(vuot_bo)}" if vuot_bo else "⇒ Chưa cần nâng cấp."))
 sys.exit(ket)

@@ -1,6 +1,6 @@
 ---
 name: hoc-lien-tuc
-description: Tự học và cải tiến liên tục bộ skill của David (học từ cách Hermes tự học, nhưng một nhà, có số liệu, ít token). Ba việc — (1) NHÌN LẠI TUẦN từ tín hiệu máy ghi cuối mỗi phiên (lời David sửa, skill dùng, lỗi) để sửa skill đúng chỗ, cập nhật giọng văn, dọn ghi nhớ và skill thừa; (2) HỌC TỪ HÌNH MẪU cùng thể loại đang có kết quả tốt nhất, đo bằng số liệu, rồi nâng cấp skill và luật kênh; (3) HỌC THÀNH SKILL từ một nguồn hay quy trình vừa làm. Phân tích tự chạy; phần sửa skill, giọng văn, luật kênh trình 4 phần cho David duyệt rồi mới sửa. Dùng khi máy gửi [TU-HOC], khi David nói "nhìn lại tuần", "tự học", "cải tiến skill", "học thành skill", "học từ kênh X", "học cái này thành quy trình", "/hoc-lien-tuc".
+description: Tự học và cải tiến liên tục bộ skill của David (học từ cách Hermes tự học, nhưng một nhà, có số liệu, ít token). Bốn việc — (1) NHÌN LẠI TUẦN từ tín hiệu máy ghi cuối mỗi phiên (lời David sửa, skill dùng, lỗi) để sửa skill đúng chỗ, cập nhật giọng văn, dọn ghi nhớ và skill thừa; (2) HỌC TỪ HÌNH MẪU cùng thể loại đang có kết quả tốt nhất, đo bằng số liệu, rồi nâng cấp skill và luật kênh; (3) HỌC THÀNH SKILL từ một nguồn hay quy trình vừa làm; (4) NÂNG CẤP định kỳ cả bộ não như R&D: đo trước, chưng cất luật lẻ thành nguyên lý, tỉa cái không giúp, dọn trùng / rối (tai-cau-truc), đo sau, chỉ ra bản mới khi bằng hoặc tốt hơn. Phân tích tự chạy; phần sửa skill, giọng văn, luật kênh trình 4 phần cho David duyệt rồi mới sửa. Dùng khi máy gửi [TU-HOC], khi David nói "nhìn lại tuần", "tự học", "cải tiến skill", "học thành skill", "học từ kênh X", "học cái này thành quy trình", "nâng cấp", "nâng cấp bộ não", "tái bản", "/hoc-lien-tuc", hoặc khi máy đo chồng chéo báo "NÊN NÂNG CẤP".
 ---
 
 # Tự học, cải tiến skill
@@ -8,6 +8,14 @@ description: Tự học và cải tiến liên tục bộ skill của David (h�
 Đọc trước: `ky-nang/chuan-muc-lam-viec.md`. Luật nền: `AGENTS.md` luật 2 (việc gì cũng duyệt 4 phần trước; tự học tự phân tích, phần sửa trình 4 phần).
 
 **Mục tiêu:** mỗi tuần bộ skill làm ra kết quả tốt hơn tuần trước (đo bằng số liệu kênh và số lần David phải sửa), tốn ít token nhất.
+Học càng nhiều thì bộ não càng lớn, và lớn là đúng; việc của skill này là giữ cho nó **càng lớn càng dễ hiểu, càng làm đúng**.
+
+**Ba nhịp, một chu trình** (giống R&D: thu dữ liệu → chưng cất → đo → ra bản):
+| Nhịp | Khi | Làm |
+|---|---|---|
+| Mỗi việc | xong một việc có sửa luật | sửa thẳng đúng câu luật, lý do vào sổ (`chuan-muc-lam-viec.md` mục 4) |
+| Mỗi tuần | sáng thứ 6 | Việc 1 (+ Việc 2 khi có số liệu mới) |
+| Định kỳ | máy đo báo, đủ dữ liệu mới, hoặc David gọi | Việc 4 — Nâng cấp |
 
 ## Duyệt 4 phần rồi mới sửa
 
@@ -23,7 +31,7 @@ Quy trình · Thực thi), gửi David `bao-cao.sh "#N ❓ Chờ anh duyệt 4 p
 1. Tìm **đúng một nhà** của luật (mỗi luật một chỗ, `chuan-muc-lam-viec.md`); sửa thẳng câu cũ, không chồng lớp ("lời mới nhất thắng").
 2. Ghi changelog của skill đó (`references/nhat-ky-thay-doi.md`, chưa có thì tạo): ngày · sửa gì · **vì sao** (tín hiệu nào / hình mẫu + số liệu nào).
 3. Đẩy GitHub (`bash tu-dong-hoa/dong-bo.sh --push`). Báo David **một dòng mỗi thay đổi**: `Đã sửa <skill>: <điều đổi> (vì <bằng chứng>).`
-4. Chạy máy đo chồng chéo của `tai-cau-truc` khi sửa từ 5 chỗ trở lên trong tuần; báo "NÊN TÁI BẢN" thì nói David.
+4. Chạy máy đo chồng chéo (`python3 -I ky-nang/tai-cau-truc/do-chong-cheo.py`) khi sửa từ 5 chỗ trở lên trong tuần; báo "NÊN NÂNG CẤP" thì nhắc David một dòng (Việc 4).
 
 ## Việc 1 — Nhìn lại tuần (máy gửi `[TU-HOC]` 07:00 sáng thứ 6 — ngày tổng kết tuần, hoặc David gọi)
 Máy đã ghi sẵn tín hiệu cuối mỗi phiên (hook `tu-dong-hoa/hoc-lien-tuc/ghi-tin-hieu.py` → `~/.claude/hoc-lien-tuc/tin-hieu.jsonl`), không tốn token.
@@ -54,6 +62,35 @@ Nguồn: tài liệu, link, thư mục, hoặc "quy trình vừa làm trong phi�
 2. Tạo mới: theo `skill-creator`; thư mục `ky-nang/<ten-khong-dau>/SKILL.md`; mô tả nói rõ khi nào dùng (câu David hay nói);
    thêm một dòng vào bảng chọn skill trong `AGENTS.md`; chạy `bash tu-dong-hoa/cai-dat-bo-nao.sh` nếu skill cần liên kết vào `~/.claude/skills`.
 3. Thử một lần trên việc thật hoặc đoạn ngắn (`quy-tac-thu-bang-doan-ngan`), rồi báo David một dòng.
+
+## Việc 4 — Nâng cấp (định kỳ, cả bộ não một đợt)
+**Khi:** máy đo báo "NÊN NÂNG CẤP" (trùng / rối vượt ngưỡng), hoặc từ lần nâng cấp trước đã có **≥ 10 video có số liệu 7 ngày**, hoặc David
+nói "nâng cấp" / "tái bản". Nhắc David một dòng; David quyết. Mỗi đợt một mốc chung `nang-cap-<n>`, một file theo dõi `du-an/nang-cap-<n>.md`.
+
+**Thước đo** (cùng một bảng, đo trước và sau; bản mới chỉ ra khi **bằng hoặc tốt hơn ở mọi dòng**):
+| # | Thước đo | Cách đo | Đạt |
+|---|---|---|---|
+| 1 | **Người xem thật** (thước đo chính) | trung vị 10 video gần nhất từ `so-lieu.md` các dự án (khối 16): số nhắn "gỡ" / bình luận "Vấn đề"·"Kết quả", % còn lại ở giây 3, tỉ lệ xem hết | không giảm; đổi luật nào thì ghi giả thuyết "kỳ vọng Y tăng, đo lại sau N video" |
+| 2 | **Suy luận** | AI làm thật `ky-nang/san-xuat-video/thiet-ke-bo-cuc/bai-kiem/` (không mở đáp án), chấm `cham.py` | ≥ 8/10 và không thấp hơn lần trước |
+| 3 | **Hình** | `python3 -I ky-nang/san-xuat-video/mau-chuan/kiem-mau.py` (dự án mẫu phải có trên máy; ở Drive thì kéo về trước) | y nguyên, trừ chỗ đổi có chủ đích |
+| 4 | **Số lần David phải sửa** | `tin-hieu.jsonl` (trường `david_sua`) theo video / việc | giảm hoặc không tăng |
+| 5 | **Trùng / rối** | máy đo chồng chéo | mọi bộ "Chưa cần" |
+Thước đo nào chưa có dữ liệu (chưa đủ video có số liệu, dự án mẫu chưa kéo về) → ghi "chưa đo" và lý do, không đoán.
+
+**Năm bước:**
+1. **Mốc + đo trước** *(bước nhẹ)*: `bash tu-dong-hoa/dong-bo.sh --push`, `git tag nang-cap-<n>-truoc`, ghi bảng thước đo "trước" vào file theo dõi.
+2. **Chưng cất:** đọc phiếu tuần, sổ quyết định, ghi nhớ từ lần nâng cấp trước. Nhóm các luật lẻ **cùng một gốc** (cùng cái khó của
+   người xem, cùng lý do) thành **một nguyên lý + 1–3 ca mẫu** ở nhà chung; luật lẻ trở thành ví dụ của nguyên lý (cách tầng
+   `nguoi-xem-can-gi.md` + `giai-mau.md` đã làm). Giữ đúng nghĩa luật David đã chốt; không thêm luật mới.
+3. **Tỉa:** luật, kiểu cảnh, skill không được dùng từ lần trước (`dem-ky-nang.py`, kiểu không xuất hiện trong `ke-hoach-canh.md` các dự án)
+   hoặc số liệu cho thấy không giúp → đề xuất gộp, bỏ hoặc cất `luu-tru/`. Không tự bỏ.
+4. **Dọn:** skill `tai-cau-truc` (bảng luật đang sống, mỗi luật một nhà, ngày về sổ, dọn ghi nhớ).
+5. **Đo sau + ra bản:** chạy lại bảng thước đo. Đạt → `git tag nang-cap-<n>`, một dòng ở `ky-nang/tai-cau-truc/lich-su.md`, chỉnh ngưỡng
+   `bo.json` nếu lệch, đẩy GitHub, báo David: chưng cất gì, tỉa gì, thước đo trước → sau, chưa đo gì. Kém hơn ở một dòng → sửa chỗ gây
+   ra, hoặc quay về mốc `nang-cap-<n>-truoc`, ghi bài học vào file theo dõi.
+
+Bước 2–3 là phần sửa: gom thành **một bộ 4 phần** (mục "Duyệt 4 phần") trước khi sửa. Thước đo 1 (người xem) thường chỉ đo lại được
+sau vài video: ra bản khi 2–5 đạt, ghi giả thuyết cho thước 1 và đo ở lần nhìn lại tuần sau đủ video.
 
 ## Tiết kiệm token
 - Script làm phần đếm, tìm; Claude chỉ đọc kết quả gọn. Không đọc cả nhật ký phiên.

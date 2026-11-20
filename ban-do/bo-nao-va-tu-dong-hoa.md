@@ -60,13 +60,13 @@ Gốc: [bản đồ bộ não](README.md).
 
 ## Skill công cụ
 - [thu-thap-yeu-cau](../ky-nang/thu-thap-yeu-cau/SKILL.md) — Cách hỏi của David khi trình 4 phần (Mục tiêu · Kế hoạch · Quy trình · Thực thi) trước mọi việc — hỏi theo vòng từ góc nhìn chuyên gia thực chiến, mỗi điểm cần chốt…
-- [hoc-lien-tuc](../ky-nang/hoc-lien-tuc/SKILL.md) — Tự học và cải tiến liên tục bộ skill của David (học từ cách Hermes tự học, nhưng một nhà, có số liệu, ít token). Ba việc — (1) NHÌN LẠI TUẦN từ tín hiệu máy ghi…
+- [hoc-lien-tuc](../ky-nang/hoc-lien-tuc/SKILL.md) — Tự học, cải tiến liên tục: nhìn lại tuần, học hình mẫu có số liệu, học thành skill, và Việc 4 **Nâng cấp** định kỳ cả bộ não (đo trước / sau, chưng cất, tỉa, dọn).
 - [nhat-ky-thay-doi hoc-lien-tuc](../ky-nang/hoc-lien-tuc/references/nhat-ky-thay-doi.md) — Nhật ký thay đổi skill hoc-lien-tuc và máy đếm / ghi tín hiệu.
 - [hoc-lien-tuc 2026-11-15](../du-an/hoc-lien-tuc/2026-11-15.md) — Phiếu tự học tuần 15/11: điều lặp, đã sửa, gộp ghi nhớ 47→40, việc tuần sau.
-- [tai-cau-truc](../ky-nang/tai-cau-truc/SKILL.md) — Tái bản bộ skill — khi luật đã chồng nhiều lớp (học mẫu lớp 1, lớp 2, lớp 3, sửa góp ý…), gom toàn bộ luật đang sống của CẢ BỘ NÃO (mọi bộ skill + ghi nhớ, một đợt)…
+- [tai-cau-truc](../ky-nang/tai-cau-truc/SKILL.md) — Dọn luật — bước 4 của Nâng cấp: mỗi luật một nhà, không ngày, không câu trùng; máy đo chồng chéo chỉ kêu vì trùng / rối.
 - [dieu-khien-trinh-duyet](../ky-nang/dieu-khien-trinh-duyet/SKILL.md) — Automate browser interactions, test web pages and work with Playwright tests.
 - [thiet-ke-trang-cuon](../ky-nang/thiet-ke-trang-cuon/SKILL.md) — >
-- [lich-su](../ky-nang/tai-cau-truc/lich-su.md) — Lịch sử tái bản: mỗi lần tái bản một bộ một dòng, mốc cho máy đo chồng chéo.
+- [lich-su](../ky-nang/tai-cau-truc/lich-su.md) — Lịch sử nâng cấp (trước 20/11 gọi là tái bản): mỗi đợt một dòng, mốc cho máy đo chồng chéo.
 
 **Tài liệu dieu-khien-trinh-duyet**
 - [chay-ma](../ky-nang/dieu-khien-trinh-duyet/references/chay-ma.md) — Điều khiển trình duyệt: chạy mã Playwright tuỳ ý (run-code).

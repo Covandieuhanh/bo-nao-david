@@ -50,7 +50,8 @@ David thường chỉ gửi tài nguyên (video, ghi âm) mà không kèm yêu c
 | Cắt highlight dọc | `cat-doan-noi-bat` | [SKILL.md](ky-nang/san-xuat-video/cat-doan-noi-bat/SKILL.md) |
 | Viết bài, kịch bản theo giọng David | giọng văn | [giong-thuong-hieu-david.md](ky-nang/san-xuat-video/ho-so-thuong-hieu/giong-thuong-hieu-david.md) |
 | Điều khiển trình duyệt | `dieu-khien-trinh-duyet` | [SKILL.md](ky-nang/dieu-khien-trinh-duyet/SKILL.md) |
-| Luật chồng chéo, viết lại toàn bộ bộ não ("tái bản") | `tai-cau-truc` | [SKILL.md](ky-nang/tai-cau-truc/SKILL.md) |
+| Nâng cấp bộ não định kỳ ("nâng cấp", "tái bản"): đo trước / sau, chưng cất, tỉa, dọn | `hoc-lien-tuc` Việc 4 | [SKILL.md](ky-nang/hoc-lien-tuc/SKILL.md) |
+| Luật chồng chéo, gom luật trùng (bước Dọn của nâng cấp) | `tai-cau-truc` | [SKILL.md](ky-nang/tai-cau-truc/SKILL.md) |
 | Tự học, cải tiến skill, học thành skill, nhìn lại tuần | `hoc-lien-tuc` | [SKILL.md](ky-nang/hoc-lien-tuc/SKILL.md) |
 | Gom mọi thứ hằng ngày, phân loại theo hướng nghề, đóng thành sản phẩm bán được | `san-pham-hoa` | SKILL.md (`ky-nang/san-pham-hoa/SKILL.md`, chỉ Mac chính) |
 | Tổng hợp tin nhắn Zalo, Messenger, Telegram (7:00 mỗi sáng gửi bot) | `tong-hop-tin-nhan` | SKILL.md (`ky-nang/tong-hop-tin-nhan/SKILL.md`, chỉ Mac chính) |
