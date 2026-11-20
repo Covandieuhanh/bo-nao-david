@@ -24,6 +24,7 @@ source "$SKILL/scripts/noi-luu.sh"; P=$(noi_luu "$NAME")   # hl-<tên>-<id> → 
 [ -e "$P" ] && { echo "Đã có $P — chọn tên khác"; exit 1; }
 mkdir -p "${P:h}"
 mkdir -p "$P"/{src,kiem-tra,tai-lieu-tham-khao}
+mkdir -p "$P/them-anh"; cp "$SKILL/assets/mau-du-an/yeu-cau.md" "$P/yeu-cau.md"   # yêu cầu + ảnh của người dùng (thiet-ke-bo-cuc/tu-chon.md bước 0b)
 cp -RL "$SKILL/assets/khuon-dung-ghep" "$P/chuyen-dong"   # -L: chép BẢN THẬT thư viện hình (src/lib — phụ đề, nhận diện, màn chốt, biểu tượng, màn kết, minh hoạ)
 python3 -I "$SKILL/../mo-dun/ho_so.py" ghep-vlog "$P/chuyen-dong/src/ho-so.json" >/dev/null   # hồ sơ tham số (highlight: danh-sach-cat-doan-noi-bat.py ghi đè)
 echo 'export default {};' > "$P/chuyen-dong/src/bao-ve.js"   # lớp phủ tự chuyển toàn màn hình — bao-ve-lop-phu.py ghi đè

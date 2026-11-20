@@ -1,0 +1,32 @@
+{
+  "_mo_ta": "Danh sách tên hợp lệ cho dòng 'Loại:' và 'Cần:' trong ke-hoach-canh.md. Nhà của nội dung: nguoi-xem-can-gi.md. soat-canh.mjs đọc file này — sửa tên thì sửa cả hai.",
+  "loai": {
+    "day-ky-nang": "Dạy kỹ năng, chia sẻ kiến thức",
+    "chia-se-quan-diem": "Chia sẻ quan điểm, lý do, góc nhìn",
+    "ke-chuyen": "Kể chuyện đời, hành trình",
+    "suy-ngam": "Độc thoại suy ngẫm, podcast một người",
+    "tro-chuyen": "Trò chuyện, phỏng vấn hai người",
+    "loi-chung": "Lời chứng học viên, khách",
+    "vlog": "Vlog đời thường, sự kiện",
+    "huong-dan-man-hinh": "Quay màn hình, hướng dẫn thao tác, cuộc gọi",
+    "meo-ngan": "Mẹo nhanh dọc ngắn, một ý"
+  },
+  "nguyen_ly": {
+    "Tinh gọn": "Coherence Principle",
+    "Báo hiệu": "Signaling Principle",
+    "Không trùng kênh": "Redundancy Principle",
+    "Gần chỗ": "Spatial Contiguity Principle",
+    "Đúng lúc": "Temporal Contiguity Principle",
+    "Chia đoạn": "Segmenting Principle",
+    "Biết trước": "Pre-training Principle",
+    "Nghe thay đọc": "Modality Principle",
+    "Lời kèm hình": "Multimedia Principle",
+    "Giọng trò chuyện": "Personalization Principle",
+    "Giọng thật": "Voice Principle",
+    "Mặt người nói": "Image Principle",
+    "Giữ chú ý": "ngoài Mayer — attention, retention",
+    "Cảm xúc": "ngoài Mayer — Walter Murch, Rule of Six",
+    "Tin": "ngoài Mayer — credibility",
+    "Nhận diện": "ngoài Mayer — chữ ký kênh"
+  }
+}

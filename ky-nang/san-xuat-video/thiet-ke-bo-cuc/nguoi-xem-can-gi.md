@@ -1,0 +1,146 @@
+---
+description: "Cửa vào tư duy dựng video: loại nội dung cả video → người xem gặp khó gì ở từng đoạn → nguyên lý (12 nguyên lý Mayer + 4 nhu cầu ngoài Mayer) → cách thể hiện. AI nào đọc cũng lập luận được, không tra bảng."
+---
+
+# Người xem cần gì — tư duy dựng video
+
+File này dạy **cách nghĩ**, không phải danh sách món. Bất kỳ AI nào (Claude, Codex, Gemini…) ở máy nào, chỉ cần đọc file này rồi
+`tu-chon.md` là dựng được video hợp nội dung. Kho kiểu (`bo-cuc.md`, khối 07) chỉ là **các cách thể hiện có sẵn**; không có cách
+nào khớp thì tự sáng tạo theo nguyên lý (cảnh tự vẽ `ve`).
+
+## 0. Thứ tự suy nghĩ (luôn đi đủ, ghi lại thành chữ)
+
+1. **Cả video thuộc loại nội dung nào?** (mục 1) → người xem đến để làm gì: hiểu, nhớ, tin, hay cảm. Câu trả lời này quyết định
+   mức dày hình, nhịp, nhạc, cách mở và kết cho **cả video**.
+2. **Từng đoạn: nếu chỉ nghe, người xem có gặp khó không? Khó gì?** Không khó → để người nói + phụ đề, không dựng gì (nguyên lý
+   Tinh gọn). Khó → gọi tên cái khó (không biết đang ở đâu, không hình dung được, không so được, quên ý trước, không tin…).
+3. **Cái khó đó do nguyên lý nào giải?** (mục 2, 3) — một đoạn thường chỉ cần một nguyên lý chính.
+4. **Cách thể hiện:** chọn trong kho cách đúng nguyên lý nhất (`tu-chon.md` bước 4); không có thì tự vẽ. Rồi đọc dòng
+   **"phản tác dụng khi"** của nguyên lý để tự kiểm.
+5. **Ghi lại** vào `ke-hoach-canh.md` (mục 4). Máy soát (`soat-canh.mjs`) chặn khi thiếu.
+
+Luật cứng vẫn giữ trên mọi lựa chọn: chữ trên hình là **nguyên văn lời người nói**; không che mặt; chữ ký nhận diện (màu cam, hai
+font, dấu góc, phụ đề, thanh thời gian, màn chốt) không đổi (`README.md` mục 1, 3).
+
+## 1. Loại nội dung cả video
+
+Lấy từ các video kênh đã làm (`du-an/danh-muc-noi-dung.md`). Loại mới xuất hiện qua video quay thêm → thêm dòng ở đây và ở `nguyen-ly.json`.
+
+| Loại (`Loại:`) | Nhận ra bằng | Người xem cần là chính | Nguyên lý ưu tiên | Mức hình · nhịp · nhạc | Tránh |
+|---|---|---|---|---|---|
+| `day-ky-nang` — dạy kỹ năng, chia sẻ kiến thức | có vấn đề → cách làm → bước; nhiều liệt kê, con số, "đầu tiên… sau đó…" | **hiểu + nhớ** để làm theo | Chia đoạn, Biết trước, Lời kèm hình, Báo hiệu | hình vừa ở ý khó (bước, so sánh, con số); nhịp đều; nhạc `kien_thuc` | dựng hình cho cả câu dễ; chữ dài trên hình |
+| `chia-se-quan-diem` — quan điểm, lý do, góc nhìn | "tôi nghĩ", "lý do là", lập luận A vì B; ít bước | **hiểu lập luận + tin** người nói | Báo hiệu (chỗ chốt), Lời kèm hình (quan hệ vì–nên), Tin | hình thưa, ở chỗ chuyển ý và câu chốt; nhịp chậm vừa | biến quan điểm thành "bước"; minh hoạ tự đặt |
+| `ke-chuyen` — chuyện đời, hành trình | thời gian quá khứ, "hồi đó", cảm xúc, nhân vật | **cảm** rồi mới hiểu bài học | Cảm xúc, Mặt người nói, Tinh gọn | rất ít hình; chữ nhấn ở đỉnh cảm xúc; nền hạt / người mờ; nhạc `tam_su` / `y_nghia`, chuyển cảnh lắng | sơ đồ giữa lúc kể; nhạc sôi động |
+| `suy-ngam` — độc thoại, podcast một người | nói liền, ít nhìn vào bước cụ thể, câu hỏi tự vấn | **theo kịp mạch** suy nghĩ | Chia đoạn, Báo hiệu, Giọng trò chuyện | chủ đề đang bàn + màn chương; hình ở câu đắt; nhịp chậm | phủ hình liên tục |
+| `tro-chuyen` — trò chuyện, phỏng vấn hai người | hai giọng, hỏi – đáp | **biết ai đang nói gì, trả lời cho câu nào** | Báo hiệu (thẻ câu hỏi, tên), Gần chỗ, Mặt người nói | thẻ cạnh người nói; ô người bám đúng người; nhạc theo cảm xúc chủ đạo | che mặt người kia; hình toàn khung lâu |
+| `loi-chung` — lời chứng học viên, khách | một người kể kết quả với David / khoá học | **tin** (người thật, vai trò thật, kết quả thật) | Tin, Mặt người nói, Báo hiệu (tên · vai trò) | giữ người là chính; thẻ tên + vai trò; minh chứng (ảnh, trước/sau) nếu có | lời quảng cáo tự đặt; số liệu không do họ nói |
+| `vlog` — đời thường, sự kiện | nhiều cảnh, di chuyển, ít lời liền | **cảm không khí + theo được hành trình** | Cảm xúc, Chia đoạn (vòng, nơi chốn), Giữ chú ý | thẻ nơi chốn, tên vòng; nhạc theo không khí; khuôn ghép | thẻ kiến thức dày |
+| `huong-dan-man-hinh` — quay màn hình, thao tác, cuộc gọi | chủ thể là màn hình / người không nhìn camera | **thấy đúng chỗ đang thao tác + giữ được ý** | Gần chỗ, Báo hiệu, Chia đoạn | khung chủ thể + bảng ghi chú chạy; nhãn sát chỗ thao tác | che vùng thao tác; hình rời màn hình lâu |
+| `meo-ngan` — mẹo nhanh dọc, một ý | ≤ 90 s, dọc, một lời khuyên | **bắt được ý trong vài giây + nhớ** | Giữ chú ý, Báo hiệu (từ khoá to), Tinh gọn | mỗi lúc một điểm nhìn; hình to ít chữ; nhịp nhanh, nhạc `vui` hoặc theo cảm xúc | nhiều lớp cùng lúc |
+
+Một video có thể **pha** hai loại (vd. kể chuyện rồi rút bài học = `ke-chuyen` → `day-ky-nang`): ghi loại chính + đoạn đổi loại.
+Clip highlight lấy loại của đoạn gốc.
+
+## 2. Mười hai nguyên lý (Richard Mayer, *Multimedia Learning*)
+
+Tên tiếng Anh giữ đúng nguồn, mỗi tên **một** bản dịch (dùng y chữ đó trong dòng `Cần:`). Nghiên cứu gốc đo trên bài giảng; kênh
+áp vào video người nói trên mạng xã hội, chỗ nào khác hoàn cảnh thì ghi rõ "Ở kênh này".
+
+### Tinh gọn — Coherence Principle
+- **Cái khó:** thứ không mang nghĩa (trang trí, nhạc to, hình cho vui) chiếm chỗ trong đầu, người xem hiểu ít hơn.
+- **Làm:** chỉ dựng hình cho ý khó hiểu nếu chỉ nghe; nền yên; mỗi lúc một điểm nhìn; hình phủ quá ~45 % thời lượng là thừa.
+- **Phản tác dụng khi:** bỏ cả hình ở ý thật sự khó (quy trình, so sánh) chỉ để "gọn".
+- **Đã học:** Ali–Joseph (bỏ chữ sau người, "nhiều hiệu ứng quá bị rối"); Cường Mê AI (ít chữ, nền yên); MagentX (reel đồ hoạ dày nhất ít lượt xem nhất).
+
+### Báo hiệu — Signaling Principle
+- **Cái khó:** người xem không biết chỗ nào quan trọng, đang ở phần nào.
+- **Làm:** một chỗ sáng (mục đang nói cam, mục cũ mờ); từ nhấn `*từ*`, từ khoá to `^`; màn chương, thanh tiến trình, số thứ tự to; thẻ câu hỏi ở phỏng vấn.
+- **Phản tác dụng khi:** báo hiệu mọi thứ — nhiều chỗ sáng cùng lúc thì không chỗ nào sáng.
+- **Đã học:** Ali (tiến trình, mục lục); Cường Mê AI (một chỗ sáng); MagentX (số to, từ khoá to, thẻ câu hỏi, khuôn đừng/hãy lặp).
+
+### Không trùng kênh — Redundancy Principle
+- **Cái khó:** vừa nghe lời vừa phải đọc nguyên câu đó trên hình → mắt và tai giành nhau.
+- **Ở kênh này:** phụ đề luôn chạy vì nhiều người xem không bật tiếng. Vì vậy: khi hình có chữ thì phụ đề nhường (mỗi lúc một chỗ chữ);
+  chữ trên hình chỉ là cụm đắt 1–3 chữ nguyên văn, không chép cả câu.
+- **Phản tác dụng khi:** bỏ phụ đề ở video dọc ngắn.
+
+### Gần chỗ — Spatial Contiguity Principle
+- **Cái khó:** nhãn ở xa thứ nó nói → mắt phải đi tìm.
+- **Làm:** nhãn sát hình; thẻ cạnh người đang nói (`the-canh`, `cho.js`); ở quay màn hình, nhãn sát chỗ thao tác; trước/sau đặt cạnh nhau (`tren-duoi`).
+- **Phản tác dụng khi:** "sát" tới mức che mặt hoặc che vùng thao tác.
+
+### Đúng lúc — Temporal Contiguity Principle
+- **Cái khó:** hình hiện trước hoặc sau lời → người xem không ghép được.
+- **Làm:** nói tới thứ gì thứ đó mới hiện (`at` = lúc nói); không hiện cả danh sách một lần.
+- **Phản tác dụng khi:** hiện quá sát khiến chữ chưa kịp đọc đã tắt (máy soát đo thời gian đọc).
+- **Đã học:** Cường Mê AI (hình theo nhịp lời); Sang Huỳnh (chữ xây theo lời).
+
+### Chia đoạn — Segmenting Principle
+- **Cái khó:** nội dung dài liền một mạch → người xem hụt hơi, lạc.
+- **Làm:** chia phần (chương, tiến trình ý, mục lục tích luỹ); một hình lớn dần qua các ý nối nhau (`chuoi`, `xay-tang`, `mach.js`); khuôn lặp cho danh sách (`dung-hay`).
+- **Phản tác dụng khi:** chia vụn video ngắn một ý thành nhiều màn.
+
+### Biết trước — Pre-training Principle
+- **Cái khó:** gặp khái niệm lạ giữa lúc đang theo bước → vừa phải hiểu từ, vừa phải theo bước.
+- **Làm:** khi người nói báo trước ("trong video này có 3 điều", "trước hết hiểu X là gì") → mục lục, thẻ khái niệm hiện trước phần chi tiết.
+- **Phản tác dụng khi:** tự thêm phần giới thiệu người nói không nói (trái luật nguyên văn).
+
+### Nghe thay đọc — Modality Principle
+- **Cái khó:** giải thích bằng chữ in dài trên hình nặng hơn nghe giải thích + nhìn hình.
+- **Làm:** để lời giải thích, hình chỉ hình + nhãn ngắn; không thẻ chữ dài khi người đang nói chính ý đó.
+- **Phản tác dụng khi:** câu chốt cần nhớ nguyên văn — khi đó chữ to một câu là đúng (màn chốt).
+
+### Lời kèm hình — Multimedia Principle
+- **Cái khó:** ý trừu tượng (quan hệ, cấu trúc, con số) chỉ nghe thì khó giữ.
+- **Làm:** dựng hình cho đúng **cấu trúc của câu**: tầng bậc → `tang`; trong → ngoài → `vong`; từ → thành → `tu-thanh`; bước → `chuoi`; so sánh → `vs`, `dung-hay`; con số → `count`.
+- **Phản tác dụng khi:** hình chỉ lặp lại lời mà không thêm cấu trúc (biểu tượng cho vui).
+
+### Giọng trò chuyện — Personalization Principle
+- **Cái khó:** lời trang trọng, xa cách → người xem ít gắn vào.
+- **Ở kênh này:** lời là của David (nguyên văn), đã trò chuyện sẵn. Phần hình giữ đúng giọng đó: chữ trích lời "mình – bạn", không đổi sang văn quảng cáo.
+
+### Giọng thật — Voice Principle
+- **Cái khó:** giọng máy làm giảm tin và hiểu.
+- **Ở kênh này:** chỉ dùng giọng thật của người nói; không lồng giọng AI.
+
+### Mặt người nói — Image Principle
+- **Nguồn nói:** thêm hình người nói lên màn **không tự làm** người xem hiểu bài hơn.
+- **Ở kênh này:** vẫn giữ mặt David phần lớn thời gian vì nhu cầu **Tin** và **Cảm xúc** (mục 3), không vì hiểu. Hệ quả: khi đoạn
+  cần hiểu (hình phức tạp), được phép thu người vào ô (`o-nguoi`, `o-tron`, `nguoi_duoi`) để nhường chỗ cho hình.
+- **Phản tác dụng khi:** giấu mặt ở đoạn kể chuyện, lời mời, cảm xúc.
+
+## 3. Bốn nhu cầu ngoài Mayer
+
+Mayer đo việc **hiểu**. Video trên mạng còn phải được **xem tới cuối**, được **tin** và được **nhận ra**. Bốn nhu cầu này ghi rõ "ngoài Mayer".
+
+| Tên (`Cần:`) | Cái khó | Làm | Phản tác dụng khi | Nguồn |
+|---|---|---|---|---|
+| **Giữ chú ý** | 3 giây đầu không có lý do ở lại; một bố cục kéo quá lâu thì người xem lướt | mở bằng câu đắt nhất của chính người nói; đổi lớp mỗi vài giây nhưng mỗi lúc chỉ một thứ mới; kết quả trước, cách làm sau | đổi liên tục không có nghĩa (giật, chớp) | kinh nghiệm giữ chân YouTube (Paddy Galloway); MagentX |
+| **Cảm xúc** | người xem không cảm thì không nhớ, không hành động | giữ mặt, giữ khoảng lặng ở đỉnh cảm xúc, nhạc đúng cảm xúc, chữ nhấn ít | phủ hình hoặc nhạc lên câu cảm xúc | Walter Murch, *In the Blink of an Eye* (Rule of Six: cảm xúc trước) |
+| **Tin** | người xem không chắc người nói có thật làm được không | mặt thật, minh chứng thật (ảnh, trước/sau, màn hình), tên + vai trò người làm chứng | dựng số liệu / lời mà người nói không nói | MagentX (lời chứng có vai trò, trước/sau) |
+| **Nhận diện** | người xem không nhận ra đây là kênh David | giữ chữ ký nhận diện ở mọi video | thêm màu / font của nguồn học | `thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0 |
+
+## 4. Ghi gì vào `ke-hoach-canh.md`
+
+Trong mục `## Chẩn đoán` (cùng các dòng của `tu-chon.md`):
+```
+Loại: day-ky-nang vì <dấu hiệu thấy ở lời / hình> · cần chính: hiểu + nhớ
+```
+Ngay dưới, **mỗi cảnh một dòng** (cảnh cố định như dấu kênh, tít, màn chốt không cần):
+```
+- s03 · Cần: Chia đoạn · Vì: 5 bước kể liền, chỉ nghe sẽ lạc bước 3 · Làm: diagram chuoi, bước đang nói sáng
+- s04 · Cần: Cảm xúc · Vì: đỉnh câu chuyện, cần thấy mặt · Làm: nhan làm tối nhẹ, chữ nhấn một từ
+```
+`Cần:` dùng đúng tên ở mục 2–3 (danh sách máy đọc: `nguyen-ly.json`). Máy soát: thiếu `Loại:` hoặc không cảnh nào có dòng `Cần:` → P0
+(không render); một cảnh thiếu dòng, hoặc tên nguyên lý / loại không có trong danh sách → P1.
+
+## 5. Khi đi ngược nguyên lý là đúng
+
+Nguyên lý là cách nghĩ, không phải luật cứng. Có lý do rõ (người dùng yêu cầu trong `yeu-cau.md`, nội dung đặc biệt) thì làm khác,
+nhưng ghi vào dòng `Vì:` nguyên lý nào bị bỏ và vì sao. Chỉ luật cứng ở mục 0 là không bao giờ đổi.
+
+## 6. Học thêm
+
+Học nguồn mới (`README.md` mục 4): mỗi điều học được phải gắn vào **một nguyên lý / nhu cầu** ở đây (thêm vào dòng "Đã học" hoặc cột
+"Nguồn"), kèm cách thể hiện mới ở `tu-chon.md` bước 4. Không gắn được vào cái khó nào của người xem thì không học. Ví dụ giải mẫu từ
+video David đã duyệt và bài kiểm suy luận: đợt 2 (`du-an/phong-van/2026-11-20-tu-duy-dung-video.md`).

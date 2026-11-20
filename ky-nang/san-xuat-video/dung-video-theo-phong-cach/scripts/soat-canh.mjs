@@ -147,6 +147,40 @@ for (let i = 1; i < chuoi.length; i++) {
     for (const c of caps) if ((c.hl || []).filter((h) => h.startsWith('^')).length > 1)
       bao('P1', c.start, 'phu-de', `dòng "${c.text.slice(0, 40)}…" có ${(c.hl || []).filter((h) => h.startsWith('^')).length} từ khoá to`, 'mỗi dòng tối đa một mục "^"');
   }
+  // LẬP LUẬN THEO NGƯỜI XEM (thiet-ke-bo-cuc/nguoi-xem-can-gi.md): "Loại:" cho cả video + mỗi cảnh nội dung một dòng
+  // "- <id> · Cần: <nguyên lý> · Vì: … · Làm: …". Tên hợp lệ đọc từ thiet-ke-bo-cuc/nguyen-ly.json (một nguồn cho người và máy).
+  // Dự án cũ (không có yeu-cau.md — tạo trước khi có bước này) thì hai lỗi chặn hạ thành P1 để dựng lại bản cũ không bị chặn.
+  {
+    let NL = {loai: {}, nguyen_ly: {}};
+    try { NL = JSON.parse(fs.readFileSync(new URL('../../thiet-ke-bo-cuc/nguyen-ly.json', import.meta.url), 'utf8')); } catch {}
+    const cu = !fs.existsSync(path.join(P, 'yeu-cau.md'));
+    const chan = cu ? 'P1' : 'P0', ghiCu = cu ? ' (dự án cũ: chỉ nhắc)' : '';
+    const cd = (kh.split(/^##\s*Chẩn đoán/m)[1] || '');
+    const norm = (t) => t.normalize('NFC').toLowerCase().trim();
+    const loaiDong = cd.match(/^\s*Loại:\s*(.+)$/m);
+    if (/^##\s*Chẩn đoán/m.test(kh)) {
+      if (!loaiDong) bao(chan, 0, 'ke-hoach-canh.md', `chẩn đoán chưa có dòng "Loại:" (loại nội dung cả video)${ghiCu}`, 'thiet-ke-bo-cuc/nguoi-xem-can-gi.md mục 1');
+      else if (!Object.keys(NL.loai).some((k) => loaiDong[1].includes(k))) bao('P1', 0, 'ke-hoach-canh.md', `"Loại: ${loaiDong[1].slice(0, 40)}" không có trong nguyen-ly.json`, `dùng một trong: ${Object.keys(NL.loai).join(', ')}`);
+    }
+    const BO = new Set(['hud', 'title', 'pinTitle', 'teaserTag', 'cta', 'hook', 'round', 'outro', 'location', 'lower', 'endcard', 'cover', 'captions', 'sides', 'stage']);
+    const noiDung = list.map(flat).filter((x) => !BO.has(x.type));
+    const dongCan = [...cd.matchAll(/^\s*[-*]?\s*([^\s·]+)\s*·\s*Cần:\s*([^·\n]+)/gm)].map((m) => ({id: m[1], can: m[2]}));
+    const tenNL = Object.keys(NL.nguyen_ly).map(norm);
+    if (noiDung.length && !dongCan.length) bao(chan, 0, 'ke-hoach-canh.md', `${noiDung.length} cảnh nội dung mà không dòng "Cần:" nào — chưa lập luận người xem cần gì${ghiCu}`, 'mỗi cảnh: "- <id> · Cần: <nguyên lý> · Vì: … · Làm: …" (nguoi-xem-can-gi.md mục 4)');
+    else for (const x of noiDung) {
+      const d = dongCan.find((c) => c.id === x.id);
+      if (!d) { bao('P1', x.start, x.id, 'cảnh chưa có dòng "Cần: · Vì: · Làm:"', 'ghi cái khó của người xem và nguyên lý giải nó'); continue; }
+      if (!d.can.split(/[+,/]/).map(norm).some((t) => tenNL.includes(t))) bao('P1', x.start, x.id, `"Cần: ${d.can.trim()}" không phải tên nguyên lý`, 'dùng đúng tên ở nguoi-xem-can-gi.md mục 2–3');
+    }
+    // yêu cầu người dùng (tu-chon.md bước 0b)
+    let yc = ''; try { yc = fs.readFileSync(path.join(P, 'yeu-cau.md'), 'utf8'); } catch {}
+    const ycThat = yc.replace(/<!--[\s\S]*?-->/g, '').split('\n').filter((l) => l.trim() && !/^\s*[#>]/.test(l)).length;
+    if (ycThat && !/^\s*Yêu cầu:/m.test(cd)) bao('P1', 0, 'ke-hoach-canh.md', 'yeu-cau.md có yêu cầu mà Chẩn đoán chưa có dòng "Yêu cầu:"', 'tu-chon.md bước 0b');
+    // ảnh được gọi phải có trong public/anh (thiếu là hỏng hình)
+    const anh = new Set(); const tim = (o) => { if (o && typeof o === 'object') for (const [k, v] of Object.entries(o)) { if (k === 'photo' && typeof v === 'string') anh.add(v); else tim(v); } };
+    tim(list);
+    for (const a of anh) if (!fs.existsSync(path.join(P, 'chuyen-dong/public/anh', a))) bao('P0', 0, 'ảnh', `"${a}" không có trong chuyen-dong/public/anh`, 'chép ảnh (them-anh/) vào public/anh hoặc sửa tên');
+  }
   const CO_DINH = new Set(['hud', 'title', 'pinTitle', 'teaserTag', 'cta', 'hook', 'round', 'outro', 'location']);
   const loai = new Set(list.map(flat).filter((x) => !CO_DINH.has(x.type)).map(kieu));
   const coY = /Một kiểu có chủ đích:/.test(kh);
