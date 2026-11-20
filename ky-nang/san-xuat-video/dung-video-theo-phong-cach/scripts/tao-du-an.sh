@@ -10,7 +10,7 @@ source "$SKILL/scripts/noi-luu.sh"; P=$(noi_luu "$NAME")   # ~/Movies/tap-<tên>
 [ -e "$P" ] && { echo "Đã có $P — chọn tên khác"; exit 1; }
 mkdir -p "${P:h}"; luu_goc "$SRC" "$NAME"
 mkdir -p "$P"/{tai-lieu-tham-khao,kiem-tra,hinh-anh,tu-lieu}
-EXT=${SRC:e}
+EXT=${SRC:e:l}   # đuôi chữ thường: Mac coi .MP4 = .mp4, Windows/WSL2 và Linux thì không (script sau đọc video-goc.mp4)
 cp "$SRC" "$P/tu-lieu/video-goc.$EXT"
 [ -n "$REF" ] && cp "$REF" "$P/tai-lieu-tham-khao/mau.${REF:e}"
 cp -RL "$SKILL/assets/khuon-remotion" "$P/chuyen-dong"   # -L: chép BẢN THẬT thư viện hình (src/lib)

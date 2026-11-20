@@ -3,11 +3,16 @@
 # ~/.claude/david.md, CLAUDE.md, các skill, thư mục bộ nhớ và sổ danh mục được thay bằng LỐI TẮT trỏ vào repo,
 # nên sửa ở máy là sửa trong repo; dong-bo.sh chỉ còn kéo về / đẩy lên GitHub (2 chiều).
 # Bản cũ trên máy được sao lưu trước khi thay. Chạy lại nhiều lần không sao.
-# Dùng: bash tu-dong-hoa/cai-dat-bo-nao.sh [thư mục dự án sẽ mở Claude Code]   (mặc định: chính repo này)
+# Dùng: bash tu-dong-hoa/cai-dat-bo-nao.sh [thư mục dự án sẽ mở Claude Code] [--chi-video]   (mặc định: chính repo này)
+#   --chi-video: máy chỉ dựng video (Windows qua WSL2, Mac khác; David 20/11/2026) — đồng bộ 2 chiều như Mac chính, nhưng không cài
+#   bot Telegram, lịch tự chạy, trang xem kết quả. Máy không phải Mac tự bật chế độ này. Công cụ dựng: tu-dong-hoa/may-khac/cai-cong-cu-video.sh
 set -euo pipefail
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
 CL="$HOME/.claude"
-DU_AN="${1:-$REPO}"
+CHI_VIDEO=0; DU_AN=""
+for a in "$@"; do case "$a" in --chi-video) CHI_VIDEO=1;; *) DU_AN="$a";; esac; done
+[ "$(uname)" = Darwin ] || CHI_VIDEO=1
+DU_AN="${DU_AN:-$REPO}"
 DU_AN="$(cd "$DU_AN" && pwd)"
 SAO_LUU="$CL/backups/truoc-cai-nao-$(date +%Y%m%d-%H%M%S)"
 mkdir -p "$CL/skills" "$SAO_LUU"
@@ -49,13 +54,21 @@ lien_ket "$REPO/co-so-tri-thuc/bo-nho" "$MEM"
 lien_ket "$REPO/du-an/danh-muc-noi-dung.md" "$HOME/Movies/_danh-muc-noi-dung/danh-muc-noi-dung.md"
 
 # Hook đồng bộ 2 chiều: đầu phiên kéo về, cuối phiên đẩy lên
-python3 -I "$REPO/tu-dong-hoa/cai-hook.py" "$REPO"
+if [ $CHI_VIDEO = 1 ]; then
+  python3 -I "$REPO/tu-dong-hoa/cai-hook.py" "$REPO" --chi-video
+  echo "chi-video" > "$CL/vai-may"     # vai trò máy: các script biết đây là máy chỉ dựng video
+else
+  python3 -I "$REPO/tu-dong-hoa/cai-hook.py" "$REPO"
+  echo "chinh" > "$CL/vai-may"
+fi
 
 # Plugin của Claude Code: chỉ Telegram. Mod giao diện đã gỡ hết 13/11/2026 (ghi nhớ quy-tac-khong-dung-mod-giao-dien).
-if command -v claude >/dev/null 2>&1; then
+if [ $CHI_VIDEO = 0 ] && command -v claude >/dev/null 2>&1; then
   claude plugin install telegram@claude-plugins-official --scope user >/dev/null 2>&1 && echo "Plugin: telegram" || echo "⚠ Chưa cài được telegram"
 fi
 
 echo "Xong. Bản cũ (nếu có): $SAO_LUU"
 echo "Bộ nhớ gắn với dự án: $DU_AN"
 echo "Kiểm tra công cụ dựng video: zsh \"$CL/skills/san-xuat-video/dung-video-theo-phong-cach/scripts/kiem-moi-truong.sh\""
+[ $CHI_VIDEO = 1 ] && echo "Máy chỉ dựng video. Bước tiếp: bash \"$REPO/tu-dong-hoa/may-khac/cai-cong-cu-video.sh\" rồi bash \"$REPO/tu-dong-hoa/may-khac/kiem-may.sh\""
+exit 0

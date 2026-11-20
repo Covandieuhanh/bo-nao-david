@@ -7,6 +7,8 @@ nếu thu stereo tách người) → gom 2 nhóm (k-means) → chuyen-dong/src/n
 (mỗi đoạn: người, độ chắc, lời). Người nói đầu tiên = 0. Đoạn '?' (độ chắc thấp) → đọc lời để quyết, sửa nguoi-noi.js.
 Đây là ước đoán theo giọng: hai giọng cùng giới, cùng âm sắc dễ lẫn — luôn đọc lại bảng."""
 import json, os, re, subprocess, sys
+import shutil
+FF = "/opt/homebrew/bin/ffmpeg" if os.path.exists("/opt/homebrew/bin/ffmpeg") else shutil.which("ffmpeg")   # Mac: Homebrew; máy khác: ffmpeg trong PATH
 import numpy as np
 
 P = os.path.expanduser(sys.argv[1]); N = int(sys.argv[2]) if len(sys.argv) > 2 else 0
@@ -30,7 +32,7 @@ if cur: chunks.append(cur)
 segs = [(c[0][0], c[-1][1], " ".join(x[2] for x in c)) for c in chunks if c[-1][1] - c[0][0] >= 0.15]
 
 def load(ch):
-    raw = subprocess.run(["/opt/homebrew/bin/ffmpeg", "-v", "error", "-i", os.path.join(P, "tu-lieu/am-thanh.wav"), "-ac", str(ch),
+    raw = subprocess.run([FF, "-v", "error", "-i", os.path.join(P, "tu-lieu/am-thanh.wav"), "-ac", str(ch),
                           "-ar", str(SR), "-f", "f32le", "-"], capture_output=True, check=True).stdout
     return np.frombuffer(raw, np.float32).reshape(-1, ch)
 st = load(2); mono = st.mean(1)

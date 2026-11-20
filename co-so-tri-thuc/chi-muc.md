@@ -12,7 +12,7 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [CLAUDE.md](../CLAUDE.md) — Cấu hình Claude Code của repo: nạp AGENTS.md. · ←1
 - [README.md](../README.md) — Trang đầu repo bo-nao-david trên GitHub: bộ não dùng chung của David, cấu trúc, cách dùng. · ←1
 - [bao-cao-trang-thai.md](../bao-cao-trang-thai.md) — Báo cáo trạng thái: việc đang làm dở, việc chờ David quyết, câu hỏi còn mở, cảnh báo, việc phải nhớ. · ←3
-- [huong-dan-cai-dat.md](../huong-dan-cai-dat.md) — Hướng dẫn cài đặt bộ não lên máy mới / nơi khác từ GitHub: lệnh cài, lối tắt, bot, lịch, cái gì không lên GitHub. · ←3
+- [huong-dan-cai-dat.md](../huong-dan-cai-dat.md) — Hướng dẫn cài đặt bộ não lên máy mới / nơi khác từ GitHub: Mac chính, Mac khác và Windows chỉ dựng video (khoá phiên bản, máy tự kiểm), lối tắt, bot, lịch, cái gì không lên GitHub. · ←4
 
 ## ban-do
 
@@ -28,9 +28,10 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [co-so-tri-thuc/bang-thuat-ngu.md](bang-thuat-ngu.md) — Bảng thuật ngữ đặt tên: thuật ngữ kinh doanh tiếng Anh → tiếng Việt → tên file/thư mục dùng; tên bắt buộc của công cụ; cấu trúc thư mục. · ←4
 - [co-so-tri-thuc/bo-nho/MEMORY.md](bo-nho/MEMORY.md) — Mục lục bộ nhớ Claude Code: mỗi ghi nhớ một dòng, nhóm quy tắc / bộ não / video / thiết bị. · ←3
 - [co-so-tri-thuc/bo-nho/co-so-tri-thuc-bo-nao-cong-ty.md](bo-nho/co-so-tri-thuc-bo-nao-cong-ty.md) — Việc của công ty Veltrix (đội đối tác công nghệ David tổng điều hành) làm ở bộ não riêng ~/Documents/bo-nao-veltrix, kho private Covandieuhanh/veltrix; không ghi vào bộ não cá nhân · ←3
-- [co-so-tri-thuc/bo-nho/co-so-tri-thuc-github-ban-goc.md](bo-nho/co-so-tri-thuc-github-ban-goc.md) — GitHub bo-nao-david là bản gốc của bộ não — có gì mới cho skill/não thì ĐẨY NGAY (bắt buộc); chỉ giữ mẫu, form, luật, hồ sơ; sản phẩm ở lại máy/tài khoản làm ra nó · ←9
+- [co-so-tri-thuc/bo-nho/co-so-tri-thuc-github-ban-goc.md](bo-nho/co-so-tri-thuc-github-ban-goc.md) — GitHub bo-nao-david là bản gốc của bộ não — có gì mới cho skill/não thì ĐẨY NGAY (bắt buộc); chỉ giữ mẫu, form, luật, hồ sơ; sản phẩm ở lại máy/tài khoản làm ra nó · ←10
 - [co-so-tri-thuc/bo-nho/co-so-tri-thuc-ho-so-va-bo-loc.md](bo-nho/co-so-tri-thuc-ho-so-va-bo-loc.md) — Hồ sơ David ở ~/.claude/david.md (ba hướng nghề, mô hình kinh doanh, hệ 135 + từ trường số thuộc hướng trainer); mọi tài nguyên phải qua bộ lọc khối 00 trước khi dựng; luật kênh ở ho-so-thuong-hieu/kenh.json · ←8
 - [co-so-tri-thuc/bo-nho/co-so-tri-thuc-lien-ket-tri-thuc.md](bo-nho/co-so-tri-thuc-lien-ket-tri-thuc.md) — Bộ não là mạng lưới file nối nhau (mô tả, chỉ mục tự sinh, bản đồ, ghi chú kiến thức, máy kiểm link), không dùng app Obsidian (14/11) · ←1
+- [co-so-tri-thuc/bo-nho/co-so-tri-thuc-nhieu-may.md](bo-nho/co-so-tri-thuc-nhieu-may.md) — Nhiều máy của David (Mac + Windows) cùng dùng bộ não GitHub, dựng video ra như Mac chính; máy nào cũng đẩy được, máy khác chỉ làm video; khoá phiên bản + kiem-may.sh · ←1
 - [co-so-tri-thuc/bo-nho/co-so-tri-thuc-quy-uoc-dat-ten.md](bo-nho/co-so-tri-thuc-quy-uoc-dat-ten.md) — Mọi tên file, thư mục, skill, ghi nhớ đi từ thuật ngữ kinh doanh tiếng Anh chuẩn, dịch đúng nghĩa sang tiếng Việt không dấu; tra bảng thuật ngữ · ←5
 - [co-so-tri-thuc/bo-nho/luu-tru/co-so-tri-thuc-kho-bo-nao.md](bo-nho/luu-tru/co-so-tri-thuc-kho-bo-nao.md) — Repo riêng tư Covandieuhanh/bo-nao-david là bộ não dùng chung cho mọi AI; bản trên máy ở ~/Documents/bo-nao-david; "cập nhật não" = chạy tu-dong-hoa/dong-bo.sh --push · ←1
 - [co-so-tri-thuc/bo-nho/luu-tru/thiet-bi-don-documents-2026-11-07.md](bo-nho/luu-tru/thiet-bi-don-documents-2026-11-07.md) — Ngày 07/11/2026 dọn ~/Documents, chỉ còn David.Claude + Obsidian + mk.csv; App notion đã bỏ, mở phiên ở ~/Documents/David.Claude · ←1
@@ -297,6 +298,7 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [tu-dong-hoa/lich/loi-giao/lich-dang-tuan.md](../tu-dong-hoa/lich/loi-giao/lich-dang-tuan.md) — Giữ luôn đủ 30 ngày bài viết Facebook cá nhân (4 bài/tuần: CN, T3, T5, T6) có ảnh trên trang localhost:8765/bai-dang, làm ảnh bằng ChatGPT khi không có ảnh của David, bù kho bài nền đủ 8, báo David một tin Telegram kèm link, đặt nhắc 19:45. · ←0
 - [tu-dong-hoa/lich/loi-giao/thu-mo-phien.md](../tu-dong-hoa/lich/loi-giao/thu-mo-phien.md) — Lời giao thử của thu-mo-phien.sh: mở một phiên lịch y hệt thật để chắc không kẹt hộp hỏi. Không nằm trong lịch. · ←0
 - [tu-dong-hoa/lich/loi-giao/tong-hop-tin-nhan.md](../tu-dong-hoa/lich/loi-giao/tong-hop-tin-nhan.md) — Đọc Zalo, Messenger, Telegram của David, tổng hợp việc cần làm và gửi về bot Telegram Sổ nhớ. · ←1
+- [tu-dong-hoa/may-khac/README.md](../tu-dong-hoa/may-khac/README.md) — Máy khác dựng video giống Mac chính (Windows qua WSL2, Mac khác): khoá phiên bản công cụ, cài một lệnh, máy tự kiểm so với bản chuẩn của Mac. · ←3
 - [tu-dong-hoa/so-tay/README.md](../tu-dong-hoa/so-tay/README.md) — Bot Sổ nhớ trên Telegram: David nhắn điều cần nhớ, phiên Claude trên Mac ghi vào sổ tay; cài đặt, cách chạy. · ←4
 - [tu-dong-hoa/so-tay/quy-tac-bot.md](../tu-dong-hoa/so-tay/quy-tac-bot.md) — Luật bot Sổ nhớ Telegram (chép thành CLAUDE.md của bot): ghi gì, trả lời thế nào, tin nhắn tổng hợp. · ←2
 - [tu-dong-hoa/trinh-xem-tai-lieu/README.md](../tu-dong-hoa/trinh-xem-tai-lieu/README.md) — App Mở Tài Liệu trên macOS: xem, xem bản in (từng trang như khi in), sửa trực tiếp docx, md, txt, csv; không cần Office. · ←1

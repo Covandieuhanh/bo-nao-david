@@ -19,7 +19,7 @@ MODE = sys.argv[2] if len(sys.argv) > 2 else 'plan'
 W, H = 1080, 1920
 TARGET, CHIN_MAX, TOP_MIN, MAX_Y, MAX_S = 800, 1240, 230, 400, 1.25
 SKILL = Path(__file__).resolve().parent.parent
-BIN = Path.home() / '.cache/dung-video-theo-phong-cach/khuon-mat'
+BIN = SKILL / 'scripts/do-mat.sh'   # Vision trên Mac, YuNet + MediaPipe ở máy khác (cùng định dạng)
 ENV = {**os.environ, 'PATH': '/opt/homebrew/bin:' + os.environ.get('PATH', '')}
 
 
@@ -27,14 +27,11 @@ def detect(video, out):
     """Mặt 2 khung/giây → out (list theo khung, mỗi khung list {x,y,w,h} chuẩn hoá, gốc trên-trái). Có rồi thì dùng lại."""
     if out.exists() and out.stat().st_mtime >= video.stat().st_mtime:
         return json.loads(out.read_text())
-    if not BIN.exists() or (SKILL / 'scripts/nhan-dien-khuon-mat.swift').stat().st_mtime > BIN.stat().st_mtime:
-        BIN.parent.mkdir(parents=True, exist_ok=True)
-        subprocess.run(['swiftc', '-O', str(SKILL / 'scripts/nhan-dien-khuon-mat.swift'), '-o', str(BIN)], check=True, env=ENV)
     d = out.with_suffix('')
     subprocess.run(['rm', '-rf', str(d)], check=True); d.mkdir(parents=True)
     subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', str(video), '-vf', 'fps=2,scale=360:-2', '-q:v', '5',
                     str(d / 'f_%05d.jpg')], check=True, env=ENV)
-    subprocess.run([str(BIN), str(d), str(out)], check=True, env=ENV)
+    subprocess.run(['zsh', str(BIN), str(d), str(out)], check=True, env=ENV)
     subprocess.run(['rm', '-rf', str(d)], check=True)
     return json.loads(out.read_text())
 

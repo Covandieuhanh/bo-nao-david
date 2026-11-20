@@ -3,7 +3,7 @@
 #   --card:   thêm màn hình 5 s tu-lieu/nguon-anh.png ở cuối video (chỉ khi người dùng yêu cầu; cần Pillow → không -I)
 import json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from _chung import load, safe_zone
+from _chung import load, safe_zone, font_he_thong
 
 P = os.path.expanduser(sys.argv[1])
 d_ = load(P); W, H = d_["out"]["width"], d_["out"]["height"]   # khung xuất
@@ -21,8 +21,7 @@ if "--card" not in sys.argv:
     print(txt, len(rows), "ảnh (dán vào mô tả bài đăng)"); sys.exit()
 from PIL import Image, ImageDraw, ImageFont
 Z = safe_zone(W, H)
-F = "/System/Library/Fonts/Supplemental/"
-title_f = ImageFont.truetype(F + "Arial Bold.ttf", round(W * 0.05))
+title_f = ImageFont.truetype(font_he_thong(), round(W * 0.05))
 size = round(W * 0.023)
 img = Image.new("RGB", (W, H), (13, 13, 16))
 d = ImageDraw.Draw(img)
@@ -46,7 +45,7 @@ def lines_for(f):
     return out
 
 while True:   # thu nhỏ chữ tới khi vừa vùng an toàn
-    f = ImageFont.truetype(F + "Arial Unicode.ttf", size)
+    f = ImageFont.truetype(font_he_thong(unicode=True), size)
     blocks = lines_for(f)
     need = sum(len(b) for b in blocks) * size * 1.32 + len(blocks) * size * 0.55
     if Z["top"] + title_f.size * 2 + need < Z["bottom"] - size * 2 or size <= 14: break

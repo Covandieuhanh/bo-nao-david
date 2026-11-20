@@ -6,12 +6,12 @@
     "render-all": "node xuat-video.mjs"
   },
   "dependencies": {
-    "@fontsource/barlow-condensed": "^5.3.0",
-    "@fontsource/be-vietnam-pro": "^5.3.0",
-    "@remotion/cli": "^4.0.539",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "remotion": "^4.0.539"
+    "@fontsource/barlow-condensed": "5.3.0",
+    "@fontsource/be-vietnam-pro": "5.3.0",
+    "@remotion/cli": "4.0.545",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.545"
   },
   "allowScripts": {
     "esbuild": true

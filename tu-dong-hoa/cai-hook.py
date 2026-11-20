@@ -5,30 +5,37 @@
 - PreToolUse: cổng duyệt việc rủi ro cho phiên việc toàn quyền (tu-dong-hoa/so-tay/cong-duyet.py)
 - SessionEnd (thứ hai): ghi tín hiệu tự học (tu-dong-hoa/hoc-lien-tuc/ghi-tin-hieu.py)
 - PermissionRequest: duyệt từ xa qua Telegram khi David vắng (tu-dong-hoa/so-tay/duyet-tu-xa.py)
-Chạy lại nhiều lần không bị trùng. Dùng: python3 -I tu-dong-hoa/cai-hook.py <đường dẫn repo>"""
+Chạy lại nhiều lần không bị trùng. Dùng: python3 -I tu-dong-hoa/cai-hook.py <đường dẫn repo> [--chi-video]"""
 import json, os, sys
 repo = os.path.abspath(sys.argv[1])
 p = os.path.expanduser("~/.claude/settings.json")
 cfg = json.load(open(p)) if os.path.exists(p) else {}
 hooks = cfg.setdefault("hooks", {})
 can = {
-    "SessionStart": (f'bash "{repo}/tu-dong-hoa/dong-bo.sh" --keo >/dev/null 2>&1 || true', '/tu-dong-hoa/dong-bo.sh" --keo'),
+    # chỉ dòng cảnh báo (⛔ xung đột, ⚠ mất mạng) lọt vào phiên để Claude báo David; còn lại im lặng
+    "SessionStart": (f'bash "{repo}/tu-dong-hoa/dong-bo.sh" --keo 2>&1 | grep -E "⛔|⚠" ; true', '/tu-dong-hoa/dong-bo.sh" --keo'),
     "SessionEnd": (f'bash "{repo}/tu-dong-hoa/dong-bo-hook.sh"', '/tu-dong-hoa/dong-bo-hook.sh"'),
 }
-# Duyệt từ xa qua Telegram (bot Sổ nhớ): David vắng thì yêu cầu duyệt và câu hỏi chuyển lên Telegram, chờ tối đa 30 phút.
-can["PermissionRequest"] = (f'python3 -I "{repo}/tu-dong-hoa/so-tay/duyet-tu-xa.py"', '/tu-dong-hoa/so-tay/duyet-tu-xa.py"')
-# Hộp thư phiên: lời David gửi qua bot Telegram cho một phiên đang mở, đưa vào sau mỗi bước (PostToolUse) hoặc khi xong lượt (Stop).
-can["PostToolUse"] = (f'python3 -I "{repo}/tu-dong-hoa/so-tay/hop-thu-phien.py"', '/tu-dong-hoa/so-tay/hop-thu-phien.py"')
-can["Stop"] = (f'python3 -I "{repo}/tu-dong-hoa/so-tay/hop-thu-phien.py"', '/tu-dong-hoa/so-tay/hop-thu-phien.py"')
-# Cổng duyệt cho phiên việc toàn quyền giao qua Telegram (chỉ bật khi TELEGRAM_VIEC=1): việc rủi ro hỏi David qua Telegram.
-can["PreToolUse"] = (f'python3 -I "{repo}/tu-dong-hoa/so-tay/cong-duyet.py"', '/tu-dong-hoa/so-tay/cong-duyet.py"')
+# Máy chỉ dựng video (--chi-video: Windows/WSL2, Mac khác; David 20/11/2026): chỉ đồng bộ + tự học, bỏ hook Telegram
+# (bot, lịch tự chạy chỉ ở Mac chính).
+CHI_VIDEO = "--chi-video" in sys.argv
+if not CHI_VIDEO:
+    # Duyệt từ xa qua Telegram (bot Sổ nhớ): David vắng thì yêu cầu duyệt và câu hỏi chuyển lên Telegram, chờ tối đa 30 phút.
+    can["PermissionRequest"] = (f'python3 -I "{repo}/tu-dong-hoa/so-tay/duyet-tu-xa.py"', '/tu-dong-hoa/so-tay/duyet-tu-xa.py"')
+    # Hộp thư phiên: lời David gửi qua bot Telegram cho một phiên đang mở, đưa vào sau mỗi bước (PostToolUse) hoặc khi xong lượt (Stop).
+    can["PostToolUse"] = (f'python3 -I "{repo}/tu-dong-hoa/so-tay/hop-thu-phien.py"', '/tu-dong-hoa/so-tay/hop-thu-phien.py"')
+    can["Stop"] = (f'python3 -I "{repo}/tu-dong-hoa/so-tay/hop-thu-phien.py"', '/tu-dong-hoa/so-tay/hop-thu-phien.py"')
+    # Cổng duyệt cho phiên việc toàn quyền giao qua Telegram (chỉ bật khi TELEGRAM_VIEC=1): việc rủi ro hỏi David qua Telegram.
+    can["PreToolUse"] = (f'python3 -I "{repo}/tu-dong-hoa/so-tay/cong-duyet.py"', '/tu-dong-hoa/so-tay/cong-duyet.py"')
 # Tự học: cuối phiên ghi tín hiệu (lời David sửa, skill dùng, lỗi) cho skill hoc-lien-tuc, không gọi AI.
 can["SessionEnd#hoc-lien-tuc"] = (f'python3 -I "{repo}/tu-dong-hoa/hoc-lien-tuc/ghi-tin-hieu.py"', '/tu-dong-hoa/hoc-lien-tuc/ghi-tin-hieu.py"')
 cho = {"PermissionRequest": 1800, "PreToolUse": 1800}
 for khoa, (cmd, dau) in can.items():
     su_kien = khoa.split("#")[0]
     ds = hooks.setdefault(su_kien, [])
-    if not any(dau in h.get("command", "") for g in ds for h in g.get("hooks", [])):
+    co = [h for g in ds for h in g.get("hooks", []) if dau in h.get("command", "")]
+    for h in co: h["command"] = cmd          # đã có thì cập nhật lệnh theo bản mới
+    if not co:
         g = {"hooks": [{"type": "command", "command": cmd, "timeout": cho.get(su_kien, 30)}]}
         if su_kien in ("PermissionRequest", "PostToolUse", "PreToolUse"): g["matcher"] = "*"
         ds.append(g)
@@ -38,8 +45,9 @@ cfg.setdefault("env", {})["CLAUDE_AUTOCOMPACT_PCT_OVERRIDE"] = "60"
 print("Tự tóm tắt hội thoại ở 60 % cửa sổ")
 # Tắt tự cập nhật Claude Code: mỗi bản mới là một file mới nên macOS hỏi lại quyền thư mục Tài liệu, làm kẹt việc tự chạy.
 # Cập nhật tay mỗi sáng thứ 6 trong lịch dong-goi-tuan (David 17/11/2026)
-cfg["env"]["DISABLE_AUTOUPDATER"] = "1"
-print("Tắt tự cập nhật Claude Code (cập nhật thứ 6 trong lịch dong-goi-tuan)")
+if not CHI_VIDEO:   # máy chỉ dựng video không có lịch thứ 6 → để Claude Code tự cập nhật
+    cfg["env"]["DISABLE_AUTOUPDATER"] = "1"
+    print("Tắt tự cập nhật Claude Code (cập nhật thứ 6 trong lịch dong-goi-tuan)")
 # Mọi phiên mở ra đều bật Remote Control để hiện trong app Claude (điện thoại, claude.ai/code) cho David theo dõi (David 14/11/2026)
 cfg["remoteControlAtStartup"] = True
 print("Mọi phiên tự bật Remote Control (hiện trong app)")

@@ -1,5 +1,5 @@
 ---
-description: "Hướng dẫn cài đặt bộ não lên máy mới / nơi khác từ GitHub: lệnh cài, lối tắt, bot, lịch, cái gì không lên GitHub."
+description: "Hướng dẫn cài đặt bộ não lên máy mới / nơi khác từ GitHub: Mac chính, Mac khác và Windows chỉ dựng video (khoá phiên bản, máy tự kiểm), lối tắt, bot, lịch, cái gì không lên GitHub."
 ---
 
 # Dùng bộ não ở nơi khác
@@ -31,7 +31,7 @@ Trên Mac chính, skill, hồ sơ, luật và bộ nhớ trong `~/.claude` là l
 
 **Phòng khi máy này hỏng:** repo này giữ não và skill; Drive `thanh-pham` giữ thành phẩm; Drive `sao-luu-claude-2026-11-07/du-an-video` giữ âm thanh gốc và kịch bản từng dự án (bỏ `node_modules` và file render, dựng lại được). Giải nén vào `~/Movies`, chạy `npm install` trong `chuyen-dong/`, rồi render lại. File `.env` của App notion, `~/Documents/mk.csv`, hồ sơ đăng nhập Chrome và lịch sử chat chỉ có trên máy này, cố ý không đưa lên mạng.
 
-## 2. Claude Code trên máy mới (Mac)
+## 2. Claude Code trên máy Mac mới
 
 ```bash
 brew install gh && gh auth login
@@ -49,25 +49,89 @@ bash ~/Documents/bo-nao-david/tu-dong-hoa/cai-dat-bo-nao.sh ~/Documents/bo-nao-d
 
 Bộ nhớ của Claude Code gắn theo thư mục dự án. Tham số cuối là thư mục bạn sẽ mở Claude Code (mặc định là chính repo). Muốn dùng ở thư mục khác thì chạy lại với thư mục đó.
 
+**Mac chỉ dựng video** (không phải Mac chính): thêm `--chi-video` vào lệnh cài ở trên. Máy đó vẫn đồng bộ 2 chiều nhưng không cài bot Telegram, không cài lịch tự chạy. Rồi cài công cụ dựng đúng phiên bản và để máy tự kiểm:
+
+```bash
+bash ~/Documents/bo-nao-david/tu-dong-hoa/may-khac/cai-cong-cu-video.sh
+```
+
+```bash
+zsh ~/Documents/bo-nao-david/tu-dong-hoa/may-khac/kiem-may.sh
+```
+
 Đồng bộ tay bất cứ lúc nào:
 
 ```bash
 bash ~/Documents/bo-nao-david/tu-dong-hoa/dong-bo.sh
 ```
 
-## 3. AI khác hoặc Claude bản web
+## 3. Máy Windows (chỉ dựng video)
+
+Windows chạy skill qua **WSL2**, tức một Ubuntu chạy bên trong Windows. Nhờ vậy dùng nguyên script của Mac, chỉ giữ một bộ skill. Máy nào cũng đẩy được lên GitHub vì đăng nhập đúng tài khoản David. Bot Telegram, lịch tự chạy, trang xem kết quả, đăng bài chỉ ở Mac chính. Chi tiết cái gì giống hệt, cái gì gần giống: [tu-dong-hoa/may-khac/README.md](tu-dong-hoa/may-khac/README.md).
+
+**Một lần trên Windows** (David tự làm):
+
+1. Mở PowerShell bằng quyền quản trị (chuột phải → Run as administrator), chạy `wsl --install -d Ubuntu-24.04`, khởi động lại máy. Mở "Ubuntu" từ menu Start, đặt tên và mật khẩu cho Ubuntu.
+2. Cài **Google Drive cho máy tính** (bản Windows), đăng nhập tài khoản của David. Drive hiện thành một ổ đĩa (thường là G:), Ubuntu đọc ở `/mnt/g/My Drive`.
+
+**Trong cửa sổ Ubuntu**, chạy lần lượt:
+
+```bash
+sudo apt update && sudo apt install -y git gh
+```
+
+```bash
+gh auth login && gh auth setup-git
+```
+
+```bash
+git config --global user.name "David Trần" && git config --global user.email "<email GitHub của David>"
+```
+
+```bash
+gh repo clone Covandieuhanh/bo-nao-david ~/Documents/bo-nao-david
+```
+
+```bash
+bash ~/Documents/bo-nao-david/tu-dong-hoa/cai-dat-bo-nao.sh ~/Documents/bo-nao-david
+```
+
+```bash
+bash ~/Documents/bo-nao-david/tu-dong-hoa/may-khac/cai-cong-cu-video.sh
+```
+
+```bash
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+```bash
+zsh ~/Documents/bo-nao-david/tu-dong-hoa/may-khac/kiem-may.sh
+```
+
+- `cai-dat-bo-nao.sh` thấy máy không phải Mac thì tự cài kiểu "chỉ dựng video".
+- `cai-cong-cu-video.sh` cài đúng phiên bản Mac đang dùng: ffmpeg, whisper.cpp kèm mô hình 1,5 GB, Node, pyannote, công cụ dò mặt. Script hỏi mật khẩu Ubuntu một lần. Script cũng in các bước để David tự lấy mã Hugging Face cho phần tách người nói podcast (một lần).
+- `kiem-may.sh` dựng thử 20 giây bằng đúng script của skill rồi so với bản chuẩn của Mac. Bộ thử nằm trên Drive `tu-lieu-goc/_bo-thu-may/`. Kết quả phải là **"MÁY NÀY DỰNG GIỐNG MAC CHÍNH"**.
+
+**Dùng hằng ngày:** mở Ubuntu, `cd ~/Documents/bo-nao-david && claude`, rồi làm như trên Mac: gửi video, gọi skill.
+- Video gốc trên Drive đọc thẳng ở `/mnt/g/My Drive/...`.
+- Dự án dựng nằm ở `~/Movies` của Ubuntu. Mở bằng Windows Explorer: gõ `explorer.exe ~/Movies` trong Ubuntu, hoặc vào `\\wsl$\Ubuntu-24.04\home\<tên>\Movies`.
+- Thành phẩm lên Drive bằng `cho-dang.sh gui` / `luu-drive.sh` như trên Mac. Khác Mac ở một điểm: máy chép lên và so khớp, nhưng không tự xoá bản trên máy. Khi biểu tượng Drive báo tải xong, David xoá tay.
+- Máy có card NVIDIA cài CUDA trong WSL thì Whisper chạy nhanh hơn nhiều (script tự dùng). Không có thì chạy bằng CPU: chậm hơn Mac nhưng ra cùng kết quả.
+
+## 4. AI khác hoặc Claude bản web
 
 - Có kết nối GitHub: cấp quyền cho repo `Covandieuhanh/bo-nao-david`, rồi dán câu mở đầu trong `README.md`.
 - Không có kết nối GitHub: tải ZIP của repo, hoặc tải riêng `AGENTS.md`, `co-so-tri-thuc/david.md`, `bao-cao-trang-thai.md`, `ky-nang/thu-thap-yeu-cau/SKILL.md`.
 - AI bản web không chạy được lệnh trên máy: làm được phần lọc, kế hoạch, viết bài; không dựng được video.
 
-## 4. Những thứ repo không mang theo được
+## 5. Những thứ repo không mang theo được
 
 | Thứ cần có | Cách lấy lại |
 |---|---|
-| Công cụ dựng video | Chạy `zsh ~/.claude/skills/san-xuat-video/dung-video-theo-phong-cach/scripts/kiem-moi-truong.sh`, nó in lệnh cài từng thứ còn thiếu (ffmpeg, whisper.cpp, Node, Pillow) |
-| Mô hình Whisper (1,5 GB) | Lệnh tải do `kiem-moi-truong.sh` in ra, lưu ở `~/whisper-models` |
-| `~/.cache/dung-video-theo-phong-cach` (font, dò mặt, môi trường Python, 92 MB) | Các script dựng dùng thư mục này. Chép từ máy cũ cho chắc, hoặc để script báo thiếu rồi cài lại |
+| Công cụ dựng video, đúng phiên bản Mac | `bash tu-dong-hoa/may-khac/cai-cong-cu-video.sh` (ffmpeg, whisper.cpp, Node, Pillow, pyannote, dò mặt; bản khoá ở `tu-dong-hoa/may-khac/phien-ban.env`). Kiểm nhanh: `kiem-moi-truong.sh` của skill; so kết quả với Mac: `kiem-may.sh` |
+| Mô hình Whisper (1,5 GB) | `cai-cong-cu-video.sh` tải về `~/whisper-models` và kiểm mã |
+| `~/.cache/dung-video-theo-phong-cach` (dò mặt, môi trường Python) | `cai-cong-cu-video.sh` tạo lại; trên Mac, Vision tự dựng lại khi dùng lần đầu |
+| Mô hình tách người nói pyannote (~31 MB) | Cần tài khoản Hugging Face. `cai-cong-cu-video.sh` in các bước David tự làm một lần (đồng ý điều khoản, dán mã đọc); chưa có thì podcast nhiều người đoán người nói theo giọng |
 | Bot Telegram Sổ nhớ (chạy 24/7) | Cài plugin Telegram (cai-dat-bo-nao.sh đã cài), dán token bot vào `~/.claude/channels/so-tay/.env` (David giữ token, không lên GitHub), rồi `bash tu-dong-hoa/so-tay/cai-dat.sh`: chép luật + quyền bot, cài launchd `com.david.so-tay`. Nghe tin thoại dùng chung mô hình Whisper ở dòng trên |
 | Bộ não công ty Veltrix (riêng, private) | `git clone https://github.com/Covandieuhanh/veltrix.git ~/Documents/bo-nao-veltrix`. Phiên lịch tự thêm thư mục này (`chay-lich.sh --add-dir`) để ghi nhật ký điều hành; đẩy bằng `bash ~/Documents/bo-nao-veltrix/dong-bo.sh` |
 | Trang xem kết quả video + trang bài đăng + trang kiểm video trên Mac (`localhost:8765`, `/bai-dang`, `/mac`, tự bật khi mở máy) | `bash tu-dong-hoa/cai-trang-xem.sh`: cài launchd `com.david.xem-ket-qua` chạy `tu-dong-hoa/xem-ket-qua.py`; bài, ảnh đọc từ `~/Documents/1-nghe-nghiep/bai-dang/` (không lên GitHub) |
@@ -79,6 +143,6 @@ bash ~/Documents/bo-nao-david/tu-dong-hoa/dong-bo.sh
 | Trình duyệt và kết nối của Claude | Bật lại trong ứng dụng Claude |
 | Video gốc, thành phẩm, kịch bản, bài đăng từng dự án | Ở Drive và `~/Movies` của máy làm, không nằm trong repo. Repo chỉ ghi trạng thái ở `bao-cao-trang-thai.md` và `du-an/danh-muc-noi-dung.md` |
 
-## 5. Sau khi cài, kiểm tra nhanh
+## 6. Sau khi cài, kiểm tra nhanh
 
 Mở Claude Code và nói: "Tôi là ai, và bạn phải làm gì trước khi tạo một file mới?" Câu trả lời đúng phải nói được David là nhà đào tạo cho người lần đầu dẫn người, và phải hỏi rồi chờ "ok".

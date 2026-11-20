@@ -9,14 +9,12 @@
 setopt nullglob
 V=$1 TAP=${2:t}
 [ -n "$V" ] && [ -n "$TAP" ] || { echo "cách dùng: cho-dang.sh lay|gui|xong <tập>"; exit 2; }
-G="$HOME/Library/CloudStorage/GoogleDrive-covandieuhanh@gmail.com/Drive của tôi"
-[ -d "$G" ] || { echo "✗ Google Drive chưa mở"; exit 1; }
+source ${0:A:h}/drive-chung.sh || exit 1   # $G, da_len (Mac và Windows/WSL2)
+tim_drive || { echo "✗ Google Drive chưa mở"; exit 1; }
 TP="$G/thanh-pham/$TAP" CD="$HOME/Movies/cho-dang/$TAP"
-BIN=~/.cache/dung-video-theo-phong-cach/drive; SC=${0:A:h}; mkdir -p $BIN
-[ $BIN/kiem-tai-len-drive -nt $SC/kiem-tai-len-drive.swift ] || swiftc -O $SC/kiem-tai-len-drive.swift -o $BIN/kiem-tai-len-drive || exit 1
 EX=(--exclude .DS_Store --exclude da-dang.txt)
 khop() { [ -z "$(rsync -a --dry-run -i $EX "$1/" "$2/" | grep -v '^\.d')" ]; }   # mọi file nguồn đã có y hệt ở đích
-cho_len() { for i in {1..480}; do o=$($BIN/kiem-tai-len-drive "$1"); [[ $o == *"chua_len=0 "* ]] && return 0; sleep 15; done; echo "✗ quá 2 giờ chưa lên mây ($o)"; return 1; }
+cho_len() { for i in {1..480}; do o=$(da_len "$1"); [[ $o == *"chua_len=0 "* ]] && return 0; sleep 15; done; echo "✗ quá 2 giờ chưa lên mây ($o)"; return 1; }
 case $V in
   lay)
     [ -d "$TP" ] || { echo "✗ không có $TP"; exit 1; }
@@ -32,6 +30,7 @@ case $V in
     rsync -a $EX "$CD/" "$TP/" || exit 1; cho_len "$TP" || exit 1   # thiếu gì trên Drive thì bổ sung trước
     khop "$CD" "$TP" || { echo "✗ Drive chưa khớp, giữ bản Mac"; exit 1; }
     date "+đã đăng %d/%m/%Y %H:%M" > "$TP/da-dang.txt"
+    [ $DRIVE_KIEM_DUOC = 1 ] || { echo "✓ $TAP: đã ghi da-dang.txt. Máy này không hỏi được Drive → giữ bản trên máy; Drive báo xong thì xoá tay: rm -rf \"$CD\""; exit 0; }
     rm -rf "${CD:?}"; rmdir "$HOME/Movies/cho-dang" 2>/dev/null
     echo "✓ $TAP: đã đăng, bản cuối vẫn ở Drive thanh-pham/$TAP, đã xoá trên Mac";;
   *) echo "cách dùng: cho-dang.sh lay|gui|xong <tập>"; exit 2;;

@@ -20,16 +20,25 @@ kiem_loi_tat() {
   return 0
 }
 
+# Nhiều máy cùng đẩy (Mac + các máy dựng video, 20/11/2026): kéo về trước, git tự gộp khi hai máy sửa khác chỗ.
+# Hai máy sửa trùng một dòng → huỷ lần gộp (repo về nguyên trạng, không mất bản nào), ghi sổ XUNG_DOT; đầu phiên sau Claude thấy và báo David.
+XUNG_DOT="$HOME/.claude/logs/xung-dot-nao.txt"
 keo() {
   git fetch -q origin || { echo "⚠ Không kết nối được GitHub, bỏ qua bước kéo."; return 0; }
   if ! git pull -q --rebase --autostash origin main; then
-    echo "⛔ Kéo về bị xung đột. Repo đang dừng giữa chừng: xem 'git status', sửa xong chạy 'git rebase --continue' (hoặc 'git rebase --abort' để quay lại)."
+    local tep; tep=$(git diff --name-only --diff-filter=U 2>/dev/null | tr '\n' ' ')
+    git rebase --abort >/dev/null 2>&1
+    mkdir -p "$(dirname "$XUNG_DOT")"
+    echo "$(date '+%F %H:%M') máy $(hostname -s 2>/dev/null || hostname) và GitHub cùng sửa trùng chỗ: ${tep:-(không rõ file)}. Bản trên máy vẫn giữ nguyên, chưa đẩy." >> "$XUNG_DOT"
+    echo "⛔ Xung đột khi kéo về (hai máy sửa trùng chỗ): ${tep:-xem git status}. Đã huỷ gộp, repo giữ nguyên bản trên máy. Nhờ Claude gộp tay rồi chạy lại dong-bo.sh."
     exit 1
   fi
+  rm -f "$XUNG_DOT"
 }
 
 case "$CHE_DO" in
   --keo)
+    [ -s "$XUNG_DOT" ] && { echo "⛔ Lần đồng bộ trước bị xung đột, bộ não máy này CHƯA lên GitHub:"; cat "$XUNG_DOT"; }
     keo; kiem_loi_tat; echo "Đã kéo bản mới nhất từ GitHub." ;;
   --push|--day|*)
     kiem_loi_tat

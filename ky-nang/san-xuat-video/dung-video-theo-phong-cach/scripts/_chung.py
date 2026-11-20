@@ -50,3 +50,15 @@ def safe_zone(w, h):
     if h > w:
         return dict(left=70, right=w - 180, top=210, bottom=h - 500)
     return dict(left=round(w * .05), right=round(w * .95), top=round(h * .05), bottom=round(h * .85))
+
+def font_he_thong(dam=True, unicode=False):
+    """Font Arial của máy (Pillow): Mac → Windows (WSL2 đọc C:\\Windows\\Fonts) → Linux (ttf-mscorefonts) → DejaVu (báo lệch)."""
+    mac = "/System/Library/Fonts/Supplemental/" + ("Arial Unicode.ttf" if unicode else "Arial Bold.ttf" if dam else "Arial.ttf")
+    ds = [mac, "/mnt/c/Windows/Fonts/" + ("arialbd.ttf" if dam and not unicode else "arial.ttf"),
+          "/usr/share/fonts/truetype/msttcorefonts/" + ("Arial_Bold.ttf" if dam and not unicode else "Arial.ttf"),
+          "/usr/share/fonts/truetype/dejavu/" + ("DejaVuSans-Bold.ttf" if dam and not unicode else "DejaVuSans.ttf")]
+    for p in ds:
+        if os.path.exists(p):
+            if "dejavu" in p: print("⚠ Máy này không có Arial → dùng DejaVu, chữ sẽ khác bản Mac (cài: sudo apt install ttf-mscorefonts-installer)")
+            return p
+    raise FileNotFoundError("không tìm thấy font Arial / DejaVu")

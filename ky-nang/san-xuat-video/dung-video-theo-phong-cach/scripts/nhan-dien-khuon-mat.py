@@ -3,12 +3,15 @@
 Mỗi khung: [{x, y, w, h (0–1, gốc trên-trái), m (độ mở miệng / chiều cao mặt)}].
 Hai bước: (1) YuNet (OpenCV) tìm khung mặt, bắt được cả mặt nhỏ trong khung 360 px; (2) MediaPipe Face Landmarker đọc viền môi
 trên phần mặt đã phóng to → độ mở miệng. Mô hình ở ~/.cache/dung-video-theo-phong-cach/ (cai-cong-cu-video.sh tải).
-Khung mặt quy đổi theo thước của Vision bằng he-so-mat.json (đo trên Mac bằng cùng bộ khung: tu-dong-hoa/may-khac/do-he-so-mat.py)
+Khung mặt quy đổi theo thước của Vision bằng he-so-mat.json (đo trên Mac bằng cùng bộ khung: do-he-so-mat.py cạnh file này)
 để bố cục tránh mặt ra giống máy Mac. Gọi qua do-mat.sh (tự chọn Vision trên Mac, file này ở máy khác)."""
 import json, os, sys
 
 import cv2
-import mediapipe as mp
+try:
+    import mediapipe as mp          # đo độ mở miệng; máy Windows / Linux chip ARM chưa có bản MediaPipe → chỉ dò khung mặt (m = 0)
+except ImportError:
+    mp = None
 
 CACHE = os.path.expanduser("~/.cache/dung-video-theo-phong-cach")
 YUNET = os.path.join(CACHE, "face_detection_yunet_2023mar.onnx")
@@ -42,10 +45,13 @@ def mo_mieng(lm, img, x, y, w, h):
 
 def main(d, out):
     files = sorted(f for f in os.listdir(d) if f.endswith(".jpg"))
-    opts = mp.tasks.vision.FaceLandmarkerOptions(base_options=mp.tasks.BaseOptions(model_asset_path=LANDMARK), num_faces=1)
     det = None
     res = []
-    with mp.tasks.vision.FaceLandmarker.create_from_options(opts) as lm:
+    if mp is None:
+        print("⚠ thiếu MediaPipe: chỉ dò khung mặt, không đo độ mở miệng (đoán người nói kém hơn)", file=sys.stderr)
+    lm = mp.tasks.vision.FaceLandmarker.create_from_options(mp.tasks.vision.FaceLandmarkerOptions(
+        base_options=mp.tasks.BaseOptions(model_asset_path=LANDMARK), num_faces=1)) if mp else None
+    try:
         for f in files:
             img = cv2.imread(os.path.join(d, f))
             H, W = img.shape[:2]
@@ -59,9 +65,11 @@ def main(d, out):
                 x, y, w, h = [float(v) / PHONG for v in row[:4]]
                 cx, cy = x + w / 2 + HE_SO["cx"] * w, y + h / 2 + HE_SO["cy"] * h
                 ww, hh = w * HE_SO["sw"], h * HE_SO["sh"]
-                m = mo_mieng(lm, img, x, y, w, h) * HE_SO["m"]
+                m = mo_mieng(lm, img, x, y, w, h) * HE_SO["m"] if lm else 0.0
                 faces.append({"x": (cx - ww / 2) / W, "y": (cy - hh / 2) / H, "w": ww / W, "h": hh / H, "m": m})
             res.append(faces)
+    finally:
+        if lm: lm.close()
     json.dump(res, open(out, "w"))
     print(f"{len(files)} khung")
 

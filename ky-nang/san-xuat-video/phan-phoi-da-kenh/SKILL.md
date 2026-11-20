@@ -37,6 +37,7 @@ Bước đánh dấu *(bước nhẹ)*: nhắc đổi mô hình rẻ hơn theo `
 - Chung (tiết kiệm, lệnh nền, báo cáo): `chuan-muc-lam-viec.md`. Video (nhạc, chữ nguyên văn, video dài không cắt, ảnh chỉ Việt Nam): `quy-tac-chung.md`; hình của chính video: khối 14.
 - Luật an toàn khi đăng (mật khẩu, cài đặt tài khoản, chỉ đăng đúng bản David bảo đăng): khối 19.
 - **Sổ danh mục là nơi duy nhất ghi trạng thái** (lọc → dựng → xong → đã đăng + link).
+- **Máy chỉ dựng video** (`~/.claude/vai-may` ghi `chi-video`: Windows qua WSL2, Mac khác; David 20/11/2026): bước 0–6 làm y như Mac chính. Giao bằng Drive (`cho-dang.sh gui`), không có trang xem kết quả. Bước 7 (đăng) chỉ làm ở Mac chính: báo David mở Mac chính và nói "đăng". Video gốc trên Drive đọc ở `/mnt/<ổ>/My Drive/...`.
 - Báo cuối gọn: ở đâu (trang xem kết quả + Drive), đã chọn X vì Y, tên riêng cần xác nhận, cảnh báo (lệch nhánh, thiếu bài Mời, kho < 4 video, lịch trống).
 
 ## Xong khi

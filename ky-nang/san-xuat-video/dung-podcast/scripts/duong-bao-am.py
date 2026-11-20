@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Sóng âm: duong-bao-am.py <dự án> → chuyen-dong/src/duong-bao-am.js {fps, v: [0–1 mỗi khung]} (độ lớn tiếng theo khung video, đã làm mượt)."""
 import json, os, subprocess, sys
+import shutil
+FF = "/opt/homebrew/bin/ffmpeg" if os.path.exists("/opt/homebrew/bin/ffmpeg") else shutil.which("ffmpeg")   # Mac: Homebrew; máy khác: ffmpeg trong PATH
 import numpy as np
 P = os.path.expanduser(sys.argv[1]); FPS = 30; SR = 48000
-raw = subprocess.run(["/opt/homebrew/bin/ffmpeg", "-v", "error", "-i", os.path.join(P, "tu-lieu/am-thanh.wav"), "-ac", "1", "-ar", str(SR),
+raw = subprocess.run([FF, "-v", "error", "-i", os.path.join(P, "tu-lieu/am-thanh.wav"), "-ac", "1", "-ar", str(SR),
                       "-f", "f32le", "-"], capture_output=True, check=True).stdout
 x = np.frombuffer(raw, np.float32); n = SR // FPS
 k = len(x) // n
