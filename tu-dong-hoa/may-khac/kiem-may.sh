@@ -88,7 +88,7 @@ fi
 
 # ---------- 3. So với bản chuẩn Mac ----------
 print "\n== 3. So với bản chuẩn Mac chính"
-dong "$(python3 -I "$HERE/so-sanh.py" loi "$BO_THU/chuan/ban-chep-loi.srt" "$M/ban-chep-loi.srt")"
+[ -s "$M/ban-chep-loi.srt" ] && dong "$(python3 -I "$HERE/so-sanh.py" loi "$BO_THU/chuan/ban-chep-loi.srt" "$M/ban-chep-loi.srt")" || dong "LỆCH chép lời: không có kết quả"
 [ -s "$P/kiem-tra/mat/khuon-mat.json" ] && dong "$(python3 -I "$HERE/so-sanh.py" mat "$BO_THU/chuan/khuon-mat.json" "$P/kiem-tra/mat/khuon-mat.json")" || dong "LỆCH dò mặt: không có kết quả"
 for c in $CHUP; do
   [ -f "$P/kiem-tra/chuyen-dong/$c.png" ] && dong "$(python3 -I "$HERE/so-sanh.py" hinh "$BO_THU/chuan/$c.png" "$P/kiem-tra/chuyen-dong/$c.png")" || dong "LỆCH thiếu khung $c"

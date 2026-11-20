@@ -24,7 +24,7 @@ Vì sao tách theo **cách dùng**, không theo ba hướng nghề: ba hướng 
 
 ## Đường tin đi
 
-- `so-tay/bao-cao.sh` mặc định gửi qua bot Điều hành; `--so-nho` gửi qua Sổ nhớ (nhắc giờ ⏰ của máy canh, tin 📬 của `tong-hop-tin-nhan`). `--nut '<json>'` kèm nút bấm. Chưa có token Điều hành thì mọi tin đi qua Sổ nhớ như trước, không nút.
+- `so-tay/bao-cao.sh` mặc định gửi qua bot Điều hành; `--so-nho` gửi qua Sổ nhớ (nhắc giờ ⏰ của máy canh, tin 📬 của `tong-hop-tin-nhan`). `--nut '<json>'` kèm nút bấm. Chưa có token Điều hành, hoặc bot Điều hành chưa nhắn được (David chưa bấm Start, lỗi 400/401/403/404), thì tin đi qua Sổ nhớ, không nút. Tin duyệt không vào hàng chờ gửi lại (hết hạn thì gửi muộn chỉ gây nhầm).
 - `so-tay/duyet-tu-xa.py` (hook xin phép) gửi 🔐 ❓ kèm nút, chờ file `.trang-thai/duyet/<mã>.tra`; bot ghi file đó khi David bấm hay trả lời.
 - Máy canh (`so-tay/canh-bot.sh`) xem nhịp `.trang-thai/dieu-hanh-nhip`: quá 10 phút thì khởi động lại bot, vẫn hỏng thì báo David qua Sổ nhớ (3 giờ một lần).
 

@@ -99,7 +99,8 @@ Lời Claude vừa nói trong phiên: {boi_canh[-1000:]}"""
 def gui(tin, nut=None):
     """Gửi qua bot Điều hành (bao-cao.sh mặc định); nut = inline_keyboard, bot Điều hành nhận bấm nút và ghi <mã>.tra."""
     lenh = ["bash", os.path.join(GOC, "bao-cao.sh"), "--chi-gui"] + (["--nut", json.dumps(nut, ensure_ascii=False)] if nut else []) + [tin]
-    r = subprocess.run(lenh, capture_output=True, text=True, timeout=40)
+    # Không vào hàng chờ gửi lại: yêu cầu duyệt hết hạn thì tin gửi muộn chỉ gây nhầm.
+    r = subprocess.run(lenh, capture_output=True, text=True, timeout=60, env={**os.environ, "BAO_CAO_KHONG_CHO": "1"})
     return r.returncode == 0
 
 

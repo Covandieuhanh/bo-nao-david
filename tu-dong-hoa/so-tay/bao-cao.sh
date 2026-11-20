@@ -64,6 +64,14 @@ for LAN in 1 2 3; do
   KQ=$(curl -s -m 20 "https://api.telegram.org/bot$TOKEN/sendMessage" \
     --data-urlencode "chat_id=$CHAT" --data-urlencode "text=$TIN" "${THEM[@]}")
   echo "$KQ" | grep -q '"ok":true' && { echo "Đã báo David qua Telegram"; exit 0; }
+  # Bot Điều hành chưa nhắn được cho David (chưa bấm Start, bị chặn, token sai): chuyển qua bot Sổ nhớ ngay, không nút.
+  if [ "$BOT" = "dieu-hanh" ] && echo "$KQ" | grep -qE '"error_code":(400|401|403|404)'; then
+    TK2=$(sed -n 's/^TELEGRAM_BOT_TOKEN=//p' "$KENH/.env" 2>/dev/null)
+    if [ -n "$TK2" ] && [ "$TK2" != "$TOKEN" ]; then
+      echo "Bot Điều hành lỗi ($(echo "$KQ" | sed -n 's/.*"description":"\([^"]*\)".*/\1/p')), chuyển qua Sổ nhớ"
+      TOKEN="$TK2"; THEM=(); BOT="so-nho"; continue
+    fi
+  fi
   [ "$LAN" -lt 3 ] && sleep 5
 done
 if [ "${BAO_CAO_KHONG_CHO:-0}" != 1 ]; then
