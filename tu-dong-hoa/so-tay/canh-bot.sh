@@ -58,6 +58,7 @@ da_nhan() { # $1 nội dung, $2 khoá: tin thẻ máy đã vào lịch sử phi�
 xoa_cho() { [ -f "$TT/cho-bot" ] && { grep -vF -- "$1" "$TT/cho-bot" > "$TT/cho-bot.tmp"; mv "$TT/cho-bot.tmp" "$TT/cho-bot"; }; }
 man_hinh() { rm -f "$TT/man-hinh.txt"; screen -S "$(sid)" -p 0 -X hardcopy "$TT/man-hinh.txt" 2>/dev/null; sleep 1; LC_ALL=C tr -d '\000' < "$TT/man-hinh.txt" 2>/dev/null; }
 gui_thang() { BAO_CAO_KHONG_CHO=1 bash "$GOC/bao-cao.sh" --chi-gui "$1" >/dev/null 2>&1; } # gửi David, không qua Claude (lỗi thì vòng sau tự thử lại, không vào hàng chờ)
+gui_nhac() { BAO_CAO_KHONG_CHO=1 bash "$GOC/bao-cao.sh" --chi-gui --so-nho "$1" >/dev/null 2>&1; } # nhắc giờ: qua bot Sổ nhớ (cảnh báo máy, 📶 qua bot Điều hành)
 tre_nhan() { # $1 "YYYY-MM-DD HH:MM" giờ hẹn: trễ quá 60 phút thì in nhãn trễ
   local t=$(date -j -f "%Y-%m-%d %H:%M" "$1" +%s 2>/dev/null || echo "$BAY")
   [ $(( BAY - t )) -gt 3600 ] && echo " (trễ, hẹn ${1:11:5} ${1:8:2}/${1:5:2} — Mac ngủ hoặc mất mạng)"; }
@@ -211,7 +212,7 @@ while true; do
   grep -E '^- [0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2} · ' "$DATA/nhac-viec.md" 2>/dev/null | grep -vE '· \((đã|da) ' | while IFS= read -r dong; do
     LUC="${dong:2:16}"
     if [[ ! "$LUC" > "$BAY_GIO" ]] && [[ ! "$LUC" < "$TU" ]] && ! grep -qF -- "- $LUC · " "$TT/da-nhac" 2>/dev/null; then
-      gui_thang "⏰ Nhắc: ${dong:21}$(tre_nhan "$LUC")" && echo "$dong" >> "$TT/da-nhac" && ghi "nhac $LUC"
+      gui_nhac "⏰ Nhắc: ${dong:21}$(tre_nhan "$LUC")" && echo "$dong" >> "$TT/da-nhac" && ghi "nhac $LUC"
     fi
   done
   # Nhắc lặp: "- mỗi ngày / mỗi thứ 2, thứ 5 / mỗi ngày 15 HH:MM · nội dung" (nhac-lap.py tính lần tới giờ).
@@ -242,7 +243,7 @@ while true; do
       ghi "bot khong nhan nhac lap ${khoa:0:16} (lan $LAN, tre ${TRE}s), gui thang"; xoa_cho "$khoa"
       nd="${nd#*] }"
     fi
-    gui_thang "⏰ Nhắc: ${nd//$'\x1f'/$'\n'}$(tre_nhan "${khoa:0:16}")" && echo "$khoa" >> "$TT/da-nhac-lap" && ghi "nhac lap ${khoa:0:16}"
+    gui_nhac "⏰ Nhắc: ${nd//$'\x1f'/$'\n'}$(tre_nhan "${khoa:0:16}")" && echo "$khoa" >> "$TT/da-nhac-lap" && ghi "nhac lap ${khoa:0:16}"
   done
   [ -f "$TT/da-nhac-lap" ] && tail -500 "$TT/da-nhac-lap" > "$TT/da-nhac-lap.tmp" && mv "$TT/da-nhac-lap.tmp" "$TT/da-nhac-lap"
 
@@ -363,8 +364,8 @@ $(echo "$KQ" | tail -12 | cut -c1-120)"; fi ) &
   # Hàng chờ gửi lại: tin bao-cao.sh gửi hỏng (mất mạng) được gửi lại khi có mạng, kèm giờ gốc.
   if [ "$MANG" = 1 ]; then
     for f in $(ls "$TT/hang-cho-gui/"*.txt 2>/dev/null | sort); do
-      LUC0=$(head -1 "$f"); NOI=$(tail -n +2 "$f")
-      if BAO_CAO_KHONG_CHO=1 bash "$GOC/bao-cao.sh" --chi-gui "↻ Gửi lại tin lúc ${LUC0:11:5} ${LUC0:8:2}/${LUC0:5:2} (lúc đó mất mạng):
+      LUC0=$(head -1 "$f"); NOI=$(tail -n +2 "$f"); SN=""; [[ "$f" == *.so-nho.txt ]] && SN="--so-nho"
+      if BAO_CAO_KHONG_CHO=1 bash "$GOC/bao-cao.sh" --chi-gui $SN "↻ Gửi lại tin lúc ${LUC0:11:5} ${LUC0:8:2}/${LUC0:5:2} (lúc đó mất mạng):
 $NOI" >/dev/null 2>&1; then
         rm -f "$f"; ghi "gui lai tin $LUC0"; echo "$LUC0" >> "$TT/gui-lai-lan-nay"
       else break; fi
@@ -386,6 +387,20 @@ Anh nhắn gì trong lúc đó mà chưa thấy em trả lời thì nhắn lại
     if gui_thang "$TIN"; then
       ghi "bao David co mang lai (bu: ${BU:-0}; gui lai: ${GL:-0})"; rm -f "$TT/vua-noi-lai" "$TT/vua-noi-lai-luc" "$TT/bu-lan-nay" "$TT/gui-lai-lan-nay" "$TT/da-go-sau-mat-mang"
     fi
+  fi
+
+  # Bot Điều hành (tu-dong-hoa/dieu-hanh/bot.py, launchd com.david.dieu-hanh giữ sống): đã có token mà quá 10 phút không có nhịp thì khởi động lại, vẫn không được thì báo qua Sổ nhớ.
+  if [ -s "$HOME/.claude/channels/dieu-hanh/.env" ] && [ "$SAN_SANG" = 1 ]; then
+    NH=$(( BAY - $(cat "$TT/dieu-hanh-nhip" 2>/dev/null || echo 0) ))
+    if [ "$NH" -gt 600 ]; then
+      if [ ! -f "$TT/dieu-hanh-da-khoi-dong" ]; then
+        launchctl kickstart -k "gui/$(id -u)/com.david.dieu-hanh" 2>/dev/null; touch "$TT/dieu-hanh-da-khoi-dong"; ghi "bot dieu hanh mat nhip ${NH}s, khoi dong lai"
+      else
+        if [ $(( BAY - $(cat "$TT/bao-dieu-hanh" 2>/dev/null || echo 0) )) -ge 10800 ]; then
+          gui_nhac "⚠️ Máy Mac: bot Điều hành không nhận lệnh (mất nhịp ${NH}s): nút duyệt và giao việc ở đó tạm không chạy, anh nhắn việc ở đây em vẫn giao được. Xem $TT/dieu-hanh.log, cài lại: bash tu-dong-hoa/dieu-hanh/cai-dat.sh" && date +%s > "$TT/bao-dieu-hanh" && ghi "canh bao dieu-hanh"
+        fi
+      fi
+    else rm -f "$TT/dieu-hanh-da-khoi-dong"; fi
   fi
 
   # Nhịp sống cho lệnh kiểm tra sức khoẻ.

@@ -58,6 +58,7 @@ Gốc: [bản đồ bộ não](README.md).
 ## Bot, lịch, công cụ trên máy
 - [so-tay](../tu-dong-hoa/so-tay/README.md) — Bot Sổ nhớ trên Telegram: David nhắn điều cần nhớ, phiên Claude trên Mac ghi vào sổ tay; cài đặt, cách chạy.
 - [quy-tac-bot](../tu-dong-hoa/so-tay/quy-tac-bot.md) — Luật bot Sổ nhớ (chép thành CLAUDE.md của bot).
+- [dieu-hanh](../tu-dong-hoa/dieu-hanh/README.md) — Bot Điều hành trên Telegram: giao việc, nhắn tiếp #N, đóng phiên, duyệt 🔐 ❓ bằng nút, báo cáo và cảnh báo máy; script, không tốn token (tách khỏi Sổ nhớ 20/11).
 - [lich-chay](../tu-dong-hoa/lich/lich-chay.md) — Lịch việc tự chạy trên Mac: giờ chạy, tên việc, lời giao; máy canh bot đọc mỗi phút.
 - [tong-hop-tin-nhan](../tu-dong-hoa/lich/loi-giao/tong-hop-tin-nhan.md) — Đọc Zalo, Messenger, Telegram của David, tổng hợp việc cần làm và gửi về bot Telegram Sổ nhớ.
 - [trinh-xem-tai-lieu](../tu-dong-hoa/trinh-xem-tai-lieu/README.md) — App Mở Tài Liệu trên macOS: xem docx, xlsx, pptx, pdf… không cần Office.

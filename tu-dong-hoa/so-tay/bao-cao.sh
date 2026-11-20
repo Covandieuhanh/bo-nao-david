@@ -6,11 +6,16 @@
 # Gửi hỏng (mất mạng…) sau 3 lần thử: tin vào hàng chờ .trang-thai/hang-cho-gui/, canh-bot gửi lại khi có mạng (kèm giờ gốc).
 # BAO_CAO_KHONG_CHO=1: không đưa vào hàng chờ (canh-bot tự thử lại nhắc giờ, và khi gửi lại từ hàng chờ).
 # --anh <file>: gửi kèm một ảnh (gửi ảnh trước, tin chữ ngay sau) — lịch đăng bài dùng để David chép bài + ảnh đi đăng.
-GHI=1; ANH=""
+# Hai bot (20/11): mặc định gửi qua bot Điều hành (báo cáo phiên, duyệt, cảnh báo máy); --so-nho gửi qua bot Sổ nhớ
+#   (nhắc giờ, tin nhắn tổng hợp 📬 — tin David trả lời trong Sổ nhớ). Chưa cài bot Điều hành thì mọi tin qua Sổ nhớ như cũ.
+# --nut '<json inline_keyboard>': kèm nút bấm (duyet-tu-xa.py). Tin "#N ✅ … Đóng phiên #N" tự có nút [Đóng phiên #N].
+GHI=1; ANH=""; BOT="dieu-hanh"; NUT=""
 while [ $# -gt 0 ]; do
   case "$1" in
     --chi-gui) GHI=0; shift ;;
     --anh) ANH="$2"; shift 2 ;;
+    --so-nho) BOT="so-nho"; shift ;;
+    --nut) NUT="$2"; shift 2 ;;
     *) break ;;
   esac
 done
@@ -37,9 +42,15 @@ if [ "${BOT_CHINH:-$(cat "$HOME/Documents/2-ca-nhan/so-tay/.trang-thai/bot-chinh
   TOKEN=$(sed -n 's/^TELEGRAM_BOT_TOKEN=//p' "$HOME/.hermes/.env" 2>/dev/null | tr -d '"'"'")
   CHAT=$(sed -n 's/^TELEGRAM_ALLOWED_USERS=//p' "$HOME/.hermes/.env" 2>/dev/null | tr -d '"'"'" | cut -d, -f1 | tr -d ' ')
 else
-  TOKEN=$(sed -n 's/^TELEGRAM_BOT_TOKEN=//p' "$KENH/.env" 2>/dev/null)
+  TOKEN=""
+  [ "$BOT" = "dieu-hanh" ] && TOKEN=$(sed -n 's/^TELEGRAM_BOT_TOKEN=//p' "$HOME/.claude/channels/dieu-hanh/.env" 2>/dev/null)
+  [ -z "$TOKEN" ] && { TOKEN=$(sed -n 's/^TELEGRAM_BOT_TOKEN=//p' "$KENH/.env" 2>/dev/null); NUT=""; }  # Sổ nhớ không xử lý nút bấm
   CHAT=$(python3 -c "import json;print(json.load(open('$KENH/access.json'))['allowFrom'][0])" 2>/dev/null)
 fi
+if [ -z "$NUT" ] && [ "$BOT" = "dieu-hanh" ] && [[ "$TIN" =~ ^#([0-9]+)[[:space:]]*✅ ]] && [[ "$TIN" == *"Đóng phiên"* ]]; then
+  NUT='[[{"text":"Đóng phiên #'"${BASH_REMATCH[1]}"'","callback_data":"dong|'"${BASH_REMATCH[1]}"'"}]]'
+fi
+[ -n "$NUT" ] && [ -n "$(sed -n 's/^TELEGRAM_BOT_TOKEN=//p' "$HOME/.claude/channels/dieu-hanh/.env" 2>/dev/null)" ] || NUT=""
 if [ -z "$TOKEN" ] || [ -z "$CHAT" ]; then echo "Chưa cài bot gửi tin: chỉ ghi vào sổ"; exit 0; fi
 
 if [ -n "$ANH" ]; then
@@ -48,15 +59,17 @@ if [ -n "$ANH" ]; then
       || echo "Gửi ảnh lỗi: $ANH"
   else echo "Không thấy ảnh: $ANH"; fi
 fi
+THEM=(); [ -n "$NUT" ] && THEM=(--data-urlencode "reply_markup={\"inline_keyboard\":$NUT}")
 for LAN in 1 2 3; do
   KQ=$(curl -s -m 20 "https://api.telegram.org/bot$TOKEN/sendMessage" \
-    --data-urlencode "chat_id=$CHAT" --data-urlencode "text=$TIN")
+    --data-urlencode "chat_id=$CHAT" --data-urlencode "text=$TIN" "${THEM[@]}")
   echo "$KQ" | grep -q '"ok":true' && { echo "Đã báo David qua Telegram"; exit 0; }
   [ "$LAN" -lt 3 ] && sleep 5
 done
 if [ "${BAO_CAO_KHONG_CHO:-0}" != 1 ]; then
   CHO="$HOME/Documents/2-ca-nhan/so-tay/.trang-thai/hang-cho-gui"; mkdir -p "$CHO"
-  printf '%s\n%s' "$LUC" "$TIN" > "$CHO/$(date +%s)-$$.txt"
+  DUOI=""; [ "$BOT" = "so-nho" ] && DUOI=".so-nho"
+  printf '%s\n%s' "$LUC" "$TIN" > "$CHO/$(date +%s)-$$$DUOI.txt"
   echo "Gửi Telegram lỗi: đã vào hàng chờ, có mạng máy tự gửi lại"; exit 1
 fi
 echo "Gửi Telegram lỗi"; exit 1

@@ -27,3 +27,7 @@ Nhà của luật: `tu-dong-hoa/so-tay/cong-duyet.py` (mẫu có `!` = hỏi) + 
   phiên cứ xong hoàn chỉnh rồi, hỏi xác nhận tôi nếu xong rồi thì có thể đóng phiên cho đỡ nhiều. vì cái gì cũng lưu vào file ở máy rồi nên
   không lo" → Remote Control mọi phiên, hỏi đóng phiên.
 - 14/11/2026 (việc #22): phiên việc trình 4 phần trước khi tự chạy ([[quy-tac-duyet-ke-hoach-4-phan]]).
+- 20/11/2026: "tôi cảm giác là hiện tại đang bị gộp quá nhiều tính năng trên 1 con bot telegram… mỗi bot telegram làm một việc để dễ
+  quản lý và tương tác hơn" → David duyệt tách hai bot theo cách dùng: Sổ nhớ (đời sống) và Điều hành (phiên Claude, duyệt bằng nút,
+  báo cáo, cảnh báo máy; script, không tốn token). Không chia theo ba hướng nghề: bot là cửa tương tác, không phải kho nội dung. Nhà
+  của luật: `tu-dong-hoa/dieu-hanh/README.md`.

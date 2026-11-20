@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Hook PermissionRequest cho mọi phiên Claude Code trên Mac: David vắng thì gửi yêu cầu duyệt (hoặc câu hỏi nhiều lựa chọn)
-lên Telegram qua bot chính (Hermes hoặc Sổ nhớ, theo .trang-thai/bot-chinh), chờ David trả lời qua bot, rồi trả quyết định cho phiên.
+lên Telegram qua bot Điều hành (tu-dong-hoa/dieu-hanh/bot.py, có nút bấm; chưa cài thì bot Sổ nhớ), chờ David trả lời, rồi trả quyết định cho phiên.
 - David "vắng" khi: .trang-thai/vang ghi "1" (David nhắn bot "tôi đi vắng"; "tôi về" thì bot ghi "0"), hoặc Mac không có thao tác chuột/phím ≥ 120 giây.
 - David đang ngồi máy, hoặc không trả lời trong 30 phút: không quyết, hộp thoại hiện trên máy như thường.
 - Bot ghi câu trả lời vào .trang-thai/duyet/<mã>.tra: "ok" · "khong" · hoặc chữ trả lời câu hỏi.
@@ -94,30 +94,12 @@ Lời Claude vừa nói trong phiên: {boi_canh[-1000:]}"""
     return du_phong
 
 
-def bot_chinh():
-    """"hermes" khi .trang-thai/bot-chinh ghi vậy (Hermes nhận trả lời: đọc duyet/<mã>.json, ghi <mã>.tra); không thì "so-tay"."""
-    try:
-        return open(os.path.join(TT, "bot-chinh")).read().strip() or "so-tay"
-    except Exception:
-        return "so-tay"
 
 
-def bao_bot(chu):
-    """Gõ một dòng vào phiên bot (screen so-tay) để bot biết đang có yêu cầu chờ. Hermes tự xem thư mục duyet/ nên không cần."""
-    if bot_chinh() == "hermes":
-        return
-    try:
-        man = subprocess.run(["screen", "-ls"], capture_output=True, text=True, timeout=5).stdout
-        sid = next((w for w in man.split() if w.endswith(".so-nho")), None)
-        if sid:
-            subprocess.run(["screen", "-S", sid, "-p", "0", "-X", "stuff", chu], timeout=5); time.sleep(1)
-            subprocess.run(["screen", "-S", sid, "-p", "0", "-X", "stuff", "\r"], timeout=5)
-    except Exception:
-        pass
-
-
-def gui(tin):
-    r = subprocess.run(["bash", os.path.join(GOC, "bao-cao.sh"), "--chi-gui", tin], capture_output=True, text=True, timeout=40)
+def gui(tin, nut=None):
+    """Gửi qua bot Điều hành (bao-cao.sh mặc định); nut = inline_keyboard, bot Điều hành nhận bấm nút và ghi <mã>.tra."""
+    lenh = ["bash", os.path.join(GOC, "bao-cao.sh"), "--chi-gui"] + (["--nut", json.dumps(nut, ensure_ascii=False)] if nut else []) + [tin]
+    r = subprocess.run(lenh, capture_output=True, text=True, timeout=40)
     return r.returncode == 0
 
 
@@ -148,6 +130,9 @@ def hoi_david(v, ly_do="", het_gio_ve_may=True):
             dong.append(f"\nAnh trả lời bằng số lựa chọn (ví dụ: 1), hoặc viết ý của anh.")
         dong.append(f"(Mã yêu cầu: {ma}, chỉ cần ghi khi có nhiều yêu cầu cùng lúc)")
         tin = "\n".join(dong)
+        nut = None
+        if len(cau) == 1 and cau[0].get("options"):
+            nut = [[{"text": f"{j}. {o.get('label', '')}"[:60], "callback_data": f"d|{ma}|{j}"}] for j, o in enumerate(cau[0]["options"], 1)]
     else:
         if cong_cu == "Bash":
             chi_tiet = vao.get("command", "")
@@ -160,15 +145,14 @@ def hoi_david(v, ly_do="", het_gio_ve_may=True):
             giai_thich += f"\nVì sao phải hỏi: {ly_do}"
         tin = (f"🔐 Claude cần anh cho phép (phiên: {phien})\n\n{giai_thich}\n\n"
                f"Chi tiết kỹ thuật: {cong_cu} · {chi_tiet[:300]}\n\n"
-               f"Anh trả lời \"đồng ý\" hoặc \"không\" (kèm lý do nếu muốn).\n(Mã yêu cầu: {ma}, chỉ cần ghi khi có nhiều yêu cầu cùng lúc)")
+               f"Anh bấm nút, hoặc trả lời tin này \"không\" kèm lý do.\n(Mã yêu cầu: {ma}, chỉ cần ghi khi có nhiều yêu cầu cùng lúc)")
+        nut = [[{"text": "✅ Đồng ý", "callback_data": f"d|{ma}|ok"}, {"text": "❌ Từ chối", "callback_data": f"d|{ma}|khong"}]]
 
     json.dump({"ma": ma, "luc": time.strftime("%Y-%m-%d %H:%M"), "phien": phien, "cong_cu": cong_cu, "tin": tin},
               open(os.path.join(HANG, ma + ".json"), "w"), ensure_ascii=False)
-    if not gui(tin):
+    if not gui(tin, nut):
         os.remove(os.path.join(HANG, ma + ".json"))
         return None
-    bao_bot(f"[CHO-DUYET] Máy vừa gửi David yêu cầu {ma} ({'câu hỏi' if cong_cu == 'AskUserQuestion' else 'xin phép'}, phiên: {phien}). "
-            f"Tin tiếp theo của David nhiều khả năng là câu trả lời: làm theo mục Duyệt từ xa. Không gửi gì cho David lúc này.")
 
     tra_file = os.path.join(HANG, ma + ".tra")
     het = time.time() + CHO_TOI_DA
@@ -220,7 +204,6 @@ def main():
             p = phan[i] if i < len(phan) else phan[-1]
             opts = q.get("options", [])
             tl[q.get("question", "")] = opts[int(p) - 1]["label"] if p.isdigit() and 0 < int(p) <= len(opts) else p
-        gui("Đã chuyển câu trả lời của anh cho Claude.")
         ra("allow", dau_vao={**vao, "answers": tl})
     if dong_y(tra):
         ra("allow")

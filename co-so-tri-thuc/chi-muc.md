@@ -292,6 +292,7 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 
 ## tu-dong-hoa
 
+- [tu-dong-hoa/dieu-hanh/README.md](../tu-dong-hoa/dieu-hanh/README.md) — Bot Điều hành trên Telegram: trạm điều khiển các phiên Claude trên Mac (giao việc, nhắn tiếp #N, đóng phiên, duyệt 🔐 ❓ bằng nút bấm, báo cáo, cảnh báo máy); chạy bằng script, không tốn token; cài đặt, cách dùng. · ←3
 - [tu-dong-hoa/lich/lich-chay.md](../tu-dong-hoa/lich/lich-chay.md) — Lịch việc tự chạy trên Mac: giờ chạy, tên việc, lời giao; máy canh bot đọc mỗi phút. · ←1
 - [tu-dong-hoa/lich/loi-giao/dong-goi-tuan.md](../tu-dong-hoa/lich/loi-giao/dong-goi-tuan.md) — Đóng nguyên liệu tuần thành sản phẩm bán được và gói đào tạo (skill san-pham-hoa, Việc 2). · ←1
 - [tu-dong-hoa/lich/loi-giao/gom-phan-loai-dem.md](../tu-dong-hoa/lich/loi-giao/gom-phan-loai-dem.md) — Gom phần mới ở mọi nguồn của David và phân loại theo ba hướng nghề (skill san-pham-hoa, Việc 1). · ←1
@@ -299,6 +300,6 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [tu-dong-hoa/lich/loi-giao/thu-mo-phien.md](../tu-dong-hoa/lich/loi-giao/thu-mo-phien.md) — Lời giao thử của thu-mo-phien.sh: mở một phiên lịch y hệt thật để chắc không kẹt hộp hỏi. Không nằm trong lịch. · ←0
 - [tu-dong-hoa/lich/loi-giao/tong-hop-tin-nhan.md](../tu-dong-hoa/lich/loi-giao/tong-hop-tin-nhan.md) — Đọc Zalo, Messenger, Telegram của David, tổng hợp việc cần làm và gửi về bot Telegram Sổ nhớ. · ←1
 - [tu-dong-hoa/may-khac/README.md](../tu-dong-hoa/may-khac/README.md) — Máy khác dựng video giống Mac chính (Windows qua WSL2, Mac khác): khoá phiên bản công cụ, cài một lệnh, máy tự kiểm so với bản chuẩn của Mac. · ←3
-- [tu-dong-hoa/so-tay/README.md](../tu-dong-hoa/so-tay/README.md) — Bot Sổ nhớ trên Telegram: David nhắn điều cần nhớ, phiên Claude trên Mac ghi vào sổ tay; cài đặt, cách chạy. · ←4
+- [tu-dong-hoa/so-tay/README.md](../tu-dong-hoa/so-tay/README.md) — Bot Sổ nhớ trên Telegram: David nhắn điều cần nhớ, phiên Claude trên Mac ghi vào sổ tay; cài đặt, cách chạy. · ←5
 - [tu-dong-hoa/so-tay/quy-tac-bot.md](../tu-dong-hoa/so-tay/quy-tac-bot.md) — Luật bot Sổ nhớ Telegram (chép thành CLAUDE.md của bot): ghi gì, trả lời thế nào, tin nhắn tổng hợp. · ←2
 - [tu-dong-hoa/trinh-xem-tai-lieu/README.md](../tu-dong-hoa/trinh-xem-tai-lieu/README.md) — App Mở Tài Liệu trên macOS: xem, xem bản in (từng trang như khi in), sửa trực tiếp docx, md, txt, csv; không cần Office. · ←1

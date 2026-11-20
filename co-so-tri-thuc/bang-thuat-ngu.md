@@ -10,6 +10,7 @@ tiếng Anh chuẩn → dùng đúng cột "Tên dùng"; chưa có thì thêm m�
 
 | Tiếng Anh | Tiếng Việt | Tên dùng |
 |---|---|---|
+| Operations | Điều hành | `dieu-hanh` |
 | Knowledge Base | Cơ sở tri thức | `co-so-tri-thuc` |
 | Memory | Bộ nhớ | `bo-nho` |
 | Projects | Dự án | `du-an` |

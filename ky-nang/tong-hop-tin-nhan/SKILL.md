@@ -58,7 +58,7 @@ Kết quả bị cắt thì in theo từng đoạn (`.slice(20)`…). `navigate`
    - **Chống trùng:** trước khi ghi, đọc mọi dòng của người đó. Cùng ý với dòng David tự ghi (dòng không có `(từ tin …)`) → **không ghi**, đưa vào mục "Trùng" của bản tổng hợp kèm ngày dòng cũ. Cùng ý với dòng máy đã ghi hôm trước → bỏ qua, không báo. Chỉ ghi điều mới hoặc đổi (hẹn dời, giá đổi → ghi dòng mới nói rõ "dời từ …").
    - Không ghi: lời chào, sticker, chuyện vặt, quảng cáo, cuộc trong mục "Bỏ qua" của `ghi-chu.md`, số điện thoại / số tài khoản / địa chỉ nhà / OTP / mật khẩu.
    - Chỉ thêm dòng; không sửa, không xoá dòng có sẵn.
-6. Gửi bản gọn về bot: `bash tu-dong-hoa/so-tay/bao-cao.sh --chi-gui "<tin>"` (chạy ở thư mục bộ não). Tin ≤ 3.500 ký tự, chữ thường không markdown.
+6. Gửi bản gọn về bot Sổ nhớ (David trả lời "1 xong", gộp người… ở đó): `bash tu-dong-hoa/so-tay/bao-cao.sh --chi-gui --so-nho "<tin>"` (chạy ở thư mục bộ não). Tin ≤ 3.500 ký tự, chữ thường không markdown.
 7. Báo cuối phiên một dòng: số cuộc đã đọc, số việc, số dòng ghi danh bạ / số trùng, gửi bot được hay lỗi.
 
 ## Khuôn file
