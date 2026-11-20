@@ -31,8 +31,11 @@ Cách cài từng máy: [huong-dan-cai-dat.md](../../huong-dan-cai-dat.md) mục
 | Mac chính, so với bản chuẩn của chính nó | Đạt hết: chép lời 100%, mặt 100%, khung hình SSIM 1,0000 |
 | Ubuntu 24.04 chip ARM (máy ảo trên Mac) | Cài từ đầu không lỗi; **"MÁY NÀY DỰNG GIỐNG MAC CHÍNH"**: chép lời 97,6%, mặt 89% (độ trùng 0,79), khung hình SSIM 0,996–0,9998 |
 | Ubuntu 24.04 x86 như máy Windows (giả lập trên Mac) | Cài từ đầu không lỗi, có MediaPipe; dò mặt 89%. Whisper và Remotion chậm hoặc sập do giả lập chip, không phải do skill; máy Windows thật không chạy giả lập |
+| Máy Windows thật (Windows 11, WSL2 Ubuntu 24.04, card NVIDIA RTX 5060), 20/11/2026 | Cài từ đầu không lỗi; **"MÁY NÀY DỰNG GIỐNG MAC CHÍNH"**: chép lời 100% (87/87 chữ), mặt 89% (độ trùng 0,79), khung hình SSIM 0,9957–0,9998. Whisper dựng kèm CUDA: chép 20 s mất 5 s (CPU 35 s) |
 
-Chưa thử: máy Windows thật qua WSL2. Lần đầu cài, chạy `kiem-may.sh` để xác nhận.
+Máy mới: lần đầu cài, chạy `kiem-may.sh` để xác nhận.
+
+**Card NVIDIA trên Windows (WSL2):** `cai-cong-cu-video.sh` chỉ dựng whisper kèm CUDA khi có `nvcc`. Card đời mới (RTX 50) cần CUDA ≥ 12.8; gói `nvidia-cuda-toolkit` của Ubuntu là 12.0 nên không dùng được. Cài 3 gói từ kho NVIDIA `wsl-ubuntu` (bản đầy đủ `cuda-toolkit` tải rất chậm): `sudo apt-get install -y --no-install-recommends cuda-nvcc-12-9 cuda-cudart-dev-12-9 libcublas-dev-12-9`, thêm `/usr/local/cuda-12.9/bin` vào PATH, xoá `~/.local/bin/whisper-cli` rồi chạy lại `cai-cong-cu-video.sh` (RTX 50: `CUDAARCHS=120`).
 
 ## Việc của Mac chính
 
