@@ -38,7 +38,7 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 - [Chỉ hình của chính video](video-chi-hinh-cua-chinh-video.md) — Ảnh bìa, thumbnail chỉ lấy từ chính video đó; bìa podcast chỉ tiếng thì không mặt người, khớp nội dung (05/11, 06/11; gộp 15/11)
 - [Ảnh minh hoạ chỉ Việt Nam](video-anh-viet-nam.md) — nhiều ảnh thật hơn, chỉ chụp tại Việt Nam, người Việt; không có thì biểu tượng vẽ (13/11)
 - [Chữ trên màn hình nguyên văn](video-chu-nguyen-van.md) — Mọi chữ trên video là nguyên văn lời David và chỉ cho nội dung: không thẻ tít tự rút ý, màn chốt không tự viết, không số chạy, không nhãn kỹ thuật ×1,6 / slow-mo (07/11; gộp 15/11)
-- [Chuyển video qua Drive](video-chuyen-qua-drive.md) — ~/Movies xếp theo tập; Drive covandieuhanh chỉ giữ bộ não, video gốc, thành quả video; Mac chỉ giữ việc đang làm (07/11, 08/11, 11/11; gộp 15/11)
+- [Chuyển video qua Drive](video-chuyen-qua-drive.md) — ~/Movies xếp theo tập; Drive covandieuhanh chỉ giữ bộ não, video gốc, thành quả video; Mac chỉ giữ việc đang làm + bản cuối chưa đăng ở ~/Movies/cho-dang (07/11, 11/11, 20/11)
 - [Clip ngắn đứng độc lập](video-clip-ngan-dung-doc-lap.md) — bốn câu bối cảnh, ý trọn, mang về, chừa lại; không số cố định (06/11, 07/11)
 - [Video dài không cắt](video-dai-khong-cat.md) — để nguyên cả lặng và ờ ừm; cắt chỉ khi trích video ngắn (05/11)
 - [Khuôn podcast dọc đồ hoạ](video-doc-khuon-chu-chinh.md) — chữ chính thay phụ đề, không màn hình cuối; 3 clip Đi trainer là mẫu (06/11, sửa 10/11)

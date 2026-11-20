@@ -35,7 +35,7 @@ Luật chung video ở `../quy-tac-chung.md` (chữ nguyên văn, không cắt v
 - **Thanh thời gian** ở đáy vùng an toàn (đã chạy · "còn m:ss") suốt video, trên mọi cảnh — trừ podcast dọc trích ngắn: không thanh, không thẻ cuối (`thu-vien-tai-nguyen/nhan-dien-chung.md` mục 1).
 - **Màn chốt** `cta` cuối video: ô câu chốt giữa sân khấu = **nguyên văn câu David nói cuối tập** (quy-tac-chung 1). "Vấn đề / Kết quả"
   chỉ ở bài đăng; "gỡ" chỉ lên video khi David nói trong tập.
-- Không làm bản cho app chỉnh sửa (CapCut/DaVinci); dọn file tạm rồi đưa tập lên Drive sau khi David chốt (`don-tap.py` → `luu-drive.sh`, khối 17).
+- Không làm bản cho app chỉnh sửa (CapCut/DaVinci); sau khi David chốt: bản cuối vào `~/Movies/cho-dang/<tập>/` + `cho-dang.sh gui`, dọn file tạm rồi đưa dự án lên Drive (`don-tap.py` → `luu-drive.sh`, khối 17).
 - **Học nhịp từ 50 video Hieu Nguyen** (`references/hoc-tu-hieu-nguyen-50.md` — học nhịp & cách trình bày; lời là của David, không
   thêm/khuôn lời):
   - **Mật độ hình:** hình phủ **khoảng 30% thời lượng** (`phu_hinh_muc_tieu`), không cố định: đoạn khó hiểu hoặc quan trọng dày

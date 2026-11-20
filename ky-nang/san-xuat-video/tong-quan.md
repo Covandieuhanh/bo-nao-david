@@ -21,7 +21,7 @@ Mọi thứ của một tập nằm chung `~/Movies/tap-<tên>/` (xem `dung-vide
 `2-ban-day-du/video-hoan-chinh.mp4`, highlight: chọn câu ở `3-doan-noi-bat/`, bản cuối mỗi clip ở `3-doan-noi-bat/clip-A/`, `clip-B/`…; vlog ở
 `~/Movies/vlog/<tên>/`. Bản dài và highlight của cùng tập phải dùng **cùng một `<tên>`**. Tiêu đề + thumbnail ở `phat-hanh/` của dự
 án. Muốn thêm thì nói kèm: "xuất ngang/dọc", "không dùng ảnh", "thêm ảnh", "giữ ngập ngừng". Không làm bản cho CapCut/DaVinci; David
-chốt bản cuối thì dọn file tạm rồi đưa tập lên Drive, xoá trên Mac (`don-tap.py` → `luu-drive.sh`, khối 17).
+chốt bản cuối thì bản cuối vào `~/Movies/cho-dang/<tập>/` (`cho-dang.sh gui`, Mac chỉ giữ bản cuối chưa đăng), dọn file tạm rồi đưa dự án lên Drive, xoá trên Mac (`don-tap.py` → `luu-drive.sh`, khối 17); đăng xong `cho-dang.sh xong`.
 
 ## Kiến trúc — sửa đúng một chỗ, không viết lại khung
 
