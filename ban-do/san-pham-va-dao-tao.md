@@ -1,5 +1,5 @@
 ---
-description: Bản đồ sản phẩm và đào tạo — gói 1 dựng video bằng AI (quy trình, lộ trình, giáo trình, biểu mẫu), phần gói nội dung kênh, phễu bán gói công nghệ, máy gom và đóng gói thành sản phẩm.
+description: Bản đồ sản phẩm và đào tạo — gói 1 dựng video bằng AI (quy trình, lộ trình, giáo trình, biểu mẫu), gói 2 dựng bộ não bằng file cho AI, phần gói nội dung kênh, phễu bán gói công nghệ, máy gom và đóng gói thành sản phẩm.
 ---
 
 # Sản phẩm và đào tạo
@@ -16,6 +16,11 @@ Gốc: [bản đồ bộ não](README.md). Định hướng: [chien-luoc-nghe-ng
 - [1-quy-trinh](../du-an/goi-dao-tao-dung-video-ai/1-quy-trinh.md) · [2-lo-trinh](../du-an/goi-dao-tao-dung-video-ai/2-lo-trinh.md) · [3-giao-trinh](../du-an/goi-dao-tao-dung-video-ai/3-giao-trinh.md) · [4-phieu-khao-sat-va-nghiem-thu](../du-an/goi-dao-tao-dung-video-ai/4-phieu-khao-sat-va-nghiem-thu.md)
 - Biểu mẫu học viên: [README](../du-an/goi-dao-tao-dung-video-ai/bo-bieu-mau/README.md) · [01 thiết lập hệ thống](../du-an/goi-dao-tao-dung-video-ai/bo-bieu-mau/01-huong-dan-thiet-lap-he-thong.md) · [02 SOP](../du-an/goi-dao-tao-dung-video-ai/bo-bieu-mau/02-quy-trinh-van-hanh-chuan.md) · [03 hướng dẫn công việc](../du-an/goi-dao-tao-dung-video-ai/bo-bieu-mau/03-huong-dan-cong-viec.md) · [04 QC](../du-an/goi-dao-tao-dung-video-ai/bo-bieu-mau/04-danh-sach-kiem-soat-chat-luong.md)
 - [Xuất slide pptx](../du-an/goi-dao-tao-dung-video-ai/slide/xuat-pptx/README.md)
+
+## Gói 2: dựng bộ não bằng file cho AI
+- [README](../du-an/goi-dao-tao-co-so-tri-thuc-ai/README.md) — tổng quan gói, hai mức, thuật ngữ.
+- [1-quy-trinh](../du-an/goi-dao-tao-co-so-tri-thuc-ai/1-quy-trinh.md) · [2-lo-trinh](../du-an/goi-dao-tao-co-so-tri-thuc-ai/2-lo-trinh.md) · [3-giao-trinh](../du-an/goi-dao-tao-co-so-tri-thuc-ai/3-giao-trinh.md) · [4-phieu-khao-sat-va-nghiem-thu](../du-an/goi-dao-tao-co-so-tri-thuc-ai/4-phieu-khao-sat-va-nghiem-thu.md)
+- Biểu mẫu học viên: [README](../du-an/goi-dao-tao-co-so-tri-thuc-ai/bo-bieu-mau/README.md) · [00 từ mới và thao tác tay](../du-an/goi-dao-tao-co-so-tri-thuc-ai/bo-bieu-mau/00-tu-moi-va-thao-tac-co-ban.md) · [01 khuôn file gốc](../du-an/goi-dao-tao-co-so-tri-thuc-ai/bo-bieu-mau/01-khuon-file-goc.md) · [02 câu lệnh mẫu](../du-an/goi-dao-tao-co-so-tri-thuc-ai/bo-bieu-mau/02-cau-lenh-mau.md) · [03 khuôn bài kiểm](../du-an/goi-dao-tao-co-so-tri-thuc-ai/bo-bieu-mau/03-khuon-bai-kiem.md) · [04 kiểm soát chất lượng](../du-an/goi-dao-tao-co-so-tri-thuc-ai/bo-bieu-mau/04-danh-sach-kiem-soat-chat-luong.md)
 
 ## Nguyên liệu gói nội dung kênh (chưa thành gói)
 - [README](../du-an/goi-dao-tao-noi-dung-kenh/README.md) — vì sao tách khỏi gói 1.

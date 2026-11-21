@@ -20,6 +20,8 @@ Có **khoản thu đầu tiên từ một gói công nghệ**, khách **ra đư�
 
 **Gói 1 (David chốt 13/11/2026): trainer dựng video bằng AI trên máy tính**, chỉ dạy kỹ năng dựng, bằng AI và máy của học viên: quy trình 8 bước, 4 buổi, giáo trình 8 bài, 4 mẫu ở [goi-dao-tao-dung-video-ai/](goi-dao-tao-dung-video-ai/README.md).
 
+**Gói 2 (David duyệt 21/11/2026): trainer dựng bộ não bằng file cho AI**, người chưa biết gì tự tạo cơ sở tri thức cá nhân, học và lưu lại sau mỗi dự án; hai mức (Dự án trong ứng dụng AI · trợ lý AI trên máy kèm GitHub), 10 bước, 4 buổi, giáo trình 8 bài, 4 biểu mẫu ở [goi-dao-tao-co-so-tri-thuc-ai/](goi-dao-tao-co-so-tri-thuc-ai/README.md). Chưa chốt giá, chưa thử trên tài khoản sạch.
+
 ## Quy trình (mỗi gói đi đủ 7 bước)
 1. **Chọn nỗi đau** từ tin nhắn, bình luận ("Vấn đề") — soi bằng Tiền · Thị trường · Con người: mất tiền gì, khách là ai / quy mô nào, người nào đang làm và kẹt ở đâu.
 2. **Gói** = kết quả hứa (đo được) + công cụ + số buổi đào tạo + việc khách phải tự làm.
@@ -35,6 +37,8 @@ Có **khoản thu đầu tiên từ một gói công nghệ**, khách **ra đư�
 - [x] Bộ 4 biểu mẫu cho học viên: hướng dẫn thiết lập hệ thống, quy trình vận hành chuẩn (SOP), hướng dẫn công việc, danh sách kiểm soát chất lượng (13/11)
 - [ ] Thử cài + SOP AI trên máy sạch (`goi-dao-tao-dung-video-ai/2-lo-trinh.md` mục Thực thi)
 - [ ] Chốt giá gói
+- [x] Gói 2 bản 0: dựng bộ não bằng file cho AI (21/11)
+- [ ] Thử gói 2 trên tài khoản ChatGPT và Claude sạch (`goi-dao-tao-co-so-tri-thuc-ai/2-lo-trinh.md` mục Thực thi)
 - [x] Hồ sơ hình ảnh Facebook cá nhân, lịch 4 tuần, 4 bài nháp tuần 1 (17/11) — [hinh-anh-facebook-ca-nhan.md](hinh-anh-facebook-ca-nhan.md)
 - [ ] Claude soạn bài kết quả thật từ quy trình dựng video của David (T5 26/11, David duyệt trước khi đăng)
 - [ ] David cập nhật tên đội đối tác, sản phẩm, thành quả đăng được thì bài trụ 1, trụ 4
