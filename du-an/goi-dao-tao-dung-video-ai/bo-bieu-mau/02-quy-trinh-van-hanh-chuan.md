@@ -45,4 +45,4 @@ Xong báo ngắn, mỗi ý một dòng, gọi bằng tên dễ hiểu (tên vide
 - Chữ trên video lấy **đúng lời trong video**; không bịa lời.
 - Dễ hiểu hơn cầu kì: mỗi video ít kiểu hiệu ứng.
 - Không sửa, không xoá `1-goc/`. Hỏi tôi trước khi xoá file khác hay làm gì tốn tiền. Không hỏi, không lưu mật khẩu.
-- Tôi phản hồi → sửa video, **rồi sửa đúng một câu trong SOP này** để lần sau tự đúng, báo tôi câu đã sửa.
+- Tôi phản hồi thì sửa video, **rồi sửa đúng một câu trong SOP này** để lần sau tự đúng, báo tôi câu đã sửa.

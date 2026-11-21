@@ -8,7 +8,7 @@ description: "Khối 17 dựng và kiểm tra chất lượng: chụp thử từ
 **Đầu vào:** dự án đã có kịch bản
 **Đầu ra:** video-hoan-chinh.mp4 + kiem-tra/{stills,sheet}.jpg
 **Tham số hồ sơ:** —
-**Sửa khối này → chạy lại:** —
+**Sửa khối này thì chạy lại:** —
 
 **File thật (code, một bản duy nhất):**
 - `dung-video-theo-phong-cach/scripts/{vung-an-toan.py,ghep-anh-tinh.sh,kiem-khung-hinh.sh,xem-truoc-ban-dung.py,don-tap.py,luu-drive.sh}`
@@ -23,9 +23,9 @@ description: "Khối 17 dựng và kiểm tra chất lượng: chụp thử từ
 ```bash
 cd "$P/chuyen-dong" && node xem-truoc.mjs <id>@<giây> phu-de@<giây> <id>@<giây> phu-de@<giây> ...
 ```
-(chụp `phu-de` cùng mốc với mỗi cảnh → composite_stills ghép phụ đề lên cảnh đó để thấy chồng lấn, nếu có)
+(chụp `phu-de` cùng mốc với mỗi cảnh thì composite_stills ghép phụ đề lên cảnh đó để thấy chồng lấn, nếu có)
 Chụp mỗi cảnh ở khoảnh khắc "đầy nhất" (cuối cảnh, khi mọi phần tử đã hiện). Ghép lên khung video gốc + khung an toàn
-bằng `python3 $SKILL/scripts/vung-an-toan.py "$P"` (một lần) và `zsh $SKILL/scripts/ghep-anh-tinh.sh "$P"` → xem `kiem-tra/anh-tinh.jpg`: chữ có tràn/xuống dòng xấu, dấu tiếng Việt
+bằng `python3 $SKILL/scripts/vung-an-toan.py "$P"` (một lần) và `zsh $SKILL/scripts/ghep-anh-tinh.sh "$P"` rồi xem `kiem-tra/anh-tinh.jpg`: chữ có tràn/xuống dòng xấu, dấu tiếng Việt
 có bị cắt, **hai dòng chữ có chồng nhau / chữ có chạm khung ảnh không** (soi chữ có Ố Ễ Ỗ), **ô hiệu ứng có bị cắt ở đáy hoặc chạm phụ đề không**
 (lớp phủ bị chặn cứng ở đỉnh dải phụ đề — thấy bị cắt thì rút nội dung), có gì lọt vùng đỏ, **lớp phủ có đè lên mặt/đầu người nói không** (script dò mặt theo khung 0,5 s — cử động
 nhanh vẫn có thể lọt; thấy đè thì đặt tay `place`), chữ có đọc được trên nền, cảnh có khớp lời nói không. Sửa rồi chụp lại tới khi sạch.
@@ -33,7 +33,7 @@ Chụp đúng mốc dễ lỗi (`quy-tac-chung.md` mục 8), không chụp thừ
 Khung ngang (pillar): trước khi chụp, dựng nền ngang một lần —
 `node xuat-video.mjs hai-ben` (khoảng 1 phút / phút video) rồi `python3 -I $SKILL/scripts/nen-cot.py "$P"` → `nen-ngang.mp4`;
 composite_stills tự dùng nền này. Chụp thêm `hai-ben@<giây>` ở vài mốc để kiểm chữ hai bên (tràn, xuống dòng xấu).
-Đổi `SIDES` hoặc mốc cảnh → render lại `hai-ben` + `nen-cot.py`.
+Đổi `SIDES` hoặc mốc cảnh thì render lại `hai-ben` + `nen-cot.py`.
 
 ### Render, đóng gói, xuất bản cuối
 
@@ -60,7 +60,7 @@ zsh $SKILL/scripts/kiem-khung-hinh.sh "$P" "$P/video-hoan-chinh.mp4" <các mốc
 Xem `kiem-tra/bang-anh.jpg`: cảnh đúng chỗ, không gì lọt vùng an toàn, không lớp phủ nào che mặt, không nháy/đen. Âm thanh
 (cả bài −14 LUFS, đỉnh tối đa −1,5 dB — `ebur128=peak=true`; KHÔNG so dB thô với nguồn vì giọng nhỏ được kéo lên — khối 09) và tiếng rè so với giọng (`-af highpass=f=12000,astats` — mức RMS bản cuối
 chênh bản gốc tối đa 1 dB; cao hơn hẳn = âm thanh bị hạ bit ở đâu đó, xem gotchas) và thời lượng (= bản sạch; video KHÔNG có màn hình nguồn ảnh ở cuối).
-Lỗi thì sửa cảnh đó → `node xuat-video.mjs <id>` → render_preview lại.
+Lỗi thì sửa cảnh đó thì chạy `node xuat-video.mjs <id>` rồi render_preview lại.
 
 ## Soát cảnh tự động
 Chạy **trước bước chụp thử** và sau mỗi lần sửa mốc / chữ:
@@ -74,7 +74,7 @@ node $SKILL/scripts/soat-canh.mjs "$P"     # in ra + ghi kiem-tra/soat.md; có P
 - **P1 (nên sửa):** nhãn không đủ đọc (0,5 s + 0,3 s mỗi từ), nhãn `illus` quá số chữ hồ sơ, hai cảnh toàn màn hình chồng nhau.
 - **P2 (tinh chỉnh, giữ có chủ đích được):** hình đứng yên quá 3 s sau khi đọc xong, thẻ tít / màn chốt thiếu hẳn thời gian đọc, hai cảnh cùng kiểu liền nhau (trừ cảnh vẽ tiếp `tu_buoc`, khối 07).
 Giới hạn: chỉ bắt lỗi đo được. Chữ tràn, che mặt, xấu vẫn soi bằng `kiem-tra/anh-tinh.jpg`. **Xem tờ ảnh ở đúng cỡ (mỗi khung 240–270 px, nhỏ hơn màn điện thoại): chữ cần đọc mà không đọc được = P0.**
-Câu hỏi khi soi tờ ảnh: **video có rối không** — đếm số kiểu hiệu ứng cả video, kiểu nào không giúp hiểu thì bỏ (quy-tac-chung §0, hiểu hơn cầu kì) · **mỗi khung có đúng một tiêu điểm không** (nheo mắt vẫn biết nhìn vào đâu) · cam có còn là màu nhấn (khoảng 10 % khung), không phủ cả khung. Che chữ đi, hình còn nói được ý không? Thấy mọi cảnh giống nhau thì đổi kiểu vào (khối 07). Video rối → bỏ bớt khoảng một phần ba chuyển động, giữ cái dẫn mắt.
+Câu hỏi khi soi tờ ảnh: **video có rối không** — đếm số kiểu hiệu ứng cả video, kiểu nào không giúp hiểu thì bỏ (quy-tac-chung §0, hiểu hơn cầu kì) · **mỗi khung có đúng một tiêu điểm không** (nheo mắt vẫn biết nhìn vào đâu) · cam có còn là màu nhấn (khoảng 10 % khung), không phủ cả khung. Che chữ đi, hình còn nói được ý không? Thấy mọi cảnh giống nhau thì đổi kiểu vào (khối 07). Video rối thì bỏ bớt khoảng một phần ba chuyển động, giữ cái dẫn mắt.
 
 ## Kiểm cảm nhận
 Claude tự làm, hai lần: sau bước chụp thử và sau bản cuối. Không gửi David chấm.

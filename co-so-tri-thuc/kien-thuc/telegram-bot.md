@@ -11,7 +11,7 @@ description: Bot Telegram — điểm mạnh (điều khiển từ xa miễn ph�
 Bot là **điều khiển từ xa miễn phí, luôn trong túi**, nối David ↔ máy ↔ AI. API mở gần như không giới hạn, không cần xin duyệt (Zalo, Messenger khoá chặt), nên là cầu nối rẻ nhất.
 
 - **Đẩy tới**: máy xong việc báo ngay vào điện thoại.
-- **Nhận lệnh**: chữ, giọng nói, ảnh, file → máy ở nhà làm việc.
+- **Nhận lệnh**: chữ, giọng nói, ảnh, file thì máy ở nhà làm việc.
 - **Nút bấm trong tin nhắn** (inline keyboard): Duyệt / Làm lại / Bỏ qua một chạm.
 
 ## Tính năng khai thác thêm

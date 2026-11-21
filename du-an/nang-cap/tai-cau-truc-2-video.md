@@ -8,8 +8,8 @@ Gốc: bảng 164 luật của lần 1 (`du-an/nang-cap/tai-cau-truc-video-1.md`
 câu máy đo còn bắt, và chỗ bộ video chép / lệch với `chuan-muc-lam-viec.md`, `co-so-tri-thuc/david.md`, `AGENTS.md`, ghi nhớ `co-so-tri-thuc/bo-nho/video-*.md`.
 Không đổi code.
 
-**Máy đo bộ video:** trước `dau_ngay 1 · ghi_de 5 · trung 0 · dong 3081` → sau `dau_ngay 0 · ghi_de 0 · trung 0 · dong 3079`.
-**kiem-mau.py:** 5/5 ✓ (SSIM 0,982–0,990). 5 dự án mẫu thiếu `chuyen-dong/node_modules` → như lần 1: nối tạm (symlink)
+**Máy đo bộ video:** trước `dau_ngay 1 · ghi_de 5 · trung 0 · dong 3081`, sau `dau_ngay 0 · ghi_de 0 · trung 0 · dong 3079`.
+**kiem-mau.py:** 5/5 ✓ (SSIM 0,982–0,990). 5 dự án mẫu thiếu `chuyen-dong/node_modules` nên như lần 1: nối tạm (symlink)
 `~/Movies/tap-5-nguyen-tac-tien/2-ban-day-du/chuyen-dong/node_modules` vào `chuyen-dong/node_modules` của từng dự án, chạy, rồi gỡ ngay.
 
 ## Bảng luật đang sống (chỉ dòng đổi / mới)

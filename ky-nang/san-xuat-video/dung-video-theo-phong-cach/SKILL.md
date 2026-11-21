@@ -12,7 +12,7 @@ mốc lời Whisper, render clip nền trong suốt rồi ghép lên video gốc
 
 **Duyệt 4 phần trước** (`../../chuan-muc-lam-viec.md` mục 2), duyệt rồi không hỏi thêm: chạy một mạch từ video gốc tới bản cuối. Khung xuất = khung gốc (bảng "Khung xuất");
 video > 3 phút làm đủ gói YouTube (màn kết, chương, teaser, thumbnail khi ngang); chữ bìa, cảnh minh hoạ chính, tuyến nhạc Claude tự chọn
-theo khối. Dừng giữa chừng, báo cáo "đã chọn X vì Y", góp ý → render lại toàn bộ: `quy-tac-chung.md` mục 8.
+theo khối. Dừng giữa chừng, báo cáo "đã chọn X vì Y", góp ý thì render lại toàn bộ: `quy-tac-chung.md` mục 8.
 
 ## Nhịp làm (mục tiêu: video 10 phút xong trong khoảng 1 giờ)
 
@@ -43,12 +43,12 @@ bộ nhận diện, phát hành. Dưới đây chỉ là luật RIÊNG của ski
    không hứa "tập sau" khi người nói không hẹn. Ghi câu + lý do vào `ke-hoach-canh.md`.
 5. **Làm sạch:** video dài không cắt (quy-tac-chung 2), chỉ sửa chiều hình; video ngắn: cắt thừa đầu/cuối, câu nói lại (giữ lần sau cùng),
    khoảng lặng + tiếng đệm theo hồ sơ; giữ vẫy tay chào cuối.
-6. **Lớp phủ không che mặt** (`vi-tri-khuon-mat.sh`); nhân vật nằm thấp → nâng khung (`nang-lop.py`), mức theo hồ sơ.
+6. **Lớp phủ không che mặt** (`vi-tri-khuon-mat.sh`); nhân vật nằm thấp thì nâng khung (`nang-lop.py`), mức theo hồ sơ.
 7. Không làm bản cho app chỉnh sửa (DaVinci/CapCut…), không nhắc trong báo cáo — David chỉ dùng bản render cuối.
    Thư mục `tu-lieu/` chỉ là tên lịch sử, chứa video nguồn và clip trung gian; dọn sau khi David chốt (bước 12).
 8. **Học từ 20 video nói trước camera Việt** (`references/hoc-tu-20-video-noi-truoc-camera-vn.md`):
-   - **Nhãn số danh sách** (`listItem` {n, of?, text}): người nói đếm ít nhất 3 ý → mỗi ý một nhãn đúng lúc nói, text nguyên văn cụm việc.
-   - **Thẻ tóm tắt để lưu**: video danh sách / hướng dẫn → `card` variant `steps` ngay trước màn chốt, liệt kê các ý nguyên văn (bỏ bớt chữ).
+   - **Nhãn số danh sách** (`listItem` {n, of?, text}): người nói đếm ít nhất 3 ý thì mỗi ý một nhãn đúng lúc nói, text nguyên văn cụm việc.
+   - **Thẻ tóm tắt để lưu**: video danh sách / hướng dẫn thì dùng `card` variant `steps` ngay trước màn chốt, liệt kê các ý nguyên văn (bỏ bớt chữ).
    - **Thẻ chương + chương YouTube** cho video dài có ý lớn: `CHAPTERS` trong canh.js (mốc + tên trích lời) → `chuong.py`.
 
 ## Chọn chế độ (làm đầu tiên)
@@ -62,16 +62,16 @@ bộ nhận diện, phát hành. Dưới đây chỉ là luật RIÊNG của ski
 Mọi chế độ đều qua **chẩn đoán → tự chọn** (`../thiet-ke-bo-cuc/tu-chon.md`, bước 0: không chép kịch bản tập trước). Render đầy đủ bị
 chặn tới khi `ke-hoach-canh.md` có mục `## Chẩn đoán` và video không chỉ một kiểu lớp phủ (`soat-canh.mjs`).
 
-Video mẫu không tính vào số video gốc. Gửi cả thư mục → mọi video trong đó là video gốc theo thứ tự tên file (chế độ ghép); chỉ hỏi
-khi không rõ file nào là mẫu. "Giống video trước" → lấy token phong cách từ `~/Movies/tap-<tên>/2-ban-day-du/chuyen-dong/src` của dự án đó.
+Video mẫu không tính vào số video gốc. Gửi cả thư mục thì mọi video trong đó là video gốc theo thứ tự tên file (chế độ ghép); chỉ hỏi
+khi không rõ file nào là mẫu. "Giống video trước" thì lấy token phong cách từ `~/Movies/tap-<tên>/2-ban-day-du/chuyen-dong/src` của dự án đó.
 
 ## Đầu vào
 
 - **Video gốc**: đường dẫn file (chế độ ghép: nhiều file).
-- **Video mẫu**: file video hoặc bản quay màn hình. Chỉ có link YouTube/TikTok → tải bản 720p **chỉ để học** vào thư mục tạm, học xong
-  xoá (`../thiet-ke-bo-cuc/README.md` mục 4); hoặc 4–8 ảnh chụp các cảnh tiêu biểu. Không có mẫu → phong cách mặc định của template. Học phong cách mẫu không đụng chữ ký nhận diện (khối 10).
+- **Video mẫu**: file video hoặc bản quay màn hình. Chỉ có link YouTube/TikTok thì tải bản 720p **chỉ để học** vào thư mục tạm, học xong
+  xoá (`../thiet-ke-bo-cuc/README.md` mục 4); hoặc 4–8 ảnh chụp các cảnh tiêu biểu. Không có mẫu thì phong cách mặc định của template. Học phong cách mẫu không đụng chữ ký nhận diện (khối 10).
 - Yêu cầu thêm của David (thông điệp chính, tên, chỗ muốn nhấn) luôn ưu tiên hơn suy luận.
-- **Khung xuất**: cùng khung video gốc; chỉ đổi khi David **nói rõ khung** ("làm dọc", "xuất ngang"). Yêu cầu khác làm trong khung gốc — **tập trung vào một vùng / bỏ rác quanh chủ thể** (màn hình điện thoại, laptop, vật) → **khung chủ thể**
+- **Khung xuất**: cùng khung video gốc; chỉ đổi khi David **nói rõ khung** ("làm dọc", "xuất ngang"). Yêu cầu khác làm trong khung gốc — **tập trung vào một vùng / bỏ rác quanh chủ thể** (màn hình điện thoại, laptop, vật) thì **khung chủ thể**
   (khối 04), không cắt-phóng cả khung:
 
 | Gốc → xuất | Cách làm | Ở đâu |
@@ -105,7 +105,7 @@ zsh $SKILL/scripts/tao-du-an.sh "<video gốc>" "<video mẫu>" <tên-ngắn>
 Tạo `~/Movies/tap-<tên>/2-ban-day-du/` (gốc tự đặt vào `tap-<tên>/1-goc/`; tên `vlog-…` → `~/Movies/vlog/<tên>/`) với cấu trúc chuẩn
 (cuối file), chép video, chép template Remotion vào `chuyen-dong/`, điền thông số vào `chuyen-dong/src/du-an.js`, cài gói npm. Dòng cuối là `$P`.
 
-## Bảng phụ thuộc (sửa X → chạy lại Y)
+## Bảng phụ thuộc (sửa X thì chạy lại Y)
 | Sửa | Chạy lại |
 |---|---|
 | diem-cat.json (làm sạch) | ap-dung-lam-sach.py → nang-lop.py apply → phan-tich-video.sh → phu-de.py → dời mốc canh.js → vi-tri-khuon-mat.sh → render |
@@ -126,8 +126,8 @@ Tạo `~/Movies/tap-<tên>/2-ban-day-du/` (gốc tự đặt vào `tap-<tên>/1-
 
 David thường nói kiểu "cảnh 2:08 chữ to quá", "đổi hình thợ hồ", "bỏ cảnh AI". Sửa đúng chỗ trong `canh.js`/component/ảnh →
 đổi mốc thì chạy lại `python3 -I $SKILL/scripts/vi-tri-khuon-mat.py "$P"` → `node xuat-video.mjs <id>` (chỉ cảnh đó) → `xem-truoc-ban-dung.py` →
-kiểm khung quanh mốc đó. Đổi phong cách toàn bộ → sửa `chu-de.js`, render lại tất cả.
-"Giữ lại đoạn bị cắt"/"cắt thêm đoạn X" → đổi mốc bản cuối sang mốc thô bằng `cac-doan.json`, sửa `diem-cat.json`, lưu bản `cac-doan.json`
+kiểm khung quanh mốc đó. Đổi phong cách toàn bộ thì sửa `chu-de.js`, render lại tất cả.
+"Giữ lại đoạn bị cắt"/"cắt thêm đoạn X" thì đổi mốc bản cuối sang mốc thô bằng `cac-doan.json`, sửa `diem-cat.json`, lưu bản `cac-doan.json`
 cũ, chạy `ap-dung-lam-sach.py`, dời mốc mọi cảnh (`start`, `end`, `at`…) theo bảng mới. Chỉ render lại cảnh có mối đổi nằm **bên trong**
 nó, rồi `xem-truoc-ban-dung.py`.
 

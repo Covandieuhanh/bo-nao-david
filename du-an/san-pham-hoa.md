@@ -23,7 +23,7 @@ David chốt 14/11/2026: nhịp đêm + tuần; gói đang chạy tự bổ sung
 1. **Gom** (`gom.py`): đọc phần mới kể từ lần trước ở mọi nguồn, ghi một file ngày trong `~/Documents/2-ca-nhan/so-tay/kho-du-lieu/`.
 2. **Phân loại** (skill, việc 1): mỗi ý một dòng: hướng · tầng / mục tiêu · nỗi đau · bán được gì · dạng sản phẩm.
 3. **Đếm nỗi đau**: cùng một nỗi đau gộp một dòng, đếm số người khác nhau gặp nó.
-4. **Đóng gói** (skill, việc 2): nguyên liệu thuộc gói đang chạy → bổ sung bài học, ví dụ, câu hỏi thường gặp; nguyên liệu kể chuyện thật → bài phễu nháp; nỗi đau ít nhất 5 người → phiếu đề xuất gói mới.
+4. **Đóng gói** (skill, việc 2): nguyên liệu thuộc gói đang chạy thì bổ sung bài học, ví dụ, câu hỏi thường gặp; nguyên liệu kể chuyện thật thì bài phễu nháp; nỗi đau ít nhất 5 người thì phiếu đề xuất gói mới.
 5. **Báo** David qua Telegram; David chọn gói mới, duyệt bài trước khi đăng.
 
 ## Thực thi

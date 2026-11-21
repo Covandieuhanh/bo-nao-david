@@ -13,7 +13,7 @@ Nguyên tắc khi lệch: lời David mới nhất thắng (theo ngày chốt).
 - **N4:** chữ trên video chỉ lấy những gì David nói chính xác trong video, không sáng tạo thêm. "Gỡ" chỉ lên video khi David nói câu đó.
 - **N15:** lịch phát chỉ ghi khi David đưa cho đúng video đó.
 - **C6:** tên trang Facebook, TikTok để sau; giữ nguyên trong `kenh.json`.
-- **Đối chiếu sản phẩm mới nhất** (`~/Movies/tap-cuoc-song-giau-co`, render 08/11 13:40): bản dài không thẻ tít; màn chốt nguyên văn ("Bạn cứ chia sẻ với mình nhá"); bố cục `bocuc` / `nhan` / `the` (không 2 trạng thái); nhạc theo tuyến (`tam_su`). Clip highlight: tít nguyên văn ("Tại sao anh vẫn còn đi làm" có trong lời), câu kêu gọi nguyên văn, phụ đề `SHORT`, nhạc kho `soi` / `lang`, thẻ cuối không nút phát. **Khớp mọi đề xuất bên dưới** → mọi dòng N, T, C coi như đã duyệt theo đề xuất.
+- **Đối chiếu sản phẩm mới nhất** (`~/Movies/tap-cuoc-song-giau-co`, render 08/11 13:40): bản dài không thẻ tít; màn chốt nguyên văn ("Bạn cứ chia sẻ với mình nhá"); bố cục `bocuc` / `nhan` / `the` (không 2 trạng thái); nhạc theo tuyến (`tam_su`). Clip highlight: tít nguyên văn ("Tại sao anh vẫn còn đi làm" có trong lời), câu kêu gọi nguyên văn, phụ đề `SHORT`, nhạc kho `soi` / `lang`, thẻ cuối không nút phát. **Khớp mọi đề xuất bên dưới** thì mọi dòng N, T, C coi như đã duyệt theo đề xuất.
 
 ## A. Ngược nhau (cần David chốt)
 
@@ -35,7 +35,7 @@ Nguyên tắc khi lệch: lời David mới nhất thắng (theo ngày chốt).
 | N14 | Thẻ cuối highlight | `cat-highlight` 7B: "nút phát + tên tập"; `quy-tac-chung` 1(c) + tiêu chí: "XEM BẢN ĐẦY ĐỦ" | Luật 11 + `video-nhan-dien-chung` (08/11): không nút phát, "Bản đầy đủ trên kênh …" | Một chữ: "Bản đầy đủ trên kênh <tên kênh>", không nút phát |
 | N15 | Lịch phát trên video | `quy-tac-chung` 1(c): lịch phát David đưa được ghi trên thẻ cuối | Podcast (05/11): không ghi thông tin phát hành nào lên video | Chỉ ghi khi David đưa cho đúng video đó (**David xác nhận** hay bỏ hẳn) |
 
-## B. Trùng (một luật nằm nhiều chỗ) → giữ một nhà, chỗ khác một dòng trỏ
+## B. Trùng (một luật nằm nhiều chỗ) thì giữ một nhà, chỗ khác một dòng trỏ
 
 | # | Luật | Đang nằm ở | Nhà đề xuất |
 |---|---|---|---|

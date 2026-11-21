@@ -103,7 +103,7 @@ Mỗi bài có **Mục tiêu · Nội dung · Cách làm theo tuyến · Thực 
 - **Bài tập:** đăng video số 1 + clip.
 - **Xong khi:** video đầu tiên **đã đăng**.
 
-## Bài 11 · Chạy một mạch: một lần quay → đủ bài
+## Bài 11 · Chạy một mạch: một lần quay thì đủ bài
 - **Mục tiêu:** quy trình chạy trơn, học viên chỉ quay, xem, góp ý, đăng.
 - **Nội dung:** ghép 9 bước thành một danh sách việc cố định; sổ ghi từng video (ý, ngày, trạng thái, link); nơi cất, dọn máy; khi nào AI phải dừng hỏi (đăng, xoá, tốn tiền).
 - **Cách làm theo tuyến:** A, B: một danh sách kiểm và bộ lời dặn dùng lại · C: một lệnh giao AI làm trọn từ file gốc tới chữ đăng bài.
@@ -117,4 +117,4 @@ Mỗi bài có **Mục tiêu · Nội dung · Cách làm theo tuyến · Thực 
 - **Cách làm theo tuyến:** mọi tuyến: dán số liệu vào AI theo mẫu sổ số liệu.
 - **Thực hành:** đọc số video số 1, chọn 1 điều sửa.
 - **Bài tập:** nhìn lại tuần sau 4 video.
-- **Xong khi:** **4 video đã đăng** + 1 bản nhìn lại tuần → xong gói.
+- **Xong khi:** **4 video đã đăng** + 1 bản nhìn lại tuần thì xong gói.

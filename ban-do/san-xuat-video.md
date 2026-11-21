@@ -10,7 +10,7 @@ Gốc: [bản đồ bộ não](README.md). Chiến lược kênh: [chien-luoc-no
 - [tong-quan](../ky-nang/san-xuat-video/tong-quan.md) — Tổng quan bộ skill dựng video của David: 3 skill, mẫu dựng, nhạc, hiệu ứng tiếng, script.
 - [quy-tac-chung](../ky-nang/san-xuat-video/quy-tac-chung.md) — Luật chung bộ skill dựng video (một nguồn cho cả 3 skill), đọc trước mọi skill video.
 - [nguyen-tac](../ky-nang/san-xuat-video/nguyen-tac.md) — Nguyên tắc cốt lõi bộ skill video: điểm chung của 80 video hình mẫu thành công, tầng hiếm đổi nhất.
-- [nhan-dien-thuong-hieu](../ky-nang/san-xuat-video/nhan-dien-thuong-hieu.md) — Bộ định tuyến loại video: bước lọc, nhận diện loại (nói trước camera, vlog, podcast, highlight) → skill nào.
+- [nhan-dien-thuong-hieu](../ky-nang/san-xuat-video/nhan-dien-thuong-hieu.md) — Bộ định tuyến loại video: bước lọc, nhận diện loại (nói trước camera, vlog, podcast, highlight) để chọn skill.
 
 ## Skill
 - [phan-phoi-da-kenh](../ky-nang/san-xuat-video/phan-phoi-da-kenh/SKILL.md) — Quy trình trọn gói của David — từ MỘT tài nguyên (video quay, ghi âm, bài nói bộc phát; thường không kèm yêu cầu) Claude tự lọc theo hồ sơ David, quyết định có…

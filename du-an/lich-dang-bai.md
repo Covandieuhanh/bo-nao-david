@@ -22,14 +22,14 @@ Không tuần nào trống: **4 bài viết kèm ảnh/tuần** (CN · T3 · T5 
 
 **Chọn bài cho từng ô:**
 - **Video:** không chiếm ô. Video David đã duyệt mà chưa lên Facebook cá nhân để ở `bai-dang/video-san/<tên>/bai.md` (chữ nguyên văn lời David, luật 3; dòng `Tệp:` trỏ video), hiện ở mục Video sẵn cuối trang; đăng rồi bấm Đã đăng thì ẩn.
-- **Mọi ô (CN, T3, T5, T6) là bài viết kèm ảnh:** soạn mới từ lời David tuần qua (`~/Documents/2-ca-nhan/so-tay/kho-du-lieu/`, sổ nhớ) đúng trụ của ngày; chưa đủ nguyên liệu → bài nền từ kho.
+- **Mọi ô (CN, T3, T5, T6) là bài viết kèm ảnh:** soạn mới từ lời David tuần qua (`~/Documents/2-ca-nhan/so-tay/kho-du-lieu/`, sổ nhớ) đúng trụ của ngày; chưa đủ nguyên liệu thì bài nền từ kho.
 - **Kho bài nền:** luôn **8 bài đã soạn**, đủ 5 kiểu (hồ sơ mục 4); lấy ra bao nhiêu soạn bù bấy nhiêu. Bài nền dùng rồi chuyển sang thư mục ngày đăng.
 - **Ảnh:** theo hồ sơ mục 5 (ảnh của David trước, ChatGPT trên Chrome khi không có gì).
 
 **Lọc trùng với bài David tự đăng** (chạy đầu lịch thứ 6, và khi David nhắn "lọc lại"):
 - Chỉ đọc trang https://www.facebook.com/davidsuckhoe108 trên Chrome David đã đăng nhập: cuộn, bấm "Xem thêm" để đọc trọn bài, đọc bài 30 ngày gần nhất. Không thích, bình luận, chia sẻ, sửa, đăng; chưa đăng nhập thì báo David, không đăng nhập thay.
 - So mỗi bài chưa đăng trong `bai-dang/` (và kho bài nền):
-  - **Trùng hẳn** (cùng video, hoặc cùng câu chuyện / cảnh mở bài): bài video → ghi `.da-dang` nội dung "David tự đăng <ngày>"; bài viết → trả về chỗ cũ không được, nên bỏ thư mục ngày đó và lấy bài khác cùng trụ từ kho vào thay (kho soạn bù).
+  - **Trùng hẳn** (cùng video, hoặc cùng câu chuyện / cảnh mở bài): bài video thì ghi `.da-dang` nội dung "David tự đăng <ngày>"; bài viết thì trả về chỗ cũ không được, nên bỏ thư mục ngày đó và lấy bài khác cùng trụ từ kho vào thay (kho soạn bù).
   - **Trùng ý** (cùng nỗi đau, khác cách kể): viết lại theo góc khác, hoặc dời xa bài David đã đăng ít nhất 2 tuần.
   - **Không trùng:** giữ.
 - Ghi kết quả vào `bai-dang/loc-trung.md` (lần lọc, bài David đã đăng: ngày · tóm một dòng · trùng với bài nào · đã xử lý gì) và vào dòng `Lọc:` đầu `bai.md` của bài liên quan; trang đăng bài hiện nhãn lọc. Bài David tự đăng ghi vào Sổ lịch (nguồn "David tự đăng") và là nguyên liệu cho bài sau.
@@ -79,6 +79,6 @@ Video sẵn (`bai-dang/video-san/`, không thuộc lịch): Bận cả ngày · 
 
 ## Nhật ký
 - 17/11/2026: David duyệt hệ thống (kho 8 bài nền, lịch thứ 6 07:30, duyệt cả tuần qua Telegram, nhắc 19:45, David tự bấm, làm Facebook cá nhân trước) và giao dùng ChatGPT trên Chrome tạo ảnh khi không có nội dung David chuẩn bị.
-- 17/11/2026: David: "tạo riêng 1 trang trên localhost:8765 đang có với đầy đủ mọi thứ trong 1 bài đăng để tôi lên copy nội dung và tự tải ảnh khi cần… chuẩn bị sẵn 1 số lượng đủ cho hàng tuần luôn" → trang `/bai-dang`, luôn sẵn 2 tuần (David duyệt đề xuất 2 tuần); Telegram chỉ còn tin ngắn kèm link. Cùng ngày David không chọn để Claude tự đăng Facebook.
-- 17/11/2026: David: "cần chức năng tự lên trang facebook cá nhân của tôi để đọc và lọc lại các nội dung… nội dung nào trùng thì bỏ qua khỏi bài đăng chuẩn bị hoặc chỉnh lại" → thêm bước lọc trùng chỉ đọc, chạy mỗi thứ 6 và khi David nhắn "lọc lại" (David duyệt đề xuất).
-- 17/11/2026: David: "đã đăng rồi thì không hiển thị trong /bai-dang nữa cho gọn. làm thêm cho đủ bài đăng cho 1 tháng" và "không tính các bài video nhé, tính hết bằng các bài đăng thôi, theo đúng lịch thì đăng 4 bài / tuần" → trang ẩn bài đã đăng; 4 ô/tuần đều là bài viết kèm ảnh, giữ sẵn 30 ngày; video chuyển sang mục Video sẵn.
+- 17/11/2026: David: "tạo riêng 1 trang trên localhost:8765 đang có với đầy đủ mọi thứ trong 1 bài đăng để tôi lên copy nội dung và tự tải ảnh khi cần… chuẩn bị sẵn 1 số lượng đủ cho hàng tuần luôn" nên làm trang `/bai-dang`, luôn sẵn 2 tuần (David duyệt đề xuất 2 tuần); Telegram chỉ còn tin ngắn kèm link. Cùng ngày David không chọn để Claude tự đăng Facebook.
+- 17/11/2026: David: "cần chức năng tự lên trang facebook cá nhân của tôi để đọc và lọc lại các nội dung… nội dung nào trùng thì bỏ qua khỏi bài đăng chuẩn bị hoặc chỉnh lại" thì thêm bước lọc trùng chỉ đọc, chạy mỗi thứ 6 và khi David nhắn "lọc lại" (David duyệt đề xuất).
+- 17/11/2026: David: "đã đăng rồi thì không hiển thị trong /bai-dang nữa cho gọn. làm thêm cho đủ bài đăng cho 1 tháng" và "không tính các bài video nhé, tính hết bằng các bài đăng thôi, theo đúng lịch thì đăng 4 bài / tuần" thì trang ẩn bài đã đăng; 4 ô/tuần đều là bài viết kèm ảnh, giữ sẵn 30 ngày; video chuyển sang mục Video sẵn.

@@ -22,8 +22,8 @@ Mốc trước: tag `tai-ban-video-1-truoc` (commit 8fb5b77).
 
 ## Bước 2 — Bảng luật đang sống
 
-Trạng thái: **sống** · **trùng** (một luật nhiều nhà → giữ một, nơi khác trỏ) · **ngược** (hai câu cãi nhau → ghi bên thắng) · **cũ** (đã bị luật mới hơn thay, bỏ).
-Phân xử theo `chuan-muc-lam-viec.md` mục 0: lời David > ngày chốt gần nhất > cũ; còn mơ hồ → sản phẩm mới nhất David duyệt.
+Trạng thái: **sống** · **trùng** (một luật nhiều nhà thì giữ một, nơi khác trỏ) · **ngược** (hai câu cãi nhau thì ghi bên thắng) · **cũ** (đã bị luật mới hơn thay, bỏ).
+Phân xử theo `chuan-muc-lam-viec.md` mục 0: lời David > ngày chốt gần nhất > cũ; còn mơ hồ thì sản phẩm mới nhất David duyệt.
 
 ### A. Nền chung (quy-tac-chung, nguyen-tac, nhan-dien)
 | # | Luật | Nhà mới | Nguồn hiện tại | Ngày | Trạng thái |
@@ -225,18 +225,18 @@ A8, A9, A15, A20, A23, A28, A48, A56, A60 (hashtag 2–3), B16, B21, B26, B32, B
   references scene-design, multi-clip, style-analysis, gotchas (2 skill), podcast-design.
 - Không đổi code. `bo.json`: `mau-ke-hoach-dang.md` chuyển sang kho (mẫu của một đợt đăng, không phải luật).
 - Gộp nhà: 4 câu "video dọc ngắn" chỉ còn ở nhan-dien-chung; câu "bước nhẹ" của 4 SKILL trỏ về thoi-quen mục 3; quy-tac-chung §5, §9
-  thành dòng trỏ (nhận diện → nhan-dien-chung, số liệu → khối 16); tong-quan bỏ phần chép lại luật.
+  thành dòng trỏ (nhận diện về nhan-dien-chung, số liệu về khối 16); tong-quan bỏ phần chép lại luật.
 
 ## Bước 4 — Đóng sổ
 Thêm "## Tái bản 1" vào đầu 3 changelog (dung-video-theo-phong-cach, cat-doan-noi-bat, dung-podcast). Cả 3 < 400 dòng, không cần lưu trữ.
 
 ## Bước 5 — Kiểm
 - **Đủ luật:** soát bằng grep từng luật "sống" trong nhà mới (A1–A66, B8–B66, C8–C27): đủ.
-- **Máy đo sau tái bản:** dấu ngày 165 → 3 (2 trong file mẫu đã chuyển kho, 1 là tên file nguồn học) · trùng 5 → 0 · dòng 3292 → 3236.
-  "Câu ghi đè" 81 → 33, nhưng **cả 33 là chữ "thay" thường** ("chữ chính thay phụ đề", "nói thay lời"): regex `\bTHAY\b` trong
+- **Máy đo sau tái bản:** dấu ngày 165 thành 3 (2 trong file mẫu đã chuyển kho, 1 là tên file nguồn học) · trùng 5 thành 0 · dòng 3292 thành 3236.
+  "Câu ghi đè" 81 thành 33, nhưng **cả 33 là chữ "thay" thường** ("chữ chính thay phụ đề", "nói thay lời"): regex `\bTHAY\b` trong
   `do-chong-cheo.py` chạy với `re.I` nên bắt mọi chữ "thay". Câu ghi đè thật = 0. Cần sửa máy đo (ngoài phạm vi tái bản bộ video).
 - **Mẫu chuẩn:** `kiem-mau.py` 5/5 ✓ giữ nguyên (SSIM 0,982–0,990); node_modules nối tạm từ tap-5-nguyen-tac-tien rồi đã gỡ.
-- **Việc thật:** David đồng ý → dựng `~/Movies/tap-thu-tai-ban-video-1/2-ban-day-du/video-hoan-chinh.mp4` (43,3 s, ngang) từ bản sạch
+- **Việc thật:** David đồng ý nên dựng `~/Movies/tap-thu-tai-ban-video-1/2-ban-day-du/video-hoan-chinh.mp4` (43,3 s, ngang) từ bản sạch
   `tap-5-nguyen-tac-tien` 4:10–4:56 theo bản luật mới: không thẻ tít, 3 kiểu (nhan · diagram tu-thanh ở đỉnh · cta nguyên văn), đường
   cảm xúc trong `ke-hoach-canh.md`. Soát cảnh P0/P1/P2 = 0; âm −14,2 LUFS, đỉnh −1,9 dB, rè +0,3 dB. **Chờ David chấm.**
   Gặp 2 lỗi code có sẵn (không do tái bản): (a) `xuat-video.mjs` dừng ở bước thẻ cuối trên Node 24 vì `man-ket.js → thanh.js` import

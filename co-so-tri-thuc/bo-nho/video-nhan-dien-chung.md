@@ -23,7 +23,7 @@ caption + bình luận ghim. Video ngang và dọc dài giữ thanh, thẻ cuố
 
 **How to apply:** vị trí chỉ lấy từ `ky-nang/san-xuat-video/thu-vien-tai-nguyen/nhan-dien-thuong-hieu.js` (`khung(W, H)`), thành phần `dau-goc.jsx`,
 `thanh-thoi-gian.jsx`, `than-man-ket.jsx`; bảng ở `ky-nang/san-xuat-video/thu-vien-tai-nguyen/nhan-dien-chung.md`; nhà luật dọc ngắn `quy-tac-chung.md` mục 5, máy tự nhận
-`nganDoc()` / `NGAN_DOC` (`thanh.js`). Không viết số vị trí riêng trong khuôn dựng. Sửa nhận diện → chụp kiểm cả ngang lẫn dọc trên dự
+`nganDoc()` / `NGAN_DOC` (`thanh.js`). Không viết số vị trí riêng trong khuôn dựng. Sửa nhận diện thì chụp kiểm cả ngang lẫn dọc trên dự
 án đã duyệt. Liên quan [[quy-tac-hoc-la-bo-sung]], [[video-bo-cuc-tu-can]], [[video-doc-khuon-chu-chinh]], [[video-tham-my-chi-giu-nhan-dien]].
 
 ## Gộp từ `video-nhan-dien-chung` (15/11/2026, tự học tuần: giảm ghi nhớ về 40)

@@ -291,7 +291,7 @@ gap still advances the clip by half a second, nowhere near dead.
 **Damp the playhead and widen the joins.** `data-sc-lerp` defaults to 0.18;
 **0.12 is the better default for a worldflight**, because a flight has more legs
 mounted and more seams than an act page, and the extra damping is what actually
-removes wheel-event judder. Widen `data-sc-seam` from 0.12 to khoảng 0.16 for the same
+removes wheel-event judder. Widen `data-sc-seam` from 0.12 to ~0.16 for the same
 reason: a longer crossfade band gives each join more room to disappear in.
 
 Changing weights moves every leg boundary, so **every `data-sc-window` has to be
@@ -303,9 +303,9 @@ is tuned to a frame of film, not to a number.
 | Rule | Why |
 |---|---|
 | **Nothing in document flow but the spacer.** | The moment a real block scrolls past the fixed stage, the page has a seam and the mode is pointless. If you want a section, you want act mode. |
-| **Copy translate tối đa 4vh across a window.** | Larger reads as a second page scrolling at a different speed. |
+| **Copy translate ≤ 4vh across a window.** | Larger reads as a second page scrolling at a different speed. |
 | **The lerp is never disabled** except under reduced motion. | A 1:1 playhead reproduces every gap in the wheel event stream as a stutter. |
-| **One pace for the whole flight**, and slower than feels necessary. | Weight divided by clip length must match across legs, or the world surges and drags. khoảng 1.5vh per 8s is the dead-scroll guardrail, not the target. See section 7c. |
+| **One pace for the whole flight**, and slower than feels necessary. | Weight divided by clip length must match across legs, or the world surges and drags. ~1.5vh per 8s is the dead-scroll guardrail, not the target. See section 7c. |
 | **Every clip stays mounted. Never swap a `src`.** | A src swap is a black frame. |
 | **Seam frames come from the encoded mp4.** | The encode changes the pixels. |
 | **One accent, one scrim shape, copy anchored off the bright centre.** | Verified by the contrast pass, which grades copy blocks exactly like cues, at the worst frame each line is ever shown on. |

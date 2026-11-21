@@ -6,7 +6,7 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 ## Luật làm việc với David
 
 - [Viết đủ từ, không viết tắt](quy-tac-viet-du-tu.md) — bộ não và mọi thứ gửi David viết đủ từ, đủ nghĩa; bất kỳ ai đọc cũng hiểu (20/11)
-- [Trục tri thức cố định](quy-tac-truc-tri-thuc.md) — mọi việc học, sửa, lưu đi qua `truc-tri-thuc.md` (bốn tầng, sáu câu, luật đi lên, lỗi → câu kiểm), không đổi cách mỗi lần học (20/11)
+- [Trục tri thức cố định](quy-tac-truc-tri-thuc.md) — mọi việc học, sửa, lưu đi qua `truc-tri-thuc.md` (bốn tầng, sáu câu, luật đi lên, lỗi thì câu kiểm), không đổi cách mỗi lần học (20/11)
 - [Công cụ cài thì đưa vào skill](quy-tac-cong-cu-cai-dua-vao-ky-nang.md) — công cụ David cài (pyannote…) giúp việc tốt hơn thì tích hợp, giữ cách cũ dự phòng (07/11)
 - [Không dùng mod giao diện](quy-tac-khong-dung-mod-giao-dien.md) — đã gỡ hết savvy-progress, collision-guard, goal-meter, Sổ việc; chỉ giữ Telegram (13/11)
 - [Skill tự cải tiến, sáu luật mới](quy-tac-ky-nang-tu-cai-tien.md) — skill/giọng văn/luật kênh tự học theo số liệu, phần sửa duyệt 4 phần (sửa 14/11); lời mới nhất thắng (12/11)
@@ -46,7 +46,7 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 - [Video dài không cắt](video-dai-khong-cat.md) — để nguyên cả lặng và ờ ừm; cắt chỉ khi trích video ngắn (05/11)
 - [Khuôn podcast dọc đồ hoạ](video-doc-khuon-chu-chinh.md) — chữ chính thay phụ đề, không màn hình cuối; 3 clip Đi trainer là mẫu (06/11, sửa 10/11)
 - [Tự chọn theo nội dung](video-tu-chon-theo-noi-dung.md) — mọi lựa chọn (khuôn, bố cục, kiểu cảnh, thẩm mỹ, nhạc) tự setup theo nội dung nguồn, không chép tập trước; máy chặn render khi chưa chẩn đoán (11/11, 19/11)
-- [Làm một mạch, góp ý thì render lại](video-gop-y-render-lai.md) — bỏ cổng 1, cổng 2; góp ý → sửa + render lại toàn bộ luôn; đăng chờ "đăng" (13/11)
+- [Làm một mạch, góp ý thì render lại](video-gop-y-render-lai.md) — bỏ cổng 1, cổng 2; góp ý thì sửa + render lại toàn bộ luôn; đăng chờ "đăng" (13/11)
 - [Kiến trúc skill video](video-kien-truc-ky-nang.md) — Kiến trúc bộ skill video (hồ sơ tham số, 20 khối, thư viện hình, mẫu chuẩn; sửa đúng một chỗ) và bộ 5 video chuẩn 06/11 (04/11, 06/11; gộp 15/11)
 - [Làm lại video cũ](video-lam-lai-video-cu.md) — bỏ lời chào/kênh cũ, tít cũ, chữ/viền in trong hình; mỗi video một bản (08/11)
 - [Motion graphics kể chuyện](video-do-hoa-ke-chuyen.md) — mọi video có điểm nhấn nhiều loại; kể chuyện, vẽ tiếp; AI sáng tạo trong khung (07/11, 09/11)

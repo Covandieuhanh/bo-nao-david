@@ -8,7 +8,7 @@ description: "Khối 07 cảnh minh hoạ: bố cục tự cân, motion graphics
 **Đầu vào:** lời (mốc từ moc-tung-tu.srt)
 **Đầu ra:** cảnh `nhan` / `bocuc` / `illus` / `diagram` / `ve` / card… trong canh.js · `illus` trong OVERLAYS · `ke-hoach-canh.md`
 **Tham số hồ sơ:** chung: `canh_minh_hoa.*`, `hai_trang_thai`
-**Sửa khối này → chạy lại:** 05, 17
+**Sửa khối này thì chạy lại:** 05, 17
 
 **File thật (code, một bản duy nhất):**
 - `thu-vien-tai-nguyen/{chuyen-dong.js,chu-hien.jsx,mach.js,minh-hoa.jsx,so-do.jsx,bieu-tuong.jsx,giu.js}` · cảnh tự vẽ: `khuon-remotion/src/rieng/` (mẫu `mau-mach.jsx`)
@@ -23,11 +23,11 @@ Motion graphic là để **diễn tả lại câu chuyện**, không phải đư
 - **Mọi video đều có điểm nhấn, nhưng chỉ vài kiểu hợp nội dung nhất** (quy-tac-chung mục 0, 4) — "dựng nhẹ" vẫn có điểm nhấn. Kiểu mạnh
   nhất để cho câu đắt nhất. Danh mục kiểu cảnh dưới đây (`nhan`, `bocuc`, `illus`, `diagram`, `card`…) chỉ là công cụ có sẵn — dùng
   khi hợp, không bắt buộc.
-- Cần hình riêng → **cảnh tự vẽ** (`type: 've'`): component React riêng của video trong `chuyen-dong/src/rieng/` (đăng ký ở
+- Cần hình riêng thì dùng **cảnh tự vẽ** (`type: 've'`): component React riêng của video trong `chuyen-dong/src/rieng/` (đăng ký ở
   `rieng/diem-vao.js`, xem mẫu `mau-mach.jsx`), dùng `thu-vien/chuyen-dong.js`, `thu-vien/chu-hien.jsx`, `thu-vien/cho.js` (tránh người).
 - **Một hình diễn tả 1–2 ý, hoặc cả video:** không phải mỗi câu một hình. Trước khi viết cảnh, đọc cả lời và vẽ **mạch hình** — hình
   chính của câu chuyện lớn dần theo video.
-- **Ý quay lại → vẽ tiếp:** người nói nhắc lại hay đi tiếp ý trước thì cảnh sau **vẽ tiếp lên hình đã có** (thêm nét, đổi trạng thái,
+- **Ý quay lại thì vẽ tiếp:** người nói nhắc lại hay đi tiếp ý trước thì cảnh sau **vẽ tiếp lên hình đã có** (thêm nét, đổi trạng thái,
   đi tiếp con đường), không vẽ hình mới rời rạc. Dùng `thu-vien/mach.js`: cùng component, `buoc` tăng dần, `tu_buoc` = bước đã vẽ ở cảnh trước.
 - **Vẫn giữ:** chữ trên màn hình nguyên văn lời người nói (được rút gọn, đặt ở khoá `text`/`label`/`lines`/`quote`/`title` để máy
   soát); không che mặt khi vẽ cạnh người; câu cảm xúc, chuyện riêng thì để thấy mặt; luật chuyển động (mục 8). Đoạn chạm lằn ranh
@@ -55,7 +55,7 @@ Viết **trước** bảng cảnh, vì cảm xúc chọn kiểu cảnh chứ kh�
 **Trước hết tự chọn theo `../../thiet-ke-bo-cuc/tu-chon.md`** (chẩn đoán → bố cục nền, lớp thông tin như bảng ghi chú chạy `GHI_CHU`,
 kiểu cảnh theo dạng câu nói — đi hết kho, không dừng ở vài kiểu quen). Không con số bắt buộc. Mỗi đoạn chọn bố cục từ **`../../thiet-ke-bo-cuc/bo-cuc.md`** theo 4 câu hỏi ở `../../thiet-ke-bo-cuc/README.md` mục 2
 (cần thấy người hay thấy ý · ý dài hay ngắn · khung còn chỗ không · trước / sau là gì). Ngang tự do; dọc mỗi lúc ít thứ. Ghi lý do
-một dòng mỗi cảnh vào `ke-hoach-canh.md`. Bố cục mới học được → thêm vào `thiet-ke-bo-cuc/` + `bo-cuc.jsx`, giữ chữ ký nhận diện.
+một dòng mỗi cảnh vào `ke-hoach-canh.md`. Bố cục mới học được thì thêm vào `thiet-ke-bo-cuc/` + `bo-cuc.jsx`, giữ chữ ký nhận diện.
 Bố cục đã có code: người + phụ đề · `nhan` (mục 4) · **`bocuc`** (`the-canh` thẻ cạnh mặt · `o-nguoi` người vào ô bo góc + `illus` /
 `diagram` / thẻ chữ · `chuong` màn chương · `muc-luc` mục lục tích luỹ · `tien-trinh` thanh tiến trình ý · `canh-nguoi` mạch hình vẽ
 cạnh người, không thẻ — `thanh-phan/bo-cuc.jsx`) · `illus` / `diagram` toàn màn hình. Chữ trong thẻ: nguyên văn.
@@ -77,7 +77,7 @@ Cách viết + khi nào dùng từng kiểu: `bo-cuc.md`.
 | Biểu tượng nhỏ cạnh mặt | `icon: '<tên>'`, `at` | vật / việc cụ thể, không cần cả màn minh hoạ |
 Ví dụ: `{id: 'n1', type: 'nhan', start: 37.4, end: 42.1, props: {text: 'NHẤC CHÂN LÊN', at: 39.9}}` — 2–5 s, không chồng cảnh khác.
 Không che ai: `vi-tri-nhan.py` (vi-tri-khuon-mat.sh) ghi mọi người + người đang nói vào `mat.js`; nhan.jsx đặt chữ / biểu tượng vào khoảng
-trống sát người đang nói (`bam` để bám người khác, vd thẻ tên khách), co cỡ theo chỗ, khung dọc hẹp → dưới cằm.
+trống sát người đang nói (`bam` để bám người khác, vd thẻ tên khách), co cỡ theo chỗ, khung dọc hẹp thì dưới cằm.
 **Không zoom vào / zoom ra trên hình quay** (`quy-tac-chung.md` mục 2; `zoom` trong scenes cũ bị bỏ qua). Đoạn chạm lằn ranh: không dùng.
 
 ## 5. Cảnh minh hoạ `illus` (`thu-vien-tai-nguyen/minh-hoa.jsx`, một bản cho mọi khung dựng)
@@ -96,7 +96,7 @@ Viết ở đâu:
 - Highlight / danh-sach-cat.js (OVERLAYS, giây timeline): `{type: 'illus', start: TS(140.2), end: TS(144), mode: 'single', items: [{icon: 'brain', at: TS(140.5)}], label: 'BỘ NÃO'}`
 Biểu tượng: `thu-vien-tai-nguyen/bieu-tuong.jsx` (thiếu thì vẽ thêm lưới 64×64 cùng kiểu nét — thêm ở thư viện là cả 4 loại có).
 
-Tự động (lưới an toàn): lớp chữ cũ (kinetic, lower, listItem, pow, chips, location, nameCard…) nếu vẫn viết → khung dựng tự vẽ toàn
+Tự động (lưới an toàn): lớp chữ cũ (kinetic, lower, listItem, pow, chips, location, nameCard…) nếu vẫn viết thì khung dựng tự vẽ toàn
 màn hình khi che người (dài theo nội dung); thẻ `card` / `action` bỏ câu trích dài (chỉ hình + nhãn `label`); tít ghim tắt. Muốn giữ
 lớp phủ một cảnh: đặt tay `place` (1 video) / `keep: true` (ghép). Ưu tiên viết `illus` / `nhan` / `bocuc` hơn lớp chữ cũ.
 
@@ -116,8 +116,8 @@ Khi câu nói có CẤU TRÚC, vẽ chính cấu trúc đó (mọi chữ trích 
 | việc đi từ người này sang người kia | `chuyen-giao` (items[0] bên giao, giữa = các việc `{icon, label, at}`, cuối = bên nhận) | "báo cáo tuần … xếp lịch … giao lại cho đội" |
 | người / nơi / tổ chức có thật | `anh` (ảnh giấy phép mở hoặc ảnh David gửi, khung bo góc + nhãn + nguồn) | "CCL", "Hưng Yên", "Bác Hồ" |
 `tang`, `cot` thêm `mot_diem: true` khi các mục được nói lần lượt: chỉ mục đang nói sáng (nguyên lý Báo hiệu, `thiet-ke-bo-cuc/tu-chon.md` bước 4b).
-Ảnh (chỉ ảnh Việt Nam, `quy-tac-chung.md` mục 4): `kho-anh-openverse.py search/fetch` (CC0 / PD / CC BY / CC BY-SA, dùng thương mại) → `chuyen-dong/public/anh/`, ghi `credit` trên ảnh +
-`nguon-anh.txt` cho mô tả. Không có ảnh đúng (logo thương hiệu, ảnh mơ hồ) → dùng sơ đồ, không ép ảnh. Podcast dài: ưu tiên `diagram`
+Ảnh (chỉ ảnh Việt Nam, `quy-tac-chung.md` mục 4): `kho-anh-openverse.py search/fetch` (CC0 / PD / CC BY / CC BY-SA, dùng thương mại) thì chép vào `chuyen-dong/public/anh/`, ghi `credit` trên ảnh +
+`nguon-anh.txt` cho mô tả. Không có ảnh đúng (logo thương hiệu, ảnh mơ hồ) thì dùng sơ đồ, không ép ảnh. Podcast dài: ưu tiên `diagram`
 hơn `illus`. Vlog (`ke-hoach.json` fx): `{"type": "diagram", "c", "at", "len", "mode", "label", "items": [{"at": giây clip, …}]}`.
 
 ## 7. Lên kịch bản cảnh (canh.js)
@@ -125,12 +125,12 @@ hơn `illus`. Vlog (`ke-hoach.json` fx): `{"type": "diagram", "c", "at", "len", 
    (loại cảnh cho loại câu nói, props). `references/vi-du-canh.js` là một kịch bản thật đã duyệt — đọc để lấy cảm giác nhịp và
    cách gắn mốc. Ghi `$P/ke-hoach-canh.md`: bảng cảnh (thời gian, loại, nội dung, minh hoạ, cảm xúc, lý do bố cục).
 2. Thẻ tít `hook` mở đầu: khối 06.
-3. **Quét transcript tìm câu hành động** → cảnh `action` `{icon, quote, quoteAt, doneAt}` ngay lúc nói (doneAt = lúc nói xong cụm
-   việc). Câu hành động rơi vào 4 s cuối → đặt màn hành động ngay trước màn chốt.
+3. **Quét transcript tìm câu hành động** rồi đặt cảnh `action` `{icon, quote, quoteAt, doneAt}` ngay lúc nói (doneAt = lúc nói xong cụm
+   việc). Câu hành động rơi vào 4 s cuối thì đặt màn hành động ngay trước màn chốt.
 4. **Cảnh cuối luôn là màn chốt** (khối 08): `{id: 'chot', type: 'cta', start: <thời lượng − 4>, end: <thời lượng>, props: {text, kind}}`
    — `text` = nguyên văn câu David nói cuối video (thời lượng = `duration` trong du-an.js; cảnh trước đó phải kết thúc trước mốc này).
 5. Sau khi viết (và mỗi lần sửa mốc) canh.js: `zsh $SKILL/scripts/vi-tri-khuon-mat.sh "$P"` (khối 05; lần đầu dò mặt khoảng 1 phút / 5 phút
-   video). Đọc `kiem-tra/khuon-mat/placement.md`: cảnh không có chỗ tránh được **mặt + đầu + vai + ngực** → script tự chuyển toàn màn hình.
+   video). Đọc `kiem-tra/khuon-mat/placement.md`: cảnh không có chỗ tránh được **mặt + đầu + vai + ngực** thì script tự chuyển toàn màn hình.
    Muốn giữ lớp phủ: `place: {top: <px>, scale: 0.6}` hoặc `place: {full: false}` trong cảnh (thứ tự khoá: `id, type, start, end, place,
    props`). Cảnh toàn màn hình (`FULL`, gồm cả thẻ toàn cảnh) che hết hình nên không cần tránh. Ngang pillar: lớp phủ ở cột trái.
 6. *Khung ngang từ gốc dọc* — viết thêm `SIDES` (mẫu trong canh.js): `title` = chủ đề video ngắn gọn, `speaker`, `keywords` = từ
@@ -139,13 +139,13 @@ hơn `illus`. Vlog (`ke-hoach.json` fx): `{"type": "diagram", "c", "at", "len", 
 
 **Minh hoạ: biểu tượng vẽ (mặc định) hoặc ảnh** (luật ở `../../quy-tac-chung.md` mục 4). Biểu tượng: `icon: '<tên>'` thay `photo` trong
 `montage` và `card job`. Không dùng ảnh kho vì hay lệch ngữ cảnh, lạc tông nền, phải ghi nguồn, có thể lộ mặt người lạ. Không có ảnh
-tốt → biểu tượng + tên gọi đúng, không ảnh tạm. David nói "không dùng ảnh" → không ảnh nào; "thêm ảnh" → tìm ảnh cho mọi thứ cụ thể.
+tốt thì dùng biểu tượng + tên gọi đúng, không ảnh tạm. David nói "không dùng ảnh" thì không ảnh nào; "thêm ảnh" thì tìm ảnh cho mọi thứ cụ thể.
 Khi cần ảnh: viết `$P/hinh-anh/tu-khoa-tim.json` (từ khoá tiếng Anh) rồi:
 ```bash
 python3 -I $SKILL/scripts/kho-anh-openverse.py search "$P" "$P/hinh-anh/tu-khoa-tim.json"     # chạy nền, ~20 s/từ khoá
 ```
 Xem từng `hinh-anh/bang-anh/<key>.jpg` (8 ảnh, số 0–7 từ trái) và chọn. Loại bỏ: người nổi tiếng/người dễ nhận ra ở bối cảnh nhạy cảm,
-logo thương hiệu nổi bật, hình vẽ clip-art lạc tông với ảnh chụp, ảnh mờ/chữ đè, ảnh không khớp nghĩa. Không có ảnh ổn → thêm từ khoá
+logo thương hiệu nổi bật, hình vẽ clip-art lạc tông với ảnh chụp, ảnh mờ/chữ đè, ảnh không khớp nghĩa. Không có ảnh ổn thì thêm từ khoá
 khác vào tu-khoa-tim.json và search lại (chỉ các key đó). Rồi:
 ```bash
 python3 -I $SKILL/scripts/kho-anh-openverse.py fetch "$P" "$P/hinh-anh/anh-chon.json"
@@ -156,7 +156,7 @@ python3 -I $SKILL/scripts/kho-anh-openverse.py fetch "$P" "$P/hinh-anh/anh-chon.
 vào + `giu_sau_s` (hồ sơ chung) + 0,3 s mờ ra (+`giu_moi_chu_s` mỗi chữ nhãn vượt 3), tối đa 6 s từ đầu cảnh, không lấn lớp kế tiếp /
 màn chốt. Khung dựng TỰ kéo dài khi render (`thu-vien-tai-nguyen/giu.js`, dùng ở montage `chuong-trinh.jsx` + remotion `goc.jsx`) — viết `len`
 như thường, không tính tay. `keepEnd: true` = tắt luật cho lớp đó. Áp cho: illus · action (tính từ `doneAt`) · chips · pow · listItem ·
-kinetic · scene. Bị chặn bởi trần 6 s (phần tử cuối hiện sau giây thứ khoảng 4 của cảnh) → dời `start`/`at` của cảnh muộn hơn cho phần tử
+kinetic · scene. Bị chặn bởi trần 6 s (phần tử cuối hiện sau giây thứ khoảng 4 của cảnh) thì dời `start`/`at` của cảnh muộn hơn cho phần tử
 đầu sát lúc nói.
 
 ## 8. Luật chuyển động (code: `thu-vien-tai-nguyen/chuyen-dong.js` + `chu-hien.jsx`)
@@ -168,14 +168,14 @@ Chuyển động phải dẫn mắt tới ý đang nói, không để trang trí
 - **Kiểu vào theo ý của câu**, không để mọi cảnh cùng trồi lên: 1 hình = phóng tại chỗ · nhân quả = đi theo hướng đọc · so sánh = hai
   phía tiến vào · danh sách = trồi lên lần lượt.
 - **Nối gối, so le:** phần sau bắt đầu khi phần trước xong 30–50 %; từ cách nhau 60–120 ms, mục danh sách 40–80 ms.
-- **Chữ hiện từng từ, không dịch chỗ** (`ChuHien`): `mo` (mờ 6 px → nét, 0,13 s, cách khoảng 0,067 s) · `muc` (xám nhạt → màu chữ) · `dong`
-  (cả dòng mờ → nét). Kiểu đổi theo cảnh (`kieuChu(id)`), không để mọi cảnh mờ + trượt lên.
+- **Chữ hiện từng từ, không dịch chỗ** (`ChuHien`): `mo` (mờ 6 px sang nét, 0,13 s, cách khoảng 0,067 s) · `muc` (xám nhạt sang màu chữ) · `dong`
+  (cả dòng mờ thì nét). Kiểu đổi theo cảnh (`kieuChu(id)`), không để mọi cảnh mờ + trượt lên.
 - **Chỉ vị trí và cỡ được nảy nhẹ** — lò xo theo ζ (`loXo(zeta)`): 0,7–0,85 sang, 0,4–0,6 vui. Độ mờ và màu không nảy. Phản hồi một
   lần thì được (bên nhận đón việc), lặp lại thì không.
-- **Thoát:** mờ nhoè + tan 0,13–0,25 s, ngắn hơn lúc vào; khung toàn màn hình vào bằng mờ nhoè → nét (`vaoRa`).
+- **Thoát:** mờ nhoè + tan 0,13–0,25 s, ngắn hơn lúc vào; khung toàn màn hình vào bằng mờ nhoè sang nét (`vaoRa`).
 - **Giữ đủ đọc:** 0,5 s + 0,3 s mỗi từ (`docDu`); câu cuối video ít nhất 2 s.
 - **Vào cảnh qua một vật trên màn hình khi được** (việc bay sang bên nhận, màu tràn từ vật ra), không mờ chồng cả khung.
-- **Chuyển cảnh có nguyên do, 3–5 kiểu một video:** tối nhẹ khoảng 40 % trong 3 khung trước cắt cứng · đổi trên cùng nền (mờ ra 8 px → mờ
+- **Chuyển cảnh có nguyên do, 3–5 kiểu một video:** tối nhẹ khoảng 40 % trong 3 khung trước cắt cứng · đổi trên cùng nền (mờ ra 8 px thì mờ
   vào) · màu tràn nền · vật trên màn hình lớn dần thành cảnh sau. Tối đa một phần ba số mối nối là cắt cứng.
 - Không cắt theo nhịp nhạc (video của David đi theo lời).
 - **Soát kiểu "máy làm" khi xem chụp thử:** che chữ đi, hình còn kể được ý không; mọi cảnh có vào giống nhau không; có gì còn

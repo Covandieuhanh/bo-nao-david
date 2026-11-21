@@ -49,7 +49,7 @@ Luật thêm cho đợt này: mọi file viết lại giữ khối `description:
 ```
 
 ## Chéo bộ (phiên điều phối gom và chốt nhà)
-- Giao phiên não: luật "nội dung là của David, không khuôn lời" mất nhà → `chuan-muc-lam-viec.md` mục 0; "chờ ok" → "duyệt"; luật `quy-tac-david-md-chi-dieu-co-dinh` → chuan-muc mục 4; AGENTS luật 2 và chi-dan-toan-cuc rút còn câu tóm + trỏ chuan-muc mục 2.
+- Giao phiên não: luật "nội dung là của David, không khuôn lời" mất nhà nên về `chuan-muc-lam-viec.md` mục 0; "chờ ok" thành "duyệt"; luật `quy-tac-david-md-chi-dieu-co-dinh` về chuan-muc mục 4; AGENTS luật 2 và chi-dan-toan-cuc rút còn câu tóm + trỏ chuan-muc mục 2.
 - Giao phiên ghi nhớ: viết lại thân các ghi nhớ còn chồng lớp (`quy-tac-goi-y-de-david-chon`, `quy-tac-phien-telegram-tu-chay`, `quy-tac-ky-nang-tu-cai-tien`, `video-khong-tu-xuat`, `video-podcast-phu-hinh-30`, `video-bo-cuc-tu-can`, `video-kien-truc-ky-nang`), `.gitignore` cho `luu-tru/thiet-bi-*`, chép lại mô tả ở `ban-do/`.
 - Để nguyên: `tu-dong-hoa/so-tay/README.md` còn dấu ngày (ngoài ba bộ, không đo); `du-an/danh-gia-luat.md` là biên bản cũ.
 - Ghi nhớ trỏ bản luật theo số mục: kiểm lại bằng `grep -n "mục [0-9]" co-so-tri-thuc/bo-nho/*.md` sau khi các phiên xong.
@@ -57,9 +57,9 @@ Luật thêm cho đợt này: mọi file viết lại giữ khối `description:
 
 ## Hỏi David (gom một lần)
 David trả lời 14/11, chọn cả 4 đề xuất:
-1. Ken Burns: luật không zoom chỉ áp hình quay; ảnh minh hoạ và chuyển động trong đồ hoạ vẫn được trôi chậm → phiên video viết rõ.
-2. `david.md` mục 3.1: giữ một câu đủ ý, bỏ dấu ngày "(14/11/2026)" → phiên điều phối đã sửa.
-3. Đổi tên `quy-tac-mod-tu-chay` → `quy-tac-khong-dung-mod-giao-dien`, `video-khong-tu-xuat` → `video-gop-y-render-lai` → phiên điều phối làm sau khi phiên ghi nhớ xong.
+1. Ken Burns: luật không zoom chỉ áp hình quay; ảnh minh hoạ và chuyển động trong đồ hoạ vẫn được trôi chậm thì phiên video viết rõ.
+2. `david.md` mục 3.1: giữ một câu đủ ý, bỏ dấu ngày "(14/11/2026)" thì phiên điều phối đã sửa.
+3. Đổi tên `quy-tac-mod-tu-chay` thành `quy-tac-khong-dung-mod-giao-dien`, `video-khong-tu-xuat` thành `video-gop-y-render-lai` rồi phiên điều phối làm sau khi phiên ghi nhớ xong.
 4. Skill cũ `hoi-chuyen-gia` (đồng bộ từ claude.ai): David tự tắt trên claude.ai.
 Câu nhỏ không cần hỏi (theo đề xuất phiên con): giữ ghi nhớ `video-ban-chuan-2026-11-06`, `video-lam-lai-video-cu` tới khi có bộ mẫu mới; dòng "Sáu luật nền" ở david.md để nguyên.
 
@@ -76,6 +76,6 @@ Câu nhỏ không cần hỏi (theo đề xuất phiên con): giữ ghi nhớ `v
 - [x] Máy kiểm liên kết 0 / 0
 
 ## Lỗi tìm ra khi chạy việc thật (có từ chuẩn hoá tên 14/11, không do tái bản)
-- `cat-doan-noi-bat.py`, `danh-sach-cat-doan-noi-bat.py` gọi `import pauses` nhưng file đã đổi thành `khoang-lang.py` (tên có gạch nối không import được) → đã sửa: nạp theo đường dẫn.
-- `tao-doan-noi-bat.sh` lấy `tu-lieu/video-goc.mp4` của dự án gốc — với bản dài kiểu "khung chủ thể" thì file này đã có khung bo góc trên nền tối, cắt dọc bị lệch mặt. Việc thật dùng `video-goc-tho.MP4` (hình quay gốc) + tiếng đã cân. → đã sửa (15/11): có `video-goc-tho.*` cùng độ dài thì hình lấy từ bản thô, tiếng lấy từ bản đã cân; lệch quá 0,5 s (bản dài đã làm sạch / cắt, ví dụ `tap-cuoc-goi-hop-tac`) thì báo và dùng `video-goc.mp4` như cũ.
-- `kiem-mau.py` dòng 43: bỏ `makedirs`, chỉ giữ lối tắt `tu-lieu` → đã sửa (15/11).
+- `cat-doan-noi-bat.py`, `danh-sach-cat-doan-noi-bat.py` gọi `import pauses` nhưng file đã đổi thành `khoang-lang.py` (tên có gạch nối không import được) thì đã sửa: nạp theo đường dẫn.
+- `tao-doan-noi-bat.sh` lấy `tu-lieu/video-goc.mp4` của dự án gốc — với bản dài kiểu "khung chủ thể" thì file này đã có khung bo góc trên nền tối, cắt dọc bị lệch mặt. Việc thật dùng `video-goc-tho.MP4` (hình quay gốc) + tiếng đã cân. nay đã sửa (15/11): có `video-goc-tho.*` cùng độ dài thì hình lấy từ bản thô, tiếng lấy từ bản đã cân; lệch quá 0,5 s (bản dài đã làm sạch / cắt, ví dụ `tap-cuoc-goi-hop-tac`) thì báo và dùng `video-goc.mp4` như cũ.
+- `kiem-mau.py` dòng 43: bỏ `makedirs`, chỉ giữ lối tắt `tu-lieu` nay đã sửa (15/11).

@@ -12,7 +12,7 @@ metadata:
 được cách nào phù hợp với nội dung của video để làm việc"; "tập trung vào điện thoại" mà Claude chỉ cắt-phóng khung, rác vẫn còn;
 video nhiều nội dung cần motion graphic hiện nhiều thông tin hơn để người xem theo dõi.
 
-**Why:** kho hiệu ứng học nhiều nhưng không có bước "dấu hiệu → kiểu", nên Claude chỉ dùng vài kiểu quen; thử-sai bằng render và mổ xẻ
+**Why:** kho hiệu ứng học nhiều nhưng không có bước "dấu hiệu thì kiểu", nên Claude chỉ dùng vài kiểu quen; thử-sai bằng render và mổ xẻ
 lỗi skill giữa chừng làm chậm.
 
 **How to apply:** luật ở `ky-nang/san-xuat-video/thiet-ke-bo-cuc/tu-chon.md` (chẩn đoán `chan-doan.py` → khung chủ thể `khung-chu-the.py`,
@@ -24,5 +24,5 @@ dấu hiệu vào tu-chon.md. Liên quan [[quy-tac-goi-y-de-david-chon]], [[vide
 Gốc: kho chỉ nối vào khuôn 1 video; tập 2 file đi khuôn ghép (thiếu nửa kho, không bước chẩn đoán, máy sinh chỉ viết pow), Claude chép
 kịch bản bản trước. David duyệt đường A và chốt: *"mọi thứ cần phát huy tối đa được sức mạnh của AI, mọi lựa chọn đều phải được tự động
 setup phù hợp với nội dung của tài nguyên nguồn"*.
-**How to apply (bổ sung):** nhiều file cùng buổi nói → nối file, khuôn 1 video; khuôn ghép chỉ cho vlog nhiều cảnh + clip ngắn; tu-chon.md
+**How to apply (bổ sung):** nhiều file cùng buổi nói thì nối file, khuôn 1 video; khuôn ghép chỉ cho vlog nhiều cảnh + clip ngắn; tu-chon.md
 bước 0 (không chép tập trước, bảng khuôn) + bước 2b (thẩm mỹ); `soat-canh.mjs` chặn render khi thiếu `## Chẩn đoán` hoặc cả video một kiểu.

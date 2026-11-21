@@ -18,7 +18,7 @@ Lý do: phiếu học đầu tiên của video Cường Mê AI liệt kê 9 hi�
 Luật hiện hành: `ky-nang/san-xuat-video/thiet-ke-bo-cuc/tu-chon.md` bước 4a (ý nào cần hình, năm nguyên lý).
 
 **How to apply:**
-- Phiếu học trả lời trước: "vì sao mẫu này dễ hiểu" (nguyên lý) → mỗi nguyên lý nâng cấp thành phần nào đang có. Món chỉ để trang trí thì ghi vào "Không lấy".
+- Phiếu học trả lời trước: "vì sao mẫu này dễ hiểu" (nguyên lý) thì mỗi nguyên lý nâng cấp thành phần nào đang có. Món chỉ để trang trí thì ghi vào "Không lấy".
 - Trước khi thêm gì từ bài học: đọc luật và gotchas liên quan, giữ nguyên các chặn cũ, thêm chặn mới cho thành phần mới (ví dụ thành phần mới phải tránh dấu góc, phụ đề, thanh thời gian).
 - Khung mới (ngang/dọc) lần đầu chạy: chụp đủ lớp (cảnh + phụ đề + dấu góc + thanh) trước khi render, không chỉ chụp lớp cảnh.
 - David gửi video mẫu để học: dùng skill `phan-tich-video-mau` (cửa vào) → quy trình 10 bước ở `ky-nang/san-xuat-video/thiet-ke-bo-cuc/README.md` mục 4: phiếu học David duyệt trước, kiểm không phá sau (David chọn phương án A, 08/11/2026).

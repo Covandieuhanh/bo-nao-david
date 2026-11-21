@@ -7,8 +7,8 @@ description: "Khối 00 bộ lọc nội dung: lọc tài nguyên theo hồ sơ 
 **Dùng trong:** cả 4 loại, và mọi tài nguyên David đưa (video, file ghi âm, bài viết).
 **Đầu vào:** tài nguyên David đưa — thường KHÔNG kèm yêu cầu · hồ sơ `~/.claude/david.md` · hồ sơ kênh `../../ho-so-thuong-hieu/kenh.json` · sổ `~/Movies/_danh-muc-noi-dung/danh-muc-noi-dung.md` · **kho 100 video `du-an/ke-hoach-noi-dung-100-video.md`** (kế hoạch nội dung, repo bộ não)
 **Đầu ra:** phiếu lọc (ghi vào dự án; là nguồn của 4 phần gọn David duyệt, không có cổng duyệt riêng) · `phan-huong.md` của tập · mục nhật ký nội dung từng hướng (`du-an/nhat-ky-noi-dung/`) · một dòng trong sổ danh mục
-**Hình mẫu:** Hieu Nguyen (2 mảng lặp lại 50/50 tập), Alex Hormozi ("được biết đến vì một điều"), Justin Welsh (content pillars), Gary Vaynerchuk (một lần nói → nhiều bài).
-**Sửa khối này → chạy lại:** không có code; đổi luật kênh → sửa `ho-so-thuong-hieu/kenh.json`.
+**Hình mẫu:** Hieu Nguyen (2 mảng lặp lại 50/50 tập), Alex Hormozi ("được biết đến vì một điều"), Justin Welsh (content pillars), Gary Vaynerchuk (một lần nói thì nhiều bài).
+**Sửa khối này thì chạy lại:** không có code; đổi luật kênh thì sửa `ho-so-thuong-hieu/kenh.json`.
 
 ## Nguyên tắc
 - **David chỉ đưa tài nguyên.** Claude tự phân tích, tự chọn làm gì · làm thế nào · đăng kênh nào · lúc nào (`chuan-muc-lam-viec.md`
@@ -27,13 +27,13 @@ description: "Khối 00 bộ lọc nội dung: lọc tài nguyên theo hồ sơ 
 
 Mọi tài nguyên đều **phân đủ theo cả ba hướng** (mục 0b): hướng nào có ý trọn thì ra một bản riêng, phần không thuộc hướng nào thì
 bỏ. Cách soi mục tiêu / nỗi đau: ba phạm trù **Tiền · Thị trường · Con người** (`co-so-tri-thuc/mo-hinh-kinh-doanh.md`); marketing,
-khách, thị trường của chính người xem = "làm chủ thị trường" → hướng 2.
+khách, thị trường của chính người xem = "làm chủ thị trường" thì hướng 2.
 
 ## 0b. Phân hướng từng đoạn, ghép bản theo hướng
 1. **Chia đoạn theo ý**: đọc cả bản lời, mỗi đoạn một ý: mốc vào–ra · ý một dòng · hướng (1 / 2 / 3) · hoặc **Bỏ** kèm lý do (không
    liên quan, chào hỏi, chuyện riêng, lằn ranh mục 3, ý chưa trọn). Một đoạn chạm hai hướng: gán hướng chính, ghi "dùng lại ở hướng X"
    (ví dụ: phép thử nỗi đau thuộc hướng 2, hướng 3 dùng lại làm câu mở tư vấn).
-2. **Mỗi hướng một bản** khi gom được bối cảnh + ít nhất một ý trọn (chấm 5 tiêu chí theo hướng, mục 2). Không đủ → không ép ra bản,
+2. **Mỗi hướng một bản** khi gom được bối cảnh + ít nhất một ý trọn (chấm 5 tiêu chí theo hướng, mục 2). Không đủ thì không ép ra bản,
    chỉ ghi nhật ký. Dạng mặc định, độ dài vẫn theo nội dung:
    | Hướng | Bản | Nơi đăng |
    |---|---|---|
@@ -67,11 +67,11 @@ xem tin David là trainer.
 ## 1b. Đối chiếu kho 100 video (bắt buộc với hướng trainer)
 Kho `du-an/ke-hoach-noi-dung-100-video.md` là **kế hoạch nội dung** của kênh: dần dần mọi video phải đi theo kho, tránh làm video lệch mục tiêu.
 Đọc phần "Luật đối chiếu" ở đầu kho, rồi tìm (`grep` nỗi đau / cách làm / từ khoá của lời chép) ý khớp nhất:
-- **Khớp** → ghi `Kho 100: ý <số> "<nỗi đau>"` + kiểu dẫn dắt của ý đó (kho thắng tỉ lệ tự đếm, trừ khi David chọn khác).
-- **Không khớp ý nào** → ⚠️ cảnh báo trong phiếu, David chọn: thêm làm ý mới (cuối giai đoạn hợp) · cất kho · bỏ. Không tự dựng.
-- **Khớp giai đoạn 3** (cơ sở chạy khi vắng chủ) → không thuộc kênh trainer; hợp gói công nghệ thì chuyển hướng 3.
+- **Khớp** thì ghi `Kho 100: ý <số> "<nỗi đau>"` + kiểu dẫn dắt của ý đó (kho thắng tỉ lệ tự đếm, trừ khi David chọn khác).
+- **Không khớp ý nào** thì ⚠️ cảnh báo trong phiếu, David chọn: thêm làm ý mới (cuối giai đoạn hợp) · cất kho · bỏ. Không tự dựng.
+- **Khớp giai đoạn 3** (cơ sở chạy khi vắng chủ) thì không thuộc kênh trainer; hợp gói công nghệ thì chuyển hướng 3.
 - Luôn gợi ý **ý kế tiếp nên quay**: ý "Ý tưởng" số nhỏ nhất (bỏ giai đoạn 3) — nhắc David quay theo kế hoạch.
-- Sau khi dựng / đăng: đổi cột Trạng thái của ý trong kho (Đã dựng <ngày> · `tap-<tên>` → Đã đăng <ngày> + link), đẩy GitHub.
+- Sau khi dựng / đăng: đổi cột Trạng thái của ý trong kho (Đã dựng <ngày> · `tap-<tên>` thành Đã đăng <ngày> + link), đẩy GitHub.
 
 ## 2. Chấm 5 tiêu chí (0–2 mỗi tiêu chí)
 | # | Tiêu chí | 2 | 1 | 0 |
@@ -83,7 +83,7 @@ Kho `du-an/ke-hoach-noi-dung-100-video.md` là **kế hoạch nội dung** của
 | 5 | **Nhân hiệu** | chuyện thật của David, thấy cách David dẫn dắt | có chuyện thật | không |
 
 **Khung 3 phần** Vấn đề · Giải pháp · Thực thi: được **sắp lại thứ tự đoạn** từ nguyên lời David; thiếu hẳn một phần (thường là
-Thực thi) → không bịa, báo "thiếu phần X" để David quyết nói bổ sung hay cất kho.
+Thực thi) thì không bịa, báo "thiếu phần X" để David quyết nói bổ sung hay cất kho.
 
 **Chấm cả câu chuyện, không chấm từng đoạn để giữ đoạn điểm cao**: 70–80% câu chuyện là dẫn dắt, bối cảnh, tình
 huống để đoạn đắt có giá trị. Video dài một hướng là bản gốc và để nguyên (quy-tac-chung mục 2); nhiều hướng thì mỗi bản theo hướng
@@ -98,7 +98,7 @@ tin David trong hướng đó.
 **Tài chính:** cam kết lợi nhuận · gọi lệnh mua/bán cụ thể · thiếu cảnh báo rủi ro · nhắc đơn vị không được cấp phép.
 **Trainer:** trị liệu, chẩn đoán tâm lý · nhắc vai coach trên kênh công khai · nói giá, tên gói dịch vụ trên video · đọc số của người thật khi họ chưa đồng ý · hứa tiền hay kết quả nhờ con số · nghi thức cầu xin, phóng sinh. Còn nội dung từ trường số (kèm dẫn chứng thần số học, thiền, "nghiệp"…) thuộc hướng trainer, được nói công khai (hệ 135, hồ sơ 4.1).
 **Gói công nghệ:** hứa kết quả gói chưa làm ra thật. Giá sản phẩm công nghệ của David được công bố (tự quảng bá), không phải lằn ranh.
-Chạm → **luôn cảnh báo trong phiếu và báo cáo**: mốc giây, lời chạm, rủi ro. Mặc định **giữ lời, không tự cắt** (David có thể đã tự cân đối khi kể); David muốn cắt thì nói ở bản cuối. Ghi "đã cảnh báo" vào sổ; chữ đồ hoạ, tiêu đề, thumbnail, mô tả, clip ngắn vẫn không lấy nội dung đó.
+Chạm thì **luôn cảnh báo trong phiếu và báo cáo**: mốc giây, lời chạm, rủi ro. Mặc định **giữ lời, không tự cắt** (David có thể đã tự cân đối khi kể); David muốn cắt thì nói ở bản cuối. Ghi "đã cảnh báo" vào sổ; chữ đồ hoạ, tiêu đề, thumbnail, mô tả, clip ngắn vẫn không lấy nội dung đó.
 
 ## 4. Bảy kết luận
 | Nhãn | Khi | Làm |

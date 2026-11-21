@@ -19,7 +19,7 @@ Sổ gốc ghi lời nguyên văn: `~/Documents/2-ca-nhan/so-tay/y-tuong.md` và
 
 ## 1. Company OS — automation cho hộ kinh doanh, DN siêu nhỏ, DN trung
 
-**Lời góp ý (tóm đúng ý):** trainer doanh nghiệp thuần đang đi xuống vì AI. Nên làm sản phẩm automation "tải về là cài" cho hộ kinh doanh cá thể → DN siêu nhỏ → DN trung. Company OS chỉ là **phễu**; giá trị lớn nhất là **gói training**: máy móc chỉ là công cụ, khách mua về dùng không ra hồn → bán gói training, mở rộng, đi vào chi tiết sản phẩm, gói bán thêm gói.
+**Lời góp ý (tóm đúng ý):** trainer doanh nghiệp thuần đang đi xuống vì AI. Nên làm sản phẩm automation "tải về là cài" cho hộ kinh doanh cá thể → DN siêu nhỏ → DN trung. Company OS chỉ là **phễu**; giá trị lớn nhất là **gói training**: máy móc chỉ là công cụ, khách mua về dùng không ra hồn nên bán gói training, mở rộng, đi vào chi tiết sản phẩm, gói bán thêm gói.
 
 **Đối chiếu định hướng:**
 - Khớp: david.md 4.1 (12/11) đã mở nhiều kênh, bỏ giới hạn "không kinh doanh". Lõi vẫn là training — đúng thế mạnh "con người" của David; công cụ chỉ là cửa vào.
@@ -42,7 +42,7 @@ Sổ gốc ghi lời nguyên văn: `~/Documents/2-ca-nhan/so-tay/y-tuong.md` và
 **Đối chiếu định hướng:**
 - Khớp: nhiều kênh (4.1); hợp kinh nghiệm MC của David; "hai đầu" chỉ thành góc riêng nếu David sang Đức (hiện là dự định, chưa chốt). Chi phí gần bằng 0 (quay điện thoại, gọi online).
 - Có sẵn công cụ: skill `dung-podcast` dựng podcast 2 người (sóng âm đổi màu theo người nói), `cat-doan-noi-bat` cắt clip dọc.
-- Lưu ý: chủ đề dòng tiền, tài chính DN nằm ngoài kênh trainer → kênh riêng, có hồ sơ và lằn ranh riêng (không tư vấn thuế/pháp lý). Giờ lệch Việt – Đức: tối thứ 5 giờ VN = trưa/chiều Đức. Nhịp hằng tuần cần đối chiếu luật năng lượng (tuần khó vẫn giữ được không?).
+- Lưu ý: chủ đề dòng tiền, tài chính DN nằm ngoài kênh trainer thì kênh riêng, có hồ sơ và lằn ranh riêng (không tư vấn thuế/pháp lý). Giờ lệch Việt – Đức: tối thứ 5 giờ VN = trưa/chiều Đức. Nhịp hằng tuần cần đối chiếu luật năng lượng (tuần khó vẫn giữ được không?).
 
 **Câu cần chốt:**
 1. Đăng ở kênh nào (kênh mới, kênh tài chính David Trần Official, hay kênh anh Phú Ông)?
@@ -68,7 +68,7 @@ Sổ gốc ghi lời nguyên văn: `~/Documents/2-ca-nhan/so-tay/y-tuong.md` và
 
 **Đối chiếu định hướng:**
 - Khớp: thước đo thành công "người được đồng hành tự đứng được, không cần David xuất hiện"; luật 4 tiếng/ngày (bot gánh việc lặp); khách người Việt online; gói công nghệ kèm đào tạo (chính hệ này là bản mẫu bán được).
-- Lưu ý: bot nói trong nhóm là nói thay David → cần lằn ranh (bot làm gì, việc gì phải chuyển David); không đụng dữ liệu riêng của học viên ngoài nhóm.
+- Lưu ý: bot nói trong nhóm là nói thay David thì cần lằn ranh (bot làm gì, việc gì phải chuyển David); không đụng dữ liệu riêng của học viên ngoài nhóm.
 
 **Câu cần chốt:**
 1. Điều kiện David đặt (14/11): chưa làm ngay; chỉ bắt đầu khi David thấy bot phản hồi **thấu hiểu, rõ ràng** và đã **học cải tiến qua nhiều đợt**. Đo cụ thể bằng gì thì David chốt sau.

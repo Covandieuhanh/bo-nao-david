@@ -10,7 +10,7 @@ Repo riêng tư. AI nào, tài khoản nào đọc xong cũng nhận đúng vai,
 
 > Đọc file AGENTS.md trong repo Covandieuhanh/bo-nao-david rồi đọc tiếp theo đúng thứ tự trong đó. Xong thì tóm tắt 3 dòng: tôi là ai, bạn sẽ làm việc với tôi thế nào, việc đang dở là gì.
 
-## Muốn tìm… → mở…
+## Muốn tìm… thì mở…
 
 | Muốn tìm | Mở |
 |---|---|

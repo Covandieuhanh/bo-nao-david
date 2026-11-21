@@ -4,8 +4,8 @@ description: "Nghiên cứu 50 video nổi bật kênh Hieu Nguyen (podcast tài
 
 # Học từ 50 video nổi bật nhất kênh Hieu Nguyen (@hieu-tv) — 2026-11-05
 
-Kênh: 844 N đăng ký · 184 video · "Tài chính cá nhân và kinh nghiệm sống". 50 video xếp theo **Phổ biến** (445 N → 2,1 Tr lượt xem).
-Mục đích: David thấy phong cách kênh hợp mình và tỉ lệ chuyển đổi cao → học nhịp điệu và cách làm podcast (luật "sao chép hình mẫu thành công").
+Kênh: 844 N đăng ký · 184 video · "Tài chính cá nhân và kinh nghiệm sống". 50 video xếp theo **Phổ biến** (445 nghìn đến 2,1 triệu lượt xem).
+Mục đích: David thấy phong cách kênh hợp mình và tỉ lệ chuyển đổi cao thì học nhịp điệu và cách làm podcast (luật "sao chép hình mẫu thành công").
 
 ## Cách đo (trên trình duyệt, không tải video)
 Mỗi video: bỏ quảng cáo → đọc mô tả + chương → phát 6× ba đoạn (75 s đầu · 30 s giữa · 45 s cuối) và đo chênh lệch khung hình
@@ -30,14 +30,14 @@ Mỗi video: bỏ quảng cáo → đọc mô tả + chương → phát 6× ba �
 ## Cách làm (rút ra)
 1. **Một màn hình, đổi rất ít.** Nền cố định suốt tập — 2021: nền xanh đậm vân giấy; 2022–23: bức tường xám + đèn rọi. Giữa
    màn là tên tập / câu ý chính chữ in hoa đậm, giữ hàng phút. Đổi hình chỉ khi sang **ý lớn** (chương), khoảng 2–4 phút/lần.
-2. **Bản đồ chương tích luỹ.** Mỗi chương thêm MỘT thẻ (biểu tượng + nhãn 2–5 chữ) cạnh các thẻ trước → cuối tập màn hình là
+2. **Bản đồ chương tích luỹ.** Mỗi chương thêm MỘT thẻ (biểu tượng + nhãn 2–5 chữ) cạnh các thẻ trước thì cuối tập màn hình là
    sơ đồ toàn bài (người xem thấy mình đang ở đâu, muốn chụp lại). Thỉnh thoảng chen biểu đồ / ảnh tư liệu khi nói số liệu, câu chuyện.
 3. **Đáy màn hình kiểu "đài phát thanh":** thanh tiến độ mảnh + sóng âm nhỏ + tên tập (trái) · "TẬP 57 • 27 FEB 2022 | HIEU.TV" (phải).
 4. **Không phụ đề in hình, không hiệu ứng chữ, không chuyển cảnh nhanh** — người xem *nghe* là chính, hình để định vị.
 5. **Nhạc chỉ ở intro/outro.** Lời nói hoàn toàn sạch.
 6. **Nghi thức mở (khoảng 30 s, gần như nguyên văn mỗi tập):** chào → "chào mừng đến Podcast Hiếu TV" → dành cho người mới: kênh chia
    sẻ 2 mảng (tài chính cá nhân · kinh nghiệm sống), phát hành tối chủ nhật hàng tuần → tải tài liệu miễn phí ở hieu.tv → "một lần
-   nữa xin chào, bây giờ chúng ta cùng bắt đầu chủ đề hôm nay" → vào đề bằng **nối tập trước / kể một câu chuyện / một biểu đồ /
+   nữa xin chào, bây giờ chúng ta cùng bắt đầu chủ đề hôm nay" thì vào đề bằng **nối tập trước / kể một câu chuyện / một biểu đồ /
    một câu hỏi**. Không có "hook" trích câu đắt.
 7. **Nghi thức kết (gần như nguyên văn):** nếu thấy hữu ích nhờ chia sẻ cho bạn bè và người thân (có khi nói rõ: "đặc biệt các em
    còn trẻ") → nhờ bấm like vì thuật toán → cảm ơn → chúc buổi tối cuối tuần bình yên bên gia đình. Gần như không xin đăng ký.

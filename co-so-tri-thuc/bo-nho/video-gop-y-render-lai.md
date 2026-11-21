@@ -6,7 +6,7 @@ metadata:
 ---
 
 Video làm một mạch (sau khi David duyệt 4 phần): không cổng 1, cổng 2, ra luôn bản dài + clip ngắn + bài đăng trên Drive và trang xem kết
-quả (`tu-dong-hoa/xem-ket-qua.py`). Góp ý → sửa rồi **render lại toàn bộ luôn**, không chờ chữ "render". Đăng mạng xã hội vẫn chờ David nói
+quả (`tu-dong-hoa/xem-ket-qua.py`). Góp ý thì sửa rồi **render lại toàn bộ luôn**, không chờ chữ "render". Đăng mạng xã hội vẫn chờ David nói
 "đăng" (AGENTS luật 4).
 
 **Why:** David muốn đưa tài nguyên vào là có kết quả; duyệt giữa chừng làm chậm.
@@ -19,4 +19,4 @@ lời David, lý do.
 ## Sổ
 - 05/11/2026 David chốt "góp ý chỉ sửa skill, render khi David yêu cầu".
 - 13/11/2026 David: "tôi thấy bạn đã hiểu cách làm của tôi nên không cần phải duyệt cổng 1, cổng 2 nữa, mà cứ thế làm thôi, nếu tôi không
-  ưng thì sẽ góp ý rồi render lại toàn bộ video" → bỏ luật 05/11.
+  ưng thì sẽ góp ý rồi render lại toàn bộ video" thì bỏ luật 05/11.

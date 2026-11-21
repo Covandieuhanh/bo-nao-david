@@ -4,7 +4,7 @@ description: "Kho khối dựng video: mỗi khối một việc, viết một l
 
 # Kho khối — mỗi khối một việc, viết MỘT lần, 4 công thức nhặt dùng
 
-Sửa một cách làm → sửa đúng một khối (README + code của nó). Đổi con số → sửa `../ho-so-thuong-hieu/`, không sửa khối.
+Sửa một cách làm thì sửa đúng một khối (README + code của nó). Đổi con số thì sửa `../ho-so-thuong-hieu/`, không sửa khối.
 
 | Khối | Việc | Dùng trong |
 |---|---|---|

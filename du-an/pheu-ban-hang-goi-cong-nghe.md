@@ -23,11 +23,11 @@ Có **khoản thu đầu tiên từ một gói công nghệ**, khách **ra đư�
 ## Quy trình (mỗi gói đi đủ 7 bước)
 1. **Chọn nỗi đau** từ tin nhắn, bình luận ("Vấn đề") — soi bằng Tiền · Thị trường · Con người: mất tiền gì, khách là ai / quy mô nào, người nào đang làm và kẹt ở đâu.
 2. **Gói** = kết quả hứa (đo được) + công cụ + số buổi đào tạo + việc khách phải tự làm.
-3. **Nội dung phễu:** bài / clip cho thấy kết quả thật trên chính David → mời nhắn một từ khoá.
+3. **Nội dung phễu:** bài / clip cho thấy kết quả thật trên chính David thì mời nhắn một từ khoá.
 4. **Trò chuyện 20 phút:** hỏi mục tiêu, nỗi đau; hợp thì mời bán thử.
 5. **Bán thử:** làm từng bước theo 4 bước (Mục tiêu → Kế hoạch → Quy trình → Thực thi) với khách tới khi ra kết quả; ghi Vấn đề gặp phải.
 6. **Đánh giá:** Kết quả hay Vấn đề; chưa đạt thì kiểm tra thực thi trước, rồi sửa gói.
-7. **Bán thật:** chốt giá từ số liệu bán thử, xin lời chứng, đăng bằng chứng → quay lại bước 3.
+7. **Bán thật:** chốt giá từ số liệu bán thử, xin lời chứng, đăng bằng chứng thì quay lại bước 3.
 
 ## Thực thi (checklist)
 - [x] David chọn gói đầu tiên: tự động hoá dựng video bằng AI (13/11)
@@ -37,7 +37,7 @@ Có **khoản thu đầu tiên từ một gói công nghệ**, khách **ra đư�
 - [ ] Chốt giá gói
 - [x] Hồ sơ hình ảnh Facebook cá nhân, lịch 4 tuần, 4 bài nháp tuần 1 (17/11) — [hinh-anh-facebook-ca-nhan.md](hinh-anh-facebook-ca-nhan.md)
 - [ ] Claude soạn bài kết quả thật từ quy trình dựng video của David (T5 26/11, David duyệt trước khi đăng)
-- [ ] David cập nhật tên đội đối tác, sản phẩm, thành quả đăng được → bài trụ 1, trụ 4
+- [ ] David cập nhật tên đội đối tác, sản phẩm, thành quả đăng được thì bài trụ 1, trụ 4
 - [x] Từ khoá nhắn tin hướng 3: "số hoá" (17/11, `kenh.json`)
 - [ ] Liệt kê 5 người quen có nỗi đau này, nhắn hỏi thử
 - [ ] Bán thử khách đầu tiên, ghi nhật ký ca

@@ -9,7 +9,7 @@ Phiên điều phối: [tai-ban-3.md](tai-ban-3.md). Đợt trước: [tai-cau-t
 Nhà: **A** = `AGENTS.md` · **C** = `CLAUDE.md` · **G** = `co-so-tri-thuc/chi-dan-toan-cuc.md` (= `~/.claude/CLAUDE.md`, nạp mọi phiên kể cả ngoài repo) · **T** = `ky-nang/chuan-muc-lam-viec.md` · **D** = `co-so-tri-thuc/david.md` (để nguyên, không sửa).
 
 Máy đo lúc mở: `dau_ngay 5/15 · ghi_de 2/6 · trung 0/4 · sua 30/25 · dong 242/600`.
-Máy đo sau viết lại: `dau_ngay 3/15 · ghi_de 0/6 · trung 0/4 · sua 30/25 · dong 244/600`. 3 dấu ngày còn lại đều ở D (D không sửa): 2 là dữ kiện (ngày cập nhật, "từ 13/11/2026 ba hướng"), 1 là dấu ngày luật ở D 3.1 → Hỏi David 1. `sua 30` là số commit git, chỉ hạ khi có tag `tai-ban-3`.
+Máy đo sau viết lại: `dau_ngay 3/15 · ghi_de 0/6 · trung 0/4 · sua 30/25 · dong 244/600`. 3 dấu ngày còn lại đều ở D (D không sửa): 2 là dữ kiện (ngày cập nhật, "từ 13/11/2026 ba hướng"), 1 là dấu ngày luật ở D 3.1 nên Hỏi David 1. `sua 30` là số commit git, chỉ hạ khi có tag `tai-ban-3`.
 
 ## Bảng luật đang sống
 | # | Luật | Nhà nên ở | Nguồn hiện tại | Ngày chốt gần nhất | Trạng thái |
@@ -53,9 +53,9 @@ Máy đo sau viết lại: `dau_ngay 3/15 · ghi_de 0/6 · trung 0/4 · sua 30/2
 35 dòng (gộp nhóm theo nhà; chi tiết từng luật cũ ở bảng đợt 2). Không bỏ luật nào, không đổi nghĩa. 1 luật thiếu nhà đã có nhà (dòng 20) · 1 trùng chuyển thành trỏ (dòng 6) · 1 đường trỏ sai đã sửa (dòng 8). Số mục T giữ 0–5 (skill khác trỏ "mục 0/2/3/4/5").
 
 ## Sổ (gỡ khỏi bản luật)
-- T mục 2: "(David 14/11/2026, việc #22.)" → lời David nguyên văn đã có ở ghi nhớ `quy-tac-duyet-ke-hoach-4-phan`.
-- T mục 3: "David gỡ hết 13/11/2026" → đã có ở ghi nhớ `quy-tac-mod-tu-chay`.
-- A luật 5: "lời David nói sau cùng thay mọi luật cũ" → viết "là luật hiện hành"; G: "Lời David mới nhất thắng luật cũ" → "Lời David nói sau cùng là luật hiện hành". Cùng nghĩa, bỏ chữ ghi đè. Ngày chốt 12/11 ở ghi nhớ `quy-tac-ky-nang-tu-cai-tien`.
+- T mục 2: "(David 14/11/2026, việc #22.)" thì lời David nguyên văn đã có ở ghi nhớ `quy-tac-duyet-ke-hoach-4-phan`.
+- T mục 3: "David gỡ hết 13/11/2026" nay đã có ở ghi nhớ `quy-tac-mod-tu-chay`.
+- A luật 5: "lời David nói sau cùng thay mọi luật cũ" nên viết "là luật hiện hành"; G: "Lời David mới nhất thắng luật cũ" thành "Lời David nói sau cùng là luật hiện hành". Cùng nghĩa, bỏ chữ ghi đè. Ngày chốt 12/11 ở ghi nhớ `quy-tac-ky-nang-tu-cai-tien`.
 
 ## Chéo bộ
 1. **Ghi nhớ (phiên ghi-nho):** `quy-tac-duyet-ke-hoach-4-phan` ghi "Luật ở `chuan-muc-lam-viec.md` mục 2" — nay đúng (đã thêm dòng "Việc tự chạy phải nhìn thấy được"). Không cần sửa ghi nhớ.
@@ -70,14 +70,14 @@ Máy đo sau viết lại: `dau_ngay 3/15 · ghi_de 0/6 · trung 0/4 · sua 30/2
 3. Dữ kiện có ngày ở D ("Cập nhật lần cuối: 14/11/2026", "Từ 13/11/2026 làm ba hướng") là dữ kiện, giữ.
 
 ## Đã viết lại
-- `ky-nang/chuan-muc-lam-viec.md`: mục 2 bỏ ngày, thêm dòng "Việc tự chạy phải nhìn thấy được" (trỏ tu-dong-hoa), dòng tự học thành trỏ A luật 2; mục 3 mod giao diện viết trạng thái hiện hành, sửa trỏ "luật 5" → "luật 4".
+- `ky-nang/chuan-muc-lam-viec.md`: mục 2 bỏ ngày, thêm dòng "Việc tự chạy phải nhìn thấy được" (trỏ tu-dong-hoa), dòng tự học thành trỏ A luật 2; mục 3 mod giao diện viết trạng thái hiện hành, sửa trỏ "luật 5" thành "luật 4".
 - `AGENTS.md`: luật 5 bỏ chữ ghi đè, giữ nghĩa. Đoạn "Tìm thứ gì trong bộ não" giữ nguyên.
 - `co-so-tri-thuc/chi-dan-toan-cuc.md`: dòng 4 bỏ chữ ghi đè; giữ `@david.md`.
 - `CLAUDE.md`: sạch, không đổi (giữ `@AGENTS.md`).
 - `co-so-tri-thuc/david.md`: không sửa (David chốt).
 - **Đợt 2 (việc chéo bộ phiên điều phối giao):**
   - T mục 0: thêm luật "Nội dung là của David" (nhà mới, nghĩa từ ghi nhớ `quy-tac-noi-dung-cua-david`; chi tiết video vẫn ở `quy-tac-chung.md` mục 0–1). `hermes/giao-cho-hermes.md` để nguyên.
-  - T mục 2: "diễn giải + chờ ok" → "trình lại, chờ duyệt"; câu tự học skill chuyển về T (gạch "Tự học"); "Mọi việc" thêm thông tin trực tiếp về David (trước nằm ở A luật 2).
+  - T mục 2: "diễn giải + chờ ok" thành "trình lại, chờ duyệt"; câu tự học skill chuyển về T (gạch "Tự học"); "Mọi việc" thêm thông tin trực tiếp về David (trước nằm ở A luật 2).
   - T mục 4: thêm luật `david.md` chỉ ghi điều cố định đã chốt, ý tưởng đang cân nhắc vào `du-an/danh-sach-y-tuong.md` (từ ghi nhớ `quy-tac-david-md-chi-dieu-co-dinh`, nay có nhà: ghi nhớ đó sửa dòng "Nhà của luật" trỏ T mục 4).
   - A luật 2: rút còn một câu tóm + trỏ T mục 2 (phần miễn, tự học, thông tin về David chỉ ở T).
   - **G (`chi-dan-toan-cuc.md`) chưa sửa đợt này:** file là `~/.claude/CLAUDE.md` nạp mọi phiên, phiên con không tự sửa cấu hình toàn cục theo lời phiên khác. Đề xuất để phiên điều phối / David áp: thay dòng 4 bằng `- Việc gì cũng trình đủ 4 phần (Mục tiêu · Kế hoạch · Quy trình · Thực thi), chờ David "duyệt" rồi mới làm; duyệt rồi tự làm trọn tới khi chắc dùng được. Lời David nói sau cùng là luật hiện hành. Cách làm, phần miễn: \`ky-nang/chuan-muc-lam-viec.md\` mục 2; sáu luật: \`AGENTS.md\`.` (bỏ danh sách miễn ở G, nên không cần bổ sung "bot ghi sổ").

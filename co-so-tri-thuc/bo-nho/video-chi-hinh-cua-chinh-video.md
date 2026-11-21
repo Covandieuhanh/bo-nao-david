@@ -8,9 +8,9 @@ metadata:
   modified: 2026-11-05T00:36:57.758Z
 ---
 
-Đang làm video nào thì mọi hình (thumbnail, ảnh bìa, khung bìa, cảnh chèn) chỉ lấy từ chính video đó, hoặc ảnh David gửi riêng cho video đó. Không bao giờ lấy mặt/cảnh từ video hay dự án khác, kể cả khi đẹp hơn. Podcast không có mặt → thumbnail dùng khung đồ hoạ của chính podcast.
+Đang làm video nào thì mọi hình (thumbnail, ảnh bìa, khung bìa, cảnh chèn) chỉ lấy từ chính video đó, hoặc ảnh David gửi riêng cho video đó. Không bao giờ lấy mặt/cảnh từ video hay dự án khác, kể cả khi đẹp hơn. Podcast không có mặt thì thumbnail dùng khung đồ hoạ của chính podcast.
 
-**Why:** 2026-11-05 thumbnail podcast "Mục tiêu và sứ mệnh" lấy mặt David từ vlog Miếu Bà Cam → David: "đang bị lẫn lộn… không được phép liên quan đến các video khác".
+**Why:** 2026-11-05 thumbnail podcast "Mục tiêu và sứ mệnh" lấy mặt David từ vlog Miếu Bà Cam thì David: "đang bị lẫn lộn… không được phép liên quan đến các video khác".
 
 **How to apply:** khi hỏi nguồn ảnh, đừng đưa "lấy từ video cũ" làm lựa chọn. Nhà của luật: `ky-nang/san-xuat-video/mo-dun/14-anh-thu-nho/README.md` (bộ [[video-kien-truc-ky-nang]]). Ghi nhớ này giữ ngày, lời David, lý do.
 

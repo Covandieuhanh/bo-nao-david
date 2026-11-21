@@ -21,7 +21,7 @@ Gốc: [bản đồ bộ não](README.md).
 - [bao-cao-trang-thai](../bao-cao-trang-thai.md) — Báo cáo trạng thái: việc đang làm dở, việc chờ David quyết, câu hỏi còn mở, cảnh báo, việc phải nhớ.
 - [du-an](../du-an/README.md) — Thư mục dự án: chỉ giữ file theo dõi việc dở; dự án video và thành phẩm nằm ở máy và Drive.
 - [lien-ket-tri-thuc](../du-an/lien-ket-tri-thuc.md) — Dự án liên kết tri thức (14/11): biến bộ não thành mạng lưới file nối nhau để Claude tra nhanh, ít token; kế hoạch 4 phần và số đo trước / sau.
-- [chuan-hoa-ten](../du-an/chuan-hoa-ten.md) — Bản đồ chuẩn hoá tên toàn bộ (14/11, đã xong): tên cũ → tên mới theo thuật ngữ kinh doanh tiếng Anh dịch sang tiếng Việt.
+- [chuan-hoa-ten](../du-an/chuan-hoa-ten.md) — Bản đồ chuẩn hoá tên toàn bộ (14/11, đã xong): tên cũ đổi sang tên mới theo thuật ngữ kinh doanh tiếng Anh dịch sang tiếng Việt.
 - [chuan-hoa-ky-nang](../du-an/chuan-hoa-ky-nang.md) — Dự án chuẩn hoá bộ skill theo thói quen làm việc chung (08/11): các bước, mốc commit, việc còn lại.
 - [danh-gia-luat](../du-an/danh-gia-luat.md) — Rà soát luật bộ skill video (08/11), bước 1 của chuẩn hoá skill: luật trùng, lệch, cần gộp.
 - [nang-cap-4](../du-an/nang-cap/nang-cap-4.md) — Nâng cấp 4 (20/11): máy đo đổi sang đo trùng / rối, video gần trùng 49 xuống 16.
@@ -38,7 +38,7 @@ Gốc: [bản đồ bộ não](README.md).
 - [quy-tac-david-md-chi-dieu-co-dinh](../co-so-tri-thuc/bo-nho/quy-tac-david-md-chi-dieu-co-dinh.md) — co-so-tri-thuc/david.md chỉ ghi điều cố định đã chốt; ý tưởng, góp ý đang cân nhắc ghi ở du-an/danh-sach-y-tuong.md
 - [quy-tac-duyet-ke-hoach-4-phan](../co-so-tri-thuc/bo-nho/quy-tac-duyet-ke-hoach-4-phan.md) — Việc gì cũng trình đủ 4 phần (Mục tiêu · Kế hoạch · Quy trình · Thực thi), David duyệt rồi mới làm; duyệt rồi tự làm trọn tới khi chắc dùng được; việc tự chạy hiện…
 - [quy-tac-goi-trainer-chung](../co-so-tri-thuc/bo-nho/quy-tac-goi-trainer-chung.md) — Gói trainer công nghệ chỉ dạy một kỹ năng thuần, cách làm chung bằng AI và máy của học viên; không tư duy, không chi tiết riêng của David
-- [quy-tac-goi-y-de-david-chon](../co-so-tri-thuc/bo-nho/quy-tac-goi-y-de-david-chon.md) — Tài nguyên vào → kết quả ra: trình 4 phần gọn theo mặc định skill + đề xuất "chọn X vì Y", David duyệt rồi Claude làm một mạch, không hỏi giữa chừng (2026-11-11…
+- [quy-tac-goi-y-de-david-chon](../co-so-tri-thuc/bo-nho/quy-tac-goi-y-de-david-chon.md) — Tài nguyên vào, kết quả ra: trình 4 phần gọn theo mặc định skill + đề xuất "chọn X vì Y", David duyệt rồi Claude làm một mạch, không hỏi giữa chừng (2026-11-11…
 - [quy-tac-hoc-la-bo-sung](../co-so-tri-thuc/bo-nho/quy-tac-hoc-la-bo-sung.md) — Học video mẫu mới là BỔ SUNG vào skill, không thay thế những gì David đã sửa; lỗi cũ đã sửa không được quay lại; số của khung dọc không dùng cho khung ngang (2026-11-08)
 - [quy-tac-ket-qua-hon-toc-do](../co-so-tri-thuc/bo-nho/quy-tac-ket-qua-hon-toc-do.md) — David ưu tiên làm đúng quy trình và có kết quả hơn làm nhanh; bước nào cần kết quả render thì chờ, chỗ chưa rõ thì trao đổi (2026-11-05)
 - [quy-tac-khong-tu-chay-viec-cua-david](../co-so-tri-thuc/bo-nho/quy-tac-khong-tu-chay-viec-cua-david.md) — Không tự chạy, chạy tiếp, dừng hay làm lại việc David tạo (render, việc dựng…) khi David chưa ra lệnh — kể cả khi chính Claude làm ngắt việc đó
@@ -67,7 +67,7 @@ Gốc: [bản đồ bộ não](README.md).
 - [thu-thap-yeu-cau](../ky-nang/thu-thap-yeu-cau/SKILL.md) — Cách hỏi của David khi trình 4 phần (Mục tiêu · Kế hoạch · Quy trình · Thực thi) trước mọi việc — hỏi theo vòng từ góc nhìn chuyên gia thực chiến, mỗi điểm cần chốt…
 - [hoc-lien-tuc](../ky-nang/hoc-lien-tuc/SKILL.md) — Tự học, cải tiến liên tục: nhìn lại tuần, học hình mẫu có số liệu, học thành skill, và Việc 4 **Nâng cấp** định kỳ cả bộ não (đo trước / sau, chưng cất, tỉa, dọn).
 - [nhat-ky-thay-doi hoc-lien-tuc](../ky-nang/hoc-lien-tuc/references/nhat-ky-thay-doi.md) — Nhật ký thay đổi skill hoc-lien-tuc và máy đếm / ghi tín hiệu.
-- [hoc-lien-tuc 2026-11-15](../du-an/hoc-lien-tuc/2026-11-15.md) — Phiếu tự học tuần 15/11: điều lặp, đã sửa, gộp ghi nhớ 47→40, việc tuần sau.
+- [hoc-lien-tuc 2026-11-15](../du-an/hoc-lien-tuc/2026-11-15.md) — Phiếu tự học tuần 15/11: điều lặp, đã sửa, gộp ghi nhớ 47 thành 40, việc tuần sau.
 - [tai-cau-truc](../ky-nang/tai-cau-truc/SKILL.md) — Dọn luật — bước 4 của Nâng cấp: mỗi luật một nhà, không ngày, không câu trùng; máy đo chồng chéo chỉ kêu vì trùng / rối.
 - [dieu-khien-trinh-duyet](../ky-nang/dieu-khien-trinh-duyet/SKILL.md) — Automate browser interactions, test web pages and work with Playwright tests.
 - [thiet-ke-trang-cuon](../ky-nang/thiet-ke-trang-cuon/SKILL.md) — >

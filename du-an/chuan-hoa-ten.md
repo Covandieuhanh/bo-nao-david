@@ -4,7 +4,7 @@ description: "Bản đồ chuẩn hoá tên toàn bộ (14/11, đã xong): tên 
 
 # Bản đồ chuẩn hoá tên (David duyệt 14/11/2026, đã đổi xong)
 
-**Luật mới (David, 14/11/2026):** mọi tên file, thư mục, skill, ghi nhớ đi từ **thuật ngữ kinh doanh tiếng Anh chuẩn** → dịch đúng nghĩa
+**Luật mới (David, 14/11/2026):** mọi tên file, thư mục, skill, ghi nhớ đi từ **thuật ngữ kinh doanh tiếng Anh chuẩn** thì dịch đúng nghĩa
 sang **tiếng Việt không dấu**, chữ thường, gạch nối. Mỗi thuật ngữ một bản dịch, tra ở bảng thuật ngữ (mục 1). Thay luật đặt tên 07/11.
 
 Đọc bảng: **Tên cũ → Thuật ngữ tiếng Anh → Tên mới**. Dòng có ❓ là chỗ mình chưa chắc, David sửa thẳng vào cột tên mới.

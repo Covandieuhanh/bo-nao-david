@@ -8,7 +8,7 @@ description: "Khối 10 bộ nhận diện David trên video: dấu góc, thanh 
 **Đầu vào:** thuong-hieu.json, chu-de.js / thuong-hieu.js, video mẫu (nếu có)
 **Đầu ra:** token phong cách trong dự án
 **Tham số hồ sơ:** —
-**Sửa khối này → chạy lại:** mọi khối hình (06, 07, 08, 12, 14) → 17
+**Sửa khối này thì chạy lại:** mọi khối hình (06, 07, 08, 12, 14) rồi khối 17
 
 **File thật (code, một bản duy nhất):**
 - `dung-video-theo-phong-cach/assets/khuon-remotion/src/{thuong-hieu.json,chu-de.js,phong-chu.js}`
@@ -16,7 +16,7 @@ description: "Khối 10 bộ nhận diện David trên video: dấu góc, thanh 
 - `dung-video-theo-phong-cach/references/phan-tich-phong-cach.md`
 
 ## Luật
-- Bộ nhận diện (chữ ký + thành phần cố định): `thu-vien-tai-nguyen/nhan-dien-chung.md`. Không có mẫu → phong cách mặc định của template.
+- Bộ nhận diện (chữ ký + thành phần cố định): `thu-vien-tai-nguyen/nhan-dien-chung.md`. Không có mẫu thì dùng phong cách mặc định của template.
 - **Rút phong cách từ mẫu không đụng chữ ký:** màu nhấn cam, hai font chính, thành phần cố định giữ nguyên. Ngoài chữ ký (nền, màu phụ,
   hình dạng thẻ, kiểu hình, chuyển động, loại cảnh, mật độ) được lấy theo mẫu.
 

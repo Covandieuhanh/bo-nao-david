@@ -6,8 +6,8 @@ description: "Tái bản 2 (10/11), phần bộ não: AGENTS.md, CLAUDE.md, davi
 
 Bộ: `AGENTS.md` · `CLAUDE.md` · `co-so-tri-thuc/david.md` · `ky-nang/chuan-muc-lam-viec.md`. Sổ: lịch sử git + `co-so-tri-thuc/bo-nho/`.
 
-Máy đo lúc mở: `dau_ngay 17/15 · ghi_de 2/6 · trung 0/4 · sua 19/25 · dong 276/600` → vượt ngưỡng dấu ngày.
-Máy đo sau viết lại: `dau_ngay 3/15 · ghi_de 0/6 · trung 0/4 · sua 19/25 · dong 274/600` → dưới ngưỡng. 3 dấu ngày còn lại là dữ kiện: ngày cập nhật hồ sơ, ngày của hồ sơ CCL, tên file PDF huyền học. `sua 19` là số commit git, chỉ hạ khi có mốc `tai-ban-2`.
+Máy đo lúc mở: `dau_ngay 17/15 · ghi_de 2/6 · trung 0/4 · sua 19/25 · dong 276/600` nghĩa là vượt ngưỡng dấu ngày.
+Máy đo sau viết lại: `dau_ngay 3/15 · ghi_de 0/6 · trung 0/4 · sua 19/25 · dong 274/600` nghĩa là dưới ngưỡng. 3 dấu ngày còn lại là dữ kiện: ngày cập nhật hồ sơ, ngày của hồ sơ CCL, tên file PDF huyền học. `sua 19` là số commit git, chỉ hạ khi có mốc `tai-ban-2`.
 
 Nhà: **A** = `AGENTS.md` (cửa vào: thứ tự đọc, sáu luật, chọn skill, giữ não mới) · **D** = `co-so-tri-thuc/david.md` (hồ sơ + định hướng + cách làm với David) · **T** = `ky-nang/chuan-muc-lam-viec.md` (thói quen chung mọi skill) · **C** = `CLAUDE.md`.
 
@@ -77,7 +77,7 @@ Nhà: **A** = `AGENTS.md` (cửa vào: thứ tự đọc, sáu luật, chọn sk
 
 - `AGENTS.md` dòng hồ sơ thấu hiểu: "Ghi 17/10/2026" — ngày ghi chú phần định hướng nghề đã cũ.
 - `co-so-tri-thuc/david.md` đầu file: "Cập nhật lần cuối: 08/11/2026 (chuẩn hoá: mục 3.1, 3.8, 5 trỏ về nhà chính của luật)". Nay: cập nhật 10/11/2026 (tái bản 2).
-- `co-so-tri-thuc/david.md` 3.8: GitHub là bản gốc, bắt buộc 07/11/2026 → nhà ở `AGENTS.md` luật 6, chi tiết ghi nhớ `co-so-tri-thuc-github-ban-goc`.
+- `co-so-tri-thuc/david.md` 3.8: GitHub là bản gốc, bắt buộc 07/11/2026 nay nhà ở `AGENTS.md` luật 6, chi tiết ghi nhớ `co-so-tri-thuc-github-ban-goc`.
 - `co-so-tri-thuc/david.md` 4.1: định hướng gốc 05/11/2026; tệp chính quyết định 04/11/2026.
 - `co-so-tri-thuc/david.md` 5: đối chiếu kho 100 video ở phiếu lọc, David chốt 10/11/2026. Giai đoạn 3 "Cơ sở chạy khi vắng chủ" bỏ (cùng định hướng 05/11 không kinh doanh).
 - `co-so-tri-thuc/david.md` 6: hồ sơ CCL 10 phần là tham chiếu chính, David chốt 07/11/2026. Link claude.ai cũ (bản ghi "13 phần") không còn mở được, bỏ.

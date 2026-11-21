@@ -3,7 +3,7 @@ name: phan-phoi-da-kenh
 description: Quy trình trọn gói của David — từ MỘT tài nguyên (video quay, ghi âm, bài nói bộc phát; thường không kèm yêu cầu) Claude tự lọc theo hồ sơ David, quyết định có đáng làm và làm thành gì, trình 4 phần chờ David duyệt, rồi làm một mạch không cổng duyệt: dựng bản dài + clip ngắn, soạn bài theo giọng David cho từng kênh, giao lên Drive và trang xem kết quả (localhost:8765); góp ý thì render lại toàn bộ; khi David nói "đăng" thì hẹn giờ YouTube, trang Facebook, TikTok qua trình duyệt đã đăng nhập, rồi gom bình luận và đọc số liệu. Dùng khi David gửi video/ghi âm mới, bỏ file vào Drive tu-lieu-goc, nói "có video mới", "đăng giúp", "đăng lên các kênh", "làm bài đăng", "lọc nội dung này", "/phan-phoi-da-kenh" — kể cả khi chỉ gửi file mà không nói gì.
 ---
 
-# Đăng đa kênh — một lần nói → đủ bài cho mọi kênh
+# Đăng đa kênh — một lần nói thì đủ bài cho mọi kênh
 
 **Đọc trước:** `../../chuan-muc-lam-viec.md` · `../quy-tac-chung.md`. File khác chỉ đọc ở đúng bước cần (cột cuối bảng quy trình).
 
@@ -11,7 +11,7 @@ description: Quy trình trọn gói của David — từ MỘT tài nguyên (vid
 phân phối, đăng và đo. Mọi bài có mục tiêu: kéo tương tác đúng nền tảng → chuyển hoá → người xem nhắn "gỡ".
 
 ## Mục tiêu
-Một tài nguyên vào → Claude làm một mạch tới **kết quả xem được**: bản dài + clip ngắn + thumbnail + bài đăng, nằm sẵn trên trang
+Một tài nguyên vào thì Claude làm một mạch tới **kết quả xem được**: bản dài + clip ngắn + thumbnail + bài đăng, nằm sẵn trên trang
 xem kết quả (`python3 tu-dong-hoa/xem-ket-qua.py` → localhost:8765; trang tự gom `~/Movies/tap-*`, Drive `sao-luu-mac/video`,
 Drive `thanh-pham` và sổ danh mục — giữ đúng tên `2-ban-day-du/phat-hanh/`, `3-doan-noi-bat/clip-X/`, `cat/X.md`, `dang-bai.md` là hiện đủ). Không cổng duyệt nào trước khi xong: David
 không ưng thì góp ý rồi render lại toàn bộ. Chỉ việc **đăng lên mạng xã hội** chờ David nói "đăng" (AGENTS luật 4).
@@ -44,7 +44,7 @@ Bước *(bước nhẹ)*: nhắc đổi mô hình rẻ hơn (`../../chuan-muc-l
 1. Bản dài + clip ngắn + thumbnail (khi ngang) + `phat-hanh.md` đều có trên Drive `thanh-pham/tap-<ten>/` và ở `~/Movies/cho-dang/tap-<ten>/`, hiện trên trang xem kết quả và trang Chờ đăng (`localhost:8765/mac`, cột ✅).
 2. Không dừng hỏi giữa chừng; mọi lựa chọn ghi "đã chọn X vì Y" trong báo cáo cuối.
 3. Bài đủ kênh theo kết luận, đúng giọng David, kiểu dẫn dắt khớp tỉ lệ.
-4. Góp ý → đã render lại toàn bộ và giao lại, không chờ nhắc.
+4. Góp ý thì đã render lại toàn bộ và giao lại, không chờ nhắc.
 5. Không gì được đăng khi David chưa nói "đăng"; mỗi lần hẹn giờ có ảnh chụp xác nhận.
 6. Sổ danh mục và cột Trạng thái trong kho 100 video đúng ở từng bước.
 

@@ -14,5 +14,5 @@ Podcast chỉ có tiếng thì hình phủ khoảng 30% thời lượng, cân th
 Nhà của luật: `ky-nang/san-xuat-video/dung-podcast/SKILL.md` (mật độ hình, `phu_hinh_muc_tieu`). Ghi nhớ này giữ ngày, lời David, lý do.
 
 ## Sổ
-- 06/11/2026: luật "ít mà sâu" 60–120 giây một cảnh → David thấy 3–4 phút đầu gần như không có hình → khoảng 30%.
+- 06/11/2026: luật "ít mà sâu" 60–120 giây một cảnh thì David thấy 3–4 phút đầu gần như không có hình nên đổi thành khoảng 30%.
 - 11/11/2026: chụp thử rồi Claude tự soát, không chờ David chốt.

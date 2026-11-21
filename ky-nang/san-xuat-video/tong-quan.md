@@ -21,7 +21,7 @@ Mọi thứ của một tập nằm chung `~/Movies/tap-<tên>/` (xem `dung-vide
 `2-ban-day-du/video-hoan-chinh.mp4`, highlight: chọn câu ở `3-doan-noi-bat/`, bản cuối mỗi clip ở `3-doan-noi-bat/clip-A/`, `clip-B/`…; vlog ở
 `~/Movies/vlog/<tên>/`. Bản dài và highlight của cùng tập phải dùng **cùng một `<tên>`**. Tiêu đề + thumbnail ở `phat-hanh/` của dự
 án. Muốn thêm thì nói kèm: "xuất ngang/dọc", "không dùng ảnh", "thêm ảnh", "giữ ngập ngừng". Không làm bản cho CapCut/DaVinci. David
-chốt bản cuối → giao, dọn, lưu Drive theo `quy-tac-chung.md` mục 8 (dòng cuối).
+chốt bản cuối thì giao, dọn, lưu Drive theo `quy-tac-chung.md` mục 8 (dòng cuối).
 
 ## Kiến trúc — sửa đúng một chỗ, không viết lại khung
 

@@ -8,7 +8,7 @@ description: "Khối 15 phát hành: 3 tiêu đề, mô tả, khung bìa, chươ
 **Đầu vào:** video-hoan-chinh.mp4 + kịch bản
 **Đầu ra:** phat-hanh/{phat-hanh.md, chuong.txt, doan-gioi-thieu.json} · dang-bai.md (highlight)
 **Tham số hồ sơ:** chung: youtube.*
-**Sửa khối này → chạy lại:** doan-gioi-thieu.py → chạy lại chuong.py
+**Sửa khối này thì chạy lại:** doan-gioi-thieu.py → chạy lại chuong.py
 
 **File thật (code, một bản duy nhất):**
 - `dung-video-theo-phong-cach/scripts/chuong.py`
@@ -37,7 +37,7 @@ chưa đăng thử thật). Mẫu báo cáo: `dung-video-theo-phong-cach/referen
 Gửi `video-hoan-chinh.mp4` của từng clip (SendUserFile). Ghi `$P/dang-bai.md` và báo cáo tiếng Việt, **cho từng clip**:
 0. **Lịch đăng**: thứ tự clip (A mạnh nhất trước), cách nhau 1–2 ngày, đăng sau video dài; mỗi clip: thẻ tít (nguyên văn), **mốc khung
    bìa đề xuất** (0,3 s, không ghép bìa), độ dài. Chép `san-xuat-video/mo-dun/16-phan-tich-so-lieu/mau-so-lieu.md` → `$P/so-lieu.md`, một bảng cho mỗi clip.
-1. **Loại video gốc → loại highlight**, **ý chính + lời kêu gọi chính của cả video**, **kiểu bố trí** + lý do, **tông** từng đoạn,
+1. **Loại video gốc thì loại highlight**, **ý chính + lời kêu gọi chính của cả video**, **kiểu bố trí** + lý do, **tông** từng đoạn,
    **ý được chừa cho bản đầy đủ**, bốn câu chọn ý + lời đọc nối.
 2. **Bảng cắt** + **tổng độ dài** + kết quả kiểm lời; mọi chữ trên video kèm mốc gốc của nó.
 3. **Mô tả bài đăng** tối đa 150 ký tự — ghép từ lời nguyên văn trong clip (không thêm ý), kết bằng lời mời bình luận "Vấn đề" / "Kết quả"
@@ -46,4 +46,4 @@ Gửi `video-hoan-chinh.mp4` của từng clip (SendUserFile). Ghi `$P/dang-bai.
 5. Câu bị loại vì lằn ranh (nếu có), tên riêng chưa chắc chính tả, đã kiểm gì / chưa kiểm gì.
 6. Thẻ tít + màn chốt: chữ nào, căn cứ câu gốc nào (mốc), tên tập gốc.
 
-Sửa theo góp ý → như "Sửa theo góp ý" của skill dựng tương ứng; đổi câu/mốc/bố trí → sửa phuong-an.json, cắt lại, tạo lại dự án dựng.
+Sửa theo góp ý thì làm như "Sửa theo góp ý" của skill dựng tương ứng; đổi câu/mốc/bố trí thì sửa phuong-an.json, cắt lại, tạo lại dự án dựng.

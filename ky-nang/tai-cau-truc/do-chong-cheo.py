@@ -6,10 +6,11 @@
   ghi_de    câu kiểu "thay luật cũ", "ngoại lệ", "nới", "bổ sung 09/11", "chuyển nguyên văn từ SKILL.md cũ" — dấu luật vá lên luật
   trung     câu dài giống hệt nhau ở hai file (một luật hai nhà)
   viet_tat  chữ viết tắt thường ngày ngoài phần code ("vd.", "ko", "TB", "đc", "sl", "tg", "cty") — file phải viết đủ từ (AGENTS.md luật 1)
+  mui_ten   mũi tên "→" trong câu văn (ngoài bảng, ngoài chuỗi bước nối lệnh / file) — câu văn viết "thì" / "thành" (AGENTS.md luật 1)
   gan_trung cặp dòng ở hai file khác nhau giống nhau quá nửa số chữ (một ý viết lại theo cách khác ở nhà thứ hai)
   sua       số lần bản luật bị sửa kể từ lần tái bản gần nhất (git, mốc ở lich-su.md) — chỉ nhắc nhẹ
   dong      tổng số dòng bản luật — chỉ để biết độ lớn; bộ não lớn lên vì học thêm, dài không phải là rối
-Chuông chỉ kêu vì trùng / rối: một bộ bất kỳ vượt một ngưỡng ở bo.json "nguong" (dau_ngay, ghi_de, trung, gan_trung, viet_tat) → in một dòng
+Chuông chỉ kêu vì trùng / rối: một bộ bất kỳ vượt một ngưỡng ở bo.json "nguong" (dau_ngay, ghi_de, trung, gan_trung, viet_tat, mui_ten) → in một dòng
 "NÊN NÂNG CẤP" kèm lý do, mã thoát 1 (nâng cấp là cả bộ não một đợt: hoc-lien-tuc Việc 4, dọn bằng tai-cau-truc). "nhac" (sua) vượt chỉ in một dòng nhắc, không kêu. Không sửa file nào.
 Phần "## Nhật ký" cuối file là sổ, không tính.
 """
@@ -29,6 +30,21 @@ GHI_DE = re.compile(r"thay luật|thay các|thay thế luật|thắng mọi|khô
 
 VIET_TAT = re.compile(r"(?<!\w)(?:[Vv][Dd]\.|ko|TB|đc|sl|tg|cty)(?!\w)")
 CODE = re.compile(r"```.*?```|`[^`\n]*`|\"[^\"\n]*\"|“[^”\n]*”", re.S)   # bỏ code và chữ trong ngoặc kép (ví dụ được trích, không phải viết tắt)
+FILE_GAN = re.compile(r"(\.(md|js|jsx|mjs|py|sh|json|mp4|mov|wav|m4a|srt|jpg|png|txt)\b|`|\]\(|localhost)")
+
+def mui_ten_cau(s):
+    """Số dòng văn có đúng một "→" mà hai bên không phải lệnh / file (dòng bảng, khối code, chuỗi từ hai mũi tên trở lên, mũi tên cuối dòng nối sang dòng sau là đúng luật)."""
+    n = 0; code = False
+    for l in s.split('\n'):
+        if l.lstrip().startswith('```'): code = not code; continue
+        if code or l.lstrip().startswith('|'): continue
+        bare = re.sub(r"`[^`]*`", "`C`", l); bare = re.sub(r'"[^"\n]*"|“[^”\n]*”', '""', bare)
+        if bare.count('→') != 1: continue
+        i = bare.index('→'); left, right = bare[:i].rstrip(), bare[i + 1:].lstrip()
+        if not left.strip(' -*>#(') or not right.strip() or FILE_GAN.search(left[-25:]) or FILE_GAN.search(right[:25]) or re.match(r"[\w./-]+\.\w+", right): continue
+        n += 1
+    return n
+
 THAY_HOA = re.compile(r"\bTHAY\b")   # chỉ chữ in hoa kiểu "THAY các ngoại lệ"; chữ "thay" thường không phải dấu ghi đè
 
 def khop(path, mau):
@@ -128,7 +144,7 @@ for bo in (args or [k for k in CFG if not k.startswith('_')]):
     for r in files:
         s = doc(r); texts[r] = s
         d = {'dau_ngay': len(NGAY.findall(s)), 'ghi_de': len(GHI_DE.findall(s)) + len(THAY_HOA.findall(s)), 'dong': s.count('\n') + 1,
-             'viet_tat': len(VIET_TAT.findall(CODE.sub(' ', s)))}
+             'viet_tat': len(VIET_TAT.findall(CODE.sub(' ', s))), 'mui_ten': mui_ten_cau(s)}
         per[r] = d
         for k, v in d.items(): tong[k] += v
         for c in set(cau(s)): noi[c].add(r)

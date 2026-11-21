@@ -5,12 +5,12 @@ description: "Sổ thay đổi skill cắt đoạn nổi bật: quyết định 
 # Sổ thay đổi — cat-doan-noi-bat (quyết định của người dùng + lý do)
 
 ## 18/11/2026 — Bản dọc cùng ý, cùng intro
-- David: "làm thêm 1 video highlight gồm có cả itro nhưng mà bản dọc nhé" → mục "Cùng ý, thêm bản dọc từ nguồn ngang" dưới Highlight ngang: đổi khung nguồn bám người nói, giữ mốc; chữ nhấn trên đầu (`y`); thẻ tít intro `keep: true`.
-- Sửa `ke-hoach-doi-khung.py` (`probe`): file DJI in thêm dòng → lấy dòng đầu.
+- David: "làm thêm 1 video highlight gồm có cả itro nhưng mà bản dọc nhé" thì mục "Cùng ý, thêm bản dọc từ nguồn ngang" dưới Highlight ngang: đổi khung nguồn bám người nói, giữ mốc; chữ nhấn trên đầu (`y`); thẻ tít intro `keep: true`.
+- Sửa `ke-hoach-doi-khung.py` (`probe`): file DJI in thêm dòng thì lấy dòng đầu.
 
 ## 17/11/2026 — Highlight ngang có intro ghép
-- David: "từ 2 video này, tạo ra 1 video highlight trọn 1 ý đặc sắc nhất, có intro ở đầu được ghép từ các cảnh trong 2 video gốc này. video highlight ngang nhé" → luật 1 thành "mặc định dọc, ngang khi David yêu cầu"; thêm mục "Highlight ngang" (khung, intro, nguồn nhiều video dài). Khuôn ghép: màn chốt ngang (ô 50 %), `pow.x`.
-- Sửa lỗi `TS()` trong `danh-sach-cat-doan-noi-bat.py`: câu đặt khác thứ tự nguồn làm mọi lớp phủ dồn về câu đầu → tìm đúng đoạn chứa mốc.
+- David: "từ 2 video này, tạo ra 1 video highlight trọn 1 ý đặc sắc nhất, có intro ở đầu được ghép từ các cảnh trong 2 video gốc này. video highlight ngang nhé" thì luật 1 thành "mặc định dọc, ngang khi David yêu cầu"; thêm mục "Highlight ngang" (khung, intro, nguồn nhiều video dài). Khuôn ghép: màn chốt ngang (ô 50 %), `pow.x`.
+- Sửa lỗi `TS()` trong `danh-sach-cat-doan-noi-bat.py`: câu đặt khác thứ tự nguồn làm mọi lớp phủ dồn về câu đầu thì tìm đúng đoạn chứa mốc.
 
 ## Tái bản 3 — 14/11/2026: bản luật viết lại từ bảng du-an/nang-cap/tai-ban-3-video.md
 - Bỏ dấu ngày, lời kể, chỗ ngược luật khỏi bản luật; mục "Nhật ký" cuối SKILL.md chuyển về đây:
@@ -21,7 +21,7 @@ description: "Sổ thay đổi skill cắt đoạn nổi bật: quyết định 
 - Nhà luật bỏ phóng xen kẽ ở mối cắt là quy-tac-chung mục 2 (kèm lý do); khối 02, ho-so-thuong-hieu/doan-noi-bat.md, cat-highlight luật 8 trỏ về đó. quy-tac-chung mục 8 trỏ thói quen chung (hỏi, lệnh nền, mật khẩu, báo cáo), chỉ giữ phần riêng video. Bỏ câu chép ở gotchas, phan-phoi-da-kenh; sửa đường trỏ "hình của chính video" về khối 14. Viết lại 6 câu máy đo bắt nhầm ("thay cho", "THAY", tên file có ngày).
 
 ## 10/11/2026 — Bỏ phóng xen kẽ 1,08× ở mối cắt
-- David xem đoạn thử tap-thu-tai-ban-video-1: "tôi không thích mấy đoạn zoom giật ra giật vào" → "bỏ 1 giữ 2": bỏ mặc định phóng xen kẽ 1,08× ở mỗi mối cắt (mọi loại video), giữ zoom dồn chậm vào mặt ở câu đắt (`nhan` zoom, câu `"zoom": true`). Sửa: luật 8, bước 7A, `ho-so-thuong-hieu/doan-noi-bat.json` `phong_xen_ke: 1.0`, `danh-sach-cat-doan-noi-bat.py` chỉ phóng khi > 1.
+- David xem đoạn thử tap-thu-tai-ban-video-1: "tôi không thích mấy đoạn zoom giật ra giật vào" thành "bỏ 1 giữ 2": bỏ mặc định phóng xen kẽ 1,08× ở mỗi mối cắt (mọi loại video), giữ zoom dồn chậm vào mặt ở câu đắt (`nhan` zoom, câu `"zoom": true`). Sửa: luật 8, bước 7A, `ho-so-thuong-hieu/doan-noi-bat.json` `phong_xen_ke: 1.0`, `danh-sach-cat-doan-noi-bat.py` chỉ phóng khi > 1.
 
 ## Tái bản 1 — 10/11/2026: bản luật viết lại từ bảng du-an/nang-cap/tai-cau-truc-video-1.md
 - Luật 11 chỉ còn "không thẻ cuối, không thanh thời gian"; tít ghim mặc định tắt (`tit_ghim: false`, bật `"pin": true`); không có câu kêu gọi thì không dừng (khối 13 sửa theo luật 4); ghim theo kiểu dẫn dắt + link bản đầy đủ.
@@ -34,21 +34,21 @@ description: "Sổ thay đổi skill cắt đoạn nổi bật: quyết định 
 - **Luôn dọc 9:16 (1080×1920)**, một bản cho mọi mục video ngắn.
 - **Chỉ nguyên văn lời video, tuyệt đối không viết thêm hay đổi chữ** — "vì vậy mới gọi là highlight": xem highlight rồi xem bản
   gốc không lệch nội dung. Áp cả câu màn chốt (khác skill gốc, nơi Claude tự viết câu chốt) và mô tả bài đăng. Chỉ bỏ bớt chữ ở
-  đầu/cuối câu; không có câu kêu gọi → báo, không thêm chữ.
-- **Ý chính + lời kêu gọi chính của TOÀN BỘ video** (không phải đoạn hay cục bộ) → bước bản đồ cả video bắt buộc.
+  đầu/cuối câu; không có câu kêu gọi thì báo, không thêm chữ.
+- **Ý chính + lời kêu gọi chính của TOÀN BỘ video** (không phải đoạn hay cục bộ) thì bước bản đồ cả video bắt buộc.
 - **Không thứ tự cố định**: lời kêu gọi đặt ở chỗ hợp mạch (4 kiểu bố trí), vì người xem video ngắn bị giữ/mất ở vài giây đầu;
   cú chốt cảm xúc mạnh bằng dựng (chữ to đúng lúc nói, dồn khung vào mặt, 1 s lặng sau câu hỏi), không bằng chữ thêm.
 - **Độ dài 30–60 s, Claude tự cân theo nội dung** (tối đa 90 s khi bỏ bớt gãy ý).
-- **Highlight cùng loại với video gốc** ("video gốc là gì thì phải ra highlight tương ứng"): podcast đồ hoạ → podcast đồ hoạ dọc
-  dựng lại từ tiếng gốc, cùng phong cách + tên tập; người nói → người nói. Lần đầu (podcast "năng lực" 7:32) cắt thẳng hình ngang
+- **Highlight cùng loại với video gốc** ("video gốc là gì thì phải ra highlight tương ứng"): podcast đồ hoạ thì podcast đồ hoạ dọc
+  dựng lại từ tiếng gốc, cùng phong cách + tên tập; người nói thì người nói. Lần đầu (podcast "năng lực" 7:32) cắt thẳng hình ngang
   bị loại vì chữ nhỏ, bố cục vỡ, thanh thời gian sai; người dùng chọn dựng lại đồ hoạ dọc, không bìa, dựng 1 phương án.
-- Lỗi gặp ở lần đầu → sửa script:
-  - Mốc từ Whisper lệch tới 1,6 s ở chỗ ngắt câu ("Không" bị kéo về 2,96 s, thật ở 4,6 s) → `kiem-am-luong.py` soát theo độ lớn
-    tiếng. Lấy khoảng lặng dài nhất cho mốc cuối từng chọn nhầm chỗ ngập ngừng giữa câu ("…nhìn nhận được ‖ mình là ai") → chỉ lấy
+- Lỗi gặp ở lần đầu thì sửa script:
+  - Mốc từ Whisper lệch tới 1,6 s ở chỗ ngắt câu ("Không" bị kéo về 2,96 s, thật ở 4,6 s) nên `kiem-am-luong.py` soát theo độ lớn
+    tiếng. Lấy khoảng lặng dài nhất cho mốc cuối từng chọn nhầm chỗ ngập ngừng giữa câu ("…nhìn nhận được ‖ mình là ai") thì chỉ lấy
     khoảng lặng sát sau chữ cuối, không có thì cảnh báo.
-  - Giữ 1 s sau câu kêu gọi bằng tiếng nguồn lọt chữ câu kế ("…ở bên dưới nhé | Mình sẽ gặp lại") → chèn lặng thật.
+  - Giữ 1 s sau câu kêu gọi bằng tiếng nguồn lọt chữ câu kế ("…ở bên dưới nhé | Mình sẽ gặp lại") thì chèn lặng thật.
   - Tự kiểm: `cat-doan-noi-bat.py` chép lời lại bản cắt, so với lời đã chọn (bản A khớp 100%).
-  - Chữ to dòng dài ("MÃI MÃI KHÔNG THỂ HIỂU ĐƯỢC") co nhỏ mất lực → chỉ lấy cụm ngắn đúng lúc nói.
+  - Chữ to dòng dài ("MÃI MÃI KHÔNG THỂ HIỂU ĐƯỢC") co nhỏ mất lực thì chỉ lấy cụm ngắn đúng lúc nói.
   - Thêm biểu tượng `write` (viết ra giấy) vào template chung.
 - **Chuyển cảnh "tua" + thanh tập gốc** (người dùng xem bản đầu: "cần hiệu ứng chuyển cảnh giữa các đoạn, phải cho người xem cảm
   giác đây đúng là highlight trích từ một video dài, không phải video bình thường"). Người dùng chọn: tua nhanh ngắn (không chớp
@@ -56,16 +56,16 @@ description: "Sổ thay đổi skill cắt đoạn nổi bật: quyết định 
   Code: `cat-doan-noi-bat.py` chèn 0,4 s/mối nhảy + `jumps` trong map · `ap-dung-doan-noi-bat.py` → `doan-noi-bat.js` · template `tua.jsx`,
   `dong-thoi-gian.jsx` (chế độ highlight), `phu-de.jsx` (ẩn phụ đề lúc tua, phụ đề lên trên thanh) · `assets/hieu-ung-am-thanh/tua.wav` (tự tổng hợp)
   · `xem-truoc-ban-dung.py` trộn tiếng tua (và sửa lỗi chỉ số đầu vào màn nguồn ảnh khi có tiếng hiệu ứng). Không render lại bản cũ.
-- Video thứ hai (IMG_3196, người nói, ngoài trời): chip chuyển cảnh thêm "⏪" khi nhảy lùi trong tập gốc (đoạn 3:53 → 2:22 hiện ⏩ là sai
+- Video thứ hai (IMG_3196, người nói, ngoài trời): chip chuyển cảnh thêm "⏪" khi nhảy lùi trong tập gốc (đoạn 3:53 về 2:22 hiện ⏩ là sai
   nghĩa); thanh tập gốc trên video người nói có nền tối mờ (nền trời sáng làm mốc khó đọc); cú chốt đổi sang thẻ toàn cảnh `ages`
-  khi chữ to sẽ che mặt (selfie mặt to + dồn khung). Mối nói liền ngoài trời: lọt chữ "là" của câu trước → dời mốc vào chỗ tiếng trũng.
-  Thanh tập gốc đẩy phụ đề lên 40 px → ô mở đầu chạm phụ đề 2 dòng → dải lớp phủ dừng sớm 40 px khi có doan-noi-bat.js (bo-cuc.js + vi-tri-khuon-mat.py).
+  khi chữ to sẽ che mặt (selfie mặt to + dồn khung). Mối nói liền ngoài trời: lọt chữ "là" của câu trước thì dời mốc vào chỗ tiếng trũng.
+  Thanh tập gốc đẩy phụ đề lên 40 px nên ô mở đầu chạm phụ đề 2 dòng nên dải lớp phủ dừng sớm 40 px khi có doan-noi-bat.js (bo-cuc.js + vi-tri-khuon-mat.py).
 
 ## 2026-11-03 (sau bản Haruku đầu)
 - **Lời kêu gọi hành động BẮT BUỘC** — clip không có là không duyệt. **Chỉ một phương án tối ưu nhất** (bỏ phương án B: "chỉ cần
   1 phương án tối ưu nhất là được").
-- Người dùng hỏi "xem riêng highlight có đủ kích thích tìm bản đầy đủ không?" → chưa: clip giải hết (vấn đề → cách → bằng chứng →
-  lời mời), thiếu kết quả lớn ("sống thọ… không bị bệnh tật nhiều"), câu mở là lời than chung, kết bị chùng. → luật 10 **chừa một
+- Người dùng hỏi "xem riêng highlight có đủ kích thích tìm bản đầy đủ không?" câu trả lời là chưa: clip giải hết (vấn đề → cách → bằng chứng →
+  lời mời), thiếu kết quả lớn ("sống thọ… không bị bệnh tật nhiều"), câu mở là lời than chung, kết bị chùng. thì luật 10 **chừa một
   ý cho bản đầy đủ** + chấm điểm câu mở (bất ngờ/kết quả lớn > câu hỏi day dứt > nỗi đau > lời than). Không thêm nhãn "BẢN ĐẦY ĐỦ".
 - **Nhịp game show, MỘT skill hai tông** (`soi` sôi động / `lang` lắng; đổi tông giữa chừng được — "1 video có thể vừa có lúc
   truyền tải thông tin tích cực, vừa có tâm sự"). Video mẫu "Ngày nhận xe" chỉ là mẫu về nhịp, giữ mọi luật cũ; không cần tên vòng.
@@ -73,9 +73,9 @@ description: "Sổ thay đổi skill cắt đoạn nổi bật: quyết định 
   có chip tua, `TONE`, `MUSIC.tracks`) — script `danh-sach-cat-doan-noi-bat.py` viết sẵn danh-sach-cat.js từ phuong-an.json. Podcast: `ap-dung-doan-noi-bat.py` ghi tông +
   nhạc vào doan-noi-bat.js, `xem-truoc-ban-dung.py` trộn nhạc (sidechain hạ khi có lời), `tua.jsx` có kiểu lắng.
 - **Nhạc nền cố định vài bài** (`assets/nhac/soi-*.mp3`, `lang-*.mp3`) — người dùng không muốn nhiều lựa chọn làm loạn bản sắc
-  kênh. Nguồn: Pixabay (giấy phép Pixabay Content License, không cần ghi nguồn). Pixabay chặn tải tự động (403) → người dùng tự tải.
+  kênh. Nguồn: Pixabay (giấy phép Pixabay Content License, không cần ghi nguồn). Pixabay chặn tải tự động (403) thì người dùng tự tải.
 - Bản Haruku dựng lại: thêm câu mở "họ sống thọ…" (1:12) + câu hỏi "tại sao… không phải thuốc thang" (1:45); để dành ví dụ cái
-  cây + nghĩa "Haruku" cho bản đầy đủ. Mốc từ Whisper ở 1:44 lệch khoảng 0,4 s ("bởi vì" lọt khi cắt ở 104,96) → chép thử từng mốc
+  cây + nghĩa "Haruku" cho bản đầy đủ. Mốc từ Whisper ở 1:44 lệch khoảng 0,4 s ("bởi vì" lọt khi cắt ở 104,96) thì chép thử từng mốc
   bắt đầu (104,85 / 105,08 / 105,25 / 105,35) tới khi sạch — cách soát khi "⚠ nói liền".
 
 ## 2026-11-03 (học từ 10 Shorts top lượt xem)
@@ -86,7 +86,7 @@ description: "Sổ thay đổi skill cắt đoạn nổi bật: quyết định 
   ĐỦ" vì không có chữ tự viết. Code: montage-template `EndCard` + `ENDCARD` (Root cộng thời lượng), `danh-sach-cat-doan-noi-bat.py` đọc
   `"endcard"` trong phuong-an.json. Nhánh podcast (7B): `man-ket.jsx` + composition `the-cuoi` (remotion-template),
   `xuat-video.mjs` → `the-cuoi.mp4`, `xem-truoc-ban-dung.py` ghép sau video (như bìa ghép trước); `bo-cuc.js` coi `endcard` là toàn khung.
-  Thử trên bản sao podcast-hl-nang-luc-A: 42,1 → 43,9 s, tiếng phần chính giữ nguyên (−19,2 dB), thẻ câm.
+  Thử trên bản sao podcast-hl-nang-luc-A: 42,1 thành 43,9 s, tiếng phần chính giữ nguyên (−19,2 dB), thẻ câm.
 - Lời kêu gọi = câu mệnh lệnh/giao việc nguyên văn (top video gần như không có "hãy bình luận"); thang câu mở thêm "tiền cược",
   "kết quả trước, quá khứ sau", "câu đố cho người xem", "con số danh sách". Vòng lặp thành mặc định khi clip tối đa 35 s có cặp câu.
   Độ dài cho tới 120 s chỉ với câu chuyện hồi hộp có đáp án cuối.
@@ -109,12 +109,12 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
 - **Thẻ tít mở đầu viết như tít báo** đúng ý người nói (ngoại lệ duy nhất của luật nguyên văn; chuẩn DOAC).
 - **Bỏ chip tua ⏩ + thanh tập gốc** (luật 8 ngày 03/11): cắt cứng + phóng xen kẽ 1,08× (giấu mối như clip kênh lớn); khoảng lặng
   ít nhất 0,45 s trong câu rút còn 0,24 s (`khoang-lang.py`, dùng chung cat-doan-noi-bat.py + danh-sach-cat-doan-noi-bat.py). Kiểu cũ: `--tua`.
-  danh-sach-cat-doan-noi-bat.py xuất `SUBS` theo giây timeline + `TS(src)`; thử trên highlight-img3196: 8 câu → 17 đoạn, chụp thử thấy phụ đề nhịp chữ.
+  danh-sach-cat-doan-noi-bat.py xuất `SUBS` theo giây timeline + `TS(src)`; thử trên highlight-img3196: 8 câu thành 17 đoạn, chụp thử thấy phụ đề nhịp chữ.
 
 ## 2026-11-04 (học 80 video Việt)
 - Học 20 highlight Việt (David duyệt ưu tiên 1+2): tít ghim `pinTitle` (chuong-trinh.jsx) + `"tit"` trong phuong-an.json; cảnh phản ứng `"react"` (danh-sach-cat-doan-noi-bat.py, đoạn hình khác + `audio` của câu đang nói); khung bìa 0,3 s; 60–120 s cho danh sách; hình dày theo lời ở nhánh podcast. Chưa áp HL-5 (nhãn "Xem bản đầy đủ") — chờ David.
 - HL-5 áp (David duyệt): thẻ cuối highlight có nhãn cố định "XEM BẢN ĐẦY ĐỦ" (chuong-trinh.jsx EndCard, man-ket.jsx); lịch phát `endcard.schedule`.
-- Che mặt / thân trên → toàn màn hình (quy-tac-chung 4): chạy `bao-ve-lop-phu.py` ở 7A; tít ghim che đầu người nói thì tự ẩn (selfie mặt cao — Haruku 86/95 mốc).
+- Che mặt / thân trên thì toàn màn hình (quy-tac-chung 4): chạy `bao-ve-lop-phu.py` ở 7A; tít ghim che đầu người nói thì tự ẩn (selfie mặt cao — Haruku 86/95 mốc).
 
 ## 2026-11-04 — TÁI CẤU TRÚC (David: "tách nhỏ để sửa một chỗ")
 - Kiến trúc 5 lớp: nguyen-tac · nhan-dien · ho-so (tham số từ hình mẫu, script + khung dựng đọc) · khoi (18 khối, nội dung SKILL.md cũ chuyển nguyên văn vào) · thu-vien-tai-nguyen (một bộ thành phần hình) + mau-chuan (kiem-mau.py). SKILL.md thành công thức mỏng (thứ tự khối, bảng phụ thuộc, tiêu chí đạt).
@@ -130,14 +130,14 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
 - 2026-11-07: David thấy clip 39 giây xem riêng không hiểu gì. Luật gốc mới: clip đạt hai mục tiêu (chuyển hoá ngay trong clip, kéo sang bản dài) qua bốn câu `boi_canh`, `y_tron`, `mang_ve`, `chua_lai`. Claude tự chọn ý, không hỏi David chọn đoạn. Bỏ mọi số cố định về độ dài và số clip. Được ghép đoạn xa khi đúng mạch, phải báo mốc. `cat-doan-noi-bat.py` dừng nếu thiếu `chon_y`.
 
 ## 2026-11-08 — clip người nói dọc đầu tiên (4 video cũ làm lại)
-- Nguồn ngang có người nói cắt sang dọc: mặt chiếm gần hết nửa trên, nên `bao-ve-lop-phu.py` đổi thẻ tít `y: 300` thành màn đen toàn khung (mất mặt ngay giây 0, chữ lệch sát mép trái). Cách làm: tít `keep: true`, bỏ `y` → neo vùng ngực ngay trên phụ đề, thấy rõ mặt.
-- Chữ to `pow` giữa clip lặp đúng chữ phụ đề nhịp chữ và cũng bị đổi thành màn đen → bỏ. Điểm nhấn giữa clip dùng minh hoạ (`illus` vs/list/count) và màn hành động (`action`), từ khoá tô cam trong phụ đề.
+- Nguồn ngang có người nói cắt sang dọc: mặt chiếm gần hết nửa trên, nên `bao-ve-lop-phu.py` đổi thẻ tít `y: 300` thành màn đen toàn khung (mất mặt ngay giây 0, chữ lệch sát mép trái). Cách làm: tít `keep: true`, bỏ `y` thì neo vùng ngực ngay trên phụ đề, thấy rõ mặt.
+- Chữ to `pow` giữa clip lặp đúng chữ phụ đề nhịp chữ và cũng bị đổi thành màn đen thì bỏ. Điểm nhấn giữa clip dùng minh hoạ (`illus` vs/list/count) và màn hành động (`action`), từ khoá tô cam trong phụ đề.
 - Bỏ tiếng ký hiệu đầu clip khi vào lời ngay giây 0 (đúng quyết định 06/11); `danh-sach-cat-doan-noi-bat.py` đã sửa: không thêm `sting`, tít tự `keep: true`.
 - Chưa sửa: màn `pow` toàn khung của khung ghép (lề trái khoảng 18 px thay vì 70 px, dải tối khác màu ở đỉnh). Nếu cần chữ to toàn khung, sửa `chuong-trinh.jsx` trước.
 - Câu màn chốt dài (cả đoạn HANHDONG khoảng 250 ký tự) tràn đè phụ đề ở clip sự tập trung. `danh-sach-cat-doan-noi-bat.py` giờ cảnh báo khi > 55 ký tự; ghi `"cta_text"` (vế trọn ý, nguyên văn) vào câu `cta` trong phuong-an.json.
 
 ## 2026-11-08 — Phụ đề dọc cụm 5–8 chữ, mỗi lúc một chỗ chữ (David chốt)
 - David: phụ đề 3–4 chữ cỡ 84 quá ngắn, quá to; đọc chữ motion graphic và phụ đề cùng lúc là rối. Đổi: cỡ 58 bằng chữ thẻ, chữ thường, viền mảnh, cụm trọn ý 5–8 chữ (tối đa 2 dòng).
-- Mọi lớp chữ motion graphic (pow, illus, action, chips, thẻ tít, màn chốt…) đang hiện → phụ đề nhường, hết lớp thì hiện tiếp đúng cụm (chuong-trinh.jsx `nhuong`, phu-de.jsx `LOP`).
+- Mọi lớp chữ motion graphic (pow, illus, action, chips, thẻ tít, màn chốt…) đang hiện thì phụ đề nhường, hết lớp thì hiện tiếp đúng cụm (chuong-trinh.jsx `nhuong`, phu-de.jsx `LOP`).
 - `danh-sach-cat-doan-noi-bat.py`: chia dòng bằng quy hoạch động (hết câu / dấu phẩy / trước từ nối; không ngắt sau "rất, của, là, những…"). Sửa lỗi chạy lại `danh-sach-cat-doan-noi-bat.py` nhân đôi khối `TS`.
-- Chạy lại `danh-sach-cat-doan-noi-bat.py` sẽ ghi đè lớp phủ và `hl` sửa tay trong danh-sach-cat.js → lưu bản cũ, chép lại sau.
+- Chạy lại `danh-sach-cat-doan-noi-bat.py` sẽ ghi đè lớp phủ và `hl` sửa tay trong danh-sach-cat.js thì lưu bản cũ, chép lại sau.

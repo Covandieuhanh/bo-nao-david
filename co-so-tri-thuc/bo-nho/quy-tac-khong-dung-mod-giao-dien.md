@@ -15,4 +15,4 @@ Nhà của luật: `tu-dong-hoa/cai-dat-bo-nao.sh` (chỉ cài Telegram) và `ky
 
 ## Sổ
 - 11/11/2026: mod phải tự chạy, việc ít nhất 3 bước lập kế hoạch bằng goal-meter.
-- 13/11/2026: gỡ hết mod giao diện (lời David ở trên) → bỏ luật 11/11.
+- 13/11/2026: gỡ hết mod giao diện (lời David ở trên) thì bỏ luật 11/11.

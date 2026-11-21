@@ -16,7 +16,7 @@ Về sau chỉ cần mở một file là thấy toàn bộ ý của hướng đ�
 
 ## Luật ghi
 - **Luôn ghi**, kể cả tập không dựng (⛔ / 🗂) và hướng không ra bản: ý vẫn là nguyên liệu.
-- **Chỉ thêm, không sửa mục cũ**; mục mới nhất ở cuối file. Một tập chạm nhiều hướng → một mục ở mỗi file hướng đó.
+- **Chỉ thêm, không sửa mục cũ**; mục mới nhất ở cuối file. Một tập chạm nhiều hướng thì một mục ở mỗi file hướng đó.
 - **Đủ ý, không bịa**: mỗi ý một dòng, có lời gốc ngắn (nguyên văn, tối đa 1 câu) và mốc để tìm lại trong tập.
 - **Ẩn danh**: khách, người được nhắc tên viết theo vai ("chủ quán", "bạn hướng dẫn viên"). Không ghi giá khách trả, số điện thoại,
   chuyện riêng. Không nêu tên đơn vị phía sau; "đội của mình", "đội công nghệ" thì ghi được (hồ sơ 4.7, hướng 3).

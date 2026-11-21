@@ -19,7 +19,7 @@ Ngang 1920×1080: x 96–1824, y 54–1026 — **thiết kế toàn khung**, kh�
 | Phụ đề | đáy 1374 | đáy 870 | `phu-de.js` (lớp phu-de) |
 | **Thanh thời gian**: đã chạy · thanh · "còn m:ss" | 1386–1416 | 996–1026 | tự tính (lớp phu-de) |
 
-Phụ đề + thanh thời gian ở lớp trên cùng → không cảnh nào che được. Nền: tối + quầng sáng cam trôi chậm + lưới trôi rất chậm.
+Phụ đề + thanh thời gian ở lớp trên cùng thì không cảnh nào che được. Nền: tối + quầng sáng cam trôi chậm + lưới trôi rất chậm.
 
 ## Lớp phủ trên sân khấu
 - Thẻ, chữ to, hook, tên (`card`, `kinetic`, `hook`, `lower`): vẽ trên dải 830×435 như skill gốc; `Place` đặt canh trái vùng an
@@ -30,12 +30,12 @@ Phụ đề + thanh thời gian ở lớp trên cùng → không cảnh nào che
 
 ## Chọn cảnh cho lời nói
 Ưu tiên như `$BASE/references/thiet-ke-canh.md`, thêm:
-1. Đổi chủ đề / câu hỏi mở ra đoạn mới → `TOPICS` đổi ngay mốc đó (trích phần chính), hoặc `card quote`.
-2. Câu có cấu trúc (tầng bậc, mốc, so sánh, trước → sau) → `diagram` (khối 07); nhắc người / nơi / tổ chức có thật → `diagram` `anh`.
-3. Con số / mốc / tên riêng → `card` (`ages`, `year`, `years4`, `daily`, `vs`…) hoặc `illus` `count`.
-4. Liệt kê, các bước → `card steps` (tối đa 4 mục) hoặc `build` / `montage` (toàn màn hình).
-5. Người nói tự giới thiệu tên → `lower` (tên + vai) — chỉ khi có trong lời.
-6. Câu cuối → màn chốt `cta` nguyên văn (khối 08).
+1. Đổi chủ đề / câu hỏi mở ra đoạn mới thì `TOPICS` đổi ngay mốc đó (trích phần chính), hoặc `card quote`.
+2. Câu có cấu trúc (tầng bậc, mốc, so sánh, trước và sau) thì dùng `diagram` (khối 07); nhắc người / nơi / tổ chức có thật thì dùng `diagram` `anh`.
+3. Con số / mốc / tên riêng thì dùng `card` (`ages`, `year`, `years4`, `daily`, `vs`…) hoặc `illus` `count`.
+4. Liệt kê, các bước thì dùng `card steps` (tối đa 4 mục) hoặc `build` / `montage` (toàn màn hình).
+5. Người nói tự giới thiệu tên thì dùng `lower` (tên + vai) — chỉ khi có trong lời.
+6. Câu cuối thì dùng màn chốt `cta` nguyên văn (khối 08).
 
 ## Nhịp
 - Hình phủ **khoảng 30 % thời lượng**, cân theo nội dung (`phu_hinh_muc_tieu`, podcast SKILL): một màn một ý, một hình. Sân khấu (ý

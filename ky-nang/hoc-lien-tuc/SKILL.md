@@ -30,14 +30,14 @@ Quy trình · Thực thi), gửi David `bao-cao.sh "#N ❓ Chờ anh duyệt 4 p
 
 ## Việc 1 — Nhìn lại tuần (máy gửi `[TU-HOC]` 07:00 sáng thứ 6 — ngày tổng kết tuần, hoặc David gọi)
 Máy đã ghi sẵn tín hiệu cuối mỗi phiên (hook `tu-dong-hoa/hoc-lien-tuc/ghi-tin-hieu.py` → `~/.claude/hoc-lien-tuc/tin-hieu.jsonl`), không tốn token.
-1. `python3 -I tu-dong-hoa/hoc-lien-tuc/dem-ky-nang.py 7` → skill dùng nhiều, skill bị sửa nhiều, skill không dùng.
+1. `python3 -I tu-dong-hoa/hoc-lien-tuc/dem-ky-nang.py 7` cho ra skill dùng nhiều, skill bị sửa nhiều, skill không dùng.
 2. Đọc các dòng 7 ngày qua trong `tin-hieu.jsonl` (chỉ trường `david_sua`, `skill`, `loi_cong_cu`). Gom **điều lặp ít nhất 2 lần**: cùng một
    lỗi, cùng một câu David phải nhắc, cùng một việc David làm tay. Cần thêm ngữ cảnh thì `python3 -I tu-dong-hoa/tim-phien.py "<từ khoá>"`,
    không mở cả phiên.
-3. Mỗi điều lặp → một chỗ sửa trong bộ 4 phần (mục trên) **và một câu kiểm** vào bộ kiểm của bộ đó (trục mục 4), để bản sau không lặp lại. Việc tay lặp ít nhất 3 lần → viết thành script hoặc bước trong skill (Việc 3).
+3. Mỗi điều lặp thành một chỗ sửa trong bộ 4 phần (mục trên) **và một câu kiểm** vào bộ kiểm của bộ đó (trục mục 4), để bản sau không lặp lại. Việc tay lặp ít nhất 3 lần thì viết thành script hoặc bước trong skill (Việc 3).
 4. **Giọng văn:** đọc lời David trong tuần (tin nhắn, lời nói trong video đã duyệt). Thấy cách nói mới, từ hay dùng, từ David sửa
-   lại → cập nhật `giong-thuong-hieu-david.md` (ví dụ nguyên văn ngắn + ngày).
-5. **Dọn:** skill 30 ngày không dùng → đề xuất gộp hoặc cất vào `luu-tru/` (không xoá). Ghi nhớ trùng / quá dài trong `co-so-tri-thuc/bo-nho/` →
+   lại thì cập nhật `giong-thuong-hieu-david.md` (ví dụ nguyên văn ngắn + ngày).
+5. **Dọn:** skill 30 ngày không dùng thì đề xuất gộp hoặc cất vào `luu-tru/` (không xoá). Ghi nhớ trùng / quá dài trong `co-so-tri-thuc/bo-nho/` thì
    gộp chữ (giữ nguyên ý David chốt), cập nhật `MEMORY.md`.
 6. Ghi phiếu tuần `du-an/hoc-lien-tuc/<YYYY-MM-DD>.md` (không chép lời chat thô): điều lặp · đề xuất sửa (4 phần) · số liệu kênh tuần · việc tuần sau.
    Gửi David 4 phần chờ duyệt; duyệt rồi sửa, ghi "đã sửa gì" vào phiếu, báo `📈 Tự học tuần: …`.
@@ -53,7 +53,7 @@ Máy đã ghi sẵn tín hiệu cuối mỗi phiên (hook `tu-dong-hoa/hoc-lien-
 
 ## Việc 3 — Học thành skill (giống `/learn` của Hermes)
 Nguồn: tài liệu, link, thư mục, hoặc "quy trình vừa làm trong phiên này".
-1. Có skill gần đúng việc này → **bổ sung vào skill đó** (ưu tiên). Chỉ tạo skill mới khi việc lặp ít nhất 3 lần hoặc David yêu cầu.
+1. Có skill gần đúng việc này thì **bổ sung vào skill đó** (ưu tiên). Chỉ tạo skill mới khi việc lặp ít nhất 3 lần hoặc David yêu cầu.
 2. Tạo mới: theo `skill-creator`; thư mục `ky-nang/<ten-khong-dau>/SKILL.md`; mô tả nói rõ khi nào dùng (câu David hay nói);
    thêm một dòng vào bảng chọn skill trong `AGENTS.md`; chạy `bash tu-dong-hoa/cai-dat-bo-nao.sh` nếu skill cần liên kết vào `~/.claude/skills`.
 3. Thử một lần trên việc thật hoặc đoạn ngắn (`quy-tac-thu-bang-doan-ngan`), rồi báo David một dòng.
@@ -70,7 +70,7 @@ nói "nâng cấp" / "tái bản". Nhắc David một dòng; David quyết. Mỗ
 | 3 | **Hình** | `python3 -I ky-nang/san-xuat-video/mau-chuan/kiem-mau.py` (dự án mẫu phải có trên máy; ở Drive thì kéo về trước) | y nguyên, trừ chỗ đổi có chủ đích |
 | 4 | **Số lần David phải sửa** | `tin-hieu.jsonl` (trường `david_sua`) theo video / việc | giảm hoặc không tăng |
 | 5 | **Trùng / rối** | máy đo chồng chéo | mọi bộ "Chưa cần" |
-Thước đo nào chưa có dữ liệu (chưa đủ video có số liệu, dự án mẫu chưa kéo về) → ghi "chưa đo" và lý do, không đoán.
+Thước đo nào chưa có dữ liệu (chưa đủ video có số liệu, dự án mẫu chưa kéo về) thì ghi "chưa đo" và lý do, không đoán.
 
 **Năm bước:**
 1. **Mốc + đo trước** *(bước nhẹ)*: `bash tu-dong-hoa/dong-bo.sh --push`, `git tag nang-cap-<n>-truoc`, ghi bảng thước đo "trước" vào file theo dõi.
@@ -78,10 +78,10 @@ Thước đo nào chưa có dữ liệu (chưa đủ video có số liệu, dự
    người xem, cùng lý do) thành **một nguyên lý + 1–3 ca mẫu** ở nhà chung; luật lẻ trở thành ví dụ của nguyên lý (cách tầng
    `nguoi-xem-can-gi.md` + `giai-mau.md` đã làm). Giữ đúng nghĩa luật David đã chốt; không thêm luật mới.
 3. **Tỉa:** luật, kiểu cảnh, skill không được dùng từ lần trước (`dem-ky-nang.py`, kiểu không xuất hiện trong `ke-hoach-canh.md` các dự án)
-   hoặc số liệu cho thấy không giúp → đề xuất gộp, bỏ hoặc cất `luu-tru/`. Không tự bỏ.
+   hoặc số liệu cho thấy không giúp thì đề xuất gộp, bỏ hoặc cất `luu-tru/`. Không tự bỏ.
 4. **Dọn:** skill `tai-cau-truc` (bảng luật đang sống, mỗi luật một nhà, ngày về sổ, dọn ghi nhớ).
-5. **Đo sau + ra bản:** chạy lại bảng thước đo. Đạt → `git tag nang-cap-<n>`, một dòng ở `ky-nang/tai-cau-truc/lich-su.md`, chỉnh ngưỡng
-   `bo.json` nếu lệch, đẩy GitHub, báo David: chưng cất gì, tỉa gì, thước đo trước → sau, chưa đo gì. Kém hơn ở một dòng → sửa chỗ gây
+5. **Đo sau + ra bản:** chạy lại bảng thước đo. Đạt thì `git tag nang-cap-<n>`, một dòng ở `ky-nang/tai-cau-truc/lich-su.md`, chỉnh ngưỡng
+   `bo.json` nếu lệch, đẩy GitHub, báo David: chưng cất gì, tỉa gì, thước đo trước và sau, chưa đo gì. Kém hơn ở một dòng thì sửa chỗ gây
    ra, hoặc quay về mốc `nang-cap-<n>-truoc`, ghi bài học vào file theo dõi.
 
 Bước 2–3 là phần sửa: gom thành **một bộ 4 phần** (mục "Duyệt 4 phần") trước khi sửa. Thước đo 1 (người xem) thường chỉ đo lại được

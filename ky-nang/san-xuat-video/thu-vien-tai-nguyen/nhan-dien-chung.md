@@ -20,7 +20,7 @@ Giữ ở MỌI video, mọi cảnh có chữ:
 
 Ngoài ba điều trên là **tự do sáng tạo theo nội dung**: nền tối / sáng / giấy / người mờ, kết cấu, ánh sáng, kiểu hình (biểu tượng nét
 tròn, phấn vẽ tay, ảnh), bố cục, chuyển động. Thử: che dấu góc đi, người xem quen kênh vẫn đoán được là video của David nhờ cam + chữ
-+ phụ đề → đạt. Màu nhấn, hai font chính, nhạc kênh (`bien-thiet-ke.js`, `thuong-hieu.json`) không đổi khi học video mẫu.
++ phụ đề thì đạt. Màu nhấn, hai font chính, nhạc kênh (`bien-thiet-ke.js`, `thuong-hieu.json`) không đổi khi học video mẫu.
 
 ## 1. Thành phần cố định (có ở mọi video)
 

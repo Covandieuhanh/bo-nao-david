@@ -28,7 +28,7 @@ python3 -I ky-nang/tai-cau-truc/do-chong-cheo.py [--chi-tiet]
 ```
 - Chỉ kêu vì **trùng hoặc rối**: dấu ngày trong luật (`dau_ngay`), câu ghi đè (`ghi_de`), câu giống hệt ở hai file (`trung`), dòng gần
   trùng ở hai file — cùng ý viết lại theo cách khác (`gan_trung`). Số dòng chỉ in ra để biết độ lớn; số lần sửa (`sua`) chỉ nhắc nhẹ.
-- **Một bộ bất kỳ vượt ngưỡng** → in "NÊN NÂNG CẤP" một dòng → Claude nhắc David **một dòng**, David quyết (hoc-lien-tuc Việc 4).
+- **Một bộ bất kỳ vượt ngưỡng** thì in "NÊN NÂNG CẤP" một dòng thì Claude nhắc David **một dòng**, David quyết (hoc-lien-tuc Việc 4).
 - Chạy cuối mỗi việc có sửa bản luật (`chuan-muc-lam-viec.md` mục 4).
 
 ## Quy trình dọn (trong một đợt nâng cấp `nang-cap-<n>`)
@@ -38,24 +38,24 @@ python3 -I ky-nang/tai-cau-truc/do-chong-cheo.py [--chi-tiet]
 2. **Bảng luật đang sống** (file của bộ): đọc bản luật + sổ quyết định + ghi nhớ liên quan, mỗi luật một dòng:
    `luật · nhà nên ở · nguồn hiện tại (file:dòng, có thể nhiều) · ngày chốt gần nhất · trạng thái (sống / trùng / ngược / cũ)`.
    Bắt đầu từ các cặp `gan_trung` của máy đo (`--chi-tiet`). Luật ngược nhau: theo `chuan-muc-lam-viec.md` mục 0 (lời David vừa nói >
-   ngày chốt gần nhất > cũ); chỗ vẫn không rõ → gom lại **hỏi David một lần** (thu-thap-yeu-cau), có đề xuất. Không tự bỏ luật nào
-   David đã chốt mà không có luật mới hơn thay. Luật đụng bộ khác → ghi mục "Chéo bộ"; phiên điều phối chốt nhà duy nhất.
+   ngày chốt gần nhất > cũ); chỗ vẫn không rõ thì gom lại **hỏi David một lần** (thu-thap-yeu-cau), có đề xuất. Không tự bỏ luật nào
+   David đã chốt mà không có luật mới hơn thay. Luật đụng bộ khác thì ghi mục "Chéo bộ"; phiên điều phối chốt nhà duy nhất.
 3. **Viết lại từ bảng, không vá:**
-   - Mỗi luật **một nhà**; nơi khác một dòng trỏ. Luật dùng chung nhiều skill → `chuan-muc-lam-viec.md` / `quy-tac-chung.md`, không chép.
+   - Mỗi luật **một nhà**; nơi khác một dòng trỏ. Luật dùng chung nhiều skill thì đặt ở `chuan-muc-lam-viec.md` / `quy-tac-chung.md`, không chép.
    - Không ngày, không "(David chốt …)", không "thay luật cũ", không "chuyển nguyên văn từ SKILL.md cũ". Lý do một luật tồn tại
      viết ngắn **trong luật** nếu giúp AI làm đúng ("vì người xem không đọc hai chỗ cùng lúc"); lịch sử thì vào sổ.
-   - Giữ đúng nghĩa từng luật trong bảng; viết gọn hơn, không thêm luật mới. Nhà mới thiếu chi tiết mà nơi cũ có → chuyển chi tiết đó
+   - Giữ đúng nghĩa từng luật trong bảng; viết gọn hơn, không thêm luật mới. Nhà mới thiếu chi tiết mà nơi cũ có thì chuyển chi tiết đó
      vào nhà mới. Code đi kèm (tên khoá, lệnh) giữ khớp. Bảng "Xong khi" của mỗi skill giữ nguyên ý.
    - Ghi nhớ: gộp trùng, bỏ cái đã lỗi thời, cập nhật `MEMORY.md`; ghi nhớ không chứa luật mà bản luật không có.
 4. **Đóng sổ:** mỗi sổ quyết định bị đụng thêm một mục đầu `## Nâng cấp <n> — <ngày>: …` (ngày + lời David vừa gỡ khỏi bản luật).
-   Sổ quá dài (> 400 dòng) → chuyển phần cũ vào `luu-tru/` cạnh sổ.
+   Sổ quá dài (> 400 dòng) thì chuyển phần cũ vào `luu-tru/` cạnh sổ.
 5. **Kiểm dọn:** đủ luật (đi từng dòng bảng — luật "sống" nào cũng có nhà); máy đo mọi bộ "Chưa cần", dấu ngày và câu ghi đè gần 0,
    câu trùng 0, dòng gần trùng còn lại chỉ là loại đúng thiết kế (dòng trỏ, "Xong khi" từng skill, bảng công thức, giải thích tham số
    hồ sơ); `kiem-tra-lien-ket.py` không link gãy. Dọn chỉ viết lại chữ, không đổi code dựng: hình khác ở `kiem-mau.py` = có gì sai.
    Thước đo trước / sau còn lại và ra bản: hoc-lien-tuc Việc 4 bước 5.
 
 ## Không làm
-- Không đổi luật, không thêm luật mới trong lúc dọn — chỉ viết lại. Thấy luật nên đổi → ghi vào file theo dõi (bước Chưng cất / Tỉa xử lý).
+- Không đổi luật, không thêm luật mới trong lúc dọn — chỉ viết lại. Thấy luật nên đổi thì ghi vào file theo dõi (bước Chưng cất / Tỉa xử lý).
 - Không đụng kho (bố cục, nguồn học) ngoài việc sửa đường trỏ.
 - Không dọn lẻ một bộ.
 

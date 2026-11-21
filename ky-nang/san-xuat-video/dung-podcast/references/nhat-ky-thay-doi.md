@@ -15,29 +15,29 @@ description: "Sổ thay đổi skill dựng podcast: quyết định của David
 - Bỏ khỏi bản luật: `hook` đầu tiên, "khoảng 1 cảnh / 15–20 s", câu chốt tự sáng tạo (khối 12, podcast-design); hình phủ khoảng 30 % là luật nhịp duy nhất. Phụ đề podcast dọc mọi độ dài = cụm 5–8 chữ (theo code phu-de.jsx).
 
 ## 2026-11-02
-- Tạo skill: file tiếng / video podcast → video toàn motion graphics, cùng phong cách skill gốc, dùng chung template.
+- Tạo skill: file tiếng / video podcast thì video toàn motion graphics, cùng phong cách skill gốc, dùng chung template.
   Lựa chọn của người dùng: nhận cả file tiếng lẫn video; 1–2 người nói; tập tối đa khoảng 15 phút.
-- Khung xuất theo nguồn (ngang→ngang, dọc/chỉ tiếng→dọc) trừ khi người dùng yêu cầu.
+- Khung xuất theo nguồn (ngang sang ngang, dọc/chỉ tiếng sang dọc) trừ khi người dùng yêu cầu.
 - **Chỉ nội dung gốc**: bỏ đoạn thử ghép giọng đọc máy làm "người dẫn"; không tự đặt nhãn "Người dẫn/Khách mời"; tên người nói
-  chỉ khi có trong lời hoặc người dùng đưa; không tên → chỉ màu sóng âm.
+  chỉ khi có trong lời hoặc người dùng đưa; không tên thì chỉ màu sóng âm.
 - **Khung ngang = thiết kế toàn khung 16:9**, không chia 3 cột kiểu pillar (bản đầu làm pillar, người dùng bác).
 - **Thanh thời gian** ở đáy vùng an toàn (đã chạy · "còn m:ss"), luôn hiện trên mọi cảnh.
 - Tên người nói ở khung ngang đặt dưới vòng micro (đặt dưới ý đang bàn thì bị thẻ đè).
 - **Thu nhỏ** lớp phủ / cảnh / chữ khoảng 10–15% và **chữ tiếng Việt đủ dấu, không chồng dòng** (`VN` trong khung-podcast.js) — người dùng
-  thấy chữ to quá và dấu bị chồng/thiếu ("BỊ" → "BI").
+  thấy chữ to quá và dấu bị chồng/thiếu ("BỊ" thành "BI").
 - **Màn hình bìa** khoảng 1 s ghép trước video (ảnh bìa mạng xã hội); tiêu đề hỏi người dùng mỗi video (DJI: "Phương pháp tìm ra năng
-  lực của bản thân / dùng cho cả đời"). Ghép trước thay vì đè lên 1 s đầu → lời nói, hook, phụ đề không bị che hay lệch mốc.
+  lực của bản thân / dùng cho cả đời"). Ghép trước thay vì đè lên 1 s đầu thì lời nói, hook, phụ đề không bị che hay lệch mốc.
 - Sửa dấu tiếng Việt (`VN`) bật cho **cả hai skill** (người dùng đồng ý).
 - Giữ ô chữ highlight (thẻ, chữ to) như skill gốc — người dùng không ưng bản chỉ-hình-động (thử trên video Haruku).
 - Lớp phủ bị chặn cứng ở `PF.contentBottom` để không bao giờ đè phụ đề / thanh thời gian.
 - **Tinh gọn**: khoảng 1 cảnh / 15–20 s, ý đang bàn đổi 40–90 s, chữ to tối đa 3–4 lần (người dùng muốn tối giản, chỉ ý chính).
 - Khe giữa 2 dòng chữ to (ý đang bàn, chữ to, bìa) nới 0,24 cỡ chữ — người dùng thấy "MỘT NGÀY / RẤT LÀ ĐẶC BIỆT" bị chồng dấu.
 - **Không ảnh** là mặc định (biểu tượng vẽ); người dùng chọn bản DJI không ảnh. Ngoại lệ như skill gốc.
-- **Mục tiêu video = hiểu + làm theo** (người dùng chốt): câu hành động trong lời → màn `action` tự sinh (biểu tượng + tick + nguyên
+- **Mục tiêu video = hiểu + làm theo** (người dùng chốt): câu hành động trong lời thì màn `action` tự sinh (biểu tượng + tick + nguyên
   văn câu); MỌI video kết bằng màn chốt `cta` khoảng 4 s ("David rất mong có được sự góp ý của bạn tại phần bình luận!", keu-goi-hanh-dong.js) — hình
   lùi vào khung để vẫn thấy vẫy tay/like. Lý do: đánh giá cho thấy video giúp hiểu nhưng chưa thúc người xem hành động.
 - **Câu màn chốt không cố định** (người dùng chốt): Claude tự sáng tạo câu chốt hợp từng video sau khi nắm nội dung — một hành động (bình luận/lưu/theo dõi/chia sẻ, biểu tượng theo kiểu), giọng David, không bịa; câu cố định trong keu-goi-hanh-dong.js chỉ còn là dự phòng.
-- **Tick + "ting" ở màn chốt** (người dùng yêu cầu): câu chốt hiện xong → dấu tick nhỏ bật nảy ở góc biểu tượng + tiếng chuông ting (assets/hieu-ung-am-thanh/ting.wav, tự tổng hợp, không bản quyền) để kích thích người xem hành động.
+- **Tick + "ting" ở màn chốt** (người dùng yêu cầu): câu chốt hiện xong thì dấu tick nhỏ bật nảy ở góc biểu tượng + tiếng chuông ting (assets/hieu-ung-am-thanh/ting.wav, tự tổng hợp, không bản quyền) để kích thích người xem hành động.
 
 ## 2026-11-04
 - Bộ nhận diện David chung 4 loại video (xem san-xuat-video/tong-quan.md): đầu sân khấu thành dấu ● DAVID │ tên chương trình; tiếng
@@ -50,9 +50,9 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
   chữ, nhận diện David; nguồn quay dọc tự thành khung một bên). Video ngắn không ghép bìa trước video.
 - **Phụ đề video ngắn** 1–3 chữ to mỗi nhịp ngang ngực (`kieu-phu-de.js` `ShortLine`, chuẩn Hormozi/DOAC) — thay quyết định cũ "giữ
   phụ đề đáy" (bỏ đề xuất K ngày 03/11) vì David đổi kim chỉ nam. Video dài / vlog / podcast giữ hộp tối.
-- **Bỏ bìa 1 s ghép trước video** (02/11) → giây đầu là `hook`; bước 2b hỏi chữ thumbnail + ảnh người nói thay tiêu đề bìa;
+- **Bỏ bìa 1 s ghép trước video** (02/11) nên giây đầu là `hook`; bước 2b hỏi chữ thumbnail + ảnh người nói thay tiêu đề bìa;
   thumbnail ở bước phát hành. Podcast dài giữ nhịp tự nhiên + phụ đề hộp tối.
-- **Thumbnail chỉ khi video xuất NGANG và đăng YouTube** (David chốt cùng ngày: "chỉ có đăng video youtube thì mới cần ảnh bìa ngang, mà còn phải là video ngang"). Video xuất ngang → hỏi "có đăng YouTube không?" lúc đầu; video dọc chỉ có mốc khung bìa.
+- **Thumbnail chỉ khi video xuất NGANG và đăng YouTube** (David chốt cùng ngày: "chỉ có đăng video youtube thì mới cần ảnh bìa ngang, mà còn phải là video ngang"). Video xuất ngang thì hỏi "có đăng YouTube không?" lúc đầu; video dọc chỉ có mốc khung bìa.
 
 ## 2026-11-04 (học 80 video Việt)
 - Học 20 podcast Việt (David duyệt ưu tiên 1+2): thẻ "PHẦN n" theo TOPICS (san-khau.jsx), chương YouTube (`chuong.py`), teaser (`doan-gioi-thieu.py`), khuôn thumbnail series (`THUMB_BADGE`), nền ảnh chậm `STAGE.bg`, tập > 20 phút thưa cảnh. Chưa áp PO-6 (thẻ lịch phát) — chờ David.

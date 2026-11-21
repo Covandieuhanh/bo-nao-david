@@ -22,7 +22,7 @@ description: "Mẫu 01 gói nội dung kênh (tách ra, chưa thành gói): phi�
 - Ai quay: …… · Ai xem lại, duyệt: …… · Ai đăng: ……
 - Số giờ mỗi tuần cho video: ……
 - Nhịp đăng giữ được cả tuần bận: …… video / tuần
-- Thiết bị: chỉ điện thoại · máy tính + app · máy tính đủ mạnh → **tuyến A / B / C**
+- Thiết bị: chỉ điện thoại · máy tính + app · máy tính đủ mạnh thì **tuyến A / B / C**
 - AI đang dùng: …… (miễn phí / trả phí)
 
 ## Câu mời người xem làm bước tiếp

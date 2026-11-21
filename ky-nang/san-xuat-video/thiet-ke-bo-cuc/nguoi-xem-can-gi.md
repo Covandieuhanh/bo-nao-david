@@ -10,10 +10,10 @@ nào khớp thì tự sáng tạo theo nguyên lý (cảnh tự vẽ `ve`).
 
 ## 0. Thứ tự suy nghĩ (luôn đi đủ, ghi lại thành chữ)
 
-1. **Cả video thuộc loại nội dung nào?** (mục 1) → người xem đến để làm gì: hiểu, nhớ, tin, hay cảm. Câu trả lời này quyết định
+1. **Cả video thuộc loại nội dung nào?** (mục 1) thì người xem đến để làm gì: hiểu, nhớ, tin, hay cảm. Câu trả lời này quyết định
    mức dày hình, nhịp, nhạc, cách mở và kết cho **cả video**.
-2. **Từng đoạn: nếu chỉ nghe, người xem có gặp khó không? Khó gì?** Không khó → để người nói + phụ đề, không dựng gì (nguyên lý
-   Tinh gọn). Khó → gọi tên cái khó (không biết đang ở đâu, không hình dung được, không so được, quên ý trước, không tin…).
+2. **Từng đoạn: nếu chỉ nghe, người xem có gặp khó không? Khó gì?** Không khó thì để người nói + phụ đề, không dựng gì (nguyên lý
+   Tinh gọn). Khó thì gọi tên cái khó (không biết đang ở đâu, không hình dung được, không so được, quên ý trước, không tin…).
 3. **Cái khó đó do nguyên lý nào giải?** (mục 2, 3) — một đoạn thường chỉ cần một nguyên lý chính.
 4. **Cách thể hiện:** chọn trong kho cách đúng nguyên lý nhất (`tu-chon.md` bước 4); không có thì tự vẽ. Rồi đọc dòng
    **"phản tác dụng khi"** của nguyên lý để tự kiểm.
@@ -24,7 +24,7 @@ font, dấu góc, phụ đề, thanh thời gian, màn chốt) không đổi (`R
 
 ## 1. Loại nội dung cả video
 
-Lấy từ các video kênh đã làm (`du-an/danh-muc-noi-dung.md`). Loại mới xuất hiện qua video quay thêm → thêm dòng ở đây và ở `nguyen-ly.json`.
+Lấy từ các video kênh đã làm (`du-an/danh-muc-noi-dung.md`). Loại mới xuất hiện qua video quay thêm thì thêm dòng ở đây và ở `nguyen-ly.json`.
 
 | Loại (`Loại:`) | Nhận ra bằng | Người xem cần là chính | Nguyên lý ưu tiên | Mức hình · nhịp · nhạc | Tránh |
 |---|---|---|---|---|---|
@@ -59,31 +59,31 @@ Tên tiếng Anh giữ đúng nguồn, mỗi tên **một** bản dịch (dùng 
 - **Đã học:** Ali (tiến trình, mục lục); Cường Mê AI (một chỗ sáng); MagentX (số to, từ khoá to, thẻ câu hỏi, khuôn đừng/hãy lặp).
 
 ### Không trùng kênh — Redundancy Principle
-- **Cái khó:** vừa nghe lời vừa phải đọc nguyên câu đó trên hình → mắt và tai giành nhau.
+- **Cái khó:** vừa nghe lời vừa phải đọc nguyên câu đó trên hình thì mắt và tai giành nhau.
 - **Ở kênh này:** phụ đề luôn chạy vì nhiều người xem không bật tiếng. Vì vậy: khi hình có chữ thì phụ đề nhường (mỗi lúc một chỗ chữ);
   chữ trên hình chỉ là cụm đắt 1–3 chữ nguyên văn, không chép cả câu.
 - **Phản tác dụng khi:** bỏ phụ đề ở video dọc ngắn.
 
 ### Gần chỗ — Spatial Contiguity Principle
-- **Cái khó:** nhãn ở xa thứ nó nói → mắt phải đi tìm.
+- **Cái khó:** nhãn ở xa thứ nó nói thì mắt phải đi tìm.
 - **Làm:** nhãn sát hình; thẻ cạnh người đang nói (`the-canh`, `cho.js`); ở quay màn hình, nhãn sát chỗ thao tác; trước/sau đặt cạnh nhau (`tren-duoi`).
 - **Phản tác dụng khi:** "sát" tới mức che mặt hoặc che vùng thao tác.
 
 ### Đúng lúc — Temporal Contiguity Principle
-- **Cái khó:** hình hiện trước hoặc sau lời → người xem không ghép được.
+- **Cái khó:** hình hiện trước hoặc sau lời thì người xem không ghép được.
 - **Làm:** nói tới thứ gì thứ đó mới hiện (`at` = lúc nói); không hiện cả danh sách một lần.
 - **Phản tác dụng khi:** hiện quá sát khiến chữ chưa kịp đọc đã tắt (máy soát đo thời gian đọc).
 - **Đã học:** Cường Mê AI (hình theo nhịp lời); Sang Huỳnh (chữ xây theo lời).
 
 ### Chia đoạn — Segmenting Principle
-- **Cái khó:** nội dung dài liền một mạch → người xem hụt hơi, lạc.
+- **Cái khó:** nội dung dài liền một mạch thì người xem hụt hơi, lạc.
 - **Làm:** chia phần (chương, tiến trình ý, mục lục tích luỹ); một hình lớn dần qua các ý nối nhau (`chuoi`, `xay-tang`, `mach.js`); khuôn lặp cho danh sách (`dung-hay`).
 - **Phản tác dụng khi:** chia vụn video ngắn một ý thành nhiều màn.
 
 ### Biết trước — Pre-training Principle
-- **Cái khó:** gặp khái niệm lạ giữa lúc đang theo bước → vừa phải hiểu từ, vừa phải theo bước.
+- **Cái khó:** gặp khái niệm lạ giữa lúc đang theo bước thì vừa phải hiểu từ, vừa phải theo bước.
 - **Làm:** khi người nói báo trước video / tập này nói về gì hoặc gồm những phần nào ("trong video này có 3 điều", "đây là tập cuối của
-  loạt bài Tết, chủ đề là…", "trước hết hiểu X là gì") → mục lục, màn chương mở đầu, thẻ khái niệm hiện trước phần chi tiết.
+  loạt bài Tết, chủ đề là…", "trước hết hiểu X là gì") thì mục lục, màn chương mở đầu, thẻ khái niệm hiện trước phần chi tiết.
 - **Khác Báo hiệu:** Biết trước là cho người xem **bản đồ trước khi vào** (đầu video, đầu phần); Báo hiệu là đánh dấu **chỗ quan trọng
   hoặc đang ở đâu** khi đã vào giữa nội dung. Cùng một màn chương: đặt ở lời giới thiệu mở tập là Biết trước, đặt ở chỗ đổi phần là Báo hiệu.
 - **Phản tác dụng khi:** tự thêm phần giới thiệu người nói không nói (trái luật nguyên văn).
@@ -95,11 +95,11 @@ Tên tiếng Anh giữ đúng nguồn, mỗi tên **một** bản dịch (dùng 
 
 ### Lời kèm hình — Multimedia Principle
 - **Cái khó:** ý trừu tượng (quan hệ, cấu trúc, con số) chỉ nghe thì khó giữ.
-- **Làm:** dựng hình cho đúng **cấu trúc của câu**: tầng bậc → `tang`; trong → ngoài → `vong`; từ → thành → `tu-thanh`; bước → `chuoi`; so sánh → `vs`, `dung-hay`; con số → `count`.
+- **Làm:** dựng hình cho đúng **cấu trúc của câu**: tầng bậc thì `tang`; trong ra ngoài thì `vong`; từ … thành thì `tu-thanh`; bước thì `chuoi`; so sánh thì `vs`, `dung-hay`; con số thì `count`.
 - **Phản tác dụng khi:** hình chỉ lặp lại lời mà không thêm cấu trúc (biểu tượng cho vui).
 
 ### Giọng trò chuyện — Personalization Principle
-- **Cái khó:** lời trang trọng, xa cách → người xem ít gắn vào.
+- **Cái khó:** lời trang trọng, xa cách thì người xem ít gắn vào.
 - **Ở kênh này:** lời là của David (nguyên văn), đã trò chuyện sẵn. Phần hình giữ đúng giọng đó: chữ trích lời "mình – bạn", không đổi sang văn quảng cáo.
 
 ### Giọng thật — Voice Principle
@@ -134,8 +134,8 @@ Ngay dưới, **mỗi cảnh một dòng** (cảnh cố định như dấu kênh
 - s03 · Cần: Chia đoạn · Vì: 5 bước kể liền, chỉ nghe sẽ lạc bước 3 · Làm: diagram chuoi, bước đang nói sáng
 - s04 · Cần: Cảm xúc · Vì: đỉnh câu chuyện, cần thấy mặt · Làm: nhan làm tối nhẹ, chữ nhấn một từ
 ```
-`Cần:` dùng đúng tên ở mục 2–3 (danh sách máy đọc: `nguyen-ly.json`). Máy soát: thiếu `Loại:` hoặc không cảnh nào có dòng `Cần:` → P0
-(không render); một cảnh thiếu dòng, hoặc tên nguyên lý / loại không có trong danh sách → P1.
+`Cần:` dùng đúng tên ở mục 2–3 (danh sách máy đọc: `nguyen-ly.json`). Máy soát: thiếu `Loại:` hoặc không cảnh nào có dòng `Cần:` thì P0
+(không render); một cảnh thiếu dòng, hoặc tên nguyên lý / loại không có trong danh sách thì P1.
 
 ## 5. Khi đi ngược nguyên lý là đúng
 

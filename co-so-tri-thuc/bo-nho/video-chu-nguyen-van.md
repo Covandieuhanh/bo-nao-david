@@ -12,7 +12,7 @@ Motion graphics dùng loại nào cũng được, nhưng **không được sáng
 - Không làm thẻ tít mở đầu mặc định — tít tự rút ý có thể chưa đúng điều David muốn truyền tải.
 - Chữ trên màn hình = cụm nguyên văn liền mạch trong lời; được tách thành nhiều mảnh, không được bỏ chữ làm đổi nghĩa (ví dụ: bỏ "muốn" trong "không muốn làm một mình").
 - Màn chốt dùng câu David nói ở cuối video, không dùng câu Claude tự viết.
-- Không dùng số chạy (0→60) vì khung giữa hiện số David không nói; liệt kê đúng các con số David nói.
+- Không dùng số chạy (từ 0 đến 60) vì khung giữa hiện số David không nói; liệt kê đúng các con số David nói.
 
 **Why:** 07/11/2026 video "Đi bộ hằng ngày": thẻ tít bị cắt dòng ở khung ngang và David thấy tít có thể lệch ý; soát lại còn 4 chỗ chữ lệch lời.
 

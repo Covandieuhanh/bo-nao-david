@@ -23,7 +23,7 @@ description: "Dự án liên kết tri thức (14/11): biến bộ não thành m
 - **Bốn lớp**: mô tả đầu file (`description:`) · chỉ mục tự sinh [chi-muc.md](../co-so-tri-thuc/chi-muc.md) · bản đồ nội dung [ban-do/](../ban-do/README.md) (6 trang) · đường nối link tương đối.
 - **Máy kiểm** `tu-dong-hoa/lien-ket/kiem-tra-lien-ket.py`: link gãy (chặn đẩy GitHub), mồ côi, thiếu mô tả; sinh lại chỉ mục. Chạy trong `tu-dong-hoa/dong-bo.sh`.
 - **File miễn mô tả** (mô tả ghi trong máy kiểm): file nạp mỗi phiên (AGENTS.md, CLAUDE.md, chi-dan-toan-cuc.md), hồ sơ David (david.md, ho-so-ca-nhan.md, không sửa khi chưa hỏi), MEMORY.md, README.md (trang GitHub), quy-tac-bot.md (bị chép thành lời nhắc của bot).
-- **Luồng giữ mới**: `ky-nang/chuan-muc-lam-viec.md` mục 4 (file mới có mô tả + dòng bản đồ; kiến thức đáng giữ → `kien-thuc/`); AGENTS.md chỉ cách tra (grep chỉ mục trước).
+- **Luồng giữ mới**: `ky-nang/chuan-muc-lam-viec.md` mục 4 (file mới có mô tả + dòng bản đồ; kiến thức đáng giữ thì ghi vào `kien-thuc/`); AGENTS.md chỉ cách tra (grep chỉ mục trước).
 
 ## 3. Việc đã làm (14/11)
 

@@ -33,7 +33,7 @@ Link slide thuộc tài khoản Claude cũ (13/11/2026). Bản xem trên máy, �
 - **Nội dung:** thư mục làm việc và cách đặt tên tập; quy trình vận hành chuẩn (SOP, biểu mẫu 02): phong cách, luật, 8 bước; câu giao việc rõ: tư liệu gì · ra gì · khung nào · dài bao nhiêu; xem kết quả, phản hồi từng điểm.
 - **Thực hành:** chép biểu mẫu 02 vào thư mục, điền phong cách, cho AI dựng video thử 30 giây từ bộ tư liệu thử.
 - **Bài tập:** đổi một dòng phong cách (màu chữ, cỡ phụ đề), dựng lại, so hai bản.
-- **Xong khi:** đổi SOP → video đổi đúng.
+- **Xong khi:** đổi SOP thì video đổi đúng.
 
 ## Bài 3 · Nạp và hiểu tư liệu
 - **Mục tiêu:** AI "nghe" và "xem" được tư liệu trước khi cắt.
@@ -72,7 +72,7 @@ Link slide thuộc tài khoản Claude cũ (13/11/2026). Bản xem trên máy, �
 
 ## Bài 8 · Chạy một mạch và tự sửa SOP
 - **Mục tiêu:** giao một câu, AI dựng trọn; hệ tốt lên sau mỗi video.
-- **Nội dung:** một câu giao việc chạy đủ 8 bước; phản hồi → AI sửa video + sửa đúng một câu trong SOP; dọn máy (giữ gốc + bản cuối).
+- **Nội dung:** một câu giao việc chạy đủ 8 bước; phản hồi thì AI sửa video + sửa đúng một câu trong SOP; dọn máy (giữ gốc + bản cuối).
 - **Thực hành (nghiệm thu):** học viên tự dựng 1 video từ tư liệu mới, trainer chỉ xem.
 - **Bài tập:** dựng video số 3, số 4.
-- **Xong khi:** 1 video tự dựng không cần trainer + **4 video đã dựng** → xong gói.
+- **Xong khi:** 1 video tự dựng không cần trainer + **4 video đã dựng** thì xong gói.

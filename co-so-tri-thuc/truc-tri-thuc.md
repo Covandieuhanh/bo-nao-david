@@ -15,7 +15,7 @@ AI (Claude, Codex, Gemini…) mỗi phiên **bắt đầu từ số 0** về Dav
 Mọi quyết định lưu gì, lưu ở đâu, viết thế nào đều trả lời câu này. "Người đọc lạnh" là **bất kỳ ai** — trí tuệ nhân tạo khác, học viên,
 người chưa biết gì về công nghệ — nên mọi file viết đủ từ, đủ nghĩa, không viết tắt (`AGENTS.md` luật 1).
 
-## 1. Mô hình AI được làm ra thế nào → bộ não làm y vậy
+## 1. Mô hình AI được làm ra thế nào thì bộ não làm y vậy
 
 | Mô hình AI | Làm gì | Ở bộ não David |
 |---|---|---|
@@ -39,22 +39,22 @@ người chưa biết gì về công nghệ — nên mọi file viết đủ t�
 | **3 · Dữ liệu** | ca thật, số liệu, nguồn học, sổ, ghi nhớ, kho | thêm hằng ngày; **chỉ thêm**, không sửa nghĩa cái cũ | `giai-mau.md`, `so-lieu.md`, `nhat-ky-thay-doi.md`, `bo-nho/`, `bo-cuc.md` |
 
 Trong tầng 1–2 mỗi ý chỉ **một nhà**; nơi khác một dòng trỏ. Tầng 3 được nhiều, vì là dữ liệu.
-Tầng của từng file: bảng [tang.json](tang.json) (mẫu đường dẫn → tầng; chỉ mục `chi-muc.md` hiện tầng). Bộ đánh giá toàn bộ não: [bai-kiem/](bai-kiem/README.md).
+Tầng của từng file: bảng [tang.json](tang.json) (mẫu đường dẫn ứng với tầng; chỉ mục `chi-muc.md` hiện tầng). Bộ đánh giá toàn bộ não: [bai-kiem/](bai-kiem/README.md).
 
 ## 3. Đường đi cố định của mọi thông tin mới (6 câu, lần nào cũng vậy)
-1. **Là gì?** dữ kiện · quyết định của David · cách làm · ví dụ / số liệu → quyết định tầng và loại file.
-2. **Phục vụ mục đích nào ở tầng 0?** Không gắn được → không lưu (hoặc chỉ ghi `du-an/danh-sach-y-tuong.md`).
-3. **Đã có nhà chưa?** Có → bổ sung / sửa thẳng đúng nhà đó. Chưa → nhà mới ở **tầng 3 trước**.
+1. **Là gì?** dữ kiện · quyết định của David · cách làm · ví dụ / số liệu thì quyết định tầng và loại file.
+2. **Phục vụ mục đích nào ở tầng 0?** Không gắn được thì không lưu (hoặc chỉ ghi `du-an/danh-sach-y-tuong.md`).
+3. **Đã có nhà chưa?** Có thì bổ sung / sửa thẳng đúng nhà đó. Chưa thì nhà mới ở **tầng 3 trước**.
 4. **Gốc là gì?** Ghi ngắn vì sao đúng (lý do giúp AI làm đúng thì viết trong luật; ngày + lời David thì vào sổ).
 5. **Nối vào đâu?** Link tới nguyên lý / nơi dùng, một dòng ở `ban-do/` (quy ước: `quy-uoc-lien-ket.md`). Không ai nối tới = không tồn tại.
-6. **Kiểm thế nào?** Câu kiểm, mẫu chuẩn, hay số liệu nào sẽ cho biết nó giúp? Chưa có → ghi giả thuyết "kỳ vọng Y, đo lại sau N lần".
+6. **Kiểm thế nào?** Câu kiểm, mẫu chuẩn, hay số liệu nào sẽ cho biết nó giúp? Chưa có thì ghi giả thuyết "kỳ vọng Y, đo lại sau N lần".
 
 ## 4. Luật đi lên (như não ngủ để củng cố)
 - Thông tin mới **luôn vào tầng 3 trước**. Lên tầng 2 khi **lặp ít nhất 2 lần** hoặc David chốt thành cách làm. Lên tầng 1 khi **ít nhất 3 ca cùng
   gốc** và đã có câu kiểm. Lên tầng 0 chỉ khi David chốt và chờ vài ngày (`david.md` mục 2).
 - **Lỗi nào David phải sửa cũng thành một câu kiểm** của bộ đó (video: `ky-nang/san-xuat-video/thiet-ke-bo-cuc/bai-kiem/de.json`), để
   bản sau không lặp lại. Bộ kiểm chỉ lớn lên, không bỏ câu khi chưa có lý do ghi sổ.
-- Đi xuống cũng có luật: luật tầng 1–2 lâu không dùng hoặc số liệu cho thấy không giúp → đề xuất tỉa (David duyệt), cất `luu-tru/`.
+- Đi xuống cũng có luật: luật tầng 1–2 lâu không dùng hoặc số liệu cho thấy không giúp thì đề xuất tỉa (David duyệt), cất `luu-tru/`.
 
 ## 5. Ba vòng học (cùng một trục, khác nhịp)
 | Vòng | Như AI | Khi | Làm | Ở đâu |

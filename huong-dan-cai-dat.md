@@ -77,7 +77,7 @@ Windows chạy skill qua **WSL2**, tức một Ubuntu chạy bên trong Windows.
 
 **Một lần trên Windows** (David tự làm):
 
-1. Mở PowerShell bằng quyền quản trị (chuột phải → Run as administrator), chạy `wsl --install -d Ubuntu-24.04`, khởi động lại máy. Mở "Ubuntu" từ menu Start, đặt tên và mật khẩu cho Ubuntu.
+1. Mở PowerShell bằng quyền quản trị (chuột phải thì Run as administrator), chạy `wsl --install -d Ubuntu-24.04`, khởi động lại máy. Mở "Ubuntu" từ menu Start, đặt tên và mật khẩu cho Ubuntu.
 2. Cài **Google Drive cho máy tính** (bản Windows), đăng nhập tài khoản của David. Drive hiện thành một ổ đĩa (thường là G:), Ubuntu đọc ở `/mnt/g/My Drive`.
 
 **Trong cửa sổ Ubuntu**, chạy lần lượt:

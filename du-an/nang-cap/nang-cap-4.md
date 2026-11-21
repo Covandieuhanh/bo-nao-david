@@ -27,7 +27,7 @@ khác nhau về một hoặc là gỡ rối, chứ yêu cầu phải 4000 dòng 
 | hỏi | 0 · 0 · 0 · 0 | không đổi |
 | não | 4 · 0 · 0 · 2 | không đổi — 2 cặp là `chi-dan-toan-cuc.md` tóm luật 1–2 của `AGENTS.md`, cố ý (file này nạp ở mọi phiên ngoài repo) |
 
-## 3. Bảng luật đã gom (luật · nhà duy nhất · nơi cũ → nay chỉ trỏ)
+## 3. Bảng luật đã gom (luật · nhà duy nhất · nơi cũ thì nay chỉ trỏ)
 
 | Luật | Nhà | Nơi cũ (nay một dòng trỏ hoặc bỏ) |
 |---|---|---|
@@ -56,7 +56,7 @@ chuyển về sổ `dung-video-theo-phong-cach/references/nhat-ky-thay-doi.md` v
 mọi code; mục "Xong khi" của các skill; kho (`bo-cuc.md`, `am-thanh.md`, `nguon-tham-khao/`).
 
 **16 cặp gần trùng còn lại (đúng thiết kế):** dòng "Đọc trước" và dòng trỏ sổ của từng skill · "Xong khi" mỗi skill tự đứng · bảng công thức
-và chuỗi "sửa → chạy lại" của từng công thức · giải thích tham số ở hồ sơ · Đầu ra khối 01 = Đầu vào khối 03.
+và chuỗi "sửa thì chạy lại" của từng công thức · giải thích tham số ở hồ sơ · Đầu ra khối 01 = Đầu vào khối 03.
 
 ## 4. Ghi nhớ
 46 file: dòng gần trùng chỉ là dòng cuối chuẩn "Nhà của luật … Ghi nhớ này giữ ngày, lời David, lý do". Cập nhật
@@ -66,8 +66,8 @@ và chuỗi "sửa → chạy lại" của từng công thức · giải thích 
 - **Đủ luật:** từng dòng bảng mục 3 có nhà; luật ở nơi cũ chỉ còn một dòng trỏ. Hai chỗ nhà mới được bổ sung cho đủ (khối 00 lằn ranh
   thêm 3 mục từ `quy-tac-chung`; khối 08 thêm câu Mời "số hoá" từ `giong-thuong-hieu-david`), không thêm luật mới.
 - **Máy đo:** mọi bộ "Chưa cần tái bản" (video 3 · 0 · 0 · 16/30; hỏi 0; não 4 · 0 · 0 · 2/6).
-- **Liên kết:** `kiem-tra-lien-ket.py` → link gãy 0.
-- **Bài kiểm suy luận:** `cham.py --mau` → máy chấm 10/10. Nội dung tư duy không đổi (chỉ gộp đoạn "Học thêm"), nên chưa làm lại bài.
+- **Liên kết:** `kiem-tra-lien-ket.py` ra link gãy 0.
+- **Bài kiểm suy luận:** `cham.py --mau` ra máy chấm 10/10. Nội dung tư duy không đổi (chỉ gộp đoạn "Học thêm"), nên chưa làm lại bài.
 - **Hình y nguyên:** không đổi dòng code dựng nào (chỉ `.md` + máy đo). `kiem-mau.py` **không chạy được**: 5 dự án mẫu trong `mau.json`
   không còn trên Mac (đã chuyển lên Drive). Soát cảnh dự án cũ `tap-gan-ket-bang-cong-viec`: P0 "chưa chẩn đoán" như dự kiến với
   kế hoạch cảnh cũ (máy soát không đổi).

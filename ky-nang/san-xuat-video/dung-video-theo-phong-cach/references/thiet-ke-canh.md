@@ -28,7 +28,7 @@ description: "Thiết kế kịch bản cảnh motion graphics: chọn bố cụ
 | `gens` | toàn màn hình | Các lớp chồng lên nhau (thế hệ, tầng, cấp độ) + chữ lớn cuối | eyebrow, layers[{label,at}], years, yearsAt, unit |
 | `build` | toàn màn hình | Lộ trình từng bước dựng như tầng nhà (bước 1 = móng) | eyebrow, steps[{n,label,at}] |
 
-Các variant/loại cảnh này sinh ra từ nội dung một video cụ thể. Video mới có nội dung khác → tạo variant mới cùng
+Các variant/loại cảnh này sinh ra từ nội dung một video cụ thể. Video mới có nội dung khác thì tạo variant mới cùng
 ngôn ngữ thiết kế (ví dụ `card` variant `quote`, `stat`, `compare`, `map`; full-screen `timeline`, `checklist`, `vs`).
 Đổi tên prop cho hợp nội dung — `jobs` chỉ là tên lịch sử, nghĩa là "các mục".
 
@@ -41,11 +41,11 @@ hoặc bỏ trống; không câu kéo ("SỐC", "bí mật…"). Cảnh khác b�
 ## Chọn loại cảnh từ lời nói
 
 Đọc transcript, đánh dấu các "khoảnh khắc" theo thứ tự ưu tiên:
-1. **Con số, mốc thời gian, số lượng** ("đi làm từ 2011", "4 năm", "15–30 triệu") → `card` có số chạy.
-2. **Liệt kê ít nhất 3 thứ cụ thể** → `montage` (có ảnh) hoặc `card steps` (trừu tượng).
-3. **Câu chốt / quan điểm** ("không phải ngẫu nhiên", "rất rõ") → `kinetic`.
-4. **Khái niệm trừu tượng, quan hệ nhân quả, so sánh** → cảnh toàn màn hình dạng sơ đồ.
-5. **Lời giao việc** → `action`; câu cuối → màn chốt `cta` nguyên văn (khối 08).
+1. **Con số, mốc thời gian, số lượng** ("đi làm từ 2011", "4 năm", "15–30 triệu") thì dùng `card` có số chạy.
+2. **Liệt kê ít nhất 3 thứ cụ thể** thì dùng `montage` (có ảnh) hoặc `card steps` (trừu tượng).
+3. **Câu chốt / quan điểm** ("không phải ngẫu nhiên", "rất rõ") thì dùng `kinetic`.
+4. **Khái niệm trừu tượng, quan hệ nhân quả, so sánh** thì cảnh toàn màn hình dạng sơ đồ.
+5. **Lời giao việc** thì dùng `action`; câu cuối thì dùng màn chốt `cta` nguyên văn (khối 08).
 Dùng `lower` nếu người nói giới thiệu tên.
 
 ## Quy tắc
@@ -60,8 +60,8 @@ Dùng `lower` nếu người nói giới thiệu tên.
 - **Chữ hiệu ứng = trích, không diễn đạt lại.** Được BỎ BỚT chữ cho ngắn (tối đa 4–5 từ/dòng), KHÔNG được đổi chữ của người nói bằng chữ
   của mình. Mọi từ trên màn hình phải có trong câu nói cùng mốc (sửa chính tả lỗi Whisper thì được).
   Giữ nguyên: tên riêng, con số/mốc giờ, vế đối lập ("nhiều… nhưng…"), từ phủ định, từ chỉ mức độ ("một trong rất nhiều").
-  Ví dụ David đã chỉ ra: nói "có thể dùng AI để tìm được hết" → "DÙNG AI / TÌM ĐƯỢC HẾT", không phải "HỎI AI LÀ RA";
-  nói "dương khí nhiều nhưng rất dễ nhiễm lạnh" → giữ cả hai vế, không cắt còn "Rất dễ nhiễm lạnh".
+  Ví dụ David đã chỉ ra: nói "có thể dùng AI để tìm được hết" thành "DÙNG AI / TÌM ĐƯỢC HẾT", không phải "HỎI AI LÀ RA";
+  nói "dương khí nhiều nhưng rất dễ nhiễm lạnh" thì giữ cả hai vế, không cắt còn "Rất dễ nhiễm lạnh".
   Toàn bộ lời nói đã có ở phụ đề — chữ hiệu ứng chỉ nhấn ý, nên càng phải đúng chữ người nói.
 - Mỗi chữ/nhãn phải là **điều người nói đang nói ở đúng mốc đó**. Khi họ nêu một tên (phương pháp, sản phẩm, địa danh,
   người), nhãn lúc đó chính là cái tên — không đổi thành mô tả chung. Đọc lại từng nhãn đối chiếu câu nói cùng mốc
@@ -75,8 +75,8 @@ Dọc 1080×1920 (Reels/TikTok/Shorts): nội dung trong x 70–900, y 210–142
 - Trên y 210: thanh tab/tìm kiếm.
 Component thiết kế trong một dải 435 px (y 985–1420 trong toạ độ component) nên thẻ phải gọn: tối đa khoảng 4 dòng nội dung.
 Khi xuất, dải này được thu nhỏ còn 78% và **đặt từng cảnh theo chỗ trống, KHÔNG che mặt/người nói**:
-mặc định ngay trên dải phụ đề (y khoảng 941–1280; phụ đề 1280–1420); mặt nằm thấp → dời lên đỉnh vùng an toàn (y 210–549);
-không vừa → thu nhỏ 68% / 60%. `vi-tri-khuon-mat.sh` dò mặt và ghi `vi-tri.js`; đặt tay bằng `place: {top, scale}` trong cảnh.
+mặc định ngay trên dải phụ đề (y khoảng 941–1280; phụ đề 1280–1420); mặt nằm thấp thì dời lên đỉnh vùng an toàn (y 210–549);
+không vừa thì thu nhỏ 68% / 60%. `vi-tri-khuon-mat.sh` dò mặt và ghi `vi-tri.js`; đặt tay bằng `place: {top, scale}` trong cảnh.
 Vùng cấm = đầu (cả tóc) + cằm/cổ; thân người nên tránh khi còn chỗ. Cảnh toàn màn hình không bị ràng buộc này.
 Thiết kế component mới không giả định vị trí cố định (ví dụ: "luôn dưới mặt") — chỉ vẽ trong dải, Place lo vị trí.
 Ngang 16:9: lề 5% mỗi bên, chừa 15% dưới cho thanh điều khiển/phụ đề.
@@ -104,6 +104,6 @@ thấy kém đẹp hơn. Biểu tượng vẽ thay ẢNH bên trong thẻ/montag
   vẽ thêm (64×64, 2–5 nét, nét tròn) rồi chụp thử.
 - **Ảnh thật** (ưu tiên) khi lời nhắc một nơi, người, vật, việc cụ thể: địa danh/công trình, nhân vật có thật, sự kiện/tư liệu,
   minh chứng, sản phẩm — chỉ ảnh chụp tại Việt Nam, có giấy phép (khối 07 mục 6).
-- Số liệu → hiệu ứng (số chạy, biểu đồ, tỉ lệ), chỉ con số người nói đưa ra.
+- Số liệu thì hiệu ứng (số chạy, biểu đồ, tỉ lệ), chỉ con số người nói đưa ra.
   Ảnh đặt trong khung bo góc; luôn có zoom chậm nhẹ (Ken Burns — được, luật không zoom chỉ áp cho hình quay, `../../quy-tac-chung.md` mục 2).
-- Ý trừu tượng → sơ đồ/chữ, không ảnh stock sáo rỗng.
+- Ý trừu tượng thì sơ đồ/chữ, không ảnh stock sáo rỗng.

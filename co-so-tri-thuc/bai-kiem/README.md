@@ -25,7 +25,7 @@ qua trước khi ra bản mới. Bài kiểm riêng phần dựng video nằm �
    một trí tuệ nhân tạo chưa đọc gì làm lại.
 
 ## Bộ kiểm lớn dần
-Lỗi nào David phải sửa (nhắc lại, chỉnh lời, đổi cách làm) → thêm một câu từ chính tình huống đó: câu hỏi vào `de.json`, đáp án + nhà +
+Lỗi nào David phải sửa (nhắc lại, chỉnh lời, đổi cách làm) thì thêm một câu từ chính tình huống đó: câu hỏi vào `de.json`, đáp án + nhà +
 lời David vào `dap-an.json` (trục mục 4). Không bỏ câu cũ khi chưa ghi lý do vào sổ. Đổi số câu thì ngưỡng đạt tự theo (số câu trừ 1).
 
 Thử máy chấm: `python3 -I cham.py --mau > /tmp/mau.json && python3 -I cham.py /tmp/mau.json` phải ra đúng hết.

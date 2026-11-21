@@ -36,7 +36,7 @@ Hết điểm mờ. David duyệt đợt 1 (thêm bước "loại nội dung c�
 **Đợt 1 — xong 20/11/2026:** `thiet-ke-bo-cuc/nguoi-xem-can-gi.md` + `nguyen-ly.json` · `tu-chon.md` viết lại theo nguyên lý (bước 0b yêu cầu, 1b loại nội dung, 4c kho theo nguyên lý) · `soat-canh.mjs` (Loại, Cần · Vì · Làm, Yêu cầu, ảnh thiếu) · `yeu-cau.md` + `them-anh/` trong dự án mới · ảnh mẫu `bo-cuc.md` + `anh-mau/cong-cu/chup-anh-mau.sh` · mục "Dựng video ở máy khác" trong `huong-dan-cho-ai.md`.
 
 **Đợt 2 — đổi nguồn (David, 20/11):** *"không cần dựa trên những nội dung tôi nói, mà hãy dựa trên những hình mẫu đã rất thành công của
-cùng thể loại mà tôi đang hướng tới để làm mẫu"* → thay câu 3: giải mẫu + bài kiểm lấy từ **hình mẫu thành công cùng thể loại** (ba hướng:
+cùng thể loại mà tôi đang hướng tới để làm mẫu"* thì thay câu 3: giải mẫu + bài kiểm lấy từ **hình mẫu thành công cùng thể loại** (ba hướng:
 trainer phát triển bản thân, giải pháp công nghệ AI, tài chính), chọn theo số liệu kiểm được (`hoc-lien-tuc` Việc 2). Claude đo, trình danh
 sách hình mẫu kèm số liệu → David gật → giải mẫu + bài kiểm (khoảng 10 đoạn, đáp án chấp nhận, ít nhất 8/10). Trích lời nguồn chỉ cụm rất ngắn, phần còn lại diễn ý.
 

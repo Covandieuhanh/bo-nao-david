@@ -8,7 +8,7 @@ description: "Khối 13 chọn khoảnh khắc highlight: bản đồ cả video
 **Đầu vào:** video dài / dự án gốc
 **Đầu ra:** phuong-an.json, cat/<id>.mp4 + map + kiểm lời, ke-hoach-cat.md
 **Tham số hồ sơ:** highlight: *
-**Sửa khối này → chạy lại:** 11 (danh-sach-cat-doan-noi-bat.py viết lại danh-sach-cat.js) → 05 → 17
+**Sửa khối này thì chạy lại:** 11 (danh-sach-cat-doan-noi-bat.py viết lại danh-sach-cat.js) → 05 → 17
 
 **File thật (code, một bản duy nhất):**
 - `cat-doan-noi-bat/scripts/{tao-doan-noi-bat.sh,kiem-am-luong.py,cat-doan-noi-bat.py,khoang-lang.py,danh-sach-cat-doan-noi-bat.py,ap-dung-doan-noi-bat.py}`
@@ -33,8 +33,8 @@ zsh $SKILL/scripts/tao-doan-noi-bat.sh "<thư mục dự án gốc | video dài>
 ```
 → `~/Movies/tap-<tên>/3-doan-noi-bat/`: `nguon.<ext>`, `loai.txt` (podcast · tu-quay · chua-ro), `kiem-tra/goc/`: `ban-chep-loi.srt`, `moc-tung-tu.srt`,
 `am-luong-05.txt` (độ lớn tiếng mỗi 0,05 s), `bang-khung-hinh.jpg`; từ dự án gốc thêm `captions-goc.js` (lời đã sửa chính tả — nguồn chữ chính),
-`scenes-goc.js` (tên tập, người nói, kịch bản gốc), `du-an-goc.txt`. Đưa file video → chép lời bằng whisper.cpp + `large-v3-turbo`
-(không dùng faster-whisper/pip); `loai.txt = chua-ro` → xem `bang-khung-hinh.jpg` rồi quyết theo bảng bước 0.
+`scenes-goc.js` (tên tập, người nói, kịch bản gốc), `du-an-goc.txt`. Đưa file video thì chép lời bằng whisper.cpp + `large-v3-turbo`
+(không dùng faster-whisper/pip); `loai.txt = chua-ro` thì xem `bang-khung-hinh.jpg` rồi quyết theo bảng bước 0.
 Câu Whisper bịa (`../../quy-tac-chung.md` mục 1) không dùng làm câu chọn.
 
 ### 2. Bản đồ cả video (bắt buộc, trước khi chọn câu)
@@ -76,7 +76,7 @@ Các clip không dùng chung câu chính; một câu kêu gọi mạnh có thể
 Ghi ngắn trong ke-hoach-cat.md vì sao chọn các khoảnh khắc này và bỏ các ứng viên khác.
 
 ### 4. Bố trí lời kêu gọi (tự chọn cho từng video)
-Người xem video ngắn quyết định ở lại trong vài giây đầu và nhiều người không xem tới cuối → lời kêu gọi không mặc định nằm
+Người xem video ngắn quyết định ở lại trong vài giây đầu và nhiều người không xem tới cuối thì lời kêu gọi không mặc định nằm
 cuối. Chọn MỘT kiểu hợp mạch nội dung (ghi kiểu + lý do vào ke-hoach-cat.md):
 
 | Kiểu | Bố trí | Hợp khi |
@@ -99,8 +99,8 @@ Bất kể kiểu nào:
 - Có từ trỏ chỗ khác: "ở trên", "như mình vừa nói", "bước 2" mà không có bước 1, "cái này"/"phương pháp này" chưa nói là gì.
 - Hành động không làm được nếu không xem bản đầy đủ; câu cắt giữa chừng, mất chủ ngữ hoặc mất ý; đổi chỗ làm lệch nghĩa.
 
-Loại mọi câu dính **lằn ranh** (`../quy-tac-chung.md` mục 1). Câu bị loại mà là câu chủ chốt → báo David, **không tự sửa lời**.
-Clip không có câu HANHDONG hoặc KEUGOI dùng được → không dừng: kết ở câu chốt ý, clip vẫn phải đạt `mang_ve`
+Loại mọi câu dính **lằn ranh** (`../quy-tac-chung.md` mục 1). Câu bị loại mà là câu chủ chốt thì báo David, **không tự sửa lời**.
+Clip không có câu HANHDONG hoặc KEUGOI dùng được thì không dừng: kết ở câu chốt ý, clip vẫn phải đạt `mang_ve`
 (`cat-doan-noi-bat` luật 4); không thêm chữ, không ghép câu kêu gọi từ chỗ khác.
 
 ### 6. Cắt ghép + tự kiểm
@@ -121,7 +121,7 @@ Viết `$P/phuong-an.json` — mỗi clip một mục trong `options` (A, B, C�
 ```bash
 python3 -I $SKILL/scripts/kiem-am-luong.py "$P"           # dải █/▁ quanh từng mốc + mốc đề xuất
 ```
-Mốc ngoài `phuong-an.json` (cắt bản theo hướng, nối đoạn): `diem-ngat.py <video> <giây>…` (khối 02). Theo mốc đề xuất (sửa phuong-an.json). "⚠ lệch > 1 s" → nhìn dải xác nhận; "⚠ nói liền" → giữ mốc Whisper, hoặc lấy luôn chữ
+Mốc ngoài `phuong-an.json` (cắt bản theo hướng, nối đoạn): `diem-ngat.py <video> <giây>…` (khối 02). Theo mốc đề xuất (sửa phuong-an.json). "⚠ lệch > 1 s" thì nhìn dải xác nhận; "⚠ nói liền" thì giữ mốc Whisper, hoặc lấy luôn chữ
 nối ("Nhưng…") nếu câu vẫn đúng nghĩa, rồi để bước kiểm lời quyết. Rồi:
 ```bash
 python3 -I $SKILL/scripts/cat-doan-noi-bat.py "$P"          # cắt bản kiểm lời cat/A.mp4, cat/B.mp4… (chạy nền)
@@ -131,7 +131,7 @@ python3 -I $SKILL/scripts/cat-doan-noi-bat.py "$P"          # cắt bản kiểm
 (giữ khung cuối) sau KEUGOI kết bằng "?" và sau KEUGOI cuối clip — không lấy tiếng nguồn phía sau vì câu kế có thể nói liền ·
 `zoom: true` giữ nguyên câu, không dồn khung · **cắt cứng** ở mỗi mối nhảy + **rút khoảng lặng ít nhất 0,45 s trong câu** (`khoang-lang.py`, trừ câu
 `zoom`) · fade âm ở mối · tiếng fltp 48 kHz stereo · **chép lời lại bản cắt** và so với `text`.
-**Kiểm lời phải khớp**: chữ thừa ở mối = lọt đuôi câu bên cạnh → thu mốc; chữ thiếu = bị cụt → nới mốc; lệch kiểu "nhé/nhá" là
+**Kiểm lời phải khớp**: chữ thừa ở mối = lọt đuôi câu bên cạnh thì thu mốc; chữ thiếu = bị cụt thì nới mốc; lệch kiểu "nhé/nhá" là
 Whisper nghe khác (bỏ qua). Cắt lại tới khi sạch.
 Ghi tiếp vào `ke-hoach-cat.md`: kiểu bố trí + lý do, tông từng câu, ý chừa cho bản đầy đủ, bảng cắt.
 

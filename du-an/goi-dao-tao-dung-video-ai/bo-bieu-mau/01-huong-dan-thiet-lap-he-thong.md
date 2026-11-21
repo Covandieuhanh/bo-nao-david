@@ -74,7 +74,7 @@ Cài bản whisper.cpp thì lệnh kiểm là:
 ```bash
 whisper-cli --help
 ```
-Cả hai in ra chữ, không báo lỗi → đạt. Rồi chép biểu mẫu 02 vào thư mục `lam-video` (Bài 2).
+Cả hai in ra chữ, không báo lỗi thì đạt. Rồi chép biểu mẫu 02 vào thư mục `lam-video` (Bài 2).
 
 ## Lỗi hay gặp
 - **"command not found"**: đóng mở lại Terminal / PowerShell; vẫn lỗi thì nhờ trợ lý AI sửa đường dẫn.

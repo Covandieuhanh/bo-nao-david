@@ -8,7 +8,7 @@ description: "Khối 06 mở đầu 0–3 giây: câu chạm, thẻ tít nguyên
 **Đầu vào:** lời + bản đồ ý
 **Đầu ra:** cảnh hook (canh.js) · pow 0–2,5 s (danh-sach-cat.js) · ke-hoach.json intro · doan-gioi-thieu.py
 **Tham số hồ sơ:** lam-video: the_tit_mo_s, ghep-vlog: mo_dau.*, chung: youtube.teaser_*
-**Sửa khối này → chạy lại:** 05, 17
+**Sửa khối này thì chạy lại:** 05, 17
 
 **File thật (code, một bản duy nhất):**
 - `dung-video-theo-phong-cach/assets/khuon-remotion/src/thanh-phan/lop-phu.jsx (Hook)`

@@ -40,9 +40,9 @@ mà máy đếm không thấy, nên máy đếm đang đếm thiếu — cần s
 | 4 | David phải sửa | 31/94 phiên có lời sửa | đo ở lần nhìn lại tuần sau |
 | 5 | Trùng / rối (máy đo) | video 16/30, hỏi 0, não 2/6; chưa đo viết tắt | video 16/30, hỏi 0, não 1/6; viết tắt 0 ở cả ba bộ → "Chưa cần nâng cấp" |
 
-Bằng hoặc tốt hơn ở mọi thước đã đo được → ra bản `nang-cap-5`.
+Bằng hoặc tốt hơn ở mọi thước đã đo được nên ra bản `nang-cap-5`.
 
 ## 3. Bài học cho đợt sau
-- Bài kiểm toàn bộ não đạt tối đa ngay từ lần đầu → câu còn dễ. Đợt sau thêm câu khó hơn từ chính lỗi David sửa (luật đi lên, trục mục 4).
+- Bài kiểm toàn bộ não đạt tối đa ngay từ lần đầu thì câu còn dễ. Đợt sau thêm câu khó hơn từ chính lỗi David sửa (luật đi lên, trục mục 4).
 - Người làm bài lần 2 nhận xét luật "không làm bản cho CapCut / DaVinci" nằm ở skill dựng và tổng quan, chưa có trong luật chung — xem xét ở bước chưng cất đợt sau.
-- Ký hiệu "→" còn khoảng 1.300 chỗ, chưa thay vì nghĩa đổi theo ngữ cảnh (rồi tới, dẫn tới, đổi thành); chờ David chốt cách viết.
+- Ký hiệu "→" (21/11, David chốt "Giữ trong bảng, câu viết chữ"): giữ trong bảng và chuỗi bước; trong câu văn đã đổi thành chữ theo nghĩa từng chỗ ("thì", "nên", "thành", "sang", "rồi"), khoảng 800 chỗ tự động có kiểm và 415 chỗ đọc từng câu. Máy đo thêm chỉ số `mui_ten` (ngưỡng 0); đo lại: cả ba bộ 0, "Chưa cần nâng cấp"; hai bài kiểm vẫn 16/16 và 10/10.

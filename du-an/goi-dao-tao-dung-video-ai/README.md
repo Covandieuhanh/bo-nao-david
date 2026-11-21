@@ -8,7 +8,7 @@ Gói công nghệ đầu tiên của hướng 3 (`co-so-tri-thuc/david.md` 4.1),
 
 **Luật của gói:** chỉ dạy **kỹ năng dựng video bất kì bằng AI trên máy tính của học viên**, dùng AI họ đang có. Không dạy tư duy kênh, chọn ý, đăng, đo (đã tách sang `../goi-dao-tao-noi-dung-kenh/` để làm gói khác). Không chứa chi tiết riêng của David; hệ của David chỉ là kết quả mẫu để demo.
 
-**Hứa với khách:** đưa tư liệu thô → AI dựng ra video hoàn chỉnh (cắt ghép, phụ đề, chữ, đồ hoạ, nhạc, đủ khung, clip ngắn, ảnh bìa). Trainer kèm 1:1 tới khi khách **tự dựng 1 video không cần trainer và đã dựng ít nhất 4 video**.
+**Hứa với khách:** đưa tư liệu thô thì AI dựng ra video hoàn chỉnh (cắt ghép, phụ đề, chữ, đồ hoạ, nhạc, đủ khung, clip ngắn, ảnh bìa). Trainer kèm 1:1 tới khi khách **tự dựng 1 video không cần trainer và đã dựng ít nhất 4 video**.
 
 | File | Nội dung |
 |---|---|

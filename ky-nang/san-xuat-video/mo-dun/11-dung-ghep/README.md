@@ -9,7 +9,7 @@ description: "Khối 11 dựng ghép nhiều clip: hiểu clip, giữ / bỏ, b�
 **Đầu vào:** nhiều clip
 **Đầu ra:** danh-sach-cat.js / ke-hoach.json + ke-hoach-ghep.md + lien-ket.jpg
 **Tham số hồ sơ:** ghep-vlog: *
-**Sửa khối này → chạy lại:** 04 (nang-lop.py), 05 (bao-ve-lop-phu.py), 17
+**Sửa khối này thì chạy lại:** 04 (nang-lop.py), 05 (bao-ve-lop-phu.py), 17
 
 **File thật (code, một bản duy nhất):**
 - `dung-video-theo-phong-cach/references/nhieu-doan-video.md (chi tiết)`

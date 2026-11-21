@@ -18,12 +18,12 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
   nhạc, khung đều do người dựng (AI nào cũng vậy) lập luận từ chính tài nguyên (`thiet-ke-bo-cuc/nguoi-xem-can-gi.md` → `tu-chon.md`), không chép từ tập trước, không chờ
   David chỉ. Máy chặn render khi chưa chẩn đoán (`soat-canh.mjs`).
 - **Hiểu hơn cầu kì.** Kho học được là để chọn cho hợp từng loại nội dung, không nhét hết vào một video. Mỗi video chỉ dùng vài kiểu
-  hợp nhất, tự cân; hiệu ứng nào không giúp người xem hiểu nhanh hơn thì bỏ. Rối hay lỗi hình → bớt, không thêm.
+  hợp nhất, tự cân; hiệu ứng nào không giúp người xem hiểu nhanh hơn thì bỏ. Rối hay lỗi hình thì bớt, không thêm.
   Ý nào cần hình và mỗi hình phải đạt gì: `thiet-ke-bo-cuc/tu-chon.md` bước 4a–4b (nguyên lý: `nguoi-xem-can-gi.md`).
 
 ## 1. Nội dung
 - **Không bịa.** Phụ đề, chữ to, thẻ, màn hành động, màn chốt = **trích / bỏ bớt lời người nói**, không diễn đạt lại. Tên riêng, con
-  số, vế đối lập, từ phủ định giữ nguyên. Tên chưa chắc chính tả → khối 01.
+  số, vế đối lập, từ phủ định giữ nguyên. Tên chưa chắc chính tả thì khối 01.
 - **Chữ trên video là nguyên văn lời David.** Motion graphics loại nào cũng được nhưng không sáng tạo sai lời. Chữ = cụm nguyên văn
   liền mạch, được tách mảnh, không bỏ chữ làm đổi nghĩa ("không **muốn** làm một mình"). Không số chạy hiện số David không nói.
 - **Câu Claude tự viết chỉ ở bài đăng**: tiêu đề, thumbnail, mô tả, bình luận ghim — viết đúng ý người nói, không thêm thông tin hay
@@ -32,8 +32,8 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
   ("Tập mới mỗi thứ 6") — `project.schedule` (1 video), `STAGE.schedule` (podcast), ke-hoach.json `"schedule"` (vlog),
   `"endcard": {"schedule"}` (highlight). Không tự đặt lịch.
 - **Lằn ranh** (danh sách theo từng hướng: khối 00 mục 3; gốc `chien-luoc-nghe-nghiep.md` 4.7): loại khỏi mọi chữ / clip. Câu chủ chốt dính
-  lằn ranh → báo David, không tự sửa lời. Ở video dài: cảnh báo trong phiếu lọc và báo cáo, mặc định giữ lời, David quyết ở bản cuối (khối 00 mục 3).
-- Whisper bịa câu ở đoạn không lời ("Hãy subscribe cho kênh…", "Cảm ơn các bạn đã xem") → bỏ.
+  lằn ranh thì báo David, không tự sửa lời. Ở video dài: cảnh báo trong phiếu lọc và báo cáo, mặc định giữ lời, David quyết ở bản cuối (khối 00 mục 3).
+- Whisper bịa câu ở đoạn không lời ("Hãy subscribe cho kênh…", "Cảm ơn các bạn đã xem") thì bỏ.
 
 ## 2. Nhịp
 - **Mở đầu 0–3 s** nói ngay video về cái gì / đang đặt cược gì, bằng lời thật của David. Thẻ tít mở đầu: khối 06.
@@ -51,7 +51,7 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
 - Video ngắn đổi gì đó mỗi 1–3 s (nhịp chữ phụ đề, chữ to, cảnh, cắt), không để 5–8 s trôi qua không đổi gì. Video dài thưa, nhịp
   từ nội dung.
 - Một màn = một ý, một hình, một câu. Không chồng 2 lớp phủ.
-- **Đường cảm xúc + một đỉnh** (mọi loại video): trước khi lên cảnh, viết cảm xúc từng đoạn (cảm xúc → cái gì trên màn hình gây ra
+- **Đường cảm xúc + một đỉnh** (mọi loại video): trước khi lên cảnh, viết cảm xúc từng đoạn (cảm xúc thì cái gì trên màn hình gây ra
   nó) và chọn **một** đỉnh. Đỉnh nhận motion graphic lớn nhất; đoạn ngay trước đỉnh để ít hình (phụ đề vẫn chạy). Video dài vẫn không
   cắt: đường cảm xúc chỉ để đặt motion graphic. Vlog ghép: hai đoạn liền nhau cùng cảm xúc thì bỏ hoặc đổi một. Highlight vẫn chọn
   theo 4 câu (khối 13). Cách làm: khối 07; kiểm cảm nhận: khối 17.
@@ -76,20 +76,20 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
 - **Tự chọn trước kế hoạch cảnh** (cả 3 skill dựng): yêu cầu người dùng → chẩn đoán → loại nội dung → bố cục nền, lớp thông tin → mỗi cảnh
   "Cần · Vì · Làm" theo `thiet-ke-bo-cuc/nguoi-xem-can-gi.md` + `tu-chon.md` (`chan-doan.py`); ghi vào `ke-hoach-canh.md`.
 - **Không che người nói, không đè phụ đề** (chặn cứng ở mọi template). Khung có nhiều người: graphic không đè hay làm mờ bất kỳ ai;
-  khung cắt, chuyển cảnh, ô thu nhỏ bám đúng người đang nói. Thu người vào ô bo góc không tính là che. Che mặt / thân trên → tự toàn màn
+  khung cắt, chuyển cảnh, ô thu nhỏ bám đúng người đang nói. Thu người vào ô bo góc không tính là che. Che mặt / thân trên thì tự toàn màn
   hình: khối 05.
 - Chữ tiếng Việt đủ dấu, không chồng dòng (`VN`, chừa 0,5 em trên / 0,32 em dưới).
 - **Nhiều ảnh thật minh hoạ**: mỗi khi lời nhắc một nơi, người, vật, việc cụ thể thì ưu tiên ảnh thật, biểu tượng vẽ
   cho ý trừu tượng. **Ảnh chỉ được chụp tại Việt Nam, liên quan người Việt Nam** (đọc mô tả / danh mục ảnh để chắc; tìm kèm
-  "Vietnam" / tên tiếng Việt). Không có ảnh Việt Nam hợp giấy phép → biểu tượng vẽ, không dùng ảnh nước ngoài. Nguồn ghi `nguon-anh.txt`.
-  Số liệu luôn bằng hiệu ứng, đúng con số người nói. Kết quả/con số mà clip gốc có bằng chứng thật (ảnh giá, hoá đơn) → ưu tiên chiếu.
+  "Vietnam" / tên tiếng Việt). Không có ảnh Việt Nam hợp giấy phép thì biểu tượng vẽ, không dùng ảnh nước ngoài. Nguồn ghi `nguon-anh.txt`.
+  Số liệu luôn bằng hiệu ứng, đúng con số người nói. Kết quả/con số mà clip gốc có bằng chứng thật (ảnh giá, hoá đơn) thì ưu tiên chiếu.
 - Không ghi chú kỹ thuật trên video (×1,6, slow-mo…). Không màn nguồn ảnh cuối video → `nguon-anh.txt`.
 - Khung xuất = khung gốc trừ khi David yêu cầu (highlight mặc định dọc 9:16, ngang khi David yêu cầu).
 
 ## 5. Bộ nhận diện
 Một nguồn: `thu-vien-tai-nguyen/nhan-dien-chung.md` — chữ ký nhận diện, vị trí và luật của thành phần cố định (vùng an toàn, dấu góc, thanh
 thời gian, phụ đề, màn chốt, thẻ cuối, màn kết YouTube), video dọc ngắn. Âm thanh nhận diện (tiếng ký hiệu, nhạc kênh, mức âm lượng):
-khối 09. Sửa nhận diện → giữ đồng bộ cả 4 loại.
+khối 09. Sửa nhận diện thì giữ đồng bộ cả 4 loại.
 
 ## 6. Lời kêu gọi
 - Ưu tiên **câu mệnh lệnh nằm sẵn trong lời** ("Hãy chọn…", "thử làm…") — top video gần như không có câu "hãy bình luận".
@@ -115,7 +115,7 @@ Ghi `<dự án>/phat-hanh/phat-hanh.md`:
 ## 8. Quy trình chung
 - **Cách chạy một công thức** (mọi skill dựng: `dung-video-theo-phong-cach`, `dung-podcast`, `cat-doan-noi-bat`):
   - SKILL.md là **công thức**: thứ tự khối + quyết định riêng của loại + tiêu chí đạt. Cách làm từng bước ở README của khối; sửa cách
-    làm → sửa khối, không sửa công thức. Con số lấy ở hồ sơ `ho-so-thuong-hieu/`, không ghi cứng.
+    làm thì sửa khối, không sửa công thức. Con số lấy ở hồ sơ `ho-so-thuong-hieu/`, không ghi cứng.
   - Đọc trước: `../chuan-muc-lam-viec.md` · file này · hồ sơ của loại; `references/loi-thuong-gap.md` của skill (và của skill gốc khi
     dùng chung template) đọc một lần ở đầu phiên. File khác chỉ đọc ở đúng bước cần (cột "Khối" của công thức).
   - Bước đánh dấu *(bước nhẹ)*: nhắc đổi mô hình rẻ hơn theo `../chuan-muc-lam-viec.md` mục 3.
@@ -125,10 +125,10 @@ Ghi `<dự án>/phat-hanh/phat-hanh.md`:
 - Không tải video từ YouTube/TikTok để dựng (nhờ David gửi file); tải để học mẫu: `thiet-ke-bo-cuc/README.md` mục 4.
 - Chụp thử (stills) trước khi render để Claude tự soát, không gửi David chốt; kiểm bản cuối theo khối 17 + 09. **Chụp có giới hạn:** chụp đúng mốc dễ lỗi (khung mới lần
   đầu, chỗ chồng lớp, mối cắt, màn chốt, thẻ cuối, chỗ David góp ý), không chụp từng cảnh; xem bố cục thì dùng ảnh thu nhỏ.
-- **Góp ý → sửa rồi render lại toàn bộ luôn**, không chờ chữ "render"; giao lại như lần đầu (Drive + trang xem
+- **Góp ý thì sửa rồi render lại toàn bộ luôn**, không chờ chữ "render"; giao lại như lần đầu (Drive + trang xem
   kết quả). Render nối tiếp, không song song. Không cổng duyệt nào trước khi xong; chỉ việc đăng mạng xã hội chờ David nói "đăng".
 - **Phần cứng không hỏi, không đổi** (`../chuan-muc-lam-viec.md` mục 2): nhận diện, dấu góc, màn chốt, thẻ cuối, nhạc theo tuyến, mức
-  motion graphics, phụ đề, chuẩn âm lượng, nơi giao file; tên riêng chưa chắc → dùng cách Whisper nghe và nêu ở báo cáo.
+  motion graphics, phụ đề, chuẩn âm lượng, nơi giao file; tên riêng chưa chắc thì dùng cách Whisper nghe và nêu ở báo cáo.
 - **Thử skill bằng đoạn ngắn trọn một ý:** cắt từ đầu tới cuối một ý của video nguồn (không cố định số giây, không chạy cả video dài)
   vào thư mục thử riêng `tap-thu-…`, chạy theo skill, cho David xem bản cuối, xong thì dọn. Đoạn ngắn trọn ý ra tốt thì video dài cũng tốt.
 - **Dựng ngay trong phiên Claude** theo skill (`phan-phoi-da-kenh` → skill dựng). Không đề xuất dựng app hay công cụ tự động dựng video

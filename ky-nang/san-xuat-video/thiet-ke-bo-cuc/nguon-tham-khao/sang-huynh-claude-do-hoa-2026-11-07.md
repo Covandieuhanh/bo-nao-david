@@ -11,13 +11,13 @@ description: "Nguồn học Sang Huỳnh: Claude làm motion graphics trong vide
 ## Bố cục học được
 
 1. **Thẻ cạnh mặt:** người giữ nguyên khung, một thẻ cao bo góc chiếm khoảng một phần ba ở phía nền trống, chữ xây dần theo lời:
-   gạch chữ cũ → hiện chữ mới ("không cần biết CODE · chẳng cần dựng video · chỉ cần PROMPT"), danh sách hiện từng dòng, lưới
+   gạch chữ cũ thì hiện chữ mới ("không cần biết CODE · chẳng cần dựng video · chỉ cần PROMPT"), danh sách hiện từng dòng, lưới
    ảnh nhỏ hiện dần. Thẻ sáng hoặc tối tuỳ đoạn. → `the-canh`.
 2. **Người vào ô bo góc:** video quay mặt thu thành ô nhỏ ở góc trên, nền đồ hoạ chiếm phần lớn ("Cách 3 · Video quay mặt"). → `o-nguoi`.
-3. **Người nằm trong thẻ:** thẻ "Bước 2 · Quay" chứa chính video quay mặt, nằm giữa chuỗi 3 bước. → chưa có code.
+3. **Người nằm trong thẻ:** thẻ "Bước 2 · Quay" chứa chính video quay mặt, nằm giữa chuỗi 3 bước. thì chưa có code.
 4. **Màn chương:** số to mờ "03" phía sau, nhãn nhỏ "CÁCH 3", tên phần to, dòng cuối màu nhấn. → `chuong`.
-5. **Màn hình máy trong khung, chú thích đánh số** ở góc dưới trái ("① Chọn thư mục · nơi AI làm việc"); thẻ lời nhắc phóng to đè lên. → chưa.
-6. **Tổng quan:** tít nhỏ trên + tít to giữa + hàng 3 thẻ; thẻ đang nói sáng lên, thẻ khác mờ đi; nhãn "làm từ…" dưới mỗi thẻ. → chưa.
+5. **Màn hình máy trong khung, chú thích đánh số** ở góc dưới trái ("① Chọn thư mục · nơi AI làm việc"); thẻ lời nhắc phóng to đè lên. thì chưa.
+6. **Tổng quan:** tít nhỏ trên + tít to giữa + hàng 3 thẻ; thẻ đang nói sáng lên, thẻ khác mờ đi; nhãn "làm từ…" dưới mỗi thẻ. thì chưa.
 7. **Vòng lặp:** vòng tròn "V1 · Xem lại → Góp ý → Sửa" và đếm vòng ở góc. → gần `diagram` `vong`.
 8. Phụ đề nhỏ ở góc dưới trái khi người toàn khung (không dùng: kênh giữ phụ đề của mình).
 

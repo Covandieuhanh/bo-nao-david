@@ -51,8 +51,8 @@ uneven visual weight looks wrong. Correct against the render, not the number.
   light-mode metrics looks thin and blurry, and this is why.
 - `text-wrap: balance` on headings, `pretty` on body. Free, and it removes the
   orphan word that makes a headline look accidental.
-- Display max khoảng 6rem outside a genuine hero moment. Bigger is not more confident.
-- **Step the hero down one rung below khoảng 700px.** `--sc-t-4xl` floors at 3.4rem,
+- Display max ~6rem outside a genuine hero moment. Bigger is not more confident.
+- **Step the hero down one rung below ~700px.** `--sc-t-4xl` floors at 3.4rem,
   which is a *desktop* floor: at 390px it wraps a normal hero headline to six
   lines. `--sc-t-2xl` on the hero inside a phone media query fixes it. The
   portrait crop of the image is covered in tai-nguyen.md; this is the portrait crop

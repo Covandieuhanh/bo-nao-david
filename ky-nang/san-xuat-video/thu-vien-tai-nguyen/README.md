@@ -24,4 +24,4 @@ description: "Thư viện hình dùng chung cho cả 4 loại video: file, việ
 
 Cách nối: `khuon-remotion/src/thu-vien` và `khuon-dung-ghep/src/thu-vien` là **lối tắt** trỏ về thư mục này; lúc tạo dự án, `tao-du-an.sh` /
 `tao-podcast.sh` / `tao-dung-ghep.sh` chép **bản thật** (`cp -RL`) vào `chuyen-dong/src/thu-vien/` — dự án cũ giữ nguyên bản lúc tạo, dự án mới
-luôn có bản mới nhất. Sửa ở đây → mọi dự án tạo sau đều đổi. Thành phần mới dùng chung → đặt ở đây, chỉ import `react`, `remotion`, `./bien-thiet-ke`.
+luôn có bản mới nhất. Sửa ở đây thì mọi dự án tạo sau đều đổi. Thành phần mới dùng chung thì đặt ở đây, chỉ import `react`, `remotion`, `./bien-thiet-ke`.

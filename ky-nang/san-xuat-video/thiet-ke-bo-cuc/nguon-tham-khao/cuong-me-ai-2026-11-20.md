@@ -44,9 +44,9 @@ Thành phần cũ không đổi khi không bật cờ mới (`mot_diem`, `nguoi_
 
 ## 7. Kết quả kiểm (20/11/2026)
 - Dự án thử tạm (dọc 1080×1920 + ngang 1920×1080, khuôn 1 video), vì các dự án mẫu chuẩn (`mau-chuan/mau.json`) đã chuyển lên Drive.
-- **Phần cũ y nguyên:** `diagram tang`, `diagram cot`, `bocuc o-nguoi` (thẻ), `bocuc muc-luc`, chụp trước và sau khi sửa ở cả hai khung → SSIM 1,000 (8/8 ảnh).
+- **Phần cũ y nguyên:** `diagram tang`, `diagram cot`, `bocuc o-nguoi` (thẻ), `bocuc muc-luc`, chụp trước và sau khi sửa ở cả hai khung thì SSIM 1,000 (8/8 ảnh).
 - **Phần mới đã xem ảnh:** `chuoi` dọc (cột) và ngang (hàng), đang chạy dây và đủ bước · `tang` + `mot_diem` · `o-nguoi` + `nguoi_duoi`
   (dọc: hình trên, người dưới; ngang: cờ bị bỏ qua, `chuoi` lồng trong ô tự xếp cột, không tràn vào ô người — đã sửa sau lần chụp đầu).
-- **Máy soát:** thử đúng 3 báo mới (nhãn 7 chữ → P1 · thiếu `Tiết chế:` → P1 · hình phủ 63 % → P1) và gợi ý `mot_diem` (P2).
+- **Máy soát:** thử đúng 3 báo mới (nhãn 7 chữ thì P1 · thiếu `Tiết chế:` thì P1 · hình phủ 63 % thì P1) và gợi ý `mot_diem` (P2).
 - **Chưa kiểm:** video người nói dọc thật có dữ liệu khuôn mặt (ô người ở `nguoi_duoi` sẽ theo khung người thật) · render video trọn ·
   khuôn ghép và podcast (dùng chung `so-do.jsx` nên có `chuoi`, chưa chụp) · `kiem-mau.py` (dự án mẫu không còn trên Mac).

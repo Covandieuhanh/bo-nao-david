@@ -12,6 +12,6 @@ Việc do David tự tạo hoặc tự bấm (ví dụ một việc dựng hay r
 
 **Why:** 08/11/2026 (thời còn app dựng video, đã bỏ 10/11) Claude khởi động lại máy chủ app làm ngắt `mau-1`, rồi tự bấm "Chạy tiếp" để "khôi phục". David: "không chạy nhé, không có lệnh của tôi không được tự làm".
 
-**How to apply:** Việc thử của Claude thì đặt tên riêng (`thu-…`) và chỉ thao tác trên việc đó. Thấy việc của David bị lỗi/ngắt → báo một dòng + hỏi. Trước khi tắt hay chạy lại thứ gì dùng chung (render, tiến trình nền), kiểm có việc nào của David hoặc phiên khác đang chạy không; có thì hỏi trước. Liên quan [[quy-tac-goi-y-de-david-chon]].
+**How to apply:** Việc thử của Claude thì đặt tên riêng (`thu-…`) và chỉ thao tác trên việc đó. Thấy việc của David bị lỗi/ngắt thì báo một dòng + hỏi. Trước khi tắt hay chạy lại thứ gì dùng chung (render, tiến trình nền), kiểm có việc nào của David hoặc phiên khác đang chạy không; có thì hỏi trước. Liên quan [[quy-tac-goi-y-de-david-chon]].
 
 Nhà của luật: `ky-nang/chuan-muc-lam-viec.md` mục 3 ("Việc của David là của David"). Ghi nhớ này giữ ngày, lời David, lý do.

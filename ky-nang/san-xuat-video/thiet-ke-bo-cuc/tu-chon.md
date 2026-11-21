@@ -33,7 +33,7 @@ Thư mục dự án có sẵn (tạo bởi `tao-du-an.sh`, `tao-dung-ghep.sh`):
 - **`them-anh/`** — ảnh bỏ vào: tên bắt đầu `mau-` = **ảnh mẫu** (kiểu muốn bắt chước); còn lại = **ảnh chèn** vào video.
 
 Cách làm:
-1. **Thứ tự ưu tiên:** luật cứng (`nguoi-xem-can-gi.md` mục 0) > yêu cầu người dùng > tự chọn. Yêu cầu trái luật cứng → không làm, ghi lý do.
+1. **Thứ tự ưu tiên:** luật cứng (`nguoi-xem-can-gi.md` mục 0) > yêu cầu người dùng > tự chọn. Yêu cầu trái luật cứng thì không làm, ghi lý do.
 2. **Ảnh mẫu:** xem ảnh, gọi tên nó giải cái khó nào (nguyên lý), rồi chọn cách thể hiện gần nhất trong kho; không có thì tự vẽ (`ve`)
    và ghi `can-code.md`. Không chép màu, font của ảnh mẫu (chữ ký nhận diện giữ nguyên).
 3. **Ảnh chèn:** chép vào `chuyen-dong/public/anh/`, dùng qua `photo: '<tên>'` (`diagram anh`, `dung-hay`, `tren-duoi`, `o-tron`…) đúng lúc lời nhắc tới.
@@ -51,10 +51,10 @@ màn hình điện thoại / laptop, bảng, sản phẩm, cảnh); (3) quanh ch
 
 ## Bước 1b — Loại nội dung cả video
 
-Đọc bản chép lời + số đo → chọn loại ở `nguoi-xem-can-gi.md` mục 1 (có thể pha hai loại). Loại quyết định người xem cần gì là chính,
+Đọc bản chép lời + số đo thì chọn loại ở `nguoi-xem-can-gi.md` mục 1 (có thể pha hai loại). Loại quyết định người xem cần gì là chính,
 mức dày hình, nhịp, nhạc cho bước 2b–4. Ghi `Loại: <tên> vì <dấu hiệu> · cần chính: <…>`.
 
-## Bước 2 — Chọn bố cục nền (hình gốc → nền)
+## Bước 2 — Chọn bố cục nền (hình gốc thì nền)
 
 | Dấu hiệu hình gốc | Bố cục nền | Cách làm |
 |---|---|---|
@@ -99,7 +99,7 @@ con số, `at` = lúc nói. Mỗi phút khoảng 2–4 ý. **Lằn ranh** (số 
 ## Bước 4 — Từng đoạn: cái khó → nguyên lý → cách thể hiện
 
 **4a. Đoạn nào cần hình (Tinh gọn):** chỉ dựng hình khi ý đó khó hiểu nếu chỉ nghe — quy trình nhiều bước, quan hệ (nhân quả, tầng bậc,
-từ → thành), so sánh, con số, danh sách cần nhớ. Ý dễ (kể chuyện, cảm xúc, lời mời, câu ngắn tự rõ) → người nói + phụ đề, nhiều lắm
+từ … thành), so sánh, con số, danh sách cần nhớ. Ý dễ (kể chuyện, cảm xúc, lời mời, câu ngắn tự rõ) thì dùng người nói + phụ đề, nhiều lắm
 một điểm nhấn. Hình phủ (toàn màn hình + bố cục) quá khoảng 45 % thời lượng là dựng thừa. Ghi `Tiết chế: <số> ý cần hình / <tổng ý> · bỏ hình ở … vì dễ hiểu khi nghe`.
 
 **4b. Mỗi hình phải đạt:** Đúng lúc (`at` = lúc nói, không hiện hết một lúc) · Chia đoạn (ý nối nhau thì giữ một hình lớn dần: `chuoi`,
@@ -139,7 +139,7 @@ quen. Ghi mỗi cảnh một dòng `- <id> · Cần: <nguyên lý> · Vì: <cái
 | bất kỳ | ý riêng không kiểu nào khớp | cảnh tự vẽ `ve` theo đúng nguyên lý (khối 07 mục 1) | tuỳ |
 
 **Có khung chủ thể + bảng ghi chú:** ưu tiên cảnh **cạnh chủ thể** (thay chỗ bảng trong vài giây) để chủ thể luôn thấy; toàn màn hình chỉ
-cho đỉnh và ý cần nhìn rõ. **Lời có dạng rõ mà không kiểu nào khớp** → xem `bo-cuc.md` cột "chưa code"; hợp thì ghi vào `can-code.md`
+cho đỉnh và ý cần nhìn rõ. **Lời có dạng rõ mà không kiểu nào khớp** thì xem `bo-cuc.md` cột "chưa code"; hợp thì ghi vào `can-code.md`
 (hàng đợi làm code), video này dùng `ve` hoặc kiểu gần nhất. Ảnh từng kiểu: `bo-cuc.md` mục "Ảnh mẫu".
 
 ## Bước 5 — Máy soát chặn trước render (`soat-canh.mjs`)
@@ -153,7 +153,7 @@ cho đỉnh và ý cần nhìn rõ. **Lời có dạng rõ mà không kiểu nà
 - **P2:** `so` thiếu dòng `so:` · hai cảnh liền nhau cùng kiểu.
 - Dự án tạo trước khi có dòng `Loại:` / `Cần:` (kế hoạch cảnh cũ): hai P0 mới hạ thành P1, để dựng lại bản cũ không bị chặn.
 
-Gặp P0 → sửa kế hoạch / đổi kiểu theo bước 4, không thử render.
+Gặp P0 thì sửa kế hoạch / đổi kiểu theo bước 4, không thử render.
 
 ## Ghi vào ke-hoach-canh.md (thư mục dự án, cạnh `chuyen-dong/`)
 
@@ -170,7 +170,7 @@ Tiết chế: <số> ý cần hình / <tổng ý> · bỏ hình ở … vì dễ
 
 - <id cảnh> · Cần: <nguyên lý> · Vì: <cái khó của người xem> · Làm: <cách thể hiện>
 ```
-Bảng ý → cảnh (mốc · câu nguyên văn · dạng câu · cảnh) đi ngay dưới, là nguồn để viết `canh.js` / `danh-sach-cat.js`.
+Bảng ý thì cảnh (mốc · câu nguyên văn · dạng câu · cảnh) đi ngay dưới, là nguồn để viết `canh.js` / `danh-sach-cat.js`.
 
 ## Học thêm thì thêm ở đây
 

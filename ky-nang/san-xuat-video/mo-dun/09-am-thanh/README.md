@@ -8,7 +8,7 @@ description: "Khối 09 âm thanh: nhạc nền theo tuyến, hiệu ứng tiế
 **Đầu vào:** tiếng gốc
 **Đầu ra:** trộn trong xem-truoc-ban-dung.py / xuat-chuong-trinh.mjs
 **Tham số hồ sơ:** chung: `nhac.*` (một nguồn mức nhạc), ghep-vlog: nhac_duoi_giong_LU, thuong-hieu.json: musicGapLU, highlight: nhac_chu_chinh
-**Sửa khối này → chạy lại:** 17
+**Sửa khối này thì chạy lại:** 17
 
 **File thật (code, một bản duy nhất):**
 - `cat-doan-noi-bat/assets/nhac/`
@@ -19,7 +19,7 @@ description: "Khối 09 âm thanh: nhạc nền theo tuyến, hiệu ứng tiế
 ## Luật
 - **Âm thanh nhận diện:** tiếng ký hiệu `sting.wav` lúc hiện tiêu đề mở đầu; "ting" ở màn chốt; "vút" chỉ khi bật kiểu tua cũ.
 - **Kho nhạc kênh** `cat-doan-noi-bat/assets/nhac` (README liệt kê bài + nguồn). Claude TỰ chọn bài theo tuyến nội dung, không hỏi
-  David (David đã tải nhiều nhạc cho từng loại nội dung). Bài mới David tải về `~/Music/nhac-nen` → đặt tên theo tuyến, chép vào kho,
+  David (David đã tải nhiều nhạc cho từng loại nội dung). Bài mới David tải về `~/Music/nhac-nen` thì đặt tên theo tuyến, chép vào kho,
   đo `ebur128` và ghi mức cân vào hồ sơ chung `nhac.muc` (gain = 10^((−15 − I)/20)), thêm vào `nhac.tuyen`.
 - **Mức cân từng bài: một nguồn** `ho-so-thuong-hieu/chung.json` → `nhac.muc` (vlog_edl, render_preview, hl_edl, hl_apply, chuong-trinh.jsx ghép đều đọc
   từ đây). `MUSIC.tracks` viết tay không ghi `gain` thì chuong-trinh.jsx tự lấy `nhac.muc`; đừng ghi `gain: 1`.
@@ -36,9 +36,9 @@ Mức nằm ở một chỗ: hồ sơ chung `nhac`.
   hơn giọng 22–24 LU (khối 17). Không so âm lượng thô với nguồn: giọng nhỏ được kéo lên −14 LUFS nên chênh là đúng.
 
 ## Nhạc theo tuyến nội dung
-1. Sau khi chép lời, Claude đọc toàn bộ lời → chọn MỘT tuyến trong bảng hồ sơ chung `nhac.tuyen` (vui · tam_su · mat_mat · y_nghia ·
+1. Sau khi chép lời, Claude đọc toàn bộ lời thì chọn MỘT tuyến trong bảng hồ sơ chung `nhac.tuyen` (vui · tam_su · mat_mat · y_nghia ·
    kien_thuc), ghi `tuyen: '<tuyến>'` vào `chuyen-dong/src/du-an.js` (1 video: ghi SAU clean_apply — nó viết đè du-an.js) + lý do 1 dòng
-   vào ke-hoach-canh.md. Không ghi → `xem-truoc-ban-dung.py` DỪNG (không có bài mặc định, để không gắn nhạc sôi động cho bài tâm sự).
-   Cách chọn: tuyến = cảm xúc chủ đạo người xem cần (hình mẫu: Hieu Nguyen / Have A Sip tâm sự → piano ấm; Khoai Lang Thang du lịch →
-   upbeat; video kiến thức → ambient trung tính). Ép tay bài: `music: '<bài>'`; tắt: `music: ''`.
+   vào ke-hoach-canh.md. Không ghi thì `xem-truoc-ban-dung.py` DỪNG (không có bài mặc định, để không gắn nhạc sôi động cho bài tâm sự).
+   Cách chọn: tuyến = cảm xúc chủ đạo người xem cần (hình mẫu: Hieu Nguyen / Have A Sip tâm sự hợp piano ấm; Khoai Lang Thang du lịch hợp
+   upbeat; video kiến thức thì ambient trung tính). Ép tay bài: `music: '<bài>'`; tắt: `music: ''`.
 2. Vlog ghép và highlight đổi tông theo đoạn (`TONE` soi / lang, multi-clip mục 2c, highlight luật 9); mức nhạc vẫn theo chuẩn chung.

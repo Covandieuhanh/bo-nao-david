@@ -40,17 +40,17 @@ Cột: luật · nhà nên ở · nguồn hiện tại · ngày chốt gần nh�
 | 23 | Tiếng Việt, ngắn gọn; không hỏi lại điều đã biết | AGENTS luật 1 · david.md 3.7 | bản 7abb767 "Luật đã chốt" | 05/11 | đã có nhà ở nao; hoi không chép |
 | 24 | Xong khi 7 dòng | hoi | hoi:72–80 | 08/11 | giữ nguyên ý |
 
-Tổng: 24 dòng → 19 luật có nhà trong hoi, 5 luật chỉ trỏ (4, 9, 19, 20, 23). Gộp: 10 (gộp 2 luật cũ), 13 (hai câu trong hoi). Bỏ: không bỏ luật nào; chỉ bỏ dấu ngày "(chốt 05/11/2026)" và ví dụ có ngày ở tín hiệu 1 (đã có ở Nhật ký + ghi nhớ).
+Tổng: 24 dòng thành 19 luật có nhà trong hoi, 5 luật chỉ trỏ (4, 9, 19, 20, 23). Gộp: 10 (gộp 2 luật cũ), 13 (hai câu trong hoi). Bỏ: không bỏ luật nào; chỉ bỏ dấu ngày "(chốt 05/11/2026)" và ví dụ có ngày ở tín hiệu 1 (đã có ở Nhật ký + ghi nhớ).
 
 ## Chéo bộ
 
 1. **`ky-nang/chuan-muc-lam-viec.md` mục 2 (dòng 26–31) chép lại gần hết cách hỏi** của hoi: hỏi một lần đầu, gộp, đề xuất đứng đầu, không
-   hỏi điều đã có, "ok" → chạy một mạch, "làm đi" ≠ chốt lựa chọn, giữa chừng 6 tín hiệu. Thêm dòng 23 "sự thật tra được thì tự tra".
+   hỏi điều đã có, "ok" thì chạy một mạch, "làm đi" ≠ chốt lựa chọn, giữa chừng 6 tín hiệu. Thêm dòng 23 "sự thật tra được thì tự tra".
    **Đề xuất nhà duy nhất:** `thu-thap-yeu-cau` cho *cách hỏi và khi nào hỏi*. thoi-quen mục 2 rút còn: một dòng trỏ hoi + luật 4 (ngoại lệ
-   tự chọn) + luật 9 (phần cứng không hỏi) — hai luật này nói *cái gì không hỏi*, dùng chung, để ở thoi-quen. Mục 1 dòng 23 → trỏ hoi.
+   tự chọn) + luật 9 (phần cứng không hỏi) — hai luật này nói *cái gì không hỏi*, dùng chung, để ở thoi-quen. Mục 1 dòng 23 thì trỏ hoi.
 2. **`co-so-tri-thuc/chi-dan-toan-cuc.md:4` (= `~/.claude/CLAUDE.md`) ghi "hỏi 3–5 câu"**, lệch với hoi "tối đa 5 câu/vòng, bỏ câu đã có lời đáp"
    (việc đã đủ có thể 0–2 câu). Đề xuất viết thành dòng trỏ không số: "làm theo skill `thu-thap-yeu-cau`: hỏi trước, diễn giải, chờ David
-   'ok'". Kèm: `bo.json` bộ nao chưa đo file này (chỉ có `CLAUDE.md` của repo) → đề xuất thêm `co-so-tri-thuc/chi-dan-toan-cuc.md` vào `ban_luat` nao.
+   'ok'". Kèm: `bo.json` bộ nao chưa đo file này (chỉ có `CLAUDE.md` của repo) nên đề xuất thêm `co-so-tri-thuc/chi-dan-toan-cuc.md` vào `ban_luat` nao.
 3. **Ghi nhớ `quy-tac-goi-y-de-david-chon`** ghi "Nhà chính: `chuan-muc-lam-viec.md` mục 2" cho "làm đi ≠ chốt lựa chọn". Nếu chốt Chéo bộ 1
    → đổi thành "Nhà chính: `thu-thap-yeu-cau` mục Khi nào áp dụng; ngoại lệ tự chọn ở thoi-quen mục 2". (Phiên ghi-nho.)
 4. **Ghi nhớ `quy-tac-tu-hoi-khi-mo-ho`** trỏ `thu-thap-yeu-cau` mục "Sáu tín hiệu" — bản mới giữ đúng tên mục này, không cần sửa.
@@ -64,7 +64,7 @@ Tổng: 24 dòng → 19 luật có nhà trong hoi, 5 luật chỉ trỏ (4, 9, 1
 
 Không có chỗ ngược cần David chốt. Mọi lệch đều tự xử được theo `chuan-muc-lam-viec.md` mục 0 hoặc là chuyện chọn nhà (phiên điều phối chốt):
 - "3–5 câu" (CLAUDE toàn cục) vs "tối đa 5" (hoi): theo nhà chính hoi, đề xuất ở Chéo bộ 2.
-- "Không có David → tự giả định" (luật 5) không ngược "David chọn, không tự chốt" (luật 3): luật 5 chỉ cho việc tự động không ai trả lời.
+- "Không có David thì tự giả định" (luật 5) không ngược "David chọn, không tự chốt" (luật 3): luật 5 chỉ cho việc tự động không ai trả lời.
 
 ## Kết quả
 - SKILL.md viết lại: xem `ky-nang/thu-thap-yeu-cau/SKILL.md`; Nhật ký có dòng đầu `## Tái bản 2 — 10/11/2026`.

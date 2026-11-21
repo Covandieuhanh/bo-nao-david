@@ -65,7 +65,7 @@ Số liệu kiểm lại bằng `yt-dlp -J --flat-playlist -I 1:10 <kênh>/video
 
 **8 · JEFF 0:30–0:57 · `huong-dan-man-hinh`** — khung vàng đóng quanh đúng dòng chữ trên màn hình đang được nói, phần còn lại để nguyên.
 - **Cần:** Báo hiệu + Gần chỗ · **Vì:** màn hình đầy chữ, mắt không biết nhìn đâu · **Làm:** đánh dấu sát đúng chỗ.
-- Về kênh: **kho chưa có** "tô / đóng khung dòng đang nói trên ảnh chụp màn hình" (`bo-cuc.md` dòng "Ảnh tài liệu, tô màu dòng đang nói" — chưa code) → video này dùng `diagram anh` + nhãn, ghi `can-code.md`.
+- Về kênh: **kho chưa có** "tô / đóng khung dòng đang nói trên ảnh chụp màn hình" (`bo-cuc.md` dòng "Ảnh tài liệu, tô màu dòng đang nói" — chưa code) nên video này dùng `diagram anh` + nhãn, ghi `can-code.md`.
 
 **9 · HUY 0:12, 0:54, 3:00 · `day-ky-nang` (tài chính)** — thẻ chữ vàng dưới mặt chỉ ghi **con số / mệnh đề chính** ("kế hoạch 6 bước…", hai mức thu nhập cạnh nhau, "nguyên tắc 50-30-20"); hai từ "chi tiêu" / "thu nhập" bật hai bên đầu khi nói tới.
 - **Cần:** Báo hiệu · **Vì:** nhiều con số trong lời nói, người xem cần neo lại một con số chính · **Làm:** một cụm chữ ngắn, đúng lúc, gần mặt.
@@ -87,7 +87,7 @@ Số liệu kiểm lại bằng `yt-dlp -J --flat-playlist -I 1:10 <kênh>/video
 
 **13 · ALI 2:42 · `day-ky-nang`** — sóng âm thanh, đoạn lặng bị cắt hiện ngay trên hình khi giải thích "cắt khoảng lặng".
 - **Cần:** Lời kèm hình · **Vì:** thao tác trừu tượng, cho thấy là hiểu · **Làm:** vẽ đúng vật đang nói, vẽ đúng thao tác.
-- Về kênh: cảnh tự vẽ `ve` (khi kho không có), `diagram doi-trang-thai` (trước → sau của cùng một vật).
+- Về kênh: cảnh tự vẽ `ve` (khi kho không có), `diagram doi-trang-thai` (trước sang sau của cùng một vật).
 
 ### Tin — cho người xem bằng chứng
 
@@ -107,7 +107,7 @@ Số liệu kiểm lại bằng `yt-dlp -J --flat-playlist -I 1:10 <kênh>/video
 
 **17 · GIANG 0:00–3:30 · `ke-chuyen`** — gần như không có đồ hoạ: cảnh đời thường quay thật, lời kể chạy trên, chỉ một tấm tít lúc chuyển phần.
 - **Cần:** Cảm xúc + Tinh gọn · **Vì:** chuyện riêng, người xem cần cảm trước — sơ đồ sẽ phá không khí · **Làm:** để hình thật và lời kể tự làm việc.
-- Về kênh: loại `ke-chuyen` → hình rất thưa, `phong: 'hat'` / người mờ ở màn tít, nhạc `tam_su` / `y_nghia`. Không làm: `diagram`, chữ nhấn dày.
+- Về kênh: loại `ke-chuyen` thì hình rất thưa, `phong: 'hat'` / người mờ ở màn tít, nhạc `tam_su` / `y_nghia`. Không làm: `diagram`, chữ nhấn dày.
 
 **18 · DOAC sau 2:00 · `tro-chuyen`** — vào cuộc trò chuyện thì gần như không còn đồ hoạ; chỉ đổi góc máy (toàn cảnh, cận khách, cận người hỏi).
 - **Cần:** Mặt người nói + Tinh gọn · **Vì:** người xem theo dõi hai người và cảm xúc của câu trả lời · **Làm:** giữ người, đổi cỡ cảnh bằng góc máy thật.

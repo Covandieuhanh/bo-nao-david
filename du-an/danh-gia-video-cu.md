@@ -55,7 +55,7 @@ description: "Rà soát video cũ trên TikTok và fanpage (05/11): danh sách �
 ### Nhóm D — đời thường, du lịch, cà phê, tài chính cá nhân, biết ơn · GIỮ — 49
 (Noel Hà Nội, sân bay Nội Bài, Songkran, Vinhome Ocean Park, Hoà Bình, tài chính cá nhân, "Giới hạn của bản thân do mình tự quyết", "Học cách biết ơn", thiện nguyện, siêu bão Yagi, ông ngoại 91 tuổi…)
 
-## Fanpage David Sức khoẻ (12 bài, tất cả từ 3/8 → 3/11/2026)
+## Fanpage David Sức khoẻ (12 bài, tất cả từ 3/8 đến 3/11/2026)
 
 ### Đề xuất ẨN — 11
 - Liệu pháp Diện chẩn cho các bạn nhỏ ốm sốt đau đầu (A)

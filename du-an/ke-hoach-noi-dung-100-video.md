@@ -6,10 +6,10 @@ description: "Kế hoạch nội dung: kho 100 video của kênh, mọi video m�
 
 > **Kế hoạch nội dung của kênh.** Mọi video mới đều đối chiếu với kho này ở phiếu lọc (khối 00, skill `phan-phoi-da-kenh`).
 > Bản gốc có bố cục: PDF trên máy `~/Documents/1-nghe-nghiep/Kho 100 video - David Trần.pdf`. Bảng này chép lại nguyên chữ của David
-> (chuyển thành bảng 10/11/2026). Sửa, thêm ý, đổi trạng thái → sửa ở đây, rồi đẩy GitHub.
+> (chuyển thành bảng 10/11/2026). Sửa, thêm ý, đổi trạng thái thì sửa ở đây, rồi đẩy GitHub.
 
 ## Cách dùng (lời David trong kho)
-- Mỗi video đứng riêng được, thích ý nào thì quay ý đó. Chưa biết chọn gì thì đi theo thứ tự 1 → 100. Hai video mỗi tuần thì kho đủ khoảng một năm.
+- Mỗi video đứng riêng được, thích ý nào thì quay ý đó. Chưa biết chọn gì thì đi theo thứ tự từ 1 đến 100. Hai video mỗi tuần thì kho đủ khoảng một năm.
 - Mỗi dòng có sẵn ba dòng trước khi quay: **Câu mở** = phần Chạm; **Chất liệu** + **Một cách làm** = phần Kể; **Câu hỏi kết** = phần Hỏi.
 - Câu mở là bản nháp, chỉ dùng khi đúng trải nghiệm của mình; không đúng thì đổi lời, giữ nỗi đau.
 - Chỉ kể chuyện thật, ẩn danh nhân vật. Chỗ [ngoặc vuông] thì điền từ ca thật đã xin phép.
@@ -17,9 +17,9 @@ description: "Kế hoạch nội dung: kho 100 video của kênh, mọi video m�
 - Video 1 là video giới thiệu, ghim lên đầu kênh. Quay xong thì đổi **Trạng thái**. Ý mới thêm vào cuối giai đoạn hợp nhất.
 
 ## Luật đối chiếu (David chốt 10/11/2026)
-- **Khớp một ý** → ghi số ý trong phiếu lọc; dựng xong đổi Trạng thái thành "Đã dựng <ngày> · `tap-<tên>`", đăng xong "Đã đăng <ngày> + link".
-- **Không khớp ý nào** → ⚠️ cảnh báo, David chọn: thêm làm ý mới (cuối giai đoạn hợp) · cất kho · bỏ.
-- **Khớp giai đoạn 3** (đã bỏ) → ⚠️ cảnh báo rõ: hướng kinh doanh đã bỏ ngày 05/11/2026.
+- **Khớp một ý** thì ghi số ý trong phiếu lọc; dựng xong đổi Trạng thái thành "Đã dựng <ngày> · `tap-<tên>`", đăng xong "Đã đăng <ngày> + link".
+- **Không khớp ý nào** thì ⚠️ cảnh báo, David chọn: thêm làm ý mới (cuối giai đoạn hợp) · cất kho · bỏ.
+- **Khớp giai đoạn 3** (đã bỏ) thì ⚠️ cảnh báo rõ: hướng kinh doanh đã bỏ ngày 05/11/2026.
 - Phiếu lọc luôn gợi ý **ý kế tiếp nên quay** (ý "Ý tưởng" có số nhỏ nhất, bỏ qua giai đoạn 3), để kênh dần đi đúng kế hoạch.
 - Kho còn là bản cũ 5 giai đoạn; việc làm lại theo ba tầng (bản thân → công việc → mối quan hệ) chờ phiên riêng (`bao-cao-trang-thai.md`).
 
@@ -83,7 +83,7 @@ description: "Kế hoạch nội dung: kho 100 video của kênh, mọi video m�
 | 39 | Không dám giao việc khó cho người mới | “Không dám giao việc khó cho người mới. Rồi trách họ mãi không lớn.” | Một lần ai đó tin giao cho bạn việc vượt sức, và điều bạn học được | Giao việc khó hơn sức một chút, kèm một mốc hỏi giữa chừng | “Lần cuối bạn giao cho ai việc khó hơn sức họ một chút là khi nào?” | Gợi mở | Ý tưởng |
 | 40 | Làm quản lý mà không có ai để hỏi | “Lên quản lý rồi mới thấy: không còn ai để hỏi.” | Tháng đầu bạn đứng ở vai dẫn người, và người bạn tìm đến để hỏi | Mỗi tháng hỏi một người đi trước, mang theo một câu hỏi cụ thể | “Khi kẹt trong vai quản lý, bạn đang hỏi ai?” | Mời | Ý tưởng |
 
-## Giai đoạn 3. Cơ sở chạy khi vắng chủ — ⚠️ ĐÃ BỎ (hướng kinh doanh, David chốt 05/11/2026): khớp vào đây → cảnh báo
+## Giai đoạn 3. Cơ sở chạy khi vắng chủ — ⚠️ ĐÃ BỎ (hướng kinh doanh, David chốt 05/11/2026): khớp vào đây thì cảnh báo
 
 | # | Nỗi đau | Câu mở (bản nháp) | Chất liệu câu chuyện | Một cách làm | Câu hỏi kết | Dẫn dắt | Trạng thái |
 |---|---|---|---|---|---|---|---|

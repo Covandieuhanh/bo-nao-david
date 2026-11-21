@@ -16,9 +16,9 @@ hình mẫu ở [giai-mau.md](../giai-mau.md) (không trùng các ca đã giải
 2. Với mỗi đoạn trong `de.json` (đọc `id`, `loai`, `khung`, `doan`), viết một dòng vào `bai-lam.json`:
    `{"id": "d01", "can": "<tên nguyên lý ở nguyen-ly.json>", "lam": "<cách làm: tên kiểu trong kho, hoặc 'giữ người' / 'cảnh thật' / 'cắt chờ'>", "vi": "<cái khó của người xem>"}`.
 3. Chấm: `python3 -I cham.py bai-lam.json` → mỗi đoạn ✓ / ✗ kèm lý do; **đạt ít nhất 8/10** = máy này lập luận được.
-4. Chưa đạt → đọc lại `giai-mau.md` phần "Rút ra theo loại", làm lại một lần; vẫn chưa đạt → gửi các đoạn ✗ (kèm dòng `vi`) cho David chấm.
-   David thấy đáp án sai → sửa `de.json` (đáp án là cách nghĩ, không phải chân lý).
-5. **Bộ kiểm lớn dần:** lỗi dựng nào David phải sửa (sai nguyên lý, sai cách thể hiện) → thêm một đoạn vào `de.json` từ chính ca đó
+4. Chưa đạt thì đọc lại `giai-mau.md` phần "Rút ra theo loại", làm lại một lần; vẫn chưa đạt thì gửi các đoạn ✗ (kèm dòng `vi`) cho David chấm.
+   David thấy đáp án sai thì sửa `de.json` (đáp án là cách nghĩ, không phải chân lý).
+5. **Bộ kiểm lớn dần:** lỗi dựng nào David phải sửa (sai nguyên lý, sai cách thể hiện) thì thêm một đoạn vào `de.json` từ chính ca đó
    (trục `co-so-tri-thuc/truc-tri-thuc.md` mục 4). Không bỏ đoạn cũ khi chưa ghi lý do vào sổ.
 
 Thử máy chấm: `python3 -I cham.py --mau > /tmp/mau.json && python3 -I cham.py /tmp/mau.json` phải ra 10/10.

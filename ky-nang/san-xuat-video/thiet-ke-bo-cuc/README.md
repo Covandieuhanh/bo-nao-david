@@ -43,7 +43,7 @@ và nói "học cái này"; skill đó chỉ trỏ về đây.
 
 Bước nhẹ (1–3): tới đó nhắc một dòng để David tự đổi mô hình rẻ hơn, không tự đổi.
 
-1. **Lấy mẫu** *(bước nhẹ)*: David gửi file thì dùng file đó. Chỉ có link → tải bản 720p **chỉ để học** vào thư mục tạm (không đưa
+1. **Lấy mẫu** *(bước nhẹ)*: David gửi file thì dùng file đó. Chỉ có link thì tải bản 720p **chỉ để học** vào thư mục tạm (không đưa
    lên repo, **học xong xoá**), đọc mô tả và danh sách chương (`yt-dlp --dump-json`).
 2. **Cắt khung** *(bước nhẹ)*: bảng khung theo nhịp 1,5–3 s (`ffmpeg … fps=1/2,scale=480:-1,tile=4x4`) ở đoạn mở đầu và đoạn đúng loại cần học.
 3. **Nghe** *(bước nhẹ)*: vẽ phổ âm (`showspectrumpic`) để thấy chỗ có tiếng hiệu ứng, nhạc nền, nốt chuyển chương.
@@ -54,9 +54,9 @@ Bước nhẹ (1–3): tới đó nhắc một dòng để David tự đổi mô
 5. **Phiếu học cho David duyệt** (mẫu ở `phieu-hoc-mau.md`): học được gì, dùng cho loại video nào, thêm thành phần nào, mỗi thành
    phần đối chiếu với các chặn cũ thế nào. Đây là **cổng hỏi duy nhất**: gộp mọi điểm cần chọn, mỗi điểm 2–3 gợi ý.
    **Chờ David "ok" rồi mới sửa skill.**
-6. **Ghi vào kho** (kho là thực đơn, không phải luật). Điều học được làm **đổi luật** → sửa thẳng câu luật đó, lý do vào sổ (thoi-quen mục 4), không thêm câu chồng.
+6. **Ghi vào kho** (kho là thực đơn, không phải luật). Điều học được làm **đổi luật** thì sửa thẳng câu luật đó, lý do vào sổ (thoi-quen mục 4), không thêm câu chồng.
    **Cách ghi kho:** một file `nguon-tham-khao/<ten-nguon>-<ngay>.md` kể học gì từ đâu. Mỗi cách mới thêm một dòng ở `bo-cuc.md` hoặc `am-thanh.md`,
-   ghi rõ "đã có code" hay "chưa có code", **thêm vào dòng "Đã học" của nguyên lý ở `nguoi-xem-can-gi.md` và một dòng "dạng câu / hình → cách thể hiện" dưới đúng nguyên lý
+   ghi rõ "đã có code" hay "chưa có code", **thêm vào dòng "Đã học" của nguyên lý ở `nguoi-xem-can-gi.md` và một dòng "dạng câu / hình thì cách thể hiện" dưới đúng nguyên lý
    ở bảng 4c của `tu-chon.md`** (không có dòng ở đó thì không bao giờ được chọn). Không xoá, không sửa nghĩa dòng cũ.
 7. **Làm code khi cần:** thêm `kieu` mới trong `dung-video-theo-phong-cach/assets/khuon-remotion/src/thanh-phan/bo-cuc.jsx` (màu nhấn và
    font lấy từ `C`, `HEAD`, `BODY`; hình động dùng `ease`, `pop`, `Illus`, `Diagram`, `Icon` hoặc `thu-vien-tai-nguyen/chuyen-dong.js`). Vị trí lấy từ hằng số chung (`SAFE`, `BRAND_TOP`/`BRAND_BOT`,

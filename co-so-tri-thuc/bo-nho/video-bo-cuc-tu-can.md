@@ -34,5 +34,5 @@ lời David, lý do.
   cảnh. Bản này còn "thẩm mỹ của David là gốc, chỉ học trình bày, không chép màu/phông chữ" (vì chép thẩm mỹ thì xung đột với gốc). Nguồn
   đầu tiên đã học: Sang Huỳnh 07/11.
 - 08/11/2026 (video phỏng vấn 2 người): thêm điểm 4.
-- 10/11/2026 David nới thẩm mỹ thành chỉ giữ chữ ký nhận diện → điểm 1 viết lại (tái bản 2).
+- 10/11/2026 David nới thẩm mỹ thành chỉ giữ chữ ký nhận diện thì điểm 1 viết lại (tái bản 2).
 - 13/11/2026 bỏ hiệu ứng zoom vào / ra ([[video-do-hoa-ke-chuyen]]); bám người nói bằng khung cắt (bản luật tái bản 3).

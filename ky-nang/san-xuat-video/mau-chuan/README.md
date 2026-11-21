@@ -5,8 +5,8 @@ description: "Bộ mẫu chuẩn video: dựng lại 5 dự án mẫu bằng kie
 # Bộ mẫu chuẩn (kiểm sau mỗi lần sửa)
 
 `python3 -I kiem-mau.py` — dựng lại 5 dự án mẫu (`mau.json`: 3 clip podcast đồ hoạ dọc `podcast-doc-clip-1/2/3` và 2 video dài `podcast-dai-trainer`, `podcast-dai-muc-tieu`, David chốt làm bản chuẩn 2026-11-06) bằng
-khung dựng + thư viện hình + hồ sơ HIỆN TẠI, chụp khung cố định → `<tên>/moi.jpg`, so `<tên>/chuan.jpg`.
-- `✓ giữ nguyên` → sửa không làm vỡ chỗ khác. `⚠ hình đổi` → mở 2 tờ: đúng ý thay đổi thì `python3 -I kiem-mau.py <tên> --chot`.
+khung dựng + thư viện hình + hồ sơ HIỆN TẠI, chụp khung cố định ra `<tên>/moi.jpg`, so `<tên>/chuan.jpg`.
+- `✓ giữ nguyên` nghĩa là sửa không làm vỡ chỗ khác. `⚠ hình đổi` thì mở 2 tờ: đúng ý thay đổi thì `python3 -I kiem-mau.py <tên> --chot`.
 - Chỉ đọc dự án gốc (dữ liệu lời, kịch bản, mốc); làm trong thư mục tạm. Thêm mẫu: thêm một mục vào `mau.json`.
 
 

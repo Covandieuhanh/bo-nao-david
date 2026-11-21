@@ -26,10 +26,10 @@ Mọi skill tự làm việc theo một bộ thói quen chung: đúng quy trình
 ## Thực thi
 - [x] Bước 0: lưu mốc lên GitHub
 - [x] Vòng 2: chốt nội dung file thói quen chung
-- [x] Bước 1: bảng rà soát luật (trùng / ngược / cũ) → David duyệt
+- [x] Bước 1: bảng rà soát luật (trùng / ngược / cũ) thì David duyệt
   - [x] Bảng đã xong: `du-an/danh-gia-luat.md` (15 ngược · 12 trùng · 8 cũ · 3 câu hỏi), 08/11/2026
   - [x] David duyệt 08/11: ngược thì lấy bên mới nhất; chữ trên video chỉ lời David nói chính xác; lịch phát khi David đưa; tên trang để sau
-- [x] Bước 2: viết file thói quen chung → David duyệt
+- [x] Bước 2: viết file thói quen chung thì David duyệt
   - [x] Bản nháp: `ky-nang/chuan-muc-lam-viec.md` (08/11)
   - [x] David duyệt 08/11
 - [x] Bước 3: gọt từng skill + "Xong khi" (mỗi skill một phiên)
@@ -43,7 +43,7 @@ Mọi skill tự làm việc theo một bộ thói quen chung: đúng quy trình
 - [x] Phiên A (08/11): gọt khối 05, 06, 07, 08, 13, 15, 17, 19, `mo-dun/README`, `quy-tac-chung` mục 0 (N9); bỏ chữ "2 trạng thái là mặc định" ở scene-design, thu-vien-tai-nguyen, Illus, vlog_edl, doan-noi-bat.md; code: thẻ cuối luôn "Bản đầy đủ trên kênh …" (bỏ "XEM BẢN ĐẦY ĐỦ" và `tease`), phụ đề podcast dọc cụm 5–8 chữ mọi độ dài
   - [x] David đồng ý 08/11: câu mời bình luận / câu hỏi tự soi / "gỡ" theo luật kênh nằm ở mô tả + bình luận ghim, không lên video (khối 08, quy-tac-chung)
 - [x] Dọn file tạm (08/11): `dung-video-theo-phong-cach/scripts/don-tap.py`, gắn vào khối 17, thoi-quen mục 4, 3 skill; bỏ khối 18 cùng mọi phần xuất CapCut/DaVinci (David không dùng)
-  - [x] David duyệt 08/11 → đã dọn 8 tập (khoảng 62 GB; 16 bản cuối còn đủ); tap-zoom-trainer chưa có bản cuối nên giữ nguyên
+  - [x] David duyệt 08/11 thì đã dọn 8 tập (khoảng 62 GB; 16 bản cuối còn đủ); tap-zoom-trainer chưa có bản cuối nên giữ nguyên
 - [ ] Bước 4: chạy thử một việc thật, David chấm, sửa đúng một chỗ (chưa render thử thẻ cuối và phụ đề podcast dọc sau phiên A)
 
 ## Code còn lệch với skill

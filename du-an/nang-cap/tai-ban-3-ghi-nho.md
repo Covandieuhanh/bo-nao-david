@@ -85,7 +85,7 @@ quyết định khác, ba cái cũ đã có đoạn 14/11 trỏ về duyet-4-pha
 2. **điều phối** — ghi nhớ trỏ bản luật theo **số mục** (quy-tac-chung mục 0–5, 8; chuan-muc mục 0, 2–5; thiet-ke-bo-cuc/README mục 4
    điểm 10; nhan-dien-chung mục 0, 2). Đã khớp bản trên đĩa lúc 14/11 (sau sửa của phiên video). Phiên nào đổi số mục khi viết lại thì
    kiểm lại: `grep -n "mục [0-9]" co-so-tri-thuc/bo-nho/*.md`.
-3. **nao** — `bao-cao-trang-thai.md` dòng app dựng video nhắc `video-bo-app` → đã sửa thành `video-bo-ung-dung` (chỉ đường trỏ).
+3. **nao** — `bao-cao-trang-thai.md` dòng app dựng video nhắc `video-bo-app` nên đã sửa thành `video-bo-ung-dung` (chỉ đường trỏ).
    `du-an/danh-gia-luat.md` (biên bản cũ) còn `video-khong-tu-render`, `video-kien-truc-skill`: để nguyên như tái bản 2.
 4. **nao / điều phối** — `.gitignore`: thêm dòng `co-so-tri-thuc/bo-nho/luu-tru/thiet-bi-*` để ghi nhớ `thiet-bi-` chuyển lưu trữ vẫn
    không lên GitHub. Các trang `ban-do/` chép mô tả ghi nhớ: đã chuyển dòng `thiet-bi-don-documents` sang mục Lưu trữ của
@@ -119,7 +119,7 @@ Thân mỗi ghi nhớ nay là trạng thái hiện hành; ngày + lời David ng
 - `quy-tac-ky-nang-tu-cai-tien`: thân = sáu luật hiện hành (sửa skill qua 4 phần); bản đầu 12/11 "chỉ hỏi khi đụng David" vào sổ.
 - `video-khong-tu-xuat`: thân = làm một mạch, góp ý render lại toàn bộ; 05/11 và lời 13/11 vào sổ.
 - `video-podcast-phu-hinh-30`, `quy-tac-mod-tu-chay`, `video-phu-de-mot-cho-chu`, `co-so-tri-thuc-quy-uoc-dat-ten`: câu "thay luật…" chuyển vào sổ / Why.
-- `video-bo-cuc-tu-can`: viết lại thành 5 điểm hiện hành; điểm 4 "zoom… bám người nói" → **khung cắt** bám người nói, không hiệu ứng zoom (theo `quy-tac-chung.md` mục 4); sổ 07/11 · 08/11 · 10/11 · 13/11.
+- `video-bo-cuc-tu-can`: viết lại thành 5 điểm hiện hành; điểm 4 "zoom… bám người nói" thì **khung cắt** bám người nói, không hiệu ứng zoom (theo `quy-tac-chung.md` mục 4); sổ 07/11 · 08/11 · 10/11 · 13/11.
 - `quy-tac-hoc-la-bo-sung` ("Từ 10/11"), `video-clip-ngan-dung-doc-lap` ("Chốt thêm 07/11"), `video-tham-my-chi-giu-nhan-dien` ("Thay phần…"), `co-so-tri-thuc-ho-so-va-bo-loc` ("Từ 13/11"): bỏ câu nối, giữ ngày trong ngoặc.
 - `video-kien-truc-ky-nang`, `quy-tac-sua-thang-tai-ban`: thêm trỏ sổ đổi giá trị hồ sơ `ky-nang/san-xuat-video/ho-so-thuong-hieu/nhat-ky-thay-doi.md`.
 - Mô tả đổi của 6 ghi nhớ (`goi-y`, `phien-telegram`, `tu-cai-tien`, `khong-tu-xuat`, `bo-cuc-tu-can`, `thiet-bi-bo-cuc-thu-muc`) đã chép lại vào `ban-do/bo-nao-va-tu-dong-hoa.md`, `ban-do/san-xuat-video.md`.

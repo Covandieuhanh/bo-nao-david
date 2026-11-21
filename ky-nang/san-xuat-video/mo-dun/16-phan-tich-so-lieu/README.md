@@ -8,16 +8,16 @@ description: "Khối 16 số liệu sau đăng: đọc số, báo lỗi, không 
 **Đầu vào:** ảnh chụp YouTube Studio / TikTok
 **Đầu ra:** so-lieu.md của dự án + so-lieu-tong.md
 **Tham số hồ sơ:** —
-**Sửa khối này → chạy lại:** —
+**Sửa khối này thì chạy lại:** —
 
 **File thật (code, một bản duy nhất):**
 - `mau-so-lieu.md` (mẫu ghi số liệu, nằm ngay trong khối này)
 
 ## Luật
 - Mỗi video giao kèm `<dự án>/so-lieu.md` (chép `mau-so-lieu.md`). 7 ngày sau đăng, David gửi ảnh chụp số liệu (YouTube Studio /
-  TikTok / Facebook) → Claude điền: lượt xem, tỉ lệ xem hết / thời lượng xem trung bình, giây rời nhiều nhất, % còn lại ở giây 3, CTR
+  TikTok / Facebook) thì Claude điền: lượt xem, tỉ lệ xem hết / thời lượng xem trung bình, giây rời nhiều nhất, % còn lại ở giây 3, CTR
   thumbnail (video ngang YouTube), lưu / chia sẻ / bình luận. Tổng hợp nhiều video ở `san-xuat-video/so-lieu-tong.md`.
-- Số liệu dùng để **báo lỗi**, không thay hình mẫu: rời ồ ạt ở 0–3 s → câu mở sai; rời ở một cảnh → cảnh đó. So với video trước → đề xuất **một**
+- Số liệu dùng để **báo lỗi**, không thay hình mẫu: rời ồ ạt ở 0–3 s là câu mở sai; rời ở một cảnh là cảnh đó. So với video trước thì đề xuất **một**
   chỉnh sửa vào `ho-so-thuong-hieu/<loai>` hoặc luật (kèm bằng chứng), David duyệt rồi mới đổi và ghi changelog.
 
 ## Thước đo chính theo kênh David (`ho-so-thuong-hieu/kenh.json`)

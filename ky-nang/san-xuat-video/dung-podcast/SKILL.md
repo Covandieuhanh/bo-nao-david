@@ -7,7 +7,7 @@ description: Biến một podcast (file tiếng mp3/m4a/wav, hoặc video podcas
 **Đọc trước:** `../quy-tac-chung.md` (mục 8) · hồ sơ `../ho-so-thuong-hieu/podcast.md`. Lỗi thường gặp: của `$BASE` và của skill này.
 
 David đưa **một tập podcast** (file tiếng, hoặc video không muốn dùng hình). Mục tiêu: video **đăng được ngay**, mọi khung hình
-là đồ hoạ chuyển động theo lời. Không có hình người → **sân khấu nền** (`san-khau.jsx`) chạy suốt video lấp khoảng trống, các cảnh đặt lên trên.
+là đồ hoạ chuyển động theo lời. Không có hình người nên dùng **sân khấu nền** (`san-khau.jsx`) chạy suốt video lấp khoảng trống, các cảnh đặt lên trên.
 
 Dùng chung template Remotion và gần hết script của skill gốc — `$BASE=~/.claude/skills/dung-video-theo-phong-cach`, `$SKILL` = thư mục này.
 Luật nội dung của skill gốc vẫn áp dụng. Lệnh > 2 phút chạy nền. Giữ task list theo các bước.
@@ -42,7 +42,7 @@ Luật chung video ở `../quy-tac-chung.md` (chữ nguyên văn, không cắt v
     `anh`) khi nhắc người / nơi / tổ chức có thật. `illus` cho câu ngắn không có cấu trúc. Giữa các cảnh: sân khấu + phụ đề.
   - **Bản đồ chương tích luỹ** (tự bật khi ít nhất 3 TOPICS và tập dài): mỗi phần thêm thẻ số + tên phần; trước màn chốt hiện cả bản đồ làm tóm tắt.
   - **Mô tả**: 2–3 đoạn tóm tắt (ý của David) + chương + liên kết tập liên quan + link tài nguyên David đưa.
-  - **Mục tiêu cuối**: người xem *thấy hành động* → câu giao việc cụ thể nhất của tập có màn `action`.
+  - **Mục tiêu cuối**: người xem *thấy hành động* thì câu giao việc cụ thể nhất của tập có màn `action`.
 - **Học từ 20 podcast Việt** (`references/hoc-tu-20-podcast-vn.md`):
   - **Thẻ chương**: sân khấu tự hiện "PHẦN n" đầu mỗi `TOPICS` (khi ít nhất 2 TOPICS); `chuong.py` ghi chương YouTube từ TOPICS.
   - **Teaser** cho tập > 10 phút: sau render, `doan-gioi-thieu.py` với 2–3 câu đắt nhất (trọn câu, nguyên văn); độ dài theo hồ sơ.
@@ -78,15 +78,15 @@ zsh $SKILL/scripts/phien-am.sh "$P"                    # chạy nền; ~1 phút 
 python3 -I $BASE/scripts/phu-de.py "$P"               # → chuyen-dong/src/phu-de.js (nháp)
 ```
 Sửa TỪNG dòng theo khối 03: chính tả, câu bịa ("Hãy subscribe…" — đối chiếu `ban-chep-loi.srt` với `moc-tung-tu.srt`), chỗ ngắt dòng.
-**Riêng podcast**: ở chỗ đổi người nói, mốc từ Whisper hay trôi 1–2 s → dòng phụ đề có thể bắt đầu trong lượt người kia. Đối chiếu
+**Riêng podcast**: ở chỗ đổi người nói, mốc từ Whisper hay trôi 1–2 s thì dòng phụ đề có thể bắt đầu trong lượt người kia. Đối chiếu
 `nguoi-noi.js` (bước 3) và dời mốc.
 
 ### 4. Phong cách
-Không có mẫu → phong cách mặc định của template. Có video/ảnh mẫu → khối 10.
+Không có mẫu thì dùng phong cách mặc định của template. Có video/ảnh mẫu thì theo khối 10.
 
 ### 6. Minh hoạ
-Theo khối 07 + `../quy-tac-chung.md` mục 4: lời nhắc nơi, người, vật, việc cụ thể → **ảnh thật** (chỉ ảnh Việt Nam, `$BASE/scripts/kho-anh-openverse.py`);
-ý trừu tượng → **biểu tượng vẽ** hoặc sơ đồ (`icon` trong `montage`/`card job`, xem `$BASE/references/thiet-ke-canh.md`). Số liệu bằng hiệu ứng, đúng con số người nói. David nói "không dùng ảnh" / "thêm ảnh" thì theo đó.
+Theo khối 07 + `../quy-tac-chung.md` mục 4: lời nhắc nơi, người, vật, việc cụ thể thì **ảnh thật** (chỉ ảnh Việt Nam, `$BASE/scripts/kho-anh-openverse.py`);
+ý trừu tượng thì **biểu tượng vẽ** hoặc sơ đồ (`icon` trong `montage`/`card job`, xem `$BASE/references/thiet-ke-canh.md`). Số liệu bằng hiệu ứng, đúng con số người nói. David nói "không dùng ảnh" / "thêm ảnh" thì theo đó.
 
 ### 7. Chụp thử (trước khi render — Claude tự soát)
 ```bash
@@ -107,7 +107,7 @@ python3 -I $BASE/scripts/xem-truoc-ban-dung.py "$P"            # chạy nền �
 Podcast 15 phút: sân khấu khoảng 25 phút, phụ đề khoảng 10 phút, ghép cuối khoảng 10 phút — báo trước thời gian chờ.
 
 ### 9. Kiểm tra bản cuối
-`zsh $BASE/scripts/kiem-khung-hinh.sh "$P" "$P/video-hoan-chinh.mp4" <mốc giữa & cuối mỗi cảnh, vài mốc chỉ sân khấu>` → xem `kiem-tra/bang-anh.jpg`.
+`zsh $BASE/scripts/kiem-khung-hinh.sh "$P" "$P/video-hoan-chinh.mp4" <mốc giữa & cuối mỗi cảnh, vài mốc chỉ sân khấu>` rồi xem `kiem-tra/bang-anh.jpg`.
 Âm thanh kiểm như khối 17 (chuẩn khối 09; nguồn để so tiếng rè là `am-thanh.wav`), thời lượng = `am-thanh.wav` (+ thẻ cuối nếu có).
 
 ### 10. Phát hành + giao
@@ -117,7 +117,7 @@ Chép `san-xuat-video/mo-dun/16-phan-tich-so-lieu/mau-so-lieu.md` → `$P/so-lie
 Gửi `video-hoan-chinh.mp4` (+ thumbnail nếu có) (SendUserFile). Báo cáo tiếng Việt: người nói (tên/vai, tỉ lệ, chỗ không chắc), danh sách
 cảnh + TOPICS theo mốc, `nguon-anh.txt` nếu có ảnh, đã kiểm gì / chưa kiểm gì, tên riêng cần xác nhận chính tả.
 
-## Bảng phụ thuộc (sửa X → chạy lại Y)
+## Bảng phụ thuộc (sửa X thì chạy lại Y)
 | Sửa | Chạy lại |
 |---|---|
 | phu-de.js | `node xuat-video.mjs phu-de` → xem-truoc-ban-dung.py |
@@ -127,10 +127,10 @@ cảnh + TOPICS theo mốc, `nguon-anh.txt` nếu có ảnh, đã kiểm gì / c
 | video-hoan-chinh (teaser) | chuong.py |
 
 ## Sửa theo góp ý
-- Một cảnh → sửa `canh.js` → `node xuat-video.mjs <id>` → `xem-truoc-ban-dung.py`.
-- TOPICS / STAGE / người nói / sóng âm → `node xuat-video.mjs nen` → `nen-podcast.py` → `xem-truoc-ban-dung.py`.
-- Phụ đề / thanh thời gian → `node xuat-video.mjs phu-de` → `xem-truoc-ban-dung.py`.
-- Thumbnail → chạy lại `anh-thu-nho.sh` với chữ/ảnh mới (không cần render video).
+- Một cảnh thì sửa `canh.js` → `node xuat-video.mjs <id>` → `xem-truoc-ban-dung.py`.
+- TOPICS / STAGE / người nói / sóng âm thì `node xuat-video.mjs nen` → `nen-podcast.py` → `xem-truoc-ban-dung.py`.
+- Phụ đề / thanh thời gian thì `node xuat-video.mjs phu-de` → `xem-truoc-ban-dung.py`.
+- Thumbnail thì chạy lại `anh-thu-nho.sh` với chữ/ảnh mới (không cần render video).
 
 ## Cấu trúc dự án
 ```

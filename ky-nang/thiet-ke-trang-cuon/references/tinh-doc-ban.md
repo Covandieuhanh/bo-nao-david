@@ -226,7 +226,7 @@ be right), `pin` with scale driven from `--sc-p`, `reveal` as a wipe across
 letterforms, `drift` doing heavy lifting because the ground is most of the
 frame. **Bans:** `scrub`, `pan` rails of cards, `tilt`, `parallax` on text.
 
-**The typography floor doubles here.** gu-thiet-ke.md caps display at khoảng 6rem outside a
+**The typography floor doubles here.** gu-thiet-ke.md caps display at ~6rem outside a
 hero moment. This grammar is one continuous hero moment, so the cap lifts, but
 the tracking, measure and optical-correction rules tighten: at 40vw, default
 tracking is a visible defect and one bad kern is the whole page.

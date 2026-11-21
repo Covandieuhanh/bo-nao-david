@@ -6,7 +6,7 @@ description: "Tái bản 3 (14/11), phiên con bộ hoi: bảng luật đang s�
 
 Phiên điều phối: [tai-ban-3.md](tai-ban-3.md). Bản luật: [ky-nang/thu-thap-yeu-cau/SKILL.md](../../ky-nang/thu-thap-yeu-cau/SKILL.md). Đợt trước: [tai-cau-truc-2-hoi.md](tai-cau-truc-2-hoi.md).
 
-Máy đo lúc mở: dấu ngày 0 · ghi đè 0 · trùng 0 · sửa 4 · 88 dòng → sạch. Bảng lập để tìm chỗ **lệch với bộ khác**.
+Máy đo lúc mở: dấu ngày 0 · ghi đè 0 · trùng 0 · sửa 4 · 88 dòng thì sạch. Bảng lập để tìm chỗ **lệch với bộ khác**.
 Ký hiệu nguồn: `hoi` = thu-thap-yeu-cau/SKILL.md (bản trước tái bản) · `cm` = chuan-muc-lam-viec.md · `A` = AGENTS.md · `dv` = co-so-tri-thuc/david.md · `cd` = co-so-tri-thuc/chi-dan-toan-cuc.md · `gn:` = ghi nhớ.
 
 ## Bảng luật đang sống
@@ -40,14 +40,14 @@ Ký hiệu nguồn: `hoi` = thu-thap-yeu-cau/SKILL.md (bản trước tái bản
 **Nhà duy nhất của luật "trình 4 phần trước mọi việc, chờ duyệt" (#1, #2):** `ky-nang/chuan-muc-lam-viec.md` mục 2 — vì luật dùng chung mọi skill và skill `tai-cau-truc` bước 4 đặt luật dùng chung ở đó. Skill `thu-thap-yeu-cau` chỉ là nhà của **cách hỏi** trong 4 phần (một dòng trỏ). `AGENTS.md` luật 2, `david.md` mục 3.1, `chi-dan-toan-cuc.md` là bản tóm / file nạp mỗi phiên: một câu + trỏ `chuan-muc-lam-viec.md` mục 2.
 
 ## Chéo bộ
-- **nao — luật 4 phần (#1, #2):** `AGENTS.md` luật 2 đang chép gần đủ luật (miễn, thông tin về David, hoc-lien-tuc); `chi-dan-toan-cuc.md` và `david.md` mục 3.1 cũng chép. Đề xuất: giữ một câu tóm ở mỗi nơi (vì nạp mỗi phiên) + trỏ `chuan-muc-lam-viec.md` mục 2; phần miễn chỉ ở cm. Lệch nhỏ: `chi-dan-toan-cuc.md` thiếu "bot ghi sổ" trong miễn. `david.md` không được đụng đợt này → ghi để David quyết sau.
+- **nao — luật 4 phần (#1, #2):** `AGENTS.md` luật 2 đang chép gần đủ luật (miễn, thông tin về David, hoc-lien-tuc); `chi-dan-toan-cuc.md` và `david.md` mục 3.1 cũng chép. Đề xuất: giữ một câu tóm ở mỗi nơi (vì nạp mỗi phiên) + trỏ `chuan-muc-lam-viec.md` mục 2; phần miễn chỉ ở cm. Lệch nhỏ: `chi-dan-toan-cuc.md` thiếu "bot ghi sổ" trong miễn. `david.md` không được đụng đợt này nên ghi để David quyết sau.
 - **nao — "nội dung là của David, không khuôn lời" (#21):** sau khi đổi sáu luật, luật này không còn nhà trong bản luật (AGENTS luật 3 chỉ nói video; luật 4 nay là mạng xã hội). Hiện chỉ còn ghi nhớ `quy-tac-noi-dung-cua-david`, câu chung ở cm mục 0, và `hermes/giao-cho-hermes.md` luật 4. Đề xuất bộ nao chốt nhà (cm mục 0 là hợp nhất), rồi hoi trỏ về đó. Hoi tạm trỏ cm mục 0 + ghi nhớ.
-- **nao — cm mục 2 "diễn giải + chờ ok"** khi sửa thông tin trực tiếp về David: nay đã là 4 phần + "duyệt" (A luật 2). Đề xuất bộ nao đổi chữ "chờ ok" → "duyệt" cho thống nhất.
-- **ghi-nho:** `quy-tac-goi-y-de-david-chon` còn mô tả có ngày + "thay luật 06/11" và đoạn nối thêm "14/11/2026 (việc #22)" ở cuối; `quy-tac-phien-telegram-tu-chay` có hai đoạn nối "14/11/2026 (việc #…)" → gộp vào thân cho gọn. `quy-tac-tu-hoi-khi-mo-ho` trỏ đúng `thu-thap-yeu-cau` mục "Sáu tín hiệu" (tên mục giữ nguyên).
+- **nao — cm mục 2 "diễn giải + chờ ok"** khi sửa thông tin trực tiếp về David: nay đã là 4 phần + "duyệt" (A luật 2). Đề xuất bộ nao đổi chữ "chờ ok" thành "duyệt" cho thống nhất.
+- **ghi-nho:** `quy-tac-goi-y-de-david-chon` còn mô tả có ngày + "thay luật 06/11" và đoạn nối thêm "14/11/2026 (việc #22)" ở cuối; `quy-tac-phien-telegram-tu-chay` có hai đoạn nối "14/11/2026 (việc #…)" nên gộp vào thân cho gọn. `quy-tac-tu-hoi-khi-mo-ho` trỏ đúng `thu-thap-yeu-cau` mục "Sáu tín hiệu" (tên mục giữ nguyên).
 
 ## Hỏi David
-1. **Skill cũ `hoi-chuyen-gia` còn được đồng bộ từ claude.ai** (`~/.claude/skills/synced/…/hoi-chuyen-gia/SKILL.md`, hiện trong danh sách skill là `anthropic-skills:hoi-chuyen-gia`): bản cũ trước `thu-thap-yeu-cau` — "khoảng 10 chuyên gia", "chờ ok mới tạo file", "không dùng cho việc 1–2 bước" → lệch luật 4 phần mọi việc, AI có thể gọi nhầm. ➡️ Đề xuất: David gỡ skill này khỏi claude.ai (Settings → Skills), vì nằm ngoài repo, AI không tự gỡ · hoặc giữ nhưng sửa mô tả trỏ sang `thu-thap-yeu-cau`.
+1. **Skill cũ `hoi-chuyen-gia` còn được đồng bộ từ claude.ai** (`~/.claude/skills/synced/…/hoi-chuyen-gia/SKILL.md`, hiện trong danh sách skill là `anthropic-skills:hoi-chuyen-gia`): bản cũ trước `thu-thap-yeu-cau` — "khoảng 10 chuyên gia", "chờ ok mới tạo file", "không dùng cho việc 1–2 bước" nên lệch luật 4 phần mọi việc, AI có thể gọi nhầm. ➡️ Đề xuất: David gỡ skill này khỏi claude.ai (Settings → Skills), vì nằm ngoài repo, AI không tự gỡ · hoặc giữ nhưng sửa mô tả trỏ sang `thu-thap-yeu-cau`.
 
 ## Đã viết lại
-- `ky-nang/thu-thap-yeu-cau/SKILL.md`: mục "Khi nào áp dụng" thu về một dòng trỏ cm mục 2 + phần riêng của skill (#1–#5); bỏ trùng hàng "sản phẩm từ tài nguyên" (#11); diễn giải ghép vào 4 phần, "chờ ok" → "chờ duyệt" (#18, #19); sửa "thoi-quen" (#22); trỏ "nội dung của David" sang cm mục 0 + ghi nhớ (#21). Không bỏ luật nào, không thêm luật. "Xong khi" giữ 8 dòng, chỉnh chữ dòng 4–5 khớp 4 phần.
+- `ky-nang/thu-thap-yeu-cau/SKILL.md`: mục "Khi nào áp dụng" thu về một dòng trỏ cm mục 2 + phần riêng của skill (#1–#5); bỏ trùng hàng "sản phẩm từ tài nguyên" (#11); diễn giải ghép vào 4 phần, "chờ ok" thành "chờ duyệt" (#18, #19); sửa "thoi-quen" (#22); trỏ "nội dung của David" sang cm mục 0 + ghi nhớ (#21). Không bỏ luật nào, không thêm luật. "Xong khi" giữ 8 dòng, chỉnh chữ dòng 4–5 khớp 4 phần.
 - Nhật ký: dòng đầu `## Tái bản 3 — 14/11/2026`.

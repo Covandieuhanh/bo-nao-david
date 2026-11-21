@@ -5,7 +5,7 @@ description: "Bảng thuật ngữ đặt tên: thuật ngữ kinh doanh tiếng
 # Bảng thuật ngữ đặt tên
 
 Nhà duy nhất của tên dùng trong bộ não, trên máy và Drive (quy ước: ghi nhớ `co-so-tri-thuc-quy-uoc-dat-ten`). Đặt tên mới: tìm thuật ngữ
-tiếng Anh chuẩn → dùng đúng cột "Tên dùng"; chưa có thì thêm một dòng trước khi đặt. Mỗi thuật ngữ một bản dịch. Thuật ngữ lãnh đạo
+tiếng Anh chuẩn thì dùng đúng cột "Tên dùng"; chưa có thì thêm một dòng trước khi đặt. Mỗi thuật ngữ một bản dịch. Thuật ngữ lãnh đạo
 (CCL) dịch theo `tai-lieu-tham-khao/ccl/` Phần 10.1.
 
 | Tiếng Anh | Tiếng Việt | Tên dùng |

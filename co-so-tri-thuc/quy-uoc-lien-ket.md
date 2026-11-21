@@ -16,7 +16,7 @@ David chốt 14/11/2026: bộ não là **mạng lưới file nối với nhau**,
 
 1. **Có mô tả đầu file**: khối `description:` một câu nói file này là gì và dùng khi nào (khoá `description` vì Claude Code đọc đúng tên này ở ghi nhớ, skill). Viết bằng từ người ta sẽ tìm. Không thêm mô tả vào file nạp mỗi phiên hay hồ sơ David (danh sách miễn ở máy kiểm); mô tả của chúng ghi trong máy kiểm.
 2. **Đường nối dùng link tương đối** `[tên](duong/dan.md)`: mở thẳng được, GitHub và Obsidian đều hiểu. Ghi nhớ trong `bo-nho/` được dùng thêm `[[ten-ghi-nho]]` (định dạng bộ nhớ Claude Code). Tên file trong dấu `` ` `` chỉ là chữ, không tính là nối.
-3. **Không file mồ côi**: mọi file có ít nhất một file khác nối tới (chỉ mục không tính). Tối thiểu là trang bản đồ của chủ đề đó; tốt hơn là thêm nối từ file cha (skill → tài liệu của nó, kế hoạch → file con).
+3. **Không file mồ côi**: mọi file có ít nhất một file khác nối tới (chỉ mục không tính). Tối thiểu là trang bản đồ của chủ đề đó; tốt hơn là thêm nối từ file cha (skill tới tài liệu của nó, kế hoạch tới file con).
 4. **Nối hai chiều khi liên quan thật**: luật ↔ ghi nhớ ghi lý do ↔ skill dùng luật ↔ dự án áp dụng. Không nối tràn lan; mỗi nối trả lời được "mở file kia để biết gì".
 5. **Đổi tên, gộp, xoá file thì sửa mọi nối trỏ tới nó** trong cùng lần sửa. Máy kiểm báo link gãy và chặn đẩy GitHub.
 
