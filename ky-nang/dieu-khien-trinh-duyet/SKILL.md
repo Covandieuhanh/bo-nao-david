@@ -491,3 +491,8 @@ See [references/dinh-kem-pr.md](references/dinh-kem-pr.md) for alt text, inline 
 * **Video recording** [references/quay-video.md](references/quay-video.md)
 * **Attaching screenshots and videos to pull requests** [references/dinh-kem-pr.md](references/dinh-kem-pr.md)
 * **Inspecting element attributes** [references/thuoc-tinh-phan-tu.md](references/thuoc-tinh-phan-tu.md)
+
+## Xong khi
+- Việc trên trang đã làm xong và có bằng chứng: ảnh chụp hoặc bản chụp cấu trúc trang (`snapshot`) sau thao tác cuối.
+- Trình duyệt đã đóng (`playwright-cli close`), không để phiên treo.
+- Không nhập mật khẩu, mã OTP, thông tin thanh toán; không bấm đăng / gửi / xoá khi David chưa bảo (`AGENTS.md` luật 4).

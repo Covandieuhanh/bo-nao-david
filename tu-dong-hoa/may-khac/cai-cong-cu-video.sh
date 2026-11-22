@@ -92,6 +92,12 @@ if python3 -c "import PIL,sys;sys.exit(PIL.__version__!='$PILLOW')" 2>/dev/null;
 else python3 -m pip install -q --user --break-system-packages "Pillow==$PILLOW" 2>/dev/null || python3 -m pip install -q --user "Pillow==$PILLOW"
   python3 -c "import PIL;print('  ✓ Pillow',PIL.__version__)" || loi "Pillow"; fi
 
+buoc "Tải link: gdown $GDOWN, yt-dlp $YT_DLP (uv tool)"
+for t in "gdown==$GDOWN" "yt-dlp==$YT_DLP"; do
+  uv tool install -q "$t" >/dev/null 2>&1 || uv tool install -q --force "$t" >/dev/null 2>&1 || loi "uv tool $t"
+done
+command -v gdown >/dev/null && command -v yt-dlp >/dev/null && ok "gdown, yt-dlp" || loi "gdown / yt-dlp chưa có trong PATH (~/.local/bin)"
+
 buoc "Môi trường Python (uv, Python $PYTHON)"
 mk_venv() {   # mk_venv <thư mục> <gói ...>  — tạo nếu chưa có, cài đúng bản
   local V=$1; shift

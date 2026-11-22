@@ -12,7 +12,7 @@ Bạn đang làm việc với **David Trần** (Trần Đức Cường), nhà đ
 | 4 | [co-so-tri-thuc/bo-nho/MEMORY.md](co-so-tri-thuc/bo-nho/MEMORY.md) | Mục lục các bài học và quyết định. Mở từng file khi việc đụng tới |
 | 5 | [ky-nang/thu-thap-yeu-cau/SKILL.md](ky-nang/thu-thap-yeu-cau/SKILL.md) | Cách hỏi khi trình 4 phần: vòng hỏi, đề xuất đứng đầu, tín hiệu phải dừng |
 | 6 | [ky-nang/chuan-muc-lam-viec.md](ky-nang/chuan-muc-lam-viec.md) (việc học, sửa, lưu bộ não: [co-so-tri-thuc/truc-tri-thuc.md](co-so-tri-thuc/truc-tri-thuc.md)) | Thói quen chung mọi skill: đọc đúng phần, hỏi một lần, trong lúc làm, cuối việc, luôn đi tới mục tiêu và nhắc David giữ phiên gọn |
-| 7 | Skill đúng với việc (bảng dưới) | Quy trình từng bước |
+| 7 | [quy-trinh.md](quy-trinh.md) (cây quy trình) | Quy trình gốc, rồi đúng lá của việc: từng bước, xong khi |
 
 **Tìm thứ gì trong bộ não:** `grep -i "<từ khoá>" co-so-tri-thuc/chi-muc.md` (mỗi file một dòng có mô tả) rồi mở thẳng file đúng; cần bức tranh một chủ đề thì mở [ban-do/](ban-do/README.md). Chỉ tìm toàn repo khi chỉ mục không ra. Luật giữ mạng lưới: [co-so-tri-thuc/quy-uoc-lien-ket.md](co-so-tri-thuc/quy-uoc-lien-ket.md).
 
@@ -36,25 +36,9 @@ Làm nội dung về lãnh đạo, ba tầng làm chủ, phương pháp hay nhâ
 
 Khi các nguồn mâu thuẫn: `ky-nang/chuan-muc-lam-viec.md` mục 0.
 
-## Chọn skill theo việc
+## Chọn quy trình theo việc
 
-David thường chỉ gửi tài nguyên (video, ghi âm) mà không kèm yêu cầu. Khi đó bắt đầu từ `phan-phoi-da-kenh`.
-
-| Việc | Skill | Đường dẫn |
-|---|---|---|
-| Có video hoặc ghi âm mới, đăng bài, lọc nội dung | `phan-phoi-da-kenh` | [SKILL.md](ky-nang/san-xuat-video/phan-phoi-da-kenh/SKILL.md) |
-| Lọc nội dung có đáng làm không, phân một video theo ba hướng nghề (mỗi hướng một bản), ghi nhật ký nội dung theo hướng | khối 00 mục 0b | [README.md](ky-nang/san-xuat-video/mo-dun/00-sang-loc-noi-dung/README.md) · [du-an/nhat-ky-noi-dung/](du-an/nhat-ky-noi-dung/README.md) |
-| Dựng video tự quay, ghép vlog | `dung-video-theo-phong-cach` | [SKILL.md](ky-nang/san-xuat-video/dung-video-theo-phong-cach/SKILL.md) |
-| Podcast thành video đồ hoạ | `dung-podcast` | [SKILL.md](ky-nang/san-xuat-video/dung-podcast/SKILL.md) |
-| Học cách trình bày từ video mẫu David gửi | `phan-tich-video-mau` | [SKILL.md](ky-nang/san-xuat-video/phan-tich-video-mau/SKILL.md) |
-| Cắt highlight dọc | `cat-doan-noi-bat` | [SKILL.md](ky-nang/san-xuat-video/cat-doan-noi-bat/SKILL.md) |
-| Viết bài, kịch bản theo giọng David | giọng văn | [giong-thuong-hieu-david.md](ky-nang/san-xuat-video/ho-so-thuong-hieu/giong-thuong-hieu-david.md) |
-| Điều khiển trình duyệt | `dieu-khien-trinh-duyet` | [SKILL.md](ky-nang/dieu-khien-trinh-duyet/SKILL.md) |
-| Nâng cấp bộ não định kỳ ("nâng cấp", "tái bản"): đo trước / sau, chưng cất, tỉa, dọn | `hoc-lien-tuc` Việc 4 | [SKILL.md](ky-nang/hoc-lien-tuc/SKILL.md) |
-| Luật chồng chéo, gom luật trùng (bước Dọn của nâng cấp) | `tai-cau-truc` | [SKILL.md](ky-nang/tai-cau-truc/SKILL.md) |
-| Tự học, cải tiến skill, học thành skill, nhìn lại tuần | `hoc-lien-tuc` | [SKILL.md](ky-nang/hoc-lien-tuc/SKILL.md) |
-| Gom mọi thứ hằng ngày, phân loại theo hướng nghề, đóng thành sản phẩm bán được | `san-pham-hoa` | SKILL.md (`ky-nang/san-pham-hoa/SKILL.md`, chỉ Mac chính) |
-| Tổng hợp tin nhắn Zalo, Messenger, Telegram (7:00 mỗi sáng gửi bot) | `tong-hop-tin-nhan` | SKILL.md (`ky-nang/tong-hop-tin-nhan/SKILL.md`, chỉ Mac chính) |
+Việc gì cũng có quy trình và đi từ gốc lên: tra **[cây quy trình](quy-trinh.md)** — quy trình gốc 7 bước cho mọi việc, rồi nhánh, rồi lá (câu David hay nói, file quy trình, xong khi). David chỉ gửi tài nguyên (video, ghi âm) không kèm yêu cầu thì là lá B1 (`phan-phoi-da-kenh`). Việc chưa có lá: làm theo gốc, xong viết thành lá trước khi báo xong (cây quy trình mục 1).
 
 Muốn hiểu toàn bộ hệ dựng video: [tong-quan.md](ky-nang/san-xuat-video/tong-quan.md), [quy-tac-chung.md](ky-nang/san-xuat-video/quy-tac-chung.md).
 
@@ -67,7 +51,7 @@ Máy chỉ có repo này là đủ để dựng video ra như Mac chính. Không
    [nguoi-xem-can-gi.md](ky-nang/san-xuat-video/thiet-ke-bo-cuc/nguoi-xem-can-gi.md) (cách nghĩ: loại nội dung → cái khó của người xem → nguyên lý) →
    [giai-mau.md](ky-nang/san-xuat-video/thiet-ke-bo-cuc/giai-mau.md) (19 ca thật từ hình mẫu thành công) →
    [tu-chon.md](ky-nang/san-xuat-video/thiet-ke-bo-cuc/tu-chon.md) (các bước + kho cách thể hiện theo nguyên lý) →
-   [bo-cuc.md](ky-nang/san-xuat-video/thiet-ke-bo-cuc/bo-cuc.md) (kiểu có sẵn, ảnh mẫu từng kiểu, cách viết `canh.js`) → skill dựng ở bảng trên.
+   [bo-cuc.md](ky-nang/san-xuat-video/thiet-ke-bo-cuc/bo-cuc.md) (kiểu có sẵn, ảnh mẫu từng kiểu, cách viết `canh.js`) → skill dựng (cây quy trình lá B6).
 3. **Yêu cầu của David** nằm trong thư mục dự án: `yeu-cau.md` (viết tự do) và `them-anh/` (ảnh `mau-*` = kiểu muốn bắt chước, ảnh khác = ảnh chèn).
    Cách xử lý: `tu-chon.md` bước 0b.
 4. **Lập luận thành chữ** trong `ke-hoach-canh.md`: `Loại:` cho cả video, mỗi cảnh `Cần · Vì · Làm`. `soat-canh.mjs` chặn render khi thiếu —

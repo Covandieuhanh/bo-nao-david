@@ -7,7 +7,8 @@ description: Bản đồ bộ não và tự động hoá — luật, thói quen 
 Gốc: [bản đồ bộ não](README.md).
 
 ## Luật và cách làm việc
-- [AGENTS](../AGENTS.md) — Cửa vào cho mọi AI: thứ tự đọc, sáu luật, bảng chọn skill.
+- [AGENTS](../AGENTS.md) — Cửa vào cho mọi AI: thứ tự đọc, sáu luật, trỏ tới cây quy trình.
+- [quy-trinh](../quy-trinh.md) — **Cây quy trình**: quy trình gốc 7 bước cho mọi việc, rồi nhánh, rồi lá (câu David hay nói, file quy trình, xong khi); máy kiểm `tu-dong-hoa/kiem-quy-trinh.py`.
 - [CLAUDE](../CLAUDE.md) — Cấu hình Claude Code của repo, nạp AGENTS.md.
 - [chi-dan-toan-cuc](../co-so-tri-thuc/chi-dan-toan-cuc.md) — Luật chung mọi phiên (bản gốc ~/.claude/CLAUDE.md).
 - [truc-tri-thuc](../co-so-tri-thuc/truc-tri-thuc.md) — **Trục tri thức (tầng 0)**: cách bộ não tiếp nhận, xử lý, học, nâng cấp mọi thông tin, dựng theo cách mô hình AI được làm ra (dữ liệu → chưng cất → phản hồi → đánh giá → ra bản).

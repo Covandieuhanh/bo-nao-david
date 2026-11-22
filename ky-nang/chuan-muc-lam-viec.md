@@ -23,7 +23,7 @@ Luật nội dung (nguyên văn lời David, giọng David, lằn ranh) không p
 
 ## 1. Đầu việc: đọc đúng phần cần
 - Đặt **Mục tiêu** và **Xong khi** cho việc (mục 5).
-- Đi theo đường: bảng chọn skill trong `AGENTS.md` → `SKILL.md` → chỉ những khối, hồ sơ mà bước đang làm cần.
+- Đi theo đường: cây quy trình `quy-trinh.md` (gốc, rồi đúng lá của việc) → file quy trình của lá → chỉ những khối, hồ sơ mà bước đang làm cần.
 - Không đọc cả repo. Không đọc `references/`, `changelog`, `hoc-tu-*` trừ khi đang cân nhắc đổi luật hoặc đang gỡ lỗi.
   `loi-thuong-gap.md` của skill đọc một lần ở đầu phiên.
 - File dài: tìm (`grep`) rồi đọc đúng đoạn. Đã đọc trong phiên thì không đọc lại.

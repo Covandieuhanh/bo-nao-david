@@ -99,6 +99,8 @@ khi không rõ file nào là mẫu. "Giống video trước" thì lấy token ph
 | 12 | David chốt bản cuối → giao, dọn, đưa dự án lên Drive (`../quy-tac-chung.md` mục 8, dòng cuối) | [17](../mo-dun/17-kiem-soat-chat-luong/README.md) | `cho-dang.sh` → `don-tap.py` → `luu-drive.sh` (nền) |
 
 ### Tạo dự án
+`$SKILL` trong mọi lệnh của skill này: `SKILL=~/Documents/bo-nao-david/ky-nang/san-xuat-video/dung-video-theo-phong-cach` (máy đã cài
+bộ não: `~/.claude/skills/dung-video-theo-phong-cach` trỏ cùng chỗ). Video mẫu không có thì để `""`.
 
 ```bash
 zsh $SKILL/scripts/tao-du-an.sh "<video gốc>" "<video mẫu>" <tên-ngắn>
@@ -159,6 +161,8 @@ nó, rồi `xem-truoc-ban-dung.py`.
 ## Tài liệu kèm (chỉ đọc khi bước cần, cân nhắc đổi luật hoặc gỡ lỗi)
 
 - `references/loi-thuong-gap.md` — lỗi đã gặp và cách tránh (đọc một lần đầu phiên).
+- `references/doan-thu.md` — dựng đoạn thử ngắn cho David xem trước khi dựng cả video.
+- `references/tach-theo-huong.md` — tách một buổi dài thành nhiều video theo hướng (`tach-video.py`).
 - `references/phan-tich-phong-cach.md` — đọc video mẫu thành token phong cách; bảng font Google có tiếng Việt.
 - `references/thiet-ke-canh.md` — các loại cảnh có sẵn, khi nào dùng loại nào, vùng an toàn.
 - `references/vi-du-canh.js` — kịch bản 17 cảnh thật đã duyệt.

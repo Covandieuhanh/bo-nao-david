@@ -4,6 +4,13 @@ description: "Sổ thay đổi skill dựng video theo phong cách: quyết đ�
 
 # Sổ thay đổi — dung-video-theo-phong-cach (quyết định của người dùng + lý do)
 
+## 22/11/2026 (khuya): việc gì cũng có quy trình — cây quy trình của bộ não
+- David: *"Tất cả phần chung phải có quy trình. Quy trình từ gốc rồi đến các phần khác đều phải có. Luôn đi từ gốc phát triển lên"*
+  (sổ chung: `co-so-tri-thuc/bo-nho/quy-tac-viec-gi-cung-co-quy-trinh.md`).
+- Skill này: thêm lá B5 `references/doan-thu.md` (đoạn thử trước khi dựng cả video); `tach-theo-huong.md` viết lại theo khung lá (thứ tự
+  với 4 phần, lằn ranh mặc định giữ lời, `$SKILL`, clip ngắn, giao theo lá A6); SKILL.md định nghĩa `$SKILL`.
+- Phiên thử chỉ đọc GitHub tự đi đúng gốc rồi tới lá B4, B2, B3; các chỗ mơ hồ nó chỉ ra đã sửa, còn lại ghi ở báo cáo cho David.
+
 ## 22/11/2026 (đêm): GitHub luôn dựng lại được kết quả mới nhất
 - David: *"luôn luôn ở các phiên mới hoặc ai mới hay thiết bị mới hoàn toàn khi đọc được github là có thể làm ra ngay được kết quả như
   những trao đổi mới nhất. Luôn luôn như vậy"*.

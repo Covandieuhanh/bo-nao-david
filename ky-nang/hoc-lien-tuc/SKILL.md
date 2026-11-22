@@ -91,3 +91,11 @@ sau vài video: ra bản khi 2–5 đạt, ghi giả thuyết cho thước 1 và
 - Script làm phần đếm, tìm; Claude chỉ đọc kết quả gọn. Không đọc cả nhật ký phiên.
 - Một lượt nhìn lại mỗi tuần; Việc 2 chỉ khi có số liệu mới (ít nhất 3 video từ lần học trước) hoặc David gọi.
 - Việc nặng chạy trong phiên Claude Code riêng (bot giao qua `giao-viec.sh`), không chạy trong bot Telegram.
+
+## Xong khi
+- **Việc 1 (nhìn lại tuần):** có bộ 4 phần gửi David (hoặc báo "tuần này không có gì cần sửa" kèm số tín hiệu đã đọc); sửa đã duyệt nằm ở
+  đúng một nhà, có dòng changelog, đã đẩy GitHub, báo David một dòng mỗi thay đổi.
+- **Việc 2 (học hình mẫu):** phiếu học có số liệu đo kèm ngày đo, mỗi cách học có dấu hiệu nhận ra và nguồn; phần đưa vào skill đã duyệt và có code / luật thật.
+- **Việc 3 (học thành skill):** cách làm thành một lá trong cây quy trình `quy-trinh.md` (file quy trình đủ khung, script trong repo), chạy thử
+  một lần ra đúng kết quả.
+- **Việc 4 (nâng cấp):** thước đo sau tốt hơn hoặc bằng trước ở thước 2–5, `do-chong-cheo.py` dưới ngưỡng, có mốc `nang-cap-<n>`.

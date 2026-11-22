@@ -458,3 +458,7 @@ Then append the build's row to `<workspace>/dau-hieu-nhan-dang.md`.
 
 Changes to the skill itself, and the build findings that drove them, are logged
 in [nhat-ky-thay-doi.md](nhat-ky-thay-doi.md).
+
+## Xong khi
+- Trang chạy ở địa chỉ máy (local URL), đã cuộn thử hết các nhịp ở Step 5 và chụp ảnh kiểm từng nhịp; phần nào chưa kiểm được thì ghi rõ.
+- Có thư mục dựng gồm `BRIEF.md`, báo cáo ngắn theo mục "Output", và đã thêm một dòng vào `<workspace>/dau-hieu-nhan-dang.md`.
