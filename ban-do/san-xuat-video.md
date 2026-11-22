@@ -28,6 +28,7 @@ Gốc: [bản đồ bộ não](README.md). Chiến lược kênh: [chien-luoc-no
 - [loi-thuong-gap](../ky-nang/san-xuat-video/dung-video-theo-phong-cach/references/loi-thuong-gap.md) — Lỗi thường gặp khi dựng video (ffmpeg, Remotion, Whisper…) và cách tránh.
 - [nhat-ky-thay-doi](../ky-nang/san-xuat-video/dung-video-theo-phong-cach/references/nhat-ky-thay-doi.md) — Sổ thay đổi skill dựng video theo phong cách: quyết định của David và lý do.
 - [nhieu-doan-video](../ky-nang/san-xuat-video/dung-video-theo-phong-cach/references/nhieu-doan-video.md) — Chế độ ghép nhiều clip thành vlog kiểu chương trình (teaser, chia vòng, phụ đề).
+- [tach-theo-huong](../ky-nang/san-xuat-video/dung-video-theo-phong-cach/references/tach-theo-huong.md) — Tách một buổi nói dài thành nhiều video theo hướng công việc (`tach-video.py`, ví dụ `vi-du-tach-video.json`).
 - [phan-tich-phong-cach](../ky-nang/san-xuat-video/dung-video-theo-phong-cach/references/phan-tich-phong-cach.md) — Đọc video mẫu thành token phong cách (ngôn ngữ trình bày), không sao chép khung hình.
 - [thiet-ke-canh](../ky-nang/san-xuat-video/dung-video-theo-phong-cach/references/thiet-ke-canh.md) — Thiết kế kịch bản cảnh motion graphics: chọn bố cục, cảnh minh hoạ theo lời.
 

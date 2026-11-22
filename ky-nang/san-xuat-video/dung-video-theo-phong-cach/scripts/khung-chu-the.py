@@ -15,7 +15,7 @@ Chạy SAU làm sạch (bản sạch), TRƯỚC chép lại phụ đề / vi-tri
 """
 import json, os, subprocess, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from _chung import load, node_env
+from _chung import load, node_env, ma_hoa_h264
 
 P = os.path.expanduser(sys.argv[1]); MODE = sys.argv[2] if len(sys.argv) > 2 else "luoi"
 M = os.path.join(P, "tu-lieu"); CK = os.path.join(P, "kiem-tra/khung"); os.makedirs(CK, exist_ok=True)
@@ -84,7 +84,7 @@ run(["ffmpeg", "-y", "-v", "error", "-stats", "-loop", "1", "-framerate", FPS, "
      f"[2:v]crop={cw}:{ch}:'{pw_expr('x')}':'{pw_expr('y')}',scale={PW}:{PH}:flags=lanczos,format=yuva420p[c];"
      f"[1:v]format=gray[m];[c][m]alphamerge[p];[0:v][p]overlay={PX}:{PY}:shortest=1,format=yuv420p,setsar=1[v]",
      "-map", "[v]", "-map", "2:a", "-t", f"{dur:.3f}", "-r", FPS,   # -t bắt buộc: nền + mặt nạ lặp vô hạn → không có -t thì chạy mãi (11/11/2026 ra 7 GB)
-     "-c:v", "h264_videotoolbox", "-b:v", "16M", "-c:a", "copy",
+     *ma_hoa_h264('16M'), "-c:a", "copy",
      "-movflags", "+faststart", out])
 k = {"x": PX / W, "y": PY / H, "w": PW / W, "h": PH / H, "phia": cfg.get("phia", "trai")}
 open(os.path.join(P, "chuyen-dong/src/khung.js"), "w", encoding="utf-8").write(

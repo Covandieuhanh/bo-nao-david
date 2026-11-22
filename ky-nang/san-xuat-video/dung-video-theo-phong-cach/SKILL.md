@@ -56,7 +56,8 @@ bộ nhận diện, phát hành. Dưới đây chỉ là luật RIÊNG của ski
 | Đầu vào | Chế độ | Làm theo |
 |---|---|---|
 | **1 video gốc** có người nói trước camera | Phủ đồ hoạ lên video gốc (giữ nguyên hình) | Công thức "Làm video" bên dưới |
-| **Nhiều file của cùng một buổi nói / cùng cảnh** (máy quay tách file, buổi 1:1, bài giảng), kể cả bản theo hướng cắt từ đó | **Nối file thành một video gốc** (`ffmpeg -f concat`, bỏ đoạn theo `phan-huong.md`) rồi làm như 1 video — khuôn này có đủ kho | Công thức "Làm video" |
+| **Nhiều file của cùng một buổi nói / cùng cảnh** (máy quay tách file, buổi 1:1, bài giảng) | **Nối file thành một video gốc** (`ffmpeg -f concat`, bỏ đoạn theo `phan-huong.md` của tập — khối 00) rồi làm như 1 video — khuôn này có đủ kho | Công thức "Làm video" |
+| **Một buổi nói dài nhiều chủ đề**, cần cắt đoạn thừa và **tách thành nhiều video theo hướng công việc** | Làm sạch + chép lời cả buổi một lần → phân hướng (`phan-huong.md`, khối 00) → `tach-video.py` → mỗi video một dự án, dựng như 1 video | `references/tach-theo-huong.md` |
 | **Nhiều cảnh khác nhau** (vlog, sự kiện, clip minh hoạ chen vào lời), hoặc clip không nói trước camera | **Ghép nhiều clip**: tự sắp mạch, clip minh hoạ trích đúng câu nói liên quan; tự soát kế hoạch rồi render | `references/nhieu-doan-video.md` (khối 11, hồ sơ `ghep-vlog`) |
 
 Mọi chế độ đều qua **chẩn đoán → tự chọn** (`../thiet-ke-bo-cuc/tu-chon.md`, bước 0: không chép kịch bản tập trước). Render đầy đủ bị

@@ -13,6 +13,8 @@ Luật tính (khung 1080×1920): tâm mặt nên ở ~800 px, cằm không xuố
 """
 import json, os, re, subprocess, sys
 from pathlib import Path
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.realpath(__file__)))
+from _chung import ma_hoa_h264   # bộ mã hoá theo máy (Mac / NVIDIA / CPU)
 
 P = Path(sys.argv[1]).expanduser()
 MODE = sys.argv[2] if len(sys.argv) > 2 else 'plan'
@@ -137,7 +139,7 @@ def single():
     fc = (f"[0:v]split[a][b];[a]scale={W}:{H},boxblur=30:2,eq=brightness=-0.08[bg];"
           f"[bg][b]overlay=x=0:y='-({expr})':eval=frame,format=yuv420p[v]")
     subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', str(src), '-filter_complex', fc, '-map', '[v]', '-map', '0:a?',
-                    '-c:v', 'h264_videotoolbox', '-b:v', '20M', '-c:a', 'copy', '-movflags', '+faststart', str(v)],
+                    *ma_hoa_h264('20M'), '-c:a', 'copy', '-movflags', '+faststart', str(v)],
                    check=True, env=ENV)
     print('đã nung →', v)
 

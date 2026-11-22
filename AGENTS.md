@@ -26,7 +26,7 @@ Làm nội dung về lãnh đạo, ba tầng làm chủ, phương pháp hay nhâ
 4. **Mạng xã hội và quyền riêng tư của David không tự động vào**: đăng, gửi, xoá, thao tác tài khoản mạng xã hội phải hỏi trước. Không bao giờ chạm mật khẩu, OTP, token, cookie, giấy tờ cá nhân.
 5. **Lời mới nhất thắng**: lời David nói sau cùng là luật hiện hành; sửa luật thì viết lại chính câu đó ở mọi nơi, không để hai bản cùng sống.
 6. **GitHub là bản sao lưu đầy đủ, đồng bộ liên tục của bộ não và skill, chia hai repo**:
-   - Repo công khai `bo-nao-david` chỉ giữ phần **dùng chung**: luật, hồ sơ, skill, script, khuôn. Máy nào của David kéo về cũng làm ra sản phẩm giống hệt Mac chính, video thì máy tự kiểm bằng `tu-dong-hoa/may-khac/kiem-may.sh`.
+   - Repo công khai `bo-nao-david` chỉ giữ phần **dùng chung**: luật, hồ sơ, skill, script, khuôn. Phiên mới, người mới hay máy mới (Mac, Windows qua WSL, Linux) chỉ cần kéo repo về là làm ra ngay sản phẩm đúng như **lần trao đổi mới nhất**: mọi luật, cách làm, script, mẫu vừa dùng ra kết quả phải nằm trong repo trước khi báo xong, không nằm ở thư mục tạm, bộ nhớ riêng của một AI hay lịch sử chat; script không ghi cứng công cụ chỉ một máy có (bộ mã hoá, đường dẫn). Video thì máy tự kiểm bằng `tu-dong-hoa/may-khac/kiem-may.sh`.
    - Repo riêng tư `bo-nao-david-mac` giữ phần **chỉ Mac chính**: bot Telegram, lịch tự chạy, trang xem kết quả, lưu trữ cũ. Danh sách phần riêng: `tu-dong-hoa/phan-rieng-mac.txt`. Hai repo dùng chung một thư mục trên Mac, nên Mac hỏng vẫn dựng lại được 100%.
    - Cách cài: `huong-dan-cai-dat.md`.
 

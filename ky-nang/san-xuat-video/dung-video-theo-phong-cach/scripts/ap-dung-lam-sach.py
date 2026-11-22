@@ -5,7 +5,7 @@
 #   zoom:   "none" (mặc định) = không phóng; "alt" = đoạn xen kẽ phóng 1,08× ở mối cắt (chỉ khi David yêu cầu)
 import glob, json, os, re, subprocess, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from _chung import node_env
+from _chung import node_env, ma_hoa_h264
 
 P = os.path.expanduser(sys.argv[1])
 MEDIA, O = os.path.join(P, "tu-lieu"), os.path.join(P, "kiem-tra", "lam-sach")
@@ -68,7 +68,7 @@ script = os.path.join(O, "bo-loc.txt")
 open(script, "w").write(";\n".join(fc))
 subprocess.run(["ffmpeg", "-y", "-v", "error", "-stats", "-i", raw, "-/filter_complex", script,
                 "-map", "[v]", "-map", "[a]", "-r", FR, "-fps_mode", "cfr",
-                "-c:v", "h264_videotoolbox", "-b:v", "20M", "-pix_fmt", "yuv420p",   # mã hoá phần cứng: libx264 chậm ~10×
+                *ma_hoa_h264('20M'), "-pix_fmt", "yuv420p",   # mã hoá phần cứng: libx264 chậm ~10×
                 "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", out], check=True, env=ENV)
 
 new_dur = float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", out], env=ENV))

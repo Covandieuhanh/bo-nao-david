@@ -1,0 +1,14 @@
+{
+ "_mo_ta": "Ví dụ đã làm thật 22/11/2026 (buổi gặp tap-dji0022-2111, 37 phút → 3 video theo hướng). Mốc = giây trong video gốc đã làm sạch, đúng đầu / cuối câu phụ đề. Đã bỏ: chào hỏi, chuyện riêng đối tác, giá / phí / hoa hồng, câu '8 triệu', 'em có 1 đội', công dụng sản phẩm sức khoẻ, xem số theo ngày sinh.",
+ "nguon": "~/Movies/tap-dji0022-2111/2-ban-day-du",
+ "dem": 0.12,
+ "video": {
+  "may-do-giai-phap": {"_huong": "giải pháp công nghệ AI", "topic": "MAY ĐO", "tuyen": "kien_thuc", "ytEnd": 20,
+   "doan": [[650.70, 670.00], [670.98, 866.64], [1040.00, 1060.80], [1080.00, 1083.14], [1096.08, 1105.66],
+            [1191.00, 1194.60], [1197.95, 1216.00], [1286.50, 1332.00], [1339.00, 1351.76]]},
+  "ket-noi-doanh-nhan": {"_huong": "trainer con người — tổ chức, kết nối", "topic": "KẾT NỐI", "tuyen": "kien_thuc", "ytEnd": 20,
+   "doan": [[373.86, 390.00], [1425.00, 1606.00], [2050.00, 2111.48]]},
+  "hanh-trinh-david": {"_huong": "câu chuyện cá nhân", "topic": "HÀNH TRÌNH", "tuyen": "kien_thuc", "ytEnd": 20,
+   "doan": [[86.00, 95.30], [128.00, 146.20], [270.00, 373.66], [530.00, 537.00]]}
+ }
+}

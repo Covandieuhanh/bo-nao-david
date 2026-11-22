@@ -53,3 +53,15 @@ Bản theo hướng: clip dọc D (1940–2052) · Trạng thái: đang dựng (
 | AI chỉ xử lý việc lặp đi lặp lại, không thay việc của con người | "chỉ dùng công nghệ AI để xử lý những tác vụ lặp đi lặp lại thôi" | 1940 (32:20) | sợ AI thay người / dùng sai chỗ | gói công nghệ | câu mở tư vấn |
 | May đo, không sản xuất hàng loạt; khoá AI rẻ học xong không dùng | "bọn em thuộc dạng may đo, bọn em không thuộc dạng sản xuất số lượng lớn" | 1956–2050 (32:36) | học khoá rẻ không áp dụng được | giải pháp số hoá theo vấn đề | ví dụ áo may sẵn |
 | Mua công cụ về không biết dùng cũng không hơn gì; ngồi với người làm rồi thì nhàn | "mua dạy nhờ khi không biết sử dụng là nó cũng không có gì hơn" | 1889 (31:29) | tự mày mò | gói kèm đào tạo | lý do cần trainer |
+
+## 22/11/2026 · tap-dji0022-2111 · cà phê ở Hà Nội với hai đối tác (một anh điều hành hệ thống bán hàng, một chị trợ lý doanh nghiệp)
+Bản theo hướng: bản ngang 5:31 `tap-may-do-giai-phap` · Trạng thái: đã dựng 22/11, chờ đăng
+| Ý | Lời gốc | Mốc | Nỗi đau / mục tiêu | Bán được gì | Dùng cho việc |
+|---|---|---|---|---|---|
+| Tự động làm video chỉ là giải pháp rất nhỏ; chính ngạch là giải nỗi đau và nhu cầu | "Còn cái chính ngạch của bọn em là bọn em giải quyết được nỗi đau và nhu cầu" | 683–690 (11:23) | — | định vị gói | câu mở tư vấn |
+| Công nghệ thay phần quy trình lặp đi lặp lại, không thay con người | "mình không đưa công nghệ để thay thế con người nhé" | 695–706 (11:35) | sợ AI thay người | số hoá việc lặp | câu mở tư vấn |
+| Không bán khoá học / bộ công cụ tải về, mà may đo như bộ vét | "Bọn em giống như kiểu may đo vét ấy" | 708–750 (11:48) | công cụ chung không vừa | giải pháp may đo | câu định vị |
+| Ba bước: lấy nỗi đau → tự bỏ chi phí làm demo → dùng thử, hiệu quả rồi mới đàm phán | "Mình phải cầm nắm, mình phải được sử dụng" | 758–816 (12:38) | khách không hình dung được | bước đầu phễu: demo theo nỗi đau | kịch bản buổi một |
+| Mỗi bản demo giữ làm khuôn gốc, gặp nỗi đau giống thì có sẵn; may tiếp eo, cổ cho từng người | "giống như chị đi ra may cái áo thì có phải người ta có một khuôn sẵn không?" | 824–857 (13:44) | — | tái dùng demo | giải thích cách làm |
+| Ra lệnh cho AI như nói với người dựng: cắt ý này, bỏ phần thừa, thêm chữ | "mình sẽ có yêu cầu người ta là cắt ý này" | 1040–1061 (17:20) | dựng video mất thời gian | gói video tự động | ví dụ minh hoạ |
+| Cùng công cụ nhưng mỗi người dùng khác; quan trọng là dùng được | "Quan trọng là anh phải dùng được" | 1339–1352 (22:19) | mua về không dùng | gói kèm đào tạo | câu chốt |

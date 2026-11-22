@@ -4,6 +4,17 @@ description: "Sổ thay đổi skill dựng video theo phong cách: quyết đ�
 
 # Sổ thay đổi — dung-video-theo-phong-cach (quyết định của người dùng + lý do)
 
+## 22/11/2026 (đêm): GitHub luôn dựng lại được kết quả mới nhất
+- David: *"luôn luôn ở các phiên mới hoặc ai mới hay thiết bị mới hoàn toàn khi đọc được github là có thể làm ra ngay được kết quả như
+  những trao đổi mới nhất. Luôn luôn như vậy"*.
+- Chỗ hổng tìm thấy: script tách video, chụp ảnh kiểm, xuất chỉ nằm ở thư mục tạm của phiên; 6 script ghi cứng `h264_videotoolbox` (chỉ Mac)
+  nên máy Windows / Linux lỗi ở làm sạch, đổi khung, nâng lớp, highlight; phiếu `phan-huong.md` + nhật ký nội dung (khối 00) chưa làm cho buổi này.
+- Sửa: `scripts/tach-video.py` (cắt + tạo dự án + phụ đề dời mốc + `canh.js` khung có `g()`), `scripts/anh-kiem-canh.sh`,
+  `references/tach-theo-huong.md` (nối khối 00), `references/vi-du-tach-video.json`; `_chung.py` `ma_hoa_h264()` tự chọn videotoolbox /
+  nvenc / libx264, thay ở 6 script; SKILL.md bảng chế độ thêm dòng tách theo hướng. Luật: `AGENTS.md` luật 6 + `chuan-muc-lam-viec.md` mục 4 (5).
+- Kiểm: chạy lại `tach-video.py` với kế hoạch hôm nay → 3 video cùng thời lượng (330,6 · 259,4 · 139,1 s), phụ đề giống từng chữ; khung
+  `canh.js` chạy được; dự án thử đã xoá. Ghi `~/Movies/tap-dji0022-2111/phan-huong.md` + nhật ký nội dung hướng 2, 3.
+
 ## 22/11/2026 (tối): tách buổi gặp dài thành nhiều video theo hướng công việc
 - David: *"làm lại cả toàn bộ video đi. Cắt những đoạn thừa và phân ra thành các đoạn video theo các hướng công việc"* — duyệt mặc định
   (cắt giá / phí / hoa hồng, công dụng sản phẩm sức khoẻ, xem số theo ngày sinh; giữ lời "Chữa Lành Doanh Nhân", "tự do tài chính" nhưng

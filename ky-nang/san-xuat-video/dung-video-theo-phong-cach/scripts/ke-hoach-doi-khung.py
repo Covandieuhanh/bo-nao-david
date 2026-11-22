@@ -6,7 +6,7 @@
 #   không có người/nhiều thứ cần thấy cùng lúc) ; cx = tâm khung 0–1 (tuỳ chọn, ghi đè) ; follow = khung trượt theo người
 import glob, json, os, re, shutil, statistics as st, subprocess, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from _chung import node_env
+from _chung import node_env, ma_hoa_h264
 
 P, MODE = os.path.expanduser(sys.argv[1]), sys.argv[2]
 O, MEDIA = os.path.join(P, "kiem-tra", "doi-khung"), os.path.join(P, "tu-lieu")
@@ -189,7 +189,7 @@ def apply():
     script = os.path.join(O, "bo-loc.txt"); open(script, "w").write(fc)
     out = os.path.join(MEDIA, "video-goc.mp4")
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-stats", "-i", v, "-/filter_complex", script, "-map", "[v]", "-map", "0:a",
-                    "-r", FR, "-c:v", "h264_videotoolbox", "-b:v", "20M", "-pix_fmt", "yuv420p", "-c:a", "copy",
+                    "-r", FR, *ma_hoa_h264('20M'), "-pix_fmt", "yuv420p", "-c:a", "copy",
                     "-movflags", "+faststart", out], check=True, env=ENV)
     open(os.path.join(P, "chuyen-dong", "src", "du-an.js"), "w").write(
         "// Thông số video gốc (đã cắt dọc từ bản ngang) — tự điền bởi ke-hoach-doi-khung.py apply\n"

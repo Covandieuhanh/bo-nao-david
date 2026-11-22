@@ -12,11 +12,13 @@
 #     tua). --tua bật lại kiểu cũ: chèn 0,4 s giữ khung + nhoè dọc ở mối nhảy (chip ⏩ + thanh tập gốc do bước dựng thêm).
 #   - cắt khoảng lặng ≥ 0,45 s BÊN TRONG câu còn 0,24 s (khoang-lang.py) — trừ câu có zoom (cú chốt giữ nhịp)
 #   - fade âm 15/30 ms ở mỗi mối (chống tiếng "tách"), mọi nhánh tiếng về fltp 48 kHz stereo trước concat
-#   - mã hoá phần cứng h264_videotoolbox (libx264 chậm ~10×)
+#   - mã hoá phần cứng theo máy — ma_hoa_h264() (libx264 chậm ~10×)
 # Ra cat/<id>.mp4 (khung như nguồn) + cat/<id>-map.json (mốc clip ↔ mốc nguồn) + bảng ở cat/<id>.md.
 # Tự kiểm: chép lời lại bản cắt (whisper.cpp) → so với "text" đã chọn; chữ thừa (lọt từ câu bên cạnh) / chữ thiếu (bị cụt)
 # in ra và ghi cuối cat/<id>.md. Bỏ kiểm bằng --khong-kiem.
 import difflib, json, os, re, subprocess, sys
+import sys as _s, os as _o; _s.path.insert(0, _o.path.join(_o.path.dirname(_o.path.realpath(__file__)), '../../dung-video-theo-phong-cach/scripts'))
+from _chung import ma_hoa_h264   # bộ mã hoá theo máy (Mac / NVIDIA / CPU)
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../mo-dun")); import ho_so as hoso   # tham số: ho-so-thuong-hieu/highlight
 _H = hoso.load('doan-noi-bat')
@@ -105,7 +107,7 @@ for opt in plan["options"]:
     fc.append("".join(f"[v{i}][a{i}]" for i in range(len(segs))) + f"concat=n={len(segs)}:v=1:a=1[v][a]")
     out = os.path.join(P, "cat", f"{opt['id']}.mp4"); os.makedirs(os.path.dirname(out), exist_ok=True)
     args += ["-filter_complex", ";".join(fc), "-map", "[v]", "-map", "[a]",
-             "-c:v", "h264_videotoolbox", "-b:v", "20M", "-c:a", "aac", "-b:a", "256k", "-movflags", "+faststart", out]
+             *ma_hoa_h264('20M'), "-c:a", "aac", "-b:a", "256k", "-movflags", "+faststart", out]
     subprocess.run(args, check=True, env=env)
     t, rows, mp, jumps = 0.0, [], [], []
     for j, s in enumerate(segs):

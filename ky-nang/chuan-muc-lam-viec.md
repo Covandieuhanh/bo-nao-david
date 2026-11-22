@@ -70,7 +70,10 @@ Trong 4 phần, cách chọn từng điểm:
 Ghi lại gì, ở đâu, đi lên tầng nào: trục `../co-so-tri-thuc/truc-tri-thuc.md` (mục này là vòng học "mỗi việc" của trục).
 - **Tự soát trước khi báo xong:** (1) kiểm theo "Xong khi" và tiêu chí của skill; (2) tự hỏi "đã xong hết chưa?" rồi quét lại một lượt
   tìm chỗ sót; (3) đổi tên, đổi cấu trúc, đổi luồng thì chạy thử trọn một quy trình thật trước khi báo, vì lỗi hay nằm ở chỗ ghép nối;
-  (4) việc phức tạp, rủi ro cao: đề nghị một agent chưa tham gia việc soát lại, chỉ bắt lỗi làm sai yêu cầu (cần David cho phép, mục 3).
+  (4) việc phức tạp, rủi ro cao: đề nghị một agent chưa tham gia việc soát lại, chỉ bắt lỗi làm sai yêu cầu (cần David cho phép, mục 3);
+  (5) **người khác làm lại được ngay từ GitHub** (`AGENTS.md` luật 6): quét thư mục tạm của phiên và bộ nhớ riêng của AI — script, mẫu,
+  cách làm, luật vừa dùng ra kết quả mà repo chưa có thì đưa vào đúng skill (file + một dòng chỉ đường trong SKILL.md hoặc khối), thay
+  phần ghi cứng của một máy bằng phần tự nhận máy, rồi đẩy GitHub. Tự hỏi: "một phiên mới chỉ đọc repo có làm ra đúng kết quả này không?"
 - **Báo cáo ngắn, tiếng Việt:** đã làm gì · đã kiểm gì · chưa kiểm gì · điều cần David xác nhận.
 - **Báo lên Telegram** khi xong một việc trọn vẹn (render xong, đăng xong, sửa bộ não xong…) hoặc khi kẹt cần David quyết, không báo
   sau mỗi lượt: `bash tu-dong-hoa/so-tay/bao-cao.sh "✅ Xong: … · Ở đâu: … · Còn lại: …"` hoặc `"❓ Chờ anh: …"`, tối đa 5 dòng. Việc giao

@@ -12,6 +12,25 @@ def node_env():
     env["PATH"] = "/opt/homebrew/bin:" + env["PATH"]
     return env
 
+_MA_HOA = None
+
+def ma_hoa_h264(bitrate="20M"):
+    """Tham số ffmpeg mã hoá H.264 hợp với MÁY ĐANG CHẠY — để máy nào kéo GitHub về cũng chạy được, không ghi cứng bộ mã hoá của một máy:
+    Mac → h264_videotoolbox · máy có card NVIDIA (Windows WSL, Linux) → h264_nvenc · còn lại → libx264 (chậm hơn nhưng máy nào cũng có).
+    Thử mã hoá 1 khung để chắc bộ đó chạy thật (ffmpeg có thể liệt kê nvenc mà máy không có card)."""
+    global _MA_HOA
+    if _MA_HOA is None:
+        _MA_HOA = "libx264"
+        for enc in ("h264_videotoolbox", "h264_nvenc"):
+            r = subprocess.run(["ffmpeg", "-v", "error", "-f", "lavfi", "-i", "color=c=black:s=256x144:d=0.1", "-frames:v", "1",
+                                "-c:v", enc, "-f", "null", "-"], capture_output=True, env=node_env())
+            if r.returncode == 0:
+                _MA_HOA = enc
+                break
+    if _MA_HOA == "libx264":
+        return ["-c:v", "libx264", "-preset", "fast", "-crf", "17"]
+    return ["-c:v", _MA_HOA, "-b:v", bitrate]
+
 def node_eval(project, expr):
     """Đọc dữ liệu JS của dự án (du-an.js / canh.js) qua node."""
     code = (f"Promise.all([import('./src/du-an.js'), import('./src/canh.js'), import('./src/dau-ra.js').catch(() => ({{}}))])"

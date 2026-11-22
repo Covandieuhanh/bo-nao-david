@@ -57,3 +57,14 @@ Bản theo hướng: bản dài ngang khoảng 17 phút (S1, S3, S5, S7, S9, S11
 | "Nghiệp": không làm việc mình không tự tâm | "Tớ không làm được cái gì liên quan đến việc là mình không tự tâm mình ra" | 1735 (28:55) | làm việc trái lòng | gói trainer | chuyện thật của David |
 | Chạy theo việc của người khác thì mệt, chán | "em cứ chạy theo người ta em cứ cuốn vào cái việc của người ta" | 2463 (41:03) | bị cuốn | gói trainer | ví dụ |
 | (anh đàn anh) phễu: KOL/KOC đổ về, quy trình chuyển đổi; online nhân bản được, offline thì không | "offline thì nó mạnh nhưng nó bị một cái là anh không nhân bản được" | 2052–2449 (34:12) | làm chủ thị trường | — | ý tham khảo |
+
+## 22/11/2026 · tap-dji0022-2111 · cà phê ở Hà Nội với hai đối tác (một anh điều hành hệ thống bán hàng, một chị trợ lý doanh nghiệp)
+Bản theo hướng: bản ngang 4:19 `tap-ket-noi-doanh-nhan` · Trạng thái: đã dựng 22/11, chờ đăng · Kho 100: ⚠️ chưa thấy ý khớp
+| Ý | Lời gốc | Mốc | Nỗi đau / mục tiêu | Bán được gì | Dùng cho việc |
+|---|---|---|---|---|---|
+| Mỗi người là một mảnh ghép, nhận đúng vai thì hay hơn | "Tại vì mỗi người là một mảnh ghép mà" | 378–390 (6:18) | làm hết một mình | — | câu đứng lớp về vai trò |
+| Kết hợp tổ chức hội thảo thường xuyên mà không động chạm sản phẩm của nhau | "Anh em thì không động chạm vào sản phẩm" | 1425–1440 (23:45) | sợ bị giành khách | hội thảo định kỳ | câu mời hợp tác |
+| Mong muốn không phải sở hữu mọi người, chỉ là doanh nhân được gỡ nỗi đau | "Cái mong muốn của em không phải là sở hữu mọi người" | 1473–1493 (24:33) | — | — | câu định vị |
+| Năng lực mạnh nhất: tổ chức và kết nối nguồn lực | "Kết nối tất cả các nguồn lực lại" | 1491–1525 (24:51) | thiếu kết nối | hội thảo, kết nối | câu giới thiệu bản thân |
+| Người trung lập nói về giải pháp của người khác thì thêm điểm → bán chéo | "Em nói thì nó lại thêm 1 điểm" | 1560–1606 (26:00) | tự khen không ai tin | — | ví dụ về uy tín |
+| Trước đây kết nối chỉ có tình cảm, không thu nhập; có công nghệ mới thành nghề | "nếu như không có công nghệ thì em không làm điều này được" | 2050–2111 (34:10) | kết nối không ra tiền | — | câu chuyện của trainer |
