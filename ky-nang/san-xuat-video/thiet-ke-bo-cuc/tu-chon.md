@@ -119,7 +119,8 @@ nhẹ nhàng"*). Với mỗi ý đã qua 4a (cần hình), đọc lại các cá
 - `giai-mau.md` — 19 ca của 8 kênh hình mẫu (mở đầu, chia đoạn, báo hiệu, lời kèm hình, tin, khi nào không dựng gì).
 - `nguon-tham-khao/` — Ali Abdaal và Joseph (14 cách), MagentX (A–G, có dấu hiệu nhận ra), Sang Huỳnh (8 bố cục, nhịp, âm thanh),
   Cường Mê AI (6 nguyên lý); `dung-podcast/references/hoc-tu-hieu-nguyen-50.md` cho podcast.
-- Mẫu khung nhiều người, chỗ trống thật (`rieng/duong-may.jsx`): chương lớn, gạch thay, chuỗi nút, thẻ lật, số mốc, vẽ đúng vật (bộ vét).
+- Mẫu khung nhiều người, chỗ trống thật (`rieng/duong-may.jsx`): chương lớn, gạch thay, chuỗi nút, thẻ lật, số mốc, câu đắt, lời nhắc gửi
+  AI, thẻ tên + vai trò, vẽ đúng vật (bộ vét, khuôn áo, mảnh ghép).
 
 Cách chọn: ý giống nhau thì cùng cách; ý khác loại thì **đổi sang cách khác trong kho** để video không lặp một kiểu (ví dụ: đổi trọng tâm →
 gạch thay · quy trình → chuỗi nút · liệt kê ngang hàng → thẻ · các bước có số → số mốc · hình ảnh so sánh → vẽ đúng vật). Mỗi cảnh một cách,

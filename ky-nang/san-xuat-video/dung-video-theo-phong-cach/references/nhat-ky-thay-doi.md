@@ -4,6 +4,17 @@ description: "Sổ thay đổi skill dựng video theo phong cách: quyết đ�
 
 # Sổ thay đổi — dung-video-theo-phong-cach (quyết định của người dùng + lý do)
 
+## 22/11/2026 (tối): tách buổi gặp dài thành nhiều video theo hướng công việc
+- David: *"làm lại cả toàn bộ video đi. Cắt những đoạn thừa và phân ra thành các đoạn video theo các hướng công việc"* — duyệt mặc định
+  (cắt giá / phí / hoa hồng, công dụng sản phẩm sức khoẻ, xem số theo ngày sinh; giữ lời "Chữa Lành Doanh Nhân", "tự do tài chính" nhưng
+  không làm hình, quyết trước khi đăng).
+- Cách làm (dùng lại được): đọc lời cả buổi theo khối 20 giây → gán mỗi đoạn vào một hướng (`david.md` mục 1: tài chính · trainer con
+  người · giải pháp công nghệ AI; buổi này không có tài chính) → cắt theo mốc phụ đề đã soát, đệm 0,12 s, fade âm 50 ms → mỗi video một dự án,
+  phụ đề dời theo đoạn cắt (không chép lời lại) → `canh.js` viết mốc theo video gốc, hàm `g()` đổi sang mốc đã cắt.
+  Ra 3 video: `tap-may-do-giai-phap` 5:31 · `tap-ket-noi-doanh-nhan` 4:19 · `tap-hanh-trinh-david` 2:19.
+- Kho thêm 5 dạng trong `rieng/duong-may.jsx` (mỗi dạng ghi nguồn): câu đắt (The Diary Of A CEO ca 1), lời nhắc gửi AI dạng bong bóng
+  (Sang Huỳnh #5), khuôn áo và mảnh ghép (vẽ đúng vật — Ali Abdaal ca 13), thẻ tên + vai trò (The Diary Of A CEO ca 10).
+
 ## 22/11/2026 (chiều): không luật cứng — tận dụng tối đa kho, kho hình mẫu là thực đơn mở ra mỗi lần chọn hình
 - David: *"không cần tạo ra những cái luật cố định … nguyên tắc là khi đang hiển thị nội dung, con người đang trao đổi, thì không che nội
   dung chính … motion graphics có thể tuỳ biến tự do"*; rồi *"kiểm tra trong kho dữ liệu … skill tự học được rất nhiều từ các kênh là các
