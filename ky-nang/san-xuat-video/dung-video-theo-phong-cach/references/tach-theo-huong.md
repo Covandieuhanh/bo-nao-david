@@ -5,7 +5,7 @@ description: "Tách một buổi nói dài (buổi gặp, buổi 1:1, bài giả
 # Tách buổi dài thành nhiều video theo hướng
 
 Dùng khi David nói "cắt đoạn thừa, phân ra thành các video theo hướng công việc" hoặc gửi một buổi nói dài nhiều chủ đề. Làm thật lần đầu
-22/11/2026 (buổi gặp 37 phút → 3 video); kế hoạch dùng lại được ở [vi-du-tach-video.json](vi-du-tach-video.json).
+22/11/2026 (buổi gặp 37 phút thành 3 video); kế hoạch dùng lại được ở [vi-du-tach-video.json](vi-du-tach-video.json).
 
 ## 1. Làm sạch + chép lời buổi gốc một lần
 Công thức "Làm video" bước 1–5 cho cả buổi (một dự án `tap-<buổi>`): làm sạch, chép lời đã soát (`chuyen-dong/src/phu-de.js`). Các video
