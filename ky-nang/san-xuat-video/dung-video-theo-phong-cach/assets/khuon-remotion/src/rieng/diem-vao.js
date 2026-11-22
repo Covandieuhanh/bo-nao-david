@@ -8,4 +8,6 @@ import {MauMach} from './mau-mach';
 // Mẫu dùng lại được (22/11/2026): nhãn ở chỗ trống thật (tập tham quan, David duyệt 21/11) · đường may vẽ tiếp, không che ai
 import {NhanTram} from './nhan-tram';
 import {DuongMay} from './duong-may';
-export const VE = {MauMach, NhanTram, DuongMay};
+// Intro tiêu đề trên cảnh không lời (việc #39, 22/11): dòng nhỏ + tên rơi từng chữ + chữ to đập, quét sáng — chỉ khi David yêu cầu intro
+import {IntroTieuDe} from './intro-tieu-de';
+export const VE = {MauMach, NhanTram, DuongMay, IntroTieuDe};

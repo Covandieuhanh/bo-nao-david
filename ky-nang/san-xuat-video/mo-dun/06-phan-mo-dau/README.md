@@ -19,7 +19,8 @@ description: "Khối 06 mở đầu 0–3 giây: câu chạm, thẻ tít nguyên
 - 0–3 s nói ngay video về cái gì / đang đặt cược gì (nguyen-tac 1).
 - **Làm video, podcast: không thẻ tít mở đầu mặc định** — tít tự rút ý có thể chưa đúng điều David muốn truyền tải. 0–3 s là lời thật
   của David (câu chạm). Chỉ làm `hook` khi David yêu cầu, chữ nguyên văn. `hook` 2 dòng ở khung ngang đang bị cắt dòng 2 — sửa Hook
-  trước khi dùng cho khung ngang.
+  trước khi dùng cho khung ngang; hoặc dùng cảnh tự vẽ `IntroTieuDe` (`rieng/intro-tieu-de.jsx`: dòng nhỏ + tên rơi từng chữ + chữ to đập, quét sáng,
+  đặt trên cảnh không lời 3–3,5 giây; mẫu việc #39).
 - Thẻ tít (highlight, hoặc khi David yêu cầu) được đè lên người 0–2,5 s (khối 05 vẫn chuyển toàn màn hình nếu che mặt/thân trên).
 - **Highlight:** thẻ tít = **cụm nguyên văn đắt nhất** của clip, ngắn, 2 dòng (`cat-doan-noi-bat` luật 7) (`"tit"` trong
   phuong-an.json → `danh-sach-cat-doan-noi-bat.py` tự đặt pow 0–2,5 s); khung 0,3 s = ảnh bìa.

@@ -22,6 +22,11 @@ description: "Khối 02 làm sạch video: cắt thừa đầu cuối, câu nói
 - **Làm lại video cũ:** cắt màn tít + lời chào / giới thiệu kênh cũ bằng cut tay `ok: true` (mọi cut tự động `ok: false`,
   `zoom: "none"`); chữ / viền kênh cũ in trong hình thì cắt khung (gotchas). Sau `ap-dung-lam-sach.py` chạy `doi-moc-loi.py "$P"`, không chép lại.
 - Các luật cắt ở mục dưới chỉ cho video tối đa 3 phút.
+- **Bản ngắn chỉ giữ một ý** (David: "cắt hết đoạn thừa, chỉ tập trung một ý"): chọn đoạn từ bản chép lời cả video, cắt từng đoạn
+  (`-ss -t`, mã hoá lại cùng số khung hình) rồi `concat` thành video gốc trước khi chạy `tao-du-an.sh`; điểm vào / ra dò bằng `diem-ngat.py`
+  và chép lời lại đoạn đã ghép. Cảnh không lời giữ lại có chủ ý (cảnh lia phòng làm intro, cảnh minh hoạ) bị máy gợi ý cắt là "thừa đầu"
+  hay "lặng": đổi cut đó thành `ok: false`. Whisper chép cả video ghép hay lệch mốc ở cảnh không lời: lấy mốc từng chữ bằng cách chép riêng
+  từng đoạn nói rồi cộng giờ bắt đầu đoạn (việc #39, 22/11).
 
 ## Cách làm
 
