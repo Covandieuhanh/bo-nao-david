@@ -17,8 +17,12 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
 - **Mọi lựa chọn tự setup theo nội dung nguồn**, để phát huy tối đa sức mạnh của AI: khuôn, bố cục, lớp thông tin, kiểu cảnh, thẩm mỹ,
   nhạc, khung đều do người dựng (AI nào cũng vậy) lập luận từ chính tài nguyên (`thiet-ke-bo-cuc/nguoi-xem-can-gi.md` → `tu-chon.md`), không chép từ tập trước, không chờ
   David chỉ. Máy chặn render khi chưa chẩn đoán (`soat-canh.mjs`).
-- **Hiểu hơn cầu kì.** Kho học được là để chọn cho hợp từng loại nội dung, không nhét hết vào một video. Mỗi video chỉ dùng vài kiểu
-  hợp nhất, tự cân; hiệu ứng nào không giúp người xem hiểu nhanh hơn thì bỏ. Rối hay lỗi hình thì bớt, không thêm.
+- **Tận dụng tối đa kho đã học, tự do.** Mọi hiệu ứng, motion graphic, chuyển cảnh (kể cả 3D) đã học hoặc tự viết đều dùng được ở
+  mọi video, không chờ nội dung "đúng loại" — nội dung kênh chủ yếu là cung cấp thông tin và trò chuyện, chờ thì không bao giờ dùng.
+  Đa dạng nghĩa là **đổi hiệu ứng qua các cảnh** để gây ấn tượng, không phải chồng nhiều thứ trong một khung: mỗi lúc một điểm nhìn,
+  gọn gàng, rối thì bớt. Không có kiểu nào bắt buộc phải dùng hay cấm dùng, trừ việc che nội dung chính (mục 4).
+  Mỗi lần chọn hình phải mở **kho hình mẫu** (8 kênh hình mẫu + các phiếu học motion graphics) làm thực đơn và chọn cách hợp ý nhất,
+  ghi nguồn từng cảnh (`thiet-ke-bo-cuc/tu-chon.md` bước 4d) — học mà không mở ra dùng là phí.
   Ý nào cần hình và mỗi hình phải đạt gì: `thiet-ke-bo-cuc/tu-chon.md` bước 4a–4b (nguyên lý: `nguoi-xem-can-gi.md`).
 
 ## 1. Nội dung
@@ -70,18 +74,16 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
 
 ## 4. Hình
 - **Mọi video đều có điểm nhấn** (motion graphics hiểu rộng: thứ kéo mắt người xem vào ý đang nói) — "dựng nhẹ" vẫn có. Có nhiều
-  loại: hình vẽ, chữ nhấn cụm đắt, làm nổi người đang nói (`nhan`), sơ đồ, cảnh toàn màn hình. Mỗi video chỉ dùng vài kiểu hợp nội
-  dung nhất (mục 0). Cách chọn: khối 07.
+  loại: hình vẽ, chữ nhấn cụm đắt, làm nổi người đang nói (`nhan`), sơ đồ, thẻ lật 3D, đường vẽ tiếp, cảnh toàn màn hình. Đổi kiểu
+  và chuyển cảnh qua các cảnh, gọn (mục 0). Cách chọn: khối 07.
 - **Bố cục tự cân** theo thước đo ở `thiet-ke-bo-cuc/README.md` mục 2, chọn từ `thiet-ke-bo-cuc/bo-cuc.md`.
 - **Tự chọn trước kế hoạch cảnh** (cả 3 skill dựng): yêu cầu người dùng → chẩn đoán → loại nội dung → bố cục nền, lớp thông tin → mỗi cảnh
   "Cần · Vì · Làm" theo `thiet-ke-bo-cuc/nguoi-xem-can-gi.md` + `tu-chon.md` (`chan-doan.py`); ghi vào `ke-hoach-canh.md`.
-- **Không che, không làm mờ người đang nói, không đè phụ đề** (máy soát chặn). Người đang nói còn trên hình thì không dùng cảnh toàn
-  khung, nền người mờ, màn chương toàn khung: hình đặt vào **chỗ trống thật** của khung (trần, cửa kính, tường, khoảng trên đầu — đo
-  từ ảnh đầu / giữa / cuối cảnh), bằng cảnh tự vẽ `ve` có vị trí `o`. Cảnh toàn khung chỉ khi đoạn đó không có người trên hình.
-- **Khung có nhiều người** (trò chuyện, phỏng vấn, buổi gặp): mọi người luôn hiện — không thu riêng người đang nói vào ô, không đè hay
-  làm mờ bất kỳ ai, vì người xem cần thấy đang nói với ai. Khung một người: thu người vào ô bo góc không tính là che. Cách tránh: khối 05.
-- **Thẩm mỹ đã học phải được dùng:** mỗi video có ít nhất 2 kiểu lớp phủ chưa dùng ở 3 tập gần nhất (kho `thiet-ke-bo-cuc/bo-cuc.md`
-  hoặc cảnh tự vẽ `ve` theo nội dung), ghi lý do ở Chẩn đoán; máy soát chặn khi thiếu.
+- **Không che nội dung chính, không đè phụ đề** — điều duy nhất phải giữ, còn motion graphic tuỳ biến tự do. Nội dung chính là
+  **người đang nói / những người đang trao đổi** và **thứ đang được nói tới** (màn hình sản phẩm, vật, tài liệu). Hình đặt vào chỗ trống
+  thật của khung (trần, cửa kính, tường, khoảng trên đầu — nhìn ảnh đầu / giữa / cuối cảnh). Cảnh toàn khung, nền làm mờ chỉ ở đoạn không
+  có nội dung chính cần thấy. Khung nhiều người thì mọi người luôn hiện, không thu riêng một người vào ô — người xem cần thấy đang nói
+  với ai; khung một người thì thu vào ô bo góc không tính là che. Cách tránh: khối 05. Máy soát chặn các trường hợp đo được.
 - Chữ tiếng Việt đủ dấu, không chồng dòng (`VN`, chừa 0,5 em trên / 0,32 em dưới).
 - **Nhiều ảnh thật minh hoạ**: mỗi khi lời nhắc một nơi, người, vật, việc cụ thể thì ưu tiên ảnh thật, biểu tượng vẽ
   cho ý trừu tượng. **Ảnh chỉ được chụp tại Việt Nam, liên quan người Việt Nam** (đọc mô tả / danh mục ảnh để chắc; tìm kèm

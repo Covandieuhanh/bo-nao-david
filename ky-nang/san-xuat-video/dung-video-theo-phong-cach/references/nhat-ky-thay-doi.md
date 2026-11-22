@@ -4,6 +4,20 @@ description: "Sổ thay đổi skill dựng video theo phong cách: quyết đ�
 
 # Sổ thay đổi — dung-video-theo-phong-cach (quyết định của người dùng + lý do)
 
+## 22/11/2026 (chiều): không luật cứng — tận dụng tối đa kho, kho hình mẫu là thực đơn mở ra mỗi lần chọn hình
+- David: *"không cần tạo ra những cái luật cố định … nguyên tắc là khi đang hiển thị nội dung, con người đang trao đổi, thì không che nội
+  dung chính … motion graphics có thể tuỳ biến tự do"*; rồi *"kiểm tra trong kho dữ liệu … skill tự học được rất nhiều từ các kênh là các
+  hình mẫu thành công cho từng thể loại"*; duyệt làm lại đoạn thử: *"tận dụng được tối đa toàn bộ các thẩm mỹ ở trong kho học, nhưng phải
+  đưa vào cho phù hợp với nội dung, chứ không phải nhét thật nhiều … đơn giản và tinh gọn … gây ấn tượng cho người xem một cách nhẹ nhàng"*.
+- Nguyên nhân: bản thử đầu chỉ dùng một kiểu (chuỗi nút) và hiệu ứng tự nghĩ, không mở `giai-mau.md` (8 kênh, 19 ca) và `nguon-tham-khao/`
+  (Ali Abdaal và Joseph, MagentX, Sang Huỳnh, Cường Mê AI) — kho có nhưng quy trình không bắt mở ra.
+- Sửa: `quy-tac-chung.md` mục 0 (chỉ giữ một điều: không che nội dung chính; mở kho hình mẫu mỗi lần chọn hình) · `tu-chon.md` bước 4d
+  (thực đơn kho, cách đổi kiểu theo loại ý, dòng `Nguồn kho:`) · `soat-canh.mjs` nhắc khi thiếu `Nguồn kho:` hoặc ≥4 cảnh hình mà một nguồn ·
+  `rieng/duong-may.jsx` thêm chương lớn (Sang Huỳnh #4), gạch thay (#1), thẻ lật (#6), số mốc (MagentX C + Ali thanh tiến trình) ·
+  `rieng/hieu-ung.jsx` vào / ra đổi qua cảnh (trượt, lật 3D, xoay 3D, mở màn, phóng, nhoè) + vệt sáng · `xem-truoc-ban-dung.py` đọc
+  `props.tieng` (tiếng nhẹ lúc thẻ hiện / nối cảnh — Sang Huỳnh).
+- Đoạn thử lần 2: `tap-thu-tham-my` (1:50), 6 cảnh, 5 nguồn kho, không che ai. Cả video 38 phút chờ David duyệt đoạn thử.
+
 ## 22/11/2026: không che, không làm mờ người đang nói; khung nhiều người giữ mọi người; thẩm mỹ đã học phải được dùng
 - Tập buổi gặp đối tác (tap-dji0022-2111, 37 phút, ba người) dựng bằng màn toàn khung nền người mờ và "người vào ô". David: *"Học nhiều
   kiểu thẩm mỹ trong skill mà không thấy được ứng dụng nhỉ. Đều là các motion graphics rất cũ. Màn hình mờ lại còn che nhân vật là hoàn

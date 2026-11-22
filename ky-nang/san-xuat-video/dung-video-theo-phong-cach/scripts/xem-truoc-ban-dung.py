@@ -45,6 +45,9 @@ for i, s in enumerate(ov):
 TICK = float(__import__("re").search(r"CTA_TICK = ([\d.]+)", open(next(p for p in (os.path.join(P, "chuyen-dong/src/thu-vien/keu-goi-hanh-dong.js"), os.path.join(P, "chuyen-dong/src/keu-goi-hanh-dong.js")) if os.path.exists(p))).read()).group(1))     if any(os.path.exists(os.path.join(P, q)) for q in ("chuyen-dong/src/thu-vien/keu-goi-hanh-dong.js", "chuyen-dong/src/keu-goi-hanh-dong.js")) else 1.6
 SFXDIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../assets/hieu-ung-am-thanh")
 sfx = [(s["start"] + TICK, "ting.wav", 0.55) for s in scenes if s.get("type") == "cta"]
+# Tiếng theo cảnh (học Sang Huỳnh 07/11: tiếng sáng ngắn lúc thẻ / chữ lớn hiện, tiếng lướt nhỏ ở chỗ nối cảnh): props.tieng =
+# [{f: 'ting' | 'tua', at: giây, v: 0–1}] trong canh.js. Nhẹ, ít — chỉ ở chỗ hình thật sự đổi.
+sfx += [(t["at"], t["f"] + ".wav", t.get("v", 0.3)) for s in scenes for t in ((s.get("props") or {}).get("tieng") or [])]
 # NHẬN DIỆN chung (thuong-hieu.json, người dùng chốt 2026-11-04): tiếng ký hiệu kênh đúng lúc hiện tiêu đề mở đầu (cảnh hook đầu tiên;
 # podcast không có hook → đầu video)
 import json as _bj

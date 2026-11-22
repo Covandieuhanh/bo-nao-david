@@ -108,10 +108,24 @@ một điểm nhấn. Hình phủ (toàn màn hình + bố cục) quá khoảng 
 
 **4c. Kho cách thể hiện, xếp theo nguyên lý.** Gọi tên cái khó → tìm nguyên lý → đi hết các dòng của nguyên lý đó, không dừng ở 3–4 kiểu
 quen. Ghi mỗi cảnh một dòng `- <id> · Cần: <nguyên lý> · Vì: <cái khó> · Làm: <cách>` (`nguoi-xem-can-gi.md` mục 4).
-Cột "Nơi" ghi "toàn màn hình" chỉ dùng được khi đoạn đó **không có người nói trên hình**. Còn người trên hình thì cùng cấu trúc hình đó
+Cột "Nơi" ghi "toàn màn hình" chỉ dùng ở đoạn **không có nội dung chính cần thấy** (người đang nói, người đang trao đổi, thứ đang được nói tới). Còn nội dung chính trên hình thì cùng cấu trúc hình đó
 vẽ vào chỗ trống thật của khung bằng cảnh tự vẽ `ve` (vị trí `o`, mẫu `rieng/duong-may.jsx`: mạch "đường may" vẽ tiếp qua nhiều cảnh);
-khung nhiều người không dùng ô người (`quy-tac-chung.md` mục 4). Mỗi video có ít nhất 2 kiểu chưa dùng ở 3 tập gần nhất — ghi ở Chẩn
-đoán dòng `Kiểu mới: <kiểu> vì <dấu hiệu>`.
+khung nhiều người không dùng ô người (`quy-tac-chung.md` mục 4). Kho dùng tự do: đổi kiểu hình và chuyển cảnh qua các cảnh (kể cả kiểu chưa dùng ở tập trước), gọn — ghi ở Chẩn
+đoán dòng `Đổi hiệu ứng: <các kiểu, chuyển cảnh đã chọn>`.
+
+**4d. Kho hình mẫu là thực đơn, mở ra mỗi lần chọn hình** (22/11/2026 — David: *"tận dụng được tối đa toàn bộ các thẩm mỹ ở trong kho học,
+nhưng phải đưa vào cho phù hợp với nội dung, chứ không phải nhét thật nhiều … đơn giản và tinh gọn … gây ấn tượng cho người xem một cách
+nhẹ nhàng"*). Với mỗi ý đã qua 4a (cần hình), đọc lại các cách đã học và chọn cách **hợp ý đó nhất**:
+- `giai-mau.md` — 19 ca của 8 kênh hình mẫu (mở đầu, chia đoạn, báo hiệu, lời kèm hình, tin, khi nào không dựng gì).
+- `nguon-tham-khao/` — Ali Abdaal và Joseph (14 cách), MagentX (A–G, có dấu hiệu nhận ra), Sang Huỳnh (8 bố cục, nhịp, âm thanh),
+  Cường Mê AI (6 nguyên lý); `dung-podcast/references/hoc-tu-hieu-nguyen-50.md` cho podcast.
+- Mẫu khung nhiều người, chỗ trống thật (`rieng/duong-may.jsx`): chương lớn, gạch thay, chuỗi nút, thẻ lật, số mốc, vẽ đúng vật (bộ vét).
+
+Cách chọn: ý giống nhau thì cùng cách; ý khác loại thì **đổi sang cách khác trong kho** để video không lặp một kiểu (ví dụ: đổi trọng tâm →
+gạch thay · quy trình → chuỗi nút · liệt kê ngang hàng → thẻ · các bước có số → số mốc · hình ảnh so sánh → vẽ đúng vật). Mỗi cảnh một cách,
+một điểm nhìn; không chồng hai cách trong một khung. Tiếng nhẹ (`props.tieng`: `ting` lúc thẻ / chữ lớn hiện, `tua` lúc nối cảnh) chỉ ở
+chỗ hình thật sự đổi. Ghi ở Chẩn đoán dòng `Nguồn kho: <cảnh> ← <nguồn, mã ca>; …` và thêm nguồn vào chú thích từng cảnh trong `canh.js`.
+Cách đã học mà kho chưa có code thì viết thêm vào `rieng/` (mẫu dùng lại), không thay bằng kiểu quen.
 
 | Nguyên lý | Câu nói / hình có dạng | Cách thể hiện có sẵn | Nơi (khi có khung chủ thể / bảng) |
 |---|---|---|---|

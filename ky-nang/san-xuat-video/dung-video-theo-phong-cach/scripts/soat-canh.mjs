@@ -138,6 +138,14 @@ for (let i = 1; i < chuoi.length; i++) {
   // tiết chế (tu-chon.md bước 4a, 20/11/2026): chỉ dựng hình cho ý khó hiểu nếu chỉ nghe
   if (/^##\s*Chẩn đoán/m.test(kh) && !/Tiết chế:/.test(kh))
     bao('P1', 0, 'ke-hoach-canh.md', 'chẩn đoán chưa có dòng "Tiết chế:" (ý nào cần hình, ý nào để người nói)', 'tu-chon.md bước 4a');
+  // kho hình mẫu là thực đơn (tu-chon.md bước 4d, 22/11/2026): ghi nguồn từng cảnh; từ 4 cảnh hình trở lên mà chỉ 1 nguồn → nhắc đổi cách
+  if (/^##\s*Chẩn đoán/m.test(kh)) {
+    const dong = (kh.match(/Nguồn kho:([^\n]*)/) || [])[1];
+    const soHinh = list.map(flat).filter((x) => x.type === 've' || x.type === 'bocuc' || x.type === 'diagram' || x.type === 'illus').length;
+    if (!dong && soHinh) bao('P1', 0, 'ke-hoach-canh.md', 'chẩn đoán chưa có dòng "Nguồn kho:" (cảnh nào lấy cách nào trong kho hình mẫu)', 'tu-chon.md bước 4d');
+    else if (dong && soHinh >= 4 && new Set((dong.match(/←\s*([^,;(]+)/g) || []).map((s) => s.replace(/←\s*/, '').trim().split(' ')[0])).size < 2)
+      bao('P1', 0, 'ke-hoach-canh.md', `${soHinh} cảnh hình mà chỉ một nguồn kho — dễ lặp một kiểu`, 'mở giai-mau.md + nguon-tham-khao/, chọn cách hợp từng ý (tu-chon.md 4d)');
+  }
   {
     const PHU = list.map(flat).filter((x) => FULL.has(x.type) || x.type === 'bocuc' || x.type === 've').map((x) => [x.start, held[x.id]?.end ?? x.end]).sort((a, b) => a[0] - b[0]);
     let phu = 0, den = -Infinity;
@@ -145,18 +153,11 @@ for (let i = 1; i < chuoi.length; i++) {
     if (duration >= 45 && phu / duration > 0.45)
       bao('P1', 0, 'cả video', `hình phủ ${Math.round(100 * phu / duration)} % thời lượng — dễ rối, phân tán`, 'bỏ hình ở ý dễ hiểu khi nghe (kể chuyện, cảm xúc, câu ngắn tự rõ), giữ người nói + phụ đề');
   }
-  // KIỂU HỌC MỚI CHỈ DÙNG KHI CÓ DẤU HIỆU (David 20/11/2026: "không phải video nào cũng dùng, phải hợp nội dung"):
-  // mỗi kiểu dưới đây phải được nêu tên trong mục Chẩn đoán kèm dấu hiệu đã thấy (tu-chon.md) — không thì P1.
+  // KHO DÙNG TỰ DO (David 22/11/2026: "không nhất thiết là phải có một cái luật gì đấy gọi là cố định … tận dụng tối đa các cái bộ tài
+  // nguyên đã học"): không còn cổng "chỉ dùng khi có dấu hiệu". Chỉ giữ lỗi kỹ thuật của khuôn.
   {
-    const cd = (kh.split(/^##\s*Chẩn đoán/m)[1] || '').split(/^##\s/m)[0];
-    const HOC = {'dung-hay': '≥ 2 cặp "đừng… hãy…" / "sai… đúng…"', 'tren-duoi': 'hai nguồn hình cùng thời lượng',
-      'o-tron': 'lời tả chi tiết một thứ có hình', 'cau-hoi': 'video phỏng vấn, có người hỏi'};
-    for (const x of list.map(flat).filter((x) => x.type === 'bocuc' && HOC[x.kieu])) {
-      if (!cd.includes(x.kieu)) bao('P1', x.start, x.id, `dùng "${x.kieu}" mà Chẩn đoán chưa ghi dấu hiệu (${HOC[x.kieu]})`, `ghi "${x.kieu}: <dấu hiệu thấy ở lời / hình>" vào mục Chẩn đoán, hoặc bỏ kiểu này`);
-      if (x.kieu === 'dung-hay' && (x.cap || []).length < 2) bao('P1', x.start, x.id, `"dung-hay" chỉ ${(x.cap || []).length} cặp — khuôn lặp cần ≥ 2`, 'một cặp thì dùng illus vs');
-    }
-    for (const x of list.map(flat).filter((x) => x.type === 'bocuc' && x.kieu === 'the-canh' && x.so != null))
-      if (!/số thứ tự|so_to|\bso\b/.test(cd)) bao('P2', x.start, x.id, 'thẻ có số thứ tự to mà Chẩn đoán chưa ghi lời có đếm ≥ 3 mục', 'ghi "so: lời đếm N mục" vào Chẩn đoán');
+    for (const x of list.map(flat).filter((x) => x.type === 'bocuc' && x.kieu === 'dung-hay'))
+      if ((x.cap || []).length < 2) bao('P2', x.start, x.id, `"dung-hay" chỉ ${(x.cap || []).length} cặp — khuôn lặp đẹp nhất từ 2 cặp`, 'một cặp thì illus vs cũng được');
     let caps = []; try { caps = (await imp('phu-de.js')).default || []; } catch {}
     for (const c of caps) if ((c.hl || []).filter((h) => h.startsWith('^')).length > 1)
       bao('P1', c.start, 'phu-de', `dòng "${c.text.slice(0, 40)}…" có ${(c.hl || []).filter((h) => h.startsWith('^')).length} từ khoá to`, 'mỗi dòng tối đa một mục "^"');
@@ -203,9 +204,8 @@ for (let i = 1; i < chuoi.length; i++) {
       'đi lại tu-chon.md bước 4 cho từng ý (liệt kê, so sánh, bước, con số, câu đắt…), hoặc ghi "Một kiểu có chủ đích: …"');
   else if (duration >= 300 && loai.size <= 2 && !coY)
     bao('P1', 0, 'cả video', `video ${fmt(duration / 60)} phút chỉ ${loai.size} kiểu lớp phủ (${[...loai].join(', ')})`, 'xem lại tu-chon.md bước 4');
-  // ÁP DỤNG THẨM MỸ ĐÃ HỌC (David 22/11/2026: "học nhiều mà không thấy ứng dụng được thì phí quá"): mỗi video có ít nhất 2 kiểu
-  // lớp phủ chưa dùng ở 3 tập gần nhất trong ~/Movies (cảnh tự vẽ ve tính theo tên component). Ngoại lệ ghi rõ trong
-  // ke-hoach-canh.md: "Kiểu mới có chủ đích: <lý do>".
+  // TẬN DỤNG KHO, ĐỔI HIỆU ỨNG (David 22/11/2026: "học nhiều mà không thấy ứng dụng được thì phí quá" — rồi: không cần luật cố định,
+  // dùng tự do, đa dạng mà gọn): nhắc (P1, không chặn) khi video gần như lặp lại các kiểu của 3 tập gần nhất trong ~/Movies.
   {
     const kieuVe = kieu;
     const cur = new Set(list.map(flat).filter((x) => !CO_DINH.has(x.type)).map(kieuVe));
@@ -217,9 +217,9 @@ for (let i = 1; i < chuoi.length; i++) {
     const ba = cu.sort((a, b) => b[0] - a[0]).slice(0, 3), daDung = new Set();
     for (const [, f] of ba) try { for (const s of ((await import(pathToFileURL(f).href)).SCENES || []).map(flat)) if (!CO_DINH.has(s.type)) daDung.add(kieuVe(s)); } catch {}
     const moi = [...cur].filter((k) => !daDung.has(k));
-    if (ba.length && moi.length < 2 && !/Kiểu mới có chủ đích:/.test(kh))
-      bao('P0', 0, 'cả video', `chỉ ${moi.length} kiểu mới so với ${ba.length} tập gần nhất (${moi.join(', ') || 'không có'}) — thẩm mỹ đã học chưa được dùng`,
-        'chọn thêm kiểu chưa dùng trong kho (thiet-ke-bo-cuc/bo-cuc.md) hoặc tự vẽ cảnh ve theo nội dung; ngoại lệ ghi "Kiểu mới có chủ đích: …"');
+    if (ba.length && moi.length < 2)
+      bao('P1', 0, 'cả video', `chỉ ${moi.length} kiểu khác ${ba.length} tập gần nhất (${moi.join(', ') || 'không có'}) — video sẽ trông giống các tập trước`,
+        'đổi hiệu ứng / chuyển cảnh bằng kiểu khác trong kho (thiet-ke-bo-cuc/bo-cuc.md, rieng/ của khuôn) hoặc tự viết, giữ gọn');
   }
 }
 // mở đầu 3 giây

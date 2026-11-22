@@ -57,7 +57,7 @@ Cột "Code": **có** = viết được ngay trong `canh.js` · **chưa** = mớ
 | **Một chỗ sáng** (`mot_diem: true` cho `tang`, `cot`): chỉ mục đang nói sáng cam | các mục được nói lần lượt | cả hai | có |
 | **Người nửa dưới, hình nửa trên** (`o-nguoi` · `nguoi_duoi: true`) | khung dọc, giải thích dài vẫn cần thấy người | dọc | có |
 
-## Đối chiếu, mốc, minh chứng (học kênh MagentX — `nguon-tham-khao/magentx-2026-11-20.md`; chỉ chọn khi có dấu hiệu ở `tu-chon.md` bước 4)
+## Đối chiếu, mốc, minh chứng (học kênh MagentX — `nguon-tham-khao/magentx-2026-11-20.md`; dùng tự do ở mọi video, `quy-tac-chung.md` mục 0)
 
 | Kiểu | Hợp khi | Ngang / dọc | Code |
 |---|---|---|---|

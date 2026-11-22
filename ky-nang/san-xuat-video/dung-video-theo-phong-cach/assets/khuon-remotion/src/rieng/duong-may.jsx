@@ -7,20 +7,27 @@
 //   đường may  : {tieu_de?, nut: [{text, at, cap?, capAt?, gach?}]}        → các nút trên đường khâu, nút đang nói sáng, nút cũ mờ;
 //                nút có at < start = đã khâu ở cảnh trước (hiện ngay) → mạch vẽ tiếp
 //   bộ vét     : {cong_cu: {text, at, gach}, vet: {text, at}, cap?: {text, at}} → bộ đồ chung bị gạch, bộ vét khâu dần (đỉnh "may đo")
+//   thẻ lật 3D : {tieu_de?, the: [{text, at}]}                     → mỗi ý một thẻ lật vào đúng lúc nói, thẻ đang nói sáng (Sang Huỳnh)
+//   gạch thay  : {tieu_de?, tieu_deAt?, thay: [{text, at, gach?, cap?, capAt?}]} → ý cũ bị gạch đỏ, mũi tên, ý mới to (Sang Huỳnh)
+//   số mốc     : {tieu_de?, buoc: [{so, text, at}]}                → số to viền rỗng, bước đang nói tô đầy, thanh tiến trình (MagentX, Ali)
+//   chương lớn : {so, nhan, ten, lon: true}                        → số to mờ phía sau, nhãn nhỏ, tên phần to (Sang Huỳnh)
+// Hiệu ứng (rieng/hieu-ung.jsx): vao / ra = truot · lat-3d · xoay-3d · mo-man · phong · nhoe; quet = giây vệt sáng quét qua tấm.
+// Đổi hiệu ứng qua các cảnh để video không lặp một kiểu.
 // o = {x, y, w, h} phần khung 0–1, neo góc trên trái. canh.js: {type: 've', props: {ve: 'DuongMay', o, giuPhuDe: true, …}}
 import React from 'react';
-import {AbsoluteFill, Easing, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Easing, interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
 import {BODY, C, HEAD, ease, pop, rel} from '../chu-de';
 import {ChuHien} from '../thu-vien/chu-hien';
 import {kieuChu} from '../thu-vien/chuyen-dong';
+import {vaoRaKieu, QuetSang} from './hieu-ung';
 
 const O_MAC_DINH = {x: 0.305, y: 0.075, w: 0.41, h: 0.18};
 const dai = (t) => Math.max(1, ...String(t ?? '').replace(/\*/g, '').split('\n').map((l) => l.length));
 const tien = (f, a, n = 22) => ease(f, a, a + n, 0, 1, Easing.out(Easing.exp));   // tiến độ vẽ 0..1
 
-// Nền tấm: tối, có hạt (nền hạt — kiểu "giấy ảnh"), không làm mờ hình phía sau
-const Tam = ({w, h, r, children, op, dy}) => (
-  <div style={{position: 'absolute', inset: 0, opacity: op, transform: `translateY(${dy}px)`}}>
+// Nền tấm: tối, có hạt (nền hạt — kiểu "giấy ảnh"), không làm mờ hình phía sau. v = vaoRaKieu (hiệu ứng vào / ra của cảnh)
+const Tam = ({w, h, r, children, v, quet}) => (
+  <div style={v.boc}><div style={v.khoi}>
     <div style={{position: 'absolute', inset: 0, borderRadius: r, overflow: 'hidden',
       background: 'linear-gradient(180deg, rgba(13,13,16,0.93), rgba(13,13,16,0.88))', border: '1.5px solid rgba(255,255,255,0.09)',
       boxShadow: '0 18px 50px rgba(0,0,0,0.45)'}}>
@@ -30,7 +37,8 @@ const Tam = ({w, h, r, children, op, dy}) => (
       </svg>
     </div>
     {children}
-  </div>
+    {quet != null && <QuetSang a={quet} w={w} h={h} r={r} />}
+  </div></div>
 );
 
 // Kim khâu ở đầu đường may
@@ -41,23 +49,48 @@ const Kim = ({x, y, s}) => (
   </g>
 );
 
-export const DuongMay = ({sceneId, start, o = O_MAC_DINH, so, nhan, ten, tieu_de, nut = [], cong_cu, vet, cap}) => {
+export const DuongMay = ({sceneId, start, o = O_MAC_DINH, so, nhan, ten, lon, tieu_de, tieu_deAt, nut = [], the, thay, buoc, cong_cu, vet, cap,
+  vao = 'truot', ra = 'nhoe', quet}) => {
   const f = useCurrentFrame();
   const {durationInFrames: d, width: W, height: H} = useVideoConfig();
   const kc = kieuChu(sceneId);
-  const vao = ease(f, 0, 12), ra = ease(f, d - 9, d, 1, 0, Easing.in(Easing.cubic));
-  const op = Math.min(vao, ra), dy = (1 - vao) * -14;
+  const v = vaoRaKieu(f, d, {vao, ra});
+  const qA = quet != null ? rel(quet, start) : null;          // khung bắt đầu vệt sáng quét qua tấm
   const x = o.x * W, y = o.y * H, w = o.w * W, h = o.h * H;
   const box = {position: 'absolute', left: x, top: y, width: w, height: h};
+
+  // ── màn chương lớn trong chỗ trống (học Sang Huỳnh 07/11: số to mờ phía sau, nhãn nhỏ màu nhấn, tên phần to)
+  if (so != null && lon) {
+    const pd = h * 0.16, rr = h * 0.14;
+    const fsT = Math.min(h * 0.3, (w * 0.72) / (dai(ten) * 0.55 + 0.5));
+    return (
+      <AbsoluteFill>
+        <div style={box}>
+          <Tam w={w} h={h} r={rr} v={v} quet={qA}>
+            <div style={{position: 'absolute', left: pd * 0.4, top: h * 0.02, fontFamily: HEAD, fontWeight: 800, fontSize: h * 0.98, lineHeight: 0.98,
+              color: 'transparent', WebkitTextStroke: '2.5px rgba(255,122,69,0.5)', transform: `translateX(${(1 - tien(f, 0, 30)) * -30}px)`}}>
+              {String(so).padStart(2, '0')}</div>
+            <div style={{position: 'absolute', left: w * 0.26, right: pd, top: 0, bottom: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: h * 0.04}}>
+              {nhan && <div style={{fontFamily: BODY, fontWeight: 700, fontSize: h * 0.1, letterSpacing: 3, color: C.accent, textTransform: 'uppercase'}}>
+                <ChuHien text={nhan} a={5} kieu={kc} /></div>}
+              <div style={{fontFamily: HEAD, fontWeight: 800, fontSize: fsT, lineHeight: 1.05, color: C.text, textTransform: 'uppercase'}}>
+                <ChuHien text={ten} a={10} kieu={kc} /></div>
+            </div>
+          </Tam>
+        </div>
+      </AbsoluteFill>
+    );
+  }
 
   // ── dải chương
   if (so != null) {
     const fs = Math.min(H * 0.03, (w - H * 0.1) / (dai(`${nhan} · ${ten}`) * 0.62 + 2));
     return (
-      <AbsoluteFill style={{opacity: op}}>
-        <div style={{...box, height: 'auto', display: 'flex', justifyContent: 'center', transform: `translateY(${dy}px)`}}>
-          <div style={{display: 'flex', alignItems: 'stretch', borderRadius: fs * 0.5, overflow: 'hidden', background: 'rgba(13,13,16,0.86)',
-            border: '1.5px solid rgba(255,255,255,0.09)', boxShadow: '0 14px 40px rgba(0,0,0,0.45)'}}>
+      <AbsoluteFill>
+        <div style={{...box, height: 'auto', display: 'flex', justifyContent: 'center', perspective: 1100}}>
+          <div style={{display: 'flex', alignItems: 'stretch', borderRadius: fs * 0.5, overflow: 'hidden', background: 'rgba(13,13,16,0.9)',
+            border: '1.5px solid rgba(255,255,255,0.09)', boxShadow: '0 14px 40px rgba(0,0,0,0.45)', ...v.khoi, inset: undefined, position: 'relative'}}>
+            {qA != null && <QuetSang a={qA} w={w} h={fs * 2} />}
             <div style={{background: C.accent, color: '#120C09', fontFamily: HEAD, fontWeight: 800, fontSize: fs * 1.15,
               padding: `${fs * 0.3}px ${fs * 0.6}px`, display: 'flex', alignItems: 'center'}}>{String(so).padStart(2, '0')}</div>
             <div style={{display: 'flex', alignItems: 'center', gap: fs * 0.5, padding: `${fs * 0.3}px ${fs * 0.8}px`, whiteSpace: 'nowrap'}}>
@@ -86,7 +119,7 @@ export const DuongMay = ({sceneId, start, o = O_MAC_DINH, so, nhan, ten, tieu_de
     return (
       <AbsoluteFill>
         <div style={box}>
-          <Tam w={w} h={h} r={r} op={op} dy={dy}>
+          <Tam w={w} h={h} r={r} v={v} quet={qA}>
             <svg width={w} height={h} style={{position: 'absolute', inset: 0}}>
               <defs><clipPath id={`khau-${sceneId}`}><rect x={0} y={0} width={w} height={pad + 150 * s * pV} /></clipPath></defs>
               {/* bộ đồ chung: hộp công cụ, bị gạch */}
@@ -123,8 +156,122 @@ export const DuongMay = ({sceneId, start, o = O_MAC_DINH, so, nhan, ten, tieu_de
     );
   }
 
+  // ── thẻ lật 3D: mỗi ý một thẻ lật vào (xoay quanh trục dọc) đúng lúc nói, thẻ đang nói viền cam, thẻ cũ lùi nhẹ
+  if (the) {
+    const n = Math.max(1, the.length), gap = h * 0.08, top = tieu_de ? h * 0.3 : pad, cao = h - top - pad * 0.8;
+    const rong = (w - pad * 2 - gap * (n - 1)) / n;
+    const fsT = Math.min(cao * 0.36, ...the.map((u) => rong / (dai(u.text) * 0.5 + 0.9)));
+    const at = the.map((u) => rel(u.at, start));
+    const cuoi = at.reduce((k, a, i) => (f >= a ? i : k), -1);
+    return (
+      <AbsoluteFill>
+        <div style={box}>
+          <Tam w={w} h={h} r={r} v={v} quet={qA}>
+            {tieu_de && <div style={{position: 'absolute', left: pad * 1.2, top: pad * 0.6, fontFamily: BODY, fontWeight: 700, fontSize: h * 0.095,
+              letterSpacing: 3, color: C.accent, textTransform: 'uppercase'}}><ChuHien text={tieu_de} a={4} kieu={kc} /></div>}
+            {the.map((u, i) => {
+              if (f < at[i] - 1) return null;
+              const p = interpolate(f, [at[i], at[i] + 16], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.back(1.4))});
+              const sang = i === cuoi;
+              return (
+                <div key={i} style={{position: 'absolute', left: pad + i * (rong + gap), top, width: rong, height: cao, perspective: 900}}>
+                  <div style={{position: 'absolute', inset: 0, borderRadius: h * 0.08, background: sang ? 'rgba(255,122,69,0.14)' : 'rgba(255,255,255,0.05)',
+                    border: `2px solid ${sang ? C.accent : 'rgba(255,255,255,0.12)'}`, display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    transform: `rotateY(${(1 - p) * -95}deg) scale(${sang ? 1 : 0.96})`, transformOrigin: '50% 50%', opacity: Math.min(1, p * 2) * (sang ? 1 : 0.75),
+                    backfaceVisibility: 'hidden'}}>
+                    <div style={{fontFamily: HEAD, fontWeight: 800, fontSize: fsT, lineHeight: 1.1, textAlign: 'center', whiteSpace: 'pre-line',
+                      color: sang ? C.text : C.muted, textTransform: 'uppercase'}}><ChuHien text={u.text} a={at[i] + 6} kieu={kc} /></div>
+                  </div>
+                </div>
+              );
+            })}
+          </Tam>
+        </div>
+      </AbsoluteFill>
+    );
+  }
+
+  // ── gạch thay (học Sang Huỳnh 07/11 "thẻ cạnh mặt: gạch chữ cũ thì hiện chữ mới"): ý cũ bị gạch, mũi tên, ý mới to và sáng
+  if (thay) {
+    const n = Math.max(1, thay.length), top = tieu_de ? h * 0.3 : pad, cao = h - top - pad * 0.9;
+    const muiTen = h * 0.22, slot = (w - pad * 2 - muiTen * (n - 1)) / n;
+    const at = thay.map((u) => rel(u.at, start));
+    const cuoi = at.reduce((k, a, i) => (f >= a ? i : k), -1);
+    const fsG = Math.min(cao * 0.42, ...thay.map((u) => slot / (dai(u.text) * 0.52 + 0.6)));
+    return (
+      <AbsoluteFill>
+        <div style={box}>
+          <Tam w={w} h={h} r={r} v={v} quet={qA}>
+            {tieu_de && <div style={{position: 'absolute', left: pad * 1.2, top: pad * 0.6, fontFamily: BODY, fontWeight: 700, fontSize: h * 0.095,
+              letterSpacing: 3, color: C.accent, textTransform: 'uppercase', opacity: f >= rel(tieu_deAt ?? start, start) ? 1 : 0}}>
+              <ChuHien text={tieu_de} a={rel(tieu_deAt ?? start, start) + 2} kieu={kc} /></div>}
+            {thay.map((u, i) => {
+              if (f < at[i] - 1) return null;
+              const p = pop(f, at[i]), sang = i === cuoi;
+              const g = u.gach != null ? tien(f, rel(u.gach, start), 12) : 0;
+              const left = pad + i * (slot + muiTen);
+              return (
+                <React.Fragment key={i}>
+                  {i > 0 && <div style={{position: 'absolute', left: left - muiTen, width: muiTen, top, height: cao, display: 'flex', alignItems: 'center',
+                    justifyContent: 'center', color: C.accent, fontFamily: HEAD, fontSize: fsG * 0.8, opacity: Math.min(1, p * 1.5)}}>→</div>}
+                  <div style={{position: 'absolute', left, width: slot, top, height: cao, display: 'flex', flexDirection: 'column', alignItems: 'center',
+                    justifyContent: 'center', opacity: Math.min(1, p * 1.3) * (1 - 0.5 * g) * (sang || g ? 1 : 0.8),
+                    transform: `translateY(${(1 - p) * 10}px) scale(${1 - 0.08 * g})`}}>
+                    <div style={{position: 'relative', fontFamily: HEAD, fontWeight: 800, fontSize: fsG, lineHeight: 1.1, textAlign: 'center',
+                      whiteSpace: 'pre-line', color: sang && !g ? C.text : C.muted, textTransform: 'uppercase'}}>
+                      <ChuHien text={u.text} a={at[i]} kieu={kc} />
+                      {g > 0 && <div style={{position: 'absolute', left: '-4%', top: '50%', height: Math.max(5, fsG * 0.14), width: `${g * 108}%`,
+                        background: '#EF4444', borderRadius: 3, transform: 'rotate(-4deg)'}} />}
+                    </div>
+                    {u.cap && f >= rel(u.capAt ?? u.at, start) - 1 && <div style={{marginTop: h * 0.03, fontFamily: BODY, fontWeight: 700, fontSize: h * 0.115,
+                      color: g ? '#F87171' : C.muted}}><ChuHien text={u.cap} a={rel(u.capAt ?? u.at, start)} kieu={kc} /></div>}
+                  </div>
+                </React.Fragment>
+              );
+            })}
+          </Tam>
+        </div>
+      </AbsoluteFill>
+    );
+  }
+
+  // ── số mốc (học MagentX 20/11 "số thứ tự to làm mốc" + Ali Abdaal 10/11 "thanh tiến trình, mục hiện tại sáng"): mỗi bước một số to
+  //    viền rỗng, bước đang nói số tô đầy màu nhấn, thanh dưới chạy tới bước đang nói
+  if (buoc) {
+    const n = Math.max(1, buoc.length), top = tieu_de ? h * 0.27 : pad, cao = h - top - pad * 1.1, slot = (w - pad * 2) / n;
+    const at = buoc.map((u) => rel(u.at, start));
+    const cuoi = at.reduce((k, a, i) => (f >= a ? i : k), -1);
+    const fsS = cao * 0.98, fsL = Math.min(cao * 0.36, ...buoc.map((u) => (slot - fsS * 0.7) / (dai(u.text) * 0.52 + 0.4)));
+    const den = cuoi < 0 ? 0 : (cuoi + tien(f, at[cuoi], 18)) / n;
+    return (
+      <AbsoluteFill>
+        <div style={box}>
+          <Tam w={w} h={h} r={r} v={v} quet={qA}>
+            {tieu_de && <div style={{position: 'absolute', left: pad * 1.2, top: pad * 0.55, fontFamily: BODY, fontWeight: 700, fontSize: h * 0.095,
+              letterSpacing: 3, color: C.accent, textTransform: 'uppercase'}}><ChuHien text={tieu_de} a={4} kieu={kc} /></div>}
+            {buoc.map((u, i) => {
+              const hien = f >= at[i] - 1, sang = i === cuoi, p = hien ? pop(f, at[i]) : 0;
+              return (
+                <div key={i} style={{position: 'absolute', left: pad + i * slot, width: slot, top, height: cao, display: 'flex', alignItems: 'center',
+                  gap: fsS * 0.12, opacity: hien ? (sang ? 1 : 0.55) : 0.22}}>
+                  <div style={{fontFamily: HEAD, fontWeight: 800, fontSize: fsS, lineHeight: 0.9, color: sang ? C.accent : 'transparent',
+                    WebkitTextStroke: `2px ${sang ? C.accent : C.dim}`, transform: `scale(${0.85 + 0.15 * (hien ? p : 1)})`, transformOrigin: '50% 60%'}}>{u.so}</div>
+                  {hien && <div style={{fontFamily: HEAD, fontWeight: 800, fontSize: fsL, lineHeight: 1.08, color: sang ? C.text : C.muted,
+                    textTransform: 'uppercase', whiteSpace: 'pre-line'}}><ChuHien text={u.text} a={at[i] + 4} kieu={kc} /></div>}
+                </div>
+              );
+            })}
+            <div style={{position: 'absolute', left: pad, right: pad, bottom: pad * 0.55, height: 4, borderRadius: 2, background: 'rgba(255,255,255,0.1)'}}>
+              <div style={{width: `${den * 100}%`, height: '100%', borderRadius: 2, background: C.accent}} />
+            </div>
+          </Tam>
+        </div>
+      </AbsoluteFill>
+    );
+  }
+
   // ── đường may: các nút khâu theo lời
-  const n = Math.max(1, nut.length), x0 = pad * 1.4, x1 = w - pad * 1.4, slot = (x1 - x0) / n;
+  const n =Math.max(1, nut.length), x0 = pad * 1.4, x1 = w - pad * 1.4, slot = (x1 - x0) / n;
   const seamY = h * (tieu_de ? 0.66 : 0.6);
   const xs = nut.map((_, i) => x0 + slot * (i + 0.5));
   const as = nut.map((u) => (u.at < start ? -1000 : rel(u.at, start)));
@@ -140,7 +287,7 @@ export const DuongMay = ({sceneId, start, o = O_MAC_DINH, so, nhan, ten, tieu_de
   return (
     <AbsoluteFill>
       <div style={box}>
-        <Tam w={w} h={h} r={r} op={op} dy={dy}>
+        <Tam w={w} h={h} r={r} v={v} quet={qA}>
           {tieu_de && <div style={{position: 'absolute', left: pad * 1.2, top: pad * 0.7, fontFamily: BODY, fontWeight: 700, fontSize: h * 0.095,
             letterSpacing: 3, color: C.accent, textTransform: 'uppercase'}}><ChuHien text={tieu_de} a={4} kieu={kc} /></div>}
           <svg width={w} height={h} style={{position: 'absolute', inset: 0}}>
