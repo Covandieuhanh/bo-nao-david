@@ -60,7 +60,8 @@ Bố cục đã có code: người + phụ đề · `nhan` (mục 4) · **`bocuc
 `diagram` / thẻ chữ · `chuong` màn chương · `muc-luc` mục lục tích luỹ · `tien-trinh` thanh tiến trình ý · `canh-nguoi` mạch hình vẽ
 cạnh người, không thẻ — `thanh-phan/bo-cuc.jsx`) · `illus` / `diagram` toàn màn hình. Chữ trong thẻ: nguyên văn.
 Cách viết + khi nào dùng từng kiểu: `bo-cuc.md`.
-- **`phong: 'nguoi-mo' | 'hat'`** ở cảnh toàn màn hình: nền là người nói làm mờ / nền hạt, ngoài nền tối mặc định.
+- **`phong: 'nguoi-mo' | 'hat'`** ở cảnh toàn màn hình — chỉ khi đoạn đó không có người nói trên hình (`quy-tac-chung.md` mục 4): nền là
+  hình làm mờ / nền hạt, ngoài nền tối mặc định. Người còn trên hình thì vẽ vào chỗ trống thật (`ve`, mẫu `rieng/duong-may.jsx`).
 - **`*từ*`** trong mọi chữ: một từ nhấn font phụ nghiêng màu cam; tối đa một chỗ mỗi cụm.
 - Mỗi khung **một tiêu điểm**; cam chỉ là màu nhấn (khoảng 10 % khung) — soát ở khối 17.
 - **Không hai cảnh cùng kiểu liền nhau** (`type` + `mode` / `kieu`, ví dụ hai `bocuc` `the-canh`): xen kiểu khác. Việc đổi kiểu là để

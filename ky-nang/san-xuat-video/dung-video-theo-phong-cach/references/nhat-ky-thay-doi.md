@@ -4,6 +4,21 @@ description: "Sổ thay đổi skill dựng video theo phong cách: quyết đ�
 
 # Sổ thay đổi — dung-video-theo-phong-cach (quyết định của người dùng + lý do)
 
+## 22/11/2026: không che, không làm mờ người đang nói; khung nhiều người giữ mọi người; thẩm mỹ đã học phải được dùng
+- Tập buổi gặp đối tác (tap-dji0022-2111, 37 phút, ba người) dựng bằng màn toàn khung nền người mờ và "người vào ô". David: *"Học nhiều
+  kiểu thẩm mỹ trong skill mà không thấy được ứng dụng nhỉ. Đều là các motion graphics rất cũ. Màn hình mờ lại còn che nhân vật là hoàn
+  toàn không đúng. Tôi đang nói với các đối tác trong video thì có nên chỉ hiện một mình tôi không? … Sự tự động chọn thẩm mỹ ở đâu rồi
+  nhỉ?"* — lần thứ hai về màn mờ (lần đầu 21/11, tập tham quan, chỉ ghi ở kế hoạch tập nên không thành luật).
+- Sửa luật: `quy-tac-chung.md` mục 4 (ba gạch đầu dòng mới), khối 05 (không có chỗ thì vẽ vào chỗ trống thật, không tự toàn màn hình),
+  khối 07 (`phong` chỉ khi không có người trên hình), `tu-chon.md` bước 2b + 4c (cột "toàn màn hình" chỉ khi không có người; dòng `Kiểu mới:`).
+- Máy soát (`soat-canh.mjs`) chặn: cảnh toàn khung / nền người mờ / màn chương toàn khung khi người còn trên hình (trừ `khong_nguoi: true`);
+  `o-nguoi`, `o-tron` khi `mat.js` có từ 2 người; `lower` ở khung ngang; ít hơn 2 kiểu mới so với 3 tập gần nhất. Cảnh tự vẽ tính kiểu theo
+  tên component + `props.kieu`.
+- Khuôn thêm mẫu cảnh tự vẽ dùng lại được: `rieng/nhan-tram.jsx` (nhãn ở chỗ trống, David duyệt 21/11) và `rieng/duong-may.jsx` (dải chương
+  mỏng, mạch "đường may" vẽ tiếp, bộ vét khâu dần; tấm tối có hạt, không làm mờ hình).
+- David: *"render ra 1 đoạn ngắn cho tôi xem có áp dụng được thẩm mỹ mới nào không thôi chứ đừng render lại cả video vội"* → đoạn thử
+  `tap-thu-tham-my` (11:11–13:01).
+
 ## Tái bản 4 — 20/11/2026: gom ý trùng giữa các file, bảng du-an/nang-cap/nang-cap-4.md
 - Ngày và lời David trong bản luật chuyển về đây (luật giữ nguyên nghĩa):
   - 19/11/2026 · `quy-tac-chung.md` mục 0 "Mọi lựa chọn tự setup theo nội dung nguồn" — David: *"mọi thứ cần phát huy tối đa được sức mạnh của AI, mọi lựa chọn đều phải được tự động setup phù hợp với nội dung của tài nguyên nguồn"*.

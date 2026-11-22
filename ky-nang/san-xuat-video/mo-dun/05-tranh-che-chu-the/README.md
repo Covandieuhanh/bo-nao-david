@@ -2,7 +2,7 @@
 description: "Khối 05 tránh che người: lớp phủ không chạm mặt, vùng an toàn."
 ---
 
-# Khối 05-tranh-che-chu-the: Tránh che người: lớp phủ không chạm mặt + đầu + vai + ngực; không có chỗ thì tự toàn màn hình (dài theo nội dung)
+# Khối 05-tranh-che-chu-the: Tránh che người: lớp phủ không chạm mặt + đầu + vai + ngực; không có chỗ thì đặt vào chỗ trống thật bằng cảnh tự vẽ, không che người
 
 **Dùng trong:** làm video, ghép vlog, highlight người nói
 **Đầu vào:** kiem-tra/khuon-mat/*.json + canh.js / danh-sach-cat.js
@@ -18,8 +18,11 @@ description: "Khối 05 tránh che người: lớp phủ không chạm mặt, v�
 
 ## Luật
 - Lớp phủ (không toàn màn hình) **không chạm mặt + đầu + vai + ngực** người nói; chỉ chạm tay / bụng / nền thì được.
-- Không có vị trí / cỡ nào tránh được thì **tự thành cảnh toàn màn hình** (nền tối + quầng cam, nội dung phóng ra giữa, phụ đề vẫn
-  chạy), dài theo nội dung. Muốn vừa thấy người vừa thấy ý thì dùng bố cục `bocuc` (`o-nguoi`, `the-canh`) thay vì lớp phủ.
+- Không có vị trí / cỡ nào tránh được thì **không chuyển sang toàn màn hình, không làm mờ người**: người dựng xem ảnh đầu / giữa / cuối
+  cảnh, tìm chỗ trống thật (trần, cửa kính, tường, khoảng trên đầu) rồi viết cảnh tự vẽ `ve` có vị trí `o` (mẫu: `nhan-tram.jsx`,
+  `duong-may.jsx` trong `assets/khuon-remotion/src/rieng/`); rút chữ cho vừa chỗ. Toàn màn hình chỉ khi đoạn đó không có người trên hình (`khong_nguoi: true`).
+- Khung nhiều người: không dùng `o-nguoi` / `o-tron` (chỉ giữ người đang nói); `the-canh` hết chỗ sẽ tự thu vào ô nên phải chụp thử.
+- Máy dò mặt có thể bỏ sót người cúi đầu, quay nghiêng: luôn soi ảnh chụp thử xem có đè ai không; sót thì thêm hộp người đó vào `mat.js`.
 - Lớp phủ (thẻ, chữ to, tên) tự **thu nhỏ còn 78 %** để thấy hình nhiều hơn; mặc định ngay trên dải phụ đề, mặt nằm thấp thì dời lên
   đỉnh vùng an toàn hoặc chỗ trống khác. Component vẫn thiết kế trên dải gốc; `Place` lo vị trí.
 - Tít ghim (highlight) che đầu thì tự ẩn.

@@ -76,7 +76,7 @@ Chữ ký nhận diện giữ nguyên (cam, hai font, dấu góc, phụ đề, m
 | Dấu hiệu | Nền cảnh toàn màn hình | Kiểu hình | Chuyển cảnh | Nhạc (khối 09) |
 |---|---|---|---|---|
 | Kiến thức, giải thích, dày thông tin | tối mặc định (mặc định kênh) | sơ đồ, biểu tượng nét, bảng ghi chú | đổi trên cùng nền, vật lớn dần thành cảnh sau | `kien_thuc` |
-| Hướng 3 công nghệ, quy trình, hệ thống | tối + `phong: 'nguoi-mo'` khi cần giữ mạch người nói | `diagram` chuyen-giao / tu-thanh, `illus flow`, mạch vẽ tiếp (`mach.js`) | màu tràn nền ở đổi phần | `kien_thuc` |
+| Hướng 3 công nghệ, quy trình, hệ thống | người còn trên hình: vẽ ở chỗ trống thật (`ve`), không nền mờ; tối chỉ khi không có người trên hình | `diagram` chuyen-giao / tu-thanh, `illus flow`, mạch vẽ tiếp (`mach.js`) | màu tràn nền ở đổi phần | `kien_thuc` |
 | Kể chuyện đời, cảm xúc, tâm sự (nhiều câu cảm xúc, nhịp chậm) | `phong: 'hat'` (giấy ảnh) hoặc người mờ | ít hình, chữ nhấn cạnh mặt, cảnh tự vẽ `ve` mềm | tối dần, không chớp trắng (`TONE 'lang'`) | `tam_su` / `y_nghia` |
 | Trò chuyện 1:1, hội thoại | giữ người là chính, nền tối khi cần thấy ý | `the-canh` cạnh người, `illus vs` khi hai góc nhìn | cắt cứng giấu mối + tối nhẹ | theo cảm xúc chủ đạo |
 | Vui, năng lượng, mẹo nhanh | tối + điểm sáng cam | `illus single/list`, `chips`, `pow` | chớp, đẩy nhanh (`TONE 'soi'`) | `vui` |
@@ -108,6 +108,10 @@ một điểm nhấn. Hình phủ (toàn màn hình + bố cục) quá khoảng 
 
 **4c. Kho cách thể hiện, xếp theo nguyên lý.** Gọi tên cái khó → tìm nguyên lý → đi hết các dòng của nguyên lý đó, không dừng ở 3–4 kiểu
 quen. Ghi mỗi cảnh một dòng `- <id> · Cần: <nguyên lý> · Vì: <cái khó> · Làm: <cách>` (`nguoi-xem-can-gi.md` mục 4).
+Cột "Nơi" ghi "toàn màn hình" chỉ dùng được khi đoạn đó **không có người nói trên hình**. Còn người trên hình thì cùng cấu trúc hình đó
+vẽ vào chỗ trống thật của khung bằng cảnh tự vẽ `ve` (vị trí `o`, mẫu `rieng/duong-may.jsx`: mạch "đường may" vẽ tiếp qua nhiều cảnh);
+khung nhiều người không dùng ô người (`quy-tac-chung.md` mục 4). Mỗi video có ít nhất 2 kiểu chưa dùng ở 3 tập gần nhất — ghi ở Chẩn
+đoán dòng `Kiểu mới: <kiểu> vì <dấu hiệu>`.
 
 | Nguyên lý | Câu nói / hình có dạng | Cách thể hiện có sẵn | Nơi (khi có khung chủ thể / bảng) |
 |---|---|---|---|

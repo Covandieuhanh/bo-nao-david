@@ -14,10 +14,12 @@ if (!process.argv[2] || !fs.existsSync(SRC)) { console.error('cách dùng: soat-
 const imp = (f) => import(pathToFileURL(path.join(SRC, f)).href);
 const read = (f) => { try { return fs.readFileSync(path.join(SRC, f), 'utf8'); } catch { return ''; } };
 
-let list = [], duration = 0, NGANG = false;
+let list = [], duration = 0, NGANG = false, CO_NGUOI = false, MAT = {};
 if (fs.existsSync(path.join(SRC, 'canh.js'))) {
   list = (await imp('canh.js')).SCENES || [];
   const pj = (await imp('du-an.js')).default; duration = pj.duration || 0; NGANG = pj.width > pj.height && !pj.podcast;
+  CO_NGUOI = !pj.podcast;   // khuôn 1 video: người nói trên hình (podcast chỉ tiếng thì không)
+  try { MAT = (await imp('mat.js')).default || {}; } catch {}
 } else if (fs.existsSync(path.join(SRC, 'danh-sach-cat.js'))) {   // ghép vlog, highlight người nói: lớp phủ phẳng, không có props
   const e = await imp('danh-sach-cat.js');
   list = (e.OVERLAYS || []).map((o, i) => ({id: o.id || `${o.type}-${i + 1}`, ...o}));
@@ -57,8 +59,20 @@ for (const raw of list) {
   if ((s.type === 'illus' || s.type === 'diagram') && items.length && dau - s.start > 1.2)
     bao('P0', s.start, s.id, `màn trống ${fmt(dau - s.start)} s đầu cảnh (phần tử đầu hiện lúc ${fmt(dau)})`, `dời start về ~${fmt(dau - 0.5)}`);
   // kiểu chưa chạy đúng ở khung ngang (11/11/2026, video cuộc gọi): kinetic không hiện, action đẩy câu trích xuống đáy
-  if (NGANG && (s.type === 'kinetic' || s.type === 'action'))
-    bao('P0', s.start, s.id, `kiểu "${s.type}" lỗi ở khung ngang`, 'dùng bocuc the-canh / o-nguoi hoặc illus');
+  // lower (22/11/2026, tap-dji0022-2111): ở khung ngang không hiện gì mà phụ đề vẫn nhường → trống chữ
+  if (NGANG && (s.type === 'kinetic' || s.type === 'action' || s.type === 'lower'))
+    bao('P0', s.start, s.id, `kiểu "${s.type}" lỗi ở khung ngang`, 'dùng cảnh tự vẽ ở chỗ trống (ve) hoặc bocuc the-canh');
+  // KHÔNG CHE / LÀM MỜ NGƯỜI ĐANG NÓI (David 21/11 + 22/11/2026: "màn hình mờ lại còn che nhân vật là hoàn toàn không đúng"):
+  // khuôn 1 video có người trên hình → cảnh toàn khung, nền người mờ, màn chương toàn khung đều chặn. Chỉ được khi đoạn đó
+  // không có người nói trên hình (cắt sang màn hình máy, cảnh trống): ghi props.khong_nguoi = true.
+  if (CO_NGUOI && !s.khong_nguoi && (FULL.has(s.type) && s.type !== 'cta' || s.phong === 'nguoi-mo' || (s.type === 'bocuc' && ['chuong', 'muc-luc', 'tren-duoi', 'o-tron'].includes(s.kieu))))
+    bao('P0', s.start, s.id, `"${[s.type, s.kieu || s.mode].filter(Boolean).join(':')}" phủ / làm mờ người đang nói trên hình`, 'đặt hình vào chỗ trống thật của khung (cảnh tự vẽ ve có vị trí o), hoặc ghi khong_nguoi: true nếu đoạn đó không có người trên hình');
+  // KHUNG NHIỀU NGƯỜI (David 22/11/2026: "tôi đang nói với các đối tác thì có nên chỉ hiện một mình tôi không?"):
+  // không thu riêng người đang nói vào ô — người xem cần thấy đang nói với ai
+  if (s.type === 'bocuc' && ['o-nguoi', 'o-tron'].includes(s.kieu) && s.khung !== 'ca-hai' && ((MAT[s.id] || {}).nguoi || []).length >= 2)
+    bao('P0', s.start, s.id, `khung có ${MAT[s.id].nguoi.length} người mà "${s.kieu}" chỉ giữ người đang nói`, 'dùng nhãn ở chỗ trống (ve) để mọi người vẫn hiện, hoặc khung: \'ca-hai\'');
+  if (s.type === 'bocuc' && s.kieu === 'the-canh' && ((MAT[s.id] || {}).nguoi || []).length >= 2)
+    bao('P1', s.start, s.id, 'thẻ cạnh người trong khung nhiều người: hết chỗ trống sẽ tự thu người đang nói vào ô', 'chụp thử; tự thu vào ô thì đổi sang nhãn ở chỗ trống (ve)');
   if (NGANG && s.type === 'card' && (s.steps || s.items || []).length > 4)
     bao('P1', s.start, s.id, `thẻ ${(s.steps || s.items).length} dòng tràn ở khung ngang`, 'dùng bocuc the-canh / muc-luc');
   if (s.num && typeof s.num.to !== 'number') bao('P0', s.start, s.id, 'con số không phải dạng số', 'ghi num.to là số');
@@ -104,7 +118,7 @@ for (let i = 1; i < fulls.length; i++) if (fulls[i].start < fulls[i - 1].end - 0
   bao('P1', fulls[i].start, fulls[i].id, `chồng lên "${fulls[i - 1].id}" (hết ${fmt(fulls[i - 1].end)})`, 'dời mốc, mỗi lúc một điểm nhìn');
 // không hai cảnh cùng kiểu liền nhau (khối 07, 2026-11-10); cảnh vẽ tiếp cùng mạch (tu_buoc) được nối
 const kieu = (s) => s.type === 'nhan' ? `nhan:${s.icon ? 'icon' : s.text ? 'text' : s.zoom > 1 ? 'zoom' : 'toi'}`
-  : [s.type, s.mode || s.kieu].filter(Boolean).join(':');
+  : [s.type, s.type === 've' ? s.ve : null, s.mode || s.kieu].filter(Boolean).join(':');   // cảnh tự vẽ: tên component + props.kieu (dạng hình)
 const BO_QUA = new Set(['hook', 'cta', 'action']);   // mở đầu, màn hành động, màn chốt có chỗ cố định
 const chuoi = list.map(flat).filter((s) => !BO_QUA.has(s.type)).sort((a, b) => a.start - b.start);
 for (let i = 1; i < chuoi.length; i++) {
@@ -189,6 +203,24 @@ for (let i = 1; i < chuoi.length; i++) {
       'đi lại tu-chon.md bước 4 cho từng ý (liệt kê, so sánh, bước, con số, câu đắt…), hoặc ghi "Một kiểu có chủ đích: …"');
   else if (duration >= 300 && loai.size <= 2 && !coY)
     bao('P1', 0, 'cả video', `video ${fmt(duration / 60)} phút chỉ ${loai.size} kiểu lớp phủ (${[...loai].join(', ')})`, 'xem lại tu-chon.md bước 4');
+  // ÁP DỤNG THẨM MỸ ĐÃ HỌC (David 22/11/2026: "học nhiều mà không thấy ứng dụng được thì phí quá"): mỗi video có ít nhất 2 kiểu
+  // lớp phủ chưa dùng ở 3 tập gần nhất trong ~/Movies (cảnh tự vẽ ve tính theo tên component). Ngoại lệ ghi rõ trong
+  // ke-hoach-canh.md: "Kiểu mới có chủ đích: <lý do>".
+  {
+    const kieuVe = kieu;
+    const cur = new Set(list.map(flat).filter((x) => !CO_DINH.has(x.type)).map(kieuVe));
+    const goc = path.join(process.env.HOME || '', 'Movies'), cu = [];
+    const quet = (d, sau) => { try { for (const n of fs.readdirSync(d)) {
+      const f = path.join(d, n, ...sau, 'chuyen-dong/src/canh.js');
+      if (fs.existsSync(f) && path.resolve(path.join(d, n, ...sau)) !== P && !/^tap-thu-/.test(n)) cu.push([fs.statSync(f).mtimeMs, f]); } } catch {} };
+    quet(goc, ['2-ban-day-du']); quet(path.join(goc, 'vlog'), []);
+    const ba = cu.sort((a, b) => b[0] - a[0]).slice(0, 3), daDung = new Set();
+    for (const [, f] of ba) try { for (const s of ((await import(pathToFileURL(f).href)).SCENES || []).map(flat)) if (!CO_DINH.has(s.type)) daDung.add(kieuVe(s)); } catch {}
+    const moi = [...cur].filter((k) => !daDung.has(k));
+    if (ba.length && moi.length < 2 && !/Kiểu mới có chủ đích:/.test(kh))
+      bao('P0', 0, 'cả video', `chỉ ${moi.length} kiểu mới so với ${ba.length} tập gần nhất (${moi.join(', ') || 'không có'}) — thẩm mỹ đã học chưa được dùng`,
+        'chọn thêm kiểu chưa dùng trong kho (thiet-ke-bo-cuc/bo-cuc.md) hoặc tự vẽ cảnh ve theo nội dung; ngoại lệ ghi "Kiểu mới có chủ đích: …"');
+  }
 }
 // mở đầu 3 giây
 if (false && list.length && !list.map(flat).some((s) => s.start <= 0.5 && ['hook', 'chips', 'pow', 'kinetic'].includes(s.type)))

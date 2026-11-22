@@ -75,9 +75,13 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
 - **Bố cục tự cân** theo thước đo ở `thiet-ke-bo-cuc/README.md` mục 2, chọn từ `thiet-ke-bo-cuc/bo-cuc.md`.
 - **Tự chọn trước kế hoạch cảnh** (cả 3 skill dựng): yêu cầu người dùng → chẩn đoán → loại nội dung → bố cục nền, lớp thông tin → mỗi cảnh
   "Cần · Vì · Làm" theo `thiet-ke-bo-cuc/nguoi-xem-can-gi.md` + `tu-chon.md` (`chan-doan.py`); ghi vào `ke-hoach-canh.md`.
-- **Không che người nói, không đè phụ đề** (chặn cứng ở mọi template). Khung có nhiều người: graphic không đè hay làm mờ bất kỳ ai;
-  khung cắt, chuyển cảnh, ô thu nhỏ bám đúng người đang nói. Thu người vào ô bo góc không tính là che. Che mặt / thân trên thì tự toàn màn
-  hình: khối 05.
+- **Không che, không làm mờ người đang nói, không đè phụ đề** (máy soát chặn). Người đang nói còn trên hình thì không dùng cảnh toàn
+  khung, nền người mờ, màn chương toàn khung: hình đặt vào **chỗ trống thật** của khung (trần, cửa kính, tường, khoảng trên đầu — đo
+  từ ảnh đầu / giữa / cuối cảnh), bằng cảnh tự vẽ `ve` có vị trí `o`. Cảnh toàn khung chỉ khi đoạn đó không có người trên hình.
+- **Khung có nhiều người** (trò chuyện, phỏng vấn, buổi gặp): mọi người luôn hiện — không thu riêng người đang nói vào ô, không đè hay
+  làm mờ bất kỳ ai, vì người xem cần thấy đang nói với ai. Khung một người: thu người vào ô bo góc không tính là che. Cách tránh: khối 05.
+- **Thẩm mỹ đã học phải được dùng:** mỗi video có ít nhất 2 kiểu lớp phủ chưa dùng ở 3 tập gần nhất (kho `thiet-ke-bo-cuc/bo-cuc.md`
+  hoặc cảnh tự vẽ `ve` theo nội dung), ghi lý do ở Chẩn đoán; máy soát chặn khi thiếu.
 - Chữ tiếng Việt đủ dấu, không chồng dòng (`VN`, chừa 0,5 em trên / 0,32 em dưới).
 - **Nhiều ảnh thật minh hoạ**: mỗi khi lời nhắc một nơi, người, vật, việc cụ thể thì ưu tiên ảnh thật, biểu tượng vẽ
   cho ý trừu tượng. **Ảnh chỉ được chụp tại Việt Nam, liên quan người Việt Nam** (đọc mô tả / danh mục ảnh để chắc; tìm kèm

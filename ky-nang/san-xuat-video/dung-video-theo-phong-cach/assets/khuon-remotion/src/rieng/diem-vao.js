@@ -5,4 +5,7 @@
 // Tự do (David 10/11/2026): nền, kết cấu, kiểu hình, bố cục, chuyển động, hình kể chuyện, mạch hình xuyên nhiều cảnh (lib/mach.js), chuyển cảnh (lib/chuyen-dong.js).
 // Thư mục này là DỮ LIỆU RIÊNG của video: cập nhật khung dựng không ghi đè.
 import {MauMach} from './mau-mach';
-export const VE = {MauMach};
+// Mẫu dùng lại được (22/11/2026): nhãn ở chỗ trống thật (tập tham quan, David duyệt 21/11) · đường may vẽ tiếp, không che ai
+import {NhanTram} from './nhan-tram';
+import {DuongMay} from './duong-may';
+export const VE = {MauMach, NhanTram, DuongMay};
