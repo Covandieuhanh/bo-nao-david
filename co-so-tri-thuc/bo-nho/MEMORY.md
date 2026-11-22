@@ -11,6 +11,7 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 - [Không dùng mod giao diện](quy-tac-khong-dung-mod-giao-dien.md) — đã gỡ hết savvy-progress, collision-guard, goal-meter, Sổ việc; chỉ giữ Telegram (13/11)
 - [Skill tự cải tiến, sáu luật mới](quy-tac-ky-nang-tu-cai-tien.md) — skill/giọng văn/luật kênh tự học theo số liệu, phần sửa duyệt 4 phần (sửa 14/11); lời mới nhất thắng (12/11)
 - [Phiên Telegram tự chạy](quy-tac-phien-telegram-tu-chay.md) — trình 4 phần chờ duyệt, duyệt rồi tự làm tới kết quả, ghi sổ; chỉ hỏi khi đăng/gửi, tốn tiền, đẩy đè GitHub; mọi phiên bật Remote Control, xong thì hỏi đóng; hai bot Sổ nhớ + Điều hành (12/11, 14/11, 20/11)
+- [Bot Sổ nhớ là thư ký, tiết kiệm token](quy-tac-bot-so-nho-thu-ky.md) — Sonnet, ít công cụ, luật lõi gọn, nối dòng không đọc file, dọn 10 phút; phiên Claude ở bot Điều hành (22/11)
 - [Việc gì cũng có quy trình, đi từ gốc lên](quy-tac-viec-gi-cung-co-quy-trinh.md) — tra cây `quy-trinh.md`; việc mới làm xong viết thành lá; GitHub luôn dựng lại được kết quả mới nhất (22/11)
 - [Việc gì cũng duyệt 4 phần trước](quy-tac-duyet-ke-hoach-4-phan.md) — Mục tiêu · Kế hoạch · Quy trình · Thực thi, duyệt rồi tự làm trọn; việc tự chạy hiện thành phiên trong app, không chạy ngầm (14/11)
 - [Tài nguyên vào, kết quả ra](quy-tac-goi-y-de-david-chon.md) — 4 phần gọn theo mặc định skill + đề xuất, duyệt rồi làm một mạch (11/11, sửa 14/11)
