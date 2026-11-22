@@ -122,8 +122,8 @@ nhẹ nhàng"*). Với mỗi ý đã qua 4a (cần hình), đọc lại các cá
 - Mẫu khung nhiều người, chỗ trống thật (`rieng/duong-may.jsx`): chương lớn, gạch thay, chuỗi nút, thẻ lật, số mốc, câu đắt, lời nhắc gửi
   AI, thẻ tên + vai trò, vẽ đúng vật (bộ vét, khuôn áo, mảnh ghép).
 
-Cách chọn: ý giống nhau thì cùng cách; ý khác loại thì **đổi sang cách khác trong kho** để video không lặp một kiểu (ví dụ: đổi trọng tâm →
-gạch thay · quy trình → chuỗi nút · liệt kê ngang hàng → thẻ · các bước có số → số mốc · hình ảnh so sánh → vẽ đúng vật). Mỗi cảnh một cách,
+Cách chọn: ý giống nhau thì cùng cách; ý khác loại thì **đổi sang cách khác trong kho** để video không lặp một kiểu (ví dụ: đổi trọng tâm thì
+gạch thay · quy trình thì chuỗi nút · liệt kê ngang hàng thì thẻ · các bước có số thì số mốc · hình ảnh so sánh thì vẽ đúng vật). Mỗi cảnh một cách,
 một điểm nhìn; không chồng hai cách trong một khung. Tiếng nhẹ (`props.tieng`: `ting` lúc thẻ / chữ lớn hiện, `tua` lúc nối cảnh) chỉ ở
 chỗ hình thật sự đổi. Ghi ở Chẩn đoán dòng `Nguồn kho: <cảnh> ← <nguồn, mã ca>; …` và thêm nguồn vào chú thích từng cảnh trong `canh.js`.
 Cách đã học mà kho chưa có code thì viết thêm vào `rieng/` (mẫu dùng lại), không thay bằng kiểu quen.
