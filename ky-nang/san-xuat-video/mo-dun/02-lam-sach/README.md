@@ -27,6 +27,8 @@ description: "Khối 02 làm sạch video: cắt thừa đầu cuối, câu nói
   và chép lời lại đoạn đã ghép. Cảnh không lời giữ lại có chủ ý (cảnh lia phòng làm intro, cảnh minh hoạ) bị máy gợi ý cắt là "thừa đầu"
   hay "lặng": đổi cut đó thành `ok: false`. Whisper chép cả video ghép hay lệch mốc ở cảnh không lời: lấy mốc từng chữ bằng cách chép riêng
   từng đoạn nói rồi cộng giờ bắt đầu đoạn (việc #39, 22/11).
+  Video ngắn mời sự kiện mà David thấy "ậm ừ làm chậm": cắt cả khoảng ngừng ngắn từ 0,15 s trong câu (chữ kéo dài "để… tổ… chức"), chừa
+  khoảng 0,06 s mỗi bên, mờ tiếng 12 ms ở mối; lời nhanh 1,12 lần (`setpts` + `atempo`, giữ cao độ), cảnh không lời nhanh 1,3 lần.
 
 ## Cách làm
 
