@@ -29,13 +29,16 @@ Luật nội dung (nguyên văn lời David, giọng David, lằn ranh) không p
 - File dài: tìm (`grep`) rồi đọc đúng đoạn. Đã đọc trong phiên thì không đọc lại.
 
 ## 2. Duyệt 4 phần trước, duyệt rồi tự làm trọn
-**Mọi việc** (kể cả khi David chỉ gửi video/ghi âm không kèm lời, sửa skill, sửa bộ não, dựng hệ thống, thông tin trực tiếp về David: hồ sơ, màu chủ đạo, chữ ký nhận diện, mạng xã hội): trước khi tạo/sửa bất kỳ file nào, trình đủ
+**Mọi việc** (kể cả khi David chỉ gửi video/ghi âm không kèm lời, sửa skill, sửa bộ não, dựng hệ thống, thông tin trực tiếp về David: hồ sơ, màu chủ đạo, chữ ký nhận diện, mạng xã hội): trước khi làm, trình đủ (trước đó chỉ được làm phần chuẩn bị: đọc, tải tài nguyên, chép lời, ghi phiếu lọc trong thư mục dự án — điểm duyệt Đ1, `quy-trinh.md` mục 1)
 **4 phần** — **Mục tiêu** (kết quả, đo bằng gì) · **Kế hoạch** (làm gì, ở đâu, chọn gì vì sao) · **Quy trình** (từng bước) · **Thực thi** (checklist nhỏ nhất,
 có mốc làm ngay) — kèm các điểm cần chốt (mỗi điểm có đề xuất đứng đầu), rồi **dừng chờ David "duyệt"**. Duyệt (hoặc sửa phần nào thì trình lại phần đó) thì 
 **tự làm trọn một mạch**, tự thử thật tới khi chắc dùng được, không xin phép từng bước, không dừng giữa chừng trừ tín hiệu nặng; xong báo kết quả. Phiên giao
 qua Telegram gửi 4 phần bằng `bao-cao.sh "#N ❓ Chờ anh duyệt 4 phần: …"`.
 **Miễn 4 phần:** câu hỏi nhanh, tra cứu, giải thích (trả lời thẳng) · bot Sổ nhớ ghi nhớ, tra sổ · lịch tự chạy David đã duyệt (`tu-dong-hoa/lich/lich-chay.md`,
 `[TU-HOC]`): chạy theo lời giao đã duyệt, không trình lại mỗi lần.
+**Chế độ tự chạy và không lệch quy trình:** chỉ khi chính lời David trong yêu cầu nói rõ "làm tới khi có kết quả, không cần hỏi lại" mới
+bỏ Đ1 và các lần dừng chờ giữa chừng, vẫn giữ Đ2 (đăng, gửi, xoá, tài khoản) và Đ3 (thông tin về David); ngoài trường hợp đó, làm đúng
+từng bước và dừng đúng từng điểm duyệt của lá, thấy quy trình sai thì dừng báo, không tự làm khác: `quy-trinh.md` mục 1.
 **Việc tự chạy phải nhìn thấy được:** lịch và việc giao qua Telegram mở thành phiên hiện trong app Claude (Remote Control) để David xem, kiểm và gõ tiếp,
 không chạy ngầm; cách làm: `tu-dong-hoa/lich/lich-chay.md`, `tu-dong-hoa/so-tay/README.md`.
 Trong 4 phần, cách chọn từng điểm:
@@ -96,7 +99,7 @@ Ghi lại gì, ở đâu, đi lên tầng nào: trục `../co-so-tri-thuc/truc-t
   một dòng ở trang [ban-do/](../ban-do/README.md) đúng chủ đề; đổi tên, gộp, xoá file thì sửa mọi nối tới nó. Trao đổi có **kiến thức đáng giữ**
   (công cụ, khái niệm, phần Claude giải thích mà David thấy hay) thì ghi hoặc bổ sung ghi chú trong `co-so-tri-thuc/kien-thuc/`, nối tới
   ý tưởng / dự án / skill liên quan. Máy kiểm tự chạy khi đồng bộ.
-- **Giữ Mac nhẹ:** Mac chỉ giữ việc đang làm. Xong việc thì đưa việc của David (video gốc, thành quả video) lên Drive rồi xoá trên Mac
+- **Giữ Mac nhẹ:** Mac chỉ giữ việc đang làm. David chốt xong việc (Đ2, `quy-trinh.md` mục 1) thì đưa việc của David (video gốc, thành quả video) lên Drive rồi xoá trên Mac
   (video: `don-tap.py --xoa` → `luu-drive.sh`); file tải về, dữ liệu app, đồ cá nhân không đồng bộ, muốn xoá thì hỏi trước. Ghi nhớ `video-chuyen-qua-drive`.
   Xoá video trên Mac chỉ bằng `luu-drive.sh` (chép cả tập → lên mây → so khớp → mới xoá), không tự lọc file bằng `find … -delete`
   (`-delete` làm mất tác dụng `-prune`, ngày 20/11/2026 đã xoá mất gốc DJI_0030 của tập máy đo giải pháp AI).

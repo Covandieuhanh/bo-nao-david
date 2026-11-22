@@ -4,6 +4,9 @@ description: "Sổ thay đổi skill phan-phoi-da-kenh: quyết định của Da
 
 # Sổ thay đổi — phan-phoi-da-kenh (quyết định của người dùng + lý do)
 
+## 22/11/2026 (khuya, sau): điểm duyệt Đ1/Đ2 rõ trong skill (phiên thử mới chỉ ra 10 chỗ hai phiên có thể làm khác)
+- "Không cổng duyệt" đổi thành "sau Đ1 không dừng giữa chừng"; dọn, đưa dự án lên Drive chỉ khi David chốt bản cuối (Đ2); chữ "đăng" nói trước khi có bản cuối ("xong thì đăng") chưa tính, giao rồi hỏi "đăng bản này?". Nhật ký nội dung, sổ danh mục được ghi trước Đ1 (ghi chép). Góp ý của David là lời duyệt cho chính thay đổi đó. Lý do: David 22/11 "không có trường hợp nào mà chạy lệch quy trình"; luật chung ở `quy-trinh.md` mục 1.
+
 ## Tái bản 4 — 20/11/2026: gom ý trùng giữa các file, bảng du-an/nang-cap/nang-cap-4.md
 - 20/11/2026 · luật "Máy chỉ dựng video" (`vai-may` = `chi-video`): ngày chuyển từ SKILL.md về đây.
 

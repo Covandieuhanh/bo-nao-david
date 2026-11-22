@@ -22,6 +22,10 @@ Trong các lệnh dưới: `SKILL=~/Documents/bo-nao-david/ky-nang/san-xuat-vide
 6. **Gửi David** bản nhẹ + bảng ngắn "giây · cảnh · cách làm · học từ đâu · hiệu ứng vào", rồi dừng chờ David duyệt hoặc góp ý.
    Góp ý thì sửa skill đúng chỗ và làm lại đoạn thử; duyệt thì mới dựng cả video với cách đã duyệt.
 
+## Điểm duyệt
+- **Đ1** trước khi làm (4 phần: đoạn nào, cách trình bày dự kiến).
+- **Dừng sau bước 6**, chờ David duyệt đoạn thử; chưa duyệt thì không dựng cả video. Chế độ tự chạy (David nói rõ) thì không dừng ở đây.
+
 ## Xong khi
 - David nhận đoạn thử (bản nhẹ dưới 30 MB) kèm bảng cảnh, và đã nói duyệt hay sửa.
 - Cả video chưa bị render lại khi David chưa duyệt đoạn thử.

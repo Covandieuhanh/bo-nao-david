@@ -38,7 +38,7 @@ Khi các nguồn mâu thuẫn: `ky-nang/chuan-muc-lam-viec.md` mục 0.
 
 ## Chọn quy trình theo việc
 
-Việc gì cũng có quy trình và đi từ gốc lên: tra **[cây quy trình](quy-trinh.md)** — quy trình gốc 7 bước cho mọi việc, rồi nhánh, rồi lá (câu David hay nói, file quy trình, xong khi). David chỉ gửi tài nguyên (video, ghi âm) không kèm yêu cầu thì là lá B1 (`phan-phoi-da-kenh`). Việc chưa có lá: làm theo gốc, xong viết thành lá trước khi báo xong (cây quy trình mục 1).
+Việc gì cũng có quy trình và đi từ gốc lên: tra **[cây quy trình](quy-trinh.md)** — quy trình gốc 7 bước cho mọi việc, rồi nhánh, rồi lá (câu David hay nói, file quy trình, xong khi). David chỉ gửi tài nguyên (video, ghi âm) không kèm yêu cầu thì là lá B1 (`phan-phoi-da-kenh`). Việc chưa có lá: làm theo gốc, xong viết thành lá trước khi báo xong (cây quy trình mục 2). Điểm duyệt và chế độ tự chạy: cây quy trình mục 1.
 
 Muốn hiểu toàn bộ hệ dựng video: [tong-quan.md](ky-nang/san-xuat-video/tong-quan.md), [quy-tac-chung.md](ky-nang/san-xuat-video/quy-tac-chung.md).
 

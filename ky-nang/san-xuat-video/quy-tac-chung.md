@@ -126,17 +126,17 @@ Ghi `<dự án>/phat-hanh/phat-hanh.md`:
     dùng chung template) đọc một lần ở đầu phiên. File khác chỉ đọc ở đúng bước cần (cột "Khối" của công thức).
   - Bước đánh dấu *(bước nhẹ)*: nhắc đổi mô hình rẻ hơn theo `../chuan-muc-lam-viec.md` mục 3.
   - Ghi góp ý đúng một chỗ: khối / skill bị ảnh hưởng + một dòng ở sổ `references/nhat-ky-thay-doi.md` của skill.
-- Hỏi, chạy một mạch, lệnh nền, báo cáo cuối: `../chuan-muc-lam-viec.md` mục 2–4; mật khẩu: `AGENTS.md` luật 5. Riêng video: duyệt 4 phần ở đầu việc, sau đó không có điểm dừng duyệt
-  giữa chừng (kể cả kế hoạch ghép vlog); báo cáo cuối thêm "đã chọn X vì Y" và tên riêng cần xác nhận.
+- Hỏi, chạy một mạch, lệnh nền, báo cáo cuối: `../chuan-muc-lam-viec.md` mục 2–4; mật khẩu: `AGENTS.md` luật 4. Riêng video: duyệt 4 phần ở đầu việc (Đ1), sau đó không có điểm dừng duyệt
+  giữa chừng trừ Đ2 (`quy-trinh.md` mục 1) (kể cả kế hoạch ghép vlog); báo cáo cuối thêm "đã chọn X vì Y" và tên riêng cần xác nhận.
 - Không tải video từ YouTube/TikTok để dựng (nhờ David gửi file); tải để học mẫu: `thiet-ke-bo-cuc/README.md` mục 4.
 - Chụp thử (stills) trước khi render để Claude tự soát, không gửi David chốt; kiểm bản cuối theo khối 17 + 09. **Chụp có giới hạn:** chụp đúng mốc dễ lỗi (khung mới lần
   đầu, chỗ chồng lớp, mối cắt, màn chốt, thẻ cuối, chỗ David góp ý), không chụp từng cảnh; xem bố cục thì dùng ảnh thu nhỏ.
 - **Góp ý thì sửa rồi render lại toàn bộ luôn**, không chờ chữ "render"; giao lại như lần đầu (Drive + trang xem
-  kết quả). Render nối tiếp, không song song. Không cổng duyệt nào trước khi xong; chỉ việc đăng mạng xã hội chờ David nói "đăng".
+  kết quả). Render nối tiếp, không song song. Sau Đ1 không dừng chờ nào trước khi xong; chỉ đăng mạng xã hội và dọn chờ David (Đ2).
 - **Phần cứng không hỏi, không đổi** (`../chuan-muc-lam-viec.md` mục 2): nhận diện, dấu góc, màn chốt, thẻ cuối, nhạc theo tuyến, mức
   motion graphics, phụ đề, chuẩn âm lượng, nơi giao file; tên riêng chưa chắc thì dùng cách Whisper nghe và nêu ở báo cáo.
 - **Thử skill bằng đoạn ngắn trọn một ý:** cắt từ đầu tới cuối một ý của video nguồn (không cố định số giây, không chạy cả video dài)
   vào thư mục thử riêng `tap-thu-…`, chạy theo skill, cho David xem bản cuối, xong thì dọn. Đoạn ngắn trọn ý ra tốt thì video dài cũng tốt.
 - **Dựng ngay trong phiên Claude** theo skill (`phan-phoi-da-kenh` → skill dựng). Không đề xuất dựng app hay công cụ tự động dựng video
   trừ khi David yêu cầu, vì chạy app tốn token hơn.
-- Video đã chốt: bản cuối vào `~/Movies/cho-dang/<tập>/` + `cho-dang.sh gui` (Drive `thanh-pham/` y hệt), dọn file tạm rồi đưa dự án lên Drive, xoá trên Mac theo khối 17 (`don-tap.py --xoa` → `luu-drive.sh`, không hỏi lại; chỉ hỏi phần ⏸ đang dở). Đăng xong: `cho-dang.sh xong <tập>`. Mac chỉ giữ việc đang làm + bản cuối chưa đăng: ghi nhớ `video-chuyen-qua-drive`.
+- Video đã chốt (David nói chốt là duyệt Đ2 cho việc dọn): bản cuối vào `~/Movies/cho-dang/<tập>/` + `cho-dang.sh gui` (Drive `thanh-pham/` y hệt), dọn file tạm rồi đưa dự án lên Drive, xoá trên Mac theo khối 17 (`don-tap.py --xoa` → `luu-drive.sh`, không hỏi lại; chỉ hỏi phần ⏸ đang dở). Đăng xong: `cho-dang.sh xong <tập>`. Mac chỉ giữ việc đang làm + bản cuối chưa đăng: ghi nhớ `video-chuyen-qua-drive`.

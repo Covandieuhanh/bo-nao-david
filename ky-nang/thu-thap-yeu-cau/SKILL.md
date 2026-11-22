@@ -16,7 +16,7 @@ Không dùng cho câu hỏi nhanh, tra cứu, giải thích (trả lời thẳng
 Lúc trình 4 phần: mọi tín hiệu gom vào điểm cần chốt. Sau khi duyệt, giữa chừng chỉ các tín hiệu **nặng** (1 khi làm đổi hẳn kết quả, 2, 3 khi đăng / xoá / khó đảo ngược, 5) mới dừng; tín hiệu 4 và 6 thì tự chọn theo mặc định + đề xuất và ghi vào báo cáo:
 1. **Hiểu được nhiều cách**: câu mơ hồ, nhất là chữ đọc chính tả lệch làm đổi nghĩa — không tự đoán rồi làm.
 2. **Mâu thuẫn** với luật, bộ nhớ, skill hoặc quyết định David đã chốt.
-3. **Tốn thời gian / tiền / khó đảo ngược**: render > 10 phút, xoá, đăng, gửi tin, dịch vụ trả phí, sửa hàng loạt.
+3. **Tốn thời gian / tiền / khó đảo ngược**: render > 10 phút (chỉ nêu trong 4 phần, giữa chừng chạy nền không dừng), xoá, đăng, gửi tin, dịch vụ trả phí, sửa hàng loạt.
 4. **Thiếu một quyết định làm đổi kết quả**: người xem, nền tảng, mục tiêu, phạm vi.
 5. **Đang làm thì phát hiện vấn đề** làm đổi kế hoạch (thiếu file, nguồn kém, cách cũ không chạy).
 6. **Sắp tự đặt một giả định** David chưa xác nhận.

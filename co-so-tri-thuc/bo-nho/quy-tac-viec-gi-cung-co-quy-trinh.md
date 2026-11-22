@@ -15,6 +15,11 @@ hiện. Như vậy thì mới đảm bảo sự giống nhau ở tất cả các
 các phần khác đều phải có. Luôn đi từ gốc phát triển lên"*. Lúc đó: script tách video chỉ ở thư mục tạm, 6 script ghi cứng bộ mã hoá của
 Mac, máy mới chưa được cài công cụ tải link, hai bảng chọn skill chép trùng, vài việc hay giao (nhận link, đoạn thử) chưa có quy trình.
 
+Cùng ngày, David chốt điểm duyệt: *"Phần nào đến bước duyệt thì vẫn phải chờ duyệt… những yêu cầu đặc biệt giống như là tự động làm video
+cho đến khi ra kết quả luôn và bỏ qua các bước duyệt thì mới bỏ qua thôi, chứ còn không có trường hợp nào mà chạy lệch quy trình cả"* →
+ba điểm duyệt Đ1 (4 phần) · Đ2 (đăng, gửi, xoá, tài khoản — không bao giờ bỏ) · Đ3 (thông tin về David); chế độ tự chạy chỉ bỏ Đ1 khi lời
+David nói rõ; mỗi lá ghi điểm duyệt (`quy-trinh.md` mục 1, 3).
+
 **How to apply:** đầu việc tra `quy-trinh.md`; cuối việc tự soát câu "một phiên mới chỉ đọc GitHub có làm ra đúng kết quả này không?"
 (`chuan-muc-lam-viec.md` mục 4). Máy kiểm `tu-dong-hoa/kiem-quy-trinh.py` chặn đẩy GitHub khi lá thiếu file / "Xong khi" hoặc skill
 không có lá. Nhà của luật: `quy-trinh.md`, `AGENTS.md` luật 6, `chuan-muc-lam-viec.md` mục 1 và 4. Liên quan

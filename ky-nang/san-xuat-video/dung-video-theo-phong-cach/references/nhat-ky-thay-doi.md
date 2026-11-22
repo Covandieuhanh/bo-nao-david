@@ -4,6 +4,13 @@ description: "Sổ thay đổi skill dựng video theo phong cách: quyết đ�
 
 # Sổ thay đổi — dung-video-theo-phong-cach (quyết định của người dùng + lý do)
 
+## 22/11/2026 (khuya, sau): điểm duyệt rõ ở từng lá, chế độ tự chạy, không lệch quy trình
+- David: *"Phần nào đến bước duyệt thì vẫn phải chờ duyệt … tự động làm video cho đến khi ra kết quả luôn và bỏ qua các bước duyệt thì mới
+  bỏ qua thôi, chứ còn không có trường hợp nào mà chạy lệch quy trình cả"*.
+- `quy-trinh.md` mục 1: Đ1 / Đ2 / Đ3, chế độ tự chạy, không lệch; cột "Điểm duyệt" cho 22 lá; máy kiểm chặn lá thiếu điểm duyệt.
+- Skill này: bước 12 sửa thành "giao ngay khi xong, David chốt rồi mới dọn (Đ2)" — hết lệch với `phan-phoi-da-kenh` ("không cổng duyệt nào
+  trước khi xong"); `tach-theo-huong.md`, `doan-thu.md` có mục "Điểm duyệt"; `tao-du-an.sh` chỉ thêm đường dẫn Homebrew khi máy có.
+
 ## 22/11/2026 (khuya): việc gì cũng có quy trình — cây quy trình của bộ não
 - David: *"Tất cả phần chung phải có quy trình. Quy trình từ gốc rồi đến các phần khác đều phải có. Luôn đi từ gốc phát triển lên"*
   (sổ chung: `co-so-tri-thuc/bo-nho/quy-tac-viec-gi-cung-co-quy-trinh.md`).

@@ -2,7 +2,7 @@
 # Tạo thư mục dự án chuẩn: tao-du-an.sh <video gốc> [video mẫu] [tên ngắn]
 # In ra đường dẫn dự án ở dòng cuối.
 set -e
-export PATH=/opt/homebrew/bin:$PATH
+[ -d /opt/homebrew/bin ] && export PATH=/opt/homebrew/bin:$PATH   # Mac: Homebrew; máy khác bỏ qua
 export NVM_DIR="$HOME/.nvm"; [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 SKILL=${0:A:h:h}
 SRC=${1:?thiếu video gốc}; REF=${2:-}; NAME=${3:-$(date +%Y%m%d-%H%M)}

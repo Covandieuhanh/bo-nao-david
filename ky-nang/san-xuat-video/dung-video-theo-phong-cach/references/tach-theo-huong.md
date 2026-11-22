@@ -55,6 +55,12 @@ Mỗi video ra `~/Movies/tap-<tên>/2-ban-day-du` có sẵn video gốc đã n�
   trong `phat-hanh/doan-gioi-thieu.json`), bình luận ghim, màn kết gắn các video cùng bộ, mục "Cần David quyết trước khi đăng".
 - Giao theo cây quy trình lá A6.
 
+## Điểm duyệt
+- **Đ1** sau bước 2: bảng video theo hướng, đoạn cắt, lằn ranh (mặc định giữ lời), clip ngắn dự kiến. Chưa duyệt thì không cắt, không dựng.
+- **Đ2**: đăng chỉ khi David nói "đăng"; dọn file tạm, đưa dự án lên Drive chỉ sau khi David chốt.
+- Chế độ tự chạy (David nói rõ "làm tới khi có kết quả"): bỏ Đ1, lằn ranh theo mặc định giữ lời, ghi lại trong báo cáo; người khác
+  xuất hiện (cả khách Veltrix) thì vẫn dựng, ghi "cần họ đồng ý" và hỏi ở Đ2; vẫn giữ Đ2 (`quy-trinh.md` mục 1).
+
 ## Xong khi
 - Có `phan-huong.md` của tập + mục nhật ký nội dung từng hướng có ý.
 - Mỗi video theo hướng là một dự án dựng xong: soát cảnh đạt, lưới ảnh kiểm không che ai, âm lượng −14 LUFS, có clip ngắn (hoặc ghi lý
