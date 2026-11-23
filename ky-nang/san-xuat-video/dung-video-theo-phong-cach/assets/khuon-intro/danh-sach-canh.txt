@@ -1,18 +1,21 @@
-# Danh sách đoạn cho intro DAVID TRẦN (bản 4, 23/11/2026): 12 cảnh khác nhau, MỖI CẢNH MỘT LẦN (David: "không cảnh nào lấy lại 2 lần"),
-# nhân vật làm trung tâm, cảnh toàn thấy sân khấu và lúc chia sẻ; 3 cảnh quay dọc đặt giữa khung ngang trên nền mờ của chính nó.
+# Danh sách đoạn cho intro DAVID TRẦN (bản 5, 23/11/2026): chỉ cảnh quay ngang (David: "Bỏ các cảnh dọc đi nhé. Để các cảnh ngang thôi"),
+# nhiều cảnh hơn ("cảm giác bị ít cảnh quá"): 16 khoảnh khắc, mỗi nơi quay tối đa 2 khoảnh khắc khác nhau (một toàn, một cận), không lặp.
 # Mỗi dòng: tên-đoạn  file-gốc (tính từ 1-goc/)  giây-bắt-đầu  độ-dài  [khung]
 # khung: bo-logo = cắt 10 % mép trái (logo DFS) · phai = 2/3 bên phải · trai = 5/6 bên trái
-#        doc = giữ khung dọc 1080×1920 · doc-bo-tren = khung dọc bỏ 20 % phía trên (logo Toplink trên vách)
-# google-photos/ = album "Intro david" (02 du thuyền, 03 phòng thu, 04 ký kết, 05 bảng giảng, 06 hội trường, 07 phòng đào tạo, 09 showroom)
-o1 google-photos/02.mp4 48.0 2.4
-o2 google-photos/07.mp4 1.0 2.4
-m1 google-photos/03.mp4 53.8 1.6
-m2 tu-lieu-goc/*0022*_video_original.mp4 209.6 1.6
-m3 google-photos/04.mp4 2.0 1.6 doc
-m4 tu-lieu-goc/*0027*_video_original.mp4 50.0 1.6
-m5 google-photos/09.mp4 151.5 1.6
-m6 tu-lieu-goc/*0019*_video_original.mp4 47.6 1.6
-m7 google-photos/05.mp4 35.0 1.6 doc-bo-tren
-m8 tu-lieu-goc/*0024*_video_original.mp4 16.3 1.6 bo-logo
-c1 google-photos/06.mp4 82.0 2.4 doc
+# google-photos/ = album "Intro david" (02 du thuyền, 03 phòng thu, 07 phòng đào tạo, 09 showroom, 12 tiệm làm đẹp); tu-lieu-goc/ = thư mục Drive đầu.
+s01 google-photos/02.mp4 48.0 2.0
+s02 google-photos/07.mp4 1.0 2.0
+s03 google-photos/03.mp4 53.8 1.6
+s04 tu-lieu-goc/*0022*_video_original.mp4 209.6 1.6
+s05 tu-lieu-goc/*0027*_video_original.mp4 50.0 1.6
+s06 google-photos/09.mp4 151.5 1.6
+s07 tu-lieu-goc/*0019*_video_original.mp4 47.6 1.6
+s08 google-photos/12.mp4 91.3 1.6
+s09 google-photos/07.mp4 30.0 1.6
+s10 tu-lieu-goc/*0024*_video_original.mp4 16.3 1.6 bo-logo
+s11 tu-lieu-goc/*0022*_video_original.mp4 1334.8 1.0 phai
+s12 tu-lieu-goc/*0027*_video_original.mp4 177.4 1.0
+s13 tu-lieu-goc/*0019*_video_original.mp4 149.6 1.0
+s14 tu-lieu-goc/*0020*_video_original.mp4 40.8 1.0
+s15 google-photos/03.mp4 153.0 1.6
 h1 google-photos/02.mp4 40.4 2.4
