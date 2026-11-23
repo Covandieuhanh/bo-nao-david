@@ -1,9 +1,9 @@
-// Intro DAVID TRẦN — bản 5, 23/11/2026, khung ngang 1920×1080, 14,6 giây.
-// Chỉ cảnh quay ngang, 16 khoảnh khắc (mỗi nơi tối đa 2, không lặp), nhân vật làm trung tâm, chuyển cảnh mềm và đa dạng.
-// Học từ intro diễn giả (John Sanei, Jacob Brown, Tony Robbins, Trần Hồng Hải): màu điện ảnh tối ấm, cắt đúng phách,
-// vệt sáng ở điểm nhấn, chốt tên giãn chữ trên nền đen với vạch mảnh.
-// Nhạc: "This Is Everything" — Josh Woodward (CC BY 3.0), đoạn 1:54,906–2:09,506; 156,6 BPM, phách 0,3831 s.
-// Chữ "This is everything" rơi đúng phách 32 của intro → tên DAVID TRẦN hiện đúng lúc đó.
+// Intro DAVID TRẦN — bản 6, 23/11/2026, khung ngang 1920×1080, 22,3 giây.
+// Mỗi video trong album (và thư mục Drive) một cảnh: 20 cảnh; video dọc được cắt khung ngang 16:9 vừa chỗ David xuất hiện.
+// Nhân vật làm trung tâm, chuyển cảnh mềm và đa dạng. Học từ intro diễn giả (John Sanei, Jacob Brown, Tony Robbins,
+// Trần Hồng Hải): màu điện ảnh tối ấm, cắt đúng phách, vệt sáng ở điểm nhấn, chốt tên giãn chữ trên nền đen với vạch mảnh.
+// Nhạc: "This Is Everything" — Josh Woodward (CC BY 3.0), đoạn 1:47,244–2:09,511; 156,6 BPM, phách 0,3831 s.
+// Chữ "This is everything" rơi đúng phách 52 của intro → tên DAVID TRẦN hiện đúng lúc đó.
 import React, { useEffect, useState } from 'react';
 import {
   AbsoluteFill, Audio, OffthreadVideo, Sequence, continueRender, delayRender, interpolate, staticFile,
@@ -16,32 +16,36 @@ const HEAD = '"Barlow Condensed", sans-serif';
 const W = 1920;
 const NHIP = 0.3831 * 30; // khung hình mỗi phách
 const f = (k) => Math.round(k * NHIP);
-export const TONG = 438; // 14,6 giây
-const TEN = 32; // phách hiện tên
+export const TONG = 668; // 22,3 giây
+const TEN = 52; // phách hiện tên
 const T = 10; // độ dài một lần chuyển cảnh (khung hình), một nửa nằm mỗi bên điểm cắt
 
 // [đoạn, phách đầu, phách cuối, chuyển động trong cảnh, kiểu chuyển VÀO cảnh này]
 // Kiểu chuyển: sang = tan cảnh qua vệt sáng ấm · zoom = phóng xuyên qua có nhòe · luot / luotNguoc = lướt ngang có nhòe
 //              loc = quét chéo mép mềm · cat = cắt thẳng có nhấn (đoạn dồn trước cao trào)
 const CANH = [
-  ['s01', 0, 3, 'day', null],
-  ['s02', 3, 6, 'day', 'sang'],
-  ['s03', 6, 8, 'troi', 'zoom'],
-  ['s04', 8, 10, 'day', 'luot'],
-  ['s05', 10, 12, 'troi', 'loc'],
-  ['s06', 12, 14, 'day', 'zoom'],
-  ['s07', 14, 16, 'troi', 'luotNguoc'],
-  ['s08', 16, 18, 'day', 'sang'],
-  ['s09', 18, 20, 'troi', 'loc'],
-  ['s10', 20, 22, 'day', 'zoom'], // "flashed before my eyes"
-  ['s11', 22, 23, 'dap', 'cat'],
-  ['s12', 23, 24, 'dap', 'cat'],
-  ['s13', 24, 25, 'dap', 'cat'],
-  ['s14', 25, 26, 'dap', 'cat'],
-  ['s15', 26, 28, 'day', 'luot'],
-  ['h1', 28, TEN, 'day', 'sang'], // cảnh chào cuối
+  ['c01', 0, 4, 'day', null],          // phòng đào tạo, cảnh toàn
+  ['c02', 4, 7, 'day', 'sang'],        // phòng thu talk show
+  ['c03', 7, 9, 'troi', 'zoom'],       // chia sẻ ở quán
+  ['c04', 9, 12, 'day', 'luot'],       // đứng bảng, vest cam (dọc)
+  ['c05', 12, 14, 'troi', 'loc'],      // viết sổ
+  ['c06', 14, 17, 'day', 'zoom'],      // showroom cùng đối tác
+  ['c07', 17, 19, 'day', 'luotNguoc'], // bắt tay ký kết (dọc)
+  ['c08', 19, 22, 'troi', 'sang'],     // trò chuyện phòng khách
+  ['c09', 22, 24, 'day', 'loc'],       // phòng spa
+  ['c10', 24, 27, 'day', 'zoom'],      // bảng giảng (dọc)
+  ['c11', 27, 29, 'troi', 'luot'],     // đội văn phòng
+  ['c12', 29, 32, 'day', 'loc'],       // ngày hội kết nối kinh doanh (dọc)
+  ['c13', 32, 34, 'troi', 'luotNguoc'],// trong tiệm spa
+  ['c14', 34, 37, 'day', 'zoom'],      // trình bày, đội mũ (dọc)
+  ['c15', 37, 39, 'troi', 'sang'],     // chào ở văn phòng
+  ['c16', 39, 42, 'day', 'zoom'],      // hội trường lớn (dọc), "flashed before my eyes"
+  ['c17', 42, 44, 'day', 'luotNguoc'], // sảnh, vest xám (dọc)
+  ['c18', 44, 46, 'dap', 'cat'],       // trong ô tô ban đêm
+  ['c19', 46, 48, 'dap', 'cat'],       // chỉ màn hình ở văn phòng
+  ['h1', 48, TEN, 'day', 'sang'],      // cảnh chào cuối trên du thuyền
 ];
-const VET_SANG = [0, 20, 28]; // vệt sáng lớn lóe qua ở điểm nhấn ngoài các lần chuyển "sang"
+const VET_SANG = [0, 40, 48]; // vệt sáng lớn lóe qua ở điểm nhấn ngoài các lần chuyển "sang"
 
 const ease = Easing.inOut(Easing.cubic);
 const kep = { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' };

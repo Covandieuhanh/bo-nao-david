@@ -5,7 +5,7 @@ description: "Quy trình lá B14: dựng intro thương hiệu DAVID TRẦN (khu
 # Intro thương hiệu DAVID TRẦN (cây quy trình lá B14)
 
 **Khi nào dùng:** David muốn một đoạn intro riêng đặt đầu video dài, từ thư mục tư liệu.
-Bản hiện hành làm 23/11/2026 (việc #41, bản 5): `~/Movies/cho-dang/tap-intro-david-tran-2311/ban-dai/intro-david-tran.mp4`,
+Bản hiện hành làm 23/11/2026 (việc #41, bản 6): `~/Movies/cho-dang/tap-intro-david-tran-2311/ban-dai/intro-david-tran.mp4`,
 Drive `thanh-pham/` cùng tên. Khuôn code: `assets/khuon-intro/`.
 
 **Đầu vào:** link thư mục Drive (lá B2 tải về `~/Movies/tap-<tên>/1-goc/`) · chữ trên intro (mặc định chỉ tên **DAVID TRẦN**: chữ trên
@@ -19,7 +19,13 @@ video chỉ lấy từ David).
 - "Có rất nhiều cảnh mà. Đan xen thêm nhé, không cảnh nào lấy lại 2 lần cả." · "Intro cần ấn tượng nên thẩm mỹ là quan trọng nhất."
 - "Cảm giác bị ít cảnh quá nhỉ. Bỏ các cảnh dọc đi nhé. Để các cảnh ngang thôi. Nhưng tôi muốn hiệu ứng chuyển tiếp giữa các cảnh
   đẹp và thẩm mỹ hơn." Nên: chỉ cảnh quay ngang, khoảng 16 khoảnh khắc; mỗi nơi quay tối đa 2 khoảnh khắc khác nhau (một toàn, một
-  cận), đặt cách xa nhau; không khoảnh khắc nào lặp. Cảnh dọc (khung `doc` của khuôn) chỉ dùng khi David đổi ý.
+  cận), đặt cách xa nhau; không khoảnh khắc nào lặp.
+- Lời hiện hành (thay các lời trên về số cảnh và cảnh dọc): "Đây là intro về cá nhân của tôi, nên là bây giờ mở rộng hơn đi… mỗi video
+  mình có thể lấy một cảnh… mỗi video mà tôi đưa vào cái album này thì tôi thấy là đều nên lấy một cảnh để ghép vào. Với những video
+  dọc ấy, mà nếu nó bị mờ quá thì thôi, nhưng mà nó vẫn còn nét thì mình sẽ cắt một cái khung ngang ở trong video dọc đấy." Nên:
+  **mỗi video một cảnh** (cả video đường phố, ô tô nếu David đã đưa vào album: chọn khoảnh khắc đẹp nhất của video đó), video dọc
+  cắt khung ngang 16:9 vừa chỗ David (`ngang-tu-doc:R`), video quá mờ (album 15: 400×400) thì bỏ; kết quả luôn là video ngang;
+  intro dài ra theo số cảnh (bản 6: 20 cảnh, 22,3 giây).
 
 ## Nguyên lý học từ intro diễn giả cùng lĩnh vực
 Mẫu đã học 23/11: John Sanei, Jacob Brown, Tony Robbins Australia (quốc tế); Trần Hồng Hải, Ngô Bích Hà, TS. Khiêm Nguyễn (Việt Nam).
@@ -29,8 +35,9 @@ Mẫu đã học 23/11: John Sanei, Jacob Brown, Tony Robbins Australia (quốc 
    phòng đào tạo có học viên đang nghe, phòng thu talk show, buổi chia sẻ) để người xem thấy năng lực đứng lớp, chia sẻ. Khoảnh khắc thật:
    đang nói trước người khác, ngồi viết, chào người xem. Cảnh quay bằng chân máy đẹp hơn cảnh tự
    cầm máy; cảnh tự quay chỉ để ở đoạn cắt nhanh.
-3. **Nhịp theo nhạc, nhiều cảnh, không lặp:** mở chậm (2 cảnh toàn, mỗi cảnh 3 phách) → giữa (8 cảnh, mỗi cảnh 2 phách, đan xen nơi
-   chốn khác nhau) → dồn (4 cảnh, mỗi cảnh 1 phách, cắt thẳng có nhấn) → 1 cảnh 2 phách → cảnh chào (4 phách) → tên.
+3. **Nhịp theo nhạc, mỗi video một cảnh:** cảnh mở 4 phách → các cảnh giữa xen kẽ 3 phách và 2 phách (đan xen nơi chốn, toàn và cận,
+   ngang gốc và ngang cắt từ dọc) → 2 cảnh dồn 2 phách cắt thẳng có nhấn → cảnh chào 4 phách → tên. Thêm cảnh thì lùi điểm bắt đầu
+   nhạc thêm một số phách chia hết cho 4, điểm chốt tên giữ nguyên ở chữ "This".
 4. **Chuyển cảnh đẹp, xen kẽ theo nhịp** (bảng `CANH`, cột cuối; mỗi lần dài 10 khung hình, nửa trước nửa sau điểm cắt):
    `sang` tan cảnh qua vệt sáng ấm (mở đầu, chuyển nơi chốn lớn, vào cảnh chào) · `zoom` phóng xuyên qua có nhòe (điểm nhấn của nhạc)
    · `luot` / `luotNguoc` lướt ngang có nhòe, đổi chiều xen kẽ · `loc` quét chéo mép mềm có đường sáng ấm chạy dọc mép · `cat` cắt
@@ -45,8 +52,8 @@ Mẫu đã học 23/11: John Sanei, Jacob Brown, Tony Robbins Australia (quốc 
    thử máy, cảnh đường phố, cửa hàng, ô tô, điện thoại đặt trên bàn.
 2. **Chọn khoảng 15 đoạn** theo nguyên lý 2, ghi vào `danh-sach-canh.txt` (mẫu trong khuôn). Logo tổ chức khác: `bo-logo` (cắt mép)
    hoặc chọn đoạn khác, soát từng khung vì máy cầm tay làm logo trôi vào mép. Quán đông người phía sau: `phai` (lấy 2/3 bên phải).
-   Cảnh quay dọc: `doc` (logo trên vách thì `doc-bo-tren`), đánh dấu `true` ở cột dọc của bảng `CANH` (cao trào: `'gan'`): khuôn tự đặt
-   cảnh nét cao 980 điểm ảnh giữa khung, vượt lên trên hai dải đen, nền là chính cảnh đó phóng to, mờ, tối.
+   Video quay dọc: `ngang-tu-doc:R` (R = mép trên của khung ngang theo tỉ lệ chiều cao video dọc); chụp thử rồi chỉnh R để thấy đủ
+   mặt và động tác (đầu ở khoảng một phần ba trên của khung). Video dọc 720 điểm ảnh bề ngang vẫn đủ nét sau khi phóng.
 3. **Nhạc có lời, giấy phép rõ:** dùng `cat-doan-noi-bat/assets/nhac/intro-co-loi-1.mp3` (README kho nhạc có đoạn dùng, nhịp, câu ghi
    nguồn). Cần bài mới thì:
    - Pixabay, ccMixter, trang riêng của tác giả chặn máy tải (bước xác minh chống máy, trang báo cấm); Free Music Archive bắt đăng nhập
