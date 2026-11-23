@@ -13,6 +13,8 @@ grep -v '^#' "$DS" | while read -r id mau_file ss len co; do
     phai)    vf="crop=1280:720:640:200,scale=1920:1080:flags=lanczos,$MAU" ;;
     doc)     vf="scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,$MAU" ;;
     doc-bo-tren) vf="scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,crop=1080:1536:0:384,$MAU" ;;
+    ngang-tu-doc:*) # video quay dọc: cắt một khung ngang 16:9 vừa chỗ David xuất hiện, R = mép trên của khung tính theo chiều cao
+             R=${co#ngang-tu-doc:}; vf="scale=1080:-2:flags=lanczos,crop=1080:608:0:'trunc(ih*$R)',scale=1920:1080:flags=lanczos,unsharp=5:5:0.5,$MAU" ;;
     trai)    vf="scale=1920:1080,crop=1600:900:0:100,scale=1920:1080:flags=lanczos,$MAU" ;;
     *)       vf="scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,$MAU" ;;
   esac

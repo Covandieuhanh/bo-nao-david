@@ -1,21 +1,26 @@
-# Danh sách đoạn cho intro DAVID TRẦN (bản 5, 23/11/2026): chỉ cảnh quay ngang (David: "Bỏ các cảnh dọc đi nhé. Để các cảnh ngang thôi"),
-# nhiều cảnh hơn ("cảm giác bị ít cảnh quá"): 16 khoảnh khắc, mỗi nơi quay tối đa 2 khoảnh khắc khác nhau (một toàn, một cận), không lặp.
+# Danh sách đoạn cho intro DAVID TRẦN (bản 6, 23/11/2026): MỖI VIDEO MỘT CẢNH (David: "mỗi video mà tôi đưa vào cái album này
+# thì tôi thấy là đều nên lấy một cảnh"), 20 cảnh, kết quả khung ngang. Video dọc còn nét thì cắt khung ngang 16:9 vừa chỗ David
+# xuất hiện (khung ngang-tu-doc:<mép trên theo tỉ lệ chiều cao>); video quá mờ thì bỏ (album 15: chỉ 400×400).
 # Mỗi dòng: tên-đoạn  file-gốc (tính từ 1-goc/)  giây-bắt-đầu  độ-dài  [khung]
-# khung: bo-logo = cắt 10 % mép trái (logo DFS) · phai = 2/3 bên phải · trai = 5/6 bên trái
-# google-photos/ = album "Intro david" (02 du thuyền, 03 phòng thu, 07 phòng đào tạo, 09 showroom, 12 tiệm làm đẹp); tu-lieu-goc/ = thư mục Drive đầu.
-s01 google-photos/02.mp4 48.0 2.0
-s02 google-photos/07.mp4 1.0 2.0
-s03 google-photos/03.mp4 53.8 1.6
-s04 tu-lieu-goc/*0022*_video_original.mp4 209.6 1.6
-s05 tu-lieu-goc/*0027*_video_original.mp4 50.0 1.6
-s06 google-photos/09.mp4 151.5 1.6
-s07 tu-lieu-goc/*0019*_video_original.mp4 47.6 1.6
-s08 google-photos/12.mp4 91.3 1.6
-s09 google-photos/07.mp4 30.0 1.6
-s10 tu-lieu-goc/*0024*_video_original.mp4 16.3 1.6 bo-logo
-s11 tu-lieu-goc/*0022*_video_original.mp4 1334.8 1.0 phai
-s12 tu-lieu-goc/*0027*_video_original.mp4 177.4 1.0
-s13 tu-lieu-goc/*0019*_video_original.mp4 149.6 1.0
-s14 tu-lieu-goc/*0020*_video_original.mp4 40.8 1.0
-s15 google-photos/03.mp4 153.0 1.6
+# khung: bo-logo = cắt 10 % mép trái (logo DFS) · phai = 2/3 bên phải · trai = 5/6 bên trái · ngang-tu-doc:R = khung ngang trong video dọc
+# google-photos/ = album "Intro david" 01–16; tu-lieu-goc/ = thư mục Drive đầu.
+c01 google-photos/07.mp4 1.0 2.4
+c02 google-photos/03.mp4 53.6 2.0
+c03 tu-lieu-goc/*0022*_video_original.mp4 209.6 1.6
+c04 google-photos/01.mp4 15.6 2.0 ngang-tu-doc:0.18
+c05 tu-lieu-goc/*0027*_video_original.mp4 50.0 1.6
+c06 google-photos/09.mp4 151.3 2.0
+c07 google-photos/04.mp4 2.0 1.6 ngang-tu-doc:0.47
+c08 google-photos/16.mp4 900.0 2.0
+c09 google-photos/12.mp4 91.3 1.6
+c10 google-photos/05.mp4 34.8 2.0 ngang-tu-doc:0.22
+c11 tu-lieu-goc/*0019*_video_original.mp4 47.6 1.6
+c12 google-photos/13.mp4 0.6 2.0 ngang-tu-doc:0.42
+c13 google-photos/14.mp4 19.4 1.6
+c14 google-photos/08.mp4 15.6 2.0 ngang-tu-doc:0.24
+c15 tu-lieu-goc/*0024*_video_original.mp4 16.3 1.6 bo-logo
+c16 google-photos/06.mp4 81.8 2.0 ngang-tu-doc:0.38
+c17 google-photos/10.mp4 24.6 1.6 ngang-tu-doc:0.36
+c18 google-photos/11.mp4 300.0 1.0
+c19 tu-lieu-goc/*0020*_video_original.mp4 40.8 1.0
 h1 google-photos/02.mp4 40.4 2.4
