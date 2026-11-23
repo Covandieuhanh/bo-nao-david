@@ -36,7 +36,7 @@ Bóc tách từ `co-so-tri-thuc/david.md`, `chien-luoc-nghe-nghiep.md` (ba hư�
 | 5. Giải pháp công nghệ AI | nội dung dạy dùng AI ✅ · gói đào tạo kỹ năng AI ⬜ · giải pháp số hoá cho doanh nghiệp nhỏ ⬜ | [5-giai-phap-cong-nghe-ai.md](5-giai-phap-cong-nghe-ai.md) |
 | 6. Tài chính | kênh kiến thức giao dịch hàng hoá 🟡 · hợp tác môi giới hợp pháp ⬜ | [6-tai-chinh.md](6-tai-chinh.md) |
 | 7. Kinh doanh theo 9 kỹ năng (`mo-hinh-kinh-doanh.md` mục 3) | kết nối ⬜ · đàm phán chia sẻ ⬜ · marketing (ngôn ngữ, dịch vụ) 🟡 · bán hàng ⬜ · R&D ⬜ · điều hành (quy trình, văn hoá, đối tác) ⬜ · tài chính ⬜ · kinh doanh (hệ thống, chính sách, chiến lược) ⬜ · chăm sóc khách hàng ⬜ | [7-kinh-doanh-9-ky-nang.md](7-kinh-doanh-9-ky-nang.md) |
-| 8. Bộ não và tự động hoá | trợ lý AI tự học 🟡 · tổ chức tri thức cá nhân ⬜ | [8-bo-nao-va-tu-dong-hoa.md](8-bo-nao-va-tu-dong-hoa.md) |
+| 8. Bộ não và tự động hoá | trợ lý AI tự học 🟡 · tổ chức tri thức cá nhân 🟡 · tư duy gốc: cách nghĩ, học, giải quyết vấn đề ✅ | [8-bo-nao-va-tu-dong-hoa.md](8-bo-nao-va-tu-dong-hoa.md) |
 
 ## 3. Một dòng hình mẫu ghi gì
 | Cột | Ghi |

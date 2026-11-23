@@ -142,5 +142,23 @@
    "B": "Cắt đoạn đó đi.",
    "C": "Giữ lời, cảnh báo trong phiếu lọc và báo cáo để David quyết; chữ trên hình, tiêu đề, mô tả không dùng chữ coach."
   }
+ },
+ {
+  "id": "c17",
+  "tinh_huong": "Đang dựng video theo kế hoạch đã duyệt. Render ra thì phụ đề lệch giờ vì quên cộng độ trễ của đoạn đã cắt; mục tiêu và kế hoạch vẫn đúng.",
+  "lua_chon": {
+   "A": "Dừng lại, trình David một kế hoạch mới.",
+   "B": "Sửa ngay cách làm (cộng độ trễ), render lại, soát rồi giao kết quả.",
+   "C": "Giao bản đang có kèm ghi chú phụ đề lệch, coi như đạt."
+  }
+ },
+ {
+  "id": "c18",
+  "tinh_huong": "Gói đào tạo đã làm đúng mọi bước của kế hoạch nhưng sau ba tuần không ai mua; kiểm ra thì khách trong tệp không có nỗi đau mà gói giải quyết.",
+  "lua_chon": {
+   "A": "Làm y như cũ thêm vài tuần nữa cho đủ thời gian.",
+   "B": "Hạ mục tiêu doanh số xuống cho vừa kết quả.",
+   "C": "Ghi rõ giả định nào của kế hoạch sai, quay lại Kế hoạch (đổi kế hoạch, quy trình, cách thực thi) và trình David."
+  }
  }
 ]

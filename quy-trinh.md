@@ -4,7 +4,8 @@ description: "Cây quy trình của bộ não — việc gì cũng đi từ quy 
 
 # Cây quy trình — việc gì cũng có quy trình, đi từ gốc lên
 
-Mọi phiên, mọi máy, mọi AI làm cùng một đường để ra cùng một kết quả: đi từ **gốc** (cách làm mọi việc), lên **nhánh** (một mảng việc),
+Cách **nghĩ** trong mọi bước (bóc tách, vòng kết quả hoặc vấn đề, học và thay đổi, kiểm sai): [tu-duy-goc.md](co-so-tri-thuc/tu-duy-goc.md)
+(mục 5 chỉ khối nào dùng ở bước nào). Mọi phiên, mọi máy, mọi AI làm cùng một đường để ra cùng một kết quả: đi từ **gốc** (cách làm mọi việc), lên **nhánh** (một mảng việc),
 tới **lá** (một việc cụ thể, có file quy trình, điểm duyệt và tiêu chí xong). Đây là bảng tra duy nhất; `AGENTS.md`, `huong-dan-cho-ai.md`
 chỉ trỏ về đây.
 
@@ -15,7 +16,7 @@ chỉ trỏ về đây.
 | 1 | **Nhận yêu cầu, tra cây:** tìm lá khớp ở mục 3 (David chỉ gửi video / ghi âm không kèm lời thì là lá B1); xem lời David có bật chế độ tự chạy không (mục 1) | file này |
 | 2 | **Đọc đúng phần cần, tra hình mẫu:** tra [bản đồ hình mẫu](co-so-tri-thuc/hinh-mau/README.md) cho mục nhỏ của việc; chưa có hoặc chưa đủ (ít nhất 5, việc lớn 10) thì nghiên cứu theo lá A8 trước Đ1, kết luận đưa vào 4 phần; file quy trình của lá → chỉ những khối, hồ sơ bước đang làm cần; đặt Mục tiêu + Xong khi; được làm phần chuẩn bị (mục 1). Máy chưa từng dựng video (chưa có `kiem-may.sh` đạt và bài kiểm suy luận ≥ 8/10) thì làm lá A2 trước khi dựng thật | `ky-nang/chuan-muc-lam-viec.md` mục 1 |
 | 3 | **Điểm duyệt Đ1: trình 4 phần, dừng chờ "duyệt"** (trừ phần miễn và chế độ tự chạy, mục 1) | `chuan-muc-lam-viec.md` mục 2 · `ky-nang/thu-thap-yeu-cau/SKILL.md` |
-| 4 | **Làm đúng từng bước của lá theo thứ tự**, một mạch, không thêm, không bớt, không đổi bước; tới điểm duyệt của lá thì dừng chờ | file quy trình của lá · `chuan-muc-lam-viec.md` mục 3 |
+| 4 | **Làm đúng từng bước của lá theo thứ tự**, một mạch, không thêm, không bớt, không đổi bước; tới điểm duyệt của lá thì dừng chờ. Ra vấn đề: ở cách làm thì xử lý ngay; ở giả định của kế hoạch thì dừng, trình lại kế hoạch (`tu-duy-goc.md` khối 2) | file quy trình của lá · `chuan-muc-lam-viec.md` mục 3 |
 | 5 | **Tự soát** theo "Xong khi" của lá, gồm câu "một phiên mới chỉ đọc GitHub có làm ra đúng kết quả này không?" | `chuan-muc-lam-viec.md` mục 4 |
 | 6 | **Giao kết quả + báo cáo ngắn:** đã làm gì · đã kiểm gì · chưa kiểm gì · cần David xác nhận gì · có chạy chế độ tự chạy không · 2–3 dòng so với hình mẫu (giống ở đâu, khác ở đâu, nên chỉnh gì) | lá A6 · `chuan-muc-lam-viec.md` mục 4 |
 | 7 | **Ghi lại, đẩy GitHub:** góp ý sửa đúng một chỗ + nhật ký, việc mới thì viết thành lá (mục 2), `bash tu-dong-hoa/dong-bo.sh --push` | `chuan-muc-lam-viec.md` mục 4 · `AGENTS.md` luật 6 |

@@ -6,6 +6,7 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 ## Luật làm việc với David
 
 - [Viết đủ từ, không viết tắt](quy-tac-viet-du-tu.md) — bộ não và mọi thứ gửi David viết đủ từ, đủ nghĩa; bất kỳ ai đọc cũng hiểu (20/11)
+- [Tư duy gốc](quy-tac-tu-duy-goc.md) — cách nghĩ mọi việc ở `tu-duy-goc.md` (bốn khối); khung cố vấn chiến lược làm xương sống, bộ óc thế giới bổ sung; tên thật cố vấn chỉ ở repo riêng (23/11)
 - [Trục tri thức cố định](quy-tac-truc-tri-thuc.md) — mọi việc học, sửa, lưu đi qua `truc-tri-thuc.md` (bốn tầng, sáu câu, luật đi lên, lỗi thì câu kiểm), không đổi cách mỗi lần học (20/11)
 - [Công cụ cài thì đưa vào skill](quy-tac-cong-cu-cai-dua-vao-ky-nang.md) — công cụ David cài (pyannote…) giúp việc tốt hơn thì tích hợp, giữ cách cũ dự phòng (07/11)
 - [Không dùng mod giao diện](quy-tac-khong-dung-mod-giao-dien.md) — đã gỡ hết savvy-progress, collision-guard, goal-meter, Sổ việc; chỉ giữ Telegram (13/11)

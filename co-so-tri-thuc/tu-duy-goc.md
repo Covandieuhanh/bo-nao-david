@@ -154,6 +154,6 @@ Quy trình gốc 7 bước ([quy-trinh.md](../quy-trinh.md) mục 0) đã chứa
   "đời" khi David ghi thì nối về khối nào ở đây.
 - **Hình mẫu mới về cách nghĩ:** thêm phiếu vào `tai-lieu-tham-khao/tu-duy-goc/phieu-hoc.md`, ghi khối; chỉ sửa file này khi nhiều phiếu
   cùng chỉ một điều mới và David chốt.
-- **Đổi file này:** tầng 0, chỉ đổi khi David nói rõ, sau vài ngày cân nhắc (trục tri thức mục 4, mục 7). Bản 1 viết ngày 23/11/2026; chờ
-  David đọc lại và chốt.
+- **Đổi file này:** tầng 0, chỉ đổi khi David nói rõ, sau vài ngày cân nhắc (trục tri thức mục 4, mục 7). Bản 1 viết ngày 23/11/2026 và **đang dùng**; David
+  đọc lại và chốt sau vài ngày, có sửa thì viết lại đúng câu ở đây.
 - **Kiểm:** bài kiểm toàn bộ não có câu về vòng vấn đề ([bai-kiem/](bai-kiem/README.md)).

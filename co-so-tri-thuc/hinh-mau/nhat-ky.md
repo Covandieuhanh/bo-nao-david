@@ -6,6 +6,14 @@ description: "Nhật ký hình mẫu: mỗi lần nghiên cứu một mục — 
 
 Mới nhất ở trên. Mỗi mục: ngày · mục nhỏ · câu hỏi · số mẫu · kết luận · áp dụng. Luật: [README](README.md).
 
+## 23/11/2026 — 8.3 tư duy gốc (việc #41)
+- Câu hỏi: các bộ óc hàng đầu thế giới nghĩ, học, giải quyết vấn đề thế nào; khung của cố vấn chiến lược của David đúng tới đâu.
+- Mẫu: 17 (Aristotle, Descartes, Musk, Feynman, Luhmann, Pólya, Toyota, Munger, Dalio, Kahneman, Popper, Meadows, Deming, Boyd, Argyris,
+  Kolb, Kirkpatrick); nguồn gốc miễn phí hợp pháp cho khoảng một nửa số người, còn lại tóm tắt được công nhận, sách cần mua ghi ở README tài liệu.
+- Kết luận: khung của cố vấn cùng họ với các vòng nổi tiếng nhất (Pólya, Deming, Argyris) và gọn hơn; bổ sung phép thử hai loại vấn đề,
+  đo trước khi làm, năm câu kiểm sai, đo học bằng thay đổi.
+- Áp dụng: `../tu-duy-goc.md` (tầng 0), `../mo-hinh-kinh-doanh.md` mục 5–6.
+
 ## 23/11/2026 — 2.9 độ dài thẻ thương hiệu, intro (việc #41)
 - Câu hỏi: intro thương hiệu của kênh lớn dài bao nhiêu, đặt ở đâu.
 - Mẫu: 4 tập thật (The Diary Of A CEO, Mel Robbins Podcast, Tony Robbins Podcast, Vietcetera "10.000 hours"), xem 100 giây đầu, lưới mỗi giây
