@@ -5,7 +5,7 @@ description: "Quy trình lá B14: dựng intro thương hiệu DAVID TRẦN (khu
 # Intro thương hiệu DAVID TRẦN (cây quy trình lá B14)
 
 **Khi nào dùng:** David muốn một đoạn intro riêng đặt đầu video dài, từ thư mục tư liệu.
-Bản hiện hành làm 23/11/2026 (việc #41, bản làm lại): `~/Movies/cho-dang/tap-intro-david-tran-2311/ban-dai/intro-david-tran.mp4`,
+Bản hiện hành làm 23/11/2026 (việc #41, bản 3): `~/Movies/cho-dang/tap-intro-david-tran-2311/ban-dai/intro-david-tran.mp4`,
 Drive `thanh-pham/` cùng tên. Khuôn code: `assets/khuon-intro/`.
 
 **Đầu vào:** link thư mục Drive (lá B2 tải về `~/Movies/tap-<tên>/1-goc/`) · chữ trên intro (mặc định chỉ tên **DAVID TRẦN**: chữ trên
@@ -15,12 +15,15 @@ video chỉ lấy từ David).
 - "Bỏ các hình ảnh ngoài đường phố với nhiều đối tượng gây nhiễu, chỉ giữ lại các hình ảnh chất lượng và sang trọng thôi."
 - "Ghép các cảnh ngang thôi" (không làm bản dọc, không dùng video quay dọc).
 - Nhạc tiếng Anh có lời, không vi phạm bản quyền. Logo tổ chức khác (DFS) thì tránh.
+- "Đưa nhân vật làm trung tâm nhé. Các cảnh cần hiển thị được toàn cảnh để thể hiện được tính chất sân khấu và năng lực chia sẻ của tôi."
 
 ## Nguyên lý học từ intro diễn giả cùng lĩnh vực
 Mẫu đã học 23/11: John Sanei, Jacob Brown, Tony Robbins Australia (quốc tế); Trần Hồng Hải, Ngô Bích Hà, TS. Khiêm Nguyễn (Việt Nam).
 1. **Sang trọng nằm ở màu và sự tiết chế:** màu điện ảnh tối, ấm, ít màu, viền tối nhẹ, hạt phim rất nhẹ, khung 2,35:1. Ít cảnh nhưng
    cảnh nào cũng đẹp. Tránh khuôn rối mắt (hạt lấp lánh, hình khối dồn dập, chữ chạy liên tục) như các mẫu Việt kiểu cũ.
-2. **Hình người thật, khoảnh khắc thật:** buổi chia sẻ, làm cùng đội, ngồi viết, chào người xem. Cảnh quay bằng chân máy đẹp hơn cảnh tự
+2. **Nhân vật làm trung tâm, cảnh toàn:** David ở giữa khung hoặc là điểm nhìn chính; cảnh rộng thấy cả không gian (sân khấu sự kiện,
+   phòng đào tạo có học viên đang nghe, phòng thu talk show, buổi chia sẻ) để người xem thấy năng lực đứng lớp, chia sẻ. Khoảnh khắc thật:
+   đang nói trước người khác, ngồi viết, chào người xem. Cảnh quay bằng chân máy đẹp hơn cảnh tự
    cầm máy; cảnh tự quay chỉ để ở đoạn cắt nhanh.
 3. **Nhịp theo nhạc, có lớp:** mở chậm (mỗi cảnh 4 phách, máy đẩy chậm vào) → giữa (2 phách, máy trôi ngang) → dồn (1 phách) trước điểm
    chốt → cảnh chào (4 phách) → tên. Vệt sáng ấm lóe qua ở các điểm nhấn của nhạc và lời.
@@ -28,7 +31,8 @@ Mẫu đã học 23/11: John Sanei, Jacob Brown, Tony Robbins Australia (quốc 
    qua chữ. Tên hiện đúng chữ đắt nhất của lời bài hát.
 
 ## Các bước
-1. **Tải + xem cảnh:** lá B2. Xem nhanh bằng ảnh lưới nhảy thẳng tới mốc thời gian (`ffmpeg -ss <giây> -i <file> -frames:v 1`; đừng dùng
+1. **Tải + xem cảnh:** lá B2. Album Google Photos chia sẻ: tải trang album (`curl -L <link>`), lấy các đường
+   `https://lh3.googleusercontent.com/pw/...` (giữ thứ tự, bỏ trùng), tải từng mục bằng đuôi `=dv` (video gốc), đặt tên theo thứ tự. Xem nhanh bằng ảnh lưới nhảy thẳng tới mốc thời gian (`ffmpeg -ss <giây> -i <file> -frames:v 1`; đừng dùng
    bộ lọc `fps` trên video dài vì phải giải mã cả file). Bỏ video quay dọc hay nằm nghiêng, video đã dựng có chữ in trong hình, thư mục
    thử máy, cảnh đường phố, cửa hàng, ô tô, điện thoại đặt trên bàn.
 2. **Chọn khoảng 15 đoạn** theo nguyên lý 2, ghi vào `danh-sach-canh.txt` (mẫu trong khuôn). Logo tổ chức khác: `bo-logo` (cắt mép)
@@ -61,7 +65,8 @@ Mẫu đã học 23/11: John Sanei, Jacob Brown, Tony Robbins Australia (quốc 
 
 ## Xong khi
 - Bản cuối 1920×1080, 12–15 giây, khoảng −14 LUFS, ở Chờ đăng và Drive `thanh-pham/` đã lên mây, kèm `ghi-nguon-nhac.txt`.
-- Soát 16 khung đều: không cảnh đường phố hay người lạ gây nhiễu, không lộ logo tổ chức khác, tên hiện đúng chữ đắt của lời bài hát.
+- Soát 16 khung đều: David là trung tâm ở mọi cảnh (kể cả từng khung của cảnh chào cuối, vì người cầm máy hay đi lệch), không cảnh đường
+  phố hay người lạ gây nhiễu, không lộ logo tổ chức khác, tên hiện đúng chữ đắt của lời bài hát.
 
 ## Kiểm gì
 - Mọi đoạn đúng chiều (video iPhone có xoay −90 / −180 vẫn đứng thẳng sau khi cắt).
