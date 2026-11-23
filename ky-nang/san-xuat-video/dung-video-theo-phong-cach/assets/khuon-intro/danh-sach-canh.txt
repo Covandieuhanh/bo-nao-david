@@ -1,0 +1,19 @@
+# Danh sách đoạn cho intro DAVID TRẦN (bản 23/11/2026). Mỗi dòng: tên-đoạn  file-gốc  giây-bắt-đầu  độ-dài  [bo-logo]
+# file-gốc tính từ thư mục 1-goc/ của tập; "bo-logo" = cắt bỏ 10 % mép trái (logo DFS trên tường) rồi phóng lại 1920×1080.
+a1 tu-lieu-goc/IMG_2842.MOV 1.0 1.6
+a2 tu-lieu-goc/IMG_2888.MOV 1.9 1.6
+a3 tu-lieu-goc/*0022*_video_original.mp4 209.9 1.6
+a4 tu-lieu-goc/*0019*_video_original.mp4 79.5 1.2
+a5 tu-lieu-goc/*0019*_video_original.mp4 47.5 1.2
+a6 tu-lieu-goc/*0024*_video_original.mp4 16.3 1.6 bo-logo
+a7 tu-lieu-goc/*0027*_video_original.mp4 28.4 1.2
+a8 tu-lieu-goc/tap-cuoc-goi-hop-tac/dji_mimo_*.MP4 386.5 1.2
+a9 tu-lieu-goc/*0022*_video_original.mp4 213.2 1.6
+a10 tu-lieu-goc/*0020*_video_original.mp4 41.0 1.6
+b1 tu-lieu-goc/*0022*_video_original.mp4 214.5 3.2
+b2 tu-lieu-goc/*0019*_video_original.mp4 266.0 3.2
+b3 tu-lieu-goc/*0027*_video_original.mp4 99.0 3.2
+b4 tu-lieu-goc/IMG_2842.MOV 28.8 3.2
+b5 tu-lieu-goc/*0019*_video_original.mp4 431.0 3.2
+b6 tu-lieu-goc/*0024*_video_original.mp4 19.5 3.2 bo-logo
+h1 tu-lieu-goc/*0020*_video_original.mp4 44.6 3.6
