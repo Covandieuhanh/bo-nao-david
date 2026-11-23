@@ -1,161 +1,44 @@
 {
   "_ghi_chu": "Tầng của từng file theo trục tri thức (co-so-tri-thuc/truc-tri-thuc.md mục 2). Đọc từ trên xuống, mẫu đầu tiên khớp thắng; ** = mọi tầng thư mục. 0 = trục (gần như không đổi) · 1 = nguyên lý (đổi ở vòng Nâng cấp) · 2 = quy trình (đổi theo tuần, theo góp ý) · 3 = dữ liệu (chỉ thêm, không sửa nghĩa cái cũ). Chỉ mục (chi-muc.md) hiện tầng; máy đo chồng chéo chỉ kiểm 'mỗi ý một nhà' ở tầng 1 và 2. File mới không cần khai báo: rơi vào mẫu sẵn có; mẫu cuối '**' là tầng 2.",
   "quy_tac": [
-    [
-      "co-so-tri-thuc/truc-tri-thuc.md",
-      0
-    ],
-    [
-      "co-so-tri-thuc/tu-duy-goc.md",
-      0
-    ],
-    [
-      "AGENTS.md",
-      0
-    ],
-    [
-      "CLAUDE.md",
-      0
-    ],
-    [
-      "co-so-tri-thuc/chi-dan-toan-cuc.md",
-      0
-    ],
-    [
-      "co-so-tri-thuc/david.md",
-      0
-    ],
-    [
-      "**/nhat-ky-thay-doi.md",
-      3
-    ],
-    [
-      "**/hoc-tu-*",
-      3
-    ],
-    [
-      "**/nguon-tham-khao/**",
-      3
-    ],
-    [
-      "**/mau-chuan/**",
-      3
-    ],
-    [
-      "**/luu-tru/**",
-      3
-    ],
-    [
-      "ky-nang/tai-cau-truc/lich-su.md",
-      3
-    ],
-    [
-      "ky-nang/san-xuat-video/thiet-ke-bo-cuc/giai-mau.md",
-      3
-    ],
-    [
-      "ky-nang/san-xuat-video/thiet-ke-bo-cuc/bo-cuc.md",
-      3
-    ],
-    [
-      "ky-nang/san-xuat-video/thiet-ke-bo-cuc/am-thanh.md",
-      3
-    ],
-    [
-      "ky-nang/san-xuat-video/thiet-ke-bo-cuc/anh-mau/**",
-      3
-    ],
-    [
-      "ky-nang/san-xuat-video/mo-dun/19-dang-bai/mau-ke-hoach-dang.md",
-      3
-    ],
-    [
-      "co-so-tri-thuc/bo-nho/**",
-      3
-    ],
-    [
-      "co-so-tri-thuc/kien-thuc/**",
-      3
-    ],
-    [
-      "co-so-tri-thuc/chi-muc.md",
-      3
-    ],
-    [
-      "co-so-tri-thuc/ho-so-ca-nhan.md",
-      3
-    ],
-    [
-      "co-so-tri-thuc/du-lieu-nen-huyen-hoc.md",
-      3
-    ],
-    [
-      "co-so-tri-thuc/nghien-cuu-ccl.md",
-      3
-    ],
-    [
-      "co-so-tri-thuc/bai-kiem/**",
-      3
-    ],
-    [
-      "du-an/**",
-      3
-    ],
-    [
-      "nghien-cuu/**",
-      3
-    ],
-    [
-      "tai-lieu-tham-khao/**",
-      3
-    ],
-    [
-      "bao-cao-trang-thai.md",
-      3
-    ],
-    [
-      "co-so-tri-thuc/mo-hinh-kinh-doanh.md",
-      1
-    ],
-    [
-      "co-so-tri-thuc/chien-luoc-nghe-nghiep.md",
-      1
-    ],
-    [
-      "co-so-tri-thuc/chien-luoc-noi-dung.md",
-      1
-    ],
-    [
-      "co-so-tri-thuc/quy-uoc-lien-ket.md",
-      1
-    ],
-    [
-      "ky-nang/chuan-muc-lam-viec.md",
-      1
-    ],
-    [
-      "ky-nang/san-xuat-video/quy-tac-chung.md",
-      1
-    ],
-    [
-      "ky-nang/san-xuat-video/nguyen-tac.md",
-      1
-    ],
-    [
-      "ky-nang/san-xuat-video/thiet-ke-bo-cuc/nguoi-xem-can-gi.md",
-      1
-    ],
-    [
-      "ky-nang/san-xuat-video/thu-vien-tai-nguyen/nhan-dien-chung.md",
-      1
-    ],
-    [
-      "ky-nang/san-xuat-video/ho-so-thuong-hieu/giong-thuong-hieu-david.md",
-      1
-    ],
-    [
-      "**",
-      2
-    ]
+    ["co-so-tri-thuc/truc-tri-thuc.md", 0],
+    ["co-so-tri-thuc/tu-duy-goc.md", 0],
+    ["AGENTS.md", 0],
+    ["CLAUDE.md", 0],
+    ["co-so-tri-thuc/chi-dan-toan-cuc.md", 0],
+    ["co-so-tri-thuc/david.md", 0],
+    ["**/nhat-ky-thay-doi.md", 3],
+    ["**/hoc-tu-*", 3],
+    ["**/nguon-tham-khao/**", 3],
+    ["**/mau-chuan/**", 3],
+    ["**/luu-tru/**", 3],
+    ["ky-nang/tai-cau-truc/lich-su.md", 3],
+    ["ky-nang/san-xuat-video/thiet-ke-bo-cuc/giai-mau.md", 3],
+    ["ky-nang/san-xuat-video/thiet-ke-bo-cuc/bo-cuc.md", 3],
+    ["ky-nang/san-xuat-video/thiet-ke-bo-cuc/am-thanh.md", 3],
+    ["ky-nang/san-xuat-video/thiet-ke-bo-cuc/anh-mau/**", 3],
+    ["ky-nang/san-xuat-video/mo-dun/19-dang-bai/mau-ke-hoach-dang.md", 3],
+    ["co-so-tri-thuc/bo-nho/**", 3],
+    ["co-so-tri-thuc/kien-thuc/**", 3],
+    ["co-so-tri-thuc/chi-muc.md", 3],
+    ["co-so-tri-thuc/ho-so-ca-nhan.md", 3],
+    ["co-so-tri-thuc/du-lieu-nen-huyen-hoc.md", 3],
+    ["co-so-tri-thuc/nghien-cuu-ccl.md", 3],
+    ["co-so-tri-thuc/bai-kiem/**", 3],
+    ["du-an/**", 3],
+    ["nghien-cuu/**", 3],
+    ["tai-lieu-tham-khao/**", 3],
+    ["bao-cao-trang-thai.md", 3],
+    ["co-so-tri-thuc/mo-hinh-kinh-doanh.md", 1],
+    ["co-so-tri-thuc/chien-luoc-nghe-nghiep.md", 1],
+    ["co-so-tri-thuc/chien-luoc-noi-dung.md", 1],
+    ["co-so-tri-thuc/quy-uoc-lien-ket.md", 1],
+    ["ky-nang/chuan-muc-lam-viec.md", 1],
+    ["ky-nang/san-xuat-video/quy-tac-chung.md", 1],
+    ["ky-nang/san-xuat-video/nguyen-tac.md", 1],
+    ["ky-nang/san-xuat-video/thiet-ke-bo-cuc/nguoi-xem-can-gi.md", 1],
+    ["ky-nang/san-xuat-video/thu-vien-tai-nguyen/nhan-dien-chung.md", 1],
+    ["ky-nang/san-xuat-video/ho-so-thuong-hieu/giong-thuong-hieu-david.md", 1],
+    ["**", 2]
   ]
 }
