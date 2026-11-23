@@ -1,19 +1,18 @@
-# Danh sách đoạn cho intro DAVID TRẦN (bản 3, 23/11/2026: nhân vật làm trung tâm, cảnh toàn thấy sân khấu và lúc chia sẻ).
+# Danh sách đoạn cho intro DAVID TRẦN (bản 4, 23/11/2026): 12 cảnh khác nhau, MỖI CẢNH MỘT LẦN (David: "không cảnh nào lấy lại 2 lần"),
+# nhân vật làm trung tâm, cảnh toàn thấy sân khấu và lúc chia sẻ; 3 cảnh quay dọc đặt giữa khung ngang trên nền mờ của chính nó.
 # Mỗi dòng: tên-đoạn  file-gốc (tính từ 1-goc/)  giây-bắt-đầu  độ-dài  [khung]
-# khung: bo-logo = cắt 10 % mép trái · phai = lấy 2/3 bên phải · trai = lấy 5/6 bên trái (người nói đứng lệch trái phòng học)
-# google-photos/ = album "Intro david" David gửi 23/11 (02 du thuyền, 03 phòng thu, 07 phòng đào tạo); tu-lieu-goc/ = thư mục Drive đầu.
-o1 google-photos/02.mp4 1.0 2.4
-o2 google-photos/07.mp4 13.5 2.4 trai
-m1 google-photos/02.mp4 48.0 1.6
-m2 google-photos/03.mp4 53.8 1.6
-m3 google-photos/07.mp4 21.0 1.6 trai
-m4 tu-lieu-goc/*0022*_video_original.mp4 209.6 1.6
-m5 google-photos/02.mp4 7.5 1.6
-m6 google-photos/07.mp4 30.0 1.6
-m7 google-photos/03.mp4 153.0 1.6
-m8 tu-lieu-goc/*0027*_video_original.mp4 50.0 1.6
-f1 google-photos/02.mp4 36.3 1.0
-f2 google-photos/07.mp4 16.3 1.0 trai
-f3 google-photos/03.mp4 35.0 1.0
-f4 tu-lieu-goc/*0022*_video_original.mp4 1334.8 1.0 phai
+# khung: bo-logo = cắt 10 % mép trái (logo DFS) · phai = 2/3 bên phải · trai = 5/6 bên trái
+#        doc = giữ khung dọc 1080×1920 · doc-bo-tren = khung dọc bỏ 20 % phía trên (logo Toplink trên vách)
+# google-photos/ = album "Intro david" (02 du thuyền, 03 phòng thu, 04 ký kết, 05 bảng giảng, 06 hội trường, 07 phòng đào tạo, 09 showroom)
+o1 google-photos/02.mp4 48.0 2.4
+o2 google-photos/07.mp4 1.0 2.4
+m1 google-photos/03.mp4 53.8 1.6
+m2 tu-lieu-goc/*0022*_video_original.mp4 209.6 1.6
+m3 google-photos/04.mp4 2.0 1.6 doc
+m4 tu-lieu-goc/*0027*_video_original.mp4 50.0 1.6
+m5 google-photos/09.mp4 151.5 1.6
+m6 tu-lieu-goc/*0019*_video_original.mp4 47.6 1.6
+m7 google-photos/05.mp4 35.0 1.6 doc-bo-tren
+m8 tu-lieu-goc/*0024*_video_original.mp4 16.3 1.6 bo-logo
+c1 google-photos/06.mp4 82.0 2.4 doc
 h1 google-photos/02.mp4 40.4 2.4
