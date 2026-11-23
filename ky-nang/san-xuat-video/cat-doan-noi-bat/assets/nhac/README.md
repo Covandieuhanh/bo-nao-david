@@ -13,6 +13,7 @@ Nguồn Pixabay — Pixabay Content License (dùng miễn phí, cả thương m�
 | kham-pha-1.mp3 | Cinematic Adventure — AtlasAudio (pixabay 610029) | tuyến kham_pha: phiêu lưu, leo núi, cao trào |
 | kham-pha-2.mp3 | Upbeat Documentary — AtlasAudio (pixabay 621616) | tuyến kham_pha: hành trình kiểu phim tài liệu tươi |
 | ngam-canh-1.mp3 | Travel Piano — leberch (pixabay 627382) | tuyến ngam_canh: ngắm cảnh chậm, thư thái |
+| intro-co-loi-1.mp3 | This Is Everything — Josh Woodward (Internet Archive `jamendo-112820`, **CC BY 3.0: bắt buộc ghi nguồn** `Music: "This Is Everything" by Josh Woodward. Free download: https://www.joshwoodward.com/`; không gửi vào Content ID, không bán lại bài) | intro thương hiệu DAVID TRẦN có lời tiếng Anh (lá B14): đoạn 1:54,906–2:09,506, 156,6 BPM, phách 0,3831 s, chữ "This" rơi ở 2:07,165 |
 YouTube Content ID có thể nhận nhầm thì kháng nghị kèm giấy phép Pixabay.
 Mức cân từng bài (về ~−15 LUFS): MỘT nguồn ở `ho-so-thuong-hieu/chung.json` → `nhac.muc`. Bản gốc David tải: `~/Music/nhac-nen`.
 2 bài intro: David tải 2026-11-04 (7 bài ứng viên cùng chất intro vlog kênh Jessie Luong); Claude chọn theo độ rõ nhịp + lực mở bài.
