@@ -1,6 +1,7 @@
-// Intro DAVID TRẦN — bản 4, 23/11/2026, khung ngang 1920×1080, 14,6 giây: 12 cảnh khác nhau, mỗi cảnh một lần, nhân vật làm trung tâm.
-// Học từ intro diễn giả (John Sanei, Jacob Brown, Tony Robbins, Trần Hồng Hải): màu điện ảnh tối ấm, ít cảnh nhưng cảnh nào cũng đẹp,
-// cắt đúng phách, vệt sáng ở điểm nhấn, chốt tên giãn chữ trên nền đen với vạch mảnh.
+// Intro DAVID TRẦN — bản 5, 23/11/2026, khung ngang 1920×1080, 14,6 giây.
+// Chỉ cảnh quay ngang, 16 khoảnh khắc (mỗi nơi tối đa 2, không lặp), nhân vật làm trung tâm, chuyển cảnh mềm và đa dạng.
+// Học từ intro diễn giả (John Sanei, Jacob Brown, Tony Robbins, Trần Hồng Hải): màu điện ảnh tối ấm, cắt đúng phách,
+// vệt sáng ở điểm nhấn, chốt tên giãn chữ trên nền đen với vạch mảnh.
 // Nhạc: "This Is Everything" — Josh Woodward (CC BY 3.0), đoạn 1:54,906–2:09,506; 156,6 BPM, phách 0,3831 s.
 // Chữ "This is everything" rơi đúng phách 32 của intro → tên DAVID TRẦN hiện đúng lúc đó.
 import React, { useEffect, useState } from 'react';
@@ -12,77 +13,107 @@ import '@fontsource/barlow-condensed/800.css';
 
 const C = { text: '#F4F4F5', accent: '#FF7A45' };
 const HEAD = '"Barlow Condensed", sans-serif';
+const W = 1920;
 const NHIP = 0.3831 * 30; // khung hình mỗi phách
 const f = (k) => Math.round(k * NHIP);
 export const TONG = 438; // 14,6 giây
 const TEN = 32; // phách hiện tên
+const T = 10; // độ dài một lần chuyển cảnh (khung hình), một nửa nằm mỗi bên điểm cắt
 
-// [đoạn, phách đầu, phách cuối, kiểu chuyển động, dọc?] — 12 cảnh khác nhau, mỗi cảnh một lần (David 23/11)
+// [đoạn, phách đầu, phách cuối, chuyển động trong cảnh, kiểu chuyển VÀO cảnh này]
+// Kiểu chuyển: sang = tan cảnh qua vệt sáng ấm · zoom = phóng xuyên qua có nhòe · luot / luotNguoc = lướt ngang có nhòe
+//              loc = quét chéo mép mềm · cat = cắt thẳng có nhấn (đoạn dồn trước cao trào)
 const CANH = [
-  ['o1', 0, 4, 'day'], ['o2', 4, 8, 'day'],
-  ['m1', 8, 10, 'troi'], ['m2', 10, 12, 'day'], ['m3', 12, 14, 'day', true], ['m4', 14, 16, 'troi'],
-  ['m5', 16, 18, 'day'], ['m6', 18, 20, 'troi'], ['m7', 20, 22, 'day', true], ['m8', 22, 24, 'troi'],
-  ['c1', 24, 28, 'day', 'gan'], // cao trào: hội trường lớn, đúng câu "I realized"
-  ['h1', 28, TEN, 'day'],
+  ['s01', 0, 3, 'day', null],
+  ['s02', 3, 6, 'day', 'sang'],
+  ['s03', 6, 8, 'troi', 'zoom'],
+  ['s04', 8, 10, 'day', 'luot'],
+  ['s05', 10, 12, 'troi', 'loc'],
+  ['s06', 12, 14, 'day', 'zoom'],
+  ['s07', 14, 16, 'troi', 'luotNguoc'],
+  ['s08', 16, 18, 'day', 'sang'],
+  ['s09', 18, 20, 'troi', 'loc'],
+  ['s10', 20, 22, 'day', 'zoom'], // "flashed before my eyes"
+  ['s11', 22, 23, 'dap', 'cat'],
+  ['s12', 23, 24, 'dap', 'cat'],
+  ['s13', 24, 25, 'dap', 'cat'],
+  ['s14', 25, 26, 'dap', 'cat'],
+  ['s15', 26, 28, 'day', 'luot'],
+  ['h1', 28, TEN, 'day', 'sang'], // cảnh chào cuối
 ];
-const VET_SANG = [0, 4, 8, 20, 24, 28]; // vệt sáng lóe qua ở các điểm nhấn của nhạc ("flashed" ở phách 20, "realized" ở phách 24–26)
+const VET_SANG = [0, 20, 28]; // vệt sáng lớn lóe qua ở điểm nhấn ngoài các lần chuyển "sang"
 
-const Canh = ({ src, dai, kieu, i }) => {
+const ease = Easing.inOut(Easing.cubic);
+const kep = { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' };
+
+// Mỗi cảnh là một lớp: tự lo chuyển động bên trong + hiệu ứng lúc vào (lớp trên) và lúc ra (lớp dưới)
+const Lop = ({ src, dai, keo, kieuVao, kieuRa, truoc, i }) => {
   const t = useCurrentFrame();
-  const p = interpolate(t, [0, dai], [0, 1], { extrapolateRight: 'clamp' });
+  const tt = t - truoc; // thời gian tính từ điểm cắt danh nghĩa
+  const p = interpolate(tt, [0, dai], [0, 1], kep);
   let s = 1, x = 0;
-  if (kieu === 'day') s = interpolate(p, [0, 1], [1.02, 1.1], { easing: Easing.inOut(Easing.sin) }); // đẩy máy chậm vào
-  if (kieu === 'troi') { s = 1.08; x = interpolate(p, [0, 1], i % 2 ? [-28, 28] : [28, -28]); } // trôi ngang chậm
-  if (kieu === 'dap') s = interpolate(t, [0, 6], [1.12, 1.04], { extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic) });
-  const vao = interpolate(t, [0, 3], [0.35, 0], { extrapolateRight: 'clamp' }); // chớp tối rất nhẹ ở mỗi cắt
+  if (keo === 'day') s = interpolate(p, [0, 1], [1.03, 1.11], { easing: Easing.inOut(Easing.sin) });
+  if (keo === 'troi') { s = 1.09; x = interpolate(p, [0, 1], i % 2 ? [-30, 30] : [30, -30]); }
+  if (keo === 'dap') s = interpolate(tt, [0, 6], [1.14, 1.05], { ...kep, easing: Easing.out(Easing.cubic) });
+
+  let op = 1, blur = 0, tx = 0, sc = 1, sang = 0, mask;
+  // vào
+  const dv = kieuVao && kieuVao !== 'cat' ? T : 0;
+  if (dv) {
+    const q = ease(Math.min(1, Math.max(0, t / dv)));
+    if (kieuVao === 'sang') { op = q; sang = (1 - q) * 0.7; }
+    if (kieuVao === 'zoom') { op = Math.min(1, q * 1.8); sc *= 1.28 - 0.28 * q; blur = 14 * (1 - q); }
+    if (kieuVao === 'luot') { op = Math.min(1, q * 2); tx = (1 - q) * W * 0.55; blur = 16 * (1 - q); }
+    if (kieuVao === 'luotNguoc') { op = Math.min(1, q * 2); tx = -(1 - q) * W * 0.55; blur = 16 * (1 - q); }
+    if (kieuVao === 'loc') {
+      const m = -25 + 150 * q;
+      mask = `linear-gradient(115deg, #000 ${m - 22}%, rgba(0,0,0,0) ${m}%)`;
+      sc *= 1.06 - 0.06 * q;
+    }
+  }
+  const nhan = kieuVao === 'cat' ? interpolate(t, [0, 4], [0.28, 0], kep) : 0; // chớp sáng nhẹ ở cắt thẳng
+  // ra
+  const tongDai = truoc + dai + (kieuRa && kieuRa !== 'cat' ? T / 2 : 0);
+  if (kieuRa && kieuRa !== 'cat') {
+    const r = ease(Math.min(1, Math.max(0, (t - (tongDai - T)) / T)));
+    if (kieuRa === 'zoom') { sc *= 1 + 0.3 * r; blur = Math.max(blur, 14 * r); }
+    if (kieuRa === 'luot') { tx += -r * W * 0.4; blur = Math.max(blur, 16 * r); }
+    if (kieuRa === 'luotNguoc') { tx += r * W * 0.4; blur = Math.max(blur, 16 * r); }
+    if (kieuRa === 'sang') { sang = Math.max(sang, r * 0.5); }
+    if (kieuRa === 'loc') { sc *= 1 + 0.04 * r; }
+  }
   return (
-    <AbsoluteFill style={{ background: '#000', overflow: 'hidden' }}>
-      <OffthreadVideo src={staticFile(`canh/${src}.mp4`)} startFrom={9} muted
-        style={{ width: '100%', height: '100%', objectFit: 'cover', transform: `translateX(${x}px) scale(${s})` }} />
-      <AbsoluteFill style={{ background: '#000', opacity: vao }} />
+    <AbsoluteFill style={{ overflow: 'hidden', opacity: op, WebkitMaskImage: mask, maskImage: mask }}>
+      <AbsoluteFill style={{ background: '#000' }} />
+      <OffthreadVideo src={staticFile(`canh/${src}.mp4`)} startFrom={Math.max(0, 9 - truoc)} muted
+        style={{
+          width: '100%', height: '100%', objectFit: 'cover',
+          transform: `translateX(${x + tx}px) scale(${s * sc})`, filter: blur > 0.3 ? `blur(${blur}px)` : undefined,
+        }} />
+      <AbsoluteFill style={{ background: '#fff1e2', opacity: Math.max(sang * 0.6, nhan), mixBlendMode: 'screen' }} />
     </AbsoluteFill>
   );
 };
 
-// Cảnh quay dọc trong khung ngang: nền là chính cảnh đó phóng to, mờ, tối; cảnh nét ở giữa, viền mảnh, bóng mềm
-const CanhDoc = ({ src, dai, lop, gan }) => {
+// Đường sáng ấm mảnh chạy dọc mép quét chéo (lớp riêng, không bị mặt nạ che)
+const MepQuet = () => {
   const t = useCurrentFrame();
-  const p = interpolate(t, [0, dai], [0, 1], { extrapolateRight: 'clamp' });
-  const s = interpolate(p, [0, 1], [1.0, 1.06], { easing: Easing.inOut(Easing.sin) });
-  const vao = interpolate(t, [0, 3], [0.35, 0], { extrapolateRight: 'clamp' });
-  const v = (style) => (
-    <OffthreadVideo src={staticFile(`canh/${src}.mp4`)} startFrom={9} muted style={style} />
-  );
-  const H = 980;
-  const trong = gan ? interpolate(p, [0, 1], [1.12, 1.32], { easing: Easing.inOut(Easing.sin) }) : 1; // cao trào: đẩy vào gần David
-  if (lop === 'khung') {
-    return (
-      <AbsoluteFill>
-        <div style={{
-          position: 'absolute', left: '50%', top: '50%', height: H, aspectRatio: '9 / 16', transform: `translate(-50%, -50%) scale(${0.97 + 0.03 * s})`,
-          borderRadius: 4, overflow: 'hidden', boxShadow: '0 30px 90px rgba(0,0,0,0.75)', outline: '1px solid rgba(255,236,220,0.3)',
-        }}>
-          {v({ width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${trong})`, transformOrigin: '50% 42%' })}
-          <AbsoluteFill style={{ background: '#000', opacity: vao }} />
-        </div>
-      </AbsoluteFill>
-    );
-  }
+  const q = ease(Math.min(1, Math.max(0, t / T)));
+  const m = -25 + 150 * q - 11;
+  const op = interpolate(t, [0, 2, T - 2, T], [0, 1, 1, 0], kep);
   return (
-    <AbsoluteFill style={{ background: '#000', overflow: 'hidden' }}>
-      {v({ position: 'absolute', inset: -80, width: 'calc(100% + 160px)', height: 'calc(100% + 160px)', objectFit: 'cover',
-        filter: 'blur(38px) brightness(0.42) saturate(0.9)', transform: `scale(${1.1 + 0.05 * p})` })}
-      <AbsoluteFill style={{ background: 'radial-gradient(ellipse 50% 70% at 50% 50%, rgba(0,0,0,0) 30%, rgba(0,0,0,0.55) 100%)' }} />
-      <AbsoluteFill style={{ background: '#000', opacity: vao }} />
-    </AbsoluteFill>
+    <AbsoluteFill style={{
+      mixBlendMode: 'screen', opacity: op,
+      background: `linear-gradient(115deg, rgba(0,0,0,0) ${m - 4}%, rgba(255,196,140,0.75) ${m}%, rgba(0,0,0,0) ${m + 4}%)`,
+    }} />
   );
 };
 
 // Vệt sáng ấm lóe qua khung (ánh sáng lọt ống kính)
-const VetSang = () => {
+const VetSang = ({ manh = 0.85 }) => {
   const t = useCurrentFrame();
   const p = interpolate(t, [0, 16], [0, 1], { extrapolateRight: 'clamp' });
-  const op = interpolate(t, [0, 4, 16], [0, 0.85, 0], { extrapolateRight: 'clamp' });
+  const op = interpolate(t, [0, 4, 16], [0, manh, 0], { extrapolateRight: 'clamp' });
   return (
     <AbsoluteFill style={{
       mixBlendMode: 'screen', opacity: op,
@@ -122,9 +153,9 @@ const ChotTen = () => {
   const chop = interpolate(t, [0, 4], [0.55, 0], { extrapolateRight: 'clamp' });
   const hien = interpolate(t, [1, 12], [0, 1], { extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic) });
   const gian = interpolate(t, [0, dai], [0.62, 0.34], { easing: Easing.out(Easing.cubic) });
-  const vach = interpolate(t, [6, 22], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic) });
-  const quet = interpolate(t, [16, 40], [-30, 130], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.quad) });
-  const het = interpolate(t, [dai - 8, dai], [1, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  const vach = interpolate(t, [6, 22], [0, 1], { ...kep, easing: Easing.out(Easing.cubic) });
+  const quet = interpolate(t, [16, 40], [-30, 130], { ...kep, easing: Easing.inOut(Easing.quad) });
+  const het = interpolate(t, [dai - 8, dai], [1, 0], kep);
   const Vach = ({ y }) => (
     <div style={{ position: 'absolute', left: '50%', top: y, height: 3, width: 820 * vach, transform: 'translateX(-50%)', background: C.accent }} />
   );
@@ -153,18 +184,25 @@ export const Intro = () => {
   const moDau = interpolate(t, [0, 8], [1, 0], { extrapolateRight: 'clamp' });
   return (
     <AbsoluteFill style={{ background: '#000' }}>
-      {CANH.map(([src, a, b, kieu, doc], i) => (
-        <Sequence key={src} from={f(a)} durationInFrames={f(b) - f(a)}>
-          {doc ? <CanhDoc src={src} dai={f(b) - f(a)} lop="nen" /> : <Canh src={src} dai={f(b) - f(a)} kieu={kieu} i={i} />}
+      {CANH.map(([src, a, b, keo, vao], i) => {
+        const ra = i + 1 < CANH.length ? CANH[i + 1][4] : null;
+        const truoc = vao && vao !== 'cat' ? T / 2 : 0;
+        const sau = ra && ra !== 'cat' ? T / 2 : 0;
+        const tu = f(a) - truoc;
+        return (
+          <Sequence key={src} from={tu} durationInFrames={f(b) + sau - tu}>
+            <Lop src={src} dai={f(b) - f(a)} keo={keo} kieuVao={vao} kieuRa={ra} truoc={truoc} i={i} />
+          </Sequence>
+        );
+      })}
+      {CANH.filter((c) => c[4] === 'sang').map(([src, a]) => (
+        <Sequence key={`vs${src}`} from={f(a) - 8} durationInFrames={18}>
+          <VetSang manh={0.7} />
         </Sequence>
       ))}
-      <Sequence from={0} durationInFrames={f(TEN)}>
-        <HatPhim />
-        <KhungPhim />
-      </Sequence>
-      {CANH.filter((c) => c[4]).map(([src, a, b, , doc]) => (
-        <Sequence key={`k${src}`} from={f(a)} durationInFrames={f(b) - f(a)}>
-          <CanhDoc src={src} dai={f(b) - f(a)} lop="khung" gan={doc === 'gan'} />
+      {CANH.filter((c) => c[4] === 'loc').map(([src, a]) => (
+        <Sequence key={`mq${src}`} from={f(a) - T / 2} durationInFrames={T}>
+          <MepQuet />
         </Sequence>
       ))}
       {VET_SANG.map((k) => (
@@ -172,6 +210,10 @@ export const Intro = () => {
           <VetSang />
         </Sequence>
       ))}
+      <Sequence from={0} durationInFrames={f(TEN)}>
+        <HatPhim />
+        <KhungPhim />
+      </Sequence>
       <AbsoluteFill style={{ background: '#000', opacity: moDau }} />
       <Sequence from={f(TEN)}>
         <ChotTen />
