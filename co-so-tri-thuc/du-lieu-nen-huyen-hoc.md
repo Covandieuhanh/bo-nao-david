@@ -10,6 +10,10 @@ description: "Từ trường số (david.md mục 7: nội dung hướng trainer
 
 - "Từ trường số" là bộ môn David dùng để định hướng cho từng cá nhân, được một người cố vấn dạy; là tiêu chuẩn của hệ 135 (`chien-luoc-nghe-nghiep.md` 4.1).
 - Trên kênh công khai: nội dung từ trường số và dẫn chứng liên quan (thần số học, thiền, "nghiệp", tâm sinh tướng…) thuộc hướng 2, chia sẻ dần. Lằn ranh: `chien-luoc-nghe-nghiep.md` 4.7.
+- **Cách tính (David 23/11/2026):** cùng cách tính với thần số học (nhân số học), từ họ tên và ngày tháng năm sinh, nhưng gọi khác:
+  - **Mệnh** = kết quả của ngày tháng năm sinh, tính như **số đường đời** của thần số học.
+  - **Vận** = kết quả của họ và tên đầy đủ, tính như **số sứ mệnh** của thần số học.
+  - Chín số của từ trường số sau này ứng với chín kỹ năng, ngành nghề trong kinh doanh (`mo-hinh-kinh-doanh.md` mục 3); David bổ sung khi có dịp.
 - Xem số cho một người cụ thể: chỉ trong buổi riêng, khi họ đồng ý, như lăng kính tự soi; trò chuyện trước, xem số sau; không làm căn cứ cho quyết định lớn; không dùng với người dưới 18; không đề xuất đổi tên/đổi số; không hỏi hay ghi số căn cước.
 
 ## 9. Dữ liệu nền huyền học (thông tin nền, tách khỏi nghề)

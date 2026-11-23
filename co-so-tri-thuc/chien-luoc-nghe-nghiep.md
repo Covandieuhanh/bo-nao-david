@@ -11,7 +11,7 @@ description: "Chiến lược nghề nghiệp (david.md mục 4): ba hướng ng
 ### 4.1. Ba hướng nghề
 Mục tiêu chung: **ra tiền**. Mọi nội dung được lọc xem thuộc hướng nào và **bán được gì**.
 
-**Hình ảnh công khai: một trainer, hai lĩnh vực** — *"Trainer giúp người và doanh nghiệp làm chủ, bằng con người và công nghệ AI"*. Lĩnh vực con người là hướng 2, lĩnh vực công nghệ AI là hướng 3; cả hai đều là David đứng lớp, kèm tới khi người học tự làm được. Facebook cá nhân mang cả hai lĩnh vực cùng đời thường; tài chính không lên Facebook cá nhân. Hồ sơ hình ảnh và lịch đăng: `du-an/hinh-anh-facebook-ca-nhan.md`. Gốc tư duy cả ba hướng: mô hình kinh doanh của David (**Tiền · Thị trường · Con người**, 9 vai trò, 4 bước): `co-so-tri-thuc/mo-hinh-kinh-doanh.md`.
+**Hình ảnh công khai: một trainer, hai lĩnh vực** — *"Trainer giúp người và doanh nghiệp làm chủ, bằng con người và công nghệ AI"*. Lĩnh vực con người là hướng 2, lĩnh vực công nghệ AI là hướng 3; cả hai đều là David đứng lớp, kèm tới khi người học tự làm được. Facebook cá nhân mang cả hai lĩnh vực cùng đời thường; tài chính không lên Facebook cá nhân. Hồ sơ hình ảnh và lịch đăng: `du-an/hinh-anh-facebook-ca-nhan.md`. Gốc tư duy cả ba hướng: mô hình kinh doanh của David (**Tiền · Thị trường · Con người**, 9 kỹ năng và ngành nghề, 4 bước): `co-so-tri-thuc/mo-hinh-kinh-doanh.md`.
 
 | Hướng | Nơi đăng | Nội dung | Tệp | Bán gì |
 |---|---|---|---|---|

@@ -22,14 +22,31 @@ Ví dụ: vận hành tiền thế nào · vận hành thị trường thế nà
 
 **Vận hành** (tạo và giao giá trị) · **Đối tác** (kết nối, hợp tác, nguồn lực ngoài) · **Marketing** (hiểu thị trường, tiếp cận, bán, chăm sóc). Mỗi phần đều soi bằng ba phạm trù.
 
-## 3. Chín vai trò (phân loại vị trí, ngành nghề)
+## 3. Chín kỹ năng và ngành nghề (khung gốc của mọi việc kinh doanh)
 
-Kết nối · Đàm phán chia sẻ · Marketing · Bán hàng · R&D · Điều hành · Tài chính · Chiến lược kinh doanh · Chăm sóc khách hàng.
+David chốt 23/11/2026: *"trong kinh doanh và trong công việc liên quan thì chúng ta sẽ có 4 bước thành công và 9 kỹ năng ngành nghề."*
+Mọi thứ liên quan đến kinh doanh lấy chín mục này làm gốc. Khi trao đổi vẫn dùng đánh giá và thuật ngữ của xã hội, nhưng dần chuẩn hoá về
+chín mục (một khái niệm xã hội mới gặp thì ghi nó thuộc số nào). David sẽ bổ sung dần từng mục; mục nào chưa có thêm thì để nguyên.
+
+| Số | Kỹ năng, ngành nghề | Gồm (lời David) |
+|---|---|---|
+| 1 | Kết nối | |
+| 2 | Đàm phán chia sẻ | |
+| 3 | Marketing | ngôn ngữ, dịch vụ |
+| 4 | Bán hàng | |
+| 5 | R&D: nghiên cứu và phát triển thị trường | |
+| 6 | Điều hành | quy trình, văn hoá, điều hành; **đối tác**: những người cần làm rõ quyền lợi và lợi ích khi làm việc cùng |
+| 7 | Tài chính | |
+| 8 | Kinh doanh | hệ thống, chính sách, chiến lược |
+| 9 | Chăm sóc khách hàng | |
+
+Chín số này sau này ứng với chín số của từ trường số (`du-lieu-nen-huyen-hoc.md` mục 7); David bổ sung khi có dịp.
+Hình mẫu thành công của từng kỹ năng: `hinh-mau/7-kinh-doanh-9-ky-nang.md`.
 
 ## 4. Bốn bước triển khai mọi việc
 
 **Mục tiêu → Kế hoạch → Quy trình → Thực thi.**
-Có mục tiêu: chọn vai trò (trong chín) → bóc tách bằng Tiền · Thị trường · Con người → kế hoạch → quy trình → thực thi.
+Có mục tiêu: chọn kỹ năng (trong chín) → bóc tách bằng Tiền · Thị trường · Con người → kế hoạch → quy trình → thực thi.
 
 ## 5. Hai đánh giá và vòng xử lý
 
