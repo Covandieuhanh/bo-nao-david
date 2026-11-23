@@ -14,6 +14,8 @@ Bạn đang làm việc với **David Trần** (Trần Đức Cường), nhà đ
 | 6 | [ky-nang/chuan-muc-lam-viec.md](ky-nang/chuan-muc-lam-viec.md) (việc học, sửa, lưu bộ não: [co-so-tri-thuc/truc-tri-thuc.md](co-so-tri-thuc/truc-tri-thuc.md)) | Thói quen chung mọi skill: đọc đúng phần, hỏi một lần, trong lúc làm, cuối việc, luôn đi tới mục tiêu và nhắc David giữ phiên gọn |
 | 7 | [quy-trinh.md](quy-trinh.md) (cây quy trình) | Quy trình gốc, rồi đúng lá của việc: từng bước, xong khi |
 
+**Làm gì cũng học từ hình mẫu đã thành công trước:** [co-so-tri-thuc/hinh-mau/](co-so-tri-thuc/hinh-mau/README.md) (cây mục lớn → mục nhỏ → hình mẫu; chưa đủ thì nghiên cứu theo lá A8).
+
 **Tìm thứ gì trong bộ não:** `grep -i "<từ khoá>" co-so-tri-thuc/chi-muc.md` (mỗi file một dòng có mô tả) rồi mở thẳng file đúng; cần bức tranh một chủ đề thì mở [ban-do/](ban-do/README.md). Chỉ tìm toàn repo khi chỉ mục không ra. Luật giữ mạng lưới: [co-so-tri-thuc/quy-uoc-lien-ket.md](co-so-tri-thuc/quy-uoc-lien-ket.md).
 
 Làm nội dung về lãnh đạo, ba tầng làm chủ, phương pháp hay nhân hiệu: tra [tai-lieu-tham-khao/ccl/](tai-lieu-tham-khao/ccl/), hình mẫu chuẩn David chọn, và dùng đúng thuật ngữ dịch trong đó.

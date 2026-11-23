@@ -13,11 +13,11 @@ chỉ trỏ về đây.
 | # | Bước | Làm theo |
 |---|---|---|
 | 1 | **Nhận yêu cầu, tra cây:** tìm lá khớp ở mục 3 (David chỉ gửi video / ghi âm không kèm lời thì là lá B1); xem lời David có bật chế độ tự chạy không (mục 1) | file này |
-| 2 | **Đọc đúng phần cần:** file quy trình của lá → chỉ những khối, hồ sơ bước đang làm cần; đặt Mục tiêu + Xong khi; được làm phần chuẩn bị (mục 1). Máy chưa từng dựng video (chưa có `kiem-may.sh` đạt và bài kiểm suy luận ≥ 8/10) thì làm lá A2 trước khi dựng thật | `ky-nang/chuan-muc-lam-viec.md` mục 1 |
+| 2 | **Đọc đúng phần cần, tra hình mẫu:** tra [bản đồ hình mẫu](co-so-tri-thuc/hinh-mau/README.md) cho mục nhỏ của việc; chưa có hoặc chưa đủ (ít nhất 5, việc lớn 10) thì nghiên cứu theo lá A8 trước Đ1, kết luận đưa vào 4 phần; file quy trình của lá → chỉ những khối, hồ sơ bước đang làm cần; đặt Mục tiêu + Xong khi; được làm phần chuẩn bị (mục 1). Máy chưa từng dựng video (chưa có `kiem-may.sh` đạt và bài kiểm suy luận ≥ 8/10) thì làm lá A2 trước khi dựng thật | `ky-nang/chuan-muc-lam-viec.md` mục 1 |
 | 3 | **Điểm duyệt Đ1: trình 4 phần, dừng chờ "duyệt"** (trừ phần miễn và chế độ tự chạy, mục 1) | `chuan-muc-lam-viec.md` mục 2 · `ky-nang/thu-thap-yeu-cau/SKILL.md` |
 | 4 | **Làm đúng từng bước của lá theo thứ tự**, một mạch, không thêm, không bớt, không đổi bước; tới điểm duyệt của lá thì dừng chờ | file quy trình của lá · `chuan-muc-lam-viec.md` mục 3 |
 | 5 | **Tự soát** theo "Xong khi" của lá, gồm câu "một phiên mới chỉ đọc GitHub có làm ra đúng kết quả này không?" | `chuan-muc-lam-viec.md` mục 4 |
-| 6 | **Giao kết quả + báo cáo ngắn:** đã làm gì · đã kiểm gì · chưa kiểm gì · cần David xác nhận gì · có chạy chế độ tự chạy không | lá A6 · `chuan-muc-lam-viec.md` mục 4 |
+| 6 | **Giao kết quả + báo cáo ngắn:** đã làm gì · đã kiểm gì · chưa kiểm gì · cần David xác nhận gì · có chạy chế độ tự chạy không · 2–3 dòng so với hình mẫu (giống ở đâu, khác ở đâu, nên chỉnh gì) | lá A6 · `chuan-muc-lam-viec.md` mục 4 |
 | 7 | **Ghi lại, đẩy GitHub:** góp ý sửa đúng một chỗ + nhật ký, việc mới thì viết thành lá (mục 2), `bash tu-dong-hoa/dong-bo.sh --push` | `chuan-muc-lam-viec.md` mục 4 · `AGENTS.md` luật 6 |
 
 ## 1. Điểm duyệt, chế độ tự chạy, không lệch quy trình
@@ -75,6 +75,7 @@ ghi cứng công cụ chỉ một máy có) · **Điểm duyệt** (Đ1 / Đ2 / 
 | A5 | học, sửa, lưu thông tin mới vào bộ não (ghi nhớ, kiến thức, hồ sơ) | [co-so-tri-thuc/truc-tri-thuc.md](co-so-tri-thuc/truc-tri-thuc.md) · [quy ước liên kết](co-so-tri-thuc/quy-uoc-lien-ket.md) | Đ1; thông tin về David thêm Đ3 | ý ở đúng một nhà, có dòng ở `ban-do/`, máy kiểm link đạt |
 | A6 | giao kết quả cho David | [phan-phoi-da-kenh bước 5](ky-nang/san-xuat-video/phan-phoi-da-kenh/SKILL.md) | giao không có; dọn / xoá file tạm, đưa dự án lên Drive: Đ2 (sau khi David chốt) | bản cuối ở nơi giao của máy (Mac: trang Chờ đăng + Drive; máy chỉ dựng video: Drive); David theo dõi từ xa thì gửi thêm bản nhẹ dưới 30 MB qua tệp đính kèm |
 | A7 | hỏi lại khi chưa rõ yêu cầu, trình 4 phần | [ky-nang/thu-thap-yeu-cau/SKILL.md](ky-nang/thu-thap-yeu-cau/SKILL.md) | chính là Đ1 | theo mục "Xong khi" của skill |
+| A8 | trước mọi việc chưa có đủ hình mẫu; "nghiên cứu hình mẫu", "xem người ta làm thế nào", "học từ người đã thành công" | [co-so-tri-thuc/hinh-mau/quy-trinh-nghien-cuu.md](co-so-tri-thuc/hinh-mau/quy-trinh-nghien-cuu.md) | không có cho phần nghiên cứu, ghi bản đồ (phần chuẩn bị); đưa vào skill, luật: Đ1 của việc chính | mục nhỏ có ít nhất 5 hình mẫu (việc lớn 10) đủ bốn cột, có ngày đo; nhật ký có mục mới; tin giao có 2–3 dòng đối chiếu |
 
 ### B. Sản xuất video (gốc nhánh: `phan-phoi-da-kenh` — một tài nguyên vào, đủ bản dài, clip, bài đăng ra)
 | Lá | Việc (David hay nói) | Quy trình | Điểm duyệt | Xong khi |

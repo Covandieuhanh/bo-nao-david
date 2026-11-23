@@ -44,8 +44,9 @@ Máy đã ghi sẵn tín hiệu cuối mỗi phiên (hook `tu-dong-hoa/hoc-lien-
 
 ## Việc 2 — Học từ hình mẫu có số liệu
 1. **Số liệu của David trước:** đọc số liệu kênh (bước đo của `phan-phoi-da-kenh`, `kenh.json` mục đo). Video nào tốt / kém nhất tuần, khác nhau ở đâu.
-2. **Hình mẫu:** chọn 2–3 kênh cùng thể loại, cùng ngôn ngữ hoặc cùng tệp người xem, đang có số liệu tốt nhất **có thể kiểm**
-   (lượt xem trên số người theo dõi, lượt xem trung bình 10 video gần nhất, tương tác). Ghi nguồn + số liệu + ngày đo.
+2. **Hình mẫu:** tra bản đồ `co-so-tri-thuc/hinh-mau/` trước; chọn ít nhất 5 kênh (việc lớn 10) cùng thể loại, cùng ngôn ngữ hoặc
+   cùng tệp người xem, đang có số liệu tốt nhất **có thể kiểm** (lượt xem trên số người theo dõi, lượt xem trung bình 10 video gần nhất,
+   tương tác). Ghi nguồn + số liệu + ngày đo vào bảng mục nhỏ của bản đồ và một mục nhật ký (quy trình lá A8).
 3. Học **cái làm ra số liệu** (mở đầu 3 giây, nhịp, độ dài, tít, bìa, lịch đăng, câu kêu gọi), không chép nội dung. Video mẫu cụ thể
    thì dùng `phan-tich-video-mau`.
 4. Đưa vào skill / `kenh.json` theo "Cách sửa"; ghi giả thuyết đo lại: "đổi X, kỳ vọng Y tăng; đo lại sau N video". Tuần sau đo:

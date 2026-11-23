@@ -24,6 +24,8 @@ Drive `thanh-pham/` cùng tên. Khuôn code: `assets/khuon-intro/`.
    nào mà nó đầy đủ câu từ", cuối intro có "1 đến 2 giây để nhạc bé dần" để nối sang âm thanh chính, không "đứt mạch về cảm xúc".
 
 ## Nguyên lý
+Hình mẫu đã học và nhật ký: `co-so-tri-thuc/hinh-mau/1-hinh-tuong-ca-nhan.md` mục 1.2, `2-noi-dung-video.md` mục 2.9.
+
 1. **Độ dài theo hình mẫu:** đo trên tập thật 23/11 — Mel Robbins Podcast: đoạn mở đầu hút người xem khoảng 52 giây rồi thẻ thương
    hiệu khoảng 4–5 giây; Tony Robbins Podcast: mở đầu khoảng 45 giây rồi thẻ tên khoảng 5 giây; Vietcetera "10.000 hours": mở đầu khoảng
    57 giây rồi tít tập cộng logo động khoảng 10–11 giây; The Diary Of A CEO: 100 giây đầu toàn là đoạn mở đầu dựng từ câu nói. Các bài

@@ -23,6 +23,8 @@ Luật nội dung (nguyên văn lời David, giọng David, lằn ranh) không p
 
 ## 1. Đầu việc: đọc đúng phần cần
 - Đặt **Mục tiêu** và **Xong khi** cho việc (mục 5).
+- **Tra hình mẫu trước khi làm:** không có gì chưa có người làm; mở `../co-so-tri-thuc/hinh-mau/README.md`, tìm mục nhỏ của việc,
+  chưa đủ hình mẫu thì nghiên cứu (lá A8). Sao chép cái đã thành công, cải tiến, rồi thành của David.
 - Đi theo đường: cây quy trình `quy-trinh.md` (gốc, rồi đúng lá của việc) → file quy trình của lá → chỉ những khối, hồ sơ mà bước đang làm cần.
 - Không đọc cả repo. Không đọc `references/`, `changelog`, `hoc-tu-*` trừ khi đang cân nhắc đổi luật hoặc đang gỡ lỗi.
   `loi-thuong-gap.md` của skill đọc một lần ở đầu phiên.
@@ -77,7 +79,8 @@ Ghi lại gì, ở đâu, đi lên tầng nào: trục `../co-so-tri-thuc/truc-t
   (5) **người khác làm lại được ngay từ GitHub** (`AGENTS.md` luật 6): quét thư mục tạm của phiên và bộ nhớ riêng của AI — script, mẫu,
   cách làm, luật vừa dùng ra kết quả mà repo chưa có thì đưa vào đúng skill (file + một dòng chỉ đường trong SKILL.md hoặc khối), thay
   phần ghi cứng của một máy bằng phần tự nhận máy, rồi đẩy GitHub. Tự hỏi: "một phiên mới chỉ đọc repo có làm ra đúng kết quả này không?"
-- **Báo cáo ngắn, tiếng Việt:** đã làm gì · đã kiểm gì · chưa kiểm gì · điều cần David xác nhận.
+- **Báo cáo ngắn, tiếng Việt:** đã làm gì · đã kiểm gì · chưa kiểm gì · điều cần David xác nhận · 2–3 dòng so với hình mẫu (giống ở
+  đâu, khác ở đâu, nên chỉnh gì). Học thêm được gì về hình mẫu hay về David thì ghi bản đồ hình mẫu và nhật ký của nó.
 - **Báo lên Telegram** khi xong một việc trọn vẹn (render xong, đăng xong, sửa bộ não xong…) hoặc khi kẹt cần David quyết, không báo
   sau mỗi lượt: `bash tu-dong-hoa/so-tay/bao-cao.sh "✅ Xong: … · Ở đâu: … · Còn lại: …"` hoặc `"❓ Chờ anh: …"`, tối đa 5 dòng. Việc giao
   qua Telegram thì mở đầu bằng số việc `#N`. Máy chưa cài bot thì lệnh chỉ ghi sổ. Chi tiết: `tu-dong-hoa/so-tay/README.md` (chỉ Mac chính).

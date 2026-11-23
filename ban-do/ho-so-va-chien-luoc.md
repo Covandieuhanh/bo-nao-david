@@ -13,6 +13,7 @@ Gốc: [bản đồ bộ não](README.md). Sửa các file hồ sơ phải hỏi
 
 ## Nghề và kinh doanh
 - [chien-luoc-nghe-nghiep.md](../co-so-tri-thuc/chien-luoc-nghe-nghiep.md) — ba hướng nghề, bảng giá, lằn ranh nghề: mở khi việc dính tới khách, giá, sản phẩm.
+- [hinh-mau/README.md](../co-so-tri-thuc/hinh-mau/README.md) — bản đồ hình mẫu: cây mục lớn → mục nhỏ → hình mẫu đã thành công; tra trước mọi việc, nhật ký nghiên cứu.
 - [mo-hinh-kinh-doanh.md](../co-so-tri-thuc/mo-hinh-kinh-doanh.md) — khung tư duy gốc để quyết định nghề và gói bán.
 - [chien-luoc-noi-dung.md](../co-so-tri-thuc/chien-luoc-noi-dung.md) — kênh video và bộ lọc nội dung; chi tiết sản xuất ở [Sản xuất video](san-xuat-video.md).
 - [danh-sach-y-tuong.md](../du-an/danh-sach-y-tuong.md) — ý tưởng chưa chốt (Company OS, talkshow hai đầu, Telegram cho thành viên).
