@@ -6,7 +6,8 @@ description: "Trục tri thức (tầng 0) — cách bộ não David tiếp nh�
 
 Học thêm bao nhiêu thì **nội dung** dày lên; **trục này không đổi**. Mọi cách học, sửa, lưu ở nơi khác (`chuan-muc-lam-viec.md` mục 4,
 `hoc-lien-tuc`, `tai-cau-truc`, học video mẫu) là cách áp trục này cho một việc, không đặt ra cách riêng. Mục đích, giá trị, lằn ranh
-mà mọi thứ phục vụ: `david.md` mục 1–3 và sáu luật `AGENTS.md`.
+mà mọi thứ phục vụ: `david.md` mục 1–3 và sáu luật `AGENTS.md`. Cách **nghĩ** khi làm bất kỳ việc gì (bóc tách, vòng kết quả hoặc vấn đề,
+học và thay đổi, kiểm sai) nằm ở [tu-duy-goc.md](tu-duy-goc.md), cùng tầng 0; trục này là khối 3 "học và thay đổi" áp vào chính bộ não.
 
 ## 0. Gốc: AI dùng bộ não này là ai
 AI (Claude, Codex, Gemini…) mỗi phiên **bắt đầu từ số 0** về David; thứ nó biết chỉ là những gì đọc được từ file. Vì vậy:
@@ -33,7 +34,7 @@ người chưa biết gì về công nghệ — nên mọi file viết đủ t�
 
 | Tầng | Chứa | Đổi khi | Ví dụ |
 |---|---|---|---|
-| **0 · Trục** | file này, mục đích, giá trị, lằn ranh, sáu luật | gần như không; David chốt sau vài ngày | `truc-tri-thuc.md`, `david.md` mục 1–3, `AGENTS.md` sáu luật |
+| **0 · Trục** | file này, `tu-duy-goc.md`, mục đích, giá trị, lằn ranh, sáu luật | gần như không; David chốt sau vài ngày | `truc-tri-thuc.md`, `david.md` mục 1–3, `AGENTS.md` sáu luật |
 | **1 · Nguyên lý** | vì sao làm vậy; áp được cho nhiều việc | vòng Nâng cấp, khi nhiều ca cùng gốc | `thiet-ke-bo-cuc/nguoi-xem-can-gi.md`, `chuan-muc-lam-viec.md` |
 | **2 · Quy trình** | các bước của một loại việc | theo tuần, theo góp ý có bằng chứng | các `SKILL.md`, khối `mo-dun/`, hồ sơ tham số |
 | **3 · Dữ liệu** | ca thật, số liệu, nguồn học, sổ, ghi nhớ, kho | thêm hằng ngày; **chỉ thêm**, không sửa nghĩa cái cũ | `giai-mau.md`, `so-lieu.md`, `nhat-ky-thay-doi.md`, `bo-nho/`, `bo-cuc.md` |
@@ -45,7 +46,7 @@ Tầng của từng file: bảng [tang.json](tang.json) (mẫu đường dẫn �
 1. **Là gì?** dữ kiện · quyết định của David · cách làm · ví dụ / số liệu thì quyết định tầng và loại file.
 2. **Phục vụ mục đích nào ở tầng 0?** Không gắn được thì không lưu (hoặc chỉ ghi `du-an/danh-sach-y-tuong.md`).
 3. **Đã có nhà chưa?** Có thì bổ sung / sửa thẳng đúng nhà đó. Chưa thì nhà mới ở **tầng 3 trước**.
-4. **Gốc là gì?** Ghi ngắn vì sao đúng (lý do giúp AI làm đúng thì viết trong luật; ngày + lời David thì vào sổ).
+4. **Gốc là gì?** Móc vào khối nào của [tu-duy-goc.md](tu-duy-goc.md), gốc nào trong khung. Ghi ngắn vì sao đúng (lý do giúp AI làm đúng thì viết trong luật; ngày + lời David thì vào sổ).
 5. **Nối vào đâu?** Link tới nguyên lý / nơi dùng, một dòng ở `ban-do/` (quy ước: `quy-uoc-lien-ket.md`). Không ai nối tới = không tồn tại.
 6. **Kiểm thế nào?** Câu kiểm, mẫu chuẩn, hay số liệu nào sẽ cho biết nó giúp? Chưa có thì ghi giả thuyết "kỳ vọng Y, đo lại sau N lần".
 

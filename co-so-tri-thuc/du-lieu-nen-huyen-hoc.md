@@ -13,6 +13,7 @@ description: "Từ trường số (david.md mục 7: nội dung hướng trainer
 - **Cách tính (David 23/11/2026):** cùng cách tính với thần số học (nhân số học), từ họ tên và ngày tháng năm sinh, nhưng gọi khác:
   - **Mệnh** = kết quả của ngày tháng năm sinh, tính như **số đường đời** của thần số học.
   - **Vận** = kết quả của họ và tên đầy đủ, tính như **số sứ mệnh** của thần số học.
+  - Từ trường số có cả **đạo** và **đời**; David cập nhật dần ở mục này. Phần ghi thêm nối về khối nào của `tu-duy-goc.md` (mục 6).
   - Chín số của từ trường số sau này ứng với chín kỹ năng, ngành nghề trong kinh doanh (`mo-hinh-kinh-doanh.md` mục 3); David bổ sung khi có dịp.
 - Xem số cho một người cụ thể: chỉ trong buổi riêng, khi họ đồng ý, như lăng kính tự soi; trò chuyện trước, xem số sau; không làm căn cứ cho quyết định lớn; không dùng với người dưới 18; không đề xuất đổi tên/đổi số; không hỏi hay ghi số căn cước.
 
