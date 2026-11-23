@@ -1,19 +1,18 @@
-# Danh sách đoạn cho intro DAVID TRẦN (bản 23/11/2026). Mỗi dòng: tên-đoạn  file-gốc  giây-bắt-đầu  độ-dài  [bo-logo]
-# file-gốc tính từ thư mục 1-goc/ của tập; "bo-logo" = cắt bỏ 10 % mép trái (logo DFS trên tường) rồi phóng lại 1920×1080.
-a1 tu-lieu-goc/IMG_2842.MOV 1.0 1.6
-a2 tu-lieu-goc/IMG_2888.MOV 1.9 1.6
-a3 tu-lieu-goc/*0022*_video_original.mp4 209.9 1.6
-a4 tu-lieu-goc/*0019*_video_original.mp4 79.5 1.2
-a5 tu-lieu-goc/*0019*_video_original.mp4 47.5 1.2
-a6 tu-lieu-goc/*0024*_video_original.mp4 16.3 1.6 bo-logo
-a7 tu-lieu-goc/*0027*_video_original.mp4 28.4 1.2
-a8 tu-lieu-goc/tap-cuoc-goi-hop-tac/dji_mimo_*.MP4 386.5 1.2
-a9 tu-lieu-goc/*0022*_video_original.mp4 213.2 1.6
-a10 tu-lieu-goc/*0020*_video_original.mp4 41.0 1.6
-b1 tu-lieu-goc/*0022*_video_original.mp4 214.5 3.2
-b2 tu-lieu-goc/*0019*_video_original.mp4 266.0 3.2
-b3 tu-lieu-goc/*0027*_video_original.mp4 99.0 3.2
-b4 tu-lieu-goc/IMG_2842.MOV 28.8 3.2
-b5 tu-lieu-goc/*0019*_video_original.mp4 431.0 3.2
-b6 tu-lieu-goc/*0024*_video_original.mp4 19.5 3.2 bo-logo
-h1 tu-lieu-goc/*0020*_video_original.mp4 44.6 3.6
+# Danh sách đoạn cho intro DAVID TRẦN (bản làm lại 23/11/2026: chỉ cảnh sang trọng, bỏ đường phố / cửa hàng / ô tô / điện thoại).
+# Mỗi dòng: tên-đoạn  file-gốc (tính từ 1-goc/)  giây-bắt-đầu  độ-dài  [khung]
+# khung: bo-logo = cắt 10 % mép trái (logo DFS trên tường) · phai = lấy 2/3 bên phải (cận David ở quán, bớt người và cờ phía sau)
+o1 tu-lieu-goc/*0027*_video_original.mp4 50.0 2.4
+o2 tu-lieu-goc/*0022*_video_original.mp4 209.6 2.4
+m1 tu-lieu-goc/*0019*_video_original.mp4 47.6 1.6
+m2 tu-lieu-goc/*0027*_video_original.mp4 1.4 1.6
+m3 tu-lieu-goc/*0022*_video_original.mp4 772.6 1.6 phai
+m4 tu-lieu-goc/*0019*_video_original.mp4 149.6 1.6
+m5 tu-lieu-goc/*0024*_video_original.mp4 16.3 1.6 bo-logo
+m6 tu-lieu-goc/*0019*_video_original.mp4 271.6 1.6
+m7 tu-lieu-goc/*0027*_video_original.mp4 177.4 1.6
+m8 tu-lieu-goc/*0020*_video_original.mp4 40.8 1.6
+f1 tu-lieu-goc/*0022*_video_original.mp4 1334.8 1.0 phai
+f2 tu-lieu-goc/*0019*_video_original.mp4 335.8 1.0
+f3 tu-lieu-goc/*0027*_video_original.mp4 139.8 1.0
+f4 tu-lieu-goc/*0019*_video_original.mp4 431.8 1.0
+h1 tu-lieu-goc/*0024*_video_original.mp4 21.2 2.4 bo-logo
