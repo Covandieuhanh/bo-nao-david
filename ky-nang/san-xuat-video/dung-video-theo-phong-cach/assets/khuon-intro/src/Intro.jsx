@@ -1,4 +1,4 @@
-// Intro DAVID TRẦN — bản làm lại 23/11/2026, khung ngang 1920×1080, 14,6 giây.
+// Intro DAVID TRẦN — bản 4, 23/11/2026, khung ngang 1920×1080, 14,6 giây: 12 cảnh khác nhau, mỗi cảnh một lần, nhân vật làm trung tâm.
 // Học từ intro diễn giả (John Sanei, Jacob Brown, Tony Robbins, Trần Hồng Hải): màu điện ảnh tối ấm, ít cảnh nhưng cảnh nào cũng đẹp,
 // cắt đúng phách, vệt sáng ở điểm nhấn, chốt tên giãn chữ trên nền đen với vạch mảnh.
 // Nhạc: "This Is Everything" — Josh Woodward (CC BY 3.0), đoạn 1:54,906–2:09,506; 156,6 BPM, phách 0,3831 s.
@@ -17,15 +17,15 @@ const f = (k) => Math.round(k * NHIP);
 export const TONG = 438; // 14,6 giây
 const TEN = 32; // phách hiện tên
 
-// [đoạn, phách đầu, phách cuối, kiểu chuyển động]
+// [đoạn, phách đầu, phách cuối, kiểu chuyển động, dọc?] — 12 cảnh khác nhau, mỗi cảnh một lần (David 23/11)
 const CANH = [
   ['o1', 0, 4, 'day'], ['o2', 4, 8, 'day'],
-  ['m1', 8, 10, 'troi'], ['m2', 10, 12, 'day'], ['m3', 12, 14, 'troi'], ['m4', 14, 16, 'day'],
-  ['m5', 16, 18, 'troi'], ['m6', 18, 20, 'day'], ['m7', 20, 22, 'troi'], ['m8', 22, 24, 'day'],
-  ['f1', 24, 25, 'dap'], ['f2', 25, 26, 'dap'], ['f3', 26, 27, 'dap'], ['f4', 27, 28, 'dap'],
+  ['m1', 8, 10, 'troi'], ['m2', 10, 12, 'day'], ['m3', 12, 14, 'day', true], ['m4', 14, 16, 'troi'],
+  ['m5', 16, 18, 'day'], ['m6', 18, 20, 'troi'], ['m7', 20, 22, 'day', true], ['m8', 22, 24, 'troi'],
+  ['c1', 24, 28, 'day', 'gan'], // cao trào: hội trường lớn, đúng câu "I realized"
   ['h1', 28, TEN, 'day'],
 ];
-const VET_SANG = [0, 4, 8, 20, 28]; // vệt sáng lóe qua ở các điểm nhấn của nhạc ("flashed" ở phách 20)
+const VET_SANG = [0, 4, 8, 20, 24, 28]; // vệt sáng lóe qua ở các điểm nhấn của nhạc ("flashed" ở phách 20, "realized" ở phách 24–26)
 
 const Canh = ({ src, dai, kieu, i }) => {
   const t = useCurrentFrame();
@@ -39,6 +39,40 @@ const Canh = ({ src, dai, kieu, i }) => {
     <AbsoluteFill style={{ background: '#000', overflow: 'hidden' }}>
       <OffthreadVideo src={staticFile(`canh/${src}.mp4`)} startFrom={9} muted
         style={{ width: '100%', height: '100%', objectFit: 'cover', transform: `translateX(${x}px) scale(${s})` }} />
+      <AbsoluteFill style={{ background: '#000', opacity: vao }} />
+    </AbsoluteFill>
+  );
+};
+
+// Cảnh quay dọc trong khung ngang: nền là chính cảnh đó phóng to, mờ, tối; cảnh nét ở giữa, viền mảnh, bóng mềm
+const CanhDoc = ({ src, dai, lop, gan }) => {
+  const t = useCurrentFrame();
+  const p = interpolate(t, [0, dai], [0, 1], { extrapolateRight: 'clamp' });
+  const s = interpolate(p, [0, 1], [1.0, 1.06], { easing: Easing.inOut(Easing.sin) });
+  const vao = interpolate(t, [0, 3], [0.35, 0], { extrapolateRight: 'clamp' });
+  const v = (style) => (
+    <OffthreadVideo src={staticFile(`canh/${src}.mp4`)} startFrom={9} muted style={style} />
+  );
+  const H = 980;
+  const trong = gan ? interpolate(p, [0, 1], [1.12, 1.32], { easing: Easing.inOut(Easing.sin) }) : 1; // cao trào: đẩy vào gần David
+  if (lop === 'khung') {
+    return (
+      <AbsoluteFill>
+        <div style={{
+          position: 'absolute', left: '50%', top: '50%', height: H, aspectRatio: '9 / 16', transform: `translate(-50%, -50%) scale(${0.97 + 0.03 * s})`,
+          borderRadius: 4, overflow: 'hidden', boxShadow: '0 30px 90px rgba(0,0,0,0.75)', outline: '1px solid rgba(255,236,220,0.3)',
+        }}>
+          {v({ width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${trong})`, transformOrigin: '50% 42%' })}
+          <AbsoluteFill style={{ background: '#000', opacity: vao }} />
+        </div>
+      </AbsoluteFill>
+    );
+  }
+  return (
+    <AbsoluteFill style={{ background: '#000', overflow: 'hidden' }}>
+      {v({ position: 'absolute', inset: -80, width: 'calc(100% + 160px)', height: 'calc(100% + 160px)', objectFit: 'cover',
+        filter: 'blur(38px) brightness(0.42) saturate(0.9)', transform: `scale(${1.1 + 0.05 * p})` })}
+      <AbsoluteFill style={{ background: 'radial-gradient(ellipse 50% 70% at 50% 50%, rgba(0,0,0,0) 30%, rgba(0,0,0,0.55) 100%)' }} />
       <AbsoluteFill style={{ background: '#000', opacity: vao }} />
     </AbsoluteFill>
   );
@@ -119,15 +153,20 @@ export const Intro = () => {
   const moDau = interpolate(t, [0, 8], [1, 0], { extrapolateRight: 'clamp' });
   return (
     <AbsoluteFill style={{ background: '#000' }}>
-      {CANH.map(([src, a, b, kieu], i) => (
+      {CANH.map(([src, a, b, kieu, doc], i) => (
         <Sequence key={src} from={f(a)} durationInFrames={f(b) - f(a)}>
-          <Canh src={src} dai={f(b) - f(a)} kieu={kieu} i={i} />
+          {doc ? <CanhDoc src={src} dai={f(b) - f(a)} lop="nen" /> : <Canh src={src} dai={f(b) - f(a)} kieu={kieu} i={i} />}
         </Sequence>
       ))}
       <Sequence from={0} durationInFrames={f(TEN)}>
         <HatPhim />
         <KhungPhim />
       </Sequence>
+      {CANH.filter((c) => c[4]).map(([src, a, b, , doc]) => (
+        <Sequence key={`k${src}`} from={f(a)} durationInFrames={f(b) - f(a)}>
+          <CanhDoc src={src} dai={f(b) - f(a)} lop="khung" gan={doc === 'gan'} />
+        </Sequence>
+      ))}
       {VET_SANG.map((k) => (
         <Sequence key={`v${k}`} from={Math.max(0, f(k) - 4)} durationInFrames={18}>
           <VetSang />

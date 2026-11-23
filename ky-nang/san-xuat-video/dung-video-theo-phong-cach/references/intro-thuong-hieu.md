@@ -5,7 +5,7 @@ description: "Quy trình lá B14: dựng intro thương hiệu DAVID TRẦN (khu
 # Intro thương hiệu DAVID TRẦN (cây quy trình lá B14)
 
 **Khi nào dùng:** David muốn một đoạn intro riêng đặt đầu video dài, từ thư mục tư liệu.
-Bản hiện hành làm 23/11/2026 (việc #41, bản 3): `~/Movies/cho-dang/tap-intro-david-tran-2311/ban-dai/intro-david-tran.mp4`,
+Bản hiện hành làm 23/11/2026 (việc #41, bản 4): `~/Movies/cho-dang/tap-intro-david-tran-2311/ban-dai/intro-david-tran.mp4`,
 Drive `thanh-pham/` cùng tên. Khuôn code: `assets/khuon-intro/`.
 
 **Đầu vào:** link thư mục Drive (lá B2 tải về `~/Movies/tap-<tên>/1-goc/`) · chữ trên intro (mặc định chỉ tên **DAVID TRẦN**: chữ trên
@@ -16,6 +16,8 @@ video chỉ lấy từ David).
 - "Ghép các cảnh ngang thôi" (không làm bản dọc, không dùng video quay dọc).
 - Nhạc tiếng Anh có lời, không vi phạm bản quyền. Logo tổ chức khác (DFS) thì tránh.
 - "Đưa nhân vật làm trung tâm nhé. Các cảnh cần hiển thị được toàn cảnh để thể hiện được tính chất sân khấu và năng lực chia sẻ của tôi."
+- "Có rất nhiều cảnh mà. Đan xen thêm nhé, không cảnh nào lấy lại 2 lần cả." · "Intro cần ấn tượng nên thẩm mỹ là quan trọng nhất."
+  Được dùng cảnh quay dọc khi cảnh đó đắt (sân khấu, ký kết, đứng bảng giảng): đặt giữa khung ngang, mỗi cảnh một lần.
 
 ## Nguyên lý học từ intro diễn giả cùng lĩnh vực
 Mẫu đã học 23/11: John Sanei, Jacob Brown, Tony Robbins Australia (quốc tế); Trần Hồng Hải, Ngô Bích Hà, TS. Khiêm Nguyễn (Việt Nam).
@@ -25,8 +27,9 @@ Mẫu đã học 23/11: John Sanei, Jacob Brown, Tony Robbins Australia (quốc 
    phòng đào tạo có học viên đang nghe, phòng thu talk show, buổi chia sẻ) để người xem thấy năng lực đứng lớp, chia sẻ. Khoảnh khắc thật:
    đang nói trước người khác, ngồi viết, chào người xem. Cảnh quay bằng chân máy đẹp hơn cảnh tự
    cầm máy; cảnh tự quay chỉ để ở đoạn cắt nhanh.
-3. **Nhịp theo nhạc, có lớp:** mở chậm (mỗi cảnh 4 phách, máy đẩy chậm vào) → giữa (2 phách, máy trôi ngang) → dồn (1 phách) trước điểm
-   chốt → cảnh chào (4 phách) → tên. Vệt sáng ấm lóe qua ở các điểm nhấn của nhạc và lời.
+3. **Nhịp theo nhạc, có lớp, mỗi cảnh một lần:** mở chậm (2 cảnh toàn, mỗi cảnh 4 phách, máy đẩy chậm vào) → giữa (8 cảnh, mỗi cảnh
+   2 phách, đan xen nơi chốn khác nhau) → cao trào (cảnh sân khấu lớn nhất, 4 phách, đẩy vào gần David) → cảnh chào (4 phách) → tên.
+   Một nơi quay chỉ lấy một khoảnh khắc; thiếu cảnh thì kéo dài cảnh, không lặp. Vệt sáng ấm lóe qua ở các điểm nhấn của nhạc và lời.
 4. **Chốt tên kiểu diễn giả:** nền đen ấm, DAVID TRẦN chữ HEAD giãn rộng rồi khép dần, hai vạch cam mảnh mở từ giữa, một vệt sáng quét
    qua chữ. Tên hiện đúng chữ đắt nhất của lời bài hát.
 
@@ -37,6 +40,8 @@ Mẫu đã học 23/11: John Sanei, Jacob Brown, Tony Robbins Australia (quốc 
    thử máy, cảnh đường phố, cửa hàng, ô tô, điện thoại đặt trên bàn.
 2. **Chọn khoảng 15 đoạn** theo nguyên lý 2, ghi vào `danh-sach-canh.txt` (mẫu trong khuôn). Logo tổ chức khác: `bo-logo` (cắt mép)
    hoặc chọn đoạn khác, soát từng khung vì máy cầm tay làm logo trôi vào mép. Quán đông người phía sau: `phai` (lấy 2/3 bên phải).
+   Cảnh quay dọc: `doc` (logo trên vách thì `doc-bo-tren`), đánh dấu `true` ở cột dọc của bảng `CANH` (cao trào: `'gan'`): khuôn tự đặt
+   cảnh nét cao 980 điểm ảnh giữa khung, vượt lên trên hai dải đen, nền là chính cảnh đó phóng to, mờ, tối.
 3. **Nhạc có lời, giấy phép rõ:** dùng `cat-doan-noi-bat/assets/nhac/intro-co-loi-1.mp3` (README kho nhạc có đoạn dùng, nhịp, câu ghi
    nguồn). Cần bài mới thì:
    - Pixabay, ccMixter, trang riêng của tác giả chặn máy tải (bước xác minh chống máy, trang báo cấm); Free Music Archive bắt đăng nhập
