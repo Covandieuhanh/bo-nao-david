@@ -68,3 +68,17 @@ Bản theo hướng: bản ngang 4:19 `tap-ket-noi-doanh-nhan` · Trạng thái:
 | Năng lực mạnh nhất: tổ chức và kết nối nguồn lực | "Kết nối tất cả các nguồn lực lại" | 1491–1525 (24:51) | thiếu kết nối | hội thảo, kết nối | câu giới thiệu bản thân |
 | Người trung lập nói về giải pháp của người khác thì thêm điểm → bán chéo | "Em nói thì nó lại thêm 1 điểm" | 1560–1606 (26:00) | tự khen không ai tin | — | ví dụ về uy tín |
 | Trước đây kết nối chỉ có tình cảm, không thu nhập; có công nghệ mới thành nghề | "nếu như không có công nghệ thì em không làm điều này được" | 2050–2111 (34:10) | kết nối không ra tiền | — | câu chuyện của trainer |
+
+## 23/11/2026 · tap-dji0028-2311 · chiều cà phê ngoài trời với một anh chủ doanh nghiệp du lịch
+Bản theo hướng: bản ngang 10:57 `tap-dan-doi-bang-quy-trinh` · Trạng thái: đã dựng 24/11 (chế độ tự chạy), chờ đăng · Kho 100: khớp #62
+| Ý | Lời gốc | Mốc | Nỗi đau / mục tiêu | Bán được gì | Dùng cho việc |
+|---|---|---|---|---|---|
+| Đội chỉ cần hai thứ: kết quả và vấn đề; có kết quả thì đóng thành quy trình, có vấn đề thì bóc tách | "làm thì sẽ có vấn đề hoặc có kết quả" | 670–721 (11:10) | nhân sự làm mà không ra gì | buổi riêng chủ doanh nghiệp | khung họp ngày |
+| Quy trình làm ra phải cho người khác làm thử và phản hồi; người khác chưa ra kết quả giống mình là mình chưa có quy trình | "thì tức là mình chưa có quy trình giao cho nó" | 1839–1890 (30:39) | chủ ôm việc | gói trainer (dẫn đội) | kho 100 #62 |
+| Mỗi người viết nhật ký, đưa AI đọc, tự viết quy trình của chính mình, mình giám sát trên đó | "tao giám sát trên đúng cái quy trình của mày luôn" | 1938–1998 (32:18) | không biết nhân viên làm gì | gói trainer + công nghệ | bài tập nhật ký |
+| Góp ý qua bên thứ ba (chuẩn doanh nghiệp quốc tế, người ngoài) thì người ta nghe | "Góp ý là phải góp ý từ bên thứ ba lại" | 1998–2044 (33:18) | góp ý không ai nghe | — | mẹo đứng lớp |
+| Gọi tên đúng; thuật ngữ lấy tiếng Anh làm chuẩn | "Mình cần gọi tên nó đúng thôi anh ạ" | 4605–4644 (76:45) | mỗi người hiểu một kiểu | — | luật dịch thuật ngữ |
+| Người điều hành giám sát theo gạch đầu dòng của quy trình, không cần mắng; quy trình càng ít chữ càng tốt | "quy trình càng ít chữ càng tốt" | 4711–4817 (78:31) | điều hành bằng cảm xúc | gói trainer | mẫu quy trình văn phòng |
+| Hiểu bản chất thì không cần chờ bề dày kinh nghiệm (ví dụ pha cà phê) | "Khi em hiểu bản chất rồi thì em không cần bề dày kinh nghiệm nữa" | 4855–4924 (80:55) | — | nhân hiệu trainer | câu chuyện mở bài |
+| Thuê người để giải quyết vấn đề, không phải để phản biện mình | "tao thuê mày về để giải quyết vấn đề cho công ty của tao" | 4930–5005 (82:10) | trả lương mà phải chiều | buổi riêng | tư duy chủ |
+| Tư duy đi trước, công cụ đi sau | "Tư duy đi trước công cụ đi sau" | 5026 (83:46) | — | — | câu chốt |

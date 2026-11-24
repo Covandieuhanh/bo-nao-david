@@ -65,3 +65,13 @@ Bản theo hướng: bản ngang 5:31 `tap-may-do-giai-phap` · Trạng thái: �
 | Mỗi bản demo giữ làm khuôn gốc, gặp nỗi đau giống thì có sẵn; may tiếp eo, cổ cho từng người | "giống như chị đi ra may cái áo thì có phải người ta có một khuôn sẵn không?" | 824–857 (13:44) | — | tái dùng demo | giải thích cách làm |
 | Ra lệnh cho AI như nói với người dựng: cắt ý này, bỏ phần thừa, thêm chữ | "mình sẽ có yêu cầu người ta là cắt ý này" | 1040–1061 (17:20) | dựng video mất thời gian | gói video tự động | ví dụ minh hoạ |
 | Cùng công cụ nhưng mỗi người dùng khác; quan trọng là dùng được | "Quan trọng là anh phải dùng được" | 1339–1352 (22:19) | mua về không dùng | gói kèm đào tạo | câu chốt |
+
+## 23/11/2026 · tap-dji0028-2311 · chiều cà phê ngoài trời với một anh chủ doanh nghiệp du lịch
+Bản theo hướng: bản ngang 3:47 `tap-quy-trinh-cho-ai` · Trạng thái: đã dựng 24/11 (chế độ tự chạy), chờ đăng
+| Ý | Lời gốc | Mốc | Nỗi đau / mục tiêu | Bán được gì | Dùng cho việc |
+|---|---|---|---|---|---|
+| Gom người cùng một nỗi đau, làm demo trước, cho họ tự hỗ trợ nhau — chưa cần nói giải pháp | "20 ông đã hỗ trợ nhau được rồi" | 1380–1427 (23:00) | hội thảo khó mời | hội thảo theo nỗi đau | kịch bản mời hội thảo |
+| Kết quả là chính các video: ngồi nói chuyện, máy tự cắt bỏ đoạn nhạy cảm, 45 phút ra 5 phút | "thì nó cắt đoạn 5 phút thôi … tự nó làm" | 1650–1689 (27:30) | dựng video mất thời gian | gói video tự động | minh chứng |
+| Nhắn Telegram, máy ở nhà tự tải video, tự làm | "cái máy tính của em nó ở nhà nó tự làm việc" | 1702–1720 (28:22) | — | — | ví dụ |
+| Bắt AI viết thành quy trình: đăng nhập máy khác ra y hệt, không làm được thì đừng làm | "Đó là giá trị của quy trình" | 1747–1828 (29:08) | AI ra kết quả lúc được lúc không | số hoá theo quy trình | câu định vị |
+| Nhật ký của nhân viên đưa AI đọc để lấy kiến thức của người này cho người kia | "Cho AI vào đọc hết" | 1938–1980 (32:18) | kiến thức nằm trong đầu từng người | gói công nghệ + đào tạo | ví dụ |

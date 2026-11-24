@@ -21,3 +21,10 @@ Bản theo hướng: không ra bản — lời chủ yếu của anh đàn anh, 
 | (anh đàn anh) thị phần còn nhỏ, ít người biết → đại dương xanh | "Nói chuyện với 10 ông xem có bao nhiêu biết về hàng hóa" | 620–650 (10:20) | — | — | góc nhìn thị trường |
 | (anh đàn anh) nhảy nhóm giao dịch: thắng vài tuần hứng khởi, thua thì chuyển | "Sau thua một vài lệnh xong lại trùng xuống lại sang cái bò bên kia" | 1022–1040 (17:02) | trader loạn | — | ví dụ kỷ luật |
 | Sản phẩm hàng hoá hợp pháp, tiềm năng nhất thời điểm này (David) | "sản phẩm hàng hóa là sản phẩm rất hợp, hợp lý, hợp pháp" | 1818–1830 (30:18) | — | hợp tác môi giới | hành trình David |
+
+## 23/11/2026 · tap-dji0028-2311 · chiều cà phê ngoài trời với một anh chủ doanh nghiệp du lịch
+Bản theo hướng: không ra bản — chỉ khoảng 30 giây nói dòng tiền doanh nghiệp, đã ghép làm chương cuối `tap-dan-doi-bang-quy-trinh` · Trạng thái: chỉ ghi ý
+| Ý | Lời gốc | Mốc | Nỗi đau / mục tiêu | Bán được gì | Dùng cho việc |
+|---|---|---|---|---|---|
+| Có lên có xuống: lên biết đủ, xuống biết cắt lỗ, đừng gồng để giữ thể diện | "Còn khi mình xuống mình có biết cắt lỗ không" | 5036–5082 (83:56) | gồng lỗ | — | câu mở bài kỷ luật cắt lỗ |
+| Tài chính chỉ là nhập xuất tồn: nhập là doanh thu, xuất là chi phí, tồn là lãi; giữ cái đang ra tiền | "Tài chính nó chỉ có nhập xuất tồn hết" | 5340–5370 (89:00) | báo cáo rối, không thấy dòng tiền | — | giải thích dễ hiểu cho chủ doanh nghiệp |
