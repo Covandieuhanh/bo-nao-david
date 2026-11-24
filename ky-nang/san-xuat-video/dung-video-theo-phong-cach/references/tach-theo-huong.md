@@ -47,7 +47,7 @@ Mỗi video ra `~/Movies/tap-<tên>/2-ban-day-du` có sẵn video gốc đã n�
 - `node $SKILL/scripts/soat-canh.mjs <dự án>`, rồi `bash $SKILL/scripts/anh-kiem-canh.sh <dự án>` (lưới ảnh mỗi cảnh trên khung thật),
   soát bằng mắt: không che ai, chữ đọc được.
 - Render: `cd <dự án>/chuyen-dong && node xuat-video.mjs`, rồi `python3 -I $SKILL/scripts/xem-truoc-ban-dung.py <dự án>`; video từ
-  khoảng 4 phút trở lên thêm teaser `doan-gioi-thieu.py <dự án> <từ-đến> …` (mốc trong video đã cắt = `g(giây gốc)`); video ngắn bỏ teaser.
+  dài hơn 10 phút thì thêm teaser (hồ sơ chung `teaser_khi_dai_hon_s`) `doan-gioi-thieu.py <dự án> <từ-đến> …` (mốc trong video đã cắt = `g(giây gốc)`); video ngắn bỏ teaser.
 
 ### 5. Clip ngắn, phát hành, giao
 - Clip ngắn mỗi video theo `phan-phoi-da-kenh` bước 4 (`cat-doan-noi-bat`), trừ khi David nói không cần.

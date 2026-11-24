@@ -59,7 +59,7 @@ description: "Lỗi thường gặp khi dựng video (ffmpeg, Remotion, Whisper�
 ## Làm sạch video gốc (chế độ 1 video)
 - **Video cũ của kênh cũ**: hay có **chữ / viền in cứng vào hình** — dải tên tập + ngày + website ở đáy
   (từ dòng khoảng 902/1080), viền trắng bo góc sát mép (khoảng 40 px). Luôn xem 1 khung ở giữa video **cỡ lớn** trước khi dựng; có thì cắt
-  khung 16:9 bên trong rồi phóng lại 1920×1080 (`crop=1592:896:200:0` cho dải đáy; `crop=1808:1017:56:31` cho viền), làm TRƯỚC face_place.
+  khung 16:9 bên trong rồi phóng lại 1920×1080 (`crop=1592:896:200:0` cho dải đáy; `crop=1808:1017:56:31` cho viền), làm TRƯỚC vi-tri-khuon-mat.sh.
   Màn tít mở đầu cũ ("PODCAST TẬP 4…") + lời chào/giới thiệu kênh cũ thì cắt (quy-tac-chung mục 2, làm lại video cũ).
 - **Whisper chép ảo** cả bài một câu ("Hãy subscribe cho kênh Ghiền Mì Gõ…") ở video có tiếng trầm/nhạc mở đầu nên phan-tich-lam-sach.sh tự
   chép lại với tiếng đã lọc (`highpass=f=120,dynaudnorm`); còn ảo thì thêm `-mc 0` (tắt ngữ cảnh) và chép riêng đoạn đầu rồi ghép.
@@ -124,7 +124,7 @@ description: "Lỗi thường gặp khi dựng video (ffmpeg, Remotion, Whisper�
 - `khung-podcast.js`, `san-khau.jsx`, `dong-thoi-gian.jsx`, `toan-man-hinh-ngang.jsx`, `bieu-tuong.jsx`, composition `nen` thuộc skill dung-podcast;
   mọi nhánh podcast chỉ bật khi `project.podcast`. Sửa template thì chụp thử cả một dự án tự quay (ví dụ: edit-img0499) lẫn một
   dự án podcast (dọc + ngang) trước khi coi là xong.
-- `chu-de.js`: SAFE dọc cố định (bottom 1420, rộng 830) — đúng cho mọi dự án dọc 1080×1920 (clean_apply luôn đưa về khung này).
+- `chu-de.js`: SAFE dọc cố định (bottom 1420, rộng 830) — đúng cho mọi dự án dọc 1080×1920 (ap-dung-lam-sach.py luôn đưa về khung này).
 
 ## Phụ đề
 - Lần chạy Whisper theo từ (`-ml 1`) và theo câu cho kết quả khác nhau; cả hai đều có thể đè câu bịa lên câu thật cuối
@@ -228,7 +228,7 @@ người nói chưa từng chạy với dấu góc. Không do bài học video m
 | Tạo liên kết cứng giữa bản nguồn và `video-goc.mp4` rồi ffmpeg ghi ra `video-goc.mp4` | ffmpeg cắt rỗng chính nguồn, mất bản sạch (dựng lại từ bản thô) | `khung-chu-the.py` xoá đích trùng nguồn; **không bao giờ `ln` file nguồn vào tên file đích** |
 | Ảnh tĩnh `-loop 1` làm đầu vào mà không `-t` | ffmpeg chạy mãi, file 7 GB, mất 1 giờ | `khung-chu-the.py` có `-t`; mọi lệnh có `-loop 1` phải có `-t` hoặc `shortest` ở MỌI nhánh |
 | Theo dõi việc nền bằng cỡ file thay vì thời gian dự kiến | không thấy lệnh chạy quá lâu | quá 1,5 lần dự kiến → kiểm ngay (SKILL "Nhịp làm") |
-| `loi-ao.py` báo nhầm câu chen 0,4 s không có trong moc-tung-tu.srt | phải chạy tay phần sau của clean_analyze | **chưa sửa** — gặp lại thì bỏ dòng đó, ghi `kiem-tra/loi-ky-nang.md` |
+| `loi-ao.py` báo nhầm câu chen 0,4 s không có trong moc-tung-tu.srt | phải chạy tay phần sau của phan-tich-lam-sach.sh | **chưa sửa** — gặp lại thì bỏ dòng đó, ghi `kiem-tra/loi-ky-nang.md` |
 
 
 ## Khung chủ thể (khung.js) + cảnh có sẵn

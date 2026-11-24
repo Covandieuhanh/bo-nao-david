@@ -20,7 +20,7 @@ export const Tua = () => {
   const o = Math.sin(Math.PI * p);                   // hiện nhanh, tắt nhanh
   const s = Math.min(54, Math.round(W * 0.05));
   const back = j.src_to < j.src_from;               // nhảy lùi trong tập gốc → tua lùi
-  const soft = j.tone === 'lang';                    // tông lắng: tối dần, không vệt quét, chip viền cam (không tiếng vút — render_preview)
+  const soft = j.tone === 'lang';                    // tông lắng: tối dần, không vệt quét, chip viền cam (không tiếng vút — xem-truoc-ban-dung.py)
   return (
     <AbsoluteFill style={{background: `rgba(10,10,12,${(soft ? 0.78 : 0.62) * o})`}}>
       {!soft && STREAKS.map((k, i) => {

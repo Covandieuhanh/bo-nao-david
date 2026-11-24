@@ -9,11 +9,18 @@ tim_drive() {
   local d
   if [ -n "$DRIVE_GOC" ]; then G=$DRIVE_GOC; return 0; fi
   for d in "$HOME/Library/CloudStorage/GoogleDrive-covandieuhanh@gmail.com/Drive của tôi" "$HOME"/Library/CloudStorage/GoogleDrive-*/"Drive của tôi"(N) "$HOME"/Library/CloudStorage/GoogleDrive-*/"My Drive"(N) \
-           /mnt/[a-z]/"My Drive"(N) /mnt/[a-z]/"Drive của tôi"(N); do
+           /mnt/[a-z]/"My Drive"(N) /mnt/[a-z]/"Drive của tôi"(N) \
+           /mnt/c/Users/*/"My Drive"(N) /mnt/c/Users/*/"Drive của tôi"(N); do   # Drive cài kiểu phản chiếu (mirror) vào thư mục người dùng Windows
     [ -d "$d" ] && { G=$d; return 0; }
   done
   return 1
 }
+# Câu báo khi không thấy Drive (cho-dang.sh, luu-drive.sh, kiem-moi-truong.sh dùng chung)
+if [[ $OSTYPE == darwin* ]]; then
+  DRIVE_HUONG_DAN="mở ứng dụng Google Drive cho máy tính; thư mục ở chỗ khác thì đặt DRIVE_GOC=<đường dẫn>"
+else
+  DRIVE_HUONG_DAN="cài Google Drive cho Windows và đăng nhập; cài rồi mà Ubuntu chưa thấy thì chạy 'wsl --shutdown' trong PowerShell rồi mở lại Ubuntu (ổ mới chỉ gắn khi Ubuntu khởi động); thư mục ở chỗ khác thì đặt DRIVE_GOC=<đường dẫn>"
+fi
 if [[ $OSTYPE == darwin* ]]; then
   DRIVE_KIEM_DUOC=1
   _DBIN=~/.cache/dung-video-theo-phong-cach/drive; mkdir -p $_DBIN

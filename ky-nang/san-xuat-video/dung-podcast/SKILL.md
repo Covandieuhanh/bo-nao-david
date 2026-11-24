@@ -33,7 +33,7 @@ Luật chung video ở `../quy-tac-chung.md` (chữ nguyên văn, không cắt v
 - **Thanh thời gian** ở đáy vùng an toàn (đã chạy · "còn m:ss") suốt video, trên mọi cảnh — trừ podcast dọc trích ngắn: không thanh, không thẻ cuối (`thu-vien-tai-nguyen/nhan-dien-chung.md` mục 1).
 - **Màn chốt** `cta` cuối video: ô câu chốt giữa sân khấu = **nguyên văn câu David nói cuối tập** (quy-tac-chung 1). "Vấn đề / Kết quả"
   chỉ ở bài đăng; "gỡ" chỉ lên video khi David nói trong tập.
-- Không làm bản cho app chỉnh sửa (CapCut/DaVinci); sau khi David chốt: bản cuối vào `~/Movies/cho-dang/<tập>/` + `cho-dang.sh gui`, dọn file tạm rồi đưa dự án lên Drive (`don-tap.py` → `luu-drive.sh`, khối 17).
+- Không làm bản cho app chỉnh sửa (CapCut/DaVinci); sau khi David chốt: bản cuối vào `~/Movies/cho-dang/<tập>/` + `cho-dang.sh gui <tập>`, dọn file tạm rồi đưa dự án lên Drive (`don-tap.py` → `luu-drive.sh`, khối 17).
 - **Học nhịp từ 50 video Hieu Nguyen** (`references/hoc-tu-hieu-nguyen-50.md` — học nhịp và cách trình bày; lời là của David, không
   thêm/khuôn lời):
   - **Mật độ hình:** hình phủ **khoảng 30% thời lượng** (`phu_hinh_muc_tieu`), không cố định: đoạn khó hiểu hoặc quan trọng dày
@@ -58,9 +58,9 @@ Luật chung video ở `../quy-tac-chung.md` (chữ nguyên văn, không cắt v
 | 1 | Môi trường + dự án (mục dưới) · khung xuất *(bước nhẹ)* | [01](../mo-dun/01-phien-am/README.md) · [04](../mo-dun/04-khung-hinh/README.md) |
 | 2 | Chép lời + phụ đề *(chép lời là bước nhẹ)* | [01](../mo-dun/01-phien-am/README.md) · [03](../mo-dun/03-phu-de/README.md) |
 | 2b | Thumbnail (ngang + YouTube): mẫu không mặt = nền hoạ tiết + một hình theo ý của tập + tiêu đề ngắn + "DAVID · PODCAST", không lộ các bước giải pháp | [14](../mo-dun/14-anh-thu-nho/README.md) |
-| 3 | Ai đang nói · sóng âm · sân khấu, TOPICS, PHẦN n, nền lắng | [12](../mo-dun/12-san-khau-podcast/README.md) |
+| 3 | Ai đang nói (`PY=$(zsh $SKILL/scripts/cai-python.sh)` → `$PY $SKILL/scripts/nguoi-noi.py "$P" [số người]` — **podcast 1 người ghi `1`**, không ghi thì cách dự phòng mặc định 2 người) · sóng âm (`$PY $SKILL/scripts/duong-bao-am.py "$P"`) · sân khấu, TOPICS, PHẦN n, nền lắng | [12](../mo-dun/12-san-khau-podcast/README.md) |
 | 4 | Phong cách · **tuyến nội dung → nhạc nền** (`project.tuyen`, bắt buộc) | [10](../mo-dun/10-nhan-dien-thuong-hieu/README.md) · [09](../mo-dun/09-am-thanh/README.md) |
-| 5–6 | Chẩn đoán → tự chọn lớp thông tin, kiểu cảnh ([tu-chon](../thiet-ke-bo-cuc/tu-chon.md)) · cảnh minh hoạ (bố cục tự cân) · màn chốt nguyên văn | [07](../mo-dun/07-canh-minh-hoa/README.md) · [08](../mo-dun/08-phan-ket/README.md) |
+| 5–6 | Chẩn đoán (`python3 -I $BASE/scripts/chan-doan.py "$P"` + mục `## Chẩn đoán` trong `ke-hoach-canh.md`, thiếu thì máy chặn render) → tự chọn lớp thông tin, kiểu cảnh ([tu-chon](../thiet-ke-bo-cuc/tu-chon.md)) · cảnh minh hoạ (bố cục tự cân) · màn chốt nguyên văn | [07](../mo-dun/07-canh-minh-hoa/README.md) · [08](../mo-dun/08-phan-ket/README.md) |
 | 7–9 | Chụp thử → Claude tự soát → render → kiểm (mục dưới) | [17](../mo-dun/17-kiem-soat-chat-luong/README.md) · [09](../mo-dun/09-am-thanh/README.md) |
 | 10 | Phát hành: teaser > 10 phút, chương, màn kết, số liệu | [15](../mo-dun/15-xuat-ban/README.md) · [16](../mo-dun/16-phan-tich-so-lieu/README.md) |
 

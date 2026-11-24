@@ -1,5 +1,5 @@
 # Ảnh khung an toàn (vùng đỏ = bị giao diện nền tảng che): vung-an-toan.py <dự án>
-# Ra tu-lieu/khung-an-toan.png — dùng để kiểm tra khung hình (check_frames, chụp thử).
+# Ra tu-lieu/khung-an-toan.png — dùng để kiểm tra khung hình (kiem-khung-hinh.sh, chụp thử).
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from _chung import load, safe_zone, font_he_thong

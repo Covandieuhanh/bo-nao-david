@@ -10,7 +10,7 @@ setopt nullglob
 V=$1 TAP=${2:t}
 [ -n "$V" ] && [ -n "$TAP" ] || { echo "cách dùng: cho-dang.sh lay|gui|xong <tập>"; exit 2; }
 source ${0:A:h}/drive-chung.sh || exit 1   # $G, da_len (Mac và Windows/WSL2)
-tim_drive || { echo "✗ Google Drive chưa mở"; exit 1; }
+tim_drive || { echo "✗ Không thấy Google Drive: $DRIVE_HUONG_DAN"; exit 1; }
 TP="$G/thanh-pham/$TAP" CD="$HOME/Movies/cho-dang/$TAP"
 EX=(--exclude .DS_Store --exclude da-dang.txt)
 khop() { [ -z "$(rsync -a --dry-run -i $EX "$1/" "$2/" | grep -v '^\.d')" ]; }   # mọi file nguồn đã có y hệt ở đích

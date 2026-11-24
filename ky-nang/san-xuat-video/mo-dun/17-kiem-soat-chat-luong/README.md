@@ -23,7 +23,7 @@ description: "Khối 17 dựng và kiểm tra chất lượng: chụp thử từ
 ```bash
 cd "$P/chuyen-dong" && node xem-truoc.mjs <id>@<giây> phu-de@<giây> <id>@<giây> phu-de@<giây> ...
 ```
-(chụp `phu-de` cùng mốc với mỗi cảnh thì composite_stills ghép phụ đề lên cảnh đó để thấy chồng lấn, nếu có)
+(chụp `phu-de` cùng mốc với mỗi cảnh thì ghep-anh-tinh.sh ghép phụ đề lên cảnh đó để thấy chồng lấn, nếu có)
 Chụp mỗi cảnh ở khoảnh khắc "đầy nhất" (cuối cảnh, khi mọi phần tử đã hiện). Ghép lên khung video gốc + khung an toàn
 bằng `python3 $SKILL/scripts/vung-an-toan.py "$P"` (một lần) và `zsh $SKILL/scripts/ghep-anh-tinh.sh "$P"` rồi xem `kiem-tra/anh-tinh.jpg`: chữ có tràn/xuống dòng xấu, dấu tiếng Việt
 có bị cắt, **hai dòng chữ có chồng nhau / chữ có chạm khung ảnh không** (soi chữ có Ố Ễ Ỗ), **ô hiệu ứng có bị cắt ở đáy hoặc chạm phụ đề không**
@@ -32,7 +32,7 @@ nhanh vẫn có thể lọt; thấy đè thì đặt tay `place`), chữ có đ�
 Chụp đúng mốc dễ lỗi (`quy-tac-chung.md` mục 8), không chụp thừa. Đây là bước tiết kiệm nhất — sửa ở đây rẻ hơn nhiều so với sau khi render.
 Khung ngang (pillar): trước khi chụp, dựng nền ngang một lần —
 `node xuat-video.mjs hai-ben` (khoảng 1 phút / phút video) rồi `python3 -I $SKILL/scripts/nen-cot.py "$P"` → `nen-ngang.mp4`;
-composite_stills tự dùng nền này. Chụp thêm `hai-ben@<giây>` ở vài mốc để kiểm chữ hai bên (tràn, xuống dòng xấu).
+ghep-anh-tinh.sh tự dùng nền này. Chụp thêm `hai-ben@<giây>` ở vài mốc để kiểm chữ hai bên (tràn, xuống dòng xấu).
 Đổi `SIDES` hoặc mốc cảnh thì render lại `hai-ben` + `nen-cot.py`.
 
 ### Render, đóng gói, xuất bản cuối
@@ -60,7 +60,7 @@ zsh $SKILL/scripts/kiem-khung-hinh.sh "$P" "$P/video-hoan-chinh.mp4" <các mốc
 Xem `kiem-tra/bang-anh.jpg`: cảnh đúng chỗ, không gì lọt vùng an toàn, không lớp phủ nào che mặt, không nháy/đen. Âm thanh
 (cả bài −14 LUFS, đỉnh tối đa −1,5 dB — `ebur128=peak=true`; KHÔNG so dB thô với nguồn vì giọng nhỏ được kéo lên — khối 09) và tiếng rè so với giọng (`-af highpass=f=12000,astats` — mức RMS bản cuối
 chênh bản gốc tối đa 1 dB; cao hơn hẳn = âm thanh bị hạ bit ở đâu đó, xem gotchas) và thời lượng (= bản sạch; video KHÔNG có màn hình nguồn ảnh ở cuối).
-Lỗi thì sửa cảnh đó thì chạy `node xuat-video.mjs <id>` rồi render_preview lại.
+Lỗi thì sửa cảnh đó thì chạy `node xuat-video.mjs <id>` rồi xem-truoc-ban-dung.py lại.
 
 ## Soát cảnh tự động
 Chạy **trước bước chụp thử** và sau mỗi lần sửa mốc / chữ:

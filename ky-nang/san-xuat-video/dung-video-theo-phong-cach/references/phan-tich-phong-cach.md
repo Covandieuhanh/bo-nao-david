@@ -57,7 +57,7 @@ Font phải có subset `vietnamese` trong `@fontsource` (kiểm tra: `ls node_mo
 | Viết tay, vui | dancing-script, pacifico (chỉ cho điểm nhấn ngắn) |
 | Đơn cách, kiểu code/kỹ thuật | jetbrains-mono, roboto-mono |
 
-Cài: `cd motion && npm install @fontsource/<font>` rồi import `vietnamese-<weight>.css` và `<weight>.css` trong `phong-chu.js`,
+Cài: `cd chuyen-dong && npm install @fontsource/<font>` rồi import `vietnamese-<weight>.css` và `<weight>.css` trong `phong-chu.js`,
 thêm dòng vào `FONT_CHECKS`; dùng cho từ nhấn, không đổi `HEAD`/`BODY`. Luôn thử chữ có dấu chồng (Ở, Ữ, Ặ, Ễ) và dấu dưới (ạ, ợ, ụ) khi chụp kiểm tra.
 
 ## Khi mẫu khác hẳn template

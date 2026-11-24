@@ -1,4 +1,4 @@
-// Màu nhận diện của chế độ ghép — chuong-trinh.jsx và bieu-tuong.jsx (chép từ remotion-template lúc tạo dự án) cùng đọc ở đây.
+// Màu nhận diện của chế độ ghép — chuong-trinh.jsx và bieu-tuong.jsx (chép từ khuon-remotion lúc tạo dự án) cùng đọc ở đây.
 // Giữ TRÙNG với khuon-remotion/src/chu-de.js (C) — cùng một bộ nhận diện cho mọi loại video.
 import {Easing, interpolate} from 'remotion';
 

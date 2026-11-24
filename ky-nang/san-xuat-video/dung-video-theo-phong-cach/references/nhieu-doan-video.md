@@ -208,7 +208,7 @@ Mật độ theo nội dung, vài kiểu hợp nhất (quy-tac-chung mục 0); k
 ở y≈228, ẩn khi có replay). Mọi chữ trong vùng an toàn x 70–900, y 210–1420.
 
 ### 4b. Chuẩn chung với chế độ 1 video ("khớp 100%")
-- Phụ đề: `src/kieu-phu-de.js` (tao-dung-ghep.sh chép từ remotion-template — MỘT nguồn; sửa kiểu phụ đề chỉ ở đó).
+- Phụ đề: `src/kieu-phu-de.js` (tao-dung-ghep.sh chép từ khuon-remotion — MỘT nguồn; sửa kiểu phụ đề chỉ ở đó).
 - Chữ to nhiều dòng: chừa chỗ dấu theo cỡ chữ (`Rise`: 0,5 em trên / 0,32 em dưới), giãn dòng 1,12–1,14, khe giữa dòng 0,24 em.
 - Chỉ những điểm nhấn có nội dung (tiêu đề, địa điểm, trích dẫn) — bố cục tự cân như chế độ 1 video.
 - **Màn hành động + màn chốt** (như chế độ 1 video): lớp phủ `{type: 'action', start, end, quote, doneAt}` khi người nói nêu việc
@@ -231,6 +231,8 @@ Mật độ theo nội dung, vài kiểu hợp nhất (quy-tac-chung mục 0); k
 - Không dùng emoji trong chữ khi phong cách mẫu không dùng.
 
 ### 6. Viết `chuyen-dong/src/danh-sach-cat.js`
+**Trước khi viết (bắt buộc, khối 11):** `python3 -I $SKILL/scripts/chan-doan.py "$P"` rồi ghi `$P/ke-hoach-canh.md` có mục `## Chẩn đoán`
+(dòng `Loại:`, mỗi cảnh `Cần · Vì · Làm` — `../../thiet-ke-bo-cuc/tu-chon.md`). Thiếu thì `soat-canh.mjs` chặn render ở `xuat-chuong-trinh.mjs`.
 **Vlog dài nhiều clip (≳ 15 clip / ≳ 5 phút)**: đừng viết tay — viết `ke-hoach.json` (giữ/bỏ từng clip, tông, thẻ địa điểm, sửa chính
 tả `fix`, bỏ dòng nghe không rõ `drop_sub`, mở đầu, tiêu đề, CTA; mẫu ở đầu script) rồi
 `python3 -I $SKILL/scripts/danh-sach-cat-vlog.py "$P"` → danh-sach-cat.js (tự tua đoạn không lời ít nhất 4 s, phụ đề theo câu, TONE + nhạc) + `kiem-tra/cat-vlog.md`.
@@ -264,7 +266,7 @@ chữ khó đọc trên nền sáng, **người/vật chính bị phụ đề ch
 cd "$P/chuyen-dong" && node xuat-chuong-trinh.mjs        # chạy nền, ~3–9 phút/phút video; tự loudnorm → video-hoan-chinh.mp4
 ```
 Sau đó: cắt 12–15 khung trải đều thành dải xem lại; `ffmpeg -i video-hoan-chinh.mp4 -af ebur128=peak=true -vn -f null -`
-(I ≈ −14…−15 LUFS, đỉnh tối đa −1,4 dB). Nhạc lấy từ kho nhạc kênh theo tuyến nội dung (khối 09: ke-hoach.json/edl `tuyen`, bài + mức cân ở hồ sơ chung `nhac`) — Claude tự chọn,
+(I ≈ −14…−15 LUFS, đỉnh tối đa −1,5 dB). Nhạc lấy từ kho nhạc kênh theo tuyến nội dung (khối 09: ke-hoach.json/edl `tuyen`, bài + mức cân ở hồ sơ chung `nhac`) — Claude tự chọn,
 không hỏi David; mức nhạc theo khối 09.
 
 ### 9. Phát hành, giao + sửa theo góp ý

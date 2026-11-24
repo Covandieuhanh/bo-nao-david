@@ -8,6 +8,8 @@ description: "Bộ mẫu chuẩn video: dựng lại 5 dự án mẫu bằng kie
 khung dựng + thư viện hình + hồ sơ HIỆN TẠI, chụp khung cố định ra `<tên>/moi.jpg`, so `<tên>/chuan.jpg`.
 - `✓ giữ nguyên` nghĩa là sửa không làm vỡ chỗ khác. `⚠ hình đổi` thì mở 2 tờ: đúng ý thay đổi thì `python3 -I kiem-mau.py <tên> --chot`.
 - Chỉ đọc dự án gốc (dữ liệu lời, kịch bản, mốc); làm trong thư mục tạm. Thêm mẫu: thêm một mục vào `mau.json`.
+- **Chỉ chạy ở Mac chính**: cần các dự án gốc trong `~/Movies` của Mac (`mau.json`). Máy khác (Windows qua WSL, Mac phụ) kiểm bằng
+  `tu-dong-hoa/may-khac/kiem-may.sh`; sửa skill trên máy khác thì báo David chạy `kiem-mau.py` ở Mac chính trước khi dùng tiếp.
 
 
 Mẫu ảnh bìa podcast không mặt David duyệt 2026-11-06: `anh-thu-nho-podcast/chuan.jpg`. `kiem-mau.py` chưa kiểm ảnh bìa; sửa khuôn ảnh bìa thì dựng lại bằng lệnh ở khối 14 và so với file này.

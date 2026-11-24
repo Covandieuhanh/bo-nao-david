@@ -29,7 +29,7 @@
   "max_tang": 3
  },
  "nhac": {
-  "_": "Nhạc nền theo TUYẾN NỘI DUNG (David chốt 2026-11-05) — project.tuyen / ke-hoach.json tuyen BẮT BUỘC, không ghi thì render_preview dừng",
+  "_": "Nhạc nền theo TUYẾN NỘI DUNG (David chốt 2026-11-05) — project.tuyen / ke-hoach.json tuyen BẮT BUỘC, không ghi thì xem-truoc-ban-dung.py dừng",
   "tuyen": {
    "vui": {
     "bai": [
@@ -95,7 +95,7 @@
   "dinh_dB": -1.5,
   "_chuan_am": "CHUẨN CHUNG MỌI ĐẦU RA, David chốt 2026-11-06 theo 3 clip Đi trainer: nhạc thấp hơn giọng khoảng 23 dB lúc nói, cả bài −14 LUFS. Giọng nhỏ thì kéo lên, nhạc to thì hạ xuống theo mức này.",
   "muc": {
-   "_": "Hệ số cân từng bài về ~−15 LUFS — MỘT NGUỒN cho mọi script (vlog_edl, render_preview, hl_edl, hl_apply). Thêm bài: đo ebur128 I rồi gain = 10^((−15 − I)/20)",
+   "_": "Hệ số cân từng bài về ~−15 LUFS — MỘT NGUỒN cho mọi script (danh-sach-cat-vlog.py, xem-truoc-ban-dung.py, danh-sach-cat-doan-noi-bat.py, ap-dung-doan-noi-bat.py). Thêm bài: đo ebur128 I rồi gain = 10^((−15 − I)/20)",
    "soi-1": 0.55,
    "soi-2": 0.5,
    "lang-1": 1.0,

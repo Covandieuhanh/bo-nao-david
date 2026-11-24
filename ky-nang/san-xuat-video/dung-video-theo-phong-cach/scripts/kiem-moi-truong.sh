@@ -20,5 +20,8 @@ chk "Mô hình Whisper (1,5 GB)" "test -s $MODEL" "$CAI  (tải 1,5 GB — hỏi
 chk "Node.js" "command -v node" "$CAI"
 chk "Pillow (Python)" "python3 -c 'import PIL'" "$CAI"
 chk "zsh, rsync" "command -v zsh && command -v rsync" "$CAI"
+# Drive là nơi giao kết quả (cho-dang.sh, luu-drive.sh) và nơi bộ thử máy (kiem-may.sh): thiếu thì dựng được nhưng chưa giao được — cảnh báo, không chặn
+if source "${0:A:h}/drive-chung.sh" 2>/dev/null && tim_drive; then echo "✅ Google Drive: $G"
+else echo "⚠ Chưa thấy Google Drive — dựng được nhưng chưa giao được kết quả, chưa chạy được kiem-may.sh: $DRIVE_HUONG_DAN"; fi
 df -h ~ | awk 'NR==2 {print "💾 Ổ đĩa còn trống: " $4 " (mỗi dự án cần ~3 GB)"}'
 [ $ok = 1 ] && echo "Sẵn sàng." || exit 1

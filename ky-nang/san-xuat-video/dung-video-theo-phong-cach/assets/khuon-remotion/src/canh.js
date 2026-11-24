@@ -1,6 +1,6 @@
 // Kịch bản cảnh của dự án — Claude viết lại file này cho mỗi video.
 // Mốc thời gian (giây) lấy từ ban-chep-loi.srt của video gốc.
-// type: hook (3 s mở đầu, bắt buộc) · lower · kinetic · card · montage · recap · converge · master (xem references/thiet-ke-canh.md)
+// type: hook (thẻ tít 0–2,5 s, CHỈ khi David yêu cầu — khối 06) · lower · kinetic · card · montage · recap · converge · master (xem references/thiet-ke-canh.md)
 import project from './du-an.js';
 
 export const FPS = project.fpsNum / project.fpsDen;

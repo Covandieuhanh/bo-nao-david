@@ -71,7 +71,7 @@ thời gian, không thẻ cuối, màn chốt trên hình, kết ở chữ cuố
 
 ## Đầu vào
 
-1. **Video gốc** (mp4/mov…) — hoặc **thư mục dự án** đã dựng nó (`~/Movies/tap-<tên>/2-ban-day-du`, dự án Codex dạng `…/work/podcast-<tên>`):
+1. **Video gốc** (mp4/mov…; file chỉ có tiếng thì dựng podcast trước bằng `dung-podcast`, rồi cắt từ `video-hoan-chinh.mp4` — script cắt cần hình) — hoặc **thư mục dự án** đã dựng nó (`~/Movies/tap-<tên>/2-ban-day-du`, dự án Codex dạng `…/work/podcast-<tên>`):
    tốt nhất, vì có lời đã sửa chính tả, tiếng sạch, kịch bản, tên tập. Chỉ có video-hoan-chinh thì tìm thư mục dự án cạnh nó (cùng cha
    `outputs/` ↔ `work/`, hoặc `~/Movies/*/video-hoan-chinh.mp4`). Không tải video từ YouTube/TikTok — nhờ gửi file.
 2. **Phụ đề** .srt/.vtt nếu có (YouTube Studio → Phụ đề → Tải xuống): để sửa chính tả; mốc cắt vẫn lấy từ `moc-tung-tu.srt`.
@@ -211,7 +211,7 @@ $SKILL/assets/nhac/               # soi-*.mp3 · lang-*.mp3 — kho nhạc kênh
 5. Phụ đề cụm khoảng 5–8 chữ (tối đa theo hồ sơ `phu_de.ngan_max_chu`) không chồng chữ motion graphic; không thanh thời gian, không thẻ cuối.
 6. Nhạc từ kho kênh, thấp hơn giọng khoảng 23 dB.
 7. Có dang-bai.md (lịch đăng, mốc bìa, mô tả, bình luận ghim) + so-lieu.md; David không phải sửa lại vì trái luật đã chốt.
-8. David chốt cả tập thì clip cuối vào `~/Movies/cho-dang/<tập>/highlight/` + `cho-dang.sh gui` → dọn file tạm luôn bằng `don-tap.py --xoa` rồi `luu-drive.sh` lên Drive (khối 17), không hỏi lại; chỉ hỏi phần ⏸ đang dở.
+8. David chốt cả tập thì clip cuối vào `~/Movies/cho-dang/<tập>/highlight/` + `cho-dang.sh gui <tập>` → dọn file tạm luôn bằng `don-tap.py --xoa` rồi `luu-drive.sh` lên Drive (khối 17), không hỏi lại; chỉ hỏi phần ⏸ đang dở.
 
 ## Tài liệu kèm (chỉ đọc khi bước cần, cân nhắc đổi luật hoặc gỡ lỗi)
 - `references/nhat-ky-thay-doi.md` — quyết định theo ngày + lý do.

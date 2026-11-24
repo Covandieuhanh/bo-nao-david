@@ -1,7 +1,7 @@
 # Đổi khung xuất: dat-dau-ra.py <dự án> pillar|same
 #   pillar: gốc dọc → xuất ngang 1920×1080 (video giữa, hai bên chữ) — ghi chuyen-dong/src/dau-ra.js
 #   same:   xuất cùng khung video gốc (mặc định)
-# Gốc ngang → xuất dọc KHÔNG dùng file này: chạy phan-tich-doi-khung.sh + reframe_apply.py (biến video gốc thành dọc).
+# Gốc ngang → xuất dọc KHÔNG dùng file này: chạy phan-tich-doi-khung.sh + ke-hoach-doi-khung.py (biến video gốc thành dọc).
 import os, sys
 
 P, mode = os.path.expanduser(sys.argv[1]), sys.argv[2]

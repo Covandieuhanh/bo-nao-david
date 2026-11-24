@@ -8,7 +8,7 @@ description: "Khối 12 sân khấu podcast: tên tập, ý đang bàn, sóng â
 **Đầu vào:** am-thanh.wav, phu-de.js
 **Đầu ra:** nguoi-noi.js, duong-bao-am.js, STAGE/TOPICS trong canh.js → nen.mp4
 **Tham số hồ sơ:** podcast: *
-**Sửa khối này thì chạy lại:** 17 (render lại nen → podcast_base → render_preview)
+**Sửa khối này thì chạy lại:** 17 (render lại nen → nen-podcast.py → xem-truoc-ban-dung.py)
 
 **File thật (code, một bản duy nhất):**
 - `dung-podcast/scripts/{nguoi-noi.py,tach-nguoi-noi.py (pyannote),duong-bao-am.py,nen-podcast.py,anh-tinh-podcast.sh}`
@@ -39,6 +39,6 @@ Viết trong `chuyen-dong/src/canh.js` theo `references/thiet-ke-podcast.md`:
   (ô câu chốt giữa sân khấu; `text` = nguyên văn câu David nói cuối tập — khối 08).
 - `SCENES`: không `hook` mở đầu (khối 06); cảnh theo lời, một màn một ý, một hình; hình phủ khoảng 30 % thời lượng theo nội dung
   (`dung-podcast` luật riêng). Thẻ/chữ to tự đặt ở vùng giữa sân khấu (`PF.ov` trong khung-podcast.js).
-- Cảnh toàn màn hình phải kết thúc nội dung trên dải phụ đề + thanh thời gian (dọc y < 1240, ngang y < 790).
+- Cảnh toàn màn hình phải kết thúc nội dung trên dải phụ đề + thanh thời gian (dọc y < 1240, ngang y < 900 — `PF.contentBottom`).
 Ghi `$P/ke-hoach-canh.md` (bảng cảnh + TOPICS).
 

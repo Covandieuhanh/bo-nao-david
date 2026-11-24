@@ -16,14 +16,14 @@ Ngang 1920×1080: x 96–1824, y 54–1026 — **thiết kế toàn khung**, kh�
 | Vòng micro phát theo giọng | — | phải, tâm (1560, 400) | `duong-bao-am.js` |
 | Tên người nói (chỉ khi biết tên) | 1020– | dưới vòng micro | `STAGE.speakers` |
 | Sóng âm — màu theo người đang nói (cam 0, xanh 1), lặng thì xám | 1135–1255 | y 680–810, 96 cột | `duong-bao-am.js`, `nguoi-noi.js` |
-| Phụ đề | đáy 1374 | đáy 870 | `phu-de.js` (lớp phu-de) |
+| Phụ đề | đáy 1374 | đáy 982 | `phu-de.js` (lớp phu-de) |
 | **Thanh thời gian**: đã chạy · thanh · "còn m:ss" | 1386–1416 | 996–1026 | tự tính (lớp phu-de) |
 
 Phụ đề + thanh thời gian ở lớp trên cùng thì không cảnh nào che được. Nền: tối + quầng sáng cam trôi chậm + lưới trôi rất chậm.
 
 ## Lớp phủ trên sân khấu
 - Thẻ, chữ to, hook, tên (`card`, `kinetic`, `hook`, `lower`): vẽ trên dải 830×435 như skill gốc; `Place` đặt canh trái vùng an
-  toàn theo `PF.ov` — dọc: 0,96× tại y 450; ngang: 1,25× tại y 150 (x 96–1134, tránh vòng micro). Ý đang bàn tự ẩn lúc đó.
+  toàn theo `PF.ov` — dọc: 0,88× tại y 480; ngang: 1,08× tại y 175 (x 96–992, tránh vòng micro) — số đúng ở `khung-podcast.js` `PF.ov`. Ý đang bàn tự ẩn lúc đó.
 - Toàn màn hình: che sân khấu (trừ phụ đề + thanh thời gian). Dọc: mọi loại. Ngang: `montage`, `gens`, `build` có bản ngang
   (toan-man-hinh-ngang.jsx); `recap`, `converge`, `master` chưa có — không dùng ở khung ngang (cần thì viết bản ngang trước).
 - Giới hạn đáy cảnh toàn màn hình: khối 12.

@@ -23,22 +23,22 @@ else:
     conv = lambda t: max(0.0, t - off)
 r3 = lambda x: round(x, 3)
 hl = dict(src_duration=m["src_duration"],
-          segs=[dict(s, clip_start=r3(conv(s["clip_start"])), clip_end=r3(conv(s["clip_end"]))) for s in m["cac-doan"]],
+          segs=[dict(s, clip_start=r3(conv(s["clip_start"])), clip_end=r3(conv(s["clip_end"]))) for s in m["segs"]],   # khoá "segs" do cat-doan-noi-bat.py ghi; khuôn đọc HL.segs
           jumps=[dict(j, at=r3(conv(j["at"]))) for j in m["jumps"]])
 # Thanh của cả tập gốc chỉ khi cắt kiểu cũ có chuyển cảnh tua (--tua); mặc định (2026-11-04) cắt cứng → thanh thường của clip
 hl["bar"] = bool(m["jumps"])
 # Podcast đồ hoạ dọc: chữ đang nói LÀ đồ hoạ, không dải phụ đề, không dòng chủ đề (David chốt 2026-11-06)
 hl["chu_chinh"] = True
 _hs = json.load(open(os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../ho-so-thuong-hieu/doan-noi-bat.json"), encoding="utf-8"))
-hl["nhac"] = {k: v for k, v in _hs["nhac_chu_chinh"].items() if k != "_"}
+hl["nhac_thong_so"] = {k: v for k, v in _hs["nhac_chu_chinh"].items() if k != "_"}   # thông số nén nhạc; "nhac" (dưới) là danh sách bài
 # Tông từng đoạn (phuong-an.json "tone": lang | soi, mặc định soi) → chuyển cảnh lắng không vệt quét/tiếng vút + nhạc nền đổi theo tông
 pcs = next(o for o in json.load(open(os.path.join(P, "phuong-an.json"), encoding="utf-8"))["options"] if o["id"] == ID)["pieces"]
 tone_of = lambda src: next((p.get("tone", "soi") for p in pcs if p["start"] - 0.5 <= src <= p["end"] + 0.5), "soi")
-for s in hl["cac-doan"]: s["tone"] = tone_of(s["src_start"])
+for s in hl["segs"]: s["tone"] = tone_of(s["src_start"])
 for j in hl["jumps"]: j["tone"] = tone_of(j["src_to"])
 MUS = {"soi": "soi-1", "lang": "lang-1"}
 mus = []
-for s in hl["cac-doan"]:
+for s in hl["segs"]:
     if mus and mus[-1]["k"] == s["tone"]: mus[-1]["b"] = s["clip_end"]
     else: mus.append(dict(k=s["tone"], a=0.0 if not mus else mus[-1]["b"], b=s["clip_end"]))
 GAIN = json.load(open(os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../ho-so-thuong-hieu/chung.json'), encoding='utf-8'))['nhac']['muc']   # mức cân từng bài: MỘT nguồn ở hồ sơ chung

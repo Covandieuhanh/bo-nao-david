@@ -29,7 +29,7 @@
   "max_tang": 3
  },
  "nhac": {
-  "_": "Nhạc nền theo TUYẾN NỘI DUNG (David chốt 2026-11-05) — project.tuyen / ke-hoach.json tuyen BẮT BUỘC, không ghi thì render_preview dừng",
+  "_": "Nhạc nền theo TUYẾN NỘI DUNG (David chốt 2026-11-05) — project.tuyen / ke-hoach.json tuyen BẮT BUỘC, không ghi thì xem-truoc-ban-dung.py dừng",
   "tuyen": {
    "vui": {
     "bai": [

@@ -79,6 +79,10 @@ Windows chạy skill qua **WSL2**, tức một Ubuntu chạy bên trong Windows.
 
 1. Mở PowerShell bằng quyền quản trị (chuột phải thì Run as administrator), chạy `wsl --install -d Ubuntu-24.04`, khởi động lại máy. Mở "Ubuntu" từ menu Start, đặt tên và mật khẩu cho Ubuntu.
 2. Cài **Google Drive cho máy tính** (bản Windows), đăng nhập tài khoản của David. Drive hiện thành một ổ đĩa (thường là G:), Ubuntu đọc ở `/mnt/g/My Drive`.
+   Ubuntu chỉ gắn ổ mới khi khởi động: cài Drive xong thì chạy `wsl --shutdown` trong PowerShell rồi mở lại Ubuntu, kiểm bằng `ls "/mnt/g/My Drive"`.
+   Chưa có Drive thì vẫn dựng được, nhưng chưa giao được kết quả và chưa chạy được `kiem-may.sh`, nên **chưa tính là cài xong**.
+   Muốn chạy `kiem-may.sh` khi chưa có Drive: tải thư mục `tu-lieu-goc/_bo-thu-may` về (ví dụ `gdown --folder <link>`) rồi chạy `BO_THU=<thư mục đó> zsh .../kiem-may.sh`.
+   **Không dựng bằng bản repo clone phía Windows** (Git cho Windows biến liên kết thư viện hình thành file chữ): chỉ dùng bản trong Ubuntu `~/Documents/bo-nao-david`.
 
 **Trong cửa sổ Ubuntu**, chạy lần lượt:
 

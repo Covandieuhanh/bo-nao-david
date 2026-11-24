@@ -37,11 +37,11 @@ Bước *(bước nhẹ)*: nhắc đổi mô hình rẻ hơn (`../../chuan-muc-l
 - Chung (tiết kiệm, lệnh nền, báo cáo): `chuan-muc-lam-viec.md`. Video (nhạc, chữ nguyên văn, video dài không cắt, ảnh chỉ Việt Nam): `quy-tac-chung.md`; hình của chính video: khối 14.
 - Luật an toàn khi đăng (mật khẩu, cài đặt tài khoản, chỉ đăng đúng bản David bảo đăng): khối 19.
 - **Sổ danh mục là nơi duy nhất ghi trạng thái** (lọc → dựng → xong → đã đăng + link).
-- **Máy chỉ dựng video** (`~/.claude/vai-may` ghi `chi-video`: Windows qua WSL2, Mac khác): bước 0–6 làm y như Mac chính. Giao bằng Drive (`cho-dang.sh gui`), không có trang xem kết quả. Bước 7 (đăng) chỉ làm ở Mac chính: báo David mở Mac chính và nói "đăng". Video gốc trên Drive đọc ở `/mnt/<ổ>/My Drive/...`.
+- **Máy chỉ dựng video** (`~/.claude/vai-may` ghi `chi-video`: Windows qua WSL2, Mac khác): bước 0–6 làm y như Mac chính. Giao bằng Drive (`cho-dang.sh gui tap-<ten>`); không có trang xem kết quả và không có bot Telegram (`bao-cao.sh` chỉ ở repo riêng của Mac): bỏ bước báo Telegram, báo kết quả ngay trong chat. Bước 7 (đăng) chỉ làm ở Mac chính: báo David mở Mac chính và nói "đăng". Video gốc trên Drive đọc ở `/mnt/<ổ>/My Drive/...`.
 - Báo cuối gọn: ở đâu (trang xem kết quả + Drive), đã chọn X vì Y, tên riêng cần xác nhận, cảnh báo (lệch nhánh, thiếu bài Mời, kho < 4 video, lịch trống).
 
 ## Xong khi
-1. Bản dài + clip ngắn + thumbnail (khi ngang) + `phat-hanh.md` đều có trên Drive `thanh-pham/tap-<ten>/` và ở `~/Movies/cho-dang/tap-<ten>/`, hiện trên trang xem kết quả và trang Chờ đăng (`localhost:8765/mac`, cột ✅).
+1. Bản dài + clip ngắn + thumbnail (khi ngang) + `phat-hanh.md` đều có trên Drive `thanh-pham/tap-<ten>/` và ở `~/Movies/cho-dang/tap-<ten>/`, hiện trên trang xem kết quả và trang Chờ đăng (`localhost:8765/mac`, cột ✅). Máy chỉ dựng video: chỉ cần có trên Drive `thanh-pham/tap-<ten>/` và `~/Movies/cho-dang/tap-<ten>/`.
 2. Sau Đ1 không dừng hỏi giữa chừng (trừ Đ2, Đ3 và tín hiệu nặng của `thu-thap-yeu-cau`); mọi lựa chọn ghi "đã chọn X vì Y" trong báo cáo cuối.
 3. Bài đủ kênh theo kết luận, đúng giọng David, kiểu dẫn dắt khớp tỉ lệ.
 4. Góp ý thì đã render lại toàn bộ và giao lại, không chờ nhắc.

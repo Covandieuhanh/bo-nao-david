@@ -11,7 +11,7 @@ câu nói; David không cần bản cho app chỉnh sửa (CapCut/DaVinci). Các
 mốc lời Whisper, render clip nền trong suốt rồi ghép lên video gốc.
 
 **Duyệt 4 phần trước** (`../../chuan-muc-lam-viec.md` mục 2), duyệt rồi không hỏi thêm: chạy một mạch từ video gốc tới bản cuối. Khung xuất = khung gốc (bảng "Khung xuất");
-video > 3 phút làm đủ gói YouTube (màn kết, chương, teaser, thumbnail khi ngang); chữ bìa, cảnh minh hoạ chính, tuyến nhạc Claude tự chọn
+video > 3 phút làm đủ gói YouTube (màn kết, chương, thumbnail khi ngang; teaser khi > 10 phút); chữ bìa, cảnh minh hoạ chính, tuyến nhạc Claude tự chọn
 theo khối. Dừng giữa chừng, báo cáo "đã chọn X vì Y", góp ý thì render lại toàn bộ: `quy-tac-chung.md` mục 8.
 
 ## Nhịp làm (mục tiêu: video 10 phút xong trong khoảng 1 giờ)
@@ -87,16 +87,16 @@ khi không rõ file nào là mẫu. "Giống video trước" thì lấy token ph
 | 1 | Môi trường *(bước nhẹ)* | [01](../mo-dun/01-phien-am/README.md) | `zsh $SKILL/scripts/kiem-moi-truong.sh` |
 | 2 | Tạo dự án *(bước nhẹ)* | — | `zsh $SKILL/scripts/tao-du-an.sh "<video gốc>" "<video mẫu>" <tên>` (mục dưới) |
 | 3 | Làm sạch (luật 5) | [02](../mo-dun/02-lam-sach/README.md) | `phan-tich-lam-sach.sh` → sửa diem-cat.json → `ap-dung-lam-sach.py` |
-| 4 | Đổi khung (nếu cần) + nâng khung | [04](../mo-dun/04-khung-hinh/README.md) | `rekhung-*` / `dat-dau-ra.py` · `nang-lop.py "$P" apply` |
+| 4 | Đổi khung (nếu cần) + nâng khung | [04](../mo-dun/04-khung-hinh/README.md) | `phan-tich-doi-khung.sh` + `ke-hoach-doi-khung.py sheet|apply` / `dat-dau-ra.py` · `nang-lop.py "$P" apply` |
 | 5 | Chép lời + hiểu video *(bước nhẹ)* | [01](../mo-dun/01-phien-am/README.md) | `phan-tich-video.sh` |
 | 6 | Phụ đề | [03](../mo-dun/03-phu-de/README.md) | `phu-de.py` → sửa từng dòng |
 | 6b | **Chẩn đoán → tự chọn**: yêu cầu người dùng, loại nội dung, bố cục nền (khung gốc / khung chủ thể / pillar), lớp thông tin (bảng ghi chú chạy `GHI_CHU`, chương), mỗi cảnh Cần · Vì · Làm | [`nguoi-xem-can-gi.md`](../thiet-ke-bo-cuc/nguoi-xem-can-gi.md) · [`tu-chon.md`](../thiet-ke-bo-cuc/tu-chon.md) · [04](../mo-dun/04-khung-hinh/README.md) | `chan-doan.py` → (`khung-chu-the.py luoi` → `apply`) |
-| 7 | Phong cách (video mẫu / dự án cũ) · **tuyến nội dung → nhạc** (`project.tuyen`, bắt buộc, ghi sau clean_apply) | [10](../mo-dun/10-nhan-dien-thuong-hieu/README.md) · [09](../mo-dun/09-am-thanh/README.md) | phong-cach.md → chu-de.js |
+| 7 | Phong cách (video mẫu / dự án cũ) · **tuyến nội dung → nhạc** (`project.tuyen`, bắt buộc, ghi sau ap-dung-lam-sach.py) | [10](../mo-dun/10-nhan-dien-thuong-hieu/README.md) · [09](../mo-dun/09-am-thanh/README.md) | phong-cach.md → chu-de.js |
 | 8 | Kịch bản: bố cục tự cân · điểm nhấn · màn chốt nguyên văn | [07](../mo-dun/07-canh-minh-hoa/README.md) · [08](../mo-dun/08-phan-ket/README.md) · ([06](../mo-dun/06-phan-mo-dau/README.md) chỉ khi được yêu cầu) | canh.js + ke-hoach-canh.md |
 | 9 | Tránh che người | [05](../mo-dun/05-tranh-che-chu-the/README.md) | `vi-tri-khuon-mat.sh` |
 | 10 | Chụp thử → render → kiểm bản cuối (+ âm thanh) | [17](../mo-dun/17-kiem-soat-chat-luong/README.md) · [09](../mo-dun/09-am-thanh/README.md) | `xem-truoc.mjs` → `xuat-video.mjs` → `xem-truoc-ban-dung.py` → `kiem-khung-hinh.sh` |
 | 11 | Phát hành: tiêu đề, khung bìa, màn kết/chương/teaser (YouTube video dài), thumbnail (ngang), số liệu | [15](../mo-dun/15-xuat-ban/README.md) · [08](../mo-dun/08-phan-ket/README.md) · [14](../mo-dun/14-anh-thu-nho/README.md) · [16](../mo-dun/16-phan-tich-so-lieu/README.md) | `doan-gioi-thieu.py` · `chuong.py` · `anh-thu-nho.sh` |
-| 12 | Giao bản cuối ngay khi xong (không chờ duyệt trước khi giao, cây quy trình lá A6) → David góp ý (lá B13) hoặc chốt → **điểm duyệt Đ2:** chỉ khi David chốt mới dọn, đưa dự án lên Drive (`../quy-tac-chung.md` mục 8, dòng cuối) | [17](../mo-dun/17-kiem-soat-chat-luong/README.md) | `cho-dang.sh` → `don-tap.py` → `luu-drive.sh` (nền) |
+| 12 | Giao bản cuối ngay khi xong (không chờ duyệt trước khi giao, cây quy trình lá A6) → David góp ý (lá B13) hoặc chốt → **điểm duyệt Đ2:** chỉ khi David chốt mới dọn, đưa dự án lên Drive (`../quy-tac-chung.md` mục 8, dòng cuối) | [17](../mo-dun/17-kiem-soat-chat-luong/README.md) | `cho-dang.sh gui <tập>` → `don-tap.py --xoa <dự án>` → `luu-drive.sh <dự án>` (nền) |
 
 ### Tạo dự án
 `$SKILL` trong mọi lệnh của skill này: `SKILL=~/Documents/bo-nao-david/ky-nang/san-xuat-video/dung-video-theo-phong-cach` (máy đã cài
@@ -115,7 +115,7 @@ Tạo `~/Movies/tap-<tên>/2-ban-day-du/` (gốc tự đặt vào `tap-<tên>/1-
 | canh.js (mốc / loại cảnh) | vi-tri-khuon-mat.sh → `node xuat-video.mjs <id>` → xem-truoc-ban-dung.py |
 | phu-de.js | `node xuat-video.mjs phu-de` → xem-truoc-ban-dung.py |
 | chu-de.js / brand | render lại tất cả |
-| du-an.js (topic, ytEnd, schedule) — ghi lại SAU clean_apply (nó viết đè du-an.js) | `node xuat-video.mjs the-cuoi` → xem-truoc-ban-dung.py |
+| du-an.js (topic, ytEnd, schedule) — ghi lại SAU ap-dung-lam-sach.py (nó viết đè du-an.js) | `node xuat-video.mjs the-cuoi` → xem-truoc-ban-dung.py |
 | video-hoan-chinh (teaser) | chuong.py |
 | hồ sơ lam-video | chạy lại khối dùng khoá đó (bảng khoá trong ho-so-thuong-hieu/lam-video.md) |
 

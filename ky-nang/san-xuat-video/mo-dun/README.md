@@ -13,7 +13,7 @@ Sửa một cách làm thì sửa đúng một khối (README + code của nó).
 | [02-lam-sach](02-lam-sach/README.md) | Làm sạch: cắt thừa đầu/cuối, câu nói lại, khoảng lặng + tiếng đệm, sửa chiều hình | làm video, highlight (cắt lặng trong câu) |
 | [03-phu-de](03-phu-de/README.md) | Phụ đề: dài = hộp tối đầy câu; ngắn = cụm 5–8 chữ cỡ bằng chữ thẻ, mỗi lúc một chỗ chữ | cả 4 |
 | [04-khung-hinh](04-khung-hinh/README.md) | Khung hình: đổi khung (ngang↔dọc), nâng khung khi người nằm thấp | làm video, ghép vlog, highlight người nói (podcast: khung xuất riêng) |
-| [05-tranh-che-chu-the](05-tranh-che-chu-the/README.md) | Tránh che người: lớp phủ không chạm mặt + đầu + vai + ngực; không có chỗ → tự toàn màn hình, dài theo nội dung | làm video, ghép vlog, highlight người nói |
+| [05-tranh-che-chu-the](05-tranh-che-chu-the/README.md) | Tránh che người: lớp phủ không chạm mặt + đầu + vai + ngực; không có chỗ → vẽ vào chỗ trống thật (code hiện vẫn tự chuyển toàn màn hình — khối 05 mục Luật), dài theo nội dung | làm video, ghép vlog, highlight người nói |
 | [06-phan-mo-dau](06-phan-mo-dau/README.md) | Mở đầu 0–3 s: câu chạm, thẻ tít nguyên văn (highlight), đoạn ghép mở vlog, teaser podcast dài | cả 4 |
 | [07-canh-minh-hoa](07-canh-minh-hoa/README.md) | Bố cục tự cân, motion graphic kể chuyện, điểm nhấn trên người, minh hoạ, sơ đồ, chuyển động; ảnh thật Việt Nam | cả 4 |
 | [08-phan-ket](08-phan-ket/README.md) | Kết: màn chốt (cta) · thẻ cuối (nhận diện / dẫn bản đầy đủ) · màn kết YouTube 15–20 s · lịch phát | cả 4 |

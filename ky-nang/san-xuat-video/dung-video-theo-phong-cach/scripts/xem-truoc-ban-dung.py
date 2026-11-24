@@ -94,7 +94,7 @@ if _mus:
     _o = subprocess.run(["ffmpeg", "-nostats", "-i", os.path.join(M, out_["base"]), "-af", "ebur128", "-f", "null", "-"], capture_output=True, text=True).stderr
     _I = [float(x) for x in __import__("re").findall(r"I:\s+(-?[\d.]+) LUFS", _o)]
     _voice = _I[-1] if _I else -20.0
-    _n = (locals().get("_hl") or {}).get("nhac") or {}
+    _n = (locals().get("_hl") or {}).get("nhac_thong_so") or {}   # thông số nén nhạc (ap-dung-doan-noi-bat.py); "nhac" là danh sách bài
     _mv = 10 ** ((_voice - _n.get("duoi_giong", NH.get("khoang_trong_duoi_giong_LU", BRAND["musicGapLU"])) + 15.5) / 20)
     _th = 10 ** ((_voice - NH.get("nen_nguong_duoi_giong_dB", 14)) / 20)
     _ty, _nha = _n.get("ty_le", NH.get("nen_ty_le", 20)), _n.get("nha_ms", NH.get("nen_nha_ms", 1500))

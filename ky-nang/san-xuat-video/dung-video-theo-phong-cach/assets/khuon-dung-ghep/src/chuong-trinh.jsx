@@ -24,7 +24,7 @@ import {YtEnd} from './thu-vien/man-ket-youtube';
 import {EndCardBody} from './thu-vien/than-man-ket';
 import {khung, nganDoc} from './thu-vien/nhan-dien-thuong-hieu';   // bộ nhận diện chung: vùng an toàn, dấu góc, thanh thời gian (David chốt 08/11/2026)
 import {DauGoc} from './thu-vien/dau-goc';
-import {ThanhThoiGian} from './thu-vien/thanh-thoi-gian';   // ruột thẻ cuối dùng chung (khối 08)   // màn kết YouTube 15–20 s (chép từ remotion-template, một nguồn)   // bộ nhận diện David (một nguồn với chế độ 1 video, podcast, highlight)   // biểu tượng nét vẽ dần — chép từ remotion-template (một nguồn với chế độ 1 video)   // câu màn chốt — chép từ remotion-template (một nguồn với chế độ 1 video)
+import {ThanhThoiGian} from './thu-vien/thanh-thoi-gian';   // ruột thẻ cuối dùng chung (khối 08)   // màn kết YouTube 15–20 s (chép từ khuon-remotion, một nguồn)   // bộ nhận diện David (một nguồn với chế độ 1 video, podcast, highlight)   // biểu tượng nét vẽ dần — chép từ khuon-remotion (một nguồn với chế độ 1 video)   // câu màn chốt — chép từ khuon-remotion (một nguồn với chế độ 1 video)
 
 // ===== Phong cách (token) — mặc định: thẻ tối, nhấn cam, chữ cô đặc in hoa trồi lên (bộ nhận diện đã duyệt).
 // Có video mẫu/dự án cũ → đổi C, HEAD, BODY (+ phong-chu.js) theo phong-cach.md; component giữ nguyên ngôn ngữ chuyển động. =====

@@ -17,7 +17,7 @@ description: "Khối 14 thumbnail YouTube 1280×720 cho video ngang, chỉ hình
 ## Luật
 - Chỉ khi video xuất **ngang** VÀ đăng YouTube (điểm chốt trong 4 phần lúc đầu). Video dọc: chỉ ghi mốc khung bìa đề xuất.
 - Mặt có cảm xúc rõ + 2–3 tầng chữ (tối đa `thumbnail.max_chu`), dòng cam = từ khoá to nhất; `THUMB_NUM` số khổng lồ; `THUMB_BADGE` nhãn series/số tập; `THUMB_L3` dòng 3.
-- Chuẩn: một khuôn mặt có cảm xúc rõ (mắt mở, miệng/biểu cảm), tối đa 4 chữ, một ý. Chọn khung: xem `bang-khung-hinh.jpg`/`half_XX.jpg`, lấy
+- Chuẩn: một khuôn mặt có cảm xúc rõ (mắt mở, miệng/biểu cảm), chữ gọn (tối đa `thumbnail.max_chu` trong hồ sơ, càng ít càng mạnh), một ý. Chọn khung: xem `bang-khung-hinh.jpg`/`half_XX.jpg`, lấy
   khoảnh khắc cảm xúc mạnh nhất. Video ngang thì điểm cần chốt trong 4 phần lúc đầu (`thu-thap-yeu-cau`): "Video này có đăng YouTube
   không?" — có thì làm 2 thumbnail, không thì bỏ.
 - Tiêu đề và thumbnail bổ sung, không lặp chữ. Soát bản @160 (cỡ điện thoại) — không đọc được chữ thì rút chữ.

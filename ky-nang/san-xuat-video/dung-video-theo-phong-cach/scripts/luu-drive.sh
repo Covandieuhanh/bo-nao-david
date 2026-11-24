@@ -8,7 +8,7 @@ setopt nullglob
 T=${1:A}; [ -d "$T" ] || { echo "✗ không có thư mục $1"; exit 1; }
 case "$T" in "$HOME/Movies/tap-"*|"$HOME/Movies/vlog/"*) ;; *) echo "✗ chỉ nhận ~/Movies/tap-<tên> hoặc ~/Movies/vlog/<tên>"; exit 1;; esac
 source ${0:A:h}/drive-chung.sh || exit 1   # $G, da_len, giai_phong (Mac và Windows/WSL2)
-tim_drive || { echo "✗ Google Drive chưa mở (không thấy thư mục Drive; đặt DRIVE_GOC=<đường dẫn> nếu ở chỗ khác)"; exit 1; }
+tim_drive || { echo "✗ Không thấy Google Drive: $DRIVE_HUONG_DAN"; exit 1; }
 REL=${T#$HOME/Movies/}; DST="$G/sao-luu-mac/video/${REL:h}"; [ "${REL:h}" = . ] && DST="$G/sao-luu-mac/video"
 EX=(--exclude node_modules --exclude .remotion --exclude .cache --exclude .DS_Store)
 # Gốc đã có y hệt ở tu-lieu-goc/<tập>/ (chép lúc bắt đầu làm) thì không tải lần hai

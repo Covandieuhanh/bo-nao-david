@@ -42,7 +42,7 @@ for (const s of SCENES) {
     imageFormat: 'png', concurrency: vid ? 2 : 4, timeoutInMilliseconds: 240000, muted: true, outputLocation: path.join(out, `${s.id}.mov`)});
   console.log(`${s.id} ${composition.durationInFrames} khung ${((Date.now() - t0) / 1000).toFixed(0)}s`);
 }
-// Phụ đề chạy suốt video, nền trong suốt → phu-de.mov (render_preview đè lên trên cùng)
+// Phụ đề chạy suốt video, nền trong suốt → phu-de.mov (xem-truoc-ban-dung.py đè lên trên cùng)
 const caps = (await import('./src/phu-de.js')).default;
 if (caps.length && (!only.size || only.has('phu-de'))) {
   const composition = await selectComposition({serveUrl, id: 'phu-de'});

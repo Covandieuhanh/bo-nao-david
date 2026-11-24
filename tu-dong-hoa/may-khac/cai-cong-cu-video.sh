@@ -142,5 +142,5 @@ if [ "$OS" != Darwin ]; then
 fi
 
 echo
-if [ $LOI = 0 ]; then echo "✅ Cài xong. Bước tiếp: bash \"$HERE/kiem-may.sh\"  (dựng thử, so với Mac chính)"
+if [ $LOI = 0 ]; then echo "✅ Cài xong. Bước tiếp: zsh \"$HERE/kiem-may.sh\"  (dựng thử, so với Mac chính)"
 else echo "⚠ Còn mục ✗ ở trên — sửa rồi chạy lại script này."; exit 1; fi

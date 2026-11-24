@@ -21,6 +21,10 @@ description: "Khối 05 tránh che người: lớp phủ không chạm mặt, v�
 - Không có vị trí / cỡ nào tránh được thì **không chuyển sang toàn màn hình, không làm mờ người**: người dựng xem ảnh đầu / giữa / cuối
   cảnh, tìm chỗ trống thật (trần, cửa kính, tường, khoảng trên đầu) rồi viết cảnh tự vẽ `ve` có vị trí `o` (mẫu: `nhan-tram.jsx`,
   `duong-may.jsx` trong `assets/khuon-remotion/src/rieng/`); rút chữ cho vừa chỗ. Toàn màn hình chỉ khi đoạn đó không có người trên hình (`khong_nguoi: true`).
+  **Lưu ý code hiện tại (24/11/2026):** `vi-tri-khuon-mat.py` (1 video) và `bao-ve-lop-phu.py` (ghép) vẫn TỰ chuyển lớp che mặt sang toàn màn
+  hình theo quyết định cũ 04/11 — chưa đổi code, chờ David quyết trên Mac chính. Trong lúc chờ: đọc `placement.md` / `guard.md`, lớp nào báo
+  "→ toàn màn hình" thì người dựng đặt lại vào chỗ trống thật như trên rồi chạy lại, không để máy tự chuyển. Các khối 06, 07 và bảng khối
+  nhắc "tự chuyển toàn màn hình" là mô tả code này.
 - Khung nhiều người: không dùng `o-nguoi` / `o-tron` (chỉ giữ người đang nói); `the-canh` hết chỗ sẽ tự thu vào ô nên phải chụp thử.
 - Máy dò mặt có thể bỏ sót người cúi đầu, quay nghiêng: luôn soi ảnh chụp thử xem có đè ai không; sót thì thêm hộp người đó vào `mat.js`.
 - Lớp phủ (thẻ, chữ to, tên) tự **thu nhỏ còn 78 %** để thấy hình nhiều hơn; mặc định ngay trên dải phụ đề, mặt nằm thấp thì dời lên

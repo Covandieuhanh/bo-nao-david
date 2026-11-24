@@ -85,5 +85,5 @@ fi
 echo "Xong. Bản cũ (nếu có): $SAO_LUU"
 echo "Bộ nhớ gắn với dự án: $DU_AN"
 echo "Kiểm tra công cụ dựng video: zsh \"$CL/skills/san-xuat-video/dung-video-theo-phong-cach/scripts/kiem-moi-truong.sh\""
-[ $CHI_VIDEO = 1 ] && echo "Máy chỉ dựng video. Bước tiếp: bash \"$REPO/tu-dong-hoa/may-khac/cai-cong-cu-video.sh\" rồi bash \"$REPO/tu-dong-hoa/may-khac/kiem-may.sh\""
+[ $CHI_VIDEO = 1 ] && echo "Máy chỉ dựng video. Bước tiếp: bash \"$REPO/tu-dong-hoa/may-khac/cai-cong-cu-video.sh\" rồi zsh \"$REPO/tu-dong-hoa/may-khac/kiem-may.sh\" (cần Google Drive)"
 exit 0

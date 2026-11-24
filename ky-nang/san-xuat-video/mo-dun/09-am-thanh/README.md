@@ -21,7 +21,7 @@ description: "Khối 09 âm thanh: nhạc nền theo tuyến, hiệu ứng tiế
 - **Kho nhạc kênh** `cat-doan-noi-bat/assets/nhac` (README liệt kê bài + nguồn). Claude TỰ chọn bài theo tuyến nội dung, không hỏi
   David (David đã tải nhiều nhạc cho từng loại nội dung). Bài mới David tải về `~/Music/nhac-nen` thì đặt tên theo tuyến, chép vào kho,
   đo `ebur128` và ghi mức cân vào hồ sơ chung `nhac.muc` (gain = 10^((−15 − I)/20)), thêm vào `nhac.tuyen`.
-- **Mức cân từng bài: một nguồn** `ho-so-thuong-hieu/chung.json` → `nhac.muc` (vlog_edl, render_preview, hl_edl, hl_apply, chuong-trinh.jsx ghép đều đọc
+- **Mức cân từng bài: một nguồn** `ho-so-thuong-hieu/chung.json` → `nhac.muc` (danh-sach-cat-vlog.py, xem-truoc-ban-dung.py, danh-sach-cat-doan-noi-bat.py, ap-dung-doan-noi-bat.py, chuong-trinh.jsx ghép đều đọc
   từ đây). `MUSIC.tracks` viết tay không ghi `gain` thì chuong-trinh.jsx tự lấy `nhac.muc`; đừng ghi `gain: 1`.
 
 ## Chuẩn âm lượng chung (mọi đầu ra: làm video, podcast, highlight, vlog ghép — mẫu: 3 clip "Đi trainer")
@@ -37,7 +37,7 @@ Mức nằm ở một chỗ: hồ sơ chung `nhac`.
 
 ## Nhạc theo tuyến nội dung
 1. Sau khi chép lời, Claude đọc toàn bộ lời thì chọn MỘT tuyến trong bảng hồ sơ chung `nhac.tuyen` (vui · tam_su · mat_mat · y_nghia ·
-   kien_thuc), ghi `tuyen: '<tuyến>'` vào `chuyen-dong/src/du-an.js` (1 video: ghi SAU clean_apply — nó viết đè du-an.js) + lý do 1 dòng
+   kien_thuc), ghi `tuyen: '<tuyến>'` vào `chuyen-dong/src/du-an.js` (1 video: ghi SAU ap-dung-lam-sach.py — nó viết đè du-an.js) + lý do 1 dòng
    vào ke-hoach-canh.md. Không ghi thì `xem-truoc-ban-dung.py` DỪNG (không có bài mặc định, để không gắn nhạc sôi động cho bài tâm sự).
    Cách chọn: tuyến = cảm xúc chủ đạo người xem cần (hình mẫu: Hieu Nguyen / Have A Sip tâm sự hợp piano ấm; Khoai Lang Thang du lịch hợp
    upbeat; video kiến thức thì ambient trung tính). Ép tay bài: `music: '<bài>'`; tắt: `music: ''`.
