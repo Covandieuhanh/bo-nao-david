@@ -82,3 +82,15 @@ Bản theo hướng: bản ngang 10:57 `tap-dan-doi-bang-quy-trinh` · Trạng t
 | Hiểu bản chất thì không cần chờ bề dày kinh nghiệm (ví dụ pha cà phê) | "Khi em hiểu bản chất rồi thì em không cần bề dày kinh nghiệm nữa" | 4855–4924 (80:55) | — | nhân hiệu trainer | câu chuyện mở bài |
 | Thuê người để giải quyết vấn đề, không phải để phản biện mình | "tao thuê mày về để giải quyết vấn đề cho công ty của tao" | 4930–5005 (82:10) | trả lương mà phải chiều | buổi riêng | tư duy chủ |
 | Tư duy đi trước, công cụ đi sau | "Tư duy đi trước công cụ đi sau" | 5026 (83:46) | — | — | câu chốt |
+
+## 22/11/2026 · tap-dji0025-2211 · sáng cà phê ngoài trời với một anh làm quan hệ đối tác
+Bản theo hướng: bản ngang 12:05 `tap-hoc-de-biet-vi-sao-gay` · Trạng thái: đã dựng 25/11 (chế độ tự chạy), chờ đăng · Kho 100: khớp #10
+| Ý | Lời gốc | Mốc | Nỗi đau / mục tiêu | Bán được gì | Dùng cho việc |
+|---|---|---|---|---|---|
+| Đưa việc của mình ra cho nhiều người góp ý mới thấy điểm khuyết | "phải nhìn thấy điểm khuyết, chứ còn đừng nhìn vào những cái đã làm được" | 1276–1292 (21:16) | làm tốt mà không thấy lỗi | buổi riêng | bài tập xin góp ý |
+| Có kiến thức mới gọi được tên lý do thất bại, không đổ cho xui rủi | "tôi thất bại là bởi vì lý do này, lý do này" | 1320–1341 (22:00) | thất bại không biết vì sao | gói trainer | kho 100 #10 |
+| Làm tự phát cũng có mô hình; học để hiểu bản chất | "nó cũng có một mô hình nào đó đã thành công" | 1350–1400 (22:30) | — | — | ví dụ đứng lớp |
+| Người làm lâu năm đi học để nhìn lại chỗ mình gãy | "tôi bị gãy là gãy chỗ này" | 1520–1556 (25:20) | vấp nhiều không rút bài học | buổi riêng | câu mở bài |
+| Đổi môi trường để có năng lượng công việc | "thay đổi luôn môi trường cho nó nhanh" | 3296–3322 (54:57) | xung quanh chỉ chuyện tào lao | — | câu chuyện của David |
+| Nói phải có bằng chứng, không nói theo cảm nhận chủ quan (con bò, cái ghế) | "mọi người chỉ nghe theo chứng cứ thôi" | 4058–4253 (67:38) | nói không ai tin | — | ví dụ đứng lớp |
+| Nghe hay rồi quên; trải nghiệm mới biến thành kiến thức | "bây giờ em biến nó thành kiến thức và tri thức của em rồi" | 4258–4294 (70:58) | học nhiều không thấm | lớp thực hành | câu định vị trainer thực hành |

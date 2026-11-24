@@ -75,3 +75,14 @@ Bản theo hướng: bản ngang 3:47 `tap-quy-trinh-cho-ai` · Trạng thái: �
 | Nhắn Telegram, máy ở nhà tự tải video, tự làm | "cái máy tính của em nó ở nhà nó tự làm việc" | 1702–1720 (28:22) | — | — | ví dụ |
 | Bắt AI viết thành quy trình: đăng nhập máy khác ra y hệt, không làm được thì đừng làm | "Đó là giá trị của quy trình" | 1747–1828 (29:08) | AI ra kết quả lúc được lúc không | số hoá theo quy trình | câu định vị |
 | Nhật ký của nhân viên đưa AI đọc để lấy kiến thức của người này cho người kia | "Cho AI vào đọc hết" | 1938–1980 (32:18) | kiến thức nằm trong đầu từng người | gói công nghệ + đào tạo | ví dụ |
+
+## 22/11/2026 · tap-dji0025-2211 · sáng cà phê ngoài trời với một anh làm quan hệ đối tác
+Bản theo hướng: bản ngang 5:42 `tap-ung-dung-ai-doc-gu-khach` · Trạng thái: đã dựng 25/11 (chế độ tự chạy), chờ đăng
+| Ý | Lời gốc | Mốc | Nỗi đau / mục tiêu | Bán được gì | Dùng cho việc |
+|---|---|---|---|---|---|
+| May đo giải pháp video theo từng người: cách nói, nội dung, nền tảng khác nhau | "bọn em sẽ may đo cái giải pháp làm video" | 1790–1816 (29:50) | làm video theo mẫu chung không trúng | gói video may đo | câu định vị |
+| AI ai cũng phổ cập rồi, khác biệt nằm ở ứng dụng | "quan trọng là ứng dụng nó như thế nào" | 2109–2231 (35:09) | khó khác biệt | — | câu định vị |
+| Phim AI đưa vào marketing doanh nghiệp (quà Tết, quán cà phê) | "bọn em đưa phim AI vào marketing cho doanh nghiệp" | 2252–2260 (37:32) | quảng cáo nhàm | gói phim AI | ví dụ sản phẩm |
+| Đọc gu ông chủ qua văn phòng, trang phục, tông màu, màn hình LED trước khi làm video | "nắm được cái gu của họ thì em mới làm clip nó mới trúng" | 4500–4590 (75:00) | làm xong khách chê | quy trình nhận việc | bước khảo sát khách |
+| Đến gặp với dữ liệu sẵn, xác nhận thay vì hỏi như mọi người | "thằng này sao nó biết" | 4603–4667 (76:43) | khách đánh giá thiếu chuyên nghiệp | — | kịch bản gặp phòng marketing |
+| LinkedIn: tìm theo chức danh (Head of partnership, CEO), kết bạn đều mỗi ngày, đăng bài chuyên môn (ý của anh đối diện, chưa dựng) | "Ở đây có một kênh để xây là LinkedIn" | 2390–3070 (39:40) | khó tìm người ra quyết định | — | kênh tìm khách doanh nghiệp |
