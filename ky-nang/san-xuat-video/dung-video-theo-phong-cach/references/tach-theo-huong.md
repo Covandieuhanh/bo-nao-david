@@ -27,7 +27,7 @@ kho 100 với hướng trainer: làm đúng [khối 00 mục 0b](../../mo-dun/00
 - Phần đời thường / hành trình của David không thuộc hẳn hướng nào ra được bản riêng "nhân hiệu" (cây nội dung kênh trainer, khối 00 mục 1).
 - Mốc mỗi đoạn lấy **đúng đầu / cuối câu** trong phụ đề (in các dòng quanh mốc để chọn).
 - **Lằn ranh** (khối 00 mục 3): mặc định giữ lời; liệt kê từng câu trong 4 phần cho David chọn giữ hay cắt. David chọn cắt thì tách đoạn
-  bỏ riêng câu đó. Người khác xuất hiện (đối tác, khách): ghi mục "cần họ đồng ý" vào gói phát hành; khách của công ty Veltrix thì
+  bỏ riêng câu đó. Người khác xuất hiện (đối tác, khách): ghi vào mục "Ghi chú đăng" của gói phát hành, không hỏi; khách của công ty Veltrix thì
   hỏi David trước (`AGENTS.md`, hai bộ não).
 - Trình David bảng "video · hướng · đoạn · dài" + đoạn cắt + lằn ranh + clip ngắn dự kiến (4 phần), có mặc định.
 
@@ -52,14 +52,15 @@ Mỗi video ra `~/Movies/tap-<tên>/2-ban-day-du` có sẵn video gốc đã n�
 ### 5. Clip ngắn, phát hành, giao
 - Clip ngắn mỗi video theo `phan-phoi-da-kenh` bước 4 (`cat-doan-noi-bat`), trừ khi David nói không cần.
 - Ảnh thu nhỏ `anh-thu-nho.sh` (nguồn = giây trong video đã cắt); `phat-hanh/phat-hanh.md`: 3 tiêu đề, mô tả, chương (cộng độ dài teaser
-  trong `phat-hanh/doan-gioi-thieu.json`), bình luận ghim, màn kết gắn các video cùng bộ, mục "Cần David quyết trước khi đăng".
+  trong `phat-hanh/doan-gioi-thieu.json`), bình luận ghim, màn kết gắn các video cùng bộ, lịch và thứ tự đăng theo sản phẩm, mục "Ghi chú đăng" (người xuất hiện, lằn ranh, nhạc
+  tạm — để David biết, không hỏi).
 - Giao theo cây quy trình lá A6.
 
 ## Điểm duyệt
 - **Đ1** sau bước 2: bảng video theo hướng, đoạn cắt, lằn ranh (mặc định giữ lời), clip ngắn dự kiến. Chưa duyệt thì không cắt, không dựng.
-- **Đ2**: đăng chỉ khi David nói "đăng"; dọn file tạm, đưa dự án lên Drive chỉ sau khi David chốt.
+- **Đ2**: bấm đăng chỉ khi David nói "đăng"; gói đăng tự sắp theo sản phẩm, không hỏi; dọn file tạm, đưa dự án lên Drive chỉ sau khi David chốt.
 - Chế độ tự chạy (David nói rõ "làm tới khi có kết quả"): bỏ Đ1, lằn ranh theo mặc định giữ lời, ghi lại trong báo cáo; người khác
-  xuất hiện (cả khách Veltrix) thì vẫn dựng, ghi "cần họ đồng ý" và hỏi ở Đ2; vẫn giữ Đ2 (`quy-trinh.md` mục 1).
+  xuất hiện (cả khách Veltrix) thì vẫn dựng, ghi vào "Ghi chú đăng", không hỏi; vẫn giữ Đ2 (`quy-trinh.md` mục 1).
 
 ## Xong khi
 - Có `phan-huong.md` của tập + mục nhật ký nội dung từng hướng có ý.

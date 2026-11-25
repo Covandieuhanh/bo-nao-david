@@ -14,7 +14,7 @@ phân phối, đăng và đo. Mọi bài có mục tiêu: kéo tương tác đú
 Một tài nguyên vào thì Claude làm một mạch tới **kết quả xem được**: bản dài + clip ngắn + thumbnail + bài đăng, nằm sẵn trên trang
 xem kết quả (`python3 tu-dong-hoa/xem-ket-qua.py` → localhost:8765; trang tự gom `~/Movies/tap-*`, Drive `sao-luu-mac/video`,
 Drive `thanh-pham` và sổ danh mục — giữ đúng tên `2-ban-day-du/phat-hanh/`, `3-doan-noi-bat/clip-X/`, `cat/X.md`, `dang-bai.md` là hiện đủ). Sau khi duyệt 4 phần (Đ1), không dừng chờ nào trước khi xong: David
-không ưng thì góp ý rồi render lại toàn bộ. Chỉ **đăng lên mạng xã hội** và **dọn sau khi giao** chờ David (Đ2, `quy-trinh.md` mục 1, AGENTS luật 4).
+không ưng thì góp ý rồi render lại toàn bộ. Chỉ **bấm đăng lên mạng xã hội** và **dọn sau khi giao** chờ David (Đ2, `quy-trinh.md` mục 1, AGENTS luật 4); gói đăng thì tự sắp theo sản phẩm, không hỏi.
 
 **Bước 0 — duyệt 4 phần** (`chuan-muc-lam-viec.md` mục 2): nhận tài nguyên + lọc (bước 0–1 dưới) xong thì, trước khi dựng, trình 4 phần gọn lấy từ phiếu lọc (làm thành gì, khung, số clip, kênh; điểm skill đã định ghi luôn) và chờ David "duyệt". Duyệt rồi mới chạy một mạch như dưới.
 

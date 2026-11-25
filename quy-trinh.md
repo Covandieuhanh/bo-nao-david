@@ -28,14 +28,16 @@ chỉ trỏ về đây.
   nguyên về thư mục dự án, chép lời, đo, ghi phiếu lọc / `phan-huong.md` trong thư mục dự án, ghi mục nhật ký nội dung
   (`du-an/nhat-ky-noi-dung/`) và dòng "lọc" trong sổ danh mục (đây là ghi chép, không đổi luật). Không sửa skill, luật, hồ sơ, không
   dựng, không render bản thật trước Đ1.
-- **Đ2 — duyệt trước khi đăng, gửi, xoá, đụng tài khoản** (mạng xã hội, tin nhắn, xoá file gốc / dự án, dọn sau khi giao): chỉ làm khi
+- **Đ2 — duyệt trước khi bấm đăng, gửi, xoá, đụng tài khoản** (mạng xã hội, tin nhắn, xoá file gốc / dự án, dọn sau khi giao): chỉ làm khi
   David nói đúng việc đó, **sau khi đã thấy bản cuối**. **Không bao giờ bỏ**, kể cả chế độ tự chạy (`AGENTS.md` luật 4).
-  - **Đăng:** chữ "đăng" nói trước khi có bản cuối (ví dụ "xong thì đăng lên YouTube") chỉ là ý định: làm luôn phần chuẩn bị cho kênh đó
-    (màn kết, chương, thumbnail), giao bản cuối, rồi hỏi "đăng bản này?" và chờ David nói "đăng".
+  - **Đăng (lời David 25/11/2026: "mấy việc đăng thì không cần phải hỏi tôi, chỉ cần sắp xếp nội dung đăng cho phù hợp với sản phẩm"):**
+    không hỏi David về việc đăng. Claude tự sắp gói đăng hợp với sản phẩm của từng hướng (tiêu đề, kênh, lịch và thứ tự đăng, bình luận
+    ghim, lời kêu gọi dẫn về đúng sản phẩm), giao kèm bản cuối; không kết báo cáo bằng câu hỏi "đăng bản này?". Bấm đăng thật lên mạng xã
+    hội chỉ khi David nói "đăng" (lá B11); không tự đăng.
   - **Dọn:** David chốt bản cuối ("chốt", "đã chốt", "được rồi") là duyệt Đ2 cho việc dọn; chốt rồi thì dọn, đưa dự án lên Drive, xoá bản
     trên máy theo `ky-nang/san-xuat-video/quy-tac-chung.md` mục 8, không hỏi lại. Chưa chốt thì giữ nguyên trên máy.
-  - **Người khác xuất hiện** (đối tác, khách; khách của công ty Veltrix): dựng được, giữ lời; ghi mục "cần họ đồng ý" trong gói phát hành
-    và hỏi David ở Đ2 trước khi đăng.
+  - **Người khác xuất hiện** (đối tác, khách; khách của công ty Veltrix): dựng được, giữ lời; ghi vào mục "Ghi chú đăng" của gói phát hành
+    (ai xuất hiện, lằn ranh) để David biết, không hỏi.
 - **Đ3 — duyệt trước khi sửa thông tin về David** (`david.md`, hồ sơ, ghi nhớ David đã chốt), màu chủ đạo, chữ ký nhận diện: luôn trình
   lại, chờ "duyệt". Không bỏ ở chế độ tự chạy.
 

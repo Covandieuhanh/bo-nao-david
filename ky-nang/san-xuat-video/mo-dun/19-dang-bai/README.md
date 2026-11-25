@@ -11,7 +11,7 @@ nền tảng: đi chậm, chụp từng bước, sửa README này theo giao di�
 
 ## Luật an toàn (không ngoại lệ)
 - **Chỉ đăng khi David nói "đăng"**, đúng bản trên trang xem kết quả (video, chữ, kênh, giờ). Đổi bất cứ gì sau duyệt thì hỏi lại.
-  Chữ "đăng" nói trước khi có bản cuối (ví dụ "xong thì đăng") chưa tính: giao bản cuối, hỏi "đăng bản này?" (`quy-trinh.md` mục 1, Đ2).
+  Chữ "đăng" nói trước khi có bản cuối (ví dụ "xong thì đăng") chưa tính: giao bản cuối kèm gói đăng, không hỏi; chờ David nói "đăng" (`quy-trinh.md` mục 1, Đ2).
 - **Không bao giờ nhập mật khẩu**, không đổi cài đặt tài khoản (tên, ảnh, bio, quyền) khi David chưa duyệt riêng việc đó.
 - **Ưu tiên hẹn giờ** (thứ Ba / thứ Sáu 20:00 giờ VN) bằng chức năng có sẵn thì David huỷ được trước giờ lên; máy không cần bật lúc bài lên.
 - **Facebook cá nhân:** Claude soạn câu, **David tự bấm chia sẻ** (tự động hoá tài khoản cá nhân dễ bị khoá).
