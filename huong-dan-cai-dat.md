@@ -125,6 +125,8 @@ zsh ~/Documents/bo-nao-david/tu-dong-hoa/may-khac/kiem-may.sh
 **Dùng hằng ngày:** mở Ubuntu, `cd ~/Documents/bo-nao-david && claude`, rồi làm như trên Mac: gửi video, gọi skill.
 - Video gốc trên Drive đọc thẳng ở `/mnt/g/My Drive/...`.
 - Dự án dựng nằm ở `~/Movies` của Ubuntu. Mở bằng Windows Explorer: gõ `explorer.exe ~/Movies` trong Ubuntu, hoặc vào `\\wsl$\Ubuntu-24.04\home\<tên>\Movies`.
+- Google Drive cho Windows hiện ổ ảo `G:`; Ubuntu **không tự gắn** ổ này (cả sau `wsl --shutdown`). Mỗi lần khởi động lại máy, trong PowerShell chạy:
+  `wsl -d Ubuntu-24.04 -u root -- sh -c 'mkdir -p /mnt/g; mount -t drvfs G: /mnt/g -o uid=1000,gid=1000'` (đã thử 25/11/2026).
 - Thành phẩm lên Drive bằng `cho-dang.sh gui` / `luu-drive.sh` như trên Mac. Khác Mac ở một điểm: máy chép lên và so khớp, nhưng không tự xoá bản trên máy. Khi biểu tượng Drive báo tải xong, David xoá tay.
 - Máy có card NVIDIA cài CUDA trong WSL thì Whisper chạy nhanh hơn nhiều (script tự dùng). Không có thì chạy bằng CPU: chậm hơn Mac nhưng ra cùng kết quả.
 

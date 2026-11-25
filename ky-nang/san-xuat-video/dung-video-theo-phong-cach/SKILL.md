@@ -96,7 +96,7 @@ khi không rõ file nào là mẫu. "Giống video trước" thì lấy token ph
 | 9 | Tránh che người | [05](../mo-dun/05-tranh-che-chu-the/README.md) | `vi-tri-khuon-mat.sh` |
 | 10 | Chụp thử → render → kiểm bản cuối (+ âm thanh) | [17](../mo-dun/17-kiem-soat-chat-luong/README.md) · [09](../mo-dun/09-am-thanh/README.md) | `xem-truoc.mjs` → `xuat-video.mjs` → `xem-truoc-ban-dung.py` → `kiem-khung-hinh.sh` |
 | 11 | Phát hành: tiêu đề, khung bìa, màn kết/chương/teaser (YouTube video dài), thumbnail (ngang), số liệu | [15](../mo-dun/15-xuat-ban/README.md) · [08](../mo-dun/08-phan-ket/README.md) · [14](../mo-dun/14-anh-thu-nho/README.md) · [16](../mo-dun/16-phan-tich-so-lieu/README.md) | `doan-gioi-thieu.py` · `chuong.py` · `anh-thu-nho.sh` |
-| 12 | Giao bản cuối ngay khi xong (không chờ duyệt trước khi giao, cây quy trình lá A6) → David góp ý (lá B13) hoặc chốt → **điểm duyệt Đ2:** chỉ khi David chốt mới dọn, đưa dự án lên Drive (`../quy-tac-chung.md` mục 8, dòng cuối) | [17](../mo-dun/17-kiem-soat-chat-luong/README.md) | `cho-dang.sh gui <tập>` → `don-tap.py --xoa <dự án>` → `luu-drive.sh <dự án>` (nền) |
+| 12 | Giao bản cuối ngay khi xong, **đủ hết lên Drive** (David 25/11/2026; không chờ duyệt trước khi giao, cây quy trình lá A6) → David góp ý (lá B13) hoặc chốt → **điểm duyệt Đ2:** chỉ khi David chốt mới dọn, đưa dự án lên Drive (`../quy-tac-chung.md` mục 8, dòng cuối) | [17](../mo-dun/17-kiem-soat-chat-luong/README.md) | `cho-dang.sh gui <tập>` → `don-tap.py --xoa <dự án>` → `luu-drive.sh <dự án>` (nền) |
 
 ### Tạo dự án
 `$SKILL` trong mọi lệnh của skill này: `SKILL=~/Documents/bo-nao-david/ky-nang/san-xuat-video/dung-video-theo-phong-cach` (máy đã cài
@@ -156,7 +156,7 @@ nó, rồi `xem-truoc-ban-dung.py`.
 5. Phụ đề đúng chữ, đủ dấu, không bị đè; âm lượng đạt chuẩn chung.
 6. Đã chụp kiểm đúng các mốc dễ lỗi trước khi giao.
 7. Đủ gói phát hành (tiêu đề, khung bìa, thumbnail nếu ngang, mẫu số liệu); David không phải sửa lại vì trái luật đã chốt.
-8. Đã giao bản cuối ngay khi xong. Sau khi David chốt (điểm duyệt Đ2): bản cuối ở `~/Movies/cho-dang/<tập>/` và Drive `thanh-pham/<tập>/` (✅ trên trang `localhost:8765/mac`); đã chạy `don-tap.py --xoa` rồi `luu-drive.sh`; tập đã lên Drive `sao-luu-mac/video`, đã xoá trên Mac, đã ghi loại vào `du-an/kho-drive.md`; phần ⏸ (đang dở) đã hỏi David.
+8. Đã giao bản cuối ngay khi xong, đủ hết trên Drive `thanh-pham/<tập>/` (cả bản xem nhẹ; `_buoi-<buổi>/` khi tách theo hướng), đã so khớp. Sau khi David chốt (điểm duyệt Đ2): bản cuối ở `~/Movies/cho-dang/<tập>/` và Drive `thanh-pham/<tập>/` (✅ trên trang `localhost:8765/mac`); đã chạy `don-tap.py --xoa` rồi `luu-drive.sh`; tập đã lên Drive `sao-luu-mac/video`, đã xoá trên Mac, đã ghi loại vào `du-an/kho-drive.md`; phần ⏸ (đang dở) đã hỏi David.
 
 ## Tài liệu kèm (chỉ đọc khi bước cần, cân nhắc đổi luật hoặc gỡ lỗi)
 

@@ -54,7 +54,10 @@ Mỗi video ra `~/Movies/tap-<tên>/2-ban-day-du` có sẵn video gốc đã n�
 - Ảnh thu nhỏ `anh-thu-nho.sh` (nguồn = giây trong video đã cắt); `phat-hanh/phat-hanh.md`: 3 tiêu đề, mô tả, chương (cộng độ dài teaser
   trong `phat-hanh/doan-gioi-thieu.json`), bình luận ghim, màn kết gắn các video cùng bộ, lịch và thứ tự đăng theo sản phẩm, mục "Ghi chú đăng" (người xuất hiện, lằn ranh, nhạc
   tạm — để David biết, không hỏi).
-- Giao theo cây quy trình lá A6.
+- Giao theo cây quy trình lá A6, **đủ hết lên Drive** (David 25/11/2026: "khi quy trình đã làm ra sản phẩm gì thì đều tải lên drive đầy đủ hết"): mỗi video `cho-dang.sh gui <tập>` (tự làm bản xem
+  nhẹ); kết quả chung của buổi viết `~/Movies/<buổi>/doc-truoc.md` rồi `cho-dang.sh buoi <buổi>` → Drive `thanh-pham/_buoi-<buổi>/`.
+  `doc-truoc.md` = bảng ba dòng (Hướng · Kết quả · Ở đâu), **kể cả hướng không ra bản** và lý do; một dòng nói thư mục video có gì; một
+  dòng nói thư mục buổi có gì (nội bộ, không đăng); chỗ để video gốc (không tải lên khi quá nặng). Mẫu: Drive `thanh-pham/_buoi-tap-dji0028-2311/`.
 
 ## Điểm duyệt
 - **Đ1** sau bước 2: bảng video theo hướng, đoạn cắt, lằn ranh (mặc định giữ lời), clip ngắn dự kiến. Chưa duyệt thì không cắt, không dựng.
@@ -63,7 +66,8 @@ Mỗi video ra `~/Movies/tap-<tên>/2-ban-day-du` có sẵn video gốc đã n�
   xuất hiện (cả khách Veltrix) thì vẫn dựng, ghi vào "Ghi chú đăng", không hỏi; vẫn giữ Đ2 (`quy-trinh.md` mục 1).
 
 ## Xong khi
-- Có `phan-huong.md` của tập + mục nhật ký nội dung từng hướng có ý.
+- Có `phan-huong.md` của tập + mục nhật ký nội dung từng hướng có ý; Drive `thanh-pham/_buoi-<buổi>/` có `doc-truoc.md`, phân hướng,
+  bản chép lời cả buổi, nhật ký ba hướng (và lỗi kỹ năng nếu có), so khớp từng tệp.
 - Mỗi video theo hướng là một dự án dựng xong: soát cảnh đạt, lưới ảnh kiểm không che ai, âm lượng −14 LUFS, có clip ngắn (hoặc ghi lý
   do không có), gói phát hành và ảnh thu nhỏ; đã giao theo lá A6.
 - Kế hoạch tách đã dùng nằm ở `kiem-tra/tach-video.json` của từng dự án (chạy lại ra đúng video cũ).

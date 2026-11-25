@@ -139,4 +139,6 @@ Ghi `<dự án>/phat-hanh/phat-hanh.md`:
   vào thư mục thử riêng `tap-thu-…`, chạy theo skill, cho David xem bản cuối, xong thì dọn. Đoạn ngắn trọn ý ra tốt thì video dài cũng tốt.
 - **Dựng ngay trong phiên Claude** theo skill (`phan-phoi-da-kenh` → skill dựng). Không đề xuất dựng app hay công cụ tự động dựng video
   trừ khi David yêu cầu, vì chạy app tốn token hơn.
+- **Làm ra gì thì lên Drive đủ hết** (David 25/11/2026: "khi quy trình đã làm ra sản phẩm gì thì đều tải lên drive đầy đủ hết"): xong là `cho-dang.sh gui <tập>` (bản dài, bản xem nhẹ, clip,
+  ảnh thu nhỏ, bài đăng, chương, số liệu) và, khi tách buổi theo hướng, `cho-dang.sh buoi <buổi>`; so khớp từng tệp rồi mới báo. Chỉ video gốc quá nặng là không tải, ghi chỗ để.
 - Video đã chốt (David nói chốt là duyệt Đ2 cho việc dọn): bản cuối vào `~/Movies/cho-dang/<tập>/` + `cho-dang.sh gui` (Drive `thanh-pham/` y hệt), dọn file tạm rồi đưa dự án lên Drive, xoá trên Mac theo khối 17 (`don-tap.py --xoa` → `luu-drive.sh`, không hỏi lại; chỉ hỏi phần ⏸ đang dở). Đăng xong: `cho-dang.sh xong <tập>`. Mac chỉ giữ việc đang làm + bản cuối chưa đăng: ghi nhớ `video-chuyen-qua-drive`.

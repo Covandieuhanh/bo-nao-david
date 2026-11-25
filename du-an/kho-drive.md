@@ -12,7 +12,8 @@ Drive `covandieuhanh@gmail.com` › `Drive của tôi`. Mac chỉ giữ dữ li�
 | Thư mục | Chứa |
 |---|---|
 | `tu-lieu-goc/` | Video, ghi âm gốc David gửi lên. Gốc của video đang làm: `tu-lieu-goc/<tập>/` |
-| `thanh-pham/<tập>/ban-dai`, `highlight/` | Thành phẩm để David lấy về điện thoại, đăng |
+| `thanh-pham/<tập>/ban-dai`, `highlight/` | Thành phẩm để David lấy về điện thoại, đăng: bản dài, bản xem nhẹ, clip, ảnh thu nhỏ, bài đăng, chương, số liệu — làm ra gì đều lên đủ (25/11/2026) |
+| `thanh-pham/_buoi-<buổi>/` | Kết quả chung của một buổi tách theo hướng: `doc-truoc.md` (hướng nào ra gì, ở đâu), phân hướng, bản chép lời cả buổi, nhật ký ba hướng, lỗi kỹ năng — nội bộ, không đăng |
 | `sao-luu-mac/video/<tập>/` | Cả dự án dựng: `1-goc/` (gốc), video-hoan-chinh (mọi bản, đạt hay không), kịch bản, phụ đề, kế hoạch cắt, `phat-hanh/`. File tạm (check, davinci, public, node_modules) đã bỏ: dựng lại được từ gốc + kịch bản |
 | `sao-luu-mac/tai-ve/` | File tải về chưa thuộc tập nào |
 | `sao-luu-mac/tai-lieu/` | `1-nghe-nghiep`, `2-ca-nhan`, `9-luu-tru` (gồm sổ xếp file 07/11), `Obsidian` |
