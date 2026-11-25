@@ -86,3 +86,14 @@ Bản theo hướng: bản ngang 5:42 `tap-ung-dung-ai-doc-gu-khach` · Trạng 
 | Đọc gu ông chủ qua văn phòng, trang phục, tông màu, màn hình LED trước khi làm video | "nắm được cái gu của họ thì em mới làm clip nó mới trúng" | 4500–4590 (75:00) | làm xong khách chê | quy trình nhận việc | bước khảo sát khách |
 | Đến gặp với dữ liệu sẵn, xác nhận thay vì hỏi như mọi người | "thằng này sao nó biết" | 4603–4667 (76:43) | khách đánh giá thiếu chuyên nghiệp | — | kịch bản gặp phòng marketing |
 | LinkedIn: tìm theo chức danh (Head of partnership, CEO), kết bạn đều mỗi ngày, đăng bài chuyên môn (ý của anh đối diện, chưa dựng) | "Ở đây có một kênh để xây là LinkedIn" | 2390–3070 (39:40) | khó tìm người ra quyết định | — | kênh tìm khách doanh nghiệp |
+
+## 25/11/2026 · tap-dji0031-2511 · buổi trò chuyện trong văn phòng, hai người
+Bản theo hướng: bản ngang 3:17 `tap-ai-may-do-cho-khach` · Trạng thái: đã dựng 25/11 (chế độ tự chạy), chờ đăng. Ngắn vì phần còn lại bản lời nhiễu.
+| Ý | Lời gốc | Mốc | Nỗi đau / mục tiêu | Bán được gì | Dùng cho việc |
+|---|---|---|---|---|---|
+| Dân công nghệ: ngồi nói 4–5 tiếng, tách một video 30 phút về một mảng | "Em bóc tách ra một cái khung về hàng hóa chẳng hạn" | 52–63 (0:52) | có nhiều tư liệu nhưng không làm thành nội dung | gói video | ví dụ mở đầu |
+| Chỉ dùng AI cho tác vụ lặp đi lặp lại, không thay thế tác vụ liên quan đến con người | "chỉ dùng công nghệ AI để xử lý những tác vụ lặp đi lặp lại" | 1948–1954 (32:28) | dùng AI sai chỗ | gói công nghệ + đào tạo | câu định vị |
+| Làm may đo, không sản xuất số lượng lớn; khoá học đại trà học xong không phù hợp | "bọn em thuộc dạng may đo, bọn em không thuộc dạng sản xuất số lượng lớn" | 1966–1969 (32:46) | mua đồ đại trà không vừa | gói may đo | câu định vị chính |
+| Mỗi người nội dung, người xem, thẩm mỹ khác nhau nên phải custom cho khách | "mình sẽ custom cho khách" | 1991–2008 (33:11) | video làm theo mẫu chung không trúng | gói video may đo | giải thích khác biệt |
+| Mua áo đại trà về mặc không vừa, sửa xong thành lỗi | "mua áo này rộng về mặc không vừa đâu" | 2018–2024 (33:38) | — | — | ví dụ so sánh |
+| Chốt được quy trình rồi thì lần lần đóng lại | "Chốt được rồi thì mình lần lần đóng lại quy trình đấy" | 2246–2252 (37:26) | quy trình mỗi lần một cách | gói quy trình cho AI | ý nối với `tap-quy-trinh-cho-ai` |

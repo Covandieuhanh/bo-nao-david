@@ -94,3 +94,16 @@ Bản theo hướng: bản ngang 12:05 `tap-hoc-de-biet-vi-sao-gay` · Trạng t
 | Đổi môi trường để có năng lượng công việc | "thay đổi luôn môi trường cho nó nhanh" | 3296–3322 (54:57) | xung quanh chỉ chuyện tào lao | — | câu chuyện của David |
 | Nói phải có bằng chứng, không nói theo cảm nhận chủ quan (con bò, cái ghế) | "mọi người chỉ nghe theo chứng cứ thôi" | 4058–4253 (67:38) | nói không ai tin | — | ví dụ đứng lớp |
 | Nghe hay rồi quên; trải nghiệm mới biến thành kiến thức | "bây giờ em biến nó thành kiến thức và tri thức của em rồi" | 4258–4294 (70:58) | học nhiều không thấm | lớp thực hành | câu định vị trainer thực hành |
+
+## 25/11/2026 · tap-dji0031-2511 · buổi trò chuyện trong văn phòng, hai người
+Bản theo hướng: bản ngang 12:18 `tap-tap-trung-mot-duong` · Trạng thái: đã dựng 25/11 (chế độ tự chạy), chờ đăng · Kho 100: ý #15 (khớp gần)
+| Ý | Lời gốc | Mốc | Nỗi đau / mục tiêu | Bán được gì | Dùng cho việc |
+|---|---|---|---|---|---|
+| Người với người gắn kết bằng công việc, không bằng tình cảm (tình cảm lên xuống) | "Người với người quan hệ với nhau bằng công việc" | 141–148 (2:21) | không biết giữ quan hệ bằng gì | trainer | khung "quan hệ" nhánh phụ |
+| Lợi ích mỗi người một khác: người A là tiền, người B là tình cảm, người C là cảm xúc | "Lợi ích của người C này giai đoạn này nó lại là cảm xúc cơ" | 275–282 (4:35) | không hiểu người kia cần gì | trainer | câu hỏi tự soi |
+| Giữ người với người chỉ cần thấu hiểu kinh doanh | "thấu hiểu kinh doanh là xong" | 314–321 (5:14) | không giữ được người | trainer | cách làm |
+| Phải chọn một đường, cái lõi bên trong mạnh thì đổi ngành vẫn là mình | "Cái lõi của em bên trong nó mạnh" | 841–872 (14:01) | dẫn người mà bản thân loạn | trainer | luận điểm gốc "làm chủ bản thân" |
+| Tập trung một đường mới nở được; nhìn bên này bên kia thì loạn | "em phải focus thì nó mới nở, đúng không?" | 1003–1020 (16:43) | nhảy từ hướng này sang hướng khác | trainer | câu mở / thực thi "chọn một" |
+| Không bỏ cuộc: người đào kim cương bỏ khi gần tới 98% | "người ta đào kim cương gần đến rồi, 98% rồi" | 1243–1251 (20:43) | bỏ cuộc gần tới đích | trainer | ví dụ kiên trì |
+| Không bỏ cuộc thì làm gì cũng được | "nó chỉ là không bỏ cuộc thôi" | 1303–1310 (21:43) | — | trainer | câu chốt |
+| Từ trường số: mọi thứ quy ra số, sống theo cái tên | "Mình mà sống theo cái tên của mình" | 1361–1416, 1577–1603 (22:41) | hiểu bản thân qua số | trainer (hệ 135) | nội dung từ trường số |

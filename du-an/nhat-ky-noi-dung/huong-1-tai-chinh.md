@@ -28,3 +28,13 @@ Bản theo hướng: không ra bản — chỉ khoảng 30 giây nói dòng ti�
 |---|---|---|---|---|---|
 | Có lên có xuống: lên biết đủ, xuống biết cắt lỗ, đừng gồng để giữ thể diện | "Còn khi mình xuống mình có biết cắt lỗ không" | 5036–5082 (83:56) | gồng lỗ | — | câu mở bài kỷ luật cắt lỗ |
 | Tài chính chỉ là nhập xuất tồn: nhập là doanh thu, xuất là chi phí, tồn là lãi; giữ cái đang ra tiền | "Tài chính nó chỉ có nhập xuất tồn hết" | 5340–5370 (89:00) | báo cáo rối, không thấy dòng tiền | — | giải thích dễ hiểu cho chủ doanh nghiệp |
+
+## 25/11/2026 · tap-dji0031-2511 · buổi trò chuyện trong văn phòng với một anh làm hàng hóa (hai người, một người thứ ba lọt khung)
+Bản theo hướng: bản ngang 4:48 `tap-hang-hoa-thi-truong-moi` · Trạng thái: đã dựng 25/11 (chế độ tự chạy), chờ đăng. Phần lớn lời hàng hóa là của người đối diện, lời David chỉ ở 1815–1831 s.
+| Ý | Lời gốc | Mốc | Nỗi đau / mục tiêu | Bán được gì | Dùng cho việc |
+|---|---|---|---|---|---|
+| Thị trường Việt Nam đã trải qua nhiều chu kỳ (chứng khoán, bất động sản, hàng hóa); người đi đầu thường thắng | "Ví dụ chu kỳ chứng khoán" | 353–361 (5:53) | không biết nên vào thị trường nào, lúc nào | hợp tác môi giới | câu mở nói chuyện thị trường |
+| Hàng hóa được nhà nước cấp phép từ 2018 nhưng nhiều người trong nghề cũng không biết | "mình là người trong nghề mà thậm chí mình không biết nó" | 386–410 (6:26) | thông tin hàng hóa chưa tới người trong nghề | hợp tác môi giới | câu dẫn bài hàng hóa |
+| Thị phần còn bé, "đại dương xanh" so với crypto đã bão hoà | "Sau đó em có thị phần đại dương xanh" | 630–654 (10:30) | thị trường quá đông | — | luận điểm chọn thị trường |
+| Chọn một đơn vị có nền móng vững, công nghệ, vốn mạnh thay vì nhiều đơn vị nhỏ | "Đơn vị nào về công nghệ, về vốn hoá, về giá trị" | 658–670 (10:58) | chọn đơn vị làm việc | hợp tác môi giới | tiêu chí chọn đơn vị |
+| Hàng hóa hợp lý, hợp pháp, thời điểm này "ngon nhất" (lời David) | "trong mảng tài chính thì sản phẩm hàng hóa là sản phẩm rất hợp lý, hợp pháp" | 1815–1831 (30:15) | muốn tìm hiểu thêm | — | câu chốt định vị |
