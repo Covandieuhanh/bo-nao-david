@@ -1,5 +1,5 @@
 ---
-description: "Tài liệu nguồn của bộ tư duy gốc: mục lục 17 phiếu học (cách các bộ óc hàng đầu thế giới nghĩ, học, giải quyết vấn đề), bảng thuật ngữ tư duy tiếng Anh → tiếng Việt (nhà duy nhất), danh sách sách gốc David cần tự mua."
+description: "Tài liệu nguồn của bộ tư duy gốc: mục lục 17 phiếu học (cách các bộ óc hàng đầu thế giới nghĩ, học, giải quyết vấn đề), bảng thuật ngữ tư duy tiếng Anh → tiếng Việt (nguồn duy nhất), danh sách sách gốc David cần tự mua."
 ---
 
 # Tài liệu nguồn của bộ tư duy gốc

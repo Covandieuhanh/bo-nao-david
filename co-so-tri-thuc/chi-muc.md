@@ -313,7 +313,7 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 
 - [tai-lieu-tham-khao/README.md](../tai-lieu-tham-khao/README.md) — tầng 3 · Tài liệu tham khảo chuẩn David dùng làm hình mẫu lâu dài (CCL) cho phương pháp ba tầng làm chủ và nhân hiệu trainer. · ←1
 - [tai-lieu-tham-khao/ccl/ho-so-ccl-ban-tieng-viet.md](../tai-lieu-tham-khao/ccl/ho-so-ccl-ban-tieng-viet.md) — tầng 3 · Hồ sơ CCL (Center for Creative Leadership) bản tiếng Việt: khung, chương trình, thuật ngữ lãnh đạo dịch chuẩn. · ←3
-- [tai-lieu-tham-khao/tu-duy-goc/README.md](../tai-lieu-tham-khao/tu-duy-goc/README.md) — tầng 3 · Tài liệu nguồn của bộ tư duy gốc: mục lục 17 phiếu học (cách các bộ óc hàng đầu thế giới nghĩ, học, giải quyết vấn đề), bảng thuật ngữ tư duy tiếng Anh → tiếng Việt (nhà duy nhất), danh sách sách gốc David cần tự mua. · ←3
+- [tai-lieu-tham-khao/tu-duy-goc/README.md](../tai-lieu-tham-khao/tu-duy-goc/README.md) — tầng 3 · Tài liệu nguồn của bộ tư duy gốc: mục lục 17 phiếu học (cách các bộ óc hàng đầu thế giới nghĩ, học, giải quyết vấn đề), bảng thuật ngữ tư duy tiếng Anh → tiếng Việt (nguồn duy nhất), danh sách sách gốc David cần tự mua. · ←3
 - [tai-lieu-tham-khao/tu-duy-goc/phieu-hoc.md](../tai-lieu-tham-khao/tu-duy-goc/phieu-hoc.md) — tầng 3 · 17 phiếu học của bộ tư duy gốc (23/11/2026): Aristotle, Descartes, Elon Musk, Feynman, Luhmann, Pólya, Toyota, Munger, Dalio, Kahneman, Popper, Meadows, Deming, Boyd, Argyris, Kolb, Kirkpatrick — mỗi người: họ nói gì, nguồn, trùng với khung của David ở đâu, bổ sung gì, thuộc khối nào. · ←3
 
 ## tu-dong-hoa

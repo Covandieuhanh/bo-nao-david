@@ -13,7 +13,7 @@ Nhà: **A** = `AGENTS.md` (cửa vào: thứ tự đọc, sáu luật, chọn sk
 
 ## Bảng luật hiện hành
 
-| # | Luật | Nhà nên ở | Nguồn cũ | Ngày chốt gần nhất | Trạng thái |
+| # | Luật | Nguồn nên ở | Nguồn cũ | Ngày chốt gần nhất | Trạng thái |
 |---|---|---|---|---|---|
 | 1 | Thứ tự đọc 7 bước; tra `tai-lieu-tham-khao/ccl/` khi làm nội dung lãnh đạo | A | A:5–17 | 08/11 | sống |
 | 2 | Hồ sơ thấu hiểu: phần định hướng nghề lỗi thời, lệch thì theo D | A | A:10 | 17/10 | sống (bỏ ngày) |

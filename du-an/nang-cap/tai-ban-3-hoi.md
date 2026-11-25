@@ -10,7 +10,7 @@ Công cụ đo lúc mở: dấu ngày 0 · ghi đè 0 · trùng 0 · sửa 4 · 
 Ký hiệu nguồn: `hoi` = thu-thap-yeu-cau/SKILL.md (bản trước tái bản) · `cm` = chuan-muc-lam-viec.md · `A` = AGENTS.md · `dv` = co-so-tri-thuc/david.md · `cd` = co-so-tri-thuc/chi-dan-toan-cuc.md · `gn:` = ghi nhớ.
 
 ## Bảng luật hiện hành
-| # | Luật | Nhà nên ở | Nguồn hiện tại | Ngày chốt gần nhất | Trạng thái |
+| # | Luật | Nguồn nên ở | Nguồn hiện tại | Ngày chốt gần nhất | Trạng thái |
 |---|---|---|---|---|---|
 | 1 | **Mọi việc trình đủ 4 phần** (Mục tiêu · Kế hoạch · Quy trình · Thực thi) kèm điểm cần chốt, chờ "duyệt" rồi mới tạo/sửa file; duyệt rồi làm trọn một mạch, tự thử tới khi chắc dùng được | **cm mục 2** (luật dùng chung mọi skill) | cm:29–33 · hoi:14 · A:24 (luật 2) · dv mục 3.1 · cd:4 · gn:quy-tac-duyet-ke-hoach-4-phan | 14/11 (việc #22) | **trùng** → cm giữ; hoi một dòng trỏ; A luật 2, dv, cd là bản tóm sáu luật / file nạp mỗi phiên, giữ một câu + trỏ cm (chéo bộ) |
 | 2 | Miễn 4 phần: câu hỏi nhanh, tra cứu, giải thích · bot ghi sổ · lịch tự chạy đã duyệt (làm theo lời giao, ghi giả định đầu báo cáo) | cm mục 2 | cm:34–35 · hoi:17 · A:24 · dv mục 3.1 · cd:4 | 14/11 | trùng → hoi trỏ; **lệch nhẹ**: cd không có "bot ghi sổ" (chéo bộ) |

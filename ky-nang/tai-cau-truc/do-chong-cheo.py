@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""MÁY ĐO CHỒNG CHÉO — skill tai-cau-truc.
+"""CÔNG CỤ ĐO CHỒNG CHÉO — skill tai-cau-truc.
   python3 -I ky-nang/tai-cau-truc/do-chong-cheo.py [bộ …] [--chi-tiet]      (không ghi bộ = đo mọi bộ trong bo.json)
 Đo các "bản luật" (file AI đọc khi làm việc) của từng bộ, xem luật đã chồng nhiều lớp tới đâu:
   dau_ngay  dấu ngày / "chốt 08/11" nằm trong bản luật (ngày thuộc về sổ quyết định, không thuộc luật)

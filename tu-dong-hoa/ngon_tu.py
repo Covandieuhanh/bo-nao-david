@@ -12,7 +12,7 @@ THAY = [
  ('mỗi ý một nhà', 'mỗi ý một nguồn duy nhất'), ('Mỗi ý một nhà', 'Mỗi ý một nguồn duy nhất'), ('một nhà', 'một nguồn duy nhất'), ('Một nhà', 'Một nguồn duy nhất'),
  ('nhà của', 'nguồn của'), ('Nhà của', 'Nguồn của'), ('Nhà: `', 'Nguồn duy nhất: `'), ('nhà: `', 'nguồn duy nhất: `'), ('(nhà: ', '(nguồn duy nhất: '),
  ('Đã có nhà chưa?', 'Đã có nguồn duy nhất chưa?'), ('có nhà trong', 'có nguồn trong'), ('có nhà', 'có nguồn duy nhất'), ('nhà mới ở', 'nguồn mới ở'), ('nhà mới', 'nguồn mới'),
- ('Đề xuất nhà:', 'Đề xuất nguồn:'), ('nhà nên ở', 'nguồn nên ở'), ('thiếu nhà', 'thiếu nguồn'), ('mất nhà', 'mất nguồn'), ('nhà ở `', 'nguồn ở `'), ('nhà ở khối', 'nguồn ở khối'), ('nhà ở quy-tac', 'nguồn ở quy-tac'), ('nay nhà ở', 'nay nguồn ở'), ('nhà chính', 'nguồn chính'), ('nhà luật', 'nguồn luật'), ('nhà chi tiết', 'nguồn chi tiết'), ('Gộp nhà', 'Gộp nguồn'), ('chốt nhà', 'chốt nguồn'), ('theo nhà', 'theo nguồn'), ('(nhà)', '(nguồn)'), ('đúng nhà', 'đúng nguồn'), ('nhiều nhà', 'nhiều nguồn'), ('nhà chung', 'nguồn chung'), ('nhà riêng của luật', 'nguồn riêng của luật'), ('về nhà nào', 'về nguồn nào'), ('nhà nào', 'nguồn nào'),
+ ('Đề xuất nhà:', 'Đề xuất nguồn:'), ('nhà nên ở', 'nguồn nên ở'), ('Nhà nên ở', 'Nguồn nên ở'), ('MÁY ĐO', 'CÔNG CỤ ĐO'), ('MÁY CHẤM', 'CÔNG CỤ CHẤM'), ('thiếu nhà', 'thiếu nguồn'), ('mất nhà', 'mất nguồn'), ('nhà ở `', 'nguồn ở `'), ('nhà ở khối', 'nguồn ở khối'), ('nhà ở quy-tac', 'nguồn ở quy-tac'), ('nay nhà ở', 'nay nguồn ở'), ('nhà chính', 'nguồn chính'), ('nhà luật', 'nguồn luật'), ('nhà chi tiết', 'nguồn chi tiết'), ('Gộp nhà', 'Gộp nguồn'), ('chốt nhà', 'chốt nguồn'), ('theo nhà', 'theo nguồn'), ('(nhà)', '(nguồn)'), ('đúng nhà', 'đúng nguồn'), ('nhiều nhà', 'nhiều nguồn'), ('nhà chung', 'nguồn chung'), ('nhà riêng của luật', 'nguồn riêng của luật'), ('về nhà nào', 'về nguồn nào'), ('nhà nào', 'nguồn nào'),
  ('Luật đi lên', 'Luật thăng cấp'), ('luật đi lên', 'luật thăng cấp'), ('đi lên tầng', 'thăng cấp lên tầng'), ('biểu đồ đi lên', 'biểu đồ tăng'),
  ('→ tỉa →', '→ cắt giảm →'), ('chưng cất, tỉa, dọn', 'chưng cất, cắt giảm, tái cấu trúc'), ('đề xuất tỉa', 'đề xuất cắt giảm'), ('tỉa:', 'cắt giảm:'), ('Tỉa:', 'Cắt giảm:'), ('(tỉa)', '(cắt giảm)'),
  ('máy gác cổng', 'cổng kiểm soát'), ('Máy gác cổng', 'Cổng kiểm soát'), ('gác cổng', 'cổng kiểm soát'),
@@ -44,7 +44,7 @@ REGEX = [
 GIU = ['bịa đặt', 'nhà ở xã hội', 'khuôn hình', 'khuôn mặt', 'khuôn khổ', 'khuôn mẫu', 'Khuôn hình', 'Khuôn mặt', 'ca khúc', 'băng dính', 'phần cứng', 'cắt cứng', 'liên kết cứng', 'soi gương', 'soi tỏ', 'kiem-ngon-tu', 'soat', 'soi-']
 # từ cũ để quét (chỉ báo, không thay): cụm còn sót sau khi thay
 TU_CU = ['móc vào', 'nhà duy nhất', 'một nhà', 'nhà của', 'luật đi lên', 'gác cổng', 'người đọc lạnh', 'đến tận nơi xem', 'sửa tay', 'ép tay', 'bằng tay',
-         'máy kiểm', 'máy đo', 'máy chấm', 'đang sống', 'câu đắt', 'chỗ vấp', 'chỗ kẹt', 'làm dở', 'nhẹ máy', 'giữ mac nhẹ', 'trôi nổi', 'file nặng', 'đụng tới',
+         'máy kiểm', 'máy đo', 'máy chấm', 'luật đang sống', 'câu đắt', 'chỗ vấp', 'chỗ kẹt', 'làm dở', 'nhẹ máy', 'giữ mac nhẹ', 'trôi nổi', 'file nặng', 'đụng tới',
          'dính tới', 'soi bằng', 'lọt qua', 'ca thật', 'ca mẫu', 'số cứng', 'lịch cứng', 'bắt chước', 'mối nối', 'chỗ kẹt', 'nhà nên ở', 'đề xuất nhà']
 
 _Q = re.compile(r'("[^"]*"|“[^”]*”|`[^`]*`)')   # lời trích và mã inline: giữ nguyên

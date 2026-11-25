@@ -11,7 +11,7 @@ Trạng thái: **sống** = giữ, đã có nguồn duy nhất · **trùng** = g
 ## Bảng luật hiện hành
 
 ### Luật chung (nguồn duy nhất: `quy-tac-chung.md`)
-| Luật | Nhà nên ở | Nguồn hiện tại | Ngày chốt gần nhất | Trạng thái |
+| Luật | Nguồn nên ở | Nguồn hiện tại | Ngày chốt gần nhất | Trạng thái |
 |---|---|---|---|---|
 | Người xem là trung tâm: ở lại → hiểu → làm theo; đo bằng số thật | quy-tac-chung 0 | quy-tac-chung:12; ghi nhớ quy-tac-noi-dung-cua-david | 05/11 | sống |
 | Thẩm mỹ chỉ giữ chữ ký nhận diện; ngoài đó sáng tạo tự do | quy-tac-chung 0 → nhan-dien-chung 0 | quy-tac-chung:14; nhan-dien-chung:11; thiet-ke-bo-cuc/README:14; ghi nhớ video-tham-my-chi-giu-nhan-dien | 10/11 | sống |
@@ -65,7 +65,7 @@ Trạng thái: **sống** = giữ, đã có nguồn duy nhất · **trùng** = g
 | Không tải video YouTube/TikTok để dựng; tải 720p chỉ để học | quy-tac-chung 8 → thiet-ke-bo-cuc/README 4 | quy-tac-chung:111; dung-video "Đầu vào"; cat-doan "Đầu vào" | 08/11 | sống |
 
 ### Định tuyến, kiến trúc, hồ sơ
-| Luật | Nhà nên ở | Nguồn hiện tại | Ngày chốt gần nhất | Trạng thái |
+| Luật | Nguồn nên ở | Nguồn hiện tại | Ngày chốt gần nhất | Trạng thái |
 |---|---|---|---|---|
 | Bộ lọc trước; ⛔/👤/🗂 không dựng; bảng loại → skill → hồ sơ | nhan-dien-thuong-hieu | nhan-dien-thuong-hieu:7-20 | 10/11 | sống |
 | Hồ sơ highlight tên `doan-noi-bat` | nhan-dien-thuong-hieu · cat-doan | nhan-dien-thuong-hieu:16; cat-doan:86, :165 (ghi `highlight`) | 14/11 (code `TEN_CU`) | cũ → sửa đường trỏ |
@@ -77,7 +77,7 @@ Trạng thái: **sống** = giữ, đã có nguồn duy nhất · **trùng** = g
 | Khoá từng hồ sơ (`phu_de.*`, `nhac.*`, `cat_lang.*`, `tit_ghim`, `phu_hinh_muc_tieu`…) | `<loai>.md` | các file hồ sơ | 06/11 | sống |
 
 ### Skill dựng (công thức riêng)
-| Luật | Nhà nên ở | Nguồn hiện tại | Ngày chốt gần nhất | Trạng thái |
+| Luật | Nguồn nên ở | Nguồn hiện tại | Ngày chốt gần nhất | Trạng thái |
 |---|---|---|---|---|
 | dung-video: 8 luật riêng (motion graphic kể chuyện, hook không mặc định, bố cục, màn hành động/chốt, làm sạch, không che mặt, không bản app, học 20 video) | dung-video SKILL | SKILL:35-55 | 11/11 | sống |
 | dung-video: nhịp làm khoảng 1 giờ/video, lỗi skill ghi `loi-ky-nang.md` | dung-video SKILL | SKILL:21-28 | 11/11 | sống |
@@ -92,7 +92,7 @@ Trạng thái: **sống** = giữ, đã có nguồn duy nhất · **trùng** = g
 | Không cài HyperFrames, chỉ học ý | thiet-ke-bo-cuc/README 4.10 | README:69; ghi nhớ video-khong-cai-hyperframes | 06/11 | sống |
 
 ### Khối, thư viện, tham khảo
-| Luật | Nhà nên ở | Nguồn hiện tại | Ngày chốt gần nhất | Trạng thái |
+| Luật | Nguồn nên ở | Nguồn hiện tại | Ngày chốt gần nhất | Trạng thái |
 |---|---|---|---|---|
 | Khối 00: phân hướng, câu hỏi gốc, kho 100 video, 5 tiêu chí, lằn ranh, 7 kết luận, kênh, sổ danh mục | khối 00 | khối 00:13-113; ghi nhớ co-so-tri-thuc-ho-so-va-bo-loc | 13/11 | sống |
 | Khối 01–03, 05, 09–12, 15–20: cách làm, lệnh, ngưỡng kỹ thuật | từng khối | README từng khối | tối đa 13/11 | sống (không đổi) |

@@ -12,7 +12,7 @@ Công cụ đo lúc mở: `dau_ngay 5/15 · ghi_de 2/6 · trung 0/4 · sua 30/25
 Công cụ đo sau viết lại: `dau_ngay 3/15 · ghi_de 0/6 · trung 0/4 · sua 30/25 · dong 244/600`. 3 dấu ngày còn lại đều ở D (D không sửa): 2 là dữ kiện (ngày cập nhật, "từ 13/11/2026 ba hướng"), 1 là dấu ngày luật ở D 3.1 nên Hỏi David 1. `sua 30` là số commit git, chỉ hạ khi có tag `tai-ban-3`.
 
 ## Bảng luật hiện hành
-| # | Luật | Nhà nên ở | Nguồn hiện tại | Ngày chốt gần nhất | Trạng thái |
+| # | Luật | Nguồn nên ở | Nguồn hiện tại | Ngày chốt gần nhất | Trạng thái |
 |---|---|---|---|---|---|
 | 1 | Thứ tự đọc 7 bước; tra CCL khi làm nội dung lãnh đạo | A | A:5–19 | 08/11 | sống |
 | 2 | Tìm trong bộ não: grep chỉ mục → bản đồ → toàn repo; luật mạng lưới ở `quy-uoc-lien-ket.md` | A | A:17 | 14/11 | sống, giữ nguyên |
