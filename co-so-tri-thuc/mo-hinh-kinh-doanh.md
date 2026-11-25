@@ -4,7 +4,7 @@ description: "Mô hình kinh doanh của David (khung học từ cố vấn chi�
 
 # Mô hình kinh doanh của David
 
-> Khung David học từ cố vấn chiến lược của David và tự đặt lại (23/11/2026 David nói rõ nguồn: ba phạm trù, bốn bước thành công, chín kỹ năng, quy trình bốn bước và vòng vấn đề, ba bước đào tạo · áp dụng · thay đổi đều học từ cố vấn), dạy cho bot qua Codex ngày 12/11/2026 (bản đầy đủ: `~/Documents/ChatGPT/Trainer David/Hermes/Bo-nho-cong-viec/QUY-TAC.md`, chỉ trên máy). David chốt 13/11/2026 dùng làm gốc cho cả ba hướng nghề (`co-so-tri-thuc/david.md` mục 4). File này là nhà duy nhất của khung trong bộ não.
+> Khung David học từ cố vấn chiến lược của David và tự đặt lại (23/11/2026 David nói rõ nguồn: ba phạm trù, bốn bước thành công, chín kỹ năng, quy trình bốn bước và vòng vấn đề, ba bước đào tạo · áp dụng · thay đổi đều học từ cố vấn), dạy cho bot qua Codex ngày 12/11/2026 (bản đầy đủ: `~/Documents/ChatGPT/Trainer David/Hermes/Bo-nho-cong-viec/QUY-TAC.md`, chỉ trên máy). David chốt 13/11/2026 dùng làm gốc cho cả ba hướng nghề (`co-so-tri-thuc/david.md` mục 4). File này là nguồn duy nhất của khung trong bộ não.
 
 ## 1. Ba phạm trù gốc: Tiền · Thị trường · Con người
 
@@ -17,6 +17,19 @@ Gốc để diễn giải mọi thứ, ở mọi quy mô (đời một người,
 | **Con người** | các chủ thể: nhu cầu, năng lực, động lực, trách nhiệm | Ai tham gia, cần gì, làm được gì, chịu trách nhiệm gì? |
 
 Ví dụ: vận hành tiền thế nào · vận hành thị trường thế nào · vận hành con người thế nào.
+
+### 1b. Ba phạm trù chính là ba hướng nghề của David (David chốt 25/11/2026)
+
+Trùng hợp đúng: ba hạng mục David hay nói (tiền · thị trường · con người) cũng là cách David chia ba hướng nghề. **Mỗi hướng một phạm trù, tách biệt hoàn toàn: mảng nào ra mảng đó, không lẫn.**
+
+| Phạm trù | Hướng nghề | Gồm | Không gồm |
+|---|---|---|---|
+| **Tiền** | **Hướng 1, tài chính**: giao dịch hàng hoá | thị trường giao dịch hàng hoá và mọi thông tin, dữ liệu liên quan đến tài chính | chuyện marketing, khách hàng, phát triển bản thân |
+| **Thị trường** | **Hướng 3, giải pháp công nghệ và AI** | marketing, khách hàng, nhu cầu, kênh, **kể cả của chính người xem**; đây cũng là dữ liệu rất tốt để làm giải pháp công nghệ | giao dịch hàng hoá; phát triển con người |
+| **Con người** | **Hướng 2, trainer định hướng** | **chỉ phát triển con người**. David lấy **trụ cột kinh doanh liên quan đến chín kỹ năng** (mục 3) để định hướng và phát triển con người; **gốc của phần này là từ trường số** (`du-lieu-nen-huyen-hoc.md` mục 7) | marketing, khách hàng, thị trường (sang hướng 3) |
+
+Cách xếp khi một ý chạm nhiều phạm trù: hỏi "ý này giúp người nghe làm gì?" — hiểu và giao dịch hàng hoá (Tiền), hiểu khách và thị trường để làm giải pháp (Thị trường), hay phát triển chính con người họ (Con người). Chạm hai phạm trù thì gán phạm trù chính, ghi "dùng lại ở hướng X" (khối 00 mục 0b). **Ngoài ba hướng thì không dùng, không truyền thông** (David 25/11/2026): ba hướng đã xác định, nên nội dung không thuộc hướng nào (đời thường, hành trình không dẫn tới đâu…) không làm thành bài, video hay kết quả nào. Mọi lời David nói đã nằm trong nhật ký, danh sách ý tưởng và phân loại, nên không mất gì. **Đời thường, hành trình hay ý Claude chưa xếp được thì hỏi David để sắp xếp** (chế độ tự chạy: không dừng cả việc, gom thành câu hỏi trong báo cuối, phần đó chưa làm). Xếp theo chỗ nó dẫn tới, không theo vỏ ngoài: ví dụ David kể hành trình của mình dẫn tới việc dùng từ trường số để định hướng con người thì thuộc **hướng 2**.
+Khớp với các file tư duy: ba phạm trù ở đây cũng là phép bóc tách khối 1 của `tu-duy-goc.md`.
 
 ## 2. Ba phần của doanh nghiệp
 

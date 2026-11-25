@@ -13,7 +13,7 @@ chỉ trỏ về đây.
 
 | # | Bước | Làm theo |
 |---|---|---|
-| 1 | **Nhận yêu cầu, tra cây:** tìm lá khớp ở mục 3 (David chỉ gửi video / ghi âm không kèm lời thì là lá B1); xem lời David có bật chế độ tự chạy không (mục 1) | file này |
+| 1 | **Nhận yêu cầu, tra cây:** tra quy trình trước khi làm; việc có tài nguyên thì tra sổ danh mục (đã làm chưa → làm lại thì bản mới thay bản cũ); tìm lá khớp ở mục 3 (David chỉ gửi video / ghi âm không kèm lời thì là lá B1); xem lời David có bật chế độ tự chạy không (mục 1) | file này |
 | 2 | **Đọc đúng phần cần, tra hình mẫu:** tra [bản đồ hình mẫu](co-so-tri-thuc/hinh-mau/README.md) cho mục nhỏ của việc; chưa có hoặc chưa đủ (ít nhất 5, việc lớn 10) thì nghiên cứu theo lá A8 trước Đ1, kết luận đưa vào 4 phần; file quy trình của lá → chỉ những khối, hồ sơ bước đang làm cần; đặt Mục tiêu + Xong khi; được làm phần chuẩn bị (mục 1). Máy chưa từng dựng video (chưa có `kiem-may.sh` đạt và bài kiểm suy luận ≥ 8/10) thì làm lá A2 trước khi dựng thật | `ky-nang/chuan-muc-lam-viec.md` mục 1 |
 | 3 | **Điểm duyệt Đ1: trình 4 phần, dừng chờ "duyệt"** (trừ phần miễn và chế độ tự chạy, mục 1) | `chuan-muc-lam-viec.md` mục 2 · `ky-nang/thu-thap-yeu-cau/SKILL.md` |
 | 4 | **Làm đúng từng bước của lá theo thứ tự**, một mạch, không thêm, không bớt, không đổi bước; tới điểm duyệt của lá thì dừng chờ. Ra vấn đề: ở cách làm thì xử lý ngay; ở giả định của kế hoạch thì dừng, trình lại kế hoạch (`tu-duy-goc.md` khối 2) | file quy trình của lá · `chuan-muc-lam-viec.md` mục 3 |
@@ -34,8 +34,7 @@ chỉ trỏ về đây.
     không hỏi David về việc đăng. Claude tự sắp gói đăng hợp với sản phẩm của từng hướng (tiêu đề, kênh, lịch và thứ tự đăng, bình luận
     ghim, lời kêu gọi dẫn về đúng sản phẩm), giao kèm bản cuối; không kết báo cáo bằng câu hỏi "đăng bản này?". Bấm đăng thật lên mạng xã
     hội chỉ khi David nói "đăng" (lá B11); không tự đăng.
-  - **Dọn:** David chốt bản cuối ("chốt", "đã chốt", "được rồi") là duyệt Đ2 cho việc dọn; chốt rồi thì dọn, đưa dự án lên Drive, xoá bản
-    trên máy theo `ky-nang/san-xuat-video/quy-tac-chung.md` mục 8, không hỏi lại. Chưa chốt thì giữ nguyên trên máy.
+  - **Dọn và xoá bản gốc:** chưa duyệt thì đưa đủ lên Drive, giữ bản gốc; David duyệt ("chốt") thì xoá bản gốc trên Drive và mọi thiết bị. Nguồn duy nhất của luật và cách làm lại tài nguyên đã có: `ky-nang/san-xuat-video/quy-tac-chung.md` mục 8.
   - **Người khác xuất hiện** (đối tác, khách; khách của công ty Veltrix): dựng được, giữ lời; ghi vào mục "Ghi chú đăng" của gói phát hành
     (ai xuất hiện, lằn ranh) để David biết, không hỏi.
 - **Đ3 — duyệt trước khi sửa thông tin về David** (`david.md`, hồ sơ, ghi nhớ David đã chốt), màu chủ đạo, chữ ký nhận diện: luôn trình
@@ -75,7 +74,7 @@ ghi cứng công cụ chỉ một máy có) · **Điểm duyệt** (Đ1 / Đ2 / 
 | A2 | cài bộ não lên máy mới (Mac, Windows qua WSL, Linux) | [huong-dan-cai-dat.md](huong-dan-cai-dat.md) · [tu-dong-hoa/may-khac/README.md](tu-dong-hoa/may-khac/README.md) | Đ1 trước khi cài; mật khẩu máy David tự gõ | `kiem-may.sh` ra "MÁY NÀY DỰNG GIỐNG MAC CHÍNH" |
 | A3 | "nhìn lại tuần", "tự học", "học từ kênh X", "học cái này thành quy trình" | [ky-nang/hoc-lien-tuc/SKILL.md](ky-nang/hoc-lien-tuc/SKILL.md) | phân tích không có; Đ1 trước khi sửa skill, giọng văn, luật kênh | theo mục "Xong khi" của skill |
 | A4 | "nâng cấp", "tái bản", luật chồng chéo, gom luật trùng | [hoc-lien-tuc Việc 4](ky-nang/hoc-lien-tuc/SKILL.md) · [ky-nang/tai-cau-truc/SKILL.md](ky-nang/tai-cau-truc/SKILL.md) | đo không có; Đ1 trước khi sửa (một bộ 4 phần cho cả đợt) | `do-chong-cheo.py` dưới ngưỡng mọi bộ, bản luật không còn câu trùng / ngược |
-| A5 | học, sửa, lưu thông tin mới vào bộ não (ghi nhớ, kiến thức, hồ sơ) | [co-so-tri-thuc/truc-tri-thuc.md](co-so-tri-thuc/truc-tri-thuc.md) · [quy ước liên kết](co-so-tri-thuc/quy-uoc-lien-ket.md) | Đ1; thông tin về David thêm Đ3 | ý ở đúng một nhà, có dòng ở `ban-do/`, máy kiểm link đạt |
+| A5 | học, sửa, lưu thông tin mới vào bộ não (ghi nhớ, kiến thức, hồ sơ) | [co-so-tri-thuc/truc-tri-thuc.md](co-so-tri-thuc/truc-tri-thuc.md) · [quy ước liên kết](co-so-tri-thuc/quy-uoc-lien-ket.md) | Đ1; thông tin về David thêm Đ3 | ý ở đúng một nguồn duy nhất, có dòng ở `ban-do/`, máy kiểm link đạt |
 | A6 | giao kết quả cho David | [phan-phoi-da-kenh bước 5](ky-nang/san-xuat-video/phan-phoi-da-kenh/SKILL.md) | giao không có; dọn / xoá file tạm, đưa dự án lên Drive: Đ2 (sau khi David chốt) | bản cuối ở nơi giao của máy (Mac: trang Chờ đăng + Drive; máy chỉ dựng video: Drive); David theo dõi từ xa thì gửi thêm bản nhẹ dưới 30 MB qua tệp đính kèm |
 | A7 | hỏi lại khi chưa rõ yêu cầu, trình 4 phần | [ky-nang/thu-thap-yeu-cau/SKILL.md](ky-nang/thu-thap-yeu-cau/SKILL.md) | chính là Đ1 | theo mục "Xong khi" của skill |
 | A8 | trước mọi việc chưa có đủ hình mẫu; "nghiên cứu hình mẫu", "xem người ta làm thế nào", "học từ người đã thành công" | [co-so-tri-thuc/hinh-mau/quy-trinh-nghien-cuu.md](co-so-tri-thuc/hinh-mau/quy-trinh-nghien-cuu.md) | không có cho phần nghiên cứu, ghi bản đồ (phần chuẩn bị); đưa vào skill, luật: Đ1 của việc chính | mục nhỏ có ít nhất 5 hình mẫu (việc lớn 10) đủ bốn cột, có ngày đo; nhật ký có mục mới; tin giao có 2–3 dòng đối chiếu |

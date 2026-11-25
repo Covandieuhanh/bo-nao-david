@@ -10,7 +10,7 @@ description: "Bản đồ hình mẫu của David: cây mục lớn → mục nh
 > riêng của mình… trong mục lớn có từng mục nhỏ, thì từng mục nhỏ dần dần sẽ tìm những cái hình mẫu thành công tương ứng như vậy, để
 > khi làm là có thứ để đối chiếu và có thứ để đánh giá cũng như là góp ý lại cho tôi luôn." — David, 23/11/2026
 
-## 1. Luật (nhà duy nhất của luật hình mẫu)
+## 1. Luật (nguồn duy nhất của luật hình mẫu)
 1. **Tra trước mọi việc** (quy trình gốc bước 2): mở file mục lớn của việc, tìm mục nhỏ. Có đủ hình mẫu thì làm theo cột "điều học được".
 2. **Chưa có hoặc chưa đủ thì nghiên cứu** theo [quy-trinh-nghien-cuu.md](quy-trinh-nghien-cuu.md) (cây quy trình lá A8): **ít nhất 5
    hình mẫu, việc lớn ít nhất 10**, càng nhiều càng tốt; ưu tiên mẫu có số liệu thành công kiểm được. Đây là phần chuẩn bị, làm trước

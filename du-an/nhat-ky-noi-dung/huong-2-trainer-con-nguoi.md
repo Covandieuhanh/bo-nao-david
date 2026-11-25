@@ -1,5 +1,5 @@
 ---
-description: "Nhật ký nội dung hướng 2 trainer con người (làm chủ bản thân, công việc, mối quan hệ; tiền, thị trường, con người của chính mình): ý tưởng rút từ từng tập, mới nhất ở cuối."
+description: "Nhật ký nội dung hướng 2 trainer con người (chỉ phát triển con người: làm chủ bản thân, mối quan hệ, dẫn người): ý tưởng rút từ từng tập, mới nhất ở cuối."
 ---
 
 # Nhật ký nội dung — Hướng 2: Trainer con người

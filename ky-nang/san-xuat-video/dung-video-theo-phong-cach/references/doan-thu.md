@@ -5,7 +5,7 @@ description: "Quy trình lá B5: dựng một đoạn thử ngắn để David x
 # Đoạn thử trước khi dựng cả video (cây quy trình lá B5)
 
 **Khi nào dùng:** David nói "render một đoạn ngắn cho tôi xem", "đừng render cả video vội"; hoặc vừa đổi luật thẩm mỹ, kiểu cảnh lớn mà
-video dài (từ khoảng 10 phút) — dựng đoạn thử trước, David duyệt rồi mới dựng cả video.
+video dài (đủ dài để dựng cả bản tốn nhiều công, Claude tự cân) — dựng đoạn thử trước, David duyệt rồi mới dựng cả video.
 
 **Đầu vào:** dự án gốc đã làm sạch, đã có phụ đề soát chữ (`tu-lieu/video-goc.mp4`, `chuyen-dong/src/phu-de.js`).
 Trong các lệnh dưới: `SKILL=~/Documents/bo-nao-david/ky-nang/san-xuat-video/dung-video-theo-phong-cach`.

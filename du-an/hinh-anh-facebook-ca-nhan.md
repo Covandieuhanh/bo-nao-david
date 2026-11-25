@@ -30,10 +30,10 @@ Người lướt qua trang hiểu ngay trong 5 giây: **David là trainer, giúp
 |---|---|---|---|
 | **1. AI cho doanh nghiệp** | công nghệ | một việc lặp lại làm tổ chức mất thời gian, tiền → cách số hoá → kết quả | câu hỏi mở mời kể |
 | **2. Con người, dẫn đội** | con người | chỗ kẹt của người lần đầu dẫn người, ba tầng làm chủ | câu hỏi mở mời kể |
-| **3. Đời thường, hành trình** | đời thường | cuộc sống, nhịp làm việc theo đợt năng lượng, hành trình nghề | câu hỏi nhẹ hoặc không |
+| ~~3. Đời thường, hành trình~~ | bỏ từ 25/11/2026 | ngoài ba hướng thì không đăng; hành trình dẫn tới một hướng thì xếp vào trụ của hướng đó, chưa rõ thì hỏi David | — |
 | **4. Kết quả thật** | công nghệ (chính) | trước / sau: hệ tự động của chính David, ca khách ẩn danh, lời chứng | câu hỏi mở mời kể |
 
-- **Tỉ lệ:** công nghệ (trụ 1 + 4) khoảng 50% · con người khoảng 30% · đời thường khoảng 20%. Tỉ lệ tính trên 4 bài viết kèm ảnh mỗi tuần; video không tính vào lịch (mục Video sẵn, `lich-dang-bai.md`).
+- **Tỉ lệ:** chia giữa công nghệ (trụ 1 + 4) và con người (trụ 2) theo nội dung đang có (bỏ phần đời thường từ 25/11/2026). Tỉ lệ tính trên 4 bài viết kèm ảnh mỗi tuần; video không tính vào lịch (mục Video sẵn, `lich-dang-bai.md`).
 - **Dẫn dắt:** bài viết kèm ảnh luôn kết bằng gợi mở chia sẻ (mục 4), không lời mời từ khoá; bài video theo tỉ lệ Không · Gợi mở · Mời 4 · 4 · 2 (`kenh.json`). Không nói giá, không hứa kết quả chưa làm ra.
 - **Không đăng ở đây:** tài chính, giao dịch hàng hoá (chỉ YouTube David Trần Official).
 - **Lằn ranh:** ca khách chỉ đăng khi David đưa chi tiết; tên khách ẩn trừ khi khách đồng ý; không nêu tên đơn vị phía sau.

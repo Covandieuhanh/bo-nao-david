@@ -1,16 +1,16 @@
 ---
 name: hoc-lien-tuc
-description: Tự học và cải tiến liên tục bộ skill của David (học từ cách Hermes tự học, nhưng một nhà, có số liệu, ít token). Bốn việc — (1) NHÌN LẠI TUẦN từ tín hiệu máy ghi cuối mỗi phiên (lời David sửa, skill dùng, lỗi) để sửa skill đúng chỗ, cập nhật giọng văn, dọn ghi nhớ và skill thừa; (2) HỌC TỪ HÌNH MẪU cùng thể loại đang có kết quả tốt nhất, đo bằng số liệu, rồi nâng cấp skill và luật kênh; (3) HỌC THÀNH SKILL từ một nguồn hay quy trình vừa làm; (4) NÂNG CẤP định kỳ cả bộ não như R&D: đo trước, chưng cất luật lẻ thành nguyên lý, tỉa cái không giúp, dọn trùng / rối (tai-cau-truc), đo sau, chỉ ra bản mới khi bằng hoặc tốt hơn. Phân tích tự chạy; phần sửa skill, giọng văn, luật kênh trình 4 phần cho David duyệt rồi mới sửa. Dùng khi máy gửi [TU-HOC], khi David nói "nhìn lại tuần", "tự học", "cải tiến skill", "học thành skill", "học từ kênh X", "học cái này thành quy trình", "nâng cấp", "nâng cấp bộ não", "tái bản", "/hoc-lien-tuc", hoặc khi máy đo chồng chéo báo "NÊN NÂNG CẤP".
+description: Tự học và cải tiến liên tục bộ skill của David (học từ cách Hermes tự học, nhưng một nguồn duy nhất, có số liệu, ít token). Bốn việc — (1) NHÌN LẠI TUẦN từ tín hiệu máy ghi cuối mỗi phiên (lời David sửa, skill dùng, lỗi) để sửa skill đúng chỗ, cập nhật giọng văn, dọn ghi nhớ và skill thừa; (2) HỌC TỪ HÌNH MẪU cùng thể loại đang có kết quả tốt nhất, đo bằng số liệu, rồi nâng cấp skill và luật kênh; (3) HỌC THÀNH SKILL từ một nguồn hay quy trình vừa làm; (4) NÂNG CẤP định kỳ cả bộ não như R&D: đo trước, chưng cất luật lẻ thành nguyên lý, cắt giảm cái không giúp, dọn trùng / rối (tai-cau-truc), đo sau, chỉ ra bản mới khi bằng hoặc tốt hơn. Phân tích tự chạy; phần sửa skill, giọng văn, luật kênh trình 4 phần cho David duyệt rồi mới sửa. Dùng khi máy gửi [TU-HOC], khi David nói "nhìn lại tuần", "tự học", "cải tiến skill", "học thành skill", "học từ kênh X", "học cái này thành quy trình", "nâng cấp", "nâng cấp bộ não", "tái bản", "/hoc-lien-tuc", hoặc khi máy đo chồng chéo báo "NÊN NÂNG CẤP".
 ---
 
 # Tự học, cải tiến skill
 
-Đọc trước: `co-so-tri-thuc/truc-tri-thuc.md` (trục: bốn tầng, luật đi lên, ba vòng học, bốn thước — skill này là vòng "mỗi tuần" và "Nâng cấp") · `ky-nang/chuan-muc-lam-viec.md`. Luật nền: `AGENTS.md` luật 2 (việc gì cũng duyệt 4 phần trước; tự học tự phân tích, phần sửa trình 4 phần).
+Đọc trước: `co-so-tri-thuc/truc-tri-thuc.md` (trục: bốn tầng, luật thăng cấp, ba vòng học, bốn thước — skill này là vòng "mỗi tuần" và "Nâng cấp") · `ky-nang/chuan-muc-lam-viec.md`. Luật nền: `AGENTS.md` luật 2 (việc gì cũng duyệt 4 phần trước; tự học tự phân tích, phần sửa trình 4 phần).
 
 **Mục tiêu:** mỗi tuần bộ skill làm ra kết quả tốt hơn tuần trước (đo bằng số liệu kênh và số lần David phải sửa), tốn ít token nhất.
 Học càng nhiều thì bộ não càng lớn, và lớn là đúng; việc của skill này là giữ cho nó **càng lớn càng dễ hiểu, càng làm đúng**.
 
-Ba vòng học (mỗi việc · mỗi tuần · Nâng cấp) và luật đi lên giữa các tầng: trục mục 4–5. Skill này làm vòng tuần (Việc 1–3) và Nâng cấp (Việc 4).
+Ba vòng học (mỗi việc · mỗi tuần · Nâng cấp) và luật thăng cấp giữa các tầng: trục mục 4–5. Skill này làm vòng tuần (Việc 1–3) và Nâng cấp (Việc 4).
 
 ## Duyệt 4 phần rồi mới sửa
 
@@ -23,7 +23,7 @@ Quy trình · Thực thi), gửi David `bao-cao.sh "#N ❓ Chờ anh duyệt 4 p
 - **Không bao giờ phá:** chữ trên video là nguyên văn lời David (phụ đề, mô tả, motion graphics); quyền riêng tư (mật khẩu, OTP, token).
 
 ## Cách sửa một skill (mọi việc dưới đây dùng chung)
-1. Tìm **đúng một nhà** của luật (mỗi luật một chỗ, `chuan-muc-lam-viec.md`); sửa thẳng câu cũ, không chồng lớp ("lời mới nhất thắng").
+1. Tìm **đúng một nguồn duy nhất** của luật (mỗi luật một chỗ, `chuan-muc-lam-viec.md`); sửa thẳng câu cũ, không chồng lớp ("lời mới nhất thắng").
 2. Ghi changelog của skill đó (`references/nhat-ky-thay-doi.md`, chưa có thì tạo): ngày · sửa gì · **vì sao** (tín hiệu nào / hình mẫu + số liệu nào).
 3. Đẩy GitHub (`bash tu-dong-hoa/dong-bo.sh --push`). Báo David **một dòng mỗi thay đổi**: `Đã sửa <skill>: <điều đổi> (vì <bằng chứng>).`
 4. Chạy máy đo chồng chéo (`python3 -I ky-nang/tai-cau-truc/do-chong-cheo.py`) khi sửa từ 5 chỗ trở lên trong tuần; báo "NÊN NÂNG CẤP" thì nhắc David một dòng (Việc 4).
@@ -78,11 +78,11 @@ Thước đo nào chưa có dữ liệu (chưa đủ video có số liệu, dự
 2. **Chưng cất:** đọc phiếu tuần, sổ quyết định, ghi nhớ từ lần nâng cấp trước. Nhóm các luật lẻ **cùng một gốc** (cùng cái khó của
    người xem, cùng lý do) thành **một nguyên lý + 1–3 ca mẫu** ở nhà chung; luật lẻ trở thành ví dụ của nguyên lý (cách tầng
    `nguoi-xem-can-gi.md` + `giai-mau.md` đã làm). Giữ đúng nghĩa luật David đã chốt; không thêm luật mới.
-3. **Tỉa:** luật, kiểu cảnh, skill không được dùng từ lần trước (`dem-ky-nang.py`, kiểu không xuất hiện trong `ke-hoach-canh.md` các dự án)
+3. **Cắt giảm:** luật, kiểu cảnh, skill không được dùng từ lần trước (`dem-ky-nang.py`, kiểu không xuất hiện trong `ke-hoach-canh.md` các dự án)
    hoặc số liệu cho thấy không giúp thì đề xuất gộp, bỏ hoặc cất `luu-tru/`. Không tự bỏ.
-4. **Dọn:** skill `tai-cau-truc` (bảng luật đang sống, mỗi luật một nhà, ngày về sổ, dọn ghi nhớ).
+4. **Dọn:** skill `tai-cau-truc` (bảng luật đang sống, mỗi luật một nguồn duy nhất, ngày về sổ, dọn ghi nhớ).
 5. **Đo sau + ra bản:** chạy lại bảng thước đo. Đạt thì `git tag nang-cap-<n>`, một dòng ở `ky-nang/tai-cau-truc/lich-su.md`, chỉnh ngưỡng
-   `bo.json` nếu lệch, đẩy GitHub, báo David: chưng cất gì, tỉa gì, thước đo trước và sau, chưa đo gì. Kém hơn ở một dòng thì sửa chỗ gây
+   `bo.json` nếu lệch, đẩy GitHub, báo David: chưng cất gì, cắt giảm gì, thước đo trước và sau, chưa đo gì. Kém hơn ở một dòng thì sửa chỗ gây
    ra, hoặc quay về mốc `nang-cap-<n>-truoc`, ghi bài học vào file theo dõi.
 
 Bước 2–3 là phần sửa: gom thành **một bộ 4 phần** (mục "Duyệt 4 phần") trước khi sửa. Thước đo 1 (người xem) thường chỉ đo lại được
@@ -95,7 +95,7 @@ sau vài video: ra bản khi 2–5 đạt, ghi giả thuyết cho thước 1 và
 
 ## Xong khi
 - **Việc 1 (nhìn lại tuần):** có bộ 4 phần gửi David (hoặc báo "tuần này không có gì cần sửa" kèm số tín hiệu đã đọc); sửa đã duyệt nằm ở
-  đúng một nhà, có dòng changelog, đã đẩy GitHub, báo David một dòng mỗi thay đổi.
+  đúng một nguồn duy nhất, có dòng changelog, đã đẩy GitHub, báo David một dòng mỗi thay đổi.
 - **Việc 2 (học hình mẫu):** phiếu học có số liệu đo kèm ngày đo, mỗi cách học có dấu hiệu nhận ra và nguồn; phần đưa vào skill đã duyệt và có code / luật thật.
 - **Việc 3 (học thành skill):** cách làm thành một lá trong cây quy trình `quy-trinh.md` (file quy trình đủ khung, script trong repo), chạy thử
   một lần ra đúng kết quả.

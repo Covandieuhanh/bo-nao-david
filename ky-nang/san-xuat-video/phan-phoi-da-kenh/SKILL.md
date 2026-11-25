@@ -21,7 +21,7 @@ không ưng thì góp ý rồi render lại toàn bộ. Chỉ **bấm đăng lê
 ## Quy trình (sau khi duyệt 4 phần: một mạch, không dừng chờ)
 | # | Bước | Đọc / dùng |
 |---|---|---|
-| 0 | **Nhận tài nguyên** (link Drive / YouTube, file trong chat, Drive `tu-lieu-goc`: `references/nhan-tai-nguyen.md`) → `~/Movies/tap-<ten>/1-goc/`. Chép lời, đo độ dài, khung, chất lượng | khối 01 |
+| 0 | **Nhận tài nguyên** (link Drive / YouTube, file trong chat, Drive `tu-lieu-goc`: `references/nhan-tai-nguyen.md`) → `~/Movies/tap-<ten>/1-goc/`. Chép lời **theo từng khúc ngắn rồi hợp nhất** (`dung-video-theo-phong-cach/scripts/chep-theo-khuc.py`, chính xác hơn chép cả file nhất là nơi ồn); đo độ dài, khung, chất lượng | khối 01 |
 | 1 | **Lọc + phân hướng** (ghi phiếu vào dự án; phiếu là nguồn của 4 phần, không có cổng duyệt riêng): chia đoạn theo ý, gán đủ ba hướng, mỗi hướng có ý trọn ra một bản riêng (khối 00 mục 0b) → ghi `phan-huong.md` của tập + mục nhật ký từng hướng `du-an/nhat-ky-noi-dung/` (luôn ghi, kể cả tập không dựng); đối chiếu kho 100 video, 5 tiêu chí, lằn ranh, kết luận, kênh, giờ, loại dựng. Bước 2–4 làm cho từng bản theo hướng. ⛔ / 👤 / 🗂 → không dựng, chỉ ghi sổ, báo một dòng; lằn ranh → không lấy đoạn đó làm chữ đồ hoạ, tiêu đề, mô tả | khối 00 · `du-an/ke-hoach-noi-dung-100-video.md` · `../ho-so-thuong-hieu/kenh.json` · sổ `~/Movies/_danh-muc-noi-dung/danh-muc-noi-dung.md` |
 | 2 | **Dựng bản dài** theo loại (`dung-video-theo-phong-cach` / `dung-podcast`); nhiều file cùng một buổi nói → nối file, dựng khuôn 1 video; mỗi bản theo hướng chẩn đoán riêng (`../thiet-ke-bo-cuc/tu-chon.md`, không chép kịch bản bản khác). Trong lúc render chạy nền: soạn bài đăng (bước 3) và chọn ý clip ngắn | skill dựng |
 | 3 | **Bài đăng** từng kênh vào `phat-hanh/phat-hanh.md`: YouTube (3 tiêu đề, mô tả, chương, thumbnail nếu ngang) · Reels / bài trang · TikTok caption · câu chia sẻ Facebook cá nhân · bình luận ghim · bài Mời "gỡ" theo tỉ lệ | khối 15 · `../ho-so-thuong-hieu/giong-thuong-hieu-david.md` |
@@ -38,6 +38,7 @@ Bước *(bước nhẹ)*: nhắc đổi mô hình rẻ hơn (`../../chuan-muc-l
 - Luật an toàn khi đăng (mật khẩu, cài đặt tài khoản, chỉ đăng đúng bản David bảo đăng): khối 19.
 - **Sổ danh mục là nơi duy nhất ghi trạng thái** (lọc → dựng → xong → đã đăng + link).
 - **Máy chỉ dựng video** (`~/.claude/vai-may` ghi `chi-video`: Windows qua WSL2, Mac khác): bước 0–6 làm y như Mac chính. Giao bằng Drive (`cho-dang.sh gui tap-<ten>`); không có trang xem kết quả và không có bot Telegram (`bao-cao.sh` chỉ ở repo riêng của Mac): bỏ bước báo Telegram, báo kết quả ngay trong chat. Bước 7 (đăng) chỉ làm ở Mac chính: báo David mở Mac chính và nói "đăng". Video gốc trên Drive đọc ở `/mnt/<ổ>/My Drive/...`.
+- **Xác định David trong khung trước khi gắn nhãn** (David 25/11/2026: đã có rất nhiều ảnh và video mặt David thì không được để "chưa phân biệt được ai là David"): trước phân hướng, mở ảnh mẫu mặt David ở Drive `Tài nguyên làm video/mau-mat-david/` (và khung các tập cũ đã dựng) rồi so với khung của tập; ghi vào `phan-huong.md` "David là người … (vị trí, đặc điểm)". Người còn lại là người khác (đối tác / khách). Không suy từ nội dung lời nói khi so được bằng hình.
 - Báo cuối gọn: ở đâu (trang xem kết quả + Drive), đã chọn X vì Y, tên riêng cần xác nhận, cảnh báo (lệch nhánh, thiếu bài Mời, kho < 4 video, lịch trống).
 
 ## Xong khi

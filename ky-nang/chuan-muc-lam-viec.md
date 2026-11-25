@@ -14,6 +14,8 @@ File này giữ các thói quen **dùng chung cho mọi skill**. Luật riêng c
    nhau thì bên có ngày chốt mới hơn (theo sổ: changelog, git) thắng. Chỗ lệch thường do một chỗ chưa được cập nhật, không phải ý David.
 3. Luật còn mơ hồ thì xem **sản phẩm mới nhất David đã duyệt** làm chứng cứ, rồi hỏi nếu vẫn chưa rõ.
 
+**Phù hợp với nội dung là chìa khoá, không gì cố định** (David 25/11/2026): thời lượng, nhạc, hiệu ứng, số cảnh, số clip, mọi phần khi dựng đều chọn theo chính nội dung; không có luật kiểu "mỗi video một bài nhạc" hay "phải bao nhiêu phút". Thời lượng video (và mọi độ dài) do Claude tự chọn; quy trình không bao giờ đặt "phải bao nhiêu phút". Con số ở hồ sơ hay skill chỉ là mặc định gợi ý, thấy không hợp nội dung thì theo sự phù hợp và ghi "đã chọn X vì Y" (David 25/11/2026).
+
 **Phần AI làm thì sáng tạo hết sức:** khung (bước, luật, tiêu chí đạt) và nhận diện lớn là cố định; bên trong mỗi bước cần phán đoán
 thì sáng tạo cho hợp nội dung đang làm, không dập khuôn, không lặp cách cũ. Danh mục có sẵn là công cụ, không phải khuôn.
 Luật nội dung (nguyên văn lời David, giọng David, lằn ranh) không phải khuôn — vẫn giữ.
@@ -23,6 +25,7 @@ Luật nội dung (nguyên văn lời David, giọng David, lằn ranh) không p
 
 ## 1. Đầu việc: đọc đúng phần cần
 - Đặt **Mục tiêu** và **Xong khi** cho việc (mục 5).
+- **Tra quy trình trước mọi việc để chuẩn hoá** (`quy-trinh.md`: gốc rồi đúng lá). Việc có tài nguyên (video, ghi âm, bài viết): **tra sổ danh mục `~/Movies/_danh-muc-noi-dung/danh-muc-noi-dung.md` trước tiên** xem tài nguyên đã làm chưa; đã làm thì làm lại và **bản mới nhất thay bản cũ** (David 25/11/2026), ghi rõ trong sổ.
 - **Tra hình mẫu trước khi làm:** không có gì chưa có người làm; mở `../co-so-tri-thuc/hinh-mau/README.md`, tìm mục nhỏ của việc,
   chưa đủ hình mẫu thì nghiên cứu (lá A8). Sao chép cái đã thành công, cải tiến, rồi thành của David.
 - Đi theo đường: cây quy trình `quy-trinh.md` (gốc, rồi đúng lá của việc) → file quy trình của lá → chỉ những khối, hồ sơ mà bước đang làm cần.
@@ -68,11 +71,19 @@ Trong 4 phần, cách chọn từng điểm:
 - **Công cụ David đã cài là để nâng skill:** thấy công cụ trên máy giúp việc tốt hơn mà skill chưa dùng thì đề xuất tích hợp (diễn giải
   ngắn trước khi sửa skill), giữ cách cũ làm dự phòng khi công cụ lỗi.
 - **Không dùng mod giao diện:** không cài mod, plugin vẽ bảng hay thanh tiến độ, dòng trên ô nhập; chỉ giữ plugin Telegram. Muốn mod mới thì hỏi David trước.
+- **Một bộ não, cùng kết quả trên mọi thiết bị** (David 25/11/2026): Mac, Windows hay máy nào cũng làm theo cùng bộ não GitHub và ra kết quả giống nhau; công cụ dùng loại nào cũng được miễn kết quả như nhau. Đầu phiên: `bash tu-dong-hoa/dong-bo.sh --keo`, chạy máy kiểm của máy (`kiem-may.sh` / `kiem-moi-truong.sh`). Chỉ làm việc trên MỘT bản bộ não của môi trường chạy lệnh (Mac: `~/Documents/bo-nao-david`; Windows: trong WSL `~/Documents/bo-nao-david`); bản thứ hai nếu có (vd. thư mục Windows) chỉ để đọc, không ghi nhật ký, luật hay kết quả vào đó. Lệnh dài chạy bằng tệp lệnh viết sẵn, không gõ trực tiếp qua PowerShell (làm hỏng tiếng Việt và khoảng trắng đường dẫn).
 - **Thêm việc không phá việc cũ:** bổ sung việc, tính năng mới thì việc cũ phải chạy y như trước. Chỉ đổi phần cũ khi 4 phần đã duyệt ghi rõ. Sửa thứ dùng chung (script lịch, máy canh, hook) thì tự thử lại việc cũ trước khi báo xong. Mọi thứ phải tự động, không trông vào David bấm tay (ghi nhớ `quy-tac-them-viec-khong-pha-viec-cu`).
 - Đăng, gửi, xoá, mật khẩu: `AGENTS.md` luật 4.
 
+**Khi gặp vấn đề: xử lý để lần sau không phạm lại** (David 25/11/2026: "đó là giá trị của lưu file"). Gốc: `tu-duy-goc.md` khối 2 (vòng kết quả hoặc vấn đề). Năm bước, lần nào cũng vậy:
+1. **Ghi hiện tượng** đúng như thấy (thấy gì, ở đâu, lúc nào), không đoán.
+2. **Tìm nguyên nhân gốc:** hỏi "vì sao" tới chỗ sửa được; xem chính sản phẩm, chính code, chính tài liệu.
+3. **Phân loại:** cách làm (xử lý ngay) hay giả định của kế hoạch (quay lại kế hoạch).
+4. **Xử lý** cái đang hỏng.
+5. **Chặn lặp lại ở chỗ mạnh nhất có thể:** công cụ tự dừng hoặc tự kiểm > câu kiểm trong bộ kiểm > một dòng luật. Rồi ghi ca vào `loi-thuong-gap.md` (hoặc sổ của bộ đó) và một dòng nhật ký thay đổi. Báo David cả nguyên nhân lẫn chỗ đã chặn.
+
 ## 4. Cuối việc
-Ghi lại gì, ở đâu, đi lên tầng nào: trục `../co-so-tri-thuc/truc-tri-thuc.md` (mục này là vòng học "mỗi việc" của trục).
+Ghi lại gì, ở đâu, thăng cấp tầng nào: trục `../co-so-tri-thuc/truc-tri-thuc.md` (mục này là vòng học "mỗi việc" của trục).
 - **Tự soát trước khi báo xong:** (1) kiểm theo "Xong khi" và tiêu chí của skill; (2) tự hỏi "đã xong hết chưa?" rồi quét lại một lượt
   tìm chỗ sót; (3) đổi tên, đổi cấu trúc, đổi luồng thì chạy thử trọn một quy trình thật trước khi báo, vì lỗi hay nằm ở chỗ ghép nối;
   (4) việc phức tạp, rủi ro cao: đề nghị một agent chưa tham gia việc soát lại, chỉ bắt lỗi làm sai yêu cầu (cần David cho phép, mục 3);
@@ -84,7 +95,8 @@ Ghi lại gì, ở đâu, đi lên tầng nào: trục `../co-so-tri-thuc/truc-t
 - **Báo lên Telegram** khi xong một việc trọn vẹn (render xong, đăng xong, sửa bộ não xong…) hoặc khi kẹt cần David quyết, không báo
   sau mỗi lượt: `bash tu-dong-hoa/so-tay/bao-cao.sh "✅ Xong: … · Ở đâu: … · Còn lại: …"` hoặc `"❓ Chờ anh: …"`, tối đa 5 dòng. Việc giao
   qua Telegram thì mở đầu bằng số việc `#N`. Máy chỉ dựng video (`~/.claude/vai-may` ghi `chi-video`) không có `bao-cao.sh`: bỏ bước này, báo trong chat. Chi tiết: `tu-dong-hoa/so-tay/README.md` (chỉ Mac chính).
-- **Nhắc lần hai thì thành luật ngay:** David phải nhắc lại một điều lần thứ hai thì sửa ngay đúng nhà của luật đó, không đợi lượt nhìn lại tuần
+- **Càng làm càng cải tiến, như tự học** (David 25/11/2026): cuối mỗi việc tự hỏi "lần sau làm thế nào nhanh hơn, chuẩn hơn?"; thấy cách tốt hơn (công cụ, thứ tự bước, cách kiểm) thì đề xuất sửa vào đúng lá / skill (theo `ky-nang/hoc-lien-tuc/SKILL.md`), không để người sau lặp lại chỗ vấp. Ví dụ: chép lời theo từng khúc ngắn ngay từ đầu thay vì cả file rồi sửa lại.
+- **Nhắc lần hai thì thành luật ngay:** David phải nhắc lại một điều lần thứ hai thì sửa ngay đúng nguồn của luật đó, không đợi lượt nhìn lại tuần
   (skill, giọng văn, luật kênh, thông tin về David: đề xuất trong 4 phần, chờ "duyệt").
 - **Góp ý của David ghi đúng một chỗ:** sửa skill hoặc khối bị ảnh hưởng + một dòng nhật ký (`changelog` của skill, hoặc mục "Nhật ký");
   lỗi David phải sửa thì thêm một câu kiểm vào bộ kiểm của bộ đó (trục mục 4).
@@ -138,3 +150,10 @@ Ghi lại gì, ở đâu, đi lên tầng nào: trục `../co-so-tri-thuc/truc-t
 **Thói quen của David** (để Claude biết mà nhắc): mỗi việc một phiên · xong thì "cập nhật não" rồi đóng · làm liền một mạch ·
 nói đủ việc, file, kết quả trong một tin nhắn · gộp việc nhỏ · vòng hỏi trả lời gộp ("đồng ý cả 5", chỉ nêu câu muốn đổi) ·
 đưa đường dẫn thay vì dán · nói "chỉ chụp 2–3 khung" khi muốn kiểm nhanh.
+
+## 6. Tài liệu và nguồn (chuyển từ `co-so-tri-thuc/david.md` mục 3, 25/11/2026)
+
+1. **Tài liệu nghiên cứu phải dịch đúng thuật ngữ chuyên ngành:** tên khung, quy trình, bước bằng tiếng Anh lấy **chính xác** như nguồn rồi dịch sang tiếng Việt. Mỗi thuật ngữ chỉ một bản dịch, dùng thống nhất.
+2. **Tài liệu tổng hợp về một tổ chức chỉ gồm nội dung của tổ chức đó**, không lẫn phần áp dụng cho David hay nguồn ngoài.
+3. **Tài liệu do AI khác viết:** lấy khung của Claude làm chuẩn, tài liệu kia chỉ để bổ sung, và phải kiểm tra nguồn gốc trước khi thêm.
+4. **Sách tự mua**, không dùng bản trôi nổi trên mạng.

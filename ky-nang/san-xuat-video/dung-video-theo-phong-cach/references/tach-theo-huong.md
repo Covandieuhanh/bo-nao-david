@@ -18,13 +18,13 @@ bước 0–1; bước 3 trở đi (cắt, dựng, phát hành) chỉ làm sau k
 
 ### 1. Làm sạch + chép lời buổi gốc một lần
 Công thức "Làm video" bước 1–6 của `SKILL.md` cho cả buổi (một dự án `tap-<buổi>`): làm sạch theo khối 02 (video dài giữ nguyên lời,
-`quy-tac-chung.md` mục 2), chép lời và soát chữ ra `chuyen-dong/src/phu-de.js`. Các video tách ra dùng lại đúng phụ đề này, không chép lời lại.
+`quy-tac-chung.md` mục 2), chép lời **theo từng khúc ngắn** (`scripts/chep-theo-khuc.py`) rồi soát chữ ra `chuyen-dong/src/phu-de.js` TRƯỚC khi cắt (làm sau phải render lại). Các video tách ra dùng lại đúng phụ đề này, không chép lời lại.
 
 ### 2. Phân hướng theo khối 00 mục 0b (bắt buộc)
 Chia đoạn, gán hướng, ghép trọn ý, ghi `<thư mục tập>/phan-huong.md` + nhật ký nội dung từng hướng (`du-an/nhat-ky-noi-dung/`), đối chiếu
 kho 100 với hướng trainer: làm đúng [khối 00 mục 0b](../../mo-dun/00-sang-loc-noi-dung/README.md). Thêm khi tách từ một buổi dài:
 - In lời theo khối 20 giây (mốc + chữ) để đọc hết một lượt; đoạn **thừa** gồm cả đoạn cầm máy cho xem màn hình mà máy quay không thấy.
-- Phần đời thường / hành trình của David không thuộc hẳn hướng nào ra được bản riêng "nhân hiệu" (cây nội dung kênh trainer, khối 00 mục 1).
+- Phần đời thường / hành trình của David không thuộc hướng nào thì **không dùng**; chưa xếp được thì hỏi David (`mo-hinh-kinh-doanh.md` mục 1b). Hành trình dẫn tới phát triển con người thì thuộc hướng 2.
 - Mốc mỗi đoạn lấy **đúng đầu / cuối câu** trong phụ đề (in các dòng quanh mốc để chọn).
 - **Lằn ranh** (khối 00 mục 3): mặc định giữ lời; liệt kê từng câu trong 4 phần cho David chọn giữ hay cắt. David chọn cắt thì tách đoạn
   bỏ riêng câu đó. Người khác xuất hiện (đối tác, khách): ghi vào mục "Ghi chú đăng" của gói phát hành, không hỏi, kể cả khách của công ty Veltrix
@@ -47,7 +47,7 @@ Mỗi video ra `~/Movies/tap-<tên>/2-ban-day-du` có sẵn video gốc đã n�
 - `node $SKILL/scripts/soat-canh.mjs <dự án>`, rồi `bash $SKILL/scripts/anh-kiem-canh.sh <dự án>` (lưới ảnh mỗi cảnh trên khung thật),
   soát bằng mắt: không che ai, chữ đọc được.
 - Render: `cd <dự án>/chuyen-dong && node xuat-video.mjs`, rồi `python3 -I $SKILL/scripts/xem-truoc-ban-dung.py <dự án>`; video từ
-  dài hơn 10 phút thì thêm teaser (hồ sơ chung `teaser_khi_dai_hon_s`) `doan-gioi-thieu.py <dự án> <từ-đến> …` (mốc trong video đã cắt = `g(giây gốc)`); video ngắn bỏ teaser.
+  đủ dài để cần lời mời xem tiếp thì thêm teaser (Claude tự quyết; số `teaser_khi_dai_hon_s` ở hồ sơ chỉ là gợi ý) `doan-gioi-thieu.py <dự án> <từ-đến> …` (mốc trong video đã cắt = `g(giây gốc)`); video ngắn bỏ teaser.
 
 ### 5. Clip ngắn, phát hành, giao
 - Clip ngắn mỗi video theo `phan-phoi-da-kenh` bước 4 (`cat-doan-noi-bat`), trừ khi David nói không cần.

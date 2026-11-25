@@ -11,7 +11,7 @@ câu nói; David không cần bản cho app chỉnh sửa (CapCut/DaVinci). Các
 mốc lời Whisper, render clip nền trong suốt rồi ghép lên video gốc.
 
 **Duyệt 4 phần trước** (`../../chuan-muc-lam-viec.md` mục 2), duyệt rồi không hỏi thêm: chạy một mạch từ video gốc tới bản cuối. Khung xuất = khung gốc (bảng "Khung xuất");
-video > 3 phút làm đủ gói YouTube (màn kết, chương, thumbnail khi ngang; teaser khi > 10 phút); chữ bìa, cảnh minh hoạ chính, tuyến nhạc Claude tự chọn
+video > 3 phút làm đủ gói YouTube (màn kết, chương, thumbnail khi ngang; teaser khi video đủ dài, Claude tự quyết); chữ bìa, cảnh minh hoạ chính, tuyến nhạc Claude tự chọn
 theo khối. Dừng giữa chừng, báo cáo "đã chọn X vì Y", góp ý thì render lại toàn bộ: `quy-tac-chung.md` mục 8.
 
 ## Nhịp làm (mục tiêu: video 10 phút xong trong khoảng 1 giờ)

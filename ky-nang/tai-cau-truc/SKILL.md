@@ -1,14 +1,14 @@
 ---
 name: tai-cau-truc
-description: Dọn luật — bước 4 của vòng NÂNG CẤP bộ não (hoc-lien-tuc Việc 4). Gom luật đang sống của cả bộ não (mọi bộ skill + ghi nhớ, một đợt) rồi viết lại bản sạch: mỗi luật một nhà, không ngày, không "thay luật cũ", không câu trùng hay tự mâu thuẫn; lịch sử về sổ quyết định. Có máy đo chồng chéo (do-chong-cheo.py): chỉ kêu vì trùng / rối, không vì bộ não dài ra. Dùng khi đang ở bước Dọn của một đợt nâng cấp, khi David nói "gom luật", "luật bị chồng chéo", "viết lại toàn bộ luật", "/tai-cau-truc"; David nói "nâng cấp" hay "tái bản" thì bắt đầu từ hoc-lien-tuc Việc 4.
+description: Dọn luật — bước 4 của vòng NÂNG CẤP bộ não (hoc-lien-tuc Việc 4). Gom luật đang sống của cả bộ não (mọi bộ skill + ghi nhớ, một đợt) rồi viết lại bản sạch: mỗi luật một nguồn duy nhất, không ngày, không "thay luật cũ", không câu trùng hay tự mâu thuẫn; lịch sử về sổ quyết định. Có máy đo chồng chéo (do-chong-cheo.py): chỉ kêu vì trùng / rối, không vì bộ não dài ra. Dùng khi đang ở bước Dọn của một đợt nâng cấp, khi David nói "gom luật", "luật bị chồng chéo", "viết lại toàn bộ luật", "/tai-cau-truc"; David nói "nâng cấp" hay "tái bản" thì bắt đầu từ hoc-lien-tuc Việc 4.
 ---
 
 # Dọn luật (bước 4 của Nâng cấp)
 
-**Đọc trước:** `../../co-so-tri-thuc/truc-tri-thuc.md` (mục 2: mỗi ý một nhà ở tầng 1–2) · `../chuan-muc-lam-viec.md` (mục 4 "sửa thẳng, không chồng câu" — dọn là bước định kỳ của luật đó) · vòng nâng cấp:
-`../hoc-lien-tuc/SKILL.md` Việc 4 (mốc, thước đo trước / sau, chưng cất, tỉa, ra bản nằm ở đó).
+**Đọc trước:** `../../co-so-tri-thuc/truc-tri-thuc.md` (mục 2: mỗi ý một nguồn duy nhất ở tầng 1–2) · `../chuan-muc-lam-viec.md` (mục 4 "sửa thẳng, không chồng câu" — dọn là bước định kỳ của luật đó) · vòng nâng cấp:
+`../hoc-lien-tuc/SKILL.md` Việc 4 (mốc, thước đo trước / sau, chưng cất, cắt giảm, ra bản nằm ở đó).
 
-**Mục tiêu:** gom các bản trùng, ý trùng viết theo nhiều cách về một nhà, gỡ chỗ rối — không phải làm bộ não ngắn đi. Dù đã học, sửa
+**Mục tiêu:** gom các bản trùng, ý trùng viết theo nhiều cách về một nguồn duy nhất, gỡ chỗ rối — không phải làm bộ não ngắn đi. Dù đã học, sửa
 bao nhiêu lớp, lúc làm việc AI chỉ đọc **một bản luật hiện hành**, đọc một lần là làm đúng, không phải tự đoán câu nào còn hiệu lực.
 
 ## Ba loại file (định nghĩa từng bộ ở `bo.json`)
@@ -39,9 +39,9 @@ python3 -I ky-nang/tai-cau-truc/do-chong-cheo.py [--chi-tiet]
    `luật · nhà nên ở · nguồn hiện tại (file:dòng, có thể nhiều) · ngày chốt gần nhất · trạng thái (sống / trùng / ngược / cũ)`.
    Bắt đầu từ các cặp `gan_trung` của máy đo (`--chi-tiet`). Luật ngược nhau: theo `chuan-muc-lam-viec.md` mục 0 (lời David vừa nói >
    ngày chốt gần nhất > cũ); chỗ vẫn không rõ thì gom lại **hỏi David một lần** (thu-thap-yeu-cau), có đề xuất. Không tự bỏ luật nào
-   David đã chốt mà không có luật mới hơn thay. Luật đụng bộ khác thì ghi mục "Chéo bộ"; phiên điều phối chốt nhà duy nhất.
+   David đã chốt mà không có luật mới hơn thay. Luật đụng bộ khác thì ghi mục "Chéo bộ"; phiên điều phối chốt nguồn duy nhất.
 3. **Viết lại từ bảng, không vá:**
-   - Mỗi luật **một nhà**; nơi khác một dòng trỏ. Luật dùng chung nhiều skill thì đặt ở `chuan-muc-lam-viec.md` / `quy-tac-chung.md`, không chép.
+   - Mỗi luật **một nguồn duy nhất**; nơi khác một dòng trỏ. Luật dùng chung nhiều skill thì đặt ở `chuan-muc-lam-viec.md` / `quy-tac-chung.md`, không chép.
    - Không ngày, không "(David chốt …)", không "thay luật cũ", không "chuyển nguyên văn từ SKILL.md cũ". Lý do một luật tồn tại
      viết ngắn **trong luật** nếu giúp AI làm đúng ("vì người xem không đọc hai chỗ cùng lúc"); lịch sử thì vào sổ.
    - Giữ đúng nghĩa từng luật trong bảng; viết gọn hơn, không thêm luật mới. Nhà mới thiếu chi tiết mà nơi cũ có thì chuyển chi tiết đó

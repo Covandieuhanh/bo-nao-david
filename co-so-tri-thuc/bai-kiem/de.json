@@ -160,5 +160,32 @@
    "B": "Hạ mục tiêu doanh số xuống cho vừa kết quả.",
    "C": "Ghi rõ giả định nào của kế hoạch sai, quay lại Kế hoạch (đổi kế hoạch, quy trình, cách thực thi) và trình David."
   }
+ },
+ {
+  "id": "c19",
+  "tinh_huong": "Tài liệu khối 09 ghi ép nhạc bằng khoá `music`, nhưng chạy xong ba video đều ra cùng một bài và nhật ký ghép báo bài khác với kế hoạch.",
+  "lua_chon": {
+   "A": "Đọc code công cụ để biết khoá thật, tin code, sửa tài liệu, cho công cụ tự dừng khi gặp khoá sai, ghi ca vào lỗi thường gặp rồi báo David nguyên nhân và chỗ đã chặn.",
+   "B": "Đổi bài nhạc bằng tay cho từng video rồi báo David là xong.",
+   "C": "Ghi vào nhật ký là nhạc chưa đúng, để lần sau xử lý."
+  }
+ },
+ {
+  "id": "c20",
+  "tinh_huong": "Một đoạn David nói về cách người xem tìm khách hàng và làm marketing cho cửa hàng của họ.",
+  "lua_chon": {
+   "A": "Xếp vào hướng 3 (phạm trù Thị trường), đồng thời là dữ liệu cho giải pháp công nghệ.",
+   "B": "Xếp vào hướng 2 vì giúp người xem làm chủ thị trường của chính họ.",
+   "C": "Xếp vào hướng 1 vì nói về tiền."
+  }
+ },
+ {
+  "id": "c21",
+  "tinh_huong": "Trong lúc làm, Claude thấy một câu ở `tu-duy-goc.md` (tầng 0) nên viết khác đi cho đúng hơn với cách David vừa nói một lần.",
+  "lua_chon": {
+   "A": "Nếu chỉ làm rõ, thêm ví dụ mà nghĩa giữ nguyên thì nâng cấp và ghi sổ dẫn chứng; nếu đổi nghĩa thì chỉ ghi đề xuất kèm dẫn chứng vào sổ, chờ thêm nhiều lần tương tác và David chốt.",
+   "B": "Sửa ngay vì lời mới nhất thắng.",
+   "C": "Không bao giờ động vào file tầng 0."
+  }
  }
 ]

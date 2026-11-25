@@ -46,7 +46,7 @@ san-xuat-video/
 |---|---|
 | Học thêm hình mẫu → đổi một con số / một lựa chọn | `ho-so-thuong-hieu/<loai>.json` (+ 1 dòng sổ `ho-so-thuong-hieu/nhat-ky-thay-doi.md`) |
 | Đổi / thêm cách làm (kiểu phụ đề, kiểu cảnh minh hoạ, màn kết…) | đúng 1 khối (`mo-dun/NN-…`) — phần hình nằm ở `thu-vien-tai-nguyen/`, cả 4 loại tự dùng |
-| Đổi luật dùng chung | `quy-tac-chung.md` (một luật một nhà, sửa thẳng câu cũ) |
+| Đổi luật dùng chung | `quy-tac-chung.md` (một luật một nguồn duy nhất, sửa thẳng câu cũ) |
 | Thêm loại video mới | 1 công thức (skill) + 1 hồ sơ, nhặt lại khối có sẵn |
 | Sau mọi lần sửa | `python3 -I mau-chuan/kiem-mau.py` → ✓ giữ nguyên / ⚠ xem lại |
 

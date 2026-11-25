@@ -1,5 +1,5 @@
 ---
-description: "Tư duy gốc (tầng 0) — cách bộ não David NGHĨ khi làm bất kỳ việc gì: bốn khối Bóc tách · Hành động (vòng kết quả hoặc vấn đề) · Học và thay đổi · Bản chất và kiểm sai; xương sống là khung David học từ cố vấn chiến lược, kiểm chứng bằng 17 bộ óc hàng đầu thế giới; mọi thông tin mới phải móc vào một khối."
+description: "Tư duy gốc (tầng 0) — cách bộ não David NGHĨ khi làm bất kỳ việc gì: bốn khối Bóc tách · Hành động (vòng kết quả hoặc vấn đề) · Học và thay đổi · Bản chất và kiểm sai; xương sống là khung David học từ cố vấn chiến lược, kiểm chứng bằng 17 bộ óc hàng đầu thế giới; mọi thông tin mới phải liên kết với một khối."
 ---
 
 # Tư duy gốc — bộ não David nghĩ thế nào
@@ -13,12 +13,12 @@ description: "Tư duy gốc (tầng 0) — cách bộ não David NGHĨ khi làm 
 - **Trục tri thức:** cách bộ não **học và lưu**: thông tin mới vào tầng nào, nâng cấp thế nào. Trục tri thức là khối 3 áp vào chính bộ não.
 
 **Nguồn:** xương sống là khung David học từ **cố vấn chiến lược của David** — ba phạm trù, bốn bước thành công, chín kỹ năng, vòng kết
-quả hoặc vấn đề, ba bước đào tạo · áp dụng · thay đổi (nhà duy nhất của khung: [mo-hinh-kinh-doanh.md](mo-hinh-kinh-doanh.md)). Khung
+quả hoặc vấn đề, ba bước đào tạo · áp dụng · thay đổi (nguồn duy nhất của khung: [mo-hinh-kinh-doanh.md](mo-hinh-kinh-doanh.md)). Khung
 này được đối chiếu và bổ sung bằng 17 bộ óc hàng đầu thế giới ([phiếu học](../tai-lieu-tham-khao/tu-duy-goc/phieu-hoc.md), thuật ngữ
 dịch theo [bảng](../tai-lieu-tham-khao/tu-duy-goc/README.md)). Khung của cố vấn đứng trước; cái học từ thế giới chỉ bổ sung chỗ khung
 chưa nói, không thay khung.
 
-## 0. Bản lề — bốn khối, mọi thứ móc vào một khối
+## 0. Bản lề — bốn khối, mọi thứ liên kết với một khối
 
 | Khối | Trả lời câu | Gốc trong khung của David | Kiểm chứng bằng |
 |---|---|---|---|
@@ -35,13 +35,14 @@ Việc / vấn đề → khối 1 bóc tách → khối 2: Mục tiêu → Kế 
                  └──────────── khối 3: đào tạo → áp dụng → thay đổi, ghi lại để lần sau đúng hơn ─────────────┘
 ```
 
-**Luật bản lề:** thông tin mới nào cũng phải trả lời được "móc vào khối nào, gốc nào trong khung" (trục tri thức mục 3, câu 4 "Gốc là gì?"
-trả lời bằng câu này). Không móc được vào khối nào thì chưa lưu như luật hay cách nghĩ — chỉ ghi `du-an/danh-sach-y-tuong.md`.
+**Luật bản lề:** thông tin mới nào cũng phải trả lời được "liên kết với khối nào, gốc nào trong khung" (trục tri thức mục 3, câu 4 "Gốc là gì?"
+trả lời bằng câu này). Không liên kết được với khối nào thì chưa lưu như luật hay cách nghĩ — chỉ ghi `du-an/danh-sach-y-tuong.md`.
 
 ## 1. Khối Bóc tách — cái này gồm những gì
 
 **Gốc:** mọi thứ trên đời bóc được thành **tiền · thị trường · con người** (`mo-hinh-kinh-doanh.md` mục 1); việc kinh doanh bóc tiếp thành
 **chín kỹ năng** (mục 3). Một vấn đề cũng vậy: vấn đề về tiền, về thị trường, hay về con người.
+**Ba phạm trù cũng là ba hướng nghề của David:** Tiền = hướng 1 tài chính · Thị trường = hướng 3 giải pháp công nghệ và AI (marketing, khách hàng) · Con người = hướng 2 trainer định hướng (chỉ phát triển con người, gốc từ trường số). Nguồn duy nhất: `mo-hinh-kinh-doanh.md` mục 1b.
 
 **Nguyên lý (bổ sung từ thế giới):**
 - **Tách không trùng, không sót** (MECE; Descartes quy tắc 4): mỗi phần chỉ thuộc một ô, các ô cộng lại là đủ.
@@ -61,10 +62,10 @@ nhiêu giờ làm việc sâu mỗi tuần), tiền (có bỏ chi phí quảng b
 
 **Gốc:** **Mục tiêu → Kế hoạch → Quy trình → Thực thi.** Thực thi xong chỉ có hai đầu ra: **Kết quả** hoặc **Vấn đề**. Vấn đề xử lý được
 ngay thì xử lý, rồi ra kết quả. Không xử lý được thì **quay lại Kế hoạch**: đổi kế hoạch thì đổi luôn quy trình và cách thực thi, rồi thực
-thi lại. Không hạ mục tiêu để coi như đạt. Nhà của vòng: `mo-hinh-kinh-doanh.md` mục 5.
+thi lại. Không hạ mục tiêu để coi như đạt. Nguồn của vòng: `mo-hinh-kinh-doanh.md` mục 5.
 
 **Nguyên lý (bổ sung từ thế giới):**
-- **Hiểu đúng bài trước khi lập kế hoạch** (Pólya): cái chưa biết là gì, đang có gì, điều kiện là gì. Mục tiêu viết sao cho người đọc lạnh
+- **Hiểu đúng bài trước khi lập kế hoạch** (Pólya): cái chưa biết là gì, đang có gì, điều kiện là gì. Mục tiêu viết sao cho người đọc mới
   hiểu đúng một nghĩa.
 - **Đặt cách đo trước khi thực thi** (Deming, Popper): ghi "xong khi" và "thấy gì thì coi là kế hoạch sai". Không có mốc đo thì không phân
   biệt được kết quả với vấn đề.
@@ -76,7 +77,7 @@ thi lại. Không hạ mục tiêu để coi như đạt. Nhà của vòng: `mo-
   | **Giả định của kế hoạch** (học hai vòng) | làm đúng mà vẫn không ra; điều mình tin về khách, kênh, nguồn lực, thời gian sai; sửa xong vấn đề lại quay lại | quay lại Kế hoạch: viết rõ giả định nào sai, đổi kế hoạch, quy trình, thực thi |
 
 - **Chẩn đoán trước khi đổi** (Dalio; Toyota): hỏi "vì sao" tới nguyên nhân gốc sửa được; đi theo ba phạm trù để biết hỏi hướng nào.
-  **Đến tận nơi xem**: xem chính sản phẩm, chính khung hình, chính lời khách, không đoán từ báo cáo.
+  **Kiểm tra tại hiện trường**: xem chính sản phẩm, chính khung hình, chính lời khách, không đoán từ báo cáo.
 - **Bí thì giải bài nhỏ hơn hoặc bài tương tự đã giải** (Pólya): chính là tra [hình mẫu](hinh-mau/README.md).
 - **Nhìn lại sau kết quả** (Pólya, Deming): kết quả ra rồi thì rút cách làm dùng lại được — quy trình gốc bước 7 viết thành lá.
 - **Vấn đề lặp lại sau khi đã sửa** thì đang sửa ở đòn bẩy yếu (Meadows) hoặc cách nhìn sai (Boyd): lên một tầng, xem lại giả định, mục
@@ -104,8 +105,8 @@ thi lại. Không hạ mục tiêu để coi như đạt. Nhà của vòng: `mo-
   Ở David: buổi nhìn lại cuối tuần; ở bộ não: vòng tuần của trục tri thức.
 - **Đo học bằng thay đổi, không bằng cảm giác thích** (Kirkpatrick): mức Phản ứng và Học được chưa đủ; mức **Hành vi** và **Kết quả** mới
   là thay đổi. Thiết kế gói đào tạo **bắt đầu từ thay đổi muốn thấy** rồi đi ngược lại.
-- **Giảng lại bằng lời đơn giản** để biết mình đã hiểu (Feynman): chỗ vấp là chỗ chưa hiểu. Đây cũng là luật viết của bộ não (người đọc lạnh nào cũng hiểu).
-- **Tri thức lớn lên bằng nối** (Luhmann): mỗi ý một nhà, ý mới luôn nối vào ý cũ; không nối vào đâu thì không tồn tại (`quy-uoc-lien-ket.md`).
+- **Giảng lại bằng lời đơn giản** để biết mình đã hiểu (Feynman): chỗ vấp là chỗ chưa hiểu. Đây cũng là luật viết của bộ não (người đọc mới nào cũng hiểu).
+- **Tri thức lớn lên bằng nối** (Luhmann): mỗi ý một nguồn duy nhất, ý mới luôn nối vào ý cũ; không nối vào đâu thì không tồn tại (`quy-uoc-lien-ket.md`).
 - **Mỗi bài học thành nguyên tắc** (Dalio): gặp lại tình huống giống thì làm theo, không nghĩ lại từ đầu (trục tri thức: lỗi nào cũng thành câu kiểm).
 
 **Câu hỏi dùng khi làm:**
@@ -145,11 +146,11 @@ Quy trình gốc 7 bước ([quy-trinh.md](../quy-trinh.md) mục 0) đã chứa
 | 3. Trình 4 phần | khối 2 (Mục tiêu · Kế hoạch · Quy trình · Thực thi, kèm cách đo và dấu hiệu sai), khối 4 câu 2–4 |
 | 4. Làm từng bước | khối 2: ra vấn đề thì dùng phép thử hai loại vấn đề |
 | 5–6. Tự soát, giao kèm so với hình mẫu | khối 4 câu 5, khối 2 "nhìn lại" |
-| 7. Ghi lại, đẩy GitHub | khối 3: thay đổi — sửa đúng nhà, câu kiểm, viết thành lá |
+| 7. Ghi lại, đẩy GitHub | khối 3: thay đổi — sửa đúng nguồn, câu kiểm, viết thành lá |
 
 ## 6. Chỗ nối để phát triển trên gốc
 
-- **Chín kỹ năng:** mỗi kỹ năng có một dòng bản chất (`mo-hinh-kinh-doanh.md` mục 3); David bổ sung dần, cái mới móc vào đúng số.
+- **Chín kỹ năng:** mỗi kỹ năng có một dòng bản chất (`mo-hinh-kinh-doanh.md` mục 3); David bổ sung dần, cái mới liên kết với đúng số.
 - **Từ trường số (đạo và đời):** David cập nhật dần ở `du-lieu-nen-huyen-hoc.md` mục 7; chín số sau này ứng chín kỹ năng. Phần "đạo" và
   "đời" khi David ghi thì nối về khối nào ở đây.
 - **Hình mẫu mới về cách nghĩ:** thêm phiếu vào `tai-lieu-tham-khao/tu-duy-goc/phieu-hoc.md`, ghi khối; chỉ sửa file này khi nhiều phiếu

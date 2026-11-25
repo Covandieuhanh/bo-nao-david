@@ -4,7 +4,7 @@ description: "Hình mẫu mục lớn 7 — kinh doanh theo 9 kỹ năng, ngành
 
 # 7. Kinh doanh theo 9 kỹ năng, ngành nghề
 
-Khung gốc: bốn bước thành công + chín kỹ năng, ngành nghề (`../mo-hinh-kinh-doanh.md` mục 3, nhà duy nhất của khung). Mỗi kỹ năng là một
+Khung gốc: bốn bước thành công + chín kỹ năng, ngành nghề (`../mo-hinh-kinh-doanh.md` mục 3, nguồn duy nhất của khung). Mỗi kỹ năng là một
 mục nhỏ; hình mẫu thành công của kỹ năng nào ghi đúng mục đó. Hiện hành của việc bán: `../../du-an/pheu-ban-hang-goi-cong-nghe.md`.
 Luật bản đồ: [README](README.md).
 

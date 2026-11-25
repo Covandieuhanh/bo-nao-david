@@ -45,7 +45,7 @@ Luật chung video ở `../quy-tac-chung.md` (chữ nguyên văn, không cắt v
   - **Mục tiêu cuối**: người xem *thấy hành động* thì câu giao việc cụ thể nhất của tập có màn `action`.
 - **Học từ 20 podcast Việt** (`references/hoc-tu-20-podcast-vn.md`):
   - **Thẻ chương**: sân khấu tự hiện "PHẦN n" đầu mỗi `TOPICS` (khi ít nhất 2 TOPICS); `chuong.py` ghi chương YouTube từ TOPICS.
-  - **Teaser** cho tập > 10 phút: sau render, `doan-gioi-thieu.py` với 2–3 câu đắt nhất (trọn câu, nguyên văn); độ dài theo hồ sơ.
+  - **Teaser** cho tập đủ dài (Claude tự quyết): sau render, `doan-gioi-thieu.py` với 2–3 câu đắt nhất (trọn câu, nguyên văn); độ dài theo hồ sơ.
   - **Thumbnail khuôn cố định** mọi tập, không số tập, không mặt — mẫu ở khối 14.
   - **Nền "lắng"** cho tập tâm sự/thiền: `STAGE.bg = [{at: 0, src: 'nen-1.jpg'}, …]` (ảnh/tranh David đưa hoặc có giấy phép, trong
     `chuyen-dong/public/`) — chuyển động rất chậm, phủ tối; không có thì lưới tối mặc định.
@@ -62,7 +62,7 @@ Luật chung video ở `../quy-tac-chung.md` (chữ nguyên văn, không cắt v
 | 4 | Phong cách · **tuyến nội dung → nhạc nền** (`project.tuyen`, bắt buộc) | [10](../mo-dun/10-nhan-dien-thuong-hieu/README.md) · [09](../mo-dun/09-am-thanh/README.md) |
 | 5–6 | Chẩn đoán (`python3 -I $BASE/scripts/chan-doan.py "$P"` + mục `## Chẩn đoán` trong `ke-hoach-canh.md`, thiếu thì máy chặn render) → tự chọn lớp thông tin, kiểu cảnh ([tu-chon](../thiet-ke-bo-cuc/tu-chon.md)) · cảnh minh hoạ (bố cục tự cân) · màn chốt nguyên văn | [07](../mo-dun/07-canh-minh-hoa/README.md) · [08](../mo-dun/08-phan-ket/README.md) |
 | 7–9 | Chụp thử → Claude tự soát → render → kiểm (mục dưới) | [17](../mo-dun/17-kiem-soat-chat-luong/README.md) · [09](../mo-dun/09-am-thanh/README.md) |
-| 10 | Phát hành: teaser > 10 phút, chương, màn kết, số liệu | [15](../mo-dun/15-xuat-ban/README.md) · [16](../mo-dun/16-phan-tich-so-lieu/README.md) |
+| 10 | Phát hành: teaser khi tập đủ dài, chương, màn kết, số liệu | [15](../mo-dun/15-xuat-ban/README.md) · [16](../mo-dun/16-phan-tich-so-lieu/README.md) |
 
 ### 1. Môi trường + dự án
 ```bash
@@ -151,7 +151,7 @@ cảnh + TOPICS theo mốc, `nguon-anh.txt` nếu có ảnh, đã kiểm gì / c
 4. Hình phủ khoảng 30% thời lượng, dày ở đoạn khó, không trống lâu ở đầu.
 5. Phụ đề đúng chữ, đủ dấu, khớp lượt người nói; không gì lọt vùng đỏ.
 6. Âm lượng và thời lượng khớp bản tiếng gốc.
-7. Đủ gói phát hành (tiêu đề, chương, teaser nếu > 10 phút, thumbnail không mặt nếu ngang, mẫu số liệu).
+7. Đủ gói phát hành (tiêu đề, chương, teaser nếu tập đủ dài, thumbnail không mặt nếu ngang, mẫu số liệu).
 
 ## Tài liệu kèm (chỉ đọc khi bước cần, cân nhắc đổi luật hoặc gỡ lỗi)
 - `references/thiet-ke-podcast.md` — giải phẫu sân khấu, chọn cảnh cho lời hội thoại, vùng giữa.

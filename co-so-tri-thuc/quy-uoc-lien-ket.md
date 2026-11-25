@@ -31,7 +31,7 @@ David chốt 14/11/2026: bộ não là **mạng lưới file nối với nhau**,
 
 ## Ghi chú kiến thức
 
-Kiến thức đáng giữ từ trao đổi với David (kể cả phần Claude giải thích, công cụ, khái niệm) ghi vào [kien-thuc/](kien-thuc/README.md), **mỗi khái niệm một file nhỏ**, có mô tả, có mục "Liên quan" nối tới ý tưởng / dự án / skill dùng tới nó, và một dòng trong trang bản đồ `kien-thuc`. Đã có file đúng chủ đề thì bổ sung, không tạo file trùng. Ý tưởng chưa chốt vẫn ở [du-an/danh-sach-y-tuong.md](../du-an/danh-sach-y-tuong.md); luật vẫn ở nhà của luật. Khi nào ghi: [ky-nang/chuan-muc-lam-viec.md](../ky-nang/chuan-muc-lam-viec.md) mục 4.
+Kiến thức đáng giữ từ trao đổi với David (kể cả phần Claude giải thích, công cụ, khái niệm) ghi vào [kien-thuc/](kien-thuc/README.md), **mỗi khái niệm một file nhỏ**, có mô tả, có mục "Liên quan" nối tới ý tưởng / dự án / skill dùng tới nó, và một dòng trong trang bản đồ `kien-thuc`. Đã có file đúng chủ đề thì bổ sung, không tạo file trùng. Ý tưởng chưa chốt vẫn ở [du-an/danh-sach-y-tuong.md](../du-an/danh-sach-y-tuong.md); luật vẫn ở nguồn của luật. Khi nào ghi: [ky-nang/chuan-muc-lam-viec.md](../ky-nang/chuan-muc-lam-viec.md) mục 4.
 
 ## Sổ tay riêng (chỉ trên máy)
 

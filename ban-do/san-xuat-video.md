@@ -104,7 +104,7 @@ Gốc: [bản đồ bộ não](README.md). Chiến lược kênh: [chien-luoc-no
 
 ## Nghiên cứu và lịch sử sửa skill video
 - [doan-noi-bat-mau-2026-11-03](../nghien-cuu/doan-noi-bat-mau-2026-11-03.md) — Nghiên cứu 10 video highlight dọc lượt xem cao (03/11).
-- [tai-cau-truc-video-1](../du-an/nang-cap/tai-cau-truc-video-1.md) — Tái bản bộ skill video lần 1 (10/11): bảng 164 luật, mỗi luật một nhà.
+- [tai-cau-truc-video-1](../du-an/nang-cap/tai-cau-truc-video-1.md) — Tái bản bộ skill video lần 1 (10/11): bảng 164 luật, mỗi luật một nguồn duy nhất.
 - [tai-cau-truc-2-video](../du-an/nang-cap/tai-cau-truc-2-video.md) — Tái bản 2 (10/11), phần bộ skill video: luật đổi so với lần 1.
 
 ## Ghi nhớ video (sổ quyết định: ngày, lời David, lý do)

@@ -77,9 +77,10 @@
     "khi": "hành hương, tâm linh, từ thiện, hành trình ý nghĩa (lực tăng dần)"
    },
    "kien_thuc": {
-    "bai": [],
-    "tam": "lang-1",
-    "khi": "kiến thức, hướng dẫn, giải thích, mẹo (trung tính, tập trung) — CHỜ David tải bài ambient/lo-fi"
+    "bai": [
+     "lofi-chill-1"
+    ],
+    "khi": "kiến thức, hướng dẫn, giải thích, mẹo, phân tích thị trường (trung tính, tập trung; lo-fi không lời). Claude vẫn được chọn bài khác trong cả kho theo nội dung (ép tay: music)."
    }
   },
   "khoang_trong_duoi_giong_LU": 14,
@@ -106,7 +107,8 @@
    "du-lich-2": 0.51,
    "kham-pha-1": 0.68,
    "kham-pha-2": 0.72,
-   "ngam-canh-1": 1.1
+   "ngam-canh-1": 1.1,
+   "lofi-chill-1": 1.17
   }
  }
 }

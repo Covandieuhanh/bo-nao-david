@@ -242,3 +242,10 @@ người nói chưa từng chạy với dấu góc. Không do bài học video m
 - Wikimedia tìm theo tên file: từ khoá đời thường dài ("man working on computer late at night") hay rỗng / 429; dùng cụm ngắn kiểu tên
   file ("alarm clock", "stack of books", "wall calendar", "brain anatomy model") và chạy lại riêng các key lỗi.
 - Soát lại tên ảnh trong ghi-cong.tsv sau khi tải (ví dụ: "office dog…" — ảnh tối có con chó) và logo hãng ở chính giữa (vô-lăng Mercedes) thì đổi.
+
+## Nhạc ép tay không ăn (25/11/2026, buổi DJI_0031)
+- **Hiện tượng:** chọn ba bài cho ba video nhưng cả ba ra cùng một bài (bài đầu tuyến `kien_thuc`).
+- **Nguyên nhân gốc:** tài liệu khối 09 và chú thích trong `xem-truoc-ban-dung.py` ghi khoá `music`, còn code đọc khoá `nhac` → tài liệu lệch code; script gặp khoá lạ thì bỏ qua im lặng; quy trình không có bước đối chiếu "nhạc đã áp" với kế hoạch, chỉ thấy nhờ tình cờ đọc nhật ký ghép.
+- **Loại:** cách làm (học một vòng): kế hoạch chọn nhạc đúng, công cụ và tài liệu sai.
+- **Đã chặn:** sửa tài liệu khối 09 và chú thích; script dừng hẳn khi thấy khoá `music`; sau ghép đối chiếu dòng "nhạc nền: …" với `ke-hoach-canh.md`.
+- **Bài học chung:** tài liệu nói một đằng, code làm một nẻo thì tin code và sửa tài liệu ngay; công cụ không được bỏ qua im lặng điều nó không hiểu.

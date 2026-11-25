@@ -84,6 +84,8 @@ case "$CHE_DO" in
     python3 -I "$REPO/tu-dong-hoa/quet-bi-mat.py" "$REPO" || { echo "⛔ Quét thấy bí mật, không đẩy."; exit 1; }
     python3 -I "$REPO/tu-dong-hoa/lien-ket/kiem-tra-lien-ket.py" || { echo "⛔ Có link gãy (co-so-tri-thuc/quy-uoc-lien-ket.md), sửa rồi đẩy lại."; exit 1; }
     python3 -I "$REPO/tu-dong-hoa/kiem-quy-trinh.py" || { echo "⛔ Cây quy trình chưa đạt (quy-trinh.md mục 2): việc gì cũng phải có lá, điểm duyệt, Xong khi, sửa rồi đẩy lại."; exit 1; }
+    python3 -I "$REPO/tu-dong-hoa/gac-goc.py" || { echo "⛔ Cổng kiểm soát gốc (truc-tri-thuc.md mục 7): file tầng 0 đổi phải có dòng trong so-dan-chung-goc.md."; exit 1; }
+    python3 -I "$REPO/tu-dong-hoa/kiem-ngon-tu.py" || true
     # Sổ tay riêng (chỉ trên máy, không lên GitHub): kiểm + sinh chỉ mục, không chặn đẩy.
     [ -d "$HOME/Documents/2-ca-nhan/so-tay" ] && { python3 -I "$REPO/tu-dong-hoa/lien-ket/kiem-tra-lien-ket.py" --goc "$HOME/Documents/2-ca-nhan/so-tay" || true; }
     gc add -A

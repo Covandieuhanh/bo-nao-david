@@ -164,3 +164,26 @@ tiếng Anh chuẩn thì dùng đúng cột "Tên dùng"; chưa có thì thêm m
 | Cut List / Segments | `diem-cat.json` / `cac-doan.json` |
 
 Viết code: tên file ghép từ biến (ví dụ `drive_$t.swift`, `{id}.mov`) phải khớp đúng tên trong bảng; đổi tên thì tìm cả dạng ghép, rồi dựng thử trọn một video.
+
+## Thuật ngữ trong văn bản (David 25/11/2026)
+
+Mọi từ trong luật, quy trình, hồ sơ đi từ **thuật ngữ kinh doanh chuẩn quốc tế** rồi dịch sang tiếng Việt; không dùng từ khẩu ngữ chỉ người Việt
+mới hiểu, vì tiếng Việt đổi nghĩa theo bối cảnh. Gặp từ mới: tra cột tiếng Anh, thêm một dòng trước khi dùng. Máy kiểm `tu-dong-hoa/kiem-ngon-tu.py`
+báo từ cũ còn sót ở tầng 0–2 (cảnh báo, không chặn); mỗi lần sửa file thì thay luôn từ cũ trong file đó.
+
+| Tiếng Anh | Tiếng Việt chuẩn (dùng) | Từ cũ không dùng nữa |
+|---|---|---|
+| Link to / Anchor to | liên kết với | móc vào |
+| Single source of truth | nguồn duy nhất (mỗi ý chỉ một nguồn duy nhất, nơi khác trỏ về) | nhà, một nhà, nhà duy nhất |
+| Promotion (between tiers) | thăng cấp (thông tin lên tầng cao hơn) | đi lên |
+| Pruning | cắt giảm | tỉa |
+| Distillation | chưng cất (thuật ngữ huấn luyện AI, giữ) | — |
+| Quality gate | cổng kiểm soát | gác cổng, chốt chặn |
+| Cold reader / Reader without context | người đọc mới (chưa có bối cảnh) | người đọc lạnh |
+| Go and see (Genchi Genbutsu) | kiểm tra tại hiện trường | đến tận nơi xem |
+| Root cause | nguyên nhân gốc (giữ) | — |
+| Decomposition | bóc tách (thuật ngữ khung của cố vấn David, giữ; nghĩa: phân rã một việc thành các phần) | — |
+| Boundary / Red line | lằn ranh (giữ; nghĩa: ranh giới không vượt) | — |
+| Approve / Sign-off | duyệt / chốt (lời David dùng, giữ) | — |
+| Process tree / Leaf process | cây quy trình / quy trình lá (thuật ngữ cấu trúc cây, giữ) | — |
+| Upgrade vs. Root change | nâng cấp (không đổi nghĩa) / đổi gốc (đổi nghĩa) | — |

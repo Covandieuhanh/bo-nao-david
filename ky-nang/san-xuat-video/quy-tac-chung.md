@@ -113,7 +113,7 @@ Ghi `<dự án>/phat-hanh/phat-hanh.md`:
     vlog ghép `"ytEnd": 20` trong ke-hoach.json. Ghi vào phat-hanh.md: "gắn màn kết trong YouTube Studio: 2 video (trái/phải hoặc
     trên/dưới) + nút đăng ký (tròn giữa dưới)".
   - **Chương YouTube**: `python3 -I dung-video-theo-phong-cach/scripts/chuong.py <dự án>` → `phat-hanh/chuong.txt` dán vào mô tả.
-  - **Teaser 15–25 s** cho video > 10 phút (podcast, nói trước camera, vlog nói chuyện): sau render, chọn 2–3 câu đắt nhất (trọn câu,
+  - **Teaser** (câu đắt, trọn câu, nguyên văn; số câu và độ dài do Claude tự chọn theo nội dung) khi video đủ dài để người xem cần một lời mời xem tiếp (podcast, nói trước camera, vlog nói chuyện): sau render, chọn các câu đắt nhất (trọn câu,
     nguyên văn) → `python3 -I dung-video-theo-phong-cach/scripts/doan-gioi-thieu.py <dự án> <từ-đến> …` (chạy TRƯỚC chuong.py).
 - Mô tả bài đăng + bình luận ghim theo luật kênh (khối 15), hashtag theo `ho-so-thuong-hieu/giong-thuong-hieu-david.md`.
 - Gửi David: video + thumbnail (SendUserFile) + tiêu đề.
@@ -141,4 +141,5 @@ Ghi `<dự án>/phat-hanh/phat-hanh.md`:
   trừ khi David yêu cầu, vì chạy app tốn token hơn.
 - **Làm ra gì thì lên Drive đủ hết** (David 25/11/2026: "khi quy trình đã làm ra sản phẩm gì thì đều tải lên drive đầy đủ hết"): xong là `cho-dang.sh gui <tập>` (bản dài, bản xem nhẹ, clip,
   ảnh thu nhỏ, bài đăng, chương, số liệu) và, khi tách buổi theo hướng, `cho-dang.sh buoi <buổi>`; so khớp từng tệp rồi mới báo. Chỉ video gốc quá nặng là không tải, ghi chỗ để.
+- **Xoá bản gốc chỉ sau khi duyệt** (David 25/11/2026): kết quả đã đúng tiêu chí và David đã duyệt thì xoá bản gốc (video gốc, dự án, trung gian) trên Drive và mọi thiết bị để nhẹ bộ nhớ; chưa duyệt thì vẫn tải đủ lên Drive để David xem từ xa, **chưa xoá bản gốc**. Máy Windows không hỏi được trạng thái lên mây: chỉ xoá khi David đã xác nhận Drive đồng bộ xong. Làm lại cùng một tài nguyên thì bản mới nhất thay bản cũ: bỏ kết quả cũ của đúng tài nguyên đó sau khi bản mới đã lên Drive đủ, kiểm nguồn trước, không bỏ nhầm kết quả của buổi khác (David 25/11/2026).
 - Video đã chốt (David nói chốt là duyệt Đ2 cho việc dọn): bản cuối vào `~/Movies/cho-dang/<tập>/` + `cho-dang.sh gui` (Drive `thanh-pham/` y hệt), dọn file tạm rồi đưa dự án lên Drive, xoá trên Mac theo khối 17 (`don-tap.py --xoa` → `luu-drive.sh`, không hỏi lại; chỉ hỏi phần ⏸ đang dở). Đăng xong: `cho-dang.sh xong <tập>`. Mac chỉ giữ việc đang làm + bản cuối chưa đăng: ghi nhớ `video-chuyen-qua-drive`.

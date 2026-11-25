@@ -21,13 +21,13 @@ description: "Khối 00 bộ lọc nội dung: lọc tài nguyên theo hồ sơ 
 ## 0. Phân hướng (làm đầu tiên — hồ sơ David mục 4.1)
 | Hướng | Nhận ra khi | Nơi đăng | Bán gì |
 |---|---|---|---|
-| **1. Tài chính** | giao dịch hàng hoá, thị trường, đầu tư, hành trình làm tài chính | YouTube David Trần Official (+ clip ngắn kênh đó) | hợp tác môi giới / mở tài khoản hợp pháp |
-| **2. Trainer con người** | làm chủ bản thân, công việc, mối quan hệ; dẫn người; từ trường số và dẫn chứng (thần số học, thiền, "nghiệp"…), hệ 135 | YouTube trainer + highlight, Facebook cá nhân | gói trainer (hồ sơ 4.4) |
-| **3. Giải pháp công nghệ AI** | mọi thứ khác: công nghệ / AI thực chiến, số hoá cho tổ chức, đời thường, hành trình | Facebook cá nhân, fanpage, TikTok | gói công nghệ cá nhân, giải pháp số hoá cho tổ chức + đào tạo tới khi ra kết quả |
+| **1. Tài chính (phạm trù Tiền)** | giao dịch hàng hoá, thông tin và dữ liệu tài chính, đầu tư, hành trình làm tài chính | YouTube David Trần Official (+ clip ngắn kênh đó) | hợp tác môi giới / mở tài khoản hợp pháp |
+| **2. Trainer con người (phạm trù Con người)** | **chỉ phát triển con người**: làm chủ bản thân, mối quan hệ, dẫn người; lấy trụ cột chín kỹ năng để định hướng; từ trường số và dẫn chứng (thần số học, thiền, "nghiệp"…), hệ 135 | YouTube trainer + highlight, Facebook cá nhân | gói trainer (hồ sơ 4.4) |
+| **3. Giải pháp công nghệ AI (phạm trù Thị trường)** | marketing, khách hàng, nhu cầu thị trường (kể cả của chính người xem) và công nghệ / AI thực chiến, số hoá cho tổ chức | Facebook cá nhân, fanpage, TikTok | gói công nghệ cá nhân, giải pháp số hoá cho tổ chức + đào tạo tới khi ra kết quả |
 
 Mọi tài nguyên đều **phân đủ theo cả ba hướng** (mục 0b): hướng nào có ý trọn thì ra một bản riêng, phần không thuộc hướng nào thì
-bỏ. Cách soi mục tiêu / nỗi đau: ba phạm trù **Tiền · Thị trường · Con người** (`co-so-tri-thuc/mo-hinh-kinh-doanh.md`); marketing,
-khách, thị trường của chính người xem = "làm chủ thị trường" thì hướng 2.
+bỏ; chưa xếp được (đời thường, hành trình) thì hỏi David (`mo-hinh-kinh-doanh.md` mục 1b). Ba hướng chính là ba phạm trù **Tiền · Thị trường · Con người** (`co-so-tri-thuc/mo-hinh-kinh-doanh.md` mục 1b), tách biệt hoàn toàn; marketing,
+khách hàng, thị trường của chính người xem thuộc **hướng 3** (cũng là dữ liệu tốt để làm giải pháp công nghệ), không thuộc hướng 2.
 
 ## 0b. Phân hướng từng đoạn, ghép bản theo hướng
 1. **Chia đoạn theo ý**: đọc cả bản lời, mỗi đoạn một ý: mốc vào–ra · ý một dòng · hướng (1 / 2 / 3) · hoặc **Bỏ** kèm lý do (không
@@ -39,7 +39,7 @@ khách, thị trường của chính người xem = "làm chủ thị trường"
    |---|---|---|
    | 1 Tài chính | bản YouTube + clip ngắn | David Trần Official |
    | 2 Trainer con người | bản dài + highlight | YouTube trainer, Facebook cá nhân |
-   | 3 Giải pháp công nghệ AI | bản vừa khoảng 8–15 phút + clip dọc | Facebook cá nhân, fanpage, TikTok |
+   | 3 Giải pháp công nghệ AI | bản vừa (độ dài Claude tự chọn theo nội dung) + clip dọc | Facebook cá nhân, fanpage, TikTok |
 3. **Ghép trọn ý** (cùng bốn câu của highlight, khối 13):
    - **Bối cảnh**: đoạn mở phải đủ để người xem hiểu ai đang nói gì; thiếu thì kéo thêm câu bối cảnh liền trước, không tự viết lời dẫn.
    - **Ý trọn**: vào / ra ở cuối câu, bắt chỗ lặng gần nhất; không cắt giữa lập luận. Trong mỗi đoạn để nguyên (quy-tac-chung mục 2).
@@ -54,12 +54,12 @@ khách, thị trường của chính người xem = "làm chủ thị trường"
 
 ## 1. Câu hỏi gốc (theo hướng)
 - **Tài chính:** có giúp người xem hiểu giao dịch hàng hoá hợp pháp thêm một bước, và tin David trong lĩnh vực này không?
-- **Trainer:** có giúp người xem **tự làm chủ bản thân** (tiền, thị trường, con người của chính họ; lõi là người lần đầu dẫn người)
-  hoặc **áp dụng vào chính công việc của họ** thêm một bước không?
+- **Trainer:** có giúp người xem **phát triển chính con người họ** (làm chủ bản thân; lõi là người lần đầu dẫn người; định hướng theo chín kỹ năng,
+  gốc từ trường số) thêm một bước không? Chuyện marketing, khách hàng của họ thì chuyển hướng 3.
 - **Giải pháp công nghệ AI:** có chạm một **mục tiêu / nỗi đau / vấn đề** mà một gói hay giải pháp công nghệ giải được, hoặc cho thấy David làm được thật không?
 
 **Cây nội dung kênh trainer** (hồ sơ David mục 4.2): **Gốc** = làm chủ bản thân · **Nhánh chính** = áp dụng vào công việc của chính
-họ · **Nhánh phụ** = mối quan hệ, chỉ khi bắt nguồn từ bản thân · **Nhân hiệu** = đời thường / hành trình của David, chỉ khi giúp người
+họ · **Nhánh phụ** = mối quan hệ, chỉ khi bắt nguồn từ bản thân · **Nhân hiệu** = hành trình của David chỉ khi dẫn tới phát triển con người (vd. dùng từ trường số để định hướng), chỉ khi giúp người
 xem tin David là trainer.
 
 **Bán được gì (bắt buộc mọi phiếu):** mục tiêu / nỗi đau → gói nào → bước phễu tiếp theo (`du-an/pheu-ban-hang-goi-cong-nghe.md`).
@@ -108,7 +108,7 @@ Chạm thì **luôn cảnh báo trong phiếu và báo cáo**: mốc giây, lờ
 | ✂️ **Trích ngắn từ gốc** | bản dài đã duyệt có đoạn đắt cho video ngắn | bản dài vẫn để nguyên làm gốc; clip là phần thêm, không thay bản dài |
 | 🔁 **Trùng / dư** | đã có bài gần giống trong 30 ngày, hoặc nhánh đang quá tỉ lệ | gộp vào bài cũ / để sau |
 | 🗂 **Lưu kho** | có giá trị nhưng chưa đúng lúc / chưa đủ 3 phần | lưu lời chép + nhãn, chờ ghép series |
-| 👤 **Chỉ Facebook cá nhân** | tối đa 6, đời thường có ích cho nhân hiệu | câu chia sẻ ngắn, không dựng nặng |
+| 👤 **Chỉ Facebook cá nhân** | tối đa 6, chỉ ý thuộc ba hướng (đời thường chưa rõ hướng thì hỏi David) | câu chia sẻ ngắn, không dựng nặng |
 | ⛔ **Không làm** | không liên quan, hoặc David chọn không làm sau cảnh báo lằn ranh | không dựng, không tốn thời gian |
 
 ## 5. Phân phối kênh (`ho-so-thuong-hieu/kenh.json`)

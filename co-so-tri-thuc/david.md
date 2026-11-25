@@ -13,6 +13,7 @@
   - Công khai là **trainer**; **coach** chỉ trong buổi riêng 1:1.
   - Làm **ba hướng**: tài chính (giao dịch hàng hoá) · trainer con người (phát triển bản thân) · giải pháp công nghệ AI kèm đào tạo cho cá nhân và doanh nghiệp (mục 4.1).
   - Hình ảnh công khai: **một trainer, hai lĩnh vực** — con người và công nghệ AI.
+  - Ba hướng = ba phạm trù gốc (25/11/2026): **Tiền** = tài chính · **Thị trường** = giải pháp công nghệ và AI · **Con người** = trainer định hướng; tách biệt hoàn toàn (`mo-hinh-kinh-doanh.md` mục 1b).
   - Nội bộ (không công bố): **tổng điều hành** một đội đối tác làm giải pháp công nghệ, số hoá cho tổ chức theo từng vấn đề cụ thể (từ 18/11/2026). Bên ngoài David là người có năng lực giải quyết vấn đề trong các lĩnh vực mình định hướng; phía sau tự điều phối.
   - Đích xa: **truyền nghề**.
 - **Kinh nghiệm:** MC, hướng dẫn viên, spa/wellness/dịch vụ, công nghệ, đứng lớp.
@@ -33,10 +34,7 @@
 Sáu luật nền (chỉ ý chính dễ hiểu · việc gì cũng duyệt 4 phần trước, duyệt rồi tự làm trọn · video đúng nguyên văn lời David · mạng xã hội và quyền riêng tư không tự động vào · lời mới nhất thắng · GitHub dựng lại được 100%: repo công khai giữ phần dùng chung, repo riêng tư giữ phần chỉ Mac chính): `AGENTS.md`. Thói quen chung mọi việc: `ky-nang/chuan-muc-lam-viec.md`. Thêm:
 
 1. **Việc gì cũng trình đủ 4 phần, David duyệt rồi mới làm:** Mục tiêu · Kế hoạch · Quy trình (từng bước) · Thực thi (checklist chia càng nhỏ càng tốt để có mốc làm ngay). Chưa duyệt thì chưa tạo/sửa file nào; duyệt rồi tự làm trọn tới khi chắc dùng được, không dừng giữa chừng.
-2. **Tài liệu nghiên cứu phải dịch đúng thuật ngữ chuyên ngành:** tên khung, quy trình, bước bằng tiếng Anh lấy **chính xác** như nguồn rồi dịch sang tiếng Việt. Mỗi thuật ngữ chỉ một bản dịch, dùng thống nhất.
-3. **Tài liệu tổng hợp về một tổ chức chỉ gồm nội dung của tổ chức đó**, không lẫn phần áp dụng cho David hay nguồn ngoài.
-4. **Tài liệu do AI khác viết:** lấy khung của Claude làm chuẩn, tài liệu kia chỉ để bổ sung, và phải kiểm tra nguồn gốc trước khi thêm.
-5. **Sách tự mua**, không dùng bản trôi nổi trên mạng.
+2. **Chuẩn mực về tài liệu và nguồn** (dịch thuật ngữ, tài liệu về một tổ chức, tài liệu do AI khác viết, sách tự mua): `ky-nang/chuan-muc-lam-viec.md` mục 6.
 
 ## 4–9. Đọc khi việc cần
 

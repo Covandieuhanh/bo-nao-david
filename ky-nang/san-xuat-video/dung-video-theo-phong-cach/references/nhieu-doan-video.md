@@ -224,7 +224,7 @@ Mật độ theo nội dung, vài kiểu hợp nhất (quy-tac-chung mục 0); k
 ### 5. Phong cách
 - Chữ ký nhận diện (nhấn cam #FF7A45, Barlow Condensed + Be Vietnam Pro, thành phần cố định) giữ ở mọi vlog.
 - Có `--style-from <dự án cũ>`: đọc `chuyen-dong/src/chu-de.js` (+ fonts, components) của dự án đó thì chép phần ngoài chữ ký (nền, màu phụ,
-  kiểu chuyển động) vào `C` trong `chuong-trinh.jsx` và `phong-chu.js`, để các video "cùng một nhà sản xuất".
+  kiểu chuyển động) vào `C` trong `chuong-trinh.jsx` và `phong-chu.js`, để các video "cùng một nguồn duy nhất sản xuất".
 - Có `--ref <video mẫu>`: phân tích như `phan-tich-phong-cach.md` rồi áp vào cùng chỗ.
 - Không có gì: giữ mặc định của template (thẻ tối).
   Phong cách game show sặc sỡ (vàng/hồng, chữ viền đen, emoji) đã thử và bị thay bằng bộ mặc định cho đồng bộ.

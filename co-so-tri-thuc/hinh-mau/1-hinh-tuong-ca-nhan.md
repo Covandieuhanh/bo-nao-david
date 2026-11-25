@@ -21,7 +21,7 @@ Chưa nghiên cứu. Câu hỏi khi có việc: người nào đã định vị 
 Chi tiết, cách dựng: `../../ky-nang/san-xuat-video/dung-video-theo-phong-cach/references/intro-thuong-hieu.md`.
 
 ## 1.3 Nhận diện hình ảnh trên video ✅
-Nhận diện chung (màu cam, hai font, dấu góc) chốt từ các hình mẫu video ở mục lớn 2; nhà của luật:
+Nhận diện chung (màu cam, hai font, dấu góc) chốt từ các hình mẫu video ở mục lớn 2; nguồn của luật:
 `../../ky-nang/san-xuat-video/thu-vien-tai-nguyen/nhan-dien-chung.md`.
 
 ## 1.4 Giọng văn 🟡
