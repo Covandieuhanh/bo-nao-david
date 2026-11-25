@@ -24,6 +24,7 @@ for goc, ds, fs in os.walk(R):
             if s2 != s: open(p, 'w', encoding='utf-8').write(s2); da_sua += 1; s = s2
         # quét phần ngoài lời trích
         ngoai = '\n'.join(('' if d.lstrip().startswith('>') else ''.join(x for i, x in enumerate(NT._Q.split(d)) if i % 2 == 0)) for d in s.split('\n')).lower()
+        for g in NT.GIU: ngoai = ngoai.replace(g.lower(), ' ')   # cụm giữ nguyên (nghề, tên riêng, từ ghép) không tính là từ cũ
         n = {w: ngoai.count(w) for w in NT.TU_CU if w in ngoai}
         if n: ket[rel] = n
 if sua: print(f'Đã thay trong {da_sua} file.')
