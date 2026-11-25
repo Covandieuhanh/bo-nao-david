@@ -14,7 +14,8 @@ Gốc: [bản đồ bộ não](README.md).
 - [tu-duy-goc](../co-so-tri-thuc/tu-duy-goc.md) — **Tư duy gốc (tầng 0)**: cách nghĩ khi làm mọi việc, bốn khối Bóc tách · Hành động (vòng kết quả hoặc vấn đề) · Học và thay đổi · Bản chất và kiểm sai; nguồn: [17 phiếu học](../tai-lieu-tham-khao/tu-duy-goc/README.md).
 - [truc-tri-thuc](../co-so-tri-thuc/truc-tri-thuc.md) — **Trục tri thức (tầng 0)**: cách bộ não tiếp nhận, xử lý, học, nâng cấp mọi thông tin, dựng theo cách mô hình AI được làm ra (dữ liệu → chưng cất → phản hồi → đánh giá → ra bản).
 - [bai-kiem toàn bộ não](../co-so-tri-thuc/bai-kiem/README.md) — Bộ đánh giá của trục: 18 tình huống từ chính lời David đã sửa; một trí tuệ nhân tạo chưa đọc gì làm bài, đạt ít nhất 17/18.
-- [chuan-muc-lam-viec](../ky-nang/chuan-muc-lam-viec.md) — Thói quen làm việc chung mọi skill đọc trước: khi hai điều ngược nhau, đọc đúng phần, khi nào hỏi, trong lúc làm, cuối việc, giữ phiên gọn.
+- [chuan-muc-lam-viec](../ky-nang/chuan-muc-lam-viec.md) — Nguyên lý làm việc chung mọi skill đọc trước (tầng 1): khi hai điều ngược nhau, đầu việc, duyệt bốn phần, trong lúc làm, cuối việc, giữ phiên gọn, tài liệu và nguồn.
+- [quy-trinh-van-hanh-chung](../ky-nang/quy-trinh-van-hanh-chung.md) — Cách làm từng bước của chuẩn mực (tầng 2, cùng số mục): lệnh, mẫu bốn phần, câu báo, soát sau việc, ghi sổ, dọn thiết bị, đẩy GitHub.
 - [quy-uoc-lien-ket](../co-so-tri-thuc/quy-uoc-lien-ket.md) — Bộ quy tắc liên kết của bộ não — mô tả đầu file, đường nối, bản đồ nội dung, chỉ mục tự sinh, ghi chú kiến thức, công cụ kiểm tra; để Claude tra nhanh, ít token, không sót.
 - [bang-thuat-ngu](../co-so-tri-thuc/bang-thuat-ngu.md) — Bảng thuật ngữ đặt tên: thuật ngữ kinh doanh tiếng Anh → tiếng Việt → tên file/thư mục dùng; tên bắt buộc của công cụ; cấu trúc thư mục.
 - [chi-muc](../co-so-tri-thuc/chi-muc.md) — Chỉ mục tự sinh của bộ não — mỗi file .md một dòng (đường dẫn, mô tả, số file nối tới); Claude grep file này trước khi tìm toàn repo.
