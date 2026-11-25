@@ -19,7 +19,7 @@ tim_drive() {
 if [[ $OSTYPE == darwin* ]]; then
   DRIVE_HUONG_DAN="mở ứng dụng Google Drive cho máy tính; thư mục ở chỗ khác thì đặt DRIVE_GOC=<đường dẫn>"
 else
-  DRIVE_HUONG_DAN="cài Google Drive cho Windows và đăng nhập (ổ G:); Ubuntu không tự gắn ổ ảo của Drive → trong PowerShell chạy: wsl -d Ubuntu-24.04 -u root -- sh -c 'mkdir -p /mnt/g; mount -t drvfs G: /mnt/g -o uid=1000,gid=1000' (mỗi lần khởi động lại máy); thư mục ở chỗ khác thì đặt DRIVE_GOC=<đường dẫn>"
+  DRIVE_HUONG_DAN="cài Google Drive cho Windows và đăng nhập (ổ G:); Ubuntu không tự gắn ổ ảo của Drive → làm một lần theo huong-dan-cai-dat.md (dòng G: trong /etc/fstab); đã có mà vẫn chưa thấy thì mở Google Drive rồi chạy 'wsl --shutdown' trong PowerShell; thư mục ở chỗ khác thì đặt DRIVE_GOC=<đường dẫn>"
 fi
 if [[ $OSTYPE == darwin* ]]; then
   DRIVE_KIEM_DUOC=1
