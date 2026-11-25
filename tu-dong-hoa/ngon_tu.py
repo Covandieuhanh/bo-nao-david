@@ -32,7 +32,7 @@ THAY = [
  ('soi bằng', 'xét bằng'), ('Cách soi', 'Cách xét'), ('soi mục tiêu', 'xét mục tiêu'), ('tự soi lỗi', 'tự kiểm lỗi'), ('soi lỗi', 'kiểm lỗi'), ('soi cảnh', 'kiểm cảnh'), ('soi chữ', 'kiểm chữ'), ('soi phụ đề', 'kiểm phụ đề'), ('soi lại', 'kiểm lại'),
  ('lọt qua', 'bị bỏ sót'), ('để lọt', 'bỏ sót'), ('lọt', 'tràn'),
  ('ca thật', 'trường hợp thực tế'), ('Ca thật', 'Trường hợp thực tế'), ('ca mẫu', 'trường hợp mẫu'), ('Ca mẫu', 'Trường hợp mẫu'), ('ca khách', 'trường hợp khách'), ('Ca khách', 'Trường hợp khách'), ('ca cùng gốc', 'trường hợp cùng gốc'),
- ('số cứng', 'số cố định'), ('lịch cứng', 'lịch cố định'), ('mốc cứng', 'mốc cố định'), ('giới hạn cứng', 'giới hạn cố định'),
+ ('số cứng', 'số cố định'), ('Số cứng', 'Số cố định'), ('lịch cứng', 'lịch cố định'), ('Lịch cứng', 'Lịch cố định'), ('Kẹt ', 'Vướng '), ('mốc cứng', 'mốc cố định'), ('giới hạn cứng', 'giới hạn cố định'),
  ('bắt chước', 'học theo'), ('Bắt chước', 'Học theo'), ('mối nối', 'điểm nối'), ('Mối nối', 'Điểm nối'),
 ]
 REGEX = [

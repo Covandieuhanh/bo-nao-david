@@ -59,7 +59,7 @@ khách hàng, thị trường của chính người xem thuộc **hướng 3** (
 - **Giải pháp công nghệ AI:** có chạm một **mục tiêu / nỗi đau / vấn đề** mà một gói hay giải pháp công nghệ giải được, hoặc cho thấy David làm được thật không?
 
 **Cây nội dung kênh trainer** (hồ sơ David mục 4.2): **Gốc** = làm chủ bản thân · **Nhánh chính** = áp dụng vào công việc của chính
-họ · **Nhánh phụ** = mối quan hệ, chỉ khi bắt nguồn từ bản thân · **Nhân hiệu** = hành trình của David chỉ khi dẫn tới phát triển con người (vd. dùng từ trường số để định hướng), chỉ khi giúp người
+họ · **Nhánh phụ** = mối quan hệ, chỉ khi bắt nguồn từ bản thân · **Nhân hiệu** = hành trình của David chỉ khi dẫn tới phát triển con người (ví dụ dùng từ trường số để định hướng), chỉ khi giúp người
 xem tin David là trainer.
 
 **Bán được gì (bắt buộc mọi phiếu):** mục tiêu / nỗi đau → gói nào → bước phễu tiếp theo (`du-an/pheu-ban-hang-goi-cong-nghe.md`).

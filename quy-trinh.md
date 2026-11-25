@@ -30,7 +30,7 @@ chỉ trỏ về đây.
   dựng, không render bản thật trước Đ1.
 - **Đ2 — duyệt trước khi bấm đăng, gửi, xoá, thao tác tài khoản** (mạng xã hội, tin nhắn, xoá file gốc / dự án, dọn sau khi giao): chỉ làm khi
   David nói đúng việc đó, **sau khi đã thấy bản cuối**. **Không bao giờ bỏ**, kể cả chế độ tự chạy (`AGENTS.md` luật 4).
-  - **Đăng (lời David 25/11/2026: "mấy việc đăng thì không cần phải hỏi tôi, chỉ cần sắp xếp nội dung đăng cho phù hợp với sản phẩm"):**
+  - **Đăng (lời David: "mấy việc đăng thì không cần phải hỏi tôi, chỉ cần sắp xếp nội dung đăng cho phù hợp với sản phẩm"):**
     không hỏi David về việc đăng. Claude tự sắp gói đăng hợp với sản phẩm của từng hướng (tiêu đề, kênh, lịch và thứ tự đăng, bình luận
     ghim, lời kêu gọi dẫn về đúng sản phẩm), giao kèm bản cuối; không kết báo cáo bằng câu hỏi "đăng bản này?". Bấm đăng thật lên mạng xã
     hội chỉ khi David nói "đăng" (lá B11); không tự đăng.

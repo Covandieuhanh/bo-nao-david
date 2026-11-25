@@ -103,5 +103,20 @@
   "dung": "A",
   "nha": "co-so-tri-thuc/truc-tri-thuc.md mục 7; co-so-tri-thuc/so-dan-chung-goc.md",
   "nguon": "David 25/11/2026: \"đã là gốc rồi thì sẽ rất ít khi thay đổi, chỉ có nâng cấp và cải tiến… thay đổi vào gốc thì phải dựa vào rất nhiều lần tương tác và các dẫn chứng cụ thể\""
+ },
+ "c22": {
+  "dung": "A",
+  "nha": "ky-nang/chuan-muc-lam-viec.md mục 0 \"Phù hợp với nội dung là chìa khoá\"",
+  "nguon": "David 25/11/2026: \"thời lượng của video là tự động chọn sao cho phù hợp… các quy trình không bao giờ có con số cụ thể vì sự phù hợp mới là quan trọng nhất\"; \"Phù hợp mới là key chứ không phải bất kì cái gì cố định\""
+ },
+ "c23": {
+  "dung": "A",
+  "nha": "ky-nang/chuan-muc-lam-viec.md mục 3 \"Một bộ não, cùng kết quả trên mọi thiết bị\"",
+  "nguon": "David 25/11/2026: \"dù dùng bộ não github khi chạy trên mac hay win hay bất kì thiết bị nào cũng phải chuẩn như nhau\"; trường hợp thực tế 25/11: PowerShell làm hỏng tiếng Việt và khoảng trắng đường dẫn"
+ },
+ "c24": {
+  "dung": "A",
+  "nha": "ky-nang/chuan-muc-lam-viec.md mục 1 \"Tra quy trình trước mọi việc\"; quy-trinh.md bước 1",
+  "nguon": "David 25/11/2026: \"trước khi làm bao giờ cũng phải tra quy trình để chuẩn hóa\"; \"luôn luôn lấy bản mới nhất… bỏ các kết quả cũ đi\"; trường hợp thực tế 25/11: làm lại DJI_0031 vì chưa tra sổ"
  }
 }

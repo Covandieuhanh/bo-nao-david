@@ -1,6 +1,6 @@
 # bo-nao-david — bộ não dùng chung của David Trần
 
-Repo riêng tư. AI nào, tài khoản nào đọc xong cũng nhận đúng vai, đúng cách làm việc với David và biết việc đang dở.
+Repo công khai, chỉ giữ phần dùng chung (luật, hồ sơ, skill, script, mẫu); phần chỉ Mac chính ở repo riêng tư `bo-nao-david-mac`. AI nào, tài khoản nào đọc xong cũng nhận đúng vai, đúng cách làm việc với David và biết việc đang dở.
 
 **GitHub là bản gốc của bộ não.** Có gì mới cho skill hoặc não thì đẩy lên ngay. Bộ não có đủ mọi dữ liệu dùng chung: hồ sơ, luật, bộ nhớ, skill, mẫu, form, tài liệu tham chiếu, việc dở. Chỉ **sản phẩm** (video, bài viết, bài đăng… làm ra từ bộ não) ở lại máy và tài khoản làm ra nó.
 

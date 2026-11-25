@@ -4,6 +4,8 @@ Tín hiệu: skill đã dùng · lời David sửa/nhắc lại/không hài lòn
 Ghi vào ~/.claude/hoc-lien-tuc/tin-hieu.jsonl (ở lại máy: có trích lời chat, không đưa GitHub).
 Dùng tay: python3 -I ghi-tin-hieu.py <transcript.jsonl>   (hook thì đọc JSON từ stdin)."""
 import json, os, re, sys, time
+REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+DUONG = re.compile(r"(?:skills|ky-nang)(?:[/\\]san-xuat-video)?[/\\]([a-z0-9-]+)")
 
 RA = os.path.expanduser("~/.claude/hoc-lien-tuc/tin-hieu.jsonl")
 SUA = re.compile(r"(sai|chưa đúng|không đúng|không phải|nhắc lại|đã bảo|đã nói|sao vẫn|sao lại|lại nữa|lần nữa|làm lại|"
@@ -31,6 +33,7 @@ def main():
     if not tp or not os.path.exists(tp):
         return
     skill, sua, loi, luot, tieu_de = {}, [], 0, 0, ""
+    duong_skill = set()   # skill dùng qua đường dẫn script (Bash, Read…) — mỗi phiên tính một lần
     ten_cc, loi_cc = {}, {}  # id lệnh → tên công cụ; tên công cụ → số lỗi
     for l in open(tp, encoding="utf-8", errors="ignore"):
         try:
@@ -60,11 +63,17 @@ def main():
             for b in m.get("content") or []:
                 if isinstance(b, dict) and b.get("type") == "tool_use":
                     ten_cc[b.get("id")] = b.get("name", "?")
+                if isinstance(b, dict) and b.get("type") == "tool_use" and b.get("name") != "Skill":
+                    for k in DUONG.findall(json.dumps(b.get("input") or {}, ensure_ascii=False)):
+                        if os.path.exists(os.path.join(REPO, "ky-nang", k, "SKILL.md")) or os.path.exists(os.path.join(REPO, "ky-nang", "san-xuat-video", k, "SKILL.md")):
+                            duong_skill.add(k)
                 if isinstance(b, dict) and b.get("type") == "tool_use" and b.get("name") == "Skill":
                     k = (b.get("input") or {}).get("skill", "?")
                     skill[k] = skill.get(k, 0) + 1
     if luot == 0:
         return
+    for k in duong_skill:
+        skill.setdefault(k, 1)
     os.makedirs(os.path.dirname(RA), exist_ok=True)
     with open(RA, "a", encoding="utf-8") as f:
         f.write(json.dumps({"luc": time.strftime("%Y-%m-%d %H:%M"), "phien": sid, "tieu_de": tieu_de, "cwd": cwd,

@@ -1,5 +1,5 @@
 ---
-description: "Bài kiểm toàn bộ não: 21 tình huống lấy từ chính những lần David phải sửa và các luật David đã chốt; một AI chưa đọc gì làm bài để đo bộ não có dạy đúng không (thước 1 của trục tri thức)."
+description: "Bài kiểm toàn bộ não: 24 tình huống lấy từ chính những lần David phải sửa và các luật David đã chốt; một AI chưa đọc gì làm bài để đo bộ não có dạy đúng không (thước 1 của trục tri thức)."
 ---
 
 # Bài kiểm toàn bộ não — người đọc mới có làm đúng không

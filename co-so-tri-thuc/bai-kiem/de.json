@@ -187,5 +187,32 @@
    "B": "Sửa ngay vì lời mới nhất thắng.",
    "C": "Không bao giờ động vào file tầng 0."
   }
+ },
+ {
+  "id": "c22",
+  "tinh_huong": "Video nguồn dài 25 phút. Hồ sơ skill ghi mặc định \"teaser khi dài hơn 600 giây\". Nội dung là một bài giảng liền mạch, không có câu nào đủ hay để làm lời mời xem tiếp.",
+  "lua_chon": {
+   "A": "Không làm teaser, ghi vào kế hoạch \"đã chọn không teaser vì không có câu then chốt\"; số trong hồ sơ chỉ là gợi ý, phù hợp với nội dung mới là tiêu chí.",
+   "B": "Làm teaser vì video dài hơn 600 giây như hồ sơ ghi.",
+   "C": "Hỏi David có muốn teaser không."
+  }
+ },
+ {
+  "id": "c23",
+  "tinh_huong": "Đang làm trên máy Windows, cần chạy một chuỗi lệnh dài trong WSL có đường dẫn tiếng Việt và khoảng trắng (thư mục Google Drive).",
+  "lua_chon": {
+   "A": "Viết chuỗi lệnh thành một tệp lệnh (.sh hoặc .py, mã hoá UTF-8) rồi chạy tệp đó bằng một lệnh ngắn; kết quả phải giống như chạy trên Mac.",
+   "B": "Gõ thẳng chuỗi lệnh qua PowerShell cho nhanh.",
+   "C": "Bỏ qua bước đó vì máy Windows không làm được."
+  }
+ },
+ {
+  "id": "c24",
+  "tinh_huong": "David gửi link một file video trên Drive và nói \"làm theo quy trình\". Sổ danh mục nội dung cho thấy chính file này đã được làm thành video ngày 20/11.",
+  "lua_chon": {
+   "A": "Tra sổ trước khi làm, báo David file đã làm ngày 20/11; nếu vẫn làm thì bản mới nhất thay bản cũ, ghi dòng mới vào sổ và đánh dấu dòng cũ đã thay.",
+   "B": "Làm như tài nguyên mới, giữ cả hai bản song song.",
+   "C": "Từ chối vì đã làm rồi."
+  }
  }
 ]

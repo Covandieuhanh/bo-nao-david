@@ -28,7 +28,7 @@ kho 100 với hướng trainer: làm đúng [khối 00 mục 0b](../../mo-dun/00
 - Mốc mỗi đoạn lấy **đúng đầu / cuối câu** trong phụ đề (in các dòng quanh mốc để chọn).
 - **Lằn ranh** (khối 00 mục 3): mặc định giữ lời; liệt kê từng câu trong 4 phần cho David chọn giữ hay cắt. David chọn cắt thì tách đoạn
   bỏ riêng câu đó. Người khác xuất hiện (đối tác, khách): ghi vào mục "Ghi chú đăng" của gói phát hành, không hỏi, kể cả khách của công ty Veltrix
-  (lời David 25/11/2026).
+ .
 - Trình David bảng "video · hướng · đoạn · dài" + đoạn cắt + lằn ranh + clip ngắn dự kiến (4 phần), có mặc định.
 
 ### 3. Cắt + tạo dự án (sau khi duyệt)
@@ -54,7 +54,7 @@ Mỗi video ra `~/Movies/tap-<tên>/2-ban-day-du` có sẵn video gốc đã n�
 - Ảnh thu nhỏ `anh-thu-nho.sh` (nguồn = giây trong video đã cắt); `phat-hanh/phat-hanh.md`: 3 tiêu đề, mô tả, chương (cộng độ dài teaser
   trong `phat-hanh/doan-gioi-thieu.json`), bình luận ghim, màn kết gắn các video cùng bộ, lịch và thứ tự đăng theo sản phẩm, mục "Ghi chú đăng" (người xuất hiện, lằn ranh, nhạc
   tạm — để David biết, không hỏi).
-- Giao theo cây quy trình lá A6, **đủ hết lên Drive** (David 25/11/2026: "khi quy trình đã làm ra sản phẩm gì thì đều tải lên drive đầy đủ hết"): mỗi video `cho-dang.sh gui <tập>` (tự làm bản xem
+- Giao theo cây quy trình lá A6, **đủ hết lên Drive** (lời David: "khi quy trình đã làm ra sản phẩm gì thì đều tải lên drive đầy đủ hết"): mỗi video `cho-dang.sh gui <tập>` (tự làm bản xem
   nhẹ); kết quả chung của buổi viết `~/Movies/<buổi>/doc-truoc.md` rồi `cho-dang.sh buoi <buổi>` → Drive `thanh-pham/_buoi-<buổi>/`.
   `doc-truoc.md` = bảng ba dòng (Hướng · Kết quả · Ở đâu), **kể cả hướng không ra bản** và lý do; một dòng nói thư mục video có gì; một
   dòng nói thư mục buổi có gì (nội bộ, không đăng); chỗ để video gốc (không tải lên khi quá nặng). Mẫu: Drive `thanh-pham/_buoi-tap-dji0028-2311/`.

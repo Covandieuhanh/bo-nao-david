@@ -11,8 +11,8 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [AGENTS.md](../AGENTS.md) — tầng 0 · Cửa vào cho mọi AI: thứ tự đọc, sáu luật không được phá, bảng chọn skill theo việc. · ←3
 - [CLAUDE.md](../CLAUDE.md) — tầng 0 · Cấu hình Claude Code của repo: nạp AGENTS.md. · ←1
 - [README.md](../README.md) — tầng 2 · Trang đầu repo bo-nao-david trên GitHub: bộ não dùng chung của David, cấu trúc, cách dùng. · ←1
-- [bao-cao-trang-thai.md](../bao-cao-trang-thai.md) — tầng 3 · Báo cáo trạng thái: việc đang làm chưa xong, việc chờ David quyết, câu hỏi còn mở, cảnh báo, việc phải nhớ. · ←3
-- [huong-dan-cai-dat.md](../huong-dan-cai-dat.md) — tầng 2 · Hướng dẫn cài đặt bộ não lên máy mới / nơi khác từ GitHub: Mac chính, Mac khác và Windows chỉ dựng video (khoá phiên bản, máy tự kiểm), lối tắt, bot, lịch, cái gì không lên GitHub. · ←6
+- [bao-cao-trang-thai.md](../bao-cao-trang-thai.md) — tầng 3 · Báo cáo trạng thái: chỉ việc còn sống (đang làm chưa xong, chờ David quyết, câu hỏi mở), mỗi dòng có ngày và bước tiếp; việc xong chuyển sang du-an/dong-goi/. Cập nhật cuối mỗi việc. · ←4
+- [huong-dan-cai-dat.md](../huong-dan-cai-dat.md) — tầng 2 · Hướng dẫn cài đặt bộ não lên máy mới / nơi khác từ GitHub: Mac chính, Mac khác và Windows chỉ dựng video (khoá phiên bản, máy tự kiểm), lối tắt, bot, lịch, cái gì không lên GitHub. · ←7
 - [quy-trinh.md](../quy-trinh.md) — tầng 2 · Cây quy trình của bộ não — việc gì cũng đi từ quy trình gốc, xuống nhánh, tới quy trình lá; bảng tra duy nhất: câu David hay nói, quy trình, điểm duyệt, xong khi. · ←3
 
 ## ban-do
@@ -26,7 +26,7 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 
 ## co-so-tri-thuc
 
-- [co-so-tri-thuc/bai-kiem/README.md](bai-kiem/README.md) — tầng 3 · Bài kiểm toàn bộ não: 21 tình huống lấy từ chính những lần David phải sửa và các luật David đã chốt; một AI chưa đọc gì làm bài để đo bộ não có dạy đúng không (thước 1 của trục tri thức). · ←3
+- [co-so-tri-thuc/bai-kiem/README.md](bai-kiem/README.md) — tầng 3 · Bài kiểm toàn bộ não: 24 tình huống lấy từ chính những lần David phải sửa và các luật David đã chốt; một AI chưa đọc gì làm bài để đo bộ não có dạy đúng không (thước 1 của trục tri thức). · ←3
 - [co-so-tri-thuc/bang-thuat-ngu.md](bang-thuat-ngu.md) — tầng 2 · Bảng thuật ngữ đặt tên: thuật ngữ kinh doanh tiếng Anh → tiếng Việt → tên file/thư mục dùng; tên bắt buộc của công cụ; cấu trúc thư mục. · ←4
 - [co-so-tri-thuc/bo-nho/MEMORY.md](bo-nho/MEMORY.md) — tầng 3 · Mục lục bộ nhớ Claude Code: mỗi ghi nhớ một dòng, nhóm quy tắc / bộ não / video / thiết bị. · ←3
 - [co-so-tri-thuc/bo-nho/co-so-tri-thuc-bo-nao-cong-ty.md](bo-nho/co-so-tri-thuc-bo-nao-cong-ty.md) — tầng 3 · Việc của công ty Veltrix (đội đối tác công nghệ David tổng điều hành) làm ở bộ não riêng ~/Documents/bo-nao-veltrix, kho private Covandieuhanh/veltrix; không ghi vào bộ não cá nhân · ←3
@@ -125,10 +125,11 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [du-an/chuan-hoa-ten.md](../du-an/chuan-hoa-ten.md) — tầng 3 · Bản đồ chuẩn hoá tên toàn bộ (14/11, đã xong): tên cũ → tên mới theo thuật ngữ kinh doanh tiếng Anh dịch sang tiếng Việt. · ←2
 - [du-an/danh-gia-luat.md](../du-an/danh-gia-luat.md) — tầng 3 · Rà soát luật bộ skill video (08/11), bước 1 của chuẩn hoá skill: luật trùng, lệch, cần gộp. · ←1
 - [du-an/danh-gia-video-cu.md](../du-an/danh-gia-video-cu.md) — tầng 3 · Rà soát video cũ trên TikTok và fanpage (05/11): danh sách đề xuất ẩn (riêng tư), không xoá. · ←4
-- [du-an/danh-muc-noi-dung.md](../du-an/danh-muc-noi-dung.md) — tầng 3 · Sổ danh mục nội dung: mọi video/tài nguyên đã lọc, điểm, hướng nghề, trạng thái, lịch đăng. · ←4
+- [du-an/danh-muc-noi-dung.md](../du-an/danh-muc-noi-dung.md) — tầng 3 · Sổ danh mục nội dung: mọi video/tài nguyên đã lọc, điểm, hướng nghề, trạng thái, lịch đăng. · ←5
 - [du-an/danh-sach-y-tuong.md](../du-an/danh-sach-y-tuong.md) — tầng 3 · Danh sách ý tưởng nghề đang cân nhắc (chưa chốt): Company OS, talkshow hai đầu Việt – Đức, Telegram cho thành viên, cách dẫn reel học từ MagentX; mỗi ý có câu cần chốt và bước nhỏ nhất. · ←4
 - [du-an/dong-goi/2026-11-15.md](../du-an/dong-goi/2026-11-15.md) — tầng 3 · Phiếu đóng gói tuần 15/11/2026 (đã ẩn danh): top nỗi đau, bổ sung Gói 1, bài phễu nháp, ý video mới, việc chờ David. · ←3
 - [du-an/dong-goi/2026-11-20.md](../du-an/dong-goi/2026-11-20.md) — tầng 3 · Phiếu đóng gói tuần 20/11/2026 (đã ẩn danh): top nỗi đau, 5 bổ sung Gói 1, 3 bài phễu nháp, ý video mới, việc chờ David. · ←2
+- [du-an/dong-goi/2026-11-25-bao-cao-trang-thai-cu.md](../du-an/dong-goi/2026-11-25-bao-cao-trang-thai-cu.md) — tầng 3 · Báo cáo trạng thái bản cũ (08/11 → 23/11/2026), cất ngày 25/11/2026 khi làm gọn bao-cao-trang-thai.md; chỉ để tra lịch sử, không phải việc hiện hành. · ←1
 - [du-an/goi-dao-tao-co-so-tri-thuc-ai/1-quy-trinh.md](../du-an/goi-dao-tao-co-so-tri-thuc-ai/1-quy-trinh.md) — tầng 3 · Gói 2 dựng bộ não bằng file cho AI, phần 1 quy trình: vì sao cần, bốn tầng, cấu trúc thư mục phẳng, 10 bước từ số 0 tới bộ não tự nâng cấp, sáu câu hỏi khi lưu, luật an toàn, đòi hỏi máy. · ←2
 - [du-an/goi-dao-tao-co-so-tri-thuc-ai/2-lo-trinh.md](../du-an/goi-dao-tao-co-so-tri-thuc-ai/2-lo-trinh.md) — tầng 3 · Gói 2 dựng bộ não bằng file cho AI, phần 2 lộ trình trainer: 4 buổi, đích học viên tự đi trọn vòng học không cần trainer và bộ não qua ít nhất 3 dự án thật. · ←2
 - [du-an/goi-dao-tao-co-so-tri-thuc-ai/3-giao-trinh.md](../du-an/goi-dao-tao-co-so-tri-thuc-ai/3-giao-trinh.md) — tầng 3 · Gói 2 dựng bộ não bằng file cho AI, phần 3 giáo trình 8 bài: mục tiêu, nội dung, thực hành, bài tập, xong khi. · ←2
@@ -182,7 +183,7 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [du-an/nhat-ky-noi-dung/huong-1-tai-chinh.md](../du-an/nhat-ky-noi-dung/huong-1-tai-chinh.md) — tầng 3 · Nhật ký nội dung hướng 1 tài chính (giao dịch hàng hoá): ý tưởng và nội dung rút từ từng tập, mới nhất ở cuối. · ←1
 - [du-an/nhat-ky-noi-dung/huong-2-trainer-con-nguoi.md](../du-an/nhat-ky-noi-dung/huong-2-trainer-con-nguoi.md) — tầng 3 · Nhật ký nội dung hướng 2 trainer con người (chỉ phát triển con người: làm chủ bản thân, mối quan hệ, dẫn người): ý tưởng rút từ từng tập, mới nhất ở cuối. · ←1
 - [du-an/nhat-ky-noi-dung/huong-3-giai-phap-cong-nghe-ai.md](../du-an/nhat-ky-noi-dung/huong-3-giai-phap-cong-nghe-ai.md) — tầng 3 · Nhật ký nội dung hướng 3 giải pháp công nghệ AI (số hoá, AI cho cá nhân và tổ chức, kèm đào tạo): ý tưởng và nỗi đau khách rút từ từng tập, mới nhất ở cuối. · ←1
-- [du-an/pheu-ban-hang-goi-cong-nghe.md](../du-an/pheu-ban-hang-goi-cong-nghe.md) — tầng 3 · Phễu bán hàng gói công nghệ (hướng 3): phễu → bán thử → bán thật, khách, giá, kênh. · ←2
+- [du-an/pheu-ban-hang-goi-cong-nghe.md](../du-an/pheu-ban-hang-goi-cong-nghe.md) — tầng 3 · Phễu bán hàng gói công nghệ (hướng 3): phễu → bán thử → bán thật, khách, giá, kênh. · ←3
 - [du-an/phong-van/2026-11-20-tu-duy-dung-video.md](../du-an/phong-van/2026-11-20-tu-duy-dung-video.md) — tầng 3 · Phỏng vấn thiết kế (20/11/2026): dạy tư duy dựng video thành file — người xem cần gì → nguyên lý → hình — để AI nào ở máy nào cũng dựng được chỉ từ GitHub. · ←1
 - [du-an/san-pham-hoa.md](../du-an/san-pham-hoa.md) — tầng 3 · Dự án máy gom và đóng gói: mọi nguồn hằng ngày → phân loại theo hướng nghề → sản phẩm bán được; kế hoạch và lịch chạy. · ←2
 
