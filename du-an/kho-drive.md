@@ -27,9 +27,9 @@ file gốc chủ yếu để ghi lại toàn bộ nội dung và ý tưởng, c�
 - Xoá được khi đủ cả ba: `phan-huong.md` của tập đã phân đủ 3 hướng · nhật ký nội dung có mục ở từng hướng có ý · **mọi bản theo hướng
   ghi trong `phan-huong.md` đã có trong Drive `thanh-pham/<tập>/`** (hướng "không ra bản" thì không cần).
 - Thiếu một bản theo hướng (còn "chờ dựng", chưa lên `thanh-pham/`) thì giữ gốc.
-- **Chủ động xoá** (lời David 25/11/2026: "chủ động xóa file gốc video đi nếu đã render ra đủ các video cho các hướng rồi"): đủ điều kiện
-  thì tự xoá gốc trên Drive và trên máy (file DJI gốc, bản nối, `video-goc-tho`, `video-goc` cả buổi), không chờ nhắc. Giữ đoạn đã cắt
-  của từng tập (`1-goc/<tập>.mp4`, `tu-lieu/video-goc.mp4` của tập) để làm lại được. Báo trong báo cáo đã xoá gì.
+- **Chủ động xoá** (lời David 25/11/2026: "chủ động xóa file gốc video đi nếu đã render ra đủ các video cho các hướng rồi" — nói về
+  file gốc **trên Drive**): đủ điều kiện thì tự xoá gốc trong Drive `tu-lieu-goc/`, không chờ nhắc; báo đã xoá gì. **Không áp cho file
+  trên máy** (ổ D, WSL): xoá file trên máy vẫn hỏi David trước (25/11 đã xoá nhầm gốc buổi 22–23/11 trên máy vì hiểu rộng luật này).
 - Gốc chưa lên Drive mà đã đủ ba điều trên thì không tải lên nữa. Xoá qua ổ Drive trên máy là vào thùng rác Drive (vẫn chiếm chỗ 30 ngày);
   dọn thùng rác là xoá vĩnh viễn — David tự làm.
 
