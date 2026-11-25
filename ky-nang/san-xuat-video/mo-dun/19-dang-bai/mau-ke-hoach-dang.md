@@ -106,7 +106,7 @@ Thật sự là, khi hiểu được vai trò của mình, nỗi buồn ba thán
 
 Câu chuyện đầy đủ ở đây: [link YouTube]
 
-Bạn đang kẹt ở vai trò nào? Bình luận **Vấn đề** để mình biết nhé.
+Bạn đang vướng ở vai trò nào? Bình luận **Vấn đề** để mình biết nhé.
 
 #DavidTran #TrainerDinhHuong #lamchubanthan
 

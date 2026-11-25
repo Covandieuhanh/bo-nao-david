@@ -28,7 +28,7 @@ chỉ trỏ về đây.
   nguyên về thư mục dự án, chép lời, đo, ghi phiếu lọc / `phan-huong.md` trong thư mục dự án, ghi mục nhật ký nội dung
   (`du-an/nhat-ky-noi-dung/`) và dòng "lọc" trong sổ danh mục (đây là ghi chép, không đổi luật). Không sửa skill, luật, hồ sơ, không
   dựng, không render bản thật trước Đ1.
-- **Đ2 — duyệt trước khi bấm đăng, gửi, xoá, đụng tài khoản** (mạng xã hội, tin nhắn, xoá file gốc / dự án, dọn sau khi giao): chỉ làm khi
+- **Đ2 — duyệt trước khi bấm đăng, gửi, xoá, thao tác tài khoản** (mạng xã hội, tin nhắn, xoá file gốc / dự án, dọn sau khi giao): chỉ làm khi
   David nói đúng việc đó, **sau khi đã thấy bản cuối**. **Không bao giờ bỏ**, kể cả chế độ tự chạy (`AGENTS.md` luật 4).
   - **Đăng (lời David 25/11/2026: "mấy việc đăng thì không cần phải hỏi tôi, chỉ cần sắp xếp nội dung đăng cho phù hợp với sản phẩm"):**
     không hỏi David về việc đăng. Claude tự sắp gói đăng hợp với sản phẩm của từng hướng (tiêu đề, kênh, lịch và thứ tự đăng, bình luận
@@ -62,7 +62,7 @@ Lần sau việc đó đã có quy trình, phiên nào cũng làm giống nhau.
 
 **Khung một quy trình lá** (mọi file quy trình có đủ): **Khi nào dùng** · **Đầu vào** · **Các bước** (lệnh, script có trong repo, không
 ghi cứng công cụ chỉ một máy có) · **Điểm duyệt** (Đ1 / Đ2 / Đ3 ở bước nào, hoặc "không có") · **Xong khi** (đo được) · **Kiểm gì** ·
-**Lỗi hay gặp** (nếu có). Máy kiểm `tu-dong-hoa/kiem-quy-trinh.py` chạy mỗi lần đẩy GitHub: mọi lá trỏ tới file có thật, có điểm duyệt và
+**Lỗi hay gặp** (nếu có). Công cụ kiểm tra `tu-dong-hoa/kiem-quy-trinh.py` chạy mỗi lần đẩy GitHub: mọi lá trỏ tới file có thật, có điểm duyệt và
 "Xong khi"; mọi `SKILL.md` dùng chung có mục "Xong khi" và có lá trong cây.
 
 ## 3. Nhánh và lá
@@ -74,7 +74,7 @@ ghi cứng công cụ chỉ một máy có) · **Điểm duyệt** (Đ1 / Đ2 / 
 | A2 | cài bộ não lên máy mới (Mac, Windows qua WSL, Linux) | [huong-dan-cai-dat.md](huong-dan-cai-dat.md) · [tu-dong-hoa/may-khac/README.md](tu-dong-hoa/may-khac/README.md) | Đ1 trước khi cài; mật khẩu máy David tự gõ | `kiem-may.sh` ra "MÁY NÀY DỰNG GIỐNG MAC CHÍNH" |
 | A3 | "nhìn lại tuần", "tự học", "học từ kênh X", "học cái này thành quy trình" | [ky-nang/hoc-lien-tuc/SKILL.md](ky-nang/hoc-lien-tuc/SKILL.md) | phân tích không có; Đ1 trước khi sửa skill, giọng văn, luật kênh | theo mục "Xong khi" của skill |
 | A4 | "nâng cấp", "tái bản", luật chồng chéo, gom luật trùng | [hoc-lien-tuc Việc 4](ky-nang/hoc-lien-tuc/SKILL.md) · [ky-nang/tai-cau-truc/SKILL.md](ky-nang/tai-cau-truc/SKILL.md) | đo không có; Đ1 trước khi sửa (một bộ 4 phần cho cả đợt) | `do-chong-cheo.py` dưới ngưỡng mọi bộ, bản luật không còn câu trùng / ngược |
-| A5 | học, sửa, lưu thông tin mới vào bộ não (ghi nhớ, kiến thức, hồ sơ) | [co-so-tri-thuc/truc-tri-thuc.md](co-so-tri-thuc/truc-tri-thuc.md) · [quy ước liên kết](co-so-tri-thuc/quy-uoc-lien-ket.md) | Đ1; thông tin về David thêm Đ3 | ý ở đúng một nguồn duy nhất, có dòng ở `ban-do/`, máy kiểm link đạt |
+| A5 | học, sửa, lưu thông tin mới vào bộ não (ghi nhớ, kiến thức, hồ sơ) | [co-so-tri-thuc/truc-tri-thuc.md](co-so-tri-thuc/truc-tri-thuc.md) · [quy ước liên kết](co-so-tri-thuc/quy-uoc-lien-ket.md) | Đ1; thông tin về David thêm Đ3 | ý ở đúng một nguồn duy nhất, có dòng ở `ban-do/`, công cụ kiểm tra link đạt |
 | A6 | giao kết quả cho David | [phan-phoi-da-kenh bước 5](ky-nang/san-xuat-video/phan-phoi-da-kenh/SKILL.md) | giao không có; dọn / xoá file tạm, đưa dự án lên Drive: Đ2 (sau khi David chốt) | bản cuối ở nơi giao của máy (Mac: trang Chờ đăng + Drive; máy chỉ dựng video: Drive); David theo dõi từ xa thì gửi thêm bản nhẹ dưới 30 MB qua tệp đính kèm |
 | A7 | hỏi lại khi chưa rõ yêu cầu, trình 4 phần | [ky-nang/thu-thap-yeu-cau/SKILL.md](ky-nang/thu-thap-yeu-cau/SKILL.md) | chính là Đ1 | theo mục "Xong khi" của skill |
 | A8 | trước mọi việc chưa có đủ hình mẫu; "nghiên cứu hình mẫu", "xem người ta làm thế nào", "học từ người đã thành công" | [co-so-tri-thuc/hinh-mau/quy-trinh-nghien-cuu.md](co-so-tri-thuc/hinh-mau/quy-trinh-nghien-cuu.md) | không có cho phần nghiên cứu, ghi bản đồ (phần chuẩn bị); đưa vào skill, luật: Đ1 của việc chính | mục nhỏ có ít nhất 5 hình mẫu (việc lớn 10) đủ bốn cột, có ngày đo; nhật ký có mục mới; tin giao có 2–3 dòng đối chiếu |

@@ -1,4 +1,4 @@
-// Dùng bởi chup-anh-mau.sh. // sinh canh.js cho khuôn thử danh mục: mỗi kiểu một khe 6 s
+// Dùng bởi chup-anh-mau.sh. // sinh canh.js cho mẫu thử danh mục: mỗi kiểu một khe 6 s
 const K = [
  ['illus-single', 'illus', {mode: 'single', items: [{icon: 'bulb', at: 0.3}], label: 'Ý TƯỞNG'}],
  ['illus-flow', 'illus', {mode: 'flow', items: [{icon: 'write', at: 0.3, label: 'GHI'}, {icon: 'chart', at: 1, label: 'ĐO'}, {icon: 'target', at: 1.7, label: 'SỬA'}]}],

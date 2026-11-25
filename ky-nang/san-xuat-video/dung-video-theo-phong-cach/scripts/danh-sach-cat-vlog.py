@@ -19,7 +19,7 @@
 #            #         chốt kiểu "Let's go / xin được bắt đầu".
 #            # "nhac": "intro-soi" (mặc định) | "intro-lang" — Claude chọn theo nội dung chuyến. Cảnh câm không ghi len = 2 phách
 #            # của bài (≈ 1,06 s) và nhạc được canh để mọi mối cắt cảnh câm rơi đúng phách.
-#            # Có intro thì "teaser" bỏ qua (câu đắt đặt thành cảnh voice đầu tiên) và "title" không còn đứng riêng.
+#            # Có intro thì "teaser" bỏ qua (câu then chốt đặt thành cảnh voice đầu tiên) và "title" không còn đứng riêng.
 #   "fx": [                                                                     # HIỆU ỨNG theo lời (mốc = giây trong clip gốc)
 #     {"type": "pow", "c": "c3", "at": 130.5, "len": 2.4, "text": "CHỮ TRÍCH LỜI"},   # chữ to nhấn ý (≤ 4 chữ, nguyên văn)
 #     {"type": "chips", "c": "c3", "items": [["SỐNG THỌ", 206.0], ["ÍT BỆNH", 207.5]], "len": 4},   # danh sách hiện theo lời
@@ -35,7 +35,7 @@
 #   "cta": {"text": "…", "kind": "comment"}
 # }
 # Tự làm: cắt theo from/to trừ drop · đoạn KHÔNG LỜI ≥ 4 s (theo moc-tung-tu.srt) tua 1,8× tiếng nhỏ — giữ cảm giác hành trình mà vẫn có
-# nhịp · phụ đề từ moc-tung-tu.srt (≤ 9 chữ/dòng, ngắt ở dấu câu/khoảng lặng), bỏ câu Whisper bịa ("Hãy subscribe…") · thẻ địa điểm 3 s ·
+# nhịp · phụ đề từ moc-tung-tu.srt (≤ 9 chữ/dòng, ngắt ở dấu câu/khoảng lặng), bỏ câu Whisper bịa đặt ("Hãy subscribe…") · thẻ địa điểm 3 s ·
 # TONE + MUSIC.tracks theo tông từng clip (nhạc cố định của kênh) · tiếng whoosh ở chuyển chặng. Ghi <P>/chuyen-dong/src/danh-sach-cat.js +
 # <P>/kiem-tra/cat-vlog.md (nguồn → video, đoạn bỏ, đoạn tua).
 # SOÁT HÌNH (người dùng chỉ ra 2026-11-04: giữ 18 s cuối c13 vì có lời hỏi đường — hình vẫn trong túi rồi lật ngang/lộn ngược):
@@ -60,7 +60,7 @@ MUSDIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../cat-do
 intro_mus = None
 MUS = {'soi': 'soi-1', 'lang': 'lang-1'}
 # ke-hoach.json "tuyen" (hồ sơ chung nhac.tuyen, David chốt 08/11: chọn nhạc theo nội dung từ cả kho) → bài đầu của tuyến cho đoạn sôi;
-# "nhac": {"soi": "<bài>", "lang": "<bài>"} ép tay
+# "nhac": {"soi": "<bài>", "lang": "<bài>"} chỉ định thủ công
 _TY = json.load(open(os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../ho-so-thuong-hieu/chung.json'), encoding='utf-8'))['nhac']['tuyen']
 if plan.get('tuyen') in _TY and _TY[plan['tuyen']]['bai']:
     MUS['soi'] = _TY[plan['tuyen']]['bai'][0]
@@ -232,7 +232,7 @@ for k in plan['doan-video']:
                 if lb <= x or la >= y: continue
                 toks = fixtxt(text, cap=False).split()            # sửa chính tả TRƯỚC khi chia (tên riêng không bị tách đôi)
                 # mốc TỪNG CHỮ: khớp chữ của câu với moc-tung-tu.srt (difflib), chữ không khớp nội suy. Chữ rơi ngoài đoạn giữ thì bỏ —
-                # trước 2026-11-04 cả câu được giữ theo tỉ lệ ký tự nên lọt chữ của đoạn đã cắt ("…tốt lành thật ra", "David xin chào…")
+                # trước 2026-11-04 cả câu được giữ theo tỉ lệ ký tự nên tràn chữ của đoạn đã cắt ("…tốt lành thật ra", "David xin chào…")
                 ww = [w for w in words if la - 0.6 <= w[0] <= lb + 0.3]
                 sm = difflib.SequenceMatcher(None, [norm(t) for t in toks], [norm(w[2]) for w in ww], autojunk=False)
                 st = [None] * len(toks); en = [None] * len(toks)

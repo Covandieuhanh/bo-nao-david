@@ -36,7 +36,7 @@ bộ nhận diện, phát hành. Dưới đây chỉ là luật RIÊNG của ski
 3. **Bố cục tự chọn theo nội dung** (`../thiet-ke-bo-cuc/tu-chon.md` → khối 07 + `../thiet-ke-bo-cuc/bo-cuc.md`): danh mục có sẵn (dùng khi hợp, không bắt buộc — cần hình riêng thì viết cảnh tự vẽ `ve`) — người + phụ đề, `nhan`,
    `bocuc` (`the-canh` thẻ cạnh mặt · `o-nguoi` người vào ô bo góc + nội dung · `chuong` màn chương), `illus` / `diagram` toàn màn hình.
    Hợp nội dung, người xem dễ nhận; dọc mỗi lúc ít thứ. **Điểm nhấn trên người** (`nhan`): làm tối viền / chữ nhấn hay biểu
-   tượng cạnh mặt ở câu đắt, không che mặt; không zoom vào / ra. Mọi video đều có điểm nhấn — "dựng nhẹ" vẫn có — nhưng chỉ vài kiểu hợp nội dung nhất.
+   tượng cạnh mặt ở câu then chốt, không che mặt; không zoom vào / ra. Mọi video đều có điểm nhấn — "dựng nhẹ" vẫn có — nhưng chỉ vài kiểu hợp nội dung nhất.
 4. **Màn hành động** (`action`: biểu tượng + tick + `label` cụm việc nguyên văn) đúng lúc người nói giao việc cụ thể.
    **Màn chốt** (`cta`, cuối mọi video): video lùi vào khung bo góc, chữ = **nguyên văn câu David nói cuối video** (quy-tac-chung 1).
    "Vấn đề / Kết quả" và "gỡ" chỉ lên video khi David tự nói trong video; không thì chỉ ở bài đăng. Không tự đặt câu hỏi kêu gọi,
@@ -56,7 +56,7 @@ bộ nhận diện, phát hành. Dưới đây chỉ là luật RIÊNG của ski
 | Đầu vào | Chế độ | Làm theo |
 |---|---|---|
 | **1 video gốc** có người nói trước camera | Phủ đồ hoạ lên video gốc (giữ nguyên hình) | Công thức "Làm video" bên dưới |
-| **Nhiều file của cùng một buổi nói / cùng cảnh** (máy quay tách file, buổi 1:1, bài giảng) | **Nối file thành một video gốc** (`ffmpeg -f concat`, bỏ đoạn theo `phan-huong.md` của tập — khối 00) rồi làm như 1 video — khuôn này có đủ kho | Công thức "Làm video" |
+| **Nhiều file của cùng một buổi nói / cùng cảnh** (máy quay tách file, buổi 1:1, bài giảng) | **Nối file thành một video gốc** (`ffmpeg -f concat`, bỏ đoạn theo `phan-huong.md` của tập — khối 00) rồi làm như 1 video — mẫu này có đủ kho | Công thức "Làm video" |
 | **Một buổi nói dài nhiều chủ đề**, cần cắt đoạn thừa và **tách thành nhiều video theo hướng công việc** | Làm sạch + chép lời cả buổi một lần → phân hướng (`phan-huong.md`, khối 00) → `tach-video.py` → mỗi video một dự án, dựng như 1 video | `references/tach-theo-huong.md` |
 | **Nhiều cảnh khác nhau** (vlog, sự kiện, clip minh hoạ chen vào lời), hoặc clip không nói trước camera | **Ghép nhiều clip**: tự sắp mạch, clip minh hoạ trích đúng câu nói liên quan; tự soát kế hoạch rồi render | `references/nhieu-doan-video.md` (khối 11, hồ sơ `ghep-vlog`) |
 
@@ -121,7 +121,7 @@ Tạo `~/Movies/tap-<tên>/2-ban-day-du/` (gốc tự đặt vào `tap-<tên>/1-
 
 ## Tiêu chí đạt (soát trước khi giao)
 - Không thẻ tít mở đầu trừ khi được yêu cầu · có điểm nhấn, vài kiểu hợp nội dung, video không rối · không che mặt, không chữ to tự do đè người
-- Bố cục hợp nội dung (xem stills: người / ý có rõ không) · phụ đề đúng chữ, không bị đè · tiếng Việt đủ dấu · không gì lọt vùng đỏ
+- Bố cục hợp nội dung (xem stills: người / ý có rõ không) · phụ đề đúng chữ, không bị đè · tiếng Việt đủ dấu · không gì tràn vùng đỏ
 - Màn chốt nguyên văn + thẻ cuối (video dọc ngắn: màn chốt trên hình, không thẻ cuối, không thanh thời gian — `../thu-vien-tai-nguyen/nhan-dien-chung.md` mục 1) · (YouTube video dài) màn kết, chương, teaser · thumbnail nếu ngang · phat-hanh.md + so-lieu.md
 - Âm lượng theo chuẩn chung, tiếng rè không tăng so nguồn; thời lượng đúng
 
@@ -152,7 +152,7 @@ nó, rồi `xem-truoc-ban-dung.py`.
 1. Không hỏi giữa chừng trừ tín hiệu nặng; khung xuất đúng khung gốc trừ khi David yêu cầu đổi; báo cáo có "đã chọn X vì Y".
 2. Chữ trên video (kể cả màn chốt) là nguyên văn lời David; không thẻ tít trừ khi được yêu cầu.
 3. Video dài để nguyên; video ngắn làm sạch mà không mất ý.
-4. Có motion graphics hợp nội dung (vài kiểu, không rối), bố cục tự cân, không che mặt, không gì lọt vùng đỏ.
+4. Có motion graphics hợp nội dung (vài kiểu, không rối), bố cục tự cân, không che mặt, không gì tràn vùng đỏ.
 5. Phụ đề đúng chữ, đủ dấu, không bị đè; âm lượng đạt chuẩn chung.
 6. Đã chụp kiểm đúng các mốc dễ lỗi trước khi giao.
 7. Đủ gói phát hành (tiêu đề, khung bìa, thumbnail nếu ngang, mẫu số liệu); David không phải sửa lại vì trái luật đã chốt.

@@ -12,4 +12,4 @@ metadata:
 
 **How to apply:** đặt tên mới: tìm thuật ngữ tiếng Anh chuẩn → tra `co-so-tri-thuc/bang-thuat-ngu.md` → dùng đúng tên ở đó (chưa có thì thêm một dòng vào bảng trước). Tiếng Việt không dấu, chữ thường, gạch nối, số đứng trước khi cần thứ tự; module Python được `import` dùng gạch dưới (Python cấm gạch nối). Mỗi thuật ngữ một bản dịch. Không có ngoại lệ tuỳ ý: chỉ giữ **tên bắt buộc của công cụ** (bảng cuối `bang-thuat-ngu.md`), kèm lối tắt tên chuẩn khi có thể. Ghi nhớ chỉ đúng một máy đặt tiền tố `thiet-bi-`. Liên quan [[co-so-tri-thuc-github-ban-goc]].
 
-Nhà của luật: `AGENTS.md` mục "Giữ bộ não luôn mới" và `co-so-tri-thuc/bang-thuat-ngu.md`. Ghi nhớ này giữ ngày, lời David, lý do.
+Nguồn của luật: `AGENTS.md` mục "Giữ bộ não luôn mới" và `co-so-tri-thuc/bang-thuat-ngu.md`. Ghi nhớ này giữ ngày, lời David, lý do.

@@ -15,7 +15,7 @@ Dán nguyên phần trong khung vào AI (trong Projects "Bộ não" ở mức c�
 | 3 · Lỗi thành câu kiểm | mỗi lần phải sửa AI | 5 |
 | 4 · Nhìn lại tuần | mỗi tuần | 6 |
 | 5 · Dọn khi nâng cấp | giữa đo trước và đo sau | 7 |
-| 6 · Người đọc lạnh | đo trước và đo sau mỗi đợt nâng cấp; nghiệm thu | 7, 9 |
+| 6 · Người đọc mới | đo trước và đo sau mỗi đợt nâng cấp; nghiệm thu | 7, 9 |
 
 ---
 
@@ -23,14 +23,14 @@ Dán nguyên phần trong khung vào AI (trong Projects "Bộ não" ở mức c�
 
 ```text
 Bạn là người phỏng vấn giúp tôi dựng bộ não bằng file, để mọi AI sau này đọc là hiểu tôi.
-Trong Projects có khuôn các file (biểu mẫu 01). Hãy hỏi tôi theo từng vòng, mỗi vòng tối đa 5 câu,
+Trong Projects có mẫu các file (biểu mẫu 01). Hãy hỏi tôi theo từng vòng, mỗi vòng tối đa 5 câu,
 chờ tôi trả lời rồi mới hỏi vòng sau:
 vòng 1 tôi là ai và làm gì; vòng 2 mục tiêu và thước đo thành công; vòng 3 thế mạnh, điểm cần bù, nhịp làm việc;
 vòng 4 tôi muốn AI làm việc với tôi thế nào, 5 điều tôi hay phải nhắc AI nhất, điều AI không bao giờ được làm.
 Câu nào tôi trả lời mơ hồ thì hỏi lại một lần, có gợi ý sẵn 2–3 lựa chọn.
 Không hỏi mật khẩu, số giấy tờ, thông tin tài chính.
 Hỏi xong thì viết ho-so.md, luat-lam-viec.md, trang-thai.md (việc tôi đang làm, việc tiếp theo, việc chờ tôi quyết)
-và điền tên tôi vào doc-truoc.md, theo đúng khuôn, viết đủ từ, không viết tắt,
+và điền tên tôi vào doc-truoc.md, theo đúng mẫu, viết đủ từ, không viết tắt,
 rồi hỏi tôi chỗ nào sai để sửa. Khi tôi nói "được", tạo bốn file để tôi tải về.
 ```
 
@@ -42,7 +42,7 @@ Buổi làm việc này đã xong. Hãy đọc truc-hoc.md, rồi với từng �
 là gì · phục vụ mục tiêu nào trong ho-so.md · đã có chỗ chưa · vì sao đúng · nối vào đâu · kiểm thế nào.
 Sau đó đưa tôi một bảng đề xuất: điều mới | ghi vào file nào | sửa câu nào hay thêm câu nào | tầng mấy.
 Có chỗ rồi thì sửa thẳng câu cũ, không chồng câu mới. Chưa có chỗ thì ghi ở tầng 3.
-Luôn có: một dòng mới trong du-an-<tên dự án>.md (chưa có file thì tạo theo khuôn), cập nhật trang-thai.md,
+Luôn có: một dòng mới trong du-an-<tên dự án>.md (chưa có file thì tạo theo mẫu), cập nhật trang-thai.md,
 và thêm dòng vào bảng file ở doc-truoc.md cho mọi file mới.
 Chờ tôi duyệt, rồi tạo các file đã sửa để tôi tải về (mỗi file đủ toàn bộ nội dung, không chỉ phần sửa).
 ```
@@ -87,7 +87,7 @@ Không đặt thêm luật mới trong đợt này: chỉ gom, gỡ, cất, và 
 ```
 Sửa xong thì **đo sau** bằng câu lệnh 6. Điểm đo sau thấp hơn đo trước thì quay về bản đã sao (biểu mẫu 00, thao tác 7). Ghi một dòng vào bảng "Nâng cấp" của `bai-hoc.md`.
 
-## Câu lệnh 6 · Kiểm bằng người đọc lạnh
+## Câu lệnh 6 · Kiểm bằng người đọc mới
 
 Dùng AI mới tinh (biểu mẫu 00, thao tác 5). Tải các file trong `bo-nao`, **không tải gì trong `ngoai-bo-nao`**. Dán:
 

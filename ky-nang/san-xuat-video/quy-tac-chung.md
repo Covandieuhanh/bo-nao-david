@@ -14,7 +14,7 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
 - **Thẩm mỹ chỉ giữ chữ ký nhận diện** (`thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0): xem video nào cũng nhận ra cùng một người làm.
   Ngoài chữ ký là sáng tạo tự do theo nội dung; học được gì từ mẫu cũng dùng được, và học chỉ thêm vào kho, không thay cái đã có
   (`thiet-ke-bo-cuc/README.md` mục 4).
-- **Mọi lựa chọn tự setup theo nội dung nguồn**, để phát huy tối đa sức mạnh của AI: khuôn, bố cục, lớp thông tin, kiểu cảnh, thẩm mỹ,
+- **Mọi lựa chọn tự setup theo nội dung nguồn**, để phát huy tối đa sức mạnh của AI: mẫu, bố cục, lớp thông tin, kiểu cảnh, thẩm mỹ,
   nhạc, khung đều do người dựng (AI nào cũng vậy) lập luận từ chính tài nguyên (`thiet-ke-bo-cuc/nguoi-xem-can-gi.md` → `tu-chon.md`), không chép từ tập trước, không chờ
   David chỉ. Máy chặn render khi chưa chẩn đoán (`soat-canh.mjs`).
 - **Tận dụng tối đa kho đã học, tự do.** Mọi hiệu ứng, motion graphic, chuyển cảnh (kể cả 3D) đã học hoặc tự viết đều dùng được ở
@@ -26,7 +26,7 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
   Ý nào cần hình và mỗi hình phải đạt gì: `thiet-ke-bo-cuc/tu-chon.md` bước 4a–4b (nguyên lý: `nguoi-xem-can-gi.md`).
 
 ## 1. Nội dung
-- **Không bịa.** Phụ đề, chữ to, thẻ, màn hành động, màn chốt = **trích / bỏ bớt lời người nói**, không diễn đạt lại. Tên riêng, con
+- **Không bịa đặt.** Phụ đề, chữ to, thẻ, màn hành động, màn chốt = **trích / bỏ bớt lời người nói**, không diễn đạt lại. Tên riêng, con
   số, vế đối lập, từ phủ định giữ nguyên. Tên chưa chắc chính tả thì khối 01.
 - **Chữ trên video là nguyên văn lời David.** Motion graphics loại nào cũng được nhưng không sáng tạo sai lời. Chữ = cụm nguyên văn
   liền mạch, được tách mảnh, không bỏ chữ làm đổi nghĩa ("không **muốn** làm một mình"). Không số chạy hiện số David không nói.
@@ -37,7 +37,7 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
   `"endcard": {"schedule"}` (highlight). Không tự đặt lịch.
 - **Lằn ranh** (danh sách theo từng hướng: khối 00 mục 3; gốc `chien-luoc-nghe-nghiep.md` 4.7): loại khỏi mọi chữ / clip. Câu chủ chốt dính
   lằn ranh thì báo David, không tự sửa lời. Ở video dài: cảnh báo trong phiếu lọc và báo cáo, mặc định giữ lời, David quyết ở bản cuối (khối 00 mục 3).
-- Whisper bịa câu ở đoạn không lời ("Hãy subscribe cho kênh…", "Cảm ơn các bạn đã xem") thì bỏ.
+- Whisper bịa đặt câu ở đoạn không lời ("Hãy subscribe cho kênh…", "Cảm ơn các bạn đã xem") thì bỏ.
 
 ## 2. Nhịp
 - **Mở đầu 0–3 s** nói ngay video về cái gì / đang đặt cược gì, bằng lời thật của David. Thẻ tít mở đầu: khối 06.
@@ -63,7 +63,7 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
 ## 3. Phụ đề (một nguồn: `thu-vien-tai-nguyen/kieu-phu-de.js`; cách làm: khối 03)
 - **Video ngắn** — highlight, podcast dọc (mọi độ dài), video 1 người dọc tối đa 90 s: mỗi lần hiện **một cụm trọn ý khoảng 5–8 chữ** (tối đa
   2 dòng), **cỡ bằng chữ trong thẻ motion graphic** (`ngan_co` 58), chữ thường, viền đen mảnh, không hộp nền, từ khoá cam, ngay trên
-  thanh thời gian (`ShortLine`). Tự bật; ép tay `project.short = true|false` (1 video) hoặc `SHORT` trong danh-sach-cat.js (ghép).
+  thanh thời gian (`ShortLine`). Tự bật; chỉ định thủ công `project.short = true|false` (1 video) hoặc `SHORT` trong danh-sach-cat.js (ghép).
 - **Video dài, vlog, podcast ngang**: hộp tối, đầy đủ câu, đáy vùng an toàn (`SUB`).
 - **Podcast đồ hoạ dọc trích ngắn**: không dải phụ đề; cả câu đang nói hiện to giữa khung làm đồ hoạ (`chu_chinh`).
 - **Mỗi lúc một chỗ chữ** (mọi loại, mọi khung): lớp motion graphic có chữ (chữ to, thẻ, nhãn, ô liệt kê, sơ đồ, màn hành động, thẻ
@@ -113,7 +113,7 @@ Ghi `<dự án>/phat-hanh/phat-hanh.md`:
     vlog ghép `"ytEnd": 20` trong ke-hoach.json. Ghi vào phat-hanh.md: "gắn màn kết trong YouTube Studio: 2 video (trái/phải hoặc
     trên/dưới) + nút đăng ký (tròn giữa dưới)".
   - **Chương YouTube**: `python3 -I dung-video-theo-phong-cach/scripts/chuong.py <dự án>` → `phat-hanh/chuong.txt` dán vào mô tả.
-  - **Teaser** (câu đắt, trọn câu, nguyên văn; số câu và độ dài do Claude tự chọn theo nội dung) khi video đủ dài để người xem cần một lời mời xem tiếp (podcast, nói trước camera, vlog nói chuyện): sau render, chọn các câu đắt nhất (trọn câu,
+  - **Teaser** (câu then chốt, trọn câu, nguyên văn; số câu và độ dài do Claude tự chọn theo nội dung) khi video đủ dài để người xem cần một lời mời xem tiếp (podcast, nói trước camera, vlog nói chuyện): sau render, chọn các câu then chốt (trọn câu,
     nguyên văn) → `python3 -I dung-video-theo-phong-cach/scripts/doan-gioi-thieu.py <dự án> <từ-đến> …` (chạy TRƯỚC chuong.py).
 - Mô tả bài đăng + bình luận ghim theo luật kênh (khối 15), hashtag theo `ho-so-thuong-hieu/giong-thuong-hieu-david.md`.
 - Gửi David: video + thumbnail (SendUserFile) + tiêu đề.
@@ -141,5 +141,5 @@ Ghi `<dự án>/phat-hanh/phat-hanh.md`:
   trừ khi David yêu cầu, vì chạy app tốn token hơn.
 - **Làm ra gì thì lên Drive đủ hết** (David 25/11/2026: "khi quy trình đã làm ra sản phẩm gì thì đều tải lên drive đầy đủ hết"): xong là `cho-dang.sh gui <tập>` (bản dài, bản xem nhẹ, clip,
   ảnh thu nhỏ, bài đăng, chương, số liệu) và, khi tách buổi theo hướng, `cho-dang.sh buoi <buổi>`; so khớp từng tệp rồi mới báo. Chỉ video gốc quá nặng là không tải, ghi chỗ để.
-- **Xoá bản gốc chỉ sau khi duyệt** (David 25/11/2026): kết quả đã đúng tiêu chí và David đã duyệt thì xoá bản gốc (video gốc, dự án, trung gian) trên Drive và mọi thiết bị để nhẹ bộ nhớ; chưa duyệt thì vẫn tải đủ lên Drive để David xem từ xa, **chưa xoá bản gốc**. Máy Windows không hỏi được trạng thái lên mây: chỉ xoá khi David đã xác nhận Drive đồng bộ xong. Làm lại cùng một tài nguyên thì bản mới nhất thay bản cũ: bỏ kết quả cũ của đúng tài nguyên đó sau khi bản mới đã lên Drive đủ, kiểm nguồn trước, không bỏ nhầm kết quả của buổi khác (David 25/11/2026).
+- **Xoá bản gốc chỉ sau khi duyệt** (David 25/11/2026): kết quả đã đúng tiêu chí và David đã duyệt thì xoá bản gốc (video gốc, dự án, trung gian) trên Drive và mọi thiết bị để giải phóng dung lượng; chưa duyệt thì vẫn tải đủ lên Drive để David xem từ xa, **chưa xoá bản gốc**. Máy Windows không hỏi được trạng thái lên mây: chỉ xoá khi David đã xác nhận Drive đồng bộ xong. Làm lại cùng một tài nguyên thì bản mới nhất thay bản cũ: bỏ kết quả cũ của đúng tài nguyên đó sau khi bản mới đã lên Drive đủ, kiểm nguồn trước, không bỏ nhầm kết quả của buổi khác (David 25/11/2026).
 - Video đã chốt (David nói chốt là duyệt Đ2 cho việc dọn): bản cuối vào `~/Movies/cho-dang/<tập>/` + `cho-dang.sh gui` (Drive `thanh-pham/` y hệt), dọn file tạm rồi đưa dự án lên Drive, xoá trên Mac theo khối 17 (`don-tap.py --xoa` → `luu-drive.sh`, không hỏi lại; chỉ hỏi phần ⏸ đang dở). Đăng xong: `cho-dang.sh xong <tập>`. Mac chỉ giữ việc đang làm + bản cuối chưa đăng: ghi nhớ `video-chuyen-qua-drive`.

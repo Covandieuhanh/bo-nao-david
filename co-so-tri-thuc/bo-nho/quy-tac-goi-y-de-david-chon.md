@@ -16,7 +16,7 @@ Sản phẩm làm từ tài nguyên David đưa (video, highlight, podcast, bài
 **How to apply:** đề xuất không bao giờ trái mặc định skill; yêu cầu làm được trong mặc định thì giữ mặc định (ví dụ: "tập trung vào điện
 thoại" ≠ đổi khung). Liên quan [[quy-tac-tu-hoi-khi-mo-ho]], [[video-clip-ngan-dung-doc-lap]].
 
-Nhà của luật: `ky-nang/chuan-muc-lam-viec.md` mục 2 + skill `thu-thap-yeu-cau`. Ghi nhớ này giữ ngày, lời David, lý do.
+Nguồn của luật: `ky-nang/chuan-muc-lam-viec.md` mục 2 + skill `thu-thap-yeu-cau`. Ghi nhớ này giữ ngày, lời David, lý do.
 
 ## Sổ
 - 06/11/2026: luật "làm đi không chốt lựa chọn, câu chưa trả lời vẫn phải hỏi".

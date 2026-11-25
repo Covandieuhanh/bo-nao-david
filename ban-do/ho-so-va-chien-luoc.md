@@ -12,7 +12,7 @@ Gốc: [bản đồ bộ não](README.md). Sửa các file hồ sơ phải hỏi
 - [du-lieu-nen-huyen-hoc.md](../co-so-tri-thuc/du-lieu-nen-huyen-hoc.md) — từ trường số là nội dung hướng trainer (xem số cá nhân chỉ buổi riêng), nhịp làm việc.
 
 ## Nghề và kinh doanh
-- [chien-luoc-nghe-nghiep.md](../co-so-tri-thuc/chien-luoc-nghe-nghiep.md) — ba hướng nghề, bảng giá, lằn ranh nghề: mở khi việc dính tới khách, giá, sản phẩm.
+- [chien-luoc-nghe-nghiep.md](../co-so-tri-thuc/chien-luoc-nghe-nghiep.md) — ba hướng nghề, bảng giá, lằn ranh nghề: mở khi việc liên quan tới khách, giá, sản phẩm.
 - [hinh-mau/README.md](../co-so-tri-thuc/hinh-mau/README.md) — bản đồ hình mẫu: cây mục lớn → mục nhỏ → hình mẫu đã thành công; tra trước mọi việc, nhật ký nghiên cứu.
 - [mo-hinh-kinh-doanh.md](../co-so-tri-thuc/mo-hinh-kinh-doanh.md) — khung học từ cố vấn chiến lược (ba phạm trù, chín kỹ năng, bốn bước, vòng vấn đề, đào tạo · áp dụng · thay đổi); xương sống của [tu-duy-goc.md](../co-so-tri-thuc/tu-duy-goc.md).
 - [chien-luoc-noi-dung.md](../co-so-tri-thuc/chien-luoc-noi-dung.md) — kênh video và bộ lọc nội dung; chi tiết sản xuất ở [Sản xuất video](san-xuat-video.md).

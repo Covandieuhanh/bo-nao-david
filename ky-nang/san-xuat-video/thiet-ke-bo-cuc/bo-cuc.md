@@ -12,7 +12,7 @@ Cột "Code": **có** = viết được ngay trong `canh.js` · **chưa** = mớ
 | Kiểu | Hợp khi | Ngang / dọc | Code |
 |---|---|---|---|
 | Người + phụ đề | kể chuyện, cảm xúc, lời mời, câu tâm tình | cả hai | có (mặc định) |
-| Điểm nhấn trên người (`nhan`, không zoom): làm tối viền, chữ / biểu tượng cạnh mặt | câu đắt, cú chốt | cả hai | có (khối 07) |
+| Điểm nhấn trên người (`nhan`, không zoom): làm tối viền, chữ / biểu tượng cạnh mặt | câu then chốt, cú chốt | cả hai | có (khối 07) |
 | **Thẻ cạnh mặt** (`bocuc` · `the-canh`): người giữ nguyên, thẻ ở phía trống, chữ hiện dần theo lời, có thể gạch chữ | liệt kê ngắn, đổi ý ("không cần A, chỉ cần B"), nêu 2–4 điểm mà vẫn muốn thấy người | ngang tốt nhất; dọc: thẻ dưới cằm, ít dòng | có |
 
 ## Người và nội dung cùng hiện
@@ -61,7 +61,7 @@ Cột "Code": **có** = viết được ngay trong `canh.js` · **chưa** = mớ
 
 | Kiểu | Hợp khi | Ngang / dọc | Code |
 |---|---|---|---|
-| **Cặp đừng / hãy lặp khuôn** (`bocuc` · `dung-hay`): nhãn mục + ô ✗ đỏ / ô ✓ xanh, mọi cặp vào cùng một chỗ; ô là ảnh, video hoặc chữ nguyên văn | lời có ít nhất 2 cặp "đừng… hãy…", "sai… đúng…", "thay vì… thì…" | dọc: người nửa dưới, khung trên · ngang: cạnh người, chật thì ô người | có |
+| **Cặp đừng / hãy lặp mẫu** (`bocuc` · `dung-hay`): nhãn mục + ô ✗ đỏ / ô ✓ xanh, mọi cặp vào cùng một chỗ; ô là ảnh, video hoặc chữ nguyên văn | lời có ít nhất 2 cặp "đừng… hãy…", "sai… đúng…", "thay vì… thì…" | dọc: người nửa dưới, khung trên · ngang: cạnh người, chật thì ô người | có |
 | **Trên / dưới đối chiếu** (`bocuc` · `tren-duoi`): hai hình cùng chạy, nhãn nhỏ ở góc | có hai nguồn hình cùng lúc (trước/sau, gốc/kết quả) | dọc: trên/dưới · ngang: trái/phải | có |
 | **Hình toàn khung + người ô tròn** (`bocuc` · `o-tron`): `hinh` (ảnh, video) hoặc `noi_dung` (illus/diagram) toàn khung, người nói trong ô tròn | lời tả chi tiết một thứ cần nhìn kỹ, có hình cho thứ đó | dọc: giữa trên phụ đề · ngang: góc dưới phải | có |
 | **Thẻ câu hỏi** (`bocuc` · `cau-hoi`): câu người hỏi trong thẻ vạch cam, dưới mặt; tên + vai trò người trả lời dùng `lower` | phỏng vấn, lời chứng, có người hỏi | cả hai | có |
@@ -86,7 +86,7 @@ Cột "Code": **có** = viết được ngay trong `canh.js` · **chưa** = mớ
 
 ## Ảnh mẫu từng kiểu (`anh-mau/`)
 
-Chụp trên khuôn thử với người giả (không mặt thật), cả khung dọc lẫn ngang, để người dựng (AI hay người) nhìn trước khi chọn. Cột
+Chụp trên mẫu thử với người giả (không mặt thật), cả khung dọc lẫn ngang, để người dựng (AI hay người) nhìn trước khi chọn. Cột
 "Nguyên lý" = nguyên lý chính kiểu đó giải (`nguoi-xem-can-gi.md`). Kiểu mới có code: thêm một dòng ở
 `anh-mau/cong-cu/canh-mau.mjs` rồi chạy `zsh anh-mau/cong-cu/chup-anh-mau.sh <id>` (cần node, ffmpeg, Pillow), thêm một dòng vào bảng.
 
@@ -149,7 +149,7 @@ Chụp trên khuôn thử với người giả (không mặt thật), cả khung
 - **Không có gì cố định (David chốt 08/11/2026):** vị trí, cỡ, tỉ lệ ô, phía đặt thẻ đều tự tính theo người trong khung và nội dung.
   `o-nguoi`: tỉ lệ ô tự do theo khung cắt quanh người đang nói, ô nằm đúng phía người đó ngồi, không cắt ngang mặt ai (`khung: 'ca-hai'`
   khi muốn ô chứa mọi người). `the-canh`: thẻ vào khoảng trống sát người đang nói, co theo khoảng trống, hết chỗ thì tự thành `o-nguoi`.
-  `bam: 'trai'|'phai'` khi graphic nói về một người cụ thể (thẻ tên khách). `o: {x, y, w, h}` chỉ khi thật cần ép tay.
+  `bam: 'trai'|'phai'` khi graphic nói về một người cụ thể (thẻ tên khách). `o: {x, y, w, h}` chỉ khi thật cần chỉ định thủ công.
 - Vị trí người lấy từ `mat.js`, do `vi-tri-khuon-mat.sh` → `vi-tri-nhan.py` tự ghi cho mọi cảnh `nhan` và `bocuc`: **mọi người** trong khung
   (kể cả người quay nghiêng máy không thấy rõ mặt) + **người đang nói** (pyannote + cử động miệng). Graphic đặt qua `src/thu-vien/cho.js`:
   không đè, không làm mờ bất kỳ ai.

@@ -27,7 +27,7 @@ description: "Khối 04 khung hình: đổi khung ngang ↔ dọc, bám người
 zsh $SKILL/scripts/phan-tich-doi-khung.sh "$P"           # chạy nền; lần đầu biên dịch bộ dò mặt ~2 phút
 ```
 Dò mặt bằng `do-mat.sh` (Mac: Vision, không cài gì thêm; máy khác: YuNet + MediaPipe quy đổi theo thước Vision), gom thành người A, B… (từ trái sang), đoán người nói từng câu
-theo độ cử động miệng. **Hai người ngồi xa máy (mặt < khoảng 6 % khung, quán, buổi 1:1)**: đoán bằng miệng và bảng tách giọng pyannote (khúc
+theo độ cử động miệng. **Hai người ngồi xa máy (mặt < khoảng 6 % khung, quán, buổi 1:1)**: đoán bằng miệng và bảng tách giọng pyannote (phân đoạn
 8 s) đều sai nhiều thì khung cố định người nói chính, `follow: true` để bám khi người đó dịch chỗ, chỉ chuyển sang người
 kia ở câu chắc chắn của họ (nghe lại); xem `canh-quay.jpg` trước `apply`. Xem `kiem-tra/doi-khung/vet-chu-the.jpg` (ô màu = ai là ai), `ke-hoach.md` (shot, người, ✓/?),
 `canh-quay.jpg` (khung vàng = phần giữ lại). Sửa `ke-hoach.json` khi cần: shot `?` thì đọc câu nói để biết ai nói;
@@ -51,7 +51,7 @@ Thêm `SIDES` vào canh.js ở bước 5.
 python3 -I $SKILL/scripts/nang-lop.py "$P"           # chỉ in kế hoạch → kiem-tra/khuon-mat/lift.md (mức nâng theo từng cửa sổ 4 s)
 python3 -I $SKILL/scripts/nang-lop.py "$P" apply     # nung vào video-goc.mp4 (bản trước giữ là video-goc-truoc-nang.mp4)
 ```
-Mặt nằm thấp (tâm > khoảng 900 px hoặc cằm lọt dải phụ đề) thì đẩy hình lên theo bậc 100 px, tối đa 400, đổi mức trượt 0,6 s; đáy
+Mặt nằm thấp (tâm > khoảng 900 px hoặc cằm tràn dải phụ đề) thì đẩy hình lên theo bậc 100 px, tối đa 400, đổi mức trượt 0,6 s; đáy
 hở là chính hình đó làm mờ. Toàn bảng 0 thì "không cần nâng", bỏ qua. Xem 1–2 khung sau khi nung (mặt không chạm đỉnh vùng an
 toàn). Chạy lại sau khi sửa cuts thì tự tính từ bản chưa nâng. Phải chạy TRƯỚC bước hiểu video (khối 01) và `vi-tri-khuon-mat.sh` (mặt dò lại trên bản đã nâng).
 

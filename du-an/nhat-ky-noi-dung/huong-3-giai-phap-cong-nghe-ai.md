@@ -13,7 +13,7 @@ Mốc: giây trên `nguon-dai.mp4` của tập (đã bỏ phần số học).
 
 | Ý | Lời gốc | Mốc | Nỗi đau / mục tiêu | Bán được gì | Dùng cho việc |
 |---|---|---|---|---|---|
-| Chủ muốn di chuyển liên tục, không chôn chân một quán | "chị cứ chôn chân ở một chỗ là nó không ăn thua" | 1152–1174 (19:12) | chủ kẹt ở quán, không phát triển việc khác | giải pháp quản lý từ xa | câu hỏi mở: "Anh/chị rời quán 1 tuần được không?" |
+| Chủ muốn di chuyển liên tục, không chôn chân một quán | "chị cứ chôn chân ở một chỗ là nó không ăn thua" | 1152–1174 (19:12) | chủ vướng ở quán, không phát triển việc khác | giải pháp quản lý từ xa | câu hỏi mở: "Anh/chị rời quán 1 tuần được không?" |
 | Quy trình nhìn được trong tuần đầu → đóng thành nền tảng, quản lý qua app | "Và chị chỉ quản lý qua cái nền tảng ấy thôi… Nhật ký nó sẽ tồn tại" | 1212–1234 (20:12) | ngày nào cũng phải kiểm nhân viên | số hoá quy trình + app | mô tả kết quả cho khách |
 | Đi nhiều quán, cải tiến mẫu rồi nhân ra | "Đi cả trăm quán… Tự nhiên chị sẽ đóng ra một cái cải tiến" | 1247–1265 (20:47) | chỉ quản được một quán | mô hình nhân bản | câu chuyện tầm nhìn chuỗi |
 | Cảm quan của chủ (mức nhạc) đưa thành quy chuẩn, không cần đoán | "Giờ nào mức mấy? Không cần phải đoán… Vậy thì đưa cái này thành quy chuẩn" | 1646–1680 (27:26) | chủ suốt ngày đi nhắc nhân viên | số hoá tiêu chuẩn dịch vụ | ví dụ cụ thể dễ hiểu nhất |
@@ -41,8 +41,8 @@ Bản theo hướng: bản dài ngang 15:24 (Facebook cá nhân, fanpage) + 3 cl
 | Một app chỉ giải một nỗi đau, không nhét nhiều tính năng | "thà là mình đâm vào đúng một mũi nhọn" | 1803–1829 (30:03) | app loạn, chậm | giải pháp một mũi nhọn | nguyên tắc thiết kế |
 | Đào tạo con AI từ ngu thành thông minh trong một lĩnh vực: bên làm lo 80%, khách đưa 20% sản phẩm thật | "80% là của chúng tôi… thì 20% là bạn phải nhét sản phẩm của bạn vào" | 1831–1880 (30:31) | không biết phần nào mình phải làm | gói AI đã huấn luyện | nói rõ khách cần làm gì (lằn ranh hướng 3) |
 | Hai tầng giá: con dùng chung trên máy chủ 3 triệu / con may riêng theo giọng văn 8 triệu | "3 triệu một cái con đấy cho một người… customize riêng… thì là 8 triệu mang về" | 1956–1982 (32:36) | so giá rẻ | bảng giá gói video AI | câu báo giá |
-| Ca khách bất động sản (ẩn danh): dùng con AI cho cả vài chục người trái thoả thuận → video ra một khuôn, lượt xem từ vài nghìn xuống vài trăm | "thành ra là đang view từ 5–6.000 view, 7–8.000 view thành có vài trăm view" | 1990–2041 (33:10) | dùng chung một khuôn | lý do chọn bản may riêng | câu chuyện khi báo giá |
-| Thuật toán nền tảng là AI nên nhận ra khuôn chung; bản may riêng có đặc tính riêng | "con 8 triệu thì nó đã có một cái đặc tính riêng" | 2105–2143 (35:05) | lượt xem tụt | — | giải thích kỹ thuật dễ hiểu |
+| Trường hợp khách bất động sản (ẩn danh): dùng con AI cho cả vài chục người trái thoả thuận → video ra một mẫu, lượt xem từ vài nghìn xuống vài trăm | "thành ra là đang view từ 5–6.000 view, 7–8.000 view thành có vài trăm view" | 1990–2041 (33:10) | dùng chung một mẫu | lý do chọn bản may riêng | câu chuyện khi báo giá |
+| Thuật toán nền tảng là AI nên nhận ra mẫu chung; bản may riêng có đặc tính riêng | "con 8 triệu thì nó đã có một cái đặc tính riêng" | 2105–2143 (35:05) | lượt xem tụt | — | giải thích kỹ thuật dễ hiểu |
 | Muốn giá trị chất lượng thì phải bỏ tiền nhiều hơn | "Ông muốn tạo ra giá trị chất lượng thì ông phải bỏ tiền nhiều hơn" | 2180–2189 (36:20) | — | — | câu chốt |
 
 
@@ -62,7 +62,7 @@ Bản theo hướng: bản ngang 5:31 `tap-may-do-giai-phap` · Trạng thái: �
 | Công nghệ thay phần quy trình lặp đi lặp lại, không thay con người | "mình không đưa công nghệ để thay thế con người nhé" | 695–706 (11:35) | sợ AI thay người | số hoá việc lặp | câu mở tư vấn |
 | Không bán khoá học / bộ công cụ tải về, mà may đo như bộ vét | "Bọn em giống như kiểu may đo vét ấy" | 708–750 (11:48) | công cụ chung không vừa | giải pháp may đo | câu định vị |
 | Ba bước: lấy nỗi đau → tự bỏ chi phí làm demo → dùng thử, hiệu quả rồi mới đàm phán | "Mình phải cầm nắm, mình phải được sử dụng" | 758–816 (12:38) | khách không hình dung được | bước đầu phễu: demo theo nỗi đau | kịch bản buổi một |
-| Mỗi bản demo giữ làm khuôn gốc, gặp nỗi đau giống thì có sẵn; may tiếp eo, cổ cho từng người | "giống như chị đi ra may cái áo thì có phải người ta có một khuôn sẵn không?" | 824–857 (13:44) | — | tái dùng demo | giải thích cách làm |
+| Mỗi bản demo giữ làm mẫu gốc, gặp nỗi đau giống thì có sẵn; may tiếp eo, cổ cho từng người | "giống như chị đi ra may cái áo thì có phải người ta có một khuôn sẵn không?" | 824–857 (13:44) | — | tái dùng demo | giải thích cách làm |
 | Ra lệnh cho AI như nói với người dựng: cắt ý này, bỏ phần thừa, thêm chữ | "mình sẽ có yêu cầu người ta là cắt ý này" | 1040–1061 (17:20) | dựng video mất thời gian | gói video tự động | ví dụ minh hoạ |
 | Cùng công cụ nhưng mỗi người dùng khác; quan trọng là dùng được | "Quan trọng là anh phải dùng được" | 1339–1352 (22:19) | mua về không dùng | gói kèm đào tạo | câu chốt |
 

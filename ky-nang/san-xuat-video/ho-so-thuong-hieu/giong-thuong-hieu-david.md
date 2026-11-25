@@ -44,13 +44,13 @@ Học để Claude hiểu đúng ý và trả lời hợp giọng; khi viết b�
 - Giữ ấm áp của David: "các bạn", "mình", thỉnh thoảng "nha" ở câu kết — tối đa 1 lần / bài.
 - Hashtag thương hiệu mới (2–3 / bài): #DavidTran + bài con người #TrainerDinhHuong + 1 chủ đề (#lamchubanthan #quanlymoi #danguoi); bài công nghệ #AIthucchien + 1 chủ đề (#sohoa #tudonghoa).
 - **Bài kể chuyện đồng cảm: không lộ cách làm bên trong.** Bước ngoặt kể là "tìm ra được giải pháp", không nói "máy", "AI", "tự động" làm; người đọc thấy kết quả trước, tò mò cách làm thì tự hỏi. Bài công nghệ AI vẫn nói thẳng việc cụ thể (dòng dưới).
-- **Bước ngoặt rõ và chắc:** kể cái kẹt kéo dài ("một thời gian rất dài") rồi chốt dứt khoát ("cho đến khi tìm ra được giải pháp để xử lý dứt điểm vấn đề này. Giờ…"), không nối nhẹ kiểu "khá lâu… Rồi…".
+- **Bước ngoặt rõ và chắc:** kể cái vướng kéo dài ("một thời gian rất dài") rồi chốt dứt khoát ("cho đến khi tìm ra được giải pháp để xử lý dứt điểm vấn đề này. Giờ…"), không nối nhẹ kiểu "khá lâu… Rồi…".
 - **Bài công nghệ AI**: nói bằng việc cụ thể và kết quả đo được ("trước mất 3 tiếng, giờ 20 phút"), không thuật ngữ khoe; người đọc là chủ doanh nghiệp nhỏ, không phải dân kỹ thuật.
 
 ## Luật khi viết (chuyển lời nói thì chữ)
 1. **Ý và chữ của David**: lấy ý từ chính tài nguyên; được rút gọn, bỏ từ đệm, sắp lại câu — không thêm ý, ví dụ, con số David không nói.
 2. **Câu ngắn**, mỗi dòng một ý; 3–6 dòng cho caption Reels/TikTok, 6–12 dòng cho bài viết fanpage. Xuống dòng thoáng.
-3. **Mở bằng chỗ kẹt / khoảnh khắc thật** (Vấn đề) — câu đầu là câu người xem thấy mình trong đó.
+3. **Mở bằng vướng mắc / khoảnh khắc thật** (Vấn đề) — câu đầu là câu người xem thấy mình trong đó.
 4. **Giữ 1–2 cụm đặc trưng** của David mỗi bài ("thật sự là", "cứ vững tin", "đúng không?") — không nhồi.
 5. **Kết theo kiểu dẫn dắt của bài** (Không · Gợi mở · Mời — câu kết và giá: khối 08).
 6. **Lằn ranh** của kênh đang đăng: khối 00 mục 3.

@@ -1,7 +1,7 @@
-# TEASER MỞ ĐẦU cho video dài (David duyệt 2026-11-04 — học Have A Sip #118, Tuấn Tiền Tỉ, Trấn Thành: 15–30 s câu đắt nhất trước
+# TEASER MỞ ĐẦU cho video dài (David duyệt 2026-11-04 — học Have A Sip #118, Tuấn Tiền Tỉ, Trấn Thành: 15–30 s câu then chốt trước
 # khi chào): doan-gioi-thieu.py <dự án> <từ-đến> [<từ-đến> …]   (giây trong video-hoan-chinh.mp4 bản đã dựng, vd 812.4-818.9)
-# Chọn 2–3 câu đắt nhất (nguyên văn, trọn câu — mốc lấy từ phụ đề), tổng 15–25 s. Cắt cứng, đã có sẵn phụ đề/đồ hoạ của bản dựng;
-# mối nối fade âm 30 ms + 0,25 s đen nhẹ cuối teaser rồi vào video. Giữ bản cũ là video-hoan-chinh-khong-gioi-thieu.mp4.
+# Chọn 2–3 câu then chốt (nguyên văn, trọn câu — mốc lấy từ phụ đề), tổng 15–25 s. Cắt cứng, đã có sẵn phụ đề/đồ hoạ của bản dựng;
+# điểm nối fade âm 30 ms + 0,25 s đen nhẹ cuối teaser rồi vào video. Giữ bản cũ là video-hoan-chinh-khong-gioi-thieu.mp4.
 # Ghi phat-hanh/doan-gioi-thieu.json {len} → chuong.py tự cộng độ dài teaser vào mốc chương.
 import json, os, subprocess, sys
 P = os.path.expanduser(sys.argv[1]); segs = [tuple(map(float, a.split("-"))) for a in sys.argv[2:]]

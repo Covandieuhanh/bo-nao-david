@@ -19,7 +19,7 @@ khỏi phần "làm thế nào", chuyển lịch sử ngắn vào **Why**. Ghi n
 | quy-tac-ket-qua-hon-toc-do | Kết quả hơn tốc độ; bước cần render thì chờ; rút ngắn thì trao đổi | giữ |
 | quy-tac-khong-tu-chay-viec-cua-david | Không tự Chạy tiếp/Duyệt/Làm lại việc David tạo; việc thử đặt tên `thu-…` | giữ (xem Chéo bộ 2) |
 | quy-tac-noi-dung-cua-david | Nội dung của David, skill lo hình; học kênh lớn ở nhịp, trình bày | sửa: nhận phần gộp từ video-nguoi-xem-trung-tam |
-| quy-tac-sua-thang-tai-ban | Sửa thẳng câu luật; tái bản toàn bộ một đợt khi máy đo báo | giữ |
+| quy-tac-sua-thang-tai-ban | Sửa thẳng câu luật; tái bản toàn bộ một đợt khi công cụ đo báo | giữ |
 | quy-tac-thu-bang-doan-ngan | Thử skill video bằng một đoạn trọn một ý | giữ (xem Chéo bộ 3) |
 | quy-tac-tu-hoi-khi-mo-ho | 6 tín hiệu tự dừng hỏi | giữ |
 | co-so-tri-thuc-quy-uoc-dat-ten | Tên tiếng Việt không dấu, chữ thường, gạch nối | giữ |
@@ -36,7 +36,7 @@ khỏi phần "làm thế nào", chuyển lịch sử ngắn vào **Why**. Ghi n
 | video-chuyen-qua-drive | Drive covandieuhanh, tu-lieu-goc / thanh-pham theo tập | sửa: dòng "Liên quan:" trống → thêm liên kết |
 | video-clip-ngan-dung-doc-lap | Clip ngắn đứng độc lập, bốn câu | giữ |
 | video-dai-khong-cat | Video dài không cắt | giữ |
-| video-doc-khuon-chu-chinh | Khuôn podcast dọc: chữ chính thay phụ đề, 3 clip Đi trainer là mẫu | sửa: bỏ "màn hình cuối 3 giây" khỏi phần hiện hành (đã bỏ 10/11), giữ lịch sử ngắn; link → nhan-dien-chung |
+| video-doc-khuon-chu-chinh | Mẫu podcast dọc: chữ chính thay phụ đề, 3 clip Đi trainer là mẫu | sửa: bỏ "màn hình cuối 3 giây" khỏi phần hiện hành (đã bỏ 10/11), giữ lịch sử ngắn; link → nhan-dien-chung |
 | video-doc-ngan-khong-thanh | Dọc ngắn không thanh, không thẻ cuối | gộp vào video-nhan-dien-chung |
 | video-hieu-hon-cau-ki | Hiểu hơn cầu kì; bỏ chữ sau người / bóng người | giữ |
 | video-khong-cai-hyperframes | Giữ Remotion, không cài HyperFrames | giữ (bản luật `thiet-ke-bo-cuc/README.md` trỏ tên này) |
@@ -61,10 +61,10 @@ khỏi phần "làm thế nào", chuyển lịch sử ngắn vào **Why**. Ghi n
 
 ## Chéo bộ
 
-1. **nao** — `quy-tac-cong-cu-cai-dua-vao-skill`: luật "công cụ David đã cài mà skill chưa dùng thì đề xuất tích hợp, giữ cách cũ dự phòng" không có trong bản luật nào. Đề xuất nhà: `ky-nang/chuan-muc-lam-viec.md` mục 3.
-2. **nao** — `quy-tac-khong-tu-chay-viec-cua-david`: luật "không tự chạy/chạy tiếp/làm lại việc David tạo; việc thử của Claude đặt tên `thu-…`; trước khi tắt/chạy lại thứ dùng chung thì kiểm việc của David/phiên khác" không có trong bản luật (thoi-quen mục 4 chỉ có ⏸ khi dọn). Đề xuất nhà: `chuan-muc-lam-viec.md` mục 3.
-3. **video** — `quy-tac-thu-bang-doan-ngan`: "thử skill video bằng một đoạn trọn một ý, thư mục `tap-thu-…`, xong dọn" không có trong bản luật (khối 17 chỉ có chụp thử). Đề xuất nhà: `ky-nang/san-xuat-video/quy-tac-chung.md` (mục kiểm) hoặc khối 17.
-4. **co-so-tri-thuc/video** — `video-bo-app`: "dựng video trực tiếp trong phiên Claude, không đề xuất dựng lại app/công cụ tự động trừ khi David yêu cầu" không có trong bản luật. Đề xuất nhà: `ky-nang/san-xuat-video/quy-tac-chung.md` hoặc `tong-quan.md`. Kèm: thư mục `ky-nang/san-xuat-video/app/` vẫn còn trên máy (chỉ `__pycache__`, không trong git) nên phiên video/điều phối xoá vào Thùng rác.
+1. **nao** — `quy-tac-cong-cu-cai-dua-vao-skill`: luật "công cụ David đã cài mà skill chưa dùng thì đề xuất tích hợp, giữ cách cũ dự phòng" không có trong bản luật nào. Đề xuất nguồn: `ky-nang/chuan-muc-lam-viec.md` mục 3.
+2. **nao** — `quy-tac-khong-tu-chay-viec-cua-david`: luật "không tự chạy/chạy tiếp/làm lại việc David tạo; việc thử của Claude đặt tên `thu-…`; trước khi tắt/chạy lại thứ dùng chung thì kiểm việc của David/phiên khác" không có trong bản luật (thoi-quen mục 4 chỉ có ⏸ khi dọn). Đề xuất nguồn: `chuan-muc-lam-viec.md` mục 3.
+3. **video** — `quy-tac-thu-bang-doan-ngan`: "thử skill video bằng một đoạn trọn một ý, thư mục `tap-thu-…`, xong dọn" không có trong bản luật (khối 17 chỉ có chụp thử). Đề xuất nguồn: `ky-nang/san-xuat-video/quy-tac-chung.md` (mục kiểm) hoặc khối 17.
+4. **co-so-tri-thuc/video** — `video-bo-app`: "dựng video trực tiếp trong phiên Claude, không đề xuất dựng lại app/công cụ tự động trừ khi David yêu cầu" không có trong bản luật. Đề xuất nguồn: `ky-nang/san-xuat-video/quy-tac-chung.md` hoặc `tong-quan.md`. Kèm: thư mục `ky-nang/san-xuat-video/app/` vẫn còn trên máy (chỉ `__pycache__`, không trong git) nên phiên video/điều phối xoá vào Thùng rác.
 5. **video** — `ho-so-thuong-hieu/chung.json` tuyến `kien_thuc` còn ghi "CHỜ David tải bài ambient/lo-fi" (ghi nhớ nhạc cũng ghi). Không phải luật, là việc dở nên nên có dòng trong `bao-cao-trang-thai.md` nếu chưa có.
 6. **chung** — `du-an/danh-gia-luat.md` còn nhắc tên ghi nhớ đã gộp (`video-chuan-am-luong`, `video-nguoi-xem-trung-tam`). Là biên bản cũ, để nguyên được; nếu điều phối muốn sạch thì thêm ghi chú "đã gộp ở tái bản 2".
 

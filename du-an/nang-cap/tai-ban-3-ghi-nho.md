@@ -9,7 +9,7 @@ Phạm vi: `co-so-tri-thuc/bo-nho/` (ghi nhớ = sổ quyết định: ngày + l
 
 **Trước:** 48 ghi nhớ đang dùng + 6 trong `luu-tru/`. **Sau:** 47 đang dùng + 7 trong `luu-tru/`.
 Kiểm 14/11: `MEMORY.md` 47 dòng = 47 file; mọi `name:` = tên file; mọi ghi nhớ có dòng "Nhà của luật" hoặc là ghi nhớ việc / tham chiếu;
-máy kiểm liên kết: link gãy 0, mồ côi 0.
+công cụ kiểm tra liên kết: link gãy 0, mồ côi 0.
 
 ## Bảng ghi nhớ
 
@@ -51,7 +51,7 @@ Cột "Bản luật": **có** = trỏ đúng và luật có ở đó · **thêm*
 | video-clip-ngan-dung-doc-lap | Clip ngắn đứng độc lập, bốn câu (06/11, 07/11) | có: cat-doan-noi-bat/SKILL | — | đúng | giữ |
 | video-dai-khong-cat | Video dài không cắt (05/11) | có: quy-tac-chung mục 2 + khối 00 | — | đúng | giữ |
 | video-do-hoa-ke-chuyen | Motion graphics kể chuyện, vẽ tiếp; AI sáng tạo trong khung (07/11, 09/11) | có: chuan-muc đầu file + khối 07 | — | đúng | `name:` theo tên file |
-| video-doc-khuon-chu-chinh | Khuôn podcast dọc chữ chính, 3 clip mẫu (06/11, sửa 10/11) | có: cat-doan-noi-bat "Kịch bản highlight podcast (7B)" | nhan-dien-chung (dọc ngắn, trỏ nhau) | đúng | giữ |
+| video-doc-khuon-chu-chinh | Mẫu podcast dọc chữ chính, 3 clip mẫu (06/11, sửa 10/11) | có: cat-doan-noi-bat "Kịch bản highlight podcast (7B)" | nhan-dien-chung (dọc ngắn, trỏ nhau) | đúng | giữ |
 | video-hieu-hon-cau-ki | Hiểu hơn cầu kì; bỏ chữ sau người (10/11) | có: quy-tac-chung mục 0 | — | đúng | giữ |
 | video-khong-cai-hyperframes | Giữ Remotion, không cài HyperFrames (06/11) | thêm: thiet-ke-bo-cuc/README mục 4 điểm 10 | — | đúng | thêm dòng nhà |
 | video-khong-nhan-ky-thuat | Không nhãn ×1,6 / slow-mo | sửa: trỏ SKILL.md (không có) → quy-tac-chung mục 4 | — | đúng | sửa đường trỏ |
@@ -81,7 +81,7 @@ quyết định khác, ba cái cũ đã có đoạn 14/11 trỏ về duyet-4-pha
 
 1. **nao** — `quy-tac-david-md-chi-dieu-co-dinh`: câu "david.md chỉ ghi điều cố định đã chốt; ý tưởng, góp ý đang cân nhắc ghi
    `du-an/danh-sach-y-tuong.md`, chỉ đưa vào david.md khi David chốt" chưa có trong bản luật (quy-uoc-lien-ket chỉ có "ý tưởng chưa chốt
-   ở danh-sach-y-tuong"). Đề xuất nhà: `ky-nang/chuan-muc-lam-viec.md` mục 4 (Cuối việc, chỗ ghi góp ý).
+   ở danh-sach-y-tuong"). Đề xuất nguồn: `ky-nang/chuan-muc-lam-viec.md` mục 4 (Cuối việc, chỗ ghi góp ý).
 2. **điều phối** — ghi nhớ trỏ bản luật theo **số mục** (quy-tac-chung mục 0–5, 8; chuan-muc mục 0, 2–5; thiet-ke-bo-cuc/README mục 4
    điểm 10; nhan-dien-chung mục 0, 2). Đã khớp bản trên đĩa lúc 14/11 (sau sửa của phiên video). Phiên nào đổi số mục khi viết lại thì
    kiểm lại: `grep -n "mục [0-9]" co-so-tri-thuc/bo-nho/*.md`.
@@ -91,7 +91,7 @@ quyết định khác, ba cái cũ đã có đoạn 14/11 trỏ về duyet-4-pha
    không lên GitHub. Các trang `ban-do/` chép mô tả ghi nhớ: đã chuyển dòng `thiet-bi-don-documents` sang mục Lưu trữ của
    `ban-do/bo-nao-va-tu-dong-hoa.md`; mô tả của `quy-tac-ky-nang-tu-cai-tien`, `quy-tac-goi-y-de-david-chon`, `thiet-bi-bo-cuc-thu-muc`
    đã đổi nên chữ ở bản đồ hơi lệch (link không gãy) — phiên giữ bản đồ chép lại nếu muốn.
-5. **video** — giữa chừng máy kiểm báo 2 mồ côi là file mới của phiên video (`nhat-ky-thay-doi.md` của phan-phoi-da-kenh,
+5. **video** — giữa chừng công cụ kiểm tra báo 2 mồ côi là file mới của phiên video (`nhat-ky-thay-doi.md` của phan-phoi-da-kenh,
    phan-tich-video-mau); lần kiểm cuối 14/11 đã về 0.
 
 ## Hỏi David

@@ -20,7 +20,7 @@ Repo riêng tư. AI nào, tài khoản nào đọc xong cũng nhận đúng vai,
 | Agent dùng chung (mô hình nhỏ cho đọc, tìm, tóm tắt) | [tac-tu/](tac-tu/) |
 | Tên chuẩn của file, thư mục | [co-so-tri-thuc/bang-thuat-ngu.md](co-so-tri-thuc/bang-thuat-ngu.md) |
 | Các quyết định, bài học đã chốt | [co-so-tri-thuc/bo-nho/MEMORY.md](co-so-tri-thuc/bo-nho/MEMORY.md) (chia nhóm: luật, não, video) |
-| Đang làm dở gì, câu hỏi còn mở | [bao-cao-trang-thai.md](bao-cao-trang-thai.md) |
+| Đang làm chưa xong gì, câu hỏi còn mở | [bao-cao-trang-thai.md](bao-cao-trang-thai.md) |
 | Trạng thái từng video, tài nguyên | [du-an/danh-muc-noi-dung.md](du-an/danh-muc-noi-dung.md) |
 | Hỏi trước khi làm | [ky-nang/thu-thap-yeu-cau/SKILL.md](ky-nang/thu-thap-yeu-cau/SKILL.md) |
 | Toàn bộ hệ dựng video | [ky-nang/san-xuat-video/tong-quan.md](ky-nang/san-xuat-video/tong-quan.md), [quy-tac-chung.md](ky-nang/san-xuat-video/quy-tac-chung.md) |

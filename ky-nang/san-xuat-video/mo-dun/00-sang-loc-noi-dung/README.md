@@ -12,7 +12,7 @@ description: "Khối 00 bộ lọc nội dung: lọc tài nguyên theo hồ sơ 
 
 ## Nguyên tắc
 - **David chỉ đưa tài nguyên.** Claude tự phân tích, tự chọn làm gì · làm thế nào · đăng kênh nào · lúc nào (`chuan-muc-lam-viec.md`
-  mục 2), ghi vào phiếu lọc; 4 phần gọn lấy từ phiếu (`phan-phoi-da-kenh` bước 0), David duyệt rồi làm một mạch. David nói tự do, bộc phát — không đòi David theo khuôn.
+  mục 2), ghi vào phiếu lọc; 4 phần gọn lấy từ phiếu (`phan-phoi-da-kenh` bước 0), David duyệt rồi làm một mạch. David nói tự do, bộc phát — không đòi David theo mẫu.
 - **Không làm gì không có mục tiêu**: mỗi bài phải kéo tương tác trên đúng nền tảng đó → chuyển hoá → nhắn "gỡ". Nội dung "cho vui"
   chỉ được làm khi nó xây nhân hiệu trainer.
 - **Không khung thời lượng cố định**: dạng + độ dài theo chính nội dung; có khi giữ nguyên bản gốc.
@@ -44,11 +44,11 @@ khách hàng, thị trường của chính người xem thuộc **hướng 3** (
    - **Bối cảnh**: đoạn mở phải đủ để người xem hiểu ai đang nói gì; thiếu thì kéo thêm câu bối cảnh liền trước, không tự viết lời dẫn.
    - **Ý trọn**: vào / ra ở cuối câu, bắt chỗ lặng gần nhất; không cắt giữa lập luận. Trong mỗi đoạn để nguyên (quy-tac-chung mục 2).
    - **Lời trỏ về trước** ("như em nói lúc nãy", "cái vừa nãy"): kéo theo đoạn được nhắc, hoặc bỏ câu trỏ đó.
-   - **Mối nối**: giữ thứ tự buổi nói; hai đoạn không nối liền ý thì chèn thẻ chương bằng chữ nguyên văn của David.
+   - **Điểm nối**: giữ thứ tự buổi nói; hai đoạn không nối liền ý thì chèn thẻ chương bằng chữ nguyên văn của David.
 4. **Ý dùng cho công việc** (nội bộ, không đăng): mỗi hướng có bản thì rút 2–4 ý: nỗi đau · cách làm / giải pháp · câu dùng khi tư vấn
-   hoặc đứng lớp · mốc. Lấy từ lời trong tập, không bịa.
+   hoặc đứng lớp · mốc. Lấy từ lời trong tập, không bịa đặt.
 5. **Ghi lại** (bắt buộc, kể cả tập ⛔ / 🗂 và hướng không ra bản):
-   - `<thư mục tập>/phan-huong.md` theo mẫu [mau-phan-huong.md](mau-phan-huong.md): bảng đoạn, danh sách đoạn từng bản, mối nối cần
+   - `<thư mục tập>/phan-huong.md` theo mẫu [mau-phan-huong.md](mau-phan-huong.md): bảng đoạn, danh sách đoạn từng bản, điểm nối cần
      soát, lằn ranh, ý dùng cho công việc. Phiên dựng sau chỉ cần đọc file này + bản lời là cắt được.
    - Một mục vào **nhật ký nội dung** của từng hướng có ý: `du-an/nhat-ky-noi-dung/` (luật ghi ở README thư mục đó).
 
@@ -83,7 +83,7 @@ Kho `du-an/ke-hoach-noi-dung-100-video.md` là **kế hoạch nội dung** của
 | 5 | **Nhân hiệu** | chuyện thật của David, thấy cách David dẫn dắt | có chuyện thật | không |
 
 **Khung 3 phần** Vấn đề · Giải pháp · Thực thi: được **sắp lại thứ tự đoạn** từ nguyên lời David; thiếu hẳn một phần (thường là
-Thực thi) thì không bịa, báo "thiếu phần X" để David quyết nói bổ sung hay cất kho.
+Thực thi) thì không bịa đặt, báo "thiếu phần X" để David quyết nói bổ sung hay cất kho.
 
 **Chấm cả câu chuyện, không chấm từng đoạn để giữ đoạn điểm cao**: 70–80% câu chuyện là dẫn dắt, bối cảnh, tình
 huống để đoạn đắt có giá trị. Video dài một hướng là bản gốc và để nguyên (quy-tac-chung mục 2); nhiều hướng thì mỗi bản theo hướng
@@ -108,7 +108,7 @@ Chạm thì **luôn cảnh báo trong phiếu và báo cáo**: mốc giây, lờ
 | ✂️ **Trích ngắn từ gốc** | bản dài đã duyệt có đoạn đắt cho video ngắn | bản dài vẫn để nguyên làm gốc; clip là phần thêm, không thay bản dài |
 | 🔁 **Trùng / dư** | đã có bài gần giống trong 30 ngày, hoặc nhánh đang quá tỉ lệ | gộp vào bài cũ / để sau |
 | 🗂 **Lưu kho** | có giá trị nhưng chưa đúng lúc / chưa đủ 3 phần | lưu lời chép + nhãn, chờ ghép series |
-| 👤 **Chỉ Facebook cá nhân** | tối đa 6, chỉ ý thuộc ba hướng (đời thường chưa rõ hướng thì hỏi David) | câu chia sẻ ngắn, không dựng nặng |
+| 👤 **Chỉ Facebook cá nhân** | tối đa 6, chỉ ý thuộc ba hướng (đời thường chưa rõ hướng thì hỏi David) | câu chia sẻ ngắn, không dựng công phu |
 | ⛔ **Không làm** | không liên quan, hoặc David chọn không làm sau cảnh báo lằn ranh | không dựng, không tốn thời gian |
 
 ## 5. Phân phối kênh (`ho-so-thuong-hieu/kenh.json`)

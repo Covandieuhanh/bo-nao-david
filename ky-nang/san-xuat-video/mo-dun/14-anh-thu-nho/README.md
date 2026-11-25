@@ -34,7 +34,7 @@ Video chỉ có tiếng thì bìa **không có mặt người**, kể cả ảnh
 - **Tiêu đề 2–6 từ:** ưu tiên câu hỏi người xem đang tự hỏi hoặc giải pháp ở mức gợi; có góc nhìn ngược số đông thì dùng câu đảo niềm tin. Nỗi đau dùng ít, nên kèm hướng gỡ. Không chép lại tiêu đề video.
 - **Hình:** một hình vẽ theo ý của tập, không chữ. Hình nói về nội dung, không nói về định dạng: **không dùng micro, sóng âm làm hình chính**.
 - **Không lộ giải pháp:** không liệt kê các bước lên bìa. Lộ hết thì người ta không xem video nữa.
-- **Chữ "PODCAST":** chỉ ghi nhỏ ở góc. Không ghi số tập. Giữ cùng khuôn ở mọi tập, chỉ đổi chữ + hình.
+- **Chữ "PODCAST":** chỉ ghi nhỏ ở góc. Không ghi số tập. Giữ cùng mẫu ở mọi tập, chỉ đổi chữ + hình.
 - **Đúng nội dung:** điều trên bìa phải có thật trong video. Không giật gân.
 - Soát bản @160: đọc được tiêu đề và nhận ra hình.
 

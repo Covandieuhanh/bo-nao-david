@@ -18,7 +18,7 @@ bước 0–1; bước 3 trở đi (cắt, dựng, phát hành) chỉ làm sau k
 
 ### 1. Làm sạch + chép lời buổi gốc một lần
 Công thức "Làm video" bước 1–6 của `SKILL.md` cho cả buổi (một dự án `tap-<buổi>`): làm sạch theo khối 02 (video dài giữ nguyên lời,
-`quy-tac-chung.md` mục 2), chép lời **theo từng khúc ngắn** (`scripts/chep-theo-khuc.py`) rồi soát chữ ra `chuyen-dong/src/phu-de.js` TRƯỚC khi cắt (làm sau phải render lại). Các video tách ra dùng lại đúng phụ đề này, không chép lời lại.
+`quy-tac-chung.md` mục 2), chép lời **theo từng phân đoạn ngắn** (`scripts/chep-theo-khuc.py`) rồi soát chữ ra `chuyen-dong/src/phu-de.js` TRƯỚC khi cắt (làm sau phải render lại). Các video tách ra dùng lại đúng phụ đề này, không chép lời lại.
 
 ### 2. Phân hướng theo khối 00 mục 0b (bắt buộc)
 Chia đoạn, gán hướng, ghép trọn ý, ghi `<thư mục tập>/phan-huong.md` + nhật ký nội dung từng hướng (`du-an/nhat-ky-noi-dung/`), đối chiếu
@@ -74,4 +74,4 @@ Mỗi video ra `~/Movies/tap-<tên>/2-ban-day-du` có sẵn video gốc đã n�
 
 ## Kiểm gì
 - Chạy lại `tach-video.py` với kế hoạch đã lưu ra đúng thời lượng và phụ đề cũ.
-- Mỗi mối nối không cắt giữa từ; câu trỏ về trước ("như em nói lúc nãy") có kéo theo đoạn được nhắc hoặc đã bỏ.
+- Mỗi điểm nối không cắt giữa từ; câu trỏ về trước ("như em nói lúc nãy") có kéo theo đoạn được nhắc hoặc đã bỏ.

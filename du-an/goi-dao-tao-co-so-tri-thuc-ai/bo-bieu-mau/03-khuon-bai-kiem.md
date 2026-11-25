@@ -2,7 +2,7 @@
 description: "Biểu mẫu 03 gói dựng bộ não: khuôn bài kiểm (câu hỏi trong bộ não, đáp án để ngoài), câu kiểm tốt trông thế nào, cách chấm theo tỉ lệ."
 ---
 
-# Biểu mẫu 03 · Khuôn bài kiểm
+# Biểu mẫu 03 · Mẫu bài kiểm
 
 Bài kiểm là cách duy nhất biết chắc bộ não dạy AI đúng hay không. **Câu hỏi và đáp án tách hai file:**
 - `bo-nao/bai-kiem.md`: chỉ câu hỏi, tải lên cùng bộ não (tầng 3), có dòng trong bảng file ở `doc-truoc.md`.
@@ -11,7 +11,7 @@ Bài kiểm là cách duy nhất biết chắc bộ não dạy AI đúng hay kh�
 ## `bai-kiem.md`
 
 ```markdown
-Mô tả: Bài kiểm người đọc lạnh: câu hỏi tình huống để thử AI mới có hiểu đúng bộ não không. Không có đáp án ở đây.
+Mô tả: Bài kiểm người đọc mới: câu hỏi tình huống để thử AI mới có hiểu đúng bộ não không. Không có đáp án ở đây.
 
 ## Câu 1
 Tình huống: <chuyện thật đã xảy ra, kể ngắn>
@@ -25,7 +25,7 @@ A. <…>  B. <…>  C. <…>  D. <…>
 ## `dap-an.md`
 
 ```markdown
-Mô tả: Đáp án bài kiểm. Giữ ngoài bộ não, không tải lên khi chạy bài kiểm người đọc lạnh.
+Mô tả: Đáp án bài kiểm. Giữ ngoài bộ não, không tải lên khi chạy bài kiểm người đọc mới.
 
 | Câu | Đáp án | Vì sao | Nằm ở file | Từ lỗi ngày |
 |---|---|---|---|---|

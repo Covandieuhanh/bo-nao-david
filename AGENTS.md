@@ -8,8 +8,8 @@ Bạn đang làm việc với **David Trần** (Trần Đức Cường), nhà đ
 |---|---|---|
 | 1 | [co-so-tri-thuc/david.md](co-so-tri-thuc/david.md) | David là ai, ba hướng nghề, lằn ranh, cách muốn được làm việc. Khung tư duy gốc: [co-so-tri-thuc/mo-hinh-kinh-doanh.md](co-so-tri-thuc/mo-hinh-kinh-doanh.md). Cách nghĩ gốc mọi việc: [co-so-tri-thuc/tu-duy-goc.md](co-so-tri-thuc/tu-duy-goc.md) |
 | 2 | [co-so-tri-thuc/ho-so-ca-nhan.md](co-so-tri-thuc/ho-so-ca-nhan.md) | Tính cách, điểm mạnh, điểm cần cải thiện, nguyên tắc, động cơ. Định hướng nghề hiện hành ở `co-so-tri-thuc/david.md`; bản cũ đã chuyển vào lưu trữ |
-| 3 | [bao-cao-trang-thai.md](bao-cao-trang-thai.md) | Đang làm dở gì, việc tiếp theo, việc chờ David quyết |
-| 4 | [co-so-tri-thuc/bo-nho/MEMORY.md](co-so-tri-thuc/bo-nho/MEMORY.md) | Mục lục các bài học và quyết định. Mở từng file khi việc đụng tới |
+| 3 | [bao-cao-trang-thai.md](bao-cao-trang-thai.md) | Đang làm chưa xong gì, việc tiếp theo, việc chờ David quyết |
+| 4 | [co-so-tri-thuc/bo-nho/MEMORY.md](co-so-tri-thuc/bo-nho/MEMORY.md) | Mục lục các bài học và quyết định. Mở từng file khi việc liên quan tới |
 | 5 | [ky-nang/thu-thap-yeu-cau/SKILL.md](ky-nang/thu-thap-yeu-cau/SKILL.md) | Cách hỏi khi trình 4 phần: vòng hỏi, đề xuất đứng đầu, tín hiệu phải dừng |
 | 6 | [ky-nang/chuan-muc-lam-viec.md](ky-nang/chuan-muc-lam-viec.md) (việc học, sửa, lưu bộ não: [co-so-tri-thuc/truc-tri-thuc.md](co-so-tri-thuc/truc-tri-thuc.md)) | Thói quen chung mọi skill: đọc đúng phần, hỏi một lần, trong lúc làm, cuối việc, luôn đi tới mục tiêu và nhắc David giữ phiên gọn |
 | 7 | [quy-trinh.md](quy-trinh.md) (cây quy trình) | Quy trình gốc, rồi đúng lá của việc: từng bước, xong khi |
@@ -28,15 +28,15 @@ Làm nội dung về lãnh đạo, ba tầng làm chủ, phương pháp hay nhâ
 2. **Việc gì cũng duyệt 4 phần trước**: trình đủ Mục tiêu · Kế hoạch · Quy trình · Thực thi, chờ David "duyệt"; duyệt rồi tự làm trọn tới khi chắc dùng được. Cách làm, phần miễn, tự học skill: `ky-nang/chuan-muc-lam-viec.md` mục 2.
 3. **Video phải đúng nguyên văn lời David**: phụ đề, mô tả, chữ và motion graphics trên video lấy từ chính lời David, không đặt lời vào miệng David. Việc khác không bị ràng buộc này.
 4. **Mạng xã hội và quyền riêng tư của David không tự động vào**: gửi, xoá, thao tác tài khoản mạng xã hội phải hỏi trước; bấm đăng chỉ khi David nói "đăng" — còn sắp gói đăng thì tự làm, không hỏi (`quy-trinh.md` Đ2). Không bao giờ chạm mật khẩu, OTP, token, cookie, giấy tờ cá nhân.
-5. **Lời mới nhất thắng**: lời David nói sau cùng là luật hiện hành; sửa luật thì viết lại chính câu đó ở mọi nơi, không để hai bản cùng sống.
+5. **Lời mới nhất thắng**: lời David nói sau cùng là luật hiện hành; sửa luật thì viết lại chính câu đó ở mọi nơi, không để hai bản cùng tồn tại.
 6. **GitHub là bản sao lưu đầy đủ, đồng bộ liên tục của bộ não và skill, chia hai repo**:
-   - Repo công khai `bo-nao-david` chỉ giữ phần **dùng chung**: luật, hồ sơ, skill, script, khuôn. Phiên mới, người mới hay máy mới (Mac, Windows qua WSL, Linux) chỉ cần kéo repo về là làm ra ngay sản phẩm đúng như **lần trao đổi mới nhất**: mọi luật, cách làm, script, mẫu vừa dùng ra kết quả phải nằm trong repo trước khi báo xong, không nằm ở thư mục tạm, bộ nhớ riêng của một AI hay lịch sử chat; script không ghi cứng công cụ chỉ một máy có (bộ mã hoá, đường dẫn). Video thì máy tự kiểm bằng `tu-dong-hoa/may-khac/kiem-may.sh`.
+   - Repo công khai `bo-nao-david` chỉ giữ phần **dùng chung**: luật, hồ sơ, skill, script, mẫu. Phiên mới, người mới hay máy mới (Mac, Windows qua WSL, Linux) chỉ cần kéo repo về là làm ra ngay sản phẩm đúng như **lần trao đổi mới nhất**: mọi luật, cách làm, script, mẫu vừa dùng ra kết quả phải nằm trong repo trước khi báo xong, không nằm ở thư mục tạm, bộ nhớ riêng của một AI hay lịch sử chat; script không ghi cứng công cụ chỉ một máy có (bộ mã hoá, đường dẫn). Video thì máy tự kiểm bằng `tu-dong-hoa/may-khac/kiem-may.sh`.
    - Repo riêng tư `bo-nao-david-mac` giữ phần **chỉ Mac chính**: bot Telegram, lịch tự chạy, trang xem kết quả, lưu trữ cũ. Danh sách phần riêng: `tu-dong-hoa/phan-rieng-mac.txt`. Hai repo dùng chung một thư mục trên Mac, nên Mac hỏng vẫn dựng lại được 100%.
    - Cách cài: `huong-dan-cai-dat.md`.
 
    Xong mỗi thay đổi thì đẩy ngay bằng `bash tu-dong-hoa/dong-bo.sh --push` (đẩy cả hai repo); David nói **"cập nhật não"** cũng chạy lệnh này. AI không chạy được lệnh: đề xuất nội dung cần sửa để David duyệt. Chi tiết: ghi nhớ `co-so-tri-thuc-github-ban-goc`.
-   File mới chỉ Mac chính dùng thì thêm đường dẫn vào `phan-rieng-mac.txt`; file dùng chung không link vào phần riêng (máy kiểm link chặn).
-   **Không đưa lên**: sản phẩm làm ra (dự án video, bài đăng), video gốc, dữ liệu khách, giấy tờ cá nhân trong `~/Documents/2-ca-nhan/`, mật khẩu, token, cookie, lịch sử chat thô; file quá nặng (mô hình AI) thì chỉ ghi lệnh tải.
+   File mới chỉ Mac chính dùng thì thêm đường dẫn vào `phan-rieng-mac.txt`; file dùng chung không link vào phần riêng (công cụ kiểm tra link chặn).
+   **Không đưa lên**: sản phẩm làm ra (dự án video, bài đăng), video gốc, dữ liệu khách, giấy tờ cá nhân trong `~/Documents/2-ca-nhan/`, mật khẩu, token, cookie, lịch sử chat thô; file dung lượng quá lớn (mô hình AI) thì chỉ ghi lệnh tải.
 
 Khi các nguồn mâu thuẫn: `ky-nang/chuan-muc-lam-viec.md` mục 0.
 

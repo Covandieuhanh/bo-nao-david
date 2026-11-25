@@ -15,7 +15,7 @@ Mỗi bài: **Mục tiêu · Nội dung · Thực hành · Bài tập · Xong kh
 | 5 | Lỗi thành câu kiểm | 3 | 5 | 02 (câu lệnh 3), 03 |
 | 6 | Nhìn lại tuần: từ dữ liệu lên quy trình, lên nguyên lý | 3 | 6 | 01, 02 (câu lệnh 4) |
 | 7 | Nâng cấp: sao lưu, đo trước, dọn, đo sau | 4 | 7 | 00, 02 (câu lệnh 5, 6), 04 |
-| 8 | Đổi AI, đổi máy, người đọc lạnh | 4 | 8, 9 | 00, 02 (câu lệnh 6), 03 |
+| 8 | Đổi AI, đổi máy, người đọc mới | 4 | 8, 9 | 00, 02 (câu lệnh 6), 03 |
 
 ---
 
@@ -29,21 +29,21 @@ Mỗi bài: **Mục tiêu · Nội dung · Thực hành · Bài tập · Xong kh
 ## Bài 2 · Bốn file gốc và cuộc phỏng vấn
 - **Mục tiêu:** có bốn file gốc đúng về chính mình.
 - **Nội dung:** vai trò từng file gốc: cửa vào (AI đọc gì trước, bảng mọi file), hồ sơ (tôi là ai), luật làm việc (AI phải theo gì), trạng thái (việc đang dở). Dòng mô tả đầu file. Để AI phỏng vấn thay vì tự viết: AI hỏi từng vòng, mình trả lời thật, AI viết, mình sửa.
-- **Thực hành:** tạo bốn file từ khuôn (biểu mẫu 00 thao tác 3, biểu mẫu 01); tải bốn file và biểu mẫu 01 (tên `01-khuon-file-goc.md`, để luôn trong Projects) lên Projects; chạy câu lệnh 1 (AI viết hồ sơ, luật, trạng thái và điền tên vào file cửa vào); đưa 5 điều hay phải nhắc vào luật 4 tới 8; thay file đã sửa (biểu mẫu 00 thao tác 4).
+- **Thực hành:** tạo bốn file từ mẫu (biểu mẫu 00 thao tác 3, biểu mẫu 01); tải bốn file và biểu mẫu 01 (tên `01-khuon-file-goc.md`, để luôn trong Projects) lên Projects; chạy câu lệnh 1 (AI viết hồ sơ, luật, trạng thái và điền tên vào file cửa vào); đưa 5 điều hay phải nhắc vào luật 4 tới 8; thay file đã sửa (biểu mẫu 00 thao tác 4).
 - **Bài tập:** mở cuộc trò chuyện mới trong Projects, hỏi "tóm 3 dòng về tôi"; sửa file ở chỗ AI tóm sai.
 - **Xong khi:** AI tóm đúng 3 dòng mà không cần giải thích thêm.
 
 ## Bài 3 · Trục bốn tầng
 - **Mục tiêu:** bộ não có một cách sắp xếp cố định, học thêm bao nhiêu cũng không rối.
-- **Nội dung:** bốn tầng (trục · nguyên lý · quy trình · dữ liệu); tầng càng cao càng ít đổi; tầng nhận ra bằng chữ đầu tên file vì Projects không giữ thư mục con; trong tầng 1 và 2 mỗi ý chỉ một chỗ; luật đi lên: lặp ít nhất 2 lần thì thành quy trình, ít nhất 3 chuyện cùng bài học thì thành nguyên lý.
-- **Thực hành:** tạo `truc-hoc.md`, `bai-hoc.md`, `y-tuong.md` từ khuôn; thêm ba dòng vào bảng file ở `doc-truoc.md`; tải lên Projects.
-- **Bài tập:** chọn một việc học viên **đã làm ít nhất 2 lần** (ví dụ chốt một đơn hàng), viết `quy-trinh-<ten-viec>.md` theo khuôn: ít nhất 3 bước, mỗi bước có "đạt khi".
+- **Nội dung:** bốn tầng (trục · nguyên lý · quy trình · dữ liệu); tầng càng cao càng ít đổi; tầng nhận ra bằng chữ đầu tên file vì Projects không giữ thư mục con; trong tầng 1 và 2 mỗi ý chỉ một chỗ; luật thăng cấp: lặp ít nhất 2 lần thì thành quy trình, ít nhất 3 chuyện cùng bài học thì thành nguyên lý.
+- **Thực hành:** tạo `truc-hoc.md`, `bai-hoc.md`, `y-tuong.md` từ mẫu; thêm ba dòng vào bảng file ở `doc-truoc.md`; tải lên Projects.
+- **Bài tập:** chọn một việc học viên **đã làm ít nhất 2 lần** (ví dụ chốt một đơn hàng), viết `quy-trinh-<ten-viec>.md` theo mẫu: ít nhất 3 bước, mỗi bước có "đạt khi".
 - **Xong khi:** mỗi file thuộc một tầng; bảng file ở `doc-truoc.md` có đủ mọi file trong `bo-nao`.
 
 ## Bài 4 · Làm dự án, lưu bằng sáu câu hỏi
 - **Mục tiêu:** mỗi buổi làm việc với AI để lại bài học đúng chỗ.
 - **Nội dung:** sáu câu hỏi khi lưu (là gì · phục vụ mục tiêu nào · đã có chỗ chưa · vì sao đúng · nối vào đâu · kiểm thế nào). Sửa thẳng câu cũ thay vì chồng câu mới. Sổ dự án `du-an-<ten>.md`: mục tiêu, mỗi buổi một dòng.
-- **Thực hành:** chọn một dự án thật; tạo `du-an-<ten>.md` từ khuôn; làm một việc thật với AI ngay trong buổi (soạn kế hoạch, bài viết, bảng giá…); cuối buổi chạy câu lệnh 2; duyệt từng đề xuất; thay các file đã sửa trong Projects. Từ buổi này, lần nào phải sửa AI thì ghi ngay một dòng "Đã sửa AI: …" vào sổ dự án.
+- **Thực hành:** chọn một dự án thật; tạo `du-an-<ten>.md` từ mẫu; làm một việc thật với AI ngay trong buổi (soạn kế hoạch, bài viết, bảng giá…); cuối buổi chạy câu lệnh 2; duyệt từng đề xuất; thay các file đã sửa trong Projects. Từ buổi này, lần nào phải sửa AI thì ghi ngay một dòng "Đã sửa AI: …" vào sổ dự án.
 - **Bài tập:** làm thêm 2 buổi việc thật ở nhà, lần nào cũng kết thúc bằng câu lệnh 2.
 - **Xong khi:** sổ dự án có ít nhất 3 dòng; bảng file ở `doc-truoc.md` có mọi file mới.
 
@@ -68,9 +68,9 @@ Mỗi bài: **Mục tiêu · Nội dung · Thực hành · Bài tập · Xong kh
 - **Bài tập:** ghi một dòng vào bảng "Nâng cấp" của `bai-hoc.md`: điểm trước, điểm sau, đã gom, gỡ, cất, viết rõ gì.
 - **Xong khi:** điểm đo sau bằng hoặc cao hơn đo trước.
 
-## Bài 8 · Đổi AI, đổi máy, người đọc lạnh
+## Bài 8 · Đổi AI, đổi máy, người đọc mới
 - **Mục tiêu:** bộ não không mất, dùng được với AI khác, và được chứng minh là dạy đúng.
-- **Nội dung:** Projects tự có trên mọi máy đăng nhập cùng tài khoản; bản trong Google Drive là bản gốc, dùng khi đổi AI hay mất tài khoản. Mức nâng cao: GitHub kho riêng tư, mỗi lần sửa thì đưa lên, máy khác tải về. Người đọc lạnh: AI mới tinh hoặc AI khác hẳn, chỉ đọc bộ não, làm bài kiểm khi không thấy đáp án. Câu sai thì sửa file làm AI hiểu sai, không sửa bài kiểm.
+- **Nội dung:** Projects tự có trên mọi máy đăng nhập cùng tài khoản; bản trong Google Drive là bản gốc, dùng khi đổi AI hay mất tài khoản. Mức nâng cao: GitHub kho riêng tư, mỗi lần sửa thì đưa lên, máy khác tải về. Người đọc mới: AI mới tinh hoặc AI khác hẳn, chỉ đọc bộ não, làm bài kiểm khi không thấy đáp án. Câu sai thì sửa file làm AI hiểu sai, không sửa bài kiểm.
 - **Thực hành:** tải thư mục `bo-nao` vào một AI khác với AI hay dùng (biểu mẫu 00 thao tác 5); chạy câu lệnh 6; chấm theo biểu mẫu 03.
 - **Bài tập:** làm dự án thật thứ 3 bằng trọn vòng học (làm, lưu, câu kiểm, kiểm), tự làm không cần trainer.
-- **Xong khi:** người đọc lạnh đúng ít nhất 90% trên bài kiểm có ít nhất 10 câu; bộ não đã qua ít nhất 3 dự án thật.
+- **Xong khi:** người đọc mới đúng ít nhất 90% trên bài kiểm có ít nhất 10 câu; bộ não đã qua ít nhất 3 dự án thật.

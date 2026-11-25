@@ -16,7 +16,7 @@ Mọi phiên tự bật Remote Control (`remoteControlAtStartup`, `cai-hook.py`)
 **How to apply:** việc mới bị hỏi mà David hay đồng ý thì chuyển mẫu đó sang mức tự chạy. Liên quan [[quy-tac-goi-y-de-david-chon]],
 [[quy-tac-ky-nang-tu-cai-tien]].
 
-Nhà của luật: `tu-dong-hoa/so-tay/cong-duyet.py` (mẫu có `!` = hỏi) + README so-tay; đóng phiên ở `ky-nang/chuan-muc-lam-viec.md` mục 5,
+Nguồn của luật: `tu-dong-hoa/so-tay/cong-duyet.py` (mẫu có `!` = hỏi) + README so-tay; đóng phiên ở `ky-nang/chuan-muc-lam-viec.md` mục 5,
 `giao-viec.sh`, `quy-tac-bot.md`. Ghi nhớ này giữ ngày, lời David, lý do.
 
 ## Sổ

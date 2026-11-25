@@ -14,6 +14,6 @@ từng mục nhỏ… để khi làm là có thứ để đối chiếu và có 
 **Why:** việc #41 (intro) phải làm lại nhiều lần; khi đo hình mẫu thật (độ dài thẻ thương hiệu kênh lớn) mới ra đúng ý. Bộ não cần nhớ
 hình mẫu theo từng mảng để máy nào, phiên nào cũng chọn đúng mẫu ngay từ đầu.
 
-**How to apply:** luật và cây ở `co-so-tri-thuc/hinh-mau/README.md` (nhà duy nhất); quy trình lá A8 `hinh-mau/quy-trinh-nghien-cuu.md`;
+**How to apply:** luật và cây ở `co-so-tri-thuc/hinh-mau/README.md` (nguồn duy nhất); quy trình lá A8 `hinh-mau/quy-trinh-nghien-cuu.md`;
 quy trình gốc bước 2 (tra) và bước 6 (đối chiếu). Học nguyên lý, không chép món: [[quy-tac-hoc-la-bo-sung]]. Học cho skill theo số liệu:
 skill `hoc-lien-tuc` Việc 2. Hình mẫu cho công ty Veltrix ghi ở bộ não công ty [[co-so-tri-thuc-bo-nao-cong-ty]].

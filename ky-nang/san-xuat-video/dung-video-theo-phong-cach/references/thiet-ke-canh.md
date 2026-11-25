@@ -15,7 +15,7 @@ description: "Thiết kế kịch bản cảnh motion graphics: chọn bố cụ
 | `hook` | chữ (V4) | Thẻ tít 0–3 s — chỉ khi David yêu cầu (khối 06), chữ nguyên văn | eyebrow, lines[2], accentLine |
 | `lower` | chữ (V4) | Giới thiệu người nói khi họ tự nói tên | name, role |
 | `illus` | **toàn màn hình** | Mọi ý cần hình: biểu tượng vẽ động single / flow / vs / count / list + nhãn tối đa 3 chữ; phụ đề vẫn chạy (khối 07) | mode, items[{icon, at, label?, good?}], label, num |
-| `nhan` | **điểm nhấn trên người** | Câu đắt / cú chốt / lúc muốn người xem nhìn vào người nói (không zoom): làm tối viền, chữ nhấn tối đa 4 chữ trích lời hoặc biểu tượng nhỏ bật cạnh mặt (bên phía trống; khung dọc → dưới cằm). 2–5 s. Phụ đề vẫn chạy | text ('DÒNG 1\nDÒNG 2', dòng cuối màu nhấn), icon, at (giây bật), toi (true) |
+| `nhan` | **điểm nhấn trên người** | Câu then chốt / cú chốt / lúc muốn người xem nhìn vào người nói (không zoom): làm tối viền, chữ nhấn tối đa 4 chữ trích lời hoặc biểu tượng nhỏ bật cạnh mặt (bên phía trống; khung dọc → dưới cằm). 2–5 s. Phụ đề vẫn chạy | text ('DÒNG 1\nDÒNG 2', dòng cuối màu nhấn), icon, at (giây bật), toi (true) |
 | `listItem` | nhãn (V4) | Người nói ĐẾM ý (ít nhất 3): số tròn cam + cụm việc nguyên văn, 2,5–4 s mỗi ý (học BS Tùng, HDK) | n, of (tuỳ chọn), text |
 | `kinetic` | chữ (V4) | Một câu khẳng định đắt giá, tối đa 5 từ/dòng, 2 dòng | lines[] (in hoa, có dấu chấm cuối tạo cảm giác chốt) |
 | `action` | màn hành động (toàn cảnh) | Người nói nêu việc người xem làm được → biểu tượng vẽ dần trong vòng + ô tick bật lúc `doneAt` + NGUYÊN VĂN câu (`**cụm**` nhấn); phụ đề tạm ẩn. 1–2 / video, 3–5 s | icon, quote, quoteAt, doneAt, eyebrow (chỉ khi trích được) |

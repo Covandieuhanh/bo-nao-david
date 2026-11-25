@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Máy kiểm liên kết (luật: co-so-tri-thuc/quy-uoc-lien-ket.md).
+"""Công cụ kiểm tra liên kết (luật: co-so-tri-thuc/quy-uoc-lien-ket.md).
 
 - Báo link gãy (link tương đối tới file không có, [[ghi-nho]] không có) → trả mã lỗi 1.
 - Báo file mồ côi (không file nào nối tới, chỉ mục không tính) và file thiếu mô tả → chỉ cảnh báo.

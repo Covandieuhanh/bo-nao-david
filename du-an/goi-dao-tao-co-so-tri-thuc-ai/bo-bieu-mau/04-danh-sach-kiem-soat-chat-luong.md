@@ -25,6 +25,6 @@ description: "Biểu mẫu 04 gói dựng bộ não: danh sách kiểm soát ch�
 - [ ] Đã sao lưu bản cũ trước khi nâng cấp; kho GitHub (nếu có) để chế độ riêng tư
 
 ## Hiệu quả
-- [ ] Điểm người đọc lạnh: đo trước ……/…… · đo sau ……/…… (đo sau bằng hoặc cao hơn, và đúng ít nhất 90%)
+- [ ] Điểm người đọc mới: đo trước ……/…… · đo sau ……/…… (đo sau bằng hoặc cao hơn, và đúng ít nhất 90%)
 - [ ] Số lần phải sửa AI trong tuần qua: …… (mong giảm dần qua các tháng)
 - [ ] Đã ghi một dòng vào bảng "Nâng cấp" của `bai-hoc.md`

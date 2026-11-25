@@ -63,7 +63,7 @@ for (const raw of list) {
   if (NGANG && (s.type === 'kinetic' || s.type === 'action' || s.type === 'lower'))
     bao('P0', s.start, s.id, `kiểu "${s.type}" lỗi ở khung ngang`, 'dùng cảnh tự vẽ ở chỗ trống (ve) hoặc bocuc the-canh');
   // KHÔNG CHE / LÀM MỜ NGƯỜI ĐANG NÓI (David 21/11 + 22/11/2026: "màn hình mờ lại còn che nhân vật là hoàn toàn không đúng"):
-  // khuôn 1 video có người trên hình → cảnh toàn khung, nền người mờ, màn chương toàn khung đều chặn. Chỉ được khi đoạn đó
+  // mẫu 1 video có người trên hình → cảnh toàn khung, nền người mờ, màn chương toàn khung đều chặn. Chỉ được khi đoạn đó
   // không có người nói trên hình (cắt sang màn hình máy, cảnh trống): ghi props.khong_nguoi = true.
   if (CO_NGUOI && !s.khong_nguoi && (FULL.has(s.type) && s.type !== 'cta' || s.phong === 'nguoi-mo' || (s.type === 'bocuc' && ['chuong', 'muc-luc', 'tren-duoi', 'o-tron'].includes(s.kieu))))
     bao('P0', s.start, s.id, `"${[s.type, s.kieu || s.mode].filter(Boolean).join(':')}" phủ / làm mờ người đang nói trên hình`, 'đặt hình vào chỗ trống thật của khung (cảnh tự vẽ ve có vị trí o), hoặc ghi khong_nguoi: true nếu đoạn đó không có người trên hình');
@@ -126,7 +126,7 @@ for (let i = 1; i < chuoi.length; i++) {
   if (kieu(a) === kieu(b) && b.tu_buoc == null)
     bao('P2', b.start, b.id, `cùng kiểu "${kieu(b)}" với cảnh liền trước "${a.id}"`, 'đổi kiểu một cảnh, hoặc vẽ tiếp mạch (tu_buoc)');
 }
-// CỔNG TỰ CHỌN (tu-chon.md, 19/11/2026 — 6 tập dựng bằng khuôn ghép không có chẩn đoán, cả video chỉ chữ nhấn + tít):
+// CỔNG TỰ CHỌN (tu-chon.md, 19/11/2026 — 6 tập dựng bằng mẫu ghép không có chẩn đoán, cả video chỉ chữ nhấn + tít):
 // (1) phải có ke-hoach-canh.md mục "## Chẩn đoán" ở thư mục dự án; (2) cả video một kiểu lớp phủ nội dung → P0, trừ khi
 // ke-hoach-canh.md ghi "Một kiểu có chủ đích: <lý do>". Lớp cố định (dấu kênh, tít, màn chốt…) không tính là kiểu.
 {
@@ -154,7 +154,7 @@ for (let i = 1; i < chuoi.length; i++) {
       bao('P1', 0, 'cả video', `hình phủ ${Math.round(100 * phu / duration)} % thời lượng — dễ rối, phân tán`, 'bỏ hình ở ý dễ hiểu khi nghe (kể chuyện, cảm xúc, câu ngắn tự rõ), giữ người nói + phụ đề');
   }
   // KHO DÙNG TỰ DO (David 22/11/2026: "không nhất thiết là phải có một cái luật gì đấy gọi là cố định … tận dụng tối đa các cái bộ tài
-  // nguyên đã học"): không còn cổng "chỉ dùng khi có dấu hiệu". Chỉ giữ lỗi kỹ thuật của khuôn.
+  // nguyên đã học"): không còn cổng "chỉ dùng khi có dấu hiệu". Chỉ giữ lỗi kỹ thuật của mẫu.
   {
     for (const x of list.map(flat).filter((x) => x.type === 'bocuc' && x.kieu === 'dung-hay'))
       if ((x.cap || []).length < 2) bao('P2', x.start, x.id, `"dung-hay" chỉ ${(x.cap || []).length} cặp — khuôn lặp đẹp nhất từ 2 cặp`, 'một cặp thì illus vs cũng được');

@@ -82,8 +82,8 @@ Bước nhẹ (1–3): tới đó nhắc một dòng để David tự đổi mô
 |---|---|
 | [nguoi-xem-can-gi.md](nguoi-xem-can-gi.md) | **cửa vào tư duy**: loại nội dung → cái khó của người xem → nguyên lý (12 nguyên lý Mayer + 4 ngoài Mayer) |
 | [nguyen-ly.json](nguyen-ly.json) | tên loại / nguyên lý hợp lệ (máy soát đọc) |
-| [giai-mau.md](giai-mau.md) | 19 ca giải từ 8 hình mẫu thành công cùng thể loại (số liệu đo) |
-| [bai-kiem/](bai-kiem/README.md) | bài kiểm suy luận 10 đoạn + máy chấm, chạy khi máy mới / đổi luật |
+| [giai-mau.md](giai-mau.md) | 19 trường hợp giải từ 8 hình mẫu thành công cùng thể loại (số liệu đo) |
+| [bai-kiem/](bai-kiem/README.md) | bài kiểm suy luận 10 đoạn + công cụ chấm, chạy khi máy mới / đổi luật |
 | [tu-chon.md](tu-chon.md) | **các bước tự chọn** + kho cách thể hiện xếp theo nguyên lý |
 | [bo-cuc.md](bo-cuc.md) | danh mục bố cục: dùng khi nào, viết thế nào, có code chưa |
 | [am-thanh.md](am-thanh.md) | cách đặt tiếng hiệu ứng / nhạc theo bố cục |

@@ -18,4 +18,4 @@ cố định 60 hay 90 giây… thử trọn vẹn một ý là được… làm
 trong phiên Claude theo skill (app đã bỏ 10/11/2026), cho David xem bản cuối, xong thì dọn đồ thử. Liên quan
 [[quy-tac-khong-tu-chay-viec-cua-david]].
 
-Nhà của luật: `ky-nang/san-xuat-video/quy-tac-chung.md` mục 8. Ghi nhớ này giữ ngày, lời David, lý do.
+Nguồn của luật: `ky-nang/san-xuat-video/quy-tac-chung.md` mục 8. Ghi nhớ này giữ ngày, lời David, lý do.

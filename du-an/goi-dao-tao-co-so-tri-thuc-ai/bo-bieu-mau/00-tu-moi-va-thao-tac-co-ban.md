@@ -12,7 +12,7 @@ description: "Biểu mẫu 00 gói dựng bộ não: bảng từ mới cho ngư�
 | **AI** | trí tuệ nhân tạo: ChatGPT, Claude, Gemini |
 | **Bộ não** | một thư mục chứa các file chữ mô tả mình là ai, muốn làm việc thế nào, đã học được gì; AI đọc để hiểu mình |
 | **File `.md`** | file chỉ có chữ, không in đậm, không màu (gọi là Markdown). Mở bằng mọi ứng dụng soạn chữ, AI nào cũng đọc được. Dấu `#` đầu dòng là tiêu đề; dòng có dấu `|` là bảng |
-| **Khuôn** | file mẫu có sẵn chỗ trống `<…>`; chép ra rồi điền vào chỗ trống |
+| **Mẫu** | file mẫu có sẵn chỗ trống `<…>`; chép ra rồi điền vào chỗ trống |
 | **Chức năng Projects** | chức năng của ứng dụng AI (ChatGPT, Claude; trên Gemini gọi là Gems) để tải file lên một lần, mọi cuộc trò chuyện trong đó đều đọc được. Trong gói luôn gọi là "Projects" để khỏi lẫn với "dự án" là việc thật mình làm |
 | **Dự án** | việc thật mình làm cùng AI (một kế hoạch, một đợt bán hàng, một khoá học). Mỗi dự án có một file sổ |
 | **Trỏ tới** | file này có ghi tên file kia, để AI biết mà mở. File không được file nào trỏ tới gọi là **mồ côi**: AI sẽ không biết nó tồn tại |
@@ -20,7 +20,7 @@ description: "Biểu mẫu 00 gói dựng bộ não: bảng từ mới cho ngư�
 | **Sáu câu hỏi khi lưu** | sáu câu tự hỏi cho mỗi điều mới trước khi lưu (1-quy-trinh.md) |
 | **Câu lệnh 1–6** | sáu đoạn chữ dán sẵn vào AI (biểu mẫu 02) |
 | **Câu kiểm** | một câu hỏi tình huống trong bài kiểm (biểu mẫu 03) |
-| **Người đọc lạnh** | một AI mới tinh, chưa biết gì về mình, chỉ đọc bộ não |
+| **Người đọc mới** | một AI mới tinh, chưa biết gì về mình, chỉ đọc bộ não |
 | **Ca cùng gốc** | nhiều chuyện khác nhau nhưng cùng một nguyên nhân hay cùng một bài học |
 | **Đo trước, đo sau** | chạy bài kiểm trước và sau khi sửa bộ não, so điểm để biết bản mới có tốt hơn không |
 | **OTP** | mã một lần gửi qua tin nhắn để đăng nhập; không bao giờ đưa vào bộ não |
@@ -53,11 +53,11 @@ Tạo file tên doc-truoc.md với nội dung dưới đây, cho tôi link tải
 ```
 ChatGPT và Claude đều tạo được file để tải. Tải về rồi chép vào thư mục `bo-nao`.
 
-**Tự tạo bằng tay:**
+**Tự tạo thủ công:**
 - **Mac:** mở TextEdit, menu Định dạng (Format) chọn "Tạo văn bản thường" (Make Plain Text), dán nội dung, lưu với tên `doc-truoc.md`; nếu máy hỏi đuôi file thì chọn "Dùng .md".
 - **Windows:** mở Notepad, dán nội dung, Lưu với tên `doc-truoc.md`, ô "Lưu dưới dạng" chọn "Tất cả các tệp" (All files), mã hoá UTF-8.
 
-Khi chép khuôn từ biểu mẫu: **chỉ chép phần bên trong**, không chép dòng có ba dấu ``` ở đầu và cuối khuôn.
+Khi chép mẫu từ biểu mẫu: **chỉ chép phần bên trong**, không chép dòng có ba dấu ``` ở đầu và cuối mẫu.
 
 ## Thao tác 4 · Thay một file trong Projects
 AI ở mức cơ bản không tự sửa được file trong Projects. Mỗi lần sửa:
@@ -68,7 +68,7 @@ AI ở mức cơ bản không tự sửa được file trong Projects. Mỗi l�
 Mẹo cho đỡ việc: cuối buổi gom mọi file cần sửa vào một lần (câu lệnh 2 đã làm vậy).
 
 ## Thao tác 5 · AI "mới tinh" để kiểm
-Chức năng trí nhớ của ứng dụng làm AI không còn "lạnh". Khi chạy bài kiểm người đọc lạnh, chọn một trong ba:
+Chức năng trí nhớ của ứng dụng làm AI không còn "lạnh". Khi chạy bài kiểm người đọc mới, chọn một trong ba:
 - **Tốt nhất:** dùng một AI khác (đang dùng ChatGPT thì kiểm bằng Claude bản miễn phí, hoặc ngược lại).
 - ChatGPT: bật "Trò chuyện tạm thời" (Temporary Chat) rồi tải bộ não vào cuộc trò chuyện đó.
 - Hoặc tắt trí nhớ trong Cài đặt, mục Cá nhân hoá (Personalization), phần Trí nhớ (Memory), rồi bật lại sau khi kiểm.

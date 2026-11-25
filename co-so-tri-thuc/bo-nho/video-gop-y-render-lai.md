@@ -13,7 +13,7 @@ quả (`tu-dong-hoa/xem-ket-qua.py`). Góp ý thì sửa rồi **render lại to
 
 **How to apply:** Liên quan [[quy-tac-goi-y-de-david-chon]], [[video-anh-viet-nam]].
 
-Nhà của luật: `ky-nang/san-xuat-video/phan-phoi-da-kenh/SKILL.md`, `ky-nang/san-xuat-video/quy-tac-chung.md` mục 8. Ghi nhớ này giữ ngày,
+Nguồn của luật: `ky-nang/san-xuat-video/phan-phoi-da-kenh/SKILL.md`, `ky-nang/san-xuat-video/quy-tac-chung.md` mục 8. Ghi nhớ này giữ ngày,
 lời David, lý do.
 
 ## Sổ

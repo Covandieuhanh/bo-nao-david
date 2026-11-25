@@ -38,7 +38,7 @@ Mỗi video: bỏ quảng cáo → đọc mô tả + chương → phát 6× ba �
 6. **Nghi thức mở (khoảng 30 s, gần như nguyên văn mỗi tập):** chào → "chào mừng đến Podcast Hiếu TV" → dành cho người mới: kênh chia
    sẻ 2 mảng (tài chính cá nhân · kinh nghiệm sống), phát hành tối chủ nhật hàng tuần → tải tài liệu miễn phí ở hieu.tv → "một lần
    nữa xin chào, bây giờ chúng ta cùng bắt đầu chủ đề hôm nay" thì vào đề bằng **nối tập trước / kể một câu chuyện / một biểu đồ /
-   một câu hỏi**. Không có "hook" trích câu đắt.
+   một câu hỏi**. Không có "hook" trích câu then chốt.
 7. **Nghi thức kết (gần như nguyên văn):** nếu thấy hữu ích nhờ chia sẻ cho bạn bè và người thân (có khi nói rõ: "đặc biệt các em
    còn trẻ") → nhờ bấm like vì thuật toán → cảm ơn → chúc buổi tối cuối tuần bình yên bên gia đình. Gần như không xin đăng ký.
 8. **Chuyển đổi đến từ "tài liệu miễn phí":** mỗi tập mời vào website tải slide/biểu đồ/thư viện/tạp chí miễn phí; mô tả có liên
@@ -50,7 +50,7 @@ Mỗi video: bỏ quảng cáo → đọc mô tả + chương → phát 6× ba �
 ## So với skill podcast hiện tại
 | | Skill hiện tại | Hieu Nguyen |
 |---|---|---|
-| Mở đầu | hook 0–3 s chữ to trích câu đắt | thẻ tên tập + nhạc → nghi thức chào khoảng 30 s do người nói |
+| Mở đầu | hook 0–3 s chữ to trích câu then chốt | thẻ tên tập + nhạc → nghi thức chào khoảng 30 s do người nói |
 | Mật độ hình | khoảng 1 cảnh / 15–20 s (tập 8 phút: 27 cảnh) | khoảng 1 thay đổi / 2–4 phút, bản đồ tích luỹ |
 | Phụ đề | in đầy đủ trên hình | không in — CC YouTube |
 | Nhạc | rất nhỏ dưới lời (−30…−38 LU) | chỉ intro/outro |
@@ -68,7 +68,7 @@ Mỗi video: bỏ quảng cáo → đọc mô tả + chương → phát 6× ba �
 - **HN-4 · Mở đầu:** bỏ hook chữ to; 0–3 s = thẻ tên tập + số tập trên nhạc intro, rồi vào lời David tự nhiên.
 - **HN-5 · Đáy màn hình:** thêm số tập + ngày phát hành vào dải đáy (tên tập · TẬP n · ngày · DAVID) cạnh thanh tiến độ sẵn có.
 - **HN-6 · Màn chốt podcast:** kind `share` mặc định cho tuyến tâm sự ("Nếu thấy hữu ích, gửi cho một người thân nhé") thay vì câu hỏi bình luận.
-- **HN-7 · Thumbnail podcast:** khuôn cố định — nền (khung đồ hoạ của chính tập, hoặc ảnh ẩn dụ David gửi) + tên tập chữ to giữa + số tập góc trái.
+- **HN-7 · Thumbnail podcast:** mẫu cố định — nền (khung đồ hoạ của chính tập, hoặc ảnh ẩn dụ David gửi) + tên tập chữ to giữa + số tập góc trái.
 - **HN-8 · Mô tả:** 2–3 đoạn tóm tắt + chương + liên kết tập liên quan + link tài liệu/tài nguyên của David (nếu có).
-- **HN-9 · Khuôn thu âm cho David (không phải việc của skill, chỉ gợi ý):** câu chào + giới thiệu kênh/lịch cố định mỗi tập ·
+- **HN-9 · Mẫu thu âm cho David (không phải việc của skill, chỉ gợi ý):** câu chào + giới thiệu kênh/lịch cố định mỗi tập ·
   kết bằng nhờ chia sẻ + lời chúc · có "tài liệu miễn phí" để dẫn về (phễu chuyển đổi của Hieu).

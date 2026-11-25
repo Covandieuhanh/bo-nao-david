@@ -5,7 +5,7 @@ metadata:
   type: feedback
 ---
 
-David tự xây nội dung, nói tự do và có cảm xúc. Skill không viết khuôn lời, không đặt kịch bản thu âm, không đề xuất đổi lời David.
+David tự xây nội dung, nói tự do và có cảm xúc. Skill không viết mẫu lời, không đặt kịch bản thu âm, không đề xuất đổi lời David.
 Skill tự nhận diện thể loại rồi lo phần hình: thẩm mỹ, nhịp, cách trình bày. **Kim chỉ nam: người xem làm trung tâm** — người xem ở lại
 → hiểu ý chính → làm theo (chuyển hoá bằng hành động). Kênh lớn (DOAC, Hormozi, MrBeast, Ali Abdaal, Jay Shetty…) là nơi học nhịp và
 cách trình bày đã được chứng minh; luật nhịp/trình bày dựa trên gu riêng mà trái chuẩn kênh lớn thì nghiêng về chuẩn kênh lớn.
@@ -21,4 +21,4 @@ Giữ nguyên: lời David, nhạc kênh, chữ ký nhận diện ([[video-tham-
 **How to apply:** chữ trên video nguyên văn ([[video-chu-nguyen-van]]). Mỗi video ghi `so-lieu.md` để kiểm bằng số thật.
 Cách học từ kênh mẫu: [[quy-tac-hoc-la-bo-sung]].
 
-Nhà của luật: `ky-nang/san-xuat-video/quy-tac-chung.md` mục 0 (Kim chỉ nam) và mục 1 (Nội dung). Ghi nhớ này giữ ngày, lời David, lý do.
+Nguồn của luật: `ky-nang/san-xuat-video/quy-tac-chung.md` mục 0 (Kim chỉ nam) và mục 1 (Nội dung). Ghi nhớ này giữ ngày, lời David, lý do.

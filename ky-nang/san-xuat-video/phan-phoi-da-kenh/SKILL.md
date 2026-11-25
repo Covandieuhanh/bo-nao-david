@@ -7,7 +7,7 @@ description: Quy trình trọn gói của David — từ MỘT tài nguyên (vid
 
 **Đọc trước:** `../../chuan-muc-lam-viec.md` · `../quy-tac-chung.md`. File khác chỉ đọc ở đúng bước cần (cột cuối bảng quy trình).
 
-**Vai trò:** nội dung là của David (nói tự do, có cảm xúc, không khuôn). Claude lo nhận diện, lọc, thẩm mỹ, nhịp,
+**Vai trò:** nội dung là của David (nói tự do, có cảm xúc, không mẫu). Claude lo nhận diện, lọc, thẩm mỹ, nhịp,
 phân phối, đăng và đo. Mọi bài có mục tiêu: kéo tương tác đúng nền tảng → chuyển hoá → người xem nhắn "gỡ".
 
 ## Mục tiêu
@@ -21,9 +21,9 @@ không ưng thì góp ý rồi render lại toàn bộ. Chỉ **bấm đăng lê
 ## Quy trình (sau khi duyệt 4 phần: một mạch, không dừng chờ)
 | # | Bước | Đọc / dùng |
 |---|---|---|
-| 0 | **Nhận tài nguyên** (link Drive / YouTube, file trong chat, Drive `tu-lieu-goc`: `references/nhan-tai-nguyen.md`) → `~/Movies/tap-<ten>/1-goc/`. Chép lời **theo từng khúc ngắn rồi hợp nhất** (`dung-video-theo-phong-cach/scripts/chep-theo-khuc.py`, chính xác hơn chép cả file nhất là nơi ồn); đo độ dài, khung, chất lượng | khối 01 |
+| 0 | **Nhận tài nguyên** (link Drive / YouTube, file trong chat, Drive `tu-lieu-goc`: `references/nhan-tai-nguyen.md`) → `~/Movies/tap-<ten>/1-goc/`. Chép lời **theo từng phân đoạn ngắn rồi hợp nhất** (`dung-video-theo-phong-cach/scripts/chep-theo-khuc.py`, chính xác hơn chép cả file nhất là nơi ồn); đo độ dài, khung, chất lượng | khối 01 |
 | 1 | **Lọc + phân hướng** (ghi phiếu vào dự án; phiếu là nguồn của 4 phần, không có cổng duyệt riêng): chia đoạn theo ý, gán đủ ba hướng, mỗi hướng có ý trọn ra một bản riêng (khối 00 mục 0b) → ghi `phan-huong.md` của tập + mục nhật ký từng hướng `du-an/nhat-ky-noi-dung/` (luôn ghi, kể cả tập không dựng); đối chiếu kho 100 video, 5 tiêu chí, lằn ranh, kết luận, kênh, giờ, loại dựng. Bước 2–4 làm cho từng bản theo hướng. ⛔ / 👤 / 🗂 → không dựng, chỉ ghi sổ, báo một dòng; lằn ranh → không lấy đoạn đó làm chữ đồ hoạ, tiêu đề, mô tả | khối 00 · `du-an/ke-hoach-noi-dung-100-video.md` · `../ho-so-thuong-hieu/kenh.json` · sổ `~/Movies/_danh-muc-noi-dung/danh-muc-noi-dung.md` |
-| 2 | **Dựng bản dài** theo loại (`dung-video-theo-phong-cach` / `dung-podcast`); nhiều file cùng một buổi nói → nối file, dựng khuôn 1 video; mỗi bản theo hướng chẩn đoán riêng (`../thiet-ke-bo-cuc/tu-chon.md`, không chép kịch bản bản khác). Trong lúc render chạy nền: soạn bài đăng (bước 3) và chọn ý clip ngắn | skill dựng |
+| 2 | **Dựng bản dài** theo loại (`dung-video-theo-phong-cach` / `dung-podcast`); nhiều file cùng một buổi nói → nối file, dựng mẫu 1 video; mỗi bản theo hướng chẩn đoán riêng (`../thiet-ke-bo-cuc/tu-chon.md`, không chép kịch bản bản khác). Trong lúc render chạy nền: soạn bài đăng (bước 3) và chọn ý clip ngắn | skill dựng |
 | 3 | **Bài đăng** từng kênh vào `phat-hanh/phat-hanh.md`: YouTube (3 tiêu đề, mô tả, chương, thumbnail nếu ngang) · Reels / bài trang · TikTok caption · câu chia sẻ Facebook cá nhân · bình luận ghim · bài Mời "gỡ" theo tỉ lệ | khối 15 · `../ho-so-thuong-hieu/giong-thuong-hieu-david.md` |
 | 4 | **Clip ngắn**: chọn ý trọn đắt nhất theo bốn câu (luôn có, hoặc ghi lý do không có) và **dựng luôn** sau khi bản dài render xong (render nối tiếp, không song song) | `cat-doan-noi-bat` |
 | 5 | **Kiểm + giao**: khung hình, âm lượng (khối 17, 09); chép bản cuối (bản dài, clip, thumbnail, `phat-hanh.md`, `dang-bai.md`) vào `~/Movies/cho-dang/tap-<ten>/ban-dai|highlight/` rồi `cho-dang.sh gui tap-<ten>` (tự làm bản xem nhẹ, lên Drive `thanh-pham/` y hệt, trang xem kết quả đọc từ đây); buổi tách nhiều hướng thì thêm `cho-dang.sh buoi <buổi>` (kết quả chung của buổi, `../dung-video-theo-phong-cach/references/tach-theo-huong.md` bước 5). **Làm ra gì thì lên Drive đủ hết** (David 25/11/2026), so khớp rồi mới báo; gửi bản xem < 30 MB; khi David chốt bản cuối (Đ2) mới chuyển dự án dựng lên Drive bằng `luu-drive.sh` — **Mac chỉ giữ bản cuối chưa đăng**; ghi sổ; báo Telegram một lần | khối 17 · ghi nhớ `video-chuyen-qua-drive` · `../dung-video-theo-phong-cach/scripts/cho-dang.sh` |

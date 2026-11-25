@@ -40,6 +40,6 @@ Mức nằm ở một chỗ: hồ sơ chung `nhac`.
    kien_thuc), ghi `tuyen: '<tuyến>'` vào `chuyen-dong/src/du-an.js` (1 video: ghi SAU ap-dung-lam-sach.py — nó viết đè du-an.js) + lý do 1 dòng
    vào ke-hoach-canh.md. Không ghi thì `xem-truoc-ban-dung.py` DỪNG (không có bài mặc định, để không gắn nhạc sôi động cho bài tâm sự).
    Cách chọn: tuyến = cảm xúc chủ đạo người xem cần (hình mẫu: Hieu Nguyen / Have A Sip tâm sự hợp piano ấm; Khoai Lang Thang du lịch hợp
-   upbeat; video kiến thức thì ambient trung tính). Ép tay bài: `nhac: '<bài>'` trong `du-an.js`; tắt: `nhac: ''`.
+   upbeat; video kiến thức thì ambient trung tính). Chỉ định thủ công bài: `nhac: '<bài>'` trong `du-an.js`; tắt: `nhac: ''`.
 2. Vlog ghép và highlight đổi tông theo đoạn (`TONE` soi / lang, multi-clip mục 2c, highlight luật 9); mức nhạc vẫn theo chuẩn chung.
 3. **Chọn nhạc theo chính nội dung, từ cả kho** (David 25/11/2026): kho nhạc là cả thư mục `cat-doan-noi-bat/assets/nhac/`, không chỉ bài đầu tuyến. Claude đọc nội dung, chọn bài hợp nhất trong cả kho, ghi `nhac: '<bài>'` vào `du-an.js` và lý do vào `ke-hoach-canh.md`; tiêu chí duy nhất là hợp với nội dung (không có luật "mỗi video một bài": hai video cùng hợp một bài thì dùng chung). Sau ghép đối chiếu dòng "nhạc nền: …" với kế hoạch. Nhạc David tải vào Drive `Tài nguyên làm video/` thì đưa vào kho (tên theo tuyến, đo `ebur128`, ghi `nhac.muc`, thêm vào `nhac.tuyen`) rồi đẩy GitHub; kho càng nhiều bài càng chọn được đúng.

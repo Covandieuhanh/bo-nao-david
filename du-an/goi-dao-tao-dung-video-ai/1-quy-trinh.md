@@ -33,7 +33,7 @@ Từ tư liệu thô thì AI dựng ra video hoàn chỉnh: cắt ghép, phụ �
 **Phản hồi** ở bất kì bước nào thì AI sửa video **và sửa đúng một câu trong quy trình vận hành chuẩn (SOP)** để lần sau tự đúng.
 
 ## Luật dựng
-- Chữ trên video lấy **đúng lời trong video** (khi video có người nói); AI không bịa lời.
+- Chữ trên video lấy **đúng lời trong video** (khi video có người nói); AI không bịa đặt lời.
 - Dễ hiểu hơn cầu kì: mỗi video ít kiểu hiệu ứng.
 - Không sửa, không xoá file gốc. AI hỏi trước khi xoá hay tốn tiền; không đưa mật khẩu cho AI.
 

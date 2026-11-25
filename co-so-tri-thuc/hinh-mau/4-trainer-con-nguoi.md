@@ -15,7 +15,7 @@ Luật bản đồ: [README](README.md).
 ## 4.2 Chương trình cho người lần đầu dẫn người 🟡
 Gốc từ CCL (4.1). Chưa nghiên cứu chương trình Việt cùng tệp (quản lý trẻ, quản lý mới) có kết quả công bố.
 
-## 4.3 Quy trình một ca, coach chuẩn ICF ⬜
+## 4.3 Quy trình một trường hợp, coach chuẩn ICF ⬜
 Chưa nghiên cứu. Câu hỏi khi có việc: coach chuẩn ICF làm ca đầu, phiếu đầu vào, nhật ký ca thế nào.
 
 ## 4.4 Bảng giá gói trainer ⬜
@@ -24,5 +24,5 @@ Chưa nghiên cứu bảng giá công bố của trainer Việt cùng tệp (b�
 ## 4.5 Lớp nhóm, đứng lớp, sân khấu ⬜
 Chưa nghiên cứu. Ứng viên khi có việc: Tony Robbins (sân khấu), các mẫu diễn giả ở mục 1.2.
 
-## 4.6 Lời chứng, ca mẫu ⬜
+## 4.6 Lời chứng, trường hợp mẫu ⬜
 Chưa nghiên cứu.

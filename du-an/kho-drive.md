@@ -63,8 +63,8 @@ Chép file lớn từ WSL sang `/mnt/d` hay báo thiếu bộ nhớ: chép bằn
 **Mac chỉ giữ bản cuối chưa đăng** ở `~/Movies/cho-dang/<tập>/` (y hệt `thanh-pham/<tập>/`, script `cho-dang.sh lay|gui|xong`); đăng xong thì Drive `thanh-pham/<tập>/da-dang.txt` ghi ngày.
 Kiểm trước khi dọn: `localhost:8765/mac` hoặc `python3 tu-dong-hoa/kiem-video-mac.py` (tập nào ✅ an toàn, thiếu file nào, xoá được bao nhiêu).
 
-- **20/11/2026:** đưa 5 tập (máy đo giải pháp AI, giao dịch hàng hoá, bận cả ngày, cuộc gọi hợp tác, marketing) lên `sao-luu-mac/video/` bằng `luu-drive.sh`, xoá ba thư mục thử (`tap-thu-tai-ban-3`, `thu-doi-goc`, `thu-tu-chon`). Mac từ 2 GB trống lên 52 GB.
-  Sự cố: lệnh `find … -delete` (trước `luu-drive.sh`) xoá luôn `1-goc/` của hai tập nên **mất gốc DJI_0030** (tập máy đo giải pháp AI, không còn bản nào trên Mac, có thể còn trên máy quay / app DJI Mimo); gốc giao dịch hàng hoá (`dji_mimo_20261111_204848…`) còn trong Thùng rác. Luật mới ở `ky-nang/chuan-muc-lam-viec.md` mục 4.
+- **20/11/2026:** đưa 5 tập (công cụ đo giải pháp AI, giao dịch hàng hoá, bận cả ngày, cuộc gọi hợp tác, marketing) lên `sao-luu-mac/video/` bằng `luu-drive.sh`, xoá ba thư mục thử (`tap-thu-tai-ban-3`, `thu-doi-goc`, `thu-tu-chon`). Mac từ 2 GB trống lên 52 GB.
+  Sự cố: lệnh `find … -delete` (trước `luu-drive.sh`) xoá luôn `1-goc/` của hai tập nên **mất gốc DJI_0030** (tập công cụ đo giải pháp AI, không còn bản nào trên Mac, có thể còn trên máy quay / app DJI Mimo); gốc giao dịch hàng hoá (`dji_mimo_20261111_204848…`) còn trong Thùng rác. Luật mới ở `ky-nang/chuan-muc-lam-viec.md` mục 4.
 - **25/11/2026 (máy Windows):** chuyển các dự án trong `~/Movies` sang `D:\video-david\wsl-tap`, so khớp từng file rồi mới để đường dẫn tắt.
   Đưa lên `thanh-pham/` ba bản buổi 21/11 (`tap-may-do-giai-phap` hướng 3, `tap-ket-noi-doanh-nhan` hướng 2, `tap-hanh-trinh-david` nhân hiệu),
   rồi xoá gốc DJI_0022 trong `tu-lieu-goc/` (vào thùng rác Drive). Phần nhẹ của `tap-dji0022-2111`, `tap-tham-quan-doi-cong-nghe`,

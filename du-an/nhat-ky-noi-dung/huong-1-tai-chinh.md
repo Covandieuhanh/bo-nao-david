@@ -29,7 +29,7 @@ Bản theo hướng: không ra bản — chỉ khoảng 30 giây nói dòng ti�
 | Có lên có xuống: lên biết đủ, xuống biết cắt lỗ, đừng gồng để giữ thể diện | "Còn khi mình xuống mình có biết cắt lỗ không" | 5036–5082 (83:56) | gồng lỗ | — | câu mở bài kỷ luật cắt lỗ |
 | Tài chính chỉ là nhập xuất tồn: nhập là doanh thu, xuất là chi phí, tồn là lãi; giữ cái đang ra tiền | "Tài chính nó chỉ có nhập xuất tồn hết" | 5340–5370 (89:00) | báo cáo rối, không thấy dòng tiền | — | giải thích dễ hiểu cho chủ doanh nghiệp |
 
-## 25/11/2026 · tap-dji0031-2511 · buổi trò chuyện trong văn phòng với một anh làm hàng hóa (hai người, một người thứ ba lọt khung)
+## 25/11/2026 · tap-dji0031-2511 · buổi trò chuyện trong văn phòng với một anh làm hàng hóa (hai người, một người thứ ba tràn khung)
 Bản theo hướng: bản ngang 4:48 `tap-hang-hoa-thi-truong-moi` · Trạng thái: đã dựng 25/11 (chế độ tự chạy), chờ đăng. Phần lớn lời hàng hóa là của người đối diện, lời David chỉ ở 1815–1831 s.
 | Ý | Lời gốc | Mốc | Nỗi đau / mục tiêu | Bán được gì | Dùng cho việc |
 |---|---|---|---|---|---|

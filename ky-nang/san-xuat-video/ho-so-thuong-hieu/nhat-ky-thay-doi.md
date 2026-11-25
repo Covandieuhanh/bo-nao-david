@@ -23,7 +23,7 @@ description: "Sổ đổi giá trị hồ sơ tham số video (chung và từng 
 
 ## doan-noi-bat.md
 - 2026-11-06 · thêm `man_cuoi_kenh`: màn hình cuối clip dọc ghi tên kênh, không logo nền tảng.
-- 2026-11-06 · thêm `nhac_chu_chinh`, `man_cuoi_s` (khuôn podcast đồ hoạ dọc, David chọn bản nhạc thấp hơn giọng khoảng 23 dB).
+- 2026-11-06 · thêm `nhac_chu_chinh`, `man_cuoi_s` (mẫu podcast đồ hoạ dọc, David chọn bản nhạc thấp hơn giọng khoảng 23 dB).
 - 2026-11-04 · `tit_ghim` true thành false (David chốt 2 trạng thái: người + phụ đề / minh hoạ toàn màn hình).
 
 ## giong-thuong-hieu-david.md

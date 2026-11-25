@@ -13,7 +13,7 @@ Lịch sử đổi giá trị hồ sơ tham số (ngày, cũ thành mới, lý d
 **Why:** David sửa skill rất nhiều lần, mỗi lần phải cập nhật lại toàn bộ; đang còn tìm phong cách nên thay đổi là bình thường.
 **How to apply:** đổi con số thì sửa `ho-so`; đổi cách làm thì sửa đúng một khối / `thu-vien-tai-nguyen`; sau mỗi sửa chạy `kiem-mau.py`; không ghi cứng tham số vào code/SKILL. Bố cục tự cân, không còn luật 2 trạng thái ([[video-bo-cuc-tu-can]], 07/11). Thói quen chung mọi skill: `ky-nang/chuan-muc-lam-viec.md`. Liên quan [[quy-tac-noi-dung-cua-david]].
 
-Nhà của luật: `ky-nang/san-xuat-video/tong-quan.md`. Ghi nhớ này giữ ngày, lời David, lý do.
+Nguồn của luật: `ky-nang/san-xuat-video/tong-quan.md`. Ghi nhớ này giữ ngày, lời David, lý do.
 
 ## Gộp từ `video-kien-truc-ky-nang` (15/11/2026, tự học tuần: giảm ghi nhớ về 40)
 

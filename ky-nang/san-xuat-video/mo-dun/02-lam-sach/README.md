@@ -59,6 +59,6 @@ python3 -I $SKILL/scripts/ap-dung-lam-sach.py "$P"     # chạy nền → tu-lie
 ```
 Bản thô giữ lại là `video-goc-tho.<ext>`; `du-an.js` tự trỏ sang bản sạch, mọi bước sau dùng bản sạch.
 `zoom: "none"` (mặc định): cắt cứng, không phóng xen kẽ ở mối cắt (`quy-tac-chung.md` mục 2). `"alt"` (phóng 1,08× xen kẽ)
-chỉ khi David yêu cầu. Xem 2–3 mối nối (mốc in cuối `diem-cat.md`) bằng `kiem-khung-hinh.sh` với khung
+chỉ khi David yêu cầu. Xem 2–3 điểm nối (mốc in cuối `diem-cat.md`) bằng `kiem-khung-hinh.sh` với khung
 ngay trước/sau mối: mặt không bị cắt, không nháy đen. Báo cáo cuối liệt kê đã cắt gì (`diem-cat.md`).
 

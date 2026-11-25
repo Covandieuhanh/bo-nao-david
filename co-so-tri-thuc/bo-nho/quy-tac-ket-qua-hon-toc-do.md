@@ -14,4 +14,4 @@ Không cần nhanh mà không được việc. Quy trình có bước nào phả
 
 **How to apply:** Khi muốn rút ngắn hay đảo bước, trao đổi với David để chọn phương án tốt nhất thay vì tự làm. Liên quan [[quy-tac-tu-hoi-khi-mo-ho]].
 
-Nhà của luật: `ky-nang/chuan-muc-lam-viec.md` mục 0 điểm 1 ("Chất lượng thắng tiết kiệm"). Ghi nhớ này giữ ngày, lời David, lý do.
+Nguồn của luật: `ky-nang/chuan-muc-lam-viec.md` mục 0 điểm 1 ("Chất lượng thắng tiết kiệm"). Ghi nhớ này giữ ngày, lời David, lý do.

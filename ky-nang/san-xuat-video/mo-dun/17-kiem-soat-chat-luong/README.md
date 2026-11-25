@@ -26,9 +26,9 @@ cd "$P/chuyen-dong" && node xem-truoc.mjs <id>@<giây> phu-de@<giây> <id>@<giâ
 (chụp `phu-de` cùng mốc với mỗi cảnh thì ghep-anh-tinh.sh ghép phụ đề lên cảnh đó để thấy chồng lấn, nếu có)
 Chụp mỗi cảnh ở khoảnh khắc "đầy nhất" (cuối cảnh, khi mọi phần tử đã hiện). Ghép lên khung video gốc + khung an toàn
 bằng `python3 $SKILL/scripts/vung-an-toan.py "$P"` (một lần) và `zsh $SKILL/scripts/ghep-anh-tinh.sh "$P"` rồi xem `kiem-tra/anh-tinh.jpg`: chữ có tràn/xuống dòng xấu, dấu tiếng Việt
-có bị cắt, **hai dòng chữ có chồng nhau / chữ có chạm khung ảnh không** (soi chữ có Ố Ễ Ỗ), **ô hiệu ứng có bị cắt ở đáy hoặc chạm phụ đề không**
-(lớp phủ bị chặn cứng ở đỉnh dải phụ đề — thấy bị cắt thì rút nội dung), có gì lọt vùng đỏ, **lớp phủ có đè lên mặt/đầu người nói không** (script dò mặt theo khung 0,5 s — cử động
-nhanh vẫn có thể lọt; thấy đè thì đặt tay `place`), chữ có đọc được trên nền, cảnh có khớp lời nói không. Sửa rồi chụp lại tới khi sạch.
+có bị cắt, **hai dòng chữ có chồng nhau / chữ có chạm khung ảnh không** (kiểm chữ có Ố Ễ Ỗ), **ô hiệu ứng có bị cắt ở đáy hoặc chạm phụ đề không**
+(lớp phủ bị chặn cứng ở đỉnh dải phụ đề — thấy bị cắt thì rút nội dung), có gì tràn vùng đỏ, **lớp phủ có đè lên mặt/đầu người nói không** (script dò mặt theo khung 0,5 s — cử động
+nhanh vẫn có thể tràn; thấy đè thì đặt tay `place`), chữ có đọc được trên nền, cảnh có khớp lời nói không. Sửa rồi chụp lại tới khi sạch.
 Chụp đúng mốc dễ lỗi (`quy-tac-chung.md` mục 8), không chụp thừa. Đây là bước tiết kiệm nhất — sửa ở đây rẻ hơn nhiều so với sau khi render.
 Khung ngang (pillar): trước khi chụp, dựng nền ngang một lần —
 `node xuat-video.mjs hai-ben` (khoảng 1 phút / phút video) rồi `python3 -I $SKILL/scripts/nen-cot.py "$P"` → `nen-ngang.mp4`;
@@ -45,7 +45,7 @@ python3 -I $SKILL/scripts/xem-truoc-ban-dung.py "$P"                   # chạy 
 ```
 
 **Thời gian render thật** (đo 18–19/11/2026, Mac này, 1080p, `concurrency: 3`; báo David theo bảng này, không đoán):
-| Khuôn / khung | Tốc độ | Ví dụ |
+| Mẫu / khung | Tốc độ | Ví dụ |
 |---|---|---|
 | ghép ngang 1920×1080 | khoảng 4–5,7 × độ dài | 11:45 → 44–60 phút (chạy cùng render khác: 60) · 54:30 → 5,2 giờ |
 | ghép dọc 1080×1920 clip ngắn | khoảng 6–7 × độ dài | 1:19 → khoảng 8 phút |
@@ -57,7 +57,7 @@ chụp thử đủ lớp, để không phải render lại.
 ```bash
 zsh $SKILL/scripts/kiem-khung-hinh.sh "$P" "$P/video-hoan-chinh.mp4" <các mốc giây: giữa & cuối mỗi cảnh, vài chỗ không có cảnh, màn hình nguồn>
 ```
-Xem `kiem-tra/bang-anh.jpg`: cảnh đúng chỗ, không gì lọt vùng an toàn, không lớp phủ nào che mặt, không nháy/đen. Âm thanh
+Xem `kiem-tra/bang-anh.jpg`: cảnh đúng chỗ, không gì tràn vùng an toàn, không lớp phủ nào che mặt, không nháy/đen. Âm thanh
 (cả bài −14 LUFS, đỉnh tối đa −1,5 dB — `ebur128=peak=true`; KHÔNG so dB thô với nguồn vì giọng nhỏ được kéo lên — khối 09) và tiếng rè so với giọng (`-af highpass=f=12000,astats` — mức RMS bản cuối
 chênh bản gốc tối đa 1 dB; cao hơn hẳn = âm thanh bị hạ bit ở đâu đó, xem gotchas) và thời lượng (= bản sạch; video KHÔNG có màn hình nguồn ảnh ở cuối).
 Lỗi thì sửa cảnh đó thì chạy `node xuat-video.mjs <id>` rồi xem-truoc-ban-dung.py lại.
@@ -73,7 +73,7 @@ node $SKILL/scripts/soat-canh.mjs "$P"     # in ra + ghi kiem-tra/soat.md; có P
   đủ (`xuat-video.mjs`, `xuat-chuong-trinh.mjs`) tự chạy soát này và dừng khi còn P0 (`thiet-ke-bo-cuc/tu-chon.md` bước 5).
 - **P1 (nên sửa):** nhãn không đủ đọc (0,5 s + 0,3 s mỗi từ), nhãn `illus` quá số chữ hồ sơ, hai cảnh toàn màn hình chồng nhau.
 - **P2 (tinh chỉnh, giữ có chủ đích được):** hình đứng yên quá 3 s sau khi đọc xong, thẻ tít / màn chốt thiếu hẳn thời gian đọc, hai cảnh cùng kiểu liền nhau (trừ cảnh vẽ tiếp `tu_buoc`, khối 07).
-Giới hạn: chỉ bắt lỗi đo được. Chữ tràn, che mặt, xấu vẫn soi bằng `kiem-tra/anh-tinh.jpg`. **Xem tờ ảnh ở đúng cỡ (mỗi khung 240–270 px, nhỏ hơn màn điện thoại): chữ cần đọc mà không đọc được = P0.**
+Giới hạn: chỉ bắt lỗi đo được. Chữ tràn, che mặt, xấu vẫn xét bằng `kiem-tra/anh-tinh.jpg`. **Xem tờ ảnh ở đúng cỡ (mỗi khung 240–270 px, nhỏ hơn màn điện thoại): chữ cần đọc mà không đọc được = P0.**
 Câu hỏi khi soi tờ ảnh: **video có rối không** — đếm số kiểu hiệu ứng cả video, kiểu nào không giúp hiểu thì bỏ (quy-tac-chung §0, hiểu hơn cầu kì) · **mỗi khung có đúng một tiêu điểm không** (nheo mắt vẫn biết nhìn vào đâu) · cam có còn là màu nhấn (khoảng 10 % khung), không phủ cả khung. Che chữ đi, hình còn nói được ý không? Thấy mọi cảnh giống nhau thì đổi kiểu vào (khối 07). Video rối thì bỏ bớt khoảng một phần ba chuyển động, giữ cái dẫn mắt.
 
 ## Kiểm cảm nhận

@@ -9,7 +9,7 @@ description: "Sổ thay đổi skill dựng podcast: quyết định của David
 - 2026-11-08 · chuẩn hoá (`du-an/chuan-hoa-ky-nang.md` bước 3): hỏi một lần đầu + giữ cổng chụp thử trước render (06/11) thay "chạy một mạch không hỏi"; bỏ thẻ tên tập mở đầu (N2); màn chốt nguyên văn (N4); bỏ con số nhịp 60–120 s, 40–60 s (N6), giữ cỡ chữ đã chốt; phụ đề dọc cụm 5–8 chữ cỡ 58 (08/11); "bố cục tự cân" thay "2 trạng thái" (C3); sửa chữ "đã cắt"; đọc trước 3 file; bước nhẹ 1·2; rút mô tả; thêm "Xong khi". Chi tiết các quyết định trước: `references/nhat-ky-thay-doi.md`.
 
 ## Tái bản 2 — 10/11/2026: bản luật viết lại từ bảng du-an/nang-cap/tai-cau-truc-2-video.md
-- Nhà luật bỏ phóng xen kẽ ở mối cắt là quy-tac-chung mục 2 (kèm lý do); khối 02, ho-so-thuong-hieu/doan-noi-bat.md, cat-highlight luật 8 trỏ về đó. quy-tac-chung mục 8 trỏ thói quen chung (hỏi, lệnh nền, mật khẩu, báo cáo), chỉ giữ phần riêng video. Bỏ câu chép ở gotchas, phan-phoi-da-kenh; sửa đường trỏ "hình của chính video" về khối 14. Viết lại 6 câu máy đo bắt nhầm ("thay cho", "THAY", tên file có ngày).
+- Nhà luật bỏ phóng xen kẽ ở mối cắt là quy-tac-chung mục 2 (kèm lý do); khối 02, ho-so-thuong-hieu/doan-noi-bat.md, cat-highlight luật 8 trỏ về đó. quy-tac-chung mục 8 trỏ thói quen chung (hỏi, lệnh nền, mật khẩu, báo cáo), chỉ giữ phần riêng video. Bỏ câu chép ở gotchas, phan-phoi-da-kenh; sửa đường trỏ "hình của chính video" về khối 14. Viết lại 6 câu công cụ đo bắt nhầm ("thay cho", "THAY", tên file có ngày).
 
 ## Tái bản 1 — 10/11/2026: bản luật viết lại từ bảng du-an/nang-cap/tai-cau-truc-video-1.md
 - Bỏ khỏi bản luật: `hook` đầu tiên, "khoảng 1 cảnh / 15–20 s", câu chốt tự sáng tạo (khối 12, podcast-design); hình phủ khoảng 30 % là luật nhịp duy nhất. Phụ đề podcast dọc mọi độ dài = cụm 5–8 chữ (theo code phu-de.jsx).
@@ -36,7 +36,7 @@ description: "Sổ thay đổi skill dựng podcast: quyết định của David
 - **Mục tiêu video = hiểu + làm theo** (người dùng chốt): câu hành động trong lời thì màn `action` tự sinh (biểu tượng + tick + nguyên
   văn câu); MỌI video kết bằng màn chốt `cta` khoảng 4 s ("David rất mong có được sự góp ý của bạn tại phần bình luận!", keu-goi-hanh-dong.js) — hình
   lùi vào khung để vẫn thấy vẫy tay/like. Lý do: đánh giá cho thấy video giúp hiểu nhưng chưa thúc người xem hành động.
-- **Câu màn chốt không cố định** (người dùng chốt): Claude tự sáng tạo câu chốt hợp từng video sau khi nắm nội dung — một hành động (bình luận/lưu/theo dõi/chia sẻ, biểu tượng theo kiểu), giọng David, không bịa; câu cố định trong keu-goi-hanh-dong.js chỉ còn là dự phòng.
+- **Câu màn chốt không cố định** (người dùng chốt): Claude tự sáng tạo câu chốt hợp từng video sau khi nắm nội dung — một hành động (bình luận/lưu/theo dõi/chia sẻ, biểu tượng theo kiểu), giọng David, không bịa đặt; câu cố định trong keu-goi-hanh-dong.js chỉ còn là dự phòng.
 - **Tick + "ting" ở màn chốt** (người dùng yêu cầu): câu chốt hiện xong thì dấu tick nhỏ bật nảy ở góc biểu tượng + tiếng chuông ting (assets/hieu-ung-am-thanh/ting.wav, tự tổng hợp, không bản quyền) để kích thích người xem hành động.
 
 ## 2026-11-04
@@ -55,7 +55,7 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
 - **Thumbnail chỉ khi video xuất NGANG và đăng YouTube** (David chốt cùng ngày: "chỉ có đăng video youtube thì mới cần ảnh bìa ngang, mà còn phải là video ngang"). Video xuất ngang thì hỏi "có đăng YouTube không?" lúc đầu; video dọc chỉ có mốc khung bìa.
 
 ## 2026-11-04 (học 80 video Việt)
-- Học 20 podcast Việt (David duyệt ưu tiên 1+2): thẻ "PHẦN n" theo TOPICS (san-khau.jsx), chương YouTube (`chuong.py`), teaser (`doan-gioi-thieu.py`), khuôn thumbnail series (`THUMB_BADGE`), nền ảnh chậm `STAGE.bg`, tập > 20 phút thưa cảnh. Chưa áp PO-6 (thẻ lịch phát) — chờ David.
+- Học 20 podcast Việt (David duyệt ưu tiên 1+2): thẻ "PHẦN n" theo TOPICS (san-khau.jsx), chương YouTube (`chuong.py`), teaser (`doan-gioi-thieu.py`), mẫu thumbnail series (`THUMB_BADGE`), nền ảnh chậm `STAGE.bg`, tập > 20 phút thưa cảnh. Chưa áp PO-6 (thẻ lịch phát) — chờ David.
 - PO-6 áp (David duyệt): `STAGE.schedule` (lịch phát David đưa) hiện trên thẻ cuối + màn kết YouTube.
 
 ## 2026-11-04 — TÁI CẤU TRÚC (David: "tách nhỏ để sửa một chỗ")
@@ -63,7 +63,7 @@ Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trư�
 - 2 TRẠNG THÁI: cảnh `illus` (single/flow/vs/count/list, nhãn tối đa 3 chữ) ở cả 2 khung dựng; lớp chữ đè người tự vẽ toàn màn hình tối đa 4 s; thẻ/hành động bỏ câu trích dài; tít ghim tắt (hồ sơ highlight `tit_ghim: false`). +11 biểu tượng. Sao lưu trước tái cấu trúc: `~/.claude/skills/san-xuat-video.bak-2026-11-04b`.
 
 ## 2026-11-05
-- **Học nhịp từ 50 video Hieu Nguyen** (David: học nhịp để chuyển đổi + cách trình bày đơn giản, giữ thẩm mỹ của mình; lời của David nói tự do — không khuôn thu âm). Áp: sơ đồ nói thay lời `diagram` (7 kiểu, có ảnh thật khung bo góc), ít mà sâu cho tập > 5 phút, bản đồ chương tích luỹ + tóm tắt trước màn chốt, thẻ tên tập + số tập, "TẬP n · ngày" ở dải đáy, màn chốt mặc định theo tuyến, mô tả có liên kết tài nguyên. Không áp: bỏ phụ đề in, tắt nhạc (David chỉ muốn học nhịp).
+- **Học nhịp từ 50 video Hieu Nguyen** (David: học nhịp để chuyển đổi + cách trình bày đơn giản, giữ thẩm mỹ của mình; lời của David nói tự do — không mẫu thu âm). Áp: sơ đồ nói thay lời `diagram` (7 kiểu, có ảnh thật khung bo góc), ít mà sâu cho tập > 5 phút, bản đồ chương tích luỹ + tóm tắt trước màn chốt, thẻ tên tập + số tập, "TẬP n · ngày" ở dải đáy, màn chốt mặc định theo tuyến, mô tả có liên kết tài nguyên. Không áp: bỏ phụ đề in, tắt nhạc (David chỉ muốn học nhịp).
 - Không dùng số tập (David 2026-11-05): STAGE.episode chỉ {date}; bỏ "TẬP n" ở thẻ mở, dải đáy, thumbnail.
 - Không ghi bất kỳ thông tin phát hành nào lên video (số tập, ngày): bỏ STAGE.episode khỏi công thức (Timeline vẫn hỗ trợ nếu David yêu cầu sau).
 

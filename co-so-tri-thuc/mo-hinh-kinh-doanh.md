@@ -33,7 +33,7 @@ Khớp với các file tư duy: ba phạm trù ở đây cũng là phép bóc t�
 
 ## 2. Ba phần của doanh nghiệp
 
-**Vận hành** (tạo và giao giá trị) · **Đối tác** (kết nối, hợp tác, nguồn lực ngoài) · **Marketing** (hiểu thị trường, tiếp cận, bán, chăm sóc). Mỗi phần đều soi bằng ba phạm trù.
+**Vận hành** (tạo và giao giá trị) · **Đối tác** (kết nối, hợp tác, nguồn lực ngoài) · **Marketing** (hiểu thị trường, tiếp cận, bán, chăm sóc). Mỗi phần đều xét bằng ba phạm trù.
 
 ## 3. Chín kỹ năng và ngành nghề (khung gốc của mọi việc kinh doanh)
 

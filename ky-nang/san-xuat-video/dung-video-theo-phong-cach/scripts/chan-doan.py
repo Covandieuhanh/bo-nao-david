@@ -59,7 +59,7 @@ if len(nq) >= 6: goi_y.append(f"{len(nq)} câu nhân quả / điều kiện → 
 if not goi_y: goi_y.append("ít ý, nhịp kể → người + phụ đề + điểm nhấn `nhan`, vài cảnh minh hoạ ở ý chính")
 if GHEP: goi_y.append("khuôn ghép có sẵn: illus (single/flow/vs/count/list) · diagram (tang, vong, moc, cot, luoi, tu-thanh, chuyen-giao) · "
                       "chips · callout · action · pointer · pow — dùng theo bảng tu-chon.md bước 4, không chỉ pow")
-# Tín hiệu thẩm mỹ (tu-chon.md bước 2b) — máy đo, Claude chọn
+# Tín hiệu thẩm mỹ (tu-chon.md bước 2b) — công cụ đo, Claude chọn
 tone = ("lắng, cảm xúc" if len(cx) >= 3 and mat_do < 150 else "kiến thức, nhịp đều" if day or len(lk) + len(so) >= 4 else "kể chuyện / trò chuyện")
 tham_my = [f"giọng: {tone} ({len(cx)} câu cảm xúc, {mat_do:.0f} chữ/phút, {len(hoi)} câu hỏi)",
            f"khung {'dọc' if H > W else 'ngang'}, dài {fmt(D)} → {'mỗi lúc một điểm nhìn, chữ to' if H > W else 'có chỗ cho người + ý cùng lúc'}"]

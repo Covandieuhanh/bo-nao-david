@@ -10,13 +10,13 @@ người xem vào ý đang nói**, nhiều loại: hình vẽ / biểu tượng 
 nói (làm tối nền, khoanh / viền sáng…; không zoom vào / ra — David 13/11/2026); cảnh minh hoạ toàn màn hình chỉ là một loại. Điểm nhấn trên người được phép nếu không
 che mặt. Đoạn chạm lằn ranh không làm đồ hoạ.
 
-**Motion kể chuyện** (09/11/2026): motion graphic là để **diễn tả lại câu chuyện**, không phải "đưa hình vào cho có", không dập khuôn.
+**Motion kể chuyện** (09/11/2026): motion graphic là để **diễn tả lại câu chuyện**, không phải "đưa hình vào cho có", không dập mẫu.
 Một hình có thể diễn tả 1–2 ý hoặc chạy từ đầu tới cuối; ý nào nhắc lại ý trước thì hình **vẽ tiếp** lên cái đã có. Chỉ giữ cứng chữ ký
 nhận diện ([[video-tham-my-chi-giu-nhan-dien]]); còn lại sáng tạo theo từng video, nhưng chọn ít kiểu ([[video-tham-my-chi-giu-nhan-dien]]).
 
 **Mọi bước AI làm** (09/11/2026, David): "phần nào cố định thì làm app, phần nào AI thì gọi AI, và AI phải thể hiện sức mạnh nhiều nhất
 bằng cách sáng tạo — chỉ dựa trên bộ khung và tiêu chí, bên trong hoàn toàn sáng tạo cho hợp nội dung video. Đó là cốt lõi."
-Nhà của luật: `ky-nang/chuan-muc-lam-viec.md` (đầu file). App đã bỏ 10/11/2026, mọi bước làm trong phiên Claude ([[video-bo-ung-dung]]).
+Nguồn của luật: `ky-nang/chuan-muc-lam-viec.md` (đầu file). App đã bỏ 10/11/2026, mọi bước làm trong phiên Claude ([[video-bo-ung-dung]]).
 
 **Why:**
 - 07/11/2026 video "Đi bộ hằng ngày" ra bản chỉ phụ đề + nhạc; David hỏi sao không có motion graphics, giải thích có nhiều loại.

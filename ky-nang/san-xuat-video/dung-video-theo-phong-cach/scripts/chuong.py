@@ -1,7 +1,7 @@
 # CHƯƠNG YOUTUBE cho mô tả video (David duyệt 2026-11-04 — học VOV, Trí Tuệ Sáng Suốt, Trinh Pham): chuong.py <dự án>
 # Nguồn (theo thứ tự): chuyen-dong/src/canh.js CHAPTERS → TOPICS (podcast) → cảnh `card`/`listItem` có eyebrow/text (1 video)
 # → danh-sach-cat.js OVERLAYS `location`/`round` (vlog ghép). Cộng độ dài teaser nếu có (phat-hanh/doan-gioi-thieu.json do doan-gioi-thieu.py ghi).
-# Luật YouTube: chương đầu 0:00, ≥ 3 chương, mỗi chương ≥ 10 s. Tên chương = trích lời / tên nơi thật (không bịa).
+# Luật YouTube: chương đầu 0:00, ≥ 3 chương, mỗi chương ≥ 10 s. Tên chương = trích lời / tên nơi thật (không bịa đặt).
 # Ra phat-hanh/chuong.txt (dán vào mô tả) + in ra màn hình.
 import json, os, subprocess, sys
 P = os.path.expanduser(sys.argv[1]); M = os.path.join(P, "chuyen-dong")

@@ -1,6 +1,6 @@
 # Chấm bài kiểm suy luận dựng video (thiet-ke-bo-cuc/bai-kiem/README.md).
 #   python3 -I cham.py <bai-lam.json>        — bài làm: [{"id": "d01", "can": "Chia đoạn", "lam": "diagram chuoi, bước đang nói sáng"}, …]
-#   python3 -I cham.py --mau                 — in bài làm mẫu (đáp án) để thử máy chấm
+#   python3 -I cham.py --mau                 — in bài làm mẫu (đáp án) để thử công cụ chấm
 # Một đoạn ĐẠT khi: (1) "can" có ít nhất một nguyên lý trong dap_an.can; (2) "lam" chạm ít nhất một cách trong dap_an.lam_duoc
 # (so theo từ khoá); (3) "lam" không chạm cách nào trong dap_an.khong_lam. Đạt ≥ 8/10 → máy này lập luận được. Đoạn lệch in ra để David chấm.
 import json, re, sys, unicodedata

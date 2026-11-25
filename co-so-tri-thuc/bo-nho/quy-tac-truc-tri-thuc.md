@@ -6,7 +6,7 @@ metadata:
   modified: 2026-11-20T23:50:00.000Z
 ---
 
-Mọi thông tin mới đi qua trục `co-so-tri-thuc/truc-tri-thuc.md`: bốn tầng (trục · nguyên lý · quy trình · dữ liệu, tầng càng cao càng ít đổi), sáu câu cho mọi thông tin mới, luật đi lên (vào tầng dữ liệu trước; lặp ít nhất 2 thì lên quy trình; ít nhất 3 ca cùng gốc thì lên nguyên lý; lỗi David sửa thành câu kiểm), ba vòng học (mỗi việc · mỗi tuần · Nâng cấp), bốn thước (người đọc lạnh làm đúng · kết quả thật tốt lên · một ý một nhà · bằng chứng thắng).
+Mọi thông tin mới đi qua trục `co-so-tri-thuc/truc-tri-thuc.md`: bốn tầng (trục · nguyên lý · quy trình · dữ liệu, tầng càng cao càng ít đổi), sáu câu cho mọi thông tin mới, luật thăng cấp (vào tầng dữ liệu trước; lặp ít nhất 2 thì lên quy trình; ít nhất 3 trường hợp cùng gốc thì lên nguyên lý; lỗi David sửa thành câu kiểm), ba vòng học (mỗi việc · mỗi tuần · Nâng cấp), bốn thước (người đọc mới làm đúng · kết quả thật tốt lên · một ý một nguồn duy nhất · bằng chứng thắng).
 
 **Why:** 20/11/2026 David: "Tôi cần một trục lõi gốc cho việc kaizen bộ não liên tục này vì sẽ cần học thêm rất nhiều thông tin khác. Không thể cứ học thêm rồi lại thay đổi cách … cũng giống như não người, cần có 1 trục logic cố định để tiếp nhận, xử lý và nâng cấp mọi thứ trên đời khi tiếp nhận"; "hãy lấy chính cách mà claude nâng cấp trí tuệ của mình để xây dựng cốt lõi cho các file bộ não của tôi, phải biết cách học từ các file bộ não của tôi như là bộ não claude thu nhỏ vậy". David cho phép thiết lập lại mọi thứ theo luồng mới nếu cần.
 

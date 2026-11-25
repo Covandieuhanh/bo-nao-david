@@ -1,6 +1,6 @@
 #!/bin/zsh
 # Lời nói podcast: phien-am.sh <dự án> → kiem-tra/goc/ban-chep-loi.srt (theo câu) + moc-tung-tu.srt (từng từ) + am-thanh-16k.wav (cho nguoi-noi.py)
-# Hai lần chạy Whisper khác nhau → dùng để đối chiếu khi sửa phụ đề (câu bịa kiểu "Hãy subscribe…").
+# Hai lần chạy Whisper khác nhau → dùng để đối chiếu khi sửa phụ đề (câu bịa đặt kiểu "Hãy subscribe…").
 set -e
 export PATH=/opt/homebrew/bin:$PATH
 P=${1:?thiếu dự án}; O="$P/kiem-tra/goc"; mkdir -p "$O"

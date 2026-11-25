@@ -9,4 +9,4 @@ Gặp một trong 6 tín hiệu (hiểu nhiều cách — nhất là chữ đọ
 
 **Why:** 05/11/2026 em tự đoán câu "không biết thông tin nào khi mà đăng lên" rồi render lại. David: "tự nhận diện vấn đề để tự hỏi lại tôi chứ không cần tôi yêu cầu".
 
-**How to apply:** theo `ky-nang/thu-thap-yeu-cau/SKILL.md` mục "Sáu tín hiệu phải tự dừng hỏi" (nhà của luật; ghi nhớ này giữ ngày, lời David, lý do). Sản phẩm từ tài nguyên: chỉ tín hiệu nặng mới dừng (11/11). Liên quan [[video-gop-y-render-lai]], [[quy-tac-goi-y-de-david-chon]].
+**How to apply:** theo `ky-nang/thu-thap-yeu-cau/SKILL.md` mục "Sáu tín hiệu phải tự dừng hỏi" (nguồn của luật; ghi nhớ này giữ ngày, lời David, lý do). Sản phẩm từ tài nguyên: chỉ tín hiệu nặng mới dừng (11/11). Liên quan [[video-gop-y-render-lai]], [[quy-tac-goi-y-de-david-chon]].

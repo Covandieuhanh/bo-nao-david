@@ -13,5 +13,5 @@ description: "Hồ sơ tham số loại highlight: hình mẫu chính, nhịp c�
 | `phong_xen_ke` | đoạn xen kẽ phóng ở mối cắt — **1.0 = tắt** (quy-tac-chung mục 2); > 1 chỉ khi David yêu cầu |
 | `tit_ghim` | dải tít ghim suốt clip — **false** (thêm chữ thứ 3 trên người, dọc mỗi lúc ít thứ); bật từng clip `"pin": true` |
 | `the_cuoi_s` · `man_cuoi_s` · `man_cuoi_kenh` | thẻ cuối dẫn về bản đầy đủ — chỉ dùng khi xuất dọc dài; video dọc ngắn không thẻ cuối |
-| `nhac_chu_chinh` | mức nhạc khuôn podcast đồ hoạ dọc (thấp hơn giọng khoảng 23 dB) |
+| `nhac_chu_chinh` | mức nhạc mẫu podcast đồ hoạ dọc (thấp hơn giọng khoảng 23 dB) |
 | `phan_ung_s` | cảnh phản ứng người nghe |

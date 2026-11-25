@@ -23,7 +23,7 @@
 
 ## 2. Cách David làm việc (luật cá nhân)
 
-- Làm theo **đợt năng lượng**, không theo lịch cứng.
+- Làm theo **đợt năng lượng**, không theo lịch cố định.
 - Việc trí óc tối đa **4 tiếng/ngày**: sáng làm việc sâu, tối quyết định/điều phối, chiều nghỉ.
 - Quyết định lớn: **chờ vài ngày** rồi mới chốt.
 - Giữ **buổi nhìn lại cuối tuần**.
@@ -42,7 +42,7 @@ Số mục giữ như cũ, nên chỗ khác ghi "`david.md` mục 4.1" vẫn tra
 
 | Mục | Nội dung | Mở khi | File |
 |---|---|---|---|
-| 4 (4.1–4.7) | Ba hướng nghề (tài chính · trainer con người · giải pháp công nghệ AI, mục tiêu chung **ra tiền**), hình ảnh trainer hai lĩnh vực, đội đối tác công nghệ, ba tầng làm chủ, các chặng, bảng giá, quy trình một ca, quyết định đã chốt, **lằn ranh nghề** | việc dính tới nghề, sản phẩm, giá, khách, hay nội dung công khai | [chien-luoc-nghe-nghiep.md](chien-luoc-nghe-nghiep.md) |
+| 4 (4.1–4.7) | Ba hướng nghề (tài chính · trainer con người · giải pháp công nghệ AI, mục tiêu chung **ra tiền**), hình ảnh trainer hai lĩnh vực, đội đối tác công nghệ, ba tầng làm chủ, các chặng, bảng giá, quy trình một trường hợp, quyết định đã chốt, **lằn ranh nghề** | việc liên quan tới nghề, sản phẩm, giá, khách, hay nội dung công khai | [chien-luoc-nghe-nghiep.md](chien-luoc-nghe-nghiep.md) |
 | 5, 8 | Kênh video (bản gốc 10 phút, 3 phần, kho 100 video) và bộ lọc nội dung (phân hướng → câu hỏi gốc → bán được gì) | lọc, dựng, đăng nội dung | [chien-luoc-noi-dung.md](chien-luoc-noi-dung.md) |
 | 6 | Nghiên cứu CCL: tài liệu chuẩn, sách tự mua | xây phương pháp, dịch thuật ngữ CCL | [nghien-cuu-ccl.md](nghien-cuu-ccl.md) |
 | 7, 9 | Từ trường số (nội dung hướng trainer, xem số cá nhân chỉ buổi riêng) và dữ liệu nền huyền học | nội dung từ trường số, buổi riêng có dùng số học; hiểu nhịp làm việc của David | [du-lieu-nen-huyen-hoc.md](du-lieu-nen-huyen-hoc.md) |

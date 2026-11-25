@@ -30,7 +30,7 @@
   "id": "c04",
   "tinh_huong": "Thư mục dự án video vừa làm xong (video gốc, bản dựng) có nên đẩy lên GitHub không?",
   "lua_chon": {
-   "A": "Không. GitHub chỉ giữ phần dùng chung (luật, hồ sơ, skill, script, khuôn); sản phẩm làm ra ở lại máy và Drive.",
+   "A": "Không. GitHub chỉ giữ phần dùng chung (luật, hồ sơ, skill, script, mẫu); sản phẩm làm ra ở lại máy và Drive.",
    "B": "Đẩy hết lên để không mất.",
    "C": "Đẩy lên repo riêng tư bo-nao-david-mac."
   }
@@ -66,7 +66,7 @@
   "id": "c08",
   "tinh_huong": "David nhắc lại cùng một điều lần thứ hai.",
   "lua_chon": {
-   "A": "Sửa ngay đúng nhà của luật đó và thêm một câu kiểm, không đợi lượt nhìn lại tuần.",
+   "A": "Sửa ngay đúng nguồn của luật đó và thêm một câu kiểm, không đợi lượt nhìn lại tuần.",
    "B": "Ghi lại để tuần sau xem.",
    "C": "Xin lỗi rồi làm tiếp."
   }
@@ -77,7 +77,7 @@
   "lua_chon": {
    "A": "Giữ làm phụ đề.",
    "B": "Hỏi David.",
-   "C": "Bỏ câu đó: máy chép lời bịa chữ ở đoạn không có tiếng."
+   "C": "Bỏ câu đó: máy chép lời bịa đặt chữ ở đoạn không có tiếng."
   }
  },
  {
@@ -121,7 +121,7 @@
   "tinh_huong": "Một luật chỉ áp cho nghề trainer của David nhưng đang nằm lẫn trong quy trình đóng gói tin tuần.",
   "lua_chon": {
    "A": "Để nguyên cho đỡ sửa.",
-   "B": "Chuyển về đúng nhà (chiến lược nghề nghiệp); quy trình kia chỉ còn một dòng trỏ.",
+   "B": "Chuyển về đúng nguồn (chiến lược nghề nghiệp); quy trình kia chỉ còn một dòng trỏ.",
    "C": "Chép sang cả hai nơi."
   }
  },
@@ -166,7 +166,7 @@
   "tinh_huong": "Tài liệu khối 09 ghi ép nhạc bằng khoá `music`, nhưng chạy xong ba video đều ra cùng một bài và nhật ký ghép báo bài khác với kế hoạch.",
   "lua_chon": {
    "A": "Đọc code công cụ để biết khoá thật, tin code, sửa tài liệu, cho công cụ tự dừng khi gặp khoá sai, ghi ca vào lỗi thường gặp rồi báo David nguyên nhân và chỗ đã chặn.",
-   "B": "Đổi bài nhạc bằng tay cho từng video rồi báo David là xong.",
+   "B": "Đổi bài nhạc thủ công cho từng video rồi báo David là xong.",
    "C": "Ghi vào nhật ký là nhạc chưa đúng, để lần sau xử lý."
   }
  },

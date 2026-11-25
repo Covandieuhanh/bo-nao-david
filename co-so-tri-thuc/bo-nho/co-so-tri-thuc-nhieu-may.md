@@ -14,7 +14,7 @@ David chốt 20/11/2026: dùng thêm nhiều máy, cả Windows lẫn Mac, để
 
 **Why:** David muốn sản xuất video ở nhiều máy mà kết quả giống hệt, không phải giữ nhiều bộ skill.
 **How to apply:**
-- Nâng công cụ dựng thì làm ở Mac chính: sửa `tu-dong-hoa/may-khac/phien-ban.env` và lockfile khuôn, tạo lại bản chuẩn (`kiem-may.sh --tao-chuan`), đẩy GitHub.
+- Nâng công cụ dựng thì làm ở Mac chính: sửa `tu-dong-hoa/may-khac/phien-ban.env` và lockfile mẫu, tạo lại bản chuẩn (`kiem-may.sh --tao-chuan`), đẩy GitHub.
 - Script skill mới không được ghi cứng thứ chỉ Mac có (`/opt/homebrew/bin/...`, `/System/Library/Fonts`, Vision, `stat -f`). Dùng `do-mat.sh`, `font_he_thong()`, `drive-chung.sh`.
 - Đuôi file phải đúng chữ hoa/thường, vì WSL2 phân biệt còn Mac thì không.
 

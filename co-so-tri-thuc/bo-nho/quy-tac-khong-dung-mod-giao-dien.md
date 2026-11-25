@@ -11,7 +11,7 @@ Không cài, không dùng mod giao diện trong Claude Code (bảng, thanh tiế
 
 **How to apply:** đã gỡ savvy-progress, collision-guard, goal-meter, so-viec và hai chợ claude-kit, nateherk-mods; `tu-dong-hoa/cai-dat-bo-nao.sh` chỉ cài Telegram. Mã nguồn Sổ việc còn ở `luu-tru/mod-giao-dien/so-viec` nhưng không cài. Muốn mod mới thì hỏi David trước.
 
-Nhà của luật: `tu-dong-hoa/cai-dat-bo-nao.sh` (chỉ cài Telegram) và `ky-nang/chuan-muc-lam-viec.md`. Ghi nhớ này giữ ngày, lời David, lý do.
+Nguồn của luật: `tu-dong-hoa/cai-dat-bo-nao.sh` (chỉ cài Telegram) và `ky-nang/chuan-muc-lam-viec.md`. Ghi nhớ này giữ ngày, lời David, lý do.
 
 ## Sổ
 - 11/11/2026: mod phải tự chạy, việc ít nhất 3 bước lập kế hoạch bằng goal-meter.

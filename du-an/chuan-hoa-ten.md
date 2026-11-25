@@ -170,9 +170,9 @@ thư mục bộ não + repo GitHub thành `bo-nao-david`. Chỉ giữ tên bắt
 ## 8. Đợt 3 (14/11): bên trong dự án video
 
 Đổi cấu trúc và tên file do script tạo trong dự án (`check` → `kiem-tra`, `motion` → `chuyen-dong`, `davinci/media` → `tu-lieu`,
-`video-final.mp4` → `video-hoan-chinh.mp4`, `transcript.srt` → `ban-chep-loi.srt`…) trong mọi script, khuôn và 4 dự án cũ. Dựng thử trọn một video
+`video-final.mp4` → `video-hoan-chinh.mp4`, `transcript.srt` → `ban-chep-loi.srt`…) trong mọi script, mẫu và 4 dự án cũ. Dựng thử trọn một video
 (tạo dự án → làm sạch → chép lời → phụ đề → chẩn đoán → chụp thử → render → ghép bản cuối → ảnh bìa → dọn tập) + khởi tạo đoạn nổi bật + podcast:
-bắt và sửa 4 lỗi tên ghép (`drive_$t.swift`, `-of transcript`, `{ref,check,images}`, id `phu_de`). Máy đo chồng chéo: chưa cần tái bản.
+bắt và sửa 4 lỗi tên ghép (`drive_$t.swift`, `-of transcript`, `{ref,check,images}`, id `phu_de`). Công cụ đo chồng chéo: chưa cần tái bản.
 
 ## 9. Cách đổi (sau khi David duyệt)
 1. Gắn mốc GitHub `truoc-chuan-hoa-ten`.

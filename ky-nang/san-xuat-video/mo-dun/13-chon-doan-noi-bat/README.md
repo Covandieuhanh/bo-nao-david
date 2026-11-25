@@ -35,7 +35,7 @@ zsh $SKILL/scripts/tao-doan-noi-bat.sh "<thư mục dự án gốc | video dài>
 `am-luong-05.txt` (độ lớn tiếng mỗi 0,05 s), `bang-khung-hinh.jpg`; từ dự án gốc thêm `captions-goc.js` (lời đã sửa chính tả — nguồn chữ chính),
 `scenes-goc.js` (tên tập, người nói, kịch bản gốc), `du-an-goc.txt`. Đưa file video thì chép lời bằng whisper.cpp + `large-v3-turbo`
 (không dùng faster-whisper/pip); `loai.txt = chua-ro` thì xem `bang-khung-hinh.jpg` rồi quyết theo bảng bước 0.
-Câu Whisper bịa (`../../quy-tac-chung.md` mục 1) không dùng làm câu chọn.
+Câu Whisper bịa đặt (`../../quy-tac-chung.md` mục 1) không dùng làm câu chọn.
 
 ### 2. Bản đồ cả video (bắt buộc, trước khi chọn câu)
 Đọc HẾT lời (ưu tiên `captions-goc.js`, không có thì transcript; sửa chính tả bằng `phu-de-youtube.srt`), ghép thành câu hoàn chỉnh,
@@ -47,7 +47,7 @@ rồi ghi đầu `$P/ke-hoach-cat.md`:
 
 Gán vai cho từng câu:
 - **CHAM** — câu mở mạnh, có xung đột, nghịch lý hoặc chạm nỗi đau, đứng riêng vẫn hiểu.
-- **DAUHIEU** — tình huống người xem nhận ra mình. · **GOCRE** — giải thích vì sao kẹt / điều nghịch lý cốt lõi.
+- **DAUHIEU** — tình huống người xem nhận ra mình. · **GOCRE** — giải thích vì sao vướng / điều nghịch lý cốt lõi.
 - **BUOC** — một bước trong cách làm. · **HANHDONG** — lời giao việc cụ thể ("dừng video, viết ra…", "trong 48 giờ…").
 - **KEUGOI** — mời bình luận/làm theo, câu hỏi kết, "Vấn đề:" / "Kết quả:". · **KETQUA** — điều thay đổi khi làm được.
 - **CHUYEN** — kể chuyện cá nhân. · **THUA** — chào hỏi, lặp ý, "như mình nói ở trên", chuyển đoạn, ậm ừ.
@@ -117,7 +117,7 @@ Viết `$P/phuong-an.json` — mỗi clip một mục trong `options` (A, B, C�
  "endcard": {"title": "<tên tập gốc>", "speaker": "<tên người nói>"}}
 ```
 **Soát mốc theo độ lớn tiếng** (mốc từ Whisper hay lệch 0,5–1,6 s ở chỗ ngắt câu: chữ đầu bị kéo sớm vào khoảng lặng — cắt theo
-đó lọt đuôi chữ câu trước; chữ cuối kéo dài vào câu sau):
+đó tràn đuôi chữ câu trước; chữ cuối kéo dài vào câu sau):
 ```bash
 python3 -I $SKILL/scripts/kiem-am-luong.py "$P"           # dải █/▁ quanh từng mốc + mốc đề xuất
 ```
@@ -131,7 +131,7 @@ python3 -I $SKILL/scripts/cat-doan-noi-bat.py "$P"          # cắt bản kiểm
 (giữ khung cuối) sau KEUGOI kết bằng "?" và sau KEUGOI cuối clip — không lấy tiếng nguồn phía sau vì câu kế có thể nói liền ·
 `zoom: true` giữ nguyên câu, không dồn khung · **cắt cứng** ở mỗi mối nhảy + **rút khoảng lặng ít nhất 0,45 s trong câu** (`khoang-lang.py`, trừ câu
 `zoom`) · fade âm ở mối · tiếng fltp 48 kHz stereo · **chép lời lại bản cắt** và so với `text`.
-**Kiểm lời phải khớp**: chữ thừa ở mối = lọt đuôi câu bên cạnh thì thu mốc; chữ thiếu = bị cụt thì nới mốc; lệch kiểu "nhé/nhá" là
+**Kiểm lời phải khớp**: chữ thừa ở mối = tràn đuôi câu bên cạnh thì thu mốc; chữ thiếu = bị cụt thì nới mốc; lệch kiểu "nhé/nhá" là
 Whisper nghe khác (bỏ qua). Cắt lại tới khi sạch.
 Ghi tiếp vào `ke-hoach-cat.md`: kiểu bố trí + lý do, tông từng câu, ý chừa cho bản đầy đủ, bảng cắt.
 

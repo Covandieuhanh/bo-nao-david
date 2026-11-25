@@ -8,25 +8,25 @@ Gốc: [bản đồ bộ não](README.md).
 
 ## Luật và cách làm việc
 - [AGENTS](../AGENTS.md) — Cửa vào cho mọi AI: thứ tự đọc, sáu luật, trỏ tới cây quy trình.
-- [quy-trinh](../quy-trinh.md) — **Cây quy trình**: quy trình gốc 7 bước cho mọi việc, rồi nhánh, rồi lá (câu David hay nói, file quy trình, xong khi); máy kiểm `tu-dong-hoa/kiem-quy-trinh.py`.
+- [quy-trinh](../quy-trinh.md) — **Cây quy trình**: quy trình gốc 7 bước cho mọi việc, rồi nhánh, rồi lá (câu David hay nói, file quy trình, xong khi); công cụ kiểm tra `tu-dong-hoa/kiem-quy-trinh.py`.
 - [CLAUDE](../CLAUDE.md) — Cấu hình Claude Code của repo, nạp AGENTS.md.
 - [chi-dan-toan-cuc](../co-so-tri-thuc/chi-dan-toan-cuc.md) — Luật chung mọi phiên (bản gốc ~/.claude/CLAUDE.md).
 - [tu-duy-goc](../co-so-tri-thuc/tu-duy-goc.md) — **Tư duy gốc (tầng 0)**: cách nghĩ khi làm mọi việc, bốn khối Bóc tách · Hành động (vòng kết quả hoặc vấn đề) · Học và thay đổi · Bản chất và kiểm sai; nguồn: [17 phiếu học](../tai-lieu-tham-khao/tu-duy-goc/README.md).
 - [truc-tri-thuc](../co-so-tri-thuc/truc-tri-thuc.md) — **Trục tri thức (tầng 0)**: cách bộ não tiếp nhận, xử lý, học, nâng cấp mọi thông tin, dựng theo cách mô hình AI được làm ra (dữ liệu → chưng cất → phản hồi → đánh giá → ra bản).
 - [bai-kiem toàn bộ não](../co-so-tri-thuc/bai-kiem/README.md) — Bộ đánh giá của trục: 18 tình huống từ chính lời David đã sửa; một trí tuệ nhân tạo chưa đọc gì làm bài, đạt ít nhất 17/18.
 - [chuan-muc-lam-viec](../ky-nang/chuan-muc-lam-viec.md) — Thói quen làm việc chung mọi skill đọc trước: khi hai điều ngược nhau, đọc đúng phần, khi nào hỏi, trong lúc làm, cuối việc, giữ phiên gọn.
-- [quy-uoc-lien-ket](../co-so-tri-thuc/quy-uoc-lien-ket.md) — Bộ quy tắc liên kết của bộ não — mô tả đầu file, đường nối, bản đồ nội dung, chỉ mục tự sinh, ghi chú kiến thức, máy kiểm; để Claude tra nhanh, ít token, không sót.
+- [quy-uoc-lien-ket](../co-so-tri-thuc/quy-uoc-lien-ket.md) — Bộ quy tắc liên kết của bộ não — mô tả đầu file, đường nối, bản đồ nội dung, chỉ mục tự sinh, ghi chú kiến thức, công cụ kiểm tra; để Claude tra nhanh, ít token, không sót.
 - [bang-thuat-ngu](../co-so-tri-thuc/bang-thuat-ngu.md) — Bảng thuật ngữ đặt tên: thuật ngữ kinh doanh tiếng Anh → tiếng Việt → tên file/thư mục dùng; tên bắt buộc của công cụ; cấu trúc thư mục.
 - [chi-muc](../co-so-tri-thuc/chi-muc.md) — Chỉ mục tự sinh của bộ não — mỗi file .md một dòng (đường dẫn, mô tả, số file nối tới); Claude grep file này trước khi tìm toàn repo.
 
 ## Trạng thái và dự án của bộ não
-- [bao-cao-trang-thai](../bao-cao-trang-thai.md) — Báo cáo trạng thái: việc đang làm dở, việc chờ David quyết, câu hỏi còn mở, cảnh báo, việc phải nhớ.
+- [bao-cao-trang-thai](../bao-cao-trang-thai.md) — Báo cáo trạng thái: việc đang làm chưa xong, việc chờ David quyết, câu hỏi còn mở, cảnh báo, việc phải nhớ.
 - [du-an](../du-an/README.md) — Thư mục dự án: chỉ giữ file theo dõi việc dở; dự án video và thành phẩm nằm ở máy và Drive.
 - [lien-ket-tri-thuc](../du-an/lien-ket-tri-thuc.md) — Dự án liên kết tri thức (14/11): biến bộ não thành mạng lưới file nối nhau để Claude tra nhanh, ít token; kế hoạch 4 phần và số đo trước / sau.
 - [chuan-hoa-ten](../du-an/chuan-hoa-ten.md) — Bản đồ chuẩn hoá tên toàn bộ (14/11, đã xong): tên cũ đổi sang tên mới theo thuật ngữ kinh doanh tiếng Anh dịch sang tiếng Việt.
 - [chuan-hoa-ky-nang](../du-an/chuan-hoa-ky-nang.md) — Dự án chuẩn hoá bộ skill theo thói quen làm việc chung (08/11): các bước, mốc commit, việc còn lại.
 - [danh-gia-luat](../du-an/danh-gia-luat.md) — Rà soát luật bộ skill video (08/11), bước 1 của chuẩn hoá skill: luật trùng, lệch, cần gộp.
-- [nang-cap-4](../du-an/nang-cap/nang-cap-4.md) — Nâng cấp 4 (20/11): máy đo đổi sang đo trùng / rối, video gần trùng 49 xuống 16.
+- [nang-cap-4](../du-an/nang-cap/nang-cap-4.md) — Nâng cấp 4 (20/11): công cụ đo đổi sang đo trùng / rối, video gần trùng 49 xuống 16.
 - [nang-cap-5](../du-an/nang-cap/nang-cap-5.md) — Nâng cấp 5 (20/11): trục tri thức, gắn tầng, bộ kiểm toàn não, luật viết đủ từ.
 - [tai-ban-3](../du-an/nang-cap/tai-ban-3.md) — Tái bản 3 toàn bộ bộ não (mở 14/11): theo dõi chung, file từng phiên con.
 - [tai-cau-truc-2](../du-an/nang-cap/tai-cau-truc-2.md) — Tái bản lần 2 toàn bộ bộ não (10/11): điều phối các phiên con, mốc, kết quả.
@@ -50,7 +50,7 @@ Gốc: [bản đồ bộ não](README.md).
 - [quy-tac-phien-telegram-tu-chay](../co-so-tri-thuc/bo-nho/quy-tac-phien-telegram-tu-chay.md) — Phiên việc giao qua Telegram: trình 4 phần chờ duyệt, duyệt rồi tự làm tới kết quả, ghi sổ; chỉ hỏi khi đăng/gửi, tốn tiền, đẩy đè GitHub, xoá ổ đĩa; mọi phiên…
 - [quy-tac-tu-duy-goc](../co-so-tri-thuc/bo-nho/quy-tac-tu-duy-goc.md) — Lời David đặt bộ tư duy gốc, khung cố vấn làm xương sống, học từ bộ óc thế giới (23/11).
 - [quy-tac-truc-tri-thuc](../co-so-tri-thuc/bo-nho/quy-tac-truc-tri-thuc.md) — Lời David chốt trục tri thức cố định cho việc kaizen bộ não (20/11).
-- [quy-tac-sua-thang-tai-ban](../co-so-tri-thuc/bo-nho/quy-tac-sua-thang-tai-ban.md) — Đổi luật thì sửa thẳng câu cũ (không chồng câu "bổ sung/thay luật", không ngày trong bản luật); định kỳ tái bản TOÀN BỘ bộ não một đợt khi máy đo chồng chéo báo…
+- [quy-tac-sua-thang-tai-ban](../co-so-tri-thuc/bo-nho/quy-tac-sua-thang-tai-ban.md) — Đổi luật thì sửa thẳng câu cũ (không chồng câu "bổ sung/thay luật", không ngày trong bản luật); định kỳ tái bản TOÀN BỘ bộ não một đợt khi công cụ đo chồng chéo báo…
 - [quy-tac-thu-bang-doan-ngan](../co-so-tri-thuc/bo-nho/quy-tac-thu-bang-doan-ngan.md) — Thử skill dựng video thì chỉ dùng một đoạn ngắn TRỌN VẸN MỘT Ý (không cố định số giây), không chạy cả video dài
 - [quy-tac-tu-hoi-khi-mo-ho](../co-so-tri-thuc/bo-nho/quy-tac-tu-hoi-khi-mo-ho.md) — Tự nhận diện lúc cần hỏi David (câu mơ hồ / đọc chính tả lệch, mâu thuẫn luật, việc tốn kém khó đảo ngược…) — không tự đoán rồi làm
 - [co-so-tri-thuc-github-ban-goc](../co-so-tri-thuc/bo-nho/co-so-tri-thuc-github-ban-goc.md) — GitHub bo-nao-david là bản gốc của bộ não — có gì mới cho skill/não thì ĐẨY NGAY (bắt buộc); chỉ giữ mẫu, form, luật, hồ sơ; sản phẩm ở lại máy/tài khoản làm ra nó
@@ -71,10 +71,10 @@ Gốc: [bản đồ bộ não](README.md).
 - [hoc-lien-tuc](../ky-nang/hoc-lien-tuc/SKILL.md) — Tự học, cải tiến liên tục: nhìn lại tuần, học hình mẫu có số liệu, học thành skill, và Việc 4 **Nâng cấp** định kỳ cả bộ não (đo trước / sau, chưng cất, cắt giảm, tái cấu trúc).
 - [nhat-ky-thay-doi hoc-lien-tuc](../ky-nang/hoc-lien-tuc/references/nhat-ky-thay-doi.md) — Nhật ký thay đổi skill hoc-lien-tuc và máy đếm / ghi tín hiệu.
 - [hoc-lien-tuc 2026-11-15](../du-an/hoc-lien-tuc/2026-11-15.md) — Phiếu tự học tuần 15/11: điều lặp, đã sửa, gộp ghi nhớ 47 thành 40, việc tuần sau.
-- [tai-cau-truc](../ky-nang/tai-cau-truc/SKILL.md) — Dọn luật — bước 4 của Nâng cấp: mỗi luật một nguồn duy nhất, không ngày, không câu trùng; máy đo chồng chéo chỉ kêu vì trùng / rối.
+- [tai-cau-truc](../ky-nang/tai-cau-truc/SKILL.md) — Dọn luật — bước 4 của Nâng cấp: mỗi luật một nguồn duy nhất, không ngày, không câu trùng; công cụ đo chồng chéo chỉ kêu vì trùng / rối.
 - [dieu-khien-trinh-duyet](../ky-nang/dieu-khien-trinh-duyet/SKILL.md) — Automate browser interactions, test web pages and work with Playwright tests.
 - [thiet-ke-trang-cuon](../ky-nang/thiet-ke-trang-cuon/SKILL.md) — >
-- [lich-su](../ky-nang/tai-cau-truc/lich-su.md) — Lịch sử nâng cấp (trước 20/11 gọi là tái bản): mỗi đợt một dòng, mốc cho máy đo chồng chéo.
+- [lich-su](../ky-nang/tai-cau-truc/lich-su.md) — Lịch sử nâng cấp (trước 20/11 gọi là tái bản): mỗi đợt một dòng, mốc cho công cụ đo chồng chéo.
 
 **Tài liệu dieu-khien-trinh-duyet**
 - [chay-ma](../ky-nang/dieu-khien-trinh-duyet/references/chay-ma.md) — Điều khiển trình duyệt: chạy mã Playwright tuỳ ý (run-code).

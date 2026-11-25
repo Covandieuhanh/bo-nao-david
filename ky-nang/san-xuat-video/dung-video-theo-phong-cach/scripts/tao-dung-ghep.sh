@@ -52,8 +52,8 @@ for f in "${CLIPS[@]}"; do
   printf "%s\t%s\t%s\t%.2fs\n" $id "${f:t}" $WH $DUR >> "$P/clips.tsv"
   # Lời nói: đoạn câu + mốc từng từ. Whisper hay BỊA câu ("Hãy subscribe cho kênh…") khi không có lời → đối chiếu am-luong.txt
   ffmpeg -v error -y -i "$C/$id.mp4" -vn -ac 1 -ar 16000 "$O/a.wav"
-  # Quay ngoài trời (gió, bước chân, đám đông) → Whisper bịa "Hãy subscribe…" cả clip. Lọc ồn + cân tiếng RIÊNG cho bản chép lời
-  # (a.wav giữ nguyên cho am-luong.txt) và -mc 0 (không mang ngữ cảnh câu bịa sang đoạn sau) — vlog leo núi 2026-11-03: 10/48 clip hết bịa.
+  # Quay ngoài trời (gió, bước chân, đám đông) → Whisper bịa đặt "Hãy subscribe…" cả clip. Lọc ồn + cân tiếng RIÊNG cho bản chép lời
+  # (a.wav giữ nguyên cho am-luong.txt) và -mc 0 (không mang ngữ cảnh câu bịa đặt sang đoạn sau) — vlog leo núi 2026-11-03: 10/48 clip hết bịa đặt.
   ffmpeg -v error -y -i "$O/a.wav" -af "highpass=f=120,lowpass=f=6000,afftdn=nf=-25,dynaudnorm" "$O/w.wav"
   # LOI_SAN=<thư mục có moc-tung-tu.srt + ban-chep-loi.srt CỦA CHÍNH FILE NÀY> (highlight: clip c1 = video nguồn đã chép lời ở kiem-tra/goc)
   # → dùng lại, không cho Whisper chép lại cả video dài cho từng clip (10/11/2026: tập 14 phút mất ~30 phút mỗi clip).

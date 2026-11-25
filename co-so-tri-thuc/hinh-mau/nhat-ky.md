@@ -24,11 +24,11 @@ Mới nhất ở trên. Mỗi mục: ngày · mục nhỏ · câu hỏi · số 
 ## 23/11/2026 — 1.2 intro thương hiệu diễn giả (việc #41)
 - Câu hỏi: intro sang trọng của diễn giả, trainer trông thế nào.
 - Mẫu: 6 (John Sanei, Jacob Brown, Tony Robbins Australia; Trần Hồng Hải, Ngô Bích Hà, TS. Khiêm Nguyễn).
-- Kết luận: màu điện ảnh tối ấm, ít cảnh đẹp, khoảnh khắc thật, tên giãn chữ trên nền đen; không lấy khuôn rối mắt.
+- Kết luận: màu điện ảnh tối ấm, ít cảnh đẹp, khoảnh khắc thật, tên giãn chữ trên nền đen; không lấy mẫu rối mắt.
 - Áp dụng: intro bản 2 trở đi.
 
 ## 20/11/2026 — 2.1 mở đầu, chia đoạn, minh hoạ (giải mẫu)
-- 8 hình mẫu có số liệu (Ali Abdaal, Jeff Su, The Diary Of A CEO, Nguyễn Hữu Trí, Huy Luong, Nhật Anh AI, Giang Ơi, Khánh Vy), 19 ca giải.
+- 8 hình mẫu có số liệu (Ali Abdaal, Jeff Su, The Diary Of A CEO, Nguyễn Hữu Trí, Huy Luong, Nhật Anh AI, Giang Ơi, Khánh Vy), 19 trường hợp giải.
 - Áp dụng: `thiet-ke-bo-cuc/giai-mau.md`, `tu-chon.md`. Cùng ngày học Cường Mê AI (nguyên lý minh hoạ tinh gọn).
 
 ## 03–06/11/2026 — 2.2–2.5 các loại video (80 video Việt + quốc tế)

@@ -25,6 +25,6 @@ for k, v in DA.items():
     else:
         print(f"✗ {k} · chọn {chon or '(trống)'}, đúng {v['dung']} · tình huống: {DE[k]['tinh_huong']}")
         print(f"    lý do người làm: {b.get('vi', '(không ghi)')}")
-        print(f"    nhà của luật cần đọc lại / viết rõ hơn: {v['nha']}")
-print(f"\nĐúng {dung}/{len(DA)} → " + ("ĐẠT: người đọc lạnh làm đúng." if dung >= NGUONG else f"CHƯA ĐẠT (cần ít nhất {NGUONG}): sửa nhà của các câu sai cho rõ hơn, rồi cho một AI chưa đọc gì làm lại."))
+        print(f"    nguồn của luật cần đọc lại / viết rõ hơn: {v['nha']}")
+print(f"\nĐúng {dung}/{len(DA)} → " + ("ĐẠT: người đọc mới làm đúng." if dung >= NGUONG else f"CHƯA ĐẠT (cần ít nhất {NGUONG}): sửa nguồn của các câu sai cho rõ hơn, rồi cho một AI chưa đọc gì làm lại."))
 sys.exit(0 if dung >= NGUONG else 1)

@@ -6,7 +6,7 @@ description: "Quy trình lá B14: dựng intro thương hiệu DAVID TRẦN (khu
 
 **Khi nào dùng:** David muốn một đoạn intro riêng đặt đầu video dài (chèn được vào bất kỳ video nào), hoặc gửi thêm cảnh mới để thay.
 Bản hiện hành làm 23/11/2026 (việc #41, bản 7, 12,7 giây): `~/Movies/cho-dang/tap-intro-david-tran-2311/ban-dai/intro-david-tran.mp4`,
-Drive `thanh-pham/` cùng tên. Khuôn code: `assets/khuon-intro/`.
+Drive `thanh-pham/` cùng tên. Mẫu code: `assets/khuon-intro/`.
 
 **Đầu vào:** album Google Photos / thư mục Drive (lá B2 tải về `~/Movies/tap-<tên>/1-goc/`) · chữ trên intro (mặc định chỉ tên
 **DAVID TRẦN**: chữ trên video chỉ lấy từ David).
@@ -32,7 +32,7 @@ Hình mẫu đã học và nhật ký: `co-so-tri-thuc/hinh-mau/1-hinh-tuong-ca-
    hướng dẫn cũng cho thẻ thương hiệu 1–10 giây. Intro của David: **10–13 giây kể cả 2 giây nhạc nhỏ dần**, khoảng 8–10 cảnh, đặt sau
    đoạn mở đầu hút người xem của mỗi video.
 2. **Sang trọng nằm ở màu và sự tiết chế:** màu điện ảnh tối, ấm, ít màu, viền tối nhẹ, hạt phim rất nhẹ, khung 2,35:1. Học từ intro
-   diễn giả John Sanei, Jacob Brown, Tony Robbins, Trần Hồng Hải; tránh khuôn rối mắt (hạt lấp lánh, hình khối dồn dập).
+   diễn giả John Sanei, Jacob Brown, Tony Robbins, Trần Hồng Hải; tránh mẫu rối mắt (hạt lấp lánh, hình khối dồn dập).
 3. **Nhân vật làm trung tâm, cảnh toàn, cảnh đắt nhất:** David ở giữa khung hoặc là điểm nhìn chính; ưu tiên cảnh rộng thấy sân khấu,
    phòng đào tạo có học viên, phòng thu, ký kết, chia sẻ. Một **cảnh nhấn** (cảnh sân khấu lớn nhất) đặt đúng câu cao trào của lời
    bài hát: lóe trắng ấm, tia sáng tỏa từ giữa, quay chậm 0,6 lần, đẩy máy vào (cột `nhan` trong bảng `CANH`).
@@ -91,4 +91,4 @@ Hình mẫu đã học và nhật ký: `co-so-tri-thuc/hinh-mau/1-hinh-tuong-ca-
 - Lớp cảnh có nền đen riêng thì lúc lướt ngang sẽ che cảnh cũ thành mảng đen: lớp cảnh không có nền, chỉ khung chính có nền đen.
 - Shell zsh không tách chữ khi `set -- $bien` hay `$L`: chạy vòng lặp bằng bash.
 - File DJI có nhiều luồng hình (bản xem trước 1280×720): luôn `-map 0:v:0`.
-- Mốc whisper ở đoạn điệp khúc lặp nhiều lần hay bị ảo: chép từng chữ trên đoạn ngắn đã cắt riêng.
+- Mốc whisper ở đoạn điệp phân đoạn lặp nhiều lần hay bị ảo: chép từng chữ trên đoạn ngắn đã cắt riêng.

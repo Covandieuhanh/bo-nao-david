@@ -2,9 +2,9 @@
 description: "Ví dụ giải mẫu: 19 khoảnh khắc từ 8 hình mẫu thành công cùng thể loại kênh David (số liệu đo 20/11/2026) — họ làm gì trên hình, lập luận ngược Cần · Vì · Làm, đem về kho kênh dùng kiểu nào."
 ---
 
-# Ví dụ giải mẫu — học cách nghĩ qua ca thật của hình mẫu
+# Ví dụ giải mẫu — học cách nghĩ qua trường hợp thực tế của hình mẫu
 
-Đọc sau [nguoi-xem-can-gi.md](nguoi-xem-can-gi.md). Mỗi ca là **một khoảnh khắc** trong video của kênh đang làm tốt nhất cùng thể loại kênh
+Đọc sau [nguoi-xem-can-gi.md](nguoi-xem-can-gi.md). Mỗi trường hợp là **một khoảnh khắc** trong video của kênh đang làm tốt nhất cùng thể loại kênh
 David hướng tới. Ghi: lời đang nói (diễn ý, không chép lời) · họ làm gì trên hình · lập luận ngược **Cần · Vì · Làm** · đem về kênh David
 dùng gì trong kho (chữ trên hình vẫn là nguyên văn lời David, màu và font của kênh). Học **cách nghĩ**, không chép nội dung, màu, font của họ.
 
@@ -30,7 +30,7 @@ Số liệu kiểm lại bằng `yt-dlp -J --flat-playlist -I 1:10 <kênh>/video
 **1 · DOAC 0:00–0:30 · `tro-chuyen`**
 - Lời: những câu đáng sợ / đắt nhất của khách, lấy từ giữa buổi nói, nối liền nhau.
 - Họ làm: mỗi câu một chữ to chạy theo lời (2–4 chữ, một chữ đổi màu), xen ảnh tư liệu đúng thứ đang nói.
-- **Cần:** Giữ chú ý · **Vì:** buổi nói dài 1,5 giờ, 30 giây đầu phải cho thấy "đáng nghe" · **Làm:** mở bằng 3–5 câu đắt nhất của chính người nói.
+- **Cần:** Giữ chú ý · **Vì:** buổi nói dài 1,5 giờ, 30 giây đầu phải cho thấy "đáng nghe" · **Làm:** mở bằng 3–5 câu then chốt của chính người nói.
 - Về kênh: màn mở `hook` = câu nguyên văn đắt nhất, cắt từ giữa video (khối 06); cụm chữ to theo lời, một từ `*nhấn*`. Không tự đặt tít.
 
 **2 · ALI 0:03–0:10 · `day-ky-nang`**
@@ -97,11 +97,11 @@ Số liệu kiểm lại bằng `yt-dlp -J --flat-playlist -I 1:10 <kênh>/video
 
 **15 · HUY 0:24–0:27, 1:03 · `day-ky-nang` (tài chính)** — cảnh thật của chính người nói ở nơi làm việc cũ (ngân hàng nước ngoài); ảnh trang thống kê nhà nước kèm đường link.
 - **Cần:** Tin · **Vì:** chủ đề tiền bạc, người xem cần thấy người nói có trải nghiệm thật và số liệu có nguồn · **Làm:** cảnh thật + nguồn thật.
-- Về kênh: cảnh quay thêm của David (nếu có) qua khuôn ghép; `diagram anh` có `credit`. Lằn ranh tài chính vẫn giữ (`david.md` mục 4).
+- Về kênh: cảnh quay thêm của David (nếu có) qua mẫu ghép; `diagram anh` có `credit`. Lằn ranh tài chính vẫn giữ (`david.md` mục 4).
 
 **16 · VY 0:06–0:18 · `meo-ngan`** — kể "mình đã đi từ đâu", xen nhanh các cảnh thật trong quá khứ (dẫn chương trình, sân khấu), mỗi cảnh 2–3 giây.
 - **Cần:** Tin + Giữ chú ý · **Vì:** lời khuyên chỉ có sức nặng khi người xem thấy hành trình thật · **Làm:** cảnh thật của chính người nói làm minh chứng, cắt nhanh.
-- Về kênh: khuôn ghép với tư liệu cũ của David; không có tư liệu thì để người nói + phụ đề, không dựng ảnh giả.
+- Về kênh: mẫu ghép với tư liệu cũ của David; không có tư liệu thì để người nói + phụ đề, không dựng ảnh giả.
 
 ### Cảm xúc và tinh gọn — khi nào không dựng gì
 
@@ -111,7 +111,7 @@ Số liệu kiểm lại bằng `yt-dlp -J --flat-playlist -I 1:10 <kênh>/video
 
 **18 · DOAC sau 2:00 · `tro-chuyen`** — vào cuộc trò chuyện thì gần như không còn đồ hoạ; chỉ đổi góc máy (toàn cảnh, cận khách, cận người hỏi).
 - **Cần:** Mặt người nói + Tinh gọn · **Vì:** người xem theo dõi hai người và cảm xúc của câu trả lời · **Làm:** giữ người, đổi cỡ cảnh bằng góc máy thật.
-- Về kênh: giữ người là chính; chỉ thêm `cau-hoi` ở câu hỏi và `the-canh` ở câu đắt. Không zoom giả trên hình quay (luật kênh).
+- Về kênh: giữ người là chính; chỉ thêm `cau-hoi` ở câu hỏi và `the-canh` ở câu then chốt. Không zoom giả trên hình quay (luật kênh).
 
 **19 · JEFF 0:45, 1:09 · `huong-dan-man-hinh`** — đoạn chờ máy chạy được tua nhanh, có biểu tượng ▶▶ to giữa màn.
 - **Cần:** Tinh gọn + Báo hiệu · **Vì:** chờ là thời gian chết; nhưng cắt mất thì người xem tưởng nhảy cóc · **Làm:** tua, và báo là đang tua.
@@ -124,7 +124,7 @@ Số liệu kiểm lại bằng `yt-dlp -J --flat-playlist -I 1:10 <kênh>/video
 | `day-ky-nang` | chương có số · một hình lớn dần giữ lâu · con số đặt cạnh nhau · thẻ dưới mặt chỉ ghi con số chính · người vào ô khi hình phức tạp | vừa — dày ở phần giải thích, thưa ở phần ý kiến |
 | `chia-se-quan-diem` | nguồn thật trước khi lập luận · thẻ cộng dồn các ý · phần còn lại là mặt người | thưa |
 | `huong-dan-man-hinh` | đánh dấu sát đúng chỗ trên màn hình · tua chỗ chờ · chương trước mỗi công cụ | dày nhưng mỗi lúc một chỗ sáng |
-| `tro-chuyen` | mở bằng câu đắt nhất · tên + vai trò một lần · rồi gần như chỉ còn người | rất thưa sau mở đầu |
+| `tro-chuyen` | mở bằng câu then chốt · tên + vai trò một lần · rồi gần như chỉ còn người | rất thưa sau mở đầu |
 | `ke-chuyen` | hình đời thật, một tấm tít, không sơ đồ | rất thưa |
 | `meo-ngan` | cảnh thật làm minh chứng, cắt 2–3 giây, chữ ngắn một từ nhấn | mỗi lúc một điểm nhìn |
 
@@ -133,5 +133,5 @@ sẽ khó nếu chỉ nghe (nguyên lý Tinh gọn).
 
 ## Học thêm hình mẫu
 
-Thêm ca khi học kênh mới (`hoc-lien-tuc` Việc 2 hoặc `phan-tich-video-mau`): ghi số liệu + ngày đo vào bảng nguồn, mỗi ca đủ 4 dòng như trên,
-gắn đúng tên nguyên lý. Bài kiểm suy luận dựng từ các ca này: [bai-kiem/](bai-kiem/README.md).
+Thêm ca khi học kênh mới (`hoc-lien-tuc` Việc 2 hoặc `phan-tich-video-mau`): ghi số liệu + ngày đo vào bảng nguồn, mỗi trường hợp đủ 4 dòng như trên,
+gắn đúng tên nguyên lý. Bài kiểm suy luận dựng từ các trường hợp này: [bai-kiem/](bai-kiem/README.md).

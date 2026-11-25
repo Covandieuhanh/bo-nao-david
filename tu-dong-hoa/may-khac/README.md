@@ -17,7 +17,7 @@ Cách cài từng máy: [huong-dan-cai-dat.md](../../huong-dan-cai-dat.md) mục
 
 ## Cái gì giống hệt, cái gì gần giống
 
-- **Giống hệt**: kịch bản cảnh, luật, skill (cùng repo); khung dựng Remotion, React, font (khoá trong `package-lock.json` của khuôn); Node; mô hình Whisper (mã kiểm). Khung hình Remotion so SSIM ít nhất 0,98.
+- **Giống hệt**: kịch bản cảnh, luật, skill (cùng repo); khung dựng Remotion, React, font (khoá trong `package-lock.json` của mẫu); Node; mô hình Whisper (mã kiểm). Khung hình Remotion so SSIM ít nhất 0,98.
 - **Gần giống, có thước đo**:
   - Dò mặt: Mac dùng Vision (chỉ Mac có). Máy khác dùng YuNet + MediaPipe, quy đổi theo thước Vision bằng `he-so-mat.json`. Đo 20/11/2026: khớp khoảng 90% số mặt, độ trùng khung khoảng 0,8. Phần lệch là mặt quay nghiêng: Vision bỏ sót, máy khác vẫn bắt.
   - Chép lời: cùng mô hình nhưng phần cứng khác, nên có thể lệch vài chữ (ngưỡng ít nhất 90%).
@@ -39,10 +39,10 @@ Máy mới: lần đầu cài, chạy `kiem-may.sh` để xác nhận.
 
 ## Việc của Mac chính
 
-- **Nâng công cụ** (Remotion, ffmpeg…): cài bản mới, dựng thử, sửa `phien-ban.env` / `package.json` + `package-lock.json` của khuôn. Sau đó tạo lại bản chuẩn: `zsh tu-dong-hoa/may-khac/kiem-may.sh --tao-chuan <video người nói rõ mặt> <giây bắt đầu>`, rồi đẩy GitHub. Máy khác chạy lại `cai-cong-cu-video.sh` + `kiem-may.sh`.
+- **Nâng công cụ** (Remotion, ffmpeg…): cài bản mới, dựng thử, sửa `phien-ban.env` / `package.json` + `package-lock.json` của mẫu. Sau đó tạo lại bản chuẩn: `zsh tu-dong-hoa/may-khac/kiem-may.sh --tao-chuan <video người nói rõ mặt> <giây bắt đầu>`, rồi đẩy GitHub. Máy khác chạy lại `cai-cong-cu-video.sh` + `kiem-may.sh`.
 - **Đo lại hệ số dò mặt** khi đổi cách dò: `~/.cache/dung-video-theo-phong-cach/mat-venv/bin/python ky-nang/san-xuat-video/dung-video-theo-phong-cach/scripts/do-he-so-mat.py <video> …`
 - Bộ thử máy (đoạn 20 s + bản chuẩn) nằm trên Drive `tu-lieu-goc/_bo-thu-may/`, không lên GitHub (video gốc).
 
 ## Nhiều máy cùng đẩy
 
-Đầu phiên kéo về, cuối phiên đẩy lên, git tự gộp khi hai máy sửa khác chỗ. Nếu hai máy sửa trùng một dòng, `dong-bo.sh` huỷ lần gộp (không mất bản nào) và ghi `~/.claude/logs/xung-dot-nao.txt`. Đầu phiên sau, Claude thấy cảnh báo ⛔ và gộp tay giúp David.
+Đầu phiên kéo về, cuối phiên đẩy lên, git tự gộp khi hai máy sửa khác chỗ. Nếu hai máy sửa trùng một dòng, `dong-bo.sh` huỷ lần gộp (không mất bản nào) và ghi `~/.claude/logs/xung-dot-nao.txt`. Đầu phiên sau, Claude thấy cảnh báo ⛔ và gộp thủ công giúp David.

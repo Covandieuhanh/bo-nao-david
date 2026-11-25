@@ -10,7 +10,7 @@ description: "Lỗi thường gặp khi dựng video (ffmpeg, Remotion, Whisper�
 - **`python3 -I` tắt thư mục user-site** nên Pillow (cài `--user`) không import được. Script cần Pillow
   (`the-ghi-cong.py --card`, `vung-an-toan.py`) chạy bằng `python3` thường; script khác chạy `-I` cho an toàn.
 - `timeout` không có trên macOS — đừng dùng.
-- **Whisper ở chỗ ồn** bịa "Hãy subscribe cho kênh…" và lặp câu hàng chục lần ở bản chép dài; mốc từng từ lệch 0,5–2 s thì điểm cắt dùng
+- **Whisper ở chỗ ồn** bịa đặt "Hãy subscribe cho kênh…" và lặp câu hàng chục lần ở bản chép dài; mốc từng từ lệch 0,5–2 s thì điểm cắt dùng
   `diem-ngat.py`, mốc phụ đề kiểm bằng `soat-khop-tieng.py` (khối 01–03).
 - **Chép kịch bản tập trước** = nhân bản kiểu trình bày thì mỗi tài nguyên chẩn đoán lại (`thiet-ke-bo-cuc/tu-chon.md` bước 0); render bị chặn nếu thiếu.
 - Lệnh `rm` với biến: luôn `"${VAR:?}"` để không bao giờ xoá nhầm khi biến rỗng (Claude Code chặn dạng `rm -f "$X/$Y"`).
@@ -127,7 +127,7 @@ description: "Lỗi thường gặp khi dựng video (ffmpeg, Remotion, Whisper�
 - `chu-de.js`: SAFE dọc cố định (bottom 1420, rộng 830) — đúng cho mọi dự án dọc 1080×1920 (ap-dung-lam-sach.py luôn đưa về khung này).
 
 ## Phụ đề
-- Lần chạy Whisper theo từ (`-ml 1`) và theo câu cho kết quả khác nhau; cả hai đều có thể đè câu bịa lên câu thật cuối
+- Lần chạy Whisper theo từ (`-ml 1`) và theo câu cho kết quả khác nhau; cả hai đều có thể đè câu bịa đặt lên câu thật cuối
   video ("Hãy subscribe cho kênh Ghiền Mì Gõ…" ở chỗ David nói "Xin chào") thì đối chiếu lần chạy ở `kiem-tra/lam-sach/`.
 - Khung chữ phụ đề rộng khoảng 37 ký tự ở cỡ 42 px; dòng dài hơn thì `textWrap: 'balance'` chia đều 2 dòng, tránh rơi 1 chữ.
 
@@ -138,7 +138,7 @@ description: "Lỗi thường gặp khi dựng video (ffmpeg, Remotion, Whisper�
 ## Chế độ ghép nhiều clip
 - **macOS không phân biệt hoa/thường tên file**: `chuong-trinh.jsx` và `show.js` là MỘT file nên import nhầm, lỗi
   "A value of `undefined` was passed to the `component` prop". Đặt tên khác hẳn (chuong-trinh.jsx + danh-sach-cat.js).
-- **Whisper bịa câu khi không có lời** ("Hãy subscribe cho kênh Ghiền Mì Gõ…" lặp cả clip) thì so với `am-luong.txt`,
+- **Whisper bịa đặt câu khi không có lời** ("Hãy subscribe cho kênh Ghiền Mì Gõ…" lặp cả clip) thì so với `am-luong.txt`,
   cắt đoạn có tiếng rồi chạy lại với `-mc 0`.
 - Clip iPhone có metadata xoay (−90°): ffmpeg tự áp khi chuẩn hoá (tao-dung-ghep.sh) nên luôn dùng `public/doan-video/cN.mp4`,
   không đưa .MOV gốc vào Remotion.
@@ -178,7 +178,7 @@ description: "Lỗi thường gặp khi dựng video (ffmpeg, Remotion, Whisper�
 - Hình lật ngang/lộn ngược lúc rút máy khỏi túi có độ sáng/độ tương phản/YDIF như cảnh đi bộ thường thì không dò bằng signalstats;
   chỉ bắt được bằng mắt trên `kiem-tra/cac-doan/` (c13 vlog leo núi).
 - Remotion `bundle()` chép CẢ `public/` (clip gốc) vào thư mục tạm mỗi lần chạy, không tự xoá thì vlog 48 clip: 205 bản sót, đầy ổ,
-  render kẹt/ENOSPC. Mọi script render/stills giờ `fs.rmSync(serveUrl)` ở cuối; script tự viết thêm cũng phải dọn.
+  render vướng/ENOSPC. Mọi script render/stills giờ `fs.rmSync(serveUrl)` ở cuối; script tự viết thêm cũng phải dọn.
 - Chữ đè phụ đề lặp nhiều lần (thẻ địa điểm, danh sách `chips`): nguyên nhân chung = đặt vị trí bằng ƯỚC
   chiều cao (top cố định, n × cỡ chữ) trong khi chữ dài tự xuống dòng. Luật: lớp chữ KHÔNG BAO GIỜ đặt `top` ước lượng — neo ĐÁY
   vào LOW_Y (translateY(-100%)) để khối mọc lên; chữ một dòng thì tự thu cỡ theo mục dài nhất; chuong-trinh.jsx chặn cứng mọi lớp không
@@ -220,7 +220,7 @@ người nói chưa từng chạy với dấu góc. Không do bài học video m
 | "Tập trung vào một vùng" làm bằng cắt-phóng cả khung | rác (bàn, sổ, tường) vẫn còn quanh điện thoại | `tu-chon.md` bước 2 → khung chủ thể `khung-chu-the.py` |
 | Chỉ dùng vài kiểu cảnh quen, video dày ý mà giữa các cảnh chỉ còn phụ đề | người xem khó theo dõi | `tu-chon.md` + `chan-doan.py` → bảng ghi chú chạy `GHI_CHU` |
 | Thử kiểu cảnh bằng chụp/render: `kinetic`, `action`, `card` > 4 dòng lỗi ở khung ngang | khoảng 45 phút đổi kiểu nhiều vòng | `soat-canh.mjs` P0/P1 theo khung |
-| Cảnh `illus` bắt đầu 4 s trước phần tử đầu | 4 s nền tối che người, không chữ (lọt tới bản cuối) | `soat-canh.mjs` P0 "màn trống đầu cảnh" |
+| Cảnh `illus` bắt đầu 4 s trước phần tử đầu | 4 s nền tối che người, không chữ (tràn tới bản cuối) | `soat-canh.mjs` P0 "màn trống đầu cảnh" |
 | Vision không dò mặt trong màn hình điện thoại → đặt hình sai phía | chỉnh tay mat.js | `vi-tri-nhan.py` đọc `khung.js` |
 | Ghép bản cuối khi `xuat-video.mjs` còn render thẻ cuối | bản cuối mất màn kết YouTube 20 s, ghép lại 30 phút | khoá `.dang-render` + `xem-truoc-ban-dung.py` kiểm đủ lớp |
 | `chuan-am.py` chặn đỉnh −2,0 dB mà AAC đẩy lên −1,0 | 3 lượt không đạt; mổ xẻ giữa chừng khoảng 40 phút | hạ ngưỡng theo phần vượt, tối đa 6 lượt; SKILL "Nhịp làm": lỗi skill ghi `kiem-tra/loi-ky-nang.md`, làm tiếp |
@@ -243,7 +243,7 @@ người nói chưa từng chạy với dấu góc. Không do bài học video m
   file ("alarm clock", "stack of books", "wall calendar", "brain anatomy model") và chạy lại riêng các key lỗi.
 - Soát lại tên ảnh trong ghi-cong.tsv sau khi tải (ví dụ: "office dog…" — ảnh tối có con chó) và logo hãng ở chính giữa (vô-lăng Mercedes) thì đổi.
 
-## Nhạc ép tay không ăn (25/11/2026, buổi DJI_0031)
+## Nhạc chỉ định thủ công không ăn (25/11/2026, buổi DJI_0031)
 - **Hiện tượng:** chọn ba bài cho ba video nhưng cả ba ra cùng một bài (bài đầu tuyến `kien_thuc`).
 - **Nguyên nhân gốc:** tài liệu khối 09 và chú thích trong `xem-truoc-ban-dung.py` ghi khoá `music`, còn code đọc khoá `nhac` → tài liệu lệch code; script gặp khoá lạ thì bỏ qua im lặng; quy trình không có bước đối chiếu "nhạc đã áp" với kế hoạch, chỉ thấy nhờ tình cờ đọc nhật ký ghép.
 - **Loại:** cách làm (học một vòng): kế hoạch chọn nhạc đúng, công cụ và tài liệu sai.

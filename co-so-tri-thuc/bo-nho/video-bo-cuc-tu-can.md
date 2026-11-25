@@ -18,7 +18,7 @@ metadata:
 Vẫn giữ: chuẩn âm lượng ([[video-nhac-theo-tuyen]]), không che mặt (thu người vào ô thì không tính là che), chữ nguyên văn
 ([[video-chu-nguyen-van]]), phụ đề luôn chạy. Mấy video đầu dùng bố cục mới thì chụp khung cho David duyệt trước khi render.
 
-**Why:** con số cứng ép mọi video vào một khuôn, không hợp nội dung.
+**Why:** con số cố định ép mọi video vào một mẫu, không hợp nội dung.
 
 **How to apply:** học video mẫu theo [[quy-tac-hoc-la-bo-sung]]. Khung gốc ở `ky-nang/san-xuat-video/thiet-ke-bo-cuc/`. `README.md` có tiêu
 chí và quy trình học, `bo-cuc.md` là danh mục bố cục, `am-thanh.md` là chỗ đặt tiếng, `nguon-tham-khao/` ghi mỗi nguồn một file. Code bố cục
@@ -26,7 +26,7 @@ nằm ở `bo-cuc.jsx`; người trong khung và người đang nói do `vi-tri-
 `bocuc`: `the-canh`, `o-nguoi`, `chuong`). Học nguồn mới thì chỉ thêm mục mới. Liên quan [[video-bo-ung-dung]],
 [[video-do-hoa-ke-chuyen]], [[video-kien-truc-ky-nang]].
 
-Nhà của luật: `ky-nang/san-xuat-video/thiet-ke-bo-cuc/README.md` và `ky-nang/san-xuat-video/quy-tac-chung.md` mục 4. Ghi nhớ này giữ ngày,
+Nguồn của luật: `ky-nang/san-xuat-video/thiet-ke-bo-cuc/README.md` và `ky-nang/san-xuat-video/quy-tac-chung.md` mục 4. Ghi nhớ này giữ ngày,
 lời David, lý do.
 
 ## Sổ

@@ -31,11 +31,11 @@ Nguyên tắc khi lệch: lời David mới nhất thắng (theo ngày chốt).
 | N10 | Mặt trên thumbnail | `nguyen-tac` 5 "thumbnail = mặt có cảm xúc"; `nhan-dien-thuong-hieu.md` + ghi nhớ `video-quy-trinh`: podcast hỏi "ảnh người nói" | `video-podcast-bia-khong-mat` (06/11) | Mặt chỉ cho video quay hình; podcast theo công thức bìa không mặt; bỏ câu hỏi ảnh người nói |
 | N11 | Cắt lặng video > 3 phút | Ghi nhớ `video-quy-trinh` (TH-1): "video > 3 phút cắt lặng ít nhất 1,2 s" | `video-dai-khong-cat` (05/11) | Bỏ TH-1 |
 | N12 | Số clip highlight | `MEMORY.md` + ghi nhớ `video-quy-trinh`: 3–5 clip | `video-clip-ngan-dung-doc-lap`, `cat-highlight` luật 2 (07/11): theo số ý đạt 4 câu | Theo 07/11, sửa chỗ cũ |
-| N13 | Lời kêu gọi highlight | `cat-highlight` luật 4: bắt buộc, không có thì dừng báo David | Bốn câu chọn ý (07/11): "không bắt buộc câu giao việc"; khuôn podcast dọc bỏ luật 4 | Lời kêu gọi **chỉ khi có trong lời**; không có thì không dừng, clip vẫn phải đạt `mang_ve` |
+| N13 | Lời kêu gọi highlight | `cat-highlight` luật 4: bắt buộc, không có thì dừng báo David | Bốn câu chọn ý (07/11): "không bắt buộc câu giao việc"; mẫu podcast dọc bỏ luật 4 | Lời kêu gọi **chỉ khi có trong lời**; không có thì không dừng, clip vẫn phải đạt `mang_ve` |
 | N14 | Thẻ cuối highlight | `cat-highlight` 7B: "nút phát + tên tập"; `quy-tac-chung` 1(c) + tiêu chí: "XEM BẢN ĐẦY ĐỦ" | Luật 11 + `video-nhan-dien-chung` (08/11): không nút phát, "Bản đầy đủ trên kênh …" | Một chữ: "Bản đầy đủ trên kênh <tên kênh>", không nút phát |
 | N15 | Lịch phát trên video | `quy-tac-chung` 1(c): lịch phát David đưa được ghi trên thẻ cuối | Podcast (05/11): không ghi thông tin phát hành nào lên video | Chỉ ghi khi David đưa cho đúng video đó (**David xác nhận** hay bỏ hẳn) |
 
-## B. Trùng (một luật nằm nhiều chỗ) thì giữ một nhà, chỗ khác một dòng trỏ
+## B. Trùng (một luật nằm nhiều chỗ) thì giữ một nguồn duy nhất, chỗ khác một dòng trỏ
 
 | # | Luật | Đang nằm ở | Nhà đề xuất |
 |---|---|---|---|
@@ -50,7 +50,7 @@ Nguyên tắc khi lệch: lời David mới nhất thắng (theo ngày chốt).
 | T9 | Không tự render lại | Ghi nhớ `video-khong-tu-render`, `phan-phoi-da-kenh`, `quy-tac-hoc-la-bo-sung` | File thói quen chung |
 | T10 | Chạy nền, báo cáo, chụp thử trước render | `quy-tac-chung` 8, podcast, `cat-highlight`, từng khối | File thói quen chung (cách làm) + khối 17 (chi tiết) |
 | T11 | "Đọc quy-tac-chung trước" | Mỗi skill nhắc 2–4 lần (Đọc trước · Luật · Tài liệu kèm) | Một khối "Đọc trước" duy nhất ở đầu mỗi skill — **tiết kiệm token** |
-| T12 | Ghi nhớ `video-quy-trinh-style-edit` | 30 dòng nhật ký 01–04/11, gần hết đã vào `quy-tac-chung` / changelog, nhiều dòng đã bị thay (N1, N4, N5, N6, N7, N10, N11, N12) | **Chuyển vào `luu-tru/`**, phần còn đúng đã có nhà ở `quy-tac-chung` |
+| T12 | Ghi nhớ `video-quy-trinh-style-edit` | 30 dòng nhật ký 01–04/11, gần hết đã vào `quy-tac-chung` / changelog, nhiều dòng đã bị thay (N1, N4, N5, N6, N7, N10, N11, N12) | **Chuyển vào `luu-tru/`**, phần còn đúng đã có nguồn duy nhất ở `quy-tac-chung` |
 
 ## C. Cũ (lỗi thời, sửa chữ là xong)
 

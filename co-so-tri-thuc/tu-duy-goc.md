@@ -82,7 +82,7 @@ thi lại. Không hạ mục tiêu để coi như đạt. Nguồn của vòng: `
 - **Nhìn lại sau kết quả** (Pólya, Deming): kết quả ra rồi thì rút cách làm dùng lại được — quy trình gốc bước 7 viết thành lá.
 - **Vấn đề lặp lại sau khi đã sửa** thì đang sửa ở đòn bẩy yếu (Meadows) hoặc cách nhìn sai (Boyd): lên một tầng, xem lại giả định, mục
   tiêu của hệ, hay cách mình đang nhìn vấn đề.
-- **Đổi mục tiêu là quyết định riêng của David**, không phải lối thoát khi kẹt: trình David, chờ vài ngày (`david.md` mục 2).
+- **Đổi mục tiêu là quyết định riêng của David**, không phải lối thoát khi vướng: trình David, chờ vài ngày (`david.md` mục 2).
 
 **Ví dụ việc thật** (intro DAVID TRẦN, việc #41, 23/11/2026):
 - Vệt đen giữa hai cảnh khi chuyển tiếp: vấn đề ở **cách làm** (mỗi lớp cảnh có nền đen riêng) → bỏ nền → kết quả.
@@ -105,7 +105,7 @@ thi lại. Không hạ mục tiêu để coi như đạt. Nguồn của vòng: `
   Ở David: buổi nhìn lại cuối tuần; ở bộ não: vòng tuần của trục tri thức.
 - **Đo học bằng thay đổi, không bằng cảm giác thích** (Kirkpatrick): mức Phản ứng và Học được chưa đủ; mức **Hành vi** và **Kết quả** mới
   là thay đổi. Thiết kế gói đào tạo **bắt đầu từ thay đổi muốn thấy** rồi đi ngược lại.
-- **Giảng lại bằng lời đơn giản** để biết mình đã hiểu (Feynman): chỗ vấp là chỗ chưa hiểu. Đây cũng là luật viết của bộ não (người đọc mới nào cũng hiểu).
+- **Giảng lại bằng lời đơn giản** để biết mình đã hiểu (Feynman): lỗi đã gặp là chỗ chưa hiểu. Đây cũng là luật viết của bộ não (người đọc mới nào cũng hiểu).
 - **Tri thức lớn lên bằng nối** (Luhmann): mỗi ý một nguồn duy nhất, ý mới luôn nối vào ý cũ; không nối vào đâu thì không tồn tại (`quy-uoc-lien-ket.md`).
 - **Mỗi bài học thành nguyên tắc** (Dalio): gặp lại tình huống giống thì làm theo, không nghĩ lại từ đầu (trục tri thức: lỗi nào cũng thành câu kiểm).
 

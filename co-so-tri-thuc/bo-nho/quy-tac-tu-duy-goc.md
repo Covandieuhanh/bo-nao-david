@@ -15,6 +15,6 @@ hóa tư duy của chính mình. Nhưng đầu tiên thì vẫn phải học t�
 **Why:** bộ não có cách lưu và học (trục tri thức) nhưng chưa có cách nghĩ; AI gặp việc chưa có quy trình phải tự đoán.
 
 **How to apply:** luật hiện hành ở `co-so-tri-thuc/tu-duy-goc.md` (tầng 0): bốn khối Bóc tách · Hành động · Học và thay đổi · Bản chất
-và kiểm sai; khung cố vấn (`mo-hinh-kinh-doanh.md`) đứng trước, cái học từ thế giới chỉ bổ sung. Thông tin mới phải móc vào một khối.
+và kiểm sai; khung cố vấn (`mo-hinh-kinh-doanh.md`) đứng trước, cái học từ thế giới chỉ bổ sung. Thông tin mới phải liên kết với một khối.
 Repo công khai ghi "cố vấn chiến lược của David", tên thật chỉ ở `rieng-mac/nguon-tu-duy-goc.md`. File tầng 0, chờ David chốt sau vài ngày.
 Liên quan: [[quy-tac-truc-tri-thuc]], [[quy-tac-hoc-tu-hinh-mau]], [[co-so-tri-thuc-ho-so-va-bo-loc]].

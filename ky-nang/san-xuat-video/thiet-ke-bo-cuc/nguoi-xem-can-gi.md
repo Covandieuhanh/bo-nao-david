@@ -31,10 +31,10 @@ Lấy từ các video kênh đã làm (`du-an/danh-muc-noi-dung.md`). Loại m�
 | `day-ky-nang` — dạy kỹ năng, chia sẻ kiến thức | có vấn đề → cách làm → bước; nhiều liệt kê, con số, "đầu tiên… sau đó…" | **hiểu + nhớ** để làm theo | Chia đoạn, Biết trước, Lời kèm hình, Báo hiệu | hình vừa ở ý khó (bước, so sánh, con số); nhịp đều; nhạc `kien_thuc` | dựng hình cho cả câu dễ; chữ dài trên hình |
 | `chia-se-quan-diem` — quan điểm, lý do, góc nhìn | "tôi nghĩ", "lý do là", lập luận A vì B; ít bước | **hiểu lập luận + tin** người nói | Báo hiệu (chỗ chốt), Lời kèm hình (quan hệ vì–nên), Tin | hình thưa, ở chỗ chuyển ý và câu chốt; nhịp chậm vừa | biến quan điểm thành "bước"; minh hoạ tự đặt |
 | `ke-chuyen` — chuyện đời, hành trình | thời gian quá khứ, "hồi đó", cảm xúc, nhân vật | **cảm** rồi mới hiểu bài học | Cảm xúc, Mặt người nói, Tinh gọn | rất ít hình; chữ nhấn ở đỉnh cảm xúc; nền hạt / người mờ; nhạc `tam_su` / `y_nghia`, chuyển cảnh lắng | sơ đồ giữa lúc kể; nhạc sôi động |
-| `suy-ngam` — độc thoại, podcast một người | nói liền, ít nhìn vào bước cụ thể, câu hỏi tự vấn | **theo kịp mạch** suy nghĩ | Chia đoạn, Báo hiệu, Giọng trò chuyện | chủ đề đang bàn + màn chương; hình ở câu đắt; nhịp chậm | phủ hình liên tục |
+| `suy-ngam` — độc thoại, podcast một người | nói liền, ít nhìn vào bước cụ thể, câu hỏi tự vấn | **theo kịp mạch** suy nghĩ | Chia đoạn, Báo hiệu, Giọng trò chuyện | chủ đề đang bàn + màn chương; hình ở câu then chốt; nhịp chậm | phủ hình liên tục |
 | `tro-chuyen` — trò chuyện, phỏng vấn hai người | hai giọng, hỏi – đáp | **biết ai đang nói gì, trả lời cho câu nào** | Báo hiệu (thẻ câu hỏi, tên), Gần chỗ, Mặt người nói | thẻ cạnh người nói; ô người bám đúng người; nhạc theo cảm xúc chủ đạo | che mặt người kia; hình toàn khung lâu |
 | `loi-chung` — lời chứng học viên, khách | một người kể kết quả với David / khoá học | **tin** (người thật, vai trò thật, kết quả thật) | Tin, Mặt người nói, Báo hiệu (tên · vai trò) | giữ người là chính; thẻ tên + vai trò; minh chứng (ảnh, trước/sau) nếu có | lời quảng cáo tự đặt; số liệu không do họ nói |
-| `vlog` — đời thường, sự kiện | nhiều cảnh, di chuyển, ít lời liền | **cảm không khí + theo được hành trình** | Cảm xúc, Chia đoạn (vòng, nơi chốn), Giữ chú ý | thẻ nơi chốn, tên vòng; nhạc theo không khí; khuôn ghép | thẻ kiến thức dày |
+| `vlog` — đời thường, sự kiện | nhiều cảnh, di chuyển, ít lời liền | **cảm không khí + theo được hành trình** | Cảm xúc, Chia đoạn (vòng, nơi chốn), Giữ chú ý | thẻ nơi chốn, tên vòng; nhạc theo không khí; mẫu ghép | thẻ kiến thức dày |
 | `huong-dan-man-hinh` — quay màn hình, thao tác, cuộc gọi | chủ thể là màn hình / người không nhìn camera | **thấy đúng chỗ đang thao tác + giữ được ý** | Gần chỗ, Báo hiệu, Chia đoạn | khung chủ thể + bảng ghi chú chạy; nhãn sát chỗ thao tác | che vùng thao tác; hình rời màn hình lâu |
 | `meo-ngan` — mẹo nhanh dọc, một ý | tối đa 90 s, dọc, một lời khuyên | **bắt được ý trong vài giây + nhớ** | Giữ chú ý, Báo hiệu (từ khoá to), Tinh gọn | mỗi lúc một điểm nhìn; hình to ít chữ; nhịp nhanh, nhạc `vui` hoặc theo cảm xúc | nhiều lớp cùng lúc |
 
@@ -56,7 +56,7 @@ Tên tiếng Anh giữ đúng nguồn, mỗi tên **một** bản dịch (dùng 
 - **Cái khó:** người xem không biết chỗ nào quan trọng, đang ở phần nào.
 - **Làm:** một chỗ sáng (mục đang nói cam, mục cũ mờ); từ nhấn `*từ*`, từ khoá to `^`; màn chương, thanh tiến trình, số thứ tự to; thẻ câu hỏi ở phỏng vấn.
 - **Phản tác dụng khi:** báo hiệu mọi thứ — nhiều chỗ sáng cùng lúc thì không chỗ nào sáng.
-- **Đã học:** Ali (tiến trình, mục lục); Cường Mê AI (một chỗ sáng); MagentX (số to, từ khoá to, thẻ câu hỏi, khuôn đừng/hãy lặp).
+- **Đã học:** Ali (tiến trình, mục lục); Cường Mê AI (một chỗ sáng); MagentX (số to, từ khoá to, thẻ câu hỏi, mẫu đừng/hãy lặp).
 
 ### Không trùng kênh — Redundancy Principle
 - **Cái khó:** vừa nghe lời vừa phải đọc nguyên câu đó trên hình thì mắt và tai giành nhau.
@@ -77,7 +77,7 @@ Tên tiếng Anh giữ đúng nguồn, mỗi tên **một** bản dịch (dùng 
 
 ### Chia đoạn — Segmenting Principle
 - **Cái khó:** nội dung dài liền một mạch thì người xem hụt hơi, lạc.
-- **Làm:** chia phần (chương, tiến trình ý, mục lục tích luỹ); một hình lớn dần qua các ý nối nhau (`chuoi`, `xay-tang`, `mach.js`); khuôn lặp cho danh sách (`dung-hay`).
+- **Làm:** chia phần (chương, tiến trình ý, mục lục tích luỹ); một hình lớn dần qua các ý nối nhau (`chuoi`, `xay-tang`, `mach.js`); mẫu lặp cho danh sách (`dung-hay`).
 - **Phản tác dụng khi:** chia vụn video ngắn một ý thành nhiều màn.
 
 ### Biết trước — Pre-training Principle
@@ -118,7 +118,7 @@ Mayer đo việc **hiểu**. Video trên mạng còn phải được **xem tới
 
 | Tên (`Cần:`) | Cái khó | Làm | Phản tác dụng khi | Nguồn |
 |---|---|---|---|---|
-| **Giữ chú ý** | 3 giây đầu không có lý do ở lại; một bố cục kéo quá lâu thì người xem lướt | mở bằng câu đắt nhất của chính người nói; đổi lớp mỗi vài giây nhưng mỗi lúc chỉ một thứ mới; kết quả trước, cách làm sau | đổi liên tục không có nghĩa (giật, chớp) | kinh nghiệm giữ chân YouTube (Paddy Galloway); MagentX |
+| **Giữ chú ý** | 3 giây đầu không có lý do ở lại; một bố cục kéo quá lâu thì người xem lướt | mở bằng câu then chốt của chính người nói; đổi lớp mỗi vài giây nhưng mỗi lúc chỉ một thứ mới; kết quả trước, cách làm sau | đổi liên tục không có nghĩa (giật, chớp) | kinh nghiệm giữ chân YouTube (Paddy Galloway); MagentX |
 | **Cảm xúc** | người xem không cảm thì không nhớ, không hành động | giữ mặt, giữ khoảng lặng ở đỉnh cảm xúc, nhạc đúng cảm xúc, chữ nhấn ít | phủ hình hoặc nhạc lên câu cảm xúc | Walter Murch, *In the Blink of an Eye* (Rule of Six: cảm xúc trước) |
 | **Tin** | người xem không chắc người nói có thật làm được không | mặt thật, minh chứng thật (ảnh, trước/sau, màn hình), tên + vai trò người làm chứng | dựng số liệu / lời mà người nói không nói | MagentX (lời chứng có vai trò, trước/sau) |
 | **Nhận diện** | người xem không nhận ra đây là kênh David | giữ chữ ký nhận diện ở mọi video | thêm màu / font của nguồn học | `thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0 |
@@ -146,5 +146,5 @@ nhưng ghi vào dòng `Vì:` nguyên lý nào bị bỏ và vì sao. Chỉ luậ
 
 Học nguồn mới theo `README.md` mục 4; điều học được ghi vào dòng "Đã học" (hoặc cột "Nguồn") của đúng nguyên lý ở đây.
 
-**Học qua ca thật:** [giai-mau.md](giai-mau.md) — 19 khoảnh khắc từ 8 hình mẫu thành công cùng thể loại, mỗi ca đủ Cần · Vì · Làm.
+**Học qua trường hợp thực tế:** [giai-mau.md](giai-mau.md) — 19 khoảnh khắc từ 8 hình mẫu thành công cùng thể loại, mỗi trường hợp đủ Cần · Vì · Làm.
 **Tự kiểm:** [bai-kiem/](bai-kiem/README.md) — 10 đoạn, AI làm rồi chấm bằng `cham.py`, đạt ít nhất 8/10.

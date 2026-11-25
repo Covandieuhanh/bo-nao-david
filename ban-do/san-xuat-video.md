@@ -82,8 +82,8 @@ Gốc: [bản đồ bộ não](README.md). Chiến lược kênh: [chien-luoc-no
 ## Bố cục, nhận diện, thư viện hình
 - [thiet-ke-bo-cuc](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/README.md) — Lớp trình bày video: tiêu chí gốc để học mọi loại video mới, giữ chữ ký nhận diện.
 - [nguoi-xem-can-gi](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/nguoi-xem-can-gi.md) — Cửa vào tư duy dựng video: loại nội dung → cái khó của người xem → nguyên lý (Mayer + 4 ngoài Mayer) → cách thể hiện.
-- [giai-mau](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/giai-mau.md) — 19 ca giải từ 8 hình mẫu thành công cùng thể loại (Ali Abdaal, Jeff Su, DOAC, Nguyễn Hữu Trí, Huy Luong, Nhật Anh AI, Giang Ơi, Khánh Vy).
-- [bai-kiem](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/bai-kiem/README.md) — Bài kiểm suy luận 10 đoạn + máy chấm `cham.py`, chạy khi máy mới / đổi luật.
+- [giai-mau](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/giai-mau.md) — 19 trường hợp giải từ 8 hình mẫu thành công cùng thể loại (Ali Abdaal, Jeff Su, DOAC, Nguyễn Hữu Trí, Huy Luong, Nhật Anh AI, Giang Ơi, Khánh Vy).
+- [bai-kiem](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/bai-kiem/README.md) — Bài kiểm suy luận 10 đoạn + công cụ chấm `cham.py`, chạy khi máy mới / đổi luật.
 - [tu-chon](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/tu-chon.md) — Tự chọn cách trình bày: yêu cầu người dùng → đo → loại nội dung → từng đoạn cái khó → nguyên lý → cách thể hiện.
 - [bo-cuc](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/bo-cuc.md) — Danh mục bố cục video để chọn (không phải công thức). Có ảnh mẫu từng kiểu (`anh-mau/`, chụp lại bằng `anh-mau/cong-cu/chup-anh-mau.sh`).
 - [am-thanh](../ky-nang/san-xuat-video/thiet-ke-bo-cuc/am-thanh.md) — Âm thanh theo bố cục: chỗ đặt tiếng ký hiệu, ting, vút theo cảnh.
@@ -116,8 +116,8 @@ Gốc: [bản đồ bộ não](README.md). Chiến lược kênh: [chien-luoc-no
 - [video-chuyen-qua-drive](../co-so-tri-thuc/bo-nho/video-chuyen-qua-drive.md) — ~/Movies xếp theo tập; Drive covandieuhanh chỉ giữ bộ não, video gốc, thành quả video; Mac chỉ giữ việc đang làm (07/11, 08/11, 11/11; gộp 15/11)
 - [video-clip-ngan-dung-doc-lap](../co-so-tri-thuc/bo-nho/video-clip-ngan-dung-doc-lap.md) — Mỗi clip ngắn cắt từ video dài phải tự có hoàn cảnh và nội dung riêng cho người xem độc lập, và phải đạt trọng tâm làm chủ bản thân / công việc; không chỉ cảm xúc (2026-11-06)
 - [video-dai-khong-cat](../co-so-tri-thuc/bo-nho/video-dai-khong-cat.md) — Video dài (podcast, tâm sự, thực tế, vlog) để nguyên không cắt, kể cả khoảng lặng và tiếng ờ ừm; tính năng cắt chỉ dùng khi trích video ngắn từ video dài (David chốt 2026-11-05)
-- [video-do-hoa-ke-chuyen](../co-so-tri-thuc/bo-nho/video-do-hoa-ke-chuyen.md) — Mọi video có motion graphics nhiều loại để kể lại câu chuyện, không khuôn; mọi bước AI sáng tạo trong khung + tiêu chí + nhận diện (2026-11-07, 09/11, gộp 10/11)
-- [video-doc-khuon-chu-chinh](../co-so-tri-thuc/bo-nho/video-doc-khuon-chu-chinh.md) — Khuôn podcast đồ hoạ dọc David chốt — chữ chính thay phụ đề, nhạc khoảng 23 dB dưới giọng vẫn nghe được, không ép hành động, kết ở câu đắt nhất, không màn hình cuối; 3 clip "Đi trainer" là mẫu (2026-11-06, sửa 10/11)
+- [video-do-hoa-ke-chuyen](../co-so-tri-thuc/bo-nho/video-do-hoa-ke-chuyen.md) — Mọi video có motion graphics nhiều loại để kể lại câu chuyện, không mẫu; mọi bước AI sáng tạo trong khung + tiêu chí + nhận diện (2026-11-07, 09/11, gộp 10/11)
+- [video-doc-khuon-chu-chinh](../co-so-tri-thuc/bo-nho/video-doc-khuon-chu-chinh.md) — Mẫu podcast đồ hoạ dọc David chốt — chữ chính thay phụ đề, nhạc khoảng 23 dB dưới giọng vẫn nghe được, không ép hành động, kết ở câu then chốt, không màn hình cuối; 3 clip "Đi trainer" là mẫu (2026-11-06, sửa 10/11)
 - [video-gop-y-render-lai](../co-so-tri-thuc/bo-nho/video-gop-y-render-lai.md) — Video làm một mạch, không cổng 1, cổng 2: góp ý thì sửa rồi render lại toàn bộ luôn; đăng chờ David nói "đăng" (13/11/2026)
 - [video-kien-truc-ky-nang](../co-so-tri-thuc/bo-nho/video-kien-truc-ky-nang.md) — Kiến trúc bộ skill video (hồ sơ tham số, 20 khối, thư viện hình, mẫu chuẩn; sửa đúng một chỗ) và bộ 5 video chuẩn 06/11 (04/11, 06/11; gộp 15/11)
 - [video-lam-lai-video-cu](../co-so-tri-thuc/bo-nho/video-lam-lai-video-cu.md) — Làm lại video cũ kênh "Cường Kể Chuyện": bỏ lời chào, giới thiệu kênh cũ, chữ và viền in trong hình; mỗi video ra một bản riêng; làm trọn rồi David góp ý sau (2026-11-08)

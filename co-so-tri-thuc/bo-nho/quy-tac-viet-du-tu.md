@@ -12,4 +12,4 @@ Viết đủ từ, đủ nghĩa; không viết tắt chữ thường ngày; tron
 
 21/11/2026 David chốt cách viết ký hiệu "→": "Giữ trong bảng, câu viết chữ" — giữ trong bảng và chuỗi bước, trong câu văn viết bằng chữ ("thì", "thành").
 
-**How to apply:** nhà của luật: `AGENTS.md` luật 1 (tóm ở `co-so-tri-thuc/chi-dan-toan-cuc.md`), trục `co-so-tri-thuc/truc-tri-thuc.md` mục 0. Máy đo chồng chéo đếm chữ viết tắt (`viet_tat`). Câu kiểm: `co-so-tri-thuc/bai-kiem` câu c06. Liên quan [[quy-tac-truc-tri-thuc]], [[co-so-tri-thuc-quy-uoc-dat-ten]].
+**How to apply:** nguồn của luật: `AGENTS.md` luật 1 (tóm ở `co-so-tri-thuc/chi-dan-toan-cuc.md`), trục `co-so-tri-thuc/truc-tri-thuc.md` mục 0. Công cụ đo chồng chéo đếm chữ viết tắt (`viet_tat`). Câu kiểm: `co-so-tri-thuc/bai-kiem` câu c06. Liên quan [[quy-tac-truc-tri-thuc]], [[co-so-tri-thuc-quy-uoc-dat-ten]].

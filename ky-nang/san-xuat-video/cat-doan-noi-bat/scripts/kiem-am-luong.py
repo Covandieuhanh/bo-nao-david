@@ -1,5 +1,5 @@
 # Soát điểm cắt bằng độ lớn tiếng thật: kiem-am-luong.py <dự án> [mã phương án]
-# Mốc từ của Whisper hay lệch ở chỗ ngắt câu (chữ đầu bị kéo sớm vào khoảng lặng, chữ cuối kéo dài) → cắt theo đó dễ lọt đuôi
+# Mốc từ của Whisper hay lệch ở chỗ ngắt câu (chữ đầu bị kéo sớm vào khoảng lặng, chữ cuối kéo dài) → cắt theo đó dễ tràn đuôi
 # chữ câu trước hoặc mất đầu chữ. Script đọc kiem-tra/goc/am-luong-05.txt (tao-doan-noi-bat.sh tạo, 0,05 s/dòng) và phuong-an.json,
 # với mỗi câu in dải độ lớn quanh start/end (█ có tiếng · ▁ lặng) + mốc đề xuất:
 #   start → chỗ tiếng bắt đầu sau khoảng lặng chứa/đứng trước mốc Whisper (lặng bắt đầu ≤ start + 0,3 s, dứt ≤ start + 1,8 s)

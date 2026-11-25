@@ -23,4 +23,4 @@ Motion graphics dùng loại nào cũng được, nhưng **không được sáng
 Không hiện nhãn tốc độ hay ghi chú kỹ thuật trên video (×1,6, ×0,5, "tua nhanh", "slow-mo", "xem chậm"). Hiệu ứng tua nhanh/phát chậm vẫn dùng, chỉ không chú thích.
 
 **Why:** người dùng thấy các ghi chú kỹ thuật thừa, chữ trên màn hình chỉ nên phục vụ nội dung.
-**How to apply:** nhà của luật `ky-nang/san-xuat-video/quy-tac-chung.md` mục 4 (Hình); cách làm ở `ky-nang/san-xuat-video/dung-video-theo-phong-cach/references/nhieu-doan-video.md`, template bỏ `speed`. Áp cho mọi video, cả khi tự viết component mới.
+**How to apply:** nguồn của luật `ky-nang/san-xuat-video/quy-tac-chung.md` mục 4 (Hình); cách làm ở `ky-nang/san-xuat-video/dung-video-theo-phong-cach/references/nhieu-doan-video.md`, template bỏ `speed`. Áp cho mọi video, cả khi tự viết component mới.

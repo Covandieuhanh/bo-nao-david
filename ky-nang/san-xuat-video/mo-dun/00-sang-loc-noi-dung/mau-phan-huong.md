@@ -22,7 +22,7 @@ Mẫu đã làm: `~/Movies/tap-marketing-noi-dau-nhu-cau/phan-huong.md` (chỉ �
 ### Hướng <n> — <dạng bản> · ~<phút> · <nơi đăng>
 Đoạn (theo thứ tự buổi nói): S1 → S2 → …
 Intro / câu mở: "<nguyên văn>" (<mốc>)
-Mối nối cần soát: <S3→S5: câu trỏ về trước "…" → kéo theo / bỏ câu / thẻ chương "<nguyên văn>">
+Điểm nối cần soát: <S3→S5: câu trỏ về trước "…" → kéo theo / bỏ câu / thẻ chương "<nguyên văn>">
 Bán được gì: <nỗi đau → gói → bước phễu>
 (Hướng không ra bản: ghi "không ra bản — <lý do>".)
 

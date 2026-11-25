@@ -17,11 +17,11 @@ description: "Khối 07 cảnh minh hoạ: bố cục tự cân, motion graphics
 - `dung-video-theo-phong-cach/references/thiet-ke-canh.md` (bảng loại cảnh + props)
 
 ## 1. Motion graphic kể chuyện — tự do sáng tạo (mục này đứng trên mọi mục dưới)
-Motion graphic là để **diễn tả lại câu chuyện**, không phải đưa hình vào cho có. AI sáng tạo theo từng video, không dập khuôn.
+Motion graphic là để **diễn tả lại câu chuyện**, không phải đưa hình vào cho có. AI sáng tạo theo từng video, không dập mẫu.
 - **Giữ cố định = chữ ký nhận diện** (`thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0). Còn lại tự do: nền (tối, sáng, giấy, người mờ),
   kết cấu, kiểu hình (biểu tượng nét tròn, phấn, ảnh), chữ nhấn phụ, bố cục, chuyển động, độ dài, số cảnh.
 - **Mọi video đều có điểm nhấn, nhưng chỉ vài kiểu hợp nội dung nhất** (quy-tac-chung mục 0, 4) — "dựng nhẹ" vẫn có điểm nhấn. Kiểu mạnh
-  nhất để cho câu đắt nhất. Danh mục kiểu cảnh dưới đây (`nhan`, `bocuc`, `illus`, `diagram`, `card`…) chỉ là công cụ có sẵn — dùng
+  nhất để cho câu then chốt. Danh mục kiểu cảnh dưới đây (`nhan`, `bocuc`, `illus`, `diagram`, `card`…) chỉ là công cụ có sẵn — dùng
   khi hợp, không bắt buộc.
 - Cần hình riêng thì dùng **cảnh tự vẽ** (`type: 've'`): component React riêng của video trong `chuyen-dong/src/rieng/` (đăng ký ở
   `rieng/diem-vao.js`, xem mẫu `mau-mach.jsx`), dùng `thu-vien/chuyen-dong.js`, `thu-vien/chu-hien.jsx`, `thu-vien/cho.js` (tránh người).
@@ -48,7 +48,7 @@ Viết **trước** bảng cảnh, vì cảm xúc chọn kiểu cảnh chứ kh�
 ```
 - Gợi ý cảm xúc (không đóng): tò mò, nhận ra mình, day dứt, nghi ngờ, căng, vỡ ra, nhẹ nhõm, gần gũi, tin, quyết, bình yên.
 - Cảm xúc được định nghĩa bởi cái đứng trước nó: nhẹ nhõm cần căng phía trước, vỡ ra cần lặng phía trước.
-- **Một đỉnh**, thường là câu đắt nhất của David. Đỉnh nhận cảnh lớn nhất (thường là bước lớn nhất của mạch hình); không có ba đỉnh tranh nhau.
+- **Một đỉnh**, thường là câu then chốt của David. Đỉnh nhận cảnh lớn nhất (thường là bước lớn nhất của mạch hình); không có ba đỉnh tranh nhau.
 - Mỗi cảnh trong bảng cảnh ghi thêm cột "cảm xúc", lấy từ đường này.
 
 ## 3. Bố cục tự cân
@@ -177,7 +177,7 @@ Chuyển động phải dẫn mắt tới ý đang nói, không để trang trí
 - **Giữ đủ đọc:** 0,5 s + 0,3 s mỗi từ (`docDu`); câu cuối video ít nhất 2 s.
 - **Vào cảnh qua một vật trên màn hình khi được** (việc bay sang bên nhận, màu tràn từ vật ra), không mờ chồng cả khung.
 - **Chuyển cảnh có nguyên do, 3–5 kiểu một video:** tối nhẹ khoảng 40 % trong 3 khung trước cắt cứng · đổi trên cùng nền (mờ ra 8 px thì mờ
-  vào) · màu tràn nền · vật trên màn hình lớn dần thành cảnh sau. Tối đa một phần ba số mối nối là cắt cứng.
+  vào) · màu tràn nền · vật trên màn hình lớn dần thành cảnh sau. Tối đa một phần ba số điểm nối là cắt cứng.
 - Không cắt theo nhịp nhạc (video của David đi theo lời).
 - **Soát kiểu "máy làm" khi xem chụp thử:** che chữ đi, hình còn kể được ý không; mọi cảnh có vào giống nhau không; có gì còn
   trôi/phóng sau khi đã vào không.

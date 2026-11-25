@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Chép lời theo từng khúc ngắn rồi hợp nhất (chính xác hơn chép cả file nơi ồn).
+"""Chép lời theo từng phân đoạn ngắn rồi hợp nhất (chính xác hơn chép cả file nơi ồn).
 Dùng: python3 -I chep-theo-khuc.py <video|am-thanh> <thư-mục-ra> [độ-dài-khúc-giây]
 Ra: <thư-mục-ra>/khuc-NNNN.json (whisper) và loi-hop-nhat.txt (mốc giờ + chữ).
 Lưu ý: cuối mỗi khúc whisper hay bịa câu kêu gọi đăng ký; script lọc các câu đó, người làm vẫn phải soát tay chỗ nghi ngờ."""
@@ -26,7 +26,7 @@ while t < dur:
             tx = s['text'].strip(); a = s['offsets']['from'] / 1000 + t; b = s['offsets']['to'] / 1000 + t
             if tx and not any(k in tx.lower() for k in BIA): rows.append((a, b, tx))
     except Exception as e:
-        print('lỗi khúc', i, e)
+        print('lỗi phân đoạn', i, e)
     os.remove(wav); t += L; i += 1
 with open(f'{out}/loi-hop-nhat.txt', 'w', encoding='utf-8') as f:
     for a, b, tx in rows: f.write(f'[{a:8.2f} → {b:8.2f}] {tx}\n')

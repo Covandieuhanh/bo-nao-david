@@ -16,11 +16,11 @@ description: "Gói 2 dựng bộ não bằng file cho AI, phần 4: phiếu kh�
 |---|---|---|
 | Thời gian giải thích lại bối cảnh mỗi lần mở AI mới (phút) | | |
 | Số lần phải sửa AI trong một buổi làm việc | | |
-| Điểm người đọc lạnh (phần trăm câu kiểm AI mới tinh trả lời đúng) | | |
+| Điểm người đọc mới (phần trăm câu kiểm AI mới tinh trả lời đúng) | | |
 | Tự tin tự nuôi bộ não (1–10) | | |
 
 ## C. Nghiệm thu (đủ cả 4 mới xong gói)
-- [ ] Học viên tự chạy bài kiểm người đọc lạnh trước mặt trainer: bài kiểm có ít nhất 10 câu, đúng ít nhất 90%
+- [ ] Học viên tự chạy bài kiểm người đọc mới trước mặt trainer: bài kiểm có ít nhất 10 câu, đúng ít nhất 90%
 - [ ] Bộ não đã qua ít nhất 3 dự án thật, mỗi dự án có sổ
 - [ ] Bài kiểm có ít nhất 10 câu từ lỗi thật, đáp án nằm ngoài bộ não; đã qua một đợt nâng cấp có đo trước và sau
 - [ ] Lời chứng (ẩn danh nếu muốn) và số trước, sau

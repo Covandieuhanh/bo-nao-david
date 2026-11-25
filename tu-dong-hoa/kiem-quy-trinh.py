@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# MÁY KIỂM CÂY QUY TRÌNH (quy-trinh.md mục 2, khung lá) — chạy mỗi lần đẩy GitHub (dong-bo.sh), hoặc tay: python3 -I tu-dong-hoa/kiem-quy-trinh.py
+# CÔNG CỤ KIỂM TRA CÂY QUY TRÌNH (quy-trinh.md mục 2, khung lá) — chạy mỗi lần đẩy GitHub (dong-bo.sh), hoặc tay: python3 -I tu-dong-hoa/kiem-quy-trinh.py
 # Chặn khi: (1) lá trỏ tới file không có · (2) lá không ghi "Điểm duyệt" hoặc "Xong khi" · (3) file quy trình lá riêng (references/) thiếu
 # mục "Điểm duyệt" hoặc "Xong khi" · (4) một SKILL.md dùng chung thiếu mục "Xong khi" · (5) một SKILL.md dùng chung không có lá nào trong cây.
 import os, re, sys

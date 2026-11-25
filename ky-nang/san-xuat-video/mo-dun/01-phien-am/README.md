@@ -29,9 +29,9 @@ tự nhập mật khẩu dù được cho). Mô hình Whisper 1,5 GB: hỏi trư
 ```bash
 zsh $SKILL/scripts/phan-tich-video.sh "$P/tu-lieu/video-goc.mp4" "$P/kiem-tra/goc"
 ```
-Đọc `ban-chep-loi.srt` (Whisper hay nghe nhầm tên riêng, thuật ngữ — tự sửa khi dùng làm chữ trên màn hình). Whisper bịa câu ở đoạn
+Đọc `ban-chep-loi.srt` (Whisper hay nghe nhầm tên riêng, thuật ngữ — tự sửa khi dùng làm chữ trên màn hình). Whisper bịa đặt câu ở đoạn
 không lời thì bỏ (quy-tac-chung mục 1).
-**Nơi ồn (quán cà phê, ngoài trời), chép lại một đoạn để kiểm**: chép theo khúc tối đa 20 s, `-mc 0` (không ngữ cảnh), **bản gốc
+**Nơi ồn (quán cà phê, ngoài trời), chép lại một đoạn để kiểm**: chép theo phân đoạn tối đa 20 s, `-mc 0` (không ngữ cảnh), **bản gốc
 trước, không lọc**; dính câu ảo "Hãy subscribe cho kênh…" mới thử bản lọc dải tiếng (lọc trước làm ảo giác nhiều hơn). Bản dài chép một
 lượt có thể lặp một câu hàng chục lần ("Mình nó bị vướng quá nhiều" × 40) thì không dùng làm mốc. Mốc từng từ (`-ml 1`) lệch 0,5–2 s:
 dùng để tìm câu, không dùng làm điểm cắt (khối 02 `diem-ngat.py`) hay mốc phụ đề (khối 03 `soat-khop-tieng.py`).

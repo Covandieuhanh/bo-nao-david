@@ -2,20 +2,20 @@
 description: "Biểu mẫu 01 gói dựng bộ não: khuôn bốn file gốc (cửa vào, hồ sơ, luật làm việc, trạng thái), trục học, sổ bài học, ý tưởng, sổ dự án, nguyên lý, quy trình; chép ra rồi điền."
 ---
 
-# Biểu mẫu 01 · Khuôn các file
+# Biểu mẫu 01 · Mẫu các file
 
-File biểu mẫu này tải lên Projects ở bước 1 với tên `01-khuon-file-goc.md` và **để đó luôn**: AI dùng nó để tạo file mới. Nó là khuôn, không phải thông tin về mình, nên không ghi vào bảng file.
+File biểu mẫu này tải lên Projects ở bước 1 với tên `01-khuon-file-goc.md` và **để đó luôn**: AI dùng nó để tạo file mới. Nó là mẫu, không phải thông tin về mình, nên không ghi vào bảng file.
 
-Chép từng khuôn thành một file trong thư mục `bo-nao`, đúng tên file ghi ở tiêu đề (cách tạo file: biểu mẫu 00, thao tác 3). **Chỉ chép phần bên trong**, không chép dòng ba dấu ``` ở đầu và cuối mỗi khuôn. Chỗ `<…>` là chỗ điền. Dòng đầu mỗi file luôn là câu mô tả file đó chứa gì: AI đọc câu này để biết có cần mở file hay không.
+Chép từng mẫu thành một file trong thư mục `bo-nao`, đúng tên file ghi ở tiêu đề (cách tạo file: biểu mẫu 00, thao tác 3). **Chỉ chép phần bên trong**, không chép dòng ba dấu ``` ở đầu và cuối mỗi khuôn. Chỗ `<…>` là chỗ điền. Dòng đầu mỗi file luôn là câu mô tả file đó chứa gì: AI đọc câu này để biết có cần mở file hay không.
 
-| Khuôn | Tạo ở bước |
+| Mẫu | Tạo ở bước |
 |---|---|
 | bốn file gốc: `doc-truoc.md`, `ho-so.md`, `luat-lam-viec.md`, `trang-thai.md` | 1 |
 | `truc-hoc.md`, `bai-hoc.md`, `y-tuong.md` | 3 |
 | `du-an-<ten>.md` | 4 (buổi đầu mỗi dự án) |
 | `quy-trinh-<ten-viec>.md` | 3 (bài tập, cho việc đã làm ít nhất 2 lần) và 6 |
 | `nguyen-ly-<ten>.md` | 6 (khi nhìn lại tuần thấy ít nhất 3 chuyện cùng bài học) |
-| `bai-kiem.md`, `dap-an.md` | 5 (khuôn ở biểu mẫu 03) |
+| `bai-kiem.md`, `dap-an.md` | 5 (mẫu ở biểu mẫu 03) |
 
 ---
 
@@ -38,7 +38,7 @@ Bạn đang làm việc với <tên>. Các file ở đây là bộ não của <t
 4. Các file khác: tra bảng dưới, mở file đúng việc đang làm.
 
 ## Bảng file (tạo file mới thì thêm một dòng)
-Bảng ghi mọi file trong bộ não, trừ chính file này và file 01-khuon-file-goc.md (file đó chỉ là khuôn để tạo file mới, không phải thông tin về <tên>).
+Bảng ghi mọi file trong bộ não, trừ chính file này và file 01-khuon-file-goc.md (file đó chỉ là mẫu để tạo file mới, không phải thông tin về <tên>).
 Tên file bắt đầu bằng "quy-trinh-" là tầng 2, "nguyen-ly-" là tầng 1, "du-an-" và "nguon-hoc-" là tầng 3.
 
 | File | Tầng | Chứa |
@@ -58,7 +58,7 @@ Mô tả: Hồ sơ của <tên>: là ai, làm gì, mục tiêu, thế mạnh, c�
 # Hồ sơ
 
 ## Tôi là ai
-- Tên, nghề, đang sống và làm việc ở: <…>
+- Tên, nghề, hiện hành và làm việc ở: <…>
 - Làm những việc gì (mỗi việc một dòng): <…>
 - Khách hàng hay người tôi phục vụ là ai: <…>
 
@@ -88,7 +88,7 @@ Mô tả: Luật AI phải theo khi làm việc với <tên>. Lời <tên> nói 
 
 1. Ngôn ngữ và cách trả lời: <ví dụ: tiếng Việt, ý chính trước, ngắn gọn, viết đủ từ không viết tắt>
 2. Trước khi làm việc lớn: <ví dụ: nói mục tiêu và các bước, chờ tôi duyệt rồi mới làm>
-3. Không bao giờ: <ví dụ: hỏi mật khẩu, bịa số liệu, tự quyết thay tôi việc tốn tiền>
+3. Không bao giờ: <ví dụ: hỏi mật khẩu, bịa đặt số liệu, tự quyết thay tôi việc tốn tiền>
 4. <điều hay phải nhắc 1>
 5. <điều hay phải nhắc 2>
 6. <điều hay phải nhắc 3>

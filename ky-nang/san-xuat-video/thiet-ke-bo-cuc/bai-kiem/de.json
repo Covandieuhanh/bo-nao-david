@@ -1,5 +1,5 @@
 {
-  "_mo_ta": "Bài kiểm suy luận dựng video: 10 đoạn diễn ý từ các hình mẫu (giai-mau.md, đo 20/11/2026). Đáp án = cách hình mẫu đã làm + nguyên lý. Không phải các ca đã giải trong giai-mau.md. Tên nguyên lý: nguyen-ly.json. Cách làm ghi bằng tên trong kho (tu-chon.md 4c) hoặc từ đặc biệt: 'giữ người' (người nói + phụ đề, không dựng thêm), 'cảnh thật' (tư liệu / cảnh quay thật), 'cắt chờ'.",
+  "_mo_ta": "Bài kiểm suy luận dựng video: 10 đoạn diễn ý từ các hình mẫu (giai-mau.md, đo 20/11/2026). Đáp án = cách hình mẫu đã làm + nguyên lý. Không phải các trường hợp đã giải trong giai-mau.md. Tên nguyên lý: nguyen-ly.json. Cách làm ghi bằng tên trong kho (tu-chon.md 4c) hoặc từ đặc biệt: 'giữ người' (người nói + phụ đề, không dựng thêm), 'cảnh thật' (tư liệu / cảnh quay thật), 'cắt chờ'.",
   "dat": 8,
   "doan": [
     {"id": "d01", "loai": "day-ky-nang", "khung": "ngang, video dài", "nguon": "ALI ~2:30",
@@ -15,7 +15,7 @@
      "doan": "Mở tập, người kể báo đây là tập cuối của một loạt bài Tết, chủ đề của tập là khi người lớn làm mẹ.",
      "dap_an": {"can": ["Biết trước", "Chia đoạn"], "lam_duoc": ["chuong", "tien-trinh", "hook"], "khong_lam": ["diagram", "illus"]}},
     {"id": "d05", "loai": "tro-chuyen", "khung": "ngang, hai người", "nguon": "DOAC ~1:40",
-     "doan": "Người dẫn nhìn máy giới thiệu khách: một nhà sử học chuyên về chiến lược, rồi máy chuyển sang khách lần đầu cất lời.",
+     "doan": "Người dẫn nhìn máy giới thiệu khách: một nguồn duy nhất sử học chuyên về chiến lược, rồi máy chuyển sang khách lần đầu cất lời.",
      "dap_an": {"can": ["Tin", "Báo hiệu"], "lam_duoc": ["lower"], "khong_lam": ["diagram", "o-tron"]}},
     {"id": "d06", "loai": "tro-chuyen", "khung": "ngang, hai người", "nguon": "DOAC ~2:30",
      "doan": "Người dẫn hỏi một câu then chốt về nguy cơ chiến tranh; khách trả lời dài khoảng một phút, nhiều cảm xúc, không có bước hay con số.",

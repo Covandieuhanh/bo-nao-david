@@ -6,7 +6,7 @@ description: "Bộ nhận diện chung mọi loại video: vị trí, thành ph�
 
 **Mọi loại video có cùng tiêu chuẩn** (vị trí, thành phần cố định, ngôn ngữ thiết kế). Chỉ **motion graphics** là tự do chọn theo loại
 video và theo từng cảnh. Một nguồn code: `nhan-dien-thuong-hieu.js` (`khung(W, H)`), `dau-goc.jsx`, `thanh-thoi-gian.jsx`, `than-man-ket.jsx`,
-`bien-thiet-ke.js`, `thuong-hieu.json`, `kieu-phu-de.js`, `keu-goi-hanh-dong.js`, `bieu-tuong.jsx`. Khuôn 1 video, podcast, ghép vlog, highlight đều đọc ở đây.
+`bien-thiet-ke.js`, `thuong-hieu.json`, `kieu-phu-de.js`, `keu-goi-hanh-dong.js`, `bieu-tuong.jsx`. Mẫu 1 video, podcast, ghép vlog, highlight đều đọc ở đây.
 
 ## 0. Chữ ký nhận diện — thứ duy nhất thẩm mỹ phải giữ
 
@@ -35,7 +35,7 @@ tròn, phấn vẽ tay, ảnh), bố cục, chuyển động. Thử: che dấu g
 | Màn kết YouTube (video dài) | — | 15–20 s, khung chừa 2 video + nút đăng ký | `man-ket-youtube.jsx` |
 
 Chủ đề ở dấu góc: `project.topic` (1 video), `show.name` (vlog), tên chương trình (podcast), tên tập gốc (highlight).
-Khuôn tiêu đề: dòng nhỏ cam → gạch cam → chữ cô đặc in hoa trắng, dòng nhấn cam.
+Mẫu tiêu đề: dòng nhỏ cam → gạch cam → chữ cô đặc in hoa trắng, dòng nhấn cam.
 
 Luật kèm theo:
 - **Không logo nền tảng, không nút phát đỏ** ở bất kỳ thẻ nào.
@@ -45,8 +45,8 @@ Luật kèm theo:
   cuối**; màn chốt hiện câu nguyên văn ngay trên khung hình (không thu nhỏ video), video kết ở chữ cuối để tự lặp. Lý do: nền tảng đã
   có thanh riêng, "còn 0:20" và màn "hết rồi" khiến người xem lướt đi, thẻ cuối làm đứt vòng lặp. Dẫn về bản đầy đủ / mời bình luận
   để ở caption + bình luận ghim. Máy tự nhận (`nganDoc()` trong `nhan-dien-thuong-hieu.js`, `NGAN_DOC` trong `thanh.js`).
-- Ép tay: thanh thời gian `project.thanh` / thẻ cuối `project.theCuoi` (khuôn 1 video, podcast) · `export const THANH` /
-  `THE_CUOI` (danh-sach-cat.js khuôn ghép).
+- Chỉ định thủ công: thanh thời gian `project.thanh` / thẻ cuối `project.theCuoi` (mẫu 1 video, podcast) · `export const THANH` /
+  `THE_CUOI` (danh-sach-cat.js mẫu ghép).
 - Highlight có thanh của cả tập gốc (`HL.bar`) thì thanh đó thay thanh thường, cùng vị trí.
 
 ## 2. Phần tự do (motion graphics)
@@ -56,11 +56,11 @@ theo danh mục `../thiet-ke-bo-cuc/bo-cuc.md`. Tự do về **cái gì, lúc n�
 
 **Chữ nhấn trên người nói** (`pow`, kể cả thẻ tít mở): không chạm mặt, không nền tối mờ phủ hình, vì chữ dính vào mặt và nền
 đen mờ làm mất thẩm mỹ. Kiểu chuẩn là **nhãn dán**: mỗi dòng một nhãn đặc màu (dòng trước trắng chữ sẫm, dòng cuối cam chữ
-trắng), canh đáy vào đáy dải phụ đề (phụ đề nhường lúc này), khối chữ nằm ngực/bụng xa cằm. Code: `Pow` trong khuôn ghép `chuong-trinh.jsx`.
+trắng), canh đáy vào đáy dải phụ đề (phụ đề nhường lúc này), khối chữ nằm ngực/bụng xa cằm. Code: `Pow` trong mẫu ghép `chuong-trinh.jsx`.
 
 ## 3. Sửa bộ nhận diện
 
-1. Sửa đúng một chỗ trong thư mục này (không viết số vị trí riêng trong khuôn dựng).
+1. Sửa đúng một chỗ trong thư mục này (không viết số vị trí riêng trong mẫu dựng).
 2. Chụp kiểm cả khung ngang lẫn dọc, mỗi loại một dự án đã duyệt: podcast ngang (`tap-di-trainer/2-ban-day-du`), clip podcast dọc
    (`tap-di-trainer/3-doan-noi-bat/clip-A`), video người nói ngang (`tap-su-tap-trung/2-ban-day-du`, `tap-di-bo-hang-ngay/2-ban-day-du`),
    clip người nói dọc (`tap-*/3-doan-noi-bat/clip-A` của 4 video cũ).
@@ -68,6 +68,6 @@ trắng), canh đáy vào đáy dải phụ đề (phụ đề nhường lúc n�
 
 ## 4. Còn thiếu (ghi để không quên)
 
-- **Khuôn ghép khung ngang:** vùng an toàn, dấu góc, thanh thời gian, phụ đề, màn chốt (ô video 50 % bề ngang), `pow` (`x`) và thẻ `title`
+- **Mẫu ghép khung ngang:** vùng an toàn, dấu góc, thanh thời gian, phụ đề, màn chốt (ô video 50 % bề ngang), `pow` (`x`) và thẻ `title`
   `over` đã kiểm ở highlight ngang `tap-marketing-noi-dau-nhu-cau`. Thẻ địa điểm, thẻ tên, thẻ cuối vẫn đặt số theo khung dọc, chưa kiểm
   → làm vlog ngang đầu tiên thì chụp kiểm kỹ và sửa các thành phần đó theo `khung()`.

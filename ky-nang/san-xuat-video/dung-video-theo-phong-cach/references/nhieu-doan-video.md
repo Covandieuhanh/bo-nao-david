@@ -17,7 +17,7 @@ File này là chi tiết của **khối 11** (`../../mo-dun/11-dung-ghep`). Th�
 | 7–8 | Ảnh tĩnh → Claude tự soát kế hoạch → render | 17 · 09 |
 | 9 | Phát hành: màn kết (`ytEnd`), chương, thumbnail (ngang), tách phần, số liệu | 08 · 15 · 14 · 16 |
 
-Sửa thì chạy lại: ke-hoach.json → danh-sach-cat-vlog.py → nang-lop.py → bao-ve-lop-phu.py → stills → xuat-chuong-trinh.mjs · danh-sach-cat.js sửa tay → bao-ve-lop-phu.py → stills → render.
+Sửa thì chạy lại: ke-hoach.json → danh-sach-cat-vlog.py → nang-lop.py → bao-ve-lop-phu.py → stills → xuat-chuong-trinh.mjs · danh-sach-cat.js sửa thủ công → bao-ve-lop-phu.py → stills → render.
 
 Dùng khi người dùng đưa **từ 2 video gốc trở lên** (hoặc 1 clip không phải nói trước camera mà là cảnh quay sự kiện)
 và muốn ghép thành một video hoàn chỉnh có điểm nhấn. Khác chế độ 1 video ở chỗ: **hình gốc bị cắt, sắp lại, đổi tốc độ**,
@@ -38,7 +38,7 @@ Clip được đặt tên `c1, c2, …` theo **thứ tự người dùng đưa**
 
 ### 2. Hiểu từng clip (quan trọng nhất — quyết định chất lượng)
 Với mỗi `kiem-tra/cN/`:
-- `am-luong.txt` trước: chỗ nào có tiếng thật (> −25 dB thường là có người nói/cười). **Whisper bịa câu khi không có lời**
+- `am-luong.txt` trước: chỗ nào có tiếng thật (> −25 dB thường là có người nói/cười). **Whisper bịa đặt câu khi không có lời**
   — dấu hiệu: "Hãy subscribe cho kênh…", "Cảm ơn các bạn đã xem", một câu lặp suốt clip. Gặp thì cắt đoạn ồn ra và
   chạy lại với `-mc 0` (`whisper-cli … -mc 0 -ml 1 -sow`), cộng lại độ lệch thời gian.
 - `moc-tung-tu.srt`: mốc từng từ để cắt đúng giữa hai từ và gắn hiệu ứng đúng lúc từ khoá được nói.
@@ -63,13 +63,13 @@ tới thứ gì mà clip khác có hình thì hình đó phải xuất hiện Đ
    - **Clip chính**: có người nói / diễn biến, được ghép nối tiếp thành video dài, giữ tiếng.
    - **Clip minh hoạ**: quay vật, thao tác, nơi chốn (ví dụ quay cuốn sổ) để minh hoạ một ý ở clip chính thì luôn
      **tắt tiếng**, chèn dạng **trích dẫn** (khung bo góc trên nền theo phong cách, không toàn khung).
-   Dấu hiệu clip minh hoạ: ít/không lời (`am-luong.txt`, transcript rỗng hoặc toàn câu bịa), quay cận vật, ngắn.
+   Dấu hiệu clip minh hoạ: ít/không lời (`am-luong.txt`, transcript rỗng hoặc toàn câu bịa đặt), quay cận vật, ngắn.
    Không chắc thì Claude tự chọn, ghi "đã chọn X vì Y" trong kế hoạch và báo cáo cuối.
 2. **Bản đồ**: mỗi clip chính — các chỗ nhắc tới thứ NHÌN THẤY ĐƯỢC (vật, việc, nơi, người; "như hôm trước…") kèm
    mốc từ `moc-tung-tu.srt`; mỗi clip minh hoạ — đoạn nào quay gì (`half_XX.jpg`), đoạn đẹp nhất.
 3. **Ghép cặp**: mỗi clip minh hoạ gắn vào câu nói khớp nghĩa nhất (ví dụ: "hàng ngày mình dành khoảng 15 phút để viết"
    ↔ clip quay sổ, tay viết). Đoạn trích dài đúng câu đó (thường 2–6 s; ý kéo dài thì tới 8–10 s), lấy đoạn hình đẹp
-   nhất; clip minh hoạ dài có thể chia cho nhiều câu liên quan. Chỉ nối khi khớp nghĩa thật, không bịa liên hệ.
+   nhất; clip minh hoạ dài có thể chia cho nhiều câu liên quan. Chỉ nối khi khớp nghĩa thật, không bịa đặt liên hệ.
 4. **Mạch câu chuyện**: TỰ sắp thứ tự clip chính theo nội dung (mở vấn đề → diễn biến/giải thích → kết), không
    theo thứ tự tên file; vlog sự kiện thì theo thời gian thật.
 5. Viết `ke-hoach-ghep.md` (mẫu dưới) + `danh-sach-cat.js` đầy đủ (đoạn trích viết bằng `cite()`), chạy:
@@ -140,11 +140,11 @@ Chuẩn tham khảo: kênh Jessie Luong (youtube.com/@jessieluongchannel), học
 (2023–2026: không có thẻ nhận diện kênh, đoạn ghép ngắn, nhanh). Chỉ học cấu trúc và nhịp — không chép hình, nhạc, thẻ của kênh.
 1. **Mở đầu = đoạn GHÉP** (`ke-hoach.json` → `intro`): cảnh đắt nhất **cả chuyến**, mỗi cảnh câm 2 phách nhạc.
    **Độ dài KHÔNG cố định — do chất liệu và cảm xúc quyết định** (intro Haruku 16,7 s toàn cảnh selfie giống nhau là ví dụ sai): chỉ nhận cảnh THẬT SỰ khác (khác nơi / người / hành động); cảnh gần giống cảnh đã có thì bỏ dù intro rất
-   ngắn. Câu nói là xương sống: 1 câu đắt nhất, câu thứ 2 chỉ khi nó tăng cảm xúc. Thước đo: bỏ cảnh nào mà intro không yếu
+   ngắn. Câu nói là xương sống: 1 câu then chốt, câu thứ 2 chỉ khi nó tăng cảm xúc. Thước đo: bỏ cảnh nào mà intro không yếu
    đi thì bỏ. Gợi ý: chất liệu chủ yếu tự quay mặt nói thì 1 câu + tiêu đề trên 1–2 cảnh ≈ 5–8 s; vlog nhiều nơi, nhiều người ≈ 10–20 s.
    Thẻ tiêu đề nằm ngay trên đoạn ghép, ở dải cảnh câm (danh-sach-cat-vlog.py tự đặt, không chồng phụ đề) — chỉ ghi tên chương trình / tên nơi
    hoặc lời nguyên văn, không câu Claude tự viết. 1–2 cảnh `voice` giữ tiếng
-   thật + phụ đề nguyên văn: câu đắt nhất làm cảnh đầu (≈ 3 s), câu cảm xúc làm cảnh cuối. Nhạc riêng cho intro: `intro.music` =
+   thật + phụ đề nguyên văn: câu then chốt làm cảnh đầu (≈ 3 s), câu cảm xúc làm cảnh cuối. Nhạc riêng cho intro: `intro.music` =
    `intro-soi` (chuyến vui) | `intro-lang` (hành hương, từ thiện, ý nghĩa); cảnh câm tự dài 2 phách, cắt đúng nhịp. Claude **tự chọn kiểu theo nội dung**:
    - kiểu 1 (mặc định, đa số): ghép TRƯỚC thì lời chào;
    - kiểu 2: lời chào có câu chốt rõ ("Let's go", "vlog xin được bắt đầu") thì chào TRƯỚC, đoạn ghép chen ngay sau câu chốt.
@@ -178,7 +178,7 @@ Mạch (chọn phần hợp với độ dài và nội dung):
 2. **Tiêu đề 2,5–3 s**: nền là một clip làm mờ (`grade: 'title'`), tên chương trình + 1 dòng phụ trích lời hoặc tên nơi. whoosh + boom + sting.
 3. **2–4 "vòng" — CHỈ vlog THỬ THÁCH/game** (0/12 vlog du lịch Việt top có thẻ vòng; vlog du lịch dùng nhãn địa điểm `location`
    + chương YouTube `chuong.py`), mỗi vòng mở bằng thẻ `round` (số viền 01/03 + tên vòng) — chia theo diễn biến thật
-   (đến nơi → gặp nhân vật → khoảnh khắc chính → …), không bịa sự kiện.
+   (đến nơi → gặp nhân vật → khoảnh khắc chính → …), không bịa đặt sự kiện.
 4. **Replay** khoảnh khắc cảm xúc nhất: phát chậm 0,4×, tắt tiếng gốc, `grade: 'replay'`, tiếng rewind.
 5. **Kết**: lời tổng kết của chính người quay (mục 2d.4) thì màn chốt nguyên văn; pháo giấy, tada khi tông vui. Không lời mời do Claude viết.
 
@@ -192,7 +192,7 @@ chữ trên màn hình chỉ dành cho nội dung (lời nói, cảm xúc, tên,
 | Khoảnh khắc | Hiệu ứng (EDL / OVERLAYS / SFX) |
 |---|---|
 | Cười to, phản ứng mạnh | `pow` chữ nhấn + pop/ding (không zoom — quy-tac-chung mục 2) |
-| **Câu đắt nhất khi có người thứ hai** (bạn đồng hành, khán giả, người dẫn, người bán…) | **cảnh phản ứng 0,8–1,5 s**: cắt sang mặt người nghe ngay SAU câu đắt (cười, gật, sững) — tiếng người nói vẫn chạy (`audio` của clip chính) — chất keo cảm xúc của Jay Shetty, Rap Việt, Have A Sip. Không có cảnh phản ứng thật thì bỏ, không lấy mặt người khác ngữ cảnh |
+| **Câu then chốt nhất khi có người thứ hai** (bạn đồng hành, khán giả, người dẫn, người bán…) | **cảnh phản ứng 0,8–1,5 s**: cắt sang mặt người nghe ngay SAU câu then chốt (cười, gật, sững) — tiếng người nói vẫn chạy (`audio` của clip chính) — chất keo cảm xúc của Jay Shetty, Rap Việt, Have A Sip. Không có cảnh phản ứng thật thì bỏ, không lấy mặt người khác ngữ cảnh |
 | **Hội thoại 2 người** (mặc cả, phỏng vấn) | `who: 1 \| 2` ở dòng `SUB` → viền ô phụ đề theo người nói (cam / xanh, kiểu GaryVee); vị trí + cỡ phụ đề giữ chuẩn |
 | **Người nói nêu kết quả, con số, giá** | ưu tiên **bằng chứng thật** có trong clip gốc (ảnh chụp màn hình giá, hoá đơn, giấy chứng nhận, cảnh vật thật) đúng lúc nói — `cite` khung bo góc; không có thì `chips`/số chạy với đúng con số người nói |
 | **Người nói nêu giá, độ cao, số lượng** ("1,7 tỷ", "100 m", "500 bao") | `pointer`/`chips` với ĐÚNG con số người nói (học Ngô Đức Duy, Sang Vlog) |
@@ -292,17 +292,17 @@ Một clip duy nhất `c1` = video gốc dài; `cat-doan-noi-bat/scripts/danh-sa
   vẫn hạ khi có phụ đề theo `base/duck/loud`. Không có `tracks` → `nhac.wav` như cũ.
 - `CTA.text` = câu kêu gọi NGUYÊN VĂN (luật highlight).
 - `ENDCARD = {title, speaker, clip, at, len}` → `EndCard`: khoảng 1,8 s **nối thêm sau** `TOTAL` (Root cộng vào thời lượng): ảnh đứng
-  hình người nói (giây `at` của `clip`) làm tối + "Bản đầy đủ trên kênh …" + tên tập gốc + tên người nói; không nút phát. Khuôn tự
+  hình người nói (giây `at` của `clip`) làm tối + "Bản đầy đủ trên kênh …" + tên tập gốc + tên người nói; không nút phát. Mẫu tự
   bỏ ở video dọc ngắn (`THE_CUOI`, nhan-dien-chung mục 1). `null` (vlog thường) thì không có.
 - Không dùng `teaserTag`, `title`, `round`, `hud`, `outro` (chữ tự viết) trong highlight.
 
 
 ### 11. Bản dài từ nhiều file của MỘT buổi nói chuyện (máy quay tách file)
 Khi các file gốc là một buổi liền (máy quay tự tách file, cùng góc máy) và David muốn bản dài **bỏ một số ý** ("cắt ý X", "ý chưa trọn thì cắt"):
-- **Chọn đoạn theo ý, không theo câu đắt**: đọc lời cả buổi (trục ghép các file), đánh dấu ý phải bỏ theo yêu cầu + lằn ranh kênh, giữ phần còn lại
+- **Chọn đoạn theo ý, không theo câu then chốt**: đọc lời cả buổi (trục ghép các file), đánh dấu ý phải bỏ theo yêu cầu + lằn ranh kênh, giữ phần còn lại
   theo thứ tự buổi nói. Trong mỗi đoạn giữ nguyên — không cắt lặng, "ờ/ừm" (quy-tac-chung 2). Mối cắt bắt vào chỗ lặng gần nhất (±0,6 s).
-- Lời cả buổi chép trên bản xem nhẹ có **câu ảo che lời thật** ("Hãy subscribe…" = mất 30 s lời, không phải chỗ lặng) thì chép lại riêng khúc đó
-  (`loi-ao.py`) trước khi quyết cắt/giữ khúc ấy.
+- Lời cả buổi chép trên bản xem nhẹ có **câu ảo che lời thật** ("Hãy subscribe…" = mất 30 s lời, không phải chỗ lặng) thì chép lại riêng phân đoạn đó
+  (`loi-ao.py`) trước khi quyết cắt/giữ phân đoạn ấy.
 - Cắt các đoạn từ file gốc ghép thành **một nguồn** `nguon-dai.mp4` (ffmpeg `-hwaccel videotoolbox`, 1080p30, 10 Mbps, fade tiếng 40 ms ở mỗi mối)
   → `c1`; chép lời lại trên nguồn mới (`phan-tich-video.sh`). Cảnh câm cho intro lấy từ nguồn khác (`c2`) nếu nằm ở phần đã cắt.
 - `RAW`: intro (câu chạm giữ tiếng + đáp lời người kia nếu có, rồi cảnh câm 2 phách) + **một đoạn `p1` = cả `c1`**; `TS(src) = D + src`.
@@ -313,6 +313,6 @@ Khi các file gốc là một buổi liền (máy quay tự tách file, cùng g�
   nghe lại được.
 - Nhạc: bài intro ở intro; phần chính luân phiên 2 bài cùng tuyến (`MUSIC.tracks` nối tiếp theo độ dài bài) — không lặp một bài cả tiếng.
 - Video dài YouTube: `THE_CUOI = true`, `ENDCARD = {…, play: false, yt: 21.6, len: 21.6}` (thẻ nhận diện 1,6 s + màn kết YouTube 20 s).
-- Render tốn ổ: khuôn dùng `bundle-nhe.mjs` (video > 50 MB nối cứng vào bản bundle, không chép). Bản thô + bản cuối ≈ 2 × (9 Mbps × thời lượng)
+- Render tốn ổ: mẫu dùng `bundle-nhe.mjs` (video > 50 MB nối cứng vào bản bundle, không chép). Bản thô + bản cuối ≈ 2 × (9 Mbps × thời lượng)
   — đo trước bằng render thử 40 s (`node xuat-chuong-trinh.mjs 0 40 thu.mp4`), thiếu chỗ thì nén thêm (crf 20). M1 8 GB: khoảng 3,3× thời lượng.
 - Mẫu: `~/Movies/tap-marketing-noi-dau-nhu-cau/2-ban-day-du` (`ke-hoach-cat.md`, `kiem-tra/dung-phu-de.py`).

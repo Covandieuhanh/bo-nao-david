@@ -16,7 +16,7 @@ Gói công nghệ thứ hai của hướng 3 (`co-so-tri-thuc/david.md` mục 4.
 | [2-lo-trinh.md](2-lo-trinh.md) | 4 buổi, quy trình một học viên, việc trainer chuẩn bị |
 | [3-giao-trinh.md](3-giao-trinh.md) | 8 bài |
 | [4-phieu-khao-sat-va-nghiem-thu.md](4-phieu-khao-sat-va-nghiem-thu.md) | phiếu khảo sát đầu vào, trước và sau, nghiệm thu |
-| [bo-bieu-mau/](bo-bieu-mau/README.md) | từ mới và thao tác tay cho người chưa biết gì, khuôn các file, câu lệnh mẫu, khuôn bài kiểm, danh sách kiểm soát chất lượng |
+| [bo-bieu-mau/](bo-bieu-mau/README.md) | từ mới và thao tác tay cho người chưa biết gì, mẫu các file, câu lệnh mẫu, mẫu bài kiểm, danh sách kiểm soát chất lượng |
 
 ## Hai mức
 | Mức | Cần gì | AI ghi file thế nào |
@@ -24,7 +24,7 @@ Gói công nghệ thứ hai của hướng 3 (`co-so-tri-thuc/david.md` mục 4.
 | **Cơ bản** | máy tính; một AI có chức năng Projects (ChatGPT, Claude; trên Gemini gọi là Gems); Google Drive (khuyên dùng) | AI tạo file cho học viên tải về, học viên thay file trong Projects |
 | **Nâng cao** | trợ lý AI chạy trên máy (Claude Code, Codex, Gemini CLI) và tài khoản GitHub | AI tự đọc, tự sửa file trong thư mục; GitHub sao lưu và kéo về máy khác |
 
-Học viên bắt đầu ở mức cơ bản. Lên mức nâng cao khi thay file bằng tay thấy mất thời gian, khi Projects gần chạm giới hạn số file, hoặc khi muốn ghi lại mọi lần sửa.
+Học viên bắt đầu ở mức cơ bản. Lên mức nâng cao khi thay file thủ công thấy mất thời gian, khi Projects gần chạm giới hạn số file, hoặc khi muốn ghi lại mọi lần sửa.
 
 ## Thuật ngữ dùng thống nhất trong gói
 | Tiếng Anh | Tiếng Việt | Trong gói là |
@@ -36,7 +36,7 @@ Học viên bắt đầu ở mức cơ bản. Lên mức nâng cao khi thay file
 | Procedure | Quy trình | các bước của một loại việc (file `quy-trinh-<ten-viec>.md`) |
 | Log | Sổ | ghi theo ngày: đã làm gì, học được gì (`du-an-<ten>.md`, `bai-hoc.md`) |
 | Evals | Bài kiểm | `bai-kiem.md` (câu hỏi) và `dap-an.md` (để ngoài bộ não): thử xem AI mới có hiểu đúng không |
-| Cold Reader | Người đọc lạnh | một AI mới tinh, chưa biết gì về học viên, chỉ đọc bộ não |
+| Cold Reader | Người đọc mới | một AI mới tinh, chưa biết gì về học viên, chỉ đọc bộ não |
 | Distillation | Chưng cất | gom nhiều bài học cùng gốc thành một nguyên lý |
 | Versioned Release | Ra bản có số hiệu | sau mỗi đợt nâng cấp, chỉ giữ bản mới khi bài kiểm bằng hoặc tốt hơn |
 | Intake Form | Phiếu khảo sát đầu vào | phần A file 4 |

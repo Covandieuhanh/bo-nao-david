@@ -59,7 +59,7 @@ Ghi chép đầy đủ từng clip: mục 4.
 - **HL-1 Tít ghim**: thẻ tít mở đầu (luật 7) không biến mất sau 2,5 s mà thu nhỏ thành dải tít 1–2 dòng ở đỉnh vùng an toàn suốt
   clip (dải trên, không đè mặt — mặt ở giữa khung). Mẫu: H9, H14, H18, H19.
 - **HL-2 Khung 0 = ảnh bìa**: 0–0,5 s đầu là thẻ tít to nhất + mặt người nói rõ (kèm lời bắt đầu ngay) — đề xuất mốc bìa = 0,3 s.
-- **HL-3 Cảnh phản ứng trong highlight**: nguồn có khán giả/người dẫn thì chèn 0,8–1,5 s mặt người nghe sau câu đắt (luật G của vlog
+- **HL-3 Cảnh phản ứng trong highlight**: nguồn có khán giả/người dẫn thì chèn 0,8–1,5 s mặt người nghe sau câu then chốt (luật G của vlog
   áp sang highlight).
 - **HL-4 Highlight podcast đồ hoạ dày hình hơn**: đổi biểu tượng/cảnh minh hoạ theo từng cụm lời khoảng 1,5–2,5 s (H4) thay vì 3–4 cảnh/clip.
 - **HL-5 Thẻ cuối có nhãn ngắn "Xem bản đầy đủ"** cạnh tên tập (Have A Sip, Nguyễn Hữu Trí) — hiện luật cấm chữ tự viết ở thẻ cuối.

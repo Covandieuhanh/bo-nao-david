@@ -27,7 +27,7 @@ description: "Khối 08 phần kết: màn chốt nguyên văn, thẻ cuối, d�
   hình, đáy vùng an toàn; không thẻ cuối, video kết ở chữ cuối để tự lặp. Các dòng dưới về thẻ cuối chỉ cho video ngang / dọc dài.
 - **Dẫn dắt theo luật kênh** (`ho-so-thuong-hieu/kenh.json`): câu tự soạn **không lên video**, nằm ở **mô tả + bình luận ghim**. Kiểu dẫn dắt của
   bài do phiếu lọc (khối 00) gán theo tỉ lệ **4 Không · 4 Gợi mở · 2 Mời** (bài thứ 5 và 10 mỗi chục là Mời):
-  - **Không** thì mô tả + ghim mời bình luận đúng một trong hai từ: "**Vấn đề**" (đang kẹt) / "**Kết quả**" (làm được).
+  - **Không** thì mô tả + ghim mời bình luận đúng một trong hai từ: "**Vấn đề**" (đang vướng) / "**Kết quả**" (làm được).
   - **Gợi mở** thì mô tả + ghim: một câu hỏi tự soi gắn với bài + mời bình luận "Vấn đề" / "Kết quả".
   - **Mời** thì mô tả + ghim: bài con người "Nhắn mình một chữ **'gỡ'**…", bài công nghệ "nhắn mình hai chữ **'số hoá'**" — không hứa kết quả; bài con người không nói giá, không nói gói; bài công nghệ (hướng 3) được nói giá sản phẩm công nghệ.
   David tự nói câu mời / câu hỏi trong video thì màn chốt dùng đúng câu đó. Bài Facebook cá nhân (đời thường) không cần dẫn dắt kiểu kênh.

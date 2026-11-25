@@ -8,29 +8,29 @@ description: "Tự chọn cách trình bày: yêu cầu người dùng → đo �
 và **kho cách thể hiện** xếp theo nguyên lý. Kho (`bo-cuc.md`, khối 07, `thu-vien-tai-nguyen/`) là thực đơn; người dựng (AI nào cũng
 được) tự chọn, không hỏi, ghi lý do vào `ke-hoach-canh.md` (mục **Chẩn đoán**) để David sửa ở bản cuối.
 
-Áp cho mọi skill dựng (`dung-video-theo-phong-cach`, `dung-podcast`, `cat-doan-noi-bat`) và **mọi khuôn** (1 video, ghép, podcast). Chạy
+Áp cho mọi skill dựng (`dung-video-theo-phong-cach`, `dung-podcast`, `cat-doan-noi-bat`) và **mọi mẫu** (1 video, ghép, podcast). Chạy
 **ngay sau chép lời + làm sạch, trước kế hoạch cảnh**.
 
 ## Bước 0 — Nguyên tắc: mọi lựa chọn tự setup theo nội dung nguồn
 
 - **Không chép kịch bản, kiểu trình bày của tập trước** làm điểm xuất phát. Mỗi tài nguyên đi lại từ đầu. Chép được phần kỹ thuật
-  (khuôn, hàm, chữ ký nhận diện), không chép lựa chọn (kiểu cảnh, nền, nhịp, nhạc).
+  (mẫu, hàm, chữ ký nhận diện), không chép lựa chọn (kiểu cảnh, nền, nhịp, nhạc).
 - Mọi thứ trong kho (bố cục, motion graphics, thẩm mỹ, chuyển cảnh, nhạc) là ứng viên cho mọi video; chọn bằng lập luận ở
   `nguoi-xem-can-gi.md`, ghi lý do.
 - **Máy chặn trước render** (`soat-canh.mjs`, chạy tự động trong `xuat-video.mjs` và `xuat-chuong-trinh.mjs`), chi tiết ở bước 5.
-- **Khuôn nào có gì** (khuôn thiếu kiểu thì video nghèo hình — chọn khuôn đúng trước):
+- **Mẫu nào có gì** (mẫu thiếu kiểu thì video nghèo hình — chọn mẫu đúng trước):
 
-| Khuôn | Dùng cho | Có sẵn |
+| Mẫu | Dùng cho | Có sẵn |
 |---|---|---|
 | **1 video** (`khuon-remotion`) | mọi video người nói — **kể cả nhiều file của cùng một buổi nói / cùng cảnh** (nối file trước), phỏng vấn · bản dài, bản theo hướng | đủ kho: `nhan`, `bocuc` (the-canh, canh-nguoi, o-nguoi, chuong, muc-luc, tien-trinh, dung-hay, tren-duoi, o-tron, cau-hoi), `GHI_CHU`, `CHAPTERS`, `illus`, `diagram`, `ve`, `phong` |
 | **ghép** (`khuon-dung-ghep`) | vlog nhiều cảnh khác nhau, sự kiện · clip ngắn highlight người nói | `illus`, `diagram`, `chips`, `callout`, `action`, `pointer`, `pow`, `nameCard`, `location`, `scene`; nền `phong: 'hat'` |
-| **podcast** | chỉ có tiếng | sân khấu + kho cảnh của khuôn 1 video |
+| **podcast** | chỉ có tiếng | sân khấu + kho cảnh của mẫu 1 video |
 
 ## Bước 0b — Yêu cầu của người dùng (`yeu-cau.md`, `them-anh/`)
 
 Thư mục dự án có sẵn (tạo bởi `tao-du-an.sh`, `tao-dung-ghep.sh`):
 - **`yeu-cau.md`** — người dùng viết / dán lời nói tự do: muốn hiệu ứng gì, đoạn nào, giống video nào, bỏ gì.
-- **`them-anh/`** — ảnh bỏ vào: tên bắt đầu `mau-` = **ảnh mẫu** (kiểu muốn bắt chước); còn lại = **ảnh chèn** vào video.
+- **`them-anh/`** — ảnh bỏ vào: tên bắt đầu `mau-` = **ảnh mẫu** (kiểu muốn học theo); còn lại = **ảnh chèn** vào video.
 
 Cách làm:
 1. **Thứ tự ưu tiên:** luật cứng (`nguoi-xem-can-gi.md` mục 0) > yêu cầu người dùng > tự chọn. Yêu cầu trái luật cứng thì không làm, ghi lý do.
@@ -116,11 +116,11 @@ khung nhiều người không dùng ô người (`quy-tac-chung.md` mục 4). Kh
 **4d. Kho hình mẫu là thực đơn, mở ra mỗi lần chọn hình** (22/11/2026 — David: *"tận dụng được tối đa toàn bộ các thẩm mỹ ở trong kho học,
 nhưng phải đưa vào cho phù hợp với nội dung, chứ không phải nhét thật nhiều … đơn giản và tinh gọn … gây ấn tượng cho người xem một cách
 nhẹ nhàng"*). Với mỗi ý đã qua 4a (cần hình), đọc lại các cách đã học và chọn cách **hợp ý đó nhất**:
-- `giai-mau.md` — 19 ca của 8 kênh hình mẫu (mở đầu, chia đoạn, báo hiệu, lời kèm hình, tin, khi nào không dựng gì).
+- `giai-mau.md` — 19 trường hợp của 8 kênh hình mẫu (mở đầu, chia đoạn, báo hiệu, lời kèm hình, tin, khi nào không dựng gì).
 - `nguon-tham-khao/` — Ali Abdaal và Joseph (14 cách), MagentX (A–G, có dấu hiệu nhận ra), Sang Huỳnh (8 bố cục, nhịp, âm thanh),
   Cường Mê AI (6 nguyên lý); `dung-podcast/references/hoc-tu-hieu-nguyen-50.md` cho podcast.
-- Mẫu khung nhiều người, chỗ trống thật (`rieng/duong-may.jsx`): chương lớn, gạch thay, chuỗi nút, thẻ lật, số mốc, câu đắt, lời nhắc gửi
-  AI, thẻ tên + vai trò, vẽ đúng vật (bộ vét, khuôn áo, mảnh ghép).
+- Mẫu khung nhiều người, chỗ trống thật (`rieng/duong-may.jsx`): chương lớn, gạch thay, chuỗi nút, thẻ lật, số mốc, câu then chốt, lời nhắc gửi
+  AI, thẻ tên + vai trò, vẽ đúng vật (bộ vét, mẫu áo, mảnh ghép).
 
 Cách chọn: ý giống nhau thì cùng cách; ý khác loại thì **đổi sang cách khác trong kho** để video không lặp một kiểu (ví dụ: đổi trọng tâm thì
 gạch thay · quy trình thì chuỗi nút · liệt kê ngang hàng thì thẻ · các bước có số thì số mốc · hình ảnh so sánh thì vẽ đúng vật). Mỗi cảnh một cách,
@@ -148,7 +148,7 @@ Cách đã học mà kho chưa có code thì viết thêm vào `rieng/` (mẫu d
 | Báo hiệu | cụm phụ đề có con số / một chữ quyết định nghĩa (video dọc ngắn) | `hl: ['^từ']` — tối đa một chỗ mỗi dòng | phụ đề |
 | Báo hiệu | đổi ý ("không phải A, mà là B") | `the-canh` có gạch chữ | cạnh chủ thể |
 | Báo hiệu | phỏng vấn / lời chứng, có người hỏi | `bocuc cau-hoi` + `lower` tên · vai trò | dưới mặt |
-| Báo hiệu · Cảm xúc | câu đắt, cú chốt, đỉnh cảm xúc | `nhan` làm tối / chữ cạnh mặt · `the-canh` chữ to | trên người / cạnh |
+| Báo hiệu · Cảm xúc | câu then chốt, cú chốt, đỉnh cảm xúc | `nhan` làm tối / chữ cạnh mặt · `the-canh` chữ to | trên người / cạnh |
 | Gần chỗ | so sánh nên / không nên, trước / sau | `illus vs` · trước/sau | toàn màn hình hoặc cạnh |
 | Gần chỗ | có hai nguồn hình cùng lúc (ảnh trước + video sau, bản gốc + kết quả) | `bocuc tren-duoi` (`giuPhuDe: true`) | toàn màn hình |
 | Mặt người nói | giải thích dài vẫn cần thấy người | `o-nguoi` (người vào ô); khung dọc: `nguoi_duoi: true` (hình nửa trên, người nửa dưới) | — |
@@ -179,7 +179,7 @@ Gặp P0 thì sửa kế hoạch / đổi kiểu theo bước 4, không thử re
 ```
 ## Chẩn đoán (thiet-ke-bo-cuc/tu-chon.md)
 Yêu cầu: <tóm tắt yeu-cau.md + them-anh/ → làm ở đâu · bỏ gì vì sao> | không
-Khuôn: <1 video / ghép / podcast> vì <Y>
+Mẫu: <1 video / ghép / podcast> vì <Y>
 Loại: <tên> vì <dấu hiệu> · cần chính: <hiểu / nhớ / tin / cảm>
 Hình: <4 câu trả lời> → bố cục nền: <X> vì <Y>
 Nội dung: <số đo> → lớp thông tin: <X> vì <Y>

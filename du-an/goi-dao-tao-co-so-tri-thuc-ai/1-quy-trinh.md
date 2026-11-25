@@ -55,15 +55,15 @@ ngoai-bo-nao/                    KHÔNG tải lên AI
 | # | Bước | Làm gì | Đạt khi |
 |---|---|---|---|
 | 0 | **Chuẩn bị** | chọn AI đang dùng; tạo thư mục `bo-nao` và `ngoai-bo-nao`; tạo Projects (biểu mẫu 00, thao tác 1 và 2) | có hai thư mục và một Projects tên "Bộ não" |
-| 1 | **Tạo bốn file gốc** | bốn file gốc là `doc-truoc.md`, `ho-so.md`, `luat-lam-viec.md`, `trang-thai.md`; tạo từ khuôn (biểu mẫu 01, cách tạo file ở biểu mẫu 00 thao tác 3); tải cả bốn file **và file biểu mẫu 01** lên Projects | Projects có bốn file gốc; hỏi AI "trong Projects có những file nào" thì AI kể đúng |
+| 1 | **Tạo bốn file gốc** | bốn file gốc là `doc-truoc.md`, `ho-so.md`, `luat-lam-viec.md`, `trang-thai.md`; tạo từ mẫu (biểu mẫu 01, cách tạo file ở biểu mẫu 00 thao tác 3); tải cả bốn file **và file biểu mẫu 01** lên Projects | Projects có bốn file gốc; hỏi AI "trong Projects có những file nào" thì AI kể đúng |
 | 2 | **Cho AI phỏng vấn mình** | dán câu lệnh 1; trả lời thật; AI viết lại hồ sơ và luật; mình sửa chỗ sai rồi thay file trong Projects (biểu mẫu 00, thao tác 4) | mở cuộc trò chuyện mới trong Projects, hỏi "tóm 3 dòng về tôi": AI tóm đúng tôi là ai, làm việc với tôi thế nào, việc đang dở |
-| 3 | **Dựng trục bốn tầng** | tạo `truc-hoc.md`, `bai-hoc.md`, `y-tuong.md` từ khuôn; thêm ba dòng này vào bảng file ở `doc-truoc.md` | mỗi file thuộc đúng một tầng; bảng file ở `doc-truoc.md` có đủ mọi file trong `bo-nao` (trừ chính nó và file khuôn) |
-| 4 | **Làm dự án thật, cuối buổi lưu** | buổi đầu của một dự án: tạo `du-an-<ten>.md` từ khuôn. Làm việc thật với AI; lần nào phải sửa AI thì ghi ngay một dòng "Đã sửa AI: …" vào sổ (dùng ở bước 5); cuối buổi dán câu lệnh 2; duyệt đề xuất; thay các file đã sửa | mỗi buổi để lại ít nhất một dòng ở sổ dự án; bảng file ở `doc-truoc.md` có file mới |
+| 3 | **Dựng trục bốn tầng** | tạo `truc-hoc.md`, `bai-hoc.md`, `y-tuong.md` từ mẫu; thêm ba dòng này vào bảng file ở `doc-truoc.md` | mỗi file thuộc đúng một tầng; bảng file ở `doc-truoc.md` có đủ mọi file trong `bo-nao` (trừ chính nó và file mẫu) |
+| 4 | **Làm dự án thật, cuối buổi lưu** | buổi đầu của một dự án: tạo `du-an-<ten>.md` từ mẫu. Làm việc thật với AI; lần nào phải sửa AI thì ghi ngay một dòng "Đã sửa AI: …" vào sổ (dùng ở bước 5); cuối buổi dán câu lệnh 2; duyệt đề xuất; thay các file đã sửa | mỗi buổi để lại ít nhất một dòng ở sổ dự án; bảng file ở `doc-truoc.md` có file mới |
 | 5 | **Lỗi thành câu kiểm** | lần nào phải sửa AI (nhắc lại, chỉnh lời, đổi cách làm) thì dán câu lệnh 3: AI sửa đúng file gây lỗi, thêm một câu vào `bai-kiem.md` và đáp án vào `ngoai-bo-nao/dap-an.md` (biểu mẫu 03) | file gây lỗi đã sửa; bài kiểm và đáp án đều có câu mới |
 | 6 | **Nhìn lại tuần** | mỗi tuần một lần, dán câu lệnh 4: AI đọc sổ tuần qua, tìm điều lặp; lặp ít nhất 2 lần thì thành quy trình, ít nhất 3 chuyện cùng bài học thì thành nguyên lý | một dòng nhìn lại tuần trong `bai-hoc.md`; có quy trình, nguyên lý mới, hoặc ghi rõ "tuần này chưa có điều lặp" |
 | 7 | **Nâng cấp định kỳ** | khoảng mỗi tháng, hoặc khi thấy luật chồng nhau, AI làm sai việc đã từng đúng. Ba chặng: sao lưu bản cũ và **đo trước** (câu lệnh 6) · **dọn** bốn việc: gom ý trùng, gỡ chỗ mâu thuẫn, cất cái lâu không dùng, viết rõ chỗ AI hiểu sai (câu lệnh 5) · **đo sau** (câu lệnh 6) | điểm đo sau bằng hoặc cao hơn đo trước; thấp hơn thì quay về bản đã sao (biểu mẫu 00, thao tác 7) |
 | 8 | **Sao lưu, đổi AI, đổi máy** | thư mục `bo-nao` nằm trong Google Drive (khuyên dùng ở mức cơ bản; không có thì sao lưu tay theo biểu mẫu 00 thao tác 6) hoặc GitHub (mức nâng cao). Projects tự có trên mọi máy đăng nhập cùng tài khoản; bản trên Drive dùng khi đổi sang AI khác hoặc mất tài khoản | tải bộ não vào một AI khác, AI đó tóm đúng 3 dòng về mình |
-| 9 | **Kiểm bằng người đọc lạnh** | AI mới tinh (biểu mẫu 00, thao tác 5), tải các file trong `bo-nao`, dán câu lệnh 6; mình chấm bằng `dap-an.md` | đúng ít nhất 90% số câu (bài kiểm nghiệm thu có ít nhất 10 câu); câu sai thì sửa file làm AI hiểu sai, không sửa bài kiểm |
+| 9 | **Kiểm bằng người đọc mới** | AI mới tinh (biểu mẫu 00, thao tác 5), tải các file trong `bo-nao`, dán câu lệnh 6; mình chấm bằng `dap-an.md` | đúng ít nhất 90% số câu (bài kiểm nghiệm thu có ít nhất 10 câu); câu sai thì sửa file làm AI hiểu sai, không sửa bài kiểm |
 
 Bước 0–3 làm một lần. Bước 4–5 làm mỗi buổi. Bước 6 mỗi tuần. Bước 7 và 9 mỗi tháng. Bước 8 thiết lập một lần, sau đó Google Drive tự sao lưu; kiểm lại mỗi lần nâng cấp.
 
@@ -80,9 +80,9 @@ Bước 0–3 làm một lần. Bước 4–5 làm mỗi buổi. Bước 6 mỗi
 - Dữ liệu riêng của khách hàng (số điện thoại, địa chỉ) không ghi vào bộ não; sổ dự án chỉ ghi điều học được.
 - Kho GitHub (mức nâng cao) luôn để chế độ riêng tư.
 - Viết đủ từ, đủ nghĩa, không viết tắt: người khác hay AI khác đọc đột ngột cũng phải hiểu.
-- Lời mình nói sau cùng là luật hiện hành: đổi luật thì viết lại đúng câu đó, không để hai bản cùng sống.
+- Lời mình nói sau cùng là luật hiện hành: đổi luật thì viết lại đúng câu đó, không để hai bản cùng tồn tại.
 - AI đề xuất, mình duyệt rồi mới ghi.
 
 ## Đòi hỏi máy
-- **Mức cơ bản:** máy tính Mac hoặc Windows có trình duyệt; tài khoản AI có chức năng Projects (thường là bản trả phí); Google Drive (khuyên dùng; không có thì thư mục trên máy và tự sao lưu). Thêm một AI khác bản miễn phí để kiểm người đọc lạnh.
+- **Mức cơ bản:** máy tính Mac hoặc Windows có trình duyệt; tài khoản AI có chức năng Projects (thường là bản trả phí); Google Drive (khuyên dùng; không có thì thư mục trên máy và tự sao lưu). Thêm một AI khác bản miễn phí để kiểm người đọc mới.
 - **Mức nâng cao:** máy Mac hoặc Windows; trợ lý AI chạy trên máy, tức loại AI tự đọc và sửa file trong thư mục (Claude Code, Codex, Gemini CLI); tài khoản GitHub miễn phí (dịch vụ lưu thư mục có ghi lại mọi lần sửa). Ở mức này có thể dùng thư mục con, nhưng giữ nguyên tên file để chuyển qua lại hai mức dễ dàng.

@@ -19,7 +19,7 @@ Mục tiêu chung: **ra tiền**. Mọi nội dung được lọc xem thuộc h�
 |---|---|---|---|---|
 | **1. Tài chính** | YouTube **David Trần Official** | giao dịch hàng hoá tại Việt Nam (hành trình, kiến thức) | người quan tâm giao dịch hàng hoá | hợp tác môi giới / mở tài khoản hợp pháp (chi tiết David nói sau) |
 | **2. Trainer con người** | YouTube **"David Trần - Trainer định hướng"** (giữ tên, giữ kênh) + Facebook cá nhân | phát triển bản thân, xây thương hiệu trainer định hướng từng cá nhân | người muốn **phát triển bản thân**: tự làm chủ con người của chính mình; lõi là người lần đầu dẫn người (marketing, khách hàng của họ thuộc hướng 3, không thuộc hướng này) (quản lý trẻ, quản lý mới) | gói trainer (4.4) |
-| **3. Giải pháp công nghệ AI (trainer công nghệ)** | **mọi trang khác** (Facebook cá nhân, fanpage, TikTok…): chỉ nội dung thuộc hướng 3 | công nghệ / AI ứng dụng thực chiến (hệ tự động dựng video David đang dùng, thành quả số hoá của đội đối tác) | cá nhân, đội nhóm, tổ chức, doanh nghiệp (lõi: hộ kinh doanh và doanh nghiệp nhỏ dưới 20 người, chủ tự làm, kẹt việc lặp lại) có vấn đề mà công nghệ giải được | **gói công nghệ cho cá nhân** và **giải pháp số hoá kết hợp AI cho tổ chức** làm theo đúng vấn đề của từng nơi, kèm đào tạo: trainer hướng dẫn từng bước tới khi khách ra kết quả mới xong |
+| **3. Giải pháp công nghệ AI (trainer công nghệ)** | **mọi trang khác** (Facebook cá nhân, fanpage, TikTok…): chỉ nội dung thuộc hướng 3 | công nghệ / AI ứng dụng thực chiến (hệ tự động dựng video David đang dùng, thành quả số hoá của đội đối tác) | cá nhân, đội nhóm, tổ chức, doanh nghiệp (lõi: hộ kinh doanh và doanh nghiệp nhỏ dưới 20 người, chủ tự làm, vướng việc lặp lại) có vấn đề mà công nghệ giải được | **gói công nghệ cho cá nhân** và **giải pháp số hoá kết hợp AI cho tổ chức** làm theo đúng vấn đề của từng nơi, kèm đào tạo: trainer hướng dẫn từng bước tới khi khách ra kết quả mới xong |
 
 **Hệ 135 (môi trường của hướng trainer):** mô hình kinh doanh gồm cả đời và đạo; là môi trường để mọi người cùng hoạt động chung khi đã rõ định hướng của chính mình. David xây hệ 135 thành **nơi cung ứng nhân sự đạt chuẩn**, như một tổ chức có các thành viên đạt tiêu chuẩn; tiêu chuẩn là **hoạt động đúng định hướng theo hệ thống từ trường số**. Từ trường số chưa có thông tin công bố trên xã hội, nên David lấy dẫn chứng từ các phần liên quan (thần số học, thiền, "nghiệp", tâm sinh tướng…) và chia sẻ dần, vì mỗi người có cách ứng dụng khác nhau. Mọi nội dung liên quan đến từ trường số và các dẫn chứng đó thuộc **hướng 2** (20/11/2026).
 
@@ -48,17 +48,17 @@ Muốn lên tầng sau phải qua tầng trước. Khung của **CCL (Center for
 | Chặng | Nội dung | Xong khi |
 | --- | --- | --- |
 | 0 | Chốt nền | 1 người trong tệp khách nhận lời |
-| 1 | Ca đầu tiên | 1–3 ca thật online, miễn phí đổi lời chứng ẩn danh, ít nhất 1 ca tự đứng được |
+| 1 | Ca đầu tiên | 1–3 trường hợp thực tế online, miễn phí đổi lời chứng ẩn danh, ít nhất 1 trường hợp tự đứng được |
 | 2 | Chuẩn hoá phương pháp | Bắt đầu thu phí, học coach chuẩn ICF |
 | Sau đó | Truyền nghề | |
 
-**Ưu tiên là ra tiền**. Ba hướng chạy song song, thứ tự khi phải chọn: **(1) giải pháp công nghệ AI** (gói dựng video đã chạy thật; đội đối tác đã có giải pháp cho tổ chức; ra tiền nhanh nhất) → **(2) Chặng 1 trainer** (ca thật cũng là bán thử gói trainer) → **(3) kênh tài chính** theo nhịp video sẵn có. Hết năng lượng thì giữ (1), tạm dừng phần còn lại.
+**Ưu tiên là ra tiền**. Ba hướng chạy song song, thứ tự khi phải chọn: **(1) giải pháp công nghệ AI** (gói dựng video đã chạy thật; đội đối tác đã có giải pháp cho tổ chức; ra tiền nhanh nhất) → **(2) Chặng 1 trainer** (trường hợp thực tế cũng là bán thử gói trainer) → **(3) kênh tài chính** theo nhịp video sẵn có. Hết năng lượng thì giữ (1), tạm dừng phần còn lại.
 
 ### 4.4. Chương trình và bảng giá (rà lại khi có ICF)
 - Chương trình đầu: **"Dẫn đội, không làm thay"** cho người lần đầu dẫn người, đi theo ba tầng, bắt đầu từ bản thân.
 - Bảng giá cá nhân: miễn phí (video + trò chuyện 20 phút) · lớp nhóm 90 phút 199.000đ/người · Gói Thử 3 buổi 2.400.000đ · **Gói Đồng hành 6 buổi 3.600.000đ (gói chính)** · Gói Trọn 90 ngày 12 buổi 9.000.000đ.
 
-### 4.5. Quy trình một ca
+### 4.5. Quy trình một trường hợp
 Tìm hiểu → mời → phiếu đầu vào → thống nhất → làm trên việc thật → rút ra dần → ghi nhật ký ca (làm lại Phần 4 và 6 của phiếu để so trước/sau).
 
 ### 4.6. Quyết định đã chốt
@@ -76,4 +76,4 @@ Tìm hiểu → mời → phiếu đầu vào → thống nhất → làm trên 
 
 **Hướng 2, trainer:** công khai là trainer, coach chỉ trong buổi riêng · không trị liệu, không chẩn đoán; chuyển người khủng hoảng tâm lý tới chuyên môn có cấp phép · nội dung từ trường số (kèm dẫn chứng thần số học, thiền, "nghiệp"…) được nói công khai, nhưng không đọc số của người thật trên kênh khi họ chưa đồng ý, không hứa tiền hay kết quả nhờ con số, không đưa nghi thức cầu xin, phóng sinh.
 
-**Hướng 3, giải pháp công nghệ AI:** chỉ hứa kết quả mà gói, giải pháp làm ra được thật (đã chạy trên chính David hoặc cho khách thật) · nói rõ khách cần làm gì, mất bao lâu · ca khách chỉ đăng khi David đưa chi tiết; tên khách doanh nghiệp ẩn đi trừ khi khách đồng ý nêu tên · không nêu tên đơn vị phía sau (nói "đội của mình", "đội công nghệ" thì được) · được công bố giá sản phẩm công nghệ để tự quảng bá.
+**Hướng 3, giải pháp công nghệ AI:** chỉ hứa kết quả mà gói, giải pháp làm ra được thật (đã chạy trên chính David hoặc cho khách thật) · nói rõ khách cần làm gì, mất bao lâu · trường hợp khách chỉ đăng khi David đưa chi tiết; tên khách doanh nghiệp ẩn đi trừ khi khách đồng ý nêu tên · không nêu tên đơn vị phía sau (nói "đội của mình", "đội công nghệ" thì được) · được công bố giá sản phẩm công nghệ để tự quảng bá.

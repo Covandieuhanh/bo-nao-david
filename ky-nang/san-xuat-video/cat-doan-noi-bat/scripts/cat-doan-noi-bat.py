@@ -14,7 +14,7 @@
 #   - fade âm 15/30 ms ở mỗi mối (chống tiếng "tách"), mọi nhánh tiếng về fltp 48 kHz stereo trước concat
 #   - mã hoá phần cứng theo máy — ma_hoa_h264() (libx264 chậm ~10×)
 # Ra cat/<id>.mp4 (khung như nguồn) + cat/<id>-map.json (mốc clip ↔ mốc nguồn) + bảng ở cat/<id>.md.
-# Tự kiểm: chép lời lại bản cắt (whisper.cpp) → so với "text" đã chọn; chữ thừa (lọt từ câu bên cạnh) / chữ thiếu (bị cụt)
+# Tự kiểm: chép lời lại bản cắt (whisper.cpp) → so với "text" đã chọn; chữ thừa (tràn từ câu bên cạnh) / chữ thiếu (bị cụt)
 # in ra và ghi cuối cat/<id>.md. Bỏ kiểm bằng --khong-kiem.
 import difflib, json, os, re, subprocess, sys
 import sys as _s, os as _o; _s.path.insert(0, _o.path.join(_o.path.dirname(_o.path.realpath(__file__)), '../../dung-video-theo-phong-cach/scripts'))

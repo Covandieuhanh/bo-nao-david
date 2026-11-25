@@ -12,17 +12,17 @@ description: "Dự án liên kết tri thức (14/11): biến bộ não thành m
 | # | Mục tiêu | Đo bằng | Kết quả 14/11 |
 |---|---|---|---|
 | 1 | Tra nhanh, ít token, ít sót | 10 câu hỏi thử (`tu-dong-hoa/lien-ket/do-truy-xuat.py`) | Đọc ít hơn **48%** byte (261 KB → 138 KB), trúng **9/10** so với 7/10 |
-| 2 | Không file rời rạc | Máy kiểm: mồ côi, link gãy | 239 file · gãy 0 · mồ côi 0 · thiếu mô tả 0 (lúc đầu: 21 link gãy, 66 mồ côi, 147 thiếu mô tả) |
+| 2 | Không file rời rạc | Công cụ kiểm tra: mồ côi, link gãy | 239 file · gãy 0 · mồ côi 0 · thiếu mô tả 0 (lúc đầu: 21 link gãy, 66 mồ côi, 147 thiếu mô tả) |
 | 3 | Giữ cả phần Claude giải thích | Ghi chú `co-so-tri-thuc/kien-thuc/` | 3 ghi chú đầu: Telegram bot, Mini App, liên kết tri thức |
-| 4 | Dựng lại 100% từ GitHub | Liên kết nằm trong file, máy kiểm trong repo | Đạt: không cần app nào |
+| 4 | Dựng lại 100% từ GitHub | Liên kết nằm trong file, công cụ kiểm tra trong repo | Đạt: không cần app nào |
 | 5 | David không phải làm gì thêm | — | Đạt: không cần mở Obsidian |
 
 ## 2. Thiết kế
 
 - **Vault = chính thư mục bộ não**, không dời file. Không dùng app Obsidian (mở thư mục bằng Obsidian chỉ để xem cho vui).
 - **Bốn lớp**: mô tả đầu file (`description:`) · chỉ mục tự sinh [chi-muc.md](../co-so-tri-thuc/chi-muc.md) · bản đồ nội dung [ban-do/](../ban-do/README.md) (6 trang) · đường nối link tương đối.
-- **Máy kiểm** `tu-dong-hoa/lien-ket/kiem-tra-lien-ket.py`: link gãy (chặn đẩy GitHub), mồ côi, thiếu mô tả; sinh lại chỉ mục. Chạy trong `tu-dong-hoa/dong-bo.sh`.
-- **File miễn mô tả** (mô tả ghi trong máy kiểm): file nạp mỗi phiên (AGENTS.md, CLAUDE.md, chi-dan-toan-cuc.md), hồ sơ David (david.md, ho-so-ca-nhan.md, không sửa khi chưa hỏi), MEMORY.md, README.md (trang GitHub), quy-tac-bot.md (bị chép thành lời nhắc của bot).
+- **Công cụ kiểm tra** `tu-dong-hoa/lien-ket/kiem-tra-lien-ket.py`: link gãy (chặn đẩy GitHub), mồ côi, thiếu mô tả; sinh lại chỉ mục. Chạy trong `tu-dong-hoa/dong-bo.sh`.
+- **File miễn mô tả** (mô tả ghi trong công cụ kiểm tra): file nạp mỗi phiên (AGENTS.md, CLAUDE.md, chi-dan-toan-cuc.md), hồ sơ David (david.md, ho-so-ca-nhan.md, không sửa khi chưa hỏi), MEMORY.md, README.md (trang GitHub), quy-tac-bot.md (bị chép thành lời nhắc của bot).
 - **Luồng giữ mới**: `ky-nang/chuan-muc-lam-viec.md` mục 4 (file mới có mô tả + dòng bản đồ; kiến thức đáng giữ thì ghi vào `kien-thuc/`); AGENTS.md chỉ cách tra (grep chỉ mục trước).
 
 ## 3. Việc đã làm (14/11)
@@ -30,7 +30,7 @@ description: "Dự án liên kết tri thức (14/11): biến bộ não thành m
 - [x] Đo trước: 10 câu hỏi thử `tu-dong-hoa/lien-ket/cau-hoi-thu.json`
 - [x] Thuật ngữ mới vào `bang-thuat-ngu.md` (Bản đồ nội dung `ban-do`, Chỉ mục `chi-muc`, Ghi chú kiến thức `kien-thuc`, Quy ước liên kết, Kiểm tra liên kết, Đo truy xuất, Câu hỏi thử; khoá `description`)
 - [x] Luật `co-so-tri-thuc/quy-uoc-lien-ket.md`
-- [x] Máy kiểm + chỉ mục tự sinh, gắn vào `dong-bo.sh`
+- [x] Công cụ kiểm tra + chỉ mục tự sinh, gắn vào `dong-bo.sh`
 - [x] Sửa 21 link `[[...]]` gãy trong ghi nhớ (tên cũ trước chuẩn hoá tên 14/11)
 - [x] Mô tả một câu cho 145 file
 - [x] 6 trang bản đồ: gốc, hồ sơ và chiến lược, sản phẩm và đào tạo, sản xuất video, bộ não và tự động hoá, kiến thức

@@ -15,8 +15,8 @@ Người lướt qua trang hiểu ngay trong 5 giây: **David là trainer, giúp
 - **Bên ngoài chỉ thấy David:** người có năng lực giải quyết vấn đề trong các lĩnh vực mình định hướng. Không nhắc vai điều hành, không nêu tên đơn vị phía sau (nói "đội của mình", "đội công nghệ" thì được); giải pháp làm cho khách kể là "giải pháp mình làm cho khách".
 - **Hai lĩnh vực, một cách làm:** đứng cạnh, dẫn từng bước, tới khi người học tự làm được.
   - **Con người:** người lần đầu dẫn người, muốn làm chủ bản thân → công việc → các mối quan hệ (ba tầng làm chủ).
-  - **Công nghệ AI:** hộ kinh doanh, doanh nghiệp nhỏ dưới 20 người, chủ tự làm, kẹt việc lặp lại thì số hoá đúng vấn đề, kèm đào tạo tới khi đội dùng ra kết quả.
-- **Bằng chứng:** các hệ tự động David đang tự dùng hằng ngày (dựng video bằng AI, gom tin nhắn mỗi sáng, trợ lý nhắc việc trên Telegram, tự tổng kết tuần) · ca khách thật (ẩn danh).
+  - **Công nghệ AI:** hộ kinh doanh, doanh nghiệp nhỏ dưới 20 người, chủ tự làm, vướng việc lặp lại thì số hoá đúng vấn đề, kèm đào tạo tới khi đội dùng ra kết quả.
+- **Bằng chứng:** các hệ tự động David đang tự dùng hằng ngày (dựng video bằng AI, gom tin nhắn mỗi sáng, trợ lý nhắc việc trên Telegram, tự tổng kết tuần) · trường hợp khách thật (ẩn danh).
 
 ## 2. Phần giới thiệu, ảnh bìa, mục nổi bật
 - **Giới thiệu (tối đa 101 ký tự):** `Trainer · Con người & công nghệ AI · Giúp người và doanh nghiệp tự làm chủ, tự đứng được`
@@ -29,33 +29,33 @@ Người lướt qua trang hiểu ngay trong 5 giây: **David là trainer, giúp
 | Trụ | Lĩnh vực | Viết gì | Kết bài |
 |---|---|---|---|
 | **1. AI cho doanh nghiệp** | công nghệ | một việc lặp lại làm tổ chức mất thời gian, tiền → cách số hoá → kết quả | câu hỏi mở mời kể |
-| **2. Con người, dẫn đội** | con người | chỗ kẹt của người lần đầu dẫn người, ba tầng làm chủ | câu hỏi mở mời kể |
+| **2. Con người, dẫn đội** | con người | vướng mắc của người lần đầu dẫn người, ba tầng làm chủ | câu hỏi mở mời kể |
 | ~~3. Đời thường, hành trình~~ | bỏ từ 25/11/2026 | ngoài ba hướng thì không đăng; hành trình dẫn tới một hướng thì xếp vào trụ của hướng đó, chưa rõ thì hỏi David | — |
-| **4. Kết quả thật** | công nghệ (chính) | trước / sau: hệ tự động của chính David, ca khách ẩn danh, lời chứng | câu hỏi mở mời kể |
+| **4. Kết quả thật** | công nghệ (chính) | trước / sau: hệ tự động của chính David, trường hợp khách ẩn danh, lời chứng | câu hỏi mở mời kể |
 
 - **Tỉ lệ:** chia giữa công nghệ (trụ 1 + 4) và con người (trụ 2) theo nội dung đang có (bỏ phần đời thường từ 25/11/2026). Tỉ lệ tính trên 4 bài viết kèm ảnh mỗi tuần; video không tính vào lịch (mục Video sẵn, `lich-dang-bai.md`).
 - **Dẫn dắt:** bài viết kèm ảnh luôn kết bằng gợi mở chia sẻ (mục 4), không lời mời từ khoá; bài video theo tỉ lệ Không · Gợi mở · Mời 4 · 4 · 2 (`kenh.json`). Không nói giá, không hứa kết quả chưa làm ra.
 - **Không đăng ở đây:** tài chính, giao dịch hàng hoá (chỉ YouTube David Trần Official).
-- **Lằn ranh:** ca khách chỉ đăng khi David đưa chi tiết; tên khách ẩn trừ khi khách đồng ý; không nêu tên đơn vị phía sau.
+- **Lằn ranh:** trường hợp khách chỉ đăng khi David đưa chi tiết; tên khách ẩn trừ khi khách đồng ý; không nêu tên đơn vị phía sau.
 
 ## 4. Năm kiểu bài nền (không cần video)
-Dùng khi tuần không có video hoặc không có nguyên liệu mới; mọi ý lấy từ việc thật David đang làm, không bịa ca, không bịa số. Kiểu bài là **ý**; cách viết luôn theo **khung kể chuyện** dưới.
+Dùng khi tuần không có video hoặc không có nguyên liệu mới; mọi ý lấy từ việc thật David đang làm, không bịa đặt trường hợp, không bịa đặt số. Kiểu bài là **ý**; cách viết luôn theo **khung kể chuyện** dưới.
 1. **Vấn đề thì cách giải** (trụ 1): một việc lặp lại, mình số hoá thế nào, giờ ra sao.
 2. **Cách mình làm việc** (trụ 1 hoặc 3): 4 bước Mục tiêu → Kế hoạch → Quy trình → Thực thi, nhịp năng lượng, buổi nhìn lại tuần.
 3. **Bài học dẫn người** (trụ 2): làm thay đội, trao quyền, ba tầng làm chủ.
-4. **Kết quả thật** (trụ 4): trước / sau từ hệ của chính David hoặc ca khách ẩn danh.
+4. **Kết quả thật** (trụ 4): trước / sau từ hệ của chính David hoặc trường hợp khách ẩn danh.
 5. **Câu hỏi cho người xem** (trụ 1 hoặc 2): một câu hỏi tự soi, mời bình luận.
 
 **Khung kể chuyện đồng cảm (mọi bài viết kèm ảnh):** mỗi bài là một câu chuyện, đọc xong thấy được thấu hiểu, không thấy bị bán hàng.
 - **Mở bài, chạm nỗi đau:** một cảnh rất quen ai cũng từng gặp, cụ thể giờ giấc, chỗ ngồi, việc đang làm (ví dụ 10 giờ tối vẫn ngồi trả tin nhắn khách). Viết ngôi "mình" / "bạn", thân thiện như kể cho người quen.
-- **Thân bài, đồng cảm rồi gỡ:** cảm giác thật của người trong cảnh và vì sao kẹt (không phải lỗi của họ). Rồi kể cách gỡ qua chuyện thật David đã làm hoặc đã thấy: giải pháp hiện ra như một đoạn của câu chuyện ("bây giờ mỗi sáng mình chỉ đọc một bảng…"), không liệt kê tính năng, không nói giá, không "dịch vụ của mình". Bước ngoặt kể là "tìm ra được giải pháp để xử lý dứt điểm", không lộ "máy", "AI" làm (giọng văn, mục Nâng cấp giọng).
+- **Thân bài, đồng cảm rồi gỡ:** cảm giác thật của người trong cảnh và vì sao vướng (không phải lỗi của họ). Rồi kể cách gỡ qua chuyện thật David đã làm hoặc đã thấy: giải pháp hiện ra như một đoạn của câu chuyện ("bây giờ mỗi sáng mình chỉ đọc một bảng…"), không liệt kê tính năng, không nói giá, không "dịch vụ của mình". Bước ngoặt kể là "tìm ra được giải pháp để xử lý dứt điểm", không lộ "máy", "AI" làm (giọng văn, mục Nâng cấp giọng).
 - **Kết bài, mở lời:** một câu đồng cảm ("nếu bạn đang như vậy, bạn không một mình") + một câu hỏi mở mời người đọc kể chuyện của họ ở bình luận ("ở chỗ bạn, việc nào đang…?"). Muốn thêm thì một câu nhẹ: "ai muốn kể riêng thì nhắn mình". Không dùng lời mời từ khoá ("số hoá", "gỡ"), không "bình luận **Vấn đề**".
-- **Thật:** cảnh mở bài là cảnh chung nhiều người gặp hoặc chuyện của chính David; không gọi ai là "một khách của mình" khi David chưa đưa ca thật; không bịa số.
+- **Thật:** cảnh mở bài là cảnh chung nhiều người gặp hoặc chuyện của chính David; không gọi ai là "một khách của mình" khi David chưa đưa trường hợp thực tế; không bịa đặt số.
 - Dài vừa đọc trên điện thoại (khoảng 120–220 chữ), câu ngắn, xuống dòng nhiều; hashtag theo giọng văn.
 
 ## 5. Ảnh cho bài
 - **Thứ tự nguồn:** (1) video hoặc ảnh của chính David (khung từ video, ảnh David gửi) thì (2) **ảnh tạo bằng ChatGPT** trên Chrome (David đã đăng nhập ChatGPT trong Chrome) khi không có gì do David chuẩn bị.
-- **Ảnh ChatGPT: ảnh chân thực, chuyên nghiệp như ảnh thật + lớp motion graphics** mô tả đúng nội dung bài (ví dụ tin nhắn rối bay về một bảng việc gọn, đường sáng nối các bước, dấu tích, biểu đồ đi lên không số). Ảnh chụp kiểu máy full-frame, ánh sáng tự nhiên, chiều sâu trường ảnh nông, tông ấm, sạch, cao cấp; người Việt Nam. Khung dọc 4:5. Mỗi ảnh là **cảnh mở bài** của câu chuyện.
+- **Ảnh ChatGPT: ảnh chân thực, chuyên nghiệp như ảnh thật + lớp motion graphics** mô tả đúng nội dung bài (ví dụ tin nhắn rối bay về một bảng việc gọn, đường sáng nối các bước, dấu tích, biểu đồ tăng không số). Ảnh chụp kiểu máy full-frame, ánh sáng tự nhiên, chiều sâu trường ảnh nông, tông ấm, sạch, cao cấp; người Việt Nam. Khung dọc 4:5. Mỗi ảnh là **cảnh mở bài** của câu chuyện.
 - **Bối cảnh doanh nghiệp:** trụ 1, 2, 4 đặt ở văn phòng, doanh nhân Việt (phòng họp, bàn làm việc văn phòng, chủ doanh nghiệp, quản lý mặc lịch sự bên laptop, đội trong buổi họp); trụ 3 đời thường giữ bối cảnh tự nhiên.
 - **Nhân vật chính là David:** ảnh có người thì người được nội dung nhắc tới (nhân vật chính) là David, dựng từ ảnh mẫu `~/Documents/2-ca-nhan/anh-mau-david/` (ảnh rõ mặt lấy từ Facebook cá nhân; `david-0-mau-chuan.png` là ảnh giống nhất, luôn tải đầu tiên; không lên GitHub). **Mỗi ảnh một cuộc trò chuyện ChatGPT mới:** tải 3 ảnh mẫu (mẫu chuẩn, chân dung, selfie), yêu cầu "tạo một ảnh MỚI hoàn toàn, nhân vật chính là chính người này (mặt đầy đặn, má đầy, cằm tròn, kính gọng đen dày vuông, tóc đen ngắn chải lên, râu mỏng)" + bối cảnh bài; không sửa trên ảnh cũ, không làm nhiều ảnh nối tiếp trong một cuộc trò chuyện. So mặt với ảnh mẫu: không giống thì tạo lại trong một cuộc trò chuyện mới (tối đa 2 lần). Lưu ảnh xong thì xoá cuộc trò chuyện đó (kèm tệp đã tải lên). Người phụ (nhân viên, bạn) là người minh hoạ; ảnh cảnh không người giữ không người. Lời bài giữ nguyên.
 - **Không:** chữ, số, logo trong ảnh (máy hay sai dấu tiếng Việt); mặt người thật khác có tên; màn hình số liệu giả. Người phụ trong ảnh tạo chỉ minh hoạ: bài không gọi họ là "khách của mình".

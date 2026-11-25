@@ -56,12 +56,12 @@ description: "Nghiên cứu 10 video highlight dọc lượt xem cao (03/11) cho
 2. **Nhịp không đến từ số lần cắt mà từ nhịp chữ.** Video một người nói cắt rất ít (DOAC 28 s/cảnh, Mel 19 s/cảnh, Tony một cảnh liền) nhưng phụ đề đổi 1–3 chữ mỗi nhịp. Video ghép clip, vlog hay tin mới cắt dày, khoảng 2,2–2,7 s/cảnh.
 3. **Cảnh phản ứng là chất keo cảm xúc.** Hễ có người thứ hai (người dẫn, giám khảo, khán giả) là có cắt sang mặt họ ở chỗ đắt: Jay cười, người dẫn Have A Sip nghe, giám khảo Rap Việt nhìn.
 4. **Phụ đề nằm giữa khung (ngang ngực), không nằm sát đáy**, ở 7 trên 10 video. Mỗi dòng 1–3 chữ, in hoa đậm hoặc có ô nền. Logo hay tên chương trình đặt góc trên trái.
-5. **Mạch thường gặp:** chạm (mâu thuẫn) → leo thang hoặc 3 ý → câu chốt nguyên văn ngắn. Cái kết là **câu đắt nhất hoặc kết quả**, không phải câu "hãy bình luận".
+5. **Mạch thường gặp:** chạm (mâu thuẫn) → leo thang hoặc 3 ý → câu chốt nguyên văn ngắn. Cái kết là **câu then chốt hoặc kết quả**, không phải câu "hãy bình luận".
 6. **Gần như không video nào có lời kêu gọi kiểu "bình luận/theo dõi".** Lời kêu gọi là:
    - Câu mệnh lệnh nằm sẵn trong nội dung: "Hãy chọn…", "Start hunting…".
    - Thẻ dẫn về bản đầy đủ: Have A Sip.
    - Vòng lặp kéo người xem xem lại: Hormozi, Tony.
-7. **Hai video vượt 60 s (141 s, 180 s) vẫn rất nhiều lượt xem** vì có câu chuyện hoặc câu đố giữ người xem tới đáp án. 30–60 s là chuẩn, nhưng không phải giới hạn cứng khi câu chuyện đủ hồi hộp.
+7. **Hai video vượt 60 s (141 s, 180 s) vẫn rất nhiều lượt xem** vì có câu chuyện hoặc câu đố giữ người xem tới đáp án. 30–60 s là chuẩn, nhưng không phải giới hạn cố định khi câu chuyện đủ hồi hộp.
 8. **Bằng chứng trên màn hình tăng niềm tin:** ảnh giá eBay, logo Shark Tank, con số 70%, 5 triệu USD.
 
 ## 4. Đề xuất sửa skill (chờ anh duyệt)
@@ -70,12 +70,12 @@ description: "Nghiên cứu 10 video highlight dọc lượt xem cao (03/11) cho
 - **A. Thẻ tiêu đề mở đầu 2–3 s:** chữ to trích nguyên văn câu chạm (kiểu DOAC, Mel), đặt ở nửa trên khung, tách khỏi phụ đề. Skill đang có `pow` ở mở đầu; đề xuất chuẩn hoá thành thẻ cố định cho mọi highlight.
 - **B. Thêm 2 kiểu câu mở vào thang chấm ở bước 3:** "kết quả trước, quá khứ sau" và "câu đố cho người xem", đặt ngang hạng "bất ngờ / kết quả lớn".
 - **C. Lời kêu gọi nới định nghĩa:** chấp nhận **câu mệnh lệnh nguyên văn trong nội dung** ("Hãy chọn…", "thử làm…") làm lời kêu gọi chính. Câu mời bình luận chỉ dùng khi người nói có nói, nằm ở bình luận ghim như hiện nay. Không đổi luật "chỉ nguyên văn".
-- **D. Thẻ cuối dẫn về bản đầy đủ** (kiểu Have A Sip): 1,5–2 s sau màn chốt, gồm tên tập + ảnh người nói + biểu tượng YouTube. Việc này **đụng luật cũ** "Không thêm nhãn BẢN ĐẦY ĐỦ tự viết", nên cần anh chốt: cho phép thẻ chỉ có **tên tập gốc + biểu tượng** (không chữ tự viết) hay không?
+- **D. Thẻ cuối dẫn về bản đầy đủ** (kiểu Have A Sip): 1,5–2 s sau màn chốt, gồm tên tập + ảnh người nói + biểu tượng YouTube. Việc này **xung đột với luật cũ** "Không thêm nhãn BẢN ĐẦY ĐỦ tự viết", nên cần anh chốt: cho phép thẻ chỉ có **tên tập gốc + biểu tượng** (không chữ tự viết) hay không?
 - **E. Vòng lặp:** với clip tối đa 35 s, ưu tiên chọn câu cuối nối được về câu đầu. Kiểu này đã có trong bảng bố trí; đề xuất nâng lên mặc định khi có cặp câu như vậy.
 - **F. Độ dài:** giữ 30–60 s; cho phép tới 90–120 s **chỉ khi** là câu chuyện có hồi hộp và đáp án ở cuối (kiểu DOAC). Hiện skill cho tối đa 90 s.
 
 **`dung-video-theo-phong-cach` (chế độ ghép clip / game show)**
-- **G. Cảnh phản ứng:** khi có người thứ hai (khán giả, người dẫn, bạn đồng hành) thì chèn 0,8–1,5 s mặt họ ngay sau câu đắt nhất, kiểu Jay, Rap Việt.
+- **G. Cảnh phản ứng:** khi có người thứ hai (khán giả, người dẫn, bạn đồng hành) thì chèn 0,8–1,5 s mặt họ ngay sau câu then chốt, kiểu Jay, Rap Việt.
 - **H. Ô chữ theo người nói:** mỗi người một màu ô (kiểu GaryVee) cho cảnh hội thoại trong vlog.
 - **I. Nhịp ghép mục tiêu 2,2–2,7 s/cảnh** cho đoạn `soi`; đoạn `lang` 4–6 s.
 - **J. Bằng chứng:** khi người nói nêu kết quả hay con số, ưu tiên hình chụp hoặc tư liệu thật làm bằng chứng, nếu có trong clip gốc.

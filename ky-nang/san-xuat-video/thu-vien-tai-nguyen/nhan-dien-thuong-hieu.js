@@ -1,5 +1,5 @@
 // BỘ NHẬN DIỆN CHUNG — vị trí cố định của kênh cho MỌI loại video (David chốt 08/11/2026: "các loại có những tiêu chuẩn giống nhau,
-// chỉ motion graphics là tuỳ loại, tuỳ cảnh"). Một nguồn: khuôn 1 video, podcast, ghép vlog, highlight đều đọc ở đây.
+// chỉ motion graphics là tuỳ loại, tuỳ cảnh"). Một nguồn: mẫu 1 video, podcast, ghép vlog, highlight đều đọc ở đây.
 // Bảng giải thích: nhan-dien-chung.md. Sửa vị trí → sửa ở đây, rồi chụp kiểm cả khung ngang lẫn dọc.
 export const khung = (W, H) => {
   const V = H > W;

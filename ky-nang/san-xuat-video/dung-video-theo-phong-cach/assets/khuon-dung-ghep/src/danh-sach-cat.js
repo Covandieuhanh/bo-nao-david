@@ -11,7 +11,7 @@ export const fr = (s) => Math.round(s * FPS);
 // vol: âm lượng tiếng gốc (0 = tắt) · audio: {clip, from, vol} lấy tiếng chỗ khác (hình vẫn của clip này)
 // fit: 'blur' cho hình ngang đặt trên nền mờ · zoom: [{at (src), s, x, y, len}] cú zoom dồn
 // zoomIn: [từ, đến, x, y] zoom chậm suốt đoạn · grade: 'title' | 'replay' | 'dark'
-// cite: {label?, fit?} đoạn TRÍCH DẪN — viết bằng hàm cite() bên dưới, đừng tự ghép tay
+// cite: {label?, fit?} đoạn TRÍCH DẪN — viết bằng hàm cite() bên dưới, đừng tự ghchỉ định thủ công
 //
 // cite({id, clip, from, over: [clipChính, a, b], label}) — chèn hình clip minh hoạ `clip` (từ giây `from`) đúng lúc người
 // nói ở clipChính nói câu [a, b]: hình nằm trong khung bo góc, tắt tiếng; tiếng clipChính chạy tiếp. Đoạn clip chính

@@ -75,7 +75,7 @@ _mus = [m for m in (locals().get("_hl") or {}).get("nhac", []) if os.path.exists
 _mv = None; _th = None
 # NHẠC THEO TUYẾN NỘI DUNG (David chốt 2026-11-05 — khối 09, hồ sơ chung `nhac`): project.tuyen = vui | tam_su | mat_mat | y_nghia |
 # kien_thuc → bài trong bảng. Không ghi tuyến (và không ghi project.music) → DỪNG: không còn mặc định "Upbeat Vlog" cho mọi video
-# (podcast tâm sự 2026-11-05 bị gắn nhạc sôi động). project.nhac = '<bài>' ép tay · '' / null = tắt nhạc.
+# (podcast tâm sự 2026-11-05 bị gắn nhạc sôi động). project.nhac = '<bài>' chỉ định thủ công · '' / null = tắt nhạc.
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../mo-dun")); import ho_so as _hoso
 NH = _hoso.load("chung").get("nhac", {})
 def _pick_music():

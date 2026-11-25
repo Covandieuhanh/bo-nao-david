@@ -28,7 +28,7 @@ loai_tru_rieng() {
   local ex="$REPO/.git/info/exclude" tam
   mkdir -p "$(dirname "$ex")"; tam=$(mktemp)
   sed '/# >>> phan-rieng-mac/,/# <<< phan-rieng-mac/d' "$ex" 2>/dev/null > "$tam"
-  { echo "# >>> phan-rieng-mac (tự sinh từ tu-dong-hoa/phan-rieng-mac.txt — không sửa tay)"
+  { echo "# >>> phan-rieng-mac (tự sinh từ tu-dong-hoa/phan-rieng-mac.txt — không sửa thủ công)"
     for p in "${RIENG[@]}"; do echo "/$p"; done
     echo "# <<< phan-rieng-mac"; } >> "$tam"
   mv "$tam" "$ex"
@@ -53,7 +53,7 @@ keo() {   # keo <gc|gr> <tên repo>
     $G rebase --abort >/dev/null 2>&1
     mkdir -p "$(dirname "$XUNG_DOT")"
     echo "$(date '+%F %H:%M') máy $(hostname -s 2>/dev/null || hostname) và GitHub ($TEN) cùng sửa trùng chỗ: ${tep:-(không rõ file)}. Bản trên máy vẫn giữ nguyên, chưa đẩy." >> "$XUNG_DOT"
-    echo "⛔ Xung đột khi kéo về $TEN (hai máy sửa trùng chỗ): ${tep:-xem git status}. Đã huỷ gộp, repo giữ nguyên bản trên máy. Nhờ Claude gộp tay rồi chạy lại dong-bo.sh."
+    echo "⛔ Xung đột khi kéo về $TEN (hai máy sửa trùng chỗ): ${tep:-xem git status}. Đã huỷ gộp, repo giữ nguyên bản trên máy. Nhờ Claude gộp thủ công rồi chạy lại dong-bo.sh."
     exit 1
   fi
 }

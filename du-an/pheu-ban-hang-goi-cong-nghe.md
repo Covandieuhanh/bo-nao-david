@@ -23,7 +23,7 @@ Có **khoản thu đầu tiên từ một gói công nghệ**, khách **ra đư�
 **Gói 2 (David duyệt 21/11/2026): trainer dựng bộ não bằng file cho AI**, người chưa biết gì tự tạo cơ sở tri thức cá nhân, học và lưu lại sau mỗi dự án; hai mức (Dự án trong ứng dụng AI · trợ lý AI trên máy kèm GitHub), 10 bước, 4 buổi, giáo trình 8 bài, 4 biểu mẫu ở [goi-dao-tao-co-so-tri-thuc-ai/](goi-dao-tao-co-so-tri-thuc-ai/README.md). Chưa chốt giá, chưa thử trên tài khoản sạch.
 
 ## Quy trình (mỗi gói đi đủ 7 bước)
-1. **Chọn nỗi đau** từ tin nhắn, bình luận ("Vấn đề") — soi bằng Tiền · Thị trường · Con người: mất tiền gì, khách là ai / quy mô nào, người nào đang làm và kẹt ở đâu.
+1. **Chọn nỗi đau** từ tin nhắn, bình luận ("Vấn đề") — xét bằng Tiền · Thị trường · Con người: mất tiền gì, khách là ai / quy mô nào, người nào đang làm và vướng ở đâu.
 2. **Gói** = kết quả hứa (đo được) + công cụ + số buổi đào tạo + việc khách phải tự làm.
 3. **Nội dung phễu:** bài / clip cho thấy kết quả thật trên chính David thì mời nhắn một từ khoá.
 4. **Trò chuyện 20 phút:** hỏi mục tiêu, nỗi đau; hợp thì mời bán thử.

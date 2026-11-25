@@ -44,7 +44,7 @@ video); video dài xem kỹ 60 s đầu + ảnh thumbnail. Ngoài 20 video có m
    cả clip 94–111 s.
 4. **Chữ to màu theo nghĩa** (T15): xanh = nên làm, đỏ = tránh; các câu thường chữ nhỏ.
 5. **Thẻ tóm tắt để lưu** (T13): ảnh danh sách 5 mục 12 s thì tối ưu lưu/chụp màn hình.
-6. **Thumbnail video dài (10/10 cùng khuôn)**: mặt cận biểu cảm mạnh (cười to, buồn, ngạc nhiên, nhìn điện thoại đúng tình huống) +
+6. **Thumbnail video dài (10/10 cùng mẫu)**: mặt cận biểu cảm mạnh (cười to, buồn, ngạc nhiên, nhìn điện thoại đúng tình huống) +
    **3–4 tầng chữ** in hoa viền đen, vàng/trắng/đỏ, từ khoá to nhất, **con số khổng lồ** ("5", "3 BƯỚC"); thường 6–10 chữ (dài hơn
    chuẩn 4 chữ quốc tế). Có series/số tập (#125, Lesson #9, Workout #78). Sticker meme khi kênh vui (T16).
 7. **Tiêu đề**: con số + TỪ KHOÁ IN HOA + lời hứa trong ngoặc "(áp dụng được ngay)" + vòng mở "…mà là vì…" + series/số tập.

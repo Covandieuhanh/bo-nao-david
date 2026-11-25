@@ -10,6 +10,6 @@ metadata:
 13/11/2026 lần 2, David: "bộ này hơi thừa… có cả tư duy nữa, không cần thiết. đây thuần chỉ là nội dung làm sao để dựng video bất kì bằng ai trên máy tính thôi". Phần tư duy kênh, chọn ý, đăng, đo tách sang `du-an/goi-dao-tao-noi-dung-kenh/` làm gói khác.
 
 **Why:** gói bán cho người khác phải dùng được với mọi AI, mọi máy; dạy theo hệ riêng của David thì học viên không tự chạy được.
-**How to apply:** khi soạn hay bổ sung gói hướng 3, theo đúng "Luật soạn gói hướng 3" ở nhà luật dưới đây (không chép lại luật ở đây). Liên quan [[co-so-tri-thuc-ho-so-va-bo-loc]].
+**How to apply:** khi soạn hay bổ sung gói hướng 3, theo đúng "Luật soạn gói hướng 3" ở nguồn luật dưới đây (không chép lại luật ở đây). Liên quan [[co-so-tri-thuc-ho-so-va-bo-loc]].
 
-Nhà của luật: `co-so-tri-thuc/chien-luoc-nghe-nghiep.md` mục 4.1 ("Luật soạn gói hướng 3") — luật của nghề; `san-pham-hoa` chỉ trỏ tới khi soạn gói (David tách 17/11/2026). Ghi nhớ này giữ ngày, lời David, lý do.
+Nguồn của luật: `co-so-tri-thuc/chien-luoc-nghe-nghiep.md` mục 4.1 ("Luật soạn gói hướng 3") — luật của nghề; `san-pham-hoa` chỉ trỏ tới khi soạn gói (David tách 17/11/2026). Ghi nhớ này giữ ngày, lời David, lý do.

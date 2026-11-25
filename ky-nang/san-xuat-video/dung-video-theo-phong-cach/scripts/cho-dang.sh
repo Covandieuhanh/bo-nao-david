@@ -1,6 +1,6 @@
 #!/bin/zsh
 # BẢN CUỐI CHỜ ĐĂNG TRÊN MAC (David 20/11/2026: "những kết quả cuối cùng mà tôi chưa đăng thì vẫn cần phải có trong mac để có khi đăng";
-# "tôi chỉ quan tâm đến các kết quả cuối thôi"). Mac giữ đúng bản cuối chưa đăng ở ~/Movies/cho-dang/<tập>/ (cùng khuôn thanh-pham:
+# "tôi chỉ quan tâm đến các kết quả cuối thôi"). Mac giữ đúng bản cuối chưa đăng ở ~/Movies/cho-dang/<tập>/ (cùng mẫu thanh-pham:
 # ban-dai/, highlight/, bài đăng, ảnh bìa). Bản gốc + dự án dựng chỉ ở Drive (luu-drive.sh).
 # ĐỦ HẾT LÊN DRIVE (David 25/11/2026: "khi quy trình đã làm ra sản phẩm gì thì đều tải lên drive đầy đủ hết"): mỗi tập có cả bản xem
 # nhẹ (gui tự làm), và mỗi buổi gốc có thư mục _buoi-<buổi>/ (lệnh buoi) chứa kết quả chung: hướng nào ra gì, phân hướng, lời, nhật ký.

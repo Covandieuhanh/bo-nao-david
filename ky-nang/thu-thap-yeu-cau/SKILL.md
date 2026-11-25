@@ -42,7 +42,7 @@ Mỗi vòng **tối đa 5 câu**. **Cây quyết định:** mỗi vòng chỉ h�
 ## Quy trình
 
 1. Xác định lĩnh vực và loại việc (bảng trên).
-2. **Vòng 1 mở bằng một dòng:** `Góc nhìn tổng hợp từ: <tên>, <tên>, …` — chuyên gia **có thật**, thực chiến đúng lĩnh vực, tối đa 10 tên. Không chắc thì nêu ít hơn, không bịa. Vòng sau không lặp.
+2. **Vòng 1 mở bằng một dòng:** `Góc nhìn tổng hợp từ: <tên>, <tên>, …` — chuyên gia **có thật**, thực chiến đúng lĩnh vực, tối đa 10 tên. Không chắc thì nêu ít hơn, không bịa đặt. Vòng sau không lặp.
 3. **Các câu hỏi**, mỗi câu: đánh số, tiêu đề ngắn, một ý; **2–3 gợi ý, đề xuất đứng đầu**, "đồng ý" = nhận đề xuất. Ưu tiên điều đổi kết quả. Câu nhiều phương án có thể dùng AskUserQuestion.
 4. David trả lời (thường bằng giọng nói): hiểu theo ý, chấp nhận chữ lệch; chỉ hỏi lại khi hiểu được nhiều cách (tín hiệu 1). Thiết kế lớn thì vòng tiếp.
 4b. **Thiết kế lớn (nhiều vòng): ghi ngay vào file** `du-an/phong-van/<ngày>-<chủ-đề>.md` sau mỗi câu trả lời: câu hỏi · đề xuất · **đã chốt**.
@@ -51,7 +51,7 @@ Mỗi vòng **tối đa 5 câu**. **Cây quyết định:** mỗi vòng chỉ h�
 6. **Chờ "duyệt"** ("duyệt", "ok", "đồng ý", "đúng", "làm đi" đều tính). Chưa có thì không tạo, không sửa file nào. David sửa phần nào thì trình lại phần đó, chờ lần nữa.
 7. Làm xong: báo cáo theo `chuan-muc-lam-viec.md` mục 4.
 
-Nội dung là của David (`chuan-muc-lam-viec.md` mục 0, ghi nhớ [quy-tac-noi-dung-cua-david](../../co-so-tri-thuc/bo-nho/quy-tac-noi-dung-cua-david.md)): không đề xuất khuôn lời cho David nói.
+Nội dung là của David (`chuan-muc-lam-viec.md` mục 0, ghi nhớ [quy-tac-noi-dung-cua-david](../../co-so-tri-thuc/bo-nho/quy-tac-noi-dung-cua-david.md)): không đề xuất mẫu lời cho David nói.
 
 ## Mẫu một vòng
 

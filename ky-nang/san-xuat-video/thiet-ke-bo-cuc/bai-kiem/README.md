@@ -5,7 +5,7 @@ description: "Bài kiểm suy luận dựng video: 10 đoạn từ hình mẫu, 
 # Bài kiểm suy luận dựng video
 
 Đo xem một AI (ở máy nào cũng vậy) **đọc file rồi có tự lập luận đúng** cách dựng không. Đề: [de.json](de.json), 10 đoạn diễn ý từ các
-hình mẫu ở [giai-mau.md](../giai-mau.md) (không trùng các ca đã giải). Chấm: [cham.py](cham.py).
+hình mẫu ở [giai-mau.md](../giai-mau.md) (không trùng các trường hợp đã giải). Chấm: [cham.py](cham.py).
 
 ## Khi nào chạy
 - Máy mới, sau `tu-dong-hoa/may-khac/kiem-may.sh` (máy công cụ) — bài này kiểm phần **suy nghĩ**.
@@ -21,4 +21,4 @@ hình mẫu ở [giai-mau.md](../giai-mau.md) (không trùng các ca đã giải
 5. **Bộ kiểm lớn dần:** lỗi dựng nào David phải sửa (sai nguyên lý, sai cách thể hiện) thì thêm một đoạn vào `de.json` từ chính ca đó
    (trục `co-so-tri-thuc/truc-tri-thuc.md` mục 4). Không bỏ đoạn cũ khi chưa ghi lý do vào sổ.
 
-Thử máy chấm: `python3 -I cham.py --mau > /tmp/mau.json && python3 -I cham.py /tmp/mau.json` phải ra 10/10.
+Thử công cụ chấm: `python3 -I cham.py --mau > /tmp/mau.json && python3 -I cham.py /tmp/mau.json` phải ra 10/10.

@@ -14,14 +14,14 @@ Code, script `scripts/app-video.sh`, tài liệu thiết kế đã xoá khỏi r
 app hay công cụ tự động tương tự trừ khi David yêu cầu. Thư mục dữ liệu cũ của app `~/Movies/_app/` để nguyên (David tự quyết).
 Liên quan [[quy-tac-thu-bang-doan-ngan]], [[quy-tac-khong-tu-chay-viec-cua-david]].
 
-Nhà của luật: `ky-nang/san-xuat-video/quy-tac-chung.md` mục 8 ("Dựng ngay trong phiên Claude"). Ghi nhớ này giữ ngày, lời David, lý do.
+Nguồn của luật: `ky-nang/san-xuat-video/quy-tac-chung.md` mục 8 ("Dựng ngay trong phiên Claude"). Ghi nhớ này giữ ngày, lời David, lý do.
 
 ## Gộp từ `video-bo-ung-dung` (15/11/2026, tự học tuần: giảm ghi nhớ về 40)
 
 David chốt 2026-11-06: **không cài** HyperFrames + Motion Studio, bộ skill video vẫn dùng Remotion. Đã học ý và tự viết lại, không chép code: luật chuyển động "đã vào là đứng yên" (khối 07), 3 sơ đồ `xay-tang`, `doi-trang-thai`, `chuyen-giao`, `soat-canh.mjs` (khối 17), `chu-tren-man.mjs` (khối 03).
 
-**Why:** cùng cách render (Chrome chạy ngầm + FFmpeg), tốc độ gần bằng nhau; bộ hiện tại đã mạnh hơn ở dấu tiếng Việt, tránh che mặt và trọn quy trình. Motion Studio tự kích hoạt khi nhắn làm video nên đụng skill hiện có, còn thêm hook vào cài đặt Claude Code và khóa HyperFrames ở bản cũ.
+**Why:** cùng cách render (Chrome chạy ngầm + FFmpeg), tốc độ gần bằng nhau; bộ hiện tại đã mạnh hơn ở dấu tiếng Việt, tránh che mặt và trọn quy trình. Motion Studio tự kích hoạt khi nhắn làm video nên trùng skill hiện có, còn thêm hook vào cài đặt Claude Code và khóa HyperFrames ở bản cũ.
 
 **How to apply:** không đề xuất đổi công cụ dựng trừ khi David thấy hình còn thiếu rõ ràng; kiểu chuyển động mới vẽ vào `thu-vien-tai-nguyen/`. Liên quan [[video-kien-truc-ky-nang]].
 
-Nhà của luật: `ky-nang/san-xuat-video/thiet-ke-bo-cuc/README.md` mục 4 điểm 10. Ghi nhớ này giữ ngày, lời David, lý do.
+Nguồn của luật: `ky-nang/san-xuat-video/thiet-ke-bo-cuc/README.md` mục 4 điểm 10. Ghi nhớ này giữ ngày, lời David, lý do.

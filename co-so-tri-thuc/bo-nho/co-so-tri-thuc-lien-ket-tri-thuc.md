@@ -1,6 +1,6 @@
 ---
 name: co-so-tri-thuc-lien-ket-tri-thuc
-description: Bộ não là mạng lưới file nối nhau (mô tả, chỉ mục tự sinh, bản đồ, ghi chú kiến thức, máy kiểm link), không dùng app Obsidian (14/11)
+description: Bộ não là mạng lưới file nối nhau (mô tả, chỉ mục tự sinh, bản đồ, ghi chú kiến thức, công cụ kiểm tra link), không dùng app Obsidian (14/11)
 metadata:
   type: project
 ---

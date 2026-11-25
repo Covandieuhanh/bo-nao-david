@@ -1,5 +1,5 @@
 #!/bin/zsh
-# Chụp lại ảnh mẫu từng kiểu (thiet-ke-bo-cuc/bo-cuc.md mục "Ảnh mẫu"): khuôn thử + người giả, khung dọc và ngang.
+# Chụp lại ảnh mẫu từng kiểu (thiet-ke-bo-cuc/bo-cuc.md mục "Ảnh mẫu"): mẫu thử + người giả, khung dọc và ngang.
 #   zsh chup-anh-mau.sh [lọc]     — lọc: chỉ chụp kiểu có id chứa chữ này (vd. dung-hay). Thêm kiểu mới: thêm một dòng ở canh-mau.mjs.
 # Cần: node + npm, ffmpeg, python3 có Pillow (pip install pillow). Chạy được trên Mac, Linux, Windows qua WSL2.
 set -e

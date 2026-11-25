@@ -9,5 +9,5 @@ David (13/11/2026): "trong các video tôi muốn có nhiều hình ảnh để 
 
 **Why:** người xem là người Việt; ảnh nước ngoài làm lệch cảm giác gần gũi.
 
-**How to apply:** nhà của luật `ky-nang/san-xuat-video/quy-tac-chung.md` (dòng "Nhiều ảnh thật minh hoạ"); `kho-anh-openverse.py` tự thêm "Vietnam" vào từ khoá.
+**How to apply:** nguồn của luật `ky-nang/san-xuat-video/quy-tac-chung.md` (dòng "Nhiều ảnh thật minh hoạ"); `kho-anh-openverse.py` tự thêm "Vietnam" vào từ khoá.
 Không có ảnh Việt Nam hợp giấy phép thì biểu tượng vẽ. Liên quan [[video-do-hoa-ke-chuyen]], [[video-chi-hinh-cua-chinh-video]].

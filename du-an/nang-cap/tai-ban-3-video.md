@@ -5,18 +5,18 @@ description: "Tái bản 3 (14/11), phiên con bộ video: bảng luật đang s
 # Tái bản 3 — bộ video
 
 Phiên điều phối: [tai-ban-3.md](tai-ban-3.md). Thư mục: `ky-nang/san-xuat-video/` (50 file bản luật). Đường dẫn trong bảng tính từ thư mục đó.
-Trạng thái: **sống** = giữ, đã có nhà · **trùng** = gộp về một nhà, nơi khác trỏ · **ngược** = hai câu trái nhau, đã viết lại theo ngày chốt mới hơn
+Trạng thái: **sống** = giữ, đã có nguồn duy nhất · **trùng** = gộp về một nguồn duy nhất, nơi khác trỏ · **ngược** = hai câu trái nhau, đã viết lại theo ngày chốt mới hơn
 (`chuan-muc-lam-viec.md` mục 0) · **cũ** = lịch sử / dấu ngày, chuyển về sổ.
 
-## Bảng luật đang sống
+## Bảng luật hiện hành
 
-### Luật chung (nhà: `quy-tac-chung.md`)
+### Luật chung (nguồn duy nhất: `quy-tac-chung.md`)
 | Luật | Nhà nên ở | Nguồn hiện tại | Ngày chốt gần nhất | Trạng thái |
 |---|---|---|---|---|
 | Người xem là trung tâm: ở lại → hiểu → làm theo; đo bằng số thật | quy-tac-chung 0 | quy-tac-chung:12; ghi nhớ quy-tac-noi-dung-cua-david | 05/11 | sống |
 | Thẩm mỹ chỉ giữ chữ ký nhận diện; ngoài đó sáng tạo tự do | quy-tac-chung 0 → nhan-dien-chung 0 | quy-tac-chung:14; nhan-dien-chung:11; thiet-ke-bo-cuc/README:14; ghi nhớ video-tham-my-chi-giu-nhan-dien | 10/11 | sống |
 | Hiểu hơn cầu kì: mỗi video vài kiểu hợp nhất, rối thì bớt | quy-tac-chung 0 | quy-tac-chung:17; ghi nhớ video-hieu-hon-cau-ki | 10/11 | sống |
-| Không bịa; chữ trên video = nguyên văn lời David; không số chạy David không nói | quy-tac-chung 1 | quy-tac-chung:21-24; khối 06, 08; cat-doan luật 3; ghi nhớ video-chu-nguyen-van | 07/11 | sống |
+| Không bịa đặt; chữ trên video = nguyên văn lời David; không số chạy David không nói | quy-tac-chung 1 | quy-tac-chung:21-24; khối 06, 08; cat-doan luật 3; ghi nhớ video-chu-nguyen-van | 07/11 | sống |
 | Câu Claude tự viết chỉ ở bài đăng | quy-tac-chung 1 | quy-tac-chung:25 | 08/11 | sống |
 | Nhãn cố định của khung, lịch phát do David đưa | quy-tac-chung 1 | quy-tac-chung:27; khối 08 | 08/11 | sống |
 | Lằn ranh kênh trainer; video dài cảnh báo, mặc định giữ lời | quy-tac-chung 1 → khối 00 mục 3 | quy-tac-chung:30; khối 00:71 | 13/11 | sống |
@@ -36,7 +36,7 @@ Trạng thái: **sống** = giữ, đã có nhà · **trùng** = gộp về mộ
 | Màu theo nghĩa `+`/`-`; không đốt phụ đề bằng ffmpeg | quy-tac-chung 3 | quy-tac-chung:62-63; cat-doan "Điều không làm" | 08/11 | sống |
 | Mọi video có điểm nhấn, vài kiểu | quy-tac-chung 4 → khối 07 | quy-tac-chung:66; dung-video luật 3; ghi nhớ video-do-hoa-ke-chuyen | 09/11 | sống |
 | Bố cục tự cân, không con số bắt buộc | quy-tac-chung 4 → thiet-ke-bo-cuc/README 2 | quy-tac-chung:69; ghi nhớ video-bo-cuc-tu-can | 08/11 | sống |
-| Tự chọn trước kế hoạch cảnh theo tu-chon.md (3 skill dựng) | quy-tac-chung 4 (luật) · tu-chon.md (cách làm) | cat-doan:21 + dung-podcast:22 (câu trùng); dung-video bước 6b; thiet-ke-bo-cuc/README 5; ghi nhớ video-tu-chon-theo-noi-dung | 11/11 | trùng → một nhà, skill trỏ ở bảng công thức |
+| Tự chọn trước kế hoạch cảnh theo tu-chon.md (3 skill dựng) | quy-tac-chung 4 (luật) · tu-chon.md (cách làm) | cat-doan:21 + dung-podcast:22 (câu trùng); dung-video bước 6b; thiet-ke-bo-cuc/README 5; ghi nhớ video-tu-chon-theo-noi-dung | 11/11 | trùng → một nguồn duy nhất, skill trỏ ở bảng công thức |
 | Không che người nói, không đè phụ đề; nhiều người thì bám người đang nói | quy-tac-chung 4 → khối 05 | quy-tac-chung:71; khối 05; nguyen-tac | 08/11 | sống |
 | Chữ tiếng Việt đủ dấu, không chồng dòng (`VN`) | quy-tac-chung 4 | quy-tac-chung:74; loi-thuong-gap "Chữ tiếng Việt" | 06/11 | sống |
 | Nhiều ảnh thật minh hoạ, chỉ ảnh Việt Nam; trừu tượng → biểu tượng vẽ | quy-tac-chung 4 | quy-tac-chung:75; ghi nhớ video-anh-viet-nam | 13/11 | sống |
@@ -107,7 +107,7 @@ Trạng thái: **sống** = giữ, đã có nhà · **trùng** = gộp về mộ
 | Lỗi đã gặp + chỗ chặn | loi-thuong-gap (2 file) | loi-thuong-gap | 11/11 | sống (bỏ ngày ở tiêu đề mục) |
 | Giọng văn David | giong-thuong-hieu-david | giong-thuong-hieu-david | 13/11 | sống (kho chung với bộ khác) |
 
-**Tổng:** 78 dòng — 59 sống, 3 trùng (gộp về một nhà), 13 ngược (đã viết lại theo ngày chốt mới hơn), 3 cũ (chuyển về sổ / sửa đường trỏ).
+**Tổng:** 78 dòng — 59 sống, 3 trùng (gộp về một nguồn duy nhất), 13 ngược (đã viết lại theo ngày chốt mới hơn), 3 cũ (chuyển về sổ / sửa đường trỏ).
 Không bỏ luật nào David đã chốt; không thêm luật mới.
 
 ## Chéo bộ
@@ -123,7 +123,7 @@ Không bỏ luật nào David đã chốt; không thêm luật mới.
    `phan-tich-video-mau/references/nhat-ky-thay-doi.md`) — chỉ mục tự sinh sẽ nhận khi chạy lại.
 
 ## Hỏi David
-Đã trả lời (14/11, qua phiên điều phối): luật không zoom **chỉ cấm hình quay**; Ken Burns trên ảnh và đẩy khung trong motion graphic vẫn được. Đã viết ở quy-tac-chung mục 2 (nhà), khối 07 mục 4 + thiet-ke-canh trỏ về, lời David vào sổ dung-video; xoá dòng cũ trong loi-thuong-gap.
+Đã trả lời (14/11, qua phiên điều phối): luật không zoom **chỉ cấm hình quay**; Ken Burns trên ảnh và đẩy khung trong motion graphic vẫn được. Đã viết ở quy-tac-chung mục 2 (nguồn), khối 07 mục 4 + thiet-ke-canh trỏ về, lời David vào sổ dung-video; xoá dòng cũ trong loi-thuong-gap.
 
 ## Đã viết lại
 - Sửa 29 file bộ video + 3 sổ mới; không đổi code, tên khoá, lệnh; "Xong khi" giữ nguyên ý (chỉ sửa khi câu trong đó ngược luật mới: không có).
@@ -132,11 +132,11 @@ Không bỏ luật nào David đã chốt; không thêm luật mới.
 - Mục "Nhật ký" cuối 5 SKILL.md và 5 hồ sơ `.md` chuyển về sổ; sổ mới có khối `description:` và được link từ SKILL.md / README.
 - Mỗi sổ quyết định của bộ có dòng đầu `## Tái bản 3 — 14/11/2026: …` (cat-doan, dung-podcast, dung-video, phan-phoi, phan-tich, ho-so). Không sổ nào > 400 dòng.
 
-Máy đo sau khi viết (`python3 -I ky-nang/tai-cau-truc/do-chong-cheo.py`):
+Công cụ đo sau khi viết (`python3 -I ky-nang/tai-cau-truc/do-chong-cheo.py`):
 ```
 ## Bộ video — 50 file bản luật · mốc tái bản gần nhất: tai-ban-video-1
   dau_ngay 0/30 · ghi_de 0/15 · trung 0/8 · sua 7/40 · dong 3443/4000
   ⇒ bộ video dưới ngưỡng.
 ```
-Máy kiểm liên kết (`python3 -I tu-dong-hoa/lien-ket/kiem-tra-lien-ket.py`): `248 file · link gãy 0 · mồ côi 0 · thiếu mô tả 0`.
+Công cụ kiểm tra liên kết (`python3 -I tu-dong-hoa/lien-ket/kiem-tra-lien-ket.py`): `248 file · link gãy 0 · mồ côi 0 · thiếu mô tả 0`.
 Chưa chạy: `mau-chuan/kiem-mau.py` (tái bản không đổi code; phiên điều phối chạy ở bước kiểm chung).

@@ -21,7 +21,7 @@ Sáu luật trong `AGENTS.md` (viết lại 12/11/2026 sau khi so Hermes với C
 **How to apply:** sau khi duyệt thì ghi changelog của skill (sửa gì, theo số liệu/hình mẫu nào) rồi báo một dòng. Cách học:
 `ky-nang/hoc-lien-tuc/SKILL.md`. Liên quan [[quy-tac-sua-thang-tai-ban]], [[co-so-tri-thuc-github-ban-goc]], [[quy-tac-goi-y-de-david-chon]].
 
-Nhà của luật: `AGENTS.md` (Sáu luật) + `ky-nang/hoc-lien-tuc/SKILL.md`. Ghi nhớ này giữ ngày, lời David, lý do.
+Nguồn của luật: `AGENTS.md` (Sáu luật) + `ky-nang/hoc-lien-tuc/SKILL.md`. Ghi nhớ này giữ ngày, lời David, lý do.
 
 ## Sổ
 - 12/11/2026 David chốt sáu luật; bản đầu: chỉ hỏi trước khi đụng hồ sơ David, màu chủ đạo + chữ ký nhận diện, mạng xã hội, quyền riêng

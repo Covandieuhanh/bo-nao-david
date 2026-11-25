@@ -12,7 +12,7 @@ p = os.path.expanduser("~/.claude/settings.json")
 cfg = json.load(open(p)) if os.path.exists(p) else {}
 hooks = cfg.setdefault("hooks", {})
 can = {
-    # chỉ dòng cảnh báo (⛔ xung đột, ⚠ mất mạng) lọt vào phiên để Claude báo David; còn lại im lặng
+    # chỉ dòng cảnh báo (⛔ xung đột, ⚠ mất mạng) tràn vào phiên để Claude báo David; còn lại im lặng
     "SessionStart": (f'bash "{repo}/tu-dong-hoa/dong-bo.sh" --keo 2>&1 | grep -E "⛔|⚠" ; true', '/tu-dong-hoa/dong-bo.sh" --keo'),
     "SessionEnd": (f'bash "{repo}/tu-dong-hoa/dong-bo-hook.sh"', '/tu-dong-hoa/dong-bo-hook.sh"'),
 }
@@ -43,7 +43,7 @@ for khoa, (cmd, dau) in can.items():
 # Tự tóm tắt hội thoại sớm hơn (60 % cửa sổ): hội thoại càng dài Claude càng dễ sót (bài học "1000 giờ Claude", 14/11/2026)
 cfg.setdefault("env", {})["CLAUDE_AUTOCOMPACT_PCT_OVERRIDE"] = "60"
 print("Tự tóm tắt hội thoại ở 60 % cửa sổ")
-# Tắt tự cập nhật Claude Code: mỗi bản mới là một file mới nên macOS hỏi lại quyền thư mục Tài liệu, làm kẹt việc tự chạy.
+# Tắt tự cập nhật Claude Code: mỗi bản mới là một file mới nên macOS hỏi lại quyền thư mục Tài liệu, làm vướng việc tự chạy.
 # Cập nhật tay mỗi sáng thứ 6 trong lịch dong-goi-tuan (David 17/11/2026)
 if not CHI_VIDEO:   # máy chỉ dựng video không có lịch thứ 6 → để Claude Code tự cập nhật
     cfg["env"]["DISABLE_AUTOUPDATER"] = "1"

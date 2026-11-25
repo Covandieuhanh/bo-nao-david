@@ -13,8 +13,8 @@ description: "Bộ lời dặn AI cũ cho 9 bước làm video, giữ làm nguy�
 ```
 Tôi sắp quay video về: [ý video].
 Hỏi tôi tối đa 3 câu để ra 3 dòng: (1) khoảnh khắc người xem thấy "đúng là mình",
-(2) chỗ kẹt và cách tôi đã gỡ, (3) việc người xem làm được ngay.
-Chỉ dùng chuyện tôi kể, không bịa chuyện.
+(2) vướng mắc và cách tôi đã gỡ, (3) việc người xem làm được ngay.
+Chỉ dùng chuyện tôi kể, không bịa đặt chuyện.
 ```
 
 ### Bước 1 · Kiểm khung quay

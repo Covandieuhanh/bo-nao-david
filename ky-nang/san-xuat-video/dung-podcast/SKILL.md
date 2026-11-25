@@ -35,7 +35,7 @@ Luật chung video ở `../quy-tac-chung.md` (chữ nguyên văn, không cắt v
   chỉ ở bài đăng; "gỡ" chỉ lên video khi David nói trong tập.
 - Không làm bản cho app chỉnh sửa (CapCut/DaVinci); sau khi David chốt: bản cuối vào `~/Movies/cho-dang/<tập>/` + `cho-dang.sh gui <tập>`, dọn file tạm rồi đưa dự án lên Drive (`don-tap.py` → `luu-drive.sh`, khối 17).
 - **Học nhịp từ 50 video Hieu Nguyen** (`references/hoc-tu-hieu-nguyen-50.md` — học nhịp và cách trình bày; lời là của David, không
-  thêm/khuôn lời):
+  thêm/mẫu lời):
   - **Mật độ hình:** hình phủ **khoảng 30% thời lượng** (`phu_hinh_muc_tieu`), không cố định: đoạn khó hiểu hoặc quan trọng dày
     hơn, đoạn nhẹ thưa hơn; không để trống lâu ở đầu; không phủ kín. Đoạn chạm lằn ranh không vẽ hình.
   - **Loại cảnh:** ưu tiên **sơ đồ nói thay lời** (`diagram`, khối 07) cho câu có cấu trúc, hoặc **ảnh thật khung bo góc** (`diagram` mode
@@ -45,8 +45,8 @@ Luật chung video ở `../quy-tac-chung.md` (chữ nguyên văn, không cắt v
   - **Mục tiêu cuối**: người xem *thấy hành động* thì câu giao việc cụ thể nhất của tập có màn `action`.
 - **Học từ 20 podcast Việt** (`references/hoc-tu-20-podcast-vn.md`):
   - **Thẻ chương**: sân khấu tự hiện "PHẦN n" đầu mỗi `TOPICS` (khi ít nhất 2 TOPICS); `chuong.py` ghi chương YouTube từ TOPICS.
-  - **Teaser** cho tập đủ dài (Claude tự quyết): sau render, `doan-gioi-thieu.py` với 2–3 câu đắt nhất (trọn câu, nguyên văn); độ dài theo hồ sơ.
-  - **Thumbnail khuôn cố định** mọi tập, không số tập, không mặt — mẫu ở khối 14.
+  - **Teaser** cho tập đủ dài (Claude tự quyết): sau render, `doan-gioi-thieu.py` với 2–3 câu then chốt (trọn câu, nguyên văn); độ dài theo hồ sơ.
+  - **Thumbnail mẫu cố định** mọi tập, không số tập, không mặt — mẫu ở khối 14.
   - **Nền "lắng"** cho tập tâm sự/thiền: `STAGE.bg = [{at: 0, src: 'nen-1.jpg'}, …]` (ảnh/tranh David đưa hoặc có giấy phép, trong
     `chuyen-dong/public/`) — chuyển động rất chậm, phủ tối; không có thì lưới tối mặc định.
   - Tập rất dài được thưa cảnh hơn trong mức 30%: sân khấu + thẻ chương + TOPICS đủ.
@@ -77,7 +77,7 @@ Lấy tiếng (bỏ hình), giữ nguyên toàn bộ (`cat-thua` ở tham số 4
 zsh $SKILL/scripts/phien-am.sh "$P"                    # chạy nền; ~1 phút / 5 phút tiếng
 python3 -I $BASE/scripts/phu-de.py "$P"               # → chuyen-dong/src/phu-de.js (nháp)
 ```
-Sửa TỪNG dòng theo khối 03: chính tả, câu bịa ("Hãy subscribe…" — đối chiếu `ban-chep-loi.srt` với `moc-tung-tu.srt`), chỗ ngắt dòng.
+Sửa TỪNG dòng theo khối 03: chính tả, câu bịa đặt ("Hãy subscribe…" — đối chiếu `ban-chep-loi.srt` với `moc-tung-tu.srt`), chỗ ngắt dòng.
 **Riêng podcast**: ở chỗ đổi người nói, mốc từ Whisper hay trôi 1–2 s thì dòng phụ đề có thể bắt đầu trong lượt người kia. Đối chiếu
 `nguoi-noi.js` (bước 3) và dời mốc.
 
@@ -94,7 +94,7 @@ zsh $SKILL/scripts/anh-tinh-podcast.sh "$P" nen@<giây> <id>@<giây> ...     # s
 ```
 Chụp mỗi cảnh ở khoảnh khắc đầy nhất + vài mốc chỉ có sân khấu (`nen@…`) ở các TOPICS và lúc đổi người nói. Kiểm: chữ tràn, dấu bị
 cắt, hai dòng chữ chồng nhau hoặc chạm khung ảnh/biểu tượng (chữ to sau dòng khác chừa `aboveGap`), màu sóng âm đúng người nói, ý
-đang bàn khớp lời, lớp phủ không chạm sóng âm/vòng micro (ngang), thanh thời gian và phụ đề không bị che, không gì lọt vùng đỏ.
+đang bàn khớp lời, lớp phủ không chạm sóng âm/vòng micro (ngang), thanh thời gian và phụ đề không bị che, không gì tràn vùng đỏ.
 Sửa tới khi sạch rồi render luôn.
 
 ### 8. Render + xuất
@@ -149,7 +149,7 @@ cảnh + TOPICS theo mốc, `nguon-anh.txt` nếu có ảnh, đã kiểm gì / c
 2. Chỉ nội dung gốc, giữ trọn tập; chữ trên video nguyên văn; không thẻ tít, số tập, ngày tháng.
 3. Sân khấu, sóng âm, thanh thời gian chạy suốt video; màu sóng âm đúng người nói.
 4. Hình phủ khoảng 30% thời lượng, dày ở đoạn khó, không trống lâu ở đầu.
-5. Phụ đề đúng chữ, đủ dấu, khớp lượt người nói; không gì lọt vùng đỏ.
+5. Phụ đề đúng chữ, đủ dấu, khớp lượt người nói; không gì tràn vùng đỏ.
 6. Âm lượng và thời lượng khớp bản tiếng gốc.
 7. Đủ gói phát hành (tiêu đề, chương, teaser nếu tập đủ dài, thumbnail không mặt nếu ngang, mẫu số liệu).
 

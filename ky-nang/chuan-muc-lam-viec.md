@@ -17,10 +17,10 @@ File này giữ các thói quen **dùng chung cho mọi skill**. Luật riêng c
 **Phù hợp với nội dung là chìa khoá, không gì cố định** (David 25/11/2026): thời lượng, nhạc, hiệu ứng, số cảnh, số clip, mọi phần khi dựng đều chọn theo chính nội dung; không có luật kiểu "mỗi video một bài nhạc" hay "phải bao nhiêu phút". Thời lượng video (và mọi độ dài) do Claude tự chọn; quy trình không bao giờ đặt "phải bao nhiêu phút". Con số ở hồ sơ hay skill chỉ là mặc định gợi ý, thấy không hợp nội dung thì theo sự phù hợp và ghi "đã chọn X vì Y" (David 25/11/2026).
 
 **Phần AI làm thì sáng tạo hết sức:** khung (bước, luật, tiêu chí đạt) và nhận diện lớn là cố định; bên trong mỗi bước cần phán đoán
-thì sáng tạo cho hợp nội dung đang làm, không dập khuôn, không lặp cách cũ. Danh mục có sẵn là công cụ, không phải khuôn.
-Luật nội dung (nguyên văn lời David, giọng David, lằn ranh) không phải khuôn — vẫn giữ.
+thì sáng tạo cho hợp nội dung đang làm, không dập mẫu, không lặp cách cũ. Danh mục có sẵn là công cụ, không phải mẫu.
+Luật nội dung (nguyên văn lời David, giọng David, lằn ranh) không phải mẫu — vẫn giữ.
 
-**Nội dung là của David:** David tự xây nội dung, nói tự do và có cảm xúc. AI không viết khuôn lời, không đặt kịch bản thu âm, không đề xuất
+**Nội dung là của David:** David tự xây nội dung, nói tự do và có cảm xúc. AI không viết mẫu lời, không đặt kịch bản thu âm, không đề xuất
 đổi lời David; AI lo phần hình và cách trình bày (thẩm mỹ, nhịp), lấy người xem làm trung tâm. Chi tiết cho video: `san-xuat-video/quy-tac-chung.md` mục 0–1.
 
 ## 1. Đầu việc: đọc đúng phần cần
@@ -71,7 +71,7 @@ Trong 4 phần, cách chọn từng điểm:
 - **Công cụ David đã cài là để nâng skill:** thấy công cụ trên máy giúp việc tốt hơn mà skill chưa dùng thì đề xuất tích hợp (diễn giải
   ngắn trước khi sửa skill), giữ cách cũ làm dự phòng khi công cụ lỗi.
 - **Không dùng mod giao diện:** không cài mod, plugin vẽ bảng hay thanh tiến độ, dòng trên ô nhập; chỉ giữ plugin Telegram. Muốn mod mới thì hỏi David trước.
-- **Một bộ não, cùng kết quả trên mọi thiết bị** (David 25/11/2026): Mac, Windows hay máy nào cũng làm theo cùng bộ não GitHub và ra kết quả giống nhau; công cụ dùng loại nào cũng được miễn kết quả như nhau. Đầu phiên: `bash tu-dong-hoa/dong-bo.sh --keo`, chạy máy kiểm của máy (`kiem-may.sh` / `kiem-moi-truong.sh`). Chỉ làm việc trên MỘT bản bộ não của môi trường chạy lệnh (Mac: `~/Documents/bo-nao-david`; Windows: trong WSL `~/Documents/bo-nao-david`); bản thứ hai nếu có (vd. thư mục Windows) chỉ để đọc, không ghi nhật ký, luật hay kết quả vào đó. Lệnh dài chạy bằng tệp lệnh viết sẵn, không gõ trực tiếp qua PowerShell (làm hỏng tiếng Việt và khoảng trắng đường dẫn).
+- **Một bộ não, cùng kết quả trên mọi thiết bị** (David 25/11/2026): Mac, Windows hay máy nào cũng làm theo cùng bộ não GitHub và ra kết quả giống nhau; công cụ dùng loại nào cũng được miễn kết quả như nhau. Đầu phiên: `bash tu-dong-hoa/dong-bo.sh --keo`, chạy công cụ kiểm tra của máy (`kiem-may.sh` / `kiem-moi-truong.sh`). Chỉ làm việc trên MỘT bản bộ não của môi trường chạy lệnh (Mac: `~/Documents/bo-nao-david`; Windows: trong WSL `~/Documents/bo-nao-david`); bản thứ hai nếu có (vd. thư mục Windows) chỉ để đọc, không ghi nhật ký, luật hay kết quả vào đó. Lệnh dài chạy bằng tệp lệnh viết sẵn, không gõ trực tiếp qua PowerShell (làm hỏng tiếng Việt và khoảng trắng đường dẫn).
 - **Thêm việc không phá việc cũ:** bổ sung việc, tính năng mới thì việc cũ phải chạy y như trước. Chỉ đổi phần cũ khi 4 phần đã duyệt ghi rõ. Sửa thứ dùng chung (script lịch, máy canh, hook) thì tự thử lại việc cũ trước khi báo xong. Mọi thứ phải tự động, không trông vào David bấm tay (ghi nhớ `quy-tac-them-viec-khong-pha-viec-cu`).
 - Đăng, gửi, xoá, mật khẩu: `AGENTS.md` luật 4.
 
@@ -92,10 +92,10 @@ Ghi lại gì, ở đâu, thăng cấp tầng nào: trục `../co-so-tri-thuc/tr
   phần ghi cứng của một máy bằng phần tự nhận máy, rồi đẩy GitHub. Tự hỏi: "một phiên mới chỉ đọc repo có làm ra đúng kết quả này không?"
 - **Báo cáo ngắn, tiếng Việt:** đã làm gì · đã kiểm gì · chưa kiểm gì · điều cần David xác nhận · 2–3 dòng so với hình mẫu (giống ở
   đâu, khác ở đâu, nên chỉnh gì). Học thêm được gì về hình mẫu hay về David thì ghi bản đồ hình mẫu và nhật ký của nó.
-- **Báo lên Telegram** khi xong một việc trọn vẹn (render xong, đăng xong, sửa bộ não xong…) hoặc khi kẹt cần David quyết, không báo
+- **Báo lên Telegram** khi xong một việc trọn vẹn (render xong, đăng xong, sửa bộ não xong…) hoặc khi vướng cần David quyết, không báo
   sau mỗi lượt: `bash tu-dong-hoa/so-tay/bao-cao.sh "✅ Xong: … · Ở đâu: … · Còn lại: …"` hoặc `"❓ Chờ anh: …"`, tối đa 5 dòng. Việc giao
   qua Telegram thì mở đầu bằng số việc `#N`. Máy chỉ dựng video (`~/.claude/vai-may` ghi `chi-video`) không có `bao-cao.sh`: bỏ bước này, báo trong chat. Chi tiết: `tu-dong-hoa/so-tay/README.md` (chỉ Mac chính).
-- **Càng làm càng cải tiến, như tự học** (David 25/11/2026): cuối mỗi việc tự hỏi "lần sau làm thế nào nhanh hơn, chuẩn hơn?"; thấy cách tốt hơn (công cụ, thứ tự bước, cách kiểm) thì đề xuất sửa vào đúng lá / skill (theo `ky-nang/hoc-lien-tuc/SKILL.md`), không để người sau lặp lại chỗ vấp. Ví dụ: chép lời theo từng khúc ngắn ngay từ đầu thay vì cả file rồi sửa lại.
+- **Càng làm càng cải tiến, như tự học** (David 25/11/2026): cuối mỗi việc tự hỏi "lần sau làm thế nào nhanh hơn, chuẩn hơn?"; thấy cách tốt hơn (công cụ, thứ tự bước, cách kiểm) thì đề xuất sửa vào đúng lá / skill (theo `ky-nang/hoc-lien-tuc/SKILL.md`), không để người sau lặp lại lỗi đã gặp. Ví dụ: chép lời theo từng phân đoạn ngắn ngay từ đầu thay vì cả file rồi sửa lại.
 - **Nhắc lần hai thì thành luật ngay:** David phải nhắc lại một điều lần thứ hai thì sửa ngay đúng nguồn của luật đó, không đợi lượt nhìn lại tuần
   (skill, giọng văn, luật kênh, thông tin về David: đề xuất trong 4 phần, chờ "duyệt").
 - **Góp ý của David ghi đúng một chỗ:** sửa skill hoặc khối bị ảnh hưởng + một dòng nhật ký (`changelog` của skill, hoặc mục "Nhật ký");
@@ -105,7 +105,7 @@ Ghi lại gì, ở đâu, thăng cấp tầng nào: trục `../co-so-tri-thuc/tr
   `du-an/danh-sach-y-tuong.md` (hoặc file `du-an/` phù hợp), David chốt rồi mới đưa vào `david.md` qua 4 phần.
 - **Sửa thẳng, không chồng câu:** đổi một luật (góp ý, học mẫu, quyết định mới) thì **viết lại chính câu luật đó** thành trạng thái mới
   và xoá câu cũ. Trong bản luật không ghi ngày, không "(David chốt …)", không lời kể đã thay hay thêm câu nào, không "ngoại lệ mới"; ngày, lời
-  David nguyên văn và lý do ghi vào sổ quyết định (changelog / Nhật ký). Luật mới đụng luật ở nơi khác thì sửa luôn nơi đó, không để hai
+  David nguyên văn và lý do ghi vào sổ quyết định (changelog / Nhật ký). Luật mới xung đột với luật ở nơi khác thì sửa luôn nơi đó, không để hai
   câu cãi nhau. Ba loại file (bản luật · sổ · kho) và định nghĩa từng bộ: skill `tai-cau-truc`.
 - **Đo chồng chéo** sau mỗi việc có sửa bản luật: `python3 -I ky-nang/tai-cau-truc/do-chong-cheo.py`. Báo "NÊN NÂNG CẤP" thì nhắc
   David một dòng; David đồng ý thì nâng cấp cả bộ não một đợt (`hoc-lien-tuc` Việc 4).
@@ -113,11 +113,11 @@ Ghi lại gì, ở đâu, thăng cấp tầng nào: trục `../co-so-tri-thuc/tr
 - **Giữ mạng lưới liên kết** ([co-so-tri-thuc/quy-uoc-lien-ket.md](../co-so-tri-thuc/quy-uoc-lien-ket.md)): file mới có mô tả đầu file và
   một dòng ở trang [ban-do/](../ban-do/README.md) đúng chủ đề; đổi tên, gộp, xoá file thì sửa mọi nối tới nó. Trao đổi có **kiến thức đáng giữ**
   (công cụ, khái niệm, phần Claude giải thích mà David thấy hay) thì ghi hoặc bổ sung ghi chú trong `co-so-tri-thuc/kien-thuc/`, nối tới
-  ý tưởng / dự án / skill liên quan. Máy kiểm tự chạy khi đồng bộ.
-- **Giữ Mac nhẹ:** Mac chỉ giữ việc đang làm. David chốt xong việc (Đ2, `quy-trinh.md` mục 1) thì đưa việc của David (video gốc, thành quả video) lên Drive rồi xoá trên Mac
+  ý tưởng / dự án / skill liên quan. Công cụ kiểm tra tự chạy khi đồng bộ.
+- **Giữ dung lượng Mac thấp:** Mac chỉ giữ việc đang làm. David chốt xong việc (Đ2, `quy-trinh.md` mục 1) thì đưa việc của David (video gốc, thành quả video) lên Drive rồi xoá trên Mac
   (video: `don-tap.py --xoa` → `luu-drive.sh`); file tải về, dữ liệu app, đồ cá nhân không đồng bộ, muốn xoá thì hỏi trước. Ghi nhớ `video-chuyen-qua-drive`.
   Xoá video trên Mac chỉ bằng `luu-drive.sh` (chép cả tập → lên mây → so khớp → mới xoá), không tự lọc file bằng `find … -delete`
-  (`-delete` làm mất tác dụng `-prune`, ngày 20/11/2026 đã xoá mất gốc DJI_0030 của tập máy đo giải pháp AI).
+  (`-delete` làm mất tác dụng `-prune`, ngày 20/11/2026 đã xoá mất gốc DJI_0030 của tập công cụ đo giải pháp AI).
   **Video: Mac chỉ giữ bản cuối chưa đăng** ở `~/Movies/cho-dang/<tập>/` (David 20/11/2026: "tôi chỉ quan tâm đến các kết quả cuối thôi");
   bản gốc + dự án dựng chỉ ở Drive. Render xong thì chạy `cho-dang.sh gui`; đăng xong thì chạy `cho-dang.sh xong` (kiểm Drive rồi mới xoá).
   Kiểm nhanh: trang `localhost:8765/mac` (Chờ đăng + dự án còn trên Mac) hoặc `python3 tu-dong-hoa/kiem-video-mac.py` (chỉ đọc).
@@ -144,7 +144,7 @@ Ghi lại gì, ở đâu, thăng cấp tầng nào: trục `../co-so-tri-thuc/tr
 | David dán log hoặc văn bản dài | Vẫn làm; cuối việc nhắc lần sau chỉ cần đưa đường dẫn file |
 | Tới bước nhẹ | Nhắc đổi mô hình rẻ hơn (mục 3) |
 | Buổi nhìn lại cuối tuần, hoặc `co-so-tri-thuc/bo-nho/` quá 40 ghi nhớ | Đề nghị "dọn bộ nhớ" (skill `consolidate-memory`) |
-| Máy đo chồng chéo báo "NÊN NÂNG CẤP", hoặc đã có ít nhất 10 video có số liệu từ lần nâng cấp trước | Nhắc một dòng (mục 4) |
+| Công cụ đo chồng chéo báo "NÊN NÂNG CẤP", hoặc đã có ít nhất 10 video có số liệu từ lần nâng cấp trước | Nhắc một dòng (mục 4) |
 | David hỏi phiên tốn vào đâu | Chạy "giải thích mức dùng" (skill `explain-usage`) |
 
 **Thói quen của David** (để Claude biết mà nhắc): mỗi việc một phiên · xong thì "cập nhật não" rồi đóng · làm liền một mạch ·
@@ -156,4 +156,4 @@ nói đủ việc, file, kết quả trong một tin nhắn · gộp việc nh�
 1. **Tài liệu nghiên cứu phải dịch đúng thuật ngữ chuyên ngành:** tên khung, quy trình, bước bằng tiếng Anh lấy **chính xác** như nguồn rồi dịch sang tiếng Việt. Mỗi thuật ngữ chỉ một bản dịch, dùng thống nhất.
 2. **Tài liệu tổng hợp về một tổ chức chỉ gồm nội dung của tổ chức đó**, không lẫn phần áp dụng cho David hay nguồn ngoài.
 3. **Tài liệu do AI khác viết:** lấy khung của Claude làm chuẩn, tài liệu kia chỉ để bổ sung, và phải kiểm tra nguồn gốc trước khi thêm.
-4. **Sách tự mua**, không dùng bản trôi nổi trên mạng.
+4. **Sách tự mua**, không dùng bản không rõ nguồn gốc trên mạng.

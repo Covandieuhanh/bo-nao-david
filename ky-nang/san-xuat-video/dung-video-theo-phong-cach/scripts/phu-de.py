@@ -17,8 +17,8 @@ def srt(path):
             out.append(dict(s=g[0]*3600+g[1]*60+g[2]+g[3]/1000, e=g[4]*3600+g[5]*60+g[6]+g[7]/1000, t=m.group(9)))
     return out
 
-# Khung là từng CÂU của ban-chep-loi.srt (không vắt dòng qua hai câu, và lần chạy theo câu ít bịa hơn lần theo từ);
-# mốc trong câu lấy từ moc-tung-tu.srt. Bỏ câu Whisper hay bịa khi im lặng.
+# Khung là từng CÂU của ban-chep-loi.srt (không vắt dòng qua hai câu, và lần chạy theo câu ít bịa đặt hơn lần theo từ);
+# mốc trong câu lấy từ moc-tung-tu.srt. Bỏ câu Whisper hay bịa đặt khi im lặng.
 BREAK = {"thì", "là", "và", "nhưng", "mà", "để", "nên", "khi", "cho", "với", "về", "rồi", "hay", "hoặc", "vì", "nếu",
          "còn", "tức", "thế", "kiểu", "gọi", "rằng", "của", "trong"}
 FAKE = re.compile(r"subscribe|đăng ký kênh|Ghiền Mì Gõ|bỏ lỡ những video|cảm ơn các bạn đã (xem|theo dõi)", re.I)

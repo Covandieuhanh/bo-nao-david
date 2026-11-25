@@ -21,6 +21,6 @@ ba điểm duyệt Đ1 (4 phần) · Đ2 (đăng, gửi, xoá, tài khoản — 
 David nói rõ; mỗi lá ghi điểm duyệt (`quy-trinh.md` mục 1, 3).
 
 **How to apply:** đầu việc tra `quy-trinh.md`; cuối việc tự soát câu "một phiên mới chỉ đọc GitHub có làm ra đúng kết quả này không?"
-(`chuan-muc-lam-viec.md` mục 4). Máy kiểm `tu-dong-hoa/kiem-quy-trinh.py` chặn đẩy GitHub khi lá thiếu file / "Xong khi" hoặc skill
-không có lá. Nhà của luật: `quy-trinh.md`, `AGENTS.md` luật 6, `chuan-muc-lam-viec.md` mục 1 và 4. Liên quan
+(`chuan-muc-lam-viec.md` mục 4). Công cụ kiểm tra `tu-dong-hoa/kiem-quy-trinh.py` chặn đẩy GitHub khi lá thiếu file / "Xong khi" hoặc skill
+không có lá. Nguồn của luật: `quy-trinh.md`, `AGENTS.md` luật 6, `chuan-muc-lam-viec.md` mục 1 và 4. Liên quan
 [[quy-tac-duyet-ke-hoach-4-phan]], [[co-so-tri-thuc-github-ban-goc]].

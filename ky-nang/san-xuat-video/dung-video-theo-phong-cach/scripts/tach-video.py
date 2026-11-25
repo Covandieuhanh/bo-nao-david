@@ -3,7 +3,7 @@
 #   {"nguon": "~/Movies/tap-X/2-ban-day-du", "dem": 0.12,
 #    "video": {"<tên>": {"doan": [[giây_đầu, giây_cuối], …], "topic": "MAY ĐO", "tuyen": "kien_thuc", "ytEnd": 20}, …}}
 #   Mốc lấy đúng đầu / cuối câu trong phụ đề dự án gốc (cắt giữa hai câu, không cắt giữa từ).
-# Mỗi video: cắt + nối các đoạn (đệm `dem` giây, fade âm 50 ms ở mối nối) → tao-du-an.sh <tên> → ghi du-an.js (topic, tuyen, ytEnd),
+# Mỗi video: cắt + nối các đoạn (đệm `dem` giây, fade âm 50 ms ở điểm nối) → tao-du-an.sh <tên> → ghi du-an.js (topic, tuyen, ytEnd),
 # phu-de.js (lấy từ phụ đề gốc, dời mốc theo đoạn cắt — không chép lời lại), canh.js khung sẵn hàm g() (viết mốc theo video GỐC, g() đổi
 # sang mốc video đã cắt), ke-hoach-canh.md khung, kiem-tra/tach-video.json (lưu lại đúng kế hoạch đã dùng).
 import json, os, re, subprocess, sys

@@ -27,7 +27,7 @@ description: "Mẫu 01 gói nội dung kênh (tách ra, chưa thành gói): phi�
 
 ## Câu mời người xem làm bước tiếp
 - Câu mời: "……" (ví dụ: "nhắn mình chữ ……" / "bình luận ……")
-- Từ khoá bình luận để biết người xem đang kẹt: "……" · đã làm được: "……"
+- Từ khoá bình luận để biết người xem đang vướng: "……" · đã làm được: "……"
 
 ## Ranh giới nội dung
 - Không nói: …… (pháp luật ngành, điều không chắc, hứa quá sức)

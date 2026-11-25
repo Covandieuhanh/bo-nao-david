@@ -187,3 +187,23 @@ báo từ cũ còn sót ở tầng 0–2 (cảnh báo, không chặn); mỗi l�
 | Approve / Sign-off | duyệt / chốt (lời David dùng, giữ) | — |
 | Process tree / Leaf process | cây quy trình / quy trình lá (thuật ngữ cấu trúc cây, giữ) | — |
 | Upgrade vs. Root change | nâng cấp (không đổi nghĩa) / đổi gốc (đổi nghĩa) | — |
+| Manual (override / edit) | thủ công (sửa thủ công, chỉ định thủ công) | sửa tay, ép tay, bằng tay |
+| Checker / Validator / Metric tool | công cụ kiểm tra / công cụ chấm / công cụ đo | máy kiểm, máy chấm, máy đo |
+| Active rule | luật hiện hành | luật đang sống |
+| Key statement | câu then chốt | câu đắt |
+| Blocker / Pain point | vướng mắc | chỗ kẹt, kẹt |
+| Known issue | lỗi đã gặp | chỗ vấp |
+| Unfinished | làm chưa xong | làm dở |
+| Free up storage | giải phóng dung lượng | nhẹ máy, nhẹ bộ nhớ |
+| Fabricate | bịa đặt | bịa |
+| Unverified source | không rõ nguồn gốc | trôi nổi |
+| Large file | file dung lượng lớn | file nặng |
+| Conflict with / Relate to | xung đột với / liên quan tới | đụng, dính tới |
+| Examine by | xét bằng / kiểm | soi |
+| Bleed (subtitle, frame) | tràn | lọt |
+| Case | trường hợp (trường hợp thực tế, trường hợp mẫu) | ca |
+| Fixed | cố định | cứng (số cứng, lịch cứng) |
+| Learn from / Benchmark | học theo | bắt chước |
+| Join point | điểm nối | mối nối |
+| Segment / Chunk | phân đoạn | khúc |
+| Template | mẫu | khuôn (giữ: khuôn hình, khuôn mặt) |

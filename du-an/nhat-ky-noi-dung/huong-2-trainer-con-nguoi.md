@@ -16,7 +16,7 @@ Mốc: giây trên `nguon-dai.mp4` của tập (đã bỏ phần số học).
 | Nghỉ ở đỉnh khi nghề chững | "Em toàn nghỉ ở đỉnh cao mà bụp phát nghỉ" | 712 (11:52) | sợ bỏ nghề cũ | nhân hiệu: hành trình David | kể chuyện thật khi đứng lớp |
 | Duy trì mối quan hệ bằng công việc | "duy trì mối quan hệ là bằng công việc kể cả hai vợ chồng luôn" | 950 (15:50) | quan hệ lên xuống, không bền | tầng 3 làm chủ mối quan hệ | bài học tầng 3 |
 | Thử thách mỗi người, góc nhìn dư năng lượng (quét nhà / ly nước) | "Cái góc nhìn nó bị dư thừa năng lượng" | 1310–1390 (21:50) | chủ làm thay, ôm việc, không ra ngoài phát triển | "Dẫn đội, không làm thay" | ví dụ quét nhà – ly nước |
-| Gặp vấn đề ở đâu thì ra ngoài học, mang về | "nó bị thiếu cái gì thì chị phải đi tìm đúng cái đấy ở bên ngoài để đi học" | 1393 (23:13) | kẹt trong chính vấn đề | gói trainer | câu hỏi tự soi |
+| Gặp vấn đề ở đâu thì ra ngoài học, mang về | "nó bị thiếu cái gì thì chị phải đi tìm đúng cái đấy ở bên ngoài để đi học" | 1393 (23:13) | vướng trong chính vấn đề | gói trainer | câu hỏi tự soi |
 | Lấy con người làm trung tâm, không lấy công việc | "em lấy con người làm trung tâm, em thấu hiểu con người xong thì… định hướng đúng" | 1515–1535 (25:15) | đặt sai người vào việc | phương pháp của David | câu định vị trainer |
 | Marketing chỉ là nỗi đau và nhu cầu | "Marketing nó chỉ mỗi thế thôi, nỗi đau và nhu cầu" | 2163 (36:03) | hiểu sai marketing | làm chủ thị trường | khung 2 câu hỏi |
 | Đăng ảnh là truyền thông, không phải marketing | "đăng ảnh đăng này đăng kia nó là truyền thông, nó không phải là marketing" | 2189 (36:29) | làm truyền thông mà không ra khách | làm chủ thị trường | phân biệt khi tư vấn |

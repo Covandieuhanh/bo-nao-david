@@ -8,7 +8,7 @@ description: "Nghiên cứu các trang mạng xã hội của David (06/11): s�
 
 ## Kết luận chính
 
-1. **Bộ đã đổi, ruột chưa đổi.** Tên và phần giới thiệu ở TikTok, fanpage, Facebook cá nhân đã là "trainer định hướng", nhưng nội dung gần như vẫn là hướng cũ. Chưa thấy bài nào nói về chỗ kẹt của người lần đầu dẫn người.
+1. **Bộ đã đổi, ruột chưa đổi.** Tên và phần giới thiệu ở TikTok, fanpage, Facebook cá nhân đã là "trainer định hướng", nhưng nội dung gần như vẫn là hướng cũ. Chưa thấy bài nào nói về vướng mắc của người lần đầu dẫn người.
 2. **Nghe được ở chuyện đời thật, chưa từng được kiểm chứng ở chủ đề dẫn người.** Mọi video trên 10 nghìn lượt xem đều từ 07/2023 đến 07/2024, chủ yếu là địa điểm thực tế và chuyện ngủ muộn kể bằng trải nghiệm của chính David.
 3. **Có sẵn người xem ở độ tuổi hợp với tệp, nhưng họ theo vì nội dung cũ.** 73% follower TikTok ở tuổi 25–44; không có dữ liệu về vai trò công việc. Lượt tìm kiếm hiện dẫn tới video spa và địa điểm cũ.
 4. **Danh tính đổi nhiều lần.** Hashtag ba năm qua đi qua hơn mười tên: `cuongtop`, `duccuongofficial`, `cuongkechuyen`, `khanhkechuyen`, `TranQuocKhanh39`, `QuocCuong999`, `moon9999`, `Moon135`, `MunAha`, `DavidSuckhoe`, `DavidTran`. Người xem cũ khó nhận ra một con người xuyên suốt.

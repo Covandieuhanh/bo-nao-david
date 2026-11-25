@@ -26,4 +26,4 @@ description: "Khối 06 mở đầu 0–3 giây: câu chạm, thẻ tít nguyên
   phuong-an.json → `danh-sach-cat-doan-noi-bat.py` tự đặt pow 0–2,5 s); khung 0,3 s = ảnh bìa.
 - **Vlog:** đoạn ghép cảnh đắt nhất (2 phách/cảnh) hoặc câu nêu nhiệm vụ / tiền cược lên đầu — nhieu-doan-video.md 2d (kiểu 1/2/3). Thẻ tiêu
   đề trên đoạn ghép chỉ ghi tên chương trình / tên nơi hoặc lời nguyên văn.
-- Video > 10 phút đăng YouTube: teaser 15–25 s câu đắt nhất sau render (`doan-gioi-thieu.py`, khối 15 chạy lại chương).
+- Video > 10 phút đăng YouTube: teaser 15–25 s câu then chốt sau render (`doan-gioi-thieu.py`, khối 15 chạy lại chương).

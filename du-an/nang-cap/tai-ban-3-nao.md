@@ -4,14 +4,14 @@ description: "Tái bản 3 (14/11), phiên con bộ nao: bảng luật đang s�
 
 # Tái bản 3 — bộ nao
 
-Phiên điều phối: [tai-ban-3.md](tai-ban-3.md). Đợt trước: [tai-cau-truc-2-nao.md](tai-cau-truc-2-nao.md) (55 luật, giữ nguyên nghĩa; bảng này chỉ ghi luật thêm/đổi từ đó và luật máy đo bắt).
+Phiên điều phối: [tai-ban-3.md](tai-ban-3.md). Đợt trước: [tai-cau-truc-2-nao.md](tai-cau-truc-2-nao.md) (55 luật, giữ nguyên nghĩa; bảng này chỉ ghi luật thêm/đổi từ đó và luật công cụ đo bắt).
 
 Nhà: **A** = `AGENTS.md` · **C** = `CLAUDE.md` · **G** = `co-so-tri-thuc/chi-dan-toan-cuc.md` (= `~/.claude/CLAUDE.md`, nạp mọi phiên kể cả ngoài repo) · **T** = `ky-nang/chuan-muc-lam-viec.md` · **D** = `co-so-tri-thuc/david.md` (để nguyên, không sửa).
 
-Máy đo lúc mở: `dau_ngay 5/15 · ghi_de 2/6 · trung 0/4 · sua 30/25 · dong 242/600`.
-Máy đo sau viết lại: `dau_ngay 3/15 · ghi_de 0/6 · trung 0/4 · sua 30/25 · dong 244/600`. 3 dấu ngày còn lại đều ở D (D không sửa): 2 là dữ kiện (ngày cập nhật, "từ 13/11/2026 ba hướng"), 1 là dấu ngày luật ở D 3.1 nên Hỏi David 1. `sua 30` là số commit git, chỉ hạ khi có tag `tai-ban-3`.
+Công cụ đo lúc mở: `dau_ngay 5/15 · ghi_de 2/6 · trung 0/4 · sua 30/25 · dong 242/600`.
+Công cụ đo sau viết lại: `dau_ngay 3/15 · ghi_de 0/6 · trung 0/4 · sua 30/25 · dong 244/600`. 3 dấu ngày còn lại đều ở D (D không sửa): 2 là dữ kiện (ngày cập nhật, "từ 13/11/2026 ba hướng"), 1 là dấu ngày luật ở D 3.1 nên Hỏi David 1. `sua 30` là số commit git, chỉ hạ khi có tag `tai-ban-3`.
 
-## Bảng luật đang sống
+## Bảng luật hiện hành
 | # | Luật | Nhà nên ở | Nguồn hiện tại | Ngày chốt gần nhất | Trạng thái |
 |---|---|---|---|---|---|
 | 1 | Thứ tự đọc 7 bước; tra CCL khi làm nội dung lãnh đạo | A | A:5–19 | 08/11 | sống |
@@ -25,7 +25,7 @@ Máy đo sau viết lại: `dau_ngay 3/15 · ghi_de 0/6 · trung 0/4 · sua 30/2
 | 9 | Lời mới nhất thắng; sửa luật thì viết lại chính câu đó mọi nơi | A luật 5 | A:27, G:4 | 12/11 | sống; bỏ chữ "thay mọi luật cũ" / "thắng luật cũ" (câu ghi đè), giữ nghĩa |
 | 10 | GitHub là bản sao lưu đầy đủ, đẩy ngay, "cập nhật não", danh sách không đưa lên | A luật 6 | A:28–29, T:86 | 12/11 | sống, T trỏ |
 | 11 | Khi nguồn mâu thuẫn: lời David mới nhất > bản luật > ghi nhớ; chất lượng thắng tiết kiệm; mơ hồ → sản phẩm duyệt mới nhất | T mục 0 | T:11–15, A:31 | 08/11 | sống |
-| 12 | AI sáng tạo trong khung; luật nội dung không phải khuôn | T mục 0 | T:17–19 | 09/11 | sống |
+| 12 | AI sáng tạo trong khung; luật nội dung không phải mẫu | T mục 0 | T:17–19 | 09/11 | sống |
 | 13 | Bảng chọn skill; chỉ gửi tài nguyên → `phan-phoi-da-kenh` | A | A:33–52 | 14/11 | sống |
 | 14 | Không phải Claude Code: ánh xạ đường dẫn, nói rõ phần không làm được, chỉ tin repo + lời David | A | A:54–59 | — | sống |
 | 15 | Tên file từ thuật ngữ kinh doanh tiếng Anh chuẩn, dịch sang không dấu; ghi nhớ một máy `thiet-bi-` | A | A:64 | 14/11 | sống |
@@ -33,24 +33,24 @@ Máy đo sau viết lại: `dau_ngay 3/15 · ghi_de 0/6 · trung 0/4 · sua 30/2
 | 17 | G: 3 luật nền + đọc T trước mọi skill + `@david.md` | G | G:1–7 | 14/11 | sống, giữ ngắn |
 | 18 | Đầu việc đọc đúng phần cần | T mục 1 | T:21–26 | 08/11 | sống |
 | 19 | Cách chọn từng điểm trong 4 phần (skill định → làm đúng; chưa định → tự chọn "chọn X vì Y"; "làm đi" = mặc định); sau duyệt chỉ dừng ở các trường hợp nêu | T mục 2 | T:36–45 | 11/11, 14/11 | sống |
-| 20 | Việc tự chạy (lịch, việc Telegram) mở thành phiên hiện trong app (Remote Control), không chạy ngầm | T mục 2 (một dòng trỏ) | ghi nhớ `quy-tac-duyet-ke-hoach-4-phan` (ghi "luật ở T mục 2" nhưng T chưa có), `tu-dong-hoa/lich/lich-chay.md`, `tu-dong-hoa/so-tay/README.md` | 14/11 | sống, **thiếu nhà ở T** → thêm một dòng trỏ |
+| 20 | Việc tự chạy (lịch, việc Telegram) mở thành phiên hiện trong app (Remote Control), không chạy ngầm | T mục 2 (một dòng trỏ) | ghi nhớ `quy-tac-duyet-ke-hoach-4-phan` (ghi "luật ở T mục 2" nhưng T chưa có), `tu-dong-hoa/lich/lich-chay.md`, `tu-dong-hoa/so-tay/README.md` | 14/11 | sống, **thiếu nguồn ở T** → thêm một dòng trỏ |
 | 21 | Lệnh theo lô, nền > 2 phút; agent phụ khi được phép, `nghien-cuu` cho việc đọc; bước nhẹ nhắc | T mục 3 | T:48–51 | 08/11 | sống |
 | 22 | Việc của David là của David; việc thử tên `thu-…` | T mục 3 | T:52–55 | 08/11 | sống |
 | 23 | Công cụ David đã cài → đề xuất tích hợp, giữ cách cũ dự phòng | T mục 3 | T:56–57 | 07/11 | sống |
 | 24 | Không dùng mod giao diện, chỉ giữ Telegram, mod mới hỏi trước | T mục 3 | T:58, ghi nhớ `quy-tac-mod-tu-chay` | 13/11 | sống; bỏ "David gỡ hết 13/11/2026", thêm phần "chỉ giữ Telegram / hỏi trước" từ ghi nhớ |
 | 25 | Tự soát trước khi báo xong; báo cáo ngắn | T mục 4 | T:62–65 | 08/11 | sống |
-| 26 | Báo Telegram khi xong trọn việc hoặc kẹt | T mục 4 | T:66–68 | 11/11 | sống |
+| 26 | Báo Telegram khi xong trọn việc hoặc vướng | T mục 4 | T:66–68 | 11/11 | sống |
 | 27 | Nhắc lần hai thành luật ngay | T mục 4 | T:69–70 | — | sống |
 | 28 | Góp ý ghi đúng một chỗ; ghi nhớ chỉ luật dùng chung | T mục 4 | T:71–72 | — | sống |
 | 29 | Sửa thẳng, không chồng câu; ba loại file ở `tai-cau-truc` | T mục 4 | T:73–76 | 10/11 | sống |
 | 30 | Đo chồng chéo sau mỗi lần sửa bản luật | T mục 4 | T:77–78, T bảng mục 5 | 10/11 | sống |
 | 31 | Giữ mạng lưới liên kết; kiến thức đáng giữ vào `kien-thuc/` | T mục 4 | T:80–83 | 14/11 | sống, giữ nguyên |
-| 32 | Giữ Mac nhẹ (Drive) | T mục 4 | T:84–85 | 11/11 | sống |
+| 32 | Giữ dung lượng Mac thấp (Drive) | T mục 4 | T:84–85 | 11/11 | sống |
 | 33 | Mục tiêu + Xong khi; nhắc một dòng; bảng "Khi → Claude làm" (có đóng phiên khi xong) | T mục 5 | T:88–109 | 14/11 | sống |
 | 34 | Thói quen của David để nhắc | T mục 5 | T:111–113 | 08/11 | sống |
 | 35 | Hồ sơ, luật cá nhân, mục 3.2–3.5, bảng mục 4–9 | D | D:1–56 | 14/11 | sống, không sửa |
 
-35 dòng (gộp nhóm theo nhà; chi tiết từng luật cũ ở bảng đợt 2). Không bỏ luật nào, không đổi nghĩa. 1 luật thiếu nhà đã có nhà (dòng 20) · 1 trùng chuyển thành trỏ (dòng 6) · 1 đường trỏ sai đã sửa (dòng 8). Số mục T giữ 0–5 (skill khác trỏ "mục 0/2/3/4/5").
+35 dòng (gộp nhóm theo nguồn; chi tiết từng luật cũ ở bảng đợt 2). Không bỏ luật nào, không đổi nghĩa. 1 luật thiếu nguồn đã có nguồn duy nhất (dòng 20) · 1 trùng chuyển thành trỏ (dòng 6) · 1 đường trỏ sai đã sửa (dòng 8). Số mục T giữ 0–5 (skill khác trỏ "mục 0/2/3/4/5").
 
 ## Sổ (gỡ khỏi bản luật)
 - T mục 2: "(David 14/11/2026, việc #22.)" thì lời David nguyên văn đã có ở ghi nhớ `quy-tac-duyet-ke-hoach-4-phan`.
@@ -60,7 +60,7 @@ Máy đo sau viết lại: `dau_ngay 3/15 · ghi_de 0/6 · trung 0/4 · sua 30/2
 ## Chéo bộ
 1. **Ghi nhớ (phiên ghi-nho):** `quy-tac-duyet-ke-hoach-4-phan` ghi "Luật ở `chuan-muc-lam-viec.md` mục 2" — nay đúng (đã thêm dòng "Việc tự chạy phải nhìn thấy được"). Không cần sửa ghi nhớ.
 2. **Ghi nhớ:** `quy-tac-goi-y-de-david-chon` thân còn câu "Sản phẩm…: **không hỏi**", rồi đoạn 14/11 thêm "vẫn trình 4 phần". Đọc thân dễ hiểu sai; đề nghị phiên ghi-nho viết thân thành trạng thái hiện hành (trình 4 phần gọn theo mặc định skill, duyệt rồi không hỏi giữa chừng). Tương tự `quy-tac-ky-nang-tu-cai-tien` (dòng "Chỉ hỏi trước: hồ sơ David…" đã bị đoạn 14/11 thay) và `quy-tac-phien-telegram-tu-chay`.
-3. **tu-dong-hoa (không thuộc bộ nào):** nhà chi tiết của luật dòng 20 là `tu-dong-hoa/lich/lich-chay.md` + `tu-dong-hoa/so-tay/README.md`; README so-tay còn nhiều dấu ngày, câu "14/11 đổi từ toàn quyền Bypass…" — ngoài máy đo, phiên điều phối cân nhắc đưa vào bộ nao hoặc để nguyên.
+3. **tu-dong-hoa (không thuộc bộ nào):** nguồn chi tiết của luật dòng 20 là `tu-dong-hoa/lich/lich-chay.md` + `tu-dong-hoa/so-tay/README.md`; README so-tay còn nhiều dấu ngày, câu "14/11 đổi từ toàn quyền Bypass…" — ngoài công cụ đo, phiên điều phối cân nhắc đưa vào bộ nao hoặc để nguyên.
 
 ## Hỏi David
 1. **`co-so-tri-thuc/david.md` mục 3.1** trùng `AGENTS.md` luật 2 và còn dấu ngày luật "(14/11/2026)" — là dấu ngày duy nhất còn lại của bộ nao không phải dữ kiện. Đề xuất viết lại (đề xuất đứng đầu):
@@ -76,9 +76,9 @@ Máy đo sau viết lại: `dau_ngay 3/15 · ghi_de 0/6 · trung 0/4 · sua 30/2
 - `CLAUDE.md`: sạch, không đổi (giữ `@AGENTS.md`).
 - `co-so-tri-thuc/david.md`: không sửa (David chốt).
 - **Đợt 2 (việc chéo bộ phiên điều phối giao):**
-  - T mục 0: thêm luật "Nội dung là của David" (nhà mới, nghĩa từ ghi nhớ `quy-tac-noi-dung-cua-david`; chi tiết video vẫn ở `quy-tac-chung.md` mục 0–1). `hermes/giao-cho-hermes.md` để nguyên.
+  - T mục 0: thêm luật "Nội dung là của David" (nguồn mới, nghĩa từ ghi nhớ `quy-tac-noi-dung-cua-david`; chi tiết video vẫn ở `quy-tac-chung.md` mục 0–1). `hermes/giao-cho-hermes.md` để nguyên.
   - T mục 2: "diễn giải + chờ ok" thành "trình lại, chờ duyệt"; câu tự học skill chuyển về T (gạch "Tự học"); "Mọi việc" thêm thông tin trực tiếp về David (trước nằm ở A luật 2).
-  - T mục 4: thêm luật `david.md` chỉ ghi điều cố định đã chốt, ý tưởng đang cân nhắc vào `du-an/danh-sach-y-tuong.md` (từ ghi nhớ `quy-tac-david-md-chi-dieu-co-dinh`, nay có nhà: ghi nhớ đó sửa dòng "Nhà của luật" trỏ T mục 4).
+  - T mục 4: thêm luật `david.md` chỉ ghi điều cố định đã chốt, ý tưởng đang cân nhắc vào `du-an/danh-sach-y-tuong.md` (từ ghi nhớ `quy-tac-david-md-chi-dieu-co-dinh`, nay có nguồn duy nhất: ghi nhớ đó sửa dòng "Nhà của luật" trỏ T mục 4).
   - A luật 2: rút còn một câu tóm + trỏ T mục 2 (phần miễn, tự học, thông tin về David chỉ ở T).
   - **G (`chi-dan-toan-cuc.md`) chưa sửa đợt này:** file là `~/.claude/CLAUDE.md` nạp mọi phiên, phiên con không tự sửa cấu hình toàn cục theo lời phiên khác. Đề xuất để phiên điều phối / David áp: thay dòng 4 bằng `- Việc gì cũng trình đủ 4 phần (Mục tiêu · Kế hoạch · Quy trình · Thực thi), chờ David "duyệt" rồi mới làm; duyệt rồi tự làm trọn tới khi chắc dùng được. Lời David nói sau cùng là luật hiện hành. Cách làm, phần miễn: \`ky-nang/chuan-muc-lam-viec.md\` mục 2; sáu luật: \`AGENTS.md\`.` (bỏ danh sách miễn ở G, nên không cần bổ sung "bot ghi sổ").
 - Đóng sổ: bộ nao không có file sổ riêng (sổ = git + ghi nhớ), nên dòng "Tái bản 3" ghi ở đây và ở mục Sổ trên; ghi nhớ do phiên ghi-nho xử lý.

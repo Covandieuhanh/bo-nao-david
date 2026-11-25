@@ -42,7 +42,7 @@ def ghi(p, segs):
 
 
 def doan_ao(segs):
-    """Các khoảng [a, b] bị ảo: câu bịa quen thuộc, câu lặp ≥ 3 lần chiếm >30%, hoặc đoạn ≥ 25 s mà rất ít chữ."""
+    """Các khoảng [a, b] bị ảo: câu bịa đặt quen thuộc, câu lặp ≥ 3 lần chiếm >30%, hoặc đoạn ≥ 25 s mà rất ít chữ."""
     if not segs: return [[0.0, None]]
     txt = [s[2] for s in segs]
     lap = {x for x in set(txt) if x and txt.count(x) >= 3 and txt.count(x) / len(txt) > 0.3}
@@ -63,8 +63,8 @@ def chep(wav, a, b, lang, words):
     k = max(1, math.ceil((b - a) / 30 - 1e-6))
     with tempfile.TemporaryDirectory() as d:
         w = os.path.join(d, "a.wav")
-        # pre: bắt đầu sớm hơn đầu khúc ảo vài giây để Whisper có ngữ cảnh (18/11/2026 — bản dài 54 phút: 5 khúc 30 s
-        # chép lại từ đúng đầu khúc vẫn ảo, lùi 4 s hoặc 12 s thì ra lời thật)
+        # pre: bắt đầu sớm hơn đầu phân đoạn ảo vài giây để Whisper có ngữ cảnh (18/11/2026 — bản dài 54 phút: 5 phân đoạn 30 s
+        # chép lại từ đúng đầu phân đoạn vẫn ảo, lùi 4 s hoặc 12 s thì ra lời thật)
         for pre in (0, 4, 12):
           s0 = max(0.0, a - pre)
           for loc in ([], ["-af", "highpass=f=120,dynaudnorm"]):
@@ -124,7 +124,7 @@ def sua(wav, O, lang="vi"):
             if ra is None: continue
             words = sorted([s for s in words if not a - 0.3 <= (s[0] + s[1]) / 2 <= b + 0.3] + ra)
     hong += lech(segs, words)
-    # từ nằm ngoài mọi câu của transcript (vd câu bịa ở đuôi bài) → bỏ
+    # từ nằm ngoài mọi câu của transcript (vd câu bịa đặt ở đuôi bài) → bỏ
     words = [w for w in words if any(a - 0.3 <= (w[0] + w[1]) / 2 <= b + 0.3 for a, b, _ in segs)]
     ghi(tp, segs); ghi(wp, words)
     for a, b in hong: print(f"⛔ Vẫn còn lời ảo {fmt(a)}–{fmt(b)}")
