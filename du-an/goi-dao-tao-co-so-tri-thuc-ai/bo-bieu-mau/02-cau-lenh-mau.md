@@ -1,5 +1,5 @@
 ---
-description: "Biểu mẫu 02 gói dựng bộ não: sáu câu lệnh dán vào AI — phỏng vấn viết hồ sơ, lưu cuối buổi bằng sáu câu hỏi, lỗi thành câu kiểm, nhìn lại tuần, dọn khi nâng cấp, kiểm bằng người đọc lạnh."
+description: "Biểu mẫu 02 gói dựng bộ não: sáu câu lệnh dán vào AI — phỏng vấn viết hồ sơ, lưu cuối buổi bằng sáu câu hỏi, lỗi thành câu kiểm, nhìn lại tuần, dọn khi nâng cấp, kiểm bằng người đọc mới."
 ---
 
 # Biểu mẫu 02 · Sáu câu lệnh mẫu

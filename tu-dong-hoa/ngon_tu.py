@@ -2,7 +2,7 @@
 """Bảng thay từ khẩu ngữ → thuật ngữ chuẩn (nguồn duy nhất: co-so-tri-thuc/bang-thuat-ngu.md mục "Thuật ngữ trong văn bản").
 Dùng bởi kiem-ngon-tu.py (quét, và --sua để thay). Không đụng vào lời trích trong ngoặc kép (lời David, lời nguồn) và dòng trích dẫn (> ).
 Thêm từ mới: thêm một cặp vào THAY (thứ tự: cụm dài trước cụm ngắn) và một dòng vào bảng thuật ngữ."""
-import re
+import re, unicodedata
 
 # (từ cũ, từ chuẩn) — cụm dài đứng trước cụm ngắn cùng gốc
 THAY = [
@@ -58,6 +58,7 @@ def _thay_doan(s):
 
 def thay_dong(d, bao_ve_trich=True):
     if bao_ve_trich and d.lstrip().startswith('>'): return d
+    if d.startswith('description:'): return _thay_doan(d)   # mô tả đầu file: không phải lời trích
     if not bao_ve_trich: return _thay_doan(d)
     phan = _Q.split(d)
     return ''.join(p if i % 2 else _thay_doan(p) for i, p in enumerate(phan))
@@ -69,7 +70,8 @@ def dong_ap_dung(d, loai):
     return t.startswith(('#', '//', '"""', '* ', '/*')) or 'print(' in d or 'echo ' in d or 'sys.exit(' in d or 'console.log(' in d
 
 def thay_van_ban(s, loai):
-    """loai: 'md' (bảo vệ trích), 'json' (thay hết trong chuỗi), 'code' (chỉ dòng chú thích và thông báo)."""
+    """loai: 'md' (bảo vệ trích), 'json' (thay hết trong chuỗi), 'code' (chỉ dòng chú thích và thông báo). Chữ đưa về dạng NFC."""
+    s = unicodedata.normalize('NFC', s)
     ra = []
     for d in s.split('\n'):
         t = d.lstrip()

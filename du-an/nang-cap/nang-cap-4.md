@@ -1,5 +1,5 @@
 ---
-description: "Tái bản 4 (20/11/2026): đổi máy đo sang đo trùng / rối (bỏ ngưỡng số dòng, thêm gan_trung) và gom ý trùng của bộ video về một nhà."
+description: "Tái bản 4 (20/11/2026): đổi công cụ đo sang đo trùng / rối (bỏ ngưỡng số dòng, thêm gan_trung) và gom ý trùng của bộ video về một nguồn duy nhất."
 ---
 
 # Nâng cấp 4 (lúc mở gọi là "tái bản 4") — 20/11/2026

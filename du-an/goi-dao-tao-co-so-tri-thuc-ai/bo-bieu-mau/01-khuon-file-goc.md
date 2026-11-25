@@ -1,5 +1,5 @@
 ---
-description: "Biểu mẫu 01 gói dựng bộ não: khuôn bốn file gốc (cửa vào, hồ sơ, luật làm việc, trạng thái), trục học, sổ bài học, ý tưởng, sổ dự án, nguyên lý, quy trình; chép ra rồi điền."
+description: "Biểu mẫu 01 gói dựng bộ não: mẫu bốn file gốc (cửa vào, hồ sơ, luật làm việc, trạng thái), trục học, sổ bài học, ý tưởng, sổ dự án, nguyên lý, quy trình; chép ra rồi điền."
 ---
 
 # Biểu mẫu 01 · Mẫu các file

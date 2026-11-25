@@ -1,5 +1,5 @@
 ---
-description: "Báo cáo trạng thái: việc đang làm dở, việc chờ David quyết, câu hỏi còn mở, cảnh báo, việc phải nhớ."
+description: "Báo cáo trạng thái: việc đang làm chưa xong, việc chờ David quyết, câu hỏi còn mở, cảnh báo, việc phải nhớ."
 ---
 
 # Trạng thái hiện tại

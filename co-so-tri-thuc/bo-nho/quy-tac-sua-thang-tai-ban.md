@@ -1,6 +1,6 @@
 ---
 name: quy-tac-sua-thang-tai-ban
-description: "Đổi luật thì sửa thẳng câu cũ (không chồng câu \"bổ sung/thay luật\", không ngày trong bản luật); định kỳ NÂNG CẤP cả bộ não một đợt (đo trước/sau, chưng cất, tỉa, dọn) — 2026-11-10, đổi tên 2026-11-20"
+description: "Đổi luật thì sửa thẳng câu cũ (không chồng câu \"bổ sung/thay luật\", không ngày trong bản luật); định kỳ NÂNG CẤP cả bộ não một đợt (đo trước/sau, chưng cất, cắt giảm, tái cấu trúc) — 2026-11-10, đổi tên 2026-11-20"
 metadata:
   node_type: memory
   type: feedback

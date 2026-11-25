@@ -3,7 +3,7 @@
   python3 -I tu-dong-hoa/kiem-ngon-tu.py          quét cả bộ não, báo từ khẩu ngữ còn sót (cảnh báo, mã 0)
   python3 -I tu-dong-hoa/kiem-ngon-tu.py --sua    thay từ cũ bằng thuật ngữ chuẩn trong mọi file (trừ lời trích, dòng trích dẫn, tài liệu nguồn)
 Quét: .md .txt .json (mọi chuỗi) · .py .sh .mjs .js (chỉ chú thích và thông báo). Bỏ: .git, node_modules, tai-lieu-tham-khao, nguon-tham-khao, bảng thuật ngữ, file này."""
-import os, sys
+import os, sys, unicodedata
 R = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 sys.path.insert(0, os.path.join(R, 'tu-dong-hoa')); import ngon_tu as NT
 BO_DIR = ('.git', 'node_modules', 'tai-lieu-tham-khao', 'nguon-tham-khao', 'out', 'dist')
@@ -17,7 +17,7 @@ for goc, ds, fs in os.walk(R):
         duoi = os.path.splitext(f)[1]
         if duoi not in LOAI or f in BO_FILE: continue
         p = os.path.join(goc, f); rel = os.path.relpath(p, R).replace(os.sep, '/')
-        try: s = open(p, encoding='utf-8').read()
+        try: s = unicodedata.normalize('NFC', open(p, encoding='utf-8').read())
         except (UnicodeDecodeError, OSError): continue
         if sua:
             s2 = NT.thay_van_ban(s, LOAI[duoi])

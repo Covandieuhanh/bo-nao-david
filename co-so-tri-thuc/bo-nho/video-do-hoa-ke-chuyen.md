@@ -1,6 +1,6 @@
 ---
 name: video-do-hoa-ke-chuyen
-description: "Mọi video có motion graphics nhiều loại để kể lại câu chuyện, không khuôn; mọi bước AI sáng tạo trong khung + tiêu chí + nhận diện (2026-11-07, 09/11, gộp 10/11)"
+description: "Mọi video có motion graphics nhiều loại để kể lại câu chuyện, không mẫu; mọi bước AI sáng tạo trong khung + tiêu chí + nhận diện (2026-11-07, 09/11, gộp 10/11)"
 metadata:
   type: feedback
 ---

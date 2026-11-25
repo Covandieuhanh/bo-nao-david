@@ -1,5 +1,5 @@
 ---
-description: "Chiến lược nghề nghiệp (david.md mục 4): ba hướng nghề tài chính, trainer con người, giải pháp công nghệ AI; hình ảnh trainer hai lĩnh vực; ba tầng làm chủ, các chặng, bảng giá, quy trình một ca, hệ 135, lằn ranh nghề."
+description: "Chiến lược nghề nghiệp (david.md mục 4): ba hướng nghề tài chính, trainer con người, giải pháp công nghệ AI; hình ảnh trainer hai lĩnh vực; ba tầng làm chủ, các chặng, bảng giá, quy trình một trường hợp, hệ 135, lằn ranh nghề."
 ---
 
 # Chiến lược nghề nghiệp của David

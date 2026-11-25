@@ -1,5 +1,5 @@
 ---
-description: "Mẫu phan-huong.md của một tập: chia đoạn theo ý, gán hướng nghề, danh sách đoạn từng bản theo hướng, mối nối cần soát, lằn ranh, ý dùng cho công việc."
+description: "Mẫu phan-huong.md của một tập: chia đoạn theo ý, gán hướng nghề, danh sách đoạn từng bản theo hướng, điểm nối cần soát, lằn ranh, ý dùng cho công việc."
 ---
 
 # Mẫu `phan-huong.md` (khối 00 mục 0b)

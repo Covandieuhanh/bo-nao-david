@@ -1,5 +1,5 @@
 ---
-description: "Biểu mẫu 03 gói dựng bộ não: khuôn bài kiểm (câu hỏi trong bộ não, đáp án để ngoài), câu kiểm tốt trông thế nào, cách chấm theo tỉ lệ."
+description: "Biểu mẫu 03 gói dựng bộ não: mẫu bài kiểm (câu hỏi trong bộ não, đáp án để ngoài), câu kiểm tốt trông thế nào, cách chấm theo tỉ lệ."
 ---
 
 # Biểu mẫu 03 · Mẫu bài kiểm

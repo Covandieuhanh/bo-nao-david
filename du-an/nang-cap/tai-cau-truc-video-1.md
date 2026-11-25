@@ -1,5 +1,5 @@
 ---
-description: "Tái bản bộ skill video lần 1 (10/11): bảng 164 luật, mỗi luật một nhà."
+description: "Tái bản bộ skill video lần 1 (10/11): bảng 164 luật, mỗi luật một nguồn duy nhất."
 ---
 
 # Tái bản bộ video — lần 1 (10/11/2026)

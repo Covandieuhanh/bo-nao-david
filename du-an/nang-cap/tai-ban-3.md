@@ -1,5 +1,5 @@
 ---
-description: "Tái bản 3 toàn bộ bộ não (mở 14/11): file theo dõi chung của phiên điều phối — máy đo lúc mở, file từng phiên con, chéo bộ, hỏi David, kiểm chung."
+description: "Tái bản 3 toàn bộ bộ não (mở 14/11): file theo dõi chung của phiên điều phối — công cụ đo lúc mở, file từng phiên con, chéo bộ, hỏi David, kiểm chung."
 ---
 
 # Tái bản 3 — toàn bộ bộ não (mở 14/11/2026)

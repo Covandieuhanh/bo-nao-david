@@ -1,5 +1,5 @@
 ---
-description: "Lịch sử nâng cấp (trước 20/11/2026 gọi là tái bản): mỗi đợt một dòng, mốc cho máy đo chồng chéo."
+description: "Lịch sử nâng cấp (trước 20/11/2026 gọi là tái bản): mỗi đợt một dòng, mốc cho công cụ đo chồng chéo."
 ---
 
 # Lịch sử nâng cấp

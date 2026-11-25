@@ -1,5 +1,5 @@
 ---
-description: "Tái bản 3 (14/11), phiên con bộ hoi: bảng luật đang sống, chéo bộ, hỏi David."
+description: "Tái bản 3 (14/11), phiên con bộ hoi: bảng luật hiện hành, chéo bộ, hỏi David."
 ---
 
 # Tái bản 3 — bộ hoi
