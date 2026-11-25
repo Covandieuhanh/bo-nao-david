@@ -22,7 +22,7 @@ Luật thêm cho đợt này: mọi file viết lại giữ khối `description:
   File chồng nhiều nhất:
    - ky-nang/san-xuat-video/mo-dun/04-khung-hinh/README.md: 2 dấu ngày · 0 câu ghi đè · 85 dòng
    - ky-nang/san-xuat-video/quy-tac-chung.md: 2 dấu ngày · 0 câu ghi đè · 123 dòng
-   - ky-nang/san-xuat-video/thiet-ke-bo-cuc/tu-chon.md: 2 dấu ngày · 0 câu ghi đè · 97 dòng
+   - ky-nang/san-xuat-video/thiet-ke-bo-cuc/huong-dan-lua-chon.md: 2 dấu ngày · 0 câu ghi đè · 97 dòng
    - ky-nang/san-xuat-video/cat-doan-noi-bat/SKILL.md: 1 dấu ngày · 0 câu ghi đè · 206 dòng
    - ky-nang/san-xuat-video/dung-video-theo-phong-cach/references/loi-thuong-gap.md: 1 dấu ngày · 0 câu ghi đè · 243 dòng
    - ky-nang/san-xuat-video/mo-dun/07-canh-minh-hoa/README.md: 1 dấu ngày · 0 câu ghi đè · 181 dòng
@@ -50,7 +50,7 @@ Luật thêm cho đợt này: mọi file viết lại giữ khối `description:
 
 ## Chéo bộ (phiên điều phối gom và chốt nguồn)
 - Giao phiên não: luật "nội dung là của David, không khuôn lời" mất nguồn nên về `chuan-muc-lam-viec.md` mục 0; "chờ ok" thành "duyệt"; luật `quy-tac-david-md-chi-dieu-co-dinh` về chuan-muc mục 4; AGENTS luật 2 và chi-dan-toan-cuc rút còn câu tóm + trỏ chuan-muc mục 2.
-- Giao phiên ghi nhớ: viết lại thân các ghi nhớ còn chồng lớp (`quy-tac-goi-y-de-david-chon`, `quy-tac-phien-telegram-tu-chay`, `quy-tac-ky-nang-tu-cai-tien`, `video-khong-tu-xuat`, `video-podcast-phu-hinh-30`, `video-bo-cuc-tu-can`, `video-kien-truc-ky-nang`), `.gitignore` cho `luu-tru/thiet-bi-*`, chép lại mô tả ở `ban-do/`.
+- Giao phiên ghi nhớ: viết lại thân các ghi nhớ còn chồng lớp (`quy-tac-goi-y-de-david-chon`, `quy-tac-phien-telegram-tu-chay`, `quy-tac-ky-nang-tu-cai-tien`, `video-khong-tu-xuat`, `video-podcast-phu-hinh-30`, `video-bo-cuc-tu-can-bang`, `video-kien-truc-ky-nang`), `.gitignore` cho `luu-tru/thiet-bi-*`, chép lại mô tả ở `ban-do/`.
 - Để nguyên: `tu-dong-hoa/so-tay/README.md` còn dấu ngày (ngoài ba bộ, không đo); `du-an/danh-gia-luat.md` là biên bản cũ.
 - Ghi nhớ trỏ bản luật theo số mục: kiểm lại bằng `grep -n "mục [0-9]" co-so-tri-thuc/bo-nho/*.md` sau khi các phiên xong.
 
@@ -68,7 +68,7 @@ Câu nhỏ không cần hỏi (theo đề xuất phiên con): giữ ghi nhớ `v
 - [x] Đủ luật: 4 bảng (video 78 · hỏi 24 · não 35 · ghi nhớ 48), mọi dòng "sống" có nguồn duy nhất; luật "nội dung là của David" đã có nguồn duy nhất lại (chuan-muc mục 0)
 - [x] Công cụ đo: video 0·0·0, hỏi 0·0·0, não ghi đè 0 · trùng 0 · 2 dấu ngày là ngày dữ kiện trong david.md; "sua 31" về 0 khi gắn tag `tai-ban-3`
 - [x] Mẫu chuẩn (15/11): 5 mẫu podcast chạy được. 3 clip dọc giữ nguyên (SSIM 0,976 / 0,980 / 0,976). 2 bản podcast ngang đổi hình (`podcast-dai-trainer` 0,873, `podcast-dai-muc-tieu` 0,876) vì đúng luật "mỗi lúc một chỗ chữ" (08/11, sau `chuan.jpg` 06/11): phụ đề nhường khi cảnh / chữ chính hiện, còn lại nằm sát đáy. Các lớp khác như cũ. David duyệt chốt (15/11): hai bản ngang đã thành `chuan.jpg` mới.
-  Cách dựng lại dự án mẫu (Mac không giữ): chép `motion/` từ Drive `sao-luu-mac/video/<tap>/{2-ban-dai,3-highlight/clip-X}` về `~/Movies/<tap>/{2-ban-day-du,3-doan-noi-bat/clip-X}/chuyen-dong` (bỏ `thumb`), đổi tên file `captions→phu-de, scenes→canh, project→du-an, placement→vi-tri, speakers→nguoi-noi, envelope→duong-bao-am, highlight→doan-noi-bat, output→dau-ra`, sửa `from './project.js'` trong `canh.js`, tạo `tu-lieu/` rỗng, `npm install` theo `package.json` của `khuon-remotion` rồi liên kết `node_modules`. Chạy xong thì xoá.
+  Cách dựng lại dự án mẫu (Mac không giữ): chép `motion/` từ Drive `sao-luu-mac/video/<tap>/{2-ban-dai,3-highlight/clip-X}` về `~/Movies/<tap>/{2-ban-day-du,3-doan-noi-bat/clip-X}/chuyen-dong` (bỏ `thumb`), đổi tên file `captions→phu-de, scenes→canh, project→du-an, placement→vi-tri, speakers→nguoi-noi, envelope→duong-bao-am, highlight→doan-noi-bat, output→dau-ra`, sửa `from './project.js'` trong `canh.js`, tạo `tu-lieu/` rỗng, `npm install` theo `package.json` của `mau-remotion` rồi liên kết `node_modules`. Chạy xong thì xoá.
 - [x] Việc thật `thu-tai-ban-3`: clip dọc 46 s (`~/Movies/tap-thu-tai-ban-3/3-doan-noi-bat/clip-A/video-hoan-chinh.mp4`, −13,8 LUFS). David chấm (15/11): "Đạt, đóng mốc"
 
 ## Đóng mốc (15/11/2026)

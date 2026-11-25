@@ -35,9 +35,9 @@ người chưa biết gì về công nghệ — nên mọi file viết đủ t�
 | Tầng | Chứa | Đổi khi | Ví dụ |
 |---|---|---|---|
 | **0 · Trục / gốc** | file này, `tu-duy-goc.md`, khung `mo-hinh-kinh-doanh.md`, mục đích, giá trị, lằn ranh, sáu luật | **nâng cấp** (làm rõ, thêm ví dụ, liên kết thêm, không đổi nghĩa) được; **đổi gốc** (đổi nghĩa) chỉ khi đủ dẫn chứng trong `so-dan-chung-goc.md` và David chốt sau vài ngày | `truc-tri-thuc.md`, `david.md` mục 1–3, `AGENTS.md` sáu luật |
-| **1 · Nguyên lý** | vì sao làm vậy; áp được cho nhiều việc | vòng Nâng cấp, khi nhiều trường hợp cùng gốc | `thiet-ke-bo-cuc/nguoi-xem-can-gi.md`, `chuan-muc-lam-viec.md` |
+| **1 · Nguyên lý** | vì sao làm vậy; áp được cho nhiều việc | vòng Nâng cấp, khi nhiều trường hợp cùng gốc | `thiet-ke-bo-cuc/nhu-cau-nguoi-xem.md`, `chuan-muc-lam-viec.md` |
 | **2 · Quy trình** | các bước của một loại việc | theo tuần, theo góp ý có bằng chứng | các `SKILL.md`, khối `mo-dun/`, hồ sơ tham số |
-| **3 · Dữ liệu** | trường hợp thực tế, số liệu, nguồn học, sổ, ghi nhớ, kho | thêm hằng ngày; **chỉ thêm**, không sửa nghĩa cái cũ | `giai-mau.md`, `so-lieu.md`, `nhat-ky-thay-doi.md`, `bo-nho/`, `bo-cuc.md` |
+| **3 · Dữ liệu** | trường hợp thực tế, số liệu, nguồn học, sổ, ghi nhớ, kho | thêm hằng ngày; **chỉ thêm**, không sửa nghĩa cái cũ | `truong-hop-da-giai.md`, `so-lieu.md`, `nhat-ky-thay-doi.md`, `bo-nho/`, `bo-cuc.md` |
 
 Trong tầng 1–2 mỗi ý chỉ **một nguồn duy nhất**; nơi khác một dòng trỏ. Tầng 3 được nhiều, vì là dữ liệu.
 Tầng của từng file: bảng [tang.json](tang.json) (mẫu đường dẫn ứng với tầng; chỉ mục `chi-muc.md` hiện tầng). Bộ đánh giá toàn bộ não: [bai-kiem/](bai-kiem/README.md).
@@ -53,6 +53,9 @@ Tầng của từng file: bảng [tang.json](tang.json) (mẫu đường dẫn �
 ## 4. Luật thăng cấp (như não ngủ để củng cố)
 - Thông tin mới **luôn vào tầng 3 trước**. Lên tầng 2 khi **lặp ít nhất 2 lần** hoặc David chốt thành cách làm. Lên tầng 1 khi **ít nhất 3 trường hợp cùng
   gốc** và đã có câu kiểm. Lên tầng 0 chỉ khi David chốt và chờ vài ngày (`david.md` mục 2).
+- **Lời David mới vào tầng theo bậc:** ghi sổ (tầng 3) và cách làm (tầng 2) kèm một câu kiểm ngay trong ngày; lên tầng 1 chỉ khi công cụ thăng cấp
+  (`tu-dong-hoa/hoc-lien-tuc/thang-cap.py`) đề xuất đủ ba trường hợp cùng gốc và David chốt. AI không đưa một lời nói đơn lẻ thẳng vào tầng 1
+  (trường hợp 25/11/2026: năm luật vào tầng 1 trong một ngày).
 - **Lỗi nào David phải sửa cũng thành một câu kiểm** của bộ đó (video: `ky-nang/san-xuat-video/thiet-ke-bo-cuc/bai-kiem/de.json`), để
   bản sau không lặp lại. Bộ kiểm chỉ lớn lên, không bỏ câu khi chưa có lý do ghi sổ.
 - Đi xuống cũng có luật: luật tầng 1–2 lâu không dùng hoặc số liệu cho thấy không giúp thì đề xuất cắt giảm (David duyệt), cất `luu-tru/`.
@@ -74,7 +77,7 @@ Tầng của từng file: bảng [tang.json](tang.json) (mẫu đường dẫn �
 **Nâng cấp khác đổi gốc** (David 25/11/2026: "đã là gốc rồi thì sẽ rất ít khi thay đổi, chỉ có nâng cấp và cải tiến để tối ưu hơn thôi, còn để dẫn đến trường hợp thay đổi vào gốc thì phải dựa vào rất nhiều lần tương tác và các dẫn chứng cụ thể"):
 - **Nâng cấp:** làm rõ câu chữ, thêm ví dụ, thêm liên kết, gắn thêm một lớp lên gốc có sẵn (như gắn ba hướng nghề lên ba phạm trù). Nghĩa cũ còn nguyên.
 - **Đổi gốc:** đổi nghĩa một câu gốc. Phải có nhiều lần tương tác và dẫn chứng cụ thể ghi ở [so-dan-chung-goc.md](so-dan-chung-goc.md), David chốt sau vài ngày.
-- **Cổng kiểm soát gốc:** `tu-dong-hoa/gac-goc.py` chạy trong `dong-bo.sh --push`: file tầng 0 thay đổi mà sổ dẫn chứng không có dòng tương ứng (ngày, file, loại, lời David) thì không đẩy.
+- **Cổng kiểm soát gốc:** `tu-dong-hoa/cong-kiem-soat-goc.py` chạy trong `dong-bo.sh --push`: file tầng 0 thay đổi mà sổ dẫn chứng không có dòng tương ứng (ngày, file, loại, lời David) thì không đẩy.
 
 Trục chỉ đổi khi David nói rõ, sau vài ngày cân nhắc; đổi thì viết lại đúng câu ở đây, lý do vào ghi nhớ `quy-tac-truc-tri-thuc`.
 Mọi thay đổi khác của bộ não (học nguồn mới, đổi luật, thêm skill) đi **qua** trục, không sửa trục.

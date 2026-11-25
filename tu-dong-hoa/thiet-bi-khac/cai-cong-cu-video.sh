@@ -1,9 +1,9 @@
 #!/bin/bash
 # CÀI CÔNG CỤ DỰNG VIDEO ĐÚNG PHIÊN BẢN KHOÁ (phien-ban.env) — mọi máy: Mac, Windows (qua WSL2 Ubuntu), Linux.
-#   bash ~/Documents/bo-nao-david/tu-dong-hoa/may-khac/cai-cong-cu-video.sh
+#   bash ~/Documents/bo-nao-david/tu-dong-hoa/thiet-bi-khac/cai-cong-cu-video.sh
 # Chạy lại nhiều lần không sao: cái gì đúng bản rồi thì bỏ qua. Cần mạng; Linux cần mật khẩu máy (sudo apt) — David tự gõ.
 # Cài: ffmpeg, whisper.cpp + mô hình Whisper (1,5 GB), Node qua nvm, uv, Pillow, môi trường podcast (numpy), pyannote
-# (tách người nói), dò mặt (máy không phải Mac: YuNet + MediaPipe thay Vision). Xong thì chạy kiem-may.sh để so với Mac chính.
+# (tách người nói), dò mặt (máy không phải Mac: YuNet + MediaPipe thay Vision). Xong thì chạy kiem-tra-thiet-bi.sh để so với Mac chính.
 set -uo pipefail
 HERE="$(cd "$(dirname "$0")" && pwd)"
 source "$HERE/phien-ban.env"
@@ -71,7 +71,7 @@ elif [ "$OS" = Darwin ]; then
   command -v brew >/dev/null || { echo "⛔ Chưa có Homebrew. David tự chạy (cần mật khẩu máy):"; echo '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'; exit 1; }
   buoc "brew: ffmpeg, whisper.cpp, uv, gh, rsync"
   for g in ffmpeg whisper-cpp uv gh rsync; do brew list "$g" >/dev/null 2>&1 || brew install -q "$g" >/dev/null || loi "brew $g"; done
-  ffmpeg -version | head -1 | grep -q "version $FFMPEG" && ok "ffmpeg $FFMPEG" || echo "  ⚠ ffmpeg khác bản khoá ($FFMPEG): $(ffmpeg -version | head -1 | cut -c1-30) — Homebrew chỉ có bản mới nhất; kiem-may.sh sẽ báo nếu video lệch"
+  ffmpeg -version | head -1 | grep -q "version $FFMPEG" && ok "ffmpeg $FFMPEG" || echo "  ⚠ ffmpeg khác bản khoá ($FFMPEG): $(ffmpeg -version | head -1 | cut -c1-30) — Homebrew chỉ có bản mới nhất; kiem-tra-thiet-bi.sh sẽ báo nếu video lệch"
   whisper-cli --version 2>&1 | grep -q "$WHISPER_CPP" && ok "whisper-cli $WHISPER_CPP" || echo "  ⚠ whisper.cpp khác bản khoá ($WHISPER_CPP)"
 else
   echo "⛔ Hệ điều hành chưa hỗ trợ: $OS. Windows: cài WSL2 Ubuntu rồi chạy script này trong Ubuntu (huong-dan-cai-dat.md mục 3)."; exit 1
@@ -142,5 +142,5 @@ if [ "$OS" != Darwin ]; then
 fi
 
 echo
-if [ $LOI = 0 ]; then echo "✅ Cài xong. Bước tiếp: zsh \"$HERE/kiem-may.sh\"  (dựng thử, so với Mac chính)"
+if [ $LOI = 0 ]; then echo "✅ Cài xong. Bước tiếp: zsh \"$HERE/kiem-tra-thiet-bi.sh\"  (dựng thử, so với Mac chính)"
 else echo "⚠ Còn mục ✗ ở trên — sửa rồi chạy lại script này."; exit 1; fi

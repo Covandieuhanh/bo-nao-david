@@ -15,14 +15,14 @@ video nhiều nội dung cần motion graphic hiện nhiều thông tin hơn đ�
 **Why:** kho hiệu ứng học nhiều nhưng không có bước "dấu hiệu thì kiểu", nên Claude chỉ dùng vài kiểu quen; thử-sai bằng render và mổ xẻ
 lỗi skill giữa chừng làm chậm.
 
-**How to apply:** luật ở `ky-nang/san-xuat-video/thiet-ke-bo-cuc/tu-chon.md` (chẩn đoán `chan-doan.py` → khung chủ thể `khung-chu-the.py`,
+**How to apply:** luật ở `ky-nang/san-xuat-video/thiet-ke-bo-cuc/huong-dan-lua-chon.md` (chẩn đoán `chan-doan.py` → khung chủ thể `khung-chu-the.py`,
 bảng ghi chú chạy `GHI_CHU`, kiểu cảnh theo dạng câu) và mục "Nhịp làm" của `ky-nang/san-xuat-video/dung-video-theo-phong-cach/SKILL.md`. Học mẫu mới phải thêm dòng
-dấu hiệu vào tu-chon.md. Liên quan [[quy-tac-goi-y-de-david-chon]], [[video-tham-my-chi-giu-nhan-dien]].
+dấu hiệu vào huong-dan-lua-chon.md. Liên quan [[quy-tac-goi-y-de-david-chon]], [[video-tham-my-chi-giu-nhan-dien]].
 
 19/11/2026, sau tập "Marketing là nỗi đau và nhu cầu": David thấy video ngắn đến dài, nội dung nào cũng một kiểu thẩm mỹ và bố cục —
 "bao nhiêu cái học về bố cục và motion graphic cũng như thẩm mỹ thì không có chỗ ứng dụng vì không hề được tự động nhận diện".
 Gốc: kho chỉ nối vào mẫu 1 video; tập 2 file đi mẫu ghép (thiếu nửa kho, không bước chẩn đoán, máy sinh chỉ viết pow), Claude chép
 kịch bản bản trước. David duyệt đường A và chốt: *"mọi thứ cần phát huy tối đa được sức mạnh của AI, mọi lựa chọn đều phải được tự động
 setup phù hợp với nội dung của tài nguyên nguồn"*.
-**How to apply (bổ sung):** nhiều file cùng buổi nói thì nối file, mẫu 1 video; mẫu ghép chỉ cho vlog nhiều cảnh + clip ngắn; tu-chon.md
+**How to apply (bổ sung):** nhiều file cùng buổi nói thì nối file, mẫu 1 video; mẫu ghép chỉ cho vlog nhiều cảnh + clip ngắn; huong-dan-lua-chon.md
 bước 0 (không chép tập trước, bảng mẫu) + bước 2b (thẩm mỹ); `soat-canh.mjs` chặn render khi thiếu `## Chẩn đoán` hoặc cả video một kiểu.

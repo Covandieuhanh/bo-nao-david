@@ -49,7 +49,7 @@ Cột "Code": **có** = viết được ngay trong `canh.js` · **chưa** = mớ
 | Trước / sau hai khung cạnh nhau | so sánh kết quả | cả hai | chưa (gần `card` `vs`) |
 | Người làm mờ phía sau, chữ / vật nổi giữa khung (không cắt sang nền tối) | câu chốt giữa đoạn nói | cả hai | = `phong: 'nguoi-mo'` cho cảnh toàn màn hình |
 
-## Hình dễ hiểu, tinh gọn (học Cường Mê AI, 20/11/2026 — `nguon-tham-khao/cuong-me-ai-2026-11-20.md`; khi nào dùng: `tu-chon.md` bước 4a)
+## Hình dễ hiểu, tinh gọn (học Cường Mê AI, 20/11/2026 — `nguon-tham-khao/cuong-me-ai-2026-11-20.md`; khi nào dùng: `huong-dan-lua-chon.md` bước 4a)
 
 | Kiểu | Hợp khi | Ngang / dọc | Code |
 |---|---|---|---|
@@ -69,7 +69,7 @@ Cột "Code": **có** = viết được ngay trong `canh.js` · **chưa** = mớ
 | **Từ khoá to trong phụ đề** (`hl: ['^5 lần']`): một chữ quyết định nghĩa to khoảng 1,6 lần, màu nhấn; ghép được `^+` / `^-` | cụm có con số hoặc chữ đổi nghĩa; tối đa một chỗ mỗi dòng | chỉ phụ đề dọc ngắn | có |
 | **Kết quả trước, cách làm sau**: mở bằng thành quả, rồi mới lộ bản gốc / quá trình | video khoe một thành quả có bản gốc đi kèm | cả hai | không cần code (thứ tự cảnh) |
 
-## Nền và lớp thông tin (11/11/2026 — chọn theo `tu-chon.md`)
+## Nền và lớp thông tin (11/11/2026 — chọn theo `huong-dan-lua-chon.md`)
 
 | Kiểu | Hợp khi | Ngang / dọc | Code |
 |---|---|---|---|
@@ -87,7 +87,7 @@ Cột "Code": **có** = viết được ngay trong `canh.js` · **chưa** = mớ
 ## Ảnh mẫu từng kiểu (`anh-mau/`)
 
 Chụp trên mẫu thử với người giả (không mặt thật), cả khung dọc lẫn ngang, để người dựng (AI hay người) nhìn trước khi chọn. Cột
-"Nguyên lý" = nguyên lý chính kiểu đó giải (`nguoi-xem-can-gi.md`). Kiểu mới có code: thêm một dòng ở
+"Nguyên lý" = nguyên lý chính kiểu đó giải (`nhu-cau-nguoi-xem.md`). Kiểu mới có code: thêm một dòng ở
 `anh-mau/cong-cu/canh-mau.mjs` rồi chạy `zsh anh-mau/cong-cu/chup-anh-mau.sh <id>` (cần node, ffmpeg, Pillow), thêm một dòng vào bảng.
 
 | Kiểu | Nguyên lý | Dọc | Ngang |
@@ -154,7 +154,7 @@ Chụp trên mẫu thử với người giả (không mặt thật), cả khung 
   (kể cả người quay nghiêng máy không thấy rõ mặt) + **người đang nói** (pyannote + cử động miệng). Graphic đặt qua `src/thu-vien/cho.js`:
   không đè, không làm mờ bất kỳ ai.
 - Ô người dùng video gốc (`public/goc.mp4`, xuat-video.mjs tự nối), nên cảnh `o-nguoi` / `chuong` là lớp đặc, ghép đè được như cảnh toàn màn hình.
-- Chưa làm cho podcast (không có mặt) và vlog ghép (`khuon-dung-ghep`). Khi cần thì thêm cùng kiểu.
+- Chưa làm cho podcast (không có mặt) và vlog ghép (`mau-dung-ghep`). Khi cần thì thêm cùng kiểu.
 
 ```js
 // mục lục tích luỹ · thanh tiến trình ý · mạch hình cạnh người

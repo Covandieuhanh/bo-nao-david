@@ -11,7 +11,7 @@ description: "Khối 08 phần kết: màn chốt nguyên văn, thẻ cuối, d�
 **Sửa khối này thì chạy lại:** 17
 
 **File thật (code, một bản duy nhất):**
-- `dung-video-theo-phong-cach/assets/khuon-remotion/src/keu-goi-hanh-dong.js`
+- `dung-video-theo-phong-cach/assets/mau-remotion/src/keu-goi-hanh-dong.js`
 - `…/thanh-phan/hanh-dong.jsx (Cta)`
 - `…/thanh-phan/man-ket.jsx`
 - `…/thanh-phan/man-ket-youtube.jsx`

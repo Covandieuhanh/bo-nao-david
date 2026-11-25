@@ -14,7 +14,7 @@ description: "Khối 09 âm thanh: nhạc nền theo tuyến, hiệu ứng tiế
 - `cat-doan-noi-bat/assets/nhac/`
 - `dung-video-theo-phong-cach/assets/hieu-ung-am-thanh/`
 - `dung-video-theo-phong-cach/scripts/xem-truoc-ban-dung.py` · `scripts/chuan-am.py`
-- `dung-video-theo-phong-cach/assets/khuon-dung-ghep/xuat-chuong-trinh.mjs`
+- `dung-video-theo-phong-cach/assets/mau-dung-ghep/xuat-chuong-trinh.mjs`
 
 ## Luật
 - **Âm thanh nhận diện:** tiếng ký hiệu `sting.wav` lúc hiện tiêu đề mở đầu; "ting" ở màn chốt; "vút" chỉ khi bật kiểu tua cũ.

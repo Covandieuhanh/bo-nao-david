@@ -12,8 +12,8 @@ description: "Khối 03 phụ đề: video dài hộp đầy câu, video dọc c
 
 **File thật (code, một bản duy nhất):**
 - `dung-video-theo-phong-cach/scripts/phu-de.py`
-- `dung-video-theo-phong-cach/assets/khuon-remotion/src/kieu-phu-de.js (một nguồn)`
-- `dung-video-theo-phong-cach/assets/khuon-remotion/src/thanh-phan/phu-de.jsx`
+- `dung-video-theo-phong-cach/assets/mau-remotion/src/kieu-phu-de.js (một nguồn)`
+- `dung-video-theo-phong-cach/assets/mau-remotion/src/thanh-phan/phu-de.jsx`
 
 ## Cách làm
 

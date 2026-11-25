@@ -23,7 +23,7 @@ s = s[s.index('export default') + len('export default'):].strip().rstrip(';')
 SUBS = json.loads(re.sub(r'(\b(?:start|end|text)\b)\s*:', r'"\1":', s))
 
 CANH = '''// Kịch bản cảnh — tap-{ten}: tách từ {goc} (tach-video.py, kiem-tra/tach-video.json).
-// Mốc viết theo VIDEO GỐC (dễ đối chiếu phụ đề gốc); g() đổi sang mốc video đã cắt. Mỗi cảnh ghi nguồn kho (tu-chon.md bước 4d).
+// Mốc viết theo VIDEO GỐC (dễ đối chiếu phụ đề gốc); g() đổi sang mốc video đã cắt. Mỗi cảnh ghi nguồn kho (huong-dan-lua-chon.md bước 4d).
 import project from './du-an.js';
 
 export const FPS = project.fpsNum / project.fpsDen;
@@ -96,7 +96,7 @@ for ten, v in KH['video'].items():
         CANH.format(ten=ten, goc=P0, doan=json.dumps([list(x) for x in doan]), dem=DEM))
     open(os.path.join(P, 'ke-hoach-canh.md'), 'w', encoding='utf-8').write(
         f"# Kế hoạch cảnh — tap-{ten}\n\nTách từ {P0}: đoạn (giây video gốc) {doan}. Dài {float(dur):.1f} s.\n\n"
-        "## Chẩn đoán (thiet-ke-bo-cuc/tu-chon.md)\nYêu cầu: …\nKhuôn: …\nLoại: …\nHình: …\nThẩm mỹ: …\nTiết chế: …\nĐổi hiệu ứng: …\nNguồn kho: …\n")
+        "## Chẩn đoán (thiet-ke-bo-cuc/huong-dan-lua-chon.md)\nYêu cầu: …\nKhuôn: …\nLoại: …\nHình: …\nThẩm mỹ: …\nTiết chế: …\nĐổi hiệu ứng: …\nNguồn kho: …\n")
     os.makedirs(os.path.join(P, 'kiem-tra'), exist_ok=True)
     json.dump({'nguon': KH['nguon'], 'dem': DEM, 'video': {ten: v}}, open(os.path.join(P, 'kiem-tra/tach-video.json'), 'w', encoding='utf-8'),
               ensure_ascii=False, indent=1)

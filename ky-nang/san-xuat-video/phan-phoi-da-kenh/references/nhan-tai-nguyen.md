@@ -14,8 +14,8 @@ thư mục Drive `tu-lieu-goc`. Là bước 0 của `phan-phoi-da-kenh`.
    trong thư mục đó.
 2. **Tải theo loại link:**
    - Google Drive file: `gdown <mã file> -O ~/Movies/tap-<tên>/1-goc/` (mã file là phần sau `/d/` trong link; bản gdown khoá ở
-     `tu-dong-hoa/may-khac/phien-ban.env` không còn cờ `--fuzzy`) · thư mục: `gdown --folder "<link>" -O ~/Movies/tap-<tên>/1-goc/`.
-     Máy chưa có lệnh `gdown`: chạy `uvx gdown==<bản trong phien-ban.env> <mã file> -O …`, hoặc cài bằng `tu-dong-hoa/may-khac/cai-cong-cu-video.sh`.
+     `tu-dong-hoa/thiet-bi-khac/phien-ban.env` không còn cờ `--fuzzy`) · thư mục: `gdown --folder "<link>" -O ~/Movies/tap-<tên>/1-goc/`.
+     Máy chưa có lệnh `gdown`: chạy `uvx gdown==<bản trong phien-ban.env> <mã file> -O …`, hoặc cài bằng `tu-dong-hoa/thiet-bi-khac/cai-cong-cu-video.sh`.
      Link Drive là riêng tư: không ghi vào repo công khai, không đưa vào mô tả hay bài đăng.
    - YouTube / TikTok: `yt-dlp -f "bv*[height<=1080]+ba/b" -o "~/Movies/tap-<tên>/1-goc/%(title)s.%(ext)s" "<link>"` — chỉ video của chính
      David hoặc video mẫu để học (học xong xoá, `thiet-ke-bo-cuc/README.md` mục 4).

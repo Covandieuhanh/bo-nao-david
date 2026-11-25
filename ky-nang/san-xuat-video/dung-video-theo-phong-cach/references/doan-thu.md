@@ -15,7 +15,7 @@ Trong các lệnh dưới: `SKILL=~/Documents/bo-nao-david/ky-nang/san-xuat-vide
    cảnh khác nhau). Mốc đầu / cuối đúng đầu / cuối câu trong phụ đề.
 2. **Cắt thành dự án thử:** kế hoạch tách một video, tên bắt đầu `thu-`, chạy
    `python3 -I $SKILL/scripts/tach-video.py ke-hoach-thu.json` (`references/tach-theo-huong.md` mục 3) — ra `~/Movies/tap-thu-<tên>/`.
-3. **Dựng như video thật:** chẩn đoán, mở kho hình mẫu chọn cách cho từng ý, ghi `Nguồn kho:` (`thiet-ke-bo-cuc/tu-chon.md` bước 4d);
+3. **Dựng như video thật:** chẩn đoán, mở kho hình mẫu chọn cách cho từng ý, ghi `Nguồn kho:` (`thiet-ke-bo-cuc/huong-dan-lua-chon.md` bước 4d);
    mỗi cảnh ghi nguồn trong `canh.js`; đổi hiệu ứng vào / ra qua các cảnh.
 4. **Soát:** `soat-canh.mjs` → `anh-kiem-canh.sh` → xem lưới ảnh: không che ai, chữ đọc được; sửa rồi chụp lại.
 5. **Render đoạn thử:** `xuat-video.mjs` → `xem-truoc-ban-dung.py` (không teaser); làm bản nhẹ dưới 30 MB.

@@ -10,7 +10,7 @@ description: "Hình mẫu mục lớn 2 — nội dung video: mở đầu, video
 ## 2.1 Mở đầu 3 giây, chia đoạn, minh hoạ, bằng chứng ✅
 | Hình mẫu | Bằng chứng (đo 20/11/2026) | Học được | Đã dùng |
 |---|---|---|---|
-| Ali Abdaal (QT) | 6,71 tr theo dõi · trung vị 273 N / 26 N | dạy kỹ năng: nói ngay tiền cược, chia bước rõ | `thiet-ke-bo-cuc/giai-mau.md` |
+| Ali Abdaal (QT) | 6,71 tr theo dõi · trung vị 273 N / 26 N | dạy kỹ năng: nói ngay tiền cược, chia bước rõ | `thiet-ke-bo-cuc/truong-hop-da-giai.md` |
 | Jeff Su (QT) | 1,95 tr · 260 N / 45,5 N | hướng dẫn màn hình gọn, từng bước | như trên |
 | The Diary Of A CEO (QT) | 22,1 tr · 7,3 tr / 248 N | trò chuyện: mở bằng chuỗi câu then chốt | như trên |
 | Nguyễn Hữu Trí (VN) | 1,05 tr · 54 N / 3,7 N | chia sẻ quan điểm nói thẳng vào máy | như trên |
@@ -18,7 +18,7 @@ description: "Hình mẫu mục lớn 2 — nội dung video: mở đầu, video
 | Nhật Anh AI (VN) | 15,2 N · 80 N / 1,6 N | bài học sau nhiều giờ dùng AI | như trên |
 | Giang Ơi (VN) | 1,67 tr · 109,5 N / 12,5 N | kể chuyện trải nghiệm thật | như trên |
 | Khánh Vy (VN) | 2,22 tr · 181 N / 97 N | mẹo ngắn một ý | như trên |
-19 trường hợp giải chi tiết: `../../ky-nang/san-xuat-video/thiet-ke-bo-cuc/giai-mau.md`.
+19 trường hợp giải chi tiết: `../../ky-nang/san-xuat-video/thiet-ke-bo-cuc/truong-hop-da-giai.md`.
 
 ## 2.2 Video dài nói trước camera ✅
 Dr. Wynn Tran, Nguyễn Hữu Trí (dài); Huỳnh Duy Khương, BS Tùng (ngắn). Hồ sơ: `../../ky-nang/san-xuat-video/ho-so-thuong-hieu/lam-video.md` ·
@@ -37,7 +37,7 @@ Have A Sip, Sao Việt 24H, DOAC, Jay Shetty; 10 Shorts quốc tế lượt xem 
 báo cáo: `../../ky-nang/san-xuat-video/cat-doan-noi-bat/references/hoc-tu-20-doan-noi-bat-vn.md`, `../../ky-nang/san-xuat-video/cat-doan-noi-bat/references/hoc-tu-video-dan-dau.md`.
 
 ## 2.6 Minh hoạ, motion graphics ✅
-Cường Mê AI (20/11, nguyên lý dễ hiểu, tinh gọn) và các mẫu ở 2.1. Luật: `../../ky-nang/san-xuat-video/thiet-ke-bo-cuc/tu-chon.md` bước 4a.
+Cường Mê AI (20/11, nguyên lý dễ hiểu, tinh gọn) và các mẫu ở 2.1. Luật: `../../ky-nang/san-xuat-video/thiet-ke-bo-cuc/huong-dan-lua-chon.md` bước 4a.
 
 ## 2.7 Thumbnail, tít ✅
 10/10 video dài Việt đã học: mặt có cảm xúc + tối đa 8 chữ, 3 tầng (`../../ky-nang/san-xuat-video/ho-so-thuong-hieu/chung.json` mục `thumbnail`).

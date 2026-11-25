@@ -13,11 +13,11 @@ File này là chi tiết của **khối 11** (`../../mo-dun/11-dung-ghep`). Th�
 | 1 | Môi trường + `tao-dung-ghep.sh` (cân giọng −20 LUFS) | 01 · 09 |
 | 2–2d | Hiểu từng clip · bản đồ + liên kết · giữ/bỏ · khung mở đầu–chào–hành trình–kết | 11 · 01 · 06 (mở đầu) |
 | 3–6 | Cấu trúc · điểm nhấn (bố cục tự cân, khối 07) · phong cách · danh-sach-cat.js / ke-hoach.json | 07 · 10 · 11 · 03 |
-| 6b | Nâng khung → tránh che người: `nang-lop.py` → `bao-ve-lop-phu.py` | 04 · 05 |
+| 6b | Nâng khung → tránh che người: `nang-khung.py` → `bao-ve-lop-phu.py` | 04 · 05 |
 | 7–8 | Ảnh tĩnh → Claude tự soát kế hoạch → render | 17 · 09 |
 | 9 | Phát hành: màn kết (`ytEnd`), chương, thumbnail (ngang), tách phần, số liệu | 08 · 15 · 14 · 16 |
 
-Sửa thì chạy lại: ke-hoach.json → danh-sach-cat-vlog.py → nang-lop.py → bao-ve-lop-phu.py → stills → xuat-chuong-trinh.mjs · danh-sach-cat.js sửa thủ công → bao-ve-lop-phu.py → stills → render.
+Sửa thì chạy lại: ke-hoach.json → danh-sach-cat-vlog.py → nang-khung.py → bao-ve-lop-phu.py → stills → xuat-chuong-trinh.mjs · danh-sach-cat.js sửa thủ công → bao-ve-lop-phu.py → stills → render.
 
 Dùng khi người dùng đưa **từ 2 video gốc trở lên** (hoặc 1 clip không phải nói trước camera mà là cảnh quay sự kiện)
 và muốn ghép thành một video hoàn chỉnh có điểm nhấn. Khác chế độ 1 video ở chỗ: **hình gốc bị cắt, sắp lại, đổi tốc độ**,
@@ -208,7 +208,7 @@ Mật độ theo nội dung, vài kiểu hợp nhất (quy-tac-chung mục 0); k
 ở y≈228, ẩn khi có replay). Mọi chữ trong vùng an toàn x 70–900, y 210–1420.
 
 ### 4b. Chuẩn chung với chế độ 1 video ("khớp 100%")
-- Phụ đề: `src/kieu-phu-de.js` (tao-dung-ghep.sh chép từ khuon-remotion — MỘT nguồn; sửa kiểu phụ đề chỉ ở đó).
+- Phụ đề: `src/kieu-phu-de.js` (tao-dung-ghep.sh chép từ mau-remotion — MỘT nguồn; sửa kiểu phụ đề chỉ ở đó).
 - Chữ to nhiều dòng: chừa chỗ dấu theo cỡ chữ (`Rise`: 0,5 em trên / 0,32 em dưới), giãn dòng 1,12–1,14, khe giữa dòng 0,24 em.
 - Chỉ những điểm nhấn có nội dung (tiêu đề, địa điểm, trích dẫn) — bố cục tự cân như chế độ 1 video.
 - **Màn hành động + màn chốt** (như chế độ 1 video): lớp phủ `{type: 'action', start, end, quote, doneAt}` khi người nói nêu việc
@@ -216,7 +216,7 @@ Mật độ theo nội dung, vài kiểu hợp nhất (quy-tac-chung mục 0); k
   nói ở cuối (khối 08), ghi vào `CTA = {text, kind}` trong danh-sach-cat.js. Lớp `outro` kiểu game show nếu dùng phải kết thúc trước màn chốt.
 - Trích dẫn clip minh hoạ trong khung bo góc (`cite()`) — David đã khen chuẩn, giữ nguyên.
 - **Nâng khung**: đoạn có người/vật chính nằm nửa dưới thì đẩy hình lên, đáy lấp hình mờ, mép chuyển mềm
-  (`chuong-trinh.jsx` → `Clip`). Sau khi viết danh-sach-cat.js chạy `python3 -I $SKILL/scripts/nang-lop.py "$P"` → `src/nang-lop.js`, rồi **`python3 -I $SKILL/scripts/bao-ve-lop-phu.py "$P"`**
+  (`chuong-trinh.jsx` → `Clip`). Sau khi viết danh-sach-cat.js chạy `python3 -I $SKILL/scripts/nang-khung.py "$P"` → `src/nang-lop.js`, rồi **`python3 -I $SKILL/scripts/bao-ve-lop-phu.py "$P"`**
   → `src/bao-ve.js` (lớp chữ che mặt/thân trên tự thành toàn màn hình, dài theo nội dung; tít ghim che đầu tự ẩn — khối 05; chạy lại sau mỗi lần sửa danh-sach-cat.js) (tự tính theo mặt, đọc
   bảng `kiem-tra/khuon-mat/lift.md`). Đoạn không có mặt (quay đồ vật, cầu thang, khay đồ uống…) mà vật chính thấp thì đặt tay
   `lift: {y: 150–250}` trong đoạn ở danh-sach-cat.js (đặt tay thắng tự tính). Không nâng: đoạn tiêu đề, `fit: 'blur'`, trích dẫn.
@@ -232,7 +232,7 @@ Mật độ theo nội dung, vài kiểu hợp nhất (quy-tac-chung mục 0); k
 
 ### 6. Viết `chuyen-dong/src/danh-sach-cat.js`
 **Trước khi viết (bắt buộc, khối 11):** `python3 -I $SKILL/scripts/chan-doan.py "$P"` rồi ghi `$P/ke-hoach-canh.md` có mục `## Chẩn đoán`
-(dòng `Loại:`, mỗi cảnh `Cần · Vì · Làm` — `../../thiet-ke-bo-cuc/tu-chon.md`). Thiếu thì `soat-canh.mjs` chặn render ở `xuat-chuong-trinh.mjs`.
+(dòng `Loại:`, mỗi cảnh `Cần · Vì · Làm` — `../../thiet-ke-bo-cuc/huong-dan-lua-chon.md`). Thiếu thì `soat-canh.mjs` chặn render ở `xuat-chuong-trinh.mjs`.
 **Vlog dài nhiều clip (≳ 15 clip / ≳ 5 phút)**: đừng viết tay — viết `ke-hoach.json` (giữ/bỏ từng clip, tông, thẻ địa điểm, sửa chính
 tả `fix`, bỏ dòng nghe không rõ `drop_sub`, mở đầu, tiêu đề, CTA; mẫu ở đầu script) rồi
 `python3 -I $SKILL/scripts/danh-sach-cat-vlog.py "$P"` → danh-sach-cat.js (tự tua đoạn không lời ít nhất 4 s, phụ đề theo câu, TONE + nhạc) + `kiem-tra/cat-vlog.md`.
@@ -302,7 +302,7 @@ Khi các file gốc là một buổi liền (máy quay tự tách file, cùng g�
 - **Chọn đoạn theo ý, không theo câu then chốt**: đọc lời cả buổi (trục ghép các file), đánh dấu ý phải bỏ theo yêu cầu + lằn ranh kênh, giữ phần còn lại
   theo thứ tự buổi nói. Trong mỗi đoạn giữ nguyên — không cắt lặng, "ờ/ừm" (quy-tac-chung 2). Mối cắt bắt vào chỗ lặng gần nhất (±0,6 s).
 - Lời cả buổi chép trên bản xem nhẹ có **câu ảo che lời thật** ("Hãy subscribe…" = mất 30 s lời, không phải chỗ lặng) thì chép lại riêng phân đoạn đó
-  (`loi-ao.py`) trước khi quyết cắt/giữ phân đoạn ấy.
+  (`loi-ao-giac.py`) trước khi quyết cắt/giữ phân đoạn ấy.
 - Cắt các đoạn từ file gốc ghép thành **một nguồn** `nguon-dai.mp4` (ffmpeg `-hwaccel videotoolbox`, 1080p30, 10 Mbps, fade tiếng 40 ms ở mỗi mối)
   → `c1`; chép lời lại trên nguồn mới (`phan-tich-video.sh`). Cảnh câm cho intro lấy từ nguồn khác (`c2`) nếu nằm ở phần đã cắt.
 - `RAW`: intro (câu chạm giữ tiếng + đáp lời người kia nếu có, rồi cảnh câm 2 phách) + **một đoạn `p1` = cả `c1`**; `TS(src) = D + src`.

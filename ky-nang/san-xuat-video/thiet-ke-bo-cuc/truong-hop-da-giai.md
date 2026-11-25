@@ -4,7 +4,7 @@ description: "Ví dụ giải mẫu: 19 khoảnh khắc từ 8 hình mẫu thàn
 
 # Ví dụ giải mẫu — học cách nghĩ qua trường hợp thực tế của hình mẫu
 
-Đọc sau [nguoi-xem-can-gi.md](nguoi-xem-can-gi.md). Mỗi trường hợp là **một khoảnh khắc** trong video của kênh đang làm tốt nhất cùng thể loại kênh
+Đọc sau [nhu-cau-nguoi-xem.md](nhu-cau-nguoi-xem.md). Mỗi trường hợp là **một khoảnh khắc** trong video của kênh đang làm tốt nhất cùng thể loại kênh
 David hướng tới. Ghi: lời đang nói (diễn ý, không chép lời) · họ làm gì trên hình · lập luận ngược **Cần · Vì · Làm** · đem về kênh David
 dùng gì trong kho (chữ trên hình vẫn là nguyên văn lời David, màu và font của kênh). Học **cách nghĩ**, không chép nội dung, màu, font của họ.
 

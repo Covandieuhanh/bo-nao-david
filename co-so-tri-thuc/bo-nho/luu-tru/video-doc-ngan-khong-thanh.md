@@ -15,4 +15,4 @@ cuối làm đứt vòng lặp Shorts/Reels. Kênh chưa có số liệu video n
 
 **How to apply:** nguồn luật `ky-nang/san-xuat-video/quy-tac-chung.md` mục 5; máy tự nhận `nganDoc()` (`thu-vien-tai-nguyen/nhan-dien-thuong-hieu.js`) / `NGAN_DOC`
 (`thanh.js`). Dẫn về bản đầy đủ, mời bình luận để ở caption + bình luận ghim. Thay phần "thanh cả clip ngắn" của [[video-nhan-dien-chung]]
-và màn hình cuối của [[video-doc-khuon-chu-chinh]].
+và màn hình cuối của [[video-doc-mau-chu-chinh]].

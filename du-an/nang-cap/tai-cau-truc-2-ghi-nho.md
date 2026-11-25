@@ -29,14 +29,14 @@ khỏi phần "làm thế nào", chuyển lịch sử ngắn vào **Why**. Ghi n
 | thiet-bi-don-documents-2026-11-07 | Dọn Documents 07/11 | giữ nguyên (may-) |
 | video-ban-chuan-2026-11-06 | 5 video chuẩn, mau.json 5 mẫu | giữ |
 | video-bo-app | Bỏ app dựng video 10/11; dựng trong phiên | giữ (xem Chéo bộ 4) |
-| video-bo-cuc-tu-can | Bỏ số cố định; tránh mọi người, bám người nói; khung gốc `thiet-ke-bo-cuc/` | sửa: điểm 1 (chỉ học trình bày, không chép màu/font) đã lỗi thời từ 10/11 → viết lại theo hiện hành, lịch sử vào Why; link chuẩn âm → nhạc |
+| video-bo-cuc-tu-can-bang | Bỏ số cố định; tránh mọi người, bám người nói; khung gốc `thiet-ke-bo-cuc/` | sửa: điểm 1 (chỉ học trình bày, không chép màu/font) đã lỗi thời từ 10/11 → viết lại theo hiện hành, lịch sử vào Why; link chuẩn âm → nhạc |
 | video-chi-hinh-cua-chinh-video | Hình bìa chỉ từ chính video đó | giữ |
 | video-chu-nguyen-van | Chữ trên video nguyên văn; không tít tự rút, không số chạy | sửa liên kết (luon-co → motion-ke-chuyen) |
 | video-chuan-am-luong | Nhạc khoảng 23 dB dưới giọng, −14 LUFS | gộp vào video-nhac-theo-tuyen |
 | video-chuyen-qua-drive | Drive covandieuhanh, tu-lieu-goc / thanh-pham theo tập | sửa: dòng "Liên quan:" trống → thêm liên kết |
 | video-clip-ngan-dung-doc-lap | Clip ngắn đứng độc lập, bốn câu | giữ |
 | video-dai-khong-cat | Video dài không cắt | giữ |
-| video-doc-khuon-chu-chinh | Mẫu podcast dọc: chữ chính thay phụ đề, 3 clip Đi trainer là mẫu | sửa: bỏ "màn hình cuối 3 giây" khỏi phần hiện hành (đã bỏ 10/11), giữ lịch sử ngắn; link → nhan-dien-chung |
+| video-doc-mau-chu-chinh | Mẫu podcast dọc: chữ chính thay phụ đề, 3 clip Đi trainer là mẫu | sửa: bỏ "màn hình cuối 3 giây" khỏi phần hiện hành (đã bỏ 10/11), giữ lịch sử ngắn; link → nhan-dien-chung |
 | video-doc-ngan-khong-thanh | Dọc ngắn không thanh, không thẻ cuối | gộp vào video-nhan-dien-chung |
 | video-hieu-hon-cau-ki | Hiểu hơn cầu kì; bỏ chữ sau người / bóng người | giữ |
 | video-khong-cai-hyperframes | Giữ Remotion, không cài HyperFrames | giữ (bản luật `thiet-ke-bo-cuc/README.md` trỏ tên này) |

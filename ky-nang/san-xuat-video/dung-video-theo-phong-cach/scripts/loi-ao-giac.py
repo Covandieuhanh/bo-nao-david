@@ -5,8 +5,8 @@ Whisper chạy cả file dài đôi khi kẹt vòng: một đoạn 30 s (hoặc 
 "Hãy subscribe cho kênh … để không bỏ lỡ những video hấp dẫn". Lỗi không cố định — chép lại
 riêng đoạn đó thường ra đúng lời.
 
-  loi-ao.py kiem <ban-chep-loi.srt>                 → in các đoạn ảo; mã thoát 1 nếu còn ảo
-  loi-ao.py sua <am-thanh-16k.wav> <thư mục> [ngôn ngữ] → chép lại riêng từng đoạn ảo (transcript + words)
+  loi-ao-giac.py kiem <ban-chep-loi.srt>                 → in các đoạn ảo; mã thoát 1 nếu còn ảo
+  loi-ao-giac.py sua <am-thanh-16k.wav> <thư mục> [ngôn ngữ] → chép lại riêng từng đoạn ảo (transcript + words)
 """
 import os, re, subprocess, sys, tempfile
 

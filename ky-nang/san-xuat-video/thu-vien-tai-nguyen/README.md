@@ -22,6 +22,6 @@ description: "Thư viện hình dùng chung cho cả 4 loại video: file, việ
 | `chu-hien.jsx` | một dòng chữ hiện từng từ theo kiểu của `chuyen-dong.js`, không dịch chỗ | 07 |
 | `mach.js` | **mạch hình**: một hình kể chuyện vẽ tiếp qua nhiều cảnh tự vẽ (`buoc`, `tu_buoc`, `moc_buoc`) + nét vẽ dần `net()` | 07 |
 
-Cách nối: `khuon-remotion/src/thu-vien` và `khuon-dung-ghep/src/thu-vien` là **lối tắt** trỏ về thư mục này; lúc tạo dự án, `tao-du-an.sh` /
+Cách nối: `mau-remotion/src/thu-vien` và `mau-dung-ghep/src/thu-vien` là **lối tắt** trỏ về thư mục này; lúc tạo dự án, `tao-du-an.sh` /
 `tao-podcast.sh` / `tao-dung-ghep.sh` chép **bản thật** (`cp -RL`) vào `chuyen-dong/src/thu-vien/` — dự án cũ giữ nguyên bản lúc tạo, dự án mới
 luôn có bản mới nhất. Sửa ở đây thì mọi dự án tạo sau đều đổi. Thành phần mới dùng chung thì đặt ở đây, chỉ import `react`, `remotion`, `./bien-thiet-ke`.

@@ -1,5 +1,5 @@
 ---
-name: video-doc-khuon-chu-chinh
+name: video-doc-mau-chu-chinh
 description: Mẫu podcast đồ hoạ dọc David chốt — chữ chính thay phụ đề, nhạc ~23 dB dưới giọng vẫn nghe được, không ép hành động, kết ở câu then chốt, không màn hình cuối; 3 clip "Đi trainer" là mẫu (2026-11-06, sửa 10/11)
 metadata:
   type: feedback

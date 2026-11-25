@@ -84,7 +84,7 @@ Chỉ có phụ đề, không có video thì làm bước 2–5, trả bảng c�
 |---|---|---|
 | 0–1 | Nhận loại nguồn · tạo dự án *(bước nhẹ)* | [13](../mo-dun/13-chon-doan-noi-bat/README.md) · [01](../mo-dun/01-phien-am/README.md) |
 | 2–6 | Bản đồ cả video · tự chọn ý theo 4 câu · chọn câu · bố trí lời kêu gọi · kiểm tự đứng được + lằn ranh · cắt + kiểm lời | [13](../mo-dun/13-chon-doan-noi-bat/README.md) (chi tiết từng bước) · [02](../mo-dun/02-lam-sach/README.md) (khoang-lang.py) · [01](../mo-dun/01-phien-am/README.md) |
-| 7A | Chẩn đoán → tự chọn ([tu-chon](../thiet-ke-bo-cuc/tu-chon.md)) · dựng nguồn có người nói (mục dưới) | [11](../mo-dun/11-dung-ghep/README.md) · [04](../mo-dun/04-khung-hinh/README.md) · [05](../mo-dun/05-tranh-che-chu-the/README.md) · [06](../mo-dun/06-phan-mo-dau/README.md) · [07](../mo-dun/07-canh-minh-hoa/README.md) · [08](../mo-dun/08-phan-ket/README.md) · [03](../mo-dun/03-phu-de/README.md) · [09](../mo-dun/09-am-thanh/README.md) · [17](../mo-dun/17-kiem-soat-chat-luong/README.md) |
+| 7A | Chẩn đoán → tự chọn ([huong-dan-lua-chon](../thiet-ke-bo-cuc/huong-dan-lua-chon.md)) · dựng nguồn có người nói (mục dưới) | [11](../mo-dun/11-dung-ghep/README.md) · [04](../mo-dun/04-khung-hinh/README.md) · [05](../mo-dun/05-tranh-che-chu-the/README.md) · [06](../mo-dun/06-phan-mo-dau/README.md) · [07](../mo-dun/07-canh-minh-hoa/README.md) · [08](../mo-dun/08-phan-ket/README.md) · [03](../mo-dun/03-phu-de/README.md) · [09](../mo-dun/09-am-thanh/README.md) · [17](../mo-dun/17-kiem-soat-chat-luong/README.md) |
 | 7B | Chẩn đoán → tự chọn · dựng nguồn podcast / đồ hoạ (mục dưới) | [12](../mo-dun/12-san-khau-podcast/README.md) · [07](../mo-dun/07-canh-minh-hoa/README.md) · [08](../mo-dun/08-phan-ket/README.md) · [17](../mo-dun/17-kiem-soat-chat-luong/README.md) |
 | 8 | Phát hành: lịch đăng, khung bìa, mô tả, bình luận ghim, số liệu | [15](../mo-dun/15-xuat-ban/README.md) · [16](../mo-dun/16-phan-tich-so-lieu/README.md) |
 
@@ -102,7 +102,7 @@ timeline cho lớp phủ; `TONE` + `MUSIC.tracks`; `CTA` = câu kêu gọi nguy�
 Claude chỉnh tiếp trong danh-sach-cat.js:
 - **Phụ đề**: sửa chính tả, tô `hl` từ khoá (từ trong `hl` hiện màu cam khi tới nhịp của nó).
 - **Chẩn đoán trước** (bắt buộc, render bị chặn nếu thiếu): `python3 -I $BASE/scripts/chan-doan.py "$E"` + đọc `$E/kiem-tra/goi-y-kieu.md`
-  (máy dò dạng từng câu) rồi ghi `$E/ke-hoach-canh.md` mục `## Chẩn đoán` (mẫu, thẩm mỹ, bảng ý ứng với kiểu) theo `../thiet-ke-bo-cuc/tu-chon.md`.
+  (máy dò dạng từng câu) rồi ghi `$E/ke-hoach-canh.md` mục `## Chẩn đoán` (mẫu, thẩm mỹ, bảng ý ứng với kiểu) theo `../thiet-ke-bo-cuc/huong-dan-lua-chon.md`.
   Không chép lớp phủ của clip / tập trước.
 - **OVERLAYS** theo bảng ý ứng với kiểu (mốc bằng `TS(<giây>)`; mọi chữ nguyên văn): liệt kê / bước dùng `illus list` · `chips` · `diagram tang` ·
   so sánh, đổi ý dùng `illus vs` · `diagram tu-thanh` · con số người nói dùng `illus count` · nhân quả dùng `illus flow` · `diagram chuyen-giao` ·
@@ -112,13 +112,13 @@ Claude chỉnh tiếp trong danh-sach-cat.js:
 - `CTA.kind` theo việc được kêu gọi (lưu dùng `save`, bình luận dùng `comment`…); không có câu kêu gọi thì không đặt `CTA` (luật 4).
 - **Thẻ tít mở** (luật 7): `{type: 'pow', start: 0, end: 2.5, text: '<TÍT nguyên văn>', y: 300}` — nửa trên khung, tách khỏi phụ đề.
   `ENDCARD` do `danh-sach-cat-doan-noi-bat.py` ghi (luật 11), mẫu tự bỏ ở video dọc ngắn.
-Rồi như nhieu-doan-video.md: `python3 -I $BASE/scripts/nang-lop.py "$E"` → `python3 -I $BASE/scripts/bao-ve-lop-phu.py "$E"` (che mặt/thân trên thì
+Rồi như nhieu-doan-video.md: `python3 -I $BASE/scripts/nang-khung.py "$E"` → `python3 -I $BASE/scripts/bao-ve-lop-phu.py "$E"` (che mặt/thân trên thì
 toàn màn hình; tít ghim che đầu thì ẩn) → `node anh-tinh.mjs <mốc>` (chụp: thẻ tít, mỗi pow/action lúc đầy nhất, 2–3 mốc thấy phụ đề,
 ngay sau 1–2 mối cắt, cuối clip thấy màn chốt) → sửa tới sạch → `node xuat-chuong-trinh.mjs` (nền; render các clip nối tiếp,
 không song song — tốn RAM). Không có bước duyệt kế hoạch ghép của multi-clip (luật 12).
 
 ### Highlight ngang (khi David yêu cầu) — nguồn người nói, mẫu ghép
-- `danh-sach-cat.js`: `W = 1920`, `H = 1080`; `THE_CUOI = false` (kết ở màn chốt); thanh thời gian tự có (khung ngang). Bỏ `nang-lop.py` và
+- `danh-sach-cat.js`: `W = 1920`, `H = 1080`; `THE_CUOI = false` (kết ở màn chốt); thanh thời gian tự có (khung ngang). Bỏ `nang-khung.py` và
   `bao-ve-lop-phu.py` (chỉ tính cho khung dọc) — tự soát bằng ảnh chụp thử: `pow` đặt `x` (tâm khối chữ, px) vào vùng trống cạnh người nói.
 - Nguồn nhiều video dài (ổ không đủ chép bản gốc): chép lời trên bản xem nhẹ ghép các video, chọn ý, rồi cắt các cửa sổ cần dùng từ file gốc
   (1920×1080, 30 fps) ghép thành `nguon.mp4` mới và chép lời lại — mốc trong `phuong-an.json` theo nguồn mới.
@@ -130,7 +130,7 @@ không song song — tốn RAM). Không có bước duyệt kế hoạch ghép c
   trong dự án phụ `clip-<id>-doc/rekhung`, `tu-lieu/video-goc.mp4` = nối cứng tới c1; mọi câu bám người đang nói, cảnh intro đặt `cx` riêng,
   cảnh có người đi ngang / thấy cả quán thì dùng `wide`) → chép `chuyen-dong` của bản ngang, c1 = bản dọc (cùng thời lượng nên giữ nguyên mốc),
   `W = 1080`, `H = 1920`, bỏ `pow.x`; người ngồi cả thân lấp giữa khung thì `pow` đặt `y` vào dải trống trên đầu (đỉnh đầu khoảng 650 px thì đặt `y: 300`);
-  thẻ `title` trên intro thêm `keep: true` để không thành toàn màn hình che hết cảnh câm. Rồi `nang-lop.py` → `bao-ve-lop-phu.py` → chụp thử như 7A.
+  thẻ `title` trên intro thêm `keep: true` để không thành toàn màn hình che hết cảnh câm. Rồi `nang-khung.py` → `bao-ve-lop-phu.py` → chụp thử như 7A.
   Mẫu: `~/Movies/tap-marketing-noi-dau-nhu-cau/3-doan-noi-bat/clip-B-doc`.
 
 ### 7B. Dựng — nguồn podcast / toàn đồ hoạ (`dung-podcast`, khung dọc)
@@ -174,7 +174,7 @@ Mẫu: `~/Movies/tap-di-trainer/3-doan-noi-bat/clip-{A,B,C}`, thành phẩm ở 
 ## Bảng phụ thuộc (sửa X thì chạy lại Y)
 | Sửa | Chạy lại |
 |---|---|
-| phuong-an.json (câu, mốc, tit, react, tone) | cat-doan-noi-bat.py (kiểm lời) → danh-sach-cat-doan-noi-bat.py → nang-lop.py → bao-ve-lop-phu.py → stills → render |
+| phuong-an.json (câu, mốc, tit, react, tone) | cat-doan-noi-bat.py (kiểm lời) → danh-sach-cat-doan-noi-bat.py → nang-khung.py → bao-ve-lop-phu.py → stills → render |
 | danh-sach-cat.js sửa thủ công (OVERLAYS, SUBS) | bao-ve-lop-phu.py → stills → xuat-chuong-trinh.mjs |
 | 7B: cat/<id>.mp4 | tao-podcast.sh … → ap-dung-doan-noi-bat.py → xuat-video.mjs → nen-podcast.py → xem-truoc-ban-dung.py |
 | hồ sơ doan-noi-bat | danh-sach-cat-doan-noi-bat.py / cat-doan-noi-bat.py chạy lại |

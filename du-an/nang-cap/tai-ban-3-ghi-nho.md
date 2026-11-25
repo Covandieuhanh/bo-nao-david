@@ -42,7 +42,7 @@ Cột "Bản luật": **có** = trỏ đúng và luật có ở đó · **thêm*
 | thiet-bi-van-phong-shop | Văn Phòng Shop là mẫu cho công ty, tách khỏi bộ não (14/11) | — (việc) | — | đúng | giữ |
 | video-anh-viet-nam | Nhiều ảnh thật, chỉ Việt Nam (13/11) | có: quy-tac-chung mục 4 | — | đúng | giữ |
 | video-ban-chuan-2026-11-06 | 5 video chuẩn, mau.json 5 mẫu (06/11) | — (việc) | doc-khuon (cùng 3 clip mẫu, khác ý) | sai đường `du-an/phat-hanh-cu/` (đã bỏ khỏi repo 07/11) | sửa đường → Drive / kho-drive |
-| video-bo-cuc-tu-can | Bỏ số cố định; tránh mọi người, bám người nói; khung gốc thiet-ke-bo-cuc (07/11, 08/11) | có: thiet-ke-bo-cuc | tham-my (đã ghi) | đúng | giữ |
+| video-bo-cuc-tu-can-bang | Bỏ số cố định; tránh mọi người, bám người nói; khung gốc thiet-ke-bo-cuc (07/11, 08/11) | có: thiet-ke-bo-cuc | tham-my (đã ghi) | đúng | giữ |
 | video-bo-ung-dung | Bỏ app dựng video, dựng trong phiên (10/11) | có: quy-tac-chung mục 8 | — | đúng | `name:` theo tên file |
 | video-chi-hinh-cua-chinh-video | Hình bìa chỉ từ chính video đó (05/11) | sửa: "quy-tac-chung 7" không có luật này → khối 14 | — | đúng | sửa đường trỏ |
 | video-chu-nguyen-van | Chữ trên video nguyên văn, không tít tự rút (07/11) | có: quy-tac-chung mục 1 + AGENTS luật 3 | — | đúng | giữ |
@@ -51,7 +51,7 @@ Cột "Bản luật": **có** = trỏ đúng và luật có ở đó · **thêm*
 | video-clip-ngan-dung-doc-lap | Clip ngắn đứng độc lập, bốn câu (06/11, 07/11) | có: cat-doan-noi-bat/SKILL | — | đúng | giữ |
 | video-dai-khong-cat | Video dài không cắt (05/11) | có: quy-tac-chung mục 2 + khối 00 | — | đúng | giữ |
 | video-do-hoa-ke-chuyen | Motion graphics kể chuyện, vẽ tiếp; AI sáng tạo trong khung (07/11, 09/11) | có: chuan-muc đầu file + khối 07 | — | đúng | `name:` theo tên file |
-| video-doc-khuon-chu-chinh | Mẫu podcast dọc chữ chính, 3 clip mẫu (06/11, sửa 10/11) | có: cat-doan-noi-bat "Kịch bản highlight podcast (7B)" | nhan-dien-chung (dọc ngắn, trỏ nhau) | đúng | giữ |
+| video-doc-mau-chu-chinh | Mẫu podcast dọc chữ chính, 3 clip mẫu (06/11, sửa 10/11) | có: cat-doan-noi-bat "Kịch bản highlight podcast (7B)" | nhan-dien-chung (dọc ngắn, trỏ nhau) | đúng | giữ |
 | video-hieu-hon-cau-ki | Hiểu hơn cầu kì; bỏ chữ sau người (10/11) | có: quy-tac-chung mục 0 | — | đúng | giữ |
 | video-khong-cai-hyperframes | Giữ Remotion, không cài HyperFrames (06/11) | thêm: thiet-ke-bo-cuc/README mục 4 điểm 10 | — | đúng | thêm dòng nhà |
 | video-khong-nhan-ky-thuat | Không nhãn ×1,6 / slow-mo | sửa: trỏ SKILL.md (không có) → quy-tac-chung mục 4 | — | đúng | sửa đường trỏ |
@@ -65,7 +65,7 @@ Cột "Bản luật": **có** = trỏ đúng và luật có ở đó · **thêm*
 | video-podcast-phu-hinh-30 | Podcast phủ hình khoảng 30% (06/11, 11/11) | thêm: dung-podcast/SKILL | — | đúng | thêm dòng nhà |
 | video-tham-my-chi-giu-nhan-dien | Thẩm mỹ chỉ giữ chữ ký nhận diện (10/11) | có: nhan-dien-chung mục 0 | — | đúng | giữ |
 | video-thu-muc-xep-theo-tap | ~/Movies xếp theo tập (07/11) | có: noi-luu.sh | — | đúng | `name:` theo tên file; đường `ky-nang/…` |
-| video-tu-chon-theo-noi-dung | Tự chẩn đoán rồi chọn trong kho (11/11) | có: thiet-ke-bo-cuc/tu-chon.md | — | đúng | giữ |
+| video-tu-chon-theo-noi-dung | Tự chẩn đoán rồi chọn trong kho (11/11) | có: thiet-ke-bo-cuc/huong-dan-lua-chon.md | — | đúng | giữ |
 | luu-tru/co-so-tri-thuc-kho-bo-nao | (gộp 08/11 vào github-ban-goc) | — | — | lịch sử | giữ |
 | luu-tru/video-chuan-am-luong | (gộp 10/11 vào nhac-theo-tuyen) | — | — | lịch sử | giữ |
 | luu-tru/video-doc-ngan-khong-thanh | (gộp 10/11 vào nhan-dien-chung) | — | — | lịch sử | giữ |
@@ -119,7 +119,7 @@ Thân mỗi ghi nhớ nay là trạng thái hiện hành; ngày + lời David ng
 - `quy-tac-ky-nang-tu-cai-tien`: thân = sáu luật hiện hành (sửa skill qua 4 phần); bản đầu 12/11 "chỉ hỏi khi đụng David" vào sổ.
 - `video-khong-tu-xuat`: thân = làm một mạch, góp ý render lại toàn bộ; 05/11 và lời 13/11 vào sổ.
 - `video-podcast-phu-hinh-30`, `quy-tac-mod-tu-chay`, `video-phu-de-mot-cho-chu`, `co-so-tri-thuc-quy-uoc-dat-ten`: câu "thay luật…" chuyển vào sổ / Why.
-- `video-bo-cuc-tu-can`: viết lại thành 5 điểm hiện hành; điểm 4 "zoom… bám người nói" thì **khung cắt** bám người nói, không hiệu ứng zoom (theo `quy-tac-chung.md` mục 4); sổ 07/11 · 08/11 · 10/11 · 13/11.
+- `video-bo-cuc-tu-can-bang`: viết lại thành 5 điểm hiện hành; điểm 4 "zoom… bám người nói" thì **khung cắt** bám người nói, không hiệu ứng zoom (theo `quy-tac-chung.md` mục 4); sổ 07/11 · 08/11 · 10/11 · 13/11.
 - `quy-tac-hoc-la-bo-sung` ("Từ 10/11"), `video-clip-ngan-dung-doc-lap` ("Chốt thêm 07/11"), `video-tham-my-chi-giu-nhan-dien` ("Thay phần…"), `co-so-tri-thuc-ho-so-va-bo-loc` ("Từ 13/11"): bỏ câu nối, giữ ngày trong ngoặc.
 - `video-kien-truc-ky-nang`, `quy-tac-sua-thang-tai-ban`: thêm trỏ sổ đổi giá trị hồ sơ `ky-nang/san-xuat-video/ho-so-thuong-hieu/nhat-ky-thay-doi.md`.
 - Mô tả đổi của 6 ghi nhớ (`goi-y`, `phien-telegram`, `tu-cai-tien`, `khong-tu-xuat`, `bo-cuc-tu-can`, `thiet-bi-bo-cuc-thu-muc`) đã chép lại vào `ban-do/bo-nao-va-tu-dong-hoa.md`, `ban-do/san-xuat-video.md`.

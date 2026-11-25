@@ -5,7 +5,7 @@
 # Bản cũ trên máy được sao lưu trước khi thay. Chạy lại nhiều lần không sao.
 # Dùng: bash tu-dong-hoa/cai-dat-bo-nao.sh [thư mục dự án sẽ mở Claude Code] [--chi-video]   (mặc định: chính repo này)
 #   --chi-video: máy chỉ dựng video (Windows qua WSL2, Mac khác; David 20/11/2026) — đồng bộ 2 chiều như Mac chính, nhưng không cài
-#   bot Telegram, lịch tự chạy, trang xem kết quả. Máy không phải Mac tự bật chế độ này. Công cụ dựng: tu-dong-hoa/may-khac/cai-cong-cu-video.sh
+#   bot Telegram, lịch tự chạy, trang xem kết quả. Máy không phải Mac tự bật chế độ này. Công cụ dựng: tu-dong-hoa/thiet-bi-khac/cai-cong-cu-video.sh
 set -euo pipefail
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
 CL="$HOME/.claude"
@@ -85,5 +85,5 @@ fi
 echo "Xong. Bản cũ (nếu có): $SAO_LUU"
 echo "Bộ nhớ gắn với dự án: $DU_AN"
 echo "Kiểm tra công cụ dựng video: zsh \"$CL/skills/san-xuat-video/dung-video-theo-phong-cach/scripts/kiem-moi-truong.sh\""
-[ $CHI_VIDEO = 1 ] && echo "Máy chỉ dựng video. Bước tiếp: bash \"$REPO/tu-dong-hoa/may-khac/cai-cong-cu-video.sh\" rồi zsh \"$REPO/tu-dong-hoa/may-khac/kiem-may.sh\" (cần Google Drive)"
+[ $CHI_VIDEO = 1 ] && echo "Máy chỉ dựng video. Bước tiếp: bash \"$REPO/tu-dong-hoa/thiet-bi-khac/cai-cong-cu-video.sh\" rồi zsh \"$REPO/tu-dong-hoa/thiet-bi-khac/kiem-tra-thiet-bi.sh\" (cần Google Drive)"
 exit 0

@@ -16,7 +16,7 @@ P=${1:?thiếu dự án}; SRC=${2:?thiếu nguồn}; L1=${3:-}; L2=${4:-}; N=${5
 M="$P/chuyen-dong"; T="$M/anh-thu-nho"; O="$P/phat-hanh"
 [ -d "$M/node_modules" ] || { echo "Không thấy $M/node_modules — dự án chưa cài gói"; exit 1; }
 mkdir -p "$T/public" "$O"
-cp "$SKILL/assets/khuon-anh-thu-nho/"*.jsx "$SKILL/assets/khuon-anh-thu-nho/xuat-anh-thu-nho.mjs" "$SKILL/../thu-vien-tai-nguyen/thuong-hieu.json" "$SKILL/../thu-vien-tai-nguyen/bieu-tuong.jsx" "$SKILL/../thu-vien-tai-nguyen/bien-thiet-ke.js" "$T/"
+cp "$SKILL/assets/mau-anh-thu-nho/"*.jsx "$SKILL/assets/mau-anh-thu-nho/xuat-anh-thu-nho.mjs" "$SKILL/../thu-vien-tai-nguyen/thuong-hieu.json" "$SKILL/../thu-vien-tai-nguyen/bieu-tuong.jsx" "$SKILL/../thu-vien-tai-nguyen/bien-thiet-ke.js" "$T/"
 BG="$T/public/nen-$N.jpg"
 if [ "$SRC" = "-" ]; then
   [ -n "${THUMB_HINH:-}" ] || { echo "Nguồn - cần THUMB_HINH"; exit 1; }

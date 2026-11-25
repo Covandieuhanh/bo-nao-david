@@ -6,7 +6,7 @@ description: "Cây quy trình của bộ não — việc gì cũng đi từ quy 
 
 Cách **nghĩ** trong mọi bước (bóc tách, vòng kết quả hoặc vấn đề, học và thay đổi, kiểm sai): [tu-duy-goc.md](co-so-tri-thuc/tu-duy-goc.md)
 (mục 5 chỉ khối nào dùng ở bước nào). Mọi phiên, mọi máy, mọi AI làm cùng một đường để ra cùng một kết quả: đi từ **gốc** (cách làm mọi việc), lên **nhánh** (một mảng việc),
-tới **lá** (một việc cụ thể, có file quy trình, điểm duyệt và tiêu chí xong). Đây là bảng tra duy nhất; `AGENTS.md`, `huong-dan-cho-ai.md`
+tới **lá** (một việc cụ thể, có file quy trình, điểm duyệt và tiêu chí xong). Đây là bảng tra duy nhất; `AGENTS.md`
 chỉ trỏ về đây.
 
 ## 0. Gốc — mọi việc đều đi đủ 7 bước
@@ -14,7 +14,7 @@ chỉ trỏ về đây.
 | # | Bước | Làm theo |
 |---|---|---|
 | 1 | **Nhận yêu cầu, tra cây:** tra quy trình trước khi làm; việc có tài nguyên thì tra sổ danh mục (đã làm chưa → làm lại thì bản mới thay bản cũ); tìm lá khớp ở mục 3 (David chỉ gửi video / ghi âm không kèm lời thì là lá B1); xem lời David có bật chế độ tự chạy không (mục 1) | file này |
-| 2 | **Đọc đúng phần cần, tra hình mẫu:** tra [bản đồ hình mẫu](co-so-tri-thuc/hinh-mau/README.md) cho mục nhỏ của việc; chưa có hoặc chưa đủ (ít nhất 5, việc lớn 10) thì nghiên cứu theo lá A8 trước Đ1, kết luận đưa vào 4 phần; file quy trình của lá → chỉ những khối, hồ sơ bước đang làm cần; đặt Mục tiêu + Xong khi; được làm phần chuẩn bị (mục 1). Máy chưa từng dựng video (chưa có `kiem-may.sh` đạt và bài kiểm suy luận ≥ 8/10) thì làm lá A2 trước khi dựng thật | `ky-nang/chuan-muc-lam-viec.md` mục 1 |
+| 2 | **Đọc đúng phần cần, tra hình mẫu:** tra [bản đồ hình mẫu](co-so-tri-thuc/hinh-mau/README.md) cho mục nhỏ của việc; chưa có hoặc chưa đủ (ít nhất 5, việc lớn 10) thì nghiên cứu theo lá A8 trước Đ1, kết luận đưa vào 4 phần; file quy trình của lá → chỉ những khối, hồ sơ bước đang làm cần; đặt Mục tiêu + Xong khi; được làm phần chuẩn bị (mục 1). Máy chưa từng dựng video (chưa có `kiem-tra-thiet-bi.sh` đạt và bài kiểm suy luận ≥ 8/10) thì làm lá A2 trước khi dựng thật | `ky-nang/chuan-muc-lam-viec.md` mục 1 |
 | 3 | **Điểm duyệt Đ1: trình 4 phần, dừng chờ "duyệt"** (trừ phần miễn và chế độ tự chạy, mục 1) | `chuan-muc-lam-viec.md` mục 2 · `ky-nang/thu-thap-yeu-cau/SKILL.md` |
 | 4 | **Làm đúng từng bước của lá theo thứ tự**, một mạch, không thêm, không bớt, không đổi bước; tới điểm duyệt của lá thì dừng chờ. Ra vấn đề: ở cách làm thì xử lý ngay; ở giả định của kế hoạch thì dừng, trình lại kế hoạch (`tu-duy-goc.md` khối 2) | file quy trình của lá · `chuan-muc-lam-viec.md` mục 3 |
 | 5 | **Tự soát** theo "Xong khi" của lá, gồm câu "một phiên mới chỉ đọc GitHub có làm ra đúng kết quả này không?" | `chuan-muc-lam-viec.md` mục 4 |
@@ -71,7 +71,7 @@ ghi cứng công cụ chỉ một máy có) · **Điểm duyệt** (Đ1 / Đ2 / 
 | Lá | Việc (David hay nói) | Quy trình | Điểm duyệt | Xong khi |
 |---|---|---|---|---|
 | A1 | "cập nhật não", đẩy / kéo GitHub | [AGENTS.md luật 6](AGENTS.md) · `tu-dong-hoa/dong-bo.sh` | không có (lời David là lệnh) | lệnh báo "Đã đẩy lên GitHub", `git status` sạch |
-| A2 | cài bộ não lên máy mới (Mac, Windows qua WSL, Linux) | [huong-dan-cai-dat.md](huong-dan-cai-dat.md) · [tu-dong-hoa/may-khac/README.md](tu-dong-hoa/may-khac/README.md) | Đ1 trước khi cài; mật khẩu máy David tự gõ | `kiem-may.sh` ra "MÁY NÀY DỰNG GIỐNG MAC CHÍNH" |
+| A2 | cài bộ não lên máy mới (Mac, Windows qua WSL, Linux) | [huong-dan-cai-dat.md](huong-dan-cai-dat.md) · [tu-dong-hoa/thiet-bi-khac/README.md](tu-dong-hoa/thiet-bi-khac/README.md) | Đ1 trước khi cài; mật khẩu máy David tự gõ | `kiem-tra-thiet-bi.sh` ra "MÁY NÀY DỰNG GIỐNG MAC CHÍNH" |
 | A3 | "nhìn lại tuần", "tự học", "học từ kênh X", "học cái này thành quy trình" | [ky-nang/hoc-lien-tuc/SKILL.md](ky-nang/hoc-lien-tuc/SKILL.md) | phân tích không có; Đ1 trước khi sửa skill, giọng văn, luật kênh | theo mục "Xong khi" của skill |
 | A4 | "nâng cấp", "tái bản", luật chồng chéo, gom luật trùng | [hoc-lien-tuc Việc 4](ky-nang/hoc-lien-tuc/SKILL.md) · [ky-nang/tai-cau-truc/SKILL.md](ky-nang/tai-cau-truc/SKILL.md) | đo không có; Đ1 trước khi sửa (một bộ 4 phần cho cả đợt) | `do-chong-cheo.py` dưới ngưỡng mọi bộ, bản luật không còn câu trùng / ngược |
 | A5 | học, sửa, lưu thông tin mới vào bộ não (ghi nhớ, kiến thức, hồ sơ) | [co-so-tri-thuc/truc-tri-thuc.md](co-so-tri-thuc/truc-tri-thuc.md) · [quy ước liên kết](co-so-tri-thuc/quy-uoc-lien-ket.md) | Đ1; thông tin về David thêm Đ3 | ý ở đúng một nguồn duy nhất, có dòng ở `ban-do/`, công cụ kiểm tra link đạt |

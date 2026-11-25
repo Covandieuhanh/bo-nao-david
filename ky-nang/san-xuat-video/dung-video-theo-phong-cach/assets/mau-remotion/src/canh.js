@@ -22,7 +22,7 @@ export const STAGE = null;
 export const TOPICS = [];
 // CHƯƠNG YOUTUBE (David duyệt 2026-11-04): [{at: giây, text: 'Tên chương — trích lời'}] cho video dài; trống → chuong.py lấy TOPICS
 export const CHAPTERS = [];
-// Bảng ghi chú chạy (video dày thông tin — thiet-ke-bo-cuc/tu-chon.md): tên phần + ý chính nguyên văn cộng dồn theo lời
+// Bảng ghi chú chạy (video dày thông tin — thiet-ke-bo-cuc/huong-dan-lua-chon.md): tên phần + ý chính nguyên văn cộng dồn theo lời
 // export const GHI_CHU = [{phan: 'Tự ra quyết định', at: 0, y: [{text: 'một tuần đào tạo từ A đến Z', at: 12.4}]}];
 export const GHI_CHU = [];
 export const GHI_CHU_O = null;   // {x, y, w, h} 0–1 khi không có khung chủ thể và muốn ép chỗ

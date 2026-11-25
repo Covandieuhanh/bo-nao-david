@@ -163,7 +163,7 @@ giữ ý, sửa từ nào lệch thuật ngữ (ví dụ `co-so-tri-thuc-github-
 ## 7. Đợt 2 (14/11, David: "không có bất kì ngoại lệ nào")
 
 Đã đổi thêm: 142 file mã nguồn (kể cả trong các dự án video ở `~/Movies`), 2 skill ngoài (`dieu-khien-trinh-duyet`, `thiet-ke-trang-cuon`),
-file viết hoa (`bao-cao-trang-thai.md`, `huong-dan-cai-dat.md`, `tong-quan.md`, `david.md`), thư mục tiếng Anh (`thanh-phan`, `phong-chu`, `khuon-remotion`…),
+file viết hoa (`bao-cao-trang-thai.md`, `huong-dan-cai-dat.md`, `tong-quan.md`, `david.md`), thư mục tiếng Anh (`thanh-phan`, `phong-chu`, `mau-remotion`…),
 17 tên giấy tờ cá nhân, tên file sổ tay (`danh-ba`, `viec-da-giao`, `quy-tac-phien-chinh`, `quy-tac-bot`), thư mục Drive về chữ thường,
 thư mục bộ não + repo GitHub thành `bo-nao-david`. Chỉ giữ tên bắt buộc của công cụ: bảng cuối `co-so-tri-thuc/bang-thuat-ngu.md`.
 
@@ -180,3 +180,25 @@ bắt và sửa 4 lỗi tên ghép (`drive_$t.swift`, `-of transcript`, `{ref,ch
 3. Đổi tên theo bảng; sửa mọi chỗ trỏ tới tên cũ (file, script, hook, launchd, lối tắt `~/.claude`, lịch app, ghi nhớ).
 4. Kiểm: quét không còn tên cũ, chạy thử từng script, bot nhận tin, skill hiện đúng tên mới.
 5. Viết lại luật đặt tên (`AGENTS.md`, ghi nhớ đặt tên) và đẩy GitHub.
+
+## Đợt 2 (25/11/2026): bỏ từ khẩu ngữ trong tên, bỏ bản sao tên tiếng Việt
+
+| Tên cũ | Thuật ngữ tiếng Anh | Tên mới |
+|---|---|---|
+| `assets/khuon-remotion`, `khuon-dung-ghep`, `khuon-intro`, `khuon-anh-thu-nho` | Template | `assets/mau-remotion`, `mau-dung-ghep`, `mau-intro`, `mau-anh-thu-nho` |
+| `thiet-ke-trang-cuon/khuon-mau/`, `references/khuon-mau.html` | Template | `thiet-ke-trang-cuon/mau/`, `references/mau.html` |
+| `bo-bieu-mau/01-khuon-file-goc.md`, `03-khuon-bai-kiem.md` | Template | `01-mau-file-goc.md`, `03-mau-bai-kiem.md` |
+| `bo-nho/video-doc-khuon-chu-chinh.md` | Template | `video-doc-mau-chu-chinh.md` |
+| `bo-nho/video-bo-cuc-tu-can.md` | Self-balancing layout | `video-bo-cuc-tu-can-bang.md` |
+| `tu-dong-hoa/may-khac/`, `kiem-may.sh` | Other devices, Device check | `tu-dong-hoa/thiet-bi-khac/`, `kiem-tra-thiet-bi.sh` |
+| `tu-dong-hoa/gac-goc.py` | Root quality gate | `cong-kiem-soat-goc.py` |
+| `scripts/chep-theo-khuc.py` | Segment transcription | `chep-theo-phan-doan.py` |
+| `thiet-ke-bo-cuc/giai-mau.md` | Worked examples | `truong-hop-da-giai.md` |
+| `thiet-ke-bo-cuc/tu-chon.md` | Decision guide | `huong-dan-lua-chon.md` |
+| `thiet-ke-bo-cuc/nguoi-xem-can-gi.md` | Viewer needs | `nhu-cau-nguoi-xem.md` |
+| `scripts/loi-ao.py` | Hallucination errors | `loi-ao-giac.py` |
+| `du-an/mau-cho-hoc.md` | Learning queue | `danh-sach-cho-hoc.md` |
+| `scripts/nang-lop.py` | Raise frame | `nang-khung.py` |
+| `gioi-thieu.md`, `huong-dan-cho-ai.md`, `chi-dan-claude.md`, `bo-nho/muc-luc.md` | bản sao của README, AGENTS, CLAUDE, MEMORY | bỏ |
+
+Giữ nguyên: tên skill (lệnh gọi), tên script được lịch trên Mac gọi (`dong-bo.sh`, `ghi-tin-hieu.py`…), tên mô-đun mã nguồn được import.

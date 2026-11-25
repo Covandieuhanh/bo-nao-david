@@ -8,7 +8,7 @@ description: "Biểu mẫu 04 gói dựng bộ não: danh sách kiểm soát ch�
 
 ## Cấu trúc
 - [ ] File nào cũng có dòng mô tả ở đầu
-- [ ] Bảng file ở `doc-truoc.md` có đủ mọi file trong `bo-nao` (trừ chính `doc-truoc.md` và `01-khuon-file-goc.md`), không thừa dòng của file đã cất; file đã cất không còn trong Projects
+- [ ] Bảng file ở `doc-truoc.md` có đủ mọi file trong `bo-nao` (trừ chính `doc-truoc.md` và `01-mau-file-goc.md`), không thừa dòng của file đã cất; file đã cất không còn trong Projects
 - [ ] Mỗi file thuộc đúng một tầng (nhận ra bằng tên file, xem bảng tầng ở `truc-hoc.md`)
 - [ ] Tên file không dấu, chữ thường, gạch nối; không có hai file cùng tên trong Projects
 

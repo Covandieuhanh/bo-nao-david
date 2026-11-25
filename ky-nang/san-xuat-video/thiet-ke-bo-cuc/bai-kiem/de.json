@@ -1,5 +1,5 @@
 {
-  "_mo_ta": "Bài kiểm suy luận dựng video: 10 đoạn diễn ý từ các hình mẫu (giai-mau.md, đo 20/11/2026). Đáp án = cách hình mẫu đã làm + nguyên lý. Không phải các trường hợp đã giải trong giai-mau.md. Tên nguyên lý: nguyen-ly.json. Cách làm ghi bằng tên trong kho (tu-chon.md 4c) hoặc từ đặc biệt: 'giữ người' (người nói + phụ đề, không dựng thêm), 'cảnh thật' (tư liệu / cảnh quay thật), 'cắt chờ'.",
+  "_mo_ta": "Bài kiểm suy luận dựng video: 10 đoạn diễn ý từ các hình mẫu (truong-hop-da-giai.md, đo 20/11/2026). Đáp án = cách hình mẫu đã làm + nguyên lý. Không phải các trường hợp đã giải trong truong-hop-da-giai.md. Tên nguyên lý: nguyen-ly.json. Cách làm ghi bằng tên trong kho (huong-dan-lua-chon.md 4c) hoặc từ đặc biệt: 'giữ người' (người nói + phụ đề, không dựng thêm), 'cảnh thật' (tư liệu / cảnh quay thật), 'cắt chờ'.",
   "dat": 8,
   "doan": [
     {"id": "d01", "loai": "day-ky-nang", "khung": "ngang, video dài", "nguon": "ALI ~2:30",

@@ -84,8 +84,11 @@ case "$CHE_DO" in
     python3 -I "$REPO/tu-dong-hoa/quet-bi-mat.py" "$REPO" || { echo "⛔ Quét thấy bí mật, không đẩy."; exit 1; }
     python3 -I "$REPO/tu-dong-hoa/lien-ket/kiem-tra-lien-ket.py" || { echo "⛔ Có link gãy (co-so-tri-thuc/quy-uoc-lien-ket.md), sửa rồi đẩy lại."; exit 1; }
     python3 -I "$REPO/tu-dong-hoa/kiem-quy-trinh.py" || { echo "⛔ Cây quy trình chưa đạt (quy-trinh.md mục 2): việc gì cũng phải có lá, điểm duyệt, Xong khi, sửa rồi đẩy lại."; exit 1; }
-    python3 -I "$REPO/tu-dong-hoa/gac-goc.py" || { echo "⛔ Cổng kiểm soát gốc (truc-tri-thuc.md mục 7): file tầng 0 đổi phải có dòng trong so-dan-chung-goc.md."; exit 1; }
+    python3 -I "$REPO/tu-dong-hoa/cong-kiem-soat-goc.py" || { echo "⛔ Cổng kiểm soát gốc (truc-tri-thuc.md mục 7): file tầng 0 đổi phải có dòng trong so-dan-chung-goc.md."; exit 1; }
     python3 -I "$REPO/tu-dong-hoa/kiem-ngon-tu.py" || true
+    # Vòng tuần (hoc-lien-tuc Việc 1) quá 7 ngày thì nhắc, không chặn
+    VT=$(ls "$REPO/du-an/hoc-lien-tuc/" 2>/dev/null | grep -E '^[0-9]{4}-[0-9]{2}-[0-9]{2}' | sort | tail -1 | cut -c1-10)
+    if [ -n "$VT" ] && [ $(( ( $(date +%s) - $(date -d "$VT" +%s 2>/dev/null || date -j -f %Y-%m-%d "$VT" +%s) ) / 86400 )) -gt 7 ]; then echo "⚠ Vòng tuần gần nhất $VT, đã quá 7 ngày: chạy bash tu-dong-hoa/hoc-lien-tuc/vong-tuan.sh"; fi
     # Sổ tay riêng (chỉ trên máy, không lên GitHub): kiểm + sinh chỉ mục, không chặn đẩy.
     [ -d "$HOME/Documents/2-ca-nhan/so-tay" ] && { python3 -I "$REPO/tu-dong-hoa/lien-ket/kiem-tra-lien-ket.py" --goc "$HOME/Documents/2-ca-nhan/so-tay" || true; }
     gc add -A

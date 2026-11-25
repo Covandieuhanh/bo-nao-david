@@ -113,10 +113,10 @@ tiếng Anh chuẩn thì dùng đúng cột "Tên dùng"; chưa có thì thêm m
 
 | Tên gốc | Vì sao bắt buộc | Nghĩa | Lối tắt |
 |---|---|---|---|
-| `README.md` | GitHub hiện file này ở trang repo | Giới thiệu | `gioi-thieu.md` |
-| `AGENTS.md` | AI khác (Codex…) đọc đúng tên này | Hướng dẫn cho AI | `huong-dan-cho-ai.md` |
-| `CLAUDE.md` | Claude Code tự nạp đúng tên này | Chỉ dẫn cho Claude | `chi-dan-claude.md` |
-| `MEMORY.md` | Bộ nhớ tự động của Claude đọc đúng tên này | Mục lục bộ nhớ | `co-so-tri-thuc/bo-nho/muc-luc.md` |
+| `README.md` | GitHub hiện file này ở trang repo | Giới thiệu | giữ nguyên tên, không có bản sao tiếng Việt |
+| `AGENTS.md` | AI khác (Codex…) đọc đúng tên này | Hướng dẫn cho AI | giữ nguyên tên, không có bản sao tiếng Việt |
+| `CLAUDE.md` | Claude Code tự nạp đúng tên này | Chỉ dẫn cho Claude | giữ nguyên tên, không có bản sao tiếng Việt |
+| `MEMORY.md` | Bộ nhớ tự động của Claude đọc đúng tên này | Mục lục bộ nhớ | giữ nguyên tên, không có bản sao tiếng Việt |
 | `SKILL.md` | Claude chỉ nhận skill có file này | Hướng dẫn kỹ năng | (mỗi kỹ năng một file, tra theo tên thư mục) |
 | `scripts/`, `references/`, `assets/` trong kỹ năng | Định dạng skill của Claude | Lệnh / tài liệu tham khảo / tài nguyên | — |
 | `package.json`, `node_modules/`, `src/`, `public/` | Node và Remotion tìm đúng tên này | Cấu hình gói / thư viện / mã nguồn / tài nguyên công khai | — |
@@ -137,7 +137,7 @@ tiếng Anh chuẩn thì dùng đúng cột "Tên dùng"; chưa có thì thêm m
 | Tiếng Anh | Tên dùng |
 |---|---|
 | Second Brain (repo) | `bo-nao-david` |
-| Templates | `khuon-...` (`khuon-remotion`, `khuon-dung-ghep`, `khuon-anh-thu-nho`) |
+| Templates | `khuon-...` (`mau-remotion`, `mau-dung-ghep`, `mau-anh-thu-nho`) |
 | Components | `thanh-phan` |
 | Fonts | `phong-chu` |
 | Music / Sound Effects | `nhac` / `hieu-ung-am-thanh` |
@@ -207,3 +207,77 @@ báo từ cũ còn sót ở tầng 0–2 (cảnh báo, không chặn); mỗi l�
 | Join point | điểm nối | mối nối |
 | Segment / Chunk | phân đoạn | khúc |
 | Template | mẫu | khuôn (giữ: khuôn hình, khuôn mặt) |
+
+## Quy ước đặt tên (bổ sung 25/11/2026, David: "chuẩn cả trong cách ghi tên các file")
+
+1. Tên file, thư mục đi từ **thuật ngữ kinh doanh tiếng Anh chuẩn**, dịch sang tiếng Việt không dấu, chữ thường, gạch nối; tra cột "Tên dùng" ở bảng trên, chưa có thì thêm một dòng trước khi đặt.
+2. Không dùng từ khẩu ngữ trong tên: `khuon` thành `mau` (template), `may-khac` thành `thiet-bi-khac` (other devices), `giai-mau` thành `truong-hop-da-giai` (worked examples), `tu-chon` thành `huong-dan-lua-chon` (decision guide), `nguoi-xem-can-gi` thành `nhu-cau-nguoi-xem` (viewer needs).
+3. Tên bắt buộc của công cụ giữ nguyên tiếng Anh và **không tạo bản sao tên tiếng Việt**: `README.md`, `AGENTS.md`, `CLAUDE.md`, `MEMORY.md`, `SKILL.md`, `package.json`. (Bốn bản sao `gioi-thieu.md`, `huong-dan-cho-ai.md`, `chi-dan-claude.md`, `muc-luc.md` đã bỏ ngày 25/11/2026 vì là bản sao nguyên văn, dễ lệch.)
+4. Tên mô-đun mã nguồn được import (ví dụ `cho.js`, `giu.js`, `mach.js`, `ho_so.py`, `ngon_tu.py`) là định danh của mã: giữ nguyên; đổi tên thì phải sửa mọi import và chạy thử.
+5. Tên skill là lệnh gọi (`/ten-skill`): đổi tên thì sửa `tu-dong-hoa/cai-dat-bo-nao.sh` và chạy lại cài đặt trên mọi máy.
+6. Số thứ tự đứng đầu khi cần thứ tự (`00-`, `01-`); sổ theo ngày đặt `YYYY-MM-DD` đứng đầu.
+7. Đổi tên là một việc trọn: `git mv`, sửa mọi tham chiếu (công cụ kiểm liên kết phải báo 0 gãy), chạy thử một quy trình thật (`tu-dong-hoa/thiet-bi-khac/kiem-tra-thiet-bi.sh`), ghi bảng đổi tên vào `du-an/chuan-hoa-ten.md`.
+
+## Từ điển thuật ngữ văn bản (chuẩn kinh doanh, dùng khi viết mọi file)
+
+Luật: mỗi khái niệm một thuật ngữ, lấy từ tiếng Anh chuẩn rồi dịch; câu đủ chủ ngữ, không viết tắt, không ẩn dụ đời thường, không mũi tên
+trong câu văn. Từ chưa có ở đây thì thêm một dòng trước khi dùng. Thuật ngữ kỹ thuật không có tiếng Việt thông dụng giữ nguyên tiếng Anh:
+video, clip, render, script, skill, hook, repo, commit, push, pull, token, podcast, teaser, hashtag, caption, prompt, AI, GitHub, Drive, WSL.
+
+| Nhóm | Tiếng Anh | Tiếng Việt chuẩn (dùng) |
+|---|---|---|
+| Quản trị | Goal / Objective | mục tiêu |
+| Quản trị | Plan | kế hoạch |
+| Quản trị | Process / Procedure | quy trình |
+| Quản trị | Standard operating procedure | quy trình vận hành chuẩn |
+| Quản trị | Step / Milestone / Deadline | bước / mốc / hạn |
+| Quản trị | Checklist | danh sách kiểm |
+| Quản trị | Acceptance criteria ("Xong khi") | tiêu chí hoàn thành |
+| Quản trị | Approval / Sign-off | duyệt / chốt (lời David) |
+| Quản trị | Approval gate / Checkpoint | điểm duyệt |
+| Quản trị | Quality gate | cổng kiểm soát |
+| Quản trị | Review / Audit | rà soát / kiểm toán |
+| Quản trị | Status report | báo cáo trạng thái |
+| Quản trị | Priority / Scope / Risk | ưu tiên / phạm vi / rủi ro |
+| Quản trị | Owner / Stakeholder | người phụ trách / bên liên quan |
+| Quản trị | Backlog | danh sách chờ |
+| Quản trị | Handoff / Deliverable | bàn giao / sản phẩm bàn giao |
+| Quản trị | Default / Override | mặc định / chỉ định thủ công |
+| Quản trị | Threshold / Metric / Baseline | ngưỡng / chỉ số đo / mốc so sánh |
+| Quản trị | Root cause / Incident / Known issue | nguyên nhân gốc / sự cố / lỗi đã biết |
+| Quản trị | Lessons learned / Best practice | bài học rút ra / cách làm tốt nhất |
+| Quản trị | Continuous improvement | cải tiến liên tục |
+| Quản trị | Retrospective | nhìn lại |
+| Quản trị | Policy / Rule / Principle / Standard | chính sách / quy tắc / nguyên tắc / chuẩn mực |
+| Quản trị | Guideline / Template / Form | hướng dẫn / mẫu / biểu mẫu |
+| Tri thức | Knowledge base / Memory / Note | cơ sở tri thức / bộ nhớ / ghi chú |
+| Tri thức | Single source of truth | nguồn duy nhất |
+| Tri thức | Tier / Promotion / Pruning / Archive | tầng / thăng cấp / cắt giảm / lưu trữ |
+| Tri thức | Changelog / Log / Ledger / Index | nhật ký thay đổi / nhật ký / sổ / chỉ mục |
+| Tri thức | Map of content / Taxonomy / Tag | bản đồ nội dung / phân loại / nhãn |
+| Tri thức | Evidence / Reference / Source | dẫn chứng / tài liệu tham khảo / nguồn |
+| Tri thức | Worked example / Case | trường hợp đã giải / trường hợp |
+| Tri thức | Role model / Benchmark | hình mẫu / chuẩn đối chiếu |
+| Tri thức | Decision guide | hướng dẫn lựa chọn |
+| Tri thức | Distillation / Consolidation | chưng cất / củng cố |
+| Tri thức | Learning loop / Feedback | vòng học / phản hồi |
+| Tri thức | Evaluation / Test / Scorer | bài kiểm / câu kiểm / công cụ chấm |
+| Tri thức | Cold reader | người đọc mới (chưa có bối cảnh) |
+| Tri thức | Hallucination | ảo giác (nội dung tự sinh không có thật) |
+| Kinh doanh | Customer / Client / Lead | khách hàng / khách / khách tiềm năng |
+| Kinh doanh | Funnel / Conversion / Retention | phễu / chuyển đổi / giữ chân |
+| Kinh doanh | Engagement / Reach | tương tác / tiếp cận |
+| Kinh doanh | Brand / Personal brand / Positioning | thương hiệu / nhân hiệu / định vị |
+| Kinh doanh | Value proposition / Pain point | tuyên bố giá trị / nỗi đau |
+| Kinh doanh | Pricing / Package / Offer | bảng giá / gói / đề nghị |
+| Kinh doanh | Onboarding | tiếp nhận khách |
+| Kinh doanh | Partner / Vendor | đối tác / nhà cung cấp |
+| Kỹ thuật | Source file / Asset / Resource | tệp gốc / tài sản số / tài nguyên |
+| Kỹ thuật | Backup / Sync / Version / Release / Rollback | sao lưu / đồng bộ / phiên bản / ra bản / quay lại bản trước |
+| Kỹ thuật | Pipeline | chuỗi xử lý |
+| Kỹ thuật | Device / Environment / Installation | thiết bị / môi trường / cài đặt |
+| Kỹ thuật | Automation / Scheduler / Watchdog | tự động hoá / lịch chạy / giám sát |
+| Kỹ thuật | Transcription / Segment / Subtitle | chép lời / phân đoạn / phụ đề |
+| Kỹ thuật | Frame / Layout / Overlay / Scene | khung hình / bố cục / lớp phủ / cảnh |
+| Kỹ thuật | Thumbnail / Chapter / Loudness | ảnh thu nhỏ / chương / mức âm lượng |
+| Kỹ thuật | Encode / Export / Preview | mã hoá / xuất / xem trước |

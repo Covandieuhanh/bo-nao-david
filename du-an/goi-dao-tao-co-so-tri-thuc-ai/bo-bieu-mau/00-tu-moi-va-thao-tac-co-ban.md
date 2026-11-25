@@ -81,7 +81,7 @@ Lúc kiểm, tải các file trong `bo-nao`, **không tải thư mục `ngoai-bo
 
 ## Thao tác 7 · Quay về bản cũ
 Dùng khi đo sau thấp hơn đo trước:
-1. Trong Projects: xoá **hết** các file của bộ não (giữ lại `01-khuon-file-goc.md`).
+1. Trong Projects: xoá **hết** các file của bộ não (giữ lại `01-mau-file-goc.md`).
 2. Lấy bản sao `bo-nao-ban-<ngày>` trong `ngoai-bo-nao` (nếu là file .zip thì bấm đúp để mở ra thư mục).
 3. Chép các file trong bản sao đè vào thư mục `bo-nao`, rồi tải tất cả lên lại Projects.
 

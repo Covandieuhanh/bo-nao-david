@@ -1,6 +1,6 @@
 ---
 name: co-so-tri-thuc-nhieu-may
-description: "Nhiều máy của David (Mac + Windows) cùng dùng bộ não GitHub, dựng video ra như Mac chính; máy nào cũng đẩy được, máy khác chỉ làm video; khoá phiên bản + kiem-may.sh"
+description: "Nhiều máy của David (Mac + Windows) cùng dùng bộ não GitHub, dựng video ra như Mac chính; máy nào cũng đẩy được, máy khác chỉ làm video; khoá phiên bản + kiem-tra-thiet-bi.sh"
 metadata:
   type: project
 ---
@@ -14,8 +14,8 @@ David chốt 20/11/2026: dùng thêm nhiều máy, cả Windows lẫn Mac, để
 
 **Why:** David muốn sản xuất video ở nhiều máy mà kết quả giống hệt, không phải giữ nhiều bộ skill.
 **How to apply:**
-- Nâng công cụ dựng thì làm ở Mac chính: sửa `tu-dong-hoa/may-khac/phien-ban.env` và lockfile mẫu, tạo lại bản chuẩn (`kiem-may.sh --tao-chuan`), đẩy GitHub.
+- Nâng công cụ dựng thì làm ở Mac chính: sửa `tu-dong-hoa/thiet-bi-khac/phien-ban.env` và lockfile mẫu, tạo lại bản chuẩn (`kiem-tra-thiet-bi.sh --tao-chuan`), đẩy GitHub.
 - Script skill mới không được ghi cứng thứ chỉ Mac có (`/opt/homebrew/bin/...`, `/System/Library/Fonts`, Vision, `stat -f`). Dùng `do-mat.sh`, `font_he_thong()`, `drive-chung.sh`.
 - Đuôi file phải đúng chữ hoa/thường, vì WSL2 phân biệt còn Mac thì không.
 
-Chi tiết: [tu-dong-hoa/may-khac/README.md](../../tu-dong-hoa/may-khac/README.md), `huong-dan-cai-dat.md` mục 2–3. Liên quan [[co-so-tri-thuc-github-ban-goc]].
+Chi tiết: [tu-dong-hoa/thiet-bi-khac/README.md](../../tu-dong-hoa/thiet-bi-khac/README.md), `huong-dan-cai-dat.md` mục 2–3. Liên quan [[co-so-tri-thuc-github-ban-goc]].

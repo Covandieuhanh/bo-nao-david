@@ -14,13 +14,13 @@ description: "Khối 05 tránh che người: lớp phủ không chạm mặt, v�
 - `dung-video-theo-phong-cach/scripts/vi-tri-khuon-mat.sh`
 - `dung-video-theo-phong-cach/scripts/vi-tri-khuon-mat.py`
 - `dung-video-theo-phong-cach/scripts/bao-ve-lop-phu.py`
-- `dung-video-theo-phong-cach/assets/khuon-remotion/src/bo-cuc.js (Place)`
+- `dung-video-theo-phong-cach/assets/mau-remotion/src/bo-cuc.js (Place)`
 
 ## Luật
 - Lớp phủ (không toàn màn hình) **không chạm mặt + đầu + vai + ngực** người nói; chỉ chạm tay / bụng / nền thì được.
 - Không có vị trí / cỡ nào tránh được thì **không chuyển sang toàn màn hình, không làm mờ người**: người dựng xem ảnh đầu / giữa / cuối
   cảnh, tìm chỗ trống thật (trần, cửa kính, tường, khoảng trên đầu) rồi viết cảnh tự vẽ `ve` có vị trí `o` (mẫu: `nhan-tram.jsx`,
-  `duong-may.jsx` trong `assets/khuon-remotion/src/rieng/`); rút chữ cho vừa chỗ. Toàn màn hình chỉ khi đoạn đó không có người trên hình (`khong_nguoi: true`).
+  `duong-may.jsx` trong `assets/mau-remotion/src/rieng/`); rút chữ cho vừa chỗ. Toàn màn hình chỉ khi đoạn đó không có người trên hình (`khong_nguoi: true`).
   **Lưu ý code hiện tại (24/11/2026):** `vi-tri-khuon-mat.py` (1 video) và `bao-ve-lop-phu.py` (ghép) vẫn TỰ chuyển lớp che mặt sang toàn màn
   hình theo quyết định cũ 04/11 — chưa đổi code, chờ David quyết trên Mac chính. Trong lúc chờ: đọc `placement.md` / `guard.md`, lớp nào báo
   "→ toàn màn hình" thì người dựng đặt lại vào chỗ trống thật như trên rồi chạy lại, không để máy tự chuyển. Các khối 06, 07 và bảng khối
@@ -31,7 +31,7 @@ description: "Khối 05 tránh che người: lớp phủ không chạm mặt, v�
   đỉnh vùng an toàn hoặc chỗ trống khác. Component vẫn thiết kế trên dải gốc; `Place` lo vị trí.
 - Tít ghim (highlight) che đầu thì tự ẩn.
 - Giữ lớp phủ cho một cảnh: `place: {full: false}` (1 video) · `keep: true` (OVERLAYS, ghép).
-- Lệnh: 1 video `zsh dung-video-theo-phong-cach/scripts/vi-tri-khuon-mat.sh "$P"` sau mỗi lần sửa canh.js; ghép `python3 -I dung-video-theo-phong-cach/scripts/nang-lop.py "$P"`
+- Lệnh: 1 video `zsh dung-video-theo-phong-cach/scripts/vi-tri-khuon-mat.sh "$P"` sau mỗi lần sửa canh.js; ghép `python3 -I dung-video-theo-phong-cach/scripts/nang-khung.py "$P"`
   rồi `python3 -I dung-video-theo-phong-cach/scripts/bao-ve-lop-phu.py "$P"` sau mỗi lần sửa danh-sach-cat.js. Đọc bảng `kiem-tra/khuon-mat/placement.md` / `guard.md`.
 - Bố cục do khối 07 chọn; khối này lo thẻ tít mở (highlight) và các lớp đặt tay `place`.
 - Cảnh `nhan` và `bocuc` không qua vi-tri-khuon-mat.py: `vi-tri-nhan.py` (gọi trong vi-tri-khuon-mat.sh) ghi **mọi người** trong khung + **người đang nói** vào `chuyen-dong/src/mat.js`; `src/thu-vien/cho.js` tìm khoảng trống quanh mọi người, nhan.jsx / bo-cuc.jsx đặt graphic sát người đang nói, co theo chỗ, không đè ai. Khung dọc hẹp thì dưới cằm; khung ngang không đặt dưới cằm.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Cổng kiểm soát gốc (co-so-tri-thuc/truc-tri-thuc.md mục 7). Chạy trong dong-bo.sh --push; tay: python3 -I tu-dong-hoa/gac-goc.py
+"""Cổng kiểm soát gốc (co-so-tri-thuc/truc-tri-thuc.md mục 7). Chạy trong dong-bo.sh --push; tay: python3 -I tu-dong-hoa/cong-kiem-soat-goc.py
 File tầng 0 (co-so-tri-thuc/tang.json) có thay đổi chưa đẩy mà co-so-tri-thuc/so-dan-chung-goc.md không có dòng ghi (trong 7 ngày,
 đúng tên file, loại "nâng cấp" hoặc "đổi gốc"; đổi gốc phải có trạng thái "chốt") → trả mã 1, không đẩy."""
 import os, re, json, subprocess, sys, datetime, fnmatch

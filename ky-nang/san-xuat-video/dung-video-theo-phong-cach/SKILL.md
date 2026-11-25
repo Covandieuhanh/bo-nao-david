@@ -16,7 +16,7 @@ theo khối. Dừng giữa chừng, báo cáo "đã chọn X vì Y", góp ý th�
 
 ## Nhịp làm (mục tiêu: video 10 phút xong trong khoảng 1 giờ)
 
-- **Tự chọn trước, không thử bằng render** (`../thiet-ke-bo-cuc/nguoi-xem-can-gi.md` → `../thiet-ke-bo-cuc/tu-chon.md`): đọc `yeu-cau.md` + `them-anh/` → chẩn đoán →
+- **Tự chọn trước, không thử bằng render** (`../thiet-ke-bo-cuc/nhu-cau-nguoi-xem.md` → `../thiet-ke-bo-cuc/huong-dan-lua-chon.md`): đọc `yeu-cau.md` + `them-anh/` → chẩn đoán →
   loại nội dung → bố cục nền, lớp thông tin → mỗi cảnh lập luận "Cần · Vì · Làm" →
   `soat-canh.mjs` chặn kiểu lỗi theo khung → chụp thử đủ lớp → render một lần.
 - Render và ghép chạy nền; `xem-truoc-ban-dung.py` tự dừng khi render còn chạy hoặc thiếu lớp (không ghép thiếu).
@@ -33,7 +33,7 @@ bộ nhận diện, phát hành. Dưới đây chỉ là luật RIÊNG của ski
    thể diễn tả 1–2 ý hoặc cả video, ý quay lại thì vẽ tiếp lên hình đã có (mạch hình, cảnh tự vẽ `ve`). Không con số cố định.
 2. **Mở đầu `hook`** — **không làm mặc định** (khối 06): chỉ khi David yêu cầu, chữ nguyên văn. `du-an.js` ghi
    `topic: '<CHỦ ĐỀ>'` (tối đa 3 chữ, trích lời) cho dấu góc + thẻ cuối.
-3. **Bố cục tự chọn theo nội dung** (`../thiet-ke-bo-cuc/tu-chon.md` → khối 07 + `../thiet-ke-bo-cuc/bo-cuc.md`): danh mục có sẵn (dùng khi hợp, không bắt buộc — cần hình riêng thì viết cảnh tự vẽ `ve`) — người + phụ đề, `nhan`,
+3. **Bố cục tự chọn theo nội dung** (`../thiet-ke-bo-cuc/huong-dan-lua-chon.md` → khối 07 + `../thiet-ke-bo-cuc/bo-cuc.md`): danh mục có sẵn (dùng khi hợp, không bắt buộc — cần hình riêng thì viết cảnh tự vẽ `ve`) — người + phụ đề, `nhan`,
    `bocuc` (`the-canh` thẻ cạnh mặt · `o-nguoi` người vào ô bo góc + nội dung · `chuong` màn chương), `illus` / `diagram` toàn màn hình.
    Hợp nội dung, người xem dễ nhận; dọc mỗi lúc ít thứ. **Điểm nhấn trên người** (`nhan`): làm tối viền / chữ nhấn hay biểu
    tượng cạnh mặt ở câu then chốt, không che mặt; không zoom vào / ra. Mọi video đều có điểm nhấn — "dựng nhẹ" vẫn có — nhưng chỉ vài kiểu hợp nội dung nhất.
@@ -43,7 +43,7 @@ bộ nhận diện, phát hành. Dưới đây chỉ là luật RIÊNG của ski
    không hứa "tập sau" khi người nói không hẹn. Ghi câu + lý do vào `ke-hoach-canh.md`.
 5. **Làm sạch:** video dài không cắt (quy-tac-chung 2), chỉ sửa chiều hình; video ngắn: cắt thừa đầu/cuối, câu nói lại (giữ lần sau cùng),
    khoảng lặng + tiếng đệm theo hồ sơ; giữ vẫy tay chào cuối.
-6. **Lớp phủ không che mặt** (`vi-tri-khuon-mat.sh`); nhân vật nằm thấp thì nâng khung (`nang-lop.py`), mức theo hồ sơ.
+6. **Lớp phủ không che mặt** (`vi-tri-khuon-mat.sh`); nhân vật nằm thấp thì nâng khung (`nang-khung.py`), mức theo hồ sơ.
 7. Không làm bản cho app chỉnh sửa (DaVinci/CapCut…), không nhắc trong báo cáo — David chỉ dùng bản render cuối.
    Thư mục `tu-lieu/` chỉ là tên lịch sử, chứa video nguồn và clip trung gian; dọn sau khi David chốt (bước 12).
 8. **Học từ 20 video nói trước camera Việt** (`references/hoc-tu-20-video-noi-truoc-camera-vn.md`):
@@ -60,7 +60,7 @@ bộ nhận diện, phát hành. Dưới đây chỉ là luật RIÊNG của ski
 | **Một buổi nói dài nhiều chủ đề**, cần cắt đoạn thừa và **tách thành nhiều video theo hướng công việc** | Làm sạch + chép lời cả buổi một lần → phân hướng (`phan-huong.md`, khối 00) → `tach-video.py` → mỗi video một dự án, dựng như 1 video | `references/tach-theo-huong.md` |
 | **Nhiều cảnh khác nhau** (vlog, sự kiện, clip minh hoạ chen vào lời), hoặc clip không nói trước camera | **Ghép nhiều clip**: tự sắp mạch, clip minh hoạ trích đúng câu nói liên quan; tự soát kế hoạch rồi render | `references/nhieu-doan-video.md` (khối 11, hồ sơ `ghep-vlog`) |
 
-Mọi chế độ đều qua **chẩn đoán → tự chọn** (`../thiet-ke-bo-cuc/tu-chon.md`, bước 0: không chép kịch bản tập trước). Render đầy đủ bị
+Mọi chế độ đều qua **chẩn đoán → tự chọn** (`../thiet-ke-bo-cuc/huong-dan-lua-chon.md`, bước 0: không chép kịch bản tập trước). Render đầy đủ bị
 chặn tới khi `ke-hoach-canh.md` có mục `## Chẩn đoán` và video không chỉ một kiểu lớp phủ (`soat-canh.mjs`).
 
 Video mẫu không tính vào số video gốc. Gửi cả thư mục thì mọi video trong đó là video gốc theo thứ tự tên file (chế độ ghép); chỉ hỏi
@@ -87,10 +87,10 @@ khi không rõ file nào là mẫu. "Giống video trước" thì lấy token ph
 | 1 | Môi trường *(bước nhẹ)* | [01](../mo-dun/01-phien-am/README.md) | `zsh $SKILL/scripts/kiem-moi-truong.sh` |
 | 2 | Tạo dự án *(bước nhẹ)* | — | `zsh $SKILL/scripts/tao-du-an.sh "<video gốc>" "<video mẫu>" <tên>` (mục dưới) |
 | 3 | Làm sạch (luật 5) | [02](../mo-dun/02-lam-sach/README.md) | `phan-tich-lam-sach.sh` → sửa diem-cat.json → `ap-dung-lam-sach.py` |
-| 4 | Đổi khung (nếu cần) + nâng khung | [04](../mo-dun/04-khung-hinh/README.md) | `phan-tich-doi-khung.sh` + `ke-hoach-doi-khung.py sheet|apply` / `dat-dau-ra.py` · `nang-lop.py "$P" apply` |
+| 4 | Đổi khung (nếu cần) + nâng khung | [04](../mo-dun/04-khung-hinh/README.md) | `phan-tich-doi-khung.sh` + `ke-hoach-doi-khung.py sheet|apply` / `dat-dau-ra.py` · `nang-khung.py "$P" apply` |
 | 5 | Chép lời + hiểu video *(bước nhẹ)* | [01](../mo-dun/01-phien-am/README.md) | `phan-tich-video.sh` |
 | 6 | Phụ đề | [03](../mo-dun/03-phu-de/README.md) | `phu-de.py` → sửa từng dòng |
-| 6b | **Chẩn đoán → tự chọn**: yêu cầu người dùng, loại nội dung, bố cục nền (khung gốc / khung chủ thể / pillar), lớp thông tin (bảng ghi chú chạy `GHI_CHU`, chương), mỗi cảnh Cần · Vì · Làm | [`nguoi-xem-can-gi.md`](../thiet-ke-bo-cuc/nguoi-xem-can-gi.md) · [`tu-chon.md`](../thiet-ke-bo-cuc/tu-chon.md) · [04](../mo-dun/04-khung-hinh/README.md) | `chan-doan.py` → (`khung-chu-the.py luoi` → `apply`) |
+| 6b | **Chẩn đoán → tự chọn**: yêu cầu người dùng, loại nội dung, bố cục nền (khung gốc / khung chủ thể / pillar), lớp thông tin (bảng ghi chú chạy `GHI_CHU`, chương), mỗi cảnh Cần · Vì · Làm | [`nhu-cau-nguoi-xem.md`](../thiet-ke-bo-cuc/nhu-cau-nguoi-xem.md) · [`huong-dan-lua-chon.md`](../thiet-ke-bo-cuc/huong-dan-lua-chon.md) · [04](../mo-dun/04-khung-hinh/README.md) | `chan-doan.py` → (`khung-chu-the.py luoi` → `apply`) |
 | 7 | Phong cách (video mẫu / dự án cũ) · **tuyến nội dung → nhạc** (`project.tuyen`, bắt buộc, ghi sau ap-dung-lam-sach.py) | [10](../mo-dun/10-nhan-dien-thuong-hieu/README.md) · [09](../mo-dun/09-am-thanh/README.md) | phong-cach.md → chu-de.js |
 | 8 | Kịch bản: bố cục tự cân · điểm nhấn · màn chốt nguyên văn | [07](../mo-dun/07-canh-minh-hoa/README.md) · [08](../mo-dun/08-phan-ket/README.md) · ([06](../mo-dun/06-phan-mo-dau/README.md) chỉ khi được yêu cầu) | canh.js + ke-hoach-canh.md |
 | 9 | Tránh che người | [05](../mo-dun/05-tranh-che-chu-the/README.md) | `vi-tri-khuon-mat.sh` |
@@ -111,7 +111,7 @@ Tạo `~/Movies/tap-<tên>/2-ban-day-du/` (gốc tự đặt vào `tap-<tên>/1-
 ## Bảng phụ thuộc (sửa X thì chạy lại Y)
 | Sửa | Chạy lại |
 |---|---|
-| diem-cat.json (làm sạch) | ap-dung-lam-sach.py → nang-lop.py apply → phan-tich-video.sh → phu-de.py → dời mốc canh.js → vi-tri-khuon-mat.sh → render |
+| diem-cat.json (làm sạch) | ap-dung-lam-sach.py → nang-khung.py apply → phan-tich-video.sh → phu-de.py → dời mốc canh.js → vi-tri-khuon-mat.sh → render |
 | canh.js (mốc / loại cảnh) | vi-tri-khuon-mat.sh → `node xuat-video.mjs <id>` → xem-truoc-ban-dung.py |
 | phu-de.js | `node xuat-video.mjs phu-de` → xem-truoc-ban-dung.py |
 | chu-de.js / brand | render lại tất cả |
@@ -172,4 +172,4 @@ nó, rồi `xem-truoc-ban-dung.py`.
 - `../mo-dun/16-phan-tich-so-lieu/mau-so-lieu.md` — mẫu số liệu sau đăng.
 - Template Remotion dùng chung với **dung-podcast**: `san-khau.jsx`, composition `nen`, `nguoi-noi.js`, `duong-bao-am.js`, nhánh
   `project.podcast` trong bo-cuc.js — chỉ bật khi `project.podcast`; sửa template thì giữ chúng.
-- `assets/khuon-dung-ghep/` + `scripts/tao-dung-ghep.sh` — template dựng cả video có tiếng cho chế độ ghép.
+- `assets/mau-dung-ghep/` + `scripts/tao-dung-ghep.sh` — template dựng cả video có tiếng cho chế độ ghép.

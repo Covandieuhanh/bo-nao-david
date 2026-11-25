@@ -58,11 +58,11 @@ Bộ nhớ của Claude Code gắn theo thư mục dự án. Tham số cuối l�
 **Mac chỉ dựng video** (không phải Mac chính): thêm `--chi-video` vào lệnh cài ở trên. Máy đó vẫn đồng bộ 2 chiều nhưng không cài bot Telegram, không cài lịch tự chạy. Rồi cài công cụ dựng đúng phiên bản và để máy tự kiểm:
 
 ```bash
-bash ~/Documents/bo-nao-david/tu-dong-hoa/may-khac/cai-cong-cu-video.sh
+bash ~/Documents/bo-nao-david/tu-dong-hoa/thiet-bi-khac/cai-cong-cu-video.sh
 ```
 
 ```bash
-zsh ~/Documents/bo-nao-david/tu-dong-hoa/may-khac/kiem-may.sh
+zsh ~/Documents/bo-nao-david/tu-dong-hoa/thiet-bi-khac/kiem-tra-thiet-bi.sh
 ```
 
 Đồng bộ tay bất cứ lúc nào:
@@ -73,15 +73,15 @@ bash ~/Documents/bo-nao-david/tu-dong-hoa/dong-bo.sh
 
 ## 3. Máy Windows (chỉ dựng video)
 
-Windows chạy skill qua **WSL2**, tức một Ubuntu chạy bên trong Windows. Nhờ vậy dùng nguyên script của Mac, chỉ giữ một bộ skill. Máy nào cũng đẩy được lên GitHub vì đăng nhập đúng tài khoản David. Bot Telegram, lịch tự chạy, trang xem kết quả, đăng bài chỉ ở Mac chính. Chi tiết cái gì giống hệt, cái gì gần giống: [tu-dong-hoa/may-khac/README.md](tu-dong-hoa/may-khac/README.md).
+Windows chạy skill qua **WSL2**, tức một Ubuntu chạy bên trong Windows. Nhờ vậy dùng nguyên script của Mac, chỉ giữ một bộ skill. Máy nào cũng đẩy được lên GitHub vì đăng nhập đúng tài khoản David. Bot Telegram, lịch tự chạy, trang xem kết quả, đăng bài chỉ ở Mac chính. Chi tiết cái gì giống hệt, cái gì gần giống: [tu-dong-hoa/thiet-bi-khac/README.md](tu-dong-hoa/thiet-bi-khac/README.md).
 
 **Một lần trên Windows** (David tự làm):
 
 1. Mở PowerShell bằng quyền quản trị (chuột phải thì Run as administrator), chạy `wsl --install -d Ubuntu-24.04`, khởi động lại máy. Mở "Ubuntu" từ menu Start, đặt tên và mật khẩu cho Ubuntu.
 2. Cài **Google Drive cho máy tính** (bản Windows), đăng nhập tài khoản của David. Drive hiện thành một ổ đĩa (thường là G:), Ubuntu đọc ở `/mnt/g/My Drive`.
    Ubuntu chỉ gắn ổ mới khi khởi động: cài Drive xong thì chạy `wsl --shutdown` trong PowerShell rồi mở lại Ubuntu, kiểm bằng `ls "/mnt/g/My Drive"`.
-   Chưa có Drive thì vẫn dựng được, nhưng chưa giao được kết quả và chưa chạy được `kiem-may.sh`, nên **chưa tính là cài xong**.
-   Muốn chạy `kiem-may.sh` khi chưa có Drive: tải thư mục `tu-lieu-goc/_bo-thu-may` về (ví dụ `gdown --folder <link>`) rồi chạy `BO_THU=<thư mục đó> zsh .../kiem-may.sh`.
+   Chưa có Drive thì vẫn dựng được, nhưng chưa giao được kết quả và chưa chạy được `kiem-tra-thiet-bi.sh`, nên **chưa tính là cài xong**.
+   Muốn chạy `kiem-tra-thiet-bi.sh` khi chưa có Drive: tải thư mục `tu-lieu-goc/_bo-thu-may` về (ví dụ `gdown --folder <link>`) rồi chạy `BO_THU=<thư mục đó> zsh .../kiem-tra-thiet-bi.sh`.
    **Không dựng bằng bản repo clone phía Windows** (Git cho Windows biến liên kết thư viện hình thành file chữ): chỉ dùng bản trong Ubuntu `~/Documents/bo-nao-david`.
 
 **Trong cửa sổ Ubuntu**, chạy lần lượt:
@@ -107,7 +107,7 @@ bash ~/Documents/bo-nao-david/tu-dong-hoa/cai-dat-bo-nao.sh ~/Documents/bo-nao-d
 ```
 
 ```bash
-bash ~/Documents/bo-nao-david/tu-dong-hoa/may-khac/cai-cong-cu-video.sh
+bash ~/Documents/bo-nao-david/tu-dong-hoa/thiet-bi-khac/cai-cong-cu-video.sh
 ```
 
 ```bash
@@ -115,12 +115,12 @@ curl -fsSL https://claude.ai/install.sh | bash
 ```
 
 ```bash
-zsh ~/Documents/bo-nao-david/tu-dong-hoa/may-khac/kiem-may.sh
+zsh ~/Documents/bo-nao-david/tu-dong-hoa/thiet-bi-khac/kiem-tra-thiet-bi.sh
 ```
 
 - `cai-dat-bo-nao.sh` thấy máy không phải Mac thì tự cài kiểu "chỉ dựng video".
 - `cai-cong-cu-video.sh` cài đúng phiên bản Mac đang dùng: ffmpeg, whisper.cpp kèm mô hình 1,5 GB, Node, pyannote, công cụ dò mặt. Script hỏi mật khẩu Ubuntu một lần. Script cũng in các bước để David tự lấy mã Hugging Face cho phần tách người nói podcast (một lần).
-- `kiem-may.sh` dựng thử 20 giây bằng đúng script của skill rồi so với bản chuẩn của Mac. Bộ thử nằm trên Drive `tu-lieu-goc/_bo-thu-may/`. Kết quả phải là **"MÁY NÀY DỰNG GIỐNG MAC CHÍNH"**.
+- `kiem-tra-thiet-bi.sh` dựng thử 20 giây bằng đúng script của skill rồi so với bản chuẩn của Mac. Bộ thử nằm trên Drive `tu-lieu-goc/_bo-thu-may/`. Kết quả phải là **"MÁY NÀY DỰNG GIỐNG MAC CHÍNH"**.
 
 **Dùng hằng ngày:** mở Ubuntu, `cd ~/Documents/bo-nao-david && claude`, rồi làm như trên Mac: gửi video, gọi skill.
 - Video gốc trên Drive đọc thẳng ở `/mnt/g/My Drive/...`.
@@ -141,7 +141,7 @@ zsh ~/Documents/bo-nao-david/tu-dong-hoa/may-khac/kiem-may.sh
 
 | Thứ cần có | Cách lấy lại |
 |---|---|
-| Công cụ dựng video, đúng phiên bản Mac | `bash tu-dong-hoa/may-khac/cai-cong-cu-video.sh` (ffmpeg, whisper.cpp, Node, Pillow, pyannote, dò mặt; bản khoá ở `tu-dong-hoa/may-khac/phien-ban.env`). Kiểm nhanh: `kiem-moi-truong.sh` của skill; so kết quả với Mac: `kiem-may.sh` |
+| Công cụ dựng video, đúng phiên bản Mac | `bash tu-dong-hoa/thiet-bi-khac/cai-cong-cu-video.sh` (ffmpeg, whisper.cpp, Node, Pillow, pyannote, dò mặt; bản khoá ở `tu-dong-hoa/thiet-bi-khac/phien-ban.env`). Kiểm nhanh: `kiem-moi-truong.sh` của skill; so kết quả với Mac: `kiem-tra-thiet-bi.sh` |
 | Mô hình Whisper (1,5 GB) | `cai-cong-cu-video.sh` tải về `~/whisper-models` và kiểm mã |
 | `~/.cache/dung-video-theo-phong-cach` (dò mặt, môi trường Python) | `cai-cong-cu-video.sh` tạo lại; trên Mac, Vision tự dựng lại khi dùng lần đầu |
 | Mô hình tách người nói pyannote (khoảng 31 MB) | Cần tài khoản Hugging Face. `cai-cong-cu-video.sh` in các bước David tự làm một lần (đồng ý điều khoản, dán mã đọc); chưa có thì podcast nhiều người đoán người nói theo giọng |
@@ -165,14 +165,14 @@ Mở Claude Code và nói: "Tôi là ai, và bạn phải làm gì trước khi 
 
 Máy chỉ có repo này là đủ để dựng video ra như Mac chính. Không cần nhớ gì từ các phiên trước: mọi cách nghĩ đã nằm trong file.
 
-1. **Cài + tự kiểm máy** (một lần): [huong-dan-cai-dat.md](huong-dan-cai-dat.md) mục 3, rồi `tu-dong-hoa/may-khac/kiem-may.sh` phải ra "giống Mac chính".
+1. **Cài + tự kiểm máy** (một lần): [huong-dan-cai-dat.md](huong-dan-cai-dat.md) mục 3, rồi `tu-dong-hoa/thiet-bi-khac/kiem-tra-thiet-bi.sh` phải ra "giống Mac chính".
 2. **Đọc theo thứ tự, trước khi viết kịch bản cảnh:**
-   [nguoi-xem-can-gi.md](ky-nang/san-xuat-video/thiet-ke-bo-cuc/nguoi-xem-can-gi.md) (cách nghĩ: loại nội dung → cái khó của người xem → nguyên lý) →
-   [giai-mau.md](ky-nang/san-xuat-video/thiet-ke-bo-cuc/giai-mau.md) (19 trường hợp thực tế từ hình mẫu thành công) →
-   [tu-chon.md](ky-nang/san-xuat-video/thiet-ke-bo-cuc/tu-chon.md) (các bước + kho cách thể hiện theo nguyên lý) →
+   [nhu-cau-nguoi-xem.md](ky-nang/san-xuat-video/thiet-ke-bo-cuc/nhu-cau-nguoi-xem.md) (cách nghĩ: loại nội dung → cái khó của người xem → nguyên lý) →
+   [truong-hop-da-giai.md](ky-nang/san-xuat-video/thiet-ke-bo-cuc/truong-hop-da-giai.md) (19 trường hợp thực tế từ hình mẫu thành công) →
+   [huong-dan-lua-chon.md](ky-nang/san-xuat-video/thiet-ke-bo-cuc/huong-dan-lua-chon.md) (các bước + kho cách thể hiện theo nguyên lý) →
    [bo-cuc.md](ky-nang/san-xuat-video/thiet-ke-bo-cuc/bo-cuc.md) (kiểu có sẵn, ảnh mẫu từng kiểu, cách viết `canh.js`) → skill dựng (cây quy trình lá B6).
 3. **Yêu cầu của David** nằm trong thư mục dự án: `yeu-cau.md` (viết tự do) và `them-anh/` (ảnh `mau-*` = kiểu muốn học theo, ảnh khác = ảnh chèn).
-   Cách xử lý: `tu-chon.md` bước 0b.
+   Cách xử lý: `huong-dan-lua-chon.md` bước 0b.
 4. **Lập luận thành chữ** trong `ke-hoach-canh.md`: `Loại:` cho cả video, mỗi cảnh `Cần · Vì · Làm`. `soat-canh.mjs` chặn render khi thiếu —
    đừng bỏ qua cổng này, nó là thứ giữ video đúng nội dung khi không có người kiểm.
 5. **Máy mới: làm bài kiểm suy luận** [bai-kiem/](ky-nang/san-xuat-video/thiet-ke-bo-cuc/bai-kiem/README.md) (không mở đáp án), chấm bằng

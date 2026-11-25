@@ -5,4 +5,4 @@
 - Thêm ảnh them-anh/lop-hoc.jpg lúc nói về buổi học
 - Bỏ nhạc ở đoạn kể chuyện
 Ảnh bỏ vào thư mục them-anh/: tên bắt đầu "mau-" = ảnh mẫu kiểu muốn học theo; còn lại = ảnh chèn vào video.
-Cách máy xử lý: thiet-ke-bo-cuc/tu-chon.md bước 0b. -->
+Cách máy xử lý: thiet-ke-bo-cuc/huong-dan-lua-chon.md bước 0b. -->

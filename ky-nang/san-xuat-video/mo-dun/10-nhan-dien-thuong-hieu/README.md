@@ -11,8 +11,8 @@ description: "Khối 10 bộ nhận diện David trên video: dấu góc, thanh 
 **Sửa khối này thì chạy lại:** mọi khối hình (06, 07, 08, 12, 14) rồi khối 17
 
 **File thật (code, một bản duy nhất):**
-- `dung-video-theo-phong-cach/assets/khuon-remotion/src/{thuong-hieu.json,chu-de.js,phong-chu.js}`
-- `dung-video-theo-phong-cach/assets/khuon-dung-ghep/src/thuong-hieu.js`
+- `dung-video-theo-phong-cach/assets/mau-remotion/src/{thuong-hieu.json,chu-de.js,phong-chu.js}`
+- `dung-video-theo-phong-cach/assets/mau-dung-ghep/src/thuong-hieu.js`
 - `dung-video-theo-phong-cach/references/phan-tich-phong-cach.md`
 
 ## Luật

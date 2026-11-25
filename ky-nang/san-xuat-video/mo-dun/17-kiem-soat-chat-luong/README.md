@@ -12,8 +12,8 @@ description: "Khối 17 dựng và kiểm tra chất lượng: chụp thử từ
 
 **File thật (code, một bản duy nhất):**
 - `dung-video-theo-phong-cach/scripts/{vung-an-toan.py,ghep-anh-tinh.sh,kiem-khung-hinh.sh,xem-truoc-ban-dung.py,don-tap.py,luu-drive.sh}`
-- `…/khuon-remotion/{xem-truoc.mjs,xuat-video.mjs}`
-- `…/khuon-dung-ghep/{anh-tinh.mjs,xuat-chuong-trinh.mjs}`
+- `…/mau-remotion/{xem-truoc.mjs,xuat-video.mjs}`
+- `…/mau-dung-ghep/{anh-tinh.mjs,xuat-chuong-trinh.mjs}`
 - `dung-video-theo-phong-cach/references/loi-thuong-gap.md`
 
 ## Cách làm
@@ -70,7 +70,7 @@ node $SKILL/scripts/soat-canh.mjs "$P"     # in ra + ghi kiem-tra/soat.md; có P
 Đọc từ `canh.js` hoặc `danh-sach-cat.js`, báo mỗi lỗi một dòng `t=… · cảnh · vấn đề → cách sửa`:
 - **P0 (phải sửa):** kiểu cảnh / biểu tượng không tồn tại, phần tử hiện ngoài cảnh, mốc sai · **chưa chẩn đoán** (thiếu
   `ke-hoach-canh.md` mục `## Chẩn đoán`) · **cả video một kiểu lớp phủ nội dung** (trừ khi ghi `Một kiểu có chủ đích: …`). Render đầy
-  đủ (`xuat-video.mjs`, `xuat-chuong-trinh.mjs`) tự chạy soát này và dừng khi còn P0 (`thiet-ke-bo-cuc/tu-chon.md` bước 5).
+  đủ (`xuat-video.mjs`, `xuat-chuong-trinh.mjs`) tự chạy soát này và dừng khi còn P0 (`thiet-ke-bo-cuc/huong-dan-lua-chon.md` bước 5).
 - **P1 (nên sửa):** nhãn không đủ đọc (0,5 s + 0,3 s mỗi từ), nhãn `illus` quá số chữ hồ sơ, hai cảnh toàn màn hình chồng nhau.
 - **P2 (tinh chỉnh, giữ có chủ đích được):** hình đứng yên quá 3 s sau khi đọc xong, thẻ tít / màn chốt thiếu hẳn thời gian đọc, hai cảnh cùng kiểu liền nhau (trừ cảnh vẽ tiếp `tu_buoc`, khối 07).
 Giới hạn: chỉ bắt lỗi đo được. Chữ tràn, che mặt, xấu vẫn xét bằng `kiem-tra/anh-tinh.jpg`. **Xem tờ ảnh ở đúng cỡ (mỗi khung 240–270 px, nhỏ hơn màn điện thoại): chữ cần đọc mà không đọc được = P0.**

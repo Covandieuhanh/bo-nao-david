@@ -12,7 +12,7 @@ loè loẹt gây phân tán sự chú ý"*. Vì vậy lần này **học nguyên
 - Facebook reel, kênh Cường Mê AI, 1:47, dọc 9:16, người nói + motion graphics. Đã xem cả bài bằng bảng khung 1,5 s.
 - File tải về đã xoá sau khi cắt khung. Chưa phân tích kỹ âm thanh.
 
-## 2. Vì sao dễ hiểu (nguyên lý — đã đưa vào `tu-chon.md` bước 4a)
+## 2. Vì sao dễ hiểu (nguyên lý — đã đưa vào `huong-dan-lua-chon.md` bước 4a)
 | # | Nguyên lý | Thấy ở |
 |---|---|---|
 | 1 | **Hình đi đúng nhịp lời**: nói tới thứ gì thứ đó mới hiện | Câu lệnh → Viết code → Chụp frame → Ghép MP4 hiện từng nút |
@@ -27,7 +27,7 @@ loè loẹt gây phân tán sự chú ý"*. Vì vậy lần này **học nguyên
 |---|---|---|---|
 | `diagram` | kiểu `chuoi` (chuỗi bước nối dây, chấm chạy chỉ hướng, bước đang nói sáng, bước cũ mờ) · `mot_diem: true` cho `tang`, `cot` (sáng đúng mục đang nói thay vì mục cố định) | `thu-vien/so-do.jsx` | có |
 | `o-nguoi` | `nguoi_duoi: true` ở khung dọc: người xuống nửa dưới, hình nửa trên | `thanh-phan/bo-cuc.jsx` | có |
-| `tu-chon.md` | bước 4a: chỉ dựng hình khi ý khó hiểu nếu chỉ nghe; dòng `Tiết chế:` trong chẩn đoán | `thiet-ke-bo-cuc/tu-chon.md` | — |
+| `huong-dan-lua-chon.md` | bước 4a: chỉ dựng hình khi ý khó hiểu nếu chỉ nghe; dòng `Tiết chế:` trong chẩn đoán | `thiet-ke-bo-cuc/huong-dan-lua-chon.md` | — |
 | `soat-canh.mjs` | soát: nhãn > 4 chữ · hình phủ > 45 % thời lượng · thiếu dòng `Tiết chế:` | `scripts/soat-canh.mjs` | có |
 
 ## 4. Không lấy

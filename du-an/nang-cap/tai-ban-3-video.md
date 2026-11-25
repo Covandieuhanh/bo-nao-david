@@ -25,18 +25,18 @@ Trạng thái: **sống** = giữ, đã có nguồn duy nhất · **trùng** = g
 | Cắt chỉ cho tối đa 3 phút và highlight; cắt cứng | quy-tac-chung 2 | quy-tac-chung:42; khối 02:49; cat-doan luật 8; hồ sơ doan-noi-bat `phong_xen_ke` | 10/11 | sống |
 | Không zoom vào / ra ở mọi video | quy-tac-chung 2 | quy-tac-chung:42; khối 07:81; cat-doan:112; dung-video luật 3; code `chuong-trinh.jsx`, `danh-sach-cat-doan-noi-bat.py` | 13/11 | trùng (khối 07, cat-doan trỏ về) |
 | ↳ "phóng" trong nhịp video ngắn; "zoom" bám người nói | quy-tac-chung 2, 4 | quy-tac-chung:45, :72 | 08/11 | ngược → viết lại (13/11 thắng) |
-| ↳ `nhan` zoom ở bảng kiểu cảnh | tu-chon bước 4 | tu-chon:71 | 11/11 | ngược → bỏ "zoom" |
+| ↳ `nhan` zoom ở bảng kiểu cảnh | huong-dan-lua-chon bước 4 | huong-dan-lua-chon:71 | 11/11 | ngược → bỏ "zoom" |
 | ↳ `zoom: true` dồn 1,0→1,12× (highlight) | khối 13 | khối 13:94, :132 | 08/11 | ngược → viết lại đúng code: `zoom: true` = giữ nguyên câu, không dồn khung |
 | ↳ `zoom` dồn ở vlog (fx, hộp đồ nghề) | nhieu-doan-video 2d, 4 | nhieu-doan-video:163, :194, :201 | 04/11 | ngược → bỏ zoom, giữ `pow` |
 | Video ngắn đổi gì đó mỗi 1–3 s; dài thưa | quy-tac-chung 2 | quy-tac-chung:45; nguyen-tac 7 | 04/11 | sống |
 | Một màn một ý; không chồng 2 lớp phủ | quy-tac-chung 2 | quy-tac-chung:47 | 04/11 | sống |
 | Đường cảm xúc + một đỉnh | quy-tac-chung 2 → khối 07 mục 2 | quy-tac-chung:48; khối 07:38 | 09/11 | sống |
-| Phụ đề: ngắn cụm 5–8 chữ cỡ 58; dài hộp tối; podcast dọc trích ngắn `chu_chinh` | quy-tac-chung 3 → khối 03 | quy-tac-chung:53-58; khối 03; ghi nhớ video-phu-de-mot-cho-chu, video-doc-khuon-chu-chinh | 10/11 | sống |
+| Phụ đề: ngắn cụm 5–8 chữ cỡ 58; dài hộp tối; podcast dọc trích ngắn `chu_chinh` | quy-tac-chung 3 → khối 03 | quy-tac-chung:53-58; khối 03; ghi nhớ video-phu-de-mot-cho-chu, video-doc-mau-chu-chinh | 10/11 | sống |
 | Mỗi lúc một chỗ chữ: lớp chữ hiện thì phụ đề nhường | quy-tac-chung 3 | quy-tac-chung:59 | 08/11 | sống |
 | Màu theo nghĩa `+`/`-`; không đốt phụ đề bằng ffmpeg | quy-tac-chung 3 | quy-tac-chung:62-63; cat-doan "Điều không làm" | 08/11 | sống |
 | Mọi video có điểm nhấn, vài kiểu | quy-tac-chung 4 → khối 07 | quy-tac-chung:66; dung-video luật 3; ghi nhớ video-do-hoa-ke-chuyen | 09/11 | sống |
-| Bố cục tự cân, không con số bắt buộc | quy-tac-chung 4 → thiet-ke-bo-cuc/README 2 | quy-tac-chung:69; ghi nhớ video-bo-cuc-tu-can | 08/11 | sống |
-| Tự chọn trước kế hoạch cảnh theo tu-chon.md (3 skill dựng) | quy-tac-chung 4 (luật) · tu-chon.md (cách làm) | cat-doan:21 + dung-podcast:22 (câu trùng); dung-video bước 6b; thiet-ke-bo-cuc/README 5; ghi nhớ video-tu-chon-theo-noi-dung | 11/11 | trùng → một nguồn duy nhất, skill trỏ ở bảng công thức |
+| Bố cục tự cân, không con số bắt buộc | quy-tac-chung 4 → thiet-ke-bo-cuc/README 2 | quy-tac-chung:69; ghi nhớ video-bo-cuc-tu-can-bang | 08/11 | sống |
+| Tự chọn trước kế hoạch cảnh theo huong-dan-lua-chon.md (3 skill dựng) | quy-tac-chung 4 (luật) · huong-dan-lua-chon.md (cách làm) | cat-doan:21 + dung-podcast:22 (câu trùng); dung-video bước 6b; thiet-ke-bo-cuc/README 5; ghi nhớ video-tu-chon-theo-noi-dung | 11/11 | trùng → một nguồn duy nhất, skill trỏ ở bảng công thức |
 | Không che người nói, không đè phụ đề; nhiều người thì bám người đang nói | quy-tac-chung 4 → khối 05 | quy-tac-chung:71; khối 05; nguyen-tac | 08/11 | sống |
 | Chữ tiếng Việt đủ dấu, không chồng dòng (`VN`) | quy-tac-chung 4 | quy-tac-chung:74; loi-thuong-gap "Chữ tiếng Việt" | 06/11 | sống |
 | Nhiều ảnh thật minh hoạ, chỉ ảnh Việt Nam; trừu tượng → biểu tượng vẽ | quy-tac-chung 4 | quy-tac-chung:75; ghi nhớ video-anh-viet-nam | 13/11 | sống |
@@ -44,7 +44,7 @@ Trạng thái: **sống** = giữ, đã có nguồn duy nhất · **trùng** = g
 | ↳ ví dụ ảnh "Singapore", khối 07 thiếu luật chỉ Việt Nam | khối 07 mục 6 | khối 07:116-117 | 07/11 | ngược → đổi ví dụ, trỏ quy-tac-chung 4 |
 | Số liệu bằng hiệu ứng đúng con số; ưu tiên bằng chứng thật | quy-tac-chung 4 | quy-tac-chung:78; nhieu-doan-video 4 | 06/11 | sống |
 | Không ghi chú kỹ thuật trên video; không màn nguồn ảnh cuối | quy-tac-chung 4 | quy-tac-chung:79; nhieu-doan-video 3; ghi nhớ video-khong-nhan-ky-thuat | 07/11 | sống |
-| Khung xuất = khung gốc trừ khi David nói rõ; highlight luôn dọc | quy-tac-chung 4 | quy-tac-chung:80; dung-video "Đầu vào"; tu-chon bước 2 | 11/11 | sống |
+| Khung xuất = khung gốc trừ khi David nói rõ; highlight luôn dọc | quy-tac-chung 4 | quy-tac-chung:80; dung-video "Đầu vào"; huong-dan-lua-chon bước 2 | 11/11 | sống |
 | Bộ nhận diện một nguồn | quy-tac-chung 5 → nhan-dien-chung | quy-tac-chung:83; ghi nhớ video-nhan-dien-chung | 10/11 | sống |
 | Lời kêu gọi: câu mệnh lệnh có sẵn; màn hành động 1–2 lần; màn chốt nguyên văn | quy-tac-chung 6 → khối 08 | quy-tac-chung:88-91; khối 08; dung-video luật 4 | 08/11 | sống |
 | Phát hành: 3 tiêu đề, thumbnail chỉ ngang + YouTube, mốc khung bìa dọc, màn kết/chương/teaser | quy-tac-chung 7 → khối 15, 14 | quy-tac-chung:93-106 | 08/11 | sống |
@@ -81,11 +81,11 @@ Trạng thái: **sống** = giữ, đã có nguồn duy nhất · **trùng** = g
 |---|---|---|---|---|
 | dung-video: 8 luật riêng (motion graphic kể chuyện, hook không mặc định, bố cục, màn hành động/chốt, làm sạch, không che mặt, không bản app, học 20 video) | dung-video SKILL | SKILL:35-55 | 11/11 | sống |
 | dung-video: nhịp làm khoảng 1 giờ/video, lỗi skill ghi `loi-ky-nang.md` | dung-video SKILL | SKILL:21-28 | 11/11 | sống |
-| dung-video: khung xuất, khung chủ thể thay cắt-phóng | dung-video "Đầu vào" → khối 04 | SKILL:73; khối 04:56-67; tu-chon:36 | 11/11 | sống (bỏ dấu ngày khối 04, tu-chon) |
+| dung-video: khung xuất, khung chủ thể thay cắt-phóng | dung-video "Đầu vào" → khối 04 | SKILL:73; khối 04:56-67; huong-dan-lua-chon:36 | 11/11 | sống (bỏ dấu ngày khối 04, huong-dan-lua-chon) |
 | dung-podcast: chỉ nội dung gốc, không cắt, cỡ vừa, không tít/số tập, thanh thời gian, màn chốt, phủ hình khoảng 30 % | dung-podcast SKILL | SKILL:28-57 | 11/11 | sống |
 | cat-doan: bốn câu chọn ý, không số cố định | cat-doan SKILL → khối 13 | SKILL:23-32; khối 13:56; ghi nhớ video-clip-ngan-dung-doc-lap | 07/11 | sống |
 | cat-doan: 13 luật riêng (cùng loại gốc, nguyên văn, màn chốt một luật, tít = cụm đắt, hai tông, không thẻ cuối/thanh…) | cat-doan SKILL | SKILL:36-74 | 10/11 | sống |
-| cat-doan: kịch bản 7B mẫu "Đi trainer" | cat-doan SKILL | SKILL:141-157; ghi nhớ video-ban-chuan, video-doc-khuon-chu-chinh | 10/11 | sống |
+| cat-doan: kịch bản 7B mẫu "Đi trainer" | cat-doan SKILL | SKILL:141-157; ghi nhớ video-ban-chuan, video-doc-mau-chu-chinh | 10/11 | sống |
 | Nhật ký cuối SKILL.md (dung-video, dung-podcast, cat-doan, phan-phoi, phan-tich) | `<skill>/references/nhat-ky-thay-doi.md` | 5 SKILL.md | 13/11 | cũ → chuyển về sổ (phan-phoi, phan-tich có sổ mới) |
 | phan-phoi: một mạch tới trang xem kết quả; sổ danh mục một nơi; đăng chỉ khi "đăng" | phan-phoi SKILL | SKILL:13-48 | 13/11 | sống |
 | phan-tich: cửa vào, học là bổ sung, phiếu học là cổng hỏi (sửa skill → 4 phần) | phan-tich SKILL → thiet-ke-bo-cuc/README 4 | SKILL:11-16; ghi nhớ quy-tac-hoc-la-bo-sung | 08/11 | sống |
@@ -101,7 +101,7 @@ Trạng thái: **sống** = giữ, đã có nguồn duy nhất · **trùng** = g
 | Khối 14: thumbnail chỉ hình của chính video; bìa podcast không mặt | khối 14 | khối 14; ghi nhớ video-chi-hinh-cua-chinh-video, video-podcast-bia-khong-mat | 06/11 | sống |
 | Chữ nhấn kiểu nhãn dán, không chạm mặt, không nền tối mờ | nhan-dien-chung 2 | nhan-dien-chung:57; ghi nhớ video-chu-nhan-nhan-dan | 13/11 | sống (bỏ dấu ngày, giữ lý do) |
 | Thành phần cố định + video dọc ngắn không thanh/không thẻ cuối | nhan-dien-chung 1 | nhan-dien-chung:25-50 | 10/11 | sống |
-| tu-chon: chẩn đoán, bố cục nền, lớp thông tin, kiểu cảnh, soát P0; học mới phải thêm dòng dấu hiệu | tu-chon.md | tu-chon:14-96 | 11/11 | sống (bỏ dấu ngày) |
+| huong-dan-lua-chon: chẩn đoán, bố cục nền, lớp thông tin, kiểu cảnh, soát P0; học mới phải thêm dòng dấu hiệu | huong-dan-lua-chon.md | huong-dan-lua-chon:14-96 | 11/11 | sống (bỏ dấu ngày) |
 | Ghép vlog: phân loại clip, bản đồ, giữ/bỏ, khung vlog, chương trình, hộp đồ nghề | nhieu-doan-video | nhieu-doan-video | 06/11 | sống |
 | Thẻ đè người = toàn cảnh, vùng an toàn, loại cảnh có sẵn | thiet-ke-canh | thiet-ke-canh | 08/11 | sống |
 | Lỗi đã gặp + chỗ chặn | loi-thuong-gap (2 file) | loi-thuong-gap | 11/11 | sống (bỏ ngày ở tiêu đề mục) |
@@ -115,7 +115,7 @@ Không bỏ luật nào David đã chốt; không thêm luật mới.
    tách P1/P2) là **điểm cần chốt trong 4 phần**, và phiếu lọc là nguồn của 4 phần (không cổng riêng). Đề nghị phiên não xác nhận chuan-muc
    không còn câu "hỏi một lần ở đầu" riêng cho video.
 2. **Ghi nhớ:** `video-khong-tu-xuat` ("Thay ngày 13/11"), `video-podcast-phu-hinh-30` ("Thay luật…"), `quy-tac-goi-y-de-david-chon` (đoạn 14/11 nối thêm)
-   còn câu chồng lớp; `video-bo-cuc-tu-can` mục 4 còn chữ "zoom… bám đúng người đang nói" — bản luật đã đổi thành "khung cắt". Nguồn luật của
+   còn câu chồng lớp; `video-bo-cuc-tu-can-bang` mục 4 còn chữ "zoom… bám đúng người đang nói" — bản luật đã đổi thành "khung cắt". Nguồn luật của
    ghi nhớ `video-khong-tu-xuat` vẫn đúng (`phan-phoi-da-kenh/SKILL.md`, `quy-tac-chung.md` mục 8).
 3. **Ghi nhớ `video-kien-truc-ky-nang` / `quy-tac-sua-thang-tai-ban`:** hồ sơ tham số giờ ghi lịch sử ở `ho-so-thuong-hieu/nhat-ky-thay-doi.md`
    (không còn "nhật ký trong `.md`"); nếu ghi nhớ nói khác thì sửa theo.
@@ -127,7 +127,7 @@ Không bỏ luật nào David đã chốt; không thêm luật mới.
 
 ## Đã viết lại
 - Sửa 29 file bộ video + 3 sổ mới; không đổi code, tên khoá, lệnh; "Xong khi" giữ nguyên ý (chỉ sửa khi câu trong đó ngược luật mới: không có).
-- Bỏ 11 dấu ngày + lời kể "(David 13/11/2026 …)", gộp 2 câu trùng (tự chọn theo tu-chon.md) về `quy-tac-chung.md` mục 4.
+- Bỏ 11 dấu ngày + lời kể "(David 13/11/2026 …)", gộp 2 câu trùng (tự chọn theo huong-dan-lua-chon.md) về `quy-tac-chung.md` mục 4.
 - Viết lại 13 nhóm ngược: zoom (4), ảnh thật vs biểu tượng (2), cổng hỏi / chờ David sót lại (7).
 - Mục "Nhật ký" cuối 5 SKILL.md và 5 hồ sơ `.md` chuyển về sổ; sổ mới có khối `description:` và được link từ SKILL.md / README.
 - Mỗi sổ quyết định của bộ có dòng đầu `## Tái bản 3 — 14/11/2026: …` (cat-doan, dung-podcast, dung-video, phan-phoi, phan-tich, ho-so). Không sổ nào > 400 dòng.

@@ -12,7 +12,7 @@ description: "Khối 14 thumbnail YouTube 1280×720 cho video ngang, chỉ hình
 
 **File thật (code, một bản duy nhất):**
 - `dung-video-theo-phong-cach/scripts/anh-thu-nho.sh`
-- `dung-video-theo-phong-cach/assets/khuon-anh-thu-nho/`
+- `dung-video-theo-phong-cach/assets/mau-anh-thu-nho/`
 
 ## Luật
 - Chỉ khi video xuất **ngang** VÀ đăng YouTube (điểm chốt trong 4 phần lúc đầu). Video dọc: chỉ ghi mốc khung bìa đề xuất.
@@ -41,6 +41,6 @@ Video chỉ có tiếng thì bìa **không có mặt người**, kể cả ảnh
 ```bash
 THUMB_HINH=danh-sach THUMB_TAG=PODCAST zsh dung-video-theo-phong-cach/scripts/anh-thu-nho.sh "$P" - "MÌNH GIỎI" "CÁI GÌ?" 1
 ```
-`THUMB_HINH` = `danh-sach` hoặc tên trong `ICONS` của `thu-vien-tai-nguyen/bieu-tuong.jsx` (puzzle, target, people, tree...). Thiếu hình phù hợp thì vẽ thêm vào `ICONS`. Nền và hình nằm ở `assets/khuon-anh-thu-nho/hinh-podcast.jsx`.
+`THUMB_HINH` = `danh-sach` hoặc tên trong `ICONS` của `thu-vien-tai-nguyen/bieu-tuong.jsx` (puzzle, target, people, tree...). Thiếu hình phù hợp thì vẽ thêm vào `ICONS`. Nền và hình nằm ở `assets/mau-anh-thu-nho/hinh-podcast.jsx`.
 
 **Căn cứ:** 5 kênh podcast không mặt có lượt xem cao (Better Version, Tri Kỷ Cảm Xúc, Hieu Nguyen, Vì sao thế nhỉ!, Tư Duy Và Sách) đều dùng hình theo nội dung cộng câu ngắn. Chỉ là mẫu nhỏ, có thể thử thêm bằng Test & Compare của YouTube.

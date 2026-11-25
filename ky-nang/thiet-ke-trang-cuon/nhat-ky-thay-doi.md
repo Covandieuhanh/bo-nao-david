@@ -408,7 +408,7 @@ requests, and every clip reports `poster` under reduced motion.
 - `thiet-bi.md` §7: `count` is unavailable to concept, fictional and pre-launch
   brands, because every number would be invented. (saas)
 - `thiet-bi.md` §8: a flow section after a pinned act takes reduced padding. (saas)
-- `thiet-bi.md` §9 and `references/khuon-mau.html`: `magnet`, `parallax` and `cue`
+- `thiet-bi.md` §9 and `references/mau.html`: `magnet`, `parallax` and `cue`
   all write `transform` and cannot share an element; `data-sc-rise="0"` is the
   guard. The template taught the collision by example. (nateherk)
 - `tai-nguyen.md`: a section on real supplied footage (measure with `signalstats`,
@@ -602,7 +602,7 @@ it resolves its paths instead of assuming them.
   repeating *yourself*, so a new user's first build has nothing to clear and
   every build after it does. Gating a newcomer against somebody else's twelve
   rows would block them out of grammars they have never used, which is the
-  opposite of the point. `khuon-mau/dau-hieu-nhan-dang.md` is the seed; the author's
+  opposite of the point. `mau/dau-hieu-nhan-dang.md` is the seed; the author's
   twelve-row table ships separately as `EXAMPLES.md`, explicitly as
   illustration rather than constraint.
 - **`scripts/kiem-tra-suc-khoe.mjs`.** Preflight, run before the interview. Checks node, a

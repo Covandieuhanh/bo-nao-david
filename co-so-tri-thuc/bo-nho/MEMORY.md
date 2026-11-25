@@ -34,13 +34,13 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 - [Liên kết tri thức](co-so-tri-thuc-lien-ket-tri-thuc.md) — bộ não là mạng lưới file nối nhau: mô tả đầu file, chỉ mục tự sinh, ban-do/, kien-thuc/, công cụ kiểm tra link; không dùng app Obsidian (14/11)
 - [Bộ não công ty riêng](co-so-tri-thuc-bo-nao-cong-ty.md) — việc Veltrix làm ở ~/Documents/bo-nao-veltrix (kho private veltrix), không ghi vào bộ não cá nhân; Văn Phòng Shop đã chuyển vào (18/11)
 - [GitHub là bản gốc bộ não](co-so-tri-thuc-github-ban-goc.md) — bắt buộc đẩy ngay; "cập nhật não" = dong-bo.sh --push; repo công khai = phần dùng chung, repo riêng tư bo-nao-david-mac = phần chỉ Mac chính (07/11, 20/11)
-- [Nhiều máy dựng video](co-so-tri-thuc-nhieu-may.md) — Mac + Windows (WSL2) cùng bộ não, máy nào cũng đẩy được, máy khác chỉ làm video; khoá phiên bản, kiem-may.sh so với Mac (20/11)
+- [Nhiều máy dựng video](co-so-tri-thuc-nhieu-may.md) — Mac + Windows (WSL2) cùng bộ não, máy nào cũng đẩy được, máy khác chỉ làm video; khoá phiên bản, kiem-tra-thiet-bi.sh so với Mac (20/11)
 - [Hồ sơ David + bộ lọc nội dung](co-so-tri-thuc-ho-so-va-bo-loc.md) — ba hướng nghề (13/11), trainer hai lĩnh vực + đội đối tác công nghệ (17/11), hệ 135 + từ trường số lên hướng trainer (20/11), mô hình kinh doanh, khối 00 phân hướng + bán được gì, kenh.json, sổ danh mục
 
 ## Video
 
 - [Bỏ app dựng video](video-bo-ung-dung.md) — Công cụ dựng: dựng thẳng trong phiên Claude bằng Remotion theo skill; bỏ app localhost:8765 (tốn token), không cài HyperFrames / Motion Studio, chỉ học ý (06/11, 10/11; gộp 15/11)
-- [Bố cục tự cân](video-bo-cuc-tu-can.md) — bỏ số cố định; graphic tránh mọi người, bám người đang nói; khung gốc `thiet-ke-bo-cuc/` (07/11, 08/11)
+- [Bố cục tự cân](video-bo-cuc-tu-can-bang.md) — bỏ số cố định; graphic tránh mọi người, bám người đang nói; khung gốc `thiet-ke-bo-cuc/` (07/11, 08/11)
 - [Bộ nhận diện chung](video-nhan-dien-chung.md) — Mọi loại video cùng một bộ nhận diện; video dọc ngắn bỏ thanh và thẻ cuối; chữ nhấn kiểu nhãn dán đặc màu ở ngực, không chạm mặt, không nền đen mờ (08/11, 10/11, 13/11; gộp 15/11)
 - [Chỉ hình của chính video](video-chi-hinh-cua-chinh-video.md) — Ảnh bìa, thumbnail chỉ lấy từ chính video đó; bìa podcast chỉ tiếng thì không mặt người, khớp nội dung (05/11, 06/11; gộp 15/11)
 - [Ảnh minh hoạ chỉ Việt Nam](video-anh-viet-nam.md) — nhiều ảnh thật hơn, chỉ chụp tại Việt Nam, người Việt; không có thì biểu tượng vẽ (13/11)
@@ -48,7 +48,7 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 - [Chuyển video qua Drive](video-chuyen-qua-drive.md) — ~/Movies xếp theo tập; Drive covandieuhanh chỉ giữ bộ não, video gốc, thành quả video; Mac chỉ giữ việc đang làm + bản cuối chưa đăng ở ~/Movies/cho-dang (07/11, 11/11, 20/11)
 - [Clip ngắn đứng độc lập](video-clip-ngan-dung-doc-lap.md) — bốn câu bối cảnh, ý trọn, mang về, chừa lại; không số cố định (06/11, 07/11)
 - [Video dài không cắt](video-dai-khong-cat.md) — để nguyên cả lặng và ờ ừm; cắt chỉ khi trích video ngắn (05/11)
-- [Mẫu podcast dọc đồ hoạ](video-doc-khuon-chu-chinh.md) — chữ chính thay phụ đề, không màn hình cuối; 3 clip Đi trainer là mẫu (06/11, sửa 10/11)
+- [Mẫu podcast dọc đồ hoạ](video-doc-mau-chu-chinh.md) — chữ chính thay phụ đề, không màn hình cuối; 3 clip Đi trainer là mẫu (06/11, sửa 10/11)
 - [Tự chọn theo nội dung](video-tu-chon-theo-noi-dung.md) — mọi lựa chọn (mẫu, bố cục, kiểu cảnh, thẩm mỹ, nhạc) tự setup theo nội dung nguồn, không chép tập trước; máy chặn render khi chưa chẩn đoán (11/11, 19/11)
 - [Làm một mạch, góp ý thì render lại](video-gop-y-render-lai.md) — bỏ cổng 1, cổng 2; góp ý thì sửa + render lại toàn bộ luôn; đăng chờ "đăng" (13/11)
 - [Kiến trúc skill video](video-kien-truc-ky-nang.md) — Kiến trúc bộ skill video (hồ sơ tham số, 20 khối, thư viện hình, mẫu chuẩn; sửa đúng một chỗ) và bộ 5 video chuẩn 06/11 (04/11, 06/11; gộp 15/11)

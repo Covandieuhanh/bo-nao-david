@@ -2,10 +2,10 @@
 """NÂNG KHUNG (người dùng chốt): nhân vật/vật chính nằm thấp (nửa dưới khung dọc) → đẩy hình lên để người nằm trong vùng an toàn,
 không bị phụ đề/thanh nút nền tảng che. Đáy hở lấp bằng chính hình đó làm mờ.
 
-  nang-lop.py <dự án ghép>            → chuyen-dong/src/nang-lop.js  {idĐoạn: {y, s}} + kiem-tra/khuon-mat/lift.md   (chế độ ghép; chuong-trinh.jsx tự đọc)
-  nang-lop.py <dự án 1 video> apply   → nung vào tu-lieu/video-goc.mp4 (giữ bản trước là video-goc-truoc-nang.mp4)
+  nang-khung.py <dự án ghép>            → chuyen-dong/src/nang-lop.js  {idĐoạn: {y, s}} + kiem-tra/khuon-mat/lift.md   (chế độ ghép; chuong-trinh.jsx tự đọc)
+  nang-khung.py <dự án 1 video> apply   → nung vào tu-lieu/video-goc.mp4 (giữ bản trước là video-goc-truoc-nang.mp4)
                                      + kiem-tra/khuon-mat/lift.md; chạy sau 3a/3b, TRƯỚC 3c và vi-tri-khuon-mat.sh
-  nang-lop.py <dự án 1 video>         → chỉ in kế hoạch (không nung)
+  nang-khung.py <dự án 1 video>         → chỉ in kế hoạch (không nung)
 
 Luật tính (khung 1080×1920): tâm mặt nên ở ~800 px, cằm không xuống quá 1240 (trên dải phụ đề 1280), đỉnh đầu không lên quá 230.
   y = max(tâm − 800, cằm − 1240), làm tròn 10 px, < 80 px thì bỏ; tối đa 400 px. Cần hơn 400 → phóng thêm s (≤ 1,25×, gốc
@@ -93,7 +93,7 @@ def montage():
             out[s['id']] = {'y': y, **({'s': sc} if sc > 1 else {})}
         rows.append((s['id'], f'{y}' + (f' · ×{sc}' if sc > 1 else ''), note))
     (P / 'chuyen-dong/src/nang-lop.js').write_text(
-        '// Nâng khung từng đoạn {idĐoạn: {y: px đẩy lên, s: phóng}} — tự sinh bởi scripts/nang-lop.py; đặt tay: `lift` trong danh-sach-cat.js\n'
+        '// Nâng khung từng đoạn {idĐoạn: {y: px đẩy lên, s: phóng}} — tự sinh bởi scripts/nang-khung.py; đặt tay: `lift` trong danh-sach-cat.js\n'
         f'export default {json.dumps(out, ensure_ascii=False)};\n')
     report(rows)
 

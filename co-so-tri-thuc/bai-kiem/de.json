@@ -214,5 +214,14 @@
    "B": "Làm như tài nguyên mới, giữ cả hai bản song song.",
    "C": "Từ chối vì đã làm rồi."
   }
+ },
+ {
+  "id": "c25",
+  "tinh_huong": "Xong một việc, Claude thấy một cách làm nhanh và chuẩn hơn cách đang ghi trong quy trình (ví dụ chép lời theo từng phân đoạn ngay từ đầu thay vì chép cả file rồi sửa).",
+  "lua_chon": {
+   "A": "Đề xuất sửa vào đúng nguồn duy nhất của quy trình đó (lá hoặc skill) kèm lý do và trường hợp thật, ghi một dòng nhật ký thay đổi; không để người sau lặp lại chỗ vấp.",
+   "B": "Ghi nhớ trong đầu để lần sau tự làm theo cách mới.",
+   "C": "Giữ nguyên quy trình vì đã được duyệt."
+  }
  }
 ]

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""CHẨN ĐOÁN VIDEO (thiet-ke-bo-cuc/tu-chon.md, David chốt 11/11/2026): chan-doan.py <dự án>
+"""CHẨN ĐOÁN VIDEO (thiet-ke-bo-cuc/huong-dan-lua-chon.md, David chốt 11/11/2026): chan-doan.py <dự án>
 Đo những gì công cụ đo được để Claude tự chọn bố cục nền, lớp thông tin, kiểu cảnh — không hỏi David.
-→ kiem-tra/chan-doan.md (số đo + gợi ý theo tu-chon.md) + kiem-tra/chan-doan.jpg (6 khung gốc để Claude xem: mặt, chủ thể, rác).
+→ kiem-tra/chan-doan.md (số đo + gợi ý theo huong-dan-lua-chon.md) + kiem-tra/chan-doan.jpg (6 khung gốc để Claude xem: mặt, chủ thể, rác).
 Lời lấy từ chuyen-dong/src/phu-de.js, không có thì kiem-tra/goc/ban-chep-loi.srt / moc-tung-tu.srt."""
 import glob, json, os, re, subprocess, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -47,7 +47,7 @@ so = [a for a, _, x in cap if SO.search(x)]
 hoi = [a for a, _, x in cap if "?" in x]
 fmt = lambda s: f"{int(s // 60)}:{s % 60:04.1f}"
 
-# 2. Gợi ý theo tu-chon.md bước 3 (bước 2 cần mắt Claude trên chan-doan.jpg)
+# 2. Gợi ý theo huong-dan-lua-chon.md bước 3 (bước 2 cần mắt Claude trên chan-doan.jpg)
 day = D >= 180 and (mat_do >= 140 or len(lk) + len(so) >= 6)
 goi_y = []
 if day: goi_y.append(f"DÀY THÔNG TIN ({mat_do:.0f} chữ/phút, {len(lk)} chỗ liệt kê/bước, {len(so)} câu có con số) → bảng ghi chú chạy `GHI_CHU`")
@@ -58,8 +58,8 @@ if len(ss) >= 3: goi_y.append(f"{len(ss)} câu so sánh / đổi ý → illus vs
 if len(nq) >= 6: goi_y.append(f"{len(nq)} câu nhân quả / điều kiện → illus flow, diagram chuyen-giao (mốc: {', '.join(fmt(x) for x in nq[:8])})")
 if not goi_y: goi_y.append("ít ý, nhịp kể → người + phụ đề + điểm nhấn `nhan`, vài cảnh minh hoạ ở ý chính")
 if GHEP: goi_y.append("khuôn ghép có sẵn: illus (single/flow/vs/count/list) · diagram (tang, vong, moc, cot, luoi, tu-thanh, chuyen-giao) · "
-                      "chips · callout · action · pointer · pow — dùng theo bảng tu-chon.md bước 4, không chỉ pow")
-# Tín hiệu thẩm mỹ (tu-chon.md bước 2b) — công cụ đo, Claude chọn
+                      "chips · callout · action · pointer · pow — dùng theo bảng huong-dan-lua-chon.md bước 4, không chỉ pow")
+# Tín hiệu thẩm mỹ (huong-dan-lua-chon.md bước 2b) — công cụ đo, Claude chọn
 tone = ("lắng, cảm xúc" if len(cx) >= 3 and mat_do < 150 else "kiến thức, nhịp đều" if day or len(lk) + len(so) >= 4 else "kể chuyện / trò chuyện")
 tham_my = [f"giọng: {tone} ({len(cx)} câu cảm xúc, {mat_do:.0f} chữ/phút, {len(hoi)} câu hỏi)",
            f"khung {'dọc' if H > W else 'ngang'}, dài {fmt(D)} → {'mỗi lúc một điểm nhìn, chữ to' if H > W else 'có chỗ cho người + ý cùng lúc'}"]
@@ -79,9 +79,9 @@ if src and D:
 
 out = [f"# Chẩn đoán — {os.path.basename(os.path.dirname(P)) or P}",
        f"Khung {W}×{H} · dài {fmt(D)} · lời {words} chữ, {mat_do:.0f} chữ/phút · có lời {noi / D * 100 if D else 0:.0f} % thời lượng · {len(hoi)} câu hỏi",
-       "", "## Gợi ý lớp thông tin (tu-chon.md bước 3)", *[f"- {g}" for g in goi_y],
-       "", "## Tín hiệu thẩm mỹ (tu-chon.md bước 2b)", *[f"- {g}" for g in tham_my],
-       "", "## Claude xem kiem-tra/chan-doan.jpg rồi ghi (tu-chon.md bước 1–2)",
+       "", "## Gợi ý lớp thông tin (huong-dan-lua-chon.md bước 3)", *[f"- {g}" for g in goi_y],
+       "", "## Tín hiệu thẩm mỹ (huong-dan-lua-chon.md bước 2b)", *[f"- {g}" for g in tham_my],
+       "", "## Claude xem kiem-tra/chan-doan.jpg rồi ghi (huong-dan-lua-chon.md bước 1–2)",
        "1. Mặt người nói: rõ / nhỏ / không thấy · 2. Chủ thể: … · 3. Rác quanh chủ thể: có / không · 4. Máy quay: đứng yên / dịch",
        "→ bố cục nền: giữ khung gốc / khung chủ thể (khung-chu-the.py) / pillar …",
        "Thẩm mỹ: nền … · kiểu hình … · chuyển cảnh … · nhạc … vì …  (bắt buộc, soat-canh báo nếu thiếu)",

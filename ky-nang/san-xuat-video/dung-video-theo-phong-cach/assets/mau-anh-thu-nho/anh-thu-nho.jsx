@@ -10,7 +10,7 @@ import {AbsoluteFill, Img, continueRender, delayRender, staticFile} from 'remoti
 import '@fontsource/barlow-condensed/vietnamese-800.css';
 import '@fontsource/barlow-condensed/800.css';
 import {HinhPodcast} from './hinh-podcast';   // ảnh bìa podcast không mặt (khối 14)
-import BRAND from './thuong-hieu.json';   // anh-thu-nho.sh chép từ khuon-remotion (một nguồn)
+import BRAND from './thuong-hieu.json';   // anh-thu-nho.sh chép từ mau-remotion (một nguồn)
 
 const C = {bg: '#0D0D10', text: '#F4F4F5', accent: '#FF7A45'};
 const HEAD = '"Barlow Condensed", sans-serif';

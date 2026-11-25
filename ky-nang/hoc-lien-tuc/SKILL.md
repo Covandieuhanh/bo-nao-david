@@ -77,7 +77,7 @@ Thước đo nào chưa có dữ liệu (chưa đủ video có số liệu, dự
 1. **Mốc + đo trước** *(bước nhẹ)*: `bash tu-dong-hoa/dong-bo.sh --push`, `git tag nang-cap-<n>-truoc`, ghi bảng thước đo "trước" vào file theo dõi.
 2. **Chưng cất:** đọc phiếu tuần, sổ quyết định, ghi nhớ từ lần nâng cấp trước. Nhóm các luật lẻ **cùng một gốc** (cùng cái khó của
    người xem, cùng lý do) thành **một nguyên lý + 1–3 trường hợp mẫu** ở nguồn chung; luật lẻ trở thành ví dụ của nguyên lý (cách tầng
-   `nguoi-xem-can-gi.md` + `giai-mau.md` đã làm). Giữ đúng nghĩa luật David đã chốt; không thêm luật mới.
+   `nhu-cau-nguoi-xem.md` + `truong-hop-da-giai.md` đã làm). Giữ đúng nghĩa luật David đã chốt; không thêm luật mới.
 3. **Cắt giảm:** luật, kiểu cảnh, skill không được dùng từ lần trước (`dem-ky-nang.py`, kiểu không xuất hiện trong `ke-hoach-canh.md` các dự án)
    hoặc số liệu cho thấy không giúp thì đề xuất gộp, bỏ hoặc cất `luu-tru/`. Không tự bỏ.
 4. **Dọn:** skill `tai-cau-truc` (bảng luật hiện hành, mỗi luật một nguồn duy nhất, ngày về sổ, dọn ghi nhớ).

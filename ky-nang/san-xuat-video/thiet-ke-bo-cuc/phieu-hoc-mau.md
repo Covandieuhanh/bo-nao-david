@@ -11,7 +11,7 @@ description: "Mẫu phiếu học video mẫu: Claude điền, David duyệt tr�
 - Đoạn đã xem kỹ: <mốc>
 
 ## 2a. Vì sao mẫu này dễ hiểu (nguyên lý)
-| # | Nguyên lý (tên ở `nguoi-xem-can-gi.md`) | Cái khó của người xem nó giải | Thấy ở mốc | Nâng cấp thành phần đang có nào |
+| # | Nguyên lý (tên ở `nhu-cau-nguoi-xem.md`) | Cái khó của người xem nó giải | Thấy ở mốc | Nâng cấp thành phần đang có nào |
 |---|---|---|---|---|
 
 ## 2. Học được gì (chỉ phần trình bày)

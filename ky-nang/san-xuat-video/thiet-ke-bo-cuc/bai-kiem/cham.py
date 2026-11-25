@@ -45,7 +45,7 @@ def main():
         dat += ok
         print(f"{'✓' if ok else '✗'} {d['id']} · {d['loai']}" + ('' if ok else '\n   ' + '\n   '.join(lido)))
     n = len(DE['doan'])
-    print(f'\nĐạt {dat}/{n} → ' + ('MÁY NÀY LẬP LUẬN ĐƯỢC' if dat >= DE.get('dat', 8) else 'CHƯA ĐẠT — đọc lại nguoi-xem-can-gi.md + giai-mau.md, gửi đoạn ✗ cho David chấm'))
+    print(f'\nĐạt {dat}/{n} → ' + ('MÁY NÀY LẬP LUẬN ĐƯỢC' if dat >= DE.get('dat', 8) else 'CHƯA ĐẠT — đọc lại nhu-cau-nguoi-xem.md + truong-hop-da-giai.md, gửi đoạn ✗ cho David chấm'))
     sys.exit(0 if dat >= DE.get('dat', 8) else 1)
 
 if __name__ == '__main__':

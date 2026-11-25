@@ -29,7 +29,7 @@ Mới nhất ở trên. Mỗi mục: ngày · mục nhỏ · câu hỏi · số 
 
 ## 20/11/2026 — 2.1 mở đầu, chia đoạn, minh hoạ (giải mẫu)
 - 8 hình mẫu có số liệu (Ali Abdaal, Jeff Su, The Diary Of A CEO, Nguyễn Hữu Trí, Huy Luong, Nhật Anh AI, Giang Ơi, Khánh Vy), 19 trường hợp giải.
-- Áp dụng: `thiet-ke-bo-cuc/giai-mau.md`, `tu-chon.md`. Cùng ngày học Cường Mê AI (nguyên lý minh hoạ tinh gọn).
+- Áp dụng: `thiet-ke-bo-cuc/truong-hop-da-giai.md`, `huong-dan-lua-chon.md`. Cùng ngày học Cường Mê AI (nguyên lý minh hoạ tinh gọn).
 
 ## 03–06/11/2026 — 2.2–2.5 các loại video (80 video Việt + quốc tế)
 - 20 video nói trước camera, 20 vlog, 20 podcast, 20 highlight Việt; 10 Shorts quốc tế lượt xem cao (03/11); Hieu Nguyen 50 video.

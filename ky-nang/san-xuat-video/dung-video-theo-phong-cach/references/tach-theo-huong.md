@@ -18,7 +18,7 @@ bước 0–1; bước 3 trở đi (cắt, dựng, phát hành) chỉ làm sau k
 
 ### 1. Làm sạch + chép lời buổi gốc một lần
 Công thức "Làm video" bước 1–6 của `SKILL.md` cho cả buổi (một dự án `tap-<buổi>`): làm sạch theo khối 02 (video dài giữ nguyên lời,
-`quy-tac-chung.md` mục 2), chép lời **theo từng phân đoạn ngắn** (`scripts/chep-theo-khuc.py`) rồi soát chữ ra `chuyen-dong/src/phu-de.js` TRƯỚC khi cắt (làm sau phải render lại). Các video tách ra dùng lại đúng phụ đề này, không chép lời lại.
+`quy-tac-chung.md` mục 2), chép lời **theo từng phân đoạn ngắn** (`scripts/chep-theo-phan-doan.py`) rồi soát chữ ra `chuyen-dong/src/phu-de.js` TRƯỚC khi cắt (làm sau phải render lại). Các video tách ra dùng lại đúng phụ đề này, không chép lời lại.
 
 ### 2. Phân hướng theo khối 00 mục 0b (bắt buộc)
 Chia đoạn, gán hướng, ghép trọn ý, ghi `<thư mục tập>/phan-huong.md` + nhật ký nội dung từng hướng (`du-an/nhat-ky-noi-dung/`), đối chiếu
@@ -42,7 +42,7 @@ Mỗi video ra `~/Movies/tap-<tên>/2-ban-day-du` có sẵn video gốc đã n�
 
 ### 4. Dựng từng video (như "Làm video", từ bước chẩn đoán)
 - `canh.js`: viết mốc theo **video gốc** (đối chiếu phụ đề gốc dễ), bọc bằng `g(giây)`; cảnh tự vẽ dùng `ve(id, đầu, cuối, {…})`.
-- Chẩn đoán + mở kho hình mẫu chọn cách cho từng ý (`thiet-ke-bo-cuc/tu-chon.md` bước 4d), ghi `Nguồn kho:`; các video cùng buổi được
+- Chẩn đoán + mở kho hình mẫu chọn cách cho từng ý (`thiet-ke-bo-cuc/huong-dan-lua-chon.md` bước 4d), ghi `Nguồn kho:`; các video cùng buổi được
   phép chung một kiểu hình (máy soát nhắc P1 "giống tập trước" thì bỏ qua được).
 - `node $SKILL/scripts/soat-canh.mjs <dự án>`, rồi `bash $SKILL/scripts/anh-kiem-canh.sh <dự án>` (lưới ảnh mỗi cảnh trên khung thật),
   soát bằng mắt: không che ai, chữ đọc được.

@@ -69,7 +69,7 @@ description: "Sổ thay đổi skill cắt đoạn nổi bật: quyết định 
   ý cho bản đầy đủ** + chấm điểm câu mở (bất ngờ/kết quả lớn > câu hỏi day dứt > nỗi đau > lời than). Không thêm nhãn "BẢN ĐẦY ĐỦ".
 - **Nhịp game show, MỘT skill hai tông** (`soi` sôi động / `lang` lắng; đổi tông giữa chừng được — "1 video có thể vừa có lúc
   truyền tải thông tin tích cực, vừa có tâm sự"). Video mẫu "Ngày nhận xe" chỉ là mẫu về nhịp, giữ mọi luật cũ; không cần tên vòng.
-  Highlight người nói chuyển sang khung ghép clip của dung-video-theo-phong-cach (`khuon-dung-ghep`: thêm `HL` thanh tập gốc, đoạn `jump`
+  Highlight người nói chuyển sang khung ghép clip của dung-video-theo-phong-cach (`mau-dung-ghep`: thêm `HL` thanh tập gốc, đoạn `jump`
   có chip tua, `TONE`, `MUSIC.tracks`) — script `danh-sach-cat-doan-noi-bat.py` viết sẵn danh-sach-cat.js từ phuong-an.json. Podcast: `ap-dung-doan-noi-bat.py` ghi tông +
   nhạc vào doan-noi-bat.js, `xem-truoc-ban-dung.py` trộn nhạc (sidechain hạ khi có lời), `tua.jsx` có kiểu lắng.
 - **Nhạc nền cố định vài bài** (`assets/nhac/soi-*.mp3`, `lang-*.mp3`) — người dùng không muốn nhiều lựa chọn làm loạn bản sắc
@@ -100,7 +100,7 @@ description: "Sổ thay đổi skill cắt đoạn nổi bật: quyết định 
 ## 2026-11-04 — NGƯỜI XEM LÀ TRUNG TÂM (David: "các kênh lớn là hình mẫu thành công đã đạt được điều này rồi thì sao chép luôn")
 Sau bản đánh giá đối chiếu với kênh lớn (thể loại nói trước camera, highlight, vlog, podcast), David duyệt kế hoạch 5 pha:
 - `quy-tac-chung.md` (thư mục san-xuat-video) — một nguồn luật chung; SKILL.md chỉ giữ luật riêng. `so-lieu-mau.md` — vòng số liệu sau 7 ngày.
-- **Phát hành** mọi video: 3 tiêu đề + 2 thumbnail 1280×720 (`scripts/anh-thu-nho.sh`, `assets/khuon-anh-thu-nho/` — mặt có cảm xúc, tối đa 4
+- **Phát hành** mọi video: 3 tiêu đề + 2 thumbnail 1280×720 (`scripts/anh-thu-nho.sh`, `assets/mau-anh-thu-nho/` — mặt có cảm xúc, tối đa 4
   chữ, nhận diện David; nguồn quay dọc tự thành khung một bên). Video ngắn không ghép bìa trước video.
 - **Phụ đề video ngắn** 1–3 chữ to mỗi nhịp ngang ngực (`kieu-phu-de.js` `ShortLine`, chuẩn Hormozi/DOAC) — thay quyết định cũ "giữ
   phụ đề đáy" (bỏ đề xuất K ngày 03/11) vì David đổi kim chỉ nam. Video dài / vlog / podcast giữ hộp tối.

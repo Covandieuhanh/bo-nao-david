@@ -1,7 +1,7 @@
 #!/bin/zsh
 # MÁY NÀY DỰNG RA GIỐNG MAC CHÍNH CHƯA? — chạy sau cai-cong-cu-video.sh, và mỗi khi đổi phiên bản công cụ.
-#   zsh kiem-may.sh                  so công cụ với phien-ban.env + dựng thử bộ thử máy, so với bản chuẩn của Mac
-#   zsh kiem-may.sh --tao-chuan <video> [giây bắt đầu]   (CHỈ MAC CHÍNH) cắt 20 s, dựng bằng Mac, lưu làm bản chuẩn
+#   zsh kiem-tra-thiet-bi.sh                  so công cụ với phien-ban.env + dựng thử bộ thử máy, so với bản chuẩn của Mac
+#   zsh kiem-tra-thiet-bi.sh --tao-chuan <video> [giây bắt đầu]   (CHỈ MAC CHÍNH) cắt 20 s, dựng bằng Mac, lưu làm bản chuẩn
 # Bộ thử máy nằm trên Drive: tu-lieu-goc/_bo-thu-may/ (video gốc không lên GitHub). Chỉ định chỗ khác: BO_THU=<thư mục>.
 # Dựng thử bằng đúng script của skill: tao-du-an.sh → phan-tich-video.sh (Whisper) → do-mat.sh → xem-truoc.mjs + xuat-video.mjs (Remotion).
 # Dự án thử ở ~/Movies/tap-thu-may-<giờ>, xong thì xoá. Kết quả: ĐẠT / LỆCH từng mục, mã thoát 0 = máy dùng được như Mac.

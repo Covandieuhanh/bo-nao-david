@@ -1,6 +1,6 @@
 // MÀN KẾT YOUTUBE 15–20 s (David chốt 2026-11-04, học 80 video Việt: 11/30 video dài có màn kết 2 video + nút đăng ký).
 // Chỉ vẽ NỀN + KHUNG CHỪA CHỖ cho phần tử màn kết mà David gắn trong YouTube Studio (2 video + đăng ký) — không chữ tự viết ngoài
-// tên kênh + chủ đề (bộ nhận diện). Tự cân theo khung ngang / dọc. Một nguồn: khuon-remotion; tao-dung-ghep.sh chép sang dự án ghép.
+// tên kênh + chủ đề (bộ nhận diện). Tự cân theo khung ngang / dọc. Một nguồn: mau-remotion; tao-dung-ghep.sh chép sang dự án ghép.
 // Vị trí ô theo lưới màn kết của YouTube (phần tử video 16:9 ~ 1/3 bề ngang; nút đăng ký tròn).
 import React from 'react';
 import {AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig} from 'remotion';

@@ -29,7 +29,7 @@ Mỗi bài: **Mục tiêu · Nội dung · Thực hành · Bài tập · Xong kh
 ## Bài 2 · Bốn file gốc và cuộc phỏng vấn
 - **Mục tiêu:** có bốn file gốc đúng về chính mình.
 - **Nội dung:** vai trò từng file gốc: cửa vào (AI đọc gì trước, bảng mọi file), hồ sơ (tôi là ai), luật làm việc (AI phải theo gì), trạng thái (việc đang dở). Dòng mô tả đầu file. Để AI phỏng vấn thay vì tự viết: AI hỏi từng vòng, mình trả lời thật, AI viết, mình sửa.
-- **Thực hành:** tạo bốn file từ mẫu (biểu mẫu 00 thao tác 3, biểu mẫu 01); tải bốn file và biểu mẫu 01 (tên `01-khuon-file-goc.md`, để luôn trong Projects) lên Projects; chạy câu lệnh 1 (AI viết hồ sơ, luật, trạng thái và điền tên vào file cửa vào); đưa 5 điều hay phải nhắc vào luật 4 tới 8; thay file đã sửa (biểu mẫu 00 thao tác 4).
+- **Thực hành:** tạo bốn file từ mẫu (biểu mẫu 00 thao tác 3, biểu mẫu 01); tải bốn file và biểu mẫu 01 (tên `01-mau-file-goc.md`, để luôn trong Projects) lên Projects; chạy câu lệnh 1 (AI viết hồ sơ, luật, trạng thái và điền tên vào file cửa vào); đưa 5 điều hay phải nhắc vào luật 4 tới 8; thay file đã sửa (biểu mẫu 00 thao tác 4).
 - **Bài tập:** mở cuộc trò chuyện mới trong Projects, hỏi "tóm 3 dòng về tôi"; sửa file ở chỗ AI tóm sai.
 - **Xong khi:** AI tóm đúng 3 dòng mà không cần giải thích thêm.
 

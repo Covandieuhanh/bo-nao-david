@@ -1,5 +1,5 @@
 ---
-name: video-bo-cuc-tu-can
+name: video-bo-cuc-tu-can-bang
 description: "Bố cục video tự cân theo nội dung, không con số cố định; graphic tránh mọi người, khung cắt bám người đang nói; khung gốc học mọi loại video ở ky-nang/san-xuat-video/thiet-ke-bo-cuc (2026-11-07, 08/11)"
 metadata:
   type: feedback
@@ -22,7 +22,7 @@ Vẫn giữ: chuẩn âm lượng ([[video-nhac-theo-tuyen]]), không che mặt 
 
 **How to apply:** học video mẫu theo [[quy-tac-hoc-la-bo-sung]]. Khung gốc ở `ky-nang/san-xuat-video/thiet-ke-bo-cuc/`. `README.md` có tiêu
 chí và quy trình học, `bo-cuc.md` là danh mục bố cục, `am-thanh.md` là chỗ đặt tiếng, `nguon-tham-khao/` ghi mỗi nguồn một file. Code bố cục
-nằm ở `bo-cuc.jsx`; người trong khung và người đang nói do `vi-tri-nhan.py` ghi vào `mat.js`, chỗ trống tính ở `ky-nang/san-xuat-video/dung-video-theo-phong-cach/assets/khuon-remotion/src/thu-vien/cho.js` (type
+nằm ở `bo-cuc.jsx`; người trong khung và người đang nói do `vi-tri-nhan.py` ghi vào `mat.js`, chỗ trống tính ở `ky-nang/san-xuat-video/dung-video-theo-phong-cach/assets/mau-remotion/src/thu-vien/cho.js` (type
 `bocuc`: `the-canh`, `o-nguoi`, `chuong`). Học nguồn mới thì chỉ thêm mục mới. Liên quan [[video-bo-ung-dung]],
 [[video-do-hoa-ke-chuyen]], [[video-kien-truc-ky-nang]].
 

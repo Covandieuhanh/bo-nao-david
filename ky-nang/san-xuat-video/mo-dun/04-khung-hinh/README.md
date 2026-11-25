@@ -15,7 +15,7 @@ description: "Khối 04 khung hình: đổi khung ngang ↔ dọc, bám người
 - `dung-video-theo-phong-cach/scripts/ke-hoach-doi-khung.py`
 - `dung-video-theo-phong-cach/scripts/dat-dau-ra.py`
 - `dung-video-theo-phong-cach/scripts/nen-cot.py`
-- `dung-video-theo-phong-cach/scripts/nang-lop.py`
+- `dung-video-theo-phong-cach/scripts/nang-khung.py`
 - `dung-video-theo-phong-cach/scripts/nhan-dien-khuon-mat.swift`
 
 ## Cách làm
@@ -48,8 +48,8 @@ Thêm `SIDES` vào canh.js ở bước 5.
 
 **Nâng khung** — khung dọc 1080×1920 (gốc dọc, hoặc sau ngang thì dọc), luôn chạy:
 ```bash
-python3 -I $SKILL/scripts/nang-lop.py "$P"           # chỉ in kế hoạch → kiem-tra/khuon-mat/lift.md (mức nâng theo từng cửa sổ 4 s)
-python3 -I $SKILL/scripts/nang-lop.py "$P" apply     # nung vào video-goc.mp4 (bản trước giữ là video-goc-truoc-nang.mp4)
+python3 -I $SKILL/scripts/nang-khung.py "$P"           # chỉ in kế hoạch → kiem-tra/khuon-mat/lift.md (mức nâng theo từng cửa sổ 4 s)
+python3 -I $SKILL/scripts/nang-khung.py "$P" apply     # nung vào video-goc.mp4 (bản trước giữ là video-goc-truoc-nang.mp4)
 ```
 Mặt nằm thấp (tâm > khoảng 900 px hoặc cằm lọt vào dải phụ đề) thì đẩy hình lên theo bậc 100 px, tối đa 400, đổi mức trượt 0,6 s; đáy
 hở là chính hình đó làm mờ. Toàn bảng 0 thì "không cần nâng", bỏ qua. Xem 1–2 khung sau khi nung (mặt không chạm đỉnh vùng an

@@ -11,7 +11,7 @@ description: "Khối 06 mở đầu 0–3 giây: câu chạm, thẻ tít nguyên
 **Sửa khối này thì chạy lại:** 05, 17
 
 **File thật (code, một bản duy nhất):**
-- `dung-video-theo-phong-cach/assets/khuon-remotion/src/thanh-phan/lop-phu.jsx (Hook)`
+- `dung-video-theo-phong-cach/assets/mau-remotion/src/thanh-phan/lop-phu.jsx (Hook)`
 - `dung-video-theo-phong-cach/scripts/doan-gioi-thieu.py`
 - `dung-video-theo-phong-cach/scripts/danh-sach-cat-vlog.py (intro)`
 

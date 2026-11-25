@@ -12,5 +12,5 @@ if [[ $OSTYPE == darwin* ]]; then
   exec $BIN "$@"
 fi
 PY=~/.cache/dung-video-theo-phong-cach/mat-venv/bin/python
-[ -x $PY ] || { echo "⛔ Thiếu môi trường dò mặt — chạy: bash ~/Documents/bo-nao-david/tu-dong-hoa/may-khac/cai-cong-cu-video.sh"; exit 1; }
+[ -x $PY ] || { echo "⛔ Thiếu môi trường dò mặt — chạy: bash ~/Documents/bo-nao-david/tu-dong-hoa/thiet-bi-khac/cai-cong-cu-video.sh"; exit 1; }
 exec $PY "$SC/nhan-dien-khuon-mat.py" "$@" 2> >(grep -vE "^(W0000|I0000|INFO:)|absl::InitializeLog|inference_feedback_manager" >&2)

@@ -11,8 +11,8 @@ description: "Khối 07 cảnh minh hoạ: bố cục tự cân, motion graphics
 **Sửa khối này thì chạy lại:** 05, 17
 
 **File thật (code, một bản duy nhất):**
-- `thu-vien-tai-nguyen/{chuyen-dong.js,chu-hien.jsx,mach.js,minh-hoa.jsx,so-do.jsx,bieu-tuong.jsx,giu.js}` · cảnh tự vẽ: `khuon-remotion/src/rieng/` (mẫu `mau-mach.jsx`)
-- `dung-video-theo-phong-cach/assets/khuon-remotion/src/thanh-phan/{CardFull,FullScreen,Action,BoCuc,Nhan}.jsx`
+- `thu-vien-tai-nguyen/{chuyen-dong.js,chu-hien.jsx,mach.js,minh-hoa.jsx,so-do.jsx,bieu-tuong.jsx,giu.js}` · cảnh tự vẽ: `mau-remotion/src/rieng/` (mẫu `mau-mach.jsx`)
+- `dung-video-theo-phong-cach/assets/mau-remotion/src/thanh-phan/{CardFull,FullScreen,Action,BoCuc,Nhan}.jsx`
 - `dung-video-theo-phong-cach/scripts/kho-anh-openverse.py`
 - `dung-video-theo-phong-cach/references/thiet-ke-canh.md` (bảng loại cảnh + props)
 
@@ -52,7 +52,7 @@ Viết **trước** bảng cảnh, vì cảm xúc chọn kiểu cảnh chứ kh�
 - Mỗi cảnh trong bảng cảnh ghi thêm cột "cảm xúc", lấy từ đường này.
 
 ## 3. Bố cục tự cân
-**Trước hết tự chọn theo `../../thiet-ke-bo-cuc/tu-chon.md`** (chẩn đoán → bố cục nền, lớp thông tin như bảng ghi chú chạy `GHI_CHU`,
+**Trước hết tự chọn theo `../../thiet-ke-bo-cuc/huong-dan-lua-chon.md`** (chẩn đoán → bố cục nền, lớp thông tin như bảng ghi chú chạy `GHI_CHU`,
 kiểu cảnh theo dạng câu nói — đi hết kho, không dừng ở vài kiểu quen). Không con số bắt buộc. Mỗi đoạn chọn bố cục từ **`../../thiet-ke-bo-cuc/bo-cuc.md`** theo 4 câu hỏi ở `../../thiet-ke-bo-cuc/README.md` mục 2
 (cần thấy người hay thấy ý · ý dài hay ngắn · khung còn chỗ không · trước / sau là gì). Ngang tự do; dọc mỗi lúc ít thứ. Ghi lý do
 một dòng mỗi cảnh vào `ke-hoach-canh.md`. Bố cục mới học được thì thêm vào `thiet-ke-bo-cuc/` + `bo-cuc.jsx`, giữ chữ ký nhận diện.
@@ -116,7 +116,7 @@ Khi câu nói có CẤU TRÚC, vẽ chính cấu trúc đó (mọi chữ trích 
 | quy trình 3–6 bước kể liền một mạch ("đầu tiên… rồi… cuối cùng") | `chuoi` (items `{at, label 1–3 chữ, icon?}`; bước đang nói sáng, bước cũ mờ) | "câu lệnh … viết code … chụp khung … ghép video" |
 | việc đi từ người này sang người kia | `chuyen-giao` (items[0] bên giao, giữa = các việc `{icon, label, at}`, cuối = bên nhận) | "báo cáo tuần … xếp lịch … giao lại cho đội" |
 | người / nơi / tổ chức có thật | `anh` (ảnh giấy phép mở hoặc ảnh David gửi, khung bo góc + nhãn + nguồn) | "CCL", "Hưng Yên", "Bác Hồ" |
-`tang`, `cot` thêm `mot_diem: true` khi các mục được nói lần lượt: chỉ mục đang nói sáng (nguyên lý Báo hiệu, `thiet-ke-bo-cuc/tu-chon.md` bước 4b).
+`tang`, `cot` thêm `mot_diem: true` khi các mục được nói lần lượt: chỉ mục đang nói sáng (nguyên lý Báo hiệu, `thiet-ke-bo-cuc/huong-dan-lua-chon.md` bước 4b).
 Ảnh (chỉ ảnh Việt Nam, `quy-tac-chung.md` mục 4): `kho-anh-openverse.py search/fetch` (CC0 / PD / CC BY / CC BY-SA, dùng thương mại) thì chép vào `chuyen-dong/public/anh/`, ghi `credit` trên ảnh +
 `nguon-anh.txt` cho mô tả. Không có ảnh đúng (logo thương hiệu, ảnh mơ hồ) thì dùng sơ đồ, không ép ảnh. Podcast dài: ưu tiên `diagram`
 hơn `illus`. Vlog (`ke-hoach.json` fx): `{"type": "diagram", "c", "at", "len", "mode", "label", "items": [{"at": giây clip, …}]}`.

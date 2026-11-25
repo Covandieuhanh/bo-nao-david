@@ -197,7 +197,7 @@ export const SUBS = [
 // Video ngắn: phụ đề cụm 5–8 chữ, cỡ bằng chữ thẻ (kieu-phu-de.js ShortLine, David chốt 2026-11-08)
 export const SHORT = true;
 
-// ===== Lớp đồ hoạ — Claude chọn theo kiem-tra/goi-y-kieu.md + thiet-ke-bo-cuc/tu-chon.md bước 4 (illus, diagram, chips, callout, action, pow…;
+// ===== Lớp đồ hoạ — Claude chọn theo kiem-tra/goi-y-kieu.md + thiet-ke-bo-cuc/huong-dan-lua-chon.md bước 4 (illus, diagram, chips, callout, action, pow…;
 // pow KHÔNG phải mặc định). Chữ CHỈ lấy nguyên văn từ lời nói =====
 export const OVERLAYS = [
   {{type: 'hud', start: 0, end: TOTAL - 4, name: {json.dumps((opt.get('topic') or plan.get('topic') or ec.get('title') or '').upper(), ensure_ascii=False)}}},   // dấu kênh ● DAVID │ chủ đề (nhận diện chung)

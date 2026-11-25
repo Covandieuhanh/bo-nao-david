@@ -112,7 +112,7 @@ Phân xử theo `chuan-muc-lam-viec.md` mục 0: lời David > ngày chốt gầ
 | B10 | Sửa phụ đề từng dòng: chính tả, câu mất/bịa đặt, ngắt dòng | khối 03 | khối 03 | 04/11 | sống |
 | B11 | Lớp phủ thu 78 %, đặt tránh mặt; cảnh toàn màn hình chừa khoảng 140 px đáy | khối 03 → chuyển khối 05 | khối 03, scene-design | 04/11 | sống (đổi nhà cho đúng việc) |
 | B12 | Bảng tự sửa chữ `chu-tren-man.mjs` | khối 03 | khối 03 | 06/11 | sống |
-| B13 | Đổi khung ngang↔dọc, nâng khung (`nang-lop.py`), khung xuất mặc định; ngang là thiết kế toàn khung (podcast) | khối 04 | khối 04, dung-video-theo-phong-cach | 04/11 | sống |
+| B13 | Đổi khung ngang↔dọc, nâng khung (`nang-khung.py`), khung xuất mặc định; ngang là thiết kế toàn khung (podcast) | khối 04 | khối 04, dung-video-theo-phong-cach | 04/11 | sống |
 | B14 | Tít ghim che đầu → tự ẩn; `place` / `keep`; lệnh face_place / overlay_guard; `nhan`/`bocuc` qua `vi-tri-nhan.py` + `cho.js` | khối 05 | khối 05, khối 07, quy-tac-chung §4 | 04–08/11 | sống |
 | B15 | Không thẻ tít mở đầu mặc định (làm video, podcast); chỉ khi David yêu cầu, nguyên văn | khối 06 | khối 06, quy-tac-chung §1, 3 SKILL | 07/11 | sống |
 | B16 | "Cảnh đầu tiên luôn là hook" (rút ý cả video) | — | khối 07 dòng 112, scene-design, khối 12 | 04/11 | **cũ** (07/11, thắng theo ngày) |

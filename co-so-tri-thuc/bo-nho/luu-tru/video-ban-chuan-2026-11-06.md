@@ -20,4 +20,4 @@ Các dự án cũ (vlog, highlight Haruku, podcast năng lực, Miếu Bà Cam, 
 
 **Why:** David muốn máy chỉ giữ bản mới nhất. Máy còn dưới 5 GB trống trước khi dọn.
 
-**How to apply:** Bộ mẫu `mau-chuan/mau.json` nay chỉ có 5 video này, nên không còn kiểm tra tự động cho loại có người nói và ghép vlog. Khi có video mới loại đó được duyệt thì thêm lại. Liên quan [[video-doc-khuon-chu-chinh]], [[video-dai-khong-cat]].
+**How to apply:** Bộ mẫu `mau-chuan/mau.json` nay chỉ có 5 video này, nên không còn kiểm tra tự động cho loại có người nói và ghép vlog. Khi có video mới loại đó được duyệt thì thêm lại. Liên quan [[video-doc-mau-chu-chinh]], [[video-dai-khong-cat]].

@@ -15,15 +15,15 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
   Ngoài chữ ký là sáng tạo tự do theo nội dung; học được gì từ mẫu cũng dùng được, và học chỉ thêm vào kho, không thay cái đã có
   (`thiet-ke-bo-cuc/README.md` mục 4).
 - **Mọi lựa chọn tự setup theo nội dung nguồn**, để phát huy tối đa sức mạnh của AI: mẫu, bố cục, lớp thông tin, kiểu cảnh, thẩm mỹ,
-  nhạc, khung đều do người dựng (AI nào cũng vậy) lập luận từ chính tài nguyên (`thiet-ke-bo-cuc/nguoi-xem-can-gi.md` → `tu-chon.md`), không chép từ tập trước, không chờ
+  nhạc, khung đều do người dựng (AI nào cũng vậy) lập luận từ chính tài nguyên (`thiet-ke-bo-cuc/nhu-cau-nguoi-xem.md` → `huong-dan-lua-chon.md`), không chép từ tập trước, không chờ
   David chỉ. Máy chặn render khi chưa chẩn đoán (`soat-canh.mjs`).
 - **Tận dụng tối đa kho đã học, tự do.** Mọi hiệu ứng, motion graphic, chuyển cảnh (kể cả 3D) đã học hoặc tự viết đều dùng được ở
   mọi video, không chờ nội dung "đúng loại" — nội dung kênh chủ yếu là cung cấp thông tin và trò chuyện, chờ thì không bao giờ dùng.
   Đa dạng nghĩa là **đổi hiệu ứng qua các cảnh** để gây ấn tượng, không phải chồng nhiều thứ trong một khung: mỗi lúc một điểm nhìn,
   gọn gàng, rối thì bớt. Không có kiểu nào bắt buộc phải dùng hay cấm dùng, trừ việc che nội dung chính (mục 4).
   Mỗi lần chọn hình phải mở **kho hình mẫu** (8 kênh hình mẫu + các phiếu học motion graphics) làm thực đơn và chọn cách hợp ý nhất,
-  ghi nguồn từng cảnh (`thiet-ke-bo-cuc/tu-chon.md` bước 4d) — học mà không mở ra dùng là phí.
-  Ý nào cần hình và mỗi hình phải đạt gì: `thiet-ke-bo-cuc/tu-chon.md` bước 4a–4b (nguyên lý: `nguoi-xem-can-gi.md`).
+  ghi nguồn từng cảnh (`thiet-ke-bo-cuc/huong-dan-lua-chon.md` bước 4d) — học mà không mở ra dùng là phí.
+  Ý nào cần hình và mỗi hình phải đạt gì: `thiet-ke-bo-cuc/huong-dan-lua-chon.md` bước 4a–4b (nguyên lý: `nhu-cau-nguoi-xem.md`).
 
 ## 1. Nội dung
 - **Không bịa đặt.** Phụ đề, chữ to, thẻ, màn hành động, màn chốt = **trích / bỏ bớt lời người nói**, không diễn đạt lại. Tên riêng, con
@@ -78,7 +78,7 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
   và chuyển cảnh qua các cảnh, gọn (mục 0). Cách chọn: khối 07.
 - **Bố cục tự cân** theo thước đo ở `thiet-ke-bo-cuc/README.md` mục 2, chọn từ `thiet-ke-bo-cuc/bo-cuc.md`.
 - **Tự chọn trước kế hoạch cảnh** (cả 3 skill dựng): yêu cầu người dùng → chẩn đoán → loại nội dung → bố cục nền, lớp thông tin → mỗi cảnh
-  "Cần · Vì · Làm" theo `thiet-ke-bo-cuc/nguoi-xem-can-gi.md` + `tu-chon.md` (`chan-doan.py`); ghi vào `ke-hoach-canh.md`.
+  "Cần · Vì · Làm" theo `thiet-ke-bo-cuc/nhu-cau-nguoi-xem.md` + `huong-dan-lua-chon.md` (`chan-doan.py`); ghi vào `ke-hoach-canh.md`.
 - **Không che nội dung chính, không đè phụ đề** — điều duy nhất phải giữ, còn motion graphic tuỳ biến tự do. Nội dung chính là
   **người đang nói / những người đang trao đổi** và **thứ đang được nói tới** (màn hình sản phẩm, vật, tài liệu). Hình đặt vào chỗ trống
   thật của khung (trần, cửa kính, tường, khoảng trên đầu — nhìn ảnh đầu / giữa / cuối cảnh). Cảnh toàn khung, nền làm mờ chỉ ở đoạn không

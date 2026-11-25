@@ -3,7 +3,7 @@
 #   zsh chup-anh-mau.sh [lọc]     — lọc: chỉ chụp kiểu có id chứa chữ này (vd. dung-hay). Thêm kiểu mới: thêm một dòng ở canh-mau.mjs.
 # Cần: node + npm, ffmpeg, python3 có Pillow (pip install pillow). Chạy được trên Mac, Linux, Windows qua WSL2.
 set -e
-HERE=${0:A:h}; OUT=${HERE:h}; KHUON=${HERE:h:h:h}/dung-video-theo-phong-cach/assets/khuon-remotion
+HERE=${0:A:h}; OUT=${HERE:h}; KHUON=${HERE:h:h:h}/dung-video-theo-phong-cach/assets/mau-remotion
 T=$(mktemp -d); trap 'rm -rf "$T"' EXIT
 python3 "$HERE/nguoi-gia.py" "$T"
 node "$HERE/canh-mau.mjs" > "$T/canh.js"

@@ -11,4 +11,4 @@ Mọi đầu ra video dùng một chuẩn âm lượng, lấy từ 3 clip "Đi t
 
 **Why:** David nghe video dài nhỏ nhạc hơn 3 clip vì mỗi loại video dùng một mức riêng.
 
-**How to apply:** Mức nằm ở `ho-so-thuong-hieu/chung.json` mục `nhac`, cách làm ở khối 09, `chuan-am.py` tự chạy khi xuất. Không đặt mức riêng theo loại video. Thay luật "rất nhỏ khi nói" trong [[video-nhac-theo-tuyen]]. Liên quan [[video-doc-khuon-chu-chinh]].
+**How to apply:** Mức nằm ở `ho-so-thuong-hieu/chung.json` mục `nhac`, cách làm ở khối 09, `chuan-am.py` tự chạy khi xuất. Không đặt mức riêng theo loại video. Thay luật "rất nhỏ khi nói" trong [[video-nhac-theo-tuyen]]. Liên quan [[video-doc-mau-chu-chinh]].

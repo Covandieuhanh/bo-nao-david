@@ -25,5 +25,5 @@ Nguồn của luật: `ky-nang/chuan-muc-lam-viec.md` (đầu file). App đã b�
 - Gộp ghi nhớ `video-luon-co-motion-graphics` vào đây ở tái bản 2 (10/11/2026).
 
 **How to apply:** khối 07 (motion kể chuyện) và `quy-tac-chung.md` (mọi video đều có điểm nhấn). Cảnh tự vẽ `type: 've'`, code riêng ở
-`chuyen-dong/src/rieng/`, mạch hình `ky-nang/san-xuat-video/dung-video-theo-phong-cach/assets/khuon-remotion/src/thu-vien/mach.js`, chuyển động `ky-nang/san-xuat-video/dung-video-theo-phong-cach/assets/khuon-remotion/src/thu-vien/chuyen-dong.js`. Vẫn giữ: chữ nguyên văn ([[video-chu-nguyen-van]]),
-không che mặt ([[video-bo-cuc-tu-can]]), đã vào là đứng yên. Podcast chỉ có tiếng: [[video-podcast-phu-hinh-30]].
+`chuyen-dong/src/rieng/`, mạch hình `ky-nang/san-xuat-video/dung-video-theo-phong-cach/assets/mau-remotion/src/thu-vien/mach.js`, chuyển động `ky-nang/san-xuat-video/dung-video-theo-phong-cach/assets/mau-remotion/src/thu-vien/chuyen-dong.js`. Vẫn giữ: chữ nguyên văn ([[video-chu-nguyen-van]]),
+không che mặt ([[video-bo-cuc-tu-can-bang]]), đã vào là đứng yên. Podcast chỉ có tiếng: [[video-podcast-phu-hinh-30]].

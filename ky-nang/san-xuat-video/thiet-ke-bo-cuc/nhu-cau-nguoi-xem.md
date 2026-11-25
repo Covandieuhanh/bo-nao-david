@@ -5,7 +5,7 @@ description: "Cửa vào tư duy dựng video: loại nội dung cả video → 
 # Người xem cần gì — tư duy dựng video
 
 File này dạy **cách nghĩ**, không phải danh sách món. Bất kỳ AI nào (Claude, Codex, Gemini…) ở máy nào, chỉ cần đọc file này rồi
-`tu-chon.md` là dựng được video hợp nội dung. Kho kiểu (`bo-cuc.md`, khối 07) chỉ là **các cách thể hiện có sẵn**; không có cách
+`huong-dan-lua-chon.md` là dựng được video hợp nội dung. Kho kiểu (`bo-cuc.md`, khối 07) chỉ là **các cách thể hiện có sẵn**; không có cách
 nào khớp thì tự sáng tạo theo nguyên lý (cảnh tự vẽ `ve`).
 
 ## 0. Thứ tự suy nghĩ (luôn đi đủ, ghi lại thành chữ)
@@ -15,7 +15,7 @@ nào khớp thì tự sáng tạo theo nguyên lý (cảnh tự vẽ `ve`).
 2. **Từng đoạn: nếu chỉ nghe, người xem có gặp khó không? Khó gì?** Không khó thì để người nói + phụ đề, không dựng gì (nguyên lý
    Tinh gọn). Khó thì gọi tên cái khó (không biết đang ở đâu, không hình dung được, không so được, quên ý trước, không tin…).
 3. **Cái khó đó do nguyên lý nào giải?** (mục 2, 3) — một đoạn thường chỉ cần một nguyên lý chính.
-4. **Cách thể hiện:** chọn trong kho cách đúng nguyên lý nhất (`tu-chon.md` bước 4); không có thì tự vẽ. Rồi đọc dòng
+4. **Cách thể hiện:** chọn trong kho cách đúng nguyên lý nhất (`huong-dan-lua-chon.md` bước 4); không có thì tự vẽ. Rồi đọc dòng
    **"phản tác dụng khi"** của nguyên lý để tự kiểm.
 5. **Ghi lại** vào `ke-hoach-canh.md` (mục 4). Máy soát (`soat-canh.mjs`) chặn khi thiếu.
 
@@ -125,7 +125,7 @@ Mayer đo việc **hiểu**. Video trên mạng còn phải được **xem tới
 
 ## 4. Ghi gì vào `ke-hoach-canh.md`
 
-Trong mục `## Chẩn đoán` (cùng các dòng của `tu-chon.md`):
+Trong mục `## Chẩn đoán` (cùng các dòng của `huong-dan-lua-chon.md`):
 ```
 Loại: day-ky-nang vì <dấu hiệu thấy ở lời / hình> · cần chính: hiểu + nhớ
 ```
@@ -146,5 +146,5 @@ nhưng ghi vào dòng `Vì:` nguyên lý nào bị bỏ và vì sao. Chỉ luậ
 
 Học nguồn mới theo `README.md` mục 4; điều học được ghi vào dòng "Đã học" (hoặc cột "Nguồn") của đúng nguyên lý ở đây.
 
-**Học qua trường hợp thực tế:** [giai-mau.md](giai-mau.md) — 19 khoảnh khắc từ 8 hình mẫu thành công cùng thể loại, mỗi trường hợp đủ Cần · Vì · Làm.
+**Học qua trường hợp thực tế:** [truong-hop-da-giai.md](truong-hop-da-giai.md) — 19 khoảnh khắc từ 8 hình mẫu thành công cùng thể loại, mỗi trường hợp đủ Cần · Vì · Làm.
 **Tự kiểm:** [bai-kiem/](bai-kiem/README.md) — 10 đoạn, AI làm rồi chấm bằng `cham.py`, đạt ít nhất 8/10.

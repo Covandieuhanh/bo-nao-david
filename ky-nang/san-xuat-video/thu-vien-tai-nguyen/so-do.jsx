@@ -14,7 +14,7 @@
 //   'chuoi'   CHUỖI BƯỚC (học Cường Mê AI, 20/11/2026): quy trình 3–6 bước kể liền một mạch. Bước hiện đúng lúc nói, dây nối từ bước
 //             trước chạy tới (chấm sáng ở đầu dây chỉ hướng), bước đang nói viền cam, bước đã qua mờ. Dọc: cột trên → dưới · ngang: hàng
 //             trái → phải (lồng trong bố cục thì luôn cột dọc). items: [{at, label (1–3 chữ nguyên văn), icon?}]
-// mot_diem: true (tang, cot) — chỉ mục đang nói sáng cam, mục khác nhạt (nguyên lý "một chỗ sáng", tu-chon.md bước 4a). Mặc định tắt.
+// mot_diem: true (tang, cot) — chỉ mục đang nói sáng cam, mục khác nhạt (nguyên lý "một chỗ sáng", huong-dan-lua-chon.md bước 4a). Mặc định tắt.
 //   'anh'     ảnh thật trong khung bo góc: {photo: 'x.jpg' (chuyen-dong/public/anh/), label, sub?, credit: 'Tác giả · CC BY-SA', ratio?: 3/4, pos?: '50% 30%'}
 //             — chỉ ảnh giấy phép mở dùng thương mại (Wikimedia/Openverse) hoặc ảnh David gửi; ghi nguồn vào mô tả (nguon-anh.txt)
 // Vùng vẽ như Illus: dọc 10–56% chiều cao · ngang 12–80% (chừa phụ đề + thanh thời gian).

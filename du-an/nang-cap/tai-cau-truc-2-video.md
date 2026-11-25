@@ -42,9 +42,9 @@ Bộ `nao` (`ky-nang/chuan-muc-lam-viec.md`):
 Ghi nhớ (`co-so-tri-thuc/bo-nho/`, phiên ghi-nho):
 3. `video-luon-co-motion-graphics`: "mỗi video trộn nhiều loại điểm nhấn" + "nới luật 2 trạng thái" — ngược quy-tac-chung §4 / §0 "chỉ vài kiểu hợp nội dung" (David "Đồng ý cả 5", câu 1, lần 1). Sửa ghi nhớ theo bản luật.
 4. `video-motion-ke-chuyen`: "chỉ giữ cái lớn: nền, màu chủ đạo, biểu tượng cùng một kiểu vẽ" — lệch `nhan-dien-chung.md` mục 0 (chữ ký = thành phần cố định + cam + hai font; nền, kiểu hình tự do). Sửa theo nhan-dien-chung.
-5. `video-bo-cuc-tu-can` điểm 1 "không chép màu, font hay kiểu chuyển động của họ" — đã bị `video-tham-my-chi-giu-nhan-dien` thay; câu cũ vẫn còn, chỉ có dòng "Sửa 10/11" chồng lên. Viết lại điểm 1.
+5. `video-bo-cuc-tu-can-bang` điểm 1 "không chép màu, font hay kiểu chuyển động của họ" — đã bị `video-tham-my-chi-giu-nhan-dien` thay; câu cũ vẫn còn, chỉ có dòng "Sửa 10/11" chồng lên. Viết lại điểm 1.
 6. `video-chu-nguyen-van`: "không làm thẻ tít mở đầu mặc định" thiếu phần highlight (thẻ tít = cụm nguyên văn đắt nhất, khối 06 + cat-highlight luật 7). Thêm vế highlight.
-7. `video-doc-khuon-chu-chinh` đoạn đầu còn "màn hình cuối 3 giây mời xem bản đầy đủ" dù ngay dưới ghi đã bỏ. Viết lại đoạn đầu.
+7. `video-doc-mau-chu-chinh` đoạn đầu còn "màn hình cuối 3 giây mời xem bản đầy đủ" dù ngay dưới ghi đã bỏ. Viết lại đoạn đầu.
 8. `video-kien-truc-skill`: "kiem-mau.py (4 dự án mẫu)" — `mau.json` hiện 5. Sửa số hoặc bỏ số.
 9. `video-chi-hinh-cua-chinh-video`: "Đã ghi vào quy-tac-chung 7 + khối 14" — quy-tac-chung không có, nhà là khối 14.
 10. `video-podcast-phu-hinh-30`: "Thay luật 'ít mà sâu'…" và `video-nhac-theo-tuyen` "sửa 08/11, thay câu cũ…", `video-chuan-am-luong` "Thay luật…" — lời kể lịch sử trong ghi nhớ; khớp bản luật, chỉ cần gọn.

@@ -14,7 +14,7 @@ Giữ nguyên: lời David, nhạc kênh, chữ ký nhận diện ([[video-tham-
 **Why:**
 - 05/11/2026, sau phân tích 50 video Hieu Nguyen, David bác "khuôn thu âm": "cách nói của tôi là tự do và có cảm xúc… bạn nắm vai trò thẩm mỹ, nội dung tôi tự xây dựng".
 - 04/11/2026 David: "các kênh lớn là hình mẫu thành công… thì sao chép luôn". Bản 08/11 bỏ câu "sao chép luôn" (rà soát N9) vì David
-  đã chốt thêm: nội dung là của David, bố cục tự cân ([[video-bo-cuc-tu-can]]), học là bổ sung ([[quy-tac-hoc-la-bo-sung]]).
+  đã chốt thêm: nội dung là của David, bố cục tự cân ([[video-bo-cuc-tu-can-bang]]), học là bổ sung ([[quy-tac-hoc-la-bo-sung]]).
 - 10/11/2026 thẩm mỹ chỉ giữ chữ ký nhận diện, còn lại học và sáng tạo tự do.
 - Gộp ghi nhớ `video-nguoi-xem-trung-tam` vào đây ở tái bản 2 (10/11/2026).
 

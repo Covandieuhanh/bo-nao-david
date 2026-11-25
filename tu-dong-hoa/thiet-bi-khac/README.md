@@ -10,7 +10,7 @@ description: "Máy khác dựng video giống Mac chính (Windows qua WSL2, Mac 
 |---|---|
 | [phien-ban.env](phien-ban.env) | Phiên bản khoá của từng công cụ (đo trên Mac chính). Đổi bản chỉ làm ở Mac chính |
 | [cai-cong-cu-video.sh](cai-cong-cu-video.sh) | Cài đúng các bản đó: Mac (brew), Windows qua WSL2 / Linux (apt + bản dựng sẵn) |
-| [kiem-may.sh](kiem-may.sh) | So công cụ với bản khoá, dựng thử 20 s bằng đúng script của skill, so với bản chuẩn Mac → ĐẠT / LỆCH |
+| [kiem-tra-thiet-bi.sh](kiem-tra-thiet-bi.sh) | So công cụ với bản khoá, dựng thử 20 s bằng đúng script của skill, so với bản chuẩn Mac → ĐẠT / LỆCH |
 | [so-sanh.py](so-sanh.py) | Thước so: chữ chép lời, khung mặt, khung hình (SSIM) |
 
 Cách cài từng máy: [huong-dan-cai-dat.md](../../huong-dan-cai-dat.md) mục 2 (Mac) và 3 (Windows).
@@ -33,13 +33,13 @@ Cách cài từng máy: [huong-dan-cai-dat.md](../../huong-dan-cai-dat.md) mục
 | Ubuntu 24.04 x86 như máy Windows (giả lập trên Mac) | Cài từ đầu không lỗi, có MediaPipe; dò mặt 89%. Whisper và Remotion chậm hoặc sập do giả lập chip, không phải do skill; máy Windows thật không chạy giả lập |
 | Máy Windows thật (Windows 11, WSL2 Ubuntu 24.04, card NVIDIA RTX 5060), 20/11/2026 | Cài từ đầu không lỗi; **"MÁY NÀY DỰNG GIỐNG MAC CHÍNH"**: chép lời 100% (87/87 chữ), mặt 89% (độ trùng 0,79), khung hình SSIM 0,9957–0,9998. Whisper dựng kèm CUDA: chép 20 s mất 5 s (CPU 35 s) |
 
-Máy mới: lần đầu cài, chạy `kiem-may.sh` để xác nhận.
+Máy mới: lần đầu cài, chạy `kiem-tra-thiet-bi.sh` để xác nhận.
 
 **Card NVIDIA trên Windows (WSL2):** `cai-cong-cu-video.sh` chỉ dựng whisper kèm CUDA khi có `nvcc`. Card đời mới (RTX 50) cần CUDA ít nhất 12.8; gói `nvidia-cuda-toolkit` của Ubuntu là 12.0 nên không dùng được. Cài 3 gói từ kho NVIDIA `wsl-ubuntu` (bản đầy đủ `cuda-toolkit` tải rất chậm): `sudo apt-get install -y --no-install-recommends cuda-nvcc-12-9 cuda-cudart-dev-12-9 libcublas-dev-12-9`, thêm `/usr/local/cuda-12.9/bin` vào PATH, xoá `~/.local/bin/whisper-cli` rồi chạy lại `cai-cong-cu-video.sh` (RTX 50: `CUDAARCHS=120`).
 
 ## Việc của Mac chính
 
-- **Nâng công cụ** (Remotion, ffmpeg…): cài bản mới, dựng thử, sửa `phien-ban.env` / `package.json` + `package-lock.json` của mẫu. Sau đó tạo lại bản chuẩn: `zsh tu-dong-hoa/may-khac/kiem-may.sh --tao-chuan <video người nói rõ mặt> <giây bắt đầu>`, rồi đẩy GitHub. Máy khác chạy lại `cai-cong-cu-video.sh` + `kiem-may.sh`.
+- **Nâng công cụ** (Remotion, ffmpeg…): cài bản mới, dựng thử, sửa `phien-ban.env` / `package.json` + `package-lock.json` của mẫu. Sau đó tạo lại bản chuẩn: `zsh tu-dong-hoa/thiet-bi-khac/kiem-tra-thiet-bi.sh --tao-chuan <video người nói rõ mặt> <giây bắt đầu>`, rồi đẩy GitHub. Máy khác chạy lại `cai-cong-cu-video.sh` + `kiem-tra-thiet-bi.sh`.
 - **Đo lại hệ số dò mặt** khi đổi cách dò: `~/.cache/dung-video-theo-phong-cach/mat-venv/bin/python ky-nang/san-xuat-video/dung-video-theo-phong-cach/scripts/do-he-so-mat.py <video> …`
 - Bộ thử máy (đoạn 20 s + bản chuẩn) nằm trên Drive `tu-lieu-goc/_bo-thu-may/`, không lên GitHub (video gốc).
 

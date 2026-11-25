@@ -11,7 +11,7 @@ Bộ skill video (`ky-nang/san-xuat-video`, lối tắt `~/.claude/skills/san-xu
 Lịch sử đổi giá trị hồ sơ tham số (ngày, cũ thành mới, lý do) ở `ky-nang/san-xuat-video/ho-so-thuong-hieu/nhat-ky-thay-doi.md`, không ghi trong file hồ sơ.
 
 **Why:** David sửa skill rất nhiều lần, mỗi lần phải cập nhật lại toàn bộ; đang còn tìm phong cách nên thay đổi là bình thường.
-**How to apply:** đổi con số thì sửa `ho-so`; đổi cách làm thì sửa đúng một khối / `thu-vien-tai-nguyen`; sau mỗi sửa chạy `kiem-mau.py`; không ghi cứng tham số vào code/SKILL. Bố cục tự cân, không còn luật 2 trạng thái ([[video-bo-cuc-tu-can]], 07/11). Thói quen chung mọi skill: `ky-nang/chuan-muc-lam-viec.md`. Liên quan [[quy-tac-noi-dung-cua-david]].
+**How to apply:** đổi con số thì sửa `ho-so`; đổi cách làm thì sửa đúng một khối / `thu-vien-tai-nguyen`; sau mỗi sửa chạy `kiem-mau.py`; không ghi cứng tham số vào code/SKILL. Bố cục tự cân, không còn luật 2 trạng thái ([[video-bo-cuc-tu-can-bang]], 07/11). Thói quen chung mọi skill: `ky-nang/chuan-muc-lam-viec.md`. Liên quan [[quy-tac-noi-dung-cua-david]].
 
 Nguồn của luật: `ky-nang/san-xuat-video/tong-quan.md`. Ghi nhớ này giữ ngày, lời David, lý do.
 
@@ -27,4 +27,4 @@ Các dự án cũ (vlog, highlight Haruku, podcast năng lực, Miếu Bà Cam, 
 
 **Why:** David muốn máy chỉ giữ bản mới nhất. Máy còn dưới 5 GB trống trước khi dọn.
 
-**How to apply:** Bộ mẫu `ky-nang/san-xuat-video/mau-chuan/mau.json` nay chỉ có 5 video này, nên không còn kiểm tra tự động cho loại có người nói và ghép vlog. Khi có video mới loại đó được duyệt thì thêm lại. Liên quan [[video-doc-khuon-chu-chinh]], [[video-dai-khong-cat]].
+**How to apply:** Bộ mẫu `ky-nang/san-xuat-video/mau-chuan/mau.json` nay chỉ có 5 video này, nên không còn kiểm tra tự động cho loại có người nói và ghép vlog. Khi có video mới loại đó được duyệt thì thêm lại. Liên quan [[video-doc-mau-chu-chinh]], [[video-dai-khong-cat]].

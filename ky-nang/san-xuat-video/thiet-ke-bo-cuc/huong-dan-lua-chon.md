@@ -4,7 +4,7 @@ description: "Tự chọn cách trình bày: yêu cầu người dùng → đo �
 
 # Tự chọn cách trình bày — lập luận từ nội dung rồi chọn trong kho
 
-**Đọc trước:** [nguoi-xem-can-gi.md](nguoi-xem-can-gi.md) (cách nghĩ: loại nội dung → cái khó → nguyên lý). File này là các bước làm
+**Đọc trước:** [nhu-cau-nguoi-xem.md](nhu-cau-nguoi-xem.md) (cách nghĩ: loại nội dung → cái khó → nguyên lý). File này là các bước làm
 và **kho cách thể hiện** xếp theo nguyên lý. Kho (`bo-cuc.md`, khối 07, `thu-vien-tai-nguyen/`) là thực đơn; người dựng (AI nào cũng
 được) tự chọn, không hỏi, ghi lý do vào `ke-hoach-canh.md` (mục **Chẩn đoán**) để David sửa ở bản cuối.
 
@@ -16,14 +16,14 @@ và **kho cách thể hiện** xếp theo nguyên lý. Kho (`bo-cuc.md`, khối 
 - **Không chép kịch bản, kiểu trình bày của tập trước** làm điểm xuất phát. Mỗi tài nguyên đi lại từ đầu. Chép được phần kỹ thuật
   (mẫu, hàm, chữ ký nhận diện), không chép lựa chọn (kiểu cảnh, nền, nhịp, nhạc).
 - Mọi thứ trong kho (bố cục, motion graphics, thẩm mỹ, chuyển cảnh, nhạc) là ứng viên cho mọi video; chọn bằng lập luận ở
-  `nguoi-xem-can-gi.md`, ghi lý do.
+  `nhu-cau-nguoi-xem.md`, ghi lý do.
 - **Máy chặn trước render** (`soat-canh.mjs`, chạy tự động trong `xuat-video.mjs` và `xuat-chuong-trinh.mjs`), chi tiết ở bước 5.
 - **Mẫu nào có gì** (mẫu thiếu kiểu thì video nghèo hình — chọn mẫu đúng trước):
 
 | Mẫu | Dùng cho | Có sẵn |
 |---|---|---|
-| **1 video** (`khuon-remotion`) | mọi video người nói — **kể cả nhiều file của cùng một buổi nói / cùng cảnh** (nối file trước), phỏng vấn · bản dài, bản theo hướng | đủ kho: `nhan`, `bocuc` (the-canh, canh-nguoi, o-nguoi, chuong, muc-luc, tien-trinh, dung-hay, tren-duoi, o-tron, cau-hoi), `GHI_CHU`, `CHAPTERS`, `illus`, `diagram`, `ve`, `phong` |
-| **ghép** (`khuon-dung-ghep`) | vlog nhiều cảnh khác nhau, sự kiện · clip ngắn highlight người nói | `illus`, `diagram`, `chips`, `callout`, `action`, `pointer`, `pow`, `nameCard`, `location`, `scene`; nền `phong: 'hat'` |
+| **1 video** (`mau-remotion`) | mọi video người nói — **kể cả nhiều file của cùng một buổi nói / cùng cảnh** (nối file trước), phỏng vấn · bản dài, bản theo hướng | đủ kho: `nhan`, `bocuc` (the-canh, canh-nguoi, o-nguoi, chuong, muc-luc, tien-trinh, dung-hay, tren-duoi, o-tron, cau-hoi), `GHI_CHU`, `CHAPTERS`, `illus`, `diagram`, `ve`, `phong` |
+| **ghép** (`mau-dung-ghep`) | vlog nhiều cảnh khác nhau, sự kiện · clip ngắn highlight người nói | `illus`, `diagram`, `chips`, `callout`, `action`, `pointer`, `pow`, `nameCard`, `location`, `scene`; nền `phong: 'hat'` |
 | **podcast** | chỉ có tiếng | sân khấu + kho cảnh của mẫu 1 video |
 
 ## Bước 0b — Yêu cầu của người dùng (`yeu-cau.md`, `them-anh/`)
@@ -33,7 +33,7 @@ Thư mục dự án có sẵn (tạo bởi `tao-du-an.sh`, `tao-dung-ghep.sh`):
 - **`them-anh/`** — ảnh bỏ vào: tên bắt đầu `mau-` = **ảnh mẫu** (kiểu muốn học theo); còn lại = **ảnh chèn** vào video.
 
 Cách làm:
-1. **Thứ tự ưu tiên:** luật cứng (`nguoi-xem-can-gi.md` mục 0) > yêu cầu người dùng > tự chọn. Yêu cầu trái luật cứng thì không làm, ghi lý do.
+1. **Thứ tự ưu tiên:** luật cứng (`nhu-cau-nguoi-xem.md` mục 0) > yêu cầu người dùng > tự chọn. Yêu cầu trái luật cứng thì không làm, ghi lý do.
 2. **Ảnh mẫu:** xem ảnh, gọi tên nó giải cái khó nào (nguyên lý), rồi chọn cách thể hiện gần nhất trong kho; không có thì tự vẽ (`ve`)
    và ghi `can-code.md`. Không chép màu, font của ảnh mẫu (chữ ký nhận diện giữ nguyên).
 3. **Ảnh chèn:** chép vào `chuyen-dong/public/anh/`, dùng qua `photo: '<tên>'` (`diagram anh`, `dung-hay`, `tren-duoi`, `o-tron`…) đúng lúc lời nhắc tới.
@@ -51,7 +51,7 @@ màn hình điện thoại / laptop, bảng, sản phẩm, cảnh); (3) quanh ch
 
 ## Bước 1b — Loại nội dung cả video
 
-Đọc bản chép lời + số đo thì chọn loại ở `nguoi-xem-can-gi.md` mục 1 (có thể pha hai loại). Loại quyết định người xem cần gì là chính,
+Đọc bản chép lời + số đo thì chọn loại ở `nhu-cau-nguoi-xem.md` mục 1 (có thể pha hai loại). Loại quyết định người xem cần gì là chính,
 mức dày hình, nhịp, nhạc cho bước 2b–4. Ghi `Loại: <tên> vì <dấu hiệu> · cần chính: <…>`.
 
 ## Bước 2 — Chọn bố cục nền (hình gốc thì nền)
@@ -59,8 +59,8 @@ mức dày hình, nhịp, nhạc cho bước 2b–4. Ghi `Loại: <tên> vì <d�
 | Dấu hiệu hình gốc | Bố cục nền | Cách làm |
 |---|---|---|
 | Người nói trước camera, người **chiếm phần lớn khung** (selfie dọc, cận mặt), hoặc kể chuyện / cảm xúc | **giữ khung gốc** | — |
-| **Video chia sẻ kiến thức, thông tin** (lời có lý do, liệt kê, khái niệm) mà người **chiếm < khoảng 50 % khung** (ngồi xa máy, hai bên là tường / phòng trống) | **khung chủ thể quanh người** + phần còn lại cho **bảng thông tin** (`GHI_CHU`) và cảnh, ảnh cạnh người | `khung-chu-the.py` (vùng = người, gồm tay khi múa tay) |
-| Chủ thể là **màn hình** (điện thoại, laptop, máy tính bảng), **vật**, **bảng** — chiếm < khoảng 60 % khung, hoặc quanh có rác | **khung chủ thể**: tách chủ thể thành khung bo góc trên nền kênh; phần còn lại cho bảng ghi chú, phụ đề, cảnh | `khung-chu-the.py luoi` → đọc toạ độ → `kiem-tra/khung.json` → `apply` (khối 04) |
+| **Video chia sẻ kiến thức, thông tin** (lời có lý do, liệt kê, khái niệm) mà người **chiếm < khoảng 50 % khung (ngưỡng riêng cho người)** (ngồi xa máy, hai bên là tường / phòng trống) | **khung chủ thể quanh người** + phần còn lại cho **bảng thông tin** (`GHI_CHU`) và cảnh, ảnh cạnh người | `khung-chu-the.py` (vùng = người, gồm tay khi múa tay) |
+| Chủ thể là **màn hình** (điện thoại, laptop, máy tính bảng), **vật**, **bảng** — chiếm < khoảng 60 % khung (ngưỡng riêng cho màn hình, vật, bảng; khác ngưỡng của người ở hàng trên), hoặc quanh có rác | **khung chủ thể**: tách chủ thể thành khung bo góc trên nền kênh; phần còn lại cho bảng ghi chú, phụ đề, cảnh | `khung-chu-the.py luoi` → đọc toạ độ → `kiem-tra/khung.json` → `apply` (khối 04) |
 | Người nhỏ trong khung rộng, nền rác, nhưng cần thấy người | khung chủ thể quanh người (ô dọc hoặc ngang) | như trên, vùng = người |
 | Gốc dọc, xuất ngang | pillar (`dat-dau-ra.py pillar`) + `SIDES` | khối 04 |
 | Gốc ngang, xuất dọc (chỉ khi David nói rõ) | reframe bám người nói | khối 04 |
@@ -107,7 +107,7 @@ một điểm nhấn. Hình phủ (toàn màn hình + bố cục) quá khoảng 
 (hình đúng cấu trúc câu, bảng dưới) · Tinh gọn (mỗi nút 1–3 chữ nguyên văn, máy báo khi > 4; nền yên).
 
 **4c. Kho cách thể hiện, xếp theo nguyên lý.** Gọi tên cái khó → tìm nguyên lý → đi hết các dòng của nguyên lý đó, không dừng ở 3–4 kiểu
-quen. Ghi mỗi cảnh một dòng `- <id> · Cần: <nguyên lý> · Vì: <cái khó> · Làm: <cách>` (`nguoi-xem-can-gi.md` mục 4).
+quen. Ghi mỗi cảnh một dòng `- <id> · Cần: <nguyên lý> · Vì: <cái khó> · Làm: <cách>` (`nhu-cau-nguoi-xem.md` mục 4).
 Cột "Nơi" ghi "toàn màn hình" chỉ dùng ở đoạn **không có nội dung chính cần thấy** (người đang nói, người đang trao đổi, thứ đang được nói tới). Còn nội dung chính trên hình thì cùng cấu trúc hình đó
 vẽ vào chỗ trống thật của khung bằng cảnh tự vẽ `ve` (vị trí `o`, mẫu `rieng/duong-may.jsx`: mạch "đường may" vẽ tiếp qua nhiều cảnh);
 khung nhiều người không dùng ô người (`quy-tac-chung.md` mục 4). Kho dùng tự do: đổi kiểu hình và chuyển cảnh qua các cảnh (kể cả kiểu chưa dùng ở tập trước), gọn — ghi ở Chẩn
@@ -116,7 +116,7 @@ khung nhiều người không dùng ô người (`quy-tac-chung.md` mục 4). Kh
 **4d. Kho hình mẫu là thực đơn, mở ra mỗi lần chọn hình** (22/11/2026 — David: *"tận dụng được tối đa toàn bộ các thẩm mỹ ở trong kho học,
 nhưng phải đưa vào cho phù hợp với nội dung, chứ không phải nhét thật nhiều … đơn giản và tinh gọn … gây ấn tượng cho người xem một cách
 nhẹ nhàng"*). Với mỗi ý đã qua 4a (cần hình), đọc lại các cách đã học và chọn cách **hợp ý đó nhất**:
-- `giai-mau.md` — 19 trường hợp của 8 kênh hình mẫu (mở đầu, chia đoạn, báo hiệu, lời kèm hình, tin, khi nào không dựng gì).
+- `truong-hop-da-giai.md` — 19 trường hợp của 8 kênh hình mẫu (mở đầu, chia đoạn, báo hiệu, lời kèm hình, tin, khi nào không dựng gì).
 - `nguon-tham-khao/` — Ali Abdaal và Joseph (14 cách), MagentX (A–G, có dấu hiệu nhận ra), Sang Huỳnh (8 bố cục, nhịp, âm thanh),
   Cường Mê AI (6 nguyên lý); `dung-podcast/references/hoc-tu-hieu-nguyen-50.md` cho podcast.
 - Mẫu khung nhiều người, chỗ trống thật (`rieng/duong-may.jsx`): chương lớn, gạch thay, chuỗi nút, thẻ lật, số mốc, câu then chốt, lời nhắc gửi
@@ -137,7 +137,7 @@ Cách đã học mà kho chưa có code thì viết thêm vào `rieng/` (mẫu d
 | Lời kèm hình | trong → ngoài | `diagram vong` | toàn màn hình |
 | Lời kèm hình | mốc thời gian | `diagram moc` | toàn màn hình |
 | Lời kèm hình | so độ lớn nhiều con số | `diagram cot` | toàn màn hình |
-| Lời kèm hình | phần trên tổng | `diagram luoi` | toàn màn hình |
+| Lời kèm hình | phần trên tổng, khi người xem cần thấy tỉ lệ (chỉ cần nhớ con số thì thẻ chữ, nguyên lý Báo hiệu, trường hợp 9 của `truong-hop-da-giai.md`) | `diagram luoi` | toàn màn hình |
 | Lời kèm hình | từ … thành … | `diagram tu-thanh` · `doi-trang-thai` | toàn màn hình |
 | Lời kèm hình | việc đi từ người này sang người kia | `diagram chuyen-giao` | toàn màn hình |
 | Chia đoạn | quy trình 3–6 bước kể liền một mạch ("đầu tiên… rồi… cuối cùng") | `diagram chuoi` (bước hiện theo lời, dây có chấm chạy, bước đang nói sáng) | toàn màn hình; dọc giải thích dài → `o-nguoi` `nguoi_duoi` + `chuoi` |
@@ -177,7 +177,7 @@ Gặp P0 thì sửa kế hoạch / đổi kiểu theo bước 4, không thử re
 ## Ghi vào ke-hoach-canh.md (thư mục dự án, cạnh `chuyen-dong/`)
 
 ```
-## Chẩn đoán (thiet-ke-bo-cuc/tu-chon.md)
+## Chẩn đoán (thiet-ke-bo-cuc/huong-dan-lua-chon.md)
 Yêu cầu: <tóm tắt yeu-cau.md + them-anh/ → làm ở đâu · bỏ gì vì sao> | không
 Khuôn: <1 video / ghép / podcast> vì <Y>
 Loại: <tên> vì <dấu hiệu> · cần chính: <hiểu / nhớ / tin / cảm>

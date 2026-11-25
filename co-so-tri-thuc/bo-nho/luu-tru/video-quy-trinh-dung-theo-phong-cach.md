@@ -36,7 +36,7 @@ Ghép nhiều clip (chốt 2026-11-02): clip chỉ có 2 loại — clip chính 
 Ô chữ highlight (2026-11-02): họ thử bản thay hết ô chữ bằng hình động và KHÔNG ưng — giữ thẻ/chữ to tóm ý; đừng đề xuất lại. Lớp phủ không bao giờ được chạm/đè phụ đề.
 Thẻ toàn cảnh (2026-11-02): mọi ô thẻ thành màn hình toàn cảnh có hình động + NGUYÊN VĂN đầy đủ câu nói (không tóm tắt), 4–8 s; chữ to/hook/tên vẫn trên video; mặt hiện khoảng 60%.
 Tối giản (2026-11-02): một màn = một ý, một hình, một câu; khoảng 1 hiệu ứng / 15–20 s; ẩn phụ đề khi thẻ toàn cảnh hiện câu nguyên văn; khung thẻ có quote chỉ giữ hình + nhãn.
-Phụ đề + nâng khung (2026-11-02): một kiểu phụ đề chung cho mọi chế độ (kieu-phu-de.js); nhân vật/vật chính tụt nửa dưới thì nâng khung (nang-lop.py), đáy lấp hình mờ.
+Phụ đề + nâng khung (2026-11-02): một kiểu phụ đề chung cho mọi chế độ (kieu-phu-de.js); nhân vật/vật chính tụt nửa dưới thì nâng khung (nang-khung.py), đáy lấp hình mờ.
 Mục tiêu video = người xem HIỂU rồi LÀM theo (2026-11-02): người dùng tên **David**. Câu hành động trong lời thì tự ra màn `action`; MỌI video kết bằng màn chốt `cta` khoảng 4 s; câu chốt KHÔNG cố định — Claude tự sáng tạo theo nội dung từng video (một hành động: bình luận/lưu/theo dõi/chia sẻ, giọng David, không bịa đặt) — ngoại lệ họ cho phép của luật "chỉ trích lời".
 
 Vị trí bộ skill (2026-11-03, David chọn): MỌI thứ ở `~/.claude/skills/san-xuat-video/` (dung-video-theo-phong-cach, dung-podcast, cat-doan-noi-bat + mẫu, nhạc, tiếng); `~/.claude/skills/<tên>` chỉ là lối tắt trỏ về đó. Sửa skill thì sửa trong san-xuat-video; đường dẫn chéo giữa các skill để tương đối (`${0:A:h:h:h}`), không ghi cứng.

@@ -26,7 +26,7 @@
 //             mà vẫn muốn thấy người; nhiều cảnh nối nhau vẽ tiếp một mạch (`buoc`, `tu_buoc` của lib/mach.js).
 //             props: noi_dung: {type: 'illus'|'diagram'|'ve', props} · bam? · toi? (false = không làm tối khoảng trống)
 //             Không khoảng nào đủ rộng → tự chuyển 'o-nguoi'.
-//  — thêm 20/11/2026 (học kênh MagentX; chỉ chọn khi có dấu hiệu ở thiet-ke-bo-cuc/tu-chon.md) —
+//  — thêm 20/11/2026 (học kênh MagentX; chỉ chọn khi có dấu hiệu ở thiet-ke-bo-cuc/huong-dan-lua-chon.md) —
 //  'dung-hay' CẶP ĐỪNG / HÃY LẶP KHUÔN: nhãn mục + hai ô ✗ (sai) / ✓ (đúng), cùng một chỗ cho mọi cặp — người xem học khuôn một
 //             lần, sau chỉ nhìn chỗ đổi. Dọc: ô trên đầu người nếu mặt đủ thấp, không thì người xuống nửa dưới (o-nguoi nguoi_duoi).
 //             Ngang: vào khoảng trống cạnh người, chật thì o-nguoi. props: cap: [{nhan?, at, dung: NGUON, hay: NGUON, at_hay?}]

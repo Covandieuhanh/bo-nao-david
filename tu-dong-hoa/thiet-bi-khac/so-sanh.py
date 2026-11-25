@@ -1,4 +1,4 @@
-"""So kết quả dựng thử của máy này với bản chuẩn Mac chính (kiem-may.sh gọi). Không cần thư viện ngoài.
+"""So kết quả dựng thử của máy này với bản chuẩn Mac chính (kiem-tra-thiet-bi.sh gọi). Không cần thư viện ngoài.
   python3 -I so-sanh.py loi <chuan.srt> <moi.srt>          → tỉ lệ chữ trùng (ĐẠT ≥ 0,90)
   python3 -I so-sanh.py mat <chuan.json> <moi.json>        → tỉ lệ mặt khớp + độ trùng khung trung vị (ĐẠT ≥ 0,80 và ≥ 0,70)
   python3 -I so-sanh.py hinh <chuan.png> <moi.png>         → SSIM qua ffmpeg (ĐẠT ≥ 0,98)

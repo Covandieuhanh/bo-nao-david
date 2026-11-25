@@ -6,7 +6,7 @@ description: "Quy trình lá B14: dựng intro thương hiệu DAVID TRẦN (khu
 
 **Khi nào dùng:** David muốn một đoạn intro riêng đặt đầu video dài (chèn được vào bất kỳ video nào), hoặc gửi thêm cảnh mới để thay.
 Bản hiện hành làm 23/11/2026 (việc #41, bản 7, 12,7 giây): `~/Movies/cho-dang/tap-intro-david-tran-2311/ban-dai/intro-david-tran.mp4`,
-Drive `thanh-pham/` cùng tên. Mẫu code: `assets/khuon-intro/`.
+Drive `thanh-pham/` cùng tên. Mẫu code: `assets/mau-intro/`.
 
 **Đầu vào:** album Google Photos / thư mục Drive (lá B2 tải về `~/Movies/tap-<tên>/1-goc/`) · chữ trên intro (mặc định chỉ tên
 **DAVID TRẦN**: chữ trên video chỉ lấy từ David).
@@ -63,9 +63,9 @@ Hình mẫu đã học và nhật ký: `co-so-tri-thuc/hinh-mau/1-hinh-tuong-ca-
    - Cắt: `ffmpeg -ss <đầu câu> -t <dài> -i <bài> -af "afade=t=in:d=0.06,afade=t=out:st=<cuối câu − đầu câu>:d=2" -ar 48000
      public/nhac-intro.wav`, `<dài>` = cuối câu − đầu câu + 2 giây.
    - Ghi câu ghi nguồn vào `ghi-nguon-nhac.txt` cạnh bản cuối; mọi video dùng intro phải ghi câu đó ở mô tả.
-4. **Cắt đoạn:** `bash assets/khuon-intro/cat-canh.sh <thư mục 1-goc> <danh-sach-canh.txt> <dự án>/public/canh` (màu điện ảnh chung nằm
+4. **Cắt đoạn:** `bash assets/mau-intro/cat-canh.sh <thư mục 1-goc> <danh-sach-canh.txt> <dự án>/public/canh` (màu điện ảnh chung nằm
    trong script).
-5. **Dự án dựng:** chép `assets/khuon-intro/` vào `~/Movies/tap-<tên>/3-du-an/`, `npm ci`, chép `hieu-ung-am-thanh/sting.wav` vào
+5. **Dự án dựng:** chép `assets/mau-intro/` vào `~/Movies/tap-<tên>/3-du-an/`, `npm ci`, chép `hieu-ung-am-thanh/sting.wav` vào
    `public/`. Đổi bài hay số cảnh thì sửa `TONG`, `TEN`, bảng `CANH` trong `src/Intro.jsx`.
 6. **Chụp thử ngay giữa từng lần chuyển** (khung = phách cắt × 11,493 − 1) rồi tự soát: `npx remotion still src/index.jsx IntroNgang
    <ra.jpg> --frame=<n> --scale=0.33`.

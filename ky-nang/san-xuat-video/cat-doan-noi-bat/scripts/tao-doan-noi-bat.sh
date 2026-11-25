@@ -36,7 +36,7 @@ if [ -d "$SRC" ]; then
   grep -q "podcast: true" "$G/chuyen-dong/src/du-an.js" && echo podcast > "$P/loai.txt" || echo tu-quay > "$P/loai.txt"
   echo "$G" > "$P/kiem-tra/goc/du-an-goc.txt"
   # lời chép sẵn của dự án gốc có thể bị Whisper "ảo" → kiểm, ảo thì chép lại
-  { [ -f "$P/kiem-tra/goc/moc-tung-tu.srt" ] && python3 -I $BASE/scripts/loi-ao.py kiem "$P/kiem-tra/goc/ban-chep-loi.srt" >/dev/null; } \
+  { [ -f "$P/kiem-tra/goc/moc-tung-tu.srt" ] && python3 -I $BASE/scripts/loi-ao-giac.py kiem "$P/kiem-tra/goc/ban-chep-loi.srt" >/dev/null; } \
     || zsh $BASE/scripts/phan-tich-video.sh "$P/nguon.mp4" "$P/kiem-tra/goc"
 else
   cp "$SRC" "$P/nguon.${SRC:e:l}"

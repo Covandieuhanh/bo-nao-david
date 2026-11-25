@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Chép lời theo từng phân đoạn ngắn rồi hợp nhất (chính xác hơn chép cả file nơi ồn).
-Dùng: python3 -I chep-theo-khuc.py <video|am-thanh> <thư-mục-ra> [độ-dài-khúc-giây]
+Dùng: python3 -I chep-theo-phan-doan.py <video|am-thanh> <thư-mục-ra> [độ-dài-khúc-giây]
 Ra: <thư-mục-ra>/khuc-NNNN.json (whisper) và loi-hop-nhat.txt (mốc giờ + chữ).
 Lưu ý: cuối mỗi khúc whisper hay bịa câu kêu gọi đăng ký; script lọc các câu đó, người làm vẫn phải soát tay chỗ nghi ngờ."""
 import json, os, subprocess, sys, glob

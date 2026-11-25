@@ -8,7 +8,7 @@ description: "Tái bản 4 (20/11/2026): đổi công cụ đo sang đo trùng /
 > tag đóng mốc là `nang-cap-4`, gắn sau khi David chấm việc thật.
 
 **Vì sao:** công cụ đo báo "NÊN TÁI BẢN TOÀN BỘ: vượt ngưỡng ở video (dong 4005 > 4000)" sau khi thêm tầng tư duy dựng video
-(`thiet-ke-bo-cuc/nguoi-xem-can-gi.md`, `nguyen-ly.json`, `tu-chon.md`, `giai-mau.md`, `bai-kiem/`, cổng `soat-canh.mjs`).
+(`thiet-ke-bo-cuc/nhu-cau-nguoi-xem.md`, `nguyen-ly.json`, `huong-dan-lua-chon.md`, `truong-hop-da-giai.md`, `bai-kiem/`, cổng `soat-canh.mjs`).
 David: *"bộ não và các phần cần học chắc chắn sẽ ngày càng tăng lên, tái bản chỉ là gom các bản trùng hay ý trùng theo nhiều cách
 khác nhau về một hoặc là gỡ rối, chứ yêu cầu phải 4000 dòng thì tôi thấy sẽ bị hạn chế"*. Mốc trước: tag `tai-ban-4-truoc`.
 
@@ -47,12 +47,12 @@ khác nhau về một hoặc là gỡ rối, chứ yêu cầu phải 4000 dòng 
 | Cắt đoạn từ nguồn dài bằng `-ss -t` rồi `concat` | khối 02 | `loi-thuong-gap.md` |
 | Dấu chồng chữ to Barlow → `VN` | `dung-video.../loi-thuong-gap.md` | `dung-podcast/.../loi-thuong-gap.md` (giữ chi tiết riêng "LỰC") |
 | Đáy cảnh toàn màn hình podcast (dọc y < 1240, ngang y < 790) | khối 12 | `thiet-ke-podcast.md` |
-| Học thêm: gắn vào nguyên lý, thêm dòng bảng 4c | `thiet-ke-bo-cuc/README.md` mục 4 | `nguoi-xem-can-gi.md` mục 6, `tu-chon.md` cuối (giữ luật riêng: không có dòng ở bảng 4c thì không được chọn) |
+| Học thêm: gắn vào nguyên lý, thêm dòng bảng 4c | `thiet-ke-bo-cuc/README.md` mục 4 | `nhu-cau-nguoi-xem.md` mục 6, `huong-dan-lua-chon.md` cuối (giữ luật riêng: không có dòng ở bảng 4c thì không được chọn) |
 
 Ngày trong bản luật (9 chỗ: `quy-tac-chung.md` mục 0, `dung-video` bảng chế độ, khối 00, 01, 02, 03, 04, 17, `phan-phoi-da-kenh`)
 chuyển về sổ `dung-video-theo-phong-cach/references/nhat-ky-thay-doi.md` và `phan-phoi-da-kenh/references/nhat-ky-thay-doi.md`.
 
-**Không đổi:** tầng tư duy 20/11 (nội dung `nguoi-xem-can-gi.md`, `nguyen-ly.json`, `tu-chon.md`, `giai-mau.md`, `bai-kiem/`, `soat-canh.mjs`);
+**Không đổi:** tầng tư duy 20/11 (nội dung `nhu-cau-nguoi-xem.md`, `nguyen-ly.json`, `huong-dan-lua-chon.md`, `truong-hop-da-giai.md`, `bai-kiem/`, `soat-canh.mjs`);
 mọi code; mục "Xong khi" của các skill; kho (`bo-cuc.md`, `am-thanh.md`, `nguon-tham-khao/`).
 
 **16 cặp gần trùng còn lại (đúng thiết kế):** dòng "Đọc trước" và dòng trỏ sổ của từng skill · "Xong khi" mỗi skill tự đứng · bảng công thức

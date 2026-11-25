@@ -12,7 +12,7 @@ description: "Lỗi thường gặp khi dựng video (ffmpeg, Remotion, Whisper�
 - `timeout` không có trên macOS — đừng dùng.
 - **Whisper ở chỗ ồn** bịa đặt "Hãy subscribe cho kênh…" và lặp câu hàng chục lần ở bản chép dài; mốc từng từ lệch 0,5–2 s thì điểm cắt dùng
   `diem-ngat.py`, mốc phụ đề kiểm bằng `soat-khop-tieng.py` (khối 01–03).
-- **Chép kịch bản tập trước** = nhân bản kiểu trình bày thì mỗi tài nguyên chẩn đoán lại (`thiet-ke-bo-cuc/tu-chon.md` bước 0); render bị chặn nếu thiếu.
+- **Chép kịch bản tập trước** = nhân bản kiểu trình bày thì mỗi tài nguyên chẩn đoán lại (`thiet-ke-bo-cuc/huong-dan-lua-chon.md` bước 0); render bị chặn nếu thiếu.
 - Lệnh `rm` với biến: luôn `"${VAR:?}"` để không bao giờ xoá nhầm khi biến rỗng (Claude Code chặn dạng `rm -f "$X/$Y"`).
 - npm báo `allow-scripts` cho esbuild thì chạy `npm approve-scripts esbuild` (tao-du-an.sh đã làm).
 
@@ -155,10 +155,10 @@ description: "Lỗi thường gặp khi dựng video (ffmpeg, Remotion, Whisper�
   khung quá tải với clip dài + concurrency 4 nên xuat-chuong-trinh.mjs dùng concurrency 3, timeoutInMilliseconds 120000,
   offthreadVideoThreads 2 (đã sửa trong template).
 
-## Nâng khung (nang-lop.py)
+## Nâng khung (nang-khung.py)
 - Mốc mặt dò 2 khung/giây; người đi nhanh có thể lệch — luôn xem 1–2 khung sau khi nâng. Mặt gần đỉnh (đỉnh đầu < 230) thì
   script tự giảm mức nâng; nếu cả hai đầu đều chật (mặt to chiếm cả khung) thì không nâng được, để nguyên.
-- danh-sach-cat.js đọc bằng `node --input-type=module` — lỗi cú pháp danh-sach-cat.js (thiếu dấu phẩy sau chú thích cuối dòng) làm nang-lop.py báo
+- danh-sach-cat.js đọc bằng `node --input-type=module` — lỗi cú pháp danh-sach-cat.js (thiếu dấu phẩy sau chú thích cuối dòng) làm nang-khung.py báo
   CalledProcessError; chạy `node -e "import('file://…/danh-sach-cat.js')"` để thấy dòng lỗi.
 - `cite` có `{label: undefined}` nên JSON thành `{}`: kiểm `'cite' in s`, đừng `s.get('cite')`.
 
@@ -217,8 +217,8 @@ người nói chưa từng chạy với dấu góc. Không do bài học video m
 | Lỗi | Hậu quả | Chặn ở đâu |
 |---|---|---|
 | Tự đổi khung sang dọc khi David chỉ nói "tập trung vào điện thoại" | làm lại từ đầu (khoảng 2 giờ) | SKILL "Đầu vào": khung chỉ đổi khi David nói rõ khung |
-| "Tập trung vào một vùng" làm bằng cắt-phóng cả khung | rác (bàn, sổ, tường) vẫn còn quanh điện thoại | `tu-chon.md` bước 2 → khung chủ thể `khung-chu-the.py` |
-| Chỉ dùng vài kiểu cảnh quen, video dày ý mà giữa các cảnh chỉ còn phụ đề | người xem khó theo dõi | `tu-chon.md` + `chan-doan.py` → bảng ghi chú chạy `GHI_CHU` |
+| "Tập trung vào một vùng" làm bằng cắt-phóng cả khung | rác (bàn, sổ, tường) vẫn còn quanh điện thoại | `huong-dan-lua-chon.md` bước 2 → khung chủ thể `khung-chu-the.py` |
+| Chỉ dùng vài kiểu cảnh quen, video dày ý mà giữa các cảnh chỉ còn phụ đề | người xem khó theo dõi | `huong-dan-lua-chon.md` + `chan-doan.py` → bảng ghi chú chạy `GHI_CHU` |
 | Thử kiểu cảnh bằng chụp/render: `kinetic`, `action`, `card` > 4 dòng lỗi ở khung ngang | khoảng 45 phút đổi kiểu nhiều vòng | `soat-canh.mjs` P0/P1 theo khung |
 | Cảnh `illus` bắt đầu 4 s trước phần tử đầu | 4 s nền tối che người, không chữ (bị bỏ sót tới bản cuối) | `soat-canh.mjs` P0 "màn trống đầu cảnh" |
 | Vision không dò mặt trong màn hình điện thoại → đặt hình sai phía | chỉnh tay mat.js | `vi-tri-nhan.py` đọc `khung.js` |
@@ -228,7 +228,7 @@ người nói chưa từng chạy với dấu góc. Không do bài học video m
 | Tạo liên kết cứng giữa bản nguồn và `video-goc.mp4` rồi ffmpeg ghi ra `video-goc.mp4` | ffmpeg cắt rỗng chính nguồn, mất bản sạch (dựng lại từ bản thô) | `khung-chu-the.py` xoá đích trùng nguồn; **không bao giờ `ln` file nguồn vào tên file đích** |
 | Ảnh tĩnh `-loop 1` làm đầu vào mà không `-t` | ffmpeg chạy mãi, file 7 GB, mất 1 giờ | `khung-chu-the.py` có `-t`; mọi lệnh có `-loop 1` phải có `-t` hoặc `shortest` ở MỌI nhánh |
 | Theo dõi việc nền bằng cỡ file thay vì thời gian dự kiến | không thấy lệnh chạy quá lâu | quá 1,5 lần dự kiến → kiểm ngay (SKILL "Nhịp làm") |
-| `loi-ao.py` báo nhầm câu chen 0,4 s không có trong moc-tung-tu.srt | phải chạy tay phần sau của phan-tich-lam-sach.sh | **chưa sửa** — gặp lại thì bỏ dòng đó, ghi `kiem-tra/loi-ky-nang.md` |
+| `loi-ao-giac.py` báo nhầm câu chen 0,4 s không có trong moc-tung-tu.srt | phải chạy tay phần sau của phan-tich-lam-sach.sh | **chưa sửa** — gặp lại thì bỏ dòng đó, ghi `kiem-tra/loi-ky-nang.md` |
 
 
 ## Khung chủ thể (khung.js) + cảnh có sẵn

@@ -2,8 +2,8 @@
 """TỰ CHUYỂN TOÀN MÀN HÌNH cho chế độ GHÉP (vlog, highlight người nói) — David chốt 2026-11-04: lớp chữ/hiệu ứng (pow, chips,
 location, nameCard, replay, pinTitle, title trên đoạn ghép) mà che MẶT + ĐẦU + VAI + NGỰC người trong khung → thành cảnh toàn màn
 hình (nền tối + nội dung phóng ra giữa), dài tối đa 4 s để người vẫn hiện nhiều. bao-ve-lop-phu.py <dự án ghép>
-Đọc chuyen-dong/src/danh-sach-cat.js (SEGS, OVERLAYS) + nang-lop.js + kiem-tra/khuon-mat/<clip>.json (nang-lop.py dò 2 khung/giây) → chuyen-dong/src/bao-ve.js +
-kiem-tra/khuon-mat/guard.md. Chạy SAU nang-lop.py và sau MỖI lần sửa danh-sach-cat.js (danh-sach-cat-doan-noi-bat.py / danh-sach-cat-vlog.py ghi lại danh-sach-cat.js). Lớp có `keep: true`
+Đọc chuyen-dong/src/danh-sach-cat.js (SEGS, OVERLAYS) + nang-lop.js + kiem-tra/khuon-mat/<clip>.json (nang-khung.py dò 2 khung/giây) → chuyen-dong/src/bao-ve.js +
+kiem-tra/khuon-mat/guard.md. Chạy SAU nang-khung.py và sau MỖI lần sửa danh-sach-cat.js (danh-sach-cat-doan-noi-bat.py / danh-sach-cat-vlog.py ghi lại danh-sach-cat.js). Lớp có `keep: true`
 trong OVERLAYS thì bỏ qua (giữ lớp phủ)."""
 import json, os, subprocess, sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../mo-dun")); import ho_so as hoso   # tham số: san-xuat-video/ho-so

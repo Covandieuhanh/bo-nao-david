@@ -1,5 +1,5 @@
 {
-  "_ghi_chu": "Tầng của từng file theo trục tri thức (co-so-tri-thuc/truc-tri-thuc.md mục 2). Đọc từ trên xuống, mẫu đầu tiên khớp thắng; ** = mọi tầng thư mục. 0 = trục/gốc (chỉ nâng cấp: làm rõ, thêm ví dụ, liên kết thêm, không đổi nghĩa; đổi gốc = đổi nghĩa, chỉ khi đủ dẫn chứng trong so-dan-chung-goc.md và David chốt sau vài ngày; cổng kiểm soát tu-dong-hoa/gac-goc.py chặn khi thiếu dòng sổ) · 1 = nguyên lý (đổi ở vòng Nâng cấp) · 2 = quy trình (đổi theo tuần, theo góp ý) · 3 = dữ liệu (chỉ thêm, không sửa nghĩa cái cũ). Chỉ mục (chi-muc.md) hiện tầng; công cụ đo chồng chéo chỉ kiểm 'mỗi ý một nguồn duy nhất' ở tầng 1 và 2. File mới không cần khai báo: rơi vào mẫu sẵn có; mẫu cuối '**' là tầng 2.",
+  "_ghi_chu": "Tầng của từng file theo trục tri thức (co-so-tri-thuc/truc-tri-thuc.md mục 2). Đọc từ trên xuống, mẫu đầu tiên khớp thắng; ** = mọi tầng thư mục. 0 = trục/gốc (chỉ nâng cấp: làm rõ, thêm ví dụ, liên kết thêm, không đổi nghĩa; đổi gốc = đổi nghĩa, chỉ khi đủ dẫn chứng trong so-dan-chung-goc.md và David chốt sau vài ngày; cổng kiểm soát tu-dong-hoa/cong-kiem-soat-goc.py chặn khi thiếu dòng sổ) · 1 = nguyên lý (đổi ở vòng Nâng cấp) · 2 = quy trình (đổi theo tuần, theo góp ý) · 3 = dữ liệu (chỉ thêm, không sửa nghĩa cái cũ). Chỉ mục (chi-muc.md) hiện tầng; công cụ đo chồng chéo chỉ kiểm 'mỗi ý một nguồn duy nhất' ở tầng 1 và 2. File mới không cần khai báo: rơi vào mẫu sẵn có; mẫu cuối '**' là tầng 2.",
   "quy_tac": [
     [
       "co-so-tri-thuc/so-dan-chung-goc.md",
@@ -58,7 +58,7 @@
       3
     ],
     [
-      "ky-nang/san-xuat-video/thiet-ke-bo-cuc/giai-mau.md",
+      "ky-nang/san-xuat-video/thiet-ke-bo-cuc/truong-hop-da-giai.md",
       3
     ],
     [
@@ -146,7 +146,7 @@
       1
     ],
     [
-      "ky-nang/san-xuat-video/thiet-ke-bo-cuc/nguoi-xem-can-gi.md",
+      "ky-nang/san-xuat-video/thiet-ke-bo-cuc/nhu-cau-nguoi-xem.md",
       1
     ],
     [

@@ -343,7 +343,7 @@ engine reads `data-sc-*` attributes off your markup and drives it; it never
 generates DOM. A runtime that builds the page from a config object is exactly
 why every site built on one looks the same.
 
-Start from `references/khuon-mau.html`. The device patterns are in
+Start from `references/mau.html`. The device patterns are in
 [references/thiet-bi.md](references/thiet-bi.md); the spacing, type, depth and
 colour rules are in [references/gu-thiet-ke.md](references/gu-thiet-ke.md). Read gu-thiet-ke.md
 before writing markup, not after, and build without announcing the checklist.

@@ -47,18 +47,18 @@ Bước nhẹ (1–3): tới đó nhắc một dòng để David tự đổi mô
    lên repo, **học xong xoá**), đọc mô tả và danh sách chương (`yt-dlp --dump-json`).
 2. **Cắt khung** *(bước nhẹ)*: bảng khung theo nhịp 1,5–3 s (`ffmpeg … fps=1/2,scale=480:-1,tile=4x4`) ở đoạn mở đầu và đoạn đúng loại cần học.
 3. **Nghe** *(bước nhẹ)*: vẽ phổ âm (`showspectrumpic`) để thấy chỗ có tiếng hiệu ứng, nhạc nền, nốt chuyển chương.
-4. **Rút ra nguyên lý trước, món sau:** trả lời "vì sao mẫu này dễ hiểu / giữ người xem" bằng **tên nguyên lý ở `nguoi-xem-can-gi.md`**
+4. **Rút ra nguyên lý trước, món sau:** trả lời "vì sao mẫu này dễ hiểu / giữ người xem" bằng **tên nguyên lý ở `nhu-cau-nguoi-xem.md`**
    (Đúng lúc, Chia đoạn, Báo hiệu, Tinh gọn…; không gắn được vào cái khó nào của người xem thì không học), rồi mỗi nguyên lý nâng cấp **thành phần đang có** nào. Chỉ thêm kiểu mới khi không thành phần
    nào làm được. Món chỉ để trang trí (không giúp hiểu thêm) ghi vào "Không lấy". Không đụng chữ ký nhận diện (mục 1).
-   Học để tự áp dụng và cải tiến cái đang có: motion graphics rõ nghĩa hơn nhưng tinh gọn (`tu-chon.md` bước 4a).
+   Học để tự áp dụng và cải tiến cái đang có: motion graphics rõ nghĩa hơn nhưng tinh gọn (`huong-dan-lua-chon.md` bước 4a).
 5. **Phiếu học cho David duyệt** (mẫu ở `phieu-hoc-mau.md`): học được gì, dùng cho loại video nào, thêm thành phần nào, mỗi thành
    phần đối chiếu với các chặn cũ thế nào. Đây là **cổng hỏi duy nhất**: gộp mọi điểm cần chọn, mỗi điểm 2–3 gợi ý.
    **Chờ David "ok" rồi mới sửa skill.**
 6. **Ghi vào kho** (kho là thực đơn, không phải luật). Điều học được làm **đổi luật** thì sửa thẳng câu luật đó, lý do vào sổ (thoi-quen mục 4), không thêm câu chồng.
    **Cách ghi kho:** một file `nguon-tham-khao/<ten-nguon>-<ngay>.md` kể học gì từ đâu. Mỗi cách mới thêm một dòng ở `bo-cuc.md` hoặc `am-thanh.md`,
-   ghi rõ "đã có code" hay "chưa có code", **thêm vào dòng "Đã học" của nguyên lý ở `nguoi-xem-can-gi.md` và một dòng "dạng câu / hình thì cách thể hiện" dưới đúng nguyên lý
-   ở bảng 4c của `tu-chon.md`** (không có dòng ở đó thì không bao giờ được chọn). Không xoá, không sửa nghĩa dòng cũ.
-7. **Làm code khi cần:** thêm `kieu` mới trong `dung-video-theo-phong-cach/assets/khuon-remotion/src/thanh-phan/bo-cuc.jsx` (màu nhấn và
+   ghi rõ "đã có code" hay "chưa có code", **thêm vào dòng "Đã học" của nguyên lý ở `nhu-cau-nguoi-xem.md` và một dòng "dạng câu / hình thì cách thể hiện" dưới đúng nguyên lý
+   ở bảng 4c của `huong-dan-lua-chon.md`** (không có dòng ở đó thì không bao giờ được chọn). Không xoá, không sửa nghĩa dòng cũ.
+7. **Làm code khi cần:** thêm `kieu` mới trong `dung-video-theo-phong-cach/assets/mau-remotion/src/thanh-phan/bo-cuc.jsx` (màu nhấn và
    font lấy từ `C`, `HEAD`, `BODY`; hình động dùng `ease`, `pop`, `Illus`, `Diagram`, `Icon` hoặc `thu-vien-tai-nguyen/chuyen-dong.js`). Vị trí lấy từ hằng số chung (`SAFE`, `BRAND_TOP`/`BRAND_BOT`,
    `PF`, `CAP_H`), **không viết số vị trí riêng**.
 8. **Kiểm không phá** (bắt buộc trước khi dùng vào video thật):
@@ -72,7 +72,7 @@ Bước nhẹ (1–3): tới đó nhắc một dòng để David tự đổi mô
 
 ## 5. Dùng khi dựng
 
-- Trước kịch bản cảnh: lập luận theo **`nguoi-xem-can-gi.md`** rồi làm các bước của **`tu-chon.md`** (`chan-doan.py`), kết hợp 4 câu hỏi ở mục 2.
+- Trước kịch bản cảnh: lập luận theo **`nhu-cau-nguoi-xem.md`** rồi làm các bước của **`huong-dan-lua-chon.md`** (`chan-doan.py`), kết hợp 4 câu hỏi ở mục 2.
   Mỗi cảnh một dòng `Cần · Vì · Làm` trong `ke-hoach-canh.md` của dự án.
 - Danh mục là **kho để chọn**, không phải công thức. Một video có thể chỉ dùng hai kiểu, cũng có thể dùng năm kiểu, tuỳ nội dung.
 
@@ -80,11 +80,11 @@ Bước nhẹ (1–3): tới đó nhắc một dòng để David tự đổi mô
 
 | File | Nội dung |
 |---|---|
-| [nguoi-xem-can-gi.md](nguoi-xem-can-gi.md) | **cửa vào tư duy**: loại nội dung → cái khó của người xem → nguyên lý (12 nguyên lý Mayer + 4 ngoài Mayer) |
+| [nhu-cau-nguoi-xem.md](nhu-cau-nguoi-xem.md) | **cửa vào tư duy**: loại nội dung → cái khó của người xem → nguyên lý (12 nguyên lý Mayer + 4 ngoài Mayer) |
 | [nguyen-ly.json](nguyen-ly.json) | tên loại / nguyên lý hợp lệ (máy soát đọc) |
-| [giai-mau.md](giai-mau.md) | 19 trường hợp giải từ 8 hình mẫu thành công cùng thể loại (số liệu đo) |
+| [truong-hop-da-giai.md](truong-hop-da-giai.md) | 19 trường hợp giải từ 8 hình mẫu thành công cùng thể loại (số liệu đo) |
 | [bai-kiem/](bai-kiem/README.md) | bài kiểm suy luận 10 đoạn + công cụ chấm, chạy khi máy mới / đổi luật |
-| [tu-chon.md](tu-chon.md) | **các bước tự chọn** + kho cách thể hiện xếp theo nguyên lý |
+| [huong-dan-lua-chon.md](huong-dan-lua-chon.md) | **các bước tự chọn** + kho cách thể hiện xếp theo nguyên lý |
 | [bo-cuc.md](bo-cuc.md) | danh mục bố cục: dùng khi nào, viết thế nào, có code chưa |
 | [am-thanh.md](am-thanh.md) | cách đặt tiếng hiệu ứng / nhạc theo bố cục |
 | [nguon-tham-khao/](nguon-tham-khao/) | mỗi nguồn đã học một file: học gì, ở phút nào |

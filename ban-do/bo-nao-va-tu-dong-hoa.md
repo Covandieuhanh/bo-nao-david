@@ -90,7 +90,7 @@ Gốc: [bản đồ bộ não](README.md).
 
 **Tài liệu thiet-ke-trang-cuon**
 - [nhat-ky-thay-doi](../ky-nang/thiet-ke-trang-cuon/nhat-ky-thay-doi.md) — Sổ thay đổi skill thiết kế trang cuộn.
-- [dau-hieu-nhan-dang](../ky-nang/thiet-ke-trang-cuon/khuon-mau/dau-hieu-nhan-dang.md) — Thiết kế trang cuộn: sổ dấu hiệu nhận dạng mỗi trang đã làm để không lặp.
+- [dau-hieu-nhan-dang](../ky-nang/thiet-ke-trang-cuon/mau/dau-hieu-nhan-dang.md) — Thiết kế trang cuộn: sổ dấu hiệu nhận dạng mỗi trang đã làm để không lặp.
 - [bay-xuyen-the-gioi](../ky-nang/thiet-ke-trang-cuon/references/bay-xuyen-the-gioi.md) — Thiết kế trang cuộn: chế độ bay xuyên một thế giới liên tục (worldflight).
 - [bo-suu-tap-da-duyet](../ky-nang/thiet-ke-trang-cuon/references/bo-suu-tap-da-duyet.md) — Thiết kế trang cuộn: chuẩn 10 trang đã duyệt.
 - [cam-giac](../ky-nang/thiet-ke-trang-cuon/references/cam-giac.md) — Thiết kế trang cuộn: trục cảm xúc người xem đi qua trang.
