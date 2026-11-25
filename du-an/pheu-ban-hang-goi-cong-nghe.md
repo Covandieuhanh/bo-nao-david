@@ -44,4 +44,4 @@ Có **khoản thu đầu tiên từ một gói công nghệ**, khách **ra đư�
 - [ ] David cập nhật tên đội đối tác, sản phẩm, thành quả đăng được thì bài trụ 1, trụ 4
 - [x] Từ khoá nhắn tin hướng 3: "số hoá" (17/11, `kenh.json`)
 - [ ] Liệt kê 5 người quen có nỗi đau này, nhắn hỏi thử
-- [ ] Bán thử khách đầu tiên, ghi nhật ký ca
+- [ ] Bán thử khách đầu tiên, ghi nhật ký trường hợp

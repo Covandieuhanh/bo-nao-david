@@ -10,7 +10,7 @@ Sáu câu hỏi đi từ ngoài vào trong: môi trường, niềm tin, hành vi
 
 | # | Câu hỏi | Câu trả lời cho bạn biết |
 | --- | --- | --- |
-| 1 | Bạn hiện hành trong môi trường nào? Những người bạn thường xuyên tiếp xúc là ai? | Những điều định hình tư duy và nhận thức |
+| 1 | Bạn đang sống trong môi trường nào? Những người bạn thường xuyên tiếp xúc là ai? | Những điều định hình tư duy và nhận thức |
 | 2 | Bạn tin vào điều gì, giá trị quan của bạn là gì? Sâu thẳm trong tâm hồn, bạn mong muốn điều gì? | Hệ thống định hướng của bạn |
 | 3 | Hằng ngày bạn đang làm gì và làm như thế nào? | Thời gian thực sự đang được ưu tiên cho việc gì — cần thành thật với khung giờ trong ngày |
 | 4 | Bạn là ai, và bạn muốn trở thành ai? | Trở thành người bạn muốn trong tâm trí trước, hành động sẽ theo kịp |
@@ -130,7 +130,7 @@ Hồ sơ trả lời rõ nhất câu 4 (danh tính); câu 3 (hành vi hằng ng�
 6. **Nét mặt gắt, nói to mà không nhận ra.** Với người đứng lớp, đây là điều học viên thấy trước tiên. *Ai có thể nhắc bạn ngay lúc đó, hoặc bạn có thể quay video một buổi hướng dẫn để tự xem lại?*
 7. **"Biết đủ" trong ước mơ và mốc 50 tỷ đồng.** Hai điều này không nhất thiết mâu thuẫn, nhưng cần được nối với nhau. *50 tỷ là con số "đủ" cho điều gì cụ thể, và vào năm nào?*
 
-Ngoài ra, hai công cụ ở hành động 3 (đọc sách, xem video) đều là tiếp nhận; theo đúng hành động 4, công cụ thứ ba có thể là một việc làm thủ công chân.
+Ngoài ra, hai công cụ ở hành động 3 (đọc sách, xem video) đều là tiếp nhận; theo đúng hành động 4, công cụ thứ ba có thể là một việc làm bằng tay chân.
 
 ## Phiếu tự điền
 
@@ -151,7 +151,7 @@ Ngoài ra, hai công cụ ở hành động 3 (đọc sách, xem video) đều l
 
 ### Câu hỏi bổ sung
 
-- [ ] Tôi hiện hành ở đâu, và những người tôi gặp nhiều nhất mỗi tuần là ai?
+- [ ] Tôi đang sống ở đâu, và những người tôi gặp nhiều nhất mỗi tuần là ai?
 - [ ] Thu nhập hằng tháng hiện tại của tôi là bao nhiêu, đến từ đâu?
 - [ ] Công cụ thứ ba để điều chỉnh trạng thái của tôi là gì?
 - [ ] Bằng chứng đầu tiên cho "Nhà đào tạo thực hành": quy trình nào, ở cơ sở nào, đo bằng chỉ số gì?

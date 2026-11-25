@@ -16,7 +16,7 @@ Luật bản đồ: [README](README.md).
 Gốc từ CCL (4.1). Chưa nghiên cứu chương trình Việt cùng tệp (quản lý trẻ, quản lý mới) có kết quả công bố.
 
 ## 4.3 Quy trình một trường hợp, coach chuẩn ICF ⬜
-Chưa nghiên cứu. Câu hỏi khi có việc: coach chuẩn ICF làm ca đầu, phiếu đầu vào, nhật ký ca thế nào.
+Chưa nghiên cứu. Câu hỏi khi có việc: coach chuẩn ICF làm ca đầu, phiếu đầu vào, nhật ký trường hợp thế nào.
 
 ## 4.4 Bảng giá gói trainer ⬜
 Chưa nghiên cứu bảng giá công bố của trainer Việt cùng tệp (bảng giá hiện hành: `../chien-luoc-nghe-nghiep.md` 4.4).

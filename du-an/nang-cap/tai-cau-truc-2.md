@@ -4,7 +4,7 @@ description: "Tái bản lần 2 toàn bộ bộ não (10/11): điều phối c�
 
 # Tái bản lần 2 — toàn bộ bộ não (mở 10/11/2026)
 
-Mốc trước: `tai-ban-2-truoc`. Phiên điều phối: phiên gốc của David. Mỗi phiên con chỉ ghi vào mục của mình; luật xung đột với bộ khác ghi vào "Chéo bộ".
+Mốc trước: `tai-ban-2-truoc`. Phiên điều phối: phiên gốc của David. Mỗi phiên con chỉ ghi vào mục của mình; luật liên quan tới bộ khác ghi vào "Chéo bộ".
 
 ## Công cụ đo lúc mở
 ```
@@ -22,7 +22,7 @@ David "Ok cả 3" (10/11/2026) cho ba đề xuất; đã làm:
 - Cách hỏi chỉ ở `thu-thap-yeu-cau`; thoi-quen mục 2 chỉ giữ cái không hỏi; `chi-dan-toan-cuc.md` thành dòng trỏ (bỏ "3–5 câu").
 - Luật riêng video (chụp có giới hạn, không tự render lại, render nối tiếp, danh sách phần cứng, dọn file tạm) dời về `quy-tac-chung.md` mục 8.
 - `david.md` mục 5: từ khoá bình luận + cách đo trỏ `kenh.json`.
-- 4 luật chỉ có trong ghi nhớ đã có nguồn duy nhất: công cụ đã cài + việc của David (thoi-quen mục 3); thử bằng đoạn ngắn + dựng trong phiên (quy-tac-chung mục 8). Ghi nhớ thêm dòng "Nhà của luật".
+- 4 luật chỉ có trong ghi nhớ đã có nguồn duy nhất: công cụ đã cài + việc của David (thoi-quen mục 3); thử bằng đoạn ngắn + dựng trong phiên (quy-tac-chung mục 8). Ghi nhớ thêm dòng "Nguồn của luật".
 - Công cụ đo: bỏ bắt nhầm "thay cho" (chỉ bắt "thay cho luật"); bộ nao đo thêm `co-so-tri-thuc/chi-dan-toan-cuc.md`.
 - Chưa làm: xoá thư mục `ky-nang/san-xuat-video/app/` còn sót (chỉ `__pycache__`, ngoài git) — chờ David; việc dở nhạc ambient (`chung.json`).
 

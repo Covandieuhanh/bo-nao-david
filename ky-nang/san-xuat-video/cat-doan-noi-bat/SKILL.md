@@ -159,7 +159,7 @@ Mẫu: `~/Movies/tap-di-trainer/3-doan-noi-bat/clip-{A,B,C}`, thành phẩm ở 
 - **Hoàn cảnh:** thiếu thì đưa câu nguyên văn nêu hoàn cảnh lên đầu clip.
 - `hook` mở đầu: **thẻ tít** nguyên văn (luật 7), `eyebrow` trích lời hoặc bỏ trống.
 - **Hình theo ý cần hiểu**, không lấp từng cụm lời: thêm `montage`/`card` biểu tượng (biểu tượng vẽ + nhãn trích lời) chỉ ở đoạn mà hình
-  giúp người xem hiểu nhanh hơn (quy-tac-chung mục 0). 3 clip "Đi trainer" là mẫu về mẫu (chữ chính, nhạc, màn chốt).
+  giúp người xem hiểu nhanh hơn (quy-tac-chung mục 0). 3 clip "Đi trainer" là mẫu về cách dựng (chữ chính, nhạc, màn chốt).
 - `action` đúng lúc câu HANHDONG (`icon` — thiếu thì vẽ thêm: `write` = viết ra giấy; `quote` nguyên văn, `quoteAt`, `doneAt`).
 - Cú chốt cảm xúc: cụm ngắn nhất, đắt nhất, `start` = lúc bắt đầu nói cụm đó (mốc từ `moc-tung-tu.srt` của `$E`). Nguồn người nói mà
   `vi-tri-khuon-mat.sh` báo "⚠ vẫn che mặt" thì đổi cú chốt thành `card` toàn cảnh (ví dụ: `ages` cho con số: số chạy đúng lúc nói + `quote`

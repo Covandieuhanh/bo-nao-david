@@ -14,40 +14,43 @@ THAY = [
  ('Đã có nhà chưa?', 'Đã có nguồn duy nhất chưa?'), ('có nhà trong', 'có nguồn trong'), ('có nhà', 'có nguồn duy nhất'), ('nhà mới ở', 'nguồn mới ở'), ('nhà mới', 'nguồn mới'),
  ('Đề xuất nhà:', 'Đề xuất nguồn:'), ('nhà nên ở', 'nguồn nên ở'), ('Nhà nên ở', 'Nguồn nên ở'), ('MÁY ĐO', 'CÔNG CỤ ĐO'), ('MÁY CHẤM', 'CÔNG CỤ CHẤM'), ('thiếu nhà', 'thiếu nguồn'), ('mất nhà', 'mất nguồn'), ('nhà ở `', 'nguồn ở `'), ('nhà ở khối', 'nguồn ở khối'), ('nhà ở quy-tac', 'nguồn ở quy-tac'), ('nay nhà ở', 'nay nguồn ở'), ('nhà chính', 'nguồn chính'), ('nhà luật', 'nguồn luật'), ('nhà chi tiết', 'nguồn chi tiết'), ('Gộp nhà', 'Gộp nguồn'), ('chốt nhà', 'chốt nguồn'), ('theo nhà', 'theo nguồn'), ('(nhà)', '(nguồn)'), ('đúng nhà', 'đúng nguồn'), ('nhiều nhà', 'nhiều nguồn'), ('nhà chung', 'nguồn chung'), ('nhà riêng của luật', 'nguồn riêng của luật'), ('về nhà nào', 'về nguồn nào'), ('nhà nào', 'nguồn nào'),
  ('Luật đi lên', 'Luật thăng cấp'), ('luật đi lên', 'luật thăng cấp'), ('đi lên tầng', 'thăng cấp lên tầng'), ('biểu đồ đi lên', 'biểu đồ tăng'),
- ('→ tỉa →', '→ cắt giảm →'), ('chưng cất, tỉa, dọn', 'chưng cất, cắt giảm, tái cấu trúc'), ('đề xuất tỉa', 'đề xuất cắt giảm'), ('tỉa:', 'cắt giảm:'), ('Tỉa:', 'Cắt giảm:'), ('(tỉa)', '(cắt giảm)'),
+ ('→ tỉa →', '→ cắt giảm →'), ('chưng cất, tỉa, dọn', 'chưng cất, cắt giảm, dọn'), ('đề xuất tỉa', 'đề xuất cắt giảm'), ('tỉa:', 'cắt giảm:'), ('Tỉa:', 'Cắt giảm:'), ('(tỉa)', '(cắt giảm)'),
  ('máy gác cổng', 'cổng kiểm soát'), ('Máy gác cổng', 'Cổng kiểm soát'), ('gác cổng', 'cổng kiểm soát'),
  ('người đọc lạnh', 'người đọc mới'), ('Người đọc lạnh', 'Người đọc mới'), ('xem lạnh', 'xem với góc nhìn mới'),
  ('Đến tận nơi xem', 'Kiểm tra tại hiện trường'), ('đến tận nơi xem', 'kiểm tra tại hiện trường'),
- ('sửa tay', 'sửa thủ công'), ('Sửa tay', 'Sửa thủ công'), ('làm tay', 'làm thủ công'), ('ép tay', 'chỉ định thủ công'), ('Ép tay', 'Chỉ định thủ công'), ('bằng tay', 'thủ công'), ('gộp tay', 'gộp thủ công'),
+ ('sửa tay', 'sửa thủ công'), ('Sửa tay', 'Sửa thủ công'), ('làm tay', 'làm thủ công'), ('gộp tay', 'gộp thủ công'),
  ('máy kiểm', 'công cụ kiểm tra'), ('Máy kiểm', 'Công cụ kiểm tra'), ('MÁY KIỂM', 'CÔNG CỤ KIỂM TRA'), ('máy chấm', 'công cụ chấm'), ('Máy chấm', 'Công cụ chấm'), ('máy đo', 'công cụ đo'), ('Máy đo', 'Công cụ đo'),
- ('luật đang sống', 'luật hiện hành'), ('Luật đang sống', 'Luật hiện hành'), ('đang sống', 'hiện hành'), ('cùng sống', 'cùng tồn tại'),
+ ('luật đang sống', 'luật hiện hành'), ('Luật đang sống', 'Luật hiện hành'), ('hai bản cùng sống', 'hai bản cùng tồn tại'),
  ('câu đắt nhất', 'câu then chốt'), ('câu đắt', 'câu then chốt'), ('Câu đắt', 'Câu then chốt'),
- ('chỗ vấp', 'lỗi đã gặp'), ('chỗ kẹt', 'vướng mắc'), ('Chỗ kẹt', 'Vướng mắc'), ('kẹt ở', 'vướng ở'), ('kẹt việc', 'vướng việc'), ('bị kẹt', 'bị vướng'), ('đang kẹt', 'đang vướng'), ('kẹt', 'vướng'),
+ ('chỗ vấp', 'lỗi đã gặp'), ('chỗ kẹt', 'vướng mắc'), ('Chỗ kẹt', 'Vướng mắc'), ('kẹt việc lặp lại', 'vướng việc lặp lại'),
  ('làm dở', 'làm chưa xong'), ('Làm dở', 'Làm chưa xong'),
  ('giữ Mac nhẹ', 'giữ dung lượng Mac thấp'), ('Giữ Mac nhẹ', 'Giữ dung lượng Mac thấp'), ('nhẹ máy', 'giải phóng dung lượng máy'), ('nhẹ bộ nhớ', 'giải phóng dung lượng'),
  ('bịa ca', 'bịa đặt trường hợp'), ('bịa', 'bịa đặt'), ('Bịa', 'Bịa đặt'), ('trôi nổi', 'không rõ nguồn gốc'),
  ('file quá nặng', 'file dung lượng quá lớn'), ('file nặng', 'file dung lượng lớn'), ('dựng nặng', 'dựng công phu'),
- ('đụng tới', 'liên quan tới'), ('đụng luật', 'xung đột với luật'), ('đụng tài khoản', 'thao tác tài khoản'), ('đụng skill', 'trùng skill'), ('đụng bộ khác', 'xung đột với bộ khác'), ('đụng David', 'cần David'), ('việc đụng', 'việc liên quan'),
+ ('bị đụng tới', 'bị ảnh hưởng'), ('đụng tới', 'liên quan tới'), ('đụng luật', 'xung đột với luật'), ('đụng tài khoản', 'thao tác tài khoản'), ('đụng skill', 'xung đột với skill'), ('đụng bộ khác', 'liên quan tới bộ khác'), ('đụng David', 'cần David'), ('việc đụng', 'việc liên quan'),
  ('dính tới', 'liên quan tới'), ('dính lỗi', 'mắc lỗi'), ('cũng dính)', 'cũng mắc lỗi)'),
  ('soi bằng', 'xét bằng'), ('Cách soi', 'Cách xét'), ('soi mục tiêu', 'xét mục tiêu'), ('tự soi lỗi', 'tự kiểm lỗi'), ('soi lỗi', 'kiểm lỗi'), ('soi cảnh', 'kiểm cảnh'), ('soi chữ', 'kiểm chữ'), ('soi phụ đề', 'kiểm phụ đề'), ('soi lại', 'kiểm lại'),
- ('lọt qua', 'bị bỏ sót'), ('để lọt', 'bỏ sót'), ('lọt', 'tràn'),
+ ('lọt từ câu bên cạnh', 'tràn từ câu bên cạnh'), ('lọt chữ', 'tràn chữ'), ('lọt vùng đỏ', 'tràn vào vùng đỏ'),
  ('ca thật', 'trường hợp thực tế'), ('Ca thật', 'Trường hợp thực tế'), ('ca mẫu', 'trường hợp mẫu'), ('Ca mẫu', 'Trường hợp mẫu'), ('ca khách', 'trường hợp khách'), ('Ca khách', 'Trường hợp khách'), ('ca cùng gốc', 'trường hợp cùng gốc'),
  ('số cứng', 'số cố định'), ('Số cứng', 'Số cố định'), ('lịch cứng', 'lịch cố định'), ('Lịch cứng', 'Lịch cố định'), ('Kẹt ', 'Vướng '), ('mốc cứng', 'mốc cố định'), ('giới hạn cứng', 'giới hạn cố định'),
- ('bắt chước', 'học theo'), ('Bắt chước', 'Học theo'), ('mối nối', 'điểm nối'), ('Mối nối', 'Điểm nối'),
+ ('bắt chước', 'học theo'), ('Bắt chước', 'Học theo'), ('mối nối', 'điểm nối'), ('Mối nối', 'Điểm nối'), ('Nhà luật', 'Nguồn luật'), ('Câu then chốt nhất', 'Câu then chốt'), ('câu then chốt nhất', 'câu then chốt'),
 ]
 REGEX = [
+ (r'\bép tay\b', 'chỉ định thủ công'), (r'\bÉp tay\b', 'Chỉ định thủ công'), (r'\bbằng tay\b(?! chân)', 'thủ công'),
+ (r'\bca đó\b', 'trường hợp đó'), (r'nhật ký ca\b', 'nhật ký trường hợp'), (r'\bThêm ca\b', 'Thêm trường hợp'),
  (r'\b(các|một|nhiều|từng|mỗi|\d+) ca\b', r'\1 trường hợp'), (r'\b(Các|Một|Nhiều|Từng|Mỗi) ca\b', r'\1 trường hợp'),
  (r'\bkhúc\b', 'phân đoạn'), (r'\bKhúc\b', 'Phân đoạn'),
  (r'\bkhuôn\b', 'mẫu'), (r'\bKhuôn\b', 'Mẫu'),
 ]
 # cụm giữ nguyên (không phải khẩu ngữ, hoặc nghĩa khác): thay bằng dấu giữ chỗ trước, trả lại sau
-GIU = ['bịa đặt', 'nhà ở xã hội', 'khuôn hình', 'khuôn mặt', 'khuôn khổ', 'khuôn mẫu', 'Khuôn hình', 'Khuôn mặt', 'ca khúc', 'băng dính', 'phần cứng', 'cắt cứng', 'liên kết cứng', 'soi gương', 'soi tỏ', 'kiem-ngon-tu', 'soat', 'soi-']
+GIU = ['bịa đặt', 'nhà ở xã hội', 'nhà sử học', 'nhà đào tạo', 'nhà sáng lập', 'nhà đầu tư', 'nhà nghiên cứu', 'nhà khoa học', 'nhà văn', 'nhà báo', 'nhà thiết kế', 'nhà phát triển', 'nhà sản xuất', 'nhà cung cấp', 'nhà quản lý', 'nhà lãnh đạo', 'nhà tuyển dụng', 'nhà tư vấn', 'nhà chiến lược', 'nhà phân tích', 'nhà tiếp thị', 'nhà huấn luyện', 'nhà kinh tế', 'nhà tâm lý', 'nhà xuất bản', 'nhà hàng', 'nhà máy', 'nhà kho', 'điệp khúc', 'nhạc khúc', 'dập khuôn', 'rập khuôn', 'khuôn áo', 'Khuôn:', 'máy đo giải pháp', 'bằng tay chân', 'chỗ nói vấp', 'khuôn hình', 'khuôn mặt', 'khuôn khổ', 'khuôn mẫu', 'Khuôn hình', 'Khuôn mặt', 'ca khúc', 'băng dính', 'phần cứng', 'cắt cứng', 'liên kết cứng', 'soi gương', 'soi tỏ', 'kiem-ngon-tu', 'soat', 'soi-']
 # từ cũ để quét (chỉ báo, không thay): cụm còn sót sau khi thay
 TU_CU = ['móc vào', 'nhà duy nhất', 'một nhà', 'nhà của', 'luật đi lên', 'gác cổng', 'người đọc lạnh', 'đến tận nơi xem', 'sửa tay', 'ép tay', 'bằng tay',
          'máy kiểm', 'máy đo', 'máy chấm', 'luật đang sống', 'câu đắt', 'chỗ vấp', 'chỗ kẹt', 'làm dở', 'nhẹ máy', 'giữ mac nhẹ', 'trôi nổi', 'file nặng', 'đụng tới',
-         'dính tới', 'soi bằng', 'lọt qua', 'ca thật', 'ca mẫu', 'số cứng', 'lịch cứng', 'bắt chước', 'mối nối', 'chỗ kẹt', 'nhà nên ở', 'đề xuất nhà']
+         'dính tới', 'soi bằng', 'ca thật', 'ca mẫu', 'số cứng', 'lịch cứng', 'bắt chước', 'mối nối', 'chỗ kẹt', 'nhà nên ở', 'đề xuất nhà', 'nhà luật']
 
 _Q = re.compile(r'("[^"]*"|“[^”]*”|`[^`]*`)')   # lời trích và mã inline: giữ nguyên
+_QJ = re.compile(r'(\\"[^"]*?\\")')   # trong JSON: lời trích nằm giữa hai \" (đã thoát)
 
 def _thay_doan(s):
     for i, g in enumerate(GIU): s = s.replace(g, f'\x00{i}\x00')
@@ -77,6 +80,7 @@ def thay_van_ban(s, loai):
         t = d.lstrip()
         if loai == 'code':
             ra.append(thay_dong(d, bao_ve_trich=False) if dong_ap_dung(d, loai) else d)
-        elif loai == 'json': ra.append(thay_dong(d, bao_ve_trich=False))
+        elif loai == 'json':
+            phan = _QJ.split(d); ra.append(''.join(p if i % 2 else _thay_doan(p) for i, p in enumerate(phan)))
         else: ra.append(thay_dong(d, bao_ve_trich=True))
     return '\n'.join(ra)

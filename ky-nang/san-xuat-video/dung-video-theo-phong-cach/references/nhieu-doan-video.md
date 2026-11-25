@@ -192,7 +192,7 @@ chữ trên màn hình chỉ dành cho nội dung (lời nói, cảm xúc, tên,
 | Khoảnh khắc | Hiệu ứng (EDL / OVERLAYS / SFX) |
 |---|---|
 | Cười to, phản ứng mạnh | `pow` chữ nhấn + pop/ding (không zoom — quy-tac-chung mục 2) |
-| **Câu then chốt nhất khi có người thứ hai** (bạn đồng hành, khán giả, người dẫn, người bán…) | **cảnh phản ứng 0,8–1,5 s**: cắt sang mặt người nghe ngay SAU câu then chốt (cười, gật, sững) — tiếng người nói vẫn chạy (`audio` của clip chính) — chất keo cảm xúc của Jay Shetty, Rap Việt, Have A Sip. Không có cảnh phản ứng thật thì bỏ, không lấy mặt người khác ngữ cảnh |
+| **Câu then chốt khi có người thứ hai** (bạn đồng hành, khán giả, người dẫn, người bán…) | **cảnh phản ứng 0,8–1,5 s**: cắt sang mặt người nghe ngay SAU câu then chốt (cười, gật, sững) — tiếng người nói vẫn chạy (`audio` của clip chính) — chất keo cảm xúc của Jay Shetty, Rap Việt, Have A Sip. Không có cảnh phản ứng thật thì bỏ, không lấy mặt người khác ngữ cảnh |
 | **Hội thoại 2 người** (mặc cả, phỏng vấn) | `who: 1 \| 2` ở dòng `SUB` → viền ô phụ đề theo người nói (cam / xanh, kiểu GaryVee); vị trí + cỡ phụ đề giữ chuẩn |
 | **Người nói nêu kết quả, con số, giá** | ưu tiên **bằng chứng thật** có trong clip gốc (ảnh chụp màn hình giá, hoá đơn, giấy chứng nhận, cảnh vật thật) đúng lúc nói — `cite` khung bo góc; không có thì `chips`/số chạy với đúng con số người nói |
 | **Người nói nêu giá, độ cao, số lượng** ("1,7 tỷ", "100 m", "500 bao") | `pointer`/`chips` với ĐÚNG con số người nói (học Ngô Đức Duy, Sang Vlog) |

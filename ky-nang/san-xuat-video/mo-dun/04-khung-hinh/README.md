@@ -51,7 +51,7 @@ Thêm `SIDES` vào canh.js ở bước 5.
 python3 -I $SKILL/scripts/nang-lop.py "$P"           # chỉ in kế hoạch → kiem-tra/khuon-mat/lift.md (mức nâng theo từng cửa sổ 4 s)
 python3 -I $SKILL/scripts/nang-lop.py "$P" apply     # nung vào video-goc.mp4 (bản trước giữ là video-goc-truoc-nang.mp4)
 ```
-Mặt nằm thấp (tâm > khoảng 900 px hoặc cằm tràn dải phụ đề) thì đẩy hình lên theo bậc 100 px, tối đa 400, đổi mức trượt 0,6 s; đáy
+Mặt nằm thấp (tâm > khoảng 900 px hoặc cằm lọt vào dải phụ đề) thì đẩy hình lên theo bậc 100 px, tối đa 400, đổi mức trượt 0,6 s; đáy
 hở là chính hình đó làm mờ. Toàn bảng 0 thì "không cần nâng", bỏ qua. Xem 1–2 khung sau khi nung (mặt không chạm đỉnh vùng an
 toàn). Chạy lại sau khi sửa cuts thì tự tính từ bản chưa nâng. Phải chạy TRƯỚC bước hiểu video (khối 01) và `vi-tri-khuon-mat.sh` (mặt dò lại trên bản đã nâng).
 

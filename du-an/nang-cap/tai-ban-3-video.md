@@ -115,7 +115,7 @@ Không bỏ luật nào David đã chốt; không thêm luật mới.
    tách P1/P2) là **điểm cần chốt trong 4 phần**, và phiếu lọc là nguồn của 4 phần (không cổng riêng). Đề nghị phiên não xác nhận chuan-muc
    không còn câu "hỏi một lần ở đầu" riêng cho video.
 2. **Ghi nhớ:** `video-khong-tu-xuat` ("Thay ngày 13/11"), `video-podcast-phu-hinh-30` ("Thay luật…"), `quy-tac-goi-y-de-david-chon` (đoạn 14/11 nối thêm)
-   còn câu chồng lớp; `video-bo-cuc-tu-can` mục 4 còn chữ "zoom… bám đúng người đang nói" — bản luật đã đổi thành "khung cắt". Nhà luật của
+   còn câu chồng lớp; `video-bo-cuc-tu-can` mục 4 còn chữ "zoom… bám đúng người đang nói" — bản luật đã đổi thành "khung cắt". Nguồn luật của
    ghi nhớ `video-khong-tu-xuat` vẫn đúng (`phan-phoi-da-kenh/SKILL.md`, `quy-tac-chung.md` mục 8).
 3. **Ghi nhớ `video-kien-truc-ky-nang` / `quy-tac-sua-thang-tai-ban`:** hồ sơ tham số giờ ghi lịch sử ở `ho-so-thuong-hieu/nhat-ky-thay-doi.md`
    (không còn "nhật ký trong `.md`"); nếu ghi nhớ nói khác thì sửa theo.

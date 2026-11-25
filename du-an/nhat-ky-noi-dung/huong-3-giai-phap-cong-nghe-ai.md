@@ -13,7 +13,7 @@ Mốc: giây trên `nguon-dai.mp4` của tập (đã bỏ phần số học).
 
 | Ý | Lời gốc | Mốc | Nỗi đau / mục tiêu | Bán được gì | Dùng cho việc |
 |---|---|---|---|---|---|
-| Chủ muốn di chuyển liên tục, không chôn chân một quán | "chị cứ chôn chân ở một chỗ là nó không ăn thua" | 1152–1174 (19:12) | chủ vướng ở quán, không phát triển việc khác | giải pháp quản lý từ xa | câu hỏi mở: "Anh/chị rời quán 1 tuần được không?" |
+| Chủ muốn di chuyển liên tục, không chôn chân một quán | "chị cứ chôn chân ở một chỗ là nó không ăn thua" | 1152–1174 (19:12) | chủ bị trói chân ở quán, không phát triển việc khác | giải pháp quản lý từ xa | câu hỏi mở: "Anh/chị rời quán 1 tuần được không?" |
 | Quy trình nhìn được trong tuần đầu → đóng thành nền tảng, quản lý qua app | "Và chị chỉ quản lý qua cái nền tảng ấy thôi… Nhật ký nó sẽ tồn tại" | 1212–1234 (20:12) | ngày nào cũng phải kiểm nhân viên | số hoá quy trình + app | mô tả kết quả cho khách |
 | Đi nhiều quán, cải tiến mẫu rồi nhân ra | "Đi cả trăm quán… Tự nhiên chị sẽ đóng ra một cái cải tiến" | 1247–1265 (20:47) | chỉ quản được một quán | mô hình nhân bản | câu chuyện tầm nhìn chuỗi |
 | Cảm quan của chủ (mức nhạc) đưa thành quy chuẩn, không cần đoán | "Giờ nào mức mấy? Không cần phải đoán… Vậy thì đưa cái này thành quy chuẩn" | 1646–1680 (27:26) | chủ suốt ngày đi nhắc nhân viên | số hoá tiêu chuẩn dịch vụ | ví dụ cụ thể dễ hiểu nhất |

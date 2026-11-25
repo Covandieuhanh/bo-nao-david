@@ -133,5 +133,5 @@ sẽ khó nếu chỉ nghe (nguyên lý Tinh gọn).
 
 ## Học thêm hình mẫu
 
-Thêm ca khi học kênh mới (`hoc-lien-tuc` Việc 2 hoặc `phan-tich-video-mau`): ghi số liệu + ngày đo vào bảng nguồn, mỗi trường hợp đủ 4 dòng như trên,
+Thêm trường hợp khi học kênh mới (`hoc-lien-tuc` Việc 2 hoặc `phan-tich-video-mau`): ghi số liệu + ngày đo vào bảng nguồn, mỗi trường hợp đủ 4 dòng như trên,
 gắn đúng tên nguyên lý. Bài kiểm suy luận dựng từ các trường hợp này: [bai-kiem/](bai-kiem/README.md).

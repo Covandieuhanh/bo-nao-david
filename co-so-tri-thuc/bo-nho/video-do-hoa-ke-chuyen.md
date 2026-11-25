@@ -1,6 +1,6 @@
 ---
 name: video-do-hoa-ke-chuyen
-description: "Mọi video có motion graphics nhiều loại để kể lại câu chuyện, không mẫu; mọi bước AI sáng tạo trong khung + tiêu chí + nhận diện (2026-11-07, 09/11, gộp 10/11)"
+description: "Mọi video có motion graphics nhiều loại để kể lại câu chuyện, không theo khuôn mẫu; mọi bước AI sáng tạo trong khung + tiêu chí + nhận diện (2026-11-07, 09/11, gộp 10/11)"
 metadata:
   type: feedback
 ---
@@ -10,7 +10,7 @@ người xem vào ý đang nói**, nhiều loại: hình vẽ / biểu tượng 
 nói (làm tối nền, khoanh / viền sáng…; không zoom vào / ra — David 13/11/2026); cảnh minh hoạ toàn màn hình chỉ là một loại. Điểm nhấn trên người được phép nếu không
 che mặt. Đoạn chạm lằn ranh không làm đồ hoạ.
 
-**Motion kể chuyện** (09/11/2026): motion graphic là để **diễn tả lại câu chuyện**, không phải "đưa hình vào cho có", không dập mẫu.
+**Motion kể chuyện** (09/11/2026): motion graphic là để **diễn tả lại câu chuyện**, không phải "đưa hình vào cho có", không rập khuôn.
 Một hình có thể diễn tả 1–2 ý hoặc chạy từ đầu tới cuối; ý nào nhắc lại ý trước thì hình **vẽ tiếp** lên cái đã có. Chỉ giữ cứng chữ ký
 nhận diện ([[video-tham-my-chi-giu-nhan-dien]]); còn lại sáng tạo theo từng video, nhưng chọn ít kiểu ([[video-tham-my-chi-giu-nhan-dien]]).
 

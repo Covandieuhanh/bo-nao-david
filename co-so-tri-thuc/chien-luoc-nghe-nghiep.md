@@ -59,7 +59,7 @@ Muốn lên tầng sau phải qua tầng trước. Khung của **CCL (Center for
 - Bảng giá cá nhân: miễn phí (video + trò chuyện 20 phút) · lớp nhóm 90 phút 199.000đ/người · Gói Thử 3 buổi 2.400.000đ · **Gói Đồng hành 6 buổi 3.600.000đ (gói chính)** · Gói Trọn 90 ngày 12 buổi 9.000.000đ.
 
 ### 4.5. Quy trình một trường hợp
-Tìm hiểu → mời → phiếu đầu vào → thống nhất → làm trên việc thật → rút ra dần → ghi nhật ký ca (làm lại Phần 4 và 6 của phiếu để so trước/sau).
+Tìm hiểu → mời → phiếu đầu vào → thống nhất → làm trên việc thật → rút ra dần → ghi nhật ký trường hợp (làm lại Phần 4 và 6 của phiếu để so trước/sau).
 
 ### 4.6. Quyết định đã chốt
 - Bỏ nghề luận số / bán sim.

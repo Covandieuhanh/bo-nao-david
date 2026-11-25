@@ -6,7 +6,7 @@ description: "Biểu mẫu 01 gói dựng bộ não: mẫu bốn file gốc (c�
 
 File biểu mẫu này tải lên Projects ở bước 1 với tên `01-khuon-file-goc.md` và **để đó luôn**: AI dùng nó để tạo file mới. Nó là mẫu, không phải thông tin về mình, nên không ghi vào bảng file.
 
-Chép từng mẫu thành một file trong thư mục `bo-nao`, đúng tên file ghi ở tiêu đề (cách tạo file: biểu mẫu 00, thao tác 3). **Chỉ chép phần bên trong**, không chép dòng ba dấu ``` ở đầu và cuối mỗi khuôn. Chỗ `<…>` là chỗ điền. Dòng đầu mỗi file luôn là câu mô tả file đó chứa gì: AI đọc câu này để biết có cần mở file hay không.
+Chép từng mẫu thành một file trong thư mục `bo-nao`, đúng tên file ghi ở tiêu đề (cách tạo file: biểu mẫu 00, thao tác 3). **Chỉ chép phần bên trong**, không chép dòng ba dấu ``` ở đầu và cuối mỗi mẫu. Chỗ `<…>` là chỗ điền. Dòng đầu mỗi file luôn là câu mô tả file đó chứa gì: AI đọc câu này để biết có cần mở file hay không.
 
 | Mẫu | Tạo ở bước |
 |---|---|
@@ -58,7 +58,7 @@ Mô tả: Hồ sơ của <tên>: là ai, làm gì, mục tiêu, thế mạnh, c�
 # Hồ sơ
 
 ## Tôi là ai
-- Tên, nghề, hiện hành và làm việc ở: <…>
+- Tên, nghề, đang sống và làm việc ở: <…>
 - Làm những việc gì (mỗi việc một dòng): <…>
 - Khách hàng hay người tôi phục vụ là ai: <…>
 

@@ -120,7 +120,7 @@ nhẹ nhàng"*). Với mỗi ý đã qua 4a (cần hình), đọc lại các cá
 - `nguon-tham-khao/` — Ali Abdaal và Joseph (14 cách), MagentX (A–G, có dấu hiệu nhận ra), Sang Huỳnh (8 bố cục, nhịp, âm thanh),
   Cường Mê AI (6 nguyên lý); `dung-podcast/references/hoc-tu-hieu-nguyen-50.md` cho podcast.
 - Mẫu khung nhiều người, chỗ trống thật (`rieng/duong-may.jsx`): chương lớn, gạch thay, chuỗi nút, thẻ lật, số mốc, câu then chốt, lời nhắc gửi
-  AI, thẻ tên + vai trò, vẽ đúng vật (bộ vét, mẫu áo, mảnh ghép).
+  AI, thẻ tên + vai trò, vẽ đúng vật (bộ vét, khuôn áo, mảnh ghép).
 
 Cách chọn: ý giống nhau thì cùng cách; ý khác loại thì **đổi sang cách khác trong kho** để video không lặp một kiểu (ví dụ: đổi trọng tâm thì
 gạch thay · quy trình thì chuỗi nút · liệt kê ngang hàng thì thẻ · các bước có số thì số mốc · hình ảnh so sánh thì vẽ đúng vật). Mỗi cảnh một cách,
@@ -179,7 +179,7 @@ Gặp P0 thì sửa kế hoạch / đổi kiểu theo bước 4, không thử re
 ```
 ## Chẩn đoán (thiet-ke-bo-cuc/tu-chon.md)
 Yêu cầu: <tóm tắt yeu-cau.md + them-anh/ → làm ở đâu · bỏ gì vì sao> | không
-Mẫu: <1 video / ghép / podcast> vì <Y>
+Khuôn: <1 video / ghép / podcast> vì <Y>
 Loại: <tên> vì <dấu hiệu> · cần chính: <hiểu / nhớ / tin / cảm>
 Hình: <4 câu trả lời> → bố cục nền: <X> vì <Y>
 Nội dung: <số đo> → lớp thông tin: <X> vì <Y>

@@ -8,7 +8,7 @@ Bạn đang làm việc với **David Trần** (Trần Đức Cường), nhà đ
 |---|---|---|
 | 1 | [co-so-tri-thuc/david.md](co-so-tri-thuc/david.md) | David là ai, ba hướng nghề, lằn ranh, cách muốn được làm việc. Khung tư duy gốc: [co-so-tri-thuc/mo-hinh-kinh-doanh.md](co-so-tri-thuc/mo-hinh-kinh-doanh.md). Cách nghĩ gốc mọi việc: [co-so-tri-thuc/tu-duy-goc.md](co-so-tri-thuc/tu-duy-goc.md) |
 | 2 | [co-so-tri-thuc/ho-so-ca-nhan.md](co-so-tri-thuc/ho-so-ca-nhan.md) | Tính cách, điểm mạnh, điểm cần cải thiện, nguyên tắc, động cơ. Định hướng nghề hiện hành ở `co-so-tri-thuc/david.md`; bản cũ đã chuyển vào lưu trữ |
-| 3 | [bao-cao-trang-thai.md](bao-cao-trang-thai.md) | Đang làm chưa xong gì, việc tiếp theo, việc chờ David quyết |
+| 3 | [bao-cao-trang-thai.md](bao-cao-trang-thai.md) | Việc nào đang làm chưa xong, việc tiếp theo, việc chờ David quyết |
 | 4 | [co-so-tri-thuc/bo-nho/MEMORY.md](co-so-tri-thuc/bo-nho/MEMORY.md) | Mục lục các bài học và quyết định. Mở từng file khi việc liên quan tới |
 | 5 | [ky-nang/thu-thap-yeu-cau/SKILL.md](ky-nang/thu-thap-yeu-cau/SKILL.md) | Cách hỏi khi trình 4 phần: vòng hỏi, đề xuất đứng đầu, tín hiệu phải dừng |
 | 6 | [ky-nang/chuan-muc-lam-viec.md](ky-nang/chuan-muc-lam-viec.md) (việc học, sửa, lưu bộ não: [co-so-tri-thuc/truc-tri-thuc.md](co-so-tri-thuc/truc-tri-thuc.md)) | Thói quen chung mọi skill: đọc đúng phần, hỏi một lần, trong lúc làm, cuối việc, luôn đi tới mục tiêu và nhắc David giữ phiên gọn |

@@ -7,7 +7,7 @@ description: Quy trình trọn gói của David — từ MỘT tài nguyên (vid
 
 **Đọc trước:** `../../chuan-muc-lam-viec.md` · `../quy-tac-chung.md`. File khác chỉ đọc ở đúng bước cần (cột cuối bảng quy trình).
 
-**Vai trò:** nội dung là của David (nói tự do, có cảm xúc, không mẫu). Claude lo nhận diện, lọc, thẩm mỹ, nhịp,
+**Vai trò:** nội dung là của David (nói tự do, có cảm xúc, không theo khuôn mẫu). Claude lo nhận diện, lọc, thẩm mỹ, nhịp,
 phân phối, đăng và đo. Mọi bài có mục tiêu: kéo tương tác đúng nền tảng → chuyển hoá → người xem nhắn "gỡ".
 
 ## Mục tiêu

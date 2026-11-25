@@ -68,7 +68,7 @@ AI ở mức cơ bản không tự sửa được file trong Projects. Mỗi l�
 Mẹo cho đỡ việc: cuối buổi gom mọi file cần sửa vào một lần (câu lệnh 2 đã làm vậy).
 
 ## Thao tác 5 · AI "mới tinh" để kiểm
-Chức năng trí nhớ của ứng dụng làm AI không còn "lạnh". Khi chạy bài kiểm người đọc mới, chọn một trong ba:
+Chức năng trí nhớ của ứng dụng làm AI không còn "mới" (đã biết về mình). Khi chạy bài kiểm người đọc mới, chọn một trong ba:
 - **Tốt nhất:** dùng một AI khác (đang dùng ChatGPT thì kiểm bằng Claude bản miễn phí, hoặc ngược lại).
 - ChatGPT: bật "Trò chuyện tạm thời" (Temporary Chat) rồi tải bộ não vào cuộc trò chuyện đó.
 - Hoặc tắt trí nhớ trong Cài đặt, mục Cá nhân hoá (Personalization), phần Trí nhớ (Memory), rồi bật lại sau khi kiểm.

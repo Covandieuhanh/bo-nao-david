@@ -18,14 +18,14 @@ description: "Sổ thay đổi skill cắt đoạn nổi bật: quyết định 
 - 2026-11-08 · chuẩn hoá (`du-an/chuan-hoa-ky-nang.md` bước 3): mọi chữ nguyên văn, tít = cụm đắt nhất, bỏ "tít báo" (N3); màn chốt một luật cả hai nhánh, không có câu kêu gọi thì không dừng (N13); thẻ cuối "Bản đầy đủ trên kênh …", không nút phát, bỏ câu gợi tò mò Claude viết (N14); phụ đề cụm 5–8 chữ (N5); bỏ số nhịp/mật độ (N6); "kho nhạc kênh" (N7); gộp mẫu podcast dọc vào kịch bản 7B; đọc trước 3 file; bước nhẹ 0–1; sửa link tài liệu; rút mô tả; thêm "Xong khi". Chi tiết các quyết định trước: `references/nhat-ky-thay-doi.md`.
 
 ## Tái bản 2 — 10/11/2026: bản luật viết lại từ bảng du-an/nang-cap/tai-cau-truc-2-video.md
-- Nhà luật bỏ phóng xen kẽ ở mối cắt là quy-tac-chung mục 2 (kèm lý do); khối 02, ho-so-thuong-hieu/doan-noi-bat.md, cat-highlight luật 8 trỏ về đó. quy-tac-chung mục 8 trỏ thói quen chung (hỏi, lệnh nền, mật khẩu, báo cáo), chỉ giữ phần riêng video. Bỏ câu chép ở gotchas, phan-phoi-da-kenh; sửa đường trỏ "hình của chính video" về khối 14. Viết lại 6 câu công cụ đo bắt nhầm ("thay cho", "THAY", tên file có ngày).
+- Nguồn luật bỏ phóng xen kẽ ở mối cắt là quy-tac-chung mục 2 (kèm lý do); khối 02, ho-so-thuong-hieu/doan-noi-bat.md, cat-highlight luật 8 trỏ về đó. quy-tac-chung mục 8 trỏ thói quen chung (hỏi, lệnh nền, mật khẩu, báo cáo), chỉ giữ phần riêng video. Bỏ câu chép ở gotchas, phan-phoi-da-kenh; sửa đường trỏ "hình của chính video" về khối 14. Viết lại 6 câu công cụ đo bắt nhầm ("thay cho", "THAY", tên file có ngày).
 
 ## 10/11/2026 — Bỏ phóng xen kẽ 1,08× ở mối cắt
 - David xem đoạn thử tap-thu-tai-ban-video-1: "tôi không thích mấy đoạn zoom giật ra giật vào" thành "bỏ 1 giữ 2": bỏ mặc định phóng xen kẽ 1,08× ở mỗi mối cắt (mọi loại video), giữ zoom dồn chậm vào mặt ở câu then chốt (`nhan` zoom, câu `"zoom": true`). Sửa: luật 8, bước 7A, `ho-so-thuong-hieu/doan-noi-bat.json` `phong_xen_ke: 1.0`, `danh-sach-cat-doan-noi-bat.py` chỉ phóng khi > 1.
 
 ## Tái bản 1 — 10/11/2026: bản luật viết lại từ bảng du-an/nang-cap/tai-cau-truc-video-1.md
 - Luật 11 chỉ còn "không thẻ cuối, không thanh thời gian"; tít ghim mặc định tắt (`tit_ghim: false`, bật `"pin": true`); không có câu kêu gọi thì không dừng (khối 13 sửa theo luật 4); ghim theo kiểu dẫn dắt + link bản đầy đủ.
-- David "Đồng ý cả 5", câu 2: mẫu 7B bỏ "hình dày theo từng cụm lời", hình theo ý cần hiểu; 3 clip Đi trainer vẫn là mẫu về mẫu.
+- David "Đồng ý cả 5", câu 2: mẫu 7B bỏ "hình dày theo từng cụm lời", hình theo ý cần hiểu; 3 clip Đi trainer vẫn là mẫu về cách dựng.
 
 ## 2026-11-03
 - Skill tạo từ bản người dùng viết trong Claude Chat (4 vai Chạm · Ý chính · Hành động · Kêu gọi "Vấn đề:/Kết quả:", lằn ranh nội

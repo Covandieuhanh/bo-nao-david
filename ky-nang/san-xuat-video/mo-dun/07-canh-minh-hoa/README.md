@@ -17,7 +17,7 @@ description: "Khối 07 cảnh minh hoạ: bố cục tự cân, motion graphics
 - `dung-video-theo-phong-cach/references/thiet-ke-canh.md` (bảng loại cảnh + props)
 
 ## 1. Motion graphic kể chuyện — tự do sáng tạo (mục này đứng trên mọi mục dưới)
-Motion graphic là để **diễn tả lại câu chuyện**, không phải đưa hình vào cho có. AI sáng tạo theo từng video, không dập mẫu.
+Motion graphic là để **diễn tả lại câu chuyện**, không phải đưa hình vào cho có. AI sáng tạo theo từng video, không rập khuôn.
 - **Giữ cố định = chữ ký nhận diện** (`thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0). Còn lại tự do: nền (tối, sáng, giấy, người mờ),
   kết cấu, kiểu hình (biểu tượng nét tròn, phấn, ảnh), chữ nhấn phụ, bố cục, chuyển động, độ dài, số cảnh.
 - **Mọi video đều có điểm nhấn, nhưng chỉ vài kiểu hợp nội dung nhất** (quy-tac-chung mục 0, 4) — "dựng nhẹ" vẫn có điểm nhấn. Kiểu mạnh

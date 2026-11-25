@@ -38,7 +38,7 @@ description: "Sổ thay đổi skill dựng video theo phong cách: quyết đ�
   phụ đề dời theo đoạn cắt (không chép lời lại) → `canh.js` viết mốc theo video gốc, hàm `g()` đổi sang mốc đã cắt.
   Ra 3 video: `tap-may-do-giai-phap` 5:31 · `tap-ket-noi-doanh-nhan` 4:19 · `tap-hanh-trinh-david` 2:19.
 - Kho thêm 5 dạng trong `rieng/duong-may.jsx` (mỗi dạng ghi nguồn): câu then chốt (The Diary Of A CEO ca 1), lời nhắc gửi AI dạng bong bóng
-  (Sang Huỳnh #5), mẫu áo và mảnh ghép (vẽ đúng vật — Ali Abdaal ca 13), thẻ tên + vai trò (The Diary Of A CEO ca 10).
+  (Sang Huỳnh #5), khuôn áo và mảnh ghép (vẽ đúng vật — Ali Abdaal ca 13), thẻ tên + vai trò (The Diary Of A CEO ca 10).
 
 ## 22/11/2026 (chiều): không luật cứng — tận dụng tối đa kho, kho hình mẫu là thực đơn mở ra mỗi lần chọn hình
 - David: *"không cần tạo ra những cái luật cố định … nguyên tắc là khi đang hiển thị nội dung, con người đang trao đổi, thì không che nội
@@ -64,7 +64,7 @@ description: "Sổ thay đổi skill dựng video theo phong cách: quyết đ�
 - Máy soát (`soat-canh.mjs`) chặn: cảnh toàn khung / nền người mờ / màn chương toàn khung khi người còn trên hình (trừ `khong_nguoi: true`);
   `o-nguoi`, `o-tron` khi `mat.js` có từ 2 người; `lower` ở khung ngang; ít hơn 2 kiểu mới so với 3 tập gần nhất. Cảnh tự vẽ tính kiểu theo
   tên component + `props.kieu`.
-- Mẫu thêm mẫu cảnh tự vẽ dùng lại được: `rieng/nhan-tram.jsx` (nhãn ở chỗ trống, David duyệt 21/11) và `rieng/duong-may.jsx` (dải chương
+- Bộ mẫu Remotion thêm mẫu cảnh tự vẽ dùng lại được: `rieng/nhan-tram.jsx` (nhãn ở chỗ trống, David duyệt 21/11) và `rieng/duong-may.jsx` (dải chương
   mỏng, mạch "đường may" vẽ tiếp, bộ vét khâu dần; tấm tối có hạt, không làm mờ hình).
 - David: *"render ra 1 đoạn ngắn cho tôi xem có áp dụng được thẩm mỹ mới nào không thôi chứ đừng render lại cả video vội"* → đoạn thử
   `tap-thu-tham-my` (11:11–13:01).
@@ -83,7 +83,7 @@ description: "Sổ thay đổi skill dựng video theo phong cách: quyết đ�
 - `loi-ao.py`: chép lại phân đoạn ảo thử thêm cửa sổ lùi 4 s / 12 s (5 phân đoạn chép từ đúng đầu phân đoạn vẫn ảo).
 
 ## 14/11/2026: phạm vi luật không zoom
-- David trả lời câu hỏi tái bản 3, chọn đề xuất "Chỉ cấm hình quay": luật "không zoom vào / zoom ra" chỉ áp cho hình quay (video người nói); ảnh minh hoạ (Ken Burns trôi chậm) và chuyển động bên trong motion graphic (đẩy khung) vẫn được. Lý do: luật 13/11 nhắm hiệu ứng zoom trên người nói, không nhắm đồ hoạ. Nhà luật: quy-tac-chung mục 2; khối 07 mục 4, thiet-ke-canh trỏ về. Xoá dòng gotchas "chụp thử nhan không thấy zoom" (nhan.jsx đã bỏ zoom).
+- David trả lời câu hỏi tái bản 3, chọn đề xuất "Chỉ cấm hình quay": luật "không zoom vào / zoom ra" chỉ áp cho hình quay (video người nói); ảnh minh hoạ (Ken Burns trôi chậm) và chuyển động bên trong motion graphic (đẩy khung) vẫn được. Lý do: luật 13/11 nhắm hiệu ứng zoom trên người nói, không nhắm đồ hoạ. Nguồn luật: quy-tac-chung mục 2; khối 07 mục 4, thiet-ke-canh trỏ về. Xoá dòng gotchas "chụp thử nhan không thấy zoom" (nhan.jsx đã bỏ zoom).
 
 ## Tái bản 3 — 14/11/2026: bản luật viết lại từ bảng du-an/nang-cap/tai-ban-3-video.md
 - Bỏ dấu ngày, lời kể, chỗ ngược luật khỏi bản luật; mục "Nhật ký" cuối SKILL.md chuyển về đây:
@@ -99,7 +99,7 @@ description: "Sổ thay đổi skill dựng video theo phong cách: quyết đ�
 ## 11/11/2026: xong tập thì lên Drive, xoá trên Mac
 - David: "máy mac này chỉ còn đóng mỗi vai trò là khi đang thực thi cái gì thì có dữ liệu và tài nguyên của cái đó thôi"; "nhớ lưu lại để lần sau tự động làm việc cho gọn và nhẹ máy mac". Lý do: Mac 228 GB đầy. `don-tap.py --xoa` xoá hẳn file tạm (bỏ Thùng rác), rồi `luu-drive.sh` (mới, kèm `kiem-tai-len-drive.swift`, `giai-phong-drive.swift`) đưa tập lên Drive `sao-luu-mac/video`, chờ lên mây, so khớp, giải phóng cache Drive, xoá trên Mac. Sửa SKILL bước 12 + Xong khi 8, khối 17, quy-tac-chung 8, cat-highlight, podcast, tong-quan.
 ## Tái bản 2 — 10/11/2026: bản luật viết lại từ bảng du-an/nang-cap/tai-cau-truc-2-video.md
-- Nhà luật bỏ phóng xen kẽ ở mối cắt là quy-tac-chung mục 2 (kèm lý do); khối 02, ho-so-thuong-hieu/doan-noi-bat.md, cat-highlight luật 8 trỏ về đó. quy-tac-chung mục 8 trỏ thói quen chung (hỏi, lệnh nền, mật khẩu, báo cáo), chỉ giữ phần riêng video. Bỏ câu chép ở gotchas, phan-phoi-da-kenh; sửa đường trỏ "hình của chính video" về khối 14. Viết lại 6 câu công cụ đo bắt nhầm ("thay cho", "THAY", tên file có ngày).
+- Nguồn luật bỏ phóng xen kẽ ở mối cắt là quy-tac-chung mục 2 (kèm lý do); khối 02, ho-so-thuong-hieu/doan-noi-bat.md, cat-highlight luật 8 trỏ về đó. quy-tac-chung mục 8 trỏ thói quen chung (hỏi, lệnh nền, mật khẩu, báo cáo), chỉ giữ phần riêng video. Bỏ câu chép ở gotchas, phan-phoi-da-kenh; sửa đường trỏ "hình của chính video" về khối 14. Viết lại 6 câu công cụ đo bắt nhầm ("thay cho", "THAY", tên file có ngày).
 
 ## 10/11/2026 — Bỏ phóng xen kẽ 1,08× ở mối cắt
 - David xem đoạn thử tap-thu-tai-ban-video-1: "tôi không thích mấy đoạn zoom giật ra giật vào" thành "bỏ 1 giữ 2": bỏ mặc định phóng xen kẽ 1,08× ở mỗi mối cắt (mọi loại video), giữ zoom dồn chậm vào mặt ở câu then chốt (`nhan` zoom, câu `"zoom": true`). Sửa: quy-tac-chung §2, khối 02, `ap-dung-lam-sach.py` + `de-xuat-lam-sach.py` mặc định `zoom: "none"`.

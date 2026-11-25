@@ -18,7 +18,7 @@ Ra tiền (David chốt 13/11/2026), ba hướng chạy song song (`co-so-tri-th
 |---|---|---|
 | Ba video bản dài từ buổi DJI_0031 (25/11, máy Windows): hàng hoá 5:10 · tập trung một đường 12:56 · AI may đo 3:39 | Xong, trên Drive `thanh-pham/<tập>/` và `_buoi-tap-dji0031-2511/`, bản xem nhanh ở `D:\ket-qua-dji0031-2511`; **chưa duyệt** | David xem; nói "chốt" thì xoá bản gốc, nói "đăng" thì đăng từng bản; phụ đề các mốc "cần nghe lại" ghi trong gói đăng |
 | Giữ gốc bộ não ổn định (25/11) | Xong: sổ dẫn chứng gốc + cổng kiểm soát `gac-goc.py`, ngôn từ chuẩn toàn bộ não (`kiem-ngon-tu.py`), AI mới làm bài kiểm 21/21 và 10/10 | Theo dõi lần đẩy tới: cổng chặn đúng; ý mới vào tầng 3 trước rồi mới thăng cấp |
-| Đánh giá khách quan bộ não đã có tư duy gốc chưa (25/11) | Bản đánh giá kèm số liệu và kế hoạch cải thiện đã gửi David | David duyệt kế hoạch cải thiện |
+| Đánh giá khách quan bộ não đã có tư duy gốc chưa (25/11) | Bản đánh giá kèm số liệu và kế hoạch cải thiện: [du-an/nang-cap/danh-gia-2026-11-25.md](du-an/nang-cap/danh-gia-2026-11-25.md) | David duyệt kế hoạch cải thiện |
 
 ## Chờ David quyết (câu hỏi mở từ trước, chưa thấy trả lời)
 

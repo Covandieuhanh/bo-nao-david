@@ -178,7 +178,7 @@ description: "Lỗi thường gặp khi dựng video (ffmpeg, Remotion, Whisper�
 - Hình lật ngang/lộn ngược lúc rút máy khỏi túi có độ sáng/độ tương phản/YDIF như cảnh đi bộ thường thì không dò bằng signalstats;
   chỉ bắt được bằng mắt trên `kiem-tra/cac-doan/` (c13 vlog leo núi).
 - Remotion `bundle()` chép CẢ `public/` (clip gốc) vào thư mục tạm mỗi lần chạy, không tự xoá thì vlog 48 clip: 205 bản sót, đầy ổ,
-  render vướng/ENOSPC. Mọi script render/stills giờ `fs.rmSync(serveUrl)` ở cuối; script tự viết thêm cũng phải dọn.
+  render treo/ENOSPC. Mọi script render/stills giờ `fs.rmSync(serveUrl)` ở cuối; script tự viết thêm cũng phải dọn.
 - Chữ đè phụ đề lặp nhiều lần (thẻ địa điểm, danh sách `chips`): nguyên nhân chung = đặt vị trí bằng ƯỚC
   chiều cao (top cố định, n × cỡ chữ) trong khi chữ dài tự xuống dòng. Luật: lớp chữ KHÔNG BAO GIỜ đặt `top` ước lượng — neo ĐÁY
   vào LOW_Y (translateY(-100%)) để khối mọc lên; chữ một dòng thì tự thu cỡ theo mục dài nhất; chuong-trinh.jsx chặn cứng mọi lớp không
@@ -220,7 +220,7 @@ người nói chưa từng chạy với dấu góc. Không do bài học video m
 | "Tập trung vào một vùng" làm bằng cắt-phóng cả khung | rác (bàn, sổ, tường) vẫn còn quanh điện thoại | `tu-chon.md` bước 2 → khung chủ thể `khung-chu-the.py` |
 | Chỉ dùng vài kiểu cảnh quen, video dày ý mà giữa các cảnh chỉ còn phụ đề | người xem khó theo dõi | `tu-chon.md` + `chan-doan.py` → bảng ghi chú chạy `GHI_CHU` |
 | Thử kiểu cảnh bằng chụp/render: `kinetic`, `action`, `card` > 4 dòng lỗi ở khung ngang | khoảng 45 phút đổi kiểu nhiều vòng | `soat-canh.mjs` P0/P1 theo khung |
-| Cảnh `illus` bắt đầu 4 s trước phần tử đầu | 4 s nền tối che người, không chữ (tràn tới bản cuối) | `soat-canh.mjs` P0 "màn trống đầu cảnh" |
+| Cảnh `illus` bắt đầu 4 s trước phần tử đầu | 4 s nền tối che người, không chữ (bị bỏ sót tới bản cuối) | `soat-canh.mjs` P0 "màn trống đầu cảnh" |
 | Vision không dò mặt trong màn hình điện thoại → đặt hình sai phía | chỉnh tay mat.js | `vi-tri-nhan.py` đọc `khung.js` |
 | Ghép bản cuối khi `xuat-video.mjs` còn render thẻ cuối | bản cuối mất màn kết YouTube 20 s, ghép lại 30 phút | khoá `.dang-render` + `xem-truoc-ban-dung.py` kiểm đủ lớp |
 | `chuan-am.py` chặn đỉnh −2,0 dB mà AAC đẩy lên −1,0 | 3 lượt không đạt; mổ xẻ giữa chừng khoảng 40 phút | hạ ngưỡng theo phần vượt, tối đa 6 lượt; SKILL "Nhịp làm": lỗi skill ghi `kiem-tra/loi-ky-nang.md`, làm tiếp |

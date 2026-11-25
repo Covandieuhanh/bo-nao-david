@@ -39,7 +39,7 @@ python3 -I ky-nang/tai-cau-truc/do-chong-cheo.py [--chi-tiet]
    `luật · nguồn nên ở · nguồn hiện tại (file:dòng, có thể nhiều) · ngày chốt gần nhất · trạng thái (sống / trùng / ngược / cũ)`.
    Bắt đầu từ các cặp `gan_trung` của công cụ đo (`--chi-tiet`). Luật ngược nhau: theo `chuan-muc-lam-viec.md` mục 0 (lời David vừa nói >
    ngày chốt gần nhất > cũ); chỗ vẫn không rõ thì gom lại **hỏi David một lần** (thu-thap-yeu-cau), có đề xuất. Không tự bỏ luật nào
-   David đã chốt mà không có luật mới hơn thay. Luật xung đột với bộ khác thì ghi mục "Chéo bộ"; phiên điều phối chốt nguồn duy nhất.
+   David đã chốt mà không có luật mới hơn thay. Luật liên quan tới bộ khác thì ghi mục "Chéo bộ"; phiên điều phối chốt nguồn duy nhất.
 3. **Viết lại từ bảng, không vá:**
    - Mỗi luật **một nguồn duy nhất**; nơi khác một dòng trỏ. Luật dùng chung nhiều skill thì đặt ở `chuan-muc-lam-viec.md` / `quy-tac-chung.md`, không chép.
    - Không ngày, không "(David chốt …)", không "thay luật cũ", không "chuyển nguyên văn từ SKILL.md cũ". Lý do một luật tồn tại

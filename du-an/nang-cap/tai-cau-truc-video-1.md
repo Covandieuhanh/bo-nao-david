@@ -208,8 +208,8 @@ A8, A9, A15, A20, A23, A28, A48, A56, A60 (hashtag 2–3), B16, B21, B26, B32, B
 1. **Motion graphics (Biên tập viên video):** "mọi video phải có motion graphics, trộn nhiều loại để mắt không quen" (07/11) đụng "hiểu hơn cầu kì: mỗi video vài kiểu" (10/11).
    ➡️ Đề xuất: viết thành một luật — *mọi video đều có điểm nhấn (dựng nhẹ vẫn có); chỉ dùng vài kiểu hợp nội dung nhất*; bỏ "trộn nhiều loại", bỏ ví dụ số "khoảng 3 illus + khoảng 4 nhan". · Khác: giữ "trộn nhiều loại" song song.
 2. **Highlight podcast dọc (mẫu "Đi trainer"):** mẫu 7B có "hình dày theo lời — mỗi cụm lời một biểu tượng ở đoạn không có cảnh".
-   ➡️ Đề xuất: đổi thành *hình theo ý cần hiểu, không lấp từng cụm*; 3 clip Đi trainer vẫn là mẫu về mẫu (chữ chính, nhạc, màn chốt). · Khác: giữ dày như mẫu.
-3. **Vlog ghép:** mẫu còn thẻ tiêu đề trên đoạn ghép mở đầu, teaser "TẬP NÀY CÓ GÌ?", kết "lời mời theo dõi" — đụng "không thẻ tít mặc định, chữ trên video nguyên văn".
+   ➡️ Đề xuất: đổi thành *hình theo ý cần hiểu, không lấp từng cụm*; 3 clip Đi trainer vẫn là mẫu về cách dựng (chữ chính, nhạc, màn chốt). · Khác: giữ dày như mẫu.
+3. **Vlog ghép:** mẫu còn thẻ tiêu đề trên đoạn ghép mở đầu, teaser "TẬP NÀY CÓ GÌ?", kết "lời mời theo dõi" — xung đột với "không thẻ tít mặc định, chữ trên video nguyên văn".
    ➡️ Đề xuất: giữ đoạn ghép mở đầu; thẻ tiêu đề chỉ ghi tên chương trình / tên nơi (nhãn cố định) hoặc lời nguyên văn; bỏ "TẬP NÀY CÓ GÌ?" và lời mời tự viết. · Khác: giữ nguyên mẫu vlog như cũ.
 4. **Học video mẫu — "Xong khi" số 2** còn ghi "màu, font, nét vẽ, chuyển động, nhạc kênh không đổi", trái với "thẩm mỹ chỉ giữ chữ ký".
    ➡️ Đề xuất: sửa thành *"chữ ký nhận diện (cam, hai font, thành phần cố định) không đổi"*. · Khác: giữ nguyên.

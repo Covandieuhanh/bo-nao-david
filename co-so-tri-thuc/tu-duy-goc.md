@@ -105,7 +105,7 @@ thi lại. Không hạ mục tiêu để coi như đạt. Nguồn của vòng: `
   Ở David: buổi nhìn lại cuối tuần; ở bộ não: vòng tuần của trục tri thức.
 - **Đo học bằng thay đổi, không bằng cảm giác thích** (Kirkpatrick): mức Phản ứng và Học được chưa đủ; mức **Hành vi** và **Kết quả** mới
   là thay đổi. Thiết kế gói đào tạo **bắt đầu từ thay đổi muốn thấy** rồi đi ngược lại.
-- **Giảng lại bằng lời đơn giản** để biết mình đã hiểu (Feynman): lỗi đã gặp là chỗ chưa hiểu. Đây cũng là luật viết của bộ não (người đọc mới nào cũng hiểu).
+- **Giảng lại bằng lời đơn giản** để biết mình đã hiểu (Feynman): chỗ nói vấp là chỗ chưa hiểu. Đây cũng là luật viết của bộ não (người đọc mới nào cũng hiểu).
 - **Tri thức lớn lên bằng nối** (Luhmann): mỗi ý một nguồn duy nhất, ý mới luôn nối vào ý cũ; không nối vào đâu thì không tồn tại (`quy-uoc-lien-ket.md`).
 - **Mỗi bài học thành nguyên tắc** (Dalio): gặp lại tình huống giống thì làm theo, không nghĩ lại từ đầu (trục tri thức: lỗi nào cũng thành câu kiểm).
 

@@ -28,7 +28,7 @@ Chụp mỗi cảnh ở khoảnh khắc "đầy nhất" (cuối cảnh, khi mọ
 bằng `python3 $SKILL/scripts/vung-an-toan.py "$P"` (một lần) và `zsh $SKILL/scripts/ghep-anh-tinh.sh "$P"` rồi xem `kiem-tra/anh-tinh.jpg`: chữ có tràn/xuống dòng xấu, dấu tiếng Việt
 có bị cắt, **hai dòng chữ có chồng nhau / chữ có chạm khung ảnh không** (kiểm chữ có Ố Ễ Ỗ), **ô hiệu ứng có bị cắt ở đáy hoặc chạm phụ đề không**
 (lớp phủ bị chặn cứng ở đỉnh dải phụ đề — thấy bị cắt thì rút nội dung), có gì tràn vùng đỏ, **lớp phủ có đè lên mặt/đầu người nói không** (script dò mặt theo khung 0,5 s — cử động
-nhanh vẫn có thể tràn; thấy đè thì đặt tay `place`), chữ có đọc được trên nền, cảnh có khớp lời nói không. Sửa rồi chụp lại tới khi sạch.
+nhanh vẫn có thể bị bỏ sót; thấy đè thì đặt tay `place`), chữ có đọc được trên nền, cảnh có khớp lời nói không. Sửa rồi chụp lại tới khi sạch.
 Chụp đúng mốc dễ lỗi (`quy-tac-chung.md` mục 8), không chụp thừa. Đây là bước tiết kiệm nhất — sửa ở đây rẻ hơn nhiều so với sau khi render.
 Khung ngang (pillar): trước khi chụp, dựng nền ngang một lần —
 `node xuat-video.mjs hai-ben` (khoảng 1 phút / phút video) rồi `python3 -I $SKILL/scripts/nen-cot.py "$P"` → `nen-ngang.mp4`;

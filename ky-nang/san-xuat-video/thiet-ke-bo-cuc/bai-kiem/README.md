@@ -18,7 +18,7 @@ hình mẫu ở [giai-mau.md](../giai-mau.md) (không trùng các trường hợ
 3. Chấm: `python3 -I cham.py bai-lam.json` → mỗi đoạn ✓ / ✗ kèm lý do; **đạt ít nhất 8/10** = máy này lập luận được.
 4. Chưa đạt thì đọc lại `giai-mau.md` phần "Rút ra theo loại", làm lại một lần; vẫn chưa đạt thì gửi các đoạn ✗ (kèm dòng `vi`) cho David chấm.
    David thấy đáp án sai thì sửa `de.json` (đáp án là cách nghĩ, không phải chân lý).
-5. **Bộ kiểm lớn dần:** lỗi dựng nào David phải sửa (sai nguyên lý, sai cách thể hiện) thì thêm một đoạn vào `de.json` từ chính ca đó
+5. **Bộ kiểm lớn dần:** lỗi dựng nào David phải sửa (sai nguyên lý, sai cách thể hiện) thì thêm một đoạn vào `de.json` từ chính trường hợp đó
    (trục `co-so-tri-thuc/truc-tri-thuc.md` mục 4). Không bỏ đoạn cũ khi chưa ghi lý do vào sổ.
 
 Thử công cụ chấm: `python3 -I cham.py --mau > /tmp/mau.json && python3 -I cham.py /tmp/mau.json` phải ra 10/10.

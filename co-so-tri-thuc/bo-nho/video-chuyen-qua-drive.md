@@ -27,7 +27,7 @@ Thành phẩm trả về: `.../Drive của tôi/thanh-pham/`, **mỗi tập mộ
 Kho dự án và bộ não: `.../Drive của tôi/sao-luu-mac/` (Movies, Downloads, Documents, bo-nao). Sao lưu đợt chuyển tài khoản: `.../Drive của tôi/sao-luu-claude-2026-11-07/` gồm `tai-lieu-claude-ai` và `du-an-video` (âm thanh gốc, kịch bản, bỏ file render).
 Liên quan (mục gộp dưới), [[co-so-tri-thuc-github-ban-goc]].
 
-Nguồn của luật: `ky-nang/chuan-muc-lam-viec.md` mục 4 ("Giữ Mac nhẹ") và [kho-drive.md](../../du-an/kho-drive.md). Ghi nhớ này giữ ngày, lời David, lý do.
+Nguồn của luật: `ky-nang/chuan-muc-lam-viec.md` mục 4 ("Giữ dung lượng Mac thấp") và [kho-drive.md](../../du-an/kho-drive.md). Ghi nhớ này giữ ngày, lời David, lý do.
 
 ## Gộp từ `video-chuyen-qua-drive` (15/11/2026, tự học tuần: giảm ghi nhớ về 40)
 

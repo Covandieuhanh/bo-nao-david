@@ -30,7 +30,7 @@ Màu, font, kiểu vẽ, kiểu chuyển động của nguồn, và: <những đ
 |---|---|---|---|---|---|---|---|
 
 ## 6. Giữ nguyên
-Thẩm mỹ, bố cục và thành phần đang có không đổi. Phần cũ nào bị liên quan tới (nếu có): <ghi rõ, hoặc "không">
+Thẩm mỹ, bố cục và thành phần đang có không đổi. Phần cũ nào bị ảnh hưởng (nếu có): <ghi rõ, hoặc "không">
 
 ## 7. Cần David quyết
 - <câu hỏi, kèm gợi ý>

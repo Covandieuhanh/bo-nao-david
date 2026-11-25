@@ -17,7 +17,7 @@ File này giữ các thói quen **dùng chung cho mọi skill**. Luật riêng c
 **Phù hợp với nội dung là chìa khoá, không gì cố định**: thời lượng, nhạc, hiệu ứng, số cảnh, số clip, mọi phần khi dựng đều chọn theo chính nội dung; không có luật kiểu "mỗi video một bài nhạc" hay "phải bao nhiêu phút". Thời lượng video (và mọi độ dài) do Claude tự chọn; quy trình không bao giờ đặt "phải bao nhiêu phút". Con số ở hồ sơ hay skill chỉ là mặc định gợi ý, thấy không hợp nội dung thì theo sự phù hợp và ghi "đã chọn X vì Y".
 
 **Phần AI làm thì sáng tạo hết sức:** khung (bước, luật, tiêu chí đạt) và nhận diện lớn là cố định; bên trong mỗi bước cần phán đoán
-thì sáng tạo cho hợp nội dung đang làm, không dập mẫu, không lặp cách cũ. Danh mục có sẵn là công cụ, không phải mẫu.
+thì sáng tạo cho hợp nội dung đang làm, không rập khuôn, không lặp cách cũ. Danh mục có sẵn là công cụ, không phải mẫu.
 Luật nội dung (nguyên văn lời David, giọng David, lằn ranh) không phải mẫu — vẫn giữ.
 
 **Nội dung là của David:** David tự xây nội dung, nói tự do và có cảm xúc. AI không viết mẫu lời, không đặt kịch bản thu âm, không đề xuất
@@ -117,7 +117,7 @@ Ghi lại gì, ở đâu, thăng cấp tầng nào: trục `../co-so-tri-thuc/tr
 - **Giữ dung lượng Mac thấp:** Mac chỉ giữ việc đang làm. David chốt xong việc (Đ2, `quy-trinh.md` mục 1) thì đưa việc của David (video gốc, thành quả video) lên Drive rồi xoá trên Mac
   (video: `don-tap.py --xoa` → `luu-drive.sh`); file tải về, dữ liệu app, đồ cá nhân không đồng bộ, muốn xoá thì hỏi trước. Ghi nhớ `video-chuyen-qua-drive`.
   Xoá video trên Mac chỉ bằng `luu-drive.sh` (chép cả tập → lên mây → so khớp → mới xoá), không tự lọc file bằng `find … -delete`
-  (`-delete` làm mất tác dụng `-prune`, ngày 20/11/2026 đã xoá mất gốc DJI_0030 của tập công cụ đo giải pháp AI).
+  (`-delete` làm mất tác dụng `-prune`, ngày 20/11/2026 đã xoá mất gốc DJI_0030 của tập máy đo giải pháp AI).
   **Video: Mac chỉ giữ bản cuối chưa đăng** ở `~/Movies/cho-dang/<tập>/` (David 20/11/2026: "tôi chỉ quan tâm đến các kết quả cuối thôi");
   bản gốc + dự án dựng chỉ ở Drive. Render xong thì chạy `cho-dang.sh gui`; đăng xong thì chạy `cho-dang.sh xong` (kiểm Drive rồi mới xoá).
   Kiểm nhanh: trang `localhost:8765/mac` (Chờ đăng + dự án còn trên Mac) hoặc `python3 tu-dong-hoa/kiem-video-mac.py` (chỉ đọc).

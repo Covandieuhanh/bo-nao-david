@@ -91,4 +91,4 @@ Hình mẫu đã học và nhật ký: `co-so-tri-thuc/hinh-mau/1-hinh-tuong-ca-
 - Lớp cảnh có nền đen riêng thì lúc lướt ngang sẽ che cảnh cũ thành mảng đen: lớp cảnh không có nền, chỉ khung chính có nền đen.
 - Shell zsh không tách chữ khi `set -- $bien` hay `$L`: chạy vòng lặp bằng bash.
 - File DJI có nhiều luồng hình (bản xem trước 1280×720): luôn `-map 0:v:0`.
-- Mốc whisper ở đoạn điệp phân đoạn lặp nhiều lần hay bị ảo: chép từng chữ trên đoạn ngắn đã cắt riêng.
+- Mốc whisper ở đoạn điệp khúc lặp nhiều lần hay bị ảo: chép từng chữ trên đoạn ngắn đã cắt riêng.
