@@ -157,7 +157,7 @@ for k in plan['doan-video']:
         for i in range(len(lw) - 1): PAIR[(lw[i], lw[i + 1])] = PAIR.get((lw[i], lw[i + 1]), 0) + 1
 # cặp chữ lặp ≥ 2 lần trong lời (bí mật, đi bộ, sức khỏe, sắp xếp…) ≈ từ ghép → không ngắt dòng giữa hai chữ
 COMPOUND = {k for k, v in PAIR.items() if v >= 2 and not (k[0] in END_BAD and k[1] in CONJ)}
-for v in plan.get('fix', {}).values():                  # chữ đã sửa tay (phạm trù, bộ môn…) cũng là từ ghép
+for v in plan.get('fix', {}).values():                  # chữ đã sửa thủ công (phạm trù, bộ môn…) cũng là từ ghép
     vw = [norm(w) for w in v.split()]; COMPOUND |= {(vw[i], vw[i + 1]) for i in range(len(vw) - 1)}
 warn, sheets, seen, cnt = [], [], set(), {}
 for k in plan['doan-video']:
@@ -355,7 +355,7 @@ head = tpl[:tpl.index('const RAW = [')]
 mid = tpl[tpl.index('let acc = 0;'):tpl.index('// ===== Phụ đề')]
 rawjs = ',\n'.join('  ' + json.dumps({k: v for k, v in s.items() if not k.startswith('_')}, ensure_ascii=False) for s in raw)
 show = plan.get('show', {})
-src = f"""{head}// Viết bởi dung-video-theo-phong-cach/scripts/danh-sach-cat-vlog.py từ ke-hoach.json — sửa ke-hoach.json rồi chạy lại (không sửa tay file này).
+src = f"""{head}// Viết bởi dung-video-theo-phong-cach/scripts/danh-sach-cat-vlog.py từ ke-hoach.json — sửa ke-hoach.json rồi chạy lại (không sửa thủ công file này).
 const RAW = [
 {rawjs}
 ];

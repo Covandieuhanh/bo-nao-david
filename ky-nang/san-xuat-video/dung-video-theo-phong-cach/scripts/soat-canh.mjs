@@ -201,7 +201,7 @@ for (let i = 1; i < chuoi.length; i++) {
   const coY = /Một kiểu có chủ đích:/.test(kh);
   if (duration >= 45 && loai.size <= 1 && !coY)
     bao('P0', 0, 'cả video', `chỉ ${loai.size ? `một kiểu lớp phủ (${[...loai][0]})` : 'không có lớp phủ nội dung'} suốt ${fmt(duration)} s`,
-      'đi lại tu-chon.md bước 4 cho từng ý (liệt kê, so sánh, bước, con số, câu đắt…), hoặc ghi "Một kiểu có chủ đích: …"');
+      'đi lại tu-chon.md bước 4 cho từng ý (liệt kê, so sánh, bước, con số, câu then chốt…), hoặc ghi "Một kiểu có chủ đích: …"');
   else if (duration >= 300 && loai.size <= 2 && !coY)
     bao('P1', 0, 'cả video', `video ${fmt(duration / 60)} phút chỉ ${loai.size} kiểu lớp phủ (${[...loai].join(', ')})`, 'xem lại tu-chon.md bước 4');
   // TẬN DỤNG KHO, ĐỔI HIỆU ỨNG (David 22/11/2026: "học nhiều mà không thấy ứng dụng được thì phí quá" — rồi: không cần luật cố định,

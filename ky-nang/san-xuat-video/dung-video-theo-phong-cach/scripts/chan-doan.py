@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """CHẨN ĐOÁN VIDEO (thiet-ke-bo-cuc/tu-chon.md, David chốt 11/11/2026): chan-doan.py <dự án>
-Đo những gì máy đo được để Claude tự chọn bố cục nền, lớp thông tin, kiểu cảnh — không hỏi David.
+Đo những gì công cụ đo được để Claude tự chọn bố cục nền, lớp thông tin, kiểu cảnh — không hỏi David.
 → kiem-tra/chan-doan.md (số đo + gợi ý theo tu-chon.md) + kiem-tra/chan-doan.jpg (6 khung gốc để Claude xem: mặt, chủ thể, rác).
 Lời lấy từ chuyen-dong/src/phu-de.js, không có thì kiem-tra/goc/ban-chep-loi.srt / moc-tung-tu.srt."""
 import glob, json, os, re, subprocess, sys

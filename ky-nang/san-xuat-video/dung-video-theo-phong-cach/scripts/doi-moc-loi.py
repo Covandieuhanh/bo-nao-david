@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Dời lời đã chép từ bản thô sang bản sạch (không chép lại): doi-moc-loi.py <dự án>
 Đọc kiem-tra/lam-sach/{ban-chep-loi,moc-tung-tu}.srt (mốc bản thô) + cac-doan.json → kiem-tra/goc/{ban-chep-loi,moc-tung-tu}.srt (mốc bản sạch).
-Từ / câu nằm trong đoạn đã cắt bị bỏ. Dùng khi chỉ cắt vài đoạn (vd. lời chào kênh cũ ở video dài) — nhanh, nhẹ máy hơn
+Từ / câu nằm trong đoạn đã cắt bị bỏ. Dùng khi chỉ cắt vài đoạn (vd. lời chào kênh cũ ở video dài) — nhanh, tốn ít tài nguyên máy hơn
 phan-tich-video.sh và giữ nguyên chữ đã soát. (2026-11-08)"""
 import json, os, re, sys
 P = os.path.expanduser(sys.argv[1])

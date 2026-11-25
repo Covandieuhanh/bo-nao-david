@@ -36,7 +36,7 @@ python3 -I ky-nang/tai-cau-truc/do-chong-cheo.py [--chi-tiet]
    `du-an/nang-cap-<n>-<bộ>.md`, chỉ sửa file của bộ mình, không commit, không chạy `dong-bo.sh` — phiên điều phối đẩy một lần.
    Bộ vừa sạch (công cụ đo gần 0) vẫn làm bước 2 để tìm luật lệch với bộ khác. Việc nhỏ (vài cặp trùng) làm trong một phiên.
 2. **Bảng luật hiện hành** (file của bộ): đọc bản luật + sổ quyết định + ghi nhớ liên quan, mỗi luật một dòng:
-   `luật · nhà nên ở · nguồn hiện tại (file:dòng, có thể nhiều) · ngày chốt gần nhất · trạng thái (sống / trùng / ngược / cũ)`.
+   `luật · nguồn nên ở · nguồn hiện tại (file:dòng, có thể nhiều) · ngày chốt gần nhất · trạng thái (sống / trùng / ngược / cũ)`.
    Bắt đầu từ các cặp `gan_trung` của công cụ đo (`--chi-tiet`). Luật ngược nhau: theo `chuan-muc-lam-viec.md` mục 0 (lời David vừa nói >
    ngày chốt gần nhất > cũ); chỗ vẫn không rõ thì gom lại **hỏi David một lần** (thu-thap-yeu-cau), có đề xuất. Không tự bỏ luật nào
    David đã chốt mà không có luật mới hơn thay. Luật xung đột với bộ khác thì ghi mục "Chéo bộ"; phiên điều phối chốt nguồn duy nhất.

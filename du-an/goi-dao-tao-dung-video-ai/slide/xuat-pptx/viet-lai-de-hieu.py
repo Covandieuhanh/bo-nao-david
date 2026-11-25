@@ -48,7 +48,7 @@ S["bai-hoc-1/trang-trinh-chieu/bo-cong-cu.html"] = f'''<section id="bo-cong-cu">
 <div class="card" style="--i:2"><div class="row"><x-icon name="Palette" style="width:48px;height:48px;color:#B04A12"></x-icon><h3>Node.js + Remotion · hoạ sĩ</h3></div>
 <div class="row"><div class="scr" style="width:320px;height:180px"><p class="stk" style="left:24px;top:24px;font-size:26px">Bước 1</p><p class="lbl" style="left:24px;top:92px;width:280px;font-size:24px">Tráng phin bằng nước sôi</p></div><p class="cap grow">Vẽ chữ chuyển động, thẻ số bước, khung trình bày.</p></div></div>
 <div class="card" style="--i:3"><div class="row"><x-icon name="Cog" style="width:48px;height:48px;color:#B04A12"></x-icon><h3>Python · người làm việc vặt</h3></div>
-<p class="d">Làm các việc nhỏ lặp lại: đổi tên file, đếm chữ, gom kết quả. Bạn không cần đụng tới.</p></div>
+<p class="d">Làm các việc nhỏ lặp lại: đổi tên file, đếm chữ, gom kết quả. Bạn không cần can thiệp.</p></div>
 </div>
 <p class="foot">{F} · Bài 1 · Bạn không dùng trực tiếp: AI dùng thay bạn</p>
 <aside>Học viên không cần tự dùng các công cụ này. Chỉ cần biết mỗi cái làm việc gì để hiểu AI đang báo gì. Remotion miễn phí cho cá nhân và công ty từ 3 người trở xuống.</aside>

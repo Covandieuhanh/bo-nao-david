@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Chấm bài kiểm toàn bộ não (co-so-tri-thuc/bai-kiem/README.md).
   python3 -I cham.py <bai-lam.json>   — bài làm: [{"id": "c01", "chon": "A", "vi": "<lý do, nêu file đã dựa vào>"}, …]
-  python3 -I cham.py --mau            — in bài làm đúng (đáp án) để thử máy chấm
-Một câu ĐẠT khi "chon" trùng đáp án. Đạt khi đúng ít nhất (số câu trừ 1). Câu sai in ra kèm file là nhà của luật để sửa."""
+  python3 -I cham.py --mau            — in bài làm đúng (đáp án) để thử công cụ chấm
+Một câu ĐẠT khi "chon" trùng đáp án. Đạt khi đúng ít nhất (số câu trừ 1). Câu sai in ra kèm file là nguồn của luật để sửa."""
 import json, sys
 from pathlib import Path
 
