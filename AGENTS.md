@@ -11,7 +11,7 @@ Bạn đang làm việc với **David Trần** (Trần Đức Cường), nhà đ
 | 3 | [bao-cao-trang-thai.md](bao-cao-trang-thai.md) | Việc nào đang làm chưa xong, việc tiếp theo, việc chờ David quyết |
 | 4 | [co-so-tri-thuc/bo-nho/MEMORY.md](co-so-tri-thuc/bo-nho/MEMORY.md) | Mục lục các bài học và quyết định. Mở từng file khi việc liên quan tới |
 | 5 | [ky-nang/thu-thap-yeu-cau/SKILL.md](ky-nang/thu-thap-yeu-cau/SKILL.md) | Cách hỏi khi trình 4 phần: vòng hỏi, đề xuất đứng đầu, tín hiệu phải dừng |
-| 6 | [ky-nang/chuan-muc-lam-viec.md](ky-nang/chuan-muc-lam-viec.md) (việc học, sửa, lưu bộ não: [co-so-tri-thuc/truc-tri-thuc.md](co-so-tri-thuc/truc-tri-thuc.md)) | Thói quen chung mọi skill: đọc đúng phần, hỏi một lần, trong lúc làm, cuối việc, luôn đi tới mục tiêu và nhắc David giữ phiên gọn |
+| 6 | [ky-nang/chuan-muc-lam-viec.md](ky-nang/chuan-muc-lam-viec.md) (cách làm từng bước: [ky-nang/quy-trinh-van-hanh-chung.md](ky-nang/quy-trinh-van-hanh-chung.md); việc học, sửa, lưu bộ não: [co-so-tri-thuc/truc-tri-thuc.md](co-so-tri-thuc/truc-tri-thuc.md)) | Thói quen chung mọi skill: đọc đúng phần, hỏi một lần, trong lúc làm, cuối việc, luôn đi tới mục tiêu và nhắc David giữ phiên gọn |
 | 7 | [quy-trinh.md](quy-trinh.md) (cây quy trình) | Quy trình gốc, rồi đúng lá của việc: từng bước, xong khi |
 
 **Cách nghĩ gốc của mọi việc (tầng 0):** [co-so-tri-thuc/tu-duy-goc.md](co-so-tri-thuc/tu-duy-goc.md) — bốn khối Bóc tách · Hành động (vòng kết quả hoặc vấn đề) · Học và thay đổi · Bản chất và kiểm sai; thông tin mới nào cũng liên kết với một khối.

@@ -28,3 +28,4 @@ Mỗi thay đổi file tầng 0 ghi **một dòng** ở đây trước khi đẩ
 | 2026-11-25 | CLAUDE.md | nâng cấp | tham chiếu tên file mới | David 25/11/2026: "duyệt triển khai"; "chuẩn cả trong cách ghi tên các file" | chốt 2026-11-25 |
 | 2026-11-25 | co-so-tri-thuc/chi-dan-toan-cuc.md | nâng cấp | tham chiếu tên file mới | David 25/11/2026: "duyệt triển khai"; "chuẩn cả trong cách ghi tên các file" | chốt 2026-11-25 |
 | 2026-11-25 | co-so-tri-thuc/mo-hinh-kinh-doanh.md | nâng cấp | tham chiếu tên file mới | David 25/11/2026: "duyệt triển khai"; "chuẩn cả trong cách ghi tên các file" | chốt 2026-11-25 |
+| 2026-11-25 | AGENTS.md | nâng cấp | thứ tự đọc: tách chuẩn mực (nguyên lý, tầng 1) và quy trình vận hành chung (cách làm, tầng 2) | David 25/11/2026 duyệt kế hoạch 9 việc (việc 6) | chốt 2026-11-25 |
