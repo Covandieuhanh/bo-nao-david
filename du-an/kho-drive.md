@@ -52,6 +52,12 @@ Trạng thái chi tiết, lịch đăng: sổ [danh-muc-noi-dung.md](danh-muc-no
 |---|---|---|
 | Cuộc gọi hợp tác (dji_mimo_20261110, 12:46) | `tu-lieu-goc/tap-cuoc-goi-hop-tac/` | `~/Downloads/dji_mimo_20261110_…MP4`, chờ David chốt phiếu lọc |
 
+## Máy Windows (từ 25/11/2026)
+
+Dự án dựng video nằm ở ổ D: `D:\video-david\wsl-tap\<tập>` (trong WSL là `/mnt/d/video-david/wsl-tap/<tập>`); `~/Movies/<tập>` trong WSL
+chỉ là đường dẫn tắt tới đó, nên lệnh cũ vẫn chạy. Lý do: đĩa ảo WSL nằm trên ổ C và làm đầy ổ C. Tập mới cũng tạo ở ổ D rồi nối đường dẫn tắt.
+Chép file lớn từ WSL sang `/mnt/d` hay báo thiếu bộ nhớ: chép bằng robocopy hoặc Copy-Item phía Windows qua `\\wsl.localhost\...`.
+
 ## Sổ dọn Mac
 
 **Mac chỉ giữ bản cuối chưa đăng** ở `~/Movies/cho-dang/<tập>/` (y hệt `thanh-pham/<tập>/`, script `cho-dang.sh lay|gui|xong`); đăng xong thì Drive `thanh-pham/<tập>/da-dang.txt` ghi ngày.
@@ -59,4 +65,10 @@ Kiểm trước khi dọn: `localhost:8765/mac` hoặc `python3 tu-dong-hoa/kiem
 
 - **20/11/2026:** đưa 5 tập (máy đo giải pháp AI, giao dịch hàng hoá, bận cả ngày, cuộc gọi hợp tác, marketing) lên `sao-luu-mac/video/` bằng `luu-drive.sh`, xoá ba thư mục thử (`tap-thu-tai-ban-3`, `thu-doi-goc`, `thu-tu-chon`). Mac từ 2 GB trống lên 52 GB.
   Sự cố: lệnh `find … -delete` (trước `luu-drive.sh`) xoá luôn `1-goc/` của hai tập nên **mất gốc DJI_0030** (tập máy đo giải pháp AI, không còn bản nào trên Mac, có thể còn trên máy quay / app DJI Mimo); gốc giao dịch hàng hoá (`dji_mimo_20261111_204848…`) còn trong Thùng rác. Luật mới ở `ky-nang/chuan-muc-lam-viec.md` mục 4.
+- **25/11/2026 (máy Windows):** chuyển các dự án trong `~/Movies` sang `D:\video-david\wsl-tap`, so khớp từng file rồi mới để đường dẫn tắt.
+  Đưa lên `thanh-pham/` ba bản buổi 21/11 (`tap-may-do-giai-phap` hướng 3, `tap-ket-noi-doanh-nhan` hướng 2, `tap-hanh-trinh-david` nhân hiệu),
+  rồi xoá gốc DJI_0022 trong `tu-lieu-goc/` (vào thùng rác Drive). Phần nhẹ của `tap-dji0022-2111`, `tap-tham-quan-doi-cong-nghe`,
+  `tap-may-do-giai-phap`, `tap-ket-noi-doanh-nhan`, `tap-hanh-trinh-david`, `tap-thu-tham-my`, `cho-dang` lên `sao-luu-mac/video/`
+  (file dưới 50 MB; Drive còn ít chỗ nên bản video trung gian lớn chỉ ở ổ D).
+  Sự cố: cùng ngày xoá nhầm vĩnh viễn gốc buổi 22–23/11 trên máy (DJI_0025, 0026, 0028, 0029 và bản làm sạch), xem mục "Khi nào xoá video gốc".
 
