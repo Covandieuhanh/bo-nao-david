@@ -21,6 +21,15 @@ Drive `covandieuhanh@gmail.com` › `Drive của tôi`. Mac chỉ giữ dữ li�
 
 Từ 11/11 chỉ đồng bộ bộ não, video gốc, thành quả video. `sao-luu-mac/tai-ve` và `Documents` là đợt chuyển một lần ngày 11/11, không cập nhật tiếp. Không tải lên: mật khẩu, lịch sử chat thô, bộ nhớ đệm, dữ liệu app, đồ cá nhân.
 
+## Khi nào xoá video gốc (lời David 25/11/2026)
+"Các video nguồn mà đã có đủ các bản video kết quả theo các hướng rồi thì hoàn toàn có thể xóa các file gốc đi vì không dùng tới nữa;
+file gốc chủ yếu để ghi lại toàn bộ nội dung và ý tưởng, còn khi đăng thì chỉ cần các bản đã phù hợp với từng hướng."
+- Xoá được khi đủ cả ba: `phan-huong.md` của tập đã phân đủ 3 hướng · nhật ký nội dung có mục ở từng hướng có ý · **mọi bản theo hướng
+  ghi trong `phan-huong.md` đã có trong Drive `thanh-pham/<tập>/`** (hướng "không ra bản" thì không cần).
+- Thiếu một bản theo hướng (còn "chờ dựng", chưa lên `thanh-pham/`) thì giữ gốc.
+- Gốc chưa lên Drive mà đã đủ ba điều trên thì không tải lên nữa. Xoá qua ổ Drive trên máy là vào thùng rác Drive (vẫn chiếm chỗ 30 ngày);
+  dọn thùng rác là xoá vĩnh viễn — David tự làm.
+
 ## Phân loại từng tập (`sao-luu-mac/video/`)
 
 Trạng thái chi tiết, lịch đăng: sổ [danh-muc-noi-dung.md](danh-muc-noi-dung.md).
