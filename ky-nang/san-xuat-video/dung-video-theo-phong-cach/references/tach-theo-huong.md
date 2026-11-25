@@ -27,8 +27,8 @@ kho 100 với hướng trainer: làm đúng [khối 00 mục 0b](../../mo-dun/00
 - Phần đời thường / hành trình của David không thuộc hẳn hướng nào ra được bản riêng "nhân hiệu" (cây nội dung kênh trainer, khối 00 mục 1).
 - Mốc mỗi đoạn lấy **đúng đầu / cuối câu** trong phụ đề (in các dòng quanh mốc để chọn).
 - **Lằn ranh** (khối 00 mục 3): mặc định giữ lời; liệt kê từng câu trong 4 phần cho David chọn giữ hay cắt. David chọn cắt thì tách đoạn
-  bỏ riêng câu đó. Người khác xuất hiện (đối tác, khách): ghi vào mục "Ghi chú đăng" của gói phát hành, không hỏi; khách của công ty Veltrix thì
-  hỏi David trước (`AGENTS.md`, hai bộ não).
+  bỏ riêng câu đó. Người khác xuất hiện (đối tác, khách): ghi vào mục "Ghi chú đăng" của gói phát hành, không hỏi, kể cả khách của công ty Veltrix
+  (lời David 25/11/2026).
 - Trình David bảng "video · hướng · đoạn · dài" + đoạn cắt + lằn ranh + clip ngắn dự kiến (4 phần), có mặc định.
 
 ### 3. Cắt + tạo dự án (sau khi duyệt)
