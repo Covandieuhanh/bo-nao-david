@@ -23,6 +23,7 @@ chk "zsh, rsync" "command -v zsh && command -v rsync" "$CAI"
 # Drive là nơi giao kết quả (cho-dang.sh, luu-drive.sh) và nơi bộ thử máy (kiem-tra-thiet-bi.sh): thiếu thì dựng được nhưng chưa giao được — cảnh báo, không chặn
 if source "${0:A:h}/drive-chung.sh" 2>/dev/null && tim_drive; then echo "✅ Google Drive: $G"
 elif [[ $OSTYPE == darwin* ]]; then echo "⚠ Chưa thấy Google Drive — dựng được nhưng chưa giao được kết quả: $DRIVE_HUONG_DAN"
-else echo "✅ Drive: $DRIVE_HUONG_DAN"; fi
+elif co_rclone; then echo "✅ Drive: tải lên bằng rclone (kết nối $RC), không đồng bộ ổ"
+else echo "⚠ Drive: $DRIVE_HUONG_DAN"; fi
 df -h ~ | awk 'NR==2 {print "💾 Ổ đĩa còn trống: " $4 " (mỗi dự án cần ~3 GB)"}'
 [ $ok = 1 ] && echo "Sẵn sàng." || exit 1

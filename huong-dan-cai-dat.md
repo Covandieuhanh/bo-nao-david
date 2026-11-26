@@ -78,7 +78,7 @@ Windows chạy skill qua **WSL2**, tức một Ubuntu chạy bên trong Windows.
 **Một lần trên Windows** (David tự làm):
 
 1. Mở PowerShell bằng quyền quản trị (nhấp chuột phải rồi chọn Run as administrator), chạy `wsl --install -d Ubuntu-24.04`, khởi động lại máy. Mở "Ubuntu" từ menu Start, đặt tên và mật khẩu cho Ubuntu.
-2. **Không cài Google Drive cho máy tính** (David 26/11/2026, `du-an/kho-drive.md` mục "Máy Windows"): video gốc tải bằng link, kết quả ở trên máy.
+2. **Không cài Google Drive cho máy tính** (David 26/11/2026, `du-an/kho-drive.md` mục "Máy Windows"): video gốc tải bằng link. Muốn máy tự tải kết quả lên Drive thì cài `rclone` và kết nối một lần theo [ket-noi-drive.md](tu-dong-hoa/thiet-bi-khac/ket-noi-drive.md).
    Để chạy `kiem-tra-thiet-bi.sh`: tải thư mục `tu-lieu-goc/_bo-thu-may` bằng link David gửi (`gdown --folder <link>`) rồi chạy `BO_THU=<thư mục đó> zsh .../kiem-tra-thiet-bi.sh`; chưa chạy đạt thì **chưa tính là cài xong**.
    **Không dựng bằng bản repo clone phía Windows** (Git cho Windows chuyển liên kết thư viện hình thành file văn bản): chỉ dùng bản trong Ubuntu `~/Documents/bo-nao-david`.
 
@@ -123,7 +123,7 @@ zsh ~/Documents/bo-nao-david/tu-dong-hoa/thiet-bi-khac/kiem-tra-thiet-bi.sh
 **Dùng hằng ngày:** mở Ubuntu, `cd ~/Documents/bo-nao-david && claude`, rồi làm như trên Mac: gửi video, gọi skill.
 - Video gốc: David gửi link, Claude tải về bằng `gdown`.
 - Dự án dựng nằm ở `~/Movies` của Ubuntu. Mở bằng Windows Explorer: gõ `explorer.exe ~/Movies` trong Ubuntu, hoặc vào `\\wsl$\Ubuntu-24.04\home\<tên>\Movies`.
-- Thành phẩm ở `~/Movies/cho-dang/<tập>/` (`cho-dang.sh gui` làm đủ bản và in đường dẫn Windows). Máy này không tự đưa lên Drive và không tự xoá bản trên máy.
+- Thành phẩm ở `~/Movies/cho-dang/<tập>/`; `cho-dang.sh gui` làm đủ bản và tải lên Drive nếu đã kết nối (chưa thì in đường dẫn Windows). Máy này không tự xoá bản trên máy.
 - Máy có card NVIDIA cài CUDA trong WSL thì Whisper chạy nhanh hơn nhiều (script tự dùng). Không có thì chạy bằng CPU: chậm hơn Mac nhưng ra cùng kết quả.
 
 ## 4. AI khác hoặc Claude bản web

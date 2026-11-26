@@ -57,8 +57,13 @@ Trạng thái chi tiết, lịch đăng: sổ [danh-muc-noi-dung.md](danh-muc-no
 **Không đồng bộ Drive vào máy này** (lời David 26/11/2026: "không đồng bộ drive vào ổ G trên máy này"; "drive chỉ đóng vai trò là chủ động tải về video gốc hoặc tải lên thôi"). Mục này là nguồn duy nhất của luật; các chỗ khác nói "thiết bị chỉ dựng video lên Drive" đều theo mục này.
 - Không cài, không mở, không yêu cầu đăng nhập Google Drive cho máy tính; không gắn ổ G: vào Ubuntu. Thấy thiếu ổ Drive thì **không** tự mở ứng dụng.
 - **Tải về:** chỉ bằng link David gửi (`gdown`, quy trình `ky-nang/san-xuat-video/phan-phoi-da-kenh/references/nhan-tai-nguyen.md`).
-- **Tải lên:** chưa có công cụ tải lên khi máy không đăng nhập Google; link có quyền chỉnh sửa tự nó chưa phải công cụ đó (tải tệp vào thư mục Drive cần đăng nhập Google; chưa thử bằng link thật). Trong lúc chưa có: kết quả ở `D:\video-david\wsl-tap\cho-dang\<tập>` (`cho-dang.sh gui` làm đủ bản và in đường dẫn), Claude gửi bản xem nhẹ trong chat, báo rõ "chưa lên Drive"; David muốn có trên Drive thì tự kéo thư mục đó lên.
-- Vì không có bản trên Drive do máy này đưa lên: không tự xoá bản gốc hay thành phẩm trên máy; việc dọn trên Drive cũng không làm được từ máy này.
+- **Tải lên bằng lệnh** (David duyệt kế hoạch 26/11/2026): `rclone`, kết nối tên `drive-david`, quyền `drive.file` (chỉ thấy tệp, thư mục do chính nó tạo). David kết nối một lần theo [ket-noi-drive.md](../tu-dong-hoa/thiet-bi-khac/ket-noi-drive.md); khoá truy cập chỉ ở máy, Claude không mở, không in.
+  - Mọi thứ máy này đưa lên nằm trong thư mục Drive `thanh-pham-may-windows/`: `<tập>/` (thành phẩm, gói đăng) · `_buoi-<buổi>/` · `_sao-luu-du-an/<tập>/`. Không ghi được vào `thanh-pham/` cũ.
+  - `cho-dang.sh gui|buoi|lay|xong` và `luu-drive.sh` tự dùng đường này; chép xong so từng tệp bằng mã MD5 rồi mới báo "đã lên". Sửa thì tải lại: tệp trùng tên được thay; tệp cũ khác tên được liệt kê, chưa tự xoá.
+  - Chưa kết nối (hoặc khoá hết hiệu lực): kết quả giữ ở `D:\video-david\wsl-tap\cho-dang\<tập>`, gửi bản xem nhẹ trong chat, báo rõ "chưa lên Drive".
+  - Làm việc từ xa: máy phải bật, không ngủ, có mạng.
+- 26/11/2026 (David duyệt): đã bỏ mục tự mở `GoogleDriveFS` khi đăng nhập Windows (khoá Run của người dùng) và ghi chú tắt dòng gắn `G:` trong `/etc/fstab` của Ubuntu (bản trước khi sửa: `/etc/fstab.truoc-khi-go-o-G`). Ứng dụng vẫn còn cài và còn đăng nhập; đăng xuất hay gỡ cài là việc David tự làm. Mở lại ứng dụng thì nó có thể tự bật lại mục tự mở.
+- Máy này không tự xoá bản gốc hay thành phẩm trên máy, kể cả khi đã khớp trên Drive; việc dọn thư mục Drive cũ (`tu-lieu-goc/`, `thanh-pham/`) không làm được từ máy này.
 
 Dự án dựng video nằm ở ổ D: `D:\video-david\wsl-tap\<tập>` (trong WSL là `/mnt/d/video-david/wsl-tap/<tập>`); `~/Movies/<tập>` trong WSL
 chỉ là đường dẫn tắt tới đó, nên lệnh cũ vẫn chạy. Lý do: đĩa ảo WSL nằm trên ổ C và làm đầy ổ C. Tập mới cũng được tạo ở ổ D rồi tạo đường dẫn tắt.

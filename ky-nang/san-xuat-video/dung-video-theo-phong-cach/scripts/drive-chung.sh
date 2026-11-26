@@ -19,7 +19,7 @@ tim_drive() {
 if [[ $OSTYPE == darwin* ]]; then
   DRIVE_HUONG_DAN="mở ứng dụng Google Drive cho máy tính; thư mục ở chỗ khác thì đặt DRIVE_GOC=<đường dẫn>"
 else
-  DRIVE_HUONG_DAN="máy này không đồng bộ Drive (du-an/kho-drive.md, mục Máy Windows): video gốc tải bằng link, kết quả ở trên máy"
+  DRIVE_HUONG_DAN="máy này không đồng bộ Drive (du-an/kho-drive.md, mục Máy Windows); tải lên cần kết nối một lần: bash tu-dong-hoa/thiet-bi-khac/ket-noi-drive.sh"
 fi
 if [[ $OSTYPE == darwin* ]]; then
   DRIVE_KIEM_DUOC=1
@@ -32,4 +32,18 @@ else
   da_len() { echo "chua_len=0 (máy này không hỏi được Drive — xem biểu tượng Google Drive trên Windows) "; }
   giai_phong() { :; }
 fi
+# Đường tải lên bằng lệnh cho máy không đồng bộ Drive (David duyệt 26/11/2026): rclone, quyền drive.file (chỉ thấy tệp do chính
+# nó tạo), mọi thứ nằm trong thư mục Drive $RC_GOC. Kết nối một lần: tu-dong-hoa/thiet-bi-khac/ket-noi-drive.sh.
+RC=${DRIVE_RC:-drive-david}
+RC_GOC=thanh-pham-may-windows
+co_rclone() { [[ $OSTYPE != darwin* ]] && command -v rclone >/dev/null && rclone listremotes 2>/dev/null | grep -qx "$RC:"; }
+# tai_len <thư mục máy> <đường dẫn trong $RC_GOC> [cờ lọc của rclone ...]: chép lên rồi so từng tệp (mã MD5 do Drive trả về)
+tai_len() {
+  local nguon=${1:A} dich="$RC:$RC_GOC/$2" thua; shift 2
+  rclone copy "$nguon" "$dich" --skip-links --retries 5 --low-level-retries 20 --stats-one-line --stats 60s "$@" || { echo "✗ tải lên chưa trọn (xem lỗi ở trên), chạy lại lệnh này"; return 1; }
+  rclone check "$nguon" "$dich" --skip-links --one-way "$@" || { echo "✗ bản trên Drive chưa khớp bản trên máy"; return 1; }
+  thua=$(rclone check "$nguon" "$dich" --skip-links --missing-on-src - "$@" 2>/dev/null)
+  [ -z "$thua" ] || { echo "⚠ Trên Drive còn tệp mà máy không có (bản cũ đổi tên?), chưa xoá:"; print -r -- "$thua"; }
+  return 0
+}
 kich_thuoc() { wc -c < "$1" | tr -d ' '; }   # thay stat -f %z (chỉ Mac có)
