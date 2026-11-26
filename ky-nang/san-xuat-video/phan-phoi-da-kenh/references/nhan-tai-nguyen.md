@@ -20,7 +20,7 @@ thư mục Drive `tu-lieu-goc`. Là bước 0 của `phan-phoi-da-kenh`.
    - YouTube / TikTok: `yt-dlp -f "bv*[height<=1080]+ba/b" -o "~/Movies/tap-<tên>/1-goc/%(title)s.%(ext)s" "<link>"` — chỉ video của chính
      David hoặc video mẫu để học (học xong thì xoá, `thiet-ke-bo-cuc/README.md` mục 4).
    - File trong chat / Drive `tu-lieu-goc`: chép vào `~/Movies/tap-<tên>/1-goc/`.
-   - Mac chính: thư mục Drive đã đồng bộ sẵn thì chép trực tiếp, không cần tải. Máy Windows không đồng bộ Drive: luôn tải bằng link (`du-an/kho-drive.md` mục "Máy Windows").
+   - Mac chính: thư mục Drive đã đồng bộ sẵn thì chép trực tiếp, không cần tải. Máy Windows không đồng bộ Drive về máy: tải bằng link (`du-an/kho-drive.md` mục "Máy Windows").
    - Khi tải lỗi vì quyền (link chưa mở chia sẻ), Claude báo David một dòng: "link chưa mở quyền xem, anh bật 'Bất kỳ ai có đường liên kết'".
 3. **Đọc thông số:** `ffprobe -v error -show_entries format=duration:stream=codec_type,width,height,r_frame_rate -of compact "<file>"` —
    độ dài, khung (ngang / dọc), số khung hình, có tiếng không. Khi có nhiều file cùng một buổi, Claude sắp xếp theo giờ quay (`creation_time`) hoặc tên file.

@@ -9,10 +9,10 @@ T=${1:a}; [ -d "$T" ] || { echo "✗ không có thư mục $1"; exit 1; }
 case "$T" in "$HOME/Movies/tap-"*|"$HOME/Movies/vlog/"*) ;; *) echo "✗ chỉ nhận ~/Movies/tap-<tên> hoặc ~/Movies/vlog/<tên>"; exit 1;; esac
 source ${0:A:h}/drive-chung.sh || exit 1   # $G, da_len, giai_phong (Mac và Windows/WSL2)
 if ! tim_drive; then
-  { [[ $OSTYPE != darwin* ]] && co_rclone; } || { echo "✗ Không thấy Google Drive: $DRIVE_HUONG_DAN"; exit 1; }
+  { [[ $OSTYPE != darwin* ]] && tim_drive_windows; } || { echo "✗ Không thấy Google Drive: $DRIVE_HUONG_DAN"; exit 1; }
   REL=${T#$HOME/Movies/}
-  tai_len "$T" "_sao-luu-du-an/$REL" --exclude "node_modules/**" --exclude ".remotion/**" --exclude ".cache/**" --exclude .DS_Store || exit 1
-  echo "✓ dự án đã lên Drive $RC_GOC/_sao-luu-du-an/$REL và khớp từng tệp; giữ nguyên bản trên máy"; exit 0
+  tai_len "$T" "sao-luu-mac/video/$REL" /XD node_modules .remotion .cache /XF .DS_Store || exit 1
+  echo "✓ dự án đã đưa lên Drive sao-luu-mac/video/$REL ($LUU_Y_MAY); giữ nguyên bản trên máy"; exit 0
 fi
 REL=${T#$HOME/Movies/}; DST="$G/sao-luu-mac/video/${REL:h}"; [ "${REL:h}" = . ] && DST="$G/sao-luu-mac/video"
 EX=(--exclude node_modules --exclude .remotion --exclude .cache --exclude .DS_Store)

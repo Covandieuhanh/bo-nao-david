@@ -324,4 +324,3 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 ## tu-dong-hoa
 
 - [tu-dong-hoa/thiet-bi-khac/README.md](../tu-dong-hoa/thiet-bi-khac/README.md) — tầng 2 · Thiết bị khác dựng video giống Mac chính (Windows qua WSL2, Mac khác): khoá phiên bản công cụ, cài một lệnh, thiết bị tự kiểm tra so với bản chuẩn của Mac. · ←4
-- [tu-dong-hoa/thiet-bi-khac/ket-noi-drive.md](../tu-dong-hoa/thiet-bi-khac/ket-noi-drive.md) — tầng 2 · Hướng dẫn David kết nối máy Windows với Google Drive để tải lên bằng lệnh (rclone), gồm cách tạo mã ứng dụng Google riêng. · ←2

@@ -1,9 +1,9 @@
 # Dùng chung cho luu-drive.sh, cho-dang.sh: tìm thư mục Google Drive và kiểm file đã lên mây, trên mọi máy.
 #   source drive-chung.sh  → $G (gốc "Drive của tôi"), tim_drive, da_len <thư mục>, giai_phong <thư mục>, $DRIVE_KIEM_DUOC (1/0)
 # Mac: Google Drive cho máy tính (~/Library/CloudStorage), kiểm lên mây bằng kiem-tai-len-drive.swift.
-# Windows (WSL2): KHÔNG đồng bộ Drive thành ổ trên máy (David 26/11/2026, du-an/kho-drive.md mục "Máy Windows") → tim_drive
-# không tự tìm ổ Drive; video gốc tải bằng link, kết quả ở lại trên máy. Chỉ khi đặt DRIVE_GOC mới chép vào thư mục đó
-# (không hỏi được trạng thái tải lên → không tự xoá bản trên máy).
+# Windows (WSL2): giữ đăng nhập Google Drive cho máy tính ở chế độ để tệp trên mây, KHÔNG đồng bộ thư mục nào của máy và
+# KHÔNG gắn ổ đó vào Ubuntu (David 26/11/2026, du-an/kho-drive.md mục "Máy Windows"). Chép lên / xuống bằng robocopy phía
+# Windows (hàm tai_len, tai_ve). Không hỏi được từng tệp đã lên mây chưa → không tự xoá bản trên máy.
 # Đặt DRIVE_GOC=<đường dẫn> để chỉ định tay.
 _DC=${${(%):-%x}:A:h}
 tim_drive() {
@@ -19,7 +19,7 @@ tim_drive() {
 if [[ $OSTYPE == darwin* ]]; then
   DRIVE_HUONG_DAN="mở ứng dụng Google Drive cho máy tính; thư mục ở chỗ khác thì đặt DRIVE_GOC=<đường dẫn>"
 else
-  DRIVE_HUONG_DAN="máy này không đồng bộ Drive (du-an/kho-drive.md, mục Máy Windows); tải lên cần kết nối một lần: bash tu-dong-hoa/thiet-bi-khac/ket-noi-drive.sh"
+  DRIVE_HUONG_DAN="mở Google Drive cho máy tính (đang đăng nhập sẵn, du-an/kho-drive.md mục Máy Windows), chờ ổ Drive hiện ra rồi chạy lại"
 fi
 if [[ $OSTYPE == darwin* ]]; then
   DRIVE_KIEM_DUOC=1
@@ -32,18 +32,28 @@ else
   da_len() { echo "chua_len=0 (máy này không hỏi được Drive — xem biểu tượng Google Drive trên Windows) "; }
   giai_phong() { :; }
 fi
-# Đường tải lên bằng lệnh cho máy không đồng bộ Drive (David duyệt 26/11/2026): rclone, quyền drive.file (chỉ thấy tệp do chính
-# nó tạo), mọi thứ nằm trong thư mục Drive $RC_GOC. Kết nối một lần: tu-dong-hoa/thiet-bi-khac/ket-noi-drive.sh.
-RC=${DRIVE_RC:-drive-david}
-RC_GOC=thanh-pham-may-windows
-co_rclone() { [[ $OSTYPE != darwin* ]] && command -v rclone >/dev/null && rclone listremotes 2>/dev/null | grep -qx "$RC:"; }
-# tai_len <thư mục máy> <đường dẫn trong $RC_GOC> [cờ lọc của rclone ...]: chép lên rồi so từng tệp (mã MD5 do Drive trả về)
-tai_len() {
-  local nguon=${1:A} dich="$RC:$RC_GOC/$2" thua; shift 2
-  rclone copy "$nguon" "$dich" --skip-links --retries 5 --low-level-retries 20 --stats-one-line --stats 60s "$@" || { echo "✗ tải lên chưa trọn (xem lỗi ở trên), chạy lại lệnh này"; return 1; }
-  rclone check "$nguon" "$dich" --skip-links --one-way "$@" || { echo "✗ bản trên Drive chưa khớp bản trên máy"; return 1; }
-  thua=$(rclone check "$nguon" "$dich" --skip-links --missing-on-src - "$@" 2>/dev/null)
-  [ -z "$thua" ] || { echo "⚠ Trên Drive còn tệp mà máy không có (bản cũ đổi tên?), chưa xoá:"; print -r -- "$thua"; }
-  return 0
+# Máy Windows: chép qua ổ Google Drive từ phía Windows. DRIVE_WIN=<thư mục Windows> để chỉ định tay (dùng khi chạy thử).
+tim_drive_windows() {
+  [[ $OSTYPE != darwin* ]] && command -v robocopy.exe >/dev/null || return 1
+  [ -n "$DRIVE_WIN" ] && { GW=$DRIVE_WIN; return 0; }
+  GW=$(powershell.exe -NoProfile -Command '[Console]::OutputEncoding=[Text.Encoding]::UTF8; foreach($d in [char[]](68..90)){ foreach($n in "My Drive",("Drive c"+[char]0x1EE7+"a t"+[char]0xF4+"i")){ $p="${d}:\$n"; if(Test-Path -LiteralPath $p){ $p; exit } } }' 2>/dev/null | tr -d '\r')
+  [ -n "$GW" ]
 }
+duong_win() { wslpath -w "$(realpath "$1")"; }
+# _rb <nguồn Windows> <đích Windows> [tham số robocopy ...]; mã thoát của robocopy: bit 1 = có tệp cần/đã chép, bit 2 = đích có tệp thừa, từ 8 = lỗi
+_rb() { local a=$1 b=$2; shift 2; robocopy.exe "$a" "$b" /E /FFT /R:3 /W:10 /NP /NJH /NJS /XF desktop.ini "$@" >/dev/null; }
+_so() { _rb "$1" "$2" /L "${@:3}"; local m=$?; (( m < 8 && (m & 1) == 0 )) || return 1; (( m & 2 )) && echo "⚠ Nơi nhận còn tệp mà nguồn không có (bản cũ đổi tên?), chưa xoá"; return 0; }
+# tai_len <thư mục máy> <đường dẫn dưới "My Drive", dùng dấu /> [tham số loại trừ của robocopy ...]
+tai_len() {
+  local nguon=$(duong_win "$1") dich="$GW\\${2//\//\\}"; shift 2
+  _rb "$nguon" "$dich" "$@"; (( $? < 8 )) || { echo "✗ chép lên Drive lỗi, chạy lại lệnh này"; return 1; }
+  _so "$nguon" "$dich" "$@" || { echo "✗ bản trên ổ Drive chưa khớp bản trên máy"; return 1; }
+}
+# tai_ve <đường dẫn dưới "My Drive"> <thư mục máy> [tham số loại trừ ...]
+tai_ve() {
+  mkdir -p "$2"; local nguon="$GW\\${1//\//\\}" dich=$(duong_win "$2"); shift 2
+  _rb "$nguon" "$dich" "$@"; (( $? < 8 )) || return 1
+  _so "$nguon" "$dich" "$@"
+}
+LUU_Y_MAY="khớp tên, dung lượng, giờ sửa trên ổ Drive; máy không hỏi được từng tệp đã lên mây chưa: xem biểu tượng Google Drive hoặc mở trên điện thoại"
 kich_thuoc() { wc -c < "$1" | tr -d ' '; }   # thay stat -f %z (chỉ Mac có)

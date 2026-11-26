@@ -124,7 +124,7 @@ Ghi `<dự án>/phat-hanh/phat-hanh.md`:
 
 ## 8. Quy trình chung
 
-**Máy Windows không đồng bộ Drive** (David 26/11/2026): mọi câu "lên Drive", "xoá trên Drive" trong mục này, khi làm trên máy đó, theo `du-an/kho-drive.md` mục "Máy Windows".
+**Máy Windows** (David 26/11/2026): cách đưa lên Drive và giới hạn khi dọn trên máy đó theo `du-an/kho-drive.md` mục "Máy Windows".
 - **Cách chạy một công thức** (mọi skill dựng: `dung-video-theo-phong-cach`, `dung-podcast`, `cat-doan-noi-bat`):
   - SKILL.md là **công thức**: thứ tự khối, quyết định riêng của loại, tiêu chí đạt. Cách làm từng bước ở README của khối; sửa cách
     làm thì sửa khối, không sửa công thức. Con số lấy ở hồ sơ `ho-so-thuong-hieu/`, không ghi cố định.

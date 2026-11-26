@@ -78,7 +78,7 @@ Windows chạy skill qua **WSL2**, tức một Ubuntu chạy bên trong Windows.
 **Một lần trên Windows** (David tự làm):
 
 1. Mở PowerShell bằng quyền quản trị (nhấp chuột phải rồi chọn Run as administrator), chạy `wsl --install -d Ubuntu-24.04`, khởi động lại máy. Mở "Ubuntu" từ menu Start, đặt tên và mật khẩu cho Ubuntu.
-2. **Không cài Google Drive cho máy tính** (David 26/11/2026, `du-an/kho-drive.md` mục "Máy Windows"): video gốc tải bằng link. Muốn máy tự tải kết quả lên Drive thì cài `rclone` và kết nối một lần theo [ket-noi-drive.md](tu-dong-hoa/thiet-bi-khac/ket-noi-drive.md).
+2. Cài **Google Drive cho máy tính** (bản Windows), đăng nhập tài khoản của David, để chế độ tệp trên mây; không thêm thư mục nào của máy vào đồng bộ và **không gắn ổ Drive vào Ubuntu** (`du-an/kho-drive.md` mục "Máy Windows").
    Để chạy `kiem-tra-thiet-bi.sh`: tải thư mục `tu-lieu-goc/_bo-thu-may` bằng link David gửi (`gdown --folder <link>`) rồi chạy `BO_THU=<thư mục đó> zsh .../kiem-tra-thiet-bi.sh`; chưa chạy đạt thì **chưa tính là cài xong**.
    **Không dựng bằng bản repo clone phía Windows** (Git cho Windows chuyển liên kết thư viện hình thành file văn bản): chỉ dùng bản trong Ubuntu `~/Documents/bo-nao-david`.
 
@@ -123,7 +123,7 @@ zsh ~/Documents/bo-nao-david/tu-dong-hoa/thiet-bi-khac/kiem-tra-thiet-bi.sh
 **Dùng hằng ngày:** mở Ubuntu, `cd ~/Documents/bo-nao-david && claude`, rồi làm như trên Mac: gửi video, gọi skill.
 - Video gốc: David gửi link, Claude tải về bằng `gdown`.
 - Dự án dựng nằm ở `~/Movies` của Ubuntu. Mở bằng Windows Explorer: gõ `explorer.exe ~/Movies` trong Ubuntu, hoặc vào `\\wsl$\Ubuntu-24.04\home\<tên>\Movies`.
-- Thành phẩm ở `~/Movies/cho-dang/<tập>/`; `cho-dang.sh gui` làm đủ bản và tải lên Drive nếu đã kết nối (chưa thì in đường dẫn Windows). Máy này không tự xoá bản trên máy.
+- Thành phẩm lên Drive bằng `cho-dang.sh gui` / `luu-drive.sh` (tự chép từ phía Windows). Khác Mac: không hỏi được từng tệp đã lên mây chưa và không tự xoá bản trên máy.
 - Máy có card NVIDIA cài CUDA trong WSL thì Whisper chạy nhanh hơn nhiều (script tự dùng). Không có thì chạy bằng CPU: chậm hơn Mac nhưng ra cùng kết quả.
 
 ## 4. AI khác hoặc Claude bản web
@@ -148,7 +148,7 @@ zsh ~/Documents/bo-nao-david/tu-dong-hoa/thiet-bi-khac/kiem-tra-thiet-bi.sh
 | Tín hiệu tự học (`~/.claude/hoc-lien-tuc/`) | Có nội dung trò chuyện nên giữ lại trên thiết bị; thiết bị mới tự ghi lại từ đầu (hook do cai-dat-bo-nao.sh cài) |
 | `playwright-cli` | Cài qua npm toàn cục, kiểm tra bằng `playwright-cli --help` |
 | Đăng nhập YouTube, Facebook, TikTok | David tự đăng nhập lại. Hồ sơ Chrome đăng bài ở `~/.cache/david-mxh-chrome` |
-| Google Drive (`tu-lieu-goc`, `thanh-pham`) | Mac chính: cài Google Drive cho máy tính. Máy Windows: không cài, tải video gốc bằng link (`du-an/kho-drive.md` mục "Máy Windows") |
+| Google Drive (`tu-lieu-goc`, `thanh-pham`) | Cài Google Drive cho máy tính, đăng nhập tài khoản của David; máy Windows xem thêm `du-an/kho-drive.md` mục "Máy Windows" |
 | Trình duyệt và kết nối của Claude | Bật lại trong ứng dụng Claude |
 | Video gốc, thành phẩm, kịch bản, bài đăng từng dự án | Ở Drive và `~/Movies` của máy làm, không nằm trong repo. Repo chỉ ghi trạng thái ở `bao-cao-trang-thai.md` và `du-an/danh-muc-noi-dung.md` |
 
