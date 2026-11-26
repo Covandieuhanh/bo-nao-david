@@ -12,7 +12,7 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [CLAUDE.md](../CLAUDE.md) — tầng 0 · Cấu hình Claude Code của repo: nạp AGENTS.md. · ←1
 - [README.md](../README.md) — tầng 2 · Trang đầu repo bo-nao-david trên GitHub: bộ não dùng chung của David, cấu trúc, cách dùng. · ←1
 - [bao-cao-trang-thai.md](../bao-cao-trang-thai.md) — tầng 3 · Báo cáo trạng thái: chỉ ghi việc còn mở (đang làm chưa xong, chờ David quyết định, câu hỏi mở), mỗi dòng có ngày và bước tiếp theo; việc xong chuyển sang du-an/dong-goi/. Cập nhật cuối mỗi việc. · ←5
-- [huong-dan-cai-dat.md](../huong-dan-cai-dat.md) — tầng 2 · Hướng dẫn cài đặt bộ não lên thiết bị mới / nơi khác từ GitHub: Mac chính, Mac khác và Windows chỉ dựng video (khoá phiên bản, thiết bị tự kiểm tra), lối tắt, bot, lịch, những gì không đưa lên GitHub. · ←7
+- [huong-dan-cai-dat.md](../huong-dan-cai-dat.md) — tầng 2 · Hướng dẫn cài đặt bộ não lên thiết bị mới / nơi khác từ GitHub: Mac chính, Mac khác và Windows chỉ dựng video (khoá phiên bản, thiết bị tự kiểm tra), lối tắt, bot, lịch, những gì không đưa lên GitHub. · ←8
 - [quy-trinh.md](../quy-trinh.md) — tầng 2 · Cây quy trình của bộ não — việc gì cũng đi từ quy trình gốc, xuống nhánh, tới quy trình lá; bảng tra duy nhất: câu David hay nói, quy trình, điểm duyệt, xong khi. · ←4
 
 ## ban-do

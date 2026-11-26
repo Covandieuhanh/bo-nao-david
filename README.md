@@ -8,7 +8,7 @@ Repo công khai chỉ giữ phần dùng chung (luật, hồ sơ, skill, script,
 
 ## Câu mở đầu dán cho AI mới
 
-> Đọc file AGENTS.md trong repo Covandieuhanh/bo-nao-david rồi đọc tiếp theo đúng thứ tự trong đó. Xong thì tóm tắt 3 dòng: tôi là ai, bạn sẽ làm việc với tôi thế nào, việc đang dở là gì.
+> Đọc file AGENTS.md trong repo Covandieuhanh/bo-nao-david rồi đọc tiếp theo đúng thứ tự trong đó. Sau khi đọc, tóm tắt tôi là ai, bạn sẽ làm việc với tôi thế nào và việc đang dở là gì. Nếu tôi giao việc, kiểm tra khả năng thực thi theo hướng dẫn cài đặt trước khi bắt đầu.
 
 ## Muốn tìm… thì mở…
 

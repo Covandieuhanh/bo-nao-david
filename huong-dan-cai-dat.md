@@ -132,6 +132,17 @@ zsh ~/Documents/bo-nao-david/tu-dong-hoa/thiet-bi-khac/kiem-tra-thiet-bi.sh
 - Không có kết nối GitHub: tải ZIP của repo, hoặc tải riêng `AGENTS.md`, `co-so-tri-thuc/david.md`, `bao-cao-trang-thai.md`, `ky-nang/thu-thap-yeu-cau/SKILL.md`.
 - AI bản web không chạy được lệnh trên máy: làm được phần lọc, kế hoạch, viết bài; không dựng được video.
 
+### Kiểm tra khả năng thực thi
+
+Dùng cùng mục này trên mọi AI và thiết bị khi David giao một việc cần đầu ra. Trao đổi để làm rõ thông tin tiếp tục theo tư duy gốc.
+
+1. **Nguồn và phiên bản.** Đọc `AGENTS.md`, Mục tiêu, nguồn trạng thái và quy trình lá phù hợp. Dùng bản repo đang có hiệu lực và cùng bản đầu vào khi so sánh hai lần chạy. Ghi mã commit khi xác định được. Nếu chỉ đọc một bản tệp được cung cấp, ghi nguồn và phiên bản chưa xác định nếu cần.
+2. **Khả năng thực thi.** Kiểm đúng công cụ, tài nguyên, quyền và cách ghi nhật ký cần cho việc đang làm. Khi quy trình có phép kiểm thiết bị, chạy phép kiểm đó. Với lời giao cần tạo tệp hoặc dựng video, xác nhận môi trường thực sự có thể mở nguồn, chạy công cụ và ghi đầu ra. Kiểm tra nhật ký theo mục dưới nếu ứng dụng có hỗ trợ.
+3. **Cách thay thế.** Nếu thiếu một cấu hình, công cụ hoặc quyền, dùng phương án tương đương đã kiểm được khi có. Tiếp tục các phần đã đủ điều kiện và nêu chính xác phần bị chặn, lý do và phần cần thiết để hoàn tất.
+4. **Nghiệm thu.** Dùng cùng các tiêu chí bắt buộc trong “Xong khi” trên mọi lần chạy. Phiên chỉ báo một tiêu chí đạt khi có đầu ra và bằng chứng tương ứng. Sau khi chuẩn chung đạt, ghi nhận giá trị sáng tạo tăng thêm của từng AI.
+
+Ví dụ: cùng một video gốc, yêu cầu và phiên bản quy trình, Mac và Windows có thể dùng bộ mã hóa khác nhau nhưng phải qua cùng phép kiểm đầu ra. Một phiên chỉ có quyền đọc tài liệu có thể hoàn thành bản kế hoạch dựng. Bản video cần bằng chứng đã thực thi và kiểm trên môi trường có công cụ.
+
 ### Bật nhật ký công việc
 
 [Nhật ký công việc](tu-dong-hoa/nhat-ky/README.md) hướng dẫn bật trên Claude Code, Codex và nhập bản ghi từ nguồn khác. Kho mặc định ở ngoài Git trên thiết bị. Chọn thư mục đồng bộ riêng nếu cần đọc lịch sử chung từ nhiều máy.

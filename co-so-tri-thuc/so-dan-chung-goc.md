@@ -58,3 +58,4 @@ Mỗi thay đổi file tầng 0 ghi **một dòng** ở đây trước khi đẩ
 | 2026-11-26 | co-so-tri-thuc/david.md | nâng cấp | Nối mục tiêu và cập nhật tên phạm trù Tài chính theo nguồn. | David xác định từng khối và thuật ngữ, sau đó yêu cầu triển khai toàn bộ. | chốt 2026-11-26 |
 | 2026-11-26 | co-so-tri-thuc/truc-tri-thuc.md | nâng cấp | Chỉ đường tới Mục tiêu và nêu bộ não là đối tượng được đào tạo khi nhận thông tin David cung cấp. | David xác định từng khối và thuật ngữ, sau đó yêu cầu triển khai toàn bộ. | chốt 2026-11-26 |
 | 2026-11-26 | AGENTS.md | nâng cấp | Nạp Mục tiêu, làm rõ cách áp dụng bốn bước cho nhiệm vụ cần đầu ra và cập nhật tên khối R&D. | David xác định từng khối và thuật ngữ, sau đó yêu cầu triển khai toàn bộ. | chốt 2026-11-26 |
+| 2026-11-26 | AGENTS.md | nâng cấp | Nối luật dùng chung đến bước kiểm cấu hình cần cho việc và nghiệm thu theo cùng một chuẩn. | David yêu cầu bảo đảm cùng cách thức từ repo trên mọi thiết bị và AI. | chốt 2026-11-26 |
