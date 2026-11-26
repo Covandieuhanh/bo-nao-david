@@ -72,6 +72,7 @@ Gốc: [bản đồ bộ não](README.md).
 - [hoc-lien-tuc](../ky-nang/hoc-lien-tuc/SKILL.md) — Tự học, cải tiến liên tục: nhìn lại tuần, học hình mẫu có số liệu, học thành skill, và Việc 4 **Nâng cấp** định kỳ cả bộ não (đo trước / sau, chưng cất, cắt giảm, tái cấu trúc).
 - [nhat-ky-thay-doi hoc-lien-tuc](../ky-nang/hoc-lien-tuc/references/nhat-ky-thay-doi.md) — Nhật ký thay đổi skill hoc-lien-tuc và máy đếm / ghi tín hiệu.
 - [hoc-lien-tuc 2026-11-15](../du-an/hoc-lien-tuc/2026-11-15.md) — Phiếu tự học tuần 15/11: điều lặp, đã sửa, gộp ghi nhớ 47 thành 40, việc tuần sau.
+- [Trường hợp lập bảng giao việc hội thảo](../du-an/hoc-lien-tuc/2026-11-26.md#trường-hợp-lập-bảng-giao-việc-hội-thảo) — Phản hồi thực tế về việc đọc nguồn, phân ban và chia từng việc để giao.
 - [hoc-lien-tuc 2026-11-26](../du-an/hoc-lien-tuc/2026-11-26.md) — Phiếu tự học tuần 26/11: ba điều lặp, lỗi mã hoá trên Windows, đề xuất thăng cấp, các chỗ đã sửa.
 - [tai-cau-truc](../ky-nang/tai-cau-truc/SKILL.md) — Dọn luật — bước 4 của Nâng cấp: mỗi luật một nguồn duy nhất, không ngày, không câu trùng; công cụ đo chồng chéo chỉ cảnh báo khi có trùng lặp / rối.
 - [dieu-khien-trinh-duyet](../ky-nang/dieu-khien-trinh-duyet/SKILL.md) — Automate browser interactions, test web pages and work with Playwright tests.

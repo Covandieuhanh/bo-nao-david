@@ -322,5 +322,32 @@
       "B": "Giữ cả bản cũ lẫn bản mới trên Drive; hỏi David có xoá bản gốc không.",
       "C": "Chỉ lên Drive khi David chốt; bản gốc giữ mãi để phòng khi cần."
     }
+  },
+  {
+    "id": "c37",
+    "tinh_huong": "Bản kế hoạch cũ ghi 22 người xác nhận, David cập nhật tiêu chí đạt là 15 người thực sự đến. Giá bán vẫn chưa chốt. Lập bảng thế nào?",
+    "lua_chon": {
+      "A": "Giữ số xác nhận làm tiêu chí đạt và điền giá ước tính.",
+      "B": "Dùng 15 khách thực đến làm tiêu chí đạt, đọc các nguồn liên quan và thêm việc duyệt đề nghị bán trước khi công bố.",
+      "C": "Gộp xác nhận, thực đến và quan tâm mua vào một chỉ tiêu."
+    }
+  },
+  {
+    "id": "c38",
+    "tinh_huong": "Cần giao hai việc: chốt giao dịch với khách và tìm bên đồng tổ chức. Bảng Excel giao cho ba ban. Phân loại thế nào?",
+    "lua_chon": {
+      "A": "Chốt giao dịch giao Marketing; tìm bên đồng tổ chức giao Đối tác. Hiện tên ban và dùng màu thể hiện hạng mục của từng việc.",
+      "B": "Cả hai giao Đối tác vì đều gặp người ngoài.",
+      "C": "Tạo thêm ban Bán hàng và cột cấp quản lý."
+    }
+  },
+  {
+    "id": "c39",
+    "tinh_huong": "Trong nhóm “Chuẩn bị địa điểm”, có dòng “Đặt vật tư”. Địa điểm có sẵn thiết bị, chưa quyết định về bánh trái. Sửa thế nào?",
+    "lua_chon": {
+      "A": "Đổi thành “Chuẩn bị hậu cần” và đánh dấu Đang làm.",
+      "B": "Giữ một dòng, thêm các món có thể dùng và ghi Kết quả là đã đặt.",
+      "C": "Ghi riêng việc xác nhận hoặc đặt nước với ban, hạn và đầu ra. Việc kiểm thiết bị và quyết định có đặt bánh trái có dòng riêng. Để trống Kết quả và Vấn đề."
+    }
   }
 ]

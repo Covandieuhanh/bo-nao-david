@@ -76,6 +76,8 @@ ghi cố định công cụ chỉ một thiết bị có) · **Điểm duyệt**
 | A7 | việc chưa có lá: hỏi lại khi chưa rõ yêu cầu, trình 4 phần | [ky-nang/thu-thap-yeu-cau/SKILL.md](ky-nang/thu-thap-yeu-cau/SKILL.md) | chính là Đ1 | theo mục "Xong khi" của skill |
 | A8 | trước mọi việc chưa có đủ hình mẫu; "nghiên cứu hình mẫu", "xem người ta làm thế nào", "học từ người đã thành công" | [co-so-tri-thuc/hinh-mau/quy-trinh-nghien-cuu.md](co-so-tri-thuc/hinh-mau/quy-trinh-nghien-cuu.md) | không có cho phần nghiên cứu và ghi bản đồ (phần chuẩn bị); đưa vào skill, luật: theo việc chính | mục nhỏ có ít nhất 5 hình mẫu (việc lớn 10) đủ bốn cột, có ngày đo; nhật ký có mục mới; tin giao có 2–3 dòng đối chiếu |
 
+| A9 | lập bảng giao việc, bóc bước thực thi cho các ban | [Lập bảng giao việc](ky-nang/quy-trinh-van-hanh-chung.md#2a-lập-bảng-giao-việc) | lập bảng theo quy trình này; quyết định nghiệp vụ chưa chốt được đưa thành việc cần duyệt | mỗi dòng có hành động, ban, hạn và đầu ra kiểm được; thứ tự đúng phụ thuộc; Kết quả và Vấn đề trống |
+
 ### B. Sản xuất video (gốc nhánh: `phan-phoi-da-kenh` — một tài nguyên vào, đủ bản dài, clip, bài đăng ra)
 | Lá | Việc (David hay nói) | Quy trình | Điểm duyệt | Xong khi |
 |---|---|---|---|---|

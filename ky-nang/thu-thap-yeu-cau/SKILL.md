@@ -53,6 +53,8 @@ Mỗi vòng **tối đa 5 câu**. **Cây quyết định:** mỗi vòng Claude c
 
 Nội dung là của David (`chuan-muc-lam-viec.md` mục 0, ghi nhớ [quy-tac-noi-dung-cua-david](../../co-so-tri-thuc/bo-nho/quy-tac-noi-dung-cua-david.md)): Claude không đề xuất mẫu lời cho David nói.
 
+Khi đầu ra là bảng giao việc, tra [cách lập bảng giao việc](../quy-trinh-van-hanh-chung.md#2a-lập-bảng-giao-việc). Đọc nguồn đang có trước vòng hỏi và xác nhận cách đo mục tiêu trước khi chia việc.
+
 ## Mẫu một vòng
 
 ```

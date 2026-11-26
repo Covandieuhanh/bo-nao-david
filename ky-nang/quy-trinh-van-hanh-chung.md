@@ -21,6 +21,16 @@ Nguyên lý ở [chuan-muc-lam-viec.md](chuan-muc-lam-viec.md), cùng số mục
 - **Tự học của skill:** skill, giọng văn, luật kênh tự học theo hình mẫu có số liệu (`ky-nang/hoc-lien-tuc/SKILL.md`); phân tích và sửa đều tự chạy trong buổi nhìn lại tuần, báo David sau.
 - Phần cứng của video: `san-xuat-video/quy-tac-chung.md` mục 8.
 
+### 2a. Lập bảng giao việc
+
+1. **Mục tiêu.** Đọc tài liệu nguồn và yêu cầu mới nhất của David. Ghi điều cần đạt, cách đo, mốc đo và các điều kiện đã chốt. Khi thiếu thông tin làm đổi mục tiêu, phạm vi hoặc cách làm, dùng [thu thập yêu cầu](thu-thap-yeu-cau/SKILL.md). Ghi rõ mốc đề xuất. Biến quyết định chưa chốt thành việc cần duyệt trước khi thực hiện việc phụ thuộc.
+2. **Kế hoạch.** Chọn các nhóm việc đủ để đạt mục tiêu. Xếp theo giai đoạn thật của công việc. Hội thảo dùng trước, trong và sau sự kiện.
+3. **Quy trình.** Trong từng nhóm, nêu các bước theo quan hệ phụ thuộc. Tách các bước soạn, kiểm tra, duyệt, bàn giao, thực hiện và theo dõi khi mỗi bước có đầu ra hoặc ban chịu trách nhiệm riêng.
+4. **Thực thi.** Mỗi dòng ghi một hành động có đối tượng cụ thể, một ban chịu trách nhiệm, một hạn xong và một đầu ra kiểm được. Xếp theo trình tự thực hiện và giữ tên hoặc số bước để tìm về quy trình. Bảng chỉ giao cho Vận hành, Đối tác hoặc Marketing, theo phạm vi tại [mô hình kinh doanh, mục 2](../co-so-tri-thuc/mo-hinh-kinh-doanh.md#2-ba-phần-của-doanh-nghiệp). Người đã được chỉ định làm một thao tác cụ thể có thể xuất hiện trong nội dung việc. Cột giao việc chỉ ghi ban. Mỗi việc có một hạng mục chính trong Tiền, Thị trường, Con người. Trong Excel dùng màu nhất quán cho hạng mục và hiện tên ban.
+5. **Kết quả** và **Vấn đề** là hai cột ghi nhận sau thực thi. Để cả hai trống khi giao bảng. Khi làm, ghi đầu ra thực tế hoặc nguyên nhân cản trở. Nếu vướng do giả định của kế hoạch sai, quay lại Kế hoạch theo [vòng hành động gốc](../co-so-tri-thuc/tu-duy-goc.md#2-khối-hành-động--vòng-kết-quả-hoặc-vấn-đề).
+
+**Xong khi:** người nhận đọc một dòng và biết làm gì, ban nào làm, bao giờ xong và kiểm đầu ra bằng gì. Soát các mốc bàn giao, phân ban theo mô hình gốc, đối chiếu dữ kiện đã chốt và mở lại tệp xuất để kiểm hai cột ghi nhận. [Trường hợp hội thảo và phép thử dùng lại](../du-an/hoc-lien-tuc/2026-11-26.md#trường-hợp-lập-bảng-giao-việc-hội-thảo).
+
 ## 3. Trong lúc làm
 - **Lệnh theo lô:** các lệnh không phụ thuộc nhau gộp vào một lần gọi; lệnh quá 2 phút chạy nền, không thăm dò.
 - **Trên Windows:** lệnh dài hoặc có đường dẫn tiếng Việt, khoảng trắng thì viết thành tệp lệnh (.sh hoặc .py, mã hoá UTF-8) rồi chạy bằng một lệnh ngắn trong WSL; không gõ chuỗi dài qua PowerShell. Đầu phiên: `bash tu-dong-hoa/dong-bo.sh --keo` rồi `kiem-moi-truong.sh`; máy mới chạy `tu-dong-hoa/thiet-bi-khac/kiem-tra-thiet-bi.sh`. Bản bộ não để làm việc trên Windows là bản trong WSL (`~/Documents/bo-nao-david`); bản ở thư mục Windows chỉ để đọc. Python trên Windows mặc định in chữ bằng bảng mã cp1258 nên dừng đột ngột khi gặp chữ Việt: máy Windows đặt biến người dùng `PYTHONUTF8=1` (`cai-cong-cu-video.sh` tự đặt, `kiem-tra-thiet-bi.sh` tự kiểm); chạy Python phía Windows với cờ `-I` thì thêm `-X utf8` (`python -I -X utf8 …`), vì `-I` bỏ qua mọi biến môi trường (đã thử 26/11/2026); script tự ghi file thì luôn ghi rõ `encoding='utf-8'`.
