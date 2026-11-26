@@ -24,6 +24,10 @@ qua trước khi ra bản mới. Bài kiểm riêng cho phần dựng video nằ
 4. Câu sai không phải lỗi của người làm bài: đó là chỗ bộ não **dạy chưa rõ**. Sửa nguồn của luật mà công cụ chấm chỉ ra cho rõ hơn, rồi cho
    một trí tuệ nhân tạo chưa đọc gì làm lại.
 
+## Bài thực hành
+
+Dùng [hai ca thực hành](thuc-hanh.md) để kiểm đầu ra khi đổi thiết bị, đổi AI hoặc mở phiên mới. Chấm sau khi đã nhận sản phẩm hoặc bằng chứng thực thi.
+
 ## Bộ kiểm lớn dần
 Lỗi nào David phải sửa (nhắc lại, chỉnh lời, đổi cách làm) thì thêm một câu từ chính tình huống đó: câu hỏi vào `de.json`; đáp án, nguồn duy nhất của luật và
 lời David vào `dap-an.json` (trục mục 4). Không bỏ câu cũ khi chưa ghi lý do vào sổ. Đổi số câu thì ngưỡng đạt tự điều chỉnh theo (số câu trừ 1).

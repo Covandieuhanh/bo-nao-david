@@ -149,6 +149,11 @@ cảnh đó, rồi chạy `xem-truoc-ban-dung.py`.
 ```
 
 ## Xong khi
+
+**Chuẩn bắt buộc** gồm các mục dưới đây. Với bản cuối, đối chiếu đoạn cắt với âm thanh gốc tại chỗ nối và các câu có điều kiện, phủ định hoặc số liệu. Xem lại các mốc đồ họa xuất hiện để xác nhận nhân vật, vật thể hoặc chữ đang mang thông tin vẫn nhìn rõ. Ghi mốc đã kiểm trong bàn giao.
+
+**Phạm vi sáng tạo** gồm cách minh họa, bố cục và nhịp xuất hiện đồ họa theo nội dung, trong giới hạn nhận diện và vùng an toàn. Ghi lựa chọn đáng kể cùng lý do giúp người xem, sau khi bản cuối qua chuẩn bắt buộc.
+
 1. Claude không hỏi giữa chừng, trừ khi có tín hiệu nặng; khung xuất đúng khung gốc trừ khi David yêu cầu đổi; báo cáo có "đã chọn X vì Y".
 2. Chữ trên video (kể cả màn chốt) là nguyên văn lời David; không có thẻ tiêu đề trừ khi được yêu cầu.
 3. Video dài được để nguyên; video ngắn được làm sạch mà không mất ý.

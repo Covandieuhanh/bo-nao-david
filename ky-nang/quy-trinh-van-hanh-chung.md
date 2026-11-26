@@ -7,11 +7,17 @@ description: "Quy trình vận hành chung (tầng 2, cách làm từng bước 
 Nguyên lý ở [chuan-muc-lam-viec.md](chuan-muc-lam-viec.md), cùng số mục. File này là tầng 2: đổi theo góp ý có dẫn chứng; mỗi bước có lệnh hoặc mẫu cụ thể. Phần ghi "Mac chính" là của bộ tự động hoá trên Mac chính (repo riêng tư); máy khác bỏ qua.
 
 ## 1. Đầu việc
-1. Ghi một dòng **Mục tiêu** và hai tới bốn dòng **Xong khi** (tiêu chí hoàn thành) ngay tin nhắn đầu; skill đã có "Xong khi" thì lấy từ đó.
+1. Ghi một dòng **Mục tiêu** và hai tới bốn dòng **Xong khi** (tiêu chí hoàn thành) ngay tin nhắn đầu; skill đã có "Xong khi" thì lấy từ đó. Nêu rõ đầu ra bắt buộc, cách kiểm và quyết định AI được tự chọn nếu có.
 2. Tra cây quy trình `quy-trinh.md`: gốc, rồi lá đúng việc, rồi file quy trình của lá, rồi chỉ những khối và hồ sơ mà bước đang làm cần.
 3. Việc có tài nguyên: tra sổ danh mục `~/Movies/_danh-muc-noi-dung/danh-muc-noi-dung.md` (trong repo: `du-an/danh-muc-noi-dung.md`) trước tiên.
 4. Tra hình mẫu: mở `co-so-tri-thuc/hinh-mau/README.md`, tìm mục nhỏ của việc; chưa đủ hình mẫu thì nghiên cứu theo lá A8.
 5. Không đọc cả repo; không đọc `references/`, nhật ký thay đổi, `hoc-tu-*` trừ khi cân nhắc đổi luật hoặc gỡ lỗi. `loi-thuong-gap.md` của skill đọc một lần ở đầu phiên. File dài: tìm bằng `grep` rồi đọc đúng đoạn; đã đọc trong phiên thì không đọc lại.
+
+### Tiếp quản công việc đang dở
+
+1. Xác định đúng việc qua yêu cầu và báo cáo trạng thái; mở nguồn được chỉ định cho việc đó (với video là sổ danh mục) và đối chiếu đầu ra thực tế nếu truy cập được.
+2. Xác nhận quyết định mới nhất, phần đã duyệt, phần còn mở và bước có thể làm ngay. Khi các nguồn lệch nhau, áp dụng thứ tự ưu tiên trong [chuẩn mực](chuan-muc-lam-viec.md) mục 0. Ghi rõ nguồn và mốc của quyết định dùng để tiếp tục.
+3. Làm tiếp bước được phép và cập nhật đúng nguồn trạng thái của việc. Chỉ hỏi khi tới điểm duyệt hoặc gặp điều kiện phải dừng theo chuẩn mực. Khi báo, nêu phần vừa hoàn thành và phần còn chờ.
 
 ## 2. Bốn phần và câu báo
 - **Bốn phần** (chỉ cho việc chưa có quy trình; việc đã có quy trình thì tự làm trọn, báo kết quả): Mục tiêu (kết quả, đo bằng gì) · Kế hoạch (làm gì, ở đâu, chọn gì vì sao) · Quy trình (từng bước) · Thực thi (danh sách kiểm nhỏ nhất, có mốc làm ngay). Kèm các điểm cần chốt, mỗi điểm có đề xuất đứng đầu. Sửa phần nào thì trình lại phần đó.
