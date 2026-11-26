@@ -22,7 +22,7 @@ Khi thuật ngữ ảnh hưởng tới yêu cầu, quyết định hay tiêu ch�
 3. Làm tiếp bước được phép và cập nhật đúng nguồn trạng thái của việc. Chỉ hỏi khi tới điểm duyệt hoặc gặp điều kiện phải dừng theo chuẩn mực. Khi báo, nêu phần vừa hoàn thành và phần còn chờ.
 
 ## 2. Bốn phần và câu báo
-- **Bốn phần** (chỉ cho việc chưa có quy trình; việc đã có quy trình thì tự làm trọn, báo kết quả): Mục tiêu (kết quả, đo bằng gì) · Kế hoạch (làm gì, ở đâu, chọn gì vì sao) · Quy trình (từng bước) · Thực thi (danh sách kiểm nhỏ nhất, có mốc làm ngay). Kèm các điểm cần chốt, mỗi điểm có đề xuất đứng đầu. Sửa phần nào thì trình lại phần đó.
+- **Bốn phần** (khi David yêu cầu bản kế hoạch hoặc khi cần duyệt Đ1, theo [luật 2](../AGENTS.md#sáu-luật-không-được-phá)): Mục tiêu (kết quả, đo bằng gì) · Kế hoạch (làm gì, ở đâu, chọn gì vì sao) · Quy trình (từng bước) · Thực thi (danh sách kiểm nhỏ nhất, có mốc làm ngay). Kèm các điểm cần chốt, mỗi điểm có đề xuất đứng đầu. Trước khi gửi bản kế hoạch, rà đủ bốn đề mục theo thứ tự, tiêu chí nghiệm thu và trạng thái thực thi. Sửa phần nào thì trình lại phần đó.
 - **Phiên giao qua Telegram** (Mac chính): việc đã có quy trình thì làm trọn rồi báo `bao-cao.sh "#N ✅ …"`; việc chưa có quy trình thì gửi bốn phần bằng `bao-cao.sh "#N ❓ Chờ anh duyệt 4 phần: …"`.
 - **Lịch tự chạy đã duyệt** (Mac chính, `tu-dong-hoa/lich/lich-chay.md`, `[TU-HOC]`): chạy theo lời giao đã duyệt, không trình lại mỗi lần.
 - **Phiên tự chạy nhìn thấy được** (Mac chính): lịch và việc giao qua Telegram mở thành phiên hiện trong ứng dụng Claude (Remote Control); cách làm: `tu-dong-hoa/lich/lich-chay.md`, `tu-dong-hoa/so-tay/README.md`.

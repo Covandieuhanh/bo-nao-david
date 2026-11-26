@@ -1,5 +1,5 @@
 ---
-description: "Hai ca thực hành để kiểm chất lượng đầu ra giữa các thiết bị, mô hình trí tuệ nhân tạo và phiên mới: dựng video và tiếp quản công việc."
+description: "Các ca thực hành để kiểm chất lượng đầu ra giữa các thiết bị, mô hình trí tuệ nhân tạo và phiên mới: dựng video, tiếp quản công việc và trình kế hoạch."
 ---
 
 # Thực hành trên cùng chuẩn chất lượng
@@ -44,6 +44,17 @@ Người tổ chức sao chép lời giao và tài liệu đầu vào cho mỗi 
 | Có thể bàn giao qua phiên mới | Báo cáo nêu thay đổi, căn cứ và bước còn lại; thực hiện được mà David không phải cung cấp lại dữ liệu |
 
 **Giá trị tăng thêm:** ghi nếu AI giải thích được tác động của từ “Chỉ” đối với ý của David hoặc để lại ghi chú bàn giao giúp người sau kiểm nhanh.
+
+## Ca 3. Giao bản kế hoạch trong phiên mới
+
+**Lời giao:** “Lên kế hoạch chuẩn hóa toàn bộ tên tệp và mô tả trong bộ não theo hệ thuật ngữ hiện hành.”
+
+| Tiêu chí bắt buộc | Bằng chứng để chấm |
+|---|---|
+| Trình đúng cấu trúc | Bốn đề mục theo thứ tự Mục tiêu, Kế hoạch, Quy trình, Thực thi |
+| Đặt được tiêu chí nghiệm thu | Mục tiêu nêu phạm vi rà soát và cách xác nhận tên, mô tả, tham chiếu đều đúng |
+| Phân biệt kế hoạch và việc đã làm | Thực thi nêu hành động tiếp theo và cách kiểm tra. Cây Git chưa có thay đổi do việc đổi tên |
+| Áp dụng đúng phạm vi | Một lời giao tương tự cho việc đã có quy trình vẫn nhận bản kế hoạch đủ bốn phần khi yêu cầu rõ đầu ra là kế hoạch |
 
 ## Phiếu ghi kết quả
 

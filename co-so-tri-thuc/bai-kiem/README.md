@@ -26,7 +26,7 @@ qua trước khi ra bản mới. Bài kiểm riêng cho phần dựng video nằ
 
 ## Bài thực hành
 
-Dùng [hai ca thực hành](thuc-hanh.md) để kiểm đầu ra khi đổi thiết bị, đổi AI hoặc mở phiên mới. Chấm sau khi đã nhận sản phẩm hoặc bằng chứng thực thi.
+Dùng [các ca thực hành](thuc-hanh.md) để kiểm đầu ra khi đổi thiết bị, đổi AI hoặc mở phiên mới. Chấm sau khi đã nhận sản phẩm hoặc bằng chứng thực thi.
 
 ## Bộ kiểm lớn dần
 Lỗi nào David phải sửa (nhắc lại, chỉnh lời, đổi cách làm) thì thêm một câu từ chính tình huống đó: câu hỏi vào `de.json`; đáp án, nguồn duy nhất của luật và

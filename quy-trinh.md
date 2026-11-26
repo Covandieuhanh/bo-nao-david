@@ -11,6 +11,8 @@ chỉ trỏ về đây.
 
 ## 0. Gốc — mọi việc đều đi đủ 7 bước
 
+Bảy bước vận hành triển khai khung bốn bước của [tư duy gốc](co-so-tri-thuc/tu-duy-goc.md#2-khối-hành-động--vòng-kết-quả-hoặc-vấn-đề). Khi đầu ra David yêu cầu là kế hoạch, giao bản bốn phần theo [luật 2](AGENTS.md#sáu-luật-không-được-phá). Điểm Đ1 quyết định lúc được bắt đầu thực hiện.
+
 | # | Bước | Làm theo |
 |---|---|---|
 | 1 | **Nhận yêu cầu, tra cây:** tra quy trình trước khi làm; việc có tài nguyên thì tra sổ danh mục (đã làm chưa → làm lại thì bản mới thay bản cũ); tìm lá khớp ở mục 3 (David chỉ gửi video hoặc ghi âm không kèm lời thì là lá B1); có lá thì làm tự động hoàn toàn (mục 1) | file này |

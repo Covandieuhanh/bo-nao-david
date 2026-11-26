@@ -13,7 +13,7 @@ Skill này không dùng cho câu hỏi nhanh, tra cứu, giải thích (Claude t
 
 ## Sáu tín hiệu phải tự dừng lại để hỏi
 
-Việc đã có quy trình: không trình 4 phần; chỉ dừng ở các trường hợp của `chuan-muc-lam-viec.md` mục 2 ("Chỉ dừng hỏi khi"), tín hiệu còn lại tự chọn và ghi báo cáo. Việc chưa có quy trình, lúc trình 4 phần: Claude gom mọi tín hiệu vào các điểm cần chốt. Sau khi David duyệt, giữa chừng chỉ các tín hiệu **nặng** (tín hiệu 1 khi việc làm đổi hẳn kết quả, tín hiệu 2, tín hiệu 3 khi đăng, xoá hay khó đảo ngược, tín hiệu 5) mới khiến Claude dừng; với tín hiệu 4 và 6, Claude tự chọn theo mặc định và đề xuất rồi ghi vào báo cáo:
+Khi được giao thực hiện việc đã có quy trình: tự chạy theo luật 2 của AGENTS.md; chỉ dừng ở các trường hợp của `chuan-muc-lam-viec.md` mục 2 ("Chỉ dừng hỏi khi"), tín hiệu còn lại tự chọn và ghi báo cáo. Việc chưa có quy trình, lúc trình 4 phần: Claude gom mọi tín hiệu vào các điểm cần chốt. Sau khi David duyệt, giữa chừng chỉ các tín hiệu **nặng** (tín hiệu 1 khi việc làm đổi hẳn kết quả, tín hiệu 2, tín hiệu 3 khi đăng, xoá hay khó đảo ngược, tín hiệu 5) mới khiến Claude dừng; với tín hiệu 4 và 6, Claude tự chọn theo mặc định và đề xuất rồi ghi vào báo cáo:
 1. **Hiểu được nhiều cách**: câu mơ hồ, nhất là chữ đọc chính tả bị lệch làm đổi nghĩa; Claude không tự đoán rồi làm.
 2. **Mâu thuẫn** với luật, bộ nhớ, skill hoặc quyết định David đã chốt.
 3. **Tốn thời gian, tốn tiền hoặc khó đảo ngược**: render quá 10 phút (Claude chỉ nêu trong 4 phần; giữa chừng thì chạy nền, không dừng), xoá, đăng, gửi tin nhắn, dịch vụ trả phí, sửa hàng loạt.

@@ -48,3 +48,6 @@ Mỗi thay đổi file tầng 0 ghi **một dòng** ở đây trước khi đẩ
 
 | 2026-11-26 | AGENTS.md | nâng cấp | Chỉ đường đến định nghĩa và phạm vi thuật ngữ khi trao đổi, viết và học từ nguồn mới. | David yêu cầu chuẩn hóa hết hệ thuật ngữ từ gốc cho toàn bộ não. | chốt 2026-11-26 |
 | 2026-11-26 | co-so-tri-thuc/truc-tri-thuc.md | nâng cấp | Nối bước tiếp nhận nguồn mới tới cách đối chiếu nghĩa và thuật ngữ đã dùng. | Cùng yêu cầu trên. | chốt 2026-11-26 |
+| 2026-11-26 | AGENTS.md | nâng cấp | Tách khung Mục tiêu, Kế hoạch, Quy trình, Thực thi khỏi điều kiện trình duyệt Đ1. Bản kế hoạch được yêu cầu phải trình đủ bốn phần. | David xác nhận bốn bước là cách làm mọi việc, thuộc phần cốt lõi. | chốt 2026-11-26 |
+| 2026-11-26 | co-so-tri-thuc/david.md | nâng cấp | Tách khung Mục tiêu, Kế hoạch, Quy trình, Thực thi khỏi điều kiện trình duyệt Đ1. Bản kế hoạch được yêu cầu phải trình đủ bốn phần. | David xác nhận bốn bước là cách làm mọi việc, thuộc phần cốt lõi. | chốt 2026-11-26 |
+| 2026-11-26 | co-so-tri-thuc/chi-dan-toan-cuc.md | nâng cấp | Tách khung Mục tiêu, Kế hoạch, Quy trình, Thực thi khỏi điều kiện trình duyệt Đ1. Bản kế hoạch được yêu cầu phải trình đủ bốn phần. | David xác nhận bốn bước là cách làm mọi việc, thuộc phần cốt lõi. | chốt 2026-11-26 |

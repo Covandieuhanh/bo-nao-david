@@ -8,7 +8,7 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 
 ## (gốc)
 
-- [AGENTS.md](../AGENTS.md) — tầng 0 · Cửa vào cho mọi AI: thứ tự đọc, sáu luật không được phá, bảng chọn skill theo việc. · ←3
+- [AGENTS.md](../AGENTS.md) — tầng 0 · Cửa vào cho mọi AI: thứ tự đọc, sáu luật không được phá, bảng chọn skill theo việc. · ←7
 - [CLAUDE.md](../CLAUDE.md) — tầng 0 · Cấu hình Claude Code của repo: nạp AGENTS.md. · ←1
 - [README.md](../README.md) — tầng 2 · Trang đầu repo bo-nao-david trên GitHub: bộ não dùng chung của David, cấu trúc, cách dùng. · ←1
 - [bao-cao-trang-thai.md](../bao-cao-trang-thai.md) — tầng 3 · Báo cáo trạng thái: chỉ ghi việc còn mở (đang làm chưa xong, chờ David quyết định, câu hỏi mở), mỗi dòng có ngày và bước tiếp theo; việc xong chuyển sang du-an/dong-goi/. Cập nhật cuối mỗi việc. · ←4
@@ -27,7 +27,7 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 ## co-so-tri-thuc
 
 - [co-so-tri-thuc/bai-kiem/README.md](bai-kiem/README.md) — tầng 3 · Bài kiểm toàn bộ não: 36 tình huống lấy từ chính những lần David phải sửa và các luật David đã chốt; một AI chưa đọc gì làm bài để đo bộ não có dạy đúng không (thước đo 1 của trục tri thức). · ←4
-- [co-so-tri-thuc/bai-kiem/thuc-hanh.md](bai-kiem/thuc-hanh.md) — tầng 3 · Hai ca thực hành để kiểm chất lượng đầu ra giữa các thiết bị, mô hình trí tuệ nhân tạo và phiên mới: dựng video và tiếp quản công việc. · ←2
+- [co-so-tri-thuc/bai-kiem/thuc-hanh.md](bai-kiem/thuc-hanh.md) — tầng 3 · Các ca thực hành để kiểm chất lượng đầu ra giữa các thiết bị, mô hình trí tuệ nhân tạo và phiên mới: dựng video, tiếp quản công việc và trình kế hoạch. · ←2
 - [co-so-tri-thuc/bang-thuat-ngu.md](bang-thuat-ngu.md) — tầng 2 · Nguồn tra thuật ngữ của bộ não: nghĩa và phạm vi tiếng Việt, đối chiếu tiếng Anh, quy ước đặt tên và cách tiếp nhận thuật ngữ từ nguồn mới. · ←7
 - [co-so-tri-thuc/bo-nho/MEMORY.md](bo-nho/MEMORY.md) — tầng 3 · Mục lục bộ nhớ Claude Code: mỗi ghi nhớ một dòng, nhóm quy tắc / bộ não / video / thiết bị. · ←3
 - [co-so-tri-thuc/bo-nho/co-so-tri-thuc-bo-nao-cong-ty.md](bo-nho/co-so-tri-thuc-bo-nao-cong-ty.md) — tầng 3 · Việc của công ty Veltrix (đội đối tác công nghệ do David tổng điều hành) làm ở bộ não riêng ~/Documents/bo-nao-veltrix, kho riêng tư Covandieuhanh/veltrix; không ghi vào bộ não cá nhân · ←3
@@ -94,7 +94,7 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [co-so-tri-thuc/chi-dan-toan-cuc.md](chi-dan-toan-cuc.md) — tầng 0 · Luật chung của David cho mọi phiên Claude (bản gốc của ~/.claude/CLAUDE.md), nạp hồ sơ david.md. · ←2
 - [co-so-tri-thuc/chien-luoc-nghe-nghiep.md](chien-luoc-nghe-nghiep.md) — tầng 1 · Chiến lược nghề nghiệp (david.md mục 4): ba hướng nghề tài chính, trainer con người, giải pháp công nghệ AI; hình ảnh trainer hai lĩnh vực; ba tầng làm chủ, các giai đoạn, bảng giá, quy trình một trường hợp, hệ 135, lằn ranh nghề. · ←4
 - [co-so-tri-thuc/chien-luoc-noi-dung.md](chien-luoc-noi-dung.md) — tầng 1 · Chiến lược nội dung (david.md mục 5, 8): kênh video, bản gốc 10 phút 3 phần, kho 100 video, bộ lọc nội dung phân hướng → câu hỏi gốc → bán được gì. · ←3
-- [co-so-tri-thuc/david.md](david.md) — tầng 0 · Hồ sơ David Trần cho Claude: là ai, cách làm việc, luật cá nhân, bảng tra mục 4–9 (nghề, nội dung, CCL, huyền học). · ←9
+- [co-so-tri-thuc/david.md](david.md) — tầng 0 · Hồ sơ David Trần cho Claude: là ai, cách làm việc, luật cá nhân, bảng tra mục 4–9 (nghề, nội dung, CCL, huyền học). · ←10
 - [co-so-tri-thuc/du-lieu-nen-huyen-hoc.md](du-lieu-nen-huyen-hoc.md) — tầng 3 · Từ trường số (david.md mục 7: nội dung theo hướng trainer, xem số cá nhân chỉ trong buổi riêng) và dữ liệu nền huyền học (mục 9): dùng để hiểu nhịp làm việc của David. · ←2
 - [co-so-tri-thuc/hinh-mau/1-hinh-tuong-ca-nhan.md](hinh-mau/1-hinh-tuong-ca-nhan.md) — tầng 2 · Hình mẫu mục lớn 1 — hình tượng cá nhân, nhân hiệu của David: định vị trainer hai lĩnh vực, intro thương hiệu, nhận diện hình ảnh, giọng văn, ảnh và trang giới thiệu. · ←1
 - [co-so-tri-thuc/hinh-mau/2-noi-dung-video.md](hinh-mau/2-noi-dung-video.md) — tầng 2 · Hình mẫu mục lớn 2 — nội dung video: mở đầu, video dài nói trước camera, vlog, podcast, clip ngắn, minh hoạ, thumbnail, nhạc, độ dài thẻ thương hiệu; trỏ tới các báo cáo nghiên cứu của bộ skill video. · ←1
@@ -113,7 +113,7 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 - [co-so-tri-thuc/kien-thuc/telegram-bot.md](kien-thuc/telegram-bot.md) — tầng 3 · Bot Telegram — điểm mạnh (điều khiển từ xa miễn phí, đẩy tin, nhận lệnh, nút bấm), các tính năng Telegram có thể khai thác thêm (group topics, channel, kênh trả phí Stars, poll/quiz, Business), cách áp dụng vào cộng đồng học viên. · ←2
 - [co-so-tri-thuc/kien-thuc/telegram-mini-app.md](kien-thuc/telegram-mini-app.md) — tầng 3 · Telegram Mini App — trang web HTML/JS mở ngay trong Telegram như một ứng dụng thật, nhận biết người dùng là ai; cách làm (telegram-web-app.js, HTTPS miễn phí, BotFather /newapp, kiểm tra initData), các chức năng, gợi ý cho trainer. · ←2
 - [co-so-tri-thuc/luu-tru/ho-so-ca-nhan-dinh-huong-nghe-cu.md](luu-tru/ho-so-ca-nhan-dinh-huong-nghe-cu.md) — tầng 3 · Lưu trữ: phần định hướng nghề và định hướng hình tượng cũ của hồ sơ cá nhân David (trước khi chia ba hướng nghề). Không dùng làm định hướng; bản hiện hành ở co-so-tri-thuc/david.md và chien-luoc-nghe-nghiep.md. · ←1
-- [co-so-tri-thuc/mo-hinh-kinh-doanh.md](mo-hinh-kinh-doanh.md) — tầng 0 · Mô hình kinh doanh của David (khung học từ cố vấn chiến lược): ba phạm trù tiền · thị trường · con người, chín kỹ năng và ngành nghề, bốn bước thành công, vòng kết quả hoặc vấn đề, ba bước đào tạo · áp dụng · thay đổi; nền tảng của tu-duy-goc.md. · ←8
+- [co-so-tri-thuc/mo-hinh-kinh-doanh.md](mo-hinh-kinh-doanh.md) — tầng 0 · Mô hình kinh doanh của David (khung học từ cố vấn chiến lược): ba phạm trù tiền · thị trường · con người, chín kỹ năng và ngành nghề, bốn bước thành công, vòng kết quả hoặc vấn đề, ba bước đào tạo · áp dụng · thay đổi; nền tảng của tu-duy-goc.md. · ←9
 - [co-so-tri-thuc/nghien-cuu-ccl.md](nghien-cuu-ccl.md) — tầng 3 · Nghiên cứu CCL (david.md mục 6): tài liệu chuẩn của Center for Creative Leadership, sách David tự mua, cách dịch thuật ngữ lãnh đạo. · ←2
 - [co-so-tri-thuc/quy-uoc-lien-ket.md](quy-uoc-lien-ket.md) — tầng 1 · Bộ quy tắc liên kết của bộ não — mô tả đầu file, liên kết giữa các file, bản đồ nội dung, chỉ mục tự sinh, ghi chú kiến thức, công cụ kiểm tra; để Claude tra cứu nhanh, tốn ít token, không bỏ sót. · ←11
 - [co-so-tri-thuc/so-dan-chung-goc.md](so-dan-chung-goc.md) — tầng 3 · Sổ dẫn chứng gốc (tầng 3): mỗi lần file tầng 0 thay đổi ghi một dòng — ngày, file, loại (nâng cấp / đổi gốc), nội dung, lời David làm dẫn chứng, trạng thái; cổng kiểm soát cong-kiem-soat-goc.py đọc sổ này. · ←1
