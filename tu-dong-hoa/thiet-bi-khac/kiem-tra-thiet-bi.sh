@@ -45,6 +45,9 @@ if [[ $OSTYPE != darwin* ]]; then
   $CACHE/mat-venv/bin/python -c "import mediapipe" 2>/dev/null && dong "ĐẠT  đo độ mở miệng (MediaPipe)" || print "CHÚ Ý chưa có MediaPipe (máy chip ARM) — dò được mặt, đoán người nói theo miệng kém hơn Mac"
 fi
 command -v zsh >/dev/null && command -v rsync >/dev/null; co "zsh, rsync" $?
+if grep -qi microsoft /proc/version 2>/dev/null && command -v powershell.exe >/dev/null; then
+  [ "$(powershell.exe -NoProfile -Command "[Environment]::GetEnvironmentVariable('PYTHONUTF8','User')" 2>/dev/null | tr -d '\r\n ')" = 1 ]; co "Python phía Windows dùng UTF-8 (PYTHONUTF8=1)" $?
+fi
 
 # ---------- 2. Dựng thử ----------
 print "\n== 2. Dựng thử 20 s (đúng script của skill)"

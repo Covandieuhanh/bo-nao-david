@@ -47,6 +47,7 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 - [Chữ trên màn hình nguyên văn](video-chu-nguyen-van.md) — mọi chữ trên video là nguyên văn lời David và chỉ phục vụ nội dung: không thẻ tiêu đề tự rút ý, màn chốt không tự viết, không số chạy, không nhãn kỹ thuật ×1,6 / slow-mo (07/11; gộp 15/11)
 - [Chuyển video qua Drive](video-chuyen-qua-drive.md) — ~/Movies xếp theo tập; Drive covandieuhanh chỉ giữ bộ não, video gốc, thành quả video; Mac chỉ giữ việc đang làm và bản cuối chưa đăng ở ~/Movies/cho-dang (07/11, 11/11, 20/11)
 - [Clip ngắn đứng độc lập](video-clip-ngan-dung-doc-lap.md) — bốn câu: bối cảnh, ý trọn, mang về, chừa lại; không có số cố định (06/11, 07/11)
+- [Cắt theo câu trọn](video-cat-theo-cau-tron.md) — video ghép lời David và cảnh sự kiện: cắt theo câu trọn, giữ âm thanh gốc sự kiện liền mạch, kiểm âm thanh đúng nguồn (25/11)
 - [Video dài không cắt](video-dai-khong-cat.md) — để nguyên cả khoảng lặng và tiếng ờ ừm; chỉ cắt khi trích video ngắn (05/11)
 - [Mẫu podcast dọc đồ hoạ](video-doc-mau-chu-chinh.md) — chữ chính thay phụ đề, không màn hình cuối; 3 clip Đi trainer là mẫu (06/11, sửa 10/11)
 - [Tự chọn theo nội dung](video-tu-chon-theo-noi-dung.md) — mọi lựa chọn (mẫu, bố cục, kiểu cảnh, thẩm mỹ, nhạc) tự thiết lập theo nội dung nguồn, không chép tập trước; công cụ chặn render khi chưa chẩn đoán (11/11, 19/11)

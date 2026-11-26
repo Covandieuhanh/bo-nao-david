@@ -139,6 +139,10 @@ if [ "$OS" != Darwin ]; then
   buoc "Font Arial (thẻ ghi nguồn ảnh, khung an toàn)"
   if [ -f /mnt/c/Windows/Fonts/arialbd.ttf ]; then ok "dùng font của Windows (C:\\Windows\\Fonts)"
   else echo "  ⚠ Không thấy Arial — cài: sudo apt install ttf-mscorefonts-installer (không có thì dùng DejaVu, chữ phần đó khác Mac)"; fi
+  if grep -qi microsoft /proc/version 2>/dev/null && command -v powershell.exe >/dev/null; then
+    buoc "Python phía Windows in chữ Việt bằng UTF-8 (biến người dùng PYTHONUTF8=1)"
+    powershell.exe -NoProfile -Command "[Environment]::SetEnvironmentVariable('PYTHONUTF8','1','User')" >/dev/null 2>&1 && ok "PYTHONUTF8=1 (mở lại Claude để nhận)" || echo "  ⚠ Chưa đặt được PYTHONUTF8 — trong PowerShell: [Environment]::SetEnvironmentVariable('PYTHONUTF8','1','User')"
+  fi
 fi
 
 echo

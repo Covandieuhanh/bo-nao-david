@@ -11,3 +11,4 @@ description: "Nhật ký thay đổi skill hoc-lien-tuc và công cụ đi kèm 
 - **15/11/2026** · `dem-ky-nang.py`: bảng tên cũ thành mới, gộp dòng trùng cùng phiên, tách skill có sẵn của Claude, in lỗi theo công cụ.
   Vì: nhìn lại tuần đầu báo 12 skill "không dùng" sai, 7/60 dòng trùng ([phiếu 15/11](../../../du-an/hoc-lien-tuc/2026-11-15.md)).
 - **15/11/2026** · `ghi-tin-hieu.py`: ghi `loi_theo_cong_cu` (tên công cụ kèm số lỗi). Vì: có phiên 14 lỗi mà không biết lỗi ở đâu, không gom được lỗi lặp.
+- 2026-11-26 · Vòng tuần 26/11 (David duyệt): bộ kiểm thêm c32–c34 (thiết bị mới tự làm trọn, motion graphics không che nhân vật, cắt theo câu trọn giữ âm thanh gốc) vì ba điều lặp trong sổ tín hiệu; quy trình chung thêm "thiết bị nào cũng một quy trình" và PYTHONUTF8 trên Windows (lỗi mã hoá lặp nhiều phiên); công cụ cài tự đặt, công cụ kiểm thiết bị tự kiểm; ghi nhớ cắt theo câu trọn đưa từ máy Windows lên bộ não.

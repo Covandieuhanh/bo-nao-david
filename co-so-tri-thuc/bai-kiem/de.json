@@ -277,5 +277,32 @@
       "B": "\"Nhẹ\" nghĩa là chỉ phụ đề và nhạc.",
       "C": "Dùng đúng danh mục kiểu cảnh của video trước để giống nhau cho nhanh."
     }
+  },
+  {
+    "id": "c32",
+    "tinh_huong": "Đang làm trên một thiết bị mới. David gửi link video trên Drive và nói \"làm theo quy trình\". Thiết bị này chưa có công cụ kết nối Drive.",
+    "lua_chon": {
+      "A": "Tự cài công cụ hoặc dùng cách khác có sẵn (ổ Drive đã gắn, công cụ tải, trình duyệt) để làm trọn việc tự động; chỉ nhờ David phần chỉ David làm được (đăng nhập, cấp quyền). Thiết bị nào cũng một quy trình.",
+      "B": "Nhờ David tải file về thiết bị rồi đặt vào thư mục dự án.",
+      "C": "Báo David thiết bị này chưa làm được việc, chờ David chuyển sang Mac chính."
+    }
+  },
+  {
+    "id": "c33",
+    "tinh_huong": "Đoạn David đang trình bày giao diện một sản phẩm trên màn hình. Claude định đặt một thẻ chữ lớn kèm lớp nền mờ ở giữa khung cho nổi bật.",
+    "lua_chon": {
+      "A": "Đặt motion graphics vào vùng trống, không che nhân vật và nội dung đang hiển thị (sản phẩm, giao diện); không phủ lớp mờ lên người hay nội dung đang được nói tới.",
+      "B": "Đặt giữa khung vì đó là chỗ người xem nhìn vào nhiều nhất.",
+      "C": "Làm mờ cả khung để chữ dễ đọc, vài giây rồi bỏ."
+    }
+  },
+  {
+    "id": "c34",
+    "tinh_huong": "Dựng video ghép lời David với cảnh rung chuông của một sự kiện (có tiếng chuông, pháo hoa, lời người dẫn). Một câu của David ở đoạn nối bị cắt mất nửa.",
+    "lua_chon": {
+      "A": "Cắt lại theo ranh giới câu trọn; cảnh sự kiện giữ nguyên âm thanh gốc liền mạch, không đè giọng David, không cắt nửa lời người dẫn; dựng xong kiểm âm thanh từng đoạn đúng nguồn.",
+      "B": "Giữ nửa câu vì ý chính đã đủ; đè giọng David lên cảnh sự kiện cho liền mạch.",
+      "C": "Bỏ hẳn âm thanh gốc của sự kiện, chỉ dùng nhạc nền cho đồng đều."
+    }
   }
 ]

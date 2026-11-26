@@ -119,7 +119,7 @@ zsh ~/Documents/bo-nao-david/tu-dong-hoa/thiet-bi-khac/kiem-tra-thiet-bi.sh
 ```
 
 - `cai-dat-bo-nao.sh` thấy máy không phải Mac thì tự cài kiểu "chỉ dựng video".
-- `cai-cong-cu-video.sh` cài đúng phiên bản Mac đang dùng: ffmpeg, whisper.cpp kèm mô hình 1,5 GB, Node, pyannote, công cụ phát hiện khuôn mặt. Script hỏi mật khẩu Ubuntu một lần. Script cũng in các bước để David tự lấy token Hugging Face cho phần tách người nói podcast (một lần).
+- `cai-cong-cu-video.sh` cài đúng phiên bản Mac đang dùng: ffmpeg, whisper.cpp kèm mô hình 1,5 GB, Node, pyannote, công cụ phát hiện khuôn mặt. Script hỏi mật khẩu Ubuntu một lần. Trên Windows script tự đặt `PYTHONUTF8=1` để Python phía Windows không lỗi chữ Việt. Script cũng in các bước để David tự lấy token Hugging Face cho phần tách người nói podcast (một lần).
 - `kiem-tra-thiet-bi.sh` dựng thử 20 giây bằng đúng script của skill rồi so với bản chuẩn của Mac. Bộ dữ liệu thử nằm trên Drive `tu-lieu-goc/_bo-thu-may/`. Kết quả phải là **"MÁY NÀY DỰNG GIỐNG MAC CHÍNH"**.
 
 **Dùng hằng ngày:** mở Ubuntu, `cd ~/Documents/bo-nao-david && claude`, rồi làm như trên Mac: gửi video, gọi skill.
