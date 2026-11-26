@@ -24,7 +24,10 @@ cho_len() { for i in {1..480}; do o=$(da_len "$1"); [[ $o == *"chua_len=0 "* ]] 
 # Bản xem nhẹ cho điện thoại (< 30 MB với video 10 phút): 854 px, 250 kbit/s; làm cho mỗi bản dài chưa có
 xem_nhe() { local v x; for v in "$1"/ban-dai/*.mp4; do x="$1/xem-nhanh-${v:t:r}.mp4"; [ "$x" -nt "$v" ] && continue
   ffmpeg -v error -y -i "$v" -vf scale=854:-2 -c:v libx264 -preset veryfast -b:v 250k -maxrate 300k -bufsize 600k \
-    -c:a aac -b:a 64k -movflags +faststart "$x" || { echo "✗ không làm được bản xem nhẹ ${x:t}"; return 1; }; done; }
+    -c:a aac -b:a 64k -movflags +faststart "$x" || { echo "✗ không làm được bản xem nhẹ ${x:t}"; return 1; }
+  # ffmpeg có lúc báo lỗi đọc (thiếu bộ nhớ trên ổ Windows gắn vào WSL) mà vẫn thoát 0 → bản nhẹ bị cụt; so thời lượng, lệch quá 1 giây thì xoá và báo
+  local a=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$v") b=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$x")
+  (( ${a:-0} - ${b:-0} < 1 && ${b:-0} - ${a:-0} < 1 )) || { rm -f "$x"; echo "✗ bản xem nhẹ ${x:t} cụt (${b%.*}s / ${a%.*}s): chạy lại, hoặc làm bằng ffmpeg trên Windows"; return 1; }; done; }
 LEN="đã lên mây"; [ $DRIVE_KIEM_DUOC = 1 ] || LEN="đã vào ổ Drive (lên mây: xem biểu tượng Google Drive trên Windows)"
 gui_drive() { mkdir -p "$TP"; rsync -a $EX "$CD/" "$TP/" || exit 1; cho_len "$TP" || exit 1
   khop "$CD" "$TP" || { echo "✗ Drive chưa khớp bản trên máy"; exit 1; }; }
@@ -42,7 +45,7 @@ case $V in
     B=$HOME/Movies/$TAP; TP="$G/thanh-pham/_buoi-$TAP" CD="$HOME/Movies/cho-dang/_buoi-$TAP"
     for f in doc-truoc.md phan-huong.md; do [ -f $B/$f ] || { echo "✗ thiếu $B/$f (viết theo dung-video-theo-phong-cach/references/tach-theo-huong.md mục Giao)"; exit 1; }; done
     mkdir -p "$CD"; cp $B/doc-truoc.md $CD/; cp $B/phan-huong.md $CD/phan-huong-3-huong.md
-    [ -f $B/kiem-tra/loi-ky-nang.md ] && cp $B/kiem-tra/loi-ky-nang.md $CD/
+    for l in $B/kiem-tra/loi-ky-nang.md $B/2-ban-day-du/kiem-tra/loi-ky-nang.md; do [ -f $l ] && { cp $l $CD/; break; }; done   # lỗi kỹ năng ở kiem-tra/ của buổi hoặc của bản đầy đủ
     for n in $BO_NAO/du-an/nhat-ky-noi-dung/huong-*.md; do cp $n $CD/nhat-ky-${n:t}; done
     PD=$B/2-ban-day-du/chuyen-dong/src/phu-de.js SRT=$B/2-ban-day-du/kiem-tra/lam-sach/ban-chep-loi.srt
     if [ -f $PD ]; then   # bản lời đã sửa (phụ đề cả buổi) → văn bản có mốc giờ
