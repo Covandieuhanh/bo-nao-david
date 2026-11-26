@@ -1,15 +1,15 @@
 ---
-description: "Bản đồ chuẩn hoá tên toàn bộ (14/11, đã xong): tên cũ → tên mới theo thuật ngữ kinh doanh tiếng Anh dịch sang tiếng Việt."
+description: "Bản đồ chuẩn hoá toàn bộ tên (14/11, đã xong): đổi tên cũ thành tên mới theo thuật ngữ kinh doanh tiếng Anh dịch sang tiếng Việt."
 ---
 
 # Bản đồ chuẩn hoá tên (David duyệt 14/11/2026, đã đổi xong)
 
 **Luật mới (David, 14/11/2026):** mọi tên file, thư mục, skill, ghi nhớ đi từ **thuật ngữ kinh doanh tiếng Anh chuẩn** thì dịch đúng nghĩa
-sang **tiếng Việt không dấu**, chữ thường, gạch nối. Mỗi thuật ngữ một bản dịch, tra ở bảng thuật ngữ (mục 1). Thay luật đặt tên 07/11.
+sang **tiếng Việt không dấu**, chữ thường, gạch nối. Mỗi thuật ngữ có một bản dịch, tra ở bảng thuật ngữ (mục 1). Luật này thay luật đặt tên 07/11.
 
-Đọc bảng: **Tên cũ → Thuật ngữ tiếng Anh → Tên mới**. Dòng có ❓ là chỗ mình chưa chắc, David sửa thẳng vào cột tên mới.
+Đọc bảng: **Tên cũ → Thuật ngữ tiếng Anh → Tên mới**. Dòng có ❓ là chỗ Claude chưa chắc chắn, David sửa trực tiếp vào cột tên mới.
 
-## 1. Bảng thuật ngữ gốc (bản sống: `co-so-tri-thuc/bang-thuat-ngu.md`)
+## 1. Bảng thuật ngữ gốc (bản hiện hành: `co-so-tri-thuc/bang-thuat-ngu.md`)
 
 | Tiếng Anh | Tiếng Việt | Tên dùng |
 |---|---|---|
@@ -142,12 +142,12 @@ Mô-đun dựng video (giữ số thứ tự):
 | `du-an/tai-ban-*.md`, `ra-soat-*.md`, `chuan-hoa-ky-nang.md` | Refactoring / Audit | `du-an/tai-cau-truc-*.md`, `danh-gia-*.md`, `chuan-hoa-ky-nang.md` |
 | `tai-lieu-tham-khao/ccl/ho-so-ccl-ban-tieng-viet.*` | Reference | `tai-lieu-tham-khao/ccl/ho-so-ccl-ban-tieng-viet.*` (giữ tên file) |
 
-Các file `hoc-tu-*.md`, `nghien-cuu/*` giữ tên (đã đúng nghĩa "học từ…", "nghiên cứu…"), chỉ đổi chỗ nằm.
+Các file `hoc-tu-*.md`, `nghien-cuu/*` giữ tên (đã đúng nghĩa "học từ…", "nghiên cứu…"), chỉ đổi vị trí lưu.
 
 ## 5. Ghi nhớ (47 file)
 
 Đổi tiền tố theo nhóm: `luat-` → `quy-tac-` · `nao-` → `co-so-tri-thuc-` · `video-` giữ · `may-` → `thiet-bi-`. Phần sau tiền tố
-giữ ý, sửa từ nào lệch thuật ngữ (ví dụ `co-so-tri-thuc-github-ban-goc` → `co-so-tri-thuc-github-ban-goc`). Sửa luôn mọi `[[liên kết]]` và `MEMORY.md`.
+giữ nguyên ý, chỉ sửa từ nào lệch thuật ngữ (ví dụ `co-so-tri-thuc-github-ban-goc` → `co-so-tri-thuc-github-ban-goc`). Đồng thời sửa mọi `[[liên kết]]` và `MEMORY.md`.
 
 ## 6. Trên máy Mac và Drive
 
@@ -158,28 +158,28 @@ giữ ý, sửa từ nào lệch thuật ngữ (ví dụ `co-so-tri-thuc-github-
 | `~/Movies/_danh-muc-noi-dung/` | Content Inventory | `~/Movies/_danh-muc-noi-dung/` |
 | `~/Movies/tap-*` | Episode | giữ `tap-`; trong tập: `2-ban-day-du` → `2-ban-day-du`, `3-doan-noi-bat` → `3-doan-noi-bat` |
 | Drive `tu-lieu-goc` / `thanh-pham` | Raw Footage / Final Deliverables | `tu-lieu-goc` / `thanh-pham` |
-| Bot Telegram "Sổ nhớ" | Notebook | tên hiển thị giữ, thư mục đổi `so-tay` ❓ (đổi cả tên bot thì David tự đổi ở BotFather) |
+| Bot Telegram "Sổ nhớ" | Notebook | tên hiển thị giữ nguyên, thư mục đổi thành `so-tay` ❓ (nếu đổi cả tên bot thì David tự đổi ở BotFather) |
 
 ## 7. Đợt 2 (14/11, David: "không có bất kì ngoại lệ nào")
 
 Đã đổi thêm: 142 file mã nguồn (kể cả trong các dự án video ở `~/Movies`), 2 skill ngoài (`dieu-khien-trinh-duyet`, `thiet-ke-trang-cuon`),
 file viết hoa (`bao-cao-trang-thai.md`, `huong-dan-cai-dat.md`, `tong-quan.md`, `david.md`), thư mục tiếng Anh (`thanh-phan`, `phong-chu`, `mau-remotion`…),
 17 tên giấy tờ cá nhân, tên file sổ tay (`danh-ba`, `viec-da-giao`, `quy-tac-phien-chinh`, `quy-tac-bot`), thư mục Drive về chữ thường,
-thư mục bộ não + repo GitHub thành `bo-nao-david`. Chỉ giữ tên bắt buộc của công cụ: bảng cuối `co-so-tri-thuc/bang-thuat-ngu.md`.
+thư mục bộ não và repo GitHub thành `bo-nao-david`. Chỉ giữ nguyên tên bắt buộc của công cụ: xem bảng cuối `co-so-tri-thuc/bang-thuat-ngu.md`.
 
 ## 8. Đợt 3 (14/11): bên trong dự án video
 
 Đổi cấu trúc và tên file do script tạo trong dự án (`check` → `kiem-tra`, `motion` → `chuyen-dong`, `davinci/media` → `tu-lieu`,
 `video-final.mp4` → `video-hoan-chinh.mp4`, `transcript.srt` → `ban-chep-loi.srt`…) trong mọi script, mẫu và 4 dự án cũ. Dựng thử trọn một video
-(tạo dự án → làm sạch → chép lời → phụ đề → chẩn đoán → chụp thử → render → ghép bản cuối → ảnh bìa → dọn tập) + khởi tạo đoạn nổi bật + podcast:
-bắt và sửa 4 lỗi tên ghép (`drive_$t.swift`, `-of transcript`, `{ref,check,images}`, id `phu_de`). Công cụ đo chồng chéo: chưa cần tái bản.
+(tạo dự án → làm sạch → chép lời → phụ đề → chẩn đoán → chụp thử → render → ghép bản cuối → ảnh bìa → dọn tập) cùng khởi tạo đoạn nổi bật và podcast:
+phát hiện và sửa 4 lỗi tên ghép (`drive_$t.swift`, `-of transcript`, `{ref,check,images}`, id `phu_de`). Công cụ đo chồng chéo: chưa cần tái bản.
 
 ## 9. Cách đổi (sau khi David duyệt)
 1. Gắn mốc GitHub `truoc-chuan-hoa-ten`.
-2. Tạm dừng bot và lịch; kiểm không có render hay việc Telegram đang chạy.
-3. Đổi tên theo bảng; sửa mọi chỗ trỏ tới tên cũ (file, script, hook, launchd, lối tắt `~/.claude`, lịch app, ghi nhớ).
-4. Kiểm: quét không còn tên cũ, chạy thử từng script, bot nhận tin, skill hiện đúng tên mới.
-5. Viết lại luật đặt tên (`AGENTS.md`, ghi nhớ đặt tên) và đẩy GitHub.
+2. Tạm dừng bot và lịch chạy; kiểm tra để chắc không có render hay việc Telegram nào đang chạy.
+3. Đổi tên theo bảng; sửa mọi chỗ trỏ tới tên cũ (file, script, hook, launchd, lối tắt `~/.claude`, lịch chạy của ứng dụng, ghi nhớ).
+4. Kiểm tra: quét để chắc không còn tên cũ, chạy thử từng script, xác nhận bot nhận tin và skill hiện đúng tên mới.
+5. Viết lại luật đặt tên (`AGENTS.md`, ghi nhớ đặt tên) và push lên GitHub.
 
 ## Đợt 2 (25/11/2026): bỏ từ khẩu ngữ trong tên, bỏ bản sao tên tiếng Việt
 
@@ -201,4 +201,4 @@ bắt và sửa 4 lỗi tên ghép (`drive_$t.swift`, `-of transcript`, `{ref,ch
 | `scripts/nang-lop.py` | Raise frame | `nang-khung.py` |
 | `gioi-thieu.md`, `huong-dan-cho-ai.md`, `chi-dan-claude.md`, `bo-nho/muc-luc.md` | bản sao của README, AGENTS, CLAUDE, MEMORY | bỏ |
 
-Giữ nguyên: tên skill (lệnh gọi), tên script được lịch trên Mac gọi (`dong-bo.sh`, `ghi-tin-hieu.py`…), tên mô-đun mã nguồn được import.
+Giữ nguyên: tên skill (lệnh gọi), tên script được lịch chạy trên Mac gọi tới (`dong-bo.sh`, `ghi-tin-hieu.py`…), tên mô-đun mã nguồn được import.

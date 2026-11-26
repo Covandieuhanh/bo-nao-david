@@ -5,17 +5,17 @@ description: "Nghiên cứu 50 video nổi bật kênh Hieu Nguyen (podcast tài
 # Học từ 50 video nổi bật nhất kênh Hieu Nguyen (@hieu-tv) — 2026-11-05
 
 Kênh: 844 N đăng ký · 184 video · "Tài chính cá nhân và kinh nghiệm sống". 50 video xếp theo **Phổ biến** (445 nghìn đến 2,1 triệu lượt xem).
-Mục đích: David thấy phong cách kênh hợp mình và tỉ lệ chuyển đổi cao thì học nhịp điệu và cách làm podcast (luật "sao chép hình mẫu thành công").
+Mục đích: David thấy phong cách kênh hợp mình và tỉ lệ chuyển đổi cao, nên Claude học nhịp điệu và cách làm podcast (luật "sao chép hình mẫu thành công").
 
 ## Cách đo (trên trình duyệt, không tải video)
-Mỗi video: bỏ quảng cáo → đọc mô tả + chương → phát 6× ba đoạn (75 s đầu · 30 s giữa · 45 s cuối) và đo chênh lệch khung hình
-(ngưỡng cắt cảnh) → chụp 24 khung trải đều → đọc bản chép lời tự động (lời mở 75 s, lời kết 75 s, tốc độ nói).
+Mỗi video: Claude bỏ quảng cáo, đọc mô tả và chương, phát 6× ba đoạn (75 s đầu · 30 s giữa · 45 s cuối) và đo chênh lệch khung hình
+(ngưỡng cắt cảnh), chụp 24 khung trải đều, rồi đọc bản chép lời tự động (lời mở 75 s, lời kết 75 s, tốc độ nói).
 
 ## Số đo (50/50 video)
 | Chỉ số | Kết quả |
 |---|---|
 | Thời lượng | 8–36 phút; nhóm triệu view 18–27 phút |
-| Cú cắt hình trong 150 s đo | **0–2** (đa số 0; cú duy nhất thường là lúc thẻ tên tập → màn chính) |
+| Số lần cắt hình trong 150 s đo | **0–2** (đa số 0; lần cắt duy nhất thường là lúc thẻ tên tập → màn chính) |
 | Tốc độ nói | 210–251 âm tiết/phút (trung bình khoảng 235), đều, không cắt khoảng lặng |
 | Phụ đề in trên hình | **0/50** — dùng phụ đề tự động/CC của YouTube |
 | Nhạc | đầu video 34/50, cuối video 36/50 — **không nghe nhạc dưới lời** |
@@ -30,19 +30,19 @@ Mỗi video: bỏ quảng cáo → đọc mô tả + chương → phát 6× ba �
 ## Cách làm (rút ra)
 1. **Một màn hình, đổi rất ít.** Nền cố định suốt tập — 2021: nền xanh đậm vân giấy; 2022–23: bức tường xám + đèn rọi. Giữa
    màn là tên tập / câu ý chính chữ in hoa đậm, giữ hàng phút. Đổi hình chỉ khi sang **ý lớn** (chương), khoảng 2–4 phút/lần.
-2. **Bản đồ chương tích luỹ.** Mỗi chương thêm MỘT thẻ (biểu tượng + nhãn 2–5 chữ) cạnh các thẻ trước thì cuối tập màn hình là
+2. **Bản đồ chương tích luỹ.** Mỗi chương thêm MỘT thẻ (biểu tượng + nhãn 2–5 chữ) cạnh các thẻ trước, nên cuối tập màn hình là
    sơ đồ toàn bài (người xem thấy mình đang ở đâu, muốn chụp lại). Thỉnh thoảng chen biểu đồ / ảnh tư liệu khi nói số liệu, câu chuyện.
 3. **Đáy màn hình kiểu "đài phát thanh":** thanh tiến độ mảnh + sóng âm nhỏ + tên tập (trái) · "TẬP 57 • 27 FEB 2022 | HIEU.TV" (phải).
 4. **Không phụ đề in hình, không hiệu ứng chữ, không chuyển cảnh nhanh** — người xem *nghe* là chính, hình để định vị.
 5. **Nhạc chỉ ở intro/outro.** Lời nói hoàn toàn sạch.
-6. **Nghi thức mở (khoảng 30 s, gần như nguyên văn mỗi tập):** chào → "chào mừng đến Podcast Hiếu TV" → dành cho người mới: kênh chia
-   sẻ 2 mảng (tài chính cá nhân · kinh nghiệm sống), phát hành tối chủ nhật hàng tuần → tải tài liệu miễn phí ở hieu.tv → "một lần
-   nữa xin chào, bây giờ chúng ta cùng bắt đầu chủ đề hôm nay" thì vào đề bằng **nối tập trước / kể một câu chuyện / một biểu đồ /
+6. **Nghi thức mở (khoảng 30 s, gần như nguyên văn mỗi tập):** chào, rồi "chào mừng đến Podcast Hiếu TV", rồi dành cho người mới: kênh chia
+   sẻ 2 mảng (tài chính cá nhân · kinh nghiệm sống), phát hành tối chủ nhật hàng tuần, rồi tải tài liệu miễn phí ở hieu.tv, rồi "một lần
+   nữa xin chào, bây giờ chúng ta cùng bắt đầu chủ đề hôm nay", rồi vào đề bằng **nối tập trước / kể một câu chuyện / một biểu đồ /
    một câu hỏi**. Không có "hook" trích câu then chốt.
 7. **Nghi thức kết (gần như nguyên văn):** nếu thấy hữu ích nhờ chia sẻ cho bạn bè và người thân (có khi nói rõ: "đặc biệt các em
-   còn trẻ") → nhờ bấm like vì thuật toán → cảm ơn → chúc buổi tối cuối tuần bình yên bên gia đình. Gần như không xin đăng ký.
+   còn trẻ"), rồi nhờ bấm like vì thuật toán, rồi cảm ơn, rồi chúc buổi tối cuối tuần bình yên bên gia đình. Gần như không xin đăng ký.
 8. **Chuyển đổi đến từ "tài liệu miễn phí":** mỗi tập mời vào website tải slide/biểu đồ/thư viện/tạp chí miễn phí; mô tả có liên
-   kết tập liên quan + tài liệu + khoá học. Đó là phễu: nghe → tải tài liệu → vào hệ sinh thái (khoá học đầu tư).
+   kết tập liên quan + tài liệu + khoá học. Đó là phễu: nghe, rồi tải tài liệu, rồi vào hệ sinh thái (khoá học đầu tư).
 9. **Series có số:** "Hành trình tự do tài chính – Phần 1…5", "9 sai lầm khi 20–30 / 30–40 tuổi"; mỗi tập có số TẬP n.
 10. **Thumbnail:** ảnh ẩn dụ (không mặt người) + tên tập chữ trắng đậm giữa ảnh + **số tập** góc trái; bản gần đây: ảnh điện ảnh
     + nhãn 2 dòng vàng/đen. Tiêu đề là câu ngắn mang tính triết lý / con số ("9 sai lầm…", "10 nguồn thu nhập…").

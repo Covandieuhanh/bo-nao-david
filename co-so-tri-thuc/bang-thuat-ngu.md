@@ -281,3 +281,27 @@ video, clip, render, script, skill, hook, repo, commit, push, pull, token, podca
 | Kỹ thuật | Frame / Layout / Overlay / Scene | khung hình / bố cục / lớp phủ / cảnh |
 | Kỹ thuật | Thumbnail / Chapter / Loudness | ảnh thu nhỏ / chương / mức âm lượng |
 | Kỹ thuật | Encode / Export / Preview | mã hoá / xuất / xem trước |
+| Văn bản | Hard rule / Hard stop | luật bắt buộc / chặn bắt buộc ("cứng" nghĩa tuyệt đối); "cố định" chỉ cho giá trị không đổi |
+| Văn bản | Target audience / Customer segment | nhóm khách hàng mục tiêu |
+| Văn bản | Title card / Title | thẻ tiêu đề / tiêu đề (thay "thẻ tít", "tít") |
+| Văn bản | Emotional payoff (punch moment) | điểm chốt cảm xúc (khác "câu chốt" là câu cho màn chốt) |
+| Văn bản | Face detection | phát hiện khuôn mặt (tìm vị trí mặt; khác nhận diện là biết ai) |
+| Văn bản | Learn from / Imitate | học từ (rút bài học) / học theo (làm theo) |
+| Văn bản | Transformation (of viewer) / Conversion (sales) | chuyển hoá / chuyển đổi |
+| Văn bản | Critical signal (skill thu-thap-yeu-cau) | tín hiệu nặng (thuật ngữ của skill, giữ) |
+| Văn bản | Review / Self-review | rà soát / tự rà soát (thay "soát") |
+| Văn bản | Collect / Aggregate | thu thập / tổng hợp (thay "gom") |
+| Văn bản | Watchdog | công cụ giám sát (thay "máy canh") |
+| Văn bản | Entry point | điểm vào (thay "cửa vào") |
+| Văn bản | Low-size preview | bản dung lượng nhỏ (thay "bản nhẹ") |
+| Văn bản | Clutter | chi tiết thừa (thay "rác") |
+| Văn bản | Confidence | độ tin cậy (thay "độ chắc") |
+| Văn bản | Usage limit / Quota | hạn mức (thay "hết lượt") |
+| Văn bản | Hang / Crash | ngừng phản hồi / dừng đột ngột (thay "treo", "sập") |
+| Văn bản | Stakes | điều người xem được và mất (thay "tiền cược") |
+| Văn bản | Long-term goal | mục tiêu dài hạn (thay "đích xa") |
+| Văn bản | Guiding principle / Foundation | nguyên tắc định hướng / nền tảng (thay "kim chỉ nam", "xương sống") |
+| Văn bản | Burn-in subtitles | gắn cố định phụ đề vào hình (thay "đốt phụ đề") |
+| Văn bản | Aesthetic baseline (taste floor) | chuẩn tối thiểu về gu thẩm mỹ (thay "sàn gu") |
+| Văn bản | Speaker diarization | nhận diện người nói |
+| Văn bản | Leading minds | bộ óc hàng đầu (gồm cả người và tổ chức, giữ) |

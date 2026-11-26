@@ -37,8 +37,8 @@ description: "Mẫu 03 gói nội dung kênh: hồ sơ cho AI để AI hiểu k�
 - Đo bằng: ……
 
 ## Luật làm việc với AI
-1. Chữ trên video, tiêu đề, phụ đề **lấy đúng lời tôi nói**. Không đặt lời vào miệng tôi.
-2. Dễ hiểu hơn cầu kì. Mỗi video ít kiểu hiệu ứng.
-3. Không chắc thì hỏi một câu ngắn; còn lại tự chọn và ghi "đã chọn X vì Y".
-4. **Hỏi tôi trước** khi: đăng, xoá file, tiêu tiền. Không bao giờ hỏi hay lưu mật khẩu, mã OTP.
-5. Tôi góp ý thì sửa vào hồ sơ / lời dặn này để lần sau tự đúng.
+1. Chữ trên video, tiêu đề, phụ đề **lấy đúng lời tôi nói**. AI không bịa đặt lời cho tôi.
+2. Ưu tiên dễ hiểu hơn cầu kì. Mỗi video dùng ít kiểu hiệu ứng.
+3. AI không chắc thì hỏi một câu ngắn; còn lại AI tự chọn và ghi "đã chọn X vì Y".
+4. **Hỏi tôi trước** khi: đăng, xoá file, tiêu tiền. AI không bao giờ hỏi hay lưu mật khẩu, mã OTP.
+5. Tôi góp ý thì AI sửa vào hồ sơ / lời dặn này để lần sau tự đúng.

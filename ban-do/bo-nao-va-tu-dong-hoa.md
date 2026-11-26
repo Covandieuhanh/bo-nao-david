@@ -15,14 +15,14 @@ Gốc: [bản đồ bộ não](README.md).
 - [truc-tri-thuc](../co-so-tri-thuc/truc-tri-thuc.md) — **Trục tri thức (tầng 0)**: cách bộ não tiếp nhận, xử lý, học, nâng cấp mọi thông tin, dựng theo cách mô hình AI được làm ra (dữ liệu → chưng cất → phản hồi → đánh giá → ra bản).
 - [bai-kiem toàn bộ não](../co-so-tri-thuc/bai-kiem/README.md) — Bộ đánh giá của trục: 18 tình huống từ chính lời David đã sửa; một trí tuệ nhân tạo chưa đọc gì làm bài, đạt ít nhất 17/18.
 - [chuan-muc-lam-viec](../ky-nang/chuan-muc-lam-viec.md) — Nguyên lý làm việc chung mọi skill đọc trước (tầng 1): khi hai điều ngược nhau, đầu việc, duyệt bốn phần, trong lúc làm, cuối việc, giữ phiên gọn, tài liệu và nguồn.
-- [quy-trinh-van-hanh-chung](../ky-nang/quy-trinh-van-hanh-chung.md) — Cách làm từng bước của chuẩn mực (tầng 2, cùng số mục): lệnh, mẫu bốn phần, câu báo, soát sau việc, ghi sổ, dọn thiết bị, đẩy GitHub.
+- [quy-trinh-van-hanh-chung](../ky-nang/quy-trinh-van-hanh-chung.md) — Cách làm từng bước của chuẩn mực (tầng 2, cùng số mục): lệnh, mẫu bốn phần, câu báo, soát sau việc, ghi sổ, dọn dẹp thiết bị, push lên GitHub.
 - [quy-uoc-lien-ket](../co-so-tri-thuc/quy-uoc-lien-ket.md) — Bộ quy tắc liên kết của bộ não — mô tả đầu file, đường nối, bản đồ nội dung, chỉ mục tự sinh, ghi chú kiến thức, công cụ kiểm tra; để Claude tra nhanh, ít token, không sót.
 - [bang-thuat-ngu](../co-so-tri-thuc/bang-thuat-ngu.md) — Bảng thuật ngữ đặt tên: thuật ngữ kinh doanh tiếng Anh → tiếng Việt → tên file/thư mục dùng; tên bắt buộc của công cụ; cấu trúc thư mục.
 - [chi-muc](../co-so-tri-thuc/chi-muc.md) — Chỉ mục tự sinh của bộ não — mỗi file .md một dòng (đường dẫn, mô tả, số file nối tới); Claude grep file này trước khi tìm toàn repo.
 
 ## Trạng thái và dự án của bộ não
 - [bao-cao-trang-thai](../bao-cao-trang-thai.md) — Báo cáo trạng thái: việc đang làm chưa xong, việc chờ David quyết, câu hỏi còn mở, cảnh báo, việc phải nhớ.
-- [du-an](../du-an/README.md) — Thư mục dự án: chỉ giữ file theo dõi việc dở; dự án video và thành phẩm nằm ở máy và Drive.
+- [du-an](../du-an/README.md) — Thư mục dự án: chỉ giữ file theo dõi việc làm chưa xong; dự án video và thành phẩm nằm ở thiết bị và Drive.
 - [lien-ket-tri-thuc](../du-an/lien-ket-tri-thuc.md) — Dự án liên kết tri thức (14/11): biến bộ não thành mạng lưới file nối nhau để Claude tra nhanh, ít token; kế hoạch 4 phần và số đo trước / sau.
 - [chuan-hoa-ten](../du-an/chuan-hoa-ten.md) — Bản đồ chuẩn hoá tên toàn bộ (14/11, đã xong): tên cũ đổi sang tên mới theo thuật ngữ kinh doanh tiếng Anh dịch sang tiếng Việt.
 - [chuan-hoa-ky-nang](../du-an/chuan-hoa-ky-nang.md) — Dự án chuẩn hoá bộ skill theo thói quen làm việc chung (08/11): các bước, mốc commit, việc còn lại.
@@ -37,19 +37,19 @@ Gốc: [bản đồ bộ não](README.md).
 
 ## Ghi nhớ quy tắc và bộ não (sổ quyết định)
 - [MEMORY](../co-so-tri-thuc/bo-nho/MEMORY.md) — Mục lục bộ nhớ: mỗi ghi nhớ một dòng.
-- [quy-tac-cong-cu-cai-dua-vao-ky-nang](../co-so-tri-thuc/bo-nho/quy-tac-cong-cu-cai-dua-vao-ky-nang.md) — Công cụ David đã tải/cài (ví dụ: pyannote) là để nâng skill — giúp việc tốt hơn thì đưa thẳng vào skill dựng video, không để nằm không (2026-11-07)
+- [quy-tac-cong-cu-cai-dua-vao-ky-nang](../co-so-tri-thuc/bo-nho/quy-tac-cong-cu-cai-dua-vao-ky-nang.md) — Công cụ David đã tải/cài (ví dụ: pyannote) là để nâng skill — công cụ giúp việc tốt hơn thì Claude đưa thẳng vào skill dựng video, không để công cụ không được dùng (2026-11-07)
 - [quy-tac-david-md-chi-dieu-co-dinh](../co-so-tri-thuc/bo-nho/quy-tac-david-md-chi-dieu-co-dinh.md) — co-so-tri-thuc/david.md chỉ ghi điều cố định đã chốt; ý tưởng, góp ý đang cân nhắc ghi ở du-an/danh-sach-y-tuong.md
 - [quy-tac-duyet-ke-hoach-4-phan](../co-so-tri-thuc/bo-nho/quy-tac-duyet-ke-hoach-4-phan.md) — Việc gì cũng trình đủ 4 phần (Mục tiêu · Kế hoạch · Quy trình · Thực thi), David duyệt rồi mới làm; duyệt rồi tự làm trọn tới khi chắc dùng được; việc tự chạy hiện…
 - [quy-tac-goi-trainer-chung](../co-so-tri-thuc/bo-nho/quy-tac-goi-trainer-chung.md) — Gói trainer công nghệ chỉ dạy một kỹ năng thuần, cách làm chung bằng AI và máy của học viên; không tư duy, không chi tiết riêng của David
 - [quy-tac-goi-y-de-david-chon](../co-so-tri-thuc/bo-nho/quy-tac-goi-y-de-david-chon.md) — Tài nguyên vào, kết quả ra: trình 4 phần gọn theo mặc định skill + đề xuất "chọn X vì Y", David duyệt rồi Claude làm một mạch, không hỏi giữa chừng (2026-11-11…
 - [quy-tac-hoc-la-bo-sung](../co-so-tri-thuc/bo-nho/quy-tac-hoc-la-bo-sung.md) — Học video mẫu mới là BỔ SUNG vào skill, không thay thế những gì David đã sửa; lỗi cũ đã sửa không được quay lại; số của khung dọc không dùng cho khung ngang (2026-11-08)
 - [quy-tac-ket-qua-hon-toc-do](../co-so-tri-thuc/bo-nho/quy-tac-ket-qua-hon-toc-do.md) — David ưu tiên làm đúng quy trình và có kết quả hơn làm nhanh; bước nào cần kết quả render thì chờ, chỗ chưa rõ thì trao đổi (2026-11-05)
-- [quy-tac-khong-tu-chay-viec-cua-david](../co-so-tri-thuc/bo-nho/quy-tac-khong-tu-chay-viec-cua-david.md) — Không tự chạy, chạy tiếp, dừng hay làm lại việc David tạo (render, việc dựng…) khi David chưa ra lệnh — kể cả khi chính Claude làm ngắt việc đó
+- [quy-tac-khong-tu-chay-viec-cua-david](../co-so-tri-thuc/bo-nho/quy-tac-khong-tu-chay-viec-cua-david.md) — Không tự chạy, chạy tiếp, dừng hay làm lại việc David tạo (render, việc dựng…) khi David chưa ra lệnh — kể cả khi chính Claude đã ngắt việc đó
 - [quy-tac-ky-nang-tu-cai-tien](../co-so-tri-thuc/bo-nho/quy-tac-ky-nang-tu-cai-tien.md) — Sáu luật AGENTS 12/11/2026: skill, giọng văn, luật kênh tự học theo hình mẫu có số liệu, phần sửa trình 4 phần chờ duyệt (14/11); bỏ luật 'con người làm trung t…
 - [quy-tac-khong-dung-mod-giao-dien](../co-so-tri-thuc/bo-nho/quy-tac-khong-dung-mod-giao-dien.md) — Không dùng mod giao diện: David gỡ hết savvy-progress, collision-guard, goal-meter, Sổ việc (13/11/2026)
 - [quy-tac-noi-dung-cua-david](../co-so-tri-thuc/bo-nho/quy-tac-noi-dung-cua-david.md) — Vai trò chia rõ — David tự xây nội dung, nói tự do có cảm xúc; skill lo hình. Người xem làm trung tâm; học kênh lớn ở nhịp và cách trình bày (2026-11-05, gộp 10/11)
 - [quy-tac-phien-telegram-tu-chay](../co-so-tri-thuc/bo-nho/quy-tac-phien-telegram-tu-chay.md) — Phiên việc giao qua Telegram: trình 4 phần chờ duyệt, duyệt rồi tự làm tới kết quả, ghi sổ; chỉ hỏi khi đăng/gửi, tốn tiền, đẩy đè GitHub, xoá ổ đĩa; mọi phiên…
-- [quy-tac-tu-duy-goc](../co-so-tri-thuc/bo-nho/quy-tac-tu-duy-goc.md) — Lời David đặt bộ tư duy gốc, khung cố vấn làm xương sống, học từ bộ óc thế giới (23/11).
+- [quy-tac-tu-duy-goc](../co-so-tri-thuc/bo-nho/quy-tac-tu-duy-goc.md) — Lời David đặt bộ tư duy gốc, khung cố vấn làm nền tảng, học từ những chuyên gia hàng đầu thế giới (23/11).
 - [quy-tac-truc-tri-thuc](../co-so-tri-thuc/bo-nho/quy-tac-truc-tri-thuc.md) — Lời David chốt trục tri thức cố định cho việc kaizen bộ não (20/11).
 - [quy-tac-sua-thang-tai-ban](../co-so-tri-thuc/bo-nho/quy-tac-sua-thang-tai-ban.md) — Đổi luật thì sửa thẳng câu cũ (không chồng câu "bổ sung/thay luật", không ngày trong bản luật); định kỳ tái bản TOÀN BỘ bộ não một đợt khi công cụ đo chồng chéo báo…
 - [quy-tac-thu-bang-doan-ngan](../co-so-tri-thuc/bo-nho/quy-tac-thu-bang-doan-ngan.md) — Thử skill dựng video thì chỉ dùng một đoạn ngắn TRỌN VẸN MỘT Ý (không cố định số giây), không chạy cả video dài
@@ -72,7 +72,7 @@ Gốc: [bản đồ bộ não](README.md).
 - [hoc-lien-tuc](../ky-nang/hoc-lien-tuc/SKILL.md) — Tự học, cải tiến liên tục: nhìn lại tuần, học hình mẫu có số liệu, học thành skill, và Việc 4 **Nâng cấp** định kỳ cả bộ não (đo trước / sau, chưng cất, cắt giảm, tái cấu trúc).
 - [nhat-ky-thay-doi hoc-lien-tuc](../ky-nang/hoc-lien-tuc/references/nhat-ky-thay-doi.md) — Nhật ký thay đổi skill hoc-lien-tuc và máy đếm / ghi tín hiệu.
 - [hoc-lien-tuc 2026-11-15](../du-an/hoc-lien-tuc/2026-11-15.md) — Phiếu tự học tuần 15/11: điều lặp, đã sửa, gộp ghi nhớ 47 thành 40, việc tuần sau.
-- [tai-cau-truc](../ky-nang/tai-cau-truc/SKILL.md) — Dọn luật — bước 4 của Nâng cấp: mỗi luật một nguồn duy nhất, không ngày, không câu trùng; công cụ đo chồng chéo chỉ kêu vì trùng / rối.
+- [tai-cau-truc](../ky-nang/tai-cau-truc/SKILL.md) — Dọn luật — bước 4 của Nâng cấp: mỗi luật một nguồn duy nhất, không ngày, không câu trùng; công cụ đo chồng chéo chỉ cảnh báo khi có trùng lặp / rối.
 - [dieu-khien-trinh-duyet](../ky-nang/dieu-khien-trinh-duyet/SKILL.md) — Automate browser interactions, test web pages and work with Playwright tests.
 - [thiet-ke-trang-cuon](../ky-nang/thiet-ke-trang-cuon/SKILL.md) — >
 - [lich-su](../ky-nang/tai-cau-truc/lich-su.md) — Lịch sử nâng cấp (trước 20/11 gọi là tái bản): mỗi đợt một dòng, mốc cho công cụ đo chồng chéo.
@@ -96,7 +96,7 @@ Gốc: [bản đồ bộ não](README.md).
 - [bo-suu-tap-da-duyet](../ky-nang/thiet-ke-trang-cuon/references/bo-suu-tap-da-duyet.md) — Thiết kế trang cuộn: chuẩn 10 trang đã duyệt.
 - [cam-giac](../ky-nang/thiet-ke-trang-cuon/references/cam-giac.md) — Thiết kế trang cuộn: trục cảm xúc người xem đi qua trang.
 - [chieu-sau-phan-dau](../ky-nang/thiet-ke-trang-cuon/references/chieu-sau-phan-dau.md) — Thiết kế trang cuộn: chiều sâu nhiều lớp cho phần đầu trang (hero).
-- [gu-thiet-ke](../ky-nang/thiet-ke-trang-cuon/references/gu-thiet-ke.md) — Thiết kế trang cuộn: sàn gu thẩm mỹ, đọc trước khi viết mã.
+- [gu-thiet-ke](../ky-nang/thiet-ke-trang-cuon/references/gu-thiet-ke.md) — Thiết kế trang cuộn: chuẩn tối thiểu về gu thẩm mỹ, người làm đọc trước khi viết mã.
 - [kiem-chung](../ky-nang/thiet-ke-trang-cuon/references/kiem-chung.md) — Thiết kế trang cuộn: kiểm chứng desktop, điện thoại, giảm chuyển động.
 - [tai-nguyen](../ky-nang/thiet-ke-trang-cuon/references/tai-nguyen.md) — Thiết kế trang cuộn: tạo ảnh, video bằng kie.ai và mã hoá để cuộn.
 - [the-gioi](../ky-nang/thiet-ke-trang-cuon/references/the-gioi.md) — Thiết kế trang cuộn: chọn thế giới (định hướng nghệ thuật) của trang.
@@ -104,16 +104,16 @@ Gốc: [bản đồ bộ não](README.md).
 - [tinh-doc-ban](../ky-nang/thiet-ke-trang-cuon/references/tinh-doc-ban.md) — Thiết kế trang cuộn: trục cấu trúc, bài học từ 4 trang đã làm.
 
 ## Nghiên cứu về cách dùng AI
-- [nghien-cuu](../nghien-cuu/README.md) — Thư mục nghiên cứu: nguyên liệu đã tra để ra quyết định hoặc nâng skill, số liệu chóng cũ.
+- [nghien-cuu](../nghien-cuu/README.md) — Thư mục nghiên cứu: tài liệu đã tra cứu để ra quyết định hoặc nâng cấp skill, số liệu nhanh lỗi thời.
 - [hoc-tu-16-bai-hoc-1000-gio-claude-2026-11-14](../nghien-cuu/hoc-tu-16-bai-hoc-1000-gio-claude-2026-11-14.md) — Nghiên cứu bài 16 bài học sau 1000 giờ dùng Claude (Nhật Anh AI, 14/11): ý áp dụng cho bộ não.
 
 ## Lưu trữ (không làm theo)
-- [co-so-tri-thuc-kho-bo-nao](../co-so-tri-thuc/bo-nho/luu-tru/co-so-tri-thuc-kho-bo-nao.md) — Repo riêng tư Covandieuhanh/bo-nao-david là bộ não dùng chung cho mọi AI; bản trên máy ở ~/Documents/bo-nao-david; "cập nhật não" = chạy tu-dong-hoa/dong-bo.sh --push
+- [co-so-tri-thuc-kho-bo-nao](../co-so-tri-thuc/bo-nho/luu-tru/co-so-tri-thuc-kho-bo-nao.md) — Repo riêng tư Covandieuhanh/bo-nao-david là bộ não dùng chung cho mọi AI; bản trên máy ở ~/Documents/bo-nao-david; "cập nhật não" nghĩa là chạy tu-dong-hoa/dong-bo.sh --push
 - [video-chuan-am-luong](../co-so-tri-thuc/bo-nho/luu-tru/video-chuan-am-luong.md) — Chuẩn âm lượng chung David chốt cho mọi video: nhạc thấp hơn giọng khoảng 23 dB lúc nói, cả bài -14 LUFS; giọng nhỏ kéo lên, nhạc to hạ xuống (2026-11-06)
 - [video-doc-ngan-khong-thanh](../co-so-tri-thuc/bo-nho/luu-tru/video-doc-ngan-khong-thanh.md) — Video dọc ngắn (Reels/TikTok/Shorts) bỏ thanh thời gian và thẻ cuối; màn chốt hiện chữ trên khung hình, kết ở chữ cuối để tự lặp (2026-11-10)
-- [video-luon-co-do-hoa-chuyen-dong](../co-so-tri-thuc/bo-nho/luu-tru/video-luon-co-do-hoa-chuyen-dong.md) — Mọi video phải có motion graphics = điểm nhấn kéo mắt người xem, NHIỀU LOẠI (không chỉ cảnh toàn màn hình): hình vẽ, chữ giải thích, biểu tượng, làm nổi người đang…
-- [video-nguoi-xem-trung-tam](../co-so-tri-thuc/bo-nho/luu-tru/video-nguoi-xem-trung-tam.md) — Kim chỉ nam bộ skill video — người xem làm trung tâm; học kênh lớn ở nhịp và cách trình bày, giữ thẩm mỹ của David (04/11, sửa 08/11)
-- [video-quy-trinh-dung-theo-phong-cach](../co-so-tri-thuc/bo-nho/luu-tru/video-quy-trinh-dung-theo-phong-cach.md) — Người dùng dựng video talking-head dọc theo phong cách mẫu bằng skill ~/.claude/skills/dung-video-theo-phong-cach; muốn đưa 2 video là xong, nhận MP4 đăng ngay
+- [video-luon-co-do-hoa-chuyen-dong](../co-so-tri-thuc/bo-nho/luu-tru/video-luon-co-do-hoa-chuyen-dong.md) — Mọi video phải có motion graphics, tức là điểm nhấn kéo mắt người xem, NHIỀU LOẠI (không chỉ cảnh toàn màn hình): hình vẽ, chữ giải thích, biểu tượng, làm nổi người đang…
+- [video-nguoi-xem-trung-tam](../co-so-tri-thuc/bo-nho/luu-tru/video-nguoi-xem-trung-tam.md) — Nguyên tắc định hướng của bộ skill video — người xem làm trung tâm; học kênh lớn ở nhịp và cách trình bày, giữ thẩm mỹ của David (04/11, sửa 08/11)
+- [video-quy-trinh-dung-theo-phong-cach](../co-so-tri-thuc/bo-nho/luu-tru/video-quy-trinh-dung-theo-phong-cach.md) — Người dùng dựng video talking-head dọc theo phong cách mẫu bằng skill ~/.claude/skills/dung-video-theo-phong-cach; người dùng chỉ muốn đưa 2 video rồi nhận MP4 đăng ngay
 - [thiet-bi-don-documents-2026-11-07](../co-so-tri-thuc/bo-nho/luu-tru/thiet-bi-don-documents-2026-11-07.md) — Ngày 07/11/2026 dọn ~/Documents, chỉ còn David.Claude + Obsidian + mk.csv; App notion đã bỏ, mở phiên ở ~/Documents/David.Claude
 - [video-podcast-bia-khong-mat](../co-so-tri-thuc/bo-nho/luu-tru/video-podcast-bia-khong-mat.md) — Lưu trữ: đã gộp vào video-chi-hinh-cua-chinh-video.
 - [video-khong-nhan-ky-thuat](../co-so-tri-thuc/bo-nho/luu-tru/video-khong-nhan-ky-thuat.md) — Lưu trữ: đã gộp vào video-chu-nguyen-van.

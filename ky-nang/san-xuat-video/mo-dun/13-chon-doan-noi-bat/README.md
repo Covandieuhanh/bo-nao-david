@@ -1,8 +1,8 @@
 ---
-description: "Khối 13 chọn khoảnh khắc highlight: bản đồ cả video, bốn câu chọn ý."
+description: "Khối 13 chọn khoảnh khắc highlight: lập bản đồ toàn bộ video, chọn ý theo bốn câu hỏi."
 ---
 
-# Khối 13-chon-doan-noi-bat: Chọn khoảnh khắc highlight: bản đồ cả video, tự chọn ý theo 4 câu, chọn câu, bố trí lời kêu gọi, cắt + kiểm lời
+# Khối 13-chon-doan-noi-bat: Chọn khoảnh khắc highlight: lập bản đồ toàn bộ video, tự chọn ý theo 4 câu hỏi, chọn câu, bố trí lời kêu gọi, cắt và kiểm lời
 
 **Dùng trong:** highlight
 **Đầu vào:** video dài / dự án gốc
@@ -23,37 +23,37 @@ description: "Khối 13 chọn khoảnh khắc highlight: bản đồ cả video
 | **Video đã dựng có người nói** (bản `dung-video-theo-phong-cach` đã phủ chữ/phụ đề) | có người + chữ/phụ đề đốt sẵn | như hàng 1, nhưng dựng từ **bản sạch** `tu-lieu/video-goc.mp4` của dự án gốc (không chồng 2 lớp chữ) | bước 7A |
 | Không rõ / đã đốt chữ mà không tìm được dự án gốc | — | **hỏi David** bản thô hoặc thư mục dự án; không phủ thêm phụ đề lên phụ đề | — |
 
-Cắt thẳng hình đồ hoạ ngang rồi đặt vào khung dọc là **không đạt** (chữ nhỏ, bố cục ngang vỡ, thanh thời gian hiện thời lượng
-bản dài) — luôn dựng lại.
+Nếu người dựng cắt thẳng hình đồ hoạ ngang rồi đặt vào khung dọc thì kết quả **không đạt** (chữ nhỏ, bố cục ngang bị hỏng, thanh thời gian hiện thời lượng
+của bản dài); người dựng luôn dựng lại từ đầu.
 
 ### 1. Môi trường + dự án
 ```bash
 zsh $BASE/scripts/kiem-moi-truong.sh
 zsh $SKILL/scripts/tao-doan-noi-bat.sh "<thư mục dự án gốc | video dài>" <tên-ngắn> ["<phụ đề .srt/.vtt>"]   # chạy nền; dòng cuối = $P
 ```
-→ `~/Movies/tap-<tên>/3-doan-noi-bat/`: `nguon.<ext>`, `loai.txt` (podcast · tu-quay · chua-ro), `kiem-tra/goc/`: `ban-chep-loi.srt`, `moc-tung-tu.srt`,
+Kết quả nằm ở `~/Movies/tap-<tên>/3-doan-noi-bat/`: `nguon.<ext>`, `loai.txt` (podcast · tu-quay · chua-ro), `kiem-tra/goc/`: `ban-chep-loi.srt`, `moc-tung-tu.srt`,
 `am-luong-05.txt` (độ lớn tiếng mỗi 0,05 s), `bang-khung-hinh.jpg`; từ dự án gốc thêm `captions-goc.js` (lời đã sửa chính tả — nguồn chữ chính),
-`scenes-goc.js` (tên tập, người nói, kịch bản gốc), `du-an-goc.txt`. Đưa file video thì chép lời bằng whisper.cpp + `large-v3-turbo`
-(không dùng faster-whisper/pip); `loai.txt = chua-ro` thì xem `bang-khung-hinh.jpg` rồi quyết theo bảng bước 0.
-Câu Whisper bịa đặt (`../../quy-tac-chung.md` mục 1) không dùng làm câu chọn.
+`scenes-goc.js` (tên tập, người nói, kịch bản gốc), `du-an-goc.txt`. Khi đầu vào là file video, skill chép lời bằng whisper.cpp và `large-v3-turbo`
+(không dùng faster-whisper hay pip); khi `loai.txt = chua-ro`, người dựng xem `bang-khung-hinh.jpg` rồi quyết định theo bảng bước 0.
+Người dựng không dùng câu do Whisper bịa đặt (`../../quy-tac-chung.md` mục 1) làm câu chọn.
 
 ### 2. Bản đồ cả video (bắt buộc, trước khi chọn câu)
-Đọc HẾT lời (ưu tiên `captions-goc.js`, không có thì transcript; sửa chính tả bằng `phu-de-youtube.srt`), ghép thành câu hoàn chỉnh,
-rồi ghi đầu `$P/ke-hoach-cat.md`:
+Người dựng đọc hết toàn bộ lời (ưu tiên `captions-goc.js`, không có thì dùng bản chép lời; sửa chính tả bằng `phu-de-youtube.srt`), ghép thành câu hoàn chỉnh,
+rồi ghi vào đầu `$P/ke-hoach-cat.md`:
 - **Nỗi đau** video giải quyết và **lời hứa cốt lõi** — mỗi thứ một câu nguyên văn kèm mốc.
 - **Lời kêu gọi**: liệt kê MỌI câu kêu gọi kèm mốc, xếp theo độ mạnh; đánh dấu **lời kêu gọi chính** (việc người nói muốn người xem
-  làm NHẤT) và câu **mạnh nhất về cảm xúc** (thường khác nhau — dùng cả hai được). Ghi rõ video có câu "Vấn đề:/Kết quả:" không.
+  làm nhất) và câu **mạnh nhất về cảm xúc** (hai câu này thường khác nhau, có thể dùng cả hai). Ghi rõ video có câu "Vấn đề:/Kết quả:" không.
 - **Các ý lớn** theo thứ tự video (mốc bắt đầu, 1 câu nguyên văn tiêu biểu). · **Lằn ranh**: câu nào bị loại (bước 5).
 
 Gán vai cho từng câu:
 - **CHAM** — câu mở mạnh, có xung đột, nghịch lý hoặc chạm nỗi đau, đứng riêng vẫn hiểu.
-- **DAUHIEU** — tình huống người xem nhận ra mình. · **GOCRE** — giải thích vì sao vướng / điều nghịch lý cốt lõi.
+- **DAUHIEU** — tình huống người xem nhận ra mình. · **GOCRE** — giải thích vì sao gặp vướng mắc / điều nghịch lý cốt lõi.
 - **BUOC** — một bước trong cách làm. · **HANHDONG** — lời giao việc cụ thể ("dừng video, viết ra…", "trong 48 giờ…").
 - **KEUGOI** — mời bình luận/làm theo, câu hỏi kết, "Vấn đề:" / "Kết quả:". · **KETQUA** — điều thay đổi khi làm được.
-- **CHUYEN** — kể chuyện cá nhân. · **THUA** — chào hỏi, lặp ý, "như mình nói ở trên", chuyển đoạn, ậm ừ.
+- **CHUYEN** — kể chuyện cá nhân. · **THUA** — chào hỏi, lặp ý, "như mình nói ở trên", chuyển đoạn, từ đệm.
 
 ### 3. Tự chọn ý theo 4 câu, rồi chọn câu cho từng clip
-**Không hỏi David chọn đoạn.** Bốn câu `boi_canh`, `y_tron`, `mang_ve`, `chua_lai` ở đầu `cat-doan-noi-bat/SKILL.md` là thước chọn; số clip và độ dài theo ý, không có số cố định.
+**AI không hỏi David chọn đoạn.** Bốn câu hỏi `boi_canh`, `y_tron`, `mang_ve`, `chua_lai` ở đầu `cat-doan-noi-bat/SKILL.md` là tiêu chí chọn; số clip và độ dài theo ý, không có số cố định.
 Từ bản đồ bước 2, liệt kê các **khoảnh khắc ứng viên** (một chuyện kể, một nghịch lý, một con số gây sốc, một lời khuyên làm được
 ngay…) kèm mốc; chấm theo 4 câu trước, rồi theo câu mở (mục 6 dưới). Giữ các ý đạt đủ 4 câu, khác nhau rõ
 (luật 2), đặt tên clip A (mạnh nhất), B, C… Với **mỗi clip**, chọn câu phục vụ lời hứa cốt lõi hoặc ý lớn của khoảnh khắc đó:
@@ -61,16 +61,16 @@ ngay…) kèm mốc; chấm theo 4 câu trước, rồi theo câu mở (mục 6 
 2. 1–2 câu DAUHIEU / GOCRE nối tự nhiên với câu chạm — là ý chính của cả video, không phải chi tiết phụ.
 3. Đúng **một** việc HANHDONG — ưu tiên việc làm được ngay khi đang xem; là việc lời kêu gọi chính nhắm tới. Bỏ nhãn "bước 1"
    nếu clip không có các bước kia (bắt đầu câu ở chữ sau nhãn).
-4. **Lời kêu gọi chính** — nếu clip có; thêm câu mạnh nhất về cảm xúc + KETQUA nếu chúng làm cú chốt mạnh hơn.
+4. **Lời kêu gọi chính** — nếu clip có; thêm câu mạnh nhất về cảm xúc + KETQUA nếu chúng làm điểm chốt cảm xúc mạnh hơn.
 5. Chỉ thêm CHUYEN/BUOC khi thiếu nó thì hành động không hiểu được, và vẫn trong giới hạn thời gian.
 
 6. **Câu mở đầu** chấm theo: bất ngờ / kết quả lớn ("họ sống thọ… không bị bệnh tật nhiều") = **tiền cược** (sinh mạng, tiền,
    "còn 5 phút để sống") = **kết quả trước, quá khứ sau** ("3 năm sau khi bị chê… gọi vốn 5 triệu USD") = **câu đố cho người
    xem** ("bạn đoán được…?") > câu khiêu khích / con số danh sách ("3 bài học…") > câu hỏi day dứt ("tại sao… không phải thuốc
    thang") > nỗi đau cụ thể > lời than chung. Câu mở có thể là một vế ngắn 2–4 s đặt trước câu chạm.
-7. **Chừa cho bản đầy đủ** (luật 10): ghi trong ke-hoach-cat.md chuyện hoặc ý mở rộng nào được để dành; không chừa phần kết của ý trong clip.
+7. **Chừa cho bản đầy đủ** (luật 10): ghi trong ke-hoach-cat.md chuyện hoặc ý mở rộng nào được giữ lại cho bản đầy đủ; không chừa phần kết của ý trong clip.
 
-8. **Thẻ tít mở đầu** (luật 7): chọn **cụm nguyên văn đắt nhất** của từng clip, ghi kèm mốc câu gốc.
+8. **Thẻ tiêu đề mở đầu** (luật 7): chọn **cụm nguyên văn then chốt nhất** của từng clip, ghi kèm mốc câu gốc.
 
 Các clip không dùng chung câu chính; một câu kêu gọi mạnh có thể dùng lại ở 2 clip khi mỗi clip có chạm + ý khác nhau.
 Ghi ngắn trong ke-hoach-cat.md vì sao chọn các khoảnh khắc này và bỏ các ứng viên khác.
@@ -89,17 +89,17 @@ cuối. Chọn MỘT kiểu hợp mạch nội dung (ghi kiểu + lý do vào ke
 Bất kể kiểu nào:
 - **Câu kêu gọi chính có thể xuất hiện 2 lần** — lời nói một lần ở vị trí đã chọn, và **chữ nguyên văn** của nó ở màn chốt 4 s
   cuối. Không lặp lời nói hai lần trừ khi chính người nói đã nhắc lại trong video.
-- **Cú chốt cảm xúc** ở câu mạnh nhất (bằng dựng, không bằng chữ thêm): chữ to đúng cụm đắt nhất **đúng lúc nói cụm đó**
-  (ngắn để chữ đạt cỡ lớn — tối đa khoảng 14 ký tự/dòng, ví dụ: "MÃI MÃI / KHÔNG THỂ HIỂU"); câu cú chốt đánh `zoom: true` để giữ nguyên câu, không
+- **Điểm chốt cảm xúc** ở câu mạnh nhất (bằng dựng, không bằng chữ thêm): chữ to đúng cụm then chốt nhất **đúng lúc người nói nói cụm đó**
+  (ngắn để chữ đạt cỡ lớn — tối đa khoảng 14 ký tự/dòng, ví dụ: "MÃI MÃI / KHÔNG THỂ HIỂU"); câu làm điểm chốt cảm xúc đánh `zoom: true` để giữ nguyên câu, không
   rút lặng (khung không dồn — `quy-tac-chung.md` mục 2); 1 s lặng sau câu hỏi để người xem kịp nghĩ.
 - Kiểu nào cũng phải đạt bước 5 (tự đứng được) — đổi chỗ mà câu mất nghĩa thì chọn kiểu khác.
 
 ### 5. Kiểm clip tự đứng được + lằn ranh nội dung
-Đọc nối các câu theo thứ tự đã bố trí như người chưa xem bản đầy đủ. **Người xem clip là người xem độc lập:** xem một mình phải biết hoàn cảnh là gì và clip nói gì; thiếu hoàn cảnh thì thêm câu nguyên văn nêu hoàn cảnh, không có thì bỏ clip. **Chấm riêng từng clip** theo câu hỏi gốc của khối 00: giúp làm chủ bản thân hoặc làm chủ công việc thêm một bước; đoạn chỉ nói về cảm xúc thì không đạt, dù câu nghe đắt. Loại/thay câu khi:
+Đọc nối các câu theo thứ tự đã bố trí như người chưa xem bản đầy đủ. **Người xem clip là người xem độc lập:** xem một mình phải biết hoàn cảnh là gì và clip nói gì; thiếu hoàn cảnh thì thêm câu nguyên văn nêu hoàn cảnh, không có thì bỏ clip. **Chấm riêng từng clip** theo câu hỏi gốc của khối 00: giúp làm chủ bản thân hoặc làm chủ công việc thêm một bước; đoạn chỉ nói về cảm xúc thì không đạt, dù câu nghe có vẻ then chốt. Người dựng loại hoặc thay câu khi:
 - Có từ trỏ chỗ khác: "ở trên", "như mình vừa nói", "bước 2" mà không có bước 1, "cái này"/"phương pháp này" chưa nói là gì.
 - Hành động không làm được nếu không xem bản đầy đủ; câu cắt giữa chừng, mất chủ ngữ hoặc mất ý; đổi chỗ làm lệch nghĩa.
 
-Loại mọi câu dính **lằn ranh** (`../quy-tac-chung.md` mục 1). Câu bị loại mà là câu chủ chốt thì báo David, **không tự sửa lời**.
+Người dựng loại mọi câu liên quan tới **lằn ranh** (`../quy-tac-chung.md` mục 1). Câu bị loại mà là câu chủ chốt thì báo David, **không tự sửa lời**.
 Clip không có câu HANHDONG hoặc KEUGOI dùng được thì không dừng: kết ở câu chốt ý, clip vẫn phải đạt `mang_ve`
 (`cat-doan-noi-bat` luật 4); không thêm chữ, không ghép câu kêu gọi từ chỗ khác.
 
@@ -116,22 +116,22 @@ Viết `$P/phuong-an.json` — mỗi clip một mục trong `options` (A, B, C�
 ],
  "endcard": {"title": "<tên tập gốc>", "speaker": "<tên người nói>"}}
 ```
-**Soát mốc theo độ lớn tiếng** (mốc từ Whisper hay lệch 0,5–1,6 s ở chỗ ngắt câu: chữ đầu bị kéo sớm vào khoảng lặng — cắt theo
+**Rà soát mốc theo độ lớn tiếng** (mốc từ Whisper thường lệch 0,5–1,6 s ở chỗ ngắt câu: chữ đầu bị kéo sớm vào khoảng lặng — cắt theo
 đó tràn đuôi chữ câu trước; chữ cuối kéo dài vào câu sau):
 ```bash
 python3 -I $SKILL/scripts/kiem-am-luong.py "$P"           # dải █/▁ quanh từng mốc + mốc đề xuất
 ```
-Mốc ngoài `phuong-an.json` (cắt bản theo hướng, nối đoạn): `diem-ngat.py <video> <giây>…` (khối 02). Theo mốc đề xuất (sửa phuong-an.json). "⚠ lệch > 1 s" thì nhìn dải xác nhận; "⚠ nói liền" thì giữ mốc Whisper, hoặc lấy luôn chữ
+Mốc ngoài `phuong-an.json` (cắt bản theo hướng, nối đoạn): `diem-ngat.py <video> <giây>…` (khối 02). Người dựng sửa phuong-an.json theo mốc đề xuất. "⚠ lệch > 1 s" thì nhìn dải xác nhận; "⚠ nói liền" thì giữ mốc Whisper, hoặc lấy luôn chữ
 nối ("Nhưng…") nếu câu vẫn đúng nghĩa, rồi để bước kiểm lời quyết. Rồi:
 ```bash
 python3 -I $SKILL/scripts/cat-doan-noi-bat.py "$P"          # cắt bản kiểm lời cat/A.mp4, cat/B.mp4… (chạy nền)
 ```
-→ `cat/<id>.mp4` (khung như nguồn) + `cat/<id>.md` (4 câu, lời đọc nối, mốc đoạn ghép, bảng cắt, tổng thời lượng, **kiểm lời**) + `cat/<id>-map.json`
+Kết quả: `cat/<id>.mp4` (khung như nguồn) + `cat/<id>.md` (4 câu, lời đọc nối, mốc đoạn ghép, bảng cắt, tổng thời lượng, **kiểm lời**) + `cat/<id>-map.json`
 + `cat/<id>-kiem.txt`. Thiếu `chon_y` thì script dừng. Script tự: lùi 0,15 s / thêm 0,25 s · gộp câu liền nhau (tối đa 0,6 s) · cắt lặng > 0,6 s giữa câu · **chèn** 1 s lặng
 (giữ khung cuối) sau KEUGOI kết bằng "?" và sau KEUGOI cuối clip — không lấy tiếng nguồn phía sau vì câu kế có thể nói liền ·
-`zoom: true` giữ nguyên câu, không dồn khung · **cắt cứng** ở mỗi mối nhảy + **rút khoảng lặng ít nhất 0,45 s trong câu** (`khoang-lang.py`, trừ câu
-`zoom`) · fade âm ở mối · tiếng fltp 48 kHz stereo · **chép lời lại bản cắt** và so với `text`.
-**Kiểm lời phải khớp**: chữ thừa ở mối = tràn đuôi câu bên cạnh thì thu mốc; chữ thiếu = bị cụt thì nới mốc; lệch kiểu "nhé/nhá" là
-Whisper nghe khác (bỏ qua). Cắt lại tới khi sạch.
+`zoom: true` giữ nguyên câu, không dồn khung · **cắt cứng** ở mỗi điểm nối + **rút khoảng lặng ít nhất 0,45 s trong câu** (`khoang-lang.py`, trừ câu
+`zoom`) · fade âm ở điểm nối · tiếng fltp 48 kHz stereo · **chép lời lại bản cắt** và so với `text`.
+**Kiểm lời phải khớp**: chữ thừa ở điểm nối là do tràn đuôi câu bên cạnh thì thu hẹp mốc; chữ thiếu là do bị cắt cụt thì nới rộng mốc; lệch kiểu "nhé/nhá" là
+Whisper nghe khác (bỏ qua). Người dựng cắt lại tới khi không còn chữ thừa hoặc thiếu.
 Ghi tiếp vào `ke-hoach-cat.md`: kiểu bố trí + lý do, tông từng câu, ý chừa cho bản đầy đủ, bảng cắt.
 

@@ -15,9 +15,9 @@ description: "Thiết kế kịch bản cảnh motion graphics: chọn bố cụ
 | `hook` | chữ (V4) | Thẻ tít 0–3 s — chỉ khi David yêu cầu (khối 06), chữ nguyên văn | eyebrow, lines[2], accentLine |
 | `lower` | chữ (V4) | Giới thiệu người nói khi họ tự nói tên | name, role |
 | `illus` | **toàn màn hình** | Mọi ý cần hình: biểu tượng vẽ động single / flow / vs / count / list + nhãn tối đa 3 chữ; phụ đề vẫn chạy (khối 07) | mode, items[{icon, at, label?, good?}], label, num |
-| `nhan` | **điểm nhấn trên người** | Câu then chốt / cú chốt / lúc muốn người xem nhìn vào người nói (không zoom): làm tối viền, chữ nhấn tối đa 4 chữ trích lời hoặc biểu tượng nhỏ bật cạnh mặt (bên phía trống; khung dọc → dưới cằm). 2–5 s. Phụ đề vẫn chạy | text ('DÒNG 1\nDÒNG 2', dòng cuối màu nhấn), icon, at (giây bật), toi (true) |
+| `nhan` | **điểm nhấn trên người** | Câu then chốt / điểm chốt cảm xúc / lúc muốn người xem nhìn vào người nói (không zoom): làm tối viền, chữ nhấn tối đa 4 chữ trích lời hoặc biểu tượng nhỏ bật cạnh mặt (bên phía trống; khung dọc → dưới cằm). 2–5 s. Phụ đề vẫn chạy | text ('DÒNG 1\nDÒNG 2', dòng cuối màu nhấn), icon, at (giây bật), toi (true) |
 | `listItem` | nhãn (V4) | Người nói ĐẾM ý (ít nhất 3): số tròn cam + cụm việc nguyên văn, 2,5–4 s mỗi ý (học BS Tùng, HDK) | n, of (tuỳ chọn), text |
-| `kinetic` | chữ (V4) | Một câu khẳng định đắt giá, tối đa 5 từ/dòng, 2 dòng | lines[] (in hoa, có dấu chấm cuối tạo cảm giác chốt) |
+| `kinetic` | chữ (V4) | Một câu khẳng định then chốt, tối đa 5 từ/dòng, 2 dòng | lines[] (in hoa, có dấu chấm cuối tạo cảm giác chốt) |
 | `action` | màn hành động (toàn cảnh) | Người nói nêu việc người xem làm được → biểu tượng vẽ dần trong vòng + ô tick bật lúc `doneAt` + NGUYÊN VĂN câu (`**cụm**` nhấn); phụ đề tạm ẩn. 1–2 / video, 3–5 s | icon, quote, quoteAt, doneAt, eyebrow (chỉ khi trích được) |
 | `cta` | màn chốt (toàn cảnh, khoảng 4 s cuối MỌI video) | Video lùi vào khung bo góc phía trên + biểu tượng theo kiểu (tick nhỏ + tiếng ting sau 1,6 s) + câu chốt NGUYÊN VĂN câu David nói cuối video (khối 08); phụ đề nhường. Podcast: chỉ ô câu chốt giữa sân khấu | text, kind (comment · save · follow · share) |
 | `card` | thẻ (V3) | Thông tin có cấu trúc. variant: `year` (mốc năm, đếm lùi), `job` (ảnh + tiêu đề), `marketing` (biểu đồ tăng), `years4` (số lớn + thanh tiến độ), `daily` (đồng hồ + nhãn), `steps` (danh sách tick theo lời; `n` = nhãn số tuỳ chọn), `early` (2 đường so sánh), `vs` (2 dòng trước/sau: rows[{tag,title,note,at,hi}]), `ages` (các mốc số bật lần lượt + nhãn gạch: ages[{v,at}], unit, pill, pillAt), `quote` (eyebrow + câu trích + footer) | eyebrow, title, footer, footerAt, ... |
@@ -33,14 +33,14 @@ ngôn ngữ thiết kế (ví dụ `card` variant `quote`, `stat`, `compare`, `m
 Đổi tên prop cho hợp nội dung — `jobs` chỉ là tên lịch sử, nghĩa là "các mục".
 
 ## Mở đầu 3 giây
-Mở đầu: `../../quy-tac-chung.md` mục 2 + khối 06. Khi David yêu cầu thẻ tít `hook`: `start: 0`, `end` ≈ 3 s (kết thúc ở
-chỗ ngắt câu gần nhất); `lines` = cụm nguyên văn đắt nhất (2 dòng in hoa, tối đa 4 từ/dòng, dòng nhấn là ý "đắt" nhất), `eyebrow` trích lời
+Mở đầu: `../../quy-tac-chung.md` mục 2 và khối 06. Khi David yêu cầu thẻ tiêu đề `hook`: `start: 0`, `end` ≈ 3 s (kết thúc ở
+chỗ ngắt câu gần nhất); `lines` = cụm nguyên văn then chốt nhất (2 dòng in hoa, tối đa 4 từ/dòng, dòng nhấn là ý "đắt" nhất), `eyebrow` trích lời
 hoặc bỏ trống; không câu kéo ("SỐC", "bí mật…"). Cảnh khác bắt đầu sau `end` của hook. Chế độ ghép nhiều clip: đoạn ghép mở đầu
-đóng vai trò này (multi-clip 2d).
+đóng vai trò này (mục 2d của chế độ ghép nhiều clip).
 
 ## Chọn loại cảnh từ lời nói
 
-Đọc transcript, đánh dấu các "khoảnh khắc" theo thứ tự ưu tiên:
+Claude đọc transcript, đánh dấu các "khoảnh khắc" theo thứ tự ưu tiên:
 1. **Con số, mốc thời gian, số lượng** ("đi làm từ 2011", "4 năm", "15–30 triệu") thì dùng `card` có số chạy.
 2. **Liệt kê ít nhất 3 thứ cụ thể** thì dùng `montage` (có ảnh) hoặc `card steps` (trừu tượng).
 3. **Câu chốt / quan điểm** ("không phải ngẫu nhiên", "rất rõ") thì dùng `kinetic`.
@@ -49,12 +49,12 @@ hoặc bỏ trống; không câu kéo ("SỐC", "bí mật…"). Cảnh khác b�
 Dùng `lower` nếu người nói giới thiệu tên.
 
 ## Quy tắc
-- Không con số bắt buộc về mật độ, độ dài cảnh, tỷ lệ mặt (bố cục tự cân, khối 07). Chỉ giữ khoảnh khắc đắt (con số, tên riêng, so
+- Không con số bắt buộc về mật độ, độ dài cảnh, tỷ lệ mặt (bố cục tự cân, khối 07). Chỉ giữ khoảnh khắc then chốt (con số, tên riêng, so
   sánh, danh sách, câu chốt); bỏ cảnh chỉ nhắc lại điều phụ đề đã nói mà không có hình gì thêm.
 - **Không chồng 2 lớp phủ cùng lúc** (thẻ + chữ to). Cảnh toàn màn hình che hết nên không cần lớp khác. Không hai cảnh cùng kiểu liền
   nhau (khối 07 mục 3).
-- Thẻ toàn cảnh: cửa sổ cảnh khớp đúng câu được trích (`start` ≈ `quoteAt`, `end` ≈ hết câu) vì phụ đề nhường trong cảnh — đừng
-  để cảnh kéo sang câu khác. Đừng để cảnh tồn tại khi người nói đã sang ý khác.
+- Thẻ toàn cảnh: cửa sổ cảnh khớp đúng câu được trích (`start` ≈ `quoteAt`, `end` ≈ hết câu) vì phụ đề nhường trong cảnh — không
+  để cảnh kéo sang câu khác. Không để cảnh tồn tại khi người nói đã sang ý khác.
 - `start` của cảnh = lúc bắt đầu câu liên quan (lấy từ srt), lệch sớm 0,1–0,3 s cũng được; các phần tử bên trong
   hiện đúng lúc từ khoá được nói (`at`, `footerAt`... theo giây tuyệt đối).
 - **Chữ hiệu ứng = trích, không diễn đạt lại.** Được BỎ BỚT chữ cho ngắn (tối đa 4–5 từ/dòng), KHÔNG được đổi chữ của người nói bằng chữ
@@ -76,11 +76,11 @@ Dọc 1080×1920 (Reels/TikTok/Shorts): nội dung trong x 70–900, y 210–142
 Component thiết kế trong một dải 435 px (y 985–1420 trong toạ độ component) nên thẻ phải gọn: tối đa khoảng 4 dòng nội dung.
 Khi xuất, dải này được thu nhỏ còn 78% và **đặt từng cảnh theo chỗ trống, KHÔNG che mặt/người nói**:
 mặc định ngay trên dải phụ đề (y khoảng 941–1280; phụ đề 1280–1420); mặt nằm thấp thì dời lên đỉnh vùng an toàn (y 210–549);
-không vừa thì thu nhỏ 68% / 60%. `vi-tri-khuon-mat.sh` dò mặt và ghi `vi-tri.js`; đặt tay bằng `place: {top, scale}` trong cảnh.
+không vừa thì thu nhỏ 68% / 60%. `vi-tri-khuon-mat.sh` dò mặt và ghi `vi-tri.js`; đặt thủ công bằng `place: {top, scale}` trong cảnh.
 Vùng cấm = đầu (cả tóc) + cằm/cổ; thân người nên tránh khi còn chỗ. Cảnh toàn màn hình không bị ràng buộc này.
 Thiết kế component mới không giả định vị trí cố định (ví dụ: "luôn dưới mặt") — chỉ vẽ trong dải, Place lo vị trí.
 Ngang 16:9: lề 5% mỗi bên, chừa 15% dưới cho thanh điều khiển/phụ đề.
-Kiểm tra bằng `vung-an-toan.py` + `ghep-anh-tinh.sh` — đừng tin vào ước lượng bằng mắt.
+Kiểm tra bằng `vung-an-toan.py` và `ghep-anh-tinh.sh` — không tin vào ước lượng bằng mắt.
 
 ## Thẻ = màn hình toàn cảnh
 Mọi `card` (trừ podcast) render bằng `the-toan-man.jsx`: nền toàn cảnh, khung thẻ (hình động của variant: số chạy, danh sách tick, đồng
@@ -91,8 +91,8 @@ không kéo cả đoạn dài.
 Ví dụ: `{type: 'card', start: 33.1, end: 40.0, props: {variant: 'vs', eyebrow: 'ĐI VÀO BUỔI ĐÊM', rows: [...],
 quote: 'Ngày trước là đi **xe xăng** thì … chuyển sang đi **VF6, VF7** của công ty thì **đỡ hơn rất nhiều**', quoteAt: 33.4}}`
 
-## Ô chữ tóm ý được ưa
-Thẻ/chữ to tóm ý chính (trích lời) là kiểu David thích. Đã thử bỏ hết chữ, chỉ còn hình động (biểu tượng + mũi tên + ✓/✗) — David
+## Ô chữ tóm ý được ưa thích
+Thẻ/chữ to tóm ý chính (trích lời) là kiểu David thích. Claude đã thử bỏ hết chữ, chỉ còn hình động (biểu tượng + mũi tên + ✓/✗) — David
 thấy kém đẹp hơn. Biểu tượng vẽ thay ẢNH bên trong thẻ/montage, không bỏ hết chữ nhấn.
 
 ## Minh hoạ: ảnh thật hoặc biểu tượng vẽ (luật ở `../../quy-tac-chung.md` mục 4)

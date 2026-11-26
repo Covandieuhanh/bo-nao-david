@@ -4,7 +4,7 @@ description: "Nhật ký nội dung hướng 2 trainer con người (chỉ phát
 
 # Nhật ký nội dung — Hướng 2: Trainer con người
 
-Luật ghi và khung mục: [README.md](README.md). Lằn ranh hướng này: không trị liệu / chẩn đoán, không nhắc vai coach, không nói giá trên video.
+Luật ghi và khung mục: [README.md](README.md). Lằn ranh hướng này: David không trị liệu / chẩn đoán, không nhắc vai coach, không nói giá trên video.
 
 ## 19/11/2026 · tap-marketing-noi-dau-nhu-cau · buổi 1:1 ở quán cà phê với một chị đang vận hành quán
 Bản theo hướng: bản dài YouTube trainer khoảng 38 phút (S1–S3, S5–S6, S10–S16) · Trạng thái: chờ dựng
@@ -15,8 +15,8 @@ Mốc: giây trên `nguon-dai.mp4` của tập (đã bỏ phần số học).
 | Miền Nam ưu tiên cảm xúc, miền Bắc ưu tiên an toàn | "trong Nam thì là họ ưu tiên về cảm xúc hơn… ngoài Bắc này là ưu tiên về sự an toàn hơn" | 287 (4:47) | hiểu khách / thị trường theo vùng | gói trainer: làm chủ thị trường | ví dụ mở bài về thấu hiểu khách |
 | Nghỉ ở đỉnh khi nghề chững | "Em toàn nghỉ ở đỉnh cao mà bụp phát nghỉ" | 712 (11:52) | sợ bỏ nghề cũ | nhân hiệu: hành trình David | kể chuyện thật khi đứng lớp |
 | Duy trì mối quan hệ bằng công việc | "duy trì mối quan hệ là bằng công việc kể cả hai vợ chồng luôn" | 950 (15:50) | quan hệ lên xuống, không bền | tầng 3 làm chủ mối quan hệ | bài học tầng 3 |
-| Thử thách mỗi người, góc nhìn dư năng lượng (quét nhà / ly nước) | "Cái góc nhìn nó bị dư thừa năng lượng" | 1310–1390 (21:50) | chủ làm thay, ôm việc, không ra ngoài phát triển | "Dẫn đội, không làm thay" | ví dụ quét nhà – ly nước |
-| Gặp vấn đề ở đâu thì ra ngoài học, mang về | "nó bị thiếu cái gì thì chị phải đi tìm đúng cái đấy ở bên ngoài để đi học" | 1393 (23:13) | vướng trong chính vấn đề | gói trainer | câu hỏi tự soi |
+| Thử thách mỗi người, góc nhìn dư năng lượng (quét nhà / ly nước) | "Cái góc nhìn nó bị dư thừa năng lượng" | 1310–1390 (21:50) | chủ làm thay, giữ hết việc, không ra ngoài phát triển | "Dẫn đội, không làm thay" | ví dụ quét nhà – ly nước |
+| Gặp vấn đề ở đâu thì ra ngoài học, mang về | "nó bị thiếu cái gì thì chị phải đi tìm đúng cái đấy ở bên ngoài để đi học" | 1393 (23:13) | vướng trong chính vấn đề | gói trainer | câu hỏi tự xét |
 | Lấy con người làm trung tâm, không lấy công việc | "em lấy con người làm trung tâm, em thấu hiểu con người xong thì… định hướng đúng" | 1515–1535 (25:15) | đặt sai người vào việc | phương pháp của David | câu định vị trainer |
 | Marketing chỉ là nỗi đau và nhu cầu | "Marketing nó chỉ mỗi thế thôi, nỗi đau và nhu cầu" | 2163 (36:03) | hiểu sai marketing | làm chủ thị trường | khung 2 câu hỏi |
 | Đăng ảnh là truyền thông, không phải marketing | "đăng ảnh đăng này đăng kia nó là truyền thông, nó không phải là marketing" | 2189 (36:29) | làm truyền thông mà không ra khách | làm chủ thị trường | phân biệt khi tư vấn |
@@ -31,8 +31,8 @@ Mốc: giây trên `nguon-dai.mp4` của tập (đã bỏ phần số học).
 Bản theo hướng: clip dọc D 64 s (50:29–51:41), không ra bản dài · Trạng thái: đã dựng 19/11, chờ đăng
 | Ý | Lời gốc | Mốc | Nỗi đau / mục tiêu | Bán được gì | Dùng cho việc |
 |---|---|---|---|---|---|
-| Người nghe không nhớ nội dung, chỉ nhớ cảm xúc buổi đó | "anh em mình có thể không nhớ là đã nói chuyện gì đâu nhưng mà… nhớ được là hôm nay gặp nhau có vui không" | 3067–3081 (51:07) | đứng lớp, dẫn chương trình mà người nghe không đọng lại | gói trainer (ngôn ngữ khi dẫn người) | câu mở bài ngôn ngữ cảm xúc |
-| MC đọc như đọc đài, không dẫn cảm xúc khán giả | "mấy cái MC team building… cũng đọc như đọc đài ấy" | 3029–3036 (50:29) | trình bày đúng mà nhạt | — | ví dụ đứng lớp |
+| Người nghe không nhớ nội dung, chỉ nhớ cảm xúc buổi đó | "anh em mình có thể không nhớ là đã nói chuyện gì đâu nhưng mà… nhớ được là hôm nay gặp nhau có vui không" | 3067–3081 (51:07) | đứng lớp, dẫn chương trình mà người nghe không nhớ được gì | gói trainer (ngôn ngữ khi dẫn người) | câu mở bài ngôn ngữ cảm xúc |
+| MC đọc như đọc đài, không dẫn cảm xúc khán giả | "mấy cái MC team building… cũng đọc như đọc đài ấy" | 3029–3036 (50:29) | trình bày đúng mà thiếu cảm xúc | — | ví dụ đứng lớp |
 | Nội dung dựa trên nỗi đau, mong muốn, lồng cảm xúc để tạo niềm tin và thuyết phục | "Nội dung mình muốn truyền đạt sẽ dựa lên nỗi đau của người ta, mong muốn người ta" | 3114–3135 (51:54) | thuyết phục không được | làm chủ thị trường | khung soạn bài nói |
 | Tệp đầu của trainer: sinh viên sắp tốt nghiệp, người mới đi làm, mới lên quản lý (khoảng 25–26 tuổi) mất phương hướng | "những cái người mà bị mất phương hướng ấy thì đúng là em đang định hướng như vậy" | 4560–4620 (76:00) | — | định vị tệp gói trainer | soát lại tệp trong hồ sơ |
 | Mỗi người tiếp nhận khác nhau (nghe / đọc / yên tĩnh / vui) → lọc trước rồi mới đưa nội dung | "Mỗi người người ta sẽ có một cách tiếp nhận thông tin khác nhau" | 4610–4740 (76:50) | nói nhiều mà người nghe chỉ nhận 3–5% | thiết kế buổi trainer | phiếu hỏi đầu buổi |
@@ -44,19 +44,19 @@ Bản theo hướng: clip dọc D 64 s (50:29–51:41), không ra bản dài · 
 Bản theo hướng: bản dài ngang khoảng 17 phút (S1, S3, S5, S7, S9, S11, S16) + clip A, B, C · Trạng thái: đang dựng
 | Ý | Lời gốc | Mốc | Nỗi đau / mục tiêu | Bán được gì | Dùng cho việc |
 |---|---|---|---|---|---|
-| Tình cảm lên xuống, người với người gắn kết bằng công việc | "Người với người quan hệ với nhau bằng công việc" | 140 (2:20) | quan hệ, cộng tác dễ vỡ | gói trainer (tầng mối quan hệ) | câu mở bài mối quan hệ |
+| Tình cảm lên xuống, người với người gắn kết bằng công việc | "Người với người quan hệ với nhau bằng công việc" | 140 (2:20) | quan hệ, cộng tác dễ đổ vỡ | gói trainer (tầng mối quan hệ) | câu mở bài mối quan hệ |
 | Lợi ích mỗi người, mỗi giai đoạn khác nhau: tiền, tình cảm, cảm xúc | "lợi ích của em với lợi ích của anh nó sẽ không giống nhau" | 268 (4:28) | không hiểu người cộng tác cần gì | gói trainer | bài tập hỏi "lợi ích của người này giai đoạn này là gì" |
 | Để giữ người thì đi hiểu kinh doanh, tìm mentor | "để giữ người với người thì em chỉ cần đi thấu hiểu kinh doanh" | 310 (5:10) | — | nhân hiệu | chuyện hành trình |
-| Người có lõi: đổi ngành vẫn là họ; người không lõi: ở một chỗ vẫn loạn | "Dù là họ có đổi bất kỳ ngành nghề nào thì nó vẫn là họ" | 868 (14:28) | loạn hướng | gói trainer (làm chủ bản thân) | phép thử nội lực |
-| Tự dắt mình đi hay bị xã hội dắt đi | "có một nhóm còn lại là họ sẽ bị xã hội… dắt vào đi" | 894 (14:54) | sống theo người khác | gói trainer | câu hỏi tự soi |
-| (anh đàn anh) cắm chân nhiều nhóm thì khó làm; chọn một chỗ, tập trung mới nở | "Em phải tập trung vào cái gì đấy, nó mới nở ra được" | 944–1010 (15:44) | nhảy nhóm | gói trainer | ví dụ tập trung |
+| Người có lõi: đổi ngành vẫn là họ; người không lõi: ở một chỗ vẫn mất phương hướng | "Dù là họ có đổi bất kỳ ngành nghề nào thì nó vẫn là họ" | 868 (14:28) | mất phương hướng | gói trainer (làm chủ bản thân) | phép thử nội lực |
+| Tự dắt mình đi hay bị xã hội dắt đi | "có một nhóm còn lại là họ sẽ bị xã hội… dắt vào đi" | 894 (14:54) | sống theo người khác | gói trainer | câu hỏi tự xét |
+| (anh đàn anh) tham gia nhiều nhóm cùng lúc thì khó làm; chọn một chỗ, tập trung mới phát triển được | "Em phải tập trung vào cái gì đấy, nó mới nở ra được" | 944–1010 (15:44) | đổi nhóm liên tục | gói trainer | ví dụ tập trung |
 | Tâm sinh tướng: môi trường đổi nhân tướng | "Cái môi trường là thay đổi nhân tướng của một con người" | 1138 (18:58) | — | từ trường số / hệ 135 | dẫn chứng |
 | Đào kim cương 90% thì bỏ; không bỏ cuộc | "nó chỉ là không bỏ cuộc thôi" | 1240–1310 (20:40) | bỏ giữa chừng | gói trainer | câu chuyện kiên trì |
 | Mọi thứ trong đời quy ra số; từ trường số học từ một người thầy | "trong cuộc sống này thực ra cái gì cũng liên quan đến số" | 1362–1424 (22:42) | chưa rõ định hướng | hệ 135 | mở bài giới thiệu từ trường số |
 | Tên là ý niệm bố mẹ gieo; sống đúng tên thì được ủng hộ | "đều gieo ở đấy một cái ý niệm là con mình nó phải như thế" | 1581 (26:21) | — | hệ 135 | dẫn chứng tên |
 | "Nghiệp": không làm việc mình không tự tâm | "Tớ không làm được cái gì liên quan đến việc là mình không tự tâm mình ra" | 1735 (28:55) | làm việc trái lòng | gói trainer | chuyện thật của David |
-| Chạy theo việc của người khác thì mệt, chán | "em cứ chạy theo người ta em cứ cuốn vào cái việc của người ta" | 2463 (41:03) | bị cuốn | gói trainer | ví dụ |
-| (anh đàn anh) phễu: KOL/KOC đổ về, quy trình chuyển đổi; online nhân bản được, offline thì không | "offline thì nó mạnh nhưng nó bị một cái là anh không nhân bản được" | 2052–2449 (34:12) | làm chủ thị trường | — | ý tham khảo |
+| Chạy theo việc của người khác thì mệt, chán | "em cứ chạy theo người ta em cứ cuốn vào cái việc của người ta" | 2463 (41:03) | bị cuốn theo việc của người khác | gói trainer | ví dụ |
+| (anh đàn anh) phễu: KOL/KOC dẫn khách về, quy trình chuyển đổi; online nhân bản được, offline thì không | "offline thì nó mạnh nhưng nó bị một cái là anh không nhân bản được" | 2052–2449 (34:12) | làm chủ thị trường | — | ý tham khảo |
 
 ## 22/11/2026 · tap-dji0022-2111 · cà phê ở Hà Nội với hai đối tác (một anh điều hành hệ thống bán hàng, một chị trợ lý doanh nghiệp)
 Bản theo hướng: bản ngang 4:19 `tap-ket-noi-doanh-nhan` · Trạng thái: đã dựng 22/11, chờ đăng · Kho 100: ⚠️ chưa thấy ý khớp
@@ -73,14 +73,14 @@ Bản theo hướng: bản ngang 4:19 `tap-ket-noi-doanh-nhan` · Trạng thái:
 Bản theo hướng: bản ngang 10:57 `tap-dan-doi-bang-quy-trinh` · Trạng thái: đã dựng 24/11 (chế độ tự chạy), chờ đăng · Kho 100: khớp #62
 | Ý | Lời gốc | Mốc | Nỗi đau / mục tiêu | Bán được gì | Dùng cho việc |
 |---|---|---|---|---|---|
-| Đội chỉ cần hai thứ: kết quả và vấn đề; có kết quả thì đóng thành quy trình, có vấn đề thì bóc tách | "làm thì sẽ có vấn đề hoặc có kết quả" | 670–721 (11:10) | nhân sự làm mà không ra gì | buổi riêng chủ doanh nghiệp | khung họp ngày |
-| Quy trình làm ra phải cho người khác làm thử và phản hồi; người khác chưa ra kết quả giống mình là mình chưa có quy trình | "thì tức là mình chưa có quy trình giao cho nó" | 1839–1890 (30:39) | chủ ôm việc | gói trainer (dẫn đội) | kho 100 #62 |
+| Đội chỉ cần hai thứ: kết quả và vấn đề; có kết quả thì đóng thành quy trình, có vấn đề thì bóc tách | "làm thì sẽ có vấn đề hoặc có kết quả" | 670–721 (11:10) | nhân sự làm mà không ra kết quả | buổi riêng chủ doanh nghiệp | khung họp ngày |
+| Quy trình làm ra phải cho người khác làm thử và phản hồi; người khác chưa ra kết quả giống mình là mình chưa có quy trình | "thì tức là mình chưa có quy trình giao cho nó" | 1839–1890 (30:39) | chủ giữ hết việc | gói trainer (dẫn đội) | kho 100 #62 |
 | Mỗi người viết nhật ký, đưa AI đọc, tự viết quy trình của chính mình, mình giám sát trên đó | "tao giám sát trên đúng cái quy trình của mày luôn" | 1938–1998 (32:18) | không biết nhân viên làm gì | gói trainer + công nghệ | bài tập nhật ký |
 | Góp ý qua bên thứ ba (chuẩn doanh nghiệp quốc tế, người ngoài) thì người ta nghe | "Góp ý là phải góp ý từ bên thứ ba lại" | 1998–2044 (33:18) | góp ý không ai nghe | — | mẹo đứng lớp |
 | Gọi tên đúng; thuật ngữ lấy tiếng Anh làm chuẩn | "Mình cần gọi tên nó đúng thôi anh ạ" | 4605–4644 (76:45) | mỗi người hiểu một kiểu | — | luật dịch thuật ngữ |
 | Người điều hành giám sát theo gạch đầu dòng của quy trình, không cần mắng; quy trình càng ít chữ càng tốt | "quy trình càng ít chữ càng tốt" | 4711–4817 (78:31) | điều hành bằng cảm xúc | gói trainer | mẫu quy trình văn phòng |
 | Hiểu bản chất thì không cần chờ bề dày kinh nghiệm (ví dụ pha cà phê) | "Khi em hiểu bản chất rồi thì em không cần bề dày kinh nghiệm nữa" | 4855–4924 (80:55) | — | nhân hiệu trainer | câu chuyện mở bài |
-| Thuê người để giải quyết vấn đề, không phải để phản biện mình | "tao thuê mày về để giải quyết vấn đề cho công ty của tao" | 4930–5005 (82:10) | trả lương mà phải chiều | buổi riêng | tư duy chủ |
+| Thuê người để giải quyết vấn đề, không phải để phản biện mình | "tao thuê mày về để giải quyết vấn đề cho công ty của tao" | 4930–5005 (82:10) | trả lương mà phải chiều theo nhân viên | buổi riêng | tư duy chủ |
 | Tư duy đi trước, công cụ đi sau | "Tư duy đi trước công cụ đi sau" | 5026 (83:46) | — | — | câu chốt |
 
 ## 22/11/2026 · tap-dji0025-2211 · sáng cà phê ngoài trời với một anh làm quan hệ đối tác
@@ -90,8 +90,8 @@ Bản theo hướng: bản ngang 12:05 `tap-hoc-de-biet-vi-sao-gay` · Trạng t
 | Đưa việc của mình ra cho nhiều người góp ý mới thấy điểm khuyết | "phải nhìn thấy điểm khuyết, chứ còn đừng nhìn vào những cái đã làm được" | 1276–1292 (21:16) | làm tốt mà không thấy lỗi | buổi riêng | bài tập xin góp ý |
 | Có kiến thức mới gọi được tên lý do thất bại, không đổ cho xui rủi | "tôi thất bại là bởi vì lý do này, lý do này" | 1320–1341 (22:00) | thất bại không biết vì sao | gói trainer | kho 100 #10 |
 | Làm tự phát cũng có mô hình; học để hiểu bản chất | "nó cũng có một mô hình nào đó đã thành công" | 1350–1400 (22:30) | — | — | ví dụ đứng lớp |
-| Người làm lâu năm đi học để nhìn lại chỗ mình gãy | "tôi bị gãy là gãy chỗ này" | 1520–1556 (25:20) | vấp nhiều không rút bài học | buổi riêng | câu mở bài |
-| Đổi môi trường để có năng lượng công việc | "thay đổi luôn môi trường cho nó nhanh" | 3296–3322 (54:57) | xung quanh chỉ chuyện tào lao | — | câu chuyện của David |
+| Người làm lâu năm đi học để nhìn lại lỗi mình đã gặp | "tôi bị gãy là gãy chỗ này" | 1520–1556 (25:20) | gặp lỗi nhiều lần mà không rút bài học | buổi riêng | câu mở bài |
+| Đổi môi trường để có năng lượng công việc | "thay đổi luôn môi trường cho nó nhanh" | 3296–3322 (54:57) | xung quanh chỉ chuyện vô bổ | — | câu chuyện của David |
 | Nói phải có bằng chứng, không nói theo cảm nhận chủ quan (con bò, cái ghế) | "mọi người chỉ nghe theo chứng cứ thôi" | 4058–4253 (67:38) | nói không ai tin | — | ví dụ đứng lớp |
 | Nghe hay rồi quên; trải nghiệm mới biến thành kiến thức | "bây giờ em biến nó thành kiến thức và tri thức của em rồi" | 4258–4294 (70:58) | học nhiều không thấm | lớp thực hành | câu định vị trainer thực hành |
 
@@ -100,10 +100,10 @@ Bản theo hướng: bản ngang 12:18 `tap-tap-trung-mot-duong` · Trạng thá
 | Ý | Lời gốc | Mốc | Nỗi đau / mục tiêu | Bán được gì | Dùng cho việc |
 |---|---|---|---|---|---|
 | Người với người gắn kết bằng công việc, không bằng tình cảm (tình cảm lên xuống) | "Người với người quan hệ với nhau bằng công việc" | 141–148 (2:21) | không biết giữ quan hệ bằng gì | trainer | khung "quan hệ" nhánh phụ |
-| Lợi ích mỗi người một khác: người A là tiền, người B là tình cảm, người C là cảm xúc | "Lợi ích của người C này giai đoạn này nó lại là cảm xúc cơ" | 275–282 (4:35) | không hiểu người kia cần gì | trainer | câu hỏi tự soi |
+| Lợi ích mỗi người một khác: người A là tiền, người B là tình cảm, người C là cảm xúc | "Lợi ích của người C này giai đoạn này nó lại là cảm xúc cơ" | 275–282 (4:35) | không hiểu người kia cần gì | trainer | câu hỏi tự xét |
 | Giữ người với người chỉ cần thấu hiểu kinh doanh | "thấu hiểu kinh doanh là xong" | 314–321 (5:14) | không giữ được người | trainer | cách làm |
-| Phải chọn một đường, cái lõi bên trong mạnh thì đổi ngành vẫn là mình | "Cái lõi của em bên trong nó mạnh" | 841–872 (14:01) | dẫn người mà bản thân loạn | trainer | luận điểm gốc "làm chủ bản thân" |
-| Tập trung một đường mới nở được; nhìn bên này bên kia thì loạn | "em phải focus thì nó mới nở, đúng không?" | 1003–1020 (16:43) | nhảy từ hướng này sang hướng khác | trainer | câu mở / thực thi "chọn một" |
+| Phải chọn một đường, cái lõi bên trong mạnh thì đổi ngành vẫn là mình | "Cái lõi của em bên trong nó mạnh" | 841–872 (14:01) | dẫn người mà bản thân mất phương hướng | trainer | luận điểm gốc "làm chủ bản thân" |
+| Tập trung một đường mới phát triển được; nhìn bên này bên kia thì mất phương hướng | "em phải focus thì nó mới nở, đúng không?" | 1003–1020 (16:43) | chuyển liên tục từ hướng này sang hướng khác | trainer | câu mở / thực thi "chọn một" |
 | Không bỏ cuộc: người đào kim cương bỏ khi gần tới 98% | "người ta đào kim cương gần đến rồi, 98% rồi" | 1243–1251 (20:43) | bỏ cuộc gần tới đích | trainer | ví dụ kiên trì |
 | Không bỏ cuộc thì làm gì cũng được | "nó chỉ là không bỏ cuộc thôi" | 1303–1310 (21:43) | — | trainer | câu chốt |
 | Từ trường số: mọi thứ quy ra số, sống theo cái tên | "Mình mà sống theo cái tên của mình" | 1361–1416, 1577–1603 (22:41) | hiểu bản thân qua số | trainer (hệ 135) | nội dung từ trường số |

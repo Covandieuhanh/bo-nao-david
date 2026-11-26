@@ -2,7 +2,7 @@
 description: "Khối 01 chép lời bằng Whisper và hiểu video."
 ---
 
-# Khối 01-phien-am: Chép lời (Whisper) + hiểu video
+# Khối 01-phien-am: Chép lời (Whisper) và hiểu video
 
 **Dùng trong:** cả 4
 **Đầu vào:** file video/tiếng
@@ -22,8 +22,8 @@ description: "Khối 01 chép lời bằng Whisper và hiểu video."
 ```bash
 zsh $SKILL/scripts/kiem-moi-truong.sh
 ```
-Thiếu gì thì xử lý theo lệnh nó in ra. Homebrew cần mật khẩu máy thì đưa lệnh cho người dùng tự chạy (không bao giờ
-tự nhập mật khẩu dù được cho). Mô hình Whisper 1,5 GB: hỏi trước khi tải lần đầu.
+Thiếu gì thì xử lý theo lệnh script in ra. Homebrew cần mật khẩu máy tính thì Claude đưa lệnh cho người dùng tự chạy (không bao giờ
+tự nhập mật khẩu dù được cho). Mô hình Whisper 1,5 GB: Claude hỏi trước khi tải lần đầu.
 
 ### Hiểu video (bản sạch, đã đổi khung nếu có)
 ```bash
@@ -32,7 +32,7 @@ zsh $SKILL/scripts/phan-tich-video.sh "$P/tu-lieu/video-goc.mp4" "$P/kiem-tra/go
 Đọc `ban-chep-loi.srt` (Whisper hay nghe nhầm tên riêng, thuật ngữ — tự sửa khi dùng làm chữ trên màn hình). Whisper bịa đặt câu ở đoạn
 không lời thì bỏ (quy-tac-chung mục 1).
 **Nơi ồn (quán cà phê, ngoài trời), chép lại một đoạn để kiểm**: chép theo phân đoạn tối đa 20 s, `-mc 0` (không ngữ cảnh), **bản gốc
-trước, không lọc**; dính câu ảo "Hãy subscribe cho kênh…" mới thử bản lọc dải tiếng (lọc trước làm ảo giác nhiều hơn). Bản dài chép một
+trước, không lọc**; gặp câu ảo giác "Hãy subscribe cho kênh…" mới thử bản lọc dải tiếng (lọc trước làm ảo giác nhiều hơn). Bản dài chép một
 lượt có thể lặp một câu hàng chục lần ("Mình nó bị vướng quá nhiều" × 40) thì không dùng làm mốc. Mốc từng từ (`-ml 1`) lệch 0,5–2 s:
 dùng để tìm câu, không dùng làm điểm cắt (khối 02 `diem-ngat.py`) hay mốc phụ đề (khối 03 `soat-khop-tieng.py`).
 **Tên riêng / thuật ngữ người nói giới thiệu hay "bật mí" là nội dung chính thì PHẢI hiện đúng tên đó** đúng lúc nói;

@@ -1,8 +1,8 @@
 ---
-description: "Giáo trình cũ 12 bài edit video bằng AI (trước khi tách gói), giữ làm nguyên liệu gói nội dung kênh."
+description: "Giáo trình cũ 12 bài dựng video bằng AI (trước khi tách gói), giữ làm nguyên liệu gói nội dung kênh."
 ---
 
-# 3. Giáo trình: 12 bài edit video bằng AI
+# 3. Giáo trình: 12 bài dựng video bằng AI
 
 Mỗi bài có **Mục tiêu · Nội dung · Cách làm theo tuyến · Thực hành · Bài tập · Xong khi**. Học viên làm trên video thật của mình, bằng AI và máy của mình (tuyến A điện thoại · B máy tính + app · C máy tính + AI tự làm, xem `1-quy-trinh.md`). Bài chưa "xong khi" thì chưa sang bài sau. Mẫu dùng trong bài: [bo-mau/](../goi-dao-tao-dung-video-ai/bo-bieu-mau/README.md).
 
@@ -25,15 +25,15 @@ Mỗi bài có **Mục tiêu · Nội dung · Cách làm theo tuyến · Thực 
 
 ## Bài 1 · Video để làm gì
 - **Mục tiêu:** học viên nói được video giúp mình đạt gì, cho ai, ai làm.
-- **Nội dung:** soi kênh bằng ba câu: **Tiền** (video dẫn tới sản phẩm, dịch vụ nào; đo bằng tin nhắn, đơn, lịch hẹn) · **Thị trường** (người xem là ai, gặp vấn đề gì, ở nền tảng nào) · **Con người** (ai quay, ai xem lại, mấy giờ mỗi tuần). Đo bằng hành động của người xem, không chỉ lượt xem.
+- **Nội dung:** xét kênh bằng ba câu: **Tiền** (video dẫn tới sản phẩm, dịch vụ nào; đo bằng tin nhắn, đơn, lịch hẹn) · **Thị trường** (người xem là ai, gặp vấn đề gì, ở nền tảng nào) · **Con người** (ai quay, ai xem lại, mấy giờ mỗi tuần). Đo bằng hành động của người xem, không chỉ lượt xem.
 - **Cách làm theo tuyến:** mọi tuyến giống nhau: trò chuyện với AI theo mẫu "Kênh của tôi".
 - **Thực hành:** điền trang "Kênh của tôi".
-- **Bài tập:** viết 10 vấn đề thật khách từng kể với mình.
+- **Bài tập:** viết 10 vấn đề thật khách từng kể với học viên.
 - **Xong khi:** có trang "Kênh của tôi" + một câu mời người xem làm bước tiếp.
 
 ## Bài 2 · Chọn ý video: lọc nội dung và kho ý
 - **Mục tiêu:** biết video nào đáng làm trước.
-- **Nội dung:** khung 3 phần **Vấn đề · Giải pháp · Thực thi**; 5 tiêu chí chấm (đúng mục tiêu kênh · có ích cho người xem · có việc làm theo · kéo người xem bình luận · người nói đáng tin); ranh giới nội dung (pháp luật, không hứa quá). Nhờ AI chấm, người quyết.
+- **Nội dung:** khung 3 phần **Vấn đề · Giải pháp · Thực thi**; 5 tiêu chí chấm (đúng mục tiêu kênh · có ích cho người xem · có việc làm theo · thu hút người xem bình luận · người nói đáng tin); ranh giới nội dung (pháp luật, không hứa quá). Học viên nhờ AI chấm, học viên quyết.
 - **Cách làm theo tuyến:** mọi tuyến: dán 10 vấn đề vào AI kèm mẫu phiếu lọc.
 - **Thực hành:** biến 10 vấn đề thành 12 ý, chấm, xếp thứ tự.
 - **Bài tập:** ghi 3 dòng chuẩn bị cho 4 ý đầu.
@@ -56,8 +56,8 @@ Mỗi bài có **Mục tiêu · Nội dung · Cách làm theo tuyến · Thực 
 - **Xong khi:** AI viết 1 bài học viên thấy "đúng giọng mình".
 
 ## Bài 5 · Quay đúng để dựng dễ
-- **Mục tiêu:** file gốc đủ tốt, không phải cứu.
-- **Nội dung:** khung ngang cho bản dài, dọc nếu chỉ làm clip; ánh sáng trước mặt; mic gần miệng; chừa khoảng trống cho chữ; 3 dòng trước khi quay; nói tự nhiên, câu sai cứ nói lại.
+- **Mục tiêu:** file gốc đủ tốt, không phải khắc phục khi dựng.
+- **Nội dung:** khung ngang cho bản dài, dọc nếu chỉ làm clip; ánh sáng trước mặt; mic gần miệng; chừa khoảng trống cho chữ; 3 dòng trước khi quay; nói tự nhiên, câu sai thì nói lại.
 - **Cách làm theo tuyến:** mọi tuyến: điện thoại + giá đỡ; nhờ AI kiểm khung và tiếng từ ảnh chụp / đoạn thử.
 - **Thực hành:** quay thử 2 phút trong buổi.
 - **Bài tập:** quay ý số 1 (5–10 phút).
@@ -77,7 +77,7 @@ Mỗi bài có **Mục tiêu · Nội dung · Cách làm theo tuyến · Thực 
 - **Cách làm theo tuyến:** A, B: AI đọc lời chép, đề xuất danh sách "giây nào hiện chữ / hình gì", người làm theo trong app · C: AI tự dựng đồ hoạ bằng Remotion theo danh sách đó.
 - **Thực hành:** dựng bản dài ý số 1, xem cùng nhau, góp ý.
 - **Bài tập:** góp ý 3 điểm, sửa vào bộ lời dặn rồi dựng lại.
-- **Xong khi:** 1 bản dài học viên chịu đăng.
+- **Xong khi:** 1 bản dài học viên chấp nhận đăng.
 
 ## Bài 8 · Cắt clip dọc đứng độc lập
 - **Mục tiêu:** từ bản dài ra 1–3 clip dọc cho Reels / TikTok / Shorts.
@@ -104,7 +104,7 @@ Mỗi bài có **Mục tiêu · Nội dung · Cách làm theo tuyến · Thực 
 - **Xong khi:** video đầu tiên **đã đăng**.
 
 ## Bài 11 · Chạy một mạch: một lần quay thì đủ bài
-- **Mục tiêu:** quy trình chạy trơn, học viên chỉ quay, xem, góp ý, đăng.
+- **Mục tiêu:** quy trình chạy thông suốt, học viên chỉ quay, xem, góp ý, đăng.
 - **Nội dung:** ghép 9 bước thành một danh sách việc cố định; sổ ghi từng video (ý, ngày, trạng thái, link); nơi cất, dọn máy; khi nào AI phải dừng hỏi (đăng, xoá, tốn tiền).
 - **Cách làm theo tuyến:** A, B: một danh sách kiểm và bộ lời dặn dùng lại · C: một lệnh giao AI làm trọn từ file gốc tới chữ đăng bài.
 - **Thực hành (nghiệm thu):** học viên tự làm 1 video từ đầu, trainer chỉ xem.

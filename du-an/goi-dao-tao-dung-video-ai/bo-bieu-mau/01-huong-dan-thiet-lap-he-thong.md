@@ -70,15 +70,15 @@ ffmpeg -version
 ```bash
 whisper --help
 ```
-Cài bản whisper.cpp thì lệnh kiểm là:
+Nếu cài bản whisper.cpp thì lệnh kiểm tra là:
 ```bash
 whisper-cli --help
 ```
-Cả hai in ra chữ, không báo lỗi thì đạt. Rồi chép biểu mẫu 02 vào thư mục `lam-video` (Bài 2).
+Cả hai lệnh in ra chữ, không báo lỗi thì đạt. Sau đó học viên chép biểu mẫu 02 vào thư mục `lam-video` (Bài 2).
 
-## Lỗi hay gặp
-- **"command not found"**: đóng mở lại Terminal / PowerShell; vẫn lỗi thì nhờ trợ lý AI sửa đường dẫn.
+## Lỗi thường gặp
+- **"command not found"**: đóng rồi mở lại Terminal / PowerShell; vẫn lỗi thì học viên nhờ trợ lý AI sửa đường dẫn.
 - **Whisper chậm**: dùng mô hình nhỏ hơn (`--model small`) khi thử, `medium` khi làm thật.
-- **Không tìm thấy file vừa làm, không biết đường dẫn**: kéo thả file hay thư mục vào cửa sổ Terminal / PowerShell là hiện đường dẫn; hoặc nói với trợ lý AI "mở thư mục 3-xuat của tap-…" (Mac: `open`, Windows: `explorer`). Đặt tên thư mục theo nghĩa rõ, không dấu, gạch nối để AI và người cùng tìm ra.
-- **Hết ổ đĩa**: trước khi xuất bản dài, nhờ AI kiểm ổ trống (ít nhất gấp 3 dung lượng bản xuất); AI xoá file tạm ngay khi xong mỗi bước; mỗi tập xong chỉ giữ bản gốc + bản cuối.
-- **AI hết lượt khi đang làm chưa xong**: tài khoản AI thường có hai hạn mức, một theo phiên vài giờ và một theo tuần (giờ mở lại xem trong phần mức dùng của app). Trước khi giao việc dài, dặn AI ghi tiến độ vào `2-lam/ke-hoach.md` sau mỗi bước; hết lượt thì chờ mở lại rồi nói "đọc ke-hoach.md, làm tiếp", không phải làm lại từ đầu.
+- **Không tìm thấy file vừa làm, không biết đường dẫn**: kéo thả file hay thư mục vào cửa sổ Terminal / PowerShell thì đường dẫn hiện ra; hoặc nói với trợ lý AI "mở thư mục 3-xuat của tap-…" (Mac: `open`, Windows: `explorer`). Học viên đặt tên thư mục theo nghĩa rõ, không dấu, gạch nối để AI và người cùng tìm ra.
+- **Hết ổ đĩa**: trước khi xuất bản dài, học viên nhờ AI kiểm tra ổ trống (ít nhất gấp 3 dung lượng bản xuất); AI xoá file tạm ngay khi xong mỗi bước; mỗi tập xong chỉ giữ bản gốc + bản cuối.
+- **AI hết hạn mức khi đang làm chưa xong**: tài khoản AI thường có hai hạn mức, một theo phiên vài giờ và một theo tuần (giờ mở lại xem trong phần mức dùng của app). Trước khi giao việc dài, học viên dặn AI ghi tiến độ vào `2-lam/ke-hoach.md` sau mỗi bước; hết hạn mức thì chờ mở lại rồi nói "đọc ke-hoach.md, làm tiếp", không phải làm lại từ đầu.

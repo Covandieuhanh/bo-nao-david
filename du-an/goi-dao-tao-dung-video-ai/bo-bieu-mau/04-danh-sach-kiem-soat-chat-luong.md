@@ -12,10 +12,10 @@ description: "Biểu mẫu 04 cho học viên: danh sách kiểm soát chất l�
 - [ ] Ổ máy còn trống đủ cho bản xuất (ít nhất gấp 3 dung lượng bản xuất)
 
 ## Xem bản AI giao
-- [ ] Mạch xem trơn, không giật, không mất đoạn quan trọng; không còn ý bỏ dở ở cuối
+- [ ] Mạch xem liền mạch, không giật, không mất đoạn quan trọng; không còn ý nói chưa xong ở cuối
 - [ ] Hình đúng chiều, đủ sáng, không lệch khung; khung cắt gọn, không lộ phần thừa (chân khi quay ngồi, đồ lộn xộn)
 - [ ] Tiếng rõ, đều, nhạc không lấn giọng
-- [ ] Phụ đề, chữ nhấn đúng từng chữ người nói (dò 3 chỗ bất kỳ với tiếng); đoạn lặng hoặc chỉ có nhạc không hiện chữ (AI chép lời hay bịa đặt chữ ở đó)
+- [ ] Phụ đề, chữ nhấn đúng từng chữ người nói (đối chiếu 3 chỗ bất kỳ với tiếng); đoạn lặng hoặc chỉ có nhạc không hiện chữ (AI chép lời hay bịa đặt chữ ở đó)
 - [ ] Chữ, đồ hoạ không che mặt người nói; ô thu nhỏ, khung cắt không cắt vào mặt
 - [ ] Chữ đọc rõ trên mọi nền (nền đặc màu, tương phản; không nền đen mờ); zoom ít và mượt; thanh, khung phụ không lấn chỗ nội dung
 - [ ] Chữ nhấn, đồ hoạ đúng lúc, không rối

@@ -4,7 +4,7 @@ description: "Biểu mẫu 04 gói dựng bộ não: danh sách kiểm soát ch�
 
 # Biểu mẫu 04 · Danh sách kiểm soát chất lượng bộ não
 
-Đánh dấu trước và sau mỗi đợt nâng cấp. Ô nào chưa đạt thì sửa trước khi giữ bản mới. Danh sách này chỉ xét thư mục `bo-nao`; thư mục `ngoai-bo-nao` (đáp án, bản cũ, file đã cất) không tính.
+Học viên đánh dấu trước và sau mỗi đợt nâng cấp. Ô nào chưa đạt thì học viên sửa trước khi giữ bản mới. Danh sách này chỉ xét thư mục `bo-nao`; thư mục `ngoai-bo-nao` (đáp án, bản cũ, file đã cất) không tính.
 
 ## Cấu trúc
 - [ ] File nào cũng có dòng mô tả ở đầu
@@ -16,7 +16,7 @@ description: "Biểu mẫu 04 gói dựng bộ não: danh sách kiểm soát ch�
 - [ ] Trong các file `nguyen-ly-` và `quy-trinh-`, mỗi ý chỉ nằm một chỗ; nơi khác chỉ ghi tên file đó
 - [ ] Không có hai luật nói ngược nhau
 - [ ] Luật không chứa ngày, không chứa "thay luật cũ"; ngày và lời gốc nằm ở sổ
-- [ ] Viết đủ từ, đủ nghĩa, không viết tắt; người lạ đọc cũng hiểu
+- [ ] Viết đủ từ, đủ nghĩa, không viết tắt; người ngoài đọc cũng hiểu
 
 ## An toàn
 - [ ] Không có mật khẩu, mã OTP, số thẻ, số tài khoản, số giấy tờ ở bất kỳ file nào
@@ -26,5 +26,5 @@ description: "Biểu mẫu 04 gói dựng bộ não: danh sách kiểm soát ch�
 
 ## Hiệu quả
 - [ ] Điểm người đọc mới: đo trước ……/…… · đo sau ……/…… (đo sau bằng hoặc cao hơn, và đúng ít nhất 90%)
-- [ ] Số lần phải sửa AI trong tuần qua: …… (mong giảm dần qua các tháng)
+- [ ] Số lần phải sửa AI trong tuần qua: …… (kỳ vọng giảm dần qua các tháng)
 - [ ] Đã ghi một dòng vào bảng "Nâng cấp" của `bai-hoc.md`

@@ -3,6 +3,7 @@
 
 - Báo link gãy (link tương đối tới file không có, [[ghi-nho]] không có) → trả mã lỗi 1.
 - Báo file mồ côi (không file nào nối tới, chỉ mục không tính) và file thiếu mô tả → chỉ cảnh báo.
+- Báo ghi nhớ thiếu dòng "Gốc:" (liên kết với khối của tu-duy-goc.md) → trả mã lỗi 1.
 - Sinh lại chỉ mục: mỗi file một dòng (đường dẫn, mô tả, số nối tới).
 
 Hai kho:
@@ -173,6 +174,9 @@ def main():
         desc[f] = (d, True) if d else (tieu_de(text[f]), False)
     mo_coi = [f for f in files if not toi[f] and f not in goc_vao]
     thieu = [f for f in files if not desc[f][1]]
+    # Ghi nhớ phải có dòng "Gốc:" liên kết với một khối của tu-duy-goc.md (quy-uoc-lien-ket.md; trục tri thức mục 4 câu 4).
+    thieu_goc = [f for f in files if f.startswith("co-so-tri-thuc/bo-nho/") and "/luu-tru/" not in f and os.path.basename(f) != "MEMORY.md"
+                 and not re.search(r"^Gốc:", text[f], re.M)]
 
     nhom = {}
     for f in files:
@@ -201,7 +205,8 @@ def main():
     if not os.path.exists(p) or open(p, encoding="utf-8").read() != noi_dung:
         open(p, "w", encoding="utf-8").write(noi_dung)
 
-    print(f"Liên kết {ten_kho}: {len(files) + 1} file · link gãy {len(gay)} · mồ côi {len(mo_coi)} · thiếu mô tả {len(thieu)}")
+    print(f"Liên kết {ten_kho}: {len(files) + 1} file · link gãy {len(gay)} · mồ côi {len(mo_coi)} · thiếu mô tả {len(thieu)}"
+          + (f" · ghi nhớ thiếu dòng Gốc {len(thieu_goc)}" if goc == NAO else ""))
     for f, t in gay:
         print(f"  ✗ gãy: {f} → {t}")
     if chi_tiet:
@@ -209,9 +214,11 @@ def main():
             print(f"  · mồ côi: {f}")
         for f in thieu:
             print(f"  · thiếu mô tả: {f}")
-    elif mo_coi or thieu:
+        for f in thieu_goc:
+            print(f"  · thiếu Gốc: {f}")
+    elif mo_coi or thieu or thieu_goc:
         print("  (thêm --chi-tiet để xem từng file mồ côi / thiếu mô tả)")
-    sys.exit(1 if gay else 0)
+    sys.exit(1 if gay or thieu_goc else 0)
 
 
 if __name__ == "__main__":

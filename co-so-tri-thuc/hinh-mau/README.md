@@ -11,16 +11,16 @@ description: "Bản đồ hình mẫu của David: cây mục lớn → mục nh
 > khi làm là có thứ để đối chiếu và có thứ để đánh giá cũng như là góp ý lại cho tôi luôn." — David, 23/11/2026
 
 ## 1. Luật (nguồn duy nhất của luật hình mẫu)
-1. **Tra trước mọi việc** (quy trình gốc bước 2): mở file mục lớn của việc, tìm mục nhỏ. Có đủ hình mẫu thì làm theo cột "điều học được".
+1. **Tra trước mọi việc** (quy trình gốc bước 2): Claude mở file mục lớn của việc, tìm mục nhỏ. Có đủ hình mẫu thì Claude làm theo cột "điều học được".
 2. **Chưa có hoặc chưa đủ thì nghiên cứu** theo [quy-trinh-nghien-cuu.md](quy-trinh-nghien-cuu.md) (cây quy trình lá A8): **ít nhất 5
-   hình mẫu, việc lớn ít nhất 10**, càng nhiều càng tốt; ưu tiên mẫu có số liệu thành công kiểm được. Đây là phần chuẩn bị, làm trước
+   hình mẫu, việc lớn ít nhất 10**, càng nhiều càng tốt; ưu tiên mẫu có số liệu thành công kiểm chứng được. Đây là phần chuẩn bị, làm trước
    điểm duyệt Đ1; kết luận đưa vào 4 phần.
-3. **Sao chép rồi cải tiến, rồi thành của David:** lấy cái làm ra thành công (nguyên lý, cấu trúc, nhịp, độ dài, cách trình bày), không
-   chép nội dung hay nhận diện của người khác; giữ chữ ký nhận diện và lằn ranh của David. Cách học nguyên lý: ghi nhớ `quy-tac-hoc-la-bo-sung`.
+3. **Sao chép rồi cải tiến, rồi thành của David:** Claude lấy yếu tố tạo nên thành công (nguyên lý, cấu trúc, nhịp, độ dài, cách trình bày), không
+   sao chép nội dung hay nhận diện của người khác; giữ chữ ký nhận diện và lằn ranh của David. Cách học nguyên lý: ghi nhớ `quy-tac-hoc-la-bo-sung`.
 4. **Ghi lại mỗi lần nghiên cứu:** bảng của mục nhỏ (mỗi hình mẫu một dòng) + một mục trong [nhat-ky.md](nhat-ky.md). Chi tiết dài (phiếu
-   học, bảng đo) để ở file nghiên cứu sẵn có của skill, bản đồ chỉ trỏ link, không chép lại.
+   học, bảng đo) để ở file nghiên cứu sẵn có của skill, bản đồ chỉ đặt liên kết, không sao chép lại.
 5. **Đối chiếu và góp ý khi giao:** mỗi lần giao kết quả có 2–3 dòng "so với hình mẫu": giống hình mẫu ở đâu, khác ở đâu, nên chỉnh gì.
-6. **Hiểu David dần lên:** mỗi khi biết thêm một mảng việc, một định hướng, một việc David đang tương tác thì thêm mục nhỏ vào cây ở mục 2
+6. **Hiểu David sâu dần:** mỗi khi biết thêm một mảng việc, một định hướng, một việc David đang tương tác thì Claude thêm mục nhỏ vào cây ở mục 2
    (chưa có mẫu thì ghi "chưa nghiên cứu"). Hình mẫu cho công ty Veltrix ghi ở bộ não công ty, không ghi ở đây.
 
 ## 2. Cây mục lớn → mục nhỏ
@@ -30,7 +30,7 @@ Bóc tách từ `co-so-tri-thuc/david.md`, `chien-luoc-nghe-nghiep.md` (ba hư�
 | Mục lớn | Mục nhỏ (trạng thái) | File |
 |---|---|---|
 | 1. Hình tượng cá nhân, nhân hiệu | định vị trainer hai lĩnh vực ⬜ · intro thương hiệu ✅ · nhận diện hình ảnh video ✅ · giọng văn 🟡 · ảnh đại diện, ảnh bìa, trang giới thiệu ⬜ | [1-hinh-tuong-ca-nhan.md](1-hinh-tuong-ca-nhan.md) |
-| 2. Nội dung video | mở đầu 3 giây ✅ · video dài nói trước camera ✅ · vlog ✅ · podcast, talk show ✅ · clip ngắn, highlight ✅ · minh hoạ, motion graphics ✅ · thumbnail, tít ✅ · nhạc nền 🟡 · độ dài thẻ thương hiệu ✅ | [2-noi-dung-video.md](2-noi-dung-video.md) |
+| 2. Nội dung video | mở đầu 3 giây ✅ · video dài nói trước camera ✅ · vlog ✅ · podcast, talk show ✅ · clip ngắn, highlight ✅ · minh hoạ, motion graphics ✅ · thumbnail, tiêu đề ✅ · nhạc nền 🟡 · độ dài thẻ thương hiệu ✅ | [2-noi-dung-video.md](2-noi-dung-video.md) |
 | 3. Bài đăng mạng xã hội | bài kể chuyện Facebook cá nhân ⬜ · caption video, bình luận ghim 🟡 · lịch, nhịp đăng ⬜ · TikTok, Reels ⬜ | [3-bai-dang-mang-xa-hoi.md](3-bai-dang-mang-xa-hoi.md) |
 | 4. Trainer con người | khung phương pháp ba tầng làm chủ ✅ · chương trình cho người lần đầu dẫn người 🟡 · quy trình một trường hợp, coach chuẩn ICF ⬜ · bảng giá gói ⬜ · lớp nhóm, đứng lớp, sân khấu ⬜ · lời chứng, trường hợp mẫu ⬜ | [4-trainer-con-nguoi.md](4-trainer-con-nguoi.md) |
 | 5. Giải pháp công nghệ AI | nội dung dạy dùng AI ✅ · gói đào tạo kỹ năng AI ⬜ · giải pháp số hoá cho doanh nghiệp nhỏ ⬜ | [5-giai-phap-cong-nghe-ai.md](5-giai-phap-cong-nghe-ai.md) |
@@ -43,8 +43,8 @@ Bóc tách từ `co-so-tri-thuc/david.md`, `chien-luoc-nghe-nghiep.md` (ba hư�
 |---|---|
 | Hình mẫu | tên người / kênh / tổ chức · (QT) quốc tế hay (VN) Việt Nam · link hoặc file nguồn |
 | Bằng chứng | số liệu kiểm được kèm ngày đo (người theo dõi, lượt xem trung vị, doanh thu công bố, số học viên…); chưa có số thì ghi "chưa đo" |
-| Học được | cái làm ra thành công, viết thành điều áp dụng được ("thẻ thương hiệu 4–5 giây sau đoạn mở đầu") |
-| Đã dùng | file / skill / sản phẩm của David đã áp dụng, để đối chiếu khi chấm |
+| Học được | yếu tố tạo nên thành công, viết thành điều áp dụng được ("thẻ thương hiệu 4–5 giây sau đoạn mở đầu") |
+| Đã dùng | file / skill / sản phẩm của David đã áp dụng, để đối chiếu khi đánh giá |
 
 ## 4. Liên kết
 Quy trình nghiên cứu: [quy-trinh-nghien-cuu.md](quy-trinh-nghien-cuu.md) · nhật ký: [nhat-ky.md](nhat-ky.md) · học từ hình mẫu có số liệu

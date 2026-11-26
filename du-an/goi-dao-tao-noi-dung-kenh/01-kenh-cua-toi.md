@@ -18,7 +18,7 @@ description: "Mẫu 01 gói nội dung kênh (tách ra, chưa thành gói): phi�
 - Họ xem video ở đâu: YouTube · Facebook · TikTok · Instagram · Zalo · khác: ……
 - Kênh chính (đăng bản dài): …… · Kênh phụ (đăng clip dọc): ……
 
-## Con người: ai làm, bao nhiêu sức
+## Con người: ai làm, bao nhiêu nguồn lực
 - Ai quay: …… · Ai xem lại, duyệt: …… · Ai đăng: ……
 - Số giờ mỗi tuần cho video: ……
 - Nhịp đăng giữ được cả tuần bận: …… video / tuần
@@ -27,8 +27,8 @@ description: "Mẫu 01 gói nội dung kênh (tách ra, chưa thành gói): phi�
 
 ## Câu mời người xem làm bước tiếp
 - Câu mời: "……" (ví dụ: "nhắn mình chữ ……" / "bình luận ……")
-- Từ khoá bình luận để biết người xem đang vướng: "……" · đã làm được: "……"
+- Từ khoá bình luận để biết người xem đang gặp vướng mắc: "……" · đã làm được: "……"
 
 ## Ranh giới nội dung
-- Không nói: …… (pháp luật ngành, điều không chắc, hứa quá sức)
+- Không nói: …… (pháp luật ngành, điều không chắc, hứa quá khả năng)
 - Chuyện người khác: luôn ẩn danh.

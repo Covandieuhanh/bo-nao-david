@@ -2,20 +2,20 @@
 description: "Khối 00 bộ lọc nội dung: lọc tài nguyên theo hồ sơ David, phân hướng nghề, bán được gì, phân phối kênh."
 ---
 
-# Khối 00-sang-loc-noi-dung: Bộ lọc nội dung + phân phối kênh (làm TRƯỚC mọi việc dựng)
+# Khối 00-sang-loc-noi-dung: Bộ lọc nội dung và phân phối kênh (làm TRƯỚC mọi việc dựng)
 
 **Dùng trong:** cả 4 loại, và mọi tài nguyên David đưa (video, file ghi âm, bài viết).
 **Đầu vào:** tài nguyên David đưa — thường KHÔNG kèm yêu cầu · hồ sơ `~/.claude/david.md` · hồ sơ kênh `../../ho-so-thuong-hieu/kenh.json` · sổ `~/Movies/_danh-muc-noi-dung/danh-muc-noi-dung.md` · **kho 100 video `du-an/ke-hoach-noi-dung-100-video.md`** (kế hoạch nội dung, repo bộ não)
 **Đầu ra:** phiếu lọc (ghi vào dự án; là nguồn của 4 phần gọn David duyệt, không có cổng duyệt riêng) · `phan-huong.md` của tập · mục nhật ký nội dung từng hướng (`du-an/nhat-ky-noi-dung/`) · một dòng trong sổ danh mục
-**Hình mẫu:** Hieu Nguyen (2 mảng lặp lại 50/50 tập), Alex Hormozi ("được biết đến vì một điều"), Justin Welsh (content pillars), Gary Vaynerchuk (một lần nói thì nhiều bài).
+**Hình mẫu:** Hieu Nguyen (2 mảng lặp lại 50/50 tập), Alex Hormozi ("được biết đến vì một điều"), Justin Welsh (content pillars), Gary Vaynerchuk (một lần nói ra nhiều bài).
 **Sửa khối này thì chạy lại:** không có code; đổi luật kênh thì sửa `ho-so-thuong-hieu/kenh.json`.
 
 ## Nguyên tắc
 - **David chỉ đưa tài nguyên.** Claude tự phân tích, tự chọn làm gì · làm thế nào · đăng kênh nào · lúc nào (`chuan-muc-lam-viec.md`
-  mục 2), ghi vào phiếu lọc; 4 phần gọn lấy từ phiếu (`phan-phoi-da-kenh` bước 0), David duyệt rồi làm một mạch. David nói tự do, bộc phát — không đòi David theo mẫu.
-- **Không làm gì không có mục tiêu**: mỗi bài phải kéo tương tác trên đúng nền tảng đó → chuyển hoá → nhắn "gỡ". Nội dung "cho vui"
+  mục 2), ghi vào phiếu lọc; 4 phần gọn lấy từ phiếu (`phan-phoi-da-kenh` bước 0), David duyệt rồi làm một mạch. David nói tự do, bộc phát — không yêu cầu David nói theo mẫu.
+- **Không làm gì không có mục tiêu**: mỗi bài phải kéo tương tác trên đúng nền tảng đó, rồi chuyển hoá, rồi nhắn "gỡ". Nội dung "cho vui"
   chỉ được làm khi nó xây nhân hiệu trainer.
-- **Không khung thời lượng cố định**: dạng + độ dài theo chính nội dung; có khi giữ nguyên bản gốc.
+- **Không khung thời lượng cố định**: dạng và độ dài theo chính nội dung; có khi giữ nguyên bản gốc.
 - Claude chấm, ghi lý do và tự chốt; David sửa ở bản cuối nếu muốn.
 
 ## 0. Phân hướng (làm đầu tiên — hồ sơ David mục 4.1)
@@ -33,7 +33,7 @@ khách hàng, thị trường của chính người xem thuộc **hướng 3** (
 1. **Chia đoạn theo ý**: đọc cả bản lời, mỗi đoạn một ý: mốc vào–ra · ý một dòng · hướng (1 / 2 / 3) · hoặc **Bỏ** kèm lý do (không
    liên quan, chào hỏi, chuyện riêng, lằn ranh mục 3, ý chưa trọn). Một đoạn chạm hai hướng: gán hướng chính, ghi "dùng lại ở hướng X"
    (ví dụ: phép thử nỗi đau thuộc hướng 2, hướng 3 dùng lại làm câu mở tư vấn).
-2. **Mỗi hướng một bản** khi gom được bối cảnh + ít nhất một ý trọn (chấm 5 tiêu chí theo hướng, mục 2). Không đủ thì không ép ra bản,
+2. **Mỗi hướng một bản** khi gom được bối cảnh và ít nhất một ý trọn (chấm 5 tiêu chí theo hướng, mục 2). Không đủ thì không ép ra bản,
    chỉ ghi nhật ký. Dạng mặc định, độ dài vẫn theo nội dung:
    | Hướng | Bản | Nơi đăng |
    |---|---|---|
@@ -49,7 +49,7 @@ khách hàng, thị trường của chính người xem thuộc **hướng 3** (
    hoặc đứng lớp · mốc. Lấy từ lời trong tập, không bịa đặt.
 5. **Ghi lại** (bắt buộc, kể cả tập ⛔ / 🗂 và hướng không ra bản):
    - `<thư mục tập>/phan-huong.md` theo mẫu [mau-phan-huong.md](mau-phan-huong.md): bảng đoạn, danh sách đoạn từng bản, điểm nối cần
-     soát, lằn ranh, ý dùng cho công việc. Phiên dựng sau chỉ cần đọc file này + bản lời là cắt được.
+     soát, lằn ranh, ý dùng cho công việc. Phiên dựng sau chỉ cần đọc file này và bản lời là cắt được.
    - Một mục vào **nhật ký nội dung** của từng hướng có ý: `du-an/nhat-ky-noi-dung/` (luật ghi ở README thư mục đó).
 
 ## 1. Câu hỏi gốc (theo hướng)
@@ -62,16 +62,16 @@ khách hàng, thị trường của chính người xem thuộc **hướng 3** (
 họ · **Nhánh phụ** = mối quan hệ, chỉ khi bắt nguồn từ bản thân · **Nhân hiệu** = hành trình của David chỉ khi dẫn tới phát triển con người (ví dụ dùng từ trường số để định hướng), chỉ khi giúp người
 xem tin David là trainer.
 
-**Bán được gì (bắt buộc mọi phiếu):** mục tiêu / nỗi đau → gói nào → bước phễu tiếp theo (`du-an/pheu-ban-hang-goi-cong-nghe.md`).
+**Bán được gì (bắt buộc mọi phiếu):** mục tiêu / nỗi đau dẫn tới gói nào, rồi tới bước phễu tiếp theo (`du-an/pheu-ban-hang-goi-cong-nghe.md`).
 
 ## 1b. Đối chiếu kho 100 video (bắt buộc với hướng trainer)
 Kho `du-an/ke-hoach-noi-dung-100-video.md` là **kế hoạch nội dung** của kênh: dần dần mọi video phải đi theo kho, tránh làm video lệch mục tiêu.
 Đọc phần "Luật đối chiếu" ở đầu kho, rồi tìm (`grep` nỗi đau / cách làm / từ khoá của lời chép) ý khớp nhất:
-- **Khớp** thì ghi `Kho 100: ý <số> "<nỗi đau>"` + kiểu dẫn dắt của ý đó (kho thắng tỉ lệ tự đếm, trừ khi David chọn khác).
+- **Khớp** thì ghi `Kho 100: ý <số> "<nỗi đau>"` kèm kiểu dẫn dắt của ý đó (kho thắng tỉ lệ tự đếm, trừ khi David chọn khác).
 - **Không khớp ý nào** thì ⚠️ cảnh báo trong phiếu, David chọn: thêm làm ý mới (cuối giai đoạn hợp) · cất kho · bỏ. Không tự dựng.
 - **Khớp giai đoạn 3** (cơ sở chạy khi vắng chủ) thì không thuộc kênh trainer; hợp gói công nghệ thì chuyển hướng 3.
 - Luôn gợi ý **ý kế tiếp nên quay**: ý "Ý tưởng" số nhỏ nhất (bỏ giai đoạn 3) — nhắc David quay theo kế hoạch.
-- Sau khi dựng / đăng: đổi cột Trạng thái của ý trong kho (Đã dựng <ngày> · `tap-<tên>` thành Đã đăng <ngày> + link), đẩy GitHub.
+- Sau khi dựng / đăng: đổi cột Trạng thái của ý trong kho (Đã dựng <ngày> · `tap-<tên>` thành Đã đăng <ngày> kèm link), đẩy lên GitHub.
 
 ## 2. Chấm 5 tiêu chí (0–2 mỗi tiêu chí)
 | # | Tiêu chí | 2 | 1 | 0 |
@@ -86,14 +86,14 @@ Kho `du-an/ke-hoach-noi-dung-100-video.md` là **kế hoạch nội dung** của
 Thực thi) thì không bịa đặt, báo "thiếu phần X" để David quyết nói bổ sung hay cất kho.
 
 **Chấm cả câu chuyện, không chấm từng đoạn để giữ đoạn điểm cao**: 70–80% câu chuyện là dẫn dắt, bối cảnh, tình
-huống để đoạn đắt có giá trị. Video dài một hướng là bản gốc và để nguyên (quy-tac-chung mục 2); nhiều hướng thì mỗi bản theo hướng
+huống để đoạn then chốt có giá trị. Video dài một hướng là bản gốc và để nguyên (quy-tac-chung mục 2); nhiều hướng thì mỗi bản theo hướng
 bỏ trọn đoạn ngoài hướng, trong đoạn vẫn để nguyên (mục 0b); video ngắn chỉ trích từ bản đó. Claude chỉ đọc lời chép, không
 cảm được giọng và sức nặng câu chuyện, nên không quyết đoạn nào "ít giá trị".
 
 Chấm 5 tiêu chí trên dùng cho hướng trainer. Hướng khác đổi nghĩa tiêu chí 1–2 theo câu hỏi gốc của hướng (mục 1); tiêu chí 5 =
 tin David trong hướng đó.
 
-## 3. Lằn ranh = CẢNH BÁO, David quyết (hồ sơ 4.7 + 7, theo từng hướng)
+## 3. Lằn ranh = CẢNH BÁO, David quyết (hồ sơ 4.7 và 7, theo từng hướng)
 **Mọi hướng:** phạm pháp hay mập mờ pháp lý (quan trọng nhất) · chữ "chữa lành", công dụng sức khoẻ của sản phẩm · tư vấn thuế, pháp lý · chuyện người khác không ẩn danh (tên thật, nơi làm, chi tiết lộ danh tính khách, học viên, nhân viên) · hứa thu nhập.
 **Tài chính:** cam kết lợi nhuận · gọi lệnh mua/bán cụ thể · thiếu cảnh báo rủi ro · nhắc đơn vị không được cấp phép.
 **Trainer:** trị liệu, chẩn đoán tâm lý · nhắc vai coach trên kênh công khai · nói giá, tên gói dịch vụ trên video · đọc số của người thật khi họ chưa đồng ý · hứa tiền hay kết quả nhờ con số · nghi thức cầu xin, phóng sinh. Còn nội dung từ trường số (kèm dẫn chứng thần số học, thiền, "nghiệp"…) thuộc hướng trainer, được nói công khai (hệ 135, hồ sơ 4.1).
@@ -105,7 +105,7 @@ Chạm thì **luôn cảnh báo trong phiếu và báo cáo**: mốc giây, lờ
 |---|---|---|
 | ⭐ **Rất tốt** | 9–10, không chạm lằn ranh | đủ bộ: YouTube (bản gốc / biên tập) + highlight Reels, TikTok + bài viết trang |
 | ✅ **Phù hợp** | 7–8 | theo kênh đề xuất (thường YouTube hoặc highlight + bài viết) |
-| ✂️ **Trích ngắn từ gốc** | bản dài đã duyệt có đoạn đắt cho video ngắn | bản dài vẫn để nguyên làm gốc; clip là phần thêm, không thay bản dài |
+| ✂️ **Trích ngắn từ gốc** | bản dài đã duyệt có đoạn then chốt cho video ngắn | bản dài vẫn để nguyên làm gốc; clip là phần thêm, không thay bản dài |
 | 🔁 **Trùng / dư** | đã có bài gần giống trong 30 ngày, hoặc nhánh đang quá tỉ lệ | gộp vào bài cũ / để sau |
 | 🗂 **Lưu kho** | có giá trị nhưng chưa đúng lúc / chưa đủ 3 phần | lưu lời chép + nhãn, chờ ghép series |
 | 👤 **Chỉ Facebook cá nhân** | tối đa 6, chỉ ý thuộc ba hướng (đời thường chưa rõ hướng thì hỏi David) | câu chia sẻ ngắn, không dựng công phu |
@@ -114,7 +114,7 @@ Chạm thì **luôn cảnh báo trong phiếu và báo cáo**: mốc giây, lờ
 ## 5. Phân phối kênh (`ho-so-thuong-hieu/kenh.json`)
 Theo hướng (mục 0): **YouTube David Trần Official** = hướng tài chính · **YouTube trainer** = bản gốc hoặc biên tập hướng trainer ·
 **Facebook cá nhân, fanpage, TikTok** = chia sẻ không giới hạn chủ đề, cũng nhận highlight của hai kênh YouTube, nhưng mỗi bài phải
-dẫn về gói (thường là gói công nghệ) theo phễu `du-an/pheu-ban-hang-goi-cong-nghe.md`. Lịch thứ Ba + thứ Sáu 20:00 giờ Việt Nam. Phiếu lọc gán kiểu dẫn dắt
+dẫn về gói (thường là gói công nghệ) theo phễu `du-an/pheu-ban-hang-goi-cong-nghe.md`. Lịch thứ Ba và thứ Sáu 20:00 giờ Việt Nam. Phiếu lọc gán kiểu dẫn dắt
 mỗi bài (**Không · Gợi mở · Mời**, tỉ lệ và cách viết: khối 08).
 
 ## 6. Phiếu lọc (gửi David — một màn hình)
@@ -134,5 +134,5 @@ Câu mở: "<trích lời>" · Bình luận: "Vấn đề" / "Kết quả" · D�
 
 ## 7. Sổ danh mục `~/Movies/_danh-muc-noi-dung/danh-muc-noi-dung.md`
 Một dòng mỗi tài nguyên: ngày · file · nhãn · điểm · nhánh · kênh · dẫn dắt · trạng thái (lọc / dựng / chờ đăng / đã đăng / kho / bỏ).
-Mỗi lần lọc, Claude xem sổ và CẢNH BÁO trong phiếu: nhánh nào đang quá nhiều / thiếu (mục tiêu: gốc + công việc ít nhất 70%), tuần chưa có
+Mỗi lần lọc, Claude xem sổ và CẢNH BÁO trong phiếu: nhánh nào đang quá nhiều / thiếu (mục tiêu: gốc và công việc ít nhất 70%), tuần chưa có
 bài Mời, kho quay sẵn < 4 video, lịch thứ Ba / thứ Sáu tới chưa có bài, chủ đề trùng trong 30 ngày.

@@ -1,35 +1,37 @@
 ---
 name: video-nhan-dien-chung
-description: "Mọi loại video cùng một bộ nhận diện; video dọc ngắn bỏ thanh và thẻ cuối; chữ nhấn kiểu nhãn dán đặc màu ở ngực, không chạm mặt, không nền đen mờ (08/11, 10/11, 13/11; gộp 15/11)"
+description: "Mọi loại video dùng chung một bộ nhận diện; video dọc ngắn bỏ thanh thời gian và thẻ cuối; chữ nhấn theo kiểu nhãn dán đặc màu ở vùng ngực, không chạm mặt, không có nền đen mờ (08/11, 10/11, 13/11; gộp 15/11)"
 metadata:
   type: feedback
 ---
 
 Mọi loại video (1 video người nói, podcast, ghép vlog, highlight; ngang hay dọc) dùng chung một bộ nhận diện: vùng an toàn, dấu góc
-● DAVID góc trên trái, thanh thời gian ở đáy, phụ đề trên thanh, màn chốt, thẻ cuối không nút phát, không logo nền tảng. Chỉ motion
-graphics là tự do chọn theo loại video, theo từng cảnh.
+● DAVID ở góc trên bên trái, thanh thời gian ở đáy, phụ đề nằm trên thanh, màn chốt, thẻ cuối không có nút phát, không có logo nền tảng. Chỉ motion
+graphics được tự do chọn theo loại video và theo từng cảnh.
 
-**Video dọc ngắn** (dọc tối đa 90 s, mọi highlight, podcast dọc trích ngắn — 10/11/2026): **không thanh thời gian, không thẻ cuối**; màn chốt
-là ô câu nguyên văn nằm trên khung hình (không thu nhỏ video), kết ở chữ cuối để video tự lặp. Dẫn về bản đầy đủ, mời bình luận để ở
-caption + bình luận ghim. Video ngang và dọc dài giữ thanh, thẻ cuối, màn kết YouTube.
+**Video dọc ngắn** (video dọc tối đa 90 s, mọi highlight, podcast dọc trích ngắn — 10/11/2026): **không thanh thời gian, không thẻ cuối**; màn chốt
+là ô chứa câu nguyên văn nằm trên khung hình (không thu nhỏ video), kết thúc ở chữ cuối để video tự phát lặp lại. Lời dẫn về bản đầy đủ và lời mời bình luận được đặt ở
+caption và bình luận ghim. Video ngang và video dọc dài giữ thanh thời gian, thẻ cuối và màn kết YouTube.
 
 **Why:**
-- 08/11/2026 David thấy video dài thiếu thanh thời gian, dấu góc lệch; rà ra thì mỗi mẫu dựng tự viết nhận diện riêng nên sửa một chỗ
-  không đổi chỗ khác. David chọn gom về một chỗ: "đã nói là cho các loại có những tiêu chuẩn giống nhau mà".
-- 10/11/2026 David thấy nên bỏ thanh và thẻ cuối ở dọc ngắn; Claude phân tích: nền tảng đã có thanh riêng, "còn 0:20" khiến người xem
-  lướt, màn "hết rồi" và thẻ cuối làm đứt vòng lặp Shorts/Reels. Kênh chưa có số liệu video ngắn — kiểm lại sau 3–4 video (khối 16: tỉ
-  lệ xem hết, giây rời).
-- Gộp ghi nhớ `video-doc-ngan-khong-thanh` vào đây ở tái bản 2 (10/11/2026).
+- Ngày 08/11/2026 David thấy video dài thiếu thanh thời gian, dấu góc bị lệch; khi rà soát, Claude thấy mỗi mẫu dựng tự viết nhận diện riêng nên sửa một chỗ
+  thì chỗ khác không đổi theo. David chọn gom về một nguồn duy nhất: "đã nói là cho các loại có những tiêu chuẩn giống nhau mà".
+- Ngày 10/11/2026 David thấy nên bỏ thanh thời gian và thẻ cuối ở video dọc ngắn; Claude phân tích: nền tảng đã có thanh riêng, "còn 0:20" khiến người xem
+  lướt qua, màn "hết rồi" và thẻ cuối làm đứt vòng lặp Shorts/Reels. Kênh chưa có số liệu video ngắn; Claude kiểm tra lại sau 3–4 video (khối 16: tỉ
+  lệ xem hết, giây người xem rời đi).
+- Ghi nhớ `video-doc-ngan-khong-thanh` được gộp vào đây ở lần tái bản 2 (10/11/2026).
 
-**How to apply:** vị trí chỉ lấy từ `ky-nang/san-xuat-video/thu-vien-tai-nguyen/nhan-dien-thuong-hieu.js` (`khung(W, H)`), thành phần `dau-goc.jsx`,
-`thanh-thoi-gian.jsx`, `than-man-ket.jsx`; bảng ở `ky-nang/san-xuat-video/thu-vien-tai-nguyen/nhan-dien-chung.md`; nguồn luật dọc ngắn `quy-tac-chung.md` mục 5, máy tự nhận
-`nganDoc()` / `NGAN_DOC` (`thanh.js`). Không viết số vị trí riêng trong mẫu dựng. Sửa nhận diện thì chụp kiểm cả ngang lẫn dọc trên dự
+**How to apply:** vị trí chỉ được lấy từ `ky-nang/san-xuat-video/thu-vien-tai-nguyen/nhan-dien-thuong-hieu.js` (`khung(W, H)`), các thành phần `dau-goc.jsx`,
+`thanh-thoi-gian.jsx`, `than-man-ket.jsx`; bảng nằm ở `ky-nang/san-xuat-video/thu-vien-tai-nguyen/nhan-dien-chung.md`; nguồn luật cho video dọc ngắn là `quy-tac-chung.md` mục 5, hệ thống tự nhận diện bằng
+`nganDoc()` / `NGAN_DOC` (`thanh.js`). Claude không viết số vị trí riêng trong mẫu dựng. Khi sửa nhận diện, Claude chụp ảnh kiểm tra cả khung ngang lẫn khung dọc trên dự
 án đã duyệt. Liên quan [[quy-tac-hoc-la-bo-sung]], [[video-bo-cuc-tu-can-bang]], [[video-doc-mau-chu-chinh]], [[video-tham-my-chi-giu-nhan-dien]].
 
-## Gộp từ `video-nhan-dien-chung` (15/11/2026, tự học tuần: giảm ghi nhớ về 40)
+## Gộp từ `video-nhan-dien-chung` (15/11/2026, vòng tự học hằng tuần: giảm số ghi nhớ xuống 40)
 
-13/11/2026, clip A "Quy chuẩn, hợp pháp" (tap-giao-dich-hang-hoa): David: "không thích phần chữ mô tả bị dính vào mặt của nhân vật và lại còn có nền đen mờ, rất mất thẩm mỹ, chuyển hẳn sang kiểu khác".
+Ngày 13/11/2026, ở clip A "Quy chuẩn, hợp pháp" (tap-giao-dich-hang-hoa), David nhận xét: "không thích phần chữ mô tả bị dính vào mặt của nhân vật và lại còn có nền đen mờ, rất mất thẩm mỹ, chuyển hẳn sang kiểu khác".
 
-**Why:** chữ to cũ (`pow`) canh đáy trên dải phụ đề nên hai dòng chữ cỡ 150 lên tới cằm, kèm dải tối mờ (Scrim) phủ nửa khung.
+**Why:** kiểu chữ to cũ (`pow`) căn đáy trên dải phụ đề nên hai dòng chữ cỡ 150 chạm tới cằm, kèm dải tối mờ (Scrim) phủ nửa khung hình.
 
-**How to apply:** luật ở `ky-nang/san-xuat-video/thu-vien-tai-nguyen/nhan-dien-chung.md` mục 2. Kiểu chuẩn là nhãn dán: mỗi dòng một nhãn đặc (trắng chữ sẫm, dòng cuối cam chữ trắng), canh đáy vào đáy dải phụ đề (phụ đề nhường), không Scrim; `pow` không bị lưới chặn dải phụ đề cắt. Code: `Pow` trong `dung-video-theo-phong-cach/assets/mau-dung-ghep/src/chuong-trinh.jsx`. Chụp thử luôn soát khoảng cách chữ ↔ cằm. Liên quan [[video-phu-de-mot-cho-chu]], [[video-bo-cuc-tu-can-bang]].
+**How to apply:** luật nằm ở `ky-nang/san-xuat-video/thu-vien-tai-nguyen/nhan-dien-chung.md` mục 2. Kiểu chuẩn là nhãn dán: mỗi dòng là một nhãn đặc màu (nền trắng chữ sẫm, dòng cuối nền cam chữ trắng), căn đáy vào đáy dải phụ đề (phụ đề nhường chỗ), không có Scrim; `pow` không bị lưới chặn dải phụ đề cắt. Mã nguồn: `Pow` trong `dung-video-theo-phong-cach/assets/mau-dung-ghep/src/chuong-trinh.jsx`. Khi chụp thử, Claude luôn kiểm khoảng cách giữa chữ và cằm. Liên quan [[video-phu-de-mot-cho-chu]], [[video-bo-cuc-tu-can-bang]].
+
+Gốc: khối 1 (Bóc tách) của tu-duy-goc.md — tách rõ phần nhận diện giữ cứng chung cho mọi video với phần motion graphics tự do, nên người xem luôn nhận ra là của David.

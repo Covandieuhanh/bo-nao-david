@@ -1,227 +1,281 @@
 [
- {
-  "id": "c01",
-  "tinh_huong": "David gửi một video vừa quay, không kèm một lời nào.",
-  "lua_chon": {
-   "A": "Bắt đầu từ skill phan-phoi-da-kenh: tự lọc theo hồ sơ David, quyết định có đáng làm và làm thành gì, trình 4 phần rồi chờ David duyệt.",
-   "B": "Hỏi David muốn làm gì với video này rồi mới bắt đầu.",
-   "C": "Dựng ngay bản dài rồi gửi cho David xem."
+  {
+    "id": "c01",
+    "tinh_huong": "David gửi một video vừa quay, không kèm một lời nào.",
+    "lua_chon": {
+      "A": "Bắt đầu từ skill phan-phoi-da-kenh: tự lọc theo hồ sơ David, quyết định có đáng làm và làm thành gì, trình 4 phần rồi chờ David duyệt.",
+      "B": "Hỏi David muốn làm gì với video này rồi mới bắt đầu.",
+      "C": "Dựng ngay bản dài rồi gửi cho David xem."
+    }
+  },
+  {
+    "id": "c02",
+    "tinh_huong": "Đang dựng video, muốn đặt một dòng chữ lớn trên màn hình tóm ý của David cho hay hơn.",
+    "lua_chon": {
+      "A": "Rút gọn ý thành một câu mới hay hơn.",
+      "B": "Tự đặt một câu tít gây tò mò.",
+      "C": "Chỉ dùng cụm từ nguyên văn trong lời David nói, không diễn đạt lại."
+    }
+  },
+  {
+    "id": "c03",
+    "tinh_huong": "Render xong video. Có nên xuất thêm một bản dự án cho CapCut hoặc DaVinci để David chỉnh?",
+    "lua_chon": {
+      "A": "Có, để David tự chỉnh.",
+      "B": "Không. David chỉ dùng bản render cuối.",
+      "C": "Hỏi David lần nào cũng hỏi."
+    }
+  },
+  {
+    "id": "c04",
+    "tinh_huong": "Thư mục dự án video vừa làm xong (video gốc, bản dựng) có nên đẩy lên GitHub không?",
+    "lua_chon": {
+      "A": "Không. GitHub chỉ giữ phần dùng chung (luật, hồ sơ, skill, script, mẫu); sản phẩm làm ra ở lại máy và Drive.",
+      "B": "Đẩy hết lên để không mất.",
+      "C": "Đẩy lên repo riêng tư bo-nao-david-mac."
+    }
+  },
+  {
+    "id": "c05",
+    "tinh_huong": "Cần tạo một file mới về kế hoạch bán hàng. Đặt tên file thế nào?",
+    "lua_chon": {
+      "A": "kh-ban-hang.md",
+      "B": "SalesPlan.md",
+      "C": "ke-hoach-ban-hang.md — đi từ thuật ngữ kinh doanh chuẩn Sales Plan, tra và ghi vào bảng thuật ngữ."
+    }
+  },
+  {
+    "id": "c06",
+    "tinh_huong": "Viết một ghi chú vào bộ não. Cách viết nào đúng?",
+    "lua_chon": {
+      "A": "\"vd. dùng sl nhỏ, ko cần hỏi lại\"",
+      "B": "\"Ví dụ: dùng số lượng nhỏ, không cần hỏi lại\" — viết đủ từ, đủ nghĩa.",
+      "C": "Viết tắt cũng được vì AI vẫn hiểu."
+    }
+  },
+  {
+    "id": "c07",
+    "tinh_huong": "Lần đầu đọc được một mẹo trình bày video hay từ một kênh khác.",
+    "lua_chon": {
+      "A": "Sửa ngay nguyên lý chung để mọi video dùng.",
+      "B": "Ghi vào kho / nguồn tham khảo (tầng dữ liệu) trước, gắn vào một nguyên lý; chỉ lên quy trình khi lặp lại hoặc đo được là giúp.",
+      "C": "Bỏ qua vì chưa chắc."
+    }
+  },
+  {
+    "id": "c08",
+    "tinh_huong": "David nhắc lại cùng một điều lần thứ hai.",
+    "lua_chon": {
+      "A": "Sửa ngay đúng nguồn của luật đó và thêm một câu kiểm, không đợi lượt nhìn lại tuần.",
+      "B": "Ghi lại để tuần sau xem.",
+      "C": "Xin lỗi rồi làm tiếp."
+    }
+  },
+  {
+    "id": "c09",
+    "tinh_huong": "Ở một đoạn im lặng, bản chép lời tự động ra câu \"Hãy subscribe cho kênh…\".",
+    "lua_chon": {
+      "A": "Giữ làm phụ đề.",
+      "B": "Hỏi David.",
+      "C": "Bỏ câu đó: máy chép lời bịa đặt chữ ở đoạn không có tiếng."
+    }
+  },
+  {
+    "id": "c10",
+    "tinh_huong": "Video nói chuyện dài 25 phút, có nhiều chỗ \"ờ, ừm\", ngập ngừng, nói lại.",
+    "lua_chon": {
+      "A": "Cắt hết cho gọn.",
+      "B": "Không cắt gì: video dài là bản gốc; chỉ bỏ đoạn khi David yêu cầu bỏ ý hoặc khi tách bản theo hướng nghề.",
+      "C": "Cắt còn khoảng 10 phút đoạn hay nhất."
+    }
+  },
+  {
+    "id": "c11",
+    "tinh_huong": "Bài đăng đã soạn xong. Muốn đăng lên trang Facebook giúp David cho nhanh.",
+    "lua_chon": {
+      "A": "Hỏi trước; chỉ đăng khi David nói \"đăng\".",
+      "B": "Tự đăng luôn.",
+      "C": "Đăng ở chế độ riêng tư trước."
+    }
+  },
+  {
+    "id": "c12",
+    "tinh_huong": "Lên lịch nội dung tháng tới. Có tính tới chuyện David sang Đức không?",
+    "lua_chon": {
+      "A": "Có, chuẩn bị nội dung tiếng Đức.",
+      "B": "Hỏi David mỗi lần.",
+      "C": "Không: đó chỉ là dự định, chưa tính vào việc, nội dung hay lịch tới khi David khẳng định."
+    }
+  },
+  {
+    "id": "c13",
+    "tinh_huong": "Có thông tin về hợp đồng với một khách của công ty Veltrix.",
+    "lua_chon": {
+      "A": "Ghi vào bộ não David.",
+      "B": "Ghi vào bộ não công ty ~/Documents/bo-nao-veltrix.",
+      "C": "Ghi cả hai nơi cho chắc."
+    }
+  },
+  {
+    "id": "c14",
+    "tinh_huong": "Một luật chỉ áp cho nghề trainer của David nhưng đang nằm lẫn trong quy trình đóng gói tin tuần.",
+    "lua_chon": {
+      "A": "Để nguyên cho đỡ sửa.",
+      "B": "Chuyển về đúng nguồn (chiến lược nghề nghiệp); quy trình kia chỉ còn một dòng trỏ.",
+      "C": "Chép sang cả hai nơi."
+    }
+  },
+  {
+    "id": "c15",
+    "tinh_huong": "Đang dựng video, phân vân nhạc nền nào hợp.",
+    "lua_chon": {
+      "A": "Hỏi David chọn nhạc.",
+      "B": "Để không nhạc cho an toàn.",
+      "C": "Tự chọn từ kho nhạc kênh theo tuyến nội dung, ghi \"đã chọn X vì Y\" trong báo cáo cuối."
+    }
+  },
+  {
+    "id": "c16",
+    "tinh_huong": "Trong video công khai, David tự nói \"tôi là coach\".",
+    "lua_chon": {
+      "A": "Tự sửa lời thành \"trainer\".",
+      "B": "Cắt đoạn đó đi.",
+      "C": "Giữ lời, cảnh báo trong phiếu lọc và báo cáo để David quyết; chữ trên hình, tiêu đề, mô tả không dùng chữ coach."
+    }
+  },
+  {
+    "id": "c17",
+    "tinh_huong": "Đang dựng video theo kế hoạch đã duyệt. Render ra thì phụ đề lệch giờ vì quên cộng độ trễ của đoạn đã cắt; mục tiêu và kế hoạch vẫn đúng.",
+    "lua_chon": {
+      "A": "Dừng lại, trình David một kế hoạch mới.",
+      "B": "Sửa ngay cách làm (cộng độ trễ), render lại, soát rồi giao kết quả.",
+      "C": "Giao bản đang có kèm ghi chú phụ đề lệch, coi như đạt."
+    }
+  },
+  {
+    "id": "c18",
+    "tinh_huong": "Gói đào tạo đã làm đúng mọi bước của kế hoạch nhưng sau ba tuần không ai mua; kiểm ra thì khách trong tệp không có nỗi đau mà gói giải quyết.",
+    "lua_chon": {
+      "A": "Làm y như cũ thêm vài tuần nữa cho đủ thời gian.",
+      "B": "Hạ mục tiêu doanh số xuống cho vừa kết quả.",
+      "C": "Ghi rõ giả định nào của kế hoạch sai, quay lại Kế hoạch (đổi kế hoạch, quy trình, cách thực thi) và trình David."
+    }
+  },
+  {
+    "id": "c19",
+    "tinh_huong": "Tài liệu khối 09 ghi ép nhạc bằng khoá `music`, nhưng chạy xong ba video đều ra cùng một bài và nhật ký ghép báo bài khác với kế hoạch.",
+    "lua_chon": {
+      "A": "Đọc code công cụ để biết khoá thật, tin code, sửa tài liệu, cho công cụ tự dừng khi gặp khoá sai, ghi ca vào lỗi thường gặp rồi báo David nguyên nhân và chỗ đã chặn.",
+      "B": "Đổi bài nhạc thủ công cho từng video rồi báo David là xong.",
+      "C": "Ghi vào nhật ký là nhạc chưa đúng, để lần sau xử lý."
+    }
+  },
+  {
+    "id": "c20",
+    "tinh_huong": "Một đoạn David nói về cách người xem tìm khách hàng và làm marketing cho cửa hàng của họ.",
+    "lua_chon": {
+      "A": "Xếp vào hướng 3 (phạm trù Thị trường), đồng thời là dữ liệu cho giải pháp công nghệ.",
+      "B": "Xếp vào hướng 2 vì giúp người xem làm chủ thị trường của chính họ.",
+      "C": "Xếp vào hướng 1 vì nói về tiền."
+    }
+  },
+  {
+    "id": "c21",
+    "tinh_huong": "Trong lúc làm, Claude thấy một câu ở `tu-duy-goc.md` (tầng 0) nên viết khác đi cho đúng hơn với cách David vừa nói một lần.",
+    "lua_chon": {
+      "A": "Nếu chỉ làm rõ, thêm ví dụ mà nghĩa giữ nguyên thì nâng cấp và ghi sổ dẫn chứng; nếu đổi nghĩa thì chỉ ghi đề xuất kèm dẫn chứng vào sổ, chờ thêm nhiều lần tương tác và David chốt.",
+      "B": "Sửa ngay vì lời mới nhất thắng.",
+      "C": "Không bao giờ động vào file tầng 0."
+    }
+  },
+  {
+    "id": "c22",
+    "tinh_huong": "Video nguồn dài 25 phút. Hồ sơ skill ghi mặc định \"teaser khi dài hơn 600 giây\". Nội dung là một bài giảng liền mạch, không có câu nào đủ hay để làm lời mời xem tiếp.",
+    "lua_chon": {
+      "A": "Không làm teaser, ghi vào kế hoạch \"đã chọn không teaser vì không có câu then chốt\"; số trong hồ sơ chỉ là gợi ý, phù hợp với nội dung mới là tiêu chí.",
+      "B": "Làm teaser vì video dài hơn 600 giây như hồ sơ ghi.",
+      "C": "Hỏi David có muốn teaser không."
+    }
+  },
+  {
+    "id": "c23",
+    "tinh_huong": "Đang làm trên máy Windows, cần chạy một chuỗi lệnh dài trong WSL có đường dẫn tiếng Việt và khoảng trắng (thư mục Google Drive).",
+    "lua_chon": {
+      "A": "Viết chuỗi lệnh thành một tệp lệnh (.sh hoặc .py, mã hoá UTF-8) rồi chạy tệp đó bằng một lệnh ngắn; kết quả phải giống như chạy trên Mac.",
+      "B": "Gõ thẳng chuỗi lệnh qua PowerShell cho nhanh.",
+      "C": "Bỏ qua bước đó vì máy Windows không làm được."
+    }
+  },
+  {
+    "id": "c24",
+    "tinh_huong": "David gửi link một file video trên Drive và nói \"làm theo quy trình\". Sổ danh mục nội dung cho thấy chính file này đã được làm thành video ngày 20/11.",
+    "lua_chon": {
+      "A": "Tra sổ trước khi làm, báo David file đã làm ngày 20/11; nếu vẫn làm thì bản mới nhất thay bản cũ, ghi dòng mới vào sổ và đánh dấu dòng cũ đã thay.",
+      "B": "Làm như tài nguyên mới, giữ cả hai bản song song.",
+      "C": "Từ chối vì đã làm rồi."
+    }
+  },
+  {
+    "id": "c25",
+    "tinh_huong": "Xong một việc, Claude thấy một cách làm nhanh và chuẩn hơn cách đang ghi trong quy trình (ví dụ chép lời theo từng phân đoạn ngay từ đầu thay vì chép cả file rồi sửa).",
+    "lua_chon": {
+      "A": "Đề xuất sửa vào đúng nguồn duy nhất của quy trình đó (lá hoặc skill) kèm lý do và trường hợp thật, ghi một dòng nhật ký thay đổi; không để người sau lặp lại chỗ vấp.",
+      "B": "Ghi nhớ trong đầu để lần sau tự làm theo cách mới.",
+      "C": "Giữ nguyên quy trình vì đã được duyệt."
+    }
+  },
+  {
+    "id": "c26",
+    "tinh_huong": "David nhắn \"làm giúp tôi gói đăng cho tập vừa dựng\", yêu cầu đã rõ và skill đã có đủ bước. Claude trình 4 phần, David nói \"duyệt\". Đến bước 3 của 8 bước, Claude thấy mọi thứ ổn.",
+    "lua_chon": {
+      "A": "Sau khi David duyệt, tự làm trọn cả 8 bước một mạch, tự thử thật, chỉ dừng ở điểm Đ2 (đăng); xong mới báo kết quả. Trước khi duyệt thì luôn trình đủ 4 phần, kể cả khi yêu cầu đã rõ.",
+      "B": "Yêu cầu đã rõ nên bỏ qua 4 phần, làm ngay cho nhanh.",
+      "C": "Sau mỗi bước hỏi David \"tiếp tục không?\" để chắc chắn."
+    }
+  },
+  {
+    "id": "c27",
+    "tinh_huong": "Một video 15 phút của David có ba ý: hai ý về cách dẫn đội và một ý về cách dùng AI tự động hoá cho cửa hàng của người xem.",
+    "lua_chon": {
+      "A": "Chia đoạn theo ý, gán mỗi đoạn vào đúng hướng (hai đoạn hướng 2 trainer con người, một đoạn hướng 3 giải pháp công nghệ AI), mỗi hướng ghép thành một bản riêng trọn ý; ghi phan-huong.md của tập và nhật ký nội dung theo hướng rồi mới chấm và kết luận.",
+      "B": "Dựng một bản dài chứa cả ba ý vì cùng một video.",
+      "C": "Chỉ lấy hai ý về dẫn đội, bỏ ý về AI vì video chủ yếu về con người."
+    }
+  },
+  {
+    "id": "c28",
+    "tinh_huong": "Trong lúc dựng video, Claude viết một script mới trong thư mục dự án và sửa một bước trong SKILL.md. Render xong, Claude định báo \"xong\" và đợi David nói \"cập nhật não\" rồi mới đẩy.",
+    "lua_chon": {
+      "A": "Đưa script vào đúng skill trong repo, đẩy GitHub ngay bằng dong-bo.sh --push trước khi báo xong; không chờ \"cập nhật não\". Video và dự án dựng ở lại máy và Drive.",
+      "B": "Báo xong trước, đẩy GitHub khi David nói \"cập nhật não\".",
+      "C": "Đẩy cả thư mục dự án video lên GitHub cho đủ."
+    }
+  },
+  {
+    "id": "c29",
+    "tinh_huong": "Nghe lại video, Claude thấy câu kết của David nói hơi rời rạc và nghĩ ra một câu kết gọn, hay hơn.",
+    "lua_chon": {
+      "A": "Không đề xuất đổi lời, không viết mẫu lời hay kịch bản thu âm lại; giữ nguyên lời David, màn chốt dùng chính câu David nói; Claude chỉ lo hình, nhịp và cách trình bày để người xem hiểu ý.",
+      "B": "Ghi câu kết mới lên màn chốt vì gọn và hay hơn.",
+      "C": "Gửi David câu kết mới và đề nghị thu âm lại."
+    }
+  },
+  {
+    "id": "c30",
+    "tinh_huong": "David nói \"sáu mươi ngày đầu tiên\". Claude định cho một con số chạy từ 0 lên 60 trên màn hình, và ở đoạn tua nhanh thêm nhãn \"×1,6\".",
+    "lua_chon": {
+      "A": "Không dùng số chạy (khung giữa hiện số David không nói), chỉ hiện đúng con số David nói; không hiện nhãn tốc độ hay ghi chú kỹ thuật, hiệu ứng tua nhanh vẫn dùng nhưng không chú thích.",
+      "B": "Số chạy tạo chuyển động, nhãn ×1,6 cho người xem biết đang tua.",
+      "C": "Dùng số chạy nhưng bỏ nhãn ×1,6."
+    }
+  },
+  {
+    "id": "c31",
+    "tinh_huong": "David nói \"dựng nhẹ thôi\". Claude ra bản chỉ có phụ đề và nhạc nền.",
+    "lua_chon": {
+      "A": "Vẫn phải có motion graphics kể chuyện: điểm nhấn kéo mắt người xem vào ý đang nói, nhiều loại (hình vẽ, chữ nhấn cụm, làm nổi người nói), ý nhắc lại thì vẽ tiếp lên hình đã có; chỉ giữ cố định chữ ký nhận diện. \"Nhẹ\" là ít kiểu, không phải bỏ hẳn.",
+      "B": "\"Nhẹ\" nghĩa là chỉ phụ đề và nhạc.",
+      "C": "Dùng đúng danh mục kiểu cảnh của video trước để giống nhau cho nhanh."
+    }
   }
- },
- {
-  "id": "c02",
-  "tinh_huong": "Đang dựng video, muốn đặt một dòng chữ lớn trên màn hình tóm ý của David cho hay hơn.",
-  "lua_chon": {
-   "A": "Rút gọn ý thành một câu mới hay hơn.",
-   "B": "Tự đặt một câu tít gây tò mò.",
-   "C": "Chỉ dùng cụm từ nguyên văn trong lời David nói, không diễn đạt lại."
-  }
- },
- {
-  "id": "c03",
-  "tinh_huong": "Render xong video. Có nên xuất thêm một bản dự án cho CapCut hoặc DaVinci để David chỉnh?",
-  "lua_chon": {
-   "A": "Có, để David tự chỉnh.",
-   "B": "Không. David chỉ dùng bản render cuối.",
-   "C": "Hỏi David lần nào cũng hỏi."
-  }
- },
- {
-  "id": "c04",
-  "tinh_huong": "Thư mục dự án video vừa làm xong (video gốc, bản dựng) có nên đẩy lên GitHub không?",
-  "lua_chon": {
-   "A": "Không. GitHub chỉ giữ phần dùng chung (luật, hồ sơ, skill, script, mẫu); sản phẩm làm ra ở lại máy và Drive.",
-   "B": "Đẩy hết lên để không mất.",
-   "C": "Đẩy lên repo riêng tư bo-nao-david-mac."
-  }
- },
- {
-  "id": "c05",
-  "tinh_huong": "Cần tạo một file mới về kế hoạch bán hàng. Đặt tên file thế nào?",
-  "lua_chon": {
-   "A": "kh-ban-hang.md",
-   "B": "SalesPlan.md",
-   "C": "ke-hoach-ban-hang.md — đi từ thuật ngữ kinh doanh chuẩn Sales Plan, tra và ghi vào bảng thuật ngữ."
-  }
- },
- {
-  "id": "c06",
-  "tinh_huong": "Viết một ghi chú vào bộ não. Cách viết nào đúng?",
-  "lua_chon": {
-   "A": "\"vd. dùng sl nhỏ, ko cần hỏi lại\"",
-   "B": "\"Ví dụ: dùng số lượng nhỏ, không cần hỏi lại\" — viết đủ từ, đủ nghĩa.",
-   "C": "Viết tắt cũng được vì AI vẫn hiểu."
-  }
- },
- {
-  "id": "c07",
-  "tinh_huong": "Lần đầu đọc được một mẹo trình bày video hay từ một kênh khác.",
-  "lua_chon": {
-   "A": "Sửa ngay nguyên lý chung để mọi video dùng.",
-   "B": "Ghi vào kho / nguồn tham khảo (tầng dữ liệu) trước, gắn vào một nguyên lý; chỉ lên quy trình khi lặp lại hoặc đo được là giúp.",
-   "C": "Bỏ qua vì chưa chắc."
-  }
- },
- {
-  "id": "c08",
-  "tinh_huong": "David nhắc lại cùng một điều lần thứ hai.",
-  "lua_chon": {
-   "A": "Sửa ngay đúng nguồn của luật đó và thêm một câu kiểm, không đợi lượt nhìn lại tuần.",
-   "B": "Ghi lại để tuần sau xem.",
-   "C": "Xin lỗi rồi làm tiếp."
-  }
- },
- {
-  "id": "c09",
-  "tinh_huong": "Ở một đoạn im lặng, bản chép lời tự động ra câu \"Hãy subscribe cho kênh…\".",
-  "lua_chon": {
-   "A": "Giữ làm phụ đề.",
-   "B": "Hỏi David.",
-   "C": "Bỏ câu đó: máy chép lời bịa đặt chữ ở đoạn không có tiếng."
-  }
- },
- {
-  "id": "c10",
-  "tinh_huong": "Video nói chuyện dài 25 phút, có nhiều chỗ \"ờ, ừm\", ngập ngừng, nói lại.",
-  "lua_chon": {
-   "A": "Cắt hết cho gọn.",
-   "B": "Không cắt gì: video dài là bản gốc; chỉ bỏ đoạn khi David yêu cầu bỏ ý hoặc khi tách bản theo hướng nghề.",
-   "C": "Cắt còn khoảng 10 phút đoạn hay nhất."
-  }
- },
- {
-  "id": "c11",
-  "tinh_huong": "Bài đăng đã soạn xong. Muốn đăng lên trang Facebook giúp David cho nhanh.",
-  "lua_chon": {
-   "A": "Hỏi trước; chỉ đăng khi David nói \"đăng\".",
-   "B": "Tự đăng luôn.",
-   "C": "Đăng ở chế độ riêng tư trước."
-  }
- },
- {
-  "id": "c12",
-  "tinh_huong": "Lên lịch nội dung tháng tới. Có tính tới chuyện David sang Đức không?",
-  "lua_chon": {
-   "A": "Có, chuẩn bị nội dung tiếng Đức.",
-   "B": "Hỏi David mỗi lần.",
-   "C": "Không: đó chỉ là dự định, chưa tính vào việc, nội dung hay lịch tới khi David khẳng định."
-  }
- },
- {
-  "id": "c13",
-  "tinh_huong": "Có thông tin về hợp đồng với một khách của công ty Veltrix.",
-  "lua_chon": {
-   "A": "Ghi vào bộ não David.",
-   "B": "Ghi vào bộ não công ty ~/Documents/bo-nao-veltrix.",
-   "C": "Ghi cả hai nơi cho chắc."
-  }
- },
- {
-  "id": "c14",
-  "tinh_huong": "Một luật chỉ áp cho nghề trainer của David nhưng đang nằm lẫn trong quy trình đóng gói tin tuần.",
-  "lua_chon": {
-   "A": "Để nguyên cho đỡ sửa.",
-   "B": "Chuyển về đúng nguồn (chiến lược nghề nghiệp); quy trình kia chỉ còn một dòng trỏ.",
-   "C": "Chép sang cả hai nơi."
-  }
- },
- {
-  "id": "c15",
-  "tinh_huong": "Đang dựng video, phân vân nhạc nền nào hợp.",
-  "lua_chon": {
-   "A": "Hỏi David chọn nhạc.",
-   "B": "Để không nhạc cho an toàn.",
-   "C": "Tự chọn từ kho nhạc kênh theo tuyến nội dung, ghi \"đã chọn X vì Y\" trong báo cáo cuối."
-  }
- },
- {
-  "id": "c16",
-  "tinh_huong": "Trong video công khai, David tự nói \"tôi là coach\".",
-  "lua_chon": {
-   "A": "Tự sửa lời thành \"trainer\".",
-   "B": "Cắt đoạn đó đi.",
-   "C": "Giữ lời, cảnh báo trong phiếu lọc và báo cáo để David quyết; chữ trên hình, tiêu đề, mô tả không dùng chữ coach."
-  }
- },
- {
-  "id": "c17",
-  "tinh_huong": "Đang dựng video theo kế hoạch đã duyệt. Render ra thì phụ đề lệch giờ vì quên cộng độ trễ của đoạn đã cắt; mục tiêu và kế hoạch vẫn đúng.",
-  "lua_chon": {
-   "A": "Dừng lại, trình David một kế hoạch mới.",
-   "B": "Sửa ngay cách làm (cộng độ trễ), render lại, soát rồi giao kết quả.",
-   "C": "Giao bản đang có kèm ghi chú phụ đề lệch, coi như đạt."
-  }
- },
- {
-  "id": "c18",
-  "tinh_huong": "Gói đào tạo đã làm đúng mọi bước của kế hoạch nhưng sau ba tuần không ai mua; kiểm ra thì khách trong tệp không có nỗi đau mà gói giải quyết.",
-  "lua_chon": {
-   "A": "Làm y như cũ thêm vài tuần nữa cho đủ thời gian.",
-   "B": "Hạ mục tiêu doanh số xuống cho vừa kết quả.",
-   "C": "Ghi rõ giả định nào của kế hoạch sai, quay lại Kế hoạch (đổi kế hoạch, quy trình, cách thực thi) và trình David."
-  }
- },
- {
-  "id": "c19",
-  "tinh_huong": "Tài liệu khối 09 ghi ép nhạc bằng khoá `music`, nhưng chạy xong ba video đều ra cùng một bài và nhật ký ghép báo bài khác với kế hoạch.",
-  "lua_chon": {
-   "A": "Đọc code công cụ để biết khoá thật, tin code, sửa tài liệu, cho công cụ tự dừng khi gặp khoá sai, ghi ca vào lỗi thường gặp rồi báo David nguyên nhân và chỗ đã chặn.",
-   "B": "Đổi bài nhạc thủ công cho từng video rồi báo David là xong.",
-   "C": "Ghi vào nhật ký là nhạc chưa đúng, để lần sau xử lý."
-  }
- },
- {
-  "id": "c20",
-  "tinh_huong": "Một đoạn David nói về cách người xem tìm khách hàng và làm marketing cho cửa hàng của họ.",
-  "lua_chon": {
-   "A": "Xếp vào hướng 3 (phạm trù Thị trường), đồng thời là dữ liệu cho giải pháp công nghệ.",
-   "B": "Xếp vào hướng 2 vì giúp người xem làm chủ thị trường của chính họ.",
-   "C": "Xếp vào hướng 1 vì nói về tiền."
-  }
- },
- {
-  "id": "c21",
-  "tinh_huong": "Trong lúc làm, Claude thấy một câu ở `tu-duy-goc.md` (tầng 0) nên viết khác đi cho đúng hơn với cách David vừa nói một lần.",
-  "lua_chon": {
-   "A": "Nếu chỉ làm rõ, thêm ví dụ mà nghĩa giữ nguyên thì nâng cấp và ghi sổ dẫn chứng; nếu đổi nghĩa thì chỉ ghi đề xuất kèm dẫn chứng vào sổ, chờ thêm nhiều lần tương tác và David chốt.",
-   "B": "Sửa ngay vì lời mới nhất thắng.",
-   "C": "Không bao giờ động vào file tầng 0."
-  }
- },
- {
-  "id": "c22",
-  "tinh_huong": "Video nguồn dài 25 phút. Hồ sơ skill ghi mặc định \"teaser khi dài hơn 600 giây\". Nội dung là một bài giảng liền mạch, không có câu nào đủ hay để làm lời mời xem tiếp.",
-  "lua_chon": {
-   "A": "Không làm teaser, ghi vào kế hoạch \"đã chọn không teaser vì không có câu then chốt\"; số trong hồ sơ chỉ là gợi ý, phù hợp với nội dung mới là tiêu chí.",
-   "B": "Làm teaser vì video dài hơn 600 giây như hồ sơ ghi.",
-   "C": "Hỏi David có muốn teaser không."
-  }
- },
- {
-  "id": "c23",
-  "tinh_huong": "Đang làm trên máy Windows, cần chạy một chuỗi lệnh dài trong WSL có đường dẫn tiếng Việt và khoảng trắng (thư mục Google Drive).",
-  "lua_chon": {
-   "A": "Viết chuỗi lệnh thành một tệp lệnh (.sh hoặc .py, mã hoá UTF-8) rồi chạy tệp đó bằng một lệnh ngắn; kết quả phải giống như chạy trên Mac.",
-   "B": "Gõ thẳng chuỗi lệnh qua PowerShell cho nhanh.",
-   "C": "Bỏ qua bước đó vì máy Windows không làm được."
-  }
- },
- {
-  "id": "c24",
-  "tinh_huong": "David gửi link một file video trên Drive và nói \"làm theo quy trình\". Sổ danh mục nội dung cho thấy chính file này đã được làm thành video ngày 20/11.",
-  "lua_chon": {
-   "A": "Tra sổ trước khi làm, báo David file đã làm ngày 20/11; nếu vẫn làm thì bản mới nhất thay bản cũ, ghi dòng mới vào sổ và đánh dấu dòng cũ đã thay.",
-   "B": "Làm như tài nguyên mới, giữ cả hai bản song song.",
-   "C": "Từ chối vì đã làm rồi."
-  }
- },
- {
-  "id": "c25",
-  "tinh_huong": "Xong một việc, Claude thấy một cách làm nhanh và chuẩn hơn cách đang ghi trong quy trình (ví dụ chép lời theo từng phân đoạn ngay từ đầu thay vì chép cả file rồi sửa).",
-  "lua_chon": {
-   "A": "Đề xuất sửa vào đúng nguồn duy nhất của quy trình đó (lá hoặc skill) kèm lý do và trường hợp thật, ghi một dòng nhật ký thay đổi; không để người sau lặp lại chỗ vấp.",
-   "B": "Ghi nhớ trong đầu để lần sau tự làm theo cách mới.",
-   "C": "Giữ nguyên quy trình vì đã được duyệt."
-  }
- }
 ]

@@ -16,9 +16,9 @@ description: "Cách xuất slide gói dựng video bằng AI ra PowerPoint (pptx
 **Cho người chưa biết gì về công nghệ** (David chốt 13/11/2026): mỗi bài có slide "Hiểu bằng chuyện đời thường" (chuyện quen thuộc nối sang việc trên máy) và "Từ mới của bài" (thuật ngữ + nghĩa một câu), ngay sau slide mục tiêu; bài 1 có thêm "Mở cửa sổ lệnh". Nội dung ở `them-slide.py`. Slide nào có lệnh máy thì mỗi dòng lệnh kèm dòng "→ nghĩa là" hoặc thay bằng lời AI báo lại, chữ tiếng Anh dịch nghĩa (`viet-lai-de-hieu.py`, kiểu `.mean`, `.say`, `.fact` trong `giao-dien-slide.css`); bài 0 có hình tổng quan, 8 bước bằng hình, từ điển nhỏ (`dung-phan-them.py`). Biểu tượng Lucide; trong pptx sửa được, biểu tượng là ảnh PNG do `bieu-tuong.mjs` vẽ (`pic()` trong `thu_vien_slide.py`).
 
 **Luật để Quick Look của macOS mở được** (đã thử 13/11/2026):
-- Không ghi chú (notes) trong pptx: Quick Look treo. Ghi chú để file docx riêng.
-- Không dùng hình vẽ (ô bo góc, chấm tròn) lặp giữa các slide: Quick Look lẫn hình của slide trước. Ô nền dùng bảng 1 ô (`box()` trong `thu_vien_slide.py`).
-- Chữ có dấu (ắ, ụ, ề…) phải khai cùng một font cho latin + ea + cs + sym, lang vi-VN (`vi_fonts()` trong `thu_vien_slide.py`, tự chạy khi lưu). Thiếu thì Quick Look nhảy sang Times, dấu lệch.
+- Không ghi chú (notes) trong pptx: Quick Look ngừng phản hồi. Ghi chú để ở file docx riêng.
+- Không dùng hình vẽ (ô bo góc, chấm tròn) lặp giữa các slide: Quick Look hiện lẫn hình của slide trước. Ô nền dùng bảng 1 ô (`box()` trong `thu_vien_slide.py`).
+- Chữ có dấu (ắ, ụ, ề…) phải khai cùng một font cho latin + ea + cs + sym, lang vi-VN (`vi_fonts()` trong `thu_vien_slide.py`, tự chạy khi lưu). Thiếu thì Quick Look chuyển sang font Times, dấu lệch.
 - Dãn dòng: chữ thường 1,3 + cách đoạn 0,35 cỡ chữ; tít 1,15; mã 1,35; ô bảng 1,2.
 
 **Chạy lại** (cần Chrome, Node có `@playwright/cli`, Python):
@@ -42,4 +42,4 @@ venv/bin/python dung-phan-them.py ~/Documents/1-nghe-nghiep/goi-dao-tao-dung-vid
 ```
 Kiểm hiển thị từng slide như Quick Look thấy: `bash kiem-tra.sh <file.pptx> <thư mục ra>` rồi xem `sheet-*.png`.
 Sửa slide 8 bài: sửa `../bai-N/trang-trinh-chieu/*.html` (thứ tự ở `bo-slide.json`, kiểu ở `../giao-dien-slide.css`), ảnh thật ánh xạ ở `anh-blob.json`.
-Sửa nội dung `1-quy-trinh.md`, `2-lo-trinh.md`, phiếu hay biểu mẫu thì sửa cả `dung-phan-them.py` cho khớp rồi xuất lại.
+Khi sửa nội dung `1-quy-trinh.md`, `2-lo-trinh.md`, phiếu hay biểu mẫu, người làm sửa cả `dung-phan-them.py` cho khớp rồi xuất lại.

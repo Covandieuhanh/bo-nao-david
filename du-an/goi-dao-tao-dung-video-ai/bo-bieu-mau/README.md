@@ -11,4 +11,4 @@ description: "Bộ biểu mẫu cho học viên gói dựng video bằng AI: bi�
 | [03-huong-dan-cong-viec.md](03-huong-dan-cong-viec.md) | 3–7 | hướng dẫn công việc khi làm từng bước hoặc sửa một bước |
 | [04-danh-sach-kiem-soat-chat-luong.md](04-danh-sach-kiem-soat-chat-luong.md) | 8 | kiểm soát chất lượng bản AI bàn giao trước khi dùng |
 
-**Chưa thử:** biểu mẫu 01 và 02 chưa chạy trên một máy sạch. Thử trước khi dạy khách đầu tiên.
+**Chưa thử:** biểu mẫu 01 và 02 chưa chạy trên một máy chưa cài công cụ. Trainer thử trước khi dạy khách đầu tiên.

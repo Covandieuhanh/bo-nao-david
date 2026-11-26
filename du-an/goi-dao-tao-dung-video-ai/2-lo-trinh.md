@@ -1,5 +1,5 @@
 ---
-description: "Gói 1 dựng video bằng AI, phần 2 lộ trình trainer: 4 buổi, đích học viên tự dựng ≥ 4 video không cần trainer."
+description: "Gói 1 dựng video bằng AI, phần 2 lộ trình trainer: 4 buổi, đích là học viên tự dựng ít nhất 4 video không cần trainer."
 ---
 
 # 2. Lộ trình trainer
@@ -19,16 +19,16 @@ Học viên **tự dựng 1 video bất kì bằng AI trên máy mình mà khôn
 Giữa hai buổi: học viên dựng tư liệu thật của mình, gửi kết quả; trainer phản hồi trong 24 giờ.
 
 ## Quy trình một học viên
-1. **Kiểm máy** (15 phút): máy, RAM, ổ trống, AI đang dùng. Không đủ thì nói thẳng, không nhận.
+1. **Kiểm máy** (15 phút): máy, RAM, ổ trống, AI đang dùng. Không đủ thì trainer nói rõ, không nhận học viên.
 2. **Phiếu khảo sát đầu vào** (`4-phieu-khao-sat-va-nghiem-thu.md`).
-3. **4 buổi** theo `3-giao-trinh.md`, mỗi buổi ghi: đã làm gì · Kết quả · Vấn đề · bài tập.
+3. **4 buổi** theo `3-giao-trinh.md`, mỗi buổi trainer ghi: đã làm gì · Kết quả · Vấn đề · bài tập.
 4. **Nghiệm thu**: học viên tự dựng 1 video, trainer chỉ xem.
-5. **Sau gói**: lời chứng + số trước/sau.
+5. **Sau gói**: lời chứng và số liệu trước/sau.
 
 ## Thực thi: trainer chuẩn bị trước khách đầu tiên
 - [x] Bộ biểu mẫu ([bo-bieu-mau/](bo-bieu-mau/README.md)): hướng dẫn thiết lập hệ thống, SOP, hướng dẫn công việc, danh sách kiểm soát chất lượng.
-- [ ] Thử hướng dẫn thiết lập + SOP trên một máy Mac sạch và một máy Windows.
+- [ ] Thử hướng dẫn thiết lập và SOP trên một máy Mac chưa cài công cụ và một máy Windows.
 - [ ] Bộ tư liệu thử (vài clip ngắn đủ loại: nói, vlog, quay màn hình) cho buổi 1.
 - [ ] Kết quả mẫu để demo: video trainer đã dựng ở từng bước (chỉ để xem, không dạy theo).
-- [ ] Chốt giá + kèm tiếp tối đa bao lâu.
+- [ ] Chốt giá và thời hạn kèm tiếp tối đa.
 - [ ] Học viên thử đầu tiên (`../pheu-ban-hang-goi-cong-nghe.md` giai đoạn 2).

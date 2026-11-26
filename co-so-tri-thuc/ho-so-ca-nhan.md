@@ -107,7 +107,7 @@ Xây "làng không biên giới": cộng đồng đoàn kết, hỗ trợ nhau t
 
 ## Đối chiếu hồ sơ với 6 câu hỏi
 
-Hồ sơ trả lời rõ nhất câu 4 (danh tính); câu 3 (hành vi hằng ngày) gần như trống, nên là chỗ cần điền trước. Cột Mức độ là đánh giá ban đầu — đổi lại khi bạn bổ sung.
+Hồ sơ trả lời rõ nhất câu 4 (danh tính); câu 3 (hành vi hằng ngày) gần như trống, nên đây là phần cần điền trước. Cột Mức độ là đánh giá ban đầu; bạn cập nhật lại khi bổ sung.
 
 | Câu hỏi | Hồ sơ đã trả lời | Còn trống | Mức độ |
 | --- | --- | --- | --- |
@@ -118,9 +118,9 @@ Hồ sơ trả lời rõ nhất câu 4 (danh tính); câu 3 (hành vi hằng ng�
 | 5. Năng lực và tài nguyên | Ưu điểm, thế mạnh, tài nguyên, nền tảng (mục 01–04) và điểm cần cải thiện (mục 05) | Bằng chứng: số liệu mạng lưới, doanh thu, số dự án hay khóa đào tạo thành công, kết quả marketing | Một phần |
 | 6. Động cơ | Nuôi bản thân, vợ và con đến tuổi trưởng thành; trả nợ; mốc 50 tỷ đồng; làng không biên giới cho thế hệ sau | Vì sao chọn nghề đào tạo để đi tới các mục tiêu này; mốc 50 tỷ được tính từ đâu | Một phần |
 
-## Những điểm cần tự soi kỹ
+## Những điểm cần tự xét kỹ
 
-Đây là bảy chỗ hồ sơ, mục tiêu và 6 hành động đang kéo về hai hướng khác nhau. Mỗi chỗ kết thúc bằng một câu hỏi để bạn tự trả lời.
+Đây là bảy điểm mà hồ sơ, mục tiêu và 6 hành động đang hướng về hai phía khác nhau. Mỗi chỗ kết thúc bằng một câu hỏi để bạn tự trả lời.
 
 1. **Nghề đào tạo cần bán được chính dịch vụ đào tạo.** Nhưng bán hàng và chốt giao dịch đang là điểm cần cải thiện đầu tiên. *Ai sẽ là người chốt hợp đồng với doanh nghiệp đầu tiên — bạn, Rex, hay một đối tác?*
 2. **Có nghĩa vụ trả cố định hằng tháng, nhưng hồ sơ chưa ghi thu nhập.** Thiếu con số này thì câu 6 (động cơ tài chính) chưa đo được. *Thu nhập hằng tháng hiện tại là bao nhiêu và đến từ đâu?*
@@ -128,9 +128,9 @@ Hồ sơ trả lời rõ nhất câu 4 (danh tính); câu 3 (hành vi hằng ng�
 4. **Hành động 6 (đừng để quá rảnh) đặt cạnh giấc ngủ chập chờn.** Một lịch kín không có khoảng nghỉ có chủ đích dễ làm năng lượng tụt thêm. *Khoảng nghỉ thật sự của bạn nằm ở giờ nào trong ngày?*
 5. **Cả nể, khó từ chối khi vai trò chưa rõ.** Nguyên tắc "chỉ hỗ trợ khi người khác muốn" nói về việc không xen vào, chưa nói về việc biết từ chối. *Tuần qua bạn đã nhận việc gì lẽ ra nên từ chối?*
 6. **Nét mặt gắt, nói to mà không nhận ra.** Với người đứng lớp, đây là điều học viên thấy trước tiên. *Ai có thể nhắc bạn ngay lúc đó, hoặc bạn có thể quay video một buổi hướng dẫn để tự xem lại?*
-7. **"Biết đủ" trong ước mơ và mốc 50 tỷ đồng.** Hai điều này không nhất thiết mâu thuẫn, nhưng cần được nối với nhau. *50 tỷ là con số "đủ" cho điều gì cụ thể, và vào năm nào?*
+7. **"Biết đủ" trong ước mơ và mốc 50 tỷ đồng.** Hai điều này không nhất thiết mâu thuẫn, nhưng cần được liên kết với nhau. *50 tỷ là con số "đủ" cho điều gì cụ thể, và vào năm nào?*
 
-Ngoài ra, hai công cụ ở hành động 3 (đọc sách, xem video) đều là tiếp nhận; theo đúng hành động 4, công cụ thứ ba có thể là một việc làm bằng tay chân.
+Ngoài ra, hai công cụ ở hành động 3 (đọc sách, xem video) đều là tiếp nhận; theo đúng hành động 4, công cụ thứ ba có thể là một hoạt động thực hành (tự tay làm).
 
 ## Phiếu tự điền
 

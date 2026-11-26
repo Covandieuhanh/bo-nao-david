@@ -4,11 +4,11 @@ description: "Tách một buổi nói dài (buổi gặp, buổi 1:1, bài giả
 
 # Tách buổi dài thành nhiều video theo hướng (cây quy trình lá B4)
 
-**Khi nào dùng:** David nói "cắt đoạn thừa, phân ra thành các video theo hướng công việc" hoặc gửi một buổi nói dài nhiều chủ đề. Làm thật
-lần đầu 22/11/2026 (buổi gặp 37 phút thành 3 video); kế hoạch dùng lại được ở [vi-du-tach-video.json](vi-du-tach-video.json).
+**Khi nào dùng:** David nói "cắt đoạn thừa, phân ra thành các video theo hướng công việc" hoặc David gửi một buổi nói dài nhiều chủ đề. Quy trình này đã chạy thật
+lần đầu ngày 22/11/2026 (buổi gặp 37 phút thành 3 video); kế hoạch dùng lại được ở [vi-du-tach-video.json](vi-du-tach-video.json).
 
 **Đầu vào:** video buổi nói (nhận theo lá B2 `phan-phoi-da-kenh/references/nhan-tai-nguyen.md`).
-Trong các lệnh dưới: `SKILL=~/Documents/bo-nao-david/ky-nang/san-xuat-video/dung-video-theo-phong-cach` (máy đã cài bộ não thì
+Trong các lệnh dưới: `SKILL=~/Documents/bo-nao-david/ky-nang/san-xuat-video/dung-video-theo-phong-cach` (máy tính đã cài bộ não thì
 `~/.claude/skills/dung-video-theo-phong-cach` trỏ cùng chỗ). Máy Windows: lệnh chạy trong WSL Ubuntu.
 
 **Thứ tự với 4 phần:** bước 1–2 (nhận, làm sạch, chép lời, phân hướng) là phần lọc làm trước khi trình 4 phần, như `phan-phoi-da-kenh`
@@ -16,22 +16,22 @@ bước 0–1; bước 3 trở đi (cắt, dựng, phát hành) chỉ làm sau k
 
 ## Các bước
 
-### 1. Làm sạch + chép lời buổi gốc một lần
+### 1. Làm sạch và chép lời buổi gốc một lần
 Công thức "Làm video" bước 1–6 của `SKILL.md` cho cả buổi (một dự án `tap-<buổi>`): làm sạch theo khối 02 (video dài giữ nguyên lời,
 `quy-tac-chung.md` mục 2), chép lời **theo từng phân đoạn ngắn** (`scripts/chep-theo-phan-doan.py`) rồi soát chữ ra `chuyen-dong/src/phu-de.js` TRƯỚC khi cắt (làm sau phải render lại). Các video tách ra dùng lại đúng phụ đề này, không chép lời lại.
 
 ### 2. Phân hướng theo khối 00 mục 0b (bắt buộc)
-Chia đoạn, gán hướng, ghép trọn ý, ghi `<thư mục tập>/phan-huong.md` + nhật ký nội dung từng hướng (`du-an/nhat-ky-noi-dung/`), đối chiếu
+Chia đoạn, gán hướng, ghép trọn ý, ghi `<thư mục tập>/phan-huong.md` và nhật ký nội dung từng hướng (`du-an/nhat-ky-noi-dung/`), đối chiếu
 kho 100 với hướng trainer: làm đúng [khối 00 mục 0b](../../mo-dun/00-sang-loc-noi-dung/README.md). Thêm khi tách từ một buổi dài:
-- In lời theo khối 20 giây (mốc + chữ) để đọc hết một lượt; đoạn **thừa** gồm cả đoạn cầm máy cho xem màn hình mà máy quay không thấy.
+- In lời theo khối 20 giây (mốc và chữ) để đọc hết một lượt; đoạn **thừa** gồm cả đoạn cầm máy cho xem màn hình mà máy quay không thấy.
 - Phần đời thường / hành trình của David không thuộc hướng nào thì **không dùng**; chưa xếp được thì hỏi David (`mo-hinh-kinh-doanh.md` mục 1b). Hành trình dẫn tới phát triển con người thì thuộc hướng 2.
 - Mốc mỗi đoạn lấy **đúng đầu / cuối câu** trong phụ đề (in các dòng quanh mốc để chọn).
 - **Lằn ranh** (khối 00 mục 3): mặc định giữ lời; liệt kê từng câu trong 4 phần cho David chọn giữ hay cắt. David chọn cắt thì tách đoạn
   bỏ riêng câu đó. Người khác xuất hiện (đối tác, khách): ghi vào mục "Ghi chú đăng" của gói phát hành, không hỏi, kể cả khách của công ty Veltrix
  .
-- Trình David bảng "video · hướng · đoạn · dài" + đoạn cắt + lằn ranh + clip ngắn dự kiến (4 phần), có mặc định.
+- Trình David bảng "video · hướng · đoạn · dài" kèm đoạn cắt, lằn ranh và clip ngắn dự kiến (4 phần), có mặc định.
 
-### 3. Cắt + tạo dự án (sau khi duyệt)
+### 3. Cắt và tạo dự án (sau khi duyệt)
 Viết `ke-hoach-tach.json` theo mẫu `vi-du-tach-video.json`: mỗi video `doan`, `topic`, `tuyen` (nhạc theo tuyến, khối 09), `ytEnd`
 (màn kết YouTube, khối 15 / 08), rồi:
 ```bash
@@ -42,8 +42,8 @@ Mỗi video ra `~/Movies/tap-<tên>/2-ban-day-du` có sẵn video gốc đã n�
 
 ### 4. Dựng từng video (như "Làm video", từ bước chẩn đoán)
 - `canh.js`: viết mốc theo **video gốc** (đối chiếu phụ đề gốc dễ), bọc bằng `g(giây)`; cảnh tự vẽ dùng `ve(id, đầu, cuối, {…})`.
-- Chẩn đoán + mở kho hình mẫu chọn cách cho từng ý (`thiet-ke-bo-cuc/huong-dan-lua-chon.md` bước 4d), ghi `Nguồn kho:`; các video cùng buổi được
-  phép chung một kiểu hình (máy soát nhắc P1 "giống tập trước" thì bỏ qua được).
+- Chẩn đoán và mở kho hình mẫu để chọn cách cho từng ý (`thiet-ke-bo-cuc/huong-dan-lua-chon.md` bước 4d), ghi `Nguồn kho:`; các video cùng buổi được
+  phép chung một kiểu hình (công cụ kiểm tra nhắc P1 "giống tập trước" thì bỏ qua được).
 - `node $SKILL/scripts/soat-canh.mjs <dự án>`, rồi `bash $SKILL/scripts/anh-kiem-canh.sh <dự án>` (lưới ảnh mỗi cảnh trên khung thật),
   soát bằng mắt: không che ai, chữ đọc được.
 - Render: `cd <dự án>/chuyen-dong && node xuat-video.mjs`, rồi `python3 -I $SKILL/scripts/xem-truoc-ban-dung.py <dự án>`; video từ
@@ -55,9 +55,9 @@ Mỗi video ra `~/Movies/tap-<tên>/2-ban-day-du` có sẵn video gốc đã n�
   trong `phat-hanh/doan-gioi-thieu.json`), bình luận ghim, màn kết gắn các video cùng bộ, lịch và thứ tự đăng theo sản phẩm, mục "Ghi chú đăng" (người xuất hiện, lằn ranh, nhạc
   tạm — để David biết, không hỏi).
 - Giao theo cây quy trình lá A6, **đủ hết lên Drive** (lời David: "khi quy trình đã làm ra sản phẩm gì thì đều tải lên drive đầy đủ hết"): mỗi video `cho-dang.sh gui <tập>` (tự làm bản xem
-  nhẹ); kết quả chung của buổi viết `~/Movies/<buổi>/doc-truoc.md` rồi `cho-dang.sh buoi <buổi>` → Drive `thanh-pham/_buoi-<buổi>/`.
-  `doc-truoc.md` = bảng ba dòng (Hướng · Kết quả · Ở đâu), **kể cả hướng không ra bản** và lý do; một dòng nói thư mục video có gì; một
-  dòng nói thư mục buổi có gì (nội bộ, không đăng); chỗ để video gốc (không tải lên khi quá nặng). Mẫu: Drive `thanh-pham/_buoi-tap-dji0028-2311/`.
+  nhẹ); kết quả chung của buổi viết `~/Movies/<buổi>/doc-truoc.md` rồi `cho-dang.sh buoi <buổi>` đưa lên Drive `thanh-pham/_buoi-<buổi>/`.
+  `doc-truoc.md` là bảng ba dòng (Hướng · Kết quả · Ở đâu), **kể cả hướng không ra bản** và lý do; một dòng nói thư mục video có gì; một
+  dòng nói thư mục buổi có gì (nội bộ, không đăng); chỗ để video gốc (không tải lên khi file dung lượng quá lớn). Mẫu: Drive `thanh-pham/_buoi-tap-dji0028-2311/`.
 
 ## Điểm duyệt
 - **Đ1** sau bước 2: bảng video theo hướng, đoạn cắt, lằn ranh (mặc định giữ lời), clip ngắn dự kiến. Chưa duyệt thì không cắt, không dựng.
@@ -66,7 +66,7 @@ Mỗi video ra `~/Movies/tap-<tên>/2-ban-day-du` có sẵn video gốc đã n�
   xuất hiện (cả khách Veltrix) thì vẫn dựng, ghi vào "Ghi chú đăng", không hỏi; vẫn giữ Đ2 (`quy-trinh.md` mục 1).
 
 ## Xong khi
-- Có `phan-huong.md` của tập + mục nhật ký nội dung từng hướng có ý; Drive `thanh-pham/_buoi-<buổi>/` có `doc-truoc.md`, phân hướng,
+- Có `phan-huong.md` của tập và mục nhật ký nội dung từng hướng có ý; Drive `thanh-pham/_buoi-<buổi>/` có `doc-truoc.md`, phân hướng,
   bản chép lời cả buổi, nhật ký ba hướng (và lỗi kỹ năng nếu có), so khớp từng tệp.
 - Mỗi video theo hướng là một dự án dựng xong: soát cảnh đạt, lưới ảnh kiểm không che ai, âm lượng −14 LUFS, có clip ngắn (hoặc ghi lý
   do không có), gói phát hành và ảnh thu nhỏ; đã giao theo lá A6.

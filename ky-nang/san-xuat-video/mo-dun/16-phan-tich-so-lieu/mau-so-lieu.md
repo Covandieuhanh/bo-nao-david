@@ -4,7 +4,7 @@ description: "Mẫu file số liệu một video, điền sau 7 ngày đăng."
 
 # Số liệu — <tên video>
 
-*Chép mẫu này vào `<dự án>/so-lieu.md` lúc giao. Điền sau 7 ngày từ ảnh chụp số liệu David gửi (khối 16).*
+*Mẫu này được chép vào `<dự án>/so-lieu.md` lúc bàn giao, rồi được điền sau 7 ngày, dựa trên ảnh chụp số liệu David gửi (khối 16).*
 
 | | |
 |---|---|
@@ -22,11 +22,11 @@ description: "Mẫu file số liệu một video, điền sau 7 ngày đăng."
 | Tỉ lệ xem hết / % xem trung bình | | |
 | Thời lượng xem trung bình | | |
 | Giây người xem rời nhiều nhất | | lúc đó trên video đang có gì? |
-| % còn lại ở giây 3 (video ngắn) | | câu mở có giữ người không |
+| % còn lại ở giây 3 (video ngắn) | | câu mở có giữ chân người xem không |
 | CTR thumbnail (video dài) | | |
 | Lưu / chia sẻ / bình luận | | |
 | Lượt mở bản đầy đủ (highlight, nếu xem được) | | |
 
-## Rút ra (một điều, có bằng chứng)
-- So với video trước:
-- Đề xuất chỉnh luật (chờ David duyệt):
+## Bài học rút ra (một điều, có dẫn chứng)
+- So sánh với video trước:
+- Đề xuất điều chỉnh luật (chờ David duyệt):

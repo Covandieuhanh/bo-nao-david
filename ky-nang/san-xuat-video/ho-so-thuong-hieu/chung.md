@@ -13,4 +13,4 @@ description: "Hồ sơ tham số chung cả 4 loại video: khoá, ý nghĩa, ng
 | `youtube.*` | video > 180 s đăng YouTube: màn kết 20 s; > 600 s: teaser 15–25 s | 11/30 video dài Việt có màn kết |
 | `thumbnail.*` | tối đa 8 chữ, tối đa 3 tầng | 10/10 video dài Việt |
 
-Các khoá trần cứng về bố cục (`toan_man_max_s`, `mat_hien_min`, `mat_do_canh_s`) không dùng: code thiếu khoá = không chặn.
+Các khoá giới hạn tối đa bắt buộc về bố cục (`toan_man_max_s`, `mat_hien_min`, `mat_do_canh_s`) không dùng: code thiếu khoá thì không chặn.

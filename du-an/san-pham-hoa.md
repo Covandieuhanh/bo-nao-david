@@ -1,14 +1,14 @@
 ---
-description: "Dự án máy gom và đóng gói: mọi nguồn hằng ngày → phân loại theo hướng nghề → sản phẩm bán được; kế hoạch và lịch chạy."
+description: "Dự án công cụ gom và đóng gói: mọi nguồn hằng ngày được phân loại theo hướng nghề rồi thành sản phẩm bán được; kế hoạch và lịch chạy."
 ---
 
-# Máy gom và đóng gói: mọi thứ hằng ngày thành sản phẩm bán được
+# Công cụ gom và đóng gói: mọi thứ hằng ngày thành sản phẩm bán được
 
 Skill: `ky-nang/san-pham-hoa/SKILL.md` (chỉ Mac chính). Script gom: `tu-dong-hoa/thu-thap-du-lieu/gom.py` (chỉ Mac chính).
 
 ## Mục tiêu
-Không ý nào, nỗi đau nào, bài học nào bị trôi mất. Mọi thứ phát sinh mỗi ngày (phiên Claude, tin nhắn, việc qua bot, lời trong video,
-bài đăng, số liệu) tự được gom, phân loại theo ba hướng nghề (`co-so-tri-thuc/david.md` 4.1) và đổ dần vào **sản phẩm bán được** và **gói có
+Không ý nào, nỗi đau nào, bài học nào bị bỏ sót. Mọi thứ phát sinh mỗi ngày (phiên Claude, tin nhắn, việc qua bot, lời trong video,
+bài đăng, số liệu) tự được gom, phân loại theo ba hướng nghề (`co-so-tri-thuc/david.md` 4.1) và được đưa dần vào **sản phẩm bán được** và **gói có
 các bước để trainer lại**.
 
 ## Kế hoạch
@@ -20,15 +20,15 @@ các bước để trainer lại**.
 David chốt 14/11/2026: nhịp đêm + tuần; gói đang chạy tự bổ sung, gói mới chỉ đề xuất khi ít nhất 5 người cùng gặp một nỗi đau (khớp mốc phễu); kho thô chỉ ở máy.
 
 ## Quy trình
-1. **Gom** (`gom.py`): đọc phần mới kể từ lần trước ở mọi nguồn, ghi một file ngày trong `~/Documents/2-ca-nhan/so-tay/kho-du-lieu/`.
-2. **Phân loại** (skill, việc 1): mỗi ý một dòng: hướng · tầng / mục tiêu · nỗi đau · bán được gì · dạng sản phẩm.
-3. **Đếm nỗi đau**: cùng một nỗi đau gộp một dòng, đếm số người khác nhau gặp nó.
-4. **Đóng gói** (skill, việc 2): nguyên liệu thuộc gói đang chạy thì bổ sung bài học, ví dụ, câu hỏi thường gặp; nguyên liệu kể chuyện thật thì bài phễu nháp; nỗi đau ít nhất 5 người thì phiếu đề xuất gói mới.
-5. **Báo** David qua Telegram; David chọn gói mới, duyệt bài trước khi đăng.
+1. **Gom** (`gom.py`): script đọc phần mới kể từ lần trước ở mọi nguồn, ghi một file ngày trong `~/Documents/2-ca-nhan/so-tay/kho-du-lieu/`.
+2. **Phân loại** (skill, việc 1): Claude ghi mỗi ý một dòng: hướng · tầng / mục tiêu · nỗi đau · bán được gì · dạng sản phẩm.
+3. **Đếm nỗi đau**: Claude gộp cùng một nỗi đau vào một dòng, đếm số người khác nhau gặp nó.
+4. **Đóng gói** (skill, việc 2): nguyên liệu thuộc gói đang chạy thì bổ sung bài học, ví dụ, câu hỏi thường gặp; nguyên liệu kể chuyện thật thì thành bài phễu nháp; nỗi đau có ít nhất 5 người thì thành phiếu đề xuất gói mới.
+5. **Báo** cho David qua Telegram; David chọn gói mới và duyệt bài trước khi đăng.
 
 ## Thực thi
 - [x] David duyệt thiết kế (14/11)
 - [x] Script gom + skill + lịch đêm và tuần (14/11)
 - [x] Chạy thử lượt đầu (14/11)
 - [ ] Chạy thử đóng gói lần 1 (CN 15/11 06:30, dòng `chỉ ngày` trong `tu-dong-hoa/lich/lich-chay.md`); lần 2 thứ 6 20/11 06:30
-- [ ] Sau 2 tuần: rà xem phân loại có đúng hướng không, nỗi đau nào lên ngưỡng, sửa skill theo `hoc-lien-tuc`
+- [ ] Sau 2 tuần: rà soát xem phân loại có đúng hướng không, nỗi đau nào đạt ngưỡng, sửa skill theo `hoc-lien-tuc`

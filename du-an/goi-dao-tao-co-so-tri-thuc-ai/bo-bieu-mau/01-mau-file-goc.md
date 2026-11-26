@@ -4,9 +4,9 @@ description: "Biểu mẫu 01 gói dựng bộ não: mẫu bốn file gốc (c�
 
 # Biểu mẫu 01 · Mẫu các file
 
-File biểu mẫu này tải lên Projects ở bước 1 với tên `01-mau-file-goc.md` và **để đó luôn**: AI dùng nó để tạo file mới. Nó là mẫu, không phải thông tin về mình, nên không ghi vào bảng file.
+Học viên tải file biểu mẫu này lên Projects ở bước 1 với tên `01-mau-file-goc.md` và **giữ ở đó lâu dài**: AI dùng nó để tạo file mới. Nó là mẫu, không phải thông tin về học viên, nên không ghi vào bảng file.
 
-Chép từng mẫu thành một file trong thư mục `bo-nao`, đúng tên file ghi ở tiêu đề (cách tạo file: biểu mẫu 00, thao tác 3). **Chỉ chép phần bên trong**, không chép dòng ba dấu ``` ở đầu và cuối mỗi mẫu. Chỗ `<…>` là chỗ điền. Dòng đầu mỗi file luôn là câu mô tả file đó chứa gì: AI đọc câu này để biết có cần mở file hay không.
+Học viên chép từng mẫu thành một file trong thư mục `bo-nao`, đúng tên file ghi ở tiêu đề (cách tạo file: biểu mẫu 00, thao tác 3). **Chỉ chép phần bên trong**, không chép dòng ba dấu ``` ở đầu và cuối mỗi mẫu. Chỗ `<…>` là chỗ điền. Dòng đầu mỗi file luôn là câu mô tả file đó chứa gì: AI đọc câu này để biết có cần mở file hay không.
 
 | Mẫu | Tạo ở bước |
 |---|---|
@@ -21,7 +21,7 @@ Chép từng mẫu thành một file trong thư mục `bo-nao`, đúng tên file
 
 ## `doc-truoc.md` (file cửa vào)
 
-Ở bước 1 bảng file chỉ có bốn file gốc. Tạo file mới nào thì thêm một dòng vào bảng.
+Ở bước 1, bảng file chỉ có bốn file gốc. Học viên tạo file mới nào thì thêm một dòng vào bảng.
 
 ```markdown
 Mô tả: File cửa vào bộ não của <tên>. AI đọc file này đầu tiên rồi đọc tiếp theo thứ tự bên dưới.
@@ -79,7 +79,7 @@ Mô tả: Hồ sơ của <tên>: là ai, làm gì, mục tiêu, thế mạnh, c�
 
 ## `luat-lam-viec.md` (luật AI phải theo)
 
-Luật 4 tới 8 là **5 điều mình hay phải nhắc AI nhất** (ghi ra ở bài tập bài 1).
+Luật 4 tới 8 là **5 điều học viên hay phải nhắc AI nhất** (học viên ghi ra ở bài tập bài 1).
 
 ```markdown
 Mô tả: Luật AI phải theo khi làm việc với <tên>. Lời <tên> nói sau cùng là luật hiện hành.
@@ -99,7 +99,7 @@ Mô tả: Luật AI phải theo khi làm việc với <tên>. Lời <tên> nói 
 
 ---
 
-## `trang-thai.md` (việc đang dở)
+## `trang-thai.md` (việc đang làm chưa xong)
 
 ```markdown
 Mô tả: Trạng thái hiện tại: việc đang dở, việc tiếp theo, việc chờ <tên> quyết. Cập nhật cuối mỗi buổi.

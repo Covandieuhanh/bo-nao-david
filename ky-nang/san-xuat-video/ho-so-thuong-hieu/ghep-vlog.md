@@ -4,7 +4,7 @@ description: "Hồ sơ tham số loại ghép vlog: hình mẫu chính, mở gh�
 
 # Hồ sơ: Ghép vlog
 
-**Hình mẫu chính:** Khoai Lang Thang (mở ghép 1–1,7 s/cảnh, flycam, chương theo nơi, màn kết 2 video) + Jessie Luong (khung mở
+**Hình mẫu chính:** Khoai Lang Thang (mở ghép 1–1,7 s/cảnh, flycam, chương theo nơi, màn kết 2 video) và Jessie Luong (khung mở
 đầu · chào · hành trình · kết bằng lời người quay). Thử thách: Lâm Vlog (luật + tiền cược 30 s đầu, thẻ vòng/điểm).
 Báo cáo: `dung-video-theo-phong-cach/references/hoc-tu-20-vlog-vn.md`.
 

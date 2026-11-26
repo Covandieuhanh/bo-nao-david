@@ -1,14 +1,14 @@
 ---
-description: "Rà soát video cũ trên TikTok và fanpage (05/11): danh sách đề xuất ẩn (riêng tư), không xoá."
+description: "Rà soát video cũ trên TikTok và fanpage (05/11): danh sách video đề xuất ẩn (chuyển sang riêng tư), không xoá."
 ---
 
 # Rà soát video cũ — 05/11/2026
 
-Ẩn = để **riêng tư** (TikTok: "Chỉ mình tôi"; fanpage: chuyển vào kho lưu trữ). Không xoá, mở lại được bất cứ lúc nào.
+Ẩn nghĩa là chuyển sang chế độ **riêng tư** (TikTok: "Chỉ mình tôi"; fanpage: chuyển vào kho lưu trữ). Video không bị xoá và có thể mở lại bất cứ lúc nào.
 
 ## TikTok @davidsuckhoe (88 video đọc được)
 
-### Nhóm A — chạm lằn ranh cứng (chữa bệnh, chẩn đoán, công dụng thiết bị, tâm linh) · đề xuất ẨN — 16
+### Nhóm A — chạm lằn ranh nghiêm ngặt (chữa bệnh, chẩn đoán, công dụng thiết bị, tâm linh) · đề xuất ẨN — 16
 - Thiết bị đo năng lượng 7 luân xa (29/7)
 - Diện chẩn tụt huyết áp trong chưa đầy 1 phút (22/7)
 - Giảm cơn đau đầu sau khi dùng thiết bị sức khoẻ (12/7)

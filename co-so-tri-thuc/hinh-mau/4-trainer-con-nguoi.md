@@ -1,5 +1,5 @@
 ---
-description: "Hình mẫu mục lớn 4 — trainer con người: khung ba tầng làm chủ (CCL), chương trình cho người lần đầu dẫn người, quy trình ca và chuẩn ICF, bảng giá, đứng lớp và sân khấu, lời chứng."
+description: "Hình mẫu mục lớn 4 — trainer con người: khung ba tầng làm chủ (CCL), chương trình cho người lần đầu dẫn người, quy trình một trường hợp và chuẩn ICF, bảng giá, đứng lớp và sân khấu, lời chứng."
 ---
 
 # 4. Trainer con người
@@ -13,13 +13,13 @@ Luật bản đồ: [README](README.md).
 | CCL — Center for Creative Leadership (QT) | tổ chức đào tạo lãnh đạo hàng đầu thế giới; hồ sơ 42 trang (04/11/2026) | khung lãnh đạo, chương trình, thuật ngữ dịch chuẩn; dùng làm gốc rồi cải tiến | `../nghien-cuu-ccl.md`, `../../tai-lieu-tham-khao/ccl/` |
 
 ## 4.2 Chương trình cho người lần đầu dẫn người 🟡
-Gốc từ CCL (4.1). Chưa nghiên cứu chương trình Việt cùng tệp (quản lý trẻ, quản lý mới) có kết quả công bố.
+Gốc từ CCL (4.1). Chưa nghiên cứu chương trình Việt Nam cùng nhóm khách hàng mục tiêu (quản lý trẻ, quản lý mới) có kết quả công bố.
 
 ## 4.3 Quy trình một trường hợp, coach chuẩn ICF ⬜
-Chưa nghiên cứu. Câu hỏi khi có việc: coach chuẩn ICF làm ca đầu, phiếu đầu vào, nhật ký trường hợp thế nào.
+Chưa nghiên cứu. Câu hỏi nghiên cứu khi có việc: coach chuẩn ICF làm trường hợp đầu tiên, phiếu đầu vào, nhật ký trường hợp như thế nào.
 
 ## 4.4 Bảng giá gói trainer ⬜
-Chưa nghiên cứu bảng giá công bố của trainer Việt cùng tệp (bảng giá hiện hành: `../chien-luoc-nghe-nghiep.md` 4.4).
+Chưa nghiên cứu bảng giá công bố của trainer Việt Nam cùng nhóm khách hàng mục tiêu (bảng giá hiện hành: `../chien-luoc-nghe-nghiep.md` 4.4).
 
 ## 4.5 Lớp nhóm, đứng lớp, sân khấu ⬜
 Chưa nghiên cứu. Ứng viên khi có việc: Tony Robbins (sân khấu), các mẫu diễn giả ở mục 1.2.

@@ -8,21 +8,23 @@ metadata:
   modified: 2026-11-11T10:12:31.818Z
 ---
 
-11/11/2026, video cuộc gọi hợp tác mất 4–5 giờ. David: "cái quan trọng nhất là học rất nhiều, tôi cần các skill phải tự động chọn ra
-được cách nào phù hợp với nội dung của video để làm việc"; "tập trung vào điện thoại" mà Claude chỉ cắt-phóng khung, rác vẫn còn;
-video nhiều nội dung cần motion graphic hiện nhiều thông tin hơn để người xem theo dõi.
+Ngày 11/11/2026, video cuộc gọi hợp tác mất 4–5 giờ để làm. David: "cái quan trọng nhất là học rất nhiều, tôi cần các skill phải tự động chọn ra
+được cách nào phù hợp với nội dung của video để làm việc"; "tập trung vào điện thoại" mà Claude chỉ cắt và phóng khung hình, các chi tiết thừa vẫn còn;
+video có nhiều nội dung cần motion graphic hiện nhiều thông tin hơn để người xem theo dõi.
 
-**Why:** kho hiệu ứng học nhiều nhưng không có bước "dấu hiệu thì kiểu", nên Claude chỉ dùng vài kiểu quen; thử-sai bằng render và mổ xẻ
-lỗi skill giữa chừng làm chậm.
+**Why:** kho hiệu ứng đã học nhiều nhưng không có bước "dấu hiệu thì kiểu", nên Claude chỉ dùng vài kiểu quen; cách thử và sai bằng render và việc phân tích
+lỗi skill giữa chừng làm chậm tiến độ.
 
-**How to apply:** luật ở `ky-nang/san-xuat-video/thiet-ke-bo-cuc/huong-dan-lua-chon.md` (chẩn đoán `chan-doan.py` → khung chủ thể `khung-chu-the.py`,
-bảng ghi chú chạy `GHI_CHU`, kiểu cảnh theo dạng câu) và mục "Nhịp làm" của `ky-nang/san-xuat-video/dung-video-theo-phong-cach/SKILL.md`. Học mẫu mới phải thêm dòng
+**How to apply:** luật nằm ở `ky-nang/san-xuat-video/thiet-ke-bo-cuc/huong-dan-lua-chon.md` (chẩn đoán bằng `chan-doan.py`, rồi xác định khung chủ thể bằng `khung-chu-the.py`,
+bảng ghi chú chạy `GHI_CHU`, kiểu cảnh theo dạng câu) và mục "Nhịp làm" của `ky-nang/san-xuat-video/dung-video-theo-phong-cach/SKILL.md`. Khi học mẫu mới, Claude phải thêm dòng
 dấu hiệu vào huong-dan-lua-chon.md. Liên quan [[quy-tac-goi-y-de-david-chon]], [[video-tham-my-chi-giu-nhan-dien]].
 
-19/11/2026, sau tập "Marketing là nỗi đau và nhu cầu": David thấy video ngắn đến dài, nội dung nào cũng một kiểu thẩm mỹ và bố cục —
+Ngày 19/11/2026, sau tập "Marketing là nỗi đau và nhu cầu": David thấy từ video ngắn đến video dài, nội dung nào cũng chỉ có một kiểu thẩm mỹ và bố cục —
 "bao nhiêu cái học về bố cục và motion graphic cũng như thẩm mỹ thì không có chỗ ứng dụng vì không hề được tự động nhận diện".
-Gốc: kho chỉ nối vào mẫu 1 video; tập 2 file đi mẫu ghép (thiếu nửa kho, không bước chẩn đoán, máy sinh chỉ viết pow), Claude chép
-kịch bản bản trước. David duyệt đường A và chốt: *"mọi thứ cần phát huy tối đa được sức mạnh của AI, mọi lựa chọn đều phải được tự động
+Nguyên nhân gốc: kho chỉ được nối vào mẫu 1 video; tập gồm 2 file lại đi theo mẫu ghép (thiếu nửa kho, không có bước chẩn đoán, công cụ sinh cảnh chỉ viết pow), và Claude sao chép
+kịch bản của bản trước. David duyệt phương án A và chốt: *"mọi thứ cần phát huy tối đa được sức mạnh của AI, mọi lựa chọn đều phải được tự động
 setup phù hợp với nội dung của tài nguyên nguồn"*.
-**How to apply (bổ sung):** nhiều file cùng buổi nói thì nối file, mẫu 1 video; mẫu ghép chỉ cho vlog nhiều cảnh + clip ngắn; huong-dan-lua-chon.md
-bước 0 (không chép tập trước, bảng mẫu) + bước 2b (thẩm mỹ); `soat-canh.mjs` chặn render khi thiếu `## Chẩn đoán` hoặc cả video một kiểu.
+**How to apply (bổ sung):** khi có nhiều file cùng một buổi nói, Claude nối các file và dùng mẫu 1 video; mẫu ghép chỉ dùng cho vlog nhiều cảnh và clip ngắn; huong-dan-lua-chon.md
+bước 0 (không sao chép tập trước, bảng mẫu) và bước 2b (thẩm mỹ); `soat-canh.mjs` chặn render khi thiếu `## Chẩn đoán` hoặc khi cả video chỉ có một kiểu.
+
+Gốc: khối 2 (Hành động) của tu-duy-goc.md — mọi lựa chọn dựng phải được chọn tự động cho hợp nội dung của chính tài nguyên nguồn, chẩn đoán trước rồi mới chọn, không chép tập trước.

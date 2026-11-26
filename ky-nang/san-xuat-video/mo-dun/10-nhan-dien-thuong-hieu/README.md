@@ -17,14 +17,14 @@ description: "Khối 10 bộ nhận diện David trên video: dấu góc, thanh 
 
 ## Luật
 - Bộ nhận diện (chữ ký + thành phần cố định): `thu-vien-tai-nguyen/nhan-dien-chung.md`. Không có mẫu thì dùng phong cách mặc định của template.
-- **Rút phong cách từ mẫu không đụng chữ ký:** màu nhấn cam, hai font chính, thành phần cố định giữ nguyên. Ngoài chữ ký (nền, màu phụ,
+- **Rút phong cách từ mẫu không tác động tới chữ ký:** màu nhấn cam, hai font chính, thành phần cố định được giữ nguyên. Các thành phần ngoài chữ ký (nền, màu phụ,
   hình dạng thẻ, kiểu hình, chuyển động, loại cảnh, mật độ) được lấy theo mẫu.
 
 ## Cách làm — rút phong cách từ video mẫu
 ```bash
 zsh $SKILL/scripts/phan-tich-video.sh "$P/tai-lieu-tham-khao/mau.<ext>" "$P/tai-lieu-tham-khao"
 ```
-Xem kỹ contact sheet + các khung lớn của mẫu (nếu chỉ có ảnh chụp thì xem ảnh). Làm theo `references/phan-tich-phong-cach.md` để viết
-`$P/phong-cach.md`: nền, màu phụ (mã hex), hình dạng thẻ, kiểu chuyển động, các loại cảnh xuất hiện, mật độ. Rồi áp vào code: `chu-de.js`
-(màu ngoài màu nhấn), và chỉnh/viết thêm component khi mẫu có kiểu cảnh mà template chưa có. Font chữ nhấn phụ có tiếng Việt:
-`phong-chu.js` (cài `@fontsource/<font>`). Mẫu ngang 16:9 mà video gốc dọc: giữ tinh thần (nền, nhịp), bố cục theo khung dọc.
+Claude xem kỹ contact sheet + các khung hình lớn của mẫu (nếu chỉ có ảnh chụp thì xem ảnh). Claude làm theo `references/phan-tich-phong-cach.md` để viết
+`$P/phong-cach.md`: nền, màu phụ (mã hex), hình dạng thẻ, kiểu chuyển động, các loại cảnh xuất hiện, mật độ. Sau đó Claude áp dụng vào code: `chu-de.js`
+(các màu ngoài màu nhấn), và chỉnh sửa hoặc viết thêm component khi mẫu có kiểu cảnh mà template chưa có. Font chữ nhấn phụ có tiếng Việt:
+`phong-chu.js` (cài `@fontsource/<font>`). Khi mẫu ngang 16:9 mà video gốc dọc: giữ tinh thần chung (nền, nhịp), bố cục theo khung dọc.

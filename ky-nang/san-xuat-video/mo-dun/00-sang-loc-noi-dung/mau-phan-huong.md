@@ -4,8 +4,8 @@ description: "Mẫu phan-huong.md của một tập: chia đoạn theo ý, gán 
 
 # Mẫu `phan-huong.md` (khối 00 mục 0b)
 
-Chép khung dưới vào `<thư mục tập>/phan-huong.md`. Phiên dựng sau đọc file này + bản lời là cắt được, không cần hỏi lại.
-Mẫu đã làm: `~/Movies/tap-marketing-noi-dau-nhu-cau/phan-huong.md` (chỉ ở máy David).
+Claude chép khung dưới vào `<thư mục tập>/phan-huong.md`. Phiên dựng sau đọc file này và bản lời là cắt được, không cần hỏi lại.
+Mẫu đã làm: `~/Movies/tap-marketing-noi-dau-nhu-cau/phan-huong.md` (chỉ có ở máy tính của David).
 
 ```markdown
 # Phân hướng — <tên tập>

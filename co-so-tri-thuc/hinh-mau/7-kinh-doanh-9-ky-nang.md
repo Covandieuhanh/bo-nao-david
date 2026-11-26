@@ -5,7 +5,7 @@ description: "Hình mẫu mục lớn 7 — kinh doanh theo 9 kỹ năng, ngành
 # 7. Kinh doanh theo 9 kỹ năng, ngành nghề
 
 Khung gốc: bốn bước thành công + chín kỹ năng, ngành nghề (`../mo-hinh-kinh-doanh.md` mục 3, nguồn duy nhất của khung). Mỗi kỹ năng là một
-mục nhỏ; hình mẫu thành công của kỹ năng nào ghi đúng mục đó. Hiện hành của việc bán: `../../du-an/pheu-ban-hang-goi-cong-nghe.md`.
+mục nhỏ; hình mẫu thành công của kỹ năng nào ghi đúng mục đó. Quy trình bán hàng hiện hành: `../../du-an/pheu-ban-hang-goi-cong-nghe.md`.
 Luật bản đồ: [README](README.md).
 
 ## 7.1 Kết nối ⬜
@@ -16,11 +16,11 @@ Chưa nghiên cứu.
 
 ## 7.3 Marketing (ngôn ngữ, dịch vụ) 🟡
 Trang đích, trang giới thiệu: skill `thiet-ke-trang-cuon` có nguyên lý trang cuộn cao cấp (`../../ky-nang/thiet-ke-trang-cuon/SKILL.md`);
-nội dung marketing bằng video: mục lớn 2. Chưa đo trang của trainer cùng tệp.
+nội dung marketing bằng video: mục lớn 2. Chưa đo trang của trainer cùng nhóm khách hàng mục tiêu.
 
 ## 7.4 Bán hàng ⬜
-Chưa nghiên cứu. Câu hỏi khi có việc: trainer, người bán khoá học Việt nào có phễu công khai (nội dung miễn phí → lớp nhỏ → gói), giá từng
-bậc, tin nhắn chốt thế nào.
+Chưa nghiên cứu. Câu hỏi nghiên cứu khi có việc: trainer, người bán khoá học Việt Nam nào có phễu công khai (nội dung miễn phí → lớp nhỏ → gói), giá từng
+bậc, tin nhắn chốt bán hàng như thế nào.
 
 ## 7.5 R&D: nghiên cứu và phát triển thị trường ⬜
 Chưa nghiên cứu (cách nghiên cứu hình mẫu chung: [quy-trinh-nghien-cuu.md](quy-trinh-nghien-cuu.md)).

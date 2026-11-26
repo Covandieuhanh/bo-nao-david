@@ -4,9 +4,9 @@ description: "Biểu mẫu 02 gói dựng bộ não: sáu câu lệnh dán vào 
 
 # Biểu mẫu 02 · Sáu câu lệnh mẫu
 
-Dán nguyên phần trong khung vào AI (trong Projects "Bộ não" ở mức cơ bản, hoặc trong thư mục bộ não ở mức nâng cao). Chỗ `<…>` là chỗ điền. Câu lệnh nào cũng bắt AI **đề xuất trước, chờ duyệt rồi mới viết bản cuối**: bộ não là của mình, AI không tự quyết.
+Học viên dán nguyên phần trong khung vào AI (trong Projects "Bộ não" ở mức cơ bản, hoặc trong thư mục bộ não ở mức nâng cao). Chỗ `<…>` là chỗ điền. Câu lệnh nào cũng yêu cầu AI **đề xuất trước, chờ duyệt rồi mới viết bản cuối**: bộ não là của học viên, AI không tự quyết.
 
-Ở mức cơ bản, khi AI đưa bản cuối của một file: bảo AI "tạo file để tôi tải về" rồi thay file trong Projects (biểu mẫu 00, thao tác 4). Ở mức nâng cao, AI tự sửa file.
+Ở mức cơ bản, khi AI đưa bản cuối của một file: học viên yêu cầu AI "tạo file để tôi tải về" rồi thay file trong Projects (biểu mẫu 00, thao tác 4). Ở mức nâng cao, AI tự sửa file.
 
 | Câu lệnh | Dùng khi | Bước |
 |---|---|---|
@@ -74,7 +74,7 @@ Chờ tôi duyệt rồi mới tạo file.
 
 ## Câu lệnh 5 · Dọn khi nâng cấp
 
-Trước câu lệnh này: đã sao lưu bản cũ (biểu mẫu 00, thao tác 6) và đã **đo trước** bằng câu lệnh 6.
+Trước câu lệnh này, học viên đã sao lưu bản cũ (biểu mẫu 00, thao tác 6) và đã **đo trước** bằng câu lệnh 6.
 
 ```text
 Ta dọn bộ não trong một đợt nâng cấp. Điểm đo trước: <đúng>/<tổng>; câu sai hoặc "phải tự suy": <số câu, nội dung>.
@@ -85,11 +85,11 @@ Ta dọn bộ não trong một đợt nâng cấp. Điểm đo trước: <đúng
 Không đặt thêm luật mới trong đợt này: chỉ gom, gỡ, cất, và viết rõ hơn luật đã có (được thêm câu giải thích cho luật đã có).
 Đưa tôi bảng đề xuất cho cả bốn việc, chờ duyệt rồi mới tạo file.
 ```
-Sửa xong thì **đo sau** bằng câu lệnh 6. Điểm đo sau thấp hơn đo trước thì quay về bản đã sao (biểu mẫu 00, thao tác 7). Ghi một dòng vào bảng "Nâng cấp" của `bai-hoc.md`.
+Sửa xong, học viên **đo sau** bằng câu lệnh 6. Điểm đo sau thấp hơn đo trước thì quay về bản đã sao lưu (biểu mẫu 00, thao tác 7). Học viên ghi một dòng vào bảng "Nâng cấp" của `bai-hoc.md`.
 
 ## Câu lệnh 6 · Kiểm bằng người đọc mới
 
-Dùng AI mới tinh (biểu mẫu 00, thao tác 5). Tải các file trong `bo-nao`, **không tải gì trong `ngoai-bo-nao`**. Dán:
+Học viên dùng một AI mới hoàn toàn (biểu mẫu 00, thao tác 5), tải các file trong `bo-nao`, **không tải gì trong `ngoai-bo-nao`**, rồi dán:
 
 ```text
 Bạn chưa biết gì về tôi. Hãy đọc doc-truoc.md rồi đọc tiếp theo thứ tự trong đó.
@@ -97,4 +97,4 @@ Sau đó làm bai-kiem.md: mỗi câu chọn một đáp án, ghi một dòng v�
 Câu nào bộ não không nói rõ, hãy ghi "phải tự suy" thay vì đoán chắc.
 Cuối cùng ghi 3 chỗ trong bộ não bạn thấy khó hiểu hoặc mâu thuẫn.
 ```
-Mình tự chấm bằng `dap-an.md` (cách chấm: biểu mẫu 03). Câu sai hoặc "phải tự suy": sửa file trong bộ não cho rõ, **không sửa bài kiểm**.
+Học viên tự chấm bằng `dap-an.md` (cách chấm: biểu mẫu 03). Câu sai hoặc "phải tự suy": học viên sửa file trong bộ não cho rõ, **không sửa bài kiểm**.

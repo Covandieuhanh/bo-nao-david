@@ -4,8 +4,8 @@ description: "Hồ sơ tham số loại podcast: hình mẫu chính (đồ hoạ
 
 # Hồ sơ: Podcast
 
-**Hình mẫu chính (đồ hoạ):** Hieu Nguyen / HIEU TV (màn tối tối giản, tên series, thanh tiến trình — 1,7 Tr), VOV Kể chuyện đêm khuya
-(1 tranh / truyện, chữ tên truyện, sóng âm nhỏ — 4,9 Tr). Có người (sau này): Have A Sip. Báo cáo: `dung-podcast/references/hoc-tu-20-podcast-vn.md`,
+**Hình mẫu chính (đồ hoạ):** Hieu Nguyen / HIEU TV (màn tối tối giản, tên series, thanh tiến trình — 1,7 triệu), VOV Kể chuyện đêm khuya
+(1 tranh / truyện, chữ tên truyện, sóng âm nhỏ — 4,9 triệu). Có người (sau này): Have A Sip. Báo cáo: `dung-podcast/references/hoc-tu-20-podcast-vn.md`,
 `podcast-quay-nguoi.md`.
 
 | Khoá | Ý nghĩa |

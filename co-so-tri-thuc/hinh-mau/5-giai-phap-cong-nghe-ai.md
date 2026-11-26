@@ -16,7 +16,7 @@ Luật bản đồ: [README](README.md).
 | Cường Mê AI (VN) | học 20/11 | minh hoạ dễ hiểu, tinh gọn | `huong-dan-lua-chon.md` bước 4a |
 
 ## 5.2 Gói đào tạo kỹ năng AI ⬜
-Chưa nghiên cứu khoá học AI bán chạy (giá, cấu trúc buổi, chuẩn đạt). Gói hiện có: `../../du-an/goi-dao-tao-dung-video-ai/`.
+Chưa nghiên cứu khoá học AI bán chạy (giá, cấu trúc buổi học, tiêu chí đạt). Gói hiện có: `../../du-an/goi-dao-tao-dung-video-ai/`.
 
 ## 5.3 Giải pháp số hoá cho doanh nghiệp nhỏ ⬜
 Chưa nghiên cứu (phần do đội đối tác làm ghi ở bộ não công ty).

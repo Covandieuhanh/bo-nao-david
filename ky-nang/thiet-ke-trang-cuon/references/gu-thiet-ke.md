@@ -1,5 +1,5 @@
 ---
-description: "Thiết kế trang cuộn: sàn gu thẩm mỹ, đọc trước khi viết mã."
+description: "Thiết kế trang cuộn: chuẩn tối thiểu về gu thẩm mỹ, đọc trước khi viết mã."
 ---
 
 # The taste floor
