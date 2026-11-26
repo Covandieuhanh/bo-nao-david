@@ -46,15 +46,26 @@ _so() {
   _rb "$1" "$2" /L "${@:3}"; local m=$? thua; (( m < 8 && (m & 1) == 0 )) || return 1
   (( m & 2 )) || return 0
   # desktop.ini là tệp ẩn do chính ứng dụng Drive tạo (cờ /XF của robocopy không lọc tệp thừa ở nơi nhận) → tự lọc ở đây
-  thua=$(robocopy.exe "$1" "$2" /E /FFT /L /NP /NJH /NJS "${@:3}" 2>/dev/null | tr -d '' | grep -a '\*EXTRA' | grep -aiv 'desktop\.ini')
+  thua=$(robocopy.exe "$1" "$2" /E /FFT /L /NP /NJH /NJS "${@:3}" 2>/dev/null | tr -d '
+' | grep -a '\*EXTRA' | grep -aiv 'desktop\.ini')
   [ -z "$thua" ] || { echo "⚠ Nơi nhận còn tệp mà nguồn không có (bản cũ đổi tên?), chưa xoá:"; print -r -- "$thua"; }
   return 0
 }
 # tai_len <thư mục máy> <đường dẫn dưới "My Drive", dùng dấu /> [tham số loại trừ của robocopy ...]
 tai_len() {
-  local nguon=$(duong_win "$1") dich="$GW\\${2//\//\\}"; shift 2
+  local duoi=$2 nguon=$(duong_win "$1") dich="$GW\\${2//\//\\}"; shift 2
   _rb "$nguon" "$dich" "$@"; (( $? < 8 )) || { echo "✗ chép lên Drive lỗi, chạy lại lệnh này"; return 1; }
   _so "$nguon" "$dich" "$@" || { echo "✗ bản trên ổ Drive chưa khớp bản trên máy"; return 1; }
+  kiem_len_may "$nguon" "$duoi" "$@"
+}
+# kiem_len_may <thư mục Windows> <đường dẫn dưới "My Drive"> [tham số loại trừ của robocopy ...]; chờ tối đa DRIVE_CHO giây (mặc định 2 giờ)
+kiem_len_may() {
+  [ -n "$DRIVE_WIN" ] && { echo "(ổ Drive giả khi chạy thử: bỏ bước kiểm trên mây)"; return 0; }
+  local nguon=$1 duoi=$2 x bo=(); shift 2
+  for x in "$@"; do [[ $x == /* ]] || bo+=($x); done   # /XF, /XD là cờ robocopy; phần còn lại là tên cần bỏ qua
+  local py=$(powershell.exe -NoProfile -Command '(Get-Command python -ErrorAction SilentlyContinue).Source' 2>/dev/null | tr -d '\r')
+  [ -n "$py" ] || { echo "✗ KHÔNG KIỂM ĐƯỢC trên mây: máy Windows chưa có Python"; return 3; }
+  "$(wslpath -u "$py")" -I -X utf8 "$(wslpath -w $_DC/drive-len-may.py)" "$nguon" "$duoi" --cho ${DRIVE_CHO:-7200} --bo $bo
 }
 # tai_ve <đường dẫn dưới "My Drive"> <thư mục máy> [tham số loại trừ ...]
 tai_ve() {
@@ -62,5 +73,5 @@ tai_ve() {
   _rb "$nguon" "$dich" "$@"; (( $? < 8 )) || return 1
   _so "$nguon" "$dich" "$@"
 }
-LUU_Y_MAY="khớp tên, dung lượng, giờ sửa trên ổ Drive; máy không hỏi được từng tệp đã lên mây chưa: xem biểu tượng Google Drive hoặc mở trên điện thoại"
+LUU_Y_MAY="đã xác nhận từng tệp trên mây ở dòng trên"
 kich_thuoc() { wc -c < "$1" | tr -d ' '; }   # thay stat -f %z (chỉ Mac có)

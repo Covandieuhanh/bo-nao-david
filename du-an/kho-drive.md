@@ -58,9 +58,9 @@ Trạng thái chi tiết, lịch đăng: sổ [danh-muc-noi-dung.md](danh-muc-no
 - Google Drive cho máy tính chạy ở chế độ để tệp trên mây, tự mở khi đăng nhập Windows. Ổ Drive hiện trong Windows chỉ là cửa vào kho trên mây (David đã đồng ý). **Không** bật đồng bộ hai chiều, không thêm thư mục nào của máy vào đồng bộ, không đánh dấu dùng ngoại tuyến, không tải cả thư mục Drive về, không gắn ổ đó vào Ubuntu.
 - **Tải về:** video gốc bằng link David gửi (`gdown`, quy trình `ky-nang/san-xuat-video/phan-phoi-da-kenh/references/nhan-tai-nguyen.md`); chỉ lấy từ ổ Drive đúng tệp đang cần.
 - **Tải lên:** `cho-dang.sh gui|buoi|lay|xong` và `luu-drive.sh` tự chép bằng robocopy từ phía Windows vào `thanh-pham/` và `sao-luu-mac/video/` như trước, rồi so lại. Ổ Drive chưa hiện thì mở ứng dụng; vẫn chưa được thì giữ ở `D:\video-david\wsl-tap\cho-dang\<tập>` và báo rõ "chưa lên Drive".
-- **Báo đúng mức:** so khớp trên ổ Drive chưa chứng minh từng tệp đã lên mây; nói rõ điều đó, tệp quan trọng thì David mở trên điện thoại.
+- **Chỉ báo "đã lên mây" khi công cụ xác nhận:** sau khi chép, `drive-len-may.py` đợi và kiểm từng tệp (mã thật trên mây, dung lượng, mã MD5; đo 26/11/2026 với tệp 150 MB). Công cụ đọc cơ sở dữ liệu nội bộ của ứng dụng Drive (Google không công bố): trả lỗi "không kiểm được" thì báo đúng như vậy, tệp quan trọng thì David mở trên điện thoại.
 - Máy này không tự xoá bản gốc hay thành phẩm trên máy.
-- Làm việc từ xa: máy phải bật, không ngủ, đã đăng nhập Windows, có mạng.
+- **Làm việc từ xa** (kiểm 26/11/2026): máy cắm điện không tự ngủ; **không** tự đăng nhập Windows sau khi khởi động lại và ứng dụng Claude **không** nằm trong mục tự mở (đang tắt) → máy khởi động lại (mất điện, Windows Update ngoài giờ hoạt động 6–23 giờ) thì phải có người đăng nhập, mở Claude. Google Drive tự mở sau khi đăng nhập. Quyền trên Drive đã thử thật: tạo, ghi, thay tệp, đổi tên, lấy về trong `thanh-pham/`, `tu-lieu-goc/`, `sao-luu-mac/video/`; **quyền xoá chưa thử** trong lần kiểm này.
 - Đã cân nhắc và bỏ (26/11/2026): tải lên bằng `rclone` không cần ứng dụng; David thấy cài đặt phức tạp.
 
 Dự án dựng video nằm ở ổ D: `D:\video-david\wsl-tap\<tập>` (trong WSL là `/mnt/d/video-david/wsl-tap/<tập>`); `~/Movies/<tập>` trong WSL
