@@ -41,7 +41,7 @@ Luật kèm theo:
 - **Không dùng logo nền tảng, không dùng nút phát đỏ** ở bất kỳ thẻ nào.
 - Mọi lớp phủ góc trên nằm **dưới** `brand.bottom` (`BRAND_BOT`); mọi lớp phủ đáy nằm **trên** phụ đề và thanh thời gian. Không dùng
   số vị trí của khung dọc cho khung ngang.
-- **Video dọc ngắn** (Reels/TikTok/Shorts — dọc tối đa 90 s, mọi highlight, podcast dọc trích ngắn): **không có thanh thời gian, không có thẻ
+- **Video dọc ngắn** (Reels/TikTok/Shorts — dọc tối đa 90 s, mọi highlight khung dọc, podcast dọc trích ngắn): **không có thanh thời gian, không có thẻ
   cuối**; màn chốt hiện câu nguyên văn ngay trên khung hình (không thu nhỏ video), video kết thúc ở chữ cuối để tự lặp lại. Lý do: nền tảng đã
   có thanh riêng, "còn 0:20" và màn "hết rồi" khiến người xem lướt đi, thẻ cuối làm ngắt vòng lặp. Phần dẫn về bản đầy đủ / mời bình luận
   đặt ở caption và bình luận ghim. Công cụ tự nhận biết (`nganDoc()` trong `nhan-dien-thuong-hieu.js`, `NGAN_DOC` trong `thanh.js`).

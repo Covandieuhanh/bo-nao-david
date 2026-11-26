@@ -1,6 +1,6 @@
 ---
 name: cat-doan-noi-bat
-description: Cắt một video dài (bản YouTube 5–60 phút) thành các clip nổi bật cùng khung với video gốc (gốc ngang ra ngang, gốc dọc ra dọc; chỉ đổi khung khi David yêu cầu) cho Facebook, Reels, TikTok, Shorts. Claude tự chọn ý theo bốn câu (bối cảnh, ý trọn, mang về, chừa lại): mỗi clip một ý trọn, hiểu được khi xem riêng, số clip và độ dài theo ý. Mọi chữ trên clip là nguyên văn lời người nói — kể cả thẻ tiêu đề (cụm then chốt nhất) và màn chốt; phụ đề cụm 5–8 chữ; cắt cứng giấu điểm nối, rút khoảng lặng; hai tông sôi động / lắng với nhạc từ kho kênh; không thanh thời gian, không thẻ cuối — dẫn về bản đầy đủ ở caption và bình luận ghim. Đoạn nổi bật ra ĐÚNG LOẠI video gốc — nguồn người nói thì dùng khung ghép của dung-video-theo-phong-cach; nguồn podcast hoặc đồ hoạ thì dựng podcast đồ hoạ dọc (dung-podcast). Kèm lịch đăng, mô tả, bình luận ghim. Dùng khi người dùng nói "cắt highlight", "làm video highlight", "cắt clip ngắn từ video dài", "làm Reels/TikTok/Shorts từ video YouTube/podcast", "cắt đoạn hay", "/cat-doan-noi-bat", hoặc đưa một video dài (kể cả podcast đã dựng) muốn ra clip ngắn — kể cả khi chỉ gửi file mà không nói rõ.
+description: Cắt một video dài (bản YouTube 5–60 phút) thành các clip nổi bật cùng khung với video gốc (gốc ngang ra ngang, gốc dọc ra dọc; chỉ đổi khung khi David yêu cầu) cho Facebook, Reels, TikTok, Shorts. Claude tự chọn ý theo bốn câu (bối cảnh, ý trọn, mang về, chừa lại): mỗi clip một ý trọn, hiểu được khi xem riêng, số clip và độ dài theo ý. Mọi chữ trên clip là nguyên văn lời người nói — kể cả thẻ tiêu đề (cụm then chốt nhất) và màn chốt; phụ đề cụm 5–8 chữ; cắt cứng giấu điểm nối, rút khoảng lặng; hai tông sôi động / lắng với nhạc từ kho kênh; clip dọc không thanh thời gian, mọi clip không thẻ cuối — dẫn về bản đầy đủ ở caption và bình luận ghim. Đoạn nổi bật ra ĐÚNG LOẠI video gốc — nguồn người nói thì dùng khung ghép của dung-video-theo-phong-cach; nguồn podcast hoặc đồ hoạ thì dựng podcast đồ hoạ cùng khung nguồn (dung-podcast). Kèm lịch đăng, mô tả, bình luận ghim. Dùng khi người dùng nói "cắt highlight", "làm video highlight", "cắt clip ngắn từ video dài", "làm Reels/TikTok/Shorts từ video YouTube/podcast", "cắt đoạn hay", "/cat-doan-noi-bat", hoặc đưa một video dài (kể cả podcast đã dựng) muốn ra clip ngắn — kể cả khi chỉ gửi file mà không nói rõ.
 ---
 # Cắt đoạn nổi bật cho mọi mục video ngắn
 
@@ -55,7 +55,7 @@ thời gian, không có thẻ cuối, màn chốt trên hình, kết ở chữ c
    Nhạc lấy từ **kho nhạc kênh** (`$SKILL/assets/nhac/`), Claude tự chọn theo tuyến nội dung (khối 09). Mức nhạc
    theo chuẩn âm lượng chung (thấp hơn giọng khoảng 23 dB). Không có nhãn kỹ thuật, không có thẻ "TẬP NÀY CÓ GÌ?" hay tên vòng.
 10. **Chừa cho bản đầy đủ đúng chỗ**: chừa một chuyện khác hoặc ý mở rộng; ý trong clip phải đi đến hết. Câu mở đầu ưu tiên điều bất ngờ, kết quả lớn hoặc điều được mất hơn lời than chung chung.
-11. **Không thẻ cuối, không thanh thời gian** (video dọc ngắn, `nhan-dien-chung.md` mục 1). `danh-sach-cat-doan-noi-bat.py` vẫn ghi `ENDCARD` từ
+11. **Không thẻ cuối; clip dọc không thanh thời gian, clip ngang có thanh thời gian** (video dọc ngắn: `nhan-dien-chung.md` mục 1). `danh-sach-cat-doan-noi-bat.py` vẫn ghi `ENDCARD` từ
     `"endcard"` trong phuong-an.json (tên tập gốc, người nói) nhưng mẫu tự bỏ ở video dọc ngắn; ghi đủ để dùng khi David cần bản dọc dài.
     Không có tên tập gốc thì tra sổ danh mục nội dung; vẫn không có thì ghi chỗ trống trong báo cáo (`../nhan-dien-thuong-hieu.md`).
 12. **Tự chọn, không hỏi** (`chuan-muc-lam-viec.md` mục 2): nhận yêu cầu cắt là Claude tự chọn ý, tiêu đề, câu màn chốt rồi dựng trọn
@@ -89,6 +89,7 @@ Chỉ có phụ đề, không có video thì làm bước 2–5, trả bảng c�
 | 8 | Phát hành: lịch đăng, khung bìa, mô tả, bình luận ghim, số liệu | [15](../mo-dun/15-xuat-ban/README.md) · [16](../mo-dun/16-phan-tich-so-lieu/README.md) |
 
 ### 7A. Dựng — nguồn có người nói (`dung-video-theo-phong-cach` chế độ ghép clip, `references/nhieu-doan-video.md`)
+Hai lệnh `nang-khung.py` và `bao-ve-lop-phu.py` dưới đây **chỉ dùng cho khung dọc**; khung ngang theo mục "Highlight ngang".
 Làm lần lượt cho từng clip `<id>` (A, B…). `cat/<id>.mp4` của bước 6 chỉ để **kiểm lời**; bản dựng đọc trực tiếp video gốc theo mốc trong phuong-an.json (mỗi câu thêm
 `"tone": "lang"|"soi"`, câu dùng cho màn chốt thêm `"cta": true`):
 ```bash
@@ -140,7 +141,7 @@ câu bằng `ffmpeg` (`trim` + `concat`, mờ tiếng 15–30 ms ở mỗi đầ
 
 ### 7B. Dựng — nguồn podcast / toàn đồ hoạ (`dung-podcast`; khung theo nguồn, lệnh dưới là ví dụ khung dọc)
 ```bash
-zsh $POD/scripts/tao-podcast.sh "$P/cat/<id>.mp4" hl-<tên>-<id> doc cat-thua   # mỗi clip → ~/Movies/tap-<tên>/3-doan-noi-bat/clip-<id> = $E (chỉ lấy tiếng)
+zsh $POD/scripts/tao-podcast.sh "$P/cat/<id>.mp4" hl-<tên>-<id> "" cat-thua   # mỗi clip → ~/Movies/tap-<tên>/3-doan-noi-bat/clip-<id> = $E (chỉ lấy tiếng)
 zsh $POD/scripts/phien-am.sh "$E"
 python3 -I $BASE/scripts/phu-de.py "$E"                         # rồi sửa chữ theo captions-goc.js của $P (đã sửa chính tả)
 PY=$(zsh $POD/scripts/cai-python.sh); $PY $POD/scripts/nguoi-noi.py "$E"; $PY $POD/scripts/duong-bao-am.py "$E"
@@ -174,7 +175,7 @@ Mẫu: `~/Movies/tap-di-trainer/3-doan-noi-bat/clip-{A,B,C}`, thành phẩm ở 
   `kind` theo việc được kêu gọi; báo cáo ghi mốc của câu. Không có thì kết ở câu chốt ý.
 - Kiểm thêm khi chụp thử: chữ to có đủ lớn không (dòng dài làm chữ co nhỏ thì giảm sức tác động, phải rút ngắn cụm); vài mốc thấy chữ chính đọc rõ, không chạm
   sóng âm. `phu-de@…` không có trong `ghep-anh-tinh.sh` khi đứng riêng thì tự ghép lên `video-goc.mp4` cùng mốc.
-- Bản cuối: 1080×1920, thời lượng theo ý, âm lượng và tiếng rè bằng nguồn.
+- Bản cuối: cùng khung video gốc, thời lượng theo ý, âm lượng và tiếng rè bằng nguồn.
 
 ## Bảng phụ thuộc (sửa X thì chạy lại Y)
 | Sửa | Chạy lại |
@@ -205,7 +206,7 @@ Mẫu: `~/Movies/tap-di-trainer/3-doan-noi-bat/clip-{A,B,C}`, thành phẩm ở 
 ├── phuong-an.json                  # các clip (A, B, C…), chon_y + câu theo thứ tự phát (Claude viết)
 ├── cat/<id>.mp4 · <id>.md · <id>-map.json · <id>-kiem.txt
 ├── ke-hoach-cat.md · dang-bai.md · so-lieu.md
-~/Movies/tap-<tên>/3-doan-noi-bat/clip-<id>/   → video-hoan-chinh.mp4 (BẢN CUỐI mỗi clip, 1080×1920)
+~/Movies/tap-<tên>/3-doan-noi-bat/clip-<id>/   → video-hoan-chinh.mp4 (BẢN CUỐI mỗi clip, cùng khung video gốc)
 $SKILL/assets/nhac/               # soi-*.mp3 · lang-*.mp3 — kho nhạc kênh
 ```
 
@@ -214,7 +215,7 @@ $SKILL/assets/nhac/               # soi-*.mp3 · lang-*.mp3 — kho nhạc kênh
 2. Clip cùng loại và **cùng khung** video gốc (khác khung chỉ khi David yêu cầu).
 3. Mọi chữ trên clip nguyên văn (cả tiêu đề, màn chốt).
 4. Không cắt vào giữa ý; lời bản cắt đã chép lại đối chiếu khớp.
-5. Phụ đề cụm khoảng 5–8 chữ (tối đa theo hồ sơ `phu_de.ngan_max_chu`) không chồng chữ motion graphic; không thanh thời gian, không thẻ cuối.
+5. Phụ đề cụm khoảng 5–8 chữ (tối đa theo hồ sơ `phu_de.ngan_max_chu`) không chồng chữ motion graphic; không thẻ cuối; clip dọc không thanh thời gian.
 6. Nhạc từ kho kênh, thấp hơn giọng khoảng 23 dB.
 7. Có dang-bai.md (lịch đăng, mốc bìa, mô tả, bình luận ghim) và so-lieu.md; David không phải sửa lại vì trái luật đã chốt.
 8. David chốt cả tập thì clip cuối vào `~/Movies/cho-dang/<tập>/highlight/` và chạy `cho-dang.sh gui <tập>`, rồi dọn file tạm ngay bằng `don-tap.py --xoa` rồi `luu-drive.sh` lên Drive (khối 17), không hỏi lại; chỉ hỏi phần ⏸ đang làm chưa xong.

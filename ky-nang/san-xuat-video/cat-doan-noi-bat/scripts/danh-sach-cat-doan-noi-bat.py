@@ -178,9 +178,11 @@ head = tpl[:tpl.index('const RAW = [')]
 # Khung bằng khung video gốc (David 26/11/2026: không tự làm khung dọc) — đọc từ c1
 _k = subprocess.check_output(['ffprobe', '-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height', '-of', 'csv=p=0',
                               os.path.join(E, 'chuyen-dong', 'public', 'doan-video', 'c1.mp4')], text=True).split()[0].split(',')
-_W, _H = (1920, 1080) if int(_k[0]) >= int(_k[1]) else (1080, 1920)
+_w, _h = int(_k[0]), int(_k[1]); _t = 1080 / min(_w, _h)
+_W, _H = round(_w * _t / 2) * 2, round(_h * _t / 2) * 2
 head = re.sub(r'export const W = \d+;', f'export const W = {_W};', head)
 head = re.sub(r'export const H = \d+;', f'export const H = {_H};', head)
+if _W >= _H and 'export const THE_CUOI' not in tpl: head += 'export const THE_CUOI = false;   // clip ngang kết ở màn chốt\n'
 _endmid = tpl.index('// TS(src)') if '// TS(src)' in tpl else tpl.index('// ===== Phụ đề')   # chạy lại nhiều lần không nhân đôi khối TS
 mid = tpl[tpl.index('let acc = 0;'):_endmid]
 src = f"""{head}// Viết bởi cat-doan-noi-bat/scripts/danh-sach-cat-doan-noi-bat.py từ {H}/phuong-an.json (phương án {opt['id']}) — Claude chỉnh tiếp.

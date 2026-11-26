@@ -82,13 +82,13 @@ const TheGoc = ({start, tieu_de, dong = [], w, f, fs, kc = 'mo'}) => (
       return (
         <div key={i} style={{alignSelf: 'flex-start', display: 'flex', alignItems: 'flex-start', gap: fs * 0.28,
           opacity: (1 - 0.45 * g) * (f < a ? 0 : 1)}}>
-          <div style={{flex: 'none', width: fs * 0.3, height: day, borderRadius: 4, background: C.accent, marginTop: co * lh / 2 - day / 2,
-            opacity: Math.min(1, p * 1.4)}} />
+          {dong.length > 1 && <div style={{flex: 'none', width: fs * 0.3, height: day, borderRadius: 4, background: C.accent, marginTop: co * lh / 2 - day / 2,
+            opacity: Math.min(1, p * 1.4)}} />}
           <div style={{position: 'relative', minWidth: 0}}>
             <div style={{fontFamily: d.to ? HEAD : BODY, fontWeight: d.to ? 800 : 500, lineHeight: lh, fontSize: co,
               color: d.to && i === dong.length - 1 ? C.accent : C.text, textTransform: d.to ? 'uppercase' : 'none',
               textWrap: 'pretty', whiteSpace: 'pre-line', hyphens: 'none'}}>
-              <ChuHien text={d.text.charAt(0).toLocaleUpperCase('vi') + d.text.slice(1)} a={a} kieu={kc} /></div>
+              <ChuHien text={d.text.replace(/^([^\p{L}\p{N}]*)(\p{L})/u, (_, a, b) => a + b.toLocaleUpperCase('vi'))} a={a} kieu={kc} /></div>
             {g > 0 && <div style={{position: 'absolute', left: 0, top: '52%', height: Math.max(3, fs * 0.08), width: `${g * 100}%`, background: C.accent}} />}
           </div>
         </div>

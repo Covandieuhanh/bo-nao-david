@@ -13,7 +13,7 @@ thiết bị khác thì chỉ cần chép cả thư mục `san-xuat-video/`. Ở
 | `dung-video-theo-phong-cach/` — **1 video** | Gửi 1 video nói trước camera, nói "làm video này" | Giữ nguyên hình, phủ hiệu ứng và phụ đề |
 | `dung-video-theo-phong-cach/` — **ghép nhiều video** | Gửi từ 2 clip trở lên, nói "ghép thành 1 video" | Tự sắp mạch, trích dẫn clip minh hoạ; tự kiểm kế hoạch rồi render |
 | `dung-podcast/` — **podcast** | Gửi file tiếng/video và nói "podcast" | Toàn bộ khung là đồ hoạ chuyển động, thanh thời gian |
-| `cat-doan-noi-bat/` — **cắt highlight** | Gửi 1 video dài (YouTube, podcast đã dựng, hoặc thư mục dự án của nó), nói "cắt highlight" hoặc `/cat-doan-noi-bat` | Các clip **cùng khung video gốc** tự chọn ý, mỗi clip một ý trọn, **cùng loại với video gốc**; thẻ tiêu đề nguyên văn, phụ đề cụm 5–8 chữ, cắt cứng; kèm lịch đăng, mô tả và bình luận ghim |
+| `cat-doan-noi-bat/` — **cắt highlight** | Gửi 1 video dài (YouTube, podcast đã dựng, hoặc thư mục dự án của nó), nói "cắt highlight" hoặc `/cat-doan-noi-bat` | Các clip tự chọn ý, **cùng khung video gốc**, mỗi clip một ý trọn, **cùng loại với video gốc**; thẻ tiêu đề nguyên văn, phụ đề cụm 5–8 chữ, cắt cứng; kèm lịch đăng, mô tả và bình luận ghim |
 | `phan-tich-video-mau/` — **học mẫu** | Gửi video mẫu, nói "học cái này" | Phiếu học để duyệt, rồi thêm vào kho trình bày |
 | `phan-phoi-da-kenh/` — **trọn gói** | Gửi tài nguyên mới (thường không kèm yêu cầu) | Lọc → dựng → gói đăng (David tự đăng) → số liệu |
 

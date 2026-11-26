@@ -54,7 +54,7 @@ Shorts: video dọc tối đa 3 phút, theo cùng quy trình trên; tiêu đề 
 - **Bài viết chữ / ảnh:** Business Suite → Nội dung → Tạo bài viết → trang "<tên trang>" → nội dung → "Lên lịch".
 - Bài **Mời**: kiểm tra trang có nút "Gửi tin nhắn" (Messenger) — link `kenh.fanpage.link_nhan_tin`.
 
-## TikTok (TikTok Studio) — clip dọc
+## TikTok (TikTok Studio) — clip ngắn (khung theo video gốc)
 1. `https://www.tiktok.com/tiktokstudio/upload?from=upload` → "Chọn video" → `upload` (tối đa 30 GB / 60 phút).
 2. **Mô tả** (caption + hashtag) · **Ảnh bìa** (chọn khung theo mốc đề xuất) · Ai có thể xem: Mọi người · cho phép bình luận.
 3. **Thời điểm đăng → Lên lịch** (TikTok cho hẹn ít nhất 15 phút, tối đa 10 ngày) → ngày giờ → **Lên lịch** (cú bấm cuối).

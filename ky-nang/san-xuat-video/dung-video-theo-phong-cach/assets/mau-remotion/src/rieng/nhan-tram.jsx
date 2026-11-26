@@ -62,13 +62,13 @@ export const NhanTram = ({sceneId, start, so, tong, ten, tieu_de, dong = [], o =
           const size = to ? Math.max(fs * 1.05, Math.min(fs * 1.7, cw / (0.56 * Math.max(5, Math.max(...dg.text.split('\n').map((l) => l.length)))))) : fs;
           // Trình bày ý (David góp ý 26/11/2026): mỗi ý có gạch đầu dòng, viết hoa chữ đầu, các ý cách nhau rõ;
           // dòng xuống hàng thụt theo chữ, không chạy dưới gạch
-          const chu = dg.text.charAt(0).toLocaleUpperCase('vi') + dg.text.slice(1);
+          const chu = dg.text.replace(/^([^\p{L}\p{N}]*)(\p{L})/u, (_, a, b) => a + b.toLocaleUpperCase('vi'));
           const lh = 1.18;
           return (
             <div key={i} style={{alignSelf: 'flex-start', display: 'flex', alignItems: 'flex-start', gap: fs * 0.45,
               opacity: (1 - 0.45 * g) * Math.min(1, p * 1.3), transform: `translateY(${(1 - p) * 14}px)`}}>
-              <div style={{flex: 'none', width: fs * 0.48, height: Math.max(4, fs * 0.12), borderRadius: 4, background: C.accent,
-                marginTop: size * lh / 2 - Math.max(4, fs * 0.12) / 2}} />
+              {dong.length > 1 && <div style={{flex: 'none', width: fs * 0.48, height: Math.max(4, fs * 0.12), borderRadius: 4, background: C.accent,
+                marginTop: size * lh / 2 - Math.max(4, fs * 0.12) / 2}} />}
               <div style={{position: 'relative', minWidth: 0}}>
                 <div style={{fontFamily: to ? HEAD : BODY, fontWeight: to ? 800 : 600, fontSize: size, lineHeight: lh,
                   color: to ? C.accent : C.text, textTransform: to ? 'uppercase' : 'none', whiteSpace: 'pre-line', textWrap: 'pretty'}}>

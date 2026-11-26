@@ -352,6 +352,16 @@ for f in {t['f'] for t in tracks}:                       # chép bài cần dùn
     if not os.path.exists(dst): shutil.copy(os.path.join(MUSDIR, f + '.mp3'), dst)
 tpl = open(os.path.join(P, 'chuyen-dong/src/danh-sach-cat.js'), encoding='utf-8').read()
 head = tpl[:tpl.index('const RAW = [')]
+# Khung theo video gốc (David 26/11/2026): đa số thời lượng clip nguồn quyết định; ke-hoach.json "khung": "doc"|"ngang" chỉ khi David yêu cầu
+def _co(c):
+    return [int(x) for x in subprocess.check_output(['ffprobe', '-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height',
+        '-of', 'csv=p=0', os.path.join(P, 'chuyen-dong/public/doan-video', c + '.mp4')], text=True).split()[0].split(',')[:2]]
+_ngang = sum(d_ for c_, d_ in used if _co(c_)[0] >= _co(c_)[1]) >= sum(d_ for c_, d_ in used) / 2
+if plan.get('khung') in ('doc', 'ngang'): _ngang = plan['khung'] == 'ngang'
+_W, _H = (1920, 1080) if _ngang else (1080, 1920)
+import re as _re
+head = _re.sub(r'export const W = \d+;', f'export const W = {_W};', head)
+head = _re.sub(r'export const H = \d+;', f'export const H = {_H};', head)
 mid = tpl[tpl.index('let acc = 0;'):tpl.index('// ===== Phụ đề')]
 rawjs = ',\n'.join('  ' + json.dumps({k: v for k, v in s.items() if not k.startswith('_')}, ensure_ascii=False) for s in raw)
 show = plan.get('show', {})
