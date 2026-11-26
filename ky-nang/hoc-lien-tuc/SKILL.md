@@ -53,7 +53,7 @@ Hệ thống tự động đã ghi sẵn tín hiệu cuối mỗi phiên (hook `
    không cải thiện thì quay lại bản trước (git) và ghi bài học rút ra.
 
 ## Việc 3 — Học thành skill (giống `/learn` của Hermes)
-Nguồn: tài liệu, link, thư mục, hoặc "quy trình vừa làm trong phiên này".
+Nguồn: tài liệu, link, thư mục, hoặc "quy trình vừa làm trong phiên này". Khi đọc nguồn, phân biệt cách gọi và nghĩa theo [hệ thuật ngữ](../../co-so-tri-thuc/bang-thuat-ngu.md#áp-dụng-khi-trao-đổi-và-học-từ-nguồn-mới) trước khi rút bài học.
 1. Có skill gần đúng việc này thì **bổ sung vào skill đó** (ưu tiên). Chỉ tạo skill mới khi việc lặp ít nhất 3 lần hoặc David yêu cầu.
 2. Tạo mới: theo `skill-creator`; thư mục `ky-nang/<ten-khong-dau>/SKILL.md`; mô tả nói rõ khi nào dùng (câu David hay nói);
    thêm một dòng vào bảng chọn skill trong `AGENTS.md`; chạy `bash tu-dong-hoa/cai-dat-bo-nao.sh` nếu skill cần liên kết vào `~/.claude/skills`.

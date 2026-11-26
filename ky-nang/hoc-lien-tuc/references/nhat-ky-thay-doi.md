@@ -19,3 +19,5 @@ description: "Nhật ký thay đổi skill hoc-lien-tuc và công cụ đi kèm 
 - **26/11/2026** · Học từ phản hồi khi lập bảng giao việc hội thảo: bổ sung quy trình vận hành chung mục 2a, nối lá A9 và thêm câu kiểm c37–c39. Lý do: đối chiếu nguồn và mục tiêu trước khi chia việc, chỉ giao theo ba ban, viết từng hành động đủ cụ thể để thực thi.
 
 - **26/11/2026** · David chốt chuẩn chất lượng bắt buộc chung cho mọi thiết bị, thời điểm và AI, với khoảng sáng tạo cho từng AI. Làm rõ cách áp dụng trong chuẩn mực và quy trình vận hành, thêm ca thực hành video và tiếp quản trong bộ kiểm.
+
+- **26/11/2026** · Mở rộng bảng thuật ngữ thành hệ định nghĩa dùng chung từ tư duy gốc tới chuyên môn. Bước học từ nguồn mới đối chiếu nghĩa trước khi rút bài học hoặc đề xuất thay đổi.

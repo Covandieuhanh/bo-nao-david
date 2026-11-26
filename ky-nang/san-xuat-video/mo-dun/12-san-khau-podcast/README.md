@@ -17,7 +17,7 @@ description: "Khối 12 sân khấu podcast: tên tập, ý đang bàn, sóng â
 
 ## Cách làm
 
-### Nhận diện người nói
+### Tách lượt người nói
 ```bash
 PY=$(zsh $SKILL/scripts/cai-python.sh)                     # lần đầu cài numpy vào venv dùng chung
 $PY $SKILL/scripts/nguoi-noi.py "$P"                      # pyannote tự đếm người (ghi số nếu biết chắc) → chuyen-dong/src/nguoi-noi.js + kiem-tra/nguoi-noi.md

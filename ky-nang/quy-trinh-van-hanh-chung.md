@@ -7,6 +7,8 @@ description: "Quy trình vận hành chung (tầng 2, cách làm từng bước 
 Nguyên lý ở [chuan-muc-lam-viec.md](chuan-muc-lam-viec.md), cùng số mục. File này là tầng 2: đổi theo góp ý có dẫn chứng; mỗi bước có lệnh hoặc mẫu cụ thể. Phần ghi "Mac chính" là của bộ tự động hoá trên Mac chính (repo riêng tư); máy khác bỏ qua.
 
 ## 1. Đầu việc
+
+Khi thuật ngữ ảnh hưởng tới yêu cầu, quyết định hay tiêu chí nghiệm thu, đối chiếu [hệ thuật ngữ](../co-so-tri-thuc/bang-thuat-ngu.md) ngay khi đọc yêu cầu và dùng cùng nghĩa trong báo cáo bàn giao.
 1. Ghi một dòng **Mục tiêu** và hai tới bốn dòng **Xong khi** (tiêu chí hoàn thành) ngay tin nhắn đầu; skill đã có "Xong khi" thì lấy từ đó. Nêu rõ đầu ra bắt buộc, cách kiểm và quyết định AI được tự chọn nếu có.
 2. Tra cây quy trình `quy-trinh.md`: gốc, rồi lá đúng việc, rồi file quy trình của lá, rồi chỉ những khối và hồ sơ mà bước đang làm cần.
 3. Việc có tài nguyên: tra sổ danh mục `~/Movies/_danh-muc-noi-dung/danh-muc-noi-dung.md` (trong repo: `du-an/danh-muc-noi-dung.md`) trước tiên.

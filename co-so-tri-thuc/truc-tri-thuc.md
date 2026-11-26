@@ -50,6 +50,8 @@ Tầng của từng file: bảng [tang.json](tang.json) (mẫu đường dẫn �
 5. **Liên kết với đâu?** Liên kết tới nguyên lý / nơi dùng, một dòng ở `ban-do/` (quy ước: `quy-uoc-lien-ket.md`). Thông tin không được liên kết tới thì coi như không tồn tại.
 6. **Kiểm thế nào?** Câu kiểm, mẫu chuẩn, hay số liệu nào sẽ cho biết thông tin đó hữu ích? Chưa có thì ghi giả thuyết "kỳ vọng Y, đo lại sau N lần".
 
+Khi nguồn mới có thuật ngữ trùng tên, khác tên hoặc có thể đổi nghĩa hiện hành, đối chiếu [hệ thuật ngữ](bang-thuat-ngu.md#áp-dụng-khi-trao-đổi-và-học-từ-nguồn-mới) trước khi xếp tầng.
+
 ## 4. Luật thăng cấp (như não ngủ để củng cố)
 - Thông tin mới **luôn vào tầng 3 trước**. Thông tin thăng cấp lên tầng 2 khi **lặp ít nhất 2 lần** hoặc David nói thành cách làm. Thăng cấp lên tầng 1 khi có **ít nhất 3 trường hợp cùng
   gốc** và đã có câu kiểm. Thăng cấp lên tầng 0 đi dần, như bộ não người hiểu sâu dần qua các trường hợp thực tế: nguyên lý tầng 1 được xác nhận qua nhiều trường hợp ở ít nhất 3 ngày khác nhau thì làm rõ hoặc bổ sung vào câu gốc, có dòng sổ dẫn chứng. Luật thăng cấp áp dụng cho điều AI tự rút ra từ các trường hợp; lời David nói thẳng để đổi luật thì áp dụng ngay (lời mới nhất thắng), ghi sổ dẫn chứng. Thông tin về David (`david.md`, hồ sơ) thì vẫn chờ David duyệt. Luật 4 (mạng xã hội, mật khẩu, quyền riêng tư) và các điểm duyệt Đ2, Đ3 không tự đổi; chỉ đổi khi David nói thẳng.
