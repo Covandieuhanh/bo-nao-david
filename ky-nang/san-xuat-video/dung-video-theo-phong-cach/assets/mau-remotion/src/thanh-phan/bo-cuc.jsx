@@ -70,19 +70,27 @@ const The = ({so, ...p}) => so == null ? <TheGoc {...p} /> : (
 );
 const TheGoc = ({start, tieu_de, dong = [], w, f, fs, kc = 'mo'}) => (
   <div style={{width: w, padding: fs * 0.9, borderRadius: fs * 0.7, background: C.card, border: `2px solid ${C.line}`,
-    boxShadow: '0 30px 90px rgba(0,0,0,0.5)', display: 'flex', flexDirection: 'column', gap: fs * 0.35}}>
+    boxShadow: '0 30px 90px rgba(0,0,0,0.5)', display: 'flex', flexDirection: 'column', gap: fs * 0.6}}>
     {tieu_de && <div style={{fontFamily: BODY, fontWeight: 700, fontSize: fs * 0.42, letterSpacing: 3, color: C.accent, textTransform: 'uppercase',
       opacity: ease(f, 2, 10), textWrap: 'balance'}}>{tieu_de}</div>}
     {dong.map((d, i) => {
       const a = rel(d.at ?? start, start), p = pop(f, a);
       const g = d.gach != null ? ease(f, rel(d.gach, start), rel(d.gach, start) + 8) : 0;
+      // trình bày ý (David góp ý 26/11/2026): gạch đầu dòng, viết hoa chữ đầu, các ý cách nhau rõ
+      const co = d.to ? Math.max(fs * 0.8, Math.min(fs * 1.35, (w - fs * 2.6) / (0.46 * Math.max(4, d.text.length)))) : fs * 0.62;   // chữ to: co cho vừa một dòng, không nhỏ hơn 0,8 — dài quá thì xuống dòng
+      const lh = 1.18, day = Math.max(4, fs * 0.08);
       return (
-        <div key={i} style={{position: 'relative', alignSelf: 'flex-start', opacity: 1 - 0.45 * g}}>
-          <div style={{fontFamily: d.to ? HEAD : BODY, fontWeight: d.to ? 800 : 500, lineHeight: 1.08,
-            fontSize: d.to ? Math.max(fs * 0.8, Math.min(fs * 1.35, (w - fs * 1.8) / (0.46 * Math.max(4, d.text.length)))) : fs * 0.62,   // chữ to: co cho vừa một dòng, không nhỏ hơn 0,8 — dài quá thì xuống dòng
-            color: d.to && i === dong.length - 1 ? C.accent : C.text, textTransform: d.to ? 'uppercase' : 'none',
-            textWrap: 'balance', whiteSpace: 'pre-line', hyphens: 'none'}}><ChuHien text={d.text} a={a} kieu={kc} /></div>
-          {g > 0 && <div style={{position: 'absolute', left: 0, top: '52%', height: Math.max(3, fs * 0.08), width: `${g * 100}%`, background: C.accent}} />}
+        <div key={i} style={{alignSelf: 'flex-start', display: 'flex', alignItems: 'flex-start', gap: fs * 0.28,
+          opacity: (1 - 0.45 * g) * (f < a ? 0 : 1)}}>
+          <div style={{flex: 'none', width: fs * 0.3, height: day, borderRadius: 4, background: C.accent, marginTop: co * lh / 2 - day / 2,
+            opacity: Math.min(1, p * 1.4)}} />
+          <div style={{position: 'relative', minWidth: 0}}>
+            <div style={{fontFamily: d.to ? HEAD : BODY, fontWeight: d.to ? 800 : 500, lineHeight: lh, fontSize: co,
+              color: d.to && i === dong.length - 1 ? C.accent : C.text, textTransform: d.to ? 'uppercase' : 'none',
+              textWrap: 'pretty', whiteSpace: 'pre-line', hyphens: 'none'}}>
+              <ChuHien text={d.text.charAt(0).toLocaleUpperCase('vi') + d.text.slice(1)} a={a} kieu={kc} /></div>
+            {g > 0 && <div style={{position: 'absolute', left: 0, top: '52%', height: Math.max(3, fs * 0.08), width: `${g * 100}%`, background: C.accent}} />}
+          </div>
         </div>
       );
     })}

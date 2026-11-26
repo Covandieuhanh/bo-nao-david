@@ -175,6 +175,12 @@ if tit:
 hoso.dump('doan-noi-bat', os.path.join(E, 'chuyen-dong/src/ho-so.json'))   # khung dựng đọc hồ sơ highlight (cỡ phụ đề nhịp chữ…)
 tpl = open(os.path.join(E, 'chuyen-dong/src/danh-sach-cat.js'), encoding='utf-8').read()
 head = tpl[:tpl.index('const RAW = [')]
+# Khung bằng khung video gốc (David 26/11/2026: không tự làm khung dọc) — đọc từ c1
+_k = subprocess.check_output(['ffprobe', '-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height', '-of', 'csv=p=0',
+                              os.path.join(E, 'chuyen-dong', 'public', 'doan-video', 'c1.mp4')], text=True).split()[0].split(',')
+_W, _H = (1920, 1080) if int(_k[0]) >= int(_k[1]) else (1080, 1920)
+head = re.sub(r'export const W = \d+;', f'export const W = {_W};', head)
+head = re.sub(r'export const H = \d+;', f'export const H = {_H};', head)
 _endmid = tpl.index('// TS(src)') if '// TS(src)' in tpl else tpl.index('// ===== Phụ đề')   # chạy lại nhiều lần không nhân đôi khối TS
 mid = tpl[tpl.index('let acc = 0;'):_endmid]
 src = f"""{head}// Viết bởi cat-doan-noi-bat/scripts/danh-sach-cat-doan-noi-bat.py từ {H}/phuong-an.json (phương án {opt['id']}) — Claude chỉnh tiếp.

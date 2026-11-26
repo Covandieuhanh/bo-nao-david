@@ -1,6 +1,6 @@
 ---
 name: cat-doan-noi-bat
-description: Cắt một video dài (bản YouTube 5–60 phút) thành các clip nổi bật DỌC 9:16 (1080×1920) cho Reels, TikTok, Shorts, Facebook Reels. Claude tự chọn ý theo bốn câu (bối cảnh, ý trọn, mang về, chừa lại): mỗi clip một ý trọn, hiểu được khi xem riêng, số clip và độ dài theo ý. Mọi chữ trên clip là nguyên văn lời người nói — kể cả thẻ tiêu đề (cụm then chốt nhất) và màn chốt; phụ đề cụm 5–8 chữ; cắt cứng giấu điểm nối, rút khoảng lặng; hai tông sôi động / lắng với nhạc từ kho kênh; không thanh thời gian, không thẻ cuối — dẫn về bản đầy đủ ở caption và bình luận ghim. Đoạn nổi bật ra ĐÚNG LOẠI video gốc — nguồn người nói thì dùng khung ghép của dung-video-theo-phong-cach; nguồn podcast hoặc đồ hoạ thì dựng podcast đồ hoạ dọc (dung-podcast). Kèm lịch đăng, mô tả, bình luận ghim. Dùng khi người dùng nói "cắt highlight", "làm video highlight", "cắt clip ngắn từ video dài", "làm Reels/TikTok/Shorts từ video YouTube/podcast", "cắt đoạn hay", "/cat-doan-noi-bat", hoặc đưa một video dài (kể cả podcast đã dựng) muốn ra clip ngắn — kể cả khi chỉ gửi file mà không nói rõ.
+description: Cắt một video dài (bản YouTube 5–60 phút) thành các clip nổi bật cùng khung với video gốc (gốc ngang ra ngang, gốc dọc ra dọc; chỉ đổi khung khi David yêu cầu) cho Facebook, Reels, TikTok, Shorts. Claude tự chọn ý theo bốn câu (bối cảnh, ý trọn, mang về, chừa lại): mỗi clip một ý trọn, hiểu được khi xem riêng, số clip và độ dài theo ý. Mọi chữ trên clip là nguyên văn lời người nói — kể cả thẻ tiêu đề (cụm then chốt nhất) và màn chốt; phụ đề cụm 5–8 chữ; cắt cứng giấu điểm nối, rút khoảng lặng; hai tông sôi động / lắng với nhạc từ kho kênh; không thanh thời gian, không thẻ cuối — dẫn về bản đầy đủ ở caption và bình luận ghim. Đoạn nổi bật ra ĐÚNG LOẠI video gốc — nguồn người nói thì dùng khung ghép của dung-video-theo-phong-cach; nguồn podcast hoặc đồ hoạ thì dựng podcast đồ hoạ dọc (dung-podcast). Kèm lịch đăng, mô tả, bình luận ghim. Dùng khi người dùng nói "cắt highlight", "làm video highlight", "cắt clip ngắn từ video dài", "làm Reels/TikTok/Shorts từ video YouTube/podcast", "cắt đoạn hay", "/cat-doan-noi-bat", hoặc đưa một video dài (kể cả podcast đã dựng) muốn ra clip ngắn — kể cả khi chỉ gửi file mà không nói rõ.
 ---
 # Cắt đoạn nổi bật cho mọi mục video ngắn
 
@@ -29,11 +29,11 @@ Claude **tự chọn ý, không hỏi David chọn đoạn**. Claude đọc nố
 
 ## Luật riêng của đoạn nổi bật (kiểm lại trước khi giao)
 
-Vị trí và thành phần cố định theo bộ nhận diện chung `../thu-vien-tai-nguyen/nhan-dien-chung.md`. Clip nổi bật là video dọc ngắn: không có thanh
-thời gian, không có thẻ cuối, màn chốt trên hình, kết ở chữ cuối để tự lặp; dẫn về bản đầy đủ nằm ở caption và bình luận ghim (khối 15).
+Vị trí và thành phần cố định theo bộ nhận diện chung `../thu-vien-tai-nguyen/nhan-dien-chung.md`. Clip nổi bật khung dọc: không có thanh
+thời gian, không có thẻ cuối, màn chốt trên hình, kết ở chữ cuối để tự lặp (clip khung ngang: mục "Highlight ngang"). Mọi clip: dẫn về bản đầy đủ nằm ở caption và bình luận ghim (khối 15).
 
 1. **Cùng loại với video gốc**: nguồn người nói ra clip người nói, nguồn đồ hoạ ra clip đồ hoạ; giữ phong cách cùng tên tập, tên người nói của bản gốc (khối 13, bước 0).
-   Mặc định **dọc 9:16, 1080×1920**; David yêu cầu ngang thì ra **ngang 1920×1080** (mục "Highlight ngang" dưới bước 7A). Không cắt thẳng hình đồ hoạ ngang vào khung dọc mà phải dựng lại.
+   **Khung clip bằng khung video gốc** (`../quy-tac-chung.md` mục 4): gốc ngang thì làm theo mục "Highlight ngang" dưới bước 7A; chỉ đổi khung khi David yêu cầu rõ. Khi David yêu cầu đổi sang dọc: không cắt thẳng hình đồ hoạ ngang vào khung dọc mà phải dựng lại.
 2. **Số clip theo số ý đạt 4 câu**: mỗi clip một ý KHÁC NHAU, không trùng câu chính; không thêm clip đệm cho đủ số. David yêu cầu một số clip cụ thể thì chọn các ý mạnh nhất cho đủ số đó. Clip A là ý mạnh nhất (đăng đầu tiên).
 3. **Mọi chữ là nguyên văn** (thẻ tiêu đề, phụ đề, chữ to, màn hành động, ý đang bàn, màn chốt) — quy-tac-chung mục 1: chỉ chọn câu,
    bỏ bớt chữ ở đầu/cuối câu, sửa chính tả Whisper. Không có ngoại lệ. Mô tả bài đăng theo giọng David (khối 15).
@@ -117,7 +117,7 @@ chuyển thành toàn màn hình; tiêu đề ghim che đầu thì ẩn), rồi 
 ngay sau 1–2 điểm cắt, cuối clip thấy màn chốt), sửa tới khi không còn lỗi, rồi `node xuat-chuong-trinh.mjs` (chạy nền; render các clip nối tiếp,
 không chạy song song vì tốn RAM). Không có bước duyệt kế hoạch ghép của chế độ ghép nhiều clip (luật 12).
 
-### Highlight ngang (khi David yêu cầu) — nguồn người nói, mẫu ghép
+### Highlight ngang (video gốc ngang) — nguồn người nói, mẫu ghép
 - `danh-sach-cat.js`: `W = 1920`, `H = 1080`; `THE_CUOI = false` (kết ở màn chốt); thanh thời gian tự có (khung ngang). Bỏ `nang-khung.py` và
   `bao-ve-lop-phu.py` (chỉ tính cho khung dọc) — tự rà soát bằng ảnh chụp thử: `pow` đặt `x` (tâm khối chữ, px) vào vùng trống cạnh người nói.
 - Nguồn nhiều video dài (ổ đĩa không đủ dung lượng để chép bản gốc): chép lời trên bản dung lượng nhỏ ghép các video, chọn ý, rồi cắt các cửa sổ cần dùng từ file gốc
@@ -126,14 +126,19 @@ không chạy song song vì tốn RAM). Không có bước duyệt kế hoạch 
   2 phách bài `intro-soi`/`intro-lang`), `D = segStart('p1')`; phụ đề phần chính cộng `D`, `TS()` bỏ qua đoạn `m`; thẻ `title` `over` trên dải
   cảnh câm, chữ nguyên văn; nhạc `tracks` gồm bài intro và bài phần chính, `loudRanges` là dải cảnh câm. Luật chọn cảnh ở `nhieu-doan-video.md` mục 2d.1.
   Mẫu: `~/Movies/tap-marketing-noi-dau-nhu-cau/3-doan-noi-bat/clip-A`.
-- **Cùng ý, thêm bản dọc từ nguồn ngang**: không cắt thẳng mà đổi khung `nguon.mp4` bám theo người nói (`phan-tich-doi-khung.sh` và `ke-hoach-doi-khung.py`
+- **Thêm bản dọc từ nguồn ngang (chỉ khi David yêu cầu)**: không cắt thẳng mà đổi khung `nguon.mp4` bám theo người nói (`phan-tich-doi-khung.sh` và `ke-hoach-doi-khung.py`
   trong dự án phụ `clip-<id>-doc/rekhung`, `tu-lieu/video-goc.mp4` là liên kết cứng tới c1; mọi câu bám người đang nói, cảnh intro đặt `cx` riêng,
   cảnh có người đi ngang hoặc thấy cả quán thì dùng `wide`), rồi chép `chuyen-dong` của bản ngang, c1 là bản dọc (cùng thời lượng nên giữ nguyên mốc),
   `W = 1080`, `H = 1920`, bỏ `pow.x`; người ngồi cả thân lấp giữa khung thì `pow` đặt `y` vào dải trống trên đầu (đỉnh đầu khoảng 650 px thì đặt `y: 300`);
   thẻ `title` trên intro thêm `keep: true` để không thành toàn màn hình che hết cảnh câm. Rồi chạy `nang-khung.py`, rồi `bao-ve-lop-phu.py`, rồi chụp thử như 7A.
   Mẫu: `~/Movies/tap-marketing-noi-dau-nhu-cau/3-doan-noi-bat/clip-B-doc`.
 
-### 7B. Dựng — nguồn podcast / toàn đồ hoạ (`dung-podcast`, khung dọc)
+### Nguồn đã làm sạch từ video tối đa 3 phút — dựng bằng mẫu 1 video
+Bản sạch của video tối đa 3 phút đã rút khoảng lặng rồi, nên **không rút lặng lần hai** (lần hai dễ cắt mất chữ nói nhỏ): ghép các đoạn trọn
+câu bằng `ffmpeg` (`trim` + `concat`, mờ tiếng 15–30 ms ở mỗi đầu) thành `tu-lieu/video-goc.mp4`, chép `chuyen-dong` của bản đầy đủ, dời mốc
+`phu-de.js` và các cảnh nằm trong những đoạn đó, rồi chụp thử và render như bản đầy đủ. Khung theo video gốc.
+
+### 7B. Dựng — nguồn podcast / toàn đồ hoạ (`dung-podcast`; khung theo nguồn, lệnh dưới là ví dụ khung dọc)
 ```bash
 zsh $POD/scripts/tao-podcast.sh "$P/cat/<id>.mp4" hl-<tên>-<id> doc cat-thua   # mỗi clip → ~/Movies/tap-<tên>/3-doan-noi-bat/clip-<id> = $E (chỉ lấy tiếng)
 zsh $POD/scripts/phien-am.sh "$E"
@@ -186,6 +191,7 @@ Mẫu: `~/Movies/tap-di-trainer/3-doan-noi-bat/clip-{A,B,C}`, thành phẩm ở 
 
 ## Điều không làm
 - Không viết thêm, không đổi chữ của người nói trên clip; không ghép câu tạo ra ý người nói không nói.
+- Không đổi khung so với video gốc khi David không yêu cầu.
 - Không đổi loại video (podcast không thành người nói, người nói không thành toàn đồ hoạ); không cắt thẳng hình đồ hoạ ngang vào khung dọc.
 - Không dùng giọng đọc AI thay người nói; không thêm lời bán hàng vào clip; giá chỉ hiện khi chính người nói nêu và là sản phẩm công nghệ (hướng 3), bài về con người không nói giá, không nói gói.
 - Không ghi cứng phụ đề vào hình bằng ffmpeg (`subtitles=`/`drawtext` — ffmpeg Homebrew không có libass/freetype); phụ đề luôn qua Remotion
@@ -205,7 +211,7 @@ $SKILL/assets/nhac/               # soi-*.mp3 · lang-*.mp3 — kho nhạc kênh
 
 ## Xong khi
 1. Mỗi clip đạt đủ bốn câu chọn ý; báo cáo ghi 4 câu và lời đọc nối.
-2. Clip cùng loại video gốc, dọc 1080×1920 (ngang 1920×1080 khi David yêu cầu).
+2. Clip cùng loại và **cùng khung** video gốc (khác khung chỉ khi David yêu cầu).
 3. Mọi chữ trên clip nguyên văn (cả tiêu đề, màn chốt).
 4. Không cắt vào giữa ý; lời bản cắt đã chép lại đối chiếu khớp.
 5. Phụ đề cụm khoảng 5–8 chữ (tối đa theo hồ sơ `phu_de.ngan_max_chu`) không chồng chữ motion graphic; không thanh thời gian, không thẻ cuối.

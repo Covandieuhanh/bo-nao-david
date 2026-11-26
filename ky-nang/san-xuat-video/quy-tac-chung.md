@@ -84,13 +84,17 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
   thực tế của khung hình (trần, cửa kính, tường, khoảng trên đầu — xét ảnh đầu / giữa / cuối cảnh). Cảnh toàn khung, nền làm mờ chỉ dùng ở đoạn không
   có nội dung chính cần thấy. Khung nhiều người thì mọi người luôn hiện, không thu riêng một người vào ô — người xem cần thấy đang nói
   với ai; khung một người thì thu vào ô bo góc không tính là che. Cách tránh: khối 05. Công cụ kiểm tra chặn các trường hợp đo được.
+- **Trình bày ý trong thẻ** (mọi thẻ từ 2 dòng ý, kể cả cảnh tự vẽ): mỗi ý có **gạch đầu dòng**, **viết hoa chữ đầu**, giữa hai ý có **khoảng cách
+  rõ** (lớn hơn hẳn khoảng cách giữa hai dòng của cùng một ý), dòng xuống hàng thụt theo chữ — người xem nhìn là đếm được có mấy ý. Mẫu đã làm sẵn:
+  thẻ `the-canh` / `the` (`bo-cuc.jsx`) và `rieng/nhan-tram.jsx`; người viết kịch bản không tự gõ ký hiệu gạch vào chữ.
 - Chữ tiếng Việt đủ dấu, không chồng dòng (`VN`, chừa 0,5 em trên / 0,32 em dưới).
 - **Nhiều ảnh thật minh hoạ**: mỗi khi lời nhắc tới một nơi, người, vật, việc cụ thể thì ưu tiên ảnh thật, dùng biểu tượng vẽ
   cho ý trừu tượng. **Ảnh chỉ được chụp tại Việt Nam, liên quan người Việt Nam** (đọc mô tả / danh mục ảnh để chắc chắn; tìm kèm
   "Vietnam" / tên tiếng Việt). Không có ảnh Việt Nam hợp giấy phép thì dùng biểu tượng vẽ, không dùng ảnh nước ngoài. Nguồn ghi vào `nguon-anh.txt`.
   Số liệu luôn thể hiện bằng hiệu ứng, đúng con số người nói. Kết quả, con số mà clip gốc có bằng chứng thật (ảnh giá, hoá đơn) thì ưu tiên trình chiếu.
 - Không ghi chú kỹ thuật trên video (×1,6, slow-mo…). Không đặt màn nguồn ảnh ở cuối video; nguồn ghi vào `nguon-anh.txt`.
-- Khung xuất giống khung gốc trừ khi David yêu cầu khác (highlight mặc định dọc 9:16, ngang khi David yêu cầu).
+- **Video gốc khung nào thì mọi kết quả ra khung đó** (bản dài, clip ngắn, highlight, bản theo hướng, mọi kênh đăng). Chỉ đổi khung (ngang ↔ dọc)
+  khi David yêu cầu rõ trong chính việc đang làm; kênh đăng quen dùng video dọc không phải là lý do đổi khung. Nguồn không có hình (chỉ có âm thanh) thì chọn khung theo `dung-podcast`.
 
 ## 5. Bộ nhận diện
 Một nguồn: `thu-vien-tai-nguyen/nhan-dien-chung.md` — chữ ký nhận diện, vị trí và luật của thành phần cố định (vùng an toàn, dấu góc, thanh

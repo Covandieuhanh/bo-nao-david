@@ -97,3 +97,13 @@ Bản theo hướng: bản ngang 3:17 `tap-ai-may-do-cho-khach` · Trạng thái
 | Mỗi người nội dung, người xem, thẩm mỹ khác nhau nên phải tuỳ chỉnh theo khách | "mình sẽ custom cho khách" | 1991–2008 (33:11) | video làm theo mẫu chung không trúng | gói video may đo | giải thích khác biệt |
 | Mua áo đại trà về mặc không vừa, sửa xong thành lỗi | "mua áo này rộng về mặc không vừa đâu" | 2018–2024 (33:38) | — | — | ví dụ so sánh |
 | Chốt được quy trình rồi thì dần dần đóng lại | "Chốt được rồi thì mình lần lần đóng lại quy trình đấy" | 2246–2252 (37:26) | quy trình mỗi lần một cách | gói quy trình cho AI | ý nối với `tap-quy-trinh-cho-ai` |
+
+## 26/11/2026 · tap-ai-san-xuat-video · quay một mình ở văn phòng, cho xem trên máy tính
+Bản theo hướng: bản ngang 2:20 và clip ngắn ngang 53 giây · Trạng thái: đã dựng 26/11, chờ đăng
+| Ý | Lời gốc | Mốc | Nỗi đau / mục tiêu | Bán được gì | Dùng cho việc |
+|---|---|---|---|---|---|
+| Một câu lệnh kèm link nguồn, AI làm ra video highlight sự kiện | "làm cho tôi một cái highlight" | 15–56 (0:15) | dựng video sự kiện mất công | giải pháp video tự động | minh chứng làm thật |
+| Ở xa vẫn làm được, không cần thêm thao tác | "ở từ xa thì mình cũng có thể tự do làm cái điều này" | 49–58 (0:49) | phải ngồi tại máy | giải pháp video tự động | câu giới thiệu |
+| Trước cần cả đội dựng video, nay công cụ tự động làm cho xây thương hiệu đơn giản | "mình cần một đội edit video đằng sau rất là lớn" | 70–89 (1:10) | chi phí xây thương hiệu | gói video may đo | câu mở tư vấn |
+| Người dùng thường xuyên khác người thỉnh thoảng dùng | "sự khác biệt nó rất là lớn" | 99–109 (1:39) | dùng AI không ra kết quả | gói công nghệ + đào tạo | câu định vị |
+| Yêu cầu AI làm video không khó, quan trọng là ứng dụng được | "quan trọng tính thực tiễn để ứng dụng" | 109–124 (1:49) | làm ra video nhưng không dùng được | gói công nghệ + đào tạo | câu định vị chính |

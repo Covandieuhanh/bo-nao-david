@@ -18,8 +18,8 @@ description: "Khối 13 chọn khoảnh khắc highlight: lập bản đồ toà
 ### 0. Nhận loại video gốc (quyết định cách dựng)
 | Video gốc | Nhận ra | Highlight ra | Dựng bằng |
 |---|---|---|---|
-| **Tự quay có người nói** (talking-head, ngang hoặc dọc) | thấy người trong hình; chưa có chữ/phụ đề đốt sẵn | hình người nói, khung dọc bám người nói, phủ hiệu ứng như skill gốc | bước 7A — `dung-video-theo-phong-cach` |
-| **Podcast / video toàn đồ hoạ** (sân khấu, sóng âm, thẻ — ví dụ: bản dựng của `dung-podcast`) | không có người; đồ hoạ, phụ đề, thanh thời gian đốt sẵn | podcast đồ hoạ **dọc** dựng lại từ tiếng gốc, cùng phong cách + tên tập (`STAGE`) + người nói của bản gốc | bước 7B — `dung-podcast` |
+| **Tự quay có người nói** (talking-head, ngang hoặc dọc) | thấy người trong hình; chưa có chữ/phụ đề đốt sẵn | hình người nói, cùng khung video gốc, phủ hiệu ứng như skill gốc | bước 7A — `dung-video-theo-phong-cach` |
+| **Podcast / video toàn đồ hoạ** (sân khấu, sóng âm, thẻ — ví dụ: bản dựng của `dung-podcast`) | không có người; đồ hoạ, phụ đề, thanh thời gian đốt sẵn | podcast đồ hoạ **cùng khung nguồn** dựng lại từ tiếng gốc, cùng phong cách + tên tập (`STAGE`) + người nói của bản gốc | bước 7B — `dung-podcast` |
 | **Video đã dựng có người nói** (bản `dung-video-theo-phong-cach` đã phủ chữ/phụ đề) | có người + chữ/phụ đề đốt sẵn | như hàng 1, nhưng dựng từ **bản sạch** `tu-lieu/video-goc.mp4` của dự án gốc (không chồng 2 lớp chữ) | bước 7A |
 | Không rõ / đã đốt chữ mà không tìm được dự án gốc | — | **hỏi David** bản thô hoặc thư mục dự án; không phủ thêm phụ đề lên phụ đề | — |
 

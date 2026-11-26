@@ -113,6 +113,11 @@ def sua(wav, O, lang="vi"):
         b = dur if b is None else min(dur, b)
         print(f"Lời ảo {fmt(a)}–{fmt(b)} → chép lại riêng đoạn này")
         ra = chep(wav, a, b, lang, False)
+        # đoạn rất ngắn (≤ 1,5 s) chỉ toàn câu bịa quen thuộc = đuôi không lời → bỏ câu đó, không dừng cả quy trình
+        trong = [s for s in segs if a - 0.05 <= (s[0] + s[1]) / 2 <= b + 0.05]
+        if ra is None and b - a <= 1.5 and all(BIA.search(s[2]) for s in trong):
+            segs = [s for s in segs if s not in trong]
+            print("  → đuôi không lời, bỏ câu bịa"); continue
         if ra is None: hong.append([a, b]); continue
         segs = sorted([s for s in segs if not a - 0.05 <= (s[0] + s[1]) / 2 <= b + 0.05] + ra)
     for _ in range(3):   # chép lại một khoảng có thể hụt từ ở ranh giới → kiểm lại

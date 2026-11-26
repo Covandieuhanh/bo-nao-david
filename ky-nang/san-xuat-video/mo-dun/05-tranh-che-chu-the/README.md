@@ -35,3 +35,10 @@ description: "Khối 05 tránh che chủ thể: lớp phủ không chạm mặt 
   rồi `python3 -I dung-video-theo-phong-cach/scripts/bao-ve-lop-phu.py "$P"` sau mỗi lần sửa danh-sach-cat.js. Đọc bảng `kiem-tra/khuon-mat/placement.md` / `guard.md`.
 - Bố cục do khối 07 chọn; khối này đảm nhận thẻ tiêu đề mở đầu (highlight) và các lớp được chỉ định thủ công bằng `place`.
 - Cảnh `nhan` và `bocuc` không đi qua vi-tri-khuon-mat.py: `vi-tri-nhan.py` (được gọi trong vi-tri-khuon-mat.sh) ghi **mọi người** trong khung + **người đang nói** vào `chuyen-dong/src/mat.js`; `src/thu-vien/cho.js` tìm khoảng trống quanh mọi người, nhan.jsx / bo-cuc.jsx đặt đồ hoạ sát người đang nói, co cỡ theo chỗ trống, không đè lên ai. Khung dọc hẹp thì đặt dưới cằm; khung ngang không đặt dưới cằm.
+
+## Làm mờ vùng riêng tư trên màn hình được quay
+Video quay màn hình máy tính hay điện thoại: trước khi dựng, mở vài khung **cỡ lớn** và tìm thứ người ngoài không được đọc: đường link thư mục
+Drive hay link chia sẻ riêng, danh sách tên phiên làm việc, tên người, số điện thoại, mật khẩu, token. Có thì làm mờ **đúng vùng đó**
+(giữ nguyên lời nói và phần còn lại của màn hình) bằng `dung-video-theo-phong-cach/scripts/lam-mo-vung-rieng.py` (bám màn hình quay cầm tay,
+cách khai báo ở đầu script), chạy trên `tu-lieu/video-goc.mp4` sau bước làm sạch. Kiểm bằng ảnh rải mỗi giây và phóng to chỗ máy lia.
+Báo cáo và gói đăng ghi rõ đã làm mờ gì, còn gì vẫn đọc được.

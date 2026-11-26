@@ -39,7 +39,7 @@ khách hàng, thị trường của chính người xem thuộc **hướng 3** (
    |---|---|---|
    | 1 Tài chính | bản YouTube + clip ngắn | David Trần Official |
    | 2 Trainer con người | bản dài + highlight | YouTube trainer, Facebook cá nhân |
-   | 3 Giải pháp công nghệ AI | bản vừa (độ dài Claude tự chọn theo nội dung) + clip dọc | Facebook cá nhân, fanpage, TikTok |
+   | 3 Giải pháp công nghệ AI | bản vừa (độ dài Claude tự chọn theo nội dung) + clip ngắn, đều cùng khung video gốc | Facebook cá nhân, fanpage, TikTok |
 3. **Ghép trọn ý** (cùng bốn câu của highlight, khối 13):
    - **Bối cảnh**: đoạn mở phải đủ để người xem hiểu ai đang nói gì; thiếu thì kéo thêm câu bối cảnh liền trước, không tự viết lời dẫn.
    - **Ý trọn**: vào / ra ở cuối câu, bắt chỗ lặng gần nhất; không cắt giữa lập luận. Trong mỗi đoạn để nguyên (quy-tac-chung mục 2).

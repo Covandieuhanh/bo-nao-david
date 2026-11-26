@@ -249,3 +249,8 @@ người nói chưa từng chạy với dấu góc. Lỗi không do bài học v
 - **Loại:** cách làm (học một vòng): kế hoạch chọn nhạc đúng, công cụ và tài liệu sai.
 - **Đã chặn:** sửa tài liệu khối 09 và chú thích; script dừng hẳn khi thấy khoá `music`; sau ghép đối chiếu dòng "nhạc nền: …" với `ke-hoach-canh.md`.
 - **Bài học chung:** tài liệu và code không khớp nhau thì tin code và sửa tài liệu ngay; công cụ không được âm thầm bỏ qua điều nó không hiểu.
+
+## Thẻ liệt kê dính liền, không rõ ý (26/11/2026)
+- **Hiện tượng:** ba ý trong một thẻ viết thường, cách nhau bằng đúng khoảng cách dòng, không có gạch đầu dòng nên đọc như một đoạn.
+- **Nguyên nhân gốc:** mẫu thẻ chỉ xếp dòng, chưa có kiểu trình bày danh sách; khi chụp thử chỉ soát che mặt, chưa soát "đếm được mấy ý".
+- **Đã chặn:** mẫu thẻ tự vẽ gạch, viết hoa chữ đầu, giãn giữa các ý. Câu kiểm khi xem ảnh chụp thử: **nhìn thẻ một giây có đếm được số ý không?**
