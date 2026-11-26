@@ -41,8 +41,15 @@ tim_drive_windows() {
 }
 duong_win() { wslpath -w "$(realpath "$1")"; }
 # _rb <nguồn Windows> <đích Windows> [tham số robocopy ...]; mã thoát của robocopy: bit 1 = có tệp cần/đã chép, bit 2 = đích có tệp thừa, từ 8 = lỗi
-_rb() { local a=$1 b=$2; shift 2; robocopy.exe "$a" "$b" /E /FFT /R:3 /W:10 /NP /NJH /NJS /XF desktop.ini "$@" >/dev/null; }
-_so() { _rb "$1" "$2" /L "${@:3}"; local m=$?; (( m < 8 && (m & 1) == 0 )) || return 1; (( m & 2 )) && echo "⚠ Nơi nhận còn tệp mà nguồn không có (bản cũ đổi tên?), chưa xoá"; return 0; }
+_rb() { local a=$1 b=$2; shift 2; robocopy.exe "$a" "$b" /E /FFT /R:3 /W:10 /NP /NJH /NJS "$@" >/dev/null; }
+_so() {
+  _rb "$1" "$2" /L "${@:3}"; local m=$? thua; (( m < 8 && (m & 1) == 0 )) || return 1
+  (( m & 2 )) || return 0
+  # desktop.ini là tệp ẩn do chính ứng dụng Drive tạo (cờ /XF của robocopy không lọc tệp thừa ở nơi nhận) → tự lọc ở đây
+  thua=$(robocopy.exe "$1" "$2" /E /FFT /L /NP /NJH /NJS "${@:3}" 2>/dev/null | tr -d '' | grep -a '\*EXTRA' | grep -aiv 'desktop\.ini')
+  [ -z "$thua" ] || { echo "⚠ Nơi nhận còn tệp mà nguồn không có (bản cũ đổi tên?), chưa xoá:"; print -r -- "$thua"; }
+  return 0
+}
 # tai_len <thư mục máy> <đường dẫn dưới "My Drive", dùng dấu /> [tham số loại trừ của robocopy ...]
 tai_len() {
   local nguon=$(duong_win "$1") dich="$GW\\${2//\//\\}"; shift 2
