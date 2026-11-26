@@ -78,6 +78,10 @@ case "$CHE_DO" in
     [ -s "$XUNG_DOT" ] && { echo "⛔ Lần đồng bộ trước bị xung đột, bộ não máy này CHƯA lên GitHub:"; cat "$XUNG_DOT"; }
     keo gc bo-nao-david
     [ $CO_RIENG = 1 ] && keo gr bo-nao-david-mac
+    if [ -f "$REPO/tu-dong-hoa/nhat-ky/cai.py" ]; then
+      python3 -I "$REPO/tu-dong-hoa/nhat-ky/cai.py" claude-code --da-cai-bo-nao ||
+        echo "⚠ Chưa cài được nhật ký phiên Claude Code."
+    fi
     rm -f "$XUNG_DOT"; kiem_loi_tat; echo "Đã kéo bản mới nhất từ GitHub." ;;
   --push|--day|*)
     kiem_loi_tat

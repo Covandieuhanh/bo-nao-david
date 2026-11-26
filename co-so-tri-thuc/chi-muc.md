@@ -325,4 +325,5 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 
 ## tu-dong-hoa
 
+- [tu-dong-hoa/nhat-ky/README.md](../tu-dong-hoa/nhat-ky/README.md) — tầng 2 · Kho nhật ký gốc bằng văn bản. Cài ghi liên tục trên Claude Code hoặc Codex, nhập nguồn đã xuất và chuyển kho giữa thiết bị. · ←2
 - [tu-dong-hoa/thiet-bi-khac/README.md](../tu-dong-hoa/thiet-bi-khac/README.md) — tầng 2 · Thiết bị khác dựng video giống Mac chính (Windows qua WSL2, Mac khác): khoá phiên bản công cụ, cài một lệnh, thiết bị tự kiểm tra so với bản chuẩn của Mac. · ←4

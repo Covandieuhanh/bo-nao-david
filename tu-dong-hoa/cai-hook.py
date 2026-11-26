@@ -6,7 +6,7 @@
 - SessionEnd (thứ hai): ghi tín hiệu tự học (tu-dong-hoa/hoc-lien-tuc/ghi-tin-hieu.py)
 - PermissionRequest: duyệt từ xa qua Telegram khi David vắng (tu-dong-hoa/so-tay/duyet-tu-xa.py)
 Chạy lại nhiều lần không bị trùng. Dùng: python3 -I tu-dong-hoa/cai-hook.py <đường dẫn repo> [--chi-video]"""
-import json, os, sys
+import json, os, subprocess, sys
 repo = os.path.abspath(sys.argv[1])
 p = os.path.expanduser("~/.claude/settings.json")
 cfg = json.load(open(p)) if os.path.exists(p) else {}
@@ -58,3 +58,6 @@ if os.path.isdir(cty):
     if cty not in ad: ad.append(cty)
     print(f"Mọi phiên ghi được bộ não công ty: {cty}")
 json.dump(cfg, open(p, "w"), ensure_ascii=False, indent=2)
+
+subprocess.run([sys.executable, "-I", os.path.join(repo, "tu-dong-hoa", "nhat-ky", "cai.py"),
+                "claude-code", "--cau-hinh", p, "--da-cai-bo-nao"], check=True)

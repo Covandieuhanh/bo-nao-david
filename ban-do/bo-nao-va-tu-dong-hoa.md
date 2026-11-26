@@ -34,6 +34,8 @@ Danh mục tám tệp lấy theo [bảng phân tầng](../co-so-tri-thuc/tang.js
 - [bang-thuat-ngu](../co-so-tri-thuc/bang-thuat-ngu.md) — Hệ thuật ngữ, định nghĩa, phạm vi sử dụng và quy ước đặt tên.
 - [chi-muc](../co-so-tri-thuc/chi-muc.md) — Chỉ mục tự sinh của bộ não — mỗi file .md một dòng (đường dẫn, mô tả, số file nối tới); Claude grep file này trước khi tìm toàn repo.
 
+- [Nhật ký công việc](../tu-dong-hoa/nhat-ky/README.md) — ghi lịch sử gốc theo phiên và thiết bị, nhập bản xuất và chuyển kho.
+
 ## Trạng thái và dự án của bộ não
 - [bao-cao-trang-thai](../bao-cao-trang-thai.md) — Báo cáo trạng thái: việc đang làm chưa xong, việc chờ David quyết, câu hỏi còn mở, cảnh báo, việc phải nhớ.
 - [du-an](../du-an/README.md) — Thư mục dự án: chỉ giữ file theo dõi việc làm chưa xong; dự án video và thành phẩm nằm ở thiết bị và Drive.

@@ -132,6 +132,10 @@ zsh ~/Documents/bo-nao-david/tu-dong-hoa/thiet-bi-khac/kiem-tra-thiet-bi.sh
 - Không có kết nối GitHub: tải ZIP của repo, hoặc tải riêng `AGENTS.md`, `co-so-tri-thuc/david.md`, `bao-cao-trang-thai.md`, `ky-nang/thu-thap-yeu-cau/SKILL.md`.
 - AI bản web không chạy được lệnh trên máy: làm được phần lọc, kế hoạch, viết bài; không dựng được video.
 
+### Bật nhật ký công việc
+
+[Nhật ký công việc](tu-dong-hoa/nhat-ky/README.md) hướng dẫn bật trên Claude Code, Codex và nhập bản ghi từ nguồn khác. Kho mặc định ở ngoài Git trên thiết bị. Chọn thư mục đồng bộ riêng nếu cần đọc lịch sử chung từ nhiều máy.
+
 ## 5. Những thứ repo không mang theo được
 
 | Hạng mục cần có | Cách lấy lại |
