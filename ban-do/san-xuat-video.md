@@ -65,7 +65,7 @@ Gốc: [bản đồ bộ não](README.md). Chiến lược kênh: [chien-luoc-no
 - [15-xuat-ban](../ky-nang/san-xuat-video/mo-dun/15-xuat-ban/README.md) — phát hành: 3 tiêu đề, mô tả, khung bìa, chương, bài đăng.
 - [16-phan-tich-so-lieu](../ky-nang/san-xuat-video/mo-dun/16-phan-tich-so-lieu/README.md) — số liệu sau đăng: đọc số, báo lỗi, không tự quyết định.
 - [17-kiem-soat-chat-luong](../ky-nang/san-xuat-video/mo-dun/17-kiem-soat-chat-luong/README.md) — dựng và kiểm tra chất lượng: chụp thử từng cảnh, render, rà soát lỗi.
-- [19-dang-bai](../ky-nang/san-xuat-video/mo-dun/19-dang-bai/README.md) — đăng bài / hẹn giờ lên YouTube, trang Facebook, TikTok qua trình duyệt.
+- [19-dang-bai](../ky-nang/san-xuat-video/mo-dun/19-dang-bai/README.md) — Khối 19 (tạm ngưng): Claude không đăng, David tự đăng; gói đăng ở khối 15.
 - [20-hop-thu-so-lieu](../ky-nang/san-xuat-video/mo-dun/20-hop-thu-so-lieu/README.md) — hộp thư và số liệu: tổng hợp bình luận, tin nhắn, đọc số liệu 24 giờ sau đăng.
 - [mau-so-lieu](../ky-nang/san-xuat-video/mo-dun/16-phan-tich-so-lieu/mau-so-lieu.md) — Mẫu file số liệu một video, điền sau 7 ngày đăng.
 - [mau-ke-hoach-dang](../ky-nang/san-xuat-video/mo-dun/19-dang-bai/mau-ke-hoach-dang.md) — Mẫu kế hoạch đăng video (ví dụ chuỗi Đi trainer, 06/11).
@@ -118,7 +118,7 @@ Gốc: [bản đồ bộ não](README.md). Chiến lược kênh: [chien-luoc-no
 - [video-dai-khong-cat](../co-so-tri-thuc/bo-nho/video-dai-khong-cat.md) — Video dài (podcast, tâm sự, thực tế, vlog) để nguyên không cắt, kể cả khoảng lặng và tiếng ờ ừm; tính năng cắt chỉ dùng khi trích video ngắn từ video dài (David chốt 2026-11-05)
 - [video-do-hoa-ke-chuyen](../co-so-tri-thuc/bo-nho/video-do-hoa-ke-chuyen.md) — Mọi video có motion graphics nhiều loại để kể lại câu chuyện, không theo mẫu cố định; ở mọi bước AI sáng tạo trong khung + tiêu chí + nhận diện (2026-11-07, 09/11, gộp 10/11)
 - [video-doc-mau-chu-chinh](../co-so-tri-thuc/bo-nho/video-doc-mau-chu-chinh.md) — Mẫu podcast đồ hoạ dọc David chốt — chữ chính thay phụ đề, nhạc khoảng 23 dB dưới giọng vẫn nghe được, không thúc ép người xem hành động, kết ở câu then chốt, không màn hình cuối; 3 clip "Đi trainer" là mẫu (2026-11-06, sửa 10/11)
-- [video-gop-y-render-lai](../co-so-tri-thuc/bo-nho/video-gop-y-render-lai.md) — Claude làm video liền một mạch, không qua cổng 1, cổng 2: David góp ý thì Claude sửa rồi render lại toàn bộ ngay; đăng chờ David nói "đăng" (13/11/2026)
+- [video-gop-y-render-lai](../co-so-tri-thuc/bo-nho/video-gop-y-render-lai.md) — Claude làm video liền một mạch, không qua cổng 1, cổng 2: David góp ý thì Claude sửa rồi render lại toàn bộ ngay; Claude không đăng, David tự đăng (13/11, sửa 26/11/2026)
 - [video-kien-truc-ky-nang](../co-so-tri-thuc/bo-nho/video-kien-truc-ky-nang.md) — Kiến trúc bộ skill video (hồ sơ tham số, 20 khối, thư viện hình, mẫu chuẩn; sửa đúng một chỗ) và bộ 5 video chuẩn 06/11 (04/11, 06/11; gộp 15/11)
 - [video-lam-lai-video-cu](../co-so-tri-thuc/bo-nho/video-lam-lai-video-cu.md) — Làm lại video cũ kênh "Cường Kể Chuyện": bỏ lời chào, giới thiệu kênh cũ, chữ và viền in trong hình; mỗi video ra một bản riêng; làm trọn rồi David góp ý sau (2026-11-08)
 - [video-nhac-theo-tuyen](../co-so-tri-thuc/bo-nho/video-nhac-theo-tuyen.md) — Claude TỰ chọn nhạc theo tuyến nội dung từ kho nhạc kênh (không hỏi David), chuẩn hoá độ lớn âm thanh từng bài; chuẩn âm lượng chung mọi video — nhạc khoảng 23 dB dưới giọng, cả bài −14 LUFS (2026-11-05, 06/11, 08/11, gộp 10/11)

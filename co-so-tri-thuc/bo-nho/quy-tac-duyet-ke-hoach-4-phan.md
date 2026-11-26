@@ -13,6 +13,6 @@ metadata:
 
 **Why (26/11/2026):** trong một tuần David nhắc khoảng 7 lần "tự động, không cần hỏi lại"; sau vòng tuần, David chốt: "quy trình nâng cấp và tất cả mọi thứ tôi làm ra quy trình là để tự động hoàn thành và nếu cần thì chỉ có sửa quy trình chứ không phải cứ phải duyệt, khi đã có quy trình rồi thì cần phải tự động hoàn toàn. gốc có rồi thì quy trình là thứ giúp tối ưu mọi lúc mà".
 
-**How to apply:** có lá thì tự động hoàn toàn; chưa có lá thì trình 4 phần trước, duyệt rồi không dừng giữa chừng, xong viết thành lá. Luôn giữ Đ2 (bấm đăng thật, gửi, xoá, tài khoản), Đ3 (thông tin về David), đổi nghĩa tầng 0. Phiên Telegram gửi 4 phần qua `bao-cao.sh "#N ❓ Chờ anh duyệt 4 phần: …"`. Liên quan [[quy-tac-phien-telegram-tu-chay]], [[quy-tac-goi-y-de-david-chon]], [[quy-tac-ket-qua-hon-toc-do]].
+**How to apply:** có lá thì tự động hoàn toàn; chưa có lá thì trình 4 phần trước, duyệt rồi không dừng giữa chừng, xong viết thành lá. Luôn giữ Đ2 (gửi tin, tài khoản, xoá ngoài quy trình dọn), Đ3 (thông tin về David). Từ 26/11/2026: Claude không đăng bài, David tự đăng; các tầng tự cập nhật dần từ ngoài vào lõi theo luật thăng cấp, không chờ David chốt. Phiên Telegram gửi 4 phần qua `bao-cao.sh "#N ❓ Chờ anh duyệt 4 phần: …"`. Liên quan [[quy-tac-phien-telegram-tu-chay]], [[quy-tac-goi-y-de-david-chon]], [[quy-tac-ket-qua-hon-toc-do]].
 
 Gốc: khối 2 (Hành động) của tu-duy-goc.md — Mục tiêu, Kế hoạch, Quy trình, Thực thi chính là vòng hành động gốc; duyệt trước thì sai được sửa trên giấy, không phải sửa trên kết quả.

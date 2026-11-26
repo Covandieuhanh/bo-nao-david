@@ -17,7 +17,7 @@ description: "Khối 15 phát hành: 3 tiêu đề, mô tả, khung bìa, chươ
 Luật phát hành chung (3 tiêu đề, thumbnail, khung bìa, màn kết, chương, teaser): `../../quy-tac-chung.md` mục 7.
 
 ## Luật kênh David (`ho-so-thuong-hieu/kenh.json`, áp cho mọi bài lên kênh thương hiệu)
-- **Lịch:** thứ Ba + thứ Sáu 20:00 giờ Việt Nam (hẹn giờ bằng chức năng có sẵn của nền tảng).
+- **Lịch:** thứ Ba + thứ Sáu 20:00 giờ Việt Nam (lịch gợi ý; David tự hẹn giờ bằng chức năng có sẵn của nền tảng).
 - **Mô tả / caption:** tóm ý theo lời David và câu kết theo kiểu dẫn dắt của bài (khối 08); bài kiểu **Mời** thêm link nhắn tin của trang
   (`kenh.fanpage.link_nhan_tin`). YouTube thêm chương nếu > 3 phút. Giọng văn + hashtag: `ho-so-thuong-hieu/giong-thuong-hieu-david.md`.
 - **Bình luận ghim (mọi kênh)** theo kiểu dẫn dắt của bài (khối 08); câu mẫu bài Không: "Bạn đang ở đâu? Bình luận **Vấn đề** (vì sao

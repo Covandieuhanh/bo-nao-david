@@ -495,4 +495,4 @@ See [references/dinh-kem-pr.md](references/dinh-kem-pr.md) for alt text, inline 
 ## Xong khi
 - Thao tác trên trang đã hoàn thành và có dẫn chứng: ảnh chụp màn hình hoặc bản chụp cấu trúc trang (`snapshot`) sau thao tác cuối.
 - Trình duyệt đã đóng (`playwright-cli close`), không còn phiên trình duyệt chạy treo.
-- Claude không nhập mật khẩu, mã OTP, thông tin thanh toán; Claude không bấm đăng / gửi / xoá khi David chưa yêu cầu (`AGENTS.md` luật 4).
+- Claude không nhập mật khẩu, mã OTP, thông tin thanh toán; Claude không đăng bài; không gửi / xoá khi David chưa yêu cầu (`AGENTS.md` luật 4).

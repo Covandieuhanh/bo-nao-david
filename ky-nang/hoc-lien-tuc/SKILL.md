@@ -1,6 +1,6 @@
 ---
 name: hoc-lien-tuc
-description: Tự học và cải tiến liên tục bộ skill của David (học từ cách Hermes tự học, nhưng giữ một nguồn duy nhất, có số liệu, tốn ít token). Bốn việc — (1) NHÌN LẠI TUẦN từ tín hiệu hệ thống tự động ghi cuối mỗi phiên (lời David sửa, skill đã dùng, lỗi) để sửa skill đúng chỗ, cập nhật giọng văn, dọn ghi nhớ và skill thừa; (2) HỌC TỪ HÌNH MẪU cùng thể loại đang có kết quả tốt nhất, đo bằng số liệu, rồi nâng cấp skill và luật kênh; (3) HỌC THÀNH SKILL từ một nguồn hay quy trình vừa làm; (4) NÂNG CẤP định kỳ cả bộ não như R&D: đo trước, chưng cất luật lẻ thành nguyên lý, cắt giảm phần không mang lại kết quả, dọn trùng / rối (tai-cau-truc), đo sau, chỉ ra bản mới khi bằng hoặc tốt hơn. Phân tích và sửa đều tự chạy theo quy trình này, báo David sau; chỉ chờ David chốt khi đưa lên tầng 1, đổi nghĩa tầng 0, hay sửa thông tin về David. Dùng khi hệ thống tự động gửi [TU-HOC], khi David nói "nhìn lại tuần", "tự học", "cải tiến skill", "học thành skill", "học từ kênh X", "học cái này thành quy trình", "nâng cấp", "nâng cấp bộ não", "tái bản", "/hoc-lien-tuc", hoặc khi công cụ đo chồng chéo báo "NÊN NÂNG CẤP".
+description: Tự học và cải tiến liên tục bộ skill của David (học từ cách Hermes tự học, nhưng giữ một nguồn duy nhất, có số liệu, tốn ít token). Bốn việc — (1) NHÌN LẠI TUẦN từ tín hiệu hệ thống tự động ghi cuối mỗi phiên (lời David sửa, skill đã dùng, lỗi) để sửa skill đúng chỗ, cập nhật giọng văn, dọn ghi nhớ và skill thừa; (2) HỌC TỪ HÌNH MẪU cùng thể loại đang có kết quả tốt nhất, đo bằng số liệu, rồi nâng cấp skill và luật kênh; (3) HỌC THÀNH SKILL từ một nguồn hay quy trình vừa làm; (4) NÂNG CẤP định kỳ cả bộ não như R&D: đo trước, chưng cất luật lẻ thành nguyên lý, cắt giảm phần không mang lại kết quả, dọn trùng / rối (tai-cau-truc), đo sau, chỉ ra bản mới khi bằng hoặc tốt hơn. Phân tích và sửa đều tự chạy theo quy trình này, báo David sau; chỉ chờ David duyệt khi sửa thông tin về David. Dùng khi hệ thống tự động gửi [TU-HOC], khi David nói "nhìn lại tuần", "tự học", "cải tiến skill", "học thành skill", "học từ kênh X", "học cái này thành quy trình", "nâng cấp", "nâng cấp bộ não", "tái bản", "/hoc-lien-tuc", hoặc khi công cụ đo chồng chéo báo "NÊN NÂNG CẤP".
 ---
 
 # Tự học, cải tiến skill
@@ -15,7 +15,7 @@ Ba vòng học (mỗi việc · mỗi tuần · Nâng cấp) và luật thăng c
 ## Tự sửa theo quy trình, báo sau
 
 Phần phân tích (đếm skill, đọc tín hiệu, so số liệu) và **phần sửa** đều tự chạy, không hỏi. Claude sửa liền một mạch theo "Cách sửa" dưới,
-ghi nhật ký thay đổi, push, rồi báo David một dòng cho mỗi thay đổi kèm lý do có số liệu (`chuan-muc-lam-viec.md` mục 2). Chỉ chờ David chốt: đưa lên tầng 1, đổi nghĩa tầng 0, thông tin về David (mục dưới).
+ghi nhật ký thay đổi, push, rồi báo David một dòng cho mỗi thay đổi kèm lý do có số liệu (`chuan-muc-lam-viec.md` mục 2). Thăng cấp tầng 1, cập nhật dần tầng 0 cũng tự chạy theo luật của trục; chỉ chờ David duyệt khi sửa thông tin về David (mục dưới).
 - **Phạm vi Claude tự sửa:** mọi `SKILL.md`, khối, script, `references/`; giọng văn (`ky-nang/san-xuat-video/ho-so-thuong-hieu/giong-thuong-hieu-david.md`);
   luật kênh (`ky-nang/san-xuat-video/ho-so-thuong-hieu/kenh.json`: lịch đăng, dẫn dắt, từ khoá bình luận, cách đo); hiệu ứng, motion graphics.
 - **Trình David chờ "duyệt" trước khi sửa (Đ3, thông tin về David):** `co-so-tri-thuc/david.md`, `co-so-tri-thuc/ho-so-ca-nhan.md`, ghi nhớ David đã chốt; **màu chủ đạo** và **chữ ký
@@ -40,7 +40,7 @@ Hệ thống tự động đã ghi sẵn tín hiệu cuối mỗi phiên (hook `
 5. **Dọn:** skill 30 ngày không dùng thì đề xuất gộp hoặc chuyển vào `luu-tru/` (không xoá). Ghi nhớ trùng hoặc quá dài trong `co-so-tri-thuc/bo-nho/` thì
    gộp lại phần chữ (giữ nguyên ý David đã chốt), cập nhật `MEMORY.md`.
 6. Ghi phiếu tuần `du-an/hoc-lien-tuc/<YYYY-MM-DD>.md` (không chép nguyên nội dung trò chuyện thô): điều lặp · đã sửa gì · số liệu kênh tuần · việc tuần sau.
-   Sửa xong thì ghi "đã sửa gì" vào phiếu, báo `📈 Tự học tuần: …`; điều cần David chốt (tầng 1, tầng 0, Đ3) ghi riêng một mục.
+   Sửa xong thì ghi "đã sửa gì" vào phiếu, báo `📈 Tự học tuần: …`; điều cần David duyệt (Đ3) ghi riêng một mục.
 
 ## Việc 2 — Học từ hình mẫu có số liệu
 1. **Số liệu của David trước:** đọc số liệu kênh (bước đo của `phan-phoi-da-kenh`, `kenh.json` mục đo). Xác định video nào tốt nhất và kém nhất tuần, chúng khác nhau ở đâu.
@@ -85,7 +85,7 @@ Thước đo nào chưa có dữ liệu (chưa đủ video có số liệu, dự
    `bo.json` nếu lệch, push lên GitHub, báo David: chưng cất gì, cắt giảm gì, thước đo trước và sau, chưa đo gì. Kém hơn ở một dòng thì sửa chỗ gây
    ra, hoặc quay lại mốc `nang-cap-<n>-truoc`, ghi bài học rút ra vào file theo dõi.
 
-Bước 2–3 là phần sửa: Claude tự làm theo quy trình này (mục "Tự sửa theo quy trình"), báo số đo trước và sau khi sửa; cắt giảm (bỏ, gộp luật) thì David chốt. Thước đo 1 (người xem) thường chỉ đo lại được
+Bước 2–3 là phần sửa: Claude tự làm theo quy trình này (mục "Tự sửa theo quy trình"), báo số đo trước và sau khi sửa; cắt giảm thì chuyển vào `luu-tru/`, không xoá. Thước đo 1 (người xem) thường chỉ đo lại được
 sau vài video: ra bản khi thước đo 2–5 đạt, ghi giả thuyết cho thước đo 1 và đo ở lần nhìn lại tuần sau khi đủ video.
 
 ## Tiết kiệm token

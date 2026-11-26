@@ -1,13 +1,13 @@
 ---
 name: video-gop-y-render-lai
-description: "Claude làm video liền một mạch, không qua cổng 1, cổng 2: khi có góp ý thì Claude sửa rồi render lại toàn bộ ngay; việc đăng chờ David nói \"đăng\" (13/11/2026)"
+description: "Claude làm video liền một mạch, không qua cổng 1, cổng 2: khi có góp ý thì Claude sửa rồi render lại toàn bộ ngay; Claude không đăng, chỉ chuẩn bị gói đăng, David tự đăng (13/11/2026, sửa 26/11/2026)"
 metadata:
   type: feedback
 ---
 
 Claude làm video liền một mạch (đã có quy trình nên không chờ duyệt, 26/11/2026): không qua cổng 1, cổng 2, ra ngay bản dài, clip ngắn và bài đăng trên Drive cùng trang xem kết
 quả (`tu-dong-hoa/xem-ket-qua.py`). Khi có góp ý, Claude sửa rồi **render lại toàn bộ ngay**, không chờ chữ "render". Việc đăng mạng xã hội vẫn chờ David nói
-"đăng" (AGENTS luật 4).
+"đăng" (AGENTS luật 4). Từ 26/11/2026 Claude không đăng nữa: chỉ chuẩn bị gói đăng, David tự đăng.
 
 **Why:** David muốn đưa tài nguyên vào là có kết quả ngay; bước duyệt giữa chừng làm chậm tiến độ.
 

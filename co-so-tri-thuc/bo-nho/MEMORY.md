@@ -51,7 +51,7 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 - [Video dài không cắt](video-dai-khong-cat.md) — để nguyên cả khoảng lặng và tiếng ờ ừm; chỉ cắt khi trích video ngắn (05/11)
 - [Mẫu podcast dọc đồ hoạ](video-doc-mau-chu-chinh.md) — chữ chính thay phụ đề, không màn hình cuối; 3 clip Đi trainer là mẫu (06/11, sửa 10/11)
 - [Tự chọn theo nội dung](video-tu-chon-theo-noi-dung.md) — mọi lựa chọn (mẫu, bố cục, kiểu cảnh, thẩm mỹ, nhạc) tự thiết lập theo nội dung nguồn, không chép tập trước; công cụ chặn render khi chưa chẩn đoán (11/11, 19/11)
-- [Làm một mạch, góp ý thì render lại](video-gop-y-render-lai.md) — bỏ cổng 1, cổng 2; góp ý thì sửa và render lại toàn bộ; đăng chờ David nói "đăng" (13/11)
+- [Làm một mạch, góp ý thì render lại](video-gop-y-render-lai.md) — bỏ cổng 1, cổng 2; góp ý thì sửa và render lại toàn bộ; Claude không đăng, David tự đăng (13/11, sửa 26/11)
 - [Kiến trúc skill video](video-kien-truc-ky-nang.md) — kiến trúc bộ skill video (hồ sơ tham số, 20 khối, thư viện hình, mẫu chuẩn; sửa đúng một chỗ) và bộ 5 video chuẩn 06/11 (04/11, 06/11; gộp 15/11)
 - [Làm lại video cũ](video-lam-lai-video-cu.md) — bỏ lời chào và giới thiệu kênh cũ, tít cũ, chữ và viền in trong hình; mỗi video một bản riêng (08/11)
 - [Motion graphics kể chuyện](video-do-hoa-ke-chuyen.md) — mọi video có điểm nhấn nhiều loại; kể chuyện, vẽ tiếp lên hình đã có; AI sáng tạo trong khung (07/11, 09/11)

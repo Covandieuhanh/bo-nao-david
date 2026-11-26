@@ -28,13 +28,10 @@ chỉ trỏ về đây.
   tài nguyên về thư mục dự án, chép lời, đo, ghi phiếu lọc hoặc `phan-huong.md` trong thư mục dự án, ghi mục nhật ký nội dung
   (`du-an/nhat-ky-noi-dung/`) và dòng "lọc" trong sổ danh mục (đây là ghi chép, không đổi luật). Không sửa skill, luật, hồ sơ; không
   dựng, không render bản thật trước Đ1.
-- **Đ2 — duyệt trước khi bấm đăng, gửi, xoá, thao tác tài khoản** (mạng xã hội, tin nhắn, xoá file gốc hoặc dự án, dọn sau khi giao): Claude chỉ làm khi
-  David nói đúng việc đó, **sau khi đã thấy bản cuối**. **Không bao giờ bỏ**, kể cả ở chế độ tự chạy (`AGENTS.md` luật 4).
-  - **Đăng (lời David: "mấy việc đăng thì không cần phải hỏi tôi, chỉ cần sắp xếp nội dung đăng cho phù hợp với sản phẩm"):**
-    Claude không hỏi David về việc đăng. Claude tự sắp xếp gói đăng hợp với sản phẩm của từng hướng (tiêu đề, kênh, lịch và thứ tự đăng, bình luận
-    ghim, lời kêu gọi dẫn về đúng sản phẩm), giao kèm bản cuối; không kết thúc báo cáo bằng câu hỏi "đăng bản này?". Bấm đăng thật lên mạng xã
-    hội chỉ khi David nói "đăng" (lá B11); Claude không tự đăng.
-  - **Dọn và xoá bản gốc:** chưa duyệt thì Claude đưa đủ lên Drive và giữ bản gốc; David duyệt ("chốt") thì xoá bản gốc trên Drive và mọi thiết bị. Nguồn duy nhất của luật và cách làm lại tài nguyên đã có: `ky-nang/san-xuat-video/quy-tac-chung.md` mục 8.
+- **Đ2 — duyệt trước khi gửi tin, thao tác tài khoản, xoá ngoài quy trình dọn sau khi David chốt (`ky-nang/san-xuat-video/quy-tac-chung.md` mục 8)** (tin nhắn, trả lời bình luận, tài khoản mạng xã hội): Claude chỉ làm khi
+  David nói đúng việc đó. **Không bao giờ bỏ** (`AGENTS.md` luật 4).
+  - **Đăng:** Claude không đăng lên mạng xã hội: Claude chuẩn bị đủ gói đăng (bản cuối, tiêu đề, mô tả, bài theo từng kênh, bình luận ghim, ảnh bìa, lịch và thứ tự đăng gợi ý) ở nơi giao và Drive; David tự đăng khi muốn, không cần hỏi hay duyệt. Không kết thúc báo cáo bằng câu hỏi "đăng bản này?". Khi David báo "đã đăng <tập>" thì Claude ghi sổ danh mục và dọn bản chờ đăng (lá B11).
+  - **Lên Drive, thay bản cũ, xoá bản gốc:** làm ra kết quả là lên Drive ngay, đủ hết; sửa thì tải bản mới nhất lên và xoá bản cũ; David chốt bản cuối thì Claude xoá bản gốc theo quy trình, không hỏi lại. Nguồn duy nhất: `ky-nang/san-xuat-video/quy-tac-chung.md` mục 8.
   - **Người khác xuất hiện** (đối tác, khách; khách của công ty Veltrix): Claude dựng được, giữ nguyên lời nói; ghi vào mục "Ghi chú đăng" của gói phát hành
     (ai xuất hiện, lằn ranh) để David biết, không hỏi.
 - **Đ3 — duyệt trước khi sửa thông tin về David** (`david.md`, hồ sơ, ghi nhớ David đã chốt), màu chủ đạo, chữ ký nhận diện: Claude luôn trình
@@ -48,7 +45,7 @@ báo cáo. **Vẫn giữ Đ2, Đ3.** Không làm tiếp được (thiếu file, 
 lại và báo David. Render lâu không phải lý do dừng (chạy nền). Báo cáo cuối ghi đã chọn gì, đã sửa quy trình chỗ nào.
 
 **Góp ý của David là lời duyệt** cho đúng thay đổi đó, gồm cả việc ghi thay đổi vào skill (lá B13): Claude sửa, render lại, giao lại mà không hỏi. Chỉ
-Claude tự thấy cần đổi quy trình ngoài lời góp ý thì sửa và báo trong kết quả, không qua Đ1 (trừ tầng 0–1 và Đ3).
+Claude tự thấy cần đổi quy trình ngoài lời góp ý thì sửa và báo trong kết quả, không qua Đ1 (trừ Đ3; tầng 0–1 đổi theo luật thăng cấp của trục).
 
 **Không lệch quy trình:** Claude làm đúng từng bước của lá theo thứ tự. Giữa chừng thấy quy trình sai, thiếu, hay hai chỗ ngược nhau thì
 **sửa đúng chỗ đó của quy trình** (chọn theo luật ưu tiên `chuan-muc-lam-viec.md` mục 0), ghi nhật ký thay đổi, rồi làm tiếp theo bản đã sửa và báo trong kết quả;
@@ -73,26 +70,26 @@ ghi cố định công cụ chỉ một thiết bị có) · **Điểm duyệt**
 | A1 | "cập nhật não", đẩy hoặc kéo GitHub | [AGENTS.md luật 6](AGENTS.md) · `tu-dong-hoa/dong-bo.sh` | không có (lời David là lệnh) | lệnh báo "Đã đẩy lên GitHub", `git status` sạch |
 | A2 | cài bộ não lên thiết bị mới (Mac, Windows qua WSL, Linux) | [huong-dan-cai-dat.md](huong-dan-cai-dat.md) · [tu-dong-hoa/thiet-bi-khac/README.md](tu-dong-hoa/thiet-bi-khac/README.md) | không có Đ1; mật khẩu thiết bị thì David tự gõ | `kiem-tra-thiet-bi.sh` ra "MÁY NÀY DỰNG GIỐNG MAC CHÍNH" |
 | A3 | "nhìn lại tuần", "tự học", "học từ kênh X", "học cái này thành quy trình" | [ky-nang/hoc-lien-tuc/SKILL.md](ky-nang/hoc-lien-tuc/SKILL.md) | không có Đ1: phân tích và sửa tự chạy, báo sau; Đ3 khi sửa thông tin về David, màu, nhận diện | theo mục "Xong khi" của skill |
-| A4 | "nâng cấp", "tái bản", luật chồng chéo, gom luật trùng | [hoc-lien-tuc Việc 4](ky-nang/hoc-lien-tuc/SKILL.md) · [ky-nang/tai-cau-truc/SKILL.md](ky-nang/tai-cau-truc/SKILL.md) | không có Đ1: đo, chưng cất, dọn tự chạy, báo số đo trước và sau khi sửa; cắt giảm (bỏ, gộp luật), đưa lên tầng 1, đổi nghĩa tầng 0: David chốt (`truc-tri-thuc.md`) | `do-chong-cheo.py` dưới ngưỡng ở mọi bộ, bản luật không còn câu trùng hay ngược nhau |
-| A5 | học, sửa, lưu thông tin mới vào bộ não (ghi nhớ, kiến thức, hồ sơ) | [co-so-tri-thuc/truc-tri-thuc.md](co-so-tri-thuc/truc-tri-thuc.md) · [quy ước liên kết](co-so-tri-thuc/quy-uoc-lien-ket.md) | không có Đ1; thông tin về David thì Đ3; đưa lên tầng 1, đổi nghĩa tầng 0: David chốt | mỗi ý ở đúng một nguồn duy nhất, có dòng ở `ban-do/`, công cụ kiểm tra liên kết đạt |
-| A6 | giao kết quả cho David | [phan-phoi-da-kenh bước 5](ky-nang/san-xuat-video/phan-phoi-da-kenh/SKILL.md) | giao thì không có; dọn hoặc xoá file tạm, đưa dự án lên Drive: Đ2 (sau khi David chốt) | bản cuối ở nơi giao của thiết bị (Mac: trang Chờ đăng và Drive; thiết bị chỉ dựng video: Drive); David theo dõi từ xa thì gửi thêm bản nhẹ dưới 30 MB qua tệp đính kèm |
+| A4 | "nâng cấp", "tái bản", luật chồng chéo, gom luật trùng | [hoc-lien-tuc Việc 4](ky-nang/hoc-lien-tuc/SKILL.md) · [ky-nang/tai-cau-truc/SKILL.md](ky-nang/tai-cau-truc/SKILL.md) | không có Đ1: đo, chưng cất, dọn tự chạy, báo số đo trước và sau khi sửa; cắt giảm (chuyển vào lưu trữ), đưa lên tầng 1, cập nhật dần tầng 0 đều tự chạy theo luật thăng cấp (`truc-tri-thuc.md` mục 4) | `do-chong-cheo.py` dưới ngưỡng ở mọi bộ, bản luật không còn câu trùng hay ngược nhau |
+| A5 | học, sửa, lưu thông tin mới vào bộ não (ghi nhớ, kiến thức, hồ sơ) | [co-so-tri-thuc/truc-tri-thuc.md](co-so-tri-thuc/truc-tri-thuc.md) · [quy ước liên kết](co-so-tri-thuc/quy-uoc-lien-ket.md) | không có Đ1; thông tin về David thì Đ3; thăng cấp tầng theo luật của trục, tự chạy | mỗi ý ở đúng một nguồn duy nhất, có dòng ở `ban-do/`, công cụ kiểm tra liên kết đạt |
+| A6 | giao kết quả cho David | [phan-phoi-da-kenh bước 5](ky-nang/san-xuat-video/phan-phoi-da-kenh/SKILL.md) | không có: giao, lên Drive ngay; David chốt thì tự dọn, đưa dự án lên Drive, xoá bản gốc theo quy trình | bản cuối ở nơi giao của thiết bị (Mac: trang Chờ đăng và Drive; thiết bị chỉ dựng video: Drive); David theo dõi từ xa thì gửi thêm bản nhẹ dưới 30 MB qua tệp đính kèm |
 | A7 | việc chưa có lá: hỏi lại khi chưa rõ yêu cầu, trình 4 phần | [ky-nang/thu-thap-yeu-cau/SKILL.md](ky-nang/thu-thap-yeu-cau/SKILL.md) | chính là Đ1 | theo mục "Xong khi" của skill |
 | A8 | trước mọi việc chưa có đủ hình mẫu; "nghiên cứu hình mẫu", "xem người ta làm thế nào", "học từ người đã thành công" | [co-so-tri-thuc/hinh-mau/quy-trinh-nghien-cuu.md](co-so-tri-thuc/hinh-mau/quy-trinh-nghien-cuu.md) | không có cho phần nghiên cứu và ghi bản đồ (phần chuẩn bị); đưa vào skill, luật: theo việc chính | mục nhỏ có ít nhất 5 hình mẫu (việc lớn 10) đủ bốn cột, có ngày đo; nhật ký có mục mới; tin giao có 2–3 dòng đối chiếu |
 
 ### B. Sản xuất video (gốc nhánh: `phan-phoi-da-kenh` — một tài nguyên vào, đủ bản dài, clip, bài đăng ra)
 | Lá | Việc (David hay nói) | Quy trình | Điểm duyệt | Xong khi |
 |---|---|---|---|---|
-| B1 | gửi video hoặc ghi âm (có hay không kèm lời), "làm video này", "đăng bài" | [phan-phoi-da-kenh](ky-nang/san-xuat-video/phan-phoi-da-kenh/SKILL.md) | không có Đ1; Đ2 ở bước 7 (bấm đăng thật) và khi dọn; lá dựng: có hình người nói thì B6, chỉ có tiếng hoặc David gọi là podcast thì B7 | theo mục "Xong khi" của skill |
+| B1 | gửi video hoặc ghi âm (có hay không kèm lời), "làm video này", "làm bài đăng" | [phan-phoi-da-kenh](ky-nang/san-xuat-video/phan-phoi-da-kenh/SKILL.md) | không có (Claude không đăng, chỉ chuẩn bị gói đăng; David chốt thì tự dọn); lá dựng: có hình người nói thì B6, chỉ có tiếng hoặc David gọi là podcast thì B7 | theo mục "Xong khi" của skill |
 | B2 | gửi liên kết Drive, YouTube, file hoặc thư mục | [nhan-tai-nguyen.md](ky-nang/san-xuat-video/phan-phoi-da-kenh/references/nhan-tai-nguyen.md) | không có (phần chuẩn bị) | file gốc ở `~/Movies/tap-<tên>/1-goc/`, đọc được khung, độ dài, tiếng |
 | B3 | lọc có đáng làm không, phân theo ba hướng nghề, ghi nhật ký nội dung | [khối 00 mục 0b](ky-nang/san-xuat-video/mo-dun/00-sang-loc-noi-dung/README.md) | không có (phần chuẩn bị); kết quả lọc đưa vào kế hoạch của B1 hoặc B4 | có `phan-huong.md` của tập và mục nhật ký của từng hướng có ý |
-| B4 | "cắt đoạn thừa, tách thành các video theo hướng công việc" | [tach-theo-huong.md](ky-nang/san-xuat-video/dung-video-theo-phong-cach/references/tach-theo-huong.md) | không có Đ1; Đ2 khi bấm đăng, dọn | mỗi hướng một dự án dựng xong kèm clip ngắn và gói phát hành, đã giao |
+| B4 | "cắt đoạn thừa, tách thành các video theo hướng công việc" | [tach-theo-huong.md](ky-nang/san-xuat-video/dung-video-theo-phong-cach/references/tach-theo-huong.md) | không có (gói đăng chuẩn bị sẵn, David tự đăng; David chốt thì tự dọn) | mỗi hướng một dự án dựng xong kèm clip ngắn và gói phát hành, đã giao |
 | B5 | "render một đoạn ngắn cho tôi xem trước" | [doan-thu.md](ky-nang/san-xuat-video/dung-video-theo-phong-cach/references/doan-thu.md) | sau bước 6 dừng chờ David xem đoạn thử rồi mới dựng cả video (đây là việc David yêu cầu) | David nhận đoạn thử, nói duyệt hay sửa trước khi dựng cả video |
-| B6 | dựng video tự quay (một video, nhiều file một buổi), ghép vlog | [dung-video-theo-phong-cach](ky-nang/san-xuat-video/dung-video-theo-phong-cach/SKILL.md) | Đ2 khi dọn sau giao | theo mục "Xong khi" của skill |
-| B7 | podcast hoặc ghi âm thành video đồ hoạ | [dung-podcast](ky-nang/san-xuat-video/dung-podcast/SKILL.md) | Đ2 khi dọn sau giao | theo mục "Xong khi" của skill |
-| B8 | cắt highlight, clip ngắn | [cat-doan-noi-bat](ky-nang/san-xuat-video/cat-doan-noi-bat/SKILL.md) | Đ2 khi dọn sau giao | theo mục "Xong khi" của skill |
+| B6 | dựng video tự quay (một video, nhiều file một buổi), ghép vlog | [dung-video-theo-phong-cach](ky-nang/san-xuat-video/dung-video-theo-phong-cach/SKILL.md) | không có (David chốt thì tự dọn) | theo mục "Xong khi" của skill |
+| B7 | podcast hoặc ghi âm thành video đồ hoạ | [dung-podcast](ky-nang/san-xuat-video/dung-podcast/SKILL.md) | không có (David chốt thì tự dọn) | theo mục "Xong khi" của skill |
+| B8 | cắt highlight, clip ngắn | [cat-doan-noi-bat](ky-nang/san-xuat-video/cat-doan-noi-bat/SKILL.md) | không có (David chốt thì tự dọn) | theo mục "Xong khi" của skill |
 | B9 | học cách trình bày từ video mẫu David gửi | [phan-tich-video-mau](ky-nang/san-xuat-video/phan-tich-video-mau/SKILL.md) | không có Đ1: phân tích, phiếu học, đưa vào skill tự chạy, báo sau; đụng màu chủ đạo, chữ ký nhận diện: Đ3 | theo mục "Xong khi" của skill |
 | B10 | tiêu đề, mô tả, chương, teaser, bài đăng theo giọng David | [khối 15](ky-nang/san-xuat-video/mo-dun/15-xuat-ban/README.md) · [giọng David](ky-nang/san-xuat-video/ho-so-thuong-hieu/giong-thuong-hieu-david.md) | không có riêng (nằm trong việc chính) | `phat-hanh/phat-hanh.md` đủ mục, đúng giọng, chữ nguyên văn lời David |
-| B11 | "đăng" | [khối 19](ky-nang/san-xuat-video/mo-dun/19-dang-bai/README.md) | Đ2: chỉ khi David nói "đăng" đúng bản đó, không bao giờ bỏ | đăng đúng bản David chỉ định, có ảnh chụp xác nhận, sổ danh mục ghi liên kết |
+| B11 | "đã đăng <tập>" (David tự đăng) | [khối 15](ky-nang/san-xuat-video/mo-dun/15-xuat-ban/README.md) (gói đăng) · [khối 19](ky-nang/san-xuat-video/mo-dun/19-dang-bai/README.md) (tạm ngưng: Claude không đăng) | không có | sổ danh mục ghi "đã đăng" kèm liên kết David gửi; bản chờ đăng đã dọn (`cho-dang.sh xong`) |
 | B12 | số liệu sau 24 giờ hoặc 7 ngày, hộp thư | [khối 20](ky-nang/san-xuat-video/mo-dun/20-hop-thu-so-lieu/README.md) · [khối 16](ky-nang/san-xuat-video/mo-dun/16-phan-tich-so-lieu/README.md) | đọc số liệu thì không có; trả lời bình luận, tin nhắn: Đ2; sửa skill theo số liệu: tự sửa, báo sau | `so-lieu.md` cập nhật kèm 1–3 đề xuất |
 | B13 | góp ý trên video đã dựng ("cảnh 2:08 chữ to quá", "bỏ cảnh X") | [dung-video-theo-phong-cach mục "Sửa theo góp ý"](ky-nang/san-xuat-video/dung-video-theo-phong-cach/SKILL.md) | không có: góp ý là lời duyệt cho chính thay đổi đó, kể cả ghi vào skill (mục 1); Claude tự thấy cần đổi thêm: sửa quy trình, báo sau | sửa đúng chỗ và sửa skill, render lại toàn bộ, giao lại |
 | B14 | intro thương hiệu DAVID TRẦN, đoạn mở đầu kênh, thay cảnh mới vào intro | [intro-thuong-hieu.md](ky-nang/san-xuat-video/dung-video-theo-phong-cach/references/intro-thuong-hieu.md) | không có Đ1: chữ, độ dài, khung, logo, nguồn nhạc theo mặc định của quy trình; góp ý sau giao: B13 | bản ngang 1920×1080, 10–13 giây kể cả 2 giây nhạc nhỏ dần, ở Chờ đăng và Drive kèm ghi nguồn nhạc, khoảng −14 LUFS, cảnh đẹp nhất, không lộ logo, tên hiện đúng chữ then chốt của câu hát trọn vẹn |
@@ -101,7 +98,7 @@ ghi cố định công cụ chỉ một thiết bị có) · **Điểm duyệt**
 | Lá | Việc (David hay nói) | Quy trình | Điểm duyệt | Xong khi |
 |---|---|---|---|---|
 | C1 | làm trang cuộn, trang giới thiệu | [thiet-ke-trang-cuon](ky-nang/thiet-ke-trang-cuon/SKILL.md) | không có Đ1; Bước 0 chỉ hỏi phần brief còn thiếu mà chỉ David đưa được | theo mục "Xong khi" của skill |
-| C2 | điều khiển trình duyệt, thử trang web | [dieu-khien-trinh-duyet](ky-nang/dieu-khien-trinh-duyet/SKILL.md) | Đ2 trước khi gửi biểu mẫu, đăng, xoá, nhập dữ liệu cá nhân | theo mục "Xong khi" của skill |
+| C2 | điều khiển trình duyệt, thử trang web | [dieu-khien-trinh-duyet](ky-nang/dieu-khien-trinh-duyet/SKILL.md) | Đ2 trước khi gửi biểu mẫu, xoá, nhập dữ liệu cá nhân; không đăng bài | theo mục "Xong khi" của skill |
 
 ### D. Hướng tài chính
 Nhánh này chưa có việc nào. Việc đầu tiên đi theo mục 2 (chưa có lá nên làm theo gốc, qua Đ1, xong thì viết thành lá D1 để lần sau tự động).

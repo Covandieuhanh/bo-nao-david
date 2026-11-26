@@ -4,7 +4,7 @@ Nguồn đọc: mọi nhat-ky-thay-doi.md, loi-thuong-gap.md, du-an/nhat-ky-noi-
 và sổ tín hiệu ~/.claude/hoc-lien-tuc/tin-hieu.jsonl (lời David sửa, chỉ ở máy này).
 Khoá gom nhóm: tham chiếu file trong dấu ` `, liên kết [[ghi-nho]], "khối N", và bốn chữ đầu của lời trích trong ngoặc kép.
 Đề xuất: khoá xuất hiện ở ≥ 2 mục khác ngày → nên có cách làm ở tầng 2 (kiểm xem quy trình đã ghi chưa); ≥ 3 mục khác ngày → đủ điều kiện
-lên tầng 1 nếu đã có câu kiểm, David chốt. Dùng: python3 -I tu-dong-hoa/hoc-lien-tuc/thang-cap.py [--chi-tiet]"""
+lên tầng 1 nếu đã có câu kiểm: vòng tuần tự đưa lên, báo David sau. Dùng: python3 -I tu-dong-hoa/hoc-lien-tuc/thang-cap.py [--chi-tiet]"""
 import os, re, sys, glob, json, subprocess
 R = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__)))); os.chdir(R)
 CHI_TIET = '--chi-tiet' in sys.argv
@@ -102,14 +102,14 @@ for k, v in dem.items():
     goc = k.strip('`"[]…').lower()
     co_cau_kiem = goc[:25] in cau_kiem
     co_trong_luat = goc[:25] in luat
-    if ngay_khac >= 3: muc_tieu = 'tầng 1 (đủ 3 lần)' + ('' if co_cau_kiem else ', thiếu câu kiểm') + ' — David chốt'
+    if ngay_khac >= 3: muc_tieu = 'tầng 1 (đủ 3 lần)' + ('' if co_cau_kiem else ', thiếu câu kiểm') + (' — vòng tuần tự đưa lên' if co_cau_kiem else ' — thêm câu kiểm rồi đưa lên')
     else: muc_tieu = 'tầng 2 (cách làm)' + (' — đã có trong quy trình' if co_trong_luat else ' — chưa thấy trong quy trình')
     de_xuat.append((ngay_khac, k, muc_tieu, sorted(v['nguon'])[:3], v['vi_du']))
 de_xuat.sort(key=lambda x: -x[0])
 print(f'Đọc {len(muc)} mục sổ · {len(dem)} khoá · {len(de_xuat)} khoá lặp ≥ 2 lần khác ngày cần xem')
 print('Bỏ qua (đã ở đúng tầng): ' + ' · '.join(f'{k} {n}' for k, n in bo_qua.items() if n))
 if not de_xuat: print('Chưa có chủ đề nào lặp đủ để đề xuất thăng cấp.'); sys.exit(0)
-print('Đề xuất (chỉ báo, David chốt mới sửa tầng 1):')
+print('Đề xuất (vòng tuần tự làm theo luật thăng cấp của trục):')
 for n, k, mt, ng, vd in de_xuat[:15 if not CHI_TIET else 60]:
     print(f'  {n}× {k} → {mt}')
     if CHI_TIET: print('     nguồn:', ', '.join(os.path.basename(x) for x in ng), '· ví dụ:', vd)

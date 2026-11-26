@@ -1,8 +1,10 @@
 ---
-description: "Khối 19 đăng bài / hẹn giờ lên YouTube, trang Facebook, TikTok qua trình duyệt."
+description: "Khối 19 (tạm ngưng): cách đăng, hẹn giờ lên YouTube, trang Facebook, TikTok qua trình duyệt; Claude không đăng, David tự đăng, gói đăng ở khối 15."
 ---
 
 # Khối 19-dang-bai: Đăng / hẹn giờ lên YouTube, trang Facebook, TikTok qua trình duyệt
+
+> **Tạm ngưng:** Claude không đăng bài (`AGENTS.md` luật 4). Claude chỉ chuẩn bị gói đăng (khối 15), David tự đăng. Các bước dưới giữ để tham khảo khi David muốn bật lại.
 
 **Dùng trong:** skill `phan-phoi-da-kenh` bước 7 · **Đầu vào:** bản cuối + bài đăng trên trang xem kết quả, David đã nói "đăng" · `ho-so-thuong-hieu/kenh.json` · `ho-so-thuong-hieu/giong-thuong-hieu-david.md`
 **Đầu ra:** bài đã hẹn giờ (hoặc đăng) + ảnh chụp xác nhận · dòng "chờ đăng / đã đăng" trong sổ danh mục

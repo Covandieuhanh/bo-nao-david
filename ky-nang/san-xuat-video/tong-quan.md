@@ -15,7 +15,7 @@ thiết bị khác thì chỉ cần chép cả thư mục `san-xuat-video/`. Ở
 | `dung-podcast/` — **podcast** | Gửi file tiếng/video và nói "podcast" | Toàn bộ khung là đồ hoạ chuyển động, thanh thời gian |
 | `cat-doan-noi-bat/` — **cắt highlight** | Gửi 1 video dài (YouTube, podcast đã dựng, hoặc thư mục dự án của nó), nói "cắt highlight" hoặc `/cat-doan-noi-bat` | Các clip **dọc 9:16** tự chọn ý, mỗi clip một ý trọn, **cùng loại với video gốc**; thẻ tiêu đề nguyên văn, phụ đề cụm 5–8 chữ, cắt cứng; kèm lịch đăng, mô tả và bình luận ghim |
 | `phan-tich-video-mau/` — **học mẫu** | Gửi video mẫu, nói "học cái này" | Phiếu học để duyệt, rồi thêm vào kho trình bày |
-| `phan-phoi-da-kenh/` — **trọn gói** | Gửi tài nguyên mới (thường không kèm yêu cầu) | Lọc → dựng → bài đăng → hẹn giờ → số liệu |
+| `phan-phoi-da-kenh/` — **trọn gói** | Gửi tài nguyên mới (thường không kèm yêu cầu) | Lọc → dựng → gói đăng (David tự đăng) → số liệu |
 
 Mọi thứ của một tập nằm chung `~/Movies/tap-<tên>/` (xem `dung-video-theo-phong-cach/scripts/noi-luu.sh`): gốc ở `1-goc/`, bản dài ở
 `2-ban-day-du/video-hoan-chinh.mp4`, highlight: chọn câu ở `3-doan-noi-bat/`, bản cuối mỗi clip ở `3-doan-noi-bat/clip-A/`, `clip-B/`…; vlog ở

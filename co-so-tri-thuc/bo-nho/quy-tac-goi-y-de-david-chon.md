@@ -11,7 +11,7 @@ metadata:
 Từ 26/11/2026 sản phẩm từ tài nguyên đã có quy trình nên Claude không trình 4 phần, tự làm trọn ([[quy-tac-duyet-ke-hoach-4-phan]]). Trước đó (14/11): với sản phẩm làm từ tài nguyên David đưa (video, highlight, podcast, bài đăng), trước khi làm, Claude trình 4 phần gọn theo mặc định skill kèm đề xuất
 "chọn X vì Y", rồi chờ David "duyệt" ([[quy-tac-duyet-ke-hoach-4-phan]]). Điểm skill đã định thì Claude làm đúng skill, không đưa vào câu hỏi; điểm chưa
 định thì Claude tự chọn; câu David không trả lời, "làm đi", "theo skill" đều có nghĩa là theo mặc định skill và đề xuất của Claude. Sau khi duyệt, Claude làm liên tục,
-**không hỏi giữa chừng**; Claude báo "đã chọn X vì Y" ở báo cáo cuối để David sửa ở bản cuối. Claude chỉ dừng khi đăng, gửi, xoá hoặc gặp tín hiệu nặng.
+**không hỏi giữa chừng**; Claude báo "đã chọn X vì Y" ở báo cáo cuối để David sửa ở bản cuối. Claude chỉ dừng khi gửi tin, xoá (từ 26/11/2026 Claude không đăng, David tự đăng) hoặc gặp tín hiệu nặng.
 
 **How to apply:** đề xuất không bao giờ trái với mặc định skill; yêu cầu nào đáp ứng được trong mặc định thì giữ mặc định (ví dụ: "tập trung vào điện
 thoại" không có nghĩa là đổi khung). Liên quan [[quy-tac-tu-hoi-khi-mo-ho]], [[video-clip-ngan-dung-doc-lap]].

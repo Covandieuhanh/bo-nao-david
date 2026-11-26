@@ -30,7 +30,7 @@ Nguyên lý ở [chuan-muc-lam-viec.md](chuan-muc-lam-viec.md), cùng số mục
 - **Việc thử của AI** đặt tên riêng (`thu-…`) và chỉ thao tác trên việc đó; trước khi tắt hay chạy lại thứ dùng chung (render, tiến trình nền), kiểm có việc của David hoặc phiên khác đang chạy không, có thì hỏi trước.
 - **Không dùng mod giao diện:** không cài mod, plugin vẽ bảng hay thanh tiến độ, dòng trên ô nhập; chỉ giữ plugin Telegram; muốn mod mới thì hỏi David trước.
 - **Sửa thứ dùng chung** (script lịch, bot, hook): báo trước một dòng, giữ bản cũ chạy được tới khi bản mới đã thử.
-- Đăng, gửi, xoá, mật khẩu: `AGENTS.md` quy tắc 4.
+- Không đăng bài (chỉ chuẩn bị gói đăng, David tự đăng); gửi tin, xoá ngoài quy trình dọn, mật khẩu: `AGENTS.md` quy tắc 4.
 
 ## 4. Cuối việc
 1. **Soát:** đối chiếu "Xong khi"; chạy `bash tu-dong-hoa/soat-sau-viec.sh` (liên kết, cây quy trình, cổng gốc, quét bí mật, ngôn từ, chồng chéo, bài kiểm, cú pháp mã); đổi tên, đổi cấu trúc, đổi luồng thì chạy thử trọn một quy trình thật (video: `tu-dong-hoa/thiet-bi-khac/kiem-tra-thiet-bi.sh`); việc sửa hàng loạt thì đề nghị một AI chưa tham gia soát diff (David cho phép agent phụ, mục 3).

@@ -51,8 +51,8 @@
   },
   "c11": {
     "dung": "A",
-    "nha": "AGENTS.md luật 4",
-    "nguon": ""
+    "nha": "AGENTS.md luật 4; quy-trinh.md mục 1 (Đ2, Đăng)",
+    "nguon": "David 26/11/2026"
   },
   "c12": {
     "dung": "C",
@@ -101,8 +101,8 @@
   },
   "c21": {
     "dung": "A",
-    "nha": "co-so-tri-thuc/truc-tri-thuc.md mục 7; co-so-tri-thuc/so-dan-chung-goc.md",
-    "nguon": "David 25/11/2026: \"đã là gốc rồi thì sẽ rất ít khi thay đổi, chỉ có nâng cấp và cải tiến… thay đổi vào gốc thì phải dựa vào rất nhiều lần tương tác và các dẫn chứng cụ thể\""
+    "nha": "co-so-tri-thuc/truc-tri-thuc.md mục 4 và 7; co-so-tri-thuc/so-dan-chung-goc.md",
+    "nguon": "David 25/11/2026; 26/11/2026"
   },
   "c22": {
     "dung": "A",
@@ -173,5 +173,10 @@
     "dung": "A",
     "nha": "ky-nang/chuan-muc-lam-viec.md mục 2 (Cần đổi thì sửa quy trình); quy-trinh.md mục 1 (Không lệch quy trình)",
     "nguon": "David 26/11/2026"
+  },
+  "c36": {
+    "dung": "A",
+    "nha": "ky-nang/san-xuat-video/quy-tac-chung.md mục 8",
+    "nguon": "David 25/11/2026; 26/11/2026"
   }
 }

@@ -16,7 +16,7 @@ hóa tư duy của chính mình. Nhưng đầu tiên thì vẫn phải học t�
 
 **How to apply:** luật hiện hành ở `co-so-tri-thuc/tu-duy-goc.md` (tầng 0): bốn khối Bóc tách · Hành động · Học và thay đổi · Bản chất
 và kiểm sai; khung của cố vấn (`mo-hinh-kinh-doanh.md`) được ưu tiên, phần học từ thế giới chỉ bổ sung. Thông tin mới phải liên kết với một khối.
-Repo công khai ghi "cố vấn chiến lược của David", tên thật chỉ ở `rieng-mac/nguon-tu-duy-goc.md`. Đây là file tầng 0, chờ David chốt sau vài ngày.
+Repo công khai ghi "cố vấn chiến lược của David", tên thật chỉ ở `rieng-mac/nguon-tu-duy-goc.md`. Đây là file tầng 0: đổi dần theo luật thăng cấp (`truc-tri-thuc.md` mục 4), hoặc ngay khi David nói thẳng.
 Liên quan: [[quy-tac-truc-tri-thuc]], [[quy-tac-hoc-tu-hinh-mau]], [[co-so-tri-thuc-ho-so-va-bo-loc]].
 
 Gốc: khối 4 (Bản chất và kiểm sai) của tu-duy-goc.md — mọi thứ phải từ bản chất và từ gốc; có bản lề cố định thì thông tin mới phát triển trên gốc, không mọc lệch.

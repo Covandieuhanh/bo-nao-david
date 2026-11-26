@@ -61,9 +61,9 @@ Mỗi video ra `~/Movies/tap-<tên>/2-ban-day-du` có sẵn video gốc đã n�
 
 ## Điểm duyệt
 - Không có Đ1 (đã có quy trình): sau bước 2 Claude cắt và dựng luôn theo mặc định, bảng video theo hướng ghi trong báo cáo.
-- **Đ2**: bấm đăng chỉ khi David nói "đăng"; gói đăng tự sắp theo sản phẩm, không hỏi; dọn file tạm, đưa dự án lên Drive chỉ sau khi David chốt.
+- Claude không đăng: gói đăng tự sắp đủ theo sản phẩm, David tự đăng; David chốt thì tự dọn file tạm, đưa dự án lên Drive, xoá bản gốc theo quy trình (`../../quy-tac-chung.md` mục 8).
 - Tự chạy là mặc định: lằn ranh theo mặc định giữ lời, ghi lại trong báo cáo; người khác
-  xuất hiện (cả khách Veltrix) thì vẫn dựng, ghi vào "Ghi chú đăng", không hỏi; vẫn giữ Đ2 (`quy-trinh.md` mục 1).
+  xuất hiện (cả khách Veltrix) thì vẫn dựng, ghi vào "Ghi chú đăng", không hỏi.
 
 ## Xong khi
 - Có `phan-huong.md` của tập và mục nhật ký nội dung từng hướng có ý; Drive `thanh-pham/_buoi-<buổi>/` có `doc-truoc.md`, phân hướng,
