@@ -29,4 +29,4 @@ description: "Mẫu file số liệu một video, điền sau 7 ngày đăng."
 
 ## Bài học rút ra (một điều, có dẫn chứng)
 - So sánh với video trước:
-- Đề xuất điều chỉnh luật (chờ David duyệt):
+- Điều chỉnh luật đã làm (Claude tự sửa, báo David; màu chủ đạo, chữ ký nhận diện: Đ3):

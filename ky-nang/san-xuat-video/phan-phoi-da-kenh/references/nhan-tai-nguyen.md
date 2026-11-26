@@ -27,7 +27,7 @@ thư mục Drive `tu-lieu-goc`. Là bước 0 của `phan-phoi-da-kenh`.
 4. **Chuyển sang bước tiếp theo:** chép lời và lọc (`phan-phoi-da-kenh` bước 1, khối 00), rồi tạo dự án bằng `tao-du-an.sh` của skill dựng.
 
 ## Điểm duyệt
-Không có: đây là phần chuẩn bị, làm trước điểm duyệt Đ1 của việc chính (`quy-trinh.md` mục 1). Claude không tải gì ngoài link David gửi.
+Không có: đây là phần chuẩn bị của việc chính (`quy-trinh.md` mục 1). Claude không tải gì ngoài link David gửi.
 
 ## Xong khi
 - File gốc nằm ở `~/Movies/tap-<tên>/1-goc/`, mở được, đã ghi độ dài, khung, có tiếng.

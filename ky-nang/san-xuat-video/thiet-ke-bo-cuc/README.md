@@ -51,9 +51,9 @@ Bước nhẹ (1–3): khi tới các bước đó, Claude nhắc một dòng đ
    (Đúng lúc, Chia đoạn, Báo hiệu, Tinh gọn…; nếu không gắn được vào khó khăn nào của người xem thì không học), rồi xác định mỗi nguyên lý nâng cấp **thành phần đang có** nào. Claude chỉ thêm kiểu mới khi không thành phần
    nào làm được. Kỹ thuật chỉ để trang trí (không giúp hiểu thêm) thì ghi vào "Không lấy". Không thay đổi chữ ký nhận diện (mục 1).
    Học để tự áp dụng và cải tiến phần đang có: motion graphics rõ nghĩa hơn nhưng tinh gọn (`huong-dan-lua-chon.md` bước 4a).
-5. **Phiếu học cho David duyệt** (mẫu ở `phieu-hoc-mau.md`): học được gì, dùng cho loại video nào, thêm thành phần nào, mỗi thành
+5. **Phiếu học** (Claude điền, báo David) (mẫu ở `phieu-hoc-mau.md`): học được gì, dùng cho loại video nào, thêm thành phần nào, mỗi thành
    phần đối chiếu với các quy tắc chặn đã có thế nào. Đây là **cổng hỏi duy nhất**: gộp mọi điểm cần chọn, mỗi điểm 2–3 gợi ý.
-   **Chờ David "ok" rồi mới sửa skill.**
+   **Claude sửa skill luôn, báo David; đụng màu chủ đạo, chữ ký nhận diện thì chờ "duyệt" (Đ3).**
 6. **Ghi vào kho** (kho là thực đơn, không phải luật). Khi điều học được làm **đổi luật**, Claude sửa trực tiếp câu luật đó, ghi lý do vào sổ (thoi-quen mục 4), không thêm câu chồng lên.
    **Cách ghi kho:** một file `nguon-tham-khao/<ten-nguon>-<ngay>.md` kể học gì từ đâu. Mỗi cách mới thêm một dòng ở `bo-cuc.md` hoặc `am-thanh.md`,
    ghi rõ "đã có code" hay "chưa có code", **thêm vào dòng "Đã học" của nguyên lý ở `nhu-cau-nguoi-xem.md` và một dòng "dạng câu / hình thì cách thể hiện" dưới đúng nguyên lý
@@ -88,4 +88,4 @@ Bước nhẹ (1–3): khi tới các bước đó, Claude nhắc một dòng đ
 | [bo-cuc.md](bo-cuc.md) | danh mục bố cục: dùng khi nào, viết thế nào, có code chưa |
 | [am-thanh.md](am-thanh.md) | cách đặt tiếng hiệu ứng / nhạc theo bố cục |
 | [nguon-tham-khao/](nguon-tham-khao/) | mỗi nguồn đã học một file: học gì, ở phút nào |
-| [phieu-hoc-mau.md](phieu-hoc-mau.md) | mẫu phiếu học đưa David duyệt trước khi sửa skill |
+| [phieu-hoc-mau.md](phieu-hoc-mau.md) | mẫu phiếu học Claude điền trước khi sửa skill |

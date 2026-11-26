@@ -11,8 +11,8 @@ lần đầu ngày 22/11/2026 (buổi gặp 37 phút thành 3 video); kế hoạ
 Trong các lệnh dưới: `SKILL=~/Documents/bo-nao-david/ky-nang/san-xuat-video/dung-video-theo-phong-cach` (máy tính đã cài bộ não thì
 `~/.claude/skills/dung-video-theo-phong-cach` trỏ cùng chỗ). Máy Windows: lệnh chạy trong WSL Ubuntu.
 
-**Thứ tự với 4 phần:** bước 1–2 (nhận, làm sạch, chép lời, phân hướng) là phần lọc làm trước khi trình 4 phần, như `phan-phoi-da-kenh`
-bước 0–1; bước 3 trở đi (cắt, dựng, phát hành) chỉ làm sau khi David duyệt.
+**Thứ tự:** bước 1–2 (nhận, làm sạch, chép lời, phân hướng) là phần lọc, làm xong thì dựng luôn, không trình 4 phần, như `phan-phoi-da-kenh`
+bước 0–1; bước 3 trở đi (cắt, dựng, phát hành) làm liền sau đó.
 
 ## Các bước
 
@@ -26,12 +26,12 @@ kho 100 với hướng trainer: làm đúng [khối 00 mục 0b](../../mo-dun/00
 - In lời theo khối 20 giây (mốc và chữ) để đọc hết một lượt; đoạn **thừa** gồm cả đoạn cầm máy cho xem màn hình mà máy quay không thấy.
 - Phần đời thường / hành trình của David không thuộc hướng nào thì **không dùng**; chưa xếp được thì hỏi David (`mo-hinh-kinh-doanh.md` mục 1b). Hành trình dẫn tới phát triển con người thì thuộc hướng 2.
 - Mốc mỗi đoạn lấy **đúng đầu / cuối câu** trong phụ đề (in các dòng quanh mốc để chọn).
-- **Lằn ranh** (khối 00 mục 3): mặc định giữ lời; liệt kê từng câu trong 4 phần cho David chọn giữ hay cắt. David chọn cắt thì tách đoạn
+- **Lằn ranh** (khối 00 mục 3): mặc định giữ lời; liệt kê từng câu trong báo cáo để David biết, muốn cắt thì góp ý (lá B13). David chọn cắt thì tách đoạn
   bỏ riêng câu đó. Người khác xuất hiện (đối tác, khách): ghi vào mục "Ghi chú đăng" của gói phát hành, không hỏi, kể cả khách của công ty Veltrix
  .
-- Trình David bảng "video · hướng · đoạn · dài" kèm đoạn cắt, lằn ranh và clip ngắn dự kiến (4 phần), có mặc định.
+- Ghi vào báo cáo bảng "video · hướng · đoạn · dài" kèm đoạn cắt, lằn ranh và clip ngắn đã làm.
 
-### 3. Cắt và tạo dự án (sau khi duyệt)
+### 3. Cắt và tạo dự án
 Viết `ke-hoach-tach.json` theo mẫu `vi-du-tach-video.json`: mỗi video `doan`, `topic`, `tuyen` (nhạc theo tuyến, khối 09), `ytEnd`
 (màn kết YouTube, khối 15 / 08), rồi:
 ```bash
@@ -60,9 +60,9 @@ Mỗi video ra `~/Movies/tap-<tên>/2-ban-day-du` có sẵn video gốc đã n�
   dòng nói thư mục buổi có gì (nội bộ, không đăng); chỗ để video gốc (không tải lên khi file dung lượng quá lớn). Mẫu: Drive `thanh-pham/_buoi-tap-dji0028-2311/`.
 
 ## Điểm duyệt
-- **Đ1** sau bước 2: bảng video theo hướng, đoạn cắt, lằn ranh (mặc định giữ lời), clip ngắn dự kiến. Chưa duyệt thì không cắt, không dựng.
+- Không có Đ1 (đã có quy trình): sau bước 2 Claude cắt và dựng luôn theo mặc định, bảng video theo hướng ghi trong báo cáo.
 - **Đ2**: bấm đăng chỉ khi David nói "đăng"; gói đăng tự sắp theo sản phẩm, không hỏi; dọn file tạm, đưa dự án lên Drive chỉ sau khi David chốt.
-- Chế độ tự chạy (David nói rõ "làm tới khi có kết quả"): bỏ Đ1, lằn ranh theo mặc định giữ lời, ghi lại trong báo cáo; người khác
+- Tự chạy là mặc định: lằn ranh theo mặc định giữ lời, ghi lại trong báo cáo; người khác
   xuất hiện (cả khách Veltrix) thì vẫn dựng, ghi vào "Ghi chú đăng", không hỏi; vẫn giữ Đ2 (`quy-trinh.md` mục 1).
 
 ## Xong khi

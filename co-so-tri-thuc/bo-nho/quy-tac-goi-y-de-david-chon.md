@@ -1,6 +1,6 @@
 ---
 name: quy-tac-goi-y-de-david-chon
-description: "Nhận tài nguyên, trả kết quả: Claude trình 4 phần gọn theo mặc định skill kèm đề xuất \"chọn X vì Y\", David duyệt rồi Claude làm liên tục, không hỏi giữa chừng (2026-11-11, 14/11)"
+description: "Nhận tài nguyên, trả kết quả: đã có quy trình nên Claude tự làm liên tục theo mặc định skill, ghi \"đã chọn X vì Y\" trong báo cáo, không hỏi (2026-11-11, 14/11; sửa 26/11)"
 metadata:
   node_type: memory
   type: feedback
@@ -8,7 +8,7 @@ metadata:
   modified: 2026-11-14
 ---
 
-Với sản phẩm làm từ tài nguyên David đưa (video, highlight, podcast, bài đăng), trước khi làm, Claude trình 4 phần gọn theo mặc định skill kèm đề xuất
+Từ 26/11/2026 sản phẩm từ tài nguyên đã có quy trình nên Claude không trình 4 phần, tự làm trọn ([[quy-tac-duyet-ke-hoach-4-phan]]). Trước đó (14/11): với sản phẩm làm từ tài nguyên David đưa (video, highlight, podcast, bài đăng), trước khi làm, Claude trình 4 phần gọn theo mặc định skill kèm đề xuất
 "chọn X vì Y", rồi chờ David "duyệt" ([[quy-tac-duyet-ke-hoach-4-phan]]). Điểm skill đã định thì Claude làm đúng skill, không đưa vào câu hỏi; điểm chưa
 định thì Claude tự chọn; câu David không trả lời, "làm đi", "theo skill" đều có nghĩa là theo mặc định skill và đề xuất của Claude. Sau khi duyệt, Claude làm liên tục,
 **không hỏi giữa chừng**; Claude báo "đã chọn X vì Y" ở báo cáo cuối để David sửa ở bản cuối. Claude chỉ dừng khi đăng, gửi, xoá hoặc gặp tín hiệu nặng.

@@ -57,7 +57,7 @@ thời gian, không có thẻ cuối, màn chốt trên hình, kết ở chữ c
 10. **Chừa cho bản đầy đủ đúng chỗ**: chừa một chuyện khác hoặc ý mở rộng; ý trong clip phải đi đến hết. Câu mở đầu ưu tiên điều bất ngờ, kết quả lớn hoặc điều được mất hơn lời than chung chung.
 11. **Không thẻ cuối, không thanh thời gian** (video dọc ngắn, `nhan-dien-chung.md` mục 1). `danh-sach-cat-doan-noi-bat.py` vẫn ghi `ENDCARD` từ
     `"endcard"` trong phuong-an.json (tên tập gốc, người nói) nhưng mẫu tự bỏ ở video dọc ngắn; ghi đủ để dùng khi David cần bản dọc dài.
-    Không có tên tập gốc thì hỏi David trong 4 phần lúc đầu (`../nhan-dien-thuong-hieu.md`).
+    Không có tên tập gốc thì tra sổ danh mục nội dung; vẫn không có thì ghi chỗ trống trong báo cáo (`../nhan-dien-thuong-hieu.md`).
 12. **Tự chọn, không hỏi** (`chuan-muc-lam-viec.md` mục 2): nhận yêu cầu cắt là Claude tự chọn ý, tiêu đề, câu màn chốt rồi dựng trọn
     một mạch. Chỉ dừng lại hỏi khi không ý nào đạt 4 câu hoặc câu chủ chốt xung đột với lằn ranh. Luôn ghi rõ đã chọn gì trong báo cáo để David sửa ở bản cuối.
 13. **Học từ 20 đoạn nổi bật Việt** (`references/hoc-tu-20-doan-noi-bat-vn.md`):

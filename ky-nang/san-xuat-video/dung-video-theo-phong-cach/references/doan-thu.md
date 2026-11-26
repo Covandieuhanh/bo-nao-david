@@ -5,7 +5,7 @@ description: "Quy trình lá B5: dựng một đoạn thử ngắn để David x
 # Đoạn thử trước khi dựng cả video (cây quy trình lá B5)
 
 **Khi nào dùng:** David nói "render một đoạn ngắn cho tôi xem", "đừng render cả video vội"; hoặc khi vừa đổi luật thẩm mỹ, kiểu cảnh lớn mà
-video dài (đủ dài để việc dựng cả bản tốn nhiều công sức, Claude tự cân nhắc) — Claude dựng đoạn thử trước, David duyệt rồi mới dựng cả video.
+video dài (đủ dài để việc dựng cả bản tốn nhiều công sức, Claude tự cân nhắc) — Claude dựng đoạn thử trước, tự xem và soát, rồi dựng luôn cả video; chỉ dừng chờ khi David yêu cầu xem trước.
 
 **Đầu vào:** dự án gốc đã làm sạch, đã có phụ đề được rà soát chữ (`tu-lieu/video-goc.mp4`, `chuyen-dong/src/phu-de.js`).
 Trong các lệnh dưới: `SKILL=~/Documents/bo-nao-david/ky-nang/san-xuat-video/dung-video-theo-phong-cach`.
@@ -23,8 +23,8 @@ Trong các lệnh dưới: `SKILL=~/Documents/bo-nao-david/ky-nang/san-xuat-vide
    Khi có góp ý thì Claude sửa skill đúng chỗ và làm lại đoạn thử; khi được duyệt thì Claude mới dựng cả video với cách đã duyệt.
 
 ## Điểm duyệt
-- **Đ1** trước khi làm (4 phần: đoạn nào, cách trình bày dự kiến).
-- **Dừng sau bước 6**, chờ David duyệt đoạn thử; chưa duyệt thì không dựng cả video. Ở chế độ tự chạy (khi David nói rõ) thì không dừng ở đây.
+- Không có Đ1: Claude tự chọn đoạn thử thấy rõ thay đổi nhất, ghi đoạn nào và cách trình bày trong tin giao.
+- **Dừng sau bước 6**, chờ David xem đoạn thử (David yêu cầu xem trước nên đây là chỗ dừng của lá); chưa duyệt thì không dựng cả video. Lời David nói rõ "làm luôn cả video" thì không dừng ở đây.
 
 ## Xong khi
 - David nhận đoạn thử (bản dung lượng nhỏ dưới 30 MB) kèm bảng cảnh, và đã nói duyệt hay sửa.

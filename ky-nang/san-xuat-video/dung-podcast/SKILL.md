@@ -13,7 +13,7 @@ Skill này dùng chung template Remotion và phần lớn script của skill g�
 Luật nội dung của skill gốc vẫn áp dụng. Lệnh chạy quá 2 phút thì chạy nền. Claude giữ task list theo các bước.
 
 **Không hỏi** (`../../chuan-muc-lam-viec.md` mục 2): chữ thumbnail, tên các phần (TOPICS), nền lắng hay lưới tối do Claude tự chọn
-theo khối. Sau khi David duyệt 4 phần, Claude chạy liên tục tới bản cuối: chụp thử mọi cảnh mới để Claude
+theo khối. Claude chạy liên tục tới bản cuối, không trình 4 phần (đã có quy trình): chụp thử mọi cảnh mới để Claude
 tự rà soát (khối 17) rồi render, không chờ David chốt. Luật về dừng giữa chừng và báo cáo cuối có "đã chọn X vì Y": `../quy-tac-chung.md` mục 8.
 
 

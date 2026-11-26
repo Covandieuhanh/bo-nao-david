@@ -272,7 +272,7 @@ không hỏi David; mức nhạc theo khối 09.
 ### 9. Phát hành, giao và sửa theo góp ý
 Vlog đăng YouTube > 3 phút: `"ytEnd": 20` trong ke-hoach.json (màn kết YouTube 15–20 s sau thẻ nhận diện) + `chuong.py` (chương theo
 nhãn địa điểm). Chuyến > 25 phút: đề xuất tách phần P1/P2 (mỗi phần một video, thẻ kết "Hết phần 1" bằng `outro` ngắn — chữ là
-tên phần, không tự viết lời) — nêu trong 4 phần lúc đầu.
+tên phần, không tự viết lời) — Claude tự quyết theo nội dung, ghi báo cáo.
 Phát hành theo `../../quy-tac-chung.md` mục 7. Thumbnail vlog (khi có):
 `zsh $SKILL/scripts/anh-thu-nho.sh "$P" c<N>@<giây> "<DÒNG 1>" "<DÒNG 2>" 1|2` (khung cảm xúc mạnh nhất cả chuyến, mặt rõ — thường
 là cảnh ấn tượng nhất của đoạn ghép mở đầu); chép `san-xuat-video/mo-dun/16-phan-tich-so-lieu/mau-so-lieu.md` thành `$P/so-lieu.md`.

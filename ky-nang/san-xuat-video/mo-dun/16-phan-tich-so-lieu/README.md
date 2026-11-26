@@ -18,7 +18,7 @@ description: "Khối 16 số liệu sau khi đăng: đọc số liệu, báo l�
   TikTok / Facebook) thì Claude điền: lượt xem, tỉ lệ xem hết / thời lượng xem trung bình, giây rời nhiều nhất, % còn lại ở giây 3, CTR
   thumbnail (video ngang YouTube), lưu / chia sẻ / bình luận. Tổng hợp nhiều video ở `san-xuat-video/so-lieu-tong.md`.
 - Số liệu dùng để **báo lỗi**, không thay hình mẫu: người xem rời đi hàng loạt ở 0–3 s nghĩa là câu mở sai; người xem rời đi ở một cảnh nghĩa là cảnh đó có lỗi. Claude so với video trước rồi đề xuất **một**
-  chỉnh sửa vào `ho-so-thuong-hieu/<loai>` hoặc luật (kèm dẫn chứng); David duyệt rồi Claude mới đổi và ghi nhật ký thay đổi.
+  chỉnh sửa vào `ho-so-thuong-hieu/<loai>` hoặc luật (kèm dẫn chứng); Claude đổi, ghi nhật ký thay đổi, báo David; màu chủ đạo, chữ ký nhận diện: Đ3.
 
 ## Thước đo chính theo kênh David (`ho-so-thuong-hieu/kenh.json`)
 Claude ghi trước tiên **số người nhắn "gỡ"** (Messenger của trang và bình luận) và số bình luận "Vấn đề" / "Kết quả" của mỗi bài; lượt xem và tỉ lệ giữ chân

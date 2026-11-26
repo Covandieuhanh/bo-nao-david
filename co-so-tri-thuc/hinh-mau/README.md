@@ -14,7 +14,7 @@ description: "Bản đồ hình mẫu của David: cây mục lớn → mục nh
 1. **Tra trước mọi việc** (quy trình gốc bước 2): Claude mở file mục lớn của việc, tìm mục nhỏ. Có đủ hình mẫu thì Claude làm theo cột "điều học được".
 2. **Chưa có hoặc chưa đủ thì nghiên cứu** theo [quy-trinh-nghien-cuu.md](quy-trinh-nghien-cuu.md) (cây quy trình lá A8): **ít nhất 5
    hình mẫu, việc lớn ít nhất 10**, càng nhiều càng tốt; ưu tiên mẫu có số liệu thành công kiểm chứng được. Đây là phần chuẩn bị, làm trước
-   điểm duyệt Đ1; kết luận đưa vào 4 phần.
+   khi làm; kết luận đưa vào kế hoạch hoặc kết quả.
 3. **Sao chép rồi cải tiến, rồi thành của David:** Claude lấy yếu tố tạo nên thành công (nguyên lý, cấu trúc, nhịp, độ dài, cách trình bày), không
    sao chép nội dung hay nhận diện của người khác; giữ chữ ký nhận diện và lằn ranh của David. Cách học nguyên lý: ghi nhớ `quy-tac-hoc-la-bo-sung`.
 4. **Ghi lại mỗi lần nghiên cứu:** bảng của mục nhỏ (mỗi hình mẫu một dòng) + một mục trong [nhat-ky.md](nhat-ky.md). Chi tiết dài (phiếu

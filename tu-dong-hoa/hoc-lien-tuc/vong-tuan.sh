@@ -8,4 +8,4 @@ echo "== Skill dùng và lời David sửa (30 ngày, máy này)"; python3 -I tu
 [ -f tu-dong-hoa/hoc-lien-tuc/phu-cau-kiem.py ] && { echo "== Bộ kiểm phủ luật"; python3 -I tu-dong-hoa/hoc-lien-tuc/phu-cau-kiem.py; }
 [ -f tu-dong-hoa/hoc-lien-tuc/de-xuat-cat-giam.py ] && { echo "== Đề xuất cắt giảm"; python3 -I tu-dong-hoa/hoc-lien-tuc/de-xuat-cat-giam.py; }
 echo "== Chồng chéo bản luật"; python3 -I ky-nang/tai-cau-truc/do-chong-cheo.py | tail -2
-echo "Tiếp theo: mở skill hoc-lien-tuc Việc 1 với kết quả trên; ghi du-an/hoc-lien-tuc/$(date +%F).md; đề xuất sửa trong 4 phần cho David."
+echo "Tiếp theo: mở skill hoc-lien-tuc Việc 1 với kết quả trên; ghi du-an/hoc-lien-tuc/$(date +%F).md; tự sửa theo skill, báo David; điều cần David chốt (tầng 0–1, Đ3, cắt giảm) ghi riêng."

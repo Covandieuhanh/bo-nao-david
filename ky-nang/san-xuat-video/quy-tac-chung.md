@@ -108,7 +108,7 @@ Ghi `<dự án>/phat-hanh/phat-hanh.md`:
 - **3 tiêu đề** (tối đa 60 ký tự, một ý, gây tò mò nhưng đúng ý video) xếp theo độ mạnh; tiêu đề và thumbnail **bổ sung** cho nhau, không lặp chữ.
 - **Thumbnail** chỉ làm khi video xuất ngang VÀ đăng YouTube; luật và mẫu ở khối 14. **Video dọc**: không ghép bìa trước video (giây đầu
   dành cho câu mở); ghi **mốc khung bìa đề xuất** (giây) để David chọn khi đăng.
-- **Video trên 3 phút đăng YouTube** ("có đăng YouTube không?" là điểm cần chốt trong 4 phần lúc đầu, với mọi video trên 3 phút, ngang hay dọc):
+- **Video trên 3 phút đăng YouTube** (với mọi video trên 3 phút, ngang hay dọc, Claude tự quyết theo hướng nội dung và `ho-so-thuong-hieu/kenh.json`, ghi trong báo cáo):
   - **Màn kết YouTube 15–20 s**: 1 video/podcast `project.ytEnd = 20` (ghi sau bước làm sạch — ap-dung-lam-sach.py viết lại du-an.js);
     vlog ghép `"ytEnd": 20` trong ke-hoach.json. Ghi vào phat-hanh.md: "gắn màn kết trong YouTube Studio: 2 video (trái/phải hoặc
     trên/dưới) + nút đăng ký (tròn giữa dưới)".
@@ -126,13 +126,13 @@ Ghi `<dự án>/phat-hanh/phat-hanh.md`:
     dùng chung template) đọc một lần ở đầu phiên. File khác chỉ đọc ở đúng bước cần (cột "Khối" của công thức).
   - Bước đánh dấu *(bước nhẹ)*: nhắc đổi sang mô hình chi phí thấp hơn theo `../chuan-muc-lam-viec.md` mục 3.
   - Ghi góp ý đúng một chỗ: khối / skill bị ảnh hưởng, kèm một dòng ở sổ `references/nhat-ky-thay-doi.md` của skill.
-- Hỏi, chạy liên tục, lệnh nền, báo cáo cuối: `../chuan-muc-lam-viec.md` mục 2–4; mật khẩu: `AGENTS.md` luật 4. Riêng video: duyệt 4 phần ở đầu việc (Đ1), sau đó không có điểm dừng duyệt
+- Hỏi, chạy liên tục, lệnh nền, báo cáo cuối: `../chuan-muc-lam-viec.md` mục 2–4; mật khẩu: `AGENTS.md` luật 4. Riêng video: đã có quy trình nên không có điểm dừng duyệt
   giữa chừng trừ Đ2 (`quy-trinh.md` mục 1) (kể cả kế hoạch ghép vlog); báo cáo cuối thêm "đã chọn X vì Y" và tên riêng cần xác nhận.
 - Không tải video từ YouTube/TikTok để dựng (đề nghị David gửi file); tải để học mẫu: `thiet-ke-bo-cuc/README.md` mục 4.
 - Chụp thử (stills) trước khi render để Claude tự rà soát, không gửi David chốt; kiểm bản cuối theo khối 17 và 09. **Chụp có giới hạn:** chụp đúng mốc dễ lỗi (khung mới lần
   đầu, chỗ chồng lớp, điểm cắt, màn chốt, thẻ cuối, chỗ David góp ý), không chụp từng cảnh; xem bố cục thì dùng ảnh thu nhỏ.
 - **Khi có góp ý, Claude sửa rồi render lại toàn bộ ngay**, không chờ chữ "render"; bàn giao lại như lần đầu (Drive + trang xem
-  kết quả). Render nối tiếp, không song song. Sau Đ1, Claude không dừng chờ ở bước nào trước khi xong; chỉ việc đăng mạng xã hội và dọn dẹp mới chờ David (Đ2).
+  kết quả). Render nối tiếp, không song song. Claude không dừng chờ ở bước nào trước khi xong; chỉ việc đăng mạng xã hội và dọn dẹp mới chờ David (Đ2).
 - **Phần cố định: không hỏi, không đổi** (`../chuan-muc-lam-viec.md` mục 2): nhận diện, dấu góc, màn chốt, thẻ cuối, nhạc theo tuyến, mức
   motion graphics, phụ đề, chuẩn âm lượng, nơi giao file; tên riêng chưa chắc chắn thì dùng cách Whisper nhận dạng và nêu ở báo cáo.
 - **Thử skill bằng đoạn ngắn trọn một ý:** cắt từ đầu tới cuối một ý của video nguồn (không cố định số giây, không chạy cả video dài)

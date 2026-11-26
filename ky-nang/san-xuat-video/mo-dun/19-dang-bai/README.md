@@ -23,7 +23,7 @@ nền tảng, Claude làm chậm, chụp từng bước và sửa README này th
 - **TikTok chỉ hẹn được trong 10 ngày:** với clip xa hơn, Claude đặt việc tự chạy (scheduled task) khi ngày đăng đã nằm trong giới hạn đó; việc này cần thiết bị bật và ứng dụng Claude mở.
 - **Bình luận ghim không hẹn được trước:** Claude đặt việc tự chạy ngay sau giờ bài lên, đăng đúng chữ đã duyệt.
 - **Link trong mô tả TikTok không bấm được:** ghi tên kênh, không dán link. Shorts gắn "Video liên quan" về video dài.
-- Kế hoạch đăng theo 4 phần, chữ từng bài nằm chung một file để David duyệt một lần. Mẫu: [mau-ke-hoach-dang.md](mau-ke-hoach-dang.md) (đợt Đi trainer).
+- Gói đăng: chữ từng bài nằm chung một file; David nói "đăng" một lần cho cả đợt (Đ2). Mẫu: [mau-ke-hoach-dang.md](mau-ke-hoach-dang.md) (đợt Đi trainer).
 
 ## Trình duyệt
 - **Đọc / soạn / kiểm** (không cần tải file): trình duyệt riêng trong app (`mcp__Claude_Browser__*`) — David đã đăng nhập 3 nền tảng.

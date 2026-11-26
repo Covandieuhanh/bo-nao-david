@@ -18,7 +18,7 @@ Mac, thiết bị mới chưa được cài công cụ tải link, hai bảng ch
 Cùng ngày, David chốt điểm duyệt: *"Phần nào đến bước duyệt thì vẫn phải chờ duyệt… những yêu cầu đặc biệt giống như là tự động làm video
 cho đến khi ra kết quả luôn và bỏ qua các bước duyệt thì mới bỏ qua thôi, chứ còn không có trường hợp nào mà chạy lệch quy trình cả"*, từ đó có
 ba điểm duyệt Đ1 (4 phần) · Đ2 (đăng, gửi, xoá, tài khoản — không bao giờ bỏ) · Đ3 (thông tin về David); chế độ tự chạy chỉ bỏ Đ1 khi lời
-David nói rõ; mỗi quy trình lá ghi điểm duyệt (`quy-trinh.md` mục 1, 3).
+David nói rõ; mỗi quy trình lá ghi điểm duyệt (`quy-trinh.md` mục 1, 3). Từ 26/11/2026: việc đã có lá thì tự chạy là mặc định, không có Đ1; cần đổi thì sửa quy trình ([[quy-tac-duyet-ke-hoach-4-phan]]).
 
 **How to apply:** khi bắt đầu việc, Claude tra `quy-trinh.md`; khi kết thúc việc, Claude tự rà soát bằng câu "một phiên mới chỉ đọc GitHub có làm ra đúng kết quả này không?"
 (`chuan-muc-lam-viec.md` mục 4). Công cụ kiểm tra `tu-dong-hoa/kiem-quy-trinh.py` chặn việc đẩy lên GitHub khi quy trình lá thiếu file / "Xong khi" hoặc skill

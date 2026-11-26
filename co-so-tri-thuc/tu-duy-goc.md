@@ -143,7 +143,7 @@ Quy trình gốc 7 bước ([quy-trinh.md](../quy-trinh.md) mục 0) đã chứa
 | Bước của quy trình gốc | Khối dùng |
 |---|---|
 | 1–2. Nhận yêu cầu, đọc đúng phần, tra hình mẫu | khối 4 câu 1 (bản chất), khối 1 (bóc tách), khối 2 "hiểu đúng bài" |
-| 3. Trình 4 phần | khối 2 (Mục tiêu · Kế hoạch · Quy trình · Thực thi, kèm cách đo và dấu hiệu sai), khối 4 câu 2–4 |
+| 3. Trình 4 phần (việc chưa có lá) | khối 2 (Mục tiêu · Kế hoạch · Quy trình · Thực thi, kèm cách đo và dấu hiệu sai), khối 4 câu 2–4 |
 | 4. Làm từng bước | khối 2: khi phát sinh vấn đề thì dùng phép thử hai loại vấn đề |
 | 5–6. Tự rà soát, bàn giao kèm so sánh với hình mẫu | khối 4 câu 5, khối 2 "nhìn lại" |
 | 7. Ghi lại, push lên GitHub | khối 3: thay đổi — sửa đúng nguồn, câu kiểm, viết thành lá |

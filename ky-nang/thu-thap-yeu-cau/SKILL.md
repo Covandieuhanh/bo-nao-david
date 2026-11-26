@@ -1,11 +1,11 @@
 ---
 name: thu-thap-yeu-cau
-description: Cách Claude hỏi David khi trình 4 phần (Mục tiêu · Kế hoạch · Quy trình · Thực thi) trước mọi việc — hỏi theo vòng từ góc nhìn chuyên gia thực chiến, mỗi điểm cần chốt có 2–3 gợi ý với đề xuất đứng đầu; sự thật thì Claude tự tra, quyết định thì David chốt; Claude chờ David "duyệt" rồi mới tạo hay sửa file; duyệt rồi làm trọn không ngắt quãng. Claude tự nhận diện 6 tín hiệu phải dừng lại để hỏi, cả lúc bắt đầu lẫn giữa chừng. Dùng khi trình 4 phần cho một việc, khi David nói "hỏi kỹ", "hỏi chuyên gia", "grill me", "/thu-thap-yeu-cau". Không dùng cho câu hỏi nhanh, tra cứu.
+description: Cách Claude hỏi David khi trình 4 phần (Mục tiêu · Kế hoạch · Quy trình · Thực thi) trước việc chưa có quy trình (việc đã có quy trình thì tự động hoàn toàn, không hỏi) — hỏi theo vòng từ góc nhìn chuyên gia thực chiến, mỗi điểm cần chốt có 2–3 gợi ý với đề xuất đứng đầu; sự thật thì Claude tự tra, quyết định thì David chốt; Claude chờ David "duyệt" rồi mới tạo hay sửa file; duyệt rồi làm trọn không ngắt quãng. Claude tự nhận diện 6 tín hiệu phải dừng lại để hỏi, cả lúc bắt đầu lẫn giữa chừng. Dùng khi trình 4 phần cho một việc, khi David nói "hỏi kỹ", "hỏi chuyên gia", "grill me", "/thu-thap-yeu-cau". Không dùng cho câu hỏi nhanh, tra cứu.
 ---
 
 # Hỏi chuyên gia trước khi làm
 
-Tài liệu đọc trước: [chuan-muc-lam-viec.md](../chuan-muc-lam-viec.md). Luật **trình 4 phần trước mọi việc, chờ "duyệt", duyệt rồi làm trọn**, phần miễn và cách chọn từng điểm (mặc định của skill, "làm đi") nằm ở `chuan-muc-lam-viec.md` mục 2. File này là nguồn của **cách hỏi** trong 4 phần: điểm nào cần chốt, hỏi thế nào, sâu tới đâu, khi nào phải dừng hỏi.
+Tài liệu đọc trước: [chuan-muc-lam-viec.md](../chuan-muc-lam-viec.md). Luật **đã có quy trình thì tự động hoàn toàn; chưa có quy trình thì trình 4 phần, chờ "duyệt", duyệt rồi làm trọn**, phần miễn và cách chọn từng điểm (mặc định của skill, "làm đi") nằm ở `chuan-muc-lam-viec.md` mục 2. File này là nguồn của **cách hỏi** trong 4 phần: điểm nào cần chốt, hỏi thế nào, sâu tới đâu, khi nào phải dừng hỏi.
 
 **Mục tiêu:** Claude hỏi đúng câu trước khi làm để ra kết quả đúng ý ngay lần đầu, phục vụ khách và người xem của David ở cả ba hướng nghề (`co-so-tri-thuc/david.md` 4.1).
 
@@ -13,7 +13,7 @@ Skill này không dùng cho câu hỏi nhanh, tra cứu, giải thích (Claude t
 
 ## Sáu tín hiệu phải tự dừng lại để hỏi
 
-Lúc trình 4 phần: Claude gom mọi tín hiệu vào các điểm cần chốt. Sau khi David duyệt, giữa chừng chỉ các tín hiệu **nặng** (tín hiệu 1 khi việc làm đổi hẳn kết quả, tín hiệu 2, tín hiệu 3 khi đăng, xoá hay khó đảo ngược, tín hiệu 5) mới khiến Claude dừng; với tín hiệu 4 và 6, Claude tự chọn theo mặc định và đề xuất rồi ghi vào báo cáo:
+Việc đã có quy trình: không trình 4 phần; chỉ dừng ở các trường hợp của `chuan-muc-lam-viec.md` mục 2 ("Chỉ dừng hỏi khi"), tín hiệu còn lại tự chọn và ghi báo cáo. Việc chưa có quy trình, lúc trình 4 phần: Claude gom mọi tín hiệu vào các điểm cần chốt. Sau khi David duyệt, giữa chừng chỉ các tín hiệu **nặng** (tín hiệu 1 khi việc làm đổi hẳn kết quả, tín hiệu 2, tín hiệu 3 khi đăng, xoá hay khó đảo ngược, tín hiệu 5) mới khiến Claude dừng; với tín hiệu 4 và 6, Claude tự chọn theo mặc định và đề xuất rồi ghi vào báo cáo:
 1. **Hiểu được nhiều cách**: câu mơ hồ, nhất là chữ đọc chính tả bị lệch làm đổi nghĩa; Claude không tự đoán rồi làm.
 2. **Mâu thuẫn** với luật, bộ nhớ, skill hoặc quyết định David đã chốt.
 3. **Tốn thời gian, tốn tiền hoặc khó đảo ngược**: render quá 10 phút (Claude chỉ nêu trong 4 phần; giữa chừng thì chạy nền, không dừng), xoá, đăng, gửi tin nhắn, dịch vụ trả phí, sửa hàng loạt.
@@ -30,8 +30,8 @@ Claude tự xếp loại việc, David không cần nói "grill me":
 
 | Loại việc | Cách hỏi |
 |---|---|
-| **Sản phẩm từ tài nguyên** (video, highlight, podcast, bài đăng) | **4 phần gọn** (định làm thành gì, khung, số clip, kênh): điểm skill đã định thì Claude ghi luôn, chỉ hỏi điểm skill chưa định; duyệt xong thì chạy liên tục tới kết quả |
-| **Sửa một file, tài liệu hoặc skill** | **4 phần kèm một vòng gộp** mọi điểm cần chọn; có "duyệt" thì chạy liên tục không ngắt quãng |
+| **Sản phẩm từ tài nguyên** (video, highlight, podcast, bài đăng) | **Đã có quy trình (lá B1): không hỏi**, tự làm trọn theo mặc định của skill; điểm skill chưa định thì tự chọn theo tiêu chí của skill, ghi "đã chọn X vì Y" trong báo cáo |
+| **Sửa một file, tài liệu hoặc skill** | góp ý của David hay vòng tự học: tự sửa theo quy trình, báo sau; việc mới chưa có quy trình: **4 phần kèm một vòng gộp** mọi điểm cần chọn, có "duyệt" thì chạy liên tục |
 | **Thiết kế lớn** (kế hoạch, chiến lược, skill hoặc quy trình mới) | **Nhiều vòng** tới khi hết điểm chưa rõ |
 | David nói **"grill me" / "hỏi kỹ"** | Nhiều vòng, kể cả việc nhỏ |
 

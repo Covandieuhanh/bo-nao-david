@@ -26,17 +26,17 @@ gói, chương trình, trang). Học một video cụ thể David gửi thì dù
    riêng phù hợp với David thành điều cải tiến. Mẫu nào kém hoặc rối thì ghi vào "không lấy" kèm lý do.
 5. **Ghi lại:** mỗi mẫu một dòng ở bảng mục nhỏ (file mục lớn), đổi trạng thái mục nhỏ trong README; một mục [nhat-ky.md](nhat-ky.md)
    (ngày, câu hỏi, số mẫu, kết luận, áp dụng vào đâu). Phiếu học dài để ở file nghiên cứu của skill liên quan, bản đồ đặt liên kết.
-6. **Áp dụng:** người làm đưa kết luận vào 4 phần của việc (điểm cần chốt có đề xuất theo hình mẫu). Đưa vào skill / luật thì qua 4 phần như mọi
+6. **Áp dụng:** người làm đưa kết luận vào kế hoạch hoặc kết quả của việc. Đưa vào skill / luật thì tự sửa theo `hoc-lien-tuc`, báo sau, như mọi
    lần sửa skill.
 7. **Đối chiếu khi giao:** 2–3 dòng "so với hình mẫu" trong tin báo cáo cuối: giống ở đâu, khác ở đâu, nên chỉnh gì tiếp.
 
 ## Điểm duyệt
-Không có cho phần nghiên cứu và ghi bản đồ (phần chuẩn bị, trước Đ1 của việc chính). Đưa kết luận vào skill, luật: Đ1 của việc chính.
+Không có cho phần nghiên cứu và ghi bản đồ (phần chuẩn bị của việc chính). Đưa kết luận vào skill, luật: tự sửa, báo sau; đụng thông tin về David: Đ3.
 
 ## Xong khi
 - Mục nhỏ có ít nhất 5 hình mẫu (việc lớn 10), mỗi dòng đủ bốn cột, có ngày đo; trạng thái mục nhỏ trong README đã cập nhật.
 - Nhật ký có mục mới; file tải về đã xoá.
-- Kết luận đã vào 4 phần hoặc vào kết quả; tin bàn giao có 2–3 dòng đối chiếu.
+- Kết luận đã vào kế hoạch hoặc vào kết quả; tin bàn giao có 2–3 dòng đối chiếu.
 
 ## Kiểm gì
 - Bằng chứng là số kiểm chứng được (có ngày, có cách đo), không phải cảm nhận.

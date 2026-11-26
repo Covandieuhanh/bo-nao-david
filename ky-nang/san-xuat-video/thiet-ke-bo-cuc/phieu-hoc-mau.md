@@ -1,10 +1,10 @@
 ---
-description: "Mẫu phiếu học video mẫu: Claude điền, David duyệt trước khi sửa skill."
+description: "Mẫu phiếu học video mẫu: Claude điền, rồi tự sửa skill và báo David."
 ---
 
 # Phiếu học video mẫu — <tên nguồn> (<ngày>)
 
-> Claude điền, David duyệt. Chưa có "ok" thì chưa sửa skill.
+> Claude điền, rồi tự sửa skill và báo David; đụng màu chủ đạo, chữ ký nhận diện thì chờ "duyệt".
 
 ## 1. Nguồn
 - Video: <tên, kênh, liên kết hoặc file David gửi> · loại: <người nói / podcast / vlog / highlight…> · khung: <ngang / dọc>

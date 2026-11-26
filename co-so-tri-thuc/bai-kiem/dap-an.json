@@ -126,8 +126,8 @@
   },
   "c26": {
     "dung": "A",
-    "nha": "ky-nang/chuan-muc-lam-viec.md mục 2; ghi nhớ quy-tac-duyet-ke-hoach-4-phan",
-    "nguon": "David 14/11/2026"
+    "nha": "ky-nang/chuan-muc-lam-viec.md mục 2; quy-trinh.md mục 1; ghi nhớ quy-tac-duyet-ke-hoach-4-phan",
+    "nguon": "David 14/11/2026; 26/11/2026"
   },
   "c27": {
     "dung": "A",
@@ -168,5 +168,10 @@
     "dung": "A",
     "nha": "ghi nhớ video-cat-theo-cau-tron",
     "nguon": "David 25/11/2026"
+  },
+  "c35": {
+    "dung": "A",
+    "nha": "ky-nang/chuan-muc-lam-viec.md mục 2 (Cần đổi thì sửa quy trình); quy-trinh.md mục 1 (Không lệch quy trình)",
+    "nguon": "David 26/11/2026"
   }
 }

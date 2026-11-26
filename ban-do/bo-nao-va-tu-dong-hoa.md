@@ -14,7 +14,7 @@ Gốc: [bản đồ bộ não](README.md).
 - [tu-duy-goc](../co-so-tri-thuc/tu-duy-goc.md) — **Tư duy gốc (tầng 0)**: cách nghĩ khi làm mọi việc, bốn khối Bóc tách · Hành động (vòng kết quả hoặc vấn đề) · Học và thay đổi · Bản chất và kiểm sai; nguồn: [17 phiếu học](../tai-lieu-tham-khao/tu-duy-goc/README.md).
 - [truc-tri-thuc](../co-so-tri-thuc/truc-tri-thuc.md) — **Trục tri thức (tầng 0)**: cách bộ não tiếp nhận, xử lý, học, nâng cấp mọi thông tin, dựng theo cách mô hình AI được làm ra (dữ liệu → chưng cất → phản hồi → đánh giá → ra bản).
 - [bai-kiem toàn bộ não](../co-so-tri-thuc/bai-kiem/README.md) — Bộ đánh giá của trục: 18 tình huống từ chính lời David đã sửa; một trí tuệ nhân tạo chưa đọc gì làm bài, đạt ít nhất 17/18.
-- [chuan-muc-lam-viec](../ky-nang/chuan-muc-lam-viec.md) — Nguyên lý làm việc chung mọi skill đọc trước (tầng 1): khi hai điều ngược nhau, đầu việc, duyệt bốn phần, trong lúc làm, cuối việc, giữ phiên gọn, tài liệu và nguồn.
+- [chuan-muc-lam-viec](../ky-nang/chuan-muc-lam-viec.md) — Nguyên lý làm việc chung mọi skill đọc trước (tầng 1): khi hai điều ngược nhau, đầu việc, có quy trình thì tự động hoàn toàn (chưa có thì duyệt bốn phần), trong lúc làm, cuối việc, giữ phiên gọn, tài liệu và nguồn.
 - [quy-trinh-van-hanh-chung](../ky-nang/quy-trinh-van-hanh-chung.md) — Cách làm từng bước của chuẩn mực (tầng 2, cùng số mục): lệnh, mẫu bốn phần, câu báo, soát sau việc, ghi sổ, dọn dẹp thiết bị, push lên GitHub.
 - [quy-uoc-lien-ket](../co-so-tri-thuc/quy-uoc-lien-ket.md) — Bộ quy tắc liên kết của bộ não — mô tả đầu file, đường nối, bản đồ nội dung, chỉ mục tự sinh, ghi chú kiến thức, công cụ kiểm tra; để Claude tra nhanh, ít token, không sót.
 - [bang-thuat-ngu](../co-so-tri-thuc/bang-thuat-ngu.md) — Bảng thuật ngữ đặt tên: thuật ngữ kinh doanh tiếng Anh → tiếng Việt → tên file/thư mục dùng; tên bắt buộc của công cụ; cấu trúc thư mục.
@@ -39,16 +39,16 @@ Gốc: [bản đồ bộ não](README.md).
 - [MEMORY](../co-so-tri-thuc/bo-nho/MEMORY.md) — Mục lục bộ nhớ: mỗi ghi nhớ một dòng.
 - [quy-tac-cong-cu-cai-dua-vao-ky-nang](../co-so-tri-thuc/bo-nho/quy-tac-cong-cu-cai-dua-vao-ky-nang.md) — Công cụ David đã tải/cài (ví dụ: pyannote) là để nâng skill — công cụ giúp việc tốt hơn thì Claude đưa thẳng vào skill dựng video, không để công cụ không được dùng (2026-11-07)
 - [quy-tac-david-md-chi-dieu-co-dinh](../co-so-tri-thuc/bo-nho/quy-tac-david-md-chi-dieu-co-dinh.md) — co-so-tri-thuc/david.md chỉ ghi điều cố định đã chốt; ý tưởng, góp ý đang cân nhắc ghi ở du-an/danh-sach-y-tuong.md
-- [quy-tac-duyet-ke-hoach-4-phan](../co-so-tri-thuc/bo-nho/quy-tac-duyet-ke-hoach-4-phan.md) — Việc gì cũng trình đủ 4 phần (Mục tiêu · Kế hoạch · Quy trình · Thực thi), David duyệt rồi mới làm; duyệt rồi tự làm trọn tới khi chắc dùng được; việc tự chạy hiện…
+- [quy-tac-duyet-ke-hoach-4-phan](../co-so-tri-thuc/bo-nho/quy-tac-duyet-ke-hoach-4-phan.md) — Có quy trình thì tự động hoàn toàn, cần đổi thì sửa quy trình; chưa có quy trình thì trình 4 phần, David duyệt rồi mới làm; việc tự chạy hiện thành phiên trong app.
 - [quy-tac-goi-trainer-chung](../co-so-tri-thuc/bo-nho/quy-tac-goi-trainer-chung.md) — Gói trainer công nghệ chỉ dạy một kỹ năng thuần, cách làm chung bằng AI và máy của học viên; không tư duy, không chi tiết riêng của David
-- [quy-tac-goi-y-de-david-chon](../co-so-tri-thuc/bo-nho/quy-tac-goi-y-de-david-chon.md) — Tài nguyên vào, kết quả ra: trình 4 phần gọn theo mặc định skill + đề xuất "chọn X vì Y", David duyệt rồi Claude làm một mạch, không hỏi giữa chừng (2026-11-11…
+- [quy-tac-goi-y-de-david-chon](../co-so-tri-thuc/bo-nho/quy-tac-goi-y-de-david-chon.md) — Tài nguyên vào, kết quả ra: đã có quy trình nên Claude tự làm một mạch theo mặc định skill, ghi "đã chọn X vì Y", không hỏi.
 - [quy-tac-hoc-la-bo-sung](../co-so-tri-thuc/bo-nho/quy-tac-hoc-la-bo-sung.md) — Học video mẫu mới là BỔ SUNG vào skill, không thay thế những gì David đã sửa; lỗi cũ đã sửa không được quay lại; số của khung dọc không dùng cho khung ngang (2026-11-08)
 - [quy-tac-ket-qua-hon-toc-do](../co-so-tri-thuc/bo-nho/quy-tac-ket-qua-hon-toc-do.md) — David ưu tiên làm đúng quy trình và có kết quả hơn làm nhanh; bước nào cần kết quả render thì chờ, chỗ chưa rõ thì trao đổi (2026-11-05)
 - [quy-tac-khong-tu-chay-viec-cua-david](../co-so-tri-thuc/bo-nho/quy-tac-khong-tu-chay-viec-cua-david.md) — Không tự chạy, chạy tiếp, dừng hay làm lại việc David tạo (render, việc dựng…) khi David chưa ra lệnh — kể cả khi chính Claude đã ngắt việc đó
-- [quy-tac-ky-nang-tu-cai-tien](../co-so-tri-thuc/bo-nho/quy-tac-ky-nang-tu-cai-tien.md) — Sáu luật AGENTS 12/11/2026: skill, giọng văn, luật kênh tự học theo hình mẫu có số liệu, phần sửa trình 4 phần chờ duyệt (14/11); bỏ luật 'con người làm trung t…
+- [quy-tac-ky-nang-tu-cai-tien](../co-so-tri-thuc/bo-nho/quy-tac-ky-nang-tu-cai-tien.md) — Sáu luật AGENTS 12/11/2026: skill, giọng văn, luật kênh tự học theo hình mẫu có số liệu, phần sửa tự chạy theo quy trình, báo sau; bỏ luật 'con người làm trung t…
 - [quy-tac-khong-dung-mod-giao-dien](../co-so-tri-thuc/bo-nho/quy-tac-khong-dung-mod-giao-dien.md) — Không dùng mod giao diện: David gỡ hết savvy-progress, collision-guard, goal-meter, Sổ việc (13/11/2026)
 - [quy-tac-noi-dung-cua-david](../co-so-tri-thuc/bo-nho/quy-tac-noi-dung-cua-david.md) — Vai trò chia rõ — David tự xây nội dung, nói tự do có cảm xúc; skill lo hình. Người xem làm trung tâm; học kênh lớn ở nhịp và cách trình bày (2026-11-05, gộp 10/11)
-- [quy-tac-phien-telegram-tu-chay](../co-so-tri-thuc/bo-nho/quy-tac-phien-telegram-tu-chay.md) — Phiên việc giao qua Telegram: trình 4 phần chờ duyệt, duyệt rồi tự làm tới kết quả, ghi sổ; chỉ hỏi khi đăng/gửi, tốn tiền, đẩy đè GitHub, xoá ổ đĩa; mọi phiên…
+- [quy-tac-phien-telegram-tu-chay](../co-so-tri-thuc/bo-nho/quy-tac-phien-telegram-tu-chay.md) — Phiên việc giao qua Telegram: có quy trình thì tự làm tới kết quả (chưa có thì trình 4 phần), ghi sổ; chỉ hỏi khi đăng/gửi, tốn tiền, đẩy đè GitHub, xoá ổ đĩa; mọi phiên…
 - [quy-tac-tu-duy-goc](../co-so-tri-thuc/bo-nho/quy-tac-tu-duy-goc.md) — Lời David đặt bộ tư duy gốc, khung cố vấn làm nền tảng, học từ những chuyên gia hàng đầu thế giới (23/11).
 - [quy-tac-truc-tri-thuc](../co-so-tri-thuc/bo-nho/quy-tac-truc-tri-thuc.md) — Lời David chốt trục tri thức cố định cho việc kaizen bộ não (20/11).
 - [quy-tac-sua-thang-tai-ban](../co-so-tri-thuc/bo-nho/quy-tac-sua-thang-tai-ban.md) — Đổi luật thì sửa thẳng câu cũ (không chồng câu "bổ sung/thay luật", không ngày trong bản luật); định kỳ tái bản TOÀN BỘ bộ não một đợt khi công cụ đo chồng chéo báo…
@@ -68,11 +68,11 @@ Gốc: [bản đồ bộ não](README.md).
 - [nghien-cuu](../tac-tu/nghien-cuu.md) — Đọc tài liệu dài, tìm thông tin trong file hay trên web, tóm tắt ngắn gọn bằng tiếng Việt. Dùng cho việc cần đọc hoặc tìm nhiều mà không cần ra quyết định; trả kết…
 
 ## Skill công cụ
-- [thu-thap-yeu-cau](../ky-nang/thu-thap-yeu-cau/SKILL.md) — Cách hỏi của David khi trình 4 phần (Mục tiêu · Kế hoạch · Quy trình · Thực thi) trước mọi việc — hỏi theo vòng từ góc nhìn chuyên gia thực chiến, mỗi điểm cần chốt…
+- [thu-thap-yeu-cau](../ky-nang/thu-thap-yeu-cau/SKILL.md) — Cách hỏi khi trình 4 phần (Mục tiêu · Kế hoạch · Quy trình · Thực thi) trước việc chưa có quy trình — hỏi theo vòng từ góc nhìn chuyên gia thực chiến, mỗi điểm cần chốt…
 - [hoc-lien-tuc](../ky-nang/hoc-lien-tuc/SKILL.md) — Tự học, cải tiến liên tục: nhìn lại tuần, học hình mẫu có số liệu, học thành skill, và Việc 4 **Nâng cấp** định kỳ cả bộ não (đo trước / sau, chưng cất, cắt giảm, tái cấu trúc).
 - [nhat-ky-thay-doi hoc-lien-tuc](../ky-nang/hoc-lien-tuc/references/nhat-ky-thay-doi.md) — Nhật ký thay đổi skill hoc-lien-tuc và máy đếm / ghi tín hiệu.
 - [hoc-lien-tuc 2026-11-15](../du-an/hoc-lien-tuc/2026-11-15.md) — Phiếu tự học tuần 15/11: điều lặp, đã sửa, gộp ghi nhớ 47 thành 40, việc tuần sau.
-- [hoc-lien-tuc 2026-11-26](../du-an/hoc-lien-tuc/2026-11-26.md) — Phiếu tự học tuần 26/11: ba điều lặp, lỗi mã hoá trên Windows, đề xuất thăng cấp, bộ 4 phần chờ duyệt.
+- [hoc-lien-tuc 2026-11-26](../du-an/hoc-lien-tuc/2026-11-26.md) — Phiếu tự học tuần 26/11: ba điều lặp, lỗi mã hoá trên Windows, đề xuất thăng cấp, các chỗ đã sửa.
 - [tai-cau-truc](../ky-nang/tai-cau-truc/SKILL.md) — Dọn luật — bước 4 của Nâng cấp: mỗi luật một nguồn duy nhất, không ngày, không câu trùng; công cụ đo chồng chéo chỉ cảnh báo khi có trùng lặp / rối.
 - [dieu-khien-trinh-duyet](../ky-nang/dieu-khien-trinh-duyet/SKILL.md) — Automate browser interactions, test web pages and work with Playwright tests.
 - [thiet-ke-trang-cuon](../ky-nang/thiet-ke-trang-cuon/SKILL.md) — >

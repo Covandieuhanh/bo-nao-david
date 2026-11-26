@@ -5,7 +5,7 @@ metadata:
   type: feedback
 ---
 
-Claude làm video liền một mạch (sau khi David duyệt 4 phần): không qua cổng 1, cổng 2, ra ngay bản dài, clip ngắn và bài đăng trên Drive cùng trang xem kết
+Claude làm video liền một mạch (đã có quy trình nên không chờ duyệt, 26/11/2026): không qua cổng 1, cổng 2, ra ngay bản dài, clip ngắn và bài đăng trên Drive cùng trang xem kết
 quả (`tu-dong-hoa/xem-ket-qua.py`). Khi có góp ý, Claude sửa rồi **render lại toàn bộ ngay**, không chờ chữ "render". Việc đăng mạng xã hội vẫn chờ David nói
 "đăng" (AGENTS luật 4).
 

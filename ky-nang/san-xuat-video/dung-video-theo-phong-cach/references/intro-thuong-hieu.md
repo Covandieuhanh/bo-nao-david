@@ -76,7 +76,7 @@ Hình mẫu đã học và nhật ký: `co-so-tri-thuc/hinh-mau/1-hinh-tuong-ca-
    David. Học theo mẫu xong thì xoá video mẫu đã tải.
 
 ## Điểm duyệt
-Đ1 đặt trước khi chọn cảnh (chữ, độ dài, khung, logo, nguồn nhạc). Góp ý của David sau khi giao là lời duyệt cho chính thay đổi đó (lá B13).
+Không có Đ1: chữ, độ dài, khung, logo, nguồn nhạc theo mặc định ở trên, ghi trong tin giao. Góp ý của David sau khi giao là lời duyệt cho chính thay đổi đó (lá B13).
 
 ## Xong khi
 - Bản cuối 1920×1080, 10–13 giây kể cả đuôi nhạc, khoảng −14 LUFS, nằm ở thư mục Chờ đăng và trên Drive `thanh-pham/` đã đồng bộ lên đám mây, kèm `ghi-nguon-nhac.txt`.

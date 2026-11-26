@@ -1,16 +1,16 @@
 ---
 name: quy-tac-ky-nang-tu-cai-tien
-description: "Sáu luật AGENTS 12/11/2026: skill, giọng văn, luật kênh tự học theo hình mẫu có số liệu, phần sửa được trình 4 phần chờ duyệt (14/11); bỏ luật 'con người làm trung tâm'; lời mới nhất thắng; GitHub dựng lại được 100%"
+description: "Sáu luật AGENTS 12/11/2026: skill, giọng văn, luật kênh tự học theo hình mẫu có số liệu, phần sửa tự chạy theo quy trình, báo sau (26/11; trước đó 14/11 trình 4 phần); bỏ luật 'con người làm trung tâm'; lời mới nhất thắng; GitHub dựng lại được 100%"
 metadata:
   type: feedback
   modified: 2026-11-14
 ---
 
 Sáu luật trong `AGENTS.md` (viết lại 12/11/2026 sau khi so sánh Hermes với Claude Code):
-- Với mọi việc, kể cả sửa skill, Claude trình 4 phần chờ David duyệt ([[quy-tac-duyet-ke-hoach-4-phan]]); thông tin về David (hồ sơ, màu chủ đạo và
-  chữ ký nhận diện, mạng xã hội) cũng phải qua 4 phần; Claude không bao giờ động tới quyền riêng tư (mật khẩu, OTP, token, cookie, giấy tờ).
+- Sửa skill theo quy trình tự học thì Claude tự sửa, báo sau ([[quy-tac-duyet-ke-hoach-4-phan]], 26/11/2026); thông tin về David (hồ sơ, màu chủ đạo và
+  chữ ký nhận diện, mạng xã hội) thì vẫn trình chờ "duyệt"; Claude không bao giờ động tới quyền riêng tư (mật khẩu, OTP, token, cookie, giấy tờ).
 - Skill, giọng văn (học cả từ tin David nhắn), luật kênh (`kenh.json`): được tự học từ hình mẫu cùng thể loại đang có kết quả tốt nhất, đo bằng
-  số liệu; phần phân tích tự chạy, phần sửa được gom vào 4 phần của buổi nhìn lại tuần. Hiệu ứng, motion graphics được tự do, miễn là hợp nội dung.
+  số liệu; phần phân tích và phần sửa đều tự chạy trong buổi nhìn lại tuần (26/11/2026). Hiệu ứng, motion graphics được tự do, miễn là hợp nội dung.
 - Nguyên văn lời David chỉ bắt buộc cho video (phụ đề, mô tả, motion graphics).
 - Không còn luật "con người làm trung tâm / không kinh doanh": David làm nhiều kênh đa dạng; lằn ranh cũ trở thành lằn ranh riêng của kênh trainer.
 - Lời mới nhất thắng luật cũ.
@@ -18,7 +18,7 @@ Sáu luật trong `AGENTS.md` (viết lại 12/11/2026 sau khi so sánh Hermes v
 
 **Why:** David muốn "khai thác tối đa Claude với ít token nhất" và "liên tục cải tiến, học hỏi từ hình mẫu có kết quả tốt nhất".
 
-**How to apply:** sau khi được duyệt, Claude ghi nhật ký thay đổi của skill (sửa gì, theo số liệu/hình mẫu nào) rồi báo một dòng. Cách học:
+**How to apply:** khi sửa (tự sửa theo quy trình tự học, từ 26/11/2026), Claude ghi nhật ký thay đổi của skill (sửa gì, theo số liệu/hình mẫu nào) rồi báo một dòng. Cách học:
 `ky-nang/hoc-lien-tuc/SKILL.md`. Liên quan [[quy-tac-sua-thang-tai-ban]], [[co-so-tri-thuc-github-ban-goc]], [[quy-tac-goi-y-de-david-chon]].
 
 Nguồn của luật: `AGENTS.md` (Sáu luật) và `ky-nang/hoc-lien-tuc/SKILL.md`. Ghi nhớ này giữ ngày, lời David, lý do.

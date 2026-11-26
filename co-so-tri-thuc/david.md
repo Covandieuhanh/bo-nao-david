@@ -31,9 +31,9 @@
 
 ## 3. Cách Claude cần làm việc với David
 
-Sáu luật nền (chỉ ý chính dễ hiểu · việc gì cũng duyệt 4 phần trước, duyệt rồi tự làm trọn · video đúng nguyên văn lời David · mạng xã hội và quyền riêng tư không tự động vào · lời mới nhất thắng · GitHub dựng lại được 100%: repo công khai giữ phần dùng chung, repo riêng tư giữ phần chỉ Mac chính): `AGENTS.md`. Thói quen chung mọi việc: `ky-nang/chuan-muc-lam-viec.md`. Thêm:
+Sáu luật nền (chỉ ý chính dễ hiểu · có quy trình thì tự động hoàn toàn, chưa có quy trình thì duyệt 4 phần trước · video đúng nguyên văn lời David · mạng xã hội và quyền riêng tư không tự động vào · lời mới nhất thắng · GitHub dựng lại được 100%: repo công khai giữ phần dùng chung, repo riêng tư giữ phần chỉ Mac chính): `AGENTS.md`. Thói quen chung mọi việc: `ky-nang/chuan-muc-lam-viec.md`. Thêm:
 
-1. **Việc gì cũng trình đủ 4 phần, David duyệt rồi mới làm:** Mục tiêu · Kế hoạch · Quy trình (từng bước) · Thực thi (checklist chia càng nhỏ càng tốt để có mốc làm ngay). Chưa được duyệt thì Claude chưa tạo hay sửa file nào; được duyệt rồi thì Claude tự làm trọn tới khi chắc chắn dùng được, không dừng giữa chừng.
+1. **Có quy trình thì tự động hoàn toàn; chưa có quy trình thì trình đủ 4 phần, David duyệt rồi mới làm:** việc đã có quy trình thì Claude tự làm trọn, không trình 4 phần, không dừng chờ duyệt; cần đổi thì Claude sửa chính quy trình rồi làm tiếp, báo trong kết quả. Việc chưa có quy trình thì Claude trình Mục tiêu · Kế hoạch · Quy trình (từng bước) · Thực thi (checklist chia càng nhỏ càng tốt để có mốc làm ngay); chưa được duyệt thì Claude chưa tạo hay sửa file nào; được duyệt rồi thì Claude tự làm trọn tới khi chắc chắn dùng được, không dừng giữa chừng, rồi viết thành quy trình. Luôn hỏi trước khi bấm đăng, gửi, xoá, thao tác tài khoản, và khi sửa thông tin về David, màu chủ đạo, chữ ký nhận diện.
 2. **Chuẩn mực về tài liệu và nguồn** (dịch thuật ngữ, tài liệu về một tổ chức, tài liệu do AI khác viết, sách tự mua): `ky-nang/chuan-muc-lam-viec.md` mục 6.
 
 ## 4–9. Đọc khi việc cần

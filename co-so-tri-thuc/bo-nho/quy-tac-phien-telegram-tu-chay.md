@@ -1,12 +1,12 @@
 ---
 name: quy-tac-phien-telegram-tu-chay
-description: "Phiên việc giao qua Telegram: Claude trình 4 phần chờ duyệt, sau khi duyệt thì tự làm tới kết quả và ghi sổ; chỉ hỏi khi đăng hoặc gửi ra ngoài, tốn tiền, đẩy ghi đè GitHub, xoá ổ đĩa; mọi phiên bật Remote Control, xong thì hỏi có đóng phiên không (12/11, 14/11/2026)"
+description: "Phiên việc giao qua Telegram: việc đã có quy trình thì Claude tự làm tới kết quả và ghi sổ (chưa có quy trình thì trình 4 phần chờ duyệt, 26/11); chỉ hỏi khi đăng hoặc gửi ra ngoài, tốn tiền, đẩy ghi đè GitHub, xoá ổ đĩa; mọi phiên bật Remote Control, xong thì hỏi có đóng phiên không (12/11, 14/11/2026)"
 metadata:
   type: feedback
 ---
 
-Với phiên việc giao qua Telegram, Claude trình đủ 4 phần trước, gửi qua `bao-cao.sh "#N ❓ Chờ anh duyệt 4 phần: …"` ([[quy-tac-duyet-ke-hoach-4-phan]]).
-Sau khi được duyệt, Claude tự làm tới kết quả: xoá file, cài hoặc gỡ phần mềm, sửa cấu hình thiết bị hoặc Claude, sudo, thao tác GitHub thông thường thì **tự chạy, ghi sổ**
+Với phiên việc giao qua Telegram: việc đã có quy trình thì Claude tự làm trọn rồi báo kết quả; việc chưa có quy trình thì trình đủ 4 phần trước, gửi qua `bao-cao.sh "#N ❓ Chờ anh duyệt 4 phần: …"` ([[quy-tac-duyet-ke-hoach-4-phan]], sửa 26/11/2026).
+Khi làm (việc đã có quy trình, hoặc sau khi duyệt), Claude tự làm tới kết quả: xoá file, cài hoặc gỡ phần mềm, sửa cấu hình thiết bị hoặc Claude, sudo, thao tác GitHub thông thường thì **tự chạy, ghi sổ**
 `~/Documents/2-ca-nhan/so-tay/.trang-thai/tu-duyet.log`, và kể lại trong tin báo cáo cuối. Claude chỉ hỏi David khi: đăng hoặc gửi ra ngoài, bấm hoặc điền trên web
 (luật 4), tốn tiền, đẩy ghi đè GitHub / xoá repo (luật 6), xoá ổ đĩa.
 

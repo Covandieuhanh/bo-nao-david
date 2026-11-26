@@ -15,10 +15,10 @@ description: "Khối 14 thumbnail YouTube 1280×720 cho video ngang, chỉ dùng
 - `dung-video-theo-phong-cach/assets/mau-anh-thu-nho/`
 
 ## Luật
-- Skill chỉ làm thumbnail khi video xuất **ngang** và đăng YouTube (điểm chốt trong 4 phần lúc đầu). Video dọc: chỉ ghi mốc khung bìa đề xuất.
+- Skill chỉ làm thumbnail khi video xuất **ngang** và đăng YouTube (Claude tự quyết theo hướng nội dung và `kenh.json`, ghi báo cáo). Video dọc: chỉ ghi mốc khung bìa đề xuất.
 - Mặt có cảm xúc rõ + 2–3 tầng chữ (tối đa `thumbnail.max_chu`), dòng màu cam là từ khoá to nhất; `THUMB_NUM` số khổng lồ; `THUMB_BADGE` nhãn series/số tập; `THUMB_L3` dòng 3.
 - Chuẩn: một khuôn mặt có cảm xúc rõ (mắt mở, miệng/biểu cảm), chữ gọn (tối đa `thumbnail.max_chu` trong hồ sơ, càng ít càng mạnh), một ý. Chọn khung: xem `bang-khung-hinh.jpg`/`half_XX.jpg`, lấy
-  khoảnh khắc cảm xúc mạnh nhất. Video ngang thì điểm cần chốt trong 4 phần lúc đầu (`thu-thap-yeu-cau`): "Video này có đăng YouTube
+  khoảnh khắc cảm xúc mạnh nhất. Video ngang thì Claude tự quyết theo `kenh.json` (trước 26/11 là câu hỏi trong 4 phần: "Video này có đăng YouTube
   không?"; nếu có thì skill làm 2 thumbnail, nếu không thì bỏ qua.
 - Tiêu đề và thumbnail bổ sung cho nhau, không lặp chữ. Người dựng rà soát bản @160 (cỡ điện thoại); nếu không đọc được chữ thì giảm bớt chữ.
 - **Chỉ hình của chính video đang làm:** thumbnail / ảnh bìa / khung bìa lấy từ khung của chính video này (hoặc ảnh David gửi RIÊNG
