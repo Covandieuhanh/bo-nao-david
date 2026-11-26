@@ -24,6 +24,7 @@ David điều khiển Mac từ điện thoại bằng Remote Control; David khô
 **Drive dùng chung là tài khoản `covandieuhanh@gmail.com`** (David chốt 08/11/2026); Drive `trainer.davidtran@gmail.com` không còn được dùng.
 Video gốc David gửi lên: `~/Library/CloudStorage/GoogleDrive-covandieuhanh@gmail.com/Drive của tôi/tu-lieu-goc/`
 Thành phẩm trả về: `.../Drive của tôi/thanh-pham/`, **mỗi tập một thư mục, trùng tên với `~/Movies`** (David chốt 08/11/2026): `tap-<ten>/ban-dai/<ten>.mp4` và `tap-<ten>/highlight/clip-a.mp4`, `clip-b.mp4`…; tập chỉ có bản dài vẫn tạo thư mục `ban-dai/`. Vlog lưu vào `vlog/<ten>.mp4`, video tự quay lưu vào `video-tu-quay/<ten>.mp4`. Claude có thể gửi clip ngắn trực tiếp vào chat bằng SendUserFile.
+Các đường dẫn đồng bộ ở đây là của Mac. Máy Windows không đồng bộ Drive (David 26/11/2026): [kho-drive.md](../../du-an/kho-drive.md) mục "Máy Windows".
 Kho dự án và bộ não: `.../Drive của tôi/sao-luu-mac/` (Movies, Downloads, Documents, bo-nao). Bản sao lưu đợt chuyển tài khoản: `.../Drive của tôi/sao-luu-claude-2026-11-07/` gồm `tai-lieu-claude-ai` và `du-an-video` (âm thanh gốc, kịch bản; không gồm file render).
 Liên quan (mục gộp bên dưới), [[co-so-tri-thuc-github-ban-goc]].
 

@@ -54,6 +54,12 @@ Trạng thái chi tiết, lịch đăng: sổ [danh-muc-noi-dung.md](danh-muc-no
 
 ## Máy Windows (từ 25/11/2026)
 
+**Không đồng bộ Drive vào máy này** (lời David 26/11/2026: "không đồng bộ drive vào ổ G trên máy này"; "drive chỉ đóng vai trò là chủ động tải về video gốc hoặc tải lên thôi"). Mục này là nguồn duy nhất của luật; các chỗ khác nói "thiết bị chỉ dựng video lên Drive" đều theo mục này.
+- Không cài, không mở, không yêu cầu đăng nhập Google Drive cho máy tính; không gắn ổ G: vào Ubuntu. Thấy thiếu ổ Drive thì **không** tự mở ứng dụng.
+- **Tải về:** chỉ bằng link David gửi (`gdown`, quy trình `ky-nang/san-xuat-video/phan-phoi-da-kenh/references/nhan-tai-nguyen.md`).
+- **Tải lên:** chưa có công cụ tải lên khi máy không đăng nhập Google; link có quyền chỉnh sửa tự nó chưa phải công cụ đó (tải tệp vào thư mục Drive cần đăng nhập Google; chưa thử bằng link thật). Trong lúc chưa có: kết quả ở `D:\video-david\wsl-tap\cho-dang\<tập>` (`cho-dang.sh gui` làm đủ bản và in đường dẫn), Claude gửi bản xem nhẹ trong chat, báo rõ "chưa lên Drive"; David muốn có trên Drive thì tự kéo thư mục đó lên.
+- Vì không có bản trên Drive do máy này đưa lên: không tự xoá bản gốc hay thành phẩm trên máy; việc dọn trên Drive cũng không làm được từ máy này.
+
 Dự án dựng video nằm ở ổ D: `D:\video-david\wsl-tap\<tập>` (trong WSL là `/mnt/d/video-david/wsl-tap/<tập>`); `~/Movies/<tập>` trong WSL
 chỉ là đường dẫn tắt tới đó, nên lệnh cũ vẫn chạy. Lý do: đĩa ảo WSL nằm trên ổ C và làm đầy ổ C. Tập mới cũng được tạo ở ổ D rồi tạo đường dẫn tắt.
 Khi chép file dung lượng lớn từ WSL sang `/mnt/d` thường bị báo thiếu bộ nhớ: Claude chép bằng robocopy hoặc Copy-Item phía Windows qua `\\wsl.localhost\...`.

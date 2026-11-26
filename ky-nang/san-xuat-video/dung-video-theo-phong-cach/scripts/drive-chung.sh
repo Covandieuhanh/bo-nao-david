@@ -1,16 +1,16 @@
 # Dùng chung cho luu-drive.sh, cho-dang.sh: tìm thư mục Google Drive và kiểm file đã lên mây, trên mọi máy.
 #   source drive-chung.sh  → $G (gốc "Drive của tôi"), tim_drive, da_len <thư mục>, giai_phong <thư mục>, $DRIVE_KIEM_DUOC (1/0)
 # Mac: Google Drive cho máy tính (~/Library/CloudStorage), kiểm lên mây bằng kiem-tai-len-drive.swift.
-# Windows (WSL2): Google Drive cho Windows gắn ổ (thường G:) → /mnt/g/My Drive (hoặc "Drive của tôi"). Không có lệnh hỏi
-# trạng thái tải lên → chỉ chép, KHÔNG tự xoá bản trên máy; David nhìn biểu tượng Drive đã xong rồi mới xoá.
+# Windows (WSL2): KHÔNG đồng bộ Drive thành ổ trên máy (David 26/11/2026, du-an/kho-drive.md mục "Máy Windows") → tim_drive
+# không tự tìm ổ Drive; video gốc tải bằng link, kết quả ở lại trên máy. Chỉ khi đặt DRIVE_GOC mới chép vào thư mục đó
+# (không hỏi được trạng thái tải lên → không tự xoá bản trên máy).
 # Đặt DRIVE_GOC=<đường dẫn> để chỉ định tay.
 _DC=${${(%):-%x}:A:h}
 tim_drive() {
   local d
   if [ -n "$DRIVE_GOC" ]; then G=$DRIVE_GOC; return 0; fi
-  for d in "$HOME/Library/CloudStorage/GoogleDrive-covandieuhanh@gmail.com/Drive của tôi" "$HOME"/Library/CloudStorage/GoogleDrive-*/"Drive của tôi"(N) "$HOME"/Library/CloudStorage/GoogleDrive-*/"My Drive"(N) \
-           /mnt/[a-z]/"My Drive"(N) /mnt/[a-z]/"Drive của tôi"(N) \
-           /mnt/c/Users/*/"My Drive"(N) /mnt/c/Users/*/"Drive của tôi"(N); do   # Drive cài kiểu phản chiếu (mirror) vào thư mục người dùng Windows
+  [[ $OSTYPE == darwin* ]] || return 1
+  for d in "$HOME/Library/CloudStorage/GoogleDrive-covandieuhanh@gmail.com/Drive của tôi" "$HOME"/Library/CloudStorage/GoogleDrive-*/"Drive của tôi"(N) "$HOME"/Library/CloudStorage/GoogleDrive-*/"My Drive"(N); do
     [ -d "$d" ] && { G=$d; return 0; }
   done
   return 1
@@ -19,7 +19,7 @@ tim_drive() {
 if [[ $OSTYPE == darwin* ]]; then
   DRIVE_HUONG_DAN="mở ứng dụng Google Drive cho máy tính; thư mục ở chỗ khác thì đặt DRIVE_GOC=<đường dẫn>"
 else
-  DRIVE_HUONG_DAN="cài Google Drive cho Windows và đăng nhập (ổ G:); Ubuntu không tự gắn ổ ảo của Drive → làm một lần theo huong-dan-cai-dat.md (dòng G: trong /etc/fstab); đã có mà vẫn chưa thấy thì mở Google Drive rồi chạy 'wsl --shutdown' trong PowerShell; thư mục ở chỗ khác thì đặt DRIVE_GOC=<đường dẫn>"
+  DRIVE_HUONG_DAN="máy này không đồng bộ Drive (du-an/kho-drive.md, mục Máy Windows): video gốc tải bằng link, kết quả ở trên máy"
 fi
 if [[ $OSTYPE == darwin* ]]; then
   DRIVE_KIEM_DUOC=1

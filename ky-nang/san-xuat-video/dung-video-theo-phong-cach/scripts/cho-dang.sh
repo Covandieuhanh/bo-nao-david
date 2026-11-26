@@ -15,7 +15,15 @@ V=$1 TAP=${2:t}
 [ -n "$V" ] && [ -n "$TAP" ] || { echo "cách dùng: cho-dang.sh lay|gui|buoi|xong <tập>"; exit 2; }
 BO_NAO=${0:A:h}/../../../..
 source ${0:A:h}/drive-chung.sh || exit 1   # $G, da_len (Mac và Windows/WSL2)
-tim_drive || { echo "✗ Không thấy Google Drive: $DRIVE_HUONG_DAN"; exit 1; }
+# Máy ngoài Mac không đồng bộ Drive (David 26/11/2026): gui, buoi vẫn làm đủ bản trên máy, không chép lên đâu
+KHONG_DRIVE=0
+if ! tim_drive; then
+  [[ $OSTYPE == darwin* ]] && { echo "✗ Không thấy Google Drive: $DRIVE_HUONG_DAN"; exit 1; }
+  KHONG_DRIVE=1 G=/khong-co-drive
+  [ $V = lay ] && { echo "✗ lay cần Drive: $DRIVE_HUONG_DAN"; exit 1; }
+fi
+# đường dẫn để David mở bằng Windows Explorer
+o_dau() { command -v wslpath >/dev/null && wslpath -w "$(realpath "$1")" || echo "$1"; }
 TP="$G/thanh-pham/$TAP" CD="$HOME/Movies/cho-dang/$TAP"
 EX=(--exclude .DS_Store --exclude da-dang.txt)
 [[ $OSTYPE == darwin* ]] || EX+=(--no-perms --modify-window=2)   # ổ Drive trên Windows không giữ quyền tệp Linux, giờ chỉ tới giây
@@ -29,7 +37,7 @@ xem_nhe() { local v x; for v in "$1"/ban-dai/*.mp4; do x="$1/xem-nhanh-${v:t:r}.
   local a=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$v") b=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$x")
   (( ${a:-0} - ${b:-0} < 1 && ${b:-0} - ${a:-0} < 1 )) || { rm -f "$x"; echo "✗ bản xem nhẹ ${x:t} cụt (${b%.*}s / ${a%.*}s): chạy lại, hoặc làm bằng ffmpeg trên Windows"; return 1; }; done; }
 LEN="đã lên mây"; [ $DRIVE_KIEM_DUOC = 1 ] || LEN="đã vào ổ Drive (lên mây: xem biểu tượng Google Drive trên Windows)"
-gui_drive() { mkdir -p "$TP"; rsync -a $EX "$CD/" "$TP/" || exit 1; cho_len "$TP" || exit 1
+gui_drive() { [ $KHONG_DRIVE = 1 ] && return 0; mkdir -p "$TP"; rsync -a $EX "$CD/" "$TP/" || exit 1; cho_len "$TP" || exit 1
   khop "$CD" "$TP" || { echo "✗ Drive chưa khớp bản trên máy"; exit 1; }; }
 case $V in
   lay)
@@ -40,6 +48,7 @@ case $V in
     [ -d "$CD" ] || { echo "✗ không có $CD"; exit 1; }
     xem_nhe "$CD" || exit 1
     gui_drive
+    [ $KHONG_DRIVE = 1 ] && { print -r -- "✓ $TAP: bản cuối ở $(o_dau "$CD") — CHƯA lên Drive (máy này không đồng bộ Drive)"; exit 0; }
     echo "✓ $TAP: thanh-pham trên Drive khớp bản trên máy ($(ls -R "$CD" | grep -c '\.') tệp), $LEN";;
   buoi)
     B=$HOME/Movies/$TAP; TP="$G/thanh-pham/_buoi-$TAP" CD="$HOME/Movies/cho-dang/_buoi-$TAP"
@@ -53,9 +62,11 @@ case $V in
         require("fs").writeFileSync(process.argv[2],"# Bản chép lời cả buổi (nội bộ, không đăng)\n\n"+m.default.map(c=>`[${f(c.start)}] ${c.text.replace(/\n/g," ")}`).join("\n")+"\n")})' $PD $CD/ban-chep-loi-ca-buoi.txt || exit 1
     elif [ -f $SRT ]; then cp $SRT $CD/ban-chep-loi-ca-buoi.srt; fi
     gui_drive
+    [ $KHONG_DRIVE = 1 ] && { print -r -- "✓ _buoi-$TAP: kết quả chung ở $(o_dau "$CD") — CHƯA lên Drive (máy này không đồng bộ Drive)"; exit 0; }
     echo "✓ _buoi-$TAP: kết quả chung của buổi trên Drive khớp bản trên máy ($(ls "$CD" | wc -l | tr -d ' ') tệp), $LEN";;
   xong)
     [ -d "$CD" ] || { echo "✓ $TAP: Mac không còn bản chờ đăng"; exit 0; }
+    [ $KHONG_DRIVE = 1 ] && { date "+đã đăng %d/%m/%Y %H:%M" > "$CD/da-dang.txt"; print -r -- "✓ $TAP: đã ghi da-dang.txt, giữ bản ở $(o_dau "$CD") (chưa có bản trên Drive nên không xoá)"; exit 0; }
     rsync -a $EX "$CD/" "$TP/" || exit 1; cho_len "$TP" || exit 1   # thiếu gì trên Drive thì bổ sung trước
     khop "$CD" "$TP" || { echo "✗ Drive chưa khớp, giữ bản Mac"; exit 1; }
     date "+đã đăng %d/%m/%Y %H:%M" > "$TP/da-dang.txt"

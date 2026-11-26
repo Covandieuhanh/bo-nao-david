@@ -78,10 +78,8 @@ Windows chạy skill qua **WSL2**, tức một Ubuntu chạy bên trong Windows.
 **Một lần trên Windows** (David tự làm):
 
 1. Mở PowerShell bằng quyền quản trị (nhấp chuột phải rồi chọn Run as administrator), chạy `wsl --install -d Ubuntu-24.04`, khởi động lại máy. Mở "Ubuntu" từ menu Start, đặt tên và mật khẩu cho Ubuntu.
-2. Cài **Google Drive cho máy tính** (bản Windows), đăng nhập tài khoản của David. Drive hiện thành một ổ đĩa (thường là G:), Ubuntu đọc ở `/mnt/g/My Drive`.
-   Ubuntu chỉ gắn ổ mới khi khởi động: cài Drive xong thì chạy `wsl --shutdown` trong PowerShell rồi mở lại Ubuntu, kiểm tra bằng `ls "/mnt/g/My Drive"`.
-   Chưa có Drive thì vẫn dựng được, nhưng chưa giao được kết quả và chưa chạy được `kiem-tra-thiet-bi.sh`, nên **chưa tính là cài xong**.
-   Muốn chạy `kiem-tra-thiet-bi.sh` khi chưa có Drive: tải thư mục `tu-lieu-goc/_bo-thu-may` về (ví dụ `gdown --folder <link>`) rồi chạy `BO_THU=<thư mục đó> zsh .../kiem-tra-thiet-bi.sh`.
+2. **Không cài Google Drive cho máy tính** (David 26/11/2026, `du-an/kho-drive.md` mục "Máy Windows"): video gốc tải bằng link, kết quả ở trên máy.
+   Để chạy `kiem-tra-thiet-bi.sh`: tải thư mục `tu-lieu-goc/_bo-thu-may` bằng link David gửi (`gdown --folder <link>`) rồi chạy `BO_THU=<thư mục đó> zsh .../kiem-tra-thiet-bi.sh`; chưa chạy đạt thì **chưa tính là cài xong**.
    **Không dựng bằng bản repo clone phía Windows** (Git cho Windows chuyển liên kết thư viện hình thành file văn bản): chỉ dùng bản trong Ubuntu `~/Documents/bo-nao-david`.
 
 **Trong cửa sổ Ubuntu**, chạy lần lượt:
@@ -120,15 +118,12 @@ zsh ~/Documents/bo-nao-david/tu-dong-hoa/thiet-bi-khac/kiem-tra-thiet-bi.sh
 
 - `cai-dat-bo-nao.sh` thấy máy không phải Mac thì tự cài kiểu "chỉ dựng video".
 - `cai-cong-cu-video.sh` cài đúng phiên bản Mac đang dùng: ffmpeg, whisper.cpp kèm mô hình 1,5 GB, Node, pyannote, công cụ phát hiện khuôn mặt. Script hỏi mật khẩu Ubuntu một lần. Trên Windows script tự đặt `PYTHONUTF8=1` để Python phía Windows không lỗi chữ Việt. Script cũng in các bước để David tự lấy token Hugging Face cho phần tách người nói podcast (một lần).
-- `kiem-tra-thiet-bi.sh` dựng thử 20 giây bằng đúng script của skill rồi so với bản chuẩn của Mac. Bộ dữ liệu thử nằm trên Drive `tu-lieu-goc/_bo-thu-may/`. Kết quả phải là **"MÁY NÀY DỰNG GIỐNG MAC CHÍNH"**.
+- `kiem-tra-thiet-bi.sh` dựng thử 20 giây bằng đúng script của skill rồi so với bản chuẩn của Mac. Bộ dữ liệu thử nằm trên Drive `tu-lieu-goc/_bo-thu-may/` (tải bằng link, đặt `BO_THU`). Kết quả phải là **"MÁY NÀY DỰNG GIỐNG MAC CHÍNH"**.
 
 **Dùng hằng ngày:** mở Ubuntu, `cd ~/Documents/bo-nao-david && claude`, rồi làm như trên Mac: gửi video, gọi skill.
-- Video gốc trên Drive đọc thẳng ở `/mnt/g/My Drive/...`.
+- Video gốc: David gửi link, Claude tải về bằng `gdown`.
 - Dự án dựng nằm ở `~/Movies` của Ubuntu. Mở bằng Windows Explorer: gõ `explorer.exe ~/Movies` trong Ubuntu, hoặc vào `\\wsl$\Ubuntu-24.04\home\<tên>\Movies`.
-- Google Drive cho Windows hiện ổ ảo `G:`; Ubuntu **không tự gắn** ổ này. Người dùng làm một lần để Ubuntu tự gắn ổ mỗi khi khởi động (đã thử 25/11/2026),
-  trong PowerShell: `wsl -d Ubuntu-24.04 -u root -- sh -c "mkdir -p /mnt/g; echo 'G: /mnt/g drvfs uid=1000,gid=1000,nofail 0 0' >> /etc/fstab"`
-  rồi `wsl --shutdown`. Mở Ubuntu trước khi Google Drive chạy thì ổ chưa có: mở Drive rồi `wsl --shutdown` lại.
-- Thành phẩm lên Drive bằng `cho-dang.sh gui` / `luu-drive.sh` như trên Mac. Khác Mac ở một điểm: thiết bị sao chép lên và so khớp, nhưng không tự xoá bản trên thiết bị. Khi biểu tượng Drive báo tải xong, David xoá thủ công.
+- Thành phẩm ở `~/Movies/cho-dang/<tập>/` (`cho-dang.sh gui` làm đủ bản và in đường dẫn Windows). Máy này không tự đưa lên Drive và không tự xoá bản trên máy.
 - Máy có card NVIDIA cài CUDA trong WSL thì Whisper chạy nhanh hơn nhiều (script tự dùng). Không có thì chạy bằng CPU: chậm hơn Mac nhưng ra cùng kết quả.
 
 ## 4. AI khác hoặc Claude bản web
@@ -153,7 +148,7 @@ zsh ~/Documents/bo-nao-david/tu-dong-hoa/thiet-bi-khac/kiem-tra-thiet-bi.sh
 | Tín hiệu tự học (`~/.claude/hoc-lien-tuc/`) | Có nội dung trò chuyện nên giữ lại trên thiết bị; thiết bị mới tự ghi lại từ đầu (hook do cai-dat-bo-nao.sh cài) |
 | `playwright-cli` | Cài qua npm toàn cục, kiểm tra bằng `playwright-cli --help` |
 | Đăng nhập YouTube, Facebook, TikTok | David tự đăng nhập lại. Hồ sơ Chrome đăng bài ở `~/.cache/david-mxh-chrome` |
-| Google Drive (`tu-lieu-goc`, `thanh-pham`) | Cài Google Drive cho máy tính, đăng nhập tài khoản của David |
+| Google Drive (`tu-lieu-goc`, `thanh-pham`) | Mac chính: cài Google Drive cho máy tính. Máy Windows: không cài, tải video gốc bằng link (`du-an/kho-drive.md` mục "Máy Windows") |
 | Trình duyệt và kết nối của Claude | Bật lại trong ứng dụng Claude |
 | Video gốc, thành phẩm, kịch bản, bài đăng từng dự án | Ở Drive và `~/Movies` của máy làm, không nằm trong repo. Repo chỉ ghi trạng thái ở `bao-cao-trang-thai.md` và `du-an/danh-muc-noi-dung.md` |
 

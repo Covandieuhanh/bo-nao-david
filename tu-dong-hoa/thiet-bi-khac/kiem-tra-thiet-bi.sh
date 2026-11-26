@@ -28,7 +28,7 @@ if [ "$1" = --tao-chuan ]; then
   ffmpeg -v error -y -ss $T0 -t 20 -i "$V" -c:v libx264 -crf 18 -pix_fmt yuv420p -c:a aac -b:a 160k "$BO_THU/clip.mp4" || exit 1
   TAO_CHUAN=1
 fi
-[ -n "$BO_THU" ] && [ -f "$BO_THU/clip.mp4" ] || { echo "⛔ Không thấy bộ thử máy (${BO_THU:-Drive}/clip.mp4). Mở Google Drive, hoặc đặt BO_THU=<thư mục>."; exit 2; }
+[ -n "$BO_THU" ] && [ -f "$BO_THU/clip.mp4" ] || { echo "⛔ Không thấy bộ thử máy (${BO_THU:-Drive}/clip.mp4). Mac: mở Google Drive. Máy khác: tải bộ thử bằng link (gdown --folder) rồi đặt BO_THU=<thư mục>."; exit 2; }
 
 # ---------- 1. Công cụ đúng bản khoá ----------
 print "== 1. Công cụ (so với phien-ban.env)"
