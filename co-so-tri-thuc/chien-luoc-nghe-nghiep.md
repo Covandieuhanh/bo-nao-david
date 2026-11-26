@@ -1,5 +1,5 @@
 ---
-description: "Chiến lược nghề nghiệp (david.md mục 4): ba hướng nghề tài chính, trainer con người, giải pháp công nghệ AI; hình ảnh trainer hai lĩnh vực; ba tầng làm chủ, các chặng, bảng giá, quy trình một trường hợp, hệ 135, lằn ranh nghề."
+description: "Chiến lược nghề nghiệp (david.md mục 4): ba hướng nghề tài chính, trainer con người, giải pháp công nghệ AI; hình ảnh trainer hai lĩnh vực; ba tầng làm chủ, các giai đoạn, bảng giá, quy trình một trường hợp, hệ 135, lằn ranh nghề."
 ---
 
 # Chiến lược nghề nghiệp của David
@@ -9,7 +9,7 @@ description: "Chiến lược nghề nghiệp (david.md mục 4): ba hướng ng
 ## 4. Định hướng nghề
 
 ### 4.1. Ba hướng nghề
-Mục tiêu chung: **ra tiền**. Mọi nội dung được lọc để xác định thuộc hướng nào và **bán được gì**.
+Mục tiêu chung: **tạo doanh thu**. Mọi nội dung được lọc để xác định thuộc hướng nào và **bán được gì**.
 
 **Ba hướng = ba phạm trù gốc Tiền · Thị trường · Con người** (chốt 25/11/2026): nguồn duy nhất `mo-hinh-kinh-doanh.md` mục 1b.
 
@@ -44,15 +44,15 @@ Quy trình bán gói công nghệ (phễu → bán thử → bán thật): `du-a
 
 Người học muốn lên tầng sau phải hoàn thành tầng trước. Khung của **CCL (Center for Creative Leadership)** được dùng làm gốc để nghiên cứu, rồi cải tiến thành phương pháp riêng; chưa cần đúng ngay vì chưa có kết quả thực tế (xem mục 6).
 
-### 4.3. Các chặng nghề (qua chặng khi đạt "Xong khi")
-| Chặng | Nội dung | Xong khi |
+### 4.3. Các giai đoạn nghề (chuyển giai đoạn khi đạt "Xong khi")
+| Giai đoạn | Nội dung | Xong khi |
 | --- | --- | --- |
 | 0 | Chốt nền | 1 người trong nhóm khách hàng mục tiêu nhận lời |
-| 1 | Trường hợp đầu tiên | 1–3 trường hợp thực tế online, miễn phí để đổi lấy lời chứng thực ẩn danh, ít nhất 1 trường hợp tự đứng được |
+| 1 | Trường hợp đầu tiên | 1–3 trường hợp thực tế online, miễn phí để đổi lấy lời chứng thực ẩn danh, ít nhất 1 người được đồng hành tự chủ |
 | 2 | Chuẩn hoá phương pháp | Bắt đầu thu phí, học coach chuẩn ICF |
 | Sau đó | Truyền nghề | |
 
-**Ưu tiên là ra tiền**. Ba hướng triển khai song song, thứ tự khi phải chọn: **(1) giải pháp công nghệ AI** (gói dựng video đã vận hành thực tế; đội đối tác đã có giải pháp cho tổ chức; ra tiền nhanh nhất), rồi tới **(2) Chặng 1 trainer** (trường hợp thực tế cũng là bán thử gói trainer), rồi tới **(3) kênh tài chính** theo nhịp video sẵn có. Khi hết năng lượng, David giữ (1), tạm dừng phần còn lại.
+**Ưu tiên là tạo doanh thu**. Ba hướng triển khai song song, thứ tự khi phải chọn: **(1) giải pháp công nghệ AI** (gói dựng video đã vận hành thực tế; đội đối tác đã có giải pháp cho tổ chức; tạo doanh thu nhanh nhất), rồi tới **(2) Giai đoạn 1 trainer** (trường hợp thực tế cũng là bán thử gói trainer), rồi tới **(3) kênh tài chính** theo nhịp video sẵn có. Khi hết năng lượng, David giữ (1), tạm dừng phần còn lại.
 
 ### 4.4. Chương trình và bảng giá (rà soát lại khi có ICF)
 - Chương trình đầu: **"Dẫn đội, không làm thay"** cho người lần đầu dẫn dắt người khác, triển khai theo ba tầng, bắt đầu từ bản thân.

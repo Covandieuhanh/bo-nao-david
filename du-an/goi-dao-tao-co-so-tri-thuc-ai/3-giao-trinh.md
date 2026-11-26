@@ -63,7 +63,7 @@ Mỗi bài gồm: **Mục tiêu · Nội dung · Thực hành · Bài tập · X
 
 ## Bài 7 · Nâng cấp: sao lưu, đo trước, dọn, đo sau
 - **Mục tiêu:** bộ não lớn dần mà vẫn tinh gọn; mỗi phiên bản mới tốt hơn phiên bản cũ.
-- **Nội dung:** thời điểm nâng cấp (khoảng mỗi tháng, hoặc khi thấy luật chồng chéo, AI bắt đầu làm sai việc đã từng làm đúng). Ba chặng: sao lưu bản cũ và đo trước bằng câu lệnh 6 · dọn bốn việc bằng câu lệnh 5 (gộp ý trùng, xử lý mâu thuẫn, lưu trữ nội dung lâu không dùng, viết rõ chỗ AI hiểu sai) · đo sau bằng câu lệnh 6. Nếu đo sau kém hơn thì quay lại bản trước (biểu mẫu 00, thao tác 7). Khi lưu trữ file thì xoá file đó khỏi Projects (thao tác 8). Lời mới nhất được áp dụng khi hai luật mâu thuẫn nhau.
+- **Nội dung:** thời điểm nâng cấp (khoảng mỗi tháng, hoặc khi thấy luật chồng chéo, AI bắt đầu làm sai việc đã từng làm đúng). Ba bước: sao lưu bản cũ và đo trước bằng câu lệnh 6 · dọn bốn việc bằng câu lệnh 5 (gộp ý trùng, xử lý mâu thuẫn, lưu trữ nội dung lâu không dùng, viết rõ chỗ AI hiểu sai) · đo sau bằng câu lệnh 6. Nếu đo sau kém hơn thì quay lại bản trước (biểu mẫu 00, thao tác 7). Khi lưu trữ file thì xoá file đó khỏi Projects (thao tác 8). Lời mới nhất được áp dụng khi hai luật mâu thuẫn nhau.
 - **Thực hành:** sao lưu theo biểu mẫu 00 thao tác 6; đo trước; chạy câu lệnh 5; đo sau; kiểm theo biểu mẫu 04.
 - **Bài tập:** ghi một dòng vào bảng "Nâng cấp" của `bai-hoc.md`: điểm trước, điểm sau, đã gộp, xử lý, lưu trữ, viết rõ những gì.
 - **Xong khi:** điểm đo sau bằng hoặc cao hơn điểm đo trước.

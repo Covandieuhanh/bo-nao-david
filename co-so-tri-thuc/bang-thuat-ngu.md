@@ -305,3 +305,6 @@ video, clip, render, script, skill, hook, repo, commit, push, pull, token, podca
 | Văn bản | Aesthetic baseline (taste floor) | chuẩn tối thiểu về gu thẩm mỹ (thay "sàn gu") |
 | Văn bản | Speaker diarization | nhận diện người nói |
 | Văn bản | Leading minds | bộ óc hàng đầu (gồm cả người và tổ chức, giữ) |
+| Văn bản | Revenue generation | tạo doanh thu (thay "ra tiền"; giữ ở lời trích của David) |
+| Văn bản | Self-reliant (of a person) | tự chủ, không cần David xuất hiện (thay "tự đứng được"; nghĩa về clip là "hiểu được khi xem riêng"; giữ ở lời trích và giọng thương hiệu) |
+| Văn bản | Stage (career roadmap) | giai đoạn; chuyển giai đoạn (thay "chặng", "qua chặng"); bước khi là các bước của một quy trình; vlog đi đường giữ "chặng" (chia theo nơi chốn) |

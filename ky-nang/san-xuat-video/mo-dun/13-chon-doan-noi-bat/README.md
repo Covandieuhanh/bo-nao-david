@@ -92,9 +92,9 @@ Bất kể kiểu nào:
 - **Điểm chốt cảm xúc** ở câu mạnh nhất (bằng dựng, không bằng chữ thêm): chữ to đúng cụm then chốt nhất **đúng lúc người nói nói cụm đó**
   (ngắn để chữ đạt cỡ lớn — tối đa khoảng 14 ký tự/dòng, ví dụ: "MÃI MÃI / KHÔNG THỂ HIỂU"); câu làm điểm chốt cảm xúc đánh `zoom: true` để giữ nguyên câu, không
   rút lặng (khung không dồn — `quy-tac-chung.md` mục 2); 1 s lặng sau câu hỏi để người xem kịp nghĩ.
-- Kiểu nào cũng phải đạt bước 5 (tự đứng được) — đổi chỗ mà câu mất nghĩa thì chọn kiểu khác.
+- Kiểu nào cũng phải đạt bước 5 (hiểu được khi xem riêng) — đổi chỗ mà câu mất nghĩa thì chọn kiểu khác.
 
-### 5. Kiểm clip tự đứng được + lằn ranh nội dung
+### 5. Kiểm clip hiểu được khi xem riêng + lằn ranh nội dung
 Đọc nối các câu theo thứ tự đã bố trí như người chưa xem bản đầy đủ. **Người xem clip là người xem độc lập:** xem một mình phải biết hoàn cảnh là gì và clip nói gì; thiếu hoàn cảnh thì thêm câu nguyên văn nêu hoàn cảnh, không có thì bỏ clip. **Chấm riêng từng clip** theo câu hỏi gốc của khối 00: giúp làm chủ bản thân hoặc làm chủ công việc thêm một bước; đoạn chỉ nói về cảm xúc thì không đạt, dù câu nghe có vẻ then chốt. Người dựng loại hoặc thay câu khi:
 - Có từ trỏ chỗ khác: "ở trên", "như mình vừa nói", "bước 2" mà không có bước 1, "cái này"/"phương pháp này" chưa nói là gì.
 - Hành động không làm được nếu không xem bản đầy đủ; câu cắt giữa chừng, mất chủ ngữ hoặc mất ý; đổi chỗ làm lệch nghĩa.

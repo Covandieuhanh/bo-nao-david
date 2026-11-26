@@ -192,7 +192,7 @@ Kiểu nguồn: **gốc** = lời chính tác giả công bố · **thứ cấp*
 - **Họ nói gì:** **Phản ứng** (người học có thích không) · **Học được** (có kiến thức, kỹ năng không) · **Hành vi** (có làm khác đi trong
   công việc không, thường đo sau 3–6 tháng) · **Kết quả** (công việc, doanh nghiệp có tốt lên không). Bản mới khuyên bắt đầu thiết kế từ mức 4 rồi đi ngược lại.
 - **Nguồn:** [Kirkpatrick Partners](https://www.kirkpatrickpartners.com/the-kirkpatrick-model/) · thứ cấp phần chi tiết (sách cần mua).
-- **Trùng với khung của David:** bước **thay đổi** = mức 3 và 4; thước đo nghề của David ("người được đồng hành tự đứng được, không cần David xuất hiện") là mức 3–4.
+- **Trùng với khung của David:** bước **thay đổi** = mức 3 và 4; thước đo nghề của David ("người được đồng hành tự chủ, không cần David xuất hiện") là mức 3–4.
 - **Bổ sung được:** đo đào tạo bằng thay đổi hành vi và kết quả, không bằng lời khen sau buổi học; thiết kế gói đào tạo bắt đầu từ thay đổi muốn thấy.
 - **Khối:** 3.
 

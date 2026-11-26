@@ -24,7 +24,7 @@ Sổ gốc ghi lời nguyên văn: `~/Documents/2-ca-nhan/so-tay/y-tuong.md` và
 **Đối chiếu định hướng:**
 - Khớp: david.md 4.1 (12/11) đã mở nhiều kênh, bỏ giới hạn "không kinh doanh". Giá trị cốt lõi vẫn là đào tạo — đúng thế mạnh "con người" của David; công cụ chỉ là điểm tiếp cận ban đầu.
 - Tài nguyên có sẵn: chính bộ não bo-nao-david (skill, bot Telegram, sổ ghi nhớ, cơ chế tự học) là một "OS cá nhân" đang vận hành thực tế — có thể dùng làm bản mẫu đầu tiên. David đã có người lập trình dựng hạ tầng.
-- Điểm lệch và rủi ro: David tự nhận không mạnh kinh doanh; Chặng 1 (1–3 trường hợp thực tế) vẫn là ưu tiên số một; sản phẩm phần mềm cần bảo trì và hỗ trợ khách hàng — tốn năng lượng (luật 4 tiếng/ngày).
+- Điểm lệch và rủi ro: David tự nhận không mạnh kinh doanh; Giai đoạn 1 (1–3 trường hợp thực tế) vẫn là ưu tiên số một; sản phẩm phần mềm cần bảo trì và hỗ trợ khách hàng — tốn năng lượng (luật 4 tiếng/ngày).
 
 **Câu hỏi cần chốt:**
 1. David làm việc này như một kênh hoặc nghề riêng, hay gộp vào hướng trainer ("Dẫn đội, không làm thay" + công cụ cho quản lý mới)?
@@ -67,7 +67,7 @@ Sổ gốc ghi lời nguyên văn: `~/Documents/2-ca-nhan/so-tay/y-tuong.md` và
 - **Mini App:** trang web (HTML/JS + `telegram-web-app.js`) mở ngay trong Telegram, triển khai lên HTTPS miễn phí (GitHub Pages / Vercel / Cloudflare Pages), gắn qua BotFather `/newapp` hoặc nút Menu. Mini App xác định được người dùng (kiểm `initData` bằng token bot), theo giao diện Telegram, có nút chính, lưu trữ đám mây, thanh toán Stars, chế độ toàn màn hình. Đề xuất: đặt lịch 1:1, check-in học viên hằng ngày, trang gói học kèm thanh toán, bảng duyệt việc của David.
 
 **Đối chiếu định hướng:**
-- Khớp: thước đo thành công "người được đồng hành tự đứng được, không cần David xuất hiện"; luật 4 tiếng/ngày (bot đảm nhận việc lặp lại); khách hàng là người Việt, phục vụ online; gói công nghệ kèm đào tạo (chính hệ thống này là bản mẫu có thể bán).
+- Khớp: thước đo thành công "người được đồng hành tự chủ, không cần David xuất hiện"; luật 4 tiếng/ngày (bot đảm nhận việc lặp lại); khách hàng là người Việt, phục vụ online; gói công nghệ kèm đào tạo (chính hệ thống này là bản mẫu có thể bán).
 - Lưu ý: bot phát ngôn trong nhóm tức là phát ngôn thay David nên cần lằn ranh (bot được làm gì, việc gì phải chuyển cho David); bot không chạm dữ liệu riêng của học viên ngoài nhóm.
 
 **Câu hỏi cần chốt:**

@@ -67,7 +67,7 @@ Bản theo hướng: bản ngang 4:19 `tap-ket-noi-doanh-nhan` · Trạng thái:
 | Mong muốn không phải sở hữu mọi người, chỉ là doanh nhân được gỡ nỗi đau | "Cái mong muốn của em không phải là sở hữu mọi người" | 1473–1493 (24:33) | — | — | câu định vị |
 | Năng lực mạnh nhất: tổ chức và kết nối nguồn lực | "Kết nối tất cả các nguồn lực lại" | 1491–1525 (24:51) | thiếu kết nối | hội thảo, kết nối | câu giới thiệu bản thân |
 | Người trung lập nói về giải pháp của người khác thì thêm điểm → bán chéo | "Em nói thì nó lại thêm 1 điểm" | 1560–1606 (26:00) | tự khen không ai tin | — | ví dụ về uy tín |
-| Trước đây kết nối chỉ có tình cảm, không thu nhập; có công nghệ mới thành nghề | "nếu như không có công nghệ thì em không làm điều này được" | 2050–2111 (34:10) | kết nối không ra tiền | — | câu chuyện của trainer |
+| Trước đây kết nối chỉ có tình cảm, không thu nhập; có công nghệ mới thành nghề | "nếu như không có công nghệ thì em không làm điều này được" | 2050–2111 (34:10) | kết nối không tạo ra thu nhập | — | câu chuyện của trainer |
 
 ## 23/11/2026 · tap-dji0028-2311 · chiều cà phê ngoài trời với một anh chủ doanh nghiệp du lịch
 Bản theo hướng: bản ngang 10:57 `tap-dan-doi-bang-quy-trinh` · Trạng thái: đã dựng 24/11 (chế độ tự chạy), chờ đăng · Kho 100: khớp #62

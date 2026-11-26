@@ -41,7 +41,7 @@ Nguồn duy nhất: **A** là `AGENTS.md` (điểm vào: thứ tự đọc, sáu
 | 24 | Sách tự mua | D 3 | D:3.6 | — | sống |
 | 25 | Định hướng gốc và tệp khách chính "người lần đầu dẫn người" | D 4.1 | D:42–44 | 05/11, 04/11 | sống (bỏ ngày) |
 | 26 | Ba tầng làm chủ; CCL làm gốc | D 4.2 | D:46–55 | — | sống |
-| 27 | Các chặng nghề | D 4.3 | D:57–65 | — | sống |
+| 27 | Các giai đoạn nghề | D 4.3 | D:57–65 | — | sống |
 | 28 | Chương trình và bảng giá | D 4.4 | D:67–69 | — | sống |
 | 29 | Quy trình một trường hợp | D 4.5 | D:71–72 | — | sống |
 | 30 | Quyết định đã chốt (bỏ sim, phủ trước, ICF, Đức, cần tìm, để sau) | D 4.6 | D:74–80 | — | sống |

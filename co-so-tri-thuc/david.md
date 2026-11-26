@@ -19,7 +19,7 @@
 - **Kinh nghiệm:** MC, hướng dẫn viên, spa/wellness/dịch vụ, công nghệ, đứng lớp.
 - **Thế mạnh tự nhận:** mạnh nhất về con người, lấy cá nhân làm trung tâm, định hướng cách họ tương tác với người khác và với công việc. Không mạnh kinh doanh.
 - **Khách và cách làm:** khách là người Việt ở Việt Nam, phục vụ online (làm với khách vào trưa giờ Việt Nam và cuối tuần). Việc sang Đức chỉ là dự định: không tính vào việc đang làm, nội dung, lịch hay thủ tục tới khi David khẳng định.
-- **Thước đo thành công:** người được đồng hành tự đứng được, không cần David xuất hiện.
+- **Thước đo thành công:** người được đồng hành tự chủ, không cần David xuất hiện.
 
 ## 2. Cách David làm việc (luật cá nhân)
 
@@ -42,7 +42,7 @@ Số mục giữ như cũ, nên nơi khác ghi "`david.md` mục 4.1" vẫn tra 
 
 | Mục | Nội dung | Mở khi | File |
 |---|---|---|---|
-| 4 (4.1–4.7) | Ba hướng nghề (tài chính · trainer con người · giải pháp công nghệ AI, mục tiêu chung **ra tiền**), hình ảnh trainer hai lĩnh vực, đội đối tác công nghệ, ba tầng làm chủ, các chặng, bảng giá, quy trình một trường hợp, quyết định đã chốt, **lằn ranh nghề** | việc liên quan tới nghề, sản phẩm, giá, khách, hay nội dung công khai | [chien-luoc-nghe-nghiep.md](chien-luoc-nghe-nghiep.md) |
+| 4 (4.1–4.7) | Ba hướng nghề (tài chính · trainer con người · giải pháp công nghệ AI, mục tiêu chung **tạo doanh thu**), hình ảnh trainer hai lĩnh vực, đội đối tác công nghệ, ba tầng làm chủ, các giai đoạn, bảng giá, quy trình một trường hợp, quyết định đã chốt, **lằn ranh nghề** | việc liên quan tới nghề, sản phẩm, giá, khách, hay nội dung công khai | [chien-luoc-nghe-nghiep.md](chien-luoc-nghe-nghiep.md) |
 | 5, 8 | Kênh video (bản gốc 10 phút, 3 phần, kho 100 video) và bộ lọc nội dung (phân hướng → câu hỏi gốc → bán được gì) | lọc, dựng, đăng nội dung | [chien-luoc-noi-dung.md](chien-luoc-noi-dung.md) |
 | 6 | Nghiên cứu CCL: tài liệu chuẩn, sách tự mua | xây phương pháp, dịch thuật ngữ CCL | [nghien-cuu-ccl.md](nghien-cuu-ccl.md) |
 | 7, 9 | Từ trường số (nội dung hướng trainer, xem số cá nhân chỉ buổi riêng) và dữ liệu nền huyền học | nội dung từ trường số, buổi riêng có dùng số học; hiểu nhịp làm việc của David | [du-lieu-nen-huyen-hoc.md](du-lieu-nen-huyen-hoc.md) |

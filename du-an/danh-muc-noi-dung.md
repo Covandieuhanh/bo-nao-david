@@ -48,7 +48,7 @@ Trạng thái: lọc · dựng · chờ đăng · đã đăng · kho · bỏ. D�
 - **Lằn ranh — chạm:** 2:30–3:55 "ai trong làng cũng thu nhập tối thiểu 1 triệu đô", "108 vị lãnh đạo… như quốc hội" (hứa thu nhập,
   mô hình tổ chức — hướng kinh doanh đã bỏ); 6:00–6:45 lập "CCL ở Việt Nam" (dự định tổ chức). Không thể cắt gọn vì các đoạn này nằm giữa mạch kể.
 - **Đoạn đạt 7/10 — 4:44–5:40:** "nhìn vào bên trong… mình hướng dẫn họ đến mức sau này họ không còn lệ thuộc vào mình nữa… trao
-  toàn quyền, dốc hết tâm can" thì đúng thước đo của David ("người được đồng hành tự đứng được"), nhánh công việc, nhân hiệu trainer.
+  toàn quyền, dốc hết tâm can" thì đúng thước đo của David ("người được đồng hành tự chủ"), nhánh công việc, nhân hiệu trainer.
   Đoạn này thiếu phần Thực thi nên highlight theo kiểu **Gợi mở**, kèm bình luận: "Bạn đang làm thay đội ở việc nào? Bình luận **Vấn đề**…".
 - **Đề xuất:** 1 highlight 4:44–5:40 (Reels + TikTok) · bản đầy đủ: Facebook cá nhân (câu chuyện hành trình) hoặc kho · không lên YouTube kênh thương hiệu.
 

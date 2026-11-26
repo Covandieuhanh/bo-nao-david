@@ -30,7 +30,7 @@ description: "Kế hoạch nội dung: kho 100 video của kênh; mọi video m�
 | 2. Dẫn đội | 21–40 | Giao việc, theo dõi, phản hồi | Tệp B: quản lý mới | "Người này có cách làm" |
 | ~~3. Cơ sở chạy khi vắng chủ~~ **ĐÃ BỎ** | 41–60 | Quy trình, giữ người, người thay mình | Tệp A: chủ cơ sở | "Người này hiểu chuyện ở cơ sở" |
 | 4. Nghề đứng lớp | 61–80 | Dạy để người khác tự làm được | Tệp A và Tệp B | "Người này dạy được" |
-| 5. Câu hỏi đúng lúc | 81–100 | Lắng nghe, hỏi đúng câu, tự đứng được | Mọi người | "Người này giúp mình tự gỡ" |
+| 5. Câu hỏi đúng lúc | 81–100 | Lắng nghe, hỏi đúng câu, tự chủ | Mọi người | "Người này giúp mình tự gỡ" |
 
 
 ## Giai đoạn 1. Làm chủ bản thân
