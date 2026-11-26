@@ -19,7 +19,7 @@ description: "Chiến lược nội dung (david.md mục 5, 8): kênh video, b�
 - **Bước 1, phân hướng:** chia tài nguyên thành các phân đoạn theo ý, gán đủ ba hướng (4.1): nội dung tài chính đưa về David Trần Official · phát triển bản thân đưa về kênh trainer · giải pháp công nghệ AI đưa về trang khác, hướng về gói công nghệ. Hướng nào có ý trọn vẹn thì tạo ra một bản riêng; mọi ý được ghi vào nhật ký nội dung theo hướng `du-an/nhat-ky-noi-dung/` (khối 00 mục 0b).
 - **Bước 2, câu hỏi gốc theo hướng:**
   - Tài chính: có giúp người xem hiểu giao dịch hàng hoá hợp pháp thêm một bước, và tin David trong lĩnh vực này không?
-  - Trainer: có giúp người xem **tự làm chủ bản thân** (tiền, thị trường, con người của chính họ) hoặc áp dụng vào công việc của họ thêm một bước không?
+  - Trainer: có giúp người xem **tự làm chủ bản thân** (tài chính, thị trường, con người của chính họ) hoặc áp dụng vào công việc của họ thêm một bước không?
   - Gói công nghệ: có liên quan tới một mục tiêu / nỗi đau / vấn đề mà một gói công nghệ giải quyết được không?
 - **Bước 3, bán được gì:** mọi phiếu lọc ghi một dòng mục tiêu hay nỗi đau → gói nào (công nghệ / trainer / hợp tác tài chính) → bước tiếp theo trong phễu.
 - **Cây nội dung kênh trainer:** Gốc = làm chủ bản thân · Nhánh chính = áp dụng vào công việc của chính họ · Nhánh phụ = mối quan hệ (khi bắt nguồn từ bản thân) · Nhân hiệu = hành trình chỉ khi dẫn tới phát triển con người (ngoài ba hướng thì không dùng, chưa rõ thì hỏi David).

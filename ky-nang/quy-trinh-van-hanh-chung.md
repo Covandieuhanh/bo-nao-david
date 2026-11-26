@@ -9,7 +9,7 @@ Nguyên lý ở [chuan-muc-lam-viec.md](chuan-muc-lam-viec.md), cùng số mục
 ## 1. Đầu việc
 
 Khi thuật ngữ ảnh hưởng tới yêu cầu, quyết định hay tiêu chí nghiệm thu, đối chiếu [hệ thuật ngữ](../co-so-tri-thuc/bang-thuat-ngu.md) ngay khi đọc yêu cầu và dùng cùng nghĩa trong báo cáo bàn giao.
-1. Ghi một dòng **Mục tiêu** và hai tới bốn dòng **Xong khi** (tiêu chí hoàn thành) ngay tin nhắn đầu; skill đã có "Xong khi" thì lấy từ đó. Nêu rõ đầu ra bắt buộc, cách kiểm và quyết định AI được tự chọn nếu có.
+1. Với nhiệm vụ cần đầu ra, xác định mục tiêu trước rồi bóc tách công việc. Ghi một dòng **Mục tiêu** và hai tới bốn dòng **Xong khi** (tiêu chí hoàn thành) ngay tin nhắn đầu; skill đã có "Xong khi" thì lấy từ đó. Nêu rõ đầu ra bắt buộc, cách kiểm và quyết định AI được tự chọn nếu có.
 2. Tra cây quy trình `quy-trinh.md`: gốc, rồi lá đúng việc, rồi file quy trình của lá, rồi chỉ những khối và hồ sơ mà bước đang làm cần.
 3. Việc có tài nguyên: tra sổ danh mục `~/Movies/_danh-muc-noi-dung/danh-muc-noi-dung.md` (trong repo: `du-an/danh-muc-noi-dung.md`) trước tiên.
 4. Tra hình mẫu: mở `co-so-tri-thuc/hinh-mau/README.md`, tìm mục nhỏ của việc; chưa đủ hình mẫu thì nghiên cứu theo lá A8.
@@ -22,6 +22,8 @@ Khi thuật ngữ ảnh hưởng tới yêu cầu, quyết định hay tiêu ch�
 3. Làm tiếp bước được phép và cập nhật đúng nguồn trạng thái của việc. Chỉ hỏi khi tới điểm duyệt hoặc gặp điều kiện phải dừng theo chuẩn mực. Khi báo, nêu phần vừa hoàn thành và phần còn chờ.
 
 ## 2. Bốn phần và câu báo
+
+Trao đổi để làm rõ thông tin được trình bày tự nhiên. Khi nhiệm vụ lớn có việc nhỏ, ghi mục tiêu và tiêu chí nghiệm thu của việc nhỏ tại đúng bước Thực thi của việc lớn.
 - **Bốn phần** (khi David yêu cầu bản kế hoạch hoặc khi cần duyệt Đ1, theo [luật 2](../AGENTS.md#sáu-luật-không-được-phá)): Mục tiêu (kết quả, đo bằng gì) · Kế hoạch (làm gì, ở đâu, chọn gì vì sao) · Quy trình (từng bước) · Thực thi (danh sách kiểm nhỏ nhất, có mốc làm ngay). Kèm các điểm cần chốt, mỗi điểm có đề xuất đứng đầu. Trước khi gửi bản kế hoạch, rà đủ bốn đề mục theo thứ tự, tiêu chí nghiệm thu và trạng thái thực thi. Sửa phần nào thì trình lại phần đó.
 - **Phiên giao qua Telegram** (Mac chính): việc đã có quy trình thì làm trọn rồi báo `bao-cao.sh "#N ✅ …"`; việc chưa có quy trình thì gửi bốn phần bằng `bao-cao.sh "#N ❓ Chờ anh duyệt 4 phần: …"`.
 - **Lịch tự chạy đã duyệt** (Mac chính, `tu-dong-hoa/lich/lich-chay.md`, `[TU-HOC]`): chạy theo lời giao đã duyệt, không trình lại mỗi lần.

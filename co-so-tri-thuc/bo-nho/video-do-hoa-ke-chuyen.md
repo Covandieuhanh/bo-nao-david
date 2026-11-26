@@ -28,4 +28,4 @@ Nguồn của luật: `ky-nang/chuan-muc-lam-viec.md` (đầu file). Ứng dụn
 `chuyen-dong/src/rieng/`, mạch hình ở `ky-nang/san-xuat-video/dung-video-theo-phong-cach/assets/mau-remotion/src/thu-vien/mach.js`, chuyển động ở `ky-nang/san-xuat-video/dung-video-theo-phong-cach/assets/mau-remotion/src/thu-vien/chuyen-dong.js`. Các quy tắc vẫn giữ: chữ nguyên văn ([[video-chu-nguyen-van]]),
 không che mặt ([[video-bo-cuc-tu-can-bang]]), đã vào là đứng yên. Với podcast chỉ có tiếng: [[video-podcast-phu-hinh-30]].
 
-Gốc: khối 4 (Bản chất và kiểm sai) của tu-duy-goc.md — bản chất của motion graphics là kể lại câu chuyện; đưa hình vào cho có là làm hình thức.
+Gốc: khối 4 (R&D) của tu-duy-goc.md — bản chất của motion graphics là kể lại câu chuyện; đưa hình vào cho có là làm hình thức.

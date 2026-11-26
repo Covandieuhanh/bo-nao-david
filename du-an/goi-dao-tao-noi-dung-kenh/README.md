@@ -8,7 +8,7 @@ Phần này tách ngày 13/11/2026 theo lời David: gói dựng video chỉ d�
 
 | Phần | File | Từ đâu |
 |---|---|---|
-| Video để làm gì (Tiền · Thị trường · Con người của kênh) | `01-kenh-cua-toi.md`, bài 1 trong `giao-trinh-cu-12-bai.md` | mẫu 01, bài 1 cũ |
+| Video để làm gì (Tài chính · Thị trường · Con người của kênh) | `01-kenh-cua-toi.md`, bài 1 trong `giao-trinh-cu-12-bai.md` | mẫu 01, bài 1 cũ |
 | Chọn ý, phiếu lọc, kho ý, 3 dòng chuẩn bị | `02-phieu-loc-va-kho-y.md`, bài 2 cũ | mẫu 02, bài 2 cũ |
 | Hồ sơ, giọng văn, luật kênh cho AI | `03-ho-so-cho-ai.md`, bài 4 cũ | mẫu 03 |
 | Quay đúng | bài 5 cũ | bài 5 cũ |

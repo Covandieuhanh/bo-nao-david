@@ -6,7 +6,7 @@ description: "17 phiếu học của bộ tư duy gốc (23/11/2026): Aristotle,
 
 Mỗi phiếu: **Họ nói gì** (ý gốc) · **Nguồn** · **Trùng với khung của David** (khung học từ cố vấn chiến lược, nhà:
 [mo-hinh-kinh-doanh.md](../../co-so-tri-thuc/mo-hinh-kinh-doanh.md)) · **Bổ sung được** · **Khối** của
-[tu-duy-goc.md](../../co-so-tri-thuc/tu-duy-goc.md) (1 Bóc tách · 2 Hành động · 3 Học và thay đổi · 4 Bản chất và kiểm sai).
+[tu-duy-goc.md](../../co-so-tri-thuc/tu-duy-goc.md) (1 Bóc tách · 2 Hành động · 3 Học và thay đổi · 4 R&D (Nghiên cứu và phát triển)).
 Thuật ngữ dịch theo bảng ở [README](README.md). Bằng chứng thành công là thành tựu công khai, ai cũng kiểm được.
 
 Kiểu nguồn: **gốc** = lời chính tác giả công bố · **thứ cấp** = tóm tắt được công nhận rộng, chưa đọc bản gốc (cần sách, xem README).

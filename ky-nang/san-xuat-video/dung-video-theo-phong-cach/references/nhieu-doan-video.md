@@ -309,7 +309,7 @@ Khi các file gốc là một buổi liền (máy quay tự tách file, cùng g�
 - **Phụ đề**: chữ lấy từ `ban-chep-loi.srt` (bản theo câu, đúng thứ tự chữ hơn), tách cụm tối đa 10 chữ / 52 ký tự theo dấu câu, mốc bám
   `moc-tung-tu.srt`; `SHORT = false` (hộp tối). Soát HẾT phụ đề: sửa chữ Whisper nghe sai rõ, bỏ câu không rõ (không đoán); ghi bảng sửa theo
   chỉ số dòng và in đối chiếu "gốc => sửa" để bắt lệch dòng. Gộp dòng dài < 0,35 s vào dòng kế (Sequence 0 khung làm render dừng).
-- Nhận người nói bằng giọng (`dung-podcast/scripts/nguoi-noi.py`, pyannote) hay lẫn giữa câu ở quán ồn thì không tô viền phụ đề theo người khi chưa
+- Nhận người nói bằng giọng (`dung-podcast/scripts/tach-luot-nguoi-noi.py`, pyannote) hay lẫn giữa câu ở quán ồn thì không tô viền phụ đề theo người khi chưa
   nghe lại được.
 - Nhạc: bài intro ở intro; phần chính luân phiên 2 bài cùng tuyến (`MUSIC.tracks` nối tiếp theo độ dài bài) — không lặp một bài cả tiếng.
 - Video dài YouTube: `THE_CUOI = true`, `ENDCARD = {…, play: false, yt: 21.6, len: 21.6}` (thẻ nhận diện 1,6 s + màn kết YouTube 20 s).

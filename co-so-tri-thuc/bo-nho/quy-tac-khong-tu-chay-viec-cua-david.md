@@ -16,4 +16,4 @@ Việc do David tự tạo hoặc tự bấm (ví dụ một việc dựng hay r
 
 Nguồn của luật: `ky-nang/chuan-muc-lam-viec.md` mục 3 ("Việc của David là của David"). Ghi nhớ này giữ ngày, lời David, lý do.
 
-Gốc: khối 4 (Bản chất và kiểm sai) của tu-duy-goc.md — tự làm thay việc của David là tự đoán ý David; báo tình trạng rồi chờ lệnh mới chắc đúng ý.
+Gốc: khối 4 (R&D) của tu-duy-goc.md — tự làm thay việc của David là tự đoán ý David; báo tình trạng rồi chờ lệnh mới chắc đúng ý.

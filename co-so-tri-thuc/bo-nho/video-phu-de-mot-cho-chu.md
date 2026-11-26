@@ -13,4 +13,4 @@ David chốt ngày 08/11/2026:
 
 **How to apply:** tham số nằm ở `ky-nang/san-xuat-video/ho-so-thuong-hieu/chung.json`, khoá `phu_de`; mã nguồn nằm ở `ky-nang/san-xuat-video/thu-vien-tai-nguyen/kieu-phu-de.js`, `phu-de.jsx` (`LOP`), phần dựng ghép `chuong-trinh.jsx` (`nhuong`); luật nằm ở `quy-tac-chung.md` mục 3. Với cảnh không có chữ mà muốn giữ phụ đề, người làm đặt `props.giuPhuDe = true`. Liên quan [[video-chu-nguyen-van]], [[video-nhan-dien-chung]].
 
-Gốc: khối 4 (Bản chất và kiểm sai) của tu-duy-goc.md — người xem chỉ đọc được một chỗ chữ mỗi lúc, nên suy từ đó mà cho phụ đề nhường lớp chữ đồ hoạ.
+Gốc: khối 4 (R&D) của tu-duy-goc.md — người xem chỉ đọc được một chỗ chữ mỗi lúc, nên suy từ đó mà cho phụ đề nhường lớp chữ đồ hoạ.

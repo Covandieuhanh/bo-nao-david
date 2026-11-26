@@ -6,12 +6,12 @@ description: "Lỗi thường gặp riêng khi dựng podcast và cách tránh."
 
 ## Lời nói
 - **Mốc thời gian từng từ của Whisper bị lệch qua khoảng lặng ở chỗ đổi người nói** (thử nghiệm: "Cảm ơn anh" của người dẫn bị đặt sớm khoảng 1,6 s, nằm trong
-  lượt của khách) nên nguoi-noi.py dời ranh giới đổi người nói vào khoảng lặng thật dài nhất trong ±2,5 s; phụ đề quanh chỗ đổi người nói phải
+  lượt của khách) nên tach-luot-nguoi-noi.py dời ranh giới đổi người nói vào khoảng lặng thật dài nhất trong ±2,5 s; phụ đề quanh chỗ đổi người nói phải
   được dời thủ công theo `nguoi-noi.js`.
 - Whisper nghe nhầm giống như ở skill gốc ("con nhà" thành "căn nhà", "cái đá" thành "cái đã", "Cô đang" thành "Còn đang") — Claude đối chiếu kết quả của 2 lần chạy.
 
 ## Người nói
-- **nguoi-noi.py dùng pyannote** (`tach-nguoi-noi.py`, venv `~/.venvs/pyannote`, mô hình speaker-diarization-3.1 đã tải, chạy offline trên MPS): công cụ tự đếm số người nói, độ tin cậy là tỉ lệ thời gian trùng. Thử nghiệm: podcast 1 người dài 9 phút cho kết quả 1 người (chạy khoảng 3 phút); cuộc họp Zoom 4 phút tách được 2 người. torch từ bản 2.6 trở lên chặn việc nạp mô hình nên tach-nguoi-noi.py cho phép đúng 4 lớp siêu dữ liệu (TorchVersion, Specifications, Problem, Resolution), không tắt kiểm tra. Claude vẫn đọc `kiem-tra/nguoi-noi.md` để đối chiếu theo nội dung.
+- **tach-luot-nguoi-noi.py dùng pyannote** (`tach-luot-nguoi-noi-pyannote.py`, venv `~/.venvs/pyannote`, mô hình speaker-diarization-3.1 đã tải, chạy offline trên MPS): công cụ tự đếm số người nói, độ tin cậy là tỉ lệ thời gian trùng. Thử nghiệm: podcast 1 người dài 9 phút cho kết quả 1 người (chạy khoảng 3 phút); cuộc họp Zoom 4 phút tách được 2 người. torch từ bản 2.6 trở lên chặn việc nạp mô hình nên tach-luot-nguoi-noi-pyannote.py cho phép đúng 4 lớp siêu dữ liệu (TorchVersion, Specifications, Problem, Resolution), không tắt kiểm tra. Claude vẫn đọc `kiem-tra/nguoi-noi.md` để đối chiếu theo nội dung.
 - Dự phòng (khi pyannote lỗi hoặc không có venv): ước đoán theo giọng (cao độ + phổ mel + kênh trái/phải), k-means, mặc định 2 nhóm. Giọng nam và giọng nữ tách tốt (thử nghiệm:
   với giọng nam thật + giọng nữ đọc máy: đúng 8/8 đoạn, độ tin cậy 0,6–0,9 — chưa thử với 2 người thật). Hai giọng cùng giới, cùng âm sắc dễ lẫn nên Claude luôn đọc `kiem-tra/nguoi-noi.md` để đối chiếu theo nội dung.
 - Khi thu stereo mỗi người một kênh, kênh trái/phải được dùng làm dấu hiệu mạnh (tự bật khi lệch kênh > 1,5 log-năng lượng).

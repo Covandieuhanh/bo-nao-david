@@ -16,4 +16,4 @@ Video dài là bản gốc và được giữ nguyên, không cắt phần nào:
 
 Nguồn của luật: `ky-nang/san-xuat-video/quy-tac-chung.md` mục 2. Ghi nhớ này lưu ngày, lời David và lý do.
 
-Gốc: khối 4 (Bản chất và kiểm sai) của tu-duy-goc.md — giá trị của nội dung kể chuyện nằm trong cả phần dẫn dắt, nên không cắt theo thói quen kỹ thuật coi khoảng lặng là lỗi.
+Gốc: khối 4 (R&D) của tu-duy-goc.md — giá trị của nội dung kể chuyện nằm trong cả phần dẫn dắt, nên không cắt theo thói quen kỹ thuật coi khoảng lặng là lỗi.

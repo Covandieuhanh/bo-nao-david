@@ -349,5 +349,50 @@
       "B": "Giữ một dòng, thêm các món có thể dùng và ghi Kết quả là đã đặt.",
       "C": "Ghi riêng việc xác nhận hoặc đặt nước với ban, hạn và đầu ra. Việc kiểm thiết bị và quyết định có đặt bánh trái có dòng riêng. Để trống Kết quả và Vấn đề."
     }
+  },
+  {
+    "id": "c40",
+    "tinh_huong": "David nói: “Trao đổi thôi, tôi đang phân vân vì sao người xem chưa hiểu phần mở đầu.” AI xử lý thế nào?",
+    "lua_chon": {
+      "A": "Đối thoại tự nhiên, bóc tách thông tin để hiểu tình huống. Khi David giao một đầu ra, xác định mục tiêu trước khi bóc tách công việc.",
+      "B": "Trình bốn phần và tự sửa video ngay.",
+      "C": "Buộc David chốt mục tiêu trước khi được trao đổi."
+    }
+  },
+  {
+    "id": "c41",
+    "tinh_huong": "David nói: “Lên kế hoạch chuẩn hóa tên tệp và mô tả.” Cây quy trình đã có lá phù hợp. Đầu ra nào đúng?",
+    "lua_chon": {
+      "A": "Sửa ngay toàn bộ tệp vì đã có lá.",
+      "B": "Giao bản Mục tiêu, Kế hoạch, Quy trình và Thực thi theo thứ tự, nêu tiêu chí nghiệm thu và các bước dự kiến.",
+      "C": "Chỉ nêu danh sách tệp vì David nói lập kế hoạch."
+    }
+  },
+  {
+    "id": "c42",
+    "tinh_huong": "Trong Thực thi của việc chuẩn hóa bộ não có việc lập danh mục đường dẫn. David giao riêng việc lập danh mục. Bắt đầu thế nào?",
+    "lua_chon": {
+      "A": "Chạy công cụ trước rồi mới xác định danh mục dùng để làm gì.",
+      "B": "Dùng mục tiêu của cả bộ não thay cho tiêu chí của danh mục.",
+      "C": "Xác định mục tiêu và tiêu chí nghiệm thu của danh mục, rồi bóc tách, lập kế hoạch, quy trình và thực thi việc nhỏ."
+    }
+  },
+  {
+    "id": "c43",
+    "tinh_huong": "Khi đối chiếu một quy trình đã làm với các trường hợp khác để hiểu nguyên lý, phát triển cách mới rồi kiểm kết quả, dùng thuật ngữ nào?",
+    "lua_chon": {
+      "A": "R&D. R&D có thể áp dụng cho quy trình, sản phẩm hoặc thị trường.",
+      "B": "Chỉ gọi R&D nếu đối tượng là thị trường.",
+      "C": "Dùng thuật ngữ Tài chính vì cách làm ảnh hưởng tới chi phí."
+    }
+  },
+  {
+    "id": "c44",
+    "tinh_huong": "Hai bên cần thống nhất phần đóng góp và lợi ích. Khi nói chuyện dùng chữ “chia sẻ” để nhẹ nhàng. Tên kỹ năng số 2 và cách ghi phương án xử lý thế nào?",
+    "lua_chon": {
+      "A": "Ghi Chia sẻ là tên kỹ năng số 2 và gọi phương án là Kết quả.",
+      "B": "Ghi Đàm phán là tên kỹ năng số 2, dùng “chia sẻ” theo ngữ cảnh. Gọi cách xử lý vấn đề là Giải pháp, rồi kiểm kết quả sau khi áp dụng.",
+      "C": "Đổi tên kỹ năng theo từ xuất hiện mới nhất trong cuộc trò chuyện."
+    }
   }
 ]

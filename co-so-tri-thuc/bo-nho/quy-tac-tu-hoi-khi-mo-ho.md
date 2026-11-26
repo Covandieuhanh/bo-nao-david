@@ -11,4 +11,4 @@ Khi gặp một trong 6 tín hiệu (hiểu được nhiều cách — nhất l�
 
 **How to apply:** theo `ky-nang/thu-thap-yeu-cau/SKILL.md` mục "Sáu tín hiệu phải tự dừng hỏi" (nguồn của luật; ghi nhớ này giữ ngày, lời David, lý do). Với sản phẩm từ tài nguyên: chỉ khi gặp tín hiệu nặng Claude mới dừng (11/11). Liên quan [[video-gop-y-render-lai]], [[quy-tac-goi-y-de-david-chon]].
 
-Gốc: khối 4 (Bản chất và kiểm sai) của tu-duy-goc.md — tự đoán câu mơ hồ rồi làm là tự lừa mình; nhận ra tín hiệu và hỏi lại mới chắc hiểu đúng ý David.
+Gốc: khối 4 (R&D) của tu-duy-goc.md — tự đoán câu mơ hồ rồi làm là tự lừa mình; nhận ra tín hiệu và hỏi lại mới chắc hiểu đúng ý David.

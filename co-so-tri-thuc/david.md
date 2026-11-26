@@ -13,9 +13,9 @@
   - Công khai là **trainer**; **coach** chỉ trong buổi riêng 1:1.
   - Làm **ba hướng**: tài chính (giao dịch hàng hoá) · trainer con người (phát triển bản thân) · giải pháp công nghệ AI kèm đào tạo cho cá nhân và doanh nghiệp (mục 4.1).
   - Hình ảnh công khai: **một trainer, hai lĩnh vực** — con người và công nghệ AI.
-  - Ba hướng = ba phạm trù gốc (25/11/2026): **Tiền** = tài chính · **Thị trường** = giải pháp công nghệ và AI · **Con người** = trainer định hướng; tách biệt hoàn toàn (`mo-hinh-kinh-doanh.md` mục 1b).
+  - Ba hướng tương ứng ba phạm trù gốc: **Tài chính** = hướng tài chính · **Thị trường** = giải pháp công nghệ và AI · **Con người** = trainer định hướng; tách biệt hoàn toàn (`mo-hinh-kinh-doanh.md` mục 1b).
   - Nội bộ (không công bố): **tổng điều hành** một đội đối tác làm giải pháp công nghệ, số hoá cho tổ chức theo từng vấn đề cụ thể (từ 18/11/2026). Bên ngoài David là người có năng lực giải quyết vấn đề trong các lĩnh vực mình định hướng; phía sau, David tự điều phối.
-  - Mục tiêu dài hạn: **truyền nghề**.
+  - Mục tiêu dài hạn: xem [Mục tiêu](muc-tieu.md).
 - **Kinh nghiệm:** MC, hướng dẫn viên, spa/wellness/dịch vụ, công nghệ, đứng lớp.
 - **Thế mạnh tự nhận:** mạnh nhất về con người, lấy cá nhân làm trung tâm, định hướng cách họ tương tác với người khác và với công việc. Không mạnh kinh doanh.
 - **Khách và cách làm:** khách là người Việt ở Việt Nam, phục vụ online (làm với khách vào trưa giờ Việt Nam và cuối tuần). Việc sang Đức chỉ là dự định: không tính vào việc đang làm, nội dung, lịch hay thủ tục tới khi David khẳng định.

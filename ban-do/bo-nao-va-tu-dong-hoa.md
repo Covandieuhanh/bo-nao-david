@@ -8,13 +8,14 @@ Gốc: [bản đồ bộ não](README.md).
 
 ## Danh mục tầng gốc
 
-Danh mục bảy tệp lấy theo [bảng phân tầng](../co-so-tri-thuc/tang.json). Tài liệu chỉ đường và tài liệu nội dung đều có thể nằm ở tầng này.
+Danh mục tám tệp lấy theo [bảng phân tầng](../co-so-tri-thuc/tang.json). Tài liệu chỉ đường và tài liệu nội dung đều có thể nằm ở tầng này.
 
 | Phần | Nội dung | Nguồn |
 |---|---|---|
-| Bản sắc và lằn ranh | David là ai, vai trò, hướng nghề, tiêu chí thành công và cách làm việc cá nhân | [Hồ sơ David](../co-so-tri-thuc/david.md) |
-| Tư duy | Bóc tách, Hành động, Học và thay đổi, Bản chất và kiểm sai. Khối Hành động dùng Mục tiêu → Kế hoạch → Quy trình → Thực thi, rồi xét Kết quả hoặc Vấn đề | [Tư duy gốc](../co-so-tri-thuc/tu-duy-goc.md) |
-| Kinh doanh | Tiền, Thị trường, Con người, ba phần doanh nghiệp, chín kỹ năng và ba bước Đào tạo → Áp dụng → Thay đổi | [Mô hình kinh doanh](../co-so-tri-thuc/mo-hinh-kinh-doanh.md) |
+| Mục tiêu | Điều David muốn đạt và mục tiêu sử dụng bộ não | [Mục tiêu](../co-so-tri-thuc/muc-tieu.md) |
+| Hồ sơ và lằn ranh | Bối cảnh về David để hiểu và thực hiện mục tiêu | [Hồ sơ David](../co-so-tri-thuc/david.md) |
+| Tư duy | Bóc tách, Hành động, Học và thay đổi, R&D (Nghiên cứu và phát triển). Khối Hành động dùng Mục tiêu → Kế hoạch → Quy trình → Thực thi, rồi xét Kết quả hoặc Vấn đề | [Tư duy gốc](../co-so-tri-thuc/tu-duy-goc.md) |
+| Kinh doanh | Tài chính, Thị trường, Con người, ba phần doanh nghiệp, chín kỹ năng và ba bước Đào tạo → Áp dụng → Thay đổi | [Mô hình kinh doanh](../co-so-tri-thuc/mo-hinh-kinh-doanh.md) |
 | Học và cập nhật | Bốn tầng, tiếp nhận thông tin, thăng cấp, vòng học, đánh giá và điều kiện đổi gốc | [Trục tri thức](../co-so-tri-thuc/truc-tri-thuc.md) |
 | Luật vận hành | Ngôn ngữ, khung bốn bước và điểm duyệt, nguyên văn video, quyền riêng tư, ưu tiên lời mới nhất và đồng bộ | [AGENTS](../AGENTS.md) |
 | Nạp chỉ dẫn | Điểm vào trong repo và chỉ dẫn toàn cục cho các phiên Claude | [CLAUDE](../CLAUDE.md) · [Chỉ dẫn toàn cục](../co-so-tri-thuc/chi-dan-toan-cuc.md) |
@@ -24,13 +25,13 @@ Danh mục bảy tệp lấy theo [bảng phân tầng](../co-so-tri-thuc/tang.j
 - [quy-trinh](../quy-trinh.md) — **Cây quy trình**: quy trình gốc 7 bước cho mọi việc, rồi nhánh, rồi lá (câu David hay nói, file quy trình, xong khi); công cụ kiểm tra `tu-dong-hoa/kiem-quy-trinh.py`.
 - [CLAUDE](../CLAUDE.md) — Cấu hình Claude Code của repo, nạp AGENTS.md.
 - [chi-dan-toan-cuc](../co-so-tri-thuc/chi-dan-toan-cuc.md) — Luật chung mọi phiên (bản gốc ~/.claude/CLAUDE.md).
-- [tu-duy-goc](../co-so-tri-thuc/tu-duy-goc.md) — **Tư duy gốc (tầng 0)**: cách nghĩ khi làm mọi việc, bốn khối Bóc tách · Hành động (vòng kết quả hoặc vấn đề) · Học và thay đổi · Bản chất và kiểm sai; nguồn: [17 phiếu học](../tai-lieu-tham-khao/tu-duy-goc/README.md).
+- [tu-duy-goc](../co-so-tri-thuc/tu-duy-goc.md) — **Tư duy gốc (tầng 0)**: cách nghĩ khi làm mọi việc, bốn khối Bóc tách · Hành động (vòng kết quả hoặc vấn đề) · Học và thay đổi · R&D (Nghiên cứu và phát triển); nguồn: [17 phiếu học](../tai-lieu-tham-khao/tu-duy-goc/README.md).
 - [truc-tri-thuc](../co-so-tri-thuc/truc-tri-thuc.md) — **Trục tri thức (tầng 0)**: cách bộ não tiếp nhận, xử lý, học, nâng cấp mọi thông tin, dựng theo cách mô hình AI được làm ra (dữ liệu → chưng cất → phản hồi → đánh giá → ra bản).
 - [bai-kiem toàn bộ não](../co-so-tri-thuc/bai-kiem/README.md) — Bộ đánh giá của trục: tình huống từ phản hồi của David và các ca thực hành dành cho phiên mới.
 - [chuan-muc-lam-viec](../ky-nang/chuan-muc-lam-viec.md) — Nguyên lý làm việc chung mọi skill đọc trước (tầng 1): khi hai điều ngược nhau, đầu việc, có quy trình thì tự động hoàn toàn (chưa có thì duyệt bốn phần), trong lúc làm, cuối việc, giữ phiên gọn, tài liệu và nguồn.
 - [quy-trinh-van-hanh-chung](../ky-nang/quy-trinh-van-hanh-chung.md) — Cách làm từng bước của chuẩn mực (tầng 2, cùng số mục): lệnh, mẫu bốn phần, câu báo, soát sau việc, ghi sổ, dọn dẹp thiết bị, push lên GitHub.
 - [quy-uoc-lien-ket](../co-so-tri-thuc/quy-uoc-lien-ket.md) — Bộ quy tắc liên kết của bộ não — mô tả đầu file, đường nối, bản đồ nội dung, chỉ mục tự sinh, ghi chú kiến thức, công cụ kiểm tra; để Claude tra nhanh, ít token, không sót.
-- [bang-thuat-ngu](../co-so-tri-thuc/bang-thuat-ngu.md) — Bảng thuật ngữ đặt tên: thuật ngữ kinh doanh tiếng Anh → tiếng Việt → tên file/thư mục dùng; tên bắt buộc của công cụ; cấu trúc thư mục.
+- [bang-thuat-ngu](../co-so-tri-thuc/bang-thuat-ngu.md) — Hệ thuật ngữ, định nghĩa, phạm vi sử dụng và quy ước đặt tên.
 - [chi-muc](../co-so-tri-thuc/chi-muc.md) — Chỉ mục tự sinh của bộ não — mỗi file .md một dòng (đường dẫn, mô tả, số file nối tới); Claude grep file này trước khi tìm toàn repo.
 
 ## Trạng thái và dự án của bộ não

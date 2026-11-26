@@ -1,5 +1,5 @@
 ---
-description: "Bài kiểm toàn bộ não: 36 tình huống lấy từ chính những lần David phải sửa và các luật David đã chốt; một AI chưa đọc gì làm bài để đo bộ não có dạy đúng không (thước đo 1 của trục tri thức)."
+description: "Bài kiểm toàn bộ não: 44 tình huống lấy từ chính những lần David phải sửa và các luật David đã chốt; một AI chưa đọc gì làm bài để đo bộ não có dạy đúng không (thước đo 1 của trục tri thức)."
 ---
 
 # Bài kiểm toàn bộ não — người đọc mới có làm đúng không
@@ -19,8 +19,8 @@ qua trước khi ra bản mới. Bài kiểm riêng cho phần dựng video nằ
 
 ## Cách làm
 1. Một trí tuệ nhân tạo **chưa đọc gì trong phiên** chỉ được đọc `AGENTS.md` rồi tự tìm file theo chỉ dẫn trong đó (chỉ mục, bản đồ). Không mở `dap-an.json`.
-2. Với mỗi câu trong `de.json`, viết một dòng vào `bai-lam.json`: `{"id": "c01", "chon": "A", "vi": "<lý do, nêu file đã dựa vào>"}`.
-3. Chấm: `python3 -I cham.py bai-lam.json`. Đạt khi đúng ít nhất 17 trên 18 câu.
+2. Với mỗi câu trong `de.json`, thêm một đối tượng vào mảng JSON trong `bai-lam.json`: `{"id": "c01", "chon": "A", "vi": "<lý do, nêu file đã dựa vào>"}`.
+3. Chấm: `python3 -I cham.py bai-lam.json`. Đạt khi đúng ít nhất số câu hiện có trừ một.
 4. Câu sai không phải lỗi của người làm bài: đó là chỗ bộ não **dạy chưa rõ**. Sửa nguồn của luật mà công cụ chấm chỉ ra cho rõ hơn, rồi cho
    một trí tuệ nhân tạo chưa đọc gì làm lại.
 

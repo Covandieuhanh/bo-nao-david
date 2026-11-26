@@ -18,7 +18,7 @@ Tạo doanh thu (David chốt 13/11/2026), ba hướng chạy song song (`co-so-
 |---|---|---|
 | Ba video bản dài từ buổi DJI_0031 (25/11, máy Windows): hàng hoá 5:10 · tập trung một đường 12:56 · AI may đo 3:39 | Đã xong, nằm trên Drive `thanh-pham/<tập>/` và `_buoi-tap-dji0031-2511/`, bản xem nhanh ở `D:\ket-qua-dji0031-2511`; **chưa duyệt** | David xem; David nói "chốt" thì AI xoá bản gốc theo quy trình; gói đăng để sẵn, David tự đăng; phụ đề ở các mốc "cần nghe lại" ghi trong gói đăng |
 | Giữ gốc bộ não ổn định (25/11) | Đã xong: sổ dẫn chứng gốc và cổng kiểm soát `cong-kiem-soat-goc.py`, ngôn từ chuẩn toàn bộ não (`kiem-ngon-tu.py`), AI mới làm bài kiểm đạt 21/21 và 10/10 | Theo dõi lần đẩy GitHub tới: cổng kiểm soát chặn đúng; ý mới vào tầng 3 trước rồi mới thăng cấp |
-| Kiểm chất lượng giữa thiết bị, AI và phiên mới (26/11) | Sau [đợt đánh giá 25–26/11](du-an/nang-cap/danh-gia-2026-11-25.md), đã bổ sung chuẩn bắt buộc, phạm vi sáng tạo và [hai ca thực hành](co-so-tri-thuc/bai-kiem/thuc-hanh.md) | Chạy cùng đầu vào trên các cấu hình David dùng; ghi kết quả theo từng tiêu chí và số vòng sửa |
+| Kiểm chất lượng giữa thiết bị, AI và phiên mới (26/11) | Sau [đợt đánh giá 25–26/11](du-an/nang-cap/danh-gia-2026-11-25.md), đã bổ sung chuẩn bắt buộc, phạm vi sáng tạo và [các ca thực hành](co-so-tri-thuc/bai-kiem/thuc-hanh.md) | Chạy cùng đầu vào trên các cấu hình David dùng; ghi kết quả theo từng tiêu chí và số vòng sửa |
 
 ## Chờ David quyết định (câu hỏi mở từ trước, chưa thấy trả lời)
 

@@ -7,7 +7,7 @@
           trong cảnh, vd quay nghiêng → lấy chỗ ngồi quen của người đó; người vẫn ở đó, graphic vẫn phải tránh)
    vung: {l, r, t, b}  = vùng chứa mọi mặt
 Số người = số mặt hay gặp trong một khung (≥ 30% khung); gom chỗ ngồi bằng k-means theo bề ngang (máy quay đứng yên).
-Có từ 2 người: tự chạy pyannote (dung-podcast/scripts/tach-nguoi-noi.py, venv ~/.venvs/pyannote) → kiem-tra/ai-noi.json, rồi
+Có từ 2 người: tự chạy pyannote (dung-podcast/scripts/tach-luot-nguoi-noi-pyannote.py, venv ~/.venvs/pyannote) → kiem-tra/ai-noi.json, rồi
 ghép giọng với người: trong mỗi lượt nói, người có miệng cử động nhiều nhất (so với mức thường của chính người đó) được phiếu.
 Thiếu pyannote → người nói = mặt lớn nhất (như cũ). Cảnh không thấy mặt → giữa khung hơi cao.
 Graphic đọc file này qua src/thu-vien/cho.js — không đè, không làm mờ bất kỳ ai; không con số vị trí cố định."""
@@ -49,7 +49,7 @@ GLOBAL = {i: box(b) for i, b in _all.items()}
 spk2p = {}
 aj = f'{P}/kiem-tra/ai-noi.json'
 V = f'{P}/tu-lieu/video-goc.mp4'
-DIA = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../dung-podcast/scripts/tach-nguoi-noi.py')
+DIA = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../dung-podcast/scripts/tach-luot-nguoi-noi-pyannote.py')
 PY = os.path.expanduser('~/.venvs/pyannote/bin/python')
 if len(centers) > 1 and os.path.exists(V) and os.path.exists(PY) and (not os.path.exists(aj) or os.path.getmtime(V) > os.path.getmtime(aj)):
     wav = f'{P}/kiem-tra/tieng16k.wav'

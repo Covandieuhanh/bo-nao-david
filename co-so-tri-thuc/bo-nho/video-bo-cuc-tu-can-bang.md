@@ -37,4 +37,4 @@ lời David, lý do.
 - 10/11/2026 David nới luật thẩm mỹ thành chỉ giữ chữ ký nhận diện, nên điểm 1 được viết lại (tái bản 2).
 - 13/11/2026 bỏ hiệu ứng zoom vào / ra ([[video-do-hoa-ke-chuyen]]); bám theo người nói bằng khung cắt (bản luật tái bản 3).
 
-Gốc: khối 4 (Bản chất và kiểm sai) của tu-duy-goc.md — bố cục suy từ nội dung và người xem, không theo con số cố định có sẵn, vì con số đúng cho video này có thể sai cho video khác.
+Gốc: khối 4 (R&D) của tu-duy-goc.md — bố cục suy từ nội dung và người xem, không theo con số cố định có sẵn, vì con số đúng cho video này có thể sai cho video khác.

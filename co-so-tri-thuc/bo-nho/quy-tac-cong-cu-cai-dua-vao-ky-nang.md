@@ -10,7 +10,7 @@ metadata:
 
 David tải ứng dụng, mô hình về thiết bị là để nâng cao skill của mình. Công cụ nào giúp làm việc tốt hơn (nhận diện giọng nói, chép lời…) thì Claude đưa hết vào skill dựng video.
 
-**Why:** 07/11/2026 Claude phát hiện pyannote đã cài ở `~/.venvs/pyannote` nhưng `nguoi-noi.py` vẫn tự phân biệt giọng bằng k-means; David nói "đương nhiên đưa hết vào skill".
+**Why:** 07/11/2026 Claude phát hiện pyannote đã cài ở `~/.venvs/pyannote` nhưng `tach-luot-nguoi-noi.py` vẫn tự phân biệt giọng bằng k-means; David nói "đương nhiên đưa hết vào skill".
 
 **How to apply:** khi thấy công cụ đã cài mà skill chưa dùng, Claude đề xuất tích hợp ngay (vẫn diễn giải ngắn trước khi sửa skill), giữ cách cũ làm phương án dự phòng khi công cụ lỗi. Liên quan [[video-kien-truc-ky-nang]].
 

@@ -48,7 +48,7 @@ Gốc: [bản đồ bộ não](README.md). Chiến lược kênh: [chien-luoc-no
 ## 20 khối dựng (mỗi khối một việc)
 - [mo-dun](../ky-nang/san-xuat-video/mo-dun/README.md) — Kho khối dựng video: mỗi khối một việc, viết một lần, 4 công thức chọn để dùng; danh sách khối.
 - [00-sang-loc-noi-dung](../ky-nang/san-xuat-video/mo-dun/00-sang-loc-noi-dung/README.md) — bộ lọc nội dung: lọc tài nguyên theo hồ sơ David, phân hướng nghề, bán được gì, phân phối kênh.
-- [01-phien-am](../ky-nang/san-xuat-video/mo-dun/01-phien-am/README.md) — chép lời bằng Whisper và hiểu video.
+- [01-chep-loi](../ky-nang/san-xuat-video/mo-dun/01-chep-loi/README.md) — chép lời bằng Whisper và hiểu video.
 - [02-lam-sach](../ky-nang/san-xuat-video/mo-dun/02-lam-sach/README.md) — làm sạch video: cắt thừa đầu cuối, câu nói lại, khoảng lặng.
 - [03-phu-de](../ky-nang/san-xuat-video/mo-dun/03-phu-de/README.md) — phụ đề: video dài hộp đầy câu, video dọc cụm 5–8 chữ cỡ 58.
 - [04-khung-hinh](../ky-nang/san-xuat-video/mo-dun/04-khung-hinh/README.md) — khung hình: đổi khung ngang ↔ dọc, bám người nói, nâng khung.

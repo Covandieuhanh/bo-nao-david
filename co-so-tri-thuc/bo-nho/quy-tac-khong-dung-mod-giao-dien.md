@@ -17,4 +17,4 @@ Nguồn của luật: `tu-dong-hoa/cai-dat-bo-nao.sh` (chỉ cài Telegram) và 
 - 11/11/2026: mod phải tự chạy; việc có ít nhất 3 bước thì lập kế hoạch bằng goal-meter.
 - 13/11/2026: David yêu cầu gỡ toàn bộ mod giao diện (lời David ở trên), nên luật 11/11 bị bỏ.
 
-Gốc: khối 4 (Bản chất và kiểm sai) của tu-duy-goc.md — David đã nói rõ gỡ hết mod giao diện, nên không tự thêm lại thứ David không muốn mà phải hỏi trước.
+Gốc: khối 4 (R&D) của tu-duy-goc.md — David đã nói rõ gỡ hết mod giao diện, nên không tự thêm lại thứ David không muốn mà phải hỏi trước.

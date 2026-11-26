@@ -14,4 +14,4 @@ metadata:
 
 Nguồn của luật: gần nhất là `co-so-tri-thuc/quy-uoc-lien-ket.md` mục "Ghi chú kiến thức" (ý tưởng chưa chốt ở `du-an/danh-sach-y-tuong.md`); câu "david.md chỉ ghi điều cố định" chưa có trong bản luật, đã được ghi ở Chéo bộ tái bản 3 ([tai-ban-3-ghi-nho.md](../../du-an/nang-cap/tai-ban-3-ghi-nho.md)).
 
-Gốc: khối 4 (Bản chất và kiểm sai) của tu-duy-goc.md — hồ sơ nền chỉ ghi điều đã chốt để AI đọc sau không hiểu sai một dự định thành định hướng.
+Gốc: khối 4 (R&D) của tu-duy-goc.md — hồ sơ nền chỉ ghi điều đã chốt để AI đọc sau không hiểu sai một dự định thành định hướng.

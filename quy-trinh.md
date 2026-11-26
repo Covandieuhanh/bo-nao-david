@@ -4,18 +4,18 @@ description: "Cây quy trình của bộ não — việc gì cũng đi từ quy 
 
 # Cây quy trình — việc gì cũng có quy trình, đi từ gốc lên
 
-Cách **nghĩ** trong mọi bước (bóc tách, vòng kết quả hoặc vấn đề, học và thay đổi, kiểm sai): [tu-duy-goc.md](co-so-tri-thuc/tu-duy-goc.md)
+Cách **nghĩ** trong mọi bước (bóc tách, vòng kết quả hoặc vấn đề, học và thay đổi, R&D): [tu-duy-goc.md](co-so-tri-thuc/tu-duy-goc.md)
 (mục 5 chỉ rõ khối nào dùng ở bước nào). Mọi phiên, mọi thiết bị, mọi AI đi cùng một đường để ra cùng một kết quả: đi từ **gốc** (cách làm mọi việc), lên **nhánh** (một mảng việc),
 tới **lá** (một việc cụ thể, có file quy trình, điểm duyệt và tiêu chí hoàn thành). Đây là bảng tra duy nhất; `AGENTS.md`
 chỉ trỏ về đây.
 
 ## 0. Gốc — mọi việc đều đi đủ 7 bước
 
-Bảy bước vận hành triển khai khung bốn bước của [tư duy gốc](co-so-tri-thuc/tu-duy-goc.md#2-khối-hành-động--vòng-kết-quả-hoặc-vấn-đề). Khi đầu ra David yêu cầu là kế hoạch, giao bản bốn phần theo [luật 2](AGENTS.md#sáu-luật-không-được-phá). Điểm Đ1 quyết định lúc được bắt đầu thực hiện.
+Khi tiếp nhận và làm rõ thông tin, trao đổi tự nhiên. Khi nhận nhiệm vụ cần đầu ra, xác định mục tiêu trước rồi bóc tách công việc. Bảy bước vận hành triển khai khung bốn bước của [tư duy gốc](co-so-tri-thuc/tu-duy-goc.md#2-khối-hành-động--vòng-kết-quả-hoặc-vấn-đề). Khi đầu ra David yêu cầu là kế hoạch, giao bản bốn phần theo [luật 2](AGENTS.md#sáu-luật-không-được-phá). Điểm Đ1 quyết định lúc được bắt đầu thực hiện.
 
 | # | Bước | Làm theo |
 |---|---|---|
-| 1 | **Nhận yêu cầu, tra cây:** tra quy trình trước khi làm; việc có tài nguyên thì tra sổ danh mục (đã làm chưa → làm lại thì bản mới thay bản cũ); tìm lá khớp ở mục 3 (David chỉ gửi video hoặc ghi âm không kèm lời thì là lá B1); có lá thì làm tự động hoàn toàn (mục 1) | file này |
+| 1 | **Nhận yêu cầu, tra cây:** tiếp nhận để hiểu đầu ra, xác định mục tiêu rồi tra quy trình; việc có tài nguyên thì tra sổ danh mục (đã làm chưa → làm lại thì bản mới thay bản cũ); tìm lá khớp ở mục 3 (David chỉ gửi video hoặc ghi âm không kèm lời thì là lá B1); có lá thì làm tự động hoàn toàn (mục 1) | file này |
 | 2 | **Đọc đúng phần cần, tra hình mẫu:** tra [bản đồ hình mẫu](co-so-tri-thuc/hinh-mau/README.md) cho mục nhỏ của việc; chưa có hoặc chưa đủ (ít nhất 5, việc lớn 10) thì nghiên cứu theo lá A8 trước khi làm, kết luận đưa vào kế hoạch; file quy trình của lá → chỉ những khối, hồ sơ mà bước đang làm cần; đặt Mục tiêu và Xong khi; được phép làm phần chuẩn bị (mục 1). Thiết bị chưa từng dựng video (chưa có `kiem-tra-thiet-bi.sh` đạt và bài kiểm suy luận đạt ít nhất 8/10) thì làm lá A2 trước khi dựng thật | `ky-nang/chuan-muc-lam-viec.md` mục 1 |
 | 3 | **Điểm duyệt Đ1, chỉ cho việc chưa có lá: trình 4 phần, dừng chờ "duyệt"**; việc đã có lá thì bỏ bước này, tự làm trọn (mục 1) | `chuan-muc-lam-viec.md` mục 2 · `ky-nang/thu-thap-yeu-cau/SKILL.md` |
 | 4 | **Làm đúng từng bước của lá theo thứ tự**, liên tục không ngắt quãng, không thêm, không bớt, không đổi bước; chỉ dừng ở Đ2, Đ3 hoặc chỗ lá ghi David cần xem. Gặp vấn đề: ở cách làm thì xử lý ngay; quy trình sai hay thiếu thì sửa quy trình rồi làm tiếp (mục 1); giả định của kế hoạch sai ở việc chưa có lá thì trình lại kế hoạch (`tu-duy-goc.md` khối 2) | file quy trình của lá · `chuan-muc-lam-viec.md` mục 3 |

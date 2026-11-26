@@ -21,3 +21,5 @@ description: "Nhật ký thay đổi skill hoc-lien-tuc và công cụ đi kèm 
 - **26/11/2026** · David chốt chuẩn chất lượng bắt buộc chung cho mọi thiết bị, thời điểm và AI, với khoảng sáng tạo cho từng AI. Làm rõ cách áp dụng trong chuẩn mực và quy trình vận hành, thêm ca thực hành video và tiếp quản trong bộ kiểm.
 
 - **26/11/2026** · Mở rộng bảng thuật ngữ thành hệ định nghĩa dùng chung từ tư duy gốc tới chuyên môn. Bước học từ nguồn mới đối chiếu nghĩa trước khi rút bài học hoặc đề xuất thay đổi.
+
+- **26/11/2026** · David chốt mục tiêu và bốn khối tư duy. Đồng bộ thuật ngữ Tài chính, Đàm phán, R&D, Giải pháp. Bổ sung câu kiểm c40–c44 và ca thực hành về trao đổi, lập kế hoạch và việc nhỏ trong việc lớn.

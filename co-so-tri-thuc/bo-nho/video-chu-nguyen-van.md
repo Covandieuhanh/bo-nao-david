@@ -25,4 +25,4 @@ Video không hiện nhãn tốc độ hay ghi chú kỹ thuật (×1,6, ×0,5, "
 **Why:** người dùng thấy các ghi chú kỹ thuật là thừa; chữ trên màn hình chỉ nên phục vụ nội dung.
 **How to apply:** nguồn của luật `ky-nang/san-xuat-video/quy-tac-chung.md` mục 4 (Hình); cách làm ở `ky-nang/san-xuat-video/dung-video-theo-phong-cach/references/nhieu-doan-video.md`, mẫu bỏ `speed`. Quy tắc áp dụng cho mọi video, kể cả khi Claude tự viết component mới.
 
-Gốc: khối 4 (Bản chất và kiểm sai) của tu-duy-goc.md — chữ tự rút ý có thể lệch điều David muốn nói; giữ nguyên văn là cách chắc chắn không làm sai ý.
+Gốc: khối 4 (R&D) của tu-duy-goc.md — chữ tự rút ý có thể lệch điều David muốn nói; giữ nguyên văn là cách chắc chắn không làm sai ý.

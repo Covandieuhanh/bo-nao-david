@@ -12,7 +12,8 @@ tiếng Anh chuẩn thì dùng đúng cột "Tên dùng"; chưa có thì thêm m
 
 | Tiếng Anh | Tiếng Việt | Tên dùng |
 |---|---|---|
-| Operations | Điều hành | `dieu-hanh` |
+| Operations Management | Điều hành | `dieu-hanh` |
+| Operations | Vận hành | `van-hanh` |
 | Knowledge Base | Cơ sở tri thức | `co-so-tri-thuc` |
 | Memory | Bộ nhớ | `bo-nho` |
 | Projects | Dự án | `du-an` |
@@ -38,6 +39,7 @@ tiếng Anh chuẩn thì dùng đúng cột "Tên dùng"; chưa có thì thêm m
 | Personal Profile | Hồ sơ cá nhân | `ho-so-ca-nhan` |
 | Legal (Legal Documents) | Pháp lý (hợp đồng, văn bản, giấy tờ) | `phap-ly` |
 | Business Model | Mô hình kinh doanh | `mo-hinh-kinh-doanh` |
+| Objective | Mục tiêu | `muc-tieu` |
 | Brand Identity | Nhận diện thương hiệu | `nhan-dien-thuong-hieu` |
 | Brand Voice | Giọng thương hiệu | `giong-thuong-hieu` |
 | Brand Profile | Hồ sơ thương hiệu | `ho-so-thuong-hieu` |
@@ -100,7 +102,7 @@ tiếng Anh chuẩn thì dùng đúng cột "Tên dùng"; chưa có thì thêm m
 | Highlight Clipping | Cắt đoạn nổi bật | `cat-doan-noi-bat` |
 | Document Viewer | Trình xem tài liệu | `trinh-xem-tai-lieu` |
 | Content Screening | Sàng lọc nội dung | `sang-loc-noi-dung` |
-| Transcription | Chép lời | Giữ định danh đã dùng nếu công cụ có sẵn |
+| Transcription | Chép lời | `chep-loi` |
 | Subject Avoidance | Tránh che chủ thể | `tranh-che-chu-the` |
 | Intro / Outro | Phần mở đầu / Phần kết | `phan-mo-dau` / `phan-ket` |
 | Montage | Dựng ghép | `dung-ghep` |
@@ -325,25 +327,24 @@ Nguồn áp dụng: [Tư duy gốc](tu-duy-goc.md), [Mô hình kinh doanh](mo-hi
 | Bóc tách | Decomposition | Chia đối tượng hoặc vấn đề thành phần có thể phân tích rồi xác định phần cụ thể để làm. |
 | Hành động | Action | Khối đưa một việc qua mục tiêu, kế hoạch, quy trình và thực thi, rồi xử lý kết quả hoặc vấn đề. |
 | Học và thay đổi | Learning and change | Khối biến đào tạo và áp dụng thành thay đổi quan sát được trong hành vi hoặc kết quả. |
-| Bản chất và kiểm sai | First-principles reasoning and error checking | Khối xác định điều nền tảng, giả định và dấu hiệu có thể bác bỏ nhận định. |
+| R&D | Research and Development | Nghiên cứu và phát triển. Khối tư duy và kỹ năng số 5: phân tích, nghiên cứu và đối chiếu để hiểu nguyên lý, phát triển giải pháp phù hợp rồi kiểm chứng mức cải thiện. |
 | Nguyên lý đầu tiên | First principle | Mệnh đề nền có thể dùng làm điểm xuất phát để lập luận trong phạm vi đang xét. |
 | Giả định | Assumption | Điều tạm coi là đúng để lập kế hoạch hoặc lập luận, có thể phải xét lại khi có bằng chứng mới. |
 | Kiểm sai | Error checking | Chủ động tìm điều kiện hoặc bằng chứng khiến nhận định hiện tại sai. |
 | Nguyên nhân gốc | Root cause | Điều kiện căn bản tạo ra vấn đề, được xác định để có thể xử lý tận nguồn. |
 | Triệu chứng | Symptom | Biểu hiện quan sát được của vấn đề, dùng làm dấu hiệu để chẩn đoán. |
-| Tiền | Money and resources | Phạm trù David dùng để xét giá trị, nguồn lực, tài sản, chi phí, thu nhập và dòng tiền. Hướng nghề tương ứng là tài chính. |
 | Thị trường | Market | Phạm trù xét nhu cầu, cung cầu, kênh, quan hệ và quy mô. Hướng nghề tương ứng là giải pháp công nghệ và AI. |
 | Con người | People | Phạm trù xét chủ thể, nhu cầu, năng lực, động lực và trách nhiệm. Hướng nghề tương ứng là đào tạo định hướng. |
 | Phạm trù | Category | Góc phân tích của khung kinh doanh. Một vấn đề có thể được xét qua nhiều phạm trù. |
 | Hướng nghề | Career direction | Một trong ba hướng David chọn để triển khai nghề và phân loại nội dung theo giá trị đem lại. |
 | Mô hình kinh doanh | Business model | Cách tổ chức các thành phần tạo, cung cấp và thu nhận giá trị. Khung riêng của David nằm tại nguồn áp dụng trên. |
 | Kết nối | Relationship building | Kỹ năng 1: xây dựng và duy trì quan hệ với người phù hợp. |
-| Đàm phán chia sẻ | Negotiating contributions and benefits | Kỹ năng 2: thống nhất các bên đóng góp gì và nhận lợi ích gì. |
+| Đàm phán | Negotiation | Kỹ năng 2: trao đổi để thống nhất điều kiện, trách nhiệm, đóng góp hoặc lợi ích. |
+| Chia sẻ | Sharing | Trao đổi thông tin, mong muốn hoặc quan điểm. Có thể dùng để diễn đạt nhẹ nhàng trong ngữ cảnh đàm phán. Tên kỹ năng số 2 trong khung vẫn là Đàm phán. |
 | Marketing | Marketing | Kỹ năng 3: giúp đúng nhóm biết, hiểu và tin vào giá trị qua cách tiếp cận phù hợp. |
 | Bán hàng | Sales | Kỹ năng 4: hỗ trợ khách hàng đưa ra quyết định trao đổi tiền lấy giá trị. |
-| Nghiên cứu và phát triển thị trường | Market research and development | Kỹ năng 5 trong khung David: tìm nhu cầu thị trường và phát triển giải pháp phù hợp hơn. Giữ cách gọi R&D khi dẫn đúng khung. |
 | Điều hành | Operations management | Kỹ năng 6: tổ chức người, quy trình, văn hóa và đối tác để công việc vận hành đều đặn. |
-| Tài chính | Finance | Kỹ năng 7: quản lý nguồn lực và dòng giá trị vào, ra phục vụ hoạt động và tăng trưởng. |
+| Tài chính | Finance | Góc phân tích giá trị, nguồn lực, tài sản, chi phí, doanh thu và dòng tiền. Cũng là hướng nghề tài chính và tên kỹ năng số 7 trong khung David. |
 | Kinh doanh | Business | Ở kỹ năng 8, thiết kế hệ thống, chính sách và chiến lược để các kỹ năng cùng vận hành theo một hướng. |
 | Chăm sóc khách hàng | Customer care | Kỹ năng 9: hỗ trợ người đã mua sử dụng sản phẩm thành công và duy trì quan hệ. |
 | Vận hành | Operations | Việc thực hiện các hoạt động thường xuyên để tạo và giao giá trị. Điều hành tổ chức các hoạt động đó. |
@@ -397,6 +398,7 @@ Nguồn áp dụng: [Chuẩn mực làm việc](../ky-nang/chuan-muc-lam-viec.md
 | Thực thi | Execution | Thực hiện các bước bằng người, công cụ và nguồn lực thực tế. |
 | Kết quả | Result | Trong vòng hành động của David, đầu ra đã đáp ứng mục tiêu. Trong báo cáo đo, ghi rõ kết quả quan sát và mức đạt. |
 | Vấn đề | Problem | Khoảng cách hoặc trở ngại khiến chưa đạt kết quả mong muốn. |
+| Giải pháp | Solution | Cách xử lý một vấn đề. Hiệu quả được xác nhận bằng kết quả sau khi áp dụng. |
 | Rủi ro | Risk | Khả năng một sự kiện chưa chắc chắn ảnh hưởng tới mục tiêu. |
 | Sự cố | Incident | Sự kiện ngoài dự kiến đã xảy ra và cần xử lý. |
 | Phạm vi | Scope | Ranh giới công việc, đối tượng và đầu ra thuộc yêu cầu đang xét. |

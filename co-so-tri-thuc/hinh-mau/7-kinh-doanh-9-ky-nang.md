@@ -1,5 +1,5 @@
 ---
-description: "Hình mẫu mục lớn 7 — kinh doanh theo 9 kỹ năng, ngành nghề của David (kết nối, đàm phán chia sẻ, marketing, bán hàng, R&D, điều hành, tài chính, kinh doanh, chăm sóc khách hàng): mỗi kỹ năng một mục nhỏ."
+description: "Hình mẫu mục lớn 7 — kinh doanh theo 9 kỹ năng, ngành nghề của David (kết nối, đàm phán, marketing, bán hàng, R&D, điều hành, tài chính, kinh doanh, chăm sóc khách hàng): mỗi kỹ năng một mục nhỏ."
 ---
 
 # 7. Kinh doanh theo 9 kỹ năng, ngành nghề
@@ -11,7 +11,7 @@ Luật bản đồ: [README](README.md).
 ## 7.1 Kết nối ⬜
 Chưa nghiên cứu.
 
-## 7.2 Đàm phán chia sẻ ⬜
+## 7.2 Đàm phán ⬜
 Chưa nghiên cứu.
 
 ## 7.3 Marketing (ngôn ngữ, dịch vụ) 🟡
@@ -22,7 +22,7 @@ nội dung marketing bằng video: mục lớn 2. Chưa đo trang của trainer 
 Chưa nghiên cứu. Câu hỏi nghiên cứu khi có việc: trainer, người bán khoá học Việt Nam nào có phễu công khai (nội dung miễn phí → lớp nhỏ → gói), giá từng
 bậc, tin nhắn chốt bán hàng như thế nào.
 
-## 7.5 R&D: nghiên cứu và phát triển thị trường ⬜
+## 7.5 R&D (Nghiên cứu và phát triển) ⬜
 Chưa nghiên cứu (cách nghiên cứu hình mẫu chung: [quy-trinh-nghien-cuu.md](quy-trinh-nghien-cuu.md)).
 
 ## 7.6 Điều hành (quy trình, văn hoá, điều hành, đối tác) ⬜

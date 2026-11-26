@@ -39,4 +39,4 @@ lập kế hoạch quay, rồi viết skill dựng riêng (hoặc mở rộng `d
 - Chọn tên chương trình + bối cảnh + mẫu thumbnail (làm 1 lần).
 - Quy ước tên file: `cam-rong.mp4`, `cam-khach.mp4`, `cam-dan.mp4`, `mic-khach.wav`, `mic-dan.wav` để script đồng bộ theo âm thanh (vỗ tay ở đầu buổi quay).
 - Skill cần thêm: đồng bộ nhiều máy quay theo sóng âm, tự chọn góc theo người đang nói (đã có phần dò người nói trong `phan-tich-doi-khung.sh` +
-  `nguoi-noi.py`), teaser tự đề xuất câu then chốt.
+  `tach-luot-nguoi-noi.py`), teaser tự đề xuất câu then chốt.

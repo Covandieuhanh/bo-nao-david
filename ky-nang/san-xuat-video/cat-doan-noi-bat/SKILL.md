@@ -82,8 +82,8 @@ Chỉ có phụ đề, không có video thì làm bước 2–5, trả bảng c�
 ## Công thức — Đoạn nổi bật · hồ sơ `doan-noi-bat`
 | # | Bước | Khối |
 |---|---|---|
-| 0–1 | Nhận loại nguồn · tạo dự án *(bước nhẹ)* | [13](../mo-dun/13-chon-doan-noi-bat/README.md) · [01](../mo-dun/01-phien-am/README.md) |
-| 2–6 | Bản đồ cả video · tự chọn ý theo 4 câu · chọn câu · bố trí lời kêu gọi hành động · kiểm hiểu được khi xem riêng + lằn ranh · cắt + kiểm lời | [13](../mo-dun/13-chon-doan-noi-bat/README.md) (chi tiết từng bước) · [02](../mo-dun/02-lam-sach/README.md) (khoang-lang.py) · [01](../mo-dun/01-phien-am/README.md) |
+| 0–1 | Nhận loại nguồn · tạo dự án *(bước nhẹ)* | [13](../mo-dun/13-chon-doan-noi-bat/README.md) · [01](../mo-dun/01-chep-loi/README.md) |
+| 2–6 | Bản đồ cả video · tự chọn ý theo 4 câu · chọn câu · bố trí lời kêu gọi hành động · kiểm hiểu được khi xem riêng + lằn ranh · cắt + kiểm lời | [13](../mo-dun/13-chon-doan-noi-bat/README.md) (chi tiết từng bước) · [02](../mo-dun/02-lam-sach/README.md) (khoang-lang.py) · [01](../mo-dun/01-chep-loi/README.md) |
 | 7A | Chẩn đoán → tự chọn ([huong-dan-lua-chon](../thiet-ke-bo-cuc/huong-dan-lua-chon.md)) · dựng nguồn có người nói (mục dưới) | [11](../mo-dun/11-dung-ghep/README.md) · [04](../mo-dun/04-khung-hinh/README.md) · [05](../mo-dun/05-tranh-che-chu-the/README.md) · [06](../mo-dun/06-phan-mo-dau/README.md) · [07](../mo-dun/07-canh-minh-hoa/README.md) · [08](../mo-dun/08-phan-ket/README.md) · [03](../mo-dun/03-phu-de/README.md) · [09](../mo-dun/09-am-thanh/README.md) · [17](../mo-dun/17-kiem-soat-chat-luong/README.md) |
 | 7B | Chẩn đoán → tự chọn · dựng nguồn podcast / đồ hoạ (mục dưới) | [12](../mo-dun/12-san-khau-podcast/README.md) · [07](../mo-dun/07-canh-minh-hoa/README.md) · [08](../mo-dun/08-phan-ket/README.md) · [17](../mo-dun/17-kiem-soat-chat-luong/README.md) |
 | 8 | Phát hành: lịch đăng, khung bìa, mô tả, bình luận ghim, số liệu | [15](../mo-dun/15-xuat-ban/README.md) · [16](../mo-dun/16-phan-tich-so-lieu/README.md) |
@@ -142,9 +142,9 @@ câu bằng `ffmpeg` (`trim` + `concat`, mờ tiếng 15–30 ms ở mỗi đầ
 ### 7B. Dựng — nguồn podcast / toàn đồ hoạ (`dung-podcast`; khung theo nguồn, lệnh dưới là ví dụ khung dọc)
 ```bash
 zsh $POD/scripts/tao-podcast.sh "$P/cat/<id>.mp4" hl-<tên>-<id> "" cat-thua   # mỗi clip → ~/Movies/tap-<tên>/3-doan-noi-bat/clip-<id> = $E (chỉ lấy tiếng)
-zsh $POD/scripts/phien-am.sh "$E"
+zsh $POD/scripts/chep-loi.sh "$E"
 python3 -I $BASE/scripts/phu-de.py "$E"                         # rồi sửa chữ theo captions-goc.js của $P (đã sửa chính tả)
-PY=$(zsh $POD/scripts/cai-python.sh); $PY $POD/scripts/nguoi-noi.py "$E"; $PY $POD/scripts/duong-bao-am.py "$E"
+PY=$(zsh $POD/scripts/cai-python.sh); $PY $POD/scripts/tach-luot-nguoi-noi.py "$E"; $PY $POD/scripts/duong-bao-am.py "$E"
 ```
 - `tao-podcast.sh … cat-thua` còn 0,4 s lặng cuối thì đệm thêm cho đủ 1 s lặng, cập nhật `project.duration`, chạy lại `duong-bao-am.py`.
 - **Tông, nhạc, thẻ cuối**: chạy `python3 -I $SKILL/scripts/ap-dung-doan-noi-bat.py "$P" <id> "$E"` để ghi `chuyen-dong/src/doan-noi-bat.js` (cắt cứng: `bar: false`,

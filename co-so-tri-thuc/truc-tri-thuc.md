@@ -10,7 +10,7 @@ mà mọi thứ phục vụ: `david.md` mục 1–3 và sáu luật `AGENTS.md`.
 học và thay đổi, kiểm sai) nằm ở [tu-duy-goc.md](tu-duy-goc.md), cùng tầng 0; trục này là khối 3 "học và thay đổi" áp dụng vào chính bộ não.
 
 ## 0. Gốc: AI dùng bộ não này là ai
-AI (Claude, Codex, Gemini…) mỗi phiên **bắt đầu từ số 0** về David; điều AI biết chỉ là những gì đọc được từ file. Vì vậy:
+[Mục tiêu](muc-tieu.md) xác định điều bộ não phục vụ. Khi David cung cấp thông tin hoặc chỉnh cách hiểu, bộ não là đối tượng được đào tạo. AI (Claude, Codex, Gemini…) mỗi phiên **bắt đầu từ số 0** về David; điều AI biết chỉ là những gì đọc được từ file. Vì vậy:
 > **Thước không bao giờ đổi:** một AI mới tinh, đọc ít nhất, vẫn làm đúng như David muốn — và lần sau đúng hơn lần trước.
 
 Mọi quyết định lưu gì, lưu ở đâu, viết thế nào đều trả lời câu này. "Người đọc mới" là **bất kỳ ai** — trí tuệ nhân tạo khác, học viên,

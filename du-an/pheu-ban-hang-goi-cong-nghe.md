@@ -4,7 +4,7 @@ description: "Phễu bán hàng gói công nghệ (hướng 3): ba giai đoạn:
 
 # Bán gói công nghệ: phễu → bán thử → bán thật
 
-Hướng 3 trong `co-so-tri-thuc/david.md` mục 4.1. Khung tư duy: `co-so-tri-thuc/mo-hinh-kinh-doanh.md` (Tiền · Thị trường · Con người; Kết quả / Vấn đề).
+Hướng 3 trong `co-so-tri-thuc/david.md` mục 4.1. Khung tư duy: `co-so-tri-thuc/mo-hinh-kinh-doanh.md` (Tài chính · Thị trường · Con người; Kết quả / Vấn đề).
 Ý tưởng "Company OS" của anh Phú Ông (`danh-sach-y-tuong.md` #1) được gộp vào đây.
 Hai dòng sản phẩm: **gói công nghệ cho cá nhân** (gói 1 dựng video) và **giải pháp số hoá kết hợp AI cho tổ chức** do đội đối tác làm, David tổng điều hành và đào tạo — nội bộ, bên ngoài không công bố (`co-so-tri-thuc/chien-luoc-nghe-nghiep.md` mục 4.1). Phễu chạy trên Facebook cá nhân theo [hinh-anh-facebook-ca-nhan.md](hinh-anh-facebook-ca-nhan.md) và [lich-dang-bai.md](lich-dang-bai.md).
 
@@ -23,7 +23,7 @@ Mục tiêu là có **khoản thu đầu tiên từ một gói công nghệ**, k
 **Gói 2 (David duyệt 21/11/2026): trainer dựng bộ não bằng file cho AI**, người chưa biết gì tự tạo cơ sở tri thức cá nhân, học và lưu lại sau mỗi dự án; hai mức (Dự án trong ứng dụng AI · trợ lý AI trên máy kèm GitHub), 10 bước, 4 buổi, giáo trình 8 bài, 4 biểu mẫu ở [goi-dao-tao-co-so-tri-thuc-ai/](goi-dao-tao-co-so-tri-thuc-ai/README.md). Gói này chưa chốt giá, chưa thử trên tài khoản sạch.
 
 ## Quy trình (mỗi gói đi đủ 7 bước)
-1. **Chọn nỗi đau** từ tin nhắn, bình luận ("Vấn đề") — xét bằng Tiền · Thị trường · Con người: mất tiền gì, khách là ai / quy mô nào, người nào đang làm và vướng ở đâu.
+1. **Chọn nỗi đau** từ tin nhắn, bình luận ("Vấn đề") — xét bằng Tài chính · Thị trường · Con người: mất tiền gì, khách là ai / quy mô nào, người nào đang làm và vướng ở đâu.
 2. **Gói** gồm kết quả hứa (đo được), công cụ, số buổi đào tạo và việc khách phải tự làm.
 3. **Nội dung phễu:** bài / clip cho thấy kết quả thật trên chính David, rồi mời người xem nhắn một từ khoá.
 4. **Trò chuyện 20 phút:** hỏi mục tiêu, nỗi đau; hợp thì mời bán thử.

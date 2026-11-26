@@ -2,6 +2,10 @@
   "_ghi_chu": "Tầng của từng file theo trục tri thức (co-so-tri-thuc/truc-tri-thuc.md mục 2). Đọc từ trên xuống, mẫu đầu tiên khớp thắng; ** = mọi tầng thư mục. 0 = trục/gốc (chỉ nâng cấp: làm rõ, thêm ví dụ, liên kết thêm, không đổi nghĩa; đổi gốc = đổi nghĩa, đi dần từng câu khi dẫn chứng tích luỹ đủ trong so-dan-chung-goc.md (ít nhất 3 ngày khác nhau), không đổi hẳn một lần; cổng kiểm soát tu-dong-hoa/cong-kiem-soat-goc.py chặn khi thiếu dòng sổ) · 1 = nguyên lý (đổi ở vòng Nâng cấp) · 2 = quy trình (đổi theo tuần, theo góp ý) · 3 = dữ liệu (chỉ thêm, không sửa nghĩa cái cũ). Chỉ mục (chi-muc.md) hiện tầng; công cụ đo chồng chéo chỉ kiểm 'mỗi ý một nguồn duy nhất' ở tầng 1 và 2. File mới không cần khai báo: rơi vào mẫu sẵn có; mẫu cuối '**' là tầng 2.",
   "quy_tac": [
     [
+      "co-so-tri-thuc/muc-tieu.md",
+      0
+    ],
+    [
       "co-so-tri-thuc/so-dan-chung-goc.md",
       3
     ],

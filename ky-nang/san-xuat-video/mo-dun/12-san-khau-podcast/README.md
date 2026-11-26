@@ -11,7 +11,7 @@ description: "Khối 12 sân khấu podcast: tên tập, ý đang bàn, sóng â
 **Sửa khối này thì chạy lại:** 17 (render lại nen → nen-podcast.py → xem-truoc-ban-dung.py)
 
 **File thật (code, một bản duy nhất):**
-- `dung-podcast/scripts/{nguoi-noi.py,tach-nguoi-noi.py (pyannote),duong-bao-am.py,nen-podcast.py,anh-tinh-podcast.sh}`
+- `dung-podcast/scripts/{tach-luot-nguoi-noi.py,tach-luot-nguoi-noi-pyannote.py (pyannote),duong-bao-am.py,nen-podcast.py,anh-tinh-podcast.sh}`
 - `dung-video-theo-phong-cach/assets/mau-remotion/src/thanh-phan/san-khau.jsx`
 - `dung-podcast/references/thiet-ke-podcast.md`
 
@@ -20,7 +20,7 @@ description: "Khối 12 sân khấu podcast: tên tập, ý đang bàn, sóng â
 ### Tách lượt người nói
 ```bash
 PY=$(zsh $SKILL/scripts/cai-python.sh)                     # lần đầu cài numpy vào venv dùng chung
-$PY $SKILL/scripts/nguoi-noi.py "$P"                      # pyannote tự đếm người (ghi số nếu biết chắc) → chuyen-dong/src/nguoi-noi.js + kiem-tra/nguoi-noi.md
+$PY $SKILL/scripts/tach-luot-nguoi-noi.py "$P"                      # pyannote tự đếm người (ghi số nếu biết chắc) → chuyen-dong/src/nguoi-noi.js + kiem-tra/nguoi-noi.md
 $PY $SKILL/scripts/duong-bao-am.py "$P"                      # sóng âm → chuyen-dong/src/duong-bao-am.js
 ```
 Claude đọc `kiem-tra/nguoi-noi.md`: đoạn `?` hoặc đoạn mà lời nói không khớp với người nói (câu hỏi ↔ câu trả lời) thì sửa `spk` trong `nguoi-noi.js`.

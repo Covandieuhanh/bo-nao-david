@@ -31,4 +31,4 @@ Mỗi video chỉ dùng vài kiểu hiệu ứng phù hợp nội dung nhất, d
 - Khi học mẫu, Claude vẫn lấy nhiều (`video-tham-my-chi-giu-nhan-dien`), nhưng khi dựng thì chọn ít. Luật không lặp kiểu ([[video-do-hoa-ke-chuyen]], khối 07) chỉ để tránh nhàm chán, không phải để thêm kiểu.
 - Đưa ảnh thử cho David: Claude chỉ gửi khi ảnh đã hết lỗi, không gửi ảnh còn lỗi hình.
 
-Gốc: khối 4 (Bản chất và kiểm sai) của tu-duy-goc.md — bản chất của thẩm mỹ kênh là người xem nhận ra cùng một người làm, nên chỉ giữ cứng chữ ký nhận diện và tự do phần còn lại.
+Gốc: khối 4 (R&D) của tu-duy-goc.md — bản chất của thẩm mỹ kênh là người xem nhận ra cùng một người làm, nên chỉ giữ cứng chữ ký nhận diện và tự do phần còn lại.

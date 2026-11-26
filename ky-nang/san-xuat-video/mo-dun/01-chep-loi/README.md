@@ -2,7 +2,7 @@
 description: "Khối 01 chép lời bằng Whisper và hiểu video."
 ---
 
-# Khối 01-phien-am: Chép lời (Whisper) và hiểu video
+# Khối 01-chep-loi: Chép lời (Whisper) và hiểu video
 
 **Dùng trong:** cả 4
 **Đầu vào:** file video/tiếng
@@ -13,7 +13,7 @@ description: "Khối 01 chép lời bằng Whisper và hiểu video."
 **File thật (code, một bản duy nhất):**
 - `dung-video-theo-phong-cach/scripts/kiem-moi-truong.sh`
 - `dung-video-theo-phong-cach/scripts/phan-tich-video.sh`
-- `dung-podcast/scripts/phien-am.sh`
+- `dung-podcast/scripts/chep-loi.sh`
 
 ## Cách làm
 

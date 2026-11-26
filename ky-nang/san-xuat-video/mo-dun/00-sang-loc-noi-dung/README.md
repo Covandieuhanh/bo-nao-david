@@ -21,12 +21,12 @@ description: "Khối 00 bộ lọc nội dung: lọc tài nguyên theo hồ sơ 
 ## 0. Phân hướng (làm đầu tiên — hồ sơ David mục 4.1)
 | Hướng | Nhận ra khi | Nơi đăng | Bán gì |
 |---|---|---|---|
-| **1. Tài chính (phạm trù Tiền)** | giao dịch hàng hoá, thông tin và dữ liệu tài chính, đầu tư, hành trình làm tài chính | YouTube David Trần Official (+ clip ngắn kênh đó) | hợp tác môi giới / mở tài khoản hợp pháp |
+| **1. Tài chính (phạm trù Tài chính)** | giao dịch hàng hoá, thông tin và dữ liệu tài chính, đầu tư, hành trình làm tài chính | YouTube David Trần Official (+ clip ngắn kênh đó) | hợp tác môi giới / mở tài khoản hợp pháp |
 | **2. Trainer con người (phạm trù Con người)** | **chỉ phát triển con người**: làm chủ bản thân, mối quan hệ, dẫn người; lấy trụ cột chín kỹ năng để định hướng; từ trường số và dẫn chứng (thần số học, thiền, "nghiệp"…), hệ 135 | YouTube trainer + highlight, Facebook cá nhân | gói trainer (hồ sơ 4.4) |
 | **3. Giải pháp công nghệ AI (phạm trù Thị trường)** | marketing, khách hàng, nhu cầu thị trường (kể cả của chính người xem) và công nghệ / AI thực chiến, số hoá cho tổ chức | Facebook cá nhân, fanpage, TikTok | gói công nghệ cá nhân, giải pháp số hoá cho tổ chức + đào tạo tới khi ra kết quả |
 
 Mọi tài nguyên đều **phân đủ theo cả ba hướng** (mục 0b): hướng nào có ý trọn thì ra một bản riêng, phần không thuộc hướng nào thì
-bỏ; chưa xếp được (đời thường, hành trình) thì hỏi David (`mo-hinh-kinh-doanh.md` mục 1b). Ba hướng chính là ba phạm trù **Tiền · Thị trường · Con người** (`co-so-tri-thuc/mo-hinh-kinh-doanh.md` mục 1b), tách biệt hoàn toàn; marketing,
+bỏ; chưa xếp được (đời thường, hành trình) thì hỏi David (`mo-hinh-kinh-doanh.md` mục 1b). Ba hướng chính là ba phạm trù **Tài chính · Thị trường · Con người** (`co-so-tri-thuc/mo-hinh-kinh-doanh.md` mục 1b), tách biệt hoàn toàn; marketing,
 khách hàng, thị trường của chính người xem thuộc **hướng 3** (cũng là dữ liệu tốt để làm giải pháp công nghệ), không thuộc hướng 2.
 
 ## 0b. Phân hướng từng đoạn, ghép bản theo hướng

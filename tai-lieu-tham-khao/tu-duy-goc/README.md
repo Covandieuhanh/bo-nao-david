@@ -51,12 +51,12 @@ rộng. Muốn học sâu từng khối thì mua các sách sau, theo thứ tự
 | # | Sách | Tác giả | Học cho khối |
 |---|---|---|---|
 | 1 | How to Solve It | George Pólya | 2 Hành động |
-| 2 | Thinking in Systems: A Primer | Donella Meadows | 4 Bản chất và kiểm sai |
+| 2 | Thinking in Systems: A Primer | Donella Meadows | 4 R&D (Nghiên cứu và phát triển) |
 | 3 | Principles: Life and Work | Ray Dalio | 2 Hành động |
-| 4 | Thinking, Fast and Slow | Daniel Kahneman | 4 Bản chất và kiểm sai |
-| 5 | Poor Charlie's Almanack | Charlie Munger | 4 Bản chất và kiểm sai |
+| 4 | Thinking, Fast and Slow | Daniel Kahneman | 4 R&D (Nghiên cứu và phát triển) |
+| 5 | Poor Charlie's Almanack | Charlie Munger | 4 R&D (Nghiên cứu và phát triển) |
 | 6 | Toyota Production System: Beyond Large-Scale Production | Taiichi Ohno | 2 Hành động |
 | 7 | Experiential Learning | David Kolb | 3 Học và thay đổi |
 | 8 | Kirkpatrick's Four Levels of Training Evaluation | James D. Kirkpatrick, Wendy Kayser Kirkpatrick | 3 Học và thay đổi |
 | 9 | The New Economics for Industry, Government, Education | W. Edwards Deming | 2 Hành động |
-| 10 | Conjectures and Refutations | Karl Popper | 4 Bản chất và kiểm sai |
+| 10 | Conjectures and Refutations | Karl Popper | 4 R&D (Nghiên cứu và phát triển) |

@@ -19,4 +19,4 @@ và kiểm sai; khung của cố vấn (`mo-hinh-kinh-doanh.md`) được ưu ti
 Repo công khai ghi "cố vấn chiến lược của David", tên thật chỉ ở `rieng-mac/nguon-tu-duy-goc.md`. Đây là file tầng 0: đổi dần theo luật thăng cấp (`truc-tri-thuc.md` mục 4), hoặc ngay khi David nói thẳng.
 Liên quan: [[quy-tac-truc-tri-thuc]], [[quy-tac-hoc-tu-hinh-mau]], [[co-so-tri-thuc-ho-so-va-bo-loc]].
 
-Gốc: khối 4 (Bản chất và kiểm sai) của tu-duy-goc.md — mọi thứ phải từ bản chất và từ gốc; có bản lề cố định thì thông tin mới phát triển trên gốc, không mọc lệch.
+Gốc: khối 4 (R&D) của tu-duy-goc.md — mọi thứ phải từ bản chất và từ gốc; có bản lề cố định thì thông tin mới phát triển trên gốc, không mọc lệch.

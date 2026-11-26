@@ -56,6 +56,28 @@ Người tổ chức sao chép lời giao và tài liệu đầu vào cho mỗi 
 | Phân biệt kế hoạch và việc đã làm | Thực thi nêu hành động tiếp theo và cách kiểm tra. Cây Git chưa có thay đổi do việc đổi tên |
 | Áp dụng đúng phạm vi | Một lời giao tương tự cho việc đã có quy trình vẫn nhận bản kế hoạch đủ bốn phần khi yêu cầu rõ đầu ra là kế hoạch |
 
+## Ca 4. Trao đổi rồi chuyển sang việc có đầu ra
+
+**Lời giao thứ nhất:** “Trao đổi thôi. Tôi đang phân vân vì sao người xem chưa hiểu phần mở đầu.”
+
+**Lời giao thứ hai:** “Bây giờ hãy lập bản kế hoạch cải thiện đoạn mở đầu.”
+
+| Tiêu chí bắt buộc | Bằng chứng để chấm |
+|---|---|
+| Tiếp nhận đúng ngữ cảnh | Lời đầu được xử lý như đối thoại để làm rõ, có bóc tách thông tin phù hợp và chưa thay đổi đầu ra. |
+| Chuyển đúng chế độ | Lời thứ hai nhận bản kế hoạch với Mục tiêu, Kế hoạch, Quy trình, Thực thi theo thứ tự. |
+| Đặt mục tiêu rõ | Kế hoạch nêu người xem cần hiểu gì và dùng bằng chứng nào để xác nhận. |
+
+## Ca 5. Việc lớn có việc nhỏ
+
+**Lời giao:** “Trong phần Thực thi của việc chuẩn hóa bộ não có việc lập danh mục đường dẫn. Hãy làm riêng việc lập danh mục tên tệp Markdown trong một thư mục thử đã được cung cấp.”
+
+| Tiêu chí bắt buộc | Bằng chứng để chấm |
+|---|---|
+| Phân cấp mục tiêu | Nêu cách danh mục phục vụ việc lớn và tiêu chí riêng của danh mục trước khi bóc tách. |
+| Thực hiện đúng phạm vi | Danh mục khớp tệp Markdown trong thư mục thử, gồm đường dẫn và mô tả tại mỗi tệp khi có. |
+| Bàn giao kiểm được | Ghi số tệp, cách đối chiếu và phần còn thiếu mô tả nếu có. |
+
 ## Phiếu ghi kết quả
 
 | Ca | Phiên bản, đầu vào | Thiết bị, AI, ngày | Chuẩn bắt buộc và bằng chứng | Giá trị tăng thêm | Lần nhắc / vòng sửa / đạt lần đầu |

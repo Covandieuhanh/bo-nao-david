@@ -84,11 +84,11 @@ khi không rõ file nào là mẫu. Với yêu cầu "Giống video trước", C
 ## Công thức — Làm video (1 video nói trước camera) · hồ sơ `lam-video`
 | # | Bước | Khối | Lệnh chính |
 |---|---|---|---|
-| 1 | Môi trường *(bước nhẹ)* | [01](../mo-dun/01-phien-am/README.md) | `zsh $SKILL/scripts/kiem-moi-truong.sh` |
+| 1 | Môi trường *(bước nhẹ)* | [01](../mo-dun/01-chep-loi/README.md) | `zsh $SKILL/scripts/kiem-moi-truong.sh` |
 | 2 | Tạo dự án *(bước nhẹ)* | — | `zsh $SKILL/scripts/tao-du-an.sh "<video gốc>" "<video mẫu>" <tên>` (mục dưới) |
 | 3 | Làm sạch (luật 5) | [02](../mo-dun/02-lam-sach/README.md) | `phan-tich-lam-sach.sh` → sửa diem-cat.json → `ap-dung-lam-sach.py` |
 | 4 | Đổi khung (nếu cần) + nâng khung | [04](../mo-dun/04-khung-hinh/README.md) | `phan-tich-doi-khung.sh` + `ke-hoach-doi-khung.py sheet|apply` / `dat-dau-ra.py` · `nang-khung.py "$P" apply` |
-| 5 | Chép lời + hiểu video *(bước nhẹ)* | [01](../mo-dun/01-phien-am/README.md) | `phan-tich-video.sh` |
+| 5 | Chép lời + hiểu video *(bước nhẹ)* | [01](../mo-dun/01-chep-loi/README.md) | `phan-tich-video.sh` |
 | 6 | Phụ đề | [03](../mo-dun/03-phu-de/README.md) | `phu-de.py` → sửa từng dòng |
 | 6b | **Chẩn đoán → tự chọn**: yêu cầu người dùng, loại nội dung, bố cục nền (khung gốc / khung chủ thể / pillar), lớp thông tin (bảng ghi chú chạy `GHI_CHU`, chương), mỗi cảnh Cần · Vì · Làm | [`nhu-cau-nguoi-xem.md`](../thiet-ke-bo-cuc/nhu-cau-nguoi-xem.md) · [`huong-dan-lua-chon.md`](../thiet-ke-bo-cuc/huong-dan-lua-chon.md) · [04](../mo-dun/04-khung-hinh/README.md) | `chan-doan.py` → (`khung-chu-the.py luoi` → `apply`) |
 | 7 | Phong cách (video mẫu / dự án cũ) · **tuyến nội dung → nhạc** (`project.tuyen`, bắt buộc, ghi sau ap-dung-lam-sach.py) | [10](../mo-dun/10-nhan-dien-thuong-hieu/README.md) · [09](../mo-dun/09-am-thanh/README.md) | phong-cach.md → chu-de.js |
