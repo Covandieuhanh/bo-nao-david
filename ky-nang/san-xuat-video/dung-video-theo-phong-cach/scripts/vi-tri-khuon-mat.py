@@ -27,6 +27,8 @@ if out and out.group(1) == "pillar":
 theme = read("chu-de.js")
 ov_top = int(re.search(r"overlayTop: (\d+)\}", theme).group(1))
 S_LEFT, S_RIGHT, S_TOP, S_BOTTOM = 70, 180, 210, H - 500          # = SAFE trong chu-de.js (khung dọc)
+# Lớp phủ không lên trên dấu góc ● DAVID (khung dọc 228–292 px, nhan-dien-thuong-hieu.js brand) — lỗi 27/11/2026: chữ động đè dấu góc
+TOP_PHU = 228 + 64 + 16
 lay = read("bo-cuc.js")
 OV_SCALE = float(re.search(r"OV_SCALE = ([\d.]+)", lay).group(1))
 FULL = set(re.findall(r"'(\w+)'", re.search(r"export const FULL = .*", lay).group(0)))   # cả nhánh điều kiện ('card' = thẻ toàn cảnh)
@@ -74,10 +76,10 @@ def choose(hard, soft):
         h = BAND_H * s
         rect = lambda t: (S_LEFT, t, S_LEFT + SAFE_W * s, t + h)
         default = round(OV_BOTTOM - h)
-        anchors = [t for t in (default, S_TOP) if not overlap(rect(t), hard)]
+        anchors = [t for t in (default, TOP_PHU) if not overlap(rect(t), hard)]
         if anchors:   # đáy thắng khi che thân ngang nhau
             return min(anchors, key=lambda t: (round(overlap(rect(t), soft) / (SAFE_W * s * h), 2), t != default)), s, ""
-        free = [t for t in range(S_TOP, default + 1, 10) if not overlap(rect(t), hard)]
+        free = [t for t in range(TOP_PHU, default + 1, 10) if not overlap(rect(t), hard)]
         if free:
             return min(free, key=lambda t: (overlap(rect(t), soft), -t)), s, ""
     return None, None, "→ TOÀN MÀN HÌNH (lớp phủ sẽ che mặt / thân trên)"
@@ -101,7 +103,7 @@ for m in re.finditer(r"\{id: '([^']+)', type: '(\w+)', start: ([\d.]+), end: ([\
         rows.append(f"| {sid} | {a:.1f}–{b:.1f} | {round(hard[1])}–{round(hard[3])} | toàn màn hình {a:.1f}–{en:.1f} | — | {note} |")
         continue
     res[sid] = {"top": t, "scale": s}
-    where = "đáy" if t >= OV_BOTTOM - BAND_H * s - 5 else ("đỉnh" if t <= S_TOP + 5 else f"y {t}")
+    where = "đáy" if t >= OV_BOTTOM - BAND_H * s - 5 else ("đỉnh" if t <= TOP_PHU + 5 else f"y {t}")
     face = f"{round(hard[1])}–{round(hard[3])}" if hard else "—"
     rows.append(f"| {sid} | {a:.1f}–{b:.1f} | {face} | {where} ({t}–{round(t + BAND_H * s)}) | {round(s * 100)}% | {note} |")
 
