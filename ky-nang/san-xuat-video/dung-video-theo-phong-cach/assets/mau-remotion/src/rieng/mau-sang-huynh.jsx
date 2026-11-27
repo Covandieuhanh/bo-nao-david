@@ -15,7 +15,7 @@
 //   TheDocToi   thẻ dọc tối cạnh người, hình thu nhỏ và nhãn tăng dần (mẫu 00:28)
 import React from 'react';
 import {AbsoluteFill, Easing, Img, OffthreadVideo, interpolate, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
-import {BODY, HEAD, rel} from '../chu-de';
+import {BODY, BRAND_BOT, HEAD, rel} from '../chu-de';
 import {fr} from '../canh';
 
 export const M = {   // màu đo từ mẫu
@@ -27,6 +27,7 @@ const MONO = 'JetBrains Mono, Menlo, monospace';
 const kep = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'};
 const ea = (f, a, b, e = Easing.out(Easing.cubic), from = 0, to = 1) => interpolate(f, [a, b], [from, to], {...kep, easing: e});
 const EXPO = Easing.out(Easing.exp), BACK = Easing.out(Easing.back(1.6)), IO = Easing.inOut(Easing.quad), P3 = Easing.out(Easing.poly(3));
+const tren = (H) => Math.max(0.07 * H, BRAND_BOT + 0.02 * H);   // dòng chữ trên cùng nằm dưới dấu góc ● DAVID
 const rr = (f, at, start) => f - rel(at ?? start, start);   // số khung đã qua kể từ mốc
 const nenToi = {background: `radial-gradient(ellipse 80% 70% at 50% 40%, ${M.toi2}, ${M.toi})`};
 const nenKem = {background: `radial-gradient(ellipse 80% 70% at 50% 30%, #F6F5F2, ${M.kem})`};
@@ -67,9 +68,9 @@ export const ToaNhanh = ({start, nho, tieu_de, tieu_at, goc, nhanh = [], chon, d
   const xc = 0.7 * W, yc = 0.88 * H, yd = 0.17 * H;
   return (
     <AbsoluteFill style={{...nenToi, opacity: Math.min(ea(f, 0, 8), raCanh(f, d))}}>
-      {nho && <div style={{position: 'absolute', left: 0.05 * W, top: 0.07 * H, fontFamily: BODY, fontWeight: 800, fontSize: H * 0.022,
+      {nho && <div style={{position: 'absolute', left: 0.05 * W, top: tren(H), fontFamily: BODY, fontWeight: 800, fontSize: H * 0.022,
         letterSpacing: 2, color: M.nhan, textTransform: 'uppercase'}}><TuTu text={nho} f0={f} /></div>}
-      {tieu_de && <div style={{position: 'absolute', left: 0.05 * W, top: 0.105 * H, fontFamily: HEAD, fontWeight: 800, fontSize: H * 0.07,
+      {tieu_de && <div style={{position: 'absolute', left: 0.05 * W, top: tren(H) + 0.035 * H, fontFamily: HEAD, fontWeight: 800, fontSize: H * 0.07,
         color: M.sang, textTransform: 'uppercase', lineHeight: 1}}><TuTu text={tieu_de} f0={rr(f, tieu_at, start)} buoc={5} /></div>}
       <svg width={W} height={H} style={{position: 'absolute', inset: 0}}>
         {nhanh.map((b, i) => <path key={i} d={duong(x0, y0, x1, yi(i))} pathLength={1} strokeDasharray="1 1" strokeDashoffset={1 - ve(b.at)}
@@ -114,7 +115,7 @@ export const HoiTu = ({start, nho, vao = [], giua, nhan, ra, ben}) => {
   const kd = ra?.dau_at != null ? ea(rr(f, ra.dau_at, start), 0, 10, BACK) : 0;
   return (
     <AbsoluteFill style={{...nenToi, opacity: Math.min(ea(f, 0, 8), raCanh(f, d))}}>
-      {nho && <div style={{position: 'absolute', left: 0.05 * W, top: 0.07 * H, fontFamily: BODY, fontWeight: 800, fontSize: H * 0.022,
+      {nho && <div style={{position: 'absolute', left: 0.05 * W, top: tren(H), fontFamily: BODY, fontWeight: 800, fontSize: H * 0.022,
         letterSpacing: 2, color: M.nhan, textTransform: 'uppercase'}}>{nho}</div>}
       <svg width={W} height={H} style={{position: 'absolute', inset: 0}}>
         {giua && vao.map((v, i) => <path key={i} d={`M${xv(i)},${yv + kt} C${xv(i)},${(yv + yg) / 2} ${cx},${(yv + yg) / 2 - 10} ${cx},${yg - kt}`}
@@ -374,7 +375,7 @@ export const NguoiTrongThe = ({start, nho, buoc = []}) => {
   const hThe = (b) => (b.video || b.hinh ? h : w * 0.5), yThe = (b) => y + (h - hThe(b)) / 2;
   return (
     <AbsoluteFill style={{...nenKem, opacity: Math.min(ea(f, 0, 8), raCanh(f, d))}}>
-      {nho && <div style={{position: 'absolute', left: 0.05 * W, top: 0.07 * H, fontFamily: BODY, fontWeight: 800, fontSize: kt * 1.1, color: M.nhan,
+      {nho && <div style={{position: 'absolute', left: 0.05 * W, top: tren(H), fontFamily: BODY, fontWeight: 800, fontSize: kt * 1.1, color: M.nhan,
         letterSpacing: 2, textTransform: 'uppercase'}}>{nho}</div>}
       <svg width={W} height={H} style={{position: 'absolute', inset: 0}}>
         {buoc.slice(1).map((b, i) => { const xa = x0 + (i + 1) * w + i * gap + 8, xb = xa + gap - 16, yy = y + h / 2; return (

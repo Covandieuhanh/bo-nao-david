@@ -54,4 +54,7 @@ Không có Đ1 (đã có lá). Đ3 khi một hiệu ứng mới đụng màu ch�
   (màn chương, thanh tiến trình, thẻ các bước, nền người mờ, nền hạt) ghi lý do ở `props.soLieuToanKhung`.
 - Đoạn lặp lại trong bản ghép (cùng một nguồn dùng cho nhiều hiệu ứng) làm `soat-khop-tieng.py` báo lệch giả hơn 3 giây ở chỗ lời trùng: đối chiếu với `bang-moc.md` trước khi sửa.
 - Mẫu `DuongMay` (thẻ lật, gạch thay, câu đắt) có chữ nhỏ khi xem khung ngang toàn màn hình: chấp nhận cho bản xem; dựng thật thì chọn kiểu khác nếu chữ không đọc kịp.
+- Lỗi khung dựng còn mở (27/11/2026): `diagram` `xay-tang`, `moc`, `tu-thanh`, `chuyen-giao` đặt trong `bocuc` `o-nguoi` khung ngang bị tràn mép phải (sơ đồ tính bề ngang theo cả khung, không theo phần còn lại cạnh ô người). Bản xem để các kiểu này toàn khung kèm `soLieuToanKhung`; cần sửa `thanh-phan/bo-cuc.jsx` / `thu-vien/so-do.jsx` trước khi dùng trong video thật.
+- Dấu góc ● DAVID khung ngang nằm ở mép trên vùng an toàn (54–118 px): dòng chữ trên cùng của cảnh tự vẽ và vùng `o` của `DuongMay` / `NhanTram` phải bắt đầu dưới `BRAND_BOT` (`o.y` ít nhất khoảng 0,13).
+- Nguồn kênh cũ (Cường Kể Chuyện) có sẵn thanh tên tập in cứng ở đáy hình, chồng lên phụ đề và thanh thời gian: chỉ dùng cho bản xem, video thật cần cắt khung hoặc chọn nguồn khác.
 
