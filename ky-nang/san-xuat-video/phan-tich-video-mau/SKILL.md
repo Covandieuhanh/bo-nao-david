@@ -8,6 +8,8 @@ description: Học cách trình bày từ một video mẫu David gửi (link Yo
 **Đọc trước:** `../../chuan-muc-lam-viec.md` · `../thiet-ke-bo-cuc/README.md` (mục 4 — toàn bộ luật và quy trình). Làm theo đúng thứ tự ở đó.
 Skill này chỉ là **điểm vào**; không ghi luật riêng ở đây để chỉ có một nguồn duy nhất phải sửa.
 
+**Khi yêu cầu học và dựng chuẩn theo từng video mẫu:** thực hiện [mục 4a](../thiet-ke-bo-cuc/README.md#4a-tái-dựng-theo-đúng-video-mẫu). Mục này quy định cách giữ thẩm mỹ gốc, chọn cảnh thật và kiểm độ phủ của bản trình diễn.
+
 ## Ba điều không được quên
 1. **Học là bổ sung** (bộ nhớ `quy-tac-hoc-la-bo-sung`): không xoá hay sửa nghĩa thành phần cũ. Mở rộng kho bằng cả bố cục, chuyển động, nhịp và thẩm mỹ học được từ mẫu. Xem nhận diện kênh như tài nguyên khi dựng từng video.
 2. **Phiếu học trước, sửa skill sau.** Điền `../thiet-ke-bo-cuc/phieu-hoc-mau.md` thành `../thiet-ke-bo-cuc/nguon-tham-khao/<ten-nguon>-<ngay>.md`,

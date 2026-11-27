@@ -42,3 +42,21 @@ Mỗi trang có clip đối chiếu, đặc tả và liên kết mã nguồn. Kh
 - Tiếng sáng, cao, ngắn đúng lúc thẻ / chữ lớn hiện (0:01, 0:10, 0:15–0:17, 0:25).
 - Mở chương "Cách 3" (12:38): nốt nhạc ngân khoảng 1,3 giây trước khi lời vào.
 - Tiếng lướt / click nhỏ ở chỗ nối cảnh.
+
+## Đối chiếu trực tiếp để tái dựng theo mẫu (27/11/2026)
+
+Rà toàn tập bằng bảng khung ba giây và mở lại các đoạn dưới đây ở mốc chọn. Đọc theo [quy trình tái dựng theo đúng video mẫu](../README.md#4a-tái-dựng-theo-đúng-video-mẫu). Cột mốc dẫn tới trạng thái dễ nhìn trong mẫu. Khi cần dựng chính xác, mở hai phía của mốc để xác định khung vào và khung kết.
+
+| Mốc mẫu | Cách trình bày quan sát được | Chọn khi nguồn có | Dấu hiệu để đặt động tác |
+|---|---|---|---|
+| 00:10–00:18 | Thẻ viền sáng trên nền tối, làm rõ thẻ đang được nói, nhãn nhỏ đi với hình của từng thẻ | Các hạng mục độc lập, có tư liệu thật cho từng hạng mục | Tên hạng mục xác định thẻ sáng, lời nói về nguồn xác định nhãn dưới thẻ |
+| 00:21–00:27 | Thẻ dọc sáng cạnh người, gạch chữ cũ rồi hiện chữ thay thế | Một câu nói bác bỏ cách cũ và nêu cách thay | Gạch khi cụm phủ định hoàn chỉnh, hiện chữ mới khi người nói xác nhận phương án thay |
+| 00:28–00:40 | Thẻ dọc tối, từng hình thu nhỏ và nhãn tăng dần | Giới thiệu các ví dụ có hình tương ứng | Mỗi hình và nhãn bám một ví dụ vừa được gọi tên |
+| 00:52–00:57, 12:47–12:53 | Thẻ nổi sáng trên nền kem, có ô chờ, số, hình rồi nhãn | Liệt kê các mục cùng cấp hoặc quy trình có bước rõ | Đợi đến khi tên mục đủ nghĩa mới mở thẻ tương ứng |
+| 00:59–01:05 | Một bảng số lớn kèm thanh ngang | Một đại lượng có đơn vị và mức so sánh xác định | Số và thanh dùng cùng mốc số liệu, đối chiếu giá trị và đơn vị với tiếng gốc |
+| 01:36–01:41 | Hai nguồn hội tụ vào công cụ, sau đó đi xuống đầu ra | Hai đầu vào cùng tạo một kết quả | Hiện riêng từng đầu vào, vẽ đường hội tụ khi quan hệ rõ, mở đầu ra khi được nhắc đến |
+| 02:45–02:54 | Màn hình trong khung sáng, nhãn dưới, phóng lớp câu lệnh ở trung tâm | Có cảnh giao diện thật và đúng câu lệnh, nút hoặc đối tượng đang được giải thích | Chờ thao tác chỉ hoặc cụm tên đối tượng, để vùng đang giải thích nhìn rõ |
+| 05:00–05:10 | Điểm sáng cam, nhiều đường mảnh toả ra, nét đậm cho đường được chọn, chú thích hệ quả | Một điểm xuất phát dẫn tới nhiều lựa chọn hoặc hướng chú ý | Mỗi hướng mở theo cụm lời riêng, chú thích hệ quả chỉ xuất hiện khi lời đã nêu hệ quả |
+| 12:39–12:46 | Chữ số chìm trên nền tối, nhãn rồi tiêu đề trắng và cam, hình minh họa ở nửa phải | Bước sang phần mới có tên và trật tự xác nhận được | Mở ở chỗ đổi phần, chữ và hình lần lượt dẫn người xem vào phần mới |
+| 15:50–15:56 | Hai thẻ trắng cạnh nhau trên nền kem, lần lượt tiết lộ cách làm | Hai cách hoặc hai thời kỳ có chung một việc để đối chiếu | Giữ vế đầu khi vế thứ hai vào, điền điểm khác biệt được nói ra |
+| 18:49–18:55 | Thẻ sáng bo góc, lời chào chữ đậm hai tầng đặt cạnh người | Câu chào hay câu hẹn được nói thật ở cuối đoạn | Dùng đúng lời chào, hiện cụm sau khi người nói sang vế sau |

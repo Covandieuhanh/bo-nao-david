@@ -16,6 +16,8 @@ mốc thời gian lời nói từ Whisper, render clip nền trong suốt rồi 
 video dài hơn 3 phút làm đủ gói YouTube (màn kết, chương, thumbnail khi ngang; teaser khi video đủ dài, Claude tự quyết định); chữ bìa, cảnh minh hoạ chính, tuyến nhạc do Claude tự chọn
 theo khối. Luật về dừng giữa chừng, về báo cáo "đã chọn X vì Y" và về render lại toàn bộ khi có góp ý: `quy-tac-chung.md` mục 8.
 
+**Khi David yêu cầu bám đúng video mẫu hoặc dựng đủ kho hiệu ứng:** dùng [mục 4a](../thiet-ke-bo-cuc/README.md#4a-tái-dựng-theo-đúng-video-mẫu) để thay bước chọn phong cách và cảnh bằng đối chiếu trực tiếp với từng mẫu. Bản trình diễn là tập hợp các trích đoạn nguồn đã ghép, mỗi chương có bằng chứng phù hợp và mốc kiểm. Bàn giao theo vị trí David yêu cầu.
+
 ## Nhịp làm việc (mục tiêu: video 10 phút hoàn thành trong khoảng 1 giờ)
 
 - **Tự chọn trước, không thử bằng render** (`../thiet-ke-bo-cuc/nhu-cau-nguoi-xem.md` → `../thiet-ke-bo-cuc/huong-dan-lua-chon.md`): đọc `yeu-cau.md` + `them-anh/` → chẩn đoán →
