@@ -42,7 +42,8 @@ for (const s of SCENES) {
   // TIEP=1 node xuat-video.mjs: bỏ qua cảnh đã có .mov (chạy tiếp sau khi một cảnh lỗi) — 2026-11-08
   if (process.env.TIEP && fs.existsSync(path.join(out, `${s.id}.mov`))) continue;
   // cảnh chiếu lại video gốc (ô người, màn chốt): đọc khung từ file gốc lớn → ít luồng hơn để không quá hạn chờ
-  const vid = s.type === 'cta' || (s.type === 'bocuc' && (s.props?.kieu ?? 'o-nguoi') === 'o-nguoi');
+  const vid = s.type === 'cta' || (s.type === 'bocuc' && (s.props?.kieu ?? 'o-nguoi') === 'o-nguoi')
+    || (s.type === 've' && ['SoVang', 'SoiSang', 'GoLenh', 'NguoiTrongThe', 'HangThe', 'HaiThe', 'TheDocToi'].includes(s.props?.ve));   // cảnh mẫu Sang Huỳnh có chiếu video gốc
   const composition = await selectComposition({serveUrl, id: s.id});
   const t0 = Date.now();
   await renderMedia({serveUrl, composition, codec: 'prores', proResProfile: '4444', pixelFormat: 'yuva444p10le',

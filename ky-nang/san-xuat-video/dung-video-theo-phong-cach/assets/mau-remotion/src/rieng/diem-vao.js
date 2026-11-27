@@ -10,4 +10,8 @@ import {NhanTram} from './nhan-tram';
 import {DuongMay} from './duong-may';
 // Intro tiêu đề trên cảnh không lời (việc #39, 22/11): dòng nhỏ + tên rơi từng chữ + chữ to đập, quét sáng — chỉ khi David yêu cầu intro
 import {IntroTieuDe} from './intro-tieu-de';
-export const VE = {MauMach, NhanTram, DuongMay, IntroTieuDe};
+// 10 cách học từ Sang Huỳnh + kho aislop (27/11/2026, thiet-ke-bo-cuc/README.md mục 4a): toả nhánh, hội tụ, số vang, soi sáng, gõ lệnh,
+// hàng thẻ, hai thẻ, thẻ chào, người trong thẻ, thẻ dọc tối
+import {ToaNhanh, HoiTu, SoVang, SoiSang, GoLenh, HangThe, HaiThe, TheChao, NguoiTrongThe, TheDocToi} from './mau-sang-huynh';
+export const VE = {MauMach, NhanTram, DuongMay, IntroTieuDe,
+  ToaNhanh, HoiTu, SoVang, SoiSang, GoLenh, HangThe, HaiThe, TheChao, NguoiTrongThe, TheDocToi};
