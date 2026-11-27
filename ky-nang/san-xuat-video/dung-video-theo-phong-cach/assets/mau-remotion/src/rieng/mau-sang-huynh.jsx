@@ -34,12 +34,14 @@ const nenKem = {background: `radial-gradient(ellipse 80% 70% at 50% 30%, #F6F5F2
 const Hai = ({text = '', mau = M.nhan}) => <>{String(text).split(/(\*[^*]+\*)/).map((p, i) =>
   p.startsWith('*') ? <span key={i} style={{color: mau}}>{p.slice(1, -1)}</span> : <span key={i}>{p}</span>)}</>;
 // chữ hiện theo từng từ (mờ + trượt), mốc riêng
-const TuTu = ({text, f0, buoc = 3}) => <>{String(text).split(/(\s+)/).map((w, i) => {
+const TuTu = ({text, f0, buoc = 3}) => { let trong = false; return <>{String(text).split(/(\s+)/).map((w, i) => {
   if (/^\s+$/.test(w)) return w;
   const k = ea(f0 - i * buoc / 2, 0, 8, EXPO);
-  const nhan = w.includes('*');
+  if (w.startsWith('*')) trong = true;   // cụm *nhiều từ* tô màu nhấn từ đầu đến cuối cụm
+  const nhan = trong;
+  if (w.replace(/[.,!?;:…]+$/, '').endsWith('*')) trong = false;
   return <span key={i} style={{display: 'inline-block', opacity: k, transform: `translateY(${(1 - k) * 10}px)`, color: nhan ? M.nhan : undefined}}>{w.replace(/\*/g, '')}</span>;
-})}</>;
+})}</>; };
 const raCanh = (f, d) => ea(f, d - 9, d, Easing.in(Easing.cubic), 1, 0);
 const Goc = ({start, tu, style}) => <OffthreadVideo src={staticFile('goc.mp4')} trimBefore={fr(tu ?? start)} muted
   style={{width: '100%', height: '100%', objectFit: 'cover', ...style}} />;
@@ -61,7 +63,7 @@ export const ToaNhanh = ({start, nho, tieu_de, tieu_at, goc, nhanh = [], chon, d
   const duong = (xa, ya, xb, yb) => `M${xa},${ya} C${xa + 0.22 * W},${ya} ${xb - 0.22 * W},${yb} ${xb},${yb}`;
   const ve = (at, dai = 20) => ea(rr(f, at, start), 0, dai, IO);
   const mo = chon ? ea(rr(f, chon.at, start), 0, 10) : 0;
-  const kt = H * 0.019;
+  const kt = H * 0.026;
   const xc = 0.7 * W, yc = 0.88 * H, yd = 0.17 * H;
   return (
     <AbsoluteFill style={{...nenToi, opacity: Math.min(ea(f, 0, 8), raCanh(f, d))}}>
@@ -101,7 +103,7 @@ export const HoiTu = ({start, nho, vao = [], giua, nhan, ra, ben}) => {
   const f = useCurrentFrame();
   const {durationInFrames: d, width: W, height: H} = useVideoConfig();
   const kt = H * 0.034, cx = 0.5 * W, yv = 0.22 * H, yg = 0.47 * H, yr = 0.76 * H;
-  const xv = (i) => cx + (i - (vao.length - 1) / 2) * 0.24 * W;
+  const xv = (i) => cx + (i - (vao.length - 1) / 2) * (vao.length > 2 ? 0.26 : 0.36) * W;
   const chip = (text, x, y, k, extra = {}) => (
     <div style={{position: 'absolute', left: x, top: y, transform: `translate(-50%,-50%) translateY(${(1 - k) * 14}px) scale(${0.94 + 0.06 * k})`, opacity: k,
       background: M.the, border: `1.5px solid ${M.vien}`, borderRadius: kt * 0.5, padding: `${kt * 0.55}px ${kt * 0.9}px`, fontFamily: BODY,
@@ -289,7 +291,8 @@ export const HangThe = ({start, nho, nho_at, the = [], lon}) => {
               boxShadow: sang && dangSang >= 0 ? `0 0 ${kt * 1.6}px rgba(224,102,75,.45)` : '0 14px 36px rgba(0,0,0,.5)',
               opacity: k * (sang ? 1 : 0.45), transform: `translateY(${(1 - k) * 24}px) scale(${0.95 + 0.05 * k})`}}>
               <Hinh nguon={t2.hinh} start={start} />
-              {t2.chu && <div style={{position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: kt,
+              {t2.chu && <div style={{position: 'absolute', inset: 0, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', padding: kt,
+                background: t2.hinh ? 'linear-gradient(rgba(0,0,0,0) 30%, rgba(0,0,0,.78))' : undefined,
                 textAlign: 'center', fontFamily: HEAD, fontWeight: 800, fontSize: kt * 1.6, color: M.sang, textTransform: 'uppercase', lineHeight: 1.05}}>{t2.chu}</div>}
             </div>
             {t2.nhan && <div style={{position: 'absolute', left: x0 + i * (w + gap) + w / 2, top: y + h + kt * 1.1, transform: `translateX(-50%) translateY(${(1 - kn) * 10}px)`,
@@ -368,6 +371,7 @@ export const NguoiTrongThe = ({start, nho, buoc = []}) => {
   const {durationInFrames: d, width: W, height: H} = useVideoConfig();
   const n = buoc.length, kt = H * 0.03, gap = 0.035 * W, w = Math.min(0.27 * W, (0.9 * W - gap * (n - 1)) / n), h = buoc.some((b) => b.video || b.hinh) ? w * 1.1 : w * 0.5;
   const x0 = (W - (n * w + (n - 1) * gap)) / 2, y = (H - h) / 2 + 0.03 * H;
+  const hThe = (b) => (b.video || b.hinh ? h : w * 0.5), yThe = (b) => y + (h - hThe(b)) / 2;
   return (
     <AbsoluteFill style={{...nenKem, opacity: Math.min(ea(f, 0, 8), raCanh(f, d))}}>
       {nho && <div style={{position: 'absolute', left: 0.05 * W, top: 0.07 * H, fontFamily: BODY, fontWeight: 800, fontSize: kt * 1.1, color: M.nhan,
@@ -377,8 +381,8 @@ export const NguoiTrongThe = ({start, nho, buoc = []}) => {
           <line key={i} x1={xa} y1={yy} x2={xa + (xb - xa) * ea(rr(f, b.at, start), -8, 4, IO)} y2={yy} stroke={M.nhan} strokeWidth={3} strokeDasharray="10 9" />); })}
       </svg>
       {buoc.map((b, i) => { const k = ea(rr(f, b.at, start), 0, 16, EXPO), co = !!(b.video || b.hinh); return (
-        <div key={i} style={{position: 'absolute', left: x0 + i * (w + gap), top: y, width: w, height: h, background: M.trang, borderRadius: kt * 0.7,
-          overflow: 'hidden', boxShadow: '0 20px 50px rgba(30,30,40,.18)', opacity: k, transform: `translateY(${(1 - k) * 28}px) scale(${0.95 + 0.05 * k})`,
+        <div key={i} style={{position: 'absolute', left: x0 + i * (w + gap), top: yThe(b), width: w, height: hThe(b), background: M.trang, borderRadius: kt * 0.7,
+          overflow: 'hidden', boxShadow: '0 20px 50px rgba(30,30,40,.18)', justifyContent: co ? 'flex-start' : 'center', opacity: k, transform: `translateY(${(1 - k) * 28}px) scale(${0.95 + 0.05 * k})`,
           display: 'flex', flexDirection: 'column'}}>
           <div style={{padding: `${kt * 0.9}px ${kt}px ${kt * 0.5}px`}}>
             <div style={{fontFamily: BODY, fontWeight: 800, fontSize: kt * 0.75, color: M.nhan, letterSpacing: 1.5}}>BƯỚC {b.so ?? i + 1}</div>
