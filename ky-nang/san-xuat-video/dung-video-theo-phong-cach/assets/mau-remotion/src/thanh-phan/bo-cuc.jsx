@@ -151,7 +151,9 @@ const ONguoi = ({sceneId, start, o, noi_dung, khung, bam, nguoi_duoi = false}) =
   const f = useCurrentFrame();
   const {durationInFrames: d} = useVideoConfig();
   const m = MAT[sceneId] || {cx: 0.5, cy: 0.42, w: 0.18, h: 0.3};
-  const kc = khungCat(m, khung, bam);
+  const kc = khung === 'toan-canh'
+    ? {l: 0, r: 1, t: 0, b: 1, phia: bam === 'phai' ? 'phai' : 'trai'}
+    : khungCat(m, khung, bam);
   const cw = (kc.r - kc.l) * W, ch = (kc.b - kc.t) * H, ar = cw / ch;
   // cỡ ô: theo tỉ lệ khung cắt, vừa trong tối đa 46% bề ngang × 72% bề cao (ngang) — dọc: rộng hết, cao tối đa 40%
   const duoi = !LAND && nguoi_duoi && !o;

@@ -70,6 +70,7 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
 - **Mọi video đều có điểm nhấn** (motion graphics hiểu theo nghĩa rộng: yếu tố thu hút ánh nhìn người xem vào ý đang nói) — "dựng nhẹ" vẫn có. Có nhiều
   loại: hình vẽ, chữ nhấn cụm then chốt, làm nổi người đang nói (`nhan`), sơ đồ, thẻ lật 3D, đường vẽ tiếp, cảnh toàn màn hình. Thay đổi kiểu
   và chuyển cảnh qua các cảnh, giữ gọn (mục 0). Cách chọn: khối 07.
+- **Có hình quay thì ưu tiên hình gốc cùng motion graphics.** Giữ toàn cảnh nếu địa điểm, vật thể hoặc cử chỉ đang mang thông tin. Đặt đồ họa cạnh người hoặc chia khung và giữ video đang chạy khi vùng trống không đủ. Chỉ thay toàn khung bằng đồ họa khi số liệu hoặc quan hệ giữa các số khó đọc ngay cả trong bố cục chia khung. Giữ đoạn thay hình ngắn và trở về hình gốc khi người xem đã nắm được số liệu. Áp dụng [mục 4a](thiet-ke-bo-cuc/README.md#4a-tái-dựng-theo-đúng-video-mẫu) khi dựng theo mẫu hoặc làm bản trình diễn kho.
 - **Bố cục tự cân đối** theo thước đo ở `thiet-ke-bo-cuc/README.md` mục 2, chọn từ `thiet-ke-bo-cuc/bo-cuc.md`.
 - **Tự chọn trước kế hoạch cảnh** (cả 3 skill dựng): yêu cầu người dùng → chẩn đoán → loại nội dung → bố cục nền, lớp thông tin → mỗi cảnh
   "Cần · Vì · Làm" theo `thiet-ke-bo-cuc/nhu-cau-nguoi-xem.md` + `huong-dan-lua-chon.md` (`chan-doan.py`); ghi vào `ke-hoach-canh.md`.

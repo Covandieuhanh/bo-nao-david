@@ -191,3 +191,7 @@ Thiết bị chỉ cần có repo này là đủ để dựng video giống Mac 
 ### Đồng bộ skill video đang cài cho Codex
 
 Từ bản repo dùng chung, chạy `bash tu-dong-hoa/cai-dat-bo-nao.sh --codex-video`. Lệnh sao lưu hai thư mục skill cũ nếu có rồi liên kết skill dựng video, podcast và highlight với repo. Mở phiên mới để Codex nạp lại danh sách skill.
+
+### Dựng lại một bản đối chiếu motion graphics
+
+Mở Claude Code trong repo đã đồng bộ. Khi đã có gói dựng của một bản bàn giao, giải nén và đọc `README.md` trong gói. Chọn đúng tệp video nguồn theo hướng dẫn, dùng font kèm theo và chạy đúng lệnh xuất từ gói. Với bản có `render.py` và `doi-chieu.render.json`, dùng tùy chọn `--expect doi-chieu.render.json` để kiểm nguồn, mã dựng, phông và ảnh/tiếng đã giải mã. Sai nguồn hoặc tài nguyên thì xác định lại phiên bản trước khi dựng. Sai ảnh hoặc tiếng trên máy khác thì so phiên bản Pillow, FFmpeg và khung ở mốc kiểm. Skill và tài liệu triển khai cách chọn cảnh mới; gói dựng phục vụ xuất lại đúng bản đã kiểm.

@@ -15,12 +15,13 @@ if (!process.argv[2] || !fs.existsSync(SRC)) { console.error('cách dùng: soat-
 const imp = (f) => import(pathToFileURL(path.join(SRC, f)).href);
 const read = (f) => { try { return fs.readFileSync(path.join(SRC, f), 'utf8'); } catch { return ''; } };
 
-let list = [], duration = 0, NGANG = false, CO_NGUOI = false, MAT = {}, fps = 0;
+let list = [], duration = 0, NGANG = false, CO_NGUOI = false, GIU_HINH_GOC = false, MAT = {}, fps = 0;
 if (fs.existsSync(path.join(SRC, 'canh.js'))) {
   list = (await imp('canh.js')).SCENES || [];
   const pj = (await imp('du-an.js')).default; duration = pj.duration || 0; NGANG = pj.width > pj.height && !pj.podcast;
   fps = pj.fpsNum / (pj.fpsDen || 1);
   CO_NGUOI = !pj.podcast;   // khuôn 1 video: người nói trên hình (podcast chỉ tiếng thì không)
+  GIU_HINH_GOC = CO_NGUOI && pj.giuHinhGoc === true;
   try { MAT = (await imp('mat.js')).default || {}; } catch {}
 } else if (fs.existsSync(path.join(SRC, 'danh-sach-cat.js'))) {   // ghép vlog, highlight người nói: lớp phủ phẳng, không có props
   const e = await imp('danh-sach-cat.js');
@@ -37,6 +38,8 @@ const icons = new Set([...read('thu-vien/bieu-tuong.jsx').matchAll(/^\s*'?([a-zA
 const modes = (f) => new Set([...read(f).matchAll(/mode === '([a-z-]+)'/g)].map((m) => m[1]));
 const MODES = {illus: new Set(['single', 'flow', 'vs', 'count', 'list']), diagram: modes('thu-vien/so-do.jsx')};
 const FULL = new Set(['illus', 'diagram', 'action', 'cta', 'card', 'montage', 'recap', 'converge', 'master', 'gens', 'build']);
+
+const DO_HOA_TOAN_KHUNG = new Set(['illus', 'diagram', 'card', 'converge', 'master', 'gens', 'build']);
 
 const words = (t) => String(t ?? '').replace(/\*/g, '').trim().split(/\s+/).filter(Boolean).length;
 const need = (t) => 0.5 + 0.3 * words(t);          // đủ đọc: 0,5 s + 0,3 s mỗi từ
@@ -80,6 +83,11 @@ for (const raw of list) {
   // lower (22/11/2026, tap-dji0022-2111): ở khung ngang không hiện gì mà phụ đề vẫn nhường → trống chữ
   if (NGANG && (s.type === 'kinetic' || s.type === 'action' || s.type === 'lower'))
     bao('P0', s.start, s.id, `kiểu "${s.type}" lỗi ở khung ngang`, 'dùng cảnh tự vẽ ở chỗ trống (ve) hoặc bocuc the-canh');
+  const doHoaToanKhung = DO_HOA_TOAN_KHUNG.has(s.type)
+      || (s.type === 'bocuc' && ['chuong', 'tien-trinh'].includes(s.kieu))
+      || (s.type === 've' && s.hinhGoc === false);
+  if (GIU_HINH_GOC && doHoaToanKhung && !String(s.soLieuToanKhung || '').trim())
+    bao('P0', s.start, s.id, 'đồ họa che hết hình gốc', 'dùng bocuc canh-nguoi hoặc o-nguoi; nếu phải trình bày số liệu khó, ghi số liệu và lý do ở props.soLieuToanKhung');
   // Các kiểu có thể thay đổi hình gốc cần xem thử, vì tên kiểu không chứng minh mặt bị che.
   if (CO_NGUOI && !s.khong_nguoi && (FULL.has(s.type) || s.phong === 'nguoi-mo' ||
       (s.type === 'bocuc' && ['o-nguoi', 'chuong', 'muc-luc', 'tren-duoi', 'o-tron'].includes(s.kieu))))

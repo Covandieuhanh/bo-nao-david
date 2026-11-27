@@ -74,7 +74,7 @@ subprocess.run(["ffmpeg", "-y", "-v", "error", "-stats", "-i", raw, "-/filter_co
 new_dur = float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", out], env=ENV))
 open(os.path.join(P, "chuyen-dong", "src", "du-an.js"), "w").write(
     "// Thông số video gốc (bản đã làm sạch) — tự điền bởi ap-dung-lam-sach.py\n"
-    f"export default {{fpsNum: {fn}, fpsDen: {fd}, width: {OW}, height: {OH}, duration: {new_dur:.3f}, source: 'video-goc.mp4'}};\n")
+    f"export default {{fpsNum: {fn}, fpsDen: {fd}, width: {OW}, height: {OH}, duration: {new_dur:.3f}, giuHinhGoc: true, source: 'video-goc.mp4'}};\n")
 
 # Bảng quy đổi mốc thô → mốc sạch (dùng khi đổi cắt sau khi đã có canh.js)
 seg, c = [], 0.0

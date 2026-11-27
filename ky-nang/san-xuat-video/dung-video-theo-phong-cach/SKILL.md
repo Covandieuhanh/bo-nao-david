@@ -18,6 +18,8 @@ theo khối. Luật về dừng giữa chừng, về báo cáo "đã chọn X v�
 
 **Khi David yêu cầu bám đúng video mẫu hoặc dựng đủ kho hiệu ứng:** dùng [mục 4a](../thiet-ke-bo-cuc/README.md#4a-tái-dựng-theo-đúng-video-mẫu) để thay bước chọn phong cách và cảnh bằng đối chiếu trực tiếp với từng mẫu. Bản trình diễn là tập hợp các trích đoạn nguồn đã ghép, mỗi chương có bằng chứng phù hợp và mốc kiểm. Bàn giao theo vị trí David yêu cầu.
 
+**Giữ hình gốc trong thân video** theo [quy tắc hình](../quy-tac-chung.md#4-hình). Đặt sơ đồ hoặc thẻ vào `bocuc canh-nguoi` hay `bocuc o-nguoi`, truyền `khung: 'toan-canh'` khi cần giữ trọn vùng quay. Dự án mới mặc định bật `giuHinhGoc` trong `du-an.js`; khi cập nhật bản dựng đã có, bật lại cờ này trước khi chạy kiểm. Với cảnh đồ họa toàn khung, `props.soLieuToanKhung` ghi số liệu và lý do chúng cần trọn khung. Cảnh tự vẽ khai `props.hinhGoc: false` nếu che hết hình quay.
+
 ## Nhịp làm việc (mục tiêu: video 10 phút hoàn thành trong khoảng 1 giờ)
 
 - **Tự chọn trước, không thử bằng render** (`../thiet-ke-bo-cuc/nhu-cau-nguoi-xem.md` → `../thiet-ke-bo-cuc/huong-dan-lua-chon.md`): đọc `yeu-cau.md` + `them-anh/` → chẩn đoán →

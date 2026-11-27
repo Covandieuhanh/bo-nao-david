@@ -24,7 +24,7 @@ FN=${FR%/*}; FD=${FR#*/}
 DUR=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$SRC")
 cat > "$P/chuyen-dong/src/du-an.js" <<JS
 // Thông số video gốc — tự điền bởi tao-du-an.sh
-export default {fpsNum: $FN, fpsDen: $FD, width: $W, height: $H, duration: $DUR, source: 'video-goc.$EXT'};
+export default {fpsNum: $FN, fpsDen: $FD, width: $W, height: $H, duration: $DUR, giuHinhGoc: true, source: 'video-goc.$EXT'};
 JS
 ( cd "$P/chuyen-dong" && npm install --no-fund --no-audit >/dev/null 2>&1 && npm approve-scripts esbuild >/dev/null 2>&1 || true )
 echo "Video gốc: ${W}x${H}, ${FN}/${FD} fps, ${DUR}s"

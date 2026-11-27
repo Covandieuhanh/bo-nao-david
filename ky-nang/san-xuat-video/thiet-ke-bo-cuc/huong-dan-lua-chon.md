@@ -143,15 +143,15 @@ Trước khi xuất, xem liên tiếp các đoạn nhấn ở kích thước ph�
 |---|---|---|---|
 | Lời kèm hình | một vật / việc / khái niệm | `illus single` · chữ nhấn `nhan` | cạnh chủ thể (`canh-nguoi`) |
 | Lời kèm hình | nhân quả, các bước 2–3 | `illus flow` | cạnh chủ thể (`canh-nguoi`) |
-| Lời kèm hình | một con số người nói | `illus count` | toàn màn hình (ngắn) |
-| Lời kèm hình | tầng bậc / cấp | `diagram tang` · `xay-tang` (tầng sau cần tầng trước) | toàn màn hình |
-| Lời kèm hình | trong → ngoài | `diagram vong` | toàn màn hình |
-| Lời kèm hình | mốc thời gian | `diagram moc` | toàn màn hình |
-| Lời kèm hình | so độ lớn nhiều con số | `diagram cot` | toàn màn hình |
-| Lời kèm hình | phần trên tổng, khi người xem cần thấy tỉ lệ (chỉ cần nhớ con số thì thẻ chữ, nguyên lý Báo hiệu, trường hợp 9 của `truong-hop-da-giai.md`) | `diagram luoi` | toàn màn hình |
-| Lời kèm hình | từ … thành … | `diagram tu-thanh` · `doi-trang-thai` | toàn màn hình |
-| Lời kèm hình | việc đi từ người này sang người kia | `diagram chuyen-giao` | toàn màn hình |
-| Chia đoạn | quy trình 3–6 bước kể liền một mạch ("đầu tiên… rồi… cuối cùng") | `diagram chuoi` (bước hiện theo lời, dây có chấm chạy, bước đang nói sáng) | toàn màn hình; dọc giải thích dài → `o-nguoi` `nguoi_duoi` + `chuoi` |
+| Lời kèm hình | một con số người nói | `illus count` | thẻ số cạnh người hoặc vật |
+| Lời kèm hình | tầng bậc / cấp | `diagram tang` · `xay-tang` (tầng sau cần tầng trước) | cạnh hình gốc hoặc chia khung |
+| Lời kèm hình | trong → ngoài | `diagram vong` | cạnh hình gốc hoặc chia khung |
+| Lời kèm hình | mốc thời gian | `diagram moc` | cạnh hình gốc hoặc chia khung |
+| Lời kèm hình | so độ lớn nhiều con số | `diagram cot` | cạnh hình gốc hoặc chia khung |
+| Lời kèm hình | phần trên tổng, khi người xem cần thấy tỉ lệ (chỉ cần nhớ con số thì thẻ chữ, nguyên lý Báo hiệu, trường hợp 9 của `truong-hop-da-giai.md`) | `diagram luoi` | cạnh hình gốc hoặc chia khung |
+| Lời kèm hình | từ … thành … | `diagram tu-thanh` · `doi-trang-thai` | cạnh hình gốc hoặc chia khung |
+| Lời kèm hình | việc đi từ người này sang người kia | `diagram chuyen-giao` | cạnh hình gốc hoặc chia khung |
+| Chia đoạn | quy trình 3–6 bước kể liền một mạch ("đầu tiên… rồi… cuối cùng") | `diagram chuoi` (bước hiện theo lời, dây có chấm chạy, bước đang nói sáng) | cạnh hình gốc; dọc giải thích dài → `o-nguoi` `nguoi_duoi` + `chuoi` |
 | Chia đoạn | quy trình nhiều bước, vẽ tiếp qua nhiều cảnh | `canh-nguoi` + `tu_buoc` / `mach.js` | cạnh chủ thể |
 | Chia đoạn | liệt kê 3–5 thứ | `illus list` · `the-canh` (giữ người) · thêm vào bảng ghi chú | cạnh chủ thể |
 | Chia đoạn | ít nhất 2 cặp "đừng… hãy…" / "sai… đúng…" / "thay vì… thì…" nối nhau | `bocuc dung-hay` (một cặp lẻ → `illus vs`) | dọc: khung trên, người dưới · ngang: cạnh người |
@@ -160,7 +160,7 @@ Trước khi xuất, xem liên tiếp các đoạn nhấn ở kích thước ph�
 | Báo hiệu | đổi ý ("không phải A, mà là B") | `the-canh` có gạch chữ | cạnh chủ thể |
 | Báo hiệu | phỏng vấn / lời chứng, có người hỏi | `bocuc cau-hoi` + `lower` tên · vai trò | dưới mặt |
 | Báo hiệu · Cảm xúc | câu then chốt, điểm chốt cảm xúc, đỉnh cảm xúc | `nhan` làm tối / chữ cạnh mặt · `the-canh` chữ to | trên người / cạnh |
-| Gần chỗ | so sánh nên / không nên, trước / sau | `illus vs` · trước/sau | toàn màn hình hoặc cạnh |
+| Gần chỗ | so sánh nên / không nên, trước / sau | `illus vs` · trước/sau | cạnh hình gốc hoặc chia khung |
 | Gần chỗ | có hai nguồn hình cùng lúc (ảnh trước và video sau, bản gốc và kết quả) | `bocuc tren-duoi` (`giuPhuDe: true`) | toàn màn hình |
 | Mặt người nói | giải thích dài vẫn cần thấy người | `o-nguoi` (người vào ô); khung dọc: `nguoi_duoi: true` (hình nửa trên, người nửa dưới) | — |
 | Mặt người nói · Lời kèm hình | lời tả chi tiết một thứ cần nhìn kỹ (một bộ phận, sản phẩm, màn hình) ít nhất khoảng 4 s, có ảnh / hình vẽ đúng thứ đó | `bocuc o-tron` | toàn màn hình, người ô tròn |
