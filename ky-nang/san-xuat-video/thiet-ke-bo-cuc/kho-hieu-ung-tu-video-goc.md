@@ -47,3 +47,11 @@ Không có Đ1 (đã có lá). Đ3 khi một hiệu ứng mới đụng màu ch�
 ## Lỗi hay gặp
 - Tệp gốc trên Drive có thể đã bị dọn theo luật xoá tệp gốc (`du-an/kho-drive.md`) giữa lúc đang chép: chọn nguồn khác có cùng dấu hiệu, ghi vào báo cáo.
 - Video điện thoại có góc xoay: script ghép tự xoay; nguồn dọc trong bản ngang được thu vừa khung, nên đưa hiệu ứng chỉ dọc vào bản `--doc` riêng.
+- Kiểu cũ `lower`, `kinetic`, `converge`, `action` chỉ viết cho khung dọc (vị trí cố định 1040–1150 px): trên khung ngang chữ nằm ngoài khung hoặc bộ soát chặn.
+  `converge` còn có tiêu đề cố định "TẤT CẢ NHỮNG NGHỀ ĐÃ LÀM" (không phải lời người nói). Bản ngang dùng mẫu riêng tương đương (`DuongMay` thẻ tên, câu đắt;
+  `NhanTram` thẻ ý; `bocuc` the-canh); `kinetic` đưa vào bản dọc.
+- Luật giữ hình gốc (`quy-tac-chung.md` mục 4): bộ soát chặn `illus` / `diagram` toàn khung. Đặt chúng trong `bocuc` `o-nguoi` (`noi_dung`); kiểu vốn toàn khung
+  (màn chương, thanh tiến trình, thẻ các bước, nền người mờ, nền hạt) ghi lý do ở `props.soLieuToanKhung`.
+- Đoạn lặp lại trong bản ghép (cùng một nguồn dùng cho nhiều hiệu ứng) làm `soat-khop-tieng.py` báo lệch giả hơn 3 giây ở chỗ lời trùng: đối chiếu với `bang-moc.md` trước khi sửa.
+- Mẫu `DuongMay` (thẻ lật, gạch thay, câu đắt) có chữ nhỏ khi xem khung ngang toàn màn hình: chấp nhận cho bản xem; dựng thật thì chọn kiểu khác nếu chữ không đọc kịp.
+
