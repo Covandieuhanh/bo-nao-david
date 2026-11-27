@@ -100,8 +100,8 @@ export const ToaNhanh = ({start, nho, tieu_de, tieu_at, goc, nhanh = [], chon, d
 export const HoiTu = ({start, nho, vao = [], giua, nhan, ra, ben}) => {
   const f = useCurrentFrame();
   const {durationInFrames: d, width: W, height: H} = useVideoConfig();
-  const kt = H * 0.022, cx = 0.5 * W, yv = 0.2 * H, yg = 0.44 * H, yr = 0.72 * H;
-  const xv = (i) => cx + (i - (vao.length - 1) / 2) * 0.17 * W;
+  const kt = H * 0.034, cx = 0.5 * W, yv = 0.22 * H, yg = 0.47 * H, yr = 0.76 * H;
+  const xv = (i) => cx + (i - (vao.length - 1) / 2) * 0.24 * W;
   const chip = (text, x, y, k, extra = {}) => (
     <div style={{position: 'absolute', left: x, top: y, transform: `translate(-50%,-50%) translateY(${(1 - k) * 14}px) scale(${0.94 + 0.06 * k})`, opacity: k,
       background: M.the, border: `1.5px solid ${M.vien}`, borderRadius: kt * 0.5, padding: `${kt * 0.55}px ${kt * 0.9}px`, fontFamily: BODY,
@@ -139,7 +139,7 @@ export const HoiTu = ({start, nho, vao = [], giua, nhan, ra, ben}) => {
 };
 
 // ───────────────── 3. Số vang (echo-number, mã tác giả 3,8 giây) + thanh (mẫu 00:59) ─────────────────
-// {nhan, so, at, phu, thanh: {tu: 0–1, den: 0–1, at, dai giây}, nguoi: {pos}} — nửa phải là chính video người nói
+// {nhan, so, at, phu, thanh: {tu_muc: 0–1, den_muc: 0–1, at, dai giây}, nguoi: {pos}} — nửa phải là chính video người nói
 export const SoVang = ({start, nhan, so, at, phu, thanh, nguoi = {}}) => {
   const f = useCurrentFrame();
   const {durationInFrames: d, width: W, height: H, fps} = useVideoConfig();
@@ -150,7 +150,7 @@ export const SoVang = ({start, nhan, so, at, phu, thanh, nguoi = {}}) => {
   const vang = [[0.69, -336, 0.13], [0.57, -224, 0.2], [0.45, -112, 0.27], [0.45, 112, 0.27], [0.57, 224, 0.2], [0.69, 336, 0.13]];
   const troi = interpolate(f, [0, d], [0, -46 * s], kep);
   const kThanh = thanh ? ea(rr(f, thanh.at, start), 0, (thanh.dai ?? 1.2) * fps, IO) : 0;
-  const muc = thanh ? thanh.tu + (thanh.den - thanh.tu) * kThanh : 0;
+  const muc = thanh ? (thanh.tu_muc ?? 0) + ((thanh.den_muc ?? 1) - (thanh.tu_muc ?? 0)) * kThanh : 0;
   const line = {position: 'absolute', left: 0, right: 0, top: '50%', marginTop: -58 * s, height: 130 * s, lineHeight: `${130 * s}px`,
     textAlign: 'center', fontFamily: HEAD, fontWeight: 900, fontSize: 112 * s, letterSpacing: '-0.02em', whiteSpace: 'nowrap'};
   return (
@@ -268,16 +268,16 @@ export const GoLenh = ({start, nhan = 'PROMPT', text = '', at, toc = 14, chu_thi
 };
 
 // ───────────────── 6. Hàng thẻ (mẫu 00:10–00:18) ─────────────────
-// {nho, the:[{hinh: {photo}|{video, tu}|null, chu, at, sang_tu, nhan, nhan_at}], lon: {text, at}}
+// {nho, the:[{hinh: {photo}|{video, tu}|null, chu, at, sang_tu, nhan, nhan_dau ('làm từ' như mẫu, chỉ khi lời có), nhan_at}], lon: {text, at}}
 export const HangThe = ({start, nho, nho_at, the = [], lon}) => {
   const f = useCurrentFrame();
   const {durationInFrames: d, width: W, height: H} = useVideoConfig();
   const n = the.length, gap = 0.012 * W, w = Math.min(0.26 * W, (0.9 * W - gap * (n - 1)) / n), h = w * 0.56;
-  const x0 = (W - (n * w + (n - 1) * gap)) / 2, y = lon ? 0.4 * H : 0.33 * H, kt = H * 0.02;
+  const x0 = (W - (n * w + (n - 1) * gap)) / 2, y = lon ? 0.42 * H : 0.33 * H, kt = H * 0.03;
   const dangSang = the.reduce((a, t2, i) => (t2.sang_tu != null && rr(f, t2.sang_tu, start) >= 0 ? i : a), -1);
   return (
     <AbsoluteFill style={{...nenToi, opacity: Math.min(ea(f, 0, 8), raCanh(f, d))}}>
-      {nho && <div style={{position: 'absolute', left: 0, right: 0, top: y - 0.13 * H, textAlign: 'center', fontFamily: BODY, fontWeight: 600,
+      {nho && <div style={{position: 'absolute', left: 0, right: 0, top: y - (lon ? 0.21 : 0.12) * H, textAlign: 'center', fontFamily: BODY, fontWeight: 600,
         fontSize: kt * 1.05, color: M.mo}}><TuTu text={nho} f0={rr(f, nho_at, start)} /></div>}
       {the.map((t2, i) => {
         const k = ea(rr(f, t2.at, start), 0, 14, EXPO), sang = dangSang < 0 || dangSang === i;
@@ -295,11 +295,11 @@ export const HangThe = ({start, nho, nho_at, the = [], lon}) => {
             {t2.nhan && <div style={{position: 'absolute', left: x0 + i * (w + gap) + w / 2, top: y + h + kt * 1.1, transform: `translateX(-50%) translateY(${(1 - kn) * 10}px)`,
               opacity: kn * (sang ? 1 : 0.55), background: '#1b1b1b', border: `1.5px solid ${M.vien}`, borderRadius: 99, padding: `${kt * 0.35}px ${kt * 0.9}px`,
               whiteSpace: 'nowrap', fontFamily: BODY}}>
-              <span style={{fontSize: kt * 0.62, color: M.nhan, fontWeight: 800, letterSpacing: 1.5, marginRight: kt * 0.5}}>LÀM TỪ</span>
+              {t2.nhan_dau && <span style={{fontSize: kt * 0.62, color: M.nhan, fontWeight: 800, letterSpacing: 1.5, marginRight: kt * 0.5, textTransform: 'uppercase'}}>{t2.nhan_dau}</span>}
               <span style={{fontSize: kt * 0.95, color: M.sang, fontWeight: 700}}>{t2.nhan}</span></div>}
           </React.Fragment>);
       })}
-      {lon && <div style={{position: 'absolute', left: 0, right: 0, top: y - 0.1 * H, textAlign: 'center', fontFamily: HEAD, fontWeight: 800,
+      {lon && <div style={{position: 'absolute', left: 0, right: 0, top: y - 0.15 * H, textAlign: 'center', fontFamily: HEAD, fontWeight: 800,
         fontSize: H * 0.075, color: M.sang, textTransform: 'uppercase'}}><TuTu text={lon.text} f0={rr(f, lon.at, start)} buoc={5} /></div>}
     </AbsoluteFill>
   );
@@ -310,7 +310,7 @@ export const HangThe = ({start, nho, nho_at, the = [], lon}) => {
 export const HaiThe = ({start, dau, the = []}) => {
   const f = useCurrentFrame();
   const {durationInFrames: d, width: W, height: H} = useVideoConfig();
-  const kt = H * 0.022, w = 0.34 * W, h = 0.3 * H, gap = 0.03 * W, x0 = (W - (the.length * w + (the.length - 1) * gap)) / 2;
+  const kt = H * 0.03, w = 0.4 * W, h = 0.34 * H, gap = 0.03 * W, x0 = (W - (the.length * w + (the.length - 1) * gap)) / 2;
   const kLen = dau ? ea(rr(f, the[0]?.at, start), -4, 14, IO) : 1;   // tiêu đề từ giữa khung đi lên khi thẻ đầu vào
   return (
     <AbsoluteFill style={{...nenKem, opacity: Math.min(ea(f, 0, 8), raCanh(f, d))}}>
@@ -366,7 +366,7 @@ export const TheChao = ({start, nho, nut = [], tren, giua, duoi, phai = true}) =
 export const NguoiTrongThe = ({start, nho, buoc = []}) => {
   const f = useCurrentFrame();
   const {durationInFrames: d, width: W, height: H} = useVideoConfig();
-  const n = buoc.length, kt = H * 0.02, gap = 0.035 * W, w = Math.min(0.27 * W, (0.9 * W - gap * (n - 1)) / n), h = w * 1.1;
+  const n = buoc.length, kt = H * 0.03, gap = 0.035 * W, w = Math.min(0.27 * W, (0.9 * W - gap * (n - 1)) / n), h = buoc.some((b) => b.video || b.hinh) ? w * 1.1 : w * 0.5;
   const x0 = (W - (n * w + (n - 1) * gap)) / 2, y = (H - h) / 2 + 0.03 * H;
   return (
     <AbsoluteFill style={{...nenKem, opacity: Math.min(ea(f, 0, 8), raCanh(f, d))}}>
