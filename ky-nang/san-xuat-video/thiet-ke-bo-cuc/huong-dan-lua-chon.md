@@ -172,6 +172,8 @@ cho đỉnh và ý cần nhìn rõ. **Lời có dạng rõ mà không kiểu nà
 
 ### Gắn chuyển động với lời và hình
 
+**Nhịp xuất hiện mặc định:** dùng fade-in ngắn và easing để hình, chữ hoặc viền đi vào nhẹ. Giữ mốc kích hoạt của lời hoặc sự kiện, rồi tăng độ rõ trong phần đầu chuyển động. Có thể chọn nhịp nhanh hơn khi cần dứt khoát, hoặc giữ mềm hơn khi lời lắng. Các lớp bắt đầu ở mốc riêng. Kiểm bản thử để chắc rằng lớp cũ đứng ổn định, phần mới đọc được đúng lúc và chuyển động không làm nhòe hình quay.
+
 Khi chọn kiểu trong kho, đọc hàng cấu tạo của phiếu học và thiết lập từng chi tiết phù hợp với cảnh. Gắn mỗi thay đổi có ý nghĩa với một cụm lời, một động tác hoặc một điểm cắt. Hiệu ứng có nhiều nhịp, như thu hình rồi hiện hai con số, dùng mốc riêng cho từng nhịp.
 
 Với nhịp theo lời, dùng bản SRT từng từ thuộc chính video đã làm sạch. Nghe đối chiếu cụm quan trọng với tiếng gốc. Chạy `node moc-theo-loi.mjs moc-tung-tu.srt yeu-cau-moc.json` từ thư mục script. JSON có `fps` và mảng `moc`, mỗi mục ghi `cum`, `tuGiay`, `denGiay`, tùy chọn `canh` là `dau` hoặc `cuoi`, và `goc` nếu dựng trích đoạn. Dùng `at` từ kết quả trong mã hiệu ứng. Cụm trùng hoặc không thấy phải được phân giải bằng đoạn hẹp hơn hoặc kiểm lại lời.

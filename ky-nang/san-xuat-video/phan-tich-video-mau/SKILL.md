@@ -16,6 +16,14 @@ Skill này chỉ là **điểm vào**; không ghi luật riêng ở đây để 
 
 Khi ghi một cách đã học, mô tả cách tổ chức toàn khung trước và sau, điểm nhìn, nhịp đổi theo lời, và điều kiện nguồn cần có. Thử cách ấy trên một đoạn nguyên văn có tình huống tương ứng để xác nhận hiệu quả trong bản dựng. Chụp một cấu kiện riêng chỉ kiểm được cấu kiện; bản thử phải cho thấy quan hệ giữa cấu kiện và hình gốc. Điền bảng **Cấu tạo chuyển động theo khung hình** trong phiếu học cho từng hiệu ứng quan sát được. Rà đoạn mẫu theo khung ở lúc vào, trạng thái chính và lúc ra. Ghi lại cả chi tiết bề mặt, mặt nạ, viền, bóng và nhịp thay đổi của từng lớp để tái dựng.
 
+## Khi mục tiêu là bám sát thẩm mỹ một hình mẫu
+
+Chọn một đoạn gốc có mốc rõ và đối chiếu với đoạn thử trên tư liệu David ở cùng trạng thái chuyển động. Ghi chữ theo vai trò,
+độ nặng, độ cô, cỡ tương đối và giãn chữ; đo khung theo tỷ lệ màn hình, gồm bán kính góc, viền, độ dày nét, khoảng cách, bóng
+và thứ tự lớp. Ghi rõ font nhận diện được và font thay thế. Giữ bộ chi tiết của cảnh mẫu làm chuẩn trong lần thử đầu.
+Nếu mới có phiếu mô tả, ghi mức đối chiếu là tham khảo. Khi quan sát được khung gốc, ghi mốc đã xem, đặc điểm khớp và các
+điểm chuyển thể sang tư liệu David. Dùng một cảnh thử để kiểm chữ, khung và nhịp trước khi nhân rộng sang nhiều hiệu ứng.
+
 ## Đọc kèm (ở đúng bước cần)
 - `../thiet-ke-bo-cuc/bo-cuc.md`, `../thiet-ke-bo-cuc/am-thanh.md`: kho đã có, để biết điều mới có trùng với phần đã có không.
 - `../quy-tac-chung.md`, `../dung-video-theo-phong-cach/references/loi-thuong-gap.md`: các quy tắc chặn đã có phải giữ.
