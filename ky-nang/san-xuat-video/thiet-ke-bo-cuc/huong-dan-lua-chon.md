@@ -112,8 +112,8 @@ một điểm nhấn. Hình phủ (toàn màn hình và bố cục) quá khoản
 **4c. Kho cách thể hiện, xếp theo nguyên lý.** Người dựng gọi tên cái khó, tìm nguyên lý, rồi đi hết các dòng của nguyên lý đó, không dừng ở 3–4 kiểu quen thuộc.
 Người dựng ghi mỗi cảnh một dòng `- <id> · Cần: <nguyên lý> · Vì: <cái khó> · Làm: <cách>` (`nhu-cau-nguoi-xem.md` mục 4).
 Cột "Nơi" ghi "toàn màn hình" chỉ dùng ở đoạn **không có nội dung chính cần thấy** (người đang nói, người đang trao đổi, thứ đang được nói tới). Khi nội dung chính còn trên hình thì cùng cấu trúc hình đó
-vẽ vào chỗ trống thật của khung bằng cảnh tự vẽ `ve` (vị trí `o`, mẫu `rieng/duong-may.jsx`: mạch "đường may" vẽ tiếp qua nhiều cảnh);
-khung nhiều người không dùng ô người (`quy-tac-chung.md` mục 4). Kho được dùng tự do: đổi kiểu hình và chuyển cảnh qua các cảnh (kể cả kiểu chưa dùng ở tập trước), gọn, và ghi ở Chẩn
+chọn giữa vẽ trực tiếp tại chỗ trống, bám vật đang được nói tới, hoặc bố trí lại hình để đồ họa có đủ diện tích đọc. Dùng `rieng/duong-may.jsx` khi tấm nền và mạch vẽ phù hợp với ý;
+khung nhiều người phải giữ tất cả người đang trao đổi (`quy-tac-chung.md` mục 4). Kho được dùng tự do: đổi kiểu hình và chuyển cảnh qua các cảnh (kể cả kiểu chưa dùng ở tập trước), gọn, và ghi ở Chẩn
 đoán dòng `Đổi hiệu ứng: <các kiểu, chuyển cảnh đã chọn>`.
 
 **4d. Kho hình mẫu là danh mục lựa chọn, mở ra mỗi lần chọn hình** (22/11/2026 — David: *"tận dụng được tối đa toàn bộ các thẩm mỹ ở trong kho học,
@@ -129,7 +129,9 @@ Cách chọn: ý giống nhau thì cùng cách; ý khác loại thì **đổi sa
 gạch thay · quy trình thì chuỗi nút · liệt kê ngang hàng thì thẻ · các bước có số thì số mốc · hình ảnh so sánh thì vẽ đúng vật). Mỗi cảnh một cách,
 một điểm nhìn; không chồng hai cách trong một khung.
 
-Trước khi lập trình cảnh, so ít nhất hai cách trong kho cho cùng một ý. Đối chiếu cấu trúc của ý, nhịp nói, vùng trống, khả năng đọc và công cụ của mẫu hiện tại. Có thể giữ hình gốc và phụ đề khi đồ họa không đóng góp gì. Nếu mẫu thiếu cách phù hợp nhất, chuyển cách thể hiện sang công cụ sẵn có hoặc triển khai cảnh tự vẽ theo giao diện của mẫu. Khi chưa thể thực hiện an toàn, ghi giới hạn và chọn ứng viên kế tiếp.
+**So cách tổ chức cả khung hình, rồi chọn hiệu ứng.** Rút từ hình mẫu điều làm cảnh dễ hiểu: mắt nhìn vào đâu trước, quan hệ giữa hình và vật thật, cách điểm nhìn đổi theo lời và lúc nào bố cục chuyển. Các ứng viên có thể là hình gốc với dấu chỉ bám vật, sơ đồ nét vẽ trực tiếp, người và tư liệu được bố trí lại, hoặc cắt sang hình thật phục vụ lời dẫn. So ít nhất hai cách phù hợp cho cùng một ý. Chọn thẻ có nền khi văn bản cần tương phản hoặc các mục cần được phân nhóm. Nếu cỡ chữ chỉ đọc được khi phóng ảnh, đổi bố cục hoặc rút nội dung hình.
+
+Trong bản thử, xem đầu, giữa và cuối từng cảnh ở kích thước phát hành. Đặt các cảnh gần nhau để phát hiện tình trạng đổi biểu tượng hoặc hoạt ảnh trong cùng một ô. Nếu những ý khác nhau vẫn có cùng điểm nhìn, kích thước và cách tổ chức hình, quay lại hình mẫu và dựng lại các cảnh đại diện. Một nhóm ý giống nhau có thể dùng một bố cục xuyên suốt khi bố cục đó giúp người xem theo dõi. Đối chiếu cấu trúc của ý, nhịp nói, vùng trống, khả năng đọc và công cụ của mẫu hiện tại. Có thể giữ hình gốc và phụ đề khi đồ họa không đóng góp gì. Nếu mẫu thiếu cách phù hợp nhất, chuyển cách thể hiện sang công cụ sẵn có hoặc triển khai cảnh tự vẽ theo giao diện của mẫu. Khi chưa thể thực hiện an toàn, ghi giới hạn và chọn ứng viên kế tiếp.
 
 Mỗi cảnh nội dung đã chọn cần một dòng trong mục Chẩn đoán:
 

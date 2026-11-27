@@ -80,10 +80,10 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
 - **Tự chọn trước kế hoạch cảnh** (cả 3 skill dựng): yêu cầu người dùng → chẩn đoán → loại nội dung → bố cục nền, lớp thông tin → mỗi cảnh
   "Cần · Vì · Làm" theo `thiet-ke-bo-cuc/nhu-cau-nguoi-xem.md` + `huong-dan-lua-chon.md` (`chan-doan.py`); ghi vào `ke-hoach-canh.md`.
 - **Không che nội dung chính, không chồng lên phụ đề** — đây là điều duy nhất phải giữ, còn motion graphic được tuỳ biến tự do. Nội dung chính là
-  **người đang nói / những người đang trao đổi** và **thứ đang được nói tới** (màn hình sản phẩm, vật, tài liệu). Hình đặt vào khoảng trống
-  thực tế của khung hình (trần, cửa kính, tường, khoảng trên đầu — xét ảnh đầu / giữa / cuối cảnh). Cảnh toàn khung, nền làm mờ chỉ dùng ở đoạn không
-  có nội dung chính cần thấy. Khung nhiều người thì mọi người luôn hiện, không thu riêng một người vào ô — người xem cần thấy đang nói
-  với ai; khung một người thì thu vào ô bo góc không tính là che. Cách tránh: khối 05. Công cụ kiểm tra chặn các trường hợp đo được.
+  **người đang nói / những người đang trao đổi** và **thứ đang được nói tới** (màn hình sản phẩm, vật, tài liệu). Chọn bố cục theo thứ cần nhìn.
+  Có thể vẽ trực tiếp vào khoảng trống, bám chi tiết đang được chỉ, hoặc tái bố trí hình gốc để có chỗ cho sơ đồ hay tư liệu. Đoạn một người có thể
+  thu người vào ô bo góc. Khi nhiều người trao đổi, bố cục phải giữ được tất cả những người đang tham gia. Cảnh đồ họa toàn khung và nền làm mờ
+  dùng ở đoạn không có nội dung chính cần thấy. Kiểm tra ảnh đầu, giữa và cuối cảnh. Cách chọn bố cục và chuyển thể hình mẫu nằm ở hướng dẫn tự chọn bước 4d.
 - **Trình bày ý trong thẻ** (mọi thẻ từ 2 dòng ý, kể cả cảnh tự vẽ): mỗi ý có **gạch đầu dòng**, **viết hoa chữ đầu**, giữa hai ý có **khoảng cách
   rõ** (lớn hơn hẳn khoảng cách giữa hai dòng của cùng một ý), dòng xuống hàng thụt theo chữ — người xem nhìn là đếm được có mấy ý. Mẫu đã làm sẵn:
   thẻ `the-canh` / `the` (`bo-cuc.jsx`) và `rieng/nhan-tram.jsx`; người viết kịch bản không tự gõ ký hiệu gạch vào chữ.
