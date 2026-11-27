@@ -14,7 +14,7 @@ Skill này chỉ là **điểm vào**; không ghi luật riêng ở đây để 
    gửi David. Không có cổng hỏi: điểm cần chọn thì Claude tự chọn theo tiêu chí của skill, ghi "đã chọn X vì Y" trong phiếu, rồi làm tiếp; đụng màu chủ đạo, chữ ký nhận diện thì chờ "duyệt" (Đ3).
 3. **Kiểm tra không làm hỏng phần cũ** trước khi dùng vào video thật: chụp đủ lớp ở cả khung ngang lẫn dọc, phần cũ phải giữ nguyên.
 
-Khi ghi một cách đã học, mô tả cách tổ chức toàn khung trước và sau, điểm nhìn, nhịp đổi theo lời, và điều kiện nguồn cần có. Thử cách ấy trên một đoạn nguyên văn có tình huống tương ứng để xác nhận hiệu quả trong bản dựng. Chụp một cấu kiện riêng chỉ kiểm được cấu kiện; bản thử phải cho thấy quan hệ giữa cấu kiện và hình gốc.
+Khi ghi một cách đã học, mô tả cách tổ chức toàn khung trước và sau, điểm nhìn, nhịp đổi theo lời, và điều kiện nguồn cần có. Thử cách ấy trên một đoạn nguyên văn có tình huống tương ứng để xác nhận hiệu quả trong bản dựng. Chụp một cấu kiện riêng chỉ kiểm được cấu kiện; bản thử phải cho thấy quan hệ giữa cấu kiện và hình gốc. Điền bảng **Cấu tạo chuyển động theo khung hình** trong phiếu học cho từng hiệu ứng quan sát được. Rà đoạn mẫu theo khung ở lúc vào, trạng thái chính và lúc ra. Ghi lại cả chi tiết bề mặt, mặt nạ, viền, bóng và nhịp thay đổi của từng lớp để tái dựng.
 
 ## Đọc kèm (ở đúng bước cần)
 - `../thiet-ke-bo-cuc/bo-cuc.md`, `../thiet-ke-bo-cuc/am-thanh.md`: kho đã có, để biết điều mới có trùng với phần đã có không.

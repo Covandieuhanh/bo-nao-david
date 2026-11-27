@@ -7,6 +7,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
+import {docMocTu, ganMoc} from './moc-theo-loi.mjs';
 
 const P = path.resolve((process.argv[2] || '').replace(/^~/, process.env.HOME));
 const SRC = path.join(P, 'chuyen-dong/src');
@@ -14,15 +15,17 @@ if (!process.argv[2] || !fs.existsSync(SRC)) { console.error('cách dùng: soat-
 const imp = (f) => import(pathToFileURL(path.join(SRC, f)).href);
 const read = (f) => { try { return fs.readFileSync(path.join(SRC, f), 'utf8'); } catch { return ''; } };
 
-let list = [], duration = 0, NGANG = false, CO_NGUOI = false, MAT = {};
+let list = [], duration = 0, NGANG = false, CO_NGUOI = false, MAT = {}, fps = 0;
 if (fs.existsSync(path.join(SRC, 'canh.js'))) {
   list = (await imp('canh.js')).SCENES || [];
   const pj = (await imp('du-an.js')).default; duration = pj.duration || 0; NGANG = pj.width > pj.height && !pj.podcast;
+  fps = pj.fpsNum / (pj.fpsDen || 1);
   CO_NGUOI = !pj.podcast;   // khuôn 1 video: người nói trên hình (podcast chỉ tiếng thì không)
   try { MAT = (await imp('mat.js')).default || {}; } catch {}
 } else if (fs.existsSync(path.join(SRC, 'danh-sach-cat.js'))) {   // ghép vlog, highlight người nói: lớp phủ phẳng, không có props
   const e = await imp('danh-sach-cat.js');
   list = (e.OVERLAYS || []).map((o, i) => ({id: o.id || `${o.type}-${i + 1}`, ...o}));
+  fps = e.FPS;
   duration = e.TOTAL || 0;   // TOTAL của khuôn ghép đã là giây (19/11/2026: chia FPS lần nữa → độ dài sai, giữ cảnh tính sai)
 }
 let HS = {};
@@ -44,7 +47,22 @@ const bao = (m, t, id, msg, fix) => lines[m].push(`t=${fmt(t)} · ${id} · ${msg
 const flat = (o) => ({...o, ...(o.props || {})});
 const held = Object.fromEntries(holdEnds(list, duration || Infinity, HS).map((s) => [s.id, s]));
 
+let tuTheoLoi;
 for (const raw of list) {
+  for (const moc of raw.mocLoi || []) {
+    try {
+      if (typeof moc.truong !== 'string' || !moc.truong) throw new Error('Thiếu trường mốc trong mã cảnh');
+      const srt = path.join(P, 'kiem-tra/lam-sach/moc-tung-tu.srt');
+      tuTheoLoi ??= docMocTu(fs.readFileSync(srt, 'utf8'));
+      const {khung, at} = ganMoc(tuTheoLoi, moc, fps);
+      const thuc = moc.truong.split('.').reduce((o, k) => o?.[k], raw);
+      if (!Number.isFinite(thuc) || Math.round(thuc * fps) !== khung)
+        throw new Error(`${moc.truong} phải ở khung ${khung} (${at.toFixed(4)} s) theo “${moc.cum}”`);
+      if (at < raw.start || at >= raw.end) throw new Error('Mốc lời nằm ngoài cảnh');
+    } catch (error) {
+      bao('P0', raw.start, raw.id, error.message, 'đối chiếu tiếng của video đã làm sạch và chạy moc-theo-loi.mjs');
+    }
+  }
   const s = flat(raw), end = held[s.id]?.end ?? s.end, last = end - MO_RA;
   if (!(s.end > s.start)) { bao('P0', s.start, s.id, `hết (${s.end}) không sau đầu (${s.start})`, 'sửa mốc cảnh'); continue; }
   if (s.type in MODES && MODES[s.type].size && !MODES[s.type].has(s.mode || (s.type === 'illus' ? 'single' : 'tang')))

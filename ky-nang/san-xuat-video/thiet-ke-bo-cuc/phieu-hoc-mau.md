@@ -18,8 +18,16 @@ description: "Mẫu phiếu học video mẫu: Claude điền, rồi tự sửa 
 | # | Điều học được | Ở mốc | Loại (bố cục / thứ tự hiện / nối cảnh / nhịp / âm thanh) | Hợp với nội dung nào |
 |---|---|---|---|---|
 
+### Cấu tạo chuyển động theo khung hình
+
+| Hiệu ứng | Mốc hoặc khung ở mẫu | Trước → đang chạy → sau | Chi tiết tái dựng | Điểm kích hoạt theo câu nói, hình hoặc tiếng | Mã và bản thử |
+|---|---|---|---|---|---|
+| <tên> | <khung bắt đầu, đạt hình chính, rời> | <vị trí, kích thước, hướng, thứ tự các lớp> | <mặt nạ, bốn góc, viền, bóng, cỡ chữ, khoảng cách, độ mờ, easing, âm thanh nếu có> | <cụm lời hoặc sự kiện; khi nào hợp nội dung> | <component, tham số, ảnh hoặc đoạn thử> |
+
+Xem đoạn mẫu lần lượt theo khung. Ghi vết che, điểm neo, thứ tự lớp và thứ tự chuyển động khi nhiều phần cùng chạy. Với thu khung, phân biệt bốn góc được cắt bằng mặt nạ với bốn góc chỉ có viền trang trí. Ghi phạm vi đã xem và các đoạn còn cần xem. Chi tiết nào chưa nhìn đủ rõ thì đánh dấu để kiểm lại.
+
 ## 3. Không lấy
-Màu, font, kiểu vẽ, kiểu chuyển động của nguồn, và: <những điều khác thấy được nhưng không hợp kênh, kèm lý do>
+Ghi phần quan sát được nhưng chưa áp dụng, cùng lý do. Các đặc điểm màu, chữ, đường nét và chuyển động được ghi nhận để chọn hay chuyển thể theo nội dung.
 
 ## 4. Thêm vào skill
 | Thành phần | Mới hay mở rộng thành phần có sẵn | File | Dùng cho loại video |

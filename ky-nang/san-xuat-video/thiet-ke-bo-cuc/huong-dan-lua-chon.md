@@ -170,6 +170,14 @@ Trước khi xuất, xem liên tiếp các đoạn nhấn ở kích thước ph�
 cho đỉnh và ý cần nhìn rõ. **Lời có dạng rõ mà không kiểu nào khớp** thì xem `bo-cuc.md` cột "chưa code"; hợp thì ghi vào `can-code.md`
 (hàng đợi làm code), video này dùng `ve` hoặc kiểu gần nhất. Ảnh từng kiểu: `bo-cuc.md` mục "Ảnh mẫu".
 
+### Gắn chuyển động với lời và hình
+
+Khi chọn kiểu trong kho, đọc hàng cấu tạo của phiếu học và thiết lập từng chi tiết phù hợp với cảnh. Gắn mỗi thay đổi có ý nghĩa với một cụm lời, một động tác hoặc một điểm cắt. Hiệu ứng có nhiều nhịp, như thu hình rồi hiện hai con số, dùng mốc riêng cho từng nhịp.
+
+Với nhịp theo lời, dùng bản SRT từng từ thuộc chính video đã làm sạch. Nghe đối chiếu cụm quan trọng với tiếng gốc. Chạy `node moc-theo-loi.mjs moc-tung-tu.srt yeu-cau-moc.json` từ thư mục script. JSON có `fps` và mảng `moc`, mỗi mục ghi `cum`, `tuGiay`, `denGiay`, tùy chọn `canh` là `dau` hoặc `cuoi`, và `goc` nếu dựng trích đoạn. Dùng `at` từ kết quả trong mã hiệu ứng. Cụm trùng hoặc không thấy phải được phân giải bằng đoạn hẹp hơn hoặc kiểm lại lời.
+
+Cảnh có thể khai báo thêm `mocLoi` ở cấp cảnh với cùng dữ liệu và trường `truong` trỏ tới mốc dùng thật, ví dụ `props.items.0.at`. Bộ soát đối chiếu với `kiem-tra/lam-sach/moc-tung-tu.srt` và chặn nếu lệch khung. Nhịp theo cử chỉ hoặc hình dùng mốc khung từ video. Sau khi ghép, xem điểm kích hoạt và nghe lại ở tốc độ thường. Độ khớp với tiếng phụ thuộc vào độ đúng của bản mốc từ, nên kiểm cụm quan trọng bằng tai.
+
 ## Bước 5 — Công cụ kiểm chặn trước render (`soat-canh.mjs`)
 
 - **P0:** lỗi triển khai như phần tử nằm ngoài cảnh, ảnh được gọi bị thiếu, kiểu đã biết lỗi ở khung đang xuất, hoặc mã cảnh lệch lựa chọn đã ghi.
