@@ -20,8 +20,8 @@ Cột "Code": **có** = viết được ngay trong `canh.js` · **chưa** = mớ
 | Kiểu | Hợp khi | Ngang / dọc | Code |
 |---|---|---|---|
 | **Người vào ô bo góc** (`bocuc` · `o-nguoi`): người co từ toàn khung vào ô, phần còn lại là nội dung (`illus`, `diagram` hoặc thẻ chữ), hết cảnh thì phóng to trở lại toàn khung | giải thích dài, nhiều bước, so sánh, khung giờ / con số cần nhìn lâu mà vẫn giữ người | ngang: ô cột phải; dọc: ô nửa trên, nội dung nửa dưới | có |
-| Người nằm trong một thẻ giữa chuỗi thẻ (thẻ "Bước 2" chứa chính video quay mặt) | người nói là một bước của quy trình đang kể | ngang | chưa |
-| Màn hình máy tính / ảnh chụp trong khung + chú thích đánh số ở góc dưới ("① Chọn thư mục") | hướng dẫn thao tác, cho xem tài liệu | ngang; dọc thì phóng vào phần chính | chưa |
+| Người nằm trong một thẻ giữa chuỗi thẻ (thẻ "Bước 2" chứa chính video quay mặt) — `ve` · `NguoiTrongThe` | người nói là một bước của quy trình đang kể | ngang | có (27/11/2026) |
+| Màn hình máy tính / ảnh chụp trong khung + chú thích đánh số ở góc dưới ("① Chọn thư mục") — `ve` · `GoLenh` (thẻ lệnh gõ từng chữ) · `SoiSang` (soi một vùng) | hướng dẫn thao tác, cho xem tài liệu | ngang; dọc thì phóng vào phần chính | có (27/11/2026) |
 
 ## Nội dung là chính
 
@@ -29,7 +29,7 @@ Cột "Code": **có** = viết được ngay trong `canh.js` · **chưa** = mớ
 |---|---|---|---|
 | Minh hoạ toàn màn hình (`illus`, `diagram`) | một ý cần hình rõ, người không cần hiện | cả hai | có (khối 07) |
 | **Màn chương** (`bocuc` · `chuong`): số to mờ + nhãn nhỏ + tên phần | video dài chuyển sang phần mới | cả hai | có |
-| Tiêu đề nhỏ trên + tiêu đề to + hàng thẻ bên dưới (thẻ hiện lần lượt, thẻ đang nói sáng lên, thẻ cũ mờ đi) | tổng quan nhiều mục, kết quả, "trong video này" | ngang | chưa (gần `illus` list) |
+| Tiêu đề nhỏ trên + tiêu đề to + hàng thẻ bên dưới (thẻ hiện lần lượt, thẻ đang nói sáng lên, thẻ cũ mờ đi) — `ve` · `HangThe` | tổng quan nhiều mục, kết quả, "trong video này" | ngang | có (27/11/2026) |
 | Vòng lặp / chu trình (V1 → góp ý → sửa → V2) | quy trình lặp | cả hai | gần `diagram` `vong` |
 
 ## Mục lục, nền, chữ nhấn (học theo Ali Abdaal + Joseph Video Editing, 10/11/2026 — `nguon-tham-khao/ali-joseph-2026-11-10.md`)
@@ -46,7 +46,7 @@ Cột "Code": **có** = viết được ngay trong `canh.js` · **chưa** = mớ
 | Cảnh đời thường toàn khung + người nói ở ô nhỏ góc, chữ trích dưới trái | có cảnh quay thêm minh hoạ lời kể | ngang | chưa (cần cảnh quay thêm; hợp vlog) |
 | Một đường kẻ nối xuyên nhiều cảnh (đường chạy từ cảnh này sang cảnh sau) | mạch ý dài, "nét riêng" của một video | cả hai | chưa (làm bằng cảnh tự vẽ `ve` + `mach.js`) |
 | Ảnh tài liệu / bài báo, tô màu dòng đang nói | minh chứng, trích nghiên cứu | ngang | chưa (gần `card` ảnh) |
-| Trước / sau hai khung cạnh nhau | so sánh kết quả | cả hai | chưa (gần `card` `vs`) |
+| Trước / sau hai khung cạnh nhau — `ve` · `HaiThe` (hai thẻ trắng lần lượt tiết lộ) | so sánh kết quả, hai cách / hai thời kỳ | ngang | có (27/11/2026) |
 | Người làm mờ phía sau, chữ / vật nổi giữa khung (không cắt sang nền tối) | câu chốt giữa đoạn nói | cả hai | = `phong: 'nguoi-mo'` cho cảnh toàn màn hình |
 
 ## Hình dễ hiểu, tinh gọn (học theo Cường Mê AI, 20/11/2026 — `nguon-tham-khao/cuong-me-ai-2026-11-20.md`; khi nào dùng: `huong-dan-lua-chon.md` bước 4a)
@@ -68,6 +68,18 @@ Cột "Code": **có** = viết được ngay trong `canh.js` · **chưa** = mớ
 | **Số thứ tự to** (`the-canh` · `so: 1`): số cam to đứng trước thẻ làm mốc danh sách | lời đếm ít nhất 3 mục, mỗi mục nói ít nhất khoảng 5 s | cả hai | có |
 | **Từ khoá to trong phụ đề** (`hl: ['^5 lần']`): một chữ quyết định nghĩa to khoảng 1,6 lần, màu nhấn; ghép được `^+` / `^-` | cụm có con số hoặc chữ đổi nghĩa; tối đa một chỗ mỗi dòng | chỉ phụ đề dọc ngắn | có |
 | **Kết quả trước, cách làm sau**: mở bằng thành quả, rồi mới cho xem bản gốc / quá trình | video trình bày một thành quả có bản gốc đi kèm | cả hai | không cần code (thứ tự cảnh) |
+
+## Mẫu Sang Huỳnh và kho aislop (27/11/2026 — `nguon-tham-khao/sang-huynh-claude-do-hoa-2026-11-07.md` mục "Đo để dựng"; mã `rieng/mau-sang-huynh.jsx`)
+
+| Kiểu (`ve`) | Hợp khi | Ngang / dọc | Code |
+|---|---|---|---|
+| **Toả nhánh** `ToaNhanh`: điểm sáng, nhiều đường mảnh toả ra, nét đậm cho đường được chọn, đường đúng / sai | một điểm xuất phát nhiều lựa chọn, "ngó bên này bên kia" rồi chọn một | ngang | có |
+| **Hội tụ** `HoiTu`: hai đầu vào hội tụ vào công cụ rồi đi xuống đầu ra | hai đầu vào cùng tạo một kết quả | ngang | có |
+| **Số vang** `SoVang`: số lớn có lớp chữ viền vang ra, người nói nửa phải, có thể kèm thanh | một con số quyết định nghĩa, có người nói | ngang | có |
+| **Soi sáng** `SoiSang`: màn hình làm tối, viền vàng vẽ quanh vùng, phóng vùng, nhãn + đường chỉ | quay màn hình, chỉ đúng nút / đường dẫn đang nói | ngang | có |
+| **Gõ lệnh** `GoLenh`: thẻ câu lệnh gõ từng chữ trên màn hình làm tối | người nói đọc câu lệnh gửi AI | ngang | có |
+| **Thẻ chào** `TheChao`: hai thẻ kem cạnh người, chữ đậm hai tầng | câu chào, câu hẹn cuối video | ngang | có |
+| **Thẻ dọc tối** `TheDocToi`: thẻ dọc cạnh người, hình thu nhỏ và nhãn tăng dần | giới thiệu các ví dụ có hình | ngang | có |
 
 ## Nền và lớp thông tin (11/11/2026 — chọn theo `huong-dan-lua-chon.md`)
 

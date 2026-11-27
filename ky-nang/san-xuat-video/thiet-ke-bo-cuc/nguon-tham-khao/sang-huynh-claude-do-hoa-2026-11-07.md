@@ -6,7 +6,7 @@ description: "Nguồn học Sang Huỳnh: Claude làm motion graphics trong vide
 
 - Nguồn: https://www.youtube.com/watch?v=zmnjXAlCPEU · 18:56 · ngang 16:9 · làm bằng HyperFrames (không cài, chỉ học ý).
 - Đoạn đã xem: 0:00–0:42 (mở đầu, quay mặt và đồ hoạ), 12:38–17:35 (phần video quay mặt).
-- Chỉ ghi phần trình bày. Màu kem / đỏ cam, font của họ **không** dùng.
+- Chỉ ghi phần trình bày. Dựng thường: không dùng màu kem / đỏ cam và font của họ (giữ nhận diện kênh). Bản tái dựng theo mẫu (README mục 4a): giữ màu, nhịp của mẫu — mã `rieng/mau-sang-huynh.jsx`, bảng màu `M`.
 
 ## Tài nguyên trực tiếp của tác giả
 
@@ -23,10 +23,10 @@ Mỗi trang có clip đối chiếu, đặc tả và liên kết mã nguồn. Kh
    gạch chữ cũ thì hiện chữ mới ("không cần biết CODE · chẳng cần dựng video · chỉ cần PROMPT"), danh sách hiện từng dòng, lưới
    ảnh nhỏ hiện dần. Thẻ sáng hoặc tối tuỳ đoạn. → `the-canh`.
 2. **Người vào ô bo góc:** video quay mặt thu thành ô nhỏ ở góc trên, nền đồ hoạ chiếm phần lớn ("Cách 3 · Video quay mặt"). → `o-nguoi`.
-3. **Người nằm trong thẻ:** thẻ "Bước 2 · Quay" chứa chính video quay mặt, nằm giữa chuỗi 3 bước. thì chưa có code.
+3. **Người nằm trong thẻ:** thẻ "Bước 2 · Quay" chứa chính video quay mặt, nằm giữa chuỗi 3 bước. → `ve` · `NguoiTrongThe`.
 4. **Màn chương:** số to mờ "03" phía sau, nhãn nhỏ "CÁCH 3", tên phần to, dòng cuối màu nhấn. → `chuong`.
-5. **Màn hình máy trong khung, chú thích đánh số** ở góc dưới trái ("① Chọn thư mục · nơi AI làm việc"); thẻ lời nhắc phóng to đè lên. thì chưa.
-6. **Tổng quan:** tít nhỏ trên + tít to giữa + hàng 3 thẻ; thẻ đang nói sáng lên, thẻ khác mờ đi; nhãn "làm từ…" dưới mỗi thẻ. thì chưa.
+5. **Màn hình máy trong khung, chú thích đánh số** ở góc dưới trái ("① Chọn thư mục · nơi AI làm việc"); thẻ lời nhắc phóng to đè lên. → `ve` · `GoLenh` (thẻ gõ lệnh) và `SoiSang` (soi vùng màn hình).
+6. **Tổng quan:** tít nhỏ trên + tít to giữa + hàng 3 thẻ; thẻ đang nói sáng lên, thẻ khác mờ đi; nhãn "làm từ…" dưới mỗi thẻ. → `ve` · `HangThe`.
 7. **Vòng lặp:** vòng tròn "V1 · Xem lại → Góp ý → Sửa" và đếm vòng ở góc. → gần `diagram` `vong`.
 8. Phụ đề nhỏ ở góc dưới trái khi người toàn khung (không dùng: kênh giữ phụ đề của mình).
 
@@ -60,3 +60,21 @@ Rà toàn tập bằng bảng khung ba giây và mở lại các đoạn dưới
 | 12:39–12:46 | Chữ số chìm trên nền tối, nhãn rồi tiêu đề trắng và cam, hình minh họa ở nửa phải | Bước sang phần mới có tên và trật tự xác nhận được | Mở ở chỗ đổi phần, chữ và hình lần lượt dẫn người xem vào phần mới |
 | 15:50–15:56 | Hai thẻ trắng cạnh nhau trên nền kem, lần lượt tiết lộ cách làm | Hai cách hoặc hai thời kỳ có chung một việc để đối chiếu | Giữ vế đầu khi vế thứ hai vào, điền điểm khác biệt được nói ra |
 | 18:49–18:55 | Thẻ sáng bo góc, lời chào chữ đậm hai tầng đặt cạnh người | Câu chào hay câu hẹn được nói thật ở cuối đoạn | Dùng đúng lời chào, hiện cụm sau khi người nói sang vế sau |
+
+## Đo để dựng (27/11/2026, bảng khung 0,67 giây ở đúng mốc; mã gốc của tác giả cho 3 hiệu ứng aislop)
+
+Mã: `dung-video-theo-phong-cach/assets/mau-remotion/src/rieng/mau-sang-huynh.jsx`. Vị trí ghi theo phần khung (0–1).
+
+| Mốc mẫu | Cảnh `ve` | Đo được |
+|---|---|---|
+| 05:00–05:10 | `ToaNhanh` | nền tối chuyển sắc; điểm cam tại (0,17; 0,56) nảy vào; 6 nhánh mảnh vẽ lần lượt khoảng 0,7 giây mỗi nhánh tới x 0,62, nhãn chữ đơn cách; khi chọn: nhánh cũ mờ còn khoảng 30 %, nét đỏ cam vẽ khoảng 1 giây xuống dưới, chấm ✕ + nhãn; nét trắng lên trên, chấm ✓; đường đứt dọc nối hai đầu + chữ to màu nhấn |
+| 01:36–01:41 | `HoiTu` | hai thẻ chip ở y 0,2; dây hội tụ vẽ khoảng 0,6 giây vào chip giữa y 0,44; đường cam dọc + nhãn; thẻ trắng kết quả nảy, dấu ✓ xanh khoảng 0,7 giây sau; chip phụ gạch ngang mờ bên phải |
+| 00:59–01:05 | `SoVang` (+ thanh) | mã tác giả echo-number 3,8 giây: thẻ trượt 40 px và phóng 0,96 thành 1 (0,8 giây, expo), số nảy 0,8 thành 1 (0,6 giây, back 1,6), 6 lớp chữ viền vang ra ±112/224/336 px; mẫu video thêm thanh tiến trình đổi theo số |
+| 02:45–02:54 | `GoLenh` · `SoiSang` | màn hình làm tối, thẻ lệnh giữa (0,12–0,88 bề ngang) gõ khoảng 12–14 chữ mỗi giây; nhãn viên thuốc góc dưới trái; mã tác giả spotlight-magnifier 10 giây: làm mờ 7 px + giảm sáng 50 % trong 0,6 giây, viền vàng vẽ 0,45 giây, phóng vùng 1,3 lần, nhãn từng chữ, đường chỉ 0,5 giây, chấm 0,3 giây |
+| 00:10–00:18 | `HangThe` | hàng 3 thẻ 16:9 giữa khung trên nền tối; thẻ đang nói viền cam, thẻ khác mờ còn khoảng 45 %; nhãn viên thuốc dưới thẻ; tít to hai màu hiện từng chữ |
+| 15:50–15:56 | `HaiThe` | nền kem; dòng tiêu đề có biểu tượng đồng hồ hiện từng chữ, từ cuối màu nhấn, rồi lên trên; thẻ trắng 1 trượt lên, thẻ 2 vào khoảng 1,3 giây sau; số màu nhấn |
+| 18:49–18:55 | `TheChao` | hai thẻ kem bên phải (x 0,66–0,96): thẻ trên nhãn nhỏ + nút đỏ cam nảy lần lượt; thẻ dưới chữ đậm tầng 1, dòng nhỏ, tầng 2 hiện từng chữ với từ cuối màu nhấn; cả cảnh mờ dần cuối |
+| 00:28–00:40 | `TheDocToi` | thẻ dọc tối x 0,655–0,965, y 0,05–0,95, mở từ trên xuống khoảng 0,4 giây; tít to có số màu nhấn; từng hình thu nhỏ + số thứ tự + nhãn sáng lên đúng lúc nói; nút cuối thẻ |
+| bố cục 3 | `NguoiTrongThe` | chuỗi thẻ trắng nối bằng dây đứt cam; thẻ bước có hình chứa chính video người nói |
+
+Ví dụ dùng từng cảnh trên tư liệu thật: `~/Movies/tap-kho-hieu-ung-2711/ghep/doan.json` (bản xem đủ kho hiệu ứng, lá B15).

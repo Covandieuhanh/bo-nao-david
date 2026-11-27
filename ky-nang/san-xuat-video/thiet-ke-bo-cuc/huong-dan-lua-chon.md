@@ -166,6 +166,13 @@ Trước khi xuất, xem liên tiếp các đoạn nhấn ở kích thước ph�
 | Mặt người nói · Lời kèm hình | lời tả chi tiết một thứ cần nhìn kỹ (một bộ phận, sản phẩm, màn hình) ít nhất khoảng 4 s, có ảnh / hình vẽ đúng thứ đó | `bocuc o-tron` | toàn màn hình, người ô tròn |
 | Tin | người / nơi / tổ chức có thật | `diagram anh` | cạnh hoặc toàn |
 | Giữ chú ý | video giới thiệu một thành quả có bản gốc / quá trình | **kết quả trước, cách làm sau**: cảnh thành quả lên đầu, hiện bản gốc sau | thứ tự cảnh |
+| Lời kèm hình | một điểm xuất phát, nhiều hướng, rồi chọn một ("ngó bên này, bên kia… người chọn lúc đầu") | `ve` `ToaNhanh` | toàn màn hình |
+| Lời kèm hình | hai đầu vào cùng tạo một kết quả | `ve` `HoiTu` · `ve` `NguoiTrongThe` (khi một bước là chính hình người nói) | toàn màn hình |
+| Báo hiệu | một con số quyết định nghĩa, có người nói ("thiếu mất 0,4 điểm") | `ve` `SoVang` | thẻ trái, người nửa phải |
+| Báo hiệu · Đúng lúc | quay màn hình, nói đúng nút / đường dẫn đang hiện; đọc câu lệnh gửi AI | `ve` `SoiSang` · `ve` `GoLenh` | trên hình màn hình |
+| Chia đoạn | 3 mục cùng cấp, mỗi mục có hình thật | `ve` `HangThe` (toàn màn hình) · `ve` `TheDocToi` (giữ người) | toàn màn hình / cạnh người |
+| Gần chỗ | hai cách / hai thời kỳ cùng một việc ("ngày trước… ngày hôm nay…") | `ve` `HaiThe` | toàn màn hình |
+| Giọng trò chuyện | câu chào, câu hẹn gặp lại cuối video | `ve` `TheChao` | cạnh người |
 | bất kỳ | ý riêng không kiểu nào khớp | cảnh tự vẽ `ve` theo đúng nguyên lý (khối 07 mục 1) | tuỳ |
 
 **Có khung chủ thể và bảng ghi chú:** người dựng ưu tiên cảnh **cạnh chủ thể** (thay chỗ bảng trong vài giây) để chủ thể luôn được thấy; toàn màn hình chỉ

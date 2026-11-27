@@ -99,3 +99,4 @@ Dùng chế độ này khi David yêu cầu bản gốc bám sát mẫu hoặc m
 | [am-thanh.md](am-thanh.md) | cách đặt tiếng hiệu ứng / nhạc theo bố cục |
 | [nguon-tham-khao/](nguon-tham-khao/) | mỗi nguồn đã học một file: học gì, ở phút nào |
 | [phieu-hoc-mau.md](phieu-hoc-mau.md) | mẫu phiếu học Claude điền trước khi sửa skill |
+| [kho-hieu-ung-tu-video-goc.md](kho-hieu-ung-tu-video-goc.md) | lá B15: bản xem đủ kho hiệu ứng, mỗi hiệu ứng một đoạn video gốc phù hợp |

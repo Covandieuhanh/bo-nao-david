@@ -73,7 +73,7 @@ Tên tiếng Anh giữ đúng nguồn, mỗi tên **một** bản dịch (dùng 
 - **Cái khó:** hình hiện trước hoặc sau lời thì người xem không liên kết được hình với lời.
 - **Làm:** lời nói tới đối tượng nào thì đối tượng đó mới hiện (`at` = lúc nói); không hiện cả danh sách một lần.
 - **Phản tác dụng khi:** hiện quá sát khiến chữ chưa kịp đọc đã tắt (công cụ kiểm tra đo thời gian đọc).
-- **Đã học:** Cường Mê AI (hình theo nhịp lời); Sang Huỳnh (chữ xây theo lời).
+- **Đã học:** Cường Mê AI (hình theo nhịp lời); Sang Huỳnh (chữ xây theo lời; toả nhánh, hội tụ, số vang, soi sáng, gõ lệnh — đo 27/11/2026).
 
 ### Chia đoạn — Segmenting Principle
 - **Cái khó:** nội dung dài liền một mạch thì người xem mệt và mất mạch.
