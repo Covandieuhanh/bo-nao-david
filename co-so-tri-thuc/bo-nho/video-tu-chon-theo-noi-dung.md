@@ -32,3 +32,7 @@ Gốc: khối 2 (Hành động) của tu-duy-goc.md — mọi lựa chọn dựn
 Ngày 27/11/2026, David yêu cầu tận dụng kho hiệu ứng và thẩm mỹ theo nội dung. Nguyên nhân lặp còn lại là bước chọn chỉ yêu cầu mô tả, thiếu đối chiếu ứng viên và thiếu nối lựa chọn với mã cảnh đã dựng. Bản skill cũ cài riêng cũng có quy tắc mặc định khác repo.
 
 **Cách áp dụng:** dùng skill từ repo; đối chiếu cách thể hiện theo nhu cầu của người xem và điều kiện hình gốc. Ghi lựa chọn, ứng viên còn lại và lý do cho từng cảnh nội dung. So thẩm mỹ ở cấp video. Bộ soát đối chiếu mã cảnh với lựa chọn trước khi xuất. Người dựng xem thử để xác nhận hiệu quả trên hình. Khi học cách mới, ghi tình huống sử dụng, điều kiện khung, cách triển khai và dấu hiệu nhận biết trên hình để dùng lại trong bước chọn.
+
+David làm rõ ngày 27/11/2026: mục tiêu là AI tự học từ kho hình mẫu và linh hoạt đưa cách kể, hiệu ứng và thẩm mỹ vào video theo nội dung.
+Được tác động lên nhân vật và bố cục nếu giúp tăng sức biểu đạt. Khi người nói đang hiện, mặt phải rõ. Số loại hiệu ứng, mật độ, kiểu nền, nhịp
+và cách phối lớp do người dựng tự chọn. Dùng luật chung mục 0 và 4 cùng hướng dẫn chọn bố cục bản hiện hành.

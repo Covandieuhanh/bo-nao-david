@@ -48,7 +48,7 @@ Tên tiếng Anh giữ đúng nguồn, mỗi tên **một** bản dịch (dùng 
 
 ### Tinh gọn — Coherence Principle
 - **Cái khó:** yếu tố không mang nghĩa (trang trí, nhạc to, hình chỉ để giải trí) chiếm dung lượng nhận thức, người xem hiểu ít hơn.
-- **Làm:** chỉ dựng hình cho ý khó hiểu nếu chỉ nghe; nền tĩnh; mỗi thời điểm một điểm nhìn; hình phủ quá khoảng 45 % thời lượng là thừa.
+- **Làm:** chọn nhịp và lượng hình theo ý, mức dễ hiểu và cảm xúc cần truyền tải.
 - **Phản tác dụng khi:** bỏ cả hình ở ý thật sự khó (quy trình, so sánh) chỉ để "gọn".
 - **Đã học:** Ali–Joseph (bỏ chữ sau người, "nhiều hiệu ứng quá bị rối"); Cường Mê AI (ít chữ, nền tĩnh); MagentX (reel đồ hoạ dày nhất ít lượt xem nhất).
 

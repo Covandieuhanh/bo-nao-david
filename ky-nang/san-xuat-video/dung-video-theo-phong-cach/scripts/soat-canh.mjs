@@ -62,17 +62,10 @@ for (const raw of list) {
   // lower (22/11/2026, tap-dji0022-2111): ở khung ngang không hiện gì mà phụ đề vẫn nhường → trống chữ
   if (NGANG && (s.type === 'kinetic' || s.type === 'action' || s.type === 'lower'))
     bao('P0', s.start, s.id, `kiểu "${s.type}" lỗi ở khung ngang`, 'dùng cảnh tự vẽ ở chỗ trống (ve) hoặc bocuc the-canh');
-  // KHÔNG CHE / LÀM MỜ NGƯỜI ĐANG NÓI (David 21/11 + 22/11/2026: "màn hình mờ lại còn che nhân vật là hoàn toàn không đúng"):
-  // mẫu 1 video có người trên hình → cảnh toàn khung, nền người mờ, màn chương toàn khung đều chặn. Chỉ được khi đoạn đó
-  // không có người nói trên hình (cắt sang màn hình máy, cảnh trống): ghi props.khong_nguoi = true.
-  if (CO_NGUOI && !s.khong_nguoi && (FULL.has(s.type) && s.type !== 'cta' || s.phong === 'nguoi-mo' || (s.type === 'bocuc' && ['chuong', 'muc-luc', 'tren-duoi', 'o-tron'].includes(s.kieu))))
-    bao('P0', s.start, s.id, `"${[s.type, s.kieu || s.mode].filter(Boolean).join(':')}" phủ / làm mờ người đang nói trên hình`, 'đặt hình vào chỗ trống thật của khung (cảnh tự vẽ ve có vị trí o), hoặc ghi khong_nguoi: true nếu đoạn đó không có người trên hình');
-  // KHUNG NHIỀU NGƯỜI (David 22/11/2026: "tôi đang nói với các đối tác thì có nên chỉ hiện một mình tôi không?"):
-  // không thu riêng người đang nói vào ô — người xem cần thấy đang nói với ai
-  if (s.type === 'bocuc' && ['o-nguoi', 'o-tron'].includes(s.kieu) && s.khung !== 'ca-hai' && ((MAT[s.id] || {}).nguoi || []).length >= 2)
-    bao('P0', s.start, s.id, `khung có ${MAT[s.id].nguoi.length} người mà "${s.kieu}" chỉ giữ người đang nói`, 'dùng nhãn ở chỗ trống (ve) để mọi người vẫn hiện, hoặc khung: \'ca-hai\'');
-  if (s.type === 'bocuc' && s.kieu === 'the-canh' && ((MAT[s.id] || {}).nguoi || []).length >= 2)
-    bao('P1', s.start, s.id, 'thẻ cạnh người trong khung nhiều người: hết chỗ trống sẽ tự thu người đang nói vào ô', 'chụp thử; tự thu vào ô thì đổi sang nhãn ở chỗ trống (ve)');
+  // Các kiểu có thể thay đổi hình gốc cần xem thử, vì tên kiểu không chứng minh mặt bị che.
+  if (CO_NGUOI && !s.khong_nguoi && (FULL.has(s.type) || s.phong === 'nguoi-mo' ||
+      (s.type === 'bocuc' && ['o-nguoi', 'chuong', 'muc-luc', 'tren-duoi', 'o-tron'].includes(s.kieu))))
+    bao('P1', s.start, s.id, 'bố cục tác động đến hình gốc', 'xem đầu, giữa, cuối và điểm chuyển cảnh; giữ rõ mặt người đang nói');
   if (NGANG && s.type === 'card' && (s.steps || s.items || []).length > 4)
     bao('P1', s.start, s.id, `thẻ ${(s.steps || s.items).length} dòng tràn ở khung ngang`, 'dùng bocuc the-canh / muc-luc');
   if (s.num && typeof s.num.to !== 'number') bao('P0', s.start, s.id, 'con số không phải dạng số', 'ghi num.to là số');
@@ -139,20 +132,14 @@ for (let i = 1; i < chuoi.length; i++) {
   if (kieu(a) === kieu(b) && b.tu_buoc == null)
     bao('P2', b.start, b.id, `cùng kiểu "${kieu(b)}" với cảnh liền trước "${a.id}"`, 'đổi kiểu một cảnh, hoặc vẽ tiếp mạch (tu_buoc)');
 }
-// CỔNG TỰ CHỌN (huong-dan-lua-chon.md, 19/11/2026 — 6 tập dựng bằng mẫu ghép không có chẩn đoán, cả video chỉ chữ nhấn + tít):
-// (1) phải có ke-hoach-canh.md mục "## Chẩn đoán" ở thư mục dự án; (2) cả video một kiểu lớp phủ nội dung → P0, trừ khi
-// ke-hoach-canh.md ghi "Một kiểu có chủ đích: <lý do>". Lớp cố định (dấu kênh, tít, màn chốt…) không tính là kiểu.
+// So kế hoạch và mã cảnh. Thẩm mỹ được quyết định khi xem thử.
 {
   let kh = ''; try { kh = fs.readFileSync(path.join(P, 'ke-hoach-canh.md'), 'utf8'); } catch {}
   const cd = (kh.split(/^##[ \t]+Chẩn đoán[^\n]*\n/m)[1] || '').split(/^##[ \t]+/m)[0];
-  const duAnMoi = fs.existsSync(path.join(P, 'yeu-cau.md'));
   if (!/^##\s*Chẩn đoán/m.test(kh))
-    bao('P0', 0, 'ke-hoach-canh.md', 'chưa chẩn đoán, chưa tự chọn theo nội dung', 'chạy chan-doan.py rồi ghi mục "## Chẩn đoán" theo thiet-ke-bo-cuc/huong-dan-lua-chon.md');
+    bao('P1', 0, 'ke-hoach-canh.md', 'chưa chẩn đoán, chưa tự chọn theo nội dung', 'chạy chan-doan.py rồi ghi mục "## Chẩn đoán" theo thiet-ke-bo-cuc/huong-dan-lua-chon.md');
   else if (!/Thẩm mỹ:/.test(kh))
     bao('P1', 0, 'ke-hoach-canh.md', 'chẩn đoán chưa có dòng "Thẩm mỹ:" (nền, kiểu hình, chuyển cảnh, nhạc)', 'huong-dan-lua-chon.md bước 2b');
-  // tiết chế (huong-dan-lua-chon.md bước 4a, 20/11/2026): chỉ dựng hình cho ý khó hiểu nếu chỉ nghe
-  if (/^##\s*Chẩn đoán/m.test(kh) && !/Tiết chế:/.test(kh))
-    bao('P1', 0, 'ke-hoach-canh.md', 'chẩn đoán chưa có dòng "Tiết chế:" (ý nào cần hình, ý nào để người nói)', 'huong-dan-lua-chon.md bước 4a');
   // Mục nguồn phải chỉ đúng cảnh, kể cả cảnh chỉ dùng chữ hoặc biểu tượng.
   if (/^##\s*Chẩn đoán/m.test(kh)) {
     const dong = (kh.match(/^\s*Nguồn kho:[ \t]*([^\n]*)/m) || [])[1] || '';
@@ -163,13 +150,6 @@ for (let i = 1; i < chuoi.length; i++) {
     for (const s of noiDungThiGiac)
       if (!nguon.has(s.id))
         bao('P1', s.start, s.id, 'chưa chỉ rõ mẫu áp dụng cho cảnh', 'ghi <id> ← <nguồn, mã ca hoặc tên cách đã học> trong dòng Nguồn kho');
-  }
-  {
-    const PHU = list.map(flat).filter((x) => FULL.has(x.type) || x.type === 'bocuc' || x.type === 've').map((x) => [x.start, held[x.id]?.end ?? x.end]).sort((a, b) => a[0] - b[0]);
-    let phu = 0, den = -Infinity;
-    for (const [a, b] of PHU) { const a2 = Math.max(a, den); if (b > a2) { phu += b - a2; den = b; } }
-    if (duration >= 45 && phu / duration > 0.45)
-      bao('P1', 0, 'cả video', `hình phủ ${Math.round(100 * phu / duration)} % thời lượng — dễ rối, phân tán`, 'bỏ hình ở ý dễ hiểu khi nghe (kể chuyện, cảm xúc, câu ngắn tự rõ), giữ người nói + phụ đề');
   }
   // KHO DÙNG TỰ DO (David 22/11/2026: "không nhất thiết là phải có một cái luật gì đấy gọi là cố định … tận dụng tối đa các cái bộ tài
   // nguyên đã học"): không còn cổng "chỉ dùng khi có dấu hiệu". Chỉ giữ lỗi kỹ thuật của mẫu.
@@ -186,35 +166,25 @@ for (let i = 1; i < chuoi.length; i++) {
   {
     let NL = {loai: {}, nguyen_ly: {}};
     try { NL = JSON.parse(fs.readFileSync(new URL('../../thiet-ke-bo-cuc/nguyen-ly.json', import.meta.url), 'utf8')); } catch {}
-    const cu = !fs.existsSync(path.join(P, 'yeu-cau.md'));
-    const chan = cu ? 'P1' : 'P0', ghiCu = cu ? ' (dự án cũ: chỉ nhắc)' : '';
-    // Kiểm chứng lựa chọn trước khi chạy bản đầy đủ. Hình xem thử vẫn cần người dựng đánh giá.
-    const coNoiDung = (value) => value && /[\p{L}\p{N}]/u.test(value) && !/^<.*>$/.test(value);
-    const thamMy = cd.match(/^\s*Đối chiếu thẩm mỹ:[ \t]*(.+?)[ \t]*·[ \t]*Chọn:[ \t]*(.+?)[ \t]*·[ \t]*Vì:[ \t]*(.+)$/m);
-    const khac = (a, b) => a.normalize('NFC').trim().toLowerCase() !== b.normalize('NFC').trim().toLowerCase();
-    if (duAnMoi && (!thamMy || !thamMy.slice(1).every(coNoiDung) || !khac(thamMy[1], thamMy[2])))
-      bao('P0', 0, 'ke-hoach-canh.md', 'thiếu đối chiếu hai hướng thẩm mỹ', 'ghi hướng khác, hướng chọn và lý do theo bước 2b');
     const quyetDinh = new Map([...cd.matchAll(/^[-*]?[ \t]*([^\s·]+)[ \t]*·[ \t]*Lựa chọn:[ \t]*(.+?)[ \t]*·[ \t]*Ứng viên khác:[ \t]*(.+?)[ \t]*·[ \t]*Vì sao chọn:[ \t]*(.+)$/gm)]
       .map((m) => [m[1], m.slice(2)]));
     for (const s of noiDungThiGiac) {
       const thucTe = cachDung(s);
       const d = quyetDinh.get(s.id);
-      if (duAnMoi && (!d || !d.every(coNoiDung) || !khac(d[0], d[1])))
-        bao('P0', s.start, s.id, 'thiếu so sánh cách thể hiện cho ý này', `ghi Lựa chọn: ${thucTe} · Ứng viên khác: … · Vì sao chọn: …`);
-      else if (d && d[0].trim() !== thucTe)
+      if (d && d[0].trim() !== thucTe)
         bao('P0', s.start, s.id, `kế hoạch chọn "${d[0]}" nhưng mã cảnh đang dùng "${thucTe}"`, 'đồng bộ kế hoạch và mã cảnh');
     }
     const norm = (t) => t.normalize('NFC').toLowerCase().trim();
     const loaiDong = cd.match(/^\s*Loại:\s*(.+)$/m);
     if (/^##\s*Chẩn đoán/m.test(kh)) {
-      if (!loaiDong) bao(chan, 0, 'ke-hoach-canh.md', `chẩn đoán chưa có dòng "Loại:" (loại nội dung cả video)${ghiCu}`, 'thiet-ke-bo-cuc/nhu-cau-nguoi-xem.md mục 1');
+      if (!loaiDong) bao('P1', 0, 'ke-hoach-canh.md', `chẩn đoán chưa có dòng "Loại:" (loại nội dung cả video)`, 'thiet-ke-bo-cuc/nhu-cau-nguoi-xem.md mục 1');
       else if (!Object.keys(NL.loai).some((k) => loaiDong[1].includes(k))) bao('P1', 0, 'ke-hoach-canh.md', `"Loại: ${loaiDong[1].slice(0, 40)}" không có trong nguyen-ly.json`, `dùng một trong: ${Object.keys(NL.loai).join(', ')}`);
     }
     const BO = new Set(['hud', 'title', 'pinTitle', 'teaserTag', 'cta', 'hook', 'round', 'outro', 'location', 'lower', 'endcard', 'cover', 'captions', 'sides', 'stage']);
     const noiDung = list.map(flat).filter((x) => !BO.has(x.type));
     const dongCan = [...cd.matchAll(/^\s*[-*]?\s*([^\s·]+)\s*·\s*Cần:\s*([^·\n]+)/gm)].map((m) => ({id: m[1], can: m[2]}));
     const tenNL = Object.keys(NL.nguyen_ly).map(norm);
-    if (noiDung.length && !dongCan.length) bao(chan, 0, 'ke-hoach-canh.md', `${noiDung.length} cảnh nội dung mà không dòng "Cần:" nào — chưa lập luận người xem cần gì${ghiCu}`, 'mỗi cảnh: "- <id> · Cần: <nguyên lý> · Vì: … · Làm: …" (nhu-cau-nguoi-xem.md mục 4)');
+    if (noiDung.length && !dongCan.length) bao('P1', 0, 'ke-hoach-canh.md', `${noiDung.length} cảnh nội dung mà không dòng "Cần:" nào — chưa lập luận người xem cần gì`, 'mỗi cảnh: "- <id> · Cần: <nguyên lý> · Vì: … · Làm: …" (nhu-cau-nguoi-xem.md mục 4)');
     else for (const x of noiDung) {
       const d = dongCan.find((c) => c.id === x.id);
       if (!d) { bao('P1', x.start, x.id, 'cảnh chưa có dòng "Cần: · Vì: · Làm:"', 'ghi cái khó của người xem và nguyên lý giải nó'); continue; }
@@ -229,22 +199,6 @@ for (let i = 1; i < chuoi.length; i++) {
     tim(list);
     for (const a of anh) if (!fs.existsSync(path.join(P, 'chuyen-dong/public/anh', a))) bao('P0', 0, 'ảnh', `"${a}" không có trong chuyen-dong/public/anh`, 'chép ảnh (them-anh/) vào public/anh hoặc sửa tên');
   }
-  const nhom = new Map();
-  for (const s of noiDungThiGiac) {
-    const k = nhomThiGiac(s);
-    nhom.set(k, (nhom.get(k) || 0) + 1);
-  }
-  const loai = new Set(nhom.keys());
-  const coY = /^\s*Một kiểu có chủ đích:[ \t]*\S.*$/m.test(kh);
-  const [nhomChinh, soCanh = 0] = [...nhom.entries()].sort((a, b) => b[1] - a[1])[0] || [];
-  if (!coY && loai.size > 1 && soCanh >= 3 && soCanh * 3 >= noiDungThiGiac.length * 2)
-    bao('P1', 0, 'cả video', `${soCanh}/${noiDungThiGiac.length} cảnh cùng cách trình bày ${nhomChinh}`,
-      'xem liền các cảnh nhấn, đổi cách kể ở ý phù hợp và ghi bằng chứng trong bản xem thử');
-  if (duration >= 45 && loai.size <= 1 && !coY)
-    bao('P0', 0, 'cả video', `chỉ ${loai.size ? `một kiểu lớp phủ (${[...loai][0]})` : 'không có lớp phủ nội dung'} suốt ${fmt(duration)} s`,
-      'đi lại huong-dan-lua-chon.md bước 4 cho từng ý (liệt kê, so sánh, bước, con số, câu then chốt…), hoặc ghi "Một kiểu có chủ đích: …"');
-  else if (duration >= 300 && loai.size <= 2 && !coY)
-    bao('P1', 0, 'cả video', `video ${fmt(duration / 60)} phút chỉ ${loai.size} kiểu lớp phủ (${[...loai].join(', ')})`, 'xem lại huong-dan-lua-chon.md bước 4');
   // Đối chiếu lịch sử khi phiên dựng có yêu cầu. Không lấy độ mới làm tiêu chí chọn cảnh.
   // TẬN DỤNG KHO, ĐỔI HIỆU ỨNG (David 22/11/2026: "học nhiều mà không thấy ứng dụng được thì phí quá" — rồi: không cần luật cố định,
   // dùng tự do, đa dạng mà gọn): nhắc (P1, không chặn) khi video gần như lặp lại các kiểu của 3 tập gần nhất trong ~/Movies.

@@ -12,7 +12,7 @@ fs.mkdirSync(out, {recursive: true});
 const only = new Set(process.argv.slice(2));
 const FULL_RENDER = only.size === 0;
 // CỔNG TỰ CHỌN (19/11/2026, David: "mọi lựa chọn đều phải được tự động setup phù hợp với nội dung của tài nguyên nguồn"):
-// render đầy đủ chỉ chạy khi soát cảnh không còn P0 — gồm cả "chưa chẩn đoán" (ke-hoach-canh.md mục Chẩn đoán) và "cả video một kiểu lớp phủ".
+// Render đầy đủ chạy sau khi bộ soát không còn lỗi P0.
 // BO_QUA_SOAT=1 chỉ khi David cho phép.
 {
   const SOAT = process.env.SOAT_CANH || [

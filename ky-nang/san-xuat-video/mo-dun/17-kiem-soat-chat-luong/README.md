@@ -68,13 +68,12 @@ Chạy **trước bước chụp thử** và sau mỗi lần sửa mốc / chữ
 node $SKILL/scripts/soat-canh.mjs "$P"     # in ra + ghi kiem-tra/soat.md; có P0 thì mã thoát 1. Không sửa gì, không render
 ```
 Công cụ đọc từ `canh.js` hoặc `danh-sach-cat.js` và báo mỗi lỗi một dòng `t=… · cảnh · vấn đề → cách sửa`:
-- **P0 (phải sửa):** kiểu cảnh / biểu tượng không tồn tại, phần tử hiện ngoài cảnh, mốc sai · **chưa chẩn đoán** (thiếu
-  `ke-hoach-canh.md` mục `## Chẩn đoán`) · **cả video một kiểu lớp phủ nội dung** (trừ khi ghi `Một kiểu có chủ đích: …`). Render đầy
-  đủ (`xuat-video.mjs`, `xuat-chuong-trinh.mjs`) tự chạy bước rà soát này và dừng khi còn P0 (`thiet-ke-bo-cuc/huong-dan-lua-chon.md` bước 5).
+- **P0 (phải sửa):** kiểu cảnh hoặc biểu tượng không tồn tại, phần tử hiện ngoài cảnh, mốc sai hoặc tài nguyên thiếu. Render đầy đủ tự chạy bước soát và dừng khi còn P0.
+- Chẩn đoán là tài liệu để so lựa chọn với bản thử. Xem đủ chuyển động ở kích thước phát hành để đánh giá mặt người nói, điểm nhìn, nhịp và khả năng đọc.
 - **P1 (nên sửa):** nhãn không đủ đọc (0,5 s + 0,3 s mỗi từ), nhãn `illus` quá số chữ hồ sơ, hai cảnh toàn màn hình chồng nhau.
 - **P2 (tinh chỉnh, giữ có chủ đích được):** hình đứng yên quá 3 s sau khi đọc xong, thẻ tiêu đề / màn chốt thiếu hẳn thời gian đọc, hai cảnh cùng kiểu liền nhau (trừ cảnh vẽ tiếp `tu_buoc`, khối 07).
 Giới hạn: công cụ chỉ bắt lỗi đo được. Lỗi chữ tràn, che mặt, thẩm mỹ kém vẫn được xét bằng `kiem-tra/anh-tinh.jpg`. **Xem tờ ảnh ở đúng cỡ (mỗi khung 240–270 px, nhỏ hơn màn điện thoại): chữ cần đọc mà không đọc được thì tính là P0.**
-Câu hỏi khi xét tờ ảnh: **video có rối không** — đếm số kiểu hiệu ứng cả video, kiểu nào không giúp hiểu thì bỏ (quy-tac-chung §0, hiểu hơn cầu kì) · **mỗi khung có đúng một tiêu điểm không** (nheo mắt vẫn biết nhìn vào đâu) · cam có còn là màu nhấn (khoảng 10 % khung), không phủ cả khung. Che chữ đi, hình còn nói được ý không? Nếu thấy mọi cảnh giống nhau thì người dựng đổi kiểu vào cảnh (khối 07). Nếu video rối thì người dựng bỏ bớt khoảng một phần ba chuyển động, giữ phần dẫn hướng mắt người xem.
+Khi xem bản thử, kiểm xem chuyển động có hướng mắt tới đúng ý, chữ có đọc được và mặt người nói có rõ ở cả điểm chuyển cảnh hay không.
 
 ## Kiểm cảm nhận
 Claude tự làm, hai lần: sau bước chụp thử và sau bản cuối. Không gửi David chấm.

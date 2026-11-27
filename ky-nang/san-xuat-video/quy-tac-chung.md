@@ -11,19 +11,14 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
 ## 0. Kim chỉ nam
 - **Người xem là trung tâm.** Người dựng học các kênh lớn (DOAC, Hormozi, MrBeast, Ali Abdaal, Jay Shetty, Mel Robbins…) về **nhịp và cách trình bày**
   giữ chân người xem. Mục tiêu mỗi video: người xem **ở lại → HIỂU ý chính → LÀM theo**; đo lại bằng số liệu thực tế (khối 16).
-- **Thẩm mỹ chỉ giữ chữ ký nhận diện** (`thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0): người xem xem video nào cũng nhận ra cùng một người làm.
-  Ngoài chữ ký nhận diện là phần sáng tạo tự do theo nội dung; học được gì từ mẫu cũng dùng được, và điều học được chỉ bổ sung vào kho, không thay thế cái đã có
-  (`thiet-ke-bo-cuc/README.md` mục 4).
+- **Thẩm mỹ do người dựng lựa chọn theo nội dung và hình mẫu.** Nhận diện David là tài nguyên của kênh. Người dựng có thể phối màu cảnh,
+  chữ, nền, bố cục, âm thanh và chuyển động theo ý đang truyền tải.
 - **Mọi lựa chọn được tự thiết lập theo nội dung nguồn**, để phát huy tối đa sức mạnh của AI: mẫu, bố cục, lớp thông tin, kiểu cảnh, thẩm mỹ,
   nhạc, khung đều do người dựng (AI nào cũng vậy) lập luận từ chính tài nguyên (`thiet-ke-bo-cuc/nhu-cau-nguoi-xem.md` → `huong-dan-lua-chon.md`), không sao chép từ tập trước, không chờ
-  David chỉ định. Công cụ kiểm tra chặn render khi chưa chẩn đoán (`soat-canh.mjs`).
-- **Tận dụng tối đa kho đã học, tự do.** Mọi hiệu ứng, motion graphic, chuyển cảnh (kể cả 3D) đã học hoặc tự viết đều dùng được ở
-  mọi video, không chờ nội dung "đúng loại" — nội dung kênh chủ yếu là cung cấp thông tin và trò chuyện, nếu chờ thì không bao giờ dùng tới.
-  Đa dạng nghĩa là **đổi hiệu ứng qua các cảnh** để gây ấn tượng, không phải chồng nhiều thành phần trong một khung hình: mỗi thời điểm một điểm nhìn,
-  gọn gàng, rối thì giảm bớt. Không có kiểu nào bắt buộc phải dùng hay cấm dùng, trừ việc che nội dung chính (mục 4).
-  Mỗi lần chọn hình, người dựng phải mở **kho hình mẫu** (8 kênh hình mẫu + các phiếu học motion graphics) làm danh mục lựa chọn và chọn cách phù hợp ý nhất,
-  ghi nguồn từng cảnh (`thiet-ke-bo-cuc/huong-dan-lua-chon.md` bước 4d) — học mà không mở ra dùng là lãng phí.
-  Ý nào cần hình và mỗi hình phải đạt gì: `thiet-ke-bo-cuc/huong-dan-lua-chon.md` bước 4a–4b (nguyên lý: `nhu-cau-nguoi-xem.md`).
+  David chỉ định. Công cụ soát nhắc khi chưa ghi chẩn đoán (`soat-canh.mjs`).
+- **Dùng kho hình mẫu linh hoạt.** Học bố cục, chuyển động, điểm nhìn, nhịp và âm thanh. Có thể dựng đồ họa phủ lên hình, bám chủ thể,
+  đổi khung, thu phóng hoặc phối nhiều lớp khi chúng làm rõ ý hoặc tăng sức biểu đạt. Tự chuyển thể hoặc viết cảnh mới khi cần. Khi người
+  nói đang hiện trong cảnh, giữ rõ mặt người nói qua cả chuyển động và điểm chuyển cảnh. Lời nói và tư liệu gốc là căn cứ về nội dung.
 
 ## 1. Nội dung
 - **Không bịa đặt.** Phụ đề, chữ to, thẻ, màn hành động, màn chốt phải là **trích hoặc bỏ bớt lời người nói**, không diễn đạt lại. Tên riêng, con
@@ -49,11 +44,9 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
   (`dung-video-theo-phong-cach/references/nhieu-doan-video.md` mục 11).
   Riêng khi **làm lại video cũ**: cắt màn tiêu đề và lời chào hoặc lời giới thiệu kênh cũ (tên kênh cũ, nghề cũ, kinh doanh) và chữ, viền kênh cũ in
   trong hình — chỉ đúng các đoạn đó (khối 02). Phần lằn ranh David chọn cắt thì chỉ cắt đúng đoạn đó.
-- **Chỉ cắt với video tối đa 3 phút và highlight**: khoảng lặng ít nhất 0,45 s thì rút còn khoảng 0,24 s, và cắt tiếng đệm "ờ/ừm" đứng riêng (cắt cứng); **không dùng hiệu ứng zoom vào / zoom ra trên hình quay** (video người nói, clip gốc) ở bất kỳ video nào
-  (không thẩm mỹ) — ảnh minh hoạ trôi chậm (Ken Burns) và chuyển động bên trong motion graphic (đẩy khung) vẫn được dùng; giữ 1 s lặng sau câu hỏi kêu gọi. Clip ngắn luôn trích từ bản gốc, ưu tiên dẫn người xem về video dài trên YouTube; người xem không
+- **Chỉ cắt với video tối đa 3 phút và highlight**: khoảng lặng ít nhất 0,45 s thì rút còn khoảng 0,24 s, và cắt tiếng đệm "ờ/ừm" đứng riêng (cắt cứng). Chọn chuyển động theo ý và kiểm tra mặt khi thay đổi cỡ khung. giữ 1 s lặng sau câu hỏi kêu gọi. Clip ngắn luôn trích từ bản gốc, ưu tiên dẫn người xem về video dài trên YouTube; người xem không
   chuyển sang thì clip vẫn cần tạo tương tác / tin nhắn trên Facebook, TikTok. **Vlog ghép** giữ nhịp tự nhiên.
-- Video ngắn thay đổi một yếu tố mỗi 1–3 s (nhịp chữ phụ đề, chữ to, cảnh, cắt), không để 5–8 s trôi qua mà không có thay đổi. Video dài nhịp thưa hơn, nhịp
-  xuất phát từ nội dung.
+- Nhịp cắt và nhịp hiệu ứng đi theo ý, cách nói và hình gốc.
 - Mỗi màn gồm một ý, một hình, một câu. Không chồng 2 lớp phủ.
 - **Đường cảm xúc và một đỉnh** (mọi loại video): trước khi lên cảnh, viết cảm xúc từng đoạn (với mỗi cảm xúc, ghi yếu tố nào trên màn hình gây ra
   cảm xúc đó) và chọn **một** đỉnh. Đỉnh nhận motion graphic lớn nhất; đoạn ngay trước đỉnh để ít hình (phụ đề vẫn chạy). Video dài vẫn không
@@ -79,11 +72,9 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
 - **Bố cục tự cân đối** theo thước đo ở `thiet-ke-bo-cuc/README.md` mục 2, chọn từ `thiet-ke-bo-cuc/bo-cuc.md`.
 - **Tự chọn trước kế hoạch cảnh** (cả 3 skill dựng): yêu cầu người dùng → chẩn đoán → loại nội dung → bố cục nền, lớp thông tin → mỗi cảnh
   "Cần · Vì · Làm" theo `thiet-ke-bo-cuc/nhu-cau-nguoi-xem.md` + `huong-dan-lua-chon.md` (`chan-doan.py`); ghi vào `ke-hoach-canh.md`.
-- **Không che nội dung chính, không chồng lên phụ đề** — đây là điều duy nhất phải giữ, còn motion graphic được tuỳ biến tự do. Nội dung chính là
-  **người đang nói / những người đang trao đổi** và **thứ đang được nói tới** (màn hình sản phẩm, vật, tài liệu). Chọn bố cục theo thứ cần nhìn.
-  Có thể vẽ trực tiếp vào khoảng trống, bám chi tiết đang được chỉ, hoặc tái bố trí hình gốc để có chỗ cho sơ đồ hay tư liệu. Đoạn một người có thể
-  thu người vào ô bo góc. Khi nhiều người trao đổi, bố cục phải giữ được tất cả những người đang tham gia. Cảnh đồ họa toàn khung và nền làm mờ
-  dùng ở đoạn không có nội dung chính cần thấy. Kiểm tra ảnh đầu, giữa và cuối cảnh. Cách chọn bố cục và chuyển thể hình mẫu nằm ở hướng dẫn tự chọn bước 4d.
+- **Giữ rõ mặt người đang nói.** Người dựng có thể tác động đến nền, thân người, kích thước và vị trí khung. Khi cắt sang tư liệu, màn hình
+  hoặc đồ họa theo mạch kể, kiểm tra điểm chuyển để lời và hình vẫn liền ý. Khi trở lại hình người nói, giữ mặt rõ, kể cả khi có lớp chuyển
+  động hoặc đang đổi khung. Xem thử tại các thời điểm hiệu ứng vào, đang chạy và ra trong kích thước phát hành.
 - **Trình bày ý trong thẻ** (mọi thẻ từ 2 dòng ý, kể cả cảnh tự vẽ): mỗi ý có **gạch đầu dòng**, **viết hoa chữ đầu**, giữa hai ý có **khoảng cách
   rõ** (lớn hơn hẳn khoảng cách giữa hai dòng của cùng một ý), dòng xuống hàng thụt theo chữ — người xem nhìn là đếm được có mấy ý. Mẫu đã làm sẵn:
   thẻ `the-canh` / `the` (`bo-cuc.jsx`) và `rieng/nhan-tram.jsx`; người viết kịch bản không tự gõ ký hiệu gạch vào chữ.
@@ -139,8 +130,7 @@ Ghi `<dự án>/phat-hanh/phat-hanh.md`:
   đầu, chỗ chồng lớp, điểm cắt, màn chốt, thẻ cuối, chỗ David góp ý), không chụp từng cảnh; xem bố cục thì dùng ảnh thu nhỏ.
 - **Khi có góp ý, Claude sửa rồi render lại toàn bộ ngay**, không chờ chữ "render"; bàn giao lại như lần đầu (Drive + trang xem
   kết quả). Render nối tiếp, không song song. Claude không dừng chờ ở bước nào trước khi xong; Claude không đăng (David tự đăng), dọn dẹp làm khi David nói "chốt".
-- **Phần cố định: không hỏi, không đổi** (`../chuan-muc-lam-viec.md` mục 2): nhận diện, dấu góc, màn chốt, thẻ cuối, nhạc theo tuyến, mức
-  motion graphics, phụ đề, chuẩn âm lượng, nơi giao file; tên riêng chưa chắc chắn thì dùng cách Whisper nhận dạng và nêu ở báo cáo.
+- **Tự lựa chọn thẩm mỹ:** người dựng chọn nhận diện trong cảnh, dấu góc, màn chốt, thẻ cuối, nhạc và mức đồ họa theo nội dung. Chuẩn âm lượng và nơi giao file theo yêu cầu dự án. Tên riêng chưa chắc chắn thì kiểm lại với nguồn.
 - **Thử skill bằng đoạn ngắn trọn một ý:** cắt từ đầu tới cuối một ý của video nguồn (không cố định số giây, không chạy cả video dài)
   vào thư mục thử riêng `tap-thu-…`, chạy theo skill, cho David xem bản cuối, xong thì dọn dẹp. Đoạn ngắn trọn ý cho kết quả tốt thì video dài cũng tốt.
 - **Dựng ngay trong phiên Claude** theo skill (`phan-phoi-da-kenh` → skill dựng). Không đề xuất dựng app hay công cụ tự động dựng video

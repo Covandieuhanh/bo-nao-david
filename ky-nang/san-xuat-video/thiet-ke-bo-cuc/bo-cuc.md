@@ -12,7 +12,7 @@ Cột "Code": **có** = viết được ngay trong `canh.js` · **chưa** = mớ
 | Kiểu | Hợp khi | Ngang / dọc | Code |
 |---|---|---|---|
 | Người + phụ đề | kể chuyện, cảm xúc, lời mời, câu tâm tình | cả hai | có (mặc định) |
-| Điểm nhấn trên người (`nhan`, không zoom): làm tối viền, chữ / biểu tượng cạnh mặt | câu then chốt, điểm chốt cảm xúc | cả hai | có (khối 07) |
+| Điểm nhấn trên người (`nhan`): làm tối viền, chữ / biểu tượng cạnh mặt | câu then chốt, điểm chốt cảm xúc | cả hai | có (khối 07) |
 | **Thẻ cạnh mặt** (`bocuc` · `the-canh`): người giữ nguyên, thẻ ở phía trống, chữ hiện dần theo lời, có thể gạch chữ | liệt kê ngắn, đổi ý ("không cần A, chỉ cần B"), nêu 2–4 điểm mà vẫn muốn thấy người | ngang tốt nhất; dọc: thẻ dưới cằm, ít dòng | có |
 
 ## Người và nội dung cùng hiện

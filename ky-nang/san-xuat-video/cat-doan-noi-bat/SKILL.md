@@ -4,7 +4,7 @@ description: Cắt một video dài (bản YouTube 5–60 phút) thành các cli
 ---
 # Cắt đoạn nổi bật cho mọi mục video ngắn
 
-**Chọn hiệu ứng và thẩm mỹ trước khi viết cảnh.** Áp dụng [hướng dẫn dùng chung](../thiet-ke-bo-cuc/huong-dan-lua-chon.md) bước 2b và 4d cho đầu vào này. Đối chiếu hai hướng thẩm mỹ, so ứng viên cho từng ý cần hình và ghi phương án khớp mã cảnh. Nếu mẫu thiếu công cụ, chuyển thể hoặc ghi lý do chọn ứng viên khác. Xem các cảnh liên tiếp trên video thử để xác nhận bố cục, nhịp và vùng an toàn.
+**Chọn hiệu ứng và thẩm mỹ trước khi viết cảnh.** Áp dụng [hướng dẫn dùng chung](../thiet-ke-bo-cuc/huong-dan-lua-chon.md) bước 2b và 4d cho đầu vào này. Chọn bố cục, hiệu ứng và nhịp theo ý và hình mẫu. Xem thử để kiểm tra mặt người nói ở các điểm chuyển. Nếu mẫu thiếu công cụ, chuyển thể hoặc ghi lý do chọn ứng viên khác. Xem các cảnh liên tiếp trên video thử để xác nhận bố cục, nhịp và vùng an toàn.
 
 **Đọc trước:** `../quy-tac-chung.md` (mục 8) · hồ sơ `../ho-so-thuong-hieu/doan-noi-bat.md`. Lỗi thường gặp: đọc của `$BASE`, thêm của `$POD` khi nguồn là podcast.
 
@@ -111,7 +111,7 @@ Claude chỉnh tiếp trong danh-sach-cat.js:
   so sánh, đổi ý dùng `illus vs` · `diagram tu-thanh` · con số người nói dùng `illus count` · nhân quả dùng `illus flow` · `diagram chuyen-giao` ·
   giao việc dùng `action` (`quote` nguyên văn) · câu hỏi then chốt dùng `callout` · điểm chốt dùng `pow` (tối đa 14 ký tự/dòng). **pow không phải mặc định.**
   Nền cảnh `phong: 'hat'` cho đoạn lắng. Mật độ theo nội dung: dày hơn ở `soi`, thưa hơn ở `lang`.
-- **Hình**: không zoom vào / ra (quy-tac-chung mục 2); có thể `replay` khoảnh khắc then chốt.
+- **Hình**: chọn cỡ khung, nhịp cắt và `replay` theo khoảnh khắc.
 - `CTA.kind` theo việc được kêu gọi (lưu dùng `save`, bình luận dùng `comment`…); không có câu kêu gọi hành động thì không đặt `CTA` (luật 4).
 - **Thẻ tiêu đề mở đầu** (luật 7): `{type: 'pow', start: 0, end: 2.5, text: '<TÍT nguyên văn>', y: 300}` — nửa trên khung, tách khỏi phụ đề.
   `ENDCARD` do `danh-sach-cat-doan-noi-bat.py` ghi (luật 11), mẫu tự bỏ ở video dọc ngắn.

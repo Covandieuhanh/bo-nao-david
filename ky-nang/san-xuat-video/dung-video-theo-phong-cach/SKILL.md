@@ -4,7 +4,7 @@ description: Dựng video tự quay thành bản đăng được ngay (Reels/Tik
 ---
 # Dựng video theo phong cách mẫu
 
-**Chọn hiệu ứng và thẩm mỹ trước khi viết cảnh.** Áp dụng [hướng dẫn dùng chung](../thiet-ke-bo-cuc/huong-dan-lua-chon.md) bước 2b và 4d cho đầu vào này. Đối chiếu hai hướng thẩm mỹ, so ứng viên cho từng ý cần hình và ghi phương án khớp mã cảnh. Nếu mẫu thiếu công cụ, chuyển thể hoặc ghi lý do chọn ứng viên khác. Xem các cảnh liên tiếp trên video thử để xác nhận bố cục, nhịp và vùng an toàn.
+**Chọn hiệu ứng và thẩm mỹ trước khi viết cảnh.** Áp dụng [hướng dẫn dùng chung](../thiet-ke-bo-cuc/huong-dan-lua-chon.md) bước 2b và 4d cho đầu vào này. Chọn bố cục, hiệu ứng và nhịp theo ý và hình mẫu. Xem thử để kiểm tra mặt người nói ở các điểm chuyển. Nếu mẫu thiếu công cụ, chuyển thể hoặc ghi lý do chọn ứng viên khác. Xem các cảnh liên tiếp trên video thử để xác nhận bố cục, nhịp và vùng an toàn.
 
 **Đọc trước:** `../quy-tac-chung.md` (mục 8) · hồ sơ `../ho-so-thuong-hieu/lam-video.md` (hoặc `ghep-vlog.md`).
 
@@ -38,7 +38,7 @@ bộ nhận diện, phát hành. Dưới đây chỉ là luật RIÊNG của ski
 3. **Bố cục tự chọn theo nội dung** (`../thiet-ke-bo-cuc/huong-dan-lua-chon.md`, rồi khối 07 + `../thiet-ke-bo-cuc/bo-cuc.md`): danh mục có sẵn (dùng khi phù hợp, không bắt buộc — khi cần hình riêng thì viết cảnh tự vẽ `ve`) — người + phụ đề, `nhan`,
    `bocuc` (`the-canh` thẻ cạnh mặt · `o-nguoi` người vào ô bo góc + nội dung · `chuong` màn chương), `illus` / `diagram` toàn màn hình.
    Phù hợp nội dung, người xem dễ nhận biết; khung dọc mỗi lúc ít thành phần. **Điểm nhấn trên người** (`nhan`): làm tối viền / chữ nhấn hoặc biểu
-   tượng cạnh mặt ở câu then chốt, không che mặt; không zoom vào / ra. Mọi video đều có điểm nhấn — "dựng nhẹ" vẫn có — nhưng chỉ dùng vài kiểu phù hợp nội dung nhất.
+   tượng cạnh mặt ở câu then chốt, giữ rõ mặt người đang nói. Có thể đổi khung, thu phóng hoặc tác động lên hình nếu hợp với ý.
 4. **Màn hành động** (`action`: biểu tượng + tick + `label` cụm việc nguyên văn) xuất hiện đúng lúc người nói giao việc cụ thể.
    **Màn chốt** (`cta`, cuối mọi video): video thu vào khung bo góc, chữ là **nguyên văn câu David nói cuối video** (quy-tac-chung 1).
    "Vấn đề / Kết quả" và "gỡ" chỉ đưa lên video khi David tự nói trong video; nếu không thì chỉ dùng ở bài đăng. Claude không tự đặt câu hỏi kêu gọi,
@@ -62,8 +62,7 @@ bộ nhận diện, phát hành. Dưới đây chỉ là luật RIÊNG của ski
 | **Một buổi nói dài nhiều chủ đề**, cần cắt đoạn thừa và **tách thành nhiều video theo hướng công việc** | Làm sạch + chép lời cả buổi một lần → phân hướng (`phan-huong.md`, khối 00) → `tach-video.py` → mỗi video một dự án, dựng như 1 video | `references/tach-theo-huong.md` |
 | **Nhiều cảnh khác nhau** (vlog, sự kiện, clip minh hoạ chen vào lời nói), hoặc clip không nói trước camera | **Ghép nhiều clip**: tự sắp mạch, clip minh hoạ trích đúng câu nói liên quan; tự rà soát kế hoạch rồi render | `references/nhieu-doan-video.md` (khối 11, hồ sơ `ghep-vlog`) |
 
-Mọi chế độ đều qua bước **chẩn đoán → tự chọn** (`../thiet-ke-bo-cuc/huong-dan-lua-chon.md`, bước 0: không chép kịch bản tập trước). Render đầy đủ bị
-chặn tới khi `ke-hoach-canh.md` có mục `## Chẩn đoán` và video không chỉ có một kiểu lớp phủ (`soat-canh.mjs`).
+Mọi chế độ đều qua bước **chẩn đoán → tự chọn** (`../thiet-ke-bo-cuc/huong-dan-lua-chon.md`, bước 0: không chép kịch bản tập trước). Chạy `soat-canh.mjs` và xem bản thử trước khi xuất.
 
 Video mẫu không tính vào số video gốc. Khi người dùng gửi cả thư mục thì mọi video trong đó là video gốc theo thứ tự tên file (chế độ ghép); Claude chỉ hỏi
 khi không rõ file nào là mẫu. Với yêu cầu "Giống video trước", Claude lấy token phong cách từ `~/Movies/tap-<tên>/2-ban-day-du/chuyen-dong/src` của dự án đó.

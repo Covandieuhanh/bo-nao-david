@@ -70,7 +70,7 @@ mức dày hình, nhịp, nhạc cho bước 2b–4. Người dựng ghi `Loại
 
 ## Bước 2b — Chọn thẩm mỹ (nền, kiểu hình, chuyển cảnh, nhạc)
 
-Chữ ký nhận diện giữ nguyên (cam, hai font, dấu góc, phụ đề, màn chốt). Phần còn lại chọn theo loại nội dung (bước 1b) và số đo ở
+Nhận diện, nền, chữ, hình, chuyển cảnh và nhạc được chọn phù hợp với ngữ cảnh. Tham khảo loại nội dung (bước 1b) và số đo ở
 `chan-doan.md` mục "Tín hiệu thẩm mỹ".
 
 | Dấu hiệu | Nền cảnh toàn màn hình | Kiểu hình | Chuyển cảnh | Nhạc (khối 09) |
@@ -82,7 +82,7 @@ Chữ ký nhận diện giữ nguyên (cam, hai font, dấu góc, phụ đề, m
 | Vui, năng lượng, mẹo nhanh | tối và điểm sáng cam | `illus single/list`, `chips`, `pow` | chớp, đẩy nhanh (`TONE 'soi'`) | `vui` |
 | Video dọc ngắn | như dòng nội dung, thêm mỗi lúc một điểm nhìn | hình to, ít chữ | ngắn, ít kiểu | như dòng nội dung |
 
-Người dựng đối chiếu hai hướng phù hợp với hình gốc và nội dung. So nền, ngôn ngữ hình, nhịp/chuyển cảnh và âm thanh (kể cả giữ tiếng gốc nếu phù hợp). Chọn theo dấu hiệu nhìn hoặc nghe được trong nguồn, rồi ghi hai dòng vào mục Chẩn đoán:
+Người dựng có thể đối chiếu nhiều hướng khi điều đó giúp tìm cách kể phù hợp. So nền, ngôn ngữ hình, nhịp/chuyển cảnh và âm thanh (kể cả giữ tiếng gốc nếu phù hợp). Chọn theo dấu hiệu nhìn hoặc nghe được trong nguồn, và ghi lựa chọn vào mục Chẩn đoán. Dòng đối chiếu dùng khi cần:
 
 - `Thẩm mỹ: nền … · kiểu hình … · chuyển cảnh … · nhạc … vì …`
 - `Đối chiếu thẩm mỹ: <hướng còn lại> · Chọn: <hướng thực hiện> · Vì: <dấu hiệu trong nguồn và tác dụng>`
@@ -101,9 +101,8 @@ con số, `at` là lúc nói. Mỗi phút khoảng 2–4 ý. **Lằn ranh** (s�
 
 ## Bước 4 — Từng đoạn: cái khó → nguyên lý → cách thể hiện
 
-**4a. Đoạn nào cần hình (Tinh gọn):** người dựng chỉ dựng hình khi ý đó khó hiểu nếu chỉ nghe: quy trình nhiều bước, quan hệ (nhân quả, tầng bậc,
-từ … thành), so sánh, con số, danh sách cần nhớ. Ý dễ (kể chuyện, cảm xúc, lời mời, câu ngắn tự rõ) thì dùng người nói và phụ đề, nhiều nhất
-một điểm nhấn. Hình phủ (toàn màn hình và bố cục) quá khoảng 45 % thời lượng là dựng thừa. Người dựng ghi `Tiết chế: <số> ý cần hình / <tổng ý> · bỏ hình ở … vì dễ hiểu khi nghe`.
+**4a. Đoạn nào cần hình:** đọc cả mạch và xác định hiệu ứng có thể giúp người xem hiểu, cảm nhận hoặc nhớ gì. Chọn mật độ và thời lượng
+  theo lời, hình gốc và nhịp. Video có thể giữ một ngôn ngữ hình xuyên suốt hoặc đổi bố cục theo các điểm chuyển ý.
 
 **4b. Mỗi hình phải đạt:** Đúng lúc (`at` là lúc nói, không hiện hết một lúc) · Chia đoạn (ý nối nhau thì giữ một hình lớn dần: `chuoi`,
 `xay-tang`, `muc-luc`, `mach.js` `tu_buoc`) · Báo hiệu (một chỗ sáng cam, phần đã qua mờ; `tang`, `cot` bật `mot_diem: true`) · Lời kèm hình
@@ -111,10 +110,7 @@ một điểm nhấn. Hình phủ (toàn màn hình và bố cục) quá khoản
 
 **4c. Kho cách thể hiện, xếp theo nguyên lý.** Người dựng gọi tên cái khó, tìm nguyên lý, rồi đi hết các dòng của nguyên lý đó, không dừng ở 3–4 kiểu quen thuộc.
 Người dựng ghi mỗi cảnh một dòng `- <id> · Cần: <nguyên lý> · Vì: <cái khó> · Làm: <cách>` (`nhu-cau-nguoi-xem.md` mục 4).
-Cột "Nơi" ghi "toàn màn hình" chỉ dùng ở đoạn **không có nội dung chính cần thấy** (người đang nói, người đang trao đổi, thứ đang được nói tới). Khi nội dung chính còn trên hình thì cùng cấu trúc hình đó
-chọn giữa vẽ trực tiếp tại chỗ trống, bám vật đang được nói tới, hoặc bố trí lại hình để đồ họa có đủ diện tích đọc. Dùng `rieng/duong-may.jsx` khi tấm nền và mạch vẽ phù hợp với ý;
-khung nhiều người phải giữ tất cả người đang trao đổi (`quy-tac-chung.md` mục 4). Kho được dùng tự do: đổi kiểu hình và chuyển cảnh qua các cảnh (kể cả kiểu chưa dùng ở tập trước), gọn, và ghi ở Chẩn
-đoán dòng `Đổi hiệu ứng: <các kiểu, chuyển cảnh đã chọn>`.
+Cột "Nơi" gợi ý vị trí, có thể chuyển thể theo hình gốc. Nếu giữ hình người đang nói, kiểm tra rõ mặt trong cả cảnh.
 
 **4d. Kho hình mẫu là danh mục lựa chọn, mở ra mỗi lần chọn hình** (22/11/2026 — David: *"tận dụng được tối đa toàn bộ các thẩm mỹ ở trong kho học,
 nhưng phải đưa vào cho phù hợp với nội dung, chứ không phải nhét thật nhiều … đơn giản và tinh gọn … gây ấn tượng cho người xem một cách
@@ -125,11 +121,7 @@ nhẹ nhàng"*). Với mỗi ý đã qua 4a (cần hình), người dựng đọ
 - Mẫu khung nhiều người, chỗ trống thật (`rieng/duong-may.jsx`): chương lớn, gạch thay, chuỗi nút, thẻ lật, số mốc, câu then chốt, lời nhắc gửi
   AI, thẻ tên và vai trò, vẽ đúng vật (bộ vét, khuôn áo, mảnh ghép).
 
-Cách chọn: ý giống nhau thì cùng cách; ý khác loại thì **đổi sang cách khác trong kho** để video không lặp một kiểu (ví dụ: đổi trọng tâm thì
-gạch thay · quy trình thì chuỗi nút · liệt kê ngang hàng thì thẻ · các bước có số thì số mốc · hình ảnh so sánh thì vẽ đúng vật). Mỗi cảnh một cách,
-một điểm nhìn; không chồng hai cách trong một khung.
-
-**So cách tổ chức cả khung hình, rồi chọn hiệu ứng.** Rút từ hình mẫu điều làm cảnh dễ hiểu: mắt nhìn vào đâu trước, quan hệ giữa hình và vật thật, cách điểm nhìn đổi theo lời và lúc nào bố cục chuyển. Các ứng viên có thể là hình gốc với dấu chỉ bám vật, sơ đồ nét vẽ trực tiếp, người và tư liệu được bố trí lại, hoặc cắt sang hình thật phục vụ lời dẫn. So ít nhất hai cách phù hợp cho cùng một ý. Chọn thẻ có nền khi văn bản cần tương phản hoặc các mục cần được phân nhóm. Nếu cỡ chữ chỉ đọc được khi phóng ảnh, đổi bố cục hoặc rút nội dung hình.
+**So cách tổ chức cả khung hình, rồi chọn hiệu ứng.** Rút từ hình mẫu điều làm cảnh dễ hiểu: mắt nhìn vào đâu trước, quan hệ giữa hình và vật thật, cách điểm nhìn đổi theo lời và lúc nào bố cục chuyển. Các ứng viên có thể là hình gốc với dấu chỉ bám vật, sơ đồ nét vẽ trực tiếp, người và tư liệu được bố trí lại, hoặc cắt sang hình thật phục vụ lời dẫn. Thử cách trình bày khác khi nó có thể làm ý rõ hoặc ấn tượng hơn. Chọn thẻ có nền khi văn bản cần tương phản hoặc các mục cần được phân nhóm. Nếu cỡ chữ chỉ đọc được khi phóng ảnh, đổi bố cục hoặc rút nội dung hình.
 
 Trong bản thử, xem đầu, giữa và cuối từng cảnh ở kích thước phát hành. Đặt các cảnh gần nhau để phát hiện tình trạng đổi biểu tượng hoặc hoạt ảnh trong cùng một ô. Nếu những ý khác nhau vẫn có cùng điểm nhìn, kích thước và cách tổ chức hình, quay lại hình mẫu và dựng lại các cảnh đại diện. Một nhóm ý giống nhau có thể dùng một bố cục xuyên suốt khi bố cục đó giúp người xem theo dõi. Đối chiếu cấu trúc của ý, nhịp nói, vùng trống, khả năng đọc và công cụ của mẫu hiện tại. Có thể giữ hình gốc và phụ đề khi đồ họa không đóng góp gì. Nếu mẫu thiếu cách phù hợp nhất, chuyển cách thể hiện sang công cụ sẵn có hoặc triển khai cảnh tự vẽ theo giao diện của mẫu. Khi chưa thể thực hiện an toàn, ghi giới hạn và chọn ứng viên kế tiếp.
 
@@ -139,7 +131,7 @@ Mỗi cảnh nội dung đã chọn cần một dòng trong mục Chẩn đoán:
 - kenh-lien-he · Lựa chọn: DuongMay:the · Ứng viên khác: hai nút nối · Vì sao chọn: hai kênh độc lập, mỗi kênh xuất hiện đúng khi được nhắc
 ```
 
-`Lựa chọn` là mã thực tế trong phần **Cách thể hiện trong mã** của `kiem-tra/soat.md` (ví dụ `nhan:text`, `bocuc:the-canh`, `DuongMay:the`). Khi đổi cảnh phải cập nhật lý do và nguồn. Với dự án mới, bộ soát chặn khi thiếu đối chiếu hoặc mã cảnh lệch lựa chọn. Xem bản thử ở tỷ lệ phát hành để xác nhận các lựa chọn có thật trên hình, đúng lời, có một điểm nhìn và không che chủ thể. Chỉ đánh giá lịch sử các tập trước khi người dùng yêu cầu đối chiếu.
+`Lựa chọn` là mã thực tế trong phần **Cách thể hiện trong mã** của `kiem-tra/soat.md` (ví dụ `nhan:text`, `bocuc:the-canh`, `DuongMay:the`). Khi đổi cảnh phải cập nhật lý do và nguồn. Bộ soát đối chiếu mã khi kế hoạch đã ghi lựa chọn cụ thể. Xem bản thử ở tỷ lệ phát hành để xác nhận các lựa chọn có thật trên hình, đúng lời, có một điểm nhìn và không che chủ thể. Chỉ đánh giá lịch sử các tập trước khi người dùng yêu cầu đối chiếu.
 
 Tiếng nhẹ (`props.tieng`: `ting` lúc thẻ / chữ lớn hiện, `tua` lúc nối cảnh) chỉ ở
 chỗ hình thật sự đổi. Người dựng ghi ở Chẩn đoán dòng `Nguồn kho: <cảnh> ← <nguồn, mã ca>; …` và thêm nguồn vào chú thích từng cảnh trong `canh.js`.
@@ -180,14 +172,8 @@ cho đỉnh và ý cần nhìn rõ. **Lời có dạng rõ mà không kiểu nà
 
 ## Bước 5 — Công cụ kiểm chặn trước render (`soat-canh.mjs`)
 
-- **P0 (không render):** thiếu mục `## Chẩn đoán` · thiếu dòng `Loại:` · có cảnh nội dung mà không có dòng `Cần:` nào · cả video chỉ một kiểu
-  lớp phủ nội dung (trừ khi ghi `Một kiểu có chủ đích: <lý do>`) · `kinetic`, `action` ở khung ngang · cảnh minh hoạ trống > 1,2 s đầu cảnh ·
-  phần tử ngoài cảnh · ảnh `photo` không có trong `public/anh`.
-- **P1:** thiếu dòng `Thẩm mỹ:`, `Tiết chế:`, `Yêu cầu:` (khi `yeu-cau.md` có nội dung) · cảnh nội dung thiếu dòng `Cần:` · tên loại / nguyên lý
-  không có trong `nguyen-ly.json` · hình phủ > 45 % thời lượng · thẻ > 4 dòng ở khung ngang · nhãn > 4 chữ · `dung-hay`, `tren-duoi`, `o-tron`,
-  `cau-hoi` thiếu dòng dấu hiệu `<kiểu>: …` · `dung-hay` < 2 cặp · dòng phụ đề > 1 mục `^`.
-- **P2:** `so` thiếu dòng `so:` · hai cảnh liền nhau cùng kiểu.
-- Dự án tạo trước khi có dòng `Loại:` / `Cần:` (kế hoạch cảnh cũ): hai lỗi P0 mới hạ thành P1, để dựng lại bản cũ không bị chặn.
+- **P0:** lỗi triển khai như phần tử nằm ngoài cảnh, ảnh được gọi bị thiếu, kiểu đã biết lỗi ở khung đang xuất, hoặc mã cảnh lệch lựa chọn đã ghi.
+- **P1/P2:** gợi ý rà soát bản thử, gồm khả năng đọc và cảnh tác động lên hình gốc. Số kiểu, mật độ hiệu ứng và số phương án thẩm mỹ do người dựng quyết định theo nội dung.
 
 Gặp P0 thì người dựng sửa kế hoạch hoặc đổi kiểu theo bước 4, không thử render.
 

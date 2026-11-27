@@ -7,14 +7,14 @@ description: "Lớp trình bày video: tiêu chí gốc để học mọi loại
 File này là **tiêu chí gốc**: dù học thêm loại video nào, mọi thứ học được đều đi qua đây, để kiến thức ngày càng phong phú trong khi người xem
 vẫn nhận ra video của David.
 
-## 1. Chữ ký giữ, còn lại học và thêm vào kho
+## 1. Tài nguyên nhận diện và tài nguyên sáng tạo
 
 | Lớp | Gồm | Ở đâu | Khi học video mẫu |
 |---|---|---|---|
-| **Chữ ký nhận diện** | màu nhấn cam, hai font chính, thành phần cố định (dấu góc, phụ đề, thanh thời gian, màn chốt, thẻ cuối), nhạc kênh | `thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0, `bien-thiet-ke.js`, `thuong-hieu.json` | **Không đổi** |
+| **Chữ ký nhận diện** | màu nhấn cam, hai font chính, thành phần cố định (dấu góc, phụ đề, thanh thời gian, màn chốt, thẻ cuối), nhạc kênh | `thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0, `bien-thiet-ke.js`, `thuong-hieu.json` | Cân nhắc khi tạo phong cách từng video |
 | **Phần sáng tạo** (học được) | bố cục, thứ tự thông tin hiện ra, cách nối cảnh, nhịp, chỗ đặt hiệu ứng âm thanh, nền, kết cấu, kiểu hình, chữ nhấn phụ, chuyển động | thư mục này + `bo-cuc.jsx`, `thu-vien-tai-nguyen/` | **Chỉ thêm.** Mỗi điều học được là một mục mới trong kho |
 
-Học càng nhiều thì càng có nhiều tài nguyên để chọn; khi dựng, Claude chỉ chọn vài kiểu hợp nội dung (`quy-tac-chung.md` mục 0, hiểu hơn cầu kì).
+Học càng nhiều thì càng có nhiều tài nguyên để chọn; khi dựng, người dựng chọn các cách thể hiện theo nội dung (`quy-tac-chung.md` mục 0, hiểu hơn cầu kì).
 
 ## 2. Thước đo duy nhất: hợp nội dung, người xem dễ nhận
 
@@ -47,10 +47,8 @@ Bước nhẹ (1–3): khi tới các bước đó, Claude nhắc một dòng đ
    lên repo, **học xong thì xoá**), đọc mô tả và danh sách chương (`yt-dlp --dump-json`).
 2. **Cắt khung** *(bước nhẹ)*: bảng khung theo nhịp 1,5–3 s (`ffmpeg … fps=1/2,scale=480:-1,tile=4x4`) ở đoạn mở đầu và đoạn đúng loại cần học.
 3. **Nghe** *(bước nhẹ)*: vẽ phổ âm (`showspectrumpic`) để thấy chỗ có tiếng hiệu ứng, nhạc nền, nốt chuyển chương.
-4. **Rút ra nguyên lý trước, món sau:** trả lời "vì sao mẫu này dễ hiểu / giữ người xem" bằng **tên nguyên lý ở `nhu-cau-nguoi-xem.md`**
-   (Đúng lúc, Chia đoạn, Báo hiệu, Tinh gọn…; nếu không gắn được vào khó khăn nào của người xem thì không học), rồi xác định mỗi nguyên lý nâng cấp **thành phần đang có** nào. Claude chỉ thêm kiểu mới khi không thành phần
-   nào làm được. Kỹ thuật chỉ để trang trí (không giúp hiểu thêm) thì ghi vào "Không lấy". Không thay đổi chữ ký nhận diện (mục 1).
-   Học để tự áp dụng và cải tiến phần đang có: motion graphics rõ nghĩa hơn nhưng tinh gọn (`huong-dan-lua-chon.md` bước 4a).
+4. **Rút ra cách kể và thẩm mỹ:** xem hình mẫu tổ chức cả khung, hướng mắt, thay đổi nhịp và tạo cảm xúc như thế nào. Ghi nguồn,
+   điều kiện dùng và một cách chuyển thể sang tư liệu của David. Đưa cả nguyên lý và kỹ thuật có tác dụng thẩm mỹ vào kho.
 5. **Phiếu học** (Claude điền, báo David) (mẫu ở `phieu-hoc-mau.md`): học được gì, dùng cho loại video nào, thêm thành phần nào, mỗi thành
    phần đối chiếu với các quy tắc chặn đã có thế nào. Đây là **cổng hỏi duy nhất**: gộp mọi điểm cần chọn, mỗi điểm 2–3 gợi ý.
    **Claude sửa skill luôn, báo David; đụng màu chủ đạo, chữ ký nhận diện thì chờ "duyệt" (Đ3).**

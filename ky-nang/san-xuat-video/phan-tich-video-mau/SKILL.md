@@ -9,8 +9,7 @@ description: Học cách trình bày từ một video mẫu David gửi (link Yo
 Skill này chỉ là **điểm vào**; không ghi luật riêng ở đây để chỉ có một nguồn duy nhất phải sửa.
 
 ## Ba điều không được quên
-1. **Học là bổ sung** (bộ nhớ `quy-tac-hoc-la-bo-sung`): không xoá hay sửa nghĩa thành phần cũ. Thẩm mỹ chỉ giữ **chữ ký nhận diện**
-   (`../thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0); ngoài phần đó, điều gì học được cũng có thể thêm vào.
+1. **Học là bổ sung** (bộ nhớ `quy-tac-hoc-la-bo-sung`): không xoá hay sửa nghĩa thành phần cũ. Mở rộng kho bằng cả bố cục, chuyển động, nhịp và thẩm mỹ học được từ mẫu. Xem nhận diện kênh như tài nguyên khi dựng từng video.
 2. **Phiếu học trước, sửa skill sau.** Điền `../thiet-ke-bo-cuc/phieu-hoc-mau.md` thành `../thiet-ke-bo-cuc/nguon-tham-khao/<ten-nguon>-<ngay>.md`,
    gửi David. Không có cổng hỏi: điểm cần chọn thì Claude tự chọn theo tiêu chí của skill, ghi "đã chọn X vì Y" trong phiếu, rồi làm tiếp; đụng màu chủ đạo, chữ ký nhận diện thì chờ "duyệt" (Đ3).
 3. **Kiểm tra không làm hỏng phần cũ** trước khi dùng vào video thật: chụp đủ lớp ở cả khung ngang lẫn dọc, phần cũ phải giữ nguyên.
@@ -25,7 +24,7 @@ Khi ghi một cách đã học, mô tả cách tổ chức toàn khung trước 
 
 ## Xong khi
 1. Phiếu học nằm trong `nguon-tham-khao/` và đã báo David.
-2. Claude chỉ thêm vào kho; chữ ký nhận diện (màu nhấn cam, hai font chính, thành phần cố định) không đổi.
+2. Kho có thêm cách kể hoặc lựa chọn thẩm mỹ, với tình huống áp dụng và bản thử trên tư liệu thật.
 3. `bo-cuc.md` / `am-thanh.md` có dòng mới, ghi rõ "đã có code" hay "chưa có code".
 4. Ảnh kiểm khung ngang và dọc đã được xem; phần cũ giữ nguyên so với ảnh trước khi thêm.
 5. File mẫu đã tải (nếu có) đã xoá khỏi thư mục tạm.
