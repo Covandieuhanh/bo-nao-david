@@ -8,6 +8,15 @@ description: "Nguồn học Sang Huỳnh: Claude làm motion graphics trong vide
 - Đoạn đã xem: 0:00–0:42 (mở đầu, quay mặt và đồ hoạ), 12:38–17:35 (phần video quay mặt).
 - Chỉ ghi phần trình bày. Màu kem / đỏ cam, font của họ **không** dùng.
 
+## Tài nguyên trực tiếp của tác giả
+
+- [Prompt của video](https://aislop.vn/prompt/3-kieu-video-bang-claude-hyperframes/) và [kho hiệu ứng](https://aislop.vn/bo-hieu-ung/).
+- [Echo number](https://aislop.vn/bo-hieu-ung/echo-number/): thẻ trắng, lớp chữ viền lặp, nền xám sáng và số chính xanh lam. Hợp đoạn có con số quan trọng và người nói.
+- [Spotlight magnifier](https://aislop.vn/bo-hieu-ung/spotlight-magnifier/): giảm sáng vùng ngoài điểm nhìn, viền phát sáng vẽ quanh phần cần xem, ô chú thích và đường dẫn. Hợp đoạn quay thao tác trên màn hình.
+- [Flowchart highlight](https://aislop.vn/bo-hieu-ung/flowchart-highlight/): sơ đồ nhánh, vùng quét đánh dấu và camera tiến vào cụm ý. Hợp đoạn có đầu vào, cơ chế, các nhánh song song và kết quả.
+
+Mỗi trang có clip đối chiếu, đặc tả và liên kết mã nguồn. Khi dựng theo đúng mẫu, giữ cấu hình thẩm mỹ của template, thay nội dung và mốc theo tài nguyên.
+
 ## Bố cục học được
 
 1. **Thẻ cạnh mặt:** người giữ nguyên khung, một thẻ cao bo góc chiếm khoảng một phần ba ở phía nền trống, chữ xây dần theo lời:

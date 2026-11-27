@@ -24,6 +24,8 @@ và thứ tự lớp. Ghi rõ font nhận diện được và font thay thế. G
 Nếu mới có phiếu mô tả, ghi mức đối chiếu là tham khảo. Khi quan sát được khung gốc, ghi mốc đã xem, đặc điểm khớp và các
 điểm chuyển thể sang tư liệu David. Dùng một cảnh thử để kiểm chữ, khung và nhịp trước khi nhân rộng sang nhiều hiệu ứng.
 
+Khi tác giả công bố clip, đặc tả hoặc template, đọc các nguồn đó trước. Chạy mẫu gốc và thay nội dung qua cấu hình của hiệu ứng. Ghi riêng những gì phải đổi để phù hợp nguồn, ví dụ vùng cần phóng trên màn hình, câu nói và thời điểm. Giữ kiểu chữ, màu, hình học, easing và thứ tự lớp của mẫu. Ở hiệu ứng tự tái dựng, cần ghi rõ phần chưa đối chiếu được và điểm khác có thể nhìn thấy. Dùng ba ảnh đầu, giữa và cuối ở cùng trạng thái chuyển động cùng một đoạn thử có tiếng nguồn.
+
 ## Đọc kèm (ở đúng bước cần)
 - `../thiet-ke-bo-cuc/bo-cuc.md`, `../thiet-ke-bo-cuc/am-thanh.md`: kho đã có, để biết điều mới có trùng với phần đã có không.
 - `../quy-tac-chung.md`, `../dung-video-theo-phong-cach/references/loi-thuong-gap.md`: các quy tắc chặn đã có phải giữ.

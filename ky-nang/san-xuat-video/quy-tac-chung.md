@@ -13,6 +13,7 @@ ghi rõ là ngoại lệ. Thói quen làm việc chung (hỏi, chạy lệnh, cu
   giữ chân người xem. Mục tiêu mỗi video: người xem **ở lại → HIỂU ý chính → LÀM theo**; đo lại bằng số liệu thực tế (khối 16).
 - **Thẩm mỹ do người dựng lựa chọn theo nội dung và hình mẫu.** Nhận diện David là tài nguyên của kênh. Người dựng có thể phối màu cảnh,
   chữ, nền, bố cục, âm thanh và chuyển động theo ý đang truyền tải.
+- **Dựng đúng hình mẫu:** khi David yêu cầu bám chính xác mẫu, lấy ngôn ngữ hình của mẫu làm chuẩn của cảnh. Bỏ màu, font, dấu góc, khung, bố cục và chuyển động nhận diện nội bộ ở cảnh đó. Tách tư liệu, lời và mốc của David khỏi CSS, font, hình học và đường chuyển động của mẫu. Nếu tác giả chia sẻ template dùng lại được, ưu tiên chạy template đó trước khi tự tái dựng.
 - **Mọi lựa chọn được tự thiết lập theo nội dung nguồn**, để phát huy tối đa sức mạnh của AI: mẫu, bố cục, lớp thông tin, kiểu cảnh, thẩm mỹ,
   nhạc, khung đều do người dựng (AI nào cũng vậy) lập luận từ chính tài nguyên (`thiet-ke-bo-cuc/nhu-cau-nguoi-xem.md` → `huong-dan-lua-chon.md`), không sao chép từ tập trước, không chờ
   David chỉ định. Công cụ soát nhắc khi chưa ghi chẩn đoán (`soat-canh.mjs`).
