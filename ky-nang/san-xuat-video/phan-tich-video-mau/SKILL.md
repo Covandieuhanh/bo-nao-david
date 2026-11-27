@@ -26,6 +26,12 @@ Nếu mới có phiếu mô tả, ghi mức đối chiếu là tham khảo. Khi 
 
 Khi tác giả công bố clip, đặc tả hoặc template, đọc các nguồn đó trước. Chạy mẫu gốc và thay nội dung qua cấu hình của hiệu ứng. Ghi riêng những gì phải đổi để phù hợp nguồn, ví dụ vùng cần phóng trên màn hình, câu nói và thời điểm. Giữ kiểu chữ, màu, hình học, easing và thứ tự lớp của mẫu. Ở hiệu ứng tự tái dựng, cần ghi rõ phần chưa đối chiếu được và điểm khác có thể nhìn thấy. Dùng ba ảnh đầu, giữa và cuối ở cùng trạng thái chuyển động cùng một đoạn thử có tiếng nguồn.
 
+## Kiểm hiệu ứng trên bản xuất
+
+Với mỗi hiệu ứng, ghi mốc mẫu và các lớp phải thấy, hình dạng trước/trong/sau chuyển động, cụm lời hoặc sự kiện kích hoạt, số khung bắt đầu và khung đủ rõ. Đối chiếu với tiếng trích từ chính tệp xuất. Chụp khung ngay trước kích hoạt và khung trong pha hiện để bắt trường hợp đúng tham số nhưng lớp đã xuất hiện sớm, bị che hoặc hiện muộn. Kiểm từng lớp, kể cả chấm chỉ, vệt sáng, bóng và âm thanh. Với đoạn giải thích toàn cảnh, giữ hình và quan hệ giữa các phần đủ lớn tới khi lời chuyển sang chi tiết.
+
+Chỉ ghi đã kiểm chứng sau khi xem cả khung xuất lẫn đoạn phát có tiếng. Ghi rõ hiệu ứng đã kiểm, hiệu ứng chỉ có phiếu học hoặc thiếu nguồn phù hợp. Khi học nhiều mẫu, giữ từng thẩm mỹ nguồn theo yêu cầu của David và mẫu tương ứng.
+
 ## Đọc kèm (ở đúng bước cần)
 - `../thiet-ke-bo-cuc/bo-cuc.md`, `../thiet-ke-bo-cuc/am-thanh.md`: kho đã có, để biết điều mới có trùng với phần đã có không.
 - `../quy-tac-chung.md`, `../dung-video-theo-phong-cach/references/loi-thuong-gap.md`: các quy tắc chặn đã có phải giữ.
