@@ -85,6 +85,8 @@ out = [f"# Chẩn đoán — {os.path.basename(os.path.dirname(P)) or P}",
        "1. Mặt người nói: rõ / nhỏ / không thấy · 2. Chủ thể: … · 3. Rác quanh chủ thể: có / không · 4. Máy quay: đứng yên / dịch",
        "→ bố cục nền: giữ khung gốc / khung chủ thể (khung-chu-the.py) / pillar …",
        "Thẩm mỹ: nền … · kiểu hình … · chuyển cảnh … · nhạc … vì …  (bắt buộc, soat-canh báo nếu thiếu)",
+       "Đối chiếu thẩm mỹ: <hướng còn lại> · Chọn: <hướng thực hiện> · Vì: <dấu hiệu trong nguồn và tác dụng>",
+       "Mỗi cảnh nội dung: - <id> · Lựa chọn: <mã> · Ứng viên khác: <cách khác> · Vì sao chọn: <lý do>",
        "⚠️ Người chiếm < ~50 % khung (ngồi xa, hai bên tường trống) + nội dung kiến thức / DÀY THÔNG TIN → KHUNG CHỦ THỂ quanh người + bảng `GHI_CHU`, không giữ khung gốc"]
 open(os.path.join(P, "kiem-tra/chan-doan.md"), "w", encoding="utf-8").write("\n".join(out) + "\n")
 print("\n".join(out)); print(jpg)

@@ -15,10 +15,17 @@ const FULL_RENDER = a === undefined;
 // render đầy đủ chỉ chạy khi soát cảnh không còn P0 — gồm cả "chưa chẩn đoán" (ke-hoach-canh.md mục Chẩn đoán) và "cả video một kiểu lớp phủ".
 // BO_QUA_SOAT=1 chỉ khi David cho phép.
 {
-  const SOAT = path.join(process.env.HOME, '.claude/skills/dung-video-theo-phong-cach/scripts/soat-canh.mjs');
-  if (FULL_RENDER && !process.env.BO_QUA_SOAT && fs.existsSync(SOAT)) {
-    const r = spawnSync('node', [SOAT, path.resolve('..')], {stdio: 'inherit'});
-    if (r.status === 1) { console.error('DỪNG: soát cảnh còn P0 (../kiem-tra/soat.md). Sửa kịch bản rồi render lại.'); process.exit(1); }
+  const SOAT = process.env.SOAT_CANH || [
+    '.claude/skills/dung-video-theo-phong-cach/scripts/soat-canh.mjs',
+    '.agents/skills/video-style-edit/scripts/soat-canh.mjs',
+  ].map((p) => path.join(process.env.HOME || '', p)).find((p) => fs.existsSync(p));
+  if (FULL_RENDER && !process.env.BO_QUA_SOAT) {
+    if (!SOAT || !fs.existsSync(SOAT)) {
+      console.error('DỪNG: thiếu soat-canh.mjs. Cài skill hoặc đặt SOAT_CANH tới script của repo.');
+      process.exit(1);
+    }
+    const r = spawnSync(process.execPath, [SOAT, path.resolve('..')], {stdio: 'inherit'});
+    if (r.status !== 0) { console.error('DỪNG: bước soát cảnh chưa đạt hoặc chưa chạy được. Xem ../kiem-tra/soat.md và thông báo ở trên.'); process.exit(1); }
   }
 }
 const serveUrl = await bundleNhe('src/diem-vao.jsx');   // không chép video vào thư mục tạm (bundle-nhe.mjs)

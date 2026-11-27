@@ -119,6 +119,19 @@ for (let i = 1; i < fulls.length; i++) if (fulls[i].start < fulls[i - 1].end - 0
 // không hai cảnh cùng kiểu liền nhau (khối 07, 2026-11-10); cảnh vẽ tiếp cùng mạch (tu_buoc) được nối
 const kieu = (s) => s.type === 'nhan' ? `nhan:${s.icon ? 'icon' : s.text ? 'text' : s.zoom > 1 ? 'zoom' : 'toi'}`
   : [s.type, s.type === 've' ? s.ve : null, s.mode || s.kieu].filter(Boolean).join(':');   // cảnh tự vẽ: tên component + props.kieu (dạng hình)
+// Nhóm theo hình người xem thấy. Đổi nội dung trong cùng ô nhãn không tạo ra cách kể khác.
+const nhomThiGiac = (s) => {
+  if (s.type === 'nhan' || s.type === 'pow' || (s.type === 've' && s.ve === 'NhanTram')) return 'nhan-canh-nguoi';
+  if (s.type === 'bocuc' && s.kieu === 'the-canh' && (s.dong || []).length <= 1) return 'nhan-canh-nguoi';
+  if (s.type === 've' && s.ve === 'DuongMay') {
+    const dang = ['the', 'thay', 'buoc', 'ghep', 'khuon', 'nhac', 'cau', 'ten_the'].find((key) => s[key]);
+    return `DuongMay:${dang || (s.nut?.length ? 'nut' : 'chuong')}`;
+  }
+  return kieu(s);
+};
+const cachDung = (s) => s.type === 've' && s.ve === 'DuongMay' ? nhomThiGiac(s) : kieu(s);
+const CO_DINH = new Set(['hud', 'title', 'pinTitle', 'teaserTag', 'cta', 'hook', 'round', 'outro', 'location', 'action']);
+const noiDungThiGiac = list.map(flat).filter((s) => !CO_DINH.has(s.type));
 const BO_QUA = new Set(['hook', 'cta', 'action']);   // mở đầu, màn hành động, màn chốt có chỗ cố định
 const chuoi = list.map(flat).filter((s) => !BO_QUA.has(s.type)).sort((a, b) => a.start - b.start);
 for (let i = 1; i < chuoi.length; i++) {
@@ -131,6 +144,8 @@ for (let i = 1; i < chuoi.length; i++) {
 // ke-hoach-canh.md ghi "Một kiểu có chủ đích: <lý do>". Lớp cố định (dấu kênh, tít, màn chốt…) không tính là kiểu.
 {
   let kh = ''; try { kh = fs.readFileSync(path.join(P, 'ke-hoach-canh.md'), 'utf8'); } catch {}
+  const cd = (kh.split(/^##[ \t]+Chẩn đoán[^\n]*\n/m)[1] || '').split(/^##[ \t]+/m)[0];
+  const duAnMoi = fs.existsSync(path.join(P, 'yeu-cau.md'));
   if (!/^##\s*Chẩn đoán/m.test(kh))
     bao('P0', 0, 'ke-hoach-canh.md', 'chưa chẩn đoán, chưa tự chọn theo nội dung', 'chạy chan-doan.py rồi ghi mục "## Chẩn đoán" theo thiet-ke-bo-cuc/huong-dan-lua-chon.md');
   else if (!/Thẩm mỹ:/.test(kh))
@@ -138,13 +153,16 @@ for (let i = 1; i < chuoi.length; i++) {
   // tiết chế (huong-dan-lua-chon.md bước 4a, 20/11/2026): chỉ dựng hình cho ý khó hiểu nếu chỉ nghe
   if (/^##\s*Chẩn đoán/m.test(kh) && !/Tiết chế:/.test(kh))
     bao('P1', 0, 'ke-hoach-canh.md', 'chẩn đoán chưa có dòng "Tiết chế:" (ý nào cần hình, ý nào để người nói)', 'huong-dan-lua-chon.md bước 4a');
-  // kho hình mẫu là thực đơn (huong-dan-lua-chon.md bước 4d, 22/11/2026): ghi nguồn từng cảnh; từ 4 cảnh hình trở lên mà chỉ 1 nguồn → nhắc đổi cách
+  // Mục nguồn phải chỉ đúng cảnh, kể cả cảnh chỉ dùng chữ hoặc biểu tượng.
   if (/^##\s*Chẩn đoán/m.test(kh)) {
-    const dong = (kh.match(/Nguồn kho:([^\n]*)/) || [])[1];
-    const soHinh = list.map(flat).filter((x) => x.type === 've' || x.type === 'bocuc' || x.type === 'diagram' || x.type === 'illus').length;
-    if (!dong && soHinh) bao('P1', 0, 'ke-hoach-canh.md', 'chẩn đoán chưa có dòng "Nguồn kho:" (cảnh nào lấy cách nào trong kho hình mẫu)', 'huong-dan-lua-chon.md bước 4d');
-    else if (dong && soHinh >= 4 && new Set((dong.match(/←\s*([^,;(]+)/g) || []).map((s) => s.replace(/←\s*/, '').trim().split(' ')[0])).size < 2)
-      bao('P1', 0, 'ke-hoach-canh.md', `${soHinh} cảnh hình mà chỉ một nguồn kho — dễ lặp một kiểu`, 'mở truong-hop-da-giai.md + nguon-tham-khao/, chọn cách hợp từng ý (huong-dan-lua-chon.md 4d)');
+    const dong = (kh.match(/^\s*Nguồn kho:[ \t]*([^\n]*)/m) || [])[1] || '';
+    const nguon = new Map(dong.split(';').flatMap((muc) => {
+      const [id, mau] = muc.split('←').map((text) => text.trim());
+      return id && mau ? [[id, mau]] : [];
+    }));
+    for (const s of noiDungThiGiac)
+      if (!nguon.has(s.id))
+        bao('P1', s.start, s.id, 'chưa chỉ rõ mẫu áp dụng cho cảnh', 'ghi <id> ← <nguồn, mã ca hoặc tên cách đã học> trong dòng Nguồn kho');
   }
   {
     const PHU = list.map(flat).filter((x) => FULL.has(x.type) || x.type === 'bocuc' || x.type === 've').map((x) => [x.start, held[x.id]?.end ?? x.end]).sort((a, b) => a[0] - b[0]);
@@ -170,7 +188,22 @@ for (let i = 1; i < chuoi.length; i++) {
     try { NL = JSON.parse(fs.readFileSync(new URL('../../thiet-ke-bo-cuc/nguyen-ly.json', import.meta.url), 'utf8')); } catch {}
     const cu = !fs.existsSync(path.join(P, 'yeu-cau.md'));
     const chan = cu ? 'P1' : 'P0', ghiCu = cu ? ' (dự án cũ: chỉ nhắc)' : '';
-    const cd = (kh.split(/^##\s*Chẩn đoán/m)[1] || '');
+    // Kiểm chứng lựa chọn trước khi chạy bản đầy đủ. Hình xem thử vẫn cần người dựng đánh giá.
+    const coNoiDung = (value) => value && /[\p{L}\p{N}]/u.test(value) && !/^<.*>$/.test(value);
+    const thamMy = cd.match(/^\s*Đối chiếu thẩm mỹ:[ \t]*(.+?)[ \t]*·[ \t]*Chọn:[ \t]*(.+?)[ \t]*·[ \t]*Vì:[ \t]*(.+)$/m);
+    const khac = (a, b) => a.normalize('NFC').trim().toLowerCase() !== b.normalize('NFC').trim().toLowerCase();
+    if (duAnMoi && (!thamMy || !thamMy.slice(1).every(coNoiDung) || !khac(thamMy[1], thamMy[2])))
+      bao('P0', 0, 'ke-hoach-canh.md', 'thiếu đối chiếu hai hướng thẩm mỹ', 'ghi hướng khác, hướng chọn và lý do theo bước 2b');
+    const quyetDinh = new Map([...cd.matchAll(/^[-*]?[ \t]*([^\s·]+)[ \t]*·[ \t]*Lựa chọn:[ \t]*(.+?)[ \t]*·[ \t]*Ứng viên khác:[ \t]*(.+?)[ \t]*·[ \t]*Vì sao chọn:[ \t]*(.+)$/gm)]
+      .map((m) => [m[1], m.slice(2)]));
+    for (const s of noiDungThiGiac) {
+      const thucTe = cachDung(s);
+      const d = quyetDinh.get(s.id);
+      if (duAnMoi && (!d || !d.every(coNoiDung) || !khac(d[0], d[1])))
+        bao('P0', s.start, s.id, 'thiếu so sánh cách thể hiện cho ý này', `ghi Lựa chọn: ${thucTe} · Ứng viên khác: … · Vì sao chọn: …`);
+      else if (d && d[0].trim() !== thucTe)
+        bao('P0', s.start, s.id, `kế hoạch chọn "${d[0]}" nhưng mã cảnh đang dùng "${thucTe}"`, 'đồng bộ kế hoạch và mã cảnh');
+    }
     const norm = (t) => t.normalize('NFC').toLowerCase().trim();
     const loaiDong = cd.match(/^\s*Loại:\s*(.+)$/m);
     if (/^##\s*Chẩn đoán/m.test(kh)) {
@@ -196,20 +229,29 @@ for (let i = 1; i < chuoi.length; i++) {
     tim(list);
     for (const a of anh) if (!fs.existsSync(path.join(P, 'chuyen-dong/public/anh', a))) bao('P0', 0, 'ảnh', `"${a}" không có trong chuyen-dong/public/anh`, 'chép ảnh (them-anh/) vào public/anh hoặc sửa tên');
   }
-  const CO_DINH = new Set(['hud', 'title', 'pinTitle', 'teaserTag', 'cta', 'hook', 'round', 'outro', 'location']);
-  const loai = new Set(list.map(flat).filter((x) => !CO_DINH.has(x.type)).map(kieu));
-  const coY = /Một kiểu có chủ đích:/.test(kh);
+  const nhom = new Map();
+  for (const s of noiDungThiGiac) {
+    const k = nhomThiGiac(s);
+    nhom.set(k, (nhom.get(k) || 0) + 1);
+  }
+  const loai = new Set(nhom.keys());
+  const coY = /^\s*Một kiểu có chủ đích:[ \t]*\S.*$/m.test(kh);
+  const [nhomChinh, soCanh = 0] = [...nhom.entries()].sort((a, b) => b[1] - a[1])[0] || [];
+  if (!coY && loai.size > 1 && soCanh >= 3 && soCanh * 3 >= noiDungThiGiac.length * 2)
+    bao('P1', 0, 'cả video', `${soCanh}/${noiDungThiGiac.length} cảnh cùng cách trình bày ${nhomChinh}`,
+      'xem liền các cảnh nhấn, đổi cách kể ở ý phù hợp và ghi bằng chứng trong bản xem thử');
   if (duration >= 45 && loai.size <= 1 && !coY)
     bao('P0', 0, 'cả video', `chỉ ${loai.size ? `một kiểu lớp phủ (${[...loai][0]})` : 'không có lớp phủ nội dung'} suốt ${fmt(duration)} s`,
       'đi lại huong-dan-lua-chon.md bước 4 cho từng ý (liệt kê, so sánh, bước, con số, câu then chốt…), hoặc ghi "Một kiểu có chủ đích: …"');
   else if (duration >= 300 && loai.size <= 2 && !coY)
     bao('P1', 0, 'cả video', `video ${fmt(duration / 60)} phút chỉ ${loai.size} kiểu lớp phủ (${[...loai].join(', ')})`, 'xem lại huong-dan-lua-chon.md bước 4');
+  // Đối chiếu lịch sử khi phiên dựng có yêu cầu. Không lấy độ mới làm tiêu chí chọn cảnh.
   // TẬN DỤNG KHO, ĐỔI HIỆU ỨNG (David 22/11/2026: "học nhiều mà không thấy ứng dụng được thì phí quá" — rồi: không cần luật cố định,
   // dùng tự do, đa dạng mà gọn): nhắc (P1, không chặn) khi video gần như lặp lại các kiểu của 3 tập gần nhất trong ~/Movies.
-  {
-    const kieuVe = kieu;
+  if (process.env.THU_MUC_DOI_CHIEU_CANH) {
+    const kieuVe = nhomThiGiac;
     const cur = new Set(list.map(flat).filter((x) => !CO_DINH.has(x.type)).map(kieuVe));
-    const goc = path.join(process.env.HOME || '', 'Movies'), cu = [];
+    const goc = process.env.THU_MUC_DOI_CHIEU_CANH, cu = [];
     const quet = (d, sau) => { try { for (const n of fs.readdirSync(d)) {
       const f = path.join(d, n, ...sau, 'chuyen-dong/src/canh.js');
       if (fs.existsSync(f) && path.resolve(path.join(d, n, ...sau)) !== P && !/^tap-thu-/.test(n)) cu.push([fs.statSync(f).mtimeMs, f]); } } catch {} };
@@ -217,8 +259,8 @@ for (let i = 1; i < chuoi.length; i++) {
     const ba = cu.sort((a, b) => b[0] - a[0]).slice(0, 3), daDung = new Set();
     for (const [, f] of ba) try { for (const s of ((await import(pathToFileURL(f).href)).SCENES || []).map(flat)) if (!CO_DINH.has(s.type)) daDung.add(kieuVe(s)); } catch {}
     const moi = [...cur].filter((k) => !daDung.has(k));
-    if (ba.length && moi.length < 2)
-      bao('P1', 0, 'cả video', `chỉ ${moi.length} kiểu khác ${ba.length} tập gần nhất (${moi.join(', ') || 'không có'}) — video sẽ trông giống các tập trước`,
+    if (ba.length && cur.size && !moi.length)
+      bao('P2', 0, 'cả video', `chỉ ${moi.length} kiểu khác ${ba.length} tập gần nhất (${moi.join(', ') || 'không có'}) — video sẽ trông giống các tập trước`,
         'đổi hiệu ứng / chuyển cảnh bằng kiểu khác trong kho (thiet-ke-bo-cuc/bo-cuc.md, rieng/ của khuôn) hoặc tự viết, giữ gọn');
   }
 }
@@ -229,6 +271,8 @@ if (false && list.length && !list.map(flat).some((s) => s.start <= 0.5 && ['hook
 const tong = lines.P0.length + lines.P1.length + lines.P2.length;
 const out = [`# Soát cảnh — ${list.length} cảnh · P0 ${lines.P0.length} · P1 ${lines.P1.length} · P2 ${lines.P2.length}`];
 for (const m of ['P0', 'P1', 'P2']) if (lines[m].length) out.push(`\n## ${m}`, ...lines[m].map((x) => `- ${x}`));
+if (noiDungThiGiac.length) out.push('\n## Cách thể hiện trong mã', ...noiDungThiGiac.map((s) =>
+  `- ${s.id} · ${cachDung(s)} · nhóm hình: ${nhomThiGiac(s)}`));
 if (!tong) out.push('Không thấy lỗi đo được. Vẫn cần xem kiem-tra/anh-tinh.jpg bằng mắt.');
 fs.mkdirSync(path.join(P, 'kiem-tra'), {recursive: true});
 fs.writeFileSync(path.join(P, 'kiem-tra/soat.md'), out.join('\n') + '\n');

@@ -82,7 +82,10 @@ Chữ ký nhận diện giữ nguyên (cam, hai font, dấu góc, phụ đề, m
 | Vui, năng lượng, mẹo nhanh | tối và điểm sáng cam | `illus single/list`, `chips`, `pow` | chớp, đẩy nhanh (`TONE 'soi'`) | `vui` |
 | Video dọc ngắn | như dòng nội dung, thêm mỗi lúc một điểm nhìn | hình to, ít chữ | ngắn, ít kiểu | như dòng nội dung |
 
-Người dựng ghi `Thẩm mỹ: nền … · kiểu hình … · chuyển cảnh … · nhạc … vì …`.
+Người dựng đối chiếu hai hướng phù hợp với hình gốc và nội dung. So nền, ngôn ngữ hình, nhịp/chuyển cảnh và âm thanh (kể cả giữ tiếng gốc nếu phù hợp). Chọn theo dấu hiệu nhìn hoặc nghe được trong nguồn, rồi ghi hai dòng vào mục Chẩn đoán:
+
+- `Thẩm mỹ: nền … · kiểu hình … · chuyển cảnh … · nhạc … vì …`
+- `Đối chiếu thẩm mỹ: <hướng còn lại> · Chọn: <hướng thực hiện> · Vì: <dấu hiệu trong nguồn và tác dụng>`
 
 ## Bước 3 — Chọn lớp thông tin (người xem theo dõi cả video bằng gì)
 
@@ -124,9 +127,21 @@ nhẹ nhàng"*). Với mỗi ý đã qua 4a (cần hình), người dựng đọ
 
 Cách chọn: ý giống nhau thì cùng cách; ý khác loại thì **đổi sang cách khác trong kho** để video không lặp một kiểu (ví dụ: đổi trọng tâm thì
 gạch thay · quy trình thì chuỗi nút · liệt kê ngang hàng thì thẻ · các bước có số thì số mốc · hình ảnh so sánh thì vẽ đúng vật). Mỗi cảnh một cách,
-một điểm nhìn; không chồng hai cách trong một khung. Tiếng nhẹ (`props.tieng`: `ting` lúc thẻ / chữ lớn hiện, `tua` lúc nối cảnh) chỉ ở
+một điểm nhìn; không chồng hai cách trong một khung.
+
+Trước khi lập trình cảnh, so ít nhất hai cách trong kho cho cùng một ý. Đối chiếu cấu trúc của ý, nhịp nói, vùng trống, khả năng đọc và công cụ của mẫu hiện tại. Có thể giữ hình gốc và phụ đề khi đồ họa không đóng góp gì. Nếu mẫu thiếu cách phù hợp nhất, chuyển cách thể hiện sang công cụ sẵn có hoặc triển khai cảnh tự vẽ theo giao diện của mẫu. Khi chưa thể thực hiện an toàn, ghi giới hạn và chọn ứng viên kế tiếp.
+
+Mỗi cảnh nội dung đã chọn cần một dòng trong mục Chẩn đoán:
+
+```text
+- kenh-lien-he · Lựa chọn: DuongMay:the · Ứng viên khác: hai nút nối · Vì sao chọn: hai kênh độc lập, mỗi kênh xuất hiện đúng khi được nhắc
+```
+
+`Lựa chọn` là mã thực tế trong phần **Cách thể hiện trong mã** của `kiem-tra/soat.md` (ví dụ `nhan:text`, `bocuc:the-canh`, `DuongMay:the`). Khi đổi cảnh phải cập nhật lý do và nguồn. Với dự án mới, bộ soát chặn khi thiếu đối chiếu hoặc mã cảnh lệch lựa chọn. Xem bản thử ở tỷ lệ phát hành để xác nhận các lựa chọn có thật trên hình, đúng lời, có một điểm nhìn và không che chủ thể. Chỉ đánh giá lịch sử các tập trước khi người dùng yêu cầu đối chiếu.
+
+Tiếng nhẹ (`props.tieng`: `ting` lúc thẻ / chữ lớn hiện, `tua` lúc nối cảnh) chỉ ở
 chỗ hình thật sự đổi. Người dựng ghi ở Chẩn đoán dòng `Nguồn kho: <cảnh> ← <nguồn, mã ca>; …` và thêm nguồn vào chú thích từng cảnh trong `canh.js`.
-Cách đã học mà kho chưa có code thì người dựng viết thêm vào `rieng/` (mẫu dùng lại), không thay bằng kiểu quen thuộc.
+Trước khi xuất, xem liên tiếp các đoạn nhấn ở kích thước phát hành. Nhãn chữ, nhãn biểu tượng và thẻ cạnh người có cùng bố cục phải được xem như cùng một nhóm. Nếu một nhóm chiếm phần lớn cảnh nhấn, tìm một ý có thể kể bằng cách khác trong kho và thử trên đúng khung gốc. Không đổi cảnh chỉ để đủ số. Cách đã học mà kho chưa có code thì người dựng viết thêm vào `rieng/` (mẫu dùng lại), không thay bằng kiểu quen thuộc.
 
 | Nguyên lý | Câu nói / hình có dạng | Cách thể hiện có sẵn | Nơi (khi có khung chủ thể / bảng) |
 |---|---|---|---|

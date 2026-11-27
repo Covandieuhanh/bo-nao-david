@@ -4,6 +4,8 @@ description: Cắt một video dài (bản YouTube 5–60 phút) thành các cli
 ---
 # Cắt đoạn nổi bật cho mọi mục video ngắn
 
+**Chọn hiệu ứng và thẩm mỹ trước khi viết cảnh.** Áp dụng [hướng dẫn dùng chung](../thiet-ke-bo-cuc/huong-dan-lua-chon.md) bước 2b và 4d cho đầu vào này. Đối chiếu hai hướng thẩm mỹ, so ứng viên cho từng ý cần hình và ghi phương án khớp mã cảnh. Nếu mẫu thiếu công cụ, chuyển thể hoặc ghi lý do chọn ứng viên khác. Xem các cảnh liên tiếp trên video thử để xác nhận bố cục, nhịp và vùng an toàn.
+
 **Đọc trước:** `../quy-tac-chung.md` (mục 8) · hồ sơ `../ho-so-thuong-hieu/doan-noi-bat.md`. Lỗi thường gặp: đọc của `$BASE`, thêm của `$POD` khi nguồn là podcast.
 
 `$BASE=~/.claude/skills/dung-video-theo-phong-cach`, `$POD=~/.claude/skills/dung-podcast`, `$SKILL` là thư mục này. Skill này đảm nhận **nhận loại

@@ -10,7 +10,7 @@ set -euo pipefail
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
 CL="$HOME/.claude"
 CHI_VIDEO=0; DU_AN=""
-for a in "$@"; do case "$a" in --chi-video) CHI_VIDEO=1;; *) DU_AN="$a";; esac; done
+for a in "$@"; do case "$a" in --codex-video) :;; --chi-video) CHI_VIDEO=1;; *) DU_AN="$a";; esac; done
 [ "$(uname)" = Darwin ] || CHI_VIDEO=1
 DU_AN="${DU_AN:-$REPO}"
 DU_AN="$(cd "$DU_AN" && pwd)"
@@ -27,6 +27,14 @@ lien_ket() {
   ln -s "$dich" "$cho"
   echo "  $cho → $dich"
 }
+
+# Dùng riêng khi chỉ đồng bộ skill video của Codex, không cài bot hay hook.
+if [ "${1:-}" = "--codex-video" ]; then
+  lien_ket "$REPO/ky-nang/san-xuat-video/dung-video-theo-phong-cach" "$HOME/.agents/skills/video-style-edit"
+  lien_ket "$REPO/ky-nang/san-xuat-video/dung-podcast" "$HOME/.agents/skills/podcast-style-edit"
+  lien_ket "$REPO/ky-nang/san-xuat-video/cat-doan-noi-bat" "$HOME/.agents/skills/cat-doan-noi-bat"
+  exit 0
+fi
 
 # Mac chính: kéo repo riêng tư bo-nao-david-mac (bot Telegram, lịch tự chạy, trang xem kết quả, lưu trữ) vào CÙNG thư mục.
 # Danh sách phần riêng: tu-dong-hoa/phan-rieng-mac.txt. Máy chỉ dựng video bỏ qua bước này.

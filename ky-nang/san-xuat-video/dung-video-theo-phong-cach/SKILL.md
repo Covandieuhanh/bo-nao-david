@@ -4,6 +4,8 @@ description: Dựng video tự quay thành bản đăng được ngay (Reels/Tik
 ---
 # Dựng video theo phong cách mẫu
 
+**Chọn hiệu ứng và thẩm mỹ trước khi viết cảnh.** Áp dụng [hướng dẫn dùng chung](../thiet-ke-bo-cuc/huong-dan-lua-chon.md) bước 2b và 4d cho đầu vào này. Đối chiếu hai hướng thẩm mỹ, so ứng viên cho từng ý cần hình và ghi phương án khớp mã cảnh. Nếu mẫu thiếu công cụ, chuyển thể hoặc ghi lý do chọn ứng viên khác. Xem các cảnh liên tiếp trên video thử để xác nhận bố cục, nhịp và vùng an toàn.
+
 **Đọc trước:** `../quy-tac-chung.md` (mục 8) · hồ sơ `../ho-so-thuong-hieu/lam-video.md` (hoặc `ghep-vlog.md`).
 
 Người dùng đưa **video gốc** (thường là dọc 9:16, tiếng Việt) và có thể kèm **video mẫu**. Mục tiêu: video **đăng được ngay**, khớp từng

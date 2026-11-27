@@ -187,3 +187,7 @@ Thiết bị chỉ cần có repo này là đủ để dựng video giống Mac 
    người làm không được bỏ qua cổng kiểm soát này, vì đây là cơ chế giữ video đúng nội dung khi không có người kiểm tra.
 5. **Thiết bị mới: làm bài kiểm suy luận** [bai-kiem/](ky-nang/san-xuat-video/thiet-ke-bo-cuc/bai-kiem/README.md) (không mở đáp án), chấm bằng
    `python3 -I cham.py bai-lam.json`; đạt ít nhất 8/10 mới dựng video thật, chưa đạt thì gửi các đoạn ✗ cho David.
+
+### Đồng bộ skill video đang cài cho Codex
+
+Từ bản repo dùng chung, chạy `bash tu-dong-hoa/cai-dat-bo-nao.sh --codex-video`. Lệnh sao lưu hai thư mục skill cũ nếu có rồi liên kết skill dựng video, podcast và highlight với repo. Mở phiên mới để Codex nạp lại danh sách skill.
