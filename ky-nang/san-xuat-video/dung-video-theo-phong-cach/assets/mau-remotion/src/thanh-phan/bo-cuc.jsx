@@ -187,7 +187,7 @@ const ONguoi = ({sceneId, start, o, noi_dung, khung, bam, nguoi_duoi = false}) =
   return (
     <FullShell hold>
       <div style={{position: 'absolute', left: x, top: y, width: w, height: h, borderRadius: 36 * k, overflow: 'hidden',
-        border: k > 0.5 ? `3px solid ${C.accent}` : 'none', boxShadow: `0 30px 90px rgba(${C.bongRgb},0.6)`}}>
+        border: k > 0.5 ? `${C.giay ? 5 : 3}px solid ${C.khungNguoi}` : 'none', boxShadow: `0 30px 90px rgba(${C.bongRgb},0.6)`}}>
         <OffthreadVideo src={staticFile('goc.mp4')} trimBefore={fr(start)} muted
           style={{position: 'absolute', left: -cl * W * sc + (w - (cr - cl) * W * sc) / 2, top: -ct * H * sc + (h - (cb - ct) * H * sc) / 2,
             width: W * sc, height: H * sc, maxWidth: 'none'}} />

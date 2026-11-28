@@ -18,8 +18,12 @@ export const FullShell = ({children, hold}) => {   // hold: không mờ ra ở c
   return (
     <AbsoluteFill style={{opacity: v.opacity, filter: v.filter, transform: `scale(${1.03 - 0.03 * tien(f, 0, 14, EASE.camera)})`}}>
       <NenPhong />
-      {!usePhong().phong && <AbsoluteFill style={{backgroundImage: `linear-gradient(${C.line} 2px, transparent 2px), linear-gradient(90deg, ${C.line} 2px, transparent 2px)`,
-        backgroundSize: '120px 120px', opacity: 0.35, maskImage: 'radial-gradient(circle at 50% 45%, black, transparent 75%)'}} />}
+      {!usePhong().phong && (C.giay
+        // nền giấy của mẫu Sang Huỳnh: sáng ở giữa (#FAF7F6), tối dần ra mép (#E3DED8), lưới chấm rất mờ (đo khung 12:48)
+        ? <><AbsoluteFill style={{background: 'radial-gradient(ellipse 70% 65% at 50% 42%, #FAF7F6, #ECE9E5 60%, #E3DED8)'}} />
+          <AbsoluteFill style={{backgroundImage: 'radial-gradient(rgba(30,24,20,0.07) 1.3px, transparent 1.6px)', backgroundSize: '30px 30px'}} /></>
+        : <AbsoluteFill style={{backgroundImage: `linear-gradient(${C.line} 2px, transparent 2px), linear-gradient(90deg, ${C.line} 2px, transparent 2px)`,
+          backgroundSize: '120px 120px', opacity: 0.35, maskImage: 'radial-gradient(circle at 50% 45%, black, transparent 75%)'}} />)}
       {POD ? <AbsoluteFill style={{transform: `scale(${FULL_SCALE})`, transformOrigin: FULL_ORIGIN}}>{children}</AbsoluteFill> : children}
     </AbsoluteFill>
   );
