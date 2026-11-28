@@ -18,16 +18,20 @@ Người dựng giữ ở MỌI video:
    hình thức và vị trí của các thành phần này, không nhờ một màu riêng.
 2. **Màu không phải nhận diện** (David 28/11/2026: *"nhận diện của kênh không nhất thiết phải là màu cam với nền đen hay nền trắng đâu nhé.
    dùng bất kì màu sắc nào cũng được"*). Không ép cam, nền đen hay nền trắng vào hiệu ứng nào.
-3. **Hiệu ứng học từ hình mẫu giữ trọn thẩm mỹ của mẫu, cả màu nhấn**: màu nền, màu chữ, màu nhấn, font, cỡ và tỉ lệ chữ, bo góc, bóng,
-   độ trong, khoảng trống, vị trí so với người của chính mẫu đó (số đo ghi ở `thiet-ke-bo-cuc/nguon-tham-khao/`, giao diện ở
-   `bien-thiet-ke.js` `GIAO_DIEN`). Font của mẫu không có trên máy thì dùng font gần nhất cùng nhóm (chữ có chân / không chân, đậm / thường)
-   và ghi trong phiếu học.
-4. Cảnh tự vẽ không học từ mẫu nào thì chọn màu theo nội dung và theo cảnh liền kề (thường mượn giao diện của mẫu gần nhất để video liền
-   một mạch); không mặc định cam hay đen. Font phụ `NHAN` (chữ có chân, nghiêng) chỉ dùng cho **một từ nhấn** trong cụm (`*từ*` trong ChuHien).
+3. **Đã học từ hình mẫu thì mọi thứ đúng theo hình mẫu, cả hiệu ứng lẫn motion graphics** (David 28/11/2026: *"đã học từ hình mẫu
+   thì mọi thứ chuẩn đúng theo hình mẫu ở cả hiệu ứng và cả motion graphics nhé. Sau đó thì giá trị của bạn nằm ở phân tích những thứ đã
+   học đó để cho áp dụng vào chuẩn phù hợp với nội dung mà video đang nhắc đến thôi. đừng sáng tạo và thêm linh tinh nữa"*). Giữ đúng
+   màu nền, màu chữ, màu nhấn, font, cỡ và tỉ lệ chữ, bo góc, bóng, khoảng trống, bố cục, vị trí so với người, thứ tự hiện, chuyển động,
+   nhịp của chính mẫu đó (số đo ở `thiet-ke-bo-cuc/nguon-tham-khao/`, giao diện ở `bien-thiet-ke.js` `GIAO_DIEN`). Không thêm chi tiết mẫu
+   không có (mảng tối giả, lưới, cách xếp khác, viền, quầng sáng), không phối màu lại. Font của mẫu không có trên máy thì dùng font gần
+   nhất cùng nhóm và ghi trong phiếu học — đó là chỗ duy nhất được thay.
+4. **Giá trị của Claude là phân tích và chọn**: đọc nội dung đang nói, chọn đúng hiệu ứng đã học hợp với nội dung đó, đặt đúng lúc, đúng
+   chỗ trống. Nội dung không có hiệu ứng mẫu nào hợp thì giữ người và phụ đề, không tự chế hiệu ứng mới. Mẫu đòi điều kiện mà cảnh không có
+   (ví dụ nét phấn trắng cần tường tối) thì chọn hiệu ứng khác, không sửa mẫu cho vừa. Font phụ `NHAN` chỉ dùng cho **một từ nhấn** khi
+   mẫu có kiểu nhấn đó.
 
 Nhận diện kênh nằm ở phần cố định: che hiệu ứng đi, người xem quen kênh vẫn nhận ra là video của David nhờ dấu góc, phụ đề, thanh thời gian,
-màn chốt và nhạc. Ngoài các điều trên là **tự do sáng tạo theo nội dung**: màu, nền tối / sáng / giấy / người mờ, kết cấu, ánh sáng, kiểu hình,
-bố cục, chuyển động.
+màn chốt và nhạc. Không có phần "tự do sáng tạo" ở hiệu ứng: chỉ chọn trong những gì đã học từ mẫu.
 
 ## 1. Thành phần cố định (có ở mọi video)
 

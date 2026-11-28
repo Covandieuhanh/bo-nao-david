@@ -12,7 +12,7 @@ vẫn nhận ra video của David.
 | Lớp | Gồm | Ở đâu | Khi học video mẫu |
 |---|---|---|---|
 | **Chữ ký nhận diện** | thành phần cố định (dấu góc, phụ đề, thanh thời gian, màn chốt, thẻ cuối) với hai font chính, nhạc kênh; màu không phải nhận diện; hiệu ứng học từ mẫu lấy chính xác thẩm mỹ của mẫu, kể cả màu nhấn | `thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0, `bien-thiet-ke.js`, `thuong-hieu.json` | Cân nhắc khi tạo phong cách từng video |
-| **Phần sáng tạo** (học được) | bố cục, thứ tự thông tin hiện ra, cách nối cảnh, nhịp, chỗ đặt hiệu ứng âm thanh, nền, kết cấu, kiểu hình, chữ nhấn phụ, chuyển động | thư mục này + `bo-cuc.jsx`, `thu-vien-tai-nguyen/` | **Chỉ thêm.** Mỗi điều học được là một mục mới trong kho |
+| **Phần học từ mẫu** | bố cục, thứ tự thông tin hiện ra, cách nối cảnh, nhịp, chỗ đặt hiệu ứng âm thanh, nền, kết cấu, kiểu hình, chữ nhấn phụ, chuyển động — đúng như mẫu, không thêm, không phối lại | thư mục này + `bo-cuc.jsx`, `thu-vien-tai-nguyen/` | **Chỉ thêm từ mẫu.** Mỗi điều học được là một mục mới trong kho; Claude chỉ chọn mục hợp nội dung |
 
 Học càng nhiều thì càng có nhiều tài nguyên để chọn; khi dựng, người dựng chọn các cách thể hiện theo nội dung (`quy-tac-chung.md` mục 0, hiểu hơn cầu kì).
 

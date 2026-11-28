@@ -58,7 +58,7 @@ David · `co-so-tri-thuc-` bộ não và GitHub · `video-` dựng và đăng vi
 - [Nhạc theo tuyến, chuẩn âm chung](video-nhac-theo-tuyen.md) — tự chọn nhạc theo tuyến nội dung, cân mức từng bài; nhạc thấp hơn giọng khoảng 23 dB, cả bài −14 LUFS (05–08/11)
 - [Mỗi lúc một chỗ chữ](video-phu-de-mot-cho-chu.md) — phụ đề video dọc là cụm 5–8 chữ cỡ 58; chữ motion graphic hiện thì phụ đề nhường (08/11)
 - [Podcast phủ hình 30%](video-podcast-phu-hinh-30.md) — motion graphic phủ khoảng 30% thời lượng, cân theo nội dung; chụp thử để Claude tự rà soát (06/11, sửa 11/11)
-- [Thẩm mỹ chỉ giữ nhận diện](video-tham-my-chi-giu-nhan-dien.md) — thẩm mỹ chỉ giữ chữ ký nhận diện, ngoài đó sáng tạo tự do; hiểu hơn cầu kì: kho hiệu ứng để chọn, mỗi video ít kiểu, bỏ chữ sau người / bóng người (10/11; gộp 15/11)
+- [Thẩm mỹ chỉ giữ nhận diện](video-tham-my-chi-giu-nhan-dien.md) — nhận diện ở thành phần cố định; hiệu ứng và motion lấy đúng như mẫu, Claude chỉ phân tích và chọn theo nội dung, không tự sáng tạo (28/11); hiểu hơn cầu kì: kho hiệu ứng để chọn, mỗi video ít kiểu, bỏ chữ sau người / bóng người (10/11; gộp 15/11)
 
 ## Chỉ máy Mac chính (file không lên GitHub)
 
