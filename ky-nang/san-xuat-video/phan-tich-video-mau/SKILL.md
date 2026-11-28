@@ -1,6 +1,6 @@
 ---
 name: phan-tich-video-mau
-description: Học cách trình bày từ một video mẫu David gửi (link YouTube/TikTok hoặc file) để BỔ SUNG vào bộ skill dựng video — chỉ học bố cục, thứ tự hiện, cách nối cảnh, nhịp, hiệu ứng âm thanh; học cả nền, kết cấu, kiểu hình, chữ nhấn làm tài nguyên sáng tạo; chỉ giữ chữ ký nhận diện (người xem nhận ra video của David) và thành phần đang có. Skill lập phiếu học, tự đưa vào skill (đụng màu chủ đạo, chữ ký nhận diện thì chờ David duyệt), rồi kiểm tra để không làm hỏng phần cũ (mặt, phụ đề, dấu góc, thanh thời gian, cả khung ngang và dọc). Dùng khi David gửi video và nói "học cái này", "học video này", "học mẫu này", "học cách họ làm", "học bố cục", "học hiệu ứng", "/phan-tich-video-mau" — kể cả khi chỉ gửi link kèm chữ "học".
+description: Học cách trình bày từ một video mẫu David gửi (link YouTube/TikTok hoặc file) để BỔ SUNG vào bộ skill dựng video — chỉ học bố cục, thứ tự hiện, cách nối cảnh, nhịp, hiệu ứng âm thanh; học cả nền, kết cấu, kiểu hình, chữ nhấn; hiệu ứng học được giữ trọn thẩm mỹ của mẫu (màu, font, tỉ lệ), nhận diện kênh nằm ở thành phần cố định (dấu góc, phụ đề, thanh thời gian, màn chốt). Skill lập phiếu học, tự đưa vào skill (đụng màu chủ đạo, chữ ký nhận diện thì chờ David duyệt), rồi kiểm tra để không làm hỏng phần cũ (mặt, phụ đề, dấu góc, thanh thời gian, cả khung ngang và dọc). Dùng khi David gửi video và nói "học cái này", "học video này", "học mẫu này", "học cách họ làm", "học bố cục", "học hiệu ứng", "/phan-tich-video-mau" — kể cả khi chỉ gửi link kèm chữ "học".
 ---
 
 # Học video mẫu

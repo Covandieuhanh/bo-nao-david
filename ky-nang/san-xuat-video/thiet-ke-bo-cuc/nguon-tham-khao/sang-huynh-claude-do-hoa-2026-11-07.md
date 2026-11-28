@@ -6,7 +6,7 @@ description: "Nguồn học Sang Huỳnh: Claude làm motion graphics trong vide
 
 - Nguồn: https://www.youtube.com/watch?v=zmnjXAlCPEU · 18:56 · ngang 16:9 · làm bằng HyperFrames (không cài, chỉ học ý).
 - Đoạn đã xem: 0:00–0:42 (mở đầu, quay mặt và đồ hoạ), 12:38–17:35 (phần video quay mặt).
-- Chỉ ghi phần trình bày. Dựng thường: không dùng màu kem / đỏ cam và font của họ (giữ nhận diện kênh). Bản tái dựng theo mẫu (README mục 4a): giữ màu, nhịp của mẫu — mã `rieng/mau-sang-huynh.jsx`, bảng màu `M`.
+- Hiệu ứng học từ nguồn này giữ trọn thẩm mỹ của mẫu: màu kem, đỏ cam, font, tỉ lệ, nhịp (`thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0, David 28/11/2026) — mã `rieng/mau-sang-huynh.jsx`, bảng màu `M`.
 
 ## Tài nguyên trực tiếp của tác giả
 

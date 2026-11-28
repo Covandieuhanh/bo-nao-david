@@ -7,8 +7,8 @@ description: "Đọc video mẫu thành token phong cách (ngôn ngữ trình b�
 Mục tiêu không phải sao chép từng khung hình của mẫu, mà rút ra **ngôn ngữ thiết kế** của nó để áp lên nội dung
 của David. Một người xem hai video phải thấy "cùng một nguồn duy nhất sản xuất", dù nội dung khác hẳn.
 
-**Chữ ký nhận diện không đổi** (`../../thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0): màu nhấn cam `C.accent`, hai font chính `HEAD` /
-`BODY`, thành phần cố định. Từ mẫu, Claude chỉ lấy phần ngoài chữ ký: nền, màu phụ, hình dạng thẻ, kiểu hình, chuyển động, loại cảnh, mật độ,
+**Chữ ký nhận diện không đổi** (`../../thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0): thành phần cố định với màu nhấn cam `C.accent`, hai
+font chính `HEAD` / `BODY`. Hiệu ứng học từ mẫu giữ trọn thẩm mỹ của mẫu (David 28/11/2026). Từ mẫu, Claude lấy: nền, màu, hình dạng thẻ, kiểu hình, chuyển động, loại cảnh, mật độ,
 font phụ cho một từ nhấn.
 
 ## Nhìn gì trong video mẫu

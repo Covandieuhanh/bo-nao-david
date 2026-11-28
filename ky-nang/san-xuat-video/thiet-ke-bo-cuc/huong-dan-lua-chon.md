@@ -35,7 +35,7 @@ Thư mục dự án có sẵn (tạo bởi `tao-du-an.sh`, `tao-dung-ghep.sh`):
 Cách làm:
 1. **Thứ tự ưu tiên:** luật bắt buộc (`nhu-cau-nguoi-xem.md` mục 0) > yêu cầu người dùng > tự chọn. Yêu cầu trái luật bắt buộc thì người dựng không làm và ghi lý do.
 2. **Ảnh mẫu:** người dựng xem ảnh, gọi tên cái khó mà ảnh đó giải (nguyên lý), rồi chọn cách thể hiện gần nhất trong kho; kho không có thì tự vẽ (`ve`)
-   và ghi `can-code.md`. Không chép màu, font của ảnh mẫu (chữ ký nhận diện giữ nguyên).
+   và ghi `can-code.md`. Hiệu ứng học từ ảnh mẫu giữ trọn thẩm mỹ của mẫu (màu, font, tỉ lệ, khoảng trống); phần cố định của kênh giữ nguyên (`thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0).
 3. **Ảnh chèn:** người dựng chép vào `chuyen-dong/public/anh/`, dùng qua `photo: '<tên>'` (`diagram anh`, `dung-hay`, `tren-duoi`, `o-tron`…) đúng lúc lời nói nhắc tới.
 4. Người dựng ghi vào Chẩn đoán: `Yêu cầu: <tóm tắt> → làm ở <cảnh> · bỏ <…> vì <…>` (yêu cầu trống thì `Yêu cầu: không`).
 

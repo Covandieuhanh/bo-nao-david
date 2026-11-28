@@ -13,7 +13,8 @@ David 10/11/2026: "Về thẩm mỹ thì tôi chỉ cần duy nhất 1 thứ là
 **Why:** trước đó, luật học mẫu cấm đổi màu, font, nét vẽ, nền, nên khi học Ali Abdaal / Joseph Video Editing, Claude phải bỏ nhiều thành phần hay (chữ nghiêng nhấn, nền hạt, nền người mờ). David nới luật: chỉ cần người xem nhận ra được video là của David.
 
 **How to apply:**
-- Chữ ký nhận diện (giữ cố định) được ghi ở một nguồn duy nhất: `ky-nang/san-xuat-video/thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0, gồm bộ nhận diện chung (dấu góc, phụ đề, thanh, màn chốt, thẻ cuối), màu nhấn cam, hai font chính; một từ nhấn được dùng font phụ.
+- Chữ ký nhận diện (giữ cố định) được ghi ở một nguồn duy nhất: `ky-nang/san-xuat-video/thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0: bộ nhận diện chung (dấu góc, phụ đề, thanh, màn chốt, thẻ cuối) với màu cam, hai font chính, nhạc kênh.
+- **Hiệu ứng học từ hình mẫu giữ trọn thẩm mỹ của mẫu** (David 28/11/2026): màu, font, tỉ lệ chữ, bo góc, bóng, khoảng trống, vị trí so với người; không phối lại sang đen cam. Cam chỉ thay chỗ nhấn mẫu đã có. **Why:** trong bản xem kho hiệu ứng, cảnh giữ nguyên mẫu nền sáng hiển thị chuẩn, còn cảnh phối lại đen cam thì lỗi thẩm mỹ và che mặt.
 - Ngoài chữ ký nhận diện: nền, kết cấu, kiểu hình, chiều sâu, bố cục, chuyển động được chọn theo nội dung từng video.
 - Học video mẫu: Claude rút đủ cả phần thẩm mỹ làm tài nguyên, không chỉ rút bố cục. Claude vẫn giữ mọi quy tắc chặn cũ ([[quy-tac-hoc-la-bo-sung]]) và chữ nguyên văn ([[video-chu-nguyen-van]]).
 - Tự do nhưng **hiểu hơn cầu kì**: Claude chọn ít kiểu phù hợp nội dung (xem mục gộp bên dưới).

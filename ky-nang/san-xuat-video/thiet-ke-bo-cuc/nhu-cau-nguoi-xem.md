@@ -19,8 +19,8 @@ nào khớp thì AI tự sáng tạo theo nguyên lý (cảnh tự vẽ `ve`).
    **"phản tác dụng khi"** của nguyên lý để tự kiểm.
 5. **Ghi lại** vào `ke-hoach-canh.md` (mục 4). Công cụ kiểm tra (`soat-canh.mjs`) chặn khi thiếu.
 
-Luật bắt buộc vẫn áp dụng cho mọi lựa chọn: chữ trên hình là **nguyên văn lời người nói**; không che mặt; chữ ký nhận diện (màu cam, hai
-font, dấu góc, phụ đề, thanh thời gian, màn chốt) không đổi (`README.md` mục 1, 3).
+Luật bắt buộc vẫn áp dụng cho mọi lựa chọn: chữ trên hình là **nguyên văn lời người nói**; không che mặt; thành phần cố định của kênh (dấu góc, phụ đề, thanh thời gian, màn chốt với màu cam, hai
+font chính) không đổi; hiệu ứng học từ mẫu giữ thẩm mỹ của mẫu (`thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0).
 
 ## 1. Loại nội dung cả video
 
@@ -121,7 +121,7 @@ Mayer đo việc **hiểu**. Video trên mạng còn phải được **xem tới
 | **Giữ chú ý** | 3 giây đầu không có lý do ở lại; một bố cục kéo dài quá lâu thì người xem lướt qua | mở bằng câu then chốt của chính người nói; đổi lớp mỗi vài giây nhưng mỗi thời điểm chỉ một yếu tố mới; kết quả trước, cách làm sau | đổi liên tục không có nghĩa (giật, chớp) | kinh nghiệm giữ chân YouTube (Paddy Galloway); MagentX |
 | **Cảm xúc** | người xem không cảm thì không nhớ, không hành động | giữ mặt, giữ khoảng lặng ở đỉnh cảm xúc, nhạc đúng cảm xúc, chữ nhấn ít | phủ hình hoặc nhạc lên câu cảm xúc | Walter Murch, *In the Blink of an Eye* (Rule of Six: cảm xúc trước) |
 | **Tin** | người xem không chắc người nói có thật sự làm được không | mặt thật, minh chứng thật (ảnh, trước/sau, màn hình), tên + vai trò người làm chứng | dựng số liệu / lời mà người nói không nói | MagentX (lời chứng có vai trò, trước/sau) |
-| **Nhận diện** | người xem không nhận ra đây là kênh David | giữ chữ ký nhận diện ở mọi video | thêm màu / font của nguồn học | `thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0 |
+| **Nhận diện** | người xem không nhận ra đây là kênh David | giữ thành phần cố định ở mọi video; hiệu ứng học từ mẫu giữ thẩm mỹ của mẫu | phối lại hiệu ứng học được sang nền đen chữ cam, làm mất tỉ lệ của mẫu | `thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0 |
 
 ## 4. Ghi gì vào `ke-hoach-canh.md`
 

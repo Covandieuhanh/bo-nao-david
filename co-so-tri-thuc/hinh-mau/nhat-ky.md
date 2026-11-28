@@ -6,6 +6,13 @@ description: "Nhật ký hình mẫu: mỗi lần nghiên cứu một mục — 
 
 Mới nhất ở trên. Mỗi mục: ngày · mục nhỏ · câu hỏi · số mẫu · kết luận · áp dụng. Luật: [README](README.md).
 
+## 28/11/2026 — 8.4 thư ký, trợ lý điều hành
+- Câu hỏi: thư ký giỏi làm gì để chủ tin tưởng giao việc; bot Sổ nhớ còn thiếu gì.
+- Mẫu: 6 (Getting Things Done, Athena, Văn phòng Thư ký Nhà Trắng, Bonnie Low-Kramen, Tim Ferriss, IAAP CAP); số liệu phần lớn tự công bố hoặc nguồn phụ.
+- Kết luận: năm điểm chung (đáng tin tuyệt đối · báo đầu ngày và nhìn lại tuần · làm sắc điều cần quyết · giao quyền rõ, nới dần · đo kết quả).
+  Đo bot 7 ngày (21–28/11): 30 tin, trả lời trung vị 16 giây; 6 tin mất vì hết hạn mức (đã sửa), 15 lần bị từ chối quyền ghi (đã sửa luật).
+- Áp dụng: `../../tu-dong-hoa/so-tay/quy-tac-bot.md` (gõ lệnh đúng dạng), `tin-sot.py`; các đề xuất còn lại chờ David duyệt.
+
 ## 23/11/2026 — 8.3 tư duy gốc (việc #41)
 - Câu hỏi: các bộ óc hàng đầu thế giới suy nghĩ, học, giải quyết vấn đề thế nào; khung của cố vấn chiến lược của David đúng tới đâu.
 - Mẫu: 17 (Aristotle, Descartes, Musk, Feynman, Luhmann, Pólya, Toyota, Munger, Dalio, Kahneman, Popper, Meadows, Deming, Boyd, Argyris,
