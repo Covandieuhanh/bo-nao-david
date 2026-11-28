@@ -90,5 +90,7 @@ từ mẫu giữ trọn thẩm mỹ của mẫu, `thu-vien-tai-nguyen/nhan-dien-
 | `sang-huynh-the` | thẻ đè lên video (`bocuc the-canh`, `cau-hoi`, `DuongMay` gạch thay, thẻ lật, lời nhắc; cảnh tự vẽ đè video mượn giao diện này) | thẻ trắng #FFFFFF bóng mềm nâu, chữ đen than #1C1B1A, nhãn nhỏ in hoa màu nhấn #B5604A |
 | `sang-huynh-toi` | chương lớn và màn chương | thẻ #30302D, nhãn xám #B0B0AB in hoa, chữ kem #F4F2EE, cụm nhấn màu nhấn; màn chương nền #111111, số to mờ, dòng 2 màu nhấn |
 
+Thẻ cạnh mặt (đo khung 0:21–0:30, 28/11/2026): thẻ cao x 0,63–0,97, y 0,06–0,94, nền kem #F3F1EE hơi trong; chữ dẫn nhỏ xám (khoảng 3 % chiều cao khung) → từ bị gạch chữ hẹp đậm in hoa xám có vạch đỏ (khoảng 8 %) → **từ khoá chính rất to** chữ hẹp đậm in hoa đen (khoảng 12 %) gạch chân màu nhấn → dòng liệt kê nhỏ có biểu tượng nhỏ (khoảng 3 %). Trong `bocuc the-canh`: dòng thường = chữ nhỏ, `to: true` = từ khoá chính, `gach` = từ bị gạch; chỉ một từ khoá chính cho mỗi thẻ.
+
 Màu nhấn đỏ đất của mẫu giữ nguyên: #B5604A trên nền sáng, #E79377 trên nền tối (David 28/11/2026: lấy chính xác từ mẫu, không phối lại).
 Font tiêu đề của mẫu là chữ hẹp đậm giống Barlow Condensed, chữ thường giống Be Vietnam Pro, nên giữ hai font chính.
