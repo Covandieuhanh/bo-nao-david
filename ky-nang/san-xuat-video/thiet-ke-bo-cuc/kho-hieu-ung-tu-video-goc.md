@@ -71,7 +71,7 @@ Không có Đ1 (đã có lá). Đ3 khi một hiệu ứng mới đụng màu ch�
   nguồn đã làm sạch lệch 1 giây so với tệp thật. Đo bằng khoảng lặng (`ffmpeg silencedetect`) mới biết bản nào đúng; nay dùng lời chép
   từng đoạn và `khop-chu-voi-loi.py`.
 - Đoạn lặp lại trong bản ghép (cùng một nguồn dùng cho nhiều hiệu ứng) làm `soat-khop-tieng.py` báo lệch giả hơn 3 giây ở chỗ lời trùng: đối chiếu với `bang-moc.md` trước khi sửa.
-- Mẫu `DuongMay` (thẻ lật, gạch thay, câu đắt) có chữ nhỏ khi xem khung ngang toàn màn hình: chấp nhận cho bản xem; dựng thật thì chọn kiểu khác nếu chữ không đọc kịp.
+- Mẫu `DuongMay` (thẻ lật, gạch thay, câu đắt) từng có chữ 14–24 px ở khung ngang vì cỡ chữ tính như cả câu trên một dòng. Đã sửa 28/11/2026: `coChu()` trong `rieng/duong-may.jsx` cho xuống tối đa 2–4 dòng khi ô đủ cao. Vẫn xem bảng khung ở kích thước phát hành; chữ chính dưới khoảng 36 px ở khung 1080 thì nới ô `o`.
 - Sơ đồ và minh hoạ đặt trong `o-nguoi` hay `canh-nguoi` khung ngang từng tràn mép phải vì khung co theo vùng 60% bề ngang, trong khi sơ đồ vẽ 86%. Đã sửa 28/11/2026: `vungNoi()` trong `thanh-phan/bo-cuc.jsx` co theo vùng vẽ thật của từng loại. Thêm loại nội dung lồng mới thì khai vùng vẽ của nó trong `VUNG_NOI`.
 - Dấu góc ● DAVID khung ngang nằm ở mép trên vùng an toàn (54–118 px): dòng chữ trên cùng của cảnh tự vẽ và vùng `o` của `DuongMay` / `NhanTram` phải bắt đầu dưới `BRAND_BOT` (`o.y` ít nhất khoảng 0,13).
 - Nguồn kênh cũ (Cường Kể Chuyện) có sẵn thanh tên tập in cứng ở đáy hình, chồng lên phụ đề và thanh thời gian: chỉ dùng cho bản xem, video thật cần cắt khung hoặc chọn nguồn khác.
