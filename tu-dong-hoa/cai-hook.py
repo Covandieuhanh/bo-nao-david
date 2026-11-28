@@ -1,5 +1,5 @@
 """Ghi hook vào ~/.claude/settings.json để đồng bộ 2 chiều bộ não với GitHub:
-- SessionStart: kéo bản mới từ GitHub về (dong-bo.sh --keo)
+- SessionStart: kéo bản mới từ GitHub về (dong-bo.sh --keo), rồi đưa bảng chỉ đường bộ não vào phiên (nap-bo-nao.sh)
 - SessionEnd: đẩy thay đổi lên (dong-bo-hook.sh, chạy nền)
 - PostToolUse + Stop: hộp thư phiên, lời David qua Telegram vào đúng phiên (tu-dong-hoa/so-tay/hop-thu-phien.py)
 - PreToolUse: cổng duyệt việc rủi ro cho phiên việc toàn quyền (tu-dong-hoa/so-tay/cong-duyet.py)
@@ -15,6 +15,8 @@ can = {
     # chỉ dòng cảnh báo (⛔ xung đột, ⚠ mất mạng) đi vào phiên để Claude báo David; còn lại im lặng
     "SessionStart": (f'bash "{repo}/tu-dong-hoa/dong-bo.sh" --keo 2>&1 | grep -E "⛔|⚠" ; true', '/tu-dong-hoa/dong-bo.sh" --keo'),
     "SessionEnd": (f'bash "{repo}/tu-dong-hoa/dong-bo-hook.sh"', '/tu-dong-hoa/dong-bo-hook.sh"'),
+    # Mọi phiên mới: bảng chỉ đường bộ não + trạng thái việc (David 28/11/2026), sau khi đã kéo bản mới về
+    "SessionStart#nap-bo-nao": (f'bash "{repo}/tu-dong-hoa/nap-bo-nao.sh"', '/tu-dong-hoa/nap-bo-nao.sh"'),
 }
 # Máy chỉ dựng video (--chi-video: Windows/WSL2, Mac khác; David 20/11/2026): chỉ đồng bộ + tự học, bỏ hook Telegram
 # (bot, lịch tự chạy chỉ ở Mac chính).

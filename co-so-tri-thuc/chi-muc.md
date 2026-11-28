@@ -8,7 +8,7 @@ description: Chỉ mục tự sinh của bộ não — mỗi file .md một dòn
 
 ## (gốc)
 
-- [AGENTS.md](../AGENTS.md) — tầng 0 · Cửa vào cho mọi AI: thứ tự đọc, sáu luật không được phá, bảng chọn skill theo việc. · ←7
+- [AGENTS.md](../AGENTS.md) — tầng 0 · Cửa vào cho mọi AI: thứ tự đọc, sáu luật không được phá, bảng chọn skill theo việc. · ←6
 - [CLAUDE.md](../CLAUDE.md) — tầng 0 · Cấu hình Claude Code của repo: nạp AGENTS.md. · ←1
 - [README.md](../README.md) — tầng 2 · Trang đầu repo bo-nao-david trên GitHub: bộ não dùng chung của David, cấu trúc, cách dùng. · ←1
 - [bao-cao-trang-thai.md](../bao-cao-trang-thai.md) — tầng 3 · Báo cáo trạng thái: chỉ ghi việc còn mở (đang làm chưa xong, chờ David quyết định, câu hỏi mở), mỗi dòng có ngày và bước tiếp theo; việc xong chuyển sang du-an/dong-goi/. Cập nhật cuối mỗi việc. · ←5

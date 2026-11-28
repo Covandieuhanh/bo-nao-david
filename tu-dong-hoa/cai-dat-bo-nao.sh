@@ -53,6 +53,7 @@ fi
 echo "Lối tắt vào repo:"
 lien_ket "$REPO/co-so-tri-thuc/chi-dan-toan-cuc.md" "$CL/CLAUDE.md"
 lien_ket "$REPO/co-so-tri-thuc/david.md" "$CL/david.md"
+lien_ket "$REPO" "$CL/bo-nao"   # gốc bộ não: CLAUDE.md nạp @~/.claude/bo-nao/AGENTS.md, đường dẫn giống nhau ở mọi máy
 for s in san-xuat-video san-pham-hoa thu-thap-yeu-cau dieu-khien-trinh-duyet thiet-ke-trang-cuon tai-cau-truc tong-hop-tin-nhan hoc-lien-tuc; do
   lien_ket "$REPO/ky-nang/$s" "$CL/skills/$s"
 done
