@@ -65,7 +65,8 @@ const RONG_KIEU = {chuoi: 0.42, vong: 0.4, list: 0.46, vs: 0.44, single: 0.42, c
 const vungNoi = (noi_dung) => {
   const v = noi_dung && VUNG_NOI[noi_dung.type];
   if (!v) return LAND ? {x: 0.2, w: 0.6, y: 0.07, h: 0.64} : {x: 0.2, w: 0.6, y: 0.1, h: 0.46};
-  const r = RONG_KIEU[noi_dung.props?.mode];
+  const md = noi_dung.props?.mode, n = (noi_dung.props?.items || []).length;
+  const r = md === 'flow' && n ? Math.min(RONG_KIEU.flow, 0.16 * n + 0.14) : RONG_KIEU[md];   // chuỗi ngắn (2–3 nút) không bị thu nhỏ như chuỗi dài
   return r ? {...v, x: 0.5 - r / 2, w: r} : v;
 };
 
@@ -118,14 +119,14 @@ const MucLuc = ({start, f, w, fs, tieu_de, muc = []}) => {
         opacity: ease(f, 2, 10)}}><ChuHien text={tieu_de} a={2} /></div>}
       {muc.map((m, i) => {
         const a = rel(m.at ?? start, start), p = pop(f, a);
-        const cu = hien.length && hien[hien.length - 1] !== m && f >= a ? 1 : 0;
+        const cu = C.moCu !== false && hien.length && hien[hien.length - 1] !== m && f >= a ? 1 : 0;   // mẫu Ali giữ mục cũ sáng (moCu: false)
         return (
           <div key={i} style={{display: 'flex', alignItems: 'center', gap: fs * 0.55, padding: `${fs * 0.42}px ${fs * 0.6}px`, borderRadius: fs * 0.5,
-            background: C.card, border: `2px solid ${cu ? C.line : `rgba(${C.accentRgb},0.45)`}`, boxShadow: `0 20px 60px rgba(${C.bongRgb},0.45)`,
+            background: C.card, border: C.vienThe ? `2px solid ${cu ? C.line : `rgba(${C.accentRgb},0.45)`}` : 'none', boxShadow: `0 20px 60px rgba(${C.bongRgb},${C.bongDo})`,
             opacity: Math.min(1, p * 1.4) * (1 - 0.55 * cu), transform: `translateY(${(1 - p) * 24}px) scale(${0.95 + 0.05 * p})`}}>
             <div style={{flex: 'none', width: fs * 1.25, height: fs * 1.25, borderRadius: '50%', background: cu ? C.dim : C.accent, color: C.trenNhan,
               display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: HEAD, fontWeight: 800, fontSize: fs * 0.8}}>{i + 1}</div>
-            <div style={{fontFamily: BODY, fontWeight: 600, fontSize: fs * 0.82, lineHeight: 1.25, color: C.text, textWrap: 'balance'}}>
+            <div style={{fontFamily: BODY, fontWeight: C.body === C.head ? 700 : 600, fontSize: fs * 0.82, lineHeight: 1.25, color: C.text, textWrap: 'balance'}}>
               <ChuHien text={m.text} a={a + 3} kieu="muc" /></div>
           </div>
         );
@@ -194,7 +195,8 @@ const ONguoi = ({sceneId, start, o, noi_dung, khung, bam, nguoi_duoi = false}) =
   return (
     <FullShell hold>
       <div style={{position: 'absolute', left: x, top: y, width: w, height: h, borderRadius: 36 * k, overflow: 'hidden',
-        border: k > 0.5 ? `${C.giay ? 5 : 3}px solid ${C.khungNguoi}` : 'none', boxShadow: `0 30px 90px rgba(${C.bongRgb},0.6)`}}>
+        border: k > 0.5 ? `${C.giay === true ? 5 : 3}px solid ${C.khungNguoi}` : 'none',
+        boxShadow: `${C.khungSang && k > 0.5 ? `0 0 0 4px ${C.khungSang}, ` : ''}0 30px 90px rgba(${C.bongRgb},${Math.min(0.6, C.bongDo * 1.5)})`}}>
         <OffthreadVideo src={staticFile('goc.mp4')} trimBefore={fr(start)} muted
           style={{position: 'absolute', left: -cl * W * sc + (w - (cr - cl) * W * sc) / 2, top: -ct * H * sc + (h - (cb - ct) * H * sc) / 2,
             width: W * sc, height: H * sc, maxWidth: 'none'}} />
@@ -267,16 +269,26 @@ const TienTrinh = ({sceneId, start, so = 1, tong = 3, nhan, ten = ''}) => {
       {xs.map((cx, i) => {
         const on = i < so - 1 || (i === so - 1 && f >= 18);
         return <div key={i} style={{position: 'absolute', left: cx - r, top: y - r, width: r * 2, height: r * 2, borderRadius: '50%',
-          background: on ? C.accent : C.bg, border: `4px solid ${on ? C.accent : C.dim}`, display: 'flex', alignItems: 'center', justifyContent: 'center',
+          background: on ? C.accent : C.giay === 'luoi' ? C.card : C.bg, border: `4px solid ${on ? C.accent : C.dim}`, display: 'flex', alignItems: 'center', justifyContent: 'center',
           fontFamily: HEAD, fontWeight: 800, fontSize: r * 1.05, color: on ? C.trenNhan : C.dim,
           transform: i === so - 1 ? `scale(${1 + 0.18 * p - 0.18 * ease(f, 26, 36)})` : undefined}}>{i + 1}</div>;
       })}
       <div style={{position: 'absolute', top: y + r * 2.1, left: Math.min(Math.max(SAFE.left, x - W * 0.3), W - SAFE.right - W * 0.6), width: W * 0.6,
         display: 'flex', flexDirection: 'column', alignItems: 'center', opacity: Math.min(1, p * 1.3), transform: `translateY(${(1 - p) * 30}px)`}}>
-        {nhan && <div style={{fontFamily: BODY, fontWeight: 700, fontSize: fs * 0.32, letterSpacing: 4, color: C.accent, textTransform: 'uppercase',
+        {C.giay === 'luoi'
+          // mẫu Ali (2) 0:07: tên ý trong thẻ trắng bóng nhẹ, nhãn viên thuốc nhỏ màu nhấn, chữ có chân viết thường, dòng cuối màu nhấn
+          ? <div style={{background: C.card, borderRadius: fs * 0.35, padding: `${fs * 0.3}px ${fs * 0.6}px ${fs * 0.4}px`, boxShadow: `0 16px 48px rgba(${C.bongRgb},${C.bongDo * 1.6})`,
+            display: 'flex', flexDirection: 'column', alignItems: 'center', gap: fs * 0.14, maxWidth: W * 0.6}}>
+            {nhan && <div style={{fontFamily: BODY, fontWeight: 700, fontSize: fs * 0.3, color: C.trenNhan, background: C.accent, borderRadius: 999,
+              padding: `${fs * 0.05}px ${fs * 0.3}px`}}>{nhan}</div>}
+            {String(ten).split('\n').map((l, i, a) => <div key={i} style={{fontFamily: HEAD, fontWeight: 700, fontSize: fs * 0.72, lineHeight: 1.12,
+              color: i === a.length - 1 && a.length > 1 ? C.accent : C.text, textAlign: 'center', textWrap: 'balance'}}>
+              <ChuHien text={l} a={22 + i * 6} kieu={kieuChu(sceneId)} /></div>)}
+          </div>
+          : <>{nhan && <div style={{fontFamily: BODY, fontWeight: 700, fontSize: fs * 0.32, letterSpacing: 4, color: C.accent, textTransform: 'uppercase',
           marginBottom: fs * 0.12}}>{nhan}</div>}
         <div style={{fontFamily: HEAD, fontWeight: 800, fontSize: fs, lineHeight: 1.04, textTransform: 'uppercase', color: C.text,
-          textAlign: 'center', textWrap: 'balance', whiteSpace: 'pre-line'}}><ChuHien text={ten} a={22} kieu={kieuChu(sceneId)} /></div>
+          textAlign: 'center', textWrap: 'balance', whiteSpace: 'pre-line'}}><ChuHien text={ten} a={22} kieu={kieuChu(sceneId)} /></div></>}
       </div>
     </FullShell>
   );
@@ -455,7 +467,8 @@ const CauHoi = ({start, cau = '', at, nhan}) => {
       <div style={{position: 'absolute', left: SAFE.left, top: SAFE.overlayTop, width: w, display: 'flex', gap: fs * 0.45,
         transform: `translateX(${(1 - p) * -40}px)`}}>
         <div style={{flex: 'none', width: Math.max(6, fs * 0.16), borderRadius: 4, background: C.accent}} />
-        <div style={{padding: `${fs * 0.4}px ${fs * 0.6}px`, borderRadius: fs * 0.4, background: `rgba(${C.theRgb},0.86)`}}>
+        <div style={{padding: `${fs * 0.4}px ${fs * 0.6}px`, borderRadius: fs * 0.4, background: `rgba(${C.theRgb},0.94)`,
+          boxShadow: `0 14px 40px rgba(${C.bongRgb},${C.bongDo})`}}>
           {nhan && <div style={{fontFamily: BODY, fontWeight: 700, fontSize: fs * 0.5, letterSpacing: 3, color: C.accent, textTransform: 'uppercase', marginBottom: fs * 0.2}}>{nhan}</div>}
           <div style={{fontFamily: BODY, fontWeight: 700, fontSize: fs, lineHeight: 1.25, color: C.text, textWrap: 'balance'}}>
             <ChuHien text={cau} a={a + 2} kieu="muc" /></div>

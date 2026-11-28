@@ -106,7 +106,7 @@ export const Stage = () => {
   const chapIn = kw ? ease(f, fr(kw.at), fr(kw.at) + 8) * (1 - ease(f, fr(kw.at) + fr(3), fr(kw.at) + fr(3.6))) : 0;
   return (
     <AbsoluteFill style={{background: C.bg}}>
-      <AbsoluteFill style={{background: `radial-gradient(circle at ${(LAND ? 35 : 45) + drift}% ${(LAND ? 40 : 36) - drift / 2}%, rgba(255,122,69,0.16), transparent 58%)`}} />
+      <AbsoluteFill style={{background: `radial-gradient(circle at ${(LAND ? 35 : 45) + drift}% ${(LAND ? 40 : 36) - drift / 2}%, rgba(${C.accentRgb},0.16), transparent 58%)`}} />
       {/* NỀN "LẮNG" (David duyệt 2026-11-04, học VOV / Tu Thân / Minh Niệm radio): STAGE.bg = [{at, src}] ảnh/tranh trong public/
           (chỉ tranh/ảnh có giấy phép hoặc David đưa) — chuyển động rất chậm (Ken Burns), phủ tối để chữ đọc rõ; không có thì lưới tối như cũ */}
       {bgSrc ? <AbsoluteFill>

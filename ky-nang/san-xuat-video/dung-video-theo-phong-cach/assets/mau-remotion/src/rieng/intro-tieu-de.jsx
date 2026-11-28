@@ -54,7 +54,7 @@ export const IntroTieuDe = ({eyebrow, eyebrowAt = 0.15, title, titleAt = 0.45, b
         {(
           <div style={{position: 'relative', marginTop: -sB * 0.12, opacity: f >= g(bigAt) ? Math.min(1, pB * 1.6) : 0,
             transform: `scale(${1.7 - 0.7 * pB}) translateX(${rung}px)`}}>
-            <div style={{...stB, color: C.accent, textShadow: '0 10px 50px rgba(0,0,0,0.6), 0 0 60px rgba(255,122,69,0.35)'}}>{big}</div>
+            <div style={{...stB, color: C.accent, textShadow: `0 10px 50px rgba(0,0,0,0.6), 0 0 60px rgba(${C.accentRgb},0.35)`}}>{big}</div>
             <div style={{...stB, position: 'absolute', inset: 0, color: 'transparent',
               backgroundImage: `linear-gradient(105deg, transparent ${quet * 100 - 12}%, rgba(255,255,255,0.95) ${quet * 100}%, transparent ${quet * 100 + 12}%)`,
               WebkitBackgroundClip: 'text', backgroundClip: 'text'}}>{big}</div>

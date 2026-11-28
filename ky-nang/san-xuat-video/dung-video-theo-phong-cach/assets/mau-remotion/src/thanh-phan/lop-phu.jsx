@@ -79,7 +79,7 @@ export const Kinetic = ({lines}) => {
           </div>
         ))}
         <div style={{height: 9, marginTop: 28, borderRadius: 5, background: C.accent,
-          width: `${ease(f, lineDone, lineDone + 14) * 80}%`, boxShadow: '0 0 24px rgba(255,122,69,0.55)'}} />
+          width: `${ease(f, lineDone, lineDone + 14) * 80}%`, boxShadow: `0 0 24px rgba(${C.accentRgb},0.55)`}} />
       </div>
     </AbsoluteFill>
   );
@@ -233,7 +233,7 @@ export const Card = ({start, ...p}) => {
             return <rect key={i} x={x - 16} y={165 - h} width="32" height={h} rx="7" fill={C.accentSoft} />;
           })}
           <path d={path} fill="none" stroke={C.accent} strokeWidth="7" strokeLinejoin="round" strokeLinecap="round"
-            strokeDasharray={len} strokeDashoffset={len * (1 - draw)} style={{filter: 'drop-shadow(0 0 10px rgba(255,122,69,.6))'}} />
+            strokeDasharray={len} strokeDashoffset={len * (1 - draw)} style={{filter: `drop-shadow(0 0 10px rgba(${C.accentRgb},.6))`}} />
           <circle cx="730" cy="16" r={11 * ease(f, 48, 56)} fill={C.accent} />
         </svg>
         <Footer text={p.footer} at={R(p.footerAt)} />
@@ -391,7 +391,7 @@ export const ListItem = ({n, of, text}) => {
     <AbsoluteFill style={{opacity: o}}>
       <div style={{position: 'absolute', left: SAFE.left, width: SAFE_W, top: 1110, display: 'flex', alignItems: 'center', gap: 26}}>
         <div style={{flex: '0 0 auto', width: 150, height: 150, borderRadius: 75, background: C.accent, display: 'flex', alignItems: 'center',
-          justifyContent: 'center', transform: `scale(${p})`, boxShadow: '0 0 40px rgba(255,122,69,0.5)'}}>
+          justifyContent: 'center', transform: `scale(${p})`, boxShadow: `0 0 40px rgba(${C.accentRgb},0.5)`}}>
           <div style={{fontFamily: HEAD, fontWeight: 800, fontSize: 104, lineHeight: 1, color: C.bg, paddingTop: 8}}>{n}</div>
         </div>
         <div style={{display: 'flex', flexDirection: 'column', gap: 6, transform: `translateX(${(1 - ease(f, 2, 12)) * 30}px)`}}>

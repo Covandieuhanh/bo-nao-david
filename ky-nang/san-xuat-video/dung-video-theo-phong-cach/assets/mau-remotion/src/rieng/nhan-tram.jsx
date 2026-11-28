@@ -29,8 +29,8 @@ export const NhanTram = ({sceneId, start, so, tong, ten, tieu_de, dong = [], o =
         <div style={{position: 'absolute', left: x, top: y, width: w, display: 'flex', justifyContent: phai ? 'flex-end' : 'flex-start',
           transform: `translateX(${dx}px)`}}>
           <div style={{display: 'flex', alignItems: 'stretch', borderRadius: fs * 0.5, overflow: 'hidden', background: C.card,
-            border: `2px solid ${C.line}`, boxShadow: '0 16px 40px rgba(0,0,0,0.45)'}}>
-            <div style={{background: C.accent, color: '#120C09', fontFamily: HEAD, fontWeight: 800, fontSize: fs * 1.05,
+            border: `2px solid ${C.line}`, boxShadow: `0 16px 40px rgba(${C.bongRgb},${C.bongDo})`}}>
+            <div style={{background: C.accent, color: C.trenNhan, fontFamily: HEAD, fontWeight: 800, fontSize: fs * 1.05,
               padding: `${fs * 0.32}px ${fs * 0.55}px`, display: 'flex', alignItems: 'center', letterSpacing: 1}}>
               {so}<span style={{opacity: 0.6, fontSize: fs * 0.75, marginLeft: 2}}>/{tong}</span></div>
             <div style={{fontFamily: BODY, fontWeight: 700, fontSize: fs, color: C.text, textTransform: 'uppercase', letterSpacing: 2,
@@ -48,7 +48,7 @@ export const NhanTram = ({sceneId, start, so, tong, ten, tieu_de, dong = [], o =
       <div style={{position: 'absolute', left: x, top: y, width: w, display: 'flex', justifyContent: phai ? 'flex-end' : 'flex-start',
         transform: `translateX(${dx}px)`}}>
       <div style={{width: 'fit-content', maxWidth: '100%', padding: fs * 0.7,
-        borderRadius: fs * 0.6, background: C.card, border: `2px solid ${C.line}`, boxShadow: '0 20px 60px rgba(0,0,0,0.5)',
+        borderRadius: fs * 0.6, background: C.card, border: `2px solid ${C.line}`, boxShadow: `0 20px 60px rgba(${C.bongRgb},${C.bongDo})`,
         display: 'flex', flexDirection: 'column', gap: fs * 0.72, boxSizing: 'border-box'}}>
         {tieu_de && <div style={{fontFamily: BODY, fontWeight: 700, fontSize: fs * 0.62, letterSpacing: 2.5, color: C.accent,
           textTransform: 'uppercase', textWrap: 'balance'}}><ChuHien text={tieu_de} a={4} kieu={kc} /></div>}

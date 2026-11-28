@@ -33,7 +33,7 @@ export const Tua = () => {
         opacity: Math.min(1, o * (soft ? 1.2 : 1.6)), transform: soft ? 'none' : `translateX(${(back ? 0.5 - p : p - 0.5) * 60}px) scale(${0.92 + 0.12 * o})`}}>
         <div style={{display: 'flex', alignItems: 'center', gap: s * 0.5, padding: `${s * 0.3}px ${s * 0.6}px`, borderRadius: s,
           background: soft ? 'rgba(24,24,28,0.9)' : C.accent, border: soft ? `2px solid ${C.accent}` : 'none',
-          boxShadow: soft ? 'none' : '0 0 60px rgba(255,122,69,0.55)'}}>
+          boxShadow: soft ? 'none' : `0 0 60px rgba(${C.accentRgb},0.55)`}}>
           <svg width={s * 1.3} height={s} viewBox="0 0 26 20" fill={soft ? C.accent : C.bg} style={{transform: back ? 'scaleX(-1)' : 'none'}}>
             <path d="M1 1 L12 10 L1 19 Z M13 1 L24 10 L13 19 Z" /></svg>
           <div style={{fontFamily: HEAD, fontWeight: 800, fontSize: s * 1.25, lineHeight: 1, color: soft ? C.text : C.bg, fontVariantNumeric: 'tabular-nums'}}>

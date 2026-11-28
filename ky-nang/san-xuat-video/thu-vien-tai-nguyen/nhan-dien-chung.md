@@ -13,18 +13,20 @@ video và theo từng cảnh. Nguồn code duy nhất: `nhan-dien-thuong-hieu.js
 > "Về thẩm mỹ thì tôi chỉ cần duy nhất 1 thứ là người xem có thể nhận diện được dù xem video nào cũng là của cùng 1 người làm." — David
 
 Người dựng giữ ở MỌI video:
-1. Các thành phần cố định ở mục 1 (dấu góc ● DAVID, phụ đề, thanh thời gian, màn chốt, thẻ cuối) — đúng vị trí, đúng kiểu, đúng màu cam
-   `C.accent` và hai font chính `HEAD` (Barlow Condensed) / `BODY` (Be Vietnam Pro). Nhạc kênh (`bien-thiet-ke.js`, `thuong-hieu.json`).
-2. **Hiệu ứng học từ hình mẫu giữ trọn thẩm mỹ của mẫu** (David 28/11/2026, sau khi xem bản xem kho hiệu ứng: cảnh giữ nguyên mẫu nền
-   sáng hiển thị chuẩn; cảnh học xong phối lại sang đen cam thì lỗi thẩm mỹ và che mặt). Giữ màu nền, màu chữ, font, cỡ và tỉ lệ chữ, bo góc,
-   bóng, độ trong, khoảng trống, vị trí so với người của chính mẫu đó (số đo ghi ở `thiet-ke-bo-cuc/nguon-tham-khao/`). Không đổi sang nền đen
-   chữ cam. Cam `C.accent` chỉ thay màu nhấn của mẫu khi mẫu có một chỗ nhấn (chữ, viền, chấm đang nói); mẫu không có chỗ nhấn thì giữ nguyên.
-   Font của mẫu không có trên máy thì dùng font gần nhất cùng nhóm (chữ có chân / không chân, đậm / thường) và ghi trong phiếu học.
-3. Cảnh tự vẽ không học từ mẫu nào thì dùng màu cam và hai font chính. Font phụ `NHAN` (chữ có chân, nghiêng) chỉ dùng cho **một từ nhấn**
-   trong cụm (`*từ*` trong ChuHien).
+1. Các thành phần cố định ở mục 1 (dấu góc ● DAVID, phụ đề, thanh thời gian, màn chốt, thẻ cuối) — đúng vị trí, đúng kiểu, hai font chính
+   `HEAD` (Barlow Condensed) / `BODY` (Be Vietnam Pro), nhạc kênh (`bien-thiet-ke.js`, `thuong-hieu.json`). Người xem nhận ra kênh nhờ
+   hình thức và vị trí của các thành phần này, không nhờ một màu riêng.
+2. **Màu không phải nhận diện** (David 28/11/2026: *"nhận diện của kênh không nhất thiết phải là màu cam với nền đen hay nền trắng đâu nhé.
+   dùng bất kì màu sắc nào cũng được"*). Không ép cam, nền đen hay nền trắng vào hiệu ứng nào.
+3. **Hiệu ứng học từ hình mẫu giữ trọn thẩm mỹ của mẫu, cả màu nhấn**: màu nền, màu chữ, màu nhấn, font, cỡ và tỉ lệ chữ, bo góc, bóng,
+   độ trong, khoảng trống, vị trí so với người của chính mẫu đó (số đo ghi ở `thiet-ke-bo-cuc/nguon-tham-khao/`, giao diện ở
+   `bien-thiet-ke.js` `GIAO_DIEN`). Font của mẫu không có trên máy thì dùng font gần nhất cùng nhóm (chữ có chân / không chân, đậm / thường)
+   và ghi trong phiếu học.
+4. Cảnh tự vẽ không học từ mẫu nào thì chọn màu theo nội dung và theo cảnh liền kề (thường mượn giao diện của mẫu gần nhất để video liền
+   một mạch); không mặc định cam hay đen. Font phụ `NHAN` (chữ có chân, nghiêng) chỉ dùng cho **một từ nhấn** trong cụm (`*từ*` trong ChuHien).
 
 Nhận diện kênh nằm ở phần cố định: che hiệu ứng đi, người xem quen kênh vẫn nhận ra là video của David nhờ dấu góc, phụ đề, thanh thời gian,
-màn chốt và nhạc. Ngoài các điều trên là **tự do sáng tạo theo nội dung**: nền tối / sáng / giấy / người mờ, kết cấu, ánh sáng, kiểu hình,
+màn chốt và nhạc. Ngoài các điều trên là **tự do sáng tạo theo nội dung**: màu, nền tối / sáng / giấy / người mờ, kết cấu, ánh sáng, kiểu hình,
 bố cục, chuyển động.
 
 ## 1. Thành phần cố định (có ở mọi video)

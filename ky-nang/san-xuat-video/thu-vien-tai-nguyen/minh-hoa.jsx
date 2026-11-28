@@ -65,7 +65,7 @@ export const Illus = ({mode = 'single', items = [], label = '', num = null, star
           {mode === 'vs' && typeof it.good === 'boolean' && <Mark good={it.good} s={sz} o={ease(f, a + 14, a + 22)} />}
         </div>
         {it.label && <div style={{fontFamily: HEAD, fontWeight: 800, fontSize: Math.round(sz * (n > 2 ? 0.2 : 0.16)), color: C.text,
-          textTransform: 'uppercase', letterSpacing: 1, opacity: ease(f, a + 8, a + 16), textAlign: 'center', maxWidth: sz * 1.3}}>{it.label}</div>}
+          textTransform: C.hoa, letterSpacing: 1, opacity: ease(f, a + 8, a + 16), textAlign: 'center', maxWidth: sz * 1.3}}>{it.label}</div>}
       </div>
     );
   };
@@ -78,7 +78,7 @@ export const Illus = ({mode = 'single', items = [], label = '', num = null, star
       <div style={{display: 'flex', alignItems: 'baseline', gap: M * 0.02, opacity: ease(f, a, a + 6)}}>
         <div style={{fontFamily: HEAD, fontWeight: 800, fontSize: M * (land ? 0.17 : 0.3), lineHeight: 1, color: C.accent,
           fontVariantNumeric: 'tabular-nums', textShadow: `0 0 60px rgba(${C.accentRgb},0.35)`}}>{v.toLocaleString('vi-VN')}</div>
-        {num.unit && <div style={{fontFamily: HEAD, fontWeight: 800, fontSize: M * (land ? 0.06 : 0.08), color: C.text, textTransform: 'uppercase'}}>{num.unit}</div>}
+        {num.unit && <div style={{fontFamily: HEAD, fontWeight: 800, fontSize: M * (land ? 0.06 : 0.08), color: C.text, textTransform: C.hoa}}>{num.unit}</div>}
       </div>
     );
   }
@@ -109,7 +109,7 @@ export const Illus = ({mode = 'single', items = [], label = '', num = null, star
           opacity: ease(f, first + 10, first + 20), transform: `translateY(${(1 - ease(f, first + 10, first + 20)) * 20}px)`}}>
           <div style={{width: M * 0.12 * ease(f, first + 12, first + 26), height: 6, borderRadius: 3, background: C.accent}} />
           <div style={{fontFamily: HEAD, fontWeight: 800, fontSize: M * (land ? 0.07 : 0.085), lineHeight: 1.1, paddingTop: '0.1em', color: C.text,
-            textTransform: 'uppercase', textAlign: 'center'}}>{label}</div>
+            textTransform: C.hoa, textAlign: 'center'}}>{label}</div>
         </div>}
       </div>
     </AbsoluteFill>

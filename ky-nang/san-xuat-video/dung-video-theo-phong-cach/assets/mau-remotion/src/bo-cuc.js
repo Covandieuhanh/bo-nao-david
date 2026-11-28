@@ -7,7 +7,7 @@ import React from 'react';
 import {AbsoluteFill} from 'remotion';
 import output from './dau-ra.js';
 import project from './du-an.js';
-import {SAFE, SAFE_W} from './chu-de';
+import {C, SAFE, SAFE_W} from './chu-de';
 import {POD, PF} from './khung-podcast';
 import CAPTIONS from './phu-de.js';
 import PLACEMENT from './vi-tri.js';
@@ -72,8 +72,8 @@ export const Place = ({type, id, place, children}) => {
     if ((pl.full && pl.full !== false) || (TWO && !TWO_KEEP.has(type) && !place)) {   // đặt tay `place` (vd {full:false} / {top,scale}) = giữ lớp phủ
       const fs = Math.min(1.25, (project.width * 0.9) / BAND_W), y0 = Math.round(project.height * 0.42 - BAND_H * fs / 2);
       return (
-        <AbsoluteFill style={{background: '#0D0D10'}}>
-          <AbsoluteFill style={{background: 'radial-gradient(circle at 50% 42%, rgba(255,122,69,0.2), transparent 60%)'}} />
+        <AbsoluteFill style={{background: C.bg}}>
+          <AbsoluteFill style={{background: `radial-gradient(circle at 50% 42%, rgba(${C.accentRgb},0.2), transparent 60%)`}} />
           <Scaled x={(project.width - BAND_W * fs) / 2 - SAFE.left * fs} y={y0 - SAFE.overlayTop * fs} s={fs}>{children}</Scaled>
         </AbsoluteFill>
       );

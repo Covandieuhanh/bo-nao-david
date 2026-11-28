@@ -18,7 +18,11 @@ export const FullShell = ({children, hold}) => {   // hold: không mờ ra ở c
   return (
     <AbsoluteFill style={{opacity: v.opacity, filter: v.filter, transform: `scale(${1.03 - 0.03 * tien(f, 0, 14, EASE.camera)})`}}>
       <NenPhong />
-      {!usePhong().phong && (C.giay
+      {!usePhong().phong && (C.giay === 'luoi'
+        // nền giấy của mẫu Ali Abdaal: phẳng #FAF5F2, lưới ô vuông rất mờ (đo khung 0:27,5)
+        ? <AbsoluteFill style={{background: C.bg, backgroundImage: `linear-gradient(${C.line} 1.5px, transparent 1.5px), linear-gradient(90deg, ${C.line} 1.5px, transparent 1.5px)`,
+          backgroundSize: '72px 72px'}} />
+        : C.giay
         // nền giấy của mẫu Sang Huỳnh: sáng ở giữa (#FAF7F6), tối dần ra mép (#E3DED8), lưới chấm rất mờ (đo khung 12:48)
         ? <><AbsoluteFill style={{background: 'radial-gradient(ellipse 70% 65% at 50% 42%, #FAF7F6, #ECE9E5 60%, #E3DED8)'}} />
           <AbsoluteFill style={{backgroundImage: 'radial-gradient(rgba(30,24,20,0.07) 1.3px, transparent 1.6px)', backgroundSize: '30px 30px'}} /></>
@@ -155,7 +159,7 @@ export const Converge = ({start, jobs, mergeAt, outputs}) => {
       })}
       <div style={{position: 'absolute', left: cx, top: cy, width: 340, height: 340, borderRadius: 170,
         transform: `translate(-50%, -50%) scale(${core})`, background: C.accent,
-        boxShadow: '0 0 80px rgba(255,122,69,0.6)', display: 'flex', alignItems: 'center', justifyContent: 'center',
+        boxShadow: `0 0 80px rgba(${C.accentRgb},0.6)`, display: 'flex', alignItems: 'center', justifyContent: 'center',
         textAlign: 'center'}}>
         <div style={{fontFamily: HEAD, fontWeight: 800, fontSize: 80, lineHeight: 0.95, color: C.bg}}>ĐIỂM<br />CHUNG</div>
       </div>
@@ -198,7 +202,7 @@ export const Master = ({start, masterAt, shallowAt, aiAt, replaceAt}) => {
       </div>
       {/* cột cao thủ */}
       <div style={{position: 'absolute', left: 90, bottom: 1920 - base, width: 200, height: 680 * tall, borderRadius: '28px 28px 0 0',
-        background: `linear-gradient(${C.accent}, #C2410C)`, boxShadow: `0 0 ${40 + 30 * strike}px rgba(255,122,69,${0.35 + 0.3 * strike})`}} />
+        background: `linear-gradient(${C.accent}, #C2410C)`, boxShadow: `0 0 ${40 + 30 * strike}px rgba(${C.accentRgb},${0.35 + 0.3 * strike})`}} />
       <div style={{position: 'absolute', left: 90, top: base + 24, width: 260, fontFamily: BODY, fontWeight: 700, fontSize: 36,
         color: C.text, opacity: tall}}>Siêu cao thủ<br /><span style={{color: C.accent}}>1 nghề</span></div>
       {/* nhiều cột thấp */}
@@ -216,7 +220,7 @@ export const Master = ({start, masterAt, shallowAt, aiAt, replaceAt}) => {
       <div style={{position: 'absolute', left: 560, top: 600, width: 180, height: 180, borderRadius: 36, border: `4px solid ${C.accent}`,
         background: C.bg, display: 'flex', alignItems: 'center', justifyContent: 'center',
         opacity: Math.min(1, ai * 1.3), transform: `translateY(${(1 - ai) * -120}px) scale(${0.7 + 0.3 * ai})`,
-        boxShadow: '0 0 60px rgba(255,122,69,0.4)'}}>
+        boxShadow: `0 0 60px rgba(${C.accentRgb},0.4)`}}>
         <div style={{fontFamily: HEAD, fontWeight: 800, fontSize: 104, color: C.accent}}>AI</div>
       </div>
       <div style={{position: 'absolute', left: SAFE.left, width: SAFE_W, top: 1316, textAlign: 'center', fontFamily: HEAD, fontWeight: 800,

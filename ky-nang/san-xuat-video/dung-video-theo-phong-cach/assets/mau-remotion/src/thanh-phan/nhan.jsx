@@ -67,7 +67,7 @@ export const Nhan = ({sceneId, start, text, icon, at, zoom = 1, toi = false, bam
           background: C.nen,
           opacity: Math.min(1, p * 1.4), transform: `${cxT}translateX(${dx}px) scale(${0.85 + 0.15 * p})`,
           transformOrigin: side === 'right' ? 'left center' : under ? 'center top' : 'right center'}}>
-          {icon && <div style={{filter: 'drop-shadow(0 0 18px rgba(255,122,69,0.55)) drop-shadow(0 4px 14px rgba(0,0,0,0.6))'}}>
+          {icon && <div style={{filter: `drop-shadow(0 0 18px rgba(${C.accentRgb},0.55)) drop-shadow(0 4px 14px rgba(0,0,0,0.6))`}}>
             <Icon name={icon} size={size * 2.1} at={a} stroke={3} /></div>}
           {text && lines.map((l, i) => (
             <div key={i} style={{fontFamily: HEAD, fontWeight: 800, fontSize: size, lineHeight: 1.12, letterSpacing: 2,
@@ -76,7 +76,7 @@ export const Nhan = ({sceneId, start, text, icon, at, zoom = 1, toi = false, bam
           ))}
           {text && <div style={{height: Math.max(4, size * 0.07), borderRadius: 4, background: C.accent,
             width: ease(f, a + 6, a + 18) * size * 0.5 * Math.max(...lines.map((l) => l.length)),
-            boxShadow: '0 0 14px rgba(255,122,69,0.7)', alignSelf: box.alignItems}} />}
+            boxShadow: `0 0 14px rgba(${C.accentRgb},0.7)`, alignSelf: box.alignItems}} />}
         </div>
       )}
     </AbsoluteFill>
