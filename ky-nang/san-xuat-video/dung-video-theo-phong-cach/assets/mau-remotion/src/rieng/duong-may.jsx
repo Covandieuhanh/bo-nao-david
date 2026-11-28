@@ -469,7 +469,7 @@ export const DuongMay = ({sceneId, start, o = O_MAC_DINH, so, nhan, ten, lon, ti
           {tieu_de && <div style={{position: 'absolute', left: pad * 1.2, top: pad * 0.7, fontFamily: BODY, fontWeight: 700, fontSize: h * 0.095,
             letterSpacing: 3, color: C.accent, textTransform: 'uppercase'}}><ChuHien text={tieu_de} a={4} kieu={kc} /></div>}
           <svg width={w} height={h} style={{position: 'absolute', inset: 0}}>
-            <line x1={x0} y1={seamY} x2={x1} y2={seamY} stroke="rgba(${C.sangRgb},0.10)" strokeWidth={2} />
+            <line x1={x0} y1={seamY} x2={x1} y2={seamY} stroke={`rgba(${C.sangRgb},0.10)`} strokeWidth={2} />
             <line x1={x0} y1={seamY} x2={dau} y2={seamY} stroke={C.accent} strokeWidth={4} strokeDasharray="14 9" strokeLinecap="round" />
             {xs.map((cx, i) => ps[i] > 0 && (
               <circle key={i} cx={cx} cy={seamY} r={9 * Math.min(1, ps[i] * 1.4)} fill={C.bg}

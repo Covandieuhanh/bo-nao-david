@@ -56,7 +56,7 @@ export const Illus = ({mode = 'single', items = [], label = '', num = null, star
         transform: enter(mode, i, p, sz)}}>
         <div style={{position: 'relative', width: sz, height: sz}}>
           <svg width={sz} height={sz} style={{position: 'absolute', inset: 0}}>
-            <circle cx={sz / 2} cy={sz / 2} r={sz * 0.47} fill="rgba(${C.accentRgb},0.07)" stroke={C.accent} strokeOpacity={0.32} strokeWidth={2}
+            <circle cx={sz / 2} cy={sz / 2} r={sz * 0.47} fill={`rgba(${C.accentRgb},0.07)`} stroke={C.accent} strokeOpacity={0.32} strokeWidth={2}
               strokeDasharray={`${sz * 0.06} ${sz * 0.05}`} />
           </svg>
           <div style={{position: 'absolute', left: sz * 0.18, top: sz * 0.18, filter: `drop-shadow(0 0 22px rgba(${C.accentRgb},0.45))`}}>

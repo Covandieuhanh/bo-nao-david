@@ -60,7 +60,14 @@ const NOI = {illus: Illus, diagram: Diagram, ve: ({ve, ...p}) => { const V = VE[
 // Vùng vẽ thật của nội dung lồng (tỉ lệ khung). Sơ đồ và minh hoạ khung ngang trải 86–88% bề ngang (so-do.jsx, minh-hoa.jsx):
 // co và canh giữa theo đúng vùng đó, không thì tràn mép phải khi đặt cạnh người. Cảnh tự vẽ và khung dọc giữ vùng giữa 60%.
 const VUNG_NOI = LAND ? {diagram: {x: 0.07, w: 0.86, y: 0.12, h: 0.68}, illus: {x: 0.06, w: 0.88, y: 0.12, h: 0.68}} : {};
-const vungNoi = (noi_dung) => (noi_dung && VUNG_NOI[noi_dung.type]) || (LAND ? {x: 0.2, w: 0.6, y: 0.07, h: 0.64} : {x: 0.2, w: 0.6, y: 0.1, h: 0.46});
+// Bề ngang thật của từng kiểu (phần khung có hình, đo từ ảnh chụp 28/11/2026): kiểu hẹp mà co theo 86% thì nhỏ một nửa, chữ khó đọc.
+const RONG_KIEU = {chuoi: 0.42, vong: 0.4, list: 0.46, vs: 0.44, single: 0.42, count: 0.42, cot: 0.62, 'doi-trang-thai': 0.64, flow: 0.72};
+const vungNoi = (noi_dung) => {
+  const v = noi_dung && VUNG_NOI[noi_dung.type];
+  if (!v) return LAND ? {x: 0.2, w: 0.6, y: 0.07, h: 0.64} : {x: 0.2, w: 0.6, y: 0.1, h: 0.46};
+  const r = RONG_KIEU[noi_dung.props?.mode];
+  return r ? {...v, x: 0.5 - r / 2, w: r} : v;
+};
 
 // Thẻ chữ hiện dần (dùng cho 'the-canh' và nội dung 'the' trong 'o-nguoi')
 // Xuống dòng cân (textWrap balance): dòng đều nhau, không để một chữ đứng lẻ ("LUYỆN TẬP LẠI THÓI / QUEN" — lỗi 09/11/2026);

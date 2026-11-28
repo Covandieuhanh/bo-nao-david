@@ -164,7 +164,7 @@ export const Diagram = ({mode = 'tang', items = [], label = '', total = 0, start
       const w = AW * (1 - 0.3 * (n === 1 ? 0 : i / (n - 1))), x = (AW - w) / 2, y = (n - 1 - i) * (rh + gap);
       return (
         <React.Fragment key={i}>
-          <div style={{position: 'absolute`, left: x, top: y, width: w, height: rh, borderRadius: rh * 0.16, border: `3px dashed ${C.dim}`, boxSizing: `border-box'}} />
+          <div style={{position: 'absolute', left: x, top: y, width: w, height: rh, borderRadius: rh * 0.16, border: `3px dashed ${C.dim}`, boxSizing: 'border-box'}} />
           <div style={{position: 'absolute', left: x, top: y, width: w, height: rh, borderRadius: rh * 0.16, boxSizing: 'border-box',
             background: cur ? C.accent : `rgba(${C.accentRgb},0.16)`, border: `2px solid ${C.accent}`, opacity: Math.min(1, p * 1.4),
             transform: `translateY(${(1 - p) * rh * 0.45}px)`, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>

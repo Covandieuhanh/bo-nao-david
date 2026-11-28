@@ -4,7 +4,7 @@ import {FPS, fr} from './canh';
 
 // ===== Phong cách — Claude điền từ phong-cach.md (phân tích video mẫu) =====
 import {C as _C, HEAD as _H, BODY as _B, NHAN as _N, GIAO_DIEN, MAU_CUA} from './thu-vien/bien-thiet-ke';   // màu/font: MỘT NGUỒN thư viện hình (khối 10)
-export const C = {..._C};
+export const C = _C;   // CÙNG một đối tượng với thu-vien/bien-thiet-ke.js (so-do, minh-hoa đọc từ đó) để apDungGiaoDien đổi được mọi thành phần
 // Giao diện theo mẫu của từng cảnh (nhan-dien-chung.md mục 0 điều 2). `props.giao_dien` ghi đè; không có thì tra MAU_CUA theo loại cảnh.
 // goc.jsx gọi apDungGiaoDien trước khi vẽ mỗi khung, nên mọi thành phần đọc C đều theo đúng giao diện của cảnh đang vẽ (phụ đề, dấu góc: kenh).
 export const giaoDienCua = (type, p = {}) => {

@@ -12,6 +12,14 @@ description: "Nhật ký thay đổi skill dựng video theo phong cách: quyế
 - Đo thấy chữ hiện sớm hơn lời 1–5 giây ở gần mọi cảnh (mốc theo đầu câu; bản chép lời cả video ghép trôi khoảng 1,3 giây; bản chép lời
   nguồn đã làm sạch lệch 1 giây). Thêm `scripts/khop-chu-voi-loi.py` (dò và dời mốc về lúc nói, đọc cả `canh.js` viết tay, giữ chú thích) và
   `ghep-doan-kho-hieu-ung.py --chep-loi --canh-js` (chép lời từng đoạn, ghi cảnh, khớp lời, ghi ngược về `doan.json`).
+- David (cùng ngày): hiệu ứng giữ nguyên mẫu nền sáng thì chuẩn, hiệu ứng phối lại đen cam thì lỗi thẩm mỹ và che mặt; chọn "giữ nguyên mẫu".
+  Luật viết lại ở `thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0 (nhận diện kênh nằm ở thành phần cố định; hiệu ứng học từ mẫu giữ thẩm mỹ của mẫu).
+  Mã: `bien-thiet-ke.js` `GIAO_DIEN` (`kenh`, `sang-huynh-sang`, `sang-huynh-toi`, màu đo từ khung hình gốc) + `MAU_CUA`; `chu-de.js`
+  `apDungGiaoDien` (goc.jsx gọi cho từng cảnh); 47 màu viết cứng trong `so-do`, `minh-hoa`, `bo-cuc`, `duong-may` thành biến; nền giấy ở
+  `toan-man-hinh.jsx`; `RONG_KIEU` cho bề ngang thật từng kiểu sơ đồ. Công cụ mới `scripts/kiem-che-mat.py`.
+- Che mặt người ngồi nghiêng: `nhan-dien-khuon-mat.swift` thêm dò dáng người (Vision, nửa thân trên) và ước vùng đầu (`"u": 1`) khi
+  không dò được mặt; `vi-tri-nhan.py` đếm số người riêng từng cảnh (video ghép nhiều nguồn trước đó gộp mất người thứ hai). Bản dò mặt
+  ngoài Mac (`nhan-dien-khuon-mat.py`) chưa có bước dò dáng người.
 - Sửa khung: `bo-cuc.jsx` `vungNoi()` (sơ đồ, minh hoạ trong ô người và cạnh người khung ngang không còn tràn mép phải);
   `duong-may.jsx` `coChu()` (chữ thẻ lật, gạch thay, câu đắt xuống dòng thay vì teo nhỏ).
 

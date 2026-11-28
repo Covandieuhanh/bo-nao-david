@@ -78,3 +78,16 @@ Mã: `dung-video-theo-phong-cach/assets/mau-remotion/src/rieng/mau-sang-huynh.js
 | bố cục 3 | `NguoiTrongThe` | chuỗi thẻ trắng nối bằng dây đứt cam; thẻ bước có hình chứa chính video người nói |
 
 Ví dụ dùng từng cảnh trên tư liệu thật: `~/Movies/tap-kho-hieu-ung-2711/ghep/doan.json` (bản xem đủ kho hiệu ứng, lá B15).
+
+## Giao diện đo (28/11/2026, từ khung hình gốc 12:38–17:35)
+
+Dùng qua `GIAO_DIEN` trong `thu-vien/bien-thiet-ke.js`; bảng `MAU_CUA` gắn mỗi loại cảnh với giao diện mẫu của nó (David 28/11/2026: hiệu ứng học
+từ mẫu giữ trọn thẩm mỹ của mẫu, `thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0).
+
+| Giao diện | Dùng cho | Số đo |
+|---|---|---|
+| `sang-huynh-sang` | màn đồ hoạ có người trong ô (`bocuc o-nguoi`, sơ đồ và minh hoạ đặt trong ô người) | nền giấy sáng giữa #FAF7F6, mép #EEEBE8 → #E5E1DB, lưới chấm rất mờ; thẻ trắng #FFFFFF bóng mềm nâu; chữ đen than; nhãn nhỏ in hoa giãn chữ màu nhấn; chip đen #201D1A; dấu tích xanh #49725D; khung người viền trắng dày khoảng 5 px |
+| `sang-huynh-toi` | thẻ đè lên video (`bocuc the-canh`, `DuongMay` gạch thay, chương lớn, lời nhắc) và màn chương | thẻ #30302D, nhãn xám #B0B0AB in hoa, chữ kem #F4F2EE, cụm nhấn màu nhấn; màn chương nền #111111, số to mờ, dòng 2 màu nhấn |
+
+Màu nhấn đỏ cam của mẫu (#B5604A trên nền sáng, #E79377 trên nền tối) được thay bằng cam của kênh (#E0612F trên nền sáng cho dễ đọc, #FF7A45 trên nền tối).
+Font tiêu đề của mẫu là chữ hẹp đậm giống Barlow Condensed, chữ thường giống Be Vietnam Pro, nên giữ hai font chính.

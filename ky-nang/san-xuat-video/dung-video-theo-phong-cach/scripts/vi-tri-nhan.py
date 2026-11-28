@@ -105,6 +105,22 @@ for s in scenes:
         b = by.get(i, [])
         if len(b) >= 0.3 * n: people.append({'i': i, **box(b)})
         elif i in GLOBAL: people.append({'i': i, **GLOBAL[i], 'uoc': True})   # máy không thấy rõ mặt (quay nghiêng) — người vẫn ngồi đó
+    # Số người tính riêng cho cảnh (28/11/2026): video ghép nhiều nguồn có đoạn 2 người giữa phần lớn đoạn 1 người — đếm chung cả video
+    # thì người thứ hai bị gộp mất và hiệu ứng đặt đè lên đầu họ. Cảnh có nhiều người hơn số đếm chung thì chia cụm lại trong cảnh.
+    kh = [[f for f in F[k] if f['w'] > 0.03] for k in range(int(s['start'] / STEP), min(len(F), int(s['end'] / STEP) + 1))]
+    Kc = max([k for k in range(1, 6) if sum(1 for fr in kh if len(fr) >= k) >= 0.3 * max(1, len(kh))] or [1])
+    if Kc > len(people):
+        cs = sorted(cxf(f) for fr in kh for f in fr)
+        tam = [cs[int((i + 0.5) * len(cs) / Kc)] for i in range(Kc)]
+        for _ in range(20):
+            g = [[] for _ in tam]
+            for c in cs: g[min(range(Kc), key=lambda i: abs(c - tam[i]))].append(c)
+            tam = [med(x) if x else tam[i] for i, x in enumerate(g)]
+        nhom = {}
+        for fr in kh:
+            for f in fr: nhom.setdefault(min(range(Kc), key=lambda i: abs(cxf(f) - tam[i])), []).append(f)
+        people = [{'i': i, **box(b), **({'uoc': True} if all(f.get('u') for f in b) else {})}
+                  for i, b in sorted(nhom.items(), key=lambda kv: med([cxf(f) for f in kv[1]]))]
     if not people:
         res[s['id']] = {'cx': 0.5, 'cy': 0.42, 'w': 0.18, 'h': 0.3, 'khong_mat': True}; continue
     at = (s.get('props') or {}).get('at')
