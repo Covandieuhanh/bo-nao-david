@@ -49,7 +49,7 @@ export const Diagram = ({mode = 'tang', items = [], label = '', total = 0, start
       const p = sp(rel(it.at)), w = AW * (0.58 + 0.42 * (n === 1 ? 1 : i / (n - 1))), hl = mot_diem ? i === curI : i === 0;
       return (
         <div key={i} style={{position: 'absolute', left: (AW - w) / 2, top: i * (rh + gap), width: w, height: rh, borderRadius: rh * 0.22,
-          background: hl ? C.accent : `rgba(255,122,69,${0.1 + 0.1 * (n - 1 - i) / Math.max(1, n - 1)})`, border: `2px solid ${mot_diem && !hl ? 'rgba(255,122,69,0.4)' : C.accent}`,
+          background: hl ? C.accent : `rgba(${C.accentRgb},${0.1 + 0.1 * (n - 1 - i) / Math.max(1, n - 1)})`, border: `2px solid ${mot_diem && !hl ? `rgba(${C.accentRgb},0.4)` : C.accent}`,
           display: 'flex', alignItems: 'center', justifyContent: 'center', gap: rh * 0.35, opacity: Math.min(1, p * 1.4),
           transform: `scaleX(${0.6 + 0.4 * p})`}}>
           {it.value && <div style={{...UP, fontSize: rh * 0.56, color: hl ? C.bg : C.accent, fontVariantNumeric: 'tabular-nums'}}>{it.value}</div>}
@@ -106,7 +106,7 @@ export const Diagram = ({mode = 'tang', items = [], label = '', total = 0, start
       return (
         <React.Fragment key={i}>
           <div style={{position: 'absolute', left: x0 + i * (cw + gap), top: base - h, width: cw, height: h, borderRadius: `${cw * 0.12}px ${cw * 0.12}px 0 0`,
-            background: hl ? C.accent : 'rgba(255,122,69,0.35)'}} />
+            background: hl ? C.accent : `rgba(${C.accentRgb},0.35)`}} />
           <div style={{position: 'absolute', left: x0 + i * (cw + gap) - gap / 2, width: cw + gap, top: base - h - M * 0.075, textAlign: 'center', ...UP,
             fontSize: M * (land ? 0.055 : 0.06), color: hl ? C.accent : mot_diem ? C.muted : C.text, opacity: ease(f, a + 10, a + 18)}}>{it.show ?? it.value}</div>
           <div style={{position: 'absolute', left: x0 + i * (cw + gap) - gap / 2, width: cw + gap, top: base + M * 0.015, textAlign: 'center', ...UP,
@@ -124,7 +124,7 @@ export const Diagram = ({mode = 'tang', items = [], label = '', total = 0, start
       <>
         {Array.from({length: T}).map((_, k) => (
           <div key={k} style={{position: 'absolute', left: x0 + (k % cols) * cell + g / 2, top: Math.floor(k / cols) * cell + g / 2, width: cell - g,
-            height: cell - g, borderRadius: (cell - g) * 0.25, background: filled(k) ? C.accent : 'rgba(255,255,255,0.08)'}} />
+            height: cell - g, borderRadius: (cell - g) * 0.25, background: filled(k) ? C.accent : `rgba(${C.sangRgb},0.08)`}} />
         ))}
         {cur && <div style={{position: 'absolute', left: 0, width: AW, top: rows * cell + bodyH * 0.04, textAlign: 'center', ...UP,
           fontSize: M * (land ? 0.05 : 0.055), color: C.text}}>{cur.label}</div>}
@@ -137,7 +137,7 @@ export const Diagram = ({mode = 'tang', items = [], label = '', total = 0, start
       const p = sp(rel(it.at));
       return (
         <div style={{position: 'absolute', left: x, top: y, width: pw, height: ph, borderRadius: M * 0.03, opacity: Math.min(1, p * 1.3) * (after ? 1 : 0.6),
-          background: after ? 'rgba(255,122,69,0.14)' : 'rgba(255,255,255,0.05)', border: `3px solid ${after ? C.accent : C.dim}`,
+          background: after ? `rgba(${C.accentRgb},0.14)` : `rgba(${C.sangRgb},0.05)`, border: `3px solid ${after ? C.accent : C.dim}`,
           display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: ph * 0.06, transform: `translateY(${(1 - p) * 40}px)`}}>
           {it.icon && <Icon name={it.icon} size={ph * 0.32} at={rel(it.at)} stroke={3} />}
           <div style={{...UP, fontSize: ph * 0.13, color: after ? C.accent : C.text, textAlign: 'center', padding: '0 4%'}}>{it.label}</div>
@@ -164,9 +164,9 @@ export const Diagram = ({mode = 'tang', items = [], label = '', total = 0, start
       const w = AW * (1 - 0.3 * (n === 1 ? 0 : i / (n - 1))), x = (AW - w) / 2, y = (n - 1 - i) * (rh + gap);
       return (
         <React.Fragment key={i}>
-          <div style={{position: 'absolute', left: x, top: y, width: w, height: rh, borderRadius: rh * 0.16, border: `3px dashed ${C.dim}`, boxSizing: 'border-box'}} />
+          <div style={{position: 'absolute`, left: x, top: y, width: w, height: rh, borderRadius: rh * 0.16, border: `3px dashed ${C.dim}`, boxSizing: `border-box'}} />
           <div style={{position: 'absolute', left: x, top: y, width: w, height: rh, borderRadius: rh * 0.16, boxSizing: 'border-box',
-            background: cur ? C.accent : 'rgba(255,122,69,0.16)', border: `2px solid ${C.accent}`, opacity: Math.min(1, p * 1.4),
+            background: cur ? C.accent : `rgba(${C.accentRgb},0.16)`, border: `2px solid ${C.accent}`, opacity: Math.min(1, p * 1.4),
             transform: `translateY(${(1 - p) * rh * 0.45}px)`, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
             <div style={{...UP, fontSize: fit(it.label, w * 0.88, rh * 0.42), color: cur ? C.bg : C.text, whiteSpace: 'nowrap'}}>{it.label}</div>
             {it.sub && <div style={{fontFamily: BODY, fontWeight: 600, fontSize: rh * 0.15, color: cur ? C.bg : C.muted}}>{it.sub}</div>}
@@ -187,9 +187,9 @@ export const Diagram = ({mode = 'tang', items = [], label = '', total = 0, start
     body = (
       <>
         <div style={{position: 'absolute', left: cx - S * 1.5, top: cy - S * 1.5, width: S * 3, height: S * 3, borderRadius: S * 1.5,
-          background: 'radial-gradient(circle, rgba(255,122,69,0.3), transparent 68%)', opacity: flip, transform: `scale(${0.25 + 0.75 * flip})`}} />
+          background: `radial-gradient(circle, rgba(${C.accentRgb},0.3), transparent 68%)`, opacity: flip, transform: `scale(${0.25 + 0.75 * flip})`}} />
         <div style={{position: 'absolute', left: cx - S / 2, top: cy - S / 2, width: S, height: S, borderRadius: S, boxSizing: 'border-box', border: `4px solid ${col}`,
-          background: flip > 0 ? `rgba(255,122,69,${0.12 * flip})` : 'rgba(255,255,255,0.04)', opacity: Math.min(1, pIn * 1.4), transform: `scale(${0.85 + 0.15 * pIn})`}}>
+          background: flip > 0 ? `rgba(${C.accentRgb},${0.12 * flip})` : `rgba(${C.sangRgb},0.04)`, opacity: Math.min(1, pIn * 1.4), transform: `scale(${0.85 + 0.15 * pIn})`}}>
           {a?.icon && <div style={{position: 'absolute', left: S * 0.18, top: S * 0.18, opacity: b?.icon ? 1 - sw : 1, filter: `grayscale(${1 - flip}) brightness(${0.75 + 0.25 * flip})`}}>
             <Icon name={a.icon} size={S * 0.64} at={ta} stroke={2.8} /></div>}
           {b?.icon && f >= tb && <div style={{position: 'absolute', left: S * 0.18, top: S * 0.18, opacity: sw}}>
@@ -212,7 +212,7 @@ export const Diagram = ({mode = 'tang', items = [], label = '', total = 0, start
     const node = (it, x, after, sc = 1, op = 1) => (
       <div style={{position: 'absolute', left: x, top: yN, width: ns, opacity: op * Math.min(1, sp(rel(it.at)) * 1.4)}}>
         <div style={{position: 'relative', width: ns, height: ns, borderRadius: ns, boxSizing: 'border-box', border: `4px solid ${after ? C.accent : C.dim}`,
-          background: after ? 'rgba(255,122,69,0.14)' : 'rgba(255,255,255,0.05)', transform: `scale(${sc})`}}>
+          background: after ? `rgba(${C.accentRgb},0.14)` : `rgba(${C.sangRgb},0.05)`, transform: `scale(${sc})`}}>
           {it.icon && <div style={{position: 'absolute', left: ns * 0.2, top: ns * 0.2}}><Icon name={it.icon} size={ns * 0.6} at={rel(it.at)} stroke={3} /></div>}
         </div>
         <div style={{...UP, textAlign: 'center', fontSize: fit(it.label, ns * 1.1, M * (land ? 0.05 : 0.06)), color: after ? C.accent : C.text, marginTop: ns * 0.05}}>{it.label}</div>
@@ -248,7 +248,7 @@ export const Diagram = ({mode = 'tang', items = [], label = '', total = 0, start
           const scale = ease(f, a - 6, a, 0.55, 1) * interpolate(t, [0.72, 1], [1, 0.5], cl);   // nhô ra khỏi bên giao · thu nhỏ khi lọt vào bên nhận
           return (
             <div key={i} style={{position: 'absolute', left: x - S / 2, top: y - S / 2, width: S, height: S, borderRadius: S, boxSizing: 'border-box', background: C.accent,
-              boxShadow: '0 14px 40px rgba(0,0,0,0.5)', opacity: ease(f, a - 6, a - 2) * (1 - ease(f, a + TR - 3, a + TR)), transform: `scale(${scale})`,
+              boxShadow: `0 14px 40px rgba(${C.bongRgb},0.5)`, opacity: ease(f, a - 6, a - 2) * (1 - ease(f, a + TR - 3, a + TR)), transform: `scale(${scale})`,
               display: 'flex', alignItems: 'center', justifyContent: 'center', color: C.bg}}>
               <div style={{filter: 'brightness(0)'}}><Icon name={it.icon} size={S * 0.62} at={-99} stroke={3.6} /></div>
             </div>
@@ -293,7 +293,7 @@ export const Diagram = ({mode = 'tang', items = [], label = '', total = 0, start
       return (
         <div key={i} style={{position: 'absolute', left: x, top: y, width: bw, height: bh, borderRadius: Math.min(bh, bw) * 0.18, boxSizing: 'border-box',
           background: cur ? C.accentSoft : C.card, border: `${cur ? 3 : 2}px solid ${cur ? C.accent : C.line}`,
-          boxShadow: cur ? `0 0 ${M * 0.05}px rgba(255,122,69,0.28)` : '0 20px 60px rgba(0,0,0,0.45)',
+          boxShadow: cur ? `0 0 ${M * 0.05}px rgba(${C.accentRgb},0.28)` : `0 20px 60px rgba(${C.bongRgb},0.45)`,
           display: 'flex', alignItems: 'center', justifyContent: 'center', gap: bh * 0.18, padding: `0 ${bh * 0.2}px`,
           opacity: Math.min(1, p * 1.4) * (cu ? 0.5 : 1), transform: `translateY(${(1 - p) * bh * 0.25}px) scale(${0.94 + 0.06 * p})`}}>
           {it.icon && <div style={{flex: 'none'}}><Icon name={it.icon} size={bh * 0.48} at={a} stroke={3} /></div>}
@@ -309,10 +309,10 @@ export const Diagram = ({mode = 'tang', items = [], label = '', total = 0, start
     body = (
       <>
         <div style={{position: 'absolute', left: x, top: 0, width: pw, height: ph, borderRadius: M * 0.035, overflow: 'hidden',
-          boxShadow: `0 30px 80px rgba(0,0,0,0.55), 0 0 0 3px ${C.accent}55`, opacity: Math.min(1, p * 1.3), transform: `scale(${0.92 + 0.08 * p})`}}>
+          boxShadow: `0 30px 80px rgba(${C.bongRgb},0.55), 0 0 0 3px ${C.accent}55`, opacity: Math.min(1, p * 1.3), transform: `scale(${0.92 + 0.08 * p})`}}>
           {it.photo && <Img src={staticFile(`anh/${it.photo}`)} style={{width: '100%', height: '100%', objectFit: 'cover', objectPosition: it.pos || '50% 35%', transform: `scale(${kb})`}} />}
           {it.credit && <div style={{position: 'absolute', right: 12, bottom: 10, fontFamily: BODY, fontSize: M * 0.016, color: 'rgba(255,255,255,0.75)',
-            textShadow: '0 1px 4px rgba(0,0,0,0.8)'}}>{it.credit}</div>}
+            textShadow: `0 1px 4px rgba(${C.bongRgb},0.8)`}}>{it.credit}</div>}
         </div>
         {it.label && <div style={{position: 'absolute', left: 0, width: AW, top: ph + bodyH * 0.05, textAlign: 'center', ...UP,
           fontSize: M * (land ? 0.05 : 0.055), color: C.text, opacity: ease(f, rel(it.at) + 8, rel(it.at) + 16)}}>{it.label}
@@ -325,7 +325,7 @@ export const Diagram = ({mode = 'tang', items = [], label = '', total = 0, start
   return (
     <AbsoluteFill style={{opacity: Math.min(ease(f, 0, 8), out)}}>
       {nen && (usePhong().phong ? <NenPhong glow={false} /> : <AbsoluteFill style={{background: C.bg}} />)}
-      <AbsoluteFill style={{background: `radial-gradient(circle at 50% ${land ? 40 : 36}%, rgba(255,122,69,0.17), transparent 62%)`}} />
+      <AbsoluteFill style={{background: `radial-gradient(circle at 50% ${land ? 40 : 36}%, rgba(${C.accentRgb},0.17), transparent 62%)`}} />
       <div style={{position: 'absolute', ...area}}>
         {label && <div style={{position: 'absolute', left: 0, width: AW, top: 0, textAlign: 'center', ...UP, fontSize: head, color: C.text,
           opacity: ease(f, Math.min(first, 4), Math.min(first, 4) + 10)}}>{label}

@@ -69,13 +69,13 @@ const vungNoi = (noi_dung) => (noi_dung && VUNG_NOI[noi_dung.type]) || (LAND ? {
 const The = ({so, ...p}) => so == null ? <TheGoc {...p} /> : (
   <div style={{display: 'flex', alignItems: 'center', gap: p.fs * 0.4, width: p.w}}>
     <div style={{flex: 'none', fontFamily: HEAD, fontWeight: 800, fontSize: p.fs * 2.6, lineHeight: 0.9, color: C.accent,
-      opacity: Math.min(1, pop(p.f, 0) * 1.3), transform: `translateY(${(1 - pop(p.f, 0)) * 30}px)`, textShadow: '0 8px 30px rgba(0,0,0,0.6)'}}>{so}</div>
+      opacity: Math.min(1, pop(p.f, 0) * 1.3), transform: `translateY(${(1 - pop(p.f, 0)) * 30}px)`, textShadow: `0 8px 30px rgba(${C.bongRgb},0.6)`}}>{so}</div>
     <TheGoc {...p} w={p.w - p.fs * 2.2} />
   </div>
 );
 const TheGoc = ({start, tieu_de, dong = [], w, f, fs, kc = 'mo'}) => (
   <div style={{width: w, padding: fs * 0.9, borderRadius: fs * 0.7, background: C.card, border: `2px solid ${C.line}`,
-    boxShadow: '0 30px 90px rgba(0,0,0,0.5)', display: 'flex', flexDirection: 'column', gap: fs * 0.6}}>
+    boxShadow: `0 30px 90px rgba(${C.bongRgb},0.5)`, display: 'flex', flexDirection: 'column', gap: fs * 0.6}}>
     {tieu_de && <div style={{fontFamily: BODY, fontWeight: 700, fontSize: fs * 0.42, letterSpacing: 3, color: C.accent, textTransform: 'uppercase',
       opacity: ease(f, 2, 10), textWrap: 'balance'}}>{tieu_de}</div>}
     {dong.map((d, i) => {
@@ -114,9 +114,9 @@ const MucLuc = ({start, f, w, fs, tieu_de, muc = []}) => {
         const cu = hien.length && hien[hien.length - 1] !== m && f >= a ? 1 : 0;
         return (
           <div key={i} style={{display: 'flex', alignItems: 'center', gap: fs * 0.55, padding: `${fs * 0.42}px ${fs * 0.6}px`, borderRadius: fs * 0.5,
-            background: C.card, border: `2px solid ${cu ? C.line : 'rgba(255,122,69,0.45)'}`, boxShadow: '0 20px 60px rgba(0,0,0,0.45)',
+            background: C.card, border: `2px solid ${cu ? C.line : `rgba(${C.accentRgb},0.45)`}`, boxShadow: `0 20px 60px rgba(${C.bongRgb},0.45)`,
             opacity: Math.min(1, p * 1.4) * (1 - 0.55 * cu), transform: `translateY(${(1 - p) * 24}px) scale(${0.95 + 0.05 * p})`}}>
-            <div style={{flex: 'none', width: fs * 1.25, height: fs * 1.25, borderRadius: '50%', background: cu ? C.dim : C.accent, color: '#120C09',
+            <div style={{flex: 'none', width: fs * 1.25, height: fs * 1.25, borderRadius: '50%', background: cu ? C.dim : C.accent, color: C.trenNhan,
               display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: HEAD, fontWeight: 800, fontSize: fs * 0.8}}>{i + 1}</div>
             <div style={{fontFamily: BODY, fontWeight: 600, fontSize: fs * 0.82, lineHeight: 1.25, color: C.text, textWrap: 'balance'}}>
               <ChuHien text={m.text} a={a + 3} kieu="muc" /></div>
@@ -187,7 +187,7 @@ const ONguoi = ({sceneId, start, o, noi_dung, khung, bam, nguoi_duoi = false}) =
   return (
     <FullShell hold>
       <div style={{position: 'absolute', left: x, top: y, width: w, height: h, borderRadius: 36 * k, overflow: 'hidden',
-        border: k > 0.5 ? `3px solid ${C.accent}` : 'none', boxShadow: '0 30px 90px rgba(0,0,0,0.6)'}}>
+        border: k > 0.5 ? `3px solid ${C.accent}` : 'none', boxShadow: `0 30px 90px rgba(${C.bongRgb},0.6)`}}>
         <OffthreadVideo src={staticFile('goc.mp4')} trimBefore={fr(start)} muted
           style={{position: 'absolute', left: -cl * W * sc + (w - (cr - cl) * W * sc) / 2, top: -ct * H * sc + (h - (cb - ct) * H * sc) / 2,
             width: W * sc, height: H * sc, maxWidth: 'none'}} />
@@ -261,7 +261,7 @@ const TienTrinh = ({sceneId, start, so = 1, tong = 3, nhan, ten = ''}) => {
         const on = i < so - 1 || (i === so - 1 && f >= 18);
         return <div key={i} style={{position: 'absolute', left: cx - r, top: y - r, width: r * 2, height: r * 2, borderRadius: '50%',
           background: on ? C.accent : C.bg, border: `4px solid ${on ? C.accent : C.dim}`, display: 'flex', alignItems: 'center', justifyContent: 'center',
-          fontFamily: HEAD, fontWeight: 800, fontSize: r * 1.05, color: on ? '#120C09' : C.dim,
+          fontFamily: HEAD, fontWeight: 800, fontSize: r * 1.05, color: on ? C.trenNhan : C.dim,
           transform: i === so - 1 ? `scale(${1 + 0.18 * p - 0.18 * ease(f, 26, 36)})` : undefined}}>{i + 1}</div>;
       })}
       <div style={{position: 'absolute', top: y + r * 2.1, left: Math.min(Math.max(SAFE.left, x - W * 0.3), W - SAFE.right - W * 0.6), width: W * 0.6,
@@ -294,7 +294,7 @@ const CanhNguoi = ({sceneId, start, noi_dung, bam, toi = true}) => {
   return (
     <AbsoluteFill style={{opacity: o, filter: o < 1 && f > d / 2 ? `blur(${(8 * (1 - o)).toFixed(2)}px)` : undefined}}>
       {toi && <div style={{position: 'absolute', left: k.x0 - W * 0.04, top: 0, width: k.x1 - k.x0 + W * 0.08, height: H,
-        background: `linear-gradient(${k.ke === 'phai' ? 90 : 270}deg, transparent, rgba(8,8,10,0.55) 25%, rgba(8,8,10,0.55) 75%, transparent)`}} />}
+        background: `linear-gradient(${k.ke === 'phai' ? 90 : 270}deg, transparent, rgba(${C.theRgb},0.55) 25%, rgba(${C.theRgb},0.55) 75%, transparent)`}} />}
       <div style={{position: 'absolute', left: cx - W * (v.x + v.w / 2) * s, top: cy - H * (v.y + v.h / 2) * s, width: W, height: H,
         transform: `scale(${s})`, transformOrigin: '0 0'}}>
         {Comp && <Comp start={start} sceneId={sceneId} nen={false} {...noi_dung.props} />}
@@ -335,7 +335,7 @@ const Hinh = ({nguon = {}, start, fit = 'cover', fs = 40}) => {
 const DO = '#FF4D4D', XANH = '#3DDC84';   // cùng màu nghĩa với phụ đề (+ nên / - tránh, kieu-phu-de.js)
 const Dau = ({ok, r}) => (
   <div style={{position: 'absolute', left: -r * 0.35, bottom: -r * 0.35, width: r * 2, height: r * 2, borderRadius: '50%', background: ok ? XANH : DO,
-    display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 6px 20px rgba(0,0,0,0.5)'}}>
+    display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: `0 6px 20px rgba(${C.bongRgb},0.5)`}}>
     <svg width={r * 1.1} height={r * 1.1} viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round">
       {ok ? <path d="M5 12.5l4.5 4.5L19 7.5" /> : <path d="M6 6l12 12M18 6L6 18" />}</svg>
   </div>
@@ -351,10 +351,10 @@ const DungHayKhung = ({start, f, w, h = Infinity, cap = [], chu_dung = 'ĐỪNG'
   const Cot = ({ok, t, nguon}) => (
     <div style={{width: col, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: fs * 0.3, opacity: o(t), transform: `translateY(${y(t)}px)`}}>
       <div style={{fontFamily: HEAD, fontWeight: 800, fontSize: fs * 1.25, lineHeight: 1, color: ok ? XANH : DO, textTransform: 'uppercase',
-        textShadow: '0 4px 16px rgba(0,0,0,0.6)'}}>{ok ? chu_hay : chu_dung}</div>
+        textShadow: `0 4px 16px rgba(${C.bongRgb},0.6)`}}>{ok ? chu_hay : chu_dung}</div>
       <div style={{position: 'relative', width: col * 0.86, height: th}}>
         <div style={{width: '100%', height: '100%', borderRadius: fs * 0.5, overflow: 'hidden', border: `3px solid ${ok ? XANH : DO}`,
-          boxShadow: '0 20px 60px rgba(0,0,0,0.5)', filter: ok ? undefined : 'saturate(0.7)'}}><Hinh nguon={nguon} start={start} fs={fs * 0.62} /></div>
+          boxShadow: `0 20px 60px rgba(${C.bongRgb},0.5)`, filter: ok ? undefined : 'saturate(0.7)'}}><Hinh nguon={nguon} start={start} fs={fs * 0.62} /></div>
         <Dau ok={ok} r={fs * 0.62} />
       </div>
     </div>
@@ -362,7 +362,7 @@ const DungHayKhung = ({start, f, w, h = Infinity, cap = [], chu_dung = 'ĐỪNG'
   return (
     <div key={cap.indexOf(c)} style={{width: w, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: fs * 0.45}}>
       {c.nhan && <div style={{fontFamily: BODY, fontWeight: 700, fontSize: fs * 0.62, letterSpacing: 3, color: C.text, textTransform: 'uppercase',
-        opacity: o(a), textShadow: '0 3px 12px rgba(0,0,0,0.7)'}}>{c.nhan}</div>}
+        opacity: o(a), textShadow: `0 3px 12px rgba(${C.bongRgb},0.7)`}}>{c.nhan}</div>}
       <div style={{display: 'flex', justifyContent: 'space-between', width: '100%'}}>
         <Cot ok={false} t={a} nguon={c.dung} />
         {f >= b ? <Cot ok t={b} nguon={c.hay} /> : <div style={{width: col}} />}
@@ -402,9 +402,9 @@ const TrenDuoi = ({start, tren = {}, duoi = {}}) => {
     const p = ease(f, t, t + 14);
     return (
       <div style={{position: 'absolute', left: b.x, top: b.y, width: b.w, height: b.h, borderRadius: 28, overflow: 'hidden', border: `2px solid ${C.line}`,
-        boxShadow: '0 30px 80px rgba(0,0,0,0.55)', opacity: p, transform: LAND ? `translateX(${(1 - p) * 60 * tu}px)` : `translateY(${(1 - p) * 60 * tu}px)`}}>
+        boxShadow: `0 30px 80px rgba(${C.bongRgb},0.55)`, opacity: p, transform: LAND ? `translateX(${(1 - p) * 60 * tu}px)` : `translateY(${(1 - p) * 60 * tu}px)`}}>
         <Hinh nguon={nguon} start={start} fs={fs * 1.6} />
-        {nguon.nhan && <div style={{position: 'absolute', left: 18, top: 16, padding: `${fs * 0.25}px ${fs * 0.6}px`, borderRadius: fs, background: 'rgba(14,14,18,0.82)',
+        {nguon.nhan && <div style={{position: 'absolute', left: 18, top: 16, padding: `${fs * 0.25}px ${fs * 0.6}px`, borderRadius: fs, background: `rgba(${C.theRgb},0.82)`,
           fontFamily: BODY, fontWeight: 700, fontSize: fs, letterSpacing: 2, color: C.text, textTransform: 'uppercase'}}>{nguon.nhan}</div>}
       </div>
     );
@@ -427,9 +427,9 @@ const OTron = ({sceneId, start, hinh, noi_dung}) => {
       <AbsoluteFill style={{opacity: ease(f, 0, 10)}}>
         {hinh ? <Hinh nguon={hinh} start={start} /> : Comp ? <Comp start={start} sceneId={sceneId} nen={false} {...noi_dung.props} /> : null}
       </AbsoluteFill>
-      {hinh && <AbsoluteFill style={{background: 'linear-gradient(transparent 55%, rgba(8,8,10,0.6))'}} />}
+      {hinh && <AbsoluteFill style={{background: `linear-gradient(transparent 55%, rgba(${C.theRgb},0.6))`}} />}
       <div style={{position: 'absolute', left: cx - D / 2, top: cy - D / 2, width: D, height: D, borderRadius: '50%', overflow: 'hidden',
-        border: `4px solid ${C.accent}`, boxShadow: '0 20px 60px rgba(0,0,0,0.6)', transform: `scale(${k * ra})`}}>
+        border: `4px solid ${C.accent}`, boxShadow: `0 20px 60px rgba(${C.bongRgb},0.6)`, transform: `scale(${k * ra})`}}>
         <OffthreadVideo src={staticFile('goc.mp4')} trimBefore={fr(start)} muted
           style={{position: 'absolute', left: D / 2 - m.cx * W * sc, top: D / 2 - m.cy * H * sc, width: W * sc, height: H * sc, maxWidth: 'none'}} />
       </div>
@@ -448,7 +448,7 @@ const CauHoi = ({start, cau = '', at, nhan}) => {
       <div style={{position: 'absolute', left: SAFE.left, top: SAFE.overlayTop, width: w, display: 'flex', gap: fs * 0.45,
         transform: `translateX(${(1 - p) * -40}px)`}}>
         <div style={{flex: 'none', width: Math.max(6, fs * 0.16), borderRadius: 4, background: C.accent}} />
-        <div style={{padding: `${fs * 0.4}px ${fs * 0.6}px`, borderRadius: fs * 0.4, background: 'rgba(14,14,18,0.86)'}}>
+        <div style={{padding: `${fs * 0.4}px ${fs * 0.6}px`, borderRadius: fs * 0.4, background: `rgba(${C.theRgb},0.86)`}}>
           {nhan && <div style={{fontFamily: BODY, fontWeight: 700, fontSize: fs * 0.5, letterSpacing: 3, color: C.accent, textTransform: 'uppercase', marginBottom: fs * 0.2}}>{nhan}</div>}
           <div style={{fontFamily: BODY, fontWeight: 700, fontSize: fs, lineHeight: 1.25, color: C.text, textWrap: 'balance'}}>
             <ChuHien text={cau} a={a + 2} kieu="muc" /></div>

@@ -56,10 +56,10 @@ export const Illus = ({mode = 'single', items = [], label = '', num = null, star
         transform: enter(mode, i, p, sz)}}>
         <div style={{position: 'relative', width: sz, height: sz}}>
           <svg width={sz} height={sz} style={{position: 'absolute', inset: 0}}>
-            <circle cx={sz / 2} cy={sz / 2} r={sz * 0.47} fill="rgba(255,122,69,0.07)" stroke={C.accent} strokeOpacity={0.32} strokeWidth={2}
+            <circle cx={sz / 2} cy={sz / 2} r={sz * 0.47} fill="rgba(${C.accentRgb},0.07)" stroke={C.accent} strokeOpacity={0.32} strokeWidth={2}
               strokeDasharray={`${sz * 0.06} ${sz * 0.05}`} />
           </svg>
-          <div style={{position: 'absolute', left: sz * 0.18, top: sz * 0.18, filter: 'drop-shadow(0 0 22px rgba(255,122,69,0.45))'}}>
+          <div style={{position: 'absolute', left: sz * 0.18, top: sz * 0.18, filter: `drop-shadow(0 0 22px rgba(${C.accentRgb},0.45))`}}>
             <Icon name={it.icon} size={sz * 0.64} at={a} stroke={sz > 400 ? 2.6 : 3} />
           </div>
           {mode === 'vs' && typeof it.good === 'boolean' && <Mark good={it.good} s={sz} o={ease(f, a + 14, a + 22)} />}
@@ -77,7 +77,7 @@ export const Illus = ({mode = 'single', items = [], label = '', num = null, star
     numEl = (
       <div style={{display: 'flex', alignItems: 'baseline', gap: M * 0.02, opacity: ease(f, a, a + 6)}}>
         <div style={{fontFamily: HEAD, fontWeight: 800, fontSize: M * (land ? 0.17 : 0.3), lineHeight: 1, color: C.accent,
-          fontVariantNumeric: 'tabular-nums', textShadow: '0 0 60px rgba(255,122,69,0.35)'}}>{v.toLocaleString('vi-VN')}</div>
+          fontVariantNumeric: 'tabular-nums', textShadow: `0 0 60px rgba(${C.accentRgb},0.35)`}}>{v.toLocaleString('vi-VN')}</div>
         {num.unit && <div style={{fontFamily: HEAD, fontWeight: 800, fontSize: M * (land ? 0.06 : 0.08), color: C.text, textTransform: 'uppercase'}}>{num.unit}</div>}
       </div>
     );
@@ -90,7 +90,7 @@ export const Illus = ({mode = 'single', items = [], label = '', num = null, star
     <AbsoluteFill style={{opacity: Math.min(ease(f, 0, 8), out)}}>
       {nen && phong && <NenPhong />}
       {nen && !phong && <AbsoluteFill style={{background: C.bg}} />}
-      {nen && !phong && <AbsoluteFill style={{background: `radial-gradient(circle at 50% ${land ? 42 : 38}%, rgba(255,122,69,0.2), transparent 60%)`}} />}
+      {nen && !phong && <AbsoluteFill style={{background: `radial-gradient(circle at 50% ${land ? 42 : 38}%, rgba(${C.accentRgb},0.2), transparent 60%)`}} />}
       <div style={{position: 'absolute', left: W * 0.06, right: W * 0.06, top: compact ? H * 0.115 : H * (land ? 0.12 : 0.1), height: compact ? H * 0.235 : H * (land ? 0.68 : 0.46), display: 'flex', flexDirection: 'column',
         alignItems: 'center', justifyContent: 'center', gap: M * 0.05}}>
         {numEl}

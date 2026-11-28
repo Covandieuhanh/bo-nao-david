@@ -45,8 +45,8 @@ const tien = (f, a, n = 22) => ease(f, a, a + n, 0, 1, Easing.out(Easing.exp)); 
 const Tam = ({w, h, r, children, v, quet}) => (
   <div style={v.boc}><div style={v.khoi}>
     <div style={{position: 'absolute', inset: 0, borderRadius: r, overflow: 'hidden',
-      background: 'linear-gradient(180deg, rgba(13,13,16,0.93), rgba(13,13,16,0.88))', border: '1.5px solid rgba(255,255,255,0.09)',
-      boxShadow: '0 18px 50px rgba(0,0,0,0.45)'}}>
+      background: `linear-gradient(180deg, rgba(${C.theRgb},0.93), rgba(${C.theRgb},0.88))`, border: `1.5px solid rgba(${C.sangRgb},0.09)`,
+      boxShadow: `0 18px 50px rgba(${C.bongRgb},0.45)`}}>
       <svg width={w} height={h} style={{position: 'absolute', inset: 0, opacity: 0.09, mixBlendMode: 'screen'}}>
         <filter id="hat"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" /></filter>
         <rect width={w} height={h} filter="url(#hat)" />
@@ -84,7 +84,7 @@ export const DuongMay = ({sceneId, start, o = O_MAC_DINH, so, nhan, ten, lon, ti
         <div style={box}>
           <Tam w={w} h={h} r={rr} v={v} quet={qA}>
             <div style={{position: 'absolute', left: pd * 0.4, top: h * 0.02, fontFamily: HEAD, fontWeight: 800, fontSize: h * 0.98, lineHeight: 0.98,
-              color: 'transparent', WebkitTextStroke: '2.5px rgba(255,122,69,0.5)', transform: `translateX(${(1 - tien(f, 0, 30)) * -30}px)`}}>
+              color: 'transparent', WebkitTextStroke: `2.5px rgba(${C.accentRgb},0.5)`, transform: `translateX(${(1 - tien(f, 0, 30)) * -30}px)`}}>
               {String(so).padStart(2, '0')}</div>
             <div style={{position: 'absolute', left: w * 0.26, right: pd, top: 0, bottom: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: h * 0.04}}>
               {nhan && <div style={{fontFamily: BODY, fontWeight: 700, fontSize: h * 0.1, letterSpacing: 3, color: C.accent, textTransform: 'uppercase'}}>
@@ -104,10 +104,10 @@ export const DuongMay = ({sceneId, start, o = O_MAC_DINH, so, nhan, ten, lon, ti
     return (
       <AbsoluteFill>
         <div style={{...box, height: 'auto', display: 'flex', justifyContent: 'center', perspective: 1100}}>
-          <div style={{display: 'flex', alignItems: 'stretch', borderRadius: fs * 0.5, overflow: 'hidden', background: 'rgba(13,13,16,0.9)',
-            border: '1.5px solid rgba(255,255,255,0.09)', boxShadow: '0 14px 40px rgba(0,0,0,0.45)', ...v.khoi, inset: undefined, position: 'relative'}}>
+          <div style={{display: 'flex', alignItems: 'stretch', borderRadius: fs * 0.5, overflow: 'hidden', background: `rgba(${C.theRgb},0.9)`,
+            border: `1.5px solid rgba(${C.sangRgb},0.09)`, boxShadow: `0 14px 40px rgba(${C.bongRgb},0.45)`, ...v.khoi, inset: undefined, position: 'relative'}}>
             {qA != null && <QuetSang a={qA} w={w} h={fs * 2} />}
-            <div style={{background: C.accent, color: '#120C09', fontFamily: HEAD, fontWeight: 800, fontSize: fs * 1.15,
+            <div style={{background: C.accent, color: C.trenNhan, fontFamily: HEAD, fontWeight: 800, fontSize: fs * 1.15,
               padding: `${fs * 0.3}px ${fs * 0.6}px`, display: 'flex', alignItems: 'center'}}>{String(so).padStart(2, '0')}</div>
             <div style={{display: 'flex', alignItems: 'center', gap: fs * 0.5, padding: `${fs * 0.3}px ${fs * 0.8}px`, whiteSpace: 'nowrap'}}>
               {nhan && <span style={{fontFamily: BODY, fontWeight: 700, fontSize: fs * 0.72, letterSpacing: 2.5, color: C.accent, textTransform: 'uppercase'}}>
@@ -191,8 +191,8 @@ export const DuongMay = ({sceneId, start, o = O_MAC_DINH, so, nhan, ten, lon, ti
               const sang = i === cuoi;
               return (
                 <div key={i} style={{position: 'absolute', left: pad + i * (rong + gap), top, width: rong, height: cao, perspective: 900}}>
-                  <div style={{position: 'absolute', inset: 0, borderRadius: h * 0.08, background: sang ? 'rgba(255,122,69,0.14)' : 'rgba(255,255,255,0.05)',
-                    border: `2px solid ${sang ? C.accent : 'rgba(255,255,255,0.12)'}`, display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  <div style={{position: 'absolute', inset: 0, borderRadius: h * 0.08, background: sang ? `rgba(${C.accentRgb},0.14)` : `rgba(${C.sangRgb},0.05)`,
+                    border: `2px solid ${sang ? C.accent : `rgba(${C.sangRgb},0.12)`}`, display: 'flex', alignItems: 'center', justifyContent: 'center',
                     transform: `rotateY(${(1 - p) * -95}deg) scale(${sang ? 1 : 0.96})`, transformOrigin: '50% 50%', opacity: Math.min(1, p * 2) * (sang ? 1 : 0.75),
                     backfaceVisibility: 'hidden'}}>
                     <div style={{fontFamily: HEAD, fontWeight: 800, fontSize: fsT, lineHeight: 1.1, textAlign: 'center', whiteSpace: 'pre-line', maxWidth: '88%',
@@ -261,7 +261,7 @@ export const DuongMay = ({sceneId, start, o = O_MAC_DINH, so, nhan, ten, lon, ti
               return (
                 <div key={i} style={{position: 'absolute', left: x, top, width: rong + (i === 0 ? nu : 0), height: cao, opacity: Math.min(1, p * 1.5)}}>
                   <svg width={rong + nu} height={cao} style={{position: 'absolute', inset: 0, overflow: 'visible'}}>
-                    <path d={i === 0 ? trai : phai} fill={sang || khop ? 'rgba(255,122,69,0.16)' : 'rgba(255,255,255,0.06)'}
+                    <path d={i === 0 ? trai : phai} fill={sang || khop ? `rgba(${C.accentRgb},0.16)` : `rgba(${C.sangRgb},0.06)`}
                       stroke={sang || khop ? C.accent : C.dim} strokeWidth={2.5} />
                   </svg>
                   <div style={{position: 'absolute', left: i === 0 ? 0 : nu, width: rong - nu, top: 0, height: cao, display: 'flex', alignItems: 'center',
@@ -316,9 +316,9 @@ export const DuongMay = ({sceneId, start, o = O_MAC_DINH, so, nhan, ten, lon, ti
                 <div key={i} style={{position: 'absolute', left: lefts[i], top: top + (1 - p) * 12, width: rongs[i], height: cao,
                   opacity: Math.min(1, p * 1.4) * (sang ? 1 : 0.6), transform: `scale(${0.9 + 0.1 * p})`, transformOrigin: '0% 100%'}}>
                   <div style={{position: 'absolute', inset: 0, bottom: cao * 0.12, borderRadius: `${h * 0.08}px ${h * 0.08}px ${h * 0.08}px ${h * 0.02}px`,
-                    background: sang ? C.accent : 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', gap: fsN * 0.4, padding: `0 ${fsN * 0.6}px`}}>
-                    <span style={{fontFamily: HEAD, fontWeight: 800, fontSize: fsN * 0.9, color: sang ? '#120C09' : C.accent}}>›</span>
-                    <span style={{fontFamily: BODY, fontWeight: 700, fontSize: fsN, lineHeight: 1.15, whiteSpace: 'nowrap', color: sang ? '#120C09' : C.text}}>
+                    background: sang ? C.accent : `rgba(${C.sangRgb},0.1)`, display: 'flex', alignItems: 'center', gap: fsN * 0.4, padding: `0 ${fsN * 0.6}px`}}>
+                    <span style={{fontFamily: HEAD, fontWeight: 800, fontSize: fsN * 0.9, color: sang ? C.trenNhan : C.accent}}>›</span>
+                    <span style={{fontFamily: BODY, fontWeight: 700, fontSize: fsN, lineHeight: 1.15, whiteSpace: 'nowrap', color: sang ? C.trenNhan : C.text}}>
                       <ChuHien text={u.text} a={at[i] + 3} kieu={kc} /></span>
                   </div>
                 </div>
@@ -439,7 +439,7 @@ export const DuongMay = ({sceneId, start, o = O_MAC_DINH, so, nhan, ten, lon, ti
                 </div>
               );
             })}
-            <div style={{position: 'absolute', left: pad, right: pad, bottom: pad * 0.55, height: 4, borderRadius: 2, background: 'rgba(255,255,255,0.1)'}}>
+            <div style={{position: 'absolute', left: pad, right: pad, bottom: pad * 0.55, height: 4, borderRadius: 2, background: `rgba(${C.sangRgb},0.1)`}}>
               <div style={{width: `${den * 100}%`, height: '100%', borderRadius: 2, background: C.accent}} />
             </div>
           </Tam>
@@ -469,7 +469,7 @@ export const DuongMay = ({sceneId, start, o = O_MAC_DINH, so, nhan, ten, lon, ti
           {tieu_de && <div style={{position: 'absolute', left: pad * 1.2, top: pad * 0.7, fontFamily: BODY, fontWeight: 700, fontSize: h * 0.095,
             letterSpacing: 3, color: C.accent, textTransform: 'uppercase'}}><ChuHien text={tieu_de} a={4} kieu={kc} /></div>}
           <svg width={w} height={h} style={{position: 'absolute', inset: 0}}>
-            <line x1={x0} y1={seamY} x2={x1} y2={seamY} stroke="rgba(255,255,255,0.10)" strokeWidth={2} />
+            <line x1={x0} y1={seamY} x2={x1} y2={seamY} stroke="rgba(${C.sangRgb},0.10)" strokeWidth={2} />
             <line x1={x0} y1={seamY} x2={dau} y2={seamY} stroke={C.accent} strokeWidth={4} strokeDasharray="14 9" strokeLinecap="round" />
             {xs.map((cx, i) => ps[i] > 0 && (
               <circle key={i} cx={cx} cy={seamY} r={9 * Math.min(1, ps[i] * 1.4)} fill={C.bg}

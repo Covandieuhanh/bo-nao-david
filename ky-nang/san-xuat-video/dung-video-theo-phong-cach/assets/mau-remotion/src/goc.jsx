@@ -3,6 +3,7 @@ import {Composition, continueRender, delayRender} from 'remotion';
 import {FONT_CHECKS} from './phong-chu';
 import project from './du-an.js';
 import {COVER, FPS, SCENES, fr} from './canh';
+import {apDungGiaoDien, giaoDienCua} from './chu-de';
 import {FULL, OUT, PILLAR, Place} from './bo-cuc';
 import {Card, Hook, Kinetic, ListItem, LowerThird} from './thanh-phan/lop-phu';
 import {CardFull} from './thanh-phan/the-toan-man';
@@ -43,6 +44,7 @@ const TYPES = {illus: Illus, diagram: Diagram, hook: Hook, lower: LowerThird, ki
 // Chờ font tải xong rồi mới chụp khung, tránh chữ bị font dự phòng. Props phải là dữ liệu thuần (không truyền hàm/component).
 const WithFonts = ({type, id, place, ...props}) => {
   const Comp = TYPES[type];
+  apDungGiaoDien(giaoDienCua(type, props));   // giao diện theo mẫu của cảnh này, trước khi thành phần con đọc C
   const [handle] = useState(() => delayRender('fonts'));
   useEffect(() => {
     Promise.all(FONT_CHECKS.map((f) => document.fonts.load(f, 'Tiếng Việt ĐẾN ĐÂU'))).then(() => continueRender(handle));

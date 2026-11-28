@@ -3,8 +3,18 @@ import project from './du-an.js';
 import {FPS, fr} from './canh';
 
 // ===== Phong cách — Claude điền từ phong-cach.md (phân tích video mẫu) =====
-import {C as _C, HEAD as _H, BODY as _B, NHAN as _N} from './thu-vien/bien-thiet-ke';   // màu/font: MỘT NGUỒN thư viện hình (khối 10)
+import {C as _C, HEAD as _H, BODY as _B, NHAN as _N, GIAO_DIEN, MAU_CUA} from './thu-vien/bien-thiet-ke';   // màu/font: MỘT NGUỒN thư viện hình (khối 10)
 export const C = {..._C};
+// Giao diện theo mẫu của từng cảnh (nhan-dien-chung.md mục 0 điều 2). `props.giao_dien` ghi đè; không có thì tra MAU_CUA theo loại cảnh.
+// goc.jsx gọi apDungGiaoDien trước khi vẽ mỗi khung, nên mọi thành phần đọc C đều theo đúng giao diện của cảnh đang vẽ (phụ đề, dấu góc: kenh).
+export const giaoDienCua = (type, p = {}) => {
+  if (p.giao_dien) return p.giao_dien;
+  const kieu = type === 'bocuc' ? (p.kieu || 'o-nguoi') : type === 've' && p.ve === 'DuongMay'
+    ? (p.thay ? 'thay' : p.so != null && p.lon ? 'so' : p.nhac ? 'nhac' : '') : '';
+  const ten = type === 've' ? p.ve : type;
+  return MAU_CUA[`${ten}:${kieu}`] || 'kenh';
+};
+export const apDungGiaoDien = (ten) => Object.assign(C, GIAO_DIEN.kenh, GIAO_DIEN[ten] || {});
 export const HEAD = _H;   // chữ to, tiêu đề
 export const NHAN = _N;   // một từ nhấn (chữ có chân, nghiêng) — `*từ*` trong chữ
 export const BODY = _B;     // chữ thường trong thẻ
