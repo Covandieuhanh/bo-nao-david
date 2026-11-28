@@ -4,6 +4,15 @@ description: "Nhật ký thay đổi skill dựng video theo phong cách: quyế
 
 # Nhật ký thay đổi — dung-video-theo-phong-cach (quyết định của người dùng và lý do)
 
+## 28/11/2026 (tối): màu không phải nhận diện, lấy chính xác thẩm mỹ từ mẫu
+
+- David: "nhận diện của kênh không nhất thiết phải là màu cam với nền đen hay nền trắng đâu nhé. dùng bất kì màu sắc nào cũng được" và "học được mẫu nào thì có thể lấy chính xác từ mẫu đấy để thẩm mỹ đẹp nhất, không cần học để phối lại vì tôi thấy phối lại gặp rất nhiều lỗi". Luật ở `thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0.
+- Giao diện mẫu trả về màu nhấn gốc: Sang Huỳnh #B5604A / #E79377. Thêm giao diện đo từ khung gốc: `ali-giay` (mục lục, tiến trình), `ali-phan` (hình cạnh người), `joseph-giay` (phông hạt), `joseph-mo` (phông người mờ). Số đo: `thiet-ke-bo-cuc/nguon-tham-khao/ali-joseph-2026-11-10.md` mục "Giao diện đo".
+- Giao diện đổi được cả font: `HEAD` / `BODY` là liên kết sống, `apDungGiaoDien` gọi `datChu`. Thêm Playfair Display 700 đứng (chữ có chân đậm của Ali).
+- Cảnh tự vẽ và cảnh chưa đo mẫu (thẻ đánh số, chữ nhấn, ô tròn, trên dưới, thẻ câu hỏi, thẻ ý) mượn giao diện mẫu gần nhất qua `MAU_CUA`; quầng sáng cam viết cứng trong thành phần hiệu ứng đổi sang `C.accentRgb`.
+- Thẻ lật: tít một dòng vừa tấm, từ 4 ý xếp lưới 2 cột. Hình cạnh người: chuỗi ngắn không bị thu nhỏ, mảng tối mềm hình bầu dục.
+- `ghep-doan-kho-hieu-ung.py --ve-doan <canh.js>`: ghi ngược cảnh sửa tay về `doan.json`.
+
 ## 28/11/2026: hiệu ứng sinh ra từ nội dung, chữ hiện đúng lúc nói
 - David: *"quan trọng nhất là … nhận diện được là nội dung này thì nên dùng hiệu ứng nào cho hợp lý … quan trọng nhất là tính áp dụng phù hợp"*
   (bản xem kho hiệu ứng đầu tiên đặt tám hiệu ứng lên cùng một đoạn lời).

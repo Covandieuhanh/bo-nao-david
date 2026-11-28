@@ -6,7 +6,7 @@ import {Easing, interpolate} from 'remotion';
 export const C = {
   bg: '#0D0D10', card: '#18181C', nen: '#141418', line: 'rgba(255, 255, 255, 0.09)',
   text: '#F4F4F5', muted: '#A1A1AA', dim: '#52525B', accent: '#FF7A45', accentSoft: 'rgba(255, 122, 69, 0.16)',
-  accentRgb: '255,122,69', sangRgb: '255,255,255', bongRgb: '0,0,0', theRgb: '13,13,16', trenNhan: '#120C09', khungNguoi: '#FF7A45', khungSang: null, giay: false, bongDo: 0.45, vienThe: true, moCu: true,
+  accentRgb: '255,122,69', sangRgb: '255,255,255', bongRgb: '0,0,0', theRgb: '13,13,16', trenNhan: '#120C09', khungNguoi: '#FF7A45', khungSang: null, giay: false, bongDo: 0.45, vienThe: true, moCu: true, kieuMau: '',
   head: '"Barlow Condensed", sans-serif', body: '"Be Vietnam Pro", sans-serif', hoa: 'uppercase',
 };
 // head / body / hoa: font chữ to, font chữ thường, kiểu chữ hoa của giao diện đang vẽ (mẫu có font riêng thì giao diện đổi; font gần nhất cùng họ
@@ -43,6 +43,9 @@ export const GIAO_DIEN = {
   'joseph-mo': {   // Joseph (cả ba video): người làm mờ phía sau, đồ hoạ nổi giữa khung; chữ trắng, nhấn xanh coban sáng (phong 'nguoi-mo')
     text: '#FFFFFF', muted: 'rgba(255,255,255,0.78)', dim: 'rgba(255,255,255,0.4)', accent: '#3B5BFF', accentSoft: 'rgba(59,91,255,0.18)',
     accentRgb: '59,91,255', trenNhan: '#FFFFFF', khungNguoi: '#FFFFFF', hoa: 'none', head: '"Be Vietnam Pro", sans-serif'},
+  'doac': {   // The Diary Of A CEO short (đo khung 0:01): thẻ tên chữ trắng đậm không nền, dòng khách vàng #F5E62E; câu đắt hộp trắng
+    // #FFFFFF ôm chữ, chữ đen #111111 in hoa đậm bản rộng (font gần nhất: Be Vietnam Pro 700)
+    card: '#FFFFFF', text: '#111111', accent: '#F5E62E', accentRgb: '245,230,46', kieuMau: 'doac'},
   'ali-giay': {   // Ali Abdaal mục lục (đo khung 0:27,5): nền giấy phẳng #FAF5F2 lưới ô rất mờ, thẻ trắng bo 36 px không viền bóng rất nhẹ,
     // chấm số san hô #FF9868 số trắng, chữ có chân đậm đen #0E0E0E viết thường, khung người bo góc viền xanh tím #505D91 + vòng sáng #BCC6ED
     bg: '#FAF5F2', card: '#FFFFFF', nen: '#F5F0ED', line: 'rgba(60,40,30,0.07)', text: '#0E0E0E', muted: '#8A837E', dim: '#D9D2CC',
@@ -50,12 +53,14 @@ export const GIAO_DIEN = {
     theRgb: '255,255,255', trenNhan: '#FFFFFF', khungNguoi: '#505D91', khungSang: '#BCC6ED', giay: 'luoi', bongDo: 0.07, vienThe: false, moCu: false,
     head: '"Playfair Display", serif', body: '"Playfair Display", serif', hoa: 'none'},
 };
-// Mẫu gốc của từng loại cảnh (loại · kiểu → giao diện). Loại không có trong bảng là cảnh tự vẽ của kênh (điều 3): giữ `kenh`.
+// Mẫu gốc của từng loại cảnh (loại · kiểu → giao diện). Loại không có trong bảng giữ `kenh` (thành phần cố định: phụ đề, dấu góc, màn chốt).
 export const MAU_CUA = {'bocuc:o-nguoi': 'sang-huynh-sang', 'bocuc:the-canh': 'sang-huynh-the', 'bocuc:chuong': 'sang-huynh-toi',
   'DuongMay:thay': 'sang-huynh-the', 'DuongMay:so': 'sang-huynh-toi', 'DuongMay:nhac': 'sang-huynh-the', 'DuongMay:lat': 'sang-huynh-the',
   'bocuc:muc-luc': 'ali-giay', 'bocuc:tien-trinh': 'ali-giay',
   'bocuc:canh-nguoi': 'ali-phan', 'bocuc:cau-hoi': 'sang-huynh-the', 'NhanTram:the': 'sang-huynh-the', 'NhanTram:nhan': 'sang-huynh-the',
-  'phong:hat': 'joseph-giay', 'phong:nguoi-mo': 'joseph-mo'};
+  'phong:hat': 'joseph-giay', 'phong:nguoi-mo': 'joseph-mo',
+  // cảnh tự vẽ / chưa đo mẫu (nhan-dien-chung.md mục 0 điều 4): mượn giao diện mẫu gần nhất để video liền một mạch
+  'DuongMay:ten': 'doac', 'DuongMay:cau': 'doac', 'card:': 'sang-huynh-sang', 'nhan:': 'sang-huynh-the', 'bocuc:o-tron': 'sang-huynh-the', 'bocuc:tren-duoi': 'sang-huynh-the'};
 // HEAD / BODY là liên kết sống: apDungGiaoDien (chu-de.js) gọi datChu khi đổi giao diện, mọi thành phần import HEAD đọc đúng font của cảnh.
 export let HEAD = C.head;
 export let BODY = C.body;

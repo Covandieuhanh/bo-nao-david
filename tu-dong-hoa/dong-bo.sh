@@ -48,9 +48,24 @@ XUNG_DOT="$HOME/.claude/logs/xung-dot-nao.txt"
 keo() {   # keo <gc|gr> <tên repo>
   local G=$1 TEN=$2 tep
   $G fetch -q origin || { echo "⚠ Không kết nối được GitHub ($TEN), bỏ qua bước kéo."; return 0; }
-  if ! $G pull -q --rebase --autostash origin main; then
+  local loi
+  if ! loi=$($G pull -q --rebase --autostash origin main 2>&1); then
     tep=$($G diff --name-only --diff-filter=U 2>/dev/null | tr '\n' ' ')
     $G rebase --abort >/dev/null 2>&1
+    if [ -z "$tep" ]; then
+      # Không có file trùng chỗ: không phải xung đột (git đang bận vì phiên khác cùng chạy, khoá index…). Thử lại một lần;
+      # vẫn lỗi thì chỉ cảnh báo nhẹ, lần sau tự kéo (28/11/2026: báo "⛔ xung đột" giả nhiều lần qua bot Sổ nhớ).
+      sleep 5
+      if loi=$($G pull -q --rebase --autostash origin main 2>&1); then return 0; fi
+      tep=$($G diff --name-only --diff-filter=U 2>/dev/null | tr '\n' ' ')
+      $G rebase --abort >/dev/null 2>&1
+      if [ -z "$tep" ]; then
+        mkdir -p "$(dirname "$XUNG_DOT")"
+        echo "$(date '+%F %H:%M') kéo $TEN chưa được (không phải xung đột): $(printf '%s' "$loi" | tr '\n' ' ' | cut -c1-200)" >> "$(dirname "$XUNG_DOT")/keo-chua-duoc.txt"
+        echo "⚠ Chưa kéo được bản mới của $TEN (git đang bận, không phải xung đột); lần sau tự kéo lại."
+        return 0
+      fi
+    fi
     mkdir -p "$(dirname "$XUNG_DOT")"
     echo "$(date '+%F %H:%M') máy $(hostname -s 2>/dev/null || hostname) và GitHub ($TEN) cùng sửa trùng chỗ: ${tep:-(không rõ file)}. Bản trên máy vẫn giữ nguyên, chưa đẩy." >> "$XUNG_DOT"
     echo "⛔ Xung đột khi kéo về $TEN (hai máy sửa trùng chỗ): ${tep:-xem git status}. Đã huỷ gộp, repo giữ nguyên bản trên máy. Nhờ Claude gộp thủ công rồi chạy lại dong-bo.sh."
@@ -75,6 +90,8 @@ day() {   # day <gc|gr> <tên repo> <thông điệp>
 loai_tru_rieng
 case "$CHE_DO" in
   --keo)
+    # Bot Sổ nhớ (có TELEGRAM_STATE_DIR) không dùng nội dung repo và tự dọn phiên 10 phút một lần: không kéo, không báo đồng bộ.
+    [ -n "${TELEGRAM_STATE_DIR:-}" ] && exit 0
     [ -s "$XUNG_DOT" ] && { echo "⛔ Lần đồng bộ trước bị xung đột, bộ não máy này CHƯA lên GitHub:"; cat "$XUNG_DOT"; }
     keo gc bo-nao-david
     [ $CO_RIENG = 1 ] && keo gr bo-nao-david-mac

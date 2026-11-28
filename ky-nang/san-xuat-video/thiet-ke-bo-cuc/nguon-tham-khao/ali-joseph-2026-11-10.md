@@ -51,3 +51,14 @@ David duyệt: "ok học đầy đủ đi, càng nhiều tài nguyên để tu�
 Chưa kiểm: render video thật có cảnh mới; vlog ghép và podcast chưa có các kiểu này.
 
 **10/11/2026, sau khi David xem ảnh:** gỡ chữ sau người + bóng người (code `ChuSau.jsx`, `tach_nguoi.*`). Luật mới: hiểu hơn cầu kì — kho để chọn theo nội dung, không nhét hết vào một video (quy-tac-chung §0).
+
+## Giao diện đo (28/11/2026)
+
+Đo từ khung hình gốc 720p (tải tạm để đo, đã xoá). Lấy chính xác từ mẫu, kể cả màu nhấn (David 28/11/2026, `thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0). Mã: `GIAO_DIEN` trong `thu-vien/bien-thiet-ke.js`.
+
+| Giao diện | Dùng cho | Số đo |
+|---|---|---|
+| `ali-giay` | `bocuc muc-luc`, `bocuc tien-trinh` | nền giấy phẳng #FAF5F2, lưới ô vuông rất mờ; thẻ trắng #FFFFFF bo khoảng 36 px (khung 1080), không viền, bóng rất nhẹ; chấm số san hô #FF9868 số trắng; chữ có chân đậm đen #0E0E0E viết thường (máy không có font của mẫu: dùng Playfair Display 700); mục cũ không mờ; khung người bo góc viền xanh tím #505D91 với vòng sáng #BCC6ED. Thanh tiến trình: đường mảnh san hô, nút chưa tới trắng viền xám, tên ý trong thẻ trắng có nhãn viên thuốc san hô, dòng cuối màu nhấn |
+| `ali-phan` | `bocuc canh-nguoi` | nét phấn trắng vẽ thẳng lên mảng tối của video, không thẻ nền; chỗ nhấn phấn xanh bạc hà #66F2B6. Video của David không có tường tối: thêm mảng tối mềm hình bầu dục dưới hình vẽ để nét phấn nổi |
+| `joseph-giay` | cảnh toàn màn hình `phong: 'hat'` | giấy xám #DCDAD7 lấm tấm hạt sẫm, mực xanh coban #1B24B1 một màu, chữ đen than, chữ thường không in hoa |
+| `joseph-mo` | cảnh toàn màn hình `phong: 'nguoi-mo'` | người làm mờ phía sau, chữ trắng, nhấn xanh coban sáng #3B5BFF |

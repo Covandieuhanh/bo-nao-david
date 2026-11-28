@@ -73,7 +73,7 @@ Không có Đ1 (đã có lá). Đ3 khi một hiệu ứng mới đụng màu ch�
 - Đoạn lặp lại trong bản ghép (cùng một nguồn dùng cho nhiều hiệu ứng) làm `soat-khop-tieng.py` báo lệch giả hơn 3 giây ở chỗ lời trùng: đối chiếu với `bang-moc.md` trước khi sửa.
 - Mẫu `DuongMay` (thẻ lật, gạch thay, câu đắt) từng có chữ 14–24 px ở khung ngang vì cỡ chữ tính như cả câu trên một dòng. Đã sửa 28/11/2026: `coChu()` trong `rieng/duong-may.jsx` cho xuống tối đa 2–4 dòng khi ô đủ cao. Vẫn xem bảng khung ở kích thước phát hành; chữ chính dưới khoảng 36 px ở khung 1080 thì nới ô `o`.
 - Sơ đồ và minh hoạ đặt trong `o-nguoi` hay `canh-nguoi` khung ngang từng tràn mép phải vì khung co theo vùng 60% bề ngang, trong khi sơ đồ vẽ 86%. Đã sửa 28/11/2026: `vungNoi()` trong `thanh-phan/bo-cuc.jsx` co theo vùng vẽ thật của từng loại. Thêm loại nội dung lồng mới thì khai vùng vẽ của nó trong `VUNG_NOI`.
-- Bản 27/11/2026 phối lại hiệu ứng học từ mẫu sang đen cam nên lỗi thẩm mỹ và che mặt (David 28/11/2026). Nay mỗi loại cảnh mang giao diện của mẫu
+- Bản 27/11/2026 phối lại hiệu ứng học từ mẫu sang màu kênh nên lỗi thẩm mỹ và che mặt (David 28/11/2026). Luật hiện hành: lấy chính xác màu, font, tỉ lệ của mẫu, kể cả màu nhấn; màu không phải nhận diện. Nay mỗi loại cảnh mang giao diện của mẫu
   gốc qua `MAU_CUA` / `GIAO_DIEN` (`thu-vien/bien-thiet-ke.js`); loại học từ mẫu mà chưa đo giao diện thì ghi vào báo cáo "chưa đo mẫu", không tự phối màu.
 - Kiểm che mặt bằng công cụ trước khi xuất: `kiem-che-mat.py <dự án> chup` → `node xem-truoc.mjs …` → `kiem-che-mat.py <dự án> kiem` phải báo 0.
 - Dấu góc ● DAVID khung ngang nằm ở mép trên vùng an toàn (54–118 px): dòng chữ trên cùng của cảnh tự vẽ và vùng `o` của `DuongMay` / `NhanTram` phải bắt đầu dưới `BRAND_BOT` (`o.y` ít nhất khoảng 0,13).

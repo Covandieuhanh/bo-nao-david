@@ -12,6 +12,8 @@ Ra:  <ra>/video-goc.mp4 (khung 1920x1080 hoặc 1080x1920 với --doc, 30 fps, t
      --chep-loi: chép lời TỪNG ĐOẠN ngay sau khi cắt (whisper-cli), ghi <ra>/loi/moc-tung-tu.srt và ban-chep-loi.srt theo mốc video ghép.
        Đoạn ngắn cho mốc từ đúng; chép một lượt cả video ghép dài làm mốc trôi tới hơn 1 giây (đo 28/11/2026). Mô hình: biến WHISPER_MODEL
        hoặc ~/whisper-models/ggml-large-v3-turbo.bin.
+     --ve-doan <canh.js>: chỉ ghi ngược cảnh đã sửa tay trong canh.js (mốc ghép) về doan.json (mốc gốc) theo <ra>/bang-moc.json — dùng khi
+       đã sửa thẳng canh.js, để doan.json vẫn là nguồn duy nhất. Không cắt, không ghép lại.
      --canh-js: thay SCENES và CHAPTERS (mỗi đoạn một chương, tên = hieu_ung) trong canh.js bằng cảnh đã đổi mốc — doan.json là nguồn
        duy nhất của cảnh, sửa cảnh thì sửa ở doan.json rồi chạy lại.
 Cắt từng đoạn bằng -ss trước -i (nhanh trên nguồn dài, khối 02), mã hoá lại để điểm nối khớp khung; video xoay (điện thoại) được ffmpeg tự xoay.
@@ -110,10 +112,35 @@ def doi_moc(x, lech, tu, den):
         return ra
     return x
 
+def ve_doan(cau_hinh, bang, cj, p_doan):
+    """Ghi cảnh của canh.js (mốc video ghép) ngược về từng đoạn của doan.json (mốc gốc)."""
+    js = open(cj, encoding='utf-8').read()
+    khoi = re.search(r'export const SCENES = (\[.*?\n\]);', js, flags=re.S).group(1)
+    try:
+        moi = json.loads(khoi)
+    except ValueError:
+        moi = json.loads(subprocess.run(['node', '-e', 'process.stdout.write(JSON.stringify(' + khoi + '))'], capture_output=True, text=True).stdout)
+    theo = {d['id']: [] for d in cau_hinh['doan']}
+    for c in moi:
+        b = next((b for b in bang if b['bat_dau'] - 0.05 <= c['start'] < b['ket_thuc']), None)
+        if b is None:
+            sys.exit(f"Cảnh {c['id']} bắt đầu {c['start']} s không nằm trong đoạn nào của bang-moc.json")
+        theo[b['id']].append(doi_moc(c, -b['lech'], -1e9, 1e9))
+    for d in cau_hinh['doan']:
+        d['canh'] = theo[d['id']]
+        if not d['canh']:
+            del d['canh']
+    json.dump(cau_hinh, open(p_doan, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    print(f"Đã ghi {len(moi)} cảnh từ {cj} về {p_doan}")
+
 def main():
     if len(sys.argv) < 3:
         sys.exit(__doc__)
     cau_hinh = json.load(open(sys.argv[1], encoding='utf-8'))
+    if '--ve-doan' in sys.argv:
+        bang = json.load(open(os.path.join(sys.argv[2], 'bang-moc.json'), encoding='utf-8'))
+        ve_doan(cau_hinh, bang, sys.argv[sys.argv.index('--ve-doan') + 1], sys.argv[1])
+        return
     # Lá B15 bước 4: đoạn dùng lại cho hiệu ứng khác chỉ khi nội dung thật sự hợp — cảnh báo để người dựng xem lại, không chặn
     ds = cau_hinh['doan']
     chong = [f"{a['id']} và {b['id']} (nguồn {a['nguon']}, chồng {min(a['den'], b['den']) - max(a['tu'], b['tu']):.1f} giây)"
@@ -184,17 +211,7 @@ def main():
             # chữ trên hình về đúng lúc nói (khop-chu-voi-loi.py), rồi ghi mốc đã khớp ngược về doan.json để doan.json vẫn là nguồn duy nhất
             subprocess.run([sys.executable, '-I', os.path.join(os.path.dirname(os.path.abspath(__file__)), 'khop-chu-voi-loi.py'),
                             cj, os.path.join(ra, 'loi', 'moc-tung-tu.srt'), '--sua'])
-            js = open(cj, encoding='utf-8').read()
-            moi = json.loads(re.search(r'export const SCENES = (\[.*?\n\]);', js, flags=re.S).group(1))
-            theo = {d['id']: [] for d in cau_hinh['doan']}
-            for c in moi:
-                b = next(b for b in bang if b['bat_dau'] - 0.05 <= c['start'] < b['ket_thuc'])
-                theo[b['id']].append(doi_moc(c, -b['lech'], -1e9, 1e9))
-            for d in cau_hinh['doan']:
-                if theo[d['id']]:
-                    d['canh'] = theo[d['id']]
-            json.dump(cau_hinh, open(sys.argv[1], 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
-            print(f"Đã ghi mốc đã khớp lời về {sys.argv[1]}")
+            ve_doan(cau_hinh, bang, cj, sys.argv[1])
     for p in danh_sach + [noi]:
         os.remove(p)
     os.rmdir(tam)

@@ -174,8 +174,11 @@ export const DuongMay = ({sceneId, start, o = O_MAC_DINH, so, nhan, ten, lon, ti
 
   // ── thẻ lật 3D: mỗi ý một thẻ lật vào (xoay quanh trục dọc) đúng lúc nói, thẻ đang nói viền cam, thẻ cũ lùi nhẹ
   if (the) {
-    const n = Math.max(1, the.length), gap = h * 0.08, top = tieu_de ? h * 0.3 : pad, cao = h - top - pad * 0.8;
-    const rong = (w - pad * 2 - gap * (n - 1)) / n;
+    // tít một dòng vừa bề ngang tấm; từ 4 ý trở lên xếp lưới 2 cột cho thẻ đủ rộng (thẻ hẹp làm chữ quá nhỏ — bản xem 28/11/2026)
+    const fsTD = tieu_de ? Math.min(h * 0.095, coChu(tieu_de, w - pad * 2.4, h * 0.2, {toiDa: 1, he: 0.62, du: 0.4})) : 0;
+    const n = Math.max(1, the.length), cot = n > 3 ? 2 : n, hang = Math.ceil(n / cot), gap = h * 0.05;
+    const top = tieu_de ? pad * 0.6 + fsTD * 1.9 : pad, cao = (h - top - pad * 0.8 - gap * (hang - 1)) / hang;
+    const rong = (w - pad * 2 - gap * (cot - 1)) / cot;
     const fsT = Math.min(cao * 0.36, ...the.map((u) => coChu(u.text, rong, cao * 0.8, {toiDa: 4, he: 0.5, du: 0.9})));
     const at = the.map((u) => rel(u.at, start));
     const cuoi = at.reduce((k, a, i) => (f >= a ? i : k), -1);
@@ -183,14 +186,14 @@ export const DuongMay = ({sceneId, start, o = O_MAC_DINH, so, nhan, ten, lon, ti
       <AbsoluteFill>
         <div style={box}>
           <Tam w={w} h={h} r={r} v={v} quet={qA}>
-            {tieu_de && <div style={{position: 'absolute', left: pad * 1.2, top: pad * 0.6, fontFamily: BODY, fontWeight: 700, fontSize: h * 0.095,
-              letterSpacing: 3, color: C.accent, textTransform: 'uppercase'}}><ChuHien text={tieu_de} a={4} kieu={kc} /></div>}
+            {tieu_de && <div style={{position: 'absolute', left: pad * 1.2, top: pad * 0.6, fontFamily: BODY, fontWeight: 700, fontSize: fsTD,
+              letterSpacing: 3, color: C.accent, textTransform: 'uppercase', whiteSpace: 'nowrap'}}><ChuHien text={tieu_de} a={4} kieu={kc} /></div>}
             {the.map((u, i) => {
               if (f < at[i] - 1) return null;
               const p = interpolate(f, [at[i], at[i] + 16], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.back(1.4))});
               const sang = i === cuoi;
               return (
-                <div key={i} style={{position: 'absolute', left: pad + i * (rong + gap), top, width: rong, height: cao, perspective: 900}}>
+                <div key={i} style={{position: 'absolute', left: pad + (i % cot) * (rong + gap), top: top + Math.floor(i / cot) * (cao + gap), width: rong, height: cao, perspective: 900}}>
                   <div style={{position: 'absolute', inset: 0, borderRadius: h * 0.08, background: sang ? `rgba(${C.accentRgb},0.14)` : `rgba(${C.sangRgb},0.05)`,
                     border: `2px solid ${sang ? C.accent : `rgba(${C.sangRgb},0.12)`}`, display: 'flex', alignItems: 'center', justifyContent: 'center',
                     transform: `rotateY(${(1 - p) * -95}deg) scale(${sang ? 1 : 0.96})`, transformOrigin: '50% 50%', opacity: Math.min(1, p * 2) * (sang ? 1 : 0.75),
@@ -209,6 +212,23 @@ export const DuongMay = ({sceneId, start, o = O_MAC_DINH, so, nhan, ten, lon, ti
 
   // ── thẻ tên + vai trò (học The Diary Of A CEO ca 10: tên + vai trò ngay lần đầu người nói tự giới thiệu, ngắn, một lần):
   //    {ten_the: {nhan?, ten: {text, at}, vai: {text, at}}} — chữ nguyên văn lúc người nói tự nói tên / việc đang làm
+  if (ten_the && C.kieuMau === 'doac') {
+    // mẫu The Diary Of A CEO (đo short 0:01): không tấm nền; dòng nhỏ trắng, tên to trắng đậm in hoa, vai trò vàng nhỏ in hoa ngay dưới
+    const aT = rel(ten_the.ten.at, start), aV = ten_the.vai ? rel(ten_the.vai.at, start) : Infinity;
+    const fsT = Math.min(h * 0.42, coChu(ten_the.ten.text, w * 0.9, h * 0.5, {toiDa: 1, he: 0.66, du: 0.2}));
+    const bong = '0 2px 14px rgba(0,0,0,0.55)', pV = f >= aV ? tien(f, aV, 12) : 0;
+    return (
+      <AbsoluteFill>
+        <div style={{...box, display: 'flex', flexDirection: 'column', justifyContent: 'center', textShadow: bong, opacity: Math.min(tien(f, aT - 4, 8), 1)}}>
+          {ten_the.nhan && <div style={{fontFamily: BODY, fontWeight: 700, fontSize: fsT * 0.24, color: '#FFFFFF', textTransform: 'uppercase'}}>{ten_the.nhan}</div>}
+          {f >= aT - 1 && <div style={{fontFamily: BODY, fontWeight: 700, fontSize: fsT, lineHeight: 1.02, color: '#FFFFFF', textTransform: 'uppercase'}}>
+            <ChuHien text={ten_the.ten.text} a={aT} kieu={kc} /></div>}
+          {ten_the.vai && f >= aV - 1 && <div style={{fontFamily: BODY, fontWeight: 700, fontSize: fsT * 0.26, lineHeight: 1.2, color: C.accent,
+            textTransform: 'uppercase', opacity: pV, whiteSpace: 'pre-line'}}><ChuHien text={ten_the.vai.text} a={aV} kieu={kc} /></div>}
+        </div>
+      </AbsoluteFill>
+    );
+  }
   if (ten_the) {
     const aT = rel(ten_the.ten.at, start), aV = ten_the.vai ? rel(ten_the.vai.at, start) : Infinity;
     const fsT = Math.min(h * 0.36, (w * 0.5) / (dai(ten_the.ten.text) * 0.56 + 0.4));
@@ -277,6 +297,22 @@ export const DuongMay = ({sceneId, start, o = O_MAC_DINH, so, nhan, ten, lon, ti
   }
 
   // ── câu đắt (học The Diary Of A CEO ca 1: một câu đắt chữ to theo lời, một từ nhấn đổi màu): chữ to giữa tấm
+  if (cau && C.kieuMau === 'doac') {
+    // mẫu The Diary Of A CEO: hộp trắng ôm sát chữ, chữ đen in hoa đậm bản rộng, giữa vùng `o`, không tấm nền
+    const fsC = Math.min(h * 0.24, coChu(cau.text, w * 0.86, h * 0.8, {toiDa: 3, he: 0.66, du: 0.6}));
+    const p = pop(f, rel(cau.at, start) - 2);
+    return (
+      <AbsoluteFill>
+        <div style={{...box, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+          <div style={{background: C.card, borderRadius: fsC * 0.12, padding: `${fsC * 0.12}px ${fsC * 0.32}px`, maxWidth: w * 0.94,
+            boxShadow: `0 8px 30px rgba(0,0,0,0.35)`, transform: `scale(${0.9 + 0.1 * p})`, opacity: Math.min(1, p * 1.5)}}>
+            <div style={{fontFamily: BODY, fontWeight: 700, fontSize: fsC, lineHeight: 1.08, color: C.text, textTransform: 'uppercase', textAlign: 'center',
+              whiteSpace: 'pre-line'}}><ChuHien text={cau.text} a={rel(cau.at, start)} kieu={kc} /></div>
+          </div>
+        </div>
+      </AbsoluteFill>
+    );
+  }
   if (cau) {
     const fsC = Math.min(h * 0.3, coChu(cau.text, w - pad * 2.4, h - pad * 2, {toiDa: 3, he: 0.5, du: 0.4}));
     return (

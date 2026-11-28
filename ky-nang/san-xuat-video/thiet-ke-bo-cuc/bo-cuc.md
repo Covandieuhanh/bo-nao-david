@@ -38,7 +38,7 @@ Cột "Code": **có** = viết được ngay trong `canh.js` · **chưa** = mớ
 |---|---|---|---|
 | **Mục lục tích luỹ** (`bocuc` · `muc-luc`): người vào ô, danh sách đánh số hiện dần, mục đang nói sáng, mục cũ mờ | "trong video này", nhắc lại các ý đã qua | cả hai | có |
 | **Thanh tiến trình ý** (`bocuc` · `tien-trinh`): đường nối nút 1…n, chạy tới ý hiện tại, tên ý dưới nút | video theo danh sách (ý 1, 2, 3…), thay màn chương | cả hai | có |
-| **Mạch hình cạnh người** (`bocuc` · `canh-nguoi`): người giữ khung, hình vẽ thẳng vào khoảng trống sát người, không thẻ nền (như bảng phấn) | giải thích dài mà vẫn muốn thấy người; nhiều cảnh vẽ tiếp một mạch | ngang (cần khoảng trống ít nhất 26 % bề ngang); thiếu chỗ thì tự chuyển thành `o-nguoi` | có |
+| **Mạch hình cạnh người** (`bocuc` · `canh-nguoi`): người giữ khung, hình vẽ thẳng vào khoảng trống sát người, không thẻ nền (như bảng phấn) | giải thích dài mà vẫn muốn thấy người; nhiều cảnh vẽ tiếp một mạch; **khoảng trống cạnh người vốn đã tối** (nét phấn trắng của mẫu Ali chỉ đọc được trên nền tối; không thêm mảng tối giả, David 28/11/2026) | ngang (cần khoảng trống ít nhất 26 % bề ngang); thiếu chỗ hoặc nền sáng thì dùng `o-nguoi` | có |
 | **Nền người mờ** (`phong: 'nguoi-mo'` ở cảnh toàn màn hình): nền = chính video người nói làm mờ + tối | cảnh toàn màn hình mà không muốn mất liên kết với người nói (giữa câu chuyện) | cả hai | có (FullShell, Illus, Diagram, BoCuc) |
 | **Nền hạt** (`phong: 'hat'`): nền tối + hạt nhiễu như giấy ảnh | cảnh trích câu, lắng | cả hai | có |
 | **Một từ nhấn kiểu khác** (`*từ*` trong chữ): font phụ có chân, nghiêng, màu cam | một từ mang nghĩa chính trong cụm; tối đa một chỗ mỗi cụm | cả hai | có (mọi chữ đi qua `ChuHien`) |

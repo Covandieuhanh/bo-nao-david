@@ -24,7 +24,7 @@
 //  'canh-nguoi' MẠCH HÌNH CẠNH NGƯỜI (kiểu bảng phấn của Ali): người giữ nguyên khung, hình (illus / diagram / cảnh tự vẽ 've')
 //             vẽ thẳng vào khoảng trống sát người, KHÔNG thẻ nền — như vẽ lên tường phía sau. Hợp khung ngang, đoạn giải thích dài
 //             mà vẫn muốn thấy người; nhiều cảnh nối nhau vẽ tiếp một mạch (`buoc`, `tu_buoc` của lib/mach.js).
-//             props: noi_dung: {type: 'illus'|'diagram'|'ve', props} · bam? · toi? (false = không làm tối khoảng trống)
+//             props: noi_dung: {type: 'illus'|'diagram'|'ve', props} · bam? — chỉ dùng khi khoảng trống cạnh người VỐN ĐÃ TỐI (tường tối, bóng); nền sáng thì dùng o-nguoi
 //             Không khoảng nào đủ rộng → tự chuyển 'o-nguoi'.
 //  — thêm 20/11/2026 (học kênh MagentX; chỉ chọn khi có dấu hiệu ở thiet-ke-bo-cuc/huong-dan-lua-chon.md) —
 //  'dung-hay' CẶP ĐỪNG / HÃY LẶP KHUÔN: nhãn mục + hai ô ✗ (sai) / ✓ (đúng), cùng một chỗ cho mọi cặp — người xem học khuôn một
@@ -66,7 +66,7 @@ const vungNoi = (noi_dung) => {
   const v = noi_dung && VUNG_NOI[noi_dung.type];
   if (!v) return LAND ? {x: 0.2, w: 0.6, y: 0.07, h: 0.64} : {x: 0.2, w: 0.6, y: 0.1, h: 0.46};
   const md = noi_dung.props?.mode, n = (noi_dung.props?.items || []).length;
-  const r = md === 'flow' && n ? Math.min(RONG_KIEU.flow, 0.16 * n + 0.14) : RONG_KIEU[md];   // chuỗi ngắn (2–3 nút) không bị thu nhỏ như chuỗi dài
+  const r = md === 'flow' && n ? Math.min(RONG_KIEU.flow, 0.11 * n + 0.1) : RONG_KIEU[md];   // chuỗi ngắn (2–3 nút) không bị thu nhỏ như chuỗi dài
   return r ? {...v, x: 0.5 - r / 2, w: r} : v;
 };
 
@@ -209,7 +209,7 @@ const ONguoi = ({sceneId, start, o, noi_dung, khung, bam, nguoi_duoi = false}) =
             {noi_dung.type === 'dung-hay'
               ? <DungHayKhung start={start} f={f} w={area.w * 0.96} h={area.h} {...noi_dung.props} />
               : noi_dung.type === 'muc-luc'
-              ? <MucLuc start={start} f={f} w={area.w * 0.94} fs={Math.min(LAND ? H * 0.05 : W * 0.062,   // co cho đủ mọi mục trong vùng nội dung
+              ? <MucLuc start={start} f={f} w={area.w * 0.94} fs={Math.min(LAND ? H * (C.giay === 'luoi' ? 0.072 : 0.05) : W * (C.giay === 'luoi' ? 0.075 : 0.062),   // mẫu Ali: thẻ lớn, chữ khoảng 6 % chiều cao   // co cho đủ mọi mục trong vùng nội dung
                   area.h / ((noi_dung.props.muc || []).length * 2.15 + (noi_dung.props.tieu_de ? 1.4 : 0) + 0.6))} {...noi_dung.props} />
               : <The start={start} f={f} w={area.w * 0.92} fs={LAND ? H * 0.06 : W * 0.075} {...noi_dung.props} />}</div>
       )}
@@ -295,7 +295,7 @@ const TienTrinh = ({sceneId, start, so = 1, tong = 3, nhan, ten = ''}) => {
 };
 
 // Mạch hình cạnh người: người giữ nguyên, hình vẽ thẳng vào khoảng trống sát người (không thẻ nền)
-const CanhNguoi = ({sceneId, start, noi_dung, bam, toi = true}) => {
+const CanhNguoi = ({sceneId, start, noi_dung, bam}) => {
   const f = useCurrentFrame();
   const {durationInFrames: d} = useVideoConfig();
   const m = MAT[sceneId] || {cx: 0.5, cy: 0.42, w: 0.18};
@@ -308,12 +308,11 @@ const CanhNguoi = ({sceneId, start, noi_dung, bam, toi = true}) => {
   const o = Math.min(ease(f, 0, 10), ease(f, d - 6, d, 1, 0, Easing.in(Easing.cubic)));
   const top = Math.max(BRAND_BOT + 30, SAFE.top), bot = SAFE.bottom - 40;
   const v = vungNoi(noi_dung);
-  const s = Math.min(1, k.w / (W * v.w), (bot - top) / (H * v.h));
+  const s = Math.min(1.3, k.w / (W * v.w), (bot - top) / (H * v.h));   // hình phấn của Ali lấp kín mảng trống cạnh người: được phóng tới 1,3 lần
   const cx = (k.x0 + k.x1) / 2, cy = (top + bot) / 2;
   return (
     <AbsoluteFill style={{opacity: o, filter: o < 1 && f > d / 2 ? `blur(${(8 * (1 - o)).toFixed(2)}px)` : undefined}}>
-      {toi && <div style={{position: 'absolute', left: k.x0 - W * 0.04, top: 0, width: k.x1 - k.x0 + W * 0.08, height: H,
-        background: `linear-gradient(${k.ke === 'phai' ? 90 : 270}deg, transparent, rgba(${C.theRgb},0.55) 25%, rgba(${C.theRgb},0.55) 75%, transparent)`}} />}
+      {/* không thêm mảng tối dưới hình (David 28/11/2026: "motion màu xanh … hiển thị trên vết loang màu đen khá xấu"): mẫu Ali chỉ vẽ phấn lên mảng vốn đã tối */}
       <div style={{position: 'absolute', left: cx - W * (v.x + v.w / 2) * s, top: cy - H * (v.y + v.h / 2) * s, width: W, height: H,
         transform: `scale(${s})`, transformOrigin: '0 0'}}>
         {Comp && <Comp start={start} sceneId={sceneId} nen={false} {...noi_dung.props} />}

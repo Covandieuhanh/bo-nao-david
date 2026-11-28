@@ -87,7 +87,8 @@ từ mẫu giữ trọn thẩm mỹ của mẫu, `thu-vien-tai-nguyen/nhan-dien-
 | Giao diện | Dùng cho | Số đo |
 |---|---|---|
 | `sang-huynh-sang` | màn đồ hoạ có người trong ô (`bocuc o-nguoi`, sơ đồ và minh hoạ đặt trong ô người) | nền giấy sáng giữa #FAF7F6, mép #EEEBE8 → #E5E1DB, lưới chấm rất mờ; thẻ trắng #FFFFFF bóng mềm nâu; chữ đen than; nhãn nhỏ in hoa giãn chữ màu nhấn; chip đen #201D1A; dấu tích xanh #49725D; khung người viền trắng dày khoảng 5 px |
-| `sang-huynh-toi` | thẻ đè lên video (`bocuc the-canh`, `DuongMay` gạch thay, chương lớn, lời nhắc) và màn chương | thẻ #30302D, nhãn xám #B0B0AB in hoa, chữ kem #F4F2EE, cụm nhấn màu nhấn; màn chương nền #111111, số to mờ, dòng 2 màu nhấn |
+| `sang-huynh-the` | thẻ đè lên video (`bocuc the-canh`, `cau-hoi`, `DuongMay` gạch thay, thẻ lật, lời nhắc; cảnh tự vẽ đè video mượn giao diện này) | thẻ trắng #FFFFFF bóng mềm nâu, chữ đen than #1C1B1A, nhãn nhỏ in hoa màu nhấn #B5604A |
+| `sang-huynh-toi` | chương lớn và màn chương | thẻ #30302D, nhãn xám #B0B0AB in hoa, chữ kem #F4F2EE, cụm nhấn màu nhấn; màn chương nền #111111, số to mờ, dòng 2 màu nhấn |
 
-Màu nhấn đỏ cam của mẫu (#B5604A trên nền sáng, #E79377 trên nền tối) được thay bằng cam của kênh (#E0612F trên nền sáng cho dễ đọc, #FF7A45 trên nền tối).
+Màu nhấn đỏ đất của mẫu giữ nguyên: #B5604A trên nền sáng, #E79377 trên nền tối (David 28/11/2026: lấy chính xác từ mẫu, không phối lại).
 Font tiêu đề của mẫu là chữ hẹp đậm giống Barlow Condensed, chữ thường giống Be Vietnam Pro, nên giữ hai font chính.
