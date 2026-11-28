@@ -7,7 +7,8 @@ import {useCurrentFrame, useVideoConfig} from 'remotion';
 import {tu} from './chuyen-dong';
 import {C, NHAN} from './bien-thiet-ke';
 
-export const NHAN_STYLE = {fontFamily: NHAN, fontStyle: 'italic', fontWeight: 700, color: C.accent, textTransform: 'none', letterSpacing: 0};
+// màu đọc lúc vẽ (không lúc nạp mã) để theo giao diện của cảnh; C.nhanMau ghi đè khi màu nhấn của mẫu không đọc được trên nền đó
+export const nhanStyle = () => ({fontFamily: NHAN, fontStyle: 'italic', fontWeight: 700, color: C.nhanMau || C.accent, textTransform: 'none', letterSpacing: 0});
 export const boSao = (t) => String(t ?? '').replace(/\*/g, '');
 
 export const ChuHien = ({text = '', a = 0, kieu = 'mo', style}) => {
@@ -20,7 +21,7 @@ export const ChuHien = ({text = '', a = 0, kieu = 'mo', style}) => {
         if (/^\s*$/.test(w)) return w;
         const mo = w.startsWith('*'), dong = w.replace(/[.,!?;:…"'”)]+$/, '').endsWith('*');
         if (mo) nhan = true;
-        const st = nhan ? NHAN_STYLE : null;
+        const st = nhan ? nhanStyle() : null;
         if (dong) nhan = false;
         return <span key={j} style={{display: 'inline-block', whiteSpace: 'pre', ...st, ...tu(f, a, i++, fps, kieu)}}>{w.replace(/\*/g, '')}</span>;
       })}

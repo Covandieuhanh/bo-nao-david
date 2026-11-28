@@ -12,6 +12,9 @@ description: "Nhật ký thay đổi skill dựng video theo phong cách: quyế
 - Cảnh tự vẽ và cảnh chưa đo mẫu (thẻ đánh số, chữ nhấn, ô tròn, trên dưới, thẻ câu hỏi, thẻ ý) mượn giao diện mẫu gần nhất qua `MAU_CUA`; quầng sáng cam viết cứng trong thành phần hiệu ứng đổi sang `C.accentRgb`.
 - Thẻ lật: tít một dòng vừa tấm, từ 4 ý xếp lưới 2 cột. Hình cạnh người: chuỗi ngắn không bị thu nhỏ, mảng tối mềm hình bầu dục.
 - `ghep-doan-kho-hieu-ung.py --ve-doan <canh.js>`: ghi ngược cảnh sửa tay về `doan.json`.
+- Giao diện `doac` (thẻ tên chữ trắng không nền, dòng khách vàng; câu đắt hộp trắng chữ đen) đo từ short The Diary Of A CEO.
+- Màu từ nhấn `*từ*` tính lúc vẽ (`nhanStyle()` trong `thu-vien/chu-hien.jsx`), trước đây luôn là cam do tính lúc nạp mã.
+- Bỏ mảng tối giả dưới hình cạnh người (David: "motion màu xanh … hiển thị trên vết loang màu đen khá xấu"): `canh-nguoi` chỉ dùng khi chỗ trống cạnh người vốn đã tối; nền sáng thì dùng `o-nguoi`.
 
 ## 28/11/2026: hiệu ứng sinh ra từ nội dung, chữ hiện đúng lúc nói
 - David: *"quan trọng nhất là … nhận diện được là nội dung này thì nên dùng hiệu ứng nào cho hợp lý … quan trọng nhất là tính áp dụng phù hợp"*

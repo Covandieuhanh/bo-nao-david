@@ -86,3 +86,11 @@ description: "Nghiên cứu 10 video highlight dọc lượt xem cao (03/11) cho
 ## 5. Ghi chú
 - Claude tải video về chỉ để phân tích trong máy và đã xoá sau khi học. Ảnh khung và lời chép giữ tạm trong thư mục tạm của phiên.
 - Lượt xem đọc từ trang YouTube hôm nay, có thể đổi. YouTube đã đổi cách đếm lượt xem Shorts nên số mới cao hơn trước.
+
+## 6. Giao diện đo The Diary Of A CEO (28/11/2026)
+
+Đo từ short i2EyQ1eo6O0 (tải tạm để đo, đã xoá). Dùng cho `DuongMay` thẻ tên và câu đắt qua giao diện `doac` trong `thu-vien/bien-thiet-ke.js`; lấy chính xác từ mẫu (`thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0).
+
+- Thẻ tên: không tấm nền; dòng nhỏ trắng in hoa, tên to trắng đậm in hoa, dòng khách vàng #F5E62E in hoa nhỏ ngay dưới; góc trên trái.
+- Câu đắt: hộp trắng #FFFFFF ôm sát chữ, bo góc nhỏ; chữ đen #111111 in hoa đậm bản rộng (font gần nhất: Be Vietnam Pro 700), đặt dưới mặt.
+- Phụ đề của mẫu là một cụm 1–2 chữ trắng in hoa giữa khung; phụ đề kênh David giữ kiểu riêng (thành phần cố định).
