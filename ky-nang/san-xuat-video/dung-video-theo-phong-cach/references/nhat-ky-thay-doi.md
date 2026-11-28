@@ -4,6 +4,17 @@ description: "Nhật ký thay đổi skill dựng video theo phong cách: quyế
 
 # Nhật ký thay đổi — dung-video-theo-phong-cach (quyết định của người dùng và lý do)
 
+## 28/11/2026: hiệu ứng sinh ra từ nội dung, chữ hiện đúng lúc nói
+- David: *"quan trọng nhất là … nhận diện được là nội dung này thì nên dùng hiệu ứng nào cho hợp lý … quan trọng nhất là tính áp dụng phù hợp"*
+  (bản xem kho hiệu ứng đầu tiên đặt tám hiệu ứng lên cùng một đoạn lời).
+- Luật: `thiet-ke-bo-cuc/huong-dan-lua-chon.md` ("Hiệu ứng sinh ra từ ý, thước đo là độ hợp"), lá B15 bước 4. Thước đo là độ hợp, không phải số
+  lần dùng một đoạn; `ghep-doan-kho-hieu-ung.py` chỉ cảnh báo đoạn dùng chung.
+- Đo thấy chữ hiện sớm hơn lời 1–5 giây ở gần mọi cảnh (mốc theo đầu câu; bản chép lời cả video ghép trôi khoảng 1,3 giây; bản chép lời
+  nguồn đã làm sạch lệch 1 giây). Thêm `scripts/khop-chu-voi-loi.py` (dò và dời mốc về lúc nói, đọc cả `canh.js` viết tay, giữ chú thích) và
+  `ghep-doan-kho-hieu-ung.py --chep-loi --canh-js` (chép lời từng đoạn, ghi cảnh, khớp lời, ghi ngược về `doan.json`).
+- Sửa khung: `bo-cuc.jsx` `vungNoi()` (sơ đồ, minh hoạ trong ô người và cạnh người khung ngang không còn tràn mép phải);
+  `duong-may.jsx` `coChu()` (chữ thẻ lật, gạch thay, câu đắt xuống dòng thay vì teo nhỏ).
+
 ## 22/11/2026 (khuya, sau): điểm duyệt rõ ở từng lá, chế độ tự chạy, không lệch quy trình
 - David: *"Phần nào đến bước duyệt thì vẫn phải chờ duyệt … tự động làm video cho đến khi ra kết quả luôn và bỏ qua các bước duyệt thì mới
   bỏ qua thôi, chứ còn không có trường hợp nào mà chạy lệch quy trình cả"*.
