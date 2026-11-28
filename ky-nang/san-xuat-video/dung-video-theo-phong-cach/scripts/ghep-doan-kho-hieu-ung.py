@@ -50,20 +50,40 @@ def srt_ghi(p, dong):
         for i, (a, b, c) in enumerate(dong, 1):
             fh.write(f"{i}\n{f(a)} --> {f(b)}\n{c}\n\n")
 
-def chep_loi(mp4, tam, moc, dai):
-    """Chép lời một đoạn đã cắt; trả (dòng câu, dòng từ) theo mốc video ghép, bỏ phần lấn sang đoạn sau."""
+BIA = re.compile(r"subscribe|đăng ký kênh|ghiền mì gõ|không bỏ lỡ những video", re.I)   # lời ảo của Whisper (loi-ao-giac.py)
+
+def _whisper(wav, of, them):
     mo = os.environ.get('WHISPER_MODEL', os.path.expanduser('~/whisper-models/ggml-large-v3-turbo.bin'))
+    r = subprocess.run(['whisper-cli', '-m', mo, '-l', 'vi', '-f', wav, '-mc', '0', *them, '-osrt', '-of', of, '-np'],
+                       capture_output=True, text=True)
+    if r.returncode != 0:
+        sys.exit(f"Lỗi whisper-cli: {r.stderr[-800:]}")
+    return of + '.srt'
+
+def chep_loi(mp4, tam, moc, dai, src=None, tu=0.0):
+    """Chép lời một đoạn đã cắt; trả (dòng câu, dòng từ) theo mốc video ghép, bỏ phần lấn sang đoạn sau.
+    Đoạn ngắn đôi khi ra lời ảo cả đoạn ("Hãy subscribe cho kênh…"): chép lại từ nguồn kèm 15 giây ngữ cảnh phía trước rồi lấy đúng khúc."""
     wav = os.path.join(tam, 'am.wav')
-    chay(['ffmpeg', '-v', 'error', '-y', '-i', mp4, '-vn', '-ac', '1', '-ar', '16000', wav])
-    ra = []
-    for ten, them in (('cau', []), ('tu', ['-ml', '1', '-sow'])):
-        of = os.path.join(tam, ten)
-        r = subprocess.run(['whisper-cli', '-m', mo, '-l', 'vi', '-f', wav, '-mc', '0', *them, '-osrt', '-of', of, '-np'],
-                           capture_output=True, text=True)
-        if r.returncode != 0:
-            sys.exit(f"Lỗi whisper-cli: {r.stderr[-800:]}")
-        ra.append([(a, min(b, moc + dai), c) for a, b, c in srt_doc(of + '.srt', moc) if a < moc + dai - 0.05])
+    for lan, dem in enumerate((0.0, 15.0)):
+        if lan and not src:
+            break
+        dau = 0.0 if not lan else min(dem, tu)
+        if not lan:
+            chay(['ffmpeg', '-v', 'error', '-y', '-i', mp4, '-vn', '-ac', '1', '-ar', '16000', wav])
+        else:
+            chay(['ffmpeg', '-v', 'error', '-y', '-ss', str(tu - dau), '-t', str(dai + dau + 2), '-i', src, '-vn', '-ac', '1', '-ar', '16000', wav])
+        lech = moc - dau
+        ra = []
+        for ten, them in (('cau', []), ('tu', ['-ml', '1', '-sow'])):
+            f = _whisper(wav, os.path.join(tam, ten), them)
+            ra.append([(max(a, moc), min(b, moc + dai), c) for a, b, c in srt_doc(f, lech) if moc - 0.05 <= a < moc + dai - 0.05])
+            os.remove(f)
+        if not any(BIA.search(c) for _, _, c in ra[0]) and ra[1]:
+            break
+        print(f"  lời ảo ở đoạn bắt đầu {moc:.1f} s — chép lại kèm ngữ cảnh", file=sys.stderr)
     os.remove(wav)
+    if any(BIA.search(c) for _, _, c in ra[0]):
+        sys.exit(f"Đoạn bắt đầu {moc:.1f} s vẫn ra lời ảo sau khi chép lại — nghe và chép tay")
     return ra
 
 def mm_ss(x):
@@ -123,7 +143,7 @@ def main():
         that = float(chay(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', out]).strip())
         danh_sach.append(out)
         if co_loi:
-            c, t = chep_loi(out, tam, moc, that)
+            c, t = chep_loi(out, tam, moc, that, src, d['tu'])
             loi_cau += c; loi_tu += t
         bang.append({**d, 'file': ten_nguon(src), 'bat_dau': round(moc, 3), 'ket_thuc': round(moc + that, 3), 'lech': round(moc - d['tu'], 3)})
         moc += that

@@ -71,7 +71,7 @@ def doc_canh(js):
 def thay_moc(khoi, chu, kt, cu, moi):
     """Đổi `kt: cu` gần chuỗi `chu` nhất ngay trong file (giữ chú thích, cách viết của file); trả khối mới hoặc None."""
     q = json.dumps(chu, ensure_ascii=False)[1:-1]
-    so = re.escape(f'{cu:g}') + r'(?![\d.])'
+    so = re.escape(f'{cu:g}') + (r'(?:\.0+)?' if float(cu).is_integer() else '') + r'(?![\d.])'   # 220 viết trong file là 220.0
     mau = re.compile(r'(["\']?\b' + re.escape(kt) + r'\b["\']?\s*:\s*)' + so)
     vt = [mm.start() for mm in re.finditer(re.escape(q), khoi)]
     best = None
