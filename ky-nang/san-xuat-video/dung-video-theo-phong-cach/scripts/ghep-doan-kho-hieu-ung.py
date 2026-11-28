@@ -40,8 +40,8 @@ def srt_doc(p, lech):
     for b in re.split(r'\n\s*\n', open(p, encoding='utf-8').read().strip()):
         l = b.strip().split('\n')
         m = re.findall(r'(\d+):(\d+):(\d+)[,.](\d+)', l[1]) if len(l) >= 3 else []
-        if len(m) == 2 and ' '.join(l[2:]).strip():
-            ra.append((t(m[0]) + lech, t(m[1]) + lech, ' '.join(l[2:]).strip()))
+        if len(m) == 2 and ' '.join(l[2:]).strip():   # giữ dấu cách đầu: phu-de.py dùng nó để biết đâu là từ mới
+            ra.append((t(m[0]) + lech, t(m[1]) + lech, ' '.join(l[2:]).rstrip()))
     return ra
 
 def srt_ghi(p, dong):
