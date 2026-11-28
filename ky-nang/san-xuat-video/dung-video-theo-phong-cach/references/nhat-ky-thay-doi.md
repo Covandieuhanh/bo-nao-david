@@ -9,6 +9,7 @@ description: "Nhật ký thay đổi skill dựng video theo phong cách: quyế
 - David: "đã học từ hình mẫu thì mọi thứ chuẩn đúng theo hình mẫu ở cả hiệu ứng và cả motion graphics … giá trị của bạn nằm ở phân tích … đừng sáng tạo và thêm linh tinh nữa"; chọn "Chỉ giữ hiệu ứng có mẫu". Luật: `thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0 điều 3–4.
 - Hiệu ứng tự chế chuyển sang lưu trữ: `thiet-ke-bo-cuc/hieu-ung-luu-tru.json` (illus, diagram, card, action, nhan, kinetic, các kiểu cũ khung dọc, NhanTram, MauMach, DuongMay trừ thẻ tên và câu đắt). Mã giữ để video cũ dựng lại được.
 - Công cụ chặn mới `scripts/kiem-hieu-ung-co-mau.py <canh.js>`: báo 0 mới được xuất. Bảng chọn nhanh theo dạng nội dung ở `huong-dan-lua-chon.md` bước 0.
+- Thẻ cạnh mặt về đúng mẫu Sang Huỳnh (đo 0:21–0:30): từ khoá chính chữ đen có vạch chân màu nhấn, không tô màu nhấn. Khung dọc: thẻ đặt ở chỗ trống cạnh mặt — mặt thấp tới dải thẻ thì lên khoảng trống giữa dấu góc và đỉnh đầu (bản xem: thẻ che cằm).
 - Bỏ các chỗ tự thêm trong ngày: mượn giao diện cho cảnh tự chế (bảng `MAU_CUA` chỉ còn loại có mẫu); thẻ lật, kể cả lưới 2 cột tự thêm, nằm trong phần lưu trữ. MagentX (trên dưới, ô tròn, thẻ câu hỏi, đừng / hãy) chưa đo giao diện: chờ đường dẫn reel.
 
 ## 28/11/2026 (tối): màu không phải nhận diện, lấy chính xác thẩm mỹ từ mẫu

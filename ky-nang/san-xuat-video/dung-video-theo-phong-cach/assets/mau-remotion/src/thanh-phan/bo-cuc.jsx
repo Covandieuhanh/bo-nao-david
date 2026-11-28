@@ -99,9 +99,11 @@ const TheGoc = ({start, tieu_de, dong = [], w, f, fs, kc = 'mo'}) => (
             opacity: Math.min(1, p * 1.4)}} />}
           <div style={{position: 'relative', minWidth: 0}}>
             <div style={{fontFamily: d.to ? HEAD : BODY, fontWeight: d.to ? 800 : 500, lineHeight: lh, fontSize: co,
-              color: d.to && i === dong.length - 1 ? C.accent : C.text, textTransform: d.to ? 'uppercase' : 'none',
+              color: C.text, textTransform: d.to ? 'uppercase' : 'none',
               textWrap: 'pretty', whiteSpace: 'pre-line', hyphens: 'none'}}>
               <ChuHien text={d.text.replace(/^([^\p{L}\p{N}]*)(\p{L})/u, (_, a, b) => a + b.toLocaleUpperCase('vi'))} a={a} kieu={kc} /></div>
+            {d.to && <div style={{height: Math.max(4, co * 0.07), marginTop: co * 0.02, borderRadius: 2, background: C.accent,   // từ khoá chính: chữ đen, vạch chân màu nhấn (mẫu Sang Huỳnh 0:21–0:30 "chỉ cần PROMPT")
+              width: `${100 * ease(f, a + 4, a + 16)}%`}} />}
             {g > 0 && <div style={{position: 'absolute', left: 0, top: '52%', height: Math.max(3, fs * 0.08), width: `${g * 100}%`, background: C.accent}} />}
           </div>
         </div>
@@ -227,10 +229,14 @@ const TheCanh = ({sceneId, start, ben, bam, tieu_de, dong, so}) => {
   const mo = o < 1 && f > d / 2 ? `blur(${(8 * (1 - o)).toFixed(2)}px)` : undefined;   // ra: mờ nhoè + tan (chuyen-dong.js luật 5)
   if (!LAND) {   // dọc: một thẻ hẹp phía dưới mặt, trên dải phụ đề — ít chữ cùng lúc
     const slide = (1 - ease(f, 0, 14)) * 60;
+    // thẻ ở chỗ trống cạnh mặt (mẫu Sang Huỳnh): mặc định dưới mặt; mặt thấp tới dải thẻ thì đặt ở khoảng trống giữa dấu góc và đỉnh đầu,
+    // chữ thu theo khoảng trống đó (bản xem 28/11/2026: thẻ che cằm)
+    const hm = m.h || m.w * 0.6, tren = (m.cy + hm / 2) * H + H * 0.03 > SAFE.overlayTop;
+    const fsD = tren ? Math.min(W * 0.07, ((m.cy - hm / 2) * H - H * 0.03 - BRAND_BOT - 24) / 7.5) : W * 0.07;
     return (
       <AbsoluteFill style={{opacity: o, filter: mo}}>
-        <div style={{position: 'absolute', left: SAFE.left, top: SAFE.overlayTop, transform: `translateY(${-slide}px)`}}>
-          <The start={start} f={f} w={W - SAFE.left - SAFE.right} fs={W * 0.07} tieu_de={tieu_de} dong={dong} so={so} kc={kieuChu(sceneId)} />
+        <div style={{position: 'absolute', left: SAFE.left, top: tren ? BRAND_BOT + 24 : SAFE.overlayTop, transform: `translateY(${-slide}px)`}}>
+          <The start={start} f={f} w={W - SAFE.left - SAFE.right} fs={fsD} tieu_de={tieu_de} dong={dong} so={so} kc={kieuChu(sceneId)} />
         </div>
       </AbsoluteFill>
     );
