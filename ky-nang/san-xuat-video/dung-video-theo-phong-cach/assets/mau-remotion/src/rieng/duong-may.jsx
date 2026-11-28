@@ -195,7 +195,7 @@ export const DuongMay = ({sceneId, start, o = O_MAC_DINH, so, nhan, ten, lon, ti
                     border: `2px solid ${sang ? C.accent : 'rgba(255,255,255,0.12)'}`, display: 'flex', alignItems: 'center', justifyContent: 'center',
                     transform: `rotateY(${(1 - p) * -95}deg) scale(${sang ? 1 : 0.96})`, transformOrigin: '50% 50%', opacity: Math.min(1, p * 2) * (sang ? 1 : 0.75),
                     backfaceVisibility: 'hidden'}}>
-                    <div style={{fontFamily: HEAD, fontWeight: 800, fontSize: fsT, lineHeight: 1.1, textAlign: 'center', whiteSpace: 'pre-line',
+                    <div style={{fontFamily: HEAD, fontWeight: 800, fontSize: fsT, lineHeight: 1.1, textAlign: 'center', whiteSpace: 'pre-line', maxWidth: '88%',
                       color: sang ? C.text : C.muted, textTransform: 'uppercase'}}><ChuHien text={u.text} a={at[i] + 6} kieu={kc} /></div>
                   </div>
                 </div>
