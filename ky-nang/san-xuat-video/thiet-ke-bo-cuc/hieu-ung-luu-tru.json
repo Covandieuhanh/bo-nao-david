@@ -1,7 +1,46 @@
 {
  "_ghi_chu": "Hiệu ứng tự chế, không có hình mẫu (David 28/11/2026: chỉ giữ hiệu ứng có mẫu). Mã giữ lại để video cũ dựng lại được, KHÔNG chọn cho video mới. Khoá: loại cảnh, hoặc loại:kiểu. kiem-hieu-ung-co-mau.py đọc file này. Khi học được mẫu thật cho một loại thì bỏ loại đó khỏi đây và ghi số đo ở nguon-tham-khao/.",
- "loai": ["illus", "diagram", "card", "action", "nhan", "hook", "lower", "kinetic", "listItem", "montage", "recap", "converge", "master", "gens", "build"],
- "ve": ["NhanTram", "MauMach"],
- "DuongMay": ["thay", "so", "nhac", "lat", "nut", "vet", "ghep", "khuon", "buoc", "dai-chuong"],
- "chua_do_mau": {"bocuc:tren-duoi": "MagentX — cần đường dẫn reel để đo", "bocuc:o-tron": "MagentX — cần đường dẫn reel để đo", "bocuc:cau-hoi": "MagentX — cần đường dẫn reel để đo", "bocuc:dung-hay": "MagentX — cần đường dẫn reel để đo"}
+ "loai": [
+  "illus",
+  "diagram",
+  "card",
+  "action",
+  "nhan",
+  "hook",
+  "lower",
+  "kinetic",
+  "listItem",
+  "montage",
+  "recap",
+  "converge",
+  "master",
+  "gens",
+  "build"
+ ],
+ "ve": [
+  "NhanTram",
+  "MauMach"
+ ],
+ "DuongMay": [
+  "thay",
+  "so",
+  "nhac",
+  "lat",
+  "nut",
+  "vet",
+  "ghep",
+  "khuon",
+  "buoc",
+  "dai-chuong"
+ ],
+ "chua_do_mau": {
+  "bocuc:tren-duoi": "MagentX — cần đường dẫn reel để đo",
+  "bocuc:o-tron": "MagentX — cần đường dẫn reel để đo",
+  "bocuc:cau-hoi": "MagentX — cần đường dẫn reel để đo",
+  "bocuc:dung-hay": "MagentX — cần đường dẫn reel để đo"
+ },
+ "_vi_sao": "David 28/11/2026: \"khi học từ hình mẫu thì thẩm mỹ chuẩn hơn, khi tự xây dựng thì thẩm mỹ hay bị các lỗi nhỏ\".",
+ "ngoai_le": {
+  "dung-podcast": "giữ sơ đồ và minh hoạ hiện có cho tới khi học được mẫu podcast hoặc có mẫu khác thay thế (David 28/11/2026); kiem-hieu-ung-co-mau.py không chạy cho podcast"
+ }
 }

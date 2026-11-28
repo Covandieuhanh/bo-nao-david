@@ -40,6 +40,8 @@ Luật chung về video ở `../quy-tac-chung.md` (chữ nguyên văn, không c�
   thêm lời, không dùng lời mẫu):
   - **Mật độ hình:** hình phủ **khoảng 30% thời lượng** (`phu_hinh_muc_tieu`), không cố định: đoạn khó hiểu hoặc quan trọng thì dày
     hơn, đoạn nhẹ thì thưa hơn; không để trống lâu ở phần đầu; không phủ kín. Đoạn chạm lằn ranh không vẽ hình.
+  - **Ngoại lệ tạm (David 28/11/2026):** podcast giữ sơ đồ và minh hoạ hiện có cho tới khi học được mẫu podcast hoặc có mẫu khác thay thế
+    được; video người nói chỉ dùng hiệu ứng có mẫu (`thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0).
   - **Loại cảnh:** ưu tiên **sơ đồ nói thay lời** (`diagram`, khối 07) cho câu có cấu trúc, hoặc **ảnh thật trong khung bo góc** (`diagram` mode
     `anh`) khi lời nói nhắc tới người / nơi / tổ chức có thật. `illus` cho câu ngắn không có cấu trúc. Giữa các cảnh: sân khấu + phụ đề.
   - **Bản đồ chương tích luỹ** (tự bật khi có ít nhất 3 TOPICS và tập dài): mỗi phần thêm thẻ số + tên phần; trước màn chốt, sân khấu hiện cả bản đồ làm phần tóm tắt.

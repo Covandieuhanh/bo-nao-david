@@ -25,13 +25,16 @@ Người dựng giữ ở MỌI video:
    nhịp của chính mẫu đó (số đo ở `thiet-ke-bo-cuc/nguon-tham-khao/`, giao diện ở `bien-thiet-ke.js` `GIAO_DIEN`). Không thêm chi tiết mẫu
    không có (mảng tối giả, lưới, cách xếp khác, viền, quầng sáng), không phối màu lại. Font của mẫu không có trên máy thì dùng font gần
    nhất cùng nhóm và ghi trong phiếu học — đó là chỗ duy nhất được thay.
+   **Vì sao** (David 28/11/2026): *"khi học từ hình mẫu thì thẩm mỹ chuẩn hơn, khi tự xây dựng thì thẩm mỹ hay bị các lỗi nhỏ"*.
+   Mẫu đã được kiểm qua người xem thật; phần tự dựng chưa ai kiểm nên lỗi nhỏ lọt qua.
 4. **Giá trị của Claude là phân tích và chọn**: đọc nội dung đang nói, chọn đúng hiệu ứng đã học hợp với nội dung đó, đặt đúng lúc, đúng
    chỗ trống. Nội dung không có hiệu ứng mẫu nào hợp thì giữ người và phụ đề, không tự chế hiệu ứng mới. Mẫu đòi điều kiện mà cảnh không có
    (ví dụ nét phấn trắng cần tường tối) thì chọn hiệu ứng khác, không sửa mẫu cho vừa. Font phụ `NHAN` chỉ dùng cho **một từ nhấn** khi
    mẫu có kiểu nhấn đó.
 
 Nhận diện kênh nằm ở phần cố định: che hiệu ứng đi, người xem quen kênh vẫn nhận ra là video của David nhờ dấu góc, phụ đề, thanh thời gian,
-màn chốt và nhạc. Không có phần "tự do sáng tạo" ở hiệu ứng: chỉ chọn trong những gì đã học từ mẫu.
+màn chốt và nhạc. Không có phần "tự do sáng tạo" ở hiệu ứng: chỉ chọn trong những gì đã học từ mẫu. **Ngoại lệ tạm:** video podcast (`dung-podcast`)
+giữ sơ đồ và minh hoạ hiện có cho tới khi học được mẫu podcast, hoặc có mẫu khác thay thế được (David 28/11/2026).
 
 ## 1. Thành phần cố định (có ở mọi video)
 
