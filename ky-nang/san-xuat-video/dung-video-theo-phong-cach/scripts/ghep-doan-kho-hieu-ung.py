@@ -2,17 +2,22 @@
 """Ghép các đoạn đã chọn từ nhiều video gốc thành MỘT video gốc chung cho bản xem đủ kho hiệu ứng
 (thiet-ke-bo-cuc/README.md mục 4a, quy trình thiet-ke-bo-cuc/kho-hieu-ung-tu-video-goc.md).
 
-  python3 -I ghep-doan-kho-hieu-ung.py <doan.json> <thư mục ra> [--doc]
+  python3 -I ghep-doan-kho-hieu-ung.py <doan.json> <thư mục ra> [--doc] [--chep-loi] [--canh-js <canh.js của dự án>]
 
 doan.json: {"nguon": {"A": "/đường/dẫn/a.mp4", ...},
             "doan": [{"id": "the-canh", "nguon": "A", "tu": 70.2, "den": 80.4, "hieu_ung": "the-canh", "ghi_chu": "..."}, ...]}
 Ra:  <ra>/video-goc.mp4 (khung 1920x1080 hoặc 1080x1920 với --doc, 30 fps, tiếng 48 kHz, nối liền theo thứ tự)
      <ra>/bang-moc.json  — mỗi đoạn: mốc bắt đầu / kết thúc trong video ghép + mốc gốc, để đổi mốc lời gốc sang mốc ghép
      <ra>/bang-moc.md    — bảng mốc đọc được (hiệu ứng · nguồn · mốc gốc · mốc trong video ghép)
+     --chep-loi: chép lời TỪNG ĐOẠN ngay sau khi cắt (whisper-cli), ghi <ra>/loi/moc-tung-tu.srt và ban-chep-loi.srt theo mốc video ghép.
+       Đoạn ngắn cho mốc từ đúng; chép một lượt cả video ghép dài làm mốc trôi tới hơn 1 giây (đo 28/11/2026). Mô hình: biến WHISPER_MODEL
+       hoặc ~/whisper-models/ggml-large-v3-turbo.bin.
+     --canh-js: thay SCENES và CHAPTERS (mỗi đoạn một chương, tên = hieu_ung) trong canh.js bằng cảnh đã đổi mốc — doan.json là nguồn
+       duy nhất của cảnh, sửa cảnh thì sửa ở doan.json rồi chạy lại.
 Cắt từng đoạn bằng -ss trước -i (nhanh trên nguồn dài, khối 02), mã hoá lại để điểm nối khớp khung; video xoay (điện thoại) được ffmpeg tự xoay.
 Khung khác tỉ lệ được thu vừa và thêm viền tối, không cắt mất người.
 """
-import json, os, subprocess, sys, tempfile
+import json, os, re, subprocess, sys, tempfile
 
 def chay(lenh):
     r = subprocess.run(lenh, capture_output=True, text=True)
@@ -25,6 +30,41 @@ def ten_nguon(src):
     phan = src.split(os.sep)
     tap = next((x for x in reversed(phan[:-1]) if x.startswith('tap-')), '')
     return f"{tap}/{phan[-1]}" if tap else phan[-1]
+
+def srt_doc(p, lech):
+    """Đọc srt, cộng `lech` giây; trả [(bắt đầu, kết thúc, chữ)]."""
+    ra = []
+    if not os.path.exists(p):
+        return ra
+    t = lambda m: int(m[0]) * 3600 + int(m[1]) * 60 + int(m[2]) + int(m[3]) / 1000
+    for b in re.split(r'\n\s*\n', open(p, encoding='utf-8').read().strip()):
+        l = b.strip().split('\n')
+        m = re.findall(r'(\d+):(\d+):(\d+)[,.](\d+)', l[1]) if len(l) >= 3 else []
+        if len(m) == 2 and ' '.join(l[2:]).strip():
+            ra.append((t(m[0]) + lech, t(m[1]) + lech, ' '.join(l[2:]).strip()))
+    return ra
+
+def srt_ghi(p, dong):
+    f = lambda x: f"{int(x // 3600):02d}:{int(x % 3600 // 60):02d}:{int(x % 60):02d},{int(round(x % 1 * 1000)) % 1000:03d}"
+    with open(p, 'w', encoding='utf-8') as fh:
+        for i, (a, b, c) in enumerate(dong, 1):
+            fh.write(f"{i}\n{f(a)} --> {f(b)}\n{c}\n\n")
+
+def chep_loi(mp4, tam, moc, dai):
+    """Chép lời một đoạn đã cắt; trả (dòng câu, dòng từ) theo mốc video ghép, bỏ phần lấn sang đoạn sau."""
+    mo = os.environ.get('WHISPER_MODEL', os.path.expanduser('~/whisper-models/ggml-large-v3-turbo.bin'))
+    wav = os.path.join(tam, 'am.wav')
+    chay(['ffmpeg', '-v', 'error', '-y', '-i', mp4, '-vn', '-ac', '1', '-ar', '16000', wav])
+    ra = []
+    for ten, them in (('cau', []), ('tu', ['-ml', '1', '-sow'])):
+        of = os.path.join(tam, ten)
+        r = subprocess.run(['whisper-cli', '-m', mo, '-l', 'vi', '-f', wav, '-mc', '0', *them, '-osrt', '-of', of, '-np'],
+                           capture_output=True, text=True)
+        if r.returncode != 0:
+            sys.exit(f"Lỗi whisper-cli: {r.stderr[-800:]}")
+        ra.append([(a, min(b, moc + dai), c) for a, b, c in srt_doc(of + '.srt', moc) if a < moc + dai - 0.05])
+    os.remove(wav)
+    return ra
 
 def mm_ss(x):
     return f"{int(x // 60):02d}:{x % 60:05.2f}"
@@ -68,6 +108,8 @@ def main():
     tam = tempfile.mkdtemp(prefix='ghep-kho-')
     vf = (f"scale={W}:{H}:force_original_aspect_ratio=decrease,pad={W}:{H}:(ow-iw)/2:(oh-ih)/2:color=0x101010,"
           f"fps=30,format=yuv420p,setsar=1")
+    co_loi = '--chep-loi' in sys.argv
+    loi_cau, loi_tu = [], []
     danh_sach, bang, moc = [], [], 0.0
     for i, d in enumerate(cau_hinh['doan']):
         src = cau_hinh['nguon'][d['nguon']]
@@ -80,6 +122,9 @@ def main():
               '-c:a', 'aac', '-b:a', '192k', '-shortest', out])
         that = float(chay(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', out]).strip())
         danh_sach.append(out)
+        if co_loi:
+            c, t = chep_loi(out, tam, moc, that)
+            loi_cau += c; loi_tu += t
         bang.append({**d, 'file': ten_nguon(src), 'bat_dau': round(moc, 3), 'ket_thuc': round(moc + that, 3), 'lech': round(moc - d['tu'], 3)})
         moc += that
     noi = os.path.join(tam, 'noi.txt')
@@ -102,6 +147,34 @@ def main():
         with open(os.path.join(ra, 'canh-ghep.js'), 'w', encoding='utf-8') as fh:
             fh.write('// Tự sinh bởi ghep-doan-kho-hieu-ung.py — mốc đã đổi sang video ghép. Chép vào SCENES của canh.js\n')
             fh.write('export const SCENES_GHEP = ' + json.dumps(canh, ensure_ascii=False, indent=1) + ';\n')
+    if co_loi:
+        os.makedirs(os.path.join(ra, 'loi'), exist_ok=True)
+        srt_ghi(os.path.join(ra, 'loi', 'ban-chep-loi.srt'), loi_cau)
+        srt_ghi(os.path.join(ra, 'loi', 'moc-tung-tu.srt'), loi_tu)
+        print(f"Lời từng đoạn: {len(loi_cau)} câu, {len(loi_tu)} từ → {ra}/loi/")
+    if '--canh-js' in sys.argv:
+        cj = sys.argv[sys.argv.index('--canh-js') + 1]
+        js = open(cj, encoding='utf-8').read()
+        chuong = [{'at': b['bat_dau'], 'text': b.get('hieu_ung', b['id'])} for b in bang]
+        js = re.sub(r'export const SCENES = \[.*?\n\];', lambda m: 'export const SCENES = ' + json.dumps(canh, ensure_ascii=False, indent=1) + ';', js, count=1, flags=re.S)
+        js = re.sub(r'export const CHAPTERS = \[.*?\];', lambda m: 'export const CHAPTERS = ' + json.dumps(chuong, ensure_ascii=False) + ';', js, count=1, flags=re.S)
+        open(cj, 'w', encoding='utf-8').write(js)
+        print(f"Đã ghi {len(canh)} cảnh, {len(chuong)} chương vào {cj}")
+        if co_loi:
+            # chữ trên hình về đúng lúc nói (khop-chu-voi-loi.py), rồi ghi mốc đã khớp ngược về doan.json để doan.json vẫn là nguồn duy nhất
+            subprocess.run([sys.executable, '-I', os.path.join(os.path.dirname(os.path.abspath(__file__)), 'khop-chu-voi-loi.py'),
+                            cj, os.path.join(ra, 'loi', 'moc-tung-tu.srt'), '--sua'])
+            js = open(cj, encoding='utf-8').read()
+            moi = json.loads(re.search(r'export const SCENES = (\[.*?\n\]);', js, flags=re.S).group(1))
+            theo = {d['id']: [] for d in cau_hinh['doan']}
+            for c in moi:
+                b = next(b for b in bang if b['bat_dau'] - 0.05 <= c['start'] < b['ket_thuc'])
+                theo[b['id']].append(doi_moc(c, -b['lech'], -1e9, 1e9))
+            for d in cau_hinh['doan']:
+                if theo[d['id']]:
+                    d['canh'] = theo[d['id']]
+            json.dump(cau_hinh, open(sys.argv[1], 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+            print(f"Đã ghi mốc đã khớp lời về {sys.argv[1]}")
     for p in danh_sach + [noi]:
         os.remove(p)
     os.rmdir(tam)

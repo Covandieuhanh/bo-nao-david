@@ -32,13 +32,17 @@ David được phép dùng (trên máy và Drive `sao-luu-mac/video/<tập>/1-go
      ứng viên đã loại và vì sao.
 5. **Viết code cho cách còn thiếu:** đo mẫu (bảng khung 0,67 giây ở đúng mốc, mã gốc của tác giả nếu có), thêm vào `rieng/` (một file mẫu
    dùng lại, đăng ký trong `diem-vao.js`), kiểm cú pháp bằng `esbuild`.
-6. **Ghép nguồn thành một video gốc:** viết `doan.json` (thứ tự theo nhóm của `bo-cuc.md`), chạy
-   `python3 -I $SKILL/scripts/ghep-doan-kho-hieu-ung.py doan.json <thư mục>` (thêm `--doc` cho nhóm chỉ dùng khung dọc). Ra `video-goc.mp4`,
-   `bang-moc.json`, `bang-moc.md`.
-7. **Dựng như một video thường:** `tao-du-an.sh <video-goc.mp4> "" kho-hieu-ung-<ngày>` → `phan-tich-video.sh` → `phu-de.py` → `canh.js`
-   (mỗi đoạn một cảnh, mốc = mốc lời trong video ghép) → `ke-hoach-canh.md` (Chẩn đoán đủ dòng) → `vi-tri-khuon-mat.sh` → `xem-truoc.mjs`
-   (chụp đầu / giữa / cuối từng cảnh mới) → `xuat-video.mjs` → `xem-truoc-ban-dung.py`. Không có thẻ tiêu đề hay chữ ghi chú trên hình;
-   tên hiệu ứng nằm ở `bang-moc.md` và chương.
+6. **Ghép nguồn thành một video gốc:** viết `doan.json` (thứ tự theo nhóm của `bo-cuc.md`; cảnh của từng đoạn ở khoá `canh`, mốc theo nguồn).
+   `doan.json` là nguồn duy nhất của cảnh: sửa cảnh thì sửa ở đây rồi chạy lại, không sửa tay `canh.js`. Chạy
+   `python3 -I $SKILL/scripts/ghep-doan-kho-hieu-ung.py doan.json <thư mục> --chep-loi --canh-js <dự án>/chuyen-dong/src/canh.js`
+   (thêm `--doc` cho nhóm chỉ dùng khung dọc). Script cắt và nối đoạn, chép lời **từng đoạn** (mốc từ đúng; chép một lượt cả video ghép dài
+   làm mốc trôi hơn 1 giây), ghi cảnh và chương vào `canh.js`, chạy `khop-chu-voi-loi.py --sua` để mọi chữ trên hình hiện đúng lúc nói,
+   rồi ghi mốc đã khớp ngược về `doan.json`. Ra `video-goc.mp4`, `bang-moc.json`, `bang-moc.md`, `loi/`.
+7. **Dựng như một video thường:** `tao-du-an.sh <video-goc.mp4> "" kho-hieu-ung-<ngày>` → chép `<thư mục>/loi/*.srt` vào
+   `kiem-tra/goc/` (thay bản `phan-tich-video.sh`) → `phu-de.py` → `ke-hoach-canh.md` (Chẩn đoán đủ dòng) → `vi-tri-khuon-mat.sh` →
+   `xem-truoc.mjs` (chụp đầu / giữa / cuối từng cảnh mới) → `xuat-video.mjs` → `xem-truoc-ban-dung.py`. Không có thẻ tiêu đề hay chữ ghi chú
+   trên hình; tên hiệu ứng nằm ở `bang-moc.md` và chương. Trước khi xuất, `khop-chu-voi-loi.py <canh.js> kiem-tra/goc/moc-tung-tu.srt` phải
+   báo 0 mục lệch, 0 mục không thấy trong lời.
 8. **Giao:** bản dựng + `bang-moc.md` (hiệu ứng · nguồn · mốc gốc · mốc trong bản xem) + danh sách hiệu ứng chưa có cảnh hoặc chưa có code.
    Đây là bản nội bộ để David xem, không đăng; lưu trên máy và Drive `thanh-pham/tap-kho-hieu-ung-<ngày>/`.
 
@@ -63,6 +67,9 @@ Không có Đ1 (đã có lá). Đ3 khi một hiệu ứng mới đụng màu ch�
   `NhanTram` thẻ ý; `bocuc` the-canh); `kinetic` đưa vào bản dọc.
 - Luật giữ hình gốc (`quy-tac-chung.md` mục 4): bộ soát chặn `illus` / `diagram` toàn khung. Đặt chúng trong `bocuc` `o-nguoi` (`noi_dung`); kiểu vốn toàn khung
   (màn chương, thanh tiến trình, thẻ các bước, nền người mờ, nền hạt) ghi lý do ở `props.soLieuToanKhung`.
+- Bản đầu (27/11/2026) có chữ hiện sớm hơn lời 1–5 giây ở gần mọi cảnh: mốc lấy theo đầu câu trong bản chép lời cả câu, và bản chép lời của
+  nguồn đã làm sạch lệch 1 giây so với tệp thật. Đo bằng khoảng lặng (`ffmpeg silencedetect`) mới biết bản nào đúng; nay dùng lời chép
+  từng đoạn và `khop-chu-voi-loi.py`.
 - Đoạn lặp lại trong bản ghép (cùng một nguồn dùng cho nhiều hiệu ứng) làm `soat-khop-tieng.py` báo lệch giả hơn 3 giây ở chỗ lời trùng: đối chiếu với `bang-moc.md` trước khi sửa.
 - Mẫu `DuongMay` (thẻ lật, gạch thay, câu đắt) có chữ nhỏ khi xem khung ngang toàn màn hình: chấp nhận cho bản xem; dựng thật thì chọn kiểu khác nếu chữ không đọc kịp.
 - Sơ đồ và minh hoạ đặt trong `o-nguoi` hay `canh-nguoi` khung ngang từng tràn mép phải vì khung co theo vùng 60% bề ngang, trong khi sơ đồ vẽ 86%. Đã sửa 28/11/2026: `vungNoi()` trong `thanh-phan/bo-cuc.jsx` co theo vùng vẽ thật của từng loại. Thêm loại nội dung lồng mới thì khai vùng vẽ của nó trong `VUNG_NOI`.

@@ -190,7 +190,9 @@ Khi chọn kiểu trong kho, đọc hàng cấu tạo của phiếu học và th
 
 Với nhịp theo lời, dùng bản SRT từng từ thuộc chính video đã làm sạch. Khi nguồn hình và bản chép lời có thể thuộc hai bản cắt khác nhau, trích tiếng từ chính tệp sẽ ghép, cùng điểm vào và điểm ra, rồi chép lại đoạn đó. So các cụm đầu, giữa và cuối với tiếng sẽ xuất trước khi dùng SRT cũ. Giữ hình gốc toàn khung ở câu giới thiệu toàn cảnh. Khi lời chuyển sang chi tiết mới khoanh hoặc phóng chi tiết. Giữ sơ đồ ở góc nhìn rộng khi cần theo dõi nhiều nhánh cùng lúc. Nghe đối chiếu cụm quan trọng với tiếng gốc. Chạy `node moc-theo-loi.mjs moc-tung-tu.srt yeu-cau-moc.json` từ thư mục script. JSON có `fps` và mảng `moc`, mỗi mục ghi `cum`, `tuGiay`, `denGiay`, tùy chọn `canh` là `dau` hoặc `cuoi`, và `goc` nếu dựng trích đoạn. Dùng `at` từ kết quả trong mã hiệu ứng. Cụm trùng hoặc không thấy phải được phân giải bằng đoạn hẹp hơn hoặc kiểm lại lời.
 
-Cảnh có thể khai báo thêm `mocLoi` ở cấp cảnh với cùng dữ liệu và trường `truong` trỏ tới mốc dùng thật, ví dụ `props.items.0.at`. Bộ soát đối chiếu với `kiem-tra/lam-sach/moc-tung-tu.srt` và chặn nếu lệch khung. Nhịp theo cử chỉ hoặc hình dùng mốc khung từ video. Sau khi ghép, xem điểm kích hoạt và nghe lại ở tốc độ thường. Độ khớp với tiếng phụ thuộc vào độ đúng của bản mốc từ, nên kiểm cụm quan trọng bằng tai.
+Trước khi xuất, chạy `python3 -I scripts/khop-chu-voi-loi.py chuyen-dong/src/canh.js kiem-tra/lam-sach/moc-tung-tu.srt` (thêm `--sua` để dời
+mốc về lúc nói): công cụ dò mọi chữ trên hình có `at`, báo chữ hiện sớm hoặc trễ so với lời và chữ không nguyên văn. Mốc theo cử chỉ hay hình
+thì khai `"khop": false` ở mục đó. Cảnh có thể khai báo thêm `mocLoi` ở cấp cảnh với cùng dữ liệu và trường `truong` trỏ tới mốc dùng thật, ví dụ `props.items.0.at`. Bộ soát đối chiếu với `kiem-tra/lam-sach/moc-tung-tu.srt` và chặn nếu lệch khung. Nhịp theo cử chỉ hoặc hình dùng mốc khung từ video. Sau khi ghép, xem điểm kích hoạt và nghe lại ở tốc độ thường. Độ khớp với tiếng phụ thuộc vào độ đúng của bản mốc từ, nên kiểm cụm quan trọng bằng tai.
 
 ## Bước 5 — Công cụ kiểm chặn trước render (`soat-canh.mjs`)
 
