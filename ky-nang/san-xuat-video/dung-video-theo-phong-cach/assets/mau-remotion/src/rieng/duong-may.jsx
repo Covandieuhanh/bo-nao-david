@@ -28,6 +28,17 @@ import {vaoRaKieu, QuetSang} from './hieu-ung';
 
 const O_MAC_DINH = {x: 0.305, y: 0.075, w: 0.41, h: 0.18};
 const dai = (t) => Math.max(1, ...String(t ?? '').replace(/\*/g, '').split('\n').map((l) => l.length));
+// Cỡ chữ lớn nhất để chữ vừa ô rộng `r` cao `c`, được xuống tối đa `toiDa` dòng (ngắt ở dấu cách). Tính một dòng thì ô hẹp ở khung ngang
+// cho chữ quá nhỏ (lỗi bản xem 27/11/2026: chữ 14–24 px). he = bề ngang một ký tự theo em, du = khoảng đệm theo em, cd = chiều cao dòng.
+const coChu = (t, r, c, {toiDa = 2, he = 0.52, du = 0.6, cd = 1.12} = {}) => {
+  const tu = String(t ?? '').replace(/\*/g, '').split(/\s+/).filter(Boolean);
+  let tot = 0;
+  for (let k = 1; k <= Math.min(toiDa, Math.max(1, tu.length)); k++) {
+    const dong = k === 1 ? dai(t) : Math.ceil(dai(t) / k) + Math.max(...tu.map((x) => x.length)) * 0.5;   // ngắt ở từ nên dòng dài hơn chia đều
+    tot = Math.max(tot, Math.min(c / (k * cd), r / (dong * he + du)));
+  }
+  return tot;
+};
 const tien = (f, a, n = 22) => ease(f, a, a + n, 0, 1, Easing.out(Easing.exp));   // tiến độ vẽ 0..1
 
 // Nền tấm: tối, có hạt (nền hạt — kiểu "giấy ảnh"), không làm mờ hình phía sau. v = vaoRaKieu (hiệu ứng vào / ra của cảnh)
@@ -165,7 +176,7 @@ export const DuongMay = ({sceneId, start, o = O_MAC_DINH, so, nhan, ten, lon, ti
   if (the) {
     const n = Math.max(1, the.length), gap = h * 0.08, top = tieu_de ? h * 0.3 : pad, cao = h - top - pad * 0.8;
     const rong = (w - pad * 2 - gap * (n - 1)) / n;
-    const fsT = Math.min(cao * 0.36, ...the.map((u) => rong / (dai(u.text) * 0.5 + 0.9)));
+    const fsT = Math.min(cao * 0.36, ...the.map((u) => coChu(u.text, rong, cao * 0.8, {toiDa: 4, he: 0.5, du: 0.9})));
     const at = the.map((u) => rel(u.at, start));
     const cuoi = at.reduce((k, a, i) => (f >= a ? i : k), -1);
     return (
@@ -267,7 +278,7 @@ export const DuongMay = ({sceneId, start, o = O_MAC_DINH, so, nhan, ten, lon, ti
 
   // ── câu đắt (học The Diary Of A CEO ca 1: một câu đắt chữ to theo lời, một từ nhấn đổi màu): chữ to giữa tấm
   if (cau) {
-    const fsC = Math.min(h * 0.3, (w - pad * 2.4) / (dai(cau.text) * 0.5 + 0.4));
+    const fsC = Math.min(h * 0.3, coChu(cau.text, w - pad * 2.4, h - pad * 2, {toiDa: 3, he: 0.5, du: 0.4}));
     return (
       <AbsoluteFill>
         <div style={box}>
@@ -364,7 +375,7 @@ export const DuongMay = ({sceneId, start, o = O_MAC_DINH, so, nhan, ten, lon, ti
     const muiTen = h * 0.22, slot = (w - pad * 2 - muiTen * (n - 1)) / n;
     const at = thay.map((u) => rel(u.at, start));
     const cuoi = at.reduce((k, a, i) => (f >= a ? i : k), -1);
-    const fsG = Math.min(cao * 0.42, ...thay.map((u) => slot / (dai(u.text) * 0.52 + 0.6)));
+    const fsG = Math.min(cao * 0.42, ...thay.map((u) => coChu(u.text, slot, cao * 0.9, {toiDa: 3})));
     return (
       <AbsoluteFill>
         <div style={box}>
