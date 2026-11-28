@@ -15,8 +15,13 @@ Hướng dẫn này áp dụng cho mọi skill dựng (`dung-video-theo-phong-ca
 
 - **Không chép kịch bản, kiểu trình bày của tập trước** làm điểm xuất phát. Mỗi tài nguyên được làm lại từ đầu. Người dựng chép được phần kỹ thuật
   (mẫu, hàm, chữ ký nhận diện), không chép lựa chọn (kiểu cảnh, nền, nhịp, nhạc).
-- Mọi thứ trong kho (bố cục, motion graphics, thẩm mỹ, chuyển cảnh, nhạc) là ứng viên cho mọi video; người dựng chọn bằng lập luận ở
-  `nhu-cau-nguoi-xem.md` và ghi lý do.
+- **Chỉ chọn hiệu ứng có hình mẫu, dùng đúng như mẫu** (David 28/11/2026: "đã học từ hình mẫu thì mọi thứ chuẩn đúng theo hình mẫu ở cả
+  hiệu ứng và cả motion graphics … đừng sáng tạo và thêm linh tinh nữa"). Hiệu ứng tự chế nằm ở `hieu-ung-luu-tru.json`, không chọn.
+  Giá trị của người dựng là phân tích nội dung rồi chọn hiệu ứng mẫu hợp nhất (lập luận ở `nhu-cau-nguoi-xem.md`, ghi lý do); nội dung không
+  có hiệu ứng mẫu hợp thì giữ người và phụ đề. Bảng chọn nhanh theo dạng nội dung:
+  danh sách ý → thẻ cạnh mặt hiện từng dòng (đoạn dài: người vào ô + thẻ chữ) · ý cũ đổi thành ý mới → thẻ cạnh mặt gạch chữ ·
+  một con số → số vang · hai vế đối chiếu có hình → hai thẻ lần lượt tiết lộ · liệt kê có đánh số hoặc "trong video này" → mục lục tích luỹ ·
+  các ý theo thứ tự → thanh tiến trình · câu trích đắt → câu đắt hộp trắng · tự giới thiệu tên → thẻ tên · lời chào cuối → thẻ chào.
 - **Công cụ chặn trước render** (`soat-canh.mjs`, chạy tự động trong `xuat-video.mjs` và `xuat-chuong-trinh.mjs`), chi tiết ở bước 5.
 - **Mỗi mẫu có gì** (mẫu thiếu kiểu thì video ít hình, nên chọn mẫu đúng trước):
 
@@ -195,6 +200,8 @@ mốc về lúc nói): công cụ dò mọi chữ trên hình có `at`, báo ch�
 thì khai `"khop": false` ở mục đó. Cảnh có thể khai báo thêm `mocLoi` ở cấp cảnh với cùng dữ liệu và trường `truong` trỏ tới mốc dùng thật, ví dụ `props.items.0.at`. Bộ soát đối chiếu với `kiem-tra/lam-sach/moc-tung-tu.srt` và chặn nếu lệch khung. Nhịp theo cử chỉ hoặc hình dùng mốc khung từ video. Sau khi ghép, xem điểm kích hoạt và nghe lại ở tốc độ thường. Độ khớp với tiếng phụ thuộc vào độ đúng của bản mốc từ, nên kiểm cụm quan trọng bằng tai.
 
 ## Bước 5 — Công cụ kiểm chặn trước render (`soat-canh.mjs`)
+
+- **Hiệu ứng có mẫu:** `python3 -I scripts/kiem-hieu-ung-co-mau.py <canh.js>` phải báo 0 hiệu ứng không có mẫu.
 
 - **P0:** lỗi triển khai như phần tử nằm ngoài cảnh, ảnh được gọi bị thiếu, kiểu đã biết lỗi ở khung đang xuất, hoặc mã cảnh lệch lựa chọn đã ghi.
 - **P1/P2:** gợi ý rà soát bản thử, gồm khả năng đọc và cảnh tác động lên hình gốc. Số kiểu, mật độ hiệu ứng và số phương án thẩm mỹ do người dựng quyết định theo nội dung.

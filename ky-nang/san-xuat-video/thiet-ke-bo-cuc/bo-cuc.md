@@ -4,7 +4,7 @@ description: "Danh mục bố cục video để chọn (không phải công th�
 
 # Danh mục bố cục
 
-Đây là danh mục để chọn, không phải công thức. Người dựng giữ chữ ký nhận diện (`thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0); ngoài phần đó, người dựng được chọn tự do (10/11/2026). Chữ trong thẻ là nguyên văn lời người nói.
+Đây là danh mục để chọn, không phải công thức. Người dựng giữ chữ ký nhận diện (`thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0). Chỉ chọn kiểu có hình mẫu và dùng đúng như mẫu; các kiểu tự chế (`illus`, `diagram`, `card`, `action`, `nhan`, `kinetic`, `NhanTram`, phần lớn `DuongMay`…) đã chuyển sang lưu trữ ở `hieu-ung-luu-tru.json`, không chọn cho video mới (David 28/11/2026). Chữ trong thẻ là nguyên văn lời người nói.
 Cột "Code": **có** = viết được ngay trong `canh.js` · **chưa** = mới học ý tưởng, cần viết code khi có video cần dùng.
 
 ## Người là chính

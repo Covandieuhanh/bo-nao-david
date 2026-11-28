@@ -4,6 +4,13 @@ description: "Nhật ký thay đổi skill dựng video theo phong cách: quyế
 
 # Nhật ký thay đổi — dung-video-theo-phong-cach (quyết định của người dùng và lý do)
 
+## 28/11/2026 (khuya): chỉ giữ hiệu ứng có mẫu, dùng đúng như mẫu
+
+- David: "đã học từ hình mẫu thì mọi thứ chuẩn đúng theo hình mẫu ở cả hiệu ứng và cả motion graphics … giá trị của bạn nằm ở phân tích … đừng sáng tạo và thêm linh tinh nữa"; chọn "Chỉ giữ hiệu ứng có mẫu". Luật: `thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0 điều 3–4.
+- Hiệu ứng tự chế chuyển sang lưu trữ: `thiet-ke-bo-cuc/hieu-ung-luu-tru.json` (illus, diagram, card, action, nhan, kinetic, các kiểu cũ khung dọc, NhanTram, MauMach, DuongMay trừ thẻ tên và câu đắt). Mã giữ để video cũ dựng lại được.
+- Công cụ chặn mới `scripts/kiem-hieu-ung-co-mau.py <canh.js>`: báo 0 mới được xuất. Bảng chọn nhanh theo dạng nội dung ở `huong-dan-lua-chon.md` bước 0.
+- Bỏ các chỗ tự thêm trong ngày: mượn giao diện cho cảnh tự chế (bảng `MAU_CUA` chỉ còn loại có mẫu); thẻ lật, kể cả lưới 2 cột tự thêm, nằm trong phần lưu trữ. MagentX (trên dưới, ô tròn, thẻ câu hỏi, đừng / hãy) chưa đo giao diện: chờ đường dẫn reel.
+
 ## 28/11/2026 (tối): màu không phải nhận diện, lấy chính xác thẩm mỹ từ mẫu
 
 - David: "nhận diện của kênh không nhất thiết phải là màu cam với nền đen hay nền trắng đâu nhé. dùng bất kì màu sắc nào cũng được" và "học được mẫu nào thì có thể lấy chính xác từ mẫu đấy để thẩm mỹ đẹp nhất, không cần học để phối lại vì tôi thấy phối lại gặp rất nhiều lỗi". Luật ở `thu-vien-tai-nguyen/nhan-dien-chung.md` mục 0.

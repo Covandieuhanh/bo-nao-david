@@ -54,13 +54,10 @@ export const GIAO_DIEN = {
     head: '"Playfair Display", serif', body: '"Playfair Display", serif', hoa: 'none'},
 };
 // Mẫu gốc của từng loại cảnh (loại · kiểu → giao diện). Loại không có trong bảng giữ `kenh` (thành phần cố định: phụ đề, dấu góc, màn chốt).
+// Hiệu ứng tự chế không có mẫu: thiet-ke-bo-cuc/hieu-ung-luu-tru.json — không chọn (kiem-hieu-ung-co-mau.py chặn).
 export const MAU_CUA = {'bocuc:o-nguoi': 'sang-huynh-sang', 'bocuc:the-canh': 'sang-huynh-the', 'bocuc:chuong': 'sang-huynh-toi',
-  'DuongMay:thay': 'sang-huynh-the', 'DuongMay:so': 'sang-huynh-toi', 'DuongMay:nhac': 'sang-huynh-the', 'DuongMay:lat': 'sang-huynh-the',
-  'bocuc:muc-luc': 'ali-giay', 'bocuc:tien-trinh': 'ali-giay',
-  'bocuc:canh-nguoi': 'ali-phan', 'bocuc:cau-hoi': 'sang-huynh-the', 'NhanTram:the': 'sang-huynh-the', 'NhanTram:nhan': 'sang-huynh-the',
-  'phong:hat': 'joseph-giay', 'phong:nguoi-mo': 'joseph-mo',
-  // cảnh tự vẽ / chưa đo mẫu (nhan-dien-chung.md mục 0 điều 4): mượn giao diện mẫu gần nhất để video liền một mạch
-  'DuongMay:ten': 'doac', 'DuongMay:cau': 'doac', 'card:': 'sang-huynh-sang', 'nhan:': 'sang-huynh-the', 'bocuc:o-tron': 'sang-huynh-the', 'bocuc:tren-duoi': 'sang-huynh-the'};
+  'bocuc:muc-luc': 'ali-giay', 'bocuc:tien-trinh': 'ali-giay', 'bocuc:canh-nguoi': 'ali-phan',
+  'phong:hat': 'joseph-giay', 'phong:nguoi-mo': 'joseph-mo', 'DuongMay:ten': 'doac', 'DuongMay:cau': 'doac'};
 // HEAD / BODY là liên kết sống: apDungGiaoDien (chu-de.js) gọi datChu khi đổi giao diện, mọi thành phần import HEAD đọc đúng font của cảnh.
 export let HEAD = C.head;
 export let BODY = C.body;

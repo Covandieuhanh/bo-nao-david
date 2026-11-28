@@ -12,7 +12,7 @@ David được phép dùng (trên máy và Drive `sao-luu-mac/video/<tập>/1-go
 
 ## Các bước
 
-1. **Kiểm kê kho:** liệt kê mọi kiểu có code (`bocuc` các `kieu`, `diagram`/`illus` các `mode`, `nhan`, `phong`, `rieng/` mọi cảnh trong
+1. **Kiểm kê kho:** chỉ tính hiệu ứng có hình mẫu (bỏ các loại trong `hieu-ung-luu-tru.json`, David 28/11/2026). Liệt kê mọi kiểu có code (`bocuc` các `kieu`, `diagram`/`illus` các `mode`, `nhan`, `phong`, `rieng/` mọi cảnh trong
    `diem-vao.js`) và mọi cách "chưa code" ở `bo-cuc.md`. Mỗi kiểu ghi dấu hiệu bắt buộc lấy từ bảng 4c.
 2. **Gom nguồn:** chép video gốc về `~/Movies/tap-kho-hieu-ung-<ngày>/1-goc/` (lá B2). Ưu tiên video David nói một mình, có liệt kê, con số,
    so sánh, quy trình. Ổ Drive chưa tải tệp về thì đọc bằng `cat <tệp> > <đích>` có thử lại (lệnh `cp` dễ hết thời gian chờ với tệp lớn).
@@ -30,7 +30,7 @@ David được phép dùng (trên máy và Drive `sao-luu-mac/video/<tập>/1-go
      "chưa có cảnh đủ điều kiện" kèm dấu hiệu cần tìm. Một bản xem thiếu vài hiệu ứng mà cảnh nào cũng đúng tốt hơn bản đủ mà có cảnh gượng.
    - Bỏ đoạn chạm lằn ranh (`david.md` mục 4.7). Ghi vào `ke-hoach-ghep-hieu-ung.md` của tập: ý · nguồn · mốc · lời · cái khó · hiệu ứng chọn ·
      ứng viên đã loại và vì sao.
-5. **Viết code cho cách còn thiếu:** đo mẫu (bảng khung 0,67 giây ở đúng mốc, mã gốc của tác giả nếu có), thêm vào `rieng/` (một file mẫu
+5. **Viết code cho cách còn thiếu, đúng như mẫu (không thêm, không phối lại):** đo mẫu (bảng khung 0,67 giây ở đúng mốc, mã gốc của tác giả nếu có), thêm vào `rieng/` (một file mẫu
    dùng lại, đăng ký trong `diem-vao.js`), kiểm cú pháp bằng `esbuild`.
 6. **Ghép nguồn thành một video gốc:** viết `doan.json` (thứ tự theo nhóm của `bo-cuc.md`; cảnh của từng đoạn ở khoá `canh`, mốc theo nguồn).
    `doan.json` là nguồn duy nhất của cảnh: sửa cảnh thì sửa ở đây rồi chạy lại, không sửa tay `canh.js`. Chạy
@@ -42,7 +42,7 @@ David được phép dùng (trên máy và Drive `sao-luu-mac/video/<tập>/1-go
    `kiem-tra/goc/` (thay bản `phan-tich-video.sh`) → `phu-de.py` → `ke-hoach-canh.md` (Chẩn đoán đủ dòng) → `vi-tri-khuon-mat.sh` →
    `xem-truoc.mjs` (chụp đầu / giữa / cuối từng cảnh mới) → `xuat-video.mjs` → `xem-truoc-ban-dung.py`. Không có thẻ tiêu đề hay chữ ghi chú
    trên hình; tên hiệu ứng nằm ở `bang-moc.md` và chương. Trước khi xuất, `khop-chu-voi-loi.py <canh.js> kiem-tra/goc/moc-tung-tu.srt` phải
-   báo 0 mục lệch, 0 mục không thấy trong lời.
+   báo 0 mục lệch, 0 mục không thấy trong lời; `kiem-hieu-ung-co-mau.py <canh.js>` báo 0 hiệu ứng không có mẫu.
 8. **Giao:** bản dựng + `bang-moc.md` (hiệu ứng · nguồn · mốc gốc · mốc trong bản xem) + danh sách hiệu ứng chưa có cảnh hoặc chưa có code.
    Đây là bản nội bộ để David xem, không đăng; lưu trên máy và Drive `thanh-pham/tap-kho-hieu-ung-<ngày>/`.
 
@@ -50,7 +50,7 @@ David được phép dùng (trên máy và Drive `sao-luu-mac/video/<tập>/1-go
 Không có Đ1 (đã có lá). Đ3 khi một hiệu ứng mới đụng màu chủ đạo hay chữ ký nhận diện của kênh (bản tái dựng giữ màu mẫu, không đổi nhận diện kênh).
 
 ## Xong khi
-- Mọi kiểu có code trong kho có một cảnh trong bản xem, hoặc có dòng "chưa có cảnh đủ điều kiện" kèm lý do.
+- Mọi kiểu có mẫu trong kho có một cảnh trong bản xem, hoặc có dòng "chưa có cảnh đủ điều kiện" / "chưa đo mẫu" kèm lý do; không cảnh nào dùng hiệu ứng lưu trữ.
 - Mỗi cảnh có dòng cái khó → nguyên lý → hiệu ứng; đọc lại thấy hiệu ứng sinh ra từ ý, không phải ngược lại. Đoạn dùng lại có lý do hợp riêng cho từng hiệu ứng.
 - `bang-moc.md` ghi đủ mốc, đã xem đủ đầu / giữa / cuối từng cảnh mới ở kích thước phát hành, không che mặt, chữ đúng nguyên văn.
 - Code mới, script, lá này nằm trong repo và đã đẩy GitHub.
