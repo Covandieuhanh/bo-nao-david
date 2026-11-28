@@ -11,7 +11,7 @@ Mới nhất ở trên. Mỗi mục: ngày · mục nhỏ · câu hỏi · số 
 - Mẫu: 6 (Getting Things Done, Athena, Văn phòng Thư ký Nhà Trắng, Bonnie Low-Kramen, Tim Ferriss, IAAP CAP); số liệu phần lớn tự công bố hoặc nguồn phụ.
 - Kết luận: năm điểm chung (đáng tin tuyệt đối · báo đầu ngày và nhìn lại tuần · làm sắc điều cần quyết · giao quyền rõ, nới dần · đo kết quả).
   Đo bot 7 ngày (21–28/11): 30 tin, trả lời trung vị 16 giây; 6 tin mất vì hết hạn mức (đã sửa), 15 lần bị từ chối quyền ghi (đã sửa luật).
-- Áp dụng: `../../tu-dong-hoa/so-tay/quy-tac-bot.md` (gõ lệnh đúng dạng), `tin-sot.py`; các đề xuất còn lại chờ David duyệt.
+- Áp dụng (David duyệt 28/11): `../../tu-dong-hoa/so-tay/quy-tac-bot.md` (gõ lệnh đúng dạng, "Anh cần quyết", thẻ nhìn lại tuần và chuẩn bị hẹn), `tin-sot.py`, `tinh-tien.py`, `do-bot.py`, tài liệu sở thích trong sổ nhớ.
 
 ## 23/11/2026 — 8.3 tư duy gốc (việc #41)
 - Câu hỏi: các bộ óc hàng đầu thế giới suy nghĩ, học, giải quyết vấn đề thế nào; khung của cố vấn chiến lược của David đúng tới đâu.
