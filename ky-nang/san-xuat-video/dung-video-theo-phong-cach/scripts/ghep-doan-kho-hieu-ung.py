@@ -54,6 +54,13 @@ def main():
     if len(sys.argv) < 3:
         sys.exit(__doc__)
     cau_hinh = json.load(open(sys.argv[1], encoding='utf-8'))
+    # Lá B15 bước 4: đoạn dùng lại cho hiệu ứng khác chỉ khi nội dung thật sự hợp — cảnh báo để người dựng xem lại, không chặn
+    ds = cau_hinh['doan']
+    chong = [f"{a['id']} và {b['id']} (nguồn {a['nguon']}, chồng {min(a['den'], b['den']) - max(a['tu'], b['tu']):.1f} giây)"
+             for i, a in enumerate(ds) for b in ds[i + 1:]
+             if a['nguon'] == b['nguon'] and min(a['den'], b['den']) - max(a['tu'], b['tu']) > 0.5]
+    if chong:
+        print('Cảnh báo — đoạn dùng chung lời, kiểm lại nội dung có hợp với từng hiệu ứng không:\n  ' + '\n  '.join(chong), file=sys.stderr)
     ra = sys.argv[2]
     doc = '--doc' in sys.argv
     W, H = (1080, 1920) if doc else (1920, 1080)

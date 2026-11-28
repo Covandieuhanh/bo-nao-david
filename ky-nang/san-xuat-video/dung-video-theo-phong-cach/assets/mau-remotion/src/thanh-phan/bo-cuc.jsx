@@ -57,6 +57,11 @@ import {VE} from '../rieng/diem-vao';
 const W = project.width, H = project.height, LAND = W > H;
 const NOI = {illus: Illus, diagram: Diagram, ve: ({ve, ...p}) => { const V = VE[ve]; if (!V) throw new Error(`cảnh tự vẽ '${ve}' chưa đăng ký`); return <V {...p} />; }};
 
+// Vùng vẽ thật của nội dung lồng (tỉ lệ khung). Sơ đồ và minh hoạ khung ngang trải 86–88% bề ngang (so-do.jsx, minh-hoa.jsx):
+// co và canh giữa theo đúng vùng đó, không thì tràn mép phải khi đặt cạnh người. Cảnh tự vẽ và khung dọc giữ vùng giữa 60%.
+const VUNG_NOI = LAND ? {diagram: {x: 0.07, w: 0.86, y: 0.12, h: 0.68}, illus: {x: 0.06, w: 0.88, y: 0.12, h: 0.68}} : {};
+const vungNoi = (noi_dung) => (noi_dung && VUNG_NOI[noi_dung.type]) || (LAND ? {x: 0.2, w: 0.6, y: 0.07, h: 0.64} : {x: 0.2, w: 0.6, y: 0.1, h: 0.46});
+
 // Thẻ chữ hiện dần (dùng cho 'the-canh' và nội dung 'the' trong 'o-nguoi')
 // Xuống dòng cân (textWrap balance): dòng đều nhau, không để một chữ đứng lẻ ("LUYỆN TẬP LẠI THÓI / QUEN" — lỗi 09/11/2026);
 // '\n' trong chữ = chỗ xuống dòng theo cụm nghĩa do kịch bản đặt.
@@ -176,7 +181,8 @@ const ONguoi = ({sceneId, start, o, noi_dung, khung, bam, nguoi_duoi = false}) =
       : {x: SAFE.left, y: b.y + b.h + 30, w: W - SAFE.left - SAFE.right * 0.4, h: SAFE.bottom - (b.y + b.h) - 60};
   const show = ease(f, 8, 18) * ease(f, d - 12, d - 4, 1, 0);
   const Comp = noi_dung && NOI[noi_dung.type];
-  const s = Math.min(1, area.w / (W * 0.6), area.h / (H * (LAND ? 0.64 : 0.46)));
+  const v = vungNoi(noi_dung);
+  const s = Math.min(1, area.w / (W * v.w), area.h / (H * v.h));
   const cx = area.x + area.w / 2, cy = area.y + area.h / 2;
   return (
     <FullShell hold>
@@ -187,7 +193,7 @@ const ONguoi = ({sceneId, start, o, noi_dung, khung, bam, nguoi_duoi = false}) =
             width: W * sc, height: H * sc, maxWidth: 'none'}} />
       </div>
       {noi_dung && (
-        Comp ? <div style={{position: 'absolute', left: cx - W * s / 2, top: cy - H * (LAND ? 0.39 : 0.33) * s, width: W, height: H, opacity: show,
+        Comp ? <div style={{position: 'absolute', left: cx - W * (v.x + v.w / 2) * s, top: cy - H * (v.y + v.h / 2) * s, width: W, height: H, opacity: show,
             transform: `scale(${s})`, transformOrigin: '0 0'}}><Comp start={start} sceneId={sceneId} nen={false} {...noi_dung.props} /></div>
           : <div style={{position: 'absolute', left: area.x, top: area.y, width: area.w, height: area.h, opacity: show,
             display: 'flex', alignItems: LAND ? 'center' : 'flex-start', justifyContent: 'center'}}>
@@ -282,13 +288,14 @@ const CanhNguoi = ({sceneId, start, noi_dung, bam, toi = true}) => {
   const Comp = NOI[noi_dung.type];
   const o = Math.min(ease(f, 0, 10), ease(f, d - 6, d, 1, 0, Easing.in(Easing.cubic)));
   const top = Math.max(BRAND_BOT + 30, SAFE.top), bot = SAFE.bottom - 40;
-  const s = Math.min(1, k.w / (W * 0.62), (bot - top) / (H * (LAND ? 0.7 : 0.55)));   // nội dung illus/diagram chiếm ~60 % bề ngang khung
-  const cx = (k.x0 + k.x1) / 2;
+  const v = vungNoi(noi_dung);
+  const s = Math.min(1, k.w / (W * v.w), (bot - top) / (H * v.h));
+  const cx = (k.x0 + k.x1) / 2, cy = (top + bot) / 2;
   return (
     <AbsoluteFill style={{opacity: o, filter: o < 1 && f > d / 2 ? `blur(${(8 * (1 - o)).toFixed(2)}px)` : undefined}}>
       {toi && <div style={{position: 'absolute', left: k.x0 - W * 0.04, top: 0, width: k.x1 - k.x0 + W * 0.08, height: H,
         background: `linear-gradient(${k.ke === 'phai' ? 90 : 270}deg, transparent, rgba(8,8,10,0.55) 25%, rgba(8,8,10,0.55) 75%, transparent)`}} />}
-      <div style={{position: 'absolute', left: cx - W * s / 2, top: top + ((bot - top) - H * s) / 2, width: W, height: H,
+      <div style={{position: 'absolute', left: cx - W * (v.x + v.w / 2) * s, top: cy - H * (v.y + v.h / 2) * s, width: W, height: H,
         transform: `scale(${s})`, transformOrigin: '0 0'}}>
         {Comp && <Comp start={start} sceneId={sceneId} nen={false} {...noi_dung.props} />}
       </div>

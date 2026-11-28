@@ -121,6 +121,9 @@ nhẹ nhàng"*). Với mỗi ý đã qua 4a (cần hình), người dựng đọ
 - Mẫu khung nhiều người, chỗ trống thật (`rieng/duong-may.jsx`): chương lớn, gạch thay, chuỗi nút, thẻ lật, số mốc, câu then chốt, lời nhắc gửi
   AI, thẻ tên và vai trò, vẽ đúng vật (bộ vét, khuôn áo, mảnh ghép).
 
+**Hiệu ứng sinh ra từ ý, thước đo là độ hợp.** Nhận diện nội dung trước rồi mới chọn hiệu ứng hợp nhất; không chọn hiệu ứng trước rồi đi tìm câu
+cho nó. Ý khớp gượng (phải đổi lời, chế chữ, "gần giống" dấu hiệu) thì chọn cách khác hoặc để người và phụ đề (David 28/11/2026).
+
 **Yêu cầu bám đúng mẫu hoặc dựng đủ kho hiệu ứng:** dùng [quy trình tái dựng theo đúng video mẫu](README.md#4a-tái-dựng-theo-đúng-video-mẫu) để chọn cảnh, dựng và kiểm đủ. Điều kiện áp dụng dựa trên lời và hình bằng chứng tại mốc của nguồn, cùng vai trò của hiệu ứng trong mẫu.
 
 **So cách tổ chức cả khung hình, rồi chọn hiệu ứng.** Rút từ hình mẫu điều làm cảnh dễ hiểu: mắt nhìn vào đâu trước, quan hệ giữa hình và vật thật, cách điểm nhìn đổi theo lời và lúc nào bố cục chuyển. Các ứng viên có thể là hình gốc với dấu chỉ bám vật, sơ đồ nét vẽ trực tiếp, người và tư liệu được bố trí lại, hoặc cắt sang hình thật phục vụ lời dẫn. Thử cách trình bày khác khi nó có thể làm ý rõ hoặc ấn tượng hơn. Chọn thẻ có nền khi văn bản cần tương phản hoặc các mục cần được phân nhóm. Nếu cỡ chữ chỉ đọc được khi phóng ảnh, đổi bố cục hoặc rút nội dung hình.

@@ -17,9 +17,19 @@ David được phép dùng (trên máy và Drive `sao-luu-mac/video/<tập>/1-go
 2. **Gom nguồn:** chép video gốc về `~/Movies/tap-kho-hieu-ung-<ngày>/1-goc/` (lá B2). Ưu tiên video David nói một mình, có liệt kê, con số,
    so sánh, quy trình. Ổ Drive chưa tải tệp về thì đọc bằng `cat <tệp> > <đích>` có thử lại (lệnh `cp` dễ hết thời gian chờ với tệp lớn).
 3. **Chép lời** từng nguồn chưa có lời: `zsh $SKILL/scripts/phan-tich-video.sh <video> ~/Movies/tap-kho-hieu-ung-<ngày>/loi/<tên>`.
-4. **Ghép hiệu ứng với đoạn:** đọc lời, mỗi hiệu ứng chọn một đoạn có đúng dấu hiệu (ví dụ "không phải A mà là B" cho thẻ gạch chữ, đếm "thứ nhất…"
-   ít nhất 3 mục cho số thứ tự to, hai con số cùng đơn vị cho cột). Bỏ đoạn chạm lằn ranh (`david.md` mục 4.7). Ghi vào
-   `ke-hoach-ghep-hieu-ung.md` của tập: hiệu ứng · nguồn · mốc · lời · vì sao khớp. Hiệu ứng không có đoạn đủ điều kiện thì ghi rõ "chưa có cảnh".
+4. **Nội dung chọn hiệu ứng, không phải hiệu ứng đi tìm đoạn** (David 28/11/2026: điều quan trọng nhất là nhận diện được nội dung này nên dùng
+   hiệu ứng nào cho hợp lý; bản đầu đặt tám hiệu ứng lên cùng một đoạn lời nên phần lớn là gượng).
+   - Đọc lời từng nguồn theo mạch, cắt thành các ý trọn. Với mỗi ý, hỏi như khi dựng video thật (`huong-dan-lua-chon.md` bước 4): cái khó của người xem
+     là gì, nguyên lý nào giải, rồi chọn cách thể hiện hợp nhất trong bảng 4c. Ý không cần hình thì để người và phụ đề.
+   - Thước đo là độ hợp, không phải số lần dùng. Một đoạn được dùng lại cho hiệu ứng khác chỉ khi nội dung đó cũng thật sự hợp với hiệu ứng ấy
+     (ví dụ một ý vừa là "hai thời kỳ" vừa có con số quyết định); ghi rõ vì sao hợp cho từng lần. Script ghép in cảnh báo khi hai đoạn cùng nguồn
+     chồng nhau để người dựng xem lại.
+   - Hiệu ứng phải khớp đúng dấu hiệu của ý (ví dụ "không phải A mà là B" cho thẻ gạch chữ, đếm "thứ nhất…" ít nhất 3 mục cho số thứ tự to, hai con số
+     cùng đơn vị cho cột) và đúng vai trò của nó trong hình mẫu gốc (`nguon-tham-khao/`). Khớp gượng ("gần giống", phải đổi lời, phải chế chữ) thì không dùng.
+   - Sau khi đi hết các nguồn, hiệu ứng nào chưa có ý nào chọn nó thì tìm thêm nguồn (Drive `sao-luu-mac/video/`); vẫn không có thì ghi
+     "chưa có cảnh đủ điều kiện" kèm dấu hiệu cần tìm. Một bản xem thiếu vài hiệu ứng mà cảnh nào cũng đúng tốt hơn bản đủ mà có cảnh gượng.
+   - Bỏ đoạn chạm lằn ranh (`david.md` mục 4.7). Ghi vào `ke-hoach-ghep-hieu-ung.md` của tập: ý · nguồn · mốc · lời · cái khó · hiệu ứng chọn ·
+     ứng viên đã loại và vì sao.
 5. **Viết code cho cách còn thiếu:** đo mẫu (bảng khung 0,67 giây ở đúng mốc, mã gốc của tác giả nếu có), thêm vào `rieng/` (một file mẫu
    dùng lại, đăng ký trong `diem-vao.js`), kiểm cú pháp bằng `esbuild`.
 6. **Ghép nguồn thành một video gốc:** viết `doan.json` (thứ tự theo nhóm của `bo-cuc.md`), chạy
@@ -37,6 +47,7 @@ Không có Đ1 (đã có lá). Đ3 khi một hiệu ứng mới đụng màu ch�
 
 ## Xong khi
 - Mọi kiểu có code trong kho có một cảnh trong bản xem, hoặc có dòng "chưa có cảnh đủ điều kiện" kèm lý do.
+- Mỗi cảnh có dòng cái khó → nguyên lý → hiệu ứng; đọc lại thấy hiệu ứng sinh ra từ ý, không phải ngược lại. Đoạn dùng lại có lý do hợp riêng cho từng hiệu ứng.
 - `bang-moc.md` ghi đủ mốc, đã xem đủ đầu / giữa / cuối từng cảnh mới ở kích thước phát hành, không che mặt, chữ đúng nguyên văn.
 - Code mới, script, lá này nằm trong repo và đã đẩy GitHub.
 
@@ -54,7 +65,7 @@ Không có Đ1 (đã có lá). Đ3 khi một hiệu ứng mới đụng màu ch�
   (màn chương, thanh tiến trình, thẻ các bước, nền người mờ, nền hạt) ghi lý do ở `props.soLieuToanKhung`.
 - Đoạn lặp lại trong bản ghép (cùng một nguồn dùng cho nhiều hiệu ứng) làm `soat-khop-tieng.py` báo lệch giả hơn 3 giây ở chỗ lời trùng: đối chiếu với `bang-moc.md` trước khi sửa.
 - Mẫu `DuongMay` (thẻ lật, gạch thay, câu đắt) có chữ nhỏ khi xem khung ngang toàn màn hình: chấp nhận cho bản xem; dựng thật thì chọn kiểu khác nếu chữ không đọc kịp.
-- Lỗi khung dựng còn mở (27/11/2026): `diagram` `xay-tang`, `moc`, `tu-thanh`, `chuyen-giao` đặt trong `bocuc` `o-nguoi` khung ngang bị tràn mép phải (sơ đồ tính bề ngang theo cả khung, không theo phần còn lại cạnh ô người). Bản xem để các kiểu này toàn khung kèm `soLieuToanKhung`; cần sửa `thanh-phan/bo-cuc.jsx` / `thu-vien/so-do.jsx` trước khi dùng trong video thật.
+- Sơ đồ và minh hoạ đặt trong `o-nguoi` hay `canh-nguoi` khung ngang từng tràn mép phải vì khung co theo vùng 60% bề ngang, trong khi sơ đồ vẽ 86%. Đã sửa 28/11/2026: `vungNoi()` trong `thanh-phan/bo-cuc.jsx` co theo vùng vẽ thật của từng loại. Thêm loại nội dung lồng mới thì khai vùng vẽ của nó trong `VUNG_NOI`.
 - Dấu góc ● DAVID khung ngang nằm ở mép trên vùng an toàn (54–118 px): dòng chữ trên cùng của cảnh tự vẽ và vùng `o` của `DuongMay` / `NhanTram` phải bắt đầu dưới `BRAND_BOT` (`o.y` ít nhất khoảng 0,13).
 - Nguồn kênh cũ (Cường Kể Chuyện) có sẵn thanh tên tập in cứng ở đáy hình, chồng lên phụ đề và thanh thời gian: chỉ dùng cho bản xem, video thật cần cắt khung hoặc chọn nguồn khác.
 - Ổ đĩa: lớp hiệu ứng ProRes 4444 của bản ngang 11 phút chiếm khoảng 16 GB; bước ghép cần thêm vài GB. 28/11/2026 ổ còn 1,2 GB nên bước chuẩn âm lượng lỗi và mất bản ghép cũ. Trước khi xuất, kiểm `df -h /` còn ít nhất 25 GB; giao xong thì xoá `tu-lieu/*.mov` (dựng lại được bằng `xuat-video.mjs`). Chạy xuất dài kèm `caffeinate -i` để máy không ngủ giữa chừng.
